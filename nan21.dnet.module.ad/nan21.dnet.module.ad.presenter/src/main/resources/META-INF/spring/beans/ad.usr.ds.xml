@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="UserDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.User" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserDsConv" />	
+	</bean>
+   
+ 	<bean id="UserLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.User" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserLovDsConv" />	
+	</bean>
+   
+ 	<bean id="UserGroupDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserGroupDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserGroup" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserGroupDsConv" />	
+	</bean>
+   
+ 	<bean id="UserGroupLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserGroupLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserGroup" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserGroupLovDsConv" />	
+	</bean>
+   
+ 	<bean id="RoleDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.RoleDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.RoleDsConv" />	
+	</bean>
+   
+ 	<bean id="RoleLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.RoleLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.RoleLovDsConv" />	
+	</bean>
+     
+</beans>
+   

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="ImportMapDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportMap" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapDsConv" />	
+	</bean>
+   
+ 	<bean id="ImportMapLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportMap" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapLovDsConv" />	
+	</bean>
+   
+ 	<bean id="ImportMapItemDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapItemDsConv" />	
+	</bean>
+   
+ 	<bean id="ImportJobDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportJob" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobDsConv" />	
+	</bean>
+   
+ 	<bean id="ImportJobLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportJob" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobLovDsConv" />	
+	</bean>
+   
+ 	<bean id="ImportJobItemDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobItemDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportJobItem" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobItemDsConv" />	
+	</bean>
+     
+</beans>
+   

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:osgi-compendium="http://www.springframework.org/schema/osgi-compendium"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/osgi-compendium
+    			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
+    		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	 
+	
+	<context:load-time-weaver aspectj-weaving="on"/>
+
+	<!-- JPA EntityManagerFactory -->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="osgiDataSource" />
+		<property name="jpaVendorAdapter">			
+			<bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+			   <property name="databasePlatform" value="org.eclipse.persistence.platform.database.MySQLPlatform" />
+			   <property name="showSql" value="true" />			    
+			</bean>
+		</property>
+	</bean>
+ 
+	<!-- Transaction manager for a single JPA EntityManagerFactory (alternative to JTA) -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
+	</bean>
+			  
+	<context:annotation-config />
+		<!--
+		Instruct Spring to perform declarative transaction management
+		automatically on annotated classes.
+	-->
+	<tx:annotation-driven mode="proxy"/>  
+	<bean id="entityServiceFactory" class="net.nan21.dnet.core.domain.service.EntityServiceFactory" >
+		 
+	</bean>
+ 	
+ 	<import resource="beans/ad.impex.entity.xml"/>
+	<import resource="beans/ad.report.entity.xml"/>
+	<import resource="beans/ad.system.entity.xml"/>	
+	<import resource="beans/ad.usr.entity.xml"/>
+	<import resource="beans/ad.org.entity.xml"/>
+	
+	
+</beans>
