@@ -5,6 +5,10 @@
   
     <persistence-unit  name="net.nan21.dnet" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> 
+        <class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
+        <class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
+        <class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
+        <class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
         <properties>
             <property name="eclipselink.weaving" value="static"/>
               
@@ -19,6 +23,10 @@
     
     <persistence-unit  name="net.nan21.dnet.weave" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> 
+        <class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
+        <class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
+        <class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
+        <class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="eclipselink.weaving" value="true"/>
