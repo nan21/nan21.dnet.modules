@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.nan21.dnet</groupId>
+	<artifactId>nan21.dnet.module.bp</artifactId>
+	<version>1.0.0.M1</version>
+	<name>DNet BP: Business partners</name>	
+	<description>DNet BP: Business partners</description>
+	<packaging>pom</packaging>	
+	
+	<!-- ========================== Modules ========================== -->
+	
+	<modules>
+		<module>nan21.dnet.module.bp.domain</module>
+		<module>nan21.dnet.module.bp.presenter</module>
+		<module>nan21.dnet.module.bp.ui.extjs</module>
+		<module>nan21.dnet.module.bp.parent</module>
+	</modules>	
+</project>	 
