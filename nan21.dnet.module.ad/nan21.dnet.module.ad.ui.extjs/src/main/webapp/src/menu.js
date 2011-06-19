@@ -34,5 +34,8 @@ net.nan21.dnet.module.ad.menu.ad = [
 		{id:"Org_UI", text:Dnet.translate("ui","Org_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.org.frame.Org_UI", _bundle_:BUNDLE_ID}	]}
 	]}
  
-   ];      
+   ];  
+if (Dnet.navigationTreeMenus.ad == undefined) {
+	Dnet.navigationTreeMenus.ad = { name: "mbMenuAD" , title :"AD: Administration", children: [] };
+}       
     Dnet.navigationTreeMenus.ad.children = Dnet.navigationTreeMenus.ad.children.concat(net.nan21.dnet.module.ad.menu.ad);

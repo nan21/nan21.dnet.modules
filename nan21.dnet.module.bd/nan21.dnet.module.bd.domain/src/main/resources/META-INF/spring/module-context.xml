@@ -47,8 +47,9 @@
  	
  	<tx:advice id="txAdvice"  transaction-manager="transactionManager">
 	    <tx:attributes>	      
-	      <tx:method  name="insert" read-only="false" isolation="DEFAULT" propagation="REQUIRED"/>
-	      <tx:method  name="update" read-only="false" isolation="DEFAULT" propagation="REQUIRED"/>	      
+	      <tx:method  name="insert" read-only="false"/>
+	      <tx:method  name="update" read-only="false"/>
+	      <tx:method  name="delete*" read-only="false"/>	   	      
 	    </tx:attributes>
 	  </tx:advice>
   
