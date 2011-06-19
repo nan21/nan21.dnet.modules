@@ -283,14 +283,18 @@ public class Country implements Serializable, IModelWithId, IModelWithClientId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
-        event.updateAttributeWithObject("createdAt", new Date());
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("createdBy", Session.user.get()
-                .getUsername());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
-        event.updateAttributeWithObject("clientId", Session.user.get()
-                .getClientId());
+        this.createdAt = new Date();
+        event.updateAttributeWithObject("createdAt", this.createdAt);
+        this.modifiedAt = new Date();
+        event.updateAttributeWithObject("modifiedAt", this.modifiedAt);
+        this.createdBy = Session.user.get().getUsername();
+        event.updateAttributeWithObject("createdBy", this.createdBy);
+
+        this.modifiedBy = Session.user.get().getUsername();
+        event.updateAttributeWithObject("modifiedBy", this.modifiedBy);
+
+        this.clientId = Session.user.get().getClientId();
+        event.updateAttributeWithObject("clientId", this.clientId);
 
         if (this.active == null) {
             event.updateAttributeWithObject("active", true);
@@ -298,11 +302,10 @@ public class Country implements Serializable, IModelWithId, IModelWithClientId {
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
-    	Country c = ((Country)event.getSource()) ;
-    	c.setModifiedAt(new Date());
-        //event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
+        this.modifiedAt = new Date();
+        event.updateAttributeWithObject("modifiedAt", this.modifiedAt);
+        this.modifiedBy = Session.user.get().getUsername();
+        event.updateAttributeWithObject("modifiedBy", this.modifiedBy);
     }
 
 }
