@@ -1,0 +1,36 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+  
+    <persistence-unit  name="net.nan21.dnet" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> 
+        <properties>
+            <property name="eclipselink.weaving" value="static"/>
+              
+            <!-- SQL logging. -->
+            <property name="eclipselink.logging.level" value="FINEST" />
+            <property name="eclipselink.logging.thread" value="FINEST" />
+            <property name="eclipselink.logging.session" value="FINEST" />
+            <property name="eclipselink.logging.exceptions" value="FINEST" />
+            <property name="eclipselink.logging.timestamp" value="FINEST" />
+        </properties>
+    </persistence-unit>
+    
+    <persistence-unit  name="net.nan21.dnet.weave" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> 
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="eclipselink.weaving" value="true"/>
+  			<property name="eclipselink.weaving.fetchgroups" value="true"/>
+  			<property name="eclipselink.weaving.changetracking" value="true"/>
+            <!-- SQL logging. -->
+            <property name="eclipselink.logging.level" value="FINEST" />
+            <property name="eclipselink.logging.thread" value="FINEST" />
+            <property name="eclipselink.logging.session" value="FINEST" />
+            <property name="eclipselink.logging.exceptions" value="FINEST" />
+            <property name="eclipselink.logging.timestamp" value="FINEST" />
+        </properties>
+    </persistence-unit>
+    
+</persistence>

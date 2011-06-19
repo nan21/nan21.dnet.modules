@@ -1,0 +1,8 @@
+Ext.ns("net.nan21.dnet.module.hr.grade.ds.model");
+net.nan21.dnet.module.hr.grade.ds.PayScalePointDs.prototype._trl_ = { 
+	payScaleId__lbl : "Pay Scale Id"
+	,sequenceNo__lbl : "Sequence No"
+	
+}  
+	
+ 

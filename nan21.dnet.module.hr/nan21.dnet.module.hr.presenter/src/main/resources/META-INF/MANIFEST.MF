@@ -1,11 +1,18 @@
 Manifest-Version: 1.0
-Export-Package: net.nan21.dnet.module.hr.skill.ds.converter;version="1
+Export-Package: net.nan21.dnet.module.hr.grade.ds.converter;version="1
  .0.0.M1";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core
- .presenter.converter,net.nan21.dnet.module.hr.skill.domain.entity,net
- .nan21.dnet.module.hr.skill.ds.model",net.nan21.dnet.module.hr.skill.
+ .presenter.converter,net.nan21.dnet.module.hr.grade.domain.entity,net
+ .nan21.dnet.module.hr.grade.ds.model",net.nan21.dnet.module.hr.grade.
  ds.model;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.annotation
  ,net.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.model,ne
- t.nan21.dnet.module.hr.skill.domain.entity"
+ t.nan21.dnet.module.hr.grade.domain.entity",net.nan21.dnet.module.hr.
+ skill.ds.converter;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.
+ converter,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.modu
+ le.hr.skill.domain.entity,net.nan21.dnet.module.hr.skill.ds.model",ne
+ t.nan21.dnet.module.hr.skill.ds.model;version="1.0.0.M1";uses:="net.n
+ an21.dnet.core.api.annotation,net.nan21.dnet.core.api.model,net.nan21
+ .dnet.core.presenter.model,net.nan21.dnet.module.hr.skill.domain.enti
+ ty"
 Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]",na
  n21.dnet.core.presenter;version="[1.0.0.M1,1.0.0.M1]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.4)
@@ -23,7 +30,9 @@ Import-Package: javax.persistence,net.nan21.dnet.core.api.annotation,n
  et.nan21.dnet.core.api.converter,net.nan21.dnet.core.api.model,net.na
  n21.dnet.core.api.service,net.nan21.dnet.core.presenter.converter,net
  .nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter.servic
- e,net.nan21.dnet.module.hr.skill.domain.entity,net.nan21.dnet.module.
- hr.skill.domain.service,org.springframework.context.weaving;version="
- [3.0,3.1)"
+ e,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.modu
+ le.bd.currency.domain.service,net.nan21.dnet.module.hr.grade.domain.e
+ ntity,net.nan21.dnet.module.hr.grade.domain.service,net.nan21.dnet.mo
+ dule.hr.skill.domain.entity,net.nan21.dnet.module.hr.skill.domain.ser
+ vice,org.springframework.context.weaving;version="[3.0,3.1)"
 
