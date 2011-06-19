@@ -24,5 +24,8 @@ net.nan21.dnet.module.bd.menu.ad = [
 		{id:"CurrencyXRate", text:Dnet.translate("ui","CurrencyXRates_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI", _bundle_:BUNDLE_ID}	]}
 	]}
  
-   ];      
+   ];  
+if (Dnet.navigationTreeMenus.ad == undefined) {
+	Dnet.navigationTreeMenus.ad = { name: "mbMenuAD" , title :"AD: Administration", children: [] };
+}       
     Dnet.navigationTreeMenus.ad.children = Dnet.navigationTreeMenus.ad.children.concat(net.nan21.dnet.module.bd.menu.ad);

@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bd.currency.lov");
-net.nan21.dnet.module.bd.currency.lov.CurrencyXRateProviders = Ext.extend( dnet.base.AbstractCombo, {	
+Ext.ns("net.nan21.dnet.module.bd.currency.lovs");
+net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders = Ext.extend( dnet.base.AbstractCombo, {	
 	 initComponent : function(){
 		Ext.apply(
 		    this, {
@@ -17,8 +17,8 @@ net.nan21.dnet.module.bd.currency.lov.CurrencyXRateProviders = Ext.extend( dnet.
 			}
 		); 		 
 		this._createStore_(); 
-        net.nan21.dnet.module.bd.currency.lov.CurrencyXRateProviders.superclass.initComponent.call(this);
+        net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders.superclass.initComponent.call(this);
 	}	 
 }); 
-Ext.reg("net.nan21.dnet.module.bd.currency.lov.CurrencyXRateProviders", net.nan21.dnet.module.bd.currency.lov.CurrencyXRateProviders);
+Ext.reg("net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders", net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders);
  

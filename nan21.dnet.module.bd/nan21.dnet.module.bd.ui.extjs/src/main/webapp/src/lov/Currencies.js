@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bd.currency.lov");
-net.nan21.dnet.module.bd.currency.lov.Currencies = Ext.extend( dnet.base.AbstractCombo, {	
+Ext.ns("net.nan21.dnet.module.bd.currency.lovs");
+net.nan21.dnet.module.bd.currency.lovs.Currencies = Ext.extend( dnet.base.AbstractCombo, {	
 	 initComponent : function(){
 		Ext.apply(
 		    this, {
@@ -17,8 +17,8 @@ net.nan21.dnet.module.bd.currency.lov.Currencies = Ext.extend( dnet.base.Abstrac
 			}
 		); 		 
 		this._createStore_(); 
-        net.nan21.dnet.module.bd.currency.lov.Currencies.superclass.initComponent.call(this);
+        net.nan21.dnet.module.bd.currency.lovs.Currencies.superclass.initComponent.call(this);
 	}	 
 }); 
-Ext.reg("net.nan21.dnet.module.bd.currency.lov.Currencies", net.nan21.dnet.module.bd.currency.lov.Currencies);
+Ext.reg("net.nan21.dnet.module.bd.currency.lovs.Currencies", net.nan21.dnet.module.bd.currency.lovs.Currencies);
  
