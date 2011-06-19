@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Export-Package: net.nan21.dnet.module.mm.md.ds.converter;version="1.0.
+ 0.M1";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.pr
+ esenter.converter,net.nan21.dnet.module.mm.md.domain.entity,net.nan21
+ .dnet.module.mm.md.ds.model",net.nan21.dnet.module.mm.md.ds.model;ver
+ sion="1.0.0.M1";uses:="net.nan21.dnet.core.api.annotation,net.nan21.d
+ net.core.api.model,net.nan21.dnet.core.presenter.model,net.nan21.dnet
+ .module.mm.md.domain.entity"
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]",na
+ n21.dnet.core.presenter;version="[1.0.0.M1,1.0.0.M1]",javax.persisten
+ ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.4)
+ ",org.eclipse.persistence.core;version="[2.0,2.4)",nan21.dnet.module.
+ mm.domain;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.ad.domain;v
+ ersion="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.bd.domain;version="[1.
+ 0.0.M1,1.0.0.M1]"
+Bundle-Vendor: Nan21 
+Bundle-Version: 1.0.0.M1
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-Name: DNet MM - presenter
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: nan21.dnet.module.mm.presenter
+Import-Package: javax.persistence,net.nan21.dnet.core.api.annotation,n
+ et.nan21.dnet.core.api.converter,net.nan21.dnet.core.api.model,net.na
+ n21.dnet.core.api.service,net.nan21.dnet.core.presenter.converter,net
+ .nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter.servic
+ e,net.nan21.dnet.module.ad.org.domain.entity,net.nan21.dnet.module.ad
+ .org.domain.service,net.nan21.dnet.module.bd.uom.domain.entity,net.na
+ n21.dnet.module.bd.uom.domain.service,net.nan21.dnet.module.mm.md.dom
+ ain.entity,net.nan21.dnet.module.mm.md.domain.service,org.springframe
+ work.context.weaving;version="[3.0,3.1)"
+

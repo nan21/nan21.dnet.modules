@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="ProductCategoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductCategory" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductCategoryDsConv" />	
+	</bean>
+   
+ 	<bean id="ProductCategoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductCategoryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductCategory" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductCategoryLovDsConv" />	
+	</bean>
+   
+ 	<bean id="ProductManufacturerDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductManufacturerDsConv" />	
+	</bean>
+   
+ 	<bean id="ProductManufacturerLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductManufacturerLovDsConv" />	
+	</bean>
+   
+ 	<bean id="ProductDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.Product" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductDsConv" />	
+	</bean>
+   
+ 	<bean id="ProductLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.Product" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductLovDsConv" />	
+	</bean>
+   
+ 	<bean id="ProductAccountGroupDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAccountGroupDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAccountGroup" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAccountGroupDsConv" />	
+	</bean>
+   
+ 	<bean id="ProductAccountGroupLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAccountGroupLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAccountGroup" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAccountGroupLovDsConv" />	
+	</bean>
+   
+ 	<bean id="ProductAccountDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAccountDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAccount" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAccountDsConv" />	
+	</bean>
+     
+</beans>
+   
