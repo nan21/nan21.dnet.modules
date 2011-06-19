@@ -26,13 +26,15 @@ Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet HR - presenter
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: nan21.dnet.module.hr.presenter
-Import-Package: javax.persistence,net.nan21.dnet.core.api.annotation,n
- et.nan21.dnet.core.api.converter,net.nan21.dnet.core.api.model,net.na
- n21.dnet.core.api.service,net.nan21.dnet.core.presenter.converter,net
- .nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter.servic
- e,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.modu
- le.bd.currency.domain.service,net.nan21.dnet.module.hr.grade.domain.e
- ntity,net.nan21.dnet.module.hr.grade.domain.service,net.nan21.dnet.mo
- dule.hr.skill.domain.entity,net.nan21.dnet.module.hr.skill.domain.ser
- vice,org.springframework.context.weaving;version="[3.0,3.1)"
+Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
+ notation,net.nan21.dnet.core.api.converter,net.nan21.dnet.core.api.mo
+ del,net.nan21.dnet.core.api.service,net.nan21.dnet.core.api.ui.extjs,
+ net.nan21.dnet.core.api.ui.extjs.impl,net.nan21.dnet.core.presenter.c
+ onverter,net.nan21.dnet.core.presenter.model,net.nan21.dnet.core.pres
+ enter.service,net.nan21.dnet.module.bd.currency.domain.entity,net.nan
+ 21.dnet.module.bd.currency.domain.service,net.nan21.dnet.module.hr.gr
+ ade.domain.entity,net.nan21.dnet.module.hr.grade.domain.service,net.n
+ an21.dnet.module.hr.skill.domain.entity,net.nan21.dnet.module.hr.skil
+ l.domain.service,org.springframework.context.weaving;version="[3.0,3.
+ 1)"
 
