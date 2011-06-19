@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="CommunicationChannelTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.contact.ds.converter.CommunicationChannelTypeDsConv" />	
+	</bean>
+   
+ 	<bean id="CommunicationChannelTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.contact.ds.converter.CommunicationChannelTypeLovDsConv" />	
+	</bean>
+   
+ 	<bean id="CommunicationChannelDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannel" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.contact.ds.converter.CommunicationChannelDsConv" />	
+	</bean>
+     
+</beans>
+   

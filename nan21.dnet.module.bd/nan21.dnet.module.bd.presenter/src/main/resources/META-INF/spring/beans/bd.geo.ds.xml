@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="CountryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.CountryDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Country" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.geo.ds.converter.CountryDsConv" />	
+	</bean>
+   
+ 	<bean id="CountryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.CountryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Country" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.geo.ds.converter.CountryLovDsConv" />	
+	</bean>
+   
+ 	<bean id="RegionDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.RegionDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Region" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.geo.ds.converter.RegionDsConv" />	
+	</bean>
+   
+ 	<bean id="RegionLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.RegionLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Region" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.geo.ds.converter.RegionLovDsConv" />	
+	</bean>
+   
+ 	<bean id="CityDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.CityDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.City" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.geo.ds.converter.CityDsConv" />	
+	</bean>
+   
+ 	<bean id="LocationDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.LocationDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Location" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.geo.ds.converter.LocationDsConv" />	
+	</bean>
+   
+ 	<bean id="LocationLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.LocationLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Location" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.geo.ds.converter.LocationLovDsConv" />	
+	</bean>
+   
+ 	<bean id="LocationToBillLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.LocationToBillLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Location" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.geo.ds.converter.LocationToBillLovDsConv" />	
+	</bean>
+   
+ 	<bean id="LocationToShipLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.LocationToShipLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Location" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.geo.ds.converter.LocationToShipLovDsConv" />	
+	</bean>
+     
+</beans>
+   

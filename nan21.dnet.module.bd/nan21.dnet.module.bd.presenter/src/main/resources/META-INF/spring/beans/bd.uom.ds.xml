@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="UomDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.uom.ds.converter.UomDsConv" />	
+	</bean>
+   
+ 	<bean id="UomLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.uom.ds.converter.UomLovDsConv" />	
+	</bean>
+   
+ 	<bean id="UomConversionDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomConversionDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.UomConversion" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.uom.ds.converter.UomConversionDsConv" />	
+	</bean>
+     
+</beans>
+   

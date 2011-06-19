@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:osgi-compendium="http://www.springframework.org/schema/osgi-compendium"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/osgi-compendium
+    			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
+	
+	
+	<context:load-time-weaver aspectj-weaving="on"/>
+	<context:annotation-config />
+	  
+	<bean id="menuProvider" class="net.nan21.dnet.core.api.ui.extjs.impl.ExtensionProvider" >
+		<property name="fileName" value="src/menu.js"></property>
+		<property name="bundleName" value="nan21.dnet.module.bd.ui.extjs"></property>
+	</bean>
+	
+	
+	<bean id="dsServiceFactory" class="net.nan21.dnet.core.presenter.service.DsServiceFactory" >
+		 <property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
+	</bean>
+	
+	<import resource="beans/bd.uom.ds.xml"/>
+	<import resource="beans/bd.geo.ds.xml"/>
+	<import resource="beans/bd.currency.ds.xml"/>
+	<import resource="beans/bd.contact.ds.xml"/>
+  
+</beans>

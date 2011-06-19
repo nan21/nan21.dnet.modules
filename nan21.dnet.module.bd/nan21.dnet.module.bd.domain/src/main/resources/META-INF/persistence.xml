@@ -1,0 +1,47 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+  
+    <persistence-unit  name="net.nan21.dnet" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> 
+        <properties>
+            <property name="eclipselink.weaving" value="static"/>
+            <property name="eclipselink.persistence-context.flush-mode" value="AUTO" />  
+            <!-- <property name="eclipselink.cache.size.default" value="1000" />
+            <property name="eclipselink.cache.alwaysRefresh.default" value="true" />
+            <property name="eclipselink.cache.refreshOnlyIfNewer.default" value="true" />
+            <property name="eclipselink.cache.coordinationType.default" value="SEND_NEW_OBJECTS_WITH_CHANGES" />
+            <property name="eclipselink.cache.alwaysRefresh.default" value="true" />
+            -->
+            <property name="eclipselink.cache.type.default" value="Soft" />
+            <property name="eclipselink.cache.shared.default" value="true" />
+            
+            
+            
+            <!-- SQL logging. -->
+            <property name="eclipselink.logging.level" value="FINEST" />
+            <property name="eclipselink.logging.thread" value="FINEST" />
+            <property name="eclipselink.logging.session" value="FINEST" />
+            <property name="eclipselink.logging.exceptions" value="FINEST" />
+            <property name="eclipselink.logging.timestamp" value="FINEST" />
+        </properties>
+    </persistence-unit>
+    
+    <persistence-unit  name="net.nan21.dnet.weave" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> 
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="eclipselink.weaving" value="true"/>
+  			<property name="eclipselink.weaving.fetchgroups" value="true"/>
+  			<property name="eclipselink.weaving.changetracking" value="true"/>
+            <!-- SQL logging. -->
+            <property name="eclipselink.logging.level" value="FINEST" />
+            <property name="eclipselink.logging.thread" value="FINEST" />
+            <property name="eclipselink.logging.session" value="FINEST" />
+            <property name="eclipselink.logging.exceptions" value="FINEST" />
+            <property name="eclipselink.logging.timestamp" value="FINEST" />
+        </properties>
+    </persistence-unit>
+    
+</persistence>
