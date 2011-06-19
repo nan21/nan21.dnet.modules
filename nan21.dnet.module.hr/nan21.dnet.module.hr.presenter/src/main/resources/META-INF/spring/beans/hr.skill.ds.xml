@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="RatingScaleDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingScaleDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.RatingScale" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.RatingScaleDsConv" />	
+	</bean>
+   
+ 	<bean id="RatingScaleLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingScaleLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.RatingScale" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.RatingScaleLovDsConv" />	
+	</bean>
+   
+ 	<bean id="RatingLevelDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingLevelDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.RatingLevel" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.RatingLevelDsConv" />	
+	</bean>
+   
+ 	<bean id="RatingLevelLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingLevelLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.RatingLevel" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.RatingLevelLovDsConv" />	
+	</bean>
+   
+ 	<bean id="SkillCategoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillCategoryDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.SkillCategory" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.SkillCategoryDsConv" />	
+	</bean>
+   
+ 	<bean id="SkillCategoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillCategoryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.SkillCategory" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.SkillCategoryLovDsConv" />	
+	</bean>
+   
+ 	<bean id="SkillTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.SkillType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.SkillTypeDsConv" />	
+	</bean>
+   
+ 	<bean id="SkillTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.SkillType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.SkillTypeLovDsConv" />	
+	</bean>
+   
+ 	<bean id="SkillDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.Skill" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.SkillDsConv" />	
+	</bean>
+   
+ 	<bean id="SkillLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.Skill" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.SkillLovDsConv" />	
+	</bean>
+   
+ 	<bean id="QualificationDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.QualificationDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.Qualification" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.QualificationDsConv" />	
+	</bean>
+   
+ 	<bean id="QualificationLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.QualificationLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.Qualification" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.QualificationLovDsConv" />	
+	</bean>
+   
+ 	<bean id="QualificationSkillDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.QualificationSkillDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.QualificationSkill" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.QualificationSkillDsConv" />	
+	</bean>
+     
+</beans>
+   
