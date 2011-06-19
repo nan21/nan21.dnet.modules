@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="BusinessPartnerDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BusinessPartnerDsConv" />	
+	</bean>
+   
+ 	<bean id="BusinessPartnerLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BusinessPartnerLovDsConv" />	
+	</bean>
+   
+ 	<bean id="ContactDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.ContactDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.Contact" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.ContactDsConv" />	
+	</bean>
+   
+ 	<bean id="ContactLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.ContactLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.Contact" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.ContactLovDsConv" />	
+	</bean>
+   
+ 	<bean id="BpContactLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpContactLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.Contact" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BpContactLovDsConv" />	
+	</bean>
+   
+ 	<bean id="BpBankAccountDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpBankAccountDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BpBankAccount" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BpBankAccountDsConv" />	
+	</bean>
+   
+ 	<bean id="BpBankAccountLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpBankAccountLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BpBankAccount" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BpBankAccountLovDsConv" />	
+	</bean>
+   
+ 	<bean id="BpAccountDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpAccountDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BpAccount" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BpAccountDsConv" />	
+	</bean>
+     
+</beans>
+   
