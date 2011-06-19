@@ -13,5 +13,8 @@ net.nan21.dnet.module.bp.menu.crm = [
 		{id:"Contact_UI", text:Dnet.translate("ui","Contact_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bp.md.frame.Contact_UI", _bundle_:BUNDLE_ID},		
 		{id:"BpAccount_UI", text:Dnet.translate("ui","BpAccount_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bp.md.frame.BpAccount_UI", _bundle_:BUNDLE_ID}	]}
  
-   ];      
+   ];  
+if (Dnet.navigationTreeMenus.crm == undefined) {
+	Dnet.navigationTreeMenus.crm = { name: "mbMenuCRM" , title :"CRM: Customer Relationships", children: [] };
+}       
     Dnet.navigationTreeMenus.crm.children = Dnet.navigationTreeMenus.crm.children.concat(net.nan21.dnet.module.bp.menu.crm);
