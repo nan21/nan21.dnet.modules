@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="SalesOrderDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrder" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderDsConv" />	
+	</bean>
+   
+ 	<bean id="SalesOrderItemDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderItemDsConv" />	
+	</bean>
+   
+ 	<bean id="SalesOrderTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderTypeDsConv" />	
+	</bean>
+   
+ 	<bean id="SalesOrderTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderTypeLovDsConv" />	
+	</bean>
+   
+ 	<bean id="SalesOrderStatusDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderStatusDsConv" />	
+	</bean>
+   
+ 	<bean id="SalesOrderStatusLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderStatusLovDsConv" />	
+	</bean>
+     
+</beans>
+   

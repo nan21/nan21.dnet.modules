@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="SalesInvoiceDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.SalesInvoiceDsConv" />	
+	</bean>
+   
+ 	<bean id="SalesInvoiceItemDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.SalesInvoiceItemDsConv" />	
+	</bean>
+   
+ 	<bean id="SalesInvoiceTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.SalesInvoiceTypeDsConv" />	
+	</bean>
+   
+ 	<bean id="SalesInvoiceTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.SalesInvoiceTypeLovDsConv" />	
+	</bean>
+   
+ 	<bean id="SalesInvoiceStatusDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.SalesInvoiceStatusDsConv" />	
+	</bean>
+   
+ 	<bean id="SalesInvoiceStatusLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.SalesInvoiceStatusLovDsConv" />	
+	</bean>
+     
+</beans>
+   
