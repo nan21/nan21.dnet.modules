@@ -33,6 +33,12 @@
  
  	<bean id="GradePayScalePointService" scope="prototype"
 	  		class="net.nan21.dnet.module.hr.grade.domain.serviceimpl.GradePayScalePointService"  />  
+ 
+ 	<bean id="JobGradeService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.grade.domain.serviceimpl.JobGradeService"  />  
+ 
+ 	<bean id="PositionGradeService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.grade.domain.serviceimpl.PositionGradeService"  />  
    
 </beans>
    

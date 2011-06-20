@@ -110,6 +110,30 @@
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.QualificationSkillDsConv" />	
 	</bean>
+   
+ 	<bean id="JobSkillDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.JobSkillDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.JobSkill" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.JobSkillDsConv" />	
+	</bean>
+   
+ 	<bean id="PositionSkillDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.PositionSkillDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.PositionSkill" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.PositionSkillDsConv" />	
+	</bean>
+   
+ 	<bean id="EmployeeSkillDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.EmployeeSkillDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.EmployeeSkill" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.EmployeeSkillDsConv" />	
+	</bean>
      
 </beans>
    

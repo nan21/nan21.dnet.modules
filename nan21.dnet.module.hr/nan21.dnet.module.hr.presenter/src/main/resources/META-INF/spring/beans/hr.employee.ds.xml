@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="EmployeeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.Employee" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeDsConv" />	
+	</bean>
+   
+ 	<bean id="EmployeeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.Employee" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeLovDsConv" />	
+	</bean>
+   
+ 	<bean id="EmployeeContactDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContact" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeContactDsConv" />	
+	</bean>
+   
+ 	<bean id="EmployeeEducationDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeEducationDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeEducation" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeEducationDsConv" />	
+	</bean>
+   
+ 	<bean id="EmployeeWorkExperienceDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeWorkExperienceDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeWorkExperience" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeWorkExperienceDsConv" />	
+	</bean>
+   
+ 	<bean id="EmployeeLicenseDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeLicenseDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeLicense" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeLicenseDsConv" />	
+	</bean>
+   
+ 	<bean id="EducationTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EducationTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EducationType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EducationTypeDsConv" />	
+	</bean>
+   
+ 	<bean id="EducationTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EducationTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EducationType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EducationTypeLovDsConv" />	
+	</bean>
+   
+ 	<bean id="LicenseTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.LicenseTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.LicenseType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.LicenseTypeDsConv" />	
+	</bean>
+   
+ 	<bean id="LicenseTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.LicenseTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.LicenseType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.LicenseTypeLovDsConv" />	
+	</bean>
+   
+ 	<bean id="EmployeeContactRelationshipDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactRelationshipDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContactRelationship" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeContactRelationshipDsConv" />	
+	</bean>
+   
+ 	<bean id="EmployeeContactRelationshipLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactRelationshipLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContactRelationship" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeContactRelationshipLovDsConv" />	
+	</bean>
+     
+</beans>
+   

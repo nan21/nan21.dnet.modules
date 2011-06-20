@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="CourseCategoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseCategoryDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseCategory" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.CourseCategoryDsConv" />	
+	</bean>
+   
+ 	<bean id="CourseCategoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseCategoryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseCategory" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.CourseCategoryLovDsConv" />	
+	</bean>
+   
+ 	<bean id="CourseTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.CourseTypeDsConv" />	
+	</bean>
+   
+ 	<bean id="CourseTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.CourseTypeLovDsConv" />	
+	</bean>
+   
+ 	<bean id="CourseDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.Course" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.CourseDsConv" />	
+	</bean>
+   
+ 	<bean id="CourseLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.Course" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.CourseLovDsConv" />	
+	</bean>
+   
+ 	<bean id="JobCourseDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.JobCourseDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.JobCourse" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.JobCourseDsConv" />	
+	</bean>
+   
+ 	<bean id="PositionCourseDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.PositionCourseDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.PositionCourse" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.PositionCourseDsConv" />	
+	</bean>
+     
+</beans>
+   

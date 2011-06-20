@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="ElementCategoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementCategoryDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.ElementCategory" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.ElementCategoryDsConv" />	
+	</bean>
+   
+ 	<bean id="ElementCategoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementCategoryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.ElementCategory" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.ElementCategoryLovDsConv" />	
+	</bean>
+   
+ 	<bean id="ElementTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.ElementType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.ElementTypeDsConv" />	
+	</bean>
+   
+ 	<bean id="ElementTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.ElementType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.ElementTypeLovDsConv" />	
+	</bean>
+   
+ 	<bean id="ElementDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.Element" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.ElementDsConv" />	
+	</bean>
+   
+ 	<bean id="ElementLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.Element" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.ElementLovDsConv" />	
+	</bean>
+   
+ 	<bean id="VariableDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.VariableDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.Variable" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.VariableDsConv" />	
+	</bean>
+   
+ 	<bean id="ElementValueDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementValueDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.ElementValue" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.ElementValueDsConv" />	
+	</bean>
+   
+ 	<bean id="PayrollDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.Payroll" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.PayrollDsConv" />	
+	</bean>
+   
+ 	<bean id="PayrollLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.Payroll" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.PayrollLovDsConv" />	
+	</bean>
+   
+ 	<bean id="PayrollPeriodDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.PayrollPeriodDsConv" />	
+	</bean>
+   
+ 	<bean id="PayrollPeriodLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.PayrollPeriodLovDsConv" />	
+	</bean>
+     
+</beans>
+   

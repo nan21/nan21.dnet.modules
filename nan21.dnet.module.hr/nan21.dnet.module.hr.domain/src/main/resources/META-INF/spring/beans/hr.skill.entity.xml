@@ -27,6 +27,15 @@
  
  	<bean id="QualificationSkillService" scope="prototype"
 	  		class="net.nan21.dnet.module.hr.skill.domain.serviceimpl.QualificationSkillService"  />  
+ 
+ 	<bean id="JobSkillService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.domain.serviceimpl.JobSkillService"  />  
+ 
+ 	<bean id="PositionSkillService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.domain.serviceimpl.PositionSkillService"  />  
+ 
+ 	<bean id="EmployeeSkillService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.domain.serviceimpl.EmployeeSkillService"  />  
    
 </beans>
    

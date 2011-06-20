@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="EmployeeService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.domain.serviceimpl.EmployeeService"  />  
+ 
+ 	<bean id="EmployeeContactService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.domain.serviceimpl.EmployeeContactService"  />  
+ 
+ 	<bean id="EmployeeEducationService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.domain.serviceimpl.EmployeeEducationService"  />  
+ 
+ 	<bean id="EmployeeWorkExperienceService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.domain.serviceimpl.EmployeeWorkExperienceService"  />  
+ 
+ 	<bean id="EmployeeLicenseService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.domain.serviceimpl.EmployeeLicenseService"  />  
+ 
+ 	<bean id="EmployeeContactTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.domain.serviceimpl.EmployeeContactTypeService"  />  
+ 
+ 	<bean id="EducationTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.domain.serviceimpl.EducationTypeService"  />  
+ 
+ 	<bean id="LicenseTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.domain.serviceimpl.LicenseTypeService"  />  
+ 
+ 	<bean id="EmployeeContactRelationshipService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.domain.serviceimpl.EmployeeContactRelationshipService"  />  
+   
+</beans>
+   
