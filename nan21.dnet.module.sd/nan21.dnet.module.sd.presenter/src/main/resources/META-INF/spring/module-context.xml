@@ -16,7 +16,7 @@
 	  
 	<bean id="menuProvider" class="net.nan21.dnet.core.api.ui.extjs.impl.ExtensionProvider" >
 		<property name="fileName" value="src/menu.js"></property>
-		<property name="bundleName" value="nan21.dnet.module.hr.ui.extjs"></property>
+		<property name="bundleName" value="nan21.dnet.module.sd.ui.extjs"></property>
 	</bean>
 	
 	
@@ -24,11 +24,9 @@
 		 <property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>
 
-	<import resource="beans/hr.employee.ds.xml"/>
-	<import resource="beans/hr.grade.ds.xml"/>	
-	<import resource="beans/hr.job.ds.xml"/>
-	<import resource="beans/hr.payroll.ds.xml"/>
-	<import resource="beans/hr.skill.ds.xml"/>
-	<import resource="beans/hr.training.ds.xml"/>
+	<import resource="beans/sd.price.ds.xml"/>
+	<import resource="beans/sd.order.ds.xml"/>	
+	<import resource="beans/sd.invoice.ds.xml"/>
+	 
 	 
 </beans>

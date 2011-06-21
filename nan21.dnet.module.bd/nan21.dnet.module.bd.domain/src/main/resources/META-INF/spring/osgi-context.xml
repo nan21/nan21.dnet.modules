@@ -12,5 +12,5 @@
 		
 	<osgi:service ref="entityServiceFactory" ranking="0"
 		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />
-		
+
 </beans>
