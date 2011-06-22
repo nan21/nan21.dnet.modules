@@ -76,17 +76,18 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,javax.v
  alidation;version="[1.0,2.0)",javax.validation.constraints,net.nan21.
  dnet.core.api.model,net.nan21.dnet.core.api.service,net.nan21.dnet.co
- re.domain.eventhandler,net.nan21.dnet.core.domain.service,net.nan21.d
- net.core.domain.session,net.nan21.dnet.module.bd.currency.domain.enti
- ty,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.module.b
- d.uom.domain.entity,net.nan21.dnet.module.bp.base.domain.entity,net.n
- an21.dnet.module.bp.md.domain.entity,net.nan21.dnet.module.mm.md.doma
- in.entity,org.aopalliance.aop;version="[1.0,2.0)",org.eclipse.persist
- ence.annotations,org.eclipse.persistence.descriptors,org.hibernate.va
- lidator;version="[4.0,5.0)",org.hibernate.validator.constraints;versi
- on="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",org.spring
- framework.aop.framework;version="[3.0,3.1)",org.springframework.conte
- xt.weaving;version="[3.0,3.1)",org.springframework.orm.jpa,org.spring
- framework.orm.jpa.vendor,org.springframework.transaction;version="[3.
- 0,3.1)",org.springframework.transaction.aspectj;version="[3.0,3.1)"
+ re.domain.eventhandler,net.nan21.dnet.core.domain.persistenceunit,net
+ .nan21.dnet.core.domain.service,net.nan21.dnet.core.domain.session,ne
+ t.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.module.b
+ d.geo.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.na
+ n21.dnet.module.bp.base.domain.entity,net.nan21.dnet.module.bp.md.dom
+ ain.entity,net.nan21.dnet.module.mm.md.domain.entity,org.aopalliance.
+ aop;version="[1.0,2.0)",org.eclipse.persistence.annotations,org.eclip
+ se.persistence.descriptors,org.hibernate.validator;version="[4.0,5.0)
+ ",org.hibernate.validator.constraints;version="[4.0,5.0)",org.springf
+ ramework.aop;version="[3.0,3.1)",org.springframework.aop.framework;ve
+ rsion="[3.0,3.1)",org.springframework.context.weaving;version="[3.0,3
+ .1)",org.springframework.orm.jpa,org.springframework.orm.jpa.vendor,o
+ rg.springframework.transaction;version="[3.0,3.1)",org.springframewor
+ k.transaction.aspectj;version="[3.0,3.1)"
 
