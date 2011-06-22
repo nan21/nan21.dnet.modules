@@ -186,26 +186,21 @@ public class JobGrade implements Serializable, IModelWithId, IModelWithClientId 
     }
 
     public void aboutToInsert(DescriptorEvent event) {
-        this.createdAt = new Date();
-        event.updateAttributeWithObject("createdAt", this.createdAt);
-        this.modifiedAt = new Date();
-        event.updateAttributeWithObject("modifiedAt", this.modifiedAt);
-        this.createdBy = Session.user.get().getUsername();
-        event.updateAttributeWithObject("createdBy", this.createdBy);
-
-        this.modifiedBy = Session.user.get().getUsername();
-        event.updateAttributeWithObject("modifiedBy", this.modifiedBy);
-
-        this.clientId = Session.user.get().getClientId();
-        event.updateAttributeWithObject("clientId", this.clientId);
-
+        event.updateAttributeWithObject("createdAt", new Date());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("createdBy", Session.user.get()
+                .getUsername());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
+        event.updateAttributeWithObject("clientId", Session.user.get()
+                .getClientId());
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
-        this.modifiedAt = new Date();
-        event.updateAttributeWithObject("modifiedAt", this.modifiedAt);
-        this.modifiedBy = Session.user.get().getUsername();
-        event.updateAttributeWithObject("modifiedBy", this.modifiedBy);
+        JobGrade e = (JobGrade) event.getSource();
+        e.setModifiedAt(new Date());
+        e.setModifiedBy(Session.user.get().getUsername());
+
     }
 
 }

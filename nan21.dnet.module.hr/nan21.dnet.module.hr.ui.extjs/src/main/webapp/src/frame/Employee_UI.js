@@ -1,9 +1,9 @@
  
 Dnet.import(["", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeDs", "nan21.dnet.module.hr.ui.extjs/dc/Employee", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeSkillDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeSkill", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeContactDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeContact", "nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelDs", "nan21.dnet.module.bd.ui.extjs/dc/CommunicationChannel", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeEducationDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeEducation", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeWorkExperienceDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeWorkExperience", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeLicenseDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeLicense", "nan21.dnet.module.bd.ui.extjs/ds/LocationDs", "nan21.dnet.module.bd.ui.extjs/dc/Location","nan21.dnet.module.ad.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.ad.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.bd.ui.extjs/ds/RegionLovDs","nan21.dnet.module.bd.ui.extjs/lov/Regions","nan21.dnet.module.ad.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.ad.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.hr.ui.extjs/ds/EmployeeContactRelationshipLovDs","nan21.dnet.module.hr.ui.extjs/lov/EmployeeContactRelationships","nan21.dnet.module.hr.ui.extjs/ds/SkillLovDs","nan21.dnet.module.hr.ui.extjs/lov/Skills","nan21.dnet.module.hr.ui.extjs/ds/RatingLevelLovDs","nan21.dnet.module.hr.ui.extjs/lov/RatingLevels","nan21.dnet.module.hr.ui.extjs/ds/EducationTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/EducationTypes","nan21.dnet.module.hr.ui.extjs/ds/LicenseTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/LicenseTypes","nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/CommunicationChannelTypes"]);
 
-Ext.ns("net.nan21.dnet.module.hr.ui");
-net.nan21.dnet.module.hr.ui.Employee_UI = Ext.extend( dnet.base.AbstractUi, {  
-	 _name_ : "net.nan21.dnet.module.hr.ui.Employee_UI"
+Ext.ns("net.nan21.dnet.module.hr.employee.frame");
+net.nan21.dnet.module.hr.employee.frame.Employee_UI = Ext.extend( dnet.base.AbstractUi, {  
+	 _name_ : "net.nan21.dnet.module.hr.employee.frame.Employee_UI"
 	
 	,_defineDcs_: function () {	
 		var  emp = new net.nan21.dnet.module.hr.employee.dc.Employee({multiEdit:false}), skill = new net.nan21.dnet.module.hr.skill.dc.EmployeeSkill({multiEdit:true}), cont = new net.nan21.dnet.module.hr.employee.dc.EmployeeContact({multiEdit:true}), communic = new net.nan21.dnet.module.bd.contact.dc.CommunicationChannel({multiEdit:true}), educ = new net.nan21.dnet.module.hr.employee.dc.EmployeeEducation({multiEdit:true}), work = new net.nan21.dnet.module.hr.employee.dc.EmployeeWorkExperience({multiEdit:true}), lic = new net.nan21.dnet.module.hr.employee.dc.EmployeeLicense({multiEdit:true}), address = new net.nan21.dnet.module.bd.geo.dc.Location({multiEdit:false});	 	
@@ -925,4 +925,4 @@ net.nan21.dnet.module.hr.ui.Employee_UI = Ext.extend( dnet.base.AbstractUi, {
 	}
 	 
 });
-Ext.reg("net.nan21.dnet.module.hr.ui.Employee_UI", net.nan21.dnet.module.hr.ui.Employee_UI);   
+Ext.reg("net.nan21.dnet.module.hr.employee.frame.Employee_UI", net.nan21.dnet.module.hr.employee.frame.Employee_UI);   

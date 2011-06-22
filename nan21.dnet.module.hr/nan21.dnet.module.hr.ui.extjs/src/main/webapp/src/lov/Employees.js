@@ -13,7 +13,7 @@ net.nan21.dnet.module.hr.employee.lovs.Employees = Ext.extend( dnet.base.Abstrac
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.hr.employee.ds.model.EmployeeLovDs		
 				,_dataProviderName_:"EmployeeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.ui.Employee_UI",bundle:"nan21.dnet.module.hr.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.employee.frame.Employee_UI",bundle:"nan21.dnet.module.hr.ui.extjs"}
 			}
 		); 		 
 		this._createStore_(); 
