@@ -40,15 +40,16 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,javax.v
  alidation;version="[1.0,2.0)",javax.validation.constraints,net.nan21.
  dnet.core.api.model,net.nan21.dnet.core.api.service,net.nan21.dnet.co
- re.domain.service,net.nan21.dnet.core.domain.session,net.nan21.dnet.m
- odule.ad.org.domain.entity,net.nan21.dnet.module.bd.currency.domain.e
- ntity,net.nan21.dnet.module.bd.geo.domain.entity,org.aopalliance.aop;
- version="[1.0,2.0)",org.eclipse.persistence.annotations,org.eclipse.p
- ersistence.descriptors,org.hibernate.validator;version="[4.0,5.0)",or
- g.hibernate.validator.constraints;version="[4.0,5.0)",org.springframe
- work.aop;version="[3.0,3.1)",org.springframework.aop.framework;versio
- n="[3.0,3.1)",org.springframework.context.weaving;version="[3.0,3.1)"
- ,org.springframework.orm.jpa,org.springframework.orm.jpa.vendor,org.s
- pringframework.transaction;version="[3.0,3.1)",org.springframework.tr
- ansaction.aspectj;version="[3.0,3.1)"
+ re.domain.persistenceunit,net.nan21.dnet.core.domain.service,net.nan2
+ 1.dnet.core.domain.session,net.nan21.dnet.module.ad.org.domain.entity
+ ,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.modul
+ e.bd.geo.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.ec
+ lipse.persistence.annotations,org.eclipse.persistence.descriptors,org
+ .hibernate.validator;version="[4.0,5.0)",org.hibernate.validator.cons
+ traints;version="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1
+ )",org.springframework.aop.framework;version="[3.0,3.1)",org.springfr
+ amework.context.weaving;version="[3.0,3.1)",org.springframework.orm.j
+ pa,org.springframework.orm.jpa.vendor,org.springframework.transaction
+ ;version="[3.0,3.1)",org.springframework.transaction.aspectj;version=
+ "[3.0,3.1)"
 
