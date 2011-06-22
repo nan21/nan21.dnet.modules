@@ -14,6 +14,23 @@
     			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
     		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
+	<context:property-placeholder
+		properties-ref="net.nan21.dnet.properties" />
+
+	<!-- Default properties -->
+	<osgi-compendium:cm-properties id="net.nan21.dnet.properties"
+		persistent-id="net.nan21.dnet">
+		<prop key="emf.persistenceUnitName">net.nan21.dnet</prop>
+		<prop key="eclipselink.ddl-generation">drop-and-create-tables</prop>
+		<prop key="eclipselink.application-location"></prop>
+		<prop key="eclipselink.ddl-generation.output-mode">database</prop>
+		<prop key="eclipselink.logging.level">FINEST</prop>
+		<prop key="eclipselink.logging.timestamp">FINEST</prop>
+		<prop key="eclipselink.logging.session">FINEST</prop>
+		<prop key="eclipselink.logging.thread">FINEST</prop>
+		<prop key="eclipselink.logging.exceptions">FINEST</prop>
+	</osgi-compendium:cm-properties>
+	
 	<context:annotation-config />
 	<context:load-time-weaver aspectj-weaving="on" />
 
@@ -22,14 +39,35 @@
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="osgiDataSource" />
 		<property name="jpaDialect" ref="jpaDialect"></property>
-		<property name="persistenceUnitName" value="net.nan21.dnet" />
+		<property name="persistenceUnitName" value="${emf.persistenceUnitName}" />
 		<property name="jpaVendorAdapter">
 			<bean
 				class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
-				<property name="databasePlatform"
-					value="org.eclipse.persistence.platform.database.MySQLPlatform" />
 				<property name="showSql" value="true" />
 			</bean>
+		</property>
+		<property name="persistenceUnitPostProcessors">
+			<list>
+				<bean
+					class="net.nan21.dnet.core.domain.persistenceunit.DnetPersistenceUnitPostProcessor">
+					<constructor-arg value="${emf.persistenceUnitName}" />
+					<constructor-arg ref="osgiDataSource" />
+					<constructor-arg>
+						<props>
+							<prop key="eclipselink.ddl-generation">${eclipselink.ddl-generation}</prop>
+							<prop key="eclipselink.application-location">${eclipselink.application-location}</prop>
+							<prop key="eclipselink.create-ddl-jdbc-file-name">create_nan21_dnet_module_bd.sql</prop>
+							<prop key="eclipselink.drop-ddl-jdbc-file-name">drop_nan21_dnet_module_bd.sql</prop>
+							<prop key="eclipselink.ddl-generation.output-mode">${eclipselink.ddl-generation.output-mode}</prop>
+							<prop key="eclipselink.logging.level">${eclipselink.logging.level}</prop>
+							<prop key="eclipselink.logging.timestamp">${eclipselink.logging.timestamp}</prop>
+							<prop key="eclipselink.logging.session">${eclipselink.logging.session}</prop>
+							<prop key="eclipselink.logging.thread">${eclipselink.logging.thread}</prop>
+							<prop key="eclipselink.logging.exceptions">${eclipselink.logging.exceptions}</prop>
+						</props>
+					</constructor-arg>
+				</bean>
+			</list>
 		</property>
 	</bean>
 	
@@ -43,7 +81,6 @@
 	</bean>
 	
 	<tx:annotation-driven mode="aspectj" />
-	
 	<bean id="entityServiceFactory" class="net.nan21.dnet.core.domain.service.EntityServiceFactory">
 	</bean>
 	
@@ -60,6 +97,7 @@
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="entityServiceMethods" />
 	</aop:config>
 	
+	<!-- Domain services -->
 	<import resource="beans/bd.currency.entity.xml" />
 	<import resource="beans/bd.uom.entity.xml" />
 	<import resource="beans/bd.geo.entity.xml" />
