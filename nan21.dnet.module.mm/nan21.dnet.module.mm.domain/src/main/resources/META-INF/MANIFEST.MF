@@ -24,16 +24,18 @@ Bundle-ManifestVersion: 2
 Bundle-SymbolicName: nan21.dnet.module.mm.domain
 Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
- 2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.validation;
- version="[1.0,2.0)",javax.validation.constraints,net.nan21.dnet.core.
- api.model,net.nan21.dnet.core.api.service,net.nan21.dnet.core.domain.
- service,net.nan21.dnet.core.domain.session,net.nan21.dnet.module.ad.o
- rg.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,org.aopal
- liance.aop;version="[1.0,2.0)",org.eclipse.persistence.annotations,or
- g.eclipse.persistence.descriptors,org.hibernate.validator;version="[4
- .0,5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)",org.
- springframework.aop;version="[3.0,3.1)",org.springframework.aop.frame
- work;version="[3.0,3.1)",org.springframework.context.weaving;version=
- "[3.0,3.1)",org.springframework.transaction;version="[3.0,3.1)",org.s
- pringframework.transaction.aspectj;version="[3.0,3.1)"
+ 2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,javax.v
+ alidation;version="[1.0,2.0)",javax.validation.constraints,net.nan21.
+ dnet.core.api.model,net.nan21.dnet.core.api.service,net.nan21.dnet.co
+ re.domain.persistenceunit,net.nan21.dnet.core.domain.service,net.nan2
+ 1.dnet.core.domain.session,net.nan21.dnet.module.ad.org.domain.entity
+ ,net.nan21.dnet.module.bd.uom.domain.entity,org.aopalliance.aop;versi
+ on="[1.0,2.0)",org.eclipse.persistence.annotations,org.eclipse.persis
+ tence.descriptors,org.hibernate.validator;version="[4.0,5.0)",org.hib
+ ernate.validator.constraints;version="[4.0,5.0)",org.springframework.
+ aop;version="[3.0,3.1)",org.springframework.aop.framework;version="[3
+ .0,3.1)",org.springframework.context.weaving;version="[3.0,3.1)",org.
+ springframework.orm.jpa,org.springframework.orm.jpa.vendor,org.spring
+ framework.transaction;version="[3.0,3.1)",org.springframework.transac
+ tion.aspectj;version="[3.0,3.1)"
 

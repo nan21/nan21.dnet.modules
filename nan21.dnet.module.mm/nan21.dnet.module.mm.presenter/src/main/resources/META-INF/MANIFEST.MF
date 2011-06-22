@@ -19,13 +19,14 @@ Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet MM - presenter
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: nan21.dnet.module.mm.presenter
-Import-Package: javax.persistence,net.nan21.dnet.core.api.annotation,n
- et.nan21.dnet.core.api.converter,net.nan21.dnet.core.api.model,net.na
- n21.dnet.core.api.service,net.nan21.dnet.core.presenter.converter,net
- .nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter.servic
- e,net.nan21.dnet.module.ad.org.domain.entity,net.nan21.dnet.module.ad
- .org.domain.service,net.nan21.dnet.module.bd.uom.domain.entity,net.na
- n21.dnet.module.bd.uom.domain.service,net.nan21.dnet.module.mm.md.dom
- ain.entity,net.nan21.dnet.module.mm.md.domain.service,org.springframe
- work.context.weaving;version="[3.0,3.1)"
+Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
+ notation,net.nan21.dnet.core.api.converter,net.nan21.dnet.core.api.mo
+ del,net.nan21.dnet.core.api.service,net.nan21.dnet.core.api.ui.extjs,
+ net.nan21.dnet.core.api.ui.extjs.impl,net.nan21.dnet.core.presenter.c
+ onverter,net.nan21.dnet.core.presenter.model,net.nan21.dnet.core.pres
+ enter.service,net.nan21.dnet.module.ad.org.domain.entity,net.nan21.dn
+ et.module.ad.org.domain.service,net.nan21.dnet.module.bd.uom.domain.e
+ ntity,net.nan21.dnet.module.bd.uom.domain.service,net.nan21.dnet.modu
+ le.mm.md.domain.entity,net.nan21.dnet.module.mm.md.domain.service,org
+ .springframework.context.weaving;version="[3.0,3.1)"
 
