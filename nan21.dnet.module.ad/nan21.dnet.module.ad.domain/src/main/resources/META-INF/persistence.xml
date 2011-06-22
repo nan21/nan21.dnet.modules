@@ -2,38 +2,21 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
-  
-    <persistence-unit  name="net.nan21.dnet" transaction-type="RESOURCE_LOCAL">
-        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <properties>
-            <property name="eclipselink.weaving" value="none"/>
-            
-            <!--  Validation groups  -->
-            <property name="javax.persistence.validation.group.pre-persist" value="net.nan21.dnet.domain.base.validation.IPreInsertGroup, javax.validation.groups.Default"/>
-            <property name="javax.persistence.validation.group.pre-update" value="net.nan21.dnet.domain.base.validation.IPreUpdateGroup, javax.validation.groups.Default"/>
-              
-            <!-- Optimize database writes to use batching. -->
-            <property name="eclipselink.jdbc.batch-writing" value="NONE" /> <!-- JDBC : https://bugs.eclipse.org/bugs/show_bug.cgi?id=324407 -->
-            <property name="eclipselink.jdbc.native-sql" value="true" />
-            <property name="eclipselink.jdbc.cache-statements" value="true" />
- 
-            <!-- Avoids flush being triggered before every query execution. AUTO/COMMIT-->
-            <property name="eclipselink.persistence-context.flush-mode" value="AUTO" />              
- 
-            <!-- Cache. -->
-            <property name="eclipselink.cache.size.default" value="1000" />
-            <property name="eclipselink.cache.shared.default" value="true" />
-            
-            <!-- DDL generation. -->
-            <property name="eclipselink.ddl-generation" value="create-tables" />
-            <property name="eclipselink.ddl-generation.output-mode" value="database" />
- 
-            <!-- SQL logging. -->
-            <property name="eclipselink.logging.level" value="FINEST" />
-            <property name="eclipselink.logging.thread" value="FINEST" />
-            <property name="eclipselink.logging.session" value="FINEST" />
-            <property name="eclipselink.logging.exceptions" value="FINEST" />
-            <property name="eclipselink.logging.timestamp" value="FINEST" />
-        </properties>
-    </persistence-unit>
+	<persistence-unit name="net.nan21.dnet"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<properties>
+			<property name="eclipselink.weaving" value="static" />
+		</properties>
+	</persistence-unit>
+	
+	<!-- For static weaving. Spring doesn't work with exclude-unlisted-classes=false -->
+	<persistence-unit name="net.nan21.dnet.weaving"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+			<property name="eclipselink.weaving" value="static" />
+		</properties>
+	</persistence-unit>
 </persistence>

@@ -31,7 +31,15 @@ Export-Package: net.nan21.dnet.module.ad.impex.ds.converter;version="1
  ds.model",net.nan21.dnet.module.ad.usr.ds.model;version="1.0.0.M1";us
  es:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.model
  ,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.ad.usr.dom
- ain.entity"
+ ain.entity",net.nan21.dnet.module.ad.workflow.ds.converter;version="1
+ .0.0.M1";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core
+ .presenter.converter,net.nan21.dnet.module.ad.workflow.domain.entity,
+ net.nan21.dnet.module.ad.workflow.ds.model",net.nan21.dnet.module.ad.
+ workflow.ds.model;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.a
+ nnotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter
+ .model,net.nan21.dnet.module.ad.workflow.domain.entity",net.nan21.dne
+ t.module.ad.workflow.ds.param;version="1.0.0.M1";uses:="net.nan21.dne
+ t.core.presenter.model"
 Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]",na
  n21.dnet.core.presenter;version="[1.0.0.M1,1.0.0.M1]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.4)
@@ -54,5 +62,7 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
  module.ad.report.domain.entity,net.nan21.dnet.module.ad.report.domain
  .service,net.nan21.dnet.module.ad.system.domain.entity,net.nan21.dnet
  .module.ad.system.domain.service,net.nan21.dnet.module.ad.usr.domain.
- entity,org.springframework.context.weaving;version="[3.0,3.1)"
+ entity,net.nan21.dnet.module.ad.workflow.domain.entity,net.nan21.dnet
+ .module.ad.workflow.domain.service,org.springframework.context.weavin
+ g;version="[3.0,3.1)"
 

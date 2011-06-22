@@ -243,38 +243,35 @@ public class OrganizationType implements Serializable, IModelWithId,
     }
 
     public void aboutToInsert(DescriptorEvent event) {
-        this.createdAt = new Date();
-        event.updateAttributeWithObject("createdAt", this.createdAt);
-        this.modifiedAt = new Date();
-        event.updateAttributeWithObject("modifiedAt", this.modifiedAt);
-        this.createdBy = Session.user.get().getUsername();
-        event.updateAttributeWithObject("createdBy", this.createdBy);
-
-        this.modifiedBy = Session.user.get().getUsername();
-        event.updateAttributeWithObject("modifiedBy", this.modifiedBy);
-
-        this.clientId = Session.user.get().getClientId();
-        event.updateAttributeWithObject("clientId", this.clientId);
-
+        event.updateAttributeWithObject("createdAt", new Date());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("createdBy", Session.user.get()
+                .getUsername());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
+        event.updateAttributeWithObject("clientId", Session.user.get()
+                .getClientId());
         if (this.virtualEntity == null) {
             event.updateAttributeWithObject("virtualEntity", false);
         }
         if (this.legalEntity == null) {
             event.updateAttributeWithObject("legalEntity", true);
+
         }
         if (this.accountingEnabled == null) {
             event.updateAttributeWithObject("accountingEnabled", false);
         }
         if (this.active == null) {
             event.updateAttributeWithObject("active", true);
+
         }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
-        this.modifiedAt = new Date();
-        event.updateAttributeWithObject("modifiedAt", this.modifiedAt);
-        this.modifiedBy = Session.user.get().getUsername();
-        event.updateAttributeWithObject("modifiedBy", this.modifiedBy);
+        OrganizationType e = (OrganizationType) event.getSource();
+        e.setModifiedAt(new Date());
+        e.setModifiedBy(Session.user.get().getUsername());
+
     }
 
 }
