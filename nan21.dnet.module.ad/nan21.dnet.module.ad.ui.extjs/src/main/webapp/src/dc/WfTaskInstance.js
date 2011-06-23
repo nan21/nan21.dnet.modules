@@ -16,47 +16,49 @@ net.nan21.dnet.module.ad.workflow.dc.WfTaskInstance$Filter = Ext.extend(dnet.bas
  
 	_defineElements_: function () {	
 		//controls	
-		this._elems_.add("id", { name:"id", xtype:"textfield", _rbkey_:"id", dataIndex:"id", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}  });
-		this._elems_.add("processId", { name:"processId", xtype:"textfield", dataIndex:"processId", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}  });
-		this._elems_.add("taskKey", { name:"taskKey", xtype:"textfield", dataIndex:"taskKey", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}  });
-		this._elems_.add("processInstanceId", { name:"processInstanceId", xtype:"textfield", dataIndex:"processInstanceId", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}  });
-		this._elems_.add("executionId", { name:"executionId", xtype:"textfield", dataIndex:"executionId", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}  });
-		this._elems_.add("name", { name:"name", xtype:"textfield", _rbkey_:"name", dataIndex:"name", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}  });
-		this._elems_.add("description", { name:"description", xtype:"textfield", _rbkey_:"description", dataIndex:"description", id:Ext.id(),anchor:"-20",maxLength:4000,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "4000"}  });
-		this._elems_.add("assignee", { name:"assignee", xtype:"textfield", dataIndex:"assignee", id:Ext.id(),anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}  });
-		this._elems_.add("deleteReason", { name:"deleteReason", xtype:"textfield", dataIndex:"deleteReason", id:Ext.id(), width:100,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}  });
+		this._getBuilder_()	
+		.addTextField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20",maxLength:255  })
+		.addTextField({ name:"processId", dataIndex:"processId",anchor:"-20",maxLength:255  })
+		.addTextField({ name:"taskKey", dataIndex:"taskKey",anchor:"-20",maxLength:255  })
+		.addTextField({ name:"processInstanceId", dataIndex:"processInstanceId",anchor:"-20",maxLength:255  })
+		.addTextField({ name:"executionId", dataIndex:"executionId",anchor:"-20",maxLength:255  })
+		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
+		.addTextField({ name:"description",_sharedLabel_:true, dataIndex:"description",anchor:"-20",maxLength:4000  })
+		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20",maxLength:32  })
+		.addTextField({ name:"deleteReason", dataIndex:"deleteReason", width:100,maxLength:255  })
 		//containers
-		this._elems_.add("main", { name:"main", layout:"form", id:Ext.id(), autoScroll:true,width:210,labelWidth:0 });
+		.addPanel({ name:"main", layout:"form", autoScroll:true,width:210,labelWidth:0 })
+		; 
 	}
 	,_linkElements_: function () {
-		this._elems_.get("main")["items"] = [this._elems_.get("id") ,this._elems_.get("processId") ,this._elems_.get("taskKey") ,this._elems_.get("processInstanceId") ,this._elems_.get("executionId") ,this._elems_.get("name") ,this._elems_.get("description") ,this._elems_.get("assignee") ,this._elems_.get("deleteReason") ];
+		this._getBuilder_()
+		.addChildrenTo("main",["id","processId","taskKey","processInstanceId","executionId","name","description","assignee","deleteReason"])
+;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.workflow.dc.WfTaskInstance$Filter", net.nan21.dnet.module.ad.workflow.dc.WfTaskInstance$Filter ); 
  	
 Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 	 
 net.nan21.dnet.module.ad.workflow.dc.WfTaskInstance$List = Ext.extend(dnet.base.AbstractDcvGrid, {
- 	 _columns_: new Ext.util.MixedCollection()
- 	,_elems_ : new Ext.util.MixedCollection()  
-	,_controller_: null 
-	,_noImport_: true
+	 _noImport_: true
 	,_noExport_: false
-	,_defineColumns_: function () {		
-		this._columns_.add("id", { xtype:"gridcolumn",_rbkey_:"id", dataIndex:"id", sortable:true, hidden:true,width:200 });   	
-		this._columns_.add("processId", { xtype:"gridcolumn", dataIndex:"processId", sortable:true, hidden:true,width:200 });   	
-		this._columns_.add("taskKey", { xtype:"gridcolumn", dataIndex:"taskKey", sortable:true, hidden:true,width:200 });   	
-		this._columns_.add("processInstanceId", { xtype:"gridcolumn", dataIndex:"processInstanceId", sortable:true, hidden:true,width:200 });   	
-		this._columns_.add("executionId", { xtype:"gridcolumn", dataIndex:"executionId", sortable:true, hidden:true,width:200 });   	
-		this._columns_.add("name", { xtype:"gridcolumn",_rbkey_:"name", dataIndex:"name", sortable:true, hidden:false,width:200 });   	
-		this._columns_.add("description", { xtype:"gridcolumn",_rbkey_:"description", dataIndex:"description", sortable:true, hidden:false,width:200 });   	
-		this._columns_.add("assignee", { xtype:"gridcolumn", dataIndex:"assignee", sortable:true, hidden:false,width:100 });   	
-		this._columns_.add("startTime", { xtype:"datecolumn", dataIndex:"startTime", sortable:true, hidden:false,format:Ext.DATETIME_FORMAT});   	      	     
-		this._columns_.add("endTime", { xtype:"datecolumn", dataIndex:"endTime", sortable:true, hidden:false,format:Ext.DATETIME_FORMAT});   	      	     
-		this._columns_.add("duration", { xtype:"numbercolumn", dataIndex:"duration", sortable:true, hidden:false, align:"right",format:"0",width:70 });  
-		this._columns_.add("deleteReason", { xtype:"gridcolumn", dataIndex:"deleteReason", sortable:true, hidden:false,width:200 });   	
-		this._columns_.add("priority", { xtype:"numbercolumn", dataIndex:"priority", sortable:true, hidden:true, align:"right",format:"0",width:70 });  
-		this._columns_.add("dueDate", { xtype:"datecolumn", dataIndex:"dueDate", sortable:true, hidden:true,format:Ext.DATETIME_FORMAT});   	      	     
-	  		   
+	,_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addTextColumn({ name:"id", dataIndex:"id", hidden:true,width:200 })   	
+		.addTextColumn({ name:"processId", dataIndex:"processId", hidden:true,width:200 })   	
+		.addTextColumn({ name:"taskKey", dataIndex:"taskKey", hidden:true,width:200 })   	
+		.addTextColumn({ name:"processInstanceId", dataIndex:"processInstanceId", hidden:true,width:200 })   	
+		.addTextColumn({ name:"executionId", dataIndex:"executionId", hidden:true,width:200 })   	
+		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
+		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
+		.addTextColumn({ name:"assignee", dataIndex:"assignee",width:100 })   	
+		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"endTime", dataIndex:"endTime",format:Ext.DATETIME_FORMAT})   	      	     
+		.addNumberColumn({ name:"duration", dataIndex:"duration",format:"0",width:70 })  
+		.addTextColumn({ name:"deleteReason", dataIndex:"deleteReason",width:200 })   	
+		.addNumberColumn({ name:"priority", dataIndex:"priority", hidden:true,format:"0",width:70 })  
+		.addDateColumn({ name:"dueDate", dataIndex:"dueDate", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
+	  ;		   
 	}
 });
  
@@ -64,15 +66,18 @@ Ext.reg("net.nan21.dnet.module.ad.workflow.dc.WfTaskInstance$List", net.nan21.dn
  	
 Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
 net.nan21.dnet.module.ad.workflow.dc.WfTaskInstance$AssignForm = Ext.extend(dnet.base.AbstractDcvForm, {
- 
 	_defineElements_: function () {	
 		//controls	
-		this._elems_.add("assignee", { name:"assignee", xtype:"textfield", dataIndex:"assignee", id:Ext.id(),anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},vtype:"alphanum"  });
+		this._getBuilder_()	
+		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
 		//containers
-		this._elems_.add("main", { name:"main", layout:"form", id:Ext.id() , autoScroll:true,width:250,labelWidth:0 });     
+		.addPanel({ name:"main", layout:"form" , autoScroll:true,width:250,labelWidth:0 })     
+		;     
 	}
 	,_linkElements_: function () {
-		this._elems_.get("main")["items"] = [this._elems_.get("assignee") ];
+		this._getBuilder_()
+		.addChildrenTo("main",["assignee"])
+;
 	}	
 });
 Ext.reg("net.nan21.dnet.module.ad.workflow.dc.WfTaskInstance$AssignForm", net.nan21.dnet.module.ad.workflow.dc.WfTaskInstance$AssignForm ); 

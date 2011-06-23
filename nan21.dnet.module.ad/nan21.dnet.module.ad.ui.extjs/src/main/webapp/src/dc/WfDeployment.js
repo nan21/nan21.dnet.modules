@@ -16,34 +16,36 @@ net.nan21.dnet.module.ad.workflow.dc.WfDeployment$Filter = Ext.extend(dnet.base.
  
 	_defineElements_: function () {	
 		//controls	
-		this._elems_.add("name", { name:"name", xtype:"textfield", _rbkey_:"name", dataIndex:"name", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}  });
-		this._elems_.add("from", { name:"from", xtype:"datefield", dataIndex:"from", id:Ext.id(),width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("from", nv);} }} ,format:Ext.DATE_FORMAT });
-		this._elems_.add("to", { name:"to", xtype:"datefield", dataIndex:"to", id:Ext.id(),width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("to", nv);} }} ,format:Ext.DATE_FORMAT });
+		this._getBuilder_()	
+		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
+		.addDateField({ name:"from", dataIndex:"from",width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("from", nv);} }} ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"to", dataIndex:"to",width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("to", nv);} }} ,format:Ext.DATE_FORMAT })
 		//containers
-		this._elems_.add("col1", { name:"col1", layout:"form", id:Ext.id(),width:210,labelWidth:0 });
-		this._elems_.add("col2", { name:"col2", layout:"form", id:Ext.id(),width:210,labelWidth:0 });
-		this._elems_.add("main", { name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, id:Ext.id() , autoScroll:true });     
+		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		; 
 	}
 	,_linkElements_: function () {
-		this._elems_.get("main")["items"] = [this._elems_.get("col1") ,this._elems_.get("col2") ];
-		this._elems_.get("col1")["items"] = [this._elems_.get("name") ];
-		this._elems_.get("col2")["items"] = [this._elems_.get("from") ,this._elems_.get("to") ];
+		this._getBuilder_()
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["name"])
+		.addChildrenTo("col2",["from","to"])
+;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.workflow.dc.WfDeployment$Filter", net.nan21.dnet.module.ad.workflow.dc.WfDeployment$Filter ); 
  	
 Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 	 
 net.nan21.dnet.module.ad.workflow.dc.WfDeployment$List = Ext.extend(dnet.base.AbstractDcvGrid, {
- 	 _columns_: new Ext.util.MixedCollection()
- 	,_elems_ : new Ext.util.MixedCollection()  
-	,_controller_: null 
-	,_noImport_: false
+	 _noImport_: false
 	,_noExport_: false
-	,_defineColumns_: function () {		
-		this._columns_.add("id", { xtype:"gridcolumn",_rbkey_:"id", dataIndex:"id", sortable:true, hidden:true,width:200 });   	
-		this._columns_.add("name", { xtype:"gridcolumn",_rbkey_:"name", dataIndex:"name", sortable:true, hidden:false, width:300 });   	
-		this._columns_.add("deployTime", { xtype:"datecolumn", dataIndex:"deployTime", sortable:true, hidden:false, width:150,format:Ext.DATETIME_FORMAT});   	      	     
-	  		   
+	,_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addTextColumn({ name:"id", dataIndex:"id", hidden:true,width:200 })   	
+		.addTextColumn({ name:"name", dataIndex:"name", width:300 })   	
+		.addDateColumn({ name:"deployTime", dataIndex:"deployTime", width:150,format:Ext.DATETIME_FORMAT})   	      	     
+	  ;		   
 	}
 });
  

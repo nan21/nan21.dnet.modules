@@ -16,42 +16,45 @@ net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter = Ext.extend(dnet.base
  
 	_defineElements_: function () {	
 		//controls	
-		this._elems_.add("sourceCode", { name:"sourceCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"sourceCode", id:Ext.id(),anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "sourceId"} ]  });
-		this._elems_.add("targetCode", { name:"targetCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"targetCode", id:Ext.id(),anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "targetId"} ]  });
-		this._elems_.add("providerCode", { name:"providerCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders", dataIndex:"providerCode", id:Ext.id(),anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "providerId"} ]  });
-		this._elems_.add("validAt", { name:"validAt", xtype:"datefield", dataIndex:"validAt", id:Ext.id(),width:100 ,format:Ext.DATE_FORMAT });
+		this._getBuilder_()	
+		.addLov({ name:"sourceCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"sourceCode",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "sourceId"} ]  })
+		.addLov({ name:"targetCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"targetCode",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "targetId"} ]  })
+		.addLov({ name:"providerCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders", dataIndex:"providerCode",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "providerId"} ]  })
+		.addDateField({ name:"validAt", dataIndex:"validAt",width:100 ,format:Ext.DATE_FORMAT })
 		//containers
-		this._elems_.add("col1", { name:"col1", layout:"form", id:Ext.id(),width:210,labelWidth:0 });
-		this._elems_.add("col2", { name:"col2", layout:"form", id:Ext.id(),width:210,labelWidth:0 });
-		this._elems_.add("main", { name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, id:Ext.id() , autoScroll:true });     
+		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		; 
 	}
 	,_linkElements_: function () {
-		this._elems_.get("main")["items"] = [this._elems_.get("col1") ,this._elems_.get("col2") ];
-		this._elems_.get("col1")["items"] = [this._elems_.get("sourceCode") ,this._elems_.get("targetCode") ];
-		this._elems_.get("col2")["items"] = [this._elems_.get("providerCode") ,this._elems_.get("validAt") ];
+		this._getBuilder_()
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["sourceCode","targetCode"])
+		.addChildrenTo("col2",["providerCode","validAt"])
+;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter", net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter ); 
  	
 Ext.ns('net.nan21.dnet.module.bd.currency.dc');	 	 
 net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$EditList = Ext.extend(dnet.base.AbstractDcvEditableGrid, {
- 	 _columns_: new Ext.util.MixedCollection()
- 	,_elems_ : new Ext.util.MixedCollection() 
-	,_controller_: null 
-	,_noImport_: false
+	 _noImport_: false
 	,_noExport_: false
-	,_defineColumns_: function () {		
-		this._columns_.add("sourceCode", { xtype:"gridcolumn", dataIndex:"sourceCode", sortable:true, hidden:false,width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},vtype:"alphanum",retFieldMapping: [{lovField:"id", dsField: "sourceId"} ]} });
-		this._columns_.add("targetCode", { xtype:"gridcolumn", dataIndex:"targetCode", sortable:true, hidden:false,width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},vtype:"alphanum",retFieldMapping: [{lovField:"id", dsField: "targetId"} ]} });
-		this._columns_.add("validAt", { xtype:"datecolumn", dataIndex:"validAt", sortable:true, hidden:false,format:Ext.DATE_FORMAT ,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT} });
-		this._columns_.add("value", { xtype:"numbercolumn", dataIndex:"value", sortable:true, hidden:false, align:"right",format:Ext.NUMBER_FORMAT_DEC ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } });
-		this._columns_.add("providerId", { xtype:"numbercolumn", dataIndex:"providerId", sortable:true, hidden:true, align:"right",format:"0",width:70,editable:false ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } });
-		this._columns_.add("providerCode", { xtype:"gridcolumn", dataIndex:"providerCode", sortable:true, hidden:false,width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},vtype:"alphanum",retFieldMapping: [{lovField:"id", dsField: "providerId"} ]} });
-		this._columns_.add("id", { xtype:"numbercolumn",_rbkey_:"id", dataIndex:"id", sortable:true, hidden:true, align:"right",format:"0",width:70,editable:false ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } });
-		this._columns_.add("createdAt", { xtype:"datecolumn",_rbkey_:"createdAt", dataIndex:"createdAt", sortable:true, hidden:true,format:Ext.DATETIME_FORMAT,editable:false ,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT} });
-		this._columns_.add("modifiedAt", { xtype:"datecolumn",_rbkey_:"modifiedAt", dataIndex:"modifiedAt", sortable:true, hidden:false,format:Ext.DATETIME_FORMAT,editable:false ,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT} });
-		this._columns_.add("createdBy", { xtype:"gridcolumn",_rbkey_:"createdBy", dataIndex:"createdBy", sortable:true, hidden:true,width:100,editable:false,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} });
-		this._columns_.add("modifiedBy", { xtype:"gridcolumn",_rbkey_:"modifiedBy", dataIndex:"modifiedBy", sortable:true, hidden:false,width:100,editable:false,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} });
+	,_defineColumns_: function () {
+		this._getBuilder_()
+		.addLov({name:"sourceCode", xtype:"gridcolumn", dataIndex:"sourceCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},vtype:"alphanum",retFieldMapping: [{lovField:"id", dsField: "sourceId"} ]} })
+		.addLov({name:"targetCode", xtype:"gridcolumn", dataIndex:"targetCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},vtype:"alphanum",retFieldMapping: [{lovField:"id", dsField: "targetId"} ]} })
+		.addDateColumn({ name:"validAt", dataIndex:"validAt",format:Ext.DATE_FORMAT ,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT} })
+		.addNumberColumn({ name:"value", dataIndex:"value", align:"right",format:Ext.NUMBER_FORMAT_DEC ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
+		.addNumberColumn({ name:"providerId", dataIndex:"providerId", hidden:true, align:"right",format:"0",width:70,editable:false ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
+		.addLov({name:"providerCode", xtype:"gridcolumn", dataIndex:"providerCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},vtype:"alphanum",retFieldMapping: [{lovField:"id", dsField: "providerId"} ]} })
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70,editable:false ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT,editable:false ,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT} })
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT,editable:false ,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT} })
+		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100,editable:false,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} })
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100,editable:false,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} })
+	  ;  		   
 	}  
 });
 Ext.reg("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$EditList", net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$EditList ); 

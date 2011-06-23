@@ -16,45 +16,47 @@ net.nan21.dnet.module.hr.payroll.dc.Element$Filter = Ext.extend(dnet.base.Abstra
  
 	_defineElements_: function () {	
 		//controls	
-		this._elems_.add("code", { name:"code", xtype:"textfield", _rbkey_:"code", dataIndex:"code", id:Ext.id(),anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}  });
-		this._elems_.add("name", { name:"name", xtype:"textfield", _rbkey_:"name", dataIndex:"name", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}  });
-		this._elems_.add("dataType", { name:"dataType", xtype:"combo", dataIndex:"dataType", id:Ext.id(),anchor:"-20",store:[ "string", "number", "boolean", "date"]  });
-		this._elems_.add("type", { name:"type", xtype:"net.nan21.dnet.module.hr.payroll.lovs.ElementTypes", dataIndex:"type", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  });
-		this._elems_.add("active", { name:"active", xtype:"combo", mode: 'local',_rbkey_:"active", dataIndex:"active", id:Ext.id(), selectOnFocus:true, valueField: 'bv', displayField: 'tv',  store:new Ext.data.ArrayStore({idIndex:0,fields: [ 'bv', 'tv' ], data: [[true,Dnet.translate("msg", "bool_true")],[false,Dnet.translate("msg", "bool_false")]] }), triggerAction:'all', forceSelection:true, width:70  });
+		this._getBuilder_()	
+		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
+		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
+		.addCombo({ name:"dataType", xtype:"combo", dataIndex:"dataType", id:Ext.id(),anchor:"-20",store:[ "string", "number", "boolean", "date"]  })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.payroll.lovs.ElementTypes", dataIndex:"type",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
 		//containers
-		this._elems_.add("col1", { name:"col1", layout:"form", id:Ext.id(),width:210,labelWidth:0 });
-		this._elems_.add("col2", { name:"col2", layout:"form", id:Ext.id(), width:250,labelWidth:0 });
-		this._elems_.add("col3", { name:"col3", layout:"form", id:Ext.id(),width:210,labelWidth:0 });
-		this._elems_.add("main", { name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, id:Ext.id() , autoScroll:true });     
+		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"form", width:250,labelWidth:0 })
+		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		; 
 	}
 	,_linkElements_: function () {
-		this._elems_.get("main")["items"] = [this._elems_.get("col1") ,this._elems_.get("col2") ,this._elems_.get("col3") ];
-		this._elems_.get("col1")["items"] = [this._elems_.get("name") ,this._elems_.get("code") ];
-		this._elems_.get("col2")["items"] = [this._elems_.get("type") ,this._elems_.get("dataType") ];
-		this._elems_.get("col3")["items"] = [this._elems_.get("active") ];
+		this._getBuilder_()
+		.addChildrenTo("main",["col1","col2","col3"])
+		.addChildrenTo("col1",["name","code"])
+		.addChildrenTo("col2",["type","dataType"])
+		.addChildrenTo("col3",["active"])
+;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.hr.payroll.dc.Element$Filter", net.nan21.dnet.module.hr.payroll.dc.Element$Filter ); 
  	
 Ext.ns('net.nan21.dnet.module.hr.payroll.dc');	 	 
 net.nan21.dnet.module.hr.payroll.dc.Element$List = Ext.extend(dnet.base.AbstractDcvGrid, {
- 	 _columns_: new Ext.util.MixedCollection()
- 	,_elems_ : new Ext.util.MixedCollection()  
-	,_controller_: null 
-	,_noImport_: false
+	 _noImport_: false
 	,_noExport_: false
-	,_defineColumns_: function () {		
-		this._columns_.add("code", { xtype:"gridcolumn",_rbkey_:"code", dataIndex:"code", sortable:true, hidden:false,width:100 });   	
-		this._columns_.add("name", { xtype:"gridcolumn",_rbkey_:"name", dataIndex:"name", sortable:true, hidden:false,width:200 });   	
-		this._columns_.add("dataType", { xtype:"gridcolumn", dataIndex:"dataType", sortable:true, hidden:false,width:100 });   	
-		this._columns_.add("active", { xtype:"booleancolumn",_rbkey_:"active", dataIndex:"active", sortable:true, hidden:false, trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false")});   	     
-		this._columns_.add("notes", { xtype:"gridcolumn",_rbkey_:"notes", dataIndex:"notes", sortable:true, hidden:false,width:200 });   	
-		this._columns_.add("id", { xtype:"numbercolumn",_rbkey_:"id", dataIndex:"id", sortable:true, hidden:true, align:"right",format:"0",width:70 });  
-		this._columns_.add("createdAt", { xtype:"datecolumn",_rbkey_:"createdAt", dataIndex:"createdAt", sortable:true, hidden:true,format:Ext.DATETIME_FORMAT});   	      	     
-		this._columns_.add("modifiedAt", { xtype:"datecolumn",_rbkey_:"modifiedAt", dataIndex:"modifiedAt", sortable:true, hidden:false,format:Ext.DATETIME_FORMAT});   	      	     
-		this._columns_.add("createdBy", { xtype:"gridcolumn",_rbkey_:"createdBy", dataIndex:"createdBy", sortable:true, hidden:true,width:100 });   	
-		this._columns_.add("modifiedBy", { xtype:"gridcolumn",_rbkey_:"modifiedBy", dataIndex:"modifiedBy", sortable:true, hidden:false,width:100 });   	
-	  		   
+	,_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
+		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
+		.addTextColumn({ name:"dataType", dataIndex:"dataType",width:100 })   	
+		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200 })   	
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})   	      	     
+		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
+	  ;		   
 	}
 });
  
@@ -62,26 +64,29 @@ Ext.reg("net.nan21.dnet.module.hr.payroll.dc.Element$List", net.nan21.dnet.modul
  	
 Ext.ns('net.nan21.dnet.module.hr.payroll.dc');	 
 net.nan21.dnet.module.hr.payroll.dc.Element$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
- 
 	_defineElements_: function () {	
 		//controls	
-		this._elems_.add("code", { name:"code", xtype:"textfield",_rbkey_:"code", dataIndex:"code", id:Ext.id(),anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},vtype:"alphanum"  });
-		this._elems_.add("name", { name:"name", xtype:"textfield",_rbkey_:"name", dataIndex:"name", id:Ext.id(),anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}  });
-		this._elems_.add("active", { name:"active", xtype:"checkbox", _rbkey_:"active", dataIndex:"active", id:Ext.id()  });
-		this._elems_.add("notes", { name:"notes", xtype:"textarea", _rbkey_:"notes", dataIndex:"notes", id:Ext.id(),height:60,anchor:"-20"   });
-		this._elems_.add("dataType", { name:"dataType", xtype:"combo", dataIndex:"dataType", id:Ext.id(),anchor:"-20",allowBlank:false, labelSeparator:"*",store:[ "string", "number", "boolean", "date"]  });
-		this._elems_.add("type", { name:"type", xtype:"net.nan21.dnet.module.hr.payroll.lovs.ElementTypes", dataIndex:"type", id:Ext.id(),anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  });
+		this._getBuilder_()	
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
+		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addCheckbox({ name:"active", dataIndex:"active"  })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
+		.addCombo({ name:"dataType", xtype:"combo", dataIndex:"dataType",anchor:"-20",allowBlank:false,store:[ "string", "number", "boolean", "date"]  })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.payroll.lovs.ElementTypes", dataIndex:"type",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
-		this._elems_.add("col1", { name:"col1", layout:"form", id:Ext.id() , width:300,labelWidth:0 });     
-		this._elems_.add("col2", { name:"col2", layout:"form", id:Ext.id() ,width:250,labelWidth:0 });     
-		this._elems_.add("col3", { name:"col3", layout:"form", id:Ext.id() , width:350,labelWidth:0 });     
-		this._elems_.add("main", { name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, id:Ext.id() , autoScroll:true }); 
+		.addPanel({ name:"col1", layout:"form" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"form" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col3", layout:"form" , width:350,labelWidth:0 })     
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		;     
 	}
 	,_linkElements_: function () {
-		this._elems_.get("main")["items"] = [this._elems_.get("col1") ,this._elems_.get("col2") ,this._elems_.get("col3") ];
-		this._elems_.get("col1")["items"] = [this._elems_.get("name") ,this._elems_.get("code") ,this._elems_.get("type") ];
-		this._elems_.get("col2")["items"] = [this._elems_.get("dataType") ,this._elems_.get("active") ];
-		this._elems_.get("col3")["items"] = [this._elems_.get("notes") ];
+		this._getBuilder_()
+		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
+		.addChildrenTo("col1",["name","code","type"])
+		.addChildrenTo("col2",["dataType","active"])
+		.addChildrenTo("col3",["notes"])
+;
 	}	
 });
 Ext.reg("net.nan21.dnet.module.hr.payroll.dc.Element$Edit", net.nan21.dnet.module.hr.payroll.dc.Element$Edit ); 

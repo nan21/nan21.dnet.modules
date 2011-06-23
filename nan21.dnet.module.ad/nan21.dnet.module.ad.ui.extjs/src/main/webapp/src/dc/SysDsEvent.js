@@ -13,14 +13,12 @@ net.nan21.dnet.module.ad.system.dc.SysDsEvent = Ext.extend(dnet.base.AbstractDc,
  	
 Ext.ns('net.nan21.dnet.module.ad.system.dc');	 	 
 net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList = Ext.extend(dnet.base.AbstractDcvGrid, {
- 	 _columns_: new Ext.util.MixedCollection()
- 	,_elems_ : new Ext.util.MixedCollection()  
-	,_controller_: null 
-	,_noImport_: false
+	 _noImport_: false
 	,_noExport_: false
-	,_defineColumns_: function () {		
-		this._columns_.add("name", { xtype:"gridcolumn",_rbkey_:"name", dataIndex:"name", sortable:true, hidden:false,width:100 });   	
-	  		   
+	,_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addTextColumn({ name:"name", dataIndex:"name",width:100 })   	
+	  ;		   
 	}
 });
  

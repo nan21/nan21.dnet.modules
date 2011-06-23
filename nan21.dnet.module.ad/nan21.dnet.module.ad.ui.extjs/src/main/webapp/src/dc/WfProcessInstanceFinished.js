@@ -16,45 +16,47 @@ net.nan21.dnet.module.ad.workflow.dc.WfProcessInstanceFinished$Filter = Ext.exte
  
 	_defineElements_: function () {	
 		//controls	
-		this._elems_.add("id", { name:"id", xtype:"textfield", _rbkey_:"id", dataIndex:"id", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}  });
-		this._elems_.add("processFullName", { name:"processFullName", xtype:"net.nan21.dnet.module.ad.workflow.lovs.WfProcesses", dataIndex:"processFullName", id:Ext.id(),anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "processId"} ],listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("processFullName", nv);} }}  });
-		this._elems_.add("startedBy", { name:"startedBy", xtype:"textfield", dataIndex:"startedBy", id:Ext.id(),anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}  });
-		this._elems_.add("startTime", { name:"startTime", xtype:"datefield", dataIndex:"startTime", id:Ext.id(),width:100 ,format:Ext.DATE_FORMAT });
-		this._elems_.add("endTime", { name:"endTime", xtype:"datefield", dataIndex:"endTime", id:Ext.id(),width:100 ,format:Ext.DATE_FORMAT });
+		this._getBuilder_()	
+		.addTextField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20",maxLength:255  })
+		.addLov({ name:"processFullName", xtype:"net.nan21.dnet.module.ad.workflow.lovs.WfProcesses", dataIndex:"processFullName",anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "processId"} ],listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("processFullName", nv);} }}  })
+		.addTextField({ name:"startedBy", dataIndex:"startedBy",anchor:"-20",maxLength:32  })
+		.addDateField({ name:"startTime", dataIndex:"startTime",width:100 ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"endTime", dataIndex:"endTime",width:100 ,format:Ext.DATE_FORMAT })
 		//containers
-		this._elems_.add("col1", { name:"col1", layout:"form", id:Ext.id(), width:300,labelWidth:0 });
-		this._elems_.add("col2", { name:"col2", layout:"form", id:Ext.id(),width:210,labelWidth:0 });
-		this._elems_.add("col3", { name:"col3", layout:"form", id:Ext.id(),width:210,labelWidth:0 });
-		this._elems_.add("main", { name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, id:Ext.id() , autoScroll:true });     
+		.addPanel({ name:"col1", layout:"form", width:300,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		; 
 	}
 	,_linkElements_: function () {
-		this._elems_.get("main")["items"] = [this._elems_.get("col1") ,this._elems_.get("col2") ,this._elems_.get("col3") ];
-		this._elems_.get("col1")["items"] = [this._elems_.get("processFullName") ];
-		this._elems_.get("col2")["items"] = [this._elems_.get("startTime") ,this._elems_.get("endTime") ];
-		this._elems_.get("col3")["items"] = [this._elems_.get("startedBy") ,this._elems_.get("id") ];
+		this._getBuilder_()
+		.addChildrenTo("main",["col1","col2","col3"])
+		.addChildrenTo("col1",["processFullName"])
+		.addChildrenTo("col2",["startTime","endTime"])
+		.addChildrenTo("col3",["startedBy","id"])
+;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.workflow.dc.WfProcessInstanceFinished$Filter", net.nan21.dnet.module.ad.workflow.dc.WfProcessInstanceFinished$Filter ); 
  	
 Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 	 
 net.nan21.dnet.module.ad.workflow.dc.WfProcessInstanceFinished$List = Ext.extend(dnet.base.AbstractDcvGrid, {
- 	 _columns_: new Ext.util.MixedCollection()
- 	,_elems_ : new Ext.util.MixedCollection()  
-	,_controller_: null 
-	,_noImport_: true
+	 _noImport_: true
 	,_noExport_: false
-	,_defineColumns_: function () {		
-		this._columns_.add("id", { xtype:"gridcolumn",_rbkey_:"id", dataIndex:"id", sortable:true, hidden:true,width:200 });   	
-		this._columns_.add("process", { xtype:"gridcolumn", dataIndex:"process", sortable:true, hidden:false,width:200 });   	
-		this._columns_.add("processVersion", { xtype:"numbercolumn", dataIndex:"processVersion", sortable:true, hidden:false, align:"right",format:"0",width:70 });  
-		this._columns_.add("processInstanceId", { xtype:"gridcolumn", dataIndex:"processInstanceId", sortable:true, hidden:true,width:200 });   	
-		this._columns_.add("startTime", { xtype:"datecolumn", dataIndex:"startTime", sortable:true, hidden:false,format:Ext.DATETIME_FORMAT});   	      	     
-		this._columns_.add("endTime", { xtype:"datecolumn", dataIndex:"endTime", sortable:true, hidden:false,format:Ext.DATETIME_FORMAT});   	      	     
-		this._columns_.add("duration", { xtype:"numbercolumn", dataIndex:"duration", sortable:true, hidden:false, align:"right",format:"0",width:70 });  
-		this._columns_.add("startedBy", { xtype:"gridcolumn", dataIndex:"startedBy", sortable:true, hidden:false,width:100 });   	
-		this._columns_.add("startAction", { xtype:"gridcolumn", dataIndex:"startAction", sortable:true, hidden:false, width:100 });   	
-		this._columns_.add("endAction", { xtype:"gridcolumn", dataIndex:"endAction", sortable:true, hidden:false, width:100 });   	
-	  		   
+	,_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addTextColumn({ name:"id", dataIndex:"id", hidden:true,width:200 })   	
+		.addTextColumn({ name:"process", dataIndex:"process",width:200 })   	
+		.addNumberColumn({ name:"processVersion", dataIndex:"processVersion",format:"0",width:70 })  
+		.addTextColumn({ name:"processInstanceId", dataIndex:"processInstanceId", hidden:true,width:200 })   	
+		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"endTime", dataIndex:"endTime",format:Ext.DATETIME_FORMAT})   	      	     
+		.addNumberColumn({ name:"duration", dataIndex:"duration",format:"0",width:70 })  
+		.addTextColumn({ name:"startedBy", dataIndex:"startedBy",width:100 })   	
+		.addTextColumn({ name:"startAction", dataIndex:"startAction", width:100 })   	
+		.addTextColumn({ name:"endAction", dataIndex:"endAction", width:100 })   	
+	  ;		   
 	}
 });
  

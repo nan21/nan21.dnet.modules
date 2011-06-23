@@ -16,41 +16,43 @@ net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter = Ext.extend(dnet.base.A
  
 	_defineElements_: function () {	
 		//controls	
-		this._elems_.add("element", { name:"element", xtype:"net.nan21.dnet.module.hr.payroll.lovs.Elements", dataIndex:"element", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "elementId"} ]  });
-		this._elems_.add("employeeName", { name:"employeeName", xtype:"net.nan21.dnet.module.hr.employee.lovs.Employees", dataIndex:"employeeName", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "employeeId"} ]  });
-		this._elems_.add("period", { name:"period", xtype:"net.nan21.dnet.module.hr.payroll.lovs.PayrollPeriods", dataIndex:"period", id:Ext.id(),anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "periodId"} ]  });
+		this._getBuilder_()	
+		.addLov({ name:"element", xtype:"net.nan21.dnet.module.hr.payroll.lovs.Elements", dataIndex:"element",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "elementId"} ]  })
+		.addLov({ name:"employeeName", xtype:"net.nan21.dnet.module.hr.employee.lovs.Employees", dataIndex:"employeeName",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "employeeId"} ]  })
+		.addLov({ name:"period", xtype:"net.nan21.dnet.module.hr.payroll.lovs.PayrollPeriods", dataIndex:"period",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "periodId"} ]  })
 		//containers
-		this._elems_.add("col1", { name:"col1", layout:"form", id:Ext.id(),width:210,labelWidth:0 });
-		this._elems_.add("col2", { name:"col2", layout:"form", id:Ext.id(),width:210,labelWidth:0 });
-		this._elems_.add("main", { name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, id:Ext.id() , autoScroll:true });     
+		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		; 
 	}
 	,_linkElements_: function () {
-		this._elems_.get("main")["items"] = [this._elems_.get("col1") ,this._elems_.get("col2") ];
-		this._elems_.get("col1")["items"] = [this._elems_.get("element") ,this._elems_.get("period") ];
-		this._elems_.get("col2")["items"] = [this._elems_.get("employeeName") ];
+		this._getBuilder_()
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["element","period"])
+		.addChildrenTo("col2",["employeeName"])
+;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter", net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter ); 
  	
 Ext.ns('net.nan21.dnet.module.hr.payroll.dc');	 	 
 net.nan21.dnet.module.hr.payroll.dc.ElementValue$List = Ext.extend(dnet.base.AbstractDcvGrid, {
- 	 _columns_: new Ext.util.MixedCollection()
- 	,_elems_ : new Ext.util.MixedCollection()  
-	,_controller_: null 
-	,_noImport_: false
+	 _noImport_: false
 	,_noExport_: false
-	,_defineColumns_: function () {		
-		this._columns_.add("elementId", { xtype:"numbercolumn", dataIndex:"elementId", sortable:true, hidden:true, align:"right",format:"0",width:70 });  
-		this._columns_.add("element", { xtype:"gridcolumn", dataIndex:"element", sortable:true, hidden:false,width:200 });   	
-		this._columns_.add("employeeId", { xtype:"numbercolumn", dataIndex:"employeeId", sortable:true, hidden:true, align:"right",format:"0",width:70 });  
-		this._columns_.add("employeeName", { xtype:"gridcolumn", dataIndex:"employeeName", sortable:true, hidden:false,width:200 });   	
-		this._columns_.add("value", { xtype:"gridcolumn", dataIndex:"value", sortable:true, hidden:false,width:200 });   	
-		this._columns_.add("periodId", { xtype:"numbercolumn", dataIndex:"periodId", sortable:true, hidden:true, align:"right",format:"0",width:70 });  
-		this._columns_.add("period", { xtype:"gridcolumn", dataIndex:"period", sortable:true, hidden:false,width:120 });   	
-		this._columns_.add("id", { xtype:"numbercolumn",_rbkey_:"id", dataIndex:"id", sortable:true, hidden:true, align:"right",format:"0",width:70 });  
-		this._columns_.add("createdAt", { xtype:"datecolumn",_rbkey_:"createdAt", dataIndex:"createdAt", sortable:true, hidden:true,format:Ext.DATETIME_FORMAT});   	      	     
-		this._columns_.add("createdBy", { xtype:"gridcolumn",_rbkey_:"createdBy", dataIndex:"createdBy", sortable:true, hidden:true,width:100 });   	
-	  		   
+	,_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addNumberColumn({ name:"elementId", dataIndex:"elementId", hidden:true,format:"0",width:70 })  
+		.addTextColumn({ name:"element", dataIndex:"element",width:200 })   	
+		.addNumberColumn({ name:"employeeId", dataIndex:"employeeId", hidden:true,format:"0",width:70 })  
+		.addTextColumn({ name:"employeeName", dataIndex:"employeeName",width:200 })   	
+		.addTextColumn({ name:"value", dataIndex:"value",width:200 })   	
+		.addNumberColumn({ name:"periodId", dataIndex:"periodId", hidden:true,format:"0",width:70 })  
+		.addTextColumn({ name:"period", dataIndex:"period",width:120 })   	
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
+		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
+	  ;		   
 	}
 });
  
