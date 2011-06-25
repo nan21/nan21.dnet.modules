@@ -68,15 +68,11 @@ net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI = Ext.extend( dnet.base.Abstr
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbcustGroup", {dc:"custGroup"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbvendGroup", {dc:"vendGroup"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbdelivMtd", {dc:"delivMtd"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbpayMtd", {dc:"payMtd"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbpayTerm", {dc:"payTerm"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbcustGroup", {dc:"custGroup"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbvendGroup", {dc:"vendGroup"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbdelivMtd", {dc:"delivMtd"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbpayMtd", {dc:"payMtd"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbpayTerm", {dc:"payTerm"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

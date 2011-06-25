@@ -43,11 +43,9 @@ net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMapList", {dc:"map"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbMapEdit", {dc:"map"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
-		this._getBuilder_()
-			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbMapList", {dc:"map"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbMapEdit", {dc:"map"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

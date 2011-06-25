@@ -28,7 +28,7 @@ net.nan21.dnet.module.bp.md.frame.BPartner_UI = Ext.extend( dnet.base.AbstractUi
 		.addDcView("bpPhone",{ name:"bpPhoneEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannel$EditList", frame:true,title:"Communication"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "addressPanel",layout:"card", activeItem:0,title:"Address"})  	 
-		.addPanel({name: "bpDetailsTab", layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
+		.addPanel({name: "bpDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
 		.addPanel({name: "addressEditWrapper", layout:"fit"})
@@ -53,19 +53,13 @@ net.nan21.dnet.module.bp.md.frame.BPartner_UI = Ext.extend( dnet.base.AbstractUi
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbBpList", {dc:"bp"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbBpEdit", {dc:"bp"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
-		this._getBuilder_()
-			.beginToolbar("tlbBpContactList", {dc:"bpContact"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbAddressList", {dc:"address"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbAddressEdit", {dc:"address"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
-		this._getBuilder_()
-			.beginToolbar("tlbBpBankAccountList", {dc:"bpBankAcct"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbBpPhoneNumber", {dc:"bpPhone"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbBpList", {dc:"bp"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbBpEdit", {dc:"bp"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbBpContactList", {dc:"bpContact"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbAddressList", {dc:"address"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbAddressEdit", {dc:"address"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbBpBankAccountList", {dc:"bpBankAcct"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbBpPhoneNumber", {dc:"bpPhone"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

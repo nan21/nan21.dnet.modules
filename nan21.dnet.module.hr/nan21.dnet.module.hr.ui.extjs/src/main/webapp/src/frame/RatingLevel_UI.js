@@ -25,7 +25,7 @@ net.nan21.dnet.module.hr.skill.frame.RatingLevel_UI = Ext.extend( dnet.base.Abst
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

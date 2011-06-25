@@ -25,7 +25,7 @@ net.nan21.dnet.module.ad.org.frame.OrgType_UI = Ext.extend( dnet.base.AbstractUi
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbOrgtypeList", {dc:"orgtype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbOrgtypeList", {dc:"orgtype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

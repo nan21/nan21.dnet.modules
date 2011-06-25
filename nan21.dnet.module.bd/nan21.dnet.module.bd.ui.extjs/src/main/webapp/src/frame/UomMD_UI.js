@@ -33,11 +33,9 @@ net.nan21.dnet.module.bd.uom.frame.UomMD_UI = Ext.extend( dnet.base.AbstractUi, 
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbUomList", {dc:"uom"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbUomEdit", {dc:"uom"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
-		this._getBuilder_()
-			.beginToolbar("tlbCnvEditList", {dc:"cnv"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbUomList", {dc:"uom"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbUomEdit", {dc:"uom"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbCnvEditList", {dc:"cnv"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

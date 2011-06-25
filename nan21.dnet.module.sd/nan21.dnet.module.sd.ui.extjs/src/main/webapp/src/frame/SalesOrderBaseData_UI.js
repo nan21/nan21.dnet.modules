@@ -50,9 +50,8 @@ net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI = Ext.extend( dnet.ba
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbOrderType", {dc:"orderType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbOrderStatus", {dc:"orderStatus"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbOrderType", {dc:"orderType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbOrderStatus", {dc:"orderStatus"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

@@ -66,11 +66,9 @@ net.nan21.dnet.module.ad.workflow.frame.WfTasks = Ext.extend( dnet.base.Abstract
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMytaskList", {dc:"dcMytask"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbAvailabletaskList", {dc:"dcAvailabletask"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbMyhistoryList", {dc:"dcMyhistory"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbMytaskList", {dc:"dcMytask"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbAvailabletaskList", {dc:"dcAvailabletask"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbMyhistoryList", {dc:"dcMyhistory"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

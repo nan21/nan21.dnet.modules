@@ -50,9 +50,8 @@ net.nan21.dnet.module.hr.training.frame.CourseType_UI = Ext.extend( dnet.base.Ab
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbCcategEditList", {dc:"ccateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbCtypeEditList", {dc:"ctype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbCcategEditList", {dc:"ccateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbCtypeEditList", {dc:"ctype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

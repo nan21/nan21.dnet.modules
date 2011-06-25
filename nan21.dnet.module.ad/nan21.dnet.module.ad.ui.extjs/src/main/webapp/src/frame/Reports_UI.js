@@ -23,7 +23,7 @@ net.nan21.dnet.module.ad.report.frame.Reports_UI = Ext.extend( dnet.base.Abstrac
 		.addDcView("dsrep",{ name:"dsrepList", xtype:"net.nan21.dnet.module.ad.report.dc.DsReport$ReportCtxList", frame:true})	 
 		.addDcView("dsparam",{ name:"dsparamList", xtype:"net.nan21.dnet.module.ad.report.dc.DsReportParam$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "repDetailsTab", layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
+		.addPanel({name: "repDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
 		.addPanel({name: "dsRep", layout:"border", defaults:{split:true},title:"Data-source links"})  	 
@@ -45,15 +45,11 @@ net.nan21.dnet.module.ad.report.frame.Reports_UI = Ext.extend( dnet.base.Abstrac
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbRepList", {dc:"rep"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbRepEdit", {dc:"rep"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
-		this._getBuilder_()
-			.beginToolbar("tlbParamList", {dc:"params"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbDsRepList", {dc:"dsrep"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbDsParamList", {dc:"dsparam"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbRepList", {dc:"rep"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbRepEdit", {dc:"rep"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbParamList", {dc:"params"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbDsRepList", {dc:"dsrep"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbDsParamList", {dc:"dsparam"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

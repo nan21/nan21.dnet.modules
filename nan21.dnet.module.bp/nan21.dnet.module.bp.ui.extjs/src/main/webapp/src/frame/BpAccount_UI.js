@@ -29,9 +29,8 @@ net.nan21.dnet.module.bp.md.frame.BpAccount_UI = Ext.extend( dnet.base.AbstractU
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMList", {dc:"m"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbMEdit", {dc:"m"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
+			.beginToolbar("tlbMList", {dc:"m"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbMEdit", {dc:"m"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end(); 	
 	}
 
 });

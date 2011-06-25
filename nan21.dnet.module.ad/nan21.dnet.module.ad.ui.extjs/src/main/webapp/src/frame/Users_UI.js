@@ -39,9 +39,8 @@ net.nan21.dnet.module.ad.usr.frame.Users_UI = Ext.extend( dnet.base.AbstractUi, 
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbUsrList", {dc:"usr"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbUsrEdit", {dc:"usr"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
+			.beginToolbar("tlbUsrList", {dc:"usr"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbUsrEdit", {dc:"usr"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end(); 	
 	}
 
 });

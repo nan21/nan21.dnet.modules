@@ -30,7 +30,7 @@ net.nan21.dnet.module.ad.usr.frame.UserGroups_UI = Ext.extend( dnet.base.Abstrac
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbGroupEditList", {dc:"dcGroup"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbGroupEditList", {dc:"dcGroup"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

@@ -25,7 +25,7 @@ net.nan21.dnet.module.bd.currency.frame.Currencies_UI = Ext.extend( dnet.base.Ab
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMain", {dc:"currency"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbMain", {dc:"currency"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

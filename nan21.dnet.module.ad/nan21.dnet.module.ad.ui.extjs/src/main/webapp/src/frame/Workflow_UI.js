@@ -99,13 +99,10 @@ net.nan21.dnet.module.ad.workflow.frame.Workflow_UI = Ext.extend( dnet.base.Abst
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbProcessList", {dc:"dcProcess"}).addQuery().end();
-		this._getBuilder_()
-			.beginToolbar("tlbRunningInstanceList", {dc:"dcRunningInstance"}).addQuery().end();
-		this._getBuilder_()
-			.beginToolbar("tlbFinishedInstanceList", {dc:"dcFinishedInstance"}).addQuery().end();
-		this._getBuilder_()
-			.beginToolbar("tlbDeploymentList", {dc:"dcDeployment"}).addQuery().end();
+			.beginToolbar("tlbProcessList", {dc:"dcProcess"}).addQuery().end()
+			.beginToolbar("tlbRunningInstanceList", {dc:"dcRunningInstance"}).addQuery().end()
+			.beginToolbar("tlbFinishedInstanceList", {dc:"dcFinishedInstance"}).addQuery().end()
+			.beginToolbar("tlbDeploymentList", {dc:"dcDeployment"}).addQuery().end(); 	
 	}
 
 });

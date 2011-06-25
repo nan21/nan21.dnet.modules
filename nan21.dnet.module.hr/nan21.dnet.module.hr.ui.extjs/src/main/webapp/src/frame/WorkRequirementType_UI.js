@@ -25,7 +25,7 @@ net.nan21.dnet.module.hr.job.frame.WorkRequirementType_UI = Ext.extend( dnet.bas
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlb", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlb", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

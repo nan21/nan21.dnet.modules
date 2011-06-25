@@ -25,7 +25,7 @@ net.nan21.dnet.module.bd.currency.frame.CurrencyXrateProvider_UI = Ext.extend( d
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMain", {dc:"prvd"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbMain", {dc:"prvd"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

@@ -66,15 +66,11 @@ net.nan21.dnet.module.ad.org.frame.Org_UI = Ext.extend( dnet.base.AbstractUi, {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbOrgList", {dc:"org"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbOrgEdit", {dc:"org"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
-		this._getBuilder_()
-			.beginToolbar("tlbHierarchyList", {dc:"hierarchy"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbHierarchyEdit", {dc:"hierarchy"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
-		this._getBuilder_()
-			.beginToolbar("tlbItemsEditList", {dc:"items"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbOrgList", {dc:"org"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbOrgEdit", {dc:"org"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbHierarchyList", {dc:"hierarchy"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbHierarchyEdit", {dc:"hierarchy"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbItemsEditList", {dc:"items"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

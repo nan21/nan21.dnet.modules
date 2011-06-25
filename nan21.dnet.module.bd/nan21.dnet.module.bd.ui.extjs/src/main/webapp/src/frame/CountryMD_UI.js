@@ -33,11 +33,9 @@ net.nan21.dnet.module.bd.geo.frame.CountryMD_UI = Ext.extend( dnet.base.Abstract
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbCountryList", {dc:"country"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbCountryEdit", {dc:"country"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
-		this._getBuilder_()
-			.beginToolbar("tlbRegionList", {dc:"region"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbCountryList", {dc:"country"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbCountryEdit", {dc:"country"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbRegionList", {dc:"region"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

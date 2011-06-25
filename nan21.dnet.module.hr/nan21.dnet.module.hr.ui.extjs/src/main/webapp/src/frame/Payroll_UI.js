@@ -33,11 +33,9 @@ net.nan21.dnet.module.hr.payroll.frame.Payroll_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbPayrollList", {dc:"payroll"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbPayrollEdit", {dc:"payroll"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
-		this._getBuilder_()
-			.beginToolbar("tlbPeriodCtxEditList", {dc:"period"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbPayrollList", {dc:"payroll"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbPayrollEdit", {dc:"payroll"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbPeriodCtxEditList", {dc:"period"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

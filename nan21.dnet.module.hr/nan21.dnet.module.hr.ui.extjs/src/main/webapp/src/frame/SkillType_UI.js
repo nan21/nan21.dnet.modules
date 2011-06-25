@@ -50,9 +50,8 @@ net.nan21.dnet.module.hr.skill.frame.SkillType_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbscateg", {dc:"scateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbstype", {dc:"stype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbscateg", {dc:"scateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbstype", {dc:"stype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

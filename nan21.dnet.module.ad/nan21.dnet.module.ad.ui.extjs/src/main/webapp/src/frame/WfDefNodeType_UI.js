@@ -25,7 +25,7 @@ net.nan21.dnet.module.ad.workflow.frame.WfDefNodeType_UI = Ext.extend( dnet.base
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbNodeTypeEditList", {dc:"dcNodeType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbNodeTypeEditList", {dc:"dcNodeType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

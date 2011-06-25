@@ -25,7 +25,7 @@ net.nan21.dnet.module.hr.employee.frame.LicenseType_UI = Ext.extend( dnet.base.A
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlb", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlb", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

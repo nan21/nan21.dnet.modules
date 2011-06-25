@@ -25,7 +25,7 @@ net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI = Ext.extend( dnet.bas
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbXrateEditList", {dc:"xrate"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbXrateEditList", {dc:"xrate"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

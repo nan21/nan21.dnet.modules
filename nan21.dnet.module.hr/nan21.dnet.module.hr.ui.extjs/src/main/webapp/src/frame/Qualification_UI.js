@@ -16,7 +16,7 @@ net.nan21.dnet.module.hr.skill.frame.Qualification_UI = Ext.extend( dnet.base.Ab
 		.addDcView("qualif",{ name:"qualifEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.Qualification$EditList", frame:true})	 
 		.addDcView("skill",{ name:"skillCtxEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.QualificationSkill$CtxEditList", frame:true,title:"Required competence"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "panelRequirements", layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:500}}) 	  	 
+		.addPanel({name: "panelRequirements", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:500}}) 	  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
 	}
 
@@ -31,9 +31,8 @@ net.nan21.dnet.module.hr.skill.frame.Qualification_UI = Ext.extend( dnet.base.Ab
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbQualifEditList", {dc:"qualif"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbSkillCtxEditList", {dc:"skill"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbQualifEditList", {dc:"qualif"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbSkillCtxEditList", {dc:"skill"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

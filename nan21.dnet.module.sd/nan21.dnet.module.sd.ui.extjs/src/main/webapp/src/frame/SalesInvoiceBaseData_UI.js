@@ -50,9 +50,8 @@ net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI = Ext.extend( dne
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbInvType", {dc:"invType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
-		this._getBuilder_()
-			.beginToolbar("tlbInvStatus", {dc:"invStatus"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbInvType", {dc:"invType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
+			.beginToolbar("tlbInvStatus", {dc:"invStatus"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

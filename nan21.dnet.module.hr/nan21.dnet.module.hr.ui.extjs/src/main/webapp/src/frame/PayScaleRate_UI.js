@@ -33,11 +33,9 @@ net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI = Ext.extend( dnet.base.Abs
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbSrateList", {dc:"srate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end();
-		this._getBuilder_()
-			.beginToolbar("tlbSrateEdit", {dc:"srate"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end();
-		this._getBuilder_()
-			.beginToolbar("tlbSalueEditList", {dc:"value"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end();
+			.beginToolbar("tlbSrateList", {dc:"srate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbSrateEdit", {dc:"srate"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbSalueEditList", {dc:"value"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
 });

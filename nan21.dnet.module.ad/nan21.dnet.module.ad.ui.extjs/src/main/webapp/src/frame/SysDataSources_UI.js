@@ -27,7 +27,7 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 		.addDcView("services",{ name:"listServices", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList",title:"Services"})	 
 		.addDcView("events",{ name:"listEvents", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList",title:"Events"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "panelDetails", layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:400}}) 	  	 
+		.addPanel({name: "panelDetails", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:400}}) 	  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 	}
 
@@ -41,7 +41,7 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMList", {dc:"m"}).addQuery().end();
+			.beginToolbar("tlbMList", {dc:"m"}).addQuery().end(); 	
 	}
 
 });
