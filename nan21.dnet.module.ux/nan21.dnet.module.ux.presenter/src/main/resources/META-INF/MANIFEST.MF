@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Export-Package: net.nan21.dnet.module.ux.example.ds.converter;version=
+ "1.0.0.M1";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.co
+ re.presenter.converter,net.nan21.dnet.module.ux.example.domain.entity
+ ,net.nan21.dnet.module.ux.example.ds.model",net.nan21.dnet.module.ux.
+ example.ds.model;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.an
+ notation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.
+ model,net.nan21.dnet.module.ux.example.domain.entity"
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]",na
+ n21.dnet.core.presenter;version="[1.0.0.M1,1.0.0.M1]",javax.persisten
+ ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.4)
+ ",org.eclipse.persistence.core;version="[2.0,2.4)",nan21.dnet.module.
+ ux.domain;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.ad.domain;v
+ ersion="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.bd.domain;version="[1.
+ 0.0.M1,1.0.0.M1]"
+Bundle-Vendor: Nan21 
+Bundle-Version: 1.0.0.M1
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-Name: DNet UX - presenter
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: nan21.dnet.module.ux.presenter
+Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
+ notation,net.nan21.dnet.core.api.converter,net.nan21.dnet.core.api.mo
+ del,net.nan21.dnet.core.api.service,net.nan21.dnet.core.api.ui.extjs,
+ net.nan21.dnet.core.api.ui.extjs.impl,net.nan21.dnet.core.presenter.c
+ onverter,net.nan21.dnet.core.presenter.model,net.nan21.dnet.core.pres
+ enter.service,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dn
+ et.module.bd.geo.domain.service,net.nan21.dnet.module.ux.example.doma
+ in.entity,net.nan21.dnet.module.ux.example.domain.service,org.springf
+ ramework.context.weaving;version="[3.0,3.1)"
+

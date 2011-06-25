@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Export-Package: net.nan21.dnet.module.ux.example.domain.entity;version
+ ="1.0.0.M1";uses:="javax.persistence,javax.validation.constraints,net
+ .nan21.dnet.core.api.model,net.nan21.dnet.module.bd.geo.domain.entity
+ ,org.eclipse.persistence.annotations,org.eclipse.persistence.descript
+ ors,org.hibernate.validator.constraints",net.nan21.dnet.module.ux.exa
+ mple.domain.service;version="1.0.0.M1";uses:="net.nan21.dnet.core.api
+ .service,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.mo
+ dule.ux.example.domain.entity",net.nan21.dnet.module.ux.example.domai
+ n.serviceimpl;version="1.0.0.M1";uses:="javax.persistence,net.nan21.d
+ net.core.domain.service,net.nan21.dnet.module.bd.geo.domain.entity,ne
+ t.nan21.dnet.module.ux.example.domain.entity,net.nan21.dnet.module.ux
+ .example.domain.service"
+Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.4)",nan21.
+ dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.ad.d
+ omain;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.bd.domain;versi
+ on="[1.0.0.M1,1.0.0.M1]"
+Bundle-Vendor: Nan21 
+Bundle-Version: 1.0.0.M1
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-Name: DNet UX - domain
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: nan21.dnet.module.ux.domain
+Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
+ e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
+ 2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,javax.v
+ alidation;version="[1.0,2.0)",javax.validation.constraints,net.nan21.
+ dnet.core.api.model,net.nan21.dnet.core.api.service,net.nan21.dnet.co
+ re.domain.persistenceunit,net.nan21.dnet.core.domain.service,net.nan2
+ 1.dnet.core.domain.session,net.nan21.dnet.module.bd.geo.domain.entity
+ ,org.aopalliance.aop;version="[1.0,2.0)",org.eclipse.persistence.anno
+ tations,org.eclipse.persistence.descriptors,org.hibernate.validator;v
+ ersion="[4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,
+ 5.0)",org.springframework.aop;version="[3.0,3.1)",org.springframework
+ .aop.framework;version="[3.0,3.1)",org.springframework.context.weavin
+ g;version="[3.0,3.1)",org.springframework.orm.jpa,org.springframework
+ .orm.jpa.vendor,org.springframework.transaction;version="[3.0,3.1)",o
+ rg.springframework.transaction.aspectj;version="[3.0,3.1)"
+

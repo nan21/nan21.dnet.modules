@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="LandFormTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ux.example.domain.entity.LandFormType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ux.example.ds.converter.LandFormTypeDsConv" />	
+	</bean>
+   
+ 	<bean id="LandFormTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ux.example.domain.entity.LandFormType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ux.example.ds.converter.LandFormTypeLovDsConv" />	
+	</bean>
+   
+ 	<bean id="LandFormDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ux.example.domain.entity.LandForm" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ux.example.ds.converter.LandFormDsConv" />	
+	</bean>
+     
+</beans>
+   
