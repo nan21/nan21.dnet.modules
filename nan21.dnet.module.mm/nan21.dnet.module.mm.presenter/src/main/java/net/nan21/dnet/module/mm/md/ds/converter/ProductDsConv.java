@@ -6,12 +6,12 @@
 package net.nan21.dnet.module.mm.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.uom.business.service.IUomService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.bd.uom.domain.service.IUomService;
+import net.nan21.dnet.module.mm.md.business.service.IProductCategoryService;
+import net.nan21.dnet.module.mm.md.business.service.IProductManufacturerService;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer;
-import net.nan21.dnet.module.mm.md.domain.service.IProductCategoryService;
-import net.nan21.dnet.module.mm.md.domain.service.IProductManufacturerService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.mm.md.ds.model.ProductDs;

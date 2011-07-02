@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.hr.skill.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.hr.skill.business.service.ISkillCategoryService;
 import net.nan21.dnet.module.hr.skill.domain.entity.SkillCategory;
-import net.nan21.dnet.module.hr.skill.domain.service.ISkillCategoryService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.hr.skill.ds.model.SkillTypeDs;

@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.ad.org.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.ad.org.business.service.IOrganizationTypeService;
 import net.nan21.dnet.module.ad.org.domain.entity.OrganizationType;
-import net.nan21.dnet.module.ad.org.domain.service.IOrganizationTypeService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.ad.org.ds.model.OrganizationDs;

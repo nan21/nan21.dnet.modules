@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.hr.training.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.hr.training.business.service.ICourseCategoryService;
 import net.nan21.dnet.module.hr.training.domain.entity.CourseCategory;
-import net.nan21.dnet.module.hr.training.domain.service.ICourseCategoryService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.hr.training.ds.model.CourseTypeDs;

@@ -1,0 +1,45 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="net.nan21.dnet"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportJob</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportJobItem</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportMap</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem</class>
+		
+		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
+		<class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
+		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationHierarchy</class>
+		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationHierarchyItem</class>
+		
+		<class>net.nan21.dnet.module.ad.report.domain.entity.ReportServer</class>
+		<class>net.nan21.dnet.module.ad.report.domain.entity.Report</class>
+		<class>net.nan21.dnet.module.ad.report.domain.entity.ReportParam</class>
+		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReport</class>
+		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReportParam</class>
+		
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDataSource</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsField</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsService</class>
+		
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.User</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserGroup</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.Role</class>
+		
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDeployment</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfProcess</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfProcessInstance</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfTaskInstance</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeType</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefTransition</class>
+		<properties>
+			<property name="eclipselink.weaving" value="static" />
+		</properties>
+	</persistence-unit>
+</persistence>

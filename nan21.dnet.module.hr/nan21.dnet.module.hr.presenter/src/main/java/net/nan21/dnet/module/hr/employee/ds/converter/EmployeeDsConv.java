@@ -6,10 +6,10 @@
 package net.nan21.dnet.module.hr.employee.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.ad.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.ad.org.domain.entity.Organization;
-import net.nan21.dnet.module.ad.org.domain.service.IOrganizationService;
+import net.nan21.dnet.module.bd.geo.business.service.ICountryService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
-import net.nan21.dnet.module.bd.geo.domain.service.ICountryService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs;

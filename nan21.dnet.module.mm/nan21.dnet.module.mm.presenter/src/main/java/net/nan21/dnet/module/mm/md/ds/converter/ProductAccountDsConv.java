@@ -6,12 +6,12 @@
 package net.nan21.dnet.module.mm.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.ad.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.ad.org.domain.entity.Organization;
-import net.nan21.dnet.module.ad.org.domain.service.IOrganizationService;
+import net.nan21.dnet.module.mm.md.business.service.IProductAccountGroupService;
+import net.nan21.dnet.module.mm.md.business.service.IProductService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAccountGroup;
-import net.nan21.dnet.module.mm.md.domain.service.IProductAccountGroupService;
-import net.nan21.dnet.module.mm.md.domain.service.IProductService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.mm.md.ds.model.ProductAccountDs;

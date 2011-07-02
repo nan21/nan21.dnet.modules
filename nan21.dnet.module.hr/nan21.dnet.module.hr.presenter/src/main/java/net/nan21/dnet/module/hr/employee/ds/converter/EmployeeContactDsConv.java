@@ -6,9 +6,9 @@
 package net.nan21.dnet.module.hr.employee.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.hr.employee.business.service.IEmployeeContactRelationshipService;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContactRelationship;
-import net.nan21.dnet.module.hr.employee.domain.service.IEmployeeContactRelationshipService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactDs;

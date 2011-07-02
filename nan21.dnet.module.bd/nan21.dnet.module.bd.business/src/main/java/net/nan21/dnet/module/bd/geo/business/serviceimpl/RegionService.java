@@ -1,0 +1,63 @@
+/*    
+ * DNet eBusiness Suite
+ * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */
+package net.nan21.dnet.module.bd.geo.business.serviceimpl;
+
+import java.util.List;
+import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.geo.business.service.IRegionService;
+import net.nan21.dnet.module.bd.geo.domain.entity.Country;
+
+import javax.persistence.EntityManager;
+import net.nan21.dnet.module.bd.geo.domain.entity.Region;
+
+public class RegionService extends AbstractEntityService<Region> implements
+        IRegionService {
+
+    public RegionService() {
+        super();
+    }
+
+    public RegionService(EntityManager em) {
+        super();
+        this.em = em;
+    }
+
+    @Override
+    protected Class<Region> getEntityClass() {
+        return Region.class;
+    }
+
+    public Region findByCodeAndCountry(Long clientId, Country country,
+            String code) {
+        return (Region) this.em
+                .createNamedQuery(Region.NQ_FIND_BY_CODEANDCOUNTRY)
+                .setParameter("pClientId", clientId)
+                .setParameter("pCountry", country).setParameter("pCode", code)
+                .getSingleResult();
+    }
+
+    public Region findByCodeAndCountry(Long clientId, Long countryId,
+            String code) {
+        return (Region) this.em
+                .createNamedQuery(Region.NQ_FIND_BY_CODEANDCOUNTRY_PRIMITIVE)
+                .setParameter("pClientId", clientId)
+                .setParameter("pCountryId", countryId)
+                .setParameter("pCode", code).getSingleResult();
+    }
+
+    public List<Region> findByCountry(Country country) {
+        return this.findByCountryId(country.getId());
+    }
+
+    public List<Region> findByCountryId(Long countryId) {
+        return (List<Region>) this.em
+                .createQuery(
+                        "select e from Region where e.country.id = :pCountryId",
+                        Region.class).setParameter("pCountryId", countryId)
+                .getResultList();
+    }
+
+}

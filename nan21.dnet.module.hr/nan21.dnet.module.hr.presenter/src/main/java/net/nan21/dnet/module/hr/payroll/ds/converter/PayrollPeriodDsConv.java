@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.hr.payroll.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.hr.payroll.business.service.IPayrollService;
 import net.nan21.dnet.module.hr.payroll.domain.entity.Payroll;
-import net.nan21.dnet.module.hr.payroll.domain.service.IPayrollService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDs;

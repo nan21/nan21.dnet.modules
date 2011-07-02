@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.bp.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.bp.md.domain.service.IBusinessPartnerService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.bp.md.ds.model.ContactDs;

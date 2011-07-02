@@ -18,7 +18,9 @@ Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]",na
  ",org.eclipse.persistence.core;version="[2.0,2.4)",nan21.dnet.module.
  bp.domain;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.ad.domain;v
  ersion="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.bd.domain;version="[1.
- 0.0.M1,1.0.0.M1]"
+ 0.0.M1,1.0.0.M1]",nan21.dnet.module.bp.business;version="[1.0.0.M1,1.
+ 0.0.M1]",nan21.dnet.module.ad.business;version="[1.0.0.M1,1.0.0.M1]",
+ nan21.dnet.module.bd.business;version="[1.0.0.M1,1.0.0.M1]"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0.M1
 Tool: Bundlor 1.0.0.RELEASE
@@ -30,12 +32,12 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
  del,net.nan21.dnet.core.api.service,net.nan21.dnet.core.api.ui.extjs,
  net.nan21.dnet.core.api.ui.extjs.impl,net.nan21.dnet.core.presenter.c
  onverter,net.nan21.dnet.core.presenter.model,net.nan21.dnet.core.pres
- enter.service,net.nan21.dnet.module.ad.org.domain.entity,net.nan21.dn
- et.module.ad.org.domain.service,net.nan21.dnet.module.bd.currency.dom
- ain.entity,net.nan21.dnet.module.bd.currency.domain.service,net.nan21
- .dnet.module.bd.geo.domain.entity,net.nan21.dnet.module.bd.geo.domain
- .service,net.nan21.dnet.module.bp.base.domain.entity,net.nan21.dnet.m
- odule.bp.base.domain.service,net.nan21.dnet.module.bp.md.domain.entit
- y,net.nan21.dnet.module.bp.md.domain.service,org.springframework.cont
- ext.weaving;version="[3.0,3.1)"
+ enter.service,net.nan21.dnet.module.ad.org.business.service,net.nan21
+ .dnet.module.ad.org.domain.entity,net.nan21.dnet.module.bd.currency.b
+ usiness.service,net.nan21.dnet.module.bd.currency.domain.entity,net.n
+ an21.dnet.module.bd.geo.business.service,net.nan21.dnet.module.bd.geo
+ .domain.entity,net.nan21.dnet.module.bp.base.business.service,net.nan
+ 21.dnet.module.bp.base.domain.entity,net.nan21.dnet.module.bp.md.busi
+ ness.service,net.nan21.dnet.module.bp.md.domain.entity,org.springfram
+ ework.context.weaving;version="[3.0,3.1)"
 

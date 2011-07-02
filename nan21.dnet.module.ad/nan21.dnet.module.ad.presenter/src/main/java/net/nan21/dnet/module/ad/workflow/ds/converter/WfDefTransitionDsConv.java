@@ -6,9 +6,9 @@
 package net.nan21.dnet.module.ad.workflow.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.ad.workflow.business.service.IWfDefNodeService;
 import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode;
 import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess;
-import net.nan21.dnet.module.ad.workflow.domain.service.IWfDefNodeService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.ad.workflow.ds.model.WfDefTransitionDs;

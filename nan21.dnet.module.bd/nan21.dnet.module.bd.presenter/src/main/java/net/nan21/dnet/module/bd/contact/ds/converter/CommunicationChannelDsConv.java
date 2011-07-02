@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.bd.contact.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.contact.business.service.ICommunicationChannelTypeService;
 import net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType;
-import net.nan21.dnet.module.bd.contact.domain.service.ICommunicationChannelTypeService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelDs;

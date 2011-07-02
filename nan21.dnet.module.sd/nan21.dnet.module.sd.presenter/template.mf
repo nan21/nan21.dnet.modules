@@ -16,5 +16,10 @@ Import-Bundle:
  nan21.dnet.module.ad.domain;version="[1.0.0.M1,1.0.0.M1]", 
  nan21.dnet.module.bd.domain;version="[1.0.0.M1,1.0.0.M1]", 
  nan21.dnet.module.bp.domain;version="[1.0.0.M1,1.0.0.M1]", 
- nan21.dnet.module.mm.domain;version="[1.0.0.M1,1.0.0.M1]"
+ nan21.dnet.module.mm.domain;version="[1.0.0.M1,1.0.0.M1]", 
+ nan21.dnet.module.sd.business;version="[1.0.0.M1,1.0.0.M1]", 
+ nan21.dnet.module.ad.business;version="[1.0.0.M1,1.0.0.M1]", 
+ nan21.dnet.module.bd.business;version="[1.0.0.M1,1.0.0.M1]", 
+ nan21.dnet.module.bp.business;version="[1.0.0.M1,1.0.0.M1]", 
+ nan21.dnet.module.mm.business;version="[1.0.0.M1,1.0.0.M1]"
 

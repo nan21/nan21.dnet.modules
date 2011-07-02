@@ -6,10 +6,10 @@
 package net.nan21.dnet.module.ad.org.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.ad.org.business.service.IOrganizationHierarchyService;
+import net.nan21.dnet.module.ad.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.ad.org.domain.entity.Organization;
 import net.nan21.dnet.module.ad.org.domain.entity.OrganizationHierarchy;
-import net.nan21.dnet.module.ad.org.domain.service.IOrganizationHierarchyService;
-import net.nan21.dnet.module.ad.org.domain.service.IOrganizationService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.ad.org.ds.model.OrganizationHierarchyItemDs;

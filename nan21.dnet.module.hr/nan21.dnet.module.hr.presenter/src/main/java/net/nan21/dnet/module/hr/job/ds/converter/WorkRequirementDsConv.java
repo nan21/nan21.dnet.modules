@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.hr.job.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.hr.job.business.service.IWorkRequirementTypeService;
 import net.nan21.dnet.module.hr.job.domain.entity.WorkRequirementType;
-import net.nan21.dnet.module.hr.job.domain.service.IWorkRequirementTypeService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.hr.job.ds.model.WorkRequirementDs;

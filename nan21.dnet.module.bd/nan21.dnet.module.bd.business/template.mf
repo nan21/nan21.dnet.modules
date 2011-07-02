@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DNet BD - business
+Bundle-SymbolicName: nan21.dnet.module.bd.business
+Bundle-Vendor: Nan21 
+Bundle-Version: 1.0.0.M1
+Import-Template: 
+ javax.persistence.*;version="[2.0,2.1)",
+ org.eclipse.persistence.jpa.*;version="[2.1,2.4)"
+Import-Package: 
+ javax.persistence.criteria;version="[2.0,2.1)",
+ javax.persistence.metamodel;version="[2.0,2.1)",
+ javax.persistence.spi;version="[2.0,2.1)",
+ org.springframework.context.weaving;version="[3.0,3.1)",
+ org.springframework.transaction;version="[3.0,3.1)",
+ org.springframework.transaction.aspectj;version="[3.0,3.1)",
+ org.springframework.aop;version="[3.0,3.1)",
+ org.springframework.aop.framework;version="[3.0,3.1)",
+ org.aopalliance.aop;version="[1.0,2.0)",
+ javax.validation;version="[1.0,2.0)",
+ org.hibernate.validator;version="[4.0,5.0)",
+ org.hibernate.validator.constraints;version="[4.0,5.0)"
+Import-Bundle:  
+ org.eclipse.persistence.core;version="[2.0,2.4)", 
+ nan21.dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]", 
+ nan21.dnet.module.bd.domain;version="[1.0.0.M1,1.0.0.M1]"
+

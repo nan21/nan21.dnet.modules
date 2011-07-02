@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.hr.grade.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.currency.domain.service.ICurrencyService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.hr.grade.ds.model.GradeRateDs;

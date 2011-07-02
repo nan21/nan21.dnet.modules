@@ -18,7 +18,7 @@
 		 
 		<weave source="${path_source}" 
 		       target="${path_target}"
-			 persistenceinfo="${path_persistenceinfo}"			 
+			 	persistenceinfo="${path_persistenceinfo}"			 
 			   loglevel="FINEST">			
 			<classpath>
               <path path="${compile_classpath}"/>  

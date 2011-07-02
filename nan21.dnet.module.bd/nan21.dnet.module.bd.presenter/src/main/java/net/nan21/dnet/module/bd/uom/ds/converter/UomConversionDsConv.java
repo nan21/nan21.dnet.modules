@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.bd.uom.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.uom.business.service.IUomService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.bd.uom.domain.service.IUomService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.bd.uom.ds.model.UomConversionDs;

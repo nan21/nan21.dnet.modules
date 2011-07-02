@@ -6,12 +6,12 @@
 package net.nan21.dnet.module.bp.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.currency.domain.service.ICurrencyService;
+import net.nan21.dnet.module.bp.base.business.service.IBankService;
 import net.nan21.dnet.module.bp.base.domain.entity.Bank;
-import net.nan21.dnet.module.bp.base.domain.service.IBankService;
+import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.bp.md.domain.service.IBusinessPartnerService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.bp.md.ds.model.BpBankAccountDs;

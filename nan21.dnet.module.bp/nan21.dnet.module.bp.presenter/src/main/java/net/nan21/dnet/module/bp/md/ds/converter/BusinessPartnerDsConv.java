@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.bp.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.geo.business.service.ICountryService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
-import net.nan21.dnet.module.bd.geo.domain.service.ICountryService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs;

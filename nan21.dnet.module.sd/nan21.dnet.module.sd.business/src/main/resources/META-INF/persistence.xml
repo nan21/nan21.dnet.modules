@@ -1,0 +1,45 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="net.nan21.dnet"
+		transaction-type="RESOURCE_LOCAL">
+		
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		
+		<class>net.nan21.dnet.module.sd.price.domain.entity.PriceList</class>
+		
+		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrder</class>
+		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem</class>
+		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType</class>
+		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus</class>
+		
+		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice</class>
+		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem</class>
+		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType</class>
+		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus</class>
+
+		<!-- Dependencies -->
+		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
+		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
+		<class>net.nan21.dnet.module.bd.geo.domain.entity.Region</class>
+		<class>net.nan21.dnet.module.bd.geo.domain.entity.City</class>
+		<class>net.nan21.dnet.module.bd.geo.domain.entity.Location</class>
+		<class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
+		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
+		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
+		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>
+		<class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
+		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
+		<class>net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner</class>
+		<class>net.nan21.dnet.module.bp.md.domain.entity.Contact</class>
+		<class>net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod</class>
+		<class>net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.Product</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductCategory</class>
+		<properties>
+			<property name="eclipselink.weaving" value="static" />
+		</properties>
+	</persistence-unit>
+</persistence>

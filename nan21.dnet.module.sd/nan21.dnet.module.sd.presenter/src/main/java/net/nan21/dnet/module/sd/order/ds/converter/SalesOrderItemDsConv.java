@@ -7,8 +7,8 @@ package net.nan21.dnet.module.sd.order.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
+import net.nan21.dnet.module.mm.md.business.service.IProductService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.md.domain.service.IProductService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;

@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.bd.currency.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.currency.business.service.ICurrencyXRateProviderService;
 import net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRateProvider;
-import net.nan21.dnet.module.bd.currency.domain.service.ICurrencyXRateProviderService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateAverageDs;

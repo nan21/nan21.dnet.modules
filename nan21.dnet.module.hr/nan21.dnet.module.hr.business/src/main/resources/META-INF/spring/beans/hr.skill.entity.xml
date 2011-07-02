@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="RatingScaleService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.business.serviceimpl.RatingScaleService"  />  
+ 
+ 	<bean id="RatingLevelService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.business.serviceimpl.RatingLevelService"  />  
+ 
+ 	<bean id="SkillCategoryService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.business.serviceimpl.SkillCategoryService"  />  
+ 
+ 	<bean id="SkillTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.business.serviceimpl.SkillTypeService"  />  
+ 
+ 	<bean id="SkillService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.business.serviceimpl.SkillService"  />  
+ 
+ 	<bean id="QualificationService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.business.serviceimpl.QualificationService"  />  
+ 
+ 	<bean id="QualificationSkillService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.business.serviceimpl.QualificationSkillService"  />  
+ 
+ 	<bean id="JobSkillService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.business.serviceimpl.JobSkillService"  />  
+ 
+ 	<bean id="PositionSkillService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.business.serviceimpl.PositionSkillService"  />  
+ 
+ 	<bean id="EmployeeSkillService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.skill.business.serviceimpl.EmployeeSkillService"  />  
+   
+</beans>
+   

@@ -7,10 +7,10 @@ package net.nan21.dnet.module.hr.skill.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.hr.job.domain.entity.Job;
+import net.nan21.dnet.module.hr.skill.business.service.IRatingLevelService;
+import net.nan21.dnet.module.hr.skill.business.service.ISkillService;
 import net.nan21.dnet.module.hr.skill.domain.entity.RatingLevel;
 import net.nan21.dnet.module.hr.skill.domain.entity.Skill;
-import net.nan21.dnet.module.hr.skill.domain.service.IRatingLevelService;
-import net.nan21.dnet.module.hr.skill.domain.service.ISkillService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.hr.skill.ds.model.JobSkillDs;

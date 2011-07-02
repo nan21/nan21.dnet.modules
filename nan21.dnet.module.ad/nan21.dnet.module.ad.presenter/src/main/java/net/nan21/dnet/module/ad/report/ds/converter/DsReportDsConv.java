@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.ad.report.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.ad.report.business.service.IReportService;
 import net.nan21.dnet.module.ad.report.domain.entity.Report;
-import net.nan21.dnet.module.ad.report.domain.service.IReportService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.ad.report.ds.model.DsReportDs;

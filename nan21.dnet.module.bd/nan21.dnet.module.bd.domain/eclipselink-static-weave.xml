@@ -17,7 +17,7 @@
 		<echo>Source path: ${path_source} </echo>	
 		 
 		<weave source="${path_source}" 
-		       target="${path_target}"
+		       target="${path_target}" 
 			 persistenceinfo="${path_persistenceinfo}"			 
 			   loglevel="FINEST">			
 			<classpath>

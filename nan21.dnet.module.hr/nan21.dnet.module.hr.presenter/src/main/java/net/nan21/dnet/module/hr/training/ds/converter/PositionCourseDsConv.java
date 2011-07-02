@@ -6,10 +6,10 @@
 package net.nan21.dnet.module.hr.training.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.hr.job.business.service.IPositionService;
 import net.nan21.dnet.module.hr.job.domain.entity.Position;
-import net.nan21.dnet.module.hr.job.domain.service.IPositionService;
+import net.nan21.dnet.module.hr.training.business.service.ICourseService;
 import net.nan21.dnet.module.hr.training.domain.entity.Course;
-import net.nan21.dnet.module.hr.training.domain.service.ICourseService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.hr.training.ds.model.PositionCourseDs;

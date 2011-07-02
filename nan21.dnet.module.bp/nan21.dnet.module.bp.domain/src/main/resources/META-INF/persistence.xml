@@ -2,24 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
-	<persistence-unit name="net.nan21.dnet"
+	<persistence-unit name="default"
 		transaction-type="RESOURCE_LOCAL">
-		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-
-		<!-- Dependencies -->
-		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
-		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
-		<class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
-		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
-		<properties>
-			<property name="eclipselink.weaving" value="static" />
-		</properties>
-	</persistence-unit>
-	
-	<!-- For static weaving. Spring doesn't work with exclude-unlisted-classes=false -->
-	<persistence-unit name="net.nan21.dnet.weaving"
-		transaction-type="RESOURCE_LOCAL">
-		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>		
 		<!-- Dependencies -->
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
@@ -30,5 +15,4 @@
 			<property name="eclipselink.weaving" value="static" />
 		</properties>
 	</persistence-unit>
-	
 </persistence>

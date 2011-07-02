@@ -8,13 +8,13 @@ package net.nan21.dnet.module.sd.invoice.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
+import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
-import net.nan21.dnet.module.bp.md.domain.service.IBusinessPartnerService;
+import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceStatusService;
+import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceTypeService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType;
-import net.nan21.dnet.module.sd.invoice.domain.service.ISalesInvoiceStatusService;
-import net.nan21.dnet.module.sd.invoice.domain.service.ISalesInvoiceTypeService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs;

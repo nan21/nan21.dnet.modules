@@ -1,0 +1,38 @@
+/*    
+ * DNet eBusiness Suite
+ * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */
+package net.nan21.dnet.module.bp.base.business.serviceimpl;
+
+import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.module.bp.base.business.service.IDeliveryMethodService;
+
+import javax.persistence.EntityManager;
+import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
+
+public class DeliveryMethodService extends
+        AbstractEntityService<DeliveryMethod> implements IDeliveryMethodService {
+
+    public DeliveryMethodService() {
+        super();
+    }
+
+    public DeliveryMethodService(EntityManager em) {
+        super();
+        this.em = em;
+    }
+
+    @Override
+    protected Class<DeliveryMethod> getEntityClass() {
+        return DeliveryMethod.class;
+    }
+
+    public DeliveryMethod findByName(Long clientId, String name) {
+        return (DeliveryMethod) this.em
+                .createNamedQuery(DeliveryMethod.NQ_FIND_BY_NAME)
+                .setParameter("pClientId", clientId)
+                .setParameter("pName", name).getSingleResult();
+    }
+
+}

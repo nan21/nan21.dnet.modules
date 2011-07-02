@@ -6,9 +6,9 @@
 package net.nan21.dnet.module.hr.grade.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.hr.grade.business.service.IPayScalePointService;
 import net.nan21.dnet.module.hr.grade.domain.entity.PayScalePoint;
 import net.nan21.dnet.module.hr.grade.domain.entity.PayScaleRate;
-import net.nan21.dnet.module.hr.grade.domain.service.IPayScalePointService;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateValueDs;
