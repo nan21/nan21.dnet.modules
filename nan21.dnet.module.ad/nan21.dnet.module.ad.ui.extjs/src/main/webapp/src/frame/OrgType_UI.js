@@ -14,6 +14,7 @@ net.nan21.dnet.module.ad.org.frame.OrgType_UI = Ext.extend( dnet.base.AbstractUi
 		.addDcView("orgtype",{ name:"orgtypeEditList", xtype:"net.nan21.dnet.module.ad.org.dc.OrganizationType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

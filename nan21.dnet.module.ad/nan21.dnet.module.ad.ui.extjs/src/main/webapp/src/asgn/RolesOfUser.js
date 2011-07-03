@@ -18,6 +18,7 @@ Ext.reg("net.nan21.dnet.module.ad.usr.asgn.RolesOfUser$Right", net.nan21.dnet.mo
 net.nan21.dnet.module.ad.usr.asgn.RolesOfUser$Ui = Ext.extend(dnet.base.AbstractAsgnUi, {
  	 width:700
 	,height:400 
+	,title:"Assign users to role"
 	,_controller_:net.nan21.dnet.module.ad.usr.asgn.RolesOfUser
 	 
 	,_defineElements_: function () {

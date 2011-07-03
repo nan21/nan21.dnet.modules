@@ -14,6 +14,7 @@ net.nan21.dnet.module.bd.currency.frame.Currencies_UI = Ext.extend( dnet.base.Ab
 		.addDcView("currency",{ name:"currencyList", xtype:"net.nan21.dnet.module.bd.currency.dc.Currency$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

@@ -14,6 +14,7 @@ net.nan21.dnet.module.ad.report.frame.ReportServers_UI = Ext.extend( dnet.base.A
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.ad.report.dc.ReportServer$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

@@ -1,4 +1,8 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/WfMyTaskDs", "nan21.dnet.module.ad.ui.extjs/dc/WfMyTask", "nan21.dnet.module.ad.ui.extjs/ds/WfAvailableTaskDs", "nan21.dnet.module.ad.ui.extjs/dc/WfAvailableTask", "nan21.dnet.module.ad.ui.extjs/ds/WfMyTaskHistoryDs", "nan21.dnet.module.ad.ui.extjs/dc/WfMyTaskHistory"]);
+Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/WfMyTaskDs", "nan21.dnet.module.ad.ui.extjs/dc/WfMyTask", "nan21.dnet.module.ad.ui.extjs/ds/WfAvailableTaskDs", "nan21.dnet.module.ad.ui.extjs/dc/WfAvailableTask", "nan21.dnet.module.ad.ui.extjs/ds/WfMyTaskHistoryDs", "nan21.dnet.module.ad.ui.extjs/dc/WfMyTaskHistory"
+
+
+
+]);
 
 Ext.ns("net.nan21.dnet.module.ad.workflow.frame");
 net.nan21.dnet.module.ad.workflow.frame.WfTasks = Ext.extend( dnet.base.AbstractUi, {  
@@ -29,15 +33,11 @@ net.nan21.dnet.module.ad.workflow.frame.WfTasks = Ext.extend( dnet.base.Abstract
         	}
 		}); 
 		this._getBuilder_()	
-			.addButton({xtype:"button", name:"btnCompleteTask", id:Ext.id(),iconCls:"icon-action-commit" 
-					,text:"Complete task", tooltip:"Mark selected task as completed."
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnCompleteTask",text:"Complete task", tooltip:"Mark selected task as completed.",iconCls:"icon-action-commit",disabled:true
+			,handler: this.onBtnCompleteTask,scope:this,stateManager:{name:"selected_one", dc:"dcMytask"}	})	
 							 	
-			.addButton({xtype:"button", name:"btnClaimTask", id:Ext.id() 
-					,text:"Claim task", tooltip:"Claim the selected task."
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnClaimTask",text:"Claim task", tooltip:"Claim the selected task.",disabled:true
+			,handler: this.onBtnClaimTask,scope:this,stateManager:{name:"selected_one", dc:"dcAvailabletask"}	})	
 							 	
 		.addDcView("dcMytask",{ name:"filterMytask", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfMyTask$Filter",height:40})	 
 		.addDcView("dcMytask",{ name:"listMytask", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfMyTask$List",buttons:[ this._elems_.get("btnCompleteTask") ]})	 
@@ -49,6 +49,7 @@ net.nan21.dnet.module.ad.workflow.frame.WfTasks = Ext.extend( dnet.base.Abstract
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Current tasks",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Available tasks",header:false})  	 
 		.addPanel({name: "canvas3", layout:"border", defaults:{split:true},title:"History",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {
@@ -71,5 +72,19 @@ net.nan21.dnet.module.ad.workflow.frame.WfTasks = Ext.extend( dnet.base.Abstract
 			.beginToolbar("tlbMyhistoryList", {dc:"dcMyhistory"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
+
+	,onBtnCompleteTask: function() {
+					var s={modal:true, callbacks:{} };
+							try{ this._getDc_("dcMytask").doService("completeTask", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+	}					 	
+
+	,onBtnClaimTask: function() {
+					var s={modal:true, callbacks:{} };					var successFn = function(dc,response,serviceName,specs) {							 
+this._getDc_("dcAvailabletask").doQuery();			 	
+							 
+							}; s.callbacks['successFn'] = successFn; s.callbacks['successScope'] = this;
+							
+							try{ this._getDc_("dcAvailabletask").doService("assignTask", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+	}					 	
 });
 Ext.reg("net.nan21.dnet.module.ad.workflow.frame.WfTasks", net.nan21.dnet.module.ad.workflow.frame.WfTasks);   

@@ -14,6 +14,7 @@ net.nan21.dnet.module.hr.employee.frame.EmployeeContactRelationship_UI = Ext.ext
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.EmployeeContactRelationship$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

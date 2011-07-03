@@ -1,4 +1,8 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/ImportMapDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportMap", "nan21.dnet.module.ad.ui.extjs/ds/ImportMapItemDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportMapItemCtx","nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDataSource"]);
+Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/ImportMapDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportMap", "nan21.dnet.module.ad.ui.extjs/ds/ImportMapItemDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportMapItemCtx","nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDataSource"
+
+
+
+]);
 
 Ext.ns("net.nan21.dnet.module.ad.impex.frame");
 net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.AbstractUi, {  
@@ -12,15 +16,11 @@ net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-			.addButton({xtype:"button", name:"btnRunImportMap", id:Ext.id(),iconCls:"icon-action-import" 
-					,text:"Import All", tooltip:"Import all files included in this set."
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnRunImportMap",text:"Import All", tooltip:"Import all files included in this set.",iconCls:"icon-action-import",disabled:true
+			,handler: this.onBtnRunImportMap,scope:this,stateManager:{name:"record_status_is_edit", dc:"map"}	})	
 							 	
-			.addButton({xtype:"button", name:"btnRunImportItem", id:Ext.id(),iconCls:"icon-action-import" 
-					,text:"Import selected", tooltip:"Import the selected file (one at a time)."
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnRunImportItem",text:"Import selected", tooltip:"Import the selected file (one at a time).",iconCls:"icon-action-import",disabled:true
+			,handler: this.onBtnRunImportItem,scope:this,stateManager:{name:"selected_one", dc:"item"}	})	
 							 	
 		.addDcView("map",{ name:"mapFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMap$Filter"})	 
 		.addDcView("map",{ name:"mapList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMap$List"})	 
@@ -29,6 +29,7 @@ net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.Abstra
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {
@@ -48,5 +49,15 @@ net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.Abstra
 			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
+
+	,onBtnRunImportMap: function() {
+					var s={modal:true, callbacks:{} };
+							try{ this._getDc_("map").doService("runImport", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+	}					 	
+
+	,onBtnRunImportItem: function() {
+					var s={modal:true, callbacks:{} };
+							try{ this._getDc_("item").doService("runImport", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+	}					 	
 });
 Ext.reg("net.nan21.dnet.module.ad.impex.frame.ImportMap_UI", net.nan21.dnet.module.ad.impex.frame.ImportMap_UI);   

@@ -35,6 +35,7 @@ net.nan21.dnet.module.hr.training.frame.CourseType_UI = Ext.extend( dnet.base.Ab
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasCategory", layout:"border", defaults:{split:true},title:"Course Categories",header:false})  	 
 		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Course Types",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

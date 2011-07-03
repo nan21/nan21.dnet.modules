@@ -19,6 +19,7 @@ net.nan21.dnet.module.bd.geo.frame.CountryMD_UI = Ext.extend( dnet.base.Abstract
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

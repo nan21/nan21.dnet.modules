@@ -35,6 +35,7 @@ net.nan21.dnet.module.hr.payroll.frame.ElementType_UI = Ext.extend( dnet.base.Ab
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Element categories",header:false})  	 
 		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Element types",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

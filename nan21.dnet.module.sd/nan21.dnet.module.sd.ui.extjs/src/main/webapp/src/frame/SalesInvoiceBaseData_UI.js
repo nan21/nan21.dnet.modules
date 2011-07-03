@@ -35,6 +35,7 @@ net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI = Ext.extend( dne
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Invoice type",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Invoice status",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

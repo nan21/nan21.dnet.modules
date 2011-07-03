@@ -44,6 +44,7 @@ net.nan21.dnet.module.ad.org.frame.Org_UI = Ext.extend( dnet.base.AbstractUi, {
 		.addPanel({name: "canvas3", layout:"border", defaults:{split:true},title:"Hierarchies",header:false})  	 
 		.addPanel({name: "panelHierarchyList", layout:"border", defaults:{split:true}})  	 
 		.addPanel({name: "panelHierarchyEdit", layout:"border", defaults:{split:true}})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

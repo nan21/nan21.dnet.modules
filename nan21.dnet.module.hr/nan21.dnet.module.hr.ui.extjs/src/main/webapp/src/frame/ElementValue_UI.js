@@ -14,6 +14,7 @@ net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI = Ext.extend( dnet.base.A
 		.addDcView("expval",{ name:"expvalList", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementValue$List"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

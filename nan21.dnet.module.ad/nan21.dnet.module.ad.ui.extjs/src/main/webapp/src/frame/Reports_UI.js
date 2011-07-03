@@ -27,6 +27,7 @@ net.nan21.dnet.module.ad.report.frame.Reports_UI = Ext.extend( dnet.base.Abstrac
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
 		.addPanel({name: "dsRep", layout:"border", defaults:{split:true},title:"Data-source links"})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

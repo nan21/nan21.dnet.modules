@@ -1,4 +1,6 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/WfDefProcessDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefProcess", "nan21.dnet.module.ad.ui.extjs/ds/WfDefNodeDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefNode", "nan21.dnet.module.ad.ui.extjs/ds/WfDefTransitionDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefTransition","nan21.dnet.module.ad.ui.extjs/ds/WfDefNodeTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/WfDefNodeTypes"]);
+Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/WfDefProcessDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefProcess", "nan21.dnet.module.ad.ui.extjs/ds/WfDefNodeDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefNode", "nan21.dnet.module.ad.ui.extjs/ds/WfDefTransitionDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefTransition","nan21.dnet.module.ad.ui.extjs/ds/WfDefNodeTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/WfDefNodeTypes"
+
+]);
 
 Ext.ns("net.nan21.dnet.module.ad.workflow.frame");
 net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI = Ext.extend( dnet.base.AbstractUi, {  
@@ -14,10 +16,8 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI = Ext.extend( dnet.base.A
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-			.addButton({xtype:"button", name:"btnDeploy", id:Ext.id(),iconCls:"icon-action-run" 
-					,text:"Deploy", tooltip:"Deploy process"
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnDeploy",text:"Deploy", tooltip:"Deploy process",iconCls:"icon-action-run",disabled:true
+			,handler: this.onBtnDeploy,scope:this,stateManager:{name:"record_status_is_edit", dc:"dcProcess"}	})	
 							 	
 		.addDcView("dcProcess",{ name:"filterProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter"})	 
 		.addDcView("dcProcess",{ name:"listProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List"})	 
@@ -29,6 +29,7 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI = Ext.extend( dnet.base.A
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
 		.addPanel({name: "panelDetails", layout:"border", defaults:{split:true}})  	 
+			 	
 	}
 
 	,_linkElements_: function() {
@@ -51,5 +52,10 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI = Ext.extend( dnet.base.A
 			.beginToolbar("tlbTransitionEditList", {dc:"dcTransition"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
+
+	,onBtnDeploy: function() {
+					var s={modal:true, callbacks:{} };
+							try{ this._getDc_("dcProcess").doService("deployProcess", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+	}					 	
 });
 Ext.reg("net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI", net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI);   

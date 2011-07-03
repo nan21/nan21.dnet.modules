@@ -1,4 +1,8 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/UserDs", "nan21.dnet.module.ad.ui.extjs/dc/User"]);
+Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/UserDs", "nan21.dnet.module.ad.ui.extjs/dc/User"
+,"nan21.dnet.module.ad.ui.extjs/asgn/UserRoles"
+
+,"nan21.dnet.module.ad.ui.extjs/asgn/UserUserGroups"
+]);
 
 Ext.ns("net.nan21.dnet.module.ad.usr.frame");
 net.nan21.dnet.module.ad.usr.frame.Users_UI = Ext.extend( dnet.base.AbstractUi, {  
@@ -10,15 +14,11 @@ net.nan21.dnet.module.ad.usr.frame.Users_UI = Ext.extend( dnet.base.AbstractUi, 
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-			.addButton({xtype:"button", name:"btnAsgnRoles", id:Ext.id() 
-					,text:"Roles", tooltip:"Assign roles"
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnAsgnRoles",text:"Roles", tooltip:"Assign roles",disabled:true
+			,handler: this.onBtnAsgnRoles,scope:this,stateManager:{name:"record_is_clean", dc:"usr"}	})	
 							 	
-			.addButton({xtype:"button", name:"btnAsgnGroups", id:Ext.id() 
-					,text:"Groups", tooltip:"Add to user-groups"
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnAsgnGroups",text:"Groups", tooltip:"Add to user-groups",disabled:true
+			,handler: this.onBtnAsgnGroups,scope:this,stateManager:{name:"record_is_clean", dc:"usr"}	})	
 							 	
 		.addDcView("usr",{ name:"usrFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Filter"})	 
 		.addDcView("usr",{ name:"usrList", xtype:"net.nan21.dnet.module.ad.usr.dc.User$List"})	 
@@ -26,6 +26,7 @@ net.nan21.dnet.module.ad.usr.frame.Users_UI = Ext.extend( dnet.base.AbstractUi, 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {
@@ -43,5 +44,13 @@ net.nan21.dnet.module.ad.usr.frame.Users_UI = Ext.extend( dnet.base.AbstractUi, 
 			.beginToolbar("tlbUsrEdit", {dc:"usr"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end(); 	
 	}
 
+
+	,onBtnAsgnRoles: function() {
+		this.showAsgnWindow(net.nan21.dnet.module.ad.usr.asgn.UserRoles$Ui ,{dc:"usr",objectIdField:"id"});
+	}					 	
+
+	,onBtnAsgnGroups: function() {
+		this.showAsgnWindow(net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui ,{dc:"usr",objectIdField:"id"});
+	}					 	
 });
 Ext.reg("net.nan21.dnet.module.ad.usr.frame.Users_UI", net.nan21.dnet.module.ad.usr.frame.Users_UI);   

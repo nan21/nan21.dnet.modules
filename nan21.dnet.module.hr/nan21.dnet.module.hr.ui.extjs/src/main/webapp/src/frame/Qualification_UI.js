@@ -18,6 +18,7 @@ net.nan21.dnet.module.hr.skill.frame.Qualification_UI = Ext.extend( dnet.base.Ab
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "panelRequirements", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:500}}) 	  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

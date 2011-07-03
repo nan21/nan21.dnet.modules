@@ -14,6 +14,7 @@ net.nan21.dnet.module.mm.md.frame.ProductAccountGroup_UI = Ext.extend( dnet.base
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAccountGroup$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

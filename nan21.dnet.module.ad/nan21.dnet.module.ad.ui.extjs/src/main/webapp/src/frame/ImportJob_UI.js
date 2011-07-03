@@ -1,4 +1,8 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/ImportJobDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportJob", "nan21.dnet.module.ad.ui.extjs/ds/ImportJobItemDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportJobItem","nan21.dnet.module.ad.ui.extjs/ds/ImportMapLovDs","nan21.dnet.module.ad.ui.extjs/lov/ImportMap"]);
+Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/ImportJobDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportJob", "nan21.dnet.module.ad.ui.extjs/ds/ImportJobItemDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportJobItem","nan21.dnet.module.ad.ui.extjs/ds/ImportMapLovDs","nan21.dnet.module.ad.ui.extjs/lov/ImportMap"
+
+
+
+]);
 
 Ext.ns("net.nan21.dnet.module.ad.impex.frame");
 net.nan21.dnet.module.ad.impex.frame.ImportJob_UI = Ext.extend( dnet.base.AbstractUi, {  
@@ -12,15 +16,11 @@ net.nan21.dnet.module.ad.impex.frame.ImportJob_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-			.addButton({xtype:"button", name:"btnRunImport", id:Ext.id(),iconCls:"icon-action-import" 
-					,text:"Import All", tooltip:"Import all sets included in this job."
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnRunImport",text:"Import All", tooltip:"Import all sets included in this job.",iconCls:"icon-action-import",disabled:true
+			,handler: this.onBtnRunImport,scope:this,stateManager:{name:"record_status_is_edit", dc:"job"}	})	
 							 	
-			.addButton({xtype:"button", name:"btnRunImportItem", id:Ext.id(),iconCls:"icon-action-import" 
-					,text:"Import selected", tooltip:"Import the selected set (one at a time)."
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnRunImportItem",text:"Import selected", tooltip:"Import the selected set (one at a time).",iconCls:"icon-action-import",disabled:true
+			,handler: this.onBtnRunImportItem,scope:this,stateManager:{name:"selected_one", dc:"item"}	})	
 							 	
 		.addDcView("job",{ name:"jobFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportJob$Filter"})	 
 		.addDcView("job",{ name:"jobList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportJob$List"})	 
@@ -29,6 +29,7 @@ net.nan21.dnet.module.ad.impex.frame.ImportJob_UI = Ext.extend( dnet.base.Abstra
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {
@@ -48,5 +49,15 @@ net.nan21.dnet.module.ad.impex.frame.ImportJob_UI = Ext.extend( dnet.base.Abstra
 			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
+
+	,onBtnRunImport: function() {
+					var s={modal:true, callbacks:{} };
+							try{ this._getDc_("job").doService("runImport", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+	}					 	
+
+	,onBtnRunImportItem: function() {
+					var s={modal:true, callbacks:{} };
+							try{ this._getDc_("item").doService("runImport", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+	}					 	
 });
 Ext.reg("net.nan21.dnet.module.ad.impex.frame.ImportJob_UI", net.nan21.dnet.module.ad.impex.frame.ImportJob_UI);   

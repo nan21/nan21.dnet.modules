@@ -18,6 +18,7 @@ Ext.reg("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Right", net.nan21.dnet
 net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui = Ext.extend(dnet.base.AbstractAsgnUi, {
  	 width:700
 	,height:400 
+	,title:"Assign groups to user"
 	,_controller_:net.nan21.dnet.module.ad.usr.asgn.UserUserGroups
 	 
 	,_defineElements_: function () {

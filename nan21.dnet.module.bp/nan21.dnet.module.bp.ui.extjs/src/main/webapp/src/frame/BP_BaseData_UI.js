@@ -47,6 +47,7 @@ net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI = Ext.extend( dnet.base.Abstr
 		.addPanel({name: "canvas3", layout:"border", defaults:{split:true},title:"Delivery methods",header:false})  	 
 		.addPanel({name: "canvas4", layout:"border", defaults:{split:true},title:"Payment methods",header:false})  	 
 		.addPanel({name: "canvas5", layout:"border", defaults:{split:true},title:"Payment terms",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

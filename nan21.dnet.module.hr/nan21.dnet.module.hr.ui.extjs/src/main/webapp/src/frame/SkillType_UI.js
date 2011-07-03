@@ -35,6 +35,7 @@ net.nan21.dnet.module.hr.skill.frame.SkillType_UI = Ext.extend( dnet.base.Abstra
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Categories",header:false})  	 
 		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Types",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

@@ -35,6 +35,7 @@ net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI = Ext.extend( dnet.ba
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Order type",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Order status",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

@@ -1,4 +1,14 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/WfProcessDs", "nan21.dnet.module.ad.ui.extjs/dc/WfProcess", "nan21.dnet.module.ad.ui.extjs/ds/WfProcessInstanceRunningDs", "nan21.dnet.module.ad.ui.extjs/dc/WfProcessInstanceRunning", "nan21.dnet.module.ad.ui.extjs/ds/WfTaskInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/WfTaskInstance", "nan21.dnet.module.ad.ui.extjs/ds/WfProcessInstanceFinishedDs", "nan21.dnet.module.ad.ui.extjs/dc/WfProcessInstanceFinished", "nan21.dnet.module.ad.ui.extjs/ds/WfTaskInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/WfTaskInstance", "nan21.dnet.module.ad.ui.extjs/ds/WfDeploymentDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDeployment","nan21.dnet.module.ad.ui.extjs/ds/WfDeploymentDs","nan21.dnet.module.ad.ui.extjs/lov/WfDeployments","nan21.dnet.module.ad.ui.extjs/ds/WfProcessLovDs","nan21.dnet.module.ad.ui.extjs/lov/WfProcesses","nan21.dnet.module.ad.ui.extjs/ds/WfProcessLovDs","nan21.dnet.module.ad.ui.extjs/lov/WfProcesses"]);
+Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/WfProcessDs", "nan21.dnet.module.ad.ui.extjs/dc/WfProcess", "nan21.dnet.module.ad.ui.extjs/ds/WfProcessInstanceRunningDs", "nan21.dnet.module.ad.ui.extjs/dc/WfProcessInstanceRunning", "nan21.dnet.module.ad.ui.extjs/ds/WfTaskInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/WfTaskInstance", "nan21.dnet.module.ad.ui.extjs/ds/WfProcessInstanceFinishedDs", "nan21.dnet.module.ad.ui.extjs/dc/WfProcessInstanceFinished", "nan21.dnet.module.ad.ui.extjs/ds/WfTaskInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/WfTaskInstance", "nan21.dnet.module.ad.ui.extjs/ds/WfDeploymentDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDeployment","nan21.dnet.module.ad.ui.extjs/ds/WfDeploymentDs","nan21.dnet.module.ad.ui.extjs/lov/WfDeployments","nan21.dnet.module.ad.ui.extjs/ds/WfProcessLovDs","nan21.dnet.module.ad.ui.extjs/lov/WfProcesses","nan21.dnet.module.ad.ui.extjs/ds/WfProcessLovDs","nan21.dnet.module.ad.ui.extjs/lov/WfProcesses"
+
+
+
+
+
+
+
+
+
+]);
 
 Ext.ns("net.nan21.dnet.module.ad.workflow.frame");
 net.nan21.dnet.module.ad.workflow.frame.Workflow_UI = Ext.extend( dnet.base.AbstractUi, {  
@@ -34,30 +44,20 @@ net.nan21.dnet.module.ad.workflow.frame.Workflow_UI = Ext.extend( dnet.base.Abst
         	}
 		}); 
 		this._getBuilder_()	
-			.addButton({xtype:"button", name:"btnStartProcess", id:Ext.id(),iconCls:"icon-gears" 
-					,text:"Start Instance", tooltip:"Start an instance of the selected process"
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnStartProcess",text:"Start Instance", tooltip:"Start an instance of the selected process",iconCls:"icon-gears",disabled:true
+			,handler: this.onBtnStartProcess,scope:this,stateManager:{name:"selected_one", dc:"dcProcess"}	})	
 							 	
-			.addButton({xtype:"button", name:"btnKillProcessInstance", id:Ext.id(),iconCls:"icon-action-reset" 
-					,text:"Kill Instance", tooltip:"Kill the selected process instance"
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnKillProcessInstance",text:"Kill Instance", tooltip:"Kill the selected process instance",iconCls:"icon-action-reset",disabled:true
+			,handler: this.onBtnKillProcessInstance,scope:this,stateManager:{name:"selected_one", dc:"dcRunningInstance"}	})	
 							 	
-			.addButton({xtype:"button", name:"btnSaveAssignTask", id:Ext.id(),iconCls:"icon-action-save" 
-					,text:"Save", tooltip:"Save assignement. Leave field empty to un-assign it."
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnSaveAssignTask",text:"Save", tooltip:"Save assignement. Leave field empty to un-assign it.",iconCls:"icon-action-save",disabled:true
+			,handler: this.onBtnSaveAssignTask,scope:this,stateManager:{name:"record_is_dirty", dc:"dcRunningTask"}	})	
 							 	
-			.addButton({xtype:"button", name:"btnCompleteTask", id:Ext.id(),iconCls:"icon-action-commit" 
-					,text:"Complete task", tooltip:"Mark selected task as completed."
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnCompleteTask",text:"Complete task", tooltip:"Mark selected task as completed.",iconCls:"icon-action-commit",disabled:true
+			,handler: this.onBtnCompleteTask,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask"}	})	
 							 	
-			.addButton({xtype:"button", name:"btnOpenAsignTaskWindow", id:Ext.id() 
-					,text:"Assign task", tooltip:"(Re-)Assign the selected task."
-					,disabled:true
-					,handler: function() {}  ,scope:this })	
+		.addButton({name:"btnOpenAsignTaskWindow",text:"Assign task", tooltip:"(Re-)Assign the selected task.",disabled:true
+			,handler: this.onBtnOpenAsignTaskWindow,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask"}	})	
 							 	
 		.addDcView("dcDeployment",{ name:"filterDeployment", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDeployment$Filter",height:65})	 
 		.addDcView("dcDeployment",{ name:"listDeployment", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDeployment$List"})	 
@@ -80,6 +80,7 @@ net.nan21.dnet.module.ad.workflow.frame.Workflow_UI = Ext.extend( dnet.base.Abst
 		
 		this._elems_.add("wdwAssignTask", { _window_:true, resizable:true, layout:"fit", id:Ext.id(), items:[this._elems_.get("formRunningTaskAsgn")]
 ,title:"Assign task",modal:true,width:300,height:100,buttons:[ this._elems_.get("btnSaveAssignTask") ]}); 	
+			 	
 	}
 
 	,_linkElements_: function() {
@@ -105,5 +106,43 @@ net.nan21.dnet.module.ad.workflow.frame.Workflow_UI = Ext.extend( dnet.base.Abst
 			.beginToolbar("tlbDeploymentList", {dc:"dcDeployment"}).addQuery().end(); 	
 	}
 
+
+	,onBtnStartProcess: function() {
+					var s={modal:true, callbacks:{} };
+							try{ this._getDc_("dcProcess").doService("serviceStartProcess", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+	}					 	
+
+	,onBtnKillProcessInstance: function() {
+					var s={modal:true, callbacks:{} };					var successFn = function(dc,response,serviceName,specs) {							 
+this._getDc_("dcRunningInstance").doQuery();			 	
+							 
+							}; s.callbacks['successFn'] = successFn; s.callbacks['successScope'] = this;
+							
+							try{ this._getDc_("dcRunningInstance").doService("killProcessInstance", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+	}					 	
+
+	,onBtnSaveAssignTask: function() {
+					var s={modal:true, callbacks:{} };					var successFn = function(dc,response,serviceName,specs) {							 
+this._getWindow_("wdwAssignTask").close();			 	
+;	this._getDc_("dcRunningTask").discardChanges();			 	
+;	this._getDc_("dcRunningTask").doQuery();			 	
+							 
+							}; s.callbacks['successFn'] = successFn; s.callbacks['successScope'] = this;
+							
+							try{ this._getDc_("dcRunningTask").doService("assignTask", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+	}					 	
+
+	,onBtnCompleteTask: function() {
+					var s={modal:true, callbacks:{} };					var successFn = function(dc,response,serviceName,specs) {							 
+this._getDc_("dcRunningTask").doQuery();			 	
+							 
+							}; s.callbacks['successFn'] = successFn; s.callbacks['successScope'] = this;
+							
+							try{ this._getDc_("dcRunningTask").doService("completeTask", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+	}					 	
+
+	,onBtnOpenAsignTaskWindow: function() {
+this._getWindow_("wdwAssignTask").show();			 	
+	}					 	
 });
 Ext.reg("net.nan21.dnet.module.ad.workflow.frame.Workflow_UI", net.nan21.dnet.module.ad.workflow.frame.Workflow_UI);   
