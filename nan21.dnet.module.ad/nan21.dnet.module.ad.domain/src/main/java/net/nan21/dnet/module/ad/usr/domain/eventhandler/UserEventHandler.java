@@ -13,7 +13,11 @@ public class UserEventHandler extends DomainEntityBaseEventHandler {
 	
 	@Override
     public void preInsert(DescriptorEvent event) {
-        User e = (User)event.getSource();        
+		User e = (User)event.getSource(); 
+        if (e.getPassword() == null) {
+            // md5 for 1234
+            e.setPassword("81dc9bdb52d04dc20036dbd8313ed055");
+        }        
     } 
     
 	@Override
