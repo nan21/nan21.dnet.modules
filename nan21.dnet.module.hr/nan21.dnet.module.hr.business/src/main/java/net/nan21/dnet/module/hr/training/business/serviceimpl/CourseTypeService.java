@@ -44,7 +44,7 @@ public class CourseTypeService extends AbstractEntityService<CourseType>
     public List<CourseType> findByCategoryId(Long categoryId) {
         return (List<CourseType>) this.em
                 .createQuery(
-                        "select e from CourseType where e.category.id = :pCategoryId",
+                        "select e from CourseType e where e.category.id = :pCategoryId",
                         CourseType.class)
                 .setParameter("pCategoryId", categoryId).getResultList();
     }

@@ -40,7 +40,7 @@ public class EmployeeContactService extends
     public List<EmployeeContact> findByEmployeeId(Long employeeId) {
         return (List<EmployeeContact>) this.em
                 .createQuery(
-                        "select e from EmployeeContact where e.employee.id = :pEmployeeId",
+                        "select e from EmployeeContact e where e.employee.id = :pEmployeeId",
                         EmployeeContact.class)
                 .setParameter("pEmployeeId", employeeId).getResultList();
     }
@@ -52,7 +52,7 @@ public class EmployeeContactService extends
     public List<EmployeeContact> findByTypeId(Long typeId) {
         return (List<EmployeeContact>) this.em
                 .createQuery(
-                        "select e from EmployeeContact where e.type.id = :pTypeId",
+                        "select e from EmployeeContact e where e.type.id = :pTypeId",
                         EmployeeContact.class).setParameter("pTypeId", typeId)
                 .getResultList();
     }
@@ -65,7 +65,7 @@ public class EmployeeContactService extends
     public List<EmployeeContact> findByRelationshipId(Long relationshipId) {
         return (List<EmployeeContact>) this.em
                 .createQuery(
-                        "select e from EmployeeContact where e.relationship.id = :pRelationshipId",
+                        "select e from EmployeeContact e where e.relationship.id = :pRelationshipId",
                         EmployeeContact.class)
                 .setParameter("pRelationshipId", relationshipId)
                 .getResultList();

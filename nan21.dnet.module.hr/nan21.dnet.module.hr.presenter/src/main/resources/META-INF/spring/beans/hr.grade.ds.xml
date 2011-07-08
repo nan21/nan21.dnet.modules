@@ -12,7 +12,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.Grade" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Grade" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeDs" />
 	</bean>
    
  	<bean id="GradeLovDsService" scope="prototype"
@@ -20,7 +24,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.Grade" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="GradeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeLovDs" />
 	</bean>
    
  	<bean id="GradeRateDsService" scope="prototype"
@@ -28,7 +36,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeRateDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.GradeRate" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeRateDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeRateDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="GradeRate" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeRateDs" />
 	</bean>
    
  	<bean id="GradeRateLovDsService" scope="prototype"
@@ -36,7 +48,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeRateLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.GradeRate" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeRateLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeRateLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="GradeRateLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeRateLovDs" />
 	</bean>
    
  	<bean id="GradeRateValueDsService" scope="prototype"
@@ -44,7 +60,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeRateValueDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.GradeRateValue" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeRateValueDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeRateValueDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="GradeRateValue" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeRateValueDs" />
 	</bean>
    
  	<bean id="PayScaleDsService" scope="prototype"
@@ -52,7 +72,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.PayScale" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScaleDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScaleDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PayScale" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleDs" />
 	</bean>
    
  	<bean id="PayScaleLovDsService" scope="prototype"
@@ -60,7 +84,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.PayScale" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScaleLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScaleLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PayScaleLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleLovDs" />
 	</bean>
    
  	<bean id="PayScalePointDsService" scope="prototype"
@@ -68,7 +96,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScalePointDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.PayScalePoint" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScalePointDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScalePointDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PayScalePoint" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScalePointDs" />
 	</bean>
    
  	<bean id="PayScalePointLovDsService" scope="prototype"
@@ -76,7 +108,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScalePointLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.PayScalePoint" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScalePointLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScalePointLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PayScalePointLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScalePointLovDs" />
 	</bean>
    
  	<bean id="PayScaleRateDsService" scope="prototype"
@@ -84,7 +120,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.PayScaleRate" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScaleRateDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScaleRateDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PayScaleRate" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateDs" />
 	</bean>
    
  	<bean id="PayScaleRateValueDsService" scope="prototype"
@@ -92,8 +132,12 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateValueDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.PayScaleRateValue" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScaleRateValueDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScaleRateValueDsConv" />
 	</bean>
-     
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PayScaleRateValue" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateValueDs" />
+	</bean>
+      
 </beans>
    

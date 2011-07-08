@@ -54,7 +54,7 @@ public class SysDsServiceService extends AbstractEntityService<SysDsService>
     public List<SysDsService> findByDataSourceId(Long dataSourceId) {
         return (List<SysDsService>) this.em
                 .createQuery(
-                        "select e from SysDsService where e.dataSource.id = :pDataSourceId",
+                        "select e from SysDsService e where e.dataSource.id = :pDataSourceId",
                         SysDsService.class)
                 .setParameter("pDataSourceId", dataSourceId).getResultList();
     }

@@ -38,7 +38,7 @@ public class ProductSubstituteService extends
     public List<ProductSubstitute> findByRefProductId(Long refProductId) {
         return (List<ProductSubstitute>) this.em
                 .createQuery(
-                        "select e from ProductSubstitute where e.refProduct.id = :pRefProductId",
+                        "select e from ProductSubstitute e where e.refProduct.id = :pRefProductId",
                         ProductSubstitute.class)
                 .setParameter("pRefProductId", refProductId).getResultList();
     }
@@ -50,7 +50,7 @@ public class ProductSubstituteService extends
     public List<ProductSubstitute> findByEquivalenceId(Long equivalenceId) {
         return (List<ProductSubstitute>) this.em
                 .createQuery(
-                        "select e from ProductSubstitute where e.equivalence.id = :pEquivalenceId",
+                        "select e from ProductSubstitute e where e.equivalence.id = :pEquivalenceId",
                         ProductSubstitute.class)
                 .setParameter("pEquivalenceId", equivalenceId).getResultList();
     }

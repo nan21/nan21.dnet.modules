@@ -38,7 +38,8 @@ public class JobSkillService extends AbstractEntityService<JobSkill> implements
 
     public List<JobSkill> findByJobId(Long jobId) {
         return (List<JobSkill>) this.em
-                .createQuery("select e from JobSkill where e.job.id = :pJobId",
+                .createQuery(
+                        "select e from JobSkill e where e.job.id = :pJobId",
                         JobSkill.class).setParameter("pJobId", jobId)
                 .getResultList();
     }
@@ -50,7 +51,7 @@ public class JobSkillService extends AbstractEntityService<JobSkill> implements
     public List<JobSkill> findBySkillId(Long skillId) {
         return (List<JobSkill>) this.em
                 .createQuery(
-                        "select e from JobSkill where e.skill.id = :pSkillId",
+                        "select e from JobSkill e where e.skill.id = :pSkillId",
                         JobSkill.class).setParameter("pSkillId", skillId)
                 .getResultList();
     }
@@ -62,7 +63,7 @@ public class JobSkillService extends AbstractEntityService<JobSkill> implements
     public List<JobSkill> findByRequiredLevelId(Long requiredLevelId) {
         return (List<JobSkill>) this.em
                 .createQuery(
-                        "select e from JobSkill where e.requiredLevel.id = :pRequiredLevelId",
+                        "select e from JobSkill e where e.requiredLevel.id = :pRequiredLevelId",
                         JobSkill.class)
                 .setParameter("pRequiredLevelId", requiredLevelId)
                 .getResultList();

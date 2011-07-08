@@ -39,7 +39,7 @@ public class LocationService extends AbstractEntityService<Location> implements
     public List<Location> findByCountryId(Long countryId) {
         return (List<Location>) this.em
                 .createQuery(
-                        "select e from Location where e.country.id = :pCountryId",
+                        "select e from Location e where e.country.id = :pCountryId",
                         Location.class).setParameter("pCountryId", countryId)
                 .getResultList();
     }
@@ -51,7 +51,7 @@ public class LocationService extends AbstractEntityService<Location> implements
     public List<Location> findByRegionId(Long regionId) {
         return (List<Location>) this.em
                 .createQuery(
-                        "select e from Location where e.region.id = :pRegionId",
+                        "select e from Location e where e.region.id = :pRegionId",
                         Location.class).setParameter("pRegionId", regionId)
                 .getResultList();
     }
@@ -63,7 +63,7 @@ public class LocationService extends AbstractEntityService<Location> implements
     public List<Location> findByCityId(Long cityId) {
         return (List<Location>) this.em
                 .createQuery(
-                        "select e from Location where e.city.id = :pCityId",
+                        "select e from Location e where e.city.id = :pCityId",
                         Location.class).setParameter("pCityId", cityId)
                 .getResultList();
     }

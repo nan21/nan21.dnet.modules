@@ -51,7 +51,7 @@ public class PositionService extends AbstractEntityService<Position> implements
     public List<Position> findByOrganizationId(Long organizationId) {
         return (List<Position>) this.em
                 .createQuery(
-                        "select e from Position where e.organization.id = :pOrganizationId",
+                        "select e from Position e where e.organization.id = :pOrganizationId",
                         Position.class)
                 .setParameter("pOrganizationId", organizationId)
                 .getResultList();
@@ -63,7 +63,8 @@ public class PositionService extends AbstractEntityService<Position> implements
 
     public List<Position> findByJobId(Long jobId) {
         return (List<Position>) this.em
-                .createQuery("select e from Position where e.job.id = :pJobId",
+                .createQuery(
+                        "select e from Position e where e.job.id = :pJobId",
                         Position.class).setParameter("pJobId", jobId)
                 .getResultList();
     }
@@ -75,7 +76,7 @@ public class PositionService extends AbstractEntityService<Position> implements
     public List<Position> findByLocationId(Long locationId) {
         return (List<Position>) this.em
                 .createQuery(
-                        "select e from Position where e.location.id = :pLocationId",
+                        "select e from Position e where e.location.id = :pLocationId",
                         Position.class).setParameter("pLocationId", locationId)
                 .getResultList();
     }

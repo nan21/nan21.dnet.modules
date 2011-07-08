@@ -38,7 +38,7 @@ public class PositionGradeService extends AbstractEntityService<PositionGrade>
     public List<PositionGrade> findByPositionId(Long positionId) {
         return (List<PositionGrade>) this.em
                 .createQuery(
-                        "select e from PositionGrade where e.position.id = :pPositionId",
+                        "select e from PositionGrade e where e.position.id = :pPositionId",
                         PositionGrade.class)
                 .setParameter("pPositionId", positionId).getResultList();
     }
@@ -50,7 +50,7 @@ public class PositionGradeService extends AbstractEntityService<PositionGrade>
     public List<PositionGrade> findByGradeId(Long gradeId) {
         return (List<PositionGrade>) this.em
                 .createQuery(
-                        "select e from PositionGrade where e.grade.id = :pGradeId",
+                        "select e from PositionGrade e where e.grade.id = :pGradeId",
                         PositionGrade.class).setParameter("pGradeId", gradeId)
                 .getResultList();
     }

@@ -39,7 +39,7 @@ public class AbsenceRequestItemService extends
     public List<AbsenceRequestItem> findByAbsenceRequestId(Long absenceRequestId) {
         return (List<AbsenceRequestItem>) this.em
                 .createQuery(
-                        "select e from AbsenceRequestItem where e.absenceRequest.id = :pAbsenceRequestId",
+                        "select e from AbsenceRequestItem e where e.absenceRequest.id = :pAbsenceRequestId",
                         AbsenceRequestItem.class)
                 .setParameter("pAbsenceRequestId", absenceRequestId)
                 .getResultList();

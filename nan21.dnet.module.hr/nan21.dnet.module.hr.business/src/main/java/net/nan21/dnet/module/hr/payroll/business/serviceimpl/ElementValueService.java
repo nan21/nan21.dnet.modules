@@ -39,7 +39,7 @@ public class ElementValueService extends AbstractEntityService<ElementValue>
     public List<ElementValue> findByElementId(Long elementId) {
         return (List<ElementValue>) this.em
                 .createQuery(
-                        "select e from ElementValue where e.element.id = :pElementId",
+                        "select e from ElementValue e where e.element.id = :pElementId",
                         ElementValue.class)
                 .setParameter("pElementId", elementId).getResultList();
     }
@@ -51,7 +51,7 @@ public class ElementValueService extends AbstractEntityService<ElementValue>
     public List<ElementValue> findByEmployeeId(Long employeeId) {
         return (List<ElementValue>) this.em
                 .createQuery(
-                        "select e from ElementValue where e.employee.id = :pEmployeeId",
+                        "select e from ElementValue e where e.employee.id = :pEmployeeId",
                         ElementValue.class)
                 .setParameter("pEmployeeId", employeeId).getResultList();
     }
@@ -63,7 +63,7 @@ public class ElementValueService extends AbstractEntityService<ElementValue>
     public List<ElementValue> findByPeriodId(Long periodId) {
         return (List<ElementValue>) this.em
                 .createQuery(
-                        "select e from ElementValue where e.period.id = :pPeriodId",
+                        "select e from ElementValue e where e.period.id = :pPeriodId",
                         ElementValue.class).setParameter("pPeriodId", periodId)
                 .getResultList();
     }

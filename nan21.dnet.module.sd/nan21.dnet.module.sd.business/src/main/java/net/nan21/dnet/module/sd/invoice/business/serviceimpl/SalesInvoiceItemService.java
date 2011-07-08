@@ -40,7 +40,7 @@ public class SalesInvoiceItemService extends
     public List<SalesInvoiceItem> findByInvoiceId(Long invoiceId) {
         return (List<SalesInvoiceItem>) this.em
                 .createQuery(
-                        "select e from SalesInvoiceItem where e.invoice.id = :pInvoiceId",
+                        "select e from SalesInvoiceItem e where e.invoice.id = :pInvoiceId",
                         SalesInvoiceItem.class)
                 .setParameter("pInvoiceId", invoiceId).getResultList();
     }
@@ -52,7 +52,7 @@ public class SalesInvoiceItemService extends
     public List<SalesInvoiceItem> findByItemId(Long itemId) {
         return (List<SalesInvoiceItem>) this.em
                 .createQuery(
-                        "select e from SalesInvoiceItem where e.item.id = :pItemId",
+                        "select e from SalesInvoiceItem e where e.item.id = :pItemId",
                         SalesInvoiceItem.class).setParameter("pItemId", itemId)
                 .getResultList();
     }
@@ -64,7 +64,7 @@ public class SalesInvoiceItemService extends
     public List<SalesInvoiceItem> findByUomId(Long uomId) {
         return (List<SalesInvoiceItem>) this.em
                 .createQuery(
-                        "select e from SalesInvoiceItem where e.uom.id = :pUomId",
+                        "select e from SalesInvoiceItem e where e.uom.id = :pUomId",
                         SalesInvoiceItem.class).setParameter("pUomId", uomId)
                 .getResultList();
     }

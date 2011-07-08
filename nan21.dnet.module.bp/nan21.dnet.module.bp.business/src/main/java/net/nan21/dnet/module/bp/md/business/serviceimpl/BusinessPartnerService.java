@@ -45,7 +45,7 @@ public class BusinessPartnerService extends
     public List<BusinessPartner> findByCountryId(Long countryId) {
         return (List<BusinessPartner>) this.em
                 .createQuery(
-                        "select e from BusinessPartner where e.country.id = :pCountryId",
+                        "select e from BusinessPartner e where e.country.id = :pCountryId",
                         BusinessPartner.class)
                 .setParameter("pCountryId", countryId).getResultList();
     }

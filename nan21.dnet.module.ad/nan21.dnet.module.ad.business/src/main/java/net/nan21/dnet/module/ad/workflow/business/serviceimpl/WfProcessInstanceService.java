@@ -38,7 +38,7 @@ public class WfProcessInstanceService extends
     public List<WfProcessInstance> findByProcessId(String processId) {
         return (List<WfProcessInstance>) this.em
                 .createQuery(
-                        "select e from WfProcessInstance where e.process.id = :pProcessId",
+                        "select e from WfProcessInstance e where e.process.id = :pProcessId",
                         WfProcessInstance.class)
                 .setParameter("pProcessId", processId).getResultList();
     }

@@ -108,37 +108,53 @@ net.nan21.dnet.module.ad.workflow.frame.Workflow_UI = Ext.extend( dnet.base.Abst
 
 
 	,onBtnStartProcess: function() {
-					var s={modal:true, callbacks:{} };
-							try{ this._getDc_("dcProcess").doService("serviceStartProcess", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+		var s={modal:true, callbacks:{} };
+		try{ 
+			this._getDc_("dcProcess").doService("serviceStartProcess", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
 	}					 	
 
 	,onBtnKillProcessInstance: function() {
-					var s={modal:true, callbacks:{} };					var successFn = function(dc,response,serviceName,specs) {							 
-this._getDc_("dcRunningInstance").doQuery();			 	
-							 
-							}; s.callbacks['successFn'] = successFn; s.callbacks['successScope'] = this;
-							
-							try{ this._getDc_("dcRunningInstance").doService("killProcessInstance", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+		var s={modal:true, callbacks:{} };
+		var successFn = function(dc,response,serviceName,specs) { 	this._getDc_("dcRunningInstance").doQuery();			 	
+			}; 
+		s.callbacks['successFn'] = successFn; 
+		s.callbacks['successScope'] = this;
+		try{ 
+			this._getDc_("dcRunningInstance").doService("killProcessInstance", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
 	}					 	
 
 	,onBtnSaveAssignTask: function() {
-					var s={modal:true, callbacks:{} };					var successFn = function(dc,response,serviceName,specs) {							 
-this._getWindow_("wdwAssignTask").close();			 	
+		var s={modal:true, callbacks:{} };
+		var successFn = function(dc,response,serviceName,specs) { 	this._getWindow_("wdwAssignTask").close();			 	
 ;	this._getDc_("dcRunningTask").discardChanges();			 	
 ;	this._getDc_("dcRunningTask").doQuery();			 	
-							 
-							}; s.callbacks['successFn'] = successFn; s.callbacks['successScope'] = this;
-							
-							try{ this._getDc_("dcRunningTask").doService("assignTask", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+			}; 
+		s.callbacks['successFn'] = successFn; 
+		s.callbacks['successScope'] = this;
+		try{ 
+			this._getDc_("dcRunningTask").doService("assignTask", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
 	}					 	
 
 	,onBtnCompleteTask: function() {
-					var s={modal:true, callbacks:{} };					var successFn = function(dc,response,serviceName,specs) {							 
-this._getDc_("dcRunningTask").doQuery();			 	
-							 
-							}; s.callbacks['successFn'] = successFn; s.callbacks['successScope'] = this;
-							
-							try{ this._getDc_("dcRunningTask").doService("completeTask", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+		var s={modal:true, callbacks:{} };
+		var successFn = function(dc,response,serviceName,specs) { 	this._getDc_("dcRunningTask").doQuery();			 	
+			}; 
+		s.callbacks['successFn'] = successFn; 
+		s.callbacks['successScope'] = this;
+		try{ 
+			this._getDc_("dcRunningTask").doService("completeTask", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
 	}					 	
 
 	,onBtnOpenAsignTaskWindow: function() {

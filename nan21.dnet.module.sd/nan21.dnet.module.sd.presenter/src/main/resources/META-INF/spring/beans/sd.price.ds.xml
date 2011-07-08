@@ -12,7 +12,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.price.ds.model.PriceListDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.price.domain.entity.PriceList" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.price.ds.converter.PriceListDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.price.ds.converter.PriceListDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PriceList" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.price.ds.model.PriceListDs" />
 	</bean>
    
  	<bean id="PriceListLovDsService" scope="prototype"
@@ -20,8 +24,12 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.price.ds.model.PriceListLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.price.domain.entity.PriceList" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.price.ds.converter.PriceListLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.price.ds.converter.PriceListLovDsConv" />
 	</bean>
-     
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PriceListLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.price.ds.model.PriceListLovDs" />
+	</bean>
+      
 </beans>
    

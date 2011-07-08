@@ -49,7 +49,7 @@ public class ElementService extends AbstractEntityService<Element> implements
     public List<Element> findByTypeId(Long typeId) {
         return (List<Element>) this.em
                 .createQuery(
-                        "select e from Element where e.type.id = :pTypeId",
+                        "select e from Element e where e.type.id = :pTypeId",
                         Element.class).setParameter("pTypeId", typeId)
                 .getResultList();
     }

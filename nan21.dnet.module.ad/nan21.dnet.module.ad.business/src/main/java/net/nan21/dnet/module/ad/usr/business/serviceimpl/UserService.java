@@ -43,7 +43,8 @@ public class UserService extends AbstractEntityService<User> implements
 
     public List<User> findByRolesId(Long rolesId) {
         return (List<User>) this.em
-                .createQuery("select e from User where e.roles.id = :pRolesId",
+                .createQuery(
+                        "select e from User e where e.roles.id = :pRolesId",
                         User.class).setParameter("pRolesId", rolesId)
                 .getResultList();
     }
@@ -55,7 +56,7 @@ public class UserService extends AbstractEntityService<User> implements
     public List<User> findByGroupsId(Long groupsId) {
         return (List<User>) this.em
                 .createQuery(
-                        "select e from User where e.groups.id = :pGroupsId",
+                        "select e from User e where e.groups.id = :pGroupsId",
                         User.class).setParameter("pGroupsId", groupsId)
                 .getResultList();
     }

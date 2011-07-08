@@ -38,7 +38,7 @@ public class ProductAttachmentService extends
     public List<ProductAttachment> findByProductId(Long productId) {
         return (List<ProductAttachment>) this.em
                 .createQuery(
-                        "select e from ProductAttachment where e.product.id = :pProductId",
+                        "select e from ProductAttachment e where e.product.id = :pProductId",
                         ProductAttachment.class)
                 .setParameter("pProductId", productId).getResultList();
     }

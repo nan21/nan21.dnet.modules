@@ -12,7 +12,16 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDataSourceDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDataSourceDsConv" />
+	  	<property name="rpcFilter" >
+	  		<map>
+	  			<entry key="synchronizeCatalog" value="net.nan21.dnet.module.ad._delegates.SysDataSourceScanner"></entry>
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDataSource" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs" />
 	</bean>
    
  	<bean id="SysDataSourceLovDsService" scope="prototype"
@@ -20,7 +29,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDataSourceLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDataSourceLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDataSourceLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceLovDs" />
 	</bean>
    
  	<bean id="SysDataSourceControllerLovDsService" scope="prototype"
@@ -28,7 +41,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceControllerLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDataSourceControllerLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDataSourceControllerLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDataSourceControllerLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceControllerLovDs" />
 	</bean>
    
  	<bean id="SysDataSourceModelLovDsService" scope="prototype"
@@ -36,7 +53,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceModelLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDataSourceModelLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDataSourceModelLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDataSourceModelLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceModelLovDs" />
 	</bean>
    
  	<bean id="SysDsFieldDsService" scope="prototype"
@@ -44,7 +65,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsField" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsFieldDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsFieldDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsField" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldDs" />
 	</bean>
    
  	<bean id="SysDsFieldLovDsService" scope="prototype"
@@ -52,7 +77,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsField" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsFieldLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsFieldLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsFieldLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldLovDs" />
 	</bean>
    
  	<bean id="SysDsServiceDsService" scope="prototype"
@@ -60,7 +89,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsService" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsServiceDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsServiceDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsService" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceDs" />
 	</bean>
    
  	<bean id="SysDsServiceLovDsService" scope="prototype"
@@ -68,7 +101,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsService" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsServiceLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsServiceLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsServiceLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceLovDs" />
 	</bean>
    
  	<bean id="SysDsEventDsService" scope="prototype"
@@ -76,7 +113,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsEventDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsEventDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsEvent" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventDs" />
 	</bean>
    
  	<bean id="SysDsEventLovDsService" scope="prototype"
@@ -84,8 +125,12 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsEventLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsEventLovDsConv" />
 	</bean>
-     
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsEventLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventLovDs" />
+	</bean>
+      
 </beans>
    

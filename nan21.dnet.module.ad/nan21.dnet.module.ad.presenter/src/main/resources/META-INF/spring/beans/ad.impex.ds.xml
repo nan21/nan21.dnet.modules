@@ -12,7 +12,16 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportMap" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="runImport" value="net.nan21.dnet.module.ad._delegates.ImportFromMap"></entry>
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ImportMap" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapDs" />
 	</bean>
    
  	<bean id="ImportMapLovDsService" scope="prototype"
@@ -20,7 +29,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportMap" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ImportMapLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapLovDs" />
 	</bean>
    
  	<bean id="ImportMapItemDsService" scope="prototype"
@@ -28,7 +41,16 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapItemDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapItemDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="runImport" value="net.nan21.dnet.module.ad._delegates.ImportFromMapItem"></entry>
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ImportMapItem" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs" />
 	</bean>
    
  	<bean id="ImportJobDsService" scope="prototype"
@@ -36,7 +58,16 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportJob" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="runImport" value="net.nan21.dnet.module.ad._delegates.ImportFromJob"></entry>
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ImportJob" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobDs" />
 	</bean>
    
  	<bean id="ImportJobLovDsService" scope="prototype"
@@ -44,7 +75,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportJob" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ImportJobLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobLovDs" />
 	</bean>
    
  	<bean id="ImportJobItemDsService" scope="prototype"
@@ -52,8 +87,17 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobItemDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportJobItem" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobItemDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobItemDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="runImport" value="net.nan21.dnet.module.ad._delegates.ImportFromJobItem"></entry>
+	  		</map>
+	  	</property>	
 	</bean>
-     
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ImportJobItem" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobItemDs" />
+	</bean>
+      
 </beans>
    

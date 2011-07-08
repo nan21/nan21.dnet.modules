@@ -43,7 +43,7 @@ public class UserGroupService extends AbstractEntityService<UserGroup>
     public List<UserGroup> findByUsersId(Long usersId) {
         return (List<UserGroup>) this.em
                 .createQuery(
-                        "select e from UserGroup where e.users.id = :pUsersId",
+                        "select e from UserGroup e where e.users.id = :pUsersId",
                         UserGroup.class).setParameter("pUsersId", usersId)
                 .getResultList();
     }

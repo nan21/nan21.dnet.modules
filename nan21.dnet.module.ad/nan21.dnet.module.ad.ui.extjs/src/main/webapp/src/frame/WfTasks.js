@@ -74,17 +74,25 @@ net.nan21.dnet.module.ad.workflow.frame.WfTasks = Ext.extend( dnet.base.Abstract
 
 
 	,onBtnCompleteTask: function() {
-					var s={modal:true, callbacks:{} };
-							try{ this._getDc_("dcMytask").doService("completeTask", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+		var s={modal:true, callbacks:{} };
+		try{ 
+			this._getDc_("dcMytask").doService("completeTask", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
 	}					 	
 
 	,onBtnClaimTask: function() {
-					var s={modal:true, callbacks:{} };					var successFn = function(dc,response,serviceName,specs) {							 
-this._getDc_("dcAvailabletask").doQuery();			 	
-							 
-							}; s.callbacks['successFn'] = successFn; s.callbacks['successScope'] = this;
-							
-							try{ this._getDc_("dcAvailabletask").doService("assignTask", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+		var s={modal:true, callbacks:{} };
+		var successFn = function(dc,response,serviceName,specs) { 	this._getDc_("dcAvailabletask").doQuery();			 	
+			}; 
+		s.callbacks['successFn'] = successFn; 
+		s.callbacks['successScope'] = this;
+		try{ 
+			this._getDc_("dcAvailabletask").doService("assignTask", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
 	}					 	
 });
 Ext.reg("net.nan21.dnet.module.ad.workflow.frame.WfTasks", net.nan21.dnet.module.ad.workflow.frame.WfTasks);   

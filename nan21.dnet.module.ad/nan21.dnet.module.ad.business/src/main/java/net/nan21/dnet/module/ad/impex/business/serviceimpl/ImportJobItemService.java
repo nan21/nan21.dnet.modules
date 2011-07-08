@@ -54,7 +54,7 @@ public class ImportJobItemService extends AbstractEntityService<ImportJobItem>
     public List<ImportJobItem> findByJobId(Long jobId) {
         return (List<ImportJobItem>) this.em
                 .createQuery(
-                        "select e from ImportJobItem where e.job.id = :pJobId",
+                        "select e from ImportJobItem e where e.job.id = :pJobId",
                         ImportJobItem.class).setParameter("pJobId", jobId)
                 .getResultList();
     }
@@ -66,7 +66,7 @@ public class ImportJobItemService extends AbstractEntityService<ImportJobItem>
     public List<ImportJobItem> findByMapId(Long mapId) {
         return (List<ImportJobItem>) this.em
                 .createQuery(
-                        "select e from ImportJobItem where e.map.id = :pMapId",
+                        "select e from ImportJobItem e where e.map.id = :pMapId",
                         ImportJobItem.class).setParameter("pMapId", mapId)
                 .getResultList();
     }

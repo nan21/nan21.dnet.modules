@@ -38,7 +38,7 @@ public class JobCourseService extends AbstractEntityService<JobCourse>
     public List<JobCourse> findByJobId(Long jobId) {
         return (List<JobCourse>) this.em
                 .createQuery(
-                        "select e from JobCourse where e.job.id = :pJobId",
+                        "select e from JobCourse e where e.job.id = :pJobId",
                         JobCourse.class).setParameter("pJobId", jobId)
                 .getResultList();
     }
@@ -50,7 +50,7 @@ public class JobCourseService extends AbstractEntityService<JobCourse>
     public List<JobCourse> findByCourseId(Long courseId) {
         return (List<JobCourse>) this.em
                 .createQuery(
-                        "select e from JobCourse where e.course.id = :pCourseId",
+                        "select e from JobCourse e where e.course.id = :pCourseId",
                         JobCourse.class).setParameter("pCourseId", courseId)
                 .getResultList();
     }

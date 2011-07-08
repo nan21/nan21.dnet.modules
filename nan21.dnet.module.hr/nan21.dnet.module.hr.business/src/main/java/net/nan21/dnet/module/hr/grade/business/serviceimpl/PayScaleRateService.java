@@ -45,7 +45,7 @@ public class PayScaleRateService extends AbstractEntityService<PayScaleRate>
     public List<PayScaleRate> findByPayScaleId(Long payScaleId) {
         return (List<PayScaleRate>) this.em
                 .createQuery(
-                        "select e from PayScaleRate where e.payScale.id = :pPayScaleId",
+                        "select e from PayScaleRate e where e.payScale.id = :pPayScaleId",
                         PayScaleRate.class)
                 .setParameter("pPayScaleId", payScaleId).getResultList();
     }
@@ -57,7 +57,7 @@ public class PayScaleRateService extends AbstractEntityService<PayScaleRate>
     public List<PayScaleRate> findByCurrencyId(Long currencyId) {
         return (List<PayScaleRate>) this.em
                 .createQuery(
-                        "select e from PayScaleRate where e.currency.id = :pCurrencyId",
+                        "select e from PayScaleRate e where e.currency.id = :pCurrencyId",
                         PayScaleRate.class)
                 .setParameter("pCurrencyId", currencyId).getResultList();
     }

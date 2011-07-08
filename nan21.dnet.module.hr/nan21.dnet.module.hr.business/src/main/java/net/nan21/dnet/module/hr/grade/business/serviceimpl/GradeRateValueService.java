@@ -38,7 +38,7 @@ public class GradeRateValueService extends
     public List<GradeRateValue> findByGradeRateId(Long gradeRateId) {
         return (List<GradeRateValue>) this.em
                 .createQuery(
-                        "select e from GradeRateValue where e.gradeRate.id = :pGradeRateId",
+                        "select e from GradeRateValue e where e.gradeRate.id = :pGradeRateId",
                         GradeRateValue.class)
                 .setParameter("pGradeRateId", gradeRateId).getResultList();
     }
@@ -50,7 +50,7 @@ public class GradeRateValueService extends
     public List<GradeRateValue> findByGradeId(Long gradeId) {
         return (List<GradeRateValue>) this.em
                 .createQuery(
-                        "select e from GradeRateValue where e.grade.id = :pGradeId",
+                        "select e from GradeRateValue e where e.grade.id = :pGradeId",
                         GradeRateValue.class).setParameter("pGradeId", gradeId)
                 .getResultList();
     }

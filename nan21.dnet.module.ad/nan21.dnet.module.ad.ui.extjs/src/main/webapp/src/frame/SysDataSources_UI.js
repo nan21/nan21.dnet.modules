@@ -47,12 +47,16 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 
 
 	,onBtnSynchronize: function() {
-					var s={modal:true, callbacks:{} };					var successFn = function(dc,response,serviceName,specs) {							 
-this._getDc_("m").doQuery();			 	
-							 
-							}; s.callbacks['successFn'] = successFn; s.callbacks['successScope'] = this;
-							
-							try{ this._getDc_("m").doService("synchronizeCatalog", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+		var s={modal:true, callbacks:{} };
+		var successFn = function(dc,response,serviceName,specs) { 	this._getDc_("m").doQuery();			 	
+			}; 
+		s.callbacks['successFn'] = successFn; 
+		s.callbacks['successScope'] = this;
+		try{ 
+			this._getDc_("m").doServiceFilter("synchronizeCatalog", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
 	}					 	
 });
 Ext.reg("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", net.nan21.dnet.module.ad.system.frame.SysDataSources_UI);   

@@ -43,7 +43,7 @@ public class GradeRateService extends AbstractEntityService<GradeRate>
     public List<GradeRate> findByCurrencyId(Long currencyId) {
         return (List<GradeRate>) this.em
                 .createQuery(
-                        "select e from GradeRate where e.currency.id = :pCurrencyId",
+                        "select e from GradeRate e where e.currency.id = :pCurrencyId",
                         GradeRate.class)
                 .setParameter("pCurrencyId", currencyId).getResultList();
     }

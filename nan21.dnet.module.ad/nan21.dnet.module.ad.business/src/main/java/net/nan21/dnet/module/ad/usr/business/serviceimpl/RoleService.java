@@ -42,7 +42,8 @@ public class RoleService extends AbstractEntityService<Role> implements
 
     public List<Role> findByUsersId(Long usersId) {
         return (List<Role>) this.em
-                .createQuery("select e from Role where e.users.id = :pUsersId",
+                .createQuery(
+                        "select e from Role e where e.users.id = :pUsersId",
                         Role.class).setParameter("pUsersId", usersId)
                 .getResultList();
     }

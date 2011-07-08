@@ -39,7 +39,7 @@ public class PayScaleRateValueService extends
     public List<PayScaleRateValue> findByScaleRateId(Long scaleRateId) {
         return (List<PayScaleRateValue>) this.em
                 .createQuery(
-                        "select e from PayScaleRateValue where e.scaleRate.id = :pScaleRateId",
+                        "select e from PayScaleRateValue e where e.scaleRate.id = :pScaleRateId",
                         PayScaleRateValue.class)
                 .setParameter("pScaleRateId", scaleRateId).getResultList();
     }
@@ -51,7 +51,7 @@ public class PayScaleRateValueService extends
     public List<PayScaleRateValue> findByScalePointId(Long scalePointId) {
         return (List<PayScaleRateValue>) this.em
                 .createQuery(
-                        "select e from PayScaleRateValue where e.scalePoint.id = :pScalePointId",
+                        "select e from PayScaleRateValue e where e.scalePoint.id = :pScalePointId",
                         PayScaleRateValue.class)
                 .setParameter("pScalePointId", scalePointId).getResultList();
     }

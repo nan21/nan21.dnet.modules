@@ -38,7 +38,7 @@ public class PositionCourseService extends
     public List<PositionCourse> findByPositionId(Long positionId) {
         return (List<PositionCourse>) this.em
                 .createQuery(
-                        "select e from PositionCourse where e.position.id = :pPositionId",
+                        "select e from PositionCourse e where e.position.id = :pPositionId",
                         PositionCourse.class)
                 .setParameter("pPositionId", positionId).getResultList();
     }
@@ -50,7 +50,7 @@ public class PositionCourseService extends
     public List<PositionCourse> findByCourseId(Long courseId) {
         return (List<PositionCourse>) this.em
                 .createQuery(
-                        "select e from PositionCourse where e.course.id = :pCourseId",
+                        "select e from PositionCourse e where e.course.id = :pCourseId",
                         PositionCourse.class)
                 .setParameter("pCourseId", courseId).getResultList();
     }

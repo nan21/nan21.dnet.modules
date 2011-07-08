@@ -38,7 +38,7 @@ public class JobRequirementService extends
     public List<JobRequirement> findByJobId(Long jobId) {
         return (List<JobRequirement>) this.em
                 .createQuery(
-                        "select e from JobRequirement where e.job.id = :pJobId",
+                        "select e from JobRequirement e where e.job.id = :pJobId",
                         JobRequirement.class).setParameter("pJobId", jobId)
                 .getResultList();
     }
@@ -50,7 +50,7 @@ public class JobRequirementService extends
     public List<JobRequirement> findByRequirementId(Long requirementId) {
         return (List<JobRequirement>) this.em
                 .createQuery(
-                        "select e from JobRequirement where e.requirement.id = :pRequirementId",
+                        "select e from JobRequirement e where e.requirement.id = :pRequirementId",
                         JobRequirement.class)
                 .setParameter("pRequirementId", requirementId).getResultList();
     }

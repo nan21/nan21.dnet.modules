@@ -44,7 +44,7 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
     public List<Employee> findByEmployerId(Long employerId) {
         return (List<Employee>) this.em
                 .createQuery(
-                        "select e from Employee where e.employer.id = :pEmployerId",
+                        "select e from Employee e where e.employer.id = :pEmployerId",
                         Employee.class).setParameter("pEmployerId", employerId)
                 .getResultList();
     }
@@ -56,7 +56,7 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
     public List<Employee> findByCitizenshipId(Long citizenshipId) {
         return (List<Employee>) this.em
                 .createQuery(
-                        "select e from Employee where e.citizenship.id = :pCitizenshipId",
+                        "select e from Employee e where e.citizenship.id = :pCitizenshipId",
                         Employee.class)
                 .setParameter("pCitizenshipId", citizenshipId).getResultList();
     }

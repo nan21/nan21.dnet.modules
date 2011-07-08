@@ -58,7 +58,7 @@ public class ProductAccountService extends
     public List<ProductAccount> findByOrganizationId(Long organizationId) {
         return (List<ProductAccount>) this.em
                 .createQuery(
-                        "select e from ProductAccount where e.organization.id = :pOrganizationId",
+                        "select e from ProductAccount e where e.organization.id = :pOrganizationId",
                         ProductAccount.class)
                 .setParameter("pOrganizationId", organizationId)
                 .getResultList();
@@ -71,7 +71,7 @@ public class ProductAccountService extends
     public List<ProductAccount> findByGroupId(Long groupId) {
         return (List<ProductAccount>) this.em
                 .createQuery(
-                        "select e from ProductAccount where e.group.id = :pGroupId",
+                        "select e from ProductAccount e where e.group.id = :pGroupId",
                         ProductAccount.class).setParameter("pGroupId", groupId)
                 .getResultList();
     }
@@ -83,7 +83,7 @@ public class ProductAccountService extends
     public List<ProductAccount> findByProductId(Long productId) {
         return (List<ProductAccount>) this.em
                 .createQuery(
-                        "select e from ProductAccount where e.product.id = :pProductId",
+                        "select e from ProductAccount e where e.product.id = :pProductId",
                         ProductAccount.class)
                 .setParameter("pProductId", productId).getResultList();
     }

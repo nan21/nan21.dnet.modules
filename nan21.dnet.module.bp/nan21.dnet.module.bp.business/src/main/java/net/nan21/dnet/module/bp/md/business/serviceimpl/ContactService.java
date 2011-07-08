@@ -37,7 +37,7 @@ public class ContactService extends AbstractEntityService<Contact> implements
     public List<Contact> findByBpartnerId(Long bpartnerId) {
         return (List<Contact>) this.em
                 .createQuery(
-                        "select e from Contact where e.bpartner.id = :pBpartnerId",
+                        "select e from Contact e where e.bpartner.id = :pBpartnerId",
                         Contact.class).setParameter("pBpartnerId", bpartnerId)
                 .getResultList();
     }

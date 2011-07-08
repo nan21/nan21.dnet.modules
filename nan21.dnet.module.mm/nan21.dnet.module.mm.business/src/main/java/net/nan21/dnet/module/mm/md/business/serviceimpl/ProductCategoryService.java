@@ -53,7 +53,7 @@ public class ProductCategoryService extends
     public List<ProductCategory> findByParentId(Long parentId) {
         return (List<ProductCategory>) this.em
                 .createQuery(
-                        "select e from ProductCategory where e.parent.id = :pParentId",
+                        "select e from ProductCategory e where e.parent.id = :pParentId",
                         ProductCategory.class)
                 .setParameter("pParentId", parentId).getResultList();
     }
@@ -65,7 +65,7 @@ public class ProductCategoryService extends
     public List<ProductCategory> findByProductsId(Long productsId) {
         return (List<ProductCategory>) this.em
                 .createQuery(
-                        "select e from ProductCategory where e.products.id = :pProductsId",
+                        "select e from ProductCategory e where e.products.id = :pProductsId",
                         ProductCategory.class)
                 .setParameter("pProductsId", productsId).getResultList();
     }

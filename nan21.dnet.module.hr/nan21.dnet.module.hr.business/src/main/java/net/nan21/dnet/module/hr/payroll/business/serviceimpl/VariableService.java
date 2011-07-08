@@ -67,7 +67,7 @@ public class VariableService extends AbstractEntityService<Variable> implements
     public List<Variable> findByElementId(Long elementId) {
         return (List<Variable>) this.em
                 .createQuery(
-                        "select e from Variable where e.element.id = :pElementId",
+                        "select e from Variable e where e.element.id = :pElementId",
                         Variable.class).setParameter("pElementId", elementId)
                 .getResultList();
     }
@@ -79,7 +79,7 @@ public class VariableService extends AbstractEntityService<Variable> implements
     public List<Variable> findByCrossReferenceId(Long crossReferenceId) {
         return (List<Variable>) this.em
                 .createQuery(
-                        "select e from Variable where e.crossReference.id = :pCrossReferenceId",
+                        "select e from Variable e where e.crossReference.id = :pCrossReferenceId",
                         Variable.class)
                 .setParameter("pCrossReferenceId", crossReferenceId)
                 .getResultList();

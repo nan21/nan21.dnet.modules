@@ -39,7 +39,7 @@ public class EmployeeEducationService extends
     public List<EmployeeEducation> findByEmployeeId(Long employeeId) {
         return (List<EmployeeEducation>) this.em
                 .createQuery(
-                        "select e from EmployeeEducation where e.employee.id = :pEmployeeId",
+                        "select e from EmployeeEducation e where e.employee.id = :pEmployeeId",
                         EmployeeEducation.class)
                 .setParameter("pEmployeeId", employeeId).getResultList();
     }
@@ -51,7 +51,7 @@ public class EmployeeEducationService extends
     public List<EmployeeEducation> findByTypeId(Long typeId) {
         return (List<EmployeeEducation>) this.em
                 .createQuery(
-                        "select e from EmployeeEducation where e.type.id = :pTypeId",
+                        "select e from EmployeeEducation e where e.type.id = :pTypeId",
                         EmployeeEducation.class)
                 .setParameter("pTypeId", typeId).getResultList();
     }

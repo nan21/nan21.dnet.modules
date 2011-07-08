@@ -13,6 +13,7 @@ net.nan21.dnet.module.ux.example.frame.LandForm = Ext.extend( dnet.base.Abstract
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.ux.example.dc.LandForm$EditListCtx", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+			 	
 	}
 
 	,_linkElements_: function() {

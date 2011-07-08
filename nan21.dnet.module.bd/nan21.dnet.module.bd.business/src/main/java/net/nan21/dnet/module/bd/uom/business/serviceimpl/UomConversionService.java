@@ -37,7 +37,7 @@ public class UomConversionService extends AbstractEntityService<UomConversion>
     public List<UomConversion> findBySourceId(Long sourceId) {
         return (List<UomConversion>) this.em
                 .createQuery(
-                        "select e from UomConversion where e.source.id = :pSourceId",
+                        "select e from UomConversion e where e.source.id = :pSourceId",
                         UomConversion.class)
                 .setParameter("pSourceId", sourceId).getResultList();
     }
@@ -49,7 +49,7 @@ public class UomConversionService extends AbstractEntityService<UomConversion>
     public List<UomConversion> findByTargetId(Long targetId) {
         return (List<UomConversion>) this.em
                 .createQuery(
-                        "select e from UomConversion where e.target.id = :pTargetId",
+                        "select e from UomConversion e where e.target.id = :pTargetId",
                         UomConversion.class)
                 .setParameter("pTargetId", targetId).getResultList();
     }

@@ -12,7 +12,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.WorkRequirementType" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.WorkRequirementTypeDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.WorkRequirementTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WorkRequirementType" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementTypeDs" />
 	</bean>
    
  	<bean id="WorkRequirementTypeLovDsService" scope="prototype"
@@ -20,7 +24,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.WorkRequirementType" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.WorkRequirementTypeLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.WorkRequirementTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WorkRequirementTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementTypeLovDs" />
 	</bean>
    
  	<bean id="WorkRequirementDsService" scope="prototype"
@@ -28,7 +36,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.WorkRequirement" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.WorkRequirementDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.WorkRequirementDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WorkRequirement" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementDs" />
 	</bean>
    
  	<bean id="WorkRequirementLovDsService" scope="prototype"
@@ -36,7 +48,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.WorkRequirement" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.WorkRequirementLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.WorkRequirementLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WorkRequirementLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementLovDs" />
 	</bean>
    
  	<bean id="JobTypeDsService" scope="prototype"
@@ -44,7 +60,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.JobType" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.JobTypeDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.JobTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="JobType" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobTypeDs" />
 	</bean>
    
  	<bean id="JobTypeLovDsService" scope="prototype"
@@ -52,7 +72,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.JobType" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.JobTypeLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.JobTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="JobTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobTypeLovDs" />
 	</bean>
    
  	<bean id="JobDsService" scope="prototype"
@@ -60,7 +84,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.Job" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.JobDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.JobDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Job" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobDs" />
 	</bean>
    
  	<bean id="JobLovDsService" scope="prototype"
@@ -68,7 +96,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.Job" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.JobLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.JobLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="JobLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobLovDs" />
 	</bean>
    
  	<bean id="JobRequirementDsService" scope="prototype"
@@ -76,7 +108,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobRequirementDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.JobRequirement" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.JobRequirementDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.JobRequirementDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="JobRequirement" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobRequirementDs" />
 	</bean>
    
  	<bean id="PositionDsService" scope="prototype"
@@ -84,7 +120,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.PositionDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.Position" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.PositionDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.PositionDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Position" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.PositionDs" />
 	</bean>
    
  	<bean id="PositionLovDsService" scope="prototype"
@@ -92,7 +132,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.PositionLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.Position" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.PositionLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.PositionLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PositionLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.PositionLovDs" />
 	</bean>
    
  	<bean id="PositionRequirementDsService" scope="prototype"
@@ -100,8 +144,12 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.PositionRequirementDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.PositionRequirement" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.PositionRequirementDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.job.ds.converter.PositionRequirementDsConv" />
 	</bean>
-     
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PositionRequirement" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.PositionRequirementDs" />
+	</bean>
+      
 </beans>
    

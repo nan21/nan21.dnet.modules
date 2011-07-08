@@ -53,7 +53,7 @@ public class LandFormService extends AbstractEntityService<LandForm> implements
     public List<LandForm> findByTypeId(Long typeId) {
         return (List<LandForm>) this.em
                 .createQuery(
-                        "select e from LandForm where e.type.id = :pTypeId",
+                        "select e from LandForm e where e.type.id = :pTypeId",
                         LandForm.class).setParameter("pTypeId", typeId)
                 .getResultList();
     }
@@ -65,7 +65,7 @@ public class LandFormService extends AbstractEntityService<LandForm> implements
     public List<LandForm> findByCountryId(Long countryId) {
         return (List<LandForm>) this.em
                 .createQuery(
-                        "select e from LandForm where e.country.id = :pCountryId",
+                        "select e from LandForm e where e.country.id = :pCountryId",
                         LandForm.class).setParameter("pCountryId", countryId)
                 .getResultList();
     }

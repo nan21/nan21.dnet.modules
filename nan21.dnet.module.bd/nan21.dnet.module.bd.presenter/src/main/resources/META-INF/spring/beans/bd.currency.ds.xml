@@ -12,7 +12,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.currency.domain.entity.Currency" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Currency" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyDs" />
 	</bean>
    
  	<bean id="CurrencyLovDsService" scope="prototype"
@@ -20,7 +24,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.currency.domain.entity.Currency" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CurrencyLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyLovDs" />
 	</bean>
    
  	<bean id="CurrencyXRateProviderDsService" scope="prototype"
@@ -28,7 +36,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateProviderDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRateProvider" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyXRateProviderDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyXRateProviderDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CurrencyXRateProvider" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateProviderDs" />
 	</bean>
    
  	<bean id="CurrencyXRateProviderLovDsService" scope="prototype"
@@ -36,7 +48,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateProviderLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRateProvider" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyXRateProviderLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyXRateProviderLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CurrencyXRateProviderLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateProviderLovDs" />
 	</bean>
    
  	<bean id="CurrencyXRateDsService" scope="prototype"
@@ -44,7 +60,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRate" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyXRateDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyXRateDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CurrencyXRate" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateDs" />
 	</bean>
    
  	<bean id="CurrencyXRateAverageDsService" scope="prototype"
@@ -52,8 +72,12 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateAverageDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRateAverage" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyXRateAverageDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.currency.ds.converter.CurrencyXRateAverageDsConv" />
 	</bean>
-     
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CurrencyXRateAverage" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateAverageDs" />
+	</bean>
+      
 </beans>
    

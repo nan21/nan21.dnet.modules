@@ -39,7 +39,7 @@ public class PositionRequirementService extends
     public List<PositionRequirement> findByPositionId(Long positionId) {
         return (List<PositionRequirement>) this.em
                 .createQuery(
-                        "select e from PositionRequirement where e.position.id = :pPositionId",
+                        "select e from PositionRequirement e where e.position.id = :pPositionId",
                         PositionRequirement.class)
                 .setParameter("pPositionId", positionId).getResultList();
     }
@@ -52,7 +52,7 @@ public class PositionRequirementService extends
     public List<PositionRequirement> findByRequirementId(Long requirementId) {
         return (List<PositionRequirement>) this.em
                 .createQuery(
-                        "select e from PositionRequirement where e.requirement.id = :pRequirementId",
+                        "select e from PositionRequirement e where e.requirement.id = :pRequirementId",
                         PositionRequirement.class)
                 .setParameter("pRequirementId", requirementId).getResultList();
     }

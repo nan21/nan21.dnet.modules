@@ -43,7 +43,8 @@ public class SkillService extends AbstractEntityService<Skill> implements
 
     public List<Skill> findByTypeId(Long typeId) {
         return (List<Skill>) this.em
-                .createQuery("select e from Skill where e.type.id = :pTypeId",
+                .createQuery(
+                        "select e from Skill e where e.type.id = :pTypeId",
                         Skill.class).setParameter("pTypeId", typeId)
                 .getResultList();
     }
@@ -55,7 +56,7 @@ public class SkillService extends AbstractEntityService<Skill> implements
     public List<Skill> findByRatingScaleId(Long ratingScaleId) {
         return (List<Skill>) this.em
                 .createQuery(
-                        "select e from Skill where e.ratingScale.id = :pRatingScaleId",
+                        "select e from Skill e where e.ratingScale.id = :pRatingScaleId",
                         Skill.class)
                 .setParameter("pRatingScaleId", ratingScaleId).getResultList();
     }

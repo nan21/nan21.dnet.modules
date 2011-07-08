@@ -24,6 +24,9 @@
 		 <property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>
 	
+	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" >		  
+	</bean>
+	
 	<import resource="beans/bd.uom.ds.xml"/>
 	<import resource="beans/bd.geo.ds.xml"/>
 	<import resource="beans/bd.currency.ds.xml"/>

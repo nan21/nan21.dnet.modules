@@ -54,8 +54,12 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI = Ext.extend( dnet.base.A
 
 
 	,onBtnDeploy: function() {
-					var s={modal:true, callbacks:{} };
-							try{ this._getDc_("dcProcess").doService("deployProcess", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+		var s={modal:true, callbacks:{} };
+		try{ 
+			this._getDc_("dcProcess").doService("deployProcess", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
 	}					 	
 });
 Ext.reg("net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI", net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI);   

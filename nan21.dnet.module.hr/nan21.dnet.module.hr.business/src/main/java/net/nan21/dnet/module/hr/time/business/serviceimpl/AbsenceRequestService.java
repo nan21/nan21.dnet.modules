@@ -40,7 +40,7 @@ public class AbsenceRequestService extends
     public List<AbsenceRequest> findByEmployeeId(Long employeeId) {
         return (List<AbsenceRequest>) this.em
                 .createQuery(
-                        "select e from AbsenceRequest where e.employee.id = :pEmployeeId",
+                        "select e from AbsenceRequest e where e.employee.id = :pEmployeeId",
                         AbsenceRequest.class)
                 .setParameter("pEmployeeId", employeeId).getResultList();
     }
@@ -52,7 +52,7 @@ public class AbsenceRequestService extends
     public List<AbsenceRequest> findByTypeId(Long typeId) {
         return (List<AbsenceRequest>) this.em
                 .createQuery(
-                        "select e from AbsenceRequest where e.type.id = :pTypeId",
+                        "select e from AbsenceRequest e where e.type.id = :pTypeId",
                         AbsenceRequest.class).setParameter("pTypeId", typeId)
                 .getResultList();
     }
@@ -64,7 +64,7 @@ public class AbsenceRequestService extends
     public List<AbsenceRequest> findByReasonId(Long reasonId) {
         return (List<AbsenceRequest>) this.em
                 .createQuery(
-                        "select e from AbsenceRequest where e.reason.id = :pReasonId",
+                        "select e from AbsenceRequest e where e.reason.id = :pReasonId",
                         AbsenceRequest.class)
                 .setParameter("pReasonId", reasonId).getResultList();
     }
@@ -76,7 +76,7 @@ public class AbsenceRequestService extends
     public List<AbsenceRequest> findByItemsId(Long itemsId) {
         return (List<AbsenceRequest>) this.em
                 .createQuery(
-                        "select e from AbsenceRequest where e.items.id = :pItemsId",
+                        "select e from AbsenceRequest e where e.items.id = :pItemsId",
                         AbsenceRequest.class).setParameter("pItemsId", itemsId)
                 .getResultList();
     }

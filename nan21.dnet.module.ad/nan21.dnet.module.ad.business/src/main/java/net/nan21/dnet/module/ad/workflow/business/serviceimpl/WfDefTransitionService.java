@@ -39,7 +39,7 @@ public class WfDefTransitionService extends
     public List<WfDefTransition> findByProcessId(Long processId) {
         return (List<WfDefTransition>) this.em
                 .createQuery(
-                        "select e from WfDefTransition where e.process.id = :pProcessId",
+                        "select e from WfDefTransition e where e.process.id = :pProcessId",
                         WfDefTransition.class)
                 .setParameter("pProcessId", processId).getResultList();
     }
@@ -51,7 +51,7 @@ public class WfDefTransitionService extends
     public List<WfDefTransition> findBySourceId(Long sourceId) {
         return (List<WfDefTransition>) this.em
                 .createQuery(
-                        "select e from WfDefTransition where e.source.id = :pSourceId",
+                        "select e from WfDefTransition e where e.source.id = :pSourceId",
                         WfDefTransition.class)
                 .setParameter("pSourceId", sourceId).getResultList();
     }
@@ -63,7 +63,7 @@ public class WfDefTransitionService extends
     public List<WfDefTransition> findByTargetId(Long targetId) {
         return (List<WfDefTransition>) this.em
                 .createQuery(
-                        "select e from WfDefTransition where e.target.id = :pTargetId",
+                        "select e from WfDefTransition e where e.target.id = :pTargetId",
                         WfDefTransition.class)
                 .setParameter("pTargetId", targetId).getResultList();
     }

@@ -45,7 +45,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByStatusId(Long statusId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.status.id = :pStatusId",
+                        "select e from SalesOrder e where e.status.id = :pStatusId",
                         SalesOrder.class).setParameter("pStatusId", statusId)
                 .getResultList();
     }
@@ -57,7 +57,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByTypeId(Long typeId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.type.id = :pTypeId",
+                        "select e from SalesOrder e where e.type.id = :pTypeId",
                         SalesOrder.class).setParameter("pTypeId", typeId)
                 .getResultList();
     }
@@ -69,7 +69,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByPriceListId(Long priceListId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.priceList.id = :pPriceListId",
+                        "select e from SalesOrder e where e.priceList.id = :pPriceListId",
                         SalesOrder.class)
                 .setParameter("pPriceListId", priceListId).getResultList();
     }
@@ -81,7 +81,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByCurrencyId(Long currencyId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.currency.id = :pCurrencyId",
+                        "select e from SalesOrder e where e.currency.id = :pCurrencyId",
                         SalesOrder.class)
                 .setParameter("pCurrencyId", currencyId).getResultList();
     }
@@ -93,7 +93,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByPaymentMethodId(Long paymentMethodId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.paymentMethod.id = :pPaymentMethodId",
+                        "select e from SalesOrder e where e.paymentMethod.id = :pPaymentMethodId",
                         SalesOrder.class)
                 .setParameter("pPaymentMethodId", paymentMethodId)
                 .getResultList();
@@ -106,7 +106,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByDeliveryMethodId(Long deliveryMethodId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.deliveryMethod.id = :pDeliveryMethodId",
+                        "select e from SalesOrder e where e.deliveryMethod.id = :pDeliveryMethodId",
                         SalesOrder.class)
                 .setParameter("pDeliveryMethodId", deliveryMethodId)
                 .getResultList();
@@ -119,7 +119,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByCustomerId(Long customerId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.customer.id = :pCustomerId",
+                        "select e from SalesOrder e where e.customer.id = :pCustomerId",
                         SalesOrder.class)
                 .setParameter("pCustomerId", customerId).getResultList();
     }
@@ -131,7 +131,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findBySupplierId(Long supplierId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.supplier.id = :pSupplierId",
+                        "select e from SalesOrder e where e.supplier.id = :pSupplierId",
                         SalesOrder.class)
                 .setParameter("pSupplierId", supplierId).getResultList();
     }
@@ -143,7 +143,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByBillToId(Long billToId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.billTo.id = :pBillToId",
+                        "select e from SalesOrder e where e.billTo.id = :pBillToId",
                         SalesOrder.class).setParameter("pBillToId", billToId)
                 .getResultList();
     }
@@ -155,7 +155,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByBillToLocationId(Long billToLocationId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.billToLocation.id = :pBillToLocationId",
+                        "select e from SalesOrder e where e.billToLocation.id = :pBillToLocationId",
                         SalesOrder.class)
                 .setParameter("pBillToLocationId", billToLocationId)
                 .getResultList();
@@ -168,7 +168,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByShipToId(Long shipToId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.shipTo.id = :pShipToId",
+                        "select e from SalesOrder e where e.shipTo.id = :pShipToId",
                         SalesOrder.class).setParameter("pShipToId", shipToId)
                 .getResultList();
     }
@@ -180,7 +180,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByShipToLocationId(Long shipToLocationId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.shipToLocation.id = :pShipToLocationId",
+                        "select e from SalesOrder e where e.shipToLocation.id = :pShipToLocationId",
                         SalesOrder.class)
                 .setParameter("pShipToLocationId", shipToLocationId)
                 .getResultList();
@@ -193,7 +193,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     public List<SalesOrder> findByLinesId(Long linesId) {
         return (List<SalesOrder>) this.em
                 .createQuery(
-                        "select e from SalesOrder where e.lines.id = :pLinesId",
+                        "select e from SalesOrder e where e.lines.id = :pLinesId",
                         SalesOrder.class).setParameter("pLinesId", linesId)
                 .getResultList();
     }

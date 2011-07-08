@@ -44,7 +44,7 @@ public class ElementTypeService extends AbstractEntityService<ElementType>
     public List<ElementType> findByCategoryId(Long categoryId) {
         return (List<ElementType>) this.em
                 .createQuery(
-                        "select e from ElementType where e.category.id = :pCategoryId",
+                        "select e from ElementType e where e.category.id = :pCategoryId",
                         ElementType.class)
                 .setParameter("pCategoryId", categoryId).getResultList();
     }

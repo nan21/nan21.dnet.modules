@@ -41,7 +41,7 @@ public class QualificationSkillService extends
     public List<QualificationSkill> findByQualificationId(Long qualificationId) {
         return (List<QualificationSkill>) this.em
                 .createQuery(
-                        "select e from QualificationSkill where e.qualification.id = :pQualificationId",
+                        "select e from QualificationSkill e where e.qualification.id = :pQualificationId",
                         QualificationSkill.class)
                 .setParameter("pQualificationId", qualificationId)
                 .getResultList();
@@ -54,7 +54,7 @@ public class QualificationSkillService extends
     public List<QualificationSkill> findBySkillId(Long skillId) {
         return (List<QualificationSkill>) this.em
                 .createQuery(
-                        "select e from QualificationSkill where e.skill.id = :pSkillId",
+                        "select e from QualificationSkill e where e.skill.id = :pSkillId",
                         QualificationSkill.class)
                 .setParameter("pSkillId", skillId).getResultList();
     }
@@ -67,7 +67,7 @@ public class QualificationSkillService extends
     public List<QualificationSkill> findByRequiredLevelId(Long requiredLevelId) {
         return (List<QualificationSkill>) this.em
                 .createQuery(
-                        "select e from QualificationSkill where e.requiredLevel.id = :pRequiredLevelId",
+                        "select e from QualificationSkill e where e.requiredLevel.id = :pRequiredLevelId",
                         QualificationSkill.class)
                 .setParameter("pRequiredLevelId", requiredLevelId)
                 .getResultList();

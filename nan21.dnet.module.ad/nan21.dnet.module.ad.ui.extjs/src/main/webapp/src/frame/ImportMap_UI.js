@@ -51,13 +51,21 @@ net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.Abstra
 
 
 	,onBtnRunImportMap: function() {
-					var s={modal:true, callbacks:{} };
-							try{ this._getDc_("map").doService("runImport", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+		var s={modal:true, callbacks:{} };
+		try{ 
+			this._getDc_("map").doService("runImport", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
 	}					 	
 
 	,onBtnRunImportItem: function() {
-					var s={modal:true, callbacks:{} };
-							try{ this._getDc_("item").doService("runImport", s); }catch(e){dnet.base.DcExceptions.showMessage(e);}
+		var s={modal:true, callbacks:{} };
+		try{ 
+			this._getDc_("item").doService("runImport", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
 	}					 	
 });
 Ext.reg("net.nan21.dnet.module.ad.impex.frame.ImportMap_UI", net.nan21.dnet.module.ad.impex.frame.ImportMap_UI);   

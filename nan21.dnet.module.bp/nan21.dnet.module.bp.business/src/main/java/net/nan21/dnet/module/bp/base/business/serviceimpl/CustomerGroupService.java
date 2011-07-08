@@ -52,7 +52,7 @@ public class CustomerGroupService extends AbstractEntityService<CustomerGroup>
     public List<CustomerGroup> findByPaymentMethodId(Long paymentMethodId) {
         return (List<CustomerGroup>) this.em
                 .createQuery(
-                        "select e from CustomerGroup where e.paymentMethod.id = :pPaymentMethodId",
+                        "select e from CustomerGroup e where e.paymentMethod.id = :pPaymentMethodId",
                         CustomerGroup.class)
                 .setParameter("pPaymentMethodId", paymentMethodId)
                 .getResultList();
@@ -65,7 +65,7 @@ public class CustomerGroupService extends AbstractEntityService<CustomerGroup>
     public List<CustomerGroup> findByPaymentTermId(Long paymentTermId) {
         return (List<CustomerGroup>) this.em
                 .createQuery(
-                        "select e from CustomerGroup where e.paymentTerm.id = :pPaymentTermId",
+                        "select e from CustomerGroup e where e.paymentTerm.id = :pPaymentTermId",
                         CustomerGroup.class)
                 .setParameter("pPaymentTermId", paymentTermId).getResultList();
     }

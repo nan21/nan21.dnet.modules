@@ -10,7 +10,7 @@ import net.nan21.dnet.core.domain.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.grade.business.service.IGradePayScalePointService;
 import net.nan21.dnet.module.hr.grade.domain.entity.GradePayScale;
 import net.nan21.dnet.module.hr.grade.domain.entity.PayScalePoint;
- 
+
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.hr.grade.domain.entity.GradePayScalePoint;
 
@@ -40,7 +40,7 @@ public class GradePayScalePointService extends
     public List<GradePayScalePoint> findByGradePayScaleId(Long gradePayScaleId) {
         return (List<GradePayScalePoint>) this.em
                 .createQuery(
-                        "select e from GradePayScalePoint where e.gradePayScale.id = :pGradePayScaleId",
+                        "select e from GradePayScalePoint e where e.gradePayScale.id = :pGradePayScaleId",
                         GradePayScalePoint.class)
                 .setParameter("pGradePayScaleId", gradePayScaleId)
                 .getResultList();
@@ -53,7 +53,7 @@ public class GradePayScalePointService extends
     public List<GradePayScalePoint> findByPointId(Long pointId) {
         return (List<GradePayScalePoint>) this.em
                 .createQuery(
-                        "select e from GradePayScalePoint where e.point.id = :pPointId",
+                        "select e from GradePayScalePoint e where e.point.id = :pPointId",
                         GradePayScalePoint.class)
                 .setParameter("pPointId", pointId).getResultList();
     }

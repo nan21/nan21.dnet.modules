@@ -42,7 +42,8 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
 
     public List<BpAccount> findByBpId(Long bpId) {
         return (List<BpAccount>) this.em
-                .createQuery("select e from BpAccount where e.bp.id = :pBpId",
+                .createQuery(
+                        "select e from BpAccount e where e.bp.id = :pBpId",
                         BpAccount.class).setParameter("pBpId", bpId)
                 .getResultList();
     }
@@ -54,7 +55,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByOrganizationId(Long organizationId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount where e.organization.id = :pOrganizationId",
+                        "select e from BpAccount e where e.organization.id = :pOrganizationId",
                         BpAccount.class)
                 .setParameter("pOrganizationId", organizationId)
                 .getResultList();
@@ -67,7 +68,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByCustGroupId(Long custGroupId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount where e.custGroup.id = :pCustGroupId",
+                        "select e from BpAccount e where e.custGroup.id = :pCustGroupId",
                         BpAccount.class)
                 .setParameter("pCustGroupId", custGroupId).getResultList();
     }
@@ -80,7 +81,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByCustPaymentMethodId(Long custPaymentMethodId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount where e.custPaymentMethod.id = :pCustPaymentMethodId",
+                        "select e from BpAccount e where e.custPaymentMethod.id = :pCustPaymentMethodId",
                         BpAccount.class)
                 .setParameter("pCustPaymentMethodId", custPaymentMethodId)
                 .getResultList();
@@ -93,7 +94,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByCustPaymentTermId(Long custPaymentTermId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount where e.custPaymentTerm.id = :pCustPaymentTermId",
+                        "select e from BpAccount e where e.custPaymentTerm.id = :pCustPaymentTermId",
                         BpAccount.class)
                 .setParameter("pCustPaymentTermId", custPaymentTermId)
                 .getResultList();
@@ -107,7 +108,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByCustDeliveryMethodId(Long custDeliveryMethodId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount where e.custDeliveryMethod.id = :pCustDeliveryMethodId",
+                        "select e from BpAccount e where e.custDeliveryMethod.id = :pCustDeliveryMethodId",
                         BpAccount.class)
                 .setParameter("pCustDeliveryMethodId", custDeliveryMethodId)
                 .getResultList();
@@ -120,7 +121,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByVendGroupId(Long vendGroupId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount where e.vendGroup.id = :pVendGroupId",
+                        "select e from BpAccount e where e.vendGroup.id = :pVendGroupId",
                         BpAccount.class)
                 .setParameter("pVendGroupId", vendGroupId).getResultList();
     }
@@ -133,7 +134,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByVendPaymentMethodId(Long vendPaymentMethodId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount where e.vendPaymentMethod.id = :pVendPaymentMethodId",
+                        "select e from BpAccount e where e.vendPaymentMethod.id = :pVendPaymentMethodId",
                         BpAccount.class)
                 .setParameter("pVendPaymentMethodId", vendPaymentMethodId)
                 .getResultList();
@@ -146,7 +147,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByVendPaymentTermId(Long vendPaymentTermId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount where e.vendPaymentTerm.id = :pVendPaymentTermId",
+                        "select e from BpAccount e where e.vendPaymentTerm.id = :pVendPaymentTermId",
                         BpAccount.class)
                 .setParameter("pVendPaymentTermId", vendPaymentTermId)
                 .getResultList();

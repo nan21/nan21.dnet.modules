@@ -39,7 +39,7 @@ public class EmployeeSkillService extends AbstractEntityService<EmployeeSkill>
     public List<EmployeeSkill> findByEmployeeId(Long employeeId) {
         return (List<EmployeeSkill>) this.em
                 .createQuery(
-                        "select e from EmployeeSkill where e.employee.id = :pEmployeeId",
+                        "select e from EmployeeSkill e where e.employee.id = :pEmployeeId",
                         EmployeeSkill.class)
                 .setParameter("pEmployeeId", employeeId).getResultList();
     }
@@ -51,7 +51,7 @@ public class EmployeeSkillService extends AbstractEntityService<EmployeeSkill>
     public List<EmployeeSkill> findBySkillId(Long skillId) {
         return (List<EmployeeSkill>) this.em
                 .createQuery(
-                        "select e from EmployeeSkill where e.skill.id = :pSkillId",
+                        "select e from EmployeeSkill e where e.skill.id = :pSkillId",
                         EmployeeSkill.class).setParameter("pSkillId", skillId)
                 .getResultList();
     }
@@ -63,7 +63,7 @@ public class EmployeeSkillService extends AbstractEntityService<EmployeeSkill>
     public List<EmployeeSkill> findBySkillLevelId(Long skillLevelId) {
         return (List<EmployeeSkill>) this.em
                 .createQuery(
-                        "select e from EmployeeSkill where e.skillLevel.id = :pSkillLevelId",
+                        "select e from EmployeeSkill e where e.skillLevel.id = :pSkillLevelId",
                         EmployeeSkill.class)
                 .setParameter("pSkillLevelId", skillLevelId).getResultList();
     }

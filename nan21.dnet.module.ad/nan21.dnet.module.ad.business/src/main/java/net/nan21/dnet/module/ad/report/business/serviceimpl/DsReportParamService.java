@@ -38,7 +38,7 @@ public class DsReportParamService extends AbstractEntityService<DsReportParam>
     public List<DsReportParam> findByDsReportId(Long dsReportId) {
         return (List<DsReportParam>) this.em
                 .createQuery(
-                        "select e from DsReportParam where e.dsReport.id = :pDsReportId",
+                        "select e from DsReportParam e where e.dsReport.id = :pDsReportId",
                         DsReportParam.class)
                 .setParameter("pDsReportId", dsReportId).getResultList();
     }
@@ -50,7 +50,7 @@ public class DsReportParamService extends AbstractEntityService<DsReportParam>
     public List<DsReportParam> findByReportParamId(Long reportParamId) {
         return (List<DsReportParam>) this.em
                 .createQuery(
-                        "select e from DsReportParam where e.reportParam.id = :pReportParamId",
+                        "select e from DsReportParam e where e.reportParam.id = :pReportParamId",
                         DsReportParam.class)
                 .setParameter("pReportParamId", reportParamId).getResultList();
     }

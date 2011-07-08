@@ -40,7 +40,7 @@ public class OrganizationHierarchyItemService extends
     public List<OrganizationHierarchyItem> findByHierarchyId(Long hierarchyId) {
         return (List<OrganizationHierarchyItem>) this.em
                 .createQuery(
-                        "select e from OrganizationHierarchyItem where e.hierarchy.id = :pHierarchyId",
+                        "select e from OrganizationHierarchyItem e where e.hierarchy.id = :pHierarchyId",
                         OrganizationHierarchyItem.class)
                 .setParameter("pHierarchyId", hierarchyId).getResultList();
     }
@@ -54,7 +54,7 @@ public class OrganizationHierarchyItemService extends
             Long organizationId) {
         return (List<OrganizationHierarchyItem>) this.em
                 .createQuery(
-                        "select e from OrganizationHierarchyItem where e.organization.id = :pOrganizationId",
+                        "select e from OrganizationHierarchyItem e where e.organization.id = :pOrganizationId",
                         OrganizationHierarchyItem.class)
                 .setParameter("pOrganizationId", organizationId)
                 .getResultList();
@@ -67,7 +67,7 @@ public class OrganizationHierarchyItemService extends
     public List<OrganizationHierarchyItem> findByParentId(Long parentId) {
         return (List<OrganizationHierarchyItem>) this.em
                 .createQuery(
-                        "select e from OrganizationHierarchyItem where e.parent.id = :pParentId",
+                        "select e from OrganizationHierarchyItem e where e.parent.id = :pParentId",
                         OrganizationHierarchyItem.class)
                 .setParameter("pParentId", parentId).getResultList();
     }

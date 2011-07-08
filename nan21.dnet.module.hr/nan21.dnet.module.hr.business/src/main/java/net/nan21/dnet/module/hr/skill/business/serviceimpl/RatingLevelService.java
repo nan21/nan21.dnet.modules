@@ -54,7 +54,7 @@ public class RatingLevelService extends AbstractEntityService<RatingLevel>
     public List<RatingLevel> findByRatingScaleId(Long ratingScaleId) {
         return (List<RatingLevel>) this.em
                 .createQuery(
-                        "select e from RatingLevel where e.ratingScale.id = :pRatingScaleId",
+                        "select e from RatingLevel e where e.ratingScale.id = :pRatingScaleId",
                         RatingLevel.class)
                 .setParameter("pRatingScaleId", ratingScaleId).getResultList();
     }

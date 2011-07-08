@@ -39,7 +39,7 @@ public class GradePayScaleService extends AbstractEntityService<GradePayScale>
     public List<GradePayScale> findByGradeId(Long gradeId) {
         return (List<GradePayScale>) this.em
                 .createQuery(
-                        "select e from GradePayScale where e.grade.id = :pGradeId",
+                        "select e from GradePayScale e where e.grade.id = :pGradeId",
                         GradePayScale.class).setParameter("pGradeId", gradeId)
                 .getResultList();
     }
@@ -51,7 +51,7 @@ public class GradePayScaleService extends AbstractEntityService<GradePayScale>
     public List<GradePayScale> findByPayScaleId(Long payScaleId) {
         return (List<GradePayScale>) this.em
                 .createQuery(
-                        "select e from GradePayScale where e.payScale.id = :pPayScaleId",
+                        "select e from GradePayScale e where e.payScale.id = :pPayScaleId",
                         GradePayScale.class)
                 .setParameter("pPayScaleId", payScaleId).getResultList();
     }
@@ -63,7 +63,7 @@ public class GradePayScaleService extends AbstractEntityService<GradePayScale>
     public List<GradePayScale> findByCeilingId(Long ceilingId) {
         return (List<GradePayScale>) this.em
                 .createQuery(
-                        "select e from GradePayScale where e.ceiling.id = :pCeilingId",
+                        "select e from GradePayScale e where e.ceiling.id = :pCeilingId",
                         GradePayScale.class)
                 .setParameter("pCeilingId", ceilingId).getResultList();
     }

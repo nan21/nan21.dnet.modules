@@ -12,7 +12,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDeploymentDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfDeployment" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.WfDeploymentDsParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDeploymentDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDeploymentDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfDeployment" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDeploymentDs" />
 	</bean>
    
  	<bean id="WfProcessDsService" scope="prototype"
@@ -20,7 +24,16 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfProcessDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfProcess" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.WfProcessDsParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="serviceStartProcess" value="net.nan21.dnet.module.ad._delegates.WorkflowStartProcessInstance"></entry>
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfProcess" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfProcessDs" />
 	</bean>
    
  	<bean id="WfProcessLovDsService" scope="prototype"
@@ -28,7 +41,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfProcessLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfProcess" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfProcessLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfProcessLovDs" />
 	</bean>
    
  	<bean id="WfProcessInstanceDsService" scope="prototype"
@@ -36,7 +53,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfProcessInstanceDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfProcessInstance" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.WfProcessInstanceDsParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessInstanceDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessInstanceDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfProcessInstance" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfProcessInstanceDs" />
 	</bean>
    
  	<bean id="WfProcessInstanceFinishedDsService" scope="prototype"
@@ -44,7 +65,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfProcessInstanceFinishedDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfProcessInstance" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.WfProcessInstanceFinishedDsParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessInstanceFinishedDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessInstanceFinishedDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfProcessInstanceFinished" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfProcessInstanceFinishedDs" />
 	</bean>
    
  	<bean id="WfProcessInstanceRunningDsService" scope="prototype"
@@ -52,7 +77,16 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfProcessInstanceRunningDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfProcessInstance" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.WfProcessInstanceRunningDsParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessInstanceRunningDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessInstanceRunningDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="killProcessInstance" value="net.nan21.dnet.module.ad._delegates.WorkflowKillProcessInstance"></entry>
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfProcessInstanceRunning" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfProcessInstanceRunningDs" />
 	</bean>
    
  	<bean id="WfTaskInstanceDsService" scope="prototype"
@@ -60,7 +94,17 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfTaskInstanceDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfTaskInstance" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfTaskInstanceDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfTaskInstanceDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="assignTask" value="net.nan21.dnet.module.ad._delegates.WorkflowAssignTask"></entry>
+	  			<entry key="completeTask" value="net.nan21.dnet.module.ad._delegates.WorkflowCompleteTask"></entry>
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfTaskInstance" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfTaskInstanceDs" />
 	</bean>
    
  	<bean id="WfMyTaskDsService" scope="prototype"
@@ -68,7 +112,16 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfMyTaskDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfTaskInstance" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfMyTaskDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfMyTaskDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="completeTask" value="net.nan21.dnet.module.ad._delegates.WorkflowCompleteMyTask"></entry>
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfMyTask" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfMyTaskDs" />
 	</bean>
    
  	<bean id="WfMyTaskHistoryDsService" scope="prototype"
@@ -76,7 +129,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfMyTaskHistoryDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfTaskInstance" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfMyTaskHistoryDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfMyTaskHistoryDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfMyTaskHistory" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfMyTaskHistoryDs" />
 	</bean>
    
  	<bean id="WfAvailableTaskDsService" scope="prototype"
@@ -84,7 +141,16 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfAvailableTaskDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfTaskInstance" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfAvailableTaskDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfAvailableTaskDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="assignTask" value="net.nan21.dnet.module.ad._delegates.WorkflowClaimAvailableTask"></entry>
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfAvailableTask" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfAvailableTaskDs" />
 	</bean>
    
  	<bean id="WfDefProcessDsService" scope="prototype"
@@ -92,7 +158,16 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefProcessDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefProcessDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefProcessDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="deployProcess" value="net.nan21.dnet.module.ad._delegates.WorkflowDeployer"></entry>
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfDefProcess" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefProcessDs" />
 	</bean>
    
  	<bean id="WfDefNodeTypeDsService" scope="prototype"
@@ -100,7 +175,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeType" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefNodeTypeDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefNodeTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfDefNodeType" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeTypeDs" />
 	</bean>
    
  	<bean id="WfDefNodeTypeLovDsService" scope="prototype"
@@ -108,7 +187,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeType" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefNodeTypeLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefNodeTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfDefNodeTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeTypeLovDs" />
 	</bean>
    
  	<bean id="WfDefNodeDsService" scope="prototype"
@@ -116,7 +199,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefNodeDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefNodeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfDefNode" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeDs" />
 	</bean>
    
  	<bean id="WfDefTransitionDsService" scope="prototype"
@@ -124,8 +211,12 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefTransitionDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfDefTransition" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefTransitionDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefTransitionDsConv" />
 	</bean>
-     
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="WfDefTransition" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefTransitionDs" />
+	</bean>
+      
 </beans>
    

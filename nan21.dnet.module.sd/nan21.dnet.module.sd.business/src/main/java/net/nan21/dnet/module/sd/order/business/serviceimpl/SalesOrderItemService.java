@@ -39,7 +39,7 @@ public class SalesOrderItemService extends
     public List<SalesOrderItem> findBySalesOrderId(Long salesOrderId) {
         return (List<SalesOrderItem>) this.em
                 .createQuery(
-                        "select e from SalesOrderItem where e.salesOrder.id = :pSalesOrderId",
+                        "select e from SalesOrderItem e where e.salesOrder.id = :pSalesOrderId",
                         SalesOrderItem.class)
                 .setParameter("pSalesOrderId", salesOrderId).getResultList();
     }
@@ -51,7 +51,7 @@ public class SalesOrderItemService extends
     public List<SalesOrderItem> findByProductId(Long productId) {
         return (List<SalesOrderItem>) this.em
                 .createQuery(
-                        "select e from SalesOrderItem where e.product.id = :pProductId",
+                        "select e from SalesOrderItem e where e.product.id = :pProductId",
                         SalesOrderItem.class)
                 .setParameter("pProductId", productId).getResultList();
     }
@@ -63,7 +63,7 @@ public class SalesOrderItemService extends
     public List<SalesOrderItem> findByUomId(Long uomId) {
         return (List<SalesOrderItem>) this.em
                 .createQuery(
-                        "select e from SalesOrderItem where e.uom.id = :pUomId",
+                        "select e from SalesOrderItem e where e.uom.id = :pUomId",
                         SalesOrderItem.class).setParameter("pUomId", uomId)
                 .getResultList();
     }

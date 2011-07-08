@@ -62,7 +62,7 @@ public class CurrencyXRateService extends AbstractEntityService<CurrencyXRate>
     public List<CurrencyXRate> findByProviderId(Long providerId) {
         return (List<CurrencyXRate>) this.em
                 .createQuery(
-                        "select e from CurrencyXRate where e.provider.id = :pProviderId",
+                        "select e from CurrencyXRate e where e.provider.id = :pProviderId",
                         CurrencyXRate.class)
                 .setParameter("pProviderId", providerId).getResultList();
     }
@@ -74,7 +74,7 @@ public class CurrencyXRateService extends AbstractEntityService<CurrencyXRate>
     public List<CurrencyXRate> findBySourceId(Long sourceId) {
         return (List<CurrencyXRate>) this.em
                 .createQuery(
-                        "select e from CurrencyXRate where e.source.id = :pSourceId",
+                        "select e from CurrencyXRate e where e.source.id = :pSourceId",
                         CurrencyXRate.class)
                 .setParameter("pSourceId", sourceId).getResultList();
     }
@@ -86,7 +86,7 @@ public class CurrencyXRateService extends AbstractEntityService<CurrencyXRate>
     public List<CurrencyXRate> findByTargetId(Long targetId) {
         return (List<CurrencyXRate>) this.em
                 .createQuery(
-                        "select e from CurrencyXRate where e.target.id = :pTargetId",
+                        "select e from CurrencyXRate e where e.target.id = :pTargetId",
                         CurrencyXRate.class)
                 .setParameter("pTargetId", targetId).getResultList();
     }

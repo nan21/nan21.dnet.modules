@@ -43,7 +43,7 @@ public class SkillTypeService extends AbstractEntityService<SkillType>
     public List<SkillType> findByCategoryId(Long categoryId) {
         return (List<SkillType>) this.em
                 .createQuery(
-                        "select e from SkillType where e.category.id = :pCategoryId",
+                        "select e from SkillType e where e.category.id = :pCategoryId",
                         SkillType.class)
                 .setParameter("pCategoryId", categoryId).getResultList();
     }

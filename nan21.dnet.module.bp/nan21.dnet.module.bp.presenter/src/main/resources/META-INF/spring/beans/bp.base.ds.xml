@@ -12,7 +12,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.BankDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.Bank" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.BankDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.BankDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Bank" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.BankDs" />
 	</bean>
    
  	<bean id="BankLovDsService" scope="prototype"
@@ -20,7 +24,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.BankLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.Bank" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.BankLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.BankLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="BankLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.BankLovDs" />
 	</bean>
    
  	<bean id="CustomerGroupDsService" scope="prototype"
@@ -28,7 +36,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.CustomerGroupDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.CustomerGroup" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.CustomerGroupDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.CustomerGroupDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CustomerGroup" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.CustomerGroupDs" />
 	</bean>
    
  	<bean id="CustomerGroupLovDsService" scope="prototype"
@@ -36,7 +48,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.CustomerGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.CustomerGroup" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.CustomerGroupLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.CustomerGroupLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CustomerGroupLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.CustomerGroupLovDs" />
 	</bean>
    
  	<bean id="VendorGroupDsService" scope="prototype"
@@ -44,7 +60,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.VendorGroupDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.VendorGroup" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.VendorGroupDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.VendorGroupDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="VendorGroup" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.VendorGroupDs" />
 	</bean>
    
  	<bean id="VendorGroupLovDsService" scope="prototype"
@@ -52,7 +72,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.VendorGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.VendorGroup" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.VendorGroupLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.VendorGroupLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="VendorGroupLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.VendorGroupLovDs" />
 	</bean>
    
  	<bean id="PaymentMethodDsService" scope="prototype"
@@ -60,7 +84,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentMethodDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.PaymentMethodDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.PaymentMethodDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentMethod" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentMethodDs" />
 	</bean>
    
  	<bean id="PaymentMethodLovDsService" scope="prototype"
@@ -68,7 +96,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentMethodLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.PaymentMethodLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.PaymentMethodLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentMethodLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentMethodLovDs" />
 	</bean>
    
  	<bean id="PaymentTermDsService" scope="prototype"
@@ -76,7 +108,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentTermDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.PaymentTerm" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.PaymentTermDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.PaymentTermDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentTerm" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentTermDs" />
 	</bean>
    
  	<bean id="PaymentTermLovDsService" scope="prototype"
@@ -84,7 +120,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentTermLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.PaymentTerm" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.PaymentTermLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.PaymentTermLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentTermLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentTermLovDs" />
 	</bean>
    
  	<bean id="DeliveryMethodDsService" scope="prototype"
@@ -92,7 +132,11 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.DeliveryMethodDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.DeliveryMethodDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.DeliveryMethodDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="DeliveryMethod" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.DeliveryMethodDs" />
 	</bean>
    
  	<bean id="DeliveryMethodLovDsService" scope="prototype"
@@ -100,8 +144,12 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.DeliveryMethodLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod" />
 	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.DeliveryMethodLovDsConv" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.DeliveryMethodLovDsConv" />
 	</bean>
-     
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="DeliveryMethodLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.DeliveryMethodLovDs" />
+	</bean>
+      
 </beans>
    

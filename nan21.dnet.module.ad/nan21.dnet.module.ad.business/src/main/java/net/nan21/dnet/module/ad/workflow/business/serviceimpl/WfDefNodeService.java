@@ -44,7 +44,7 @@ public class WfDefNodeService extends AbstractEntityService<WfDefNode>
     public List<WfDefNode> findByProcessId(Long processId) {
         return (List<WfDefNode>) this.em
                 .createQuery(
-                        "select e from WfDefNode where e.process.id = :pProcessId",
+                        "select e from WfDefNode e where e.process.id = :pProcessId",
                         WfDefNode.class).setParameter("pProcessId", processId)
                 .getResultList();
     }
@@ -56,7 +56,7 @@ public class WfDefNodeService extends AbstractEntityService<WfDefNode>
     public List<WfDefNode> findByTaskTypeId(Long taskTypeId) {
         return (List<WfDefNode>) this.em
                 .createQuery(
-                        "select e from WfDefNode where e.taskType.id = :pTaskTypeId",
+                        "select e from WfDefNode e where e.taskType.id = :pTaskTypeId",
                         WfDefNode.class)
                 .setParameter("pTaskTypeId", taskTypeId).getResultList();
     }

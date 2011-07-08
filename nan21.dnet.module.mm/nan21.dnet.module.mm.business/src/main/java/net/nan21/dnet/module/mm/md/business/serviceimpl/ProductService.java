@@ -51,7 +51,7 @@ public class ProductService extends AbstractEntityService<Product> implements
     public List<Product> findByDefaultUomId(Long defaultUomId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product where e.defaultUom.id = :pDefaultUomId",
+                        "select e from Product e where e.defaultUom.id = :pDefaultUomId",
                         Product.class)
                 .setParameter("pDefaultUomId", defaultUomId).getResultList();
     }
@@ -63,7 +63,7 @@ public class ProductService extends AbstractEntityService<Product> implements
     public List<Product> findByWeightUomId(Long weightUomId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product where e.weightUom.id = :pWeightUomId",
+                        "select e from Product e where e.weightUom.id = :pWeightUomId",
                         Product.class)
                 .setParameter("pWeightUomId", weightUomId).getResultList();
     }
@@ -75,7 +75,7 @@ public class ProductService extends AbstractEntityService<Product> implements
     public List<Product> findByVolumeUomId(Long volumeUomId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product where e.volumeUom.id = :pVolumeUomId",
+                        "select e from Product e where e.volumeUom.id = :pVolumeUomId",
                         Product.class)
                 .setParameter("pVolumeUomId", volumeUomId).getResultList();
     }
@@ -87,7 +87,7 @@ public class ProductService extends AbstractEntityService<Product> implements
     public List<Product> findByDimUomId(Long dimUomId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product where e.dimUom.id = :pDimUomId",
+                        "select e from Product e where e.dimUom.id = :pDimUomId",
                         Product.class).setParameter("pDimUomId", dimUomId)
                 .getResultList();
     }
@@ -99,7 +99,7 @@ public class ProductService extends AbstractEntityService<Product> implements
     public List<Product> findByManufacturerId(Long manufacturerId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product where e.manufacturer.id = :pManufacturerId",
+                        "select e from Product e where e.manufacturer.id = :pManufacturerId",
                         Product.class)
                 .setParameter("pManufacturerId", manufacturerId)
                 .getResultList();
@@ -112,7 +112,7 @@ public class ProductService extends AbstractEntityService<Product> implements
     public List<Product> findByCategoryId(Long categoryId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product where e.category.id = :pCategoryId",
+                        "select e from Product e where e.category.id = :pCategoryId",
                         Product.class).setParameter("pCategoryId", categoryId)
                 .getResultList();
     }

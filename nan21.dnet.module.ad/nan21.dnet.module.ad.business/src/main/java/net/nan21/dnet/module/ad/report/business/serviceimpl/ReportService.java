@@ -49,7 +49,7 @@ public class ReportService extends AbstractEntityService<Report> implements
     public List<Report> findByReportServerId(Long reportServerId) {
         return (List<Report>) this.em
                 .createQuery(
-                        "select e from Report where e.reportServer.id = :pReportServerId",
+                        "select e from Report e where e.reportServer.id = :pReportServerId",
                         Report.class)
                 .setParameter("pReportServerId", reportServerId)
                 .getResultList();
