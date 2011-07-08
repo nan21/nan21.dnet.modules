@@ -22,12 +22,13 @@ Bundle-Name: DNet UX - presenter
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: nan21.dnet.module.ux.presenter
 Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
- notation,net.nan21.dnet.core.api.converter,net.nan21.dnet.core.api.mo
- del,net.nan21.dnet.core.api.service,net.nan21.dnet.core.api.ui.extjs,
- net.nan21.dnet.core.api.ui.extjs.impl,net.nan21.dnet.core.presenter.c
- onverter,net.nan21.dnet.core.presenter.model,net.nan21.dnet.core.pres
- enter.service,net.nan21.dnet.module.bd.geo.business.service,net.nan21
- .dnet.module.bd.geo.domain.entity,net.nan21.dnet.module.ux.example.bu
- siness.service,net.nan21.dnet.module.ux.example.domain.entity,org.spr
- ingframework.context.weaving;version="[3.0,3.1)"
+ notation,net.nan21.dnet.core.api.converter,net.nan21.dnet.core.api.de
+ scriptor,net.nan21.dnet.core.api.model,net.nan21.dnet.core.api.servic
+ e,net.nan21.dnet.core.api.ui.extjs,net.nan21.dnet.core.api.ui.extjs.i
+ mpl,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.core.prese
+ nter.model,net.nan21.dnet.core.presenter.service,net.nan21.dnet.modul
+ e.bd.geo.business.service,net.nan21.dnet.module.bd.geo.domain.entity,
+ net.nan21.dnet.module.ux.example.business.service,net.nan21.dnet.modu
+ le.ux.example.domain.entity,org.springframework.context.weaving;versi
+ on="[3.0,3.1)"
 

@@ -24,6 +24,9 @@
 		 <property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>
 
+	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" >		  
+	</bean>
+	
 	<import resource="beans/sd.price.ds.xml"/>
 	<import resource="beans/sd.order.ds.xml"/>	
 	<import resource="beans/sd.invoice.ds.xml"/>
