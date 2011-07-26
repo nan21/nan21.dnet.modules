@@ -78,11 +78,12 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  nan21.dnet.module.hr.payroll.domain.entity,net.nan21.dnet.module.hr.s
  kill.domain.entity,net.nan21.dnet.module.hr.time.domain.entity,net.na
  n21.dnet.module.hr.training.domain.entity,org.aopalliance.aop;version
- ="[1.0,2.0)",org.hibernate.validator;version="[4.0,5.0)",org.hibernat
- e.validator.constraints;version="[4.0,5.0)",org.springframework.aop;v
- ersion="[3.0,3.1)",org.springframework.aop.framework;version="[3.0,3.
- 1)",org.springframework.context.weaving;version="[3.0,3.1)",org.sprin
- gframework.orm.jpa,org.springframework.orm.jpa.vendor,org.springframe
- work.transaction;version="[3.0,3.1)",org.springframework.transaction.
- aspectj;version="[3.0,3.1)"
+ ="[1.0,2.0)",org.eclipse.persistence.jpa;version="[2.1,2.4)",org.hibe
+ rnate.validator;version="[4.0,5.0)",org.hibernate.validator.constrain
+ ts;version="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",or
+ g.springframework.aop.framework;version="[3.0,3.1)",org.springframewo
+ rk.context.weaving;version="[3.0,3.1)",org.springframework.orm.jpa,or
+ g.springframework.orm.jpa.vendor,org.springframework.transaction;vers
+ ion="[3.0,3.1)",org.springframework.transaction.aspectj;version="[3.0
+ ,3.1)"
 

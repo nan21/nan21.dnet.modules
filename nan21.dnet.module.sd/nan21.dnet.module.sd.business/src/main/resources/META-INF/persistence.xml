@@ -29,8 +29,8 @@
 		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>
-		<class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
-		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
+		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
+		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.Contact</class>
 		<class>net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod</class>

@@ -21,8 +21,8 @@
 		<!-- Dependencies -->
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
-		<class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
-		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
+		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
+		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>
