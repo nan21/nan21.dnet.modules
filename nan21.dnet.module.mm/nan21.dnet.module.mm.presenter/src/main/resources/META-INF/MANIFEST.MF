@@ -27,7 +27,7 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
  e,net.nan21.dnet.core.api.ui.extjs,net.nan21.dnet.core.api.ui.extjs.i
  mpl,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.core.prese
  nter.model,net.nan21.dnet.core.presenter.service,net.nan21.dnet.modul
- e.ad.org.business.service,net.nan21.dnet.module.ad.org.domain.entity,
+ e.bd.org.business.service,net.nan21.dnet.module.bd.org.domain.entity,
  net.nan21.dnet.module.bd.uom.business.service,net.nan21.dnet.module.b
  d.uom.domain.entity,net.nan21.dnet.module.mm.md.business.service,net.
  nan21.dnet.module.mm.md.domain.entity,org.springframework.context.wea

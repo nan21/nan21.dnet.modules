@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.mm.md.domain.entity;version="1.0
  .0.M1";uses:="javax.persistence,javax.validation.constraints,net.nan2
- 1.dnet.core.api.model,net.nan21.dnet.module.ad.org.domain.entity,net.
+ 1.dnet.core.api.model,net.nan21.dnet.module.bd.org.domain.entity,net.
  nan21.dnet.module.bd.uom.domain.entity,org.eclipse.persistence.annota
  tions,org.eclipse.persistence.descriptors,org.hibernate.validator.con
  straints"
@@ -19,7 +19,7 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.validation;
  version="[1.0,2.0)",javax.validation.constraints,net.nan21.dnet.core.
- api.model,net.nan21.dnet.core.domain.session,net.nan21.dnet.module.ad
+ api.model,net.nan21.dnet.core.domain.session,net.nan21.dnet.module.bd
  .org.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,org.aop
  alliance.aop;version="[1.0,2.0)",org.eclipse.persistence.annotations,
  org.eclipse.persistence.descriptors,org.hibernate.validator;version="

@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.hr.job.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.ad.org.business.service.IOrganizationService;
-import net.nan21.dnet.module.ad.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.hr.job.business.service.IJobService;
 import net.nan21.dnet.module.hr.job.domain.entity.Job;
 
