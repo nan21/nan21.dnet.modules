@@ -22,7 +22,7 @@ net.nan21.dnet.module.hr.employee.dc.Employee$Filter = Ext.extend(dnet.base.Abst
 		.addTextField({ name:"lastName", dataIndex:"lastName",anchor:"-20",maxLength:255  })
 		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender", id:Ext.id(),anchor:"-20",store:[ "male", "female"]  })
 		.addCombo({ name:"maritalStatus", xtype:"combo", dataIndex:"maritalStatus", id:Ext.id(),anchor:"-20",store:[ "single", "married", "divorced", "widow", "other"]  })
-		.addLov({ name:"employerCode", xtype:"net.nan21.dnet.module.ad.org.lovs.LegalEntityOrganizations", dataIndex:"employerCode",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "employerId"} ]  })
+		.addLov({ name:"employerCode", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"employerCode",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "employerId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:220,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"form", width:220,labelWidth:0 })
@@ -78,7 +78,7 @@ net.nan21.dnet.module.hr.employee.dc.Employee$EditMain = Ext.extend(dnet.base.Ab
 		.addTextField({ name:"lastName", dataIndex:"lastName",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addTextField({ name:"middleName", dataIndex:"middleName",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
-		.addLov({ name:"employerCode", xtype:"net.nan21.dnet.module.ad.org.lovs.LegalEntityOrganizations", dataIndex:"employerCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "employerId"} ]  })
+		.addLov({ name:"employerCode", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"employerCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "employerId"} ]  })
 		.addDateField({ name:"birthdate", dataIndex:"birthdate",width:100 })
 		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender",anchor:"-20",store:[ "male", "female"]  })
 		.addCombo({ name:"maritalStatus", xtype:"combo", dataIndex:"maritalStatus",anchor:"-20",store:[ "single", "married", "divorced", "widow", "other"]  })

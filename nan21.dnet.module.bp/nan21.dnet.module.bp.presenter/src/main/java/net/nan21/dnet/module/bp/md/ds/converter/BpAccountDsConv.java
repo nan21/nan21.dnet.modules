@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.bp.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.ad.org.business.service.IOrganizationService;
-import net.nan21.dnet.module.ad.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.base.business.service.ICustomerGroupService;
 import net.nan21.dnet.module.bp.base.business.service.IPaymentMethodService;
 import net.nan21.dnet.module.bp.base.business.service.IPaymentTermService;

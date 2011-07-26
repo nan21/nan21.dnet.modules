@@ -7,8 +7,8 @@ package net.nan21.dnet.module.hr.job.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
-import net.nan21.dnet.module.ad.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.hr.job.domain.entity.Job;
 
 import net.nan21.dnet.module.hr.job.domain.entity.Position;

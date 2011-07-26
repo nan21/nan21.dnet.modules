@@ -7,7 +7,7 @@ package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
 import java.util.List;
 import net.nan21.dnet.core.domain.service.AbstractEntityService;
-import net.nan21.dnet.module.ad.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.mm.md.business.service.IProductAccountService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAccountGroup;
