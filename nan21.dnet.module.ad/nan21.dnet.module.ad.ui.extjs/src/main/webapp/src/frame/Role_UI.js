@@ -13,7 +13,7 @@ net.nan21.dnet.module.ad.usr.frame.Role_UI = Ext.extend( dnet.base.AbstractUi, {
 	,_defineElements_: function() {					
 		this._getBuilder_()	
 		.addButton({name:"btnAsgnRoleToUsers",text:"Users", tooltip:"Assign selected role to users",disabled:true
-			,handler: this.onBtnAsgnRoleToUsers,scope:this,stateManager:{name:"record_is_clean", dc:"rol"}	})	
+			,handler: this.onBtnAsgnRoleToUsers,scope:this,stateManager:{name:"selected_one_clean", dc:"rol"}	})	
 							 	
 		.addDcView("rol",{ name:"rolFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.Role$Filter"})	 
 		.addDcView("rol",{ name:"rolList", xtype:"net.nan21.dnet.module.ad.usr.dc.Role$EditList", frame:true,buttons:[ this._elems_.get("btnAsgnRoleToUsers") ]})	 

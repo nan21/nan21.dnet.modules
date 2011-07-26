@@ -18,6 +18,12 @@
  
  	<bean id="SysDsServiceService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.SysDsServiceService"  />  
+ 
+ 	<bean id="TempAsgnService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.TempAsgnService"  />  
+ 
+ 	<bean id="TempAsgnLineService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.TempAsgnLineService"  />  
    
 </beans>
    

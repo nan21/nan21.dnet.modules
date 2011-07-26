@@ -33,7 +33,7 @@
 	
 	<context:annotation-config />
 	<context:load-time-weaver aspectj-weaving="on" />
-
+    
 	<!-- JPA EntityManagerFactory -->
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -74,6 +74,12 @@
 	<bean id="jpaDialect"
 		class="org.springframework.orm.jpa.vendor.EclipseLinkJpaDialect" />
 
+	<bean id="baseAsgnTxService" scope="prototype"
+	  		class="net.nan21.dnet.core.domain.service.BaseAsgnTxService"  />  
+
+	<bean id="asgnTxServiceFactory" class="net.nan21.dnet.core.domain.service.AsgnTxServiceFactory">
+	</bean>  		
+	
 	<!-- Transaction manager -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
@@ -88,18 +94,29 @@
 		<tx:attributes>
 			<tx:method name="insert" read-only="false" />
 			<tx:method name="update" read-only="false" />
-			<tx:method name="delete*" read-only="false" />
+			<tx:method name="delete*" read-only="false" />						
+		</tx:attributes>
+	</tx:advice>
+	
+	<tx:advice id="txAdviceAsgn" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="setup" read-only="false" />
+			<tx:method name="reset" read-only="false" />
+			<tx:method name="save" read-only="false" />		
+			<tx:method name="move*" read-only="false" />				
 		</tx:attributes>
 	</tx:advice>
 	
 	<aop:config>
-		<aop:pointcut id="entityServiceMethods" expression="bean(*Service)" />
+		<aop:pointcut id="entityServiceMethods" expression="bean(*Service)" />		
+		<aop:pointcut id="asgnTxServiceMethods" expression="bean(baseAsgnTxService)" />
+		 
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="entityServiceMethods" />
+		<aop:advisor advice-ref="txAdviceAsgn" pointcut-ref="asgnTxServiceMethods" />		 
 	</aop:config>
 	
 	<!-- Domain services -->
 	<import resource="beans/ad.impex.entity.xml" />
-	<import resource="beans/ad.org.entity.xml" />
 	<import resource="beans/ad.report.entity.xml" />
 	<import resource="beans/ad.system.entity.xml" />
 	<import resource="beans/ad.usr.entity.xml" />

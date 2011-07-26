@@ -7,46 +7,38 @@ Export-Package: net.nan21.dnet.module.ad.impex.domain.entity;version="
  on,org.eclipse.persistence.internal.descriptors,org.eclipse.persisten
  ce.internal.weaving,org.eclipse.persistence.queries,org.eclipse.persi
  stence.sessions,org.hibernate.validator.constraints",net.nan21.dnet.m
- odule.ad.org.domain.entity;version="1.0.0.M1";uses:="javax.persistenc
- e,javax.validation.constraints,javax.xml.bind.annotation,net.nan21.dn
- et.core.api.model,org.eclipse.persistence.annotations,org.eclipse.per
- sistence.descriptors,org.eclipse.persistence.descriptors.changetracki
- ng,org.eclipse.persistence.indirection,org.eclipse.persistence.intern
- al.descriptors,org.eclipse.persistence.internal.weaving,org.eclipse.p
- ersistence.queries,org.eclipse.persistence.sessions,org.hibernate.val
- idator.constraints",net.nan21.dnet.module.ad.report.domain.entity;ver
- sion="1.0.0.M1";uses:="javax.persistence,javax.validation.constraints
- ,javax.xml.bind.annotation,net.nan21.dnet.core.api.model,org.eclipse.
- persistence.annotations,org.eclipse.persistence.descriptors,org.eclip
- se.persistence.descriptors.changetracking,org.eclipse.persistence.ind
- irection,org.eclipse.persistence.internal.descriptors,org.eclipse.per
- sistence.internal.weaving,org.eclipse.persistence.queries,org.eclipse
- .persistence.sessions,org.hibernate.validator.constraints",net.nan21.
- dnet.module.ad.system.domain.entity;version="1.0.0.M1";uses:="javax.p
+ odule.ad.report.domain.entity;version="1.0.0.M1";uses:="javax.persist
+ ence,javax.validation.constraints,javax.xml.bind.annotation,net.nan21
+ .dnet.core.api.model,org.eclipse.persistence.annotations,org.eclipse.
+ persistence.descriptors,org.eclipse.persistence.descriptors.changetra
+ cking,org.eclipse.persistence.indirection,org.eclipse.persistence.int
+ ernal.descriptors,org.eclipse.persistence.internal.weaving,org.eclips
+ e.persistence.queries,org.eclipse.persistence.sessions,org.hibernate.
+ validator.constraints",net.nan21.dnet.module.ad.system.domain.entity;
+ version="1.0.0.M1";uses:="javax.persistence,javax.validation.constrai
+ nts,javax.xml.bind.annotation,net.nan21.dnet.core.api.model,org.eclip
+ se.persistence.annotations,org.eclipse.persistence.descriptors,org.ec
+ lipse.persistence.descriptors.changetracking,org.eclipse.persistence.
+ indirection,org.eclipse.persistence.internal.descriptors,org.eclipse.
+ persistence.internal.weaving,org.eclipse.persistence.queries,org.ecli
+ pse.persistence.sessions,org.hibernate.validator.constraints",net.nan
+ 21.dnet.module.ad.usr.domain.entity;version="1.0.0.M1";uses:="javax.p
  ersistence,javax.validation.constraints,javax.xml.bind.annotation,net
  .nan21.dnet.core.api.model,org.eclipse.persistence.annotations,org.ec
  lipse.persistence.descriptors,org.eclipse.persistence.descriptors.cha
- ngetracking,org.eclipse.persistence.indirection,org.eclipse.persisten
- ce.internal.descriptors,org.eclipse.persistence.internal.weaving,org.
- eclipse.persistence.queries,org.eclipse.persistence.sessions,org.hibe
- rnate.validator.constraints",net.nan21.dnet.module.ad.usr.domain.enti
- ty;version="1.0.0.M1";uses:="javax.persistence,javax.validation.const
- raints,javax.xml.bind.annotation,net.nan21.dnet.core.api.model,org.ec
- lipse.persistence.annotations,org.eclipse.persistence.descriptors,org
- .eclipse.persistence.descriptors.changetracking,org.eclipse.persisten
- ce.internal.descriptors,org.eclipse.persistence.internal.weaving,org.
- eclipse.persistence.queries,org.eclipse.persistence.sessions,org.hibe
- rnate.validator.constraints",net.nan21.dnet.module.ad.usr.domain.even
- thandler;version="1.0.0.M1";uses:="net.nan21.dnet.core.domain.eventha
- ndler,org.eclipse.persistence.descriptors",net.nan21.dnet.module.ad.w
- orkflow.domain.entity;version="1.0.0.M1";uses:="javax.persistence,jav
- ax.validation.constraints,javax.xml.bind.annotation,net.nan21.dnet.co
- re.api.model,org.eclipse.persistence.annotations,org.eclipse.persiste
- nce.descriptors,org.eclipse.persistence.descriptors.changetracking,or
- g.eclipse.persistence.indirection,org.eclipse.persistence.internal.de
- scriptors,org.eclipse.persistence.internal.weaving,org.eclipse.persis
- tence.queries,org.eclipse.persistence.sessions,org.hibernate.validato
- r.constraints"
+ ngetracking,org.eclipse.persistence.internal.descriptors,org.eclipse.
+ persistence.internal.weaving,org.eclipse.persistence.queries,org.ecli
+ pse.persistence.sessions,org.hibernate.validator.constraints",net.nan
+ 21.dnet.module.ad.usr.domain.eventhandler;version="1.0.0.M1";uses:="n
+ et.nan21.dnet.core.domain.eventhandler,org.eclipse.persistence.descri
+ ptors",net.nan21.dnet.module.ad.workflow.domain.entity;version="1.0.0
+ .M1";uses:="javax.persistence,javax.validation.constraints,javax.xml.
+ bind.annotation,net.nan21.dnet.core.api.model,org.eclipse.persistence
+ .annotations,org.eclipse.persistence.descriptors,org.eclipse.persiste
+ nce.descriptors.changetracking,org.eclipse.persistence.indirection,or
+ g.eclipse.persistence.internal.descriptors,org.eclipse.persistence.in
+ ternal.weaving,org.eclipse.persistence.queries,org.eclipse.persistenc
+ e.sessions,org.hibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.4)",nan21.
  dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]"
 Bundle-Vendor: Nan21 

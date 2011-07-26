@@ -125,24 +125,26 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToMany
-    @JoinTable(name = "BD_USERS_ROLES")
+    @JoinTable(name = "AD_USERS_ROLES")
     private Collection<Role> roles;
 
     @ManyToMany
-    @JoinTable(name = "BD_USRGROUP_USER")
+    @JoinTable(name = "AD_USRGROUP_USER")
     private Collection<UserGroup> groups;
 
     /* ============== getters - setters ================== */

@@ -16,6 +16,9 @@
 	<osgi:service ref="dsServiceFactory" ranking="0"
 		interface="net.nan21.dnet.core.api.service.IDsServiceFactory" />
 	
+	<osgi:service ref="asgnServiceFactory" ranking="0"
+		interface="net.nan21.dnet.core.api.service.IAsgnServiceFactory" />
+		
 	<osgi:service ref="dsDefinitions" ranking="0"
 		interface="net.nan21.dnet.core.api.descriptor.IDsDefinitions" />
 		
@@ -24,4 +27,9 @@
 			
 	<osgi:list id="osgiEntityServiceFactories" cardinality="1..N"
 		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />	
+		
+	<osgi:list id="osgiAsgnTxServiceFactories" cardinality="1..N"
+		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />
+			
+		
 </beans>

@@ -10,11 +10,6 @@
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportMap</class>
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem</class>
 		
-		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
-		<class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
-		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationHierarchy</class>
-		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationHierarchyItem</class>
-		
 		<class>net.nan21.dnet.module.ad.report.domain.entity.ReportServer</class>
 		<class>net.nan21.dnet.module.ad.report.domain.entity.Report</class>
 		<class>net.nan21.dnet.module.ad.report.domain.entity.ReportParam</class>
@@ -25,6 +20,8 @@
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsField</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsService</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgn</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
 		
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.User</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserGroup</class>
