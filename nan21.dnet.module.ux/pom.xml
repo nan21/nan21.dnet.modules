@@ -13,6 +13,7 @@
 	
 	<modules>
 		<module>nan21.dnet.module.ux.domain</module>
+		<module>nan21.dnet.module.ux.business</module>
 		<module>nan21.dnet.module.ux.presenter</module>
 		<module>nan21.dnet.module.ux.ui.extjs</module>
 		<module>nan21.dnet.module.ux.parent</module>
