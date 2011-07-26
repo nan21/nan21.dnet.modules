@@ -6,7 +6,13 @@
 	<persistence-unit name="default"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<exclude-unlisted-classes>false</exclude-unlisted-classes> 		
+		<!-- Dependencies -->
+		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
+		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
+		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>
+		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
+		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

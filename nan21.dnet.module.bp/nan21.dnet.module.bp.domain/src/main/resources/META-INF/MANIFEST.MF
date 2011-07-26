@@ -34,11 +34,12 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  ions,org.eclipse.persistence.descriptors,org.eclipse.persistence.desc
  riptors.changetracking,org.eclipse.persistence.indirection,org.eclips
  e.persistence.internal.descriptors,org.eclipse.persistence.internal.j
- pa,org.eclipse.persistence.internal.weaving,org.eclipse.persistence.q
- ueries,org.eclipse.persistence.sessions,org.hibernate.validator;versi
- on="[4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)
- ",org.springframework.aop;version="[3.0,3.1)",org.springframework.aop
- .framework;version="[3.0,3.1)",org.springframework.context.weaving;ve
- rsion="[3.0,3.1)",org.springframework.transaction;version="[3.0,3.1)"
- ,org.springframework.transaction.aspectj;version="[3.0,3.1)"
+ pa,org.eclipse.persistence.internal.weaving,org.eclipse.persistence.j
+ pa;version="[2.1,2.4)",org.eclipse.persistence.queries,org.eclipse.pe
+ rsistence.sessions,org.hibernate.validator;version="[4.0,5.0)",org.hi
+ bernate.validator.constraints;version="[4.0,5.0)",org.springframework
+ .aop;version="[3.0,3.1)",org.springframework.aop.framework;version="[
+ 3.0,3.1)",org.springframework.context.weaving;version="[3.0,3.1)",org
+ .springframework.transaction;version="[3.0,3.1)",org.springframework.
+ transaction.aspectj;version="[3.0,3.1)"
 

@@ -14,8 +14,8 @@
         <class>net.nan21.dnet.module.bd.geo.domain.entity.Region</class>
         <class>net.nan21.dnet.module.bd.geo.domain.entity.City</class>
         <class>net.nan21.dnet.module.bd.geo.domain.entity.Location</class>
-        <class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
-        <class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
+        <class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
+        <class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
  
         <class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
         <class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>

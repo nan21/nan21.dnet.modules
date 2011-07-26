@@ -20,13 +20,14 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.validation;
  version="[1.0,2.0)",javax.validation.constraints,net.nan21.dnet.core.
  api.model,net.nan21.dnet.core.domain.session,net.nan21.dnet.module.bd
- .org.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,org.aop
- alliance.aop;version="[1.0,2.0)",org.eclipse.persistence.annotations,
- org.eclipse.persistence.descriptors,org.eclipse.persistence.jpa;versi
- on="[2.1,2.4)",org.hibernate.validator;version="[4.0,5.0)",org.hibern
- ate.validator.constraints;version="[4.0,5.0)",org.springframework.aop
- ;version="[3.0,3.1)",org.springframework.aop.framework;version="[3.0,
- 3.1)",org.springframework.context.weaving;version="[3.0,3.1)",org.spr
- ingframework.transaction;version="[3.0,3.1)",org.springframework.tran
- saction.aspectj;version="[3.0,3.1)"
+ .currency.domain.entity,net.nan21.dnet.module.bd.org.domain.entity,ne
+ t.nan21.dnet.module.bd.uom.domain.entity,org.aopalliance.aop;version=
+ "[1.0,2.0)",org.eclipse.persistence.annotations,org.eclipse.persisten
+ ce.descriptors,org.eclipse.persistence.jpa;version="[2.1,2.4)",org.hi
+ bernate.validator;version="[4.0,5.0)",org.hibernate.validator.constra
+ ints;version="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",
+ org.springframework.aop.framework;version="[3.0,3.1)",org.springframe
+ work.context.weaving;version="[3.0,3.1)",org.springframework.transact
+ ion;version="[3.0,3.1)",org.springframework.transaction.aspectj;versi
+ on="[3.0,3.1)"
 
