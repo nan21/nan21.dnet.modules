@@ -42,14 +42,14 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  alidation;version="[1.0,2.0)",net.nan21.dnet.core.api.service,net.nan
  21.dnet.core.domain.persistenceunit,net.nan21.dnet.core.domain.servic
  e,net.nan21.dnet.module.ad.impex.domain.entity,net.nan21.dnet.module.
- ad.report.domain.entity,net.nan21.dnet.module.ad.system.domain.entity
- ,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.dnet.module.ad.
- workflow.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.ec
- lipse.persistence.jpa;version="[2.1,2.4)",org.hibernate.validator;ver
- sion="[4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,5.
- 0)",org.springframework.aop;version="[3.0,3.1)",org.springframework.a
- op.framework;version="[3.0,3.1)",org.springframework.context.weaving;
- version="[3.0,3.1)",org.springframework.orm.jpa,org.springframework.o
- rm.jpa.vendor,org.springframework.transaction;version="[3.0,3.1)",org
- .springframework.transaction.aspectj;version="[3.0,3.1)"
+ ad.org.business.serviceimpl,net.nan21.dnet.module.ad.report.domain.en
+ tity,net.nan21.dnet.module.ad.system.domain.entity,net.nan21.dnet.mod
+ ule.ad.usr.domain.entity,net.nan21.dnet.module.ad.workflow.domain.ent
+ ity,org.aopalliance.aop;version="[1.0,2.0)",org.hibernate.validator;v
+ ersion="[4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,
+ 5.0)",org.springframework.aop;version="[3.0,3.1)",org.springframework
+ .aop.framework;version="[3.0,3.1)",org.springframework.context.weavin
+ g;version="[3.0,3.1)",org.springframework.orm.jpa,org.springframework
+ .orm.jpa.vendor,org.springframework.transaction;version="[3.0,3.1)",o
+ rg.springframework.transaction.aspectj;version="[3.0,3.1)"
 
