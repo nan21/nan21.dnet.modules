@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="OrganizationTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.OrganizationType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.OrganizationTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="OrganizationType" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDs" />
+	</bean>
+   
+ 	<bean id="OrganizationTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.OrganizationType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.OrganizationTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="OrganizationTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeLovDs" />
+	</bean>
+   
+ 	<bean id="OrganizationDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.OrganizationDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Organization" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationDs" />
+	</bean>
+   
+ 	<bean id="OrganizationLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.OrganizationLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="OrganizationLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationLovDs" />
+	</bean>
+   
+ 	<bean id="LegalEntityOrganizationLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.LegalEntityOrganizationLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.LegalEntityOrganizationLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="LegalEntityOrganizationLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.LegalEntityOrganizationLovDs" />
+	</bean>
+   
+ 	<bean id="OrganizationHierarchyDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchy" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.OrganizationHierarchyDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="OrganizationHierarchy" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDs" />
+	</bean>
+   
+ 	<bean id="OrganizationHierarchyLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchy" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.OrganizationHierarchyLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="OrganizationHierarchyLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyLovDs" />
+	</bean>
+   
+ 	<bean id="OrganizationHierarchyItemDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyItemDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchyItem" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.OrganizationHierarchyItemDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="OrganizationHierarchyItem" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyItemDs" />
+	</bean>
+   
+ 	<bean id="OrganizationHierarchyItemLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyItemLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchyItem" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.OrganizationHierarchyItemLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="OrganizationHierarchyItemLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyItemLovDs" />
+	</bean>
+      
+</beans>
+   
