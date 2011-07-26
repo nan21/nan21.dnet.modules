@@ -1,15 +1,14 @@
 package net.nan21.dnet.module.ad._delegates;
 
 import java.util.List;
-
-import net.nan21.dnet.core.presenter.service.AbstractDsDelegate;
+ 
+import net.nan21.dnet.core.presenter.service.BaseDsDelegate;
 import net.nan21.dnet.module.ad.impex.business.service.IImportMapItemService;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem;
 import net.nan21.dnet.module.ad.impex.ds.model.ImportMapDs;
 
-public class ImportFromMap extends AbstractDsDelegate<ImportMapDs>{
+public class ImportFromMap extends BaseDsDelegate {
 
-	@Override
 	public void execute(ImportMapDs ds) throws Exception {
 		// TODO Auto-generated method stub
 		IImportMapItemService srv = 

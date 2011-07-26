@@ -1,11 +1,10 @@
 package net.nan21.dnet.module.ad._delegates;
-
-import net.nan21.dnet.core.presenter.service.AbstractDsDelegate;
+ 
+import net.nan21.dnet.core.presenter.service.BaseDsDelegate;
 import net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs;
 
-public class ImportFromMapItem extends AbstractDsDelegate<ImportMapItemDs>{
+public class ImportFromMapItem extends BaseDsDelegate {
 
-	@Override
 	public void execute(ImportMapItemDs ds) throws Exception {		
 		String fileName = ds.getFileName();
         String dsName = ds.getDataSource()+"Ds";
