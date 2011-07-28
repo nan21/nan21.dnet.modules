@@ -6,13 +6,18 @@
 package net.nan21.dnet.module.ad.system.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -141,6 +146,9 @@ public class SysDataSource implements Serializable, IModelWithId,
     @GeneratedValue
     private Long id;
 
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = SysDsField.class, mappedBy = "dataSource", cascade = CascadeType.ALL)
+    private Collection<SysDsField> fields;
+
     /* ============== getters - setters ================== */
 
     public String getController() {
@@ -246,6 +254,22 @@ public class SysDataSource implements Serializable, IModelWithId,
 
     public void setClassName(String className) {
 
+    }
+
+    public Collection<SysDsField> getFields() {
+        return this.fields;
+    }
+
+    public void setFields(Collection<SysDsField> fields) {
+        this.fields = fields;
+    }
+
+    public void addToFields(SysDsField e) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<SysDsField>();
+        }
+        e.setDataSource(this);
+        this.fields.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

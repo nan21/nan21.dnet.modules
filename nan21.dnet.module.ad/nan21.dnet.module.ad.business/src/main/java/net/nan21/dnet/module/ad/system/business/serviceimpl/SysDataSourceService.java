@@ -5,8 +5,10 @@
  */
 package net.nan21.dnet.module.ad.system.business.serviceimpl;
 
+import java.util.List;
 import net.nan21.dnet.core.domain.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.system.business.service.ISysDataSourceService;
+import net.nan21.dnet.module.ad.system.domain.entity.SysDsField;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.ad.system.domain.entity.SysDataSource;
@@ -47,6 +49,18 @@ public class SysDataSourceService extends AbstractEntityService<SysDataSource>
                 .createNamedQuery(SysDataSource.NQ_FIND_BY_MODEL)
                 .setParameter("pClientId", clientId)
                 .setParameter("pModel", model).getSingleResult();
+    }
+
+    public List<SysDataSource> findByFields(SysDsField fields) {
+        return this.findByFieldsId(fields.getId());
+    }
+
+    public List<SysDataSource> findByFieldsId(Long fieldsId) {
+        return (List<SysDataSource>) this.em
+                .createQuery(
+                        "select e from SysDataSource e where e.fields.id = :pFieldsId",
+                        SysDataSource.class)
+                .setParameter("pFieldsId", fieldsId).getResultList();
     }
 
 }
