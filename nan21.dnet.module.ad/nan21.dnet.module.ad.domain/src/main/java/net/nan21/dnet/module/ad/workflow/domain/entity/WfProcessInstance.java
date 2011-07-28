@@ -57,11 +57,11 @@ public class WfProcessInstance implements Serializable, IModelWithId {
      */
     public static final String NQ_FIND_BY_IDS = "WfProcessInstance.findByIds";
 
-    @Id
-    @GeneratedValue
     /** Id. */
     @Column(name = "ID_", nullable = false)
     @NotBlank
+    @Id
+    @GeneratedValue
     private String id;
 
     /** ProcessInstanceId. */

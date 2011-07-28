@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** RatingLevel. */
 @Entity
-@Table(name = "HR_RATING_LEVEL", uniqueConstraints = { @UniqueConstraint(name = "UK_NAME", columnNames = {
+@Table(name = "HR_RATING_LEVEL", uniqueConstraints = { @UniqueConstraint(name = "HR_RATING_LEVEL_UK1", columnNames = {
         "CLIENTID", "RATINGSCALE_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -115,16 +115,18 @@ public class RatingLevel implements Serializable, IModelWithId,
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = RatingScale.class)

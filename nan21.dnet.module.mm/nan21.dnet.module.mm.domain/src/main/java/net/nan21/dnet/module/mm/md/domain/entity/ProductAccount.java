@@ -39,7 +39,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product accounts.*/
 @Entity
-@Table(name = "MM_PRODUCT_ACCOUNT", uniqueConstraints = { @UniqueConstraint(name = "UK_CODE", columnNames = {
+@Table(name = "MM_PRODUCT_ACCOUNT", uniqueConstraints = { @UniqueConstraint(name = "MM_PRODUCT_ACCOUNT_UK1", columnNames = {
         "CLIENTID", "PRODUCT_ID", "ORGANIZATION_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({

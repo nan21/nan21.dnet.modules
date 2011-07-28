@@ -34,8 +34,10 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Bank. */
 @Entity
 @Table(name = "BP_BANK", uniqueConstraints = {
-        @UniqueConstraint(name = "UK_CODE", columnNames = { "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "UK_NAME", columnNames = { "CLIENTID", "NAME" }) })
+        @UniqueConstraint(name = "BP_BANK_UK1", columnNames = { "CLIENTID",
+                "CODE" }),
+        @UniqueConstraint(name = "BP_BANK_UK2", columnNames = { "CLIENTID",
+                "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "Bank.findById", query = "SELECT e FROM Bank e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -115,16 +117,18 @@ public class Bank implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     /* ============== getters - setters ================== */

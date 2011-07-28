@@ -7,18 +7,6 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
- 	<bean id="WfDeploymentService" scope="prototype"
-	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.WfDeploymentService"  />  
- 
- 	<bean id="WfProcessService" scope="prototype"
-	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.WfProcessService"  />  
- 
- 	<bean id="WfProcessInstanceService" scope="prototype"
-	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.WfProcessInstanceService"  />  
- 
- 	<bean id="WfTaskInstanceService" scope="prototype"
-	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.WfTaskInstanceService"  />  
- 
  	<bean id="WfDefProcessService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.WfDefProcessService"  />  
  
@@ -30,6 +18,18 @@
  
  	<bean id="WfDefTransitionService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.WfDefTransitionService"  />  
+ 
+ 	<bean id="WfDeploymentService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.WfDeploymentService"  />  
+ 
+ 	<bean id="WfProcessService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.WfProcessService"  />  
+ 
+ 	<bean id="WfProcessInstanceService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.WfProcessInstanceService"  />  
+ 
+ 	<bean id="WfTaskInstanceService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.WfTaskInstanceService"  />  
    
 </beans>
    

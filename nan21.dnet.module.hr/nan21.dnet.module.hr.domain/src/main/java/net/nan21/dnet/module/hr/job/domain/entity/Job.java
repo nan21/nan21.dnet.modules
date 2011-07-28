@@ -38,8 +38,10 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Job. */
 @Entity
 @Table(name = "HR_JOB", uniqueConstraints = {
-        @UniqueConstraint(name = "UK_CODE", columnNames = { "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "UK_NAME", columnNames = { "CLIENTID", "NAME" }) })
+        @UniqueConstraint(name = "HR_JOB_UK1", columnNames = { "CLIENTID",
+                "CODE" }),
+        @UniqueConstraint(name = "HR_JOB_UK2", columnNames = { "CLIENTID",
+                "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "Job.findById", query = "SELECT e FROM Job e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),

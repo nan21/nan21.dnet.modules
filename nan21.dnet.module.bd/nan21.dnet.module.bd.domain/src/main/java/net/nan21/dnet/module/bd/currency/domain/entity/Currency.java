@@ -34,8 +34,10 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Currencies definition*/
 @Entity
 @Table(name = "BD_CURRENCY", uniqueConstraints = {
-        @UniqueConstraint(name = "UK_CODE", columnNames = { "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "UK_NAME", columnNames = { "CLIENTID", "NAME" }) })
+        @UniqueConstraint(name = "BD_CURRENCY_UK1", columnNames = { "CLIENTID",
+                "CODE" }),
+        @UniqueConstraint(name = "BD_CURRENCY_UK2", columnNames = { "CLIENTID",
+                "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "Currency.findById", query = "SELECT e FROM Currency e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -123,16 +125,18 @@ public class Currency implements Serializable, IModelWithId, IModelWithClientId 
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     /* ============== getters - setters ================== */

@@ -34,8 +34,10 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Country. */
 @Entity
 @Table(name = "BD_COUNTRY", uniqueConstraints = {
-        @UniqueConstraint(name = "UK_CODE", columnNames = { "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "UK_NAME", columnNames = { "CLIENTID", "NAME" }) })
+        @UniqueConstraint(name = "BD_COUNTRY_UK1", columnNames = { "CLIENTID",
+                "CODE" }),
+        @UniqueConstraint(name = "BD_COUNTRY_UK2", columnNames = { "CLIENTID",
+                "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "Country.findById", query = "SELECT e FROM Country e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -131,16 +133,18 @@ public class Country implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     /* ============== getters - setters ================== */

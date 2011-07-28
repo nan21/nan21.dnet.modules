@@ -38,7 +38,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Exchange rate values.*/
 @Entity
-@Table(name = "BD_CURRENCY_XRATE", uniqueConstraints = { @UniqueConstraint(name = "UK_VALID", columnNames = {
+@Table(name = "BD_CURRENCY_XRATE", uniqueConstraints = { @UniqueConstraint(name = "BD_CURRENCY_XRATE_UK1", columnNames = {
         "CLIENTID", "PROVIDER_ID", "SOURCE_ID", "TARGET_ID", "VALIDAT" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -108,16 +108,18 @@ public class CurrencyXRate implements Serializable, IModelWithId,
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CurrencyXRateProvider.class)

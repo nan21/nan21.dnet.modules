@@ -53,11 +53,11 @@ public class WfDeployment implements Serializable, IModelWithId {
      */
     public static final String NQ_FIND_BY_IDS = "WfDeployment.findByIds";
 
-    @Id
-    @GeneratedValue
     /** Id. */
     @Column(name = "ID_", nullable = false)
     @NotBlank
+    @Id
+    @GeneratedValue
     private String id;
 
     /** Name. */

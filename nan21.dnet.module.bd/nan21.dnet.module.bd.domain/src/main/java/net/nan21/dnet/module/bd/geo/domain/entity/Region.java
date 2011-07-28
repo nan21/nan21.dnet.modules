@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Region. */
 @Entity
-@Table(name = "BD_REGION", uniqueConstraints = { @UniqueConstraint(name = "UK_CODEANDCOUNTRY", columnNames = {
+@Table(name = "BD_REGION", uniqueConstraints = { @UniqueConstraint(name = "BD_REGION_UK1", columnNames = {
         "CLIENTID", "COUNTRY_ID", "CODE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -118,16 +118,18 @@ public class Region implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)

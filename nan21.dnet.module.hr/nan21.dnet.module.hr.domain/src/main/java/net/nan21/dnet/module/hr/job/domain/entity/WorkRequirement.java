@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** WorkRequirement. */
 @Entity
-@Table(name = "HR_WORK_REQUIREMENT", uniqueConstraints = { @UniqueConstraint(name = "UK_NAME", columnNames = {
+@Table(name = "HR_WORK_REQUIREMENT", uniqueConstraints = { @UniqueConstraint(name = "HR_WORK_REQUIREMENT_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({

@@ -33,7 +33,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** PositionHierarchy. */
 @Entity
-@Table(name = "HR_POSITION_HIERARCHY", uniqueConstraints = { @UniqueConstraint(name = "UK_NAME", columnNames = {
+@Table(name = "HR_POSITION_HIERARCHY", uniqueConstraints = { @UniqueConstraint(name = "HR_POSITION_HIERARCHY_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({

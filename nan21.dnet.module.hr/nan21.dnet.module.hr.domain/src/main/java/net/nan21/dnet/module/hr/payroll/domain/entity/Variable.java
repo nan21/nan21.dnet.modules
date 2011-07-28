@@ -38,9 +38,9 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Variable. */
 @Entity
 @Table(name = "HR_VARIABLE", uniqueConstraints = {
-        @UniqueConstraint(name = "UK_CODE", columnNames = { "CLIENTID",
+        @UniqueConstraint(name = "HR_VARIABLE_UK1", columnNames = { "CLIENTID",
                 "ELEMENT_ID", "CODE" }),
-        @UniqueConstraint(name = "UK_NAME", columnNames = { "CLIENTID",
+        @UniqueConstraint(name = "HR_VARIABLE_UK2", columnNames = { "CLIENTID",
                 "ELEMENT_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -129,16 +129,18 @@ public class Variable implements Serializable, IModelWithId, IModelWithClientId 
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Element.class)

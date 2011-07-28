@@ -38,7 +38,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ImportJobItem. */
 @Entity
-@Table(name = "AD_IMPORT_JOB_ITEM", uniqueConstraints = { @UniqueConstraint(name = "UK_JOB_MAP", columnNames = {
+@Table(name = "AD_IMPORT_JOB_ITEM", uniqueConstraints = { @UniqueConstraint(name = "AD_IMPORT_JOB_ITEM_UK1", columnNames = {
         "CLIENTID", "JOB_ID", "MAP_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -107,16 +107,18 @@ public class ImportJobItem implements Serializable, IModelWithId,
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ImportJob.class)

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+   
+   
+	<!-- OrganizationHierarchyItems -->
+ 	<bean id="OrganizationHierarchyItemsAsgnService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItemsAsgn" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />		 
+	  	<property name="leftTable" value="BD_ORGANIZATION" />
+		this.rightTable = "BD_ORG_HIERARCHY_ITEM";
+        this.saveAsSqlInsert = false;
+	  	<property name="rightItemIdField" value="ORGANIZATION_ID" />
+	  	<property name="rightObjectIdField" value="HIERARCHY_ID" /> 	 	  
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="OrganizationHierarchyItems" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItemsAsgn" />
+	</bean>
+       
+</beans>
+   

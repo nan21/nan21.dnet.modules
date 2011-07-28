@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** SysDsField. */
 @Entity
-@Table(name = "AD_SYSDSFIELD", uniqueConstraints = { @UniqueConstraint(name = "UK_NAME", columnNames = {
+@Table(name = "AD_SYSDSFIELD", uniqueConstraints = { @UniqueConstraint(name = "AD_SYSDSFIELD_UK1", columnNames = {
         "CLIENTID", "DATASOURCE_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({

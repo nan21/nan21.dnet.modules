@@ -40,7 +40,7 @@ import org.hibernate.validator.constraints.NotBlank;
  Can be private individuals, companies or groups.	 
  */
 @Entity
-@Table(name = "BP_BUSINESS_PARTNER", uniqueConstraints = { @UniqueConstraint(name = "UK_CODE", columnNames = {
+@Table(name = "BP_BUSINESS_PARTNER", uniqueConstraints = { @UniqueConstraint(name = "BP_BUSINESS_PARTNER_UK1", columnNames = {
         "CLIENTID", "CODE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({

@@ -33,7 +33,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** OrganizationType. */
 @Entity
-@Table(name = "BD_ORGTYPE", uniqueConstraints = { @UniqueConstraint(name = "UK_NAME", columnNames = {
+@Table(name = "BD_ORGTYPE", uniqueConstraints = { @UniqueConstraint(name = "BD_ORGTYPE_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({

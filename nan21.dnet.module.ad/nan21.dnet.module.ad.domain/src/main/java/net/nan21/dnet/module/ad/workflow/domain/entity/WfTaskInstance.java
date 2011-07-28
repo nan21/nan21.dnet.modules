@@ -53,11 +53,11 @@ public class WfTaskInstance implements Serializable, IModelWithId {
      */
     public static final String NQ_FIND_BY_IDS = "WfTaskInstance.findByIds";
 
-    @Id
-    @GeneratedValue
     /** Id. */
     @Column(name = "ID_", nullable = false)
     @NotBlank
+    @Id
+    @GeneratedValue
     private String id;
 
     /** ProcessId. */

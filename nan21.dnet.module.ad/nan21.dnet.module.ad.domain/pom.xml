@@ -118,6 +118,21 @@
 			</plugin>				
 		<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				 
+				<executions>
+					<execution>
+	            		<id>attach-sources</id>
+	            		<phase>verify</phase>
+	           			<goals>
+	              			<goal>jar-no-fork</goal>
+	            		</goals>
+	          		</execution>
+          		</executions> 
+			</plugin>				
+		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.3</version>
 				<configuration>
@@ -139,7 +154,7 @@
 							<phase>process-classes</phase>
 							<configuration>
 							  
-							  <tasks>
+							  <target>
 	                               <echo>Beginning process-classes phase...</echo>
 	                               <property name="compile_classpath" refid="maven.compile.classpath"/>                                
 	                               <echo>Compile classpath : ${compile_classpath}</echo>                   
@@ -151,7 +166,7 @@
 	                                <ant antfile="${basedir}/eclipselink-static-weave.xml">
 	                                    <target name="weaving"/>
 	                                </ant>
-	                            </tasks>                            
+	                            </target>                            
 							</configuration>
 							<goals>
 								<goal>run</goal>

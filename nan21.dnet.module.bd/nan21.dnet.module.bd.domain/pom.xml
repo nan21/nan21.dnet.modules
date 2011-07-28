@@ -161,7 +161,7 @@
 							<phase>process-classes</phase>
 							<configuration>
 							  
-							  <tasks>
+							  <target>
 	                               <echo>Beginning process-classes phase...</echo>
 	                               <property name="compile_classpath" refid="maven.compile.classpath"/>                                
 	                               <echo>Compile classpath : ${compile_classpath}</echo>                   
@@ -173,7 +173,7 @@
 	                                <ant antfile="${basedir}/eclipselink-static-weave.xml">
 	                                    <target name="weaving"/>
 	                                </ant>
-	                            </tasks>                            
+	                            </target>                            
 							</configuration>
 							<goals>
 								<goal>run</goal>

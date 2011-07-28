@@ -34,8 +34,10 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Product manufacturers.*/
 @Entity
 @Table(name = "MM_PRODUCT_MANUFACTURER", uniqueConstraints = {
-        @UniqueConstraint(name = "UK_CODE", columnNames = { "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "UK_NAME", columnNames = { "CLIENTID", "NAME" }) })
+        @UniqueConstraint(name = "MM_PRODUCT_MANUFACTURER_UK1", columnNames = {
+                "CLIENTID", "CODE" }),
+        @UniqueConstraint(name = "MM_PRODUCT_MANUFACTURER_UK2", columnNames = {
+                "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ProductManufacturer.findById", query = "SELECT e FROM ProductManufacturer e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),

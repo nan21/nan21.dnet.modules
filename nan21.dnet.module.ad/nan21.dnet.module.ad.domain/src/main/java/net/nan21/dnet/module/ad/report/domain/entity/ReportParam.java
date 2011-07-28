@@ -38,10 +38,10 @@ import org.hibernate.validator.constraints.NotBlank;
 /** ReportParam. */
 @Entity
 @Table(name = "AD_REPORT_PARAM", uniqueConstraints = {
-        @UniqueConstraint(name = "UK_CODE", columnNames = { "CLIENTID",
-                "REPORT_ID", "CODE" }),
-        @UniqueConstraint(name = "UK_NAME", columnNames = { "CLIENTID",
-                "REPORT_ID", "NAME" }) })
+        @UniqueConstraint(name = "AD_REPORT_PARAM_UK1", columnNames = {
+                "CLIENTID", "REPORT_ID", "CODE" }),
+        @UniqueConstraint(name = "AD_REPORT_PARAM_UK2", columnNames = {
+                "CLIENTID", "REPORT_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ReportParam.findById", query = "SELECT e FROM ReportParam e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -134,16 +134,18 @@ public class ReportParam implements Serializable, IModelWithId,
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Report.class)

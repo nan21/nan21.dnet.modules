@@ -51,11 +51,11 @@ public class WfProcess implements Serializable, IModelWithId {
      */
     public static final String NQ_FIND_BY_IDS = "WfProcess.findByIds";
 
-    @Id
-    @GeneratedValue
     /** Id. */
     @Column(name = "ID_", nullable = false)
     @NotBlank
+    @Id
+    @GeneratedValue
     private String id;
 
     /** Code. */
@@ -71,6 +71,7 @@ public class WfProcess implements Serializable, IModelWithId {
     /** Category. */
     @Column(name = "CATEGORY_")
     private String category;
+
     @Version
     /** Version. */
     @Column(name = "VERSION_", nullable = false)

@@ -33,7 +33,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** LicenseType. */
 @Entity
-@Table(name = "HR_LICENSE_TYPE", uniqueConstraints = { @UniqueConstraint(name = "UK_NAME", columnNames = {
+@Table(name = "HR_LICENSE_TYPE", uniqueConstraints = { @UniqueConstraint(name = "HR_LICENSE_TYPE_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({

@@ -35,7 +35,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** UserGroup. */
 @Entity
-@Table(name = "AD_USER_GROUP", uniqueConstraints = { @UniqueConstraint(name = "UK_NAME", columnNames = {
+@Table(name = "AD_USER_GROUP", uniqueConstraints = { @UniqueConstraint(name = "AD_USER_GROUP_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({

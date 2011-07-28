@@ -40,7 +40,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
  */
 @Entity
-@Table(name = "AD_USERS", uniqueConstraints = { @UniqueConstraint(name = "UK_CODE", columnNames = {
+@Table(name = "AD_USERS", uniqueConstraints = { @UniqueConstraint(name = "AD_USERS_UK1", columnNames = {
         "CLIENTID", "CODE" }) })
 @Customizer(UserEventHandler.class)
 @NamedQueries({

@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** PayScalePoint. */
 @Entity
-@Table(name = "HR_PAY_SCALE_POINT", uniqueConstraints = { @UniqueConstraint(name = "UK_SCALE_CODE", columnNames = {
+@Table(name = "HR_PAY_SCALE_POINT", uniqueConstraints = { @UniqueConstraint(name = "HR_PAY_SCALE_POINT_UK1", columnNames = {
         "CLIENTID", "PAYSCALE_ID", "CODE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -105,16 +105,18 @@ public class PayScalePoint implements Serializable, IModelWithId,
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayScale.class)

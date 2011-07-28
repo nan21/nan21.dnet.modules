@@ -34,8 +34,10 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Product account groups.*/
 @Entity
 @Table(name = "MM_PRODUCT_ACCOUNT_GROUP", uniqueConstraints = {
-        @UniqueConstraint(name = "UK_CODE", columnNames = { "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "UK_NAME", columnNames = { "CLIENTID", "NAME" }) })
+        @UniqueConstraint(name = "MM_PRODUCT_ACCOUNT_GROUP_UK1", columnNames = {
+                "CLIENTID", "CODE" }),
+        @UniqueConstraint(name = "MM_PRODUCT_ACCOUNT_GROUP_UK2", columnNames = {
+                "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ProductAccountGroup.findById", query = "SELECT e FROM ProductAccountGroup e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),

@@ -33,7 +33,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ReportServer. */
 @Entity
-@Table(name = "AD_REPORT_SERVER", uniqueConstraints = { @UniqueConstraint(name = "UK_NAME", columnNames = {
+@Table(name = "AD_REPORT_SERVER", uniqueConstraints = { @UniqueConstraint(name = "AD_REPORT_SERVER_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -104,16 +104,18 @@ public class ReportServer implements Serializable, IModelWithId,
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     /* ============== getters - setters ================== */

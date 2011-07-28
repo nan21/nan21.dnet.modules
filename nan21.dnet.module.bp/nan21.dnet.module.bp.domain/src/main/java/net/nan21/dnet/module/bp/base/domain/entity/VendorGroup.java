@@ -39,8 +39,10 @@ import org.hibernate.validator.constraints.NotBlank;
 /** VendorGroup. */
 @Entity
 @Table(name = "BP_VENDOR_GROUP", uniqueConstraints = {
-        @UniqueConstraint(name = "UK_CODE", columnNames = { "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "UK_NAME", columnNames = { "CLIENTID", "NAME" }) })
+        @UniqueConstraint(name = "BP_VENDOR_GROUP_UK1", columnNames = {
+                "CLIENTID", "CODE" }),
+        @UniqueConstraint(name = "BP_VENDOR_GROUP_UK2", columnNames = {
+                "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "VendorGroup.findById", query = "SELECT e FROM VendorGroup e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -121,16 +123,18 @@ public class VendorGroup implements Serializable, IModelWithId,
     @Column(name = "MODIFIEDBY", nullable = false)
     @NotBlank
     private String modifiedBy;
+
     @Version
     /** Record version number used by the persistence framework. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
-    @Id
-    @GeneratedValue
+
     /** System generated unique identifier */
     @Column(name = "ID", nullable = false)
     @NotNull
+    @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)

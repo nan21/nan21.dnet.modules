@@ -34,11 +34,12 @@ import org.hibernate.validator.constraints.NotBlank;
 /** SysDataSource. */
 @Entity
 @Table(name = "AD_SYSDATASOURCE", uniqueConstraints = {
-        @UniqueConstraint(name = "UK_NAME", columnNames = { "CLIENTID", "NAME" }),
-        @UniqueConstraint(name = "UK_CTRL", columnNames = { "CLIENTID",
-                "CONTROLLER" }),
-        @UniqueConstraint(name = "UK_MODEL", columnNames = { "CLIENTID",
-                "MODEL" }) })
+        @UniqueConstraint(name = "AD_SYSDATASOURCE_UK1", columnNames = {
+                "CLIENTID", "NAME" }),
+        @UniqueConstraint(name = "AD_SYSDATASOURCE_UK2", columnNames = {
+                "CLIENTID", "CONTROLLER" }),
+        @UniqueConstraint(name = "AD_SYSDATASOURCE_UK3", columnNames = {
+                "CLIENTID", "MODEL" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "SysDataSource.findById", query = "SELECT e FROM SysDataSource e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),

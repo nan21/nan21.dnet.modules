@@ -39,7 +39,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Business partner bank accounts. */
 @Entity
-@Table(name = "BP_BP_BANKACCOUNT", uniqueConstraints = { @UniqueConstraint(name = "UK_ACCOUNT", columnNames = {
+@Table(name = "BP_BP_BANKACCOUNT", uniqueConstraints = { @UniqueConstraint(name = "BP_BP_BANKACCOUNT_UK1", columnNames = {
         "CLIENTID", "BPARTNER_ID", "ACCOUNTNO" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
