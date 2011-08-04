@@ -49,7 +49,7 @@
 		<property name="persistenceUnitPostProcessors">
 			<list>
 				<bean
-					class="net.nan21.dnet.core.domain.persistenceunit.DnetPersistenceUnitPostProcessor">
+					class="net.nan21.dnet.core.business.persistenceunit.DnetPersistenceUnitPostProcessor">
 					<constructor-arg value="${emf.persistenceUnitName}" />
 					<constructor-arg ref="osgiDataSource" />
 					<constructor-arg>
@@ -79,7 +79,7 @@
 		<property name="jpaDialect" ref="jpaDialect"></property>
 	</bean>
 	<tx:annotation-driven mode="aspectj" />
-	<bean id="entityServiceFactory" class="net.nan21.dnet.core.domain.service.EntityServiceFactory" />
+	<bean id="entityServiceFactory" class="net.nan21.dnet.core.business.service.EntityServiceFactory" />
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="insert" read-only="false" />

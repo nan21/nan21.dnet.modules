@@ -5,6 +5,9 @@
 	<persistence-unit name="net.nan21.dnet"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		
+		<class>net.nan21.dnet.module.ad.client.domain.entity.Client</class>
+		
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportJob</class>
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportJobItem</class>
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportMap</class>
@@ -25,6 +28,7 @@
 		
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.User</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserGroup</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserType</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Role</class>
 		
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDeployment</class>
@@ -35,6 +39,7 @@
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeType</class>
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode</class>
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefTransition</class>
+		 
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

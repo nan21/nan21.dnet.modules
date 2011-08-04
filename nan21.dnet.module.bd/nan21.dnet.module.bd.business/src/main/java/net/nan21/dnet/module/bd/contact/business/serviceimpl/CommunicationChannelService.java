@@ -6,7 +6,7 @@
 package net.nan21.dnet.module.bd.contact.business.serviceimpl;
 
 import java.util.List;
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.contact.business.service.ICommunicationChannelService;
 import net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType;
 

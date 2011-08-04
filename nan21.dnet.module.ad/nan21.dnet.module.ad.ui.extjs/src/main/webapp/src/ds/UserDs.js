@@ -15,6 +15,7 @@ Ext.ns("net.nan21.dnet.module.ad.usr.ds.model");
 	,	{name:"version",type:"int"}
 	,	{name:"locked",type:"boolean"}
 	,	{name:"accountType",type:"string"}
+	,	{name:"accountTypeId",type:"int"}
 	
 	];
 Ext.ns("net.nan21.dnet.module.ad.usr.ds.param");	

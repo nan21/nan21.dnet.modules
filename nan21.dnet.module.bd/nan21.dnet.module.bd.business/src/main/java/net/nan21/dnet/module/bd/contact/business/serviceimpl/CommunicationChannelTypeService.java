@@ -5,7 +5,7 @@
  */
 package net.nan21.dnet.module.bd.contact.business.serviceimpl;
 
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.contact.business.service.ICommunicationChannelTypeService;
 
 import javax.persistence.EntityManager;

@@ -6,7 +6,7 @@
 package net.nan21.dnet.module.ux.example.business.serviceimpl;
 
 import java.util.List;
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 import net.nan21.dnet.module.ux.example.business.service.ILandFormService;
 import net.nan21.dnet.module.ux.example.domain.entity.LandFormType;

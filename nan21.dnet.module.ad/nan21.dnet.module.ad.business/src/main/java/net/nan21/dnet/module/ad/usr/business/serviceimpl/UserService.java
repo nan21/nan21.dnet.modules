@@ -6,10 +6,11 @@
 package net.nan21.dnet.module.ad.usr.business.serviceimpl;
 
 import java.util.List;
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.usr.business.service.IUserService;
 import net.nan21.dnet.module.ad.usr.domain.entity.Role;
 import net.nan21.dnet.module.ad.usr.domain.entity.UserGroup;
+import net.nan21.dnet.module.ad.usr.domain.entity.UserType;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.ad.usr.domain.entity.User;
@@ -35,6 +36,18 @@ public class UserService extends AbstractEntityService<User> implements
         return (User) this.em.createNamedQuery(User.NQ_FIND_BY_CODE)
                 .setParameter("pClientId", clientId)
                 .setParameter("pCode", code).getSingleResult();
+    }
+
+    public List<User> findByAccountType(UserType accountType) {
+        return this.findByAccountTypeId(accountType.getId());
+    }
+
+    public List<User> findByAccountTypeId(Long accountTypeId) {
+        return (List<User>) this.em
+                .createQuery(
+                        "select e from User e where e.accountType.id = :pAccountTypeId",
+                        User.class)
+                .setParameter("pAccountTypeId", accountTypeId).getResultList();
     }
 
     public List<User> findByRoles(Role roles) {

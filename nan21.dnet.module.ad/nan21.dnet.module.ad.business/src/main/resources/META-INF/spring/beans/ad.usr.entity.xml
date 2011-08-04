@@ -7,6 +7,9 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="UserTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.UserTypeService"  />  
+ 
  	<bean id="UserService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.UserService"  />  
  

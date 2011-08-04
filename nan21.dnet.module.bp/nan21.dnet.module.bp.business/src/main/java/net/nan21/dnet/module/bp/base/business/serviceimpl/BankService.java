@@ -5,7 +5,7 @@
  */
 package net.nan21.dnet.module.bp.base.business.serviceimpl;
 
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bp.base.business.service.IBankService;
 
 import javax.persistence.EntityManager;

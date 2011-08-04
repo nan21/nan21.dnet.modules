@@ -6,7 +6,7 @@
 package net.nan21.dnet.module.hr.training.business.serviceimpl;
 
 import java.util.List;
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.job.domain.entity.Position;
 import net.nan21.dnet.module.hr.training.business.service.IPositionCourseService;
 import net.nan21.dnet.module.hr.training.domain.entity.Course;

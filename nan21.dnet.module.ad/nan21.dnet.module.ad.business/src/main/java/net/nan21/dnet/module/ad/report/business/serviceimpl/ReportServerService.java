@@ -5,7 +5,7 @@
  */
 package net.nan21.dnet.module.ad.report.business.serviceimpl;
 
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.report.business.service.IReportServerService;
 
 import javax.persistence.EntityManager;

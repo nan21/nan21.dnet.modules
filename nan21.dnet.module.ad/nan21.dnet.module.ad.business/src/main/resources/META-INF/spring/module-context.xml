@@ -29,7 +29,7 @@
 		<prop key="eclipselink.logging.session">FINEST</prop>
 		<prop key="eclipselink.logging.thread">FINEST</prop>
 		<prop key="eclipselink.logging.exceptions">FINEST</prop>
-	</osgi-compendium:cm-properties>
+	</osgi-compendium:cm-properties> 
 	
 	<context:annotation-config />
 	<context:load-time-weaver aspectj-weaving="on" />
@@ -48,8 +48,8 @@
 		</property>
 		<property name="persistenceUnitPostProcessors">
 			<list>
-				<bean
-					class="net.nan21.dnet.core.domain.persistenceunit.DnetPersistenceUnitPostProcessor">
+				<bean 
+					class="net.nan21.dnet.core.business.persistenceunit.DnetPersistenceUnitPostProcessor">
 					<constructor-arg value="${emf.persistenceUnitName}" />
 					<constructor-arg ref="osgiDataSource" />
 					<constructor-arg>
@@ -73,11 +73,11 @@
 	
 	<bean id="jpaDialect"
 		class="org.springframework.orm.jpa.vendor.EclipseLinkJpaDialect" />
-
+ 
 	<bean id="baseAsgnTxService" scope="prototype"
-	  		class="net.nan21.dnet.core.domain.service.BaseAsgnTxService"  />  
+	  		class="net.nan21.dnet.core.business.service.BaseAsgnTxService"  />  
 
-	<bean id="asgnTxServiceFactory" class="net.nan21.dnet.core.domain.service.AsgnTxServiceFactory">
+	<bean id="asgnTxServiceFactory" class="net.nan21.dnet.core.business.service.AsgnTxServiceFactory">
 	</bean>  		
 	
 	<!-- Transaction manager -->
@@ -87,7 +87,7 @@
 	</bean>
 	
 	<tx:annotation-driven mode="aspectj" />
-	<bean id="entityServiceFactory" class="net.nan21.dnet.core.domain.service.EntityServiceFactory">
+	<bean id="entityServiceFactory" class="net.nan21.dnet.core.business.service.EntityServiceFactory">
 	</bean>
 	
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
@@ -106,16 +106,30 @@
 			<tx:method name="move*" read-only="false" />				
 		</tx:attributes>
 	</tx:advice>
+	 
+	<tx:advice id="txAdviceSetupParticipant" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="run" read-only="false" />					
+		</tx:attributes>
+	</tx:advice>
+	
 	
 	<aop:config>
 		<aop:pointcut id="entityServiceMethods" expression="bean(*Service)" />		
 		<aop:pointcut id="asgnTxServiceMethods" expression="bean(baseAsgnTxService)" />
+		<aop:pointcut id="setupParticipantRun" expression="bean(setupParticipant)" />
 		 
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="entityServiceMethods" />
-		<aop:advisor advice-ref="txAdviceAsgn" pointcut-ref="asgnTxServiceMethods" />		 
+		<aop:advisor advice-ref="txAdviceAsgn" pointcut-ref="asgnTxServiceMethods" />
+		<aop:advisor advice-ref="txAdviceSetupParticipant" pointcut-ref="setupParticipantRun" />				 
 	</aop:config>
 	
+	
+	<bean id="setupParticipant" class="net.nan21.dnet.module.ad._businessdelegates.Setup_AD" scope="singleton" >		
+	</bean>
+	
 	<!-- Domain services -->
+	<import resource="beans/ad.client.entity.xml" />
 	<import resource="beans/ad.impex.entity.xml" />
 	<import resource="beans/ad.report.entity.xml" />
 	<import resource="beans/ad.system.entity.xml" />

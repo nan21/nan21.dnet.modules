@@ -6,7 +6,7 @@
 package net.nan21.dnet.module.ad.usr.business.serviceimpl;
 
 import java.util.List;
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.usr.business.service.IUserGroupService;
 import net.nan21.dnet.module.ad.usr.domain.entity.User;
 

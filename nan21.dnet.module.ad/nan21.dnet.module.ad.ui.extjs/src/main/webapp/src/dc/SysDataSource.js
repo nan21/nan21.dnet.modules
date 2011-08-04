@@ -18,7 +18,6 @@ net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter = Ext.extend(dnet.base.A
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addTextField({ name:"controller", dataIndex:"controller",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"model", dataIndex:"model",anchor:"-20",maxLength:255  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
@@ -30,7 +29,7 @@ net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter = Ext.extend(dnet.base.A
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name"])
-		.addChildrenTo("col2",["model","controller"])
+		.addChildrenTo("col2",["model"])
 ;
 	}
 }); 
@@ -43,7 +42,6 @@ net.nan21.dnet.module.ad.system.dc.SysDataSource$List = Ext.extend(dnet.base.Abs
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name", width:200 })   	
-		.addTextColumn({ name:"controller", dataIndex:"controller", hidden:true, width:250 })   	
 		.addTextColumn({ name:"model", dataIndex:"model", width:350 })   	
 		.addTextColumn({ name:"description", dataIndex:"description", hidden:true,width:200 })   	
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  

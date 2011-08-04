@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.sd.order.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Column;
@@ -27,7 +28,7 @@ import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.domain.session.Session;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
@@ -388,6 +389,14 @@ public class SalesOrder implements Serializable, IModelWithId,
 
     public void setLines(Collection<SalesOrderItem> lines) {
         this.lines = lines;
+    }
+
+    public void addToLines(SalesOrderItem e) {
+        if (this.lines == null) {
+            this.lines = new ArrayList<SalesOrderItem>();
+        }
+        e.setSalesOrder(this);
+        this.lines.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

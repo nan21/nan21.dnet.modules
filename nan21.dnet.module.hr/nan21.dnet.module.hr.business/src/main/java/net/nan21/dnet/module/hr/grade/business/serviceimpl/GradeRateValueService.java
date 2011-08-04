@@ -6,7 +6,7 @@
 package net.nan21.dnet.module.hr.grade.business.serviceimpl;
 
 import java.util.List;
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.grade.business.service.IGradeRateValueService;
 import net.nan21.dnet.module.hr.grade.domain.entity.Grade;
 import net.nan21.dnet.module.hr.grade.domain.entity.GradeRate;

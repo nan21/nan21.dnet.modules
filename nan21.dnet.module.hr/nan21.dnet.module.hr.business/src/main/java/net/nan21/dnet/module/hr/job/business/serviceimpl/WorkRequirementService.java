@@ -6,7 +6,7 @@
 package net.nan21.dnet.module.hr.job.business.serviceimpl;
 
 import java.util.List;
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.job.business.service.IWorkRequirementService;
 import net.nan21.dnet.module.hr.job.domain.entity.WorkRequirementType;
 

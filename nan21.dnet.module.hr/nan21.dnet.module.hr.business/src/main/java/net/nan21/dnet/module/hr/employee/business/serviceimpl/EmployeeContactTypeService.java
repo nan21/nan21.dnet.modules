@@ -5,7 +5,7 @@
  */
 package net.nan21.dnet.module.hr.employee.business.serviceimpl;
 
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.employee.business.service.IEmployeeContactTypeService;
 
 import javax.persistence.EntityManager;

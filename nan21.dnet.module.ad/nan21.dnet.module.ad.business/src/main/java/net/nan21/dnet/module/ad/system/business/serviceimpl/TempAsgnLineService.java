@@ -5,7 +5,7 @@
  */
 package net.nan21.dnet.module.ad.system.business.serviceimpl;
 
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.system.business.service.ITempAsgnLineService;
 
 import javax.persistence.EntityManager;

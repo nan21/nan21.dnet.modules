@@ -1,4 +1,4 @@
-package net.nan21.dnet.module.ad._delegates;
+package net.nan21.dnet.module.ad._presenterdelegates;
 
 import net.nan21.dnet.core.presenter.model.EmptyParam;
 import net.nan21.dnet.core.presenter.service.BaseDsDelegate;

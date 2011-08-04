@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.time.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Column;
@@ -27,7 +28,7 @@ import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.domain.session.Session;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 import net.nan21.dnet.module.hr.time.domain.entity.AbsenceReason;
 import net.nan21.dnet.module.hr.time.domain.entity.AbsenceType;
@@ -314,6 +315,14 @@ public class AbsenceRequest implements Serializable, IModelWithId,
 
     public void setItems(Collection<AbsenceRequestItem> items) {
         this.items = items;
+    }
+
+    public void addToItems(AbsenceRequestItem e) {
+        if (this.items == null) {
+            this.items = new ArrayList<AbsenceRequestItem>();
+        }
+        e.setAbsenceRequest(this);
+        this.items.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

@@ -6,7 +6,7 @@
 package net.nan21.dnet.module.sd.price.business.serviceimpl;
 
 import java.util.List;
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.sd.price.business.service.IPriceListService;
 

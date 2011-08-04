@@ -6,13 +6,18 @@
 package net.nan21.dnet.module.ad.impex.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -23,8 +28,8 @@ import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
-import net.nan21.dnet.core.domain.session.Session;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -113,6 +118,9 @@ public class ImportMap implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
+
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = ImportMapItem.class, mappedBy = "importMap", cascade = CascadeType.ALL)
+    private Collection<ImportMapItem> items;
 
     /* ============== getters - setters ================== */
 
@@ -203,6 +211,22 @@ public class ImportMap implements Serializable, IModelWithId,
 
     public void setClassName(String className) {
 
+    }
+
+    public Collection<ImportMapItem> getItems() {
+        return this.items;
+    }
+
+    public void setItems(Collection<ImportMapItem> items) {
+        this.items = items;
+    }
+
+    public void addToItems(ImportMapItem e) {
+        if (this.items == null) {
+            this.items = new ArrayList<ImportMapItem>();
+        }
+        e.setImportMap(this);
+        this.items.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

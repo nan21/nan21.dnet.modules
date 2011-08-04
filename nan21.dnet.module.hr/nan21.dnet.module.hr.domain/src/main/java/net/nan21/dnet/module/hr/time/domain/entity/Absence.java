@@ -25,7 +25,7 @@ import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.domain.session.Session;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 import net.nan21.dnet.module.hr.time.domain.entity.AbsenceReason;
 import net.nan21.dnet.module.hr.time.domain.entity.AbsenceType;

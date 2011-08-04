@@ -6,6 +6,8 @@
 package net.nan21.dnet.module.ad.usr.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.ad.usr.business.service.IUserTypeService;
+import net.nan21.dnet.module.ad.usr.domain.entity.UserType;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.ad.usr.ds.model.UserDs;
@@ -22,10 +24,32 @@ public class UserDsConv extends AbstractDsConverter<UserDs, User> implements
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
         e.setLocked(ds.getLocked());
-        e.setAccountType(ds.getAccountType());
     }
 
     protected void modelToEntityReferences(UserDs ds, User e) throws Exception {
+
+        if (ds.getAccountTypeId() != null) {
+            if (e.getAccountType() == null
+                    || !e.getAccountType().getId()
+                            .equals(ds.getAccountTypeId())) {
+                e.setAccountType((UserType) this.em.getReference(
+                        UserType.class, ds.getAccountTypeId()));
+            }
+        } else {
+            this.lookup_accountType_UserType(ds, e);
+        }
+    }
+
+    protected void lookup_accountType_UserType(UserDs ds, User e)
+            throws Exception {
+        UserType x = null;
+        try {
+            x = ((IUserTypeService) getService(IUserTypeService.class))
+                    .findByName(ds.getClientId(), ds.getAccountType());
+        } catch (javax.persistence.NoResultException exception) {
+
+        }
+        e.setAccountType(x);
     }
 
     @Override
@@ -42,7 +66,10 @@ public class UserDsConv extends AbstractDsConverter<UserDs, User> implements
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
         ds.setLocked(e.getLocked());
-        ds.setAccountType(e.getAccountType());
+        ds.setAccountType(((e.getAccountType() != null)) ? e.getAccountType()
+                .getName() : null);
+        ds.setAccountTypeId(((e.getAccountType() != null)) ? e.getAccountType()
+                .getId() : null);
     }
 
 }

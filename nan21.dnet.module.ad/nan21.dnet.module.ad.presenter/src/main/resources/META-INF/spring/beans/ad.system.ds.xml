@@ -15,7 +15,7 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDataSourceDsConv" />
 	  	<property name="rpcFilter" >
 	  		<map>
-	  			<entry key="synchronizeCatalog" value="net.nan21.dnet.module.ad._delegates.SysDataSourceScanner"></entry>
+	  			<entry key="synchronizeCatalog" value="net.nan21.dnet.module.ad._presenterdelegates.SysDataSourceScanner"></entry>
 	  		</map>
 	  	</property>	
 	</bean>

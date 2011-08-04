@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDataSource", "nan21.dnet.module.ad.ui.extjs/ds/SysDsFieldDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDsField", "nan21.dnet.module.ad.ui.extjs/ds/SysDsServiceDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDsService", "nan21.dnet.module.ad.ui.extjs/ds/SysDsEventDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDsEvent"
+Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDataSource", "nan21.dnet.module.ad.ui.extjs/ds/SysDsFieldDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDsField"
 
 ]);
 
@@ -8,12 +8,8 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 	,_defineDcs_: function() {	
 		this._getBuilder_()
 		.addDc("m", new net.nan21.dnet.module.ad.system.dc.SysDataSource())
-		.addDc("fields", new net.nan21.dnet.module.ad.system.dc.SysDsField())
-		.addDc("services", new net.nan21.dnet.module.ad.system.dc.SysDsService())
-		.addDc("events", new net.nan21.dnet.module.ad.system.dc.SysDsEvent())		
-		.linkDc("fields", "m",{fields:[ {childField:"dataSourceId", parentField:"id"} ]} )
-		.linkDc("services", "m",{fields:[ {childField:"dataSourceId", parentField:"id"} ]} )
-		.linkDc("events", "m",{fields:[ {childField:"dataSourceId", parentField:"id"} ]} );		
+		.addDc("fields", new net.nan21.dnet.module.ad.system.dc.SysDsField())		
+		.linkDc("fields", "m",{fields:[ {childField:"dataSourceId", parentField:"id"} ]} );		
 	}	 
 
 	,_defineElements_: function() {					
@@ -24,8 +20,6 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 		.addDcView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter"})	 
 		.addDcView("m",{ name:"mList", xtype:"net.nan21.dnet.module.ad.system.dc.SysDataSource$List",buttons:[ this._elems_.get("btnSynchronize") ]})	 
 		.addDcView("fields",{ name:"listFields", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsField$CtxList",title:"Fields"})	 
-		.addDcView("services",{ name:"listServices", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList",title:"Services"})	 
-		.addDcView("events",{ name:"listEvents", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList",title:"Events"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "panelDetails", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:400}}) 	  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
@@ -36,7 +30,7 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 		this._getBuilder_()		
 	 	.addChildrenTo("main", ["canvas1"]) 				 		
 		.addChildrenTo("canvas1",["mFilter","mList","panelDetails"] ,["north","center","east"])	
-	 	.addChildrenTo("panelDetails", ["listFields","listServices","listEvents"]) 				 		
+	 	.addChildrenTo("panelDetails", ["listFields"]) 				 		
 	 	.addToolbarTo("canvas1","tlbMList")	  	
 	}
 

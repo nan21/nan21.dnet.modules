@@ -31,6 +31,30 @@
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserLovDs" />
 	</bean>
    
+ 	<bean id="UserTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="UserType" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserTypeDs" />
+	</bean>
+   
+ 	<bean id="UserTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserType" />
+	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="UserTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserTypeLovDs" />
+	</bean>
+   
  	<bean id="UserGroupDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserGroupDs" />

@@ -5,8 +5,10 @@
  */
 package net.nan21.dnet.module.ad.impex.business.serviceimpl;
 
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import java.util.List;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.impex.business.service.IImportJobService;
+import net.nan21.dnet.module.ad.impex.domain.entity.ImportJobItem;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportJob;
@@ -32,6 +34,18 @@ public class ImportJobService extends AbstractEntityService<ImportJob>
         return (ImportJob) this.em.createNamedQuery(ImportJob.NQ_FIND_BY_NAME)
                 .setParameter("pClientId", clientId)
                 .setParameter("pName", name).getSingleResult();
+    }
+
+    public List<ImportJob> findByItems(ImportJobItem items) {
+        return this.findByItemsId(items.getId());
+    }
+
+    public List<ImportJob> findByItemsId(Long itemsId) {
+        return (List<ImportJob>) this.em
+                .createQuery(
+                        "select e from ImportJob e where e.items.id = :pItemsId",
+                        ImportJob.class).setParameter("pItemsId", itemsId)
+                .getResultList();
     }
 
 }

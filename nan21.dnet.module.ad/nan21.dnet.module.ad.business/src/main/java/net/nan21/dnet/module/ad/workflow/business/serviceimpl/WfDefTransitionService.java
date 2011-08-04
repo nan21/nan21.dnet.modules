@@ -6,7 +6,7 @@
 package net.nan21.dnet.module.ad.workflow.business.serviceimpl;
 
 import java.util.List;
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.workflow.business.service.IWfDefTransitionService;
 import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode;
 import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess;

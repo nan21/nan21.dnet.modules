@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.md.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Column;
@@ -28,8 +29,8 @@ import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
-import net.nan21.dnet.core.domain.session.Session;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -254,6 +255,14 @@ public class ProductCategory implements Serializable, IModelWithId,
 
     public void setProducts(Collection<Product> products) {
         this.products = products;
+    }
+
+    public void addToProducts(Product e) {
+        if (this.products == null) {
+            this.products = new ArrayList<Product>();
+        }
+        e.setCategory(this);
+        this.products.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

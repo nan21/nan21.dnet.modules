@@ -10,10 +10,13 @@ import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
@@ -26,7 +29,8 @@ import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.domain.session.Session;
+import net.nan21.dnet.core.api.session.Session;
+import net.nan21.dnet.module.ad.usr.domain.entity.UserType;
 import net.nan21.dnet.module.ad.usr.domain.eventhandler.UserEventHandler;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -34,11 +38,7 @@ import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
-/** Application users. By default the users are defined and authenticated inside of the application.
- <BR> It is possible also to use external sources (as LDAP, other application, single-sign-on etc ).
- <BR> For this reason there is not reference across the application to an user through this object but only by a username (the <code>code<code> field).
-
- */
+/** User. */
 @Entity
 @Table(name = "AD_USERS", uniqueConstraints = { @UniqueConstraint(name = "AD_USERS_UK1", columnNames = {
         "CLIENTID", "CODE" }) })
@@ -74,11 +74,6 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "PASSWORD", nullable = false)
     @NotBlank
     private String password;
-
-    /** AccountType. */
-    @Column(name = "ACCOUNTTYPE", nullable = false)
-    @NotBlank
-    private String accountType;
 
     /** Name. */
     @Column(name = "NAME", nullable = false)
@@ -139,6 +134,10 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     @GeneratedValue
     private Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = UserType.class)
+    @JoinColumn(name = "ACCOUNTTYPE_ID", referencedColumnName = "ID")
+    private UserType accountType;
+
     @ManyToMany
     @JoinTable(name = "AD_USERS_ROLES")
     private Collection<Role> roles;
@@ -163,14 +162,6 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getAccountType() {
-        return this.accountType;
-    }
-
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
     }
 
     public String getName() {
@@ -268,6 +259,14 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setClassName(String className) {
 
+    }
+
+    public UserType getAccountType() {
+        return this.accountType;
+    }
+
+    public void setAccountType(UserType accountType) {
+        this.accountType = accountType;
     }
 
     public Collection<Role> getRoles() {

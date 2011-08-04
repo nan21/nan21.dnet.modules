@@ -7,7 +7,7 @@ package net.nan21.dnet.module.bd.currency.business.serviceimpl;
 
 import java.util.Date;
 import java.util.List;
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyXRateService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRateProvider;

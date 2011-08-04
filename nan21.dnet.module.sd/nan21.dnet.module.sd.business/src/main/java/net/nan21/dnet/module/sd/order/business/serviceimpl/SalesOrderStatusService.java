@@ -5,7 +5,7 @@
  */
 package net.nan21.dnet.module.sd.order.business.serviceimpl;
 
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderStatusService;
 
 import javax.persistence.EntityManager;

@@ -5,7 +5,7 @@
  */
 package net.nan21.dnet.module.bd.geo.business.serviceimpl;
 
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.business.service.ICountryService;
 
 import javax.persistence.EntityManager;

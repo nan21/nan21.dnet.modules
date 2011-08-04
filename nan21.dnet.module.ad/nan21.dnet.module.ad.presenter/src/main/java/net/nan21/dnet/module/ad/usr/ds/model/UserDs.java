@@ -31,6 +31,7 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
     public static final String fVERSION = "version";
     public static final String fLOCKED = "locked";
     public static final String fACCOUNTTYPE = "accountType";
+    public static final String fACCOUNTTYPEID = "accountTypeId";
 
     @DsField()
     private String name;
@@ -68,8 +69,11 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
     @DsField()
     private Boolean locked;
 
-    @DsField()
+    @DsField(join = "left", path = "accountType.name")
     private String accountType;
+
+    @DsField(join = "left", path = "accountType.id")
+    private Long accountTypeId;
 
     public UserDs() {
         super();
@@ -182,6 +186,14 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
 
     public void setAccountType(String accountType) {
         this.accountType = accountType;
+    }
+
+    public Long getAccountTypeId() {
+        return this.accountTypeId;
+    }
+
+    public void setAccountTypeId(Long accountTypeId) {
+        this.accountTypeId = accountTypeId;
     }
 
 }

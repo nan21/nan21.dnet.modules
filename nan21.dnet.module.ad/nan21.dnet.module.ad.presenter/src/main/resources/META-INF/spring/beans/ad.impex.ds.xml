@@ -15,7 +15,7 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="runImport" value="net.nan21.dnet.module.ad._delegates.ImportFromMap"></entry>
+	  			<entry key="runImport" value="net.nan21.dnet.module.ad._presenterdelegates.ImportFromMap"></entry>
 	  		</map>
 	  	</property>	
 	</bean>
@@ -44,7 +44,7 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapItemDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="runImport" value="net.nan21.dnet.module.ad._delegates.ImportFromMapItem"></entry>
+	  			<entry key="runImport" value="net.nan21.dnet.module.ad._presenterdelegates.ImportFromMapItem"></entry>
 	  		</map>
 	  	</property>	
 	</bean>
@@ -61,7 +61,7 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="runImport" value="net.nan21.dnet.module.ad._delegates.ImportFromJob"></entry>
+	  			<entry key="runImport" value="net.nan21.dnet.module.ad._presenterdelegates.ImportFromJob"></entry>
 	  		</map>
 	  	</property>	
 	</bean>
@@ -90,7 +90,7 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobItemDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="runImport" value="net.nan21.dnet.module.ad._delegates.ImportFromJobItem"></entry>
+	  			<entry key="runImport" value="net.nan21.dnet.module.ad._presenterdelegates.ImportFromJobItem"></entry>
 	  		</map>
 	  	</property>	
 	</bean>

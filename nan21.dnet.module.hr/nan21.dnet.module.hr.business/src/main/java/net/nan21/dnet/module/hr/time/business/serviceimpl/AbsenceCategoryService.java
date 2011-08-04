@@ -5,7 +5,7 @@
  */
 package net.nan21.dnet.module.hr.time.business.serviceimpl;
 
-import net.nan21.dnet.core.domain.service.AbstractEntityService;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.time.business.service.IAbsenceCategoryService;
 
 import javax.persistence.EntityManager;
