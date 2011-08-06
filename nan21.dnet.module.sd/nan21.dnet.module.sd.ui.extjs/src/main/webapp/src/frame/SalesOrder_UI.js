@@ -39,5 +39,15 @@ net.nan21.dnet.module.sd.order.frame.SalesOrder_UI = Ext.extend( dnet.base.Abstr
 			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
+	,refreshHeader: function() {	
+		
+		this._getDc_("item").on("afterDoSaveSuccess", 
+		function() {
+			this._getDc_("order").doRefreshCurrent();
+		} , this );
+	}
+	,_afterDefineDcs_: function() {	
+		this.refreshHeader();
+	}
 });
 Ext.reg("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI", net.nan21.dnet.module.sd.order.frame.SalesOrder_UI);   

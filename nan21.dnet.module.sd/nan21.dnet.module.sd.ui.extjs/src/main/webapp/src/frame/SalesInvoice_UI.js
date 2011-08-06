@@ -39,5 +39,15 @@ net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI = Ext.extend( dnet.base.A
 			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
+	,refreshHeader: function() {	
+		
+		this._getDc_("item").on("afterDoSaveSuccess", 
+		function() {
+			this._getDc_("inv").doRefreshCurrent();
+		} , this );
+	}
+	,_afterDefineDcs_: function() {	
+		this.refreshHeader();
+	}
 });
 Ext.reg("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI);   

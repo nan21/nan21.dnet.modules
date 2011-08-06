@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.hr.ui.extjs/ds/CourseCategoryDs", "nan21.dnet.module.hr.ui.extjs/dc/CourseCategory", "nan21.dnet.module.hr.ui.extjs/ds/CourseTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/CourseType","nan21.dnet.module.hr.ui.extjs/ds/CourseTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/CourseTypes","nan21.dnet.module.hr.ui.extjs/ds/CourseTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/CourseTypes"]);
+Dnet.import(["", "nan21.dnet.module.hr.ui.extjs/ds/CourseCategoryDs", "nan21.dnet.module.hr.ui.extjs/dc/CourseCategory", "nan21.dnet.module.hr.ui.extjs/ds/CourseTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/CourseType","nan21.dnet.module.hr.ui.extjs/ds/CourseCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/CourseCategories","nan21.dnet.module.hr.ui.extjs/ds/CourseCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/CourseCategories"]);
 
 Ext.ns("net.nan21.dnet.module.hr.training.frame");
 net.nan21.dnet.module.hr.training.frame.CourseType_UI = Ext.extend( dnet.base.AbstractUi, {  

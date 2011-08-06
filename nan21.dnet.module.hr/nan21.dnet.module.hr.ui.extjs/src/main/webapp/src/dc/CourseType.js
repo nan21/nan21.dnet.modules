@@ -19,7 +19,7 @@ net.nan21.dnet.module.hr.training.dc.CourseType$Filter = Ext.extend(dnet.base.Ab
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
-		.addLov({ name:"category", xtype:"net.nan21.dnet.module.hr.training.lovs.CourseTypes", dataIndex:"category",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]  })
+		.addLov({ name:"category", xtype:"net.nan21.dnet.module.hr.training.lovs.CourseCategories", dataIndex:"category",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
@@ -43,7 +43,7 @@ net.nan21.dnet.module.hr.training.dc.CourseType$EditList = Ext.extend(dnet.base.
 	,_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addLov({name:"category", xtype:"gridcolumn", dataIndex:"category",width:120,editor:{xtype:"net.nan21.dnet.module.hr.training.lovs.CourseTypes" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]} })
+		.addLov({name:"category", xtype:"gridcolumn", dataIndex:"category",width:120,editor:{xtype:"net.nan21.dnet.module.hr.training.lovs.CourseCategories" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 
 		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:400,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "400"}} })
