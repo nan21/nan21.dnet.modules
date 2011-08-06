@@ -69,8 +69,8 @@ net.nan21.dnet.module.bd.org.frame.Org_UI = Ext.extend( dnet.base.AbstractUi, {
 		this._getBuilder_()
 			.beginToolbar("tlbOrgList", {dc:"org"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
 			.beginToolbar("tlbOrgEdit", {dc:"org"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
-			.beginToolbar("tlbHierarchyList", {dc:"hierarchy"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbHierarchyEdit", {dc:"hierarchy"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbHierarchyList", {dc:"hierarchy"}).addQuery().addEdit({inContainer:"panelHierarchy",showView:"panelHierarchyEdit"}).addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("tlbHierarchyEdit", {dc:"hierarchy"}).addBack({inContainer:"panelHierarchy",showView:"panelHierarchyList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
 			.beginToolbar("tlbItemsEditList", {dc:"items"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
