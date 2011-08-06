@@ -29,6 +29,11 @@ net.nan21.dnet.module.ad.menu.ad = [
 		{id:"ImportMapItem_UI", text:Dnet.translate("ui","ImportMapItem_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", _bundle_:BUNDLE_ID},		
 		{id:"ImportMap_UI", text:Dnet.translate("ui","ImportMap_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.impex.frame.ImportMap_UI", _bundle_:BUNDLE_ID},		
 		{id:"ImportJob_UI", text:Dnet.translate("ui","ImportJob_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.impex.frame.ImportJob_UI", _bundle_:BUNDLE_ID}	]}
+,		 
+	{"id":"sm_ad_workflow", "text":"Workflow", leaf:false, children:[
+		
+		{id:"WorkflowDef_UI", text:Dnet.translate("ui","WorkflowDef_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI", _bundle_:BUNDLE_ID},		
+		{id:"Workflow_UI", text:Dnet.translate("ui","Workflow_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.workflow.frame.Workflow_UI", _bundle_:BUNDLE_ID}	]}
 	]}
  
    ];  

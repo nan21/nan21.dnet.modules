@@ -13,7 +13,7 @@ net.nan21.dnet.module.ad.usr.frame.UserGroups_UI = Ext.extend( dnet.base.Abstrac
 	,_defineElements_: function() {					
 		this._getBuilder_()	
 		.addButton({name:"btnAsgnUsers",text:"Users in group", tooltip:"Add users to selected group",disabled:true
-			,handler: this.onBtnAsgnUsers,scope:this,stateManager:{name:"selected_one", dc:"dcGroup"}	})	
+			,handler: this.onBtnAsgnUsers,scope:this,stateManager:{name:"selected_one_clean", dc:"dcGroup"}	})	
 							 	
 		.addDcView("dcGroup",{ name:"filterGroup", xtype:"net.nan21.dnet.module.ad.usr.dc.UserGroup$Filter"})	 
 		.addDcView("dcGroup",{ name:"elistGroup", xtype:"net.nan21.dnet.module.ad.usr.dc.UserGroup$EditList", frame:true,buttons:[ this._elems_.get("btnAsgnUsers") ]})	 

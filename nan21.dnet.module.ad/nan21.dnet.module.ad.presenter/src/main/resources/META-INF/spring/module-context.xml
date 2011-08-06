@@ -35,7 +35,8 @@
 	<import resource="beans/ad.report.ds.xml"/>
 	<import resource="beans/ad.system.ds.xml"/>
 	<import resource="beans/ad.usr.ds.xml"/>
-  
+ 	<import resource="beans/ad.workflow.ds.xml"/>
+ 	
   	<import resource="beans/ad.usr.asgn.xml"/>
   
 </beans>
