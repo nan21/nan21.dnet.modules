@@ -32,6 +32,8 @@ implements ISetupParticipant {
 	private static final String PARAM_USER_PASSWORD = "userPassword";
   
 	private static final String PARAM_IMPORT_PATH = "importPath";
+	private static final String PARAM_EXPORT_PATH = "exportPath";
+	private static final String PARAM_TEMP_PATH = "tempPath";
 	
 	private static final String ROLE_ADMIN = "ROLE_DNET_ADMIN";
 	private static final String ROLE_USER = "ROLE_DNET_USER";
@@ -49,6 +51,8 @@ implements ISetupParticipant {
 		c.setName(paramMap.get(PARAM_CLIENT_NAME).getValue());		
 		c.setAdminRole(ROLE_ADMIN);		
 		c.setDefaultImportPath(paramMap.get(PARAM_IMPORT_PATH).getValue());
+		c.setDefaultExportPath(paramMap.get(PARAM_EXPORT_PATH).getValue());
+		c.setTempPath(paramMap.get(PARAM_TEMP_PATH).getValue());
 		this.em.persist(c);
 		
 		 
@@ -212,7 +216,29 @@ implements ISetupParticipant {
 		param = new SetupTaskParam();
 		param.setName(PARAM_IMPORT_PATH);
 		param.setTitle("Import path");
-		param.setDescription("The working folder to be used for data import.");
+		param.setDescription("The working folder to be used for data import. It is set per client level and can be changed later in the `Client` definition frame.");
+		param.setDataType("string");
+		param.setFieldType("textfield");
+		param.setDefaultValue("");
+		param.setValue(param.getDefaultValue());
+		param.setRequired(true);
+		task.addToParams(param);
+		
+		param = new SetupTaskParam();
+		param.setName(PARAM_EXPORT_PATH);
+		param.setTitle("Export path");
+		param.setDescription("The working folder to be used for data export. It is set per client level and can be changed later in the `Client` definition frame.");
+		param.setDataType("string");
+		param.setFieldType("textfield");
+		param.setDefaultValue("");
+		param.setValue(param.getDefaultValue());
+		param.setRequired(true);
+		task.addToParams(param);
+		
+		param = new SetupTaskParam();
+		param.setName(PARAM_TEMP_PATH);
+		param.setTitle("Temporary path");
+		param.setDescription("The temporary folder used by DNet. It is set per client level and can be changed later in the `Client` definition frame.");
 		param.setDataType("string");
 		param.setFieldType("textfield");
 		param.setDefaultValue("");

@@ -82,6 +82,18 @@ public class Client implements Serializable, IModelWithId {
     @Column(name = "ADMINROLE")
     private String adminRole;
 
+    /** DefaultImportPath. */
+    @Column(name = "DEFAULTIMPORTPATH")
+    private String defaultImportPath;
+
+    /** DefaultExportPath. */
+    @Column(name = "DEFAULTEXPORTPATH")
+    private String defaultExportPath;
+
+    /** TempPath. */
+    @Column(name = "TEMPPATH")
+    private String tempPath;
+
     /** DefaultUomWeight. */
     @Column(name = "DEFAULTUOMWEIGHT")
     private String defaultUomWeight;
@@ -97,10 +109,6 @@ public class Client implements Serializable, IModelWithId {
     /** DefaultCurrency. */
     @Column(name = "DEFAULTCURRENCY")
     private String defaultCurrency;
-
-    /** DefaultImportPath. */
-    @Column(name = "DEFAULTIMPORTPATH")
-    private String defaultImportPath;
 
     /** Timestamp when this record was created.*/
     @Temporal(TemporalType.TIMESTAMP)
@@ -187,6 +195,30 @@ public class Client implements Serializable, IModelWithId {
         this.adminRole = adminRole;
     }
 
+    public String getDefaultImportPath() {
+        return this.defaultImportPath;
+    }
+
+    public void setDefaultImportPath(String defaultImportPath) {
+        this.defaultImportPath = defaultImportPath;
+    }
+
+    public String getDefaultExportPath() {
+        return this.defaultExportPath;
+    }
+
+    public void setDefaultExportPath(String defaultExportPath) {
+        this.defaultExportPath = defaultExportPath;
+    }
+
+    public String getTempPath() {
+        return this.tempPath;
+    }
+
+    public void setTempPath(String tempPath) {
+        this.tempPath = tempPath;
+    }
+
     public String getDefaultUomWeight() {
         return this.defaultUomWeight;
     }
@@ -217,14 +249,6 @@ public class Client implements Serializable, IModelWithId {
 
     public void setDefaultCurrency(String defaultCurrency) {
         this.defaultCurrency = defaultCurrency;
-    }
-
-    public String getDefaultImportPath() {
-        return this.defaultImportPath;
-    }
-
-    public void setDefaultImportPath(String defaultImportPath) {
-        this.defaultImportPath = defaultImportPath;
     }
 
     public Date getCreatedAt() {

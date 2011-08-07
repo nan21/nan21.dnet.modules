@@ -60,16 +60,16 @@ Bundle-SymbolicName: nan21.dnet.module.ad.presenter
 Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
  notation,net.nan21.dnet.core.api.converter,net.nan21.dnet.core.api.de
  scriptor,net.nan21.dnet.core.api.model,net.nan21.dnet.core.api.servic
- e,net.nan21.dnet.core.api.ui.extjs,net.nan21.dnet.core.api.ui.extjs.i
- mpl,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.core.prese
- nter.model,net.nan21.dnet.core.presenter.service,net.nan21.dnet.modul
- e.ad.client.domain.entity,net.nan21.dnet.module.ad.impex.business.ser
- vice,net.nan21.dnet.module.ad.impex.domain.entity,net.nan21.dnet.modu
- le.ad.report.business.service,net.nan21.dnet.module.ad.report.domain.
- entity,net.nan21.dnet.module.ad.system.business.service,net.nan21.dne
- t.module.ad.system.domain.entity,net.nan21.dnet.module.ad.usr.busines
- s.service,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.dnet.m
- odule.ad.workflow.business.service,net.nan21.dnet.module.ad.workflow.
- domain.entity,org.springframework.context,org.springframework.context
- .weaving;version="[3.0,3.1)"
+ e,net.nan21.dnet.core.api.session,net.nan21.dnet.core.api.ui.extjs,ne
+ t.nan21.dnet.core.api.ui.extjs.impl,net.nan21.dnet.core.presenter.con
+ verter,net.nan21.dnet.core.presenter.model,net.nan21.dnet.core.presen
+ ter.service,net.nan21.dnet.module.ad.client.domain.entity,net.nan21.d
+ net.module.ad.impex.business.service,net.nan21.dnet.module.ad.impex.d
+ omain.entity,net.nan21.dnet.module.ad.report.business.service,net.nan
+ 21.dnet.module.ad.report.domain.entity,net.nan21.dnet.module.ad.syste
+ m.business.service,net.nan21.dnet.module.ad.system.domain.entity,net.
+ nan21.dnet.module.ad.usr.business.service,net.nan21.dnet.module.ad.us
+ r.domain.entity,net.nan21.dnet.module.ad.workflow.business.service,ne
+ t.nan21.dnet.module.ad.workflow.domain.entity,org.springframework.con
+ text,org.springframework.context.weaving;version="[3.0,3.1)"
 

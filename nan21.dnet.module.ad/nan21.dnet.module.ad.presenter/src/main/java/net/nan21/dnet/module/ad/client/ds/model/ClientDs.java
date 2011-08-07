@@ -21,6 +21,8 @@ public class ClientDs extends AbstractDsModel<Client> implements IModelWithId {
     public static final String fNOTES = "notes";
     public static final String fMAINTENANCELANGUAGE = "maintenanceLanguage";
     public static final String fDEFAULTIMPORTPATH = "defaultImportPath";
+    public static final String fDEFAULTEXPORTPATH = "defaultExportPath";
+    public static final String fTEMPPATH = "tempPath";
     public static final String fDEFAULTDSACCESSRULE = "defaultDsAccessRule";
     public static final String fADMINROLE = "adminRole";
     public static final String fID = "id";
@@ -43,6 +45,12 @@ public class ClientDs extends AbstractDsModel<Client> implements IModelWithId {
 
     @DsField()
     private String defaultImportPath;
+
+    @DsField()
+    private String defaultExportPath;
+
+    @DsField()
+    private String tempPath;
 
     @DsField()
     private String defaultDsAccessRule;
@@ -111,6 +119,22 @@ public class ClientDs extends AbstractDsModel<Client> implements IModelWithId {
 
     public void setDefaultImportPath(String defaultImportPath) {
         this.defaultImportPath = defaultImportPath;
+    }
+
+    public String getDefaultExportPath() {
+        return this.defaultExportPath;
+    }
+
+    public void setDefaultExportPath(String defaultExportPath) {
+        this.defaultExportPath = defaultExportPath;
+    }
+
+    public String getTempPath() {
+        return this.tempPath;
+    }
+
+    public void setTempPath(String tempPath) {
+        this.tempPath = tempPath;
     }
 
     public String getDefaultDsAccessRule() {

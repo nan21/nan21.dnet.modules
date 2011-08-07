@@ -4,4 +4,5 @@ Bundle-Name: DNet MM - ui extjs
 Bundle-SymbolicName: nan21.dnet.module.mm.ui.extjs
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0.M1
+Bundle-ClassPath: WEB-INF/classes
 

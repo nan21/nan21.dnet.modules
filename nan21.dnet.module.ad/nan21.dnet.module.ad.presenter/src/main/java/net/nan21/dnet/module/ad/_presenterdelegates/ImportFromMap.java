@@ -2,6 +2,7 @@ package net.nan21.dnet.module.ad._presenterdelegates;
 
 import java.util.List;
  
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.presenter.service.BaseDsDelegate;
 import net.nan21.dnet.module.ad.impex.business.service.IImportMapItemService;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem;
@@ -20,7 +21,7 @@ public class ImportFromMap extends BaseDsDelegate {
 		for(ImportMapItem item: items) {
 			String fileName = item.getFileName();
 	        String dsName = item.getDataSourceName()+"Ds";
-	        String path = "D:/work/dnet/product/dnet.src/nan21-dnet/dnet-data/src/main/resources";
+	        String path = Session.params.get().getDefaultImportPath();	        	
 	        this.findDsService(dsName).doImport(fileName, path);
 		}
 		

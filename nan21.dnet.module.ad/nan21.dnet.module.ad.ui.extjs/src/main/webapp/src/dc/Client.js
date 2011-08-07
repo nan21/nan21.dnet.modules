@@ -21,6 +21,8 @@ net.nan21.dnet.module.ad.client.dc.Client$Edit = Ext.extend(dnet.base.AbstractDc
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addTextField({ name:"maintenanceLanguage", dataIndex:"maintenanceLanguage",anchor:"-20" ,maxLength:5,caseRestriction:"uppercase",vtype:"alpha"  })
 		.addTextField({ name:"defaultImportPath", dataIndex:"defaultImportPath",anchor:"-20" ,maxLength:255  })
+		.addTextField({ name:"defaultExportPath", dataIndex:"defaultExportPath",anchor:"-20" ,maxLength:255  })
+		.addTextField({ name:"tempPath", dataIndex:"tempPath",anchor:"-20" ,maxLength:255  })
 		.addCombo({ name:"defaultDsAccessRule", xtype:"combo", dataIndex:"defaultDsAccessRule",anchor:"-20",store:[ "allow", "deny"]  })
 		.addTextField({ name:"adminRole", dataIndex:"adminRole",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
 		.addDateField({ name:"createdAt", dataIndex:"createdAt",width:100,disabled:true  ,allowBlank:false})
@@ -29,7 +31,7 @@ net.nan21.dnet.module.ad.client.dc.Client$Edit = Ext.extend(dnet.base.AbstractDc
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",disabled:true  ,allowBlank:false,maxLength:32  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" , width:250,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"form" , width:350,labelWidth:0 })     
 		.addPanel({ name:"col3", layout:"form" , width:220,labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
@@ -37,8 +39,8 @@ net.nan21.dnet.module.ad.client.dc.Client$Edit = Ext.extend(dnet.base.AbstractDc
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
-		.addChildrenTo("col1",["name","code","notes","defaultImportPath"])
-		.addChildrenTo("col2",["defaultDsAccessRule","adminRole"])
+		.addChildrenTo("col1",["name","code","notes","adminRole"])
+		.addChildrenTo("col2",["defaultImportPath","defaultExportPath","tempPath"])
 		.addChildrenTo("col3",["createdAt","modifiedAt","createdBy","modifiedBy"])
 ;
 	}	

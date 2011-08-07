@@ -21,6 +21,8 @@ public class ClientDsConv extends AbstractDsConverter<ClientDs, Client>
         e.setNotes(ds.getNotes());
         e.setMaintenanceLanguage(ds.getMaintenanceLanguage());
         e.setDefaultImportPath(ds.getDefaultImportPath());
+        e.setDefaultExportPath(ds.getDefaultExportPath());
+        e.setTempPath(ds.getTempPath());
         e.setDefaultDsAccessRule(ds.getDefaultDsAccessRule());
         e.setAdminRole(ds.getAdminRole());
     }
@@ -36,6 +38,8 @@ public class ClientDsConv extends AbstractDsConverter<ClientDs, Client>
         ds.setNotes(e.getNotes());
         ds.setMaintenanceLanguage(e.getMaintenanceLanguage());
         ds.setDefaultImportPath(e.getDefaultImportPath());
+        ds.setDefaultExportPath(e.getDefaultExportPath());
+        ds.setTempPath(e.getTempPath());
         ds.setDefaultDsAccessRule(e.getDefaultDsAccessRule());
         ds.setAdminRole(e.getAdminRole());
         ds.setId(e.getId());

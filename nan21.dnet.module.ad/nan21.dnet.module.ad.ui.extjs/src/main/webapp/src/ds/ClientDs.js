@@ -7,6 +7,8 @@ Ext.ns("net.nan21.dnet.module.ad.client.ds.model");
 	,	{name:"notes",type:"string"}
 	,	{name:"maintenanceLanguage",type:"string"}
 	,	{name:"defaultImportPath",type:"string"}
+	,	{name:"defaultExportPath",type:"string"}
+	,	{name:"tempPath",type:"string"}
 	,	{name:"defaultDsAccessRule",type:"string"}
 	,	{name:"adminRole",type:"string"}
 	,	{name:"id",type:"int"}
