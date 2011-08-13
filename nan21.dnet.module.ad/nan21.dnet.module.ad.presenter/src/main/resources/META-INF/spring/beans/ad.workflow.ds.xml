@@ -27,7 +27,12 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="serviceStartProcess" value="net.nan21.dnet.module.ad._delegates.WorkflowStartProcessInstance"></entry>
+	  			<entry key="serviceStartProcess">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.WfProcessDelegate"/>
+	  				<constructor-arg name="methodName" value="startInstance" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>
@@ -80,7 +85,12 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfProcessInstanceRunningDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="killProcessInstance" value="net.nan21.dnet.module.ad._delegates.WorkflowKillProcessInstance"></entry>
+	  			<entry key="killProcessInstance">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.WfProcessInstanceRunningDelegate"/>
+	  				<constructor-arg name="methodName" value="killInstance" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>
@@ -97,8 +107,18 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfTaskInstanceDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="assignTask" value="net.nan21.dnet.module.ad._delegates.WorkflowAssignTask"></entry>
-	  			<entry key="completeTask" value="net.nan21.dnet.module.ad._delegates.WorkflowCompleteTask"></entry>
+	  			<entry key="assignTask">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.WfTaskInstanceDelegate"/>
+	  				<constructor-arg name="methodName" value="assignTask" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="completeTask">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.WfTaskInstanceDelegate"/>
+	  				<constructor-arg name="methodName" value="completeTask" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>
@@ -115,7 +135,12 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfMyTaskDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="completeTask" value="net.nan21.dnet.module.ad._delegates.WorkflowCompleteMyTask"></entry>
+	  			<entry key="completeTask">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.WfMyTaskDelegate"/>
+	  				<constructor-arg name="methodName" value="complete" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>
@@ -144,7 +169,12 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfAvailableTaskDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="assignTask" value="net.nan21.dnet.module.ad._delegates.WorkflowClaimAvailableTask"></entry>
+	  			<entry key="assignTask">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.WfAvailableTaskDelegate"/>
+	  				<constructor-arg name="methodName" value="claim" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>
@@ -161,7 +191,12 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefProcessDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="deployProcess" value="net.nan21.dnet.module.ad._delegates.WorkflowDeployer"></entry>
+	  			<entry key="deployProcess">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.WfDefProcessDelegate"/>
+	  				<constructor-arg name="methodName" value="deployProcess" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>

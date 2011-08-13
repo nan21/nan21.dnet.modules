@@ -58,7 +58,7 @@ public class WfDefTransition implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "WfDefTransition.findByIds";
 
     /** Condition. */
-    @Column(name = "CONDITION")
+    @Column(name = "COND")
     private String condition;
 
     /** Owner client */

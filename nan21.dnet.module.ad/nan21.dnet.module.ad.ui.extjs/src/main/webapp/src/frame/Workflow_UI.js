@@ -160,5 +160,8 @@ net.nan21.dnet.module.ad.workflow.frame.Workflow_UI = Ext.extend( dnet.base.Abst
 	,onBtnOpenAsignTaskWindow: function() {
 this._getWindow_("wdwAssignTask").show();			 	
 	}					 	
+	,startProcessa: function() {	
+this._getDc_("dcDeployment").doQuery();			 	
+	}
 });
 Ext.reg("net.nan21.dnet.module.ad.workflow.frame.Workflow_UI", net.nan21.dnet.module.ad.workflow.frame.Workflow_UI);   

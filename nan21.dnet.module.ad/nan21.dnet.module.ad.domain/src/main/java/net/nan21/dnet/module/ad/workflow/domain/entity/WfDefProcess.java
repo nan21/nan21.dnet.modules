@@ -6,13 +6,18 @@
 package net.nan21.dnet.module.ad.workflow.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -114,6 +119,9 @@ public class WfDefProcess implements Serializable, IModelWithId,
     @GeneratedValue
     private Long id;
 
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = WfDefNode.class, mappedBy = "process", cascade = CascadeType.ALL)
+    private Collection<WfDefNode> nodes;
+
     /* ============== getters - setters ================== */
 
     public String getName() {
@@ -203,6 +211,22 @@ public class WfDefProcess implements Serializable, IModelWithId,
 
     public void setClassName(String className) {
 
+    }
+
+    public Collection<WfDefNode> getNodes() {
+        return this.nodes;
+    }
+
+    public void setNodes(Collection<WfDefNode> nodes) {
+        this.nodes = nodes;
+    }
+
+    public void addToNodes(WfDefNode e) {
+        if (this.nodes == null) {
+            this.nodes = new ArrayList<WfDefNode>();
+        }
+        e.setProcess(this);
+        this.nodes.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

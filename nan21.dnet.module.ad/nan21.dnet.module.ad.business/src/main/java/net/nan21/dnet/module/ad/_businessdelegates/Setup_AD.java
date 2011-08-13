@@ -2,7 +2,6 @@ package net.nan21.dnet.module.ad._businessdelegates;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
@@ -150,6 +149,10 @@ implements ISetupParticipant {
  
 	private void createTasks() {
 		this.tasks = new ArrayList<ISetupTask>();
+		Long i = (Long)this.em.createQuery("select count(e) from Client e").getResultList().get(0);
+		if (i>0) {
+			return ;
+		}		
 		SetupTask task = new SetupTask();
 		task.setId("1");
 		task.setTitle("Create default client and administrator user account");

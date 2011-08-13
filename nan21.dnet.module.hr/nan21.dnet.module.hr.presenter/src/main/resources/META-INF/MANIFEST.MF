@@ -53,6 +53,7 @@ Bundle-Version: 1.0.0.M1
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet HR - presenter
 Bundle-ManifestVersion: 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.hr.presenter
 Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
  notation,net.nan21.dnet.core.api.converter,net.nan21.dnet.core.api.de

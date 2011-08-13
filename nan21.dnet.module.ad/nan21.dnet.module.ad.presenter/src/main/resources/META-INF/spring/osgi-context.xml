@@ -31,5 +31,6 @@
 	<osgi:list id="osgiAsgnTxServiceFactories" cardinality="1..N"
 		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />
 			
-		
+	<osgi:reference id="osgiActivitiProcessEngine" cardinality="0..1"
+			interface="org.activiti.engine.ProcessEngine" /> 	
 </beans>

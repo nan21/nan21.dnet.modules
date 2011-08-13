@@ -1,4 +1,4 @@
-package net.nan21.dnet.module.ad._presenterdelegates;
+package net.nan21.dnet.module.ad._presenterdelegates.impex;
 
 import java.util.List;
  
@@ -8,7 +8,7 @@ import net.nan21.dnet.module.ad.impex.business.service.IImportMapItemService;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem;
 import net.nan21.dnet.module.ad.impex.ds.model.ImportMapDs;
 
-public class ImportFromMap extends BaseDsDelegate {
+public class ImportFromMapDelegate extends BaseDsDelegate {
 
 	public void execute(ImportMapDs ds) throws Exception {
 		// TODO Auto-generated method stub

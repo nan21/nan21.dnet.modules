@@ -15,7 +15,12 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="runImport" value="net.nan21.dnet.module.ad._presenterdelegates.ImportFromMap"></entry>
+	  			<entry key="runImport">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="class" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapDelegate"/>
+	  				<constructor-arg name="methodName" value="execute" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>
@@ -44,7 +49,12 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapItemDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="runImport" value="net.nan21.dnet.module.ad._presenterdelegates.ImportFromMapItem"></entry>
+	  			<entry key="runImport">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="class" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapItemDelegate"/>
+	  				<constructor-arg name="methodName" value="execute" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>
@@ -61,7 +71,12 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="runImport" value="net.nan21.dnet.module.ad._presenterdelegates.ImportFromJob"></entry>
+	  			<entry key="runImport">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="class" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobDelegate"/>
+	  				<constructor-arg name="methodName" value="execute" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>
@@ -90,7 +105,12 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportJobItemDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="runImport" value="net.nan21.dnet.module.ad._presenterdelegates.ImportFromJobItem"></entry>
+	  			<entry key="runImport">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="class" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobItemDelegate"/>
+	  				<constructor-arg name="methodName" value="execute" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>

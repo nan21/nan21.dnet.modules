@@ -1,4 +1,4 @@
-package net.nan21.dnet.module.ad._presenterdelegates;
+package net.nan21.dnet.module.ad._presenterdelegates.system;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -14,8 +14,8 @@ import net.nan21.dnet.module.ad.system.business.service.ISysDataSourceService;
 import net.nan21.dnet.module.ad.system.domain.entity.SysDataSource;
 import net.nan21.dnet.module.ad.system.domain.entity.SysDsField;
 import net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs;
-
-public class SysDataSourceScanner extends BaseDsDelegate<SysDataSourceDs, EmptyParam> {
+ 
+public class SysDataSourceDelegate extends BaseDsDelegate<SysDataSourceDs, EmptyParam> {
  
 	@Override
 	public void execute(SysDataSourceDs ds) throws Exception {
