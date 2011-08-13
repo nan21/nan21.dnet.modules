@@ -17,7 +17,7 @@
 	  		<map>
 	  			<entry key="runImport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="class" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapDelegate"/>
 	  				<constructor-arg name="methodName" value="execute" />
 	  			</bean>	
 	  			</entry>	  			
@@ -51,7 +51,7 @@
 	  		<map>
 	  			<entry key="runImport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="class" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapItemDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapItemDelegate"/>
 	  				<constructor-arg name="methodName" value="execute" />
 	  			</bean>	
 	  			</entry>	  			
@@ -73,7 +73,7 @@
 	  		<map>
 	  			<entry key="runImport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="class" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobDelegate"/>
 	  				<constructor-arg name="methodName" value="execute" />
 	  			</bean>	
 	  			</entry>	  			
@@ -107,7 +107,7 @@
 	  		<map>
 	  			<entry key="runImport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="class" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobItemDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobItemDelegate"/>
 	  				<constructor-arg name="methodName" value="execute" />
 	  			</bean>	
 	  			</entry>	  			

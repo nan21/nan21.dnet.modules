@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.workflow.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
 
@@ -13,7 +14,7 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.WfTaskInstance;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = WfTaskInstance.class)
+@Ds(entity = WfTaskInstance.class, jpqlWhere = " e.endTime is null ", sort = { @SortField(field = WfMyTaskDs.fSTARTTIME) })
 public class WfMyTaskDs extends AbstractDsModel<WfTaskInstance> implements
         IModelWithId {
 
