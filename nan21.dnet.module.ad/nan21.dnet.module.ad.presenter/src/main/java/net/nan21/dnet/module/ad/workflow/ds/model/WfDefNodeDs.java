@@ -15,10 +15,13 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = WfDefNode.class, sort = { @SortField(field = WfDefNodeDs.fNAME) })
+@Ds(entity = WfDefNode.class, sort = { @SortField(field = WfDefNodeDs.fID) })
 public class WfDefNodeDs extends AbstractDsModel<WfDefNode> implements
         IModelWithId, IModelWithClientId {
 
+    public static final String fNAME = "name";
+    public static final String fACTIVE = "active";
+    public static final String fDESCRIPTION = "description";
     public static final String fID = "id";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
@@ -26,12 +29,21 @@ public class WfDefNodeDs extends AbstractDsModel<WfDefNode> implements
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
-    public static final String fCODE = "code";
-    public static final String fNAME = "name";
-    public static final String fTYPEID = "typeId";
-    public static final String fTYPE = "type";
+    public static final String fASSIGNTOUSER = "assignToUser";
+    public static final String fASSIGNTOGROUP = "assignToGroup";
+    public static final String fSTARTWITHPREVIOUS = "startWithPrevious";
+    public static final String fTASKTYPE = "taskType";
     public static final String fPROCESSID = "processId";
     public static final String fPROCESS = "process";
+
+    @DsField()
+    private String name;
+
+    @DsField()
+    private Boolean active;
+
+    @DsField()
+    private String description;
 
     @DsField()
     private Long id;
@@ -55,16 +67,16 @@ public class WfDefNodeDs extends AbstractDsModel<WfDefNode> implements
     private Long version;
 
     @DsField()
-    private String code;
+    private String assignToUser;
 
     @DsField()
-    private String name;
+    private String assignToGroup;
 
-    @DsField(join = "left", path = "taskType.id")
-    private Long typeId;
+    @DsField()
+    private Boolean startWithPrevious;
 
-    @DsField(join = "left", path = "taskType.name")
-    private String type;
+    @DsField()
+    private String taskType;
 
     @DsField(join = "left", path = "process.id")
     private Long processId;
@@ -78,6 +90,30 @@ public class WfDefNodeDs extends AbstractDsModel<WfDefNode> implements
 
     public WfDefNodeDs(WfDefNode e) {
         super(e);
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getId() {
@@ -137,36 +173,36 @@ public class WfDefNodeDs extends AbstractDsModel<WfDefNode> implements
         this.version = version;
     }
 
-    public String getCode() {
-        return this.code;
+    public String getAssignToUser() {
+        return this.assignToUser;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setAssignToUser(String assignToUser) {
+        this.assignToUser = assignToUser;
     }
 
-    public String getName() {
-        return this.name;
+    public String getAssignToGroup() {
+        return this.assignToGroup;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAssignToGroup(String assignToGroup) {
+        this.assignToGroup = assignToGroup;
     }
 
-    public Long getTypeId() {
-        return this.typeId;
+    public Boolean getStartWithPrevious() {
+        return this.startWithPrevious;
     }
 
-    public void setTypeId(Long typeId) {
-        this.typeId = typeId;
+    public void setStartWithPrevious(Boolean startWithPrevious) {
+        this.startWithPrevious = startWithPrevious;
     }
 
-    public String getType() {
-        return this.type;
+    public String getTaskType() {
+        return this.taskType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setTaskType(String taskType) {
+        this.taskType = taskType;
     }
 
     public Long getProcessId() {

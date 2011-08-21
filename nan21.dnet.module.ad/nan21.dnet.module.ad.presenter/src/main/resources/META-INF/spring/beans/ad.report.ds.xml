@@ -11,7 +11,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportServerDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportServer" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.ReportServerDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -23,7 +22,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportServerLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportServer" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.ReportServerLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -35,7 +33,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.Report" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.ReportDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -47,7 +44,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.Report" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.ReportLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -59,7 +55,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportParam" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.ReportParamDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -71,7 +66,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportParam" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.ReportParamLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -83,7 +77,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.DsReport" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.DsReportDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -95,7 +88,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportParamDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.DsReportParam" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.DsReportParamDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

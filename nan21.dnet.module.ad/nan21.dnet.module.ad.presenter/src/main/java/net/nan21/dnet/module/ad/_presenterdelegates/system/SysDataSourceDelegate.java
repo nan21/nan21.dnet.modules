@@ -3,7 +3,6 @@ package net.nan21.dnet.module.ad._presenterdelegates.system;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import net.nan21.dnet.core.api.descriptor.IDsDefinition;
@@ -17,8 +16,7 @@ import net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs;
  
 public class SysDataSourceDelegate extends BaseDsDelegate<SysDataSourceDs, EmptyParam> {
  
-	@Override
-	public void execute(SysDataSourceDs ds) throws Exception {
+	public void synchronizeCatalog(SysDataSourceDs ds) throws Exception {
 		List<IDsDefinitions> list = (List<IDsDefinitions>)appContext.getBean("osgiDsDefinitions");
 		ISysDataSourceService srv = (ISysDataSourceService)this.findEntityService(SysDataSource.class);
 		

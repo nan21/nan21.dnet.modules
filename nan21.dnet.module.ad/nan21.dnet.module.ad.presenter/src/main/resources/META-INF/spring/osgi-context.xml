@@ -16,6 +16,11 @@
 	<osgi:service ref="dsServiceFactory" ranking="0"
 		interface="net.nan21.dnet.core.api.service.IDsServiceFactory" />
 	
+	 
+	<osgi:service ref="fileUploadServiceFactory" ranking="0"
+		interface="net.nan21.dnet.core.api.service.IFileUploadServiceFactory" />
+		 
+		
 	<osgi:service ref="asgnServiceFactory" ranking="0"
 		interface="net.nan21.dnet.core.api.service.IAsgnServiceFactory" />
 		

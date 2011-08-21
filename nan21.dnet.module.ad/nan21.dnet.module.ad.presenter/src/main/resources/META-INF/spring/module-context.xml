@@ -23,6 +23,12 @@
 		 <property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>
 	
+	 
+	<bean id="fileUploadServiceFactory"
+	 class="net.nan21.dnet.core.presenter.service.FileUploadServiceFactory" >		 
+	</bean>
+	 
+	
 	<bean id="asgnServiceFactory" class="net.nan21.dnet.core.presenter.service.AsgnServiceFactory" >
 		<property name="asgnTxServiceFactories" ref="osgiAsgnTxServiceFactories"></property>
 	</bean>
@@ -38,5 +44,10 @@
  	<import resource="beans/ad.workflow.ds.xml"/>
  	
   	<import resource="beans/ad.usr.asgn.xml"/>
+  
+    <!-- Other beans / services  -->
+  
+  	<bean id="deployUploadedWorkflowService"  scope="prototype" 
+  		class="net.nan21.dnet.module.ad._presenterdelegates.workflow.DeployUploadedWorkflow"></bean>
   
 </beans>

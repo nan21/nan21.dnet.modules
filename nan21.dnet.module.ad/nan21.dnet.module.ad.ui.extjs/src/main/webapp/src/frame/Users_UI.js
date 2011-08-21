@@ -1,8 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/UserDs", "nan21.dnet.module.ad.ui.extjs/dc/User"
-,"nan21.dnet.module.ad.ui.extjs/asgn/UserRoles"
-
-,"nan21.dnet.module.ad.ui.extjs/asgn/UserUserGroups"
-]);
+Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/UserDs", "nan21.dnet.module.ad.ui.extjs/dc/User","nan21.dnet.module.ad.ui.extjs/asgn/UserRoles","nan21.dnet.module.ad.ui.extjs/asgn/UserUserGroups"]);
 
 Ext.ns("net.nan21.dnet.module.ad.usr.frame");
 net.nan21.dnet.module.ad.usr.frame.Users_UI = Ext.extend( dnet.base.AbstractUi, {  
@@ -20,9 +16,9 @@ net.nan21.dnet.module.ad.usr.frame.Users_UI = Ext.extend( dnet.base.AbstractUi, 
 		.addButton({name:"btnAsgnGroups",text:"Groups", tooltip:"Add to user-groups",disabled:true
 			,handler: this.onBtnAsgnGroups,scope:this,stateManager:{name:"record_is_clean", dc:"usr"}	})	
 							 	
-		.addDcView("usr",{ name:"usrFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Filter"})	 
+		.addDcFilterFormView("usr",{ name:"usrFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Filter"})	 
 		.addDcView("usr",{ name:"usrList", xtype:"net.nan21.dnet.module.ad.usr.dc.User$List"})	 
-		.addDcView("usr",{ name:"usrEdit", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Edit",buttons:[ this._elems_.get("btnAsgnRoles") ,this._elems_.get("btnAsgnGroups") ]})	 
+		.addDcFormView("usr",{ name:"usrEdit", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Edit",buttons:[ this._elems_.get("btnAsgnRoles") ,this._elems_.get("btnAsgnGroups") ]})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 

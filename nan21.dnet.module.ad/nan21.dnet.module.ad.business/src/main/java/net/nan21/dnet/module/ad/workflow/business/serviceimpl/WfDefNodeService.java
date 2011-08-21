@@ -8,7 +8,7 @@ package net.nan21.dnet.module.ad.workflow.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.workflow.business.service.IWfDefNodeService;
-import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeType;
+import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeField;
 import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess;
 
 import javax.persistence.EntityManager;
@@ -49,16 +49,16 @@ public class WfDefNodeService extends AbstractEntityService<WfDefNode>
                 .getResultList();
     }
 
-    public List<WfDefNode> findByTaskType(WfDefNodeType taskType) {
-        return this.findByTaskTypeId(taskType.getId());
+    public List<WfDefNode> findByFields(WfDefNodeField fields) {
+        return this.findByFieldsId(fields.getId());
     }
 
-    public List<WfDefNode> findByTaskTypeId(Long taskTypeId) {
+    public List<WfDefNode> findByFieldsId(Long fieldsId) {
         return (List<WfDefNode>) this.em
                 .createQuery(
-                        "select e from WfDefNode e where e.taskType.id = :pTaskTypeId",
-                        WfDefNode.class)
-                .setParameter("pTaskTypeId", taskTypeId).getResultList();
+                        "select e from WfDefNode e where e.fields.id = :pFieldsId",
+                        WfDefNode.class).setParameter("pFieldsId", fieldsId)
+                .getResultList();
     }
 
 }

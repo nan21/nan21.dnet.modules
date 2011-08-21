@@ -6,7 +6,10 @@
 package net.nan21.dnet.module.ad.workflow.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,6 +19,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -28,7 +32,6 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
-import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeType;
 import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -65,15 +68,36 @@ public class WfDefNode implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_NAME = "WfDefNode.findByName";
 
-    /** Code. */
-    @Column(name = "CODE", nullable = false)
+    /** AssignToUser. */
+    @Column(name = "ASSIGNTOUSER")
+    private String assignToUser;
+
+    /** AssignToGroup. */
+    @Column(name = "ASSIGNTOGROUP")
+    private String assignToGroup;
+
+    /** StartWithPrevious. */
+    @Column(name = "STARTWITHPREVIOUS")
+    private Boolean startWithPrevious;
+
+    /** TaskType. */
+    @Column(name = "TASKTYPE", nullable = false)
     @NotBlank
-    private String code;
+    private String taskType;
 
     /** Name. */
     @Column(name = "NAME", nullable = false)
     @NotBlank
     private String name;
+
+    /** Flag which indicates if this record is used.*/
+    @Column(name = "ACTIVE", nullable = false)
+    @NotNull
+    private Boolean active;
+
+    /** Notes about this record. */
+    @Column(name = "DESCRIPTION")
+    private String description;
 
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
@@ -119,18 +143,41 @@ public class WfDefNode implements Serializable, IModelWithId,
     @JoinColumn(name = "PROCESS_ID", referencedColumnName = "ID")
     private WfDefProcess process;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = WfDefNodeType.class)
-    @JoinColumn(name = "TASKTYPE_ID", referencedColumnName = "ID")
-    private WfDefNodeType taskType;
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = WfDefNodeField.class, mappedBy = "node", cascade = CascadeType.ALL)
+    private Collection<WfDefNodeField> fields;
 
     /* ============== getters - setters ================== */
 
-    public String getCode() {
-        return this.code;
+    public String getAssignToUser() {
+        return this.assignToUser;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setAssignToUser(String assignToUser) {
+        this.assignToUser = assignToUser;
+    }
+
+    public String getAssignToGroup() {
+        return this.assignToGroup;
+    }
+
+    public void setAssignToGroup(String assignToGroup) {
+        this.assignToGroup = assignToGroup;
+    }
+
+    public Boolean getStartWithPrevious() {
+        return this.startWithPrevious;
+    }
+
+    public void setStartWithPrevious(Boolean startWithPrevious) {
+        this.startWithPrevious = startWithPrevious;
+    }
+
+    public String getTaskType() {
+        return this.taskType;
+    }
+
+    public void setTaskType(String taskType) {
+        this.taskType = taskType;
     }
 
     public String getName() {
@@ -139,6 +186,22 @@ public class WfDefNode implements Serializable, IModelWithId,
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getClientId() {
@@ -214,12 +277,20 @@ public class WfDefNode implements Serializable, IModelWithId,
         this.process = process;
     }
 
-    public WfDefNodeType getTaskType() {
-        return this.taskType;
+    public Collection<WfDefNodeField> getFields() {
+        return this.fields;
     }
 
-    public void setTaskType(WfDefNodeType taskType) {
-        this.taskType = taskType;
+    public void setFields(Collection<WfDefNodeField> fields) {
+        this.fields = fields;
+    }
+
+    public void addToFields(WfDefNodeField e) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<WfDefNodeField>();
+        }
+        e.setNode(this);
+        this.fields.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {
@@ -231,6 +302,10 @@ public class WfDefNode implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.active == null) {
+            event.updateAttributeWithObject("active", true);
+
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

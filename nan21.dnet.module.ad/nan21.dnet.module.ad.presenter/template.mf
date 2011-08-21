@@ -10,7 +10,8 @@ Import-Package:
  org.activiti.engine;version="[5.6,6.0)",
  org.activiti.engine.impl.el;version="[5.6,6.0)",
  org.activiti.kickstart.service;version="[5.6,6.0)",
- org.activiti.kickstart.dto;version="[5.6,6.0)"
+ org.activiti.kickstart.dto;version="[5.6,6.0)",
+ org.springframework.web.multipart;version="[3.0,3.1)"
 Import-Bundle:  
  nan21.dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]", 
  nan21.dnet.core.presenter;version="[1.0.0.M1,1.0.0.M1]", 

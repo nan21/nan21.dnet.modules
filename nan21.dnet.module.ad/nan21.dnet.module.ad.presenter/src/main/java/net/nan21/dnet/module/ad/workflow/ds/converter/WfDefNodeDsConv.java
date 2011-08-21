@@ -6,8 +6,6 @@
 package net.nan21.dnet.module.ad.workflow.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.ad.workflow.business.service.IWfDefNodeTypeService;
-import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeType;
 import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
@@ -20,10 +18,15 @@ public class WfDefNodeDsConv extends
 
     protected void modelToEntityAttributes(WfDefNodeDs ds, WfDefNode e)
             throws Exception {
+        e.setName(ds.getName());
+        e.setActive(ds.getActive());
+        e.setDescription(ds.getDescription());
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
-        e.setCode(ds.getCode());
-        e.setName(ds.getName());
+        e.setAssignToUser(ds.getAssignToUser());
+        e.setAssignToGroup(ds.getAssignToGroup());
+        e.setStartWithPrevious(ds.getStartWithPrevious());
+        e.setTaskType(ds.getTaskType());
     }
 
     protected void modelToEntityReferences(WfDefNodeDs ds, WfDefNode e)
@@ -36,31 +39,13 @@ public class WfDefNodeDsConv extends
                         WfDefProcess.class, ds.getProcessId()));
             }
         }
-        if (ds.getTypeId() != null) {
-            if (e.getTaskType() == null
-                    || !e.getTaskType().getId().equals(ds.getTypeId())) {
-                e.setTaskType((WfDefNodeType) this.em.getReference(
-                        WfDefNodeType.class, ds.getTypeId()));
-            }
-        } else {
-            this.lookup_taskType_WfDefNodeType(ds, e);
-        }
-    }
-
-    protected void lookup_taskType_WfDefNodeType(WfDefNodeDs ds, WfDefNode e)
-            throws Exception {
-        WfDefNodeType x = null;
-        try {
-            x = ((IWfDefNodeTypeService) getService(IWfDefNodeTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
-        }
-        e.setTaskType(x);
     }
 
     @Override
     public void entityToModel(WfDefNode e, WfDefNodeDs ds) throws Exception {
+        ds.setName(e.getName());
+        ds.setActive(e.getActive());
+        ds.setDescription(e.getDescription());
         ds.setId(e.getId());
         ds.setClientId(e.getClientId());
         ds.setCreatedAt(e.getCreatedAt());
@@ -68,12 +53,10 @@ public class WfDefNodeDsConv extends
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
-        ds.setCode(e.getCode());
-        ds.setName(e.getName());
-        ds.setTypeId(((e.getTaskType() != null)) ? e.getTaskType().getId()
-                : null);
-        ds.setType(((e.getTaskType() != null)) ? e.getTaskType().getName()
-                : null);
+        ds.setAssignToUser(e.getAssignToUser());
+        ds.setAssignToGroup(e.getAssignToGroup());
+        ds.setStartWithPrevious(e.getStartWithPrevious());
+        ds.setTaskType(e.getTaskType());
         ds.setProcessId(((e.getProcess() != null)) ? e.getProcess().getId()
                 : null);
         ds.setProcess(((e.getProcess() != null)) ? e.getProcess().getName()

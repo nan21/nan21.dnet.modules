@@ -2,17 +2,20 @@
    	 
 Ext.ns("net.nan21.dnet.module.ad.workflow.ds.model");
 	net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeDs = [
-	{name:"id",type:"int"}
+	{name:"name",type:"string"}
+	,	{name:"active",type:"boolean"}
+	,	{name:"description",type:"string"}
+	,	{name:"id",type:"int"}
 	,	{name:"clientId",type:"int"}
 	,	{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT}
 	,	{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT}
 	,	{name:"createdBy",type:"string"}
 	,	{name:"modifiedBy",type:"string"}
 	,	{name:"version",type:"int"}
-	,	{name:"code",type:"string"}
-	,	{name:"name",type:"string"}
-	,	{name:"typeId",type:"int"}
-	,	{name:"type",type:"string"}
+	,	{name:"assignToUser",type:"string"}
+	,	{name:"assignToGroup",type:"string"}
+	,	{name:"startWithPrevious",type:"boolean"}
+	,	{name:"taskType",type:"string"}
 	,	{name:"processId",type:"int"}
 	,	{name:"process",type:"string"}
 	
