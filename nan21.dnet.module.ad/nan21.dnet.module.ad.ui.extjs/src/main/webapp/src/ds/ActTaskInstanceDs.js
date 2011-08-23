@@ -20,8 +20,8 @@ Ext.ns("net.nan21.dnet.module.ad.workflow.ds.model");
 	];
 Ext.ns("net.nan21.dnet.module.ad.workflow.ds.param");	
 	net.nan21.dnet.module.ad.workflow.ds.param.ActTaskInstanceDsParam = [
-	{name:"showActive",type:"boolean"}
-	,	{name:"showCompleted",type:"boolean"}
+	{name:"hideActive",type:"boolean"}
+	,	{name:"hideCompleted",type:"boolean"}
 	
 	];
 Ext.ns("net.nan21.dnet.module.ad.workflow.ds");	

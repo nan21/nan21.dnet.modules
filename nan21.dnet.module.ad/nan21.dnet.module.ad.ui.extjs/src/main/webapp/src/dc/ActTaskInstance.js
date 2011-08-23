@@ -17,8 +17,8 @@ net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter = Ext.extend(dnet.ba
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addCheckbox({ name:"showActive" ,dataIndex:"showActive", _isParam_:true ,listeners:{check:{scope:this, fn:this._doQuery_}} })
-		.addCheckbox({ name:"showCompleted" ,dataIndex:"showCompleted", _isParam_:true ,listeners:{check:{scope:this, fn:this._doQuery_}} })
+		.addCheckbox({ name:"hideActive" ,dataIndex:"hideActive", _isParam_:true ,listeners:{check:{scope:this, fn:this._doQuery_}} })
+		.addCheckbox({ name:"hideCompleted" ,dataIndex:"hideCompleted", _isParam_:true ,listeners:{check:{scope:this, fn:this._doQuery_}} })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210,labelAlign:"right",labelWidth:150 })
 		.addPanel({ name:"col2", layout:"form",width:210,labelAlign:"right",labelWidth:150 })
@@ -27,11 +27,11 @@ net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter = Ext.extend(dnet.ba
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["showActive"])
-		.addChildrenTo("col2",["showCompleted"])
+		.addChildrenTo("col1",["hideActive"])
+		.addChildrenTo("col2",["hideCompleted"])
 	}
 	,_doQuery_: function() {	
-		this._controller_.doQuery();//.defer(200,this._controller_);
+		this._controller_.doQuery();
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter", net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter ); 

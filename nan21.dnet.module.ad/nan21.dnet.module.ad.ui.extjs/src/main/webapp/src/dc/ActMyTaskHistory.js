@@ -22,13 +22,11 @@ net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory$Filter = Ext.extend(dnet.b
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["name"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory$Filter", net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory$Filter ); 

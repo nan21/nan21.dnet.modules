@@ -21,12 +21,10 @@ net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$Filter = Ext.extend(dnet.ba
 		.addTextField({ name:"target", dataIndex:"target",anchor:"-20",maxLength:255  })
 		//containers
 		.addPanel({ name:"main", layout:"form", autoScroll:true,width:210,labelWidth:0 })
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["source","target"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$Filter", net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$Filter ); 

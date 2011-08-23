@@ -35,34 +35,34 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI = Ext.extend( dnet.base
 		}); 
 		this._getBuilder_()	
 		.addButton({name:"btnStartProcess",text:"Start Instance", tooltip:"Start an instance of the selected process",iconCls:"icon-gears",disabled:true
-			,handler: this.startProcessInstance,scope:this,stateManager:{name:"selected_one", dc:"dcProcess"}	})	
+			,handler: this.startProcessInstance,scope:this,stateManager:{name:"selected_one", dc:"dcProcess" }	})	
 							 	
 		.addButton({name:"btnGetProcessDefinitionDiagram",text:"Show diagram", tooltip:"Show diagram for the selected process definition",disabled:true
-			,handler: this.onBtnGetProcessDefinitionDiagram,scope:this,stateManager:{name:"selected_one", dc:"dcProcess"}	})	
+			,handler: this.onBtnGetProcessDefinitionDiagram,scope:this,stateManager:{name:"selected_one", dc:"dcProcess" }	})	
 							 	
 		.addButton({name:"btnGetProcessInstanceDiagram",text:"Show diagram", tooltip:"Show diagram for the selected process instance",disabled:true
-			,handler: this.onBtnGetProcessInstanceDiagram,scope:this,stateManager:{name:"selected_one", dc:"dcRunningInstance"}	})	
+			,handler: this.onBtnGetProcessInstanceDiagram,scope:this,stateManager:{name:"selected_one", dc:"dcRunningInstance" }	})	
 							 	
 		.addButton({name:"btnKillProcessInstance",text:"Kill Instance", tooltip:"Kill the selected process instance",iconCls:"icon-action-reset",disabled:true
-			,handler: this.onBtnKillProcessInstance,scope:this,stateManager:{name:"selected_one", dc:"dcRunningInstance"}	})	
+			,handler: this.onBtnKillProcessInstance,scope:this,stateManager:{name:"selected_one", dc:"dcRunningInstance" }	})	
 							 	
 		.addButton({name:"btnSaveAssignTask",text:"Save", tooltip:"Save assignement. Leave field empty to un-assign it.",iconCls:"icon-action-save",disabled:true
-			,handler: this.onBtnSaveAssignTask,scope:this,stateManager:{name:"record_is_dirty", dc:"dcRunningTask"}	})	
+			,handler: this.onBtnSaveAssignTask,scope:this,stateManager:{name:"record_is_dirty", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.record.data.endTime);}}	})	
 							 	
 		.addButton({name:"btnCompleteTask",text:"Complete task", tooltip:"Mark selected task as completed.",iconCls:"icon-action-commit",disabled:true
-			,handler: this.onBtnCompleteTask,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask"}	})	
+			,handler: this.onBtnCompleteTask,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.record.data.endTime);}}	})	
 							 	
 		.addButton({name:"btnOpenAsignTaskWindow",text:"Assign task", tooltip:"(Re-)Assign the selected task.",disabled:true
-			,handler: this.onBtnOpenAsignTaskWindow,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask"}	})	
+			,handler: this.onBtnOpenAsignTaskWindow,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.record.data.endTime);}}	})	
 							 	
 		.addButton({name:"btnUploadForDeployment",text:"Upload...", tooltip:"Upload process definition archive to be deployed.",disabled:false
 			,handler: this.onBtnUploadForDeployment,scope:this	})	
 							 	
 		.addButton({name:"btnDeleteDeployment",text:"Delete", tooltip:"Delete selected deployments.",disabled:true
-			,handler: this.onBtnDeleteDeployment,scope:this,stateManager:{name:"selected_not_zero", dc:"dcDeployment"}	})	
+			,handler: this.onBtnDeleteDeployment,scope:this,stateManager:{name:"selected_not_zero", dc:"dcDeployment" }	})	
 							 	
 		.addButton({name:"btnDeleteCascadeDeployment",text:"Delete cascade", tooltip:"Delete selected deployments with dependecies.",disabled:true
-			,handler: this.onBtnDeleteCascadeDeployment,scope:this,stateManager:{name:"selected_not_zero", dc:"dcDeployment"}	})	
+			,handler: this.onBtnDeleteCascadeDeployment,scope:this,stateManager:{name:"selected_not_zero", dc:"dcDeployment" }	})	
 							 	
 		.addDcFilterFormView("dcDeployment",{ name:"filterDeployment", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter",height:65})	 
 		.addDcView("dcDeployment",{ name:"listDeployment", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List",buttons:[ this._elems_.get("btnUploadForDeployment") ,this._elems_.get("btnDeleteDeployment") ,this._elems_.get("btnDeleteCascadeDeployment") ]})	 

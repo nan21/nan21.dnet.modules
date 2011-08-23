@@ -27,12 +27,10 @@ net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter = Ext.extend(
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20",maxLength:32  })
 		//containers
 		.addPanel({ name:"main", layout:"form", autoScroll:true,width:210,labelWidth:0 })
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["id","processDefinitionId","taskDefinitionKey","processInstanceId","executionId","name","description","assignee"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter", net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter ); 

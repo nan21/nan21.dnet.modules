@@ -18,7 +18,7 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter = Ext.exte
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20",maxLength:255  })
-		.addLov({ name:"processFullName", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActProcessDefinitions", dataIndex:"processFullName",anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "processId"} ],listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("processFullName", nv);} }}  })
+		.addLov({ name:"processFullName", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActProcessDefinitions", dataIndex:"processFullName", _isParam_:true,anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "processId"} ],listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("processFullName", nv);} }}  })
 		.addTextField({ name:"startedBy", dataIndex:"startedBy",anchor:"-20",maxLength:32  })
 		.addDateField({ name:"startTime", dataIndex:"startTime",width:100 ,format:Ext.DATE_FORMAT })
 		.addDateField({ name:"endTime", dataIndex:"endTime",width:100 ,format:Ext.DATE_FORMAT })
@@ -27,7 +27,6 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter = Ext.exte
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -35,7 +34,6 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter = Ext.exte
 		.addChildrenTo("col1",["processFullName"])
 		.addChildrenTo("col2",["startTime","endTime"])
 		.addChildrenTo("col3",["startedBy","id"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter", net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter ); 

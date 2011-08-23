@@ -12,8 +12,8 @@ net.nan21.dnet.module.ad.workflow.ds.ActTaskInstanceDs.prototype._trl_ = {
 	,priority__lbl : "Priority"
 	,dueDate__lbl : "Due Date"
 	
-	,showActive__lbl :"Show Active"
-	,showCompleted__lbl :"Show Completed"
+	,hideActive__lbl :"Hide Active"
+	,hideCompleted__lbl :"Hide Completed"
 }  
 	
  

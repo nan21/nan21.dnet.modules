@@ -26,7 +26,6 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter = Ext.extend(dnet
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -34,7 +33,6 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter = Ext.extend(dnet
 		.addChildrenTo("col1",["process"])
 		.addChildrenTo("col2",["startTime"])
 		.addChildrenTo("col3",["startedBy","id"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter", net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter ); 

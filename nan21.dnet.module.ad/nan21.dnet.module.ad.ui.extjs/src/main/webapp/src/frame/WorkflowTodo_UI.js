@@ -35,11 +35,11 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI = Ext.extend( dnet.base.
 		.addButton({name:"btnClaimTask",text:"Claim task", tooltip:"Claim the selected task.",disabled:true
 			,handler: this.onBtnClaimTask,scope:this,stateManager:{name:"selected_one", dc:"dcAvailabletask"}	})	
 							 	
-		.addDcView("dcMytask",{ name:"filterMytask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActMyTask$Filter",height:40})	 
+		.addDcFilterFormView("dcMytask",{ name:"filterMytask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActMyTask$Filter",height:40})	 
 		.addDcView("dcMytask",{ name:"listMytask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List",buttons:[ this._elems_.get("btnCompleteTask") ]})	 
-		.addDcView("dcAvailabletask",{ name:"filterAvailabletask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask$Filter",height:40})	 
+		.addDcFilterFormView("dcAvailabletask",{ name:"filterAvailabletask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask$Filter",height:40})	 
 		.addDcView("dcAvailabletask",{ name:"listAvailabletask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask$List",buttons:[ this._elems_.get("btnClaimTask") ]})	 
-		.addDcView("dcMyhistory",{ name:"filterMyhistory", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory$Filter",height:40})	 
+		.addDcFilterFormView("dcMyhistory",{ name:"filterMyhistory", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory$Filter",height:40})	 
 		.addDcView("dcMyhistory",{ name:"listMyhistory", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory$List"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Current tasks",header:false})  	 

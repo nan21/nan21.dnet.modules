@@ -114,6 +114,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActTaskInstanceDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActTaskInstanceDsQueryBuilder" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActTaskInstanceDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
