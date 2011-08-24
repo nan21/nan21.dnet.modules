@@ -51,26 +51,34 @@ public class UomConversionDsConv extends
 
     protected void lookup_source_Uom(UomConversionDs ds, UomConversion e)
             throws Exception {
-        Uom x = null;
-        try {
-            x = ((IUomService) getService(IUomService.class)).findByCode(
-                    ds.getClientId(), ds.getSourceCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getSourceCode() != null) {
+            Uom x = null;
+            try {
+                x = ((IUomService) getService(IUomService.class)).findByCode(
+                        ds.getClientId(), ds.getSourceCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Uom` reference:  `sourceCode` = "
+                                + ds.getSourceCode() + "  ");
+            }
+            e.setSource(x);
         }
-        e.setSource(x);
     }
 
     protected void lookup_target_Uom(UomConversionDs ds, UomConversion e)
             throws Exception {
-        Uom x = null;
-        try {
-            x = ((IUomService) getService(IUomService.class)).findByCode(
-                    ds.getClientId(), ds.getTargetCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getTargetCode() != null) {
+            Uom x = null;
+            try {
+                x = ((IUomService) getService(IUomService.class)).findByCode(
+                        ds.getClientId(), ds.getTargetCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Uom` reference:  `targetCode` = "
+                                + ds.getTargetCode() + "  ");
+            }
+            e.setTarget(x);
         }
-        e.setTarget(x);
     }
 
     @Override

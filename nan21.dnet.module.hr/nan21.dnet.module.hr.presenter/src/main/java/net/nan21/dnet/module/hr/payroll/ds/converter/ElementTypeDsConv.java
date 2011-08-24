@@ -42,14 +42,18 @@ public class ElementTypeDsConv extends
 
     protected void lookup_category_ElementCategory(ElementTypeDs ds,
             ElementType e) throws Exception {
-        ElementCategory x = null;
-        try {
-            x = ((IElementCategoryService) getService(IElementCategoryService.class))
-                    .findByName(ds.getClientId(), ds.getCategory());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCategory() != null) {
+            ElementCategory x = null;
+            try {
+                x = ((IElementCategoryService) getService(IElementCategoryService.class))
+                        .findByName(ds.getClientId(), ds.getCategory());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ElementCategory` reference:  `category` = "
+                                + ds.getCategory() + "  ");
+            }
+            e.setCategory(x);
         }
-        e.setCategory(x);
     }
 
     @Override

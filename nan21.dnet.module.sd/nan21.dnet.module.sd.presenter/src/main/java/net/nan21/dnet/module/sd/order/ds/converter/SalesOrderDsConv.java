@@ -157,122 +157,162 @@ public class SalesOrderDsConv extends
 
     protected void lookup_currency_Currency(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        Currency x = null;
-        try {
-            x = ((ICurrencyService) getService(ICurrencyService.class))
-                    .findByCode(ds.getClientId(), ds.getCurrencyCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCurrencyCode() != null) {
+            Currency x = null;
+            try {
+                x = ((ICurrencyService) getService(ICurrencyService.class))
+                        .findByCode(ds.getClientId(), ds.getCurrencyCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Currency` reference:  `currencyCode` = "
+                                + ds.getCurrencyCode() + "  ");
+            }
+            e.setCurrency(x);
         }
-        e.setCurrency(x);
     }
 
     protected void lookup_priceList_PriceList(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        PriceList x = null;
-        try {
-            x = ((IPriceListService) getService(IPriceListService.class))
-                    .findByName(ds.getClientId(), ds.getPriceListName());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getPriceListName() != null) {
+            PriceList x = null;
+            try {
+                x = ((IPriceListService) getService(IPriceListService.class))
+                        .findByName(ds.getClientId(), ds.getPriceListName());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PriceList` reference:  `priceListName` = "
+                                + ds.getPriceListName() + "  ");
+            }
+            e.setPriceList(x);
         }
-        e.setPriceList(x);
     }
 
     protected void lookup_deliveryMethod_DeliveryMethod(SalesOrderDs ds,
             SalesOrder e) throws Exception {
-        DeliveryMethod x = null;
-        try {
-            x = ((IDeliveryMethodService) getService(IDeliveryMethodService.class))
-                    .findByName(ds.getClientId(), ds.getDeliveryMethod());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getDeliveryMethod() != null) {
+            DeliveryMethod x = null;
+            try {
+                x = ((IDeliveryMethodService) getService(IDeliveryMethodService.class))
+                        .findByName(ds.getClientId(), ds.getDeliveryMethod());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `DeliveryMethod` reference:  `deliveryMethod` = "
+                                + ds.getDeliveryMethod() + "  ");
+            }
+            e.setDeliveryMethod(x);
         }
-        e.setDeliveryMethod(x);
     }
 
     protected void lookup_type_SalesOrderType(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        SalesOrderType x = null;
-        try {
-            x = ((ISalesOrderTypeService) getService(ISalesOrderTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getType() != null) {
+            SalesOrderType x = null;
+            try {
+                x = ((ISalesOrderTypeService) getService(ISalesOrderTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `SalesOrderType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setType(x);
         }
-        e.setType(x);
     }
 
     protected void lookup_status_SalesOrderStatus(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        SalesOrderStatus x = null;
-        try {
-            x = ((ISalesOrderStatusService) getService(ISalesOrderStatusService.class))
-                    .findByName(ds.getClientId(), ds.getStatus());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getStatus() != null) {
+            SalesOrderStatus x = null;
+            try {
+                x = ((ISalesOrderStatusService) getService(ISalesOrderStatusService.class))
+                        .findByName(ds.getClientId(), ds.getStatus());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `SalesOrderStatus` reference:  `status` = "
+                                + ds.getStatus() + "  ");
+            }
+            e.setStatus(x);
         }
-        e.setStatus(x);
     }
 
     protected void lookup_paymentMethod_PaymentMethod(SalesOrderDs ds,
             SalesOrder e) throws Exception {
-        PaymentMethod x = null;
-        try {
-            x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
-                    .findByName(ds.getClientId(), ds.getPaymentMethod());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getPaymentMethod() != null) {
+            PaymentMethod x = null;
+            try {
+                x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
+                        .findByName(ds.getClientId(), ds.getPaymentMethod());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PaymentMethod` reference:  `paymentMethod` = "
+                                + ds.getPaymentMethod() + "  ");
+            }
+            e.setPaymentMethod(x);
         }
-        e.setPaymentMethod(x);
     }
 
     protected void lookup_customer_BusinessPartner(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        BusinessPartner x = null;
-        try {
-            x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
-                    .findByCode(ds.getClientId(), ds.getCustomerCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCustomerCode() != null) {
+            BusinessPartner x = null;
+            try {
+                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                        .findByCode(ds.getClientId(), ds.getCustomerCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `BusinessPartner` reference:  `customerCode` = "
+                                + ds.getCustomerCode() + "  ");
+            }
+            e.setCustomer(x);
         }
-        e.setCustomer(x);
     }
 
     protected void lookup_supplier_BusinessPartner(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        BusinessPartner x = null;
-        try {
-            x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
-                    .findByCode(ds.getClientId(), ds.getSupplierCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getSupplierCode() != null) {
+            BusinessPartner x = null;
+            try {
+                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                        .findByCode(ds.getClientId(), ds.getSupplierCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `BusinessPartner` reference:  `supplierCode` = "
+                                + ds.getSupplierCode() + "  ");
+            }
+            e.setSupplier(x);
         }
-        e.setSupplier(x);
     }
 
     protected void lookup_billTo_BusinessPartner(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        BusinessPartner x = null;
-        try {
-            x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
-                    .findByCode(ds.getClientId(), ds.getBillToCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getBillToCode() != null) {
+            BusinessPartner x = null;
+            try {
+                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                        .findByCode(ds.getClientId(), ds.getBillToCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `BusinessPartner` reference:  `billToCode` = "
+                                + ds.getBillToCode() + "  ");
+            }
+            e.setBillTo(x);
         }
-        e.setBillTo(x);
     }
 
     protected void lookup_shipTo_BusinessPartner(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        BusinessPartner x = null;
-        try {
-            x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
-                    .findByCode(ds.getClientId(), ds.getShipToCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getShipToCode() != null) {
+            BusinessPartner x = null;
+            try {
+                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                        .findByCode(ds.getClientId(), ds.getShipToCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `BusinessPartner` reference:  `shipToCode` = "
+                                + ds.getShipToCode() + "  ");
+            }
+            e.setShipTo(x);
         }
-        e.setShipTo(x);
     }
 
     @Override

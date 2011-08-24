@@ -11,7 +11,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.bd.contact.ds.converter.CommunicationChannelTypeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -23,7 +22,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.bd.contact.ds.converter.CommunicationChannelTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -35,7 +33,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannel" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.bd.contact.ds.converter.CommunicationChannelDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

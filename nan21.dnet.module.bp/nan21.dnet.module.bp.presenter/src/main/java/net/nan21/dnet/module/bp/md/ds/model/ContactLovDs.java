@@ -27,7 +27,7 @@ public class ContactLovDs extends AbstractDsModel<Contact> implements
     @DsField()
     private Long clientId;
 
-    @DsField(fetch = false)
+    @DsField(fetch = false, jpqlFilter = " e.lastName like :name ")
     private String name;
 
     public ContactLovDs() {

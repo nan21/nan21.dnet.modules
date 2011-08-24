@@ -54,14 +54,18 @@ public class EmployeeContactDsConv extends
 
     protected void lookup_relationship_EmployeeContactRelationship(
             EmployeeContactDs ds, EmployeeContact e) throws Exception {
-        EmployeeContactRelationship x = null;
-        try {
-            x = ((IEmployeeContactRelationshipService) getService(IEmployeeContactRelationshipService.class))
-                    .findByName(ds.getClientId(), ds.getRelationship());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getRelationship() != null) {
+            EmployeeContactRelationship x = null;
+            try {
+                x = ((IEmployeeContactRelationshipService) getService(IEmployeeContactRelationshipService.class))
+                        .findByName(ds.getClientId(), ds.getRelationship());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `EmployeeContactRelationship` reference:  `relationship` = "
+                                + ds.getRelationship() + "  ");
+            }
+            e.setRelationship(x);
         }
-        e.setRelationship(x);
     }
 
     @Override

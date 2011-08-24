@@ -43,14 +43,18 @@ public class SysDsFieldDsConv extends
 
     protected void lookup_dataSource_SysDataSource(SysDsFieldDs ds, SysDsField e)
             throws Exception {
-        SysDataSource x = null;
-        try {
-            x = ((ISysDataSourceService) getService(ISysDataSourceService.class))
-                    .findByName(ds.getClientId(), ds.getDataSource());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getDataSource() != null) {
+            SysDataSource x = null;
+            try {
+                x = ((ISysDataSourceService) getService(ISysDataSourceService.class))
+                        .findByName(ds.getClientId(), ds.getDataSource());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `SysDataSource` reference:  `dataSource` = "
+                                + ds.getDataSource() + "  ");
+            }
+            e.setDataSource(x);
         }
-        e.setDataSource(x);
     }
 
     @Override

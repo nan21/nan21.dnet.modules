@@ -28,9 +28,9 @@ net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI = Ext.extend( dne
         	}
 		}); 
 		this._getBuilder_()	
-		.addDcView("invType",{ name:"invTypeFilter", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceType$Filter",height:30})	 
+		.addDcFilterFormView("invType",{ name:"invTypeFilter", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceType$Filter",height:30})	 
 		.addDcView("invType",{ name:"invTypeEditList", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceType$EditList", frame:true})	 
-		.addDcView("invStatus",{ name:"invStatusFilter", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$Filter",height:30})	 
+		.addDcFilterFormView("invStatus",{ name:"invStatusFilter", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$Filter",height:30})	 
 		.addDcView("invStatus",{ name:"invStatusEditList", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Invoice type",header:false})  	 

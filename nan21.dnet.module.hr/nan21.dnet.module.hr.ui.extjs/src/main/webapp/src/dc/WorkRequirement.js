@@ -22,7 +22,6 @@ net.nan21.dnet.module.hr.job.dc.WorkRequirement$Filter = Ext.extend(dnet.base.Ab
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.job.lovs.WorkRequirementTypes", dataIndex:"type",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -34,7 +33,6 @@ net.nan21.dnet.module.hr.job.dc.WorkRequirement$Filter = Ext.extend(dnet.base.Ab
 	  ,	    {layout:"form", border:false 
 	      ,items:[ this._elems_.get("active")] }
 ];
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.hr.job.dc.WorkRequirement$Filter", net.nan21.dnet.module.hr.job.dc.WorkRequirement$Filter ); 

@@ -52,26 +52,34 @@ public class PositionCourseDsConv extends
 
     protected void lookup_position_Position(PositionCourseDs ds,
             PositionCourse e) throws Exception {
-        Position x = null;
-        try {
-            x = ((IPositionService) getService(IPositionService.class))
-                    .findByCode(ds.getClientId(), ds.getPositionCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getPositionCode() != null) {
+            Position x = null;
+            try {
+                x = ((IPositionService) getService(IPositionService.class))
+                        .findByCode(ds.getClientId(), ds.getPositionCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Position` reference:  `positionCode` = "
+                                + ds.getPositionCode() + "  ");
+            }
+            e.setPosition(x);
         }
-        e.setPosition(x);
     }
 
     protected void lookup_course_Course(PositionCourseDs ds, PositionCourse e)
             throws Exception {
-        Course x = null;
-        try {
-            x = ((ICourseService) getService(ICourseService.class)).findByCode(
-                    ds.getClientId(), ds.getCourseCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCourseCode() != null) {
+            Course x = null;
+            try {
+                x = ((ICourseService) getService(ICourseService.class))
+                        .findByCode(ds.getClientId(), ds.getCourseCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Course` reference:  `courseCode` = "
+                                + ds.getCourseCode() + "  ");
+            }
+            e.setCourse(x);
         }
-        e.setCourse(x);
     }
 
     @Override

@@ -42,14 +42,18 @@ public class WorkRequirementDsConv extends
 
     protected void lookup_type_WorkRequirementType(WorkRequirementDs ds,
             WorkRequirement e) throws Exception {
-        WorkRequirementType x = null;
-        try {
-            x = ((IWorkRequirementTypeService) getService(IWorkRequirementTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getType() != null) {
+            WorkRequirementType x = null;
+            try {
+                x = ((IWorkRequirementTypeService) getService(IWorkRequirementTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `WorkRequirementType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setType(x);
         }
-        e.setType(x);
     }
 
     @Override

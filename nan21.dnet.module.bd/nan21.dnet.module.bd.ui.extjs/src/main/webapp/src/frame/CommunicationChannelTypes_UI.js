@@ -10,7 +10,7 @@ net.nan21.dnet.module.bd.contact.frame.CommunicationChannelTypes_UI = Ext.extend
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter"})	 
+		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter"})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 

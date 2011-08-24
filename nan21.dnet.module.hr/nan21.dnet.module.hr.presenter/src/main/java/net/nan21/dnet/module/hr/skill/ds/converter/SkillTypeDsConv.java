@@ -42,14 +42,18 @@ public class SkillTypeDsConv extends
 
     protected void lookup_category_SkillCategory(SkillTypeDs ds, SkillType e)
             throws Exception {
-        SkillCategory x = null;
-        try {
-            x = ((ISkillCategoryService) getService(ISkillCategoryService.class))
-                    .findByName(ds.getClientId(), ds.getCategory());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCategory() != null) {
+            SkillCategory x = null;
+            try {
+                x = ((ISkillCategoryService) getService(ISkillCategoryService.class))
+                        .findByName(ds.getClientId(), ds.getCategory());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `SkillCategory` reference:  `category` = "
+                                + ds.getCategory() + "  ");
+            }
+            e.setCategory(x);
         }
-        e.setCategory(x);
     }
 
     @Override

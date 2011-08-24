@@ -29,7 +29,6 @@ net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter = Ext.extend(dnet.base.Abstr
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -37,7 +36,6 @@ net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter = Ext.extend(dnet.base.Abstr
 		.addChildrenTo("col1",["docNo","docDate","currencyCode"])
 		.addChildrenTo("col2",["type","status"])
 		.addChildrenTo("col3",["customerCode","deliveryMethod"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter", net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter ); 

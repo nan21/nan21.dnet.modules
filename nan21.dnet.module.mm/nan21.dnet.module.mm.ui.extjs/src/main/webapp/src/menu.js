@@ -1,5 +1,7 @@
+
 Ext.ns('net.nan21.dnet.module.mm.menu');
 var BUNDLE_ID = "nan21.dnet.module.mm.ui.extjs";
+
 net.nan21.dnet.module.mm.menu.crm = [
  
 	{"id":"sm_mm", "text":"Material Management", leaf:false, children:[
@@ -17,3 +19,4 @@ if (Dnet.navigationTreeMenus.crm == undefined) {
 	Dnet.navigationTreeMenus.crm = { name: "mbMenuCRM" , title :"CRM: Customer Relationships", children: [] };
 }       
     Dnet.navigationTreeMenus.crm.children = Dnet.navigationTreeMenus.crm.children.concat(net.nan21.dnet.module.mm.menu.crm);
+    

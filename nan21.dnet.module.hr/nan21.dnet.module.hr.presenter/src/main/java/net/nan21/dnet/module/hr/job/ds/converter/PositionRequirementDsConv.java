@@ -49,14 +49,18 @@ public class PositionRequirementDsConv extends
 
     protected void lookup_requirement_WorkRequirement(PositionRequirementDs ds,
             PositionRequirement e) throws Exception {
-        WorkRequirement x = null;
-        try {
-            x = ((IWorkRequirementService) getService(IWorkRequirementService.class))
-                    .findByName(ds.getClientId(), ds.getRequirement());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getRequirement() != null) {
+            WorkRequirement x = null;
+            try {
+                x = ((IWorkRequirementService) getService(IWorkRequirementService.class))
+                        .findByName(ds.getClientId(), ds.getRequirement());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `WorkRequirement` reference:  `requirement` = "
+                                + ds.getRequirement() + "  ");
+            }
+            e.setRequirement(x);
         }
-        e.setRequirement(x);
     }
 
     @Override

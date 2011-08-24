@@ -41,14 +41,18 @@ public class JobDsConv extends AbstractDsConverter<JobDs, Job> implements
     }
 
     protected void lookup_jobType_JobType(JobDs ds, Job e) throws Exception {
-        JobType x = null;
-        try {
-            x = ((IJobTypeService) getService(IJobTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getType() != null) {
+            JobType x = null;
+            try {
+                x = ((IJobTypeService) getService(IJobTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `JobType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setJobType(x);
         }
-        e.setJobType(x);
     }
 
     @Override

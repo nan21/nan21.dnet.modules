@@ -43,14 +43,18 @@ public class ReportParamDsConv extends
 
     protected void lookup_report_Report(ReportParamDs ds, ReportParam e)
             throws Exception {
-        Report x = null;
-        try {
-            x = ((IReportService) getService(IReportService.class)).findByCode(
-                    ds.getClientId(), ds.getReportCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getReportCode() != null) {
+            Report x = null;
+            try {
+                x = ((IReportService) getService(IReportService.class))
+                        .findByCode(ds.getClientId(), ds.getReportCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Report` reference:  `reportCode` = "
+                                + ds.getReportCode() + "  ");
+            }
+            e.setReport(x);
         }
-        e.setReport(x);
     }
 
     @Override

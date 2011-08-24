@@ -44,14 +44,18 @@ public class RatingLevelDsConv extends
 
     protected void lookup_ratingScale_RatingScale(RatingLevelDs ds,
             RatingLevel e) throws Exception {
-        RatingScale x = null;
-        try {
-            x = ((IRatingScaleService) getService(IRatingScaleService.class))
-                    .findByName(ds.getClientId(), ds.getRatingScale());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getRatingScale() != null) {
+            RatingScale x = null;
+            try {
+                x = ((IRatingScaleService) getService(IRatingScaleService.class))
+                        .findByName(ds.getClientId(), ds.getRatingScale());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `RatingScale` reference:  `ratingScale` = "
+                                + ds.getRatingScale() + "  ");
+            }
+            e.setRatingScale(x);
         }
-        e.setRatingScale(x);
     }
 
     @Override

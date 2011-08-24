@@ -52,26 +52,34 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
 
     protected void lookup_element_Element(VariableDs ds, Variable e)
             throws Exception {
-        Element x = null;
-        try {
-            x = ((IElementService) getService(IElementService.class))
-                    .findByName(ds.getClientId(), ds.getElement());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getElement() != null) {
+            Element x = null;
+            try {
+                x = ((IElementService) getService(IElementService.class))
+                        .findByName(ds.getClientId(), ds.getElement());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Element` reference:  `element` = "
+                                + ds.getElement() + "  ");
+            }
+            e.setElement(x);
         }
-        e.setElement(x);
     }
 
     protected void lookup_crossReference_Element(VariableDs ds, Variable e)
             throws Exception {
-        Element x = null;
-        try {
-            x = ((IElementService) getService(IElementService.class))
-                    .findByName(ds.getClientId(), ds.getCrossReference());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCrossReference() != null) {
+            Element x = null;
+            try {
+                x = ((IElementService) getService(IElementService.class))
+                        .findByName(ds.getClientId(), ds.getCrossReference());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Element` reference:  `crossReference` = "
+                                + ds.getCrossReference() + "  ");
+            }
+            e.setCrossReference(x);
         }
-        e.setCrossReference(x);
     }
 
     @Override

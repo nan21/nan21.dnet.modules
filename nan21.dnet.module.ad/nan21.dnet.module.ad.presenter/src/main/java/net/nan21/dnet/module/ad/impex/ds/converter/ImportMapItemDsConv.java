@@ -43,14 +43,18 @@ public class ImportMapItemDsConv extends
 
     protected void lookup_importMap_ImportMap(ImportMapItemDs ds,
             ImportMapItem e) throws Exception {
-        ImportMap x = null;
-        try {
-            x = ((IImportMapService) getService(IImportMapService.class))
-                    .findByName(ds.getClientId(), ds.getImportMapName());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getImportMapName() != null) {
+            ImportMap x = null;
+            try {
+                x = ((IImportMapService) getService(IImportMapService.class))
+                        .findByName(ds.getClientId(), ds.getImportMapName());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ImportMap` reference:  `importMapName` = "
+                                + ds.getImportMapName() + "  ");
+            }
+            e.setImportMap(x);
         }
-        e.setImportMap(x);
     }
 
     @Override

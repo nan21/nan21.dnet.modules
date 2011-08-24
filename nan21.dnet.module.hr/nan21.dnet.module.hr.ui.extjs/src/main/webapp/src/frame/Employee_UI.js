@@ -24,10 +24,10 @@ net.nan21.dnet.module.hr.employee.frame.Employee_UI = Ext.extend( dnet.base.Abst
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("emp",{ name:"empFilter", xtype:"net.nan21.dnet.module.hr.employee.dc.Employee$Filter"})	 
+		.addDcFilterFormView("emp",{ name:"empFilter", xtype:"net.nan21.dnet.module.hr.employee.dc.Employee$Filter"})	 
 		.addDcView("emp",{ name:"empList", xtype:"net.nan21.dnet.module.hr.employee.dc.Employee$List"})	 
-		.addDcView("emp",{ name:"empEditMain", xtype:"net.nan21.dnet.module.hr.employee.dc.Employee$EditMain",height:100})	 
-		.addDcView("emp",{ name:"empEditOther", xtype:"net.nan21.dnet.module.hr.employee.dc.Employee$EditOther",title:"Details"})	 
+		.addDcFormView("emp",{ name:"empEditMain", xtype:"net.nan21.dnet.module.hr.employee.dc.Employee$EditMain",height:100})	 
+		.addDcFormView("emp",{ name:"empEditOther", xtype:"net.nan21.dnet.module.hr.employee.dc.Employee$EditOther",title:"Details"})	 
 		.addDcView("cont",{ name:"contEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.EmployeeContact$CtxEditList", frame:true,title:"Contacts"})	 
 		.addDcView("skill",{ name:"skillEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.EmployeeSkill$EditList", frame:true,title:"Competences"})	 
 		.addDcView("educ",{ name:"educEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.EmployeeEducation$EditList", frame:true,title:"Education"})	 
@@ -35,7 +35,7 @@ net.nan21.dnet.module.hr.employee.frame.Employee_UI = Ext.extend( dnet.base.Abst
 		.addDcView("lic",{ name:"licEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.EmployeeLicense$EditList", frame:true,title:"Licenses"})	 
 		.addDcView("communic",{ name:"communicEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannel$EditList", frame:true,title:"Communication"})	 
 		.addDcView("address",{ name:"addressList", xtype:"net.nan21.dnet.module.bd.geo.dc.Location$ListCtx"})	 
-		.addDcView("address",{ name:"addressEdit", xtype:"net.nan21.dnet.module.bd.geo.dc.Location$EditCtx"})	 
+		.addDcFormView("address",{ name:"addressEdit", xtype:"net.nan21.dnet.module.bd.geo.dc.Location$EditCtx"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "addressPanel",layout:"card", activeItem:0,title:"Address"})  	 
 		.addPanel({name: "empDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 

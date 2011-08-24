@@ -49,26 +49,34 @@ public class JobCourseDsConv extends
     }
 
     protected void lookup_job_Job(JobCourseDs ds, JobCourse e) throws Exception {
-        Job x = null;
-        try {
-            x = ((IJobService) getService(IJobService.class)).findByCode(
-                    ds.getClientId(), ds.getJobCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getJobCode() != null) {
+            Job x = null;
+            try {
+                x = ((IJobService) getService(IJobService.class)).findByCode(
+                        ds.getClientId(), ds.getJobCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Job` reference:  `jobCode` = "
+                                + ds.getJobCode() + "  ");
+            }
+            e.setJob(x);
         }
-        e.setJob(x);
     }
 
     protected void lookup_course_Course(JobCourseDs ds, JobCourse e)
             throws Exception {
-        Course x = null;
-        try {
-            x = ((ICourseService) getService(ICourseService.class)).findByCode(
-                    ds.getClientId(), ds.getCourseCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCourseCode() != null) {
+            Course x = null;
+            try {
+                x = ((ICourseService) getService(ICourseService.class))
+                        .findByCode(ds.getClientId(), ds.getCourseCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Course` reference:  `courseCode` = "
+                                + ds.getCourseCode() + "  ");
+            }
+            e.setCourse(x);
         }
-        e.setCourse(x);
     }
 
     @Override

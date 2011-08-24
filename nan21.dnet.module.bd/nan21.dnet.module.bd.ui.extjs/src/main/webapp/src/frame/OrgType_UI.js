@@ -10,7 +10,7 @@ net.nan21.dnet.module.bd.org.frame.OrgType_UI = Ext.extend( dnet.base.AbstractUi
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("orgtype",{ name:"orgtypeFilter", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationType$Filter"})	 
+		.addDcFilterFormView("orgtype",{ name:"orgtypeFilter", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationType$Filter"})	 
 		.addDcView("orgtype",{ name:"orgtypeEditList", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 

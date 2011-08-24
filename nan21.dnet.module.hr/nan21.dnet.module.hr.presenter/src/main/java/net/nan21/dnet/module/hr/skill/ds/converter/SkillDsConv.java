@@ -52,26 +52,34 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
     }
 
     protected void lookup_type_SkillType(SkillDs ds, Skill e) throws Exception {
-        SkillType x = null;
-        try {
-            x = ((ISkillTypeService) getService(ISkillTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getType() != null) {
+            SkillType x = null;
+            try {
+                x = ((ISkillTypeService) getService(ISkillTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `SkillType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setType(x);
         }
-        e.setType(x);
     }
 
     protected void lookup_ratingScale_RatingScale(SkillDs ds, Skill e)
             throws Exception {
-        RatingScale x = null;
-        try {
-            x = ((IRatingScaleService) getService(IRatingScaleService.class))
-                    .findByName(ds.getClientId(), ds.getRatingScale());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getRatingScale() != null) {
+            RatingScale x = null;
+            try {
+                x = ((IRatingScaleService) getService(IRatingScaleService.class))
+                        .findByName(ds.getClientId(), ds.getRatingScale());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `RatingScale` reference:  `ratingScale` = "
+                                + ds.getRatingScale() + "  ");
+            }
+            e.setRatingScale(x);
         }
-        e.setRatingScale(x);
     }
 
     @Override

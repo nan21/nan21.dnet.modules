@@ -66,38 +66,50 @@ public class BpBankAccountDsConv extends
 
     protected void lookup_currency_Currency(BpBankAccountDs ds, BpBankAccount e)
             throws Exception {
-        Currency x = null;
-        try {
-            x = ((ICurrencyService) getService(ICurrencyService.class))
-                    .findByCode(ds.getClientId(), ds.getCurrencyCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCurrencyCode() != null) {
+            Currency x = null;
+            try {
+                x = ((ICurrencyService) getService(ICurrencyService.class))
+                        .findByCode(ds.getClientId(), ds.getCurrencyCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Currency` reference:  `currencyCode` = "
+                                + ds.getCurrencyCode() + "  ");
+            }
+            e.setCurrency(x);
         }
-        e.setCurrency(x);
     }
 
     protected void lookup_bank_Bank(BpBankAccountDs ds, BpBankAccount e)
             throws Exception {
-        Bank x = null;
-        try {
-            x = ((IBankService) getService(IBankService.class)).findByCode(
-                    ds.getClientId(), ds.getBankCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getBankCode() != null) {
+            Bank x = null;
+            try {
+                x = ((IBankService) getService(IBankService.class)).findByCode(
+                        ds.getClientId(), ds.getBankCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Bank` reference:  `bankCode` = "
+                                + ds.getBankCode() + "  ");
+            }
+            e.setBank(x);
         }
-        e.setBank(x);
     }
 
     protected void lookup_bpartner_BusinessPartner(BpBankAccountDs ds,
             BpBankAccount e) throws Exception {
-        BusinessPartner x = null;
-        try {
-            x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
-                    .findByCode(ds.getClientId(), ds.getBpartnerCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getBpartnerCode() != null) {
+            BusinessPartner x = null;
+            try {
+                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                        .findByCode(ds.getClientId(), ds.getBpartnerCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `BusinessPartner` reference:  `bpartnerCode` = "
+                                + ds.getBpartnerCode() + "  ");
+            }
+            e.setBpartner(x);
         }
-        e.setBpartner(x);
     }
 
     @Override

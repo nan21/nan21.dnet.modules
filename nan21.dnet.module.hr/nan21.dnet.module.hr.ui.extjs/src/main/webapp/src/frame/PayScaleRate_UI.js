@@ -12,9 +12,9 @@ net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI = Ext.extend( dnet.base.Abs
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("srate",{ name:"srateFilter", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter"})	 
+		.addDcFilterFormView("srate",{ name:"srateFilter", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter"})	 
 		.addDcView("srate",{ name:"srateList", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List"})	 
-		.addDcView("srate",{ name:"srateEdit", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Edit",height:120})	 
+		.addDcFormView("srate",{ name:"srateEdit", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Edit",height:120})	 
 		.addDcView("value",{ name:"valueEditList", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRateValue$CtxEditList", frame:true,title:"Progression point rates"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 

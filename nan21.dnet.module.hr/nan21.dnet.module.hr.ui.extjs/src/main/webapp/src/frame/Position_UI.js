@@ -16,9 +16,9 @@ net.nan21.dnet.module.hr.job.frame.Position_UI = Ext.extend( dnet.base.AbstractU
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("pos",{ name:"posFilter", xtype:"net.nan21.dnet.module.hr.job.dc.Position$Filter"})	 
+		.addDcFilterFormView("pos",{ name:"posFilter", xtype:"net.nan21.dnet.module.hr.job.dc.Position$Filter"})	 
 		.addDcView("pos",{ name:"posList", xtype:"net.nan21.dnet.module.hr.job.dc.Position$List"})	 
-		.addDcView("pos",{ name:"posEdit", xtype:"net.nan21.dnet.module.hr.job.dc.Position$Edit",height:150})	 
+		.addDcFormView("pos",{ name:"posEdit", xtype:"net.nan21.dnet.module.hr.job.dc.Position$Edit",height:150})	 
 		.addDcView("skill",{ name:"skillCtxEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.PositionSkill$CtxEditList", frame:true,title:"Competences"})	 
 		.addDcView("req",{ name:"reqCtxEditList", xtype:"net.nan21.dnet.module.hr.job.dc.PositionRequirement$CtxEditList", frame:true,title:"Requirements"})	 
 		.addDcView("course",{ name:"courseCtxEditList", xtype:"net.nan21.dnet.module.hr.training.dc.PositionCourse$PositionCtxEditList", frame:true,title:"Courses"})	 

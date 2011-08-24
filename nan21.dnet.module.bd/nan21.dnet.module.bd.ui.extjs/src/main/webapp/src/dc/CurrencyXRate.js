@@ -25,14 +25,12 @@ net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter = Ext.extend(dnet.base
 		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["sourceCode","targetCode"])
 		.addChildrenTo("col2",["providerCode","validAt"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter", net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter ); 

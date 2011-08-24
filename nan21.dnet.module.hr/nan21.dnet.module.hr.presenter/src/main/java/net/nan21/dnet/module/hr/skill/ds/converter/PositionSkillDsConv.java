@@ -59,27 +59,37 @@ public class PositionSkillDsConv extends
 
     protected void lookup_requiredLevel_RatingLevel(PositionSkillDs ds,
             PositionSkill e) throws Exception {
-        RatingLevel x = null;
-        try {
-            x = ((IRatingLevelService) getService(IRatingLevelService.class))
-                    .findByName(ds.getClientId(), ds.getRatingScaleId(),
-                            ds.getRequiredLevel());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getRatingScaleId() != null && ds.getRequiredLevel() != null) {
+            RatingLevel x = null;
+            try {
+                x = ((IRatingLevelService) getService(IRatingLevelService.class))
+                        .findByName(ds.getClientId(), ds.getRatingScaleId(),
+                                ds.getRequiredLevel());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `RatingLevel` reference:  `ratingScaleId` = "
+                                + ds.getRatingScaleId()
+                                + " , `requiredLevel` = "
+                                + ds.getRequiredLevel() + "  ");
+            }
+            e.setRequiredLevel(x);
         }
-        e.setRequiredLevel(x);
     }
 
     protected void lookup_skill_Skill(PositionSkillDs ds, PositionSkill e)
             throws Exception {
-        Skill x = null;
-        try {
-            x = ((ISkillService) getService(ISkillService.class)).findByName(
-                    ds.getClientId(), ds.getCompetence());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCompetence() != null) {
+            Skill x = null;
+            try {
+                x = ((ISkillService) getService(ISkillService.class))
+                        .findByName(ds.getClientId(), ds.getCompetence());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Skill` reference:  `competence` = "
+                                + ds.getCompetence() + "  ");
+            }
+            e.setSkill(x);
         }
-        e.setSkill(x);
     }
 
     @Override

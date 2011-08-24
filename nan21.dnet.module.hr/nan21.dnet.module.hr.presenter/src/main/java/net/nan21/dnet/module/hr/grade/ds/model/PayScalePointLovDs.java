@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.grade.ds.model;
 
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -13,7 +14,7 @@ import net.nan21.dnet.module.hr.grade.domain.entity.PayScalePoint;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = PayScalePoint.class)
+@Ds(entity = PayScalePoint.class, sort = { @SortField(field = PayScalePointLovDs.fNAME) })
 public class PayScalePointLovDs extends AbstractDsModel<PayScalePoint>
         implements IModelWithId, IModelWithClientId {
 

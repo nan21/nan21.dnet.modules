@@ -10,7 +10,7 @@ net.nan21.dnet.module.bd.currency.frame.Currencies_UI = Ext.extend( dnet.base.Ab
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("currency",{ name:"currencyFilter", xtype:"net.nan21.dnet.module.bd.currency.dc.Currency$Filter"})	 
+		.addDcFilterFormView("currency",{ name:"currencyFilter", xtype:"net.nan21.dnet.module.bd.currency.dc.Currency$Filter"})	 
 		.addDcView("currency",{ name:"currencyList", xtype:"net.nan21.dnet.module.bd.currency.dc.Currency$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 

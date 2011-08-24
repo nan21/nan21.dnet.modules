@@ -56,26 +56,34 @@ public class WfDefTransitionDsConv extends
 
     protected void lookup_source_WfDefNode(WfDefTransitionDs ds,
             WfDefTransition e) throws Exception {
-        WfDefNode x = null;
-        try {
-            x = ((IWfDefNodeService) getService(IWfDefNodeService.class))
-                    .findByName(ds.getClientId(), ds.getSource());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getSource() != null) {
+            WfDefNode x = null;
+            try {
+                x = ((IWfDefNodeService) getService(IWfDefNodeService.class))
+                        .findByName(ds.getClientId(), ds.getSource());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `WfDefNode` reference:  `source` = "
+                                + ds.getSource() + "  ");
+            }
+            e.setSource(x);
         }
-        e.setSource(x);
     }
 
     protected void lookup_target_WfDefNode(WfDefTransitionDs ds,
             WfDefTransition e) throws Exception {
-        WfDefNode x = null;
-        try {
-            x = ((IWfDefNodeService) getService(IWfDefNodeService.class))
-                    .findByName(ds.getClientId(), ds.getTarget());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getTarget() != null) {
+            WfDefNode x = null;
+            try {
+                x = ((IWfDefNodeService) getService(IWfDefNodeService.class))
+                        .findByName(ds.getClientId(), ds.getTarget());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `WfDefNode` reference:  `target` = "
+                                + ds.getTarget() + "  ");
+            }
+            e.setTarget(x);
         }
-        e.setTarget(x);
     }
 
     @Override

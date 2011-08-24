@@ -10,7 +10,7 @@ net.nan21.dnet.module.bd.geo.frame.Countries_UI = Ext.extend( dnet.base.Abstract
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$Filter"})	 
+		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$Filter"})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 

@@ -26,7 +26,6 @@ net.nan21.dnet.module.ad.impex.dc.ImportMapItem$Filter = Ext.extend(dnet.base.Ab
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -34,7 +33,6 @@ net.nan21.dnet.module.ad.impex.dc.ImportMapItem$Filter = Ext.extend(dnet.base.Ab
 		.addChildrenTo("col1",["importMapName"])
 		.addChildrenTo("col2",["dataSource","fileName"])
 		.addChildrenTo("col3",["active"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.impex.dc.ImportMapItem$Filter", net.nan21.dnet.module.ad.impex.dc.ImportMapItem$Filter ); 

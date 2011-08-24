@@ -10,7 +10,7 @@ net.nan21.dnet.module.bd.uom.frame.Uoms_UI = Ext.extend( dnet.base.AbstractUi, {
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$Filter"})	 
+		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$Filter"})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 

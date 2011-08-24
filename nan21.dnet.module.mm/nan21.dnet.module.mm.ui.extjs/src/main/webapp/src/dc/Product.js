@@ -28,7 +28,6 @@ net.nan21.dnet.module.mm.md.dc.Product$Filter = Ext.extend(dnet.base.AbstractDcv
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -36,7 +35,6 @@ net.nan21.dnet.module.mm.md.dc.Product$Filter = Ext.extend(dnet.base.AbstractDcv
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["categoryName","storable"])
 		.addChildrenTo("col3",["manufacturerCode","manufacturerProductNo"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.mm.md.dc.Product$Filter", net.nan21.dnet.module.mm.md.dc.Product$Filter ); 

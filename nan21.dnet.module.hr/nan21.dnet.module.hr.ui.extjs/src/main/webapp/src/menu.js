@@ -1,5 +1,7 @@
+
 Ext.ns('net.nan21.dnet.module.hr.menu');
 var BUNDLE_ID = "nan21.dnet.module.hr.ui.extjs";
+
 net.nan21.dnet.module.hr.menu.hr = [
  
 	{"id":"sm_hr_base_skill", "text":"Competence", leaf:false, children:[
@@ -48,3 +50,4 @@ if (Dnet.navigationTreeMenus.hr == undefined) {
 	Dnet.navigationTreeMenus.hr = { name: "mbMenuHR" , title :"HR: Human Resources", children: [] };
 }       
     Dnet.navigationTreeMenus.hr.children = Dnet.navigationTreeMenus.hr.children.concat(net.nan21.dnet.module.hr.menu.hr);
+    

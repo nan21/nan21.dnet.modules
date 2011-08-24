@@ -44,14 +44,18 @@ public class PayrollPeriodDsConv extends
 
     protected void lookup_payroll_Payroll(PayrollPeriodDs ds, PayrollPeriod e)
             throws Exception {
-        Payroll x = null;
-        try {
-            x = ((IPayrollService) getService(IPayrollService.class))
-                    .findByName(ds.getClientId(), ds.getPayrollName());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getPayrollName() != null) {
+            Payroll x = null;
+            try {
+                x = ((IPayrollService) getService(IPayrollService.class))
+                        .findByName(ds.getClientId(), ds.getPayrollName());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Payroll` reference:  `payrollName` = "
+                                + ds.getPayrollName() + "  ");
+            }
+            e.setPayroll(x);
         }
-        e.setPayroll(x);
     }
 
     @Override

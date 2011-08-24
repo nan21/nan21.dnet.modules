@@ -15,10 +15,10 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI = Ext.extend( dnet.base.A
 	,_defineElements_: function() {					
 		this._getBuilder_()	
 		.addButton({name:"btnDeploy",text:"Deploy", tooltip:"Deploy process",iconCls:"icon-action-run",disabled:true
-			,handler: this.onBtnDeploy,scope:this,stateManager:{name:"record_status_is_edit", dc:"dcProcess"}	})	
+			,handler: this.onBtnDeploy,scope:this,stateManager:{name:"record_status_is_edit", dc:"dcProcess" }	})	
 							 	
 		.addButton({name:"btnGetProcessDiagram",text:"Show diagram", tooltip:"Show diagram for this process definition",disabled:true
-			,handler: this.onBtnGetProcessDiagram,scope:this,stateManager:{name:"record_status_is_edit", dc:"dcProcess"}	})	
+			,handler: this.onBtnGetProcessDiagram,scope:this,stateManager:{name:"record_status_is_edit", dc:"dcProcess" }	})	
 							 	
 		.addDcFilterFormView("dcProcess",{ name:"filterProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter"})	 
 		.addDcView("dcProcess",{ name:"listProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List"})	 

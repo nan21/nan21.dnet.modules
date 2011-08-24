@@ -63,39 +63,51 @@ public class OrganizationHierarchyItemDsConv
     protected void lookup_hierarchy_OrganizationHierarchy(
             OrganizationHierarchyItemDs ds, OrganizationHierarchyItem e)
             throws Exception {
-        OrganizationHierarchy x = null;
-        try {
-            x = ((IOrganizationHierarchyService) getService(IOrganizationHierarchyService.class))
-                    .findByName(ds.getClientId(), ds.getHierarchy());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getHierarchy() != null) {
+            OrganizationHierarchy x = null;
+            try {
+                x = ((IOrganizationHierarchyService) getService(IOrganizationHierarchyService.class))
+                        .findByName(ds.getClientId(), ds.getHierarchy());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `OrganizationHierarchy` reference:  `hierarchy` = "
+                                + ds.getHierarchy() + "  ");
+            }
+            e.setHierarchy(x);
         }
-        e.setHierarchy(x);
     }
 
     protected void lookup_organization_Organization(
             OrganizationHierarchyItemDs ds, OrganizationHierarchyItem e)
             throws Exception {
-        Organization x = null;
-        try {
-            x = ((IOrganizationService) getService(IOrganizationService.class))
-                    .findByCode(ds.getClientId(), ds.getOrganizationCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getOrganizationCode() != null) {
+            Organization x = null;
+            try {
+                x = ((IOrganizationService) getService(IOrganizationService.class))
+                        .findByCode(ds.getClientId(), ds.getOrganizationCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Organization` reference:  `organizationCode` = "
+                                + ds.getOrganizationCode() + "  ");
+            }
+            e.setOrganization(x);
         }
-        e.setOrganization(x);
     }
 
     protected void lookup_parent_Organization(OrganizationHierarchyItemDs ds,
             OrganizationHierarchyItem e) throws Exception {
-        Organization x = null;
-        try {
-            x = ((IOrganizationService) getService(IOrganizationService.class))
-                    .findByCode(ds.getClientId(), ds.getParentCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getParentCode() != null) {
+            Organization x = null;
+            try {
+                x = ((IOrganizationService) getService(IOrganizationService.class))
+                        .findByCode(ds.getClientId(), ds.getParentCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Organization` reference:  `parentCode` = "
+                                + ds.getParentCode() + "  ");
+            }
+            e.setParent(x);
         }
-        e.setParent(x);
     }
 
     @Override

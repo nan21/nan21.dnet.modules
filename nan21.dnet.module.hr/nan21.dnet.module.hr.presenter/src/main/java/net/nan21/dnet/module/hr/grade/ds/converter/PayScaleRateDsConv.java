@@ -53,26 +53,34 @@ public class PayScaleRateDsConv extends
 
     protected void lookup_currency_Currency(PayScaleRateDs ds, PayScaleRate e)
             throws Exception {
-        Currency x = null;
-        try {
-            x = ((ICurrencyService) getService(ICurrencyService.class))
-                    .findByCode(ds.getClientId(), ds.getCurrencyCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCurrencyCode() != null) {
+            Currency x = null;
+            try {
+                x = ((ICurrencyService) getService(ICurrencyService.class))
+                        .findByCode(ds.getClientId(), ds.getCurrencyCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Currency` reference:  `currencyCode` = "
+                                + ds.getCurrencyCode() + "  ");
+            }
+            e.setCurrency(x);
         }
-        e.setCurrency(x);
     }
 
     protected void lookup_payScale_PayScale(PayScaleRateDs ds, PayScaleRate e)
             throws Exception {
-        PayScale x = null;
-        try {
-            x = ((IPayScaleService) getService(IPayScaleService.class))
-                    .findByCode(ds.getClientId(), ds.getPayScaleCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getPayScaleCode() != null) {
+            PayScale x = null;
+            try {
+                x = ((IPayScaleService) getService(IPayScaleService.class))
+                        .findByCode(ds.getClientId(), ds.getPayScaleCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PayScale` reference:  `payScaleCode` = "
+                                + ds.getPayScaleCode() + "  ");
+            }
+            e.setPayScale(x);
         }
-        e.setPayScale(x);
     }
 
     @Override

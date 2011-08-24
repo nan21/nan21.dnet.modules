@@ -52,14 +52,18 @@ public class EmployeeEducationDsConv extends
 
     protected void lookup_type_EducationType(EmployeeEducationDs ds,
             EmployeeEducation e) throws Exception {
-        EducationType x = null;
-        try {
-            x = ((IEducationTypeService) getService(IEducationTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getType() != null) {
+            EducationType x = null;
+            try {
+                x = ((IEducationTypeService) getService(IEducationTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `EducationType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setType(x);
         }
-        e.setType(x);
     }
 
     @Override

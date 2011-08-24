@@ -20,12 +20,10 @@ net.nan21.dnet.module.hr.training.dc.JobCourse$Filter = Ext.extend(dnet.base.Abs
 		.addTextField({ name:"courseCode", dataIndex:"courseCode",anchor:"-20",maxLength:32  })
 		//containers
 		.addPanel({ name:"main", layout:"form", autoScroll:true,width:210,labelWidth:0 })
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["courseCode"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.hr.training.dc.JobCourse$Filter", net.nan21.dnet.module.hr.training.dc.JobCourse$Filter ); 

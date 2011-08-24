@@ -42,14 +42,18 @@ public class GradeRateDsConv extends
 
     protected void lookup_currency_Currency(GradeRateDs ds, GradeRate e)
             throws Exception {
-        Currency x = null;
-        try {
-            x = ((ICurrencyService) getService(ICurrencyService.class))
-                    .findByCode(ds.getClientId(), ds.getCurrencyCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCurrencyCode() != null) {
+            Currency x = null;
+            try {
+                x = ((ICurrencyService) getService(ICurrencyService.class))
+                        .findByCode(ds.getClientId(), ds.getCurrencyCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Currency` reference:  `currencyCode` = "
+                                + ds.getCurrencyCode() + "  ");
+            }
+            e.setCurrency(x);
         }
-        e.setCurrency(x);
     }
 
     @Override

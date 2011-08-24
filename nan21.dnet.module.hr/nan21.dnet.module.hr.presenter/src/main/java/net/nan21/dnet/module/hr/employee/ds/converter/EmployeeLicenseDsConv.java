@@ -53,14 +53,18 @@ public class EmployeeLicenseDsConv extends
 
     protected void lookup_licenseType_LicenseType(EmployeeLicenseDs ds,
             EmployeeLicense e) throws Exception {
-        LicenseType x = null;
-        try {
-            x = ((ILicenseTypeService) getService(ILicenseTypeService.class))
-                    .findByName(ds.getClientId(), ds.getLicenseType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getLicenseType() != null) {
+            LicenseType x = null;
+            try {
+                x = ((ILicenseTypeService) getService(ILicenseTypeService.class))
+                        .findByName(ds.getClientId(), ds.getLicenseType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `LicenseType` reference:  `licenseType` = "
+                                + ds.getLicenseType() + "  ");
+            }
+            e.setLicenseType(x);
         }
-        e.setLicenseType(x);
     }
 
     @Override

@@ -50,26 +50,34 @@ public class ImportJobItemDsConv extends
 
     protected void lookup_job_ImportJob(ImportJobItemDs ds, ImportJobItem e)
             throws Exception {
-        ImportJob x = null;
-        try {
-            x = ((IImportJobService) getService(IImportJobService.class))
-                    .findByName(ds.getClientId(), ds.getJobName());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getJobName() != null) {
+            ImportJob x = null;
+            try {
+                x = ((IImportJobService) getService(IImportJobService.class))
+                        .findByName(ds.getClientId(), ds.getJobName());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ImportJob` reference:  `jobName` = "
+                                + ds.getJobName() + "  ");
+            }
+            e.setJob(x);
         }
-        e.setJob(x);
     }
 
     protected void lookup_map_ImportMap(ImportJobItemDs ds, ImportJobItem e)
             throws Exception {
-        ImportMap x = null;
-        try {
-            x = ((IImportMapService) getService(IImportMapService.class))
-                    .findByName(ds.getClientId(), ds.getMapName());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getMapName() != null) {
+            ImportMap x = null;
+            try {
+                x = ((IImportMapService) getService(IImportMapService.class))
+                        .findByName(ds.getClientId(), ds.getMapName());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ImportMap` reference:  `mapName` = "
+                                + ds.getMapName() + "  ");
+            }
+            e.setMap(x);
         }
-        e.setMap(x);
     }
 
     @Override

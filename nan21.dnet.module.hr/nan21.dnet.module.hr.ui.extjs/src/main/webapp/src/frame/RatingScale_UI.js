@@ -12,9 +12,9 @@ net.nan21.dnet.module.hr.skill.frame.RatingScale_UI = Ext.extend( dnet.base.Abst
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("scale",{ name:"scaleFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter"})	 
+		.addDcFilterFormView("scale",{ name:"scaleFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter"})	 
 		.addDcView("scale",{ name:"scaleList", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingScale$List"})	 
-		.addDcView("scale",{ name:"scaleEdit", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit",height:120})	 
+		.addDcFormView("scale",{ name:"scaleEdit", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit",height:120})	 
 		.addDcView("level",{ name:"levelCtxEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingLevel$CtxEditList", frame:true,title:"Proficiency levels"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 

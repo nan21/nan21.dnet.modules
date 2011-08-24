@@ -39,28 +39,6 @@
 		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceLovDs" />
 	</bean>
    
- 	<bean id="SysDataSourceControllerLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceControllerLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDataSourceControllerLovDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="SysDataSourceControllerLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceControllerLovDs" />
-	</bean>
-   
- 	<bean id="SysDataSourceModelLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceModelLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDataSourceModelLovDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="SysDataSourceModelLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceModelLovDs" />
-	</bean>
-   
  	<bean id="SysDsFieldDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldDs" />

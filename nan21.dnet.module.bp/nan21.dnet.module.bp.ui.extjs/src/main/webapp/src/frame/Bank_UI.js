@@ -10,7 +10,7 @@ net.nan21.dnet.module.bp.base.frame.Bank_UI = Ext.extend( dnet.base.AbstractUi, 
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("bank",{ name:"bankFilter", xtype:"net.nan21.dnet.module.bp.base.dc.Bank$Filter"})	 
+		.addDcFilterFormView("bank",{ name:"bankFilter", xtype:"net.nan21.dnet.module.bp.base.dc.Bank$Filter"})	 
 		.addDcView("bank",{ name:"bankEditList", xtype:"net.nan21.dnet.module.bp.base.dc.Bank$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 

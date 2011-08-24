@@ -43,14 +43,18 @@ public class ReportDsConv extends AbstractDsConverter<ReportDs, Report>
 
     protected void lookup_reportServer_ReportServer(ReportDs ds, Report e)
             throws Exception {
-        ReportServer x = null;
-        try {
-            x = ((IReportServerService) getService(IReportServerService.class))
-                    .findByName(ds.getClientId(), ds.getReportServerName());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getReportServerName() != null) {
+            ReportServer x = null;
+            try {
+                x = ((IReportServerService) getService(IReportServerService.class))
+                        .findByName(ds.getClientId(), ds.getReportServerName());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ReportServer` reference:  `reportServerName` = "
+                                + ds.getReportServerName() + "  ");
+            }
+            e.setReportServer(x);
         }
-        e.setReportServer(x);
     }
 
     @Override

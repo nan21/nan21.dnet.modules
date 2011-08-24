@@ -59,26 +59,34 @@ public class ElementValueDsConv extends
 
     protected void lookup_element_Element(ElementValueDs ds, ElementValue e)
             throws Exception {
-        Element x = null;
-        try {
-            x = ((IElementService) getService(IElementService.class))
-                    .findByName(ds.getClientId(), ds.getElement());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getElement() != null) {
+            Element x = null;
+            try {
+                x = ((IElementService) getService(IElementService.class))
+                        .findByName(ds.getClientId(), ds.getElement());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Element` reference:  `element` = "
+                                + ds.getElement() + "  ");
+            }
+            e.setElement(x);
         }
-        e.setElement(x);
     }
 
     protected void lookup_period_PayrollPeriod(ElementValueDs ds, ElementValue e)
             throws Exception {
-        PayrollPeriod x = null;
-        try {
-            x = ((IPayrollPeriodService) getService(IPayrollPeriodService.class))
-                    .findByName(ds.getClientId(), ds.getPeriod());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getPeriod() != null) {
+            PayrollPeriod x = null;
+            try {
+                x = ((IPayrollPeriodService) getService(IPayrollPeriodService.class))
+                        .findByName(ds.getClientId(), ds.getPeriod());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PayrollPeriod` reference:  `period` = "
+                                + ds.getPeriod() + "  ");
+            }
+            e.setPeriod(x);
         }
-        e.setPeriod(x);
     }
 
     @Override

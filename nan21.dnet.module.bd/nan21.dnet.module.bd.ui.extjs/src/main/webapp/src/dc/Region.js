@@ -26,14 +26,12 @@ net.nan21.dnet.module.bd.geo.dc.Region$Filter = Ext.extend(dnet.base.AbstractDcv
 		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["countryCode","iso"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.bd.geo.dc.Region$Filter", net.nan21.dnet.module.bd.geo.dc.Region$Filter ); 

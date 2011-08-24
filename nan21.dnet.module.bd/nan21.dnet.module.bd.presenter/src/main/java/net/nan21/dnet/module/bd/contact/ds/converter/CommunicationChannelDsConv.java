@@ -44,14 +44,18 @@ public class CommunicationChannelDsConv extends
 
     protected void lookup_type_CommunicationChannelType(
             CommunicationChannelDs ds, CommunicationChannel e) throws Exception {
-        CommunicationChannelType x = null;
-        try {
-            x = ((ICommunicationChannelTypeService) getService(ICommunicationChannelTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getType() != null) {
+            CommunicationChannelType x = null;
+            try {
+                x = ((ICommunicationChannelTypeService) getService(ICommunicationChannelTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `CommunicationChannelType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setType(x);
         }
-        e.setType(x);
     }
 
     @Override

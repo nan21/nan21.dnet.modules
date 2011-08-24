@@ -12,9 +12,9 @@ net.nan21.dnet.module.hr.grade.frame.GradeRate_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("rate",{ name:"rateFilter", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter"})	 
+		.addDcFilterFormView("rate",{ name:"rateFilter", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter"})	 
 		.addDcView("rate",{ name:"rateList", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$List"})	 
-		.addDcView("rate",{ name:"rateEdit", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit",height:120})	 
+		.addDcFormView("rate",{ name:"rateEdit", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit",height:120})	 
 		.addDcView("value",{ name:"valueEditList", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRateValue$CtxEditList4GradeRate", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 

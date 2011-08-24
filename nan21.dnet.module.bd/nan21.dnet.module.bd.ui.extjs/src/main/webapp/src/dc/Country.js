@@ -27,7 +27,6 @@ net.nan21.dnet.module.bd.geo.dc.Country$Filter = Ext.extend(dnet.base.AbstractDc
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col4", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -35,7 +34,6 @@ net.nan21.dnet.module.bd.geo.dc.Country$Filter = Ext.extend(dnet.base.AbstractDc
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["iso2","iso3"])
 		.addChildrenTo("col4",["active"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.bd.geo.dc.Country$Filter", net.nan21.dnet.module.bd.geo.dc.Country$Filter ); 

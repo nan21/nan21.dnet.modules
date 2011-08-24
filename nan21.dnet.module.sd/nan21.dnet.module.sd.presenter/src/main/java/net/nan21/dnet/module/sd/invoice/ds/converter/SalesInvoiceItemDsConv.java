@@ -59,26 +59,34 @@ public class SalesInvoiceItemDsConv extends
 
     protected void lookup_uom_Uom(SalesInvoiceItemDs ds, SalesInvoiceItem e)
             throws Exception {
-        Uom x = null;
-        try {
-            x = ((IUomService) getService(IUomService.class)).findByCode(
-                    ds.getClientId(), ds.getUomCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getUomCode() != null) {
+            Uom x = null;
+            try {
+                x = ((IUomService) getService(IUomService.class)).findByCode(
+                        ds.getClientId(), ds.getUomCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Uom` reference:  `uomCode` = "
+                                + ds.getUomCode() + "  ");
+            }
+            e.setUom(x);
         }
-        e.setUom(x);
     }
 
     protected void lookup_item_Product(SalesInvoiceItemDs ds, SalesInvoiceItem e)
             throws Exception {
-        Product x = null;
-        try {
-            x = ((IProductService) getService(IProductService.class))
-                    .findByCode(ds.getClientId(), ds.getItemCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getItemCode() != null) {
+            Product x = null;
+            try {
+                x = ((IProductService) getService(IProductService.class))
+                        .findByCode(ds.getClientId(), ds.getItemCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Product` reference:  `itemCode` = "
+                                + ds.getItemCode() + "  ");
+            }
+            e.setItem(x);
         }
-        e.setItem(x);
     }
 
     @Override

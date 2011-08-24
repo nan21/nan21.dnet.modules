@@ -24,14 +24,12 @@ net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter = Ext.extend(dnet.base.A
 		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["element","period"])
 		.addChildrenTo("col2",["employeeName"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter", net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter ); 

@@ -12,9 +12,9 @@ net.nan21.dnet.module.bp.md.frame.Contact_UI = Ext.extend( dnet.base.AbstractUi,
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("c",{ name:"cFilter", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$Filter"})	 
+		.addDcFilterFormView("c",{ name:"cFilter", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$Filter"})	 
 		.addDcView("c",{ name:"cList", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$List"})	 
-		.addDcView("c",{ name:"cEdit", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$Edit",height:120})	 
+		.addDcFormView("c",{ name:"cEdit", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$Edit",height:120})	 
 		.addDcView("communic",{ name:"communicEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannel$EditList", frame:true,title:"Communication"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "bpDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 

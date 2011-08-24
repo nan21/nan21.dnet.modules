@@ -13,13 +13,26 @@ public class SalesOrderEventHandler extends DomainEntityBaseEventHandler {
 	
 	@Override
     public void preInsert(DescriptorEvent event) {
-        SalesOrder e = (SalesOrder)event.getSource();        
+        SalesOrder e = (SalesOrder)event.getSource();  
+        this.calculateAmount(e);
     } 
     
 	@Override
     public void preUpdate(DescriptorEvent event) {
-        SalesOrder e = (SalesOrder)event.getSource();		        
+        SalesOrder e = (SalesOrder)event.getSource();	
+        this.calculateAmount(e);
     } 
+	
+	private void calculateAmount(SalesOrder e ) {
+        
+        if (e.getTotalNetAmount() == null ) {
+            e.setTotalNetAmount( (float) 0 );
+        } 
+        if (e.getTotalTaxAmount() == null ) {
+            e.setTotalTaxAmount( (float) 0 );
+        }
+        e.setTotalAmount(e.getTotalNetAmount() + e.getTotalTaxAmount());                       
+    }
 }
  
  

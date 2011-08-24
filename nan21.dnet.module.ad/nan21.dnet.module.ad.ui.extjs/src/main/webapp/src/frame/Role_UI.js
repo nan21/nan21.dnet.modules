@@ -1,6 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/RoleDs", "nan21.dnet.module.ad.ui.extjs/dc/Role"
-,"nan21.dnet.module.ad.ui.extjs/asgn/RolesOfUser"
-]);
+Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/RoleDs", "nan21.dnet.module.ad.ui.extjs/dc/Role","nan21.dnet.module.ad.ui.extjs/asgn/RolesOfUser"]);
 
 Ext.ns("net.nan21.dnet.module.ad.usr.frame");
 net.nan21.dnet.module.ad.usr.frame.Role_UI = Ext.extend( dnet.base.AbstractUi, {  
@@ -13,9 +11,9 @@ net.nan21.dnet.module.ad.usr.frame.Role_UI = Ext.extend( dnet.base.AbstractUi, {
 	,_defineElements_: function() {					
 		this._getBuilder_()	
 		.addButton({name:"btnAsgnRoleToUsers",text:"Users", tooltip:"Assign selected role to users",disabled:true
-			,handler: this.onBtnAsgnRoleToUsers,scope:this,stateManager:{name:"selected_one_clean", dc:"rol"}	})	
+			,handler: this.onBtnAsgnRoleToUsers,scope:this,stateManager:{name:"selected_one_clean", dc:"rol" }	})	
 							 	
-		.addDcView("rol",{ name:"rolFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.Role$Filter"})	 
+		.addDcFilterFormView("rol",{ name:"rolFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.Role$Filter"})	 
 		.addDcView("rol",{ name:"rolList", xtype:"net.nan21.dnet.module.ad.usr.dc.Role$EditList", frame:true,buttons:[ this._elems_.get("btnAsgnRoleToUsers") ]})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 

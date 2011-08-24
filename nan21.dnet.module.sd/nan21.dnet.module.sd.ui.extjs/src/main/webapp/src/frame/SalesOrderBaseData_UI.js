@@ -28,9 +28,9 @@ net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI = Ext.extend( dnet.ba
         	}
 		}); 
 		this._getBuilder_()	
-		.addDcView("orderType",{ name:"orderTypeFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderType$Filter",height:35})	 
+		.addDcFilterFormView("orderType",{ name:"orderTypeFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderType$Filter",height:35})	 
 		.addDcView("orderType",{ name:"orderTypeEditList", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderType$EditList", frame:true})	 
-		.addDcView("orderStatus",{ name:"orderStatusFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderStatus$Filter",height:30})	 
+		.addDcFilterFormView("orderStatus",{ name:"orderStatusFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderStatus$Filter",height:30})	 
 		.addDcView("orderStatus",{ name:"orderStatusEditList", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderStatus$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Order type",header:false})  	 

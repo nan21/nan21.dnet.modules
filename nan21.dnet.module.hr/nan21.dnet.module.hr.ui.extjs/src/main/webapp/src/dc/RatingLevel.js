@@ -22,7 +22,6 @@ net.nan21.dnet.module.hr.skill.dc.RatingLevel$Filter = Ext.extend(dnet.base.Abst
 		.addLov({ name:"ratingScale", xtype:"net.nan21.dnet.module.hr.skill.lovs.RatingScales", dataIndex:"ratingScale",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "ratingScaleId"} ]  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -34,7 +33,6 @@ net.nan21.dnet.module.hr.skill.dc.RatingLevel$Filter = Ext.extend(dnet.base.Abst
 	  ,	    {layout:"form", border:false 
 	      ,items:[ this._elems_.get("active")] }
 ];
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.hr.skill.dc.RatingLevel$Filter", net.nan21.dnet.module.hr.skill.dc.RatingLevel$Filter ); 

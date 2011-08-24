@@ -26,14 +26,12 @@ net.nan21.dnet.module.bd.org.dc.Organization$Filter = Ext.extend(dnet.base.Abstr
 		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"form", width:250,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["type","active"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.bd.org.dc.Organization$Filter", net.nan21.dnet.module.bd.org.dc.Organization$Filter ); 

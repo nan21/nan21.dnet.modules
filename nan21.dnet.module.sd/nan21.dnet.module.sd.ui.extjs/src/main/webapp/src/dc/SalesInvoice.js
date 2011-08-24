@@ -28,7 +28,6 @@ net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter = Ext.extend(dnet.base.A
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -36,7 +35,6 @@ net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter = Ext.extend(dnet.base.A
 		.addChildrenTo("col1",["docNo","docDate"])
 		.addChildrenTo("col2",["customerCode","currencyCode"])
 		.addChildrenTo("col3",["type","status"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter", net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter ); 

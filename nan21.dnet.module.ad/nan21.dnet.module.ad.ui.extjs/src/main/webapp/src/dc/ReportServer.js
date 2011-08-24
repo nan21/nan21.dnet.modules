@@ -20,7 +20,6 @@ net.nan21.dnet.module.ad.report.dc.ReportServer$Filter = Ext.extend(dnet.base.Ab
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -28,7 +27,6 @@ net.nan21.dnet.module.ad.report.dc.ReportServer$Filter = Ext.extend(dnet.base.Ab
 	    {layout:"form", border:false 
 	      ,items:[ this._elems_.get("name")] }
 ];
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.report.dc.ReportServer$Filter", net.nan21.dnet.module.ad.report.dc.ReportServer$Filter ); 

@@ -12,9 +12,9 @@ net.nan21.dnet.module.hr.payroll.frame.Element_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("expr",{ name:"exprFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Filter"})	 
+		.addDcFilterFormView("expr",{ name:"exprFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Filter"})	 
 		.addDcView("expr",{ name:"exprList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$List"})	 
-		.addDcView("expr",{ name:"exprEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Edit",height:120})	 
+		.addDcFormView("expr",{ name:"exprEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Edit",height:120})	 
 		.addDcView("vars",{ name:"varEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Variable$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 

@@ -14,9 +14,9 @@ net.nan21.dnet.module.hr.training.frame.Course_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("course",{ name:"courseFilter", xtype:"net.nan21.dnet.module.hr.training.dc.Course$Filter"})	 
+		.addDcFilterFormView("course",{ name:"courseFilter", xtype:"net.nan21.dnet.module.hr.training.dc.Course$Filter"})	 
 		.addDcView("course",{ name:"courseList", xtype:"net.nan21.dnet.module.hr.training.dc.Course$List"})	 
-		.addDcView("course",{ name:"courseEdit", xtype:"net.nan21.dnet.module.hr.training.dc.Course$Edit"})	 
+		.addDcFormView("course",{ name:"courseEdit", xtype:"net.nan21.dnet.module.hr.training.dc.Course$Edit"})	 
 		.addDcView("job",{ name:"jobList", xtype:"net.nan21.dnet.module.hr.training.dc.JobCourse$CourseCtxEditList", frame:true,title:"Jobs"})	 
 		.addDcView("position",{ name:"positionList", xtype:"net.nan21.dnet.module.hr.training.dc.PositionCourse$CourseCtxEditList", frame:true,title:"Positions"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 

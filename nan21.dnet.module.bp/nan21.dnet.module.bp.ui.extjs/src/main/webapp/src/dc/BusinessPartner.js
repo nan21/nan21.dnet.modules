@@ -33,7 +33,6 @@ net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter = Ext.extend(dnet.base.Abs
 		.addPanel({ name:"col2", layout:"form", width:220,labelWidth:0 })
 		.addPanel({ name:"col3", layout:"form", width:220,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -41,7 +40,6 @@ net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter = Ext.extend(dnet.base.Abs
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["countryCode"])
 		.addChildrenTo("col3",["registrationNo","taxNo"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter", net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter ); 

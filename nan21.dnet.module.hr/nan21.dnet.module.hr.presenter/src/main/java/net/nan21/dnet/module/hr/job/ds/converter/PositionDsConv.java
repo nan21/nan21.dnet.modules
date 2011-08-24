@@ -52,25 +52,33 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
 
     protected void lookup_organization_Organization(PositionDs ds, Position e)
             throws Exception {
-        Organization x = null;
-        try {
-            x = ((IOrganizationService) getService(IOrganizationService.class))
-                    .findByCode(ds.getClientId(), ds.getOrganizationCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getOrganizationCode() != null) {
+            Organization x = null;
+            try {
+                x = ((IOrganizationService) getService(IOrganizationService.class))
+                        .findByCode(ds.getClientId(), ds.getOrganizationCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Organization` reference:  `organizationCode` = "
+                                + ds.getOrganizationCode() + "  ");
+            }
+            e.setOrganization(x);
         }
-        e.setOrganization(x);
     }
 
     protected void lookup_job_Job(PositionDs ds, Position e) throws Exception {
-        Job x = null;
-        try {
-            x = ((IJobService) getService(IJobService.class)).findByCode(
-                    ds.getClientId(), ds.getJobCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getJobCode() != null) {
+            Job x = null;
+            try {
+                x = ((IJobService) getService(IJobService.class)).findByCode(
+                        ds.getClientId(), ds.getJobCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Job` reference:  `jobCode` = "
+                                + ds.getJobCode() + "  ");
+            }
+            e.setJob(x);
         }
-        e.setJob(x);
     }
 
     @Override

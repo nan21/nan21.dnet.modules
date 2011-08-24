@@ -50,15 +50,21 @@ public class PayScaleRateValueDsConv extends
 
     protected void lookup_scalePoint_PayScalePoint(PayScaleRateValueDs ds,
             PayScaleRateValue e) throws Exception {
-        PayScalePoint x = null;
-        try {
-            x = ((IPayScalePointService) getService(IPayScalePointService.class))
-                    .findByScale_code(ds.getClientId(), ds.getScaleRateId(),
-                            ds.getScalePointCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getScaleRateId() != null && ds.getScalePointCode() != null) {
+            PayScalePoint x = null;
+            try {
+                x = ((IPayScalePointService) getService(IPayScalePointService.class))
+                        .findByScale_code(ds.getClientId(),
+                                ds.getScaleRateId(), ds.getScalePointCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PayScalePoint` reference:  `scaleRateId` = "
+                                + ds.getScaleRateId()
+                                + " , `scalePointCode` = "
+                                + ds.getScalePointCode() + "  ");
+            }
+            e.setScalePoint(x);
         }
-        e.setScalePoint(x);
     }
 
     @Override

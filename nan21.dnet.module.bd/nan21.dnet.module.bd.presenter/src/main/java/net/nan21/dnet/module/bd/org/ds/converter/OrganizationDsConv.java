@@ -44,14 +44,18 @@ public class OrganizationDsConv extends
 
     protected void lookup_type_OrganizationType(OrganizationDs ds,
             Organization e) throws Exception {
-        OrganizationType x = null;
-        try {
-            x = ((IOrganizationTypeService) getService(IOrganizationTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getType() != null) {
+            OrganizationType x = null;
+            try {
+                x = ((IOrganizationTypeService) getService(IOrganizationTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `OrganizationType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setType(x);
         }
-        e.setType(x);
     }
 
     @Override

@@ -1,5 +1,7 @@
+
 Ext.ns('net.nan21.dnet.module.bd.menu');
 var BUNDLE_ID = "nan21.dnet.module.bd.ui.extjs";
+
 net.nan21.dnet.module.bd.menu.ad = [
  
 	{"id":"sm_bd", "text":"Base data", leaf:false, children:[
@@ -34,3 +36,4 @@ if (Dnet.navigationTreeMenus.ad == undefined) {
 	Dnet.navigationTreeMenus.ad = { name: "mbMenuAD" , title :"AD: Administration", children: [] };
 }       
     Dnet.navigationTreeMenus.ad.children = Dnet.navigationTreeMenus.ad.children.concat(net.nan21.dnet.module.bd.menu.ad);
+    

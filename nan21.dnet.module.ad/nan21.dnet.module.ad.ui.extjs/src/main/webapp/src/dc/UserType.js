@@ -21,7 +21,6 @@ net.nan21.dnet.module.ad.usr.dc.UserType$Filter = Ext.extend(dnet.base.AbstractD
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -31,7 +30,6 @@ net.nan21.dnet.module.ad.usr.dc.UserType$Filter = Ext.extend(dnet.base.AbstractD
 	  ,	    {layout:"form", border:false 
 	      ,items:[ this._elems_.get("active")] }
 ];
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.usr.dc.UserType$Filter", net.nan21.dnet.module.ad.usr.dc.UserType$Filter ); 

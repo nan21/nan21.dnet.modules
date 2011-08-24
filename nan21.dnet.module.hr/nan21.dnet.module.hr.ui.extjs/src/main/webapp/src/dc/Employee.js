@@ -28,7 +28,6 @@ net.nan21.dnet.module.hr.employee.dc.Employee$Filter = Ext.extend(dnet.base.Abst
 		.addPanel({ name:"col2", layout:"form", width:220,labelWidth:0 })
 		.addPanel({ name:"col3", layout:"form", width:220,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -36,7 +35,6 @@ net.nan21.dnet.module.hr.employee.dc.Employee$Filter = Ext.extend(dnet.base.Abst
 		.addChildrenTo("col1",["firstName","lastName"])
 		.addChildrenTo("col2",["employerCode","code"])
 		.addChildrenTo("col3",["gender","maritalStatus"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.hr.employee.dc.Employee$Filter", net.nan21.dnet.module.hr.employee.dc.Employee$Filter ); 

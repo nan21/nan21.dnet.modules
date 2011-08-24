@@ -21,7 +21,6 @@ net.nan21.dnet.module.mm.md.dc.ProductManufacturer$Filter = Ext.extend(dnet.base
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -31,7 +30,6 @@ net.nan21.dnet.module.mm.md.dc.ProductManufacturer$Filter = Ext.extend(dnet.base
 	  ,	    {layout:"form", border:false 
 	      ,items:[ this._elems_.get("code")] }
 ];
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.mm.md.dc.ProductManufacturer$Filter", net.nan21.dnet.module.mm.md.dc.ProductManufacturer$Filter ); 

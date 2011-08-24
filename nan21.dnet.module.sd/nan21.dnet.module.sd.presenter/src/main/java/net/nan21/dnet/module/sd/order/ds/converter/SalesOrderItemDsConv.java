@@ -56,14 +56,18 @@ public class SalesOrderItemDsConv extends
 
     protected void lookup_product_Product(SalesOrderItemDs ds, SalesOrderItem e)
             throws Exception {
-        Product x = null;
-        try {
-            x = ((IProductService) getService(IProductService.class))
-                    .findByCode(ds.getClientId(), ds.getProductCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getProductCode() != null) {
+            Product x = null;
+            try {
+                x = ((IProductService) getService(IProductService.class))
+                        .findByCode(ds.getClientId(), ds.getProductCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Product` reference:  `productCode` = "
+                                + ds.getProductCode() + "  ");
+            }
+            e.setProduct(x);
         }
-        e.setProduct(x);
     }
 
     @Override

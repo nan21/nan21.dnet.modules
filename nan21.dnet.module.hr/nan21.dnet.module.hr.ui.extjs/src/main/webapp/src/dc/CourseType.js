@@ -24,14 +24,12 @@ net.nan21.dnet.module.hr.training.dc.CourseType$Filter = Ext.extend(dnet.base.Ab
 		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","category"])
 		.addChildrenTo("col2",["active"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.hr.training.dc.CourseType$Filter", net.nan21.dnet.module.hr.training.dc.CourseType$Filter ); 

@@ -59,27 +59,36 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
 
     protected void lookup_country_Country(LocationDs ds, Location e)
             throws Exception {
-        Country x = null;
-        try {
-            x = ((ICountryService) getService(ICountryService.class))
-                    .findByCode(ds.getClientId(), ds.getCountryCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCountryCode() != null) {
+            Country x = null;
+            try {
+                x = ((ICountryService) getService(ICountryService.class))
+                        .findByCode(ds.getClientId(), ds.getCountryCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Country` reference:  `countryCode` = "
+                                + ds.getCountryCode() + "  ");
+            }
+            e.setCountry(x);
         }
-        e.setCountry(x);
     }
 
     protected void lookup_region_Region(LocationDs ds, Location e)
             throws Exception {
-        Region x = null;
-        try {
-            x = ((IRegionService) getService(IRegionService.class))
-                    .findByCodeAndCountry(ds.getClientId(), ds.getCountryId(),
-                            ds.getRegionCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCountryId() != null && ds.getRegionCode() != null) {
+            Region x = null;
+            try {
+                x = ((IRegionService) getService(IRegionService.class))
+                        .findByCodeAndCountry(ds.getClientId(),
+                                ds.getCountryId(), ds.getRegionCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Region` reference:  `countryId` = "
+                                + ds.getCountryId() + " , `regionCode` = "
+                                + ds.getRegionCode() + "  ");
+            }
+            e.setRegion(x);
         }
-        e.setRegion(x);
     }
 
     @Override

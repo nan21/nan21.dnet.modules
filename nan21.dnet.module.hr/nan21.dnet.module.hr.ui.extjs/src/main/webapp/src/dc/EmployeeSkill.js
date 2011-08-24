@@ -23,12 +23,10 @@ net.nan21.dnet.module.hr.skill.dc.EmployeeSkill$Filter = Ext.extend(dnet.base.Ab
 		.addTextField({ name:"skillLevel", dataIndex:"skillLevel",anchor:"-20",maxLength:255  })
 		//containers
 		.addPanel({ name:"main", layout:"form", autoScroll:true,width:210,labelWidth:0 })
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["createdBy","modifiedBy","skill","skillLevel"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.hr.skill.dc.EmployeeSkill$Filter", net.nan21.dnet.module.hr.skill.dc.EmployeeSkill$Filter ); 

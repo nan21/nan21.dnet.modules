@@ -21,7 +21,6 @@ net.nan21.dnet.module.hr.payroll.dc.ElementCategory$Filter = Ext.extend(dnet.bas
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -31,7 +30,6 @@ net.nan21.dnet.module.hr.payroll.dc.ElementCategory$Filter = Ext.extend(dnet.bas
 	  ,	    {layout:"form", border:false 
 	      ,items:[ this._elems_.get("active")] }
 ];
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.hr.payroll.dc.ElementCategory$Filter", net.nan21.dnet.module.hr.payroll.dc.ElementCategory$Filter ); 

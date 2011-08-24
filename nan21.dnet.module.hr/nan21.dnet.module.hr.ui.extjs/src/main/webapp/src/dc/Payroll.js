@@ -21,7 +21,6 @@ net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter = Ext.extend(dnet.base.Abstra
 		.addCombo({ name:"periodType", xtype:"combo", dataIndex:"periodType", id:Ext.id(),anchor:"-20",store:[ "calendar-month", "semi-month"]  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -31,7 +30,6 @@ net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter = Ext.extend(dnet.base.Abstra
 	  ,	    {layout:"form", border:false 
 	      ,items:[ this._elems_.get("periodType")] }
 ];
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter", net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter ); 

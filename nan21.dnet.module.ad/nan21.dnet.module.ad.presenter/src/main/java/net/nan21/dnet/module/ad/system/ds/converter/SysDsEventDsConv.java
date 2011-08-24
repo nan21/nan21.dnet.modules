@@ -40,14 +40,18 @@ public class SysDsEventDsConv extends
 
     protected void lookup_dataSource_SysDataSource(SysDsEventDs ds, SysDsEvent e)
             throws Exception {
-        SysDataSource x = null;
-        try {
-            x = ((ISysDataSourceService) getService(ISysDataSourceService.class))
-                    .findByName(ds.getClientId(), ds.getDataSource());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getDataSource() != null) {
+            SysDataSource x = null;
+            try {
+                x = ((ISysDataSourceService) getService(ISysDataSourceService.class))
+                        .findByName(ds.getClientId(), ds.getDataSource());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `SysDataSource` reference:  `dataSource` = "
+                                + ds.getDataSource() + "  ");
+            }
+            e.setDataSource(x);
         }
-        e.setDataSource(x);
     }
 
     @Override

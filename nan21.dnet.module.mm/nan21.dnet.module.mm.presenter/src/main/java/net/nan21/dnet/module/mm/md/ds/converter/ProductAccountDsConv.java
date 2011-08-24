@@ -62,38 +62,50 @@ public class ProductAccountDsConv extends
 
     protected void lookup_organization_Organization(ProductAccountDs ds,
             ProductAccount e) throws Exception {
-        Organization x = null;
-        try {
-            x = ((IOrganizationService) getService(IOrganizationService.class))
-                    .findByCode(ds.getClientId(), ds.getOrganizationCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getOrganizationCode() != null) {
+            Organization x = null;
+            try {
+                x = ((IOrganizationService) getService(IOrganizationService.class))
+                        .findByCode(ds.getClientId(), ds.getOrganizationCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Organization` reference:  `organizationCode` = "
+                                + ds.getOrganizationCode() + "  ");
+            }
+            e.setOrganization(x);
         }
-        e.setOrganization(x);
     }
 
     protected void lookup_group_ProductAccountGroup(ProductAccountDs ds,
             ProductAccount e) throws Exception {
-        ProductAccountGroup x = null;
-        try {
-            x = ((IProductAccountGroupService) getService(IProductAccountGroupService.class))
-                    .findByCode(ds.getClientId(), ds.getGroupCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getGroupCode() != null) {
+            ProductAccountGroup x = null;
+            try {
+                x = ((IProductAccountGroupService) getService(IProductAccountGroupService.class))
+                        .findByCode(ds.getClientId(), ds.getGroupCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ProductAccountGroup` reference:  `groupCode` = "
+                                + ds.getGroupCode() + "  ");
+            }
+            e.setGroup(x);
         }
-        e.setGroup(x);
     }
 
     protected void lookup_product_Product(ProductAccountDs ds, ProductAccount e)
             throws Exception {
-        Product x = null;
-        try {
-            x = ((IProductService) getService(IProductService.class))
-                    .findByCode(ds.getClientId(), ds.getProductCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getProductCode() != null) {
+            Product x = null;
+            try {
+                x = ((IProductService) getService(IProductService.class))
+                        .findByCode(ds.getClientId(), ds.getProductCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Product` reference:  `productCode` = "
+                                + ds.getProductCode() + "  ");
+            }
+            e.setProduct(x);
         }
-        e.setProduct(x);
     }
 
     @Override

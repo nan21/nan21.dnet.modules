@@ -10,7 +10,7 @@ net.nan21.dnet.module.ad.usr.frame.UserTypes_UI = Ext.extend( dnet.base.Abstract
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("userType",{ name:"filterUserType", xtype:"net.nan21.dnet.module.ad.usr.dc.UserType$Filter"})	 
+		.addDcFilterFormView("userType",{ name:"filterUserType", xtype:"net.nan21.dnet.module.ad.usr.dc.UserType$Filter"})	 
 		.addDcView("userType",{ name:"listUserType", xtype:"net.nan21.dnet.module.ad.usr.dc.UserType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},header:false})  	 

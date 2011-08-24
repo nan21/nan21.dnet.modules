@@ -60,27 +60,37 @@ public class QualificationSkillDsConv extends
 
     protected void lookup_skill_Skill(QualificationSkillDs ds,
             QualificationSkill e) throws Exception {
-        Skill x = null;
-        try {
-            x = ((ISkillService) getService(ISkillService.class)).findByName(
-                    ds.getClientId(), ds.getSkill());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getSkill() != null) {
+            Skill x = null;
+            try {
+                x = ((ISkillService) getService(ISkillService.class))
+                        .findByName(ds.getClientId(), ds.getSkill());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Skill` reference:  `skill` = "
+                                + ds.getSkill() + "  ");
+            }
+            e.setSkill(x);
         }
-        e.setSkill(x);
     }
 
     protected void lookup_requiredLevel_RatingLevel(QualificationSkillDs ds,
             QualificationSkill e) throws Exception {
-        RatingLevel x = null;
-        try {
-            x = ((IRatingLevelService) getService(IRatingLevelService.class))
-                    .findByName(ds.getClientId(), ds.getRatingScaleId(),
-                            ds.getRequiredLevel());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getRatingScaleId() != null && ds.getRequiredLevel() != null) {
+            RatingLevel x = null;
+            try {
+                x = ((IRatingLevelService) getService(IRatingLevelService.class))
+                        .findByName(ds.getClientId(), ds.getRatingScaleId(),
+                                ds.getRequiredLevel());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `RatingLevel` reference:  `ratingScaleId` = "
+                                + ds.getRatingScaleId()
+                                + " , `requiredLevel` = "
+                                + ds.getRequiredLevel() + "  ");
+            }
+            e.setRequiredLevel(x);
         }
-        e.setRequiredLevel(x);
     }
 
     @Override

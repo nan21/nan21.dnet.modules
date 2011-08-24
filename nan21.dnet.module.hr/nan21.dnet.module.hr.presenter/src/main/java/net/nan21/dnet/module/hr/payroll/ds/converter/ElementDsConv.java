@@ -43,14 +43,18 @@ public class ElementDsConv extends AbstractDsConverter<ElementDs, Element>
 
     protected void lookup_type_ElementType(ElementDs ds, Element e)
             throws Exception {
-        ElementType x = null;
-        try {
-            x = ((IElementTypeService) getService(IElementTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getType() != null) {
+            ElementType x = null;
+            try {
+                x = ((IElementTypeService) getService(IElementTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ElementType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setType(x);
         }
-        e.setType(x);
     }
 
     @Override

@@ -42,14 +42,18 @@ public class CourseTypeDsConv extends
 
     protected void lookup_category_CourseCategory(CourseTypeDs ds, CourseType e)
             throws Exception {
-        CourseCategory x = null;
-        try {
-            x = ((ICourseCategoryService) getService(ICourseCategoryService.class))
-                    .findByName(ds.getClientId(), ds.getCategory());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCategory() != null) {
+            CourseCategory x = null;
+            try {
+                x = ((ICourseCategoryService) getService(ICourseCategoryService.class))
+                        .findByName(ds.getClientId(), ds.getCategory());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `CourseCategory` reference:  `category` = "
+                                + ds.getCategory() + "  ");
+            }
+            e.setCategory(x);
         }
-        e.setCategory(x);
     }
 
     @Override

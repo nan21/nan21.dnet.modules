@@ -42,14 +42,18 @@ public class UserDsConv extends AbstractDsConverter<UserDs, User> implements
 
     protected void lookup_accountType_UserType(UserDs ds, User e)
             throws Exception {
-        UserType x = null;
-        try {
-            x = ((IUserTypeService) getService(IUserTypeService.class))
-                    .findByName(ds.getClientId(), ds.getAccountType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getAccountType() != null) {
+            UserType x = null;
+            try {
+                x = ((IUserTypeService) getService(IUserTypeService.class))
+                        .findByName(ds.getClientId(), ds.getAccountType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `UserType` reference:  `accountType` = "
+                                + ds.getAccountType() + "  ");
+            }
+            e.setAccountType(x);
         }
-        e.setAccountType(x);
     }
 
     @Override

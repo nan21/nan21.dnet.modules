@@ -58,27 +58,36 @@ public class EmployeeSkillDsConv extends
 
     protected void lookup_skill_Skill(EmployeeSkillDs ds, EmployeeSkill e)
             throws Exception {
-        Skill x = null;
-        try {
-            x = ((ISkillService) getService(ISkillService.class)).findByName(
-                    ds.getClientId(), ds.getSkill());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getSkill() != null) {
+            Skill x = null;
+            try {
+                x = ((ISkillService) getService(ISkillService.class))
+                        .findByName(ds.getClientId(), ds.getSkill());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Skill` reference:  `skill` = "
+                                + ds.getSkill() + "  ");
+            }
+            e.setSkill(x);
         }
-        e.setSkill(x);
     }
 
     protected void lookup_skillLevel_RatingLevel(EmployeeSkillDs ds,
             EmployeeSkill e) throws Exception {
-        RatingLevel x = null;
-        try {
-            x = ((IRatingLevelService) getService(IRatingLevelService.class))
-                    .findByName(ds.getClientId(), ds.getRatingScaleId(),
-                            ds.getSkillLevel());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getRatingScaleId() != null && ds.getSkillLevel() != null) {
+            RatingLevel x = null;
+            try {
+                x = ((IRatingLevelService) getService(IRatingLevelService.class))
+                        .findByName(ds.getClientId(), ds.getRatingScaleId(),
+                                ds.getSkillLevel());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `RatingLevel` reference:  `ratingScaleId` = "
+                                + ds.getRatingScaleId() + " , `skillLevel` = "
+                                + ds.getSkillLevel() + "  ");
+            }
+            e.setSkillLevel(x);
         }
-        e.setSkillLevel(x);
     }
 
     @Override

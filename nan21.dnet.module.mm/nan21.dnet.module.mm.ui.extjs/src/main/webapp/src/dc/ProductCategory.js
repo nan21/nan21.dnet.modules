@@ -22,7 +22,6 @@ net.nan21.dnet.module.mm.md.dc.ProductCategory$Filter = Ext.extend(dnet.base.Abs
 		.addLov({ name:"parentName", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductCategories", dataIndex:"parentName",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "parentId"} ]  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -34,7 +33,6 @@ net.nan21.dnet.module.mm.md.dc.ProductCategory$Filter = Ext.extend(dnet.base.Abs
 	  ,	    {layout:"form", border:false 
 	      ,items:[ this._elems_.get("parentName")] }
 ];
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.mm.md.dc.ProductCategory$Filter", net.nan21.dnet.module.mm.md.dc.ProductCategory$Filter ); 

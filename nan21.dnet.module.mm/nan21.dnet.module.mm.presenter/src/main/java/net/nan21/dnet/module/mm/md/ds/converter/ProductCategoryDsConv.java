@@ -43,14 +43,18 @@ public class ProductCategoryDsConv extends
 
     protected void lookup_parent_ProductCategory(ProductCategoryDs ds,
             ProductCategory e) throws Exception {
-        ProductCategory x = null;
-        try {
-            x = ((IProductCategoryService) getService(IProductCategoryService.class))
-                    .findByName(ds.getClientId(), ds.getParentName());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getParentName() != null) {
+            ProductCategory x = null;
+            try {
+                x = ((IProductCategoryService) getService(IProductCategoryService.class))
+                        .findByName(ds.getClientId(), ds.getParentName());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ProductCategory` reference:  `parentName` = "
+                                + ds.getParentName() + "  ");
+            }
+            e.setParent(x);
         }
-        e.setParent(x);
     }
 
     @Override

@@ -45,14 +45,18 @@ public class CourseDsConv extends AbstractDsConverter<CourseDs, Course>
 
     protected void lookup_type_CourseType(CourseDs ds, Course e)
             throws Exception {
-        CourseType x = null;
-        try {
-            x = ((ICourseTypeService) getService(ICourseTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getType() != null) {
+            CourseType x = null;
+            try {
+                x = ((ICourseTypeService) getService(ICourseTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `CourseType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setType(x);
         }
-        e.setType(x);
     }
 
     @Override

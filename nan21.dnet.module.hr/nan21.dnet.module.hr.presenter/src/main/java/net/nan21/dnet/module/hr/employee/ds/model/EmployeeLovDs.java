@@ -36,7 +36,7 @@ public class EmployeeLovDs extends AbstractDsModel<Employee> implements
     @DsField()
     private String lastName;
 
-    @DsField(fetch = false)
+    @DsField(fetch = false, jpqlFilter = " e.lastName like :name ")
     private String name;
 
     @DsField()

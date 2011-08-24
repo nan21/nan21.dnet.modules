@@ -48,15 +48,20 @@ public class DsReportParamDsConv extends
 
     protected void lookup_reportParam_ReportParam(DsReportParamDs ds,
             DsReportParam e) throws Exception {
-        ReportParam x = null;
-        try {
-            x = ((IReportParamService) getService(IReportParamService.class))
-                    .findByCode(ds.getClientId(), ds.getReportId(),
-                            ds.getParamCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getReportId() != null && ds.getParamCode() != null) {
+            ReportParam x = null;
+            try {
+                x = ((IReportParamService) getService(IReportParamService.class))
+                        .findByCode(ds.getClientId(), ds.getReportId(),
+                                ds.getParamCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ReportParam` reference:  `reportId` = "
+                                + ds.getReportId() + " , `paramCode` = "
+                                + ds.getParamCode() + "  ");
+            }
+            e.setReportParam(x);
         }
-        e.setReportParam(x);
     }
 
     @Override

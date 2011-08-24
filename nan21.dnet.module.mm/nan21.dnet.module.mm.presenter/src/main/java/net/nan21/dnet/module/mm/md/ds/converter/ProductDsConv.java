@@ -100,73 +100,97 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
 
     protected void lookup_category_ProductCategory(ProductDs ds, Product e)
             throws Exception {
-        ProductCategory x = null;
-        try {
-            x = ((IProductCategoryService) getService(IProductCategoryService.class))
-                    .findByName(ds.getClientId(), ds.getCategoryName());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCategoryName() != null) {
+            ProductCategory x = null;
+            try {
+                x = ((IProductCategoryService) getService(IProductCategoryService.class))
+                        .findByName(ds.getClientId(), ds.getCategoryName());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ProductCategory` reference:  `categoryName` = "
+                                + ds.getCategoryName() + "  ");
+            }
+            e.setCategory(x);
         }
-        e.setCategory(x);
     }
 
     protected void lookup_manufacturer_ProductManufacturer(ProductDs ds,
             Product e) throws Exception {
-        ProductManufacturer x = null;
-        try {
-            x = ((IProductManufacturerService) getService(IProductManufacturerService.class))
-                    .findByCode(ds.getClientId(), ds.getManufacturerCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getManufacturerCode() != null) {
+            ProductManufacturer x = null;
+            try {
+                x = ((IProductManufacturerService) getService(IProductManufacturerService.class))
+                        .findByCode(ds.getClientId(), ds.getManufacturerCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ProductManufacturer` reference:  `manufacturerCode` = "
+                                + ds.getManufacturerCode() + "  ");
+            }
+            e.setManufacturer(x);
         }
-        e.setManufacturer(x);
     }
 
     protected void lookup_defaultUom_Uom(ProductDs ds, Product e)
             throws Exception {
-        Uom x = null;
-        try {
-            x = ((IUomService) getService(IUomService.class)).findByCode(
-                    ds.getClientId(), ds.getDefaultUomCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getDefaultUomCode() != null) {
+            Uom x = null;
+            try {
+                x = ((IUomService) getService(IUomService.class)).findByCode(
+                        ds.getClientId(), ds.getDefaultUomCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Uom` reference:  `defaultUomCode` = "
+                                + ds.getDefaultUomCode() + "  ");
+            }
+            e.setDefaultUom(x);
         }
-        e.setDefaultUom(x);
     }
 
     protected void lookup_dimUom_Uom(ProductDs ds, Product e) throws Exception {
-        Uom x = null;
-        try {
-            x = ((IUomService) getService(IUomService.class)).findByCode(
-                    ds.getClientId(), ds.getDimUomCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getDimUomCode() != null) {
+            Uom x = null;
+            try {
+                x = ((IUomService) getService(IUomService.class)).findByCode(
+                        ds.getClientId(), ds.getDimUomCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Uom` reference:  `dimUomCode` = "
+                                + ds.getDimUomCode() + "  ");
+            }
+            e.setDimUom(x);
         }
-        e.setDimUom(x);
     }
 
     protected void lookup_volumeUom_Uom(ProductDs ds, Product e)
             throws Exception {
-        Uom x = null;
-        try {
-            x = ((IUomService) getService(IUomService.class)).findByCode(
-                    ds.getClientId(), ds.getVolumeUomCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getVolumeUomCode() != null) {
+            Uom x = null;
+            try {
+                x = ((IUomService) getService(IUomService.class)).findByCode(
+                        ds.getClientId(), ds.getVolumeUomCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Uom` reference:  `volumeUomCode` = "
+                                + ds.getVolumeUomCode() + "  ");
+            }
+            e.setVolumeUom(x);
         }
-        e.setVolumeUom(x);
     }
 
     protected void lookup_weightUom_Uom(ProductDs ds, Product e)
             throws Exception {
-        Uom x = null;
-        try {
-            x = ((IUomService) getService(IUomService.class)).findByCode(
-                    ds.getClientId(), ds.getWeightUomCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getWeightUomCode() != null) {
+            Uom x = null;
+            try {
+                x = ((IUomService) getService(IUomService.class)).findByCode(
+                        ds.getClientId(), ds.getWeightUomCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Uom` reference:  `weightUomCode` = "
+                                + ds.getWeightUomCode() + "  ");
+            }
+            e.setWeightUom(x);
         }
-        e.setWeightUom(x);
     }
 
     @Override

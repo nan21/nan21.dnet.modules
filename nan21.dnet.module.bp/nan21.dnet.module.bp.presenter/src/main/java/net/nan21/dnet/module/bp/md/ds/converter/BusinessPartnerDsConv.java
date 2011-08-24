@@ -54,14 +54,18 @@ public class BusinessPartnerDsConv extends
 
     protected void lookup_country_Country(BusinessPartnerDs ds,
             BusinessPartner e) throws Exception {
-        Country x = null;
-        try {
-            x = ((ICountryService) getService(ICountryService.class))
-                    .findByCode(ds.getClientId(), ds.getCountryCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCountryCode() != null) {
+            Country x = null;
+            try {
+                x = ((ICountryService) getService(ICountryService.class))
+                        .findByCode(ds.getClientId(), ds.getCountryCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Country` reference:  `countryCode` = "
+                                + ds.getCountryCode() + "  ");
+            }
+            e.setCountry(x);
         }
-        e.setCountry(x);
     }
 
     @Override

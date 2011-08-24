@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.currency.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,10 @@ import net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRate;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = CurrencyXRate.class)
+@Ds(entity = CurrencyXRate.class, sort = {
+        @SortField(field = CurrencyXRateDs.fVALIDAT, desc = true),
+        @SortField(field = CurrencyXRateDs.fSOURCECODE),
+        @SortField(field = CurrencyXRateDs.fTARGETCODE) })
 public class CurrencyXRateDs extends AbstractDsModel<CurrencyXRate> implements
         IModelWithId, IModelWithClientId {
 

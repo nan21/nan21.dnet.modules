@@ -65,26 +65,34 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
 
     protected void lookup_employer_Organization(EmployeeDs ds, Employee e)
             throws Exception {
-        Organization x = null;
-        try {
-            x = ((IOrganizationService) getService(IOrganizationService.class))
-                    .findByCode(ds.getClientId(), ds.getEmployerCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getEmployerCode() != null) {
+            Organization x = null;
+            try {
+                x = ((IOrganizationService) getService(IOrganizationService.class))
+                        .findByCode(ds.getClientId(), ds.getEmployerCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Organization` reference:  `employerCode` = "
+                                + ds.getEmployerCode() + "  ");
+            }
+            e.setEmployer(x);
         }
-        e.setEmployer(x);
     }
 
     protected void lookup_citizenship_Country(EmployeeDs ds, Employee e)
             throws Exception {
-        Country x = null;
-        try {
-            x = ((ICountryService) getService(ICountryService.class))
-                    .findByCode(ds.getClientId(), ds.getCitizenshipCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCitizenshipCode() != null) {
+            Country x = null;
+            try {
+                x = ((ICountryService) getService(ICountryService.class))
+                        .findByCode(ds.getClientId(), ds.getCitizenshipCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Country` reference:  `citizenshipCode` = "
+                                + ds.getCitizenshipCode() + "  ");
+            }
+            e.setCitizenship(x);
         }
-        e.setCitizenship(x);
     }
 
     @Override

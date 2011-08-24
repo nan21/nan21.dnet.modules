@@ -56,14 +56,18 @@ public class CurrencyXRateDsConv extends
 
     protected void lookup_provider_CurrencyXRateProvider(CurrencyXRateDs ds,
             CurrencyXRate e) throws Exception {
-        CurrencyXRateProvider x = null;
-        try {
-            x = ((ICurrencyXRateProviderService) getService(ICurrencyXRateProviderService.class))
-                    .findByCode(ds.getClientId(), ds.getProviderCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getProviderCode() != null) {
+            CurrencyXRateProvider x = null;
+            try {
+                x = ((ICurrencyXRateProviderService) getService(ICurrencyXRateProviderService.class))
+                        .findByCode(ds.getClientId(), ds.getProviderCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `CurrencyXRateProvider` reference:  `providerCode` = "
+                                + ds.getProviderCode() + "  ");
+            }
+            e.setProvider(x);
         }
-        e.setProvider(x);
     }
 
     @Override

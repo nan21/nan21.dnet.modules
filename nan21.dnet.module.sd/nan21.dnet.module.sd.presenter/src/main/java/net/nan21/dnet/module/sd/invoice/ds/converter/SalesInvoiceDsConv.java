@@ -93,38 +93,50 @@ public class SalesInvoiceDsConv extends
 
     protected void lookup_type_SalesInvoiceType(SalesInvoiceDs ds,
             SalesInvoice e) throws Exception {
-        SalesInvoiceType x = null;
-        try {
-            x = ((ISalesInvoiceTypeService) getService(ISalesInvoiceTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getType() != null) {
+            SalesInvoiceType x = null;
+            try {
+                x = ((ISalesInvoiceTypeService) getService(ISalesInvoiceTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `SalesInvoiceType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setType(x);
         }
-        e.setType(x);
     }
 
     protected void lookup_status_SalesInvoiceStatus(SalesInvoiceDs ds,
             SalesInvoice e) throws Exception {
-        SalesInvoiceStatus x = null;
-        try {
-            x = ((ISalesInvoiceStatusService) getService(ISalesInvoiceStatusService.class))
-                    .findByName(ds.getClientId(), ds.getStatus());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getStatus() != null) {
+            SalesInvoiceStatus x = null;
+            try {
+                x = ((ISalesInvoiceStatusService) getService(ISalesInvoiceStatusService.class))
+                        .findByName(ds.getClientId(), ds.getStatus());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `SalesInvoiceStatus` reference:  `status` = "
+                                + ds.getStatus() + "  ");
+            }
+            e.setStatus(x);
         }
-        e.setStatus(x);
     }
 
     protected void lookup_customer_BusinessPartner(SalesInvoiceDs ds,
             SalesInvoice e) throws Exception {
-        BusinessPartner x = null;
-        try {
-            x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
-                    .findByCode(ds.getClientId(), ds.getCustomerCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCustomerCode() != null) {
+            BusinessPartner x = null;
+            try {
+                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                        .findByCode(ds.getClientId(), ds.getCustomerCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `BusinessPartner` reference:  `customerCode` = "
+                                + ds.getCustomerCode() + "  ");
+            }
+            e.setCustomer(x);
         }
-        e.setCustomer(x);
     }
 
     @Override

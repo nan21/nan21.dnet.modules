@@ -1,6 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/ClientDs", "nan21.dnet.module.ad.ui.extjs/dc/Client"
-
-]);
+Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/ClientDs", "nan21.dnet.module.ad.ui.extjs/dc/Client"]);
 
 Ext.ns("net.nan21.dnet.module.ad.client.frame");
 net.nan21.dnet.module.ad.client.frame.Client_UI = Ext.extend( dnet.base.AbstractUi, {  
@@ -13,9 +11,9 @@ net.nan21.dnet.module.ad.client.frame.Client_UI = Ext.extend( dnet.base.Abstract
 	,_defineElements_: function() {					
 		this._getBuilder_()	
 		.addButton({name:"btnSave",text:"Save", tooltip:"Save changes",iconCls:"icon-action-save",disabled:true
-			,handler: this.onBtnSave,scope:this,stateManager:{name:"record_is_dirty", dc:"client"}	})	
+			,handler: this.onBtnSave,scope:this,stateManager:{name:"record_is_dirty", dc:"client" }	})	
 							 	
-		.addDcView("client",{ name:"clientEdit", xtype:"net.nan21.dnet.module.ad.client.dc.Client$Edit",buttons:[ this._elems_.get("btnSave") ]})	 
+		.addDcFormView("client",{ name:"clientEdit", xtype:"net.nan21.dnet.module.ad.client.dc.Client$Edit",buttons:[ this._elems_.get("btnSave") ]})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
 			 	

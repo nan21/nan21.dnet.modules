@@ -13,7 +13,7 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = Location.class)
+@Ds(entity = Location.class, jpqlWhere = " e.active = true ")
 public class LocationLovDs extends AbstractDsModel<Location> implements
         IModelWithId, IModelWithClientId {
 

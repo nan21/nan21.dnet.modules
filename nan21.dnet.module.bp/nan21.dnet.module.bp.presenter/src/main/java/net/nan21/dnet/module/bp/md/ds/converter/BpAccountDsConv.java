@@ -120,98 +120,133 @@ public class BpAccountDsConv extends
 
     protected void lookup_bp_BusinessPartner(BpAccountDs ds, BpAccount e)
             throws Exception {
-        BusinessPartner x = null;
-        try {
-            x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
-                    .findByCode(ds.getClientId(), ds.getBusinessPartner());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getBusinessPartner() != null) {
+            BusinessPartner x = null;
+            try {
+                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                        .findByCode(ds.getClientId(), ds.getBusinessPartner());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `BusinessPartner` reference:  `businessPartner` = "
+                                + ds.getBusinessPartner() + "  ");
+            }
+            e.setBp(x);
         }
-        e.setBp(x);
     }
 
     protected void lookup_organization_Organization(BpAccountDs ds, BpAccount e)
             throws Exception {
-        Organization x = null;
-        try {
-            x = ((IOrganizationService) getService(IOrganizationService.class))
-                    .findByCode(ds.getClientId(), ds.getOrganization());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getOrganization() != null) {
+            Organization x = null;
+            try {
+                x = ((IOrganizationService) getService(IOrganizationService.class))
+                        .findByCode(ds.getClientId(), ds.getOrganization());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Organization` reference:  `organization` = "
+                                + ds.getOrganization() + "  ");
+            }
+            e.setOrganization(x);
         }
-        e.setOrganization(x);
     }
 
     protected void lookup_custGroup_CustomerGroup(BpAccountDs ds, BpAccount e)
             throws Exception {
-        CustomerGroup x = null;
-        try {
-            x = ((ICustomerGroupService) getService(ICustomerGroupService.class))
-                    .findByCode(ds.getClientId(), ds.getCustomerGroup());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCustomerGroup() != null) {
+            CustomerGroup x = null;
+            try {
+                x = ((ICustomerGroupService) getService(ICustomerGroupService.class))
+                        .findByCode(ds.getClientId(), ds.getCustomerGroup());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `CustomerGroup` reference:  `customerGroup` = "
+                                + ds.getCustomerGroup() + "  ");
+            }
+            e.setCustGroup(x);
         }
-        e.setCustGroup(x);
     }
 
     protected void lookup_custPaymentMethod_PaymentMethod(BpAccountDs ds,
             BpAccount e) throws Exception {
-        PaymentMethod x = null;
-        try {
-            x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
-                    .findByName(ds.getClientId(), ds.getCustomerPaymentMethod());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCustomerPaymentMethod() != null) {
+            PaymentMethod x = null;
+            try {
+                x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
+                        .findByName(ds.getClientId(),
+                                ds.getCustomerPaymentMethod());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PaymentMethod` reference:  `customerPaymentMethod` = "
+                                + ds.getCustomerPaymentMethod() + "  ");
+            }
+            e.setCustPaymentMethod(x);
         }
-        e.setCustPaymentMethod(x);
     }
 
     protected void lookup_custPaymentTerm_PaymentTerm(BpAccountDs ds,
             BpAccount e) throws Exception {
-        PaymentTerm x = null;
-        try {
-            x = ((IPaymentTermService) getService(IPaymentTermService.class))
-                    .findByName(ds.getClientId(), ds.getCustomerPaymentTerm());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCustomerPaymentTerm() != null) {
+            PaymentTerm x = null;
+            try {
+                x = ((IPaymentTermService) getService(IPaymentTermService.class))
+                        .findByName(ds.getClientId(),
+                                ds.getCustomerPaymentTerm());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PaymentTerm` reference:  `customerPaymentTerm` = "
+                                + ds.getCustomerPaymentTerm() + "  ");
+            }
+            e.setCustPaymentTerm(x);
         }
-        e.setCustPaymentTerm(x);
     }
 
     protected void lookup_vendGroup_VendorGroup(BpAccountDs ds, BpAccount e)
             throws Exception {
-        VendorGroup x = null;
-        try {
-            x = ((IVendorGroupService) getService(IVendorGroupService.class))
-                    .findByCode(ds.getClientId(), ds.getVendorGroup());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getVendorGroup() != null) {
+            VendorGroup x = null;
+            try {
+                x = ((IVendorGroupService) getService(IVendorGroupService.class))
+                        .findByCode(ds.getClientId(), ds.getVendorGroup());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `VendorGroup` reference:  `vendorGroup` = "
+                                + ds.getVendorGroup() + "  ");
+            }
+            e.setVendGroup(x);
         }
-        e.setVendGroup(x);
     }
 
     protected void lookup_vendPaymentMethod_PaymentMethod(BpAccountDs ds,
             BpAccount e) throws Exception {
-        PaymentMethod x = null;
-        try {
-            x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
-                    .findByName(ds.getClientId(), ds.getVendorPaymentMethod());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getVendorPaymentMethod() != null) {
+            PaymentMethod x = null;
+            try {
+                x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
+                        .findByName(ds.getClientId(),
+                                ds.getVendorPaymentMethod());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PaymentMethod` reference:  `vendorPaymentMethod` = "
+                                + ds.getVendorPaymentMethod() + "  ");
+            }
+            e.setVendPaymentMethod(x);
         }
-        e.setVendPaymentMethod(x);
     }
 
     protected void lookup_vendPaymentTerm_PaymentTerm(BpAccountDs ds,
             BpAccount e) throws Exception {
-        PaymentTerm x = null;
-        try {
-            x = ((IPaymentTermService) getService(IPaymentTermService.class))
-                    .findByName(ds.getClientId(), ds.getVendorPaymentTerm());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getVendorPaymentTerm() != null) {
+            PaymentTerm x = null;
+            try {
+                x = ((IPaymentTermService) getService(IPaymentTermService.class))
+                        .findByName(ds.getClientId(), ds.getVendorPaymentTerm());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PaymentTerm` reference:  `vendorPaymentTerm` = "
+                                + ds.getVendorPaymentTerm() + "  ");
+            }
+            e.setVendPaymentTerm(x);
         }
-        e.setVendPaymentTerm(x);
     }
 
     @Override
