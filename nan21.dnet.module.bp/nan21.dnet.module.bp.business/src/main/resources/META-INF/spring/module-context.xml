@@ -99,4 +99,5 @@
 	<!-- Domain services -->
 	<import resource="beans/bp.base.entity.xml" />
 	<import resource="beans/bp.md.entity.xml" />
+	<import resource="beans/bp.calendar.entity.xml" />
 </beans>

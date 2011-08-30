@@ -11,7 +11,7 @@
 	  		class="net.nan21.dnet.module.sd.invoice.business.serviceimpl.SalesInvoiceService"  />  
  
  	<bean id="SalesInvoiceItemService" scope="prototype"
-	  		class="net.nan21.dnet.module.sd.invoice.business.serviceext.SalesInvoiceItemService"  />  
+	  		class="net.nan21.dnet.module.sd._businessextensions.SalesInvoiceItemService"  />  
  
  	<bean id="SalesInvoiceTypeService" scope="prototype"
 	  		class="net.nan21.dnet.module.sd.invoice.business.serviceimpl.SalesInvoiceTypeService"  />  

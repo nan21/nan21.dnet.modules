@@ -1,7 +1,7 @@
-#Thu Jun 09 18:53:28 EEST 2011
+#Mon Aug 29 14:25:22 EEST 2011
 activeProfiles=
 eclipse.preferences.version=1
-fullBuildGoals=process-test-resources
+fullBuildGoals=package
 includeModules=false
 resolveWorkspaceProjects=true
 resourceFilterGoals=process-resources resources\:testResources

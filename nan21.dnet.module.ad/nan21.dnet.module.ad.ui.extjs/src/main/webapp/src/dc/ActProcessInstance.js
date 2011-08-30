@@ -20,7 +20,8 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter = Ext.extend(dnet
 		.addTextField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20",maxLength:255  })
 		.addLov({ name:"process", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActProcessDefinitions", dataIndex:"process",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "processId"} ]  })
 		.addTextField({ name:"startedBy", dataIndex:"startedBy",anchor:"-20",maxLength:32  })
-		.addDateField({ name:"startTime", dataIndex:"startTime",width:100 ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"from", dataIndex:"from", _isParam_:true,width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("from", nv);} }} ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"to", dataIndex:"to", _isParam_:true,width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("to", nv);} }} ,format:Ext.DATE_FORMAT })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:300,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
@@ -31,7 +32,7 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter = Ext.extend(dnet
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["process"])
-		.addChildrenTo("col2",["startTime"])
+		.addChildrenTo("col2",["from","to"])
 		.addChildrenTo("col3",["startedBy","id"])
 	}
 }); 

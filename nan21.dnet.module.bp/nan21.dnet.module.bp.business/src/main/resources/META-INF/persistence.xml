@@ -17,6 +17,11 @@
 		<class>net.nan21.dnet.module.bp.md.domain.entity.BpBankAccount</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.Contact</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.BpAccount</class>
+		 
+		<class>net.nan21.dnet.module.bp.calendar.domain.entity.CalendarEvent</class>
+		<class>net.nan21.dnet.module.bp.calendar.domain.entity.CalendarEventStatus</class>
+		<class>net.nan21.dnet.module.bp.calendar.domain.entity.CalendarEventPriority</class>
+		
 		
 		<!-- Dependencies -->
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>

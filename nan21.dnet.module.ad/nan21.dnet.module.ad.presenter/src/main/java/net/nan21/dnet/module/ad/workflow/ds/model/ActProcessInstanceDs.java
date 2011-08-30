@@ -14,7 +14,7 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessInstanceHistory
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ActProcessInstanceHistory.class, jpqlWhere = " e.id in (select x.id from ActExecution x ) ", sort = { @SortField(field = ActProcessInstanceDs.fSTARTTIME, desc = true) })
+@Ds(entity = ActProcessInstanceHistory.class, jpqlWhere = " e.endTime is null ", sort = { @SortField(field = ActProcessInstanceDs.fSTARTTIME, desc = true) })
 public class ActProcessInstanceDs extends
         AbstractDsModel<ActProcessInstanceHistory> implements IModelWithId {
 

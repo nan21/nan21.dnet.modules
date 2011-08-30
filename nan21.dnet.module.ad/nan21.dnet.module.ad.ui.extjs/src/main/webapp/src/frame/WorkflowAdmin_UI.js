@@ -50,10 +50,10 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI = Ext.extend( dnet.base
 			,handler: this.onBtnSaveAssignTask,scope:this,stateManager:{name:"record_is_dirty", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.record.data.endTime);}}	})	
 							 	
 		.addButton({name:"btnCompleteTask",text:"Complete task", tooltip:"Mark selected task as completed.",iconCls:"icon-action-commit",disabled:true
-			,handler: this.onBtnCompleteTask,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.record.data.endTime);}}	})	
+			,handler: this.onBtnCompleteTask,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.dc.record.data.endTime);}}	})	
 							 	
 		.addButton({name:"btnOpenAsignTaskWindow",text:"Assign task", tooltip:"(Re-)Assign the selected task.",disabled:true
-			,handler: this.onBtnOpenAsignTaskWindow,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.record.data.endTime);}}	})	
+			,handler: this.onBtnOpenAsignTaskWindow,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.dc.record.data.endTime);}}	})	
 							 	
 		.addButton({name:"btnUploadForDeployment",text:"Upload...", tooltip:"Upload process definition archive to be deployed.",disabled:false
 			,handler: this.onBtnUploadForDeployment,scope:this	})	
@@ -75,7 +75,6 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI = Ext.extend( dnet.base
 		.addDcFormView("dcRunningTask",{ name:"formRunningTaskAsgn", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm"})	 
 		.addDcFilterFormView("dcFinishedInstance",{ name:"filterFinishedInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter",height:65})	 
 		.addDcView("dcFinishedInstance",{ name:"listFinishedInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List"})	 
-		.addDcFilterFormView("dcFinishedTask",{ name:"filterFinishedTask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter"})	 
 		.addDcView("dcFinishedTask",{ name:"listFinishedTask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List",height:180})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Processes defined",header:false})  	 

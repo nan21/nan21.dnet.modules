@@ -45,10 +45,10 @@ public class ActProcessInstanceHistoryDs extends
     @DsField(join = "left", path = "processDefinition.version")
     private Long processVersion;
 
-    @DsField()
+    @DsField(jpqlFilter = " e.endTime >= :startTime")
     private Date startTime;
 
-    @DsField()
+    @DsField(jpqlFilter = " e.startTime <= :endTime")
     private Date endTime;
 
     @DsField()

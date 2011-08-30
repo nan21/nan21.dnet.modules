@@ -10,10 +10,7 @@ net.nan21.dnet.module.ad.client.frame.Client_UI = Ext.extend( dnet.base.Abstract
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addButton({name:"btnSave",text:"Save", tooltip:"Save changes",iconCls:"icon-action-save",disabled:true
-			,handler: this.onBtnSave,scope:this,stateManager:{name:"record_is_dirty", dc:"client" }	})	
-							 	
-		.addDcFormView("client",{ name:"clientEdit", xtype:"net.nan21.dnet.module.ad.client.dc.Client$Edit",buttons:[ this._elems_.get("btnSave") ]})	 
+		.addDcFormView("client",{ name:"clientEdit", xtype:"net.nan21.dnet.module.ad.client.dc.Client$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
 			 	
@@ -23,16 +20,14 @@ net.nan21.dnet.module.ad.client.frame.Client_UI = Ext.extend( dnet.base.Abstract
 		this._getBuilder_()		
 	 	.addChildrenTo("main", ["canvas1"]) 				 		
 		.addChildrenTo("canvas1",["clientEdit"] ,["center"])	
+	 	.addToolbarTo("canvas1","clientEditTlb")	  	
 	}
 
 	,_defineToolbars_: function() {
-		this._getBuilder_(); 	
+		this._getBuilder_()
+			.beginToolbar("clientEditTlb", {dc:"client"}).addSave().addCancel().end(); 	
 	}
 
-
-	,onBtnSave: function() {
-this._getDc_("client").doSave();			 	
-	}					 	
 	,loadCurrentClient: function() {	
 		
   		var client = this._getDc_('client');

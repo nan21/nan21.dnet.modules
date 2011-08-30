@@ -10,6 +10,8 @@ net.nan21.dnet.module.ad.workflow.ds.ActProcessInstanceDs.prototype._trl_ = {
 	
 	,processFullName__lbl :"Process"
 	,reasonToKill__lbl :"Reason"
+	,from__lbl :"From"
+	,to__lbl :"To"
 }  
 	
  

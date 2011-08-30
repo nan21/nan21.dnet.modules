@@ -12,6 +12,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActDeploymentDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActDeploymentDsQueryBuilder" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActDeploymentDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -80,6 +81,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessInstanceHistory" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActProcessInstanceDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActProcessInstanceDsQueryBuilder" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActProcessInstanceDsConv" />
 	  	<property name="rpcData" >
 	  		<map>

@@ -106,6 +106,13 @@
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-engine</artifactId>
+			<version>5.6</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
 		 
 	</dependencies>
 	

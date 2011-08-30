@@ -19,7 +19,8 @@ net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI = Ext.extend( dnet.base.Abstr
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
 		})
-		.addPanel({ name:"_toc_",xtype: 'treepanel',collapsible: true, region:"west", title: 'Navigation',width: 250,autoScroll: true,split: true,rootVisible: false,loader: new Ext.tree.TreeLoader()
+		.addPanel({ name:"_toc_",xtype: 'treepanel', 
+			useArrows:true, lines:false,collapsible: true, region:"west", title: 'Navigation',width: 250,autoScroll: true,split: true,rootVisible: false,loader: new Ext.tree.TreeLoader()
 			,minWidth:150, maxWidth:500
 			,root: new Ext.tree.AsyncTreeNode({expanded: true,
             children: [{ text:"Customer groups", leaf: true , name:"canvas1"},{ text:"Vendor groups", leaf: true , name:"canvas2"},{ text:"Delivery methods", leaf: true , name:"canvas3"},{ text:"Payment methods", leaf: true , name:"canvas4"},{ text:"Payment terms", leaf: true , name:"canvas5"}]

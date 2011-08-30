@@ -16,6 +16,8 @@ Ext.ns("net.nan21.dnet.module.ad.workflow.ds.param");
 	net.nan21.dnet.module.ad.workflow.ds.param.ActProcessInstanceDsParam = [
 	{name:"processFullName",type:"string"}
 	,	{name:"reasonToKill",type:"string"}
+	,	{name:"from",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT}
+	,	{name:"to",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT}
 	
 	];
 Ext.ns("net.nan21.dnet.module.ad.workflow.ds");	
