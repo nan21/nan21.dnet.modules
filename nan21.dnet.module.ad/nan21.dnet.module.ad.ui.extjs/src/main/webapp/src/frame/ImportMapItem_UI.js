@@ -11,7 +11,7 @@ net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI = Ext.extend( dnet.base.Ab
 	,_defineElements_: function() {					
 		this._getBuilder_()	
 		.addButton({name:"btnRunImport",text:"Import selected", tooltip:"Import the selected file (one at a time).",iconCls:"icon-action-import",disabled:true
-			,handler: this.onBtnRunImport,scope:this,stateManager:{name:"record_status_is_edit", dc:"m" }	})	
+			,handler: this.onBtnRunImport,scope:this,stateManager:{name:"selected_one_clean", dc:"m" }	})	
 							 	
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$Filter"})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$EditList", frame:true,buttons:[ this._elems_.get("btnRunImport") ]})	 
