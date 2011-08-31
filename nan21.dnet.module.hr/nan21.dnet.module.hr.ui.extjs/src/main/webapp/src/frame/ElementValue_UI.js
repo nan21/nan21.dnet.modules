@@ -26,7 +26,7 @@ net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI = Ext.extend( dnet.base.A
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbExpvalList", {dc:"expval"}).addLoad().end(); 	
+			.beginToolbar("tlbExpvalList", {dc:"expval"}).addQuery().end(); 	
 	}
 
 });

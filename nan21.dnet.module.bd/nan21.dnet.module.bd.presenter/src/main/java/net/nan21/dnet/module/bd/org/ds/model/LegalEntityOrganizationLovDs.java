@@ -13,7 +13,7 @@ import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = Organization.class, jpqlWhere = " e.legalEntity = true ")
+@Ds(entity = Organization.class, jpqlWhere = " e.type.legalEntity = true ")
 public class LegalEntityOrganizationLovDs extends AbstractDsModel<Organization>
         implements IModelWithId, IModelWithClientId {
 
