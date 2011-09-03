@@ -32,6 +32,8 @@ Ext.ns("net.nan21.dnet.module.mm.md.ds.model");
 	,	{name:"manufacturerCode",type:"string"}
 	,	{name:"categoryId",type:"int"}
 	,	{name:"categoryName",type:"string"}
+	,	{name:"attributeGroupId",type:"int"}
+	,	{name:"attributeGroup",type:"string"}
 	,	{name:"className",type:"string"}
 	
 	];

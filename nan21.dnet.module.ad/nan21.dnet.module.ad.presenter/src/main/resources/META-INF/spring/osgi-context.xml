@@ -32,10 +32,16 @@
 			
 	<osgi:list id="osgiEntityServiceFactories" cardinality="1..N"
 		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />	
-		
+	
+	<osgi:list id="osgiDsServiceFactories" cardinality="0..N"
+		interface="net.nan21.dnet.core.api.service.IDsServiceFactory" />
+			
 	<osgi:list id="osgiAsgnTxServiceFactories" cardinality="1..N"
 		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />
 			
 	<osgi:reference id="osgiActivitiProcessEngine" cardinality="0..1"
 			interface="org.activiti.engine.ProcessEngine" /> 	
+			
+	<osgi:service ref="setupParticipant" ranking="1"
+		interface="net.nan21.dnet.core.api.setup.ISetupParticipant" />		
 </beans>

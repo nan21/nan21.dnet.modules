@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+   
+   
+	<!-- AttrGroupsOfAttribute -->
+ 	<bean id="AttrGroupsOfAttributeAsgnService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttributeAsgn" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup" />		 
+	  	<property name="leftTable" value="MM_PRODUCT_ATTR_GRP" />
+	  	<property name="rightTable" value="MM_PRODATTRGRP_ATTR" />
+	  	<property name="rightItemIdField" value="GROUPS_ID" />
+	  	<property name="rightObjectIdField" value="ATTRIBUTES_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.mm.business" /> 	  	  
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AttrGroupsOfAttribute" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttributeAsgn" />
+	</bean>
+   
+   
+   
+	<!-- AttributesOfAttrGroup -->
+ 	<bean id="AttributesOfAttrGroupAsgnService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.asgn.AttributesOfAttrGroupAsgn" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute" />		 
+	  	<property name="leftTable" value="MM_PRODUCT_ATTR" />
+	  	<property name="rightTable" value="MM_PRODATTRGRP_ATTR" />
+	  	<property name="rightItemIdField" value="ATTRIBUTES_ID" />
+	  	<property name="rightObjectIdField" value="GROUPS_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.mm.business" /> 	  	  
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AttributesOfAttrGroup" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.md.asgn.AttributesOfAttrGroupAsgn" />
+	</bean>
+       
+</beans>
+   

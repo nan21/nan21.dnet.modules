@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.mm.md.domain.entity;version="1.0
- .0.M1";uses:="javax.persistence,javax.validation.constraints,javax.xm
+ .0.M2";uses:="javax.persistence,javax.validation.constraints,javax.xm
  l.bind.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.module
  .bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,org.
  eclipse.persistence.annotations,org.eclipse.persistence.descriptors,o
@@ -9,11 +9,11 @@ Export-Package: net.nan21.dnet.module.mm.md.domain.entity;version="1.0
  ipse.persistence.internal.weaving,org.eclipse.persistence.queries,org
  .eclipse.persistence.sessions,org.hibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.4)",nan21.
- dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.ad.d
- omain;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.bd.domain;versi
- on="[1.0.0.M1,1.0.0.M1]"
+ dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.d
+ omain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bd.domain;versi
+ on="[1.0.0.M2,1.0.0.M2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M1
+Bundle-Version: 1.0.0.M2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet MM - domain
 Bundle-ManifestVersion: 2

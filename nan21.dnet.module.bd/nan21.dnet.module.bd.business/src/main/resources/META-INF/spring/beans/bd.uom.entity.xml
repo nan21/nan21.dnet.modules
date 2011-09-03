@@ -7,6 +7,9 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="UomTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.uom.business.serviceimpl.UomTypeService"  />  
+ 
  	<bean id="UomService" scope="prototype"
 	  		class="net.nan21.dnet.module.bd.uom.business.serviceimpl.UomService"  />  
  

@@ -17,7 +17,8 @@
 	  	<property name="leftTable" value="AD_ROLES" />
 	  	<property name="rightTable" value="AD_USERS_ROLES" />
 	  	<property name="rightItemIdField" value="ROLES_ID" />
-	  	<property name="rightObjectIdField" value="USERS_ID" /> 	 	  
+	  	<property name="rightObjectIdField" value="USERS_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserRoles" />
@@ -34,7 +35,8 @@
 	  	<property name="leftTable" value="AD_USERS" />
 	  	<property name="rightTable" value="AD_USERS_ROLES" />
 	  	<property name="rightItemIdField" value="USERS_ID" />
-	  	<property name="rightObjectIdField" value="ROLES_ID" /> 	 	  
+	  	<property name="rightObjectIdField" value="ROLES_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RolesOfUser" />
@@ -51,7 +53,8 @@
 	  	<property name="leftTable" value="AD_USER_GROUP" />
 	  	<property name="rightTable" value="AD_USRGROUP_USER" />
 	  	<property name="rightItemIdField" value="GROUPS_ID" />
-	  	<property name="rightObjectIdField" value="USERS_ID" /> 	 	  
+	  	<property name="rightObjectIdField" value="USERS_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserUserGroups" />
@@ -68,7 +71,8 @@
 	  	<property name="leftTable" value="AD_USERS" />
 	  	<property name="rightTable" value="AD_USRGROUP_USER" />
 	  	<property name="rightItemIdField" value="USERS_ID" />
-	  	<property name="rightObjectIdField" value="GROUPS_ID" /> 	 	  
+	  	<property name="rightObjectIdField" value="GROUPS_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserGroupUsers" />

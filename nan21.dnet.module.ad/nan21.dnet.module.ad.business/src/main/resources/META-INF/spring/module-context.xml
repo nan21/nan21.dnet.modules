@@ -73,11 +73,12 @@
 	
 	<bean id="jpaDialect"
 		class="org.springframework.orm.jpa.vendor.EclipseLinkJpaDialect" />
- 
+  
 	<bean id="baseAsgnTxService" scope="prototype"
 	  		class="net.nan21.dnet.core.business.service.BaseAsgnTxService"  />  
 
 	<bean id="asgnTxServiceFactory" class="net.nan21.dnet.core.business.service.AsgnTxServiceFactory">
+		<property name="name" value="nan21.dnet.module.ad.business" />
 	</bean>  		
 	
 	<!-- Transaction manager -->
@@ -110,7 +111,7 @@
 	 
 	<tx:advice id="txAdviceSetupParticipant" transaction-manager="transactionManager">
 		<tx:attributes>
-			<tx:method name="run" read-only="false" />					
+			<tx:method name="execute" read-only="false" />					
 		</tx:attributes>
 	</tx:advice>
 	

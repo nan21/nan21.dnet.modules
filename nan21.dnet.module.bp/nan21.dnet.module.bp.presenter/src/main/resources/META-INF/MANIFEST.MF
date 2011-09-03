@@ -1,41 +1,40 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.bp.base.ds.converter;version="1.
- 0.0.M1";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.
+ 0.0.M2";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.
  presenter.converter,net.nan21.dnet.module.bp.base.domain.entity,net.n
  an21.dnet.module.bp.base.ds.model",net.nan21.dnet.module.bp.base.ds.m
- odel;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.annotation,net
+ odel;version="1.0.0.M2";uses:="net.nan21.dnet.core.api.annotation,net
  .nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.model,net.na
  n21.dnet.module.bp.base.domain.entity",net.nan21.dnet.module.bp.calen
- dar.ds.converter;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.co
+ dar.ds.converter;version="1.0.0.M2";uses:="net.nan21.dnet.core.api.co
  nverter,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.module
  .bp.calendar.domain.entity,net.nan21.dnet.module.bp.calendar.ds.model
- ",net.nan21.dnet.module.bp.calendar.ds.model;version="1.0.0.M1";uses:
+ ",net.nan21.dnet.module.bp.calendar.ds.model;version="1.0.0.M2";uses:
  ="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.model,ne
  t.nan21.dnet.core.presenter.model,net.nan21.dnet.module.bp.calendar.d
- omain.entity",net.nan21.dnet.module.bp.calendar.ds.param;version="1.0
- .0.M1";uses:="net.nan21.dnet.core.presenter.model",net.nan21.dnet.mod
- ule.bp.calendar.ds.qb;version="1.0.0.M1";uses:="net.nan21.dnet.core.p
- resenter.action,net.nan21.dnet.module.bp.calendar.ds.model",net.nan21
- .dnet.module.bp.calendar.ds.service;version="1.0.0.M1";uses:="net.nan
- 21.dnet.core.api.service,net.nan21.dnet.core.presenter.service,net.na
- n21.dnet.module.bp.calendar.ds.model",net.nan21.dnet.module.bp.md.ds.
- converter;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.converter
- ,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.module.bp.md.
- domain.entity,net.nan21.dnet.module.bp.md.ds.model",net.nan21.dnet.mo
- dule.bp.md.ds.model;version="1.0.0.M1";uses:="net.nan21.dnet.core.api
- .annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.present
- er.model,net.nan21.dnet.module.bp.md.domain.entity"
-Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]",na
- n21.dnet.core.presenter;version="[1.0.0.M1,1.0.0.M1]",javax.persisten
+ omain.entity",net.nan21.dnet.module.bp.calendar.ds.qb;version="1.0.0.
+ M2";uses:="net.nan21.dnet.core.presenter.action,net.nan21.dnet.module
+ .bp.calendar.ds.model",net.nan21.dnet.module.bp.calendar.ds.service;v
+ ersion="1.0.0.M2";uses:="net.nan21.dnet.core.api.service,net.nan21.dn
+ et.core.presenter.service,net.nan21.dnet.module.bp.calendar.ds.model"
+ ,net.nan21.dnet.module.bp.md.ds.converter;version="1.0.0.M2";uses:="n
+ et.nan21.dnet.core.api.converter,net.nan21.dnet.core.presenter.conver
+ ter,net.nan21.dnet.module.bp.md.domain.entity,net.nan21.dnet.module.b
+ p.md.ds.model",net.nan21.dnet.module.bp.md.ds.model;version="1.0.0.M2
+ ";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.m
+ odel,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.bp.md.
+ domain.entity"
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",na
+ n21.dnet.core.presenter;version="[1.0.0.M2,1.0.0.M2]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.4)
  ",org.eclipse.persistence.core;version="[2.0,2.4)",nan21.dnet.module.
- bp.domain;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.ad.domain;v
- ersion="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.bd.domain;version="[1.
- 0.0.M1,1.0.0.M1]",nan21.dnet.module.bp.business;version="[1.0.0.M1,1.
- 0.0.M1]",nan21.dnet.module.ad.business;version="[1.0.0.M1,1.0.0.M1]",
- nan21.dnet.module.bd.business;version="[1.0.0.M1,1.0.0.M1]"
+ bp.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.domain;v
+ ersion="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bd.domain;version="[1.
+ 0.0.M2,1.0.0.M2]",nan21.dnet.module.bp.business;version="[1.0.0.M2,1.
+ 0.0.M2]",nan21.dnet.module.ad.business;version="[1.0.0.M2,1.0.0.M2]",
+ nan21.dnet.module.bd.business;version="[1.0.0.M2,1.0.0.M2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M1
+Bundle-Version: 1.0.0.M2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet BP - presenter
 Bundle-ManifestVersion: 2

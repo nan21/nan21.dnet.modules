@@ -31,8 +31,7 @@ public class SysDataSourceDelegate extends BaseDsDelegate<SysDataSourceDs, Empty
 				SysDataSource e = new SysDataSource();
 				e.setName(def.getName());
 				e.setModel(def.getModelClass().getCanonicalName());
-				e.setController(def.getModelClass().getCanonicalName());
-				
+				  
 				Field[] fields = def.getModelClass().getDeclaredFields();
 				for(Field field:fields) {
 	                if ( ! Modifier.isStatic(field.getModifiers())  ) {

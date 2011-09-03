@@ -15,8 +15,6 @@ public interface ISysDataSourceService extends IEntityService<SysDataSource> {
 
     public SysDataSource findByName(Long clientId, String name);
 
-    public SysDataSource findByCtrl(Long clientId, String controller);
-
     public SysDataSource findByModel(Long clientId, String model);
 
     public List<SysDataSource> findByFields(SysDsField fields);

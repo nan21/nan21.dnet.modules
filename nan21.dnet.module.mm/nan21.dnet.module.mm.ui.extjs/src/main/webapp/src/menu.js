@@ -8,6 +8,8 @@ net.nan21.dnet.module.mm.menu.crm = [
  
 	{"id":"sm_mm_base", "text":"Definitions", leaf:false, children:[
 		
+		{id:"ProductAttributeDefs_UI", text:Dnet.translate("ui","ProductAttributeDefs_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI", _bundle_:BUNDLE_ID},		
+		{id:"ProductAttachmentType_UI", text:Dnet.translate("ui","ProductAttachmentType_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAttachmentType_UI", _bundle_:BUNDLE_ID},		
 		{id:"ProductAccountGroup_UI", text:Dnet.translate("ui","ProductAccountGroup_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAccountGroup_UI", _bundle_:BUNDLE_ID},		
 		{id:"ProductManufacturer_UI", text:Dnet.translate("ui","ProductManufacturer_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductManufacturer_UI", _bundle_:BUNDLE_ID}	]}
 ,		

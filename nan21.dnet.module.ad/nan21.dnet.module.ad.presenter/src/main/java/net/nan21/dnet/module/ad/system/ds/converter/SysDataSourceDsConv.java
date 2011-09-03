@@ -22,7 +22,6 @@ public class SysDataSourceDsConv extends
         e.setDescription(ds.getDescription());
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
-        e.setController(ds.getController());
         e.setModel(ds.getModel());
     }
 
@@ -43,7 +42,6 @@ public class SysDataSourceDsConv extends
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
-        ds.setController(e.getController());
         ds.setModel(e.getModel());
     }
 

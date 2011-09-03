@@ -33,6 +33,7 @@ import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -144,6 +145,7 @@ public class WfDefNode implements Serializable, IModelWithId,
     private WfDefProcess process;
 
     @OneToMany(fetch = FetchType.LAZY, targetEntity = WfDefNodeField.class, mappedBy = "node", cascade = CascadeType.ALL)
+    @CascadeOnDelete
     private Collection<WfDefNodeField> fields;
 
     /* ============== getters - setters ================== */

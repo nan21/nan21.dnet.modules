@@ -19,6 +19,7 @@
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Location</class>
 		
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
+		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>
 		
 				

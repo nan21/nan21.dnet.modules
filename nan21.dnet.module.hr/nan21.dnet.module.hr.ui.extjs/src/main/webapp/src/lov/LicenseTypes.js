@@ -13,7 +13,7 @@ net.nan21.dnet.module.hr.employee.lovs.LicenseTypes = Ext.extend( dnet.base.Abst
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.hr.employee.ds.model.LicenseTypeLovDs		
 				,_dataProviderName_:"LicenseTypeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.employee.frame.LicenseType_UI",bundle:"nan21.dnet.module.hr.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI",bundle:"nan21.dnet.module.hr.ui.extjs"}
 			}
 		); 		 
 		this._createStore_(); 

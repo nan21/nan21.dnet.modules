@@ -48,6 +48,8 @@ public class ProductDs extends AbstractDsModel<Product> implements
     public static final String fMANUFACTURERCODE = "manufacturerCode";
     public static final String fCATEGORYID = "categoryId";
     public static final String fCATEGORYNAME = "categoryName";
+    public static final String fATTRIBUTEGROUPID = "attributeGroupId";
+    public static final String fATTRIBUTEGROUP = "attributeGroup";
     public static final String fCLASSNAME = "className";
 
     @DsField()
@@ -139,6 +141,12 @@ public class ProductDs extends AbstractDsModel<Product> implements
 
     @DsField(join = "left", path = "category.name")
     private String categoryName;
+
+    @DsField(join = "left", path = "attributeGroup.id")
+    private Long attributeGroupId;
+
+    @DsField(join = "left", path = "attributeGroup.name")
+    private String attributeGroup;
 
     @DsField(fetch = false)
     private String className;
@@ -390,6 +398,22 @@ public class ProductDs extends AbstractDsModel<Product> implements
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
+    }
+
+    public Long getAttributeGroupId() {
+        return this.attributeGroupId;
+    }
+
+    public void setAttributeGroupId(Long attributeGroupId) {
+        this.attributeGroupId = attributeGroupId;
+    }
+
+    public String getAttributeGroup() {
+        return this.attributeGroup;
+    }
+
+    public void setAttributeGroup(String attributeGroup) {
+        this.attributeGroup = attributeGroup;
     }
 
     public String getClassName() {

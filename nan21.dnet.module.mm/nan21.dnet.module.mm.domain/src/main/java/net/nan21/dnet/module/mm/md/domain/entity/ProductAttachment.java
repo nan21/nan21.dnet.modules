@@ -28,6 +28,7 @@ import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
+import net.nan21.dnet.module.mm.md.domain.entity.ProductAttachmentType;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -56,15 +57,14 @@ public class ProductAttachment implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_IDS = "ProductAttachment.findByIds";
 
-    /** Type. */
-    @Column(name = "TYPE", nullable = false)
-    @NotBlank
-    private String type;
-
     /** Name. */
     @Column(name = "NAME", nullable = false)
     @NotBlank
     private String name;
+
+    /** Location. */
+    @Column(name = "LOCATION")
+    private String location;
 
     /** Notes. */
     @Column(name = "NOTES")
@@ -114,15 +114,11 @@ public class ProductAttachment implements Serializable, IModelWithId,
     @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
     private Product product;
 
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAttachmentType.class)
+    @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
+    private ProductAttachmentType type;
+
     /* ============== getters - setters ================== */
-
-    public String getType() {
-        return this.type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public String getName() {
         return this.name;
@@ -130,6 +126,14 @@ public class ProductAttachment implements Serializable, IModelWithId,
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getNotes() {
@@ -211,6 +215,14 @@ public class ProductAttachment implements Serializable, IModelWithId,
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public ProductAttachmentType getType() {
+        return this.type;
+    }
+
+    public void setType(ProductAttachmentType type) {
+        this.type = type;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

@@ -19,6 +19,8 @@ net.nan21.dnet.module.mm.md.ds.ProductDs.prototype._trl_ = {
 	,manufacturerCode__lbl : "Manufacturer"
 	,categoryId__lbl : "Category Id"
 	,categoryName__lbl : "Category"
+	,attributeGroupId__lbl : "Attribute Group Id"
+	,attributeGroup__lbl : "Attribute Group"
 	,className__lbl : "Class Name"
 	
 }  

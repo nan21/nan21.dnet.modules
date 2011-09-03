@@ -33,5 +33,5 @@
 	<import resource="beans/hr.payroll.ds.xml"/>
 	<import resource="beans/hr.skill.ds.xml"/>
 	<import resource="beans/hr.training.ds.xml"/>
-	 
+	<import resource="beans/hr.time.ds.xml"/> 
 </beans>

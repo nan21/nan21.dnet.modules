@@ -33,6 +33,9 @@
  
  	<bean id="EmployeeContactRelationshipService" scope="prototype"
 	  		class="net.nan21.dnet.module.hr.employee.business.serviceimpl.EmployeeContactRelationshipService"  />  
+ 
+ 	<bean id="EmploymentTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.business.serviceimpl.EmploymentTypeService"  />  
    
 </beans>
    

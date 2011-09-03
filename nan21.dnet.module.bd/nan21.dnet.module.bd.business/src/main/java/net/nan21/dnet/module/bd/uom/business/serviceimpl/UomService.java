@@ -5,8 +5,10 @@
  */
 package net.nan21.dnet.module.bd.uom.business.serviceimpl;
 
+import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.business.service.IUomService;
+import net.nan21.dnet.module.bd.uom.domain.entity.UomType;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
@@ -38,6 +40,17 @@ public class UomService extends AbstractEntityService<Uom> implements
         return (Uom) this.em.createNamedQuery(Uom.NQ_FIND_BY_NAME)
                 .setParameter("pClientId", clientId)
                 .setParameter("pName", name).getSingleResult();
+    }
+
+    public List<Uom> findByType(UomType type) {
+        return this.findByTypeId(type.getId());
+    }
+
+    public List<Uom> findByTypeId(Long typeId) {
+        return (List<Uom>) this.em
+                .createQuery("select e from Uom e where e.type.id = :pTypeId",
+                        Uom.class).setParameter("pTypeId", typeId)
+                .getResultList();
     }
 
 }

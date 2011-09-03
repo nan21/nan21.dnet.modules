@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="AbsenceCategoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceCategory" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.time.ds.converter.AbsenceCategoryDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbsenceCategory" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryDs" />
+	</bean>
+   
+ 	<bean id="AbsenceCategoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceCategory" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.time.ds.converter.AbsenceCategoryLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbsenceCategoryLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryLovDs" />
+	</bean>
+   
+ 	<bean id="AbsenceTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.time.ds.converter.AbsenceTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbsenceType" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceTypeDs" />
+	</bean>
+   
+ 	<bean id="AbsenceTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.time.ds.converter.AbsenceTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbsenceTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceTypeLovDs" />
+	</bean>
+   
+ 	<bean id="AbsenceReasonDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceReason" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.time.ds.converter.AbsenceReasonDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbsenceReason" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonDs" />
+	</bean>
+   
+ 	<bean id="AbsenceReasonLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceReason" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.time.ds.converter.AbsenceReasonLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbsenceReasonLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonLovDs" />
+	</bean>
+      
+</beans>
+   

@@ -11,7 +11,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ux.example.domain.entity.LandFormType" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ux.example.ds.converter.LandFormTypeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -23,7 +22,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ux.example.domain.entity.LandFormType" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ux.example.ds.converter.LandFormTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -35,7 +33,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ux.example.domain.entity.LandForm" />
-	  	<property name="paramClass" value="net.nan21.dnet.core.presenter.model.EmptyParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ux.example.ds.converter.LandFormDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

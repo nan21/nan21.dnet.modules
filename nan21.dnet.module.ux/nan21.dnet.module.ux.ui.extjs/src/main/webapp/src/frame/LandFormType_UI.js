@@ -10,7 +10,7 @@ net.nan21.dnet.module.ux.example.frame.LandFormType_UI = Ext.extend( dnet.base.A
 
 	,_defineElements_: function() {					
 		this._getBuilder_()	
-		.addDcView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.ux.example.dc.LandFormType$Filter"})	 
+		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.ux.example.dc.LandFormType$Filter"})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.ux.example.dc.LandFormType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 

@@ -30,6 +30,7 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -42,15 +43,12 @@ import org.hibernate.validator.constraints.NotBlank;
         @UniqueConstraint(name = "AD_SYSDATASOURCE_UK1", columnNames = {
                 "CLIENTID", "NAME" }),
         @UniqueConstraint(name = "AD_SYSDATASOURCE_UK2", columnNames = {
-                "CLIENTID", "CONTROLLER" }),
-        @UniqueConstraint(name = "AD_SYSDATASOURCE_UK3", columnNames = {
                 "CLIENTID", "MODEL" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "SysDataSource.findById", query = "SELECT e FROM SysDataSource e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "SysDataSource.findByIds", query = "SELECT e FROM SysDataSource e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "SysDataSource.findByName", query = "SELECT e FROM SysDataSource e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SysDataSource.findByCtrl", query = "SELECT e FROM SysDataSource e WHERE e.clientId = :pClientId and  e.controller = :pController ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "SysDataSource.findByModel", query = "SELECT e FROM SysDataSource e WHERE e.clientId = :pClientId and  e.model = :pModel ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysDataSource implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -73,19 +71,9 @@ public class SysDataSource implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_NAME = "SysDataSource.findByName";
 
     /**
-     * Named query find by unique key: Ctrl.
-     */
-    public static final String NQ_FIND_BY_CTRL = "SysDataSource.findByCtrl";
-
-    /**
      * Named query find by unique key: Model.
      */
     public static final String NQ_FIND_BY_MODEL = "SysDataSource.findByModel";
-
-    /** Controller. */
-    @Column(name = "CONTROLLER", nullable = false)
-    @NotBlank
-    private String controller;
 
     /** Model. */
     @Column(name = "MODEL", nullable = false)
@@ -147,17 +135,10 @@ public class SysDataSource implements Serializable, IModelWithId,
     private Long id;
 
     @OneToMany(fetch = FetchType.LAZY, targetEntity = SysDsField.class, mappedBy = "dataSource", cascade = CascadeType.ALL)
+    @CascadeOnDelete
     private Collection<SysDsField> fields;
 
     /* ============== getters - setters ================== */
-
-    public String getController() {
-        return this.controller;
-    }
-
-    public void setController(String controller) {
-        this.controller = controller;
-    }
 
     public String getModel() {
         return this.model;

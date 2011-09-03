@@ -28,13 +28,11 @@ net.nan21.dnet.module.hr.menu.hr = [
  ,		 
 	{"id":"sm_hr_base_employee", "text":"Employees", leaf:false, children:[
 		
-		{id:"EducationType_UI", text:Dnet.translate("ui","EducationType_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.employee.frame.EducationType_UI", _bundle_:BUNDLE_ID},		
-		{id:"EmployeeContactRelationship_UI", text:Dnet.translate("ui","EmployeeContactRelationship_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.employee.frame.EmployeeContactRelationship_UI", _bundle_:BUNDLE_ID},		
+		{id:"EmployeeTypeDefs_UI", text:Dnet.translate("ui","EmployeeTypeDefs_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI", _bundle_:BUNDLE_ID},		
 		{id:"Employee_UI", text:Dnet.translate("ui","Employee_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.employee.frame.Employee_UI", _bundle_:BUNDLE_ID}	]}
  ,		 
 	{"id":"sm_hr_base_payroll", "text":"Payroll", leaf:false, children:[
 		
-		{id:"LicenseType_UI", text:Dnet.translate("ui","LicenseType_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.employee.frame.LicenseType_UI", _bundle_:BUNDLE_ID},		
 		{id:"ElementType_UI", text:Dnet.translate("ui","ElementType_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.payroll.frame.ElementType_UI", _bundle_:BUNDLE_ID},		
 		{id:"Element_UI", text:Dnet.translate("ui","Element_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.payroll.frame.Element_UI", _bundle_:BUNDLE_ID},		
 		{id:"Payroll_UI", text:Dnet.translate("ui","Payroll_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.payroll.frame.Payroll_UI", _bundle_:BUNDLE_ID},		
@@ -44,6 +42,10 @@ net.nan21.dnet.module.hr.menu.hr = [
 		
 		{id:"CourseType_UI", text:Dnet.translate("ui","CourseType_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.training.frame.CourseType_UI", _bundle_:BUNDLE_ID},		
 		{id:"Course_UI", text:Dnet.translate("ui","Course_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.training.frame.Course_UI", _bundle_:BUNDLE_ID}	]}
+ ,		 
+	{"id":"sm_hr_base_time", "text":"Time management", leaf:false, children:[
+		
+		{id:"AbsenceBaseData_UI", text:Dnet.translate("ui","AbsenceBaseData_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI", _bundle_:BUNDLE_ID}	]}
  
    ];  
 if (Dnet.navigationTreeMenus.hr == undefined) {

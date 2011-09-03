@@ -30,6 +30,11 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.hr.employee.domain.entity.EmploymentType;
+import net.nan21.dnet.module.hr.grade.domain.entity.Grade;
+import net.nan21.dnet.module.hr.job.domain.entity.Job;
+import net.nan21.dnet.module.hr.job.domain.entity.Position;
+import net.nan21.dnet.module.hr.payroll.domain.entity.Payroll;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -141,6 +146,15 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     @Column(name = "CURRENTHIREDATE")
     private Date currentHireDate;
 
+    /** AssignToPosition. */
+    @Column(name = "ASSIGNTOPOSITION", nullable = false)
+    @NotNull
+    private Boolean assignToPosition;
+
+    /** BaseSalary. */
+    @Column(name = "BASESALARY", precision = 2)
+    private Float baseSalary;
+
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
     @NotNull
@@ -188,6 +202,30 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
     @JoinColumn(name = "CITIZENSHIP_ID", referencedColumnName = "ID")
     private Country citizenship;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = EmploymentType.class)
+    @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
+    private EmploymentType type;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Position.class)
+    @JoinColumn(name = "POSITION_ID", referencedColumnName = "ID")
+    private Position position;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Job.class)
+    @JoinColumn(name = "JOB_ID", referencedColumnName = "ID")
+    private Job job;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
+    @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")
+    private Organization organization;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Grade.class)
+    @JoinColumn(name = "GRADE_ID", referencedColumnName = "ID")
+    private Grade grade;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Payroll.class)
+    @JoinColumn(name = "PAYROLL_ID", referencedColumnName = "ID")
+    private Payroll payroll;
 
     /* ============== getters - setters ================== */
 
@@ -353,6 +391,22 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
         this.currentHireDate = currentHireDate;
     }
 
+    public Boolean getAssignToPosition() {
+        return this.assignToPosition;
+    }
+
+    public void setAssignToPosition(Boolean assignToPosition) {
+        this.assignToPosition = assignToPosition;
+    }
+
+    public Float getBaseSalary() {
+        return this.baseSalary;
+    }
+
+    public void setBaseSalary(Float baseSalary) {
+        this.baseSalary = baseSalary;
+    }
+
     public Long getClientId() {
         return this.clientId;
     }
@@ -434,6 +488,54 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
         this.citizenship = citizenship;
     }
 
+    public EmploymentType getType() {
+        return this.type;
+    }
+
+    public void setType(EmploymentType type) {
+        this.type = type;
+    }
+
+    public Position getPosition() {
+        return this.position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public Job getJob() {
+        return this.job;
+    }
+
+    public void setJob(Job job) {
+        this.job = job;
+    }
+
+    public Organization getOrganization() {
+        return this.organization;
+    }
+
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
+    }
+
+    public Grade getGrade() {
+        return this.grade;
+    }
+
+    public void setGrade(Grade grade) {
+        this.grade = grade;
+    }
+
+    public Payroll getPayroll() {
+        return this.payroll;
+    }
+
+    public void setPayroll(Payroll payroll) {
+        this.payroll = payroll;
+    }
+
     public void aboutToInsert(DescriptorEvent event) {
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
@@ -445,6 +547,9 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
                 .getClientId());
         if (this.hasDisability == null) {
             event.updateAttributeWithObject("hasDisability", false);
+        }
+        if (this.assignToPosition == null) {
+            event.updateAttributeWithObject("assignToPosition", false);
         }
     }
 

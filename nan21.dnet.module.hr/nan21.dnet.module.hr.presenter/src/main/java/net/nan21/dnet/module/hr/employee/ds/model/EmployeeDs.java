@@ -44,6 +44,24 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
     public static final String fCITIZENSHIPCODE = "citizenshipCode";
     public static final String fPASSPORTNO = "passportNo";
     public static final String fCLASSNAME = "className";
+    public static final String fTYPEID = "typeId";
+    public static final String fTYPE = "type";
+    public static final String fASSIGNTOPOSITION = "assignToPosition";
+    public static final String fGRADEID = "gradeId";
+    public static final String fGRADECODE = "gradeCode";
+    public static final String fJOBID = "jobId";
+    public static final String fJOBCODE = "jobCode";
+    public static final String fJOBNAME = "jobName";
+    public static final String fPOSITIONID = "positionId";
+    public static final String fPOSITIONCODE = "positionCode";
+    public static final String fPOSITIONNAME = "positionName";
+    public static final String fPOSORGID = "posOrgId";
+    public static final String fPOSORGCODE = "posOrgCode";
+    public static final String fORGANIZATIONID = "organizationId";
+    public static final String fORGANIZATIONCODE = "organizationCode";
+    public static final String fBASESALARY = "baseSalary";
+    public static final String fPAYROLLID = "payrollId";
+    public static final String fPAYROLL = "payroll";
 
     @DsField()
     private Long id;
@@ -122,6 +140,60 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
 
     @DsField(fetch = false)
     private String className;
+
+    @DsField(join = "left", path = "type.id")
+    private Long typeId;
+
+    @DsField(join = "left", path = "type.name")
+    private String type;
+
+    @DsField()
+    private Boolean assignToPosition;
+
+    @DsField(join = "left", path = "grade.id")
+    private Long gradeId;
+
+    @DsField(join = "left", path = "grade.code")
+    private String gradeCode;
+
+    @DsField(join = "left", path = "job.id")
+    private Long jobId;
+
+    @DsField(join = "left", path = "job.code")
+    private String jobCode;
+
+    @DsField(join = "left", path = "job.name")
+    private String jobName;
+
+    @DsField(join = "left", path = "position.id")
+    private Long positionId;
+
+    @DsField(join = "left", path = "position.code")
+    private String positionCode;
+
+    @DsField(join = "left", path = "position.name")
+    private String positionName;
+
+    @DsField(join = "left", path = "position.organization.id")
+    private Long posOrgId;
+
+    @DsField(join = "left", path = "position.organization.code")
+    private String posOrgCode;
+
+    @DsField(join = "left", path = "organization.id")
+    private Long organizationId;
+
+    @DsField(join = "left", path = "organization.code")
+    private String organizationCode;
+
+    @DsField()
+    private Float baseSalary;
+
+    @DsField(join = "left", path = "payroll.id")
+    private Long payrollId;
+
+    @DsField(join = "left", path = "payroll.name")
+    private String payroll;
 
     public EmployeeDs() {
         super();
@@ -338,6 +410,150 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
 
     public void setClassName(String className) {
         this.className = className;
+    }
+
+    public Long getTypeId() {
+        return this.typeId;
+    }
+
+    public void setTypeId(Long typeId) {
+        this.typeId = typeId;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Boolean getAssignToPosition() {
+        return this.assignToPosition;
+    }
+
+    public void setAssignToPosition(Boolean assignToPosition) {
+        this.assignToPosition = assignToPosition;
+    }
+
+    public Long getGradeId() {
+        return this.gradeId;
+    }
+
+    public void setGradeId(Long gradeId) {
+        this.gradeId = gradeId;
+    }
+
+    public String getGradeCode() {
+        return this.gradeCode;
+    }
+
+    public void setGradeCode(String gradeCode) {
+        this.gradeCode = gradeCode;
+    }
+
+    public Long getJobId() {
+        return this.jobId;
+    }
+
+    public void setJobId(Long jobId) {
+        this.jobId = jobId;
+    }
+
+    public String getJobCode() {
+        return this.jobCode;
+    }
+
+    public void setJobCode(String jobCode) {
+        this.jobCode = jobCode;
+    }
+
+    public String getJobName() {
+        return this.jobName;
+    }
+
+    public void setJobName(String jobName) {
+        this.jobName = jobName;
+    }
+
+    public Long getPositionId() {
+        return this.positionId;
+    }
+
+    public void setPositionId(Long positionId) {
+        this.positionId = positionId;
+    }
+
+    public String getPositionCode() {
+        return this.positionCode;
+    }
+
+    public void setPositionCode(String positionCode) {
+        this.positionCode = positionCode;
+    }
+
+    public String getPositionName() {
+        return this.positionName;
+    }
+
+    public void setPositionName(String positionName) {
+        this.positionName = positionName;
+    }
+
+    public Long getPosOrgId() {
+        return this.posOrgId;
+    }
+
+    public void setPosOrgId(Long posOrgId) {
+        this.posOrgId = posOrgId;
+    }
+
+    public String getPosOrgCode() {
+        return this.posOrgCode;
+    }
+
+    public void setPosOrgCode(String posOrgCode) {
+        this.posOrgCode = posOrgCode;
+    }
+
+    public Long getOrganizationId() {
+        return this.organizationId;
+    }
+
+    public void setOrganizationId(Long organizationId) {
+        this.organizationId = organizationId;
+    }
+
+    public String getOrganizationCode() {
+        return this.organizationCode;
+    }
+
+    public void setOrganizationCode(String organizationCode) {
+        this.organizationCode = organizationCode;
+    }
+
+    public Float getBaseSalary() {
+        return this.baseSalary;
+    }
+
+    public void setBaseSalary(Float baseSalary) {
+        this.baseSalary = baseSalary;
+    }
+
+    public Long getPayrollId() {
+        return this.payrollId;
+    }
+
+    public void setPayrollId(Long payrollId) {
+        this.payrollId = payrollId;
+    }
+
+    public String getPayroll() {
+        return this.payroll;
+    }
+
+    public void setPayroll(String payroll) {
+        this.payroll = payroll;
     }
 
 }

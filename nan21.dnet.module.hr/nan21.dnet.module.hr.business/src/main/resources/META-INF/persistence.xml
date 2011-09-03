@@ -15,7 +15,8 @@
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EducationType</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.LicenseType</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContactRelationship</class>
-		
+		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmploymentType</class>
+				
 		<class>net.nan21.dnet.module.hr.grade.domain.entity.Grade</class>
 		<class>net.nan21.dnet.module.hr.grade.domain.entity.GradeRate</class>
 		<class>net.nan21.dnet.module.hr.grade.domain.entity.GradeRateValue</class>

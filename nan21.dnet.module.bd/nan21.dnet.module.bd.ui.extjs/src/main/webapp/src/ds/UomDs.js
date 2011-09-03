@@ -13,6 +13,8 @@ Ext.ns("net.nan21.dnet.module.bd.uom.ds.model");
 	,	{name:"createdBy",type:"string"}
 	,	{name:"modifiedBy",type:"string"}
 	,	{name:"version",type:"int"}
+	,	{name:"typeId",type:"int"}
+	,	{name:"type",type:"string"}
 	
 	];
 Ext.ns("net.nan21.dnet.module.bd.uom.ds.param");	

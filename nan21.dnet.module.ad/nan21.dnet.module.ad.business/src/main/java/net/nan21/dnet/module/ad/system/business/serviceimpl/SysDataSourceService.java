@@ -37,13 +37,6 @@ public class SysDataSourceService extends AbstractEntityService<SysDataSource>
                 .setParameter("pName", name).getSingleResult();
     }
 
-    public SysDataSource findByCtrl(Long clientId, String controller) {
-        return (SysDataSource) this.em
-                .createNamedQuery(SysDataSource.NQ_FIND_BY_CTRL)
-                .setParameter("pClientId", clientId)
-                .setParameter("pController", controller).getSingleResult();
-    }
-
     public SysDataSource findByModel(Long clientId, String model) {
         return (SysDataSource) this.em
                 .createNamedQuery(SysDataSource.NQ_FIND_BY_MODEL)

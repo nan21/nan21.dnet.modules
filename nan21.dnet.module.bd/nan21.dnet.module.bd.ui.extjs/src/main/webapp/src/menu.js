@@ -8,6 +8,7 @@ net.nan21.dnet.module.bd.menu.ad = [
  
 	{"id":"sm_bd_uom", "text":"Measuring units", leaf:false, children:[
 		
+		{id:"UomType_UI", text:Dnet.translate("ui","UomType_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bd.uom.frame.UomType_UI", _bundle_:BUNDLE_ID},		
 		{id:"Uoms", text:Dnet.translate("ui","Uoms_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bd.uom.frame.Uoms_UI", _bundle_:BUNDLE_ID},		
 		{id:"UomMD_UI", text:Dnet.translate("ui","UomMD_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bd.uom.frame.UomMD_UI", _bundle_:BUNDLE_ID},		
 		{id:"UomConversion_UI", text:Dnet.translate("ui","UomConversion_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bd.uom.frame.UomConversion_UI", _bundle_:BUNDLE_ID}	]}

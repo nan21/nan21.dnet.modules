@@ -30,6 +30,7 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -120,6 +121,7 @@ public class ImportJob implements Serializable, IModelWithId,
     private Long id;
 
     @OneToMany(fetch = FetchType.LAZY, targetEntity = ImportJobItem.class, mappedBy = "job", cascade = CascadeType.ALL)
+    @CascadeOnDelete
     private Collection<ImportJobItem> items;
 
     /* ============== getters - setters ================== */

@@ -18,7 +18,8 @@
 		this.rightTable = "BD_ORG_HIERARCHY_ITEM";
         this.saveAsSqlInsert = false;
 	  	<property name="rightItemIdField" value="ORGANIZATION_ID" />
-	  	<property name="rightObjectIdField" value="HIERARCHY_ID" /> 	 	  
+	  	<property name="rightObjectIdField" value="HIERARCHY_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.bd.business" /> 	  	  
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OrganizationHierarchyItems" />

@@ -6,7 +6,10 @@
 package net.nan21.dnet.module.mm.md.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,6 +19,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -29,8 +33,10 @@ import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
+import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -184,6 +190,14 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductCategory.class)
     @JoinColumn(name = "CATEGORY_ID", referencedColumnName = "ID")
     private ProductCategory category;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAttributeGroup.class)
+    @JoinColumn(name = "ATTRIBUTEGROUP_ID", referencedColumnName = "ID")
+    private ProductAttributeGroup attributeGroup;
+
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = ProductAttributeValue.class, mappedBy = "product", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<ProductAttributeValue> attributes;
 
     /* ============== getters - setters ================== */
 
@@ -386,6 +400,30 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setCategory(ProductCategory category) {
         this.category = category;
+    }
+
+    public ProductAttributeGroup getAttributeGroup() {
+        return this.attributeGroup;
+    }
+
+    public void setAttributeGroup(ProductAttributeGroup attributeGroup) {
+        this.attributeGroup = attributeGroup;
+    }
+
+    public Collection<ProductAttributeValue> getAttributes() {
+        return this.attributes;
+    }
+
+    public void setAttributes(Collection<ProductAttributeValue> attributes) {
+        this.attributes = attributes;
+    }
+
+    public void addToAttributes(ProductAttributeValue e) {
+        if (this.attributes == null) {
+            this.attributes = new ArrayList<ProductAttributeValue>();
+        }
+        e.setProduct(this);
+        this.attributes.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

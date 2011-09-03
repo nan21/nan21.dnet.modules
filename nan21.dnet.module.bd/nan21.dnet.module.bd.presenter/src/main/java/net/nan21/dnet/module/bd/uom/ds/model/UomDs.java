@@ -29,6 +29,8 @@ public class UomDs extends AbstractDsModel<Uom> implements IModelWithId,
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fTYPEID = "typeId";
+    public static final String fTYPE = "type";
 
     @DsField()
     private String name;
@@ -62,6 +64,12 @@ public class UomDs extends AbstractDsModel<Uom> implements IModelWithId,
 
     @DsField()
     private Long version;
+
+    @DsField(join = "left", path = "type.id")
+    private Long typeId;
+
+    @DsField(join = "left", path = "type.name")
+    private String type;
 
     public UomDs() {
         super();
@@ -158,6 +166,22 @@ public class UomDs extends AbstractDsModel<Uom> implements IModelWithId,
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public Long getTypeId() {
+        return this.typeId;
+    }
+
+    public void setTypeId(Long typeId) {
+        this.typeId = typeId;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
 }

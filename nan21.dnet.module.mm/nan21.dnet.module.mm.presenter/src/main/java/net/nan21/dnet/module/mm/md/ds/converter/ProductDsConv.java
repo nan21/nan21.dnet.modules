@@ -8,8 +8,10 @@ package net.nan21.dnet.module.mm.md.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.uom.business.service.IUomService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
+import net.nan21.dnet.module.mm.md.business.service.IProductAttributeGroupService;
 import net.nan21.dnet.module.mm.md.business.service.IProductCategoryService;
 import net.nan21.dnet.module.mm.md.business.service.IProductManufacturerService;
+import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer;
 
@@ -95,6 +97,17 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
             }
         } else {
             this.lookup_weightUom_Uom(ds, e);
+        }
+        if (ds.getAttributeGroupId() != null) {
+            if (e.getAttributeGroup() == null
+                    || !e.getAttributeGroup().getId()
+                            .equals(ds.getAttributeGroupId())) {
+                e.setAttributeGroup((ProductAttributeGroup) this.em
+                        .getReference(ProductAttributeGroup.class,
+                                ds.getAttributeGroupId()));
+            }
+        } else {
+            this.lookup_attributeGroup_ProductAttributeGroup(ds, e);
         }
     }
 
@@ -193,6 +206,22 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         }
     }
 
+    protected void lookup_attributeGroup_ProductAttributeGroup(ProductDs ds,
+            Product e) throws Exception {
+        if (ds.getAttributeGroup() != null) {
+            ProductAttributeGroup x = null;
+            try {
+                x = ((IProductAttributeGroupService) getService(IProductAttributeGroupService.class))
+                        .findByName(ds.getClientId(), ds.getAttributeGroup());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ProductAttributeGroup` reference:  `attributeGroup` = "
+                                + ds.getAttributeGroup() + "  ");
+            }
+            e.setAttributeGroup(x);
+        }
+    }
+
     @Override
     public void entityToModel(Product e, ProductDs ds) throws Exception {
         ds.setName(e.getName());
@@ -237,6 +266,10 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                 : null);
         ds.setCategoryName(((e.getCategory() != null)) ? e.getCategory()
                 .getName() : null);
+        ds.setAttributeGroupId(((e.getAttributeGroup() != null)) ? e
+                .getAttributeGroup().getId() : null);
+        ds.setAttributeGroup(((e.getAttributeGroup() != null)) ? e
+                .getAttributeGroup().getName() : null);
     }
 
 }

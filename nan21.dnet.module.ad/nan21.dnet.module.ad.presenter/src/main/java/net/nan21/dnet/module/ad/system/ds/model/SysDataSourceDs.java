@@ -28,7 +28,6 @@ public class SysDataSourceDs extends AbstractDsModel<SysDataSource> implements
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
-    public static final String fCONTROLLER = "controller";
     public static final String fMODEL = "model";
 
     @DsField()
@@ -60,9 +59,6 @@ public class SysDataSourceDs extends AbstractDsModel<SysDataSource> implements
 
     @DsField()
     private Long version;
-
-    @DsField()
-    private String controller;
 
     @DsField()
     private String model;
@@ -154,14 +150,6 @@ public class SysDataSourceDs extends AbstractDsModel<SysDataSource> implements
 
     public void setVersion(Long version) {
         this.version = version;
-    }
-
-    public String getController() {
-        return this.controller;
-    }
-
-    public void setController(String controller) {
-        this.controller = controller;
     }
 
     public String getModel() {

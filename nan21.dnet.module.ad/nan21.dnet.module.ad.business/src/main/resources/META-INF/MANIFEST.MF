@@ -1,45 +1,45 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.ad._businessdelegates;version="1
- .0.0.M1";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bus
+ .0.0.M2";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bus
  iness.service",net.nan21.dnet.module.ad.client.business.service;versi
- on="1.0.0.M1";uses:="net.nan21.dnet.core.api.service",net.nan21.dnet.
- module.ad.client.business.serviceimpl;version="1.0.0.M1";uses:="javax
+ on="1.0.0.M2";uses:="net.nan21.dnet.core.api.service",net.nan21.dnet.
+ module.ad.client.business.serviceimpl;version="1.0.0.M2";uses:="javax
  .persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.modu
  le.ad.client.business.service",net.nan21.dnet.module.ad.impex.busines
- s.service;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.service,n
+ s.service;version="1.0.0.M2";uses:="net.nan21.dnet.core.api.service,n
  et.nan21.dnet.module.ad.impex.domain.entity",net.nan21.dnet.module.ad
- .impex.business.serviceimpl;version="1.0.0.M1";uses:="javax.persisten
+ .impex.business.serviceimpl;version="1.0.0.M2";uses:="javax.persisten
  ce,net.nan21.dnet.core.business.service,net.nan21.dnet.module.ad.impe
  x.business.service,net.nan21.dnet.module.ad.impex.domain.entity",net.
- nan21.dnet.module.ad.report.business.service;version="1.0.0.M1";uses:
+ nan21.dnet.module.ad.report.business.service;version="1.0.0.M2";uses:
  ="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.report.dom
  ain.entity",net.nan21.dnet.module.ad.report.business.serviceimpl;vers
- ion="1.0.0.M1";uses:="javax.persistence,net.nan21.dnet.core.business.
+ ion="1.0.0.M2";uses:="javax.persistence,net.nan21.dnet.core.business.
  service,net.nan21.dnet.module.ad.report.business.service,net.nan21.dn
  et.module.ad.report.domain.entity",net.nan21.dnet.module.ad.system.bu
- siness.service;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.serv
+ siness.service;version="1.0.0.M2";uses:="net.nan21.dnet.core.api.serv
  ice,net.nan21.dnet.module.ad.system.domain.entity",net.nan21.dnet.mod
- ule.ad.system.business.serviceimpl;version="1.0.0.M1";uses:="javax.pe
+ ule.ad.system.business.serviceimpl;version="1.0.0.M2";uses:="javax.pe
  rsistence,net.nan21.dnet.core.business.service,net.nan21.dnet.module.
  ad.system.business.service,net.nan21.dnet.module.ad.system.domain.ent
- ity",net.nan21.dnet.module.ad.usr.business.service;version="1.0.0.M1"
+ ity",net.nan21.dnet.module.ad.usr.business.service;version="1.0.0.M2"
  ;uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.usr.
  domain.entity",net.nan21.dnet.module.ad.usr.business.serviceimpl;vers
- ion="1.0.0.M1";uses:="javax.persistence,net.nan21.dnet.core.business.
+ ion="1.0.0.M2";uses:="javax.persistence,net.nan21.dnet.core.business.
  service,net.nan21.dnet.module.ad.usr.business.service,net.nan21.dnet.
  module.ad.usr.domain.entity",net.nan21.dnet.module.ad.workflow.busine
- ss.service;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.service,
+ ss.service;version="1.0.0.M2";uses:="net.nan21.dnet.core.api.service,
  net.nan21.dnet.module.ad.workflow.domain.entity",net.nan21.dnet.modul
- e.ad.workflow.business.serviceimpl;version="1.0.0.M1";uses:="javax.pe
+ e.ad.workflow.business.serviceimpl;version="1.0.0.M2";uses:="javax.pe
  rsistence,net.nan21.dnet.core.business.service,net.nan21.dnet.module.
  ad.workflow.business.service,net.nan21.dnet.module.ad.workflow.domain
  .entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.4)",nan21.
- dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.core.busine
- ss;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.ad.domain;version=
- "[1.0.0.M1,1.0.0.M1]"
+ dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.core.busine
+ ss;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.domain;version=
+ "[1.0.0.M2,1.0.0.M2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M1
+Bundle-Version: 1.0.0.M2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet AD - business
 Bundle-ManifestVersion: 2
@@ -61,5 +61,6 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  amework;version="[3.0,3.1)",org.springframework.context.weaving;versi
  on="[3.0,3.1)",org.springframework.orm.jpa,org.springframework.orm.jp
  a.vendor,org.springframework.transaction;version="[3.0,3.1)",org.spri
- ngframework.transaction.aspectj;version="[3.0,3.1)"
+ ngframework.transaction.aspectj;version="[3.0,3.1)",org.springframewo
+ rk.util
 

@@ -9,8 +9,11 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
@@ -25,6 +28,7 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.module.bd.uom.domain.entity.UomType;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -127,6 +131,10 @@ public class Uom implements Serializable, IModelWithId, IModelWithClientId {
     @GeneratedValue
     private Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = UomType.class)
+    @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
+    private UomType type;
+
     /* ============== getters - setters ================== */
 
     public String getName() {
@@ -224,6 +232,14 @@ public class Uom implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setClassName(String className) {
 
+    }
+
+    public UomType getType() {
+        return this.type;
+    }
+
+    public void setType(UomType type) {
+        this.type = type;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

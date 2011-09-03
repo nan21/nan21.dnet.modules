@@ -36,6 +36,9 @@
 	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" >		  
 	</bean>
 	
+	<bean id="setupParticipant" class="net.nan21.dnet.module.ad._presenterdelegates.Setup_AD" scope="singleton" >		
+	</bean>
+	
 	<import resource="beans/ad.client.ds.xml"/>
 	<import resource="beans/ad.impex.ds.xml"/>
 	<import resource="beans/ad.report.ds.xml"/>

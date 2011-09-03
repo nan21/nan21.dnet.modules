@@ -8,6 +8,7 @@ package net.nan21.dnet.module.mm.md.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
+import net.nan21.dnet.module.mm.md.domain.entity.ProductAttachmentType;
 
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttachment;
 
@@ -17,5 +18,9 @@ public interface IProductAttachmentService extends
     public List<ProductAttachment> findByProduct(Product product);
 
     public List<ProductAttachment> findByProductId(Long productId);
+
+    public List<ProductAttachment> findByType(ProductAttachmentType type);
+
+    public List<ProductAttachment> findByTypeId(Long typeId);
 
 }

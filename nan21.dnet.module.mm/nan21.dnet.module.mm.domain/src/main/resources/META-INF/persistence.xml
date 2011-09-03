@@ -9,6 +9,7 @@
 		<!-- Dependencies -->
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
+		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>

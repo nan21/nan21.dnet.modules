@@ -1,28 +1,41 @@
 package net.nan21.dnet.module.ad._businessdelegates;
 
+import java.io.File;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
+import org.eclipse.persistence.tools.file.FileUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.FileCopyUtils;
+
 import net.nan21.dnet.core.api.session.Session;
+import net.nan21.dnet.core.api.setup.IInitDataProvider;
+import net.nan21.dnet.core.api.setup.IInitDataProviderFactory;
 import net.nan21.dnet.core.api.setup.ISetupParticipant;
 import net.nan21.dnet.core.api.setup.ISetupTask;
 import net.nan21.dnet.core.api.setup.ISetupTaskParam;
+import net.nan21.dnet.core.api.setup.InitData;
+import net.nan21.dnet.core.api.setup.InitDataItem;
 import net.nan21.dnet.core.api.setup.SetupTask;
 import net.nan21.dnet.core.api.setup.SetupTaskParam;
-import net.nan21.dnet.core.business.service.AbstractSetupParticipant;
+import net.nan21.dnet.core.business.service.AbstractBusinessSetupParticipant;
 import net.nan21.dnet.module.ad.client.domain.entity.Client;
+import net.nan21.dnet.module.ad.impex.domain.entity.ImportJob;
+import net.nan21.dnet.module.ad.impex.domain.entity.ImportJobItem;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportMap;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem;
 import net.nan21.dnet.module.ad.usr.domain.entity.Role;
 import net.nan21.dnet.module.ad.usr.domain.entity.User;
 import net.nan21.dnet.module.ad.usr.domain.entity.UserType;
 
-public class Setup_AD extends AbstractSetupParticipant
+public class Setup_AD extends AbstractBusinessSetupParticipant
 implements ISetupParticipant {
-
+ 
 	private static final String PARAM_CLIENT_CODE = "clientCode";
 	private static final String PARAM_CLIENT_NAME = "clientName";
 	
@@ -30,32 +43,36 @@ implements ISetupParticipant {
 	private static final String PARAM_USER_NAME = "userName";
 	private static final String PARAM_USER_PASSWORD = "userPassword";
   
-	private static final String PARAM_IMPORT_PATH = "importPath";
-	private static final String PARAM_EXPORT_PATH = "exportPath";
-	private static final String PARAM_TEMP_PATH = "tempPath";
+	private static final String PARAM_WORKSPACE_PATH = "workspacePath";
+ 
 	
 	private static final String ROLE_ADMIN = "ROLE_DNET_ADMIN";
 	private static final String ROLE_USER = "ROLE_DNET_USER";
 	 
 	
 	@Override
-	public void run() throws Exception {
+	protected void onExecute() throws Exception {
  
 		SetupTask task = (SetupTask)tasks.get(0);
 		 
 		Map<String, ISetupTaskParam> paramMap = task.getParamsAsMap(); 
+		String workspacePath = paramMap.get(PARAM_WORKSPACE_PATH).getValue();
+		String clientCode = paramMap.get(PARAM_CLIENT_CODE).getValue();
+		String clientName = paramMap.get(PARAM_CLIENT_NAME).getValue();
+		
+		String defaultImportPath = workspacePath+"/"+clientCode+"/import";
+		String defaultExportPath = workspacePath+"/"+clientCode+"/export";
+		String defaultTempPath = workspacePath+"/"+clientCode+"/temp";
 		
 		Client c = new Client();
-		c.setCode(paramMap.get(PARAM_CLIENT_CODE).getValue());
-		c.setName(paramMap.get(PARAM_CLIENT_NAME).getValue());		
+		c.setCode(clientCode);
+		c.setName(clientName);		
 		c.setAdminRole(ROLE_ADMIN);		
-		c.setDefaultImportPath(paramMap.get(PARAM_IMPORT_PATH).getValue());
-		c.setDefaultExportPath(paramMap.get(PARAM_EXPORT_PATH).getValue());
-		c.setTempPath(paramMap.get(PARAM_TEMP_PATH).getValue());
+		c.setDefaultImportPath(defaultImportPath);
+		c.setDefaultExportPath(defaultExportPath);
+		c.setTempPath(defaultTempPath);
 		this.em.persist(c);
-		
 		 
-		
 		// run in context of the client
 		net.nan21.dnet.core.api.session.User su = Session.user.get();
 		net.nan21.dnet.core.api.session.User newUser = new 
@@ -100,42 +117,12 @@ implements ISetupParticipant {
 		u.setRoles(roles);
 		this.em.persist(u);
 		
-		ImportMap im = new ImportMap();
-		im.setName("_Import_bootstrap_");
-		im.setDescription("Default file-set which loads initial data for this screen");
-		im.setActive(true);
+		reqisterInitialDataImports(defaultImportPath);
 		
-		ImportMapItem imi = new ImportMapItem();
-		imi.setSequenceNo(1);		
-		imi.setDataSourceName("ImportMap");
-		imi.setFileName("net/nan21/dnet/data/setup/ad/ImportMap.csv");
-		imi.setActive(true);		
-		im.addToItems(imi);
-		
-		imi = new ImportMapItem();
-		imi.setSequenceNo(2);		
-		imi.setDataSourceName("ImportMapItem");
-		imi.setFileName("net/nan21/dnet/data/setup/ad/ImportMapItem.csv");
-		imi.setActive(true);		
-		im.addToItems(imi);
-		
-		imi = new ImportMapItem();
-		imi.setSequenceNo(3);		
-		imi.setDataSourceName("ImportJob");
-		imi.setFileName("net/nan21/dnet/data/setup/ad/ImportJob.csv");
-		imi.setActive(true);		
-		im.addToItems(imi);
-		
-		imi = new ImportMapItem();
-		imi.setSequenceNo(4);		
-		imi.setDataSourceName("ImportJobItem");
-		imi.setFileName("net/nan21/dnet/data/setup/ad/ImportJobItem.csv");
-		imi.setActive(true);		
-		im.addToItems(imi);
-		
-		this.em.persist(im);
 		
 		this.tasks.clear();
+		
+		this.tasks = null;
 	}
 	
 	
@@ -217,41 +204,66 @@ implements ISetupParticipant {
  
 		
 		param = new SetupTaskParam();
-		param.setName(PARAM_IMPORT_PATH);
-		param.setTitle("Import path");
-		param.setDescription("The working folder to be used for data import. It is set per client level and can be changed later in the `Client` definition frame.");
+		param.setName(PARAM_WORKSPACE_PATH);
+		param.setTitle("Workspace path");
+		param.setDescription("The working folder used by DNet as workspace. Default sub-folders created during setup can be customized per client level in the `Client` definition frame.");
 		param.setDataType("string");
 		param.setFieldType("textfield");
 		param.setDefaultValue("");
 		param.setValue(param.getDefaultValue());
 		param.setRequired(true);
 		task.addToParams(param);
-		
-		param = new SetupTaskParam();
-		param.setName(PARAM_EXPORT_PATH);
-		param.setTitle("Export path");
-		param.setDescription("The working folder to be used for data export. It is set per client level and can be changed later in the `Client` definition frame.");
-		param.setDataType("string");
-		param.setFieldType("textfield");
-		param.setDefaultValue("");
-		param.setValue(param.getDefaultValue());
-		param.setRequired(true);
-		task.addToParams(param);
-		
-		param = new SetupTaskParam();
-		param.setName(PARAM_TEMP_PATH);
-		param.setTitle("Temporary path");
-		param.setDescription("The temporary folder used by DNet. It is set per client level and can be changed later in the `Client` definition frame.");
-		param.setDataType("string");
-		param.setFieldType("textfield");
-		param.setDefaultValue("");
-		param.setValue(param.getDefaultValue());
-		param.setRequired(true);
-		task.addToParams(param);
-		
+		  
 		tasks.add(task);
 	}
 	
-	
-	
+	private void reqisterInitialDataImports(String importPath) throws Exception {
+		 
+		List<IInitDataProviderFactory> dataProviderFactories = this.getDataProviderFactories();
+		
+		ImportJob importJob = new ImportJob();
+		importJob.setActive(true);
+		importJob.setName("Initial demo data import");
+		
+		 
+		for( IInitDataProviderFactory f: dataProviderFactories) {
+			IInitDataProvider dp = f.createProvider();
+			List<InitData> list = dp.getList();
+			for (InitData initData: list) {
+				ImportMap importMap = new ImportMap();
+				importMap.setName(initData.getName());
+				importMap.setDescription("File-set to load "+initData.getName()+ " initial data.");
+				importMap.setActive(true);
+				
+				for(InitDataItem initDataItem: initData.getItems()) {
+					ImportMapItem importMapItem = new ImportMapItem();
+					importMapItem.setActive(true);
+					importMapItem.setDataSourceName(initDataItem.getDsName());
+					importMapItem.setFileName(initDataItem.getDestPath()+"/"+initDataItem.getFile().getName());
+					importMapItem.setSequenceNo(Integer.parseInt(initDataItem.getSequence()));
+					importMapItem.setImportMap(importMap);
+					importMap.addToItems(importMapItem);
+					String path = importPath+"/"+initDataItem.getDestPath();
+					 (new File(path)).mkdirs();
+					 
+					File dest =  new File(path+"/"+initDataItem.getFile().getName());
+					
+					FileCopyUtils.copy(initDataItem.getFile(), dest);
+				}
+				this.em.persist(importMap);
+				
+				ImportJobItem importJobItem = new ImportJobItem(); 
+				importJobItem.setActive(true);
+				importJobItem.setMap(importMap);
+				importJobItem.setSequenceNo(Integer.parseInt(initData.getSequence()));
+				importJobItem.setJob(importJob);				
+				importJob.addToItems(importJobItem);
+			}
+		}
+		
+		this.em.persist(importJob);
+		  
+	}
+ 
+ 
 }

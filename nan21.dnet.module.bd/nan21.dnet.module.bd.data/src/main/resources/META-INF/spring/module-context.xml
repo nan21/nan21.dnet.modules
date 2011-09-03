@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:osgi-compendium="http://www.springframework.org/schema/osgi-compendium"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/osgi-compendium
+    			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
+	<context:annotation-config />
+	<bean id="initDataProviderFactory" class="net.nan21.dnet.core.api.setup.InitDataProviderFactory">
+		<property name="name" value="nan21.dnet.module.bd.data"></property>
+	</bean>
+	
+	<bean id="initDataProvider" scope="prototype"
+		class="net.nan21.dnet.core.api.setup.InitDataProvider">
+		<property name="list">
+			<list>
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="10" />
+					<property name="name" value="bd-currency" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="Currency" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/currency/Currency.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="CurrencyXRateProvider" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/currency/CurrencyXRateProvider.csv" />
+							</bean>
+							
+						</list>
+					</property>
+				</bean>
+				
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="20" />
+					<property name="name" value="bd-uom" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="Uom" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/uom/Uom.csv" />
+							</bean>
+						</list>
+					</property>
+				</bean>
+				
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="30" />
+					<property name="name" value="bd-geo" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="Country" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/geo/Country.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="Region" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/geo/Region.csv" />
+							</bean>
+							
+						</list>
+					</property>
+				</bean>
+				
+				
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="40" />
+					<property name="name" value="bd-contact" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="CommunicationChannelType" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/contact/CommunicationChannelType.csv" />
+							</bean>
+						</list>
+					</property>
+				</bean>
+				
+				 
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -12,7 +12,6 @@ Ext.ns("net.nan21.dnet.module.ad.system.ds.model");
 	,	{name:"createdBy",type:"string"}
 	,	{name:"modifiedBy",type:"string"}
 	,	{name:"version",type:"int"}
-	,	{name:"controller",type:"string"}
 	,	{name:"model",type:"string"}
 	
 	];

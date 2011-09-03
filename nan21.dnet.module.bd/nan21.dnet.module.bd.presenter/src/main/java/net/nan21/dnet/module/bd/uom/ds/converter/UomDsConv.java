@@ -6,6 +6,8 @@
 package net.nan21.dnet.module.bd.uom.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.uom.business.service.IUomTypeService;
+import net.nan21.dnet.module.bd.uom.domain.entity.UomType;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.bd.uom.ds.model.UomDs;
@@ -24,6 +26,31 @@ public class UomDsConv extends AbstractDsConverter<UomDs, Uom> implements
     }
 
     protected void modelToEntityReferences(UomDs ds, Uom e) throws Exception {
+
+        if (ds.getTypeId() != null) {
+            if (e.getType() == null
+                    || !e.getType().getId().equals(ds.getTypeId())) {
+                e.setType((UomType) this.em.getReference(UomType.class,
+                        ds.getTypeId()));
+            }
+        } else {
+            this.lookup_type_UomType(ds, e);
+        }
+    }
+
+    protected void lookup_type_UomType(UomDs ds, Uom e) throws Exception {
+        if (ds.getType() != null) {
+            UomType x = null;
+            try {
+                x = ((IUomTypeService) getService(IUomTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `UomType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setType(x);
+        }
     }
 
     @Override
@@ -39,6 +66,8 @@ public class UomDsConv extends AbstractDsConverter<UomDs, Uom> implements
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
+        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
+        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
     }
 
 }

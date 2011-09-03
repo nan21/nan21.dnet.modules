@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ux.example.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.ux.example.domain.entity.LandForm;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = LandForm.class)
+@Ds(entity = LandForm.class, sort = { @SortField(field = LandFormDs.fNAME) })
 public class LandFormDs extends AbstractDsModel<LandForm> implements
         IModelWithId, IModelWithClientId {
 

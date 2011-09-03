@@ -28,6 +28,24 @@ Ext.ns("net.nan21.dnet.module.hr.employee.ds.model");
 	,	{name:"citizenshipCode",type:"string"}
 	,	{name:"passportNo",type:"string"}
 	,	{name:"className",type:"string"}
+	,	{name:"typeId",type:"int"}
+	,	{name:"type",type:"string"}
+	,	{name:"assignToPosition",type:"boolean"}
+	,	{name:"gradeId",type:"int"}
+	,	{name:"gradeCode",type:"string"}
+	,	{name:"jobId",type:"int"}
+	,	{name:"jobCode",type:"string"}
+	,	{name:"jobName",type:"string"}
+	,	{name:"positionId",type:"int"}
+	,	{name:"positionCode",type:"string"}
+	,	{name:"positionName",type:"string"}
+	,	{name:"posOrgId",type:"int"}
+	,	{name:"posOrgCode",type:"string"}
+	,	{name:"organizationId",type:"int"}
+	,	{name:"organizationCode",type:"string"}
+	,	{name:"baseSalary",type:"float"}
+	,	{name:"payrollId",type:"int"}
+	,	{name:"payroll",type:"string"}
 	
 	];
 Ext.ns("net.nan21.dnet.module.hr.employee.ds.param");	

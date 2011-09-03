@@ -28,6 +28,7 @@
 		<class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
+		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
@@ -38,6 +39,14 @@
 		<class>net.nan21.dnet.module.mm.md.domain.entity.Product</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductCategory</class>
+		
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue</class>
+		
+		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

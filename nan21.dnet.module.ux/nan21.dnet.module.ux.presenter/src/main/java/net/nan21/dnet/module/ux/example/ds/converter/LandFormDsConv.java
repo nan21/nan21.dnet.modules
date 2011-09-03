@@ -52,26 +52,34 @@ public class LandFormDsConv extends AbstractDsConverter<LandFormDs, LandForm>
 
     protected void lookup_type_LandFormType(LandFormDs ds, LandForm e)
             throws Exception {
-        LandFormType x = null;
-        try {
-            x = ((ILandFormTypeService) getService(ILandFormTypeService.class))
-                    .findByName(ds.getClientId(), ds.getType());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getType() != null) {
+            LandFormType x = null;
+            try {
+                x = ((ILandFormTypeService) getService(ILandFormTypeService.class))
+                        .findByName(ds.getClientId(), ds.getType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `LandFormType` reference:  `type` = "
+                                + ds.getType() + "  ");
+            }
+            e.setType(x);
         }
-        e.setType(x);
     }
 
     protected void lookup_country_Country(LandFormDs ds, LandForm e)
             throws Exception {
-        Country x = null;
-        try {
-            x = ((ICountryService) getService(ICountryService.class))
-                    .findByCode(ds.getClientId(), ds.getCountryCode());
-        } catch (javax.persistence.NoResultException exception) {
-
+        if (ds.getCountryCode() != null) {
+            Country x = null;
+            try {
+                x = ((ICountryService) getService(ICountryService.class))
+                        .findByCode(ds.getClientId(), ds.getCountryCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Country` reference:  `countryCode` = "
+                                + ds.getCountryCode() + "  ");
+            }
+            e.setCountry(x);
         }
-        e.setCountry(x);
     }
 
     @Override

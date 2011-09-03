@@ -23,14 +23,12 @@ net.nan21.dnet.module.ux.example.dc.LandForm$Filter = Ext.extend(dnet.base.Abstr
 		.addPanel({ name:"col1", layout:"form", width:250,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
-		; 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name"])
 		.addChildrenTo("col2",["active"])
-;
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ux.example.dc.LandForm$Filter", net.nan21.dnet.module.ux.example.dc.LandForm$Filter ); 

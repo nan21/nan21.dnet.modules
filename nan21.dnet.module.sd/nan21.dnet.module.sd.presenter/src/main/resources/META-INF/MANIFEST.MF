@@ -1,39 +1,39 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.sd.invoice.ds.converter;version=
- "1.0.0.M1";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.co
+ "1.0.0.M2";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.co
  re.presenter.converter,net.nan21.dnet.module.sd.invoice.domain.entity
  ,net.nan21.dnet.module.sd.invoice.ds.model",net.nan21.dnet.module.sd.
- invoice.ds.model;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.an
+ invoice.ds.model;version="1.0.0.M2";uses:="net.nan21.dnet.core.api.an
  notation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.
  model,net.nan21.dnet.module.sd.invoice.domain.entity",net.nan21.dnet.
- module.sd.order.ds.converter;version="1.0.0.M1";uses:="net.nan21.dnet
+ module.sd.order.ds.converter;version="1.0.0.M2";uses:="net.nan21.dnet
  .core.api.converter,net.nan21.dnet.core.presenter.converter,net.nan21
  .dnet.module.sd.order.domain.entity,net.nan21.dnet.module.sd.order.ds
- .model",net.nan21.dnet.module.sd.order.ds.model;version="1.0.0.M1";us
+ .model",net.nan21.dnet.module.sd.order.ds.model;version="1.0.0.M2";us
  es:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.model
  ,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.sd.order.d
  omain.entity",net.nan21.dnet.module.sd.price.ds.converter;version="1.
- 0.0.M1";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.
+ 0.0.M2";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.
  presenter.converter,net.nan21.dnet.module.sd.price.domain.entity,net.
  nan21.dnet.module.sd.price.ds.model",net.nan21.dnet.module.sd.price.d
- s.model;version="1.0.0.M1";uses:="net.nan21.dnet.core.api.annotation,
+ s.model;version="1.0.0.M2";uses:="net.nan21.dnet.core.api.annotation,
  net.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.model,net
  .nan21.dnet.module.sd.price.domain.entity"
-Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M1,1.0.0.M1]",na
- n21.dnet.core.presenter;version="[1.0.0.M1,1.0.0.M1]",javax.persisten
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",na
+ n21.dnet.core.presenter;version="[1.0.0.M2,1.0.0.M2]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.4)
  ",org.eclipse.persistence.core;version="[2.0,2.4)",nan21.dnet.module.
- sd.domain;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.ad.domain;v
- ersion="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.bd.domain;version="[1.
- 0.0.M1,1.0.0.M1]",nan21.dnet.module.bp.domain;version="[1.0.0.M1,1.0.
- 0.M1]",nan21.dnet.module.mm.domain;version="[1.0.0.M1,1.0.0.M1]",nan2
- 1.dnet.module.sd.business;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.mo
- dule.ad.business;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.bd.b
- usiness;version="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.bp.business;v
- ersion="[1.0.0.M1,1.0.0.M1]",nan21.dnet.module.mm.business;version="[
- 1.0.0.M1,1.0.0.M1]"
+ sd.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.domain;v
+ ersion="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bd.domain;version="[1.
+ 0.0.M2,1.0.0.M2]",nan21.dnet.module.bp.domain;version="[1.0.0.M2,1.0.
+ 0.M2]",nan21.dnet.module.mm.domain;version="[1.0.0.M2,1.0.0.M2]",nan2
+ 1.dnet.module.sd.business;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.mo
+ dule.ad.business;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bd.b
+ usiness;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bp.business;v
+ ersion="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.mm.business;version="[
+ 1.0.0.M2,1.0.0.M2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M1
+Bundle-Version: 1.0.0.M2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet SD - presenter
 Bundle-ManifestVersion: 2

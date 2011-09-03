@@ -138,6 +138,28 @@
 		<property name="name" value="EmployeeContactRelationshipLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactRelationshipLovDs" />
 	</bean>
+   
+ 	<bean id="EmploymentTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmploymentTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmploymentType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmploymentTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="EmploymentType" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmploymentTypeDs" />
+	</bean>
+   
+ 	<bean id="EmploymentTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmploymentTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmploymentType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmploymentTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="EmploymentTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmploymentTypeLovDs" />
+	</bean>
       
 </beans>
    

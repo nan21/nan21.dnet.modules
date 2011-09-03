@@ -10,8 +10,7 @@
 		http://www.springframework.org/schema/osgi/spring-osgi.xsd
 	http://www.springframework.org/schema/osgi-compendium 
 		http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
-	
-	
+	 
 			
 	<osgi:reference id="osgiDataSource" cardinality="0..1"
 		interface="javax.sql.DataSource" />
@@ -19,4 +18,10 @@
 	<osgi:service ref="entityServiceFactory" ranking="0"
 		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />
 		
+	<osgi:service ref="asgnTxServiceFactory" ranking="0"
+		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />	
+		
+	<osgi:service ref="setupParticipant" ranking="600"
+		interface="net.nan21.dnet.core.api.setup.ISetupParticipant" />	
+			
 </beans>
