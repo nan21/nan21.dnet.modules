@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="AbstractAuditableDsDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractAuditableDsDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractAuditable" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractAuditableDsDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbstractAuditableDs" />
+		<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractAuditableDsDs" />
+	</bean>
+   
+ 	<bean id="AbstractAuditableWithPeriodDsDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractAuditableWithPeriodDsDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractAuditableWithPeriod" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractAuditableWithPeriodDsDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbstractAuditableWithPeriodDs" />
+		<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractAuditableWithPeriodDsDs" />
+	</bean>
+   
+ 	<bean id="AbstractTypeDsDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeDsDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeDsDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbstractTypeDs" />
+		<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeDsDs" />
+	</bean>
+   
+ 	<bean id="AbstractTypeWithPeriodDsDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithPeriodDsDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractTypeWithPeriod" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeWithPeriodDsDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbstractTypeWithPeriodDs" />
+		<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithPeriodDsDs" />
+	</bean>
+   
+ 	<bean id="AbstractTypeWithCodeDsDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithCodeDsDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractTypeWithCode" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeWithCodeDsDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbstractTypeWithCodeDs" />
+		<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithCodeDsDs" />
+	</bean>
+   
+ 	<bean id="AbstractAuditableLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractAuditableLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractAuditable" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractAuditableLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbstractAuditableLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractAuditableLovDs" />
+	</bean>
+   
+ 	<bean id="AbstractTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbstractTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeLovDs" />
+	</bean>
+   
+ 	<bean id="AbstractTypeWithPeriodLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithPeriodLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractTypeWithPeriod" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeWithPeriodLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbstractTypeWithPeriodLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithPeriodLovDs" />
+	</bean>
+   
+ 	<bean id="AbstractTypeWithCodeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithCodeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractTypeWithCode" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeWithCodeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AbstractTypeWithCodeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithCodeLovDs" />
+	</bean>
+      
+</beans>
+   
