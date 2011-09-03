@@ -26,7 +26,7 @@ Export-Package: net.nan21.dnet.module.bp.base.domain.entity;version="1
  g.eclipse.persistence.internal.weaving,org.eclipse.persistence.querie
  s,org.eclipse.persistence.sessions,org.hibernate.validator.constraint
  s"
-Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.4)",nan21.
+Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.d
  omain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bd.domain;versi
  on="[1.0.0.M2,1.0.0.M2]"

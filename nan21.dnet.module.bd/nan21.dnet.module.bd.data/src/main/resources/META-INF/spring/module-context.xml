@@ -50,6 +50,14 @@
 						<list>
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="10" />
+								<property name="dsName" value="UomType" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/uom/UomType.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
 								<property name="dsName" value="Uom" />
 								<property name="destPath" value="demo-data/bd" />
 								<property name="file"

@@ -8,7 +8,7 @@ Export-Package: net.nan21.dnet.module.ux.example.domain.entity;version
  ce.internal.descriptors,org.eclipse.persistence.internal.weaving,org.
  eclipse.persistence.queries,org.eclipse.persistence.sessions,org.hibe
  rnate.validator.constraints"
-Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.4)",nan21.
+Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.d
  omain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bd.domain;versi
  on="[1.0.0.M2,1.0.0.M2]"

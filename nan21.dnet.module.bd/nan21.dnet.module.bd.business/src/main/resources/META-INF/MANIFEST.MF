@@ -29,7 +29,7 @@ Export-Package: net.nan21.dnet.module.bd._businessdelegates;version="1
  viceimpl;version="1.0.0.M2";uses:="javax.persistence,net.nan21.dnet.c
  ore.business.service,net.nan21.dnet.module.bd.uom.business.service,ne
  t.nan21.dnet.module.bd.uom.domain.entity"
-Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.4)",nan21.
+Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.core.busine
  ss;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bd.domain;version=
  "[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.domain;version="[1.0.0.M2,

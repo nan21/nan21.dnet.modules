@@ -1,0 +1,8 @@
+"name";"category";"description";"active"
+"Time";"other";"Measure time periods";"true"
+"Item";"other";"Item count";"true"
+"Heat";"other";"Temperature related uoms";"true"
+"Frequency";"other";"Frequency uoms";"true"
+"Length";"length";"Measure length/distance";"true"
+"Mass";"mass";"Measure mass";"true"
+"Volume";"volume";"Measure volumes";"true"

@@ -36,7 +36,7 @@ Export-Package: net.nan21.dnet.module.sd.invoice.domain.entity;version
  ternal.descriptors,org.eclipse.persistence.internal.weaving,org.eclip
  se.persistence.queries,org.eclipse.persistence.sessions,org.hibernate
  .validator.constraints"
-Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.4)",nan21.
+Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.d
  omain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bd.domain;versi
  on="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bp.domain;version="[1.0.0.

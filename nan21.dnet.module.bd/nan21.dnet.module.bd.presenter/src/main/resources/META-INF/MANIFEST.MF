@@ -36,8 +36,8 @@ Export-Package: net.nan21.dnet.module.bd.contact.ds.converter;version=
  ter.model,net.nan21.dnet.module.bd.uom.domain.entity"
 Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",na
  n21.dnet.core.presenter;version="[1.0.0.M2,1.0.0.M2]",javax.persisten
- ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.4)
- ",org.eclipse.persistence.core;version="[2.0,2.4)",nan21.dnet.module.
+ ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.5)
+ ",org.eclipse.persistence.core;version="[2.0,2.5)",nan21.dnet.module.
  bd.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bd.business
  ;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.domain;version="[
  1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.business;version="[1.0.0.M2,

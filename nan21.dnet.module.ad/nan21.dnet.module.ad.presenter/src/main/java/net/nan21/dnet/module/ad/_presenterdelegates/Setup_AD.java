@@ -87,7 +87,15 @@ public class Setup_AD extends AbstractPresenterSetupParticipant implements
 
 	private void createTasks() {
 		this.tasks = new ArrayList<ISetupTask>();
-
+		try {
+			if(this.findEntityService(ImportJob.class).findAll().size() > 0 ) {
+				return;
+			}			
+		} catch(Exception e) {
+			e.printStackTrace();
+			return ;
+		}
+		 
 		SetupTask task = new SetupTask();
 		task.setId("1");
 		task.setTitle("Import initial data");
@@ -100,7 +108,7 @@ public class Setup_AD extends AbstractPresenterSetupParticipant implements
 		param.setDescription("Check to perform initial data import.");
 		param.setDataType("string");
 		param.setFieldType("checkbox");
-		param.setDefaultValue("SYS");
+		param.setDefaultValue("on");
 		param.setValue(param.getDefaultValue());
 		// param.setRequired(true);
 		task.addToParams(param);
