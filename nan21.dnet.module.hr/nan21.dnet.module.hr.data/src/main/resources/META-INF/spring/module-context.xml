@@ -19,6 +19,12 @@
 		<property name="list">
 			<list>
 			  
+			  
+			  	<!-- ******************************************************** -->
+				<!-- ***********************   TIME   *********************** -->
+				<!-- ******************************************************** -->
+				
+				
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="10" />
 					<property name="name" value="hr-time" />
@@ -54,6 +60,11 @@
 					</property>
 				</bean>
 				 
+				
+				<!-- ******************************************************** -->
+				<!-- ***********************   SKILL  *********************** -->
+				<!-- ******************************************************** -->
+				
 				 
 				 
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
@@ -81,6 +92,12 @@
 						</list>
 					</property>
 				</bean> 
+				
+				
+				<!-- ******************************************************** -->
+				<!-- *********************** TRAINING *********************** -->
+				<!-- ******************************************************** -->
+				
 				
 				
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
@@ -114,6 +131,82 @@
 						</list>
 					</property>
 				</bean> 
+				
+				<!-- ******************************************************** -->
+				<!-- *********************** EMPLOYEE *********************** -->
+				<!-- ******************************************************** -->
+				
+				
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="40" />
+					<property name="name" value="hr-employee" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="EducationType" />
+								<property name="destPath" value="demo-data/hr/employee" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/hr/data/employee/EducationType.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="EmploymentType" />
+								<property name="destPath" value="demo-data/hr/employee" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/hr/data/employee/EmploymentType.csv" />
+							</bean>
+						 	
+						 	<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="EmployeeContactRelationship" />
+								<property name="destPath" value="demo-data/hr/employee" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/hr/data/employee/EmployeeContactRelationship.csv" />
+							</bean>
+						</list>
+					</property>
+				</bean>
+				
+				
+				<!-- ******************************************************** -->
+				<!-- ***********************   JOB    *********************** -->
+				<!-- ******************************************************** -->
+				
+				
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="50" />
+					<property name="name" value="hr-job" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="WorkRequirementType" />
+								<property name="destPath" value="demo-data/hr/job" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/hr/data/job/WorkRequirementType.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="WorkRequirement" />
+								<property name="destPath" value="demo-data/hr/job" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/hr/data/job/WorkRequirement.csv" />
+							</bean>
+							 
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="JobType" />
+								<property name="destPath" value="demo-data/hr/job" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/hr/data/job/JobType.csv" />
+							</bean>
+							   
+						</list>
+					</property>
+				</bean>
 				
 			</list>
 		</property>
