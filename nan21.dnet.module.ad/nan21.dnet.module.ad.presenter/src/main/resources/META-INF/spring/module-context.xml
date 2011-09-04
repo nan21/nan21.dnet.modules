@@ -37,6 +37,7 @@
 	</bean>
 	
 	<bean id="setupParticipant" class="net.nan21.dnet.module.ad._presenterdelegates.Setup_AD" scope="singleton" >		
+		<property name="ranking" value="100"></property>
 	</bean>
 	
 	<import resource="beans/ad.client.ds.xml"/>

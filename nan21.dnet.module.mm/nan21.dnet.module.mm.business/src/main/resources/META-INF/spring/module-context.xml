@@ -125,6 +125,7 @@
 
 	
 	<bean id="setupParticipant" class="net.nan21.dnet.module.mm._businessdelegates.Setup_MM" scope="singleton" >		
+		<property name="ranking" value="160"></property>
 	</bean>
 	
 	<!-- Domain services -->

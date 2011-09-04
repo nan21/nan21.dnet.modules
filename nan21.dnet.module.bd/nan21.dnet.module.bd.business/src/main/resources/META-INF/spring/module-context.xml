@@ -126,7 +126,9 @@
 	</aop:config>
 	
 	 
-	<bean id="setupParticipant" class="net.nan21.dnet.module.bd._businessdelegates.Setup_BD" scope="singleton" >		
+	<bean id="setupParticipant" scope="singleton" 
+		class="net.nan21.dnet.module.bd._businessdelegates.Setup_BD" >		
+		<property name="ranking" value="180" />
 	</bean>
 	
 	
