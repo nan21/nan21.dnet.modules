@@ -4,8 +4,8 @@ net.nan21.dnet.module.mm.md.ds.ProductAttributeDs.prototype._trl_ = {
 	,typeId__lbl : "Type Id"
 	,type__lbl : "Type"
 	,dataType__lbl : "Data Type"
-	,uomTypeId__lbl : "Uom Type Id"
-	,uomType__lbl : "Uom Type"
+	,uomId__lbl : "Uom Id"
+	,uom__lbl : "Uom"
 	
 }  
 	

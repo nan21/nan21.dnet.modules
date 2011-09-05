@@ -23,18 +23,21 @@ net.nan21.dnet.module.mm.md.dc.Product$Filter = Ext.extend(dnet.base.AbstractDcv
 		.addBooleanField({ name:"storable", dataIndex:"storable"  })
 		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",anchor:"-20",maxLength:32  })
+		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210, height:50,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col4", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
+		.addChildrenTo("main",["col1","col2","col3","col4"])
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["categoryName","storable"])
 		.addChildrenTo("col3",["manufacturerCode","manufacturerProductNo"])
+		.addChildrenTo("col4",["attributeGroup"])
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.mm.md.dc.Product$Filter", net.nan21.dnet.module.mm.md.dc.Product$Filter ); 
@@ -53,6 +56,7 @@ net.nan21.dnet.module.mm.md.dc.Product$List = Ext.extend(dnet.base.AbstractDcvGr
 		.addTextColumn({ name:"defaultUomCode", dataIndex:"defaultUomCode",width:100 })   	
 		.addNumberColumn({ name:"categoryId", dataIndex:"categoryId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"categoryName", dataIndex:"categoryName",width:200 })   	
+		.addTextColumn({ name:"attributeGroup", dataIndex:"attributeGroup",width:120 })   	
 		.addNumberColumn({ name:"manufacturerId", dataIndex:"manufacturerId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"manufacturerCode", dataIndex:"manufacturerCode",width:100 })   	
 		.addTextColumn({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo", hidden:true,width:100 })   	
@@ -91,6 +95,7 @@ net.nan21.dnet.module.mm.md.dc.Product$Edit = Ext.extend(dnet.base.AbstractDcvFo
 		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
 		.addNumberField({ name:"categoryId", dataIndex:"categoryId",anchor:"-20",disabled:true   , style: "text-align:right;" })
 		.addLov({ name:"categoryName", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductCategories", dataIndex:"categoryName",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]  })
+		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
 		.addNumberField({ name:"defaultUomId", dataIndex:"defaultUomId",anchor:"-20",disabled:true   , style: "text-align:right;" })
 		.addLov({ name:"defaultUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"defaultUomCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "defaultUomId"} ]  })
 		.addCheckbox({ name:"storable", dataIndex:"storable"  })
@@ -106,18 +111,22 @@ net.nan21.dnet.module.mm.md.dc.Product$Edit = Ext.extend(dnet.base.AbstractDcvFo
 		.addNumberField({ name:"dimUomId", dataIndex:"dimUomId",anchor:"-20",disabled:true   , style: "text-align:right;" })
 		.addLov({ name:"dimUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomLength", dataIndex:"dimUomCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "dimUomId"} ]  })
 		//containers
+		.addPanel({ name:"row1", layout:"form" , width:700,labelWidth:0 })     
 		.addPanel({ name:"col1", layout:"form" , width:350,labelWidth:0 })     
 		.addPanel({ name:"col2", layout:"form" ,width:250,labelWidth:0 })     
 		.addPanel({ name:"col3", layout:"form" , width:200,labelWidth:0 })     
 		.addPanel({ name:"col4", layout:"form" , width:200,labelWidth:0 })     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"main" , autoScroll:true })      	 
+		.addPanel({ name:"row2", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1" ,"col2" ,"col3" ,"col4" ])
-		.addChildrenTo("col1",["name","code","defaultUomCode","categoryName","active"])
-		.addChildrenTo("col2",["manufacturerCode","manufacturerProductNo"])
+		.addChildrenTo("main",["row1" ,"row2" ])
+		.addChildrenTo("row1",["name"])
+		.addChildrenTo("row2",["col1" ,"col2" ,"col3" ,"col4" ])
+		.addChildrenTo("col1",["code","defaultUomCode","categoryName","active"])
+		.addChildrenTo("col2",["manufacturerCode","manufacturerProductNo","attributeGroup"])
 		.addChildrenTo("col3",["storable","weight","weightUomCode","volume","volumeUomCode"])
 		.addChildrenTo("col4",["dimWidth","dimHeight","dimDepth","dimUomCode"])
 ;

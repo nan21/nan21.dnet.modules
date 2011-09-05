@@ -32,8 +32,8 @@ public class ProductAttributeDs extends AbstractDsModel<ProductAttribute>
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
     public static final String fDATATYPE = "dataType";
-    public static final String fUOMTYPEID = "uomTypeId";
-    public static final String fUOMTYPE = "uomType";
+    public static final String fUOMID = "uomId";
+    public static final String fUOM = "uom";
 
     @DsField()
     private String name;
@@ -77,11 +77,11 @@ public class ProductAttributeDs extends AbstractDsModel<ProductAttribute>
     @DsField()
     private String dataType;
 
-    @DsField(join = "left", path = "uomType.id")
-    private Long uomTypeId;
+    @DsField(join = "left", path = "uom.id")
+    private Long uomId;
 
-    @DsField(join = "left", path = "uomType.name")
-    private String uomType;
+    @DsField(join = "left", path = "uom.name")
+    private String uom;
 
     public ProductAttributeDs() {
         super();
@@ -204,20 +204,20 @@ public class ProductAttributeDs extends AbstractDsModel<ProductAttribute>
         this.dataType = dataType;
     }
 
-    public Long getUomTypeId() {
-        return this.uomTypeId;
+    public Long getUomId() {
+        return this.uomId;
     }
 
-    public void setUomTypeId(Long uomTypeId) {
-        this.uomTypeId = uomTypeId;
+    public void setUomId(Long uomId) {
+        this.uomId = uomId;
     }
 
-    public String getUomType() {
-        return this.uomType;
+    public String getUom() {
+        return this.uom;
     }
 
-    public void setUomType(String uomType) {
-        this.uomType = uomType;
+    public void setUom(String uom) {
+        this.uom = uom;
     }
 
 }

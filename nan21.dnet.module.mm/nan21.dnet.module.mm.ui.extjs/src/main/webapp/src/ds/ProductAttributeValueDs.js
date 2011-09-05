@@ -12,6 +12,11 @@ Ext.ns("net.nan21.dnet.module.mm.md.ds.model");
 	,	{name:"productId",type:"int"}
 	,	{name:"attributeId",type:"int"}
 	,	{name:"attribute",type:"string"}
+	,	{name:"title",type:"string"}
+	,	{name:"dataType",type:"string"}
+	,	{name:"typeId",type:"int"}
+	,	{name:"type",type:"string"}
+	,	{name:"uom",type:"string"}
 	,	{name:"value",type:"string"}
 	
 	];

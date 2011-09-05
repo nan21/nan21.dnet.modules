@@ -80,6 +80,19 @@ public class ProductAttributeValueDsConv extends
                 .getId() : null);
         ds.setAttribute(((e.getAttribute() != null)) ? e.getAttribute()
                 .getName() : null);
+        ds.setTitle(((e.getAttribute() != null)) ? e.getAttribute().getTitle()
+                : null);
+        ds.setDataType(((e.getAttribute() != null)) ? e.getAttribute()
+                .getDataType() : null);
+        ds.setTypeId(((e.getAttribute() != null) && (e.getAttribute().getType() != null)) ? e
+                .getAttribute().getType().getId()
+                : null);
+        ds.setType(((e.getAttribute() != null) && (e.getAttribute().getType() != null)) ? e
+                .getAttribute().getType().getName()
+                : null);
+        ds.setUom(((e.getAttribute() != null) && (e.getAttribute().getUom() != null)) ? e
+                .getAttribute().getUom().getCode()
+                : null);
     }
 
 }

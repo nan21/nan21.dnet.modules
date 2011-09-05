@@ -109,7 +109,22 @@
 					</property>
 				</bean>
 				
-				 
+				 <bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="50" />
+					<property name="name" value="bd-org" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="OrganizationType" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/org/OrganizationType.csv" />
+							</bean>
+						</list>
+					</property>
+				</bean>
+				
 			</list>
 		</property>
 	</bean>

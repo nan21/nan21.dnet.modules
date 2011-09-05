@@ -1,14 +1,19 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.mm._businessdelegates;version="1
  .0.0.M2";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bus
- iness.service",net.nan21.dnet.module.mm.md.business.service;version="
- 1.0.0.M2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modul
- e.bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net
- .nan21.dnet.module.mm.md.domain.entity",net.nan21.dnet.module.mm.md.b
- usiness.serviceimpl;version="1.0.0.M2";uses:="javax.persistence,net.n
- an21.dnet.core.business.service,net.nan21.dnet.module.bd.org.domain.e
- ntity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.modul
- e.mm.md.business.service,net.nan21.dnet.module.mm.md.domain.entity"
+ iness.service",net.nan21.dnet.module.mm._businessdelegates.md;version
+ ="1.0.0.M2";uses:="net.nan21.dnet.core.business.service,net.nan21.dne
+ t.module.mm.md.domain.entity",net.nan21.dnet.module.mm._businessexten
+ sions;version="1.0.0.M2";uses:="net.nan21.dnet.module.mm.md.business.
+ serviceimpl,net.nan21.dnet.module.mm.md.domain.entity",net.nan21.dnet
+ .module.mm.md.business.service;version="1.0.0.M2";uses:="net.nan21.dn
+ et.core.api.service,net.nan21.dnet.module.bd.org.domain.entity,net.na
+ n21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.mm.md.doma
+ in.entity",net.nan21.dnet.module.mm.md.business.serviceimpl;version="
+ 1.0.0.M2";uses:="javax.persistence,net.nan21.dnet.core.business.servi
+ ce,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.b
+ d.uom.domain.entity,net.nan21.dnet.module.mm.md.business.service,net.
+ nan21.dnet.module.mm.md.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.core.busine
  ss;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.domain;version=

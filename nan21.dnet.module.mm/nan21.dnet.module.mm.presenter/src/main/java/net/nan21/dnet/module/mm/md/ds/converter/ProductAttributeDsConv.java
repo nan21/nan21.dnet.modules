@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.mm.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.bd.uom.business.service.IUomTypeService;
-import net.nan21.dnet.module.bd.uom.domain.entity.UomType;
+import net.nan21.dnet.module.bd.uom.business.service.IUomService;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttributeTypeService;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType;
 
@@ -42,14 +42,12 @@ public class ProductAttributeDsConv extends
         } else {
             this.lookup_type_ProductAttributeType(ds, e);
         }
-        if (ds.getUomTypeId() != null) {
-            if (e.getUomType() == null
-                    || !e.getUomType().getId().equals(ds.getUomTypeId())) {
-                e.setUomType((UomType) this.em.getReference(UomType.class,
-                        ds.getUomTypeId()));
+        if (ds.getUomId() != null) {
+            if (e.getUom() == null || !e.getUom().getId().equals(ds.getUomId())) {
+                e.setUom((Uom) this.em.getReference(Uom.class, ds.getUomId()));
             }
         } else {
-            this.lookup_uomType_UomType(ds, e);
+            this.lookup_uom_Uom(ds, e);
         }
     }
 
@@ -69,19 +67,19 @@ public class ProductAttributeDsConv extends
         }
     }
 
-    protected void lookup_uomType_UomType(ProductAttributeDs ds,
-            ProductAttribute e) throws Exception {
-        if (ds.getUomType() != null) {
-            UomType x = null;
+    protected void lookup_uom_Uom(ProductAttributeDs ds, ProductAttribute e)
+            throws Exception {
+        if (ds.getUom() != null) {
+            Uom x = null;
             try {
-                x = ((IUomTypeService) getService(IUomTypeService.class))
-                        .findByName(ds.getClientId(), ds.getUomType());
+                x = ((IUomService) getService(IUomService.class)).findByName(
+                        ds.getClientId(), ds.getUom());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `UomType` reference:  `uomType` = "
-                                + ds.getUomType() + "  ");
+                        "Invalid value provided to find `Uom` reference:  `uom` = "
+                                + ds.getUom() + "  ");
             }
-            e.setUomType(x);
+            e.setUom(x);
         }
     }
 
@@ -102,10 +100,8 @@ public class ProductAttributeDsConv extends
         ds.setDataType(e.getDataType());
         ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
         ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
-        ds.setUomTypeId(((e.getUomType() != null)) ? e.getUomType().getId()
-                : null);
-        ds.setUomType(((e.getUomType() != null)) ? e.getUomType().getName()
-                : null);
+        ds.setUomId(((e.getUom() != null)) ? e.getUom().getId() : null);
+        ds.setUom(((e.getUom() != null)) ? e.getUom().getName() : null);
     }
 
 }

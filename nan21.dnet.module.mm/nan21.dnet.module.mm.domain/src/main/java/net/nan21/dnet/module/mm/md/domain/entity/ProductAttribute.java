@@ -30,7 +30,7 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
-import net.nan21.dnet.module.bd.uom.domain.entity.UomType;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -135,9 +135,9 @@ public class ProductAttribute implements Serializable, IModelWithId,
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private ProductAttributeType type;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = UomType.class)
-    @JoinColumn(name = "UOMTYPE_ID", referencedColumnName = "ID")
-    private UomType uomType;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
+    @JoinColumn(name = "UOM_ID", referencedColumnName = "ID")
+    private Uom uom;
 
     @ManyToMany(mappedBy = "attributes")
     private Collection<ProductAttributeGroup> groups;
@@ -257,12 +257,12 @@ public class ProductAttribute implements Serializable, IModelWithId,
         this.type = type;
     }
 
-    public UomType getUomType() {
-        return this.uomType;
+    public Uom getUom() {
+        return this.uom;
     }
 
-    public void setUomType(UomType uomType) {
-        this.uomType = uomType;
+    public void setUom(Uom uom) {
+        this.uom = uom;
     }
 
     public Collection<ProductAttributeGroup> getGroups() {

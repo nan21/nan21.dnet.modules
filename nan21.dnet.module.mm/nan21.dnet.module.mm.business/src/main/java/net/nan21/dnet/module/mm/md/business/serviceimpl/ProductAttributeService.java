@@ -7,7 +7,7 @@ package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
-import net.nan21.dnet.module.bd.uom.domain.entity.UomType;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttributeService;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType;
@@ -52,16 +52,16 @@ public class ProductAttributeService extends
                 .getResultList();
     }
 
-    public List<ProductAttribute> findByUomType(UomType uomType) {
-        return this.findByUomTypeId(uomType.getId());
+    public List<ProductAttribute> findByUom(Uom uom) {
+        return this.findByUomId(uom.getId());
     }
 
-    public List<ProductAttribute> findByUomTypeId(Long uomTypeId) {
+    public List<ProductAttribute> findByUomId(Long uomId) {
         return (List<ProductAttribute>) this.em
                 .createQuery(
-                        "select e from ProductAttribute e where e.uomType.id = :pUomTypeId",
-                        ProductAttribute.class)
-                .setParameter("pUomTypeId", uomTypeId).getResultList();
+                        "select e from ProductAttribute e where e.uom.id = :pUomId",
+                        ProductAttribute.class).setParameter("pUomId", uomId)
+                .getResultList();
     }
 
     public List<ProductAttribute> findByGroups(ProductAttributeGroup groups) {

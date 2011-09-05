@@ -29,6 +29,11 @@ public class ProductAttributeValueDs extends
     public static final String fPRODUCTID = "productId";
     public static final String fATTRIBUTEID = "attributeId";
     public static final String fATTRIBUTE = "attribute";
+    public static final String fTITLE = "title";
+    public static final String fDATATYPE = "dataType";
+    public static final String fTYPEID = "typeId";
+    public static final String fTYPE = "type";
+    public static final String fUOM = "uom";
     public static final String fVALUE = "value";
 
     @DsField()
@@ -60,6 +65,21 @@ public class ProductAttributeValueDs extends
 
     @DsField(join = "left", path = "attribute.name")
     private String attribute;
+
+    @DsField(join = "left", path = "attribute.title")
+    private String title;
+
+    @DsField(join = "left", path = "attribute.dataType")
+    private String dataType;
+
+    @DsField(join = "left", path = "attribute.type.id")
+    private Long typeId;
+
+    @DsField(join = "left", path = "attribute.type.name")
+    private String type;
+
+    @DsField(join = "left", path = "attribute.uom.code")
+    private String uom;
 
     @DsField()
     private String value;
@@ -151,6 +171,46 @@ public class ProductAttributeValueDs extends
 
     public void setAttribute(String attribute) {
         this.attribute = attribute;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDataType() {
+        return this.dataType;
+    }
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
+
+    public Long getTypeId() {
+        return this.typeId;
+    }
+
+    public void setTypeId(Long typeId) {
+        this.typeId = typeId;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getUom() {
+        return this.uom;
+    }
+
+    public void setUom(String uom) {
+        this.uom = uom;
     }
 
     public String getValue() {

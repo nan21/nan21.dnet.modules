@@ -95,6 +95,7 @@
 			<tx:method name="insert" read-only="false" />
 			<tx:method name="update" read-only="false" />
 			<tx:method name="delete*" read-only="false" />
+			<tx:method name="execute*" read-only="false" />
 		</tx:attributes>
 	</tx:advice>
 	
