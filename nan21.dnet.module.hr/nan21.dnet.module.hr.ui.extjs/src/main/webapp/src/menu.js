@@ -45,6 +45,7 @@ net.nan21.dnet.module.hr.menu.hr = [
  ,		 
 	{"id":"sm_hr_base_time", "text":"Time management", leaf:false, children:[
 		
+		{id:"Absence_UI", text:Dnet.translate("ui","Absence_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.time.frame.Absence_UI", _bundle_:BUNDLE_ID},		
 		{id:"AbsenceBaseData_UI", text:Dnet.translate("ui","AbsenceBaseData_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI", _bundle_:BUNDLE_ID}	]}
  
    ];  

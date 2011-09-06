@@ -7,7 +7,7 @@
 	http://www.springframework.org/schema/osgi 
 		http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 	
-	<osgi:service ref="initDataProviderFactory" ranking="700"
+	<osgi:service ref="initDataProviderFactory" ranking="600"
 		interface="net.nan21.dnet.core.api.setup.IInitDataProviderFactory" />
 		
 </beans>

@@ -72,6 +72,19 @@
 		<property name="name" value="AbsenceReasonLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonLovDs" />
 	</bean>
+   
+ 	<bean id="AbsenceDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.Absence" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.hr.time.ds.param.AbsenceDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.hr.time.ds.qb.AbsenceDsQueryBuilder" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.time.ds.converter.AbsenceDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Absence" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceDs" />
+	</bean>
       
 </beans>
    

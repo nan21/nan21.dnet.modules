@@ -13,7 +13,7 @@ net.nan21.dnet.module.bd.org.lovs.OrganizationHierarchyItems = Ext.extend( dnet.
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyItemLovDs		
 				,_dataProviderName_:"OrganizationHierarchyItemLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bd.org.frame.Org_UI",bundle:"nan21.dnet.module.bd.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bd.org.frame.Org_UI",bundle:"nan21.dnet.module.bd.ui.extjs",tocElement: "canvasHierarchy"}
 			}
 		); 		 
 		this._createStore_(); 

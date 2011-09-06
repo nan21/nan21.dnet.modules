@@ -6,4 +6,5 @@ Bundle-Name: DNet MM - data
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.mm.data
+Import-Package: net.nan21.dnet.core.api.setup
 

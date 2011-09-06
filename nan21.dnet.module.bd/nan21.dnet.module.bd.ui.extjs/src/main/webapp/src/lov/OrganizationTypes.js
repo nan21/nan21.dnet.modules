@@ -13,7 +13,7 @@ net.nan21.dnet.module.bd.org.lovs.OrganizationTypes = Ext.extend( dnet.base.Abst
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeLovDs		
 				,_dataProviderName_:"OrganizationTypeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bd.org.frame.OrgType_UI",bundle:"nan21.dnet.module.bd.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bd.org.frame.Org_UI",bundle:"nan21.dnet.module.bd.ui.extjs",tocElement: "canvasOrgType"}
 			}
 		); 		 
 		this._createStore_(); 

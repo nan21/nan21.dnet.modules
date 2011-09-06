@@ -70,6 +70,15 @@ public class Absence implements Serializable, IModelWithId, IModelWithClientId {
     @NotNull
     private Integer hours;
 
+    /** Notes. */
+    @Column(name = "NOTES")
+    private String notes;
+
+    /** Posted. */
+    @Column(name = "POSTED", nullable = false)
+    @NotNull
+    private Boolean posted;
+
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
     @NotNull
@@ -138,6 +147,22 @@ public class Absence implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setHours(Integer hours) {
         this.hours = hours;
+    }
+
+    public String getNotes() {
+        return this.notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public Boolean getPosted() {
+        return this.posted;
+    }
+
+    public void setPosted(Boolean posted) {
+        this.posted = posted;
     }
 
     public Long getClientId() {
@@ -238,6 +263,9 @@ public class Absence implements Serializable, IModelWithId, IModelWithClientId {
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.posted == null) {
+            event.updateAttributeWithObject("posted", false);
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

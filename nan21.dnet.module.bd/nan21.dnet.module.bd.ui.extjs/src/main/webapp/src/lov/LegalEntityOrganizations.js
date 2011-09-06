@@ -13,7 +13,7 @@ net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations = Ext.extend( dnet.ba
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.bd.org.ds.model.LegalEntityOrganizationLovDs		
 				,_dataProviderName_:"LegalEntityOrganizationLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bd.org.frame.Org_UI",bundle:"nan21.dnet.module.bd.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bd.org.frame.Org_UI",bundle:"nan21.dnet.module.bd.ui.extjs",tocElement: "canvasOrg"}
 			}
 		); 		 
 		this._createStore_(); 
