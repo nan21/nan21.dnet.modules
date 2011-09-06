@@ -13,7 +13,7 @@ net.nan21.dnet.module.bp.calendar.lovs.CalendarEventStatusCall = Ext.extend( dne
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventStatusCallLovDs		
 				,_dataProviderName_:"CalendarEventStatusCallLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI",bundle:"nan21.dnet.module.bp.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI",bundle:"nan21.dnet.module.bp.ui.extjs",tocElement: "canvasStatus"}
 			}
 		); 		 
 		this._createStore_(); 

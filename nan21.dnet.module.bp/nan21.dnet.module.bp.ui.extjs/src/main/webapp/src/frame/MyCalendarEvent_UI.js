@@ -10,24 +10,7 @@ net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI = Ext.extend( dnet.ba
 		.addDc("taskEvnt", new net.nan21.dnet.module.bp.calendar.dc.Task())		;		
 	}	 
 
-	,_defineElements_: function() {					
-			
-		this._mainViewName_  = "_main_with_toc_";
-		this._getBuilder_()
-		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
-				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
-		})
-		.addPanel({ name:"_toc_",xtype: 'treepanel',collapsible: true, region:"west", title: 'Navigation',width: 250,autoScroll: true,split: true,rootVisible: false,loader: new Ext.tree.TreeLoader()
-			,minWidth:150, maxWidth:500
-			,root: new Ext.tree.AsyncTreeNode({expanded: true,
-            children: [{ text:"Calls", leaf: true , name:"canvas1"},{ text:"Meetings", leaf: true , name:"canvas2"},{ text:"Tasks", leaf: true , name:"canvas3"}]
-        	})
-        	,listeners: {scope:this, 
-            	click: function(n) {
-					this._showStackedViewElement_("main", n.attributes.name);			 
-            	}            
-        	}
-		}); 
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("callEvnt",{ name:"callEvntFilter", xtype:"net.nan21.dnet.module.bp.calendar.dc.Call$Filter",height:70})	 
 		.addDcView("callEvnt",{ name:"callEvntList", xtype:"net.nan21.dnet.module.bp.calendar.dc.Call$List"})	 
@@ -39,35 +22,40 @@ net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI = Ext.extend( dnet.ba
 		.addDcView("taskEvnt",{ name:"taskEvntList", xtype:"net.nan21.dnet.module.bp.calendar.dc.Task$List"})	 
 		.addDcFormView("taskEvnt",{ name:"taskEvntEdit", xtype:"net.nan21.dnet.module.bp.calendar.dc.Task$Edit",height:200})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Calls",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Meetings",header:false})  	 
-		.addPanel({name: "canvas3", layout:"border", defaults:{split:true},title:"Tasks",header:false})  	 
-			 	
+		.addPanel({name: "canvasCall", layout:"border", defaults:{split:true},title:"Calls",header:false})  	 
+		.addPanel({name: "canvasMeeting", layout:"border", defaults:{split:true},title:"Meetings",header:false})  	 
+		.addPanel({name: "canvasTask", layout:"border", defaults:{split:true},title:"Tasks",header:false})  	 
+			
+		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
+				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
+		})
+		.addToc(["canvasCall","canvasMeeting","canvasTask"]);
+		this._mainViewName_  = "_main_with_toc_";	 	
 	}
 
 	,_linkElements_: function() {
 		this._getBuilder_()		
-	 	.addChildrenTo("main", ["canvas1","canvas2","canvas3"]) 				 		
-		.addChildrenTo("canvas1",["callEvntFilter","callEvntList","callEvntEdit"] ,["north","center","south"])	
-		.addChildrenTo("canvas2",["meetingEvntFilter","meetingEvntList","meetingEvntEdit"] ,["north","center","south"])	
-		.addChildrenTo("canvas3",["taskEvntFilter","taskEvntList","taskEvntEdit"] ,["north","center","south"])	
+	 	.addChildrenTo("main", ["canvasCall","canvasMeeting","canvasTask"]) 				 		
+		.addChildrenTo("canvasCall",["callEvntFilter","callEvntList","callEvntEdit"] ,["north","center","south"])	
+		.addChildrenTo("canvasMeeting",["meetingEvntFilter","meetingEvntList","meetingEvntEdit"] ,["north","center","south"])	
+		.addChildrenTo("canvasTask",["taskEvntFilter","taskEvntList","taskEvntEdit"] ,["north","center","south"])	
 				
 		.addChildrenTo("_main_with_toc_",["main","_toc_"]).change("main",{region: "center"})
-	 	.addToolbarTo("canvas1","callEvntListTlb")	  	
+	 	.addToolbarTo("canvasCall","callEvntListTlb")	  	
 	 	.addToolbarTo("callEvntEdit","callEvntEditTlb")	  	
-	 	.addToolbarTo("canvas2","meetingEvntListTlb")	  	
+	 	.addToolbarTo("canvasMeeting","meetingEvntListTlb")	  	
 	 	.addToolbarTo("meetingEvntEdit","meetingEvntEditTlb")	  	
-	 	.addToolbarTo("canvas3","taskEvntListTlb")	  	
+	 	.addToolbarTo("canvasTask","taskEvntListTlb")	  	
 	 	.addToolbarTo("taskEvntEdit","taskEvntEditTlb")	  	
 	}
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("callEvntListTlb", {dc:"callEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("callEvntListTlb", {dc:"callEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Calls"}).end()
 			.beginToolbar("callEvntEditTlb", {dc:"callEvnt"}).addSave().addNew().addCopy().addCancel().end()
-			.beginToolbar("meetingEvntListTlb", {dc:"meetingEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("meetingEvntListTlb", {dc:"meetingEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Meetings"}).end()
 			.beginToolbar("meetingEvntEditTlb", {dc:"meetingEvnt"}).addSave().addNew().addCopy().addCancel().end()
-			.beginToolbar("taskEvntListTlb", {dc:"taskEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().end()
+			.beginToolbar("taskEvntListTlb", {dc:"taskEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Tasks"}).end()
 			.beginToolbar("taskEvntEditTlb", {dc:"taskEvnt"}).addSave().addNew().addCopy().addCancel().end(); 	
 	}
 

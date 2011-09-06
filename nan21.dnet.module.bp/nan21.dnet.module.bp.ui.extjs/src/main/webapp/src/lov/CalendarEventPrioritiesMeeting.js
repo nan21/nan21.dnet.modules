@@ -13,7 +13,7 @@ net.nan21.dnet.module.bp.calendar.lovs.CalendarEventPrioritiesMeeting = Ext.exte
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventPriorityMeetingLovDs		
 				,_dataProviderName_:"CalendarEventPriorityMeetingLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI",bundle:"nan21.dnet.module.bp.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI",bundle:"nan21.dnet.module.bp.ui.extjs",tocElement: "canvasPriority"}
 			}
 		); 		 
 		this._createStore_(); 
