@@ -13,7 +13,7 @@ net.nan21.dnet.module.sd.order.lovs.SalesOrderType = Ext.extend( dnet.base.Abstr
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeLovDs		
 				,_dataProviderName_:"SalesOrderTypeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs",tocElement: "canvasOrderType"}
 			}
 		); 		 
 		this._createStore_(); 

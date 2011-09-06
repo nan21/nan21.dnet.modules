@@ -13,7 +13,7 @@ net.nan21.dnet.module.mm.md.lovs.ProductAttributeType = Ext.extend( dnet.base.Ab
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.mm.md.ds.model.ProductAttributeTypeLovDs		
 				,_dataProviderName_:"ProductAttributeTypeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI",bundle:"nan21.dnet.module.mm.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI",bundle:"nan21.dnet.module.mm.ui.extjs",tocElement: "canvasType"}
 			}
 		); 		 
 		this._createStore_(); 

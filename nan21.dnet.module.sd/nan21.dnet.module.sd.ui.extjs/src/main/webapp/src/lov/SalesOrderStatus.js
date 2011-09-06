@@ -13,7 +13,7 @@ net.nan21.dnet.module.sd.order.lovs.SalesOrderStatus = Ext.extend( dnet.base.Abs
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusLovDs		
 				,_dataProviderName_:"SalesOrderStatusLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs",tocElement: "canvasOrderStatus"}
 			}
 		); 		 
 		this._createStore_(); 

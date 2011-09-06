@@ -13,7 +13,7 @@ net.nan21.dnet.module.bp.base.lovs.PaymentMethod = Ext.extend( dnet.base.Abstrac
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.bp.base.ds.model.PaymentMethodLovDs		
 				,_dataProviderName_:"PaymentMethodLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI",bundle:"nan21.dnet.module.bp.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI",bundle:"nan21.dnet.module.bp.ui.extjs",tocElement: "canvasPayMtd"}
 			}
 		); 		 
 		this._createStore_(); 

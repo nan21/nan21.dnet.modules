@@ -12,24 +12,7 @@ net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI = Ext.extend( dnet.base.Abstr
 		.addDc("payTerm", new net.nan21.dnet.module.bp.base.dc.PaymentTerm({multiEdit:true}))		;		
 	}	 
 
-	,_defineElements_: function() {					
-			
-		this._mainViewName_  = "_main_with_toc_";
-		this._getBuilder_()
-		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
-				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
-		})
-		.addPanel({ name:"_toc_",xtype: 'treepanel',collapsible: true, region:"west", title: 'Navigation',width: 250,autoScroll: true,split: true,rootVisible: false,loader: new Ext.tree.TreeLoader()
-			,minWidth:150, maxWidth:500
-			,root: new Ext.tree.AsyncTreeNode({expanded: true,
-            children: [{ text:"Customer groups", leaf: true , name:"canvas1"},{ text:"Vendor groups", leaf: true , name:"canvas2"},{ text:"Delivery methods", leaf: true , name:"canvas3"},{ text:"Payment methods", leaf: true , name:"canvas4"},{ text:"Payment terms", leaf: true , name:"canvas5"}]
-        	})
-        	,listeners: {scope:this, 
-            	click: function(n) {
-					this._showStackedViewElement_("main", n.attributes.name);			 
-            	}            
-        	}
-		}); 
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("custGroup",{ name:"custGroupFilter", xtype:"net.nan21.dnet.module.bp.base.dc.CustomerGroup$Filter",height:40})	 
 		.addDcView("custGroup",{ name:"custGroupEditList", xtype:"net.nan21.dnet.module.bp.base.dc.CustomerGroup$EditList", frame:true})	 
@@ -42,38 +25,43 @@ net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI = Ext.extend( dnet.base.Abstr
 		.addDcFilterFormView("payTerm",{ name:"payTermFilter", xtype:"net.nan21.dnet.module.bp.base.dc.PaymentTerm$Filter",height:40})	 
 		.addDcView("payTerm",{ name:"payTermEditList", xtype:"net.nan21.dnet.module.bp.base.dc.PaymentTerm$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Customer groups",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Vendor groups",header:false})  	 
-		.addPanel({name: "canvas3", layout:"border", defaults:{split:true},title:"Delivery methods",header:false})  	 
-		.addPanel({name: "canvas4", layout:"border", defaults:{split:true},title:"Payment methods",header:false})  	 
-		.addPanel({name: "canvas5", layout:"border", defaults:{split:true},title:"Payment terms",header:false})  	 
-			 	
+		.addPanel({name: "canvasCustGroup", layout:"border", defaults:{split:true},title:"Customer groups",header:false})  	 
+		.addPanel({name: "canvasVendGroup", layout:"border", defaults:{split:true},title:"Vendor groups",header:false})  	 
+		.addPanel({name: "canvasDelivMtd", layout:"border", defaults:{split:true},title:"Delivery methods",header:false})  	 
+		.addPanel({name: "canvasPayMtd", layout:"border", defaults:{split:true},title:"Payment methods",header:false})  	 
+		.addPanel({name: "canvasPayTerm", layout:"border", defaults:{split:true},title:"Payment terms",header:false})  	 
+			
+		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
+				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
+		})
+		.addToc(["canvasCustGroup","canvasVendGroup","canvasDelivMtd","canvasPayMtd","canvasPayTerm"]);
+		this._mainViewName_  = "_main_with_toc_";	 	
 	}
 
 	,_linkElements_: function() {
 		this._getBuilder_()		
-	 	.addChildrenTo("main", ["canvas1","canvas2","canvas3","canvas4","canvas5"]) 				 		
-		.addChildrenTo("canvas1",["custGroupFilter","custGroupEditList"] ,["north","center"])	
-		.addChildrenTo("canvas2",["vendGroupFilter","vendGroupEditList"] ,["north","center"])	
-		.addChildrenTo("canvas3",["delivMtdFilter","delivMtdEditList"] ,["north","center"])	
-		.addChildrenTo("canvas4",["payMtdFilter","payMtdEditList"] ,["north","center"])	
-		.addChildrenTo("canvas5",["payTermFilter","payTermEditList"] ,["north","center"])	
+	 	.addChildrenTo("main", ["canvasCustGroup","canvasVendGroup","canvasDelivMtd","canvasPayMtd","canvasPayTerm"]) 				 		
+		.addChildrenTo("canvasCustGroup",["custGroupFilter","custGroupEditList"] ,["north","center"])	
+		.addChildrenTo("canvasVendGroup",["vendGroupFilter","vendGroupEditList"] ,["north","center"])	
+		.addChildrenTo("canvasDelivMtd",["delivMtdFilter","delivMtdEditList"] ,["north","center"])	
+		.addChildrenTo("canvasPayMtd",["payMtdFilter","payMtdEditList"] ,["north","center"])	
+		.addChildrenTo("canvasPayTerm",["payTermFilter","payTermEditList"] ,["north","center"])	
 				
 		.addChildrenTo("_main_with_toc_",["main","_toc_"]).change("main",{region: "center"})
-	 	.addToolbarTo("canvas1","tlbcustGroup")	  	
-	 	.addToolbarTo("canvas2","tlbvendGroup")	  	
-	 	.addToolbarTo("canvas3","tlbdelivMtd")	  	
-	 	.addToolbarTo("canvas4","tlbpayMtd")	  	
-	 	.addToolbarTo("canvas5","tlbpayTerm")	  	
+	 	.addToolbarTo("canvasCustGroup","tlbcustGroup")	  	
+	 	.addToolbarTo("canvasVendGroup","tlbvendGroup")	  	
+	 	.addToolbarTo("canvasDelivMtd","tlbdelivMtd")	  	
+	 	.addToolbarTo("canvasPayMtd","tlbpayMtd")	  	
+	 	.addToolbarTo("canvasPayTerm","tlbpayTerm")	  	
 	}
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbcustGroup", {dc:"custGroup"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
-			.beginToolbar("tlbvendGroup", {dc:"vendGroup"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
-			.beginToolbar("tlbdelivMtd", {dc:"delivMtd"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
-			.beginToolbar("tlbpayMtd", {dc:"payMtd"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
-			.beginToolbar("tlbpayTerm", {dc:"payTerm"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbcustGroup", {dc:"custGroup"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Customer groups"}).end()
+			.beginToolbar("tlbvendGroup", {dc:"vendGroup"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Vendor groups"}).end()
+			.beginToolbar("tlbdelivMtd", {dc:"delivMtd"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Delivery methods"}).end()
+			.beginToolbar("tlbpayMtd", {dc:"payMtd"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Payment methods"}).end()
+			.beginToolbar("tlbpayTerm", {dc:"payTerm"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Payment terms"}).end(); 	
 	}
 
 });

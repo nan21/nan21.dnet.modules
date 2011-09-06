@@ -13,7 +13,7 @@ net.nan21.dnet.module.ad.workflow.lovs.ActProcessDefinitions = Ext.extend( dnet.
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionLovDs		
 				,_dataProviderName_:"ActProcessDefinitionLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI",bundle:"nan21.dnet.module.ad.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI",bundle:"nan21.dnet.module.ad.ui.extjs",tocElement: "canvasProcess"}
 			}
 		); 		 
 		this._createStore_(); 

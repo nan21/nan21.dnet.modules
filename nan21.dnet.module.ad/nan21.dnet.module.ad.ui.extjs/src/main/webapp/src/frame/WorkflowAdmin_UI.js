@@ -15,24 +15,7 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI = Ext.extend( dnet.base
 		.linkDc("dcFinishedTask", "dcFinishedInstance",{fields:[ {childField:"processInstanceId", parentField:"processInstanceId"} ]} );		
 	}	 
 
-	,_defineElements_: function() {					
-			
-		this._mainViewName_  = "_main_with_toc_";
-		this._getBuilder_()
-		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
-				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
-		})
-		.addPanel({ name:"_toc_",xtype: 'treepanel',collapsible: true, region:"west", title: 'Navigation',width: 250,autoScroll: true,split: true,rootVisible: false,loader: new Ext.tree.TreeLoader()
-			,minWidth:150, maxWidth:500
-			,root: new Ext.tree.AsyncTreeNode({expanded: true,
-            children: [{ text:"Processes defined", leaf: true , name:"canvas1"},{ text:"Running instances", leaf: true , name:"canvas2"},{ text:"Finished instances", leaf: true , name:"canvas3"},{ text:"Deployments", leaf: true , name:"canvas4"}]
-        	})
-        	,listeners: {scope:this, 
-            	click: function(n) {
-					this._showStackedViewElement_("main", n.attributes.name);			 
-            	}            
-        	}
-		}); 
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addButton({name:"btnStartProcess",text:"Start Instance", tooltip:"Start an instance of the selected process",iconCls:"icon-gears",disabled:true
 			,handler: this.startProcessInstance,scope:this,stateManager:{name:"selected_one", dc:"dcProcess" }	})	
@@ -77,39 +60,44 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI = Ext.extend( dnet.base
 		.addDcView("dcFinishedInstance",{ name:"listFinishedInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List"})	 
 		.addDcView("dcFinishedTask",{ name:"listFinishedTask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List",height:180})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Processes defined",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Running instances",header:false})  	 
+		.addPanel({name: "canvasProcess", layout:"border", defaults:{split:true},title:"Processes defined",header:false})  	 
+		.addPanel({name: "canvasRunningInstance", layout:"border", defaults:{split:true},title:"Running instances",header:false})  	 
 		.addPanel({name: "panelRunningTask", layout:"border", defaults:{split:true},height:220})  	 
-		.addPanel({name: "canvas3", layout:"border", defaults:{split:true},title:"Finished instances",header:false})  	 
-		.addPanel({name: "canvas4", layout:"border", defaults:{split:true},title:"Deployments",header:false})  	 
+		.addPanel({name: "canvasFinishedInstance", layout:"border", defaults:{split:true},title:"Finished instances",header:false})  	 
+		.addPanel({name: "canvasDeployment", layout:"border", defaults:{split:true},title:"Deployments",header:false})  	 
 		
-		this._elems_.add("wdwAssignTask", { _window_:true, resizable:true, layout:"fit", id:Ext.id(), items:[this._elems_.get("formRunningTaskAsgn")]
-,title:"Assign task",modal:true,width:300,height:100,buttons:[ this._elems_.get("btnSaveAssignTask") ]}); 	
-			 	
+		.add({name:"wdwAssignTask", _window_:true, resizable:true, layout:"fit", id:Ext.id(), items:[this._elems_.get("formRunningTaskAsgn")]
+,title:"Assign task",modal:true,width:300,height:100,buttons:[ this._elems_.get("btnSaveAssignTask") ]}) 	
+			
+		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
+				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
+		})
+		.addToc(["canvasProcess","canvasRunningInstance","canvasFinishedInstance","canvasDeployment"]);
+		this._mainViewName_  = "_main_with_toc_";	 	
 	}
 
 	,_linkElements_: function() {
 		this._getBuilder_()		
-	 	.addChildrenTo("main", ["canvas1","canvas2","canvas3","canvas4"]) 				 		
-		.addChildrenTo("canvas1",["filterProcess","listProcess"] ,["north","center"])	
-		.addChildrenTo("canvas2",["filterRunningInstance","listRunningInstance","panelRunningTask"] ,["north","center","south"])	
+	 	.addChildrenTo("main", ["canvasProcess","canvasRunningInstance","canvasFinishedInstance","canvasDeployment"]) 				 		
+		.addChildrenTo("canvasProcess",["filterProcess","listProcess"] ,["north","center"])	
+		.addChildrenTo("canvasRunningInstance",["filterRunningInstance","listRunningInstance","panelRunningTask"] ,["north","center","south"])	
 		.addChildrenTo("panelRunningTask",["filterRunningTask","listRunningTask"] ,["north","center"])	
-		.addChildrenTo("canvas3",["filterFinishedInstance","listFinishedInstance","listFinishedTask"] ,["north","center","south"])	
-		.addChildrenTo("canvas4",["filterDeployment","listDeployment"] ,["north","center"])	
+		.addChildrenTo("canvasFinishedInstance",["filterFinishedInstance","listFinishedInstance","listFinishedTask"] ,["north","center","south"])	
+		.addChildrenTo("canvasDeployment",["filterDeployment","listDeployment"] ,["north","center"])	
 				
 		.addChildrenTo("_main_with_toc_",["main","_toc_"]).change("main",{region: "center"})
-	 	.addToolbarTo("canvas1","tlbProcessList")	  	
-	 	.addToolbarTo("canvas2","tlbRunningInstanceList")	  	
-	 	.addToolbarTo("canvas3","tlbFinishedInstanceList")	  	
-	 	.addToolbarTo("canvas4","tlbDeploymentList")	  	
+	 	.addToolbarTo("canvasProcess","tlbProcessList")	  	
+	 	.addToolbarTo("canvasRunningInstance","tlbRunningInstanceList")	  	
+	 	.addToolbarTo("canvasFinishedInstance","tlbFinishedInstanceList")	  	
+	 	.addToolbarTo("canvasDeployment","tlbDeploymentList")	  	
 	}
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbProcessList", {dc:"dcProcess"}).addQuery().end()
-			.beginToolbar("tlbRunningInstanceList", {dc:"dcRunningInstance"}).addQuery().end()
-			.beginToolbar("tlbFinishedInstanceList", {dc:"dcFinishedInstance"}).addQuery().end()
-			.beginToolbar("tlbDeploymentList", {dc:"dcDeployment"}).addQuery().end(); 	
+			.beginToolbar("tlbProcessList", {dc:"dcProcess"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Processes defined"}).end()
+			.beginToolbar("tlbRunningInstanceList", {dc:"dcRunningInstance"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Running instances"}).end()
+			.beginToolbar("tlbFinishedInstanceList", {dc:"dcFinishedInstance"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Finished instances"}).end()
+			.beginToolbar("tlbDeploymentList", {dc:"dcDeployment"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Deployments"}).end(); 	
 	}
 
 

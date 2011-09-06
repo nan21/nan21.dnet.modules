@@ -13,7 +13,7 @@ net.nan21.dnet.module.bp.base.lovs.PaymentTerm = Ext.extend( dnet.base.AbstractC
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.bp.base.ds.model.PaymentTermLovDs		
 				,_dataProviderName_:"PaymentTermLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI",bundle:"nan21.dnet.module.bp.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI",bundle:"nan21.dnet.module.bp.ui.extjs",tocElement: "canvasPayTerm"}
 			}
 		); 		 
 		this._createStore_(); 

@@ -13,7 +13,7 @@ net.nan21.dnet.module.bp.base.lovs.CustomerGroup = Ext.extend( dnet.base.Abstrac
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.bp.base.ds.model.CustomerGroupLovDs		
 				,_dataProviderName_:"CustomerGroupLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI",bundle:"nan21.dnet.module.bp.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI",bundle:"nan21.dnet.module.bp.ui.extjs",tocElement: "canvasCustGroup"}
 			}
 		); 		 
 		this._createStore_(); 

@@ -13,7 +13,7 @@ net.nan21.dnet.module.ad.workflow.lovs.ActDeployments = Ext.extend( dnet.base.Ab
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentLovDs		
 				,_dataProviderName_:"ActDeploymentLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI",bundle:"nan21.dnet.module.ad.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI",bundle:"nan21.dnet.module.ad.ui.extjs",tocElement: "canvasDeployment"}
 			}
 		); 		 
 		this._createStore_(); 

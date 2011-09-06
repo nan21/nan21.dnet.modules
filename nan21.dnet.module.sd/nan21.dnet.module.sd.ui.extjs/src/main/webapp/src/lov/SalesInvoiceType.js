@@ -13,7 +13,7 @@ net.nan21.dnet.module.sd.invoice.lovs.SalesInvoiceType = Ext.extend( dnet.base.A
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeLovDs		
 				,_dataProviderName_:"SalesInvoiceTypeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs",tocElement: "canvasInvType"}
 			}
 		); 		 
 		this._createStore_(); 

@@ -13,7 +13,7 @@ net.nan21.dnet.module.sd.invoice.lovs.SalesInvoiceStatus = Ext.extend( dnet.base
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusLovDs		
 				,_dataProviderName_:"SalesInvoiceStatusLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs",tocElement: "canvasInvStatus"}
 			}
 		); 		 
 		this._createStore_(); 

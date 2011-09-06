@@ -13,7 +13,7 @@ net.nan21.dnet.module.hr.time.lovs.AbsenceReasons = Ext.extend( dnet.base.Abstra
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonLovDs		
 				,_dataProviderName_:"AbsenceReasonLovDs"				 
-				
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasReason"}
 			}
 		); 		 
 		this._createStore_(); 

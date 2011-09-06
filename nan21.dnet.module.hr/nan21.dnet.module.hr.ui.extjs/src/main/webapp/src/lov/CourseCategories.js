@@ -13,7 +13,7 @@ net.nan21.dnet.module.hr.training.lovs.CourseCategories = Ext.extend( dnet.base.
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.hr.training.ds.model.CourseCategoryLovDs		
 				,_dataProviderName_:"CourseCategoryLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.training.frame.CourseType_UI",bundle:"nan21.dnet.module.hr.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.training.frame.CourseType_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasCategory"}
 			}
 		); 		 
 		this._createStore_(); 

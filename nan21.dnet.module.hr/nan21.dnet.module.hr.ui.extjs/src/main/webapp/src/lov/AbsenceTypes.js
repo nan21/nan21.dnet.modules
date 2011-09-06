@@ -13,7 +13,7 @@ net.nan21.dnet.module.hr.time.lovs.AbsenceTypes = Ext.extend( dnet.base.Abstract
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.hr.time.ds.model.AbsenceTypeLovDs		
 				,_dataProviderName_:"AbsenceTypeLovDs"				 
-				
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasType"}
 			}
 		); 		 
 		this._createStore_(); 
