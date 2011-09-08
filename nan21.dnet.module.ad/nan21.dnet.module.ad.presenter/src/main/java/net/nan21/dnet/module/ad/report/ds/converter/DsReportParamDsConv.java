@@ -48,7 +48,8 @@ public class DsReportParamDsConv extends
 
     protected void lookup_reportParam_ReportParam(DsReportParamDs ds,
             DsReportParam e) throws Exception {
-        if (ds.getReportId() != null && ds.getParamCode() != null) {
+        if (ds.getReportId() != null && !ds.getReportId().equals("")
+                && ds.getParamCode() != null && !ds.getParamCode().equals("")) {
             ReportParam x = null;
             try {
                 x = ((IReportParamService) getService(IReportParamService.class))

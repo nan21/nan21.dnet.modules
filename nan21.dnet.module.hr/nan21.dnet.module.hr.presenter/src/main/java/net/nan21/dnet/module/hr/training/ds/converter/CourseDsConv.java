@@ -45,7 +45,7 @@ public class CourseDsConv extends AbstractDsConverter<CourseDs, Course>
 
     protected void lookup_type_CourseType(CourseDs ds, Course e)
             throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             CourseType x = null;
             try {
                 x = ((ICourseTypeService) getService(ICourseTypeService.class))

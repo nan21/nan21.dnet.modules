@@ -63,7 +63,7 @@ public class OrganizationHierarchyItemDsConv
     protected void lookup_hierarchy_OrganizationHierarchy(
             OrganizationHierarchyItemDs ds, OrganizationHierarchyItem e)
             throws Exception {
-        if (ds.getHierarchy() != null) {
+        if (ds.getHierarchy() != null && !ds.getHierarchy().equals("")) {
             OrganizationHierarchy x = null;
             try {
                 x = ((IOrganizationHierarchyService) getService(IOrganizationHierarchyService.class))
@@ -80,7 +80,8 @@ public class OrganizationHierarchyItemDsConv
     protected void lookup_organization_Organization(
             OrganizationHierarchyItemDs ds, OrganizationHierarchyItem e)
             throws Exception {
-        if (ds.getOrganizationCode() != null) {
+        if (ds.getOrganizationCode() != null
+                && !ds.getOrganizationCode().equals("")) {
             Organization x = null;
             try {
                 x = ((IOrganizationService) getService(IOrganizationService.class))
@@ -96,7 +97,7 @@ public class OrganizationHierarchyItemDsConv
 
     protected void lookup_parent_Organization(OrganizationHierarchyItemDs ds,
             OrganizationHierarchyItem e) throws Exception {
-        if (ds.getParentCode() != null) {
+        if (ds.getParentCode() != null && !ds.getParentCode().equals("")) {
             Organization x = null;
             try {
                 x = ((IOrganizationService) getService(IOrganizationService.class))

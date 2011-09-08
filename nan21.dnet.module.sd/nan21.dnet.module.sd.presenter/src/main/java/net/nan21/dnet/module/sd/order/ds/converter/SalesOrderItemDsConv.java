@@ -56,7 +56,7 @@ public class SalesOrderItemDsConv extends
 
     protected void lookup_product_Product(SalesOrderItemDs ds, SalesOrderItem e)
             throws Exception {
-        if (ds.getProductCode() != null) {
+        if (ds.getProductCode() != null && !ds.getProductCode().equals("")) {
             Product x = null;
             try {
                 x = ((IProductService) getService(IProductService.class))

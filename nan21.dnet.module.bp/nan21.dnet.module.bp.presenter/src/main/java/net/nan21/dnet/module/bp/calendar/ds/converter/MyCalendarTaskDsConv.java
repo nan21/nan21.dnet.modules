@@ -71,7 +71,7 @@ public class MyCalendarTaskDsConv extends
 
     protected void lookup_bpartner_BusinessPartner(MyCalendarTaskDs ds,
             CalendarEvent e) throws Exception {
-        if (ds.getBpartnerCode() != null) {
+        if (ds.getBpartnerCode() != null && !ds.getBpartnerCode().equals("")) {
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
@@ -87,7 +87,9 @@ public class MyCalendarTaskDsConv extends
 
     protected void lookup_priority_CalendarEventPriority(MyCalendarTaskDs ds,
             CalendarEvent e) throws Exception {
-        if (ds.getEventType() != null && ds.getPriorityName() != null) {
+        if (ds.getEventType() != null && !ds.getEventType().equals("")
+                && ds.getPriorityName() != null
+                && !ds.getPriorityName().equals("")) {
             CalendarEventPriority x = null;
             try {
                 x = ((ICalendarEventPriorityService) getService(ICalendarEventPriorityService.class))
@@ -106,7 +108,8 @@ public class MyCalendarTaskDsConv extends
 
     protected void lookup_status_CalendarEventStatus(MyCalendarTaskDs ds,
             CalendarEvent e) throws Exception {
-        if (ds.getEventType() != null && ds.getStatusName() != null) {
+        if (ds.getEventType() != null && !ds.getEventType().equals("")
+                && ds.getStatusName() != null && !ds.getStatusName().equals("")) {
             CalendarEventStatus x = null;
             try {
                 x = ((ICalendarEventStatusService) getService(ICalendarEventStatusService.class))

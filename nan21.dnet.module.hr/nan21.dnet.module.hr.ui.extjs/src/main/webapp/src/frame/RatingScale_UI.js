@@ -10,7 +10,7 @@ net.nan21.dnet.module.hr.skill.frame.RatingScale_UI = Ext.extend( dnet.base.Abst
 		.linkDc("level", "scale",{fields:[ {childField:"ratingScaleId", parentField:"id"} ]} );		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("scale",{ name:"scaleFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter"})	 
 		.addDcView("scale",{ name:"scaleList", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingScale$List"})	 
@@ -19,7 +19,7 @@ net.nan21.dnet.module.hr.skill.frame.RatingScale_UI = Ext.extend( dnet.base.Abst
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -34,9 +34,9 @@ net.nan21.dnet.module.hr.skill.frame.RatingScale_UI = Ext.extend( dnet.base.Abst
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbScaleList", {dc:"scale"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbScaleEdit", {dc:"scale"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
-			.beginToolbar("tlbLevelCtxEditList", {dc:"level"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbScaleList", {dc:"scale"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
+			.beginToolbar("tlbScaleEdit", {dc:"scale"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
+			.beginToolbar("tlbLevelCtxEditList", {dc:"level"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Proficiency levels"}).end(); 	
 	}
 
 });

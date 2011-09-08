@@ -49,7 +49,7 @@ public class CityDsConv extends AbstractDsConverter<CityDs, City> implements
     }
 
     protected void lookup_country_Country(CityDs ds, City e) throws Exception {
-        if (ds.getCountryCode() != null) {
+        if (ds.getCountryCode() != null && !ds.getCountryCode().equals("")) {
             Country x = null;
             try {
                 x = ((ICountryService) getService(ICountryService.class))
@@ -64,7 +64,8 @@ public class CityDsConv extends AbstractDsConverter<CityDs, City> implements
     }
 
     protected void lookup_region_Region(CityDs ds, City e) throws Exception {
-        if (ds.getCountryId() != null && ds.getRegionCode() != null) {
+        if (ds.getCountryId() != null && !ds.getCountryId().equals("")
+                && ds.getRegionCode() != null && !ds.getRegionCode().equals("")) {
             Region x = null;
             try {
                 x = ((IRegionService) getService(IRegionService.class))

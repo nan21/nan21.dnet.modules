@@ -59,7 +59,7 @@ public class SalesInvoiceItemDsConv extends
 
     protected void lookup_uom_Uom(SalesInvoiceItemDs ds, SalesInvoiceItem e)
             throws Exception {
-        if (ds.getUomCode() != null) {
+        if (ds.getUomCode() != null && !ds.getUomCode().equals("")) {
             Uom x = null;
             try {
                 x = ((IUomService) getService(IUomService.class)).findByCode(
@@ -75,7 +75,7 @@ public class SalesInvoiceItemDsConv extends
 
     protected void lookup_item_Product(SalesInvoiceItemDs ds, SalesInvoiceItem e)
             throws Exception {
-        if (ds.getItemCode() != null) {
+        if (ds.getItemCode() != null && !ds.getItemCode().equals("")) {
             Product x = null;
             try {
                 x = ((IProductService) getService(IProductService.class))

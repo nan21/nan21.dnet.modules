@@ -41,7 +41,7 @@ public class JobDsConv extends AbstractDsConverter<JobDs, Job> implements
     }
 
     protected void lookup_jobType_JobType(JobDs ds, Job e) throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             JobType x = null;
             try {
                 x = ((IJobTypeService) getService(IJobTypeService.class))

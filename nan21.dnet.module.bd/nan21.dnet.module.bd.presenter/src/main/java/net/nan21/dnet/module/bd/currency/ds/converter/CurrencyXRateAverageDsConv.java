@@ -42,7 +42,7 @@ public class CurrencyXRateAverageDsConv extends
 
     protected void lookup_provider_CurrencyXRateProvider(
             CurrencyXRateAverageDs ds, CurrencyXRateAverage e) throws Exception {
-        if (ds.getProviderCode() != null) {
+        if (ds.getProviderCode() != null && !ds.getProviderCode().equals("")) {
             CurrencyXRateProvider x = null;
             try {
                 x = ((ICurrencyXRateProviderService) getService(ICurrencyXRateProviderService.class))

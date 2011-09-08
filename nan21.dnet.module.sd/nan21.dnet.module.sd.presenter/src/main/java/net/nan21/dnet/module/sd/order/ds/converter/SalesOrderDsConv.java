@@ -157,7 +157,7 @@ public class SalesOrderDsConv extends
 
     protected void lookup_currency_Currency(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        if (ds.getCurrencyCode() != null) {
+        if (ds.getCurrencyCode() != null && !ds.getCurrencyCode().equals("")) {
             Currency x = null;
             try {
                 x = ((ICurrencyService) getService(ICurrencyService.class))
@@ -173,7 +173,7 @@ public class SalesOrderDsConv extends
 
     protected void lookup_priceList_PriceList(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        if (ds.getPriceListName() != null) {
+        if (ds.getPriceListName() != null && !ds.getPriceListName().equals("")) {
             PriceList x = null;
             try {
                 x = ((IPriceListService) getService(IPriceListService.class))
@@ -189,7 +189,8 @@ public class SalesOrderDsConv extends
 
     protected void lookup_deliveryMethod_DeliveryMethod(SalesOrderDs ds,
             SalesOrder e) throws Exception {
-        if (ds.getDeliveryMethod() != null) {
+        if (ds.getDeliveryMethod() != null
+                && !ds.getDeliveryMethod().equals("")) {
             DeliveryMethod x = null;
             try {
                 x = ((IDeliveryMethodService) getService(IDeliveryMethodService.class))
@@ -205,7 +206,7 @@ public class SalesOrderDsConv extends
 
     protected void lookup_type_SalesOrderType(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             SalesOrderType x = null;
             try {
                 x = ((ISalesOrderTypeService) getService(ISalesOrderTypeService.class))
@@ -221,7 +222,7 @@ public class SalesOrderDsConv extends
 
     protected void lookup_status_SalesOrderStatus(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        if (ds.getStatus() != null) {
+        if (ds.getStatus() != null && !ds.getStatus().equals("")) {
             SalesOrderStatus x = null;
             try {
                 x = ((ISalesOrderStatusService) getService(ISalesOrderStatusService.class))
@@ -237,7 +238,7 @@ public class SalesOrderDsConv extends
 
     protected void lookup_paymentMethod_PaymentMethod(SalesOrderDs ds,
             SalesOrder e) throws Exception {
-        if (ds.getPaymentMethod() != null) {
+        if (ds.getPaymentMethod() != null && !ds.getPaymentMethod().equals("")) {
             PaymentMethod x = null;
             try {
                 x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
@@ -253,7 +254,7 @@ public class SalesOrderDsConv extends
 
     protected void lookup_customer_BusinessPartner(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        if (ds.getCustomerCode() != null) {
+        if (ds.getCustomerCode() != null && !ds.getCustomerCode().equals("")) {
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
@@ -269,7 +270,7 @@ public class SalesOrderDsConv extends
 
     protected void lookup_supplier_BusinessPartner(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        if (ds.getSupplierCode() != null) {
+        if (ds.getSupplierCode() != null && !ds.getSupplierCode().equals("")) {
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
@@ -285,7 +286,7 @@ public class SalesOrderDsConv extends
 
     protected void lookup_billTo_BusinessPartner(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        if (ds.getBillToCode() != null) {
+        if (ds.getBillToCode() != null && !ds.getBillToCode().equals("")) {
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
@@ -301,7 +302,7 @@ public class SalesOrderDsConv extends
 
     protected void lookup_shipTo_BusinessPartner(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        if (ds.getShipToCode() != null) {
+        if (ds.getShipToCode() != null && !ds.getShipToCode().equals("")) {
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))

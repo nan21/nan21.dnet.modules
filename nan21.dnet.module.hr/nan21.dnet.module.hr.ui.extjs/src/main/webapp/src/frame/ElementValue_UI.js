@@ -8,13 +8,13 @@ net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI = Ext.extend( dnet.base.A
 		.addDc("expval", new net.nan21.dnet.module.hr.payroll.dc.ElementValue())		;		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("expval",{ name:"expvalFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter"})	 
 		.addDcView("expval",{ name:"expvalList", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementValue$List"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -26,7 +26,7 @@ net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI = Ext.extend( dnet.base.A
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbExpvalList", {dc:"expval"}).addQuery().end(); 	
+			.beginToolbar("tlbExpvalList", {dc:"expval"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end(); 	
 	}
 
 });

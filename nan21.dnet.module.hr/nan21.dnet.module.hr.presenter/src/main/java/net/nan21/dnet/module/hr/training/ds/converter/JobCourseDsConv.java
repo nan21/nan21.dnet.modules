@@ -49,7 +49,7 @@ public class JobCourseDsConv extends
     }
 
     protected void lookup_job_Job(JobCourseDs ds, JobCourse e) throws Exception {
-        if (ds.getJobCode() != null) {
+        if (ds.getJobCode() != null && !ds.getJobCode().equals("")) {
             Job x = null;
             try {
                 x = ((IJobService) getService(IJobService.class)).findByCode(
@@ -65,7 +65,7 @@ public class JobCourseDsConv extends
 
     protected void lookup_course_Course(JobCourseDs ds, JobCourse e)
             throws Exception {
-        if (ds.getCourseCode() != null) {
+        if (ds.getCourseCode() != null && !ds.getCourseCode().equals("")) {
             Course x = null;
             try {
                 x = ((ICourseService) getService(ICourseService.class))

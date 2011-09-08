@@ -39,7 +39,7 @@ public class DsReportDsConv extends AbstractDsConverter<DsReportDs, DsReport>
 
     protected void lookup_report_Report(DsReportDs ds, DsReport e)
             throws Exception {
-        if (ds.getReportCode() != null) {
+        if (ds.getReportCode() != null && !ds.getReportCode().equals("")) {
             Report x = null;
             try {
                 x = ((IReportService) getService(IReportService.class))

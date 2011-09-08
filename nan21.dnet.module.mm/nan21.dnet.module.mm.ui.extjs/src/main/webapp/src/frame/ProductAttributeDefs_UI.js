@@ -37,8 +37,7 @@ net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI = Ext.extend( dnet.bas
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
 		})
 		.addToc(["canvasAttr","canvasAttrGroup","canvasType","canvasCateg"]);
-		this._mainViewName_  = "_main_with_toc_";
-		
+		this._mainViewName_  = "_main_with_toc_";	 	
 	}
 
 	,_linkElements_: function() {

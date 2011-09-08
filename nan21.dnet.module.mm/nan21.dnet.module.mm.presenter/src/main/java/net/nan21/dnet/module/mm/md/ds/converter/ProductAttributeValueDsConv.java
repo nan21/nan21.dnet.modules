@@ -49,7 +49,7 @@ public class ProductAttributeValueDsConv extends
     protected void lookup_attribute_ProductAttribute(
             ProductAttributeValueDs ds, ProductAttributeValue e)
             throws Exception {
-        if (ds.getAttribute() != null) {
+        if (ds.getAttribute() != null && !ds.getAttribute().equals("")) {
             ProductAttribute x = null;
             try {
                 x = ((IProductAttributeService) getService(IProductAttributeService.class))

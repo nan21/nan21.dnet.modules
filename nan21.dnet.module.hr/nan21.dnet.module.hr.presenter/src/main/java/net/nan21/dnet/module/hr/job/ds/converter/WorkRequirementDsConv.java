@@ -42,7 +42,7 @@ public class WorkRequirementDsConv extends
 
     protected void lookup_type_WorkRequirementType(WorkRequirementDs ds,
             WorkRequirement e) throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             WorkRequirementType x = null;
             try {
                 x = ((IWorkRequirementTypeService) getService(IWorkRequirementTypeService.class))

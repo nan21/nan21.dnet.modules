@@ -42,7 +42,7 @@ public class SkillTypeDsConv extends
 
     protected void lookup_category_SkillCategory(SkillTypeDs ds, SkillType e)
             throws Exception {
-        if (ds.getCategory() != null) {
+        if (ds.getCategory() != null && !ds.getCategory().equals("")) {
             SkillCategory x = null;
             try {
                 x = ((ISkillCategoryService) getService(ISkillCategoryService.class))

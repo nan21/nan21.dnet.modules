@@ -52,7 +52,7 @@ public class PositionCourseDsConv extends
 
     protected void lookup_position_Position(PositionCourseDs ds,
             PositionCourse e) throws Exception {
-        if (ds.getPositionCode() != null) {
+        if (ds.getPositionCode() != null && !ds.getPositionCode().equals("")) {
             Position x = null;
             try {
                 x = ((IPositionService) getService(IPositionService.class))
@@ -68,7 +68,7 @@ public class PositionCourseDsConv extends
 
     protected void lookup_course_Course(PositionCourseDs ds, PositionCourse e)
             throws Exception {
-        if (ds.getCourseCode() != null) {
+        if (ds.getCourseCode() != null && !ds.getCourseCode().equals("")) {
             Course x = null;
             try {
                 x = ((ICourseService) getService(ICourseService.class))

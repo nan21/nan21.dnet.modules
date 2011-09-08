@@ -10,7 +10,7 @@ net.nan21.dnet.module.sd.order.frame.SalesOrder_UI = Ext.extend( dnet.base.Abstr
 		.linkDc("item", "order",{fields:[ {childField:"salesOrderId", parentField:"id"} ]} );		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("order",{ name:"orderFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter"})	 
 		.addDcView("order",{ name:"orderList", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$List"})	 
@@ -19,7 +19,7 @@ net.nan21.dnet.module.sd.order.frame.SalesOrder_UI = Ext.extend( dnet.base.Abstr
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -34,8 +34,8 @@ net.nan21.dnet.module.sd.order.frame.SalesOrder_UI = Ext.extend( dnet.base.Abstr
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbOrderList", {dc:"order"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbOrderEdit", {dc:"order"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbOrderList", {dc:"order"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
+			.beginToolbar("tlbOrderEdit", {dc:"order"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
 			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 

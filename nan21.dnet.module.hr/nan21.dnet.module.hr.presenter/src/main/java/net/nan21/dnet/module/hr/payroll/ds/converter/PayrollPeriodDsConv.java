@@ -44,7 +44,7 @@ public class PayrollPeriodDsConv extends
 
     protected void lookup_payroll_Payroll(PayrollPeriodDs ds, PayrollPeriod e)
             throws Exception {
-        if (ds.getPayrollName() != null) {
+        if (ds.getPayrollName() != null && !ds.getPayrollName().equals("")) {
             Payroll x = null;
             try {
                 x = ((IPayrollService) getService(IPayrollService.class))

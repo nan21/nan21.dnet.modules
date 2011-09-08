@@ -54,7 +54,7 @@ public class EmployeeContactDsConv extends
 
     protected void lookup_relationship_EmployeeContactRelationship(
             EmployeeContactDs ds, EmployeeContact e) throws Exception {
-        if (ds.getRelationship() != null) {
+        if (ds.getRelationship() != null && !ds.getRelationship().equals("")) {
             EmployeeContactRelationship x = null;
             try {
                 x = ((IEmployeeContactRelationshipService) getService(IEmployeeContactRelationshipService.class))

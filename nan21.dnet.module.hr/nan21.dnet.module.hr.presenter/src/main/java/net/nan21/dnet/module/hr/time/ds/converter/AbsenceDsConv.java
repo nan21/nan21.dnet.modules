@@ -64,7 +64,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
 
     protected void lookup_employee_Employee(AbsenceDs ds, Absence e)
             throws Exception {
-        if (ds.getEmployeeCode() != null) {
+        if (ds.getEmployeeCode() != null && !ds.getEmployeeCode().equals("")) {
             Employee x = null;
             try {
                 x = ((IEmployeeService) getService(IEmployeeService.class))
@@ -80,7 +80,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
 
     protected void lookup_reason_AbsenceReason(AbsenceDs ds, Absence e)
             throws Exception {
-        if (ds.getReason() != null) {
+        if (ds.getReason() != null && !ds.getReason().equals("")) {
             AbsenceReason x = null;
             try {
                 x = ((IAbsenceReasonService) getService(IAbsenceReasonService.class))
@@ -96,7 +96,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
 
     protected void lookup_type_AbsenceType(AbsenceDs ds, Absence e)
             throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             AbsenceType x = null;
             try {
                 x = ((IAbsenceTypeService) getService(IAbsenceTypeService.class))

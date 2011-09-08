@@ -62,7 +62,8 @@ public class ProductAccountDsConv extends
 
     protected void lookup_organization_Organization(ProductAccountDs ds,
             ProductAccount e) throws Exception {
-        if (ds.getOrganizationCode() != null) {
+        if (ds.getOrganizationCode() != null
+                && !ds.getOrganizationCode().equals("")) {
             Organization x = null;
             try {
                 x = ((IOrganizationService) getService(IOrganizationService.class))
@@ -78,7 +79,7 @@ public class ProductAccountDsConv extends
 
     protected void lookup_group_ProductAccountGroup(ProductAccountDs ds,
             ProductAccount e) throws Exception {
-        if (ds.getGroupCode() != null) {
+        if (ds.getGroupCode() != null && !ds.getGroupCode().equals("")) {
             ProductAccountGroup x = null;
             try {
                 x = ((IProductAccountGroupService) getService(IProductAccountGroupService.class))
@@ -94,7 +95,7 @@ public class ProductAccountDsConv extends
 
     protected void lookup_product_Product(ProductAccountDs ds, ProductAccount e)
             throws Exception {
-        if (ds.getProductCode() != null) {
+        if (ds.getProductCode() != null && !ds.getProductCode().equals("")) {
             Product x = null;
             try {
                 x = ((IProductService) getService(IProductService.class))

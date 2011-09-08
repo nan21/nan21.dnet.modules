@@ -43,7 +43,7 @@ public class SysDsFieldDsConv extends
 
     protected void lookup_dataSource_SysDataSource(SysDsFieldDs ds, SysDsField e)
             throws Exception {
-        if (ds.getDataSource() != null) {
+        if (ds.getDataSource() != null && !ds.getDataSource().equals("")) {
             SysDataSource x = null;
             try {
                 x = ((ISysDataSourceService) getService(ISysDataSourceService.class))

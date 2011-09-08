@@ -27,8 +27,7 @@ net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI = Ext.extend( dnet.base.A
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
 		})
 		.addToc(["canvasReason","canvasType","canvasCateg"]);
-		this._mainViewName_  = "_main_with_toc_";
-		
+		this._mainViewName_  = "_main_with_toc_";	 	
 	}
 
 	,_linkElements_: function() {

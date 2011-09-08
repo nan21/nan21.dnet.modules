@@ -10,7 +10,7 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 		.linkDc("fields", "m",{fields:[ {childField:"dataSourceId", parentField:"id"} ]} );		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addButton({name:"btnSynchronize",text:"Synchronize", tooltip:"Scan classpath and synchronize catalog with deployed instances.",iconCls:"icon-action-synchronize",disabled:false
 			,handler: this.onBtnSynchronize,scope:this	})	
@@ -21,7 +21,7 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "panelDetails", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:400}}) 	  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -34,7 +34,7 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMList", {dc:"m"}).addQuery().end(); 	
+			.beginToolbar("tlbMList", {dc:"m"}).addQuery().addSeparator().addSeparator().addTitle({"text":"List"}).end(); 	
 	}
 
 

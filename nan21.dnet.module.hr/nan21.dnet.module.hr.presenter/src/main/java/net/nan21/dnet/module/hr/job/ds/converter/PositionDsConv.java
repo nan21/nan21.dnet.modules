@@ -52,7 +52,8 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
 
     protected void lookup_organization_Organization(PositionDs ds, Position e)
             throws Exception {
-        if (ds.getOrganizationCode() != null) {
+        if (ds.getOrganizationCode() != null
+                && !ds.getOrganizationCode().equals("")) {
             Organization x = null;
             try {
                 x = ((IOrganizationService) getService(IOrganizationService.class))
@@ -67,7 +68,7 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
     }
 
     protected void lookup_job_Job(PositionDs ds, Position e) throws Exception {
-        if (ds.getJobCode() != null) {
+        if (ds.getJobCode() != null && !ds.getJobCode().equals("")) {
             Job x = null;
             try {
                 x = ((IJobService) getService(IJobService.class)).findByCode(

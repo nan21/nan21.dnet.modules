@@ -42,7 +42,7 @@ public class ProductAttributeTypeDsConv extends
 
     protected void lookup_category_ProductAttributeCategory(
             ProductAttributeTypeDs ds, ProductAttributeType e) throws Exception {
-        if (ds.getCategory() != null) {
+        if (ds.getCategory() != null && !ds.getCategory().equals("")) {
             ProductAttributeCategory x = null;
             try {
                 x = ((IProductAttributeCategoryService) getService(IProductAttributeCategoryService.class))

@@ -50,7 +50,9 @@ public class PayScaleRateValueDsConv extends
 
     protected void lookup_scalePoint_PayScalePoint(PayScaleRateValueDs ds,
             PayScaleRateValue e) throws Exception {
-        if (ds.getScaleRateId() != null && ds.getScalePointCode() != null) {
+        if (ds.getScaleRateId() != null && !ds.getScaleRateId().equals("")
+                && ds.getScalePointCode() != null
+                && !ds.getScalePointCode().equals("")) {
             PayScalePoint x = null;
             try {
                 x = ((IPayScalePointService) getService(IPayScalePointService.class))

@@ -42,7 +42,7 @@ public class CourseTypeDsConv extends
 
     protected void lookup_category_CourseCategory(CourseTypeDs ds, CourseType e)
             throws Exception {
-        if (ds.getCategory() != null) {
+        if (ds.getCategory() != null && !ds.getCategory().equals("")) {
             CourseCategory x = null;
             try {
                 x = ((ICourseCategoryService) getService(ICourseCategoryService.class))

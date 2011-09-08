@@ -113,7 +113,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
 
     protected void lookup_category_ProductCategory(ProductDs ds, Product e)
             throws Exception {
-        if (ds.getCategoryName() != null) {
+        if (ds.getCategoryName() != null && !ds.getCategoryName().equals("")) {
             ProductCategory x = null;
             try {
                 x = ((IProductCategoryService) getService(IProductCategoryService.class))
@@ -129,7 +129,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
 
     protected void lookup_manufacturer_ProductManufacturer(ProductDs ds,
             Product e) throws Exception {
-        if (ds.getManufacturerCode() != null) {
+        if (ds.getManufacturerCode() != null
+                && !ds.getManufacturerCode().equals("")) {
             ProductManufacturer x = null;
             try {
                 x = ((IProductManufacturerService) getService(IProductManufacturerService.class))
@@ -145,7 +146,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
 
     protected void lookup_defaultUom_Uom(ProductDs ds, Product e)
             throws Exception {
-        if (ds.getDefaultUomCode() != null) {
+        if (ds.getDefaultUomCode() != null
+                && !ds.getDefaultUomCode().equals("")) {
             Uom x = null;
             try {
                 x = ((IUomService) getService(IUomService.class)).findByCode(
@@ -160,7 +162,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
     }
 
     protected void lookup_dimUom_Uom(ProductDs ds, Product e) throws Exception {
-        if (ds.getDimUomCode() != null) {
+        if (ds.getDimUomCode() != null && !ds.getDimUomCode().equals("")) {
             Uom x = null;
             try {
                 x = ((IUomService) getService(IUomService.class)).findByCode(
@@ -176,7 +178,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
 
     protected void lookup_volumeUom_Uom(ProductDs ds, Product e)
             throws Exception {
-        if (ds.getVolumeUomCode() != null) {
+        if (ds.getVolumeUomCode() != null && !ds.getVolumeUomCode().equals("")) {
             Uom x = null;
             try {
                 x = ((IUomService) getService(IUomService.class)).findByCode(
@@ -192,7 +194,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
 
     protected void lookup_weightUom_Uom(ProductDs ds, Product e)
             throws Exception {
-        if (ds.getWeightUomCode() != null) {
+        if (ds.getWeightUomCode() != null && !ds.getWeightUomCode().equals("")) {
             Uom x = null;
             try {
                 x = ((IUomService) getService(IUomService.class)).findByCode(
@@ -208,7 +210,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
 
     protected void lookup_attributeGroup_ProductAttributeGroup(ProductDs ds,
             Product e) throws Exception {
-        if (ds.getAttributeGroup() != null) {
+        if (ds.getAttributeGroup() != null
+                && !ds.getAttributeGroup().equals("")) {
             ProductAttributeGroup x = null;
             try {
                 x = ((IProductAttributeGroupService) getService(IProductAttributeGroupService.class))

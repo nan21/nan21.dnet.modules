@@ -8,13 +8,13 @@ net.nan21.dnet.module.hr.job.frame.WorkRequirement_UI = Ext.extend( dnet.base.Ab
 		.addDc("m", new net.nan21.dnet.module.hr.job.dc.WorkRequirement({multiEdit:true}))		;		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.hr.job.dc.WorkRequirement$Filter"})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.hr.job.dc.WorkRequirement$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -26,7 +26,7 @@ net.nan21.dnet.module.hr.job.frame.WorkRequirement_UI = Ext.extend( dnet.base.Ab
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlb", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlb", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end(); 	
 	}
 
 });

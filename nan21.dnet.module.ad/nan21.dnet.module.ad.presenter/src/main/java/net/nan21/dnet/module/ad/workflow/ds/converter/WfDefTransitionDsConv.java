@@ -56,7 +56,7 @@ public class WfDefTransitionDsConv extends
 
     protected void lookup_source_WfDefNode(WfDefTransitionDs ds,
             WfDefTransition e) throws Exception {
-        if (ds.getSource() != null) {
+        if (ds.getSource() != null && !ds.getSource().equals("")) {
             WfDefNode x = null;
             try {
                 x = ((IWfDefNodeService) getService(IWfDefNodeService.class))
@@ -72,7 +72,7 @@ public class WfDefTransitionDsConv extends
 
     protected void lookup_target_WfDefNode(WfDefTransitionDs ds,
             WfDefTransition e) throws Exception {
-        if (ds.getTarget() != null) {
+        if (ds.getTarget() != null && !ds.getTarget().equals("")) {
             WfDefNode x = null;
             try {
                 x = ((IWfDefNodeService) getService(IWfDefNodeService.class))

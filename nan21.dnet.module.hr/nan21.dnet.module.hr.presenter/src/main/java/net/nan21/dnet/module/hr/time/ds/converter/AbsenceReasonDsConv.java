@@ -42,7 +42,7 @@ public class AbsenceReasonDsConv extends
 
     protected void lookup_type_AbsenceType(AbsenceReasonDs ds, AbsenceReason e)
             throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             AbsenceType x = null;
             try {
                 x = ((IAbsenceTypeService) getService(IAbsenceTypeService.class))

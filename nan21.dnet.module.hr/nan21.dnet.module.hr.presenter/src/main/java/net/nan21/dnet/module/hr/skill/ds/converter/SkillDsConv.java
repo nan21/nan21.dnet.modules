@@ -52,7 +52,7 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
     }
 
     protected void lookup_type_SkillType(SkillDs ds, Skill e) throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             SkillType x = null;
             try {
                 x = ((ISkillTypeService) getService(ISkillTypeService.class))
@@ -68,7 +68,7 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
 
     protected void lookup_ratingScale_RatingScale(SkillDs ds, Skill e)
             throws Exception {
-        if (ds.getRatingScale() != null) {
+        if (ds.getRatingScale() != null && !ds.getRatingScale().equals("")) {
             RatingScale x = null;
             try {
                 x = ((IRatingScaleService) getService(IRatingScaleService.class))

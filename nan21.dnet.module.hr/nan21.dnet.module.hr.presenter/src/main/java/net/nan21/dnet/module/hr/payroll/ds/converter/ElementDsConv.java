@@ -43,7 +43,7 @@ public class ElementDsConv extends AbstractDsConverter<ElementDs, Element>
 
     protected void lookup_type_ElementType(ElementDs ds, Element e)
             throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             ElementType x = null;
             try {
                 x = ((IElementTypeService) getService(IElementTypeService.class))

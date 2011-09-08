@@ -8,13 +8,13 @@ net.nan21.dnet.module.hr.skill.frame.RatingLevel_UI = Ext.extend( dnet.base.Abst
 		.addDc("m", new net.nan21.dnet.module.hr.skill.dc.RatingLevel({multiEdit:true}))		;		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingLevel$Filter"})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingLevel$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -26,7 +26,7 @@ net.nan21.dnet.module.hr.skill.frame.RatingLevel_UI = Ext.extend( dnet.base.Abst
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end(); 	
 	}
 
 });

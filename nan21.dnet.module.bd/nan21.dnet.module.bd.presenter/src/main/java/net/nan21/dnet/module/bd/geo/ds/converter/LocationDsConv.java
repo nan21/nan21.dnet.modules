@@ -59,7 +59,7 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
 
     protected void lookup_country_Country(LocationDs ds, Location e)
             throws Exception {
-        if (ds.getCountryCode() != null) {
+        if (ds.getCountryCode() != null && !ds.getCountryCode().equals("")) {
             Country x = null;
             try {
                 x = ((ICountryService) getService(ICountryService.class))
@@ -75,7 +75,8 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
 
     protected void lookup_region_Region(LocationDs ds, Location e)
             throws Exception {
-        if (ds.getCountryId() != null && ds.getRegionCode() != null) {
+        if (ds.getCountryId() != null && !ds.getCountryId().equals("")
+                && ds.getRegionCode() != null && !ds.getRegionCode().equals("")) {
             Region x = null;
             try {
                 x = ((IRegionService) getService(IRegionService.class))

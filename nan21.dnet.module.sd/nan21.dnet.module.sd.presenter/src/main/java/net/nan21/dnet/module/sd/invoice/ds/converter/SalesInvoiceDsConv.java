@@ -93,7 +93,7 @@ public class SalesInvoiceDsConv extends
 
     protected void lookup_type_SalesInvoiceType(SalesInvoiceDs ds,
             SalesInvoice e) throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             SalesInvoiceType x = null;
             try {
                 x = ((ISalesInvoiceTypeService) getService(ISalesInvoiceTypeService.class))
@@ -109,7 +109,7 @@ public class SalesInvoiceDsConv extends
 
     protected void lookup_status_SalesInvoiceStatus(SalesInvoiceDs ds,
             SalesInvoice e) throws Exception {
-        if (ds.getStatus() != null) {
+        if (ds.getStatus() != null && !ds.getStatus().equals("")) {
             SalesInvoiceStatus x = null;
             try {
                 x = ((ISalesInvoiceStatusService) getService(ISalesInvoiceStatusService.class))
@@ -125,7 +125,7 @@ public class SalesInvoiceDsConv extends
 
     protected void lookup_customer_BusinessPartner(SalesInvoiceDs ds,
             SalesInvoice e) throws Exception {
-        if (ds.getCustomerCode() != null) {
+        if (ds.getCustomerCode() != null && !ds.getCustomerCode().equals("")) {
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))

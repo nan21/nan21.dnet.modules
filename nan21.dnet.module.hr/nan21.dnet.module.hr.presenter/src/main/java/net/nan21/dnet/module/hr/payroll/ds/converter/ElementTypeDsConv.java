@@ -42,7 +42,7 @@ public class ElementTypeDsConv extends
 
     protected void lookup_category_ElementCategory(ElementTypeDs ds,
             ElementType e) throws Exception {
-        if (ds.getCategory() != null) {
+        if (ds.getCategory() != null && !ds.getCategory().equals("")) {
             ElementCategory x = null;
             try {
                 x = ((IElementCategoryService) getService(IElementCategoryService.class))

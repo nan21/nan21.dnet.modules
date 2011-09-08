@@ -44,7 +44,7 @@ public class CommunicationChannelDsConv extends
 
     protected void lookup_type_CommunicationChannelType(
             CommunicationChannelDs ds, CommunicationChannel e) throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             CommunicationChannelType x = null;
             try {
                 x = ((ICommunicationChannelTypeService) getService(ICommunicationChannelTypeService.class))

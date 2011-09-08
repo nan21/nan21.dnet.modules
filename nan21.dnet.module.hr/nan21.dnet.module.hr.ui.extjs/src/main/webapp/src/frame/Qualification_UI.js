@@ -10,7 +10,7 @@ net.nan21.dnet.module.hr.skill.frame.Qualification_UI = Ext.extend( dnet.base.Ab
 		.linkDc("skill", "qualif",{fields:[ {childField:"qualificationId", parentField:"id"} ]} );		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("qualif",{ name:"qualifFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.Qualification$Filter"})	 
 		.addDcView("qualif",{ name:"qualifEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.Qualification$EditList", frame:true})	 
@@ -18,7 +18,7 @@ net.nan21.dnet.module.hr.skill.frame.Qualification_UI = Ext.extend( dnet.base.Ab
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "panelRequirements", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:500}}) 	  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -32,8 +32,8 @@ net.nan21.dnet.module.hr.skill.frame.Qualification_UI = Ext.extend( dnet.base.Ab
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbQualifEditList", {dc:"qualif"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
-			.beginToolbar("tlbSkillCtxEditList", {dc:"skill"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbQualifEditList", {dc:"qualif"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end()
+			.beginToolbar("tlbSkillCtxEditList", {dc:"skill"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Required competence"}).end(); 	
 	}
 
 });

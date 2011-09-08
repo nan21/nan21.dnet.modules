@@ -10,7 +10,7 @@ net.nan21.dnet.module.ad.impex.frame.ImportJob_UI = Ext.extend( dnet.base.Abstra
 		.linkDc("item", "job",{fields:[ {childField:"jobId", parentField:"id"} ]} );		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addButton({name:"btnRunImport",text:"Import All", tooltip:"Import all sets included in this job.",iconCls:"icon-action-import",disabled:true
 			,handler: this.onBtnRunImport,scope:this,stateManager:{name:"record_status_is_edit", dc:"job" }	})	
@@ -25,7 +25,7 @@ net.nan21.dnet.module.ad.impex.frame.ImportJob_UI = Ext.extend( dnet.base.Abstra
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -40,8 +40,8 @@ net.nan21.dnet.module.ad.impex.frame.ImportJob_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbJobList", {dc:"job"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbJobEdit", {dc:"job"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbJobList", {dc:"job"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
+			.beginToolbar("tlbJobEdit", {dc:"job"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
 			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 

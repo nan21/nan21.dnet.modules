@@ -46,7 +46,7 @@ public class ContactDsConv extends AbstractDsConverter<ContactDs, Contact>
 
     protected void lookup_bpartner_BusinessPartner(ContactDs ds, Contact e)
             throws Exception {
-        if (ds.getBpartnerCode() != null) {
+        if (ds.getBpartnerCode() != null && !ds.getBpartnerCode().equals("")) {
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))

@@ -52,7 +52,7 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
 
     protected void lookup_element_Element(VariableDs ds, Variable e)
             throws Exception {
-        if (ds.getElement() != null) {
+        if (ds.getElement() != null && !ds.getElement().equals("")) {
             Element x = null;
             try {
                 x = ((IElementService) getService(IElementService.class))
@@ -68,7 +68,8 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
 
     protected void lookup_crossReference_Element(VariableDs ds, Variable e)
             throws Exception {
-        if (ds.getCrossReference() != null) {
+        if (ds.getCrossReference() != null
+                && !ds.getCrossReference().equals("")) {
             Element x = null;
             try {
                 x = ((IElementService) getService(IElementService.class))

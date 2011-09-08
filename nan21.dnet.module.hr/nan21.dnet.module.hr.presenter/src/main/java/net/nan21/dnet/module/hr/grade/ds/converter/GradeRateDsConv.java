@@ -42,7 +42,7 @@ public class GradeRateDsConv extends
 
     protected void lookup_currency_Currency(GradeRateDs ds, GradeRate e)
             throws Exception {
-        if (ds.getCurrencyCode() != null) {
+        if (ds.getCurrencyCode() != null && !ds.getCurrencyCode().equals("")) {
             Currency x = null;
             try {
                 x = ((ICurrencyService) getService(ICurrencyService.class))

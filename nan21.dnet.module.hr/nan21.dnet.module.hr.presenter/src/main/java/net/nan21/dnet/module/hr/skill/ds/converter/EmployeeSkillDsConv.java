@@ -58,7 +58,7 @@ public class EmployeeSkillDsConv extends
 
     protected void lookup_skill_Skill(EmployeeSkillDs ds, EmployeeSkill e)
             throws Exception {
-        if (ds.getSkill() != null) {
+        if (ds.getSkill() != null && !ds.getSkill().equals("")) {
             Skill x = null;
             try {
                 x = ((ISkillService) getService(ISkillService.class))
@@ -74,7 +74,8 @@ public class EmployeeSkillDsConv extends
 
     protected void lookup_skillLevel_RatingLevel(EmployeeSkillDs ds,
             EmployeeSkill e) throws Exception {
-        if (ds.getRatingScaleId() != null && ds.getSkillLevel() != null) {
+        if (ds.getRatingScaleId() != null && !ds.getRatingScaleId().equals("")
+                && ds.getSkillLevel() != null && !ds.getSkillLevel().equals("")) {
             RatingLevel x = null;
             try {
                 x = ((IRatingLevelService) getService(IRatingLevelService.class))

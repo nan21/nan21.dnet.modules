@@ -42,7 +42,7 @@ public class AbsenceTypeDsConv extends
 
     protected void lookup_category_AbsenceCategory(AbsenceTypeDs ds,
             AbsenceType e) throws Exception {
-        if (ds.getCategory() != null) {
+        if (ds.getCategory() != null && !ds.getCategory().equals("")) {
             AbsenceCategory x = null;
             try {
                 x = ((IAbsenceCategoryService) getService(IAbsenceCategoryService.class))

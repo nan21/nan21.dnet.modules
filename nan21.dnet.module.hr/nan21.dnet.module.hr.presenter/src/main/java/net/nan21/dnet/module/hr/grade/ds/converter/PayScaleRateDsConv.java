@@ -53,7 +53,7 @@ public class PayScaleRateDsConv extends
 
     protected void lookup_currency_Currency(PayScaleRateDs ds, PayScaleRate e)
             throws Exception {
-        if (ds.getCurrencyCode() != null) {
+        if (ds.getCurrencyCode() != null && !ds.getCurrencyCode().equals("")) {
             Currency x = null;
             try {
                 x = ((ICurrencyService) getService(ICurrencyService.class))
@@ -69,7 +69,7 @@ public class PayScaleRateDsConv extends
 
     protected void lookup_payScale_PayScale(PayScaleRateDs ds, PayScaleRate e)
             throws Exception {
-        if (ds.getPayScaleCode() != null) {
+        if (ds.getPayScaleCode() != null && !ds.getPayScaleCode().equals("")) {
             PayScale x = null;
             try {
                 x = ((IPayScaleService) getService(IPayScaleService.class))

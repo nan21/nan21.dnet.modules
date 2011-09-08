@@ -130,7 +130,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
 
     protected void lookup_employer_Organization(EmployeeDs ds, Employee e)
             throws Exception {
-        if (ds.getEmployerCode() != null) {
+        if (ds.getEmployerCode() != null && !ds.getEmployerCode().equals("")) {
             Organization x = null;
             try {
                 x = ((IOrganizationService) getService(IOrganizationService.class))
@@ -146,7 +146,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
 
     protected void lookup_citizenship_Country(EmployeeDs ds, Employee e)
             throws Exception {
-        if (ds.getCitizenshipCode() != null) {
+        if (ds.getCitizenshipCode() != null
+                && !ds.getCitizenshipCode().equals("")) {
             Country x = null;
             try {
                 x = ((ICountryService) getService(ICountryService.class))
@@ -162,7 +163,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
 
     protected void lookup_type_EmploymentType(EmployeeDs ds, Employee e)
             throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             EmploymentType x = null;
             try {
                 x = ((IEmploymentTypeService) getService(IEmploymentTypeService.class))
@@ -178,7 +179,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
 
     protected void lookup_position_Position(EmployeeDs ds, Employee e)
             throws Exception {
-        if (ds.getPositionCode() != null) {
+        if (ds.getPositionCode() != null && !ds.getPositionCode().equals("")) {
             Position x = null;
             try {
                 x = ((IPositionService) getService(IPositionService.class))
@@ -193,7 +194,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
     }
 
     protected void lookup_job_Job(EmployeeDs ds, Employee e) throws Exception {
-        if (ds.getJobCode() != null) {
+        if (ds.getJobCode() != null && !ds.getJobCode().equals("")) {
             Job x = null;
             try {
                 x = ((IJobService) getService(IJobService.class)).findByCode(
@@ -209,7 +210,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
 
     protected void lookup_organization_Organization(EmployeeDs ds, Employee e)
             throws Exception {
-        if (ds.getOrganizationCode() != null) {
+        if (ds.getOrganizationCode() != null
+                && !ds.getOrganizationCode().equals("")) {
             Organization x = null;
             try {
                 x = ((IOrganizationService) getService(IOrganizationService.class))
@@ -225,7 +227,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
 
     protected void lookup_grade_Grade(EmployeeDs ds, Employee e)
             throws Exception {
-        if (ds.getGradeCode() != null) {
+        if (ds.getGradeCode() != null && !ds.getGradeCode().equals("")) {
             Grade x = null;
             try {
                 x = ((IGradeService) getService(IGradeService.class))
@@ -241,7 +243,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
 
     protected void lookup_payroll_Payroll(EmployeeDs ds, Employee e)
             throws Exception {
-        if (ds.getPayroll() != null) {
+        if (ds.getPayroll() != null && !ds.getPayroll().equals("")) {
             Payroll x = null;
             try {
                 x = ((IPayrollService) getService(IPayrollService.class))

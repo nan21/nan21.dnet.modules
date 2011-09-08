@@ -43,7 +43,7 @@ public class ImportMapItemDsConv extends
 
     protected void lookup_importMap_ImportMap(ImportMapItemDs ds,
             ImportMapItem e) throws Exception {
-        if (ds.getImportMapName() != null) {
+        if (ds.getImportMapName() != null && !ds.getImportMapName().equals("")) {
             ImportMap x = null;
             try {
                 x = ((IImportMapService) getService(IImportMapService.class))

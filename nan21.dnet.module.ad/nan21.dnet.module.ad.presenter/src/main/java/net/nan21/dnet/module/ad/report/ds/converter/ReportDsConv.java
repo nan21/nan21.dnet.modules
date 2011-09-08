@@ -43,7 +43,8 @@ public class ReportDsConv extends AbstractDsConverter<ReportDs, Report>
 
     protected void lookup_reportServer_ReportServer(ReportDs ds, Report e)
             throws Exception {
-        if (ds.getReportServerName() != null) {
+        if (ds.getReportServerName() != null
+                && !ds.getReportServerName().equals("")) {
             ReportServer x = null;
             try {
                 x = ((IReportServerService) getService(IReportServerService.class))

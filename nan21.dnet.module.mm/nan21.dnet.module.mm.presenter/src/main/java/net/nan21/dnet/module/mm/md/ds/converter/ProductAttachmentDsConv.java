@@ -50,7 +50,7 @@ public class ProductAttachmentDsConv extends
 
     protected void lookup_type_ProductAttachmentType(ProductAttachmentDs ds,
             ProductAttachment e) throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             ProductAttachmentType x = null;
             try {
                 x = ((IProductAttachmentTypeService) getService(IProductAttachmentTypeService.class))

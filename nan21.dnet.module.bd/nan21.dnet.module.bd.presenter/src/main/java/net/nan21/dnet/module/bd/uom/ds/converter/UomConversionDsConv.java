@@ -51,7 +51,7 @@ public class UomConversionDsConv extends
 
     protected void lookup_source_Uom(UomConversionDs ds, UomConversion e)
             throws Exception {
-        if (ds.getSourceCode() != null) {
+        if (ds.getSourceCode() != null && !ds.getSourceCode().equals("")) {
             Uom x = null;
             try {
                 x = ((IUomService) getService(IUomService.class)).findByCode(
@@ -67,7 +67,7 @@ public class UomConversionDsConv extends
 
     protected void lookup_target_Uom(UomConversionDs ds, UomConversion e)
             throws Exception {
-        if (ds.getTargetCode() != null) {
+        if (ds.getTargetCode() != null && !ds.getTargetCode().equals("")) {
             Uom x = null;
             try {
                 x = ((IUomService) getService(IUomService.class)).findByCode(

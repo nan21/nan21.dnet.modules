@@ -10,7 +10,7 @@ net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI = Ext.extend( dnet.base.Abs
 		.linkDc("value", "srate",{fields:[ {childField:"scaleRateId", parentField:"id"} ]} );		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("srate",{ name:"srateFilter", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter"})	 
 		.addDcView("srate",{ name:"srateList", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List"})	 
@@ -19,7 +19,7 @@ net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI = Ext.extend( dnet.base.Abs
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -34,9 +34,9 @@ net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI = Ext.extend( dnet.base.Abs
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbSrateList", {dc:"srate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbSrateEdit", {dc:"srate"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
-			.beginToolbar("tlbSalueEditList", {dc:"value"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbSrateList", {dc:"srate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
+			.beginToolbar("tlbSrateEdit", {dc:"srate"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
+			.beginToolbar("tlbSalueEditList", {dc:"value"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Progression point rates"}).end(); 	
 	}
 
 });

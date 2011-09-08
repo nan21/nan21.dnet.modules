@@ -10,7 +10,7 @@ net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.Abstra
 		.linkDc("item", "map",{fields:[ {childField:"importMapId", parentField:"id"} ]} );		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addButton({name:"btnRunImportMap",text:"Import All", tooltip:"Import all files included in this set.",iconCls:"icon-action-import",disabled:true
 			,handler: this.onBtnRunImportMap,scope:this,stateManager:{name:"record_is_clean", dc:"map" }	})	
@@ -25,7 +25,7 @@ net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.Abstra
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -40,8 +40,8 @@ net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMapList", {dc:"map"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbMapEdit", {dc:"map"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbMapList", {dc:"map"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
+			.beginToolbar("tlbMapEdit", {dc:"map"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
 			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 

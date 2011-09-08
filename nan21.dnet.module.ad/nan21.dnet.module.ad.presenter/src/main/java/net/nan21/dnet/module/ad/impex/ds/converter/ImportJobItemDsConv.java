@@ -50,7 +50,7 @@ public class ImportJobItemDsConv extends
 
     protected void lookup_job_ImportJob(ImportJobItemDs ds, ImportJobItem e)
             throws Exception {
-        if (ds.getJobName() != null) {
+        if (ds.getJobName() != null && !ds.getJobName().equals("")) {
             ImportJob x = null;
             try {
                 x = ((IImportJobService) getService(IImportJobService.class))
@@ -66,7 +66,7 @@ public class ImportJobItemDsConv extends
 
     protected void lookup_map_ImportMap(ImportJobItemDs ds, ImportJobItem e)
             throws Exception {
-        if (ds.getMapName() != null) {
+        if (ds.getMapName() != null && !ds.getMapName().equals("")) {
             ImportMap x = null;
             try {
                 x = ((IImportMapService) getService(IImportMapService.class))

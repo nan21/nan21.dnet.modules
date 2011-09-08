@@ -10,24 +10,7 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI = Ext.extend( dnet.base.
 		.addDc("dcMyhistory", new net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory())		;		
 	}	 
 
-	,_defineElements_: function() {					
-			
-		this._mainViewName_  = "_main_with_toc_";
-		this._getBuilder_()
-		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
-				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
-		})
-		.addPanel({ name:"_toc_",xtype: 'treepanel',collapsible: true, region:"west", title: 'Navigation',width: 250,autoScroll: true,split: true,rootVisible: false,loader: new Ext.tree.TreeLoader()
-			,minWidth:150, maxWidth:500
-			,root: new Ext.tree.AsyncTreeNode({expanded: true,
-            children: [{ text:"Current tasks", leaf: true , name:"canvas1"},{ text:"Available tasks", leaf: true , name:"canvas2"},{ text:"History", leaf: true , name:"canvas3"}]
-        	})
-        	,listeners: {scope:this, 
-            	click: function(n) {
-					this._showStackedViewElement_("main", n.attributes.name);			 
-            	}            
-        	}
-		}); 
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addButton({name:"btnCompleteTask",text:"Complete task", tooltip:"Mark selected task as completed.",iconCls:"icon-action-commit",disabled:true
 			,handler: this.onBtnCompleteTask,scope:this,stateManager:{name:"selected_one", dc:"dcMytask" }	})	
@@ -45,7 +28,12 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI = Ext.extend( dnet.base.
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Current tasks",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Available tasks",header:false})  	 
 		.addPanel({name: "canvas3", layout:"border", defaults:{split:true},title:"History",header:false})  	 
-			 	
+			
+		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
+				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
+		})
+		.addToc(["canvas1","canvas2","canvas3"]);
+		this._mainViewName_  = "_main_with_toc_";	 	
 	}
 
 	,_linkElements_: function() {
@@ -63,9 +51,9 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI = Ext.extend( dnet.base.
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMytaskList", {dc:"dcMytask"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
-			.beginToolbar("tlbAvailabletaskList", {dc:"dcAvailabletask"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
-			.beginToolbar("tlbMyhistoryList", {dc:"dcMyhistory"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbMytaskList", {dc:"dcMytask"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Current tasks"}).end()
+			.beginToolbar("tlbAvailabletaskList", {dc:"dcAvailabletask"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Available tasks"}).end()
+			.beginToolbar("tlbMyhistoryList", {dc:"dcMyhistory"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"History"}).end(); 	
 	}
 
 

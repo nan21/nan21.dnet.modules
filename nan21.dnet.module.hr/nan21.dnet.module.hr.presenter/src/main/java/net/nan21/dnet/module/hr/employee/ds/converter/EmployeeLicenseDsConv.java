@@ -53,7 +53,7 @@ public class EmployeeLicenseDsConv extends
 
     protected void lookup_licenseType_LicenseType(EmployeeLicenseDs ds,
             EmployeeLicense e) throws Exception {
-        if (ds.getLicenseType() != null) {
+        if (ds.getLicenseType() != null && !ds.getLicenseType().equals("")) {
             LicenseType x = null;
             try {
                 x = ((ILicenseTypeService) getService(ILicenseTypeService.class))

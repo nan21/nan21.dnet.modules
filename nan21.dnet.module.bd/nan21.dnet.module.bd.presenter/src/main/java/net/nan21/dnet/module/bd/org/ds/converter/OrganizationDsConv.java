@@ -44,7 +44,7 @@ public class OrganizationDsConv extends
 
     protected void lookup_type_OrganizationType(OrganizationDs ds,
             Organization e) throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             OrganizationType x = null;
             try {
                 x = ((IOrganizationTypeService) getService(IOrganizationTypeService.class))

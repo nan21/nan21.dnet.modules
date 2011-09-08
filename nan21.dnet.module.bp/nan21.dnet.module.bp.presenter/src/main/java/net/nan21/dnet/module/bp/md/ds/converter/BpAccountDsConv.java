@@ -120,7 +120,8 @@ public class BpAccountDsConv extends
 
     protected void lookup_bp_BusinessPartner(BpAccountDs ds, BpAccount e)
             throws Exception {
-        if (ds.getBusinessPartner() != null) {
+        if (ds.getBusinessPartner() != null
+                && !ds.getBusinessPartner().equals("")) {
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
@@ -136,7 +137,7 @@ public class BpAccountDsConv extends
 
     protected void lookup_organization_Organization(BpAccountDs ds, BpAccount e)
             throws Exception {
-        if (ds.getOrganization() != null) {
+        if (ds.getOrganization() != null && !ds.getOrganization().equals("")) {
             Organization x = null;
             try {
                 x = ((IOrganizationService) getService(IOrganizationService.class))
@@ -152,7 +153,7 @@ public class BpAccountDsConv extends
 
     protected void lookup_custGroup_CustomerGroup(BpAccountDs ds, BpAccount e)
             throws Exception {
-        if (ds.getCustomerGroup() != null) {
+        if (ds.getCustomerGroup() != null && !ds.getCustomerGroup().equals("")) {
             CustomerGroup x = null;
             try {
                 x = ((ICustomerGroupService) getService(ICustomerGroupService.class))
@@ -168,7 +169,8 @@ public class BpAccountDsConv extends
 
     protected void lookup_custPaymentMethod_PaymentMethod(BpAccountDs ds,
             BpAccount e) throws Exception {
-        if (ds.getCustomerPaymentMethod() != null) {
+        if (ds.getCustomerPaymentMethod() != null
+                && !ds.getCustomerPaymentMethod().equals("")) {
             PaymentMethod x = null;
             try {
                 x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
@@ -185,7 +187,8 @@ public class BpAccountDsConv extends
 
     protected void lookup_custPaymentTerm_PaymentTerm(BpAccountDs ds,
             BpAccount e) throws Exception {
-        if (ds.getCustomerPaymentTerm() != null) {
+        if (ds.getCustomerPaymentTerm() != null
+                && !ds.getCustomerPaymentTerm().equals("")) {
             PaymentTerm x = null;
             try {
                 x = ((IPaymentTermService) getService(IPaymentTermService.class))
@@ -202,7 +205,7 @@ public class BpAccountDsConv extends
 
     protected void lookup_vendGroup_VendorGroup(BpAccountDs ds, BpAccount e)
             throws Exception {
-        if (ds.getVendorGroup() != null) {
+        if (ds.getVendorGroup() != null && !ds.getVendorGroup().equals("")) {
             VendorGroup x = null;
             try {
                 x = ((IVendorGroupService) getService(IVendorGroupService.class))
@@ -218,7 +221,8 @@ public class BpAccountDsConv extends
 
     protected void lookup_vendPaymentMethod_PaymentMethod(BpAccountDs ds,
             BpAccount e) throws Exception {
-        if (ds.getVendorPaymentMethod() != null) {
+        if (ds.getVendorPaymentMethod() != null
+                && !ds.getVendorPaymentMethod().equals("")) {
             PaymentMethod x = null;
             try {
                 x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
@@ -235,7 +239,8 @@ public class BpAccountDsConv extends
 
     protected void lookup_vendPaymentTerm_PaymentTerm(BpAccountDs ds,
             BpAccount e) throws Exception {
-        if (ds.getVendorPaymentTerm() != null) {
+        if (ds.getVendorPaymentTerm() != null
+                && !ds.getVendorPaymentTerm().equals("")) {
             PaymentTerm x = null;
             try {
                 x = ((IPaymentTermService) getService(IPaymentTermService.class))

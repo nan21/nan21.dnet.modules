@@ -66,7 +66,7 @@ public class BpBankAccountDsConv extends
 
     protected void lookup_currency_Currency(BpBankAccountDs ds, BpBankAccount e)
             throws Exception {
-        if (ds.getCurrencyCode() != null) {
+        if (ds.getCurrencyCode() != null && !ds.getCurrencyCode().equals("")) {
             Currency x = null;
             try {
                 x = ((ICurrencyService) getService(ICurrencyService.class))
@@ -82,7 +82,7 @@ public class BpBankAccountDsConv extends
 
     protected void lookup_bank_Bank(BpBankAccountDs ds, BpBankAccount e)
             throws Exception {
-        if (ds.getBankCode() != null) {
+        if (ds.getBankCode() != null && !ds.getBankCode().equals("")) {
             Bank x = null;
             try {
                 x = ((IBankService) getService(IBankService.class)).findByCode(
@@ -98,7 +98,7 @@ public class BpBankAccountDsConv extends
 
     protected void lookup_bpartner_BusinessPartner(BpBankAccountDs ds,
             BpBankAccount e) throws Exception {
-        if (ds.getBpartnerCode() != null) {
+        if (ds.getBpartnerCode() != null && !ds.getBpartnerCode().equals("")) {
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))

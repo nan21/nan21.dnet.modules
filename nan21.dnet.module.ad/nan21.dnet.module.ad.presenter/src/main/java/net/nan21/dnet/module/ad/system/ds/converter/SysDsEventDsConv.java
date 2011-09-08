@@ -40,7 +40,7 @@ public class SysDsEventDsConv extends
 
     protected void lookup_dataSource_SysDataSource(SysDsEventDs ds, SysDsEvent e)
             throws Exception {
-        if (ds.getDataSource() != null) {
+        if (ds.getDataSource() != null && !ds.getDataSource().equals("")) {
             SysDataSource x = null;
             try {
                 x = ((ISysDataSourceService) getService(ISysDataSourceService.class))

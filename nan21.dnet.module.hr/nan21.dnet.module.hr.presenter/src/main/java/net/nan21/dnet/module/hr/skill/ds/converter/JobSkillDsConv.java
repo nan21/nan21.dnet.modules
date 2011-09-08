@@ -56,7 +56,9 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
 
     protected void lookup_requiredLevel_RatingLevel(JobSkillDs ds, JobSkill e)
             throws Exception {
-        if (ds.getRatingScaleId() != null && ds.getRequiredLevel() != null) {
+        if (ds.getRatingScaleId() != null && !ds.getRatingScaleId().equals("")
+                && ds.getRequiredLevel() != null
+                && !ds.getRequiredLevel().equals("")) {
             RatingLevel x = null;
             try {
                 x = ((IRatingLevelService) getService(IRatingLevelService.class))
@@ -75,7 +77,7 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
 
     protected void lookup_skill_Skill(JobSkillDs ds, JobSkill e)
             throws Exception {
-        if (ds.getCompetence() != null) {
+        if (ds.getCompetence() != null && !ds.getCompetence().equals("")) {
             Skill x = null;
             try {
                 x = ((ISkillService) getService(ISkillService.class))

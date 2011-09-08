@@ -8,13 +8,13 @@ net.nan21.dnet.module.bd.contact.frame.CommunicationChannelTypes_UI = Ext.extend
 		.addDc("m", new net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType({multiEdit:true}))		;		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter"})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -26,7 +26,7 @@ net.nan21.dnet.module.bd.contact.frame.CommunicationChannelTypes_UI = Ext.extend
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end(); 	
 	}
 
 });

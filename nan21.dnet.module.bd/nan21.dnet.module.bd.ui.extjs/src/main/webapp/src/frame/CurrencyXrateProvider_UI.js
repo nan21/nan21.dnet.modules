@@ -8,13 +8,13 @@ net.nan21.dnet.module.bd.currency.frame.CurrencyXrateProvider_UI = Ext.extend( d
 		.addDc("prvd", new net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider({multiEdit:true}))		;		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("prvd",{ name:"prvdFilter", xtype:"net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider$Filter"})	 
 		.addDcView("prvd",{ name:"prvdEditList", xtype:"net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {

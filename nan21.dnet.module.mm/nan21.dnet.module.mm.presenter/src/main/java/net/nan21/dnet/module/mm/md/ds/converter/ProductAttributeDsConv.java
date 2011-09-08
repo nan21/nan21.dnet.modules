@@ -53,7 +53,7 @@ public class ProductAttributeDsConv extends
 
     protected void lookup_type_ProductAttributeType(ProductAttributeDs ds,
             ProductAttribute e) throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             ProductAttributeType x = null;
             try {
                 x = ((IProductAttributeTypeService) getService(IProductAttributeTypeService.class))
@@ -69,7 +69,7 @@ public class ProductAttributeDsConv extends
 
     protected void lookup_uom_Uom(ProductAttributeDs ds, ProductAttribute e)
             throws Exception {
-        if (ds.getUom() != null) {
+        if (ds.getUom() != null && !ds.getUom().equals("")) {
             Uom x = null;
             try {
                 x = ((IUomService) getService(IUomService.class)).findByName(

@@ -43,7 +43,7 @@ public class RegionDsConv extends AbstractDsConverter<RegionDs, Region>
 
     protected void lookup_country_Country(RegionDs ds, Region e)
             throws Exception {
-        if (ds.getCountryCode() != null) {
+        if (ds.getCountryCode() != null && !ds.getCountryCode().equals("")) {
             Country x = null;
             try {
                 x = ((ICountryService) getService(ICountryService.class))

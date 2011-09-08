@@ -42,7 +42,7 @@ public class UserDsConv extends AbstractDsConverter<UserDs, User> implements
 
     protected void lookup_accountType_UserType(UserDs ds, User e)
             throws Exception {
-        if (ds.getAccountType() != null) {
+        if (ds.getAccountType() != null && !ds.getAccountType().equals("")) {
             UserType x = null;
             try {
                 x = ((IUserTypeService) getService(IUserTypeService.class))

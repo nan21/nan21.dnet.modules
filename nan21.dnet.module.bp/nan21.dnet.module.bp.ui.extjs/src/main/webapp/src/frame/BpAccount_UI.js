@@ -8,7 +8,7 @@ net.nan21.dnet.module.bp.md.frame.BpAccount_UI = Ext.extend( dnet.base.AbstractU
 		.addDc("m", new net.nan21.dnet.module.bp.md.dc.BpAccount())		;		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$Filter"})	 
 		.addDcView("m",{ name:"mList", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$List"})	 
@@ -16,7 +16,7 @@ net.nan21.dnet.module.bp.md.frame.BpAccount_UI = Ext.extend( dnet.base.AbstractU
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -30,8 +30,8 @@ net.nan21.dnet.module.bp.md.frame.BpAccount_UI = Ext.extend( dnet.base.AbstractU
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMList", {dc:"m"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbMEdit", {dc:"m"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end(); 	
+			.beginToolbar("tlbMList", {dc:"m"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
+			.beginToolbar("tlbMEdit", {dc:"m"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end(); 	
 	}
 
 });

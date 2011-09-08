@@ -49,7 +49,7 @@ public class PositionRequirementDsConv extends
 
     protected void lookup_requirement_WorkRequirement(PositionRequirementDs ds,
             PositionRequirement e) throws Exception {
-        if (ds.getRequirement() != null) {
+        if (ds.getRequirement() != null && !ds.getRequirement().equals("")) {
             WorkRequirement x = null;
             try {
                 x = ((IWorkRequirementService) getService(IWorkRequirementService.class))

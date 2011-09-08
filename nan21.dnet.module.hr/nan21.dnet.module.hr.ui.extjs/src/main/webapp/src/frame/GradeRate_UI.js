@@ -10,7 +10,7 @@ net.nan21.dnet.module.hr.grade.frame.GradeRate_UI = Ext.extend( dnet.base.Abstra
 		.linkDc("value", "rate",{fields:[ {childField:"gradeRateId", parentField:"id"} ]} );		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("rate",{ name:"rateFilter", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter"})	 
 		.addDcView("rate",{ name:"rateList", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$List"})	 
@@ -19,7 +19,7 @@ net.nan21.dnet.module.hr.grade.frame.GradeRate_UI = Ext.extend( dnet.base.Abstra
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -34,8 +34,8 @@ net.nan21.dnet.module.hr.grade.frame.GradeRate_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbRateList", {dc:"rate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbRateEdit", {dc:"rate"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbRateList", {dc:"rate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
+			.beginToolbar("tlbRateEdit", {dc:"rate"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
 			.beginToolbar("tlbValueEditList", {dc:"value"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 

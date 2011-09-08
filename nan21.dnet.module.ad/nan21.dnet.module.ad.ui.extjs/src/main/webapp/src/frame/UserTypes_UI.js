@@ -8,13 +8,13 @@ net.nan21.dnet.module.ad.usr.frame.UserTypes_UI = Ext.extend( dnet.base.Abstract
 		.addDc("userType", new net.nan21.dnet.module.ad.usr.dc.UserType({multiEdit:true}))		;		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("userType",{ name:"filterUserType", xtype:"net.nan21.dnet.module.ad.usr.dc.UserType$Filter"})	 
 		.addDcView("userType",{ name:"listUserType", xtype:"net.nan21.dnet.module.ad.usr.dc.UserType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {

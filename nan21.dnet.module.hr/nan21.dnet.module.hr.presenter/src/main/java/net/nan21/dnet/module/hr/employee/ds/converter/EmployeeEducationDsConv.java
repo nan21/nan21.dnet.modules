@@ -52,7 +52,7 @@ public class EmployeeEducationDsConv extends
 
     protected void lookup_type_EducationType(EmployeeEducationDs ds,
             EmployeeEducation e) throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             EducationType x = null;
             try {
                 x = ((IEducationTypeService) getService(IEducationTypeService.class))

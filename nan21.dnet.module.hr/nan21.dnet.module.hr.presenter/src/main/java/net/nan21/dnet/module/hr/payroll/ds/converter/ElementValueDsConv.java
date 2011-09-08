@@ -59,7 +59,7 @@ public class ElementValueDsConv extends
 
     protected void lookup_element_Element(ElementValueDs ds, ElementValue e)
             throws Exception {
-        if (ds.getElement() != null) {
+        if (ds.getElement() != null && !ds.getElement().equals("")) {
             Element x = null;
             try {
                 x = ((IElementService) getService(IElementService.class))
@@ -75,7 +75,7 @@ public class ElementValueDsConv extends
 
     protected void lookup_period_PayrollPeriod(ElementValueDs ds, ElementValue e)
             throws Exception {
-        if (ds.getPeriod() != null) {
+        if (ds.getPeriod() != null && !ds.getPeriod().equals("")) {
             PayrollPeriod x = null;
             try {
                 x = ((IPayrollPeriodService) getService(IPayrollPeriodService.class))

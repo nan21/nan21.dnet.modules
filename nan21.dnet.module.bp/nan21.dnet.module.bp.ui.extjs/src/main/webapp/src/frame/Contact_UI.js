@@ -10,7 +10,7 @@ net.nan21.dnet.module.bp.md.frame.Contact_UI = Ext.extend( dnet.base.AbstractUi,
 		.linkDc("communic", "c",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} );		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("c",{ name:"cFilter", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$Filter"})	 
 		.addDcView("c",{ name:"cList", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$List"})	 
@@ -20,7 +20,7 @@ net.nan21.dnet.module.bp.md.frame.Contact_UI = Ext.extend( dnet.base.AbstractUi,
 		.addPanel({name: "bpDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -36,9 +36,9 @@ net.nan21.dnet.module.bp.md.frame.Contact_UI = Ext.extend( dnet.base.AbstractUi,
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbTList", {dc:"c"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbTEdit", {dc:"c"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
-			.beginToolbar("tlbCommunicEditList", {dc:"communic"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbTList", {dc:"c"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
+			.beginToolbar("tlbTEdit", {dc:"c"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
+			.beginToolbar("tlbCommunicEditList", {dc:"communic"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Communication"}).end(); 	
 	}
 
 });

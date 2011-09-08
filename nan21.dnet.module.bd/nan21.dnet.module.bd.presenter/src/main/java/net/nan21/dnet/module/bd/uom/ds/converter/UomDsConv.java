@@ -39,7 +39,7 @@ public class UomDsConv extends AbstractDsConverter<UomDs, Uom> implements
     }
 
     protected void lookup_type_UomType(UomDs ds, Uom e) throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             UomType x = null;
             try {
                 x = ((IUomTypeService) getService(IUomTypeService.class))

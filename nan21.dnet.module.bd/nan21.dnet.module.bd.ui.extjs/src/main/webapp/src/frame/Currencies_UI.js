@@ -8,13 +8,13 @@ net.nan21.dnet.module.bd.currency.frame.Currencies_UI = Ext.extend( dnet.base.Ab
 		.addDc("currency", new net.nan21.dnet.module.bd.currency.dc.Currency({multiEdit:true}))		;		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("currency",{ name:"currencyFilter", xtype:"net.nan21.dnet.module.bd.currency.dc.Currency$Filter"})	 
 		.addDcView("currency",{ name:"currencyList", xtype:"net.nan21.dnet.module.bd.currency.dc.Currency$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {

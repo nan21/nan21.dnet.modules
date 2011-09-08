@@ -43,7 +43,7 @@ public class ProductCategoryDsConv extends
 
     protected void lookup_parent_ProductCategory(ProductCategoryDs ds,
             ProductCategory e) throws Exception {
-        if (ds.getParentName() != null) {
+        if (ds.getParentName() != null && !ds.getParentName().equals("")) {
             ProductCategory x = null;
             try {
                 x = ((IProductCategoryService) getService(IProductCategoryService.class))

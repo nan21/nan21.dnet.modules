@@ -8,12 +8,12 @@ net.nan21.dnet.module.ad.client.frame.Client_UI = Ext.extend( dnet.base.Abstract
 		.addDc("client", new net.nan21.dnet.module.ad.client.dc.Client())		;		
 	}	 
 
-	,_defineElements_: function() {					
+	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFormView("client",{ name:"clientEdit", xtype:"net.nan21.dnet.module.ad.client.dc.Client$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
-			 	
+;	 	
 	}
 
 	,_linkElements_: function() {
@@ -25,7 +25,7 @@ net.nan21.dnet.module.ad.client.frame.Client_UI = Ext.extend( dnet.base.Abstract
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("clientEditTlb", {dc:"client"}).addSave().addCancel().end(); 	
+			.beginToolbar("clientEditTlb", {dc:"client"}).addSave().addCancel().addSeparator().addSeparator().addTitle({"text":"Editor"}).end(); 	
 	}
 
 	,loadCurrentClient: function() {	
