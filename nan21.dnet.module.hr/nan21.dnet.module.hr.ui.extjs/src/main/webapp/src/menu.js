@@ -20,9 +20,7 @@ net.nan21.dnet.module.hr.menu.hr = [
  ,		 
 	{"id":"sm_hr_base_job", "text":"Jobs", leaf:false, children:[
 		
-		{id:"WorkRequirementType_UI", text:Dnet.translate("ui","WorkRequirementType_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.job.frame.WorkRequirementType_UI", _bundle_:BUNDLE_ID},		
-		{id:"WorkRequirement_UI", text:Dnet.translate("ui","WorkRequirement_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.job.frame.WorkRequirement_UI", _bundle_:BUNDLE_ID},		
-		{id:"JobTypes_UI", text:Dnet.translate("ui","JobTypes_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.job.frame.JobTypes_UI", _bundle_:BUNDLE_ID},		
+		{id:"JobBaseDataDef_UI", text:Dnet.translate("ui","JobBaseDataDef_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI", _bundle_:BUNDLE_ID},		
 		{id:"Job_UI", text:Dnet.translate("ui","Job_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.job.frame.Job_UI", _bundle_:BUNDLE_ID},		
 		{id:"Position_UI", text:Dnet.translate("ui","Position_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.job.frame.Position_UI", _bundle_:BUNDLE_ID}	]}
  ,		 
@@ -33,7 +31,6 @@ net.nan21.dnet.module.hr.menu.hr = [
  ,		 
 	{"id":"sm_hr_base_payroll", "text":"Payroll", leaf:false, children:[
 		
-		{id:"ElementType_UI", text:Dnet.translate("ui","ElementType_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.payroll.frame.ElementType_UI", _bundle_:BUNDLE_ID},		
 		{id:"Element_UI", text:Dnet.translate("ui","Element_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.payroll.frame.Element_UI", _bundle_:BUNDLE_ID},		
 		{id:"Payroll_UI", text:Dnet.translate("ui","Payroll_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.payroll.frame.Payroll_UI", _bundle_:BUNDLE_ID},		
 		{id:"ElementValue_UI", text:Dnet.translate("ui","ElementValue_UI"), leaf:true, _frame_:"net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI", _bundle_:BUNDLE_ID}	]}

@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.bd.ui.extjs/ds/CurrencyXRateProviderDs", "nan21.dnet.module.bd.ui.extjs/dc/CurrencyXRateProvider"]);
+Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/CurrencyXRateProviderDs", "nan21.dnet.module.bd.ui.extjs/dc/CurrencyXRateProvider"]);
 
 Ext.ns("net.nan21.dnet.module.bd.currency.frame");
 net.nan21.dnet.module.bd.currency.frame.CurrencyXrateProvider_UI = Ext.extend( dnet.base.AbstractUi, {  

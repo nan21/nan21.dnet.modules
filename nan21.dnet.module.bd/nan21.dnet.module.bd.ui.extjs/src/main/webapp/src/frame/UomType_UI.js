@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.bd.ui.extjs/ds/UomTypeDs", "nan21.dnet.module.bd.ui.extjs/dc/UomType"]);
+Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/UomTypeDs", "nan21.dnet.module.bd.ui.extjs/dc/UomType"]);
 
 Ext.ns("net.nan21.dnet.module.bd.uom.frame");
 net.nan21.dnet.module.bd.uom.frame.UomType_UI = Ext.extend( dnet.base.AbstractUi, {  

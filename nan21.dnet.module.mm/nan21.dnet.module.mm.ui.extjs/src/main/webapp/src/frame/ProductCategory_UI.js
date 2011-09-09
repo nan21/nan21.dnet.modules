@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductCategoryDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductCategory","nan21.dnet.module.mm.ui.extjs/ds/ProductCategoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductCategories","nan21.dnet.module.mm.ui.extjs/ds/ProductCategoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductCategories"]);
+Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductCategoryDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductCategory","nan21.dnet.module.mm.ui.extjs/ds/ProductCategoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductCategories","nan21.dnet.module.mm.ui.extjs/ds/ProductCategoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductCategories"]);
 
 Ext.ns("net.nan21.dnet.module.mm.md.frame");
 net.nan21.dnet.module.mm.md.frame.ProductCategory_UI = Ext.extend( dnet.base.AbstractUi, {  

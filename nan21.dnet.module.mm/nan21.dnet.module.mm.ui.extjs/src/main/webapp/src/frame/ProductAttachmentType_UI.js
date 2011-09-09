@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttachmentTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttachmentType"]);
+Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttachmentTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttachmentType"]);
 
 Ext.ns("net.nan21.dnet.module.mm.md.frame");
 net.nan21.dnet.module.mm.md.frame.ProductAttachmentType_UI = Ext.extend( dnet.base.AbstractUi, {  

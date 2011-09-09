@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.bd.ui.extjs/ds/CountryDs", "nan21.dnet.module.bd.ui.extjs/dc/Country", "nan21.dnet.module.bd.ui.extjs/ds/RegionDs", "nan21.dnet.module.bd.ui.extjs/dc/Region"]);
+Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/CountryDs", "nan21.dnet.module.bd.ui.extjs/dc/Country", "nan21.dnet.module.bd.ui.extjs/ds/RegionDs", "nan21.dnet.module.bd.ui.extjs/dc/Region"]);
 
 Ext.ns("net.nan21.dnet.module.bd.geo.frame");
 net.nan21.dnet.module.bd.geo.frame.CountryMD_UI = Ext.extend( dnet.base.AbstractUi, {  

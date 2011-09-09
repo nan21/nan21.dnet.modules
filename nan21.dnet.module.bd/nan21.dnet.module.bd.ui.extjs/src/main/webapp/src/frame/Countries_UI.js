@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.bd.ui.extjs/ds/CountryDs", "nan21.dnet.module.bd.ui.extjs/dc/Country"]);
+Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/CountryDs", "nan21.dnet.module.bd.ui.extjs/dc/Country"]);
 
 Ext.ns("net.nan21.dnet.module.bd.geo.frame");
 net.nan21.dnet.module.bd.geo.frame.Countries_UI = Ext.extend( dnet.base.AbstractUi, {  

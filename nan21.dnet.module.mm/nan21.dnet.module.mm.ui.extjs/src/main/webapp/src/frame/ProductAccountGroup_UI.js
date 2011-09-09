@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductAccountGroupDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAccountGroup"]);
+Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductAccountGroupDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAccountGroup"]);
 
 Ext.ns("net.nan21.dnet.module.mm.md.frame");
 net.nan21.dnet.module.mm.md.frame.ProductAccountGroup_UI = Ext.extend( dnet.base.AbstractUi, {  

@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.bp.ui.extjs/ds/CalendarEventStatusDs", "nan21.dnet.module.bp.ui.extjs/dc/CalendarEventStatus", "nan21.dnet.module.bp.ui.extjs/ds/CalendarEventPriorityDs", "nan21.dnet.module.bp.ui.extjs/dc/CalendarEventPriority"]);
+Dnet.doImport(["", "nan21.dnet.module.bp.ui.extjs/ds/CalendarEventStatusDs", "nan21.dnet.module.bp.ui.extjs/dc/CalendarEventStatus", "nan21.dnet.module.bp.ui.extjs/ds/CalendarEventPriorityDs", "nan21.dnet.module.bp.ui.extjs/dc/CalendarEventPriority"]);
 
 Ext.ns("net.nan21.dnet.module.bp.calendar.frame");
 net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI = Ext.extend( dnet.base.AbstractUi, {  

@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.hr.ui.extjs/ds/PayrollDs", "nan21.dnet.module.hr.ui.extjs/dc/Payroll", "nan21.dnet.module.hr.ui.extjs/ds/PayrollPeriodDs", "nan21.dnet.module.hr.ui.extjs/dc/PayrollPeriod"]);
+Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/PayrollDs", "nan21.dnet.module.hr.ui.extjs/dc/Payroll", "nan21.dnet.module.hr.ui.extjs/ds/PayrollPeriodDs", "nan21.dnet.module.hr.ui.extjs/dc/PayrollPeriod"]);
 
 Ext.ns("net.nan21.dnet.module.hr.payroll.frame");
 net.nan21.dnet.module.hr.payroll.frame.Payroll_UI = Ext.extend( dnet.base.AbstractUi, {  

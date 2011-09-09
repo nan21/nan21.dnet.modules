@@ -13,7 +13,7 @@ net.nan21.dnet.module.hr.payroll.lovs.ElementCategories = Ext.extend( dnet.base.
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.hr.payroll.ds.model.ElementCategoryLovDs		
 				,_dataProviderName_:"ElementCategoryLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.payroll.frame.ElementType_UI",bundle:"nan21.dnet.module.hr.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.payroll.frame.Element_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasCateg"}
 			}
 		); 		 
 		this._createStore_(); 

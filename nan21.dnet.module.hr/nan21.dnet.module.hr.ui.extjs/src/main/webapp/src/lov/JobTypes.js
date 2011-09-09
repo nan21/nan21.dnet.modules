@@ -13,7 +13,7 @@ net.nan21.dnet.module.hr.job.lovs.JobTypes = Ext.extend( dnet.base.AbstractCombo
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.hr.job.ds.model.JobTypeLovDs		
 				,_dataProviderName_:"JobTypeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.job.frame.JobTypes_UI",bundle:"nan21.dnet.module.hr.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasJobType"}
 			}
 		); 		 
 		this._createStore_(); 

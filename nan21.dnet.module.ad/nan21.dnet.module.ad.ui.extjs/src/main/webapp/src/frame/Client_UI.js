@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/ClientDs", "nan21.dnet.module.ad.ui.extjs/dc/Client"]);
+Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ClientDs", "nan21.dnet.module.ad.ui.extjs/dc/Client"]);
 
 Ext.ns("net.nan21.dnet.module.ad.client.frame");
 net.nan21.dnet.module.ad.client.frame.Client_UI = Ext.extend( dnet.base.AbstractUi, {  

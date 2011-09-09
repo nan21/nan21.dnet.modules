@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.bp.ui.extjs/ds/BankDs", "nan21.dnet.module.bp.ui.extjs/dc/Bank"]);
+Dnet.doImport(["", "nan21.dnet.module.bp.ui.extjs/ds/BankDs", "nan21.dnet.module.bp.ui.extjs/dc/Bank"]);
 
 Ext.ns("net.nan21.dnet.module.bp.base.frame");
 net.nan21.dnet.module.bp.base.frame.Bank_UI = Ext.extend( dnet.base.AbstractUi, {  

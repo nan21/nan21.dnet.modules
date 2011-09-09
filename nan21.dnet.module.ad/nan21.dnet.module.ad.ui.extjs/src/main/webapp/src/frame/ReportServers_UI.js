@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/ReportServerDs", "nan21.dnet.module.ad.ui.extjs/dc/ReportServer"]);
+Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ReportServerDs", "nan21.dnet.module.ad.ui.extjs/dc/ReportServer"]);
 
 Ext.ns("net.nan21.dnet.module.ad.report.frame");
 net.nan21.dnet.module.ad.report.frame.ReportServers_UI = Ext.extend( dnet.base.AbstractUi, {  

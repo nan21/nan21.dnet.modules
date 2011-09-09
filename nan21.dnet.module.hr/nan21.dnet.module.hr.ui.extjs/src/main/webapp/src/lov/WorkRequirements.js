@@ -13,7 +13,7 @@ net.nan21.dnet.module.hr.job.lovs.WorkRequirements = Ext.extend( dnet.base.Abstr
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.hr.job.ds.model.WorkRequirementLovDs		
 				,_dataProviderName_:"WorkRequirementLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.job.frame.WorkRequirement_UI",bundle:"nan21.dnet.module.hr.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasWr"}
 			}
 		); 		 
 		this._createStore_(); 

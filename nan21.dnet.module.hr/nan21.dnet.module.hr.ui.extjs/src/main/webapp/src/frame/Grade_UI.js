@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.hr.ui.extjs/ds/GradeDs", "nan21.dnet.module.hr.ui.extjs/dc/Grade"]);
+Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/GradeDs", "nan21.dnet.module.hr.ui.extjs/dc/Grade"]);
 
 Ext.ns("net.nan21.dnet.module.hr.grade.frame");
 net.nan21.dnet.module.hr.grade.frame.Grade_UI = Ext.extend( dnet.base.AbstractUi, {  

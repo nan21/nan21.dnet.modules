@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDataSource", "nan21.dnet.module.ad.ui.extjs/ds/SysDsFieldDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDsField"]);
+Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDataSource", "nan21.dnet.module.ad.ui.extjs/ds/SysDsFieldDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDsField"]);
 
 Ext.ns("net.nan21.dnet.module.ad.system.frame");
 net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.AbstractUi, {  
@@ -7,7 +7,7 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 		this._getBuilder_()
 		.addDc("m", new net.nan21.dnet.module.ad.system.dc.SysDataSource())
 		.addDc("fields", new net.nan21.dnet.module.ad.system.dc.SysDsField())		
-		.linkDc("fields", "m",{fields:[ {childField:"dataSourceId", parentField:"id"} ]} );		
+		.linkDc("fields", "m",{fetchMode:"auto",fields:[ {childField:"dataSourceId", parentField:"id"} ]} );		
 	}	 
 
 	,_defineElements_: function() {							

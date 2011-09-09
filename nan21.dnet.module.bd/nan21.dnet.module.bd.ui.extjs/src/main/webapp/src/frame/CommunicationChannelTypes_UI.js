@@ -1,4 +1,4 @@
-Dnet.import(["", "nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelTypeDs", "nan21.dnet.module.bd.ui.extjs/dc/CommunicationChannelType"]);
+Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelTypeDs", "nan21.dnet.module.bd.ui.extjs/dc/CommunicationChannelType"]);
 
 Ext.ns("net.nan21.dnet.module.bd.contact.frame");
 net.nan21.dnet.module.bd.contact.frame.CommunicationChannelTypes_UI = Ext.extend( dnet.base.AbstractUi, {  
