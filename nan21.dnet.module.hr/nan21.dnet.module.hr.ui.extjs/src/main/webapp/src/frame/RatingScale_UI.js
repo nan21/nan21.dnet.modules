@@ -36,7 +36,7 @@ net.nan21.dnet.module.hr.skill.frame.RatingScale_UI = Ext.extend( dnet.base.Abst
 		this._getBuilder_()
 			.beginToolbar("tlbScaleList", {dc:"scale"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
 			.beginToolbar("tlbScaleEdit", {dc:"scale"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
-			.beginToolbar("tlbLevelCtxEditList", {dc:"level"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Proficiency levels"}).end(); 	
+			.beginToolbar("tlbLevelCtxEditList", {dc:"level"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Proficiency levels"}).end(); 	
 	}
 
 });

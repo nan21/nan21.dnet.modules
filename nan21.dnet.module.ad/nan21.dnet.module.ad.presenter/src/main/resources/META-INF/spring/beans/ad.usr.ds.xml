@@ -94,6 +94,39 @@
 		<property name="name" value="RoleLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.RoleLovDs" />
 	</bean>
+   
+ 	<bean id="AccessControlDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AccessControl" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AccessControlDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccessControl" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlDs" />
+	</bean>
+   
+ 	<bean id="AccessControlLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AccessControl" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AccessControlLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccessControlLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlLovDs" />
+	</bean>
+   
+ 	<bean id="DsAccessControlDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.DsAccessControlDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.DsAccessControl" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.DsAccessControlDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="DsAccessControl" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.DsAccessControlDs" />
+	</bean>
       
 </beans>
    

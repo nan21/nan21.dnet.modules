@@ -78,6 +78,42 @@
 		<property name="name" value="UserGroupUsers" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.UserGroupUsersAsgn" />
 	</bean>
+   
+   
+   
+	<!-- AccessControlRoles -->
+ 	<bean id="AccessControlRolesAsgnService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.AccessControlRolesAsgn" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />		 
+	  	<property name="leftTable" value="AD_ROLES" />
+	  	<property name="rightTable" value="AD_ROLES_ACCESSCTRL" />
+	  	<property name="rightItemIdField" value="ROLES_ID" />
+	  	<property name="rightObjectIdField" value="ACCESSCONTROLS_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccessControlRoles" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.AccessControlRolesAsgn" />
+	</bean>
+   
+   
+   
+	<!-- RolesOfAccessControl -->
+ 	<bean id="RolesOfAccessControlAsgnService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.RolesOfAccessControlAsgn" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AccessControl" />		 
+	  	<property name="leftTable" value="AD_ACCESS_CONTROL" />
+	  	<property name="rightTable" value="AD_ROLES_ACCESSCTRL" />
+	  	<property name="rightItemIdField" value="ACCESSCONTROLS_ID" />
+	  	<property name="rightObjectIdField" value="ROLES_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="RolesOfAccessControl" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.RolesOfAccessControlAsgn" />
+	</bean>
        
 </beans>
    

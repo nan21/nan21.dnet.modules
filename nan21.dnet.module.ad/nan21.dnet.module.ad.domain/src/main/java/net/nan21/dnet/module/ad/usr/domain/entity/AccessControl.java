@@ -12,7 +12,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -34,33 +33,34 @@ import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
-/** Role. */
+/** AccessControl. */
 @Entity
-@Table(name = "AD_ROLES", uniqueConstraints = { @UniqueConstraint(name = "AD_ROLES_UK1", columnNames = {
+@Table(name = "AD_ACCESS_CONTROL", uniqueConstraints = { @UniqueConstraint(name = "AD_ACCESS_CONTROL_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "Role.findById", query = "SELECT e FROM Role e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Role.findByIds", query = "SELECT e FROM Role e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Role.findByName", query = "SELECT e FROM Role e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class Role implements Serializable, IModelWithId, IModelWithClientId {
+        @NamedQuery(name = "AccessControl.findById", query = "SELECT e FROM AccessControl e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "AccessControl.findByIds", query = "SELECT e FROM AccessControl e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "AccessControl.findByName", query = "SELECT e FROM AccessControl e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+public class AccessControl implements Serializable, IModelWithId,
+        IModelWithClientId {
 
     private static final long serialVersionUID = -8865917134914502125L;
 
     /**
      * Named query find by ID.
      */
-    public static final String NQ_FIND_BY_ID = "Role.findById";
+    public static final String NQ_FIND_BY_ID = "AccessControl.findById";
 
     /**
      * Named query find by IDs.
      */
-    public static final String NQ_FIND_BY_IDS = "Role.findByIds";
+    public static final String NQ_FIND_BY_IDS = "AccessControl.findByIds";
 
     /**
      * Named query find by unique key: Name.
      */
-    public static final String NQ_FIND_BY_NAME = "Role.findByName";
+    public static final String NQ_FIND_BY_NAME = "AccessControl.findByName";
 
     /** Name. */
     @Column(name = "NAME", nullable = false)
@@ -116,12 +116,8 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
     @GeneratedValue
     private Long id;
 
-    @ManyToMany(mappedBy = "roles")
-    private Collection<User> users;
-
-    @ManyToMany
-    @JoinTable(name = "AD_ROLES_ACCESSCTRL")
-    private Collection<AccessControl> accessControls;
+    @ManyToMany(mappedBy = "accessControls")
+    private Collection<Role> roles;
 
     /* ============== getters - setters ================== */
 
@@ -214,20 +210,12 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
 
     }
 
-    public Collection<User> getUsers() {
-        return this.users;
+    public Collection<Role> getRoles() {
+        return this.roles;
     }
 
-    public void setUsers(Collection<User> users) {
-        this.users = users;
-    }
-
-    public Collection<AccessControl> getAccessControls() {
-        return this.accessControls;
-    }
-
-    public void setAccessControls(Collection<AccessControl> accessControls) {
-        this.accessControls = accessControls;
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
 
     public void aboutToInsert(DescriptorEvent event) {
@@ -246,7 +234,7 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
-        Role e = (Role) event.getSource();
+        AccessControl e = (AccessControl) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());
 

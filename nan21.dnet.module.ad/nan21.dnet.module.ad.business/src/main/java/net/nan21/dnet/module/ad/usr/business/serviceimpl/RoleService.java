@@ -8,6 +8,7 @@ package net.nan21.dnet.module.ad.usr.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.usr.business.service.IRoleService;
+import net.nan21.dnet.module.ad.usr.domain.entity.AccessControl;
 import net.nan21.dnet.module.ad.usr.domain.entity.User;
 
 import javax.persistence.EntityManager;
@@ -45,6 +46,19 @@ public class RoleService extends AbstractEntityService<Role> implements
                 .createQuery(
                         "select e from Role e where e.users.id = :pUsersId",
                         Role.class).setParameter("pUsersId", usersId)
+                .getResultList();
+    }
+
+    public List<Role> findByAccessControls(AccessControl accessControls) {
+        return this.findByAccessControlsId(accessControls.getId());
+    }
+
+    public List<Role> findByAccessControlsId(Long accessControlsId) {
+        return (List<Role>) this.em
+                .createQuery(
+                        "select e from Role e where e.accessControls.id = :pAccessControlsId",
+                        Role.class)
+                .setParameter("pAccessControlsId", accessControlsId)
                 .getResultList();
     }
 

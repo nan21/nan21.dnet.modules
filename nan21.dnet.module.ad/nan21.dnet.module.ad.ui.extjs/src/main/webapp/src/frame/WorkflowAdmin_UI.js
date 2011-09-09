@@ -11,8 +11,8 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI = Ext.extend( dnet.base
 		.addDc("dcFinishedInstance", new net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory())
 		.addDc("dcFinishedTask", new net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory())
 		.addDc("dcDeployment", new net.nan21.dnet.module.ad.workflow.dc.ActDeployment())		
-		.linkDc("dcRunningTask", "dcRunningInstance",{fields:[ {childField:"processInstanceId", parentField:"processInstanceId"} ]} )
-		.linkDc("dcFinishedTask", "dcFinishedInstance",{fields:[ {childField:"processInstanceId", parentField:"processInstanceId"} ]} );		
+		.linkDc("dcRunningTask", "dcRunningInstance",{fetchMode:"auto",fields:[ {childField:"processInstanceId", parentField:"processInstanceId"} ]} )
+		.linkDc("dcFinishedTask", "dcFinishedInstance",{fetchMode:"auto",fields:[ {childField:"processInstanceId", parentField:"processInstanceId"} ]} );		
 	}	 
 
 	,_defineElements_: function() {							

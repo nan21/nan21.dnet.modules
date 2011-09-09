@@ -33,7 +33,7 @@ net.nan21.dnet.module.hr.skill.frame.Qualification_UI = Ext.extend( dnet.base.Ab
 	,_defineToolbars_: function() {
 		this._getBuilder_()
 			.beginToolbar("tlbQualifEditList", {dc:"qualif"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end()
-			.beginToolbar("tlbSkillCtxEditList", {dc:"skill"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Required competence"}).end(); 	
+			.beginToolbar("tlbSkillCtxEditList", {dc:"skill"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Required competence"}).end(); 	
 	}
 
 });

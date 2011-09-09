@@ -18,6 +18,12 @@
  
  	<bean id="RoleService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.RoleService"  />  
+ 
+ 	<bean id="AccessControlService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.AccessControlService"  />  
+ 
+ 	<bean id="DsAccessControlService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.DsAccessControlService"  />  
    
 </beans>
    

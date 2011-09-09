@@ -7,6 +7,7 @@ package net.nan21.dnet.module.ad.usr.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
+import net.nan21.dnet.module.ad.usr.domain.entity.AccessControl;
 import net.nan21.dnet.module.ad.usr.domain.entity.User;
 
 import net.nan21.dnet.module.ad.usr.domain.entity.Role;
@@ -18,5 +19,9 @@ public interface IRoleService extends IEntityService<Role> {
     public List<Role> findByUsers(User users);
 
     public List<Role> findByUsersId(Long usersId);
+
+    public List<Role> findByAccessControls(AccessControl accessControls);
+
+    public List<Role> findByAccessControlsId(Long accessControlsId);
 
 }

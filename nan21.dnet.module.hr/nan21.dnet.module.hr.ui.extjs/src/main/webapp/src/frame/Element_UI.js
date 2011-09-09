@@ -36,7 +36,7 @@ net.nan21.dnet.module.hr.payroll.frame.Element_UI = Ext.extend( dnet.base.Abstra
 		this._getBuilder_()
 			.beginToolbar("tlbExprList", {dc:"expr"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
 			.beginToolbar("tlbExprEdit", {dc:"expr"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
-			.beginToolbar("tlbVarEditList", {dc:"vars"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbVarEditList", {dc:"vars"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
 	}
 
 });

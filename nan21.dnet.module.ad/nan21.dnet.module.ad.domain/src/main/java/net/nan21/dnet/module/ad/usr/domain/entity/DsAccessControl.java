@@ -6,14 +6,14 @@
 package net.nan21.dnet.module.ad.usr.domain.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
@@ -28,53 +28,76 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.module.ad.usr.domain.entity.AccessControl;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
-/** Role. */
+/** DsAccessControl. */
 @Entity
-@Table(name = "AD_ROLES", uniqueConstraints = { @UniqueConstraint(name = "AD_ROLES_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = "AD_ACCESS_CONTROL_DS", uniqueConstraints = { @UniqueConstraint(name = "AD_ACCESS_CONTROL_DS_UK1", columnNames = {
+        "CLIENTID", "ACCESSCONTROL_ID", "DSNAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "Role.findById", query = "SELECT e FROM Role e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Role.findByIds", query = "SELECT e FROM Role e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Role.findByName", query = "SELECT e FROM Role e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class Role implements Serializable, IModelWithId, IModelWithClientId {
+        @NamedQuery(name = "DsAccessControl.findById", query = "SELECT e FROM DsAccessControl e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "DsAccessControl.findByIds", query = "SELECT e FROM DsAccessControl e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "DsAccessControl.findByUnique", query = "SELECT e FROM DsAccessControl e WHERE e.clientId = :pClientId and  e.accessControl = :pAccessControl and e.dsName = :pDsName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "DsAccessControl.findByUnique_PRIMITIVE", query = "SELECT e FROM DsAccessControl e WHERE e.clientId = :pClientId and  e.accessControl.id = :pAccessControlId and e.dsName = :pDsName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+public class DsAccessControl implements Serializable, IModelWithId,
+        IModelWithClientId {
 
     private static final long serialVersionUID = -8865917134914502125L;
 
     /**
      * Named query find by ID.
      */
-    public static final String NQ_FIND_BY_ID = "Role.findById";
+    public static final String NQ_FIND_BY_ID = "DsAccessControl.findById";
 
     /**
      * Named query find by IDs.
      */
-    public static final String NQ_FIND_BY_IDS = "Role.findByIds";
+    public static final String NQ_FIND_BY_IDS = "DsAccessControl.findByIds";
 
     /**
-     * Named query find by unique key: Name.
+     * Named query find by unique key: Unique.
      */
-    public static final String NQ_FIND_BY_NAME = "Role.findByName";
+    public static final String NQ_FIND_BY_UNIQUE = "DsAccessControl.findByUnique";
 
-    /** Name. */
-    @Column(name = "NAME", nullable = false)
+    /**
+     * Named query find by unique key: Unique using the ID field for references.
+     */
+    public static final String NQ_FIND_BY_UNIQUE_PRIMITIVE = "DsAccessControl.findByUnique_PRIMITIVE";
+
+    /** DsName. */
+    @Column(name = "DSNAME", nullable = false)
     @NotBlank
-    private String name;
+    private String dsName;
 
-    /** Flag which indicates if this record is used.*/
-    @Column(name = "ACTIVE", nullable = false)
-    @NotNull
-    private Boolean active;
+    /** Specify if it is allowed to query for data.*/
+    @Column(name = "QUERYALLOWED")
+    private Boolean queryAllowed;
 
-    /** Notes about this record. */
-    @Column(name = "DESCRIPTION")
-    private String description;
+    /** Specify if it is allowed to create records.*/
+    @Column(name = "INSERTALLOWED")
+    private Boolean insertAllowed;
+
+    /** Specify if it is allowed to update records.*/
+    @Column(name = "UPDATEALLOWED")
+    private Boolean updateAllowed;
+
+    /** Specify if it is allowed to delete records.*/
+    @Column(name = "DELETEALLOWED")
+    private Boolean deleteAllowed;
+
+    /** Specify if it is allowed to import records.*/
+    @Column(name = "IMPORTALLOWED")
+    private Boolean importAllowed;
+
+    /** Specify if it is allowed to export records.*/
+    @Column(name = "EXPORTALLOWED")
+    private Boolean exportAllowed;
 
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
@@ -116,37 +139,66 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
     @GeneratedValue
     private Long id;
 
-    @ManyToMany(mappedBy = "roles")
-    private Collection<User> users;
-
-    @ManyToMany
-    @JoinTable(name = "AD_ROLES_ACCESSCTRL")
-    private Collection<AccessControl> accessControls;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccessControl.class)
+    @JoinColumn(name = "ACCESSCONTROL_ID", referencedColumnName = "ID")
+    private AccessControl accessControl;
 
     /* ============== getters - setters ================== */
 
-    public String getName() {
-        return this.name;
+    public String getDsName() {
+        return this.dsName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDsName(String dsName) {
+        this.dsName = dsName;
     }
 
-    public Boolean getActive() {
-        return this.active;
+    public Boolean getQueryAllowed() {
+        return this.queryAllowed;
     }
 
-    public void setActive(Boolean active) {
-        this.active = active;
+    public void setQueryAllowed(Boolean queryAllowed) {
+        this.queryAllowed = queryAllowed;
     }
 
-    public String getDescription() {
-        return this.description;
+    public Boolean getInsertAllowed() {
+        return this.insertAllowed;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setInsertAllowed(Boolean insertAllowed) {
+        this.insertAllowed = insertAllowed;
+    }
+
+    public Boolean getUpdateAllowed() {
+        return this.updateAllowed;
+    }
+
+    public void setUpdateAllowed(Boolean updateAllowed) {
+        this.updateAllowed = updateAllowed;
+    }
+
+    public Boolean getDeleteAllowed() {
+        return this.deleteAllowed;
+    }
+
+    public void setDeleteAllowed(Boolean deleteAllowed) {
+        this.deleteAllowed = deleteAllowed;
+    }
+
+    public Boolean getImportAllowed() {
+        return this.importAllowed;
+    }
+
+    public void setImportAllowed(Boolean importAllowed) {
+        this.importAllowed = importAllowed;
+    }
+
+    public Boolean getExportAllowed() {
+        return this.exportAllowed;
+    }
+
+    public void setExportAllowed(Boolean exportAllowed) {
+        this.exportAllowed = exportAllowed;
     }
 
     public Long getClientId() {
@@ -214,20 +266,12 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
 
     }
 
-    public Collection<User> getUsers() {
-        return this.users;
+    public AccessControl getAccessControl() {
+        return this.accessControl;
     }
 
-    public void setUsers(Collection<User> users) {
-        this.users = users;
-    }
-
-    public Collection<AccessControl> getAccessControls() {
-        return this.accessControls;
-    }
-
-    public void setAccessControls(Collection<AccessControl> accessControls) {
-        this.accessControls = accessControls;
+    public void setAccessControl(AccessControl accessControl) {
+        this.accessControl = accessControl;
     }
 
     public void aboutToInsert(DescriptorEvent event) {
@@ -239,14 +283,10 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
-        if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
-        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
-        Role e = (Role) event.getSource();
+        DsAccessControl e = (DsAccessControl) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());
 
