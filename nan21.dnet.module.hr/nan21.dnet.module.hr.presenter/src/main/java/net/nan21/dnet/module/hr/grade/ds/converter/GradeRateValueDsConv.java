@@ -34,15 +34,14 @@ public class GradeRateValueDsConv extends
         if (ds.getGradeId() != null) {
             if (e.getGrade() == null
                     || !e.getGrade().getId().equals(ds.getGradeId())) {
-                e.setGrade((Grade) this.em.getReference(Grade.class,
-                        ds.getGradeId()));
+                e.setGrade((Grade) this.em.find(Grade.class, ds.getGradeId()));
             }
         }
         if (ds.getGradeRateId() != null) {
             if (e.getGradeRate() == null
                     || !e.getGradeRate().getId().equals(ds.getGradeRateId())) {
-                e.setGradeRate((GradeRate) this.em.getReference(
-                        GradeRate.class, ds.getGradeRateId()));
+                e.setGradeRate((GradeRate) this.em.find(GradeRate.class,
+                        ds.getGradeRateId()));
             }
         }
     }

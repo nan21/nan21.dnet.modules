@@ -57,8 +57,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getEmployerId() != null) {
             if (e.getEmployer() == null
                     || !e.getEmployer().getId().equals(ds.getEmployerId())) {
-                e.setEmployer((Organization) this.em.getReference(
-                        Organization.class, ds.getEmployerId()));
+                e.setEmployer((Organization) this.em.find(Organization.class,
+                        ds.getEmployerId()));
             }
         } else {
             this.lookup_employer_Organization(ds, e);
@@ -67,7 +67,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
             if (e.getCitizenship() == null
                     || !e.getCitizenship().getId()
                             .equals(ds.getCitizenshipId())) {
-                e.setCitizenship((Country) this.em.getReference(Country.class,
+                e.setCitizenship((Country) this.em.find(Country.class,
                         ds.getCitizenshipId()));
             }
         } else {
@@ -76,8 +76,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((EmploymentType) this.em.getReference(
-                        EmploymentType.class, ds.getTypeId()));
+                e.setType((EmploymentType) this.em.find(EmploymentType.class,
+                        ds.getTypeId()));
             }
         } else {
             this.lookup_type_EmploymentType(ds, e);
@@ -85,7 +85,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getPositionId() != null) {
             if (e.getPosition() == null
                     || !e.getPosition().getId().equals(ds.getPositionId())) {
-                e.setPosition((Position) this.em.getReference(Position.class,
+                e.setPosition((Position) this.em.find(Position.class,
                         ds.getPositionId()));
             }
         } else {
@@ -93,7 +93,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         }
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
-                e.setJob((Job) this.em.getReference(Job.class, ds.getJobId()));
+                e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
             }
         } else {
             this.lookup_job_Job(ds, e);
@@ -102,7 +102,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
             if (e.getOrganization() == null
                     || !e.getOrganization().getId()
                             .equals(ds.getOrganizationId())) {
-                e.setOrganization((Organization) this.em.getReference(
+                e.setOrganization((Organization) this.em.find(
                         Organization.class, ds.getOrganizationId()));
             }
         } else {
@@ -111,8 +111,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getGradeId() != null) {
             if (e.getGrade() == null
                     || !e.getGrade().getId().equals(ds.getGradeId())) {
-                e.setGrade((Grade) this.em.getReference(Grade.class,
-                        ds.getGradeId()));
+                e.setGrade((Grade) this.em.find(Grade.class, ds.getGradeId()));
             }
         } else {
             this.lookup_grade_Grade(ds, e);
@@ -120,7 +119,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getPayrollId() != null) {
             if (e.getPayroll() == null
                     || !e.getPayroll().getId().equals(ds.getPayrollId())) {
-                e.setPayroll((Payroll) this.em.getReference(Payroll.class,
+                e.setPayroll((Payroll) this.em.find(Payroll.class,
                         ds.getPayrollId()));
             }
         } else {
@@ -141,6 +140,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getEmployerCode() + "  ");
             }
             e.setEmployer(x);
+        } else {
+            e.setEmployer(null);
         }
     }
 
@@ -158,6 +159,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getCitizenshipCode() + "  ");
             }
             e.setCitizenship(x);
+        } else {
+            e.setCitizenship(null);
         }
     }
 
@@ -174,6 +177,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 
@@ -190,6 +195,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getPositionCode() + "  ");
             }
             e.setPosition(x);
+        } else {
+            e.setPosition(null);
         }
     }
 
@@ -205,6 +212,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getJobCode() + "  ");
             }
             e.setJob(x);
+        } else {
+            e.setJob(null);
         }
     }
 
@@ -222,6 +231,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getOrganizationCode() + "  ");
             }
             e.setOrganization(x);
+        } else {
+            e.setOrganization(null);
         }
     }
 
@@ -238,6 +249,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getGradeCode() + "  ");
             }
             e.setGrade(x);
+        } else {
+            e.setGrade(null);
         }
     }
 
@@ -254,6 +267,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getPayroll() + "  ");
             }
             e.setPayroll(x);
+        } else {
+            e.setPayroll(null);
         }
     }
 

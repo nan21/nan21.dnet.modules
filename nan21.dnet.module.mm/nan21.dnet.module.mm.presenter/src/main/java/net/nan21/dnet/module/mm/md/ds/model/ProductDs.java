@@ -46,8 +46,6 @@ public class ProductDs extends AbstractDsModel<Product> implements
     public static final String fDIMUOMCODE = "dimUomCode";
     public static final String fMANUFACTURERID = "manufacturerId";
     public static final String fMANUFACTURERCODE = "manufacturerCode";
-    public static final String fCATEGORYID = "categoryId";
-    public static final String fCATEGORYNAME = "categoryName";
     public static final String fATTRIBUTEGROUPID = "attributeGroupId";
     public static final String fATTRIBUTEGROUP = "attributeGroup";
     public static final String fCLASSNAME = "className";
@@ -135,12 +133,6 @@ public class ProductDs extends AbstractDsModel<Product> implements
 
     @DsField(join = "left", path = "manufacturer.code")
     private String manufacturerCode;
-
-    @DsField(join = "left", path = "category.id")
-    private Long categoryId;
-
-    @DsField(join = "left", path = "category.name")
-    private String categoryName;
 
     @DsField(join = "left", path = "attributeGroup.id")
     private Long attributeGroupId;
@@ -382,22 +374,6 @@ public class ProductDs extends AbstractDsModel<Product> implements
 
     public void setManufacturerCode(String manufacturerCode) {
         this.manufacturerCode = manufacturerCode;
-    }
-
-    public Long getCategoryId() {
-        return this.categoryId;
-    }
-
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getCategoryName() {
-        return this.categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
     }
 
     public Long getAttributeGroupId() {

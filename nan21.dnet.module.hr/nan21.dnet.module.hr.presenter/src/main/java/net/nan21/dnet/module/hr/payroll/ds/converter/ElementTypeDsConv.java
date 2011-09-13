@@ -32,7 +32,7 @@ public class ElementTypeDsConv extends
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
-                e.setCategory((ElementCategory) this.em.getReference(
+                e.setCategory((ElementCategory) this.em.find(
                         ElementCategory.class, ds.getCategoryId()));
             }
         } else {
@@ -53,6 +53,8 @@ public class ElementTypeDsConv extends
                                 + ds.getCategory() + "  ");
             }
             e.setCategory(x);
+        } else {
+            e.setCategory(null);
         }
     }
 

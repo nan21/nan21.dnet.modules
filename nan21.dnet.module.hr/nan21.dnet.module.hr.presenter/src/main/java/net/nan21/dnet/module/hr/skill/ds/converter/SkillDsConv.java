@@ -33,7 +33,7 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((SkillType) this.em.getReference(SkillType.class,
+                e.setType((SkillType) this.em.find(SkillType.class,
                         ds.getTypeId()));
             }
         } else {
@@ -43,8 +43,8 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
             if (e.getRatingScale() == null
                     || !e.getRatingScale().getId()
                             .equals(ds.getRatingScaleId())) {
-                e.setRatingScale((RatingScale) this.em.getReference(
-                        RatingScale.class, ds.getRatingScaleId()));
+                e.setRatingScale((RatingScale) this.em.find(RatingScale.class,
+                        ds.getRatingScaleId()));
             }
         } else {
             this.lookup_ratingScale_RatingScale(ds, e);
@@ -63,6 +63,8 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 
@@ -79,6 +81,8 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
                                 + ds.getRatingScale() + "  ");
             }
             e.setRatingScale(x);
+        } else {
+            e.setRatingScale(null);
         }
     }
 

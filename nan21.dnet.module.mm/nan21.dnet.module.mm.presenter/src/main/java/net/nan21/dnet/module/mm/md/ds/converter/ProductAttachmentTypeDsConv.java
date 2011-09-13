@@ -23,6 +23,8 @@ public class ProductAttachmentTypeDsConv extends
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
         e.setCategory(ds.getCategory());
+        e.setUploadPath(ds.getUploadPath());
+        e.setBaseUrl(ds.getBaseUrl());
     }
 
     protected void modelToEntityReferences(ProductAttachmentTypeDs ds,
@@ -43,6 +45,8 @@ public class ProductAttachmentTypeDsConv extends
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
         ds.setCategory(e.getCategory());
+        ds.setUploadPath(e.getUploadPath());
+        ds.setBaseUrl(e.getBaseUrl());
     }
 
 }

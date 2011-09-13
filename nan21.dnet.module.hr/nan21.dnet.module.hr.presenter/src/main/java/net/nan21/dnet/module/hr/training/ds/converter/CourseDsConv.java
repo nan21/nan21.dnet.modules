@@ -35,7 +35,7 @@ public class CourseDsConv extends AbstractDsConverter<CourseDs, Course>
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((CourseType) this.em.getReference(CourseType.class,
+                e.setType((CourseType) this.em.find(CourseType.class,
                         ds.getTypeId()));
             }
         } else {
@@ -56,6 +56,8 @@ public class CourseDsConv extends AbstractDsConverter<CourseDs, Course>
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 

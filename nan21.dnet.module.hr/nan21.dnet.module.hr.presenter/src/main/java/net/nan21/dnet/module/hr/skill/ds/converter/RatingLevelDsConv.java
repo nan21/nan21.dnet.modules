@@ -34,8 +34,8 @@ public class RatingLevelDsConv extends
             if (e.getRatingScale() == null
                     || !e.getRatingScale().getId()
                             .equals(ds.getRatingScaleId())) {
-                e.setRatingScale((RatingScale) this.em.getReference(
-                        RatingScale.class, ds.getRatingScaleId()));
+                e.setRatingScale((RatingScale) this.em.find(RatingScale.class,
+                        ds.getRatingScaleId()));
             }
         } else {
             this.lookup_ratingScale_RatingScale(ds, e);
@@ -55,6 +55,8 @@ public class RatingLevelDsConv extends
                                 + ds.getRatingScale() + "  ");
             }
             e.setRatingScale(x);
+        } else {
+            e.setRatingScale(null);
         }
     }
 

@@ -9,7 +9,6 @@ import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.md.business.service.IProductCategoryService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
@@ -44,18 +43,6 @@ public class ProductCategoryService extends
                 .createNamedQuery(ProductCategory.NQ_FIND_BY_NAME)
                 .setParameter("pClientId", clientId)
                 .setParameter("pName", name).getSingleResult();
-    }
-
-    public List<ProductCategory> findByParent(ProductCategory parent) {
-        return this.findByParentId(parent.getId());
-    }
-
-    public List<ProductCategory> findByParentId(Long parentId) {
-        return (List<ProductCategory>) this.em
-                .createQuery(
-                        "select e from ProductCategory e where e.parent.id = :pParentId",
-                        ProductCategory.class)
-                .setParameter("pParentId", parentId).getResultList();
     }
 
     public List<ProductCategory> findByProducts(Product products) {

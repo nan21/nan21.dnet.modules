@@ -77,6 +77,10 @@ public class ProductAttribute implements Serializable, IModelWithId,
     @NotBlank
     private String dataType;
 
+    /** ListOfvalues. */
+    @Column(name = "LISTOFVALUES")
+    private String listOfvalues;
+
     /** Name. */
     @Column(name = "NAME", nullable = false)
     @NotBlank
@@ -130,11 +134,9 @@ public class ProductAttribute implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAttributeType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private ProductAttributeType type;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
     @JoinColumn(name = "UOM_ID", referencedColumnName = "ID")
     private Uom uom;
@@ -158,6 +160,14 @@ public class ProductAttribute implements Serializable, IModelWithId,
 
     public void setDataType(String dataType) {
         this.dataType = dataType;
+    }
+
+    public String getListOfvalues() {
+        return this.listOfvalues;
+    }
+
+    public void setListOfvalues(String listOfvalues) {
+        this.listOfvalues = listOfvalues;
     }
 
     public String getName() {

@@ -118,11 +118,9 @@ public class EmployeeLicense implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
     @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")
     private Employee employee;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = LicenseType.class)
     @JoinColumn(name = "LICENSETYPE_ID", referencedColumnName = "ID")
     private LicenseType licenseType;

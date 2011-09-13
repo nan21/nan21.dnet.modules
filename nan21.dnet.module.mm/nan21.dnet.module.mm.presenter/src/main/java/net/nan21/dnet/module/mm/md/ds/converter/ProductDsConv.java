@@ -9,10 +9,8 @@ import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.uom.business.service.IUomService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttributeGroupService;
-import net.nan21.dnet.module.mm.md.business.service.IProductCategoryService;
 import net.nan21.dnet.module.mm.md.business.service.IProductManufacturerService;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
-import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
@@ -43,20 +41,11 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
     protected void modelToEntityReferences(ProductDs ds, Product e)
             throws Exception {
 
-        if (ds.getCategoryId() != null) {
-            if (e.getCategory() == null
-                    || !e.getCategory().getId().equals(ds.getCategoryId())) {
-                e.setCategory((ProductCategory) this.em.getReference(
-                        ProductCategory.class, ds.getCategoryId()));
-            }
-        } else {
-            this.lookup_category_ProductCategory(ds, e);
-        }
         if (ds.getManufacturerId() != null) {
             if (e.getManufacturer() == null
                     || !e.getManufacturer().getId()
                             .equals(ds.getManufacturerId())) {
-                e.setManufacturer((ProductManufacturer) this.em.getReference(
+                e.setManufacturer((ProductManufacturer) this.em.find(
                         ProductManufacturer.class, ds.getManufacturerId()));
             }
         } else {
@@ -65,7 +54,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         if (ds.getDefaultUomId() != null) {
             if (e.getDefaultUom() == null
                     || !e.getDefaultUom().getId().equals(ds.getDefaultUomId())) {
-                e.setDefaultUom((Uom) this.em.getReference(Uom.class,
+                e.setDefaultUom((Uom) this.em.find(Uom.class,
                         ds.getDefaultUomId()));
             }
         } else {
@@ -74,8 +63,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         if (ds.getDimUomId() != null) {
             if (e.getDimUom() == null
                     || !e.getDimUom().getId().equals(ds.getDimUomId())) {
-                e.setDimUom((Uom) this.em.getReference(Uom.class,
-                        ds.getDimUomId()));
+                e.setDimUom((Uom) this.em.find(Uom.class, ds.getDimUomId()));
             }
         } else {
             this.lookup_dimUom_Uom(ds, e);
@@ -83,7 +71,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         if (ds.getVolumeUomId() != null) {
             if (e.getVolumeUom() == null
                     || !e.getVolumeUom().getId().equals(ds.getVolumeUomId())) {
-                e.setVolumeUom((Uom) this.em.getReference(Uom.class,
+                e.setVolumeUom((Uom) this.em.find(Uom.class,
                         ds.getVolumeUomId()));
             }
         } else {
@@ -92,7 +80,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         if (ds.getWeightUomId() != null) {
             if (e.getWeightUom() == null
                     || !e.getWeightUom().getId().equals(ds.getWeightUomId())) {
-                e.setWeightUom((Uom) this.em.getReference(Uom.class,
+                e.setWeightUom((Uom) this.em.find(Uom.class,
                         ds.getWeightUomId()));
             }
         } else {
@@ -102,28 +90,11 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
             if (e.getAttributeGroup() == null
                     || !e.getAttributeGroup().getId()
                             .equals(ds.getAttributeGroupId())) {
-                e.setAttributeGroup((ProductAttributeGroup) this.em
-                        .getReference(ProductAttributeGroup.class,
-                                ds.getAttributeGroupId()));
+                e.setAttributeGroup((ProductAttributeGroup) this.em.find(
+                        ProductAttributeGroup.class, ds.getAttributeGroupId()));
             }
         } else {
             this.lookup_attributeGroup_ProductAttributeGroup(ds, e);
-        }
-    }
-
-    protected void lookup_category_ProductCategory(ProductDs ds, Product e)
-            throws Exception {
-        if (ds.getCategoryName() != null && !ds.getCategoryName().equals("")) {
-            ProductCategory x = null;
-            try {
-                x = ((IProductCategoryService) getService(IProductCategoryService.class))
-                        .findByName(ds.getClientId(), ds.getCategoryName());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `ProductCategory` reference:  `categoryName` = "
-                                + ds.getCategoryName() + "  ");
-            }
-            e.setCategory(x);
         }
     }
 
@@ -141,6 +112,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getManufacturerCode() + "  ");
             }
             e.setManufacturer(x);
+        } else {
+            e.setManufacturer(null);
         }
     }
 
@@ -158,6 +131,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getDefaultUomCode() + "  ");
             }
             e.setDefaultUom(x);
+        } else {
+            e.setDefaultUom(null);
         }
     }
 
@@ -173,6 +148,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getDimUomCode() + "  ");
             }
             e.setDimUom(x);
+        } else {
+            e.setDimUom(null);
         }
     }
 
@@ -189,6 +166,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getVolumeUomCode() + "  ");
             }
             e.setVolumeUom(x);
+        } else {
+            e.setVolumeUom(null);
         }
     }
 
@@ -205,6 +184,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getWeightUomCode() + "  ");
             }
             e.setWeightUom(x);
+        } else {
+            e.setWeightUom(null);
         }
     }
 
@@ -222,6 +203,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getAttributeGroup() + "  ");
             }
             e.setAttributeGroup(x);
+        } else {
+            e.setAttributeGroup(null);
         }
     }
 
@@ -265,10 +248,6 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                 .getManufacturer().getId() : null);
         ds.setManufacturerCode(((e.getManufacturer() != null)) ? e
                 .getManufacturer().getCode() : null);
-        ds.setCategoryId(((e.getCategory() != null)) ? e.getCategory().getId()
-                : null);
-        ds.setCategoryName(((e.getCategory() != null)) ? e.getCategory()
-                .getName() : null);
         ds.setAttributeGroupId(((e.getAttributeGroup() != null)) ? e
                 .getAttributeGroup().getId() : null);
         ds.setAttributeGroup(((e.getAttributeGroup() != null)) ? e

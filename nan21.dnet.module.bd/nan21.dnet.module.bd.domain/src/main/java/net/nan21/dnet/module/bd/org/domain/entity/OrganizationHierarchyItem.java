@@ -96,15 +96,12 @@ public class OrganizationHierarchyItem implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = OrganizationHierarchy.class)
     @JoinColumn(name = "HIERARCHY_ID", referencedColumnName = "ID")
     private OrganizationHierarchy hierarchy;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")
     private Organization organization;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "PARENT_ID", referencedColumnName = "ID")
     private Organization parent;

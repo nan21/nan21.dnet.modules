@@ -100,11 +100,9 @@ public class PositionRequirement implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Position.class)
     @JoinColumn(name = "POSITION_ID", referencedColumnName = "ID")
     private Position position;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = WorkRequirement.class)
     @JoinColumn(name = "REQUIREMENT_ID", referencedColumnName = "ID")
     private WorkRequirement requirement;

@@ -34,19 +34,19 @@ public class SalesOrderItemDsConv extends
         if (ds.getSalesOrderId() != null) {
             if (e.getSalesOrder() == null
                     || !e.getSalesOrder().getId().equals(ds.getSalesOrderId())) {
-                e.setSalesOrder((SalesOrder) this.em.getReference(
-                        SalesOrder.class, ds.getSalesOrderId()));
+                e.setSalesOrder((SalesOrder) this.em.find(SalesOrder.class,
+                        ds.getSalesOrderId()));
             }
         }
         if (ds.getUomId() != null) {
             if (e.getUom() == null || !e.getUom().getId().equals(ds.getUomId())) {
-                e.setUom((Uom) this.em.getReference(Uom.class, ds.getUomId()));
+                e.setUom((Uom) this.em.find(Uom.class, ds.getUomId()));
             }
         }
         if (ds.getProductId() != null) {
             if (e.getProduct() == null
                     || !e.getProduct().getId().equals(ds.getProductId())) {
-                e.setProduct((Product) this.em.getReference(Product.class,
+                e.setProduct((Product) this.em.find(Product.class,
                         ds.getProductId()));
             }
         } else {
@@ -67,6 +67,8 @@ public class SalesOrderItemDsConv extends
                                 + ds.getProductCode() + "  ");
             }
             e.setProduct(x);
+        } else {
+            e.setProduct(null);
         }
     }
 

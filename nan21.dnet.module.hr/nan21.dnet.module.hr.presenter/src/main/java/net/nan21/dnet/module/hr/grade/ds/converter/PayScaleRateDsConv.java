@@ -34,7 +34,7 @@ public class PayScaleRateDsConv extends
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
-                e.setCurrency((Currency) this.em.getReference(Currency.class,
+                e.setCurrency((Currency) this.em.find(Currency.class,
                         ds.getCurrencyId()));
             }
         } else {
@@ -43,7 +43,7 @@ public class PayScaleRateDsConv extends
         if (ds.getPayScaleId() != null) {
             if (e.getPayScale() == null
                     || !e.getPayScale().getId().equals(ds.getPayScaleId())) {
-                e.setPayScale((PayScale) this.em.getReference(PayScale.class,
+                e.setPayScale((PayScale) this.em.find(PayScale.class,
                         ds.getPayScaleId()));
             }
         } else {
@@ -64,6 +64,8 @@ public class PayScaleRateDsConv extends
                                 + ds.getCurrencyCode() + "  ");
             }
             e.setCurrency(x);
+        } else {
+            e.setCurrency(null);
         }
     }
 
@@ -80,6 +82,8 @@ public class PayScaleRateDsConv extends
                                 + ds.getPayScaleCode() + "  ");
             }
             e.setPayScale(x);
+        } else {
+            e.setPayScale(null);
         }
     }
 

@@ -35,15 +35,15 @@ public class EmployeeEducationDsConv extends
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
-                e.setEmployee((Employee) this.em.getReference(Employee.class,
+                e.setEmployee((Employee) this.em.find(Employee.class,
                         ds.getEmployeeId()));
             }
         }
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((EducationType) this.em.getReference(
-                        EducationType.class, ds.getTypeId()));
+                e.setType((EducationType) this.em.find(EducationType.class,
+                        ds.getTypeId()));
             }
         } else {
             this.lookup_type_EducationType(ds, e);
@@ -63,6 +63,8 @@ public class EmployeeEducationDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 

@@ -32,7 +32,7 @@ public class WorkRequirementDsConv extends
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((WorkRequirementType) this.em.getReference(
+                e.setType((WorkRequirementType) this.em.find(
                         WorkRequirementType.class, ds.getTypeId()));
             }
         } else {
@@ -53,6 +53,8 @@ public class WorkRequirementDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 

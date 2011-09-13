@@ -9,7 +9,6 @@
 "Pound";"POUND";"Mass";"true";
 "Seconds";"SECOND";"Time";"true";
 "Week";"WEEK";"Time";"true";
-"Piece";"PIECE";"Item";"true";
 "Giga-bytes";"GB";"Data-storage";"true";
 "Mega-bytes";"MB";"Data-storage";"true";
 "Kilo-bytes";"KB";"Data-storage";"true";
@@ -18,3 +17,4 @@
 "KiloHertz";"KHz";"Frequency";"true";
 "Inches";"INCH";"Length";"true";
 "Milimeters";"MM";"Length";"true";
+"Piece";"PIECE";"Item";"true";

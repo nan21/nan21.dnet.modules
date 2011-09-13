@@ -26,7 +26,7 @@
 				
 				
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="10" />
+					<property name="sequence" value="510" />
 					<property name="name" value="hr-time" />
 					<property name="items">
 						<list>
@@ -68,7 +68,7 @@
 				 
 				 
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="20" />
+					<property name="sequence" value="520" />
 					<property name="name" value="hr-skill" />
 					<property name="items">
 						<list>
@@ -82,7 +82,7 @@
 							
 							 
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="10" />
+								<property name="sequence" value="20" />
 								<property name="dsName" value="RatingLevel" />
 								<property name="destPath" value="demo-data/hr/skill" />
 								<property name="file"
@@ -101,7 +101,7 @@
 				
 				
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="30" />
+					<property name="sequence" value="530" />
 					<property name="name" value="hr-training" />
 					<property name="items">
 						<list>
@@ -138,7 +138,7 @@
 				
 				
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="40" />
+					<property name="sequence" value="540" />
 					<property name="name" value="hr-employee" />
 					<property name="items">
 						<list>
@@ -176,7 +176,7 @@
 				
 				
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="50" />
+					<property name="sequence" value="550" />
 					<property name="name" value="hr-job" />
 					<property name="items">
 						<list>

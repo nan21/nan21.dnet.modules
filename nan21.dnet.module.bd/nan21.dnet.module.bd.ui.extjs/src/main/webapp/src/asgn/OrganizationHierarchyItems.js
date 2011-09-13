@@ -7,9 +7,9 @@ net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems = Ext.extend(dnet.b
 net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$List = Ext.extend( dnet.base.AbstractAsgnGrid, {
 	_defineColumns_: function () {
 		this._getBuilder_()		
-		.addTextColumn( {name:"id", header:"id", dataIndex:"id", hidden:true, width:100})
-		.addTextColumn( {name:"code", header:"code", dataIndex:"code", width:100 })
-		.addTextColumn( {name:"name", header:"name", dataIndex:"name", width:150 })
+		.addTextColumn( {name:"id", header:"Id", dataIndex:"id", hidden:true, width:100})
+		.addTextColumn( {name:"code", header:"Code", dataIndex:"code", width:100 })
+		.addTextColumn( {name:"name", header:"Name", dataIndex:"name", width:150 })
 	} 
 });
 Ext.reg("net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Left", net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$List);
@@ -20,6 +20,8 @@ net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Ui = Ext.extend(dne
 	,height:300 
 	,title:"User roles"
 	,_controller_:net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems
+	,_filterFields_: [["id","Id"],["code","Code"],["name","Name"]]
+	,_defaultFilterField_ : "code" 
 	 
 	,_defineElements_: function () {
 		this._getBuilder_()

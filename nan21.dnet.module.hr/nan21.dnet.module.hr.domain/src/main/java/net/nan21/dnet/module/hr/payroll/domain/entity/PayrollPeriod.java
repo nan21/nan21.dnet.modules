@@ -128,7 +128,6 @@ public class PayrollPeriod implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Payroll.class)
     @JoinColumn(name = "PAYROLL_ID", referencedColumnName = "ID")
     private Payroll payroll;

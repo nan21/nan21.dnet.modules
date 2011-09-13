@@ -32,7 +32,7 @@ public class AbsenceReasonDsConv extends
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((AbsenceType) this.em.getReference(AbsenceType.class,
+                e.setType((AbsenceType) this.em.find(AbsenceType.class,
                         ds.getTypeId()));
             }
         } else {
@@ -53,6 +53,8 @@ public class AbsenceReasonDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 

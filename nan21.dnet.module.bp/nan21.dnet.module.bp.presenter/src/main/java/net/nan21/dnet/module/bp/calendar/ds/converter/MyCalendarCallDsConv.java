@@ -43,7 +43,7 @@ public class MyCalendarCallDsConv extends
         if (ds.getBpartnerId() != null) {
             if (e.getBpartner() == null
                     || !e.getBpartner().getId().equals(ds.getBpartnerId())) {
-                e.setBpartner((BusinessPartner) this.em.getReference(
+                e.setBpartner((BusinessPartner) this.em.find(
                         BusinessPartner.class, ds.getBpartnerId()));
             }
         } else {
@@ -52,14 +52,14 @@ public class MyCalendarCallDsConv extends
         if (ds.getContactId() != null) {
             if (e.getContact() == null
                     || !e.getContact().getId().equals(ds.getContactId())) {
-                e.setContact((Contact) this.em.getReference(Contact.class,
+                e.setContact((Contact) this.em.find(Contact.class,
                         ds.getContactId()));
             }
         }
         if (ds.getPriorityId() != null) {
             if (e.getPriority() == null
                     || !e.getPriority().getId().equals(ds.getPriorityId())) {
-                e.setPriority((CalendarEventPriority) this.em.getReference(
+                e.setPriority((CalendarEventPriority) this.em.find(
                         CalendarEventPriority.class, ds.getPriorityId()));
             }
         } else {
@@ -68,7 +68,7 @@ public class MyCalendarCallDsConv extends
         if (ds.getStatusId() != null) {
             if (e.getStatus() == null
                     || !e.getStatus().getId().equals(ds.getStatusId())) {
-                e.setStatus((CalendarEventStatus) this.em.getReference(
+                e.setStatus((CalendarEventStatus) this.em.find(
                         CalendarEventStatus.class, ds.getStatusId()));
             }
         } else {
@@ -89,6 +89,8 @@ public class MyCalendarCallDsConv extends
                                 + ds.getBpartnerCode() + "  ");
             }
             e.setBpartner(x);
+        } else {
+            e.setBpartner(null);
         }
     }
 
@@ -110,6 +112,8 @@ public class MyCalendarCallDsConv extends
                                 + ds.getPriorityName() + "  ");
             }
             e.setPriority(x);
+        } else {
+            e.setPriority(null);
         }
     }
 
@@ -130,6 +134,8 @@ public class MyCalendarCallDsConv extends
                                 + ds.getStatusName() + "  ");
             }
             e.setStatus(x);
+        } else {
+            e.setStatus(null);
         }
     }
 

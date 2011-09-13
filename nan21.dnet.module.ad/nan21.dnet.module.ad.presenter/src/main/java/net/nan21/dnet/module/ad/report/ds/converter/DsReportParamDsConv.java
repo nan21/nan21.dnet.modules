@@ -31,15 +31,15 @@ public class DsReportParamDsConv extends
         if (ds.getDsReportId() != null) {
             if (e.getDsReport() == null
                     || !e.getDsReport().getId().equals(ds.getDsReportId())) {
-                e.setDsReport((DsReport) this.em.getReference(DsReport.class,
+                e.setDsReport((DsReport) this.em.find(DsReport.class,
                         ds.getDsReportId()));
             }
         }
         if (ds.getParamId() != null) {
             if (e.getReportParam() == null
                     || !e.getReportParam().getId().equals(ds.getParamId())) {
-                e.setReportParam((ReportParam) this.em.getReference(
-                        ReportParam.class, ds.getParamId()));
+                e.setReportParam((ReportParam) this.em.find(ReportParam.class,
+                        ds.getParamId()));
             }
         } else {
             this.lookup_reportParam_ReportParam(ds, e);
@@ -62,6 +62,8 @@ public class DsReportParamDsConv extends
                                 + ds.getParamCode() + "  ");
             }
             e.setReportParam(x);
+        } else {
+            e.setReportParam(null);
         }
     }
 

@@ -33,15 +33,14 @@ public class QualificationSkillDsConv extends
             if (e.getQualification() == null
                     || !e.getQualification().getId()
                             .equals(ds.getQualificationId())) {
-                e.setQualification((Qualification) this.em.getReference(
+                e.setQualification((Qualification) this.em.find(
                         Qualification.class, ds.getQualificationId()));
             }
         }
         if (ds.getSkillId() != null) {
             if (e.getSkill() == null
                     || !e.getSkill().getId().equals(ds.getSkillId())) {
-                e.setSkill((Skill) this.em.getReference(Skill.class,
-                        ds.getSkillId()));
+                e.setSkill((Skill) this.em.find(Skill.class, ds.getSkillId()));
             }
         } else {
             this.lookup_skill_Skill(ds, e);
@@ -50,7 +49,7 @@ public class QualificationSkillDsConv extends
             if (e.getRequiredLevel() == null
                     || !e.getRequiredLevel().getId()
                             .equals(ds.getRequiredLevelId())) {
-                e.setRequiredLevel((RatingLevel) this.em.getReference(
+                e.setRequiredLevel((RatingLevel) this.em.find(
                         RatingLevel.class, ds.getRequiredLevelId()));
             }
         } else {
@@ -71,6 +70,8 @@ public class QualificationSkillDsConv extends
                                 + ds.getSkill() + "  ");
             }
             e.setSkill(x);
+        } else {
+            e.setSkill(null);
         }
     }
 
@@ -92,6 +93,8 @@ public class QualificationSkillDsConv extends
                                 + ds.getRequiredLevel() + "  ");
             }
             e.setRequiredLevel(x);
+        } else {
+            e.setRequiredLevel(null);
         }
     }
 

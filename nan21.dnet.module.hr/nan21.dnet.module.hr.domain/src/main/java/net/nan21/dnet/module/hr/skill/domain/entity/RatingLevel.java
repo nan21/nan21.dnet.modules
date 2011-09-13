@@ -128,7 +128,6 @@ public class RatingLevel implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = RatingScale.class)
     @JoinColumn(name = "RATINGSCALE_ID", referencedColumnName = "ID")
     private RatingScale ratingScale;

@@ -13,6 +13,8 @@ Ext.ns("net.nan21.dnet.module.mm.md.ds.model");
 	,	{name:"modifiedBy",type:"string"}
 	,	{name:"version",type:"int"}
 	,	{name:"category",type:"string"}
+	,	{name:"uploadPath",type:"string"}
+	,	{name:"baseUrl",type:"string"}
 	
 	];
 Ext.ns("net.nan21.dnet.module.mm.md.ds.param");	

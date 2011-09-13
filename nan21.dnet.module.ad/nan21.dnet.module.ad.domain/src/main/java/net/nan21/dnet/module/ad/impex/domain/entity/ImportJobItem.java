@@ -120,11 +120,9 @@ public class ImportJobItem implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ImportJob.class)
     @JoinColumn(name = "JOB_ID", referencedColumnName = "ID")
     private ImportJob job;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ImportMap.class)
     @JoinColumn(name = "MAP_ID", referencedColumnName = "ID")
     private ImportMap map;

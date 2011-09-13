@@ -4,6 +4,7 @@ net.nan21.dnet.module.mm.md.ds.ProductAttachmentDs.prototype._trl_ = {
 	,typeId__lbl : "Type Id"
 	,type__lbl : "Type"
 	,location__lbl : "Location"
+	,url__lbl : "Url"
 	
 }  
 	

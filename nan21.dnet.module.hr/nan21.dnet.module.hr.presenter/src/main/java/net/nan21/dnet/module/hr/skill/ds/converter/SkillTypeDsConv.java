@@ -32,8 +32,8 @@ public class SkillTypeDsConv extends
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
-                e.setCategory((SkillCategory) this.em.getReference(
-                        SkillCategory.class, ds.getCategoryId()));
+                e.setCategory((SkillCategory) this.em.find(SkillCategory.class,
+                        ds.getCategoryId()));
             }
         } else {
             this.lookup_category_SkillCategory(ds, e);
@@ -53,6 +53,8 @@ public class SkillTypeDsConv extends
                                 + ds.getCategory() + "  ");
             }
             e.setCategory(x);
+        } else {
+            e.setCategory(null);
         }
     }
 

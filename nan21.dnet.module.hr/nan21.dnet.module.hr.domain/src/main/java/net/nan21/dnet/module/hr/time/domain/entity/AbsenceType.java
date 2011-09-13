@@ -117,7 +117,6 @@ public class AbsenceType implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AbsenceCategory.class)
     @JoinColumn(name = "CATEGORY_ID", referencedColumnName = "ID")
     private AbsenceCategory category;

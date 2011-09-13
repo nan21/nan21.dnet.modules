@@ -101,15 +101,12 @@ public class ElementValue implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Element.class)
     @JoinColumn(name = "ELEMENT_ID", referencedColumnName = "ID")
     private Element element;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
     @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")
     private Employee employee;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayrollPeriod.class)
     @JoinColumn(name = "PERIOD_ID", referencedColumnName = "ID")
     private PayrollPeriod period;

@@ -101,11 +101,9 @@ public class DsReportParam implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = DsReport.class)
     @JoinColumn(name = "DSREPORT_ID", referencedColumnName = "ID")
     private DsReport dsReport;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ReportParam.class)
     @JoinColumn(name = "REPORTPARAM_ID", referencedColumnName = "ID")
     private ReportParam reportParam;

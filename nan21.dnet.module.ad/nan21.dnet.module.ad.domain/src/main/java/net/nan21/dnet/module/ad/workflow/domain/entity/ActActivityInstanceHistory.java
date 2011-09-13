@@ -102,7 +102,6 @@ public class ActActivityInstanceHistory implements Serializable, IModelWithId {
     /** Duration. */
     @Column(name = "DURATION_")
     private Long duration;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActProcessDefinition.class)
     @JoinColumn(name = "PROC_DEF_ID_", referencedColumnName = "ID_")
     private ActProcessDefinition processDefinition;

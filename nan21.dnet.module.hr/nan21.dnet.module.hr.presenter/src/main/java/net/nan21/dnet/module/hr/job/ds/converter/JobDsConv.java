@@ -32,7 +32,7 @@ public class JobDsConv extends AbstractDsConverter<JobDs, Job> implements
         if (ds.getTypeId() != null) {
             if (e.getJobType() == null
                     || !e.getJobType().getId().equals(ds.getTypeId())) {
-                e.setJobType((JobType) this.em.getReference(JobType.class,
+                e.setJobType((JobType) this.em.find(JobType.class,
                         ds.getTypeId()));
             }
         } else {
@@ -52,6 +52,8 @@ public class JobDsConv extends AbstractDsConverter<JobDs, Job> implements
                                 + ds.getType() + "  ");
             }
             e.setJobType(x);
+        } else {
+            e.setJobType(null);
         }
     }
 

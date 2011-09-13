@@ -113,15 +113,12 @@ public class CurrencyXRateAverage implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CurrencyXRateProvider.class)
     @JoinColumn(name = "PROVIDER_ID", referencedColumnName = "ID")
     private CurrencyXRateProvider provider;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
     @JoinColumn(name = "SOURCE_ID", referencedColumnName = "ID")
     private Currency source;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
     @JoinColumn(name = "TARGET_ID", referencedColumnName = "ID")
     private Currency target;

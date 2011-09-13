@@ -35,7 +35,7 @@ public class EmployeeContactDsConv extends
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
-                e.setEmployee((Employee) this.em.getReference(Employee.class,
+                e.setEmployee((Employee) this.em.find(Employee.class,
                         ds.getEmployeeId()));
             }
         }
@@ -43,9 +43,9 @@ public class EmployeeContactDsConv extends
             if (e.getRelationship() == null
                     || !e.getRelationship().getId()
                             .equals(ds.getRelationshipId())) {
-                e.setRelationship((EmployeeContactRelationship) this.em
-                        .getReference(EmployeeContactRelationship.class,
-                                ds.getRelationshipId()));
+                e.setRelationship((EmployeeContactRelationship) this.em.find(
+                        EmployeeContactRelationship.class,
+                        ds.getRelationshipId()));
             }
         } else {
             this.lookup_relationship_EmployeeContactRelationship(ds, e);
@@ -65,6 +65,8 @@ public class EmployeeContactDsConv extends
                                 + ds.getRelationship() + "  ");
             }
             e.setRelationship(x);
+        } else {
+            e.setRelationship(null);
         }
     }
 

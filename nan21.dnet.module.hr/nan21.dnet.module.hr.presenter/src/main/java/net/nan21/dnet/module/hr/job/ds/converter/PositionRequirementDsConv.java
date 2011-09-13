@@ -31,7 +31,7 @@ public class PositionRequirementDsConv extends
         if (ds.getPositionId() != null) {
             if (e.getPosition() == null
                     || !e.getPosition().getId().equals(ds.getPositionId())) {
-                e.setPosition((Position) this.em.getReference(Position.class,
+                e.setPosition((Position) this.em.find(Position.class,
                         ds.getPositionId()));
             }
         }
@@ -39,7 +39,7 @@ public class PositionRequirementDsConv extends
             if (e.getRequirement() == null
                     || !e.getRequirement().getId()
                             .equals(ds.getRequirementId())) {
-                e.setRequirement((WorkRequirement) this.em.getReference(
+                e.setRequirement((WorkRequirement) this.em.find(
                         WorkRequirement.class, ds.getRequirementId()));
             }
         } else {
@@ -60,6 +60,8 @@ public class PositionRequirementDsConv extends
                                 + ds.getRequirement() + "  ");
             }
             e.setRequirement(x);
+        } else {
+            e.setRequirement(null);
         }
     }
 

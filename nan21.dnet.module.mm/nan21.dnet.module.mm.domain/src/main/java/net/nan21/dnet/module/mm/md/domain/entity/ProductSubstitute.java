@@ -99,11 +99,9 @@ public class ProductSubstitute implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
     @JoinColumn(name = "REFPRODUCT_ID", referencedColumnName = "ID")
     private Product refProduct;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
     @JoinColumn(name = "EQUIVALENCE_ID", referencedColumnName = "ID")
     private Product equivalence;

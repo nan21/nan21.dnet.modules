@@ -34,7 +34,7 @@ public class OrganizationDsConv extends
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((OrganizationType) this.em.getReference(
+                e.setType((OrganizationType) this.em.find(
                         OrganizationType.class, ds.getTypeId()));
             }
         } else {
@@ -55,6 +55,8 @@ public class OrganizationDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 

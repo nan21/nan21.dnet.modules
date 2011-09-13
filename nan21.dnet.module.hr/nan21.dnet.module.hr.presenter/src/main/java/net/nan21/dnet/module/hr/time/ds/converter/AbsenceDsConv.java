@@ -36,7 +36,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
-                e.setEmployee((Employee) this.em.getReference(Employee.class,
+                e.setEmployee((Employee) this.em.find(Employee.class,
                         ds.getEmployeeId()));
             }
         } else {
@@ -45,8 +45,8 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
         if (ds.getReasonId() != null) {
             if (e.getReason() == null
                     || !e.getReason().getId().equals(ds.getReasonId())) {
-                e.setReason((AbsenceReason) this.em.getReference(
-                        AbsenceReason.class, ds.getReasonId()));
+                e.setReason((AbsenceReason) this.em.find(AbsenceReason.class,
+                        ds.getReasonId()));
             }
         } else {
             this.lookup_reason_AbsenceReason(ds, e);
@@ -54,7 +54,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((AbsenceType) this.em.getReference(AbsenceType.class,
+                e.setType((AbsenceType) this.em.find(AbsenceType.class,
                         ds.getTypeId()));
             }
         } else {
@@ -75,6 +75,8 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
                                 + ds.getEmployeeCode() + "  ");
             }
             e.setEmployee(x);
+        } else {
+            e.setEmployee(null);
         }
     }
 
@@ -91,6 +93,8 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
                                 + ds.getReason() + "  ");
             }
             e.setReason(x);
+        } else {
+            e.setReason(null);
         }
     }
 
@@ -107,6 +111,8 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 

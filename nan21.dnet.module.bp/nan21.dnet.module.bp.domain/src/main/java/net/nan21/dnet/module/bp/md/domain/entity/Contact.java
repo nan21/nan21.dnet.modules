@@ -121,7 +121,6 @@ public class Contact implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "ID")
     private BusinessPartner bpartner;

@@ -33,8 +33,8 @@ public class ImportMapItemDsConv extends
         if (ds.getImportMapId() != null) {
             if (e.getImportMap() == null
                     || !e.getImportMap().getId().equals(ds.getImportMapId())) {
-                e.setImportMap((ImportMap) this.em.getReference(
-                        ImportMap.class, ds.getImportMapId()));
+                e.setImportMap((ImportMap) this.em.find(ImportMap.class,
+                        ds.getImportMapId()));
             }
         } else {
             this.lookup_importMap_ImportMap(ds, e);
@@ -54,6 +54,8 @@ public class ImportMapItemDsConv extends
                                 + ds.getImportMapName() + "  ");
             }
             e.setImportMap(x);
+        } else {
+            e.setImportMap(null);
         }
     }
 

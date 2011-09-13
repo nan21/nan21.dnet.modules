@@ -133,7 +133,6 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = UserType.class)
     @JoinColumn(name = "ACCOUNTTYPE_ID", referencedColumnName = "ID")
     private UserType accountType;

@@ -100,15 +100,12 @@ public class WfDefTransition implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = WfDefProcess.class)
     @JoinColumn(name = "PROCESS_ID", referencedColumnName = "ID")
     private WfDefProcess process;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = WfDefNode.class)
     @JoinColumn(name = "SOURCE_ID", referencedColumnName = "ID")
     private WfDefNode source;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = WfDefNode.class)
     @JoinColumn(name = "TARGET_ID", referencedColumnName = "ID")
     private WfDefNode target;

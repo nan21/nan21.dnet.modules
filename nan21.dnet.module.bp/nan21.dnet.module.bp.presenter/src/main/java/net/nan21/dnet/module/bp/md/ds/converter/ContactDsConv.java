@@ -36,7 +36,7 @@ public class ContactDsConv extends AbstractDsConverter<ContactDs, Contact>
         if (ds.getBpartnerId() != null) {
             if (e.getBpartner() == null
                     || !e.getBpartner().getId().equals(ds.getBpartnerId())) {
-                e.setBpartner((BusinessPartner) this.em.getReference(
+                e.setBpartner((BusinessPartner) this.em.find(
                         BusinessPartner.class, ds.getBpartnerId()));
             }
         } else {
@@ -57,6 +57,8 @@ public class ContactDsConv extends AbstractDsConverter<ContactDs, Contact>
                                 + ds.getBpartnerCode() + "  ");
             }
             e.setBpartner(x);
+        } else {
+            e.setBpartner(null);
         }
     }
 

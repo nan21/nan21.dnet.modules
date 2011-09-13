@@ -106,7 +106,6 @@ public class AbsenceRequestItem implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AbsenceRequest.class)
     @JoinColumn(name = "ABSENCEREQUEST_ID", referencedColumnName = "ID")
     private AbsenceRequest absenceRequest;

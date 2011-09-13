@@ -118,15 +118,12 @@ public class Absence implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
     @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")
     private Employee employee;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AbsenceType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private AbsenceType type;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AbsenceReason.class)
     @JoinColumn(name = "REASON_ID", referencedColumnName = "ID")
     private AbsenceReason reason;

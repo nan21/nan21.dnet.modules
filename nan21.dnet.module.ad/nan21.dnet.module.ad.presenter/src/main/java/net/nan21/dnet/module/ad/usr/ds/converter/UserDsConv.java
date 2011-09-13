@@ -32,8 +32,8 @@ public class UserDsConv extends AbstractDsConverter<UserDs, User> implements
             if (e.getAccountType() == null
                     || !e.getAccountType().getId()
                             .equals(ds.getAccountTypeId())) {
-                e.setAccountType((UserType) this.em.getReference(
-                        UserType.class, ds.getAccountTypeId()));
+                e.setAccountType((UserType) this.em.find(UserType.class,
+                        ds.getAccountTypeId()));
             }
         } else {
             this.lookup_accountType_UserType(ds, e);
@@ -53,6 +53,8 @@ public class UserDsConv extends AbstractDsConverter<UserDs, User> implements
                                 + ds.getAccountType() + "  ");
             }
             e.setAccountType(x);
+        } else {
+            e.setAccountType(null);
         }
     }
 

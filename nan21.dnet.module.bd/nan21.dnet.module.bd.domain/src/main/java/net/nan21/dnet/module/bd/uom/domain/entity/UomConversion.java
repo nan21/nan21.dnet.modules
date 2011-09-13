@@ -107,11 +107,9 @@ public class UomConversion implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
     @JoinColumn(name = "SOURCE_ID", referencedColumnName = "ID")
     private Uom source;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
     @JoinColumn(name = "TARGET_ID", referencedColumnName = "ID")
     private Uom target;

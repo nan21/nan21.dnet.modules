@@ -15,6 +15,7 @@ Ext.ns("net.nan21.dnet.module.mm.md.ds.model");
 	,	{name:"name",type:"string"}
 	,	{name:"location",type:"string"}
 	,	{name:"notes",type:"string"}
+	,	{name:"url",type:"string"}
 	
 	];
 Ext.ns("net.nan21.dnet.module.mm.md.ds.param");	

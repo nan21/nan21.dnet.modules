@@ -35,13 +35,13 @@ public class SalesInvoiceItemDsConv extends
         if (ds.getInvoiceId() != null) {
             if (e.getInvoice() == null
                     || !e.getInvoice().getId().equals(ds.getInvoiceId())) {
-                e.setInvoice((SalesInvoice) this.em.getReference(
-                        SalesInvoice.class, ds.getInvoiceId()));
+                e.setInvoice((SalesInvoice) this.em.find(SalesInvoice.class,
+                        ds.getInvoiceId()));
             }
         }
         if (ds.getUomId() != null) {
             if (e.getUom() == null || !e.getUom().getId().equals(ds.getUomId())) {
-                e.setUom((Uom) this.em.getReference(Uom.class, ds.getUomId()));
+                e.setUom((Uom) this.em.find(Uom.class, ds.getUomId()));
             }
         } else {
             this.lookup_uom_Uom(ds, e);
@@ -49,8 +49,7 @@ public class SalesInvoiceItemDsConv extends
         if (ds.getItemId() != null) {
             if (e.getItem() == null
                     || !e.getItem().getId().equals(ds.getItemId())) {
-                e.setItem((Product) this.em.getReference(Product.class,
-                        ds.getItemId()));
+                e.setItem((Product) this.em.find(Product.class, ds.getItemId()));
             }
         } else {
             this.lookup_item_Product(ds, e);
@@ -70,6 +69,8 @@ public class SalesInvoiceItemDsConv extends
                                 + ds.getUomCode() + "  ");
             }
             e.setUom(x);
+        } else {
+            e.setUom(null);
         }
     }
 
@@ -86,6 +87,8 @@ public class SalesInvoiceItemDsConv extends
                                 + ds.getItemCode() + "  ");
             }
             e.setItem(x);
+        } else {
+            e.setItem(null);
         }
     }
 

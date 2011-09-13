@@ -121,11 +121,9 @@ public class EmployeeCourse implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
     @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")
     private Employee employee;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Course.class)
     @JoinColumn(name = "COURSE_ID", referencedColumnName = "ID")
     private Course course;

@@ -128,51 +128,39 @@ public class SalesOrder implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesOrderStatus.class)
     @JoinColumn(name = "STATUS_ID", referencedColumnName = "ID")
     private SalesOrderStatus status;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesOrderType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private SalesOrderType type;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PriceList.class)
     @JoinColumn(name = "PRICELIST_ID", referencedColumnName = "ID")
     private PriceList priceList;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
     @JoinColumn(name = "CURRENCY_ID", referencedColumnName = "ID")
     private Currency currency;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
     @JoinColumn(name = "PAYMENTMETHOD_ID", referencedColumnName = "ID")
     private PaymentMethod paymentMethod;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = DeliveryMethod.class)
     @JoinColumn(name = "DELIVERYMETHOD_ID", referencedColumnName = "ID")
     private DeliveryMethod deliveryMethod;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "ID")
     private BusinessPartner customer;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "SUPPLIER_ID", referencedColumnName = "ID")
     private BusinessPartner supplier;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BILLTO_ID", referencedColumnName = "ID")
     private BusinessPartner billTo;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Location.class)
     @JoinColumn(name = "BILLTOLOCATION_ID", referencedColumnName = "ID")
     private Location billToLocation;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "SHIPTO_ID", referencedColumnName = "ID")
     private BusinessPartner shipTo;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Location.class)
     @JoinColumn(name = "SHIPTOLOCATION_ID", referencedColumnName = "ID")
     private Location shipToLocation;

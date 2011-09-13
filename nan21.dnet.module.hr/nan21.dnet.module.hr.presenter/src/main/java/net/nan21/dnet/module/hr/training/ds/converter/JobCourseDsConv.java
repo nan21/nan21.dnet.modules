@@ -32,7 +32,7 @@ public class JobCourseDsConv extends
 
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
-                e.setJob((Job) this.em.getReference(Job.class, ds.getJobId()));
+                e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
             }
         } else {
             this.lookup_job_Job(ds, e);
@@ -40,7 +40,7 @@ public class JobCourseDsConv extends
         if (ds.getCourseId() != null) {
             if (e.getCourse() == null
                     || !e.getCourse().getId().equals(ds.getCourseId())) {
-                e.setCourse((Course) this.em.getReference(Course.class,
+                e.setCourse((Course) this.em.find(Course.class,
                         ds.getCourseId()));
             }
         } else {
@@ -60,6 +60,8 @@ public class JobCourseDsConv extends
                                 + ds.getJobCode() + "  ");
             }
             e.setJob(x);
+        } else {
+            e.setJob(null);
         }
     }
 
@@ -76,6 +78,8 @@ public class JobCourseDsConv extends
                                 + ds.getCourseCode() + "  ");
             }
             e.setCourse(x);
+        } else {
+            e.setCourse(null);
         }
     }
 

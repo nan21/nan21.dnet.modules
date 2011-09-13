@@ -30,8 +30,7 @@ public class UomDsConv extends AbstractDsConverter<UomDs, Uom> implements
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((UomType) this.em.getReference(UomType.class,
-                        ds.getTypeId()));
+                e.setType((UomType) this.em.find(UomType.class, ds.getTypeId()));
             }
         } else {
             this.lookup_type_UomType(ds, e);
@@ -50,6 +49,8 @@ public class UomDsConv extends AbstractDsConverter<UomDs, Uom> implements
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 

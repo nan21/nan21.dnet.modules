@@ -142,11 +142,9 @@ public class Variable implements Serializable, IModelWithId, IModelWithClientId 
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Element.class)
     @JoinColumn(name = "ELEMENT_ID", referencedColumnName = "ID")
     private Element element;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Element.class)
     @JoinColumn(name = "CROSSREFERENCE_ID", referencedColumnName = "ID")
     private Element crossReference;

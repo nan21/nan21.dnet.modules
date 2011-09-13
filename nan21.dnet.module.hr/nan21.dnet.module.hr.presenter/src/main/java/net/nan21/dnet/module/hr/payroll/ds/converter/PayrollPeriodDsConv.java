@@ -34,7 +34,7 @@ public class PayrollPeriodDsConv extends
         if (ds.getPayrollId() != null) {
             if (e.getPayroll() == null
                     || !e.getPayroll().getId().equals(ds.getPayrollId())) {
-                e.setPayroll((Payroll) this.em.getReference(Payroll.class,
+                e.setPayroll((Payroll) this.em.find(Payroll.class,
                         ds.getPayrollId()));
             }
         } else {
@@ -55,6 +55,8 @@ public class PayrollPeriodDsConv extends
                                 + ds.getPayrollName() + "  ");
             }
             e.setPayroll(x);
+        } else {
+            e.setPayroll(null);
         }
     }
 

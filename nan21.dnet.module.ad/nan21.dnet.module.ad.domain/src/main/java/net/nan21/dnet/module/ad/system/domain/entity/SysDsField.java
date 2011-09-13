@@ -128,7 +128,6 @@ public class SysDsField implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SysDataSource.class)
     @JoinColumn(name = "DATASOURCE_ID", referencedColumnName = "ID")
     private SysDataSource dataSource;

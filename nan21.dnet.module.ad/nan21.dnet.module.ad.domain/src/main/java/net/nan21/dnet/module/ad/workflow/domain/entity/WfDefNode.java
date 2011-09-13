@@ -139,7 +139,6 @@ public class WfDefNode implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = WfDefProcess.class)
     @JoinColumn(name = "PROCESS_ID", referencedColumnName = "ID")
     private WfDefProcess process;

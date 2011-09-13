@@ -107,16 +107,16 @@ public class ProductService extends AbstractEntityService<Product> implements
                 .getResultList();
     }
 
-    public List<Product> findByCategory(ProductCategory category) {
-        return this.findByCategoryId(category.getId());
+    public List<Product> findByCategories(ProductCategory categories) {
+        return this.findByCategoriesId(categories.getId());
     }
 
-    public List<Product> findByCategoryId(Long categoryId) {
+    public List<Product> findByCategoriesId(Long categoriesId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product e where e.category.id = :pCategoryId",
-                        Product.class).setParameter("pCategoryId", categoryId)
-                .getResultList();
+                        "select e from Product e where e.categories.id = :pCategoriesId",
+                        Product.class)
+                .setParameter("pCategoriesId", categoriesId).getResultList();
     }
 
     public List<Product> findByAttributeGroup(

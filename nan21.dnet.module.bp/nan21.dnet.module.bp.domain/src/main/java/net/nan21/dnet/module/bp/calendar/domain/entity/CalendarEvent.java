@@ -142,19 +142,15 @@ public class CalendarEvent implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CalendarEventStatus.class)
     @JoinColumn(name = "STATUS_ID", referencedColumnName = "ID")
     private CalendarEventStatus status;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CalendarEventPriority.class)
     @JoinColumn(name = "PRIORITY_ID", referencedColumnName = "ID")
     private CalendarEventPriority priority;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "ID")
     private BusinessPartner bpartner;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Contact.class)
     @JoinColumn(name = "CONTACT_ID", referencedColumnName = "ID")
     private Contact contact;

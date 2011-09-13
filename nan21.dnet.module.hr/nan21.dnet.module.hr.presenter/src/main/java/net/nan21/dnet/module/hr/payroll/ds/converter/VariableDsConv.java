@@ -32,7 +32,7 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
         if (ds.getElementId() != null) {
             if (e.getElement() == null
                     || !e.getElement().getId().equals(ds.getElementId())) {
-                e.setElement((Element) this.em.getReference(Element.class,
+                e.setElement((Element) this.em.find(Element.class,
                         ds.getElementId()));
             }
         } else {
@@ -42,8 +42,8 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
             if (e.getCrossReference() == null
                     || !e.getCrossReference().getId()
                             .equals(ds.getCrossReferenceId())) {
-                e.setCrossReference((Element) this.em.getReference(
-                        Element.class, ds.getCrossReferenceId()));
+                e.setCrossReference((Element) this.em.find(Element.class,
+                        ds.getCrossReferenceId()));
             }
         } else {
             this.lookup_crossReference_Element(ds, e);
@@ -63,6 +63,8 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
                                 + ds.getElement() + "  ");
             }
             e.setElement(x);
+        } else {
+            e.setElement(null);
         }
     }
 
@@ -80,6 +82,8 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
                                 + ds.getCrossReference() + "  ");
             }
             e.setCrossReference(x);
+        } else {
+            e.setCrossReference(null);
         }
     }
 

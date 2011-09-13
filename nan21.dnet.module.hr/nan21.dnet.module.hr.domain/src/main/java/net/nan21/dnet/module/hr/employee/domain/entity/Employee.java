@@ -194,35 +194,27 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "EMPLOYER_ID", referencedColumnName = "ID")
     private Organization employer;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
     @JoinColumn(name = "CITIZENSHIP_ID", referencedColumnName = "ID")
     private Country citizenship;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = EmploymentType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private EmploymentType type;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Position.class)
     @JoinColumn(name = "POSITION_ID", referencedColumnName = "ID")
     private Position position;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Job.class)
     @JoinColumn(name = "JOB_ID", referencedColumnName = "ID")
     private Job job;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")
     private Organization organization;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Grade.class)
     @JoinColumn(name = "GRADE_ID", referencedColumnName = "ID")
     private Grade grade;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Payroll.class)
     @JoinColumn(name = "PAYROLL_ID", referencedColumnName = "ID")
     private Payroll payroll;

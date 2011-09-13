@@ -42,14 +42,14 @@ public class SalesInvoiceDsConv extends
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
-                e.setCurrency((Currency) this.em.getReference(Currency.class,
+                e.setCurrency((Currency) this.em.find(Currency.class,
                         ds.getCurrencyId()));
             }
         }
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((SalesInvoiceType) this.em.getReference(
+                e.setType((SalesInvoiceType) this.em.find(
                         SalesInvoiceType.class, ds.getTypeId()));
             }
         } else {
@@ -58,7 +58,7 @@ public class SalesInvoiceDsConv extends
         if (ds.getStatusId() != null) {
             if (e.getStatus() == null
                     || !e.getStatus().getId().equals(ds.getStatusId())) {
-                e.setStatus((SalesInvoiceStatus) this.em.getReference(
+                e.setStatus((SalesInvoiceStatus) this.em.find(
                         SalesInvoiceStatus.class, ds.getStatusId()));
             }
         } else {
@@ -67,7 +67,7 @@ public class SalesInvoiceDsConv extends
         if (ds.getCustomerId() != null) {
             if (e.getCustomer() == null
                     || !e.getCustomer().getId().equals(ds.getCustomerId())) {
-                e.setCustomer((BusinessPartner) this.em.getReference(
+                e.setCustomer((BusinessPartner) this.em.find(
                         BusinessPartner.class, ds.getCustomerId()));
             }
         } else {
@@ -77,16 +77,16 @@ public class SalesInvoiceDsConv extends
             if (e.getBillToContact() == null
                     || !e.getBillToContact().getId()
                             .equals(ds.getBillToContactId())) {
-                e.setBillToContact((Contact) this.em.getReference(
-                        Contact.class, ds.getBillToContactId()));
+                e.setBillToContact((Contact) this.em.find(Contact.class,
+                        ds.getBillToContactId()));
             }
         }
         if (ds.getBillToLocationId() != null) {
             if (e.getBillToLocation() == null
                     || !e.getBillToLocation().getId()
                             .equals(ds.getBillToLocationId())) {
-                e.setBillToLocation((Location) this.em.getReference(
-                        Location.class, ds.getBillToLocationId()));
+                e.setBillToLocation((Location) this.em.find(Location.class,
+                        ds.getBillToLocationId()));
             }
         }
     }
@@ -104,6 +104,8 @@ public class SalesInvoiceDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 
@@ -120,6 +122,8 @@ public class SalesInvoiceDsConv extends
                                 + ds.getStatus() + "  ");
             }
             e.setStatus(x);
+        } else {
+            e.setStatus(null);
         }
     }
 
@@ -136,6 +140,8 @@ public class SalesInvoiceDsConv extends
                                 + ds.getCustomerCode() + "  ");
             }
             e.setCustomer(x);
+        } else {
+            e.setCustomer(null);
         }
     }
 

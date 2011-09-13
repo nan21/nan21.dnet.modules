@@ -31,6 +31,7 @@ public class ProductAttachmentDs extends AbstractDsModel<ProductAttachment>
     public static final String fNAME = "name";
     public static final String fLOCATION = "location";
     public static final String fNOTES = "notes";
+    public static final String fURL = "url";
 
     @DsField()
     private Long id;
@@ -70,6 +71,9 @@ public class ProductAttachmentDs extends AbstractDsModel<ProductAttachment>
 
     @DsField()
     private String notes;
+
+    @DsField(fetch = false)
+    private String url;
 
     public ProductAttachmentDs() {
         super();
@@ -182,6 +186,14 @@ public class ProductAttachmentDs extends AbstractDsModel<ProductAttachment>
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public String getUrl() {
+        return this.url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
 }

@@ -117,7 +117,6 @@ public class ProductAttributeType implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAttributeCategory.class)
     @JoinColumn(name = "CATEGORY_ID", referencedColumnName = "ID")
     private ProductAttributeCategory category;

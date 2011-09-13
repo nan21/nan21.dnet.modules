@@ -34,7 +34,7 @@ public class CommunicationChannelDsConv extends
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((CommunicationChannelType) this.em.getReference(
+                e.setType((CommunicationChannelType) this.em.find(
                         CommunicationChannelType.class, ds.getTypeId()));
             }
         } else {
@@ -55,6 +55,8 @@ public class CommunicationChannelDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 

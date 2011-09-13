@@ -8,7 +8,6 @@ package net.nan21.dnet.module.mm.md.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 
 import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 
@@ -18,10 +17,6 @@ public interface IProductCategoryService extends
     public ProductCategory findByCode(Long clientId, String code);
 
     public ProductCategory findByName(Long clientId, String name);
-
-    public List<ProductCategory> findByParent(ProductCategory parent);
-
-    public List<ProductCategory> findByParentId(Long parentId);
 
     public List<ProductCategory> findByProducts(Product products);
 

@@ -1,9 +1,13 @@
 package net.nan21.dnet.module.ad.usr.asgn;
 
+import net.nan21.dnet.core.api.annotation.SortField;
+
 import net.nan21.dnet.core.presenter.model.AbstractAsgnModel;
 import net.nan21.dnet.module.ad.usr.domain.entity.User;
+import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
+@Ds(entity = User.class, sort = { @SortField(field = RolesOfUserAsgn.fCODE) })
 public class RolesOfUserAsgn extends AbstractAsgnModel<User> {
 
     public static final String fID = "id";

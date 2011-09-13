@@ -117,7 +117,6 @@ public class SkillType implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SkillCategory.class)
     @JoinColumn(name = "CATEGORY_ID", referencedColumnName = "ID")
     private SkillCategory category;

@@ -110,11 +110,9 @@ public class PayScaleRateValue implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayScaleRate.class)
     @JoinColumn(name = "SCALERATE_ID", referencedColumnName = "ID")
     private PayScaleRate scaleRate;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayScalePoint.class)
     @JoinColumn(name = "SCALEPOINT_ID", referencedColumnName = "ID")
     private PayScalePoint scalePoint;

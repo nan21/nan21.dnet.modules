@@ -30,6 +30,8 @@ public class ProductAttachmentTypeDs extends
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fCATEGORY = "category";
+    public static final String fUPLOADPATH = "uploadPath";
+    public static final String fBASEURL = "baseUrl";
 
     @DsField()
     private String name;
@@ -63,6 +65,12 @@ public class ProductAttachmentTypeDs extends
 
     @DsField()
     private String category;
+
+    @DsField()
+    private String uploadPath;
+
+    @DsField()
+    private String baseUrl;
 
     public ProductAttachmentTypeDs() {
         super();
@@ -159,6 +167,22 @@ public class ProductAttachmentTypeDs extends
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getUploadPath() {
+        return this.uploadPath;
+    }
+
+    public void setUploadPath(String uploadPath) {
+        this.uploadPath = uploadPath;
+    }
+
+    public String getBaseUrl() {
+        return this.baseUrl;
+    }
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 
 }

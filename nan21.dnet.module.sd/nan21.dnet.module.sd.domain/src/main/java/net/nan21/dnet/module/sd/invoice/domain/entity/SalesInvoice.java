@@ -127,35 +127,27 @@ public class SalesInvoice implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesInvoiceStatus.class)
     @JoinColumn(name = "STATUS_ID", referencedColumnName = "ID")
     private SalesInvoiceStatus status;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesInvoiceType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private SalesInvoiceType type;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
     @JoinColumn(name = "CURRENCY_ID", referencedColumnName = "ID")
     private Currency currency;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "ID")
     private BusinessPartner customer;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Location.class)
     @JoinColumn(name = "BILLTOLOCATION_ID", referencedColumnName = "ID")
     private Location billToLocation;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Contact.class)
     @JoinColumn(name = "BILLTOCONTACT_ID", referencedColumnName = "ID")
     private Contact billToContact;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "SUPPLIER_ID", referencedColumnName = "ID")
     private BusinessPartner supplier;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesOrder.class)
     @JoinColumn(name = "SALESORDER_ID", referencedColumnName = "ID")
     private SalesOrder salesOrder;

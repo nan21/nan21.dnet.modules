@@ -116,11 +116,9 @@ public class ActTask implements Serializable, IModelWithId {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREATE_TIME_")
     private Date createdAt;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActProcessDefinition.class)
     @JoinColumn(name = "PROC_DEF_ID_", referencedColumnName = "ID_")
     private ActProcessDefinition processDefinition;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActTask.class)
     @JoinColumn(name = "PARENT_TASK_ID_", referencedColumnName = "ID_")
     private ActTask parent;

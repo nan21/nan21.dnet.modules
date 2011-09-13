@@ -33,14 +33,14 @@ public class PayScaleRateValueDsConv extends
         if (ds.getScaleRateId() != null) {
             if (e.getScaleRate() == null
                     || !e.getScaleRate().getId().equals(ds.getScaleRateId())) {
-                e.setScaleRate((PayScaleRate) this.em.getReference(
-                        PayScaleRate.class, ds.getScaleRateId()));
+                e.setScaleRate((PayScaleRate) this.em.find(PayScaleRate.class,
+                        ds.getScaleRateId()));
             }
         }
         if (ds.getScalePointId() != null) {
             if (e.getScalePoint() == null
                     || !e.getScalePoint().getId().equals(ds.getScalePointId())) {
-                e.setScalePoint((PayScalePoint) this.em.getReference(
+                e.setScalePoint((PayScalePoint) this.em.find(
                         PayScalePoint.class, ds.getScalePointId()));
             }
         } else {
@@ -66,6 +66,8 @@ public class PayScaleRateValueDsConv extends
                                 + ds.getScalePointCode() + "  ");
             }
             e.setScalePoint(x);
+        } else {
+            e.setScalePoint(null);
         }
     }
 

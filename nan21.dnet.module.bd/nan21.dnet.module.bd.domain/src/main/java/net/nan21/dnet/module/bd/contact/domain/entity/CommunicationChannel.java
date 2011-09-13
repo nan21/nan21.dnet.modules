@@ -119,7 +119,6 @@ public class CommunicationChannel implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CommunicationChannelType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private CommunicationChannelType type;

@@ -133,15 +133,12 @@ public class BpBankAccount implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "ID")
     private BusinessPartner bpartner;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Bank.class)
     @JoinColumn(name = "BANK_ID", referencedColumnName = "ID")
     private Bank bank;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
     @JoinColumn(name = "CURRENCY_ID", referencedColumnName = "ID")
     private Currency currency;

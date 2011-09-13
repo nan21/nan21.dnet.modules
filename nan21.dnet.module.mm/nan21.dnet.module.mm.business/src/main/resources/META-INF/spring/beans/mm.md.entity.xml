@@ -10,6 +10,12 @@
  	<bean id="ProductCategoryService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductCategoryService"  />  
  
+ 	<bean id="ProductCategoryHierarchyService" scope="prototype"
+	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductCategoryHierarchyService"  />  
+ 
+ 	<bean id="ProductCategoryHierarchyItemService" scope="prototype"
+	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductCategoryHierarchyItemService"  />  
+ 
  	<bean id="ProductService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm._businessextensions.ProductService"  />  
  

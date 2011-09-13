@@ -30,14 +30,14 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
 
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
-                e.setJob((Job) this.em.getReference(Job.class, ds.getJobId()));
+                e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
             }
         }
         if (ds.getRequiredLevelId() != null) {
             if (e.getRequiredLevel() == null
                     || !e.getRequiredLevel().getId()
                             .equals(ds.getRequiredLevelId())) {
-                e.setRequiredLevel((RatingLevel) this.em.getReference(
+                e.setRequiredLevel((RatingLevel) this.em.find(
                         RatingLevel.class, ds.getRequiredLevelId()));
             }
         } else {
@@ -46,7 +46,7 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
         if (ds.getCompetenceId() != null) {
             if (e.getSkill() == null
                     || !e.getSkill().getId().equals(ds.getCompetenceId())) {
-                e.setSkill((Skill) this.em.getReference(Skill.class,
+                e.setSkill((Skill) this.em.find(Skill.class,
                         ds.getCompetenceId()));
             }
         } else {
@@ -72,6 +72,8 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
                                 + ds.getRequiredLevel() + "  ");
             }
             e.setRequiredLevel(x);
+        } else {
+            e.setRequiredLevel(null);
         }
     }
 
@@ -88,6 +90,8 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
                                 + ds.getCompetence() + "  ");
             }
             e.setSkill(x);
+        } else {
+            e.setSkill(null);
         }
     }
 

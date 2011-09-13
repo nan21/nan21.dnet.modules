@@ -19,8 +19,8 @@ net.nan21.dnet.module.mm.md.dc.Product$Filter = Ext.extend(dnet.base.AbstractDcv
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
-		.addLov({ name:"categoryName", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductCategories", dataIndex:"categoryName",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]  })
 		.addBooleanField({ name:"storable", dataIndex:"storable"  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
 		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",anchor:"-20",maxLength:32  })
 		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
@@ -35,7 +35,7 @@ net.nan21.dnet.module.mm.md.dc.Product$Filter = Ext.extend(dnet.base.AbstractDcv
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col3","col4"])
 		.addChildrenTo("col1",["name","code"])
-		.addChildrenTo("col2",["categoryName","storable"])
+		.addChildrenTo("col2",["storable","active"])
 		.addChildrenTo("col3",["manufacturerCode","manufacturerProductNo"])
 		.addChildrenTo("col4",["attributeGroup"])
 	}
@@ -54,8 +54,6 @@ net.nan21.dnet.module.mm.md.dc.Product$List = Ext.extend(dnet.base.AbstractDcvGr
 		.addBooleanColumn({ name:"storable", dataIndex:"storable"})   	     
 		.addNumberColumn({ name:"defaultUomId", dataIndex:"defaultUomId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"defaultUomCode", dataIndex:"defaultUomCode",width:100 })   	
-		.addNumberColumn({ name:"categoryId", dataIndex:"categoryId", hidden:true,format:"0",width:70 })  
-		.addTextColumn({ name:"categoryName", dataIndex:"categoryName",width:200 })   	
 		.addTextColumn({ name:"attributeGroup", dataIndex:"attributeGroup",width:120 })   	
 		.addNumberColumn({ name:"manufacturerId", dataIndex:"manufacturerId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"manufacturerCode", dataIndex:"manufacturerCode",width:100 })   	
@@ -83,6 +81,24 @@ net.nan21.dnet.module.mm.md.dc.Product$List = Ext.extend(dnet.base.AbstractDcvGr
 Ext.reg("net.nan21.dnet.module.mm.md.dc.Product$List", net.nan21.dnet.module.mm.md.dc.Product$List ); 
  	
 Ext.ns('net.nan21.dnet.module.mm.md.dc');	 
+net.nan21.dnet.module.mm.md.dc.Product$CtxFormName = Ext.extend(dnet.base.AbstractDcvForm, {
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addTextField({ name:"name", dataIndex:"name",anchor:"-20",disabled:true  ,allowBlank:false,maxLength:255  })
+		//containers
+		.addPanel({ name:"main", layout:"form" , autoScroll:true, width:90,labelWidth:0 })     
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["name"])
+;
+	}	
+});
+Ext.reg("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", net.nan21.dnet.module.mm.md.dc.Product$CtxFormName ); 
+ 	
+Ext.ns('net.nan21.dnet.module.mm.md.dc');	 
 net.nan21.dnet.module.mm.md.dc.Product$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
 	_defineElements_: function () {	
 		//controls	
@@ -91,16 +107,11 @@ net.nan21.dnet.module.mm.md.dc.Product$Edit = Ext.extend(dnet.base.AbstractDcvFo
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
-		.addNumberField({ name:"manufacturerId", dataIndex:"manufacturerId",anchor:"-20",disabled:true   , style: "text-align:right;" })
 		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
-		.addNumberField({ name:"categoryId", dataIndex:"categoryId",anchor:"-20",disabled:true   , style: "text-align:right;" })
-		.addLov({ name:"categoryName", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductCategories", dataIndex:"categoryName",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]  })
 		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
-		.addNumberField({ name:"defaultUomId", dataIndex:"defaultUomId",anchor:"-20",disabled:true   , style: "text-align:right;" })
 		.addLov({ name:"defaultUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"defaultUomCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "defaultUomId"} ]  })
 		.addCheckbox({ name:"storable", dataIndex:"storable"  })
 		.addNumberField({ name:"weight", dataIndex:"weight",anchor:"-20"  , style: "text-align:right;" })
-		.addNumberField({ name:"weightUomId", dataIndex:"weightUomId",anchor:"-20",disabled:true   , style: "text-align:right;" })
 		.addLov({ name:"weightUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomMass", dataIndex:"weightUomCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "weightUomId"} ]  })
 		.addNumberField({ name:"volume", dataIndex:"volume",anchor:"-20"  , style: "text-align:right;" })
 		.addNumberField({ name:"volumeUomId", dataIndex:"volumeUomId",anchor:"-20",disabled:true   , style: "text-align:right;" })
@@ -125,7 +136,7 @@ net.nan21.dnet.module.mm.md.dc.Product$Edit = Ext.extend(dnet.base.AbstractDcvFo
 		.addChildrenTo("main",["row1" ,"row2" ])
 		.addChildrenTo("row1",["name"])
 		.addChildrenTo("row2",["col1" ,"col2" ,"col3" ,"col4" ])
-		.addChildrenTo("col1",["code","defaultUomCode","categoryName","active"])
+		.addChildrenTo("col1",["code","defaultUomCode","active"])
 		.addChildrenTo("col2",["manufacturerCode","manufacturerProductNo","attributeGroup"])
 		.addChildrenTo("col3",["storable","weight","weightUomCode","volume","volumeUomCode"])
 		.addChildrenTo("col4",["dimWidth","dimHeight","dimDepth","dimUomCode"])

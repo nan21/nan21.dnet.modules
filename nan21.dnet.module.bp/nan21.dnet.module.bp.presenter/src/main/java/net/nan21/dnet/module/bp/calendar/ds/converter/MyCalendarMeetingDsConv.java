@@ -42,7 +42,7 @@ public class MyCalendarMeetingDsConv extends
         if (ds.getBpartnerId() != null) {
             if (e.getBpartner() == null
                     || !e.getBpartner().getId().equals(ds.getBpartnerId())) {
-                e.setBpartner((BusinessPartner) this.em.getReference(
+                e.setBpartner((BusinessPartner) this.em.find(
                         BusinessPartner.class, ds.getBpartnerId()));
             }
         } else {
@@ -51,7 +51,7 @@ public class MyCalendarMeetingDsConv extends
         if (ds.getPriorityId() != null) {
             if (e.getPriority() == null
                     || !e.getPriority().getId().equals(ds.getPriorityId())) {
-                e.setPriority((CalendarEventPriority) this.em.getReference(
+                e.setPriority((CalendarEventPriority) this.em.find(
                         CalendarEventPriority.class, ds.getPriorityId()));
             }
         } else {
@@ -60,7 +60,7 @@ public class MyCalendarMeetingDsConv extends
         if (ds.getStatusId() != null) {
             if (e.getStatus() == null
                     || !e.getStatus().getId().equals(ds.getStatusId())) {
-                e.setStatus((CalendarEventStatus) this.em.getReference(
+                e.setStatus((CalendarEventStatus) this.em.find(
                         CalendarEventStatus.class, ds.getStatusId()));
             }
         } else {
@@ -81,6 +81,8 @@ public class MyCalendarMeetingDsConv extends
                                 + ds.getBpartnerCode() + "  ");
             }
             e.setBpartner(x);
+        } else {
+            e.setBpartner(null);
         }
     }
 
@@ -102,6 +104,8 @@ public class MyCalendarMeetingDsConv extends
                                 + ds.getPriorityName() + "  ");
             }
             e.setPriority(x);
+        } else {
+            e.setPriority(null);
         }
     }
 
@@ -122,6 +126,8 @@ public class MyCalendarMeetingDsConv extends
                                 + ds.getStatusName() + "  ");
             }
             e.setStatus(x);
+        } else {
+            e.setStatus(null);
         }
     }
 

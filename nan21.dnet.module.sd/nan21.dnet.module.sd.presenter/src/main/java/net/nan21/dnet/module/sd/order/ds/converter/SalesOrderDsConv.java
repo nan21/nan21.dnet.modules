@@ -48,7 +48,7 @@ public class SalesOrderDsConv extends
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
-                e.setCurrency((Currency) this.em.getReference(Currency.class,
+                e.setCurrency((Currency) this.em.find(Currency.class,
                         ds.getCurrencyId()));
             }
         } else {
@@ -57,8 +57,8 @@ public class SalesOrderDsConv extends
         if (ds.getPriceListId() != null) {
             if (e.getPriceList() == null
                     || !e.getPriceList().getId().equals(ds.getPriceListId())) {
-                e.setPriceList((PriceList) this.em.getReference(
-                        PriceList.class, ds.getPriceListId()));
+                e.setPriceList((PriceList) this.em.find(PriceList.class,
+                        ds.getPriceListId()));
             }
         } else {
             this.lookup_priceList_PriceList(ds, e);
@@ -67,7 +67,7 @@ public class SalesOrderDsConv extends
             if (e.getDeliveryMethod() == null
                     || !e.getDeliveryMethod().getId()
                             .equals(ds.getDeliveryMethodId())) {
-                e.setDeliveryMethod((DeliveryMethod) this.em.getReference(
+                e.setDeliveryMethod((DeliveryMethod) this.em.find(
                         DeliveryMethod.class, ds.getDeliveryMethodId()));
             }
         } else {
@@ -76,8 +76,8 @@ public class SalesOrderDsConv extends
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((SalesOrderType) this.em.getReference(
-                        SalesOrderType.class, ds.getTypeId()));
+                e.setType((SalesOrderType) this.em.find(SalesOrderType.class,
+                        ds.getTypeId()));
             }
         } else {
             this.lookup_type_SalesOrderType(ds, e);
@@ -85,7 +85,7 @@ public class SalesOrderDsConv extends
         if (ds.getStatusId() != null) {
             if (e.getStatus() == null
                     || !e.getStatus().getId().equals(ds.getStatusId())) {
-                e.setStatus((SalesOrderStatus) this.em.getReference(
+                e.setStatus((SalesOrderStatus) this.em.find(
                         SalesOrderStatus.class, ds.getStatusId()));
             }
         } else {
@@ -95,7 +95,7 @@ public class SalesOrderDsConv extends
             if (e.getPaymentMethod() == null
                     || !e.getPaymentMethod().getId()
                             .equals(ds.getPaymentMethodId())) {
-                e.setPaymentMethod((PaymentMethod) this.em.getReference(
+                e.setPaymentMethod((PaymentMethod) this.em.find(
                         PaymentMethod.class, ds.getPaymentMethodId()));
             }
         } else {
@@ -104,7 +104,7 @@ public class SalesOrderDsConv extends
         if (ds.getCustomerId() != null) {
             if (e.getCustomer() == null
                     || !e.getCustomer().getId().equals(ds.getCustomerId())) {
-                e.setCustomer((BusinessPartner) this.em.getReference(
+                e.setCustomer((BusinessPartner) this.em.find(
                         BusinessPartner.class, ds.getCustomerId()));
             }
         } else {
@@ -113,7 +113,7 @@ public class SalesOrderDsConv extends
         if (ds.getSupplierId() != null) {
             if (e.getSupplier() == null
                     || !e.getSupplier().getId().equals(ds.getSupplierId())) {
-                e.setSupplier((BusinessPartner) this.em.getReference(
+                e.setSupplier((BusinessPartner) this.em.find(
                         BusinessPartner.class, ds.getSupplierId()));
             }
         } else {
@@ -122,7 +122,7 @@ public class SalesOrderDsConv extends
         if (ds.getBillToId() != null) {
             if (e.getBillTo() == null
                     || !e.getBillTo().getId().equals(ds.getBillToId())) {
-                e.setBillTo((BusinessPartner) this.em.getReference(
+                e.setBillTo((BusinessPartner) this.em.find(
                         BusinessPartner.class, ds.getBillToId()));
             }
         } else {
@@ -131,7 +131,7 @@ public class SalesOrderDsConv extends
         if (ds.getShipToId() != null) {
             if (e.getShipTo() == null
                     || !e.getShipTo().getId().equals(ds.getShipToId())) {
-                e.setShipTo((BusinessPartner) this.em.getReference(
+                e.setShipTo((BusinessPartner) this.em.find(
                         BusinessPartner.class, ds.getShipToId()));
             }
         } else {
@@ -141,16 +141,16 @@ public class SalesOrderDsConv extends
             if (e.getBillToLocation() == null
                     || !e.getBillToLocation().getId()
                             .equals(ds.getBillToLocationId())) {
-                e.setBillToLocation((Location) this.em.getReference(
-                        Location.class, ds.getBillToLocationId()));
+                e.setBillToLocation((Location) this.em.find(Location.class,
+                        ds.getBillToLocationId()));
             }
         }
         if (ds.getShipToLocationId() != null) {
             if (e.getShipToLocation() == null
                     || !e.getShipToLocation().getId()
                             .equals(ds.getShipToLocationId())) {
-                e.setShipToLocation((Location) this.em.getReference(
-                        Location.class, ds.getShipToLocationId()));
+                e.setShipToLocation((Location) this.em.find(Location.class,
+                        ds.getShipToLocationId()));
             }
         }
     }
@@ -168,6 +168,8 @@ public class SalesOrderDsConv extends
                                 + ds.getCurrencyCode() + "  ");
             }
             e.setCurrency(x);
+        } else {
+            e.setCurrency(null);
         }
     }
 
@@ -184,6 +186,8 @@ public class SalesOrderDsConv extends
                                 + ds.getPriceListName() + "  ");
             }
             e.setPriceList(x);
+        } else {
+            e.setPriceList(null);
         }
     }
 
@@ -201,6 +205,8 @@ public class SalesOrderDsConv extends
                                 + ds.getDeliveryMethod() + "  ");
             }
             e.setDeliveryMethod(x);
+        } else {
+            e.setDeliveryMethod(null);
         }
     }
 
@@ -217,6 +223,8 @@ public class SalesOrderDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 
@@ -233,6 +241,8 @@ public class SalesOrderDsConv extends
                                 + ds.getStatus() + "  ");
             }
             e.setStatus(x);
+        } else {
+            e.setStatus(null);
         }
     }
 
@@ -249,6 +259,8 @@ public class SalesOrderDsConv extends
                                 + ds.getPaymentMethod() + "  ");
             }
             e.setPaymentMethod(x);
+        } else {
+            e.setPaymentMethod(null);
         }
     }
 
@@ -265,6 +277,8 @@ public class SalesOrderDsConv extends
                                 + ds.getCustomerCode() + "  ");
             }
             e.setCustomer(x);
+        } else {
+            e.setCustomer(null);
         }
     }
 
@@ -281,6 +295,8 @@ public class SalesOrderDsConv extends
                                 + ds.getSupplierCode() + "  ");
             }
             e.setSupplier(x);
+        } else {
+            e.setSupplier(null);
         }
     }
 
@@ -297,6 +313,8 @@ public class SalesOrderDsConv extends
                                 + ds.getBillToCode() + "  ");
             }
             e.setBillTo(x);
+        } else {
+            e.setBillTo(null);
         }
     }
 
@@ -313,6 +331,8 @@ public class SalesOrderDsConv extends
                                 + ds.getShipToCode() + "  ");
             }
             e.setShipTo(x);
+        } else {
+            e.setShipTo(null);
         }
     }
 

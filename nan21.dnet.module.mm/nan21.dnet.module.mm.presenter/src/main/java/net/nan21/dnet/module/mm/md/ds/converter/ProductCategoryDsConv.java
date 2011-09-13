@@ -6,8 +6,6 @@
 package net.nan21.dnet.module.mm.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.mm.md.business.service.IProductCategoryService;
-import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDs;
@@ -25,36 +23,11 @@ public class ProductCategoryDsConv extends
         e.setNotes(ds.getNotes());
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
+        e.setFolder(ds.getFolder());
     }
 
     protected void modelToEntityReferences(ProductCategoryDs ds,
             ProductCategory e) throws Exception {
-
-        if (ds.getParentId() != null) {
-            if (e.getParent() == null
-                    || !e.getParent().getId().equals(ds.getParentId())) {
-                e.setParent((ProductCategory) this.em.getReference(
-                        ProductCategory.class, ds.getParentId()));
-            }
-        } else {
-            this.lookup_parent_ProductCategory(ds, e);
-        }
-    }
-
-    protected void lookup_parent_ProductCategory(ProductCategoryDs ds,
-            ProductCategory e) throws Exception {
-        if (ds.getParentName() != null && !ds.getParentName().equals("")) {
-            ProductCategory x = null;
-            try {
-                x = ((IProductCategoryService) getService(IProductCategoryService.class))
-                        .findByName(ds.getClientId(), ds.getParentName());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `ProductCategory` reference:  `parentName` = "
-                                + ds.getParentName() + "  ");
-            }
-            e.setParent(x);
-        }
     }
 
     @Override
@@ -71,9 +44,7 @@ public class ProductCategoryDsConv extends
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
-        ds.setParentId(((e.getParent() != null)) ? e.getParent().getId() : null);
-        ds.setParentName(((e.getParent() != null)) ? e.getParent().getName()
-                : null);
+        ds.setFolder(e.getFolder());
     }
 
 }

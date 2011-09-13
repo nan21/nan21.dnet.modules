@@ -1,9 +1,13 @@
 package net.nan21.dnet.module.mm.md.asgn;
 
+import net.nan21.dnet.core.api.annotation.SortField;
+
 import net.nan21.dnet.core.presenter.model.AbstractAsgnModel;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
+import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
+@Ds(entity = ProductAttributeGroup.class, sort = { @SortField(field = AttrGroupsOfAttributeAsgn.fNAME) })
 public class AttrGroupsOfAttributeAsgn extends
         AbstractAsgnModel<ProductAttributeGroup> {
 

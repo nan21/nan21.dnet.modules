@@ -32,8 +32,7 @@ public class UomConversionDsConv extends
         if (ds.getSourceId() != null) {
             if (e.getSource() == null
                     || !e.getSource().getId().equals(ds.getSourceId())) {
-                e.setSource((Uom) this.em.getReference(Uom.class,
-                        ds.getSourceId()));
+                e.setSource((Uom) this.em.find(Uom.class, ds.getSourceId()));
             }
         } else {
             this.lookup_source_Uom(ds, e);
@@ -41,8 +40,7 @@ public class UomConversionDsConv extends
         if (ds.getTargetId() != null) {
             if (e.getTarget() == null
                     || !e.getTarget().getId().equals(ds.getTargetId())) {
-                e.setTarget((Uom) this.em.getReference(Uom.class,
-                        ds.getTargetId()));
+                e.setTarget((Uom) this.em.find(Uom.class, ds.getTargetId()));
             }
         } else {
             this.lookup_target_Uom(ds, e);
@@ -62,6 +60,8 @@ public class UomConversionDsConv extends
                                 + ds.getSourceCode() + "  ");
             }
             e.setSource(x);
+        } else {
+            e.setSource(null);
         }
     }
 
@@ -78,6 +78,8 @@ public class UomConversionDsConv extends
                                 + ds.getTargetCode() + "  ");
             }
             e.setTarget(x);
+        } else {
+            e.setTarget(null);
         }
     }
 

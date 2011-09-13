@@ -29,8 +29,7 @@ public class ProductCategoryDs extends AbstractDsModel<ProductCategory>
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
-    public static final String fPARENTID = "parentId";
-    public static final String fPARENTNAME = "parentName";
+    public static final String fFOLDER = "folder";
 
     @DsField()
     private String name;
@@ -65,11 +64,8 @@ public class ProductCategoryDs extends AbstractDsModel<ProductCategory>
     @DsField()
     private Long version;
 
-    @DsField(join = "left", path = "parent.id")
-    private Long parentId;
-
-    @DsField(join = "left", path = "parent.name")
-    private String parentName;
+    @DsField()
+    private Boolean folder;
 
     public ProductCategoryDs() {
         super();
@@ -168,20 +164,12 @@ public class ProductCategoryDs extends AbstractDsModel<ProductCategory>
         this.version = version;
     }
 
-    public Long getParentId() {
-        return this.parentId;
+    public Boolean getFolder() {
+        return this.folder;
     }
 
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
-    }
-
-    public String getParentName() {
-        return this.parentName;
-    }
-
-    public void setParentName(String parentName) {
-        this.parentName = parentName;
+    public void setFolder(Boolean folder) {
+        this.folder = folder;
     }
 
 }

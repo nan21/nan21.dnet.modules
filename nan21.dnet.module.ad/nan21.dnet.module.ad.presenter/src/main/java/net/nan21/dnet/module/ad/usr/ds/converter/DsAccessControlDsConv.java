@@ -37,7 +37,7 @@ public class DsAccessControlDsConv extends
             if (e.getAccessControl() == null
                     || !e.getAccessControl().getId()
                             .equals(ds.getAccessControlId())) {
-                e.setAccessControl((AccessControl) this.em.getReference(
+                e.setAccessControl((AccessControl) this.em.find(
                         AccessControl.class, ds.getAccessControlId()));
             }
         } else {
@@ -58,6 +58,8 @@ public class DsAccessControlDsConv extends
                                 + ds.getAccessControl() + "  ");
             }
             e.setAccessControl(x);
+        } else {
+            e.setAccessControl(null);
         }
     }
 

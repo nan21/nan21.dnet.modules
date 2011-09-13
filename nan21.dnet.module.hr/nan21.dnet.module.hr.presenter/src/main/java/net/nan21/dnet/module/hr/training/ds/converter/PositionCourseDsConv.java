@@ -33,7 +33,7 @@ public class PositionCourseDsConv extends
         if (ds.getPositionId() != null) {
             if (e.getPosition() == null
                     || !e.getPosition().getId().equals(ds.getPositionId())) {
-                e.setPosition((Position) this.em.getReference(Position.class,
+                e.setPosition((Position) this.em.find(Position.class,
                         ds.getPositionId()));
             }
         } else {
@@ -42,7 +42,7 @@ public class PositionCourseDsConv extends
         if (ds.getCourseId() != null) {
             if (e.getCourse() == null
                     || !e.getCourse().getId().equals(ds.getCourseId())) {
-                e.setCourse((Course) this.em.getReference(Course.class,
+                e.setCourse((Course) this.em.find(Course.class,
                         ds.getCourseId()));
             }
         } else {
@@ -63,6 +63,8 @@ public class PositionCourseDsConv extends
                                 + ds.getPositionCode() + "  ");
             }
             e.setPosition(x);
+        } else {
+            e.setPosition(null);
         }
     }
 
@@ -79,6 +81,8 @@ public class PositionCourseDsConv extends
                                 + ds.getCourseCode() + "  ");
             }
             e.setCourse(x);
+        } else {
+            e.setCourse(null);
         }
     }
 

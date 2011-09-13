@@ -93,7 +93,6 @@ public class ActProcessDefinition implements Serializable, IModelWithId {
     /** HasStartForm. */
     @Column(name = "HAS_START_FORM_KEY_")
     private Boolean hasStartForm;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActDeployment.class)
     @JoinColumn(name = "DEPLOYMENT_ID_", referencedColumnName = "ID_")
     private ActDeployment deployment;

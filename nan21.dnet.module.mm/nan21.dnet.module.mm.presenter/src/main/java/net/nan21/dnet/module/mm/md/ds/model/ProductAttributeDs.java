@@ -32,6 +32,7 @@ public class ProductAttributeDs extends AbstractDsModel<ProductAttribute>
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
     public static final String fDATATYPE = "dataType";
+    public static final String fLISTOFVALUES = "listOfvalues";
     public static final String fUOMID = "uomId";
     public static final String fUOM = "uom";
 
@@ -76,6 +77,9 @@ public class ProductAttributeDs extends AbstractDsModel<ProductAttribute>
 
     @DsField()
     private String dataType;
+
+    @DsField()
+    private String listOfvalues;
 
     @DsField(join = "left", path = "uom.id")
     private Long uomId;
@@ -202,6 +206,14 @@ public class ProductAttributeDs extends AbstractDsModel<ProductAttribute>
 
     public void setDataType(String dataType) {
         this.dataType = dataType;
+    }
+
+    public String getListOfvalues() {
+        return this.listOfvalues;
+    }
+
+    public void setListOfvalues(String listOfvalues) {
+        this.listOfvalues = listOfvalues;
     }
 
     public Long getUomId() {

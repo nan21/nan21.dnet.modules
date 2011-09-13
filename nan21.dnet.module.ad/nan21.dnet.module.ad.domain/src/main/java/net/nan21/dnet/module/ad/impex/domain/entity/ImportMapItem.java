@@ -114,7 +114,6 @@ public class ImportMapItem implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ImportMap.class)
     @JoinColumn(name = "IMPORTMAP_ID", referencedColumnName = "ID")
     private ImportMap importMap;

@@ -65,6 +65,15 @@ public class ProductAttachmentType implements Serializable, IModelWithId,
     @NotBlank
     private String category;
 
+    /** Physical location where attachments of this type should be copied if they are uploaded. */
+    @Column(name = "UPLOADPATH")
+    private String uploadPath;
+
+    /**Base URL to use when the attachment is requested. Is ignored if the attachment specifies an absolute URL*/
+    @Column(name = "BASEURL", nullable = false)
+    @NotBlank
+    private String baseUrl;
+
     /** Name. */
     @Column(name = "NAME", nullable = false)
     @NotBlank
@@ -127,6 +136,22 @@ public class ProductAttachmentType implements Serializable, IModelWithId,
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getUploadPath() {
+        return this.uploadPath;
+    }
+
+    public void setUploadPath(String uploadPath) {
+        this.uploadPath = uploadPath;
+    }
+
+    public String getBaseUrl() {
+        return this.baseUrl;
+    }
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 
     public String getName() {

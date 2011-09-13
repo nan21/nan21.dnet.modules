@@ -41,8 +41,8 @@ public class BpAccountDsConv extends
         if (ds.getBusinessPartnerId() != null) {
             if (e.getBp() == null
                     || !e.getBp().getId().equals(ds.getBusinessPartnerId())) {
-                e.setBp((BusinessPartner) this.em.getReference(
-                        BusinessPartner.class, ds.getBusinessPartnerId()));
+                e.setBp((BusinessPartner) this.em.find(BusinessPartner.class,
+                        ds.getBusinessPartnerId()));
             }
         } else {
             this.lookup_bp_BusinessPartner(ds, e);
@@ -51,7 +51,7 @@ public class BpAccountDsConv extends
             if (e.getOrganization() == null
                     || !e.getOrganization().getId()
                             .equals(ds.getOrganizationId())) {
-                e.setOrganization((Organization) this.em.getReference(
+                e.setOrganization((Organization) this.em.find(
                         Organization.class, ds.getOrganizationId()));
             }
         } else {
@@ -61,7 +61,7 @@ public class BpAccountDsConv extends
             if (e.getCustGroup() == null
                     || !e.getCustGroup().getId()
                             .equals(ds.getCustomerGroupId())) {
-                e.setCustGroup((CustomerGroup) this.em.getReference(
+                e.setCustGroup((CustomerGroup) this.em.find(
                         CustomerGroup.class, ds.getCustomerGroupId()));
             }
         } else {
@@ -71,7 +71,7 @@ public class BpAccountDsConv extends
             if (e.getCustPaymentMethod() == null
                     || !e.getCustPaymentMethod().getId()
                             .equals(ds.getCustomerPaymentMethodId())) {
-                e.setCustPaymentMethod((PaymentMethod) this.em.getReference(
+                e.setCustPaymentMethod((PaymentMethod) this.em.find(
                         PaymentMethod.class, ds.getCustomerPaymentMethodId()));
             }
         } else {
@@ -81,7 +81,7 @@ public class BpAccountDsConv extends
             if (e.getCustPaymentTerm() == null
                     || !e.getCustPaymentTerm().getId()
                             .equals(ds.getCustomerPaymentTermId())) {
-                e.setCustPaymentTerm((PaymentTerm) this.em.getReference(
+                e.setCustPaymentTerm((PaymentTerm) this.em.find(
                         PaymentTerm.class, ds.getCustomerPaymentTermId()));
             }
         } else {
@@ -90,8 +90,8 @@ public class BpAccountDsConv extends
         if (ds.getVendorGroupId() != null) {
             if (e.getVendGroup() == null
                     || !e.getVendGroup().getId().equals(ds.getVendorGroupId())) {
-                e.setVendGroup((VendorGroup) this.em.getReference(
-                        VendorGroup.class, ds.getVendorGroupId()));
+                e.setVendGroup((VendorGroup) this.em.find(VendorGroup.class,
+                        ds.getVendorGroupId()));
             }
         } else {
             this.lookup_vendGroup_VendorGroup(ds, e);
@@ -100,7 +100,7 @@ public class BpAccountDsConv extends
             if (e.getVendPaymentMethod() == null
                     || !e.getVendPaymentMethod().getId()
                             .equals(ds.getVendorPaymentMethodId())) {
-                e.setVendPaymentMethod((PaymentMethod) this.em.getReference(
+                e.setVendPaymentMethod((PaymentMethod) this.em.find(
                         PaymentMethod.class, ds.getVendorPaymentMethodId()));
             }
         } else {
@@ -110,7 +110,7 @@ public class BpAccountDsConv extends
             if (e.getVendPaymentTerm() == null
                     || !e.getVendPaymentTerm().getId()
                             .equals(ds.getVendorPaymentTermId())) {
-                e.setVendPaymentTerm((PaymentTerm) this.em.getReference(
+                e.setVendPaymentTerm((PaymentTerm) this.em.find(
                         PaymentTerm.class, ds.getVendorPaymentTermId()));
             }
         } else {
@@ -132,6 +132,8 @@ public class BpAccountDsConv extends
                                 + ds.getBusinessPartner() + "  ");
             }
             e.setBp(x);
+        } else {
+            e.setBp(null);
         }
     }
 
@@ -148,6 +150,8 @@ public class BpAccountDsConv extends
                                 + ds.getOrganization() + "  ");
             }
             e.setOrganization(x);
+        } else {
+            e.setOrganization(null);
         }
     }
 
@@ -164,6 +168,8 @@ public class BpAccountDsConv extends
                                 + ds.getCustomerGroup() + "  ");
             }
             e.setCustGroup(x);
+        } else {
+            e.setCustGroup(null);
         }
     }
 
@@ -182,6 +188,8 @@ public class BpAccountDsConv extends
                                 + ds.getCustomerPaymentMethod() + "  ");
             }
             e.setCustPaymentMethod(x);
+        } else {
+            e.setCustPaymentMethod(null);
         }
     }
 
@@ -200,6 +208,8 @@ public class BpAccountDsConv extends
                                 + ds.getCustomerPaymentTerm() + "  ");
             }
             e.setCustPaymentTerm(x);
+        } else {
+            e.setCustPaymentTerm(null);
         }
     }
 
@@ -216,6 +226,8 @@ public class BpAccountDsConv extends
                                 + ds.getVendorGroup() + "  ");
             }
             e.setVendGroup(x);
+        } else {
+            e.setVendGroup(null);
         }
     }
 
@@ -234,6 +246,8 @@ public class BpAccountDsConv extends
                                 + ds.getVendorPaymentMethod() + "  ");
             }
             e.setVendPaymentMethod(x);
+        } else {
+            e.setVendPaymentMethod(null);
         }
     }
 
@@ -251,6 +265,8 @@ public class BpAccountDsConv extends
                                 + ds.getVendorPaymentTerm() + "  ");
             }
             e.setVendPaymentTerm(x);
+        } else {
+            e.setVendPaymentTerm(null);
         }
     }
 

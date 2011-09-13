@@ -32,7 +32,7 @@ public class GradeRateDsConv extends
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
-                e.setCurrency((Currency) this.em.getReference(Currency.class,
+                e.setCurrency((Currency) this.em.find(Currency.class,
                         ds.getCurrencyId()));
             }
         } else {
@@ -53,6 +53,8 @@ public class GradeRateDsConv extends
                                 + ds.getCurrencyCode() + "  ");
             }
             e.setCurrency(x);
+        } else {
+            e.setCurrency(null);
         }
     }
 

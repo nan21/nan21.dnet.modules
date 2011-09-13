@@ -33,7 +33,7 @@ public class OrganizationHierarchyItemDsConv
         if (ds.getHierarchyId() != null) {
             if (e.getHierarchy() == null
                     || !e.getHierarchy().getId().equals(ds.getHierarchyId())) {
-                e.setHierarchy((OrganizationHierarchy) this.em.getReference(
+                e.setHierarchy((OrganizationHierarchy) this.em.find(
                         OrganizationHierarchy.class, ds.getHierarchyId()));
             }
         } else {
@@ -43,7 +43,7 @@ public class OrganizationHierarchyItemDsConv
             if (e.getOrganization() == null
                     || !e.getOrganization().getId()
                             .equals(ds.getOrganizationId())) {
-                e.setOrganization((Organization) this.em.getReference(
+                e.setOrganization((Organization) this.em.find(
                         Organization.class, ds.getOrganizationId()));
             }
         } else {
@@ -52,8 +52,8 @@ public class OrganizationHierarchyItemDsConv
         if (ds.getParentId() != null) {
             if (e.getParent() == null
                     || !e.getParent().getId().equals(ds.getParentId())) {
-                e.setParent((Organization) this.em.getReference(
-                        Organization.class, ds.getParentId()));
+                e.setParent((Organization) this.em.find(Organization.class,
+                        ds.getParentId()));
             }
         } else {
             this.lookup_parent_Organization(ds, e);
@@ -74,6 +74,8 @@ public class OrganizationHierarchyItemDsConv
                                 + ds.getHierarchy() + "  ");
             }
             e.setHierarchy(x);
+        } else {
+            e.setHierarchy(null);
         }
     }
 
@@ -92,6 +94,8 @@ public class OrganizationHierarchyItemDsConv
                                 + ds.getOrganizationCode() + "  ");
             }
             e.setOrganization(x);
+        } else {
+            e.setOrganization(null);
         }
     }
 
@@ -108,6 +112,8 @@ public class OrganizationHierarchyItemDsConv
                                 + ds.getParentCode() + "  ");
             }
             e.setParent(x);
+        } else {
+            e.setParent(null);
         }
     }
 

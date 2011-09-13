@@ -32,7 +32,7 @@ public class ImportJobItemDsConv extends
 
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
-                e.setJob((ImportJob) this.em.getReference(ImportJob.class,
+                e.setJob((ImportJob) this.em.find(ImportJob.class,
                         ds.getJobId()));
             }
         } else {
@@ -40,7 +40,7 @@ public class ImportJobItemDsConv extends
         }
         if (ds.getMapId() != null) {
             if (e.getMap() == null || !e.getMap().getId().equals(ds.getMapId())) {
-                e.setMap((ImportMap) this.em.getReference(ImportMap.class,
+                e.setMap((ImportMap) this.em.find(ImportMap.class,
                         ds.getMapId()));
             }
         } else {
@@ -61,6 +61,8 @@ public class ImportJobItemDsConv extends
                                 + ds.getJobName() + "  ");
             }
             e.setJob(x);
+        } else {
+            e.setJob(null);
         }
     }
 
@@ -77,6 +79,8 @@ public class ImportJobItemDsConv extends
                                 + ds.getMapName() + "  ");
             }
             e.setMap(x);
+        } else {
+            e.setMap(null);
         }
     }
 

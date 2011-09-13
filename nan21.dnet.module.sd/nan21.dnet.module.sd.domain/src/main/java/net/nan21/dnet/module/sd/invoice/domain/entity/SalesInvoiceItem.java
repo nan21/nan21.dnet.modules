@@ -109,15 +109,12 @@ public class SalesInvoiceItem implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesInvoice.class)
     @JoinColumn(name = "INVOICE_ID", referencedColumnName = "ID")
     private SalesInvoice invoice;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
     @JoinColumn(name = "ITEM_ID", referencedColumnName = "ID")
     private Product item;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
     @JoinColumn(name = "UOM_ID", referencedColumnName = "ID")
     private Uom uom;

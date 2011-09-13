@@ -109,15 +109,12 @@ public class SalesOrderItem implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesOrder.class)
     @JoinColumn(name = "SALESORDER_ID", referencedColumnName = "ID")
     private SalesOrder salesOrder;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
     @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
     private Product product;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
     @JoinColumn(name = "UOM_ID", referencedColumnName = "ID")
     private Uom uom;

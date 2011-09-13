@@ -32,7 +32,7 @@ public class ProductAttributeTypeDsConv extends
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
-                e.setCategory((ProductAttributeCategory) this.em.getReference(
+                e.setCategory((ProductAttributeCategory) this.em.find(
                         ProductAttributeCategory.class, ds.getCategoryId()));
             }
         } else {
@@ -53,6 +53,8 @@ public class ProductAttributeTypeDsConv extends
                                 + ds.getCategory() + "  ");
             }
             e.setCategory(x);
+        } else {
+            e.setCategory(null);
         }
     }
 

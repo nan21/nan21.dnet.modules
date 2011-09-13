@@ -7,8 +7,8 @@ net.nan21.dnet.module.ad.usr.asgn.RolesOfAccessControl = Ext.extend(dnet.base.Ab
 net.nan21.dnet.module.ad.usr.asgn.RolesOfAccessControl$List = Ext.extend( dnet.base.AbstractAsgnGrid, {
 	_defineColumns_: function () {
 		this._getBuilder_()		
-		.addTextColumn( {name:"id", header:"id", dataIndex:"id", hidden:true, width:100})
-		.addTextColumn( {name:"name", header:"name", dataIndex:"name", width:150 })
+		.addTextColumn( {name:"id", header:"Id", dataIndex:"id", hidden:true, width:100})
+		.addTextColumn( {name:"name", header:"Name", dataIndex:"name", width:150 })
 	} 
 });
 Ext.reg("net.nan21.dnet.module.ad.usr.asgn.RolesOfAccessControl$Left", net.nan21.dnet.module.ad.usr.asgn.RolesOfAccessControl$List);
@@ -19,6 +19,8 @@ net.nan21.dnet.module.ad.usr.asgn.RolesOfAccessControl$Ui = Ext.extend(dnet.base
 	,height:400 
 	,title:"Assign privileges to role"
 	,_controller_:net.nan21.dnet.module.ad.usr.asgn.RolesOfAccessControl
+	,_filterFields_: [["id","Id"],["name","Name"]]
+	,_defaultFilterField_ : "name" 
 	 
 	,_defineElements_: function () {
 		this._getBuilder_()

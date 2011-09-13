@@ -135,7 +135,6 @@ public class Element implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ElementType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private ElementType type;

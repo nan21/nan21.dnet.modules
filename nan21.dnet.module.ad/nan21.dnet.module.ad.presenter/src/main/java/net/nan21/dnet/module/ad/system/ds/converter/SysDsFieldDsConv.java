@@ -33,7 +33,7 @@ public class SysDsFieldDsConv extends
         if (ds.getDataSourceId() != null) {
             if (e.getDataSource() == null
                     || !e.getDataSource().getId().equals(ds.getDataSourceId())) {
-                e.setDataSource((SysDataSource) this.em.getReference(
+                e.setDataSource((SysDataSource) this.em.find(
                         SysDataSource.class, ds.getDataSourceId()));
             }
         } else {
@@ -54,6 +54,8 @@ public class SysDsFieldDsConv extends
                                 + ds.getDataSource() + "  ");
             }
             e.setDataSource(x);
+        } else {
+            e.setDataSource(null);
         }
     }
 

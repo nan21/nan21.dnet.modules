@@ -109,11 +109,9 @@ public class City implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
     @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID")
     private Country country;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Region.class)
     @JoinColumn(name = "REGION_ID", referencedColumnName = "ID")
     private Region region;

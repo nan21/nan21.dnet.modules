@@ -40,7 +40,7 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
         if (ds.getCountryId() != null) {
             if (e.getCountry() == null
                     || !e.getCountry().getId().equals(ds.getCountryId())) {
-                e.setCountry((Country) this.em.getReference(Country.class,
+                e.setCountry((Country) this.em.find(Country.class,
                         ds.getCountryId()));
             }
         } else {
@@ -49,7 +49,7 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
         if (ds.getRegionId() != null) {
             if (e.getRegion() == null
                     || !e.getRegion().getId().equals(ds.getRegionId())) {
-                e.setRegion((Region) this.em.getReference(Region.class,
+                e.setRegion((Region) this.em.find(Region.class,
                         ds.getRegionId()));
             }
         } else {
@@ -70,6 +70,8 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
                                 + ds.getCountryCode() + "  ");
             }
             e.setCountry(x);
+        } else {
+            e.setCountry(null);
         }
     }
 
@@ -89,6 +91,8 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
                                 + ds.getRegionCode() + "  ");
             }
             e.setRegion(x);
+        } else {
+            e.setRegion(null);
         }
     }
 

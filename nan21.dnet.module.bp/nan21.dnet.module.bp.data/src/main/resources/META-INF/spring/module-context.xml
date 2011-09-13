@@ -19,7 +19,7 @@
 		<property name="list">
 			<list>
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="10" />
+					<property name="sequence" value="210" />
 					<property name="name" value="bp-base" />
 					<property name="items">
 						<list>

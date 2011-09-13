@@ -7,6 +7,9 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductCategory</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductCategoryHierarchy</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductCategoryHierarchyItem</class>
+				
 		<class>net.nan21.dnet.module.mm.md.domain.entity.Product</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttachment</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttachmentType</class>

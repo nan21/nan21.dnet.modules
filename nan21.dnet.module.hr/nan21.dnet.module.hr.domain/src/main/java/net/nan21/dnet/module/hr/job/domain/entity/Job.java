@@ -140,7 +140,6 @@ public class Job implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = JobType.class)
     @JoinColumn(name = "JOBTYPE_ID", referencedColumnName = "ID")
     private JobType jobType;

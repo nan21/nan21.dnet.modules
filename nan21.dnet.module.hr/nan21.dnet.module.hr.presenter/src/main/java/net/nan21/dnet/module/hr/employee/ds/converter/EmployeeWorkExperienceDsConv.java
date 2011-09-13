@@ -33,7 +33,7 @@ public class EmployeeWorkExperienceDsConv extends
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
-                e.setEmployee((Employee) this.em.getReference(Employee.class,
+                e.setEmployee((Employee) this.em.find(Employee.class,
                         ds.getEmployeeId()));
             }
         }

@@ -33,7 +33,7 @@ public class ReportParamDsConv extends
         if (ds.getReportId() != null) {
             if (e.getReport() == null
                     || !e.getReport().getId().equals(ds.getReportId())) {
-                e.setReport((Report) this.em.getReference(Report.class,
+                e.setReport((Report) this.em.find(Report.class,
                         ds.getReportId()));
             }
         } else {
@@ -54,6 +54,8 @@ public class ReportParamDsConv extends
                                 + ds.getReportCode() + "  ");
             }
             e.setReport(x);
+        } else {
+            e.setReport(null);
         }
     }
 

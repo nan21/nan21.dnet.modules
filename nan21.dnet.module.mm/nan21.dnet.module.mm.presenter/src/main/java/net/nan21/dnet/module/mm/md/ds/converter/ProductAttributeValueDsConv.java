@@ -31,14 +31,14 @@ public class ProductAttributeValueDsConv extends
         if (ds.getProductId() != null) {
             if (e.getProduct() == null
                     || !e.getProduct().getId().equals(ds.getProductId())) {
-                e.setProduct((Product) this.em.getReference(Product.class,
+                e.setProduct((Product) this.em.find(Product.class,
                         ds.getProductId()));
             }
         }
         if (ds.getAttributeId() != null) {
             if (e.getAttribute() == null
                     || !e.getAttribute().getId().equals(ds.getAttributeId())) {
-                e.setAttribute((ProductAttribute) this.em.getReference(
+                e.setAttribute((ProductAttribute) this.em.find(
                         ProductAttribute.class, ds.getAttributeId()));
             }
         } else {
@@ -60,6 +60,8 @@ public class ProductAttributeValueDsConv extends
                                 + ds.getAttribute() + "  ");
             }
             e.setAttribute(x);
+        } else {
+            e.setAttribute(null);
         }
     }
 

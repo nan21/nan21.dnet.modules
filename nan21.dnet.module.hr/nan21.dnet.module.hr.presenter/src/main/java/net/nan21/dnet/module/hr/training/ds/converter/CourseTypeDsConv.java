@@ -32,7 +32,7 @@ public class CourseTypeDsConv extends
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
-                e.setCategory((CourseCategory) this.em.getReference(
+                e.setCategory((CourseCategory) this.em.find(
                         CourseCategory.class, ds.getCategoryId()));
             }
         } else {
@@ -53,6 +53,8 @@ public class CourseTypeDsConv extends
                                 + ds.getCategory() + "  ");
             }
             e.setCategory(x);
+        } else {
+            e.setCategory(null);
         }
     }
 

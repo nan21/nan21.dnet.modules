@@ -19,18 +19,21 @@ net.nan21.dnet.module.ad.usr.dc.User$Filter = Ext.extend(dnet.base.AbstractDcvFi
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
+		.addLov({ name:"accountType", xtype:"net.nan21.dnet.module.ad.usr.lovs.UserTypes", dataIndex:"accountType",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "accountTypeId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
 		.addBooleanField({ name:"locked", dataIndex:"locked"  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col3"])
+		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["name","code"])
-		.addChildrenTo("col3",["active","locked"])
+		.addChildrenTo("col2",["active","locked"])
+		.addChildrenTo("col3",["accountType"])
 	}
 }); 
 Ext.reg("net.nan21.dnet.module.ad.usr.dc.User$Filter", net.nan21.dnet.module.ad.usr.dc.User$Filter ); 
@@ -65,7 +68,7 @@ net.nan21.dnet.module.ad.usr.dc.User$Edit = Ext.extend(dnet.base.AbstractDcvForm
 		this._getBuilder_()	
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addCombo({ name:"accountType", xtype:"combo", dataIndex:"accountType",anchor:"-20",store:[]  })
+		.addLov({ name:"accountType", xtype:"net.nan21.dnet.module.ad.usr.lovs.UserTypes", dataIndex:"accountType",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "accountTypeId"} ]  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addCheckbox({ name:"locked", dataIndex:"locked"  })

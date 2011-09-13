@@ -136,11 +136,9 @@ public class CustomerGroup implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
     @JoinColumn(name = "PAYMENTMETHOD_ID", referencedColumnName = "ID")
     private PaymentMethod paymentMethod;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentTerm.class)
     @JoinColumn(name = "PAYMENTTERM_ID", referencedColumnName = "ID")
     private PaymentTerm paymentTerm;

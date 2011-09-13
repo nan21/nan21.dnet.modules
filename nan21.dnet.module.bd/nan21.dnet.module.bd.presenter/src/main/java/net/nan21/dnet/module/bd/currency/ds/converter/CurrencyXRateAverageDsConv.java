@@ -32,7 +32,7 @@ public class CurrencyXRateAverageDsConv extends
         if (ds.getProviderId() != null) {
             if (e.getProvider() == null
                     || !e.getProvider().getId().equals(ds.getProviderId())) {
-                e.setProvider((CurrencyXRateProvider) this.em.getReference(
+                e.setProvider((CurrencyXRateProvider) this.em.find(
                         CurrencyXRateProvider.class, ds.getProviderId()));
             }
         } else {
@@ -53,6 +53,8 @@ public class CurrencyXRateAverageDsConv extends
                                 + ds.getProviderCode() + "  ");
             }
             e.setProvider(x);
+        } else {
+            e.setProvider(null);
         }
     }
 

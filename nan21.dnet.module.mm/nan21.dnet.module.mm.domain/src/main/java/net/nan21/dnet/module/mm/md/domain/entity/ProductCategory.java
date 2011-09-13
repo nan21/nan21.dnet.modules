@@ -6,19 +6,15 @@
 package net.nan21.dnet.module.mm.md.domain.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -31,7 +27,6 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
-import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -75,6 +70,11 @@ public class ProductCategory implements Serializable, IModelWithId,
      * Named query find by unique key: Name.
      */
     public static final String NQ_FIND_BY_NAME = "ProductCategory.findByName";
+
+    /** Parent category. */
+    @Column(name = "FOLDER", nullable = false)
+    @NotNull
+    private Boolean folder;
 
     /** Name. */
     @Column(name = "NAME", nullable = false)
@@ -135,14 +135,18 @@ public class ProductCategory implements Serializable, IModelWithId,
     @GeneratedValue
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductCategory.class)
-    @JoinColumn(name = "PARENT_ID", referencedColumnName = "ID")
-    private ProductCategory parent;
-
-    @OneToMany(fetch = FetchType.LAZY, targetEntity = Product.class, mappedBy = "category")
+    @ManyToMany(mappedBy = "categories")
     private Collection<Product> products;
 
     /* ============== getters - setters ================== */
+
+    public Boolean getFolder() {
+        return this.folder;
+    }
+
+    public void setFolder(Boolean folder) {
+        this.folder = folder;
+    }
 
     public String getName() {
         return this.name;
@@ -241,28 +245,12 @@ public class ProductCategory implements Serializable, IModelWithId,
 
     }
 
-    public ProductCategory getParent() {
-        return this.parent;
-    }
-
-    public void setParent(ProductCategory parent) {
-        this.parent = parent;
-    }
-
     public Collection<Product> getProducts() {
         return this.products;
     }
 
     public void setProducts(Collection<Product> products) {
         this.products = products;
-    }
-
-    public void addToProducts(Product e) {
-        if (this.products == null) {
-            this.products = new ArrayList<Product>();
-        }
-        e.setCategory(this);
-        this.products.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {
@@ -274,6 +262,9 @@ public class ProductCategory implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.folder == null) {
+            event.updateAttributeWithObject("folder", false);
+        }
         if (this.active == null) {
             event.updateAttributeWithObject("active", true);
 

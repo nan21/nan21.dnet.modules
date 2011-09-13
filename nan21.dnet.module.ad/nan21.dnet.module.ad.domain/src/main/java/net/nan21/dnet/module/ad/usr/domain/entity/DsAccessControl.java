@@ -138,7 +138,6 @@ public class DsAccessControl implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccessControl.class)
     @JoinColumn(name = "ACCESSCONTROL_ID", referencedColumnName = "ID")
     private AccessControl accessControl;

@@ -66,6 +66,10 @@ public class ProductAttachment implements Serializable, IModelWithId,
     @Column(name = "LOCATION")
     private String location;
 
+    /** ContentType. */
+    @Column(name = "CONTENTTYPE")
+    private String contentType;
+
     /** Notes. */
     @Column(name = "NOTES")
     private String notes;
@@ -109,11 +113,9 @@ public class ProductAttachment implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
     @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
     private Product product;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAttachmentType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private ProductAttachmentType type;
@@ -136,12 +138,39 @@ public class ProductAttachment implements Serializable, IModelWithId,
         this.location = location;
     }
 
+    public String getContentType() {
+        return this.contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
     public String getNotes() {
         return this.notes;
     }
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    @Transient
+    public String getUrl() {
+
+        if (this.location != null) {
+            if (this.location.startsWith("http")) {
+                return this.location;
+            } else {
+                return this.type.getBaseUrl() + "/" + this.location;
+            }
+        } else {
+            return this.type.getBaseUrl() + "/" + this.id + "."
+                    + this.contentType;
+        }
+    }
+
+    public void setUrl(String url) {
+
     }
 
     public Long getClientId() {

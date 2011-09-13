@@ -33,7 +33,7 @@ public class ElementValueDsConv extends
         if (ds.getElementId() != null) {
             if (e.getElement() == null
                     || !e.getElement().getId().equals(ds.getElementId())) {
-                e.setElement((Element) this.em.getReference(Element.class,
+                e.setElement((Element) this.em.find(Element.class,
                         ds.getElementId()));
             }
         } else {
@@ -42,15 +42,15 @@ public class ElementValueDsConv extends
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
-                e.setEmployee((Employee) this.em.getReference(Employee.class,
+                e.setEmployee((Employee) this.em.find(Employee.class,
                         ds.getEmployeeId()));
             }
         }
         if (ds.getPeriodId() != null) {
             if (e.getPeriod() == null
                     || !e.getPeriod().getId().equals(ds.getPeriodId())) {
-                e.setPeriod((PayrollPeriod) this.em.getReference(
-                        PayrollPeriod.class, ds.getPeriodId()));
+                e.setPeriod((PayrollPeriod) this.em.find(PayrollPeriod.class,
+                        ds.getPeriodId()));
             }
         } else {
             this.lookup_period_PayrollPeriod(ds, e);
@@ -70,6 +70,8 @@ public class ElementValueDsConv extends
                                 + ds.getElement() + "  ");
             }
             e.setElement(x);
+        } else {
+            e.setElement(null);
         }
     }
 
@@ -86,6 +88,8 @@ public class ElementValueDsConv extends
                                 + ds.getPeriod() + "  ");
             }
             e.setPeriod(x);
+        } else {
+            e.setPeriod(null);
         }
     }
 

@@ -10,6 +10,12 @@
  	<bean id="EmployeeService" scope="prototype"
 	  		class="net.nan21.dnet.module.hr.employee.business.serviceimpl.EmployeeService"  />  
  
+ 	<bean id="EmployeeAttachmentService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.business.serviceimpl.EmployeeAttachmentService"  />  
+ 
+ 	<bean id="EmplAttachmentTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.employee.business.serviceimpl.EmplAttachmentTypeService"  />  
+ 
  	<bean id="EmployeeContactService" scope="prototype"
 	  		class="net.nan21.dnet.module.hr.employee.business.serviceimpl.EmployeeContactService"  />  
  

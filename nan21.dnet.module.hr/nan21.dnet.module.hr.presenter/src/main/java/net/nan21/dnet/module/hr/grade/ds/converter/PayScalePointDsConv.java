@@ -30,7 +30,7 @@ public class PayScalePointDsConv extends
         if (ds.getPayScaleId() != null) {
             if (e.getPayScale() == null
                     || !e.getPayScale().getId().equals(ds.getPayScaleId())) {
-                e.setPayScale((PayScale) this.em.getReference(PayScale.class,
+                e.setPayScale((PayScale) this.em.find(PayScale.class,
                         ds.getPayScaleId()));
             }
         }

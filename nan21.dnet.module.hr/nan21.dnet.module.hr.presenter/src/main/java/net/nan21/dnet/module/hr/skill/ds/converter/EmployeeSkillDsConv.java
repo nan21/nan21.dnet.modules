@@ -32,15 +32,14 @@ public class EmployeeSkillDsConv extends
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
-                e.setEmployee((Employee) this.em.getReference(Employee.class,
+                e.setEmployee((Employee) this.em.find(Employee.class,
                         ds.getEmployeeId()));
             }
         }
         if (ds.getSkillId() != null) {
             if (e.getSkill() == null
                     || !e.getSkill().getId().equals(ds.getSkillId())) {
-                e.setSkill((Skill) this.em.getReference(Skill.class,
-                        ds.getSkillId()));
+                e.setSkill((Skill) this.em.find(Skill.class, ds.getSkillId()));
             }
         } else {
             this.lookup_skill_Skill(ds, e);
@@ -48,8 +47,8 @@ public class EmployeeSkillDsConv extends
         if (ds.getSkillLevelId() != null) {
             if (e.getSkillLevel() == null
                     || !e.getSkillLevel().getId().equals(ds.getSkillLevelId())) {
-                e.setSkillLevel((RatingLevel) this.em.getReference(
-                        RatingLevel.class, ds.getSkillLevelId()));
+                e.setSkillLevel((RatingLevel) this.em.find(RatingLevel.class,
+                        ds.getSkillLevelId()));
             }
         } else {
             this.lookup_skillLevel_RatingLevel(ds, e);
@@ -69,6 +68,8 @@ public class EmployeeSkillDsConv extends
                                 + ds.getSkill() + "  ");
             }
             e.setSkill(x);
+        } else {
+            e.setSkill(null);
         }
     }
 
@@ -88,6 +89,8 @@ public class EmployeeSkillDsConv extends
                                 + ds.getSkillLevel() + "  ");
             }
             e.setSkillLevel(x);
+        } else {
+            e.setSkillLevel(null);
         }
     }
 

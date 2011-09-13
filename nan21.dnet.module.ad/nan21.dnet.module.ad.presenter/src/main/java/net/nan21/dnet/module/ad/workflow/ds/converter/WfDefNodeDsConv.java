@@ -35,8 +35,8 @@ public class WfDefNodeDsConv extends
         if (ds.getProcessId() != null) {
             if (e.getProcess() == null
                     || !e.getProcess().getId().equals(ds.getProcessId())) {
-                e.setProcess((WfDefProcess) this.em.getReference(
-                        WfDefProcess.class, ds.getProcessId()));
+                e.setProcess((WfDefProcess) this.em.find(WfDefProcess.class,
+                        ds.getProcessId()));
             }
         }
     }

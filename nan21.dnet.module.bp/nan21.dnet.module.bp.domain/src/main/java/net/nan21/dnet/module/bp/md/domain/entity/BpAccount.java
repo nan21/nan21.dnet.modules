@@ -109,39 +109,30 @@ public class BpAccount implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BP_ID", referencedColumnName = "ID")
     private BusinessPartner bp;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")
     private Organization organization;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CustomerGroup.class)
     @JoinColumn(name = "CUSTGROUP_ID", referencedColumnName = "ID")
     private CustomerGroup custGroup;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
     @JoinColumn(name = "CUSTPAYMENTMETHOD_ID", referencedColumnName = "ID")
     private PaymentMethod custPaymentMethod;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentTerm.class)
     @JoinColumn(name = "CUSTPAYMENTTERM_ID", referencedColumnName = "ID")
     private PaymentTerm custPaymentTerm;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = DeliveryMethod.class)
     @JoinColumn(name = "CUSTDELIVERYMETHOD_ID", referencedColumnName = "ID")
     private DeliveryMethod custDeliveryMethod;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = VendorGroup.class)
     @JoinColumn(name = "VENDGROUP_ID", referencedColumnName = "ID")
     private VendorGroup vendGroup;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
     @JoinColumn(name = "VENDPAYMENTMETHOD_ID", referencedColumnName = "ID")
     private PaymentMethod vendPaymentMethod;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentTerm.class)
     @JoinColumn(name = "VENDPAYMENTTERM_ID", referencedColumnName = "ID")
     private PaymentTerm vendPaymentTerm;

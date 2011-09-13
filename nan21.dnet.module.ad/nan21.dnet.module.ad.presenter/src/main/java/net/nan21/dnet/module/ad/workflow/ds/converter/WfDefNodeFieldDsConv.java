@@ -33,7 +33,7 @@ public class WfDefNodeFieldDsConv extends
         if (ds.getNodeId() != null) {
             if (e.getNode() == null
                     || !e.getNode().getId().equals(ds.getNodeId())) {
-                e.setNode((WfDefNode) this.em.getReference(WfDefNode.class,
+                e.setNode((WfDefNode) this.em.find(WfDefNode.class,
                         ds.getNodeId()));
             }
         }

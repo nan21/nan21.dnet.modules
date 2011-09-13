@@ -95,11 +95,9 @@ public class JobGrade implements Serializable, IModelWithId, IModelWithClientId 
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Job.class)
     @JoinColumn(name = "JOB_ID", referencedColumnName = "ID")
     private Job job;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Grade.class)
     @JoinColumn(name = "GRADE_ID", referencedColumnName = "ID")
     private Grade grade;

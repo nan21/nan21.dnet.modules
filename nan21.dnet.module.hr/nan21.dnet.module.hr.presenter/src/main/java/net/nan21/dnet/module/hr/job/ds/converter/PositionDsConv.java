@@ -35,7 +35,7 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
             if (e.getOrganization() == null
                     || !e.getOrganization().getId()
                             .equals(ds.getOrganizationId())) {
-                e.setOrganization((Organization) this.em.getReference(
+                e.setOrganization((Organization) this.em.find(
                         Organization.class, ds.getOrganizationId()));
             }
         } else {
@@ -43,7 +43,7 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
         }
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
-                e.setJob((Job) this.em.getReference(Job.class, ds.getJobId()));
+                e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
             }
         } else {
             this.lookup_job_Job(ds, e);
@@ -64,6 +64,8 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
                                 + ds.getOrganizationCode() + "  ");
             }
             e.setOrganization(x);
+        } else {
+            e.setOrganization(null);
         }
     }
 
@@ -79,6 +81,8 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
                                 + ds.getJobCode() + "  ");
             }
             e.setJob(x);
+        } else {
+            e.setJob(null);
         }
     }
 

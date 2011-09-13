@@ -126,7 +126,6 @@ public class WfDefNodeField implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = WfDefNode.class)
     @JoinColumn(name = "NODE_ID", referencedColumnName = "ID")
     private WfDefNode node;

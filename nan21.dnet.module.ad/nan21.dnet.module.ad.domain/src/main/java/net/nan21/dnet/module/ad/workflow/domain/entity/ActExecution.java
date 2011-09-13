@@ -90,11 +90,9 @@ public class ActExecution implements Serializable, IModelWithId {
     /** IsScope. */
     @Column(name = "IS_SCOPE_")
     private Boolean isScope;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActProcessDefinition.class)
     @JoinColumn(name = "PROC_DEF_ID_", referencedColumnName = "ID_")
     private ActProcessDefinition processDefinition;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActExecution.class)
     @JoinColumn(name = "PARENT_ID_", referencedColumnName = "ID_")
     private ActExecution parent;

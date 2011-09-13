@@ -7,9 +7,9 @@ net.nan21.dnet.module.ad.usr.asgn.RolesOfUser = Ext.extend(dnet.base.AbstractAsg
 net.nan21.dnet.module.ad.usr.asgn.RolesOfUser$List = Ext.extend( dnet.base.AbstractAsgnGrid, {
 	_defineColumns_: function () {
 		this._getBuilder_()		
-		.addTextColumn( {name:"id", header:"id", dataIndex:"id", hidden:true, width:100})
-		.addTextColumn( {name:"code", header:"code", dataIndex:"code", width:100 })
-		.addTextColumn( {name:"name", header:"name", dataIndex:"name", width:150 })
+		.addTextColumn( {name:"id", header:"Id", dataIndex:"id", hidden:true, width:100})
+		.addTextColumn( {name:"code", header:"Code", dataIndex:"code", width:100 })
+		.addTextColumn( {name:"name", header:"Name", dataIndex:"name", width:150 })
 	} 
 });
 Ext.reg("net.nan21.dnet.module.ad.usr.asgn.RolesOfUser$Left", net.nan21.dnet.module.ad.usr.asgn.RolesOfUser$List);
@@ -20,6 +20,8 @@ net.nan21.dnet.module.ad.usr.asgn.RolesOfUser$Ui = Ext.extend(dnet.base.Abstract
 	,height:400 
 	,title:"Assign users to role"
 	,_controller_:net.nan21.dnet.module.ad.usr.asgn.RolesOfUser
+	,_filterFields_: [["id","Id"],["code","Code"],["name","Name"]]
+	,_defaultFilterField_ : "code" 
 	 
 	,_defineElements_: function () {
 		this._getBuilder_()

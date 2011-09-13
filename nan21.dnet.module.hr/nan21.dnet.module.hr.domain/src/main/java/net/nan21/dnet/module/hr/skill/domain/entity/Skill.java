@@ -117,11 +117,9 @@ public class Skill implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SkillType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private SkillType type;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = RatingScale.class)
     @JoinColumn(name = "RATINGSCALE_ID", referencedColumnName = "ID")
     private RatingScale ratingScale;

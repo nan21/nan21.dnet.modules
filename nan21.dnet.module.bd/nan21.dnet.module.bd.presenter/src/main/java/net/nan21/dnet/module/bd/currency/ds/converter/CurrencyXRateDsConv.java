@@ -32,21 +32,21 @@ public class CurrencyXRateDsConv extends
         if (ds.getSourceId() != null) {
             if (e.getSource() == null
                     || !e.getSource().getId().equals(ds.getSourceId())) {
-                e.setSource((Currency) this.em.getReference(Currency.class,
+                e.setSource((Currency) this.em.find(Currency.class,
                         ds.getSourceId()));
             }
         }
         if (ds.getTargetId() != null) {
             if (e.getTarget() == null
                     || !e.getTarget().getId().equals(ds.getTargetId())) {
-                e.setTarget((Currency) this.em.getReference(Currency.class,
+                e.setTarget((Currency) this.em.find(Currency.class,
                         ds.getTargetId()));
             }
         }
         if (ds.getProviderId() != null) {
             if (e.getProvider() == null
                     || !e.getProvider().getId().equals(ds.getProviderId())) {
-                e.setProvider((CurrencyXRateProvider) this.em.getReference(
+                e.setProvider((CurrencyXRateProvider) this.em.find(
                         CurrencyXRateProvider.class, ds.getProviderId()));
             }
         } else {
@@ -67,6 +67,8 @@ public class CurrencyXRateDsConv extends
                                 + ds.getProviderCode() + "  ");
             }
             e.setProvider(x);
+        } else {
+            e.setProvider(null);
         }
     }
 

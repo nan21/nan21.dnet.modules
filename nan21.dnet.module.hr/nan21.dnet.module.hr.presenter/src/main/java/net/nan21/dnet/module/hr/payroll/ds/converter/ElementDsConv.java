@@ -33,7 +33,7 @@ public class ElementDsConv extends AbstractDsConverter<ElementDs, Element>
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((ElementType) this.em.getReference(ElementType.class,
+                e.setType((ElementType) this.em.find(ElementType.class,
                         ds.getTypeId()));
             }
         } else {
@@ -54,6 +54,8 @@ public class ElementDsConv extends AbstractDsConverter<ElementDs, Element>
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 

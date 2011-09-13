@@ -34,7 +34,7 @@ public class ProductAccountDsConv extends
             if (e.getOrganization() == null
                     || !e.getOrganization().getId()
                             .equals(ds.getOrganizationId())) {
-                e.setOrganization((Organization) this.em.getReference(
+                e.setOrganization((Organization) this.em.find(
                         Organization.class, ds.getOrganizationId()));
             }
         } else {
@@ -43,7 +43,7 @@ public class ProductAccountDsConv extends
         if (ds.getGroupId() != null) {
             if (e.getGroup() == null
                     || !e.getGroup().getId().equals(ds.getGroupId())) {
-                e.setGroup((ProductAccountGroup) this.em.getReference(
+                e.setGroup((ProductAccountGroup) this.em.find(
                         ProductAccountGroup.class, ds.getGroupId()));
             }
         } else {
@@ -52,7 +52,7 @@ public class ProductAccountDsConv extends
         if (ds.getProductId() != null) {
             if (e.getProduct() == null
                     || !e.getProduct().getId().equals(ds.getProductId())) {
-                e.setProduct((Product) this.em.getReference(Product.class,
+                e.setProduct((Product) this.em.find(Product.class,
                         ds.getProductId()));
             }
         } else {
@@ -74,6 +74,8 @@ public class ProductAccountDsConv extends
                                 + ds.getOrganizationCode() + "  ");
             }
             e.setOrganization(x);
+        } else {
+            e.setOrganization(null);
         }
     }
 
@@ -90,6 +92,8 @@ public class ProductAccountDsConv extends
                                 + ds.getGroupCode() + "  ");
             }
             e.setGroup(x);
+        } else {
+            e.setGroup(null);
         }
     }
 
@@ -106,6 +110,8 @@ public class ProductAccountDsConv extends
                                 + ds.getProductCode() + "  ");
             }
             e.setProduct(x);
+        } else {
+            e.setProduct(null);
         }
     }
 

@@ -30,14 +30,14 @@ public class JobRequirementDsConv extends
 
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
-                e.setJob((Job) this.em.getReference(Job.class, ds.getJobId()));
+                e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
             }
         }
         if (ds.getRequirementId() != null) {
             if (e.getRequirement() == null
                     || !e.getRequirement().getId()
                             .equals(ds.getRequirementId())) {
-                e.setRequirement((WorkRequirement) this.em.getReference(
+                e.setRequirement((WorkRequirement) this.em.find(
                         WorkRequirement.class, ds.getRequirementId()));
             }
         } else {
@@ -58,6 +58,8 @@ public class JobRequirementDsConv extends
                                 + ds.getRequirement() + "  ");
             }
             e.setRequirement(x);
+        } else {
+            e.setRequirement(null);
         }
     }
 

@@ -136,7 +136,6 @@ public class Organization implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = OrganizationType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private OrganizationType type;

@@ -117,7 +117,6 @@ public class WorkRequirement implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = WorkRequirementType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private WorkRequirementType type;

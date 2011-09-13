@@ -98,7 +98,6 @@ public class ActProcessInstanceHistory implements Serializable, IModelWithId {
     /** EndAction. */
     @Column(name = "END_ACT_ID_")
     private String endAction;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActProcessDefinition.class)
     @JoinColumn(name = "PROC_DEF_ID_", referencedColumnName = "ID_")
     private ActProcessDefinition processDefinition;

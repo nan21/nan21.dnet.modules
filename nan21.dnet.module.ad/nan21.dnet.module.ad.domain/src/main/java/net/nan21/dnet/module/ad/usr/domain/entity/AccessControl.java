@@ -6,15 +6,19 @@
 package net.nan21.dnet.module.ad.usr.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -27,6 +31,7 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -115,6 +120,10 @@ public class AccessControl implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
+
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = DsAccessControl.class, mappedBy = "accessControl", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<DsAccessControl> dsRules;
 
     @ManyToMany(mappedBy = "accessControls")
     private Collection<Role> roles;
@@ -208,6 +217,22 @@ public class AccessControl implements Serializable, IModelWithId,
 
     public void setClassName(String className) {
 
+    }
+
+    public Collection<DsAccessControl> getDsRules() {
+        return this.dsRules;
+    }
+
+    public void setDsRules(Collection<DsAccessControl> dsRules) {
+        this.dsRules = dsRules;
+    }
+
+    public void addToDsRules(DsAccessControl e) {
+        if (this.dsRules == null) {
+            this.dsRules = new ArrayList<DsAccessControl>();
+        }
+        e.setAccessControl(this);
+        this.dsRules.add(e);
     }
 
     public Collection<Role> getRoles() {

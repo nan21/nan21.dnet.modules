@@ -130,7 +130,6 @@ public class Report implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ReportServer.class)
     @JoinColumn(name = "REPORTSERVER_ID", referencedColumnName = "ID")
     private ReportServer reportServer;

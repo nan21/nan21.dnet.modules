@@ -32,7 +32,7 @@ public class AbsenceTypeDsConv extends
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
-                e.setCategory((AbsenceCategory) this.em.getReference(
+                e.setCategory((AbsenceCategory) this.em.find(
                         AbsenceCategory.class, ds.getCategoryId()));
             }
         } else {
@@ -53,6 +53,8 @@ public class AbsenceTypeDsConv extends
                                 + ds.getCategory() + "  ");
             }
             e.setCategory(x);
+        } else {
+            e.setCategory(null);
         }
     }
 

@@ -19,7 +19,7 @@
 		<property name="list">
 			<list>
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="10" />
+					<property name="sequence" value="110" />
 					<property name="name" value="bd-currency" />
 					<property name="items">
 						<list>
@@ -44,7 +44,7 @@
 				</bean>
 				
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="20" />
+					<property name="sequence" value="120" />
 					<property name="name" value="bd-uom" />
 					<property name="items">
 						<list>
@@ -68,7 +68,7 @@
 				</bean>
 				
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="30" />
+					<property name="sequence" value="130" />
 					<property name="name" value="bd-geo" />
 					<property name="items">
 						<list>
@@ -94,7 +94,7 @@
 				
 				
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="40" />
+					<property name="sequence" value="140" />
 					<property name="name" value="bd-contact" />
 					<property name="items">
 						<list>
@@ -110,7 +110,7 @@
 				</bean>
 				
 				 <bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="50" />
+					<property name="sequence" value="150" />
 					<property name="name" value="bd-org" />
 					<property name="items">
 						<list>

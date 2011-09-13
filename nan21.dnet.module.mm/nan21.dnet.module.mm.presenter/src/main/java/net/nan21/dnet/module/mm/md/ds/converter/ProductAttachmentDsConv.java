@@ -25,6 +25,7 @@ public class ProductAttachmentDsConv extends
         e.setName(ds.getName());
         e.setLocation(ds.getLocation());
         e.setNotes(ds.getNotes());
+        e.setUrl(ds.getUrl());
     }
 
     protected void modelToEntityReferences(ProductAttachmentDs ds,
@@ -33,14 +34,14 @@ public class ProductAttachmentDsConv extends
         if (ds.getProductId() != null) {
             if (e.getProduct() == null
                     || !e.getProduct().getId().equals(ds.getProductId())) {
-                e.setProduct((Product) this.em.getReference(Product.class,
+                e.setProduct((Product) this.em.find(Product.class,
                         ds.getProductId()));
             }
         }
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((ProductAttachmentType) this.em.getReference(
+                e.setType((ProductAttachmentType) this.em.find(
                         ProductAttachmentType.class, ds.getTypeId()));
             }
         } else {
@@ -61,6 +62,8 @@ public class ProductAttachmentDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 
@@ -77,6 +80,7 @@ public class ProductAttachmentDsConv extends
         ds.setName(e.getName());
         ds.setLocation(e.getLocation());
         ds.setNotes(e.getNotes());
+        ds.setUrl(e.getUrl());
         ds.setProductId(((e.getProduct() != null)) ? e.getProduct().getId()
                 : null);
         ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);

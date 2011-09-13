@@ -118,11 +118,9 @@ public class GradeRateValue implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = GradeRate.class)
     @JoinColumn(name = "GRADERATE_ID", referencedColumnName = "ID")
     private GradeRate gradeRate;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Grade.class)
     @JoinColumn(name = "GRADE_ID", referencedColumnName = "ID")
     private Grade grade;

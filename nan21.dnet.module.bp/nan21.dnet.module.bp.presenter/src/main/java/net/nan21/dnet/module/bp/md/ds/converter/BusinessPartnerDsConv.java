@@ -44,7 +44,7 @@ public class BusinessPartnerDsConv extends
         if (ds.getCountryId() != null) {
             if (e.getCountry() == null
                     || !e.getCountry().getId().equals(ds.getCountryId())) {
-                e.setCountry((Country) this.em.getReference(Country.class,
+                e.setCountry((Country) this.em.find(Country.class,
                         ds.getCountryId()));
             }
         } else {
@@ -65,6 +65,8 @@ public class BusinessPartnerDsConv extends
                                 + ds.getCountryCode() + "  ");
             }
             e.setCountry(x);
+        } else {
+            e.setCountry(null);
         }
     }
 

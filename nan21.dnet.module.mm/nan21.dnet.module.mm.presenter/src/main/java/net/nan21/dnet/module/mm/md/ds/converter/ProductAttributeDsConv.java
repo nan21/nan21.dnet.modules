@@ -28,6 +28,7 @@ public class ProductAttributeDsConv extends
         e.setVersion(ds.getVersion());
         e.setTitle(ds.getTitle());
         e.setDataType(ds.getDataType());
+        e.setListOfvalues(ds.getListOfvalues());
     }
 
     protected void modelToEntityReferences(ProductAttributeDs ds,
@@ -36,7 +37,7 @@ public class ProductAttributeDsConv extends
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((ProductAttributeType) this.em.getReference(
+                e.setType((ProductAttributeType) this.em.find(
                         ProductAttributeType.class, ds.getTypeId()));
             }
         } else {
@@ -44,7 +45,7 @@ public class ProductAttributeDsConv extends
         }
         if (ds.getUomId() != null) {
             if (e.getUom() == null || !e.getUom().getId().equals(ds.getUomId())) {
-                e.setUom((Uom) this.em.getReference(Uom.class, ds.getUomId()));
+                e.setUom((Uom) this.em.find(Uom.class, ds.getUomId()));
             }
         } else {
             this.lookup_uom_Uom(ds, e);
@@ -64,6 +65,8 @@ public class ProductAttributeDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 
@@ -80,6 +83,8 @@ public class ProductAttributeDsConv extends
                                 + ds.getUom() + "  ");
             }
             e.setUom(x);
+        } else {
+            e.setUom(null);
         }
     }
 
@@ -98,6 +103,7 @@ public class ProductAttributeDsConv extends
         ds.setVersion(e.getVersion());
         ds.setTitle(e.getTitle());
         ds.setDataType(e.getDataType());
+        ds.setListOfvalues(e.getListOfvalues());
         ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
         ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
         ds.setUomId(((e.getUom() != null)) ? e.getUom().getId() : null);

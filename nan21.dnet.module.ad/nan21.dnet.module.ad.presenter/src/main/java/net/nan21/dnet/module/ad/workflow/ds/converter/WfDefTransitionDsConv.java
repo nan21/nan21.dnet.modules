@@ -30,14 +30,14 @@ public class WfDefTransitionDsConv extends
         if (ds.getProcessId() != null) {
             if (e.getProcess() == null
                     || !e.getProcess().getId().equals(ds.getProcessId())) {
-                e.setProcess((WfDefProcess) this.em.getReference(
-                        WfDefProcess.class, ds.getProcessId()));
+                e.setProcess((WfDefProcess) this.em.find(WfDefProcess.class,
+                        ds.getProcessId()));
             }
         }
         if (ds.getSourceId() != null) {
             if (e.getSource() == null
                     || !e.getSource().getId().equals(ds.getSourceId())) {
-                e.setSource((WfDefNode) this.em.getReference(WfDefNode.class,
+                e.setSource((WfDefNode) this.em.find(WfDefNode.class,
                         ds.getSourceId()));
             }
         } else {
@@ -46,7 +46,7 @@ public class WfDefTransitionDsConv extends
         if (ds.getTargetId() != null) {
             if (e.getTarget() == null
                     || !e.getTarget().getId().equals(ds.getTargetId())) {
-                e.setTarget((WfDefNode) this.em.getReference(WfDefNode.class,
+                e.setTarget((WfDefNode) this.em.find(WfDefNode.class,
                         ds.getTargetId()));
             }
         } else {
@@ -67,6 +67,8 @@ public class WfDefTransitionDsConv extends
                                 + ds.getSource() + "  ");
             }
             e.setSource(x);
+        } else {
+            e.setSource(null);
         }
     }
 
@@ -83,6 +85,8 @@ public class WfDefTransitionDsConv extends
                                 + ds.getTarget() + "  ");
             }
             e.setTarget(x);
+        } else {
+            e.setTarget(null);
         }
     }
 

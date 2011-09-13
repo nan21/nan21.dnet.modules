@@ -117,7 +117,6 @@ public class ElementType implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ElementCategory.class)
     @JoinColumn(name = "CATEGORY_ID", referencedColumnName = "ID")
     private ElementCategory category;

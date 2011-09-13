@@ -142,15 +142,12 @@ public class Position implements Serializable, IModelWithId, IModelWithClientId 
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")
     private Organization organization;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Job.class)
     @JoinColumn(name = "JOB_ID", referencedColumnName = "ID")
     private Job job;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Location.class)
     @JoinColumn(name = "LOCATION_ID", referencedColumnName = "ID")
     private Location location;

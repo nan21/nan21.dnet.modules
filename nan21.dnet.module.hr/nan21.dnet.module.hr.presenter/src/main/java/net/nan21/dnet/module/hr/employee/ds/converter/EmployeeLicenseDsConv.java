@@ -35,7 +35,7 @@ public class EmployeeLicenseDsConv extends
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
-                e.setEmployee((Employee) this.em.getReference(Employee.class,
+                e.setEmployee((Employee) this.em.find(Employee.class,
                         ds.getEmployeeId()));
             }
         }
@@ -43,8 +43,8 @@ public class EmployeeLicenseDsConv extends
             if (e.getLicenseType() == null
                     || !e.getLicenseType().getId()
                             .equals(ds.getLicenseTypeId())) {
-                e.setLicenseType((LicenseType) this.em.getReference(
-                        LicenseType.class, ds.getLicenseTypeId()));
+                e.setLicenseType((LicenseType) this.em.find(LicenseType.class,
+                        ds.getLicenseTypeId()));
             }
         } else {
             this.lookup_licenseType_LicenseType(ds, e);
@@ -64,6 +64,8 @@ public class EmployeeLicenseDsConv extends
                                 + ds.getLicenseType() + "  ");
             }
             e.setLicenseType(x);
+        } else {
+            e.setLicenseType(null);
         }
     }
 

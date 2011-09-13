@@ -32,7 +32,7 @@ public class PositionSkillDsConv extends
         if (ds.getPositionId() != null) {
             if (e.getPosition() == null
                     || !e.getPosition().getId().equals(ds.getPositionId())) {
-                e.setPosition((Position) this.em.getReference(Position.class,
+                e.setPosition((Position) this.em.find(Position.class,
                         ds.getPositionId()));
             }
         }
@@ -40,7 +40,7 @@ public class PositionSkillDsConv extends
             if (e.getRequiredLevel() == null
                     || !e.getRequiredLevel().getId()
                             .equals(ds.getRequiredLevelId())) {
-                e.setRequiredLevel((RatingLevel) this.em.getReference(
+                e.setRequiredLevel((RatingLevel) this.em.find(
                         RatingLevel.class, ds.getRequiredLevelId()));
             }
         } else {
@@ -49,7 +49,7 @@ public class PositionSkillDsConv extends
         if (ds.getCompetenceId() != null) {
             if (e.getSkill() == null
                     || !e.getSkill().getId().equals(ds.getCompetenceId())) {
-                e.setSkill((Skill) this.em.getReference(Skill.class,
+                e.setSkill((Skill) this.em.find(Skill.class,
                         ds.getCompetenceId()));
             }
         } else {
@@ -75,6 +75,8 @@ public class PositionSkillDsConv extends
                                 + ds.getRequiredLevel() + "  ");
             }
             e.setRequiredLevel(x);
+        } else {
+            e.setRequiredLevel(null);
         }
     }
 
@@ -91,6 +93,8 @@ public class PositionSkillDsConv extends
                                 + ds.getCompetence() + "  ");
             }
             e.setSkill(x);
+        } else {
+            e.setSkill(null);
         }
     }
 

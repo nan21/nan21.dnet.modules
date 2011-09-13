@@ -111,15 +111,12 @@ public class ProductAccount implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")
     private Organization organization;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAccountGroup.class)
     @JoinColumn(name = "GROUP_ID", referencedColumnName = "ID")
     private ProductAccountGroup group;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
     @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
     private Product product;

@@ -55,12 +55,12 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  .impex.domain.entity,net.nan21.dnet.module.ad.report.domain.entity,ne
  t.nan21.dnet.module.ad.system.domain.entity,net.nan21.dnet.module.ad.
  usr.domain.entity,net.nan21.dnet.module.ad.workflow.domain.entity,org
- .aopalliance.aop;version="[1.0,2.0)",org.eclipse.persistence.jpa;vers
- ion="[2.1,2.5)",org.hibernate.validator;version="[4.0,5.0)",org.hiber
- nate.validator.constraints;version="[4.0,5.0)",org.springframework.ao
- p;version="[3.0,3.1)",org.springframework.aop.framework;version="[3.0
- ,3.1)",org.springframework.context.weaving;version="[3.0,3.1)",org.sp
- ringframework.orm.jpa,org.springframework.orm.jpa.vendor,org.springfr
- amework.transaction;version="[3.0,3.1)",org.springframework.transacti
- on.aspectj;version="[3.0,3.1)",org.springframework.util
+ .aopalliance.aop;version="[1.0,2.0)",org.hibernate.validator;version=
+ "[4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)",o
+ rg.springframework.aop;version="[3.0,3.1)",org.springframework.aop.fr
+ amework;version="[3.0,3.1)",org.springframework.context.weaving;versi
+ on="[3.0,3.1)",org.springframework.orm.jpa,org.springframework.orm.jp
+ a.vendor,org.springframework.transaction;version="[3.0,3.1)",org.spri
+ ngframework.transaction.aspectj;version="[3.0,3.1)",org.springframewo
+ rk.util
 

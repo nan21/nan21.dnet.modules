@@ -33,7 +33,7 @@ public class ReportDsConv extends AbstractDsConverter<ReportDs, Report>
             if (e.getReportServer() == null
                     || !e.getReportServer().getId()
                             .equals(ds.getReportServerId())) {
-                e.setReportServer((ReportServer) this.em.getReference(
+                e.setReportServer((ReportServer) this.em.find(
                         ReportServer.class, ds.getReportServerId()));
             }
         } else {
@@ -55,6 +55,8 @@ public class ReportDsConv extends AbstractDsConverter<ReportDs, Report>
                                 + ds.getReportServerName() + "  ");
             }
             e.setReportServer(x);
+        } else {
+            e.setReportServer(null);
         }
     }
 

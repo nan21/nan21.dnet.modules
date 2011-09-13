@@ -142,7 +142,6 @@ public class Course implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CourseType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private CourseType type;

@@ -38,7 +38,7 @@ public class BpBankAccountDsConv extends
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
-                e.setCurrency((Currency) this.em.getReference(Currency.class,
+                e.setCurrency((Currency) this.em.find(Currency.class,
                         ds.getCurrencyId()));
             }
         } else {
@@ -47,8 +47,7 @@ public class BpBankAccountDsConv extends
         if (ds.getBankId() != null) {
             if (e.getBank() == null
                     || !e.getBank().getId().equals(ds.getBankId())) {
-                e.setBank((Bank) this.em.getReference(Bank.class,
-                        ds.getBankId()));
+                e.setBank((Bank) this.em.find(Bank.class, ds.getBankId()));
             }
         } else {
             this.lookup_bank_Bank(ds, e);
@@ -56,7 +55,7 @@ public class BpBankAccountDsConv extends
         if (ds.getBpartnerId() != null) {
             if (e.getBpartner() == null
                     || !e.getBpartner().getId().equals(ds.getBpartnerId())) {
-                e.setBpartner((BusinessPartner) this.em.getReference(
+                e.setBpartner((BusinessPartner) this.em.find(
                         BusinessPartner.class, ds.getBpartnerId()));
             }
         } else {
@@ -77,6 +76,8 @@ public class BpBankAccountDsConv extends
                                 + ds.getCurrencyCode() + "  ");
             }
             e.setCurrency(x);
+        } else {
+            e.setCurrency(null);
         }
     }
 
@@ -93,6 +94,8 @@ public class BpBankAccountDsConv extends
                                 + ds.getBankCode() + "  ");
             }
             e.setBank(x);
+        } else {
+            e.setBank(null);
         }
     }
 
@@ -109,6 +112,8 @@ public class BpBankAccountDsConv extends
                                 + ds.getBpartnerCode() + "  ");
             }
             e.setBpartner(x);
+        } else {
+            e.setBpartner(null);
         }
     }
 

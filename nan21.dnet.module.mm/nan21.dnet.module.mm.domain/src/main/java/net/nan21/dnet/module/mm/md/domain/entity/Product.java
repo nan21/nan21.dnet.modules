@@ -16,6 +16,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -34,7 +36,6 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
-import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
@@ -166,34 +167,28 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
     @JoinColumn(name = "DEFAULTUOM_ID", referencedColumnName = "ID")
     private Uom defaultUom;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
     @JoinColumn(name = "WEIGHTUOM_ID", referencedColumnName = "ID")
     private Uom weightUom;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
     @JoinColumn(name = "VOLUMEUOM_ID", referencedColumnName = "ID")
     private Uom volumeUom;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
     @JoinColumn(name = "DIMUOM_ID", referencedColumnName = "ID")
     private Uom dimUom;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductManufacturer.class)
     @JoinColumn(name = "MANUFACTURER_ID", referencedColumnName = "ID")
     private ProductManufacturer manufacturer;
-
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductCategory.class)
-    @JoinColumn(name = "CATEGORY_ID", referencedColumnName = "ID")
-    private ProductCategory category;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAttributeGroup.class)
     @JoinColumn(name = "ATTRIBUTEGROUP_ID", referencedColumnName = "ID")
     private ProductAttributeGroup attributeGroup;
+
+    @ManyToMany
+    @JoinTable(name = "MM_PRODCATEG_PRODUCTS")
+    private Collection<ProductCategory> categories;
 
     @OneToMany(fetch = FetchType.LAZY, targetEntity = ProductAttributeValue.class, mappedBy = "product", cascade = CascadeType.ALL)
     @CascadeOnDelete
@@ -394,20 +389,20 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
         this.manufacturer = manufacturer;
     }
 
-    public ProductCategory getCategory() {
-        return this.category;
-    }
-
-    public void setCategory(ProductCategory category) {
-        this.category = category;
-    }
-
     public ProductAttributeGroup getAttributeGroup() {
         return this.attributeGroup;
     }
 
     public void setAttributeGroup(ProductAttributeGroup attributeGroup) {
         this.attributeGroup = attributeGroup;
+    }
+
+    public Collection<ProductCategory> getCategories() {
+        return this.categories;
+    }
+
+    public void setCategories(Collection<ProductCategory> categories) {
+        this.categories = categories;
     }
 
     public Collection<ProductAttributeValue> getAttributes() {

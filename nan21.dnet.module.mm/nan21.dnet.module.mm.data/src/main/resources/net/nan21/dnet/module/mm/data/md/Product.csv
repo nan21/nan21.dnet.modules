@@ -1,0 +1,4 @@
+"name";"code";"active";"storable";"defaultUomCode";"manufacturerCode";"weight";"weightUomCode";"dimWidth";"dimHeight";"dimDepth";"dimUomCode"
+"Laptop Samsung RC710 - Intel CoreTM i5-560M 2.66GHz, 6GB";"LPT_SAMSUNG_RC710";"true";"true";"PIECE";"samsung";"2940";"G";"419";"29";"276";"MM"
+"Laptop Samsung SF310 Intel CoreTM i3-380M 2.53GHz, 4GB, 320GB, nVidia GeForce 310M 512MB";"LPT_SAMSUNG_SF310";"true";"true";"PIECE";"samsung";"2060";"G";"331";"27";"236";"MM"
+"Laptop Toshiba Satellite P775-100 Intel CoreTM i7-2630QM 2.0GHz, 8GB, 1.5TB, nVidia GeForce 540M 2GB";"LPT_TOSHIBA_P775_100";"true";"true";"PIECE";"toshiba";"3";"KG";"414";"28";"274";"MM"
