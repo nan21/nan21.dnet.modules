@@ -12,7 +12,7 @@ net.nan21.dnet.module.mm.md.dc.ProductAttributeValue = Ext.extend(dnet.base.Abst
 }); 
  	
 Ext.ns('net.nan21.dnet.module.mm.md.dc');	 	 
-net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList = Ext.extend(dnet.base.AbstractDcvEditableGrid, {
+net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList = Ext.extend(dnet.base.AbstractDcvEditableGridCustEditor, {
 	 _noImport_: true
 	,_noExport_: true
 	,_defineColumns_: function () {
@@ -31,5 +31,37 @@ net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList = Ext.extend(dnet.
 		.addNumberColumn({ name:"attributeId", dataIndex:"attributeId", hidden:true, align:"right",format:"0",width:70,editable:false ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
 	  ;  		   
 	}  
+	,_getCustomCellEditor_: function(col,row,record) {	
+		
+		var ed = null;
+		
+		if (!Ext.isEmpty(record.data.listOfvalues)) {
+	    	ed = new Ext.form.ComboBox({ mode: "local", selectOnFocus:true, 
+				store:record.data.listOfvalues.split(","),
+				triggerAction:"all", forceSelection:true });
+	    }
+		else if (record.data.dataType == "integer" || record.data.dataType == "decimal") {
+	    	ed = new Ext.form.NumberField({ });
+	    }
+	    else if (record.data.dataType == "date") {
+	    	ed = new Ext.form.DateField({});
+	    }
+	    else if (record.data.dataType == "boolean") {
+	    	ed = new Ext.form.ComboBox({ mode: "local", selectOnFocus:true, 
+				store:["true","false"],
+					triggerAction:"all", forceSelection:true });
+	    }
+	    else{
+	    	return this.colModel.getCellEditor(col, row);
+	    }
+	 	
+	    if(ed){
+		    ed.gridEditor = new Ext.grid.GridEditor(ed);
+		    ed = ed.gridEditor;
+	    }
+
+	    return ed;
+	    
+	}
 });
 Ext.reg("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList ); 

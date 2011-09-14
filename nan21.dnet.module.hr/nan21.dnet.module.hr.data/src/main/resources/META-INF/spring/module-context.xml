@@ -165,6 +165,15 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/hr/data/employee/EmployeeContactRelationship.csv" />
 							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="40" />
+								<property name="dsName" value="EmplAttachmentType" />
+								<property name="destPath" value="demo-data/hr/employee" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/hr/data/employee/EmplAttachmentType.csv" />
+							</bean>
+							
 						</list>
 					</property>
 				</bean>

@@ -17,6 +17,7 @@ Ext.ns("net.nan21.dnet.module.mm.md.ds.model");
 	,	{name:"typeId",type:"int"}
 	,	{name:"type",type:"string"}
 	,	{name:"uom",type:"string"}
+	,	{name:"listOfvalues",type:"string"}
 	,	{name:"value",type:"string"}
 	
 	];

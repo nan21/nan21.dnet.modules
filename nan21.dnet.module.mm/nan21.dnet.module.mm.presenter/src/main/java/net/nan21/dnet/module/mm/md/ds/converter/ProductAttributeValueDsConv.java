@@ -95,6 +95,8 @@ public class ProductAttributeValueDsConv extends
         ds.setUom(((e.getAttribute() != null) && (e.getAttribute().getUom() != null)) ? e
                 .getAttribute().getUom().getCode()
                 : null);
+        ds.setListOfvalues(((e.getAttribute() != null)) ? e.getAttribute()
+                .getListOfvalues() : null);
     }
 
 }

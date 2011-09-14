@@ -34,6 +34,7 @@ public class ProductAttributeValueDs extends
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
     public static final String fUOM = "uom";
+    public static final String fLISTOFVALUES = "listOfvalues";
     public static final String fVALUE = "value";
 
     @DsField()
@@ -80,6 +81,9 @@ public class ProductAttributeValueDs extends
 
     @DsField(join = "left", path = "attribute.uom.code")
     private String uom;
+
+    @DsField(join = "left", path = "attribute.listOfvalues")
+    private String listOfvalues;
 
     @DsField()
     private String value;
@@ -211,6 +215,14 @@ public class ProductAttributeValueDs extends
 
     public void setUom(String uom) {
         this.uom = uom;
+    }
+
+    public String getListOfvalues() {
+        return this.listOfvalues;
+    }
+
+    public void setListOfvalues(String listOfvalues) {
+        this.listOfvalues = listOfvalues;
     }
 
     public String getValue() {

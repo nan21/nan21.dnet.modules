@@ -8,6 +8,7 @@ net.nan21.dnet.module.mm.md.ds.ProductAttributeValueDs.prototype._trl_ = {
 	,typeId__lbl : "Type Id"
 	,type__lbl : "Type"
 	,uom__lbl : "Uom"
+	,listOfvalues__lbl : "List Ofvalues"
 	,value__lbl : "Value"
 	
 }  
