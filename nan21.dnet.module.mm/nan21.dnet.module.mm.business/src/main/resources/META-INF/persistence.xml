@@ -24,7 +24,16 @@
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue</class>
 
-
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.StockLocatorType</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator</class>
+		 
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine</class>
+		 
 		<!-- Dependencies -->
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>

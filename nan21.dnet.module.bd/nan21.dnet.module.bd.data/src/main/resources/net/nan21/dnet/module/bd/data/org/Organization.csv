@@ -1,0 +1,8 @@
+"name";"code";"type";"active";"valid";"notes"
+"Fedex";"fedex";"External carrier";"true";"true";"External carrier"
+"Store 1";"store1";"Store";"true";"false";"Store no 1"
+"Store 2";"store2";"Store";"true";"true";"Store 2"
+"Warehouse 0";"warehouse0";"Warehouse";"true";"true";"Main warehouse"
+"DPD";"dpd";"External carrier";"true";"true";"Another external carrier"
+"MLE Corporate";"mle";"Company";"true";"true";"My large enterprise"
+"MLE HR";"mle_hr";"Department";"true";"true";"HR department"

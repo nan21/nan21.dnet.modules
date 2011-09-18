@@ -17,4 +17,6 @@
 "KiloHertz";"KHz";"Frequency";"true";
 "Inches";"INCH";"Length";"true";
 "Milimeters";"MM";"Length";"true";
-"Piece";"PIECE";"Item";"true";
+"Each";"EA";"Quantity";"true";
+"Dozen";"DZ";"Quantity";"true";
+"Half-Dozen";"HDZ";"Quantity";"true";

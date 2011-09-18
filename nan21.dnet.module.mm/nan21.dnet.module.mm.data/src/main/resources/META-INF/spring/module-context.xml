@@ -72,11 +72,7 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/mm/data/md/ProductCategory.csv" />
 							</bean> 
-							
-							
-							
-							
-							
+							 
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="110" />
 								<property name="dsName" value="Product" />
@@ -88,7 +84,49 @@
 					</property>
 				</bean>
 				
-				 
+				
+				
+				 <bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="320" />
+					<property name="name" value="mm-inventory" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="InvTransactionAction" />
+								<property name="destPath" value="demo-data/mm" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/mm/data/inventory/InvTransactionAction.csv" />
+							</bean>
+						 
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="InvTransactionSourceType" />
+								<property name="destPath" value="demo-data/mm" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/mm/data/inventory/InvTransactionSourceType.csv" />
+							</bean>
+						  
+						  	<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="InvTransactionType" />
+								<property name="destPath" value="demo-data/mm" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/mm/data/inventory/InvTransactionType.csv" />
+							</bean>
+						  
+						  
+						  
+						  	<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="60" />
+								<property name="dsName" value="SubInventory" />
+								<property name="destPath" value="demo-data/mm" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/mm/data/inventory/SubInventory.csv" />
+							</bean>
+						</list>
+					</property>
+				</bean>
 			</list>
 		</property>
 	</bean>

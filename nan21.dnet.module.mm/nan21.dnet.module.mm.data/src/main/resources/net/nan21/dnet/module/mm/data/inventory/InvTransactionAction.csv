@@ -1,0 +1,5 @@
+"name";"description";"active"
+"Intransit shipment";"Intransit shipment";"true"
+"Intransit reception";"Intransit reception";"true"
+"Inventory transfer";"Transfer between inventories";"true"
+"Subinventory transfer";"Transfer between sub-inventories";"true"

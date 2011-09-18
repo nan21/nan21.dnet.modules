@@ -6,14 +6,22 @@ Export-Package: net.nan21.dnet.module.mm._businessdelegates;version="1
  t.module.mm.md.domain.entity",net.nan21.dnet.module.mm._businessexten
  sions;version="1.0.0.M2";uses:="net.nan21.dnet.module.mm.md.business.
  serviceimpl,net.nan21.dnet.module.mm.md.domain.entity",net.nan21.dnet
- .module.mm.md.business.service;version="1.0.0.M2";uses:="net.nan21.dn
- et.core.api.service,net.nan21.dnet.module.bd.org.domain.entity,net.na
- n21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.mm.md.doma
- in.entity",net.nan21.dnet.module.mm.md.business.serviceimpl;version="
- 1.0.0.M2";uses:="javax.persistence,net.nan21.dnet.core.business.servi
- ce,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.b
- d.uom.domain.entity,net.nan21.dnet.module.mm.md.business.service,net.
- nan21.dnet.module.mm.md.domain.entity"
+ .module.mm.inventory.business.service;version="1.0.0.M2";uses:="net.n
+ an21.dnet.core.api.service,net.nan21.dnet.module.bd.org.domain.entity
+ ,net.nan21.dnet.module.mm.inventory.domain.entity,net.nan21.dnet.modu
+ le.mm.md.domain.entity",net.nan21.dnet.module.mm.inventory.business.s
+ erviceimpl;version="1.0.0.M2";uses:="javax.persistence,net.nan21.dnet
+ .core.business.service,net.nan21.dnet.module.bd.org.domain.entity,net
+ .nan21.dnet.module.mm.inventory.business.service,net.nan21.dnet.modul
+ e.mm.inventory.domain.entity,net.nan21.dnet.module.mm.md.domain.entit
+ y",net.nan21.dnet.module.mm.md.business.service;version="1.0.0.M2";us
+ es:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.org.dom
+ ain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.
+ module.mm.md.domain.entity",net.nan21.dnet.module.mm.md.business.serv
+ iceimpl;version="1.0.0.M2";uses:="javax.persistence,net.nan21.dnet.co
+ re.business.service,net.nan21.dnet.module.bd.org.domain.entity,net.na
+ n21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.mm.md.busi
+ ness.service,net.nan21.dnet.module.mm.md.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.core.busine
  ss;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.domain;version=
@@ -35,12 +43,12 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  21.dnet.core.api.setup,net.nan21.dnet.core.business.persistenceunit,n
  et.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.org.doma
  in.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.m
- odule.mm.md.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",org
- .hibernate.validator;version="[4.0,5.0)",org.hibernate.validator.cons
- traints;version="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1
- )",org.springframework.aop.framework;version="[3.0,3.1)",org.springfr
- amework.context.weaving;version="[3.0,3.1)",org.springframework.orm.j
- pa,org.springframework.orm.jpa.vendor,org.springframework.transaction
- ;version="[3.0,3.1)",org.springframework.transaction.aspectj;version=
- "[3.0,3.1)"
+ odule.mm.inventory.domain.entity,net.nan21.dnet.module.mm.md.domain.e
+ ntity,org.aopalliance.aop;version="[1.0,2.0)",org.hibernate.validator
+ ;version="[4.0,5.0)",org.hibernate.validator.constraints;version="[4.
+ 0,5.0)",org.springframework.aop;version="[3.0,3.1)",org.springframewo
+ rk.aop.framework;version="[3.0,3.1)",org.springframework.context.weav
+ ing;version="[3.0,3.1)",org.springframework.orm.jpa,org.springframewo
+ rk.orm.jpa.vendor,org.springframework.transaction;version="[3.0,3.1)"
+ ,org.springframework.transaction.aspectj;version="[3.0,3.1)"
 

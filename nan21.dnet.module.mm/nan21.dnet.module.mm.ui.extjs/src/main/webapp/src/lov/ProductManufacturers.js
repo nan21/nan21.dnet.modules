@@ -13,7 +13,7 @@ net.nan21.dnet.module.mm.md.lovs.ProductManufacturers = Ext.extend( dnet.base.Ab
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerLovDs		
 				,_dataProviderName_:"ProductManufacturerLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.mm.md.frame.ProductManufacturer_UI",bundle:"nan21.dnet.module.mm.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.mm.md.frame.ProductBaseData_UI",bundle:"nan21.dnet.module.mm.ui.extjs",tocElement: "canvasManufact"}
 			}
 		); 		 
 		this._createStore_(); 

@@ -1,0 +1,4 @@
+"name";"description";"sourceType";"action";"active"
+"Internal order intransit shipment";"Intransit shipment  based on internal order";"Internal Order";"Intransit shipment";"true"
+"Internal order inventory transfer";"Transfer between inventories based on internal order";"Internal Order";"Inventory transfer";"true"
+"Internal order subinventory transfer";"Transfer between sub-inventories based on internal order";"Internal Order";"Subinventory transfer";"true"

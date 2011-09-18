@@ -75,6 +75,21 @@ public class OrganizationType implements Serializable, IModelWithId,
     @NotNull
     private Boolean accountingEnabled;
 
+    /** External. */
+    @Column(name = "EXTERNAL", nullable = false)
+    @NotNull
+    private Boolean external;
+
+    /** Inventory. */
+    @Column(name = "INVENTORY", nullable = false)
+    @NotNull
+    private Boolean inventory;
+
+    /** Carrier. */
+    @Column(name = "CARRIER", nullable = false)
+    @NotNull
+    private Boolean carrier;
+
     /** Name. */
     @Column(name = "NAME", nullable = false)
     @NotBlank
@@ -153,6 +168,30 @@ public class OrganizationType implements Serializable, IModelWithId,
 
     public void setAccountingEnabled(Boolean accountingEnabled) {
         this.accountingEnabled = accountingEnabled;
+    }
+
+    public Boolean getExternal() {
+        return this.external;
+    }
+
+    public void setExternal(Boolean external) {
+        this.external = external;
+    }
+
+    public Boolean getInventory() {
+        return this.inventory;
+    }
+
+    public void setInventory(Boolean inventory) {
+        this.inventory = inventory;
+    }
+
+    public Boolean getCarrier() {
+        return this.carrier;
+    }
+
+    public void setCarrier(Boolean carrier) {
+        this.carrier = carrier;
     }
 
     public String getName() {
@@ -257,11 +296,19 @@ public class OrganizationType implements Serializable, IModelWithId,
             event.updateAttributeWithObject("virtualEntity", false);
         }
         if (this.legalEntity == null) {
-            event.updateAttributeWithObject("legalEntity", true);
-
+            event.updateAttributeWithObject("legalEntity", false);
         }
         if (this.accountingEnabled == null) {
             event.updateAttributeWithObject("accountingEnabled", false);
+        }
+        if (this.external == null) {
+            event.updateAttributeWithObject("external", false);
+        }
+        if (this.inventory == null) {
+            event.updateAttributeWithObject("inventory", false);
+        }
+        if (this.carrier == null) {
+            event.updateAttributeWithObject("carrier", false);
         }
         if (this.active == null) {
             event.updateAttributeWithObject("active", true);

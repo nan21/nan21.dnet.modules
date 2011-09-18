@@ -121,6 +121,14 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/bd/data/org/OrganizationType.csv" />
 							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="Organization" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/org/Organization.csv" />
+							</bean>
 						</list>
 					</property>
 				</bean>

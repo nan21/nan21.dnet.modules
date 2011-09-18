@@ -62,6 +62,39 @@
 		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.LegalEntityOrganizationLovDs" />
 	</bean>
    
+ 	<bean id="InventoryOrganizationLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.InventoryOrganizationLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.InventoryOrganizationLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="InventoryOrganizationLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.InventoryOrganizationLovDs" />
+	</bean>
+   
+ 	<bean id="CarrierOrganizationLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.CarrierOrganizationLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.CarrierOrganizationLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CarrierOrganizationLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.CarrierOrganizationLovDs" />
+	</bean>
+   
+ 	<bean id="ExternalOrganizationLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.ExternalOrganizationLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.org.ds.converter.ExternalOrganizationLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ExternalOrganizationLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.ExternalOrganizationLovDs" />
+	</bean>
+   
  	<bean id="OrganizationHierarchyDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDs" />

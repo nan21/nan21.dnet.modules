@@ -8,13 +8,15 @@ net.nan21.dnet.module.mm.menu.crm = [
  
 	{"id":"sm_mm_base", "text":"Definitions", leaf:false, children:[
 		
+		{id:"ProductBaseData_UI", text:Dnet.translate("ui","ProductBaseData_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductBaseData_UI", _bundle_:BUNDLE_ID},		
 		{id:"ProductAttributeDefs_UI", text:Dnet.translate("ui","ProductAttributeDefs_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI", _bundle_:BUNDLE_ID},		
-		{id:"ProductAttachmentType_UI", text:Dnet.translate("ui","ProductAttachmentType_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAttachmentType_UI", _bundle_:BUNDLE_ID},		
 		{id:"ProductAccountGroup_UI", text:Dnet.translate("ui","ProductAccountGroup_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAccountGroup_UI", _bundle_:BUNDLE_ID},		
-		{id:"ProductManufacturer_UI", text:Dnet.translate("ui","ProductManufacturer_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductManufacturer_UI", _bundle_:BUNDLE_ID}	]}
+		{id:"InventoryBaseData_UI", text:Dnet.translate("ui","InventoryBaseData_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI", _bundle_:BUNDLE_ID}	]}
 ,		
 		{id:"Product_UI", text:Dnet.translate("ui","Product_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.Product_UI", _bundle_:BUNDLE_ID},		
-		{id:"ProductCategory_UI", text:Dnet.translate("ui","ProductCategory_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", _bundle_:BUNDLE_ID}	]}
+		{id:"ProductCategory_UI", text:Dnet.translate("ui","ProductCategory_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", _bundle_:BUNDLE_ID},		
+		{id:"SubInventories_UI", text:Dnet.translate("ui","SubInventories_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", _bundle_:BUNDLE_ID},		
+		{id:"InvTransactions_UI", text:Dnet.translate("ui","InvTransactions_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", _bundle_:BUNDLE_ID}	]}
  
    ];  
 if (Dnet.navigationTreeMenus.crm == undefined) {

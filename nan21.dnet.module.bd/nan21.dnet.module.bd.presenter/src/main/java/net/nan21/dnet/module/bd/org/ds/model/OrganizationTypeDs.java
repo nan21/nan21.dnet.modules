@@ -31,6 +31,9 @@ public class OrganizationTypeDs extends AbstractDsModel<OrganizationType>
     public static final String fVIRTUALENTITY = "virtualEntity";
     public static final String fLEGALENTITY = "legalEntity";
     public static final String fACCOUNTINGENABLED = "accountingEnabled";
+    public static final String fINVENTORY = "inventory";
+    public static final String fEXTERNAL = "external";
+    public static final String fCARRIER = "carrier";
 
     @DsField()
     private String name;
@@ -70,6 +73,15 @@ public class OrganizationTypeDs extends AbstractDsModel<OrganizationType>
 
     @DsField()
     private Boolean accountingEnabled;
+
+    @DsField()
+    private Boolean inventory;
+
+    @DsField()
+    private Boolean external;
+
+    @DsField()
+    private Boolean carrier;
 
     public OrganizationTypeDs() {
         super();
@@ -182,6 +194,30 @@ public class OrganizationTypeDs extends AbstractDsModel<OrganizationType>
 
     public void setAccountingEnabled(Boolean accountingEnabled) {
         this.accountingEnabled = accountingEnabled;
+    }
+
+    public Boolean getInventory() {
+        return this.inventory;
+    }
+
+    public void setInventory(Boolean inventory) {
+        this.inventory = inventory;
+    }
+
+    public Boolean getExternal() {
+        return this.external;
+    }
+
+    public void setExternal(Boolean external) {
+        this.external = external;
+    }
+
+    public Boolean getCarrier() {
+        return this.carrier;
+    }
+
+    public void setCarrier(Boolean carrier) {
+        this.carrier = carrier;
     }
 
 }

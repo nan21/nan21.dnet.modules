@@ -1,0 +1,6 @@
+"inventory";"name";"active";"description"
+"store1";"S1-showroom";"true";"The showroom of store 1"
+"store1";"S1-storage";"true";"The storage of store 1"
+"warehouse0";"W0-reception";"true";"Reception room of the main warehouse"
+"warehouse0";"W0-shipping";"true";"shipping room of the main warehouse"
+"warehouse0";"W0-storage1";"true";"storage room 1 of the main warehouse"

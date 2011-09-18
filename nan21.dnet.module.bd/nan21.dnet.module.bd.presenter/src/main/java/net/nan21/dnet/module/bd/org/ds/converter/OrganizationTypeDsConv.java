@@ -25,6 +25,9 @@ public class OrganizationTypeDsConv extends
         e.setVirtualEntity(ds.getVirtualEntity());
         e.setLegalEntity(ds.getLegalEntity());
         e.setAccountingEnabled(ds.getAccountingEnabled());
+        e.setInventory(ds.getInventory());
+        e.setExternal(ds.getExternal());
+        e.setCarrier(ds.getCarrier());
     }
 
     protected void modelToEntityReferences(OrganizationTypeDs ds,
@@ -47,6 +50,9 @@ public class OrganizationTypeDsConv extends
         ds.setVirtualEntity(e.getVirtualEntity());
         ds.setLegalEntity(e.getLegalEntity());
         ds.setAccountingEnabled(e.getAccountingEnabled());
+        ds.setInventory(e.getInventory());
+        ds.setExternal(e.getExternal());
+        ds.setCarrier(e.getCarrier());
     }
 
 }

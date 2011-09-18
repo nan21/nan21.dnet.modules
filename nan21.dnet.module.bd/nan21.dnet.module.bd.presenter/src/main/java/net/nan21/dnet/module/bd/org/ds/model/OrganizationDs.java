@@ -32,6 +32,7 @@ public class OrganizationDs extends AbstractDsModel<Organization> implements
     public static final String fVALID = "valid";
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
+    public static final String fCLASSNAME = "className";
 
     @DsField()
     private String name;
@@ -74,6 +75,9 @@ public class OrganizationDs extends AbstractDsModel<Organization> implements
 
     @DsField(join = "left", path = "type.name")
     private String type;
+
+    @DsField(fetch = false)
+    private String className;
 
     public OrganizationDs() {
         super();
@@ -194,6 +198,14 @@ public class OrganizationDs extends AbstractDsModel<Organization> implements
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getClassName() {
+        return this.className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
     }
 
 }

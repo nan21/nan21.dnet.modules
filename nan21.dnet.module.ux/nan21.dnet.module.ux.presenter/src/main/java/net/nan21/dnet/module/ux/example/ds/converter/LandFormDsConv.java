@@ -33,8 +33,8 @@ public class LandFormDsConv extends AbstractDsConverter<LandFormDs, LandForm>
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((LandFormType) this.em.getReference(
-                        LandFormType.class, ds.getTypeId()));
+                e.setType((LandFormType) this.em.find(LandFormType.class,
+                        ds.getTypeId()));
             }
         } else {
             this.lookup_type_LandFormType(ds, e);
@@ -42,7 +42,7 @@ public class LandFormDsConv extends AbstractDsConverter<LandFormDs, LandForm>
         if (ds.getCountryId() != null) {
             if (e.getCountry() == null
                     || !e.getCountry().getId().equals(ds.getCountryId())) {
-                e.setCountry((Country) this.em.getReference(Country.class,
+                e.setCountry((Country) this.em.find(Country.class,
                         ds.getCountryId()));
             }
         } else {
@@ -52,7 +52,7 @@ public class LandFormDsConv extends AbstractDsConverter<LandFormDs, LandForm>
 
     protected void lookup_type_LandFormType(LandFormDs ds, LandForm e)
             throws Exception {
-        if (ds.getType() != null) {
+        if (ds.getType() != null && !ds.getType().equals("")) {
             LandFormType x = null;
             try {
                 x = ((ILandFormTypeService) getService(ILandFormTypeService.class))
@@ -63,12 +63,14 @@ public class LandFormDsConv extends AbstractDsConverter<LandFormDs, LandForm>
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+        } else {
+            e.setType(null);
         }
     }
 
     protected void lookup_country_Country(LandFormDs ds, LandForm e)
             throws Exception {
-        if (ds.getCountryCode() != null) {
+        if (ds.getCountryCode() != null && !ds.getCountryCode().equals("")) {
             Country x = null;
             try {
                 x = ((ICountryService) getService(ICountryService.class))
@@ -79,6 +81,8 @@ public class LandFormDsConv extends AbstractDsConverter<LandFormDs, LandForm>
                                 + ds.getCountryCode() + "  ");
             }
             e.setCountry(x);
+        } else {
+            e.setCountry(null);
         }
     }
 

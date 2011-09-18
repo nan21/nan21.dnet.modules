@@ -13,7 +13,7 @@ net.nan21.dnet.module.mm.md.lovs.ProductAttachmentType = Ext.extend( dnet.base.A
 				,minChars:0	
 				,_dataProviderFields_: 	net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentTypeLovDs		
 				,_dataProviderName_:"ProductAttachmentTypeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.mm.md.frame.ProductAttachmentType_UI",bundle:"nan21.dnet.module.mm.ui.extjs"}
+				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.mm.md.frame.ProductBaseData_UI",bundle:"nan21.dnet.module.mm.ui.extjs",tocElement: "canvasAttachType"}
 			}
 		); 		 
 		this._createStore_(); 

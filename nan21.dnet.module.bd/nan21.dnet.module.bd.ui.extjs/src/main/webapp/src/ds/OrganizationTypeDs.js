@@ -15,6 +15,9 @@ Ext.ns("net.nan21.dnet.module.bd.org.ds.model");
 	,	{name:"virtualEntity",type:"boolean"}
 	,	{name:"legalEntity",type:"boolean"}
 	,	{name:"accountingEnabled",type:"boolean"}
+	,	{name:"inventory",type:"boolean"}
+	,	{name:"external",type:"boolean"}
+	,	{name:"carrier",type:"boolean"}
 	
 	];
 Ext.ns("net.nan21.dnet.module.bd.org.ds.param");	

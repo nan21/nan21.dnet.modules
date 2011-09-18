@@ -32,5 +32,5 @@
 	
 	<import resource="beans/mm.md.ds.xml"/>
 	<import resource="beans/mm.md.asgn.xml"/> 
-	 
+	<import resource="beans/mm.inventory.ds.xml"/> 
 </beans>

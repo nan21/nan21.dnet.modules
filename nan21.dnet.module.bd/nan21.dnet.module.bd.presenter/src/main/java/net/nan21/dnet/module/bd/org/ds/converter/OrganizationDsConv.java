@@ -26,6 +26,7 @@ public class OrganizationDsConv extends
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
         e.setValid(ds.getValid());
+        e.setClassName(ds.getClassName());
     }
 
     protected void modelToEntityReferences(OrganizationDs ds, Organization e)
@@ -75,6 +76,7 @@ public class OrganizationDsConv extends
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
         ds.setValid(e.getValid());
+        ds.setClassName(e.getClassName());
         ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
         ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
     }

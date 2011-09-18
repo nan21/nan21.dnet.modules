@@ -16,6 +16,7 @@ Ext.ns("net.nan21.dnet.module.bd.org.ds.model");
 	,	{name:"valid",type:"boolean"}
 	,	{name:"typeId",type:"int"}
 	,	{name:"type",type:"string"}
+	,	{name:"className",type:"string"}
 	
 	];
 Ext.ns("net.nan21.dnet.module.bd.org.ds.param");	

@@ -123,11 +123,9 @@ public class LandForm implements Serializable, IModelWithId, IModelWithClientId 
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = LandFormType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private LandFormType type;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
     @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID")
     private Country country;
