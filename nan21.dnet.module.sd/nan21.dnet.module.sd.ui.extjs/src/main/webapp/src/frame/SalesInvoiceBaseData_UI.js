@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceTypeDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesInvoiceType", "nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceStatusDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesInvoiceStatus"]);
 
-Ext.ns("net.nan21.dnet.module.sd.invoice.frame");
-net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI",
+	
 	 _name_ : "net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -16,8 +18,8 @@ net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI = Ext.extend( dne
 		.addDcFilterFormView("invStatus",{ name:"invStatusFilter", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$Filter",height:40})	 
 		.addDcView("invStatus",{ name:"invStatusEditList", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasInvType", layout:"border", defaults:{split:true},title:"Invoice type",header:false})  	 
-		.addPanel({name: "canvasInvStatus", layout:"border", defaults:{split:true},title:"Invoice status",header:false})  	 
+		.addPanel({name: "canvasInvType", layout:"border", defaults:{split:true},title:"Invoice type",preventHeader:true})  	 
+		.addPanel({name: "canvasInvStatus", layout:"border", defaults:{split:true},title:"Invoice status",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -43,5 +45,4 @@ net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI = Ext.extend( dne
 			.beginToolbar("tlbInvStatus", {dc:"invStatus"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Invoice status"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI", net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI);   
+});  

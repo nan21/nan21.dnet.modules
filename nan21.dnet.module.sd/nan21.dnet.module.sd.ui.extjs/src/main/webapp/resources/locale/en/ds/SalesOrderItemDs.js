@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.sd.order.ds.model");
-net.nan21.dnet.module.sd.order.ds.SalesOrderItemDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDs$Trl", {     	
 	salesOrderId__lbl : "Sales Order Id"
 	,productId__lbl : "Product Id"
 	,productCode__lbl : "Product Code"
@@ -10,6 +10,4 @@ net.nan21.dnet.module.sd.order.ds.SalesOrderItemDs.prototype._trl_ = {
 	,netUnitPrice__lbl : "Net Unit Price"
 	,netAmount__lbl : "Net Amount"
 	
-}  
-	
- 
+});

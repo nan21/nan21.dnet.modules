@@ -51,9 +51,10 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
  in.entity,net.nan21.dnet.module.bd.geo.business.service,net.nan21.dne
  t.module.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.business.s
  ervice,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.modu
- le.bp.base.business.service,net.nan21.dnet.module.bp.base.domain.enti
- ty,net.nan21.dnet.module.bp.calendar.business.service,net.nan21.dnet.
- module.bp.calendar.domain.entity,net.nan21.dnet.module.bp.md.business
- .service,net.nan21.dnet.module.bp.md.domain.entity,org.springframewor
- k.context.weaving;version="[3.0,3.1)"
+ le.bd.standards.business.service,net.nan21.dnet.module.bd.standards.d
+ omain.entity,net.nan21.dnet.module.bp.base.business.service,net.nan21
+ .dnet.module.bp.base.domain.entity,net.nan21.dnet.module.bp.calendar.
+ business.service,net.nan21.dnet.module.bp.calendar.domain.entity,net.
+ nan21.dnet.module.bp.md.business.service,net.nan21.dnet.module.bp.md.
+ domain.entity,org.springframework.context.weaving;version="[3.0,3.1)"
 

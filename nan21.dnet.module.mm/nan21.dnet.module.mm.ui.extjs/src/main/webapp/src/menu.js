@@ -16,7 +16,8 @@ net.nan21.dnet.module.mm.menu.crm = [
 		{id:"Product_UI", text:Dnet.translate("ui","Product_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.Product_UI", _bundle_:BUNDLE_ID},		
 		{id:"ProductCategory_UI", text:Dnet.translate("ui","ProductCategory_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", _bundle_:BUNDLE_ID},		
 		{id:"SubInventories_UI", text:Dnet.translate("ui","SubInventories_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", _bundle_:BUNDLE_ID},		
-		{id:"InvTransactions_UI", text:Dnet.translate("ui","InvTransactions_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", _bundle_:BUNDLE_ID}	]}
+		{id:"InvTransactions_UI", text:Dnet.translate("ui","InvTransactions_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", _bundle_:BUNDLE_ID},		
+		{id:"InvBalance_UI", text:Dnet.translate("ui","InvBalance_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.inventory.frame.InvBalance_UI", _bundle_:BUNDLE_ID}	]}
  
    ];  
 if (Dnet.navigationTreeMenus.crm == undefined) {

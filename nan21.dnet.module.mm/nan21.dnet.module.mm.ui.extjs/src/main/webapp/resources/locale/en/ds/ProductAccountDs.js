@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.mm.md.ds.model");
-net.nan21.dnet.module.mm.md.ds.ProductAccountDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductAccountDs$Trl", {     	
 	organizationId__lbl : "Organization Id"
 	,organizationCode__lbl : "Organization Code"
 	,groupId__lbl : "Group Id"
@@ -7,6 +7,4 @@ net.nan21.dnet.module.mm.md.ds.ProductAccountDs.prototype._trl_ = {
 	,productId__lbl : "Product Id"
 	,productCode__lbl : "Product Code"
 	
-}  
-	
- 
+});

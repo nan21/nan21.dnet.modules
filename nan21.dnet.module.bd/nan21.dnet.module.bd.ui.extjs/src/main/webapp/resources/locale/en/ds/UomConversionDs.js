@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bd.uom.ds.model");
-net.nan21.dnet.module.bd.uom.ds.UomConversionDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bd.uom.ds.model.UomConversionDs$Trl", {     	
 	sourceId__lbl : "Source Id"
 	,sourceCode__lbl : "Source Code"
 	,targetId__lbl : "Target Id"
@@ -7,6 +7,4 @@ net.nan21.dnet.module.bd.uom.ds.UomConversionDs.prototype._trl_ = {
 	,multiplyWith__lbl : "Multiply With"
 	,divideTo__lbl : "Divide To"
 	
-}  
-	
- 
+});

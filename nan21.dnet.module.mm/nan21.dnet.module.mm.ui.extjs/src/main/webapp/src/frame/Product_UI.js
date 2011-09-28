@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductDs", "nan21.dnet.module.mm.ui.extjs/dc/Product", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeValueDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeValue", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttachmentDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttachment","nan21.dnet.module.mm.ui.extjs/ds/ProductManufacturerLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductManufacturers","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeGroup","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.bd.ui.extjs/ds/UomMassLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomMass","nan21.dnet.module.bd.ui.extjs/ds/UomVolumeLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomVolume","nan21.dnet.module.bd.ui.extjs/ds/UomLengthLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomLength","nan21.dnet.module.mm.ui.extjs/ds/ProductManufacturerLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductManufacturers","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeGroup","nan21.dnet.module.mm.ui.extjs/ds/ProductAttachmentTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttachmentType","nan21.dnet.module.mm.ui.extjs/asgn/CategoriesOfProduct"]);
 
-Ext.ns("net.nan21.dnet.module.mm.md.frame");
-net.nan21.dnet.module.mm.md.frame.Product_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.mm.md.frame.Product_UI",
+	
 	 _name_ : "net.nan21.dnet.module.mm.md.frame.Product_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -22,14 +24,14 @@ net.nan21.dnet.module.mm.md.frame.Product_UI = Ext.extend( dnet.base.AbstractUi,
 							 	
 		.addDcFilterFormView("prod",{ name:"prodFilter", xtype:"net.nan21.dnet.module.mm.md.dc.Product$Filter"})	 
 		.addDcView("prod",{ name:"prodList", xtype:"net.nan21.dnet.module.mm.md.dc.Product$List"})	 
-		.addDcFormView("prod",{ name:"prodEdit", xtype:"net.nan21.dnet.module.mm.md.dc.Product$Edit",height:200,buttons:[ this._elems_.get("btnAsgnCategories") ]})	 
+		.addDcFormView("prod",{ name:"prodEdit", xtype:"net.nan21.dnet.module.mm.md.dc.Product$Edit",height:200,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnAsgnCategories") ]}})	 
 		.addDcFormView("prod",{ name:"prodCtxFormName", xtype:"net.nan21.dnet.module.mm.md.dc.Product$CtxFormName",height:50})	 
 		.addDcView("attr",{ name:"attrEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", frame:true,title:"Attributes"})	 
-		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttachment$EditList", frame:true,title:"Attachments",buttons:[ this._elems_.get("btnViewAttachment") ]})	 
+		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttachment$EditList", frame:true,title:"Attachments",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnViewAttachment") ]}})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "prodDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -62,5 +64,4 @@ net.nan21.dnet.module.mm.md.frame.Product_UI = Ext.extend( dnet.base.AbstractUi,
 		var url = this._getDc_("atch").getRecord().get("url");
 		window.open(url, "Attachment", "location=1,status=1,scrollbars=1,width=500,height=400");
 	}
-});
-Ext.reg("net.nan21.dnet.module.mm.md.frame.Product_UI", net.nan21.dnet.module.mm.md.frame.Product_UI);   
+});  

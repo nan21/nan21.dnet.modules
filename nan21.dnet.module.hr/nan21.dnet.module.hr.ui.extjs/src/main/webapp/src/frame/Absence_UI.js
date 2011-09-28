@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/AbsenceDs", "nan21.dnet.module.hr.ui.extjs/dc/Absence","nan21.dnet.module.hr.ui.extjs/ds/EmployeeLovDs","nan21.dnet.module.hr.ui.extjs/lov/Employees","nan21.dnet.module.hr.ui.extjs/ds/AbsenceTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/AbsenceTypes","nan21.dnet.module.hr.ui.extjs/ds/AbsenceReasonLovDs","nan21.dnet.module.hr.ui.extjs/lov/AbsenceReasons","nan21.dnet.module.hr.ui.extjs/ds/EmployeeLovDs","nan21.dnet.module.hr.ui.extjs/lov/Employees","nan21.dnet.module.hr.ui.extjs/ds/AbsenceTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/AbsenceTypes","nan21.dnet.module.hr.ui.extjs/ds/AbsenceReasonLovDs","nan21.dnet.module.hr.ui.extjs/lov/AbsenceReasons"]);
 
-Ext.ns("net.nan21.dnet.module.hr.time.frame");
-net.nan21.dnet.module.hr.time.frame.Absence_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.hr.time.frame.Absence_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.hr.time.frame.Absence_UI",
+	
 	 _name_ : "net.nan21.dnet.module.hr.time.frame.Absence_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -14,8 +16,8 @@ net.nan21.dnet.module.hr.time.frame.Absence_UI = Ext.extend( dnet.base.AbstractU
 		.addDcView("absence",{ name:"absenceList", xtype:"net.nan21.dnet.module.hr.time.dc.Absence$List"})	 
 		.addDcFormView("absence",{ name:"absenceEdit", xtype:"net.nan21.dnet.module.hr.time.dc.Absence$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -34,5 +36,4 @@ net.nan21.dnet.module.hr.time.frame.Absence_UI = Ext.extend( dnet.base.AbstractU
 			.beginToolbar("tlbAbsenceEdit", {dc:"absence"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.hr.time.frame.Absence_UI", net.nan21.dnet.module.hr.time.frame.Absence_UI);   
+});  

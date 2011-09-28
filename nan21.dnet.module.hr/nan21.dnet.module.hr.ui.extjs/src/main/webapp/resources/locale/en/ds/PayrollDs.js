@@ -1,7 +1,5 @@
-Ext.ns("net.nan21.dnet.module.hr.payroll.ds.model");
-net.nan21.dnet.module.hr.payroll.ds.PayrollDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollDs$Trl", {     	
 	periodType__lbl : "Period Type"
 	
-}  
-	
- 
+});

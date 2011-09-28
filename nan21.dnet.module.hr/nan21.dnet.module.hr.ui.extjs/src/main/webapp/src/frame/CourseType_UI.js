@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/CourseCategoryDs", "nan21.dnet.module.hr.ui.extjs/dc/CourseCategory", "nan21.dnet.module.hr.ui.extjs/ds/CourseTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/CourseType","nan21.dnet.module.hr.ui.extjs/ds/CourseCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/CourseCategories","nan21.dnet.module.hr.ui.extjs/ds/CourseCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/CourseCategories"]);
 
-Ext.ns("net.nan21.dnet.module.hr.training.frame");
-net.nan21.dnet.module.hr.training.frame.CourseType_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.hr.training.frame.CourseType_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.hr.training.frame.CourseType_UI",
+	
 	 _name_ : "net.nan21.dnet.module.hr.training.frame.CourseType_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -11,13 +13,13 @@ net.nan21.dnet.module.hr.training.frame.CourseType_UI = Ext.extend( dnet.base.Ab
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("ccateg",{ name:"ccategFilter", xtype:"net.nan21.dnet.module.hr.training.dc.CourseCategory$Filter",height:35})	 
+		.addDcFilterFormView("ccateg",{ name:"ccategFilter", xtype:"net.nan21.dnet.module.hr.training.dc.CourseCategory$Filter",height:40})	 
 		.addDcView("ccateg",{ name:"ccategEditList", xtype:"net.nan21.dnet.module.hr.training.dc.CourseCategory$EditList", frame:true})	 
 		.addDcFilterFormView("ctype",{ name:"ctypeFilter", xtype:"net.nan21.dnet.module.hr.training.dc.CourseType$Filter",height:60})	 
 		.addDcView("ctype",{ name:"ctypeEditList", xtype:"net.nan21.dnet.module.hr.training.dc.CourseType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasCategory", layout:"border", defaults:{split:true},title:"Course Categories",header:false})  	 
-		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Course Types",header:false})  	 
+		.addPanel({name: "canvasCategory", layout:"border", defaults:{split:true},title:"Course Categories",preventHeader:true})  	 
+		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Course Types",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -43,5 +45,4 @@ net.nan21.dnet.module.hr.training.frame.CourseType_UI = Ext.extend( dnet.base.Ab
 			.beginToolbar("tlbCtypeEditList", {dc:"ctype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Course Types"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.hr.training.frame.CourseType_UI", net.nan21.dnet.module.hr.training.frame.CourseType_UI);   
+});  

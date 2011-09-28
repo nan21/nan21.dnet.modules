@@ -1,28 +1,33 @@
    
-Ext.ns('net.nan21.dnet.module.mm.inventory.dc');	 
-net.nan21.dnet.module.mm.inventory.dc.SubInventory = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"SubInventory" 		 
-			,ds: new net.nan21.dnet.module.mm.inventory.ds.SubInventoryDs()			  
-		});
-	 	net.nan21.dnet.module.mm.inventory.dc.SubInventory.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.mm.inventory.dc'); 
-net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.mm.inventory.ds.model.SubInventoryDs",
+	paramModel: "net.nan21.dnet.module.mm.inventory.ds.param.SubInventoryDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
-		.addLov({ name:"inventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"inventory",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "inventoryId"} ]  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
+		.addLov({ name:"inventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"inventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "inventoryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -32,15 +37,16 @@ net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter = Ext.extend(dnet.base
 		.addChildrenTo("col2",["active"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter", net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.mm.inventory.dc');	 	 
-net.nan21.dnet.module.mm.inventory.dc.SubInventory$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.mm.inventory.dc.SubInventory$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addTextColumn({ name:"inventory", dataIndex:"inventory",width:200 })   	
+		.addTextColumn({ name:"inventory", dataIndex:"inventory",width:100 })   	
 		.addTextColumn({ name:"name", dataIndex:"name",width:120 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
@@ -54,20 +60,22 @@ net.nan21.dnet.module.mm.inventory.dc.SubInventory$List = Ext.extend(dnet.base.A
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.mm.inventory.dc.SubInventory$List", net.nan21.dnet.module.mm.inventory.dc.SubInventory$List ); 
  	
-Ext.ns('net.nan21.dnet.module.mm.inventory.dc');	 
-net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
-		.addLov({ name:"inventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"inventory",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "inventoryId"} ]  })
+		.addLov({ name:"inventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"inventory",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "inventoryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:400,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:400,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -79,4 +87,3 @@ net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit = Ext.extend(dnet.base.A
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit", net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit ); 

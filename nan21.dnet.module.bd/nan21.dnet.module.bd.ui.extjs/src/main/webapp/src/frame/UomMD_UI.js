@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/UomDs", "nan21.dnet.module.bd.ui.extjs/dc/Uom", "nan21.dnet.module.bd.ui.extjs/ds/UomConversionDs", "nan21.dnet.module.bd.ui.extjs/dc/UomConversion","nan21.dnet.module.bd.ui.extjs/ds/UomTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomType","nan21.dnet.module.bd.ui.extjs/ds/UomTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomType","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure"]);
 
-Ext.ns("net.nan21.dnet.module.bd.uom.frame");
-net.nan21.dnet.module.bd.uom.frame.UomMD_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.bd.uom.frame.UomMD_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.bd.uom.frame.UomMD_UI",
+	
 	 _name_ : "net.nan21.dnet.module.bd.uom.frame.UomMD_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -17,8 +19,8 @@ net.nan21.dnet.module.bd.uom.frame.UomMD_UI = Ext.extend( dnet.base.AbstractUi, 
 		.addDcFormView("uom",{ name:"uomEdit", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$Edit",height:125})	 
 		.addDcView("cnv",{ name:"cnvEditList", xtype:"net.nan21.dnet.module.bd.uom.dc.UomConversion$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -39,5 +41,4 @@ net.nan21.dnet.module.bd.uom.frame.UomMD_UI = Ext.extend( dnet.base.AbstractUi, 
 			.beginToolbar("tlbCnvEditList", {dc:"cnv"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.bd.uom.frame.UomMD_UI", net.nan21.dnet.module.bd.uom.frame.UomMD_UI);   
+});  

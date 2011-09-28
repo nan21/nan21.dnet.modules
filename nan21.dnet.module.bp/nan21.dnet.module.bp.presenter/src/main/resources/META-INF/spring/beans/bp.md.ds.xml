@@ -94,6 +94,17 @@
 		<property name="name" value="BpAccount" />
 		<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpAccountDs" />
 	</bean>
+   
+ 	<bean id="BpClassificationDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpClassificationDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BpClassification" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BpClassificationDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="BpClassification" />
+		<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpClassificationDs" />
+	</bean>
       
 </beans>
    

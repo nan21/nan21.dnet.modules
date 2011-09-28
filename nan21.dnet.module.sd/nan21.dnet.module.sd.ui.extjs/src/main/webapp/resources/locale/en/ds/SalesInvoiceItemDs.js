@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.sd.invoice.ds.model");
-net.nan21.dnet.module.sd.invoice.ds.SalesInvoiceItemDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemDs$Trl", {     	
 	invoiceId__lbl : "Invoice Id"
 	,itemId__lbl : "Item Id"
 	,itemCode__lbl : "Item Code"
@@ -10,6 +10,4 @@ net.nan21.dnet.module.sd.invoice.ds.SalesInvoiceItemDs.prototype._trl_ = {
 	,unitPrice__lbl : "Unit Price"
 	,netAmount__lbl : "Net Amount"
 	
-}  
-	
- 
+});

@@ -1,28 +1,33 @@
    
-Ext.ns('net.nan21.dnet.module.hr.grade.dc');	 
-net.nan21.dnet.module.hr.grade.dc.PayScaleRate = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"PayScaleRate" 		 
-			,ds: new net.nan21.dnet.module.hr.grade.ds.PayScaleRateDs()			  
-		});
-	 	net.nan21.dnet.module.hr.grade.dc.PayScaleRate.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.grade.dc'); 
-net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateDs",
+	paramModel: "net.nan21.dnet.module.hr.grade.ds.param.PayScaleRateDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addLov({ name:"payScaleCode", xtype:"net.nan21.dnet.module.hr.grade.lovs.PayScales", dataIndex:"payScaleCode",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "payScaleId"} ]  })
-		.addLov({ name:"currencyCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currencyCode",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
+		.addLov({ name:"payScaleCode", xtype:"net.nan21.dnet.module.hr.grade.lovs.PayScales", dataIndex:"payScaleCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "payScaleId"} ]  })
+		.addLov({ name:"currencyCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currencyCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -32,10 +37,11 @@ net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter = Ext.extend(dnet.base.Abs
 		.addChildrenTo("col2",["payScaleCode","currencyCode"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter", net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.grade.dc');	 	 
-net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -57,22 +63,24 @@ net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List = Ext.extend(dnet.base.Abstr
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List", net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List ); 
  	
-Ext.ns('net.nan21.dnet.module.hr.grade.dc');	 
-net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"description", dataIndex:"description",height:60, width:300   })
-		.addLov({ name:"payScaleCode", xtype:"net.nan21.dnet.module.hr.grade.lovs.PayScales", dataIndex:"payScaleCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "payScaleId"} ]  })
-		.addLov({ name:"currencyCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currencyCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
+		.addLov({ name:"payScaleCode", xtype:"net.nan21.dnet.module.hr.grade.lovs.PayScales", dataIndex:"payScaleCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "payScaleId"} ]  })
+		.addLov({ name:"currencyCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currencyCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"form" , width:300,labelAlign:"top",labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col3", layout:"anchor" , width:300,labelAlign:"top",labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -85,4 +93,3 @@ net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Edit = Ext.extend(dnet.base.Abstr
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Edit", net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Edit ); 

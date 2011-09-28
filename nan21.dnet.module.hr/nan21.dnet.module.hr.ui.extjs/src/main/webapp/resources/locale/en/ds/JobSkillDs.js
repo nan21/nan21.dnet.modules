@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.hr.skill.ds.model");
-net.nan21.dnet.module.hr.skill.ds.JobSkillDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.hr.skill.ds.model.JobSkillDs$Trl", {     	
 	jobId__lbl : "Job Id"
 	,competenceId__lbl : "Competence Id"
 	,competence__lbl : "Competence"
@@ -7,6 +7,4 @@ net.nan21.dnet.module.hr.skill.ds.JobSkillDs.prototype._trl_ = {
 	,requiredLevelId__lbl : "Required Level Id"
 	,requiredLevel__lbl : "Required Level"
 	
-}  
-	
- 
+});

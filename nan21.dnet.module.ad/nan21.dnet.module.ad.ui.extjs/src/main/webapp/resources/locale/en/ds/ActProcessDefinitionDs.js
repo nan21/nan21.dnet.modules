@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.ad.workflow.ds.model");
-net.nan21.dnet.module.ad.workflow.ds.ActProcessDefinitionDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionDs$Trl", {     	
 	key__lbl : "Key"
 	,fullName__lbl : "Full Name"
 	,category__lbl : "Category"
@@ -9,6 +9,4 @@ net.nan21.dnet.module.ad.workflow.ds.ActProcessDefinitionDs.prototype._trl_ = {
 	,hasStartForm__lbl : "Has Start Form"
 	
 	,deployment__lbl :"Deployment"
-}  
-	
- 
+});

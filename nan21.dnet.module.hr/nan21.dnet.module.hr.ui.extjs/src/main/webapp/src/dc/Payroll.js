@@ -1,19 +1,24 @@
    
-Ext.ns('net.nan21.dnet.module.hr.payroll.dc');	 
-net.nan21.dnet.module.hr.payroll.dc.Payroll = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"Payroll" 		 
-			,ds: new net.nan21.dnet.module.hr.payroll.ds.PayrollDs()			  
-		});
-	 	net.nan21.dnet.module.hr.payroll.dc.Payroll.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.payroll.dc'); 
-net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.hr.payroll.ds.model.PayrollDs",
+	paramModel: "net.nan21.dnet.module.hr.payroll.ds.param.PayrollDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -25,17 +30,18 @@ net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter = Ext.extend(dnet.base.Abstra
 	,_linkElements_: function () {
 		this._getBuilder_()
 		this._elems_.get("main")["items"] = [
-	    {layout:"form", border:false 
+	    {layout:"anchor", border:false 
 	      ,items:[ this._elems_.get("name")] }
-	  ,	    {layout:"form", border:false 
+	  ,	    {layout:"anchor", border:false 
 	      ,items:[ this._elems_.get("periodType")] }
 ];
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter", net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.payroll.dc');	 	 
-net.nan21.dnet.module.hr.payroll.dc.Payroll$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.hr.payroll.dc.Payroll$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -53,10 +59,12 @@ net.nan21.dnet.module.hr.payroll.dc.Payroll$List = Ext.extend(dnet.base.Abstract
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.hr.payroll.dc.Payroll$List", net.nan21.dnet.module.hr.payroll.dc.Payroll$List ); 
  	
-Ext.ns('net.nan21.dnet.module.hr.payroll.dc');	 
-net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -65,8 +73,8 @@ net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit = Ext.extend(dnet.base.Abstract
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
 		.addCombo({ name:"periodType", xtype:"combo", dataIndex:"periodType",anchor:"-20",allowBlank:false,store:[ "calendar-month", "semi-month"]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" , width:350,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" , width:350,labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -78,4 +86,3 @@ net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit = Ext.extend(dnet.base.Abstract
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit", net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit ); 

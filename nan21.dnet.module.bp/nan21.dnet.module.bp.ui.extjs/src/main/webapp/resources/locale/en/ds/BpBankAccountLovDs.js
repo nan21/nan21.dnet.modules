@@ -1,7 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bp.md.ds.model");
-net.nan21.dnet.module.bp.md.ds.BpBankAccountLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpBankAccountLovDs$Trl", {     	
 	accountNo__lbl : "Account No"
 	
-}  
-	
- 
+});

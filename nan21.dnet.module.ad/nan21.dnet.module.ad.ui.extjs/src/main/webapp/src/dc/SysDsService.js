@@ -1,18 +1,24 @@
    
-Ext.ns('net.nan21.dnet.module.ad.system.dc');	 
-net.nan21.dnet.module.ad.system.dc.SysDsService = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"SysDsService" 		 
-			,ds: new net.nan21.dnet.module.ad.system.ds.SysDsServiceDs()			  
-		});
-	 	net.nan21.dnet.module.ad.system.dc.SysDsService.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.system.dc');	 	 
-net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList = Ext.extend(dnet.base.AbstractDcvGrid, {
+
+Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsService", {
+	extend: "dnet.base.AbstractDc",
+ 
+	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsServiceDs",
+	paramModel: "net.nan21.dnet.module.ad.system.ds.param.SysDsServiceDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 		 
+Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -22,4 +28,3 @@ net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList = Ext.extend(dnet.base.A
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList", net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList ); 

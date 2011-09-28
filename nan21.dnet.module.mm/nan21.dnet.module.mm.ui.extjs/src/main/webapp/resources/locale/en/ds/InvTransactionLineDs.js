@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.mm.inventory.ds.model");
-net.nan21.dnet.module.mm.inventory.ds.InvTransactionLineDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionLineDs$Trl", {     	
 	transactionId__lbl : "Transaction Id"
 	,fromInventoryId__lbl : "From Inventory Id"
 	,toInventoryId__lbl : "To Inventory Id"
@@ -16,6 +16,4 @@ net.nan21.dnet.module.mm.inventory.ds.InvTransactionLineDs.prototype._trl_ = {
 	,toLocator__lbl : "To Locator"
 	,quantity__lbl : "Quantity"
 	
-}  
-	
- 
+});

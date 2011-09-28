@@ -1,28 +1,19 @@
  
    	 
-Ext.ns("net.nan21.dnet.module.hr.skill.ds.model");
-	net.nan21.dnet.module.hr.skill.ds.model.SkillLovDs = [
-	{name:"id",type:"int"}
-	,	{name:"clientId",type:"int"}
-	,	{name:"name",type:"string"}
-	,	{name:"active",type:"boolean"}
-	,	{name:"ratingScaleId",type:"int"}
+Ext.define("net.nan21.dnet.module.hr.skill.ds.model.SkillLovDs" , {
+	extend: 'Ext.data.Model',
+	fields: [  		
+		{name:"id",type:"int", useNull:true }, 		
+		{name:"clientId",type:"int", useNull:true }, 		
+		{name:"name",type:"string" }, 		
+		{name:"active",type:"boolean" }, 		
+		{name:"ratingScaleId",type:"int", useNull:true }
+	]
+});
 	
-	];
-Ext.ns("net.nan21.dnet.module.hr.skill.ds.param");	
-	net.nan21.dnet.module.hr.skill.ds.param.SkillLovDsParam = [
-	
-	];
-Ext.ns("net.nan21.dnet.module.hr.skill.ds");	
-	net.nan21.dnet.module.hr.skill.ds.SkillLovDs  = Ext.extend(dnet.base.AbstractDs, {
-		constructor: function(config) {
-			config = config || {};
-			Ext.apply(config, {
-				 dsName:"SkillLovDs" 				 		
-				,recordFields: net.nan21.dnet.module.hr.skill.ds.model.SkillLovDs
-				,paramFields: net.nan21.dnet.module.hr.skill.ds.param.SkillLovDsParam				 
-			});
-		 	net.nan21.dnet.module.hr.skill.ds.SkillLovDs.superclass.constructor.call(this, config);
-		}	 
-	});  
+Ext.define("net.nan21.dnet.module.hr.skill.ds.param.SkillLovDsParam", {
+	extend: 'Ext.data.Model',
+	fields: [ 
+	]
+}); 
  

@@ -1,24 +1,18 @@
-Ext.ns("net.nan21.dnet.module.bd.contact.lovs");
-net.nan21.dnet.module.bd.contact.lovs.CommunicationChannelTypes = Ext.extend( dnet.base.AbstractCombo, {	
-	 initComponent : function(){
-		Ext.apply(
-		    this, {
-                 mode: "remote"
-				,displayField:"name"
-				,triggerAction :"query"
-				,pageSize:30
-				,autoSelect:true
-				,listWidth:250 
-				,tpl: '<tpl for="."><div class="x-combo-list-item"><div style="">{name}</div></div></tpl>'
-				,minChars:0	
-				,_dataProviderFields_: 	net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs		
-				,_dataProviderName_:"CommunicationChannelTypeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.bd.contact.frame.CommunicationChannelTypes_UI",bundle:"nan21.dnet.module.bd.ui.extjs"}
-			}
-		); 		 
-		this._createStore_(); 
-        net.nan21.dnet.module.bd.contact.lovs.CommunicationChannelTypes.superclass.initComponent.call(this);
-	}	 
+
+Ext.define("net.nan21.dnet.module.bd.contact.lovs.CommunicationChannelTypes", {
+	extend: "dnet.base.AbstractCombo",
+	alias: "widget.net.nan21.dnet.module.bd.contact.lovs.CommunicationChannelTypes",
+ 
+	displayField:"name",
+	listConfig: {		
+		getInnerTpl: function() { 
+			return '<span>{name}</span>';
+		},
+		width:250
+	},		 
+	_editDialog_:{custom:false, name: "net.nan21.dnet.module.bd.contact.frame.CommunicationChannelTypes_UI",bundle:"nan21.dnet.module.bd.ui.extjs"},
+	recordModel: "net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs",
+	_dataProviderName_:"CommunicationChannelTypeLovDs"	 		
+	
 }); 
-Ext.reg("net.nan21.dnet.module.bd.contact.lovs.CommunicationChannelTypes", net.nan21.dnet.module.bd.contact.lovs.CommunicationChannelTypes);
  

@@ -1,6 +1,4 @@
-Ext.ns("net.nan21.dnet.module.bp.base.ds.model");
-net.nan21.dnet.module.bp.base.ds.VendorGroupDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bp.base.ds.model.VendorGroupDs$Trl", {     	
 	
-}  
-	
- 
+});

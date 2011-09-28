@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesInvoice", "nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceItemDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesInvoiceItem","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceStatusLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceStatus","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceTypeLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceType","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/LocationToBillLovDs","nan21.dnet.module.bd.ui.extjs/lov/LocationsToBill","nan21.dnet.module.bp.ui.extjs/ds/BpContactLovDs","nan21.dnet.module.bp.ui.extjs/lov/BpContacts","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/Customers","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/Customers","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceStatusLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceStatus","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceTypeLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceType","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.mm.ui.extjs/ds/ProductLovDs","nan21.dnet.module.mm.ui.extjs/lov/Products","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure"]);
 
-Ext.ns("net.nan21.dnet.module.sd.invoice.frame");
-net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI",
+	
 	 _name_ : "net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -17,8 +19,8 @@ net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI = Ext.extend( dnet.base.A
 		.addDcFormView("inv",{ name:"invEdit", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Edit",height:150})	 
 		.addDcView("item",{ name:"itemEditList", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -49,5 +51,4 @@ net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI = Ext.extend( dnet.base.A
 	,_afterDefineDcs_: function() {	
 		this.refreshHeader();
 	}
-});
-Ext.reg("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI);   
+});  

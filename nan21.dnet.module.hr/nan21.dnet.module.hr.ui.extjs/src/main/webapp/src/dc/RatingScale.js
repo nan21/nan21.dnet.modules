@@ -1,41 +1,47 @@
    
-Ext.ns('net.nan21.dnet.module.hr.skill.dc');	 
-net.nan21.dnet.module.hr.skill.dc.RatingScale = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"RatingScale" 		 
-			,ds: new net.nan21.dnet.module.hr.skill.ds.RatingScaleDs()			  
-		});
-	 	net.nan21.dnet.module.hr.skill.dc.RatingScale.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.skill.dc'); 
-net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.RatingScaleDs",
+	paramModel: "net.nan21.dnet.module.hr.skill.ds.param.RatingScaleDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		this._elems_.get("main")["items"] = [
-	    {layout:"form", border:false 
+	    {layout:"anchor", border:false 
 	      ,items:[ this._elems_.get("name")] }
-	  ,	    {layout:"form", border:false 
+	  ,	    {layout:"anchor", border:false 
 	      ,items:[ this._elems_.get("active")] }
 ];
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter", net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.skill.dc');	 	 
-net.nan21.dnet.module.hr.skill.dc.RatingScale$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.hr.skill.dc.RatingScale$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -52,10 +58,12 @@ net.nan21.dnet.module.hr.skill.dc.RatingScale$List = Ext.extend(dnet.base.Abstra
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.hr.skill.dc.RatingScale$List", net.nan21.dnet.module.hr.skill.dc.RatingScale$List ); 
  	
-Ext.ns('net.nan21.dnet.module.hr.skill.dc');	 
-net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -63,8 +71,8 @@ net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit = Ext.extend(dnet.base.Abstra
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:400,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:400,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -76,4 +84,3 @@ net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit = Ext.extend(dnet.base.Abstra
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit", net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit ); 

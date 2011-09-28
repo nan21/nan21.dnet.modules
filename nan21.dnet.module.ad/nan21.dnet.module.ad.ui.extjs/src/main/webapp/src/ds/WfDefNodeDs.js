@@ -1,39 +1,30 @@
  
    	 
-Ext.ns("net.nan21.dnet.module.ad.workflow.ds.model");
-	net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeDs = [
-	{name:"name",type:"string"}
-	,	{name:"active",type:"boolean"}
-	,	{name:"description",type:"string"}
-	,	{name:"id",type:"int"}
-	,	{name:"clientId",type:"int"}
-	,	{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT}
-	,	{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT}
-	,	{name:"createdBy",type:"string"}
-	,	{name:"modifiedBy",type:"string"}
-	,	{name:"version",type:"int"}
-	,	{name:"assignToUser",type:"string"}
-	,	{name:"assignToGroup",type:"string"}
-	,	{name:"startWithPrevious",type:"boolean"}
-	,	{name:"taskType",type:"string"}
-	,	{name:"processId",type:"int"}
-	,	{name:"process",type:"string"}
+Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeDs" , {
+	extend: 'Ext.data.Model',
+	fields: [  		
+		{name:"name",type:"string" }, 		
+		{name:"active",type:"boolean" }, 		
+		{name:"description",type:"string" }, 		
+		{name:"id",type:"int", useNull:true }, 		
+		{name:"clientId",type:"int", useNull:true }, 		
+		{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT }, 		
+		{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT }, 		
+		{name:"createdBy",type:"string" }, 		
+		{name:"modifiedBy",type:"string" }, 		
+		{name:"version",type:"int", useNull:true }, 		
+		{name:"assignToUser",type:"string" }, 		
+		{name:"assignToGroup",type:"string" }, 		
+		{name:"startWithPrevious",type:"boolean" }, 		
+		{name:"taskType",type:"string" }, 		
+		{name:"processId",type:"int", useNull:true }, 		
+		{name:"process",type:"string" }
+	]
+});
 	
-	];
-Ext.ns("net.nan21.dnet.module.ad.workflow.ds.param");	
-	net.nan21.dnet.module.ad.workflow.ds.param.WfDefNodeDsParam = [
-	
-	];
-Ext.ns("net.nan21.dnet.module.ad.workflow.ds");	
-	net.nan21.dnet.module.ad.workflow.ds.WfDefNodeDs  = Ext.extend(dnet.base.AbstractDs, {
-		constructor: function(config) {
-			config = config || {};
-			Ext.apply(config, {
-				 dsName:"WfDefNodeDs" 				 		
-				,recordFields: net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeDs
-				,paramFields: net.nan21.dnet.module.ad.workflow.ds.param.WfDefNodeDsParam				 
-			});
-		 	net.nan21.dnet.module.ad.workflow.ds.WfDefNodeDs.superclass.constructor.call(this, config);
-		}	 
-	});  
+Ext.define("net.nan21.dnet.module.ad.workflow.ds.param.WfDefNodeDsParam", {
+	extend: 'Ext.data.Model',
+	fields: [ 
+	]
+}); 
  

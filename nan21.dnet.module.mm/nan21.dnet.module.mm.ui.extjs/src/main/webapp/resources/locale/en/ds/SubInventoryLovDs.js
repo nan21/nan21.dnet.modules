@@ -1,7 +1,5 @@
-Ext.ns("net.nan21.dnet.module.mm.inventory.ds.model");
-net.nan21.dnet.module.mm.inventory.ds.SubInventoryLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.SubInventoryLovDs$Trl", {     	
 	inventoryId__lbl : "Inventory Id"
 	
-}  
-	
- 
+});

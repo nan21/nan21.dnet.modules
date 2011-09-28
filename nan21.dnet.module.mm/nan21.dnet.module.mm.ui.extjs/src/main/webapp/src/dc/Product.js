@@ -1,34 +1,39 @@
    
-Ext.ns('net.nan21.dnet.module.mm.md.dc');	 
-net.nan21.dnet.module.mm.md.dc.Product = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"Product" 		 
-			,ds: new net.nan21.dnet.module.mm.md.ds.ProductDs()			  
-		});
-	 	net.nan21.dnet.module.mm.md.dc.Product.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.mm.md.dc'); 
-net.nan21.dnet.module.mm.md.dc.Product$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.mm.md.dc.Product", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.mm.md.ds.model.ProductDs",
+	paramModel: "net.nan21.dnet.module.mm.md.ds.param.ProductDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.mm.md.dc.Product$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
-		.addBooleanField({ name:"storable", dataIndex:"storable"  })
-		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
-		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
+		.addBooleanField({ name:"storable", dataIndex:"storable",anchor:"-20"  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
+		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",anchor:"-20",maxLength:32  })
-		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
+		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210, height:50,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col4", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210, height:50,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col3", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col4", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -40,10 +45,11 @@ net.nan21.dnet.module.mm.md.dc.Product$Filter = Ext.extend(dnet.base.AbstractDcv
 		.addChildrenTo("col4",["attributeGroup"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.mm.md.dc.Product$Filter", net.nan21.dnet.module.mm.md.dc.Product$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.mm.md.dc');	 	 
-net.nan21.dnet.module.mm.md.dc.Product$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.mm.md.dc.Product$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.mm.md.dc.Product$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -78,16 +84,18 @@ net.nan21.dnet.module.mm.md.dc.Product$List = Ext.extend(dnet.base.AbstractDcvGr
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.mm.md.dc.Product$List", net.nan21.dnet.module.mm.md.dc.Product$List ); 
  	
-Ext.ns('net.nan21.dnet.module.mm.md.dc');	 
-net.nan21.dnet.module.mm.md.dc.Product$CtxFormName = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.mm.md.dc.Product$CtxFormName",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20",disabled:true  ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"name", dataIndex:"name",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:255  })
 		//containers
-		.addPanel({ name:"main", layout:"form" , autoScroll:true, width:90,labelWidth:0 })     
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:90,labelWidth:0 })     
 		;     
 	}
 	,_linkElements_: function () {
@@ -96,37 +104,39 @@ net.nan21.dnet.module.mm.md.dc.Product$CtxFormName = Ext.extend(dnet.base.Abstra
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", net.nan21.dnet.module.mm.md.dc.Product$CtxFormName ); 
  	
-Ext.ns('net.nan21.dnet.module.mm.md.dc');	 
-net.nan21.dnet.module.mm.md.dc.Product$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.mm.md.dc.Product$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"name", noUpdate: true, dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
-		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
-		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
-		.addLov({ name:"defaultUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"defaultUomCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "defaultUomId"} ]  })
+		.addTextField({ name:"manufacturerProductNo",noInsert:true, dataIndex:"manufacturerProductNo",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
+		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
+		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
+		.addLov({ name:"defaultUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"defaultUomCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "defaultUomId"} ]  })
 		.addCheckbox({ name:"storable", dataIndex:"storable"  })
 		.addNumberField({ name:"weight", dataIndex:"weight",anchor:"-20"  , style: "text-align:right;" })
-		.addLov({ name:"weightUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomMass", dataIndex:"weightUomCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "weightUomId"} ]  })
+		.addLov({ name:"weightUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomMass", dataIndex:"weightUomCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "weightUomId"} ]  })
 		.addNumberField({ name:"volume", dataIndex:"volume",anchor:"-20"  , style: "text-align:right;" })
-		.addNumberField({ name:"volumeUomId", dataIndex:"volumeUomId",anchor:"-20",disabled:true   , style: "text-align:right;" })
-		.addLov({ name:"volumeUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomVolume", dataIndex:"volumeUomCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "volumeUomId"} ]  })
+		.addNumberField({ name:"volumeUomId", dataIndex:"volumeUomId",anchor:"-20",noEdit:true   , style: "text-align:right;" })
+		.addLov({ name:"volumeUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomVolume", dataIndex:"volumeUomCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "volumeUomId"} ]  })
 		.addNumberField({ name:"dimWidth", dataIndex:"dimWidth",anchor:"-20"  , style: "text-align:right;" })
 		.addNumberField({ name:"dimHeight", dataIndex:"dimHeight",anchor:"-20"  , style: "text-align:right;" })
 		.addNumberField({ name:"dimDepth", dataIndex:"dimDepth",anchor:"-20"  , style: "text-align:right;" })
-		.addNumberField({ name:"dimUomId", dataIndex:"dimUomId",anchor:"-20",disabled:true   , style: "text-align:right;" })
-		.addLov({ name:"dimUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomLength", dataIndex:"dimUomCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "dimUomId"} ]  })
+		.addNumberField({ name:"dimUomId", dataIndex:"dimUomId",anchor:"-20",noEdit:true   , style: "text-align:right;" })
+		.addLov({ name:"dimUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomLength", dataIndex:"dimUomCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "dimUomId"} ]  })
 		//containers
-		.addPanel({ name:"row1", layout:"form" , width:700,labelWidth:0 })     
-		.addPanel({ name:"col1", layout:"form" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" ,width:250,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"form" , width:200,labelWidth:0 })     
-		.addPanel({ name:"col4", layout:"form" , width:200,labelWidth:0 })     
+		.addPanel({ name:"row1", layout:"anchor" , width:700,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col3", layout:"anchor" , width:200,labelWidth:0 })     
+		.addPanel({ name:"col4", layout:"anchor" , width:200,labelWidth:0 })     
 		.addPanel({ name:"main" , autoScroll:true })      	 
 		.addPanel({ name:"row2", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
 		;     
@@ -143,4 +153,3 @@ net.nan21.dnet.module.mm.md.dc.Product$Edit = Ext.extend(dnet.base.AbstractDcvFo
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.mm.md.dc.Product$Edit", net.nan21.dnet.module.mm.md.dc.Product$Edit ); 

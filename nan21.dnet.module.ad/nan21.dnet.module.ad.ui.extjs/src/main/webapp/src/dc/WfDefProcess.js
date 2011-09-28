@@ -1,25 +1,30 @@
    
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
-net.nan21.dnet.module.ad.workflow.dc.WfDefProcess = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"WfDefProcess" 		 
-			,ds: new net.nan21.dnet.module.ad.workflow.ds.WfDefProcessDs()			  
-		});
-	 	net.nan21.dnet.module.ad.workflow.dc.WfDefProcess.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc'); 
-net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.WfDefProcessDs",
+	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.WfDefProcessDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -28,10 +33,11 @@ net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter = Ext.extend(dnet.base.
 		.addChildrenTo("col1",["name"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter", net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 	 
-net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -48,10 +54,12 @@ net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List = Ext.extend(dnet.base.Ab
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List", net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List ); 
  	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
-net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -59,8 +67,8 @@ net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit = Ext.extend(dnet.base.Ab
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -72,4 +80,3 @@ net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit = Ext.extend(dnet.base.Ab
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit", net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit ); 

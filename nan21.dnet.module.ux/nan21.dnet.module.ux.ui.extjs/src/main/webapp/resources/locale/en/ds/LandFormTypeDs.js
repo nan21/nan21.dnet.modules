@@ -1,6 +1,4 @@
-Ext.ns("net.nan21.dnet.module.ux.example.ds.model");
-net.nan21.dnet.module.ux.example.ds.LandFormTypeDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ux.example.ds.model.LandFormTypeDs$Trl", {     	
 	
-}  
-	
- 
+});

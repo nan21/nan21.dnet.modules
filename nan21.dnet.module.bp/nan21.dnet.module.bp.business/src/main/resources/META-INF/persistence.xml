@@ -17,6 +17,8 @@
 		<class>net.nan21.dnet.module.bp.md.domain.entity.BpBankAccount</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.Contact</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.BpAccount</class>
+		<class>net.nan21.dnet.module.bp.md.domain.entity.BpClassification</class> 
+		  
 		 
 		<class>net.nan21.dnet.module.bp.calendar.domain.entity.CalendarEvent</class>
 		<class>net.nan21.dnet.module.bp.calendar.domain.entity.CalendarEventStatus</class>
@@ -28,6 +30,10 @@
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
+		
+		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
+		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>
+		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

@@ -1,24 +1,18 @@
-Ext.ns("net.nan21.dnet.module.hr.job.lovs");
-net.nan21.dnet.module.hr.job.lovs.WorkRequirements = Ext.extend( dnet.base.AbstractCombo, {	
-	 initComponent : function(){
-		Ext.apply(
-		    this, {
-                 mode: "remote"
-				,displayField:"name"
-				,triggerAction :"query"
-				,pageSize:30
-				,autoSelect:true
-				,listWidth:250 
-				,tpl: '<tpl for="."><div class="x-combo-list-item"><div style="">{name}</div></div></tpl>'
-				,minChars:0	
-				,_dataProviderFields_: 	net.nan21.dnet.module.hr.job.ds.model.WorkRequirementLovDs		
-				,_dataProviderName_:"WorkRequirementLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasWr"}
-			}
-		); 		 
-		this._createStore_(); 
-        net.nan21.dnet.module.hr.job.lovs.WorkRequirements.superclass.initComponent.call(this);
-	}	 
+
+Ext.define("net.nan21.dnet.module.hr.job.lovs.WorkRequirements", {
+	extend: "dnet.base.AbstractCombo",
+	alias: "widget.net.nan21.dnet.module.hr.job.lovs.WorkRequirements",
+ 
+	displayField:"name",
+	listConfig: {		
+		getInnerTpl: function() { 
+			return '<span>{name}</span>';
+		},
+		width:250
+	},		 
+	_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasWr"},
+	recordModel: "net.nan21.dnet.module.hr.job.ds.model.WorkRequirementLovDs",
+	_dataProviderName_:"WorkRequirementLovDs"	 		
+	
 }); 
-Ext.reg("net.nan21.dnet.module.hr.job.lovs.WorkRequirements", net.nan21.dnet.module.hr.job.lovs.WorkRequirements);
  

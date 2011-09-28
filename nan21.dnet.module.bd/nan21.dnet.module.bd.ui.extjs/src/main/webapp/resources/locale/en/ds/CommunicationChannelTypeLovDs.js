@@ -1,6 +1,4 @@
-Ext.ns("net.nan21.dnet.module.bd.contact.ds.model");
-net.nan21.dnet.module.bd.contact.ds.CommunicationChannelTypeLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs$Trl", {     	
 	
-}  
-	
- 
+});

@@ -1,18 +1,24 @@
    
-Ext.ns('net.nan21.dnet.module.bd.geo.dc');	 
-net.nan21.dnet.module.bd.geo.dc.Location = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"Location" 		 
-			,ds: new net.nan21.dnet.module.bd.geo.ds.LocationDs()			  
-		});
-	 	net.nan21.dnet.module.bd.geo.dc.Location.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.bd.geo.dc');	 	 
-net.nan21.dnet.module.bd.geo.dc.Location$ListCtx = Ext.extend(dnet.base.AbstractDcvGrid, {
+
+Ext.define("net.nan21.dnet.module.bd.geo.dc.Location", {
+	extend: "dnet.base.AbstractDc",
+ 
+	recordModel: "net.nan21.dnet.module.bd.geo.ds.model.LocationDs",
+	paramModel: "net.nan21.dnet.module.bd.geo.ds.param.LocationDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 		 
+Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$ListCtx", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.bd.geo.dc.Location$ListCtx",
+	
 	 _noImport_: true
 	,_noExport_: true
 	,_defineColumns_: function () {	
@@ -37,15 +43,17 @@ net.nan21.dnet.module.bd.geo.dc.Location$ListCtx = Ext.extend(dnet.base.Abstract
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.bd.geo.dc.Location$ListCtx", net.nan21.dnet.module.bd.geo.dc.Location$ListCtx ); 
  	
-Ext.ns('net.nan21.dnet.module.bd.geo.dc');	 
-net.nan21.dnet.module.bd.geo.dc.Location$EditCtx = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$EditCtx", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Location$EditCtx",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
-		.addLov({ name:"regionCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Regions", dataIndex:"regionCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "regionId"} ]  })
+		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
+		.addLov({ name:"regionCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Regions", dataIndex:"regionCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "regionId"} ]  })
 		.addTextField({ name:"cityName", dataIndex:"cityName",anchor:"-20" ,maxLength:255  })
 		.addTextArea({ name:"adress", dataIndex:"adress",height:60,anchor:"-20"   })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
@@ -54,9 +62,9 @@ net.nan21.dnet.module.bd.geo.dc.Location$EditCtx = Ext.extend(dnet.base.Abstract
 		.addCheckbox({ name:"shipping", dataIndex:"shipping"  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:250,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"form" , width:200,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:250,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" , width:350,labelWidth:0 })     
+		.addPanel({ name:"col3", layout:"anchor" , width:200,labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -69,4 +77,3 @@ net.nan21.dnet.module.bd.geo.dc.Location$EditCtx = Ext.extend(dnet.base.Abstract
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.bd.geo.dc.Location$EditCtx", net.nan21.dnet.module.bd.geo.dc.Location$EditCtx ); 

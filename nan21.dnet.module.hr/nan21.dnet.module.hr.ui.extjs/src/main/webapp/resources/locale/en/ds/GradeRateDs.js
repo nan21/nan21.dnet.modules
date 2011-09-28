@@ -1,8 +1,6 @@
-Ext.ns("net.nan21.dnet.module.hr.grade.ds.model");
-net.nan21.dnet.module.hr.grade.ds.GradeRateDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.hr.grade.ds.model.GradeRateDs$Trl", {     	
 	currencyId__lbl : "Currency Id"
 	,currencyCode__lbl : "Currency Code"
 	
-}  
-	
- 
+});

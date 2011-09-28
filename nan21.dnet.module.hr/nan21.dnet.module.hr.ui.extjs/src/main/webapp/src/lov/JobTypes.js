@@ -1,24 +1,18 @@
-Ext.ns("net.nan21.dnet.module.hr.job.lovs");
-net.nan21.dnet.module.hr.job.lovs.JobTypes = Ext.extend( dnet.base.AbstractCombo, {	
-	 initComponent : function(){
-		Ext.apply(
-		    this, {
-                 mode: "remote"
-				,displayField:"name"
-				,triggerAction :"query"
-				,pageSize:30
-				,autoSelect:true
-				,listWidth:250 
-				,tpl: '<tpl for="."><div class="x-combo-list-item"><div style="">{name}</div></div></tpl>'
-				,minChars:0	
-				,_dataProviderFields_: 	net.nan21.dnet.module.hr.job.ds.model.JobTypeLovDs		
-				,_dataProviderName_:"JobTypeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasJobType"}
-			}
-		); 		 
-		this._createStore_(); 
-        net.nan21.dnet.module.hr.job.lovs.JobTypes.superclass.initComponent.call(this);
-	}	 
+
+Ext.define("net.nan21.dnet.module.hr.job.lovs.JobTypes", {
+	extend: "dnet.base.AbstractCombo",
+	alias: "widget.net.nan21.dnet.module.hr.job.lovs.JobTypes",
+ 
+	displayField:"name",
+	listConfig: {		
+		getInnerTpl: function() { 
+			return '<span>{name}</span>';
+		},
+		width:250
+	},		 
+	_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasJobType"},
+	recordModel: "net.nan21.dnet.module.hr.job.ds.model.JobTypeLovDs",
+	_dataProviderName_:"JobTypeLovDs"	 		
+	
 }); 
-Ext.reg("net.nan21.dnet.module.hr.job.lovs.JobTypes", net.nan21.dnet.module.hr.job.lovs.JobTypes);
  

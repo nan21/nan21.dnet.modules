@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.sd.ui.extjs/ds/SalesOrderTypeDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesOrderType", "nan21.dnet.module.sd.ui.extjs/ds/SalesOrderStatusDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesOrderStatus"]);
 
-Ext.ns("net.nan21.dnet.module.sd.order.frame");
-net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI",
+	
 	 _name_ : "net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -11,13 +13,13 @@ net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI = Ext.extend( dnet.ba
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("orderType",{ name:"orderTypeFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderType$Filter",height:35})	 
+		.addDcFilterFormView("orderType",{ name:"orderTypeFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderType$Filter",height:40})	 
 		.addDcView("orderType",{ name:"orderTypeEditList", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderType$EditList", frame:true})	 
 		.addDcFilterFormView("orderStatus",{ name:"orderStatusFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderStatus$Filter",height:30})	 
 		.addDcView("orderStatus",{ name:"orderStatusEditList", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderStatus$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasOrderType", layout:"border", defaults:{split:true},title:"Order type",header:false})  	 
-		.addPanel({name: "canvasOrderStatus", layout:"border", defaults:{split:true},title:"Order status",header:false})  	 
+		.addPanel({name: "canvasOrderType", layout:"border", defaults:{split:true},title:"Order type",preventHeader:true})  	 
+		.addPanel({name: "canvasOrderStatus", layout:"border", defaults:{split:true},title:"Order status",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -43,5 +45,4 @@ net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI = Ext.extend( dnet.ba
 			.beginToolbar("tlbOrderStatus", {dc:"orderStatus"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Order status"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI", net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI);   
+});  

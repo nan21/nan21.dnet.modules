@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ReportServerDs", "nan21.dnet.module.ad.ui.extjs/dc/ReportServer"]);
 
-Ext.ns("net.nan21.dnet.module.ad.report.frame");
-net.nan21.dnet.module.ad.report.frame.ReportServers_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.report.frame.ReportServers_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.report.frame.ReportServers_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.report.frame.ReportServers_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -13,7 +15,7 @@ net.nan21.dnet.module.ad.report.frame.ReportServers_UI = Ext.extend( dnet.base.A
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.ad.report.dc.ReportServer$Filter"})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.ad.report.dc.ReportServer$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -29,5 +31,4 @@ net.nan21.dnet.module.ad.report.frame.ReportServers_UI = Ext.extend( dnet.base.A
 			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.ad.report.frame.ReportServers_UI", net.nan21.dnet.module.ad.report.frame.ReportServers_UI);   
+});  

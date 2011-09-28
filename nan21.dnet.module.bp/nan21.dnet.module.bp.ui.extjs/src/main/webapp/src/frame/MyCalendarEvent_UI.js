@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.bp.ui.extjs/ds/MyCalendarCallDs", "nan21.dnet.module.bp.ui.extjs/dc/Call", "nan21.dnet.module.bp.ui.extjs/ds/MyCalendarMeetingDs", "nan21.dnet.module.bp.ui.extjs/dc/Meeting", "nan21.dnet.module.bp.ui.extjs/ds/MyCalendarTaskDs", "nan21.dnet.module.bp.ui.extjs/dc/Task","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventStatusCallLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventStatusCall","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventPriorityCallLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventPrioritiesCall","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/BusinessPartners","nan21.dnet.module.bp.ui.extjs/ds/BpContactLovDs","nan21.dnet.module.bp.ui.extjs/lov/BpContacts","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventStatusMeetingLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventStatusMeeting","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventPriorityMeetingLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventPrioritiesMeeting","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/BusinessPartners","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventStatusTaskLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventStatusTask","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventPriorityTaskLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventPrioritiesTask","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/BusinessPartners","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventStatusCallLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventStatusCall","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventPriorityCallLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventPrioritiesCall","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/BusinessPartners","nan21.dnet.module.bp.ui.extjs/ds/BpContactLovDs","nan21.dnet.module.bp.ui.extjs/lov/BpContacts","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventStatusMeetingLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventStatusMeeting","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventPriorityMeetingLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventPrioritiesMeeting","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/BusinessPartners","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventStatusTaskLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventStatusTask","nan21.dnet.module.bp.ui.extjs/ds/CalendarEventPriorityTaskLovDs","nan21.dnet.module.bp.ui.extjs/lov/CalendarEventPrioritiesTask","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/BusinessPartners"]);
 
-Ext.ns("net.nan21.dnet.module.bp.calendar.frame");
-net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI",
+	
 	 _name_ : "net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -22,9 +24,9 @@ net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI = Ext.extend( dnet.ba
 		.addDcView("taskEvnt",{ name:"taskEvntList", xtype:"net.nan21.dnet.module.bp.calendar.dc.Task$List"})	 
 		.addDcFormView("taskEvnt",{ name:"taskEvntEdit", xtype:"net.nan21.dnet.module.bp.calendar.dc.Task$Edit",height:200})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasCall", layout:"border", defaults:{split:true},title:"Calls",header:false})  	 
-		.addPanel({name: "canvasMeeting", layout:"border", defaults:{split:true},title:"Meetings",header:false})  	 
-		.addPanel({name: "canvasTask", layout:"border", defaults:{split:true},title:"Tasks",header:false})  	 
+		.addPanel({name: "canvasCall", layout:"border", defaults:{split:true},title:"Calls",preventHeader:true})  	 
+		.addPanel({name: "canvasMeeting", layout:"border", defaults:{split:true},title:"Meetings",preventHeader:true})  	 
+		.addPanel({name: "canvasTask", layout:"border", defaults:{split:true},title:"Tasks",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -59,5 +61,4 @@ net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI = Ext.extend( dnet.ba
 			.beginToolbar("taskEvntEditTlb", {dc:"taskEvnt"}).addSave().addNew().addCopy().addCancel().end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI", net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI);   
+});  

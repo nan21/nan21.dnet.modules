@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/JobDs", "nan21.dnet.module.hr.ui.extjs/dc/Job", "nan21.dnet.module.hr.ui.extjs/ds/JobSkillDs", "nan21.dnet.module.hr.ui.extjs/dc/JobSkill", "nan21.dnet.module.hr.ui.extjs/ds/JobRequirementDs", "nan21.dnet.module.hr.ui.extjs/dc/JobRequirement", "nan21.dnet.module.hr.ui.extjs/ds/JobCourseDs", "nan21.dnet.module.hr.ui.extjs/dc/JobCourse","nan21.dnet.module.hr.ui.extjs/ds/JobTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/JobTypes","nan21.dnet.module.hr.ui.extjs/ds/JobTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/JobTypes","nan21.dnet.module.hr.ui.extjs/ds/SkillLovDs","nan21.dnet.module.hr.ui.extjs/lov/Skills","nan21.dnet.module.hr.ui.extjs/ds/RatingLevelLovDs","nan21.dnet.module.hr.ui.extjs/lov/RatingLevels","nan21.dnet.module.hr.ui.extjs/ds/WorkRequirementLovDs","nan21.dnet.module.hr.ui.extjs/lov/WorkRequirements","nan21.dnet.module.hr.ui.extjs/ds/CourseLovDs","nan21.dnet.module.hr.ui.extjs/lov/Courses"]);
 
-Ext.ns("net.nan21.dnet.module.hr.job.frame");
-net.nan21.dnet.module.hr.job.frame.Job_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.hr.job.frame.Job_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.hr.job.frame.Job_UI",
+	
 	 _name_ : "net.nan21.dnet.module.hr.job.frame.Job_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -25,8 +27,8 @@ net.nan21.dnet.module.hr.job.frame.Job_UI = Ext.extend( dnet.base.AbstractUi, {
 		.addDcView("course",{ name:"courseCtxEditList", xtype:"net.nan21.dnet.module.hr.training.dc.JobCourse$JobCtxEditList", frame:true,title:"Courses"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "detailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -52,5 +54,4 @@ net.nan21.dnet.module.hr.job.frame.Job_UI = Ext.extend( dnet.base.AbstractUi, {
 			.beginToolbar("tlbCourseCtxEditList", {dc:"course"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Courses"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.hr.job.frame.Job_UI", net.nan21.dnet.module.hr.job.frame.Job_UI);   
+});  

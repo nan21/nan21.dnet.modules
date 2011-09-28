@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.sd.order.ds.model");
-net.nan21.dnet.module.sd.order.ds.SalesOrderDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {     	
 	docNo__lbl : "Doc No"
 	,docDate__lbl : "Doc Date"
 	,typeId__lbl : "Type Id"
@@ -30,6 +30,4 @@ net.nan21.dnet.module.sd.order.ds.SalesOrderDs.prototype._trl_ = {
 	,totalTaxAmount__lbl : "Total Tax Amount"
 	,className__lbl : "Class Name"
 	
-}  
-	
- 
+});

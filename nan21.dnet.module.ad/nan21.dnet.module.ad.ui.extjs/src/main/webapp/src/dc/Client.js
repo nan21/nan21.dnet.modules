@@ -1,18 +1,25 @@
    
-Ext.ns('net.nan21.dnet.module.ad.client.dc');	 
-net.nan21.dnet.module.ad.client.dc.Client = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"Client" 		 
-			,ds: new net.nan21.dnet.module.ad.client.ds.ClientDs()			  
-		});
-	 	net.nan21.dnet.module.ad.client.dc.Client.superclass.constructor.call(this, config);
-	}	 
-}); 
+
+Ext.define("net.nan21.dnet.module.ad.client.dc.Client", {
+	extend: "dnet.base.AbstractDc",
+ 
+	recordModel: "net.nan21.dnet.module.ad.client.ds.model.ClientDs",
+	paramModel: "net.nan21.dnet.module.ad.client.ds.param.ClientDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
  	
-Ext.ns('net.nan21.dnet.module.ad.client.dc');	 
-net.nan21.dnet.module.ad.client.dc.Client$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.ad.client.dc.Client$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -25,14 +32,14 @@ net.nan21.dnet.module.ad.client.dc.Client$Edit = Ext.extend(dnet.base.AbstractDc
 		.addTextField({ name:"tempPath", dataIndex:"tempPath",anchor:"-20" ,maxLength:255  })
 		.addCombo({ name:"defaultDsAccessRule", xtype:"combo", dataIndex:"defaultDsAccessRule",anchor:"-20",store:[ "allow", "deny"]  })
 		.addTextField({ name:"adminRole", dataIndex:"adminRole",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
-		.addDateField({ name:"createdAt", dataIndex:"createdAt",width:100,disabled:true  ,allowBlank:false})
-		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",width:100,disabled:true  ,allowBlank:false})
+		.addDateField({ name:"createdAt", dataIndex:"createdAt",anchor:"-20",disabled:true, hideTrigger:true ,allowBlank:false})
+		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",disabled:true, hideTrigger:true ,allowBlank:false})
 		.addTextField({ name:"createdBy", dataIndex:"createdBy",anchor:"-20",disabled:true  ,allowBlank:false,maxLength:32  })
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",disabled:true  ,allowBlank:false,maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"form" , width:220,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" , width:350,labelWidth:0 })     
+		.addPanel({ name:"col3", layout:"anchor" , width:220,labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -45,4 +52,3 @@ net.nan21.dnet.module.ad.client.dc.Client$Edit = Ext.extend(dnet.base.AbstractDc
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.ad.client.dc.Client$Edit", net.nan21.dnet.module.ad.client.dc.Client$Edit ); 

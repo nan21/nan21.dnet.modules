@@ -1,24 +1,18 @@
-Ext.ns("net.nan21.dnet.module.ad.report.lovs");
-net.nan21.dnet.module.ad.report.lovs.Reports = Ext.extend( dnet.base.AbstractCombo, {	
-	 initComponent : function(){
-		Ext.apply(
-		    this, {
-                 mode: "remote"
-				,displayField:"code"
-				,triggerAction :"query"
-				,pageSize:30
-				,autoSelect:true
-				,listWidth:250 
-				,tpl: '<tpl for="."><div class="x-combo-list-item"><div style="">{code}</div><div style="padding-left:30px;">{name}</div></div></tpl>'
-				,minChars:0	
-				,_dataProviderFields_: 	net.nan21.dnet.module.ad.report.ds.model.ReportLovDs		
-				,_dataProviderName_:"ReportLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.ad.report.frame.Reports_UI",bundle:"nan21.dnet.module.ad.ui.extjs"}
-			}
-		); 		 
-		this._createStore_(); 
-        net.nan21.dnet.module.ad.report.lovs.Reports.superclass.initComponent.call(this);
-	}	 
+
+Ext.define("net.nan21.dnet.module.ad.report.lovs.Reports", {
+	extend: "dnet.base.AbstractCombo",
+	alias: "widget.net.nan21.dnet.module.ad.report.lovs.Reports",
+ 
+	displayField:"code",
+	listConfig: {		
+		getInnerTpl: function() { 
+			return '<span>{code}, {name}</span>';
+		},
+		width:250
+	},		 
+	_editDialog_:{custom:false, name: "net.nan21.dnet.module.ad.report.frame.Reports_UI",bundle:"nan21.dnet.module.ad.ui.extjs"},
+	recordModel: "net.nan21.dnet.module.ad.report.ds.model.ReportLovDs",
+	_dataProviderName_:"ReportLovDs"	 		
+	
 }); 
-Ext.reg("net.nan21.dnet.module.ad.report.lovs.Reports", net.nan21.dnet.module.ad.report.lovs.Reports);
  

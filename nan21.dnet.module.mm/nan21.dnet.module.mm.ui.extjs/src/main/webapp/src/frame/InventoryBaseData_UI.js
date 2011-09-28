@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/StockLocatorTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/StockLocatorType", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionSourceTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionSourceType", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionActionDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionAction", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionType","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionSourceTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionSourceTypeS","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionActionLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionActions","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionSourceTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionSourceTypeS","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionActionLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionActions"]);
 
-Ext.ns("net.nan21.dnet.module.mm.inventory.frame");
-net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI",
+	
 	 _name_ : "net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -13,19 +15,19 @@ net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI = Ext.extend( dnet
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("sloctype",{ name:"sloctypeFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocatorType$Filter",height:35})	 
+		.addDcFilterFormView("sloctype",{ name:"sloctypeFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocatorType$Filter",height:40})	 
 		.addDcView("sloctype",{ name:"sloctypeEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocatorType$EditList", frame:true})	 
-		.addDcFilterFormView("txsrctype",{ name:"txsrctypeFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType$Filter",height:35})	 
+		.addDcFilterFormView("txsrctype",{ name:"txsrctypeFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType$Filter",height:40})	 
 		.addDcView("txsrctype",{ name:"txsrctypeEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType$EditList", frame:true})	 
-		.addDcFilterFormView("txaction",{ name:"txactionFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionAction$Filter",height:35})	 
+		.addDcFilterFormView("txaction",{ name:"txactionFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionAction$Filter",height:40})	 
 		.addDcView("txaction",{ name:"txactionEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionAction$EditList", frame:true})	 
 		.addDcFilterFormView("txtype",{ name:"txtypeFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$Filter",height:70})	 
 		.addDcView("txtype",{ name:"txtypeEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasSloctype", layout:"border", defaults:{split:true},title:"Locator types",header:false})  	 
-		.addPanel({name: "canvasTxsrctype", layout:"border", defaults:{split:true},title:"Transaction source type",header:false})  	 
-		.addPanel({name: "canvasTxaction", layout:"border", defaults:{split:true},title:"Transaction action",header:false})  	 
-		.addPanel({name: "canvasTxtype", layout:"border", defaults:{split:true},title:"Transaction type",header:false})  	 
+		.addPanel({name: "canvasSloctype", layout:"border", defaults:{split:true},title:"Locator types",preventHeader:true})  	 
+		.addPanel({name: "canvasTxsrctype", layout:"border", defaults:{split:true},title:"Transaction source type",preventHeader:true})  	 
+		.addPanel({name: "canvasTxaction", layout:"border", defaults:{split:true},title:"Transaction action",preventHeader:true})  	 
+		.addPanel({name: "canvasTxtype", layout:"border", defaults:{split:true},title:"Transaction type",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -57,5 +59,4 @@ net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI = Ext.extend( dnet
 			.beginToolbar("tlbTxtypeEditList", {dc:"txtype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Transaction type"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI", net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI);   
+});  

@@ -1,28 +1,33 @@
    
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
-net.nan21.dnet.module.ad.workflow.dc.ActDeployment = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"ActDeployment" 		 
-			,ds: new net.nan21.dnet.module.ad.workflow.ds.ActDeploymentDs()			  
-		});
-	 	net.nan21.dnet.module.ad.workflow.dc.ActDeployment.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc'); 
-net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentDs",
+	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActDeploymentDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addDateField({ name:"from", dataIndex:"from", _isParam_:true,width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("from", nv);} }} ,format:Ext.DATE_FORMAT })
-		.addDateField({ name:"to", dataIndex:"to", _isParam_:true,width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("to", nv);} }} ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"from", dataIndex:"from", _isParam_:true,anchor:"-20",listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("from", nv);} }} ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"to", dataIndex:"to", _isParam_:true,anchor:"-20",listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("to", nv);} }} ,format:Ext.DATE_FORMAT })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -32,10 +37,11 @@ net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter = Ext.extend(dnet.base
 		.addChildrenTo("col2",["from","to"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter", net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 	 
-net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -47,4 +53,3 @@ net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List = Ext.extend(dnet.base.A
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List", net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List ); 

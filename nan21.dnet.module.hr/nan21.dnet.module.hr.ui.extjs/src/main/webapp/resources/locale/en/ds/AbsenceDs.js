@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.hr.time.ds.model");
-net.nan21.dnet.module.hr.time.ds.AbsenceDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.hr.time.ds.model.AbsenceDs$Trl", {     	
 	employeeId__lbl : "Employee Id"
 	,employeeCode__lbl : "Employee Code"
 	,employee__lbl : "Employee"
@@ -13,6 +13,4 @@ net.nan21.dnet.module.hr.time.ds.AbsenceDs.prototype._trl_ = {
 	
 	,from__lbl :"From"
 	,to__lbl :"To"
-}  
-	
- 
+});

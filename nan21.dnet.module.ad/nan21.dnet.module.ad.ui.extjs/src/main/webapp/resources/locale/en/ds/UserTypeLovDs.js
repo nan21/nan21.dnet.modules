@@ -1,6 +1,4 @@
-Ext.ns("net.nan21.dnet.module.ad.usr.ds.model");
-net.nan21.dnet.module.ad.usr.ds.UserTypeLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserTypeLovDs$Trl", {     	
 	
-}  
-	
- 
+});

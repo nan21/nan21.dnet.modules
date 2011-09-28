@@ -1,10 +1,17 @@
-Ext.ns("net.nan21.dnet.module.ad.usr.asgn");
-net.nan21.dnet.module.ad.usr.asgn.UserRoles = Ext.extend(dnet.base.AbstractAsgn, {
+	
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserRoles$Model" , {
+	extend: 'Ext.data.Model',
+	fields:  [{name:"id",type:"string"},{name:"name",type:"string"},{name:"description",type:"string"}]
+});
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserRoles", {
+	extend: "dnet.base.AbstractAsgn",
 	dsName: "UserRoles", 
-	recordFields : [{name:"id",type:"string"},{name:"name",type:"string"},{name:"description",type:"string"}]
+	recordModel: "net.nan21.dnet.module.ad.usr.asgn.UserRoles$Model"
 });	 
  
-net.nan21.dnet.module.ad.usr.asgn.UserRoles$List = Ext.extend( dnet.base.AbstractAsgnGrid, {
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserRoles$List", {
+	extend: "dnet.base.AbstractAsgnGrid",
+	alias:[ "widget.net.nan21.dnet.module.ad.usr.asgn.UserRoles$Left","widget.net.nan21.dnet.module.ad.usr.asgn.UserRoles$Right" ],
 	_defineColumns_: function () {
 		this._getBuilder_()		
 		.addTextColumn( {name:"id", header:"Id", dataIndex:"id", hidden:true, width:100})
@@ -12,10 +19,10 @@ net.nan21.dnet.module.ad.usr.asgn.UserRoles$List = Ext.extend( dnet.base.Abstrac
 		.addTextColumn( {name:"description", header:"Description", dataIndex:"description", width:150 })
 	} 
 });
-Ext.reg("net.nan21.dnet.module.ad.usr.asgn.UserRoles$Left", net.nan21.dnet.module.ad.usr.asgn.UserRoles$List);
-Ext.reg("net.nan21.dnet.module.ad.usr.asgn.UserRoles$Right", net.nan21.dnet.module.ad.usr.asgn.UserRoles$List); 
 
-net.nan21.dnet.module.ad.usr.asgn.UserRoles$Ui = Ext.extend(dnet.base.AbstractAsgnUi, {
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserRoles$Ui", {
+	extend: "dnet.base.AbstractAsgnUi",
+	alias: "widget.net.nan21.dnet.module.ad.usr.asgn.UserRoles$Ui",
  	 width:700
 	,height:400 
 	,title:"Assign roles to user"
@@ -29,4 +36,3 @@ net.nan21.dnet.module.ad.usr.asgn.UserRoles$Ui = Ext.extend(dnet.base.AbstractAs
 			.addRightGrid({ xtype:"net.nan21.dnet.module.ad.usr.asgn.UserRoles$Right"})
 	}
 });	 
-Ext.reg("net.nan21.dnet.module.ad.usr.asgn.UserRoles$Ui", net.nan21.dnet.module.ad.usr.asgn.UserRoles$Ui);

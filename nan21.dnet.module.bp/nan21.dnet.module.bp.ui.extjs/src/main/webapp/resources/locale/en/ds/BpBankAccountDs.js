@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bp.md.ds.model");
-net.nan21.dnet.module.bp.md.ds.BpBankAccountDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpBankAccountDs$Trl", {     	
 	bankId__lbl : "Bank Id"
 	,bankCode__lbl : "Bank Code"
 	,bankBranch__lbl : "Bank Branch"
@@ -8,6 +8,4 @@ net.nan21.dnet.module.bp.md.ds.BpBankAccountDs.prototype._trl_ = {
 	,currencyId__lbl : "Currency Id"
 	,currencyCode__lbl : "Currency Code"
 	
-}  
-	
- 
+});

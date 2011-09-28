@@ -1,27 +1,32 @@
    
-Ext.ns('net.nan21.dnet.module.ux.example.dc');	 
-net.nan21.dnet.module.ux.example.dc.LandFormType = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"LandFormType" 		 
-			,ds: new net.nan21.dnet.module.ux.example.ds.LandFormTypeDs()			  
-		});
-	 	net.nan21.dnet.module.ux.example.dc.LandFormType.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ux.example.dc'); 
-net.nan21.dnet.module.ux.example.dc.LandFormType$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.ux.example.dc.LandFormType", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.ux.example.ds.model.LandFormTypeDs",
+	paramModel: "net.nan21.dnet.module.ux.example.ds.param.LandFormTypeDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.ux.example.dc.LandFormType$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ux.example.dc.LandFormType$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"form", width:250,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:250,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -31,10 +36,12 @@ net.nan21.dnet.module.ux.example.dc.LandFormType$Filter = Ext.extend(dnet.base.A
 		.addChildrenTo("col2",["active"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.ux.example.dc.LandFormType$Filter", net.nan21.dnet.module.ux.example.dc.LandFormType$Filter ); 
  	
-Ext.ns('net.nan21.dnet.module.ux.example.dc');	 	 
-net.nan21.dnet.module.ux.example.dc.LandFormType$EditList = Ext.extend(dnet.base.AbstractDcvEditableGrid, {
+ 	 
+Ext.define("net.nan21.dnet.module.ux.example.dc.LandFormType$EditList", {
+	extend: "dnet.base.AbstractDcvEditableGrid",
+	alias: "widget.net.nan21.dnet.module.ux.example.dc.LandFormType$EditList",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {
@@ -51,4 +58,3 @@ net.nan21.dnet.module.ux.example.dc.LandFormType$EditList = Ext.extend(dnet.base
 	  ;  		   
 	}  
 });
-Ext.reg("net.nan21.dnet.module.ux.example.dc.LandFormType$EditList", net.nan21.dnet.module.ux.example.dc.LandFormType$EditList ); 

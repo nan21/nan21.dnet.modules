@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.hr.grade.ds.model");
-net.nan21.dnet.module.hr.grade.ds.GradeRateValueDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.hr.grade.ds.model.GradeRateValueDs$Trl", {     	
 	gradeId__lbl : "Grade Id"
 	,gradeName__lbl : "Grade Name"
 	,gradeRateId__lbl : "Grade Rate Id"
@@ -10,6 +10,4 @@ net.nan21.dnet.module.hr.grade.ds.GradeRateValueDs.prototype._trl_ = {
 	,validFrom__lbl : "Valid From"
 	,validTo__lbl : "Valid To"
 	
-}  
-	
- 
+});

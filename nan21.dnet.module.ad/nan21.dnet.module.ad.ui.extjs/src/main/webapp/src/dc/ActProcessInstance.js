@@ -1,31 +1,36 @@
    
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
-net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"ActProcessInstance" 		 
-			,ds: new net.nan21.dnet.module.ad.workflow.ds.ActProcessInstanceDs()			  
-		});
-	 	net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc'); 
-net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceDs",
+	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActProcessInstanceDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20",maxLength:255  })
-		.addLov({ name:"process", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActProcessDefinitions", dataIndex:"process",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "processId"} ]  })
+		.addLov({ name:"process", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActProcessDefinitions", dataIndex:"process",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "processId"} ]  })
 		.addTextField({ name:"startedBy", dataIndex:"startedBy",anchor:"-20",maxLength:32  })
-		.addDateField({ name:"from", dataIndex:"from", _isParam_:true,width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("from", nv);} }} ,format:Ext.DATE_FORMAT })
-		.addDateField({ name:"to", dataIndex:"to", _isParam_:true,width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("to", nv);} }} ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"from", dataIndex:"from", _isParam_:true,anchor:"-20",listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("from", nv);} }} ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"to", dataIndex:"to", _isParam_:true,anchor:"-20",listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("to", nv);} }} ,format:Ext.DATE_FORMAT })
 		//containers
-		.addPanel({ name:"col1", layout:"form", width:300,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:300,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col3", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -36,10 +41,11 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter = Ext.extend(dnet
 		.addChildrenTo("col3",["startedBy","id"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter", net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 	 
-net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List",
+	
 	 _noImport_: true
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -54,4 +60,3 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List = Ext.extend(dnet.b
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List", net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List ); 

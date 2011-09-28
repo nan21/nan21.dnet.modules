@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bp.md.ds.model");
-net.nan21.dnet.module.bp.md.ds.ContactDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bp.md.ds.model.ContactDs$Trl", {     	
 	firstName__lbl : "First Name"
 	,lastName__lbl : "Last Name"
 	,gender__lbl : "Gender"
@@ -7,6 +7,4 @@ net.nan21.dnet.module.bp.md.ds.ContactDs.prototype._trl_ = {
 	,position__lbl : "Position"
 	,className__lbl : "Class Name"
 	
-}  
-	
- 
+});

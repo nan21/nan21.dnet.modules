@@ -1,19 +1,24 @@
    
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
-net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"ActTaskInstanceHistory" 		 
-			,ds: new net.nan21.dnet.module.ad.workflow.ds.ActTaskInstanceHistoryDs()			  
-		});
-	 	net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc'); 
-net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDs",
+	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActTaskInstanceHistoryDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -26,17 +31,18 @@ net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter = Ext.extend(
 		.addTextField({ name:"description",_sharedLabel_:true, dataIndex:"description",anchor:"-20",maxLength:4000  })
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20",maxLength:32  })
 		//containers
-		.addPanel({ name:"main", layout:"form", autoScroll:true,width:210,labelWidth:0 })
+		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210,labelWidth:0 })
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["id","processDefinitionId","taskDefinitionKey","processInstanceId","executionId","name","description","assignee"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter", net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 	 
-net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List",
+	
 	 _noImport_: true
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -56,16 +62,18 @@ net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List = Ext.extend(dn
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List", net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List ); 
  	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
-net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignForm = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignForm", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignForm",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
 		//containers
-		.addPanel({ name:"main", layout:"form" , autoScroll:true,width:250,labelWidth:0 })     
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250,labelWidth:0 })     
 		;     
 	}
 	,_linkElements_: function () {
@@ -74,4 +82,3 @@ net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignForm = Ext.ext
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignForm", net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignForm ); 

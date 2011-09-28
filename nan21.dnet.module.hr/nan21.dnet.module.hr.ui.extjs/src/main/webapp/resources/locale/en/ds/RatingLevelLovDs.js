@@ -1,8 +1,6 @@
-Ext.ns("net.nan21.dnet.module.hr.skill.ds.model");
-net.nan21.dnet.module.hr.skill.ds.RatingLevelLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.hr.skill.ds.model.RatingLevelLovDs$Trl", {     	
 	ratingScaleId__lbl : "Rating Scale Id"
 	,value__lbl : "Value"
 	
-}  
-	
- 
+});

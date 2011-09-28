@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.sd.ui.extjs/ds/SalesOrderDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesOrder", "nan21.dnet.module.sd.ui.extjs/ds/SalesOrderItemDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesOrderItem","nan21.dnet.module.sd.ui.extjs/ds/SalesOrderStatusLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesOrderStatus","nan21.dnet.module.sd.ui.extjs/ds/SalesOrderTypeLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesOrderType","nan21.dnet.module.sd.ui.extjs/ds/PriceListLovDs","nan21.dnet.module.sd.ui.extjs/lov/PriceLists","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bp.ui.extjs/ds/DeliveryMethodLovDs","nan21.dnet.module.bp.ui.extjs/lov/DeliveryMethods","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/Customers","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/BusinessPartners","nan21.dnet.module.bd.ui.extjs/ds/LocationToBillLovDs","nan21.dnet.module.bd.ui.extjs/lov/LocationsToBill","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/BusinessPartners","nan21.dnet.module.bd.ui.extjs/ds/LocationToShipLovDs","nan21.dnet.module.bd.ui.extjs/lov/LocationsToShip","nan21.dnet.module.bp.ui.extjs/ds/DeliveryMethodLovDs","nan21.dnet.module.bp.ui.extjs/lov/DeliveryMethods","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/Customers","nan21.dnet.module.sd.ui.extjs/ds/SalesOrderStatusLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesOrderStatus","nan21.dnet.module.sd.ui.extjs/ds/SalesOrderTypeLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesOrderType","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.mm.ui.extjs/ds/ProductLovDs","nan21.dnet.module.mm.ui.extjs/lov/Products","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure"]);
 
-Ext.ns("net.nan21.dnet.module.sd.order.frame");
-net.nan21.dnet.module.sd.order.frame.SalesOrder_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.sd.order.frame.SalesOrder_UI",
+	
 	 _name_ : "net.nan21.dnet.module.sd.order.frame.SalesOrder_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -17,8 +19,8 @@ net.nan21.dnet.module.sd.order.frame.SalesOrder_UI = Ext.extend( dnet.base.Abstr
 		.addDcFormView("order",{ name:"orderEdit", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$Edit",height:150})	 
 		.addDcView("item",{ name:"itemEditList", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderItem$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -49,5 +51,4 @@ net.nan21.dnet.module.sd.order.frame.SalesOrder_UI = Ext.extend( dnet.base.Abstr
 	,_afterDefineDcs_: function() {	
 		this.refreshHeader();
 	}
-});
-Ext.reg("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI", net.nan21.dnet.module.sd.order.frame.SalesOrder_UI);   
+});  

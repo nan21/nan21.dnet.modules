@@ -1,29 +1,34 @@
    
-Ext.ns('net.nan21.dnet.module.hr.training.dc');	 
-net.nan21.dnet.module.hr.training.dc.Course = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"Course" 		 
-			,ds: new net.nan21.dnet.module.hr.training.ds.CourseDs()			  
-		});
-	 	net.nan21.dnet.module.hr.training.dc.Course.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.training.dc'); 
-net.nan21.dnet.module.hr.training.dc.Course$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.hr.training.dc.Course", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.hr.training.ds.model.CourseDs",
+	paramModel: "net.nan21.dnet.module.hr.training.ds.param.CourseDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.hr.training.dc.Course$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.hr.training.dc.Course$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
-		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
-		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.training.lovs.CourseTypes", dataIndex:"type",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.training.lovs.CourseTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -33,10 +38,11 @@ net.nan21.dnet.module.hr.training.dc.Course$Filter = Ext.extend(dnet.base.Abstra
 		.addChildrenTo("col2",["type","active"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.hr.training.dc.Course$Filter", net.nan21.dnet.module.hr.training.dc.Course$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.training.dc');	 	 
-net.nan21.dnet.module.hr.training.dc.Course$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.hr.training.dc.Course$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.hr.training.dc.Course$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -58,10 +64,12 @@ net.nan21.dnet.module.hr.training.dc.Course$List = Ext.extend(dnet.base.Abstract
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.hr.training.dc.Course$List", net.nan21.dnet.module.hr.training.dc.Course$List ); 
  	
-Ext.ns('net.nan21.dnet.module.hr.training.dc');	 
-net.nan21.dnet.module.hr.training.dc.Course$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.hr.training.dc.Course$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.hr.training.dc.Course$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -72,9 +80,9 @@ net.nan21.dnet.module.hr.training.dc.Course$Edit = Ext.extend(dnet.base.Abstract
 		.addTextArea({ name:"deliveredCompetences", dataIndex:"deliveredCompetences",height:80,anchor:"-20"   })
 		.addTextArea({ name:"intendedAudience", dataIndex:"intendedAudience",height:80,anchor:"-20"   })
 		.addTextArea({ name:"requirements", dataIndex:"requirements",height:80,anchor:"-20"   })
-		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.training.lovs.CourseTypes", dataIndex:"type",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.training.lovs.CourseTypes", dataIndex:"type",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:600,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:600,labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -85,4 +93,3 @@ net.nan21.dnet.module.hr.training.dc.Course$Edit = Ext.extend(dnet.base.Abstract
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.hr.training.dc.Course$Edit", net.nan21.dnet.module.hr.training.dc.Course$Edit ); 

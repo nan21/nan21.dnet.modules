@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ClientDs", "nan21.dnet.module.ad.ui.extjs/dc/Client"]);
 
-Ext.ns("net.nan21.dnet.module.ad.client.frame");
-net.nan21.dnet.module.ad.client.frame.Client_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.client.frame.Client_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.client.frame.Client_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.client.frame.Client_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -12,7 +14,7 @@ net.nan21.dnet.module.ad.client.frame.Client_UI = Ext.extend( dnet.base.Abstract
 		this._getBuilder_()	
 		.addDcFormView("client",{ name:"clientEdit", xtype:"net.nan21.dnet.module.ad.client.dc.Client$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -37,5 +39,4 @@ net.nan21.dnet.module.ad.client.frame.Client_UI = Ext.extend( dnet.base.Abstract
 	,_afterDefineDcs_: function() {	
 		this.loadCurrentClient();
 	}
-});
-Ext.reg("net.nan21.dnet.module.ad.client.frame.Client_UI", net.nan21.dnet.module.ad.client.frame.Client_UI);   
+});  

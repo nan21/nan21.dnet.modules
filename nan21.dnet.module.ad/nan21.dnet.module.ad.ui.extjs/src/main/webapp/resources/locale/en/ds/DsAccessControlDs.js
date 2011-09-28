@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.ad.usr.ds.model");
-net.nan21.dnet.module.ad.usr.ds.DsAccessControlDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ad.usr.ds.model.DsAccessControlDs$Trl", {     	
 	dsName__lbl : "Ds Name"
 	,queryAllowed__lbl : "Query Allowed"
 	,insertAllowed__lbl : "Insert Allowed"
@@ -10,6 +10,4 @@ net.nan21.dnet.module.ad.usr.ds.DsAccessControlDs.prototype._trl_ = {
 	,accessControlId__lbl : "Access Control Id"
 	,accessControl__lbl : "Access Control"
 	
-}  
-	
- 
+});

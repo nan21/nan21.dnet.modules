@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.mm.md.ds.model");
-net.nan21.dnet.module.mm.md.ds.ProductAttributeValueDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs$Trl", {     	
 	productId__lbl : "Product Id"
 	,attributeId__lbl : "Attribute Id"
 	,attribute__lbl : "Attribute"
@@ -11,6 +11,4 @@ net.nan21.dnet.module.mm.md.ds.ProductAttributeValueDs.prototype._trl_ = {
 	,listOfvalues__lbl : "List Ofvalues"
 	,value__lbl : "Value"
 	
-}  
-	
- 
+});

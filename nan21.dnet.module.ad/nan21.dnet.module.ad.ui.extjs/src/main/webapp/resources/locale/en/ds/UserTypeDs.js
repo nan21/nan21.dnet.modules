@@ -1,8 +1,6 @@
-Ext.ns("net.nan21.dnet.module.ad.usr.ds.model");
-net.nan21.dnet.module.ad.usr.ds.UserTypeDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserTypeDs$Trl", {     	
 	employeeAccount__lbl : "Employee Account"
 	,bpAccount__lbl : "Bp Account"
 	
-}  
-	
- 
+});

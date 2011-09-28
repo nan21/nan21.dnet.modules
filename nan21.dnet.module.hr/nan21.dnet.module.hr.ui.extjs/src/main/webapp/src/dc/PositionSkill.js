@@ -1,33 +1,39 @@
    
-Ext.ns('net.nan21.dnet.module.hr.skill.dc');	 
-net.nan21.dnet.module.hr.skill.dc.PositionSkill = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"PositionSkill" 		 
-			,ds: new net.nan21.dnet.module.hr.skill.ds.PositionSkillDs()			  
-		});
-	 	net.nan21.dnet.module.hr.skill.dc.PositionSkill.superclass.constructor.call(this, config);
-	}	 
-}); 
+
+Ext.define("net.nan21.dnet.module.hr.skill.dc.PositionSkill", {
+	extend: "dnet.base.AbstractDc",
+ 
+	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.PositionSkillDs",
+	paramModel: "net.nan21.dnet.module.hr.skill.ds.param.PositionSkillDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
  	
-Ext.ns('net.nan21.dnet.module.hr.skill.dc');	 	 
-net.nan21.dnet.module.hr.skill.dc.PositionSkill$CtxEditList = Ext.extend(dnet.base.AbstractDcvEditableGrid, {
+ 	 
+Ext.define("net.nan21.dnet.module.hr.skill.dc.PositionSkill$CtxEditList", {
+	extend: "dnet.base.AbstractDcvEditableGrid",
+	alias: "widget.net.nan21.dnet.module.hr.skill.dc.PositionSkill$CtxEditList",
+	
 	 _noImport_: true
 	,_noExport_: true
 	,_defineColumns_: function () {
 		this._getBuilder_()
-		.addNumberColumn({ name:"positionId", dataIndex:"positionId", hidden:true, align:"right",format:"0",width:70,editable:false ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
-		.addNumberColumn({ name:"competenceId", dataIndex:"competenceId", hidden:true, align:"right",format:"0",width:70,editable:false ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
+		.addNumberColumn({ name:"positionId", dataIndex:"positionId", hidden:true, align:"right",format:"0",width:70})
+		.addNumberColumn({ name:"competenceId", dataIndex:"competenceId", hidden:true, align:"right",format:"0",width:70})
 		.addLov({name:"competence", xtype:"gridcolumn", dataIndex:"competence", width:300,editor:{xtype:"net.nan21.dnet.module.hr.skill.lovs.Skills" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "competenceId"} ,{lovField:"ratingScaleId", dsField: "ratingScaleId"} ]} })
-		.addNumberColumn({ name:"requiredLevelId", dataIndex:"requiredLevelId", hidden:true, align:"right",format:"0",width:70,editable:false ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
+		.addNumberColumn({ name:"requiredLevelId", dataIndex:"requiredLevelId", hidden:true, align:"right",format:"0",width:70})
 		.addLov({name:"requiredLevel", xtype:"gridcolumn", dataIndex:"requiredLevel",width:120,editor:{xtype:"net.nan21.dnet.module.hr.skill.lovs.RatingLevels" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "requiredLevelId"} ],filterFieldMapping: [{lovField:"ratingScaleId", dsField: "ratingScaleId"} ]} })
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70,editable:false ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT,editable:false ,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT} })
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT,editable:false ,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT} })
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100,editable:false,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100,editable:false,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} })
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})
+		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
 	  ;  		   
 	}  
 });
-Ext.reg("net.nan21.dnet.module.hr.skill.dc.PositionSkill$CtxEditList", net.nan21.dnet.module.hr.skill.dc.PositionSkill$CtxEditList ); 

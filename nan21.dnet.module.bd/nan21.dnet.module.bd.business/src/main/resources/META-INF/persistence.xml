@@ -15,6 +15,7 @@
 		
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Region</class>
+		<class>net.nan21.dnet.module.bd.geo.domain.entity.RegionType</class>		
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.City</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Location</class>
 		
@@ -27,6 +28,11 @@
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchy</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchyItem</class>
+		
+		
+		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
+		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>
+		
 		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

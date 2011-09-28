@@ -1,7 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bp.calendar.ds.model");
-net.nan21.dnet.module.bp.calendar.ds.CalendarEventStatusCallLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventStatusCallLovDs$Trl", {     	
 	eventType__lbl : "Event Type"
 	
-}  
-	
- 
+});

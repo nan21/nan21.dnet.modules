@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.hr.employee.ds.model");
-net.nan21.dnet.module.hr.employee.ds.EmployeeDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs$Trl", {     	
 	employerId__lbl : "Employer Id"
 	,employerCode__lbl : "Employer Code"
 	,firstName__lbl : "First Name"
@@ -37,6 +37,4 @@ net.nan21.dnet.module.hr.employee.ds.EmployeeDs.prototype._trl_ = {
 	,payrollId__lbl : "Payroll Id"
 	,payroll__lbl : "Payroll"
 	
-}  
-	
- 
+});

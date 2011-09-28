@@ -23,17 +23,18 @@ Export-Package: net.nan21.dnet.module.ad._businessdelegates;version="1
  rsistence,net.nan21.dnet.core.business.service,net.nan21.dnet.module.
  ad.system.business.service,net.nan21.dnet.module.ad.system.domain.ent
  ity",net.nan21.dnet.module.ad.usr.business.service;version="1.0.0.M2"
- ;uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.usr.
- domain.entity",net.nan21.dnet.module.ad.usr.business.serviceimpl;vers
- ion="1.0.0.M2";uses:="javax.persistence,net.nan21.dnet.core.business.
- service,net.nan21.dnet.module.ad.usr.business.service,net.nan21.dnet.
- module.ad.usr.domain.entity",net.nan21.dnet.module.ad.workflow.busine
- ss.service;version="1.0.0.M2";uses:="net.nan21.dnet.core.api.service,
- net.nan21.dnet.module.ad.workflow.domain.entity",net.nan21.dnet.modul
- e.ad.workflow.business.serviceimpl;version="1.0.0.M2";uses:="javax.pe
- rsistence,net.nan21.dnet.core.business.service,net.nan21.dnet.module.
- ad.workflow.business.service,net.nan21.dnet.module.ad.workflow.domain
- .entity"
+ ;uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.syst
+ em.domain.entity,net.nan21.dnet.module.ad.usr.domain.entity",net.nan2
+ 1.dnet.module.ad.usr.business.serviceimpl;version="1.0.0.M2";uses:="j
+ avax.persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.
+ module.ad.system.domain.entity,net.nan21.dnet.module.ad.usr.business.
+ service,net.nan21.dnet.module.ad.usr.domain.entity",net.nan21.dnet.mo
+ dule.ad.workflow.business.service;version="1.0.0.M2";uses:="net.nan21
+ .dnet.core.api.service,net.nan21.dnet.module.ad.workflow.domain.entit
+ y",net.nan21.dnet.module.ad.workflow.business.serviceimpl;version="1.
+ 0.0.M2";uses:="javax.persistence,net.nan21.dnet.core.business.service
+ ,net.nan21.dnet.module.ad.workflow.business.service,net.nan21.dnet.mo
+ dule.ad.workflow.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.core.busine
  ss;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.domain;version=

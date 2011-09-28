@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ux.ui.extjs/ds/LandFormTypeDs", "nan21.dnet.module.ux.ui.extjs/dc/LandFormType"]);
 
-Ext.ns("net.nan21.dnet.module.ux.example.frame");
-net.nan21.dnet.module.ux.example.frame.LandFormType_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ux.example.frame.LandFormType_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ux.example.frame.LandFormType_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ux.example.frame.LandFormType_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -29,5 +31,4 @@ net.nan21.dnet.module.ux.example.frame.LandFormType_UI = Ext.extend( dnet.base.A
 			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.ux.example.frame.LandFormType_UI", net.nan21.dnet.module.ux.example.frame.LandFormType_UI);   
+});  

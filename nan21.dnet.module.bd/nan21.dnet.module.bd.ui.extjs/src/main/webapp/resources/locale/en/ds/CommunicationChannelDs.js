@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bd.contact.ds.model");
-net.nan21.dnet.module.bd.contact.ds.CommunicationChannelDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelDs$Trl", {     	
 	typeId__lbl : "Type Id"
 	,type__lbl : "Type"
 	,targetId__lbl : "Target Id"
@@ -8,6 +8,4 @@ net.nan21.dnet.module.bd.contact.ds.CommunicationChannelDs.prototype._trl_ = {
 	,validFrom__lbl : "Valid From"
 	,validTo__lbl : "Valid To"
 	
-}  
-	
- 
+});

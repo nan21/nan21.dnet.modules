@@ -1,6 +1,4 @@
-Ext.ns("net.nan21.dnet.module.bd.geo.ds.model");
-net.nan21.dnet.module.bd.geo.ds.RegionLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bd.geo.ds.model.RegionLovDs$Trl", {     	
 	
-}  
-	
- 
+});

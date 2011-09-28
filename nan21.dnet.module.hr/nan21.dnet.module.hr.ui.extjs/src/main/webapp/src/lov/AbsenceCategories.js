@@ -1,24 +1,18 @@
-Ext.ns("net.nan21.dnet.module.hr.time.lovs");
-net.nan21.dnet.module.hr.time.lovs.AbsenceCategories = Ext.extend( dnet.base.AbstractCombo, {	
-	 initComponent : function(){
-		Ext.apply(
-		    this, {
-                 mode: "remote"
-				,displayField:"name"
-				,triggerAction :"query"
-				,pageSize:30
-				,autoSelect:true
-				,listWidth:250 
-				,tpl: '<tpl for="."><div class="x-combo-list-item"><div style="">{name}</div></div></tpl>'
-				,minChars:0	
-				,_dataProviderFields_: 	net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryLovDs		
-				,_dataProviderName_:"AbsenceCategoryLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasCateg"}
-			}
-		); 		 
-		this._createStore_(); 
-        net.nan21.dnet.module.hr.time.lovs.AbsenceCategories.superclass.initComponent.call(this);
-	}	 
+
+Ext.define("net.nan21.dnet.module.hr.time.lovs.AbsenceCategories", {
+	extend: "dnet.base.AbstractCombo",
+	alias: "widget.net.nan21.dnet.module.hr.time.lovs.AbsenceCategories",
+ 
+	displayField:"name",
+	listConfig: {		
+		getInnerTpl: function() { 
+			return '<span>{name}</span>';
+		},
+		width:250
+	},		 
+	_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasCateg"},
+	recordModel: "net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryLovDs",
+	_dataProviderName_:"AbsenceCategoryLovDs"	 		
+	
 }); 
-Ext.reg("net.nan21.dnet.module.hr.time.lovs.AbsenceCategories", net.nan21.dnet.module.hr.time.lovs.AbsenceCategories);
  

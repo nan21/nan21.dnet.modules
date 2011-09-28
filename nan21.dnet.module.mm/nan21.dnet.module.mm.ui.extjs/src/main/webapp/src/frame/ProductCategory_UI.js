@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductCategoryDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductCategory","nan21.dnet.module.mm.ui.extjs/asgn/ProductsOfCategory"]);
 
-Ext.ns("net.nan21.dnet.module.mm.md.frame");
-net.nan21.dnet.module.mm.md.frame.ProductCategory_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.mm.md.frame.ProductCategory_UI",
+	
 	 _name_ : "net.nan21.dnet.module.mm.md.frame.ProductCategory_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -14,9 +16,9 @@ net.nan21.dnet.module.mm.md.frame.ProductCategory_UI = Ext.extend( dnet.base.Abs
 			,handler: this.onBtnAsgnCategories,scope:this,stateManager:{name:"selected_one_clean", dc:"categ" , and: function(evnt) {return ( !evnt.dc.record.data.folder );}}	})	
 							 	
 		.addDcFilterFormView("categ",{ name:"categFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductCategory$Filter",height:70})	 
-		.addDcView("categ",{ name:"categEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductCategory$EditList", frame:true,buttons:[ this._elems_.get("btnAsgnCategories") ]})	 
+		.addDcView("categ",{ name:"categEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductCategory$EditList", frame:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnAsgnCategories") ]}})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Categories",header:false})  	 
+		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Categories",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -36,5 +38,4 @@ net.nan21.dnet.module.mm.md.frame.ProductCategory_UI = Ext.extend( dnet.base.Abs
 	,onBtnAsgnCategories: function() {
 		this.showAsgnWindow(net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Ui ,{dc:"categ",objectIdField:"id"});
 	}					 	
-});
-Ext.reg("net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", net.nan21.dnet.module.mm.md.frame.ProductCategory_UI);   
+});  

@@ -30,6 +30,9 @@
  
  	<bean id="InvTransactionLineService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvTransactionLineService"  />  
+ 
+ 	<bean id="InvBalanceService" scope="prototype"
+	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvBalanceService"  />  
    
 </beans>
    

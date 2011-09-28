@@ -1,10 +1,17 @@
-Ext.ns("net.nan21.dnet.module.mm.md.asgn");
-net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory = Ext.extend(dnet.base.AbstractAsgn, {
+	
+Ext.define("net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Model" , {
+	extend: 'Ext.data.Model',
+	fields:  [{name:"id",type:"string"},{name:"code",type:"string"},{name:"name",type:"string"}]
+});
+Ext.define("net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory", {
+	extend: "dnet.base.AbstractAsgn",
 	dsName: "ProductsOfCategory", 
-	recordFields : [{name:"id",type:"string"},{name:"code",type:"string"},{name:"name",type:"string"}]
+	recordModel: "net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Model"
 });	 
  
-net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$List = Ext.extend( dnet.base.AbstractAsgnGrid, {
+Ext.define("net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$List", {
+	extend: "dnet.base.AbstractAsgnGrid",
+	alias:[ "widget.net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Left","widget.net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Right" ],
 	_defineColumns_: function () {
 		this._getBuilder_()		
 		.addTextColumn( {name:"id", header:"Id", dataIndex:"id", hidden:true, width:100})
@@ -12,10 +19,10 @@ net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$List = Ext.extend( dnet.base
 		.addTextColumn( {name:"name", header:"Name", dataIndex:"name", width:150 })
 	} 
 });
-Ext.reg("net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Left", net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$List);
-Ext.reg("net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Right", net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$List); 
 
-net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Ui = Ext.extend(dnet.base.AbstractAsgnUi, {
+Ext.define("net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Ui", {
+	extend: "dnet.base.AbstractAsgnUi",
+	alias: "widget.net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Ui",
  	 width:700
 	,height:400 
 	,title:"Assign attributes to group"
@@ -29,4 +36,3 @@ net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Ui = Ext.extend(dnet.base.Ab
 			.addRightGrid({ xtype:"net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Right"})
 	}
 });	 
-Ext.reg("net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Ui", net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Ui);

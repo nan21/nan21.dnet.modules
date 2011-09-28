@@ -1,24 +1,18 @@
-Ext.ns("net.nan21.dnet.module.sd.order.lovs");
-net.nan21.dnet.module.sd.order.lovs.SalesOrderType = Ext.extend( dnet.base.AbstractCombo, {	
-	 initComponent : function(){
-		Ext.apply(
-		    this, {
-                 mode: "remote"
-				,displayField:"name"
-				,triggerAction :"query"
-				,pageSize:30
-				,autoSelect:true
-				,listWidth:250 
-				,tpl: '<tpl for="."><div class="x-combo-list-item"><div style="">{name}</div></div></tpl>'
-				,minChars:0	
-				,_dataProviderFields_: 	net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeLovDs		
-				,_dataProviderName_:"SalesOrderTypeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs",tocElement: "canvasOrderType"}
-			}
-		); 		 
-		this._createStore_(); 
-        net.nan21.dnet.module.sd.order.lovs.SalesOrderType.superclass.initComponent.call(this);
-	}	 
+
+Ext.define("net.nan21.dnet.module.sd.order.lovs.SalesOrderType", {
+	extend: "dnet.base.AbstractCombo",
+	alias: "widget.net.nan21.dnet.module.sd.order.lovs.SalesOrderType",
+ 
+	displayField:"name",
+	listConfig: {		
+		getInnerTpl: function() { 
+			return '<span>{name}</span>';
+		},
+		width:250
+	},		 
+	_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs",tocElement: "canvasOrderType"},
+	recordModel: "net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeLovDs",
+	_dataProviderName_:"SalesOrderTypeLovDs"	 		
+	
 }); 
-Ext.reg("net.nan21.dnet.module.sd.order.lovs.SalesOrderType", net.nan21.dnet.module.sd.order.lovs.SalesOrderType);
  

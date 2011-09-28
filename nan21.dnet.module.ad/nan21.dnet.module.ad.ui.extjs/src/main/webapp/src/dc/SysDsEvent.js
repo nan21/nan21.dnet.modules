@@ -1,18 +1,24 @@
    
-Ext.ns('net.nan21.dnet.module.ad.system.dc');	 
-net.nan21.dnet.module.ad.system.dc.SysDsEvent = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"SysDsEvent" 		 
-			,ds: new net.nan21.dnet.module.ad.system.ds.SysDsEventDs()			  
-		});
-	 	net.nan21.dnet.module.ad.system.dc.SysDsEvent.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.system.dc');	 	 
-net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList = Ext.extend(dnet.base.AbstractDcvGrid, {
+
+Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsEvent", {
+	extend: "dnet.base.AbstractDc",
+ 
+	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsEventDs",
+	paramModel: "net.nan21.dnet.module.ad.system.ds.param.SysDsEventDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 		 
+Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -22,4 +28,3 @@ net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList = Ext.extend(dnet.base.Abs
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList", net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList ); 

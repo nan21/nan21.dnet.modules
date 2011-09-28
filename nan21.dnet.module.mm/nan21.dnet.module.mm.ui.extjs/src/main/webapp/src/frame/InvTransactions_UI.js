@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransaction", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionLineDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionLine","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.mm.ui.extjs/ds/ProductLovDs","nan21.dnet.module.mm.ui.extjs/lov/Products","nan21.dnet.module.mm.ui.extjs/ds/SubInventoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/SubInventorys","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocators","nan21.dnet.module.mm.ui.extjs/ds/SubInventoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/SubInventorys","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocators"]);
 
-Ext.ns("net.nan21.dnet.module.mm.inventory.frame");
-net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI",
+	
 	 _name_ : "net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -18,8 +20,8 @@ net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI = Ext.extend( dnet.b
 		.addDcView("txline",{ name:"txlineEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditList", frame:true})	 
 		.addDcFormView("txline",{ name:"txlineCtxFormView", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$CtxFormView",height:40})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -40,5 +42,4 @@ net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI = Ext.extend( dnet.b
 			.beginToolbar("tlbTxlineEditList", {dc:"txline"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI);   
+});  

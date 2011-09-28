@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.ad.report.ds.model");
-net.nan21.dnet.module.ad.report.ds.DsReportParamDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ad.report.ds.model.DsReportParamDs$Trl", {     	
 	dsReportId__lbl : "Ds Report Id"
 	,reportId__lbl : "Report Id"
 	,reportCode__lbl : "Report Code"
@@ -9,6 +9,4 @@ net.nan21.dnet.module.ad.report.ds.DsReportParamDs.prototype._trl_ = {
 	,dataSource__lbl : "Data Source"
 	,dsField__lbl : "Ds Field"
 	
-}  
-	
- 
+});

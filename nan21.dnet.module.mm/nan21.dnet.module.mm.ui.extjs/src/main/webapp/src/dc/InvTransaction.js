@@ -1,29 +1,34 @@
    
-Ext.ns('net.nan21.dnet.module.mm.inventory.dc');	 
-net.nan21.dnet.module.mm.inventory.dc.InvTransaction = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"InvTransaction" 		 
-			,ds: new net.nan21.dnet.module.mm.inventory.ds.InvTransactionDs()			  
-		});
-	 	net.nan21.dnet.module.mm.inventory.dc.InvTransaction.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.mm.inventory.dc'); 
-net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionDs",
+	paramModel: "net.nan21.dnet.module.mm.inventory.ds.param.InvTransactionDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addNumberField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20"  })
-		.addLov({ name:"fromInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"fromInventory",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "fromInventoryId"} ]  })
-		.addLov({ name:"toInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"toInventory",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "toInventoryId"} ]  })
-		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ]  })
+		.addLov({ name:"fromInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"fromInventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "fromInventoryId"} ]  })
+		.addLov({ name:"toInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"toInventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "toInventoryId"} ]  })
+		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -33,10 +38,11 @@ net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter = Ext.extend(dnet.ba
 		.addChildrenTo("col2",["id"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter", net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.mm.inventory.dc');	 	 
-net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -55,20 +61,22 @@ net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List = Ext.extend(dnet.base
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List", net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List ); 
  	
-Ext.ns('net.nan21.dnet.module.mm.inventory.dc');	 
-net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addDateField({ name:"eventDate", dataIndex:"eventDate",width:100,disabled:true  })
-		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ]  })
-		.addLov({ name:"fromInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"fromInventory",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "fromInventoryId"} ]  })
-		.addLov({ name:"toInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"toInventory",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "toInventoryId"} ]  })
+		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20",disabled:true, hideTrigger:true })
+		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ]  })
+		.addLov({ name:"fromInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"fromInventory",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "fromInventoryId"} ]  })
+		.addLov({ name:"toInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"toInventory",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "toInventoryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" , width:300,labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -80,4 +88,3 @@ net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit = Ext.extend(dnet.base
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit", net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit ); 

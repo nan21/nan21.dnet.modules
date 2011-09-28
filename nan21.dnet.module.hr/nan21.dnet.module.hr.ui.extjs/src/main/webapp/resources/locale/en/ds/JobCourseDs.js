@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.hr.training.ds.model");
-net.nan21.dnet.module.hr.training.ds.JobCourseDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.hr.training.ds.model.JobCourseDs$Trl", {     	
 	jobId__lbl : "Job Id"
 	,jobCode__lbl : "Job Code"
 	,jobName__lbl : "Job Name"
@@ -9,6 +9,4 @@ net.nan21.dnet.module.hr.training.ds.JobCourseDs.prototype._trl_ = {
 	,mandatory__lbl : "Mandatory"
 	,validFor__lbl : "Valid For"
 	
-}  
-	
- 
+});

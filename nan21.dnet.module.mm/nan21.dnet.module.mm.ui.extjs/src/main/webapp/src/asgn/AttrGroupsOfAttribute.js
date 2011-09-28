@@ -1,10 +1,17 @@
-Ext.ns("net.nan21.dnet.module.mm.md.asgn");
-net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute = Ext.extend(dnet.base.AbstractAsgn, {
+	
+Ext.define("net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Model" , {
+	extend: 'Ext.data.Model',
+	fields:  [{name:"id",type:"string"},{name:"name",type:"string"},{name:"description",type:"string"}]
+});
+Ext.define("net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute", {
+	extend: "dnet.base.AbstractAsgn",
 	dsName: "AttrGroupsOfAttribute", 
-	recordFields : [{name:"id",type:"string"},{name:"name",type:"string"},{name:"description",type:"string"}]
+	recordModel: "net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Model"
 });	 
  
-net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$List = Ext.extend( dnet.base.AbstractAsgnGrid, {
+Ext.define("net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$List", {
+	extend: "dnet.base.AbstractAsgnGrid",
+	alias:[ "widget.net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Left","widget.net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Right" ],
 	_defineColumns_: function () {
 		this._getBuilder_()		
 		.addTextColumn( {name:"id", header:"Id", dataIndex:"id", hidden:true, width:100})
@@ -12,10 +19,10 @@ net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$List = Ext.extend( dnet.b
 		.addTextColumn( {name:"description", header:"Description", dataIndex:"description", width:150 })
 	} 
 });
-Ext.reg("net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Left", net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$List);
-Ext.reg("net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Right", net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$List); 
 
-net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Ui = Ext.extend(dnet.base.AbstractAsgnUi, {
+Ext.define("net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Ui", {
+	extend: "dnet.base.AbstractAsgnUi",
+	alias: "widget.net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Ui",
  	 width:700
 	,height:400 
 	,title:"Assign groups to attribute"
@@ -29,4 +36,3 @@ net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Ui = Ext.extend(dnet.base
 			.addRightGrid({ xtype:"net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Right"})
 	}
 });	 
-Ext.reg("net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Ui", net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Ui);

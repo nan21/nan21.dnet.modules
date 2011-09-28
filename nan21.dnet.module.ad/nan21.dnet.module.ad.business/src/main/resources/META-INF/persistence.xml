@@ -25,13 +25,18 @@
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsService</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgn</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.BusinessObject</class>
+		 
 		
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.User</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserGroup</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserType</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Role</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.AccessControl</class>
-		<class>net.nan21.dnet.module.ad.usr.domain.entity.DsAccessControl</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.DsAccessControl</class>		
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>		
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
+		 
 		
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment</class>
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition</class>

@@ -1,6 +1,4 @@
-Ext.ns("net.nan21.dnet.module.ad.impex.ds.model");
-net.nan21.dnet.module.ad.impex.ds.ImportJobLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ImportJobLovDs$Trl", {     	
 	
-}  
-	
- 
+});

@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/WfDefProcessDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefProcess", "nan21.dnet.module.ad.ui.extjs/ds/WfDefNodeDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefNode", "nan21.dnet.module.ad.ui.extjs/ds/WfDefNodeFieldDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefNodeField"]);
 
-Ext.ns("net.nan21.dnet.module.ad.workflow.frame");
-net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -22,12 +24,12 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI = Ext.extend( dnet.base.A
 							 	
 		.addDcFilterFormView("dcProcess",{ name:"filterProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter"})	 
 		.addDcView("dcProcess",{ name:"listProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List"})	 
-		.addDcFormView("dcProcess",{ name:"formProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit",height:100,buttons:[ this._elems_.get("btnDeploy") ,this._elems_.get("btnGetProcessDiagram") ]})	 
+		.addDcFormView("dcProcess",{ name:"formProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit",height:100,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnDeploy") ,this._elems_.get("btnGetProcessDiagram") ]}})	 
 		.addDcView("dcNode",{ name:"elistNode", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefNode$CtxEditList", frame:true})	 
 		.addDcView("dcField",{ name:"elistField", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefNodeField$CtxEditList", frame:true,width:500})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 		.addPanel({name: "panelDetails", layout:"border", defaults:{split:true}})  	 
 ;	 	
 	}
@@ -64,5 +66,4 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI = Ext.extend( dnet.base.A
 	,onBtnGetProcessDiagram: function() {	
 		window.open(this._getDc_("dcProcess").doServiceUrl("getDiagram"),"ProcessDiagram","width=500,height=400");
 	}
-});
-Ext.reg("net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI", net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI);   
+});  

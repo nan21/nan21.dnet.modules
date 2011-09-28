@@ -1,24 +1,18 @@
-Ext.ns("net.nan21.dnet.module.sd.invoice.lovs");
-net.nan21.dnet.module.sd.invoice.lovs.SalesInvoiceType = Ext.extend( dnet.base.AbstractCombo, {	
-	 initComponent : function(){
-		Ext.apply(
-		    this, {
-                 mode: "remote"
-				,displayField:"name"
-				,triggerAction :"query"
-				,pageSize:30
-				,autoSelect:true
-				,listWidth:250 
-				,tpl: '<tpl for="."><div class="x-combo-list-item"><div style="">{name}</div></div></tpl>'
-				,minChars:0	
-				,_dataProviderFields_: 	net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeLovDs		
-				,_dataProviderName_:"SalesInvoiceTypeLovDs"				 
-				,_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs",tocElement: "canvasInvType"}
-			}
-		); 		 
-		this._createStore_(); 
-        net.nan21.dnet.module.sd.invoice.lovs.SalesInvoiceType.superclass.initComponent.call(this);
-	}	 
+
+Ext.define("net.nan21.dnet.module.sd.invoice.lovs.SalesInvoiceType", {
+	extend: "dnet.base.AbstractCombo",
+	alias: "widget.net.nan21.dnet.module.sd.invoice.lovs.SalesInvoiceType",
+ 
+	displayField:"name",
+	listConfig: {		
+		getInnerTpl: function() { 
+			return '<span>{name}</span>';
+		},
+		width:250
+	},		 
+	_editDialog_:{custom:false, name: "net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI",bundle:"nan21.dnet.module.sd.ui.extjs",tocElement: "canvasInvType"},
+	recordModel: "net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeLovDs",
+	_dataProviderName_:"SalesInvoiceTypeLovDs"	 		
+	
 }); 
-Ext.reg("net.nan21.dnet.module.sd.invoice.lovs.SalesInvoiceType", net.nan21.dnet.module.sd.invoice.lovs.SalesInvoiceType);
  

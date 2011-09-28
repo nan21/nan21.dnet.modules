@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bp.md.ds.model");
-net.nan21.dnet.module.bp.md.ds.BpAccountDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpAccountDs$Trl", {     	
 	businessPartnerId__lbl : "Business Partner Id"
 	,businessPartner__lbl : "Business Partner"
 	,organizationId__lbl : "Organization Id"
@@ -19,6 +19,4 @@ net.nan21.dnet.module.bp.md.ds.BpAccountDs.prototype._trl_ = {
 	,vendorPaymentTermId__lbl : "Vendor Payment Term Id"
 	,vendorPaymentTerm__lbl : "Vendor Payment Term"
 	
-}  
-	
- 
+});

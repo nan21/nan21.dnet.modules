@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.ad.workflow.ds.model");
-net.nan21.dnet.module.ad.workflow.ds.ActProcessInstanceHistoryDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceHistoryDs$Trl", {     	
 	processInstanceId__lbl : "Process Instance Id"
 	,processId__lbl : "Process Id"
 	,process__lbl : "Process"
@@ -12,6 +12,4 @@ net.nan21.dnet.module.ad.workflow.ds.ActProcessInstanceHistoryDs.prototype._trl_
 	,endAction__lbl : "End Action"
 	
 	,processFullName__lbl :"Process"
-}  
-	
- 
+});

@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.hr.employee.ds.model");
-net.nan21.dnet.module.hr.employee.ds.EmployeeLicenseDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeLicenseDs$Trl", {     	
 	employeeId__lbl : "Employee Id"
 	,licenseTypeId__lbl : "License Type Id"
 	,licenseType__lbl : "License Type"
@@ -8,6 +8,4 @@ net.nan21.dnet.module.hr.employee.ds.EmployeeLicenseDs.prototype._trl_ = {
 	,validFrom__lbl : "Valid From"
 	,validTo__lbl : "Valid To"
 	
-}  
-	
- 
+});

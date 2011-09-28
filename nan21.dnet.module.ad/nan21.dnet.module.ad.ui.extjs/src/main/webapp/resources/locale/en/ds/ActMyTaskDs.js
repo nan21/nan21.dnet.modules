@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.ad.workflow.ds.model");
-net.nan21.dnet.module.ad.workflow.ds.ActMyTaskDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActMyTaskDs$Trl", {     	
 	processId__lbl : "Process Id"
 	,process__lbl : "Process"
 	,taskKey__lbl : "Task Key"
@@ -10,6 +10,4 @@ net.nan21.dnet.module.ad.workflow.ds.ActMyTaskDs.prototype._trl_ = {
 	,priority__lbl : "Priority"
 	,dueDate__lbl : "Due Date"
 	
-}  
-	
- 
+});

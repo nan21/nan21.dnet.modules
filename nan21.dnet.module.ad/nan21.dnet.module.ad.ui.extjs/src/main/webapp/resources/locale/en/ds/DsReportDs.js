@@ -1,9 +1,7 @@
-Ext.ns("net.nan21.dnet.module.ad.report.ds.model");
-net.nan21.dnet.module.ad.report.ds.DsReportDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ad.report.ds.model.DsReportDs$Trl", {     	
 	reportId__lbl : "Report Id"
 	,reportCode__lbl : "Report Code"
 	,dataSource__lbl : "Data Source"
 	
-}  
-	
- 
+});

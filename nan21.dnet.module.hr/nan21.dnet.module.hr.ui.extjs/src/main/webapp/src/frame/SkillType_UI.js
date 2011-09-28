@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/SkillCategoryDs", "nan21.dnet.module.hr.ui.extjs/dc/SkillCategory", "nan21.dnet.module.hr.ui.extjs/ds/SkillTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/SkillType","nan21.dnet.module.hr.ui.extjs/ds/SkillCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/SkillCategories","nan21.dnet.module.hr.ui.extjs/ds/SkillCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/SkillCategories"]);
 
-Ext.ns("net.nan21.dnet.module.hr.skill.frame");
-net.nan21.dnet.module.hr.skill.frame.SkillType_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.hr.skill.frame.SkillType_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.hr.skill.frame.SkillType_UI",
+	
 	 _name_ : "net.nan21.dnet.module.hr.skill.frame.SkillType_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -11,13 +13,13 @@ net.nan21.dnet.module.hr.skill.frame.SkillType_UI = Ext.extend( dnet.base.Abstra
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("scateg",{ name:"scategFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.SkillCategory$Filter",height:35})	 
+		.addDcFilterFormView("scateg",{ name:"scategFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.SkillCategory$Filter",height:40})	 
 		.addDcView("scateg",{ name:"scategEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.SkillCategory$EditList", frame:true})	 
 		.addDcFilterFormView("stype",{ name:"stypeFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.SkillType$Filter",height:60})	 
 		.addDcView("stype",{ name:"stypeEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.SkillType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Categories",header:false})  	 
-		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Types",header:false})  	 
+		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Categories",preventHeader:true})  	 
+		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Types",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -43,5 +45,4 @@ net.nan21.dnet.module.hr.skill.frame.SkillType_UI = Ext.extend( dnet.base.Abstra
 			.beginToolbar("tlbstype", {dc:"stype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Types"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.hr.skill.frame.SkillType_UI", net.nan21.dnet.module.hr.skill.frame.SkillType_UI);   
+});  

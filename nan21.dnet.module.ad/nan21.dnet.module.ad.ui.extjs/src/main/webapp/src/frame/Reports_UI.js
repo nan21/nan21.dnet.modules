@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ReportDs", "nan21.dnet.module.ad.ui.extjs/dc/Report", "nan21.dnet.module.ad.ui.extjs/ds/ReportParamDs", "nan21.dnet.module.ad.ui.extjs/dc/ReportParam", "nan21.dnet.module.ad.ui.extjs/ds/DsReportDs", "nan21.dnet.module.ad.ui.extjs/dc/DsReport", "nan21.dnet.module.ad.ui.extjs/ds/DsReportParamDs", "nan21.dnet.module.ad.ui.extjs/dc/DsReportParam","nan21.dnet.module.ad.ui.extjs/ds/ReportServerLovDs","nan21.dnet.module.ad.ui.extjs/lov/ReportServers","nan21.dnet.module.ad.ui.extjs/ds/ReportServerLovDs","nan21.dnet.module.ad.ui.extjs/lov/ReportServers","nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDataSource","nan21.dnet.module.ad.ui.extjs/ds/ReportParamLovDs","nan21.dnet.module.ad.ui.extjs/lov/ReportParams","nan21.dnet.module.ad.ui.extjs/ds/SysDsFieldLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDsFields"]);
 
-Ext.ns("net.nan21.dnet.module.ad.report.frame");
-net.nan21.dnet.module.ad.report.frame.Reports_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.report.frame.Reports_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.report.frame.Reports_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.report.frame.Reports_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -24,8 +26,8 @@ net.nan21.dnet.module.ad.report.frame.Reports_UI = Ext.extend( dnet.base.Abstrac
 		.addDcView("dsparam",{ name:"dsparamList", xtype:"net.nan21.dnet.module.ad.report.dc.DsReportParam$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "repDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 		.addPanel({name: "dsRep", layout:"border", defaults:{split:true},title:"Data-source links"})  	 
 ;	 	
 	}
@@ -53,5 +55,4 @@ net.nan21.dnet.module.ad.report.frame.Reports_UI = Ext.extend( dnet.base.Abstrac
 			.beginToolbar("tlbDsParamList", {dc:"dsparam"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.ad.report.frame.Reports_UI", net.nan21.dnet.module.ad.report.frame.Reports_UI);   
+});  

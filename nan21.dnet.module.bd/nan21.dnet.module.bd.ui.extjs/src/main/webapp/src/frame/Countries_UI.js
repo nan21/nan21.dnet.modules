@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/CountryDs", "nan21.dnet.module.bd.ui.extjs/dc/Country"]);
 
-Ext.ns("net.nan21.dnet.module.bd.geo.frame");
-net.nan21.dnet.module.bd.geo.frame.Countries_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.bd.geo.frame.Countries_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.bd.geo.frame.Countries_UI",
+	
 	 _name_ : "net.nan21.dnet.module.bd.geo.frame.Countries_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -13,7 +15,7 @@ net.nan21.dnet.module.bd.geo.frame.Countries_UI = Ext.extend( dnet.base.Abstract
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$Filter"})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Countries",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -26,8 +28,7 @@ net.nan21.dnet.module.bd.geo.frame.Countries_UI = Ext.extend( dnet.base.Abstract
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end(); 	
+			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Countries"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.bd.geo.frame.Countries_UI", net.nan21.dnet.module.bd.geo.frame.Countries_UI);   
+});  

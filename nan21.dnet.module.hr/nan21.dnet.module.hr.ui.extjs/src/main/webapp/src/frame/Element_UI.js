@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/ElementCategoryDs", "nan21.dnet.module.hr.ui.extjs/dc/ElementCategory", "nan21.dnet.module.hr.ui.extjs/ds/ElementTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/ElementType", "nan21.dnet.module.hr.ui.extjs/ds/ElementDs", "nan21.dnet.module.hr.ui.extjs/dc/Element", "nan21.dnet.module.hr.ui.extjs/ds/VariableDs", "nan21.dnet.module.hr.ui.extjs/dc/Variable","nan21.dnet.module.hr.ui.extjs/ds/ElementTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/ElementTypes","nan21.dnet.module.hr.ui.extjs/ds/ElementTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/ElementTypes","nan21.dnet.module.hr.ui.extjs/ds/ElementCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/ElementCategories","nan21.dnet.module.hr.ui.extjs/ds/ElementLovDs","nan21.dnet.module.hr.ui.extjs/lov/Elements","nan21.dnet.module.hr.ui.extjs/ds/ElementCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/ElementCategories"]);
 
-Ext.ns("net.nan21.dnet.module.hr.payroll.frame");
-net.nan21.dnet.module.hr.payroll.frame.Element_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.hr.payroll.frame.Element_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.hr.payroll.frame.Element_UI",
+	
 	 _name_ : "net.nan21.dnet.module.hr.payroll.frame.Element_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -23,10 +25,10 @@ net.nan21.dnet.module.hr.payroll.frame.Element_UI = Ext.extend( dnet.base.Abstra
 		.addDcFilterFormView("etype",{ name:"etypeFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementType$Filter",height:60})	 
 		.addDcView("etype",{ name:"etypeEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasElems", layout:"border", defaults:{split:true},title:"Elements > List",header:false})  	 
-		.addPanel({name: "canvasElemEdit", layout:"border", defaults:{split:true},title:"Elements > Editor",header:false})  	 
-		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Element categories",header:false})  	 
-		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Element types",header:false})  	 
+		.addPanel({name: "canvasElems", layout:"border", defaults:{split:true},title:"Elements > List",preventHeader:true})  	 
+		.addPanel({name: "canvasElemEdit", layout:"border", defaults:{split:true},title:"Elements > Editor",preventHeader:true})  	 
+		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Element categories",preventHeader:true})  	 
+		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Element types",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -60,5 +62,4 @@ net.nan21.dnet.module.hr.payroll.frame.Element_UI = Ext.extend( dnet.base.Abstra
 			.beginToolbar("tlbEtypeEditList", {dc:"etype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Element types"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.hr.payroll.frame.Element_UI", net.nan21.dnet.module.hr.payroll.frame.Element_UI);   
+});  

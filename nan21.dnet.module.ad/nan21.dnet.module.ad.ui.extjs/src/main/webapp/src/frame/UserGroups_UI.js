@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/UserGroupDs", "nan21.dnet.module.ad.ui.extjs/dc/UserGroup","nan21.dnet.module.ad.ui.extjs/asgn/UserGroupUsers"]);
 
-Ext.ns("net.nan21.dnet.module.ad.usr.frame");
-net.nan21.dnet.module.ad.usr.frame.UserGroups_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.usr.frame.UserGroups_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.usr.frame.UserGroups_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.usr.frame.UserGroups_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -14,9 +16,9 @@ net.nan21.dnet.module.ad.usr.frame.UserGroups_UI = Ext.extend( dnet.base.Abstrac
 			,handler: this.onBtnAsgnUsers,scope:this,stateManager:{name:"selected_one_clean", dc:"dcGroup" }	})	
 							 	
 		.addDcFilterFormView("dcGroup",{ name:"filterGroup", xtype:"net.nan21.dnet.module.ad.usr.dc.UserGroup$Filter"})	 
-		.addDcView("dcGroup",{ name:"elistGroup", xtype:"net.nan21.dnet.module.ad.usr.dc.UserGroup$EditList", frame:true,buttons:[ this._elems_.get("btnAsgnUsers") ]})	 
+		.addDcView("dcGroup",{ name:"elistGroup", xtype:"net.nan21.dnet.module.ad.usr.dc.UserGroup$EditList", frame:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnAsgnUsers") ]}})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -36,5 +38,4 @@ net.nan21.dnet.module.ad.usr.frame.UserGroups_UI = Ext.extend( dnet.base.Abstrac
 	,onBtnAsgnUsers: function() {
 		this.showAsgnWindow(net.nan21.dnet.module.ad.usr.asgn.UserGroupUsers$Ui ,{dc:"dcGroup",objectIdField:"id"});
 	}					 	
-});
-Ext.reg("net.nan21.dnet.module.ad.usr.frame.UserGroups_UI", net.nan21.dnet.module.ad.usr.frame.UserGroups_UI);   
+});  

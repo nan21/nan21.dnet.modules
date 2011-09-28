@@ -1,10 +1,17 @@
-Ext.ns("net.nan21.dnet.module.ad.usr.asgn");
-net.nan21.dnet.module.ad.usr.asgn.UserUserGroups = Ext.extend(dnet.base.AbstractAsgn, {
+	
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Model" , {
+	extend: 'Ext.data.Model',
+	fields:  [{name:"id",type:"string"},{name:"name",type:"string"},{name:"description",type:"string"}]
+});
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups", {
+	extend: "dnet.base.AbstractAsgn",
 	dsName: "UserUserGroups", 
-	recordFields : [{name:"id",type:"string"},{name:"name",type:"string"},{name:"description",type:"string"}]
+	recordModel: "net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Model"
 });	 
  
-net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$List = Ext.extend( dnet.base.AbstractAsgnGrid, {
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$List", {
+	extend: "dnet.base.AbstractAsgnGrid",
+	alias:[ "widget.net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Left","widget.net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Right" ],
 	_defineColumns_: function () {
 		this._getBuilder_()		
 		.addTextColumn( {name:"id", header:"Id", dataIndex:"id", hidden:true, width:100})
@@ -12,10 +19,10 @@ net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$List = Ext.extend( dnet.base.Ab
 		.addTextColumn( {name:"description", header:"Description", dataIndex:"description", width:150 })
 	} 
 });
-Ext.reg("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Left", net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$List);
-Ext.reg("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Right", net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$List); 
 
-net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui = Ext.extend(dnet.base.AbstractAsgnUi, {
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui", {
+	extend: "dnet.base.AbstractAsgnUi",
+	alias: "widget.net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui",
  	 width:700
 	,height:400 
 	,title:"Assign groups to user"
@@ -29,4 +36,3 @@ net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui = Ext.extend(dnet.base.Abstr
 			.addRightGrid({ xtype:"net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Right"})
 	}
 });	 
-Ext.reg("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui", net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui);

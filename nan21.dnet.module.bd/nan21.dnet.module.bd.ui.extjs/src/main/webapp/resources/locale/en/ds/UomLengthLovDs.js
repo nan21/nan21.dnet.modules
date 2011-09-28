@@ -1,6 +1,4 @@
-Ext.ns("net.nan21.dnet.module.bd.uom.ds.model");
-net.nan21.dnet.module.bd.uom.ds.UomLengthLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bd.uom.ds.model.UomLengthLovDs$Trl", {     	
 	
-}  
-	
- 
+});

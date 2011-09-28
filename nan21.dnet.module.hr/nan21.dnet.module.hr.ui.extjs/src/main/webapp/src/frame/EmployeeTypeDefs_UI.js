@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/EducationTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/EducationType", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeContactRelationshipDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeContactRelationship", "nan21.dnet.module.hr.ui.extjs/ds/LicenseTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/LicenseType", "nan21.dnet.module.hr.ui.extjs/ds/EmploymentTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/EmploymentType", "nan21.dnet.module.hr.ui.extjs/ds/EmplAttachmentTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/EmplAttachmentType"]);
 
-Ext.ns("net.nan21.dnet.module.hr.employee.frame");
-net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI",
+	
 	 _name_ : "net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -25,11 +27,11 @@ net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI = Ext.extend( dnet.b
 		.addDcFilterFormView("attchType",{ name:"attchTypeFilter", xtype:"net.nan21.dnet.module.hr.employee.dc.EmplAttachmentType$Filter",height:70})	 
 		.addDcView("attchType",{ name:"attchTypeEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.EmplAttachmentType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasEducType", layout:"border", defaults:{split:true},title:"Education type",header:false})  	 
-		.addPanel({name: "canvasContactRel", layout:"border", defaults:{split:true},title:"Contact relationship",header:false})  	 
-		.addPanel({name: "canvasLicType", layout:"border", defaults:{split:true},title:"License types",header:false})  	 
-		.addPanel({name: "canvasAsgnType", layout:"border", defaults:{split:true},title:"Employment types",header:false})  	 
-		.addPanel({name: "canvasAttchType", layout:"border", defaults:{split:true},title:"Attachment types",header:false})  	 
+		.addPanel({name: "canvasEducType", layout:"border", defaults:{split:true},title:"Education type",preventHeader:true})  	 
+		.addPanel({name: "canvasContactRel", layout:"border", defaults:{split:true},title:"Contact relationship",preventHeader:true})  	 
+		.addPanel({name: "canvasLicType", layout:"border", defaults:{split:true},title:"License types",preventHeader:true})  	 
+		.addPanel({name: "canvasAsgnType", layout:"border", defaults:{split:true},title:"Employment types",preventHeader:true})  	 
+		.addPanel({name: "canvasAttchType", layout:"border", defaults:{split:true},title:"Attachment types",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -64,5 +66,4 @@ net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI = Ext.extend( dnet.b
 			.beginToolbar("attchTypeTlb", {dc:"attchType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Attachment types"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI", net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI);   
+});  

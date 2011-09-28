@@ -1,8 +1,6 @@
-Ext.ns("net.nan21.dnet.module.hr.payroll.ds.model");
-net.nan21.dnet.module.hr.payroll.ds.ElementTypeDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.ElementTypeDs$Trl", {     	
 	categoryId__lbl : "Category Id"
 	,category__lbl : "Category"
 	
-}  
-	
- 
+});

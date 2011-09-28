@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDataSource", "nan21.dnet.module.ad.ui.extjs/ds/SysDsFieldDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDsField"]);
 
-Ext.ns("net.nan21.dnet.module.ad.system.frame");
-net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.system.frame.SysDataSources_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.system.frame.SysDataSources_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -16,11 +18,11 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 			,handler: this.onBtnSynchronize,scope:this	})	
 							 	
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter"})	 
-		.addDcView("m",{ name:"mList", xtype:"net.nan21.dnet.module.ad.system.dc.SysDataSource$List",buttons:[ this._elems_.get("btnSynchronize") ]})	 
+		.addDcView("m",{ name:"mList", xtype:"net.nan21.dnet.module.ad.system.dc.SysDataSource$List",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnSynchronize") ]}})	 
 		.addDcView("fields",{ name:"listFields", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsField$CtxList",title:"Fields"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "panelDetails", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:400}}) 	  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -50,5 +52,4 @@ net.nan21.dnet.module.ad.system.frame.SysDataSources_UI = Ext.extend( dnet.base.
 			dnet.base.DcExceptions.showMessage(e);
 		}
 	}					 	
-});
-Ext.reg("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", net.nan21.dnet.module.ad.system.frame.SysDataSources_UI);   
+});  

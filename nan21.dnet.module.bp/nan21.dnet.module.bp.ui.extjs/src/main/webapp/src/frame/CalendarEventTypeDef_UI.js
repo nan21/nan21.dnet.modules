@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.bp.ui.extjs/ds/CalendarEventStatusDs", "nan21.dnet.module.bp.ui.extjs/dc/CalendarEventStatus", "nan21.dnet.module.bp.ui.extjs/ds/CalendarEventPriorityDs", "nan21.dnet.module.bp.ui.extjs/dc/CalendarEventPriority"]);
 
-Ext.ns("net.nan21.dnet.module.bp.calendar.frame");
-net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI",
+	
 	 _name_ : "net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -16,8 +18,8 @@ net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI = Ext.extend( dn
 		.addDcFilterFormView("priority",{ name:"priorityFilter", xtype:"net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority$Filter"})	 
 		.addDcView("priority",{ name:"priorityEditList", xtype:"net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasStatus", layout:"border", defaults:{split:true},title:"Event status",header:false})  	 
-		.addPanel({name: "canvasPriority", layout:"border", defaults:{split:true},title:"Event priority",header:false})  	 
+		.addPanel({name: "canvasStatus", layout:"border", defaults:{split:true},title:"Event status",preventHeader:true})  	 
+		.addPanel({name: "canvasPriority", layout:"border", defaults:{split:true},title:"Event priority",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -43,5 +45,4 @@ net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI = Ext.extend( dn
 			.beginToolbar("priorityTlb", {dc:"priority"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Event priority"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI", net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI);   
+});  

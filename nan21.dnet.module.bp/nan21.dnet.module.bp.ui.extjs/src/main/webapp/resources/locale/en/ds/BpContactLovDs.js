@@ -1,6 +1,4 @@
-Ext.ns("net.nan21.dnet.module.bp.md.ds.model");
-net.nan21.dnet.module.bp.md.ds.BpContactLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpContactLovDs$Trl", {     	
 	
-}  
-	
- 
+});

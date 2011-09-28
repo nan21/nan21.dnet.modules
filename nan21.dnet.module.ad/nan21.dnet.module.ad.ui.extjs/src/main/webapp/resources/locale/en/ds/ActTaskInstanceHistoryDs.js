@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.ad.workflow.ds.model");
-net.nan21.dnet.module.ad.workflow.ds.ActTaskInstanceHistoryDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDs$Trl", {     	
 	taskDefinitionKey__lbl : "Task Definition Key"
 	,processInstanceId__lbl : "Process Instance Id"
 	,processDefinitionId__lbl : "Process Definition Id"
@@ -12,6 +12,4 @@ net.nan21.dnet.module.ad.workflow.ds.ActTaskInstanceHistoryDs.prototype._trl_ = 
 	,priority__lbl : "Priority"
 	,dueDate__lbl : "Due Date"
 	
-}  
-	
- 
+});

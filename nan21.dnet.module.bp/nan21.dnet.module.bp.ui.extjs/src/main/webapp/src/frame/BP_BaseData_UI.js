@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.bp.ui.extjs/ds/CustomerGroupDs", "nan21.dnet.module.bp.ui.extjs/dc/CustomerGroup", "nan21.dnet.module.bp.ui.extjs/ds/VendorGroupDs", "nan21.dnet.module.bp.ui.extjs/dc/VendorGroup", "nan21.dnet.module.bp.ui.extjs/ds/DeliveryMethodDs", "nan21.dnet.module.bp.ui.extjs/dc/DeliveryMethod", "nan21.dnet.module.bp.ui.extjs/ds/PaymentMethodDs", "nan21.dnet.module.bp.ui.extjs/dc/PaymentMethod", "nan21.dnet.module.bp.ui.extjs/ds/PaymentTermDs", "nan21.dnet.module.bp.ui.extjs/dc/PaymentTerm"]);
 
-Ext.ns("net.nan21.dnet.module.bp.base.frame");
-net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI",
+	
 	 _name_ : "net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -25,11 +27,11 @@ net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI = Ext.extend( dnet.base.Abstr
 		.addDcFilterFormView("payTerm",{ name:"payTermFilter", xtype:"net.nan21.dnet.module.bp.base.dc.PaymentTerm$Filter",height:40})	 
 		.addDcView("payTerm",{ name:"payTermEditList", xtype:"net.nan21.dnet.module.bp.base.dc.PaymentTerm$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasCustGroup", layout:"border", defaults:{split:true},title:"Customer groups",header:false})  	 
-		.addPanel({name: "canvasVendGroup", layout:"border", defaults:{split:true},title:"Vendor groups",header:false})  	 
-		.addPanel({name: "canvasDelivMtd", layout:"border", defaults:{split:true},title:"Delivery methods",header:false})  	 
-		.addPanel({name: "canvasPayMtd", layout:"border", defaults:{split:true},title:"Payment methods",header:false})  	 
-		.addPanel({name: "canvasPayTerm", layout:"border", defaults:{split:true},title:"Payment terms",header:false})  	 
+		.addPanel({name: "canvasCustGroup", layout:"border", defaults:{split:true},title:"Customer groups",preventHeader:true})  	 
+		.addPanel({name: "canvasVendGroup", layout:"border", defaults:{split:true},title:"Vendor groups",preventHeader:true})  	 
+		.addPanel({name: "canvasDelivMtd", layout:"border", defaults:{split:true},title:"Delivery methods",preventHeader:true})  	 
+		.addPanel({name: "canvasPayMtd", layout:"border", defaults:{split:true},title:"Payment methods",preventHeader:true})  	 
+		.addPanel({name: "canvasPayTerm", layout:"border", defaults:{split:true},title:"Payment terms",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -64,5 +66,4 @@ net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI = Ext.extend( dnet.base.Abstr
 			.beginToolbar("tlbpayTerm", {dc:"payTerm"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Payment terms"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI", net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI);   
+});  

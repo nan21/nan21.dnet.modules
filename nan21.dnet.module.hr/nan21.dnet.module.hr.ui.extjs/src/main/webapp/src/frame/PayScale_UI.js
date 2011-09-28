@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/PayScaleDs", "nan21.dnet.module.hr.ui.extjs/dc/PayScale", "nan21.dnet.module.hr.ui.extjs/ds/PayScalePointDs", "nan21.dnet.module.hr.ui.extjs/dc/PayScalePoint"]);
 
-Ext.ns("net.nan21.dnet.module.hr.grade.frame");
-net.nan21.dnet.module.hr.grade.frame.PayScale_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.hr.grade.frame.PayScale_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.hr.grade.frame.PayScale_UI",
+	
 	 _name_ : "net.nan21.dnet.module.hr.grade.frame.PayScale_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -17,8 +19,8 @@ net.nan21.dnet.module.hr.grade.frame.PayScale_UI = Ext.extend( dnet.base.Abstrac
 		.addDcFormView("scale",{ name:"scaleEdit", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScale$Edit",height:120})	 
 		.addDcView("point",{ name:"pointEditList", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScalePoint$CtxEditList", frame:true,title:"Progression points"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -39,5 +41,4 @@ net.nan21.dnet.module.hr.grade.frame.PayScale_UI = Ext.extend( dnet.base.Abstrac
 			.beginToolbar("tlbPointEditList", {dc:"point"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Progression points"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.hr.grade.frame.PayScale_UI", net.nan21.dnet.module.hr.grade.frame.PayScale_UI);   
+});  

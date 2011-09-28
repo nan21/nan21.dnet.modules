@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bd.org.ds.model");
-net.nan21.dnet.module.bd.org.ds.OrganizationTypeDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDs$Trl", {     	
 	virtualEntity__lbl : "Virtual Entity"
 	,legalEntity__lbl : "Legal Entity"
 	,accountingEnabled__lbl : "Accounting Enabled"
@@ -7,6 +7,4 @@ net.nan21.dnet.module.bd.org.ds.OrganizationTypeDs.prototype._trl_ = {
 	,external__lbl : "External"
 	,carrier__lbl : "Carrier"
 	
-}  
-	
- 
+});

@@ -1,8 +1,6 @@
-Ext.ns("net.nan21.dnet.module.hr.skill.ds.model");
-net.nan21.dnet.module.hr.skill.ds.SkillTypeDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.hr.skill.ds.model.SkillTypeDs$Trl", {     	
 	categoryId__lbl : "Category Id"
 	,category__lbl : "Category"
 	
-}  
-	
- 
+});

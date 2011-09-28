@@ -1,10 +1,17 @@
-Ext.ns("net.nan21.dnet.module.ad.usr.asgn");
-net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles = Ext.extend(dnet.base.AbstractAsgn, {
+	
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Model" , {
+	extend: 'Ext.data.Model',
+	fields:  [{name:"id",type:"string"},{name:"name",type:"string"},{name:"description",type:"string"}]
+});
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles", {
+	extend: "dnet.base.AbstractAsgn",
 	dsName: "AccessControlRoles", 
-	recordFields : [{name:"id",type:"string"},{name:"name",type:"string"},{name:"description",type:"string"}]
+	recordModel: "net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Model"
 });	 
  
-net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$List = Ext.extend( dnet.base.AbstractAsgnGrid, {
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$List", {
+	extend: "dnet.base.AbstractAsgnGrid",
+	alias:[ "widget.net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Left","widget.net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Right" ],
 	_defineColumns_: function () {
 		this._getBuilder_()		
 		.addTextColumn( {name:"id", header:"Id", dataIndex:"id", hidden:true, width:100})
@@ -12,10 +19,10 @@ net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$List = Ext.extend( dnet.bas
 		.addTextColumn( {name:"description", header:"Description", dataIndex:"description", width:150 })
 	} 
 });
-Ext.reg("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Left", net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$List);
-Ext.reg("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Right", net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$List); 
 
-net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Ui = Ext.extend(dnet.base.AbstractAsgnUi, {
+Ext.define("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Ui", {
+	extend: "dnet.base.AbstractAsgnUi",
+	alias: "widget.net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Ui",
  	 width:700
 	,height:400 
 	,title:"Assign roles to privilege"
@@ -29,4 +36,3 @@ net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Ui = Ext.extend(dnet.base.A
 			.addRightGrid({ xtype:"net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Right"})
 	}
 });	 
-Ext.reg("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Ui", net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Ui);

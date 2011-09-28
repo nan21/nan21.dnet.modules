@@ -1,31 +1,36 @@
    
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
-net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"ActProcessInstanceHistory" 		 
-			,ds: new net.nan21.dnet.module.ad.workflow.ds.ActProcessInstanceHistoryDs()			  
-		});
-	 	net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc'); 
-net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceHistoryDs",
+	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActProcessInstanceHistoryDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20",maxLength:255  })
 		.addLov({ name:"processFullName", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActProcessDefinitions", dataIndex:"processFullName", _isParam_:true,anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "processId"} ],listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("processFullName", nv);} }}  })
 		.addTextField({ name:"startedBy", dataIndex:"startedBy",anchor:"-20",maxLength:32  })
-		.addDateField({ name:"startTime", dataIndex:"startTime",width:100 ,format:Ext.DATE_FORMAT })
-		.addDateField({ name:"endTime", dataIndex:"endTime",width:100 ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"startTime", dataIndex:"startTime",anchor:"-20" ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"endTime", dataIndex:"endTime",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		//containers
-		.addPanel({ name:"col1", layout:"form", width:300,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:300,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col3", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -36,10 +41,11 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter = Ext.exte
 		.addChildrenTo("col3",["startedBy","id"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter", net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 	 
-net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List",
+	
 	 _noImport_: true
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -58,4 +64,3 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List = Ext.extend
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List", net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List ); 

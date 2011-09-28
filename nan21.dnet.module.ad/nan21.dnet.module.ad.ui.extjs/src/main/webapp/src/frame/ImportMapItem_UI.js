@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ImportMapItemDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportMapItem","nan21.dnet.module.ad.ui.extjs/ds/ImportMapLovDs","nan21.dnet.module.ad.ui.extjs/lov/ImportMap","nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDataSource","nan21.dnet.module.ad.ui.extjs/ds/ImportMapLovDs","nan21.dnet.module.ad.ui.extjs/lov/ImportMap","nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDataSource"]);
 
-Ext.ns("net.nan21.dnet.module.ad.impex.frame");
-net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -14,9 +16,9 @@ net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI = Ext.extend( dnet.base.Ab
 			,handler: this.onBtnRunImport,scope:this,stateManager:{name:"selected_one_clean", dc:"m" }	})	
 							 	
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$Filter"})	 
-		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$EditList", frame:true,buttons:[ this._elems_.get("btnRunImport") ]})	 
+		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$EditList", frame:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnRunImport") ]}})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -41,5 +43,4 @@ net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI = Ext.extend( dnet.base.Ab
 			dnet.base.DcExceptions.showMessage(e);
 		}
 	}					 	
-});
-Ext.reg("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI);   
+});  

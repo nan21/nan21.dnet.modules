@@ -1,19 +1,24 @@
    
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
-net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"ActProcessDefinition" 		 
-			,ds: new net.nan21.dnet.module.ad.workflow.ds.ActProcessDefinitionDs()			  
-		});
-	 	net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc'); 
-net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionDs",
+	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActProcessDefinitionDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -23,9 +28,9 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter = Ext.extend(dn
 		.addTextField({ name:"resourceName", dataIndex:"resourceName",anchor:"-20",maxLength:255  })
 		.addLov({ name:"deployment", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActDeployments", dataIndex:"deployment", _isParam_:true,anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "deploymentId"} ,{lovField:"fullName", dsParam: "deployment"} ],listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("deployment", nv);} }}  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"form", width:280,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col3", layout:"anchor", width:280,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -36,10 +41,11 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter = Ext.extend(dn
 		.addChildrenTo("col3",["deployment"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter", net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 	 
-net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List",
+	
 	 _noImport_: true
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -54,4 +60,3 @@ net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List = Ext.extend(dnet
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List", net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List ); 

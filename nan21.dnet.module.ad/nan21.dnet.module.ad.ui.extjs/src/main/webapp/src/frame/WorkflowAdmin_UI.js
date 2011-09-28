@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessDefinition", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessInstance", "nan21.dnet.module.ad.ui.extjs/ds/ActTaskInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/ActTaskInstance", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessInstanceHistoryDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessInstanceHistory", "nan21.dnet.module.ad.ui.extjs/ds/ActTaskInstanceHistoryDs", "nan21.dnet.module.ad.ui.extjs/dc/ActTaskInstanceHistory", "nan21.dnet.module.ad.ui.extjs/ds/ActDeploymentDs", "nan21.dnet.module.ad.ui.extjs/dc/ActDeployment","nan21.dnet.module.ad.ui.extjs/ds/ActDeploymentLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActDeployments","nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActProcessDefinitions","nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActProcessDefinitions"]);
 
-Ext.ns("net.nan21.dnet.module.ad.workflow.frame");
-net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -48,11 +50,11 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI = Ext.extend( dnet.base
 			,handler: this.onBtnDeleteCascadeDeployment,scope:this,stateManager:{name:"selected_not_zero", dc:"dcDeployment" }	})	
 							 	
 		.addDcFilterFormView("dcDeployment",{ name:"filterDeployment", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter",height:65})	 
-		.addDcView("dcDeployment",{ name:"listDeployment", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List",buttons:[ this._elems_.get("btnUploadForDeployment") ,this._elems_.get("btnDeleteDeployment") ,this._elems_.get("btnDeleteCascadeDeployment") ]})	 
+		.addDcView("dcDeployment",{ name:"listDeployment", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnUploadForDeployment") ,this._elems_.get("btnDeleteDeployment") ,this._elems_.get("btnDeleteCascadeDeployment") ]}})	 
 		.addDcFilterFormView("dcProcess",{ name:"filterProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter",height:65})	 
-		.addDcView("dcProcess",{ name:"listProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List",buttons:[ this._elems_.get("btnStartProcess") ,this._elems_.get("btnGetProcessDefinitionDiagram") ]})	 
+		.addDcView("dcProcess",{ name:"listProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnStartProcess") ,this._elems_.get("btnGetProcessDefinitionDiagram") ]}})	 
 		.addDcFilterFormView("dcRunningInstance",{ name:"filterRunningInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter",height:65})	 
-		.addDcView("dcRunningInstance",{ name:"listRunningInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List",buttons:[ this._elems_.get("btnKillProcessInstance") ,this._elems_.get("btnGetProcessInstanceDiagram") ,this._elems_.get("btnOpenAsignTaskWindow") ,this._elems_.get("btnCompleteTask") ]})	 
+		.addDcView("dcRunningInstance",{ name:"listRunningInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnKillProcessInstance") ,this._elems_.get("btnGetProcessInstanceDiagram") ,this._elems_.get("btnOpenAsignTaskWindow") ,this._elems_.get("btnCompleteTask") ]}})	 
 		.addDcFilterFormView("dcRunningTask",{ name:"filterRunningTask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter",height:30})	 
 		.addDcView("dcRunningTask",{ name:"listRunningTask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List"})	 
 		.addDcFormView("dcRunningTask",{ name:"formRunningTaskAsgn", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm"})	 
@@ -60,14 +62,14 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI = Ext.extend( dnet.base
 		.addDcView("dcFinishedInstance",{ name:"listFinishedInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List"})	 
 		.addDcView("dcFinishedTask",{ name:"listFinishedTask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List",height:180})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasProcess", layout:"border", defaults:{split:true},title:"Processes defined",header:false})  	 
-		.addPanel({name: "canvasRunningInstance", layout:"border", defaults:{split:true},title:"Running instances",header:false})  	 
+		.addPanel({name: "canvasProcess", layout:"border", defaults:{split:true},title:"Processes defined",preventHeader:true})  	 
+		.addPanel({name: "canvasRunningInstance", layout:"border", defaults:{split:true},title:"Running instances",preventHeader:true})  	 
 		.addPanel({name: "panelRunningTask", layout:"border", defaults:{split:true},height:220})  	 
-		.addPanel({name: "canvasFinishedInstance", layout:"border", defaults:{split:true},title:"Finished instances",header:false})  	 
-		.addPanel({name: "canvasDeployment", layout:"border", defaults:{split:true},title:"Deployments",header:false})  	 
+		.addPanel({name: "canvasFinishedInstance", layout:"border", defaults:{split:true},title:"Finished instances",preventHeader:true})  	 
+		.addPanel({name: "canvasDeployment", layout:"border", defaults:{split:true},title:"Deployments",preventHeader:true})  	 
 		
 		.add({name:"wdwAssignTask", _window_:true, resizable:true, layout:"fit", id:Ext.id(), items:[this._elems_.get("formRunningTaskAsgn")]
-,title:"Assign task",modal:true,width:300,height:100,buttons:[ this._elems_.get("btnSaveAssignTask") ]}) 	
+,title:"Assign task",modal:true,width:300,height:100,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnSaveAssignTask") ]}}) 	
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -196,5 +198,4 @@ this._getDc_("dcDeployment").doQuery();
 		});
 	
 	}
-});
-Ext.reg("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI);   
+});  

@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ImportMapDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportMap", "nan21.dnet.module.ad.ui.extjs/ds/ImportMapItemDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportMapItemCtx","nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDataSource"]);
 
-Ext.ns("net.nan21.dnet.module.ad.impex.frame");
-net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMap_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.impex.frame.ImportMap_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.impex.frame.ImportMap_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -20,11 +22,11 @@ net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.Abstra
 							 	
 		.addDcFilterFormView("map",{ name:"mapFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMap$Filter"})	 
 		.addDcView("map",{ name:"mapList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMap$List"})	 
-		.addDcFormView("map",{ name:"mapEdit", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMap$Edit",height:120,buttons:[ this._elems_.get("btnRunImportMap") ,this._elems_.get("btnRunImportItem") ]})	 
+		.addDcFormView("map",{ name:"mapEdit", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMap$Edit",height:120,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnRunImportMap") ,this._elems_.get("btnRunImportItem") ]}})	 
 		.addDcView("item",{ name:"itemEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItemCtx$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -63,5 +65,4 @@ net.nan21.dnet.module.ad.impex.frame.ImportMap_UI = Ext.extend( dnet.base.Abstra
 			dnet.base.DcExceptions.showMessage(e);
 		}
 	}					 	
-});
-Ext.reg("net.nan21.dnet.module.ad.impex.frame.ImportMap_UI", net.nan21.dnet.module.ad.impex.frame.ImportMap_UI);   
+});  

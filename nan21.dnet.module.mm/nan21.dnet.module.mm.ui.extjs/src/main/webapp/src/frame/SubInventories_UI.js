@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/SubInventoryDs", "nan21.dnet.module.mm.ui.extjs/dc/SubInventory", "nan21.dnet.module.mm.ui.extjs/ds/StockLocatorDs", "nan21.dnet.module.mm.ui.extjs/dc/StockLocator","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocatorTypes","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocatorTypes"]);
 
-Ext.ns("net.nan21.dnet.module.mm.inventory.frame");
-net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI",
+	
 	 _name_ : "net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -18,8 +20,8 @@ net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI = Ext.extend( dnet.ba
 		.addDcFilterFormView("sloc",{ name:"slocFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocator$Filter"})	 
 		.addDcView("sloc",{ name:"slocEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocator$CtxEditList", frame:true,title:"Stock locators"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -40,5 +42,4 @@ net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI = Ext.extend( dnet.ba
 			.beginToolbar("tlbSlocEditList", {dc:"sloc"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Stock locators"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI);   
+});  

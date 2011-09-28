@@ -1,7 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bp.calendar.ds.model");
-net.nan21.dnet.module.bp.calendar.ds.CalendarEventPriorityDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventPriorityDs$Trl", {     	
 	eventType__lbl : "Type"
 	
-}  
-	
- 
+});

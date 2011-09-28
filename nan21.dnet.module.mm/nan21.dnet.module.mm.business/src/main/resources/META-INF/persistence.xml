@@ -34,6 +34,8 @@
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine</class>
 		 
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvBalance</class> 
+		 
 		<!-- Dependencies -->
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>

@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.mm.md.ds.model");
-net.nan21.dnet.module.mm.md.ds.ProductDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductDs$Trl", {     	
 	storable__lbl : "Storable"
 	,weight__lbl : "Weight"
 	,volume__lbl : "Volume"
@@ -21,6 +21,4 @@ net.nan21.dnet.module.mm.md.ds.ProductDs.prototype._trl_ = {
 	,attributeGroup__lbl : "Attribute Group"
 	,className__lbl : "Class Name"
 	
-}  
-	
- 
+});

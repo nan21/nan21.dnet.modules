@@ -18,6 +18,9 @@
  
  	<bean id="BpAccountService" scope="prototype"
 	  		class="net.nan21.dnet.module.bp.md.business.serviceimpl.BpAccountService"  />  
+ 
+ 	<bean id="BpClassificationService" scope="prototype"
+	  		class="net.nan21.dnet.module.bp.md.business.serviceimpl.BpClassificationService"  />  
    
 </beans>
    

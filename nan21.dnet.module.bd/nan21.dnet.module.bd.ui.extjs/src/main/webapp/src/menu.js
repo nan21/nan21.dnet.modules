@@ -29,6 +29,10 @@ net.nan21.dnet.module.bd.menu.ad = [
 	{"id":"sm_bd_org", "text":"Organizations", leaf:false, children:[
 		
 		{id:"Org_UI", text:Dnet.translate("ui","Org_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bd.org.frame.Org_UI", _bundle_:BUNDLE_ID}	]}
+,		 
+	{"id":"sm_bd_stds", "text":"Standards", leaf:false, children:[
+		
+		{id:"Classifications_UI", text:Dnet.translate("ui","Classifications_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bd.standards.frame.Classifications_UI", _bundle_:BUNDLE_ID}	]}
 	]}
  
    ];  

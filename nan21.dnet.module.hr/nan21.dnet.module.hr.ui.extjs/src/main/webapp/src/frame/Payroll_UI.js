@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/PayrollDs", "nan21.dnet.module.hr.ui.extjs/dc/Payroll", "nan21.dnet.module.hr.ui.extjs/ds/PayrollPeriodDs", "nan21.dnet.module.hr.ui.extjs/dc/PayrollPeriod"]);
 
-Ext.ns("net.nan21.dnet.module.hr.payroll.frame");
-net.nan21.dnet.module.hr.payroll.frame.Payroll_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.hr.payroll.frame.Payroll_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.hr.payroll.frame.Payroll_UI",
+	
 	 _name_ : "net.nan21.dnet.module.hr.payroll.frame.Payroll_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -17,8 +19,8 @@ net.nan21.dnet.module.hr.payroll.frame.Payroll_UI = Ext.extend( dnet.base.Abstra
 		.addDcFormView("payroll",{ name:"payrollEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit",height:90})	 
 		.addDcView("period",{ name:"periodCtxEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -39,5 +41,4 @@ net.nan21.dnet.module.hr.payroll.frame.Payroll_UI = Ext.extend( dnet.base.Abstra
 			.beginToolbar("tlbPeriodCtxEditList", {dc:"period"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.hr.payroll.frame.Payroll_UI", net.nan21.dnet.module.hr.payroll.frame.Payroll_UI);   
+});  

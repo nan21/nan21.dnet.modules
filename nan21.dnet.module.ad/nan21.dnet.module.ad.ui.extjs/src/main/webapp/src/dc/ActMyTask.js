@@ -1,25 +1,30 @@
    
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
-net.nan21.dnet.module.ad.workflow.dc.ActMyTask = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"ActMyTask" 		 
-			,ds: new net.nan21.dnet.module.ad.workflow.ds.ActMyTaskDs()			  
-		});
-	 	net.nan21.dnet.module.ad.workflow.dc.ActMyTask.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc'); 
-net.nan21.dnet.module.ad.workflow.dc.ActMyTask$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActMyTask", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActMyTaskDs",
+	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActMyTaskDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActMyTask$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActMyTask$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -28,10 +33,11 @@ net.nan21.dnet.module.ad.workflow.dc.ActMyTask$Filter = Ext.extend(dnet.base.Abs
 		.addChildrenTo("col1",["name"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActMyTask$Filter", net.nan21.dnet.module.ad.workflow.dc.ActMyTask$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 	 
-net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List",
+	
 	 _noImport_: true
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -46,4 +52,3 @@ net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List = Ext.extend(dnet.base.Abstr
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List", net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List ); 

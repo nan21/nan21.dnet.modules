@@ -1,28 +1,33 @@
    
-Ext.ns('net.nan21.dnet.module.hr.payroll.dc');	 
-net.nan21.dnet.module.hr.payroll.dc.ElementValue = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"ElementValue" 		 
-			,ds: new net.nan21.dnet.module.hr.payroll.ds.ElementValueDs()			  
-		});
-	 	net.nan21.dnet.module.hr.payroll.dc.ElementValue.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.payroll.dc'); 
-net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementValue", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.hr.payroll.ds.model.ElementValueDs",
+	paramModel: "net.nan21.dnet.module.hr.payroll.ds.param.ElementValueDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"element", xtype:"net.nan21.dnet.module.hr.payroll.lovs.Elements", dataIndex:"element",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "elementId"} ]  })
-		.addLov({ name:"employeeName", xtype:"net.nan21.dnet.module.hr.employee.lovs.Employees", dataIndex:"employeeName",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "employeeId"} ]  })
-		.addLov({ name:"period", xtype:"net.nan21.dnet.module.hr.payroll.lovs.PayrollPeriods", dataIndex:"period",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "periodId"} ]  })
+		.addLov({ name:"element", xtype:"net.nan21.dnet.module.hr.payroll.lovs.Elements", dataIndex:"element",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "elementId"} ]  })
+		.addLov({ name:"employeeName", xtype:"net.nan21.dnet.module.hr.employee.lovs.Employees", dataIndex:"employeeName",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "employeeId"} ]  })
+		.addLov({ name:"period", xtype:"net.nan21.dnet.module.hr.payroll.lovs.PayrollPeriods", dataIndex:"period",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "periodId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -32,10 +37,11 @@ net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter = Ext.extend(dnet.base.A
 		.addChildrenTo("col2",["employeeName"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter", net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.payroll.dc');	 	 
-net.nan21.dnet.module.hr.payroll.dc.ElementValue$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementValue$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.hr.payroll.dc.ElementValue$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -54,4 +60,3 @@ net.nan21.dnet.module.hr.payroll.dc.ElementValue$List = Ext.extend(dnet.base.Abs
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.hr.payroll.dc.ElementValue$List", net.nan21.dnet.module.hr.payroll.dc.ElementValue$List ); 

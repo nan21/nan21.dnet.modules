@@ -1,35 +1,40 @@
    
-Ext.ns('net.nan21.dnet.module.hr.time.dc');	 
-net.nan21.dnet.module.hr.time.dc.Absence = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"Absence" 		 
-			,ds: new net.nan21.dnet.module.hr.time.ds.AbsenceDs()			  
-		});
-	 	net.nan21.dnet.module.hr.time.dc.Absence.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.time.dc'); 
-net.nan21.dnet.module.hr.time.dc.Absence$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.hr.time.dc.Absence", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.hr.time.ds.model.AbsenceDs",
+	paramModel: "net.nan21.dnet.module.hr.time.ds.param.AbsenceDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.hr.time.dc.Absence$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"employeeCode", dataIndex:"employeeCode",anchor:"-20",disabled:true ,maxLength:32  })
-		.addLov({ name:"employee", xtype:"net.nan21.dnet.module.hr.employee.lovs.Employees", dataIndex:"employee",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "employeeId"} ]  })
-		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.time.lovs.AbsenceTypes", dataIndex:"type",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
-		.addLov({ name:"reason", xtype:"net.nan21.dnet.module.hr.time.lovs.AbsenceReasons", dataIndex:"reason",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "reasonId"} ]  })
-		.addDateField({ name:"eventDate", dataIndex:"eventDate",width:100 ,format:Ext.DATE_FORMAT })
+		.addLov({ name:"employee", xtype:"net.nan21.dnet.module.hr.employee.lovs.Employees", dataIndex:"employee",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "employeeId"} ]  })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.time.lovs.AbsenceTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addLov({ name:"reason", xtype:"net.nan21.dnet.module.hr.time.lovs.AbsenceReasons", dataIndex:"reason",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reasonId"} ]  })
+		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		.addNumberField({ name:"hours", dataIndex:"hours",anchor:"-20"  })
-		.addDateField({ name:"from", dataIndex:"from", _isParam_:true,width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("from", nv);} }} ,format:Ext.DATE_FORMAT })
-		.addDateField({ name:"to", dataIndex:"to", _isParam_:true,width:100,listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("to", nv);} }} ,format:Ext.DATE_FORMAT })
-		.addBooleanField({ name:"posted", dataIndex:"posted"  })
+		.addDateField({ name:"from", dataIndex:"from", _isParam_:true,anchor:"-20",listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("from", nv);} }} ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"to", dataIndex:"to", _isParam_:true,anchor:"-20",listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("to", nv);} }} ,format:Ext.DATE_FORMAT })
+		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col3", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -40,10 +45,11 @@ net.nan21.dnet.module.hr.time.dc.Absence$Filter = Ext.extend(dnet.base.AbstractD
 		.addChildrenTo("col3",["from","to"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.hr.time.dc.Absence$Filter", net.nan21.dnet.module.hr.time.dc.Absence$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.time.dc');	 	 
-net.nan21.dnet.module.hr.time.dc.Absence$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.hr.time.dc.Absence$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -68,23 +74,25 @@ net.nan21.dnet.module.hr.time.dc.Absence$List = Ext.extend(dnet.base.AbstractDcv
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.hr.time.dc.Absence$List", net.nan21.dnet.module.hr.time.dc.Absence$List ); 
  	
-Ext.ns('net.nan21.dnet.module.hr.time.dc');	 
-net.nan21.dnet.module.hr.time.dc.Absence$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.hr.time.dc.Absence$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"employee", xtype:"net.nan21.dnet.module.hr.employee.lovs.Employees", dataIndex:"employee",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "employeeId"} ]  })
-		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.time.lovs.AbsenceTypes", dataIndex:"type",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
-		.addLov({ name:"reason", xtype:"net.nan21.dnet.module.hr.time.lovs.AbsenceReasons", dataIndex:"reason",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "reasonId"} ],filterFieldMapping: [{lovField:"typeId", dsField: "typeId"} ]  })
-		.addDateField({ name:"eventDate", dataIndex:"eventDate",width:100 ,allowBlank:false})
+		.addLov({ name:"employee", xtype:"net.nan21.dnet.module.hr.employee.lovs.Employees", dataIndex:"employee",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "employeeId"} ]  })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.time.lovs.AbsenceTypes", dataIndex:"type",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addLov({ name:"reason", xtype:"net.nan21.dnet.module.hr.time.lovs.AbsenceReasons", dataIndex:"reason",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reasonId"} ],filterFieldMapping: [{lovField:"typeId", dsField: "typeId"} ]  })
+		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20" ,allowBlank:false})
 		.addNumberField({ name:"hours", dataIndex:"hours", width:80 ,allowBlank:false , style: "text-align:right;" })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" ,width:250,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"form" , width:400,labelAlign:"top",labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col3", layout:"anchor" , width:400,labelAlign:"top",labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -97,4 +105,3 @@ net.nan21.dnet.module.hr.time.dc.Absence$Edit = Ext.extend(dnet.base.AbstractDcv
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.hr.time.dc.Absence$Edit", net.nan21.dnet.module.hr.time.dc.Absence$Edit ); 

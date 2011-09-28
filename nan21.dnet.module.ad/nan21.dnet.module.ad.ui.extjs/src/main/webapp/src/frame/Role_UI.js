@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/RoleDs", "nan21.dnet.module.ad.ui.extjs/dc/Role","nan21.dnet.module.ad.ui.extjs/asgn/RolesOfUser","nan21.dnet.module.ad.ui.extjs/asgn/RolesOfAccessControl"]);
 
-Ext.ns("net.nan21.dnet.module.ad.usr.frame");
-net.nan21.dnet.module.ad.usr.frame.Role_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.usr.frame.Role_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.usr.frame.Role_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.usr.frame.Role_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -17,9 +19,9 @@ net.nan21.dnet.module.ad.usr.frame.Role_UI = Ext.extend( dnet.base.AbstractUi, {
 			,handler: this.onBtnAsgnRoleToAccessCtrl,scope:this,stateManager:{name:"selected_one_clean", dc:"rol" }	})	
 							 	
 		.addDcFilterFormView("rol",{ name:"rolFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.Role$Filter"})	 
-		.addDcView("rol",{ name:"rolList", xtype:"net.nan21.dnet.module.ad.usr.dc.Role$EditList", frame:true,buttons:[ this._elems_.get("btnAsgnRoleToUsers") ,this._elems_.get("btnAsgnRoleToAccessCtrl") ]})	 
+		.addDcView("rol",{ name:"rolList", xtype:"net.nan21.dnet.module.ad.usr.dc.Role$EditList", frame:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnAsgnRoleToUsers") ,this._elems_.get("btnAsgnRoleToAccessCtrl") ]}})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -43,5 +45,4 @@ net.nan21.dnet.module.ad.usr.frame.Role_UI = Ext.extend( dnet.base.AbstractUi, {
 	,onBtnAsgnRoleToAccessCtrl: function() {
 		this.showAsgnWindow(net.nan21.dnet.module.ad.usr.asgn.RolesOfAccessControl$Ui ,{dc:"rol",objectIdField:"id"});
 	}					 	
-});
-Ext.reg("net.nan21.dnet.module.ad.usr.frame.Role_UI", net.nan21.dnet.module.ad.usr.frame.Role_UI);   
+});  

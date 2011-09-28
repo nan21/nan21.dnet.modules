@@ -1,27 +1,32 @@
    
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
-net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"ActTaskInstance" 		 
-			,ds: new net.nan21.dnet.module.ad.workflow.ds.ActTaskInstanceDs()			  
-		});
-	 	net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc'); 
-net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDs",
+	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActTaskInstanceDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addCheckbox({ name:"hideActive" ,dataIndex:"hideActive", _isParam_:true ,listeners:{check:{scope:this, fn:this._doQuery_}} })
 		.addCheckbox({ name:"hideCompleted" ,dataIndex:"hideCompleted", _isParam_:true ,listeners:{check:{scope:this, fn:this._doQuery_}} })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelAlign:"right",labelWidth:150 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelAlign:"right",labelWidth:150 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelAlign:"right",labelWidth:150 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelAlign:"right",labelWidth:150 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -34,10 +39,11 @@ net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter = Ext.extend(dnet.ba
 		this._controller_.doQuery();
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter", net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 	 
-net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List",
+	
 	 _noImport_: true
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -58,16 +64,18 @@ net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List = Ext.extend(dnet.base
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List", net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List ); 
  	
-Ext.ns('net.nan21.dnet.module.ad.workflow.dc');	 
-net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
 		//containers
-		.addPanel({ name:"main", layout:"form" , autoScroll:true,width:250,labelWidth:0 })     
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250,labelWidth:0 })     
 		;     
 	}
 	,_linkElements_: function () {
@@ -76,4 +84,3 @@ net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm = Ext.extend(dne
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm", net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm ); 

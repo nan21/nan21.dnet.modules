@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.sd.invoice.ds.model");
-net.nan21.dnet.module.sd.invoice.ds.SalesInvoiceDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs$Trl", {     	
 	docNo__lbl : "Doc No"
 	,docDate__lbl : "Doc Date"
 	,status__lbl : "Status"
@@ -21,6 +21,4 @@ net.nan21.dnet.module.sd.invoice.ds.SalesInvoiceDs.prototype._trl_ = {
 	,salesOrderId__lbl : "Sales Order Id"
 	,className__lbl : "Class Name"
 	
-}  
-	
- 
+});

@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/CourseDs", "nan21.dnet.module.hr.ui.extjs/dc/Course", "nan21.dnet.module.hr.ui.extjs/ds/JobCourseDs", "nan21.dnet.module.hr.ui.extjs/dc/JobCourse", "nan21.dnet.module.hr.ui.extjs/ds/PositionCourseDs", "nan21.dnet.module.hr.ui.extjs/dc/PositionCourse","nan21.dnet.module.hr.ui.extjs/ds/CourseTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/CourseTypes","nan21.dnet.module.hr.ui.extjs/ds/CourseTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/CourseTypes","nan21.dnet.module.hr.ui.extjs/ds/JobLovDs","nan21.dnet.module.hr.ui.extjs/lov/Jobs","nan21.dnet.module.hr.ui.extjs/ds/PositionLovDs","nan21.dnet.module.hr.ui.extjs/lov/Positions"]);
 
-Ext.ns("net.nan21.dnet.module.hr.training.frame");
-net.nan21.dnet.module.hr.training.frame.Course_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.hr.training.frame.Course_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.hr.training.frame.Course_UI",
+	
 	 _name_ : "net.nan21.dnet.module.hr.training.frame.Course_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -21,8 +23,8 @@ net.nan21.dnet.module.hr.training.frame.Course_UI = Ext.extend( dnet.base.Abstra
 		.addDcView("position",{ name:"positionList", xtype:"net.nan21.dnet.module.hr.training.dc.PositionCourse$CourseCtxEditList", frame:true,title:"Positions"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "details", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:450}}) 	  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -46,5 +48,4 @@ net.nan21.dnet.module.hr.training.frame.Course_UI = Ext.extend( dnet.base.Abstra
 			.beginToolbar("tlbPositionList", {dc:"position"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Positions"}).end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.hr.training.frame.Course_UI", net.nan21.dnet.module.hr.training.frame.Course_UI);   
+});  

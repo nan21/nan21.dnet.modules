@@ -1,29 +1,34 @@
    
-Ext.ns('net.nan21.dnet.module.ad.report.dc');	 
-net.nan21.dnet.module.ad.report.dc.Report = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"Report" 		 
-			,ds: new net.nan21.dnet.module.ad.report.ds.ReportDs()			  
-		});
-	 	net.nan21.dnet.module.ad.report.dc.Report.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.report.dc'); 
-net.nan21.dnet.module.ad.report.dc.Report$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.ad.report.dc.Report", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.ad.report.ds.model.ReportDs",
+	paramModel: "net.nan21.dnet.module.ad.report.ds.param.ReportDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ad.report.dc.Report$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
-		.addLov({ name:"reportServerName", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServerName",anchor:"-20",maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
-		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
+		.addLov({ name:"reportServerName", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServerName",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -33,10 +38,11 @@ net.nan21.dnet.module.ad.report.dc.Report$Filter = Ext.extend(dnet.base.Abstract
 		.addChildrenTo("col2",["reportServerName","active"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.ad.report.dc.Report$Filter", net.nan21.dnet.module.ad.report.dc.Report$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.report.dc');	 	 
-net.nan21.dnet.module.ad.report.dc.Report$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.ad.report.dc.Report$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.report.dc.Report$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -55,10 +61,12 @@ net.nan21.dnet.module.ad.report.dc.Report$List = Ext.extend(dnet.base.AbstractDc
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.ad.report.dc.Report$List", net.nan21.dnet.module.ad.report.dc.Report$List ); 
  	
-Ext.ns('net.nan21.dnet.module.ad.report.dc');	 
-net.nan21.dnet.module.ad.report.dc.Report$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.ad.report.dc.Report$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -66,10 +74,10 @@ net.nan21.dnet.module.ad.report.dc.Report$Edit = Ext.extend(dnet.base.AbstractDc
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
-		.addLov({ name:"reportServerName", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServerName",anchor:"-20" ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
+		.addLov({ name:"reportServerName", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServerName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" , width:400,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" , width:400,labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -81,4 +89,3 @@ net.nan21.dnet.module.ad.report.dc.Report$Edit = Ext.extend(dnet.base.AbstractDc
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.ad.report.dc.Report$Edit", net.nan21.dnet.module.ad.report.dc.Report$Edit ); 

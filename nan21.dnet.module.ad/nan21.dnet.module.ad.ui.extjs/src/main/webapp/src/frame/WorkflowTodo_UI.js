@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ActMyTaskDs", "nan21.dnet.module.ad.ui.extjs/dc/ActMyTask", "nan21.dnet.module.ad.ui.extjs/ds/ActAvailableTaskDs", "nan21.dnet.module.ad.ui.extjs/dc/ActAvailableTask", "nan21.dnet.module.ad.ui.extjs/ds/ActMyTaskHistoryDs", "nan21.dnet.module.ad.ui.extjs/dc/ActMyTaskHistory"]);
 
-Ext.ns("net.nan21.dnet.module.ad.workflow.frame");
-net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -19,15 +21,15 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI = Ext.extend( dnet.base.
 			,handler: this.onBtnClaimTask,scope:this,stateManager:{name:"selected_one", dc:"dcAvailabletask" }	})	
 							 	
 		.addDcFilterFormView("dcMytask",{ name:"filterMytask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActMyTask$Filter",height:40})	 
-		.addDcView("dcMytask",{ name:"listMytask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List",buttons:[ this._elems_.get("btnCompleteTask") ]})	 
+		.addDcView("dcMytask",{ name:"listMytask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnCompleteTask") ]}})	 
 		.addDcFilterFormView("dcAvailabletask",{ name:"filterAvailabletask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask$Filter",height:40})	 
-		.addDcView("dcAvailabletask",{ name:"listAvailabletask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask$List",buttons:[ this._elems_.get("btnClaimTask") ]})	 
+		.addDcView("dcAvailabletask",{ name:"listAvailabletask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask$List",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnClaimTask") ]}})	 
 		.addDcFilterFormView("dcMyhistory",{ name:"filterMyhistory", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory$Filter",height:40})	 
 		.addDcView("dcMyhistory",{ name:"listMyhistory", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory$List"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Current tasks",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Available tasks",header:false})  	 
-		.addPanel({name: "canvas3", layout:"border", defaults:{split:true},title:"History",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Current tasks",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Available tasks",preventHeader:true})  	 
+		.addPanel({name: "canvas3", layout:"border", defaults:{split:true},title:"History",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -78,5 +80,4 @@ net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI = Ext.extend( dnet.base.
 			dnet.base.DcExceptions.showMessage(e);
 		}
 	}					 	
-});
-Ext.reg("net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI", net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI);   
+});  

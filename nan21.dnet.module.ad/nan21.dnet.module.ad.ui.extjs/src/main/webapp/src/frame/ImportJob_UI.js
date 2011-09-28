@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ImportJobDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportJob", "nan21.dnet.module.ad.ui.extjs/ds/ImportJobItemDs", "nan21.dnet.module.ad.ui.extjs/dc/ImportJobItem","nan21.dnet.module.ad.ui.extjs/ds/ImportMapLovDs","nan21.dnet.module.ad.ui.extjs/lov/ImportMap"]);
 
-Ext.ns("net.nan21.dnet.module.ad.impex.frame");
-net.nan21.dnet.module.ad.impex.frame.ImportJob_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportJob_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.impex.frame.ImportJob_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.impex.frame.ImportJob_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -20,11 +22,11 @@ net.nan21.dnet.module.ad.impex.frame.ImportJob_UI = Ext.extend( dnet.base.Abstra
 							 	
 		.addDcFilterFormView("job",{ name:"jobFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportJob$Filter"})	 
 		.addDcView("job",{ name:"jobList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportJob$List"})	 
-		.addDcFormView("job",{ name:"jobEdit", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportJob$Edit",height:100,buttons:[ this._elems_.get("btnRunImport") ,this._elems_.get("btnRunImportItem") ]})	 
+		.addDcFormView("job",{ name:"jobEdit", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportJob$Edit",height:100,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnRunImport") ,this._elems_.get("btnRunImportItem") ]}})	 
 		.addDcView("item",{ name:"itemEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportJobItem$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",header:false})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -63,5 +65,4 @@ net.nan21.dnet.module.ad.impex.frame.ImportJob_UI = Ext.extend( dnet.base.Abstra
 			dnet.base.DcExceptions.showMessage(e);
 		}
 	}					 	
-});
-Ext.reg("net.nan21.dnet.module.ad.impex.frame.ImportJob_UI", net.nan21.dnet.module.ad.impex.frame.ImportJob_UI);   
+});  

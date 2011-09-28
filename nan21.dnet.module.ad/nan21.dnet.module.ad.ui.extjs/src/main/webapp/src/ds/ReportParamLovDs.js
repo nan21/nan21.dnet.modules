@@ -1,29 +1,20 @@
  
    	 
-Ext.ns("net.nan21.dnet.module.ad.report.ds.model");
-	net.nan21.dnet.module.ad.report.ds.model.ReportParamLovDs = [
-	{name:"id",type:"int"}
-	,	{name:"clientId",type:"int"}
-	,	{name:"code",type:"string"}
-	,	{name:"name",type:"string"}
-	,	{name:"active",type:"boolean"}
-	,	{name:"reportId",type:"int"}
+Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportParamLovDs" , {
+	extend: 'Ext.data.Model',
+	fields: [  		
+		{name:"id",type:"int", useNull:true }, 		
+		{name:"clientId",type:"int", useNull:true }, 		
+		{name:"code",type:"string" }, 		
+		{name:"name",type:"string" }, 		
+		{name:"active",type:"boolean" }, 		
+		{name:"reportId",type:"int", useNull:true }
+	]
+});
 	
-	];
-Ext.ns("net.nan21.dnet.module.ad.report.ds.param");	
-	net.nan21.dnet.module.ad.report.ds.param.ReportParamLovDsParam = [
-	
-	];
-Ext.ns("net.nan21.dnet.module.ad.report.ds");	
-	net.nan21.dnet.module.ad.report.ds.ReportParamLovDs  = Ext.extend(dnet.base.AbstractDs, {
-		constructor: function(config) {
-			config = config || {};
-			Ext.apply(config, {
-				 dsName:"ReportParamLovDs" 				 		
-				,recordFields: net.nan21.dnet.module.ad.report.ds.model.ReportParamLovDs
-				,paramFields: net.nan21.dnet.module.ad.report.ds.param.ReportParamLovDsParam				 
-			});
-		 	net.nan21.dnet.module.ad.report.ds.ReportParamLovDs.superclass.constructor.call(this, config);
-		}	 
-	});  
+Ext.define("net.nan21.dnet.module.ad.report.ds.param.ReportParamLovDsParam", {
+	extend: 'Ext.data.Model',
+	fields: [ 
+	]
+}); 
  

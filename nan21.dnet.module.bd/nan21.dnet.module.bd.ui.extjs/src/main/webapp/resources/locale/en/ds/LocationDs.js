@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bd.geo.ds.model");
-net.nan21.dnet.module.bd.geo.ds.LocationDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bd.geo.ds.model.LocationDs$Trl", {     	
 	regionName__lbl : "Region Name"
 	,cityName__lbl : "City Name"
 	,adress__lbl : "Adress"
@@ -14,6 +14,4 @@ net.nan21.dnet.module.bd.geo.ds.LocationDs.prototype._trl_ = {
 	,targetId__lbl : "Target Id"
 	,targetType__lbl : "Target Type"
 	
-}  
-	
- 
+});

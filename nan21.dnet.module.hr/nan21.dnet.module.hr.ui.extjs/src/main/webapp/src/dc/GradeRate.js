@@ -1,28 +1,33 @@
    
-Ext.ns('net.nan21.dnet.module.hr.grade.dc');	 
-net.nan21.dnet.module.hr.grade.dc.GradeRate = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"GradeRate" 		 
-			,ds: new net.nan21.dnet.module.hr.grade.ds.GradeRateDs()			  
-		});
-	 	net.nan21.dnet.module.hr.grade.dc.GradeRate.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.grade.dc'); 
-net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.hr.grade.ds.model.GradeRateDs",
+	paramModel: "net.nan21.dnet.module.hr.grade.ds.param.GradeRateDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active"  })
-		.addLov({ name:"currencyCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currencyCode",anchor:"-20",maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
+		.addLov({ name:"currencyCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currencyCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"form",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -32,10 +37,11 @@ net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter = Ext.extend(dnet.base.Abstra
 		.addChildrenTo("col2",["currencyCode","active"])
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter", net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter ); 
- 	
-Ext.ns('net.nan21.dnet.module.hr.grade.dc');	 	 
-net.nan21.dnet.module.hr.grade.dc.GradeRate$List = Ext.extend(dnet.base.AbstractDcvGrid, {
+ 		 
+Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.hr.grade.dc.GradeRate$List",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {	
@@ -54,22 +60,24 @@ net.nan21.dnet.module.hr.grade.dc.GradeRate$List = Ext.extend(dnet.base.Abstract
 	}
 });
  
-Ext.reg("net.nan21.dnet.module.hr.grade.dc.GradeRate$List", net.nan21.dnet.module.hr.grade.dc.GradeRate$List ); 
  	
-Ext.ns('net.nan21.dnet.module.hr.grade.dc');	 
-net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit = Ext.extend(dnet.base.AbstractDcvForm, {
+
+Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit",
+	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"description", dataIndex:"description",height:60, width:300   })
-		.addLov({ name:"currencyCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currencyCode",anchor:"-20" ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
-		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",width:100,disabled:true  ,allowBlank:false})
+		.addLov({ name:"currencyCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currencyCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
+		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",disabled:true, hideTrigger:true ,allowBlank:false})
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",disabled:true  ,allowBlank:false,maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"form" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"form" , width:320,labelAlign:"top",labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" , width:320,labelAlign:"top",labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -81,4 +89,3 @@ net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit = Ext.extend(dnet.base.Abstract
 ;
 	}	
 });
-Ext.reg("net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit", net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit ); 

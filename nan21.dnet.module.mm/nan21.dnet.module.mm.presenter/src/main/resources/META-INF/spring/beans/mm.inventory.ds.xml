@@ -160,6 +160,17 @@
 		<property name="name" value="InvTransactionLine" />
 		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionLineDs" />
 	</bean>
+   
+ 	<bean id="InvBalanceDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvBalanceDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvBalance" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvBalanceDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="InvBalance" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvBalanceDs" />
+	</bean>
       
 </beans>
    

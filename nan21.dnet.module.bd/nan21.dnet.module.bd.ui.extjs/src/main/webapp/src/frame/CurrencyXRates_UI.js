@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/CurrencyXRateDs", "nan21.dnet.module.bd.ui.extjs/dc/CurrencyXRate","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/CurrencyXRateProviderLovDs","nan21.dnet.module.bd.ui.extjs/lov/CurrencyXRateProviders","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/CurrencyXRateProviderLovDs","nan21.dnet.module.bd.ui.extjs/lov/CurrencyXRateProviders"]);
 
-Ext.ns("net.nan21.dnet.module.bd.currency.frame");
-net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI",
+	
 	 _name_ : "net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -13,7 +15,7 @@ net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI = Ext.extend( dnet.bas
 		.addDcFilterFormView("xrate",{ name:"xrateFilter", xtype:"net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter"})	 
 		.addDcView("xrate",{ name:"xrateEditList", xtype:"net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",preventHeader:true})  	 
 ;	 	
 	}
 
@@ -29,5 +31,4 @@ net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI = Ext.extend( dnet.bas
 			.beginToolbar("tlbXrateEditList", {dc:"xrate"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI", net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI);   
+});  

@@ -1,7 +1,9 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/UserTypeDs", "nan21.dnet.module.ad.ui.extjs/dc/UserType"]);
 
-Ext.ns("net.nan21.dnet.module.ad.usr.frame");
-net.nan21.dnet.module.ad.usr.frame.UserTypes_UI = Ext.extend( dnet.base.AbstractUi, {  
+Ext.define("net.nan21.dnet.module.ad.usr.frame.UserTypes_UI", {  
+	extend: "dnet.base.AbstractUi",
+	alias:"widget.net.nan21.dnet.module.ad.usr.frame.UserTypes_UI",
+	
 	 _name_ : "net.nan21.dnet.module.ad.usr.frame.UserTypes_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
@@ -13,7 +15,7 @@ net.nan21.dnet.module.ad.usr.frame.UserTypes_UI = Ext.extend( dnet.base.Abstract
 		.addDcFilterFormView("userType",{ name:"filterUserType", xtype:"net.nan21.dnet.module.ad.usr.dc.UserType$Filter"})	 
 		.addDcView("userType",{ name:"listUserType", xtype:"net.nan21.dnet.module.ad.usr.dc.UserType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},header:false})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -29,5 +31,4 @@ net.nan21.dnet.module.ad.usr.frame.UserTypes_UI = Ext.extend( dnet.base.Abstract
 			.beginToolbar("tlbGroupEditList", {dc:"userType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
 	}
 
-});
-Ext.reg("net.nan21.dnet.module.ad.usr.frame.UserTypes_UI", net.nan21.dnet.module.ad.usr.frame.UserTypes_UI);   
+});  

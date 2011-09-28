@@ -1,10 +1,17 @@
-Ext.ns("net.nan21.dnet.module.bd.org.asgn");
-net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems = Ext.extend(dnet.base.AbstractAsgn, {
+	
+Ext.define("net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Model" , {
+	extend: 'Ext.data.Model',
+	fields:  [{name:"id",type:"string"},{name:"code",type:"string"},{name:"name",type:"string"}]
+});
+Ext.define("net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems", {
+	extend: "dnet.base.AbstractAsgn",
 	dsName: "OrganizationHierarchyItems", 
-	recordFields : [{name:"id",type:"string"},{name:"code",type:"string"},{name:"name",type:"string"}]
+	recordModel: "net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Model"
 });	 
  
-net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$List = Ext.extend( dnet.base.AbstractAsgnGrid, {
+Ext.define("net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$List", {
+	extend: "dnet.base.AbstractAsgnGrid",
+	alias:[ "widget.net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Left","widget.net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Right" ],
 	_defineColumns_: function () {
 		this._getBuilder_()		
 		.addTextColumn( {name:"id", header:"Id", dataIndex:"id", hidden:true, width:100})
@@ -12,10 +19,10 @@ net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$List = Ext.extend( 
 		.addTextColumn( {name:"name", header:"Name", dataIndex:"name", width:150 })
 	} 
 });
-Ext.reg("net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Left", net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$List);
-Ext.reg("net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Right", net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$List); 
 
-net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Ui = Ext.extend(dnet.base.AbstractAsgnUi, {
+Ext.define("net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Ui", {
+	extend: "dnet.base.AbstractAsgnUi",
+	alias: "widget.net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Ui",
  	 width:500
 	,height:300 
 	,title:"User roles"
@@ -29,4 +36,3 @@ net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Ui = Ext.extend(dne
 			.addRightGrid({ xtype:"net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Right"})
 	}
 });	 
-Ext.reg("net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Ui", net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Ui);

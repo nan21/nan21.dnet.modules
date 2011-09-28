@@ -1,19 +1,24 @@
    
-Ext.ns('net.nan21.dnet.module.ad.report.dc');	 
-net.nan21.dnet.module.ad.report.dc.ReportServer = Ext.extend(dnet.base.AbstractDc, {
-	constructor: function(config) {
-		config = config || {};
-		Ext.apply(config, {
-			 dcName:"ReportServer" 		 
-			,ds: new net.nan21.dnet.module.ad.report.ds.ReportServerDs()			  
-		});
-	 	net.nan21.dnet.module.ad.report.dc.ReportServer.superclass.constructor.call(this, config);
-	}	 
-}); 
- 	
-Ext.ns('net.nan21.dnet.module.ad.report.dc'); 
-net.nan21.dnet.module.ad.report.dc.ReportServer$Filter = Ext.extend(dnet.base.AbstractDcvFilterForm, {
+
+Ext.define("net.nan21.dnet.module.ad.report.dc.ReportServer", {
+	extend: "dnet.base.AbstractDc",
  
+	recordModel: "net.nan21.dnet.module.ad.report.ds.model.ReportServerDs",
+	paramModel: "net.nan21.dnet.module.ad.report.ds.param.ReportServerDsParam",
+	constructor : function(config) {
+        config = config || {};
+        Ext.apply(this, config);
+        this.callParent();
+	}
+});
+
+
+
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.report.dc.ReportServer$Filter", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ad.report.dc.ReportServer$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -24,30 +29,30 @@ net.nan21.dnet.module.ad.report.dc.ReportServer$Filter = Ext.extend(dnet.base.Ab
 	,_linkElements_: function () {
 		this._getBuilder_()
 		this._elems_.get("main")["items"] = [
-	    {layout:"form", border:false 
+	    {layout:"anchor", border:false 
 	      ,items:[ this._elems_.get("name")] }
 ];
 	}
 }); 
-Ext.reg("net.nan21.dnet.module.ad.report.dc.ReportServer$Filter", net.nan21.dnet.module.ad.report.dc.ReportServer$Filter ); 
  	
-Ext.ns('net.nan21.dnet.module.ad.report.dc');	 	 
-net.nan21.dnet.module.ad.report.dc.ReportServer$EditList = Ext.extend(dnet.base.AbstractDcvEditableGrid, {
+ 	 
+Ext.define("net.nan21.dnet.module.ad.report.dc.ReportServer$EditList", {
+	extend: "dnet.base.AbstractDcvEditableGrid",
+	alias: "widget.net.nan21.dnet.module.ad.report.dc.ReportServer$EditList",
+	
 	 _noImport_: false
 	,_noExport_: false
 	,_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addTextColumn({ name:"url", dataIndex:"url",width:100,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addTextColumn({ name:"url", dataIndex:"url",width:100,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:400,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "400"}} })
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70,editable:false ,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT,editable:false ,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT} })
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT,editable:false ,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT} })
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100,editable:false,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100,editable:false,editor:{xtype:"textfield" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:400,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "400"}} })
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})
+		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
 	  ;  		   
 	}  
 });
-Ext.reg("net.nan21.dnet.module.ad.report.dc.ReportServer$EditList", net.nan21.dnet.module.ad.report.dc.ReportServer$EditList ); 

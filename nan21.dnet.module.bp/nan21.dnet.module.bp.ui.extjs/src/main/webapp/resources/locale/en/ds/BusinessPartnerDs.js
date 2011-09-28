@@ -1,5 +1,5 @@
-Ext.ns("net.nan21.dnet.module.bp.md.ds.model");
-net.nan21.dnet.module.bp.md.ds.BusinessPartnerDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs$Trl", {     	
 	type__lbl : "Type"
 	,firstName__lbl : "First Name"
 	,lastName__lbl : "Last Name"
@@ -14,6 +14,4 @@ net.nan21.dnet.module.bp.md.ds.BusinessPartnerDs.prototype._trl_ = {
 	,countryCode__lbl : "Country Code"
 	,className__lbl : "Class Name"
 	
-}  
-	
- 
+});

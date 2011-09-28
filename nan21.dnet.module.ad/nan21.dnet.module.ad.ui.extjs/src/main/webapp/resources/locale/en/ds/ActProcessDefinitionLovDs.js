@@ -1,7 +1,5 @@
-Ext.ns("net.nan21.dnet.module.ad.workflow.ds.model");
-net.nan21.dnet.module.ad.workflow.ds.ActProcessDefinitionLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionLovDs$Trl", {     	
 	fullName__lbl : "Full Name"
 	
-}  
-	
- 
+});

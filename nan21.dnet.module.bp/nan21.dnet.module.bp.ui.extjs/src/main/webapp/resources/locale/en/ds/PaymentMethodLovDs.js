@@ -1,6 +1,4 @@
-Ext.ns("net.nan21.dnet.module.bp.base.ds.model");
-net.nan21.dnet.module.bp.base.ds.PaymentMethodLovDs.prototype._trl_ = { 
+
+Ext.define("net.nan21.dnet.module.bp.base.ds.model.PaymentMethodLovDs$Trl", {     	
 	
-}  
-	
- 
+});
