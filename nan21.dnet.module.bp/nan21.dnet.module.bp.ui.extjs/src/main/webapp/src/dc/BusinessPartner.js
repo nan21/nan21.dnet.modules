@@ -91,7 +91,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit", {
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
-		.addTextField({ name:"type", dataIndex:"type",anchor:"-20",disabled:true  ,maxLength:1  })
+		.addTextField({ name:"type", dataIndex:"type",anchor:"-20",noEdit:true  ,maxLength:1  })
 		.addTextField({ name:"firstName", dataIndex:"firstName",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"lastName", dataIndex:"lastName",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"gender", dataIndex:"gender",anchor:"-20" ,maxLength:16  })

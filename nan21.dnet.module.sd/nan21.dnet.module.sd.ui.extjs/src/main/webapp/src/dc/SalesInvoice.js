@@ -88,9 +88,9 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Edit", {
 		.addLov({ name:"currencyCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currencyCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		.addLov({ name:"billToLocation", xtype:"net.nan21.dnet.module.bd.geo.lovs.LocationsToBill", dataIndex:"billToLocation",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "billToLocationId"} ],filterFieldMapping: [{lovField:"targetId", dsField: "customerId"} ]  })
 		.addLov({ name:"billToContact", xtype:"net.nan21.dnet.module.bp.md.lovs.BpContacts", dataIndex:"billToContact",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "billToContactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "customerId"} ]  })
-		.addNumberField({ name:"totalNetAmount", dataIndex:"totalNetAmount",anchor:"-20",disabled:true   , style: "text-align:right;" })
-		.addNumberField({ name:"totalTaxAmount", dataIndex:"totalTaxAmount",anchor:"-20",disabled:true   , style: "text-align:right;" })
-		.addNumberField({ name:"totalAmount", dataIndex:"totalAmount",anchor:"-20",disabled:true   , style: "text-align:right;" })
+		.addNumberField({ name:"totalNetAmount", dataIndex:"totalNetAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
+		.addNumberField({ name:"totalTaxAmount", dataIndex:"totalTaxAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
+		.addNumberField({ name:"totalAmount", dataIndex:"totalAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
 		.addLov({ name:"customerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.Customers", dataIndex:"customerCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "customerId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" ,width:250,labelWidth:0 })     

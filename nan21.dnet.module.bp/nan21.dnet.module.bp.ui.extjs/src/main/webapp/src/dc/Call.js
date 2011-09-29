@@ -107,17 +107,15 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"subject", dataIndex:"subject",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:100,anchor:"-20"   })
-		.addDateTimeField({ name:"startDate", dataIndex:"startDate",anchor:"-20" ,allowBlank:false}) 
-
-		.addDateTimeField({ name:"endDate", dataIndex:"endDate",anchor:"-20" ,allowBlank:false}) 
-
-		.addNumberField({ name:"statusId", dataIndex:"statusId",anchor:"-20",disabled:true   , style: "text-align:right;" })
+		.addDateTimeField({ name:"startDate", dataIndex:"startDate",anchor:"-20" ,allowBlank:false})
+		.addDateTimeField({ name:"endDate", dataIndex:"endDate",anchor:"-20" ,allowBlank:false})
+		.addNumberField({ name:"statusId", dataIndex:"statusId",anchor:"-20",noEdit:true   , style: "text-align:right;" })
 		.addLov({ name:"statusName", xtype:"net.nan21.dnet.module.bp.calendar.lovs.CalendarEventStatusCall", dataIndex:"statusName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
-		.addNumberField({ name:"priorityId", dataIndex:"priorityId",anchor:"-20",disabled:true   , style: "text-align:right;" })
+		.addNumberField({ name:"priorityId", dataIndex:"priorityId",anchor:"-20",noEdit:true   , style: "text-align:right;" })
 		.addLov({ name:"priorityName", xtype:"net.nan21.dnet.module.bp.calendar.lovs.CalendarEventPrioritiesCall", dataIndex:"priorityName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
 		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"bpartnerCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "bpartnerId"} ]  })
 		.addLov({ name:"contact", xtype:"net.nan21.dnet.module.bp.md.lovs.BpContacts", dataIndex:"contact",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "contactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "bpartnerId"} ]  })
-		.addNumberField({ name:"id", dataIndex:"id",anchor:"-20",disabled:true  ,allowBlank:false , style: "text-align:right;" })
+		.addNumberField({ name:"id", dataIndex:"id",anchor:"-20",noEdit:true  ,allowBlank:false , style: "text-align:right;" })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:400,labelWidth:0 })     
 		.addPanel({ name:"col2", layout:"anchor" , width:400,labelWidth:0 })     

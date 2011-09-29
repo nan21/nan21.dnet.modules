@@ -100,9 +100,9 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$Edit", {
 		.addLov({ name:"billToLocation", xtype:"net.nan21.dnet.module.bd.geo.lovs.LocationsToBill", dataIndex:"billToLocation",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "billToLocationId"} ],filterFieldMapping: [{lovField:"targetId", dsField: "billToId"} ]  })
 		.addLov({ name:"shipToCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"shipToCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "shipToId"} ]  })
 		.addLov({ name:"shipToLocation", xtype:"net.nan21.dnet.module.bd.geo.lovs.LocationsToShip", dataIndex:"shipToLocation",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "shipToLocationId"} ],filterFieldMapping: [{lovField:"targetId", dsField: "billToId"} ]  })
-		.addNumberField({ name:"totalNetAmount", dataIndex:"totalNetAmount",anchor:"-20",disabled:true   , style: "text-align:right;" })
-		.addNumberField({ name:"totalTaxAmount", dataIndex:"totalTaxAmount",anchor:"-20",disabled:true   , style: "text-align:right;" })
-		.addNumberField({ name:"totalAmount", dataIndex:"totalAmount",anchor:"-20",disabled:true   , style: "text-align:right;" })
+		.addNumberField({ name:"totalNetAmount", dataIndex:"totalNetAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
+		.addNumberField({ name:"totalTaxAmount", dataIndex:"totalTaxAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
+		.addNumberField({ name:"totalAmount", dataIndex:"totalAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" ,width:250,labelWidth:0 })     
 		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     

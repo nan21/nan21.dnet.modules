@@ -80,9 +80,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Edit", {
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addCheckbox({ name:"locked", dataIndex:"locked"  })
-		.addDateTimeField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",disabled:true, hideTrigger:true ,allowBlank:false}) 
-
-		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",disabled:true  ,allowBlank:false,maxLength:32  })
+		.addDateTimeField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",noEdit:true, hideTrigger:true ,allowBlank:false})
+		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
 		.addPanel({ name:"col2", layout:"anchor" , width:250,labelWidth:0 })     

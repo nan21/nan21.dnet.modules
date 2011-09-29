@@ -127,10 +127,10 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Edit", {
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addTextField({ name:"iso", dataIndex:"iso",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addNumberField({ name:"countryId", dataIndex:"countryId",anchor:"-20",disabled:true   , style: "text-align:right;" })
+		.addNumberField({ name:"countryId", dataIndex:"countryId",anchor:"-20",noEdit:true   , style: "text-align:right;" })
 		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
-		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",disabled:true, hideTrigger:true ,allowBlank:false})
-		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",disabled:true  ,allowBlank:false,maxLength:32  })
+		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",noEdit:true, hideTrigger:true ,allowBlank:false})
+		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
 		.addPanel({ name:"col2", layout:"anchor" , width:250,labelWidth:0 })     

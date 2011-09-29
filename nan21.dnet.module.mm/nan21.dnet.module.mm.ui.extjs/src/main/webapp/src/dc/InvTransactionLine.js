@@ -82,8 +82,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$CtxFormView
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"item", dataIndex:"item",anchor:"-20",disabled:true  ,maxLength:255  })
-		.addNumberField({ name:"quantity", dataIndex:"quantity",anchor:"-20",disabled:true  ,allowBlank:false , style: "text-align:right;" })
+		.addTextField({ name:"item", dataIndex:"item",anchor:"-20",noEdit:true  ,maxLength:255  })
+		.addNumberField({ name:"quantity", dataIndex:"quantity",anchor:"-20",noEdit:true  ,allowBlank:false , style: "text-align:right;" })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:500,labelWidth:0 })     
 		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     

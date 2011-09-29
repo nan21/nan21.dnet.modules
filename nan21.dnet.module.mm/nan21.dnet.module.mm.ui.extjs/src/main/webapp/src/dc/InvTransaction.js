@@ -70,7 +70,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20",disabled:true, hideTrigger:true })
+		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20",noEdit:true, hideTrigger:true })
 		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ]  })
 		.addLov({ name:"fromInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"fromInventory",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "fromInventoryId"} ]  })
 		.addLov({ name:"toInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"toInventory",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "toInventoryId"} ]  })

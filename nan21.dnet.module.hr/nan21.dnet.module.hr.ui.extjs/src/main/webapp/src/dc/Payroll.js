@@ -71,7 +71,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit", {
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
-		.addCombo({ name:"periodType", xtype:"combo", dataIndex:"periodType",anchor:"-20",allowBlank:false,store:[ "calendar-month", "semi-month"]  })
+		.addCombo({ name:"periodType", xtype:"combo", dataIndex:"periodType",anchor:"-20" ,allowBlank:false,store:[ "calendar-month", "semi-month"]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
 		.addPanel({ name:"col2", layout:"anchor" , width:350,labelWidth:0 })     

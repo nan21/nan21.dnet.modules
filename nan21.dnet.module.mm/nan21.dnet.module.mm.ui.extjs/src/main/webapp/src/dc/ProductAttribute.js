@@ -12,7 +12,10 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttribute", {
 	}
 });
 
- 
+
+
+ 	
+
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttribute$Filter", {
 	extend: "dnet.base.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttribute$Filter",
