@@ -18,6 +18,11 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationDs" , {
 		{name:"typeId",type:"int", useNull:true }, 		
 		{name:"type",type:"string" }, 		
 		{name:"className",type:"string" }
+	],
+	validations: [
+	    {type: 'presence',  field: 'code'},
+	    {type: 'presence',  field: 'name'},
+	    {type: 'length',    field: 'code',     max: 6}
 	]
 });
 	

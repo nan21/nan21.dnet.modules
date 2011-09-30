@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.lovs.SkillCategories", {
 		},
 		width:250
 	},		 
-	_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.skill.frame.SkillType_UI",bundle:"nan21.dnet.module.hr.ui.extjs"},
+	_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.skill.frame.SkillType_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasCateg"},
 	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.SkillCategoryLovDs",
 	_dataProviderName_:"SkillCategoryLovDs"	 		
 	
