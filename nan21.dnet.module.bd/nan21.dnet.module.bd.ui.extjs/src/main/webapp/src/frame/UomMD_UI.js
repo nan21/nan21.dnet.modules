@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.frame.UomMD_UI", {
 	 _name_ : "net.nan21.dnet.module.bd.uom.frame.UomMD_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("uom", new net.nan21.dnet.module.bd.uom.dc.Uom())
+		.addDc("uom", new net.nan21.dnet.module.bd.uom.dc.Uom({}))
 		.addDc("cnv", new net.nan21.dnet.module.bd.uom.dc.UomConversion({multiEdit:true}))		
 		.linkDc("cnv", "uom",{fields:[ {childField:"sourceId", parentField:"id"},{childField:"sourceCode", parentField:"code"} ]} );		
 	}	 

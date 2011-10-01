@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.ad.client.frame.Client_UI", {
 	 _name_ : "net.nan21.dnet.module.ad.client.frame.Client_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("client", new net.nan21.dnet.module.ad.client.dc.Client())		;		
+		.addDc("client", new net.nan21.dnet.module.ad.client.dc.Client({}))		;		
 	}	 
 
 	,_defineElements_: function() {							

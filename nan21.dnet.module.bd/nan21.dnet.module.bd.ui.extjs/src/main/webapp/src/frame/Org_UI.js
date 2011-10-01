@@ -7,9 +7,9 @@ Ext.define("net.nan21.dnet.module.bd.org.frame.Org_UI", {
 	 _name_ : "net.nan21.dnet.module.bd.org.frame.Org_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("org", new net.nan21.dnet.module.bd.org.dc.Organization())
-		.addDc("address", new net.nan21.dnet.module.bd.geo.dc.Location())
-		.addDc("hierarchy", new net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy())
+		.addDc("org", new net.nan21.dnet.module.bd.org.dc.Organization({}))
+		.addDc("address", new net.nan21.dnet.module.bd.geo.dc.Location({}))
+		.addDc("hierarchy", new net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy({}))
 		.addDc("items", new net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem({multiEdit:true}))
 		.addDc("orgtype", new net.nan21.dnet.module.bd.org.dc.OrganizationType({multiEdit:true}))		
 		.linkDc("address", "org",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} )

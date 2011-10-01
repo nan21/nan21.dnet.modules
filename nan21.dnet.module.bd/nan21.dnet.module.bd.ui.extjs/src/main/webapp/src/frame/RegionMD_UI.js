@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.frame.RegionMD_UI", {
 	 _name_ : "net.nan21.dnet.module.bd.geo.frame.RegionMD_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("region", new net.nan21.dnet.module.bd.geo.dc.Region())
+		.addDc("region", new net.nan21.dnet.module.bd.geo.dc.Region({}))
 		.addDc("city", new net.nan21.dnet.module.bd.geo.dc.City({multiEdit:true}))		
 		.linkDc("city", "region",{fields:[ {childField:"regionId", parentField:"id"},{childField:"countryId", parentField:"countryId"} ]} );		
 	}	 

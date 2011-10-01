@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.hr.training.frame.Course_UI", {
 	 _name_ : "net.nan21.dnet.module.hr.training.frame.Course_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("course", new net.nan21.dnet.module.hr.training.dc.Course())
+		.addDc("course", new net.nan21.dnet.module.hr.training.dc.Course({}))
 		.addDc("job", new net.nan21.dnet.module.hr.training.dc.JobCourse({multiEdit:true}))
 		.addDc("position", new net.nan21.dnet.module.hr.training.dc.PositionCourse({multiEdit:true}))		
 		.linkDc("job", "course",{fields:[ {childField:"courseId", parentField:"id"} ]} )

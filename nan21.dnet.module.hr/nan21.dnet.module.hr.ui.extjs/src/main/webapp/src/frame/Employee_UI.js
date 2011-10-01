@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI", {
 	 _name_ : "net.nan21.dnet.module.hr.employee.frame.Employee_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("emp", new net.nan21.dnet.module.hr.employee.dc.Employee())
+		.addDc("emp", new net.nan21.dnet.module.hr.employee.dc.Employee({}))
 		.addDc("skill", new net.nan21.dnet.module.hr.skill.dc.EmployeeSkill({multiEdit:true}))
 		.addDc("cont", new net.nan21.dnet.module.hr.employee.dc.EmployeeContact({multiEdit:true}))
 		.addDc("communic", new net.nan21.dnet.module.bd.contact.dc.CommunicationChannel({multiEdit:true}))
@@ -15,7 +15,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI", {
 		.addDc("work", new net.nan21.dnet.module.hr.employee.dc.EmployeeWorkExperience({multiEdit:true}))
 		.addDc("lic", new net.nan21.dnet.module.hr.employee.dc.EmployeeLicense({multiEdit:true}))
 		.addDc("atch", new net.nan21.dnet.module.hr.employee.dc.EmplAttachment({multiEdit:true}))
-		.addDc("address", new net.nan21.dnet.module.bd.geo.dc.Location())		
+		.addDc("address", new net.nan21.dnet.module.bd.geo.dc.Location({}))		
 		.linkDc("skill", "emp",{fields:[ {childField:"employeeId", parentField:"id"} ]} )
 		.linkDc("cont", "emp",{fields:[ {childField:"employeeId", parentField:"id"} ]} )
 		.linkDc("communic", "emp",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} )

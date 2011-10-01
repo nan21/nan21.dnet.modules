@@ -9,7 +9,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Element_UI", {
 		this._getBuilder_()
 		.addDc("ecateg", new net.nan21.dnet.module.hr.payroll.dc.ElementCategory({multiEdit:true}))
 		.addDc("etype", new net.nan21.dnet.module.hr.payroll.dc.ElementType({multiEdit:true}))
-		.addDc("elems", new net.nan21.dnet.module.hr.payroll.dc.Element())
+		.addDc("elems", new net.nan21.dnet.module.hr.payroll.dc.Element({}))
 		.addDc("vars", new net.nan21.dnet.module.hr.payroll.dc.Variable({multiEdit:true}))		
 		.linkDc("vars", "elems",{fields:[ {childField:"elementId", parentField:"id"} ]} );		
 	}	 

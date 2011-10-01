@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BpAccount_UI", {
 	 _name_ : "net.nan21.dnet.module.bp.md.frame.BpAccount_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("m", new net.nan21.dnet.module.bp.md.dc.BpAccount())		;		
+		.addDc("m", new net.nan21.dnet.module.bp.md.dc.BpAccount({}))		;		
 	}	 
 
 	,_defineElements_: function() {							

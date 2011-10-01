@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.Contact_UI", {
 	 _name_ : "net.nan21.dnet.module.bp.md.frame.Contact_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("c", new net.nan21.dnet.module.bp.md.dc.Contact())
+		.addDc("c", new net.nan21.dnet.module.bp.md.dc.Contact({}))
 		.addDc("communic", new net.nan21.dnet.module.bd.contact.dc.CommunicationChannel({multiEdit:true}))		
 		.linkDc("communic", "c",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} );		
 	}	 

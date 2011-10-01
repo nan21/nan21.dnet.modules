@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.frame.RatingScale_UI", {
 	 _name_ : "net.nan21.dnet.module.hr.skill.frame.RatingScale_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("scale", new net.nan21.dnet.module.hr.skill.dc.RatingScale())
+		.addDc("scale", new net.nan21.dnet.module.hr.skill.dc.RatingScale({}))
 		.addDc("level", new net.nan21.dnet.module.hr.skill.dc.RatingLevel({multiEdit:true}))		
 		.linkDc("level", "scale",{fields:[ {childField:"ratingScaleId", parentField:"id"} ]} );		
 	}	 

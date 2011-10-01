@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.hr.job.frame.Position_UI", {
 	 _name_ : "net.nan21.dnet.module.hr.job.frame.Position_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("pos", new net.nan21.dnet.module.hr.job.dc.Position())
+		.addDc("pos", new net.nan21.dnet.module.hr.job.dc.Position({}))
 		.addDc("skill", new net.nan21.dnet.module.hr.skill.dc.PositionSkill({multiEdit:true}))
 		.addDc("req", new net.nan21.dnet.module.hr.job.dc.PositionRequirement({multiEdit:true}))
 		.addDc("course", new net.nan21.dnet.module.hr.training.dc.PositionCourse({multiEdit:true}))		

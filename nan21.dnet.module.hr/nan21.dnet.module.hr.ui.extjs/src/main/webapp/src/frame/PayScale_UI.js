@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.frame.PayScale_UI", {
 	 _name_ : "net.nan21.dnet.module.hr.grade.frame.PayScale_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("scale", new net.nan21.dnet.module.hr.grade.dc.PayScale())
+		.addDc("scale", new net.nan21.dnet.module.hr.grade.dc.PayScale({}))
 		.addDc("point", new net.nan21.dnet.module.hr.grade.dc.PayScalePoint({multiEdit:true}))		
 		.linkDc("point", "scale",{fields:[ {childField:"payScaleId", parentField:"id"} ]} );		
 	}	 

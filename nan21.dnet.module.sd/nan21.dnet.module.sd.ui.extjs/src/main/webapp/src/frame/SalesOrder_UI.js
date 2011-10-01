@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI", {
 	 _name_ : "net.nan21.dnet.module.sd.order.frame.SalesOrder_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("order", new net.nan21.dnet.module.sd.order.dc.SalesOrder())
+		.addDc("order", new net.nan21.dnet.module.sd.order.dc.SalesOrder({}))
 		.addDc("item", new net.nan21.dnet.module.sd.order.dc.SalesOrderItem({multiEdit:true}))		
 		.linkDc("item", "order",{fields:[ {childField:"salesOrderId", parentField:"id"} ]} );		
 	}	 

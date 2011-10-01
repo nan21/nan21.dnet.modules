@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.frame.GradeRate_UI", {
 	 _name_ : "net.nan21.dnet.module.hr.grade.frame.GradeRate_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("rate", new net.nan21.dnet.module.hr.grade.dc.GradeRate())
+		.addDc("rate", new net.nan21.dnet.module.hr.grade.dc.GradeRate({}))
 		.addDc("value", new net.nan21.dnet.module.hr.grade.dc.GradeRateValue({multiEdit:true}))		
 		.linkDc("value", "rate",{fields:[ {childField:"gradeRateId", parentField:"id"} ]} );		
 	}	 

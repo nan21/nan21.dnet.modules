@@ -7,10 +7,10 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BPartner_UI", {
 	 _name_ : "net.nan21.dnet.module.bp.md.frame.BPartner_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("bp", new net.nan21.dnet.module.bp.md.dc.BusinessPartner())
+		.addDc("bp", new net.nan21.dnet.module.bp.md.dc.BusinessPartner({}))
 		.addDc("bpContact", new net.nan21.dnet.module.bp.md.dc.Contact({multiEdit:true}))
-		.addDc("address", new net.nan21.dnet.module.bd.geo.dc.Location())
-		.addDc("classific", new net.nan21.dnet.module.bp.md.dc.BpClassification())
+		.addDc("address", new net.nan21.dnet.module.bd.geo.dc.Location({}))
+		.addDc("classific", new net.nan21.dnet.module.bp.md.dc.BpClassification({}))
 		.addDc("bpBankAcct", new net.nan21.dnet.module.bp.md.dc.BpBankAccount({multiEdit:true}))
 		.addDc("bpPhone", new net.nan21.dnet.module.bd.contact.dc.CommunicationChannel({multiEdit:true}))		
 		.linkDc("bpContact", "bp",{fields:[ {childField:"bpartnerId", parentField:"id"} ]} )

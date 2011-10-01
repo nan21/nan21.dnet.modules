@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI", {
 	 _name_ : "net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("expval", new net.nan21.dnet.module.hr.payroll.dc.ElementValue())		;		
+		.addDc("expval", new net.nan21.dnet.module.hr.payroll.dc.ElementValue({}))		;		
 	}	 
 
 	,_defineElements_: function() {							

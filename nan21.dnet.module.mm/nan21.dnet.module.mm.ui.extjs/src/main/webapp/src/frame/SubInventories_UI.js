@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", {
 	 _name_ : "net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("subinv", new net.nan21.dnet.module.mm.inventory.dc.SubInventory())
+		.addDc("subinv", new net.nan21.dnet.module.mm.inventory.dc.SubInventory({}))
 		.addDc("sloc", new net.nan21.dnet.module.mm.inventory.dc.StockLocator({multiEdit:true}))		
 		.linkDc("sloc", "subinv",{fields:[ {childField:"subInventoryId", parentField:"id"} ]} );		
 	}	 

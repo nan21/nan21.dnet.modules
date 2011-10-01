@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportJob_UI", {
 	 _name_ : "net.nan21.dnet.module.ad.impex.frame.ImportJob_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("job", new net.nan21.dnet.module.ad.impex.dc.ImportJob())
+		.addDc("job", new net.nan21.dnet.module.ad.impex.dc.ImportJob({}))
 		.addDc("item", new net.nan21.dnet.module.ad.impex.dc.ImportJobItem({multiEdit:true}))		
 		.linkDc("item", "job",{fields:[ {childField:"jobId", parentField:"id"} ]} );		
 	}	 

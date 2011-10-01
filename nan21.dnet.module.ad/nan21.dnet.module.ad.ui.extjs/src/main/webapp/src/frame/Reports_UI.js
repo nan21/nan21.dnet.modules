@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.ad.report.frame.Reports_UI", {
 	 _name_ : "net.nan21.dnet.module.ad.report.frame.Reports_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("rep", new net.nan21.dnet.module.ad.report.dc.Report())
+		.addDc("rep", new net.nan21.dnet.module.ad.report.dc.Report({}))
 		.addDc("params", new net.nan21.dnet.module.ad.report.dc.ReportParam({multiEdit:true}))
 		.addDc("dsrep", new net.nan21.dnet.module.ad.report.dc.DsReport({multiEdit:true}))
 		.addDc("dsparam", new net.nan21.dnet.module.ad.report.dc.DsReportParam({multiEdit:true}))		

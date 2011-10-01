@@ -7,12 +7,12 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 	 _name_ : "net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("dcProcess", new net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition())
-		.addDc("dcRunningInstance", new net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance())
-		.addDc("dcRunningTask", new net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance())
-		.addDc("dcFinishedInstance", new net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory())
-		.addDc("dcFinishedTask", new net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory())
-		.addDc("dcDeployment", new net.nan21.dnet.module.ad.workflow.dc.ActDeployment())		
+		.addDc("dcProcess", new net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition({}))
+		.addDc("dcRunningInstance", new net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance({}))
+		.addDc("dcRunningTask", new net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance({}))
+		.addDc("dcFinishedInstance", new net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory({}))
+		.addDc("dcFinishedTask", new net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory({}))
+		.addDc("dcDeployment", new net.nan21.dnet.module.ad.workflow.dc.ActDeployment({}))		
 		.linkDc("dcRunningTask", "dcRunningInstance",{fetchMode:"auto",fields:[ {childField:"processInstanceId", parentField:"processInstanceId"} ]} )
 		.linkDc("dcFinishedTask", "dcFinishedInstance",{fetchMode:"auto",fields:[ {childField:"processInstanceId", parentField:"processInstanceId"} ]} );		
 	}	 

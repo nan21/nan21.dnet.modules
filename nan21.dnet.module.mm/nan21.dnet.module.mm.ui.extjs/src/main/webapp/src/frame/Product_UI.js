@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {
 	 _name_ : "net.nan21.dnet.module.mm.md.frame.Product_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("prod", new net.nan21.dnet.module.mm.md.dc.Product())
+		.addDc("prod", new net.nan21.dnet.module.mm.md.dc.Product({}))
 		.addDc("attr", new net.nan21.dnet.module.mm.md.dc.ProductAttributeValue({multiEdit:true}))
 		.addDc("atch", new net.nan21.dnet.module.mm.md.dc.ProductAttachment({multiEdit:true}))		
 		.linkDc("attr", "prod",{fields:[ {childField:"productId", parentField:"id"} ]} )

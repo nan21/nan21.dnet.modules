@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Payroll_UI", {
 	 _name_ : "net.nan21.dnet.module.hr.payroll.frame.Payroll_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("payroll", new net.nan21.dnet.module.hr.payroll.dc.Payroll())
+		.addDc("payroll", new net.nan21.dnet.module.hr.payroll.dc.Payroll({}))
 		.addDc("period", new net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod({multiEdit:true}))		
 		.linkDc("period", "payroll",{fields:[ {childField:"payrollId", parentField:"id"} ]} );		
 	}	 

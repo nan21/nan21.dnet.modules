@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMap_UI", {
 	 _name_ : "net.nan21.dnet.module.ad.impex.frame.ImportMap_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("map", new net.nan21.dnet.module.ad.impex.dc.ImportMap())
+		.addDc("map", new net.nan21.dnet.module.ad.impex.dc.ImportMap({}))
 		.addDc("item", new net.nan21.dnet.module.ad.impex.dc.ImportMapItemCtx({multiEdit:true}))		
 		.linkDc("item", "map",{fields:[ {childField:"importMapId", parentField:"id"} ]} );		
 	}	 

@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI", {
 	 _name_ : "net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("dcProcess", new net.nan21.dnet.module.ad.workflow.dc.WfDefProcess())
+		.addDc("dcProcess", new net.nan21.dnet.module.ad.workflow.dc.WfDefProcess({}))
 		.addDc("dcNode", new net.nan21.dnet.module.ad.workflow.dc.WfDefNode({multiEdit:true}))
 		.addDc("dcField", new net.nan21.dnet.module.ad.workflow.dc.WfDefNodeField({multiEdit:true}))		
 		.linkDc("dcNode", "dcProcess",{fields:[ {childField:"processId", parentField:"id"} ]} )

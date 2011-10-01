@@ -7,9 +7,9 @@ Ext.define("net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI", {
 	 _name_ : "net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("callEvnt", new net.nan21.dnet.module.bp.calendar.dc.Call())
-		.addDc("meetingEvnt", new net.nan21.dnet.module.bp.calendar.dc.Meeting())
-		.addDc("taskEvnt", new net.nan21.dnet.module.bp.calendar.dc.Task())		;		
+		.addDc("callEvnt", new net.nan21.dnet.module.bp.calendar.dc.Call({}))
+		.addDc("meetingEvnt", new net.nan21.dnet.module.bp.calendar.dc.Meeting({}))
+		.addDc("taskEvnt", new net.nan21.dnet.module.bp.calendar.dc.Task({}))		;		
 	}	 
 
 	,_defineElements_: function() {							

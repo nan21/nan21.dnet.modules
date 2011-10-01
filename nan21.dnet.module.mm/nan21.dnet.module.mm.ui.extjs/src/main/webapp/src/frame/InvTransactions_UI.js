@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", {
 	 _name_ : "net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("tx", new net.nan21.dnet.module.mm.inventory.dc.InvTransaction())
+		.addDc("tx", new net.nan21.dnet.module.mm.inventory.dc.InvTransaction({}))
 		.addDc("txline", new net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine({multiEdit:true}))		
 		.linkDc("txline", "tx",{fields:[ {childField:"transactionId", parentField:"id"} ]} );		
 	}	 

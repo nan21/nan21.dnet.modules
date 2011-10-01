@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.hr.job.frame.Job_UI", {
 	 _name_ : "net.nan21.dnet.module.hr.job.frame.Job_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("job", new net.nan21.dnet.module.hr.job.dc.Job())
+		.addDc("job", new net.nan21.dnet.module.hr.job.dc.Job({}))
 		.addDc("skill", new net.nan21.dnet.module.hr.skill.dc.JobSkill({multiEdit:true}))
 		.addDc("req", new net.nan21.dnet.module.hr.job.dc.JobRequirement({multiEdit:true}))
 		.addDc("course", new net.nan21.dnet.module.hr.training.dc.JobCourse({multiEdit:true}))		

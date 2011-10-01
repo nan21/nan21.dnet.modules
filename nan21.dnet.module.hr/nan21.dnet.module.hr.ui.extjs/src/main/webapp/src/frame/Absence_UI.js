@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.hr.time.frame.Absence_UI", {
 	 _name_ : "net.nan21.dnet.module.hr.time.frame.Absence_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("absence", new net.nan21.dnet.module.hr.time.dc.Absence())		;		
+		.addDc("absence", new net.nan21.dnet.module.hr.time.dc.Absence({}))		;		
 	}	 
 
 	,_defineElements_: function() {							

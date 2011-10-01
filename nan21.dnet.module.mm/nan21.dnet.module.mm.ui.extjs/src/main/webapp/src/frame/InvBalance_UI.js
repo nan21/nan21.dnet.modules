@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvBalance_UI", {
 	 _name_ : "net.nan21.dnet.module.mm.inventory.frame.InvBalance_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("invbalance", new net.nan21.dnet.module.mm.inventory.dc.InvBalance())		;		
+		.addDc("invbalance", new net.nan21.dnet.module.mm.inventory.dc.InvBalance({}))		;		
 	}	 
 
 	,_defineElements_: function() {							

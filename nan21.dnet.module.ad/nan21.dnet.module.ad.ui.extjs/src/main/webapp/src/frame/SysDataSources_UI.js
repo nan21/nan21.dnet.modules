@@ -7,8 +7,8 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", {
 	 _name_ : "net.nan21.dnet.module.ad.system.frame.SysDataSources_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("m", new net.nan21.dnet.module.ad.system.dc.SysDataSource())
-		.addDc("fields", new net.nan21.dnet.module.ad.system.dc.SysDsField())		
+		.addDc("m", new net.nan21.dnet.module.ad.system.dc.SysDataSource({}))
+		.addDc("fields", new net.nan21.dnet.module.ad.system.dc.SysDsField({}))		
 		.linkDc("fields", "m",{fetchMode:"auto",fields:[ {childField:"dataSourceId", parentField:"id"} ]} );		
 	}	 
 

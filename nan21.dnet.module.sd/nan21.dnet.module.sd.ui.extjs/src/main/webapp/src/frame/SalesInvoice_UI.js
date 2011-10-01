@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {
 	 _name_ : "net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("inv", new net.nan21.dnet.module.sd.invoice.dc.SalesInvoice())
+		.addDc("inv", new net.nan21.dnet.module.sd.invoice.dc.SalesInvoice({}))
 		.addDc("item", new net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem({multiEdit:true}))		
 		.linkDc("item", "inv",{fields:[ {childField:"invoiceId", parentField:"id"} ]} );		
 	}	 

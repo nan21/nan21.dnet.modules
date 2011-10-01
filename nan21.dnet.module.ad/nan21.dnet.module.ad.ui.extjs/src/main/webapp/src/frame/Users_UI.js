@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {
 	 _name_ : "net.nan21.dnet.module.ad.usr.frame.Users_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("usr", new net.nan21.dnet.module.ad.usr.dc.User())		;		
+		.addDc("usr", new net.nan21.dnet.module.ad.usr.dc.User({}))		;		
 	}	 
 
 	,_defineElements_: function() {							

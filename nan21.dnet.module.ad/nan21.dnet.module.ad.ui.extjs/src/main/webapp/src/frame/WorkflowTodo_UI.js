@@ -7,9 +7,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI", {
 	 _name_ : "net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("dcMytask", new net.nan21.dnet.module.ad.workflow.dc.ActMyTask())
-		.addDc("dcAvailabletask", new net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask())
-		.addDc("dcMyhistory", new net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory())		;		
+		.addDc("dcMytask", new net.nan21.dnet.module.ad.workflow.dc.ActMyTask({}))
+		.addDc("dcAvailabletask", new net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask({}))
+		.addDc("dcMyhistory", new net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory({}))		;		
 	}	 
 
 	,_defineElements_: function() {							
