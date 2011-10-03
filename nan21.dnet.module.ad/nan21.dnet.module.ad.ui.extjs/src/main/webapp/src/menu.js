@@ -39,16 +39,4 @@ if (Dnet.navigationTreeMenus.ad == undefined) {
 	Dnet.navigationTreeMenus.ad = { name: "mbMenuAD" , title :"AD: Administration", children: [] };
 }       
     Dnet.navigationTreeMenus.ad.children = Dnet.navigationTreeMenus.ad.children.concat(net.nan21.dnet.module.ad.menu.ad);
-   
-Ext.ns('net.nan21.dnet.module.ad.menu');
-var BUNDLE_ID = "nan21.dnet.module.ad.ui.extjs";
-
-net.nan21.dnet.module.ad.menu.my = [
-		
-		{id:"WorkflowTodo_UI", text:Dnet.translate("ui","WorkflowTodo_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI", _bundle_:BUNDLE_ID} 
-   ];  
-if (Dnet.navigationTreeMenus.my == undefined) {
-	Dnet.navigationTreeMenus.my = { name: "mbMenuMY" , title :"MY: My Dnet", children: [] };
-}       
-    Dnet.navigationTreeMenus.my.children = Dnet.navigationTreeMenus.my.children.concat(net.nan21.dnet.module.ad.menu.my);
     

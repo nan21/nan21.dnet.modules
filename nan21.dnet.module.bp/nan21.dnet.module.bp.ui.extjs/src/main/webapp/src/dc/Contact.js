@@ -99,7 +99,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"firstName", dataIndex:"firstName",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"lastName", dataIndex:"lastName",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender",anchor:"-20" ,store:[ "male", "female"]  })
+		.addCombo({ name:"gender", xtype:"localcombo", dataIndex:"gender",anchor:"-20" ,store:[ "male", "female"]  })
 		.addTextField({ name:"position", dataIndex:"position",anchor:"-20" ,maxLength:255  })
 		.addDateField({ name:"birthdate", dataIndex:"birthdate",anchor:"-20" })
 		.addCheckbox({ name:"active", dataIndex:"active"  })

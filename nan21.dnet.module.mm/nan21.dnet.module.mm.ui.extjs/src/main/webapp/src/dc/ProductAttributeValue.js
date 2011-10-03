@@ -17,7 +17,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue", {
  	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGridCustEditor",
+	extend: "dnet.base.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList",
 	
 	 _noImport_: true
@@ -38,34 +38,30 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
 		.addNumberColumn({ name:"attributeId", dataIndex:"attributeId", hidden:true, align:"right",format:"0",width:70})
 	  ;  		   
 	}  
-	,_getCustomCellEditor_: function(col,row,record) {	
+	,_getCustomCellEditor_: function(record,column) {	
 		
 		var ed = null;
 		
 		if (!Ext.isEmpty(record.data.listOfvalues)) {
-	    	ed = new Ext.form.ComboBox({ mode: "local", selectOnFocus:true, 
-				store:record.data.listOfvalues.split(","),
-				triggerAction:"all", forceSelection:true });
+	    	ed = new dnet.base.LocalCombo({store:record.data.listOfvalues.split(",")});
 	    }
 		else if (record.data.dataType == "integer" || record.data.dataType == "decimal") {
-	    	ed = new Ext.form.NumberField({ });
+	    	ed = new Ext.form.field.Number({ });
 	    }
 	    else if (record.data.dataType == "date") {
-	    	ed = new Ext.form.DateField({});
+	    	ed = new Ext.form.field.Date({});
 	    }
 	    else if (record.data.dataType == "boolean") {
-	    	ed = new Ext.form.ComboBox({ mode: "local", selectOnFocus:true, 
-				store:["true","false"],
-					triggerAction:"all", forceSelection:true });
+	    	ed = new dnet.base.LocalCombo({store:["true","false"]});
 	    }
-	    else{
-	    	return this.colModel.getCellEditor(col, row);
-	    }
-	 	
-	    if(ed){
-		    ed.gridEditor = new Ext.grid.GridEditor(ed);
-		    ed = ed.gridEditor;
-	    }
+//	    else{
+//	    	return this.colModel.getCellEditor(col, row);
+//	    }
+//	 	
+//	    if(ed){
+//		    ed.gridEditor = new Ext.grid.GridEditor(ed);
+//		    ed = ed.gridEditor;
+//	    }
 
 	    return ed;
 	    

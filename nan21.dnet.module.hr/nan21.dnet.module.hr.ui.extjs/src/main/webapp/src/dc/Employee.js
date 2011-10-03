@@ -92,8 +92,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditMain", {
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
 		.addLov({ name:"employerCode", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"employerCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "employerId"} ]  })
 		.addDateField({ name:"birthdate", dataIndex:"birthdate",anchor:"-20" })
-		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender",anchor:"-20" ,store:[ "male", "female"]  })
-		.addCombo({ name:"maritalStatus", xtype:"combo", dataIndex:"maritalStatus",anchor:"-20" ,store:[ "single", "married", "divorced", "widow", "other"]  })
+		.addCombo({ name:"gender", xtype:"localcombo", dataIndex:"gender",anchor:"-20" ,store:[ "male", "female"]  })
+		.addCombo({ name:"maritalStatus", xtype:"localcombo", dataIndex:"maritalStatus",anchor:"-20" ,store:[ "single", "married", "divorced", "widow", "other"]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
 		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
@@ -106,8 +106,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditMain", {
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
 		.addChildrenTo("col1",["firstName","lastName","middleName"])
 		.addChildrenTo("col2",["employerCode","code"])
-		.addChildrenTo("col3",["gender","birthdate","maritalStatus"])
-;
+		.addChildrenTo("col3",["gender","birthdate","maritalStatus"]);
 	}	
 });
  	

@@ -30,7 +30,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Edit", {
 		.addTextField({ name:"defaultImportPath", dataIndex:"defaultImportPath",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"defaultExportPath", dataIndex:"defaultExportPath",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"tempPath", dataIndex:"tempPath",anchor:"-20" ,maxLength:255  })
-		.addCombo({ name:"defaultDsAccessRule", xtype:"combo", dataIndex:"defaultDsAccessRule",anchor:"-20" ,store:[ "allow", "deny"]  })
+		.addCombo({ name:"defaultDsAccessRule", xtype:"localcombo", dataIndex:"defaultDsAccessRule",anchor:"-20" ,store:[ "allow", "deny"]  })
 		.addTextField({ name:"adminRole", dataIndex:"adminRole",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
 		.addDateField({ name:"createdAt", dataIndex:"createdAt",anchor:"-20",noEdit:true, hideTrigger:true ,allowBlank:false})
 		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",noEdit:true, hideTrigger:true ,allowBlank:false})
