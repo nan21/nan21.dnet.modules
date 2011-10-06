@@ -136,7 +136,7 @@
 				
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="160" />
-					<property name="name" value="bd-org" />
+					<property name="name" value="bd-standards" />
 					<property name="items">
 						<list>
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
