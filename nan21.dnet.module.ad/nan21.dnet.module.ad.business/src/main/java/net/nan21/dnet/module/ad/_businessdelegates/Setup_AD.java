@@ -67,7 +67,7 @@ implements ISetupParticipant {
 		Client c = new Client();
 		c.setCode(clientCode);
 		c.setName(clientName);		
-		c.setAdminRole(ROLE_ADMIN);		
+		c.setAdminRole(ROLE_ADMIN);			
 		c.setDefaultImportPath(defaultImportPath);
 		c.setDefaultExportPath(defaultExportPath);
 		c.setTempPath(defaultTempPath);
@@ -82,18 +82,21 @@ implements ISetupParticipant {
 		
 		Role radmin = new Role();
 		radmin.setName(ROLE_ADMIN);
+		radmin.setActive(true);
 		radmin.setDescription("Administrator role for un-restricted access to business functions.");
 		this.em.persist(radmin);
 		
 		Role ruser = new Role();
 		ruser.setName(ROLE_USER);
+		ruser.setActive(true);
 		ruser.setDescription("Application role which allows a user to use the application.");
 		this.em.persist(ruser);
 		
 		 
 		
 		UserType t = new UserType();
-		t.setName("Default");		 
+		t.setName("Default");	
+		t.setActive(true);
 		this.em.persist(t);
 		
 		Collection<Role> roles = new ArrayList<Role>();
@@ -105,7 +108,7 @@ implements ISetupParticipant {
 		String password = paramMap.get(PARAM_USER_PASSWORD).getValue();
 		u.setCode(paramMap.get(PARAM_USER_CODE).getValue());
 		u.setName(paramMap.get(PARAM_USER_NAME).getValue());
-		
+		u.setActive(true);
 		MessageDigest messageDigest = MessageDigest.getInstance("MD5");  
 		messageDigest.update(password.getBytes(),0, password.length());  
 		String hashedPass = new BigInteger(1,messageDigest.digest()).toString(16);  
