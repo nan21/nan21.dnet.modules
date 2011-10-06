@@ -64,11 +64,13 @@ public class UserType implements Serializable, IModelWithId, IModelWithClientId 
     public static final String NQ_FIND_BY_NAME = "UserType.findByName";
 
     /** User account for an employee.*/
-    @Column(name = "EMPLOYEEACCOUNT")
+    @Column(name = "EMPLOYEEACCOUNT", nullable = false)
+    @NotNull
     private Boolean employeeAccount;
 
     /** User account for an external business partner.*/
-    @Column(name = "BPACCOUNT")
+    @Column(name = "BPACCOUNT", nullable = false)
+    @NotNull
     private Boolean bpAccount;
 
     /** Name. */
@@ -241,9 +243,14 @@ public class UserType implements Serializable, IModelWithId, IModelWithClientId 
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.employeeAccount == null) {
+            event.updateAttributeWithObject("employeeAccount", false);
+        }
+        if (this.bpAccount == null) {
+            event.updateAttributeWithObject("bpAccount", false);
+        }
         if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
+            event.updateAttributeWithObject("active", false);
         }
     }
 

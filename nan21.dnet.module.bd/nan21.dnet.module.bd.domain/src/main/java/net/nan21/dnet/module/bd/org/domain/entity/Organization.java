@@ -268,8 +268,7 @@ public class Organization implements Serializable, IModelWithId,
             event.updateAttributeWithObject("valid", false);
         }
         if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
+            event.updateAttributeWithObject("active", false);
         }
     }
 

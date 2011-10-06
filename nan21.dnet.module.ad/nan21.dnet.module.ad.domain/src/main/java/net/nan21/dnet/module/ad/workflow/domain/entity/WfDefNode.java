@@ -78,7 +78,8 @@ public class WfDefNode implements Serializable, IModelWithId,
     private String assignToGroup;
 
     /** StartWithPrevious. */
-    @Column(name = "STARTWITHPREVIOUS")
+    @Column(name = "STARTWITHPREVIOUS", nullable = false)
+    @NotNull
     private Boolean startWithPrevious;
 
     /** TaskType. */
@@ -303,9 +304,11 @@ public class WfDefNode implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.startWithPrevious == null) {
+            event.updateAttributeWithObject("startWithPrevious", false);
+        }
         if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
+            event.updateAttributeWithObject("active", false);
         }
     }
 

@@ -266,8 +266,7 @@ public class ProductCategory implements Serializable, IModelWithId,
             event.updateAttributeWithObject("folder", false);
         }
         if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
+            event.updateAttributeWithObject("active", false);
         }
     }
 

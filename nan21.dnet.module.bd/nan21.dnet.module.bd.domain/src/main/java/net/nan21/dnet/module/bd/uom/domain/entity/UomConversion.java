@@ -65,7 +65,8 @@ public class UomConversion implements Serializable, IModelWithId,
     private Float divideTo;
 
     /** Active. */
-    @Column(name = "ACTIVE")
+    @Column(name = "ACTIVE", nullable = false)
+    @NotNull
     private Boolean active;
 
     /** Owner client */
@@ -230,6 +231,9 @@ public class UomConversion implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.active == null) {
+            event.updateAttributeWithObject("active", false);
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

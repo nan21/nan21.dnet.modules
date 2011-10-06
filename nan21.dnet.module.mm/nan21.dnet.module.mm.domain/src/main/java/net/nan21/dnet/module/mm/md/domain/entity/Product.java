@@ -82,7 +82,8 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
     public static final String NQ_FIND_BY_NAME = "Product.findByName";
 
     /** Flag which specifies if it is a physical-storable item. */
-    @Column(name = "STORABLE")
+    @Column(name = "STORABLE", nullable = false)
+    @NotNull
     private Boolean storable;
 
     /** Weight. */
@@ -430,9 +431,11 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.storable == null) {
+            event.updateAttributeWithObject("storable", false);
+        }
         if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
+            event.updateAttributeWithObject("active", false);
         }
     }
 

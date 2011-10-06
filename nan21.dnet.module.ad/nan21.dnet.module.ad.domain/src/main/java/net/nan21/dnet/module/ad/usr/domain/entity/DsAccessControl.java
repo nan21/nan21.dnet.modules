@@ -76,27 +76,33 @@ public class DsAccessControl implements Serializable, IModelWithId,
     private String dsName;
 
     /** Specify if it is allowed to query for data.*/
-    @Column(name = "QUERYALLOWED")
+    @Column(name = "QUERYALLOWED", nullable = false)
+    @NotNull
     private Boolean queryAllowed;
 
     /** Specify if it is allowed to create records.*/
-    @Column(name = "INSERTALLOWED")
+    @Column(name = "INSERTALLOWED", nullable = false)
+    @NotNull
     private Boolean insertAllowed;
 
     /** Specify if it is allowed to update records.*/
-    @Column(name = "UPDATEALLOWED")
+    @Column(name = "UPDATEALLOWED", nullable = false)
+    @NotNull
     private Boolean updateAllowed;
 
     /** Specify if it is allowed to delete records.*/
-    @Column(name = "DELETEALLOWED")
+    @Column(name = "DELETEALLOWED", nullable = false)
+    @NotNull
     private Boolean deleteAllowed;
 
     /** Specify if it is allowed to import records.*/
-    @Column(name = "IMPORTALLOWED")
+    @Column(name = "IMPORTALLOWED", nullable = false)
+    @NotNull
     private Boolean importAllowed;
 
     /** Specify if it is allowed to export records.*/
-    @Column(name = "EXPORTALLOWED")
+    @Column(name = "EXPORTALLOWED", nullable = false)
+    @NotNull
     private Boolean exportAllowed;
 
     /** Owner client */
@@ -282,6 +288,24 @@ public class DsAccessControl implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.queryAllowed == null) {
+            event.updateAttributeWithObject("queryAllowed", false);
+        }
+        if (this.insertAllowed == null) {
+            event.updateAttributeWithObject("insertAllowed", false);
+        }
+        if (this.updateAllowed == null) {
+            event.updateAttributeWithObject("updateAllowed", false);
+        }
+        if (this.deleteAllowed == null) {
+            event.updateAttributeWithObject("deleteAllowed", false);
+        }
+        if (this.importAllowed == null) {
+            event.updateAttributeWithObject("importAllowed", false);
+        }
+        if (this.exportAllowed == null) {
+            event.updateAttributeWithObject("exportAllowed", false);
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BPartner_UI", {
 		.addDc("bp", new net.nan21.dnet.module.bp.md.dc.BusinessPartner({}))
 		.addDc("bpContact", new net.nan21.dnet.module.bp.md.dc.Contact({multiEdit:true}))
 		.addDc("address", new net.nan21.dnet.module.bd.geo.dc.Location({}))
-		.addDc("classific", new net.nan21.dnet.module.bp.md.dc.BpClassification({}))
+		.addDc("classific", new net.nan21.dnet.module.bp.md.dc.BpClassification({multiEdit:true}))
 		.addDc("bpBankAcct", new net.nan21.dnet.module.bp.md.dc.BpBankAccount({multiEdit:true}))
 		.addDc("bpPhone", new net.nan21.dnet.module.bd.contact.dc.CommunicationChannel({multiEdit:true}))		
 		.linkDc("bpContact", "bp",{fields:[ {childField:"bpartnerId", parentField:"id"} ]} )

@@ -86,7 +86,8 @@ public class ReportParam implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_NAME_PRIMITIVE = "ReportParam.findByName_PRIMITIVE";
 
     /** Mandatory. */
-    @Column(name = "MANDATORY")
+    @Column(name = "MANDATORY", nullable = false)
+    @NotNull
     private Boolean mandatory;
 
     /** Name. */
@@ -275,9 +276,11 @@ public class ReportParam implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.mandatory == null) {
+            event.updateAttributeWithObject("mandatory", false);
+        }
         if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
+            event.updateAttributeWithObject("active", false);
         }
     }
 

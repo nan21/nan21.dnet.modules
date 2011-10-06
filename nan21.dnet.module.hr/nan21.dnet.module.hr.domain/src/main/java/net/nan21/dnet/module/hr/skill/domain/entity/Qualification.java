@@ -215,8 +215,7 @@ public class Qualification implements Serializable, IModelWithId,
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
         if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
+            event.updateAttributeWithObject("active", false);
         }
     }
 

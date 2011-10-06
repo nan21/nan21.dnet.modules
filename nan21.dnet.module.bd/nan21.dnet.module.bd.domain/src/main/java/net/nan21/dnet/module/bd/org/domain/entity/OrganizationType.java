@@ -311,8 +311,7 @@ public class OrganizationType implements Serializable, IModelWithId,
             event.updateAttributeWithObject("carrier", false);
         }
         if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
+            event.updateAttributeWithObject("active", false);
         }
     }
 

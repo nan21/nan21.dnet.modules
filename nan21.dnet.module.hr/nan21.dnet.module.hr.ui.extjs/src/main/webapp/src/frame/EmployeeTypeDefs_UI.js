@@ -24,7 +24,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI", {
 		.addDcView("licType",{ name:"licTypeEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.LicenseType$EditList", frame:true})	 
 		.addDcFilterFormView("asgnType",{ name:"asgnTypeFilter", xtype:"net.nan21.dnet.module.hr.employee.dc.EmploymentType$Filter",height:40})	 
 		.addDcView("asgnType",{ name:"asgnTypeEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.EmploymentType$EditList", frame:true})	 
-		.addDcFilterFormView("attchType",{ name:"attchTypeFilter", xtype:"net.nan21.dnet.module.hr.employee.dc.EmplAttachmentType$Filter",height:70})	 
+		.addDcFilterFormView("attchType",{ name:"attchTypeFilter", xtype:"net.nan21.dnet.module.hr.employee.dc.EmplAttachmentType$Filter",height:80})	 
 		.addDcView("attchType",{ name:"attchTypeEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.EmplAttachmentType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasEducType", layout:"border", defaults:{split:true},title:"Education type",preventHeader:true})  	 

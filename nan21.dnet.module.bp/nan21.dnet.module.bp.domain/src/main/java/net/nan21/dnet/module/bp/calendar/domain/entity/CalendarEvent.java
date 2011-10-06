@@ -100,7 +100,8 @@ public class CalendarEvent implements Serializable, IModelWithId,
     private String reminder;
 
     /** AllDay. */
-    @Column(name = "ALLDAY")
+    @Column(name = "ALLDAY", nullable = false)
+    @NotNull
     private Boolean allDay;
 
     /** Owner client */
@@ -343,6 +344,9 @@ public class CalendarEvent implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.allDay == null) {
+            event.updateAttributeWithObject("allDay", false);
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

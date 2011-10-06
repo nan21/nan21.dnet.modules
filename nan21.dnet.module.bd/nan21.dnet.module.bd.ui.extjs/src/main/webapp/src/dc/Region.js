@@ -26,7 +26,8 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Filter", {
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addTextField({ name:"iso", dataIndex:"iso",anchor:"-20",maxLength:32  })
 		.addNumberField({ name:"countryId", dataIndex:"countryId",anchor:"-20"  })
-		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
+		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", 
+			dataIndex:"countryCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
@@ -128,7 +129,8 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Edit", {
 		.addTextField({ name:"iso", dataIndex:"iso",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addNumberField({ name:"countryId", dataIndex:"countryId",anchor:"-20",noEdit:true   , style: "text-align:right;" })
-		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
+		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", 
+			dataIndex:"countryCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
 		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",noEdit:true, hideTrigger:true ,allowBlank:false})
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		//containers

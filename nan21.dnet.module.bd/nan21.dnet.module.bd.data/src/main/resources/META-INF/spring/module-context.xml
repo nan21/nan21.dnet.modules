@@ -133,6 +133,31 @@
 					</property>
 				</bean>
 				
+				
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="160" />
+					<property name="name" value="bd-org" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="ClassificationSystem" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/standards/ClassificationSystem.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="ClassificationCode" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/standards/ClassificationCode.csv" />
+							</bean>
+						</list>
+					</property>
+				</bean>
+				
 			</list>
 		</property>
 	</bean>

@@ -16,7 +16,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", {
 		this._getBuilder_()	
 		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter"})	 
 		.addDcView("tx",{ name:"txList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List"})	 
-		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit",height:70})	 
+		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit",height:80})	 
 		.addDcView("txline",{ name:"txlineEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditList", frame:true})	 
 		.addDcFormView("txline",{ name:"txlineCtxFormView", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$CtxFormView",height:40})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 

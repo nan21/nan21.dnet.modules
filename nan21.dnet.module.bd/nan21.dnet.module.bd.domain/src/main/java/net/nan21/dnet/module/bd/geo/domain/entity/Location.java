@@ -352,16 +352,16 @@ public class Location implements Serializable, IModelWithId, IModelWithClientId 
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
         if (this.active == null) {
-
+            event.updateAttributeWithObject("active", false);
         }
         if (this.forShipping == null) {
-
+            event.updateAttributeWithObject("forShipping", false);
         }
         if (this.forBilling == null) {
-
+            event.updateAttributeWithObject("forBilling", false);
         }
         if (this.forMailing == null) {
-
+            event.updateAttributeWithObject("forMailing", false);
         }
     }
 

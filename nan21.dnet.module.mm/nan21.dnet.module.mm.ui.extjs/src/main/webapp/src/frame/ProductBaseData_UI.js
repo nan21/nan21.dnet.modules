@@ -13,7 +13,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.ProductBaseData_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("attachType",{ name:"attachTypeFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttachmentType$Filter",height:70})	 
+		.addDcFilterFormView("attachType",{ name:"attachTypeFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttachmentType$Filter",height:80})	 
 		.addDcView("attachType",{ name:"attachTypeEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttachmentType$EditList", frame:true})	 
 		.addDcFilterFormView("manufact",{ name:"manufactFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductManufacturer$Filter",height:40})	 
 		.addDcView("manufact",{ name:"manufactEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductManufacturer$EditList", frame:true})	 

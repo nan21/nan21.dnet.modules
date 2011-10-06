@@ -65,7 +65,8 @@ public class WfDefNodeField implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_NAME = "WfDefNodeField.findByName";
 
     /** Required. */
-    @Column(name = "REQUIRED")
+    @Column(name = "REQUIRED", nullable = false)
+    @NotNull
     private Boolean required;
 
     /** Type. */
@@ -254,9 +255,11 @@ public class WfDefNodeField implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.required == null) {
+            event.updateAttributeWithObject("required", false);
+        }
         if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
+            event.updateAttributeWithObject("active", false);
         }
     }
 

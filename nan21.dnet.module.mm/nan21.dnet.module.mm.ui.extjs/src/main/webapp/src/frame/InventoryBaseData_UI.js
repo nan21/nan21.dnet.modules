@@ -21,7 +21,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI", {
 		.addDcView("txsrctype",{ name:"txsrctypeEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType$EditList", frame:true})	 
 		.addDcFilterFormView("txaction",{ name:"txactionFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionAction$Filter",height:40})	 
 		.addDcView("txaction",{ name:"txactionEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionAction$EditList", frame:true})	 
-		.addDcFilterFormView("txtype",{ name:"txtypeFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$Filter",height:70})	 
+		.addDcFilterFormView("txtype",{ name:"txtypeFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$Filter",height:80})	 
 		.addDcView("txtype",{ name:"txtypeEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasSloctype", layout:"border", defaults:{split:true},title:"Locator types",preventHeader:true})  	 

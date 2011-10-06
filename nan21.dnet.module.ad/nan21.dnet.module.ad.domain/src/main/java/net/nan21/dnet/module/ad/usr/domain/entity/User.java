@@ -67,7 +67,8 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     public static final String NQ_FIND_BY_CODE = "User.findByCode";
 
     /** Flag which indicates that account is locked.*/
-    @Column(name = "LOCKED")
+    @Column(name = "LOCKED", nullable = false)
+    @NotNull
     private Boolean locked;
 
     /** User password.*/
@@ -293,9 +294,11 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.locked == null) {
+            event.updateAttributeWithObject("locked", false);
+        }
         if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
+            event.updateAttributeWithObject("active", false);
         }
     }
 

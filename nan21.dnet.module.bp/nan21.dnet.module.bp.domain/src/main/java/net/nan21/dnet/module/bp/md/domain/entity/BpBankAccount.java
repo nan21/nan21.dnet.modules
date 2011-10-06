@@ -91,7 +91,8 @@ public class BpBankAccount implements Serializable, IModelWithId,
     private String notes;
 
     /** Active. */
-    @Column(name = "ACTIVE")
+    @Column(name = "ACTIVE", nullable = false)
+    @NotNull
     private Boolean active;
 
     /** Owner client */
@@ -284,7 +285,10 @@ public class BpBankAccount implements Serializable, IModelWithId,
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
         if (this.ibanAccount == null) {
-
+            event.updateAttributeWithObject("ibanAccount", false);
+        }
+        if (this.active == null) {
+            event.updateAttributeWithObject("active", false);
         }
     }
 

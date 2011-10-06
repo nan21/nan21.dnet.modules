@@ -77,7 +77,8 @@ public class Country implements Serializable, IModelWithId, IModelWithClientId {
     private String iso3;
 
     /** HasRegions. */
-    @Column(name = "HASREGIONS")
+    @Column(name = "HASREGIONS", nullable = false)
+    @NotNull
     private Boolean hasRegions;
 
     /** DefaultCurrency. */
@@ -295,9 +296,11 @@ public class Country implements Serializable, IModelWithId, IModelWithClientId {
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.hasRegions == null) {
+            event.updateAttributeWithObject("hasRegions", false);
+        }
         if (this.active == null) {
-            event.updateAttributeWithObject("active", true);
-
+            event.updateAttributeWithObject("active", false);
         }
     }
 
