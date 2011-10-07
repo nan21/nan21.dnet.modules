@@ -62,6 +62,10 @@ public class DsReportParam implements Serializable, IModelWithId,
     @Column(name = "DSFIELD")
     private String dsField;
 
+    /** StaticValue. */
+    @Column(name = "STATICVALUE")
+    private String staticValue;
+
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
     @NotNull
@@ -116,6 +120,14 @@ public class DsReportParam implements Serializable, IModelWithId,
 
     public void setDsField(String dsField) {
         this.dsField = dsField;
+    }
+
+    public String getStaticValue() {
+        return this.staticValue;
+    }
+
+    public void setStaticValue(String staticValue) {
+        this.staticValue = staticValue;
     }
 
     public Long getClientId() {

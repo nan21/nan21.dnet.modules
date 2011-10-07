@@ -8,5 +8,6 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.DsReportParamDs$Trl", {
 	,paramName__lbl : "Param Name"
 	,dataSource__lbl : "Data Source"
 	,dsField__lbl : "Ds Field"
+	,staticValue__lbl : "Static Value"
 	
 });

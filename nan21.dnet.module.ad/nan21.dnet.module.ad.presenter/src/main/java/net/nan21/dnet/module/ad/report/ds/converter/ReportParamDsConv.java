@@ -25,6 +25,8 @@ public class ReportParamDsConv extends
         e.setNotes(ds.getNotes());
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
+        e.setDefaultValue(ds.getDefaultValue());
+        e.setDataType(ds.getDataType());
     }
 
     protected void modelToEntityReferences(ReportParamDs ds, ReportParam e)
@@ -72,6 +74,8 @@ public class ReportParamDsConv extends
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
+        ds.setDefaultValue(e.getDefaultValue());
+        ds.setDataType(e.getDataType());
         ds.setReportId(((e.getReport() != null)) ? e.getReport().getId() : null);
         ds.setReportCode(((e.getReport() != null)) ? e.getReport().getCode()
                 : null);

@@ -33,6 +33,7 @@ public class DsReportParamDs extends AbstractDsModel<DsReportParam> implements
     public static final String fPARAMNAME = "paramName";
     public static final String fDATASOURCE = "dataSource";
     public static final String fDSFIELD = "dsField";
+    public static final String fSTATICVALUE = "staticValue";
 
     @DsField()
     private Long id;
@@ -78,6 +79,9 @@ public class DsReportParamDs extends AbstractDsModel<DsReportParam> implements
 
     @DsField()
     private String dsField;
+
+    @DsField()
+    private String staticValue;
 
     public DsReportParamDs() {
         super();
@@ -206,6 +210,14 @@ public class DsReportParamDs extends AbstractDsModel<DsReportParam> implements
 
     public void setDsField(String dsField) {
         this.dsField = dsField;
+    }
+
+    public String getStaticValue() {
+        return this.staticValue;
+    }
+
+    public void setStaticValue(String staticValue) {
+        this.staticValue = staticValue;
     }
 
 }

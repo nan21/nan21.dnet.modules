@@ -1,0 +1,2 @@
+"name";"url";"active";"description"
+"Birt server";"http://localhost:8080/birt-viewer/frameset?";"true";"Sample server , configure the url according to your deployment"

@@ -23,6 +23,7 @@ public class DsReportParamDsConv extends
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
         e.setDsField(ds.getDsField());
+        e.setStaticValue(ds.getStaticValue());
     }
 
     protected void modelToEntityReferences(DsReportParamDs ds, DsReportParam e)
@@ -78,6 +79,7 @@ public class DsReportParamDsConv extends
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
         ds.setDsField(e.getDsField());
+        ds.setStaticValue(e.getStaticValue());
         ds.setDsReportId(((e.getDsReport() != null)) ? e.getDsReport().getId()
                 : null);
         ds.setReportId(((e.getDsReport() != null) && (e.getDsReport()

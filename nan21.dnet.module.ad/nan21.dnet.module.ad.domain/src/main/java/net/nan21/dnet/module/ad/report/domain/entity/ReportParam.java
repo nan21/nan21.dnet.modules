@@ -90,6 +90,15 @@ public class ReportParam implements Serializable, IModelWithId,
     @NotNull
     private Boolean mandatory;
 
+    /** DataType. */
+    @Column(name = "DATATYPE", nullable = false)
+    @NotBlank
+    private String dataType;
+
+    /** DefaultValue. */
+    @Column(name = "DEFAULTVALUE")
+    private String defaultValue;
+
     /** Name. */
     @Column(name = "NAME", nullable = false)
     @NotBlank
@@ -160,6 +169,22 @@ public class ReportParam implements Serializable, IModelWithId,
 
     public void setMandatory(Boolean mandatory) {
         this.mandatory = mandatory;
+    }
+
+    public String getDataType() {
+        return this.dataType;
+    }
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
+
+    public String getDefaultValue() {
+        return this.defaultValue;
+    }
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
     }
 
     public String getName() {

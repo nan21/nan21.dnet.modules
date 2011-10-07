@@ -31,6 +31,8 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
     public static final String fVERSION = "version";
     public static final String fREPORTID = "reportId";
     public static final String fREPORTCODE = "reportCode";
+    public static final String fDEFAULTVALUE = "defaultValue";
+    public static final String fDATATYPE = "dataType";
 
     @DsField()
     private String name;
@@ -70,6 +72,12 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
 
     @DsField(join = "left", path = "report.code")
     private String reportCode;
+
+    @DsField()
+    private String defaultValue;
+
+    @DsField()
+    private String dataType;
 
     public ReportParamDs() {
         super();
@@ -182,6 +190,22 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
 
     public void setReportCode(String reportCode) {
         this.reportCode = reportCode;
+    }
+
+    public String getDefaultValue() {
+        return this.defaultValue;
+    }
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    public String getDataType() {
+        return this.dataType;
+    }
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
     }
 
 }

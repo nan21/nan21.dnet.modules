@@ -17,7 +17,8 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.DsReportParamDs" , {
 		{name:"paramCode",type:"string" },
 		{name:"paramName",type:"string" },
 		{name:"dataSource",type:"string" },
-		{name:"dsField",type:"string" }
+		{name:"dsField",type:"string" },
+		{name:"staticValue",type:"string" }
 	],
 	validations: [ 
 	]

@@ -21,4 +21,16 @@ if (Dnet.navigationTreeMenus.crm == undefined) {
 	Dnet.navigationTreeMenus.crm = { name: "mbMenuCRM" , title :"CRM: Customer Relationships", children: [] };
 }       
     Dnet.navigationTreeMenus.crm.children = Dnet.navigationTreeMenus.crm.children.concat(net.nan21.dnet.module.bp.menu.crm);
+   
+Ext.ns('net.nan21.dnet.module.bp.menu');
+var BUNDLE_ID = "nan21.dnet.module.bp.ui.extjs";
+
+net.nan21.dnet.module.bp.menu.my = [
+		
+		{id:"MyCalendarEvent_UI", text:Dnet.translate("ui","MyCalendarEvent_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI", _bundle_:BUNDLE_ID} 
+   ];  
+if (Dnet.navigationTreeMenus.my == undefined) {
+	Dnet.navigationTreeMenus.my = { name: "mbMenuMY" , title :"MY: My Dnet", children: [] };
+}       
+    Dnet.navigationTreeMenus.my.children = Dnet.navigationTreeMenus.my.children.concat(net.nan21.dnet.module.bp.menu.my);
     
