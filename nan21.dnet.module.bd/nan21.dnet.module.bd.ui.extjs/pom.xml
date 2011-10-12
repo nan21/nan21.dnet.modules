@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.bd.ui.extjs</artifactId>
-	<version>1.0.0.M2</version>
+	<version>1.0.0.M3</version>
 	<name>DNet BD - ui extjs</name>	
 	<description>DNet BD - extjs user interface</description>
 	<packaging>war</packaging>	

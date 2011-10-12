@@ -1,46 +1,46 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.ad._businessdelegates;version="1
- .0.0.M2";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bus
+ .0.0.M3";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bus
  iness.service",net.nan21.dnet.module.ad.client.business.service;versi
- on="1.0.0.M2";uses:="net.nan21.dnet.core.api.service",net.nan21.dnet.
- module.ad.client.business.serviceimpl;version="1.0.0.M2";uses:="javax
+ on="1.0.0.M3";uses:="net.nan21.dnet.core.api.service",net.nan21.dnet.
+ module.ad.client.business.serviceimpl;version="1.0.0.M3";uses:="javax
  .persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.modu
  le.ad.client.business.service",net.nan21.dnet.module.ad.impex.busines
- s.service;version="1.0.0.M2";uses:="net.nan21.dnet.core.api.service,n
+ s.service;version="1.0.0.M3";uses:="net.nan21.dnet.core.api.service,n
  et.nan21.dnet.module.ad.impex.domain.entity",net.nan21.dnet.module.ad
- .impex.business.serviceimpl;version="1.0.0.M2";uses:="javax.persisten
+ .impex.business.serviceimpl;version="1.0.0.M3";uses:="javax.persisten
  ce,net.nan21.dnet.core.business.service,net.nan21.dnet.module.ad.impe
  x.business.service,net.nan21.dnet.module.ad.impex.domain.entity",net.
- nan21.dnet.module.ad.report.business.service;version="1.0.0.M2";uses:
+ nan21.dnet.module.ad.report.business.service;version="1.0.0.M3";uses:
  ="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.report.dom
  ain.entity",net.nan21.dnet.module.ad.report.business.serviceimpl;vers
- ion="1.0.0.M2";uses:="javax.persistence,net.nan21.dnet.core.business.
+ ion="1.0.0.M3";uses:="javax.persistence,net.nan21.dnet.core.business.
  service,net.nan21.dnet.module.ad.report.business.service,net.nan21.dn
  et.module.ad.report.domain.entity",net.nan21.dnet.module.ad.system.bu
- siness.service;version="1.0.0.M2";uses:="net.nan21.dnet.core.api.serv
+ siness.service;version="1.0.0.M3";uses:="net.nan21.dnet.core.api.serv
  ice,net.nan21.dnet.module.ad.system.domain.entity",net.nan21.dnet.mod
- ule.ad.system.business.serviceimpl;version="1.0.0.M2";uses:="javax.pe
+ ule.ad.system.business.serviceimpl;version="1.0.0.M3";uses:="javax.pe
  rsistence,net.nan21.dnet.core.business.service,net.nan21.dnet.module.
  ad.system.business.service,net.nan21.dnet.module.ad.system.domain.ent
- ity",net.nan21.dnet.module.ad.usr.business.service;version="1.0.0.M2"
+ ity",net.nan21.dnet.module.ad.usr.business.service;version="1.0.0.M3"
  ;uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.syst
  em.domain.entity,net.nan21.dnet.module.ad.usr.domain.entity",net.nan2
- 1.dnet.module.ad.usr.business.serviceimpl;version="1.0.0.M2";uses:="j
+ 1.dnet.module.ad.usr.business.serviceimpl;version="1.0.0.M3";uses:="j
  avax.persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.
  module.ad.system.domain.entity,net.nan21.dnet.module.ad.usr.business.
  service,net.nan21.dnet.module.ad.usr.domain.entity",net.nan21.dnet.mo
- dule.ad.workflow.business.service;version="1.0.0.M2";uses:="net.nan21
+ dule.ad.workflow.business.service;version="1.0.0.M3";uses:="net.nan21
  .dnet.core.api.service,net.nan21.dnet.module.ad.workflow.domain.entit
  y",net.nan21.dnet.module.ad.workflow.business.serviceimpl;version="1.
- 0.0.M2";uses:="javax.persistence,net.nan21.dnet.core.business.service
+ 0.0.M3";uses:="javax.persistence,net.nan21.dnet.core.business.service
  ,net.nan21.dnet.module.ad.workflow.business.service,net.nan21.dnet.mo
  dule.ad.workflow.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.core.busine
- ss;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.domain;version=
- "[1.0.0.M2,1.0.0.M2]"
+ dnet.core.domain;version="[1.0.0.M3,1.0.0.M3]",nan21.dnet.core.busine
+ ss;version="[1.0.0.M3,1.0.0.M3]",nan21.dnet.module.ad.domain;version=
+ "[1.0.0.M3,1.0.0.M3]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M2
+Bundle-Version: 1.0.0.M3
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet AD - business
 Bundle-ManifestVersion: 2

@@ -3,20 +3,20 @@ Bundle-ManifestVersion: 2
 Bundle-Name: DNet HR - presenter
 Bundle-SymbolicName: nan21.dnet.module.hr.presenter
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M2
+Bundle-Version: 1.0.0.M3
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Import-Package: 
  org.springframework.context.weaving;version="[3.0,3.1)"
 Import-Bundle:  
- nan21.dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]", 
- nan21.dnet.core.presenter;version="[1.0.0.M2,1.0.0.M2]", 
+ nan21.dnet.core.domain;version="[1.0.0.M3,1.0.0.M3]", 
+ nan21.dnet.core.presenter;version="[1.0.0.M3,1.0.0.M3]", 
  javax.persistence;version="[2.0,2.1)", 
  org.eclipse.persistence.jpa;version="[2.1,2.5)", 
  org.eclipse.persistence.core;version="[2.0,2.5)", 
- nan21.dnet.module.hr.domain;version="[1.0.0.M2,1.0.0.M2]", 
- nan21.dnet.module.ad.domain;version="[1.0.0.M2,1.0.0.M2]", 
- nan21.dnet.module.bd.domain;version="[1.0.0.M2,1.0.0.M2]", 
- nan21.dnet.module.hr.business;version="[1.0.0.M2,1.0.0.M2]", 
- nan21.dnet.module.ad.business;version="[1.0.0.M2,1.0.0.M2]", 
- nan21.dnet.module.bd.business;version="[1.0.0.M2,1.0.0.M2]"
+ nan21.dnet.module.hr.domain;version="[1.0.0.M3,1.0.0.M3]", 
+ nan21.dnet.module.ad.domain;version="[1.0.0.M3,1.0.0.M3]", 
+ nan21.dnet.module.bd.domain;version="[1.0.0.M3,1.0.0.M3]", 
+ nan21.dnet.module.hr.business;version="[1.0.0.M3,1.0.0.M3]", 
+ nan21.dnet.module.ad.business;version="[1.0.0.M3,1.0.0.M3]", 
+ nan21.dnet.module.bd.business;version="[1.0.0.M3,1.0.0.M3]"
 

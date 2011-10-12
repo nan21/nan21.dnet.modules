@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.sd.invoice.domain.entity;version
- ="1.0.0.M2";uses:="javax.persistence,javax.validation.constraints,jav
+ ="1.0.0.M3";uses:="javax.persistence,javax.validation.constraints,jav
  ax.xml.bind.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.m
  odule.bd.currency.domain.entity,net.nan21.dnet.module.bd.geo.domain.e
  ntity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.modul
@@ -11,9 +11,9 @@ Export-Package: net.nan21.dnet.module.sd.invoice.domain.entity;version
  pse.persistence.internal.descriptors,org.eclipse.persistence.internal
  .weaving,org.eclipse.persistence.queries,org.eclipse.persistence.sess
  ions,org.hibernate.validator.constraints",net.nan21.dnet.module.sd.in
- voice.domain.eventhandler;version="1.0.0.M2";uses:="net.nan21.dnet.co
+ voice.domain.eventhandler;version="1.0.0.M3";uses:="net.nan21.dnet.co
  re.domain.eventhandler,org.eclipse.persistence.descriptors",net.nan21
- .dnet.module.sd.order.domain.entity;version="1.0.0.M2";uses:="javax.p
+ .dnet.module.sd.order.domain.entity;version="1.0.0.M3";uses:="javax.p
  ersistence,javax.validation.constraints,javax.xml.bind.annotation,net
  .nan21.dnet.core.api.model,net.nan21.dnet.module.bd.currency.domain.e
  ntity,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.modul
@@ -25,9 +25,9 @@ Export-Package: net.nan21.dnet.module.sd.invoice.domain.entity;version
  direction,org.eclipse.persistence.internal.descriptors,org.eclipse.pe
  rsistence.internal.weaving,org.eclipse.persistence.queries,org.eclips
  e.persistence.sessions,org.hibernate.validator.constraints",net.nan21
- .dnet.module.sd.order.domain.eventhandler;version="1.0.0.M2";uses:="n
+ .dnet.module.sd.order.domain.eventhandler;version="1.0.0.M3";uses:="n
  et.nan21.dnet.core.domain.eventhandler,org.eclipse.persistence.descri
- ptors",net.nan21.dnet.module.sd.price.domain.entity;version="1.0.0.M2
+ ptors",net.nan21.dnet.module.sd.price.domain.entity;version="1.0.0.M3
  ";uses:="javax.persistence,javax.validation.constraints,javax.xml.bin
  d.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.module.bd.c
  urrency.domain.entity,org.eclipse.persistence.annotations,org.eclipse
@@ -37,13 +37,13 @@ Export-Package: net.nan21.dnet.module.sd.invoice.domain.entity;version
  se.persistence.queries,org.eclipse.persistence.sessions,org.hibernate
  .validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.ad.d
- omain;version="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bd.domain;versi
- on="[1.0.0.M2,1.0.0.M2]",nan21.dnet.module.bp.domain;version="[1.0.0.
- M2,1.0.0.M2]",nan21.dnet.module.mm.domain;version="[1.0.0.M2,1.0.0.M2
+ dnet.core.domain;version="[1.0.0.M3,1.0.0.M3]",nan21.dnet.module.ad.d
+ omain;version="[1.0.0.M3,1.0.0.M3]",nan21.dnet.module.bd.domain;versi
+ on="[1.0.0.M3,1.0.0.M3]",nan21.dnet.module.bp.domain;version="[1.0.0.
+ M3,1.0.0.M3]",nan21.dnet.module.mm.domain;version="[1.0.0.M3,1.0.0.M3
  ]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M2
+Bundle-Version: 1.0.0.M3
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet SD - domain
 Bundle-ManifestVersion: 2
