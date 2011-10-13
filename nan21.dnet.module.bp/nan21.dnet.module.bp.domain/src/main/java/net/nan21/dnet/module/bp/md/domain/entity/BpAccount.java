@@ -63,11 +63,11 @@ public class BpAccount implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "BpAccount.findByIds";
 
     /** CustCreditLimit. */
-    @Column(name = "CUSTCREDITLIMIT", precision = 2)
+    @Column(name = "CUSTCREDITLIMIT", scale = 2)
     private Float custCreditLimit;
 
     /** VendCreditLimit. */
-    @Column(name = "VENDCREDITLIMIT", precision = 2)
+    @Column(name = "VENDCREDITLIMIT", scale = 2)
     private Float vendCreditLimit;
 
     /** Owner client */

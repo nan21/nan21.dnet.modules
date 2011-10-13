@@ -75,7 +75,7 @@ public class VendorGroup implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_NAME = "VendorGroup.findByName";
 
     /** CreditLimit. */
-    @Column(name = "CREDITLIMIT", precision = 2)
+    @Column(name = "CREDITLIMIT", scale = 2)
     private Float creditLimit;
 
     /** Name. */

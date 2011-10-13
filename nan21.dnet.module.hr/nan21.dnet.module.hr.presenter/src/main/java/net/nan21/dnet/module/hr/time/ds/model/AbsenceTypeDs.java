@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.time.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.hr.time.domain.entity.AbsenceType;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = AbsenceType.class)
+@Ds(entity = AbsenceType.class, sort = { @SortField(field = AbsenceTypeDs.fNAME) })
 public class AbsenceTypeDs extends AbstractDsModel<AbsenceType> implements
         IModelWithId, IModelWithClientId {
 

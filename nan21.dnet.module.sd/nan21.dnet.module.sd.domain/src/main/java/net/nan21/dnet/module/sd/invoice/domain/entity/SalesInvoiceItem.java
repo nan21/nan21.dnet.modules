@@ -59,15 +59,15 @@ public class SalesInvoiceItem implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "SalesInvoiceItem.findByIds";
 
     /** Quantity. */
-    @Column(name = "QUANTITY", precision = 2)
+    @Column(name = "QUANTITY", scale = 2)
     private Float quantity;
 
     /** UnitPrice. */
-    @Column(name = "UNITPRICE", precision = 2)
+    @Column(name = "UNITPRICE", scale = 2)
     private Float unitPrice;
 
     /** NetAmount. */
-    @Column(name = "NETAMOUNT", precision = 2)
+    @Column(name = "NETAMOUNT", scale = 2)
     private Float netAmount;
 
     /** Owner client */

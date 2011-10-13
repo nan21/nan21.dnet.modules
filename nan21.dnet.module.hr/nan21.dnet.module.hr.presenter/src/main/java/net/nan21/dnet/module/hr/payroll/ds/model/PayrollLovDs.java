@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.payroll.ds.model;
 
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -13,7 +14,7 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.Payroll;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = Payroll.class)
+@Ds(entity = Payroll.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = PayrollLovDs.fNAME) })
 public class PayrollLovDs extends AbstractDsModel<Payroll> implements
         IModelWithId, IModelWithClientId {
 

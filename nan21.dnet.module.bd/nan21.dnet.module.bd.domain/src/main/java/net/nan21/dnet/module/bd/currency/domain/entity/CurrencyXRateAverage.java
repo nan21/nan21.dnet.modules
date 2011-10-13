@@ -70,7 +70,7 @@ public class CurrencyXRateAverage implements Serializable, IModelWithId,
     private Date validTo;
 
     /** Value. */
-    @Column(name = "VALUE", nullable = false, precision = 2)
+    @Column(name = "VALUE", nullable = false, scale = 2)
     @NotNull
     private Float value;
 

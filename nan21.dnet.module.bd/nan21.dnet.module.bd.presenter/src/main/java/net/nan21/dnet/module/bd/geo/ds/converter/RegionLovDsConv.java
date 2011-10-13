@@ -33,6 +33,8 @@ public class RegionLovDsConv extends AbstractDsConverter<RegionLovDs, Region>
         ds.setCode(e.getCode());
         ds.setName(e.getName());
         ds.setActive(e.getActive());
+        ds.setCountryId(((e.getCountry() != null)) ? e.getCountry().getId()
+                : null);
     }
 
 }

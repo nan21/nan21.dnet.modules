@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.org.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchy;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = OrganizationHierarchy.class)
+@Ds(entity = OrganizationHierarchy.class, sort = { @SortField(field = OrganizationHierarchyDs.fNAME) })
 public class OrganizationHierarchyDs extends
         AbstractDsModel<OrganizationHierarchy> implements IModelWithId,
         IModelWithClientId {

@@ -53,7 +53,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$EditCtx", {
 		//controls	
 		this._getBuilder_()	
 		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
-		.addLov({ name:"regionCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Regions", dataIndex:"regionCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "regionId"} ]  })
+		.addLov({ name:"regionCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Regions", dataIndex:"regionCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "regionId"} ],filterFieldMapping: [{lovField:"countryId", dsField: "countryId"} ]  })
 		.addTextField({ name:"cityName", dataIndex:"cityName",anchor:"-20" ,maxLength:255  })
 		.addTextArea({ name:"adress", dataIndex:"adress",height:60,anchor:"-20"   })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })

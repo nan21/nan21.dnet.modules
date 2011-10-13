@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.grade.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.hr.grade.domain.entity.GradeRate;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = GradeRate.class)
+@Ds(entity = GradeRate.class, sort = { @SortField(field = GradeRateDs.fNAME) })
 public class GradeRateDs extends AbstractDsModel<GradeRate> implements
         IModelWithId, IModelWithClientId {
 

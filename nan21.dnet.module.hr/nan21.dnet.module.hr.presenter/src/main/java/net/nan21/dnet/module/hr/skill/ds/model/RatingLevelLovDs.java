@@ -14,7 +14,7 @@ import net.nan21.dnet.module.hr.skill.domain.entity.RatingLevel;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = RatingLevel.class, sort = { @SortField(field = RatingLevelLovDs.fVALUE) })
+@Ds(entity = RatingLevel.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = RatingLevelLovDs.fVALUE) })
 public class RatingLevelLovDs extends AbstractDsModel<RatingLevel> implements
         IModelWithId, IModelWithClientId {
 

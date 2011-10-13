@@ -100,7 +100,7 @@ public class ActDetailHistory implements Serializable, IModelWithId {
     private String byteArrayId;
 
     /** DoubleValue. */
-    @Column(name = "DOUBLE_", precision = 2)
+    @Column(name = "DOUBLE_", scale = 2)
     private Float doubleValue;
 
     /** TextValue. */

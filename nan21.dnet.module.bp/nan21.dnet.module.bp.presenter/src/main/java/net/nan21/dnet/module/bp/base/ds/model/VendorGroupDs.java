@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bp.base.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.bp.base.domain.entity.VendorGroup;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = VendorGroup.class)
+@Ds(entity = VendorGroup.class, sort = { @SortField(field = VendorGroupDs.fNAME) })
 public class VendorGroupDs extends AbstractDsModel<VendorGroup> implements
         IModelWithId, IModelWithClientId {
 

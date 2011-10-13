@@ -30,8 +30,8 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationType$Filter", {
 		.addBooleanField({ name:"legalEntity", dataIndex:"legalEntity",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor", width:250,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"anchor", width:250,labelWidth:0 })
+		.addPanel({ name:"col2", layout:"anchor", width:200,labelWidth:0 })
+		.addPanel({ name:"col3", layout:"anchor", width:200,labelWidth:0 })
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

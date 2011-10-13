@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.ad.report.ds.model;
 
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -13,7 +14,7 @@ import net.nan21.dnet.module.ad.report.domain.entity.ReportServer;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ReportServer.class)
+@Ds(entity = ReportServer.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = ReportServerLovDs.fNAME) })
 public class ReportServerLovDs extends AbstractDsModel<ReportServer> implements
         IModelWithId, IModelWithClientId {
 

@@ -7,7 +7,8 @@ Ext.define("net.nan21.dnet.module.bd.geo.ds.model.RegionLovDs" , {
 		{name:"clientId",type:"int", useNull:true },
 		{name:"code",type:"string" },
 		{name:"name",type:"string" },
-		{name:"active",type:"boolean" }
+		{name:"active",type:"boolean" },
+		{name:"countryId",type:"int", useNull:true }
 	]
 });
 	

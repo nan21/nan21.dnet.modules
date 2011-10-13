@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bp.calendar.ds.model;
 
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -13,7 +14,7 @@ import net.nan21.dnet.module.bp.calendar.domain.entity.CalendarEventPriority;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = CalendarEventPriority.class, jpqlWhere = "  e.eventType = 'meeting' ")
+@Ds(entity = CalendarEventPriority.class, jpqlWhere = "  e.eventType = 'meeting' ", sort = { @SortField(field = CalendarEventPriorityMeetingLovDs.fNAME) })
 public class CalendarEventPriorityMeetingLovDs extends
         AbstractDsModel<CalendarEventPriority> implements IModelWithId,
         IModelWithClientId {

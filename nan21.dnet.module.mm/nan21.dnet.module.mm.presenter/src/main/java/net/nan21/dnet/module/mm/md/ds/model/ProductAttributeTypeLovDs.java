@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.mm.md.ds.model;
 
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -13,7 +14,7 @@ import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ProductAttributeType.class)
+@Ds(entity = ProductAttributeType.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = ProductAttributeTypeLovDs.fNAME) })
 public class ProductAttributeTypeLovDs extends
         AbstractDsModel<ProductAttributeType> implements IModelWithId,
         IModelWithClientId {

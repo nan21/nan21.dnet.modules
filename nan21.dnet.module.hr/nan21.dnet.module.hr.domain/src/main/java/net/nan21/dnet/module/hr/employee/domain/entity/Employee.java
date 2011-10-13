@@ -152,7 +152,7 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     private Boolean assignToPosition;
 
     /** BaseSalary. */
-    @Column(name = "BASESALARY", precision = 2)
+    @Column(name = "BASESALARY", scale = 2)
     private Float baseSalary;
 
     /** Owner client */

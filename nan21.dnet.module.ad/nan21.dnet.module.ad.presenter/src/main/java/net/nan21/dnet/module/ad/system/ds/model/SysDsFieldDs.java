@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.system.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.ad.system.domain.entity.SysDsField;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = SysDsField.class)
+@Ds(entity = SysDsField.class, sort = { @SortField(field = SysDsFieldDs.fNAME) })
 public class SysDsFieldDs extends AbstractDsModel<SysDsField> implements
         IModelWithId, IModelWithClientId {
 

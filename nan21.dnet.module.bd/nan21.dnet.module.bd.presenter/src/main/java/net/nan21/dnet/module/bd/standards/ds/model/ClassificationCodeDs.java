@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.standards.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ClassificationCode.class)
+@Ds(entity = ClassificationCode.class, sort = { @SortField(field = ClassificationCodeDs.fNAME) })
 public class ClassificationCodeDs extends AbstractDsModel<ClassificationCode>
         implements IModelWithId, IModelWithClientId {
 

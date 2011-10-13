@@ -58,7 +58,7 @@ public class PayScaleRateValue implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "PayScaleRateValue.findByIds";
 
     /** Value. */
-    @Column(name = "VALUE", precision = 2)
+    @Column(name = "VALUE", scale = 2)
     private Float value;
 
     /** ValidFrom. */

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.payroll.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.ElementType;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ElementType.class)
+@Ds(entity = ElementType.class, sort = { @SortField(field = ElementTypeDs.fNAME) })
 public class ElementTypeDs extends AbstractDsModel<ElementType> implements
         IModelWithId, IModelWithClientId {
 

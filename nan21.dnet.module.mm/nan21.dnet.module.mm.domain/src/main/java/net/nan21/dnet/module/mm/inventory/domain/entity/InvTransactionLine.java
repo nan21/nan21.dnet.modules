@@ -60,7 +60,7 @@ public class InvTransactionLine implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "InvTransactionLine.findByIds";
 
     /** Quantity. */
-    @Column(name = "QUANTITY", nullable = false, precision = 2)
+    @Column(name = "QUANTITY", nullable = false, scale = 2)
     @NotNull
     private Float quantity;
 

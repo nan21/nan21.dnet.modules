@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bp.base.ds.model;
 
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -13,7 +14,7 @@ import net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = PaymentMethod.class)
+@Ds(entity = PaymentMethod.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = PaymentMethodLovDs.fNAME) })
 public class PaymentMethodLovDs extends AbstractDsModel<PaymentMethod>
         implements IModelWithId, IModelWithClientId {
 

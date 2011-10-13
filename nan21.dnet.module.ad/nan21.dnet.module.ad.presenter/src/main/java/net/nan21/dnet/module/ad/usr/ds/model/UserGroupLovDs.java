@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.ad.usr.ds.model;
 
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -13,7 +14,7 @@ import net.nan21.dnet.module.ad.usr.domain.entity.UserGroup;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = UserGroup.class)
+@Ds(entity = UserGroup.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = UserGroupLovDs.fNAME) })
 public class UserGroupLovDs extends AbstractDsModel<UserGroup> implements
         IModelWithId, IModelWithClientId {
 

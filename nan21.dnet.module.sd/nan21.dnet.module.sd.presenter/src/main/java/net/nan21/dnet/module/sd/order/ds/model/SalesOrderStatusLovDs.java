@@ -14,7 +14,7 @@ import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = SalesOrderStatus.class, sort = { @SortField(field = SalesOrderStatusLovDs.fSEQUENCENO) })
+@Ds(entity = SalesOrderStatus.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = SalesOrderStatusLovDs.fSEQUENCENO) })
 public class SalesOrderStatusLovDs extends AbstractDsModel<SalesOrderStatus>
         implements IModelWithId, IModelWithClientId {
 

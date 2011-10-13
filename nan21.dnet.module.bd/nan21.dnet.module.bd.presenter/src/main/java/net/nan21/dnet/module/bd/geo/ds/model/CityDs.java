@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.geo.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.bd.geo.domain.entity.City;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = City.class)
+@Ds(entity = City.class, sort = { @SortField(field = CityDs.fNAME) })
 public class CityDs extends AbstractDsModel<City> implements IModelWithId,
         IModelWithClientId {
 

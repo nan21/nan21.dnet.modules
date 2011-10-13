@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bd.geo.ds.model;
 
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -13,7 +14,7 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Region;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = Region.class)
+@Ds(entity = Region.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = RegionLovDs.fCODE) })
 public class RegionLovDs extends AbstractDsModel<Region> implements
         IModelWithId, IModelWithClientId {
 
@@ -22,6 +23,7 @@ public class RegionLovDs extends AbstractDsModel<Region> implements
     public static final String fCODE = "code";
     public static final String fNAME = "name";
     public static final String fACTIVE = "active";
+    public static final String fCOUNTRYID = "countryId";
 
     @DsField()
     private Long id;
@@ -37,6 +39,9 @@ public class RegionLovDs extends AbstractDsModel<Region> implements
 
     @DsField()
     private Boolean active;
+
+    @DsField(join = "left", path = "country.id")
+    private Long countryId;
 
     public RegionLovDs() {
         super();
@@ -85,6 +90,14 @@ public class RegionLovDs extends AbstractDsModel<Region> implements
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public Long getCountryId() {
+        return this.countryId;
+    }
+
+    public void setCountryId(Long countryId) {
+        this.countryId = countryId;
     }
 
 }

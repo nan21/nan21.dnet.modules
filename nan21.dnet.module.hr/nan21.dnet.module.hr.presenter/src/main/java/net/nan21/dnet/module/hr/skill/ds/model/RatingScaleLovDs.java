@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.skill.ds.model;
 
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -13,7 +14,7 @@ import net.nan21.dnet.module.hr.skill.domain.entity.RatingScale;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = RatingScale.class)
+@Ds(entity = RatingScale.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = RatingScaleLovDs.fNAME) })
 public class RatingScaleLovDs extends AbstractDsModel<RatingScale> implements
         IModelWithId, IModelWithClientId {
 

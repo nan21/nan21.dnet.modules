@@ -57,11 +57,11 @@ public class UomConversion implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "UomConversion.findByIds";
 
     /** Multiplication factor. Specify either a multiplication or a division factor*/
-    @Column(name = "MULTIPLYWITH", precision = 2)
+    @Column(name = "MULTIPLYWITH", scale = 2)
     private Float multiplyWith;
 
     /** Division factor. Specify either a multiplication or a division factor*/
-    @Column(name = "DIVIDETO", precision = 2)
+    @Column(name = "DIVIDETO", scale = 2)
     private Float divideTo;
 
     /** Active. */

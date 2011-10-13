@@ -58,15 +58,15 @@ public class GradeRateValue implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "GradeRateValue.findByIds";
 
     /** FixValue. */
-    @Column(name = "RATE_FIX_VALUE", precision = 2)
+    @Column(name = "RATE_FIX_VALUE", scale = 2)
     private Float fixValue;
 
     /** MinValue. */
-    @Column(name = "RATE_MIN_VALUE", precision = 2)
+    @Column(name = "RATE_MIN_VALUE", scale = 2)
     private Float minValue;
 
     /** MaxValue. */
-    @Column(name = "RATE_MAX_VALUE", precision = 2)
+    @Column(name = "RATE_MAX_VALUE", scale = 2)
     private Float maxValue;
 
     /** ValidFrom. */

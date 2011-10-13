@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.skill.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.hr.skill.domain.entity.SkillType;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = SkillType.class)
+@Ds(entity = SkillType.class, sort = { @SortField(field = SkillTypeDs.fNAME) })
 public class SkillTypeDs extends AbstractDsModel<SkillType> implements
         IModelWithId, IModelWithClientId {
 

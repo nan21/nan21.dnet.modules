@@ -87,23 +87,23 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
     private Boolean storable;
 
     /** Weight. */
-    @Column(name = "WEIGHT", precision = 2)
+    @Column(name = "WEIGHT", scale = 2)
     private Float weight;
 
     /** Volume. */
-    @Column(name = "VOLUME", precision = 2)
+    @Column(name = "VOLUME", scale = 2)
     private Float volume;
 
     /** DimWidth. */
-    @Column(name = "DIMWIDTH", precision = 2)
+    @Column(name = "DIMWIDTH", scale = 2)
     private Float dimWidth;
 
     /** DimHeight. */
-    @Column(name = "DIMHEIGHT", precision = 2)
+    @Column(name = "DIMHEIGHT", scale = 2)
     private Float dimHeight;
 
     /** DimDepth. */
-    @Column(name = "DIMDEPTH", precision = 2)
+    @Column(name = "DIMDEPTH", scale = 2)
     private Float dimDepth;
 
     /** ManufacturerProductNo. */

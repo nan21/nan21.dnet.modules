@@ -77,15 +77,15 @@ public class SalesInvoice implements Serializable, IModelWithId,
     private Date docDate;
 
     /** TotalNetAmount. */
-    @Column(name = "TOTALNETAMOUNT", precision = 2)
+    @Column(name = "TOTALNETAMOUNT", scale = 2)
     private Float totalNetAmount;
 
     /** TotalTaxAmount. */
-    @Column(name = "TOTALTAXAMOUNT", precision = 2)
+    @Column(name = "TOTALTAXAMOUNT", scale = 2)
     private Float totalTaxAmount;
 
     /** TotalAmount. */
-    @Column(name = "TOTALAMOUNT", precision = 2)
+    @Column(name = "TOTALAMOUNT", scale = 2)
     private Float totalAmount;
 
     /** Owner client */

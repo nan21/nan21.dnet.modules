@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bp.calendar.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.bp.calendar.domain.entity.CalendarEventPriority;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = CalendarEventPriority.class)
+@Ds(entity = CalendarEventPriority.class, sort = { @SortField(field = CalendarEventPriorityDs.fNAME) })
 public class CalendarEventPriorityDs extends
         AbstractDsModel<CalendarEventPriority> implements IModelWithId,
         IModelWithClientId {

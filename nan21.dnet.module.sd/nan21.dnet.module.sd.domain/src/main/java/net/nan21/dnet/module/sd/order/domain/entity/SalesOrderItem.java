@@ -59,15 +59,15 @@ public class SalesOrderItem implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "SalesOrderItem.findByIds";
 
     /** QtyOrdered. */
-    @Column(name = "QTYORDERED", precision = 2)
+    @Column(name = "QTYORDERED", scale = 2)
     private Float qtyOrdered;
 
     /** NetUnitPrice. */
-    @Column(name = "NETUNITPRICE", precision = 2)
+    @Column(name = "NETUNITPRICE", scale = 2)
     private Float netUnitPrice;
 
     /** NetAmount. */
-    @Column(name = "NETAMOUNT", precision = 2)
+    @Column(name = "NETAMOUNT", scale = 2)
     private Float netAmount;
 
     /** Owner client */

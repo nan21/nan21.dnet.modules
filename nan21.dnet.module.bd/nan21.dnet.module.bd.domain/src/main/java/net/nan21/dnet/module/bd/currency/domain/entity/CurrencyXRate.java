@@ -78,7 +78,7 @@ public class CurrencyXRate implements Serializable, IModelWithId,
     private Date validAt;
 
     /** Exchange rate value.*/
-    @Column(name = "VALUE", nullable = false, precision = 2)
+    @Column(name = "VALUE", nullable = false, scale = 2)
     @NotNull
     private Float value;
 

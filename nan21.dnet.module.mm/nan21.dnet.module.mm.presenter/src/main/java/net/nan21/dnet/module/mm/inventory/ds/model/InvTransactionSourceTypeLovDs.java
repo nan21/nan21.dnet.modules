@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.mm.inventory.ds.model;
 
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -13,7 +14,7 @@ import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = InvTransactionSourceType.class)
+@Ds(entity = InvTransactionSourceType.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = InvTransactionSourceTypeLovDs.fNAME) })
 public class InvTransactionSourceTypeLovDs extends
         AbstractDsModel<InvTransactionSourceType> implements IModelWithId,
         IModelWithClientId {

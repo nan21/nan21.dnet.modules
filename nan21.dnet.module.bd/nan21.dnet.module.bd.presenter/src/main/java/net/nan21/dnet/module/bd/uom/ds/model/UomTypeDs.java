@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.uom.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.bd.uom.domain.entity.UomType;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = UomType.class)
+@Ds(entity = UomType.class, sort = { @SortField(field = UomTypeDs.fNAME) })
 public class UomTypeDs extends AbstractDsModel<UomType> implements
         IModelWithId, IModelWithClientId {
 
