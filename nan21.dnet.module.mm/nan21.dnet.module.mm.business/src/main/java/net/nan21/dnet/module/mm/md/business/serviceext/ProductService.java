@@ -3,15 +3,17 @@
  * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
-package net.nan21.dnet.module.mm._businessextensions;
+package net.nan21.dnet.module.mm.md.business.serviceext;
 
 import java.util.List;
 
 import net.nan21.dnet.module.mm._businessdelegates.md.SynchronizeProductAttribute;
+import net.nan21.dnet.module.mm.md.business.service.IProductService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 
 public class ProductService extends
-		net.nan21.dnet.module.mm.md.business.serviceimpl.ProductService {
+        net.nan21.dnet.module.mm.md.business.serviceimpl.ProductService
+        implements IProductService {
 
 	@Override
 	protected void postInsert(List<Product> list) throws Exception {

@@ -9,14 +9,13 @@ import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.sd.order.business.service.ISalesOrderItemService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 
 public class SalesOrderItemService extends
-        AbstractEntityService<SalesOrderItem> implements ISalesOrderItemService {
+        AbstractEntityService<SalesOrderItem> {
 
     public SalesOrderItemService() {
         super();

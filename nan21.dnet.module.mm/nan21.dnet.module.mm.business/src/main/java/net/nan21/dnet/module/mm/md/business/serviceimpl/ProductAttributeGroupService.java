@@ -7,15 +7,13 @@ package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
-import net.nan21.dnet.module.mm.md.business.service.IProductAttributeGroupService;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
 
 public class ProductAttributeGroupService extends
-        AbstractEntityService<ProductAttributeGroup> implements
-        IProductAttributeGroupService {
+        AbstractEntityService<ProductAttributeGroup> {
 
     public ProductAttributeGroupService() {
         super();

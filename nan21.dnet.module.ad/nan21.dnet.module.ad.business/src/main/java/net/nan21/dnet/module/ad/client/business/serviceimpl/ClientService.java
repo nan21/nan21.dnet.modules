@@ -10,6 +10,7 @@ import net.nan21.dnet.module.ad.client.business.service.IClientService;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.ad.client.domain.entity.Client;
+import net.nan21.dnet.module.ad._businessdelegates.client.ClientBD;
 
 public class ClientService extends AbstractEntityService<Client> implements
         IClientService {
@@ -26,6 +27,12 @@ public class ClientService extends AbstractEntityService<Client> implements
     @Override
     protected Class<Client> getEntityClass() {
         return Client.class;
+    }
+
+    public void doInsertWithUserAccounts(Client client, String userCode,
+            String userName, String password) throws Exception {
+        this.getBusinessDelegate(ClientBD.class).createAdminUser(client,
+                userCode, userName, password);
     }
 
 }

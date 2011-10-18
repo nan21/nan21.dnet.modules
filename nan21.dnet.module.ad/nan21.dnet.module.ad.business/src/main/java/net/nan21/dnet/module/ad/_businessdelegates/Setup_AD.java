@@ -24,6 +24,7 @@ import net.nan21.dnet.core.api.setup.InitDataItem;
 import net.nan21.dnet.core.api.setup.SetupTask;
 import net.nan21.dnet.core.api.setup.SetupTaskParam;
 import net.nan21.dnet.core.business.service.AbstractBusinessSetupParticipant;
+import net.nan21.dnet.module.ad._businessdelegates.client.ClientBD;
 import net.nan21.dnet.module.ad.client.domain.entity.Client;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportJob;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportJobItem;
@@ -44,11 +45,7 @@ implements ISetupParticipant {
 	private static final String PARAM_USER_PASSWORD = "userPassword";
   
 	private static final String PARAM_WORKSPACE_PATH = "workspacePath";
- 
-	
-	private static final String ROLE_ADMIN = "ROLE_DNET_ADMIN";
-	private static final String ROLE_USER = "ROLE_DNET_USER";
-	 
+  
 	
 	@Override
 	protected void onExecute() throws Exception {
@@ -64,61 +61,66 @@ implements ISetupParticipant {
 		String defaultExportPath = workspacePath+"/"+clientCode+"/export";
 		String defaultTempPath = workspacePath+"/"+clientCode+"/temp";
 		
-		Client c = new Client();
-		c.setCode(clientCode);
-		c.setName(clientName);		
-		c.setAdminRole(ROLE_ADMIN);			
-		c.setDefaultImportPath(defaultImportPath);
-		c.setDefaultExportPath(defaultExportPath);
-		c.setTempPath(defaultTempPath);
-		this.em.persist(c);
-		 
+		Client client = new Client();
+		client.setCode(clientCode);
+		client.setName(clientName);		
+		client.setAdminRole(ClientBD.ROLE_ADMIN);			
+		client.setDefaultImportPath(defaultImportPath);
+		client.setDefaultExportPath(defaultExportPath);
+		client.setTempPath(defaultTempPath);
+		client.setSystemClient(true);
+		
+		//this.em.persist(client);
+		  
+		this.getBusinessDelegate(ClientBD.class).createAdminUser(client, 
+				paramMap.get(PARAM_USER_CODE).getValue(), 
+				paramMap.get(PARAM_USER_NAME).getValue(), 
+				paramMap.get(PARAM_USER_PASSWORD).getValue());
+		
+//		Role radmin = new Role();
+//		radmin.setName(ROLE_ADMIN);
+//		radmin.setActive(true);
+//		radmin.setDescription("Administrator role for un-restricted access to business functions.");
+//		this.em.persist(radmin);
+//		
+//		Role ruser = new Role();
+//		ruser.setName(ROLE_USER);
+//		ruser.setActive(true);
+//		ruser.setDescription("Application role which allows a user to use the application.");
+//		this.em.persist(ruser);
+//		 
+//		UserType t = new UserType();
+//		t.setName("Default");	
+//		t.setActive(true);
+//		this.em.persist(t);
+//		
+//		Collection<Role> roles = new ArrayList<Role>();
+//		roles.add(radmin);
+//		roles.add(ruser);
+//	 
+//		
+//		User u = new User();
+//		String password = paramMap.get(PARAM_USER_PASSWORD).getValue();
+//		u.setCode(paramMap.get(PARAM_USER_CODE).getValue());
+//		u.setName(paramMap.get(PARAM_USER_NAME).getValue());
+//		u.setActive(true);
+//		MessageDigest messageDigest = MessageDigest.getInstance("MD5");  
+//		messageDigest.update(password.getBytes(),0, password.length());  
+//		String hashedPass = new BigInteger(1,messageDigest.digest()).toString(16);  
+//		if (hashedPass.length() < 32) { 
+//		   hashedPass = "0" + hashedPass; 
+//		}
+//		
+//		u.setPassword(hashedPass);	
+//		u.setRoles(roles);
+//		this.em.persist(u);
+		
 		// run in context of the client
 		net.nan21.dnet.core.api.session.User su = Session.user.get();
 		net.nan21.dnet.core.api.session.User newUser = new 
-			net.nan21.dnet.core.api.session.User(su.getUsername(), su.getUsername(), "", false, false, false, true, c.getCode(), c.getId(), null, null, null); 
+			net.nan21.dnet.core.api.session.User(su.getUsername(), su.getUsername(), "", false, false, false, true, client.getCode(), client.getId(), null, null, null); 
 		 
 		Session.user.set(newUser);
-		
-		Role radmin = new Role();
-		radmin.setName(ROLE_ADMIN);
-		radmin.setActive(true);
-		radmin.setDescription("Administrator role for un-restricted access to business functions.");
-		this.em.persist(radmin);
-		
-		Role ruser = new Role();
-		ruser.setName(ROLE_USER);
-		ruser.setActive(true);
-		ruser.setDescription("Application role which allows a user to use the application.");
-		this.em.persist(ruser);
-		
-		 
-		
-		UserType t = new UserType();
-		t.setName("Default");	
-		t.setActive(true);
-		this.em.persist(t);
-		
-		Collection<Role> roles = new ArrayList<Role>();
-		roles.add(radmin);
-		roles.add(ruser);
-	 
-		
-		User u = new User();
-		String password = paramMap.get(PARAM_USER_PASSWORD).getValue();
-		u.setCode(paramMap.get(PARAM_USER_CODE).getValue());
-		u.setName(paramMap.get(PARAM_USER_NAME).getValue());
-		u.setActive(true);
-		MessageDigest messageDigest = MessageDigest.getInstance("MD5");  
-		messageDigest.update(password.getBytes(),0, password.length());  
-		String hashedPass = new BigInteger(1,messageDigest.digest()).toString(16);  
-		if (hashedPass.length() < 32) { 
-		   hashedPass = "0" + hashedPass; 
-		}
-		
-		u.setPassword(hashedPass);	
-		u.setRoles(roles);
-		this.em.persist(u);
 		
 		reqisterInitialDataImports(defaultImportPath);
 		

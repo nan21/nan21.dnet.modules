@@ -18,8 +18,7 @@ public class MyCalendarCallDsService extends
         implements IDsService<MyCalendarCallDs, EmptyParam> {
 
     @Override
-    public void preInsert(MyCalendarCallDs ds) {
-
+    public void preInsert(MyCalendarCallDs ds, EmptyParam params) {
         ds.setEventType("call");
     }
 }

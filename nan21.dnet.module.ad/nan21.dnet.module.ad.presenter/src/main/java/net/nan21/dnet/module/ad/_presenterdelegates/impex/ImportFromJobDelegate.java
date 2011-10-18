@@ -20,7 +20,7 @@ public class ImportFromJobDelegate extends
 		List<ImportJobItem> items = srv
 				.getEntityManager()
 				.createQuery(
-						"select e from ImportJobItem e where e.job.id = :pJobId order by e.sequenceNo",
+						"select e from ImportJobItem e where e.job.id = :pJobId and e.active = true order by e.sequenceNo",
 						ImportJobItem.class).setParameter("pJobId", ds.getId())
 				.getResultList();
 

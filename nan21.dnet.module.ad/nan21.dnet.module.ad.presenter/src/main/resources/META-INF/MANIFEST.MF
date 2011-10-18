@@ -16,45 +16,50 @@ Export-Package: net.nan21.dnet.module.ad._presenterdelegates;version="
  an21.dnet.module.ad.client.ds.model;version="1.0.0.M3";uses:="net.nan
  21.dnet.core.api.annotation,net.nan21.dnet.core.api.model,net.nan21.d
  net.core.presenter.model,net.nan21.dnet.module.ad.client.domain.entit
- y",net.nan21.dnet.module.ad.impex.ds.converter;version="1.0.0.M3";use
- s:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.presenter.c
- onverter,net.nan21.dnet.module.ad.impex.domain.entity,net.nan21.dnet.
- module.ad.impex.ds.model",net.nan21.dnet.module.ad.impex.ds.model;ver
- sion="1.0.0.M3";uses:="net.nan21.dnet.core.api.annotation,net.nan21.d
- net.core.api.model,net.nan21.dnet.core.presenter.model,net.nan21.dnet
- .module.ad.impex.domain.entity",net.nan21.dnet.module.ad.report.ds.co
+ y",net.nan21.dnet.module.ad.client.ds.param;version="1.0.0.M3";uses:=
+ "net.nan21.dnet.core.presenter.model",net.nan21.dnet.module.ad.client
+ .ds.serviceext;version="1.0.0.M3";uses:="net.nan21.dnet.core.api.serv
+ ice,net.nan21.dnet.core.presenter.service,net.nan21.dnet.module.ad.cl
+ ient.domain.entity,net.nan21.dnet.module.ad.client.ds.model,net.nan21
+ .dnet.module.ad.client.ds.param",net.nan21.dnet.module.ad.impex.ds.co
  nverter;version="1.0.0.M3";uses:="net.nan21.dnet.core.api.converter,n
- et.nan21.dnet.core.presenter.converter,net.nan21.dnet.module.ad.repor
- t.domain.entity,net.nan21.dnet.module.ad.report.ds.model",net.nan21.d
- net.module.ad.report.ds.model;version="1.0.0.M3";uses:="net.nan21.dne
- t.core.api.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.co
- re.presenter.model,net.nan21.dnet.module.ad.report.domain.entity",net
- .nan21.dnet.module.ad.system.ds.converter;version="1.0.0.M3";uses:="n
- et.nan21.dnet.core.api.converter,net.nan21.dnet.core.presenter.conver
- ter,net.nan21.dnet.module.ad.system.domain.entity,net.nan21.dnet.modu
- le.ad.system.ds.model",net.nan21.dnet.module.ad.system.ds.model;versi
- on="1.0.0.M3";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dne
- t.core.api.model,net.nan21.dnet.core.presenter.model,net.nan21.dnet.m
- odule.ad.system.domain.entity",net.nan21.dnet.module.ad.usr.asgn;vers
- ion="1.0.0.M3";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dn
- et.core.presenter.model,net.nan21.dnet.module.ad.usr.domain.entity",n
- et.nan21.dnet.module.ad.usr.ds.converter;version="1.0.0.M3";uses:="ne
- t.nan21.dnet.core.api.converter,net.nan21.dnet.core.presenter.convert
- er,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.dnet.module.a
- d.usr.ds.model",net.nan21.dnet.module.ad.usr.ds.model;version="1.0.0.
+ et.nan21.dnet.core.presenter.converter,net.nan21.dnet.module.ad.impex
+ .domain.entity,net.nan21.dnet.module.ad.impex.ds.model",net.nan21.dne
+ t.module.ad.impex.ds.model;version="1.0.0.M3";uses:="net.nan21.dnet.c
+ ore.api.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.
+ presenter.model,net.nan21.dnet.module.ad.impex.domain.entity",net.nan
+ 21.dnet.module.ad.report.ds.converter;version="1.0.0.M3";uses:="net.n
+ an21.dnet.core.api.converter,net.nan21.dnet.core.presenter.converter,
+ net.nan21.dnet.module.ad.report.domain.entity,net.nan21.dnet.module.a
+ d.report.ds.model",net.nan21.dnet.module.ad.report.ds.model;version="
+ 1.0.0.M3";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.co
+ re.api.model,net.nan21.dnet.core.presenter.model,net.nan21.dnet.modul
+ e.ad.report.domain.entity",net.nan21.dnet.module.ad.system.ds.convert
+ er;version="1.0.0.M3";uses:="net.nan21.dnet.core.api.converter,net.na
+ n21.dnet.core.presenter.converter,net.nan21.dnet.module.ad.system.dom
+ ain.entity,net.nan21.dnet.module.ad.system.ds.model",net.nan21.dnet.m
+ odule.ad.system.ds.model;version="1.0.0.M3";uses:="net.nan21.dnet.cor
+ e.api.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.pr
+ esenter.model,net.nan21.dnet.module.ad.system.domain.entity",net.nan2
+ 1.dnet.module.ad.usr.asgn;version="1.0.0.M3";uses:="net.nan21.dnet.co
+ re.api.annotation,net.nan21.dnet.core.presenter.model,net.nan21.dnet.
+ module.ad.usr.domain.entity",net.nan21.dnet.module.ad.usr.ds.converte
+ r;version="1.0.0.M3";uses:="net.nan21.dnet.core.api.converter,net.nan
+ 21.dnet.core.presenter.converter,net.nan21.dnet.module.ad.usr.domain.
+ entity,net.nan21.dnet.module.ad.usr.ds.model",net.nan21.dnet.module.a
+ d.usr.ds.model;version="1.0.0.M3";uses:="net.nan21.dnet.core.api.anno
+ tation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.mo
+ del,net.nan21.dnet.module.ad.usr.domain.entity",net.nan21.dnet.module
+ .ad.workflow.ds.converter;version="1.0.0.M3";uses:="net.nan21.dnet.co
+ re.api.converter,net.nan21.dnet.core.presenter.converter,net.nan21.dn
+ et.module.ad.workflow.domain.entity,net.nan21.dnet.module.ad.workflow
+ .ds.model",net.nan21.dnet.module.ad.workflow.ds.model;version="1.0.0.
  M3";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api
- .model,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.ad.u
- sr.domain.entity",net.nan21.dnet.module.ad.workflow.ds.converter;vers
- ion="1.0.0.M3";uses:="net.nan21.dnet.core.api.converter,net.nan21.dne
- t.core.presenter.converter,net.nan21.dnet.module.ad.workflow.domain.e
- ntity,net.nan21.dnet.module.ad.workflow.ds.model",net.nan21.dnet.modu
- le.ad.workflow.ds.model;version="1.0.0.M3";uses:="net.nan21.dnet.core
- .api.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.pre
- senter.model,net.nan21.dnet.module.ad.workflow.domain.entity",net.nan
- 21.dnet.module.ad.workflow.ds.param;version="1.0.0.M3";uses:="net.nan
- 21.dnet.core.presenter.model",net.nan21.dnet.module.ad.workflow.ds.qb
- ;version="1.0.0.M3";uses:="net.nan21.dnet.core.presenter.action,net.n
- an21.dnet.module.ad.workflow.ds.model"
+ .model,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.ad.w
+ orkflow.domain.entity",net.nan21.dnet.module.ad.workflow.ds.param;ver
+ sion="1.0.0.M3";uses:="net.nan21.dnet.core.presenter.model",net.nan21
+ .dnet.module.ad.workflow.ds.qb;version="1.0.0.M3";uses:="net.nan21.dn
+ et.core.presenter.action,net.nan21.dnet.module.ad.workflow.ds.model"
 Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M3,1.0.0.M3]",na
  n21.dnet.core.presenter;version="[1.0.0.M3,1.0.0.M3]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.5)

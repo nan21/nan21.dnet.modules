@@ -18,8 +18,7 @@ public class MyCalendarTaskDsService extends
         implements IDsService<MyCalendarTaskDs, EmptyParam> {
 
     @Override
-    public void preInsert(MyCalendarTaskDs ds) {
-
+    public void preInsert(MyCalendarTaskDs ds, EmptyParam params) {
         ds.setEventType("task");
     }
 }

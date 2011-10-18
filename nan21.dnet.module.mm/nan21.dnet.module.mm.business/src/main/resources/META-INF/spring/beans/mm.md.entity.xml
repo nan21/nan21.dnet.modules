@@ -17,7 +17,7 @@
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductCategoryHierarchyItemService"  />  
  
  	<bean id="ProductService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm._businessextensions.ProductService"  />  
+	  		class="net.nan21.dnet.module.mm.md.business.serviceext.ProductService"  />  
  
  	<bean id="ProductAttachmentTypeService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttachmentTypeService"  />  
@@ -47,7 +47,7 @@
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttributeService"  />  
  
  	<bean id="ProductAttributeGroupService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm._businessextensions.ProductAttributeGroupService"  />  
+	  		class="net.nan21.dnet.module.mm.md.business.serviceext.ProductAttributeGroupService"  />  
  
  	<bean id="ProductAttributeValueService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttributeValueService"  />  

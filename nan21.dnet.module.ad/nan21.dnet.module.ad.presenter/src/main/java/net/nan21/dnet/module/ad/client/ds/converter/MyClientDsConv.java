@@ -8,41 +8,31 @@ package net.nan21.dnet.module.ad.client.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
-import net.nan21.dnet.module.ad.client.ds.model.ClientDs;
+import net.nan21.dnet.module.ad.client.ds.model.MyClientDs;
 import net.nan21.dnet.module.ad.client.domain.entity.Client;
 
-public class ClientDsConv extends AbstractDsConverter<ClientDs, Client>
-        implements IDsConverter<ClientDs, Client> {
+public class MyClientDsConv extends AbstractDsConverter<MyClientDs, Client>
+        implements IDsConverter<MyClientDs, Client> {
 
-    protected void modelToEntityAttributes(ClientDs ds, Client e)
+    protected void modelToEntityAttributes(MyClientDs ds, Client e)
             throws Exception {
         e.setName(ds.getName());
         e.setCode(ds.getCode());
         e.setNotes(ds.getNotes());
         e.setMaintenanceLanguage(ds.getMaintenanceLanguage());
-        e.setDefaultImportPath(ds.getDefaultImportPath());
-        e.setDefaultExportPath(ds.getDefaultExportPath());
-        e.setTempPath(ds.getTempPath());
-        e.setSystemClient(ds.getSystemClient());
-        e.setDefaultDsAccessRule(ds.getDefaultDsAccessRule());
         e.setAdminRole(ds.getAdminRole());
     }
 
-    protected void modelToEntityReferences(ClientDs ds, Client e)
+    protected void modelToEntityReferences(MyClientDs ds, Client e)
             throws Exception {
     }
 
     @Override
-    public void entityToModel(Client e, ClientDs ds) throws Exception {
+    public void entityToModel(Client e, MyClientDs ds) throws Exception {
         ds.setName(e.getName());
         ds.setCode(e.getCode());
         ds.setNotes(e.getNotes());
         ds.setMaintenanceLanguage(e.getMaintenanceLanguage());
-        ds.setDefaultImportPath(e.getDefaultImportPath());
-        ds.setDefaultExportPath(e.getDefaultExportPath());
-        ds.setTempPath(e.getTempPath());
-        ds.setSystemClient(e.getSystemClient());
-        ds.setDefaultDsAccessRule(e.getDefaultDsAccessRule());
         ds.setAdminRole(e.getAdminRole());
         ds.setId(e.getId());
         ds.setCreatedAt(e.getCreatedAt());

@@ -110,6 +110,11 @@ public class Client implements Serializable, IModelWithId {
     @Column(name = "DEFAULTCURRENCY")
     private String defaultCurrency;
 
+    /** SystemClient. */
+    @Column(name = "SYSTEMCLIENT", nullable = false)
+    @NotNull
+    private Boolean systemClient;
+
     /** Timestamp when this record was created.*/
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREATEDAT", nullable = false)
@@ -251,6 +256,14 @@ public class Client implements Serializable, IModelWithId {
         this.defaultCurrency = defaultCurrency;
     }
 
+    public Boolean getSystemClient() {
+        return this.systemClient;
+    }
+
+    public void setSystemClient(Boolean systemClient) {
+        this.systemClient = systemClient;
+    }
+
     public Date getCreatedAt() {
         return this.createdAt;
     }
@@ -315,6 +328,9 @@ public class Client implements Serializable, IModelWithId {
                 .getUsername());
         event.updateAttributeWithObject("modifiedBy", Session.user.get()
                 .getUsername());
+        if (this.systemClient == null) {
+            event.updateAttributeWithObject("systemClient", false);
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

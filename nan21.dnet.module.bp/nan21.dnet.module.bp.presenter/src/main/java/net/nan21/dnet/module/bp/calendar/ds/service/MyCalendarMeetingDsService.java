@@ -18,8 +18,7 @@ public class MyCalendarMeetingDsService extends
         implements IDsService<MyCalendarMeetingDs, EmptyParam> {
 
     @Override
-    public void preInsert(MyCalendarMeetingDs ds) {
-
+    public void preInsert(MyCalendarMeetingDs ds, EmptyParam params) {
         ds.setEventType("meeting");
     }
 }

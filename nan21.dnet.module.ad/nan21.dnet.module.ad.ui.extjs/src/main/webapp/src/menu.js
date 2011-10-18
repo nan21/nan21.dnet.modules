@@ -8,7 +8,7 @@ net.nan21.dnet.module.ad.menu.ad = [
  
 	{"id":"sm_ad_client", "text":"Client", leaf:false, children:[
 		
-		{id:"Client_UI", text:Dnet.translate("ui","Client_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.client.frame.Client_UI", _bundle_:BUNDLE_ID}	]}
+		{id:"MyClient_UI", text:Dnet.translate("ui","MyClient_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.client.frame.MyClient_UI", _bundle_:BUNDLE_ID}	]}
 ,		 
 	{"id":"sm_ad_user", "text":"User management", leaf:false, children:[
 		

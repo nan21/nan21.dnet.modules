@@ -1,14 +1,16 @@
-package net.nan21.dnet.module.sd._businessextensions;
+package net.nan21.dnet.module.sd.invoice.business.serviceext;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import net.nan21.dnet.module.sd.order.business.service.ISalesOrderItemService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 
 public class SalesOrderItemService
 		extends
-		net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderItemService {
+		net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderItemService 
+		implements ISalesOrderItemService {
 
 	private List<Long> orderIds;
 

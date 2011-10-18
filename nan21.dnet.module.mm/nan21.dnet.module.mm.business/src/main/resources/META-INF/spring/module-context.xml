@@ -95,7 +95,7 @@
 			<tx:method name="insert" read-only="false" />
 			<tx:method name="update" read-only="false" />
 			<tx:method name="delete*" read-only="false" />
-			<tx:method name="execute*" read-only="false" />
+			<tx:method name="do*" read-only="false" />
 		</tx:attributes>
 	</tx:advice>
 	
@@ -124,7 +124,6 @@
 		<aop:advisor advice-ref="txAdviceSetupParticipant" pointcut-ref="setupParticipantRun" />				 
 	</aop:config>
 
-	
 	<bean id="setupParticipant" class="net.nan21.dnet.module.mm._businessdelegates.Setup_MM" scope="singleton" >		
 		<property name="ranking" value="160"></property>
 	</bean>

@@ -8,7 +8,6 @@ package net.nan21.dnet.module.mm.md.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.mm.md.business.service.IProductService;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
@@ -17,8 +16,7 @@ import net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer;
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 
-public class ProductService extends AbstractEntityService<Product> implements
-        IProductService {
+public class ProductService extends AbstractEntityService<Product> {
 
     public ProductService() {
         super();

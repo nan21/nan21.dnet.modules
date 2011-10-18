@@ -9,15 +9,13 @@ import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceItemService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
 
 public class SalesInvoiceItemService extends
-        AbstractEntityService<SalesInvoiceItem> implements
-        ISalesInvoiceItemService {
+        AbstractEntityService<SalesInvoiceItem> {
 
     public SalesInvoiceItemService() {
         super();

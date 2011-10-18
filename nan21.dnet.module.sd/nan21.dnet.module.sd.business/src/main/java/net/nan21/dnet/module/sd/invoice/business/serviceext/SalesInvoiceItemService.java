@@ -2,19 +2,20 @@
  * DNet eBusiness Suite
  * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
- */
-package net.nan21.dnet.module.sd._businessextensions;
+ */ 
+package net.nan21.dnet.module.sd.invoice.business.serviceext;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceItemService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
-
-public class SalesInvoiceItemService
-		extends
-		net.nan21.dnet.module.sd.invoice.business.serviceimpl.SalesInvoiceItemService {
-
+ 
+public class SalesInvoiceItemService 
+	extends net.nan21.dnet.module.sd.invoice.business.serviceimpl.SalesInvoiceItemService
+	implements ISalesInvoiceItemService{
+  
 	private List<Long> invoiceIds;
 
 	@Override
@@ -81,5 +82,6 @@ public class SalesInvoiceItemService
 		invoice.setTotalNetAmount(x.floatValue());
 		this.em.merge(invoice);
 	}
-
+	
 }
+

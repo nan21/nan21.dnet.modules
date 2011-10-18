@@ -11,7 +11,7 @@
 	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderService"  />  
  
  	<bean id="SalesOrderItemService" scope="prototype"
-	  		class="net.nan21.dnet.module.sd._businessextensions.SalesOrderItemService"  />  
+	  		class="net.nan21.dnet.module.sd.order.business.serviceext.SalesOrderItemService"  />  
  
  	<bean id="SalesOrderTypeService" scope="prototype"
 	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderTypeService"  />  

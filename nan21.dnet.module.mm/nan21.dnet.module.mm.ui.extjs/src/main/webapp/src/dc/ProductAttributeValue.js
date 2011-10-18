@@ -54,6 +54,9 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
 	    else if (record.data.dataType == "boolean") {
 	    	ed = new dnet.base.LocalCombo({store:["true","false"]});
 	    }
+	    if (ed != null) {
+	    	ed._dcView_ = this;
+	    }
 //	    else{
 //	    	return this.colModel.getCellEditor(col, row);
 //	    }
