@@ -109,9 +109,9 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Create", {
 		.addTextField({ name:"defaultImportPath", dataIndex:"defaultImportPath",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"defaultExportPath", dataIndex:"defaultExportPath",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"tempPath", dataIndex:"tempPath",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"adminUserCode", dataIndex:"adminUserCode",anchor:"-20"   })
-		.addTextField({ name:"adminUserName", dataIndex:"adminUserName",anchor:"-20"   })
-		.addTextField({ name:"adminPassword", dataIndex:"adminPassword",anchor:"-20"   })
+		.addTextField({ name:"adminUserCode", paramIndex:"adminUserCode",anchor:"-20"   })
+		.addTextField({ name:"adminUserName", paramIndex:"adminUserName",anchor:"-20"   })
+		.addTextField({ name:"adminPassword", paramIndex:"adminPassword",anchor:"-20"   })
 		.addCheckbox({ name:"systemClient", dataIndex:"systemClient"  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
