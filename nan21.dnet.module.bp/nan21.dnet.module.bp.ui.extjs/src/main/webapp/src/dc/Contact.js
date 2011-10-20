@@ -25,7 +25,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$Filter", {
 		.addTextField({ name:"firstName", dataIndex:"firstName",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"lastName", dataIndex:"lastName",anchor:"-20",maxLength:255  })
 		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"bpartnerCode",anchor:"-20",maxLength:32,retFieldMapping: []  })
-		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender", id:Ext.id(),anchor:"-20",store:[ "male", "female"]  })
+		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender",anchor:"-20",store:[ "male", "female"]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor", width:220,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"anchor", width:250,labelWidth:0 })

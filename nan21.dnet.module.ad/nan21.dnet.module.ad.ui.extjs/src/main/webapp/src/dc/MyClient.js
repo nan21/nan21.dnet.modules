@@ -3,8 +3,8 @@
 Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient", {
 	extend: "dnet.base.AbstractDc",
  
-	recordModel: "net.nan21.dnet.module.ad.client.ds.model.ClientDs",
-	paramModel: "net.nan21.dnet.module.ad.client.ds.param.ClientDsParam",
+	recordModel: "net.nan21.dnet.module.ad.client.ds.model.MyClientDs",
+	paramModel: "net.nan21.dnet.module.ad.client.ds.param.MyClientDsParam",
 	constructor : function(config) {
         config = config || {};
         Ext.apply(this, config);
@@ -23,8 +23,8 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
+		.addTextField({ name:"name", dataIndex:"name",anchor:"-20",noEdit:true  ,maxLength:255  })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20",noEdit:true  ,maxLength:32,vtype:"alphanum"  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addTextField({ name:"maintenanceLanguage", dataIndex:"maintenanceLanguage",anchor:"-20" ,maxLength:5,caseRestriction:"uppercase",vtype:"alpha"  })
 		.addTextField({ name:"adminRole", dataIndex:"adminRole",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })

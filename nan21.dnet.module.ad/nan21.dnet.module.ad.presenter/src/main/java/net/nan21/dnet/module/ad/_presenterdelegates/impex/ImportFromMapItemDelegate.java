@@ -1,11 +1,11 @@
 package net.nan21.dnet.module.ad._presenterdelegates.impex;
  
 import net.nan21.dnet.core.api.session.Session;
-import net.nan21.dnet.core.presenter.model.EmptyParam;
 import net.nan21.dnet.core.presenter.service.BaseDsDelegate;
 import net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs;
+import net.nan21.dnet.module.ad.impex.ds.param.ImportMapItemDsParam;
 
-public class ImportFromMapItemDelegate extends BaseDsDelegate<ImportMapItemDs,EmptyParam> {
+public class ImportFromMapItemDelegate extends BaseDsDelegate<ImportMapItemDs,ImportMapItemDsParam> {
 
 	@Override
 	public void execute(ImportMapItemDs ds) throws Exception {		
@@ -15,4 +15,9 @@ public class ImportFromMapItemDelegate extends BaseDsDelegate<ImportMapItemDs,Em
         this.findDsService(dsName).doImport(fileName, path);
 	}
 
+	public void importFile(ImportMapItemDs ds, ImportMapItemDsParam params) throws Exception {
+		String fileName = params.getImportFileLocation();
+        String dsName = params.getImportDataSource()+"Ds";         
+        this.findDsService(dsName).doImport(fileName);
+	}
 }

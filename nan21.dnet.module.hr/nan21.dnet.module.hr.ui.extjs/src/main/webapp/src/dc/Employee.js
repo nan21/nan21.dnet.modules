@@ -25,8 +25,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$Filter", {
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addTextField({ name:"firstName", dataIndex:"firstName",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"lastName", dataIndex:"lastName",anchor:"-20",maxLength:255  })
-		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender", id:Ext.id(),anchor:"-20",store:[ "male", "female"]  })
-		.addCombo({ name:"maritalStatus", xtype:"combo", dataIndex:"maritalStatus", id:Ext.id(),anchor:"-20",store:[ "single", "married", "divorced", "widow", "other"]  })
+		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender",anchor:"-20",store:[ "male", "female"]  })
+		.addCombo({ name:"maritalStatus", xtype:"combo", dataIndex:"maritalStatus",anchor:"-20",store:[ "single", "married", "divorced", "widow", "other"]  })
 		.addLov({ name:"employerCode", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"employerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "employerId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor", width:220,labelWidth:0 })

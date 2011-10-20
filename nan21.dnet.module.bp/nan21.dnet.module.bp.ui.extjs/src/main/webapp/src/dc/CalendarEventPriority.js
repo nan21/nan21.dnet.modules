@@ -23,7 +23,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority$Filter", 
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addCombo({ name:"eventType", xtype:"combo", dataIndex:"eventType", id:Ext.id(),anchor:"-20",store:[ "call", "meeting", "task"]  })
+		.addCombo({ name:"eventType", xtype:"combo", dataIndex:"eventType",anchor:"-20",store:[ "call", "meeting", "task"]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210, height:50,labelWidth:0 })

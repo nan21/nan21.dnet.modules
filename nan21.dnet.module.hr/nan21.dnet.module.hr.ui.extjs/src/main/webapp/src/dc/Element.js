@@ -24,7 +24,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addCombo({ name:"dataType", xtype:"combo", dataIndex:"dataType", id:Ext.id(),anchor:"-20",store:[ "string", "number", "boolean", "date"]  })
+		.addCombo({ name:"dataType", xtype:"combo", dataIndex:"dataType",anchor:"-20",store:[ "string", "number", "boolean", "date"]  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.payroll.lovs.ElementTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers

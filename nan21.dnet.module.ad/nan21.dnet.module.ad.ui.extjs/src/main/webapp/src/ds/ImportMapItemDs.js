@@ -25,7 +25,9 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs" , {
 	
 Ext.define("net.nan21.dnet.module.ad.impex.ds.param.ImportMapItemDsParam", {
 	extend: 'Ext.data.Model',
-	fields: [ 
+	fields: [ 	
+		{name:"importFileLocation",type:"string"},	
+		{name:"importDataSource",type:"string"}
 	]
 }); 
  

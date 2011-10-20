@@ -43,6 +43,7 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.ad.impex.ds.param.ImportMapItemDsParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.impex.ds.converter.ImportMapItemDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
@@ -52,6 +53,16 @@
 	  				<constructor-arg name="methodName" value="execute" />
 	  			</bean>	
 	  			</entry>	  			
+	  		</map>
+	  	</property>	
+	  	<property name="rpcFilter" >
+	  		<map>
+	  			<entry key="runImportFile">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapItemDelegate"/>
+	  				<constructor-arg name="methodName" value="importFile" />
+	  			</bean>	
+	  			</entry>	 
 	  		</map>
 	  	</property>	
 	</bean>

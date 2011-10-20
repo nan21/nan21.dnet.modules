@@ -64,3 +64,21 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMapItem$EditList", {
 	  ;  		   
 	}  
 });
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMapItem$ImportFileForm", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ImportMapItem$ImportFileForm",
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addLov({ name:"importDataSource", xtype:"net.nan21.dnet.module.ad.system.lovs.SysDataSource", paramIndex:"importDataSource",anchor:"-20",retFieldMapping: []  })
+		.addTextField({ name:"importFileLocation", paramIndex:"importFileLocation",anchor:"-20"  })
+		//containers
+		.addPanel({ name:"main", layout:"anchor", autoScroll:true, width:400,labelWidth:0 })
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["importFileLocation","importDataSource"])
+	}
+}); 

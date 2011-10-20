@@ -23,7 +23,7 @@ Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter"
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addCombo({ name:"type", xtype:"combo", dataIndex:"type", id:Ext.id(),anchor:"-20",store:[ "email", "messenger", "phone", "other"]  })
+		.addCombo({ name:"type", xtype:"combo", dataIndex:"type",anchor:"-20",store:[ "email", "messenger", "phone", "other"]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})

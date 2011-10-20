@@ -28,8 +28,8 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$Filter", {
 		.addLov({ name:"reason", xtype:"net.nan21.dnet.module.hr.time.lovs.AbsenceReasons", dataIndex:"reason",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reasonId"} ]  })
 		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		.addNumberField({ name:"hours", dataIndex:"hours",anchor:"-20"  })
-		.addDateField({ name:"from", dataIndex:"from", _isParam_:true,anchor:"-20",listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("from", nv);} }} ,format:Ext.DATE_FORMAT })
-		.addDateField({ name:"to", dataIndex:"to", _isParam_:true,anchor:"-20",listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("to", nv);} }} ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"from", paramIndex:"from",anchor:"-20" ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"to", paramIndex:"to",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })

@@ -6,4 +6,6 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs$Trl", {
 	,dataSource__lbl : "Data Source"
 	,fileName__lbl : "File Name"
 	
+	,importFileLocation__lbl :"Import File Location"
+	,importDataSource__lbl :"Import Data Source"
 });

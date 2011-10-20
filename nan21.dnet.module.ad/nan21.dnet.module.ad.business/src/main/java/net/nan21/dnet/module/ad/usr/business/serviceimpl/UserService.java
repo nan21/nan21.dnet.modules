@@ -14,6 +14,8 @@ import net.nan21.dnet.module.ad.usr.domain.entity.UserType;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.ad.usr.domain.entity.User;
+import java.security.MessageDigest;
+import java.math.BigInteger;
 
 public class UserService extends AbstractEntityService<User> implements
         IUserService {
@@ -72,6 +74,20 @@ public class UserService extends AbstractEntityService<User> implements
                         "select e from User e where e.groups.id = :pGroupsId",
                         User.class).setParameter("pGroupsId", groupsId)
                 .getResultList();
+    }
+
+    public void doChangePassword(Long userId, String newPassword)
+            throws Exception {
+        User u = this.findById(userId);
+        MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+        messageDigest.update(newPassword.getBytes(), 0, newPassword.length());
+        String hashedPass = new BigInteger(1, messageDigest.digest())
+                .toString(16);
+        if (hashedPass.length() < 32) {
+            hashedPass = "0" + hashedPass;
+        }
+        u.setPassword(hashedPass);
+        this.em.merge(u);
     }
 
 }

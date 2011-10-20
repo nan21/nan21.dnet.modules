@@ -49,8 +49,8 @@ public class SysDataSourceDelegate extends BaseDsDelegate<SysDataSourceDs, Empty
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("clientId", Session.user.get().getClientId());
  
-		srv.executeUpdate("delete from "+SysDsField.class.getSimpleName()+"  where clientId = :clientId", params );		 
-		srv.executeUpdate("delete from "+SysDataSource.class.getSimpleName()+"  where clientId = :clientId", params);
+		srv.update("delete from "+SysDsField.class.getSimpleName()+"  where clientId = :clientId", params );		 
+		srv.update("delete from "+SysDataSource.class.getSimpleName()+"  where clientId = :clientId", params);
 		srv.insert(result);		
 	}
 }

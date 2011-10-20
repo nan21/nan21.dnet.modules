@@ -26,7 +26,9 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserDs" , {
 	
 Ext.define("net.nan21.dnet.module.ad.usr.ds.param.UserDsParam", {
 	extend: 'Ext.data.Model',
-	fields: [ 
+	fields: [ 	
+		{name:"newPassword",type:"string"},	
+		{name:"confirmPassword",type:"string"}
 	]
 }); 
  

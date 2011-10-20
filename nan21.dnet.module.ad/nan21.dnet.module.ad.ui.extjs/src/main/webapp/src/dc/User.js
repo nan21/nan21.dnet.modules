@@ -96,3 +96,24 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Edit", {
 ;
 	}	
 });
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addTextField({ name:"newPassword", paramIndex:"newPassword",anchor:"-20"   })
+		.addTextField({ name:"confirmPassword", paramIndex:"confirmPassword",anchor:"-20"   })
+		//containers
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:350,labelWidth:0 })     
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["newPassword","confirmPassword"])
+;
+	}	
+});

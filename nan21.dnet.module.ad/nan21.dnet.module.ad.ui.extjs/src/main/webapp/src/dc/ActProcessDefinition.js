@@ -26,7 +26,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter", {
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"category", dataIndex:"category",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"resourceName", dataIndex:"resourceName",anchor:"-20",maxLength:255  })
-		.addLov({ name:"deployment", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActDeployments", dataIndex:"deployment", _isParam_:true,anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "deploymentId"} ,{lovField:"fullName", dsParam: "deployment"} ],listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("deployment", nv);} }}  })
+		.addLov({ name:"deployment", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActDeployments", paramIndex:"deployment",anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "deploymentId"} ,{lovField:"fullName", dsParam: "deployment"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })

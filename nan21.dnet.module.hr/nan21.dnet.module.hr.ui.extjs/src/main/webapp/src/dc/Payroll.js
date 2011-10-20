@@ -23,7 +23,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addCombo({ name:"periodType", xtype:"combo", dataIndex:"periodType", id:Ext.id(),anchor:"-20",store:[ "calendar-month", "semi-month"]  })
+		.addCombo({ name:"periodType", xtype:"combo", dataIndex:"periodType",anchor:"-20",store:[ "calendar-month", "semi-month"]  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
 	}

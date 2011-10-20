@@ -18,12 +18,22 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {
 		.addButton({name:"btnAsgnGroups",text:"Groups", tooltip:"Add to user-groups",disabled:true
 			,handler: this.onBtnAsgnGroups,scope:this,stateManager:{name:"record_is_clean", dc:"usr" }	})	
 							 	
+		.addButton({name:"btnChangePassword",text:"Change password", tooltip:"Change the user`s password",disabled:true
+			,handler: this.onBtnChangePassword,scope:this,stateManager:{name:"record_is_clean", dc:"usr" }	})	
+							 	
+		.addButton({name:"btnSavePassword",text:"Save", tooltip:"Save new password",disabled:false
+			,handler: this.onBtnSavePassword,scope:this	})	
+							 	
 		.addDcFilterFormView("usr",{ name:"usrFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Filter"})	 
 		.addDcView("usr",{ name:"usrList", xtype:"net.nan21.dnet.module.ad.usr.dc.User$List"})	 
-		.addDcFormView("usr",{ name:"usrEdit", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Edit",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnAsgnRoles") ,this._elems_.get("btnAsgnGroups") ]}})	 
+		.addDcFormView("usr",{ name:"usrEdit", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Edit",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnAsgnRoles") ,this._elems_.get("btnAsgnGroups") ,this._elems_.get("btnChangePassword") ]}})	 
+		.addDcFormView("usr",{ name:"canvasPassword", xtype:"net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		
+		.addWindow({name:"wdwChangePassword", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("canvasPassword")]
+,modal:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnSavePassword") ]}}) 	
 ;	 	
 	}
 
@@ -49,5 +59,22 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {
 
 	,onBtnAsgnGroups: function() {
 		this.showAsgnWindow(net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui ,{dc:"usr",objectIdField:"id"});
+	}					 	
+
+	,onBtnChangePassword: function() {
+this._getWindow_("wdwChangePassword").show();			 	
+	}					 	
+
+	,onBtnSavePassword: function() {
+		var s={modal:true, callbacks:{} };
+		var successFn = function(dc,response,serviceName,specs) { 	this._getWindow_("wdwChangePassword").close();			 	
+			}; 
+		s.callbacks['successFn'] = successFn; 
+		s.callbacks['successScope'] = this;
+		try{ 
+			this._getDc_("usr").doService("changePassword", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
 	}					 	
 });  

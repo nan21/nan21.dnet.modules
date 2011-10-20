@@ -24,7 +24,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.UomType$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
-		.addCombo({ name:"category", xtype:"combo", dataIndex:"category", id:Ext.id(),anchor:"-20",store:[ "length", "mass", "volume", "other"]  })
+		.addCombo({ name:"category", xtype:"combo", dataIndex:"category",anchor:"-20",store:[ "length", "mass", "volume", "other"]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })

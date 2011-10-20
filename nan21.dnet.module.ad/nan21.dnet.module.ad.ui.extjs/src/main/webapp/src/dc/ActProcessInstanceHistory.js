@@ -23,7 +23,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filte
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20",maxLength:255  })
-		.addLov({ name:"processFullName", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActProcessDefinitions", dataIndex:"processFullName", _isParam_:true,anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "processId"} ],listeners: {change: {scope:this, fn:function(f,nv,ov) {this._controller_.setParamValue("processFullName", nv);} }}  })
+		.addLov({ name:"processFullName", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActProcessDefinitions", paramIndex:"processFullName",anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "processId"} ]  })
 		.addTextField({ name:"startedBy", dataIndex:"startedBy",anchor:"-20",maxLength:32  })
 		.addDateField({ name:"startTime", dataIndex:"startTime",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		.addDateField({ name:"endTime", dataIndex:"endTime",anchor:"-20" ,format:Ext.DATE_FORMAT })

@@ -29,4 +29,7 @@ public interface IUserService extends IEntityService<User> {
 
     public List<User> findByGroupsId(Long groupsId);
 
+    public void doChangePassword(Long userId, String newPassword)
+            throws Exception;
+
 }

@@ -27,7 +27,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttribute$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeType", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addLov({ name:"uom", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"uom",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "uomId"} ]  })
-		.addCombo({ name:"dataType", xtype:"combo", dataIndex:"dataType", id:Ext.id(),anchor:"-20",store:[ "string", "text", "integer", "decimal", "boolean", "date"]  })
+		.addCombo({ name:"dataType", xtype:"combo", dataIndex:"dataType",anchor:"-20",store:[ "string", "text", "integer", "decimal", "boolean", "date"]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })

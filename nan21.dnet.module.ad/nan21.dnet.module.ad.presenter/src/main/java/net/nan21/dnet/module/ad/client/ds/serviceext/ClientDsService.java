@@ -7,8 +7,9 @@ package net.nan21.dnet.module.ad.client.ds.serviceext;
 
 import java.util.List;
 
+import net.nan21.dnet.core.api.action.IQueryBuilder;
 import net.nan21.dnet.core.api.service.IDsService;
-import net.nan21.dnet.core.presenter.model.EmptyParam;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.presenter.service.AbstractDsService;
 import net.nan21.dnet.module.ad.client.business.service.IClientService;
 import net.nan21.dnet.module.ad.client.domain.entity.Client;
@@ -19,6 +20,15 @@ import net.nan21.dnet.module.ad.client.ds.param.ClientDsParam;
 public class ClientDsService  extends AbstractDsService<ClientDs, ClientDsParam, Client> 
  implements IDsService<ClientDs, ClientDsParam>  {
 
+	@Override
+	public List<ClientDs> find(ClientDs filter, ClientDsParam params,
+			IQueryBuilder<ClientDs, ClientDsParam> builder) throws Exception {
+		if (!Session.params.get().isSystemClient()) {
+			filter.setId(Session.user.get().getClientId());
+		}
+		return super.find(filter, params, builder);
+	}
+	
 	@Override
 	protected void onInsert(ClientDs ds, Client e, ClientDsParam params) throws Exception {
 		((IClientService)this.getEntityService()).doInsertWithUserAccounts(e, params.getAdminUserCode(), params.getAdminUserName(), params.getAdminPassword());		
@@ -31,6 +41,32 @@ public class ClientDsService  extends AbstractDsService<ClientDs, ClientDsParam,
 			srv.doInsertWithUserAccounts(e, params.getAdminUserCode(), params.getAdminUserName(), params.getAdminPassword());
 		}		 
 	}
-	 
+	
+	// check if action is allowed 
+	
+	@Override
+	protected boolean canInsert(ClientDs ds, ClientDsParam params) {
+		return this.canChange();
+	}
+	
+	@Override
+	protected boolean canInsert(List<ClientDs> list, ClientDsParam params) {
+		return this.canChange();
+	}
+	
+	@Override
+	protected boolean canUpdate(ClientDs ds, ClientDsParam params) {
+		return this.canChange();
+	}
+	
+	@Override
+	protected boolean canUpdate(List<ClientDs> list, ClientDsParam params) {
+		return this.canChange();
+	}
+	
+	private boolean canChange(){
+		return Session.params.get().isSystemClient() ;
+	}
+	
 }
  
