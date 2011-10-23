@@ -3,14 +3,17 @@
  * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms.
  */
-package net.nan21.dnet.module.bd.standards.domain.entity;
+package net.nan21.dnet.module.bp.base.domain.entity;
 
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
@@ -25,26 +28,24 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
-/** ClassificationSystem. */
+/** CompanyLegalForm. */
 @Entity
-@Table(name = "BD_CLASS_SYSTEM", uniqueConstraints = {
-        @UniqueConstraint(name = "BD_CLASS_SYSTEM_UK1", columnNames = {
-                "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "BD_CLASS_SYSTEM_UK2", columnNames = {
-                "CLIENTID", "NAME" }) })
+@Table(name = "BP_COMP_LEGAL_FORM", uniqueConstraints = { @UniqueConstraint(name = "BP_COMP_LEGAL_FORM_UK1", columnNames = {
+        "CLIENTID", "COUNTRY_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ClassificationSystem.findById", query = "SELECT e FROM ClassificationSystem e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ClassificationSystem.findByIds", query = "SELECT e FROM ClassificationSystem e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ClassificationSystem.findByCode", query = "SELECT e FROM ClassificationSystem e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ClassificationSystem.findByName", query = "SELECT e FROM ClassificationSystem e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class ClassificationSystem implements Serializable, IModelWithId,
+        @NamedQuery(name = "CompanyLegalForm.findById", query = "SELECT e FROM CompanyLegalForm e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "CompanyLegalForm.findByIds", query = "SELECT e FROM CompanyLegalForm e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "CompanyLegalForm.findByName", query = "SELECT e FROM CompanyLegalForm e WHERE e.clientId = :pClientId and  e.country = :pCountry and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "CompanyLegalForm.findByName_PRIMITIVE", query = "SELECT e FROM CompanyLegalForm e WHERE e.clientId = :pClientId and  e.country.id = :pCountryId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+public class CompanyLegalForm implements Serializable, IModelWithId,
         IModelWithClientId {
 
     private static final long serialVersionUID = -8865917134914502125L;
@@ -52,46 +53,27 @@ public class ClassificationSystem implements Serializable, IModelWithId,
     /**
      * Named query find by ID.
      */
-    public static final String NQ_FIND_BY_ID = "ClassificationSystem.findById";
+    public static final String NQ_FIND_BY_ID = "CompanyLegalForm.findById";
 
     /**
      * Named query find by IDs.
      */
-    public static final String NQ_FIND_BY_IDS = "ClassificationSystem.findByIds";
-
-    /**
-     * Named query find by unique key: Code.
-     */
-    public static final String NQ_FIND_BY_CODE = "ClassificationSystem.findByCode";
+    public static final String NQ_FIND_BY_IDS = "CompanyLegalForm.findByIds";
 
     /**
      * Named query find by unique key: Name.
      */
-    public static final String NQ_FIND_BY_NAME = "ClassificationSystem.findByName";
+    public static final String NQ_FIND_BY_NAME = "CompanyLegalForm.findByName";
 
-    /** Internal. */
-    @Column(name = "INTERNAL", nullable = false)
-    @NotNull
-    private Boolean internal;
-
-    /** Tag. */
-    @Column(name = "TAG")
-    private String tag;
-
-    /** UseInContext. */
-    @Column(name = "USEINCONTEXT", nullable = false)
-    @NotBlank
-    private String useInContext;
+    /**
+     * Named query find by unique key: Name using the ID field for references.
+     */
+    public static final String NQ_FIND_BY_NAME_PRIMITIVE = "CompanyLegalForm.findByName_PRIMITIVE";
 
     /** Name. */
     @Column(name = "NAME", nullable = false)
     @NotBlank
     private String name;
-
-    /** Code. */
-    @Column(name = "CODE", nullable = false)
-    @NotBlank
-    private String code;
 
     /** Flag which indicates if this record is used.*/
     @Column(name = "ACTIVE", nullable = false)
@@ -99,8 +81,8 @@ public class ClassificationSystem implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES")
-    private String notes;
+    @Column(name = "DESCRIPTION")
+    private String description;
 
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
@@ -141,32 +123,11 @@ public class ClassificationSystem implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
+    @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID")
+    private Country country;
 
     /* ============== getters - setters ================== */
-
-    public Boolean getInternal() {
-        return this.internal;
-    }
-
-    public void setInternal(Boolean internal) {
-        this.internal = internal;
-    }
-
-    public String getTag() {
-        return this.tag;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-
-    public String getUseInContext() {
-        return this.useInContext;
-    }
-
-    public void setUseInContext(String useInContext) {
-        this.useInContext = useInContext;
-    }
 
     public String getName() {
         return this.name;
@@ -174,14 +135,6 @@ public class ClassificationSystem implements Serializable, IModelWithId,
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public Boolean getActive() {
@@ -192,12 +145,12 @@ public class ClassificationSystem implements Serializable, IModelWithId,
         this.active = active;
     }
 
-    public String getNotes() {
-        return this.notes;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getClientId() {
@@ -265,6 +218,14 @@ public class ClassificationSystem implements Serializable, IModelWithId,
 
     }
 
+    public Country getCountry() {
+        return this.country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
     public void aboutToInsert(DescriptorEvent event) {
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
@@ -274,16 +235,13 @@ public class ClassificationSystem implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
-        if (this.internal == null) {
-            event.updateAttributeWithObject("internal", false);
-        }
         if (this.active == null) {
             event.updateAttributeWithObject("active", false);
         }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
-        ClassificationSystem e = (ClassificationSystem) event.getSource();
+        CompanyLegalForm e = (CompanyLegalForm) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());
 

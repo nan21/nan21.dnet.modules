@@ -140,6 +140,8 @@ public class BpClassificationDsConv extends
                 : null);
         ds.setBusinessPartner(((e.getBp() != null)) ? e.getBp().getCode()
                 : null);
+        ds.setBusinessPartnerType(((e.getBp() != null)) ? e.getBp().getType()
+                : null);
         ds.setClassificationSystemId(((e.getClassSystem() != null)) ? e
                 .getClassSystem().getId() : null);
         ds.setClassificationSystem(((e.getClassSystem() != null)) ? e

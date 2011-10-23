@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerDs", "nan21.dnet.module.bp.ui.extjs/dc/BusinessPartner", "nan21.dnet.module.bp.ui.extjs/ds/ContactDs", "nan21.dnet.module.bp.ui.extjs/dc/Contact", "nan21.dnet.module.bd.ui.extjs/ds/LocationDs", "nan21.dnet.module.bd.ui.extjs/dc/Location", "nan21.dnet.module.bp.ui.extjs/ds/BpClassificationDs", "nan21.dnet.module.bp.ui.extjs/dc/BpClassification", "nan21.dnet.module.bp.ui.extjs/ds/BpBankAccountDs", "nan21.dnet.module.bp.ui.extjs/dc/BpBankAccount", "nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelDs", "nan21.dnet.module.bd.ui.extjs/dc/CommunicationChannel","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.bd.ui.extjs/ds/RegionLovDs","nan21.dnet.module.bd.ui.extjs/lov/Regions","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.bp.ui.extjs/ds/BankLovDs","nan21.dnet.module.bp.ui.extjs/lov/Banks","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/CommunicationChannelTypes","nan21.dnet.module.bd.ui.extjs/ds/ClassificationSystemLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationSystems","nan21.dnet.module.bd.ui.extjs/ds/ClassificationCodeLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationCodes"]);
+Dnet.doImport(["", "nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerDs", "nan21.dnet.module.bp.ui.extjs/dc/BusinessPartner", "nan21.dnet.module.bp.ui.extjs/ds/ContactDs", "nan21.dnet.module.bp.ui.extjs/dc/Contact", "nan21.dnet.module.bd.ui.extjs/ds/LocationDs", "nan21.dnet.module.bd.ui.extjs/dc/Location", "nan21.dnet.module.bp.ui.extjs/ds/BpClassificationDs", "nan21.dnet.module.bp.ui.extjs/dc/BpClassification", "nan21.dnet.module.bp.ui.extjs/ds/BpBankAccountDs", "nan21.dnet.module.bp.ui.extjs/dc/BpBankAccount", "nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelDs", "nan21.dnet.module.bd.ui.extjs/dc/CommunicationChannel","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.bp.ui.extjs/ds/CompanyLegalFormLovDs","nan21.dnet.module.bp.ui.extjs/lov/CompanyLegalForms","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.bd.ui.extjs/ds/RegionLovDs","nan21.dnet.module.bd.ui.extjs/lov/Regions","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.bp.ui.extjs/ds/BankLovDs","nan21.dnet.module.bp.ui.extjs/lov/Banks","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/CommunicationChannelTypes","nan21.dnet.module.bd.ui.extjs/ds/ClassificationSystemLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationSystems","nan21.dnet.module.bd.ui.extjs/ds/ClassificationCodeLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationCodes"]);
 
 Ext.define("net.nan21.dnet.module.bp.md.frame.BPartner_UI", {  
 	extend: "dnet.base.AbstractUi",
@@ -15,16 +15,20 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BPartner_UI", {
 		.addDc("bpPhone", new net.nan21.dnet.module.bd.contact.dc.CommunicationChannel({multiEdit:true}))		
 		.linkDc("bpContact", "bp",{fields:[ {childField:"bpartnerId", parentField:"id"} ]} )
 		.linkDc("address", "bp",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} )
-		.linkDc("classific", "bp",{fields:[ {childField:"businessPartnerId", parentField:"id"} ]} )
+		.linkDc("classific", "bp",{fields:[ {childField:"businessPartnerId", parentField:"id"},{childField:"businessPartnerType", parentField:"type"} ]} )
 		.linkDc("bpBankAcct", "bp",{fields:[ {childField:"bpartnerId", parentField:"id"} ]} )
 		.linkDc("bpPhone", "bp",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} );		
 	}	 
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
+		.addButton({name:"btnCreateBpContinue",text:"Continue", tooltip:"Continue",disabled:false
+			,handler: this.onBtnCreateBpContinue,scope:this	})	
+							 	
 		.addDcFilterFormView("bp",{ name:"bpFilter", xtype:"net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter"})	 
 		.addDcView("bp",{ name:"bpList", xtype:"net.nan21.dnet.module.bp.md.dc.BusinessPartner$List"})	 
-		.addDcFormView("bp",{ name:"bpEdit", xtype:"net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit",height:120})	 
+		.addDcFormView("bp",{ name:"bpCreate", xtype:"net.nan21.dnet.module.bp.md.dc.BusinessPartner$Create"})	 
+		.addDcFormView("bp",{ name:"bpEdit", xtype:"net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit",height:160})	 
 		.addDcView("bpContact",{ name:"bpContactEditList", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$CtxEditList", frame:true,title:"Contact"})	 
 		.addDcView("address",{ name:"addressList", xtype:"net.nan21.dnet.module.bd.geo.dc.Location$ListCtx"})	 
 		.addDcFormView("address",{ name:"addressEdit", xtype:"net.nan21.dnet.module.bd.geo.dc.Location$EditCtx"})	 
@@ -35,8 +39,11 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BPartner_UI", {
 		.addPanel({name: "addressPanel",layout:"card", activeItem:0,title:"Address"})  	 
 		.addPanel({name: "bpDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true,onActivateDoLayoutFor:["bpDetailsTab"]})  	 
 		.addPanel({name: "addressEditWrapper", layout:"fit"})
+		
+		.addWindow({name:"wdwBpCreate", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("bpCreate")]
+,title:"Select type",modal:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnCreateBpContinue") ]}}) 	
 ;	 	
 	}
 
@@ -70,4 +77,18 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BPartner_UI", {
 			.beginToolbar("tlbClassific", {dc:"classific"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Classifications"}).end(); 	
 	}
 
+
+	,onBtnCreateBpContinue: function() {
+this._getWindow_("wdwBpCreate").close();			 	
+		this._selectBpEditorForm_();
+	}					 	
+	,_whenCreateNewBp_: function() {	
+this._getWindow_("wdwBpCreate").show();			 	
+	}
+	,_afterDefineDcs_: function() {	
+		this._getDc_("bp").on("afterDoNew", this._whenCreateNewBp_, this);
+	}
+	,_selectBpEditorForm_: function() {	
+		this._getElement_("bpEdit").onRecordChange();
+	}
 });  

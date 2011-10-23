@@ -29,6 +29,7 @@ import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
+import net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -68,13 +69,16 @@ public class BusinessPartner implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_CODE = "BusinessPartner.findByCode";
 
     /** Specifies whether a business partner is one of:
-    		- natural person (private individual)
-    		- organization (legal person/entity or part of a legal entity, such as a department)
-    		- group  
+    		- private individual
+    		- organization			 
     		Cannot be altered at a later stage.
      */
     @Column(name = "TYPE")
     private String type;
+
+    /** TaxPayerNo. */
+    @Column(name = "TAXPAYERNO")
+    private String taxPayerNo;
 
     /** FirstName. */
     @Column(name = "FIRSTNAME")
@@ -84,13 +88,30 @@ public class BusinessPartner implements Serializable, IModelWithId,
     @Column(name = "LASTNAME")
     private String lastName;
 
+    /** MiddleName. */
+    @Column(name = "MIDDLENAME")
+    private String middleName;
+
     /** Gender. */
     @Column(name = "GENDER")
     private String gender;
 
-    /** LegalForm. */
-    @Column(name = "LEGALFORM")
-    private String legalForm;
+    /** IdentityCardNo. */
+    @Column(name = "IDENTITYCARDNO")
+    private String identityCardNo;
+
+    /** PassportNo. */
+    @Column(name = "PASSPORTNO")
+    private String passportNo;
+
+    /** BirthDate. */
+    @Temporal(TemporalType.DATE)
+    @Column(name = "BIRTHDATE")
+    private Date birthDate;
+
+    /** CompanyName. */
+    @Column(name = "COMPANYNAME")
+    private String companyName;
 
     /** RegistrationNo. */
     @Column(name = "REGISTRATIONNO")
@@ -100,18 +121,6 @@ public class BusinessPartner implements Serializable, IModelWithId,
     @Temporal(TemporalType.DATE)
     @Column(name = "REGISTRATIONDATE")
     private Date registrationDate;
-
-    /** TaxNo. */
-    @Column(name = "TAXNO")
-    private String taxNo;
-
-    /** Name1. */
-    @Column(name = "NAME1")
-    private String name1;
-
-    /** Name2. */
-    @Column(name = "NAME2")
-    private String name2;
 
     /** Name. */
     @Column(name = "NAME", nullable = false)
@@ -174,6 +183,9 @@ public class BusinessPartner implements Serializable, IModelWithId,
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
     @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID")
     private Country country;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = CompanyLegalForm.class)
+    @JoinColumn(name = "LEGALFORM_ID", referencedColumnName = "ID")
+    private CompanyLegalForm legalForm;
 
     /* ============== getters - setters ================== */
 
@@ -183,6 +195,14 @@ public class BusinessPartner implements Serializable, IModelWithId,
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getTaxPayerNo() {
+        return this.taxPayerNo;
+    }
+
+    public void setTaxPayerNo(String taxPayerNo) {
+        this.taxPayerNo = taxPayerNo;
     }
 
     public String getFirstName() {
@@ -201,6 +221,14 @@ public class BusinessPartner implements Serializable, IModelWithId,
         this.lastName = lastName;
     }
 
+    public String getMiddleName() {
+        return this.middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
     public String getGender() {
         return this.gender;
     }
@@ -209,12 +237,36 @@ public class BusinessPartner implements Serializable, IModelWithId,
         this.gender = gender;
     }
 
-    public String getLegalForm() {
-        return this.legalForm;
+    public String getIdentityCardNo() {
+        return this.identityCardNo;
     }
 
-    public void setLegalForm(String legalForm) {
-        this.legalForm = legalForm;
+    public void setIdentityCardNo(String identityCardNo) {
+        this.identityCardNo = identityCardNo;
+    }
+
+    public String getPassportNo() {
+        return this.passportNo;
+    }
+
+    public void setPassportNo(String passportNo) {
+        this.passportNo = passportNo;
+    }
+
+    public Date getBirthDate() {
+        return this.birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getCompanyName() {
+        return this.companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public String getRegistrationNo() {
@@ -231,30 +283,6 @@ public class BusinessPartner implements Serializable, IModelWithId,
 
     public void setRegistrationDate(Date registrationDate) {
         this.registrationDate = registrationDate;
-    }
-
-    public String getTaxNo() {
-        return this.taxNo;
-    }
-
-    public void setTaxNo(String taxNo) {
-        this.taxNo = taxNo;
-    }
-
-    public String getName1() {
-        return this.name1;
-    }
-
-    public void setName1(String name1) {
-        this.name1 = name1;
-    }
-
-    public String getName2() {
-        return this.name2;
-    }
-
-    public void setName2(String name2) {
-        this.name2 = name2;
     }
 
     public String getName() {
@@ -360,6 +388,14 @@ public class BusinessPartner implements Serializable, IModelWithId,
 
     public void setCountry(Country country) {
         this.country = country;
+    }
+
+    public CompanyLegalForm getLegalForm() {
+        return this.legalForm;
+    }
+
+    public void setLegalForm(CompanyLegalForm legalForm) {
+        this.legalForm = legalForm;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

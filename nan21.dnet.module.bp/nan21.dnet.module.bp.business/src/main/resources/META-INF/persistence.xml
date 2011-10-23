@@ -12,7 +12,8 @@
 		<class>net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod</class>
 		<class>net.nan21.dnet.module.bp.base.domain.entity.PaymentTerm</class>
 		<class>net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod</class>
-		
+		<class>net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm</class>
+		 
 		<class>net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.BpBankAccount</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.Contact</class>

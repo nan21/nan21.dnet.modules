@@ -1,3 +1,5 @@
-"code";"name";"active"
-"NAICS1997";"1997 NAICS U.S. Description";"true"
-"NACE";"European Classification of Economic Activity";"true"
+"code";"name";"active";"internal";"useInContext"
+"NAICS1997";"1997 NAICS U.S. Description";"true";"false";"company"
+"NACE";"European Classification of Economic Activity";"true";"false";"company"
+"SIZE_REVENUE";"Size by revenue";"true";"true";"company"
+"SIZE_EMPL";"Size by number of employees";"true";"true";"company"

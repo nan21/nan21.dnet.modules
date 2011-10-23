@@ -23,6 +23,9 @@ public class ClassificationSystemDsConv extends
         e.setNotes(ds.getNotes());
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
+        e.setInternal(ds.getInternal());
+        e.setTag(ds.getTag());
+        e.setUseInContext(ds.getUseInContext());
     }
 
     protected void modelToEntityReferences(ClassificationSystemDs ds,
@@ -43,6 +46,9 @@ public class ClassificationSystemDsConv extends
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
+        ds.setInternal(e.getInternal());
+        ds.setTag(e.getTag());
+        ds.setUseInContext(e.getUseInContext());
     }
 
 }

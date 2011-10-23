@@ -1,12 +1,11 @@
  
    	 
-Ext.define("net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemDs" , {
+Ext.define("net.nan21.dnet.module.bp.base.ds.model.CompanyLegalFormDs" , {
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"name",type:"string" },
-		{name:"code",type:"string" },
 		{name:"active",type:"boolean" },
-		{name:"notes",type:"string" },
+		{name:"description",type:"string" },
 		{name:"id",type:"int", useNull:true },
 		{name:"clientId",type:"int", useNull:true },
 		{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
@@ -14,18 +13,12 @@ Ext.define("net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemDs" 
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
-		{name:"internal",type:"boolean" },
-		{name:"tag",type:"string" },
-		{name:"useInContext",type:"string" }
-	],
-	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "code", type: 'presence'}, 
-		{field: "useInContext", type: 'presence'}
+		{name:"countryId",type:"int", useNull:true },
+		{name:"country",type:"string" }
 	]
 });
 	
-Ext.define("net.nan21.dnet.module.bd.standards.ds.param.ClassificationSystemDsParam", {
+Ext.define("net.nan21.dnet.module.bp.base.ds.param.CompanyLegalFormDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 
 	]

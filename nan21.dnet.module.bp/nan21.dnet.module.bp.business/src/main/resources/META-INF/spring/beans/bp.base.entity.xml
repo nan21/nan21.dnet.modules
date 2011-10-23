@@ -24,6 +24,9 @@
  
  	<bean id="DeliveryMethodService" scope="prototype"
 	  		class="net.nan21.dnet.module.bp.base.business.serviceimpl.DeliveryMethodService"  />  
+ 
+ 	<bean id="CompanyLegalFormService" scope="prototype"
+	  		class="net.nan21.dnet.module.bp.base.business.serviceimpl.CompanyLegalFormService"  />  
    
 </beans>
    

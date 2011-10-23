@@ -13,7 +13,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.frame.Classifications_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("classsys",{ name:"classsysFilter", xtype:"net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$Filter",height:40})	 
+		.addDcFilterFormView("classsys",{ name:"classsysFilter", xtype:"net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$Filter",height:80})	 
 		.addDcView("classsys",{ name:"classsysEditList", xtype:"net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$EditList", frame:true})	 
 		.addDcFilterFormView("classcode",{ name:"classcodeFilter", xtype:"net.nan21.dnet.module.bd.standards.dc.ClassificationCode$Filter",height:80})	 
 		.addDcView("classcode",{ name:"classcodeEditList", xtype:"net.nan21.dnet.module.bd.standards.dc.ClassificationCode$EditList", frame:true})	 

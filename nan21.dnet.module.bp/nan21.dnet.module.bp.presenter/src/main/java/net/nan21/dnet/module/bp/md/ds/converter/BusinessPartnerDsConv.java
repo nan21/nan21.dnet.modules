@@ -8,6 +8,8 @@ package net.nan21.dnet.module.bp.md.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.geo.business.service.ICountryService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
+import net.nan21.dnet.module.bp.base.business.service.ICompanyLegalFormService;
+import net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs;
@@ -26,15 +28,17 @@ public class BusinessPartnerDsConv extends
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
         e.setType(ds.getType());
+        e.setTaxPayerNo(ds.getTaxPayerNo());
         e.setFirstName(ds.getFirstName());
         e.setLastName(ds.getLastName());
+        e.setMiddleName(ds.getMiddleName());
         e.setGender(ds.getGender());
-        e.setLegalForm(ds.getLegalForm());
+        e.setIdentityCardNo(ds.getIdentityCardNo());
+        e.setPassportNo(ds.getPassportNo());
+        e.setBirthDate(ds.getBirthDate());
+        e.setCompanyName(ds.getCompanyName());
         e.setRegistrationNo(ds.getRegistrationNo());
         e.setRegistrationDate(ds.getRegistrationDate());
-        e.setTaxNo(ds.getTaxNo());
-        e.setName1(ds.getName1());
-        e.setName2(ds.getName2());
         e.setClassName(ds.getClassName());
     }
 
@@ -49,6 +53,15 @@ public class BusinessPartnerDsConv extends
             }
         } else {
             this.lookup_country_Country(ds, e);
+        }
+        if (ds.getLegalFormId() != null) {
+            if (e.getLegalForm() == null
+                    || !e.getLegalForm().getId().equals(ds.getLegalFormId())) {
+                e.setLegalForm((CompanyLegalForm) this.em.find(
+                        CompanyLegalForm.class, ds.getLegalFormId()));
+            }
+        } else {
+            this.lookup_legalForm_CompanyLegalForm(ds, e);
         }
     }
 
@@ -70,6 +83,27 @@ public class BusinessPartnerDsConv extends
         }
     }
 
+    protected void lookup_legalForm_CompanyLegalForm(BusinessPartnerDs ds,
+            BusinessPartner e) throws Exception {
+        if (ds.getCountryId() != null && !ds.getCountryId().equals("")
+                && ds.getLegalForm() != null && !ds.getLegalForm().equals("")) {
+            CompanyLegalForm x = null;
+            try {
+                x = ((ICompanyLegalFormService) getService(ICompanyLegalFormService.class))
+                        .findByName(ds.getClientId(), ds.getCountryId(),
+                                ds.getLegalForm());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `CompanyLegalForm` reference:  `countryId` = "
+                                + ds.getCountryId() + " , `legalForm` = "
+                                + ds.getLegalForm() + "  ");
+            }
+            e.setLegalForm(x);
+        } else {
+            e.setLegalForm(null);
+        }
+    }
+
     @Override
     public void entityToModel(BusinessPartner e, BusinessPartnerDs ds)
             throws Exception {
@@ -85,20 +119,26 @@ public class BusinessPartnerDsConv extends
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
         ds.setType(e.getType());
+        ds.setTaxPayerNo(e.getTaxPayerNo());
         ds.setFirstName(e.getFirstName());
         ds.setLastName(e.getLastName());
+        ds.setMiddleName(e.getMiddleName());
         ds.setGender(e.getGender());
-        ds.setLegalForm(e.getLegalForm());
+        ds.setIdentityCardNo(e.getIdentityCardNo());
+        ds.setPassportNo(e.getPassportNo());
+        ds.setBirthDate(e.getBirthDate());
+        ds.setCompanyName(e.getCompanyName());
         ds.setRegistrationNo(e.getRegistrationNo());
         ds.setRegistrationDate(e.getRegistrationDate());
-        ds.setTaxNo(e.getTaxNo());
-        ds.setName1(e.getName1());
-        ds.setName2(e.getName2());
         ds.setClassName(e.getClassName());
         ds.setCountryId(((e.getCountry() != null)) ? e.getCountry().getId()
                 : null);
         ds.setCountryCode(((e.getCountry() != null)) ? e.getCountry().getCode()
                 : null);
+        ds.setLegalFormId(((e.getLegalForm() != null)) ? e.getLegalForm()
+                .getId() : null);
+        ds.setLegalForm(((e.getLegalForm() != null)) ? e.getLegalForm()
+                .getName() : null);
     }
 
 }

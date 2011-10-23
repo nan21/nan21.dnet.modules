@@ -27,12 +27,12 @@
         <class>net.nan21.dnet.module.bp.md.domain.entity.Contact</class>
         <class>net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod</class>
 		<class>net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod</class>
-	
+		<class>net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm</class>
+		
         <class>net.nan21.dnet.module.mm.md.domain.entity.Product</class>  
    		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer</class>
    		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductCategory</class>
-   		
-   		
+   		 
    		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute</class>

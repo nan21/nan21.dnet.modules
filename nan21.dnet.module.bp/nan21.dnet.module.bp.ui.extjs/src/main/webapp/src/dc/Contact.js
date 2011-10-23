@@ -103,18 +103,20 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$Edit", {
 		.addTextField({ name:"position", dataIndex:"position",anchor:"-20" ,maxLength:255  })
 		.addDateField({ name:"birthdate", dataIndex:"birthdate",anchor:"-20" })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"bpartnerCode", width:150 ,maxLength:32,retFieldMapping: []  })
+		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"bpartnerCode",anchor:"-20" ,maxLength:32,retFieldMapping: []  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" , width:250,labelWidth:0 })     
+		.addPanel({ name:"col3", layout:"anchor" , width:300,labelWidth:0 })     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1" ,"col2" ])
-		.addChildrenTo("col1",["firstName","lastName","bpartnerCode","active"])
-		.addChildrenTo("col2",["position","gender","birthdate"])
+		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
+		.addChildrenTo("col1",["firstName","lastName","active"])
+		.addChildrenTo("col2",["gender","birthdate"])
+		.addChildrenTo("col3",["bpartnerCode","position"])
 ;
 	}	
 });

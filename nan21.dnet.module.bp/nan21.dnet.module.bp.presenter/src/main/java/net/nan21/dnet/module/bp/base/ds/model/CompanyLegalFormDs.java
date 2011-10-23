@@ -3,7 +3,7 @@
  * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms.
  */
-package net.nan21.dnet.module.bd.standards.ds.model;
+package net.nan21.dnet.module.bp.base.ds.model;
 
 import java.util.Date;
 import net.nan21.dnet.core.api.annotation.SortField;
@@ -11,19 +11,17 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
 
-import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem;
+import net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ClassificationSystem.class, sort = { @SortField(field = ClassificationSystemDs.fNAME) })
-public class ClassificationSystemDs extends
-        AbstractDsModel<ClassificationSystem> implements IModelWithId,
-        IModelWithClientId {
+@Ds(entity = CompanyLegalForm.class, sort = { @SortField(field = CompanyLegalFormDs.fNAME) })
+public class CompanyLegalFormDs extends AbstractDsModel<CompanyLegalForm>
+        implements IModelWithId, IModelWithClientId {
 
     public static final String fNAME = "name";
-    public static final String fCODE = "code";
     public static final String fACTIVE = "active";
-    public static final String fNOTES = "notes";
+    public static final String fDESCRIPTION = "description";
     public static final String fID = "id";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
@@ -31,21 +29,17 @@ public class ClassificationSystemDs extends
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
-    public static final String fINTERNAL = "internal";
-    public static final String fTAG = "tag";
-    public static final String fUSEINCONTEXT = "useInContext";
+    public static final String fCOUNTRYID = "countryId";
+    public static final String fCOUNTRY = "country";
 
     @DsField()
     private String name;
 
     @DsField()
-    private String code;
-
-    @DsField()
     private Boolean active;
 
     @DsField()
-    private String notes;
+    private String description;
 
     @DsField()
     private Long id;
@@ -68,20 +62,17 @@ public class ClassificationSystemDs extends
     @DsField()
     private Long version;
 
-    @DsField()
-    private Boolean internal;
+    @DsField(join = "left", path = "country.id")
+    private Long countryId;
 
-    @DsField()
-    private String tag;
+    @DsField(join = "left", path = "country.code")
+    private String country;
 
-    @DsField()
-    private String useInContext;
-
-    public ClassificationSystemDs() {
+    public CompanyLegalFormDs() {
         super();
     }
 
-    public ClassificationSystemDs(ClassificationSystem e) {
+    public CompanyLegalFormDs(CompanyLegalForm e) {
         super(e);
     }
 
@@ -93,14 +84,6 @@ public class ClassificationSystemDs extends
         this.name = name;
     }
 
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     public Boolean getActive() {
         return this.active;
     }
@@ -109,12 +92,12 @@ public class ClassificationSystemDs extends
         this.active = active;
     }
 
-    public String getNotes() {
-        return this.notes;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getId() {
@@ -174,28 +157,20 @@ public class ClassificationSystemDs extends
         this.version = version;
     }
 
-    public Boolean getInternal() {
-        return this.internal;
+    public Long getCountryId() {
+        return this.countryId;
     }
 
-    public void setInternal(Boolean internal) {
-        this.internal = internal;
+    public void setCountryId(Long countryId) {
+        this.countryId = countryId;
     }
 
-    public String getTag() {
-        return this.tag;
+    public String getCountry() {
+        return this.country;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-
-    public String getUseInContext() {
-        return this.useInContext;
-    }
-
-    public void setUseInContext(String useInContext) {
-        this.useInContext = useInContext;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
 }

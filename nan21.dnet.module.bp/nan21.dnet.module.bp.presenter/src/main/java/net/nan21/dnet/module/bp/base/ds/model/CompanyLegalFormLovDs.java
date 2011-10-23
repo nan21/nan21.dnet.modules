@@ -3,28 +3,26 @@
  * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms.
  */
-package net.nan21.dnet.module.bd.standards.ds.model;
+package net.nan21.dnet.module.bp.base.ds.model;
 
 import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
 
-import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem;
+import net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ClassificationSystem.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = ClassificationSystemLovDs.fCODE) })
-public class ClassificationSystemLovDs extends
-        AbstractDsModel<ClassificationSystem> implements IModelWithId,
-        IModelWithClientId {
+@Ds(entity = CompanyLegalForm.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = CompanyLegalFormLovDs.fNAME) })
+public class CompanyLegalFormLovDs extends AbstractDsModel<CompanyLegalForm>
+        implements IModelWithId, IModelWithClientId {
 
     public static final String fID = "id";
     public static final String fCLIENTID = "clientId";
-    public static final String fCODE = "code";
     public static final String fNAME = "name";
     public static final String fACTIVE = "active";
-    public static final String fUSEINCONTEXT = "useInContext";
+    public static final String fCOUNTRYID = "countryId";
 
     @DsField()
     private Long id;
@@ -33,22 +31,19 @@ public class ClassificationSystemLovDs extends
     private Long clientId;
 
     @DsField()
-    private String code;
-
-    @DsField()
     private String name;
 
     @DsField()
     private Boolean active;
 
-    @DsField(jpqlFilter = " :useInContext like e.useInContext ")
-    private String useInContext;
+    @DsField(join = "left", path = "country.id")
+    private Long countryId;
 
-    public ClassificationSystemLovDs() {
+    public CompanyLegalFormLovDs() {
         super();
     }
 
-    public ClassificationSystemLovDs(ClassificationSystem e) {
+    public CompanyLegalFormLovDs(CompanyLegalForm e) {
         super(e);
     }
 
@@ -69,14 +64,6 @@ public class ClassificationSystemLovDs extends
         this.clientId = clientId;
     }
 
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     public String getName() {
         return this.name;
     }
@@ -93,12 +80,12 @@ public class ClassificationSystemLovDs extends
         this.active = active;
     }
 
-    public String getUseInContext() {
-        return this.useInContext;
+    public Long getCountryId() {
+        return this.countryId;
     }
 
-    public void setUseInContext(String useInContext) {
-        this.useInContext = useInContext;
+    public void setCountryId(Long countryId) {
+        this.countryId = countryId;
     }
 
 }

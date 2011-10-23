@@ -31,17 +31,21 @@ public class BusinessPartnerDs extends AbstractDsModel<BusinessPartner>
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fTYPE = "type";
+    public static final String fCOUNTRYID = "countryId";
+    public static final String fCOUNTRYCODE = "countryCode";
+    public static final String fTAXPAYERNO = "taxPayerNo";
     public static final String fFIRSTNAME = "firstName";
     public static final String fLASTNAME = "lastName";
+    public static final String fMIDDLENAME = "middleName";
     public static final String fGENDER = "gender";
+    public static final String fIDENTITYCARDNO = "identityCardNo";
+    public static final String fPASSPORTNO = "passportNo";
+    public static final String fBIRTHDATE = "birthDate";
+    public static final String fCOMPANYNAME = "companyName";
+    public static final String fLEGALFORMID = "legalFormId";
     public static final String fLEGALFORM = "legalForm";
     public static final String fREGISTRATIONNO = "registrationNo";
     public static final String fREGISTRATIONDATE = "registrationDate";
-    public static final String fTAXNO = "taxNo";
-    public static final String fNAME1 = "name1";
-    public static final String fNAME2 = "name2";
-    public static final String fCOUNTRYID = "countryId";
-    public static final String fCOUNTRYCODE = "countryCode";
     public static final String fCLASSNAME = "className";
 
     @DsField()
@@ -80,6 +84,15 @@ public class BusinessPartnerDs extends AbstractDsModel<BusinessPartner>
     @DsField()
     private String type;
 
+    @DsField(join = "left", path = "country.id")
+    private Long countryId;
+
+    @DsField(join = "left", path = "country.code")
+    private String countryCode;
+
+    @DsField()
+    private String taxPayerNo;
+
     @DsField()
     private String firstName;
 
@@ -87,9 +100,27 @@ public class BusinessPartnerDs extends AbstractDsModel<BusinessPartner>
     private String lastName;
 
     @DsField()
+    private String middleName;
+
+    @DsField()
     private String gender;
 
     @DsField()
+    private String identityCardNo;
+
+    @DsField()
+    private String passportNo;
+
+    @DsField()
+    private Date birthDate;
+
+    @DsField()
+    private String companyName;
+
+    @DsField(join = "left", path = "legalForm.id")
+    private Long legalFormId;
+
+    @DsField(join = "left", path = "legalForm.name")
     private String legalForm;
 
     @DsField()
@@ -97,21 +128,6 @@ public class BusinessPartnerDs extends AbstractDsModel<BusinessPartner>
 
     @DsField()
     private Date registrationDate;
-
-    @DsField()
-    private String taxNo;
-
-    @DsField()
-    private String name1;
-
-    @DsField()
-    private String name2;
-
-    @DsField(join = "left", path = "country.id")
-    private Long countryId;
-
-    @DsField(join = "left", path = "country.code")
-    private String countryCode;
 
     @DsField(fetch = false)
     private String className;
@@ -221,6 +237,30 @@ public class BusinessPartnerDs extends AbstractDsModel<BusinessPartner>
         this.type = type;
     }
 
+    public Long getCountryId() {
+        return this.countryId;
+    }
+
+    public void setCountryId(Long countryId) {
+        this.countryId = countryId;
+    }
+
+    public String getCountryCode() {
+        return this.countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
+    }
+
+    public String getTaxPayerNo() {
+        return this.taxPayerNo;
+    }
+
+    public void setTaxPayerNo(String taxPayerNo) {
+        this.taxPayerNo = taxPayerNo;
+    }
+
     public String getFirstName() {
         return this.firstName;
     }
@@ -237,12 +277,60 @@ public class BusinessPartnerDs extends AbstractDsModel<BusinessPartner>
         this.lastName = lastName;
     }
 
+    public String getMiddleName() {
+        return this.middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
     public String getGender() {
         return this.gender;
     }
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getIdentityCardNo() {
+        return this.identityCardNo;
+    }
+
+    public void setIdentityCardNo(String identityCardNo) {
+        this.identityCardNo = identityCardNo;
+    }
+
+    public String getPassportNo() {
+        return this.passportNo;
+    }
+
+    public void setPassportNo(String passportNo) {
+        this.passportNo = passportNo;
+    }
+
+    public Date getBirthDate() {
+        return this.birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getCompanyName() {
+        return this.companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public Long getLegalFormId() {
+        return this.legalFormId;
+    }
+
+    public void setLegalFormId(Long legalFormId) {
+        this.legalFormId = legalFormId;
     }
 
     public String getLegalForm() {
@@ -267,46 +355,6 @@ public class BusinessPartnerDs extends AbstractDsModel<BusinessPartner>
 
     public void setRegistrationDate(Date registrationDate) {
         this.registrationDate = registrationDate;
-    }
-
-    public String getTaxNo() {
-        return this.taxNo;
-    }
-
-    public void setTaxNo(String taxNo) {
-        this.taxNo = taxNo;
-    }
-
-    public String getName1() {
-        return this.name1;
-    }
-
-    public void setName1(String name1) {
-        this.name1 = name1;
-    }
-
-    public String getName2() {
-        return this.name2;
-    }
-
-    public void setName2(String name2) {
-        this.name2 = name2;
-    }
-
-    public Long getCountryId() {
-        return this.countryId;
-    }
-
-    public void setCountryId(Long countryId) {
-        this.countryId = countryId;
-    }
-
-    public String getCountryCode() {
-        return this.countryCode;
-    }
-
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
     }
 
     public String getClassName() {

@@ -22,6 +22,7 @@ public class ClassificationSystemLovDsConv extends
         e.setCode(ds.getCode());
         e.setName(ds.getName());
         e.setActive(ds.getActive());
+        e.setUseInContext(ds.getUseInContext());
     }
 
     protected void modelToEntityReferences(ClassificationSystemLovDs ds,
@@ -36,6 +37,7 @@ public class ClassificationSystemLovDsConv extends
         ds.setCode(e.getCode());
         ds.setName(e.getName());
         ds.setActive(e.getActive());
+        ds.setUseInContext(e.getUseInContext());
     }
 
 }

@@ -8,6 +8,7 @@ package net.nan21.dnet.module.bp.md.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
+import net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm;
 import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
 
 import javax.persistence.EntityManager;
@@ -48,6 +49,18 @@ public class BusinessPartnerService extends
                         "select e from BusinessPartner e where e.country.id = :pCountryId",
                         BusinessPartner.class)
                 .setParameter("pCountryId", countryId).getResultList();
+    }
+
+    public List<BusinessPartner> findByLegalForm(CompanyLegalForm legalForm) {
+        return this.findByLegalFormId(legalForm.getId());
+    }
+
+    public List<BusinessPartner> findByLegalFormId(Long legalFormId) {
+        return (List<BusinessPartner>) this.em
+                .createQuery(
+                        "select e from BusinessPartner e where e.legalForm.id = :pLegalFormId",
+                        BusinessPartner.class)
+                .setParameter("pLegalFormId", legalFormId).getResultList();
     }
 
 }

@@ -54,14 +54,10 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
 	    else if (record.data.dataType == "boolean") {
 	    	ed = new dnet.base.LocalCombo({store:["true","false"]});
 	    }
-//	    else{
-//	    	return this.colModel.getCellEditor(col, row);
-//	    }
-//	 	
-//	    if(ed){
-//		    ed.gridEditor = new Ext.grid.GridEditor(ed);
-//		    ed = ed.gridEditor;
-//	    }
+ 
+	    if(ed){
+		    ed._dcView_ =  this;
+	    }
 
 	    return ed;
 	    
