@@ -51,6 +51,9 @@
  
  	<bean id="ProductAttributeValueService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttributeValueService"  />  
+ 
+ 	<bean id="ProdClassificationService" scope="prototype"
+	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProdClassificationService"  />  
    
 </beans>
    

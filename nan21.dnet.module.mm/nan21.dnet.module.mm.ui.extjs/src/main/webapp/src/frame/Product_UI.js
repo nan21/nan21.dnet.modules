@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductDs", "nan21.dnet.module.mm.ui.extjs/dc/Product", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeValueDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeValue", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttachmentDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttachment","nan21.dnet.module.mm.ui.extjs/ds/ProductManufacturerLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductManufacturers","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeGroup","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.bd.ui.extjs/ds/UomMassLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomMass","nan21.dnet.module.bd.ui.extjs/ds/UomVolumeLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomVolume","nan21.dnet.module.bd.ui.extjs/ds/UomLengthLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomLength","nan21.dnet.module.mm.ui.extjs/ds/ProductManufacturerLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductManufacturers","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeGroup","nan21.dnet.module.mm.ui.extjs/ds/ProductAttachmentTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttachmentType","nan21.dnet.module.mm.ui.extjs/asgn/CategoriesOfProduct"]);
+Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductDs", "nan21.dnet.module.mm.ui.extjs/dc/Product", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeValueDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeValue", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttachmentDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttachment", "nan21.dnet.module.mm.ui.extjs/ds/ProdClassificationDs", "nan21.dnet.module.mm.ui.extjs/dc/ProdClassification", "nan21.dnet.module.bd.ui.extjs/ds/NoteDs", "nan21.dnet.module.bd.ui.extjs/dc/Note","nan21.dnet.module.mm.ui.extjs/ds/ProductManufacturerLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductManufacturers","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeGroup","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.bd.ui.extjs/ds/UomMassLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomMass","nan21.dnet.module.bd.ui.extjs/ds/UomVolumeLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomVolume","nan21.dnet.module.bd.ui.extjs/ds/UomLengthLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomLength","nan21.dnet.module.mm.ui.extjs/ds/ProductManufacturerLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductManufacturers","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeGroup","nan21.dnet.module.mm.ui.extjs/ds/ProductAttachmentTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttachmentType","nan21.dnet.module.bd.ui.extjs/ds/ClassificationSystemLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationSystems","nan21.dnet.module.bd.ui.extjs/ds/ClassificationCodeLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationCodes","nan21.dnet.module.mm.ui.extjs/asgn/CategoriesOfProduct"]);
 
 Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {  
 	extend: "dnet.base.AbstractUi",
@@ -9,9 +9,13 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {
 		this._getBuilder_()
 		.addDc("prod", new net.nan21.dnet.module.mm.md.dc.Product({}))
 		.addDc("attr", new net.nan21.dnet.module.mm.md.dc.ProductAttributeValue({multiEdit:true}))
-		.addDc("atch", new net.nan21.dnet.module.mm.md.dc.ProductAttachment({multiEdit:true}))		
+		.addDc("atch", new net.nan21.dnet.module.mm.md.dc.ProductAttachment({multiEdit:true}))
+		.addDc("classific", new net.nan21.dnet.module.mm.md.dc.ProdClassification({multiEdit:true}))
+		.addDc("note", new net.nan21.dnet.module.bd.other.dc.Note({}))		
 		.linkDc("attr", "prod",{fields:[ {childField:"productId", parentField:"id"} ]} )
-		.linkDc("atch", "prod",{fields:[ {childField:"productId", parentField:"id"} ]} );		
+		.linkDc("atch", "prod",{fields:[ {childField:"productId", parentField:"id"} ]} )
+		.linkDc("classific", "prod",{fields:[ {childField:"productId", parentField:"id"} ]} )
+		.linkDc("note", "prod",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} );		
 	}	 
 
 	,_defineElements_: function() {							
@@ -24,14 +28,19 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {
 							 	
 		.addDcFilterFormView("prod",{ name:"prodFilter", xtype:"net.nan21.dnet.module.mm.md.dc.Product$Filter"})	 
 		.addDcView("prod",{ name:"prodList", xtype:"net.nan21.dnet.module.mm.md.dc.Product$List"})	 
-		.addDcFormView("prod",{ name:"prodEdit", xtype:"net.nan21.dnet.module.mm.md.dc.Product$Edit",height:200,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnAsgnCategories") ]}})	 
+		.addDcFormView("prod",{ name:"prodEdit", xtype:"net.nan21.dnet.module.mm.md.dc.Product$Edit",height:180,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnAsgnCategories") ]}})	 
+		.addDcFormView("prod",{ name:"prodEditInfo", xtype:"net.nan21.dnet.module.mm.md.dc.Product$EditInfo",title:"Details"})	 
 		.addDcFormView("prod",{ name:"prodCtxFormName", xtype:"net.nan21.dnet.module.mm.md.dc.Product$CtxFormName",height:50})	 
 		.addDcView("attr",{ name:"attrEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", frame:true,title:"Attributes"})	 
 		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttachment$EditList", frame:true,title:"Attachments",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnViewAttachment") ]}})	 
+		.addDcView("classific",{ name:"classificEdit", xtype:"net.nan21.dnet.module.mm.md.dc.ProdClassification$CtxEditList", frame:true,title:"Classifications"})	 
+		.addDcView("note",{ name:"noteList", xtype:"net.nan21.dnet.module.bd.other.dc.Note$List",width:300})	 
+		.addDcFormView("note",{ name:"noteEdit", xtype:"net.nan21.dnet.module.bd.other.dc.Note$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "prodDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true,onActivateDoLayoutFor:["prodDetailsTab"]})  	 
+		.addPanel({name: "notesPanel", layout:"border", defaults:{split:true},title:"Notes"})  	 
 ;	 	
 	}
 
@@ -40,11 +49,15 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {
 	 	.addChildrenTo("main", ["canvas1","canvas2"]) 				 		
 		.addChildrenTo("canvas1",["prodFilter","prodList","prodCtxFormName"] ,["north","center","south"])	
 		.addChildrenTo("canvas2",["prodEdit","prodDetailsTab"] ,["north","center"])	
-	 	.addChildrenTo("prodDetailsTab", ["attrEditList","atchEditList"]) 				 		
+	 	.addChildrenTo("prodDetailsTab", ["prodEditInfo","attrEditList","classificEdit","atchEditList","notesPanel"]) 				 		
+		.addChildrenTo("notesPanel",["noteList","noteEdit"] ,["west","center"])	
 	 	.addToolbarTo("canvas1","tlbProdList")	  	
 	 	.addToolbarTo("canvas2","tlbProdEdit")	  	
 	 	.addToolbarTo("attrEditList","tlbAttrEditList")	  	
 	 	.addToolbarTo("atchEditList","tlbAtchList")	  	
+	 	.addToolbarTo("classificEdit","tlbClassific")	  	
+	 	.addToolbarTo("noteList","tlbNoteList")	  	
+	 	.addToolbarTo("noteEdit","tlbNoteEdit")	  	
 	}
 
 	,_defineToolbars_: function() {
@@ -52,7 +65,10 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {
 			.beginToolbar("tlbProdList", {dc:"prod"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
 			.beginToolbar("tlbProdEdit", {dc:"prod"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
 			.beginToolbar("tlbAttrEditList", {dc:"attr"}).addQuery().addSave().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Attributes"}).end()
-			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end(); 	
+			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
+			.beginToolbar("tlbClassific", {dc:"classific"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Classifications"}).end()
+			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().end()
+			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().end(); 	
 	}
 
 

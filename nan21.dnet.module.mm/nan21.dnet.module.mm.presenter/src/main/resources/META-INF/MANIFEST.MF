@@ -38,9 +38,11 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
  mpl,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.core.prese
  nter.model,net.nan21.dnet.core.presenter.service,net.nan21.dnet.modul
  e.bd.org.business.service,net.nan21.dnet.module.bd.org.domain.entity,
- net.nan21.dnet.module.bd.uom.business.service,net.nan21.dnet.module.b
- d.uom.domain.entity,net.nan21.dnet.module.mm.inventory.business.servi
- ce,net.nan21.dnet.module.mm.inventory.domain.entity,net.nan21.dnet.mo
- dule.mm.md.business.service,net.nan21.dnet.module.mm.md.domain.entity
- ,org.springframework.context.weaving;version="[3.0,3.1)"
+ net.nan21.dnet.module.bd.standards.business.service,net.nan21.dnet.mo
+ dule.bd.standards.domain.entity,net.nan21.dnet.module.bd.uom.business
+ .service,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.mo
+ dule.mm.inventory.business.service,net.nan21.dnet.module.mm.inventory
+ .domain.entity,net.nan21.dnet.module.mm.md.business.service,net.nan21
+ .dnet.module.mm.md.domain.entity,org.springframework.context.weaving;
+ version="[3.0,3.1)"
 

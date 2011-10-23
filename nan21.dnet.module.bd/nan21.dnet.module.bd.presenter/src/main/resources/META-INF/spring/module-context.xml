@@ -33,5 +33,5 @@
 	<import resource="beans/bd.contact.ds.xml"/>
   	<import resource="beans/bd.org.ds.xml"/>
   	<import resource="beans/bd.standards.ds.xml"/>
-  	
+  	<import resource="beans/bd.other.ds.xml"/>
 </beans>

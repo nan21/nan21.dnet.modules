@@ -13,7 +13,7 @@
 		
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>
-		
+		 
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

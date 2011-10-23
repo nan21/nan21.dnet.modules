@@ -237,6 +237,17 @@
 		<property name="name" value="ProductAttributeValue" />
 		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs" />
 	</bean>
+   
+ 	<bean id="ProdClassificationDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProdClassificationDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProdClassification" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProdClassificationDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProdClassification" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProdClassificationDs" />
+	</bean>
       
 </beans>
    

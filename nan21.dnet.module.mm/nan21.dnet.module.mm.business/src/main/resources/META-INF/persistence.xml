@@ -17,13 +17,14 @@
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductSubstitute</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAccountGroup</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAccount</class>
+ 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProdClassification</class>
  
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue</class>
-
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.StockLocatorType</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator</class>
@@ -47,6 +48,9 @@
 		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgn</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
 		
+		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
+		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>
+		 
 		<properties>
 			<property name="eclipselink.weaving" value="none" />
 		</properties>

@@ -120,6 +120,35 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Edit", {
 		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
 		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
 		.addLov({ name:"defaultUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"defaultUomCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "defaultUomId"} ]  })
+		//containers
+		.addPanel({ name:"row1", layout:"anchor" , width:700,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col3", layout:"anchor" , width:200,labelWidth:0 })     
+		.addPanel({ name:"main" , autoScroll:true })      	 
+		.addPanel({ name:"row2", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["row1" ,"row2" ])
+		.addChildrenTo("row1",["name"])
+		.addChildrenTo("row2",["col1" ,"col2" ,"col3" ])
+		.addChildrenTo("col1",["code","defaultUomCode","attributeGroup"])
+		.addChildrenTo("col2",["manufacturerCode","manufacturerProductNo"])
+		.addChildrenTo("col3",["active"])
+;
+	}	
+});
+ 	
+
+Ext.define("net.nan21.dnet.module.mm.md.dc.Product$EditInfo", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.mm.md.dc.Product$EditInfo",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
 		.addCheckbox({ name:"storable", dataIndex:"storable"  })
 		.addNumberField({ name:"weight", dataIndex:"weight",anchor:"-20"  , style: "text-align:right;" })
 		.addLov({ name:"weightUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomMass", dataIndex:"weightUomCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "weightUomId"} ]  })
@@ -132,24 +161,16 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Edit", {
 		.addNumberField({ name:"dimUomId", dataIndex:"dimUomId",anchor:"-20",noEdit:true   , style: "text-align:right;" })
 		.addLov({ name:"dimUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomLength", dataIndex:"dimUomCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "dimUomId"} ]  })
 		//containers
-		.addPanel({ name:"row1", layout:"anchor" , width:700,labelWidth:0 })     
-		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"anchor" , width:200,labelWidth:0 })     
-		.addPanel({ name:"col4", layout:"anchor" , width:200,labelWidth:0 })     
-		.addPanel({ name:"main" , autoScroll:true })      	 
-		.addPanel({ name:"row2", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
+		.addPanel({ name:"col1", layout:"anchor" ,title:"Physical", width:300,xtype:"fieldset", border:false, collapsible:true,labelWidth:0 })     
+		.addPanel({ name:"col2", layout:"anchor" ,title:"Dimensions", width:300,xtype:"fieldset", border:false, collapsible:true,labelWidth:0 })     
+		.addPanel({ name:"main", layout:"hbox",padding:5, layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["row1" ,"row2" ])
-		.addChildrenTo("row1",["name"])
-		.addChildrenTo("row2",["col1" ,"col2" ,"col3" ,"col4" ])
-		.addChildrenTo("col1",["code","defaultUomCode","active"])
-		.addChildrenTo("col2",["manufacturerCode","manufacturerProductNo","attributeGroup"])
-		.addChildrenTo("col3",["storable","weight","weightUomCode","volume","volumeUomCode"])
-		.addChildrenTo("col4",["dimWidth","dimHeight","dimDepth","dimUomCode"])
+		.addChildrenTo("main",["col1" ,"col2" ])
+		.addChildrenTo("col1",["storable","weight","weightUomCode","volume","volumeUomCode"])
+		.addChildrenTo("col2",["dimWidth","dimHeight","dimDepth","dimUomCode"])
 ;
 	}	
 });
