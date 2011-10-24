@@ -1,3 +1,0 @@
-"name";"description";"uploadPath";"baseUrl";"category";"active"
-"Diploma";"Scanned diploma";;"http://static.my-domain.com/employee-attachments/docs";"document";"true"
-"Photo";"Employee photo";;"http://static.my-domain.com/employee-attachments/photos";"image";"true"

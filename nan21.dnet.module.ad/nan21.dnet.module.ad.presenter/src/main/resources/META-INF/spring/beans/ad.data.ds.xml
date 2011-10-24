@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="NoteDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.NoteDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.data.domain.entity.Note" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.data.ds.converter.NoteDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Note" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.NoteDs" />
+	</bean>
+   
+ 	<bean id="AttachmentTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.data.domain.entity.AttachmentType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.data.ds.converter.AttachmentTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AttachmentType" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeDs" />
+	</bean>
+   
+ 	<bean id="AttachmentTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.data.domain.entity.AttachmentType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.data.ds.converter.AttachmentTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AttachmentTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeLovDs" />
+	</bean>
+   
+ 	<bean id="AttachmentDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.AttachmentDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.data.domain.entity.Attachment" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.data.ds.converter.AttachmentDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Attachment" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.AttachmentDs" />
+	</bean>
+      
+</beans>
+   

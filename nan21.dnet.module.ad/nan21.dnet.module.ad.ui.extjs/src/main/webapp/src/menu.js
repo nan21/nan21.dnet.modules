@@ -27,6 +27,10 @@ net.nan21.dnet.module.ad.menu.ad = [
 		{id:"ReportServers_UI", text:Dnet.translate("ui","ReportServers_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.report.frame.ReportServers_UI", _bundle_:BUNDLE_ID},		
 		{id:"Reports_UI", text:Dnet.translate("ui","Reports_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.report.frame.Reports_UI", _bundle_:BUNDLE_ID}	]}
 ,		 
+	{"id":"sm_ad_data", "text":"Data", leaf:false, children:[
+		
+		{id:"AttachmentType_UI", text:Dnet.translate("ui","AttachmentType_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.data.frame.AttachmentType_UI", _bundle_:BUNDLE_ID}	]}
+,		 
 	{"id":"sm_ad_impex", "text":"Import-Export", leaf:false, children:[
 		
 		{id:"ImportMapItem_UI", text:Dnet.translate("ui","ImportMapItem_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", _bundle_:BUNDLE_ID},		

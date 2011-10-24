@@ -36,6 +36,7 @@ public class SalesOrderDsConv extends
         e.setVersion(ds.getVersion());
         e.setDocNo(ds.getDocNo());
         e.setDocDate(ds.getDocDate());
+        e.setBusinessObject(ds.getBusinessObject());
         e.setTotalAmount(ds.getTotalAmount());
         e.setTotalNetAmount(ds.getTotalNetAmount());
         e.setTotalTaxAmount(ds.getTotalTaxAmount());
@@ -347,6 +348,7 @@ public class SalesOrderDsConv extends
         ds.setVersion(e.getVersion());
         ds.setDocNo(e.getDocNo());
         ds.setDocDate(e.getDocDate());
+        ds.setBusinessObject(e.getBusinessObject());
         ds.setTotalAmount(e.getTotalAmount());
         ds.setTotalNetAmount(e.getTotalNetAmount());
         ds.setTotalTaxAmount(e.getTotalTaxAmount());

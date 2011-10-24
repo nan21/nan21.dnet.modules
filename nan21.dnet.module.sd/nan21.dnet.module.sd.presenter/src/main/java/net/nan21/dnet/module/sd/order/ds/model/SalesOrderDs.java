@@ -27,6 +27,7 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     public static final String fVERSION = "version";
     public static final String fDOCNO = "docNo";
     public static final String fDOCDATE = "docDate";
+    public static final String fBUSINESSOBJECT = "businessObject";
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
     public static final String fSTATUSID = "statusId";
@@ -82,6 +83,9 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     @DsField()
     private Date docDate;
+
+    @DsField(fetch = false)
+    private String businessObject;
 
     @DsField(join = "left", path = "type.id")
     private Long typeId;
@@ -246,6 +250,14 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     public void setDocDate(Date docDate) {
         this.docDate = docDate;
+    }
+
+    public String getBusinessObject() {
+        return this.businessObject;
+    }
+
+    public void setBusinessObject(String businessObject) {
+        this.businessObject = businessObject;
     }
 
     public Long getTypeId() {

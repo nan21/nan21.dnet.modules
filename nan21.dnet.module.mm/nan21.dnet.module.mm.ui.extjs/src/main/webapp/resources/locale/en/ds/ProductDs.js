@@ -20,5 +20,6 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductDs$Trl", {
 	,attributeGroupId__lbl : "Attribute Group Id"
 	,attributeGroup__lbl : "Attribute Group"
 	,className__lbl : "Class Name"
+	,businessObject__lbl : "Business Object"
 	
 });

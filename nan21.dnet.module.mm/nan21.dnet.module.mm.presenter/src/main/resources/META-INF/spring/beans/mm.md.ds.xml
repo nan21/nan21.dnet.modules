@@ -106,39 +106,6 @@
 		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAccountDs" />
 	</bean>
    
- 	<bean id="ProductAttachmentTypeDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentTypeDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttachmentType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttachmentTypeDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ProductAttachmentType" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentTypeDs" />
-	</bean>
-   
- 	<bean id="ProductAttachmentTypeLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentTypeLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttachmentType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttachmentTypeLovDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ProductAttachmentTypeLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentTypeLovDs" />
-	</bean>
-   
- 	<bean id="ProductAttachmentDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttachment" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttachmentDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ProductAttachment" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs" />
-	</bean>
-   
  	<bean id="ProductAttributeCategoryDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeCategoryDs" />

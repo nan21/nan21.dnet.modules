@@ -28,6 +28,7 @@ public class BusinessPartnerDsConv extends
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
         e.setType(ds.getType());
+        e.setBusinessObject(ds.getBusinessObject());
         e.setTaxPayerNo(ds.getTaxPayerNo());
         e.setFirstName(ds.getFirstName());
         e.setLastName(ds.getLastName());
@@ -119,6 +120,7 @@ public class BusinessPartnerDsConv extends
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
         ds.setType(e.getType());
+        ds.setBusinessObject(e.getBusinessObject());
         ds.setTaxPayerNo(e.getTaxPayerNo());
         ds.setFirstName(e.getFirstName());
         ds.setLastName(e.getLastName());

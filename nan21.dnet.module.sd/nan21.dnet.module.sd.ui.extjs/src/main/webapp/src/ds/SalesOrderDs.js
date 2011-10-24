@@ -12,6 +12,7 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" , {
 		{name:"version",type:"int", useNull:true },
 		{name:"docNo",type:"string" },
 		{name:"docDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"businessObject",type:"string" },
 		{name:"typeId",type:"int", useNull:true },
 		{name:"type",type:"string" },
 		{name:"statusId",type:"int", useNull:true },

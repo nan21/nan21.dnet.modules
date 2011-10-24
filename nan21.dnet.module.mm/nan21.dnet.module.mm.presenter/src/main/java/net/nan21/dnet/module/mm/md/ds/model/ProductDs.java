@@ -50,6 +50,7 @@ public class ProductDs extends AbstractDsModel<Product> implements
     public static final String fATTRIBUTEGROUPID = "attributeGroupId";
     public static final String fATTRIBUTEGROUP = "attributeGroup";
     public static final String fCLASSNAME = "className";
+    public static final String fBUSINESSOBJECT = "businessObject";
 
     @DsField()
     private String name;
@@ -143,6 +144,9 @@ public class ProductDs extends AbstractDsModel<Product> implements
 
     @DsField(fetch = false)
     private String className;
+
+    @DsField(fetch = false)
+    private String businessObject;
 
     public ProductDs() {
         super();
@@ -399,6 +403,14 @@ public class ProductDs extends AbstractDsModel<Product> implements
 
     public void setClassName(String className) {
         this.className = className;
+    }
+
+    public String getBusinessObject() {
+        return this.businessObject;
+    }
+
+    public void setBusinessObject(String businessObject) {
+        this.businessObject = businessObject;
     }
 
 }

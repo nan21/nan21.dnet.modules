@@ -35,6 +35,22 @@
 					</property>
 				</bean>
 				
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="20" />
+					<property name="name" value="ad-data" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="AttachmentType" />
+								<property name="destPath" value="demo-data/ad" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/ad/data/data/AttachmentType.csv" />
+							</bean>						   
+						</list>
+					</property>
+				</bean>
+				
 				
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="40" />

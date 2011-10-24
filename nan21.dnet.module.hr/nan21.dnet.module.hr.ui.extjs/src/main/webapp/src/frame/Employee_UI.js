@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeDs", "nan21.dnet.module.hr.ui.extjs/dc/Employee", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeSkillDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeSkill", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeContactDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeContact", "nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelDs", "nan21.dnet.module.bd.ui.extjs/dc/CommunicationChannel", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeEducationDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeEducation", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeWorkExperienceDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeWorkExperience", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeLicenseDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeLicense", "nan21.dnet.module.hr.ui.extjs/ds/EmplAttachmentDs", "nan21.dnet.module.hr.ui.extjs/dc/EmplAttachment", "nan21.dnet.module.bd.ui.extjs/ds/LocationDs", "nan21.dnet.module.bd.ui.extjs/dc/Location","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.hr.ui.extjs/ds/EmploymentTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/EmploymentTypes","nan21.dnet.module.hr.ui.extjs/ds/PositionLovDs","nan21.dnet.module.hr.ui.extjs/lov/Positions","nan21.dnet.module.hr.ui.extjs/ds/JobLovDs","nan21.dnet.module.hr.ui.extjs/lov/Jobs","nan21.dnet.module.hr.ui.extjs/ds/GradeLovDs","nan21.dnet.module.hr.ui.extjs/lov/Grades","nan21.dnet.module.bd.ui.extjs/ds/OrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/Organizations","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.bd.ui.extjs/ds/RegionLovDs","nan21.dnet.module.bd.ui.extjs/lov/Regions","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.hr.ui.extjs/ds/EmployeeContactRelationshipLovDs","nan21.dnet.module.hr.ui.extjs/lov/EmployeeContactRelationships","nan21.dnet.module.hr.ui.extjs/ds/SkillLovDs","nan21.dnet.module.hr.ui.extjs/lov/Skills","nan21.dnet.module.hr.ui.extjs/ds/RatingLevelLovDs","nan21.dnet.module.hr.ui.extjs/lov/RatingLevels","nan21.dnet.module.hr.ui.extjs/ds/EducationTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/EducationTypes","nan21.dnet.module.hr.ui.extjs/ds/LicenseTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/LicenseTypes","nan21.dnet.module.hr.ui.extjs/ds/EmplAttachmentTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/EmplAttachmentTypes","nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/CommunicationChannelTypes"]);
+Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeDs", "nan21.dnet.module.hr.ui.extjs/dc/Employee", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeSkillDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeSkill", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeContactDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeContact", "nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelDs", "nan21.dnet.module.bd.ui.extjs/dc/CommunicationChannel", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeEducationDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeEducation", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeWorkExperienceDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeWorkExperience", "nan21.dnet.module.hr.ui.extjs/ds/EmployeeLicenseDs", "nan21.dnet.module.hr.ui.extjs/dc/EmployeeLicense", "nan21.dnet.module.ad.ui.extjs/ds/AttachmentDs", "nan21.dnet.module.ad.ui.extjs/dc/Attachment", "nan21.dnet.module.bd.ui.extjs/ds/LocationDs", "nan21.dnet.module.bd.ui.extjs/dc/Location","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.hr.ui.extjs/ds/EmploymentTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/EmploymentTypes","nan21.dnet.module.hr.ui.extjs/ds/PositionLovDs","nan21.dnet.module.hr.ui.extjs/lov/Positions","nan21.dnet.module.hr.ui.extjs/ds/JobLovDs","nan21.dnet.module.hr.ui.extjs/lov/Jobs","nan21.dnet.module.hr.ui.extjs/ds/GradeLovDs","nan21.dnet.module.hr.ui.extjs/lov/Grades","nan21.dnet.module.bd.ui.extjs/ds/OrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/Organizations","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.bd.ui.extjs/ds/RegionLovDs","nan21.dnet.module.bd.ui.extjs/lov/Regions","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.hr.ui.extjs/ds/EmployeeContactRelationshipLovDs","nan21.dnet.module.hr.ui.extjs/lov/EmployeeContactRelationships","nan21.dnet.module.hr.ui.extjs/ds/SkillLovDs","nan21.dnet.module.hr.ui.extjs/lov/Skills","nan21.dnet.module.hr.ui.extjs/ds/RatingLevelLovDs","nan21.dnet.module.hr.ui.extjs/lov/RatingLevels","nan21.dnet.module.hr.ui.extjs/ds/EducationTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/EducationTypes","nan21.dnet.module.hr.ui.extjs/ds/LicenseTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/LicenseTypes","nan21.dnet.module.ad.ui.extjs/ds/AttachmentTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/AttachmentTypes","nan21.dnet.module.bd.ui.extjs/ds/CommunicationChannelTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/CommunicationChannelTypes"]);
 
 Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI", {  
 	extend: "dnet.base.AbstractUi",
@@ -14,7 +14,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI", {
 		.addDc("educ", new net.nan21.dnet.module.hr.employee.dc.EmployeeEducation({multiEdit:true}))
 		.addDc("work", new net.nan21.dnet.module.hr.employee.dc.EmployeeWorkExperience({multiEdit:true}))
 		.addDc("lic", new net.nan21.dnet.module.hr.employee.dc.EmployeeLicense({multiEdit:true}))
-		.addDc("atch", new net.nan21.dnet.module.hr.employee.dc.EmplAttachment({multiEdit:true}))
+		.addDc("atch", new net.nan21.dnet.module.ad.data.dc.Attachment({multiEdit:true}))
 		.addDc("address", new net.nan21.dnet.module.bd.geo.dc.Location({}))		
 		.linkDc("skill", "emp",{fields:[ {childField:"employeeId", parentField:"id"} ]} )
 		.linkDc("cont", "emp",{fields:[ {childField:"employeeId", parentField:"id"} ]} )
@@ -22,7 +22,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI", {
 		.linkDc("educ", "emp",{fields:[ {childField:"employeeId", parentField:"id"} ]} )
 		.linkDc("work", "emp",{fields:[ {childField:"employeeId", parentField:"id"} ]} )
 		.linkDc("lic", "emp",{fields:[ {childField:"employeeId", parentField:"id"} ]} )
-		.linkDc("atch", "emp",{fields:[ {childField:"employeeId", parentField:"id"} ]} )
+		.linkDc("atch", "emp",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"businessObject"} ]} )
 		.linkDc("address", "emp",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} );		
 	}	 
 
@@ -30,6 +30,9 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI", {
 		this._getBuilder_()	
 		.addButton({name:"btnViewAttachment",text:"View", tooltip:"View the selected attachment",iconCls:"icon-action-view",disabled:true
 			,handler: this.onBtnViewAttachment,scope:this,stateManager:{name:"selected_one", dc:"atch" }	})	
+							 	
+		.addButton({name:"btnUploadAttachment",text:"Upload...", tooltip:"Upload attachment file.",disabled:true
+			,handler: this.onBtnUploadAttachment,scope:this,stateManager:{name:"selected_one_clean", dc:"atch" }	})	
 							 	
 		.addDcFilterFormView("emp",{ name:"empFilter", xtype:"net.nan21.dnet.module.hr.employee.dc.Employee$Filter"})	 
 		.addDcView("emp",{ name:"empList", xtype:"net.nan21.dnet.module.hr.employee.dc.Employee$List"})	 
@@ -40,7 +43,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI", {
 		.addDcView("educ",{ name:"educEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.EmployeeEducation$EditList", frame:true,title:"Education"})	 
 		.addDcView("work",{ name:"workEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.EmployeeWorkExperience$EditList", frame:true,title:"Work experience"})	 
 		.addDcView("lic",{ name:"licEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.EmployeeLicense$EditList", frame:true,title:"Licenses"})	 
-		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.hr.employee.dc.EmplAttachment$EditList", frame:true,title:"Attachments",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnViewAttachment") ]}})	 
+		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", frame:true,title:"Attachments",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnViewAttachment") ,this._elems_.get("btnUploadAttachment") ]}})	 
 		.addDcView("communic",{ name:"communicEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannel$EditList", frame:true,title:"Communication"})	 
 		.addDcView("address",{ name:"addressList", xtype:"net.nan21.dnet.module.bd.geo.dc.Location$ListCtx"})	 
 		.addDcFormView("address",{ name:"addressEdit", xtype:"net.nan21.dnet.module.bd.geo.dc.Location$EditCtx"})	 
@@ -89,6 +92,18 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI", {
 			.beginToolbar("tlbAddressEdit", {dc:"address"}).addBack({inContainer:"addressPanel",showView:"addressList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().end(); 	
 	}
 
+	,onUploadSuccess: function() {	
+this._getDc_("atch").doQuery();			 	
+	}
+	,onBtnUploadAttachment: function() {	
+		var w=new dnet.base.FileUploadWindow({
+    		_nameFieldValue_: this._getDc_("atch").getRecord().get("name"),
+    		_p1Value_: this._getDc_("atch").getRecord().get("id"),
+    		_uploadUrl_:"/nan21.dnet.core.web/upload/adDataAttachment",
+    		_succesCallbackFn_ : this.onUploadSuccess,
+    		_succesCallbackScope_: this
+    	});w.show();
+	}
 	,onBtnViewAttachment: function() {	
 		
 			var url = this._getDc_("atch").getRecord().get("url");

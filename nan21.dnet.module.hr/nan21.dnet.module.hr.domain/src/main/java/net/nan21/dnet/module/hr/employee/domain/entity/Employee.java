@@ -399,6 +399,15 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
         this.baseSalary = baseSalary;
     }
 
+    @Transient
+    public String getBusinessObject() {
+        return "Employee";
+    }
+
+    public void setBusinessObject(String businessObject) {
+
+    }
+
     public Long getClientId() {
         return this.clientId;
     }

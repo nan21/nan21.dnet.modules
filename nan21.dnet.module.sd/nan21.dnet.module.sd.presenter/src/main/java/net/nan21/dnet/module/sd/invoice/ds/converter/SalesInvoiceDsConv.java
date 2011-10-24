@@ -30,6 +30,7 @@ public class SalesInvoiceDsConv extends
         e.setVersion(ds.getVersion());
         e.setDocNo(ds.getDocNo());
         e.setDocDate(ds.getDocDate());
+        e.setBusinessObject(ds.getBusinessObject());
         e.setTotalNetAmount(ds.getTotalNetAmount());
         e.setTotalTaxAmount(ds.getTotalTaxAmount());
         e.setTotalAmount(ds.getTotalAmount());
@@ -157,6 +158,7 @@ public class SalesInvoiceDsConv extends
         ds.setVersion(e.getVersion());
         ds.setDocNo(e.getDocNo());
         ds.setDocDate(e.getDocDate());
+        ds.setBusinessObject(e.getBusinessObject());
         ds.setTotalNetAmount(e.getTotalNetAmount());
         ds.setTotalTaxAmount(e.getTotalTaxAmount());
         ds.setTotalAmount(e.getTotalAmount());

@@ -2,6 +2,7 @@
 Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs$Trl", {     	
 	docNo__lbl : "Doc No"
 	,docDate__lbl : "Doc Date"
+	,businessObject__lbl : "Business Object"
 	,status__lbl : "Status"
 	,typeId__lbl : "Type Id"
 	,type__lbl : "Type"

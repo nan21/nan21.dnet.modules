@@ -44,17 +44,15 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,javax.v
  alidation;version="[1.0,2.0)",net.nan21.dnet.core.api.service,net.nan
  21.dnet.core.api.setup,net.nan21.dnet.core.business.persistenceunit,n
- et.nan21.dnet.core.business.service,net.nan21.dnet.module.ad.system.d
- omain.entity,net.nan21.dnet.module.bd.currency.domain.entity,net.nan2
- 1.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd.standards
- .domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.d
- net.module.mm.inventory.domain.entity,net.nan21.dnet.module.mm.md.dom
- ain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.eclipse.persis
- tence.jpa;version="[2.1,2.5)",org.hibernate.validator;version="[4.0,5
- .0)",org.hibernate.validator.constraints;version="[4.0,5.0)",org.spri
- ngframework.aop;version="[3.0,3.1)",org.springframework.aop.framework
- ;version="[3.0,3.1)",org.springframework.context.weaving;version="[3.
- 0,3.1)",org.springframework.orm.jpa,org.springframework.orm.jpa.vendo
- r,org.springframework.transaction;version="[3.0,3.1)",org.springframe
- work.transaction.aspectj;version="[3.0,3.1)"
+ et.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.org.doma
+ in.entity,net.nan21.dnet.module.bd.standards.domain.entity,net.nan21.
+ dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.mm.inventory.d
+ omain.entity,net.nan21.dnet.module.mm.md.domain.entity,org.aopallianc
+ e.aop;version="[1.0,2.0)",org.hibernate.validator;version="[4.0,5.0)"
+ ,org.hibernate.validator.constraints;version="[4.0,5.0)",org.springfr
+ amework.aop;version="[3.0,3.1)",org.springframework.aop.framework;ver
+ sion="[3.0,3.1)",org.springframework.context.weaving;version="[3.0,3.
+ 1)",org.springframework.orm.jpa,org.springframework.orm.jpa.vendor,or
+ g.springframework.transaction;version="[3.0,3.1)",org.springframework
+ .transaction.aspectj;version="[3.0,3.1)"
 

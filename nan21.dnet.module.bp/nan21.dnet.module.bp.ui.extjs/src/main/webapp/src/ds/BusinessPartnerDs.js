@@ -15,6 +15,7 @@ Ext.define("net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"type",type:"string" },
+		{name:"businessObject",type:"string" },
 		{name:"countryId",type:"int", useNull:true },
 		{name:"countryCode",type:"string" },
 		{name:"taxPayerNo",type:"string" },

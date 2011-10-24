@@ -59,6 +59,10 @@
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeField</class>
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefTransition</class>
 		 
+		<class>net.nan21.dnet.module.ad.data.domain.entity.Note</class>
+		<class>net.nan21.dnet.module.ad.data.domain.entity.AttachmentType</class>
+		<class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>
+		 
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

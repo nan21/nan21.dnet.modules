@@ -172,7 +172,7 @@ this._getDc_("dcDeployment").doQuery();
 		window.open(Dnet.wfProcessInstanceAPI(id).diagram,"ProcessDiagram","width=500,height=400");
 	}
 	,onBtnUploadForDeployment: function() {	
-		var w=new dnet.base.FileUploadWindow();w.show();
+		var w=new dnet.base.FileUploadWindow({_uploadUrl_:"/nan21.dnet.core.web/upload/deployUploadedWorkflow"});w.show();
 	}
 	,onBtnDeleteDeployment: function() {	
 		

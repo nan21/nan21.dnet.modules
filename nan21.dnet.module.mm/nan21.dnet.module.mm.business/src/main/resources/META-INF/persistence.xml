@@ -11,8 +11,6 @@
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductCategoryHierarchyItem</class>
 				
 		<class>net.nan21.dnet.module.mm.md.domain.entity.Product</class>
-		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttachment</class>
-		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttachmentType</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductSubstitute</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAccountGroup</class>

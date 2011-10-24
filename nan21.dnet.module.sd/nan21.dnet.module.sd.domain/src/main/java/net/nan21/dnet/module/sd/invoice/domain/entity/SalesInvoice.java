@@ -197,6 +197,15 @@ public class SalesInvoice implements Serializable, IModelWithId,
         this.totalAmount = totalAmount;
     }
 
+    @Transient
+    public String getBusinessObject() {
+        return "SalesInvoice";
+    }
+
+    public void setBusinessObject(String businessObject) {
+
+    }
+
     public Long getClientId() {
         return this.clientId;
     }

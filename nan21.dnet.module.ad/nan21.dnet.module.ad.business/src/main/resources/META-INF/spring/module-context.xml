@@ -133,6 +133,7 @@
 	
 	<!-- Domain services -->
 	<import resource="beans/ad.client.entity.xml" />
+	<import resource="beans/ad.data.entity.xml" />
 	<import resource="beans/ad.impex.entity.xml" />
 	<import resource="beans/ad.report.entity.xml" />
 	<import resource="beans/ad.system.entity.xml" />

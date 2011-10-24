@@ -27,6 +27,7 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
     public static final String fVERSION = "version";
     public static final String fDOCNO = "docNo";
     public static final String fDOCDATE = "docDate";
+    public static final String fBUSINESSOBJECT = "businessObject";
     public static final String fSTATUSID = "statusId";
     public static final String fSTATUS = "status";
     public static final String fTYPEID = "typeId";
@@ -73,6 +74,9 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
 
     @DsField()
     private Date docDate;
+
+    @DsField(fetch = false)
+    private String businessObject;
 
     @DsField(join = "left", path = "status.id")
     private Long statusId;
@@ -210,6 +214,14 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
 
     public void setDocDate(Date docDate) {
         this.docDate = docDate;
+    }
+
+    public String getBusinessObject() {
+        return this.businessObject;
+    }
+
+    public void setBusinessObject(String businessObject) {
+        this.businessObject = businessObject;
     }
 
     public Long getStatusId() {

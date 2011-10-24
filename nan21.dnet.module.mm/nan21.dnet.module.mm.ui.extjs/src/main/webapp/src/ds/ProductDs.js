@@ -33,7 +33,8 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductDs" , {
 		{name:"manufacturerCode",type:"string" },
 		{name:"attributeGroupId",type:"int", useNull:true },
 		{name:"attributeGroup",type:"string" },
-		{name:"className",type:"string" }
+		{name:"className",type:"string" },
+		{name:"businessObject",type:"string" }
 	],
 	validations: [  
 		{field: "name", type: 'presence'}, 

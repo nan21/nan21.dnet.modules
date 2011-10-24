@@ -31,6 +31,7 @@ public class BusinessPartnerDs extends AbstractDsModel<BusinessPartner>
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fTYPE = "type";
+    public static final String fBUSINESSOBJECT = "businessObject";
     public static final String fCOUNTRYID = "countryId";
     public static final String fCOUNTRYCODE = "countryCode";
     public static final String fTAXPAYERNO = "taxPayerNo";
@@ -83,6 +84,9 @@ public class BusinessPartnerDs extends AbstractDsModel<BusinessPartner>
 
     @DsField()
     private String type;
+
+    @DsField(fetch = false)
+    private String businessObject;
 
     @DsField(join = "left", path = "country.id")
     private Long countryId;
@@ -235,6 +239,14 @@ public class BusinessPartnerDs extends AbstractDsModel<BusinessPartner>
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getBusinessObject() {
+        return this.businessObject;
+    }
+
+    public void setBusinessObject(String businessObject) {
+        this.businessObject = businessObject;
     }
 
     public Long getCountryId() {

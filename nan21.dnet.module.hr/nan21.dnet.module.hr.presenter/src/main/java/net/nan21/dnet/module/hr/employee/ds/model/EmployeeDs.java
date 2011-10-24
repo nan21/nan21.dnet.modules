@@ -27,6 +27,7 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
     public static final String fVERSION = "version";
     public static final String fEMPLOYERID = "employerId";
     public static final String fEMPLOYERCODE = "employerCode";
+    public static final String fBUSINESSOBJECT = "businessObject";
     public static final String fCODE = "code";
     public static final String fFIRSTNAME = "firstName";
     public static final String fLASTNAME = "lastName";
@@ -89,6 +90,9 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
 
     @DsField(join = "left", path = "employer.code")
     private String employerCode;
+
+    @DsField(fetch = false)
+    private String businessObject;
 
     @DsField()
     private String code;
@@ -274,6 +278,14 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
 
     public void setEmployerCode(String employerCode) {
         this.employerCode = employerCode;
+    }
+
+    public String getBusinessObject() {
+        return this.businessObject;
+    }
+
+    public void setBusinessObject(String businessObject) {
+        this.businessObject = businessObject;
     }
 
     public String getCode() {

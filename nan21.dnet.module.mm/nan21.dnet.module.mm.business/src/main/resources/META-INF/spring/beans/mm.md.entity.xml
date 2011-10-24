@@ -19,12 +19,6 @@
  	<bean id="ProductService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceext.ProductService"  />  
  
- 	<bean id="ProductAttachmentTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttachmentTypeService"  />  
- 
- 	<bean id="ProductAttachmentService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttachmentService"  />  
- 
  	<bean id="ProductManufacturerService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductManufacturerService"  />  
  

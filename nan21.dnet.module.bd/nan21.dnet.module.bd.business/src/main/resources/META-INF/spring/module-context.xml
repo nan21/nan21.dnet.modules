@@ -139,5 +139,5 @@
 	<import resource="beans/bd.org.entity.xml" />
 	<import resource="beans/bd.contact.entity.xml" />
 	<import resource="beans/bd.standards.entity.xml" />
-	<import resource="beans/bd.other.entity.xml" />
+ 
 </beans>

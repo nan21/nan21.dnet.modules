@@ -26,7 +26,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$Filter", 
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addBooleanField({ name:"internal", dataIndex:"internal",anchor:"-20"  })
-		.addCombo({ name:"useInContext", xtype:"combo", dataIndex:"useInContext",anchor:"-20",store:[ "company", "person", "product"]  })
+		.addCombo({ name:"useInContext", xtype:"combo", dataIndex:"useInContext",anchor:"-20",store:[ "BusinessPartner.company", "BusinessPartner.person", "Product"]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
 		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
@@ -54,7 +54,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$EditList"
 		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},vtype:"alphanum"} })
 		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
 		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:4000,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "4000"}} })
-		.addComboColumn({ name:"useInContext", dataIndex:"useInContext", trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false"),editor: {xtype: 'combo', mode: 'local', selectOnFocus:true, valueField: 'bv', displayField: 'tv' ,store:[ "company", "person", "product"] , triggerAction:'all', forceSelection:true }})
+		.addComboColumn({ name:"useInContext", dataIndex:"useInContext", trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false"),editor: {xtype: 'combo', mode: 'local', selectOnFocus:true, valueField: 'bv', displayField: 'tv' ,store:[ "BusinessPartner.company", "BusinessPartner.person", "Product"] , triggerAction:'all', forceSelection:true }})
 		.addBooleanColumn({ name:"internal", dataIndex:"internal"})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})

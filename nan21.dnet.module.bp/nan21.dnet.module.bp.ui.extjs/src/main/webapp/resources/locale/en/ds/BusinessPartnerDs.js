@@ -1,6 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs$Trl", {     	
 	type__lbl : "Type"
+	,businessObject__lbl : "Business Object"
 	,countryId__lbl : "Country Id"
 	,countryCode__lbl : "Country Code"
 	,taxPayerNo__lbl : "Tax Payer No"

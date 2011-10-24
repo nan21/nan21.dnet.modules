@@ -2,6 +2,7 @@
 Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs$Trl", {     	
 	employerId__lbl : "Employer Id"
 	,employerCode__lbl : "Employer Code"
+	,businessObject__lbl : "Business Object"
 	,firstName__lbl : "First Name"
 	,lastName__lbl : "Last Name"
 	,middleName__lbl : "Middle Name"

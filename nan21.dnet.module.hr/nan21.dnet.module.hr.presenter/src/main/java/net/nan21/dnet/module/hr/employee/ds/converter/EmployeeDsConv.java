@@ -32,6 +32,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
             throws Exception {
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
+        e.setBusinessObject(ds.getBusinessObject());
         e.setCode(ds.getCode());
         e.setFirstName(ds.getFirstName());
         e.setLastName(ds.getLastName());
@@ -281,6 +282,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
+        ds.setBusinessObject(e.getBusinessObject());
         ds.setCode(e.getCode());
         ds.setFirstName(e.getFirstName());
         ds.setLastName(e.getLastName());

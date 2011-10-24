@@ -253,6 +253,15 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
         this.manufacturerProductNo = manufacturerProductNo;
     }
 
+    @Transient
+    public String getBusinessObject() {
+        return "Product";
+    }
+
+    public void setBusinessObject(String businessObject) {
+
+    }
+
     public String getName() {
         return this.name;
     }

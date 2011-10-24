@@ -9,36 +9,41 @@ Export-Package: net.nan21.dnet.module.ad._businessdelegates;version="1
  module.ad.client.business.serviceimpl;version="1.0.0.M3";uses:="javax
  .persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.modu
  le.ad.client.business.service,net.nan21.dnet.module.ad.client.domain.
- entity",net.nan21.dnet.module.ad.impex.business.service;version="1.0.
- 0.M3";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad
- .impex.domain.entity",net.nan21.dnet.module.ad.impex.business.service
- impl;version="1.0.0.M3";uses:="javax.persistence,net.nan21.dnet.core.
- business.service,net.nan21.dnet.module.ad.impex.business.service,net.
- nan21.dnet.module.ad.impex.domain.entity",net.nan21.dnet.module.ad.re
- port.business.service;version="1.0.0.M3";uses:="net.nan21.dnet.core.a
- pi.service,net.nan21.dnet.module.ad.report.domain.entity",net.nan21.d
- net.module.ad.report.business.serviceimpl;version="1.0.0.M3";uses:="j
- avax.persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.
- module.ad.report.business.service,net.nan21.dnet.module.ad.report.dom
- ain.entity",net.nan21.dnet.module.ad.system.business.service;version=
- "1.0.0.M3";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modu
- le.ad.system.domain.entity",net.nan21.dnet.module.ad.system.business.
- serviceimpl;version="1.0.0.M3";uses:="javax.persistence,net.nan21.dne
- t.core.business.service,net.nan21.dnet.module.ad.system.business.serv
- ice,net.nan21.dnet.module.ad.system.domain.entity",net.nan21.dnet.mod
- ule.ad.usr.business.service;version="1.0.0.M3";uses:="net.nan21.dnet.
- core.api.service,net.nan21.dnet.module.ad.system.domain.entity,net.na
- n21.dnet.module.ad.usr.domain.entity",net.nan21.dnet.module.ad.usr.bu
- siness.serviceimpl;version="1.0.0.M3";uses:="javax.persistence,net.na
- n21.dnet.core.business.service,net.nan21.dnet.module.ad.system.domain
- .entity,net.nan21.dnet.module.ad.usr.business.service,net.nan21.dnet.
- module.ad.usr.domain.entity",net.nan21.dnet.module.ad.workflow.busine
- ss.service;version="1.0.0.M3";uses:="net.nan21.dnet.core.api.service,
- net.nan21.dnet.module.ad.workflow.domain.entity",net.nan21.dnet.modul
- e.ad.workflow.business.serviceimpl;version="1.0.0.M3";uses:="javax.pe
- rsistence,net.nan21.dnet.core.business.service,net.nan21.dnet.module.
- ad.workflow.business.service,net.nan21.dnet.module.ad.workflow.domain
- .entity"
+ entity",net.nan21.dnet.module.ad.data.business.service;version="1.0.0
+ .M3";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.
+ data.domain.entity",net.nan21.dnet.module.ad.data.business.serviceimp
+ l;version="1.0.0.M3";uses:="javax.persistence,net.nan21.dnet.core.bus
+ iness.service,net.nan21.dnet.module.ad.data.business.service,net.nan2
+ 1.dnet.module.ad.data.domain.entity",net.nan21.dnet.module.ad.impex.b
+ usiness.service;version="1.0.0.M3";uses:="net.nan21.dnet.core.api.ser
+ vice,net.nan21.dnet.module.ad.impex.domain.entity",net.nan21.dnet.mod
+ ule.ad.impex.business.serviceimpl;version="1.0.0.M3";uses:="javax.per
+ sistence,net.nan21.dnet.core.business.service,net.nan21.dnet.module.a
+ d.impex.business.service,net.nan21.dnet.module.ad.impex.domain.entity
+ ",net.nan21.dnet.module.ad.report.business.service;version="1.0.0.M3"
+ ;uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.repo
+ rt.domain.entity",net.nan21.dnet.module.ad.report.business.serviceimp
+ l;version="1.0.0.M3";uses:="javax.persistence,net.nan21.dnet.core.bus
+ iness.service,net.nan21.dnet.module.ad.report.business.service,net.na
+ n21.dnet.module.ad.report.domain.entity",net.nan21.dnet.module.ad.sys
+ tem.business.service;version="1.0.0.M3";uses:="net.nan21.dnet.core.ap
+ i.service,net.nan21.dnet.module.ad.system.domain.entity",net.nan21.dn
+ et.module.ad.system.business.serviceimpl;version="1.0.0.M3";uses:="ja
+ vax.persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.m
+ odule.ad.system.business.service,net.nan21.dnet.module.ad.system.doma
+ in.entity",net.nan21.dnet.module.ad.usr.business.service;version="1.0
+ .0.M3";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.a
+ d.system.domain.entity,net.nan21.dnet.module.ad.usr.domain.entity",ne
+ t.nan21.dnet.module.ad.usr.business.serviceimpl;version="1.0.0.M3";us
+ es:="javax.persistence,net.nan21.dnet.core.business.service,net.nan21
+ .dnet.module.ad.system.domain.entity,net.nan21.dnet.module.ad.usr.bus
+ iness.service,net.nan21.dnet.module.ad.usr.domain.entity",net.nan21.d
+ net.module.ad.workflow.business.service;version="1.0.0.M3";uses:="net
+ .nan21.dnet.core.api.service,net.nan21.dnet.module.ad.workflow.domain
+ .entity",net.nan21.dnet.module.ad.workflow.business.serviceimpl;versi
+ on="1.0.0.M3";uses:="javax.persistence,net.nan21.dnet.core.business.s
+ ervice,net.nan21.dnet.module.ad.workflow.business.service,net.nan21.d
+ net.module.ad.workflow.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M3,1.0.0.M3]",nan21.dnet.core.busine
  ss;version="[1.0.0.M3,1.0.0.M3]",nan21.dnet.module.ad.domain;version=
@@ -57,15 +62,15 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  21.dnet.core.api.session,net.nan21.dnet.core.api.setup,net.nan21.dnet
  .core.business.persistenceunit,net.nan21.dnet.core.business.service,n
  et.nan21.dnet.module.ad.client.domain.entity,net.nan21.dnet.module.ad
- .impex.domain.entity,net.nan21.dnet.module.ad.report.domain.entity,ne
- t.nan21.dnet.module.ad.system.domain.entity,net.nan21.dnet.module.ad.
- usr.domain.entity,net.nan21.dnet.module.ad.workflow.domain.entity,org
- .aopalliance.aop;version="[1.0,2.0)",org.hibernate.validator;version=
- "[4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)",o
- rg.springframework.aop;version="[3.0,3.1)",org.springframework.aop.fr
- amework;version="[3.0,3.1)",org.springframework.context.weaving;versi
- on="[3.0,3.1)",org.springframework.orm.jpa,org.springframework.orm.jp
- a.vendor,org.springframework.transaction;version="[3.0,3.1)",org.spri
- ngframework.transaction.aspectj;version="[3.0,3.1)",org.springframewo
- rk.util
+ .data.domain.entity,net.nan21.dnet.module.ad.impex.domain.entity,net.
+ nan21.dnet.module.ad.report.domain.entity,net.nan21.dnet.module.ad.sy
+ stem.domain.entity,net.nan21.dnet.module.ad.usr.domain.entity,net.nan
+ 21.dnet.module.ad.workflow.domain.entity,org.aopalliance.aop;version=
+ "[1.0,2.0)",org.hibernate.validator;version="[4.0,5.0)",org.hibernate
+ .validator.constraints;version="[4.0,5.0)",org.springframework.aop;ve
+ rsion="[3.0,3.1)",org.springframework.aop.framework;version="[3.0,3.1
+ )",org.springframework.context.weaving;version="[3.0,3.1)",org.spring
+ framework.orm.jpa,org.springframework.orm.jpa.vendor,org.springframew
+ ork.transaction;version="[3.0,3.1)",org.springframework.transaction.a
+ spectj;version="[3.0,3.1)",org.springframework.util
 

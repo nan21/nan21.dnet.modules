@@ -197,6 +197,15 @@ public class BusinessPartner implements Serializable, IModelWithId,
         this.type = type;
     }
 
+    @Transient
+    public String getBusinessObject() {
+        return "BusinessPartner." + this.type;
+    }
+
+    public void setBusinessObject(String businessObject) {
+
+    }
+
     public String getTaxPayerNo() {
         return this.taxPayerNo;
     }

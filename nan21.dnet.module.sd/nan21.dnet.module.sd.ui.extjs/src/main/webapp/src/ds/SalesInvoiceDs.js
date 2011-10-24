@@ -12,6 +12,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs" , {
 		{name:"version",type:"int", useNull:true },
 		{name:"docNo",type:"string" },
 		{name:"docDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"businessObject",type:"string" },
 		{name:"statusId",type:"int", useNull:true },
 		{name:"status",type:"string" },
 		{name:"typeId",type:"int", useNull:true },

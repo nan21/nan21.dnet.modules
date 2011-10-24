@@ -163,7 +163,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$EditInfo", {
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" ,title:"Physical", width:300,xtype:"fieldset", border:false, collapsible:true,labelWidth:0 })     
 		.addPanel({ name:"col2", layout:"anchor" ,title:"Dimensions", width:300,xtype:"fieldset", border:false, collapsible:true,labelWidth:0 })     
-		.addPanel({ name:"main", layout:"hbox",padding:5, layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
 	,_linkElements_: function () {

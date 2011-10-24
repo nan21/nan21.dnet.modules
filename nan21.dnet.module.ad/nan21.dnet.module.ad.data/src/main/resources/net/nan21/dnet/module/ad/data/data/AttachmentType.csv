@@ -1,0 +1,7 @@
+"name";"useInContext";"category";"uploadPath";"baseUrl";"active";"description"
+"Company docs";"BusinessPartner.company";"document";"D:/env/web-server/apache-http/php-doc-root/dnet-uploads/business-partner/company";"http://localhost/dnet-uploads/business-partner/company";"true";""
+"Manufacturer specification";"Product";"document";"D:/env/web-server/apache-http/php-doc-root/dnet-uploads/product/specs";"http://localhost/dnet-uploads/product/specs";"true";"Product description, manufacturer specifications"
+"Person docs";"BusinessPartner.person";"document";"D:/env/web-server/apache-http/php-doc-root/dnet-uploads/business-partner/person";"http://localhost/dnet-uploads/business-partner/person";"true";""
+"Photo";"Employee";"image";"D:/env/web-server/apache-http/php-doc-root/dnet-uploads/employee/photo";"http://localhost/dnet-uploads/employee/photo";"true";"Employee photos"
+"Product image";"Product";"image";"D:/env/web-server/apache-http/php-doc-root/dnet-uploads/product/photo";"http://localhost/dnet-uploads/product/photo";"true";"Product pictures"
+"Scanned document";"Employee";"image";"D:/env/web-server/apache-http/php-doc-root/dnet-uploads/employee/papers";"http://localhost/dnet-uploads/employee/papers";"true";"Scanned papers"

@@ -12,6 +12,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs" , {
 		{name:"version",type:"int", useNull:true },
 		{name:"employerId",type:"int", useNull:true },
 		{name:"employerCode",type:"string" },
+		{name:"businessObject",type:"string" },
 		{name:"code",type:"string" },
 		{name:"firstName",type:"string" },
 		{name:"lastName",type:"string" },

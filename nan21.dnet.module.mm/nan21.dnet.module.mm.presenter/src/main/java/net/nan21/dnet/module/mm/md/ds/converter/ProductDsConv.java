@@ -36,6 +36,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         e.setDimDepth(ds.getDimDepth());
         e.setManufacturerProductNo(ds.getManufacturerProductNo());
         e.setClassName(ds.getClassName());
+        e.setBusinessObject(ds.getBusinessObject());
     }
 
     protected void modelToEntityReferences(ProductDs ds, Product e)
@@ -229,6 +230,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         ds.setDimDepth(e.getDimDepth());
         ds.setManufacturerProductNo(e.getManufacturerProductNo());
         ds.setClassName(e.getClassName());
+        ds.setBusinessObject(e.getBusinessObject());
         ds.setDefaultUomId(((e.getDefaultUom() != null)) ? e.getDefaultUom()
                 .getId() : null);
         ds.setDefaultUomCode(((e.getDefaultUom() != null)) ? e.getDefaultUom()
