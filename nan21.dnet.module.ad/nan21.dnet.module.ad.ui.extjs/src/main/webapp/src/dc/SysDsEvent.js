@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsEvent", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsEventDs",
+	filterModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsEventDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.system.ds.param.SysDsEventDsParam",
 	constructor : function(config) {
         config = config || {};

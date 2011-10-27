@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpBankAccount", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.md.ds.model.BpBankAccountDs",
+	filterModel: "net.nan21.dnet.module.bp.md.ds.model.BpBankAccountDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.md.ds.param.BpBankAccountDsParam",
 	constructor : function(config) {
         config = config || {};

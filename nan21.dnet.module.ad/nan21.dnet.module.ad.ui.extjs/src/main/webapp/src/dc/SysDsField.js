@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsField", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsFieldDs",
+	filterModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsFieldDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.system.ds.param.SysDsFieldDsParam",
 	constructor : function(config) {
         config = config || {};

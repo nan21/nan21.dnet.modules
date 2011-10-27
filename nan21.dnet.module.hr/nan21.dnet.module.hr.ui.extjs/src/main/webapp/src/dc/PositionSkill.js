@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.PositionSkill", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.PositionSkillDs",
+	filterModel: "net.nan21.dnet.module.hr.skill.ds.model.PositionSkillDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.skill.ds.param.PositionSkillDsParam",
 	constructor : function(config) {
         config = config || {};

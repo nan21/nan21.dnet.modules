@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJob", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportJobDs",
+	filterModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportJobDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.impex.ds.param.ImportJobDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -73,8 +74,8 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJob$Edit", {
 		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",noEdit:true, hideTrigger:true ,allowBlank:false})
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:400,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:400})     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

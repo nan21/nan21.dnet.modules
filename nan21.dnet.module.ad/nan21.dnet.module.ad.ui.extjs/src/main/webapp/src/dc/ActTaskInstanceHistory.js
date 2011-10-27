@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDs",
+	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActTaskInstanceHistoryDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -31,7 +32,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter",
 		.addTextField({ name:"description",_sharedLabel_:true, dataIndex:"description",anchor:"-20",maxLength:4000  })
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20",maxLength:32  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210,labelWidth:0 })
+		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210}) 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -73,7 +74,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignFo
 		this._getBuilder_()	
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250,labelWidth:0 })     
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250})     
 		;     
 	}
 	,_linkElements_: function () {

@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.inventory.ds.model.SubInventoryDs",
+	filterModel: "net.nan21.dnet.module.mm.inventory.ds.model.SubInventoryDsFilter",
 	paramModel: "net.nan21.dnet.module.mm.inventory.ds.param.SubInventoryDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -26,8 +27,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"inventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"inventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "inventoryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -74,8 +75,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit", {
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
 		.addLov({ name:"inventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"inventory",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "inventoryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:400,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:400})     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

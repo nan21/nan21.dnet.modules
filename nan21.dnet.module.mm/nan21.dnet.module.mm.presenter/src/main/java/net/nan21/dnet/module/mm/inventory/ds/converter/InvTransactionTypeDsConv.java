@@ -26,6 +26,8 @@ public class InvTransactionTypeDsConv extends
         e.setDescription(ds.getDescription());
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
+        e.setHasFromInventory(ds.getHasFromInventory());
+        e.setHasToInventory(ds.getHasToInventory());
     }
 
     protected void modelToEntityReferences(InvTransactionTypeDs ds,
@@ -100,6 +102,8 @@ public class InvTransactionTypeDsConv extends
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
+        ds.setHasFromInventory(e.getHasFromInventory());
+        ds.setHasToInventory(e.getHasToInventory());
         ds.setSourceTypeId(((e.getSourceType() != null)) ? e.getSourceType()
                 .getId() : null);
         ds.setSourceType(((e.getSourceType() != null)) ? e.getSourceType()

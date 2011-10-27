@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.RatingScaleDs",
+	filterModel: "net.nan21.dnet.module.hr.skill.ds.model.RatingScaleDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.skill.ds.param.RatingScaleDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -71,8 +72,8 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit", {
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:400,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:400})     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

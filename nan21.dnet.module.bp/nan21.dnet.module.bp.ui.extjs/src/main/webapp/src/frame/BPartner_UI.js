@@ -35,7 +35,7 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BPartner_UI", {
 		.addButton({name:"btnUploadAttachment",text:"Upload...", tooltip:"Upload attachment file.",disabled:true
 			,handler: this.onBtnUploadAttachment,scope:this,stateManager:{name:"selected_one_clean", dc:"atch" }	})	
 							 	
-		.addDcFilterFormView("bp",{ name:"bpFilter", xtype:"net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter"})	 
+		.addDcFilterFormView("bp",{ name:"bpFilter", xtype:"net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter",height:110})	 
 		.addDcView("bp",{ name:"bpList", xtype:"net.nan21.dnet.module.bp.md.dc.BusinessPartner$List"})	 
 		.addDcFormView("bp",{ name:"bpCreate", xtype:"net.nan21.dnet.module.bp.md.dc.BusinessPartner$Create"})	 
 		.addDcFormView("bp",{ name:"bpEdit", xtype:"net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit",height:160})	 
@@ -47,7 +47,7 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BPartner_UI", {
 		.addDcView("classific",{ name:"classificEdit", xtype:"net.nan21.dnet.module.bp.md.dc.BpClassification$CtxEditList", frame:true,title:"Classifications"})	 
 		.addDcView("note",{ name:"noteList", xtype:"net.nan21.dnet.module.ad.data.dc.Note$List",width:300})	 
 		.addDcFormView("note",{ name:"noteEdit", xtype:"net.nan21.dnet.module.ad.data.dc.Note$Edit"})	 
-		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", frame:true,title:"Attachments",buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnViewAttachment") ,this._elems_.get("btnUploadAttachment") ]}})	 
+		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", frame:true,title:"Attachments",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnViewAttachment") ,this._elems_.get("btnUploadAttachment") ]}]})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "addressPanel",layout:"card", activeItem:0,title:"Address"})  	 
 		.addPanel({name: "bpDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 

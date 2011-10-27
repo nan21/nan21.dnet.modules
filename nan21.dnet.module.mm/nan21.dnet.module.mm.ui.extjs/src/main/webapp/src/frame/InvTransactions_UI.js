@@ -9,14 +9,17 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", {
 		this._getBuilder_()
 		.addDc("tx", new net.nan21.dnet.module.mm.inventory.dc.InvTransaction({}))
 		.addDc("txline", new net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine({multiEdit:true}))		
-		.linkDc("txline", "tx",{fields:[ {childField:"transactionId", parentField:"id"} ]} );		
+		.linkDc("txline", "tx",{fields:[ {childField:"transactionId", parentField:"id"},{childField:"fromInventoryId", parentField:"fromInventoryId"},{childField:"toInventoryId", parentField:"toInventoryId"} ]} );		
 	}	 
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter"})	 
+		.addButton({name:"btnPostTransaction",text:"Post transaction", tooltip:"Post current transaction to create movement operations.",iconCls:"icon-gears",disabled:true
+			,handler: this.onBtnPostTransaction,scope:this,stateManager:{name:"record_is_clean", dc:"tx" , and: function(evnt) {return (!(evnt.dc.record.data.eventDate));}}	})	
+							 	
+		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter",height:40})	 
 		.addDcView("tx",{ name:"txList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List"})	 
-		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit",height:80})	 
+		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit",height:120,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnPostTransaction") ]}]})	 
 		.addDcView("txline",{ name:"txlineEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditList", frame:true})	 
 		.addDcFormView("txline",{ name:"txlineCtxFormView", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$CtxFormView",height:40})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
@@ -42,4 +45,13 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", {
 			.beginToolbar("tlbTxlineEditList", {dc:"txline"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
 	}
 
+
+	,onBtnPostTransaction: function() {
+		var s={modal:true, callbacks:{} };
+		try{ 
+			this._getDc_("tx").doService("postTransaction", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
+	}					 	
 });  

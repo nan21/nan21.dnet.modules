@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.Qualification", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.QualificationDs",
+	filterModel: "net.nan21.dnet.module.hr.skill.ds.model.QualificationDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.skill.ds.param.QualificationDsParam",
 	constructor : function(config) {
         config = config || {};

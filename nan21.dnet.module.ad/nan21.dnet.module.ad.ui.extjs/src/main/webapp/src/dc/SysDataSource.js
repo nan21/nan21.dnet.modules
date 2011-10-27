@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDataSource", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs",
+	filterModel: "net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.system.ds.param.SysDataSourceDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -25,8 +26,8 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter", {
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"model", dataIndex:"model",anchor:"-20",maxLength:255  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

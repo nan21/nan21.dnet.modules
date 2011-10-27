@@ -24,6 +24,28 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDs" , {
 		{field: "name", type: 'presence'}
 	]
 });
+
+Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDsFilter" , {
+	extend: 'Ext.data.Model',
+	fields: [ 
+		{name:"name",type:"string" },
+		{name:"active",type:"boolean", useNull:true },
+		{name:"description",type:"string" },
+		{name:"id",type:"int", useNull:true },
+		{name:"clientId",type:"int", useNull:true },
+		{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"createdBy",type:"string" },
+		{name:"modifiedBy",type:"string" },
+		{name:"version",type:"int", useNull:true },
+		{name:"virtualEntity",type:"boolean", useNull:true },
+		{name:"legalEntity",type:"boolean", useNull:true },
+		{name:"accountingEnabled",type:"boolean", useNull:true },
+		{name:"inventory",type:"boolean", useNull:true },
+		{name:"external",type:"boolean", useNull:true },
+		{name:"carrier",type:"boolean", useNull:true }
+	] 
+});
 	
 Ext.define("net.nan21.dnet.module.bd.org.ds.param.OrganizationTypeDsParam", {
 	extend: 'Ext.data.Model',

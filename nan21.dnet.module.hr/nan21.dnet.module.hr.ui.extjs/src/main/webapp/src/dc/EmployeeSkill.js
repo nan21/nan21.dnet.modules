@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.EmployeeSkill", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.EmployeeSkillDs",
+	filterModel: "net.nan21.dnet.module.hr.skill.ds.model.EmployeeSkillDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.skill.ds.param.EmployeeSkillDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,7 +28,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.EmployeeSkill$Filter", {
 		.addTextField({ name:"skill", dataIndex:"skill",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"skillLevel", dataIndex:"skillLevel",anchor:"-20",maxLength:255  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210,labelWidth:0 })
+		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210}) 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()

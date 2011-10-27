@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.job.ds.model.PositionDs",
+	filterModel: "net.nan21.dnet.module.hr.job.ds.model.PositionDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.job.ds.param.PositionDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -28,8 +29,8 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position$Filter", {
 		.addLov({ name:"jobCode", xtype:"net.nan21.dnet.module.hr.job.lovs.Jobs", dataIndex:"jobCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "jobId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor", width:250,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -79,8 +80,9 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position$Edit", {
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:300,labelAlign:"top",labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350})     
+		.addPanel({ name:"col2", layout:"anchor" , width:300, defaults:{
+labelAlign:"top"}})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.geo.ds.model.CountryDs",
+	filterModel: "net.nan21.dnet.module.bd.geo.ds.model.CountryDsFilter",
 	paramModel: "net.nan21.dnet.module.bd.geo.ds.param.CountryDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -28,9 +29,9 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$Filter", {
 		.addTextField({ name:"iso3", dataIndex:"iso3",anchor:"-20",maxLength:3,caseRestriction:"uppercase"  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col4", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col4", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -112,8 +113,8 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$Edit", {
 		.addTextField({ name:"createdBy", dataIndex:"createdBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:220,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350})     
+		.addPanel({ name:"col2", layout:"anchor" , width:220})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

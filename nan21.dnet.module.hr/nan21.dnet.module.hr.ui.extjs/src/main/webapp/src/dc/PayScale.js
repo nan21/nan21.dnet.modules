@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScale", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.grade.ds.model.PayScaleDs",
+	filterModel: "net.nan21.dnet.module.hr.grade.ds.model.PayScaleDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.grade.ds.param.PayScaleDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -76,8 +77,9 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScale$Edit", {
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60, width:300   })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:320,labelAlign:"top",labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300})     
+		.addPanel({ name:"col2", layout:"anchor" , width:320, defaults:{
+labelAlign:"top"}})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

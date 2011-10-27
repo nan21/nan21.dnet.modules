@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.report.ds.model.ReportDs",
+	filterModel: "net.nan21.dnet.module.ad.report.ds.model.ReportDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.report.ds.param.ReportDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,8 +28,8 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Filter", {
 		.addLov({ name:"reportServerName", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServerName",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -76,8 +77,8 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Edit", {
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addLov({ name:"reportServerName", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServerName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:400,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300})     
+		.addPanel({ name:"col2", layout:"anchor" , width:400})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

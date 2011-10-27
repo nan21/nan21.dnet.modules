@@ -32,7 +32,7 @@
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine</class>
-		 
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvOperation</class>  
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvBalance</class> 
 		 
 		<!-- Dependencies -->

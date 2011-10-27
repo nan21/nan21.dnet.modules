@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.payroll.ds.model.PayrollDs",
+	filterModel: "net.nan21.dnet.module.hr.payroll.ds.model.PayrollDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.payroll.ds.param.PayrollDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -73,8 +74,8 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit", {
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
 		.addCombo({ name:"periodType", xtype:"localcombo", dataIndex:"periodType",anchor:"-20" ,allowBlank:false,store:[ "calendar-month", "semi-month"]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:350,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300})     
+		.addPanel({ name:"col2", layout:"anchor" , width:350})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

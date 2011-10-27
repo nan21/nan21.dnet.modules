@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.AttachmentType", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeDs",
+	filterModel: "net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.data.ds.param.AttachmentTypeDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,8 +28,8 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.AttachmentType$Filter", {
 		.addCombo({ name:"category", xtype:"combo", dataIndex:"category",anchor:"-20",store:[ "image", "document"]  })
 		.addCombo({ name:"useInContext", xtype:"combo", dataIndex:"useInContext",anchor:"-20",store:[ "BusinessPartner.company", "BusinessPartner.person", "Product", "Employee"]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:280,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:280}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

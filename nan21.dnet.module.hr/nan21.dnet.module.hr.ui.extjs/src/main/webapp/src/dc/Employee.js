@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs",
+	filterModel: "net.nan21.dnet.module.hr.employee.ds.model.EmployeeDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.employee.ds.param.EmployeeDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -29,9 +30,9 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$Filter", {
 		.addCombo({ name:"maritalStatus", xtype:"combo", dataIndex:"maritalStatus",anchor:"-20",store:[ "single", "married", "divorced", "widow", "other"]  })
 		.addLov({ name:"employerCode", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"employerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "employerId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:220,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor", width:220,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"anchor", width:220,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:220}) 
+		.addPanel({ name:"col2", layout:"anchor", width:220}) 
+		.addPanel({ name:"col3", layout:"anchor", width:220}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -95,9 +96,9 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditMain", {
 		.addCombo({ name:"gender", xtype:"localcombo", dataIndex:"gender",anchor:"-20" ,store:[ "male", "female"]  })
 		.addCombo({ name:"maritalStatus", xtype:"localcombo", dataIndex:"maritalStatus",anchor:"-20" ,store:[ "single", "married", "divorced", "widow", "other"]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"anchor" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300})     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
+		.addPanel({ name:"col3", layout:"anchor" ,width:250})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -127,7 +128,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditOther", {
 		.addTextField({ name:"passportNo", dataIndex:"passportNo",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
 		.addTextField({ name:"sinNo", dataIndex:"sinNo",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
 		.addTextField({ name:"ssnNo", dataIndex:"ssnNo",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
-		.addCheckbox({ name:"assignToPosition", dataIndex:"assignToPosition"  })
+		.addCheckbox({ name:"assignToPosition", dataIndex:"assignToPosition",listeners:{change:{scope:this, fn:this.onAssignToPositionChange}}  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.employee.lovs.EmploymentTypes", dataIndex:"type",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addLov({ name:"positionCode", xtype:"net.nan21.dnet.module.hr.job.lovs.Positions", dataIndex:"positionCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "positionId"} ,{lovField:"name", dsField: "positionName"} ]  })
 		.addTextField({ name:"positionName", dataIndex:"positionName",anchor:"-20",noEdit:true  ,maxLength:255  })
@@ -136,9 +137,11 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditOther", {
 		.addLov({ name:"gradeCode", xtype:"net.nan21.dnet.module.hr.grade.lovs.Grades", dataIndex:"gradeCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "gradeId"} ]  })
 		.addLov({ name:"organizationCode", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"organizationCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:110 })     
-		.addPanel({ name:"col3", layout:"anchor" , width:350,labelWidth:110 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300})     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250, defaults:{
+labelAlign:"right",labelWidth:110}})     
+		.addPanel({ name:"col3", layout:"anchor" , width:350, defaults:{
+labelAlign:"right",labelWidth:110}})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -150,4 +153,37 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditOther", {
 		.addChildrenTo("col3",["type","positionName","jobName"])
 ;
 	}	
+	,onAssignToPositionChange: function() {	
+		var r = this._getController_().getRecord();
+		if (r.get("assignToPosition")) {
+			r.set("jobId", "");
+            r.set("jobCode", "");
+            r.set("jobName", "");
+
+            r.set("organizationId", "");
+            r.set("organizationCode", "");
+            r.set("organizationName", "");
+		} else {
+            r.set("positionId", "");
+            r.set("positionCode", "");
+            r.set("positionName", "");
+		}
+		this._doEnableJobOrPosition_(r.data.assignToPosition);
+	}
+	,_doEnableJobOrPosition_: function(enablePosition) {	
+		if (enablePosition) {
+			this._getElement_("positionCode").enable();
+			this._getElement_("jobCode").disable();
+            this._getElement_("organizationCode").disable();
+		} else {
+			this._getElement_("positionCode").disable();
+			this._getElement_("jobCode").enable();
+            this._getElement_("organizationCode").enable();
+		}
+	}
+	,_afterBind_: function(record) {	
+		if (record) {
+				this._doEnableJobOrPosition_(record.data.assignToPosition);
+			}
+	}
 });

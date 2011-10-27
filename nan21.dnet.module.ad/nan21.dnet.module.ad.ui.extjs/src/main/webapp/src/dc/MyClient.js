@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.client.ds.model.MyClientDs",
+	filterModel: "net.nan21.dnet.module.ad.client.ds.model.MyClientDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.client.ds.param.MyClientDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -33,8 +34,8 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient$Edit", {
 		.addTextField({ name:"createdBy", dataIndex:"createdBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"anchor" , width:220,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350})     
+		.addPanel({ name:"col3", layout:"anchor" , width:220})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

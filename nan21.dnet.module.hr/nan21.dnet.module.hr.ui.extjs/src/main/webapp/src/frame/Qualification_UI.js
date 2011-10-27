@@ -14,7 +14,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.frame.Qualification_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("qualif",{ name:"qualifFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.Qualification$Filter"})	 
+		.addDcFilterFormView("qualif",{ name:"qualifFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.Qualification$Filter",height:40})	 
 		.addDcView("qualif",{ name:"qualifEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.Qualification$EditList", frame:true})	 
 		.addDcView("skill",{ name:"skillCtxEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.QualificationSkill$CtxEditList", frame:true,title:"Required competence"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 

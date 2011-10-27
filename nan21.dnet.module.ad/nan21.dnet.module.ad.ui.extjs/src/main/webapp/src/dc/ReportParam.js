@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.ReportParam", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.report.ds.model.ReportParamDs",
+	filterModel: "net.nan21.dnet.module.ad.report.ds.model.ReportParamDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.report.ds.param.ReportParamDsParam",
 	constructor : function(config) {
         config = config || {};

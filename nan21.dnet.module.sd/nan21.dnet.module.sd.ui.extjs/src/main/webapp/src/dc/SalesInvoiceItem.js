@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemDs",
+	filterModel: "net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemDsFilter",
 	paramModel: "net.nan21.dnet.module.sd.invoice.ds.param.SalesInvoiceItemDsParam",
 	constructor : function(config) {
         config = config || {};

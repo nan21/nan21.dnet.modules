@@ -131,6 +131,10 @@ public class InvTransactionDsConv extends
                 .getTransactionType().getId() : null);
         ds.setTransactionType(((e.getTransactionType() != null)) ? e
                 .getTransactionType().getName() : null);
+        ds.setHasFromInventory(((e.getTransactionType() != null)) ? e
+                .getTransactionType().getHasFromInventory() : null);
+        ds.setHasToInventory(((e.getTransactionType() != null)) ? e
+                .getTransactionType().getHasToInventory() : null);
         ds.setFromInventoryId(((e.getFromInventory() != null)) ? e
                 .getFromInventory().getId() : null);
         ds.setFromInventory(((e.getFromInventory() != null)) ? e

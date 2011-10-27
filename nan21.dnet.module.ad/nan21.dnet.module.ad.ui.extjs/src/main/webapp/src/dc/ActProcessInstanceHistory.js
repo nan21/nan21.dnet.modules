@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceHistoryDs",
+	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceHistoryDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActProcessInstanceHistoryDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -28,9 +29,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filte
 		.addDateField({ name:"startTime", dataIndex:"startTime",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		.addDateField({ name:"endTime", dataIndex:"endTime",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:300,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:300}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col3", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

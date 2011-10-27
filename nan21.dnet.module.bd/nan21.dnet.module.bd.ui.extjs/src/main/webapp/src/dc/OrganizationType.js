@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationType", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDs",
+	filterModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDsFilter",
 	paramModel: "net.nan21.dnet.module.bd.org.ds.param.OrganizationTypeDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -29,9 +30,9 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationType$Filter", {
 		.addBooleanField({ name:"inventory", dataIndex:"inventory",anchor:"-20"  })
 		.addBooleanField({ name:"legalEntity", dataIndex:"legalEntity",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor", width:200,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"anchor", width:200,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor", width:200}) 
+		.addPanel({ name:"col3", layout:"anchor", width:200}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

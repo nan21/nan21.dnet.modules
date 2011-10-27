@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMap", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportMapDs",
+	filterModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportMapDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.impex.ds.param.ImportMapDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -47,13 +48,13 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMap$List", {
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name",width:120 })   	
+		.addTextColumn({ name:"description", dataIndex:"description", width:300 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
-		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 	  ;		   
 	}
 });
@@ -73,8 +74,8 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMap$Edit", {
 		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",noEdit:true, hideTrigger:true ,allowBlank:false})
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:400,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:400})     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.Course", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.training.ds.model.CourseDs",
+	filterModel: "net.nan21.dnet.module.hr.training.ds.model.CourseDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.training.ds.param.CourseDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,8 +28,8 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.Course$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.training.lovs.CourseTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -82,7 +83,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.Course$Edit", {
 		.addTextArea({ name:"requirements", dataIndex:"requirements",height:80,anchor:"-20"   })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.training.lovs.CourseTypes", dataIndex:"type",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:600,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:600})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

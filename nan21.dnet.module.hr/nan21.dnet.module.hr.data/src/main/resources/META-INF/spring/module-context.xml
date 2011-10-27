@@ -88,6 +88,34 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/hr/data/skill/RatingLevel.csv" />
 							</bean>
+							
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="SkillCategory" />
+								<property name="destPath" value="demo-data/hr/skill" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/hr/data/skill/SkillCategory.csv" />
+							</bean>
+							
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="40" />
+								<property name="dsName" value="SkillType" />
+								<property name="destPath" value="demo-data/hr/skill" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/hr/data/skill/SkillType.csv" />
+							</bean>
+							
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="50" />
+								<property name="dsName" value="Skill" />
+								<property name="destPath" value="demo-data/hr/skill" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/hr/data/skill/Skill.csv" />
+							</bean>
+							
 							 
 						</list>
 					</property>

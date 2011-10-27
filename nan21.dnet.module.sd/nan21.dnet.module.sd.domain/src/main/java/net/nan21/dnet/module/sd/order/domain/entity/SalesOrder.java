@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -38,6 +39,7 @@ import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType;
 import net.nan21.dnet.module.sd.order.domain.eventhandler.SalesOrderEventHandler;
 import net.nan21.dnet.module.sd.price.domain.entity.PriceList;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -165,7 +167,8 @@ public class SalesOrder implements Serializable, IModelWithId,
     @JoinColumn(name = "SHIPTOLOCATION_ID", referencedColumnName = "ID")
     private Location shipToLocation;
 
-    @OneToMany(fetch = FetchType.LAZY, targetEntity = SalesOrderItem.class, mappedBy = "salesOrder")
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = SalesOrderItem.class, mappedBy = "salesOrder", cascade = CascadeType.ALL)
+    @CascadeOnDelete
     private Collection<SalesOrderItem> lines;
 
     /* ============== getters - setters ================== */

@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefNodeField", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeFieldDs",
+	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeFieldDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.WfDefNodeFieldDsParam",
 	constructor : function(config) {
         config = config || {};

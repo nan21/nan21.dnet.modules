@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDs",
+	filterModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDsFilter",
 	paramModel: "net.nan21.dnet.module.bd.org.ds.param.OrganizationHierarchyDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -98,8 +99,8 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Edit", {
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:40,anchor:"-20"   })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300})     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

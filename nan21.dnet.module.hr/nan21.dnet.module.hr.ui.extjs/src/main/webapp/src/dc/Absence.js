@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.Absence", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.time.ds.model.AbsenceDs",
+	filterModel: "net.nan21.dnet.module.hr.time.ds.model.AbsenceDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.time.ds.param.AbsenceDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -32,16 +33,16 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$Filter", {
 		.addDateField({ name:"to", paramIndex:"to",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col3", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["employee","posted"])
-		.addChildrenTo("col2",["type","reason"])
+		.addChildrenTo("main",["col1","col3","col2"])
+		.addChildrenTo("col1",["employee","type","reason"])
+		.addChildrenTo("col2",["posted"])
 		.addChildrenTo("col3",["from","to"])
 	}
 }); 
@@ -90,9 +91,10 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$Edit", {
 		.addNumberField({ name:"hours", dataIndex:"hours",anchor:"-20" ,allowBlank:false , style: "text-align:right;" })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"anchor" , width:400,labelAlign:"top",labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300})     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
+		.addPanel({ name:"col3", layout:"anchor" , width:400, defaults:{
+labelAlign:"top"}})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

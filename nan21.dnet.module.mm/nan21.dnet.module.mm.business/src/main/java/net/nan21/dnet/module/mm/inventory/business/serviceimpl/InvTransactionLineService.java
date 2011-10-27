@@ -7,7 +7,6 @@ package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
-import net.nan21.dnet.module.mm.inventory.business.service.IInvTransactionLineService;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction;
 import net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator;
 import net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory;
@@ -17,8 +16,7 @@ import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine;
 
 public class InvTransactionLineService extends
-        AbstractEntityService<InvTransactionLine> implements
-        IInvTransactionLineService {
+        AbstractEntityService<InvTransactionLine> {
 
     public InvTransactionLineService() {
         super();

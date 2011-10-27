@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.CompanyLegalForm", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.base.ds.model.CompanyLegalFormDs",
+	filterModel: "net.nan21.dnet.module.bp.base.ds.model.CompanyLegalFormDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.base.ds.param.CompanyLegalFormDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -26,8 +27,8 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.CompanyLegalForm$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"country", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"country",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

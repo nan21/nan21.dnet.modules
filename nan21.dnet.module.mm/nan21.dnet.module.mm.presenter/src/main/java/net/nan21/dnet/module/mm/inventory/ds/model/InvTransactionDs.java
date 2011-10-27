@@ -27,6 +27,8 @@ public class InvTransactionDs extends AbstractDsModel<InvTransaction> implements
     public static final String fVERSION = "version";
     public static final String fTRANSACTIONTYPEID = "transactionTypeId";
     public static final String fTRANSACTIONTYPE = "transactionType";
+    public static final String fHASFROMINVENTORY = "hasFromInventory";
+    public static final String fHASTOINVENTORY = "hasToInventory";
     public static final String fFROMINVENTORYID = "fromInventoryId";
     public static final String fFROMINVENTORY = "fromInventory";
     public static final String fTOINVENTORYID = "toInventoryId";
@@ -59,6 +61,12 @@ public class InvTransactionDs extends AbstractDsModel<InvTransaction> implements
 
     @DsField(join = "left", path = "transactionType.name")
     private String transactionType;
+
+    @DsField(join = "left", path = "transactionType.hasFromInventory")
+    private Boolean hasFromInventory;
+
+    @DsField(join = "left", path = "transactionType.hasToInventory")
+    private Boolean hasToInventory;
 
     @DsField(join = "left", path = "fromInventory.id")
     private Long fromInventoryId;
@@ -154,6 +162,22 @@ public class InvTransactionDs extends AbstractDsModel<InvTransaction> implements
 
     public void setTransactionType(String transactionType) {
         this.transactionType = transactionType;
+    }
+
+    public Boolean getHasFromInventory() {
+        return this.hasFromInventory;
+    }
+
+    public void setHasFromInventory(Boolean hasFromInventory) {
+        this.hasFromInventory = hasFromInventory;
+    }
+
+    public Boolean getHasToInventory() {
+        return this.hasToInventory;
+    }
+
+    public void setHasToInventory(Boolean hasToInventory) {
+        this.hasToInventory = hasToInventory;
     }
 
     public Long getFromInventoryId() {

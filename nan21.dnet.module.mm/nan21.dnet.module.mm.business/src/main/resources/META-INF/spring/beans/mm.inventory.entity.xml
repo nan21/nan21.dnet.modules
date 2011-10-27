@@ -26,10 +26,13 @@
 	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvTransactionActionService"  />  
  
  	<bean id="InvTransactionService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvTransactionService"  />  
+	  		class="net.nan21.dnet.module.mm.inventory.business.serviceext.InvTransactionService"  />  
  
  	<bean id="InvTransactionLineService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvTransactionLineService"  />  
+	  		class="net.nan21.dnet.module.mm.inventory.business.serviceext.InvTransactionLineService"  />  
+ 
+ 	<bean id="InvOperationService" scope="prototype"
+	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvOperationService"  />  
  
  	<bean id="InvBalanceService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvBalanceService"  />  

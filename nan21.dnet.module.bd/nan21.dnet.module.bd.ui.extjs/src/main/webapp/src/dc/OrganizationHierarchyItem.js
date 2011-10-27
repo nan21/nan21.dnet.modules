@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyItemDs",
+	filterModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyItemDsFilter",
 	paramModel: "net.nan21.dnet.module.bd.org.ds.param.OrganizationHierarchyItemDsParam",
 	constructor : function(config) {
         config = config || {};

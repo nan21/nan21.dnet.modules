@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScalePoint", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.grade.ds.model.PayScalePointDs",
+	filterModel: "net.nan21.dnet.module.hr.grade.ds.model.PayScalePointDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.grade.ds.param.PayScalePointDsParam",
 	constructor : function(config) {
         config = config || {};

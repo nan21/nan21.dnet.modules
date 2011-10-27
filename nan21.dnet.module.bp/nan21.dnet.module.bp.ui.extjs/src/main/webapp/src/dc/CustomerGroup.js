@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.CustomerGroup", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.base.ds.model.CustomerGroupDs",
+	filterModel: "net.nan21.dnet.module.bp.base.ds.model.CustomerGroupDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.base.ds.param.CustomerGroupDsParam",
 	constructor : function(config) {
         config = config || {};

@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.VendorGroup", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.base.ds.model.VendorGroupDs",
+	filterModel: "net.nan21.dnet.module.bp.base.ds.model.VendorGroupDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.base.ds.param.VendorGroupDsParam",
 	constructor : function(config) {
         config = config || {};

@@ -144,6 +144,16 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvTransactionDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="postTransaction">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.mm._presenterdelegates.inventory.InvTransactionPD"/>
+	  				<constructor-arg name="methodName" value="postTransaction" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvTransaction" />
@@ -159,6 +169,17 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvTransactionLine" />
 		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionLineDs" />
+	</bean>
+   
+ 	<bean id="InvOperationDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvOperationDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvOperation" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvOperationDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="InvOperation" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvOperationDs" />
 	</bean>
    
  	<bean id="InvBalanceDsService" scope="prototype"

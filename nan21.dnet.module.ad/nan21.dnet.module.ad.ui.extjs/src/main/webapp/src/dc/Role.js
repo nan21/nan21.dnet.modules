@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.Role", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.usr.ds.model.RoleDs",
+	filterModel: "net.nan21.dnet.module.ad.usr.ds.model.RoleDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.usr.ds.param.RoleDsParam",
 	constructor : function(config) {
         config = config || {};

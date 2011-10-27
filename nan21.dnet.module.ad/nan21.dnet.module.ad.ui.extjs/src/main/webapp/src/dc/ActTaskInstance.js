@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDs",
+	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActTaskInstanceDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -25,8 +26,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter", {
 		.addCheckbox({ name:"hideActive" ,paramIndex:"hideActive" ,listeners:{check:{scope:this, fn:this._doQuery_}} })
 		.addCheckbox({ name:"hideCompleted" ,paramIndex:"hideCompleted" ,listeners:{check:{scope:this, fn:this._doQuery_}} })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelAlign:"right",labelWidth:150 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelAlign:"right",labelWidth:150 })
+		.addPanel({ name:"col1", layout:"anchor",width:210, defaults:{
+labelAlign:"right",labelWidth:150}}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210, defaults:{
+labelAlign:"right",labelWidth:150}}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -75,7 +78,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm", {
 		this._getBuilder_()	
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250,labelWidth:0 })     
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250})     
 		;     
 	}
 	,_linkElements_: function () {

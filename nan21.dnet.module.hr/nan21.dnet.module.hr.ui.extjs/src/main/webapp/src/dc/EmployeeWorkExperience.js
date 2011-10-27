@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeWorkExperience", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.employee.ds.model.EmployeeWorkExperienceDs",
+	filterModel: "net.nan21.dnet.module.hr.employee.ds.model.EmployeeWorkExperienceDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.employee.ds.param.EmployeeWorkExperienceDsParam",
 	constructor : function(config) {
         config = config || {};

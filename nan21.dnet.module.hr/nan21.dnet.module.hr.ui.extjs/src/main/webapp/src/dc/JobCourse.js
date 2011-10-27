@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.training.ds.model.JobCourseDs",
+	filterModel: "net.nan21.dnet.module.hr.training.ds.model.JobCourseDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.training.ds.param.JobCourseDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -24,7 +25,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"courseCode", dataIndex:"courseCode",anchor:"-20",maxLength:32  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210,labelWidth:0 })
+		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210}) 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()

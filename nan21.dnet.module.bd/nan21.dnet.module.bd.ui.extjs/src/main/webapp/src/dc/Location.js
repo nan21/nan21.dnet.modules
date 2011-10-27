@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.geo.ds.model.LocationDs",
+	filterModel: "net.nan21.dnet.module.bd.geo.ds.model.LocationDsFilter",
 	paramModel: "net.nan21.dnet.module.bd.geo.ds.param.LocationDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -62,9 +63,9 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$EditCtx", {
 		.addCheckbox({ name:"shipping", dataIndex:"shipping"  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:250,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"anchor" , width:200,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:250})     
+		.addPanel({ name:"col2", layout:"anchor" , width:350})     
+		.addPanel({ name:"col3", layout:"anchor" , width:200})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.DeliveryMethod", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.base.ds.model.DeliveryMethodDs",
+	filterModel: "net.nan21.dnet.module.bp.base.ds.model.DeliveryMethodDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.base.ds.param.DeliveryMethodDsParam",
 	constructor : function(config) {
         config = config || {};

@@ -65,6 +65,16 @@ public class InvTransactionType implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_NAME = "InvTransactionType.findByName";
 
+    /** HasFromInventory. */
+    @Column(name = "HASFROMINVENTORY", nullable = false)
+    @NotNull
+    private Boolean hasFromInventory;
+
+    /** HasToInventory. */
+    @Column(name = "HASTOINVENTORY", nullable = false)
+    @NotNull
+    private Boolean hasToInventory;
+
     /** Name. */
     @Column(name = "NAME", nullable = false)
     @NotBlank
@@ -126,6 +136,22 @@ public class InvTransactionType implements Serializable, IModelWithId,
     private InvTransactionAction action;
 
     /* ============== getters - setters ================== */
+
+    public Boolean getHasFromInventory() {
+        return this.hasFromInventory;
+    }
+
+    public void setHasFromInventory(Boolean hasFromInventory) {
+        this.hasFromInventory = hasFromInventory;
+    }
+
+    public Boolean getHasToInventory() {
+        return this.hasToInventory;
+    }
+
+    public void setHasToInventory(Boolean hasToInventory) {
+        this.hasToInventory = hasToInventory;
+    }
 
     public String getName() {
         return this.name;
@@ -241,6 +267,12 @@ public class InvTransactionType implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.hasFromInventory == null) {
+            event.updateAttributeWithObject("hasFromInventory", false);
+        }
+        if (this.hasToInventory == null) {
+            event.updateAttributeWithObject("hasToInventory", false);
+        }
         if (this.active == null) {
             event.updateAttributeWithObject("active", false);
         }

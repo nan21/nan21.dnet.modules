@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionDs",
+	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActProcessDefinitionDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -28,9 +29,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter", {
 		.addTextField({ name:"resourceName", dataIndex:"resourceName",anchor:"-20",maxLength:255  })
 		.addLov({ name:"deployment", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActDeployments", paramIndex:"deployment",anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "deploymentId"} ,{lovField:"fullName", dsParam: "deployment"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"anchor", width:280,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col3", layout:"anchor", width:280}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

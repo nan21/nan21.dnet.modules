@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs",
+	filterModel: "net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.md.ds.param.BusinessPartnerDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -34,10 +35,10 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:220,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor", width:220,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"anchor", width:220,labelWidth:0 })
-		.addPanel({ name:"col4", layout:"anchor", width:220,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:220}) 
+		.addPanel({ name:"col2", layout:"anchor", width:220}) 
+		.addPanel({ name:"col3", layout:"anchor", width:220}) 
+		.addPanel({ name:"col4", layout:"anchor", width:220}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -91,7 +92,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Create", {
 		this._getBuilder_()	
 		.addCombo({ name:"type", xtype:"localcombo", dataIndex:"type",anchor:"-20" ,store:[ "person", "company"]  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:250,labelWidth:0 })     
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:250})     
 		;     
 	}
 	,_linkElements_: function () {
@@ -126,11 +127,11 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit", {
 		.addDateField({ name:"registrationDate", dataIndex:"registrationDate",anchor:"-20" })
 		.addLov({ name:"legalForm", xtype:"net.nan21.dnet.module.bp.base.lovs.CompanyLegalForms", dataIndex:"legalForm",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "legalFormId"} ],filterFieldMapping: [{lovField:"countryId", dsField: "countryId"} ]  })
 		//containers
-		.addPanel({ name:"formCompanyCol1", layout:"anchor" , width:500, height:40,labelWidth:0 })     
-		.addPanel({ name:"formCompanyCol2", layout:"anchor" , width:250,labelWidth:0 })     
-		.addPanel({ name:"formPersonCol1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"formPersonCol2", layout:"anchor" , width:250,labelWidth:0 })     
-		.addPanel({ name:"col1", layout:"anchor" , width:250,labelWidth:0 })     
+		.addPanel({ name:"formCompanyCol1", layout:"anchor" , width:500, height:40})     
+		.addPanel({ name:"formCompanyCol2", layout:"anchor" , width:250})     
+		.addPanel({ name:"formPersonCol1", layout:"anchor" , width:300})     
+		.addPanel({ name:"formPersonCol2", layout:"anchor" , width:250})     
+		.addPanel({ name:"col1", layout:"anchor" , width:250})     
 		.addPanel({ name:"formCompany" , width:550 })      	 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		.addPanel({ name:"formPerson", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, width:550 }) 

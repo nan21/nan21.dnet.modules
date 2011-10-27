@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarCallDs",
+	filterModel: "net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarCallDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.calendar.ds.param.MyCalendarCallDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -30,10 +31,10 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$Filter", {
 		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"bpartnerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "bpartnerId"} ]  })
 		.addLov({ name:"contact", xtype:"net.nan21.dnet.module.bp.md.lovs.BpContacts", dataIndex:"contact",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "contactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "bpartnerId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col4", layout:"anchor", width:250,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col3", layout:"anchor",width:210}) 
+		.addPanel({ name:"col4", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -117,9 +118,9 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$Edit", {
 		.addLov({ name:"contact", xtype:"net.nan21.dnet.module.bp.md.lovs.BpContacts", dataIndex:"contact",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "contactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "bpartnerId"} ]  })
 		.addNumberField({ name:"id", dataIndex:"id",anchor:"-20",noEdit:true  ,allowBlank:false , style: "text-align:right;" })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:400,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:400,labelWidth:0 })     
-		.addPanel({ name:"row2", layout:"anchor" , width:800,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:400})     
+		.addPanel({ name:"col2", layout:"anchor" , width:400})     
+		.addPanel({ name:"row2", layout:"anchor" , width:800})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
 		.addPanel({ name:"row1", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
 		;     

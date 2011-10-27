@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderStatus", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusDs",
+	filterModel: "net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusDsFilter",
 	paramModel: "net.nan21.dnet.module.sd.order.ds.param.SalesOrderStatusDsParam",
 	constructor : function(config) {
         config = config || {};

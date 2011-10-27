@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.training.ds.model.PositionCourseDs",
+	filterModel: "net.nan21.dnet.module.hr.training.ds.model.PositionCourseDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.training.ds.param.PositionCourseDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -24,7 +25,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"courseName", dataIndex:"courseName",anchor:"-20",maxLength:255  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210,labelWidth:0 })
+		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210}) 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()

@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.geo.ds.model.RegionDs",
+	filterModel: "net.nan21.dnet.module.bd.geo.ds.model.RegionDsFilter",
 	paramModel: "net.nan21.dnet.module.bd.geo.ds.param.RegionDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,16 +28,19 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Filter", {
 		.addTextField({ name:"iso", dataIndex:"iso",anchor:"-20",maxLength:32  })
 		.addNumberField({ name:"countryId", dataIndex:"countryId",anchor:"-20"  })
 		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col3", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["countryCode","iso"])
+		.addChildrenTo("col3",["active"])
 	}
 }); 
  		 
@@ -132,9 +136,9 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Edit", {
 		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",noEdit:true, hideTrigger:true ,allowBlank:false})
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:250,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"anchor" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300})     
+		.addPanel({ name:"col2", layout:"anchor" , width:250})     
+		.addPanel({ name:"col3", layout:"anchor" , width:300})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

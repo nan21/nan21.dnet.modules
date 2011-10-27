@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Job", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.job.ds.model.JobDs",
+	filterModel: "net.nan21.dnet.module.hr.job.ds.model.JobDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.job.ds.param.JobDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,8 +28,8 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Job$Filter", {
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.job.lovs.JobTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor", width:250,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -98,8 +99,9 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Job$Edit", {
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.job.lovs.JobTypes", dataIndex:"type",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:300,labelAlign:"top",labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350})     
+		.addPanel({ name:"col2", layout:"anchor" , width:300, defaults:{
+labelAlign:"top"}})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

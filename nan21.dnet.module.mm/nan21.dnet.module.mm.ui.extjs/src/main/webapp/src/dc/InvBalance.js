@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.inventory.ds.model.InvBalanceDs",
+	filterModel: "net.nan21.dnet.module.mm.inventory.ds.model.InvBalanceDsFilter",
 	paramModel: "net.nan21.dnet.module.mm.inventory.ds.param.InvBalanceDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,8 +28,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance$Filter", {
 		.addLov({ name:"item", xtype:"net.nan21.dnet.module.mm.md.lovs.Products", dataIndex:"item",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "itemId"} ]  })
 		.addLov({ name:"uom", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"uom",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "uomId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
+		.addPanel({ name:"col2", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

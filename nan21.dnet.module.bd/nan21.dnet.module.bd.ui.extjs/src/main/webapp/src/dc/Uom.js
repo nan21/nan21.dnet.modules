@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.Uom", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.uom.ds.model.UomDs",
+	filterModel: "net.nan21.dnet.module.bd.uom.ds.model.UomDsFilter",
 	paramModel: "net.nan21.dnet.module.bd.uom.ds.param.UomDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,8 +28,8 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.Uom$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomType", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -100,8 +101,8 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.Uom$Edit", {
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomType", dataIndex:"type",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:250,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350})     
+		.addPanel({ name:"col2", layout:"anchor" , width:250})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

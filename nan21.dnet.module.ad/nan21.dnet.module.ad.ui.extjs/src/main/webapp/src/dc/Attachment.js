@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Attachment", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.data.ds.model.AttachmentDs",
+	filterModel: "net.nan21.dnet.module.ad.data.ds.model.AttachmentDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.data.ds.param.AttachmentDsParam",
 	constructor : function(config) {
         config = config || {};

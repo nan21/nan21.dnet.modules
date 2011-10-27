@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.client.ds.model.ClientDs",
+	filterModel: "net.nan21.dnet.module.ad.client.ds.model.ClientDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.client.ds.param.ClientDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -26,8 +27,8 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Filter", {
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addBooleanField({ name:"systemClient", dataIndex:"systemClient",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -81,8 +82,8 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Edit", {
 		.addTextField({ name:"tempPath", dataIndex:"tempPath",anchor:"-20" ,maxLength:255  })
 		.addCheckbox({ name:"systemClient", dataIndex:"systemClient"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:400,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350})     
+		.addPanel({ name:"col2", layout:"anchor" , width:400})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -114,9 +115,9 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Create", {
 		.addTextField({ name:"adminPassword", paramIndex:"adminPassword",anchor:"-20"   })
 		.addCheckbox({ name:"systemClient", dataIndex:"systemClient"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:250,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"anchor" , width:400,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350})     
+		.addPanel({ name:"col2", layout:"anchor" , width:250})     
+		.addPanel({ name:"col3", layout:"anchor" , width:400})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

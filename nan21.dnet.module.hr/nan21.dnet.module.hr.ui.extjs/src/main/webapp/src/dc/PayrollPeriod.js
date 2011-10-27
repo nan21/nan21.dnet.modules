@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDs",
+	filterModel: "net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.payroll.ds.param.PayrollPeriodDsParam",
 	constructor : function(config) {
         config = config || {};

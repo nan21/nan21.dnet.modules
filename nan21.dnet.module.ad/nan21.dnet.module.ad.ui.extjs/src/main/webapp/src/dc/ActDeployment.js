@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentDs",
+	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActDeploymentDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -26,8 +27,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter", {
 		.addDateField({ name:"from", paramIndex:"from",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		.addDateField({ name:"to", paramIndex:"to",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

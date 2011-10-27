@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductCategory", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDs",
+	filterModel: "net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDsFilter",
 	paramModel: "net.nan21.dnet.module.mm.md.ds.param.ProductCategoryDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,8 +28,8 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductCategory$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addBooleanField({ name:"folder", dataIndex:"folder",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210, height:50,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210, height:50}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

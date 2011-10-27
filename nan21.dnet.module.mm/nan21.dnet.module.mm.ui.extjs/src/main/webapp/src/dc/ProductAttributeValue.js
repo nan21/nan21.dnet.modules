@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs",
+	filterModel: "net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDsFilter",
 	paramModel: "net.nan21.dnet.module.mm.md.ds.param.ProductAttributeValueDsParam",
 	constructor : function(config) {
         config = config || {};

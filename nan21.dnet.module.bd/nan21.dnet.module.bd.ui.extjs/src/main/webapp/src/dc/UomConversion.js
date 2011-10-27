@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.UomConversion", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.uom.ds.model.UomConversionDs",
+	filterModel: "net.nan21.dnet.module.bd.uom.ds.model.UomConversionDsFilter",
 	paramModel: "net.nan21.dnet.module.bd.uom.ds.param.UomConversionDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -26,8 +27,8 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.UomConversion$Filter", {
 		.addLov({ name:"targetCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"targetCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "targetId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210, height:50,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210, height:50}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

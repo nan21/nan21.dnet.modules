@@ -22,9 +22,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI", {
 		.addButton({name:"btnGetProcessDiagram",text:"Show diagram", tooltip:"Show diagram for this process definition",disabled:true
 			,handler: this.onBtnGetProcessDiagram,scope:this,stateManager:{name:"record_status_is_edit", dc:"dcProcess" }	})	
 							 	
-		.addDcFilterFormView("dcProcess",{ name:"filterProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter"})	 
+		.addDcFilterFormView("dcProcess",{ name:"filterProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter",height:40})	 
 		.addDcView("dcProcess",{ name:"listProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List"})	 
-		.addDcFormView("dcProcess",{ name:"formProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit",height:100,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnDeploy") ,this._elems_.get("btnGetProcessDiagram") ]}})	 
+		.addDcFormView("dcProcess",{ name:"formProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit",height:100,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnDeploy") ,this._elems_.get("btnGetProcessDiagram") ]}]})	 
 		.addDcView("dcNode",{ name:"elistNode", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefNode$CtxEditList", frame:true})	 
 		.addDcView("dcField",{ name:"elistField", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefNodeField$CtxEditList", frame:true,width:500})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 

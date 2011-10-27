@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.job.frame.Job_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("job",{ name:"jobFilter", xtype:"net.nan21.dnet.module.hr.job.dc.Job$Filter"})	 
+		.addDcFilterFormView("job",{ name:"jobFilter", xtype:"net.nan21.dnet.module.hr.job.dc.Job$Filter",height:80})	 
 		.addDcView("job",{ name:"jobList", xtype:"net.nan21.dnet.module.hr.job.dc.Job$List"})	 
 		.addDcView("job",{ name:"jobEditList", xtype:"net.nan21.dnet.module.hr.job.dc.Job$EditList", frame:true})	 
 		.addDcFormView("job",{ name:"jobEdit", xtype:"net.nan21.dnet.module.hr.job.dc.Job$Edit",height:120})	 

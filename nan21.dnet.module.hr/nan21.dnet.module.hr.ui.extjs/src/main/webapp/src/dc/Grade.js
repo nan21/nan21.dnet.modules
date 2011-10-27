@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.Grade", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.grade.ds.model.GradeDs",
+	filterModel: "net.nan21.dnet.module.hr.grade.ds.model.GradeDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.grade.ds.param.GradeDsParam",
 	constructor : function(config) {
         config = config || {};

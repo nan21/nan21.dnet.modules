@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeDs",
+	filterModel: "net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeDsFilter",
 	paramModel: "net.nan21.dnet.module.mm.inventory.ds.param.InvTransactionSourceTypeDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -25,8 +26,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType$Filte
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

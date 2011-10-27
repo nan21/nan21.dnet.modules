@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Task", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarTaskDs",
+	filterModel: "net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarTaskDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.calendar.ds.param.MyCalendarTaskDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -29,10 +30,10 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Task$Filter", {
 		.addLov({ name:"priorityName", xtype:"net.nan21.dnet.module.bp.calendar.lovs.CalendarEventPrioritiesTask", dataIndex:"priorityName",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
 		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"bpartnerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "bpartnerId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col4", layout:"anchor", width:250,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col3", layout:"anchor",width:210}) 
+		.addPanel({ name:"col4", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -126,9 +127,9 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Task$Edit", {
 		.addTextField({ name:"createdBy", dataIndex:"createdBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:400,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:400,labelWidth:0 })     
-		.addPanel({ name:"row2", layout:"anchor" , width:800,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:400})     
+		.addPanel({ name:"col2", layout:"anchor" , width:400})     
+		.addPanel({ name:"row2", layout:"anchor" , width:800})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
 		.addPanel({ name:"row1", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
 		;     

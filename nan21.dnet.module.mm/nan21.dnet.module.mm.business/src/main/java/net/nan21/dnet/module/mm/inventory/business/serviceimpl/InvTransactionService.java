@@ -8,14 +8,15 @@ package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.mm.inventory.business.service.IInvTransactionService;
+import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction;
+import net.nan21.dnet.module.mm._businessdelegates.inventory.InvTransactionBD;
 
 public class InvTransactionService extends
-        AbstractEntityService<InvTransaction> implements IInvTransactionService {
+        AbstractEntityService<InvTransaction> {
 
     public InvTransactionService() {
         super();
@@ -68,6 +69,23 @@ public class InvTransactionService extends
                         "select e from InvTransaction e where e.toInventory.id = :pToInventoryId",
                         InvTransaction.class)
                 .setParameter("pToInventoryId", toInventoryId).getResultList();
+    }
+
+    public List<InvTransaction> findByLines(InvTransactionLine lines) {
+        return this.findByLinesId(lines.getId());
+    }
+
+    public List<InvTransaction> findByLinesId(Long linesId) {
+        return (List<InvTransaction>) this.em
+                .createQuery(
+                        "select e from InvTransaction e where e.lines.id = :pLinesId",
+                        InvTransaction.class).setParameter("pLinesId", linesId)
+                .getResultList();
+    }
+
+    public void doPostTransaction(Long transactionId) throws Exception {
+        this.getBusinessDelegate(InvTransactionBD.class).postTransaction(
+                transactionId);
     }
 
 }

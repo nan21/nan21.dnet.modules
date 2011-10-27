@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeType", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.md.ds.model.ProductAttributeTypeDs",
+	filterModel: "net.nan21.dnet.module.mm.md.ds.model.ProductAttributeTypeDsFilter",
 	paramModel: "net.nan21.dnet.module.mm.md.ds.param.ProductAttributeTypeDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -26,8 +27,8 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeType$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"category", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeCategory", dataIndex:"category",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

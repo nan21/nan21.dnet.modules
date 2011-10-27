@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementType", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.payroll.ds.model.ElementTypeDs",
+	filterModel: "net.nan21.dnet.module.hr.payroll.ds.model.ElementTypeDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.payroll.ds.param.ElementTypeDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -26,8 +27,8 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementType$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"category", xtype:"net.nan21.dnet.module.hr.payroll.lovs.ElementCategories", dataIndex:"category",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

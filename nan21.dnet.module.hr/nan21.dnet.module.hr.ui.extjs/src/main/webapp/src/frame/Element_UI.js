@@ -16,7 +16,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Element_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("elems",{ name:"exprFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Filter"})	 
+		.addDcFilterFormView("elems",{ name:"exprFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Filter",height:80})	 
 		.addDcView("elems",{ name:"exprList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$List"})	 
 		.addDcFormView("elems",{ name:"exprEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Edit",height:120})	 
 		.addDcView("vars",{ name:"varEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Variable$CtxEditList", frame:true})	 

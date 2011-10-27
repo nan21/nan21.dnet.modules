@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.md.ds.model.ContactDs",
+	filterModel: "net.nan21.dnet.module.bp.md.ds.model.ContactDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.md.ds.param.ContactDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,8 +28,8 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$Filter", {
 		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"bpartnerCode",anchor:"-20",maxLength:32,retFieldMapping: []  })
 		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender",anchor:"-20",store:[ "male", "female"]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:220,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor", width:250,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:220}) 
+		.addPanel({ name:"col2", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -105,9 +106,9 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$Edit", {
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"bpartnerCode",anchor:"-20" ,maxLength:32,retFieldMapping: []  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:250,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"anchor" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300})     
+		.addPanel({ name:"col2", layout:"anchor" , width:250})     
+		.addPanel({ name:"col3", layout:"anchor" , width:300})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

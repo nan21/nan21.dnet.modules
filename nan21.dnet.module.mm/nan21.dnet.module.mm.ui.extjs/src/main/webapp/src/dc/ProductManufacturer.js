@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductManufacturer", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDs",
+	filterModel: "net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDsFilter",
 	paramModel: "net.nan21.dnet.module.mm.md.ds.param.ProductManufacturerDsParam",
 	constructor : function(config) {
         config = config || {};

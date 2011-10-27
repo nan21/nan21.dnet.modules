@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.Bank", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.base.ds.model.BankDs",
+	filterModel: "net.nan21.dnet.module.bp.base.ds.model.BankDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.base.ds.param.BankDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,8 +28,8 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.Bank$Filter", {
 		.addTextField({ name:"swiftCode", dataIndex:"swiftCode",anchor:"-20",maxLength:32  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:250, height:50,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor", width:250,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:250, height:50}) 
+		.addPanel({ name:"col2", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

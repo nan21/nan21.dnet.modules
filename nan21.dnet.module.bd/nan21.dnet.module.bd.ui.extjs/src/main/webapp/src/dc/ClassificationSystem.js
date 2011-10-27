@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemDs",
+	filterModel: "net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemDsFilter",
 	paramModel: "net.nan21.dnet.module.bd.standards.ds.param.ClassificationSystemDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -28,9 +29,9 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$Filter", 
 		.addBooleanField({ name:"internal", dataIndex:"internal",anchor:"-20"  })
 		.addCombo({ name:"useInContext", xtype:"combo", dataIndex:"useInContext",anchor:"-20",store:[ "BusinessPartner.company", "BusinessPartner.person", "Product"]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col3", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

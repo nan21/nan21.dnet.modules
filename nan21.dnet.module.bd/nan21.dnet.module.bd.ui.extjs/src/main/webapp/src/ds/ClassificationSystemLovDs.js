@@ -11,6 +11,18 @@ Ext.define("net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemLovD
 		{name:"useInContext",type:"string" }
 	]
 });
+
+Ext.define("net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemLovDsFilter" , {
+	extend: 'Ext.data.Model',
+	fields: [ 
+		{name:"id",type:"int", useNull:true },
+		{name:"clientId",type:"int", useNull:true },
+		{name:"code",type:"string" },
+		{name:"name",type:"string" },
+		{name:"active",type:"boolean", useNull:true },
+		{name:"useInContext",type:"string" }
+	] 
+});
 	
 Ext.define("net.nan21.dnet.module.bd.standards.ds.param.ClassificationSystemLovDsParam", {
 	extend: 'Ext.data.Model',

@@ -33,6 +33,8 @@ public class InvTransactionTypeDs extends AbstractDsModel<InvTransactionType>
     public static final String fSOURCETYPE = "sourceType";
     public static final String fACTIONID = "actionId";
     public static final String fACTION = "action";
+    public static final String fHASFROMINVENTORY = "hasFromInventory";
+    public static final String fHASTOINVENTORY = "hasToInventory";
 
     @DsField()
     private String name;
@@ -75,6 +77,12 @@ public class InvTransactionTypeDs extends AbstractDsModel<InvTransactionType>
 
     @DsField(join = "left", path = "action.name")
     private String action;
+
+    @DsField()
+    private Boolean hasFromInventory;
+
+    @DsField()
+    private Boolean hasToInventory;
 
     public InvTransactionTypeDs() {
         super();
@@ -195,6 +203,22 @@ public class InvTransactionTypeDs extends AbstractDsModel<InvTransactionType>
 
     public void setAction(String action) {
         this.action = action;
+    }
+
+    public Boolean getHasFromInventory() {
+        return this.hasFromInventory;
+    }
+
+    public void setHasFromInventory(Boolean hasFromInventory) {
+        this.hasFromInventory = hasFromInventory;
+    }
+
+    public Boolean getHasToInventory() {
+        return this.hasToInventory;
+    }
+
+    public void setHasToInventory(Boolean hasToInventory) {
+        this.hasToInventory = hasToInventory;
     }
 
 }

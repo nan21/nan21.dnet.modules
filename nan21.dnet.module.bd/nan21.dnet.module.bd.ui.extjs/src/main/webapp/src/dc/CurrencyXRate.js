@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateDs",
+	filterModel: "net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateDsFilter",
 	paramModel: "net.nan21.dnet.module.bd.currency.ds.param.CurrencyXRateDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,8 +28,8 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter", {
 		.addLov({ name:"providerCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders", dataIndex:"providerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "providerId"} ]  })
 		.addDateField({ name:"validAt", dataIndex:"validAt",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

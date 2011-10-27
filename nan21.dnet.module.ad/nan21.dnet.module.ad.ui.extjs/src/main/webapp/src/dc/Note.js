@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Note", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.data.ds.model.NoteDs",
+	filterModel: "net.nan21.dnet.module.ad.data.ds.model.NoteDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.data.ds.param.NoteDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -24,7 +25,7 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Note$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"modifiedBy",_sharedLabel_:true, dataIndex:"modifiedBy",anchor:"-20",maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -63,7 +64,8 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Note$Edit", {
 		this._getBuilder_()	
 		.addTextArea({ name:"note", dataIndex:"note",height:100,anchor:"-20"   })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250,labelAlign:"top",labelWidth:0 })     
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250, defaults:{
+labelAlign:"top"}})     
 		;     
 	}
 	,_linkElements_: function () {

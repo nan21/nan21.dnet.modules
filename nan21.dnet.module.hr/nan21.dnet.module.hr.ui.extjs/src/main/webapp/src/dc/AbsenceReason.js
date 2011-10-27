@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.AbsenceReason", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonDs",
+	filterModel: "net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.time.ds.param.AbsenceReasonDsParam",
 	constructor : function(config) {
         config = config || {};

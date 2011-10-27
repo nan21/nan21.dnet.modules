@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventStatusDs",
+	filterModel: "net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventStatusDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.calendar.ds.param.CalendarEventStatusDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -26,8 +27,8 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$Filter", {
 		.addCombo({ name:"eventType", xtype:"combo", dataIndex:"eventType",anchor:"-20",store:[ "call", "meeting", "task"]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210, height:50,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210, height:50}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

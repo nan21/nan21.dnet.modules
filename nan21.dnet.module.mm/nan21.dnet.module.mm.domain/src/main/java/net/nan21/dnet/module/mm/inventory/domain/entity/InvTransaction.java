@@ -6,7 +6,10 @@
 package net.nan21.dnet.module.mm.inventory.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,6 +19,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -29,6 +33,7 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -114,6 +119,10 @@ public class InvTransaction implements Serializable, IModelWithId,
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "TOINVENTORY_ID", referencedColumnName = "ID")
     private Organization toInventory;
+
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = InvTransactionLine.class, mappedBy = "invTransaction", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<InvTransactionLine> lines;
 
     /* ============== getters - setters ================== */
 
@@ -220,6 +229,22 @@ public class InvTransaction implements Serializable, IModelWithId,
 
     public void setToInventory(Organization toInventory) {
         this.toInventory = toInventory;
+    }
+
+    public Collection<InvTransactionLine> getLines() {
+        return this.lines;
+    }
+
+    public void setLines(Collection<InvTransactionLine> lines) {
+        this.lines = lines;
+    }
+
+    public void addToLines(InvTransactionLine e) {
+        if (this.lines == null) {
+            this.lines = new ArrayList<InvTransactionLine>();
+        }
+        e.setInvTransaction(this);
+        this.lines.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

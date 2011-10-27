@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.PaymentTerm", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.base.ds.model.PaymentTermDs",
+	filterModel: "net.nan21.dnet.module.bp.base.ds.model.PaymentTermDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.base.ds.param.PaymentTermDsParam",
 	constructor : function(config) {
         config = config || {};

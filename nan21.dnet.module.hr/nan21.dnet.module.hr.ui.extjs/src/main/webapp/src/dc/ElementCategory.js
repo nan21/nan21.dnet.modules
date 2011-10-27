@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementCategory", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.payroll.ds.model.ElementCategoryDs",
+	filterModel: "net.nan21.dnet.module.hr.payroll.ds.model.ElementCategoryDsFilter",
 	paramModel: "net.nan21.dnet.module.hr.payroll.ds.param.ElementCategoryDsParam",
 	constructor : function(config) {
         config = config || {};

@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeDs",
+	filterModel: "net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeDsFilter",
 	paramModel: "net.nan21.dnet.module.bd.contact.ds.param.CommunicationChannelTypeDsParam",
 	constructor : function(config) {
         config = config || {};

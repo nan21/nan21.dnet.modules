@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJobItem", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportJobItemDs",
+	filterModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportJobItemDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.impex.ds.param.ImportJobItemDsParam",
 	constructor : function(config) {
         config = config || {};

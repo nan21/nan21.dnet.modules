@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.WfDefProcessDs",
+	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.WfDefProcessDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.WfDefProcessDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -23,14 +24,18 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1"])
-		.addChildrenTo("col1",["name"])
+		this._elems_.get("main")["items"] = [
+	    {layout:"anchor", border:false 
+	      ,items:[ this._elems_.get("name")] }
+	  ,	    {layout:"anchor", border:false 
+	      ,items:[ this._elems_.get("active")] }
+];
 	}
 }); 
  		 
@@ -67,8 +72,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit", {
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:350})     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

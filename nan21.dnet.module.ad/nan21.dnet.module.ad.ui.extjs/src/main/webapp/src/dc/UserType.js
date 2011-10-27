@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.UserType", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.usr.ds.model.UserTypeDs",
+	filterModel: "net.nan21.dnet.module.ad.usr.ds.model.UserTypeDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.usr.ds.param.UserTypeDsParam",
 	constructor : function(config) {
         config = config || {};

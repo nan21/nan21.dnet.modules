@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.md.ds.model.BpAccountDs",
+	filterModel: "net.nan21.dnet.module.bp.md.ds.model.BpAccountDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.md.ds.param.BpAccountDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -27,8 +28,8 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$Filter", {
 		.addLov({ name:"customerGroup", xtype:"net.nan21.dnet.module.bp.base.lovs.CustomerGroup", dataIndex:"customerGroup",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "customerGroupId"} ]  })
 		.addLov({ name:"vendorGroup", xtype:"net.nan21.dnet.module.bp.base.lovs.VendorGroup", dataIndex:"vendorGroup",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "vendorGroupId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:220,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor", width:220,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor", width:220}) 
+		.addPanel({ name:"col2", layout:"anchor", width:220}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -94,9 +95,9 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$Edit", {
 		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",noEdit:true, hideTrigger:true ,allowBlank:false})
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" , width:300,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"anchor" , width:300,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" , width:300})     
+		.addPanel({ name:"col2", layout:"anchor" , width:300})     
+		.addPanel({ name:"col3", layout:"anchor" , width:300})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

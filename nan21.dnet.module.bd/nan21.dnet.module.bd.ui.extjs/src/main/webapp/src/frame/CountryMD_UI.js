@@ -14,7 +14,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.frame.CountryMD_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("country",{ name:"countryFilter", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$Filter"})	 
+		.addDcFilterFormView("country",{ name:"countryFilter", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$Filter",height:80})	 
 		.addDcView("country",{ name:"countryList", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$List"})	 
 		.addDcFormView("country",{ name:"countryEdit", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$Edit",height:140})	 
 		.addDcView("region",{ name:"regionEditList", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$EditListContext", frame:true})	 
@@ -30,14 +30,14 @@ Ext.define("net.nan21.dnet.module.bd.geo.frame.CountryMD_UI", {
 		.addChildrenTo("canvas1",["countryFilter","countryList"] ,["north","center"])	
 		.addChildrenTo("canvas2",["countryEdit","regionEditList"] ,["north","center"])	
 	 	.addToolbarTo("canvas1","tlbCountryList")	  	
-	 	.addToolbarTo("countryEdit","tlbCountryEdit")	  	
+	 	.addToolbarTo("canvas2","tlbCountryEdit")	  	
 	 	.addToolbarTo("regionEditList","tlbRegionList")	  	
 	}
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
 			.beginToolbar("tlbCountryList", {dc:"country"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
-			.beginToolbar("tlbCountryEdit", {dc:"country"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbCountryEdit", {dc:"country"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
 			.beginToolbar("tlbRegionList", {dc:"region"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
 	}
 

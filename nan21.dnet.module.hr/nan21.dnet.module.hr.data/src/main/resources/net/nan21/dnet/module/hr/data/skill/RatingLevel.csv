@@ -1,12 +1,12 @@
-"ratingScale";"name";"value";"notes"
-"Default scale";"Average";"20";
-"Default scale";"No clue";"0";
-"Default scale";"Good";"30";
-"Default scale";"Begginer";"10";
-"Default scale";"Excellent";"40";
-"Language proficiency";"Mother tongue";"50";
-"Language proficiency";"Fluent";"40";
-"Language proficiency";"Average";"20";
-"Language proficiency";"Advanced";"30";
-"Language proficiency";"None at all";"0";
-"Language proficiency";"Begginer";"10";
+"ratingScale";"name";"value";"notes";"active"
+"Default scale";"Average";"20";;"true"
+"Default scale";"No clue";"0";;"true"
+"Default scale";"Good";"30";;"true"
+"Default scale";"Begginer";"10";;"true"
+"Default scale";"Excellent";"40";;"true"
+"Language proficiency";"Mother tongue";"50";;"true"
+"Language proficiency";"Fluent";"40";;"true"
+"Language proficiency";"Average";"20";;"true"
+"Language proficiency";"Advanced";"30";;"true"
+"Language proficiency";"None at all";"0";;"true"
+"Language proficiency";"Begginer";"10";;"true"

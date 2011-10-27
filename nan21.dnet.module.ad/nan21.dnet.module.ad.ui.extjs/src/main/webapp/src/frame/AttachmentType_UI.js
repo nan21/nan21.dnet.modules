@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.ad.data.frame.AttachmentType_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("attchType",{ name:"attchTypeFilter", xtype:"net.nan21.dnet.module.ad.data.dc.AttachmentType$Filter"})	 
+		.addDcFilterFormView("attchType",{ name:"attchTypeFilter", xtype:"net.nan21.dnet.module.ad.data.dc.AttachmentType$Filter",height:80})	 
 		.addDcView("attchType",{ name:"attchTypeEditList", xtype:"net.nan21.dnet.module.ad.data.dc.AttachmentType$EditList", frame:true})	 
 		.addPanel({name: "main", layout:"border", defaults:{split:true}})  	 
 ;	 	

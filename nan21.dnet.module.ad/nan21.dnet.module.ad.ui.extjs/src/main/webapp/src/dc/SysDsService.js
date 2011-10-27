@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsService", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsServiceDs",
+	filterModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsServiceDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.system.ds.param.SysDsServiceDsParam",
 	constructor : function(config) {
         config = config || {};

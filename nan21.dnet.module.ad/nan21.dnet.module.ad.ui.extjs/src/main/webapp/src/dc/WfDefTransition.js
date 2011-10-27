@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefTransition", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.WfDefTransitionDs",
+	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.WfDefTransitionDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.WfDefTransitionDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -25,7 +26,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$Filter", {
 		.addTextField({ name:"source", dataIndex:"source",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"target", dataIndex:"target",anchor:"-20",maxLength:255  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210,labelWidth:0 })
+		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210}) 
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()

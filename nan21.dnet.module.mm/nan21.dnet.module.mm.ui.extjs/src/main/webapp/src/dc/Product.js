@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.md.ds.model.ProductDs",
+	filterModel: "net.nan21.dnet.module.mm.md.ds.model.ProductDsFilter",
 	paramModel: "net.nan21.dnet.module.mm.md.ds.param.ProductDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -30,10 +31,10 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Filter", {
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",anchor:"-20",maxLength:32  })
 		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210, height:50,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col3", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col4", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210, height:50}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col3", layout:"anchor",width:210}) 
+		.addPanel({ name:"col4", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -95,7 +96,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", {
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:255  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:90,labelWidth:0 })     
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:90})     
 		;     
 	}
 	,_linkElements_: function () {
@@ -121,10 +122,10 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Edit", {
 		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
 		.addLov({ name:"defaultUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"defaultUomCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "defaultUomId"} ]  })
 		//containers
-		.addPanel({ name:"row1", layout:"anchor" , width:700,labelWidth:0 })     
-		.addPanel({ name:"col1", layout:"anchor" , width:350,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250,labelWidth:0 })     
-		.addPanel({ name:"col3", layout:"anchor" , width:200,labelWidth:0 })     
+		.addPanel({ name:"row1", layout:"anchor" , width:700})     
+		.addPanel({ name:"col1", layout:"anchor" , width:350})     
+		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
+		.addPanel({ name:"col3", layout:"anchor" , width:200})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
 		.addPanel({ name:"row2", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
 		;     
@@ -161,8 +162,8 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$EditInfo", {
 		.addNumberField({ name:"dimUomId", dataIndex:"dimUomId",anchor:"-20",noEdit:true   , style: "text-align:right;" })
 		.addLov({ name:"dimUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomLength", dataIndex:"dimUomCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "dimUomId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" ,title:"Physical", width:300,xtype:"fieldset", border:false, collapsible:true,labelWidth:0 })     
-		.addPanel({ name:"col2", layout:"anchor" ,title:"Dimensions", width:300,xtype:"fieldset", border:false, collapsible:true,labelWidth:0 })     
+		.addPanel({ name:"col1", layout:"anchor" ,title:"Physical", width:300,xtype:"fieldset", border:false, collapsible:true})     
+		.addPanel({ name:"col2", layout:"anchor" ,title:"Dimensions", width:300,xtype:"fieldset", border:false, collapsible:true})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

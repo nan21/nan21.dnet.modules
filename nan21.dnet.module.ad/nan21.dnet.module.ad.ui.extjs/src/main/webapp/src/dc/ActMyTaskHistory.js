@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActMyTaskHistoryDs",
+	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActMyTaskHistoryDsFilter",
 	paramModel: "net.nan21.dnet.module.ad.workflow.ds.param.ActMyTaskHistoryDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -25,7 +26,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActMyTaskHistory$Filter", {
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"deleteReason", dataIndex:"deleteReason", width:100,maxLength:255  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

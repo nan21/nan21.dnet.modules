@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpClassification", {
 	extend: "dnet.base.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.md.ds.model.BpClassificationDs",
+	filterModel: "net.nan21.dnet.module.bp.md.ds.model.BpClassificationDsFilter",
 	paramModel: "net.nan21.dnet.module.bp.md.ds.param.BpClassificationDsParam",
 	constructor : function(config) {
         config = config || {};
@@ -26,8 +27,8 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpClassification$Filter", {
 		.addTextField({ name:"classificationSystem", dataIndex:"classificationSystem",anchor:"-20",maxLength:32  })
 		.addTextField({ name:"classificationCode", dataIndex:"classificationCode",anchor:"-20",maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210,labelWidth:0 })
-		.addPanel({ name:"col2", layout:"anchor",width:210,labelWidth:0 })
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {

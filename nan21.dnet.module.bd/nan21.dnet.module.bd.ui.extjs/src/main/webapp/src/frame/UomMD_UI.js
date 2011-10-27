@@ -14,7 +14,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.frame.UomMD_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("uom",{ name:"uomFilter", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$Filter"})	 
+		.addDcFilterFormView("uom",{ name:"uomFilter", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$Filter",height:80})	 
 		.addDcView("uom",{ name:"uomList", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$List"})	 
 		.addDcFormView("uom",{ name:"uomEdit", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$Edit",height:125})	 
 		.addDcView("cnv",{ name:"cnvEditList", xtype:"net.nan21.dnet.module.bd.uom.dc.UomConversion$CtxEditList", frame:true})	 
