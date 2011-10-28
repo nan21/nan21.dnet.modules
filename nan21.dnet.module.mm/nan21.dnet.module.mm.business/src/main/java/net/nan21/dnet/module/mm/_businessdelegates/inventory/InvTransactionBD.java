@@ -23,10 +23,7 @@ public class InvTransactionBD  extends AbstractBusinessDelegate {
 //			.getResultList().get(0);
 
 		InvTransaction transaction = (InvTransaction) this.em.createNamedQuery(InvTransaction.NQ_FIND_BY_ID)
-		.setParameter("pId", transactionId)
-		.setHint(QueryHints.BATCH, "e.lines")
-		.setHint("eclipselink.batch.type", "EXISTS")
-		.setHint(QueryHints.CACHE_USAGE, CacheUsage.Invalidate)
+		.setParameter("pId", transactionId)		 
 		.getResultList().get(0);
 		
 		if (transaction == null ) {
@@ -44,8 +41,12 @@ public class InvTransactionBD  extends AbstractBusinessDelegate {
 	
 	
 	private void createOperations(InvTransaction transaction) {
-		Collection<InvTransactionLine> lines = transaction.getLines();
-		Collection<InvOperation> operations = new ArrayList<InvOperation>();
+		
+		
+		List<InvTransactionLine> lines = this.em.createQuery("select e from InvTransactionLine e where e.invTransaction.id = :pTxId")
+		.setParameter("pTxId", transaction.getId())
+		.getResultList();
+		 
 		for(InvTransactionLine line: lines) {
 			
 			// create out operation from source 

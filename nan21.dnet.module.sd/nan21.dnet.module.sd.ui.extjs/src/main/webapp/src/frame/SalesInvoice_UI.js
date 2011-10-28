@@ -49,13 +49,19 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {
 	 	.addToolbarTo("canvas1","tlbInvList")	  	
 	 	.addToolbarTo("canvas2","tlbInvEdit")	  	
 	 	.addToolbarTo("itemEditList","tlbItemEditList")	  	
+	 	.addToolbarTo("atchEditList","tlbAtchList")	  	
+	 	.addToolbarTo("noteList","tlbNoteList")	  	
+	 	.addToolbarTo("noteEdit","tlbNoteEdit")	  	
 	}
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
 			.beginToolbar("tlbInvList", {dc:"inv"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
 			.beginToolbar("tlbInvEdit", {dc:"inv"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
-			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Items"}).end(); 	
+			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Items"}).end()
+			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
+			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().end()
+			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().end(); 	
 	}
 
 	,onUploadSuccess: function() {	
