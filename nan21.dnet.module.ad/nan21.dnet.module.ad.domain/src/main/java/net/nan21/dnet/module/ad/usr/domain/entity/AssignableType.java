@@ -9,11 +9,8 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
@@ -28,7 +25,6 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
-import net.nan21.dnet.module.ad.system.domain.entity.BusinessObject;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -117,9 +113,6 @@ public class AssignableType implements Serializable, IModelWithId,
     @Id
     @GeneratedValue
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessObject.class)
-    @JoinColumn(name = "BUSINESSOBJECT_ID", referencedColumnName = "ID")
-    private BusinessObject businessObject;
 
     /* ============== getters - setters ================== */
 
@@ -210,14 +203,6 @@ public class AssignableType implements Serializable, IModelWithId,
 
     public void setClassName(String className) {
 
-    }
-
-    public BusinessObject getBusinessObject() {
-        return this.businessObject;
-    }
-
-    public void setBusinessObject(BusinessObject businessObject) {
-        this.businessObject = businessObject;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

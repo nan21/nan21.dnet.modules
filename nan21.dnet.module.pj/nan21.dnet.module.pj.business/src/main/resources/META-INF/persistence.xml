@@ -1,0 +1,40 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="net.nan21.dnet"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+	 
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectType</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectRole</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemCategory</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemType</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemStatus</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemPriority</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemSeverity</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemResolution</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemTextType</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemLinkType</class>
+	 
+		  
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.Project</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectMember</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.Item</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.ItemText</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.ItemLink</class>
+	 
+		 <!-- Dependencies -->
+		 
+		 <class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
+		 <class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
+		 
+		<properties>
+			<property name="eclipselink.weaving" value="static" />
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="ProjectCategoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectCategoryDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectCategory" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryDs" />
+	</bean>
+   
+ 	<bean id="ProjectCategoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectCategoryLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectCategoryLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryLovDs" />
+	</bean>
+   
+ 	<bean id="ProjectRoleDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectRole" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectRoleDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectRole" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleDs" />
+	</bean>
+   
+ 	<bean id="ProjectRoleLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectRole" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectRoleLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectRoleLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleLovDs" />
+	</bean>
+   
+ 	<bean id="ProjectTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectType" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeDs" />
+	</bean>
+   
+ 	<bean id="ProjectTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeLovDs" />
+	</bean>
+   
+ 	<bean id="ProjectStatusDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectStatusDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectStatusDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectStatus" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectStatusDs" />
+	</bean>
+   
+ 	<bean id="ProjectStatusLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectStatusLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectStatusLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectStatusLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectStatusLovDs" />
+	</bean>
+   
+ 	<bean id="ItemCategoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemCategoryDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemCategory" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemCategoryDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemCategory" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemCategoryDs" />
+	</bean>
+   
+ 	<bean id="ItemCategoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemCategoryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemCategory" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemCategoryLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemCategoryLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemCategoryLovDs" />
+	</bean>
+   
+ 	<bean id="ItemTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemType" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTypeDs" />
+	</bean>
+   
+ 	<bean id="ItemTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTypeLovDs" />
+	</bean>
+   
+ 	<bean id="ItemStatusDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemStatusDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemStatus" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemStatusDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemStatus" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemStatusDs" />
+	</bean>
+   
+ 	<bean id="ItemStatusLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemStatusLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemStatus" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemStatusLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemStatusLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemStatusLovDs" />
+	</bean>
+   
+ 	<bean id="ItemSeverityDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemSeverityDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemSeverity" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemSeverityDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemSeverity" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemSeverityDs" />
+	</bean>
+   
+ 	<bean id="ItemSeverityLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemSeverityLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemSeverity" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemSeverityLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemSeverityLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemSeverityLovDs" />
+	</bean>
+   
+ 	<bean id="ItemPriorityDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemPriorityDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemPriority" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemPriorityDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemPriority" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemPriorityDs" />
+	</bean>
+   
+ 	<bean id="ItemPriorityLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemPriorityLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemPriority" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemPriorityLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemPriorityLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemPriorityLovDs" />
+	</bean>
+   
+ 	<bean id="ItemResolutionDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemResolutionDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemResolution" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemResolutionDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemResolution" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemResolutionDs" />
+	</bean>
+   
+ 	<bean id="ItemResolutionLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemResolutionLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemResolution" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemResolutionLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemResolutionLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemResolutionLovDs" />
+	</bean>
+   
+ 	<bean id="ItemTextTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTextTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemTextType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemTextTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemTextType" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTextTypeDs" />
+	</bean>
+   
+ 	<bean id="ItemTextTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTextTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemTextType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemTextTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemTextTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTextTypeLovDs" />
+	</bean>
+   
+ 	<bean id="ItemLinkTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemLinkTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemLinkType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemLinkTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemLinkType" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemLinkTypeDs" />
+	</bean>
+   
+ 	<bean id="ItemLinkTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemLinkTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemLinkType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemLinkTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemLinkTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemLinkTypeLovDs" />
+	</bean>
+      
+</beans>
+   

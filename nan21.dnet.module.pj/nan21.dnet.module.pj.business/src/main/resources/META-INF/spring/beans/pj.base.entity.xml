@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="ProjectCategoryService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ProjectCategoryService"  />  
+ 
+ 	<bean id="ProjectTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ProjectTypeService"  />  
+ 
+ 	<bean id="ProjectRoleService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ProjectRoleService"  />  
+ 
+ 	<bean id="ProjectStatusService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ProjectStatusService"  />  
+ 
+ 	<bean id="ItemCategoryService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemCategoryService"  />  
+ 
+ 	<bean id="ItemTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemTypeService"  />  
+ 
+ 	<bean id="ItemStatusService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemStatusService"  />  
+ 
+ 	<bean id="ItemPriorityService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemPriorityService"  />  
+ 
+ 	<bean id="ItemSeverityService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemSeverityService"  />  
+ 
+ 	<bean id="ItemResolutionService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemResolutionService"  />  
+ 
+ 	<bean id="ItemTextTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemTextTypeService"  />  
+ 
+ 	<bean id="ItemLinkTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemLinkTypeService"  />  
+   
+</beans>
+   

@@ -5,9 +5,7 @@
  */
 package net.nan21.dnet.module.ad.usr.business.serviceimpl;
 
-import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
-import net.nan21.dnet.module.ad.system.domain.entity.BusinessObject;
 import net.nan21.dnet.module.ad.usr.business.service.IAssignableTypeService;
 
 import javax.persistence.EntityManager;
@@ -35,20 +33,6 @@ public class AssignableTypeService extends
                 .createNamedQuery(AssignableType.NQ_FIND_BY_NAME)
                 .setParameter("pClientId", clientId)
                 .setParameter("pName", name).getSingleResult();
-    }
-
-    public List<AssignableType> findByBusinessObject(
-            BusinessObject businessObject) {
-        return this.findByBusinessObjectId(businessObject.getId());
-    }
-
-    public List<AssignableType> findByBusinessObjectId(Long businessObjectId) {
-        return (List<AssignableType>) this.em
-                .createQuery(
-                        "select e from AssignableType e where e.businessObject.id = :pBusinessObjectId",
-                        AssignableType.class)
-                .setParameter("pBusinessObjectId", businessObjectId)
-                .getResultList();
     }
 
 }

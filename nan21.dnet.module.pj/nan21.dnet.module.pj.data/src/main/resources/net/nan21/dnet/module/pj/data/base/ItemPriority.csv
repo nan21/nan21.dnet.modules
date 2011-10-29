@@ -1,0 +1,6 @@
+"sortValue";"name";"description";"active"
+"20";"high";"";"true"
+"40";"immediate";"Requires immediate attention";"true"
+"1";"low";"";"true"
+"10";"normal";"";"true"
+"30";"urgent";"";"true"

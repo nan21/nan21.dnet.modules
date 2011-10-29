@@ -1,0 +1,79 @@
+/*    
+ * DNet eBusiness Suite
+ * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */
+package net.nan21.dnet.module.pj.base.business.serviceimpl;
+
+import java.util.List;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.pj.base.business.service.IProjectTypeService;
+import net.nan21.dnet.module.pj.base.domain.entity.ItemType;
+import net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory;
+import net.nan21.dnet.module.pj.base.domain.entity.ProjectRole;
+
+import javax.persistence.EntityManager;
+import net.nan21.dnet.module.pj.base.domain.entity.ProjectType;
+
+public class ProjectTypeService extends AbstractEntityService<ProjectType>
+        implements IProjectTypeService {
+
+    public ProjectTypeService() {
+        super();
+    }
+
+    public ProjectTypeService(EntityManager em) {
+        super();
+        this.em = em;
+    }
+
+    @Override
+    protected Class<ProjectType> getEntityClass() {
+        return ProjectType.class;
+    }
+
+    public ProjectType findByName(Long clientId, String name) {
+        return (ProjectType) this.em
+                .createNamedQuery(ProjectType.NQ_FIND_BY_NAME)
+                .setParameter("pClientId", clientId)
+                .setParameter("pName", name).getSingleResult();
+    }
+
+    public List<ProjectType> findByCategory(ProjectCategory category) {
+        return this.findByCategoryId(category.getId());
+    }
+
+    public List<ProjectType> findByCategoryId(Long categoryId) {
+        return (List<ProjectType>) this.em
+                .createQuery(
+                        "select e from ProjectType e where e.category.id = :pCategoryId",
+                        ProjectType.class)
+                .setParameter("pCategoryId", categoryId).getResultList();
+    }
+
+    public List<ProjectType> findByProjectRoles(ProjectRole projectRoles) {
+        return this.findByProjectRolesId(projectRoles.getId());
+    }
+
+    public List<ProjectType> findByProjectRolesId(Long projectRolesId) {
+        return (List<ProjectType>) this.em
+                .createQuery(
+                        "select e from ProjectType e where e.projectRoles.id = :pProjectRolesId",
+                        ProjectType.class)
+                .setParameter("pProjectRolesId", projectRolesId)
+                .getResultList();
+    }
+
+    public List<ProjectType> findByItemTypes(ItemType itemTypes) {
+        return this.findByItemTypesId(itemTypes.getId());
+    }
+
+    public List<ProjectType> findByItemTypesId(Long itemTypesId) {
+        return (List<ProjectType>) this.em
+                .createQuery(
+                        "select e from ProjectType e where e.itemTypes.id = :pItemTypesId",
+                        ProjectType.class)
+                .setParameter("pItemTypesId", itemTypesId).getResultList();
+    }
+
+}

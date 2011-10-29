@@ -3,6 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: DNet HR - data
 Bundle-SymbolicName: nan21.dnet.module.hr.data
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M3
+Bundle-Version: 1.0.0.M4
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 
