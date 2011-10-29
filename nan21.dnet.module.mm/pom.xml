@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.mm</artifactId>
-	<version>1.0.0.M2</version>
+	<version>1.0.0.M4</version>
 	<name>DNet MM: Material management</name>	
 	<description>DNet MM: Material management</description>
 	<packaging>pom</packaging>	
