@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.nan21.dnet</groupId>
+	<artifactId>nan21.dnet.module.pj</artifactId>
+	<version>1.0.0.M4</version>
+	<name>DNet PJ: Project management</name>	
+	<description>DNet PJ: Project management</description>
+	<packaging>pom</packaging>	
+	
+	<!-- ========================== Modules ========================== -->
+	
+	<modules>
+		<module>nan21.dnet.module.pj.domain</module>
+		<module>nan21.dnet.module.pj.business</module>
+		<module>nan21.dnet.module.pj.presenter</module>
+		<module>nan21.dnet.module.pj.ui.extjs</module>
+		<module>nan21.dnet.module.pj.parent</module>
+		<module>nan21.dnet.module.pj.data</module>
+	</modules>	
+</project>	 
