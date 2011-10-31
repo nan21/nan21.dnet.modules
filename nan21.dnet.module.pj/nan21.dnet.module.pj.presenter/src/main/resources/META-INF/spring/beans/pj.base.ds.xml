@@ -270,6 +270,50 @@
 		<property name="name" value="ItemLinkTypeLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemLinkTypeLovDs" />
 	</bean>
+   
+ 	<bean id="ItemTaskTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTaskTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemTaskType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemTaskTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemTaskType" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTaskTypeDs" />
+	</bean>
+   
+ 	<bean id="ItemTaskTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTaskTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemTaskType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemTaskTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemTaskTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTaskTypeLovDs" />
+	</bean>
+   
+ 	<bean id="ItemTaskStatusDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTaskStatusDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemTaskStatus" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemTaskStatusDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemTaskStatus" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTaskStatusDs" />
+	</bean>
+   
+ 	<bean id="ItemTaskStatusLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTaskStatusLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ItemTaskStatus" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ItemTaskStatusLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemTaskStatusLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ItemTaskStatusLovDs" />
+	</bean>
       
 </beans>
    

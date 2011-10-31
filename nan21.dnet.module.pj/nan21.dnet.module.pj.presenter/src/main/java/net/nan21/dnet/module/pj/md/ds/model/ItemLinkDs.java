@@ -53,7 +53,7 @@ public class ItemLinkDs extends AbstractDsModel<ItemLink> implements
     @DsField()
     private Long version;
 
-    @DsField(join = "left", path = "sourceItem.id")
+    @DsField(join = "left", jpqlFilter = " ( e.sourceItem.id = :sourceItemId or e.targetItem.id = :sourceItemId )  ", path = "sourceItem.id")
     private Long sourceItemId;
 
     @DsField(join = "left", path = "sourceItem.summary")

@@ -17,6 +17,7 @@ public class ItemLovDsConv extends AbstractDsConverter<ItemLovDs, Item>
     protected void modelToEntityAttributes(ItemLovDs ds, Item e)
             throws Exception {
         e.setClientId(ds.getClientId());
+        e.setSummary(ds.getSummary());
     }
 
     protected void modelToEntityReferences(ItemLovDs ds, Item e)
@@ -27,6 +28,7 @@ public class ItemLovDsConv extends AbstractDsConverter<ItemLovDs, Item>
     public void entityToModel(Item e, ItemLovDs ds) throws Exception {
         ds.setId(e.getId());
         ds.setClientId(e.getClientId());
+        ds.setSummary(e.getSummary());
     }
 
 }

@@ -77,7 +77,7 @@ public class ProjectDs extends AbstractDsModel<Project> implements
     @DsField(join = "left", path = "projectLead.id")
     private Long projectLeadId;
 
-    @DsField(join = "left", path = "projectLead.name")
+    @DsField(join = "left", path = "projectLead.member.name")
     private String projectLead;
 
     public ProjectDs() {

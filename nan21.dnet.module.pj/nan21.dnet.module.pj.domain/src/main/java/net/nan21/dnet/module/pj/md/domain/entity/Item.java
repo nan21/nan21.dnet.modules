@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.pj.md.domain.entity;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -27,15 +30,15 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
-import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemPriority;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemResolution;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemSeverity;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemStatus;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemType;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectRole;
-import net.nan21.dnet.module.pj.md.domain.entity.Item;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectMember;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -64,18 +67,15 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
     public static final String NQ_FIND_BY_IDS = "Item.findByIds";
 
     /**
-     * Instance type of this item: Possible values: issue, task 
-     */
-    @Column(name = "INSTANCETYPE", nullable = false)
-    @NotBlank
-    private String instanceType;
-
-    /**
      * Brief (one line) description of this item.
      */
     @Column(name = "SUMMARY", nullable = false)
     @NotBlank
     private String summary;
+
+    /** Description. */
+    @Column(name = "DESCRIPTION")
+    private String description;
 
     /** DueDate. */
     @Temporal(TemporalType.DATE)
@@ -129,9 +129,6 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Project.class)
     @JoinColumn(name = "PROJECT_ID", referencedColumnName = "ID")
     private Project project;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Item.class)
-    @JoinColumn(name = "ITEM_ID", referencedColumnName = "ID")
-    private Item item;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ItemStatus.class)
     @JoinColumn(name = "STATUS_ID", referencedColumnName = "ID")
     private ItemStatus status;
@@ -147,22 +144,31 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ItemSeverity.class)
     @JoinColumn(name = "SEVERITY_ID", referencedColumnName = "ID")
     private ItemSeverity severity;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Assignable.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProjectVersion.class)
+    @JoinColumn(name = "REPORTEDVERSION_ID", referencedColumnName = "ID")
+    private ProjectVersion reportedVersion;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProjectVersion.class)
+    @JoinColumn(name = "TARGETVERSION_ID", referencedColumnName = "ID")
+    private ProjectVersion targetVersion;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProjectVersion.class)
+    @JoinColumn(name = "FIXEDINVERSION_ID", referencedColumnName = "ID")
+    private ProjectVersion fixedInVersion;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProjectMember.class)
     @JoinColumn(name = "ASSIGNEE_ID", referencedColumnName = "ID")
-    private Assignable assignee;
+    private ProjectMember assignee;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProjectRole.class)
     @JoinColumn(name = "ASSIGNEEROLE_ID", referencedColumnName = "ID")
     private ProjectRole assigneeRole;
 
+    @ManyToMany
+    @JoinTable(name = "PJ_ITEM_PRJVERSIONS")
+    private Collection<ProjectVersion> affectedVersions;
+
+    @ManyToMany
+    @JoinTable(name = "PJ_ITEM_COMPS")
+    private Collection<ProjectComponent> affectedComponents;
+
     /* ============== getters - setters ================== */
-
-    public String getInstanceType() {
-        return this.instanceType;
-    }
-
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
-    }
 
     public String getSummary() {
         return this.summary;
@@ -170,6 +176,14 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Date getDueDate() {
@@ -186,6 +200,15 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setResolutionDate(Date resolutionDate) {
         this.resolutionDate = resolutionDate;
+    }
+
+    @Transient
+    public String getBusinessObject() {
+        return "ProjectIssue";
+    }
+
+    public void setBusinessObject(String businessObject) {
+
     }
 
     public Long getClientId() {
@@ -261,14 +284,6 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
         this.project = project;
     }
 
-    public Item getItem() {
-        return this.item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
     public ItemStatus getStatus() {
         return this.status;
     }
@@ -309,11 +324,35 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
         this.severity = severity;
     }
 
-    public Assignable getAssignee() {
+    public ProjectVersion getReportedVersion() {
+        return this.reportedVersion;
+    }
+
+    public void setReportedVersion(ProjectVersion reportedVersion) {
+        this.reportedVersion = reportedVersion;
+    }
+
+    public ProjectVersion getTargetVersion() {
+        return this.targetVersion;
+    }
+
+    public void setTargetVersion(ProjectVersion targetVersion) {
+        this.targetVersion = targetVersion;
+    }
+
+    public ProjectVersion getFixedInVersion() {
+        return this.fixedInVersion;
+    }
+
+    public void setFixedInVersion(ProjectVersion fixedInVersion) {
+        this.fixedInVersion = fixedInVersion;
+    }
+
+    public ProjectMember getAssignee() {
         return this.assignee;
     }
 
-    public void setAssignee(Assignable assignee) {
+    public void setAssignee(ProjectMember assignee) {
         this.assignee = assignee;
     }
 
@@ -323,6 +362,23 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setAssigneeRole(ProjectRole assigneeRole) {
         this.assigneeRole = assigneeRole;
+    }
+
+    public Collection<ProjectVersion> getAffectedVersions() {
+        return this.affectedVersions;
+    }
+
+    public void setAffectedVersions(Collection<ProjectVersion> affectedVersions) {
+        this.affectedVersions = affectedVersions;
+    }
+
+    public Collection<ProjectComponent> getAffectedComponents() {
+        return this.affectedComponents;
+    }
+
+    public void setAffectedComponents(
+            Collection<ProjectComponent> affectedComponents) {
+        this.affectedComponents = affectedComponents;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

@@ -8,6 +8,7 @@ package net.nan21.dnet.module.pj.md.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.pj.md.business.service.IProjectVersionService;
+import net.nan21.dnet.module.pj.md.domain.entity.Item;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
 import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 
@@ -61,6 +62,19 @@ public class ProjectVersionService extends
                         "select e from ProjectVersion e where e.projectVersion.id = :pProjectVersionId",
                         ProjectVersion.class)
                 .setParameter("pProjectVersionId", projectVersionId)
+                .getResultList();
+    }
+
+    public List<ProjectVersion> findByAffectingItems(Item affectingItems) {
+        return this.findByAffectingItemsId(affectingItems.getId());
+    }
+
+    public List<ProjectVersion> findByAffectingItemsId(Long affectingItemsId) {
+        return (List<ProjectVersion>) this.em
+                .createQuery(
+                        "select e from ProjectVersion e where e.affectingItems.id = :pAffectingItemsId",
+                        ProjectVersion.class)
+                .setParameter("pAffectingItemsId", affectingItemsId)
                 .getResultList();
     }
 

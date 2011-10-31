@@ -7,6 +7,7 @@ package net.nan21.dnet.module.pj.md.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
+import net.nan21.dnet.module.pj.md.domain.entity.Item;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
 import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 
@@ -24,5 +25,9 @@ public interface IProjectVersionService extends IEntityService<ProjectVersion> {
             ProjectVersion projectVersion);
 
     public List<ProjectVersion> findByProjectVersionId(Long projectVersionId);
+
+    public List<ProjectVersion> findByAffectingItems(Item affectingItems);
+
+    public List<ProjectVersion> findByAffectingItemsId(Long affectingItemsId);
 
 }

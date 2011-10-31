@@ -33,6 +33,13 @@ public class ItemLinkDsConv extends AbstractDsConverter<ItemLinkDs, ItemLink>
                         ds.getSourceItemId()));
             }
         }
+        if (ds.getTargetItemId() != null) {
+            if (e.getTargetItem() == null
+                    || !e.getTargetItem().getId().equals(ds.getTargetItemId())) {
+                e.setTargetItem((Item) this.em.find(Item.class,
+                        ds.getTargetItemId()));
+            }
+        }
         if (ds.getLinkTypeId() != null) {
             if (e.getLinkType() == null
                     || !e.getLinkType().getId().equals(ds.getLinkTypeId())) {

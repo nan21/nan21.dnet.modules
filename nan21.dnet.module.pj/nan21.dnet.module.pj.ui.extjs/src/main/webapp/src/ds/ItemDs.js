@@ -13,8 +13,8 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemDs" , {
 		{name:"projectId",type:"int", useNull:true },
 		{name:"projectCode",type:"string" },
 		{name:"project",type:"string" },
-		{name:"instanceType",type:"string" },
 		{name:"summary",type:"string" },
+		{name:"description",type:"string" },
 		{name:"dueDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"resolutionDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"typeId",type:"int", useNull:true },
@@ -30,10 +30,17 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemDs" , {
 		{name:"assigneeId",type:"int", useNull:true },
 		{name:"assignee",type:"string" },
 		{name:"assigneeRoleId",type:"int", useNull:true },
-		{name:"assigneeRole",type:"string" }
+		{name:"assigneeRole",type:"string" },
+		{name:"className",type:"string" },
+		{name:"reportedVersionId",type:"int", useNull:true },
+		{name:"reportedVersion",type:"string" },
+		{name:"targetVersionId",type:"int", useNull:true },
+		{name:"targetVersion",type:"string" },
+		{name:"fixedInVersionId",type:"int", useNull:true },
+		{name:"fixedInVersion",type:"string" },
+		{name:"businessObject",type:"string" }
 	],
 	validations: [  
-		{field: "instanceType", type: 'presence'}, 
 		{field: "summary", type: 'presence'}
 	]
 });
@@ -51,8 +58,8 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemDsFilter" , {
 		{name:"projectId",type:"int", useNull:true },
 		{name:"projectCode",type:"string" },
 		{name:"project",type:"string" },
-		{name:"instanceType",type:"string" },
 		{name:"summary",type:"string" },
+		{name:"description",type:"string" },
 		{name:"dueDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"resolutionDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"typeId",type:"int", useNull:true },
@@ -68,7 +75,15 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemDsFilter" , {
 		{name:"assigneeId",type:"int", useNull:true },
 		{name:"assignee",type:"string" },
 		{name:"assigneeRoleId",type:"int", useNull:true },
-		{name:"assigneeRole",type:"string" }
+		{name:"assigneeRole",type:"string" },
+		{name:"className",type:"string" },
+		{name:"reportedVersionId",type:"int", useNull:true },
+		{name:"reportedVersion",type:"string" },
+		{name:"targetVersionId",type:"int", useNull:true },
+		{name:"targetVersion",type:"string" },
+		{name:"fixedInVersionId",type:"int", useNull:true },
+		{name:"fixedInVersion",type:"string" },
+		{name:"businessObject",type:"string" }
 	] 
 });
 	

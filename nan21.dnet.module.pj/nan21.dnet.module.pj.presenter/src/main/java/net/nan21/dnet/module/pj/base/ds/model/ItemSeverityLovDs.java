@@ -14,7 +14,7 @@ import net.nan21.dnet.module.pj.base.domain.entity.ItemSeverity;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ItemSeverity.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = ItemSeverityLovDs.fNAME) })
+@Ds(entity = ItemSeverity.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = ItemSeverityLovDs.fSORTVALUE) })
 public class ItemSeverityLovDs extends AbstractDsModel<ItemSeverity> implements
         IModelWithId, IModelWithClientId {
 
@@ -22,6 +22,7 @@ public class ItemSeverityLovDs extends AbstractDsModel<ItemSeverity> implements
     public static final String fCLIENTID = "clientId";
     public static final String fNAME = "name";
     public static final String fACTIVE = "active";
+    public static final String fSORTVALUE = "sortValue";
 
     @DsField()
     private Long id;
@@ -34,6 +35,9 @@ public class ItemSeverityLovDs extends AbstractDsModel<ItemSeverity> implements
 
     @DsField()
     private Boolean active;
+
+    @DsField()
+    private Integer sortValue;
 
     public ItemSeverityLovDs() {
         super();
@@ -74,6 +78,14 @@ public class ItemSeverityLovDs extends AbstractDsModel<ItemSeverity> implements
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public Integer getSortValue() {
+        return this.sortValue;
+    }
+
+    public void setSortValue(Integer sortValue) {
+        this.sortValue = sortValue;
     }
 
 }

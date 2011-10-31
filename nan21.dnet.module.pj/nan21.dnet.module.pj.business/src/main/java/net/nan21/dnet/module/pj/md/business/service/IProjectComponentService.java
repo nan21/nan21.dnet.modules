@@ -8,6 +8,7 @@ package net.nan21.dnet.module.pj.md.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
+import net.nan21.dnet.module.pj.md.domain.entity.Item;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
 
 import net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent;
@@ -24,5 +25,9 @@ public interface IProjectComponentService extends
     public List<ProjectComponent> findByProject(Project project);
 
     public List<ProjectComponent> findByProjectId(Long projectId);
+
+    public List<ProjectComponent> findByAffectingItems(Item affectingItems);
+
+    public List<ProjectComponent> findByAffectingItemsId(Long affectingItemsId);
 
 }

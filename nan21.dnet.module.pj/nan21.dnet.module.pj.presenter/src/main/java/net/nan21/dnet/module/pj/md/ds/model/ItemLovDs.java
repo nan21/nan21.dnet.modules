@@ -19,12 +19,16 @@ public class ItemLovDs extends AbstractDsModel<Item> implements IModelWithId,
 
     public static final String fID = "id";
     public static final String fCLIENTID = "clientId";
+    public static final String fSUMMARY = "summary";
 
     @DsField()
     private Long id;
 
     @DsField()
     private Long clientId;
+
+    @DsField()
+    private String summary;
 
     public ItemLovDs() {
         super();
@@ -49,6 +53,14 @@ public class ItemLovDs extends AbstractDsModel<Item> implements IModelWithId,
 
     public void setClientId(Long clientId) {
         this.clientId = clientId;
+    }
+
+    public String getSummary() {
+        return this.summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
 }

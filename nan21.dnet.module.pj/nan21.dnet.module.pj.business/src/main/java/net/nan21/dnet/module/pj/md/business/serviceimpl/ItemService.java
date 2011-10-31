@@ -7,7 +7,6 @@ package net.nan21.dnet.module.pj.md.business.serviceimpl;
 
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
-import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemPriority;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemResolution;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemSeverity;
@@ -15,8 +14,10 @@ import net.nan21.dnet.module.pj.base.domain.entity.ItemStatus;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemType;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectRole;
 import net.nan21.dnet.module.pj.md.business.service.IItemService;
-import net.nan21.dnet.module.pj.md.domain.entity.Item;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectMember;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.pj.md.domain.entity.Item;
@@ -47,17 +48,6 @@ public class ItemService extends AbstractEntityService<Item> implements
                 .createQuery(
                         "select e from Item e where e.project.id = :pProjectId",
                         Item.class).setParameter("pProjectId", projectId)
-                .getResultList();
-    }
-
-    public List<Item> findByItem(Item item) {
-        return this.findByItemId(item.getId());
-    }
-
-    public List<Item> findByItemId(Long itemId) {
-        return (List<Item>) this.em
-                .createQuery("select e from Item e where e.item.id = :pItemId",
-                        Item.class).setParameter("pItemId", itemId)
                 .getResultList();
     }
 
@@ -120,7 +110,73 @@ public class ItemService extends AbstractEntityService<Item> implements
                 .getResultList();
     }
 
-    public List<Item> findByAssignee(Assignable assignee) {
+    public List<Item> findByReportedVersion(ProjectVersion reportedVersion) {
+        return this.findByReportedVersionId(reportedVersion.getId());
+    }
+
+    public List<Item> findByReportedVersionId(Long reportedVersionId) {
+        return (List<Item>) this.em
+                .createQuery(
+                        "select e from Item e where e.reportedVersion.id = :pReportedVersionId",
+                        Item.class)
+                .setParameter("pReportedVersionId", reportedVersionId)
+                .getResultList();
+    }
+
+    public List<Item> findByTargetVersion(ProjectVersion targetVersion) {
+        return this.findByTargetVersionId(targetVersion.getId());
+    }
+
+    public List<Item> findByTargetVersionId(Long targetVersionId) {
+        return (List<Item>) this.em
+                .createQuery(
+                        "select e from Item e where e.targetVersion.id = :pTargetVersionId",
+                        Item.class)
+                .setParameter("pTargetVersionId", targetVersionId)
+                .getResultList();
+    }
+
+    public List<Item> findByFixedInVersion(ProjectVersion fixedInVersion) {
+        return this.findByFixedInVersionId(fixedInVersion.getId());
+    }
+
+    public List<Item> findByFixedInVersionId(Long fixedInVersionId) {
+        return (List<Item>) this.em
+                .createQuery(
+                        "select e from Item e where e.fixedInVersion.id = :pFixedInVersionId",
+                        Item.class)
+                .setParameter("pFixedInVersionId", fixedInVersionId)
+                .getResultList();
+    }
+
+    public List<Item> findByAffectedVersions(ProjectVersion affectedVersions) {
+        return this.findByAffectedVersionsId(affectedVersions.getId());
+    }
+
+    public List<Item> findByAffectedVersionsId(Long affectedVersionsId) {
+        return (List<Item>) this.em
+                .createQuery(
+                        "select e from Item e where e.affectedVersions.id = :pAffectedVersionsId",
+                        Item.class)
+                .setParameter("pAffectedVersionsId", affectedVersionsId)
+                .getResultList();
+    }
+
+    public List<Item> findByAffectedComponents(
+            ProjectComponent affectedComponents) {
+        return this.findByAffectedComponentsId(affectedComponents.getId());
+    }
+
+    public List<Item> findByAffectedComponentsId(Long affectedComponentsId) {
+        return (List<Item>) this.em
+                .createQuery(
+                        "select e from Item e where e.affectedComponents.id = :pAffectedComponentsId",
+                        Item.class)
+                .setParameter("pAffectedComponentsId", affectedComponentsId)
+                .getResultList();
+    }
+
+    public List<Item> findByAssignee(ProjectMember assignee) {
         return this.findByAssigneeId(assignee.getId());
     }
 

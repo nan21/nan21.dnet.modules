@@ -27,10 +27,10 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Project$Filter", {
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.pj.base.lovs.ProjectTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
-		.addTextField({ name:"projectLead", dataIndex:"projectLead",anchor:"-20",maxLength:255  })
+		.addLov({ name:"projectLead", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"projectLead",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "projectLeadId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -78,20 +78,20 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Project$Edit", {
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextField({ name:"notes", dataIndex:"notes",anchor:"-20" ,maxLength:4000  })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.pj.base.lovs.ProjectTypes", dataIndex:"type",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
-		.addTextField({ name:"projectLead", dataIndex:"projectLead",anchor:"-20" ,maxLength:255  })
+		.addLov({ name:"projectLead", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"projectLead",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "projectLeadId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:300})     
-		.addPanel({ name:"col2", layout:"anchor" , width:300})     
+		.addPanel({ name:"col2", layout:"anchor" , width:350})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
-		.addChildrenTo("col1",["name","code","active","notes"])
-		.addChildrenTo("col2",["type","projectLead"])
+		.addChildrenTo("col1",["name","code","type","projectLead"])
+		.addChildrenTo("col2",["active","notes"])
 ;
 	}	
 });

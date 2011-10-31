@@ -42,6 +42,12 @@
  
  	<bean id="ItemLinkTypeService" scope="prototype"
 	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemLinkTypeService"  />  
+ 
+ 	<bean id="ItemTaskTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemTaskTypeService"  />  
+ 
+ 	<bean id="ItemTaskStatusService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemTaskStatusService"  />  
    
 </beans>
    

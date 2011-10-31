@@ -149,6 +149,50 @@
 		<property name="name" value="DsAccessControl" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.DsAccessControlDs" />
 	</bean>
+   
+ 	<bean id="AssignableTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AssignableType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AssignableTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AssignableType" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeDs" />
+	</bean>
+   
+ 	<bean id="AssignableTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AssignableType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AssignableTypeLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AssignableTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeLovDs" />
+	</bean>
+   
+ 	<bean id="AssignableDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Assignable" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AssignableDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Assignable" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableDs" />
+	</bean>
+   
+ 	<bean id="AssignableLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Assignable" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AssignableLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AssignableLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableLovDs" />
+	</bean>
       
 </beans>
    

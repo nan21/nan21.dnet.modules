@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+   
+   
+	<!-- ItemAffectedVersions -->
+ 	<bean id="ItemAffectedVersionsAsgnService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.ItemAffectedVersionsAsgn" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion" />		 
+	  	<property name="leftTable" value="PJ_PROJECT_VERSION" />
+	  	<property name="rightTable" value="PJ_ITEM_PRJVERSIONS" />
+	  	<property name="rightItemIdField" value="AFFECTEDVERSIONS_ID" />
+	  	<property name="rightObjectIdField" value="AFFECTINGITEMS_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.pj.business" /> 	  	  
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemAffectedVersions" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.ItemAffectedVersionsAsgn" />
+	</bean>
+   
+   
+   
+	<!-- ItemAffectedComponents -->
+ 	<bean id="ItemAffectedComponentsAsgnService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.ItemAffectedComponentsAsgn" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent" />		 
+	  	<property name="leftTable" value="PJ_PROJECT_COMPONENT" />
+	  	<property name="rightTable" value="PJ_ITEM_COMPS" />
+	  	<property name="rightItemIdField" value="AFFECTEDCOMPONENTS_ID" />
+	  	<property name="rightObjectIdField" value="AFFECTINGITEMS_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.pj.business" /> 	  	  
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ItemAffectedComponents" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.ItemAffectedComponentsAsgn" />
+	</bean>
+       
+</beans>
+   

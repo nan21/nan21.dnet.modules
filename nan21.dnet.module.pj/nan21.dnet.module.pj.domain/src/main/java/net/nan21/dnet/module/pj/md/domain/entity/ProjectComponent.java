@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.pj.md.domain.entity;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -125,6 +127,9 @@ public class ProjectComponent implements Serializable, IModelWithId,
     @JoinColumn(name = "PROJECT_ID", referencedColumnName = "ID")
     private Project project;
 
+    @ManyToMany(mappedBy = "affectedComponents")
+    private Collection<Item> affectingItems;
+
     /* ============== getters - setters ================== */
 
     public String getName() {
@@ -230,6 +235,14 @@ public class ProjectComponent implements Serializable, IModelWithId,
 
     public void setProject(Project project) {
         this.project = project;
+    }
+
+    public Collection<Item> getAffectingItems() {
+        return this.affectingItems;
+    }
+
+    public void setAffectingItems(Collection<Item> affectingItems) {
+        this.affectingItems = affectingItems;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

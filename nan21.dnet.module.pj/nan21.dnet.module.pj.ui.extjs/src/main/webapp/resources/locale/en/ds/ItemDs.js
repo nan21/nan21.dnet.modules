@@ -3,7 +3,6 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemDs$Trl", {
 	projectId__lbl : "Project Id"
 	,projectCode__lbl : "Project Code"
 	,project__lbl : "Project"
-	,instanceType__lbl : "Instance Type"
 	,summary__lbl : "Summary"
 	,dueDate__lbl : "Due Date"
 	,resolutionDate__lbl : "Resolution Date"
@@ -20,5 +19,13 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemDs$Trl", {
 	,assignee__lbl : "Assignee"
 	,assigneeRoleId__lbl : "Assignee Role Id"
 	,assigneeRole__lbl : "Assignee Role"
+	,className__lbl : "Class Name"
+	,reportedVersionId__lbl : "Reported Version Id"
+	,reportedVersion__lbl : "Reported Version"
+	,targetVersionId__lbl : "Target Version Id"
+	,targetVersion__lbl : "Target Version"
+	,fixedInVersionId__lbl : "Fixed In Version Id"
+	,fixedInVersion__lbl : "Fixed In Version"
+	,businessObject__lbl : "Business Object"
 	
 });

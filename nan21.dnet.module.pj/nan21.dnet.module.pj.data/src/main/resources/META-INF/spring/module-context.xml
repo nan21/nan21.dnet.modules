@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:osgi-compendium="http://www.springframework.org/schema/osgi-compendium"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/osgi-compendium
+    			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
+	<context:annotation-config />
+	<bean id="initDataProviderFactory" class="net.nan21.dnet.core.api.setup.InitDataProviderFactory">
+		<property name="name" value="nan21.dnet.module.pj.data"></property>
+	</bean>
+	
+	<bean id="initDataProvider" scope="prototype"
+		class="net.nan21.dnet.core.api.setup.InitDataProvider">
+		<property name="list">
+			<list>
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="710" />
+					<property name="name" value="pj-base" />
+					<property name="items">
+						<list>
+							 
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="ItemCategory" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ItemCategory.csv" />
+							</bean>
+							
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="ItemType" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ItemType.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="ItemStatus" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ItemStatus.csv" />
+							</bean>
+							 
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="40" />
+								<property name="dsName" value="ItemPriority" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ItemPriority.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="50" />
+								<property name="dsName" value="ItemSeverity" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ItemSeverity.csv" />
+							</bean>
+							
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="60" />
+								<property name="dsName" value="ItemResolution" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ItemResolution.csv" />
+							</bean>
+							
+							<!--  Project -->
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="70" />
+								<property name="dsName" value="ProjectCategory" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ProjectCategory.csv" />
+							</bean>
+							 
+							 <bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="80" />
+								<property name="dsName" value="ProjectType" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ProjectType.csv" />
+							</bean>
+							 
+							 <bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="90" />
+								<property name="dsName" value="ProjectRole" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ProjectRole.csv" />
+							</bean>
+							  
+						</list>
+					</property>
+				</bean>
+				 
+			</list>
+		</property>
+	</bean>
+</beans>

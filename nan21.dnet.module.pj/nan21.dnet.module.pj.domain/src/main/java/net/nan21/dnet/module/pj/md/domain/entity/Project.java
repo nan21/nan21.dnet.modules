@@ -28,8 +28,8 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
-import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectType;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectMember;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -134,9 +134,9 @@ public class Project implements Serializable, IModelWithId, IModelWithClientId {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProjectType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private ProjectType type;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Assignable.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProjectMember.class)
     @JoinColumn(name = "PROJECTLEAD_ID", referencedColumnName = "ID")
-    private Assignable projectLead;
+    private ProjectMember projectLead;
 
     /* ============== getters - setters ================== */
 
@@ -245,11 +245,11 @@ public class Project implements Serializable, IModelWithId, IModelWithClientId {
         this.type = type;
     }
 
-    public Assignable getProjectLead() {
+    public ProjectMember getProjectLead() {
         return this.projectLead;
     }
 
-    public void setProjectLead(Assignable projectLead) {
+    public void setProjectLead(ProjectMember projectLead) {
         this.projectLead = projectLead;
     }
 

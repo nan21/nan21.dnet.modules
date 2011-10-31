@@ -9,6 +9,7 @@ import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 import net.nan21.dnet.module.pj.md.business.service.IProjectComponentService;
+import net.nan21.dnet.module.pj.md.domain.entity.Item;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
 
 import javax.persistence.EntityManager;
@@ -62,6 +63,19 @@ public class ProjectComponentService extends
                         "select e from ProjectComponent e where e.project.id = :pProjectId",
                         ProjectComponent.class)
                 .setParameter("pProjectId", projectId).getResultList();
+    }
+
+    public List<ProjectComponent> findByAffectingItems(Item affectingItems) {
+        return this.findByAffectingItemsId(affectingItems.getId());
+    }
+
+    public List<ProjectComponent> findByAffectingItemsId(Long affectingItemsId) {
+        return (List<ProjectComponent>) this.em
+                .createQuery(
+                        "select e from ProjectComponent e where e.affectingItems.id = :pAffectingItemsId",
+                        ProjectComponent.class)
+                .setParameter("pAffectingItemsId", affectingItemsId)
+                .getResultList();
     }
 
 }

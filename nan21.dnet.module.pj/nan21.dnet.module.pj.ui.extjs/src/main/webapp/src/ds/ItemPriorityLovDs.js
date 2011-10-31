@@ -6,7 +6,8 @@ Ext.define("net.nan21.dnet.module.pj.base.ds.model.ItemPriorityLovDs" , {
 		{name:"id",type:"int", useNull:true },
 		{name:"clientId",type:"int", useNull:true },
 		{name:"name",type:"string" },
-		{name:"active",type:"boolean" }
+		{name:"active",type:"boolean" },
+		{name:"sortValue",type:"int", useNull:true }
 	]
 });
 
@@ -16,7 +17,8 @@ Ext.define("net.nan21.dnet.module.pj.base.ds.model.ItemPriorityLovDsFilter" , {
 		{name:"id",type:"int", useNull:true },
 		{name:"clientId",type:"int", useNull:true },
 		{name:"name",type:"string" },
-		{name:"active",type:"boolean", useNull:true }
+		{name:"active",type:"boolean", useNull:true },
+		{name:"sortValue",type:"int", useNull:true }
 	] 
 });
 	

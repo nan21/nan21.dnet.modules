@@ -33,6 +33,8 @@ public class ProjectVersionLovDsConv extends
         ds.setClientId(e.getClientId());
         ds.setName(e.getName());
         ds.setActive(e.getActive());
+        ds.setProjectId(((e.getProject() != null)) ? e.getProject().getId()
+                : null);
     }
 
 }

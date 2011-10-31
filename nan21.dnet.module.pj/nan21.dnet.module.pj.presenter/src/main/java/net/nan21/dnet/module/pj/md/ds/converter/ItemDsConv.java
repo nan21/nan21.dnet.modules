@@ -6,8 +6,6 @@
 package net.nan21.dnet.module.pj.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.ad.usr.business.service.IAssignableService;
-import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 import net.nan21.dnet.module.pj.base.business.service.IItemPriorityService;
 import net.nan21.dnet.module.pj.base.business.service.IItemResolutionService;
 import net.nan21.dnet.module.pj.base.business.service.IItemSeverityService;
@@ -20,6 +18,11 @@ import net.nan21.dnet.module.pj.base.domain.entity.ItemSeverity;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemStatus;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemType;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectRole;
+import net.nan21.dnet.module.pj.md.business.service.IProjectService;
+import net.nan21.dnet.module.pj.md.business.service.IProjectVersionService;
+import net.nan21.dnet.module.pj.md.domain.entity.Project;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectMember;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.pj.md.ds.model.ItemDs;
@@ -31,14 +34,25 @@ public class ItemDsConv extends AbstractDsConverter<ItemDs, Item> implements
     protected void modelToEntityAttributes(ItemDs ds, Item e) throws Exception {
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
-        e.setInstanceType(ds.getInstanceType());
         e.setSummary(ds.getSummary());
+        e.setDescription(ds.getDescription());
         e.setDueDate(ds.getDueDate());
         e.setResolutionDate(ds.getResolutionDate());
+        e.setClassName(ds.getClassName());
+        e.setBusinessObject(ds.getBusinessObject());
     }
 
     protected void modelToEntityReferences(ItemDs ds, Item e) throws Exception {
 
+        if (ds.getProjectId() != null) {
+            if (e.getProject() == null
+                    || !e.getProject().getId().equals(ds.getProjectId())) {
+                e.setProject((Project) this.em.find(Project.class,
+                        ds.getProjectId()));
+            }
+        } else {
+            this.lookup_project_Project(ds, e);
+        }
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -87,11 +101,9 @@ public class ItemDsConv extends AbstractDsConverter<ItemDs, Item> implements
         if (ds.getAssigneeId() != null) {
             if (e.getAssignee() == null
                     || !e.getAssignee().getId().equals(ds.getAssigneeId())) {
-                e.setAssignee((Assignable) this.em.find(Assignable.class,
+                e.setAssignee((ProjectMember) this.em.find(ProjectMember.class,
                         ds.getAssigneeId()));
             }
-        } else {
-            this.lookup_assignee_Assignable(ds, e);
         }
         if (ds.getAssigneeRoleId() != null) {
             if (e.getAssigneeRole() == null
@@ -102,6 +114,53 @@ public class ItemDsConv extends AbstractDsConverter<ItemDs, Item> implements
             }
         } else {
             this.lookup_assigneeRole_ProjectRole(ds, e);
+        }
+        if (ds.getReportedVersionId() != null) {
+            if (e.getReportedVersion() == null
+                    || !e.getReportedVersion().getId()
+                            .equals(ds.getReportedVersionId())) {
+                e.setReportedVersion((ProjectVersion) this.em.find(
+                        ProjectVersion.class, ds.getReportedVersionId()));
+            }
+        } else {
+            this.lookup_reportedVersion_ProjectVersion(ds, e);
+        }
+        if (ds.getTargetVersionId() != null) {
+            if (e.getTargetVersion() == null
+                    || !e.getTargetVersion().getId()
+                            .equals(ds.getTargetVersionId())) {
+                e.setTargetVersion((ProjectVersion) this.em.find(
+                        ProjectVersion.class, ds.getTargetVersionId()));
+            }
+        } else {
+            this.lookup_targetVersion_ProjectVersion(ds, e);
+        }
+        if (ds.getFixedInVersionId() != null) {
+            if (e.getFixedInVersion() == null
+                    || !e.getFixedInVersion().getId()
+                            .equals(ds.getFixedInVersionId())) {
+                e.setFixedInVersion((ProjectVersion) this.em.find(
+                        ProjectVersion.class, ds.getFixedInVersionId()));
+            }
+        } else {
+            this.lookup_fixedInVersion_ProjectVersion(ds, e);
+        }
+    }
+
+    protected void lookup_project_Project(ItemDs ds, Item e) throws Exception {
+        if (ds.getProjectCode() != null && !ds.getProjectCode().equals("")) {
+            Project x = null;
+            try {
+                x = ((IProjectService) getService(IProjectService.class))
+                        .findByName(ds.getClientId(), ds.getProjectCode());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Project` reference:  `projectCode` = "
+                                + ds.getProjectCode() + "  ");
+            }
+            e.setProject(x);
+        } else {
+            e.setProject(null);
         }
     }
 
@@ -193,24 +252,6 @@ public class ItemDsConv extends AbstractDsConverter<ItemDs, Item> implements
         }
     }
 
-    protected void lookup_assignee_Assignable(ItemDs ds, Item e)
-            throws Exception {
-        if (ds.getAssignee() != null && !ds.getAssignee().equals("")) {
-            Assignable x = null;
-            try {
-                x = ((IAssignableService) getService(IAssignableService.class))
-                        .findByName(ds.getClientId(), ds.getAssignee());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `Assignable` reference:  `assignee` = "
-                                + ds.getAssignee() + "  ");
-            }
-            e.setAssignee(x);
-        } else {
-            e.setAssignee(null);
-        }
-    }
-
     protected void lookup_assigneeRole_ProjectRole(ItemDs ds, Item e)
             throws Exception {
         if (ds.getAssigneeRole() != null && !ds.getAssigneeRole().equals("")) {
@@ -229,6 +270,62 @@ public class ItemDsConv extends AbstractDsConverter<ItemDs, Item> implements
         }
     }
 
+    protected void lookup_reportedVersion_ProjectVersion(ItemDs ds, Item e)
+            throws Exception {
+        if (ds.getReportedVersion() != null
+                && !ds.getReportedVersion().equals("")) {
+            ProjectVersion x = null;
+            try {
+                x = ((IProjectVersionService) getService(IProjectVersionService.class))
+                        .findByName(ds.getClientId(), ds.getReportedVersion());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ProjectVersion` reference:  `reportedVersion` = "
+                                + ds.getReportedVersion() + "  ");
+            }
+            e.setReportedVersion(x);
+        } else {
+            e.setReportedVersion(null);
+        }
+    }
+
+    protected void lookup_targetVersion_ProjectVersion(ItemDs ds, Item e)
+            throws Exception {
+        if (ds.getTargetVersion() != null && !ds.getTargetVersion().equals("")) {
+            ProjectVersion x = null;
+            try {
+                x = ((IProjectVersionService) getService(IProjectVersionService.class))
+                        .findByName(ds.getClientId(), ds.getTargetVersion());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ProjectVersion` reference:  `targetVersion` = "
+                                + ds.getTargetVersion() + "  ");
+            }
+            e.setTargetVersion(x);
+        } else {
+            e.setTargetVersion(null);
+        }
+    }
+
+    protected void lookup_fixedInVersion_ProjectVersion(ItemDs ds, Item e)
+            throws Exception {
+        if (ds.getFixedInVersion() != null
+                && !ds.getFixedInVersion().equals("")) {
+            ProjectVersion x = null;
+            try {
+                x = ((IProjectVersionService) getService(IProjectVersionService.class))
+                        .findByName(ds.getClientId(), ds.getFixedInVersion());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `ProjectVersion` reference:  `fixedInVersion` = "
+                                + ds.getFixedInVersion() + "  ");
+            }
+            e.setFixedInVersion(x);
+        } else {
+            e.setFixedInVersion(null);
+        }
+    }
+
     @Override
     public void entityToModel(Item e, ItemDs ds) throws Exception {
         ds.setId(e.getId());
@@ -238,10 +335,12 @@ public class ItemDsConv extends AbstractDsConverter<ItemDs, Item> implements
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
-        ds.setInstanceType(e.getInstanceType());
         ds.setSummary(e.getSummary());
+        ds.setDescription(e.getDescription());
         ds.setDueDate(e.getDueDate());
         ds.setResolutionDate(e.getResolutionDate());
+        ds.setClassName(e.getClassName());
+        ds.setBusinessObject(e.getBusinessObject());
         ds.setProjectId(((e.getProject() != null)) ? e.getProject().getId()
                 : null);
         ds.setProjectCode(((e.getProject() != null)) ? e.getProject().getCode()
@@ -266,12 +365,25 @@ public class ItemDsConv extends AbstractDsConverter<ItemDs, Item> implements
                 : null);
         ds.setAssigneeId(((e.getAssignee() != null)) ? e.getAssignee().getId()
                 : null);
-        ds.setAssignee(((e.getAssignee() != null)) ? e.getAssignee().getName()
+        ds.setAssignee(((e.getAssignee() != null) && (e.getAssignee()
+                .getMember() != null)) ? e.getAssignee().getMember().getName()
                 : null);
         ds.setAssigneeRoleId(((e.getAssigneeRole() != null)) ? e
                 .getAssigneeRole().getId() : null);
         ds.setAssigneeRole(((e.getAssigneeRole() != null)) ? e
                 .getAssigneeRole().getName() : null);
+        ds.setReportedVersionId(((e.getReportedVersion() != null)) ? e
+                .getReportedVersion().getId() : null);
+        ds.setReportedVersion(((e.getReportedVersion() != null)) ? e
+                .getReportedVersion().getName() : null);
+        ds.setTargetVersionId(((e.getTargetVersion() != null)) ? e
+                .getTargetVersion().getId() : null);
+        ds.setTargetVersion(((e.getTargetVersion() != null)) ? e
+                .getTargetVersion().getName() : null);
+        ds.setFixedInVersionId(((e.getFixedInVersion() != null)) ? e
+                .getFixedInVersion().getId() : null);
+        ds.setFixedInVersion(((e.getFixedInVersion() != null)) ? e
+                .getFixedInVersion().getName() : null);
     }
 
 }

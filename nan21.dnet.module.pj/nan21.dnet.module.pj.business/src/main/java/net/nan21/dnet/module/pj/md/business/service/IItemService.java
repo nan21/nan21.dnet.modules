@@ -7,15 +7,16 @@ package net.nan21.dnet.module.pj.md.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
-import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemPriority;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemResolution;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemSeverity;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemStatus;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemType;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectRole;
-import net.nan21.dnet.module.pj.md.domain.entity.Item;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectMember;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 
 import net.nan21.dnet.module.pj.md.domain.entity.Item;
 
@@ -24,10 +25,6 @@ public interface IItemService extends IEntityService<Item> {
     public List<Item> findByProject(Project project);
 
     public List<Item> findByProjectId(Long projectId);
-
-    public List<Item> findByItem(Item item);
-
-    public List<Item> findByItemId(Long itemId);
 
     public List<Item> findByStatus(ItemStatus status);
 
@@ -49,7 +46,28 @@ public interface IItemService extends IEntityService<Item> {
 
     public List<Item> findBySeverityId(Long severityId);
 
-    public List<Item> findByAssignee(Assignable assignee);
+    public List<Item> findByReportedVersion(ProjectVersion reportedVersion);
+
+    public List<Item> findByReportedVersionId(Long reportedVersionId);
+
+    public List<Item> findByTargetVersion(ProjectVersion targetVersion);
+
+    public List<Item> findByTargetVersionId(Long targetVersionId);
+
+    public List<Item> findByFixedInVersion(ProjectVersion fixedInVersion);
+
+    public List<Item> findByFixedInVersionId(Long fixedInVersionId);
+
+    public List<Item> findByAffectedVersions(ProjectVersion affectedVersions);
+
+    public List<Item> findByAffectedVersionsId(Long affectedVersionsId);
+
+    public List<Item> findByAffectedComponents(
+            ProjectComponent affectedComponents);
+
+    public List<Item> findByAffectedComponentsId(Long affectedComponentsId);
+
+    public List<Item> findByAssignee(ProjectMember assignee);
 
     public List<Item> findByAssigneeId(Long assigneeId);
 

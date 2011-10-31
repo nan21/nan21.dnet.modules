@@ -22,6 +22,7 @@ public class ProjectVersionLovDs extends AbstractDsModel<ProjectVersion>
     public static final String fCLIENTID = "clientId";
     public static final String fNAME = "name";
     public static final String fACTIVE = "active";
+    public static final String fPROJECTID = "projectId";
 
     @DsField()
     private Long id;
@@ -34,6 +35,9 @@ public class ProjectVersionLovDs extends AbstractDsModel<ProjectVersion>
 
     @DsField()
     private Boolean active;
+
+    @DsField(join = "left", path = "project.id")
+    private Long projectId;
 
     public ProjectVersionLovDs() {
         super();
@@ -74,6 +78,14 @@ public class ProjectVersionLovDs extends AbstractDsModel<ProjectVersion>
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public Long getProjectId() {
+        return this.projectId;
+    }
+
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
     }
 
 }

@@ -28,8 +28,8 @@ public class ItemDs extends AbstractDsModel<Item> implements IModelWithId,
     public static final String fPROJECTID = "projectId";
     public static final String fPROJECTCODE = "projectCode";
     public static final String fPROJECT = "project";
-    public static final String fINSTANCETYPE = "instanceType";
     public static final String fSUMMARY = "summary";
+    public static final String fDESCRIPTION = "description";
     public static final String fDUEDATE = "dueDate";
     public static final String fRESOLUTIONDATE = "resolutionDate";
     public static final String fTYPEID = "typeId";
@@ -46,6 +46,14 @@ public class ItemDs extends AbstractDsModel<Item> implements IModelWithId,
     public static final String fASSIGNEE = "assignee";
     public static final String fASSIGNEEROLEID = "assigneeRoleId";
     public static final String fASSIGNEEROLE = "assigneeRole";
+    public static final String fCLASSNAME = "className";
+    public static final String fREPORTEDVERSIONID = "reportedVersionId";
+    public static final String fREPORTEDVERSION = "reportedVersion";
+    public static final String fTARGETVERSIONID = "targetVersionId";
+    public static final String fTARGETVERSION = "targetVersion";
+    public static final String fFIXEDINVERSIONID = "fixedInVersionId";
+    public static final String fFIXEDINVERSION = "fixedInVersion";
+    public static final String fBUSINESSOBJECT = "businessObject";
 
     @DsField()
     private Long id;
@@ -78,10 +86,10 @@ public class ItemDs extends AbstractDsModel<Item> implements IModelWithId,
     private String project;
 
     @DsField()
-    private String instanceType;
+    private String summary;
 
     @DsField()
-    private String summary;
+    private String description;
 
     @DsField()
     private Date dueDate;
@@ -122,7 +130,7 @@ public class ItemDs extends AbstractDsModel<Item> implements IModelWithId,
     @DsField(join = "left", path = "assignee.id")
     private Long assigneeId;
 
-    @DsField(join = "left", path = "assignee.name")
+    @DsField(join = "left", path = "assignee.member.name")
     private String assignee;
 
     @DsField(join = "left", path = "assigneeRole.id")
@@ -130,6 +138,30 @@ public class ItemDs extends AbstractDsModel<Item> implements IModelWithId,
 
     @DsField(join = "left", path = "assigneeRole.name")
     private String assigneeRole;
+
+    @DsField(fetch = false)
+    private String className;
+
+    @DsField(join = "left", path = "reportedVersion.id")
+    private Long reportedVersionId;
+
+    @DsField(join = "left", path = "reportedVersion.name")
+    private String reportedVersion;
+
+    @DsField(join = "left", path = "targetVersion.id")
+    private Long targetVersionId;
+
+    @DsField(join = "left", path = "targetVersion.name")
+    private String targetVersion;
+
+    @DsField(join = "left", path = "fixedInVersion.id")
+    private Long fixedInVersionId;
+
+    @DsField(join = "left", path = "fixedInVersion.name")
+    private String fixedInVersion;
+
+    @DsField(fetch = false)
+    private String businessObject;
 
     public ItemDs() {
         super();
@@ -220,20 +252,20 @@ public class ItemDs extends AbstractDsModel<Item> implements IModelWithId,
         this.project = project;
     }
 
-    public String getInstanceType() {
-        return this.instanceType;
-    }
-
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
-    }
-
     public String getSummary() {
         return this.summary;
     }
 
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Date getDueDate() {
@@ -362,6 +394,70 @@ public class ItemDs extends AbstractDsModel<Item> implements IModelWithId,
 
     public void setAssigneeRole(String assigneeRole) {
         this.assigneeRole = assigneeRole;
+    }
+
+    public String getClassName() {
+        return this.className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public Long getReportedVersionId() {
+        return this.reportedVersionId;
+    }
+
+    public void setReportedVersionId(Long reportedVersionId) {
+        this.reportedVersionId = reportedVersionId;
+    }
+
+    public String getReportedVersion() {
+        return this.reportedVersion;
+    }
+
+    public void setReportedVersion(String reportedVersion) {
+        this.reportedVersion = reportedVersion;
+    }
+
+    public Long getTargetVersionId() {
+        return this.targetVersionId;
+    }
+
+    public void setTargetVersionId(Long targetVersionId) {
+        this.targetVersionId = targetVersionId;
+    }
+
+    public String getTargetVersion() {
+        return this.targetVersion;
+    }
+
+    public void setTargetVersion(String targetVersion) {
+        this.targetVersion = targetVersion;
+    }
+
+    public Long getFixedInVersionId() {
+        return this.fixedInVersionId;
+    }
+
+    public void setFixedInVersionId(Long fixedInVersionId) {
+        this.fixedInVersionId = fixedInVersionId;
+    }
+
+    public String getFixedInVersion() {
+        return this.fixedInVersion;
+    }
+
+    public void setFixedInVersion(String fixedInVersion) {
+        this.fixedInVersion = fixedInVersion;
+    }
+
+    public String getBusinessObject() {
+        return this.businessObject;
+    }
+
+    public void setBusinessObject(String businessObject) {
+        this.businessObject = businessObject;
     }
 
 }

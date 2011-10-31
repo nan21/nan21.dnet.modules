@@ -15,7 +15,7 @@ import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ProjectVersion.class, sort = { @SortField(field = ProjectVersionDs.fNAME) })
+@Ds(entity = ProjectVersion.class, sort = { @SortField(field = ProjectVersionDs.fPLANDATE, desc = true) })
 public class ProjectVersionDs extends AbstractDsModel<ProjectVersion> implements
         IModelWithId, IModelWithClientId {
 

@@ -7,9 +7,9 @@ package net.nan21.dnet.module.pj.md.business.serviceimpl;
 
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
-import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectType;
 import net.nan21.dnet.module.pj.md.business.service.IProjectService;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectMember;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
@@ -55,7 +55,7 @@ public class ProjectService extends AbstractEntityService<Project> implements
                 .getResultList();
     }
 
-    public List<Project> findByProjectLead(Assignable projectLead) {
+    public List<Project> findByProjectLead(ProjectMember projectLead) {
         return this.findByProjectLeadId(projectLead.getId());
     }
 

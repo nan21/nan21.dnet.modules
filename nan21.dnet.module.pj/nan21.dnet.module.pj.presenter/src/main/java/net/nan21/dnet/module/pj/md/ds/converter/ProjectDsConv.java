@@ -6,10 +6,9 @@
 package net.nan21.dnet.module.pj.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.ad.usr.business.service.IAssignableService;
-import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 import net.nan21.dnet.module.pj.base.business.service.IProjectTypeService;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectType;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectMember;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.pj.md.ds.model.ProjectDs;
@@ -44,11 +43,9 @@ public class ProjectDsConv extends AbstractDsConverter<ProjectDs, Project>
             if (e.getProjectLead() == null
                     || !e.getProjectLead().getId()
                             .equals(ds.getProjectLeadId())) {
-                e.setProjectLead((Assignable) this.em.find(Assignable.class,
-                        ds.getProjectLeadId()));
+                e.setProjectLead((ProjectMember) this.em.find(
+                        ProjectMember.class, ds.getProjectLeadId()));
             }
-        } else {
-            this.lookup_projectLead_Assignable(ds, e);
         }
     }
 
@@ -70,24 +67,6 @@ public class ProjectDsConv extends AbstractDsConverter<ProjectDs, Project>
         }
     }
 
-    protected void lookup_projectLead_Assignable(ProjectDs ds, Project e)
-            throws Exception {
-        if (ds.getProjectLead() != null && !ds.getProjectLead().equals("")) {
-            Assignable x = null;
-            try {
-                x = ((IAssignableService) getService(IAssignableService.class))
-                        .findByName(ds.getClientId(), ds.getProjectLead());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `Assignable` reference:  `projectLead` = "
-                                + ds.getProjectLead() + "  ");
-            }
-            e.setProjectLead(x);
-        } else {
-            e.setProjectLead(null);
-        }
-    }
-
     @Override
     public void entityToModel(Project e, ProjectDs ds) throws Exception {
         ds.setName(e.getName());
@@ -105,7 +84,8 @@ public class ProjectDsConv extends AbstractDsConverter<ProjectDs, Project>
         ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
         ds.setProjectLeadId(((e.getProjectLead() != null)) ? e.getProjectLead()
                 .getId() : null);
-        ds.setProjectLead(((e.getProjectLead() != null)) ? e.getProjectLead()
+        ds.setProjectLead(((e.getProjectLead() != null) && (e.getProjectLead()
+                .getMember() != null)) ? e.getProjectLead().getMember()
                 .getName() : null);
     }
 

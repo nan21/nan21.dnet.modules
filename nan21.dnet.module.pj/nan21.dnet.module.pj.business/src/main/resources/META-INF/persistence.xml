@@ -18,18 +18,22 @@
 		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemResolution</class>
 		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemTextType</class>
 		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemLinkType</class>
-	 
+	 	 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemTaskStatus</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemTaskType</class>
 		  
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.Project</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectMember</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.Item</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.ItemTask</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ItemText</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ItemLink</class>
 	 
 		 <!-- Dependencies -->
-		 
+		 <class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgn</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
+		
 		 <class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
 		 <class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
 		 

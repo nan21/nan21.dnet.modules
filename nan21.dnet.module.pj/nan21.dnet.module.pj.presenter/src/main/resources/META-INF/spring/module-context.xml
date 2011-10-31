@@ -32,6 +32,6 @@
  
 	<import resource="beans/pj.base.ds.xml"/>
 	<import resource="beans/pj.md.ds.xml"/>
- 
+ 	<import resource="beans/pj.md.asgn.xml"/>
 
 </beans>

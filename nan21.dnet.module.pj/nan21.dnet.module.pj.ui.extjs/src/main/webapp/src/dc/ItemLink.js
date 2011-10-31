@@ -25,41 +25,63 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ItemLink$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"sourceItem", dataIndex:"sourceItem",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"targetItem", dataIndex:"targetItem",anchor:"-20",maxLength:255  })
-		.addNumberField({ name:"linkTypeId", dataIndex:"linkTypeId",anchor:"-20"  })
 		.addTextField({ name:"linkType", dataIndex:"linkType",anchor:"-20",maxLength:255  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["sourceItem","targetItem","linkType"])
-		.addChildrenTo("col2",["sourceItem","targetItem","linkType"])
+		this._elems_.get("main")["items"] = [
+	    {layout:"anchor", border:false 
+	      ,items:[ this._elems_.get("sourceItem")] }
+	  ,	    {layout:"anchor", border:false 
+	      ,items:[ this._elems_.get("targetItem")] }
+	  ,	    {layout:"anchor", border:false 
+	      ,items:[ this._elems_.get("linkType")] }
+];
 	}
 }); 
- 	
- 	 
-Ext.define("net.nan21.dnet.module.pj.md.dc.ItemLink$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
-	alias: "widget.net.nan21.dnet.module.pj.md.dc.ItemLink$EditList",
+ 		 
+Ext.define("net.nan21.dnet.module.pj.md.dc.ItemLink$CtxList", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.pj.md.dc.ItemLink$CtxList",
 	
 	 _noImport_: false
 	,_noExport_: false
-	,_defineColumns_: function () {
+	,_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addNumberColumn({ name:"sourceItemId", dataIndex:"sourceItemId",format:"0",width:70 })  
+		.addTextColumn({ name:"sourceItem", dataIndex:"sourceItem", width:150 })   	
+		.addTextColumn({ name:"linkType", dataIndex:"linkType", width:150 })   	
+		.addNumberColumn({ name:"targetItemId", dataIndex:"targetItemId",format:"0",width:70 })  
+		.addTextColumn({ name:"targetItem", dataIndex:"targetItem", width:150 })   	
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
+		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
+	  ;		   
+	}
+});
+ 
+ 	
+
+Ext.define("net.nan21.dnet.module.pj.md.dc.ItemLink$CtxCreate", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.pj.md.dc.ItemLink$CtxCreate",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addNumberField({ name:"targetItemId", dataIndex:"targetItemId",anchor:"-20"  , style: "text-align:right;" })
+		.addLov({ name:"linkType", xtype:"net.nan21.dnet.module.pj.base.lovs.ItemLinkTypes", dataIndex:"linkType",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "linkTypeId"} ]  })
+		//containers
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250})     
+		;     
+	}
+	,_linkElements_: function () {
 		this._getBuilder_()
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Ext.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
-		.addNumberColumn({ name:"sourceItemId", dataIndex:"sourceItemId", hidden:true, align:"right",format:"0",width:70})
-		.addTextColumn({ name:"sourceItem", dataIndex:"sourceItem",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addNumberColumn({ name:"targetItemId", dataIndex:"targetItemId", hidden:true, align:"right",format:"0",width:70})
-		.addTextColumn({ name:"targetItem", dataIndex:"targetItem",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addNumberColumn({ name:"linkTypeId", dataIndex:"linkTypeId", hidden:true, align:"right",format:"0",width:70})
-		.addTextColumn({ name:"linkType", dataIndex:"linkType",width:120,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-	  ;  		   
-	}  
+		.addChildrenTo("main",["linkType","targetItemId"])
+;
+	}	
 });

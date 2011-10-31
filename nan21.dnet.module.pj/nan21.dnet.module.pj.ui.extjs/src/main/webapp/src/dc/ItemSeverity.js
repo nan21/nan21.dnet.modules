@@ -25,22 +25,17 @@ Ext.define("net.nan21.dnet.module.pj.base.dc.ItemSeverity$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
-		.addTextField({ name:"description",_sharedLabel_:true, dataIndex:"description",anchor:"-20",maxLength:400  })
-		.addNumberField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20"  })
-		.addDateField({ name:"createdAt",_sharedLabel_:true, dataIndex:"createdAt",anchor:"-20" ,format:Ext.DATE_FORMAT })
-		.addDateField({ name:"modifiedAt",_sharedLabel_:true, dataIndex:"modifiedAt",anchor:"-20" ,format:Ext.DATE_FORMAT })
-		.addTextField({ name:"createdBy",_sharedLabel_:true, dataIndex:"createdBy",anchor:"-20",maxLength:32  })
-		.addTextField({ name:"modifiedBy",_sharedLabel_:true, dataIndex:"modifiedBy",anchor:"-20",maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["name","description","createdBy","modifiedBy"])
-		.addChildrenTo("col2",["name","description","createdBy","modifiedBy"])
+		this._elems_.get("main")["items"] = [
+	    {layout:"anchor", border:false 
+	      ,items:[ this._elems_.get("name")] }
+	  ,	    {layout:"anchor", border:false 
+	      ,items:[ this._elems_.get("active")] }
+];
 	}
 }); 
  	
