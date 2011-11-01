@@ -15,6 +15,7 @@
 		<module>nan21.dnet.module.ad</module>
         <module>nan21.dnet.module.bd</module>
         <module>nan21.dnet.module.mm</module>
+        <module>nan21.dnet.module.pj</module>
         <module>nan21.dnet.module.bp</module>
         <module>nan21.dnet.module.hr</module>
         <module>nan21.dnet.module.sd</module>
