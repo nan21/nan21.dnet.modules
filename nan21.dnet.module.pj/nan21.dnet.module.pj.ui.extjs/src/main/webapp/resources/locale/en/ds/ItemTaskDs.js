@@ -5,7 +5,7 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemTaskDs$Trl", {
 	,item__lbl : "Issue summary"
 	,priorityId__lbl : "Priority Id"
 	,priority__lbl : "Priority"
-	,prioritySortValue__lbl : "Priority Sort Value"
+	,prioritySequenceNo__lbl : "Priority Sequence No"
 	,itemBusinessObject__lbl : "Item Business Object"
 	,itemClassName__lbl : "Item Class Name"
 	,typeId__lbl : "Type Id"

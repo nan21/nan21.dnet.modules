@@ -33,10 +33,19 @@ net.nan21.dnet.module.ad.menu.ad = [
 		{id:"AttachmentType_UI", text:Dnet.translate("ui","AttachmentType_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.data.frame.AttachmentType_UI", _bundle_:BUNDLE_ID}	]}
 ,		 
 	{"id":"sm_ad_impex", "text":"Import-Export", leaf:false, children:[
+ 
+	{"id":"sm_ad_impex_imp", "text":"Import", leaf:false, children:[
 		
 		{id:"ImportMapItem_UI", text:Dnet.translate("ui","ImportMapItem_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", _bundle_:BUNDLE_ID},		
 		{id:"ImportMap_UI", text:Dnet.translate("ui","ImportMap_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.impex.frame.ImportMap_UI", _bundle_:BUNDLE_ID},		
 		{id:"ImportJob_UI", text:Dnet.translate("ui","ImportJob_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.impex.frame.ImportJob_UI", _bundle_:BUNDLE_ID}	]}
+,		 
+	{"id":"sm_ad_impex_exp", "text":"Export", leaf:false, children:[
+		
+		{id:"CsvExport_UI", text:Dnet.translate("ui","CsvExport_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.impex.frame.CsvExport_UI", _bundle_:BUNDLE_ID},		
+		{id:"ExportMap_UI", text:Dnet.translate("ui","ExportMap_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.impex.frame.ExportMap_UI", _bundle_:BUNDLE_ID},		
+		{id:"ExportJob_UI", text:Dnet.translate("ui","ExportJob_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.impex.frame.ExportJob_UI", _bundle_:BUNDLE_ID}	]}
+	]}
 ,		 
 	{"id":"sm_ad_workflow", "text":"Workflow", leaf:false, children:[
 		

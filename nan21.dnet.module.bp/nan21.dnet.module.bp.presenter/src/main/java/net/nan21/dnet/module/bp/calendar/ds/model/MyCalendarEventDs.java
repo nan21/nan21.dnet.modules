@@ -21,6 +21,7 @@ public class MyCalendarEventDs extends AbstractDsModel<CalendarEvent> implements
     public static final String fSUBJECT = "subject";
     public static final String fSTARTDATE = "startDate";
     public static final String fENDDATE = "endDate";
+    public static final String fDUEDATE = "dueDate";
     public static final String fEVENTTYPE = "eventType";
     public static final String fSTATUSID = "statusId";
     public static final String fSTATUSNAME = "statusName";
@@ -28,6 +29,8 @@ public class MyCalendarEventDs extends AbstractDsModel<CalendarEvent> implements
     public static final String fPRIORITYNAME = "priorityName";
     public static final String fBPARTNERID = "bpartnerId";
     public static final String fBPARTNERCODE = "bpartnerCode";
+    public static final String fCONTACTID = "contactId";
+    public static final String fCONTACT = "contact";
     public static final String fCREATEDBY = "createdBy";
     public static final String fNOTES = "notes";
     public static final String fLOCATION = "location";
@@ -36,6 +39,8 @@ public class MyCalendarEventDs extends AbstractDsModel<CalendarEvent> implements
     public static final String fALLDAY = "allDay";
     public static final String fID = "id";
     public static final String fCLIENTID = "clientId";
+    public static final String fTARGETID = "targetId";
+    public static final String fTARGETTYPE = "targetType";
 
     @DsField()
     private String subject;
@@ -45,6 +50,9 @@ public class MyCalendarEventDs extends AbstractDsModel<CalendarEvent> implements
 
     @DsField(jpqlFilter = " e.startDate <= :endDate ")
     private Date endDate;
+
+    @DsField()
+    private Date dueDate;
 
     @DsField()
     private String eventType;
@@ -66,6 +74,12 @@ public class MyCalendarEventDs extends AbstractDsModel<CalendarEvent> implements
 
     @DsField(join = "left", path = "bpartner.code")
     private String bpartnerCode;
+
+    @DsField(join = "left", path = "contact.id")
+    private Long contactId;
+
+    @DsField(join = "left", fetch = false, path = "contact.name")
+    private String contact;
 
     @DsField()
     private String createdBy;
@@ -90,6 +104,12 @@ public class MyCalendarEventDs extends AbstractDsModel<CalendarEvent> implements
 
     @DsField()
     private Long clientId;
+
+    @DsField()
+    private Long targetId;
+
+    @DsField()
+    private String targetType;
 
     public MyCalendarEventDs() {
         super();
@@ -121,6 +141,14 @@ public class MyCalendarEventDs extends AbstractDsModel<CalendarEvent> implements
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Date getDueDate() {
+        return this.dueDate;
+    }
+
+    public void setDueDate(Date dueDate) {
+        this.dueDate = dueDate;
     }
 
     public String getEventType() {
@@ -177,6 +205,22 @@ public class MyCalendarEventDs extends AbstractDsModel<CalendarEvent> implements
 
     public void setBpartnerCode(String bpartnerCode) {
         this.bpartnerCode = bpartnerCode;
+    }
+
+    public Long getContactId() {
+        return this.contactId;
+    }
+
+    public void setContactId(Long contactId) {
+        this.contactId = contactId;
+    }
+
+    public String getContact() {
+        return this.contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
     public String getCreatedBy() {
@@ -242,6 +286,22 @@ public class MyCalendarEventDs extends AbstractDsModel<CalendarEvent> implements
 
     public void setClientId(Long clientId) {
         this.clientId = clientId;
+    }
+
+    public Long getTargetId() {
+        return this.targetId;
+    }
+
+    public void setTargetId(Long targetId) {
+        this.targetId = targetId;
+    }
+
+    public String getTargetType() {
+        return this.targetType;
+    }
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
     }
 
 }

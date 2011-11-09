@@ -104,6 +104,14 @@ public class CalendarEvent implements Serializable, IModelWithId,
     @NotNull
     private Boolean allDay;
 
+    /** TargetId. */
+    @Column(name = "TARGETID")
+    private Long targetId;
+
+    /** TargetType. */
+    @Column(name = "TARGETTYPE")
+    private String targetType;
+
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
     @NotNull
@@ -236,6 +244,31 @@ public class CalendarEvent implements Serializable, IModelWithId,
 
     public void setAllDay(Boolean allDay) {
         this.allDay = allDay;
+    }
+
+    public Long getTargetId() {
+        return this.targetId;
+    }
+
+    public void setTargetId(Long targetId) {
+        this.targetId = targetId;
+    }
+
+    public String getTargetType() {
+        return this.targetType;
+    }
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
+    }
+
+    @Transient
+    public String getBusinessObject() {
+        return "CalendarEvent.";
+    }
+
+    public void setBusinessObject(String businessObject) {
+
     }
 
     public Long getClientId() {

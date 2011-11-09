@@ -1,0 +1,26 @@
+
+Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityDs$Trl", {     	
+	accountId__lbl : "Account Id"
+	,account__lbl : "Account"
+	,expectedCloseDate__lbl : "Expected Close Date"
+	,probability__lbl : "Probability"
+	,expectedAmount__lbl : "Expected Amount"
+	,expectedCurrencyId__lbl : "Expected Currency Id"
+	,expectedCurrency__lbl : "Expected Currency"
+	,status__lbl : "Status"
+	,priorityId__lbl : "Priority Id"
+	,priority__lbl : "Priority"
+	,salesStageId__lbl : "Sales Stage Id"
+	,salesStage__lbl : "Sales Stage"
+	,leadSourceId__lbl : "Lead Source Id"
+	,leadSource__lbl : "Lead Source"
+	,campaign__lbl : "Campaign"
+	,resultReasonId__lbl : "Result Reason Id"
+	,resultReason__lbl : "Result Reason"
+	,resultNote__lbl : "Result Note"
+	,assignedToId__lbl : "Assigned To Id"
+	,assignedTo__lbl : "Assigned To"
+	,className__lbl : "Class Name"
+	,businessObject__lbl : "Business Object"
+	
+});

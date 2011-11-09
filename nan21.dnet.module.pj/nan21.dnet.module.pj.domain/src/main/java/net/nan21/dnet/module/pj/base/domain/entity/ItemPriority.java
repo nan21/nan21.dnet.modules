@@ -60,10 +60,10 @@ public class ItemPriority implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_NAME = "ItemPriority.findByName";
 
-    /** SortValue. */
-    @Column(name = "SORTVALUE", nullable = false)
+    /** SequenceNo. */
+    @Column(name = "SEQUENCENO", nullable = false)
     @NotNull
-    private Integer sortValue;
+    private Integer sequenceNo;
 
     /** Name. */
     @Column(name = "NAME", nullable = false)
@@ -121,12 +121,12 @@ public class ItemPriority implements Serializable, IModelWithId,
 
     /* ============== getters - setters ================== */
 
-    public Integer getSortValue() {
-        return this.sortValue;
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
     }
 
-    public void setSortValue(Integer sortValue) {
-        this.sortValue = sortValue;
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
     }
 
     public String getName() {

@@ -31,7 +31,7 @@ public class ItemTaskDs extends AbstractDsModel<ItemTask> implements
     public static final String fITEM = "item";
     public static final String fPRIORITYID = "priorityId";
     public static final String fPRIORITY = "priority";
-    public static final String fPRIORITYSORTVALUE = "prioritySortValue";
+    public static final String fPRIORITYSEQUENCENO = "prioritySequenceNo";
     public static final String fITEMBUSINESSOBJECT = "itemBusinessObject";
     public static final String fITEMCLASSNAME = "itemClassName";
     public static final String fTYPEID = "typeId";
@@ -80,8 +80,8 @@ public class ItemTaskDs extends AbstractDsModel<ItemTask> implements
     @DsField(join = "left", path = "item.priority.name")
     private String priority;
 
-    @DsField(join = "left", path = "item.priority.sortValue")
-    private Integer prioritySortValue;
+    @DsField(join = "left", path = "item.priority.sequenceNo")
+    private Integer prioritySequenceNo;
 
     @DsField(join = "left", fetch = false, path = "item.businessObject")
     private String itemBusinessObject;
@@ -220,12 +220,12 @@ public class ItemTaskDs extends AbstractDsModel<ItemTask> implements
         this.priority = priority;
     }
 
-    public Integer getPrioritySortValue() {
-        return this.prioritySortValue;
+    public Integer getPrioritySequenceNo() {
+        return this.prioritySequenceNo;
     }
 
-    public void setPrioritySortValue(Integer prioritySortValue) {
-        this.prioritySortValue = prioritySortValue;
+    public void setPrioritySequenceNo(Integer prioritySequenceNo) {
+        this.prioritySequenceNo = prioritySequenceNo;
     }
 
     public String getItemBusinessObject() {

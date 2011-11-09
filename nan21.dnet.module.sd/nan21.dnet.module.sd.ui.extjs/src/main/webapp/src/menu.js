@@ -6,6 +6,11 @@ net.nan21.dnet.module.sd.menu.crm = [
  
 	{"id":"sm_sd", "text":"Sales & Distribution", leaf:false, children:[
  
+	{"id":"sm_sd_opportunity", "text":"Opportunities", leaf:false, children:[
+		
+		{id:"OpportunityBaseData_UI", text:Dnet.translate("ui","OpportunityBaseData_UI"), leaf:true, _frame_:"net.nan21.dnet.module.sd.opportunity.frame.OpportunityBaseData_UI", _bundle_:BUNDLE_ID},		
+		{id:"Opportunity_UI", text:Dnet.translate("ui","Opportunity_UI"), leaf:true, _frame_:"net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI", _bundle_:BUNDLE_ID}	]}
+,		 
 	{"id":"sm_sd_order", "text":"Orders", leaf:false, children:[
 		
 		{id:"SalesOrderBaseData_UI", text:Dnet.translate("ui","SalesOrderBaseData_UI"), leaf:true, _frame_:"net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI", _bundle_:BUNDLE_ID},		

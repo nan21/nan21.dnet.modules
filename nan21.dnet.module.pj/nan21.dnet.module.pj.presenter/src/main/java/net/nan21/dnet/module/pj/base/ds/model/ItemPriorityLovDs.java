@@ -14,7 +14,7 @@ import net.nan21.dnet.module.pj.base.domain.entity.ItemPriority;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ItemPriority.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = ItemPriorityLovDs.fSORTVALUE) })
+@Ds(entity = ItemPriority.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = ItemPriorityLovDs.fSEQUENCENO) })
 public class ItemPriorityLovDs extends AbstractDsModel<ItemPriority> implements
         IModelWithId, IModelWithClientId {
 
@@ -22,7 +22,7 @@ public class ItemPriorityLovDs extends AbstractDsModel<ItemPriority> implements
     public static final String fCLIENTID = "clientId";
     public static final String fNAME = "name";
     public static final String fACTIVE = "active";
-    public static final String fSORTVALUE = "sortValue";
+    public static final String fSEQUENCENO = "sequenceNo";
 
     @DsField()
     private Long id;
@@ -37,7 +37,7 @@ public class ItemPriorityLovDs extends AbstractDsModel<ItemPriority> implements
     private Boolean active;
 
     @DsField()
-    private Integer sortValue;
+    private Integer sequenceNo;
 
     public ItemPriorityLovDs() {
         super();
@@ -80,12 +80,12 @@ public class ItemPriorityLovDs extends AbstractDsModel<ItemPriority> implements
         this.active = active;
     }
 
-    public Integer getSortValue() {
-        return this.sortValue;
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
     }
 
-    public void setSortValue(Integer sortValue) {
-        this.sortValue = sortValue;
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
     }
 
 }

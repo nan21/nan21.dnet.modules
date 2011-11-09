@@ -26,6 +26,7 @@ public class MyCalendarEventDsConv extends
         e.setSubject(ds.getSubject());
         e.setStartDate(ds.getStartDate());
         e.setEndDate(ds.getEndDate());
+        e.setDueDate(ds.getDueDate());
         e.setEventType(ds.getEventType());
         e.setNotes(ds.getNotes());
         e.setLocation(ds.getLocation());
@@ -33,6 +34,8 @@ public class MyCalendarEventDsConv extends
         e.setReminder(ds.getReminder());
         e.setAllDay(ds.getAllDay());
         e.setClientId(ds.getClientId());
+        e.setTargetId(ds.getTargetId());
+        e.setTargetType(ds.getTargetType());
     }
 
     protected void modelToEntityReferences(MyCalendarEventDs ds, CalendarEvent e)
@@ -136,6 +139,7 @@ public class MyCalendarEventDsConv extends
         ds.setSubject(e.getSubject());
         ds.setStartDate(e.getStartDate());
         ds.setEndDate(e.getEndDate());
+        ds.setDueDate(e.getDueDate());
         ds.setEventType(e.getEventType());
         ds.setCreatedBy(e.getCreatedBy());
         ds.setNotes(e.getNotes());
@@ -145,6 +149,8 @@ public class MyCalendarEventDsConv extends
         ds.setAllDay(e.getAllDay());
         ds.setId(e.getId());
         ds.setClientId(e.getClientId());
+        ds.setTargetId(e.getTargetId());
+        ds.setTargetType(e.getTargetType());
         ds.setStatusId(((e.getStatus() != null)) ? e.getStatus().getId() : null);
         ds.setStatusName(((e.getStatus() != null)) ? e.getStatus().getName()
                 : null);
@@ -156,6 +162,10 @@ public class MyCalendarEventDsConv extends
                 : null);
         ds.setBpartnerCode(((e.getBpartner() != null)) ? e.getBpartner()
                 .getCode() : null);
+        ds.setContactId(((e.getContact() != null)) ? e.getContact().getId()
+                : null);
+        ds.setContact(((e.getContact() != null)) ? e.getContact().getName()
+                : null);
     }
 
 }

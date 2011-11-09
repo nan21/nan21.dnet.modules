@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:osgi-compendium="http://www.springframework.org/schema/osgi-compendium"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/osgi-compendium
+    			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
+	<context:annotation-config />
+	<bean id="initDataProviderFactory" class="net.nan21.dnet.core.api.setup.InitDataProviderFactory">
+		<property name="name" value="nan21.dnet.module.sd.data"></property>
+	</bean>
+	
+	<bean id="initDataProvider" scope="prototype"
+		class="net.nan21.dnet.core.api.setup.InitDataProvider">
+		<property name="list">
+			<list>
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="910" />
+					<property name="name" value="sd-opportunity" />
+					<property name="items">
+						<list>
+							 
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="OpportunityPriority" />
+								<property name="destPath" value="demo-data/sd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/sd/data/opportunity/OpportunityPriority.csv" />
+							</bean>
+							 
+							 <bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="OpportunityStatus" />
+								<property name="destPath" value="demo-data/sd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/sd/data/opportunity/OpportunityStatus.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="OpportunitySource" />
+								<property name="destPath" value="demo-data/sd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/sd/data/opportunity/OpportunitySource.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="40" />
+								<property name="dsName" value="OpportunityStage" />
+								<property name="destPath" value="demo-data/sd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/sd/data/opportunity/OpportunityStage.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="50" />
+								<property name="dsName" value="OpportunityResultReason" />
+								<property name="destPath" value="demo-data/sd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/sd/data/opportunity/OpportunityResultReason.csv" />
+							</bean>
+						</list>
+					</property>
+				</bean>
+				 
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -48,7 +48,7 @@ Ext.define("net.nan21.dnet.module.pj.base.dc.ItemPriority$EditList", {
 	,_noExport_: false
 	,_defineColumns_: function () {
 		this._getBuilder_()
-		.addNumberColumn({ name:"sortValue", dataIndex:"sortValue", align:"right",format:Ext.NUMBER_FORMAT_INT,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",format:Ext.NUMBER_FORMAT_INT,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
 		.addTextColumn({ name:"name", dataIndex:"name", width:150,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
 		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:400,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "400"}} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})

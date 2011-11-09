@@ -38,7 +38,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Location. */
 @Entity
-@Table(name = "BD_LOCATION")
+@Table(name = "BD_GEO_LOCATION")
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "Location.findById", query = "SELECT e FROM Location e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),

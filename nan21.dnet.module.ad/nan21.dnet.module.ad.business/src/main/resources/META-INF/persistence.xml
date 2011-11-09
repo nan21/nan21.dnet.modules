@@ -13,6 +13,14 @@
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportMap</class>
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem</class>
 		
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ExportJob</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ExportJobItem</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ExportMap</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ExportMapItem</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.CsvExport</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.CsvExportField</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.CsvExportSort</class>
+		 
 		<class>net.nan21.dnet.module.ad.report.domain.entity.ReportServer</class>
 		<class>net.nan21.dnet.module.ad.report.domain.entity.Report</class>
 		<class>net.nan21.dnet.module.ad.report.domain.entity.ReportParam</class>

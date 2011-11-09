@@ -7,6 +7,27 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="ExportJobService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.impex.business.serviceimpl.ExportJobService"  />  
+ 
+ 	<bean id="ExportJobItemService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.impex.business.serviceimpl.ExportJobItemService"  />  
+ 
+ 	<bean id="ExportMapService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.impex.business.serviceimpl.ExportMapService"  />  
+ 
+ 	<bean id="ExportMapItemService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.impex.business.serviceimpl.ExportMapItemService"  />  
+ 
+ 	<bean id="CsvExportService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.impex.business.serviceimpl.CsvExportService"  />  
+ 
+ 	<bean id="CsvExportFieldService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.impex.business.serviceimpl.CsvExportFieldService"  />  
+ 
+ 	<bean id="CsvExportSortService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.impex.business.serviceimpl.CsvExportSortService"  />  
+ 
  	<bean id="ImportJobService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.impex.business.serviceimpl.ImportJobService"  />  
  

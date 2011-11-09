@@ -39,6 +39,8 @@
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue</class>
 		
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
+		 <class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
 		
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>

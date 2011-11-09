@@ -29,7 +29,7 @@ public class ItemPriorityDs extends AbstractDsModel<ItemPriority> implements
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
-    public static final String fSORTVALUE = "sortValue";
+    public static final String fSEQUENCENO = "sequenceNo";
 
     @DsField()
     private String name;
@@ -62,7 +62,7 @@ public class ItemPriorityDs extends AbstractDsModel<ItemPriority> implements
     private Long version;
 
     @DsField()
-    private Integer sortValue;
+    private Integer sequenceNo;
 
     public ItemPriorityDs() {
         super();
@@ -153,12 +153,12 @@ public class ItemPriorityDs extends AbstractDsModel<ItemPriority> implements
         this.version = version;
     }
 
-    public Integer getSortValue() {
-        return this.sortValue;
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
     }
 
-    public void setSortValue(Integer sortValue) {
-        this.sortValue = sortValue;
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
     }
 
 }

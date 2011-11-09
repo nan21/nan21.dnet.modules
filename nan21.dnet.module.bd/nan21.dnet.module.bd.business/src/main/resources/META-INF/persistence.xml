@@ -32,6 +32,11 @@
 		
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>
+		
+		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccSchema</class>
+		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup</class>
+		<class>net.nan21.dnet.module.bd.acc.domain.entity.Account</class>
+		
 		 
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

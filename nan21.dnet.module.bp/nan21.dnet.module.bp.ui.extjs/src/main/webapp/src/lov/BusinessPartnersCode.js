@@ -1,7 +1,7 @@
 
-Ext.define("net.nan21.dnet.module.bp.md.lovs.BusinessPartners", {
+Ext.define("net.nan21.dnet.module.bp.md.lovs.BusinessPartnersCode", {
 	extend: "dnet.base.AbstractCombo",
-	alias: "widget.net.nan21.dnet.module.bp.md.lovs.BusinessPartners",
+	alias: "widget.net.nan21.dnet.module.bp.md.lovs.BusinessPartnersCode",
  
 	displayField:"code",
 	listConfig: {		

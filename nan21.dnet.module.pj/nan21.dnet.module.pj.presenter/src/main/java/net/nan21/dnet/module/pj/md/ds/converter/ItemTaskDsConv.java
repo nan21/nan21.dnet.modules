@@ -119,9 +119,9 @@ public class ItemTaskDsConv extends AbstractDsConverter<ItemTaskDs, ItemTask>
         ds.setPriority(((e.getItem() != null) && (e.getItem().getPriority() != null)) ? e
                 .getItem().getPriority().getName()
                 : null);
-        ds.setPrioritySortValue(((e.getItem() != null) && (e.getItem()
+        ds.setPrioritySequenceNo(((e.getItem() != null) && (e.getItem()
                 .getPriority() != null)) ? e.getItem().getPriority()
-                .getSortValue() : null);
+                .getSequenceNo() : null);
         ds.setItemBusinessObject(((e.getItem() != null)) ? e.getItem()
                 .getBusinessObject() : null);
         ds.setItemClassName(((e.getItem() != null)) ? e.getItem()

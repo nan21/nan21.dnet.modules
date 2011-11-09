@@ -33,11 +33,11 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Country. */
 @Entity
-@Table(name = "BD_COUNTRY", uniqueConstraints = {
-        @UniqueConstraint(name = "BD_COUNTRY_UK1", columnNames = { "CLIENTID",
-                "CODE" }),
-        @UniqueConstraint(name = "BD_COUNTRY_UK2", columnNames = { "CLIENTID",
-                "NAME" }) })
+@Table(name = "BD_GEO_COUNTRY", uniqueConstraints = {
+        @UniqueConstraint(name = "BD_GEO_COUNTRY_UK1", columnNames = {
+                "CLIENTID", "CODE" }),
+        @UniqueConstraint(name = "BD_GEO_COUNTRY_UK2", columnNames = {
+                "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "Country.findById", query = "SELECT e FROM Country e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),

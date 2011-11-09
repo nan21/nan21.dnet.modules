@@ -47,14 +47,14 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJob$List", {
 	,_noExport_: false
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addTextColumn({ name:"name", dataIndex:"name",width:120 })   	
+		.addTextColumn({ name:"name", dataIndex:"name", width:200 })   	
 		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 	  ;		   
 	}
 });

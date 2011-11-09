@@ -11,7 +11,7 @@ import net.nan21.dnet.module.ad.impex.ds.model.ImportMapDs;
 public class ImportFromMapDelegate extends BaseDsDelegate {
 
 	public void execute(ImportMapDs ds) throws Exception {
-		// TODO Auto-generated method stub
+		 
 		IImportMapItemService srv = 
 			(IImportMapItemService)this.findEntityService(ImportMapItem.class);
 		List<ImportMapItem> items = srv.getEntityManager()

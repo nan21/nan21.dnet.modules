@@ -14,8 +14,7 @@ Export-Package: net.nan21.dnet.module.pj.base.ds.converter;version="1.
  le.pj.md.ds.model",net.nan21.dnet.module.pj.md.ds.model;version="1.0.
  0.M4";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.a
  pi.model,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.pj
- .md.domain.entity",net.nan21.dnet.module.pj.md.ds.param;version="1.0.
- 0.M4";uses:="net.nan21.dnet.core.presenter.model"
+ .md.domain.entity"
 Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M4,1.0.0.M4]",na
  n21.dnet.core.presenter;version="[1.0.0.M4,1.0.0.M4]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.5)

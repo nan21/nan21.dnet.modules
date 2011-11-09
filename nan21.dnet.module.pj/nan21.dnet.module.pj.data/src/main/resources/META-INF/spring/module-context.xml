@@ -98,7 +98,34 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/pj/data/base/ProjectRole.csv" />
 							</bean>
-							  
+							
+							
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="100" />
+								<property name="dsName" value="ItemLinkType" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ItemLinkType.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="110" />
+								<property name="dsName" value="ItemTaskType" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ItemTaskType.csv" />
+							</bean> 
+							
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="120" />
+								<property name="dsName" value="ItemTaskStatus" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/base/ItemTaskStatus.csv" />
+							</bean> 
+							 
 						</list>
 					</property>
 				</bean>

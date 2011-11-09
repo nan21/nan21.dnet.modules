@@ -25,7 +25,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"firstName", dataIndex:"firstName",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"lastName", dataIndex:"lastName",anchor:"-20",maxLength:255  })
-		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"bpartnerCode",anchor:"-20",maxLength:32,retFieldMapping: []  })
+		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartnersCode", dataIndex:"bpartnerCode",anchor:"-20",maxLength:32,retFieldMapping: []  })
 		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender",anchor:"-20",store:[ "male", "female"]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor", width:220}) 
@@ -104,7 +104,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$Edit", {
 		.addTextField({ name:"position", dataIndex:"position",anchor:"-20" ,maxLength:255  })
 		.addDateField({ name:"birthdate", dataIndex:"birthdate",anchor:"-20" })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"bpartnerCode",anchor:"-20" ,maxLength:32,retFieldMapping: []  })
+		.addLov({ name:"bpartnerCode", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartnersCode", dataIndex:"bpartnerCode",anchor:"-20" ,maxLength:32,retFieldMapping: []  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:300})     
 		.addPanel({ name:"col2", layout:"anchor" , width:250})     

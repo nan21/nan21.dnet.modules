@@ -23,7 +23,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$Filter", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"businessPartner", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"businessPartner",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "businessPartnerId"} ]  })
+		.addLov({ name:"businessPartner", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartnersCode", dataIndex:"businessPartner",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "businessPartnerId"} ]  })
 		.addLov({ name:"organization", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"organization",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
 		.addLov({ name:"customerGroup", xtype:"net.nan21.dnet.module.bp.base.lovs.CustomerGroup", dataIndex:"customerGroup",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "customerGroupId"} ]  })
 		.addLov({ name:"vendorGroup", xtype:"net.nan21.dnet.module.bp.base.lovs.VendorGroup", dataIndex:"vendorGroup",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "vendorGroupId"} ]  })
@@ -82,7 +82,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"businessPartner", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartners", dataIndex:"businessPartner",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "businessPartnerId"} ]  })
+		.addLov({ name:"businessPartner", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartnersCode", dataIndex:"businessPartner",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "businessPartnerId"} ]  })
 		.addLov({ name:"organization", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"organization",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
 		.addLov({ name:"customerGroup", xtype:"net.nan21.dnet.module.bp.base.lovs.CustomerGroup", dataIndex:"customerGroup",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "customerGroupId"} ]  })
 		.addLov({ name:"customerPaymentMethod", xtype:"net.nan21.dnet.module.bp.base.lovs.PaymentMethod", dataIndex:"customerPaymentMethod",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "customerPaymentMethodId"} ]  })

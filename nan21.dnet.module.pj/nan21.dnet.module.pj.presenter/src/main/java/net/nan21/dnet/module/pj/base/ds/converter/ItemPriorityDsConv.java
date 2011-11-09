@@ -22,7 +22,7 @@ public class ItemPriorityDsConv extends
         e.setDescription(ds.getDescription());
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
-        e.setSortValue(ds.getSortValue());
+        e.setSequenceNo(ds.getSequenceNo());
     }
 
     protected void modelToEntityReferences(ItemPriorityDs ds, ItemPriority e)
@@ -42,7 +42,7 @@ public class ItemPriorityDsConv extends
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
-        ds.setSortValue(e.getSortValue());
+        ds.setSequenceNo(e.getSequenceNo());
     }
 
 }

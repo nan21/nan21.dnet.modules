@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="AccSchemaDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccSchemaDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.AccSchema" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.acc.ds.converter.AccSchemaDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccSchema" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccSchemaDs" />
+	</bean>
+   
+ 	<bean id="AccSchemaLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccSchemaLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.AccSchema" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.acc.ds.converter.AccSchemaLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccSchemaLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccSchemaLovDs" />
+	</bean>
+   
+ 	<bean id="AccountGroupDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.acc.ds.converter.AccountGroupDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccountGroup" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupDs" />
+	</bean>
+   
+ 	<bean id="AccountGroupLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.acc.ds.converter.AccountGroupLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccountGroupLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupLovDs" />
+	</bean>
+   
+ 	<bean id="AccountDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.Account" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.acc.ds.converter.AccountDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Account" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountDs" />
+	</bean>
+   
+ 	<bean id="AccountLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.Account" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.acc.ds.converter.AccountLovDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccountLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountLovDs" />
+	</bean>
+      
+</beans>
+   

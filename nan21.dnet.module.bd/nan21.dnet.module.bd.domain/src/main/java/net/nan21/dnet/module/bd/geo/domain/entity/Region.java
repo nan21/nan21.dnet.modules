@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Region. */
 @Entity
-@Table(name = "BD_REGION", uniqueConstraints = { @UniqueConstraint(name = "BD_REGION_UK1", columnNames = {
+@Table(name = "BD_GEO_REGION", uniqueConstraints = { @UniqueConstraint(name = "BD_GEO_REGION_UK1", columnNames = {
         "CLIENTID", "COUNTRY_ID", "CODE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({

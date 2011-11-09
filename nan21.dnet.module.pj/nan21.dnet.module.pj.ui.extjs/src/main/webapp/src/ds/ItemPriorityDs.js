@@ -13,11 +13,11 @@ Ext.define("net.nan21.dnet.module.pj.base.ds.model.ItemPriorityDs" , {
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
-		{name:"sortValue",type:"int", useNull:true }
+		{name:"sequenceNo",type:"int", useNull:true }
 	],
 	validations: [  
 		{field: "name", type: 'presence'}, 
-		{field: "sortValue", type: 'presence'}
+		{field: "sequenceNo", type: 'presence'}
 	]
 });
 
@@ -34,7 +34,7 @@ Ext.define("net.nan21.dnet.module.pj.base.ds.model.ItemPriorityDsFilter" , {
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
-		{name:"sortValue",type:"int", useNull:true }
+		{name:"sequenceNo",type:"int", useNull:true }
 	] 
 });
 	

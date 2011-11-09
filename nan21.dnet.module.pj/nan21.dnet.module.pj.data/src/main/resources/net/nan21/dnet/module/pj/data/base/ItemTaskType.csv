@@ -1,0 +1,8 @@
+"name";"description";"active"
+"analyze";"Analyze the impact and provide solution concept";"true"
+"create-environment";"Prepare environment required to handle issue";"true"
+"implement";"Do the development work";"true"
+"merge";"Merge fix into affected versions";"true"
+"more-info";"Find more info";"true"
+"reproduce";"Try to reproduce the issue";"true"
+"test";"Test implementation";"true"

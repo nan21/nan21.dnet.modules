@@ -19,6 +19,13 @@
 		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType</class>
 		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus</class>
 
+		<class>net.nan21.dnet.module.sd.opportunity.domain.entity.Opportunity</class>
+		<class>net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStatus</class>
+		<class>net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityPriority</class>
+		<class>net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunitySource</class>
+		<class>net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStage</class>
+		<class>net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityResultReason</class>
+ 
 		<!-- Dependencies -->
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
@@ -47,6 +54,8 @@
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue</class>
 		
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
+		 <class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
 		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

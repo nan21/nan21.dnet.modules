@@ -133,6 +133,7 @@
 	
 	<!-- Domain services --> 
 	<import resource="beans/sd.price.entity.xml" />
+	<import resource="beans/sd.opportunity.entity.xml" />
 	<import resource="beans/sd.order.entity.xml" />
 	<import resource="beans/sd.invoice.entity.xml" /> 
 </beans>

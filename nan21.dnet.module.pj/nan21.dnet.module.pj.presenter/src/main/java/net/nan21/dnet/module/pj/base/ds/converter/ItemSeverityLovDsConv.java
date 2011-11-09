@@ -20,7 +20,7 @@ public class ItemSeverityLovDsConv extends
         e.setClientId(ds.getClientId());
         e.setName(ds.getName());
         e.setActive(ds.getActive());
-        e.setSortValue(ds.getSortValue());
+        e.setSequenceNo(ds.getSequenceNo());
     }
 
     protected void modelToEntityReferences(ItemSeverityLovDs ds, ItemSeverity e)
@@ -34,7 +34,7 @@ public class ItemSeverityLovDsConv extends
         ds.setClientId(e.getClientId());
         ds.setName(e.getName());
         ds.setActive(e.getActive());
-        ds.setSortValue(e.getSortValue());
+        ds.setSequenceNo(e.getSequenceNo());
     }
 
 }

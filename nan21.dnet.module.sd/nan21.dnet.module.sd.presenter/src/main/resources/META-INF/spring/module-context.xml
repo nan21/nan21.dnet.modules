@@ -28,8 +28,8 @@
 	</bean>
 	
 	<import resource="beans/sd.price.ds.xml"/>
+	<import resource="beans/sd.opportunity.ds.xml"/>
 	<import resource="beans/sd.order.ds.xml"/>	
 	<import resource="beans/sd.invoice.ds.xml"/>
-	 
-	 
+	 	 
 </beans>
