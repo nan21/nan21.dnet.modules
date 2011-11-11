@@ -32,12 +32,15 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Note. */
 @Entity
-@Table(name = "AD_NOTE")
+@Table(name = Note.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "Note.findById", query = "SELECT e FROM Note e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Note.findByIds", query = "SELECT e FROM Note e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Note implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_NOTE";
+    public static final String SEQUENCE_NAME = "AD_NOTE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -52,7 +55,7 @@ public class Note implements Serializable, IModelWithId, IModelWithClientId {
     public static final String NQ_FIND_BY_IDS = "Note.findByIds";
 
     /** Note. */
-    @Column(name = "NOTE")
+    @Column(name = "NOTE", length = 4000)
     private String note;
 
     /** TargetId. */
@@ -60,7 +63,7 @@ public class Note implements Serializable, IModelWithId, IModelWithClientId {
     private Long targetId;
 
     /** TargetType. */
-    @Column(name = "TARGETTYPE")
+    @Column(name = "TARGETTYPE", length = 255)
     private String targetType;
 
     /** Owner client */
@@ -81,12 +84,12 @@ public class Note implements Serializable, IModelWithId, IModelWithClientId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -100,7 +103,7 @@ public class Note implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
     /* ============== getters - setters ================== */

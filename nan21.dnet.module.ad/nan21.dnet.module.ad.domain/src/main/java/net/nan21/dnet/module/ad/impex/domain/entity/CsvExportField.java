@@ -36,13 +36,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** CsvExportField. */
 @Entity
-@Table(name = "AD_CSV_EXP_FIELD")
+@Table(name = CsvExportField.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "CsvExportField.findById", query = "SELECT e FROM CsvExportField e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "CsvExportField.findByIds", query = "SELECT e FROM CsvExportField e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CsvExportField implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_CSV_EXP_FIELD";
+    public static final String SEQUENCE_NAME = "AD_CSV_EXP_FIELD_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -61,11 +64,11 @@ public class CsvExportField implements Serializable, IModelWithId,
     private Integer sequenceNo;
 
     /** DsField. */
-    @Column(name = "DSFIELD")
+    @Column(name = "DSFIELD", length = 255)
     private String dsField;
 
     /** Alias. */
-    @Column(name = "ALIAS")
+    @Column(name = "ALIAS", length = 255)
     private String alias;
 
     /** Active. */
@@ -91,12 +94,12 @@ public class CsvExportField implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -110,7 +113,7 @@ public class CsvExportField implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CsvExport.class)
     @JoinColumn(name = "CSVEXPORT_ID", referencedColumnName = "ID")

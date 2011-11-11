@@ -38,7 +38,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product attribute group.*/
 @Entity
-@Table(name = "MM_PRODUCT_ATTR_VAL", uniqueConstraints = { @UniqueConstraint(name = "MM_PRODUCT_ATTR_VAL_UK1", columnNames = {
+@Table(name = ProductAttributeValue.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PRODUCT_ATTR_VAL_UK1", columnNames = {
         "CLIENTID", "PRODUCT_ID", "ATTRIBUTE_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -48,6 +48,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "ProductAttributeValue.findByName_PRIMITIVE", query = "SELECT e FROM ProductAttributeValue e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.attribute.id = :pAttributeId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAttributeValue implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "MM_PRODUCT_ATTR_VAL";
+    public static final String SEQUENCE_NAME = "MM_PRODUCT_ATTR_VAL_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -72,7 +75,7 @@ public class ProductAttributeValue implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_NAME_PRIMITIVE = "ProductAttributeValue.findByName_PRIMITIVE";
 
     /** Value. */
-    @Column(name = "VALUE")
+    @Column(name = "VALUE", length = 400)
     private String value;
 
     /** Owner client */
@@ -93,12 +96,12 @@ public class ProductAttributeValue implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -112,7 +115,7 @@ public class ProductAttributeValue implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
     @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")

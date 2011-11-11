@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** SysDsService. */
 @Entity
-@Table(name = "AD_SYSDSSERVICE", uniqueConstraints = { @UniqueConstraint(name = "AD_SYSDSSERVICE_UK1", columnNames = {
+@Table(name = SysDsService.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_SYSDSSERVICE_UK1", columnNames = {
         "CLIENTID", "DATASOURCE_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -47,6 +47,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "SysDsService.findByName_PRIMITIVE", query = "SELECT e FROM SysDsService e WHERE e.clientId = :pClientId and  e.dataSource.id = :pDataSourceId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysDsService implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_SYSDSSERVICE";
+    public static final String SEQUENCE_NAME = "AD_SYSDSSERVICE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -71,7 +74,7 @@ public class SysDsService implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_NAME_PRIMITIVE = "SysDsService.findByName_PRIMITIVE";
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
@@ -81,7 +84,7 @@ public class SysDsService implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 400)
     private String description;
 
     /** Owner client */
@@ -102,12 +105,12 @@ public class SysDsService implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -121,7 +124,7 @@ public class SysDsService implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SysDataSource.class)
     @JoinColumn(name = "DATASOURCE_ID", referencedColumnName = "ID")

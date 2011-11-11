@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Region. */
 @Entity
-@Table(name = "BD_GEO_REGION", uniqueConstraints = { @UniqueConstraint(name = "BD_GEO_REGION_UK1", columnNames = {
+@Table(name = Region.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BD_GEO_REGION_UK1", columnNames = {
         "CLIENTID", "COUNTRY_ID", "CODE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -46,6 +46,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "Region.findByCodeAndCountry", query = "SELECT e FROM Region e WHERE e.clientId = :pClientId and  e.country = :pCountry and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Region.findByCodeAndCountry_PRIMITIVE", query = "SELECT e FROM Region e WHERE e.clientId = :pClientId and  e.country.id = :pCountryId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Region implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "BD_GEO_REGION";
+    public static final String SEQUENCE_NAME = "BD_GEO_REGION_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -70,16 +73,16 @@ public class Region implements Serializable, IModelWithId, IModelWithClientId {
     public static final String NQ_FIND_BY_CODEANDCOUNTRY_PRIMITIVE = "Region.findByCodeAndCountry_PRIMITIVE";
 
     /** Iso. */
-    @Column(name = "ISO")
+    @Column(name = "ISO", length = 32)
     private String iso;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Code. */
-    @Column(name = "CODE", nullable = false)
+    @Column(name = "CODE", nullable = false, length = 32)
     @NotBlank
     private String code;
 
@@ -89,7 +92,7 @@ public class Region implements Serializable, IModelWithId, IModelWithClientId {
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -110,12 +113,12 @@ public class Region implements Serializable, IModelWithId, IModelWithClientId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -129,7 +132,7 @@ public class Region implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
     @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID")

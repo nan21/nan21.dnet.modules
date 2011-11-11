@@ -75,7 +75,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$Edit", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:80,anchor:"-20"   })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addCheckbox({ name:"valid", dataIndex:"valid"  })

@@ -39,13 +39,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** CalendarEvent. */
 @Entity
-@Table(name = "BP_CLNDR_EVENT")
+@Table(name = CalendarEvent.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "CalendarEvent.findById", query = "SELECT e FROM CalendarEvent e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "CalendarEvent.findByIds", query = "SELECT e FROM CalendarEvent e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CalendarEvent implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "BP_CLNDR_EVENT";
+    public static final String SEQUENCE_NAME = "BP_CLNDR_EVENT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -60,7 +63,7 @@ public class CalendarEvent implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "CalendarEvent.findByIds";
 
     /** Subject. */
-    @Column(name = "SUBJECT", nullable = false)
+    @Column(name = "SUBJECT", nullable = false, length = 255)
     @NotBlank
     private String subject;
 
@@ -80,23 +83,23 @@ public class CalendarEvent implements Serializable, IModelWithId,
     private Date dueDate;
 
     /** EventType. */
-    @Column(name = "EVENTTYPE")
+    @Column(name = "EVENTTYPE", length = 16)
     private String eventType;
 
     /** Notes. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Location. */
-    @Column(name = "LOCATION")
+    @Column(name = "LOCATION", length = 4000)
     private String location;
 
     /** Url. */
-    @Column(name = "URL")
+    @Column(name = "URL", length = 400)
     private String url;
 
     /** Reminder. */
-    @Column(name = "REMINDER")
+    @Column(name = "REMINDER", length = 32)
     private String reminder;
 
     /** AllDay. */
@@ -109,7 +112,7 @@ public class CalendarEvent implements Serializable, IModelWithId,
     private Long targetId;
 
     /** TargetType. */
-    @Column(name = "TARGETTYPE")
+    @Column(name = "TARGETTYPE", length = 255)
     private String targetType;
 
     /** Owner client */
@@ -130,12 +133,12 @@ public class CalendarEvent implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -149,7 +152,7 @@ public class CalendarEvent implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CalendarEventStatus.class)
     @JoinColumn(name = "STATUS_ID", referencedColumnName = "ID")

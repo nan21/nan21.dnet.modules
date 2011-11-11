@@ -36,13 +36,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product attachments.*/
 @Entity
-@Table(name = "AD_ATTACHMENT")
+@Table(name = Attachment.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "Attachment.findById", query = "SELECT e FROM Attachment e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Attachment.findByIds", query = "SELECT e FROM Attachment e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Attachment implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_ATTACHMENT";
+    public static final String SEQUENCE_NAME = "AD_ATTACHMENT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -57,20 +60,20 @@ public class Attachment implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "Attachment.findByIds";
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Location. */
-    @Column(name = "LOCATION")
+    @Column(name = "LOCATION", length = 400)
     private String location;
 
     /** ContentType. */
-    @Column(name = "CONTENTTYPE")
+    @Column(name = "CONTENTTYPE", length = 4)
     private String contentType;
 
     /** Notes. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** TargetId. */
@@ -78,7 +81,7 @@ public class Attachment implements Serializable, IModelWithId,
     private Long targetId;
 
     /** TargetType. */
-    @Column(name = "TARGETTYPE")
+    @Column(name = "TARGETTYPE", length = 255)
     private String targetType;
 
     /** Owner client */
@@ -99,12 +102,12 @@ public class Attachment implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -118,7 +121,7 @@ public class Attachment implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AttachmentType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")

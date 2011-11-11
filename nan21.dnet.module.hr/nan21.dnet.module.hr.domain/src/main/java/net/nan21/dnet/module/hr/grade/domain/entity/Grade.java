@@ -33,7 +33,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** */
 @Entity
-@Table(name = "HR_GRADE", uniqueConstraints = {
+@Table(name = Grade.TABLE_NAME, uniqueConstraints = {
         @UniqueConstraint(name = "HR_GRADE_UK1", columnNames = { "CLIENTID",
                 "CODE" }),
         @UniqueConstraint(name = "HR_GRADE_UK2", columnNames = { "CLIENTID",
@@ -45,6 +45,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "Grade.findByCode", query = "SELECT e FROM Grade e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Grade.findByName", query = "SELECT e FROM Grade e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Grade implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_GRADE";
+    public static final String SEQUENCE_NAME = "HR_GRADE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -83,12 +86,12 @@ public class Grade implements Serializable, IModelWithId, IModelWithClientId {
     private Date validTo;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Code. */
-    @Column(name = "CODE", nullable = false)
+    @Column(name = "CODE", nullable = false, length = 32)
     @NotBlank
     private String code;
 
@@ -98,7 +101,7 @@ public class Grade implements Serializable, IModelWithId, IModelWithClientId {
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -119,12 +122,12 @@ public class Grade implements Serializable, IModelWithId, IModelWithClientId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -138,7 +141,7 @@ public class Grade implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
     /* ============== getters - setters ================== */

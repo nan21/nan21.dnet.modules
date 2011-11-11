@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** RatingLevel. */
 @Entity
-@Table(name = "HR_RATING_LEVEL", uniqueConstraints = { @UniqueConstraint(name = "HR_RATING_LEVEL_UK1", columnNames = {
+@Table(name = RatingLevel.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_RATING_LEVEL_UK1", columnNames = {
         "CLIENTID", "RATINGSCALE_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -47,6 +47,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "RatingLevel.findByName_PRIMITIVE", query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and  e.ratingScale.id = :pRatingScaleId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class RatingLevel implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_RATING_LEVEL";
+    public static final String SEQUENCE_NAME = "HR_RATING_LEVEL_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -76,7 +79,7 @@ public class RatingLevel implements Serializable, IModelWithId,
     private Integer value;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
@@ -86,7 +89,7 @@ public class RatingLevel implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 400)
     private String description;
 
     /** Owner client */
@@ -107,12 +110,12 @@ public class RatingLevel implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -126,7 +129,7 @@ public class RatingLevel implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = RatingScale.class)
     @JoinColumn(name = "RATINGSCALE_ID", referencedColumnName = "ID")

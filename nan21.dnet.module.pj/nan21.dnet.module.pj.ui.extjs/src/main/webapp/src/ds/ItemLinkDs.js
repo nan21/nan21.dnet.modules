@@ -16,8 +16,6 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemLinkDs" , {
 		{name:"targetItem",type:"string" },
 		{name:"linkTypeId",type:"int", useNull:true },
 		{name:"linkType",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

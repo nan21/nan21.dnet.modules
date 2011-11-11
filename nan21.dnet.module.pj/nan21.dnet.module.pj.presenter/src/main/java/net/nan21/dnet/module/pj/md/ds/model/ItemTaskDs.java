@@ -29,6 +29,7 @@ public class ItemTaskDs extends AbstractDsModel<ItemTask> implements
     public static final String fDESCRIPTION = "description";
     public static final String fITEMID = "itemId";
     public static final String fITEM = "item";
+    public static final String fITEMSUMMARY = "itemSummary";
     public static final String fPRIORITYID = "priorityId";
     public static final String fPRIORITY = "priority";
     public static final String fPRIORITYSEQUENCENO = "prioritySequenceNo";
@@ -71,8 +72,11 @@ public class ItemTaskDs extends AbstractDsModel<ItemTask> implements
     @DsField(join = "left", path = "item.id")
     private Long itemId;
 
-    @DsField(join = "left", path = "item.summary")
+    @DsField(join = "left", path = "item.code")
     private String item;
+
+    @DsField(join = "left", path = "item.summary")
+    private String itemSummary;
 
     @DsField(join = "left", path = "item.priority.id")
     private Long priorityId;
@@ -202,6 +206,14 @@ public class ItemTaskDs extends AbstractDsModel<ItemTask> implements
 
     public void setItem(String item) {
         this.item = item;
+    }
+
+    public String getItemSummary() {
+        return this.itemSummary;
+    }
+
+    public void setItemSummary(String itemSummary) {
+        this.itemSummary = itemSummary;
     }
 
     public Long getPriorityId() {

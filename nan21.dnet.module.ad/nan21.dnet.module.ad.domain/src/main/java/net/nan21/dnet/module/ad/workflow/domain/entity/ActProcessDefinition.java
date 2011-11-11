@@ -34,7 +34,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ActProcessDefinition. */
 @Entity
-@Table(name = "ACT_RE_PROCDEF")
+@Table(name = ActProcessDefinition.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ActProcessDefinition.findById", query = "SELECT e FROM ActProcessDefinition e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -42,6 +42,9 @@ import org.hibernate.validator.constraints.NotBlank;
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActProcessDefinition implements Serializable, IModelWithId {
+
+    public static final String TABLE_NAME = "ACT_RE_PROCDEF";
+    public static final String SEQUENCE_NAME = "ACT_RE_PROCDEF_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -56,24 +59,24 @@ public class ActProcessDefinition implements Serializable, IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActProcessDefinition.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false)
+    @Column(name = "ID_", nullable = false, length = 255)
     @NotBlank
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Key. */
-    @Column(name = "KEY_", nullable = false)
+    @Column(name = "KEY_", nullable = false, length = 255)
     @NotBlank
     private String key;
 
     /** Name. */
-    @Column(name = "NAME_", nullable = false)
+    @Column(name = "NAME_", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Category. */
-    @Column(name = "CATEGORY_")
+    @Column(name = "CATEGORY_", length = 255)
     private String category;
 
     @Version
@@ -83,11 +86,11 @@ public class ActProcessDefinition implements Serializable, IModelWithId {
     private Long version;
 
     /** ResourceName. */
-    @Column(name = "RESOURCE_NAME_")
+    @Column(name = "RESOURCE_NAME_", length = 255)
     private String resourceName;
 
     /** DiagramResourceName. */
-    @Column(name = "DGRM_RESOURCE_NAME_")
+    @Column(name = "DGRM_RESOURCE_NAME_", length = 255)
     private String diagramResourceName;
 
     /** HasStartForm. */

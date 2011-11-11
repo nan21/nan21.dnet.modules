@@ -26,8 +26,9 @@ public class ItemDs extends AbstractDsModel<Item> implements IModelWithId,
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fPROJECTID = "projectId";
-    public static final String fPROJECTCODE = "projectCode";
     public static final String fPROJECT = "project";
+    public static final String fPROJECTNAME = "projectName";
+    public static final String fCODE = "code";
     public static final String fSUMMARY = "summary";
     public static final String fDESCRIPTION = "description";
     public static final String fDUEDATE = "dueDate";
@@ -80,10 +81,13 @@ public class ItemDs extends AbstractDsModel<Item> implements IModelWithId,
     private Long projectId;
 
     @DsField(join = "left", path = "project.code")
-    private String projectCode;
+    private String project;
 
     @DsField(join = "left", path = "project.name")
-    private String project;
+    private String projectName;
+
+    @DsField()
+    private String code;
 
     @DsField()
     private String summary;
@@ -236,20 +240,28 @@ public class ItemDs extends AbstractDsModel<Item> implements IModelWithId,
         this.projectId = projectId;
     }
 
-    public String getProjectCode() {
-        return this.projectCode;
-    }
-
-    public void setProjectCode(String projectCode) {
-        this.projectCode = projectCode;
-    }
-
     public String getProject() {
         return this.project;
     }
 
     public void setProject(String project) {
         this.project = project;
+    }
+
+    public String getProjectName() {
+        return this.projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getSummary() {

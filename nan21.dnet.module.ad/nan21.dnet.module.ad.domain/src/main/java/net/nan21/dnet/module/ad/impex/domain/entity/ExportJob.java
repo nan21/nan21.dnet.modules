@@ -39,7 +39,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ExportJob. */
 @Entity
-@Table(name = "AD_EXP_JOB", uniqueConstraints = { @UniqueConstraint(name = "AD_EXP_JOB_UK1", columnNames = {
+@Table(name = ExportJob.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_EXP_JOB_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -48,6 +48,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "ExportJob.findByName", query = "SELECT e FROM ExportJob e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ExportJob implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_EXP_JOB";
+    public static final String SEQUENCE_NAME = "AD_EXP_JOB_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -67,7 +70,7 @@ public class ExportJob implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_NAME = "ExportJob.findByName";
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
@@ -77,7 +80,7 @@ public class ExportJob implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 400)
     private String description;
 
     /** Owner client */
@@ -98,12 +101,12 @@ public class ExportJob implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -117,7 +120,7 @@ public class ExportJob implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
     @OneToMany(fetch = FetchType.LAZY, targetEntity = ExportJobItem.class, mappedBy = "job", cascade = CascadeType.ALL)

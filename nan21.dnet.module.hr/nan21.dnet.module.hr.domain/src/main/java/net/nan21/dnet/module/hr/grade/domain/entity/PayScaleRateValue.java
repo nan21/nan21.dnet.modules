@@ -37,13 +37,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** PayScaleRateValue. */
 @Entity
-@Table(name = "HR_PAY_SCALE_RATE_VAL")
+@Table(name = PayScaleRateValue.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "PayScaleRateValue.findById", query = "SELECT e FROM PayScaleRateValue e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "PayScaleRateValue.findByIds", query = "SELECT e FROM PayScaleRateValue e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayScaleRateValue implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_PAY_SCALE_RATE_VAL";
+    public static final String SEQUENCE_NAME = "HR_PAY_SCALE_RATE_VAL_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -89,12 +92,12 @@ public class PayScaleRateValue implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -108,7 +111,7 @@ public class PayScaleRateValue implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayScaleRate.class)
     @JoinColumn(name = "SCALERATE_ID", referencedColumnName = "ID")

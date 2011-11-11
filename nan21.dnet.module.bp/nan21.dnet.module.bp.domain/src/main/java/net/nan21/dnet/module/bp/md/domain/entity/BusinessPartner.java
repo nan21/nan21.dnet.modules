@@ -27,9 +27,9 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 import net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm;
+import net.nan21.dnet.module.bp.md.domain.eventhandler.BusinessPartnerEventHandler;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -41,15 +41,18 @@ import org.hibernate.validator.constraints.NotBlank;
  Can be private individuals, companies or groups.	 
  */
 @Entity
-@Table(name = "BP_BUSINESS_PARTNER", uniqueConstraints = { @UniqueConstraint(name = "BP_BUSINESS_PARTNER_UK1", columnNames = {
+@Table(name = BusinessPartner.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BP_BUSINESS_PARTNER_UK1", columnNames = {
         "CLIENTID", "CODE" }) })
-@Customizer(DomainEntityEventAdapter.class)
+@Customizer(BusinessPartnerEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = "BusinessPartner.findById", query = "SELECT e FROM BusinessPartner e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "BusinessPartner.findByIds", query = "SELECT e FROM BusinessPartner e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "BusinessPartner.findByCode", query = "SELECT e FROM BusinessPartner e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class BusinessPartner implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "BP_BUSINESS_PARTNER";
+    public static final String SEQUENCE_NAME = "BP_BUSINESS_PARTNER_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -73,35 +76,35 @@ public class BusinessPartner implements Serializable, IModelWithId,
     		- organization			 
     		Cannot be altered at a later stage.
      */
-    @Column(name = "TYPE")
+    @Column(name = "TYPE", length = 16)
     private String type;
 
     /** TaxPayerNo. */
-    @Column(name = "TAXPAYERNO")
+    @Column(name = "TAXPAYERNO", length = 255)
     private String taxPayerNo;
 
     /** FirstName. */
-    @Column(name = "FIRSTNAME")
+    @Column(name = "FIRSTNAME", length = 255)
     private String firstName;
 
     /** LastName. */
-    @Column(name = "LASTNAME")
+    @Column(name = "LASTNAME", length = 255)
     private String lastName;
 
     /** MiddleName. */
-    @Column(name = "MIDDLENAME")
+    @Column(name = "MIDDLENAME", length = 255)
     private String middleName;
 
     /** Gender. */
-    @Column(name = "GENDER")
+    @Column(name = "GENDER", length = 16)
     private String gender;
 
     /** IdentityCardNo. */
-    @Column(name = "IDENTITYCARDNO")
+    @Column(name = "IDENTITYCARDNO", length = 255)
     private String identityCardNo;
 
     /** PassportNo. */
-    @Column(name = "PASSPORTNO")
+    @Column(name = "PASSPORTNO", length = 255)
     private String passportNo;
 
     /** BirthDate. */
@@ -110,11 +113,11 @@ public class BusinessPartner implements Serializable, IModelWithId,
     private Date birthDate;
 
     /** CompanyName. */
-    @Column(name = "COMPANYNAME")
+    @Column(name = "COMPANYNAME", length = 255)
     private String companyName;
 
     /** RegistrationNo. */
-    @Column(name = "REGISTRATIONNO")
+    @Column(name = "REGISTRATIONNO", length = 32)
     private String registrationNo;
 
     /** RegistrationDate. */
@@ -123,12 +126,12 @@ public class BusinessPartner implements Serializable, IModelWithId,
     private Date registrationDate;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Code. */
-    @Column(name = "CODE", nullable = false)
+    @Column(name = "CODE", nullable = false, length = 32)
     @NotBlank
     private String code;
 
@@ -138,7 +141,7 @@ public class BusinessPartner implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -159,12 +162,12 @@ public class BusinessPartner implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -178,7 +181,7 @@ public class BusinessPartner implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
     @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID")
@@ -418,6 +421,9 @@ public class BusinessPartner implements Serializable, IModelWithId,
                 .getClientId());
         if (this.active == null) {
             event.updateAttributeWithObject("active", false);
+        }
+        if (this.code == null || this.code.equals("")) {
+            event.updateAttributeWithObject("code", "BP-" + this.getId());
         }
     }
 

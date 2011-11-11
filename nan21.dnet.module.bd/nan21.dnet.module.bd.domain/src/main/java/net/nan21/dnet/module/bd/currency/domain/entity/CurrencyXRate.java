@@ -38,7 +38,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Exchange rate values.*/
 @Entity
-@Table(name = "BD_CURRENCY_XRATE", uniqueConstraints = { @UniqueConstraint(name = "BD_CURRENCY_XRATE_UK1", columnNames = {
+@Table(name = CurrencyXRate.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BD_CURRENCY_XRATE_UK1", columnNames = {
         "CLIENTID", "PROVIDER_ID", "SOURCE_ID", "TARGET_ID", "VALIDAT" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -48,6 +48,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "CurrencyXRate.findByValid_PRIMITIVE", query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and  e.provider.id = :pProviderId and e.source.id = :pSourceId and e.target.id = :pTargetId and e.validAt = :pValidAt ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CurrencyXRate implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "BD_CURRENCY_XRATE";
+    public static final String SEQUENCE_NAME = "BD_CURRENCY_XRATE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -100,12 +103,12 @@ public class CurrencyXRate implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -119,7 +122,7 @@ public class CurrencyXRate implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CurrencyXRateProvider.class)
     @JoinColumn(name = "PROVIDER_ID", referencedColumnName = "ID")

@@ -32,7 +32,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ActComment. */
 @Entity
-@Table(name = "ACT_HI_COMMENT")
+@Table(name = ActComment.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ActComment.findById", query = "SELECT e FROM ActComment e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -40,6 +40,9 @@ import org.hibernate.validator.constraints.NotBlank;
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActComment implements Serializable, IModelWithId {
+
+    public static final String TABLE_NAME = "ACT_HI_COMMENT";
+    public static final String SEQUENCE_NAME = "ACT_HI_COMMENT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -54,14 +57,14 @@ public class ActComment implements Serializable, IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActComment.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false)
+    @Column(name = "ID_", nullable = false, length = 255)
     @NotBlank
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Type. */
-    @Column(name = "TYPE_")
+    @Column(name = "TYPE_", length = 255)
     private String type;
 
     /** StartTime. */
@@ -71,11 +74,11 @@ public class ActComment implements Serializable, IModelWithId {
     private Date startTime;
 
     /** Message. */
-    @Column(name = "MESSAGE_")
+    @Column(name = "MESSAGE_", length = 4000)
     private String message;
 
     /** FullMessage. */
-    @Column(name = "FULL_MSG_")
+    @Column(name = "FULL_MSG_", length = 4000)
     private String fullMessage;
 
     /** Time. */
@@ -84,19 +87,19 @@ public class ActComment implements Serializable, IModelWithId {
     private Date time;
 
     /** Action. */
-    @Column(name = "ACTION_")
+    @Column(name = "ACTION_", length = 255)
     private String action;
 
     /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_")
+    @Column(name = "PROC_INST_ID_", length = 255)
     private String processInstanceId;
 
     /** TaskId. */
-    @Column(name = "TASK_ID_")
+    @Column(name = "TASK_ID_", length = 255)
     private String taskId;
 
     /** UserId. */
-    @Column(name = "USER_ID_")
+    @Column(name = "USER_ID_", length = 255)
     private String userId;
 
     /* ============== getters - setters ================== */

@@ -25,13 +25,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** TempAsgn. */
 @Entity
-@Table(name = "AD_TEMP_ASGN")
+@Table(name = TempAsgn.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "TempAsgn.findById", query = "SELECT e FROM TempAsgn e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "TempAsgn.findByIds", query = "SELECT e FROM TempAsgn e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 @ReadOnly
 public class TempAsgn implements Serializable, IModelWithId {
+
+    public static final String TABLE_NAME = "AD_TEMP_ASGN";
+    public static final String SEQUENCE_NAME = "AD_TEMP_ASGN_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -46,14 +49,14 @@ public class TempAsgn implements Serializable, IModelWithId {
     public static final String NQ_FIND_BY_IDS = "TempAsgn.findByIds";
 
     /** Id. */
-    @Column(name = "UUID", nullable = false)
+    @Column(name = "UUID", nullable = false, length = 255)
     @NotBlank
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** AsgnName. */
-    @Column(name = "ASGNCMP", nullable = false)
+    @Column(name = "ASGNCMP", nullable = false, length = 255)
     @NotBlank
     private String asgnName;
 

@@ -38,9 +38,9 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Items_UI", {
 		.addButton({name:"btnCancelLink",text:"Cancel", tooltip:"Cancel",disabled:true
 			,handler: this.onBtnCancelLink,scope:this,stateManager:{name:"record_is_dirty", dc:"link" }	})	
 							 	
-		.addDcFilterFormView("item",{ name:"itemFilter", xtype:"net.nan21.dnet.module.pj.md.dc.Item$Filter",height:140})	 
+		.addDcFilterFormView("item",{ name:"itemFilter", xtype:"net.nan21.dnet.module.pj.md.dc.Item$Filter",height:160})	 
 		.addDcView("item",{ name:"itemList", xtype:"net.nan21.dnet.module.pj.md.dc.Item$List"})	 
-		.addDcFormView("item",{ name:"itemEdit", xtype:"net.nan21.dnet.module.pj.md.dc.Item$Edit",height:220,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnAffectedVersions") ,this._elems_.get("btnAsgnAffectedComps") ]}]})	 
+		.addDcFormView("item",{ name:"itemEdit", xtype:"net.nan21.dnet.module.pj.md.dc.Item$Edit",height:250,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnAffectedVersions") ,this._elems_.get("btnAsgnAffectedComps") ]}]})	 
 		.addDcFormView("item",{ name:"itemEditText", xtype:"net.nan21.dnet.module.pj.md.dc.Item$EditText",title:"Description"})	 
 		.addDcView("link",{ name:"linkList", xtype:"net.nan21.dnet.module.pj.md.dc.ItemLink$CtxList",title:"Links"})	 
 		.addDcFormView("link",{ name:"linkCreate", xtype:"net.nan21.dnet.module.pj.md.dc.ItemLink$CtxCreate"})	 

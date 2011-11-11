@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ReportParam. */
 @Entity
-@Table(name = "AD_REPORT_PARAM", uniqueConstraints = {
+@Table(name = ReportParam.TABLE_NAME, uniqueConstraints = {
         @UniqueConstraint(name = "AD_REPORT_PARAM_UK1", columnNames = {
                 "CLIENTID", "REPORT_ID", "CODE" }),
         @UniqueConstraint(name = "AD_REPORT_PARAM_UK2", columnNames = {
@@ -52,6 +52,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "ReportParam.findByName_PRIMITIVE", query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report.id = :pReportId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ReportParam implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_REPORT_PARAM";
+    public static final String SEQUENCE_NAME = "AD_REPORT_PARAM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -91,21 +94,21 @@ public class ReportParam implements Serializable, IModelWithId,
     private Boolean mandatory;
 
     /** DataType. */
-    @Column(name = "DATATYPE", nullable = false)
+    @Column(name = "DATATYPE", nullable = false, length = 32)
     @NotBlank
     private String dataType;
 
     /** DefaultValue. */
-    @Column(name = "DEFAULTVALUE")
+    @Column(name = "DEFAULTVALUE", length = 400)
     private String defaultValue;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Code. */
-    @Column(name = "CODE", nullable = false)
+    @Column(name = "CODE", nullable = false, length = 32)
     @NotBlank
     private String code;
 
@@ -115,7 +118,7 @@ public class ReportParam implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -136,12 +139,12 @@ public class ReportParam implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -155,7 +158,7 @@ public class ReportParam implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Report.class)
     @JoinColumn(name = "REPORT_ID", referencedColumnName = "ID")

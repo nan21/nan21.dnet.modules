@@ -31,12 +31,15 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Client. */
 @Entity
-@Table(name = "AD_CLIENT")
+@Table(name = Client.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "Client.findById", query = "SELECT e FROM Client e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Client.findByIds", query = "SELECT e FROM Client e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Client implements Serializable, IModelWithId {
+
+    public static final String TABLE_NAME = "AD_CLIENT";
+    public static final String SEQUENCE_NAME = "AD_CLIENT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -51,19 +54,19 @@ public class Client implements Serializable, IModelWithId {
     public static final String NQ_FIND_BY_IDS = "Client.findByIds";
 
     /** Code. */
-    @Column(name = "CODE")
+    @Column(name = "CODE", length = 32)
     private String code;
 
     /** Name. */
-    @Column(name = "NAME")
+    @Column(name = "NAME", length = 255)
     private String name;
 
     /** Notes. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** MaintenanceLanguage. */
-    @Column(name = "MAINTENANCELANGUAGE")
+    @Column(name = "MAINTENANCELANGUAGE", length = 5)
     private String maintenanceLanguage;
 
     /**
@@ -72,42 +75,42 @@ public class Client implements Serializable, IModelWithId {
     	 <li> deny: by default deny access to data-source function if there is no explicit access defined in ACL.
     	 <li> allow: by default allow access to data-source function if there is no explicit denial defined in ACL.
      */
-    @Column(name = "DEFAULTDSACCESSRULE")
+    @Column(name = "DEFAULTDSACCESSRULE", length = 32)
     private String defaultDsAccessRule;
 
     /**
     	Specify which is the administrator role. 
     	Access rights are not checked for the users having this role granted so they have access to ALL of the functions.
      */
-    @Column(name = "ADMINROLE")
+    @Column(name = "ADMINROLE", length = 32)
     private String adminRole;
 
     /** DefaultImportPath. */
-    @Column(name = "DEFAULTIMPORTPATH")
+    @Column(name = "DEFAULTIMPORTPATH", length = 255)
     private String defaultImportPath;
 
     /** DefaultExportPath. */
-    @Column(name = "DEFAULTEXPORTPATH")
+    @Column(name = "DEFAULTEXPORTPATH", length = 255)
     private String defaultExportPath;
 
     /** TempPath. */
-    @Column(name = "TEMPPATH")
+    @Column(name = "TEMPPATH", length = 255)
     private String tempPath;
 
     /** DefaultUomWeight. */
-    @Column(name = "DEFAULTUOMWEIGHT")
+    @Column(name = "DEFAULTUOMWEIGHT", length = 3)
     private String defaultUomWeight;
 
     /** DefaultUomVolume. */
-    @Column(name = "DEFAULTUOMVOLUME")
+    @Column(name = "DEFAULTUOMVOLUME", length = 3)
     private String defaultUomVolume;
 
     /** DefaultUomLength. */
-    @Column(name = "DEFAULTUOMLENGTH")
+    @Column(name = "DEFAULTUOMLENGTH", length = 3)
     private String defaultUomLength;
 
     /** DefaultCurrency. */
-    @Column(name = "DEFAULTCURRENCY")
+    @Column(name = "DEFAULTCURRENCY", length = 3)
     private String defaultCurrency;
 
     /** SystemClient. */
@@ -128,12 +131,12 @@ public class Client implements Serializable, IModelWithId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -147,7 +150,7 @@ public class Client implements Serializable, IModelWithId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
     /* ============== getters - setters ================== */

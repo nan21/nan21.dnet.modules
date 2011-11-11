@@ -40,12 +40,15 @@ import org.hibernate.validator.constraints.NotBlank;
  * Should not create entries manually here. 
  */
 @Entity
-@Table(name = "HR_ABSENCE")
+@Table(name = Absence.TABLE_NAME)
 @Customizer(AbsenceEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = "Absence.findById", query = "SELECT e FROM Absence e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Absence.findByIds", query = "SELECT e FROM Absence e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Absence implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_ABSENCE";
+    public static final String SEQUENCE_NAME = "HR_ABSENCE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -71,7 +74,7 @@ public class Absence implements Serializable, IModelWithId, IModelWithClientId {
     private Integer hours;
 
     /** Notes. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 400)
     private String notes;
 
     /** Posted. */
@@ -97,12 +100,12 @@ public class Absence implements Serializable, IModelWithId, IModelWithClientId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -116,7 +119,7 @@ public class Absence implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
     @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")

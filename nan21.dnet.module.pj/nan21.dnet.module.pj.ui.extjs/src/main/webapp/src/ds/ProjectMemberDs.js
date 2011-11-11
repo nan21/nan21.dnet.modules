@@ -17,8 +17,6 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectMemberDs" , {
 		{name:"role",type:"string" },
 		{name:"memberId",type:"int", useNull:true },
 		{name:"member",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

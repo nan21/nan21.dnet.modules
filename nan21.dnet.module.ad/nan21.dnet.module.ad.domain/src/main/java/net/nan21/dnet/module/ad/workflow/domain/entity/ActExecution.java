@@ -34,7 +34,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ActExecution. */
 @Entity
-@Table(name = "ACT_RU_EXECUTION")
+@Table(name = ActExecution.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ActExecution.findById", query = "SELECT e FROM ActExecution e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -42,6 +42,9 @@ import org.hibernate.validator.constraints.NotBlank;
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActExecution implements Serializable, IModelWithId {
+
+    public static final String TABLE_NAME = "ACT_RU_EXECUTION";
+    public static final String SEQUENCE_NAME = "ACT_RU_EXECUTION_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -56,10 +59,10 @@ public class ActExecution implements Serializable, IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActExecution.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false)
+    @Column(name = "ID_", nullable = false, length = 255)
     @NotBlank
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Revision. */
@@ -68,15 +71,15 @@ public class ActExecution implements Serializable, IModelWithId {
     private Integer revision;
 
     /** BusinessKey. */
-    @Column(name = "BUSINESS_KEY_")
+    @Column(name = "BUSINESS_KEY_", length = 255)
     private String businessKey;
 
     /** ActivityId. */
-    @Column(name = "ACT_ID_")
+    @Column(name = "ACT_ID_", length = 255)
     private String activityId;
 
     /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_")
+    @Column(name = "PROC_INST_ID_", length = 255)
     private String processInstanceId;
 
     /** IsActive. */

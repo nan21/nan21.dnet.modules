@@ -20,9 +20,6 @@ Ext.define("net.nan21.dnet.module.bp.md.ds.model.ContactDs" , {
 		{name:"bpartnerId",type:"int", useNull:true },
 		{name:"bpartnerCode",type:"string" },
 		{name:"className",type:"string" }
-	],
-	validations: [  
-		{field: "lastName", type: 'presence'}
 	]
 });
 

@@ -38,13 +38,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** EmployeeContact. */
 @Entity
-@Table(name = "HR_EMPLOYEE_CONTACT")
+@Table(name = EmployeeContact.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "EmployeeContact.findById", query = "SELECT e FROM EmployeeContact e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "EmployeeContact.findByIds", query = "SELECT e FROM EmployeeContact e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class EmployeeContact implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_EMPLOYEE_CONTACT";
+    public static final String SEQUENCE_NAME = "HR_EMPLOYEE_CONTACT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -59,17 +62,17 @@ public class EmployeeContact implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "EmployeeContact.findByIds";
 
     /** FirstName. */
-    @Column(name = "FIRSTNAME", nullable = false)
+    @Column(name = "FIRSTNAME", nullable = false, length = 255)
     @NotBlank
     private String firstName;
 
     /** LastName. */
-    @Column(name = "LASTNAME", nullable = false)
+    @Column(name = "LASTNAME", nullable = false, length = 255)
     @NotBlank
     private String lastName;
 
     /** MiddleName. */
-    @Column(name = "MIDDLENAME")
+    @Column(name = "MIDDLENAME", length = 32)
     private String middleName;
 
     /** Birthdate. */
@@ -78,7 +81,7 @@ public class EmployeeContact implements Serializable, IModelWithId,
     private Date birthdate;
 
     /** Gender. */
-    @Column(name = "GENDER")
+    @Column(name = "GENDER", length = 16)
     private String gender;
 
     /** IsDependent. */
@@ -104,12 +107,12 @@ public class EmployeeContact implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -123,7 +126,7 @@ public class EmployeeContact implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
     @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")

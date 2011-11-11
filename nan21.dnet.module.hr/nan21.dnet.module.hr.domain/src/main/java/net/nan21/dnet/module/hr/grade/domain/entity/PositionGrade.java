@@ -37,13 +37,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** PositionGrade. */
 @Entity
-@Table(name = "HR_POSITION_GRADE")
+@Table(name = PositionGrade.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "PositionGrade.findById", query = "SELECT e FROM PositionGrade e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "PositionGrade.findByIds", query = "SELECT e FROM PositionGrade e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PositionGrade implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_POSITION_GRADE";
+    public static final String SEQUENCE_NAME = "HR_POSITION_GRADE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -75,12 +78,12 @@ public class PositionGrade implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -94,7 +97,7 @@ public class PositionGrade implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Position.class)
     @JoinColumn(name = "POSITION_ID", referencedColumnName = "ID")

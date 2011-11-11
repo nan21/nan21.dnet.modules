@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** PayScalePoint. */
 @Entity
-@Table(name = "HR_PAY_SCALE_POINT", uniqueConstraints = { @UniqueConstraint(name = "HR_PAY_SCALE_POINT_UK1", columnNames = {
+@Table(name = PayScalePoint.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_PAY_SCALE_POINT_UK1", columnNames = {
         "CLIENTID", "PAYSCALE_ID", "CODE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -47,6 +47,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "PayScalePoint.findByScale_code_PRIMITIVE", query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and  e.payScale.id = :pPayScaleId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayScalePoint implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_PAY_SCALE_POINT";
+    public static final String SEQUENCE_NAME = "HR_PAY_SCALE_POINT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -71,7 +74,7 @@ public class PayScalePoint implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_SCALE_CODE_PRIMITIVE = "PayScalePoint.findByScale_code_PRIMITIVE";
 
     /** Code. */
-    @Column(name = "CODE", nullable = false)
+    @Column(name = "CODE", nullable = false, length = 32)
     @NotBlank
     private String code;
 
@@ -97,12 +100,12 @@ public class PayScalePoint implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -116,7 +119,7 @@ public class PayScalePoint implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayScale.class)
     @JoinColumn(name = "PAYSCALE_ID", referencedColumnName = "ID")

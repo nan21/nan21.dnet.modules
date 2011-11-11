@@ -36,12 +36,15 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** DsReport. */
 @Entity
-@Table(name = "AD_DS_REPORT")
+@Table(name = DsReport.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "DsReport.findById", query = "SELECT e FROM DsReport e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "DsReport.findByIds", query = "SELECT e FROM DsReport e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class DsReport implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_DS_REPORT";
+    public static final String SEQUENCE_NAME = "AD_DS_REPORT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -57,7 +60,7 @@ public class DsReport implements Serializable, IModelWithId, IModelWithClientId 
 
     /** Reference to the data-source. 
      */
-    @Column(name = "DATASOURCE", nullable = false)
+    @Column(name = "DATASOURCE", nullable = false, length = 255)
     @NotBlank
     private String dataSource;
 
@@ -79,12 +82,12 @@ public class DsReport implements Serializable, IModelWithId, IModelWithClientId 
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -98,7 +101,7 @@ public class DsReport implements Serializable, IModelWithId, IModelWithClientId 
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Report.class)
     @JoinColumn(name = "REPORT_ID", referencedColumnName = "ID")

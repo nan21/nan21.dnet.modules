@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** DsAccessControl. */
 @Entity
-@Table(name = "AD_ACCESS_CONTROL_DS", uniqueConstraints = { @UniqueConstraint(name = "AD_ACCESS_CONTROL_DS_UK1", columnNames = {
+@Table(name = DsAccessControl.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_ACCESS_CONTROL_DS_UK1", columnNames = {
         "CLIENTID", "ACCESSCONTROL_ID", "DSNAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -47,6 +47,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "DsAccessControl.findByUnique_PRIMITIVE", query = "SELECT e FROM DsAccessControl e WHERE e.clientId = :pClientId and  e.accessControl.id = :pAccessControlId and e.dsName = :pDsName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class DsAccessControl implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_ACCESS_CONTROL_DS";
+    public static final String SEQUENCE_NAME = "AD_ACCESS_CONTROL_DS_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -71,7 +74,7 @@ public class DsAccessControl implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_UNIQUE_PRIMITIVE = "DsAccessControl.findByUnique_PRIMITIVE";
 
     /** DsName. */
-    @Column(name = "DSNAME", nullable = false)
+    @Column(name = "DSNAME", nullable = false, length = 255)
     @NotBlank
     private String dsName;
 
@@ -123,12 +126,12 @@ public class DsAccessControl implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -142,7 +145,7 @@ public class DsAccessControl implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccessControl.class)
     @JoinColumn(name = "ACCESSCONTROL_ID", referencedColumnName = "ID")

@@ -21,9 +21,6 @@ Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpBankAccountDs" , {
 		{name:"notes",type:"string" },
 		{name:"currencyId",type:"int", useNull:true },
 		{name:"currencyCode",type:"string" }
-	],
-	validations: [  
-		{field: "accountNo", type: 'presence'}
 	]
 });
 

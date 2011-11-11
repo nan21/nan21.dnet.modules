@@ -39,7 +39,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Position. */
 @Entity
-@Table(name = "HR_POSITION", uniqueConstraints = {
+@Table(name = Position.TABLE_NAME, uniqueConstraints = {
         @UniqueConstraint(name = "HR_POSITION_UK1", columnNames = { "CLIENTID",
                 "CODE" }),
         @UniqueConstraint(name = "HR_POSITION_UK2", columnNames = { "CLIENTID",
@@ -51,6 +51,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "Position.findByCode", query = "SELECT e FROM Position e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Position.findByName", query = "SELECT e FROM Position e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Position implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_POSITION";
+    public static final String SEQUENCE_NAME = "HR_POSITION_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -85,12 +88,12 @@ public class Position implements Serializable, IModelWithId, IModelWithClientId 
     private Date validTo;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Code. */
-    @Column(name = "CODE", nullable = false)
+    @Column(name = "CODE", nullable = false, length = 32)
     @NotBlank
     private String code;
 
@@ -100,7 +103,7 @@ public class Position implements Serializable, IModelWithId, IModelWithClientId 
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -121,12 +124,12 @@ public class Position implements Serializable, IModelWithId, IModelWithClientId 
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -140,7 +143,7 @@ public class Position implements Serializable, IModelWithId, IModelWithClientId 
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")
@@ -302,6 +305,9 @@ public class Position implements Serializable, IModelWithId, IModelWithClientId 
                 .getClientId());
         if (this.active == null) {
             event.updateAttributeWithObject("active", false);
+        }
+        if (this.code == null || this.code.equals("")) {
+            event.updateAttributeWithObject("code", "POS-" + this.getId());
         }
     }
 

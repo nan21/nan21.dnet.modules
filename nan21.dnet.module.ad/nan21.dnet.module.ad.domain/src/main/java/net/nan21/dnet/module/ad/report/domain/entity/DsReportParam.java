@@ -37,13 +37,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** DsReportParam. */
 @Entity
-@Table(name = "AD_DS_REPORT_PARAM")
+@Table(name = DsReportParam.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "DsReportParam.findById", query = "SELECT e FROM DsReportParam e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "DsReportParam.findByIds", query = "SELECT e FROM DsReportParam e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class DsReportParam implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_DS_REPORT_PARAM";
+    public static final String SEQUENCE_NAME = "AD_DS_REPORT_PARAM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -59,11 +62,11 @@ public class DsReportParam implements Serializable, IModelWithId,
 
     /** Reference to the data-source field. 
      */
-    @Column(name = "DSFIELD")
+    @Column(name = "DSFIELD", length = 255)
     private String dsField;
 
     /** StaticValue. */
-    @Column(name = "STATICVALUE")
+    @Column(name = "STATICVALUE", length = 400)
     private String staticValue;
 
     /** Owner client */
@@ -84,12 +87,12 @@ public class DsReportParam implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -103,7 +106,7 @@ public class DsReportParam implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = DsReport.class)
     @JoinColumn(name = "DSREPORT_ID", referencedColumnName = "ID")

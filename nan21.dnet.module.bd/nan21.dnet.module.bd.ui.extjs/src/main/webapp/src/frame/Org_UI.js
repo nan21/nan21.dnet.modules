@@ -20,7 +20,7 @@ Ext.define("net.nan21.dnet.module.bd.org.frame.Org_UI", {
 		this._getBuilder_()	
 		.addDcFilterFormView("org",{ name:"orgFilter", xtype:"net.nan21.dnet.module.bd.org.dc.Organization$Filter",height:80})	 
 		.addDcView("org",{ name:"orgList", xtype:"net.nan21.dnet.module.bd.org.dc.Organization$List"})	 
-		.addDcFormView("org",{ name:"orgEdit", xtype:"net.nan21.dnet.module.bd.org.dc.Organization$Edit",height:150})	 
+		.addDcFormView("org",{ name:"orgEdit", xtype:"net.nan21.dnet.module.bd.org.dc.Organization$Edit",height:160})	 
 		.addDcFilterFormView("hierarchy",{ name:"hierarchyFilter", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Filter",height:40})	 
 		.addDcView("hierarchy",{ name:"hierarchyList", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$List"})	 
 		.addDcFormView("hierarchy",{ name:"hierarchyEdit", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Edit",height:100})	 

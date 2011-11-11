@@ -38,12 +38,15 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Location. */
 @Entity
-@Table(name = "BD_GEO_LOCATION")
+@Table(name = Location.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "Location.findById", query = "SELECT e FROM Location e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Location.findByIds", query = "SELECT e FROM Location e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Location implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "BD_GEO_LOCATION";
+    public static final String SEQUENCE_NAME = "BD_GEO_LOCATION_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -58,23 +61,23 @@ public class Location implements Serializable, IModelWithId, IModelWithClientId 
     public static final String NQ_FIND_BY_IDS = "Location.findByIds";
 
     /** RegionName. */
-    @Column(name = "REGIONNAME")
+    @Column(name = "REGIONNAME", length = 255)
     private String regionName;
 
     /** CityName. */
-    @Column(name = "CITYNAME")
+    @Column(name = "CITYNAME", length = 255)
     private String cityName;
 
     /** Adress. */
-    @Column(name = "ADRESS")
+    @Column(name = "ADRESS", length = 400)
     private String adress;
 
     /** Zip. */
-    @Column(name = "ZIP")
+    @Column(name = "ZIP", length = 32)
     private String zip;
 
     /** Notes. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Active. */
@@ -102,7 +105,7 @@ public class Location implements Serializable, IModelWithId, IModelWithClientId 
     private Long targetId;
 
     /** TargetType. */
-    @Column(name = "TARGETTYPE")
+    @Column(name = "TARGETTYPE", length = 255)
     private String targetType;
 
     /** Owner client */
@@ -123,12 +126,12 @@ public class Location implements Serializable, IModelWithId, IModelWithClientId 
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -142,7 +145,7 @@ public class Location implements Serializable, IModelWithId, IModelWithClientId 
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
     @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID")

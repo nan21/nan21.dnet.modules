@@ -38,13 +38,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ElementValue. */
 @Entity
-@Table(name = "HR_ELEMENT_VALUE")
+@Table(name = ElementValue.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ElementValue.findById", query = "SELECT e FROM ElementValue e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ElementValue.findByIds", query = "SELECT e FROM ElementValue e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ElementValue implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_ELEMENT_VALUE";
+    public static final String SEQUENCE_NAME = "HR_ELEMENT_VALUE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -59,7 +62,7 @@ public class ElementValue implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "ElementValue.findByIds";
 
     /** Value. */
-    @Column(name = "VALUE")
+    @Column(name = "VALUE", length = 400)
     private String value;
 
     /** Owner client */
@@ -80,12 +83,12 @@ public class ElementValue implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -99,7 +102,7 @@ public class ElementValue implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Element.class)
     @JoinColumn(name = "ELEMENT_ID", referencedColumnName = "ID")

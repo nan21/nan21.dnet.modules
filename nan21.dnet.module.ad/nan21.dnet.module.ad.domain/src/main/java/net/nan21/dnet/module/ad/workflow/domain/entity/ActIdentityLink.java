@@ -29,7 +29,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ActIdentityLink. */
 @Entity
-@Table(name = "ACT_RU_IDENTITYLINK")
+@Table(name = ActIdentityLink.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ActIdentityLink.findById", query = "SELECT e FROM ActIdentityLink e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -37,6 +37,9 @@ import org.hibernate.validator.constraints.NotBlank;
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActIdentityLink implements Serializable, IModelWithId {
+
+    public static final String TABLE_NAME = "ACT_RU_IDENTITYLINK";
+    public static final String SEQUENCE_NAME = "ACT_RU_IDENTITYLINK_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -51,10 +54,10 @@ public class ActIdentityLink implements Serializable, IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActIdentityLink.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false)
+    @Column(name = "ID_", nullable = false, length = 255)
     @NotBlank
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Revision. */
@@ -63,19 +66,19 @@ public class ActIdentityLink implements Serializable, IModelWithId {
     private Integer revision;
 
     /** Type. */
-    @Column(name = "TYPE_")
+    @Column(name = "TYPE_", length = 255)
     private String type;
 
     /** UserId. */
-    @Column(name = "USER_ID_")
+    @Column(name = "USER_ID_", length = 255)
     private String userId;
 
     /** TaskId. */
-    @Column(name = "TASK_ID_")
+    @Column(name = "TASK_ID_", length = 255)
     private String taskId;
 
     /** GroupId. */
-    @Column(name = "GROUP_ID_")
+    @Column(name = "GROUP_ID_", length = 255)
     private String groupId;
 
     /* ============== getters - setters ================== */

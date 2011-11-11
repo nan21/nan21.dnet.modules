@@ -40,7 +40,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ItemType. */
 @Entity
-@Table(name = "PJ_ITEM_TYPE", uniqueConstraints = { @UniqueConstraint(name = "PJ_ITEM_TYPE_UK1", columnNames = {
+@Table(name = ItemType.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "PJ_ITEM_TYPE_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -48,6 +48,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "ItemType.findByIds", query = "SELECT e FROM ItemType e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ItemType.findByName", query = "SELECT e FROM ItemType e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ItemType implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "PJ_ITEM_TYPE";
+    public static final String SEQUENCE_NAME = "PJ_ITEM_TYPE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -67,7 +70,7 @@ public class ItemType implements Serializable, IModelWithId, IModelWithClientId 
     public static final String NQ_FIND_BY_NAME = "ItemType.findByName";
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
@@ -77,7 +80,7 @@ public class ItemType implements Serializable, IModelWithId, IModelWithClientId 
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 400)
     private String description;
 
     /** Owner client */
@@ -98,12 +101,12 @@ public class ItemType implements Serializable, IModelWithId, IModelWithClientId 
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -117,7 +120,7 @@ public class ItemType implements Serializable, IModelWithId, IModelWithClientId 
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ItemCategory.class)
     @JoinColumn(name = "CATEGORY_ID", referencedColumnName = "ID")

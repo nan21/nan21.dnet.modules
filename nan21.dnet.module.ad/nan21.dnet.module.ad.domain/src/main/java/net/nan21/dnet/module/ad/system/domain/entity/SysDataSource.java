@@ -39,7 +39,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** SysDataSource. */
 @Entity
-@Table(name = "AD_SYSDATASOURCE", uniqueConstraints = {
+@Table(name = SysDataSource.TABLE_NAME, uniqueConstraints = {
         @UniqueConstraint(name = "AD_SYSDATASOURCE_UK1", columnNames = {
                 "CLIENTID", "NAME" }),
         @UniqueConstraint(name = "AD_SYSDATASOURCE_UK2", columnNames = {
@@ -52,6 +52,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "SysDataSource.findByModel", query = "SELECT e FROM SysDataSource e WHERE e.clientId = :pClientId and  e.model = :pModel ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysDataSource implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_SYSDATASOURCE";
+    public static final String SEQUENCE_NAME = "AD_SYSDATASOURCE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -76,12 +79,12 @@ public class SysDataSource implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_MODEL = "SysDataSource.findByModel";
 
     /** Model. */
-    @Column(name = "MODEL", nullable = false)
+    @Column(name = "MODEL", nullable = false, length = 255)
     @NotBlank
     private String model;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
@@ -91,7 +94,7 @@ public class SysDataSource implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 400)
     private String description;
 
     /** Owner client */
@@ -112,12 +115,12 @@ public class SysDataSource implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -131,7 +134,7 @@ public class SysDataSource implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
     @OneToMany(fetch = FetchType.LAZY, targetEntity = SysDsField.class, mappedBy = "dataSource", cascade = CascadeType.ALL)

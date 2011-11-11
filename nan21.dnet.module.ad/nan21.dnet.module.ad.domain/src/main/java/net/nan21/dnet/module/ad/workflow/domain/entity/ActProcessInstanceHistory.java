@@ -36,7 +36,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ActProcessInstanceHistory. */
 @Entity
-@Table(name = "ACT_HI_PROCINST")
+@Table(name = ActProcessInstanceHistory.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ActProcessInstanceHistory.findById", query = "SELECT e FROM ActProcessInstanceHistory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -44,6 +44,9 @@ import org.hibernate.validator.constraints.NotBlank;
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActProcessInstanceHistory implements Serializable, IModelWithId {
+
+    public static final String TABLE_NAME = "ACT_HI_PROCINST";
+    public static final String SEQUENCE_NAME = "ACT_HI_PROCINST_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -58,18 +61,18 @@ public class ActProcessInstanceHistory implements Serializable, IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActProcessInstanceHistory.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false)
+    @Column(name = "ID_", nullable = false, length = 255)
     @NotBlank
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** BusinessKey. */
-    @Column(name = "BUSINESS_KEY_")
+    @Column(name = "BUSINESS_KEY_", length = 255)
     private String businessKey;
 
     /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_")
+    @Column(name = "PROC_INST_ID_", length = 255)
     private String processInstanceId;
 
     /** StartTime. */
@@ -88,15 +91,15 @@ public class ActProcessInstanceHistory implements Serializable, IModelWithId {
     private Long duration;
 
     /** StartedBy. */
-    @Column(name = "START_USER_ID_")
+    @Column(name = "START_USER_ID_", length = 32)
     private String startedBy;
 
     /** StartAction. */
-    @Column(name = "START_ACT_ID_")
+    @Column(name = "START_ACT_ID_", length = 255)
     private String startAction;
 
     /** EndAction. */
-    @Column(name = "END_ACT_ID_")
+    @Column(name = "END_ACT_ID_", length = 255)
     private String endAction;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActProcessDefinition.class)
     @JoinColumn(name = "PROC_DEF_ID_", referencedColumnName = "ID_")

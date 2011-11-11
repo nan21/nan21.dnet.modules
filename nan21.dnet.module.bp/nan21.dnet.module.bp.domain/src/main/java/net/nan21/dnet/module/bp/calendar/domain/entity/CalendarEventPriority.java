@@ -33,7 +33,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** CalendarEventPriority. */
 @Entity
-@Table(name = "BP_CLNDR_EVENT_PRIORITY", uniqueConstraints = { @UniqueConstraint(name = "BP_CLNDR_EVENT_PRIORITY_UK1", columnNames = {
+@Table(name = CalendarEventPriority.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BP_CLNDR_EVENT_PRIORITY_UK1", columnNames = {
         "CLIENTID", "EVENTTYPE", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -42,6 +42,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "CalendarEventPriority.findByType_and_name", query = "SELECT e FROM CalendarEventPriority e WHERE e.clientId = :pClientId and  e.eventType = :pEventType and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CalendarEventPriority implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "BP_CLNDR_EVENT_PRIORITY";
+    public static final String SEQUENCE_NAME = "BP_CLNDR_EVENT_PRIORITY_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -61,11 +64,11 @@ public class CalendarEventPriority implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_TYPE_AND_NAME = "CalendarEventPriority.findByType_and_name";
 
     /** EventType. */
-    @Column(name = "EVENTTYPE")
+    @Column(name = "EVENTTYPE", length = 16)
     private String eventType;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
@@ -75,7 +78,7 @@ public class CalendarEventPriority implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 400)
     private String description;
 
     /** Owner client */
@@ -96,12 +99,12 @@ public class CalendarEventPriority implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -115,7 +118,7 @@ public class CalendarEventPriority implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
     /* ============== getters - setters ================== */

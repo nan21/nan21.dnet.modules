@@ -64,7 +64,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.ItemTask_UI", {
 	,_defineToolbars_: function() {
 		this._getBuilder_()
 			.beginToolbar("tlbTaskList", {dc:"task"}).addQuery().addEdit().end()
-			.beginToolbar("tlbTaskEdit", {dc:"task"}).addSave().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbTaskEdit", {dc:"task"}).addBack().addSave().addCancel().addPrevRec().addNextRec().end()
 			.beginToolbar("tlbLinkList", {dc:"link"}).addQuery().addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Links"}).end()
 			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
 			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().end()

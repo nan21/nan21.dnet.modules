@@ -28,8 +28,6 @@ Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpAccountDs" , {
 		{name:"vendorCreditLimit",type:"float", useNull:true },
 		{name:"vendorPaymentTermId",type:"int", useNull:true },
 		{name:"vendorPaymentTerm",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

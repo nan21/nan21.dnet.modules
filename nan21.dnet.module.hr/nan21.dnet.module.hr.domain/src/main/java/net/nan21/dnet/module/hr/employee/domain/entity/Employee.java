@@ -43,7 +43,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Employee. */
 @Entity
-@Table(name = "HR_EMPLOYEE", uniqueConstraints = { @UniqueConstraint(name = "HR_EMPLOYEE_UK1", columnNames = {
+@Table(name = Employee.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_EMPLOYEE_UK1", columnNames = {
         "CLIENTID", "CODE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -51,6 +51,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "Employee.findByIds", query = "SELECT e FROM Employee e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Employee.findByCode", query = "SELECT e FROM Employee e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Employee implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_EMPLOYEE";
+    public static final String SEQUENCE_NAME = "HR_EMPLOYEE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -70,36 +73,36 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     public static final String NQ_FIND_BY_CODE = "Employee.findByCode";
 
     /** Code. */
-    @Column(name = "CODE")
+    @Column(name = "CODE", length = 32)
     private String code;
 
     /** LastName. */
-    @Column(name = "LASTNAME", nullable = false)
+    @Column(name = "LASTNAME", nullable = false, length = 255)
     @NotBlank
     private String lastName;
 
     /** FirstName. */
-    @Column(name = "FIRSTNAME")
+    @Column(name = "FIRSTNAME", length = 255)
     private String firstName;
 
     /** NamePrefix. */
-    @Column(name = "NAMEPREFIX")
+    @Column(name = "NAMEPREFIX", length = 255)
     private String namePrefix;
 
     /** NameSuffix. */
-    @Column(name = "NAMESUFFIX")
+    @Column(name = "NAMESUFFIX", length = 255)
     private String nameSuffix;
 
     /** MiddleName. */
-    @Column(name = "MIDDLENAME")
+    @Column(name = "MIDDLENAME", length = 255)
     private String middleName;
 
     /** NickName. */
-    @Column(name = "NICKNAME")
+    @Column(name = "NICKNAME", length = 255)
     private String nickName;
 
     /** PreviousLastName. */
-    @Column(name = "PREVIOUSLASTNAME")
+    @Column(name = "PREVIOUSLASTNAME", length = 255)
     private String previousLastName;
 
     /** Birthdate. */
@@ -108,11 +111,11 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     private Date birthdate;
 
     /** Gender. */
-    @Column(name = "GENDER")
+    @Column(name = "GENDER", length = 16)
     private String gender;
 
     /** MaritalStatus. */
-    @Column(name = "MARITALSTATUS")
+    @Column(name = "MARITALSTATUS", length = 16)
     private String maritalStatus;
 
     /** HasDisability. */
@@ -121,19 +124,19 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     private Boolean hasDisability;
 
     /** SsnNo. */
-    @Column(name = "SSNNO")
+    @Column(name = "SSNNO", length = 32)
     private String ssnNo;
 
     /** SinNo. */
-    @Column(name = "SINNO")
+    @Column(name = "SINNO", length = 32)
     private String sinNo;
 
     /** PassportNo. */
-    @Column(name = "PASSPORTNO")
+    @Column(name = "PASSPORTNO", length = 32)
     private String passportNo;
 
     /** OfficeEmail. */
-    @Column(name = "OFFICEEMAIL")
+    @Column(name = "OFFICEEMAIL", length = 128)
     private String officeEmail;
 
     /** FirstHireDate. */
@@ -173,12 +176,12 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -192,7 +195,7 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "EMPLOYER_ID", referencedColumnName = "ID")
@@ -551,6 +554,9 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
         }
         if (this.assignToPosition == null) {
             event.updateAttributeWithObject("assignToPosition", false);
+        }
+        if (this.code == null || this.code.equals("")) {
+            event.updateAttributeWithObject("code", "E-" + this.getId());
         }
     }
 

@@ -21,10 +21,13 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 
 /** ProductCategoryHierarchyItem. */
 @Entity
-@Table(name = "MM_PRODCATEGHRCH_ITEM")
+@Table(name = ProductCategoryHierarchyItem.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({})
 public class ProductCategoryHierarchyItem implements Serializable {
+
+    public static final String TABLE_NAME = "MM_PRODCATEGHRCH_ITEM";
+    public static final String SEQUENCE_NAME = "MM_PRODCATEGHRCH_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

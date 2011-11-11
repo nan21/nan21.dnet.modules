@@ -75,7 +75,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.Course$Edit", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextField({ name:"notes", dataIndex:"notes",anchor:"-20" ,maxLength:4000  })
 		.addTextArea({ name:"deliveredCompetences", dataIndex:"deliveredCompetences",height:80,anchor:"-20"   })

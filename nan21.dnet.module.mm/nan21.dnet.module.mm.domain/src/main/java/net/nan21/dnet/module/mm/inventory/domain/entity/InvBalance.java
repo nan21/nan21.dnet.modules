@@ -39,13 +39,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** InvBalance. */
 @Entity
-@Table(name = "MM_INV_BALANCE")
+@Table(name = InvBalance.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "InvBalance.findById", query = "SELECT e FROM InvBalance e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "InvBalance.findByIds", query = "SELECT e FROM InvBalance e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class InvBalance implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "MM_INV_BALANCE";
+    public static final String SEQUENCE_NAME = "MM_INV_BALANCE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -82,12 +85,12 @@ public class InvBalance implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -101,7 +104,7 @@ public class InvBalance implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SubInventory.class)
     @JoinColumn(name = "SUBINVENTORY_ID", referencedColumnName = "ID")

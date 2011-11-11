@@ -18,8 +18,6 @@ Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpClassificationDs" , {
 		{name:"classificationId",type:"int", useNull:true },
 		{name:"classificationCode",type:"string" },
 		{name:"classificationName",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

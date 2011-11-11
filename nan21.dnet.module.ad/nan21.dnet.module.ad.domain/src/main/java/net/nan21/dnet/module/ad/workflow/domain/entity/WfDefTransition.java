@@ -37,13 +37,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** WfDefTransition. */
 @Entity
-@Table(name = "AD_WFDEF_TRANSITION")
+@Table(name = WfDefTransition.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "WfDefTransition.findById", query = "SELECT e FROM WfDefTransition e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "WfDefTransition.findByIds", query = "SELECT e FROM WfDefTransition e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class WfDefTransition implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_WFDEF_TRANSITION";
+    public static final String SEQUENCE_NAME = "AD_WFDEF_TRANSITION_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -58,7 +61,7 @@ public class WfDefTransition implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "WfDefTransition.findByIds";
 
     /** Condition. */
-    @Column(name = "COND")
+    @Column(name = "COND", length = 4000)
     private String condition;
 
     /** Owner client */
@@ -79,12 +82,12 @@ public class WfDefTransition implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -98,7 +101,7 @@ public class WfDefTransition implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = WfDefProcess.class)
     @JoinColumn(name = "PROCESS_ID", referencedColumnName = "ID")

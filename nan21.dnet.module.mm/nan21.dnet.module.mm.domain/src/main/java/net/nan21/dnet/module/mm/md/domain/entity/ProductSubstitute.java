@@ -36,13 +36,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product substitutes.*/
 @Entity
-@Table(name = "MM_PRODUCT_SUBSTITUTE")
+@Table(name = ProductSubstitute.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ProductSubstitute.findById", query = "SELECT e FROM ProductSubstitute e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProductSubstitute.findByIds", query = "SELECT e FROM ProductSubstitute e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductSubstitute implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "MM_PRODUCT_SUBSTITUTE";
+    public static final String SEQUENCE_NAME = "MM_PRODUCT_SUBSTITUTE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -57,7 +60,7 @@ public class ProductSubstitute implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_IDS = "ProductSubstitute.findByIds";
 
     /** Notes. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -78,12 +81,12 @@ public class ProductSubstitute implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -97,7 +100,7 @@ public class ProductSubstitute implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
     @JoinColumn(name = "REFPRODUCT_ID", referencedColumnName = "ID")

@@ -39,7 +39,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product accounts.*/
 @Entity
-@Table(name = "MM_PRODUCT_ACCOUNT", uniqueConstraints = { @UniqueConstraint(name = "MM_PRODUCT_ACCOUNT_UK1", columnNames = {
+@Table(name = ProductAccount.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PRODUCT_ACCOUNT_UK1", columnNames = {
         "CLIENTID", "PRODUCT_ID", "ORGANIZATION_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -49,6 +49,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "ProductAccount.findByCode_PRIMITIVE", query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.organization.id = :pOrganizationId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAccount implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "MM_PRODUCT_ACCOUNT";
+    public static final String SEQUENCE_NAME = "MM_PRODUCT_ACCOUNT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -90,12 +93,12 @@ public class ProductAccount implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -109,7 +112,7 @@ public class ProductAccount implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")

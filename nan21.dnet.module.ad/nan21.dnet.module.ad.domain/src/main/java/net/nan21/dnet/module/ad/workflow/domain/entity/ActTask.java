@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ActTask. */
 @Entity
-@Table(name = "ACT_RU_TASK")
+@Table(name = ActTask.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ActTask.findById", query = "SELECT e FROM ActTask e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -45,6 +45,9 @@ import org.hibernate.validator.constraints.NotBlank;
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActTask implements Serializable, IModelWithId {
+
+    public static final String TABLE_NAME = "ACT_RU_TASK";
+    public static final String SEQUENCE_NAME = "ACT_RU_TASK_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -59,10 +62,10 @@ public class ActTask implements Serializable, IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActTask.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false)
+    @Column(name = "ID_", nullable = false, length = 255)
     @NotBlank
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Revision. */
@@ -71,28 +74,28 @@ public class ActTask implements Serializable, IModelWithId {
     private Integer revision;
 
     /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_")
+    @Column(name = "PROC_INST_ID_", length = 255)
     private String processInstanceId;
 
     /** ExecutionId. */
-    @Column(name = "EXECUTION_ID_")
+    @Column(name = "EXECUTION_ID_", length = 255)
     private String executionId;
 
     /** Name. */
-    @Column(name = "NAME_", nullable = false)
+    @Column(name = "NAME_", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Description. */
-    @Column(name = "DESCRIPTION_")
+    @Column(name = "DESCRIPTION_", length = 4000)
     private String description;
 
     /** TaskDefinitionKey. */
-    @Column(name = "TASK_DEF_KEY_")
+    @Column(name = "TASK_DEF_KEY_", length = 255)
     private String taskDefinitionKey;
 
     /** DelegationState. */
-    @Column(name = "DELEGATION_")
+    @Column(name = "DELEGATION_", length = 255)
     private String delegationState;
 
     /** Priority. */
@@ -100,11 +103,11 @@ public class ActTask implements Serializable, IModelWithId {
     private Integer priority;
 
     /** Owner. */
-    @Column(name = "OWNER_")
+    @Column(name = "OWNER_", length = 32)
     private String owner;
 
     /** Assignee. */
-    @Column(name = "ASSIGNEE_")
+    @Column(name = "ASSIGNEE_", length = 32)
     private String assignee;
 
     /** DueDate. */

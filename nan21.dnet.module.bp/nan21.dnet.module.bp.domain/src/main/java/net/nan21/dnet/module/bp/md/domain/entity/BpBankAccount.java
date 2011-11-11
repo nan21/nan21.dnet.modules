@@ -39,7 +39,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Business partner bank accounts. */
 @Entity
-@Table(name = "BP_BP_BANKACCOUNT", uniqueConstraints = { @UniqueConstraint(name = "BP_BP_BANKACCOUNT_UK1", columnNames = {
+@Table(name = BpBankAccount.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BP_BP_BANKACCOUNT_UK1", columnNames = {
         "CLIENTID", "BPARTNER_ID", "ACCOUNTNO" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -49,6 +49,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "BpBankAccount.findByAccount_PRIMITIVE", query = "SELECT e FROM BpBankAccount e WHERE e.clientId = :pClientId and  e.bpartner.id = :pBpartnerId and e.accountNo = :pAccountNo ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class BpBankAccount implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "BP_BP_BANKACCOUNT";
+    public static final String SEQUENCE_NAME = "BP_BP_BANKACCOUNT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -73,11 +76,11 @@ public class BpBankAccount implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_ACCOUNT_PRIMITIVE = "BpBankAccount.findByAccount_PRIMITIVE";
 
     /** Bank branch where this account is opened. */
-    @Column(name = "BANKBRANCH")
+    @Column(name = "BANKBRANCH", length = 255)
     private String bankBranch;
 
     /** Account number. */
-    @Column(name = "ACCOUNTNO", nullable = false)
+    @Column(name = "ACCOUNTNO", nullable = false, length = 32)
     @NotBlank
     private String accountNo;
 
@@ -87,7 +90,7 @@ public class BpBankAccount implements Serializable, IModelWithId,
     private Boolean ibanAccount;
 
     /** Notes. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Active. */
@@ -113,12 +116,12 @@ public class BpBankAccount implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -132,7 +135,7 @@ public class BpBankAccount implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "ID")

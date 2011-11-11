@@ -20,11 +20,14 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** TempAsgnLine. */
 @Entity
-@Table(name = "AD_TEMP_ASGN_LINE")
+@Table(name = TempAsgnLine.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({})
 @ReadOnly
 public class TempAsgnLine implements Serializable {
+
+    public static final String TABLE_NAME = "AD_TEMP_ASGN_LINE";
+    public static final String SEQUENCE_NAME = "AD_TEMP_ASGN_LINE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -35,7 +38,7 @@ public class TempAsgnLine implements Serializable {
     private Long itemId;
 
     /** SelectionId. */
-    @Column(name = "SELECTION_UUID", nullable = false)
+    @Column(name = "SELECTION_UUID", nullable = false, length = 255)
     @NotBlank
     @Id
     private String selectionId;

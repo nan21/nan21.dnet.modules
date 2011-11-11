@@ -22,6 +22,8 @@ import net.nan21.dnet.module.pj.md.domain.entity.Item;
 
 public interface IItemService extends IEntityService<Item> {
 
+    public Item findByCode(Long clientId, String code);
+
     public List<Item> findByProject(Project project);
 
     public List<Item> findByProjectId(Long projectId);

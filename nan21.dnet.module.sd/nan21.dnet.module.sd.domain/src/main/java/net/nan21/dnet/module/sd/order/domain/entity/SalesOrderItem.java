@@ -38,13 +38,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** SalesOrderItem. */
 @Entity
-@Table(name = "SD_SALES_ORDER_ITEM")
+@Table(name = SalesOrderItem.TABLE_NAME)
 @Customizer(SalesOrderItemEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = "SalesOrderItem.findById", query = "SELECT e FROM SalesOrderItem e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "SalesOrderItem.findByIds", query = "SELECT e FROM SalesOrderItem e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SalesOrderItem implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "SD_SALES_ORDER_ITEM";
+    public static final String SEQUENCE_NAME = "SD_SALES_ORDER_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -88,12 +91,12 @@ public class SalesOrderItem implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -107,7 +110,7 @@ public class SalesOrderItem implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesOrder.class)
     @JoinColumn(name = "SALESORDER_ID", referencedColumnName = "ID")

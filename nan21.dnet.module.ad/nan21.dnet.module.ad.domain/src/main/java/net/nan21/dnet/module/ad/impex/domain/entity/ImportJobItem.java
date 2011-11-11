@@ -38,7 +38,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ImportJobItem. */
 @Entity
-@Table(name = "AD_IMPORT_JOB_ITEM", uniqueConstraints = { @UniqueConstraint(name = "AD_IMPORT_JOB_ITEM_UK1", columnNames = {
+@Table(name = ImportJobItem.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_IMPORT_JOB_ITEM_UK1", columnNames = {
         "CLIENTID", "JOB_ID", "MAP_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -48,6 +48,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "ImportJobItem.findByJob_map_PRIMITIVE", query = "SELECT e FROM ImportJobItem e WHERE e.clientId = :pClientId and  e.job.id = :pJobId and e.map.id = :pMapId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ImportJobItem implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_IMPORT_JOB_ITEM";
+    public static final String SEQUENCE_NAME = "AD_IMPORT_JOB_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -99,12 +102,12 @@ public class ImportJobItem implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -118,7 +121,7 @@ public class ImportJobItem implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ImportJob.class)
     @JoinColumn(name = "JOB_ID", referencedColumnName = "ID")

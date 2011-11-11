@@ -34,6 +34,7 @@ public class ItemDsConv extends AbstractDsConverter<ItemDs, Item> implements
     protected void modelToEntityAttributes(ItemDs ds, Item e) throws Exception {
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
+        e.setCode(ds.getCode());
         e.setSummary(ds.getSummary());
         e.setDescription(ds.getDescription());
         e.setDueDate(ds.getDueDate());
@@ -148,15 +149,15 @@ public class ItemDsConv extends AbstractDsConverter<ItemDs, Item> implements
     }
 
     protected void lookup_project_Project(ItemDs ds, Item e) throws Exception {
-        if (ds.getProjectCode() != null && !ds.getProjectCode().equals("")) {
+        if (ds.getProject() != null && !ds.getProject().equals("")) {
             Project x = null;
             try {
                 x = ((IProjectService) getService(IProjectService.class))
-                        .findByName(ds.getClientId(), ds.getProjectCode());
+                        .findByCode(ds.getClientId(), ds.getProject());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `Project` reference:  `projectCode` = "
-                                + ds.getProjectCode() + "  ");
+                        "Invalid value provided to find `Project` reference:  `project` = "
+                                + ds.getProject() + "  ");
             }
             e.setProject(x);
         } else {
@@ -335,6 +336,7 @@ public class ItemDsConv extends AbstractDsConverter<ItemDs, Item> implements
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
+        ds.setCode(e.getCode());
         ds.setSummary(e.getSummary());
         ds.setDescription(e.getDescription());
         ds.setDueDate(e.getDueDate());
@@ -343,9 +345,9 @@ public class ItemDsConv extends AbstractDsConverter<ItemDs, Item> implements
         ds.setBusinessObject(e.getBusinessObject());
         ds.setProjectId(((e.getProject() != null)) ? e.getProject().getId()
                 : null);
-        ds.setProjectCode(((e.getProject() != null)) ? e.getProject().getCode()
+        ds.setProject(((e.getProject() != null)) ? e.getProject().getCode()
                 : null);
-        ds.setProject(((e.getProject() != null)) ? e.getProject().getName()
+        ds.setProjectName(((e.getProject() != null)) ? e.getProject().getName()
                 : null);
         ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
         ds.setType(((e.getType() != null)) ? e.getType().getName() : null);

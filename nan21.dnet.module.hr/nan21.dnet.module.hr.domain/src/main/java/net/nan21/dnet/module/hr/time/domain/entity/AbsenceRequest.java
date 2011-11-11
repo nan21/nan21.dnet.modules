@@ -41,13 +41,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Absence request filled by employee. After it is approved generates absence time-entries acoording its items */
 @Entity
-@Table(name = "HR_ABSENCE_REQUEST")
+@Table(name = AbsenceRequest.TABLE_NAME)
 @Customizer(AbsenceRequestEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = "AbsenceRequest.findById", query = "SELECT e FROM AbsenceRequest e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "AbsenceRequest.findByIds", query = "SELECT e FROM AbsenceRequest e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AbsenceRequest implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_ABSENCE_REQUEST";
+    public static final String SEQUENCE_NAME = "HR_ABSENCE_REQUEST_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -68,7 +71,7 @@ public class AbsenceRequest implements Serializable, IModelWithId,
     private Date startDate;
 
     /** Status. */
-    @Column(name = "STATUS", nullable = false)
+    @Column(name = "STATUS", nullable = false, length = 16)
     @NotBlank
     private String status;
 
@@ -84,7 +87,7 @@ public class AbsenceRequest implements Serializable, IModelWithId,
     private Integer hoursPerDay;
 
     /** Comment. */
-    @Column(name = "COMMENT")
+    @Column(name = "COMMENT", length = 400)
     private String comment;
 
     /** TotalHours. */
@@ -92,11 +95,11 @@ public class AbsenceRequest implements Serializable, IModelWithId,
     private Integer totalHours;
 
     /** CurrentOwner. */
-    @Column(name = "CURRENTOWNER")
+    @Column(name = "CURRENTOWNER", length = 32)
     private String currentOwner;
 
     /** PreviousOwner. */
-    @Column(name = "PREVIOUSOWNER")
+    @Column(name = "PREVIOUSOWNER", length = 32)
     private String previousOwner;
 
     /** Owner client */
@@ -117,12 +120,12 @@ public class AbsenceRequest implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -136,7 +139,7 @@ public class AbsenceRequest implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
     @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")

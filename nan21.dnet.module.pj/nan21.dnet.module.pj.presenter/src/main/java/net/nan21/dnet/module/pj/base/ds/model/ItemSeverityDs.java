@@ -15,7 +15,7 @@ import net.nan21.dnet.module.pj.base.domain.entity.ItemSeverity;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ItemSeverity.class, sort = { @SortField(field = ItemSeverityDs.fNAME) })
+@Ds(entity = ItemSeverity.class, sort = { @SortField(field = ItemSeverityDs.fSEQUENCENO) })
 public class ItemSeverityDs extends AbstractDsModel<ItemSeverity> implements
         IModelWithId, IModelWithClientId {
 

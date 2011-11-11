@@ -14,8 +14,6 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemTextDs" , {
 		{name:"itemTextTypeId",type:"int", useNull:true },
 		{name:"itemTextType",type:"string" },
 		{name:"content",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

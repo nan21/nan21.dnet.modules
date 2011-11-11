@@ -23,17 +23,20 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ActProperty. */
 @Entity
-@Table(name = "ACT_GE_PROPERTY")
+@Table(name = ActProperty.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({})
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActProperty implements Serializable {
 
+    public static final String TABLE_NAME = "ACT_GE_PROPERTY";
+    public static final String SEQUENCE_NAME = "ACT_GE_PROPERTY_SEQ";
+
     private static final long serialVersionUID = -8865917134914502125L;
 
     /** Name. */
-    @Column(name = "NAME_", nullable = false)
+    @Column(name = "NAME_", nullable = false, length = 255)
     @NotBlank
     @Id
     private String name;
@@ -44,7 +47,7 @@ public class ActProperty implements Serializable {
     private Integer revision;
 
     /** Value. */
-    @Column(name = "VALUE")
+    @Column(name = "VALUE", length = 400)
     private String value;
 
     /* ============== getters - setters ================== */

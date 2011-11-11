@@ -16,9 +16,6 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectComponentDs" , {
 		{name:"projectId",type:"int", useNull:true },
 		{name:"projectCode",type:"string" },
 		{name:"project",type:"string" }
-	],
-	validations: [  
-		{field: "name", type: 'presence'}
 	]
 });
 

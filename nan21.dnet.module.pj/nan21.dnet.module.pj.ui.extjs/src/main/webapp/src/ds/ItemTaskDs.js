@@ -14,6 +14,7 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemTaskDs" , {
 		{name:"description",type:"string" },
 		{name:"itemId",type:"int", useNull:true },
 		{name:"item",type:"string" },
+		{name:"itemSummary",type:"string" },
 		{name:"priorityId",type:"int", useNull:true },
 		{name:"priority",type:"string" },
 		{name:"prioritySequenceNo",type:"int", useNull:true },
@@ -25,9 +26,6 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemTaskDs" , {
 		{name:"status",type:"string" },
 		{name:"assigneeId",type:"int", useNull:true },
 		{name:"assignee",type:"string" }
-	],
-	validations: [  
-		{field: "summary", type: 'presence'}
 	]
 });
 
@@ -45,6 +43,7 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemTaskDsFilter" , {
 		{name:"description",type:"string" },
 		{name:"itemId",type:"int", useNull:true },
 		{name:"item",type:"string" },
+		{name:"itemSummary",type:"string" },
 		{name:"priorityId",type:"int", useNull:true },
 		{name:"priority",type:"string" },
 		{name:"prioritySequenceNo",type:"int", useNull:true },

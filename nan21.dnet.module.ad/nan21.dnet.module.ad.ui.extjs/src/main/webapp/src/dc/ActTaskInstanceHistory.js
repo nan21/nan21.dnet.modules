@@ -72,7 +72,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignFo
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
+		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:32  })
 		//containers
 		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250})     
 		;     

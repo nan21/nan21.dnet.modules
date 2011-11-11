@@ -37,13 +37,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** EmployeeEducation. */
 @Entity
-@Table(name = "HR_EMPLOYEE_EDUCATION")
+@Table(name = EmployeeEducation.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "EmployeeEducation.findById", query = "SELECT e FROM EmployeeEducation e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "EmployeeEducation.findByIds", query = "SELECT e FROM EmployeeEducation e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class EmployeeEducation implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_EMPLOYEE_EDUCATION";
+    public static final String SEQUENCE_NAME = "HR_EMPLOYEE_EDUCATION_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -68,15 +71,15 @@ public class EmployeeEducation implements Serializable, IModelWithId,
     private Date toDate;
 
     /** Institute. */
-    @Column(name = "INSTITUTE")
+    @Column(name = "INSTITUTE", length = 255)
     private String institute;
 
     /** Degree. */
-    @Column(name = "DEGREE")
+    @Column(name = "DEGREE", length = 255)
     private String degree;
 
     /** Notes. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -97,12 +100,12 @@ public class EmployeeEducation implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -116,7 +119,7 @@ public class EmployeeEducation implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
     @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")

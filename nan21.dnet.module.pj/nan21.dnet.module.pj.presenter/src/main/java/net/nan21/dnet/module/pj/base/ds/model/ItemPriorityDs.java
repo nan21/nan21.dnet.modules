@@ -15,7 +15,7 @@ import net.nan21.dnet.module.pj.base.domain.entity.ItemPriority;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ItemPriority.class, sort = { @SortField(field = ItemPriorityDs.fNAME) })
+@Ds(entity = ItemPriority.class, sort = { @SortField(field = ItemPriorityDs.fSEQUENCENO) })
 public class ItemPriorityDs extends AbstractDsModel<ItemPriority> implements
         IModelWithId, IModelWithClientId {
 

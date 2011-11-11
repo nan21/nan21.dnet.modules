@@ -24,6 +24,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
@@ -47,12 +48,17 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Item. */
 @Entity
-@Table(name = "PJ_ITEM")
+@Table(name = Item.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "PJ_ITEM_UK1", columnNames = {
+        "CLIENTID", "CODE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "Item.findById", query = "SELECT e FROM Item e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Item.findByIds", query = "SELECT e FROM Item e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = "Item.findByIds", query = "SELECT e FROM Item e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "Item.findByCode", query = "SELECT e FROM Item e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Item implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "PJ_ITEM";
+    public static final String SEQUENCE_NAME = "PJ_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -67,14 +73,24 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
     public static final String NQ_FIND_BY_IDS = "Item.findByIds";
 
     /**
+     * Named query find by unique key: Code.
+     */
+    public static final String NQ_FIND_BY_CODE = "Item.findByCode";
+
+    /** Code. */
+    @Column(name = "CODE", nullable = false, length = 32)
+    @NotBlank
+    private String code;
+
+    /**
      * Brief (one line) description of this item.
      */
-    @Column(name = "SUMMARY", nullable = false)
+    @Column(name = "SUMMARY", nullable = false, length = 255)
     @NotBlank
     private String summary;
 
     /** Description. */
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 4000)
     private String description;
 
     /** DueDate. */
@@ -105,12 +121,12 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -124,7 +140,7 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Project.class)
     @JoinColumn(name = "PROJECT_ID", referencedColumnName = "ID")
@@ -169,6 +185,14 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
     private Collection<ProjectComponent> affectedComponents;
 
     /* ============== getters - setters ================== */
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public String getSummary() {
         return this.summary;
@@ -390,6 +414,9 @@ public class Item implements Serializable, IModelWithId, IModelWithClientId {
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.code == null || this.code.equals("")) {
+            event.updateAttributeWithObject("code", "I-" + this.getId());
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

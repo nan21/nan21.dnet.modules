@@ -40,7 +40,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** User. */
 @Entity
-@Table(name = "AD_USERS", uniqueConstraints = { @UniqueConstraint(name = "AD_USERS_UK1", columnNames = {
+@Table(name = User.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_USERS_UK1", columnNames = {
         "CLIENTID", "CODE" }) })
 @Customizer(UserEventHandler.class)
 @NamedQueries({
@@ -48,6 +48,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "User.findByIds", query = "SELECT e FROM User e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "User.findByCode", query = "SELECT e FROM User e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class User implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_USERS";
+    public static final String SEQUENCE_NAME = "AD_USERS_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -72,17 +75,17 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     private Boolean locked;
 
     /** User password.*/
-    @Column(name = "PASSWORD", nullable = false)
+    @Column(name = "PASSWORD", nullable = false, length = 255)
     @NotBlank
     private String password;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Code. */
-    @Column(name = "CODE", nullable = false)
+    @Column(name = "CODE", nullable = false, length = 32)
     @NotBlank
     private String code;
 
@@ -92,7 +95,7 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -113,12 +116,12 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -132,7 +135,7 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = UserType.class)
     @JoinColumn(name = "ACCOUNTTYPE_ID", referencedColumnName = "ID")

@@ -10,6 +10,7 @@ import net.nan21.dnet.module.pj.base.business.service.IItemTaskStatusService;
 import net.nan21.dnet.module.pj.base.business.service.IItemTaskTypeService;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemTaskStatus;
 import net.nan21.dnet.module.pj.base.domain.entity.ItemTaskType;
+import net.nan21.dnet.module.pj.md.business.service.IItemService;
 import net.nan21.dnet.module.pj.md.domain.entity.Item;
 import net.nan21.dnet.module.pj.md.domain.entity.ProjectMember;
 
@@ -36,6 +37,8 @@ public class ItemTaskDsConv extends AbstractDsConverter<ItemTaskDs, ItemTask>
                     || !e.getItem().getId().equals(ds.getItemId())) {
                 e.setItem((Item) this.em.find(Item.class, ds.getItemId()));
             }
+        } else {
+            this.lookup_item_Item(ds, e);
         }
         if (ds.getAssigneeId() != null) {
             if (e.getAssignee() == null
@@ -61,6 +64,23 @@ public class ItemTaskDsConv extends AbstractDsConverter<ItemTaskDs, ItemTask>
             }
         } else {
             this.lookup_status_ItemTaskStatus(ds, e);
+        }
+    }
+
+    protected void lookup_item_Item(ItemTaskDs ds, ItemTask e) throws Exception {
+        if (ds.getItem() != null && !ds.getItem().equals("")) {
+            Item x = null;
+            try {
+                x = ((IItemService) getService(IItemService.class)).findByCode(
+                        ds.getClientId(), ds.getItem());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Item` reference:  `item` = "
+                                + ds.getItem() + "  ");
+            }
+            e.setItem(x);
+        } else {
+            e.setItem(null);
         }
     }
 
@@ -112,7 +132,9 @@ public class ItemTaskDsConv extends AbstractDsConverter<ItemTaskDs, ItemTask>
         ds.setSummary(e.getSummary());
         ds.setDescription(e.getDescription());
         ds.setItemId(((e.getItem() != null)) ? e.getItem().getId() : null);
-        ds.setItem(((e.getItem() != null)) ? e.getItem().getSummary() : null);
+        ds.setItem(((e.getItem() != null)) ? e.getItem().getCode() : null);
+        ds.setItemSummary(((e.getItem() != null)) ? e.getItem().getSummary()
+                : null);
         ds.setPriorityId(((e.getItem() != null) && (e.getItem().getPriority() != null)) ? e
                 .getItem().getPriority().getId()
                 : null);

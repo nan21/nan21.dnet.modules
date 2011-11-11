@@ -37,12 +37,15 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** City. */
 @Entity
-@Table(name = "BD_GEO_CITY")
+@Table(name = City.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "City.findById", query = "SELECT e FROM City e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "City.findByIds", query = "SELECT e FROM City e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class City implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "BD_GEO_CITY";
+    public static final String SEQUENCE_NAME = "BD_GEO_CITY_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -57,7 +60,7 @@ public class City implements Serializable, IModelWithId, IModelWithClientId {
     public static final String NQ_FIND_BY_IDS = "City.findByIds";
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
@@ -67,7 +70,7 @@ public class City implements Serializable, IModelWithId, IModelWithClientId {
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 400)
     private String description;
 
     /** Owner client */
@@ -88,12 +91,12 @@ public class City implements Serializable, IModelWithId, IModelWithClientId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -107,7 +110,7 @@ public class City implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
     @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID")

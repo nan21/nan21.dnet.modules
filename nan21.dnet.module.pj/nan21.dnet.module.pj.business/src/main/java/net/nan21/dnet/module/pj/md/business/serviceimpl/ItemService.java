@@ -39,6 +39,12 @@ public class ItemService extends AbstractEntityService<Item> implements
         return Item.class;
     }
 
+    public Item findByCode(Long clientId, String code) {
+        return (Item) this.em.createNamedQuery(Item.NQ_FIND_BY_CODE)
+                .setParameter("pClientId", clientId)
+                .setParameter("pCode", code).getSingleResult();
+    }
+
     public List<Item> findByProject(Project project) {
         return this.findByProjectId(project.getId());
     }

@@ -36,13 +36,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** AbsenceBalance. */
 @Entity
-@Table(name = "HR_ABSENCE_BALANCE")
+@Table(name = AbsenceBalance.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "AbsenceBalance.findById", query = "SELECT e FROM AbsenceBalance e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "AbsenceBalance.findByIds", query = "SELECT e FROM AbsenceBalance e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AbsenceBalance implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_ABSENCE_BALANCE";
+    public static final String SEQUENCE_NAME = "HR_ABSENCE_BALANCE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -78,12 +81,12 @@ public class AbsenceBalance implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -97,7 +100,7 @@ public class AbsenceBalance implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
     @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")

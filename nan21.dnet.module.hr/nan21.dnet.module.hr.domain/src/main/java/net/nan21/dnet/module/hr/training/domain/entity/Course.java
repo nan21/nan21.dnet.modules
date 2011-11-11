@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Course. */
 @Entity
-@Table(name = "HR_COURSE", uniqueConstraints = {
+@Table(name = Course.TABLE_NAME, uniqueConstraints = {
         @UniqueConstraint(name = "HR_COURSE_UK1", columnNames = { "CLIENTID",
                 "CODE" }),
         @UniqueConstraint(name = "HR_COURSE_UK2", columnNames = { "CLIENTID",
@@ -49,6 +49,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "Course.findByCode", query = "SELECT e FROM Course e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Course.findByName", query = "SELECT e FROM Course e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Course implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_COURSE";
+    public static final String SEQUENCE_NAME = "HR_COURSE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -73,24 +76,24 @@ public class Course implements Serializable, IModelWithId, IModelWithClientId {
     public static final String NQ_FIND_BY_NAME = "Course.findByName";
 
     /** IntendedAudience. */
-    @Column(name = "INTENDEDAUDIENCE")
+    @Column(name = "INTENDEDAUDIENCE", length = 4000)
     private String intendedAudience;
 
     /** Requirements. */
-    @Column(name = "REQUIREMENTS")
+    @Column(name = "REQUIREMENTS", length = 4000)
     private String requirements;
 
     /** DeliveredCompetences. */
-    @Column(name = "DELIVEREDCOMPETENCES")
+    @Column(name = "DELIVEREDCOMPETENCES", length = 4000)
     private String deliveredCompetences;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Code. */
-    @Column(name = "CODE", nullable = false)
+    @Column(name = "CODE", nullable = false, length = 32)
     @NotBlank
     private String code;
 
@@ -100,7 +103,7 @@ public class Course implements Serializable, IModelWithId, IModelWithClientId {
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -121,12 +124,12 @@ public class Course implements Serializable, IModelWithId, IModelWithClientId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -140,7 +143,7 @@ public class Course implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CourseType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
@@ -288,6 +291,9 @@ public class Course implements Serializable, IModelWithId, IModelWithClientId {
                 .getClientId());
         if (this.active == null) {
             event.updateAttributeWithObject("active", false);
+        }
+        if (this.code == null || this.code.equals("")) {
+            event.updateAttributeWithObject("code", "CRS-" + this.getId());
         }
     }
 

@@ -1,8 +1,8 @@
 
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemDs$Trl", {     	
 	projectId__lbl : "Project Id"
-	,projectCode__lbl : "Project Code"
 	,project__lbl : "Project"
+	,projectName__lbl : "Project Name"
 	,summary__lbl : "Summary"
 	,dueDate__lbl : "Due Date"
 	,resolutionDate__lbl : "Resolution Date"

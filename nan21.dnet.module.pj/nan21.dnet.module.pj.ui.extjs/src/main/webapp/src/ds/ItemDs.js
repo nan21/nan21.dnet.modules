@@ -11,8 +11,9 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemDs" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"projectId",type:"int", useNull:true },
-		{name:"projectCode",type:"string" },
 		{name:"project",type:"string" },
+		{name:"projectName",type:"string" },
+		{name:"code",type:"string" },
 		{name:"summary",type:"string" },
 		{name:"description",type:"string" },
 		{name:"dueDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
@@ -39,9 +40,6 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemDs" , {
 		{name:"fixedInVersionId",type:"int", useNull:true },
 		{name:"fixedInVersion",type:"string" },
 		{name:"businessObject",type:"string" }
-	],
-	validations: [  
-		{field: "summary", type: 'presence'}
 	]
 });
 
@@ -56,8 +54,9 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ItemDsFilter" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"projectId",type:"int", useNull:true },
-		{name:"projectCode",type:"string" },
 		{name:"project",type:"string" },
+		{name:"projectName",type:"string" },
+		{name:"code",type:"string" },
 		{name:"summary",type:"string" },
 		{name:"description",type:"string" },
 		{name:"dueDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },

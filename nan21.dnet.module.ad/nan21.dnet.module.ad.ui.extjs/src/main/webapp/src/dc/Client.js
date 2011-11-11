@@ -75,7 +75,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Edit", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addTextField({ name:"defaultImportPath", dataIndex:"defaultImportPath",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"defaultExportPath", dataIndex:"defaultExportPath",anchor:"-20" ,maxLength:255  })
@@ -105,13 +105,13 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Create", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addTextField({ name:"defaultImportPath", dataIndex:"defaultImportPath",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"defaultExportPath", dataIndex:"defaultExportPath",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"tempPath", dataIndex:"tempPath",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"adminUserCode", paramIndex:"adminUserCode",anchor:"-20"   })
 		.addTextField({ name:"adminUserName", paramIndex:"adminUserName",anchor:"-20"   })
+		.addTextField({ name:"adminUserCode", paramIndex:"adminUserCode",anchor:"-20"   })
 		.addTextField({ name:"adminPassword", paramIndex:"adminPassword",anchor:"-20"   })
 		.addCheckbox({ name:"systemClient", dataIndex:"systemClient"  })
 		//containers
@@ -125,7 +125,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Create", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
 		.addChildrenTo("col1",["name","code","notes","systemClient"])
-		.addChildrenTo("col2",["adminUserCode","adminUserName","adminPassword"])
+		.addChildrenTo("col2",["adminUserName","adminUserCode","adminPassword"])
 		.addChildrenTo("col3",["defaultImportPath","defaultExportPath","tempPath"])
 ;
 	}	

@@ -9,14 +9,12 @@ import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 import net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm;
-import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 
 public class BusinessPartnerService extends
-        AbstractEntityService<BusinessPartner> implements
-        IBusinessPartnerService {
+        AbstractEntityService<BusinessPartner> {
 
     public BusinessPartnerService() {
         super();

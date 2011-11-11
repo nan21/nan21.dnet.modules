@@ -33,7 +33,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Bank. */
 @Entity
-@Table(name = "BP_BANK", uniqueConstraints = {
+@Table(name = Bank.TABLE_NAME, uniqueConstraints = {
         @UniqueConstraint(name = "BP_BANK_UK1", columnNames = { "CLIENTID",
                 "CODE" }),
         @UniqueConstraint(name = "BP_BANK_UK2", columnNames = { "CLIENTID",
@@ -45,6 +45,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "Bank.findByCode", query = "SELECT e FROM Bank e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Bank.findByName", query = "SELECT e FROM Bank e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Bank implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "BP_BANK";
+    public static final String SEQUENCE_NAME = "BP_BANK_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -69,16 +72,16 @@ public class Bank implements Serializable, IModelWithId, IModelWithClientId {
     public static final String NQ_FIND_BY_NAME = "Bank.findByName";
 
     /** SwiftCode. */
-    @Column(name = "SWIFTCODE")
+    @Column(name = "SWIFTCODE", length = 32)
     private String swiftCode;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Code. */
-    @Column(name = "CODE", nullable = false)
+    @Column(name = "CODE", nullable = false, length = 32)
     @NotBlank
     private String code;
 
@@ -88,7 +91,7 @@ public class Bank implements Serializable, IModelWithId, IModelWithClientId {
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -109,12 +112,12 @@ public class Bank implements Serializable, IModelWithId, IModelWithClientId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -128,7 +131,7 @@ public class Bank implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
     /* ============== getters - setters ================== */

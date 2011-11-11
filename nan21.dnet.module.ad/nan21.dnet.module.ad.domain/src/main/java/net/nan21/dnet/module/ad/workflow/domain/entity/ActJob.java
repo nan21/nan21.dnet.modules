@@ -32,7 +32,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ActJob. */
 @Entity
-@Table(name = "ACT_RU_JOB")
+@Table(name = ActJob.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ActJob.findById", query = "SELECT e FROM ActJob e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -40,6 +40,9 @@ import org.hibernate.validator.constraints.NotBlank;
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActJob implements Serializable, IModelWithId {
+
+    public static final String TABLE_NAME = "ACT_RU_JOB";
+    public static final String SEQUENCE_NAME = "ACT_RU_JOB_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -54,10 +57,10 @@ public class ActJob implements Serializable, IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActJob.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false)
+    @Column(name = "ID_", nullable = false, length = 255)
     @NotBlank
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Revision. */
@@ -66,11 +69,11 @@ public class ActJob implements Serializable, IModelWithId {
     private Integer revision;
 
     /** Type. */
-    @Column(name = "TYPE_")
+    @Column(name = "TYPE_", length = 255)
     private String type;
 
     /** LockOwner. */
-    @Column(name = "LOCK_OWNER_")
+    @Column(name = "LOCK_OWNER_", length = 255)
     private String lockOwner;
 
     /** LockExpirationTime. */
@@ -79,11 +82,11 @@ public class ActJob implements Serializable, IModelWithId {
     private Date lockExpirationTime;
 
     /** ProcessInstanceId. */
-    @Column(name = "PROCESS_INSTANCE_ID_")
+    @Column(name = "PROCESS_INSTANCE_ID_", length = 255)
     private String processInstanceId;
 
     /** ExecutionId. */
-    @Column(name = "EXECUTION_ID_")
+    @Column(name = "EXECUTION_ID_", length = 255)
     private String executionId;
 
     /** IsExclusive. */
@@ -100,19 +103,19 @@ public class ActJob implements Serializable, IModelWithId {
     private Date dueDate;
 
     /** ExceptionMessage. */
-    @Column(name = "EXCEPTION_MSG_")
+    @Column(name = "EXCEPTION_MSG_", length = 4000)
     private String exceptionMessage;
 
     /** ExceptionByteArrayId. */
-    @Column(name = "EXCEPTION_STACK_ID_")
+    @Column(name = "EXCEPTION_STACK_ID_", length = 255)
     private String exceptionByteArrayId;
 
     /** JobHandlerType. */
-    @Column(name = "HANDLER_TYPE_")
+    @Column(name = "HANDLER_TYPE_", length = 255)
     private String jobHandlerType;
 
     /** JobHandlerConfiguration. */
-    @Column(name = "HANDLER_CFG_")
+    @Column(name = "HANDLER_CFG_", length = 255)
     private String jobHandlerConfiguration;
 
     /* ============== getters - setters ================== */

@@ -40,13 +40,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** InvOperation. */
 @Entity
-@Table(name = "MM_INV_OPERATION")
+@Table(name = InvOperation.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "InvOperation.findById", query = "SELECT e FROM InvOperation e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "InvOperation.findByIds", query = "SELECT e FROM InvOperation e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class InvOperation implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "MM_INV_OPERATION";
+    public static final String SEQUENCE_NAME = "MM_INV_OPERATION_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -66,7 +69,7 @@ public class InvOperation implements Serializable, IModelWithId,
     private Date eventDate;
 
     /** Direction. */
-    @Column(name = "DIRECTION", nullable = false)
+    @Column(name = "DIRECTION", nullable = false, length = 8)
     @NotBlank
     private String direction;
 
@@ -93,12 +96,12 @@ public class InvOperation implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -112,7 +115,7 @@ public class InvOperation implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "INVENTORY_ID", referencedColumnName = "ID")

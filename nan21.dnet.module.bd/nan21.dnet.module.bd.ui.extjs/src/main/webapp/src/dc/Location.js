@@ -24,22 +24,22 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$ListCtx", {
 	,_noExport_: true
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addNumberColumn({ name:"countryId", dataIndex:"countryId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"countryCode", dataIndex:"countryCode",width:100 })   	
-		.addNumberColumn({ name:"regionId", dataIndex:"regionId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"regionCode", dataIndex:"regionCode",width:100 })   	
-		.addTextColumn({ name:"cityName", dataIndex:"cityName",width:200 })   	
+		.addTextColumn({ name:"cityName", dataIndex:"cityName", width:120 })   	
 		.addTextColumn({ name:"adress", dataIndex:"adress",width:200 })   	
 		.addTextColumn({ name:"notes", dataIndex:"notes", hidden:true,width:200 })   	
-		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
-		.addBooleanColumn({ name:"billing", dataIndex:"billing"})   	     
-		.addBooleanColumn({ name:"mailing", dataIndex:"mailing"})   	     
-		.addBooleanColumn({ name:"shipping", dataIndex:"shipping"})   	     
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
+		.addBooleanColumn({ name:"billing", dataIndex:"billing", width:60})   	     
+		.addBooleanColumn({ name:"mailing", dataIndex:"mailing", width:60})   	     
+		.addBooleanColumn({ name:"shipping", dataIndex:"shipping", width:60})   	     
+		.addBooleanColumn({ name:"active", dataIndex:"active", width:60})   	     
 		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
+		.addNumberColumn({ name:"countryId", dataIndex:"countryId", hidden:true,format:"0",width:70 })  
+		.addNumberColumn({ name:"regionId", dataIndex:"regionId", hidden:true,format:"0",width:70 })  
 	  ;		   
 	}
 });

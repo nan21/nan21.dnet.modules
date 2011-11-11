@@ -36,7 +36,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Role. */
 @Entity
-@Table(name = "AD_ROLES", uniqueConstraints = { @UniqueConstraint(name = "AD_ROLES_UK1", columnNames = {
+@Table(name = Role.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_ROLES_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -44,6 +44,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "Role.findByIds", query = "SELECT e FROM Role e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Role.findByName", query = "SELECT e FROM Role e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Role implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_ROLES";
+    public static final String SEQUENCE_NAME = "AD_ROLES_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -63,7 +66,7 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
     public static final String NQ_FIND_BY_NAME = "Role.findByName";
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
@@ -73,7 +76,7 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 400)
     private String description;
 
     /** Owner client */
@@ -94,12 +97,12 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -113,7 +116,7 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
     @ManyToMany(mappedBy = "roles")

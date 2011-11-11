@@ -60,7 +60,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ItemTask$List", {
 		.addTextColumn({ name:"priority", dataIndex:"priority",width:120 })   	
 		.addNumberColumn({ name:"prioritySequenceNo", dataIndex:"prioritySequenceNo",format:Ext.NUMBER_FORMAT_INT })  
 		.addNumberColumn({ name:"itemId", dataIndex:"itemId",format:"0",width:70 })  
-		.addTextColumn({ name:"item", dataIndex:"item",width:200 })   	
+		.addTextColumn({ name:"item", dataIndex:"item",width:100 })   	
 		.addTextColumn({ name:"description", dataIndex:"description", hidden:true,width:200 })   	
 		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
 		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     

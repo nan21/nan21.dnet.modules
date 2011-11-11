@@ -29,7 +29,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ActByteArray. */
 @Entity
-@Table(name = "ACT_GE_BYTEARRAY")
+@Table(name = ActByteArray.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ActByteArray.findById", query = "SELECT e FROM ActByteArray e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -37,6 +37,9 @@ import org.hibernate.validator.constraints.NotBlank;
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActByteArray implements Serializable, IModelWithId {
+
+    public static final String TABLE_NAME = "ACT_GE_BYTEARRAY";
+    public static final String SEQUENCE_NAME = "ACT_GE_BYTEARRAY_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -51,14 +54,14 @@ public class ActByteArray implements Serializable, IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActByteArray.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false)
+    @Column(name = "ID_", nullable = false, length = 255)
     @NotBlank
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Name. */
-    @Column(name = "NAME_", nullable = false)
+    @Column(name = "NAME_", nullable = false, length = 255)
     @NotBlank
     private String name;
 
@@ -68,7 +71,7 @@ public class ActByteArray implements Serializable, IModelWithId {
     private Integer revision;
 
     /** DeploymentId. */
-    @Column(name = "DEPLOYMENT_ID_")
+    @Column(name = "DEPLOYMENT_ID_", length = 255)
     private String deploymentId;
 
     /* ============== getters - setters ================== */

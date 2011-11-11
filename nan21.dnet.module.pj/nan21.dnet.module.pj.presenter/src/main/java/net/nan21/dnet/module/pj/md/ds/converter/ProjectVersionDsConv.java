@@ -60,7 +60,7 @@ public class ProjectVersionDsConv extends
             Project x = null;
             try {
                 x = ((IProjectService) getService(IProjectService.class))
-                        .findByName(ds.getClientId(), ds.getProjectCode());
+                        .findByCode(ds.getClientId(), ds.getProjectCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Project` reference:  `projectCode` = "

@@ -110,7 +110,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32,vtype:"alphanum"  })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextField({ name:"type", dataIndex:"type",anchor:"-20",noEdit:true  ,maxLength:16  })
 		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
@@ -123,7 +123,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit", {
 		.addDateField({ name:"birthDate", dataIndex:"birthDate",anchor:"-20" })
 		.addCombo({ name:"gender", xtype:"localcombo", dataIndex:"gender",anchor:"-20" ,store:[ "male", "female"]  })
 		.addTextField({ name:"companyName", dataIndex:"companyName",anchor:"-20" ,maxLength:255,listeners:{change:{scope:this, fn:this._updateCompanyName_}}  })
-		.addTextField({ name:"registrationNo", dataIndex:"registrationNo",anchor:"-20" ,maxLength:32,vtype:"alphanum"  })
+		.addTextField({ name:"registrationNo", dataIndex:"registrationNo",anchor:"-20" ,maxLength:32  })
 		.addDateField({ name:"registrationDate", dataIndex:"registrationDate",anchor:"-20" })
 		.addLov({ name:"legalForm", xtype:"net.nan21.dnet.module.bp.base.lovs.CompanyLegalForms", dataIndex:"legalForm",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "legalFormId"} ],filterFieldMapping: [{lovField:"countryId", dsField: "countryId"} ]  })
 		//containers

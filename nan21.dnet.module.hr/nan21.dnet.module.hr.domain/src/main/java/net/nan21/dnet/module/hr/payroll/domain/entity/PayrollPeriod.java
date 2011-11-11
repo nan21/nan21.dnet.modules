@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** PayrollPeriod. */
 @Entity
-@Table(name = "HR_PAYROLL_PERIOD", uniqueConstraints = { @UniqueConstraint(name = "HR_PAYROLL_PERIOD_UK1", columnNames = {
+@Table(name = PayrollPeriod.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_PAYROLL_PERIOD_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -46,6 +46,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "PayrollPeriod.findByName", query = "SELECT e FROM PayrollPeriod e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayrollPeriod implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "HR_PAYROLL_PERIOD";
+    public static final String SEQUENCE_NAME = "HR_PAYROLL_PERIOD_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -65,7 +68,7 @@ public class PayrollPeriod implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_NAME = "PayrollPeriod.findByName";
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
@@ -86,7 +89,7 @@ public class PayrollPeriod implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -107,12 +110,12 @@ public class PayrollPeriod implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -126,7 +129,7 @@ public class PayrollPeriod implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Payroll.class)
     @JoinColumn(name = "PAYROLL_ID", referencedColumnName = "ID")

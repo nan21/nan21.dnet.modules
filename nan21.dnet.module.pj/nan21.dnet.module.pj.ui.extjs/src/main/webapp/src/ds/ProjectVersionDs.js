@@ -20,10 +20,6 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs" , {
 		{name:"releaseDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"projectVersionId",type:"int", useNull:true },
 		{name:"projectVersion",type:"string" }
-	],
-	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "planDate", type: 'presence'}
 	]
 });
 

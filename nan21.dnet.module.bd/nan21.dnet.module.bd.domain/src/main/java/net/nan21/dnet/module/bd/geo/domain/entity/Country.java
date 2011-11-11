@@ -33,7 +33,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Country. */
 @Entity
-@Table(name = "BD_GEO_COUNTRY", uniqueConstraints = {
+@Table(name = Country.TABLE_NAME, uniqueConstraints = {
         @UniqueConstraint(name = "BD_GEO_COUNTRY_UK1", columnNames = {
                 "CLIENTID", "CODE" }),
         @UniqueConstraint(name = "BD_GEO_COUNTRY_UK2", columnNames = {
@@ -45,6 +45,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "Country.findByCode", query = "SELECT e FROM Country e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Country.findByName", query = "SELECT e FROM Country e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Country implements Serializable, IModelWithId, IModelWithClientId {
+
+    public static final String TABLE_NAME = "BD_GEO_COUNTRY";
+    public static final String SEQUENCE_NAME = "BD_GEO_COUNTRY_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -69,11 +72,11 @@ public class Country implements Serializable, IModelWithId, IModelWithClientId {
     public static final String NQ_FIND_BY_NAME = "Country.findByName";
 
     /** Iso2. */
-    @Column(name = "ISO2")
+    @Column(name = "ISO2", length = 2)
     private String iso2;
 
     /** Iso3. */
-    @Column(name = "ISO3")
+    @Column(name = "ISO3", length = 3)
     private String iso3;
 
     /** HasRegions. */
@@ -82,20 +85,20 @@ public class Country implements Serializable, IModelWithId, IModelWithClientId {
     private Boolean hasRegions;
 
     /** DefaultCurrency. */
-    @Column(name = "DEFAULTCURRENCY")
+    @Column(name = "DEFAULTCURRENCY", length = 3)
     private String defaultCurrency;
 
     /** DefaultLanguage. */
-    @Column(name = "DEFAULTLANGUAGE")
+    @Column(name = "DEFAULTLANGUAGE", length = 5)
     private String defaultLanguage;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
     /** Code. */
-    @Column(name = "CODE", nullable = false)
+    @Column(name = "CODE", nullable = false, length = 32)
     @NotBlank
     private String code;
 
@@ -105,7 +108,7 @@ public class Country implements Serializable, IModelWithId, IModelWithClientId {
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES")
+    @Column(name = "NOTES", length = 4000)
     private String notes;
 
     /** Owner client */
@@ -126,12 +129,12 @@ public class Country implements Serializable, IModelWithId, IModelWithClientId {
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -145,7 +148,7 @@ public class Country implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
     /* ============== getters - setters ================== */

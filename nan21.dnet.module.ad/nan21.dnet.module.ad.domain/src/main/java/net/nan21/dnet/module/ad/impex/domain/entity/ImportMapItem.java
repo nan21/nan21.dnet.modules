@@ -36,13 +36,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ImportMapItem. */
 @Entity
-@Table(name = "AD_IMPORT_MAP_ITEM")
+@Table(name = ImportMapItem.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ImportMapItem.findById", query = "SELECT e FROM ImportMapItem e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ImportMapItem.findByIds", query = "SELECT e FROM ImportMapItem e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ImportMapItem implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_IMPORT_MAP_ITEM";
+    public static final String SEQUENCE_NAME = "AD_IMPORT_MAP_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -62,12 +65,12 @@ public class ImportMapItem implements Serializable, IModelWithId,
     private Integer sequenceNo;
 
     /** DataSourceName. */
-    @Column(name = "DATASOURCENAME", nullable = false)
+    @Column(name = "DATASOURCENAME", nullable = false, length = 255)
     @NotBlank
     private String dataSourceName;
 
     /** FileName. */
-    @Column(name = "FILENAME")
+    @Column(name = "FILENAME", length = 255)
     private String fileName;
 
     /** Active. */
@@ -93,12 +96,12 @@ public class ImportMapItem implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -112,7 +115,7 @@ public class ImportMapItem implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ImportMap.class)
     @JoinColumn(name = "IMPORTMAP_ID", referencedColumnName = "ID")

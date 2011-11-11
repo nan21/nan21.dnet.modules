@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$PositionCtxEditL
 	,_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addLov({name:"courseCode", xtype:"gridcolumn", dataIndex:"courseCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.training.lovs.Courses" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},vtype:"alphanum",retFieldMapping: [{lovField:"id", dsField: "courseId"} ,{lovField:"name", dsField: "courseName"} ]} })
+		.addLov({name:"courseCode", xtype:"gridcolumn", dataIndex:"courseCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.training.lovs.Courses" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "courseId"} ,{lovField:"name", dsField: "courseName"} ]} })
 		.addTextColumn({ name:"courseName", dataIndex:"courseName",width:200 })
 		.addDateColumn({ name:"validFor", dataIndex:"validFor",format:Ext.DATETIME_FORMAT,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT}})
 		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})
@@ -66,7 +66,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$CourseCtxEditLis
 	,_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addLov({name:"positionCode", xtype:"gridcolumn", dataIndex:"positionCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.job.lovs.Positions" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},vtype:"alphanum",retFieldMapping: [{lovField:"id", dsField: "positionId"} ,{lovField:"name", dsField: "positionName"} ]} })
+		.addLov({name:"positionCode", xtype:"gridcolumn", dataIndex:"positionCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.job.lovs.Positions" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "positionId"} ,{lovField:"name", dsField: "positionName"} ]} })
 		.addTextColumn({ name:"positionName", dataIndex:"positionName",width:200 })
 		.addDateColumn({ name:"validFor", dataIndex:"validFor",format:Ext.DATETIME_FORMAT,editor:{xtype:"datefield", selectOnFocus:true, format:Ext.DATE_FORMAT}})
 		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})

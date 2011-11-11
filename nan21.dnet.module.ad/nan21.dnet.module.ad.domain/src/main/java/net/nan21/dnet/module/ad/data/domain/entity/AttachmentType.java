@@ -33,7 +33,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product attachment type definition.*/
 @Entity
-@Table(name = "AD_ATTACHMENT_TYPE", uniqueConstraints = { @UniqueConstraint(name = "AD_ATTACHMENT_TYPE_UK1", columnNames = {
+@Table(name = AttachmentType.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_ATTACHMENT_TYPE_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -42,6 +42,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "AttachmentType.findByName", query = "SELECT e FROM AttachmentType e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AttachmentType implements Serializable, IModelWithId,
         IModelWithClientId {
+
+    public static final String TABLE_NAME = "AD_ATTACHMENT_TYPE";
+    public static final String SEQUENCE_NAME = "AD_ATTACHMENT_TYPE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -61,26 +64,26 @@ public class AttachmentType implements Serializable, IModelWithId,
     public static final String NQ_FIND_BY_NAME = "AttachmentType.findByName";
 
     /** Category. */
-    @Column(name = "CATEGORY", nullable = false)
+    @Column(name = "CATEGORY", nullable = false, length = 8)
     @NotBlank
     private String category;
 
     /** UseInContext. */
-    @Column(name = "USEINCONTEXT", nullable = false)
+    @Column(name = "USEINCONTEXT", nullable = false, length = 32)
     @NotBlank
     private String useInContext;
 
     /** Physical location where attachments of this type should be copied if they are uploaded. */
-    @Column(name = "UPLOADPATH")
+    @Column(name = "UPLOADPATH", length = 400)
     private String uploadPath;
 
     /**Base URL to use when the attachment is requested. Is ignored if the attachment specifies an absolute URL*/
-    @Column(name = "BASEURL", nullable = false)
+    @Column(name = "BASEURL", nullable = false, length = 255)
     @NotBlank
     private String baseUrl;
 
     /** Name. */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
@@ -90,7 +93,7 @@ public class AttachmentType implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 400)
     private String description;
 
     /** Owner client */
@@ -111,12 +114,12 @@ public class AttachmentType implements Serializable, IModelWithId,
     private Date modifiedAt;
 
     /** User who created this record.*/
-    @Column(name = "CREATEDBY", nullable = false)
+    @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
     /** User who last modified this record.*/
-    @Column(name = "MODIFIEDBY", nullable = false)
+    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
@@ -130,7 +133,7 @@ public class AttachmentType implements Serializable, IModelWithId,
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
     /* ============== getters - setters ================== */
