@@ -10,25 +10,25 @@
 		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectType</class>
 		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectRole</class>
 		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemCategory</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemType</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemStatus</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemPriority</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemSeverity</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemResolution</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemTextType</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemLinkType</class>
-	 	 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemTaskStatus</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ItemTaskType</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueCategory</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueType</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueStatus</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssuePriority</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueSeverity</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueResolution</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueTextType</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueLinkType</class>
+	 	 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueTaskStatus</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType</class>
 		  
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.Project</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectMember</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.Item</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.ItemTask</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.ItemText</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.ItemLink</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.Issue</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueTask</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueText</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueLink</class>
 	 
 		 <!-- Dependencies -->
 		 <class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgn</class>

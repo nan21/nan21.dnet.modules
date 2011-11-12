@@ -19,9 +19,10 @@ Ext.define("net.nan21.dnet.module.hr.grade.ds.model.GradeDs" , {
 		{name:"validTo",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "code", type: 'presence'}
-	]
+		{field: "code", type: 'presence'}, 
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.hr.grade.ds.model.GradeDsFilter" , {

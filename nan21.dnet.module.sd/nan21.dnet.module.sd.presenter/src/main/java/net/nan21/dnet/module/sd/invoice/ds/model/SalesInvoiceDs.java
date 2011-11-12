@@ -33,18 +33,19 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
     public static final String fCURRENCYID = "currencyId";
-    public static final String fCURRENCYCODE = "currencyCode";
+    public static final String fCURRENCY = "currency";
     public static final String fTOTALNETAMOUNT = "totalNetAmount";
     public static final String fTOTALTAXAMOUNT = "totalTaxAmount";
     public static final String fTOTALAMOUNT = "totalAmount";
     public static final String fCUSTOMERID = "customerId";
     public static final String fCUSTOMERCODE = "customerCode";
+    public static final String fCUSTOMER = "customer";
     public static final String fBILLTOLOCATIONID = "billToLocationId";
     public static final String fBILLTOLOCATION = "billToLocation";
     public static final String fBILLTOCONTACTID = "billToContactId";
     public static final String fBILLTOCONTACT = "billToContact";
     public static final String fSUPPLIERID = "supplierId";
-    public static final String fSUPPLIERCODE = "supplierCode";
+    public static final String fSUPPLIER = "supplier";
     public static final String fSALESORDERID = "salesOrderId";
     public static final String fCLASSNAME = "className";
 
@@ -94,7 +95,7 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
     private Long currencyId;
 
     @DsField(join = "left", path = "currency.code")
-    private String currencyCode;
+    private String currency;
 
     @DsField()
     private Float totalNetAmount;
@@ -110,6 +111,9 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
 
     @DsField(join = "left", path = "customer.code")
     private String customerCode;
+
+    @DsField(join = "left", path = "customer.name")
+    private String customer;
 
     @DsField(join = "left", path = "billToLocation.id")
     private Long billToLocationId;
@@ -127,7 +131,7 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
     private Long supplierId;
 
     @DsField(join = "left", path = "supplier.code")
-    private String supplierCode;
+    private String supplier;
 
     @DsField(join = "left", path = "salesOrder.id")
     private Long salesOrderId;
@@ -264,12 +268,12 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
         this.currencyId = currencyId;
     }
 
-    public String getCurrencyCode() {
-        return this.currencyCode;
+    public String getCurrency() {
+        return this.currency;
     }
 
-    public void setCurrencyCode(String currencyCode) {
-        this.currencyCode = currencyCode;
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public Float getTotalNetAmount() {
@@ -312,6 +316,14 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
         this.customerCode = customerCode;
     }
 
+    public String getCustomer() {
+        return this.customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
     public Long getBillToLocationId() {
         return this.billToLocationId;
     }
@@ -352,12 +364,12 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
         this.supplierId = supplierId;
     }
 
-    public String getSupplierCode() {
-        return this.supplierCode;
+    public String getSupplier() {
+        return this.supplier;
     }
 
-    public void setSupplierCode(String supplierCode) {
-        this.supplierCode = supplierCode;
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
     }
 
     public Long getSalesOrderId() {

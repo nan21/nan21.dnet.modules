@@ -74,16 +74,17 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
+		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
-		.addTextField({ name:"defaultImportPath", dataIndex:"defaultImportPath",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"defaultExportPath", dataIndex:"defaultExportPath",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"tempPath", dataIndex:"tempPath",anchor:"-20" ,maxLength:255  })
+		.addTextField({ name:"defaultImportPath", dataIndex:"defaultImportPath",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"defaultExportPath", dataIndex:"defaultExportPath",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"tempPath", dataIndex:"tempPath",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addCheckbox({ name:"systemClient", dataIndex:"systemClient"  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:350})     
-		.addPanel({ name:"col2", layout:"anchor" , width:400})     
+		.addPanel({ name:"col2", layout:"anchor" , width:450, defaults:{
+labelAlign:"right",labelWidth:120}})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
@@ -104,15 +105,15 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Create", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
+		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
-		.addTextField({ name:"defaultImportPath", dataIndex:"defaultImportPath",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"defaultExportPath", dataIndex:"defaultExportPath",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"tempPath", dataIndex:"tempPath",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"adminUserName", paramIndex:"adminUserName",anchor:"-20"   })
-		.addTextField({ name:"adminUserCode", paramIndex:"adminUserCode",anchor:"-20"   })
-		.addTextField({ name:"adminPassword", paramIndex:"adminPassword",anchor:"-20"   })
+		.addTextField({ name:"defaultImportPath", dataIndex:"defaultImportPath",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"defaultExportPath", dataIndex:"defaultExportPath",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"tempPath", dataIndex:"tempPath",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"adminUserName", paramIndex:"adminUserName",anchor:"-20" ,allowBlank:false  })
+		.addTextField({ name:"adminUserCode", paramIndex:"adminUserCode",anchor:"-20" ,allowBlank:false  })
+		.addTextField({ name:"adminPassword", paramIndex:"adminPassword",anchor:"-20" ,allowBlank:false  })
 		.addCheckbox({ name:"systemClient", dataIndex:"systemClient"  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:350})     

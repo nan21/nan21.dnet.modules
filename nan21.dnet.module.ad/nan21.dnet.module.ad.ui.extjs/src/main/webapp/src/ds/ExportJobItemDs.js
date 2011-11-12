@@ -16,9 +16,6 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ExportJobItemDs" , {
 		{name:"jobName",type:"string" },
 		{name:"mapId",type:"int", useNull:true },
 		{name:"mapName",type:"string" }
-	],
-	validations: [  
-		{field: "sequenceNo", type: 'presence'}
 	]
 });
 

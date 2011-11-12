@@ -18,8 +18,6 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeEducationDs" , {
 		{name:"institute",type:"string" },
 		{name:"degree",type:"string" },
 		{name:"notes",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

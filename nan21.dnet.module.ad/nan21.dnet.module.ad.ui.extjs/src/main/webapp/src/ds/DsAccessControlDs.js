@@ -19,9 +19,6 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.DsAccessControlDs" , {
 		{name:"exportAllowed",type:"boolean" },
 		{name:"accessControlId",type:"int", useNull:true },
 		{name:"accessControl",type:"string" }
-	],
-	validations: [  
-		{field: "dsName", type: 'presence'}
 	]
 });
 

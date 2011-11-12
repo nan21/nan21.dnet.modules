@@ -17,8 +17,6 @@ Ext.define("net.nan21.dnet.module.bd.uom.ds.model.UomConversionDs" , {
 		{name:"multiplyWith",type:"float", useNull:true },
 		{name:"divideTo",type:"float", useNull:true },
 		{name:"active",type:"boolean" }
-	],
-	validations: [ 
 	]
 });
 

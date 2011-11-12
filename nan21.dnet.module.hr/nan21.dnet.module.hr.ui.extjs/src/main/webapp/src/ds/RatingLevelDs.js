@@ -18,9 +18,9 @@ Ext.define("net.nan21.dnet.module.hr.skill.ds.model.RatingLevelDs" , {
 		{name:"ratingScale",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "value", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.hr.skill.ds.model.RatingLevelDsFilter" , {

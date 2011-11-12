@@ -8,10 +8,6 @@ Ext.define("net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeLovDs" , {
 		{name:"name",type:"string" },
 		{name:"active",type:"boolean" },
 		{name:"useInContext",type:"string" }
-	],
-	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "useInContext", type: 'presence'}
 	]
 });
 

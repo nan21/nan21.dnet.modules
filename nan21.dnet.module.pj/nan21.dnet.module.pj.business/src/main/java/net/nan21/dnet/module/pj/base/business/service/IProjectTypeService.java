@@ -7,7 +7,7 @@ package net.nan21.dnet.module.pj.base.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
-import net.nan21.dnet.module.pj.base.domain.entity.ItemType;
+import net.nan21.dnet.module.pj.base.domain.entity.IssueType;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectRole;
 
@@ -25,7 +25,7 @@ public interface IProjectTypeService extends IEntityService<ProjectType> {
 
     public List<ProjectType> findByProjectRolesId(Long projectRolesId);
 
-    public List<ProjectType> findByItemTypes(ItemType itemTypes);
+    public List<ProjectType> findByItemTypes(IssueType itemTypes);
 
     public List<ProjectType> findByItemTypesId(Long itemTypesId);
 

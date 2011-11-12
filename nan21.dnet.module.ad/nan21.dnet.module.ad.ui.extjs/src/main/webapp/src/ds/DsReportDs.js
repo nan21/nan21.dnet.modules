@@ -13,9 +13,6 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.DsReportDs" , {
 		{name:"reportId",type:"int", useNull:true },
 		{name:"reportCode",type:"string" },
 		{name:"dataSource",type:"string" }
-	],
-	validations: [  
-		{field: "dataSource", type: 'presence'}
 	]
 });
 

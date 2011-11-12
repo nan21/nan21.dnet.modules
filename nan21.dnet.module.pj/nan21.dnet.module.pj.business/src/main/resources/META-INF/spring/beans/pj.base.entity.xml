@@ -19,35 +19,35 @@
  	<bean id="ProjectStatusService" scope="prototype"
 	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ProjectStatusService"  />  
  
- 	<bean id="ItemCategoryService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemCategoryService"  />  
+ 	<bean id="IssueCategoryService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueCategoryService"  />  
  
- 	<bean id="ItemTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemTypeService"  />  
+ 	<bean id="IssueTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueTypeService"  />  
  
- 	<bean id="ItemStatusService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemStatusService"  />  
+ 	<bean id="IssueStatusService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueStatusService"  />  
  
- 	<bean id="ItemPriorityService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemPriorityService"  />  
+ 	<bean id="IssuePriorityService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssuePriorityService"  />  
  
- 	<bean id="ItemSeverityService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemSeverityService"  />  
+ 	<bean id="IssueSeverityService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueSeverityService"  />  
  
- 	<bean id="ItemResolutionService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemResolutionService"  />  
+ 	<bean id="IssueResolutionService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueResolutionService"  />  
  
- 	<bean id="ItemTextTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemTextTypeService"  />  
+ 	<bean id="IssueTextTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueTextTypeService"  />  
  
- 	<bean id="ItemLinkTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemLinkTypeService"  />  
+ 	<bean id="IssueLinkTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueLinkTypeService"  />  
  
- 	<bean id="ItemTaskTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemTaskTypeService"  />  
+ 	<bean id="IssueTaskTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueTaskTypeService"  />  
  
- 	<bean id="ItemTaskStatusService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ItemTaskStatusService"  />  
+ 	<bean id="IssueTaskStatusService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueTaskStatusService"  />  
    
 </beans>
    

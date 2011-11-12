@@ -6,8 +6,11 @@
 package net.nan21.dnet.module.sd.invoice.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
+import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
@@ -46,6 +49,8 @@ public class SalesInvoiceDsConv extends
                 e.setCurrency((Currency) this.em.find(Currency.class,
                         ds.getCurrencyId()));
             }
+        } else {
+            this.lookup_currency_Currency(ds, e);
         }
         if (ds.getTypeId() != null) {
             if (e.getType() == null
@@ -64,6 +69,15 @@ public class SalesInvoiceDsConv extends
             }
         } else {
             this.lookup_status_SalesInvoiceStatus(ds, e);
+        }
+        if (ds.getSupplierId() != null) {
+            if (e.getSupplier() == null
+                    || !e.getSupplier().getId().equals(ds.getSupplierId())) {
+                e.setSupplier((Organization) this.em.find(Organization.class,
+                        ds.getSupplierId()));
+            }
+        } else {
+            this.lookup_supplier_Organization(ds, e);
         }
         if (ds.getCustomerId() != null) {
             if (e.getCustomer() == null
@@ -89,6 +103,24 @@ public class SalesInvoiceDsConv extends
                 e.setBillToLocation((Location) this.em.find(Location.class,
                         ds.getBillToLocationId()));
             }
+        }
+    }
+
+    protected void lookup_currency_Currency(SalesInvoiceDs ds, SalesInvoice e)
+            throws Exception {
+        if (ds.getCurrency() != null && !ds.getCurrency().equals("")) {
+            Currency x = null;
+            try {
+                x = ((ICurrencyService) getService(ICurrencyService.class))
+                        .findByCode(ds.getClientId(), ds.getCurrency());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Currency` reference:  `currency` = "
+                                + ds.getCurrency() + "  ");
+            }
+            e.setCurrency(x);
+        } else {
+            e.setCurrency(null);
         }
     }
 
@@ -125,6 +157,24 @@ public class SalesInvoiceDsConv extends
             e.setStatus(x);
         } else {
             e.setStatus(null);
+        }
+    }
+
+    protected void lookup_supplier_Organization(SalesInvoiceDs ds,
+            SalesInvoice e) throws Exception {
+        if (ds.getSupplier() != null && !ds.getSupplier().equals("")) {
+            Organization x = null;
+            try {
+                x = ((IOrganizationService) getService(IOrganizationService.class))
+                        .findByCode(ds.getClientId(), ds.getSupplier());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Organization` reference:  `supplier` = "
+                                + ds.getSupplier() + "  ");
+            }
+            e.setSupplier(x);
+        } else {
+            e.setSupplier(null);
         }
     }
 
@@ -169,12 +219,14 @@ public class SalesInvoiceDsConv extends
         ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
         ds.setCurrencyId(((e.getCurrency() != null)) ? e.getCurrency().getId()
                 : null);
-        ds.setCurrencyCode(((e.getCurrency() != null)) ? e.getCurrency()
-                .getCode() : null);
+        ds.setCurrency(((e.getCurrency() != null)) ? e.getCurrency().getCode()
+                : null);
         ds.setCustomerId(((e.getCustomer() != null)) ? e.getCustomer().getId()
                 : null);
         ds.setCustomerCode(((e.getCustomer() != null)) ? e.getCustomer()
                 .getCode() : null);
+        ds.setCustomer(((e.getCustomer() != null)) ? e.getCustomer().getName()
+                : null);
         ds.setBillToLocationId(((e.getBillToLocation() != null)) ? e
                 .getBillToLocation().getId() : null);
         ds.setBillToLocation(((e.getBillToLocation() != null)) ? e
@@ -185,8 +237,8 @@ public class SalesInvoiceDsConv extends
                 .getBillToContact().getName() : null);
         ds.setSupplierId(((e.getSupplier() != null)) ? e.getSupplier().getId()
                 : null);
-        ds.setSupplierCode(((e.getSupplier() != null)) ? e.getSupplier()
-                .getCode() : null);
+        ds.setSupplier(((e.getSupplier() != null)) ? e.getSupplier().getCode()
+                : null);
         ds.setSalesOrderId(((e.getSalesOrder() != null)) ? e.getSalesOrder()
                 .getId() : null);
     }

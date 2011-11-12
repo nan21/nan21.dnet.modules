@@ -9,7 +9,7 @@ import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 import net.nan21.dnet.module.pj.md.business.service.IProjectComponentService;
-import net.nan21.dnet.module.pj.md.domain.entity.Item;
+import net.nan21.dnet.module.pj.md.domain.entity.Issue;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
 
 import javax.persistence.EntityManager;
@@ -33,10 +33,21 @@ public class ProjectComponentService extends
         return ProjectComponent.class;
     }
 
-    public ProjectComponent findByName(Long clientId, String name) {
+    public ProjectComponent findByName(Long clientId, Project project,
+            String name) {
         return (ProjectComponent) this.em
                 .createNamedQuery(ProjectComponent.NQ_FIND_BY_NAME)
                 .setParameter("pClientId", clientId)
+                .setParameter("pProject", project).setParameter("pName", name)
+                .getSingleResult();
+    }
+
+    public ProjectComponent findByName(Long clientId, Long projectId,
+            String name) {
+        return (ProjectComponent) this.em
+                .createNamedQuery(ProjectComponent.NQ_FIND_BY_NAME_PRIMITIVE)
+                .setParameter("pClientId", clientId)
+                .setParameter("pProjectId", projectId)
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -65,16 +76,16 @@ public class ProjectComponentService extends
                 .setParameter("pProjectId", projectId).getResultList();
     }
 
-    public List<ProjectComponent> findByAffectingItems(Item affectingItems) {
-        return this.findByAffectingItemsId(affectingItems.getId());
+    public List<ProjectComponent> findByAffectingIssues(Issue affectingIssues) {
+        return this.findByAffectingIssuesId(affectingIssues.getId());
     }
 
-    public List<ProjectComponent> findByAffectingItemsId(Long affectingItemsId) {
+    public List<ProjectComponent> findByAffectingIssuesId(Long affectingIssuesId) {
         return (List<ProjectComponent>) this.em
                 .createQuery(
-                        "select e from ProjectComponent e where e.affectingItems.id = :pAffectingItemsId",
+                        "select e from ProjectComponent e where e.affectingIssues.id = :pAffectingIssuesId",
                         ProjectComponent.class)
-                .setParameter("pAffectingItemsId", affectingItemsId)
+                .setParameter("pAffectingIssuesId", affectingIssuesId)
                 .getResultList();
     }
 

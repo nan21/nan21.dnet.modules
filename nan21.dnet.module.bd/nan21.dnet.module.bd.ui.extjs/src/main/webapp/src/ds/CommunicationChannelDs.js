@@ -17,8 +17,6 @@ Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelDs" , 
 		{name:"value",type:"string" },
 		{name:"validFrom",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"validTo",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT }
-	],
-	validations: [ 
 	]
 });
 

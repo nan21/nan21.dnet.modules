@@ -19,8 +19,6 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDs" , {
 		{name:"qtyOrdered",type:"float", useNull:true },
 		{name:"netUnitPrice",type:"float", useNull:true },
 		{name:"netAmount",type:"float", useNull:true }
-	],
-	validations: [ 
 	]
 });
 

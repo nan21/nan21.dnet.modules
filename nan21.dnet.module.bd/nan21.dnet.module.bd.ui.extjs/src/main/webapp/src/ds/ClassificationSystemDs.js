@@ -19,10 +19,10 @@ Ext.define("net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemDs" 
 		{name:"useInContext",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
 		{field: "code", type: 'presence'}, 
-		{field: "useInContext", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemDsFilter" , {

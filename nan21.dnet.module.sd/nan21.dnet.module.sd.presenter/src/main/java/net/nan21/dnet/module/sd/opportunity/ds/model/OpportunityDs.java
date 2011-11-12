@@ -31,11 +31,11 @@ public class OpportunityDs extends AbstractDsModel<Opportunity> implements
     public static final String fVERSION = "version";
     public static final String fACCOUNTID = "accountId";
     public static final String fACCOUNT = "account";
-    public static final String fEXPECTEDCLOSEDATE = "expectedCloseDate";
+    public static final String fCLOSEDATE = "closeDate";
     public static final String fPROBABILITY = "probability";
-    public static final String fEXPECTEDAMOUNT = "expectedAmount";
-    public static final String fEXPECTEDCURRENCYID = "expectedCurrencyId";
-    public static final String fEXPECTEDCURRENCY = "expectedCurrency";
+    public static final String fAMOUNT = "amount";
+    public static final String fCURRENCYID = "currencyId";
+    public static final String fCURRENCY = "currency";
     public static final String fSTATUSID = "statusId";
     public static final String fSTATUS = "status";
     public static final String fPRIORITYID = "priorityId";
@@ -89,20 +89,20 @@ public class OpportunityDs extends AbstractDsModel<Opportunity> implements
     @DsField(join = "left", path = "account.name")
     private String account;
 
-    @DsField()
-    private Date expectedCloseDate;
+    @DsField(path = "expectedCloseDate")
+    private Date closeDate;
 
     @DsField()
     private Float probability;
 
-    @DsField()
-    private Float expectedAmount;
+    @DsField(path = "expectedAmount")
+    private Float amount;
 
     @DsField(join = "left", path = "expectedCurrency.id")
-    private Long expectedCurrencyId;
+    private Long currencyId;
 
     @DsField(join = "left", path = "expectedCurrency.code")
-    private String expectedCurrency;
+    private String currency;
 
     @DsField(join = "left", path = "status.id")
     private Long statusId;
@@ -257,12 +257,12 @@ public class OpportunityDs extends AbstractDsModel<Opportunity> implements
         this.account = account;
     }
 
-    public Date getExpectedCloseDate() {
-        return this.expectedCloseDate;
+    public Date getCloseDate() {
+        return this.closeDate;
     }
 
-    public void setExpectedCloseDate(Date expectedCloseDate) {
-        this.expectedCloseDate = expectedCloseDate;
+    public void setCloseDate(Date closeDate) {
+        this.closeDate = closeDate;
     }
 
     public Float getProbability() {
@@ -273,28 +273,28 @@ public class OpportunityDs extends AbstractDsModel<Opportunity> implements
         this.probability = probability;
     }
 
-    public Float getExpectedAmount() {
-        return this.expectedAmount;
+    public Float getAmount() {
+        return this.amount;
     }
 
-    public void setExpectedAmount(Float expectedAmount) {
-        this.expectedAmount = expectedAmount;
+    public void setAmount(Float amount) {
+        this.amount = amount;
     }
 
-    public Long getExpectedCurrencyId() {
-        return this.expectedCurrencyId;
+    public Long getCurrencyId() {
+        return this.currencyId;
     }
 
-    public void setExpectedCurrencyId(Long expectedCurrencyId) {
-        this.expectedCurrencyId = expectedCurrencyId;
+    public void setCurrencyId(Long currencyId) {
+        this.currencyId = currencyId;
     }
 
-    public String getExpectedCurrency() {
-        return this.expectedCurrency;
+    public String getCurrency() {
+        return this.currency;
     }
 
-    public void setExpectedCurrency(String expectedCurrency) {
-        this.expectedCurrency = expectedCurrency;
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public Long getStatusId() {

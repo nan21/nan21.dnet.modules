@@ -16,7 +16,8 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeDsFilter" , {

@@ -7,9 +7,6 @@ Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysDataSourceLovDs" , {
 		{name:"clientId",type:"int", useNull:true },
 		{name:"name",type:"string" },
 		{name:"active",type:"boolean" }
-	],
-	validations: [  
-		{field: "name", type: 'presence'}
 	]
 });
 

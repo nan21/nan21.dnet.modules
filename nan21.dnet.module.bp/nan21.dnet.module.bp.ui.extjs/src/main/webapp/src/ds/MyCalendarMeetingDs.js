@@ -25,9 +25,6 @@ Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarMeetingDs" , {
 		{name:"url",type:"string" },
 		{name:"eminder",type:"string" },
 		{name:"allDay",type:"boolean" }
-	],
-	validations: [  
-		{field: "subject", type: 'presence'}
 	]
 });
 

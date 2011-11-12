@@ -16,8 +16,6 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductAccountDs" , {
 		{name:"groupCode",type:"string" },
 		{name:"productId",type:"int", useNull:true },
 		{name:"productCode",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

@@ -56,15 +56,15 @@ public class ProjectVersionDsConv extends
 
     protected void lookup_project_Project(ProjectVersionDs ds, ProjectVersion e)
             throws Exception {
-        if (ds.getProjectCode() != null && !ds.getProjectCode().equals("")) {
+        if (ds.getProject() != null && !ds.getProject().equals("")) {
             Project x = null;
             try {
                 x = ((IProjectService) getService(IProjectService.class))
-                        .findByCode(ds.getClientId(), ds.getProjectCode());
+                        .findByCode(ds.getClientId(), ds.getProject());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `Project` reference:  `projectCode` = "
-                                + ds.getProjectCode() + "  ");
+                        "Invalid value provided to find `Project` reference:  `project` = "
+                                + ds.getProject() + "  ");
             }
             e.setProject(x);
         } else {
@@ -74,15 +74,18 @@ public class ProjectVersionDsConv extends
 
     protected void lookup_projectVersion_ProjectVersion(ProjectVersionDs ds,
             ProjectVersion e) throws Exception {
-        if (ds.getProjectVersion() != null
+        if (ds.getProjectId() != null && !ds.getProjectId().equals("")
+                && ds.getProjectVersion() != null
                 && !ds.getProjectVersion().equals("")) {
             ProjectVersion x = null;
             try {
                 x = ((IProjectVersionService) getService(IProjectVersionService.class))
-                        .findByName(ds.getClientId(), ds.getProjectVersion());
+                        .findByName(ds.getClientId(), ds.getProjectId(),
+                                ds.getProjectVersion());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `ProjectVersion` reference:  `projectVersion` = "
+                        "Invalid value provided to find `ProjectVersion` reference:  `projectId` = "
+                                + ds.getProjectId() + " , `projectVersion` = "
                                 + ds.getProjectVersion() + "  ");
             }
             e.setProjectVersion(x);
@@ -108,9 +111,9 @@ public class ProjectVersionDsConv extends
         ds.setReleaseDate(e.getReleaseDate());
         ds.setProjectId(((e.getProject() != null)) ? e.getProject().getId()
                 : null);
-        ds.setProjectCode(((e.getProject() != null)) ? e.getProject().getCode()
+        ds.setProject(((e.getProject() != null)) ? e.getProject().getCode()
                 : null);
-        ds.setProject(((e.getProject() != null)) ? e.getProject().getName()
+        ds.setProjectName(((e.getProject() != null)) ? e.getProject().getName()
                 : null);
         ds.setProjectVersionId(((e.getProjectVersion() != null)) ? e
                 .getProjectVersion().getId() : null);

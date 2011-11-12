@@ -14,8 +14,6 @@ Ext.define("net.nan21.dnet.module.hr.job.ds.model.PositionRequirementDs" , {
 		{name:"requirementId",type:"int", useNull:true },
 		{name:"requirement",type:"string" },
 		{name:"notes",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

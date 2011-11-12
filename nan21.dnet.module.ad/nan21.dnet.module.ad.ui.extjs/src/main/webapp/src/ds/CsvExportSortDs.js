@@ -16,8 +16,6 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.CsvExportSortDs" , {
 		{name:"sequenceNo",type:"int", useNull:true },
 		{name:"dsField",type:"string" },
 		{name:"descend",type:"boolean" }
-	],
-	validations: [ 
 	]
 });
 

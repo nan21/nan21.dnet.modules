@@ -132,8 +132,8 @@ public class ProjectType implements Serializable, IModelWithId,
     private Collection<ProjectRole> projectRoles;
 
     @ManyToMany
-    @JoinTable(name = "PJ_PROJECTTYPE_ITEMTYPE")
-    private Collection<ItemType> itemTypes;
+    @JoinTable(name = "PJ_PROJECTTYPE_ISSUETYPE")
+    private Collection<IssueType> itemTypes;
 
     /* ============== getters - setters ================== */
 
@@ -242,11 +242,11 @@ public class ProjectType implements Serializable, IModelWithId,
         this.projectRoles = projectRoles;
     }
 
-    public Collection<ItemType> getItemTypes() {
+    public Collection<IssueType> getItemTypes() {
         return this.itemTypes;
     }
 
-    public void setItemTypes(Collection<ItemType> itemTypes) {
+    public void setItemTypes(Collection<IssueType> itemTypes) {
         this.itemTypes = itemTypes;
     }
 

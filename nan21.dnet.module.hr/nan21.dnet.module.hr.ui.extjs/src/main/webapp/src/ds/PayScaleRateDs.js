@@ -21,7 +21,8 @@ Ext.define("net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateDsFilter" , {

@@ -23,7 +23,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectMember$Filter", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"projectCode", dataIndex:"projectCode",anchor:"-20",maxLength:32  })
+		.addTextField({ name:"project", dataIndex:"project",anchor:"-20",maxLength:32  })
 		.addTextField({ name:"role", dataIndex:"role",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"member", dataIndex:"member",anchor:"-20",maxLength:255  })
 		//containers
@@ -34,7 +34,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectMember$Filter", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["projectCode"])
+		.addChildrenTo("col1",["project"])
 		.addChildrenTo("col2",["role","member"])
 	}
 }); 
@@ -48,6 +48,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectMember$CtxEditList", {
 	,_noExport_: false
 	,_defineColumns_: function () {
 		this._getBuilder_()
+		.addTextColumn({ name:"project", dataIndex:"project", hidden:true,width:100,editor:{xtype:"textfield", selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} })
 		.addLov({name:"member", xtype:"gridcolumn", dataIndex:"member", width:150,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.Assignables" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "memberId"} ]} })
 		.addLov({name:"role", xtype:"gridcolumn", dataIndex:"role", width:150,editor:{xtype:"net.nan21.dnet.module.pj.base.lovs.ProjectRoles" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "roleId"} ]} })
 		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})

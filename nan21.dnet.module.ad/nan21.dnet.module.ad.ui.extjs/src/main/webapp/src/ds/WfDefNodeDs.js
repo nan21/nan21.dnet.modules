@@ -21,9 +21,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeDs" , {
 		{name:"process",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "taskType", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeDsFilter" , {

@@ -17,7 +17,8 @@ Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventPriorityDs" 
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventPriorityDsFilter" , {

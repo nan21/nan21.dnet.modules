@@ -17,8 +17,6 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.ElementValueDs" , {
 		{name:"value",type:"string" },
 		{name:"periodId",type:"int", useNull:true },
 		{name:"period",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

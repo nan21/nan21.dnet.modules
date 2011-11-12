@@ -19,8 +19,6 @@ Ext.define("net.nan21.dnet.module.hr.grade.ds.model.GradeRateValueDs" , {
 		{name:"maxValue",type:"float", useNull:true },
 		{name:"validFrom",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"validTo",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT }
-	],
-	validations: [ 
 	]
 });
 

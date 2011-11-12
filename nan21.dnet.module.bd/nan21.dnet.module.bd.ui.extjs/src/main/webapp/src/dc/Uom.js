@@ -99,10 +99,10 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.Uom$Edit", {
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
-		.addLov({ name:"type", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomType", dataIndex:"type",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomType", dataIndex:"type",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:350})     
-		.addPanel({ name:"col2", layout:"anchor" , width:250})     
+		.addPanel({ name:"col2", layout:"anchor" , width:300})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}

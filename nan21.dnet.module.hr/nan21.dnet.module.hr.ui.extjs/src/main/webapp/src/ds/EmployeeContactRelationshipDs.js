@@ -16,7 +16,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactRelationsh
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactRelationshipDsFilter" , {

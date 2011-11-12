@@ -18,8 +18,6 @@ Ext.define("net.nan21.dnet.module.ad.client.ds.model.ClientDs" , {
 		{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

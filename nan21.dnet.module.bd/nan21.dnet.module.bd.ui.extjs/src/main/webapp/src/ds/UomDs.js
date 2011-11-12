@@ -18,9 +18,10 @@ Ext.define("net.nan21.dnet.module.bd.uom.ds.model.UomDs" , {
 		{name:"type",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "code", type: 'presence'}
-	]
+		{field: "code", type: 'presence'}, 
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.bd.uom.ds.model.UomDsFilter" , {

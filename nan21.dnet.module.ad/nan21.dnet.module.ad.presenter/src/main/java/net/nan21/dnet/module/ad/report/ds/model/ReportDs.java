@@ -31,7 +31,7 @@ public class ReportDs extends AbstractDsModel<Report> implements IModelWithId,
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fREPORTSERVERID = "reportServerId";
-    public static final String fREPORTSERVERNAME = "reportServerName";
+    public static final String fREPORTSERVER = "reportServer";
 
     @DsField()
     private String name;
@@ -70,7 +70,7 @@ public class ReportDs extends AbstractDsModel<Report> implements IModelWithId,
     private Long reportServerId;
 
     @DsField(join = "left", path = "reportServer.name")
-    private String reportServerName;
+    private String reportServer;
 
     public ReportDs() {
         super();
@@ -177,12 +177,12 @@ public class ReportDs extends AbstractDsModel<Report> implements IModelWithId,
         this.reportServerId = reportServerId;
     }
 
-    public String getReportServerName() {
-        return this.reportServerName;
+    public String getReportServer() {
+        return this.reportServer;
     }
 
-    public void setReportServerName(String reportServerName) {
-        this.reportServerName = reportServerName;
+    public void setReportServer(String reportServer) {
+        this.reportServer = reportServer;
     }
 
 }

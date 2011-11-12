@@ -16,8 +16,6 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.WfDefTransitionDs" , {
 		{name:"source",type:"string" },
 		{name:"targetId",type:"int", useNull:true },
 		{name:"target",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

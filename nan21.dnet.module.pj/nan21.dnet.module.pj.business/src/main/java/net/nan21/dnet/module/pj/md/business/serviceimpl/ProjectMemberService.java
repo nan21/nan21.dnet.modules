@@ -32,6 +32,23 @@ public class ProjectMemberService extends AbstractEntityService<ProjectMember>
         return ProjectMember.class;
     }
 
+    public ProjectMember findByName(Long clientId, Project project,
+            Assignable member) {
+        return (ProjectMember) this.em
+                .createNamedQuery(ProjectMember.NQ_FIND_BY_NAME)
+                .setParameter("pClientId", clientId)
+                .setParameter("pProject", project)
+                .setParameter("pMember", member).getSingleResult();
+    }
+
+    public ProjectMember findByName(Long clientId, Long projectId, Long memberId) {
+        return (ProjectMember) this.em
+                .createNamedQuery(ProjectMember.NQ_FIND_BY_NAME_PRIMITIVE)
+                .setParameter("pClientId", clientId)
+                .setParameter("pProjectId", projectId)
+                .setParameter("pMemberId", memberId).getSingleResult();
+    }
+
     public List<ProjectMember> findByProject(Project project) {
         return this.findByProjectId(project.getId());
     }

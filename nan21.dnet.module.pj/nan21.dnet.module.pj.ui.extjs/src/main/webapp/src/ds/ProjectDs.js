@@ -18,7 +18,12 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectDs" , {
 		{name:"type",type:"string" },
 		{name:"projectLeadId",type:"int", useNull:true },
 		{name:"projectLead",type:"string" }
-	]
+	],
+	validations: [  
+		{field: "code", type: 'presence'}, 
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectDsFilter" , {

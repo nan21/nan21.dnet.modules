@@ -37,8 +37,7 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductDs" , {
 		{name:"businessObject",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "code", type: 'presence'}
+		{field: "name", type: 'presence'}
 	]
 });
 

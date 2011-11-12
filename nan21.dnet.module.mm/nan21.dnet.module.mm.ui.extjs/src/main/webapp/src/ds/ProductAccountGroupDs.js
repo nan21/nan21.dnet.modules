@@ -16,9 +16,10 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductAccountGroupDs" , {
 		{name:"version",type:"int", useNull:true }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "code", type: 'presence'}
-	]
+		{field: "code", type: 'presence'}, 
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductAccountGroupDsFilter" , {

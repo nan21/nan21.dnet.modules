@@ -41,12 +41,13 @@ import org.hibernate.validator.constraints.NotBlank;
 /** ProjectComponent. */
 @Entity
 @Table(name = ProjectComponent.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "PJ_PROJECT_COMPONENT_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+        "CLIENTID", "PROJECT_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ProjectComponent.findById", query = "SELECT e FROM ProjectComponent e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProjectComponent.findByIds", query = "SELECT e FROM ProjectComponent e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProjectComponent.findByName", query = "SELECT e FROM ProjectComponent e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = "ProjectComponent.findByName", query = "SELECT e FROM ProjectComponent e WHERE e.clientId = :pClientId and  e.project = :pProject and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "ProjectComponent.findByName_PRIMITIVE", query = "SELECT e FROM ProjectComponent e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectComponent implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -69,6 +70,11 @@ public class ProjectComponent implements Serializable, IModelWithId,
      * Named query find by unique key: Name.
      */
     public static final String NQ_FIND_BY_NAME = "ProjectComponent.findByName";
+
+    /**
+     * Named query find by unique key: Name using the ID field for references.
+     */
+    public static final String NQ_FIND_BY_NAME_PRIMITIVE = "ProjectComponent.findByName_PRIMITIVE";
 
     /** Name. */
     @Column(name = "NAME", nullable = false, length = 255)
@@ -131,7 +137,7 @@ public class ProjectComponent implements Serializable, IModelWithId,
     private Project project;
 
     @ManyToMany(mappedBy = "affectedComponents")
-    private Collection<Item> affectingItems;
+    private Collection<Issue> affectingIssues;
 
     /* ============== getters - setters ================== */
 
@@ -240,12 +246,12 @@ public class ProjectComponent implements Serializable, IModelWithId,
         this.project = project;
     }
 
-    public Collection<Item> getAffectingItems() {
-        return this.affectingItems;
+    public Collection<Issue> getAffectingIssues() {
+        return this.affectingIssues;
     }
 
-    public void setAffectingItems(Collection<Item> affectingItems) {
-        this.affectingItems = affectingItems;
+    public void setAffectingIssues(Collection<Issue> affectingIssues) {
+        this.affectingIssues = affectingIssues;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

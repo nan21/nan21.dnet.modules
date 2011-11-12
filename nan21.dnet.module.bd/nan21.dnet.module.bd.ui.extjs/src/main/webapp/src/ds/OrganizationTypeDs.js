@@ -22,7 +22,8 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDsFilter" , {

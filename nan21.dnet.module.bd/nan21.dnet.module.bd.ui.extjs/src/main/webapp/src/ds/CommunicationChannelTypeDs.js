@@ -16,9 +16,9 @@ Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeDs
 		{name:"type",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "type", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeDsFilter" , {

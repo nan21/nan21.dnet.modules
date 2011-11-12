@@ -9,8 +9,6 @@ Ext.define("net.nan21.dnet.module.bd.geo.ds.model.LocationToBillLovDs" , {
 		{name:"targetType",type:"string" },
 		{name:"asString",type:"string" },
 		{name:"active",type:"boolean" }
-	],
-	validations: [ 
 	]
 });
 

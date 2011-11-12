@@ -13,9 +13,6 @@ Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysDsEventDs" , {
 		{name:"dataSourceId",type:"int", useNull:true },
 		{name:"dataSource",type:"string" },
 		{name:"name",type:"string" }
-	],
-	validations: [  
-		{field: "name", type: 'presence'}
 	]
 });
 

@@ -16,9 +16,9 @@ Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs" , {
 		{name:"model",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "model", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDsFilter" , {

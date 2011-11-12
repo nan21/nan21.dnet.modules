@@ -18,9 +18,6 @@ Ext.define("net.nan21.dnet.module.ad.data.ds.model.AttachmentDs" , {
 		{name:"location",type:"string" },
 		{name:"notes",type:"string" },
 		{name:"url",type:"string" }
-	],
-	validations: [  
-		{field: "name", type: 'presence'}
 	]
 });
 

@@ -94,7 +94,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Edit", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addDateField({ name:"startDate", dataIndex:"startDate",anchor:"-20" ,allowBlank:false})
+		.addDateField({ name:"startDate", dataIndex:"startDate",anchor:"-20" })
 		.addDateField({ name:"endDate", dataIndex:"endDate",anchor:"-20" })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:40,anchor:"-20"   })

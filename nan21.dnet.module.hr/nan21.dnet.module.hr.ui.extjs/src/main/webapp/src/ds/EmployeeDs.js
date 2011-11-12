@@ -50,6 +50,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs" , {
 		{name:"payroll",type:"string" }
 	],
 	validations: [  
+		{field: "firstName", type: 'presence'}, 
 		{field: "lastName", type: 'presence'}
 	]
 });

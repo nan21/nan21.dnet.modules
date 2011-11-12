@@ -18,7 +18,8 @@ Ext.define("net.nan21.dnet.module.hr.job.ds.model.WorkRequirementDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.hr.job.ds.model.WorkRequirementDsFilter" , {

@@ -20,8 +20,6 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs" , {
 		{name:"uom",type:"string" },
 		{name:"listOfvalues",type:"string" },
 		{name:"value",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

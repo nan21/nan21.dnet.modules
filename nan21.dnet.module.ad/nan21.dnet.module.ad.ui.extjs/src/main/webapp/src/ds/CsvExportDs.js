@@ -16,9 +16,9 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.CsvExportDs" , {
 		{name:"dataSource",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "dataSource", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.ad.impex.ds.model.CsvExportDsFilter" , {

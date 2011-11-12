@@ -8,7 +8,7 @@ package net.nan21.dnet.module.pj.base.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.pj.base.business.service.IProjectTypeService;
-import net.nan21.dnet.module.pj.base.domain.entity.ItemType;
+import net.nan21.dnet.module.pj.base.domain.entity.IssueType;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectRole;
 
@@ -64,7 +64,7 @@ public class ProjectTypeService extends AbstractEntityService<ProjectType>
                 .getResultList();
     }
 
-    public List<ProjectType> findByItemTypes(ItemType itemTypes) {
+    public List<ProjectType> findByItemTypes(IssueType itemTypes) {
         return this.findByItemTypesId(itemTypes.getId());
     }
 

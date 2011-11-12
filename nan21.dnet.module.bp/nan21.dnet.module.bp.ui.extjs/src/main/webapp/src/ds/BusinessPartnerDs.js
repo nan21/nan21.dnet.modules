@@ -32,6 +32,9 @@ Ext.define("net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs" , {
 		{name:"registrationNo",type:"string" },
 		{name:"registrationDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"className",type:"string" }
+	],
+	validations: [  
+		{field: "name", type: 'presence'}
 	]
 });
 

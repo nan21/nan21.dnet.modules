@@ -13,9 +13,6 @@ Ext.define("net.nan21.dnet.module.hr.grade.ds.model.PayScalePointDs" , {
 		{name:"payScaleId",type:"int", useNull:true },
 		{name:"sequenceNo",type:"int", useNull:true },
 		{name:"code",type:"string" }
-	],
-	validations: [  
-		{field: "code", type: 'presence'}
 	]
 });
 

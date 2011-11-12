@@ -25,7 +25,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
-		.addLov({ name:"reportServerName", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServerName",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
+		.addLov({ name:"reportServer", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServer",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210}) 
@@ -36,7 +36,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","code"])
-		.addChildrenTo("col2",["reportServerName","active"])
+		.addChildrenTo("col2",["reportServer","active"])
 	}
 }); 
  		 
@@ -57,7 +57,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$List", {
 		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
 		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
-		.addTextColumn({ name:"reportServerName", dataIndex:"reportServerName",width:120 })   	
+		.addTextColumn({ name:"reportServer", dataIndex:"reportServer",width:120 })   	
 	  ;		   
 	}
 });
@@ -75,7 +75,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Edit", {
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
-		.addLov({ name:"reportServerName", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServerName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
+		.addLov({ name:"reportServer", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServer",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:300})     
 		.addPanel({ name:"col2", layout:"anchor" , width:400})     
@@ -85,7 +85,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
-		.addChildrenTo("col1",["name","code","reportServerName","active"])
+		.addChildrenTo("col1",["name","code","reportServer","active"])
 		.addChildrenTo("col2",["notes"])
 ;
 	}	

@@ -9,38 +9,38 @@
    
    
    
-	<!-- ItemAffectedVersions -->
- 	<bean id="ItemAffectedVersionsAsgnService" scope="prototype"
+	<!-- IssueAffectedVersions -->
+ 	<bean id="IssueAffectedVersionsAsgnService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.ItemAffectedVersionsAsgn" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.IssueAffectedVersionsAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion" />		 
 	  	<property name="leftTable" value="PJ_PROJECT_VERSION" />
 	  	<property name="rightTable" value="PJ_ITEM_PRJVERSIONS" />
 	  	<property name="rightItemIdField" value="AFFECTEDVERSIONS_ID" />
-	  	<property name="rightObjectIdField" value="AFFECTINGITEMS_ID" /> 	
+	  	<property name="rightObjectIdField" value="AFFECTINGISSUES_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.pj.business" /> 	  	  
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ItemAffectedVersions" />
-		<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.ItemAffectedVersionsAsgn" />
+		<property name="name" value="IssueAffectedVersions" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.IssueAffectedVersionsAsgn" />
 	</bean>
    
    
    
-	<!-- ItemAffectedComponents -->
- 	<bean id="ItemAffectedComponentsAsgnService" scope="prototype"
+	<!-- IssueAffectedComponents -->
+ 	<bean id="IssueAffectedComponentsAsgnService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.ItemAffectedComponentsAsgn" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponentsAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent" />		 
 	  	<property name="leftTable" value="PJ_PROJECT_COMPONENT" />
 	  	<property name="rightTable" value="PJ_ITEM_COMPS" />
 	  	<property name="rightItemIdField" value="AFFECTEDCOMPONENTS_ID" />
-	  	<property name="rightObjectIdField" value="AFFECTINGITEMS_ID" /> 	
+	  	<property name="rightObjectIdField" value="AFFECTINGISSUES_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.pj.business" /> 	  	  
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ItemAffectedComponents" />
-		<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.ItemAffectedComponentsAsgn" />
+		<property name="name" value="IssueAffectedComponents" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponentsAsgn" />
 	</bean>
        
 </beans>

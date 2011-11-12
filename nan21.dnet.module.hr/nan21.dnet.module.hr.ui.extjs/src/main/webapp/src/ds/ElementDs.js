@@ -19,10 +19,10 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.ElementDs" , {
 		{name:"dataType",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
 		{field: "code", type: 'presence'}, 
-		{field: "dataType", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.ElementDsFilter" , {

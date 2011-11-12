@@ -16,9 +16,9 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusDs" , {
 		{name:"sequenceNo",type:"int", useNull:true }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "sequenceNo", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusDsFilter" , {

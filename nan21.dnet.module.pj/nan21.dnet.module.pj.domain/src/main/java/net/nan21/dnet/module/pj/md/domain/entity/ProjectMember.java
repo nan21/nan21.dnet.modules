@@ -21,6 +21,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
@@ -38,11 +39,14 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ProjectMember. */
 @Entity
-@Table(name = ProjectMember.TABLE_NAME)
+@Table(name = ProjectMember.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "PJ_PROJECT_MEMBER_UK1", columnNames = {
+        "CLIENTID", "PROJECT_ID", "MEMBER_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ProjectMember.findById", query = "SELECT e FROM ProjectMember e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProjectMember.findByIds", query = "SELECT e FROM ProjectMember e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = "ProjectMember.findByIds", query = "SELECT e FROM ProjectMember e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "ProjectMember.findByName", query = "SELECT e FROM ProjectMember e WHERE e.clientId = :pClientId and  e.project = :pProject and e.member = :pMember ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "ProjectMember.findByName_PRIMITIVE", query = "SELECT e FROM ProjectMember e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.member.id = :pMemberId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectMember implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -60,6 +64,16 @@ public class ProjectMember implements Serializable, IModelWithId,
      * Named query find by IDs.
      */
     public static final String NQ_FIND_BY_IDS = "ProjectMember.findByIds";
+
+    /**
+     * Named query find by unique key: Name.
+     */
+    public static final String NQ_FIND_BY_NAME = "ProjectMember.findByName";
+
+    /**
+     * Named query find by unique key: Name using the ID field for references.
+     */
+    public static final String NQ_FIND_BY_NAME_PRIMITIVE = "ProjectMember.findByName_PRIMITIVE";
 
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)

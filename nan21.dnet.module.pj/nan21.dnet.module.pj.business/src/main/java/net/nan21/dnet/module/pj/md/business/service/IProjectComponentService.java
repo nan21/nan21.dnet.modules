@@ -8,7 +8,7 @@ package net.nan21.dnet.module.pj.md.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
-import net.nan21.dnet.module.pj.md.domain.entity.Item;
+import net.nan21.dnet.module.pj.md.domain.entity.Issue;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
 
 import net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent;
@@ -16,7 +16,11 @@ import net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent;
 public interface IProjectComponentService extends
         IEntityService<ProjectComponent> {
 
-    public ProjectComponent findByName(Long clientId, String name);
+    public ProjectComponent findByName(Long clientId, Project project,
+            String name);
+
+    public ProjectComponent findByName(Long clientId, Long projectId,
+            String name);
 
     public List<ProjectComponent> findByComponentLead(Assignable componentLead);
 
@@ -26,8 +30,8 @@ public interface IProjectComponentService extends
 
     public List<ProjectComponent> findByProjectId(Long projectId);
 
-    public List<ProjectComponent> findByAffectingItems(Item affectingItems);
+    public List<ProjectComponent> findByAffectingIssues(Issue affectingIssues);
 
-    public List<ProjectComponent> findByAffectingItemsId(Long affectingItemsId);
+    public List<ProjectComponent> findByAffectingIssuesId(Long affectingIssuesId);
 
 }

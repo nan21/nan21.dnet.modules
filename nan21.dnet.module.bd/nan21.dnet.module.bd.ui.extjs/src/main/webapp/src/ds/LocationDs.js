@@ -25,8 +25,6 @@ Ext.define("net.nan21.dnet.module.bd.geo.ds.model.LocationDs" , {
 		{name:"mailing",type:"boolean" },
 		{name:"targetId",type:"int", useNull:true },
 		{name:"targetType",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

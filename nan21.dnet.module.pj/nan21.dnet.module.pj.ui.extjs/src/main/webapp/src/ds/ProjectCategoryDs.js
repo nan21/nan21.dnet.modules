@@ -16,7 +16,8 @@ Ext.define("net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryDsFilter" , {

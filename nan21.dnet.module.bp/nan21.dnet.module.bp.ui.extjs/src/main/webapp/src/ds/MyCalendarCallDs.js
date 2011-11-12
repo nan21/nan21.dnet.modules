@@ -27,9 +27,6 @@ Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarCallDs" , {
 		{name:"url",type:"string" },
 		{name:"reminder",type:"string" },
 		{name:"allDay",type:"boolean" }
-	],
-	validations: [  
-		{field: "subject", type: 'presence'}
 	]
 });
 

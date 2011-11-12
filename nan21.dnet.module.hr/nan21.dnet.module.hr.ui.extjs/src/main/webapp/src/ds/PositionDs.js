@@ -20,8 +20,7 @@ Ext.define("net.nan21.dnet.module.hr.job.ds.model.PositionDs" , {
 		{name:"organizationCode",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "code", type: 'presence'}
+		{field: "name", type: 'presence'}
 	]
 });
 

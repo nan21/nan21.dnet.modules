@@ -25,9 +25,6 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionLineDs" , 
 		{name:"toLocatorId",type:"int", useNull:true },
 		{name:"toLocator",type:"string" },
 		{name:"quantity",type:"float", useNull:true }
-	],
-	validations: [  
-		{field: "quantity", type: 'presence'}
 	]
 });
 

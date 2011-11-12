@@ -19,8 +19,6 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemDs" , {
 		{name:"uomCode",type:"string" },
 		{name:"unitPrice",type:"float", useNull:true },
 		{name:"netAmount",type:"float", useNull:true }
-	],
-	validations: [ 
 	]
 });
 

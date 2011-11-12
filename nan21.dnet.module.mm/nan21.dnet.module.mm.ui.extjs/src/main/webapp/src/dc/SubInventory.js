@@ -73,7 +73,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit", {
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
-		.addLov({ name:"inventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"inventory",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "inventoryId"} ]  })
+		.addLov({ name:"inventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"inventory",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "inventoryId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:400})     
 		.addPanel({ name:"col2", layout:"anchor" ,width:250})     

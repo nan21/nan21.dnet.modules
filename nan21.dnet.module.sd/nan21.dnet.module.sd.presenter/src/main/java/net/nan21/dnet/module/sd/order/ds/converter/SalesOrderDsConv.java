@@ -9,6 +9,8 @@ import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
+import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.base.business.service.IDeliveryMethodService;
 import net.nan21.dnet.module.bp.base.business.service.IPaymentMethodService;
 import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
@@ -114,11 +116,11 @@ public class SalesOrderDsConv extends
         if (ds.getSupplierId() != null) {
             if (e.getSupplier() == null
                     || !e.getSupplier().getId().equals(ds.getSupplierId())) {
-                e.setSupplier((BusinessPartner) this.em.find(
-                        BusinessPartner.class, ds.getSupplierId()));
+                e.setSupplier((Organization) this.em.find(Organization.class,
+                        ds.getSupplierId()));
             }
         } else {
-            this.lookup_supplier_BusinessPartner(ds, e);
+            this.lookup_supplier_Organization(ds, e);
         }
         if (ds.getBillToId() != null) {
             if (e.getBillTo() == null
@@ -158,15 +160,15 @@ public class SalesOrderDsConv extends
 
     protected void lookup_currency_Currency(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        if (ds.getCurrencyCode() != null && !ds.getCurrencyCode().equals("")) {
+        if (ds.getCurrency() != null && !ds.getCurrency().equals("")) {
             Currency x = null;
             try {
                 x = ((ICurrencyService) getService(ICurrencyService.class))
-                        .findByCode(ds.getClientId(), ds.getCurrencyCode());
+                        .findByCode(ds.getClientId(), ds.getCurrency());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `Currency` reference:  `currencyCode` = "
-                                + ds.getCurrencyCode() + "  ");
+                        "Invalid value provided to find `Currency` reference:  `currency` = "
+                                + ds.getCurrency() + "  ");
             }
             e.setCurrency(x);
         } else {
@@ -176,15 +178,15 @@ public class SalesOrderDsConv extends
 
     protected void lookup_priceList_PriceList(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        if (ds.getPriceListName() != null && !ds.getPriceListName().equals("")) {
+        if (ds.getPriceList() != null && !ds.getPriceList().equals("")) {
             PriceList x = null;
             try {
                 x = ((IPriceListService) getService(IPriceListService.class))
-                        .findByName(ds.getClientId(), ds.getPriceListName());
+                        .findByName(ds.getClientId(), ds.getPriceList());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `PriceList` reference:  `priceListName` = "
-                                + ds.getPriceListName() + "  ");
+                        "Invalid value provided to find `PriceList` reference:  `priceList` = "
+                                + ds.getPriceList() + "  ");
             }
             e.setPriceList(x);
         } else {
@@ -283,17 +285,17 @@ public class SalesOrderDsConv extends
         }
     }
 
-    protected void lookup_supplier_BusinessPartner(SalesOrderDs ds, SalesOrder e)
+    protected void lookup_supplier_Organization(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-        if (ds.getSupplierCode() != null && !ds.getSupplierCode().equals("")) {
-            BusinessPartner x = null;
+        if (ds.getSupplier() != null && !ds.getSupplier().equals("")) {
+            Organization x = null;
             try {
-                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
-                        .findByCode(ds.getClientId(), ds.getSupplierCode());
+                x = ((IOrganizationService) getService(IOrganizationService.class))
+                        .findByCode(ds.getClientId(), ds.getSupplier());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `BusinessPartner` reference:  `supplierCode` = "
-                                + ds.getSupplierCode() + "  ");
+                        "Invalid value provided to find `Organization` reference:  `supplier` = "
+                                + ds.getSupplier() + "  ");
             }
             e.setSupplier(x);
         } else {
@@ -361,13 +363,15 @@ public class SalesOrderDsConv extends
                 : null);
         ds.setCustomerCode(((e.getCustomer() != null)) ? e.getCustomer()
                 .getCode() : null);
+        ds.setCustomer(((e.getCustomer() != null)) ? e.getCustomer().getName()
+                : null);
         ds.setCurrencyId(((e.getCurrency() != null)) ? e.getCurrency().getId()
                 : null);
-        ds.setCurrencyCode(((e.getCurrency() != null)) ? e.getCurrency()
-                .getCode() : null);
+        ds.setCurrency(((e.getCurrency() != null)) ? e.getCurrency().getCode()
+                : null);
         ds.setPriceListId(((e.getPriceList() != null)) ? e.getPriceList()
                 .getId() : null);
-        ds.setPriceListName(((e.getPriceList() != null)) ? e.getPriceList()
+        ds.setPriceList(((e.getPriceList() != null)) ? e.getPriceList()
                 .getName() : null);
         ds.setPaymentMethodId(((e.getPaymentMethod() != null)) ? e
                 .getPaymentMethod().getId() : null);
@@ -379,11 +383,12 @@ public class SalesOrderDsConv extends
                 .getDeliveryMethod().getName() : null);
         ds.setSupplierId(((e.getSupplier() != null)) ? e.getSupplier().getId()
                 : null);
-        ds.setSupplierCode(((e.getSupplier() != null)) ? e.getSupplier()
-                .getCode() : null);
+        ds.setSupplier(((e.getSupplier() != null)) ? e.getSupplier().getCode()
+                : null);
         ds.setBillToId(((e.getBillTo() != null)) ? e.getBillTo().getId() : null);
         ds.setBillToCode(((e.getBillTo() != null)) ? e.getBillTo().getCode()
                 : null);
+        ds.setBillTo(((e.getBillTo() != null)) ? e.getBillTo().getName() : null);
         ds.setBillToLocationId(((e.getBillToLocation() != null)) ? e
                 .getBillToLocation().getId() : null);
         ds.setBillToLocation(((e.getBillToLocation() != null)) ? e
@@ -391,6 +396,7 @@ public class SalesOrderDsConv extends
         ds.setShipToId(((e.getShipTo() != null)) ? e.getShipTo().getId() : null);
         ds.setShipToCode(((e.getShipTo() != null)) ? e.getShipTo().getCode()
                 : null);
+        ds.setShipTo(((e.getShipTo() != null)) ? e.getShipTo().getName() : null);
         ds.setShipToLocationId(((e.getShipToLocation() != null)) ? e
                 .getShipToLocation().getId() : null);
         ds.setShipToLocation(((e.getShipToLocation() != null)) ? e

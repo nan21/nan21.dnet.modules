@@ -16,7 +16,8 @@ Ext.define("net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryDsFilter" , {

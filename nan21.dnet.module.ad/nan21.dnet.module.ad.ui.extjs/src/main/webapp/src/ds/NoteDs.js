@@ -13,8 +13,6 @@ Ext.define("net.nan21.dnet.module.ad.data.ds.model.NoteDs" , {
 		{name:"note",type:"string" },
 		{name:"targetId",type:"int", useNull:true },
 		{name:"targetType",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

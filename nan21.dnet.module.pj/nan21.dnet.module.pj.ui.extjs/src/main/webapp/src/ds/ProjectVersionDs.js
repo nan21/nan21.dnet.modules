@@ -14,13 +14,17 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"projectId",type:"int", useNull:true },
-		{name:"projectCode",type:"string" },
 		{name:"project",type:"string" },
+		{name:"projectName",type:"string" },
 		{name:"planDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"releaseDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"projectVersionId",type:"int", useNull:true },
 		{name:"projectVersion",type:"string" }
-	]
+	],
+	validations: [  
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDsFilter" , {
@@ -37,8 +41,8 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDsFilter" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"projectId",type:"int", useNull:true },
-		{name:"projectCode",type:"string" },
 		{name:"project",type:"string" },
+		{name:"projectName",type:"string" },
 		{name:"planDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"releaseDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"projectVersionId",type:"int", useNull:true },

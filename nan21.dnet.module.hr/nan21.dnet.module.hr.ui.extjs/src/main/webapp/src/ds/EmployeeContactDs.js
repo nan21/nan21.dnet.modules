@@ -18,10 +18,6 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactDs" , {
 		{name:"relationshipId",type:"int", useNull:true },
 		{name:"relationship",type:"string" },
 		{name:"isDependent",type:"boolean" }
-	],
-	validations: [  
-		{field: "firstName", type: 'presence'}, 
-		{field: "lastName", type: 'presence'}
 	]
 });
 

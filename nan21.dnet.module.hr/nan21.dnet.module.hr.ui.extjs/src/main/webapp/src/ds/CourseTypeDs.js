@@ -18,7 +18,8 @@ Ext.define("net.nan21.dnet.module.hr.training.ds.model.CourseTypeDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.hr.training.ds.model.CourseTypeDsFilter" , {

@@ -30,8 +30,8 @@ public class ProjectVersionDs extends AbstractDsModel<ProjectVersion> implements
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fPROJECTID = "projectId";
-    public static final String fPROJECTCODE = "projectCode";
     public static final String fPROJECT = "project";
+    public static final String fPROJECTNAME = "projectName";
     public static final String fPLANDATE = "planDate";
     public static final String fRELEASEDATE = "releaseDate";
     public static final String fPROJECTVERSIONID = "projectVersionId";
@@ -71,10 +71,10 @@ public class ProjectVersionDs extends AbstractDsModel<ProjectVersion> implements
     private Long projectId;
 
     @DsField(join = "left", path = "project.code")
-    private String projectCode;
+    private String project;
 
     @DsField(join = "left", path = "project.name")
-    private String project;
+    private String projectName;
 
     @DsField()
     private Date planDate;
@@ -185,20 +185,20 @@ public class ProjectVersionDs extends AbstractDsModel<ProjectVersion> implements
         this.projectId = projectId;
     }
 
-    public String getProjectCode() {
-        return this.projectCode;
-    }
-
-    public void setProjectCode(String projectCode) {
-        this.projectCode = projectCode;
-    }
-
     public String getProject() {
         return this.project;
     }
 
     public void setProject(String project) {
         this.project = project;
+    }
+
+    public String getProjectName() {
+        return this.projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
     }
 
     public Date getPlanDate() {

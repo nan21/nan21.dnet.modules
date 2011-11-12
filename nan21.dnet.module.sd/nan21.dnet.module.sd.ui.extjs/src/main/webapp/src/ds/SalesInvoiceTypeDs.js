@@ -16,7 +16,8 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeDsFilter" , {

@@ -16,7 +16,8 @@ Ext.define("net.nan21.dnet.module.bp.base.ds.model.PaymentMethodDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.bp.base.ds.model.PaymentMethodDsFilter" , {

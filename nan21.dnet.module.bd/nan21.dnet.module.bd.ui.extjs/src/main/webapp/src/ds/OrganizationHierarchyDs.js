@@ -17,9 +17,9 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDs" , {
 		{name:"version",type:"int", useNull:true }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "startDate", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDsFilter" , {

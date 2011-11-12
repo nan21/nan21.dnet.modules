@@ -22,7 +22,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionTypeDs" , 
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionTypeDsFilter" , {

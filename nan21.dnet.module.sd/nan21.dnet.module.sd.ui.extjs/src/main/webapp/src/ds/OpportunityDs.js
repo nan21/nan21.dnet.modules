@@ -15,11 +15,11 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityDs" , {
 		{name:"version",type:"int", useNull:true },
 		{name:"accountId",type:"int", useNull:true },
 		{name:"account",type:"string" },
-		{name:"expectedCloseDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"closeDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"probability",type:"float", useNull:true },
-		{name:"expectedAmount",type:"float", useNull:true },
-		{name:"expectedCurrencyId",type:"int", useNull:true },
-		{name:"expectedCurrency",type:"string" },
+		{name:"amount",type:"float", useNull:true },
+		{name:"currencyId",type:"int", useNull:true },
+		{name:"currency",type:"string" },
 		{name:"statusId",type:"int", useNull:true },
 		{name:"status",type:"string" },
 		{name:"priorityId",type:"int", useNull:true },
@@ -38,10 +38,9 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityDs" , {
 		{name:"businessObject",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "expectedCloseDate", type: 'presence'}, 
-		{field: "expectedAmount", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityDsFilter" , {
@@ -59,11 +58,11 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityDsFilter" ,
 		{name:"version",type:"int", useNull:true },
 		{name:"accountId",type:"int", useNull:true },
 		{name:"account",type:"string" },
-		{name:"expectedCloseDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"closeDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"probability",type:"float", useNull:true },
-		{name:"expectedAmount",type:"float", useNull:true },
-		{name:"expectedCurrencyId",type:"int", useNull:true },
-		{name:"expectedCurrency",type:"string" },
+		{name:"amount",type:"float", useNull:true },
+		{name:"currencyId",type:"int", useNull:true },
+		{name:"currency",type:"string" },
 		{name:"statusId",type:"int", useNull:true },
 		{name:"status",type:"string" },
 		{name:"priorityId",type:"int", useNull:true },

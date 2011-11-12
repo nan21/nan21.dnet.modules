@@ -19,11 +19,6 @@ Ext.define("net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateAverageDs" ,
 		{name:"value",type:"float", useNull:true },
 		{name:"providerId",type:"int", useNull:true },
 		{name:"providerCode",type:"string" }
-	],
-	validations: [  
-		{field: "validFrom", type: 'presence'}, 
-		{field: "validTo", type: 'presence'}, 
-		{field: "value", type: 'presence'}
 	]
 });
 

@@ -18,8 +18,6 @@ Ext.define("net.nan21.dnet.module.hr.training.ds.model.JobCourseDs" , {
 		{name:"courseName",type:"string" },
 		{name:"mandatory",type:"boolean" },
 		{name:"validFor",type:"int", useNull:true }
-	],
-	validations: [ 
 	]
 });
 

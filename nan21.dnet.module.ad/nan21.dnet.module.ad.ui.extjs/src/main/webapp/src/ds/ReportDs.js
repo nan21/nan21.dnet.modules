@@ -15,12 +15,13 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportDs" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"reportServerId",type:"int", useNull:true },
-		{name:"reportServerName",type:"string" }
+		{name:"reportServer",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "code", type: 'presence'}
-	]
+		{field: "code", type: 'presence'}, 
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportDsFilter" , {
@@ -38,7 +39,7 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportDsFilter" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"reportServerId",type:"int", useNull:true },
-		{name:"reportServerName",type:"string" }
+		{name:"reportServer",type:"string" }
 	] 
 });
 	

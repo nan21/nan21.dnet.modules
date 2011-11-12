@@ -61,15 +61,15 @@ public class ProjectMemberDsConv extends
 
     protected void lookup_project_Project(ProjectMemberDs ds, ProjectMember e)
             throws Exception {
-        if (ds.getProjectCode() != null && !ds.getProjectCode().equals("")) {
+        if (ds.getProject() != null && !ds.getProject().equals("")) {
             Project x = null;
             try {
                 x = ((IProjectService) getService(IProjectService.class))
-                        .findByName(ds.getClientId(), ds.getProjectCode());
+                        .findByCode(ds.getClientId(), ds.getProject());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `Project` reference:  `projectCode` = "
-                                + ds.getProjectCode() + "  ");
+                        "Invalid value provided to find `Project` reference:  `project` = "
+                                + ds.getProject() + "  ");
             }
             e.setProject(x);
         } else {
@@ -125,9 +125,9 @@ public class ProjectMemberDsConv extends
         ds.setVersion(e.getVersion());
         ds.setProjectId(((e.getProject() != null)) ? e.getProject().getId()
                 : null);
-        ds.setProjectCode(((e.getProject() != null)) ? e.getProject().getCode()
+        ds.setProject(((e.getProject() != null)) ? e.getProject().getCode()
                 : null);
-        ds.setProject(((e.getProject() != null)) ? e.getProject().getName()
+        ds.setProjectName(((e.getProject() != null)) ? e.getProject().getName()
                 : null);
         ds.setRoleId(((e.getProjectRole() != null)) ? e.getProjectRole()
                 .getId() : null);

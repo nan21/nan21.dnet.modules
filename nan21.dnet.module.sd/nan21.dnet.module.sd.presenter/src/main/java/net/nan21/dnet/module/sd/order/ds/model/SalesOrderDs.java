@@ -34,22 +34,25 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     public static final String fSTATUS = "status";
     public static final String fCUSTOMERID = "customerId";
     public static final String fCUSTOMERCODE = "customerCode";
+    public static final String fCUSTOMER = "customer";
     public static final String fCURRENCYID = "currencyId";
-    public static final String fCURRENCYCODE = "currencyCode";
+    public static final String fCURRENCY = "currency";
     public static final String fPRICELISTID = "priceListId";
-    public static final String fPRICELISTNAME = "priceListName";
+    public static final String fPRICELIST = "priceList";
     public static final String fPAYMENTMETHODID = "paymentMethodId";
     public static final String fPAYMENTMETHOD = "paymentMethod";
     public static final String fDELIVERYMETHODID = "deliveryMethodId";
     public static final String fDELIVERYMETHOD = "deliveryMethod";
     public static final String fSUPPLIERID = "supplierId";
-    public static final String fSUPPLIERCODE = "supplierCode";
+    public static final String fSUPPLIER = "supplier";
     public static final String fBILLTOID = "billToId";
     public static final String fBILLTOCODE = "billToCode";
+    public static final String fBILLTO = "billTo";
     public static final String fBILLTOLOCATIONID = "billToLocationId";
     public static final String fBILLTOLOCATION = "billToLocation";
     public static final String fSHIPTOID = "shipToId";
     public static final String fSHIPTOCODE = "shipToCode";
+    public static final String fSHIPTO = "shipTo";
     public static final String fSHIPTOLOCATIONID = "shipToLocationId";
     public static final String fSHIPTOLOCATION = "shipToLocation";
     public static final String fTOTALAMOUNT = "totalAmount";
@@ -105,17 +108,20 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     @DsField(join = "left", path = "customer.code")
     private String customerCode;
 
+    @DsField(join = "left", path = "customer.name")
+    private String customer;
+
     @DsField(join = "left", path = "currency.id")
     private Long currencyId;
 
     @DsField(join = "left", path = "currency.code")
-    private String currencyCode;
+    private String currency;
 
     @DsField(join = "left", path = "priceList.id")
     private Long priceListId;
 
     @DsField(join = "left", path = "priceList.name")
-    private String priceListName;
+    private String priceList;
 
     @DsField(join = "left", path = "paymentMethod.id")
     private Long paymentMethodId;
@@ -133,13 +139,16 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     private Long supplierId;
 
     @DsField(join = "left", path = "supplier.code")
-    private String supplierCode;
+    private String supplier;
 
     @DsField(join = "left", path = "billTo.id")
     private Long billToId;
 
     @DsField(join = "left", path = "billTo.code")
     private String billToCode;
+
+    @DsField(join = "left", path = "billTo.name")
+    private String billTo;
 
     @DsField(join = "left", path = "billToLocation.id")
     private Long billToLocationId;
@@ -152,6 +161,9 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     @DsField(join = "left", path = "shipTo.code")
     private String shipToCode;
+
+    @DsField(join = "left", path = "shipTo.name")
+    private String shipTo;
 
     @DsField(join = "left", path = "shipToLocation.id")
     private Long shipToLocationId;
@@ -308,6 +320,14 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
         this.customerCode = customerCode;
     }
 
+    public String getCustomer() {
+        return this.customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
     public Long getCurrencyId() {
         return this.currencyId;
     }
@@ -316,12 +336,12 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
         this.currencyId = currencyId;
     }
 
-    public String getCurrencyCode() {
-        return this.currencyCode;
+    public String getCurrency() {
+        return this.currency;
     }
 
-    public void setCurrencyCode(String currencyCode) {
-        this.currencyCode = currencyCode;
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public Long getPriceListId() {
@@ -332,12 +352,12 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
         this.priceListId = priceListId;
     }
 
-    public String getPriceListName() {
-        return this.priceListName;
+    public String getPriceList() {
+        return this.priceList;
     }
 
-    public void setPriceListName(String priceListName) {
-        this.priceListName = priceListName;
+    public void setPriceList(String priceList) {
+        this.priceList = priceList;
     }
 
     public Long getPaymentMethodId() {
@@ -380,12 +400,12 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
         this.supplierId = supplierId;
     }
 
-    public String getSupplierCode() {
-        return this.supplierCode;
+    public String getSupplier() {
+        return this.supplier;
     }
 
-    public void setSupplierCode(String supplierCode) {
-        this.supplierCode = supplierCode;
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
     }
 
     public Long getBillToId() {
@@ -402,6 +422,14 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     public void setBillToCode(String billToCode) {
         this.billToCode = billToCode;
+    }
+
+    public String getBillTo() {
+        return this.billTo;
+    }
+
+    public void setBillTo(String billTo) {
+        this.billTo = billTo;
     }
 
     public Long getBillToLocationId() {
@@ -434,6 +462,14 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     public void setShipToCode(String shipToCode) {
         this.shipToCode = shipToCode;
+    }
+
+    public String getShipTo() {
+        return this.shipTo;
+    }
+
+    public void setShipTo(String shipTo) {
+        this.shipTo = shipTo;
     }
 
     public Long getShipToLocationId() {

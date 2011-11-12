@@ -19,9 +19,10 @@ Ext.define("net.nan21.dnet.module.bd.currency.ds.model.CurrencyDs" , {
 		{name:"symbol",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "code", type: 'presence'}
-	]
+		{field: "code", type: 'presence'}, 
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.bd.currency.ds.model.CurrencyDsFilter" , {

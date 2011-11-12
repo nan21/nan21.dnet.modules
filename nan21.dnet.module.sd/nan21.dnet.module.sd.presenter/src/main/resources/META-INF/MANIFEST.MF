@@ -54,16 +54,18 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api.an
  nter.model,net.nan21.dnet.core.presenter.service,net.nan21.dnet.modul
  e.ad.usr.domain.entity,net.nan21.dnet.module.bd.currency.business.ser
  vice,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.m
- odule.bd.geo.domain.entity,net.nan21.dnet.module.bd.uom.business.serv
- ice,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.
- bp.base.business.service,net.nan21.dnet.module.bp.base.domain.entity,
- net.nan21.dnet.module.bp.md.business.service,net.nan21.dnet.module.bp
- .md.domain.entity,net.nan21.dnet.module.mm.md.business.service,net.na
- n21.dnet.module.mm.md.domain.entity,net.nan21.dnet.module.sd.invoice.
- business.service,net.nan21.dnet.module.sd.invoice.domain.entity,net.n
- an21.dnet.module.sd.opportunity.business.service,net.nan21.dnet.modul
- e.sd.opportunity.domain.entity,net.nan21.dnet.module.sd.order.busines
- s.service,net.nan21.dnet.module.sd.order.domain.entity,net.nan21.dnet
- .module.sd.price.business.service,net.nan21.dnet.module.sd.price.doma
- in.entity,org.springframework.context.weaving;version="[3.0,3.1)"
+ odule.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.business.serv
+ ice,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.
+ bd.uom.business.service,net.nan21.dnet.module.bd.uom.domain.entity,ne
+ t.nan21.dnet.module.bp.base.business.service,net.nan21.dnet.module.bp
+ .base.domain.entity,net.nan21.dnet.module.bp.md.business.service,net.
+ nan21.dnet.module.bp.md.domain.entity,net.nan21.dnet.module.mm.md.bus
+ iness.service,net.nan21.dnet.module.mm.md.domain.entity,net.nan21.dne
+ t.module.sd.invoice.business.service,net.nan21.dnet.module.sd.invoice
+ .domain.entity,net.nan21.dnet.module.sd.opportunity.business.service,
+ net.nan21.dnet.module.sd.opportunity.domain.entity,net.nan21.dnet.mod
+ ule.sd.order.business.service,net.nan21.dnet.module.sd.order.domain.e
+ ntity,net.nan21.dnet.module.sd.price.business.service,net.nan21.dnet.
+ module.sd.price.domain.entity,org.springframework.context.weaving;ver
+ sion="[3.0,3.1)"
 

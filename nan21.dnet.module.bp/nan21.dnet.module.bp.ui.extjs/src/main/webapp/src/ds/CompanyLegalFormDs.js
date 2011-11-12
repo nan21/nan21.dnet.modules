@@ -15,7 +15,11 @@ Ext.define("net.nan21.dnet.module.bp.base.ds.model.CompanyLegalFormDs" , {
 		{name:"version",type:"int", useNull:true },
 		{name:"countryId",type:"int", useNull:true },
 		{name:"country",type:"string" }
-	]
+	],
+	validations: [  
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.bp.base.ds.model.CompanyLegalFormDsFilter" , {

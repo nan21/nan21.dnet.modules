@@ -17,9 +17,6 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ExportMapItemDs" , {
 		{name:"sequenceNo",type:"int", useNull:true },
 		{name:"fileName",type:"string" },
 		{name:"active",type:"boolean" }
-	],
-	validations: [  
-		{field: "sequenceNo", type: 'presence'}
 	]
 });
 

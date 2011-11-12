@@ -16,8 +16,6 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyItemDs" ,
 		{name:"organizationCode",type:"string" },
 		{name:"parentId",type:"int", useNull:true },
 		{name:"parentCode",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

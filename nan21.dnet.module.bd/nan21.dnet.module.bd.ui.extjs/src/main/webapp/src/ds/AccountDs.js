@@ -22,10 +22,10 @@ Ext.define("net.nan21.dnet.module.bd.acc.ds.model.AccountDs" , {
 		{name:"summary",type:"boolean" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
 		{field: "code", type: 'presence'}, 
-		{field: "sign", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.bd.acc.ds.model.AccountDsFilter" , {

@@ -15,8 +15,6 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeWorkExperienceDs"
 		{name:"toDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"institute",type:"string" },
 		{name:"notes",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

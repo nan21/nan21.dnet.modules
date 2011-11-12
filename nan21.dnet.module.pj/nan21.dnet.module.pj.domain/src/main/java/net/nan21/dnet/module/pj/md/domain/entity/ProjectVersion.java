@@ -41,12 +41,13 @@ import org.hibernate.validator.constraints.NotBlank;
 /** ProjectVersion. */
 @Entity
 @Table(name = ProjectVersion.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "PJ_PROJECT_VERSION_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+        "CLIENTID", "PROJECT_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ProjectVersion.findById", query = "SELECT e FROM ProjectVersion e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProjectVersion.findByIds", query = "SELECT e FROM ProjectVersion e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProjectVersion.findByName", query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = "ProjectVersion.findByName", query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and  e.project = :pProject and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "ProjectVersion.findByName_PRIMITIVE", query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectVersion implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -69,6 +70,11 @@ public class ProjectVersion implements Serializable, IModelWithId,
      * Named query find by unique key: Name.
      */
     public static final String NQ_FIND_BY_NAME = "ProjectVersion.findByName";
+
+    /**
+     * Named query find by unique key: Name using the ID field for references.
+     */
+    public static final String NQ_FIND_BY_NAME_PRIMITIVE = "ProjectVersion.findByName_PRIMITIVE";
 
     /** PlanDate. */
     @Temporal(TemporalType.DATE)
@@ -142,7 +148,7 @@ public class ProjectVersion implements Serializable, IModelWithId,
     private ProjectVersion projectVersion;
 
     @ManyToMany(mappedBy = "affectedVersions")
-    private Collection<Item> affectingItems;
+    private Collection<Issue> affectingIssues;
 
     /* ============== getters - setters ================== */
 
@@ -267,12 +273,12 @@ public class ProjectVersion implements Serializable, IModelWithId,
         this.projectVersion = projectVersion;
     }
 
-    public Collection<Item> getAffectingItems() {
-        return this.affectingItems;
+    public Collection<Issue> getAffectingIssues() {
+        return this.affectingIssues;
     }
 
-    public void setAffectingItems(Collection<Item> affectingItems) {
-        this.affectingItems = affectingItems;
+    public void setAffectingIssues(Collection<Issue> affectingIssues) {
+        this.affectingIssues = affectingIssues;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

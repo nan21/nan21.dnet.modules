@@ -95,59 +95,59 @@
 		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectMemberLovDs" />
 	</bean>
    
- 	<bean id="ItemDsService" scope="prototype"
+ 	<bean id="IssueDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ItemDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.Item" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.ItemDsConv" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.Issue" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.IssueDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="Item" />
-		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ItemDs" />
+		<property name="name" value="Issue" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueDs" />
 	</bean>
    
- 	<bean id="ItemLovDsService" scope="prototype"
+ 	<bean id="IssueLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ItemLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.Item" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.ItemLovDsConv" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.Issue" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.IssueLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ItemLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ItemLovDs" />
+		<property name="name" value="IssueLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueLovDs" />
 	</bean>
    
- 	<bean id="ItemTaskDsService" scope="prototype"
+ 	<bean id="IssueTaskDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ItemTaskDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ItemTask" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.ItemTaskDsConv" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueTaskDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.IssueTask" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.IssueTaskDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ItemTask" />
-		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ItemTaskDs" />
+		<property name="name" value="IssueTask" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueTaskDs" />
 	</bean>
    
- 	<bean id="ItemTextDsService" scope="prototype"
+ 	<bean id="IssueTextDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ItemTextDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ItemText" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.ItemTextDsConv" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueTextDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.IssueText" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.IssueTextDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ItemText" />
-		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ItemTextDs" />
+		<property name="name" value="IssueText" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueTextDs" />
 	</bean>
    
- 	<bean id="ItemLinkDsService" scope="prototype"
+ 	<bean id="IssueLinkDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ItemLinkDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ItemLink" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.ItemLinkDsConv" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueLinkDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.IssueLink" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.IssueLinkDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ItemLink" />
-		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ItemLinkDs" />
+		<property name="name" value="IssueLink" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueLinkDs" />
 	</bean>
       
 </beans>

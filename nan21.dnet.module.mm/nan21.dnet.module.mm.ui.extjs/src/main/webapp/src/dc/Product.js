@@ -94,7 +94,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20",noEdit:true  ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"name", dataIndex:"name",anchor:"-20",noEdit:true  ,maxLength:255  })
 		//containers
 		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:90})     
 		;     
@@ -115,7 +115,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Edit", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",anchor:"-20" ,maxLength:32  })
 		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })

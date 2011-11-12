@@ -19,17 +19,17 @@
  	<bean id="ProjectVersionService" scope="prototype"
 	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ProjectVersionService"  />  
  
- 	<bean id="ItemService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ItemService"  />  
+ 	<bean id="IssueService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueService"  />  
  
- 	<bean id="ItemTaskService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ItemTaskService"  />  
+ 	<bean id="IssueTaskService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueTaskService"  />  
  
- 	<bean id="ItemTextService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ItemTextService"  />  
+ 	<bean id="IssueTextService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueTextService"  />  
  
- 	<bean id="ItemLinkService" scope="prototype"
-	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ItemLinkService"  />  
+ 	<bean id="IssueLinkService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueLinkService"  />  
    
 </beans>
    

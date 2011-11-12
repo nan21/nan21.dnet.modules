@@ -36,9 +36,9 @@ public class OpportunityDsConv extends
         e.setDescription(ds.getDescription());
         e.setClientId(ds.getClientId());
         e.setVersion(ds.getVersion());
-        e.setExpectedCloseDate(ds.getExpectedCloseDate());
+        e.setExpectedCloseDate(ds.getCloseDate());
         e.setProbability(ds.getProbability());
-        e.setExpectedAmount(ds.getExpectedAmount());
+        e.setExpectedAmount(ds.getAmount());
         e.setCampaign(ds.getCampaign());
         e.setResultNote(ds.getResultNote());
         e.setClassName(ds.getClassName());
@@ -73,12 +73,12 @@ public class OpportunityDsConv extends
         } else {
             this.lookup_priority_OpportunityPriority(ds, e);
         }
-        if (ds.getExpectedCurrencyId() != null) {
+        if (ds.getCurrencyId() != null) {
             if (e.getExpectedCurrency() == null
                     || !e.getExpectedCurrency().getId()
-                            .equals(ds.getExpectedCurrencyId())) {
+                            .equals(ds.getCurrencyId())) {
                 e.setExpectedCurrency((Currency) this.em.find(Currency.class,
-                        ds.getExpectedCurrencyId()));
+                        ds.getCurrencyId()));
             }
         } else {
             this.lookup_expectedCurrency_Currency(ds, e);
@@ -158,16 +158,15 @@ public class OpportunityDsConv extends
 
     protected void lookup_expectedCurrency_Currency(OpportunityDs ds,
             Opportunity e) throws Exception {
-        if (ds.getExpectedCurrency() != null
-                && !ds.getExpectedCurrency().equals("")) {
+        if (ds.getCurrency() != null && !ds.getCurrency().equals("")) {
             Currency x = null;
             try {
                 x = ((ICurrencyService) getService(ICurrencyService.class))
-                        .findByName(ds.getClientId(), ds.getExpectedCurrency());
+                        .findByCode(ds.getClientId(), ds.getCurrency());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `Currency` reference:  `expectedCurrency` = "
-                                + ds.getExpectedCurrency() + "  ");
+                        "Invalid value provided to find `Currency` reference:  `currency` = "
+                                + ds.getCurrency() + "  ");
             }
             e.setExpectedCurrency(x);
         } else {
@@ -241,9 +240,9 @@ public class OpportunityDsConv extends
         ds.setCreatedBy(e.getCreatedBy());
         ds.setModifiedBy(e.getModifiedBy());
         ds.setVersion(e.getVersion());
-        ds.setExpectedCloseDate(e.getExpectedCloseDate());
+        ds.setCloseDate(e.getExpectedCloseDate());
         ds.setProbability(e.getProbability());
-        ds.setExpectedAmount(e.getExpectedAmount());
+        ds.setAmount(e.getExpectedAmount());
         ds.setCampaign(e.getCampaign());
         ds.setResultNote(e.getResultNote());
         ds.setClassName(e.getClassName());
@@ -252,9 +251,9 @@ public class OpportunityDsConv extends
                 : null);
         ds.setAccount(((e.getAccount() != null)) ? e.getAccount().getName()
                 : null);
-        ds.setExpectedCurrencyId(((e.getExpectedCurrency() != null)) ? e
+        ds.setCurrencyId(((e.getExpectedCurrency() != null)) ? e
                 .getExpectedCurrency().getId() : null);
-        ds.setExpectedCurrency(((e.getExpectedCurrency() != null)) ? e
+        ds.setCurrency(((e.getExpectedCurrency() != null)) ? e
                 .getExpectedCurrency().getCode() : null);
         ds.setStatusId(((e.getStatus() != null)) ? e.getStatus().getId() : null);
         ds.setStatus(((e.getStatus() != null)) ? e.getStatus().getName() : null);

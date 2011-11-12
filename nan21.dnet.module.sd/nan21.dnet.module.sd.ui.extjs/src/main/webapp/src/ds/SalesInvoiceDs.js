@@ -18,23 +18,23 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs" , {
 		{name:"typeId",type:"int", useNull:true },
 		{name:"type",type:"string" },
 		{name:"currencyId",type:"int", useNull:true },
-		{name:"currencyCode",type:"string" },
+		{name:"currency",type:"string" },
 		{name:"totalNetAmount",type:"float", useNull:true },
 		{name:"totalTaxAmount",type:"float", useNull:true },
 		{name:"totalAmount",type:"float", useNull:true },
 		{name:"customerId",type:"int", useNull:true },
 		{name:"customerCode",type:"string" },
+		{name:"customer",type:"string" },
 		{name:"billToLocationId",type:"int", useNull:true },
 		{name:"billToLocation",type:"string" },
 		{name:"billToContactId",type:"int", useNull:true },
 		{name:"billToContact",type:"string" },
 		{name:"supplierId",type:"int", useNull:true },
-		{name:"supplierCode",type:"string" },
+		{name:"supplier",type:"string" },
 		{name:"salesOrderId",type:"int", useNull:true },
 		{name:"className",type:"string" }
 	],
 	validations: [  
-		{field: "docNo", type: 'presence'}, 
 		{field: "docDate", type: 'presence'}
 	]
 });
@@ -57,18 +57,19 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDsFilter" , {
 		{name:"typeId",type:"int", useNull:true },
 		{name:"type",type:"string" },
 		{name:"currencyId",type:"int", useNull:true },
-		{name:"currencyCode",type:"string" },
+		{name:"currency",type:"string" },
 		{name:"totalNetAmount",type:"float", useNull:true },
 		{name:"totalTaxAmount",type:"float", useNull:true },
 		{name:"totalAmount",type:"float", useNull:true },
 		{name:"customerId",type:"int", useNull:true },
 		{name:"customerCode",type:"string" },
+		{name:"customer",type:"string" },
 		{name:"billToLocationId",type:"int", useNull:true },
 		{name:"billToLocation",type:"string" },
 		{name:"billToContactId",type:"int", useNull:true },
 		{name:"billToContact",type:"string" },
 		{name:"supplierId",type:"int", useNull:true },
-		{name:"supplierCode",type:"string" },
+		{name:"supplier",type:"string" },
 		{name:"salesOrderId",type:"int", useNull:true },
 		{name:"className",type:"string" }
 	] 

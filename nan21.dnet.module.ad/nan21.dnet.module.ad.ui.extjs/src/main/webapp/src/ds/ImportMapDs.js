@@ -16,7 +16,8 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ImportMapDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ImportMapDsFilter" , {

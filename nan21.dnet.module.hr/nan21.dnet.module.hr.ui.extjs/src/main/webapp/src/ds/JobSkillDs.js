@@ -16,8 +16,6 @@ Ext.define("net.nan21.dnet.module.hr.skill.ds.model.JobSkillDs" , {
 		{name:"ratingScaleId",type:"int", useNull:true },
 		{name:"requiredLevelId",type:"int", useNull:true },
 		{name:"requiredLevel",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

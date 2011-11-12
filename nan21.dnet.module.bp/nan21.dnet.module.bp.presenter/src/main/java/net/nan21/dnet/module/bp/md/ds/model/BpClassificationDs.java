@@ -27,7 +27,7 @@ public class BpClassificationDs extends AbstractDsModel<BpClassification>
     public static final String fVERSION = "version";
     public static final String fBUSINESSPARTNERID = "businessPartnerId";
     public static final String fBUSINESSPARTNER = "businessPartner";
-    public static final String fBUSINESSPARTNERTYPE = "businessPartnerType";
+    public static final String fBUSINESSPARTNERBO = "businessPartnerBO";
     public static final String fCLASSIFICATIONSYSTEMID = "classificationSystemId";
     public static final String fCLASSIFICATIONSYSTEM = "classificationSystem";
     public static final String fCLASSIFICATIONID = "classificationId";
@@ -61,8 +61,8 @@ public class BpClassificationDs extends AbstractDsModel<BpClassification>
     @DsField(join = "left", path = "bp.code")
     private String businessPartner;
 
-    @DsField(join = "left", path = "bp.type")
-    private String businessPartnerType;
+    @DsField(join = "left", fetch = false, path = "bp.businessObject")
+    private String businessPartnerBO;
 
     @DsField(join = "left", path = "classSystem.id")
     private Long classificationSystemId;
@@ -160,12 +160,12 @@ public class BpClassificationDs extends AbstractDsModel<BpClassification>
         this.businessPartner = businessPartner;
     }
 
-    public String getBusinessPartnerType() {
-        return this.businessPartnerType;
+    public String getBusinessPartnerBO() {
+        return this.businessPartnerBO;
     }
 
-    public void setBusinessPartnerType(String businessPartnerType) {
-        this.businessPartnerType = businessPartnerType;
+    public void setBusinessPartnerBO(String businessPartnerBO) {
+        this.businessPartnerBO = businessPartnerBO;
     }
 
     public Long getClassificationSystemId() {

@@ -32,6 +32,7 @@ import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
 import net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
@@ -154,9 +155,9 @@ public class SalesOrder implements Serializable, IModelWithId,
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "ID")
     private BusinessPartner customer;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "SUPPLIER_ID", referencedColumnName = "ID")
-    private BusinessPartner supplier;
+    private Organization supplier;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BILLTO_ID", referencedColumnName = "ID")
     private BusinessPartner billTo;
@@ -346,11 +347,11 @@ public class SalesOrder implements Serializable, IModelWithId,
         this.customer = customer;
     }
 
-    public BusinessPartner getSupplier() {
+    public Organization getSupplier() {
         return this.supplier;
     }
 
-    public void setSupplier(BusinessPartner supplier) {
+    public void setSupplier(Organization supplier) {
         this.supplier = supplier;
     }
 

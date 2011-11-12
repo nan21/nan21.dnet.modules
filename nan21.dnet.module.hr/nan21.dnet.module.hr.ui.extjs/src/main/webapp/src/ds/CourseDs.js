@@ -21,8 +21,7 @@ Ext.define("net.nan21.dnet.module.hr.training.ds.model.CourseDs" , {
 		{name:"requirements",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "code", type: 'presence'}
+		{field: "name", type: 'presence'}
 	]
 });
 

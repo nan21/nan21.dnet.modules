@@ -17,7 +17,8 @@ Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventStatusDs" , 
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventStatusDsFilter" , {

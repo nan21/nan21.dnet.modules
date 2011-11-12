@@ -16,10 +16,6 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs" , {
 		{name:"dataSource",type:"string" },
 		{name:"fileName",type:"string" },
 		{name:"active",type:"boolean" }
-	],
-	validations: [  
-		{field: "sequenceNo", type: 'presence'}, 
-		{field: "dataSource", type: 'presence'}
 	]
 });
 

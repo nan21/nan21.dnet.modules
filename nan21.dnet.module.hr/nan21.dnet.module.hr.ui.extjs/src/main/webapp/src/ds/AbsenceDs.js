@@ -21,10 +21,6 @@ Ext.define("net.nan21.dnet.module.hr.time.ds.model.AbsenceDs" , {
 		{name:"hours",type:"int", useNull:true },
 		{name:"notes",type:"string" },
 		{name:"posted",type:"boolean" }
-	],
-	validations: [  
-		{field: "eventDate", type: 'presence'}, 
-		{field: "hours", type: 'presence'}
 	]
 });
 

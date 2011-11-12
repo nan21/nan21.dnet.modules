@@ -17,8 +17,6 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.CsvExportFieldDs" , {
 		{name:"dsField",type:"string" },
 		{name:"alias",type:"string" },
 		{name:"active",type:"boolean" }
-	],
-	validations: [ 
 	]
 });
 

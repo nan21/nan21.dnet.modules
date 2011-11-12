@@ -8,7 +8,7 @@ package net.nan21.dnet.module.pj.md.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.pj.md.business.service.IProjectVersionService;
-import net.nan21.dnet.module.pj.md.domain.entity.Item;
+import net.nan21.dnet.module.pj.md.domain.entity.Issue;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
 import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 
@@ -32,10 +32,19 @@ public class ProjectVersionService extends
         return ProjectVersion.class;
     }
 
-    public ProjectVersion findByName(Long clientId, String name) {
+    public ProjectVersion findByName(Long clientId, Project project, String name) {
         return (ProjectVersion) this.em
                 .createNamedQuery(ProjectVersion.NQ_FIND_BY_NAME)
                 .setParameter("pClientId", clientId)
+                .setParameter("pProject", project).setParameter("pName", name)
+                .getSingleResult();
+    }
+
+    public ProjectVersion findByName(Long clientId, Long projectId, String name) {
+        return (ProjectVersion) this.em
+                .createNamedQuery(ProjectVersion.NQ_FIND_BY_NAME_PRIMITIVE)
+                .setParameter("pClientId", clientId)
+                .setParameter("pProjectId", projectId)
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -65,16 +74,16 @@ public class ProjectVersionService extends
                 .getResultList();
     }
 
-    public List<ProjectVersion> findByAffectingItems(Item affectingItems) {
-        return this.findByAffectingItemsId(affectingItems.getId());
+    public List<ProjectVersion> findByAffectingIssues(Issue affectingIssues) {
+        return this.findByAffectingIssuesId(affectingIssues.getId());
     }
 
-    public List<ProjectVersion> findByAffectingItemsId(Long affectingItemsId) {
+    public List<ProjectVersion> findByAffectingIssuesId(Long affectingIssuesId) {
         return (List<ProjectVersion>) this.em
                 .createQuery(
-                        "select e from ProjectVersion e where e.affectingItems.id = :pAffectingItemsId",
+                        "select e from ProjectVersion e where e.affectingIssues.id = :pAffectingIssuesId",
                         ProjectVersion.class)
-                .setParameter("pAffectingItemsId", affectingItemsId)
+                .setParameter("pAffectingIssuesId", affectingIssuesId)
                 .getResultList();
     }
 

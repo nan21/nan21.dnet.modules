@@ -14,9 +14,13 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectComponentDs" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"projectId",type:"int", useNull:true },
-		{name:"projectCode",type:"string" },
-		{name:"project",type:"string" }
-	]
+		{name:"project",type:"string" },
+		{name:"projectName",type:"string" }
+	],
+	validations: [  
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectComponentDsFilter" , {
@@ -33,8 +37,8 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectComponentDsFilter" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"projectId",type:"int", useNull:true },
-		{name:"projectCode",type:"string" },
-		{name:"project",type:"string" }
+		{name:"project",type:"string" },
+		{name:"projectName",type:"string" }
 	] 
 });
 	

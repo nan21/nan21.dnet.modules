@@ -16,7 +16,8 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStageDs" , 
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStageDsFilter" , {

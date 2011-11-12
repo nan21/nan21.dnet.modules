@@ -17,8 +17,6 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProdClassificationDs" , {
 		{name:"classificationId",type:"int", useNull:true },
 		{name:"classificationCode",type:"string" },
 		{name:"classificationName",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

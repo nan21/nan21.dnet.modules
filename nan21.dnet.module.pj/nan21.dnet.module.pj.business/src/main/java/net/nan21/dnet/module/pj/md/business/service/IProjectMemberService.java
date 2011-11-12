@@ -15,6 +15,11 @@ import net.nan21.dnet.module.pj.md.domain.entity.ProjectMember;
 
 public interface IProjectMemberService extends IEntityService<ProjectMember> {
 
+    public ProjectMember findByName(Long clientId, Project project,
+            Assignable member);
+
+    public ProjectMember findByName(Long clientId, Long projectId, Long memberId);
+
     public List<ProjectMember> findByProject(Project project);
 
     public List<ProjectMember> findByProjectId(Long projectId);

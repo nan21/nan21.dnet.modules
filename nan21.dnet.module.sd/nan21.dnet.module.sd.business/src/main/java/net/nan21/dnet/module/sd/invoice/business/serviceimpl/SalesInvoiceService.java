@@ -9,6 +9,7 @@ import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceService;
@@ -111,7 +112,7 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
                 .getResultList();
     }
 
-    public List<SalesInvoice> findBySupplier(BusinessPartner supplier) {
+    public List<SalesInvoice> findBySupplier(Organization supplier) {
         return this.findBySupplierId(supplier.getId());
     }
 

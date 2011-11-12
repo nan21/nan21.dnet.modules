@@ -110,7 +110,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextField({ name:"type", dataIndex:"type",anchor:"-20",noEdit:true  ,maxLength:16  })
 		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })

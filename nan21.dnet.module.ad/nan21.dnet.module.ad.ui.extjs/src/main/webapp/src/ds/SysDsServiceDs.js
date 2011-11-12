@@ -18,7 +18,8 @@ Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysDsServiceDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysDsServiceDsFilter" , {

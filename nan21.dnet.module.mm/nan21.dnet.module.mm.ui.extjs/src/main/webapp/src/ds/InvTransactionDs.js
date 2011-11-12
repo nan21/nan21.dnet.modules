@@ -19,8 +19,6 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionDs" , {
 		{name:"toInventoryId",type:"int", useNull:true },
 		{name:"toInventory",type:"string" },
 		{name:"eventDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT }
-	],
-	validations: [ 
 	]
 });
 

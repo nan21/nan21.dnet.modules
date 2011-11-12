@@ -18,8 +18,6 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeLicenseDs" , {
 		{name:"validFrom",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"validTo",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"notes",type:"string" }
-	],
-	validations: [ 
 	]
 });
 

@@ -19,11 +19,9 @@ Ext.define("net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeDs" , {
 		{name:"useInContext",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "category", type: 'presence'}, 
-		{field: "baseUrl", type: 'presence'}, 
-		{field: "useInContext", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeDsFilter" , {

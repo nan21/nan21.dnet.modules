@@ -18,7 +18,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserTypeDs" , {
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
-	]
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserTypeDsFilter" , {

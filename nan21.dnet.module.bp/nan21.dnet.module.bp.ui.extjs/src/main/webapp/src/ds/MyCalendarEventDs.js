@@ -26,9 +26,6 @@ Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarEventDs" , {
 		{name:"clientId",type:"int", useNull:true },
 		{name:"targetId",type:"int", useNull:true },
 		{name:"targetType",type:"string" }
-	],
-	validations: [  
-		{field: "subject", type: 'presence'}
 	]
 });
 

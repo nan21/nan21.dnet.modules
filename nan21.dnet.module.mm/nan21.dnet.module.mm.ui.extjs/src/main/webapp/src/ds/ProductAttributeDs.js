@@ -22,10 +22,9 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductAttributeDs" , {
 		{name:"uom",type:"string" }
 	],
 	validations: [  
-		{field: "name", type: 'presence'}, 
-		{field: "title", type: 'presence'}, 
-		{field: "dataType", type: 'presence'}
-	]
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductAttributeDsFilter" , {
