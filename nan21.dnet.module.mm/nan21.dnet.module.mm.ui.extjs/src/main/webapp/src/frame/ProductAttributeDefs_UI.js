@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeCategoryDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeCategory", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeType", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttribute", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeGroup","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeCategoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeCategory","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeType","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeCategoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeCategory","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeType","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.mm.ui.extjs/asgn/AttrGroupsOfAttribute","nan21.dnet.module.mm.ui.extjs/asgn/AttributesOfAttrGroup"]);
+Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeCategoryDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeCategory", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeType", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttribute", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeGroup","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeCategoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeCategory","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeType","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeCategoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeCategory","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeType","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure"]);
 
 Ext.define("net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI", {  
 	extend: "dnet.base.AbstractUi",
@@ -15,20 +15,14 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addButton({name:"btnAsgnGroups",text:"Groups", tooltip:"Add selected attribute to groups",disabled:true
-			,handler: this.onBtnAsgnGroups,scope:this,stateManager:{name:"selected_one_clean", dc:"attr" }	})	
-							 	
-		.addButton({name:"btnAsgnAttrs",text:"Attributes", tooltip:"Add attributes to the selected group",disabled:true
-			,handler: this.onBtnAsgnAttrs,scope:this,stateManager:{name:"selected_one_clean", dc:"group" }	})	
-							 	
 		.addDcFilterFormView("categ",{ name:"categFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttributeCategory$Filter",height:40})	 
 		.addDcView("categ",{ name:"categEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttributeCategory$EditList", frame:true})	 
 		.addDcFilterFormView("type",{ name:"typeFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttributeType$Filter",height:80})	 
 		.addDcView("type",{ name:"typeEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttributeType$EditList", frame:true})	 
 		.addDcFilterFormView("attr",{ name:"attrFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttribute$Filter",height:80})	 
-		.addDcView("attr",{ name:"attrEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttribute$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnGroups") ]}]})	 
+		.addDcView("attr",{ name:"attrEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttribute$EditList", frame:true})	 
 		.addDcFilterFormView("group",{ name:"groupFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttributeGroup$Filter",height:40})	 
-		.addDcView("group",{ name:"groupEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttributeGroup$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnAttrs") ]}]})	 
+		.addDcView("group",{ name:"groupEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttributeGroup$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasAttr", layout:"border", defaults:{split:true},title:"Attributes",preventHeader:true})  	 
 		.addPanel({name: "canvasAttrGroup", layout:"border", defaults:{split:true},title:"Attribute groups",preventHeader:true})  	 
@@ -65,12 +59,4 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI", {
 			.beginToolbar("tlbCategEditList", {dc:"categ"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Attribute categories"}).end(); 	
 	}
 
-
-	,onBtnAsgnGroups: function() {
-		this.showAsgnWindow(net.nan21.dnet.module.mm.md.asgn.AttrGroupsOfAttribute$Ui ,{dc:"attr",objectIdField:"id"});
-	}					 	
-
-	,onBtnAsgnAttrs: function() {
-		this.showAsgnWindow(net.nan21.dnet.module.mm.md.asgn.AttributesOfAttrGroup$Ui ,{dc:"group",objectIdField:"id"});
-	}					 	
 });  

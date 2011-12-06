@@ -17,10 +17,13 @@
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAccount</class>
  		<class>net.nan21.dnet.module.mm.md.domain.entity.ProdClassification</class>
  
+ 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttachment</class>
+ 
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroupAttribute</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory</class>
@@ -34,8 +37,16 @@
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvOperation</class>  
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvBalance</class> 
+		
+		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceListType</class> 
+		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceList</class>
+		<class>net.nan21.dnet.module.mm.price.domain.entity.ProductPrice</class>
 		 
 		<!-- Dependencies -->
+		
+		<class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>
+		<class>net.nan21.dnet.module.ad.data.domain.entity.AttachmentType</class>
+		
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>

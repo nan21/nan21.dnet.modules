@@ -17,19 +17,8 @@ public class ClassificationCodeDsConv extends
         AbstractDsConverter<ClassificationCodeDs, ClassificationCode> implements
         IDsConverter<ClassificationCodeDs, ClassificationCode> {
 
-    protected void modelToEntityAttributes(ClassificationCodeDs ds,
-            ClassificationCode e) throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(ClassificationCodeDs ds,
             ClassificationCode e) throws Exception {
-
         if (ds.getClassSystemId() != null) {
             if (e.getClassSystem() == null
                     || !e.getClassSystem().getId()
@@ -55,29 +44,10 @@ public class ClassificationCodeDsConv extends
                                 + ds.getClassSystem() + "  ");
             }
             e.setClassSystem(x);
+
         } else {
             e.setClassSystem(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ClassificationCode e, ClassificationCodeDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setClassSystemId(((e.getClassSystem() != null)) ? e.getClassSystem()
-                .getId() : null);
-        ds.setClassSystem(((e.getClassSystem() != null)) ? e.getClassSystem()
-                .getCode() : null);
     }
 
 }

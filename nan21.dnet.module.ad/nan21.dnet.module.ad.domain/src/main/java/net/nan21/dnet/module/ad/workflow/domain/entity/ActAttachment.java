@@ -176,9 +176,11 @@ public class ActAttachment implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActAttachment e = (ActAttachment) event.getSource();
 
     }

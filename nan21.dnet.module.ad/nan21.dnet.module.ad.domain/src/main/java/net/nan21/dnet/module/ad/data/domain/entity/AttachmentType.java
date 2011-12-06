@@ -260,6 +260,7 @@ public class AttachmentType implements Serializable, IModelWithId,
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -274,6 +275,7 @@ public class AttachmentType implements Serializable, IModelWithId,
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         AttachmentType e = (AttachmentType) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

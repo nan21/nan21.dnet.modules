@@ -11,7 +11,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.time.ds.converter.AbsenceCategoryDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbsenceCategory" />
@@ -22,7 +21,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.time.ds.converter.AbsenceCategoryLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbsenceCategoryLov" />
@@ -44,7 +42,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.time.ds.converter.AbsenceTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbsenceTypeLov" />
@@ -66,7 +63,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceReason" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.time.ds.converter.AbsenceReasonLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbsenceReasonLov" />

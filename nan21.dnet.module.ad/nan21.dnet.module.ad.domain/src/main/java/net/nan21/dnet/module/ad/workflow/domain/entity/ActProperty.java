@@ -86,9 +86,11 @@ public class ActProperty implements Serializable {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActProperty e = (ActProperty) event.getSource();
 
     }

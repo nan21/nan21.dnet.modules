@@ -17,19 +17,8 @@ public class AccountGroupDsConv extends
         AbstractDsConverter<AccountGroupDs, AccountGroup> implements
         IDsConverter<AccountGroupDs, AccountGroup> {
 
-    protected void modelToEntityAttributes(AccountGroupDs ds, AccountGroup e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(AccountGroupDs ds, AccountGroup e)
             throws Exception {
-
         if (ds.getAccSchemaId() != null) {
             if (e.getAccSchema() == null
                     || !e.getAccSchema().getId().equals(ds.getAccSchemaId())) {
@@ -54,29 +43,10 @@ public class AccountGroupDsConv extends
                                 + ds.getAccSchema() + "  ");
             }
             e.setAccSchema(x);
+
         } else {
             e.setAccSchema(null);
         }
-    }
-
-    @Override
-    public void entityToModel(AccountGroup e, AccountGroupDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setAccSchemaId(((e.getAccSchema() != null)) ? e.getAccSchema()
-                .getId() : null);
-        ds.setAccSchema(((e.getAccSchema() != null)) ? e.getAccSchema()
-                .getCode() : null);
     }
 
 }

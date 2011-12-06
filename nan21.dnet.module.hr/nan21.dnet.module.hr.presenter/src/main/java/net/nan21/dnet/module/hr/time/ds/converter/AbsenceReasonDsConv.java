@@ -17,18 +17,8 @@ public class AbsenceReasonDsConv extends
         AbstractDsConverter<AbsenceReasonDs, AbsenceReason> implements
         IDsConverter<AbsenceReasonDs, AbsenceReason> {
 
-    protected void modelToEntityAttributes(AbsenceReasonDs ds, AbsenceReason e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(AbsenceReasonDs ds, AbsenceReason e)
             throws Exception {
-
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -53,26 +43,10 @@ public class AbsenceReasonDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(AbsenceReason e, AbsenceReasonDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
     }
 
 }

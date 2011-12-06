@@ -16,16 +16,8 @@ import net.nan21.dnet.module.ad.report.domain.entity.DsReport;
 public class DsReportDsConv extends AbstractDsConverter<DsReportDs, DsReport>
         implements IDsConverter<DsReportDs, DsReport> {
 
-    protected void modelToEntityAttributes(DsReportDs ds, DsReport e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setDataSource(ds.getDataSource());
-    }
-
     protected void modelToEntityReferences(DsReportDs ds, DsReport e)
             throws Exception {
-
         if (ds.getReportId() != null) {
             if (e.getReport() == null
                     || !e.getReport().getId().equals(ds.getReportId())) {
@@ -50,24 +42,10 @@ public class DsReportDsConv extends AbstractDsConverter<DsReportDs, DsReport>
                                 + ds.getReportCode() + "  ");
             }
             e.setReport(x);
+
         } else {
             e.setReport(null);
         }
-    }
-
-    @Override
-    public void entityToModel(DsReport e, DsReportDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setDataSource(e.getDataSource());
-        ds.setReportId(((e.getReport() != null)) ? e.getReport().getId() : null);
-        ds.setReportCode(((e.getReport() != null)) ? e.getReport().getCode()
-                : null);
     }
 
 }

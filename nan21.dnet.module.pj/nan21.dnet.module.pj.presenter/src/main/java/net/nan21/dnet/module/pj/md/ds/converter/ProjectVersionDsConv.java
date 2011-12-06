@@ -19,20 +19,8 @@ public class ProjectVersionDsConv extends
         AbstractDsConverter<ProjectVersionDs, ProjectVersion> implements
         IDsConverter<ProjectVersionDs, ProjectVersion> {
 
-    protected void modelToEntityAttributes(ProjectVersionDs ds, ProjectVersion e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setPlanDate(ds.getPlanDate());
-        e.setReleaseDate(ds.getReleaseDate());
-    }
-
     protected void modelToEntityReferences(ProjectVersionDs ds, ProjectVersion e)
             throws Exception {
-
         if (ds.getProjectId() != null) {
             if (e.getProject() == null
                     || !e.getProject().getId().equals(ds.getProjectId())) {
@@ -67,6 +55,7 @@ public class ProjectVersionDsConv extends
                                 + ds.getProject() + "  ");
             }
             e.setProject(x);
+
         } else {
             e.setProject(null);
         }
@@ -89,36 +78,10 @@ public class ProjectVersionDsConv extends
                                 + ds.getProjectVersion() + "  ");
             }
             e.setProjectVersion(x);
+
         } else {
             e.setProjectVersion(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ProjectVersion e, ProjectVersionDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setPlanDate(e.getPlanDate());
-        ds.setReleaseDate(e.getReleaseDate());
-        ds.setProjectId(((e.getProject() != null)) ? e.getProject().getId()
-                : null);
-        ds.setProject(((e.getProject() != null)) ? e.getProject().getCode()
-                : null);
-        ds.setProjectName(((e.getProject() != null)) ? e.getProject().getName()
-                : null);
-        ds.setProjectVersionId(((e.getProjectVersion() != null)) ? e
-                .getProjectVersion().getId() : null);
-        ds.setProjectVersion(((e.getProjectVersion() != null)) ? e
-                .getProjectVersion().getName() : null);
     }
 
 }

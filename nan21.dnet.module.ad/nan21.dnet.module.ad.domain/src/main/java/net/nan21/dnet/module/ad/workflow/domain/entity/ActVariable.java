@@ -214,9 +214,11 @@ public class ActVariable implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActVariable e = (ActVariable) event.getSource();
 
     }

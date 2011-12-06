@@ -27,9 +27,27 @@
 	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" >		  
 	</bean>
 	
-	<import resource="beans/sd.price.ds.xml"/>
+	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator">	 
+	</bean> 
+	
+	
+	<bean id="fileUploadServiceFactory"
+		class="net.nan21.dnet.core.presenter.service.FileUploadServiceFactory">
+	</bean>
+	
 	<import resource="beans/sd.opportunity.ds.xml"/>
 	<import resource="beans/sd.order.ds.xml"/>	
 	<import resource="beans/sd.invoice.ds.xml"/>
-	 	 
+
+
+	<!-- Other beans / services  -->
+	 
+	 <bean id="salesInvoiceAttachmentUploadService"  scope="prototype" 
+  		class="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoiceAttachmentUploadDelegate"></bean>
+	
+	 <bean id="salesOrderAttachmentUploadService"  scope="prototype" 
+  		class="net.nan21.dnet.module.sd._presenterdelegates.order.SalesOrderAttachmentUploadDelegate"></bean>
+  		
+  	<bean id="opportunityAttachmentUploadService"  scope="prototype" 
+  		class="net.nan21.dnet.module.sd._presenterdelegates.opportunity.OpportunityAttachmentUploadDelegate"></bean>
 </beans>

@@ -36,10 +36,10 @@ import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
 import net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType;
 import net.nan21.dnet.module.sd.order.domain.eventhandler.SalesOrderEventHandler;
-import net.nan21.dnet.module.sd.price.domain.entity.PriceList;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -404,6 +404,7 @@ public class SalesOrder implements Serializable, IModelWithId,
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -415,6 +416,7 @@ public class SalesOrder implements Serializable, IModelWithId,
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         SalesOrder e = (SalesOrder) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

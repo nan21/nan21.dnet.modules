@@ -17,16 +17,8 @@ public class SysDsEventDsConv extends
         AbstractDsConverter<SysDsEventDs, SysDsEvent> implements
         IDsConverter<SysDsEventDs, SysDsEvent> {
 
-    protected void modelToEntityAttributes(SysDsEventDs ds, SysDsEvent e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setEventType(ds.getName());
-    }
-
     protected void modelToEntityReferences(SysDsEventDs ds, SysDsEvent e)
             throws Exception {
-
         if (ds.getDataSourceId() != null) {
             if (e.getDataSource() == null
                     || !e.getDataSource().getId().equals(ds.getDataSourceId())) {
@@ -51,25 +43,10 @@ public class SysDsEventDsConv extends
                                 + ds.getDataSource() + "  ");
             }
             e.setDataSource(x);
+
         } else {
             e.setDataSource(null);
         }
-    }
-
-    @Override
-    public void entityToModel(SysDsEvent e, SysDsEventDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setName(e.getEventType());
-        ds.setDataSourceId(((e.getDataSource() != null)) ? e.getDataSource()
-                .getId() : null);
-        ds.setDataSource(((e.getDataSource() != null)) ? e.getDataSource()
-                .getName() : null);
     }
 
 }

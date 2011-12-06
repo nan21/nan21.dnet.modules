@@ -184,9 +184,11 @@ public class ActProcessDefinition implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActProcessDefinition e = (ActProcessDefinition) event.getSource();
 
     }

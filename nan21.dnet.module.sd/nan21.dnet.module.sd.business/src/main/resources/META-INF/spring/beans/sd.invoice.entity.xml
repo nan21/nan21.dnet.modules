@@ -18,6 +18,9 @@
  
  	<bean id="SalesInvoiceStatusService" scope="prototype"
 	  		class="net.nan21.dnet.module.sd.invoice.business.serviceimpl.SalesInvoiceStatusService"  />  
+ 
+ 	<bean id="SalesInvoiceAttachmentService" scope="prototype"
+	  		class="net.nan21.dnet.module.sd.invoice.business.serviceimpl.SalesInvoiceAttachmentService"  />  
    
 </beans>
    

@@ -17,21 +17,8 @@ public class OrganizationDsConv extends
         AbstractDsConverter<OrganizationDs, Organization> implements
         IDsConverter<OrganizationDs, Organization> {
 
-    protected void modelToEntityAttributes(OrganizationDs ds, Organization e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setValid(ds.getValid());
-        e.setClassName(ds.getClassName());
-    }
-
     protected void modelToEntityReferences(OrganizationDs ds, Organization e)
             throws Exception {
-
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -56,29 +43,10 @@ public class OrganizationDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Organization e, OrganizationDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setValid(e.getValid());
-        ds.setClassName(e.getClassName());
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
     }
 
 }

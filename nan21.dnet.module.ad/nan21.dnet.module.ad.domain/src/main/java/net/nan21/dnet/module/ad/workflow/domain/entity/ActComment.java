@@ -194,9 +194,11 @@ public class ActComment implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActComment e = (ActComment) event.getSource();
 
     }

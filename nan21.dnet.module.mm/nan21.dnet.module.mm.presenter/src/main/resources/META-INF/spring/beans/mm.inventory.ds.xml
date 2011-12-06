@@ -22,7 +22,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.SubInventoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.SubInventoryLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SubInventoryLov" />
@@ -33,7 +32,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.StockLocatorTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.StockLocatorType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.StockLocatorTypeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="StockLocatorType" />
@@ -44,7 +42,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.StockLocatorTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.StockLocatorType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.StockLocatorTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="StockLocatorTypeLov" />
@@ -66,7 +63,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.StockLocatorLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.StockLocatorLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="StockLocatorLov" />
@@ -77,7 +73,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvTransactionSourceTypeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvTransactionSourceType" />
@@ -88,7 +83,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvTransactionSourceTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvTransactionSourceTypeLov" />
@@ -99,7 +93,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionActionDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvTransactionActionDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvTransactionAction" />
@@ -110,7 +103,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionActionLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvTransactionActionLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvTransactionActionLov" />
@@ -132,7 +124,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvTransactionTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvTransactionTypeLov" />
@@ -175,7 +166,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvOperationDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvOperation" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvOperationDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvOperation" />
@@ -186,7 +176,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvBalanceDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvBalance" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvBalanceDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvBalance" />

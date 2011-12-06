@@ -12,7 +12,6 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.client.ds.model.ClientDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.client.domain.entity.Client" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.client.ds.param.ClientDsParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.client.ds.converter.ClientDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="Client" />
@@ -23,7 +22,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.client.ds.model.MyClientDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.client.domain.entity.Client" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.client.ds.converter.MyClientDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="MyClient" />

@@ -26,7 +26,6 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
 	,_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"attribute", dataIndex:"attribute", hidden:true,width:120 })
-		.addTextColumn({ name:"type", dataIndex:"type",width:120 })
 		.addTextColumn({ name:"title", dataIndex:"title",width:200 })
 		.addTextColumn({ name:"value", dataIndex:"value",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:400,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "400"}} })
 		.addTextColumn({ name:"uom", dataIndex:"uom",width:100 })

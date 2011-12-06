@@ -33,7 +33,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.User" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserLov" />
@@ -44,7 +43,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserTypeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserType" />
@@ -55,7 +53,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserTypeLov" />
@@ -66,7 +63,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserGroupDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserGroup" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserGroupDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserGroup" />
@@ -77,7 +73,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserGroup" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserGroupLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserGroupLov" />
@@ -88,7 +83,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.RoleDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.RoleDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="Role" />
@@ -99,7 +93,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.RoleLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.RoleLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RoleLov" />
@@ -110,7 +103,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.RolesOfUserLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.RolesOfUserLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RolesOfUserLov" />
@@ -121,7 +113,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AccessControl" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AccessControlDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccessControl" />
@@ -132,7 +123,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AccessControl" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AccessControlLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccessControlLov" />
@@ -154,7 +144,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AssignableType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AssignableTypeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AssignableType" />
@@ -165,7 +154,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AssignableType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AssignableTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AssignableTypeLov" />
@@ -187,7 +175,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Assignable" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AssignableLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AssignableLov" />

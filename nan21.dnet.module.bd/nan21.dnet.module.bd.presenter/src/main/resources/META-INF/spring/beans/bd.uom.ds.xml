@@ -11,7 +11,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.UomType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.uom.ds.converter.UomTypeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UomType" />
@@ -22,7 +21,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.UomType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.uom.ds.converter.UomTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UomTypeLov" />
@@ -44,7 +42,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.uom.ds.converter.UomLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UomLov" />
@@ -55,7 +52,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomMassLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.uom.ds.converter.UomMassLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UomMassLov" />
@@ -66,7 +62,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLengthLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.uom.ds.converter.UomLengthLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UomLengthLov" />
@@ -77,7 +72,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomVolumeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.uom.ds.converter.UomVolumeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UomVolumeLov" />

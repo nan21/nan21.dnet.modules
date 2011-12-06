@@ -8,7 +8,7 @@ package net.nan21.dnet.module.mm.md.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute;
+import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroupAttribute;
 
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue;
 
@@ -16,18 +16,19 @@ public interface IProductAttributeValueService extends
         IEntityService<ProductAttributeValue> {
 
     public ProductAttributeValue findByName(Long clientId, Product product,
-            ProductAttribute attribute);
+            ProductAttributeGroupAttribute groupAttribute);
 
     public ProductAttributeValue findByName(Long clientId, Long productId,
-            Long attributeId);
+            Long groupAttributeId);
 
     public List<ProductAttributeValue> findByProduct(Product product);
 
     public List<ProductAttributeValue> findByProductId(Long productId);
 
-    public List<ProductAttributeValue> findByAttribute(
-            ProductAttribute attribute);
+    public List<ProductAttributeValue> findByGroupAttribute(
+            ProductAttributeGroupAttribute groupAttribute);
 
-    public List<ProductAttributeValue> findByAttributeId(Long attributeId);
+    public List<ProductAttributeValue> findByGroupAttributeId(
+            Long groupAttributeId);
 
 }

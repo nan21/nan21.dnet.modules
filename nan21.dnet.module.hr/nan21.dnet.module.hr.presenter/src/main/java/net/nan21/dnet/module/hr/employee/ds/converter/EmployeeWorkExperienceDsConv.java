@@ -17,19 +17,8 @@ public class EmployeeWorkExperienceDsConv extends
         implements
         IDsConverter<EmployeeWorkExperienceDs, EmployeeWorkExperience> {
 
-    protected void modelToEntityAttributes(EmployeeWorkExperienceDs ds,
-            EmployeeWorkExperience e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setFromDate(ds.getFromDate());
-        e.setToDate(ds.getToDate());
-        e.setInstitute(ds.getInstitute());
-        e.setNotes(ds.getNotes());
-    }
-
     protected void modelToEntityReferences(EmployeeWorkExperienceDs ds,
             EmployeeWorkExperience e) throws Exception {
-
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -37,24 +26,6 @@ public class EmployeeWorkExperienceDsConv extends
                         ds.getEmployeeId()));
             }
         }
-    }
-
-    @Override
-    public void entityToModel(EmployeeWorkExperience e,
-            EmployeeWorkExperienceDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setFromDate(e.getFromDate());
-        ds.setToDate(e.getToDate());
-        ds.setInstitute(e.getInstitute());
-        ds.setNotes(e.getNotes());
-        ds.setEmployeeId(((e.getEmployee() != null)) ? e.getEmployee().getId()
-                : null);
     }
 
 }

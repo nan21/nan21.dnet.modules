@@ -9,7 +9,6 @@ import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttributeService;
-import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType;
 
 import javax.persistence.EntityManager;
@@ -62,18 +61,6 @@ public class ProductAttributeService extends
                         "select e from ProductAttribute e where e.uom.id = :pUomId",
                         ProductAttribute.class).setParameter("pUomId", uomId)
                 .getResultList();
-    }
-
-    public List<ProductAttribute> findByGroups(ProductAttributeGroup groups) {
-        return this.findByGroupsId(groups.getId());
-    }
-
-    public List<ProductAttribute> findByGroupsId(Long groupsId) {
-        return (List<ProductAttribute>) this.em
-                .createQuery(
-                        "select e from ProductAttribute e where e.groups.id = :pGroupsId",
-                        ProductAttribute.class)
-                .setParameter("pGroupsId", groupsId).getResultList();
     }
 
 }

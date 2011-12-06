@@ -34,9 +34,9 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Product account groups.*/
 @Entity
 @Table(name = ProductAccountGroup.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "MM_PRODUCT_ACCOUNT_GROUP_UK1", columnNames = {
+        @UniqueConstraint(name = "MM_PROD_ACCOUNT_GROUP_UK1", columnNames = {
                 "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "MM_PRODUCT_ACCOUNT_GROUP_UK2", columnNames = {
+        @UniqueConstraint(name = "MM_PROD_ACCOUNT_GROUP_UK2", columnNames = {
                 "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -47,8 +47,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ProductAccountGroup implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "MM_PRODUCT_ACCOUNT_GROUP";
-    public static final String SEQUENCE_NAME = "MM_PRODUCT_ACCOUNT_GROUP_SEQ";
+    public static final String TABLE_NAME = "MM_PROD_ACCOUNT_GROUP";
+    public static final String SEQUENCE_NAME = "MM_PROD_ACCOUNT_GROUP_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -231,6 +231,7 @@ public class ProductAccountGroup implements Serializable, IModelWithId,
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -245,6 +246,7 @@ public class ProductAccountGroup implements Serializable, IModelWithId,
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ProductAccountGroup e = (ProductAccountGroup) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

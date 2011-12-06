@@ -16,19 +16,8 @@ import net.nan21.dnet.module.ad.report.domain.entity.Report;
 public class ReportDsConv extends AbstractDsConverter<ReportDs, Report>
         implements IDsConverter<ReportDs, Report> {
 
-    protected void modelToEntityAttributes(ReportDs ds, Report e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(ReportDs ds, Report e)
             throws Exception {
-
         if (ds.getReportServerId() != null) {
             if (e.getReportServer() == null
                     || !e.getReportServer().getId()
@@ -54,28 +43,10 @@ public class ReportDsConv extends AbstractDsConverter<ReportDs, Report>
                                 + ds.getReportServer() + "  ");
             }
             e.setReportServer(x);
+
         } else {
             e.setReportServer(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Report e, ReportDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setReportServerId(((e.getReportServer() != null)) ? e
-                .getReportServer().getId() : null);
-        ds.setReportServer(((e.getReportServer() != null)) ? e
-                .getReportServer().getName() : null);
     }
 
 }

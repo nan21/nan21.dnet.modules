@@ -29,6 +29,7 @@ public class AttachmentDs extends AbstractDsModel<Attachment> implements
     public static final String fTARGETTYPE = "targetType";
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
+    public static final String fCATEGORY = "category";
     public static final String fNAME = "name";
     public static final String fLOCATION = "location";
     public static final String fNOTES = "notes";
@@ -66,6 +67,9 @@ public class AttachmentDs extends AbstractDsModel<Attachment> implements
 
     @DsField(join = "left", path = "type.name")
     private String type;
+
+    @DsField(join = "left", path = "type.category")
+    private String category;
 
     @DsField()
     private String name;
@@ -174,6 +178,14 @@ public class AttachmentDs extends AbstractDsModel<Attachment> implements
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getName() {

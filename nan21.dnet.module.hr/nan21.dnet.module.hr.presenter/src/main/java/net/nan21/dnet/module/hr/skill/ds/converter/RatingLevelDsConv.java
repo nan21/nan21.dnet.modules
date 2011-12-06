@@ -17,19 +17,8 @@ public class RatingLevelDsConv extends
         AbstractDsConverter<RatingLevelDs, RatingLevel> implements
         IDsConverter<RatingLevelDs, RatingLevel> {
 
-    protected void modelToEntityAttributes(RatingLevelDs ds, RatingLevel e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setValue(ds.getValue());
-    }
-
     protected void modelToEntityReferences(RatingLevelDs ds, RatingLevel e)
             throws Exception {
-
         if (ds.getRatingScaleId() != null) {
             if (e.getRatingScale() == null
                     || !e.getRatingScale().getId()
@@ -55,28 +44,10 @@ public class RatingLevelDsConv extends
                                 + ds.getRatingScale() + "  ");
             }
             e.setRatingScale(x);
+
         } else {
             e.setRatingScale(null);
         }
-    }
-
-    @Override
-    public void entityToModel(RatingLevel e, RatingLevelDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setValue(e.getValue());
-        ds.setRatingScaleId(((e.getRatingScale() != null)) ? e.getRatingScale()
-                .getId() : null);
-        ds.setRatingScale(((e.getRatingScale() != null)) ? e.getRatingScale()
-                .getName() : null);
     }
 
 }

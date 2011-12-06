@@ -131,8 +131,7 @@
 		<property name="ranking" value="140"></property>
 	</bean>
 	
-	<!-- Domain services --> 
-	<import resource="beans/sd.price.entity.xml" />
+	<!-- Domain services --> 	 
 	<import resource="beans/sd.opportunity.entity.xml" />
 	<import resource="beans/sd.order.entity.xml" />
 	<import resource="beans/sd.invoice.entity.xml" /> 

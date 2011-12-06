@@ -20,16 +20,8 @@ public class ElementValueDsConv extends
         AbstractDsConverter<ElementValueDs, ElementValue> implements
         IDsConverter<ElementValueDs, ElementValue> {
 
-    protected void modelToEntityAttributes(ElementValueDs ds, ElementValue e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setValue(ds.getValue());
-    }
-
     protected void modelToEntityReferences(ElementValueDs ds, ElementValue e)
             throws Exception {
-
         if (ds.getElementId() != null) {
             if (e.getElement() == null
                     || !e.getElement().getId().equals(ds.getElementId())) {
@@ -70,6 +62,7 @@ public class ElementValueDsConv extends
                                 + ds.getElement() + "  ");
             }
             e.setElement(x);
+
         } else {
             e.setElement(null);
         }
@@ -88,32 +81,10 @@ public class ElementValueDsConv extends
                                 + ds.getPeriod() + "  ");
             }
             e.setPeriod(x);
+
         } else {
             e.setPeriod(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ElementValue e, ElementValueDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setValue(e.getValue());
-        ds.setElementId(((e.getElement() != null)) ? e.getElement().getId()
-                : null);
-        ds.setElement(((e.getElement() != null)) ? e.getElement().getName()
-                : null);
-        ds.setEmployeeId(((e.getEmployee() != null)) ? e.getEmployee().getId()
-                : null);
-        ds.setEmployeeName(((e.getEmployee() != null)) ? e.getEmployee()
-                .getName() : null);
-        ds.setPeriodId(((e.getPeriod() != null)) ? e.getPeriod().getId() : null);
-        ds.setPeriod(((e.getPeriod() != null)) ? e.getPeriod().getName() : null);
     }
 
 }

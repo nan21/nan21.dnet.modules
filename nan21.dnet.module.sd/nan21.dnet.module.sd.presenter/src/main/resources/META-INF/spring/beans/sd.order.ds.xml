@@ -33,7 +33,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderTypeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesOrderType" />
@@ -44,7 +43,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesOrderTypeLov" />
@@ -55,7 +53,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderStatusDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesOrderStatus" />
@@ -66,11 +63,21 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderStatusLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesOrderStatusLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusLovDs" />
+	</bean>
+   
+ 	<bean id="SalesOrderAttachmentDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderAttachmentDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderAttachment" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderAttachmentDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SalesOrderAttachment" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderAttachmentDs" />
 	</bean>
       
 </beans>

@@ -18,20 +18,8 @@ public class EmployeeContactDsConv extends
         AbstractDsConverter<EmployeeContactDs, EmployeeContact> implements
         IDsConverter<EmployeeContactDs, EmployeeContact> {
 
-    protected void modelToEntityAttributes(EmployeeContactDs ds,
-            EmployeeContact e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setFirstName(ds.getFirstName());
-        e.setLastName(ds.getLastName());
-        e.setBirthdate(ds.getBirthdate());
-        e.setGender(ds.getGender());
-        e.setIsDependent(ds.getIsDependent());
-    }
-
     protected void modelToEntityReferences(EmployeeContactDs ds,
             EmployeeContact e) throws Exception {
-
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -65,32 +53,10 @@ public class EmployeeContactDsConv extends
                                 + ds.getRelationship() + "  ");
             }
             e.setRelationship(x);
+
         } else {
             e.setRelationship(null);
         }
-    }
-
-    @Override
-    public void entityToModel(EmployeeContact e, EmployeeContactDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setFirstName(e.getFirstName());
-        ds.setLastName(e.getLastName());
-        ds.setBirthdate(e.getBirthdate());
-        ds.setGender(e.getGender());
-        ds.setIsDependent(e.getIsDependent());
-        ds.setEmployeeId(((e.getEmployee() != null)) ? e.getEmployee().getId()
-                : null);
-        ds.setRelationshipId(((e.getRelationship() != null)) ? e
-                .getRelationship().getId() : null);
-        ds.setRelationship(((e.getRelationship() != null)) ? e
-                .getRelationship().getName() : null);
     }
 
 }

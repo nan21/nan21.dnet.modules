@@ -19,20 +19,8 @@ public class InvTransactionTypeDsConv extends
         AbstractDsConverter<InvTransactionTypeDs, InvTransactionType> implements
         IDsConverter<InvTransactionTypeDs, InvTransactionType> {
 
-    protected void modelToEntityAttributes(InvTransactionTypeDs ds,
-            InvTransactionType e) throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setHasFromInventory(ds.getHasFromInventory());
-        e.setHasToInventory(ds.getHasToInventory());
-    }
-
     protected void modelToEntityReferences(InvTransactionTypeDs ds,
             InvTransactionType e) throws Exception {
-
         if (ds.getActionId() != null) {
             if (e.getAction() == null
                     || !e.getAction().getId().equals(ds.getActionId())) {
@@ -66,6 +54,7 @@ public class InvTransactionTypeDsConv extends
                                 + ds.getAction() + "  ");
             }
             e.setAction(x);
+
         } else {
             e.setAction(null);
         }
@@ -84,32 +73,10 @@ public class InvTransactionTypeDsConv extends
                                 + ds.getSourceType() + "  ");
             }
             e.setSourceType(x);
+
         } else {
             e.setSourceType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(InvTransactionType e, InvTransactionTypeDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setHasFromInventory(e.getHasFromInventory());
-        ds.setHasToInventory(e.getHasToInventory());
-        ds.setSourceTypeId(((e.getSourceType() != null)) ? e.getSourceType()
-                .getId() : null);
-        ds.setSourceType(((e.getSourceType() != null)) ? e.getSourceType()
-                .getName() : null);
-        ds.setActionId(((e.getAction() != null)) ? e.getAction().getId() : null);
-        ds.setAction(((e.getAction() != null)) ? e.getAction().getName() : null);
     }
 
 }

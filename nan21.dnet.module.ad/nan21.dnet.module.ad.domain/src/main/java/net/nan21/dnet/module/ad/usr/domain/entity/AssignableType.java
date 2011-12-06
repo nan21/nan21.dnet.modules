@@ -209,6 +209,7 @@ public class AssignableType implements Serializable, IModelWithId,
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -223,6 +224,7 @@ public class AssignableType implements Serializable, IModelWithId,
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         AssignableType e = (AssignableType) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

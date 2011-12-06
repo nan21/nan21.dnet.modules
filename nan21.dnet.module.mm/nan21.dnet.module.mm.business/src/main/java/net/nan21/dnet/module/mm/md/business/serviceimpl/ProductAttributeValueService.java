@@ -9,7 +9,7 @@ import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttributeValueService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute;
+import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroupAttribute;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue;
@@ -33,22 +33,24 @@ public class ProductAttributeValueService extends
     }
 
     public ProductAttributeValue findByName(Long clientId, Product product,
-            ProductAttribute attribute) {
+            ProductAttributeGroupAttribute groupAttribute) {
         return (ProductAttributeValue) this.em
                 .createNamedQuery(ProductAttributeValue.NQ_FIND_BY_NAME)
                 .setParameter("pClientId", clientId)
                 .setParameter("pProduct", product)
-                .setParameter("pAttribute", attribute).getSingleResult();
+                .setParameter("pGroupAttribute", groupAttribute)
+                .getSingleResult();
     }
 
     public ProductAttributeValue findByName(Long clientId, Long productId,
-            Long attributeId) {
+            Long groupAttributeId) {
         return (ProductAttributeValue) this.em
                 .createNamedQuery(
                         ProductAttributeValue.NQ_FIND_BY_NAME_PRIMITIVE)
                 .setParameter("pClientId", clientId)
                 .setParameter("pProductId", productId)
-                .setParameter("pAttributeId", attributeId).getSingleResult();
+                .setParameter("pGroupAttributeId", groupAttributeId)
+                .getSingleResult();
     }
 
     public List<ProductAttributeValue> findByProduct(Product product) {
@@ -63,17 +65,19 @@ public class ProductAttributeValueService extends
                 .setParameter("pProductId", productId).getResultList();
     }
 
-    public List<ProductAttributeValue> findByAttribute(
-            ProductAttribute attribute) {
-        return this.findByAttributeId(attribute.getId());
+    public List<ProductAttributeValue> findByGroupAttribute(
+            ProductAttributeGroupAttribute groupAttribute) {
+        return this.findByGroupAttributeId(groupAttribute.getId());
     }
 
-    public List<ProductAttributeValue> findByAttributeId(Long attributeId) {
+    public List<ProductAttributeValue> findByGroupAttributeId(
+            Long groupAttributeId) {
         return (List<ProductAttributeValue>) this.em
                 .createQuery(
-                        "select e from ProductAttributeValue e where e.attribute.id = :pAttributeId",
+                        "select e from ProductAttributeValue e where e.groupAttribute.id = :pGroupAttributeId",
                         ProductAttributeValue.class)
-                .setParameter("pAttributeId", attributeId).getResultList();
+                .setParameter("pGroupAttributeId", groupAttributeId)
+                .getResultList();
     }
 
 }

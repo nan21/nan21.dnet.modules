@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesInvoice", "nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceItemDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesInvoiceItem", "nan21.dnet.module.ad.ui.extjs/ds/NoteDs", "nan21.dnet.module.ad.ui.extjs/dc/Note", "nan21.dnet.module.ad.ui.extjs/ds/AttachmentDs", "nan21.dnet.module.ad.ui.extjs/dc/Attachment","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceStatusLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceStatus","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceTypeLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceType","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/LocationToBillLovDs","nan21.dnet.module.bd.ui.extjs/lov/LocationsToBill","nan21.dnet.module.bp.ui.extjs/ds/BpContactLovDs","nan21.dnet.module.bp.ui.extjs/lov/BpContacts","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceStatusLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceStatus","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceTypeLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceType","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.mm.ui.extjs/ds/ProductLovDs","nan21.dnet.module.mm.ui.extjs/lov/Products","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.ad.ui.extjs/ds/AttachmentTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/AttachmentTypes"]);
+Dnet.doImport(["", "nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesInvoice", "nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceItemDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesInvoiceItem", "nan21.dnet.module.ad.ui.extjs/ds/NoteDs", "nan21.dnet.module.ad.ui.extjs/dc/Note", "nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceAttachmentDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesInvoiceAttachment","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceStatusLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceStatus","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceTypeLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceType","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/LocationToBillLovDs","nan21.dnet.module.bd.ui.extjs/lov/LocationsToBill","nan21.dnet.module.bp.ui.extjs/ds/BpContactLovDs","nan21.dnet.module.bp.ui.extjs/lov/BpContacts","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceStatusLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceStatus","nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceTypeLovDs","nan21.dnet.module.sd.ui.extjs/lov/SalesInvoiceType","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.mm.ui.extjs/ds/ProductLovDs","nan21.dnet.module.mm.ui.extjs/lov/Products","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.ad.ui.extjs/ds/AttachmentTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/AttachmentTypes"]);
 
 Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {  
 	extend: "dnet.base.AbstractUi",
@@ -10,10 +10,10 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {
 		.addDc("inv", new net.nan21.dnet.module.sd.invoice.dc.SalesInvoice({}))
 		.addDc("item", new net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem({multiEdit:true}))
 		.addDc("note", new net.nan21.dnet.module.ad.data.dc.Note({}))
-		.addDc("atch", new net.nan21.dnet.module.ad.data.dc.Attachment({multiEdit:true}))		
+		.addDc("atch", new net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceAttachment({multiEdit:true}))		
 		.linkDc("item", "inv",{fields:[ {childField:"invoiceId", parentField:"id"} ]} )
 		.linkDc("note", "inv",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} )
-		.linkDc("atch", "inv",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"businessObject"} ]} );		
+		.linkDc("atch", "inv",{fields:[ {childField:"invoiceId", parentField:"id"} ]} );		
 	}	 
 
 	,_defineElements_: function() {							
@@ -30,7 +30,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {
 		.addDcView("item",{ name:"itemEditList", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem$EditList", frame:true,title:"Items"})	 
 		.addDcView("note",{ name:"noteList", xtype:"net.nan21.dnet.module.ad.data.dc.Note$List",width:300})	 
 		.addDcFormView("note",{ name:"noteEdit", xtype:"net.nan21.dnet.module.ad.data.dc.Note$Edit"})	 
-		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", frame:true,title:"Attachments",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnViewAttachment") ,this._elems_.get("btnUploadAttachment") ]}]})	 
+		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceAttachment$CtxEditList", frame:true,title:"Attachments",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnViewAttachment") ,this._elems_.get("btnUploadAttachment") ]}]})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "invDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
@@ -71,7 +71,7 @@ this._getDc_("atch").doQuery();
 		var w=new dnet.base.FileUploadWindow({
     		_nameFieldValue_: this._getDc_("atch").getRecord().get("name"),
     		_p1Value_: this._getDc_("atch").getRecord().get("id"),
-    		_uploadUrl_:"/nan21.dnet.core.web/upload/adDataAttachment",
+    		_uploadUrl_:"/nan21.dnet.core.web/upload/salesInvoiceAttachmentUpload",
     		_succesCallbackFn_ : this.onUploadSuccess,
     		_succesCallbackScope_: this
     	});w.show();

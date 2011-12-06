@@ -18,18 +18,8 @@ public class PayScaleRateValueDsConv extends
         AbstractDsConverter<PayScaleRateValueDs, PayScaleRateValue> implements
         IDsConverter<PayScaleRateValueDs, PayScaleRateValue> {
 
-    protected void modelToEntityAttributes(PayScaleRateValueDs ds,
-            PayScaleRateValue e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setValue(ds.getValue());
-        e.setValidFrom(ds.getValidFrom());
-        e.setValidTo(ds.getValidTo());
-    }
-
     protected void modelToEntityReferences(PayScaleRateValueDs ds,
             PayScaleRateValue e) throws Exception {
-
         if (ds.getScaleRateId() != null) {
             if (e.getScaleRate() == null
                     || !e.getScaleRate().getId().equals(ds.getScaleRateId())) {
@@ -66,30 +56,10 @@ public class PayScaleRateValueDsConv extends
                                 + ds.getScalePointCode() + "  ");
             }
             e.setScalePoint(x);
+
         } else {
             e.setScalePoint(null);
         }
-    }
-
-    @Override
-    public void entityToModel(PayScaleRateValue e, PayScaleRateValueDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setValue(e.getValue());
-        ds.setValidFrom(e.getValidFrom());
-        ds.setValidTo(e.getValidTo());
-        ds.setScaleRateId(((e.getScaleRate() != null)) ? e.getScaleRate()
-                .getId() : null);
-        ds.setScalePointId(((e.getScalePoint() != null)) ? e.getScalePoint()
-                .getId() : null);
-        ds.setScalePointCode(((e.getScalePoint() != null)) ? e.getScalePoint()
-                .getCode() : null);
     }
 
 }

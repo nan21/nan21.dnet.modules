@@ -11,7 +11,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductCategoryDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductCategory" />
@@ -22,7 +21,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductCategoryLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductCategoryLov" />
@@ -33,7 +31,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductManufacturerDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductManufacturer" />
@@ -44,7 +41,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductManufacturerLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductManufacturerLov" />
@@ -55,6 +51,7 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.Product" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.mm.md.ds.param.ProductDsParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -66,7 +63,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.Product" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductLov" />
@@ -77,7 +73,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAccountGroupDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAccountGroup" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAccountGroupDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAccountGroup" />
@@ -88,7 +83,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAccountGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAccountGroup" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAccountGroupLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAccountGroupLov" />
@@ -110,7 +104,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeCategoryDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttributeCategoryDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAttributeCategory" />
@@ -121,7 +114,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttributeCategoryLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAttributeCategoryLov" />
@@ -143,11 +135,30 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttributeTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAttributeTypeLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeTypeLovDs" />
+	</bean>
+   
+ 	<bean id="ProductAttributeGroupDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeGroupDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProductAttributeGroup" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeGroupDs" />
+	</bean>
+   
+ 	<bean id="ProductAttributeGroupLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeGroupLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProductAttributeGroupLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeGroupLovDs" />
 	</bean>
    
  	<bean id="ProductAttributeDsService" scope="prototype"
@@ -165,33 +176,10 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttributeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAttributeLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeLovDs" />
-	</bean>
-   
- 	<bean id="ProductAttributeGroupDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeGroupDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttributeGroupDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ProductAttributeGroup" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeGroupDs" />
-	</bean>
-   
- 	<bean id="ProductAttributeGroupLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeGroupLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttributeGroupLovDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ProductAttributeGroupLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeGroupLovDs" />
 	</bean>
    
  	<bean id="ProductAttributeValueDsService" scope="prototype"
@@ -203,6 +191,17 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAttributeValue" />
 		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs" />
+	</bean>
+   
+ 	<bean id="ProductAttachmentDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttachment" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttachmentDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProductAttachment" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs" />
 	</bean>
    
  	<bean id="ProdClassificationDsService" scope="prototype"

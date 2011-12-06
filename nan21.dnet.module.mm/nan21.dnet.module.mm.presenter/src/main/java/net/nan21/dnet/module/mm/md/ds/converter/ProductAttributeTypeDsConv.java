@@ -17,18 +17,8 @@ public class ProductAttributeTypeDsConv extends
         AbstractDsConverter<ProductAttributeTypeDs, ProductAttributeType>
         implements IDsConverter<ProductAttributeTypeDs, ProductAttributeType> {
 
-    protected void modelToEntityAttributes(ProductAttributeTypeDs ds,
-            ProductAttributeType e) throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(ProductAttributeTypeDs ds,
             ProductAttributeType e) throws Exception {
-
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
@@ -53,28 +43,10 @@ public class ProductAttributeTypeDsConv extends
                                 + ds.getCategory() + "  ");
             }
             e.setCategory(x);
+
         } else {
             e.setCategory(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ProductAttributeType e, ProductAttributeTypeDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setCategoryId(((e.getCategory() != null)) ? e.getCategory().getId()
-                : null);
-        ds.setCategory(((e.getCategory() != null)) ? e.getCategory().getName()
-                : null);
     }
 
 }

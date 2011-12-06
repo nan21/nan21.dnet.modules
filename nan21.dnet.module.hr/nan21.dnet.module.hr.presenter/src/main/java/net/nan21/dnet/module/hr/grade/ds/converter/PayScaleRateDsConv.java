@@ -19,18 +19,8 @@ public class PayScaleRateDsConv extends
         AbstractDsConverter<PayScaleRateDs, PayScaleRate> implements
         IDsConverter<PayScaleRateDs, PayScaleRate> {
 
-    protected void modelToEntityAttributes(PayScaleRateDs ds, PayScaleRate e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(PayScaleRateDs ds, PayScaleRate e)
             throws Exception {
-
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
@@ -64,6 +54,7 @@ public class PayScaleRateDsConv extends
                                 + ds.getCurrencyCode() + "  ");
             }
             e.setCurrency(x);
+
         } else {
             e.setCurrency(null);
         }
@@ -82,34 +73,10 @@ public class PayScaleRateDsConv extends
                                 + ds.getPayScaleCode() + "  ");
             }
             e.setPayScale(x);
+
         } else {
             e.setPayScale(null);
         }
-    }
-
-    @Override
-    public void entityToModel(PayScaleRate e, PayScaleRateDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setPayScaleId(((e.getPayScale() != null)) ? e.getPayScale().getId()
-                : null);
-        ds.setPayScaleCode(((e.getPayScale() != null)) ? e.getPayScale()
-                .getCode() : null);
-        ds.setPayScaleName(((e.getPayScale() != null)) ? e.getPayScale()
-                .getName() : null);
-        ds.setCurrencyId(((e.getCurrency() != null)) ? e.getCurrency().getId()
-                : null);
-        ds.setCurrencyCode(((e.getCurrency() != null)) ? e.getCurrency()
-                .getCode() : null);
     }
 
 }

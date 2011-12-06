@@ -10,28 +10,43 @@
 			http://www.springframework.org/schema/osgi-compendium
     			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
 	
-
-	<context:load-time-weaver aspectj-weaving="on"/>
+	<context:load-time-weaver aspectj-weaving="on" />
 	<context:annotation-config />
-	  
-	<bean id="menuProvider" class="net.nan21.dnet.core.api.ui.extjs.impl.ExtensionProvider" >
+	
+	<bean id="menuProvider" class="net.nan21.dnet.core.api.ui.extjs.impl.ExtensionProvider">
 		<property name="fileName" value="src/menu.js"></property>
 		<property name="bundleName" value="nan21.dnet.module.pj.ui.extjs"></property>
 	</bean>
-	 
-	<bean id="dsServiceFactory" class="net.nan21.dnet.core.presenter.service.DsServiceFactory" >
-		 <property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
+	
+	<bean id="dsServiceFactory" class="net.nan21.dnet.core.presenter.service.DsServiceFactory">
+		<property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>
- 
-	<bean id="asgnServiceFactory" class="net.nan21.dnet.core.presenter.service.AsgnServiceFactory" >
+	
+	<bean id="asgnServiceFactory"
+		class="net.nan21.dnet.core.presenter.service.AsgnServiceFactory">
 		<property name="asgnTxServiceFactories" ref="osgiAsgnTxServiceFactories"></property>
 	</bean>
 	
-	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" >		  
+	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions">
 	</bean>
- 
-	<import resource="beans/pj.base.ds.xml"/>
-	<import resource="beans/pj.md.ds.xml"/>
- 	<import resource="beans/pj.md.asgn.xml"/>
+	
+	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator">
+	</bean>
+	
+	<bean id="fileUploadServiceFactory"
+		class="net.nan21.dnet.core.presenter.service.FileUploadServiceFactory">
+	</bean>
+	
+	<import resource="beans/pj.base.ds.xml" />
+	<import resource="beans/pj.md.ds.xml" />
+	<import resource="beans/pj.md.asgn.xml" />
 
+	<!-- Other beans / services  -->
+	
+	<bean id="projectAttachmentUploadService" scope="prototype"
+		class="net.nan21.dnet.module.pj._presenterdelegates.md.ProjectAttachmentUploadDelegate"></bean>
+		
+	<bean id="projectIssueAttachmentUploadService" scope="prototype"
+		class="net.nan21.dnet.module.pj._presenterdelegates.md.IssueAttachmentUploadDelegate"></bean>
+		
 </beans>

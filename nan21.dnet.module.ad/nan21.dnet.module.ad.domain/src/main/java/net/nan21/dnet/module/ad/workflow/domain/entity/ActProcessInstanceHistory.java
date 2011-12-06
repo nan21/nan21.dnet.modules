@@ -197,9 +197,11 @@ public class ActProcessInstanceHistory implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActProcessInstanceHistory e = (ActProcessInstanceHistory) event
                 .getSource();
 

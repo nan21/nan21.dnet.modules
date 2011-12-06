@@ -19,17 +19,8 @@ public class PositionCourseDsConv extends
         AbstractDsConverter<PositionCourseDs, PositionCourse> implements
         IDsConverter<PositionCourseDs, PositionCourse> {
 
-    protected void modelToEntityAttributes(PositionCourseDs ds, PositionCourse e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setMandatory(ds.getMandatory());
-        e.setValidFor(ds.getValidFor());
-    }
-
     protected void modelToEntityReferences(PositionCourseDs ds, PositionCourse e)
             throws Exception {
-
         if (ds.getPositionId() != null) {
             if (e.getPosition() == null
                     || !e.getPosition().getId().equals(ds.getPositionId())) {
@@ -63,6 +54,7 @@ public class PositionCourseDsConv extends
                                 + ds.getPositionCode() + "  ");
             }
             e.setPosition(x);
+
         } else {
             e.setPosition(null);
         }
@@ -81,34 +73,10 @@ public class PositionCourseDsConv extends
                                 + ds.getCourseCode() + "  ");
             }
             e.setCourse(x);
+
         } else {
             e.setCourse(null);
         }
-    }
-
-    @Override
-    public void entityToModel(PositionCourse e, PositionCourseDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setMandatory(e.getMandatory());
-        ds.setValidFor(e.getValidFor());
-        ds.setPositionId(((e.getPosition() != null)) ? e.getPosition().getId()
-                : null);
-        ds.setPositionCode(((e.getPosition() != null)) ? e.getPosition()
-                .getCode() : null);
-        ds.setPositionName(((e.getPosition() != null)) ? e.getPosition()
-                .getName() : null);
-        ds.setCourseId(((e.getCourse() != null)) ? e.getCourse().getId() : null);
-        ds.setCourseCode(((e.getCourse() != null)) ? e.getCourse().getCode()
-                : null);
-        ds.setCourseName(((e.getCourse() != null)) ? e.getCourse().getName()
-                : null);
     }
 
 }

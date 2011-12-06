@@ -17,22 +17,8 @@ public class DsAccessControlDsConv extends
         AbstractDsConverter<DsAccessControlDs, DsAccessControl> implements
         IDsConverter<DsAccessControlDs, DsAccessControl> {
 
-    protected void modelToEntityAttributes(DsAccessControlDs ds,
-            DsAccessControl e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setDsName(ds.getDsName());
-        e.setQueryAllowed(ds.getQueryAllowed());
-        e.setInsertAllowed(ds.getInsertAllowed());
-        e.setUpdateAllowed(ds.getUpdateAllowed());
-        e.setDeleteAllowed(ds.getDeleteAllowed());
-        e.setImportAllowed(ds.getImportAllowed());
-        e.setExportAllowed(ds.getExportAllowed());
-    }
-
     protected void modelToEntityReferences(DsAccessControlDs ds,
             DsAccessControl e) throws Exception {
-
         if (ds.getAccessControlId() != null) {
             if (e.getAccessControl() == null
                     || !e.getAccessControl().getId()
@@ -58,32 +44,10 @@ public class DsAccessControlDsConv extends
                                 + ds.getAccessControl() + "  ");
             }
             e.setAccessControl(x);
+
         } else {
             e.setAccessControl(null);
         }
-    }
-
-    @Override
-    public void entityToModel(DsAccessControl e, DsAccessControlDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setDsName(e.getDsName());
-        ds.setQueryAllowed(e.getQueryAllowed());
-        ds.setInsertAllowed(e.getInsertAllowed());
-        ds.setUpdateAllowed(e.getUpdateAllowed());
-        ds.setDeleteAllowed(e.getDeleteAllowed());
-        ds.setImportAllowed(e.getImportAllowed());
-        ds.setExportAllowed(e.getExportAllowed());
-        ds.setAccessControlId(((e.getAccessControl() != null)) ? e
-                .getAccessControl().getId() : null);
-        ds.setAccessControl(((e.getAccessControl() != null)) ? e
-                .getAccessControl().getName() : null);
     }
 
 }

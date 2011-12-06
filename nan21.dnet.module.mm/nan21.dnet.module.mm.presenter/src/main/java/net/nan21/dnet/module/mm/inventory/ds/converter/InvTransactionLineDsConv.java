@@ -22,16 +22,8 @@ public class InvTransactionLineDsConv extends
         AbstractDsConverter<InvTransactionLineDs, InvTransactionLine> implements
         IDsConverter<InvTransactionLineDs, InvTransactionLine> {
 
-    protected void modelToEntityAttributes(InvTransactionLineDs ds,
-            InvTransactionLine e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setQuantity(ds.getQuantity());
-    }
-
     protected void modelToEntityReferences(InvTransactionLineDs ds,
             InvTransactionLine e) throws Exception {
-
         if (ds.getTransactionId() != null) {
             if (e.getInvTransaction() == null
                     || !e.getInvTransaction().getId()
@@ -102,6 +94,7 @@ public class InvTransactionLineDsConv extends
                                 + ds.getItemCode() + "  ");
             }
             e.setItem(x);
+
         } else {
             e.setItem(null);
         }
@@ -121,6 +114,7 @@ public class InvTransactionLineDsConv extends
                                 + ds.getFromSubInventory() + "  ");
             }
             e.setFromSubInventory(x);
+
         } else {
             e.setFromSubInventory(null);
         }
@@ -140,6 +134,7 @@ public class InvTransactionLineDsConv extends
                                 + ds.getToSubInventory() + "  ");
             }
             e.setToSubInventory(x);
+
         } else {
             e.setToSubInventory(null);
         }
@@ -158,6 +153,7 @@ public class InvTransactionLineDsConv extends
                                 + ds.getFromLocator() + "  ");
             }
             e.setFromLocator(x);
+
         } else {
             e.setFromLocator(null);
         }
@@ -176,49 +172,10 @@ public class InvTransactionLineDsConv extends
                                 + ds.getToLocator() + "  ");
             }
             e.setToLocator(x);
+
         } else {
             e.setToLocator(null);
         }
-    }
-
-    @Override
-    public void entityToModel(InvTransactionLine e, InvTransactionLineDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setQuantity(e.getQuantity());
-        ds.setTransactionId(((e.getInvTransaction() != null)) ? e
-                .getInvTransaction().getId() : null);
-        ds.setFromInventoryId(((e.getInvTransaction() != null) && (e
-                .getInvTransaction().getFromInventory() != null)) ? e
-                .getInvTransaction().getFromInventory().getId() : null);
-        ds.setToInventoryId(((e.getInvTransaction() != null) && (e
-                .getInvTransaction().getToInventory() != null)) ? e
-                .getInvTransaction().getToInventory().getId() : null);
-        ds.setItemId(((e.getItem() != null)) ? e.getItem().getId() : null);
-        ds.setItemCode(((e.getItem() != null)) ? e.getItem().getCode() : null);
-        ds.setItem(((e.getItem() != null)) ? e.getItem().getName() : null);
-        ds.setFromSubInventoryId(((e.getFromSubInventory() != null)) ? e
-                .getFromSubInventory().getId() : null);
-        ds.setFromSubInventory(((e.getFromSubInventory() != null)) ? e
-                .getFromSubInventory().getName() : null);
-        ds.setFromLocatorId(((e.getFromLocator() != null)) ? e.getFromLocator()
-                .getId() : null);
-        ds.setFromLocator(((e.getFromLocator() != null)) ? e.getFromLocator()
-                .getName() : null);
-        ds.setToSubInventoryId(((e.getToSubInventory() != null)) ? e
-                .getToSubInventory().getId() : null);
-        ds.setToSubInventory(((e.getToSubInventory() != null)) ? e
-                .getToSubInventory().getName() : null);
-        ds.setToLocatorId(((e.getToLocator() != null)) ? e.getToLocator()
-                .getId() : null);
-        ds.setToLocator(((e.getToLocator() != null)) ? e.getToLocator()
-                .getName() : null);
     }
 
 }

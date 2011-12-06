@@ -16,20 +16,8 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Region;
 public class RegionDsConv extends AbstractDsConverter<RegionDs, Region>
         implements IDsConverter<RegionDs, Region> {
 
-    protected void modelToEntityAttributes(RegionDs ds, Region e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setIso(ds.getIso());
-    }
-
     protected void modelToEntityReferences(RegionDs ds, Region e)
             throws Exception {
-
         if (ds.getCountryId() != null) {
             if (e.getCountry() == null
                     || !e.getCountry().getId().equals(ds.getCountryId())) {
@@ -54,29 +42,10 @@ public class RegionDsConv extends AbstractDsConverter<RegionDs, Region>
                                 + ds.getCountryCode() + "  ");
             }
             e.setCountry(x);
+
         } else {
             e.setCountry(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Region e, RegionDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setIso(e.getIso());
-        ds.setCountryId(((e.getCountry() != null)) ? e.getCountry().getId()
-                : null);
-        ds.setCountryCode(((e.getCountry() != null)) ? e.getCountry().getCode()
-                : null);
     }
 
 }

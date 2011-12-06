@@ -118,9 +118,11 @@ public class ActByteArray implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActByteArray e = (ActByteArray) event.getSource();
 
     }

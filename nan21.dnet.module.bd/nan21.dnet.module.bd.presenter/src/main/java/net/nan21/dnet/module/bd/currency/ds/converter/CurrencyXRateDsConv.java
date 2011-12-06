@@ -18,17 +18,8 @@ public class CurrencyXRateDsConv extends
         AbstractDsConverter<CurrencyXRateDs, CurrencyXRate> implements
         IDsConverter<CurrencyXRateDs, CurrencyXRate> {
 
-    protected void modelToEntityAttributes(CurrencyXRateDs ds, CurrencyXRate e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setValidAt(ds.getValidAt());
-        e.setValue(ds.getValue());
-    }
-
     protected void modelToEntityReferences(CurrencyXRateDs ds, CurrencyXRate e)
             throws Exception {
-
         if (ds.getSourceId() != null) {
             if (e.getSource() == null
                     || !e.getSource().getId().equals(ds.getSourceId())) {
@@ -67,33 +58,10 @@ public class CurrencyXRateDsConv extends
                                 + ds.getProviderCode() + "  ");
             }
             e.setProvider(x);
+
         } else {
             e.setProvider(null);
         }
-    }
-
-    @Override
-    public void entityToModel(CurrencyXRate e, CurrencyXRateDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setValidAt(e.getValidAt());
-        ds.setValue(e.getValue());
-        ds.setSourceId(((e.getSource() != null)) ? e.getSource().getId() : null);
-        ds.setSourceCode(((e.getSource() != null)) ? e.getSource().getCode()
-                : null);
-        ds.setTargetId(((e.getTarget() != null)) ? e.getTarget().getId() : null);
-        ds.setTargetCode(((e.getTarget() != null)) ? e.getTarget().getCode()
-                : null);
-        ds.setProviderId(((e.getProvider() != null)) ? e.getProvider().getId()
-                : null);
-        ds.setProviderCode(((e.getProvider() != null)) ? e.getProvider()
-                .getCode() : null);
     }
 
 }

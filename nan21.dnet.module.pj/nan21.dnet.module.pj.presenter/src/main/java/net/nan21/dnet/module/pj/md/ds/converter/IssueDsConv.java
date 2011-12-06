@@ -31,22 +31,8 @@ import net.nan21.dnet.module.pj.md.domain.entity.Issue;
 public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         IDsConverter<IssueDs, Issue> {
 
-    protected void modelToEntityAttributes(IssueDs ds, Issue e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setCode(ds.getCode());
-        e.setSummary(ds.getSummary());
-        e.setDescription(ds.getDescription());
-        e.setDueDate(ds.getDueDate());
-        e.setResolutionDate(ds.getResolutionDate());
-        e.setClassName(ds.getClassName());
-        e.setBusinessObject(ds.getBusinessObject());
-    }
-
     protected void modelToEntityReferences(IssueDs ds, Issue e)
             throws Exception {
-
         if (ds.getProjectId() != null) {
             if (e.getProject() == null
                     || !e.getProject().getId().equals(ds.getProjectId())) {
@@ -162,6 +148,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                                 + ds.getProject() + "  ");
             }
             e.setProject(x);
+
         } else {
             e.setProject(null);
         }
@@ -179,6 +166,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
@@ -197,6 +185,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                                 + ds.getStatus() + "  ");
             }
             e.setStatus(x);
+
         } else {
             e.setStatus(null);
         }
@@ -215,6 +204,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                                 + ds.getPriority() + "  ");
             }
             e.setPriority(x);
+
         } else {
             e.setPriority(null);
         }
@@ -233,6 +223,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                                 + ds.getResolution() + "  ");
             }
             e.setResolution(x);
+
         } else {
             e.setResolution(null);
         }
@@ -251,6 +242,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                                 + ds.getSeverity() + "  ");
             }
             e.setSeverity(x);
+
         } else {
             e.setSeverity(null);
         }
@@ -269,6 +261,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                                 + ds.getAssigneeRole() + "  ");
             }
             e.setAssigneeRole(x);
+
         } else {
             e.setAssigneeRole(null);
         }
@@ -291,6 +284,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                                 + ds.getReportedVersion() + "  ");
             }
             e.setReportedVersion(x);
+
         } else {
             e.setReportedVersion(null);
         }
@@ -313,6 +307,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                                 + ds.getTargetVersion() + "  ");
             }
             e.setTargetVersion(x);
+
         } else {
             e.setTargetVersion(null);
         }
@@ -335,70 +330,10 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                                 + ds.getFixedInVersion() + "  ");
             }
             e.setFixedInVersion(x);
+
         } else {
             e.setFixedInVersion(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Issue e, IssueDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setCode(e.getCode());
-        ds.setSummary(e.getSummary());
-        ds.setDescription(e.getDescription());
-        ds.setDueDate(e.getDueDate());
-        ds.setResolutionDate(e.getResolutionDate());
-        ds.setClassName(e.getClassName());
-        ds.setBusinessObject(e.getBusinessObject());
-        ds.setProjectId(((e.getProject() != null)) ? e.getProject().getId()
-                : null);
-        ds.setProject(((e.getProject() != null)) ? e.getProject().getCode()
-                : null);
-        ds.setProjectName(((e.getProject() != null)) ? e.getProject().getName()
-                : null);
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
-        ds.setStatusId(((e.getStatus() != null)) ? e.getStatus().getId() : null);
-        ds.setStatus(((e.getStatus() != null)) ? e.getStatus().getName() : null);
-        ds.setPriorityId(((e.getPriority() != null)) ? e.getPriority().getId()
-                : null);
-        ds.setPriority(((e.getPriority() != null)) ? e.getPriority().getName()
-                : null);
-        ds.setResolutionId(((e.getResolution() != null)) ? e.getResolution()
-                .getId() : null);
-        ds.setResolution(((e.getResolution() != null)) ? e.getResolution()
-                .getName() : null);
-        ds.setSeverityId(((e.getSeverity() != null)) ? e.getSeverity().getId()
-                : null);
-        ds.setSeverity(((e.getSeverity() != null)) ? e.getSeverity().getName()
-                : null);
-        ds.setAssigneeId(((e.getAssignee() != null)) ? e.getAssignee().getId()
-                : null);
-        ds.setAssignee(((e.getAssignee() != null) && (e.getAssignee()
-                .getMember() != null)) ? e.getAssignee().getMember().getName()
-                : null);
-        ds.setAssigneeRoleId(((e.getAssigneeRole() != null)) ? e
-                .getAssigneeRole().getId() : null);
-        ds.setAssigneeRole(((e.getAssigneeRole() != null)) ? e
-                .getAssigneeRole().getName() : null);
-        ds.setReportedVersionId(((e.getReportedVersion() != null)) ? e
-                .getReportedVersion().getId() : null);
-        ds.setReportedVersion(((e.getReportedVersion() != null)) ? e
-                .getReportedVersion().getName() : null);
-        ds.setTargetVersionId(((e.getTargetVersion() != null)) ? e
-                .getTargetVersion().getId() : null);
-        ds.setTargetVersion(((e.getTargetVersion() != null)) ? e
-                .getTargetVersion().getName() : null);
-        ds.setFixedInVersionId(((e.getFixedInVersion() != null)) ? e
-                .getFixedInVersion().getId() : null);
-        ds.setFixedInVersion(((e.getFixedInVersion() != null)) ? e
-                .getFixedInVersion().getName() : null);
     }
 
 }

@@ -27,6 +27,11 @@ public class ProductAttributeValueDs extends
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fPRODUCTID = "productId";
+    public static final String fPRODUCTCODE = "productCode";
+    public static final String fPRODUCTNAME = "productName";
+    public static final String fGROUPID = "groupId";
+    public static final String fGROUP = "group";
+    public static final String fGROUPATTRIBUTEID = "groupAttributeId";
     public static final String fATTRIBUTEID = "attributeId";
     public static final String fATTRIBUTE = "attribute";
     public static final String fTITLE = "title";
@@ -61,28 +66,43 @@ public class ProductAttributeValueDs extends
     @DsField(join = "left", path = "product.id")
     private Long productId;
 
-    @DsField(join = "left", path = "attribute.id")
+    @DsField(join = "left", path = "product.code")
+    private String productCode;
+
+    @DsField(join = "left", path = "product.name")
+    private String productName;
+
+    @DsField(join = "left", path = "product.attributeGroup.id")
+    private Long groupId;
+
+    @DsField(join = "left", path = "product.attributeGroup.name")
+    private String group;
+
+    @DsField(join = "left", path = "groupAttribute.id")
+    private Long groupAttributeId;
+
+    @DsField(join = "left", path = "groupAttribute.attribute.id")
     private Long attributeId;
 
-    @DsField(join = "left", path = "attribute.name")
+    @DsField(join = "left", path = "groupAttribute.attribute.name")
     private String attribute;
 
-    @DsField(join = "left", path = "attribute.title")
+    @DsField(join = "left", path = "groupAttribute.attribute.title")
     private String title;
 
-    @DsField(join = "left", path = "attribute.dataType")
+    @DsField(join = "left", path = "groupAttribute.attribute.dataType")
     private String dataType;
 
-    @DsField(join = "left", path = "attribute.type.id")
+    @DsField(join = "left", path = "groupAttribute.attribute.type.id")
     private Long typeId;
 
-    @DsField(join = "left", path = "attribute.type.name")
+    @DsField(join = "left", path = "groupAttribute.attribute.type.name")
     private String type;
 
-    @DsField(join = "left", path = "attribute.uom.code")
+    @DsField(join = "left", path = "groupAttribute.attribute.uom.code")
     private String uom;
 
-    @DsField(join = "left", path = "attribute.listOfvalues")
+    @DsField(join = "left", path = "groupAttribute.attribute.listOfvalues")
     private String listOfvalues;
 
     @DsField()
@@ -159,6 +179,46 @@ public class ProductAttributeValueDs extends
 
     public void setProductId(Long productId) {
         this.productId = productId;
+    }
+
+    public String getProductCode() {
+        return this.productCode;
+    }
+
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
+    }
+
+    public String getProductName() {
+        return this.productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public Long getGroupId() {
+        return this.groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
+    }
+
+    public String getGroup() {
+        return this.group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public Long getGroupAttributeId() {
+        return this.groupAttributeId;
+    }
+
+    public void setGroupAttributeId(Long groupAttributeId) {
+        this.groupAttributeId = groupAttributeId;
     }
 
     public Long getAttributeId() {

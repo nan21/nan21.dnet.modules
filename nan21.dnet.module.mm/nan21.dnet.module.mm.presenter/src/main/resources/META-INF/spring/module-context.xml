@@ -30,7 +30,22 @@
 	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" >		  
 	</bean>
 	
+	<bean id="fileUploadServiceFactory"
+	 class="net.nan21.dnet.core.presenter.service.FileUploadServiceFactory" >		 
+	</bean>
+	
+	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator">
+	 
+	</bean> 
+	
 	<import resource="beans/mm.md.ds.xml"/>
 	<import resource="beans/mm.md.asgn.xml"/> 
 	<import resource="beans/mm.inventory.ds.xml"/> 
+	
+	
+	 <!-- Other beans / services  -->
+	 
+	 <bean id="productAttachmentUploadService"  scope="prototype" 
+  		class="net.nan21.dnet.module.mm._presenterdelegates.md.ProductAttachmentUploadDelegate"></bean>
+	 
 </beans>

@@ -18,18 +18,8 @@ import net.nan21.dnet.module.hr.skill.domain.entity.Skill;
 public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
         IDsConverter<SkillDs, Skill> {
 
-    protected void modelToEntityAttributes(SkillDs ds, Skill e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(SkillDs ds, Skill e)
             throws Exception {
-
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -63,6 +53,7 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
@@ -81,29 +72,10 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
                                 + ds.getRatingScale() + "  ");
             }
             e.setRatingScale(x);
+
         } else {
             e.setRatingScale(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Skill e, SkillDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
-        ds.setRatingScaleId(((e.getRatingScale() != null)) ? e.getRatingScale()
-                .getId() : null);
-        ds.setRatingScale(((e.getRatingScale() != null)) ? e.getRatingScale()
-                .getName() : null);
     }
 
 }

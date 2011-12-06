@@ -11,7 +11,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccSchemaDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.AccSchema" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.acc.ds.converter.AccSchemaDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccSchema" />
@@ -22,7 +21,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccSchemaLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.AccSchema" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.acc.ds.converter.AccSchemaLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccSchemaLov" />
@@ -44,7 +42,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.acc.ds.converter.AccountGroupLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccountGroupLov" />
@@ -66,7 +63,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.Account" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.acc.ds.converter.AccountLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccountLov" />

@@ -17,19 +17,8 @@ public class ImportMapItemDsConv extends
         AbstractDsConverter<ImportMapItemDs, ImportMapItem> implements
         IDsConverter<ImportMapItemDs, ImportMapItem> {
 
-    protected void modelToEntityAttributes(ImportMapItemDs ds, ImportMapItem e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setSequenceNo(ds.getSequenceNo());
-        e.setDataSourceName(ds.getDataSource());
-        e.setFileName(ds.getFileName());
-        e.setActive(ds.getActive());
-    }
-
     protected void modelToEntityReferences(ImportMapItemDs ds, ImportMapItem e)
             throws Exception {
-
         if (ds.getImportMapId() != null) {
             if (e.getImportMap() == null
                     || !e.getImportMap().getId().equals(ds.getImportMapId())) {
@@ -54,29 +43,10 @@ public class ImportMapItemDsConv extends
                                 + ds.getImportMapName() + "  ");
             }
             e.setImportMap(x);
+
         } else {
             e.setImportMap(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ImportMapItem e, ImportMapItemDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setSequenceNo(e.getSequenceNo());
-        ds.setDataSource(e.getDataSourceName());
-        ds.setFileName(e.getFileName());
-        ds.setActive(e.getActive());
-        ds.setImportMapId(((e.getImportMap() != null)) ? e.getImportMap()
-                .getId() : null);
-        ds.setImportMapName(((e.getImportMap() != null)) ? e.getImportMap()
-                .getName() : null);
     }
 
 }

@@ -16,20 +16,8 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.Element;
 public class ElementDsConv extends AbstractDsConverter<ElementDs, Element>
         implements IDsConverter<ElementDs, Element> {
 
-    protected void modelToEntityAttributes(ElementDs ds, Element e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setDataType(ds.getDataType());
-    }
-
     protected void modelToEntityReferences(ElementDs ds, Element e)
             throws Exception {
-
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -54,27 +42,10 @@ public class ElementDsConv extends AbstractDsConverter<ElementDs, Element>
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Element e, ElementDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setDataType(e.getDataType());
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
     }
 
 }

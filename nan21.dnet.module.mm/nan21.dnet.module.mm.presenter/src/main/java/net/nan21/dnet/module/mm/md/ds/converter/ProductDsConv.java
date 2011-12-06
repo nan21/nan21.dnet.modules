@@ -20,28 +20,8 @@ import net.nan21.dnet.module.mm.md.domain.entity.Product;
 public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         implements IDsConverter<ProductDs, Product> {
 
-    protected void modelToEntityAttributes(ProductDs ds, Product e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setStorable(ds.getStorable());
-        e.setWeight(ds.getWeight());
-        e.setVolume(ds.getVolume());
-        e.setDimWidth(ds.getDimWidth());
-        e.setDimHeight(ds.getDimHeight());
-        e.setDimDepth(ds.getDimDepth());
-        e.setManufacturerProductNo(ds.getManufacturerProductNo());
-        e.setClassName(ds.getClassName());
-        e.setBusinessObject(ds.getBusinessObject());
-    }
-
     protected void modelToEntityReferences(ProductDs ds, Product e)
             throws Exception {
-
         if (ds.getManufacturerId() != null) {
             if (e.getManufacturer() == null
                     || !e.getManufacturer().getId()
@@ -113,6 +93,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getManufacturerCode() + "  ");
             }
             e.setManufacturer(x);
+
         } else {
             e.setManufacturer(null);
         }
@@ -132,6 +113,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getDefaultUomCode() + "  ");
             }
             e.setDefaultUom(x);
+
         } else {
             e.setDefaultUom(null);
         }
@@ -149,6 +131,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getDimUomCode() + "  ");
             }
             e.setDimUom(x);
+
         } else {
             e.setDimUom(null);
         }
@@ -167,6 +150,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getVolumeUomCode() + "  ");
             }
             e.setVolumeUom(x);
+
         } else {
             e.setVolumeUom(null);
         }
@@ -185,6 +169,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getWeightUomCode() + "  ");
             }
             e.setWeightUom(x);
+
         } else {
             e.setWeightUom(null);
         }
@@ -204,56 +189,10 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                                 + ds.getAttributeGroup() + "  ");
             }
             e.setAttributeGroup(x);
+
         } else {
             e.setAttributeGroup(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Product e, ProductDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setStorable(e.getStorable());
-        ds.setWeight(e.getWeight());
-        ds.setVolume(e.getVolume());
-        ds.setDimWidth(e.getDimWidth());
-        ds.setDimHeight(e.getDimHeight());
-        ds.setDimDepth(e.getDimDepth());
-        ds.setManufacturerProductNo(e.getManufacturerProductNo());
-        ds.setClassName(e.getClassName());
-        ds.setBusinessObject(e.getBusinessObject());
-        ds.setDefaultUomId(((e.getDefaultUom() != null)) ? e.getDefaultUom()
-                .getId() : null);
-        ds.setDefaultUomCode(((e.getDefaultUom() != null)) ? e.getDefaultUom()
-                .getCode() : null);
-        ds.setWeightUomId(((e.getWeightUom() != null)) ? e.getWeightUom()
-                .getId() : null);
-        ds.setWeightUomCode(((e.getWeightUom() != null)) ? e.getWeightUom()
-                .getCode() : null);
-        ds.setVolumeUomId(((e.getVolumeUom() != null)) ? e.getVolumeUom()
-                .getId() : null);
-        ds.setVolumeUomCode(((e.getVolumeUom() != null)) ? e.getVolumeUom()
-                .getCode() : null);
-        ds.setDimUomId(((e.getDimUom() != null)) ? e.getDimUom().getId() : null);
-        ds.setDimUomCode(((e.getDimUom() != null)) ? e.getDimUom().getCode()
-                : null);
-        ds.setManufacturerId(((e.getManufacturer() != null)) ? e
-                .getManufacturer().getId() : null);
-        ds.setManufacturerCode(((e.getManufacturer() != null)) ? e
-                .getManufacturer().getCode() : null);
-        ds.setAttributeGroupId(((e.getAttributeGroup() != null)) ? e
-                .getAttributeGroup().getId() : null);
-        ds.setAttributeGroup(((e.getAttributeGroup() != null)) ? e
-                .getAttributeGroup().getName() : null);
     }
 
 }

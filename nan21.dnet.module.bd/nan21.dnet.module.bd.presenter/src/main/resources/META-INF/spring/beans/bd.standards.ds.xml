@@ -11,7 +11,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.standards.ds.converter.ClassificationSystemDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ClassificationSystem" />
@@ -22,7 +21,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.standards.ds.converter.ClassificationSystemLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ClassificationSystemLov" />
@@ -44,7 +42,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationCodeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.standards.ds.converter.ClassificationCodeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ClassificationCodeLov" />

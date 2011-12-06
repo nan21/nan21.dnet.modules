@@ -21,15 +21,8 @@ public class OrganizationHierarchyItemDsConv
         implements
         IDsConverter<OrganizationHierarchyItemDs, OrganizationHierarchyItem> {
 
-    protected void modelToEntityAttributes(OrganizationHierarchyItemDs ds,
-            OrganizationHierarchyItem e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(OrganizationHierarchyItemDs ds,
             OrganizationHierarchyItem e) throws Exception {
-
         if (ds.getHierarchyId() != null) {
             if (e.getHierarchy() == null
                     || !e.getHierarchy().getId().equals(ds.getHierarchyId())) {
@@ -74,6 +67,7 @@ public class OrganizationHierarchyItemDsConv
                                 + ds.getHierarchy() + "  ");
             }
             e.setHierarchy(x);
+
         } else {
             e.setHierarchy(null);
         }
@@ -94,6 +88,7 @@ public class OrganizationHierarchyItemDsConv
                                 + ds.getOrganizationCode() + "  ");
             }
             e.setOrganization(x);
+
         } else {
             e.setOrganization(null);
         }
@@ -112,32 +107,10 @@ public class OrganizationHierarchyItemDsConv
                                 + ds.getParentCode() + "  ");
             }
             e.setParent(x);
+
         } else {
             e.setParent(null);
         }
-    }
-
-    @Override
-    public void entityToModel(OrganizationHierarchyItem e,
-            OrganizationHierarchyItemDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setHierarchyId(((e.getHierarchy() != null)) ? e.getHierarchy()
-                .getId() : null);
-        ds.setHierarchy(((e.getHierarchy() != null)) ? e.getHierarchy()
-                .getName() : null);
-        ds.setOrganizationId(((e.getOrganization() != null)) ? e
-                .getOrganization().getId() : null);
-        ds.setOrganizationCode(((e.getOrganization() != null)) ? e
-                .getOrganization().getCode() : null);
-        ds.setParentId(((e.getParent() != null)) ? e.getParent().getId() : null);
-        ds.setParentCode(((e.getParent() != null)) ? e.getParent().getCode()
-                : null);
     }
 
 }

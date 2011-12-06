@@ -19,17 +19,8 @@ public class ImportJobItemDsConv extends
         AbstractDsConverter<ImportJobItemDs, ImportJobItem> implements
         IDsConverter<ImportJobItemDs, ImportJobItem> {
 
-    protected void modelToEntityAttributes(ImportJobItemDs ds, ImportJobItem e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setSequenceNo(ds.getSequenceNo());
-        e.setActive(ds.getActive());
-    }
-
     protected void modelToEntityReferences(ImportJobItemDs ds, ImportJobItem e)
             throws Exception {
-
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
                 e.setJob((ImportJob) this.em.find(ImportJob.class,
@@ -61,6 +52,7 @@ public class ImportJobItemDsConv extends
                                 + ds.getJobName() + "  ");
             }
             e.setJob(x);
+
         } else {
             e.setJob(null);
         }
@@ -79,27 +71,10 @@ public class ImportJobItemDsConv extends
                                 + ds.getMapName() + "  ");
             }
             e.setMap(x);
+
         } else {
             e.setMap(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ImportJobItem e, ImportJobItemDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setSequenceNo(e.getSequenceNo());
-        ds.setActive(e.getActive());
-        ds.setJobId(((e.getJob() != null)) ? e.getJob().getId() : null);
-        ds.setJobName(((e.getJob() != null)) ? e.getJob().getName() : null);
-        ds.setMapId(((e.getMap() != null)) ? e.getMap().getId() : null);
-        ds.setMapName(((e.getMap() != null)) ? e.getMap().getName() : null);
     }
 
 }

@@ -18,17 +18,8 @@ public class DsReportParamDsConv extends
         AbstractDsConverter<DsReportParamDs, DsReportParam> implements
         IDsConverter<DsReportParamDs, DsReportParam> {
 
-    protected void modelToEntityAttributes(DsReportParamDs ds, DsReportParam e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setDsField(ds.getDsField());
-        e.setStaticValue(ds.getStaticValue());
-    }
-
     protected void modelToEntityReferences(DsReportParamDs ds, DsReportParam e)
             throws Exception {
-
         if (ds.getDsReportId() != null) {
             if (e.getDsReport() == null
                     || !e.getDsReport().getId().equals(ds.getDsReportId())) {
@@ -63,39 +54,10 @@ public class DsReportParamDsConv extends
                                 + ds.getParamCode() + "  ");
             }
             e.setReportParam(x);
+
         } else {
             e.setReportParam(null);
         }
-    }
-
-    @Override
-    public void entityToModel(DsReportParam e, DsReportParamDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setDsField(e.getDsField());
-        ds.setStaticValue(e.getStaticValue());
-        ds.setDsReportId(((e.getDsReport() != null)) ? e.getDsReport().getId()
-                : null);
-        ds.setReportId(((e.getDsReport() != null) && (e.getDsReport()
-                .getReport() != null)) ? e.getDsReport().getReport().getId()
-                : null);
-        ds.setReportCode(((e.getDsReport() != null) && (e.getDsReport()
-                .getReport() != null)) ? e.getDsReport().getReport().getCode()
-                : null);
-        ds.setParamId(((e.getReportParam() != null)) ? e.getReportParam()
-                .getId() : null);
-        ds.setParamCode(((e.getReportParam() != null)) ? e.getReportParam()
-                .getCode() : null);
-        ds.setParamName(((e.getReportParam() != null)) ? e.getReportParam()
-                .getName() : null);
-        ds.setDataSource(((e.getDsReport() != null)) ? e.getDsReport()
-                .getDataSource() : null);
     }
 
 }

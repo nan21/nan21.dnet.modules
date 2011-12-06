@@ -18,21 +18,8 @@ import net.nan21.dnet.module.bd.acc.domain.entity.Account;
 public class AccountDsConv extends AbstractDsConverter<AccountDs, Account>
         implements IDsConverter<AccountDs, Account> {
 
-    protected void modelToEntityAttributes(AccountDs ds, Account e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setSign(ds.getSign());
-        e.setSummary(ds.getSummary());
-    }
-
     protected void modelToEntityReferences(AccountDs ds, Account e)
             throws Exception {
-
         if (ds.getAccSchemaId() != null) {
             if (e.getAccSchema() == null
                     || !e.getAccSchema().getId().equals(ds.getAccSchemaId())) {
@@ -66,6 +53,7 @@ public class AccountDsConv extends AbstractDsConverter<AccountDs, Account>
                                 + ds.getAccSchema() + "  ");
             }
             e.setAccSchema(x);
+
         } else {
             e.setAccSchema(null);
         }
@@ -84,34 +72,10 @@ public class AccountDsConv extends AbstractDsConverter<AccountDs, Account>
                                 + ds.getAccGroup() + "  ");
             }
             e.setAccGroup(x);
+
         } else {
             e.setAccGroup(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Account e, AccountDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setSign(e.getSign());
-        ds.setSummary(e.getSummary());
-        ds.setAccSchemaId(((e.getAccSchema() != null)) ? e.getAccSchema()
-                .getId() : null);
-        ds.setAccSchema(((e.getAccSchema() != null)) ? e.getAccSchema()
-                .getCode() : null);
-        ds.setAccGroupId(((e.getAccGroup() != null)) ? e.getAccGroup().getId()
-                : null);
-        ds.setAccGroup(((e.getAccGroup() != null)) ? e.getAccGroup().getCode()
-                : null);
     }
 
 }

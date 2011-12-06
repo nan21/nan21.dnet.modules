@@ -21,20 +21,8 @@ public class BpBankAccountDsConv extends
         AbstractDsConverter<BpBankAccountDs, BpBankAccount> implements
         IDsConverter<BpBankAccountDs, BpBankAccount> {
 
-    protected void modelToEntityAttributes(BpBankAccountDs ds, BpBankAccount e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setBankBranch(ds.getBankBranch());
-        e.setAccountNo(ds.getAccountNo());
-        e.setIbanAccount(ds.getIbanAccount());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-    }
-
     protected void modelToEntityReferences(BpBankAccountDs ds, BpBankAccount e)
             throws Exception {
-
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
@@ -76,6 +64,7 @@ public class BpBankAccountDsConv extends
                                 + ds.getCurrencyCode() + "  ");
             }
             e.setCurrency(x);
+
         } else {
             e.setCurrency(null);
         }
@@ -94,6 +83,7 @@ public class BpBankAccountDsConv extends
                                 + ds.getBankCode() + "  ");
             }
             e.setBank(x);
+
         } else {
             e.setBank(null);
         }
@@ -112,36 +102,10 @@ public class BpBankAccountDsConv extends
                                 + ds.getBpartnerCode() + "  ");
             }
             e.setBpartner(x);
+
         } else {
             e.setBpartner(null);
         }
-    }
-
-    @Override
-    public void entityToModel(BpBankAccount e, BpBankAccountDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setBankBranch(e.getBankBranch());
-        ds.setAccountNo(e.getAccountNo());
-        ds.setIbanAccount(e.getIbanAccount());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setBpartnerId(((e.getBpartner() != null)) ? e.getBpartner().getId()
-                : null);
-        ds.setBpartnerCode(((e.getBpartner() != null)) ? e.getBpartner()
-                .getCode() : null);
-        ds.setBankId(((e.getBank() != null)) ? e.getBank().getId() : null);
-        ds.setBankCode(((e.getBank() != null)) ? e.getBank().getCode() : null);
-        ds.setCurrencyId(((e.getCurrency() != null)) ? e.getCurrency().getId()
-                : null);
-        ds.setCurrencyCode(((e.getCurrency() != null)) ? e.getCurrency()
-                .getCode() : null);
     }
 
 }

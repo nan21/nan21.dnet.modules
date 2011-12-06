@@ -17,20 +17,8 @@ public class CommunicationChannelDsConv extends
         AbstractDsConverter<CommunicationChannelDs, CommunicationChannel>
         implements IDsConverter<CommunicationChannelDs, CommunicationChannel> {
 
-    protected void modelToEntityAttributes(CommunicationChannelDs ds,
-            CommunicationChannel e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setTargetId(ds.getTargetId());
-        e.setTargetType(ds.getTargetType());
-        e.setValue(ds.getValue());
-        e.setValidFrom(ds.getValidFrom());
-        e.setValidTo(ds.getValidTo());
-    }
-
     protected void modelToEntityReferences(CommunicationChannelDs ds,
             CommunicationChannel e) throws Exception {
-
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -55,28 +43,10 @@ public class CommunicationChannelDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(CommunicationChannel e, CommunicationChannelDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setTargetId(e.getTargetId());
-        ds.setTargetType(e.getTargetType());
-        ds.setValue(e.getValue());
-        ds.setValidFrom(e.getValidFrom());
-        ds.setValidTo(e.getValidTo());
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
     }
 
 }

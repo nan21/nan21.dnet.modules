@@ -17,18 +17,8 @@ public class UomConversionDsConv extends
         AbstractDsConverter<UomConversionDs, UomConversion> implements
         IDsConverter<UomConversionDs, UomConversion> {
 
-    protected void modelToEntityAttributes(UomConversionDs ds, UomConversion e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setMultiplyWith(ds.getMultiplyWith());
-        e.setDivideTo(ds.getDivideTo());
-        e.setActive(ds.getActive());
-    }
-
     protected void modelToEntityReferences(UomConversionDs ds, UomConversion e)
             throws Exception {
-
         if (ds.getSourceId() != null) {
             if (e.getSource() == null
                     || !e.getSource().getId().equals(ds.getSourceId())) {
@@ -60,6 +50,7 @@ public class UomConversionDsConv extends
                                 + ds.getSourceCode() + "  ");
             }
             e.setSource(x);
+
         } else {
             e.setSource(null);
         }
@@ -78,30 +69,10 @@ public class UomConversionDsConv extends
                                 + ds.getTargetCode() + "  ");
             }
             e.setTarget(x);
+
         } else {
             e.setTarget(null);
         }
-    }
-
-    @Override
-    public void entityToModel(UomConversion e, UomConversionDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setMultiplyWith(e.getMultiplyWith());
-        ds.setDivideTo(e.getDivideTo());
-        ds.setActive(e.getActive());
-        ds.setSourceId(((e.getSource() != null)) ? e.getSource().getId() : null);
-        ds.setSourceCode(((e.getSource() != null)) ? e.getSource().getCode()
-                : null);
-        ds.setTargetId(((e.getTarget() != null)) ? e.getTarget().getId() : null);
-        ds.setTargetCode(((e.getTarget() != null)) ? e.getTarget().getCode()
-                : null);
     }
 
 }

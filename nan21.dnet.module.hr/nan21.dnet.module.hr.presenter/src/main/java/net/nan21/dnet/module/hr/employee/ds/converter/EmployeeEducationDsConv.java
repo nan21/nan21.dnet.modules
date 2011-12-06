@@ -18,20 +18,8 @@ public class EmployeeEducationDsConv extends
         AbstractDsConverter<EmployeeEducationDs, EmployeeEducation> implements
         IDsConverter<EmployeeEducationDs, EmployeeEducation> {
 
-    protected void modelToEntityAttributes(EmployeeEducationDs ds,
-            EmployeeEducation e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setFromDate(ds.getFromDate());
-        e.setToDate(ds.getToDate());
-        e.setInstitute(ds.getInstitute());
-        e.setDegree(ds.getDegree());
-        e.setNotes(ds.getNotes());
-    }
-
     protected void modelToEntityReferences(EmployeeEducationDs ds,
             EmployeeEducation e) throws Exception {
-
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -63,30 +51,10 @@ public class EmployeeEducationDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(EmployeeEducation e, EmployeeEducationDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setFromDate(e.getFromDate());
-        ds.setToDate(e.getToDate());
-        ds.setInstitute(e.getInstitute());
-        ds.setDegree(e.getDegree());
-        ds.setNotes(e.getNotes());
-        ds.setEmployeeId(((e.getEmployee() != null)) ? e.getEmployee().getId()
-                : null);
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
     }
 
 }

@@ -6,7 +6,7 @@
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 	 
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory</class>
+		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory</class>		 
 		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectType</class>
 		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectRole</class>
 		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus</class>
@@ -22,15 +22,21 @@
 		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType</class>
 		  
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.Project</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectAttachment</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectMember</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.Issue</class>
+		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueAttachment</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueTask</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueText</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueLink</class>
 	 
 		 <!-- Dependencies -->
+		 
+		 <class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>
+		<class>net.nan21.dnet.module.ad.data.domain.entity.AttachmentType</class>
+		
 		 <class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgn</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
 		

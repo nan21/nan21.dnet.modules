@@ -18,19 +18,8 @@ import net.nan21.dnet.module.hr.job.domain.entity.Position;
 public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
         implements IDsConverter<PositionDs, Position> {
 
-    protected void modelToEntityAttributes(PositionDs ds, Position e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(PositionDs ds, Position e)
             throws Exception {
-
         if (ds.getOrganizationId() != null) {
             if (e.getOrganization() == null
                     || !e.getOrganization().getId()
@@ -64,6 +53,7 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
                                 + ds.getOrganizationCode() + "  ");
             }
             e.setOrganization(x);
+
         } else {
             e.setOrganization(null);
         }
@@ -81,30 +71,10 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
                                 + ds.getJobCode() + "  ");
             }
             e.setJob(x);
+
         } else {
             e.setJob(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Position e, PositionDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setJobId(((e.getJob() != null)) ? e.getJob().getId() : null);
-        ds.setJobCode(((e.getJob() != null)) ? e.getJob().getCode() : null);
-        ds.setOrganizationId(((e.getOrganization() != null)) ? e
-                .getOrganization().getId() : null);
-        ds.setOrganizationCode(((e.getOrganization() != null)) ? e
-                .getOrganization().getCode() : null);
     }
 
 }

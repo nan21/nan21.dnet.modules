@@ -17,18 +17,8 @@ public class StockLocatorDsConv extends
         AbstractDsConverter<StockLocatorDs, StockLocator> implements
         IDsConverter<StockLocatorDs, StockLocator> {
 
-    protected void modelToEntityAttributes(StockLocatorDs ds, StockLocator e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(StockLocatorDs ds, StockLocator e)
             throws Exception {
-
         if (ds.getSubInventoryId() != null) {
             if (e.getSubInventory() == null
                     || !e.getSubInventory().getId()
@@ -54,32 +44,10 @@ public class StockLocatorDsConv extends
                                 + ds.getSubInventory() + "  ");
             }
             e.setSubInventory(x);
+
         } else {
             e.setSubInventory(null);
         }
-    }
-
-    @Override
-    public void entityToModel(StockLocator e, StockLocatorDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setSubInventoryId(((e.getSubInventory() != null)) ? e
-                .getSubInventory().getId() : null);
-        ds.setSubInventory(((e.getSubInventory() != null)) ? e
-                .getSubInventory().getName() : null);
-        ds.setLocatorTypeId(((e.getLocatorType() != null)) ? e.getLocatorType()
-                .getId() : null);
-        ds.setLocatorType(((e.getLocatorType() != null)) ? e.getLocatorType()
-                .getName() : null);
     }
 
 }

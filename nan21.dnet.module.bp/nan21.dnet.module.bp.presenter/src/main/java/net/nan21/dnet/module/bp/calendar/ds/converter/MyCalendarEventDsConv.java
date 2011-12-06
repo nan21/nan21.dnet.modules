@@ -21,26 +21,8 @@ public class MyCalendarEventDsConv extends
         AbstractDsConverter<MyCalendarEventDs, CalendarEvent> implements
         IDsConverter<MyCalendarEventDs, CalendarEvent> {
 
-    protected void modelToEntityAttributes(MyCalendarEventDs ds, CalendarEvent e)
-            throws Exception {
-        e.setSubject(ds.getSubject());
-        e.setStartDate(ds.getStartDate());
-        e.setEndDate(ds.getEndDate());
-        e.setDueDate(ds.getDueDate());
-        e.setEventType(ds.getEventType());
-        e.setNotes(ds.getNotes());
-        e.setLocation(ds.getLocation());
-        e.setUrl(ds.getUrl());
-        e.setReminder(ds.getReminder());
-        e.setAllDay(ds.getAllDay());
-        e.setClientId(ds.getClientId());
-        e.setTargetId(ds.getTargetId());
-        e.setTargetType(ds.getTargetType());
-    }
-
     protected void modelToEntityReferences(MyCalendarEventDs ds, CalendarEvent e)
             throws Exception {
-
         if (ds.getBpartnerId() != null) {
             if (e.getBpartner() == null
                     || !e.getBpartner().getId().equals(ds.getBpartnerId())) {
@@ -83,6 +65,7 @@ public class MyCalendarEventDsConv extends
                                 + ds.getBpartnerCode() + "  ");
             }
             e.setBpartner(x);
+
         } else {
             e.setBpartner(null);
         }
@@ -106,6 +89,7 @@ public class MyCalendarEventDsConv extends
                                 + ds.getPriorityName() + "  ");
             }
             e.setPriority(x);
+
         } else {
             e.setPriority(null);
         }
@@ -128,44 +112,10 @@ public class MyCalendarEventDsConv extends
                                 + ds.getStatusName() + "  ");
             }
             e.setStatus(x);
+
         } else {
             e.setStatus(null);
         }
-    }
-
-    @Override
-    public void entityToModel(CalendarEvent e, MyCalendarEventDs ds)
-            throws Exception {
-        ds.setSubject(e.getSubject());
-        ds.setStartDate(e.getStartDate());
-        ds.setEndDate(e.getEndDate());
-        ds.setDueDate(e.getDueDate());
-        ds.setEventType(e.getEventType());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setNotes(e.getNotes());
-        ds.setLocation(e.getLocation());
-        ds.setUrl(e.getUrl());
-        ds.setReminder(e.getReminder());
-        ds.setAllDay(e.getAllDay());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setTargetId(e.getTargetId());
-        ds.setTargetType(e.getTargetType());
-        ds.setStatusId(((e.getStatus() != null)) ? e.getStatus().getId() : null);
-        ds.setStatusName(((e.getStatus() != null)) ? e.getStatus().getName()
-                : null);
-        ds.setPriorityId(((e.getPriority() != null)) ? e.getPriority().getId()
-                : null);
-        ds.setPriorityName(((e.getPriority() != null)) ? e.getPriority()
-                .getName() : null);
-        ds.setBpartnerId(((e.getBpartner() != null)) ? e.getBpartner().getId()
-                : null);
-        ds.setBpartnerCode(((e.getBpartner() != null)) ? e.getBpartner()
-                .getCode() : null);
-        ds.setContactId(((e.getContact() != null)) ? e.getContact().getId()
-                : null);
-        ds.setContact(((e.getContact() != null)) ? e.getContact().getName()
-                : null);
     }
 
 }

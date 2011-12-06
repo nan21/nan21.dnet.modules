@@ -20,19 +20,8 @@ import net.nan21.dnet.module.hr.time.domain.entity.Absence;
 public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
         implements IDsConverter<AbsenceDs, Absence> {
 
-    protected void modelToEntityAttributes(AbsenceDs ds, Absence e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setEventDate(ds.getEventDate());
-        e.setHours(ds.getHours());
-        e.setNotes(ds.getNotes());
-        e.setPosted(ds.getPosted());
-    }
-
     protected void modelToEntityReferences(AbsenceDs ds, Absence e)
             throws Exception {
-
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -75,6 +64,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
                                 + ds.getEmployeeCode() + "  ");
             }
             e.setEmployee(x);
+
         } else {
             e.setEmployee(null);
         }
@@ -93,6 +83,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
                                 + ds.getReason() + "  ");
             }
             e.setReason(x);
+
         } else {
             e.setReason(null);
         }
@@ -111,34 +102,10 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Absence e, AbsenceDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setEventDate(e.getEventDate());
-        ds.setHours(e.getHours());
-        ds.setNotes(e.getNotes());
-        ds.setPosted(e.getPosted());
-        ds.setEmployeeId(((e.getEmployee() != null)) ? e.getEmployee().getId()
-                : null);
-        ds.setEmployeeCode(((e.getEmployee() != null)) ? e.getEmployee()
-                .getCode() : null);
-        ds.setEmployee(((e.getEmployee() != null)) ? e.getEmployee().getName()
-                : null);
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
-        ds.setReasonId(((e.getReason() != null)) ? e.getReason().getId() : null);
-        ds.setReason(((e.getReason() != null)) ? e.getReason().getName() : null);
     }
 
 }

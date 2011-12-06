@@ -541,6 +541,7 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -561,6 +562,7 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         Employee e = (Employee) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

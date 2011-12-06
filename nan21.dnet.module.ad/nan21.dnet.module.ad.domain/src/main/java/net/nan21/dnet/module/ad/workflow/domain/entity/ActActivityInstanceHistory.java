@@ -209,9 +209,11 @@ public class ActActivityInstanceHistory implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActActivityInstanceHistory e = (ActActivityInstanceHistory) event
                 .getSource();
 

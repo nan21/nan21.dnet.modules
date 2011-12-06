@@ -12,12 +12,23 @@ net.nan21.dnet.module.mm.menu.crm = [
 		{id:"ProductAttributeDefs_UI", text:Dnet.translate("ui","ProductAttributeDefs_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI", _bundle_:BUNDLE_ID},		
 		{id:"ProductAccountGroup_UI", text:Dnet.translate("ui","ProductAccountGroup_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAccountGroup_UI", _bundle_:BUNDLE_ID},		
 		{id:"InventoryBaseData_UI", text:Dnet.translate("ui","InventoryBaseData_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI", _bundle_:BUNDLE_ID}	]}
-,		
+,		 
+	{"id":"sm_mm_md", "text":"Master-data", leaf:false, children:[
+		
 		{id:"Product_UI", text:Dnet.translate("ui","Product_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.Product_UI", _bundle_:BUNDLE_ID},		
-		{id:"ProductCategory_UI", text:Dnet.translate("ui","ProductCategory_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", _bundle_:BUNDLE_ID},		
+		{id:"ProductCategory_UI", text:Dnet.translate("ui","ProductCategory_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", _bundle_:BUNDLE_ID}	]}
+,		 
+	{"id":"sm_mm_inventory", "text":"Inventory", leaf:false, children:[
+		
 		{id:"SubInventories_UI", text:Dnet.translate("ui","SubInventories_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", _bundle_:BUNDLE_ID},		
 		{id:"InvTransactions_UI", text:Dnet.translate("ui","InvTransactions_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", _bundle_:BUNDLE_ID},		
 		{id:"InvOperations_UI", text:Dnet.translate("ui","InvOperations_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.inventory.frame.InvOperations_UI", _bundle_:BUNDLE_ID}	]}
+,		 
+	{"id":"sm_mm_price", "text":"Price", leaf:false, children:[
+		
+		{id:"PriceList_UI", text:Dnet.translate("ui","PriceList_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.price.frame.PriceList_UI", _bundle_:BUNDLE_ID},		
+		{id:"ProductPrice_UI", text:Dnet.translate("ui","ProductPrice_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.price.frame.ProductPrice_UI", _bundle_:BUNDLE_ID}	]}
+	]}
  
    ];  
 if (Dnet.navigationTreeMenus.crm == undefined) {

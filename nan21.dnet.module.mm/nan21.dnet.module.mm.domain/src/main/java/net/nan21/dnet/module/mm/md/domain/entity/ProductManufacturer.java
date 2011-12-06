@@ -34,9 +34,9 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Product manufacturers.*/
 @Entity
 @Table(name = ProductManufacturer.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "MM_PRODUCT_MANUFACTURER_UK1", columnNames = {
+        @UniqueConstraint(name = "MM_PROD_MANUFACTURER_UK1", columnNames = {
                 "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "MM_PRODUCT_MANUFACTURER_UK2", columnNames = {
+        @UniqueConstraint(name = "MM_PROD_MANUFACTURER_UK2", columnNames = {
                 "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -47,8 +47,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ProductManufacturer implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "MM_PRODUCT_MANUFACTURER";
-    public static final String SEQUENCE_NAME = "MM_PRODUCT_MANUFACTURER_SEQ";
+    public static final String TABLE_NAME = "MM_PROD_MANUFACTURER";
+    public static final String SEQUENCE_NAME = "MM_PROD_MANUFACTURER_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -231,6 +231,7 @@ public class ProductManufacturer implements Serializable, IModelWithId,
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -245,6 +246,7 @@ public class ProductManufacturer implements Serializable, IModelWithId,
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ProductManufacturer e = (ProductManufacturer) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

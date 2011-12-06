@@ -271,6 +271,7 @@ public class Job implements Serializable, IModelWithId, IModelWithClientId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -288,6 +289,7 @@ public class Job implements Serializable, IModelWithId, IModelWithClientId {
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         Job e = (Job) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

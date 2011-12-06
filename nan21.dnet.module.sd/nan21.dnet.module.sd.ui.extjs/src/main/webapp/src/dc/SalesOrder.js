@@ -96,7 +96,6 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$Edit", {
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.sd.order.lovs.SalesOrderType", dataIndex:"type",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addTextField({ name:"docNo", dataIndex:"docNo",anchor:"-20" ,maxLength:32  })
 		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,allowBlank:false})
-		.addLov({ name:"priceList", xtype:"net.nan21.dnet.module.sd.price.lovs.PriceLists", dataIndex:"priceList",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priceListId"} ]  })
 		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		.addLov({ name:"deliveryMethod", xtype:"net.nan21.dnet.module.bp.base.lovs.DeliveryMethods", dataIndex:"deliveryMethod",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "deliveryMethodId"} ]  })
 		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"customer",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "customerId"} ,{lovField:"id", dsField: "billToId"} ,{lovField:"name", dsField: "billTo"} ,{lovField:"id", dsField: "shipToId"} ,{lovField:"name", dsField: "shipTo"} ]  })
@@ -120,7 +119,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$Edit", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ,"col4" ])
 		.addChildrenTo("col1",["supplier","customer","type","status","currency"])
-		.addChildrenTo("col2",["docNo","docDate","priceList","deliveryMethod"])
+		.addChildrenTo("col2",["docNo","docDate","deliveryMethod"])
 		.addChildrenTo("col3",["billTo","billToLocation","shipTo","shipToLocation"])
 		.addChildrenTo("col4",["totalNetAmount","totalTaxAmount","totalAmount"])
 ;

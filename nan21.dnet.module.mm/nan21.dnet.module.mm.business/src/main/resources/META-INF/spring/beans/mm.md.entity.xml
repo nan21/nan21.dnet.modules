@@ -31,17 +31,23 @@
  	<bean id="ProductAccountService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAccountService"  />  
  
+ 	<bean id="ProductAttachmentService" scope="prototype"
+	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttachmentService"  />  
+ 
  	<bean id="ProductAttributeCategoryService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttributeCategoryService"  />  
  
  	<bean id="ProductAttributeTypeService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttributeTypeService"  />  
  
+ 	<bean id="ProductAttributeGroupService" scope="prototype"
+	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttributeGroupService"  />  
+ 
  	<bean id="ProductAttributeService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttributeService"  />  
  
- 	<bean id="ProductAttributeGroupService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm.md.business.serviceext.ProductAttributeGroupService"  />  
+ 	<bean id="ProductAttributeGroupAttributeService" scope="prototype"
+	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttributeGroupAttributeService"  />  
  
  	<bean id="ProductAttributeValueService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttributeValueService"  />  

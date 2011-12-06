@@ -192,9 +192,11 @@ public class ActExecution implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActExecution e = (ActExecution) event.getSource();
 
     }

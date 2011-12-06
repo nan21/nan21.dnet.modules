@@ -19,15 +19,8 @@ import net.nan21.dnet.module.hr.skill.domain.entity.JobSkill;
 public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
         implements IDsConverter<JobSkillDs, JobSkill> {
 
-    protected void modelToEntityAttributes(JobSkillDs ds, JobSkill e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(JobSkillDs ds, JobSkill e)
             throws Exception {
-
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
                 e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
@@ -72,6 +65,7 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
                                 + ds.getRequiredLevel() + "  ");
             }
             e.setRequiredLevel(x);
+
         } else {
             e.setRequiredLevel(null);
         }
@@ -90,32 +84,10 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
                                 + ds.getCompetence() + "  ");
             }
             e.setSkill(x);
+
         } else {
             e.setSkill(null);
         }
-    }
-
-    @Override
-    public void entityToModel(JobSkill e, JobSkillDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setJobId(((e.getJob() != null)) ? e.getJob().getId() : null);
-        ds.setCompetenceId(((e.getSkill() != null)) ? e.getSkill().getId()
-                : null);
-        ds.setCompetence(((e.getSkill() != null)) ? e.getSkill().getName()
-                : null);
-        ds.setRatingScaleId(((e.getSkill() != null) && (e.getSkill()
-                .getRatingScale() != null)) ? e.getSkill().getRatingScale()
-                .getId() : null);
-        ds.setRequiredLevelId(((e.getRequiredLevel() != null)) ? e
-                .getRequiredLevel().getId() : null);
-        ds.setRequiredLevel(((e.getRequiredLevel() != null)) ? e
-                .getRequiredLevel().getName() : null);
     }
 
 }

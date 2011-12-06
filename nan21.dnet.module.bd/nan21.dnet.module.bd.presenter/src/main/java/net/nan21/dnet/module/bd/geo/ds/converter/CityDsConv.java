@@ -18,16 +18,7 @@ import net.nan21.dnet.module.bd.geo.domain.entity.City;
 public class CityDsConv extends AbstractDsConverter<CityDs, City> implements
         IDsConverter<CityDs, City> {
 
-    protected void modelToEntityAttributes(CityDs ds, City e) throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(CityDs ds, City e) throws Exception {
-
         if (ds.getCountryId() != null) {
             if (e.getCountry() == null
                     || !e.getCountry().getId().equals(ds.getCountryId())) {
@@ -60,6 +51,7 @@ public class CityDsConv extends AbstractDsConverter<CityDs, City> implements
                                 + ds.getCountryCode() + "  ");
             }
             e.setCountry(x);
+
         } else {
             e.setCountry(null);
         }
@@ -80,30 +72,10 @@ public class CityDsConv extends AbstractDsConverter<CityDs, City> implements
                                 + ds.getRegionCode() + "  ");
             }
             e.setRegion(x);
+
         } else {
             e.setRegion(null);
         }
-    }
-
-    @Override
-    public void entityToModel(City e, CityDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setCountryId(((e.getCountry() != null)) ? e.getCountry().getId()
-                : null);
-        ds.setCountryCode(((e.getCountry() != null)) ? e.getCountry().getCode()
-                : null);
-        ds.setRegionId(((e.getRegion() != null)) ? e.getRegion().getId() : null);
-        ds.setRegionCode(((e.getRegion() != null)) ? e.getRegion().getCode()
-                : null);
     }
 
 }

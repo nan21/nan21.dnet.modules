@@ -5,15 +5,15 @@
  */
 package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
-import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
-import net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute;
+import net.nan21.dnet.module.mm.md.business.service.IProductAttributeGroupService;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
 
 public class ProductAttributeGroupService extends
-        AbstractEntityService<ProductAttributeGroup> {
+        AbstractEntityService<ProductAttributeGroup> implements
+        IProductAttributeGroupService {
 
     public ProductAttributeGroupService() {
         super();
@@ -34,19 +34,6 @@ public class ProductAttributeGroupService extends
                 .createNamedQuery(ProductAttributeGroup.NQ_FIND_BY_NAME)
                 .setParameter("pClientId", clientId)
                 .setParameter("pName", name).getSingleResult();
-    }
-
-    public List<ProductAttributeGroup> findByAttributes(
-            ProductAttribute attributes) {
-        return this.findByAttributesId(attributes.getId());
-    }
-
-    public List<ProductAttributeGroup> findByAttributesId(Long attributesId) {
-        return (List<ProductAttributeGroup>) this.em
-                .createQuery(
-                        "select e from ProductAttributeGroup e where e.attributes.id = :pAttributesId",
-                        ProductAttributeGroup.class)
-                .setParameter("pAttributesId", attributesId).getResultList();
     }
 
 }

@@ -17,18 +17,8 @@ public class CsvExportSortDsConv extends
         AbstractDsConverter<CsvExportSortDs, CsvExportSort> implements
         IDsConverter<CsvExportSortDs, CsvExportSort> {
 
-    protected void modelToEntityAttributes(CsvExportSortDs ds, CsvExportSort e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setSequenceNo(ds.getSequenceNo());
-        e.setDsField(ds.getDsField());
-        e.setDescend(ds.getDescend());
-    }
-
     protected void modelToEntityReferences(CsvExportSortDs ds, CsvExportSort e)
             throws Exception {
-
         if (ds.getCsvExportId() != null) {
             if (e.getCsvExport() == null
                     || !e.getCsvExport().getId().equals(ds.getCsvExportId())) {
@@ -53,30 +43,10 @@ public class CsvExportSortDsConv extends
                                 + ds.getCsvExport() + "  ");
             }
             e.setCsvExport(x);
+
         } else {
             e.setCsvExport(null);
         }
-    }
-
-    @Override
-    public void entityToModel(CsvExportSort e, CsvExportSortDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setSequenceNo(e.getSequenceNo());
-        ds.setDsField(e.getDsField());
-        ds.setDescend(e.getDescend());
-        ds.setCsvExportId(((e.getCsvExport() != null)) ? e.getCsvExport()
-                .getId() : null);
-        ds.setCsvExport(((e.getCsvExport() != null)) ? e.getCsvExport()
-                .getName() : null);
-        ds.setDataSource(((e.getCsvExport() != null)) ? e.getCsvExport()
-                .getDataSource() : null);
     }
 
 }

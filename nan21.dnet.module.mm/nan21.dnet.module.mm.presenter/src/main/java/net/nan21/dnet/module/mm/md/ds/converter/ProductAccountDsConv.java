@@ -21,15 +21,8 @@ public class ProductAccountDsConv extends
         AbstractDsConverter<ProductAccountDs, ProductAccount> implements
         IDsConverter<ProductAccountDs, ProductAccount> {
 
-    protected void modelToEntityAttributes(ProductAccountDs ds, ProductAccount e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(ProductAccountDs ds, ProductAccount e)
             throws Exception {
-
         if (ds.getOrganizationId() != null) {
             if (e.getOrganization() == null
                     || !e.getOrganization().getId()
@@ -74,6 +67,7 @@ public class ProductAccountDsConv extends
                                 + ds.getOrganizationCode() + "  ");
             }
             e.setOrganization(x);
+
         } else {
             e.setOrganization(null);
         }
@@ -92,6 +86,7 @@ public class ProductAccountDsConv extends
                                 + ds.getGroupCode() + "  ");
             }
             e.setGroup(x);
+
         } else {
             e.setGroup(null);
         }
@@ -110,32 +105,10 @@ public class ProductAccountDsConv extends
                                 + ds.getProductCode() + "  ");
             }
             e.setProduct(x);
+
         } else {
             e.setProduct(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ProductAccount e, ProductAccountDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setOrganizationId(((e.getOrganization() != null)) ? e
-                .getOrganization().getId() : null);
-        ds.setOrganizationCode(((e.getOrganization() != null)) ? e
-                .getOrganization().getCode() : null);
-        ds.setGroupId(((e.getGroup() != null)) ? e.getGroup().getId() : null);
-        ds.setGroupCode(((e.getGroup() != null)) ? e.getGroup().getCode()
-                : null);
-        ds.setProductId(((e.getProduct() != null)) ? e.getProduct().getId()
-                : null);
-        ds.setProductCode(((e.getProduct() != null)) ? e.getProduct().getCode()
-                : null);
     }
 
 }

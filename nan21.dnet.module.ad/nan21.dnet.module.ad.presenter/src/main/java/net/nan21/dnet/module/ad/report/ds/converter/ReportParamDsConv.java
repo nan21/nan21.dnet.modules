@@ -17,21 +17,8 @@ public class ReportParamDsConv extends
         AbstractDsConverter<ReportParamDs, ReportParam> implements
         IDsConverter<ReportParamDs, ReportParam> {
 
-    protected void modelToEntityAttributes(ReportParamDs ds, ReportParam e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setDefaultValue(ds.getDefaultValue());
-        e.setDataType(ds.getDataType());
-    }
-
     protected void modelToEntityReferences(ReportParamDs ds, ReportParam e)
             throws Exception {
-
         if (ds.getReportId() != null) {
             if (e.getReport() == null
                     || !e.getReport().getId().equals(ds.getReportId())) {
@@ -56,29 +43,10 @@ public class ReportParamDsConv extends
                                 + ds.getReportCode() + "  ");
             }
             e.setReport(x);
+
         } else {
             e.setReport(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ReportParam e, ReportParamDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setDefaultValue(e.getDefaultValue());
-        ds.setDataType(e.getDataType());
-        ds.setReportId(((e.getReport() != null)) ? e.getReport().getId() : null);
-        ds.setReportCode(((e.getReport() != null)) ? e.getReport().getCode()
-                : null);
     }
 
 }

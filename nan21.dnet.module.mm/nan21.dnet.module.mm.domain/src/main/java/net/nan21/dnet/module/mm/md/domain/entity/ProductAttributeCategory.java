@@ -33,7 +33,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product attribute category definition.*/
 @Entity
-@Table(name = ProductAttributeCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PRODUCT_ATTR_CATEG_UK1", columnNames = {
+@Table(name = ProductAttributeCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PROD_ATTR_CATEG_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -43,8 +43,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ProductAttributeCategory implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "MM_PRODUCT_ATTR_CATEG";
-    public static final String SEQUENCE_NAME = "MM_PRODUCT_ATTR_CATEG_SEQ";
+    public static final String TABLE_NAME = "MM_PROD_ATTR_CATEG";
+    public static final String SEQUENCE_NAME = "MM_PROD_ATTR_CATEG_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -209,6 +209,7 @@ public class ProductAttributeCategory implements Serializable, IModelWithId,
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -223,6 +224,7 @@ public class ProductAttributeCategory implements Serializable, IModelWithId,
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ProductAttributeCategory e = (ProductAttributeCategory) event
                 .getSource();
         e.setModifiedAt(new Date());

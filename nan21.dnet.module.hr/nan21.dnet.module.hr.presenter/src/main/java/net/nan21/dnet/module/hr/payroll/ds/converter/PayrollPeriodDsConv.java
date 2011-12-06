@@ -17,20 +17,8 @@ public class PayrollPeriodDsConv extends
         AbstractDsConverter<PayrollPeriodDs, PayrollPeriod> implements
         IDsConverter<PayrollPeriodDs, PayrollPeriod> {
 
-    protected void modelToEntityAttributes(PayrollPeriodDs ds, PayrollPeriod e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setStartDate(ds.getStartDate());
-        e.setEndDate(ds.getEndDate());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(PayrollPeriodDs ds, PayrollPeriod e)
             throws Exception {
-
         if (ds.getPayrollId() != null) {
             if (e.getPayroll() == null
                     || !e.getPayroll().getId().equals(ds.getPayrollId())) {
@@ -55,30 +43,10 @@ public class PayrollPeriodDsConv extends
                                 + ds.getPayrollName() + "  ");
             }
             e.setPayroll(x);
+
         } else {
             e.setPayroll(null);
         }
-    }
-
-    @Override
-    public void entityToModel(PayrollPeriod e, PayrollPeriodDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setStartDate(e.getStartDate());
-        ds.setEndDate(e.getEndDate());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setPayrollId(((e.getPayroll() != null)) ? e.getPayroll().getId()
-                : null);
-        ds.setPayrollName(((e.getPayroll() != null)) ? e.getPayroll().getName()
-                : null);
     }
 
 }

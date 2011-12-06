@@ -28,33 +28,8 @@ import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         implements IDsConverter<EmployeeDs, Employee> {
 
-    protected void modelToEntityAttributes(EmployeeDs ds, Employee e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setBusinessObject(ds.getBusinessObject());
-        e.setCode(ds.getCode());
-        e.setFirstName(ds.getFirstName());
-        e.setLastName(ds.getLastName());
-        e.setMiddleName(ds.getMiddleName());
-        e.setBirthdate(ds.getBirthdate());
-        e.setGender(ds.getGender());
-        e.setMaritalStatus(ds.getMaritalStatus());
-        e.setSinNo(ds.getSinNo());
-        e.setSsnNo(ds.getSsnNo());
-        e.setHasDisability(ds.getHasDisability());
-        e.setFirstHireDate(ds.getFirstHireDate());
-        e.setCurrentHireDate(ds.getCurrentHireDate());
-        e.setOfficeEmail(ds.getOfficeEmail());
-        e.setPassportNo(ds.getPassportNo());
-        e.setClassName(ds.getClassName());
-        e.setAssignToPosition(ds.getAssignToPosition());
-        e.setBaseSalary(ds.getBaseSalary());
-    }
-
     protected void modelToEntityReferences(EmployeeDs ds, Employee e)
             throws Exception {
-
         if (ds.getEmployerId() != null) {
             if (e.getEmployer() == null
                     || !e.getEmployer().getId().equals(ds.getEmployerId())) {
@@ -141,6 +116,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getEmployerCode() + "  ");
             }
             e.setEmployer(x);
+
         } else {
             e.setEmployer(null);
         }
@@ -160,6 +136,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getCitizenshipCode() + "  ");
             }
             e.setCitizenship(x);
+
         } else {
             e.setCitizenship(null);
         }
@@ -178,6 +155,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
@@ -196,6 +174,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getPositionCode() + "  ");
             }
             e.setPosition(x);
+
         } else {
             e.setPosition(null);
         }
@@ -213,6 +192,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getJobCode() + "  ");
             }
             e.setJob(x);
+
         } else {
             e.setJob(null);
         }
@@ -232,6 +212,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getOrganizationCode() + "  ");
             }
             e.setOrganization(x);
+
         } else {
             e.setOrganization(null);
         }
@@ -250,6 +231,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getGradeCode() + "  ");
             }
             e.setGrade(x);
+
         } else {
             e.setGrade(null);
         }
@@ -268,74 +250,10 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                                 + ds.getPayroll() + "  ");
             }
             e.setPayroll(x);
+
         } else {
             e.setPayroll(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Employee e, EmployeeDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setBusinessObject(e.getBusinessObject());
-        ds.setCode(e.getCode());
-        ds.setFirstName(e.getFirstName());
-        ds.setLastName(e.getLastName());
-        ds.setMiddleName(e.getMiddleName());
-        ds.setBirthdate(e.getBirthdate());
-        ds.setGender(e.getGender());
-        ds.setMaritalStatus(e.getMaritalStatus());
-        ds.setSinNo(e.getSinNo());
-        ds.setSsnNo(e.getSsnNo());
-        ds.setHasDisability(e.getHasDisability());
-        ds.setFirstHireDate(e.getFirstHireDate());
-        ds.setCurrentHireDate(e.getCurrentHireDate());
-        ds.setOfficeEmail(e.getOfficeEmail());
-        ds.setPassportNo(e.getPassportNo());
-        ds.setClassName(e.getClassName());
-        ds.setAssignToPosition(e.getAssignToPosition());
-        ds.setBaseSalary(e.getBaseSalary());
-        ds.setEmployerId(((e.getEmployer() != null)) ? e.getEmployer().getId()
-                : null);
-        ds.setEmployerCode(((e.getEmployer() != null)) ? e.getEmployer()
-                .getCode() : null);
-        ds.setCitizenshipId(((e.getCitizenship() != null)) ? e.getCitizenship()
-                .getId() : null);
-        ds.setCitizenshipCode(((e.getCitizenship() != null)) ? e
-                .getCitizenship().getCode() : null);
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
-        ds.setGradeId(((e.getGrade() != null)) ? e.getGrade().getId() : null);
-        ds.setGradeCode(((e.getGrade() != null)) ? e.getGrade().getCode()
-                : null);
-        ds.setJobId(((e.getJob() != null)) ? e.getJob().getId() : null);
-        ds.setJobCode(((e.getJob() != null)) ? e.getJob().getCode() : null);
-        ds.setJobName(((e.getJob() != null)) ? e.getJob().getName() : null);
-        ds.setPositionId(((e.getPosition() != null)) ? e.getPosition().getId()
-                : null);
-        ds.setPositionCode(((e.getPosition() != null)) ? e.getPosition()
-                .getCode() : null);
-        ds.setPositionName(((e.getPosition() != null)) ? e.getPosition()
-                .getName() : null);
-        ds.setPosOrgId(((e.getPosition() != null) && (e.getPosition()
-                .getOrganization() != null)) ? e.getPosition()
-                .getOrganization().getId() : null);
-        ds.setPosOrgCode(((e.getPosition() != null) && (e.getPosition()
-                .getOrganization() != null)) ? e.getPosition()
-                .getOrganization().getCode() : null);
-        ds.setOrganizationId(((e.getOrganization() != null)) ? e
-                .getOrganization().getId() : null);
-        ds.setOrganizationCode(((e.getOrganization() != null)) ? e
-                .getOrganization().getCode() : null);
-        ds.setPayrollId(((e.getPayroll() != null)) ? e.getPayroll().getId()
-                : null);
-        ds.setPayroll(((e.getPayroll() != null)) ? e.getPayroll().getName()
-                : null);
     }
 
 }

@@ -27,17 +27,8 @@ public class BpAccountDsConv extends
         AbstractDsConverter<BpAccountDs, BpAccount> implements
         IDsConverter<BpAccountDs, BpAccount> {
 
-    protected void modelToEntityAttributes(BpAccountDs ds, BpAccount e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setCustCreditLimit(ds.getCustomerCreditLimit());
-        e.setVendCreditLimit(ds.getVendorCreditLimit());
-    }
-
     protected void modelToEntityReferences(BpAccountDs ds, BpAccount e)
             throws Exception {
-
         if (ds.getBusinessPartnerId() != null) {
             if (e.getBp() == null
                     || !e.getBp().getId().equals(ds.getBusinessPartnerId())) {
@@ -132,6 +123,7 @@ public class BpAccountDsConv extends
                                 + ds.getBusinessPartner() + "  ");
             }
             e.setBp(x);
+
         } else {
             e.setBp(null);
         }
@@ -150,6 +142,7 @@ public class BpAccountDsConv extends
                                 + ds.getOrganization() + "  ");
             }
             e.setOrganization(x);
+
         } else {
             e.setOrganization(null);
         }
@@ -168,6 +161,7 @@ public class BpAccountDsConv extends
                                 + ds.getCustomerGroup() + "  ");
             }
             e.setCustGroup(x);
+
         } else {
             e.setCustGroup(null);
         }
@@ -188,6 +182,7 @@ public class BpAccountDsConv extends
                                 + ds.getCustomerPaymentMethod() + "  ");
             }
             e.setCustPaymentMethod(x);
+
         } else {
             e.setCustPaymentMethod(null);
         }
@@ -208,6 +203,7 @@ public class BpAccountDsConv extends
                                 + ds.getCustomerPaymentTerm() + "  ");
             }
             e.setCustPaymentTerm(x);
+
         } else {
             e.setCustPaymentTerm(null);
         }
@@ -226,6 +222,7 @@ public class BpAccountDsConv extends
                                 + ds.getVendorGroup() + "  ");
             }
             e.setVendGroup(x);
+
         } else {
             e.setVendGroup(null);
         }
@@ -246,6 +243,7 @@ public class BpAccountDsConv extends
                                 + ds.getVendorPaymentMethod() + "  ");
             }
             e.setVendPaymentMethod(x);
+
         } else {
             e.setVendPaymentMethod(null);
         }
@@ -265,54 +263,10 @@ public class BpAccountDsConv extends
                                 + ds.getVendorPaymentTerm() + "  ");
             }
             e.setVendPaymentTerm(x);
+
         } else {
             e.setVendPaymentTerm(null);
         }
-    }
-
-    @Override
-    public void entityToModel(BpAccount e, BpAccountDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setCustomerCreditLimit(e.getCustCreditLimit());
-        ds.setVendorCreditLimit(e.getVendCreditLimit());
-        ds.setBusinessPartnerId(((e.getBp() != null)) ? e.getBp().getId()
-                : null);
-        ds.setBusinessPartner(((e.getBp() != null)) ? e.getBp().getCode()
-                : null);
-        ds.setOrganizationId(((e.getOrganization() != null)) ? e
-                .getOrganization().getId() : null);
-        ds.setOrganization(((e.getOrganization() != null)) ? e
-                .getOrganization().getCode() : null);
-        ds.setCustomerGroupId(((e.getCustGroup() != null)) ? e.getCustGroup()
-                .getId() : null);
-        ds.setCustomerGroup(((e.getCustGroup() != null)) ? e.getCustGroup()
-                .getCode() : null);
-        ds.setCustomerPaymentMethodId(((e.getCustPaymentMethod() != null)) ? e
-                .getCustPaymentMethod().getId() : null);
-        ds.setCustomerPaymentMethod(((e.getCustPaymentMethod() != null)) ? e
-                .getCustPaymentMethod().getName() : null);
-        ds.setCustomerPaymentTermId(((e.getCustPaymentTerm() != null)) ? e
-                .getCustPaymentTerm().getId() : null);
-        ds.setCustomerPaymentTerm(((e.getCustPaymentTerm() != null)) ? e
-                .getCustPaymentTerm().getName() : null);
-        ds.setVendorGroupId(((e.getVendGroup() != null)) ? e.getVendGroup()
-                .getId() : null);
-        ds.setVendorGroup(((e.getVendGroup() != null)) ? e.getVendGroup()
-                .getCode() : null);
-        ds.setVendorPaymentMethodId(((e.getVendPaymentMethod() != null)) ? e
-                .getVendPaymentMethod().getId() : null);
-        ds.setVendorPaymentMethod(((e.getVendPaymentMethod() != null)) ? e
-                .getVendPaymentMethod().getName() : null);
-        ds.setVendorPaymentTermId(((e.getVendPaymentTerm() != null)) ? e
-                .getVendPaymentTerm().getId() : null);
-        ds.setVendorPaymentTerm(((e.getVendPaymentTerm() != null)) ? e
-                .getVendPaymentTerm().getName() : null);
     }
 
 }

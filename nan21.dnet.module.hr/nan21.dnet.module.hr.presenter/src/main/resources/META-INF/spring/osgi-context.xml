@@ -21,4 +21,8 @@
 		
 	<osgi:list id="osgiEntityServiceFactories" cardinality="1..N"
 		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />	
+	
+	<osgi:service ref="fileUploadServiceFactory" ranking="0"
+		interface="net.nan21.dnet.core.api.service.IFileUploadServiceFactory" />	
+			
 </beans>

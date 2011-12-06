@@ -70,9 +70,11 @@ public class ProductCategoryHierarchyItem implements Serializable {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ProductCategoryHierarchyItem e = (ProductCategoryHierarchyItem) event
                 .getSource();
 

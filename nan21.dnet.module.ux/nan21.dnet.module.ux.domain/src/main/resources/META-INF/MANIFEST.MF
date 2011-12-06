@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.ux.example.domain.entity;version
- ="1.0.0.M4";uses:="javax.persistence,javax.validation.constraints,jav
+ ="1.0.0.M5";uses:="javax.persistence,javax.validation.constraints,jav
  ax.xml.bind.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.m
  odule.bd.geo.domain.entity,org.eclipse.persistence.annotations,org.ec
  lipse.persistence.descriptors,org.eclipse.persistence.descriptors.cha
@@ -9,11 +9,11 @@ Export-Package: net.nan21.dnet.module.ux.example.domain.entity;version
  eclipse.persistence.queries,org.eclipse.persistence.sessions,org.hibe
  rnate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.M4,1.0.0.M4]",nan21.dnet.module.ad.d
- omain;version="[1.0.0.M4,1.0.0.M4]",nan21.dnet.module.bd.domain;versi
- on="[1.0.0.M4,1.0.0.M4]"
+ dnet.core.domain;version="[1.0.0.M5,1.0.0.M5]",nan21.dnet.module.ad.d
+ omain;version="[1.0.0.M5,1.0.0.M5]",nan21.dnet.module.bd.domain;versi
+ on="[1.0.0.M5,1.0.0.M5]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M4
+Bundle-Version: 1.0.0.M5
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet UX - domain
 Bundle-ManifestVersion: 2

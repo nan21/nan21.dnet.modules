@@ -242,9 +242,11 @@ public class ActDetailHistory implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActDetailHistory e = (ActDetailHistory) event.getSource();
 
     }

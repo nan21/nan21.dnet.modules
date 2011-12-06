@@ -1,6 +1,11 @@
 
 Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs$Trl", {     	
 	productId__lbl : "Product Id"
+	,productCode__lbl : "Product Code"
+	,productName__lbl : "Product Name"
+	,groupId__lbl : "Group Id"
+	,group__lbl : "Group"
+	,groupAttributeId__lbl : "Group Attribute Id"
 	,attributeId__lbl : "Attribute Id"
 	,attribute__lbl : "Attribute"
 	,title__lbl : "Title"

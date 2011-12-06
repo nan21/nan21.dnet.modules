@@ -18,15 +18,8 @@ public class WfDefTransitionDsConv extends
         AbstractDsConverter<WfDefTransitionDs, WfDefTransition> implements
         IDsConverter<WfDefTransitionDs, WfDefTransition> {
 
-    protected void modelToEntityAttributes(WfDefTransitionDs ds,
-            WfDefTransition e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(WfDefTransitionDs ds,
             WfDefTransition e) throws Exception {
-
         if (ds.getProcessId() != null) {
             if (e.getProcess() == null
                     || !e.getProcess().getId().equals(ds.getProcessId())) {
@@ -67,6 +60,7 @@ public class WfDefTransitionDsConv extends
                                 + ds.getSource() + "  ");
             }
             e.setSource(x);
+
         } else {
             e.setSource(null);
         }
@@ -85,29 +79,10 @@ public class WfDefTransitionDsConv extends
                                 + ds.getTarget() + "  ");
             }
             e.setTarget(x);
+
         } else {
             e.setTarget(null);
         }
-    }
-
-    @Override
-    public void entityToModel(WfDefTransition e, WfDefTransitionDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setProcessId(((e.getProcess() != null)) ? e.getProcess().getId()
-                : null);
-        ds.setProcess(((e.getProcess() != null)) ? e.getProcess().getName()
-                : null);
-        ds.setSourceId(((e.getSource() != null)) ? e.getSource().getId() : null);
-        ds.setSource(((e.getSource() != null)) ? e.getSource().getName() : null);
-        ds.setTargetId(((e.getTarget() != null)) ? e.getTarget().getId() : null);
-        ds.setTarget(((e.getTarget() != null)) ? e.getTarget().getName() : null);
     }
 
 }

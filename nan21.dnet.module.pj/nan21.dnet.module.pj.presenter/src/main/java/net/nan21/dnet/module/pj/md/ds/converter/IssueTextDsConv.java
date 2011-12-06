@@ -18,16 +18,8 @@ public class IssueTextDsConv extends
         AbstractDsConverter<IssueTextDs, IssueText> implements
         IDsConverter<IssueTextDs, IssueText> {
 
-    protected void modelToEntityAttributes(IssueTextDs ds, IssueText e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setContent(ds.getContent());
-    }
-
     protected void modelToEntityReferences(IssueTextDs ds, IssueText e)
             throws Exception {
-
         if (ds.getIssueId() != null) {
             if (e.getIssue() == null
                     || !e.getIssue().getId().equals(ds.getIssueId())) {
@@ -59,26 +51,10 @@ public class IssueTextDsConv extends
                                 + ds.getIssueTextType() + "  ");
             }
             e.setIssueTextType(x);
+
         } else {
             e.setIssueTextType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(IssueText e, IssueTextDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setContent(e.getContent());
-        ds.setIssueId(((e.getIssue() != null)) ? e.getIssue().getId() : null);
-        ds.setIssueTextTypeId(((e.getIssueTextType() != null)) ? e
-                .getIssueTextType().getId() : null);
-        ds.setIssueTextType(((e.getIssueTextType() != null)) ? e
-                .getIssueTextType().getName() : null);
     }
 
 }

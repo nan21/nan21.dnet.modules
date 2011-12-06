@@ -19,33 +19,8 @@ public class BusinessPartnerDsConv extends
         AbstractDsConverter<BusinessPartnerDs, BusinessPartner> implements
         IDsConverter<BusinessPartnerDs, BusinessPartner> {
 
-    protected void modelToEntityAttributes(BusinessPartnerDs ds,
-            BusinessPartner e) throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setType(ds.getType());
-        e.setBusinessObject(ds.getBusinessObject());
-        e.setTaxPayerNo(ds.getTaxPayerNo());
-        e.setFirstName(ds.getFirstName());
-        e.setLastName(ds.getLastName());
-        e.setMiddleName(ds.getMiddleName());
-        e.setGender(ds.getGender());
-        e.setIdentityCardNo(ds.getIdentityCardNo());
-        e.setPassportNo(ds.getPassportNo());
-        e.setBirthDate(ds.getBirthDate());
-        e.setCompanyName(ds.getCompanyName());
-        e.setRegistrationNo(ds.getRegistrationNo());
-        e.setRegistrationDate(ds.getRegistrationDate());
-        e.setClassName(ds.getClassName());
-    }
-
     protected void modelToEntityReferences(BusinessPartnerDs ds,
             BusinessPartner e) throws Exception {
-
         if (ds.getCountryId() != null) {
             if (e.getCountry() == null
                     || !e.getCountry().getId().equals(ds.getCountryId())) {
@@ -79,6 +54,7 @@ public class BusinessPartnerDsConv extends
                                 + ds.getCountryCode() + "  ");
             }
             e.setCountry(x);
+
         } else {
             e.setCountry(null);
         }
@@ -100,47 +76,10 @@ public class BusinessPartnerDsConv extends
                                 + ds.getLegalForm() + "  ");
             }
             e.setLegalForm(x);
+
         } else {
             e.setLegalForm(null);
         }
-    }
-
-    @Override
-    public void entityToModel(BusinessPartner e, BusinessPartnerDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setType(e.getType());
-        ds.setBusinessObject(e.getBusinessObject());
-        ds.setTaxPayerNo(e.getTaxPayerNo());
-        ds.setFirstName(e.getFirstName());
-        ds.setLastName(e.getLastName());
-        ds.setMiddleName(e.getMiddleName());
-        ds.setGender(e.getGender());
-        ds.setIdentityCardNo(e.getIdentityCardNo());
-        ds.setPassportNo(e.getPassportNo());
-        ds.setBirthDate(e.getBirthDate());
-        ds.setCompanyName(e.getCompanyName());
-        ds.setRegistrationNo(e.getRegistrationNo());
-        ds.setRegistrationDate(e.getRegistrationDate());
-        ds.setClassName(e.getClassName());
-        ds.setCountryId(((e.getCountry() != null)) ? e.getCountry().getId()
-                : null);
-        ds.setCountryCode(((e.getCountry() != null)) ? e.getCountry().getCode()
-                : null);
-        ds.setLegalFormId(((e.getLegalForm() != null)) ? e.getLegalForm()
-                .getId() : null);
-        ds.setLegalForm(((e.getLegalForm() != null)) ? e.getLegalForm()
-                .getName() : null);
     }
 
 }

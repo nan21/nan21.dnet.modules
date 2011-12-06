@@ -17,18 +17,8 @@ public class AssignableDsConv extends
         AbstractDsConverter<AssignableDs, Assignable> implements
         IDsConverter<AssignableDs, Assignable> {
 
-    protected void modelToEntityAttributes(AssignableDs ds, Assignable e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(AssignableDs ds, Assignable e)
             throws Exception {
-
         if (ds.getTypeId() != null) {
             if (e.getAssignableType() == null
                     || !e.getAssignableType().getId().equals(ds.getTypeId())) {
@@ -53,27 +43,10 @@ public class AssignableDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setAssignableType(x);
+
         } else {
             e.setAssignableType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Assignable e, AssignableDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setTypeId(((e.getAssignableType() != null)) ? e.getAssignableType()
-                .getId() : null);
-        ds.setType(((e.getAssignableType() != null)) ? e.getAssignableType()
-                .getName() : null);
     }
 
 }

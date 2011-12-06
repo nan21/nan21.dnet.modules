@@ -29,7 +29,7 @@ import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute;
+import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroupAttribute;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -38,19 +38,19 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product attribute group.*/
 @Entity
-@Table(name = ProductAttributeValue.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PRODUCT_ATTR_VAL_UK1", columnNames = {
-        "CLIENTID", "PRODUCT_ID", "ATTRIBUTE_ID" }) })
+@Table(name = ProductAttributeValue.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PROD_ATTR_VAL_UK1", columnNames = {
+        "CLIENTID", "PRODUCT_ID", "GROUPATTRIBUTE_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ProductAttributeValue.findById", query = "SELECT e FROM ProductAttributeValue e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProductAttributeValue.findByIds", query = "SELECT e FROM ProductAttributeValue e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductAttributeValue.findByName", query = "SELECT e FROM ProductAttributeValue e WHERE e.clientId = :pClientId and  e.product = :pProduct and e.attribute = :pAttribute ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductAttributeValue.findByName_PRIMITIVE", query = "SELECT e FROM ProductAttributeValue e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.attribute.id = :pAttributeId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = "ProductAttributeValue.findByName", query = "SELECT e FROM ProductAttributeValue e WHERE e.clientId = :pClientId and  e.product = :pProduct and e.groupAttribute = :pGroupAttribute ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "ProductAttributeValue.findByName_PRIMITIVE", query = "SELECT e FROM ProductAttributeValue e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.groupAttribute.id = :pGroupAttributeId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAttributeValue implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "MM_PRODUCT_ATTR_VAL";
-    public static final String SEQUENCE_NAME = "MM_PRODUCT_ATTR_VAL_SEQ";
+    public static final String TABLE_NAME = "MM_PROD_ATTR_VAL";
+    public static final String SEQUENCE_NAME = "MM_PROD_ATTR_VAL_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -120,9 +120,9 @@ public class ProductAttributeValue implements Serializable, IModelWithId,
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
     @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
     private Product product;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAttribute.class)
-    @JoinColumn(name = "ATTRIBUTE_ID", referencedColumnName = "ID")
-    private ProductAttribute attribute;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAttributeGroupAttribute.class)
+    @JoinColumn(name = "GROUPATTRIBUTE_ID", referencedColumnName = "ID")
+    private ProductAttributeGroupAttribute groupAttribute;
 
     /* ============== getters - setters ================== */
 
@@ -207,15 +207,16 @@ public class ProductAttributeValue implements Serializable, IModelWithId,
         this.product = product;
     }
 
-    public ProductAttribute getAttribute() {
-        return this.attribute;
+    public ProductAttributeGroupAttribute getGroupAttribute() {
+        return this.groupAttribute;
     }
 
-    public void setAttribute(ProductAttribute attribute) {
-        this.attribute = attribute;
+    public void setGroupAttribute(ProductAttributeGroupAttribute groupAttribute) {
+        this.groupAttribute = groupAttribute;
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -227,6 +228,7 @@ public class ProductAttributeValue implements Serializable, IModelWithId,
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ProductAttributeValue e = (ProductAttributeValue) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

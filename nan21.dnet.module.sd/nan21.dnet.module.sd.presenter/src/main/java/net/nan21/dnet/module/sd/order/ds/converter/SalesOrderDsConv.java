@@ -21,8 +21,6 @@ import net.nan21.dnet.module.sd.order.business.service.ISalesOrderStatusService;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderTypeService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType;
-import net.nan21.dnet.module.sd.price.business.service.IPriceListService;
-import net.nan21.dnet.module.sd.price.domain.entity.PriceList;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs;
@@ -32,22 +30,8 @@ public class SalesOrderDsConv extends
         AbstractDsConverter<SalesOrderDs, SalesOrder> implements
         IDsConverter<SalesOrderDs, SalesOrder> {
 
-    protected void modelToEntityAttributes(SalesOrderDs ds, SalesOrder e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setDocNo(ds.getDocNo());
-        e.setDocDate(ds.getDocDate());
-        e.setBusinessObject(ds.getBusinessObject());
-        e.setTotalAmount(ds.getTotalAmount());
-        e.setTotalNetAmount(ds.getTotalNetAmount());
-        e.setTotalTaxAmount(ds.getTotalTaxAmount());
-        e.setClassName(ds.getClassName());
-    }
-
     protected void modelToEntityReferences(SalesOrderDs ds, SalesOrder e)
             throws Exception {
-
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
@@ -56,15 +40,6 @@ public class SalesOrderDsConv extends
             }
         } else {
             this.lookup_currency_Currency(ds, e);
-        }
-        if (ds.getPriceListId() != null) {
-            if (e.getPriceList() == null
-                    || !e.getPriceList().getId().equals(ds.getPriceListId())) {
-                e.setPriceList((PriceList) this.em.find(PriceList.class,
-                        ds.getPriceListId()));
-            }
-        } else {
-            this.lookup_priceList_PriceList(ds, e);
         }
         if (ds.getDeliveryMethodId() != null) {
             if (e.getDeliveryMethod() == null
@@ -171,26 +146,9 @@ public class SalesOrderDsConv extends
                                 + ds.getCurrency() + "  ");
             }
             e.setCurrency(x);
+
         } else {
             e.setCurrency(null);
-        }
-    }
-
-    protected void lookup_priceList_PriceList(SalesOrderDs ds, SalesOrder e)
-            throws Exception {
-        if (ds.getPriceList() != null && !ds.getPriceList().equals("")) {
-            PriceList x = null;
-            try {
-                x = ((IPriceListService) getService(IPriceListService.class))
-                        .findByName(ds.getClientId(), ds.getPriceList());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `PriceList` reference:  `priceList` = "
-                                + ds.getPriceList() + "  ");
-            }
-            e.setPriceList(x);
-        } else {
-            e.setPriceList(null);
         }
     }
 
@@ -208,6 +166,7 @@ public class SalesOrderDsConv extends
                                 + ds.getDeliveryMethod() + "  ");
             }
             e.setDeliveryMethod(x);
+
         } else {
             e.setDeliveryMethod(null);
         }
@@ -226,6 +185,7 @@ public class SalesOrderDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
@@ -244,6 +204,7 @@ public class SalesOrderDsConv extends
                                 + ds.getStatus() + "  ");
             }
             e.setStatus(x);
+
         } else {
             e.setStatus(null);
         }
@@ -262,6 +223,7 @@ public class SalesOrderDsConv extends
                                 + ds.getPaymentMethod() + "  ");
             }
             e.setPaymentMethod(x);
+
         } else {
             e.setPaymentMethod(null);
         }
@@ -280,6 +242,7 @@ public class SalesOrderDsConv extends
                                 + ds.getCustomerCode() + "  ");
             }
             e.setCustomer(x);
+
         } else {
             e.setCustomer(null);
         }
@@ -298,6 +261,7 @@ public class SalesOrderDsConv extends
                                 + ds.getSupplier() + "  ");
             }
             e.setSupplier(x);
+
         } else {
             e.setSupplier(null);
         }
@@ -316,6 +280,7 @@ public class SalesOrderDsConv extends
                                 + ds.getBillToCode() + "  ");
             }
             e.setBillTo(x);
+
         } else {
             e.setBillTo(null);
         }
@@ -334,73 +299,10 @@ public class SalesOrderDsConv extends
                                 + ds.getShipToCode() + "  ");
             }
             e.setShipTo(x);
+
         } else {
             e.setShipTo(null);
         }
-    }
-
-    @Override
-    public void entityToModel(SalesOrder e, SalesOrderDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setDocNo(e.getDocNo());
-        ds.setDocDate(e.getDocDate());
-        ds.setBusinessObject(e.getBusinessObject());
-        ds.setTotalAmount(e.getTotalAmount());
-        ds.setTotalNetAmount(e.getTotalNetAmount());
-        ds.setTotalTaxAmount(e.getTotalTaxAmount());
-        ds.setClassName(e.getClassName());
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
-        ds.setStatusId(((e.getStatus() != null)) ? e.getStatus().getId() : null);
-        ds.setStatus(((e.getStatus() != null)) ? e.getStatus().getName() : null);
-        ds.setCustomerId(((e.getCustomer() != null)) ? e.getCustomer().getId()
-                : null);
-        ds.setCustomerCode(((e.getCustomer() != null)) ? e.getCustomer()
-                .getCode() : null);
-        ds.setCustomer(((e.getCustomer() != null)) ? e.getCustomer().getName()
-                : null);
-        ds.setCurrencyId(((e.getCurrency() != null)) ? e.getCurrency().getId()
-                : null);
-        ds.setCurrency(((e.getCurrency() != null)) ? e.getCurrency().getCode()
-                : null);
-        ds.setPriceListId(((e.getPriceList() != null)) ? e.getPriceList()
-                .getId() : null);
-        ds.setPriceList(((e.getPriceList() != null)) ? e.getPriceList()
-                .getName() : null);
-        ds.setPaymentMethodId(((e.getPaymentMethod() != null)) ? e
-                .getPaymentMethod().getId() : null);
-        ds.setPaymentMethod(((e.getPaymentMethod() != null)) ? e
-                .getPaymentMethod().getName() : null);
-        ds.setDeliveryMethodId(((e.getDeliveryMethod() != null)) ? e
-                .getDeliveryMethod().getId() : null);
-        ds.setDeliveryMethod(((e.getDeliveryMethod() != null)) ? e
-                .getDeliveryMethod().getName() : null);
-        ds.setSupplierId(((e.getSupplier() != null)) ? e.getSupplier().getId()
-                : null);
-        ds.setSupplier(((e.getSupplier() != null)) ? e.getSupplier().getCode()
-                : null);
-        ds.setBillToId(((e.getBillTo() != null)) ? e.getBillTo().getId() : null);
-        ds.setBillToCode(((e.getBillTo() != null)) ? e.getBillTo().getCode()
-                : null);
-        ds.setBillTo(((e.getBillTo() != null)) ? e.getBillTo().getName() : null);
-        ds.setBillToLocationId(((e.getBillToLocation() != null)) ? e
-                .getBillToLocation().getId() : null);
-        ds.setBillToLocation(((e.getBillToLocation() != null)) ? e
-                .getBillToLocation().getAsString() : null);
-        ds.setShipToId(((e.getShipTo() != null)) ? e.getShipTo().getId() : null);
-        ds.setShipToCode(((e.getShipTo() != null)) ? e.getShipTo().getCode()
-                : null);
-        ds.setShipTo(((e.getShipTo() != null)) ? e.getShipTo().getName() : null);
-        ds.setShipToLocationId(((e.getShipToLocation() != null)) ? e
-                .getShipToLocation().getId() : null);
-        ds.setShipToLocation(((e.getShipToLocation() != null)) ? e
-                .getShipToLocation().getAsString() : null);
     }
 
 }

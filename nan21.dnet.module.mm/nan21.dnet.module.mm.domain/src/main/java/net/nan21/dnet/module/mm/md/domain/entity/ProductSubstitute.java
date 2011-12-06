@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ProductSubstitute implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "MM_PRODUCT_SUBSTITUTE";
-    public static final String SEQUENCE_NAME = "MM_PRODUCT_SUBSTITUTE_SEQ";
+    public static final String TABLE_NAME = "MM_PROD_SUBSTITUTE";
+    public static final String SEQUENCE_NAME = "MM_PROD_SUBSTITUTE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -201,6 +201,7 @@ public class ProductSubstitute implements Serializable, IModelWithId,
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -212,6 +213,7 @@ public class ProductSubstitute implements Serializable, IModelWithId,
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ProductSubstitute e = (ProductSubstitute) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

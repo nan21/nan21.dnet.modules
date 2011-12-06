@@ -22,4 +22,6 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductDs$Trl", {
 	,className__lbl : "Class Name"
 	,businessObject__lbl : "Business Object"
 	
+	,productCategoryId__lbl :"Product Category Id"
+	,productCategory__lbl :"Product Category"
 });

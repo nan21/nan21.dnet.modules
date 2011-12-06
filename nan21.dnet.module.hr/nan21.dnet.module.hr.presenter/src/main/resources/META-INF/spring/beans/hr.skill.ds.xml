@@ -11,7 +11,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingScaleDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.RatingScale" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.RatingScaleDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RatingScale" />
@@ -22,7 +21,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingScaleLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.RatingScale" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.RatingScaleLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RatingScaleLov" />
@@ -44,7 +42,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingLevelLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.RatingLevel" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.RatingLevelLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RatingLevelLov" />
@@ -55,7 +52,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillCategoryDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.SkillCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.SkillCategoryDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SkillCategory" />
@@ -66,7 +62,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.SkillCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.SkillCategoryLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SkillCategoryLov" />
@@ -88,7 +83,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.SkillType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.SkillTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SkillTypeLov" />
@@ -110,7 +104,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.Skill" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.SkillLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SkillLov" />
@@ -121,7 +114,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.QualificationDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.Qualification" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.QualificationDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="Qualification" />
@@ -132,7 +124,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.QualificationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.Qualification" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.skill.ds.converter.QualificationLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="QualificationLov" />

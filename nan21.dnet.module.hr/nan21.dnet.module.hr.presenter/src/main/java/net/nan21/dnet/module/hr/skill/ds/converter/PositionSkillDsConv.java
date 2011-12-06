@@ -20,15 +20,8 @@ public class PositionSkillDsConv extends
         AbstractDsConverter<PositionSkillDs, PositionSkill> implements
         IDsConverter<PositionSkillDs, PositionSkill> {
 
-    protected void modelToEntityAttributes(PositionSkillDs ds, PositionSkill e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(PositionSkillDs ds, PositionSkill e)
             throws Exception {
-
         if (ds.getPositionId() != null) {
             if (e.getPosition() == null
                     || !e.getPosition().getId().equals(ds.getPositionId())) {
@@ -75,6 +68,7 @@ public class PositionSkillDsConv extends
                                 + ds.getRequiredLevel() + "  ");
             }
             e.setRequiredLevel(x);
+
         } else {
             e.setRequiredLevel(null);
         }
@@ -93,34 +87,10 @@ public class PositionSkillDsConv extends
                                 + ds.getCompetence() + "  ");
             }
             e.setSkill(x);
+
         } else {
             e.setSkill(null);
         }
-    }
-
-    @Override
-    public void entityToModel(PositionSkill e, PositionSkillDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setPositionId(((e.getPosition() != null)) ? e.getPosition().getId()
-                : null);
-        ds.setCompetenceId(((e.getSkill() != null)) ? e.getSkill().getId()
-                : null);
-        ds.setCompetence(((e.getSkill() != null)) ? e.getSkill().getName()
-                : null);
-        ds.setRatingScaleId(((e.getSkill() != null) && (e.getSkill()
-                .getRatingScale() != null)) ? e.getSkill().getRatingScale()
-                .getId() : null);
-        ds.setRequiredLevelId(((e.getRequiredLevel() != null)) ? e
-                .getRequiredLevel().getId() : null);
-        ds.setRequiredLevel(((e.getRequiredLevel() != null)) ? e
-                .getRequiredLevel().getName() : null);
     }
 
 }

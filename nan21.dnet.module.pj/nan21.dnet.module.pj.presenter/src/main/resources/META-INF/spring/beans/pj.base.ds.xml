@@ -11,7 +11,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectCategoryDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectCategory" />
@@ -22,7 +21,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectCategoryLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectCategoryLov" />
@@ -33,7 +31,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectRole" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectRoleDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectRole" />
@@ -44,7 +41,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectRole" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectRoleLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectRoleLov" />
@@ -66,7 +62,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectTypeLov" />
@@ -77,7 +72,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectStatusDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectStatusDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectStatus" />
@@ -88,7 +82,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectStatusLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectStatusLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectStatusLov" />
@@ -99,7 +92,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueCategoryDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueCategoryDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueCategory" />
@@ -110,7 +102,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueCategory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueCategoryLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueCategoryLov" />
@@ -132,7 +123,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueTypeLov" />
@@ -143,7 +133,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueStatusDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueStatus" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueStatusDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueStatus" />
@@ -154,7 +143,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueStatusLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueStatus" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueStatusLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueStatusLov" />
@@ -165,7 +153,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueSeverityDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueSeverity" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueSeverityDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueSeverity" />
@@ -176,7 +163,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueSeverityLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueSeverity" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueSeverityLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueSeverityLov" />
@@ -187,7 +173,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssuePriorityDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssuePriority" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssuePriorityDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssuePriority" />
@@ -198,7 +183,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssuePriorityLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssuePriority" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssuePriorityLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssuePriorityLov" />
@@ -209,7 +193,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueResolutionDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueResolution" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueResolutionDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueResolution" />
@@ -220,7 +203,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueResolutionLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueResolution" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueResolutionLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueResolutionLov" />
@@ -231,7 +213,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTextTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTextType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueTextTypeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueTextType" />
@@ -242,7 +223,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTextTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTextType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueTextTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueTextTypeLov" />
@@ -253,7 +233,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueLinkTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueLinkType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueLinkTypeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueLinkType" />
@@ -264,7 +243,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueLinkTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueLinkType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueLinkTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueLinkTypeLov" />
@@ -275,7 +253,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskTypeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueTaskTypeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueTaskType" />
@@ -286,7 +263,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueTaskTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueTaskTypeLov" />
@@ -297,7 +273,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskStatusDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTaskStatus" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueTaskStatusDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueTaskStatus" />
@@ -308,7 +283,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskStatusLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTaskStatus" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueTaskStatusLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueTaskStatusLov" />

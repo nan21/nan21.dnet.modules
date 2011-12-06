@@ -39,7 +39,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product accounts.*/
 @Entity
-@Table(name = ProductAccount.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PRODUCT_ACCOUNT_UK1", columnNames = {
+@Table(name = ProductAccount.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PROD_ACCOUNT_UK1", columnNames = {
         "CLIENTID", "PRODUCT_ID", "ORGANIZATION_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -50,8 +50,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ProductAccount implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "MM_PRODUCT_ACCOUNT";
-    public static final String SEQUENCE_NAME = "MM_PRODUCT_ACCOUNT_SEQ";
+    public static final String TABLE_NAME = "MM_PROD_ACCOUNT";
+    public static final String SEQUENCE_NAME = "MM_PROD_ACCOUNT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -216,6 +216,7 @@ public class ProductAccount implements Serializable, IModelWithId,
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -227,6 +228,7 @@ public class ProductAccount implements Serializable, IModelWithId,
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ProductAccount e = (ProductAccount) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

@@ -18,16 +18,8 @@ public class PositionRequirementDsConv extends
         AbstractDsConverter<PositionRequirementDs, PositionRequirement>
         implements IDsConverter<PositionRequirementDs, PositionRequirement> {
 
-    protected void modelToEntityAttributes(PositionRequirementDs ds,
-            PositionRequirement e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setNotes(ds.getNotes());
-    }
-
     protected void modelToEntityReferences(PositionRequirementDs ds,
             PositionRequirement e) throws Exception {
-
         if (ds.getPositionId() != null) {
             if (e.getPosition() == null
                     || !e.getPosition().getId().equals(ds.getPositionId())) {
@@ -60,28 +52,10 @@ public class PositionRequirementDsConv extends
                                 + ds.getRequirement() + "  ");
             }
             e.setRequirement(x);
+
         } else {
             e.setRequirement(null);
         }
-    }
-
-    @Override
-    public void entityToModel(PositionRequirement e, PositionRequirementDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setNotes(e.getNotes());
-        ds.setPositionId(((e.getPosition() != null)) ? e.getPosition().getId()
-                : null);
-        ds.setRequirementId(((e.getRequirement() != null)) ? e.getRequirement()
-                .getId() : null);
-        ds.setRequirement(((e.getRequirement() != null)) ? e.getRequirement()
-                .getName() : null);
     }
 
 }

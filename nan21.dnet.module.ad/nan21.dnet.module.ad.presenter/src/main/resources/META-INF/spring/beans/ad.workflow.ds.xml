@@ -13,7 +13,6 @@
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActDeploymentDsParam" />	
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActDeploymentDsQueryBuilder" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActDeploymentDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ActDeployment" />
@@ -24,7 +23,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActDeploymentLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ActDeploymentLov" />
@@ -36,7 +34,6 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActProcessDefinitionDsParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActProcessDefinitionDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
 	  			<entry key="serviceStartProcess">
@@ -69,7 +66,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActProcessDefinitionLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ActProcessDefinitionLov" />
@@ -82,7 +78,6 @@
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessInstanceHistory" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActProcessInstanceDsParam" />	
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActProcessInstanceDsQueryBuilder" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActProcessInstanceDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
 	  			<entry key="killProcessInstance">
@@ -104,7 +99,6 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceHistoryDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessInstanceHistory" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActProcessInstanceHistoryDsParam" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActProcessInstanceHistoryDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ActProcessInstanceHistory" />
@@ -117,7 +111,6 @@
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActTaskInstanceDsParam" />	
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActTaskInstanceDsQueryBuilder" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActTaskInstanceDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
 	  			<entry key="assignTask">
@@ -144,7 +137,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActTaskInstanceHistoryDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ActTaskInstanceHistory" />
@@ -156,7 +148,6 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActMyTaskDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActTask" />
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActMyTaskDsQueryBuilder" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActMyTaskDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
 	  			<entry key="completeTask">
@@ -178,7 +169,6 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActMyTaskHistoryDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory" />
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActMyTaskHistoryDsQueryBuilder" />	
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActMyTaskHistoryDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ActMyTaskHistory" />
@@ -189,7 +179,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActAvailableTaskDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActTask" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.ActAvailableTaskDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
 	  			<entry key="assignTask">
@@ -210,7 +199,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefProcessDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefProcessDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
 	  			<entry key="deployProcess">

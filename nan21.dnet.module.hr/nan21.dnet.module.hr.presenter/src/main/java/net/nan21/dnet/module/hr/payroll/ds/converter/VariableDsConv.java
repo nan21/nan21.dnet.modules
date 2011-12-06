@@ -16,19 +16,8 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.Variable;
 public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
         implements IDsConverter<VariableDs, Variable> {
 
-    protected void modelToEntityAttributes(VariableDs ds, Variable e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(VariableDs ds, Variable e)
             throws Exception {
-
         if (ds.getElementId() != null) {
             if (e.getElement() == null
                     || !e.getElement().getId().equals(ds.getElementId())) {
@@ -63,6 +52,7 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
                                 + ds.getElement() + "  ");
             }
             e.setElement(x);
+
         } else {
             e.setElement(null);
         }
@@ -82,32 +72,10 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
                                 + ds.getCrossReference() + "  ");
             }
             e.setCrossReference(x);
+
         } else {
             e.setCrossReference(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Variable e, VariableDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setElementId(((e.getElement() != null)) ? e.getElement().getId()
-                : null);
-        ds.setElement(((e.getElement() != null)) ? e.getElement().getName()
-                : null);
-        ds.setCrossReferenceId(((e.getCrossReference() != null)) ? e
-                .getCrossReference().getId() : null);
-        ds.setCrossReference(((e.getCrossReference() != null)) ? e
-                .getCrossReference().getName() : null);
     }
 
 }

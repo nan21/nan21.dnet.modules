@@ -22,7 +22,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BusinessPartnerLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="BusinessPartnerLov" />
@@ -44,7 +43,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.ContactLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.Contact" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.ContactLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ContactLov" />
@@ -55,7 +53,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpContactLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.Contact" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BpContactLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="BpContactLov" />
@@ -77,7 +74,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpBankAccountLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BpBankAccount" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BpBankAccountLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="BpBankAccountLov" />

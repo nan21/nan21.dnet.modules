@@ -18,15 +18,8 @@ public class IssueLinkDsConv extends
         AbstractDsConverter<IssueLinkDs, IssueLink> implements
         IDsConverter<IssueLinkDs, IssueLink> {
 
-    protected void modelToEntityAttributes(IssueLinkDs ds, IssueLink e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(IssueLinkDs ds, IssueLink e)
             throws Exception {
-
         if (ds.getSourceIssueId() != null) {
             if (e.getSourceIssue() == null
                     || !e.getSourceIssue().getId()
@@ -67,36 +60,10 @@ public class IssueLinkDsConv extends
                                 + ds.getLinkType() + "  ");
             }
             e.setLinkType(x);
+
         } else {
             e.setLinkType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(IssueLink e, IssueLinkDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setSourceIssueId(((e.getSourceIssue() != null)) ? e.getSourceIssue()
-                .getId() : null);
-        ds.setSourceIssue(((e.getSourceIssue() != null)) ? e.getSourceIssue()
-                .getCode() : null);
-        ds.setSourceSummary(((e.getSourceIssue() != null)) ? e.getSourceIssue()
-                .getSummary() : null);
-        ds.setTargetIssueId(((e.getTargetIssue() != null)) ? e.getTargetIssue()
-                .getId() : null);
-        ds.setTargetIssue(((e.getTargetIssue() != null)) ? e.getTargetIssue()
-                .getCode() : null);
-        ds.setTargetSummary(((e.getTargetIssue() != null)) ? e.getTargetIssue()
-                .getSummary() : null);
-        ds.setLinkTypeId(((e.getLinkType() != null)) ? e.getLinkType().getId()
-                : null);
-        ds.setLinkType(((e.getLinkType() != null)) ? e.getLinkType().getName()
-                : null);
     }
 
 }

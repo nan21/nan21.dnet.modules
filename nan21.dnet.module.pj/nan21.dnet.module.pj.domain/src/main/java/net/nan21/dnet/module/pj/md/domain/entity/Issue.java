@@ -406,6 +406,7 @@ public class Issue implements Serializable, IModelWithId, IModelWithClientId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -420,6 +421,7 @@ public class Issue implements Serializable, IModelWithId, IModelWithClientId {
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         Issue e = (Issue) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

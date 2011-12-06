@@ -37,8 +37,6 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     public static final String fCUSTOMER = "customer";
     public static final String fCURRENCYID = "currencyId";
     public static final String fCURRENCY = "currency";
-    public static final String fPRICELISTID = "priceListId";
-    public static final String fPRICELIST = "priceList";
     public static final String fPAYMENTMETHODID = "paymentMethodId";
     public static final String fPAYMENTMETHOD = "paymentMethod";
     public static final String fDELIVERYMETHODID = "deliveryMethodId";
@@ -116,12 +114,6 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     @DsField(join = "left", path = "currency.code")
     private String currency;
-
-    @DsField(join = "left", path = "priceList.id")
-    private Long priceListId;
-
-    @DsField(join = "left", path = "priceList.name")
-    private String priceList;
 
     @DsField(join = "left", path = "paymentMethod.id")
     private Long paymentMethodId;
@@ -342,22 +334,6 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     public void setCurrency(String currency) {
         this.currency = currency;
-    }
-
-    public Long getPriceListId() {
-        return this.priceListId;
-    }
-
-    public void setPriceListId(Long priceListId) {
-        this.priceListId = priceListId;
-    }
-
-    public String getPriceList() {
-        return this.priceList;
-    }
-
-    public void setPriceList(String priceList) {
-        this.priceList = priceList;
     }
 
     public Long getPaymentMethodId() {

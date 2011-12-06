@@ -79,9 +79,11 @@ public class TempAsgn implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         TempAsgn e = (TempAsgn) event.getSource();
 
     }

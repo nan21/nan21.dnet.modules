@@ -17,18 +17,8 @@ public class GradeRateDsConv extends
         AbstractDsConverter<GradeRateDs, GradeRate> implements
         IDsConverter<GradeRateDs, GradeRate> {
 
-    protected void modelToEntityAttributes(GradeRateDs ds, GradeRate e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(GradeRateDs ds, GradeRate e)
             throws Exception {
-
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
@@ -53,27 +43,10 @@ public class GradeRateDsConv extends
                                 + ds.getCurrencyCode() + "  ");
             }
             e.setCurrency(x);
+
         } else {
             e.setCurrency(null);
         }
-    }
-
-    @Override
-    public void entityToModel(GradeRate e, GradeRateDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setCurrencyId(((e.getCurrency() != null)) ? e.getCurrency().getId()
-                : null);
-        ds.setCurrencyCode(((e.getCurrency() != null)) ? e.getCurrency()
-                .getCode() : null);
     }
 
 }

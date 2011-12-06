@@ -29,25 +29,8 @@ public class OpportunityDsConv extends
         AbstractDsConverter<OpportunityDs, Opportunity> implements
         IDsConverter<OpportunityDs, Opportunity> {
 
-    protected void modelToEntityAttributes(OpportunityDs ds, Opportunity e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setExpectedCloseDate(ds.getCloseDate());
-        e.setProbability(ds.getProbability());
-        e.setExpectedAmount(ds.getAmount());
-        e.setCampaign(ds.getCampaign());
-        e.setResultNote(ds.getResultNote());
-        e.setClassName(ds.getClassName());
-        e.setBusinessObject(ds.getBusinessObject());
-    }
-
     protected void modelToEntityReferences(OpportunityDs ds, Opportunity e)
             throws Exception {
-
         if (ds.getAccountId() != null) {
             if (e.getAccount() == null
                     || !e.getAccount().getId().equals(ds.getAccountId())) {
@@ -133,6 +116,7 @@ public class OpportunityDsConv extends
                                 + ds.getStatus() + "  ");
             }
             e.setStatus(x);
+
         } else {
             e.setStatus(null);
         }
@@ -151,6 +135,7 @@ public class OpportunityDsConv extends
                                 + ds.getPriority() + "  ");
             }
             e.setPriority(x);
+
         } else {
             e.setPriority(null);
         }
@@ -169,6 +154,7 @@ public class OpportunityDsConv extends
                                 + ds.getCurrency() + "  ");
             }
             e.setExpectedCurrency(x);
+
         } else {
             e.setExpectedCurrency(null);
         }
@@ -187,6 +173,7 @@ public class OpportunityDsConv extends
                                 + ds.getSalesStage() + "  ");
             }
             e.setSalesStage(x);
+
         } else {
             e.setSalesStage(null);
         }
@@ -205,6 +192,7 @@ public class OpportunityDsConv extends
                                 + ds.getLeadSource() + "  ");
             }
             e.setLeadSource(x);
+
         } else {
             e.setLeadSource(null);
         }
@@ -223,60 +211,10 @@ public class OpportunityDsConv extends
                                 + ds.getResultReason() + "  ");
             }
             e.setResultReason(x);
+
         } else {
             e.setResultReason(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Opportunity e, OpportunityDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setCloseDate(e.getExpectedCloseDate());
-        ds.setProbability(e.getProbability());
-        ds.setAmount(e.getExpectedAmount());
-        ds.setCampaign(e.getCampaign());
-        ds.setResultNote(e.getResultNote());
-        ds.setClassName(e.getClassName());
-        ds.setBusinessObject(e.getBusinessObject());
-        ds.setAccountId(((e.getAccount() != null)) ? e.getAccount().getId()
-                : null);
-        ds.setAccount(((e.getAccount() != null)) ? e.getAccount().getName()
-                : null);
-        ds.setCurrencyId(((e.getExpectedCurrency() != null)) ? e
-                .getExpectedCurrency().getId() : null);
-        ds.setCurrency(((e.getExpectedCurrency() != null)) ? e
-                .getExpectedCurrency().getCode() : null);
-        ds.setStatusId(((e.getStatus() != null)) ? e.getStatus().getId() : null);
-        ds.setStatus(((e.getStatus() != null)) ? e.getStatus().getName() : null);
-        ds.setPriorityId(((e.getPriority() != null)) ? e.getPriority().getId()
-                : null);
-        ds.setPriority(((e.getPriority() != null)) ? e.getPriority().getName()
-                : null);
-        ds.setSalesStageId(((e.getSalesStage() != null)) ? e.getSalesStage()
-                .getId() : null);
-        ds.setSalesStage(((e.getSalesStage() != null)) ? e.getSalesStage()
-                .getName() : null);
-        ds.setLeadSourceId(((e.getLeadSource() != null)) ? e.getLeadSource()
-                .getId() : null);
-        ds.setLeadSource(((e.getLeadSource() != null)) ? e.getLeadSource()
-                .getName() : null);
-        ds.setResultReasonId(((e.getResultReason() != null)) ? e
-                .getResultReason().getId() : null);
-        ds.setResultReason(((e.getResultReason() != null)) ? e
-                .getResultReason().getName() : null);
-        ds.setAssignedToId(((e.getAssignedTo() != null)) ? e.getAssignedTo()
-                .getId() : null);
-        ds.setAssignedTo(((e.getAssignedTo() != null)) ? e.getAssignedTo()
-                .getName() : null);
     }
 
 }

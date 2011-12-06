@@ -17,19 +17,8 @@ public class SysDsFieldDsConv extends
         AbstractDsConverter<SysDsFieldDs, SysDsField> implements
         IDsConverter<SysDsFieldDs, SysDsField> {
 
-    protected void modelToEntityAttributes(SysDsFieldDs ds, SysDsField e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setDataType(ds.getDataType());
-    }
-
     protected void modelToEntityReferences(SysDsFieldDs ds, SysDsField e)
             throws Exception {
-
         if (ds.getDataSourceId() != null) {
             if (e.getDataSource() == null
                     || !e.getDataSource().getId().equals(ds.getDataSourceId())) {
@@ -54,28 +43,10 @@ public class SysDsFieldDsConv extends
                                 + ds.getDataSource() + "  ");
             }
             e.setDataSource(x);
+
         } else {
             e.setDataSource(null);
         }
-    }
-
-    @Override
-    public void entityToModel(SysDsField e, SysDsFieldDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setDataType(e.getDataType());
-        ds.setDataSourceId(((e.getDataSource() != null)) ? e.getDataSource()
-                .getId() : null);
-        ds.setDataSource(((e.getDataSource() != null)) ? e.getDataSource()
-                .getName() : null);
     }
 
 }

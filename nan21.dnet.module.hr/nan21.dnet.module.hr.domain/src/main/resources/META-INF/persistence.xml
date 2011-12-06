@@ -7,6 +7,10 @@
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<!-- Dependencies -->
+ 
+ 		<class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>
+		<class>net.nan21.dnet.module.ad.data.domain.entity.AttachmentType</class>
+		
         <class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
         <class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
         <class>net.nan21.dnet.module.bd.geo.domain.entity.Region</class>

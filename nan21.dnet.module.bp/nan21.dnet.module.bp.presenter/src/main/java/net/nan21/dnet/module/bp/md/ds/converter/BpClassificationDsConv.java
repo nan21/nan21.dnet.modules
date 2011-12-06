@@ -21,15 +21,8 @@ public class BpClassificationDsConv extends
         AbstractDsConverter<BpClassificationDs, BpClassification> implements
         IDsConverter<BpClassificationDs, BpClassification> {
 
-    protected void modelToEntityAttributes(BpClassificationDs ds,
-            BpClassification e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(BpClassificationDs ds,
             BpClassification e) throws Exception {
-
         if (ds.getBusinessPartnerId() != null) {
             if (e.getBp() == null
                     || !e.getBp().getId().equals(ds.getBusinessPartnerId())) {
@@ -76,6 +69,7 @@ public class BpClassificationDsConv extends
                                 + ds.getBusinessPartner() + "  ");
             }
             e.setBp(x);
+
         } else {
             e.setBp(null);
         }
@@ -96,6 +90,7 @@ public class BpClassificationDsConv extends
                                 + ds.getClassificationSystem() + "  ");
             }
             e.setClassSystem(x);
+
         } else {
             e.setClassSystem(null);
         }
@@ -121,37 +116,10 @@ public class BpClassificationDsConv extends
                                 + ds.getClassificationCode() + "  ");
             }
             e.setClassCode(x);
+
         } else {
             e.setClassCode(null);
         }
-    }
-
-    @Override
-    public void entityToModel(BpClassification e, BpClassificationDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setBusinessPartnerId(((e.getBp() != null)) ? e.getBp().getId()
-                : null);
-        ds.setBusinessPartner(((e.getBp() != null)) ? e.getBp().getCode()
-                : null);
-        ds.setBusinessPartnerBO(((e.getBp() != null)) ? e.getBp()
-                .getBusinessObject() : null);
-        ds.setClassificationSystemId(((e.getClassSystem() != null)) ? e
-                .getClassSystem().getId() : null);
-        ds.setClassificationSystem(((e.getClassSystem() != null)) ? e
-                .getClassSystem().getCode() : null);
-        ds.setClassificationId(((e.getClassCode() != null)) ? e.getClassCode()
-                .getId() : null);
-        ds.setClassificationCode(((e.getClassCode() != null)) ? e
-                .getClassCode().getCode() : null);
-        ds.setClassificationName(((e.getClassCode() != null)) ? e
-                .getClassCode().getName() : null);
     }
 
 }

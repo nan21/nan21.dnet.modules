@@ -13,10 +13,10 @@ import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
 import net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType;
-import net.nan21.dnet.module.sd.price.domain.entity.PriceList;
 
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 

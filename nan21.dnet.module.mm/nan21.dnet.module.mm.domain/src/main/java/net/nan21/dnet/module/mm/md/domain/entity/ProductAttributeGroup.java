@@ -6,14 +6,11 @@
 package net.nan21.dnet.module.mm.md.domain.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
@@ -34,9 +31,9 @@ import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
-/** Product attribute group.*/
+/** Attribute group.*/
 @Entity
-@Table(name = ProductAttributeGroup.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PRODUCT_ATTR_GRP_UK1", columnNames = {
+@Table(name = ProductAttributeGroup.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PROD_ATTR_GRP_UK1", columnNames = {
         "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
@@ -46,8 +43,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ProductAttributeGroup implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "MM_PRODUCT_ATTR_GRP";
-    public static final String SEQUENCE_NAME = "MM_PRODUCT_ATTR_GRP_SEQ";
+    public static final String TABLE_NAME = "MM_PROD_ATTR_GRP";
+    public static final String SEQUENCE_NAME = "MM_PROD_ATTR_GRP_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -119,10 +116,6 @@ public class ProductAttributeGroup implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-
-    @ManyToMany
-    @JoinTable(name = "MM_PRODATTRGRP_ATTR")
-    private Collection<ProductAttribute> attributes;
 
     /* ============== getters - setters ================== */
 
@@ -215,15 +208,8 @@ public class ProductAttributeGroup implements Serializable, IModelWithId,
 
     }
 
-    public Collection<ProductAttribute> getAttributes() {
-        return this.attributes;
-    }
-
-    public void setAttributes(Collection<ProductAttribute> attributes) {
-        this.attributes = attributes;
-    }
-
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("createdBy", Session.user.get()
@@ -238,6 +224,7 @@ public class ProductAttributeGroup implements Serializable, IModelWithId,
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ProductAttributeGroup e = (ProductAttributeGroup) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());

@@ -27,6 +27,13 @@
 	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" >		  
 	</bean>
 	
+	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator">	 
+	</bean> 
+	
+	<bean id="fileUploadServiceFactory"
+		class="net.nan21.dnet.core.presenter.service.FileUploadServiceFactory">
+	</bean>
+	
 	<import resource="beans/hr.employee.ds.xml"/>
 	<import resource="beans/hr.grade.ds.xml"/>	
 	<import resource="beans/hr.job.ds.xml"/>
@@ -34,4 +41,9 @@
 	<import resource="beans/hr.skill.ds.xml"/>
 	<import resource="beans/hr.training.ds.xml"/>
 	<import resource="beans/hr.time.ds.xml"/> 
+	 
+	 <!-- Other beans / services  -->
+	 
+	 <bean id="employeeAttachmentUploadService"  scope="prototype" 
+  		class="net.nan21.dnet.module.hr._presenterdelegates.employee.EmployeeAttachmentUploadDelegate"></bean>
 </beans>

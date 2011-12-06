@@ -19,16 +19,8 @@ public class InvTransactionDsConv extends
         AbstractDsConverter<InvTransactionDs, InvTransaction> implements
         IDsConverter<InvTransactionDs, InvTransaction> {
 
-    protected void modelToEntityAttributes(InvTransactionDs ds, InvTransaction e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setEventDate(ds.getEventDate());
-    }
-
     protected void modelToEntityReferences(InvTransactionDs ds, InvTransaction e)
             throws Exception {
-
         if (ds.getTransactionTypeId() != null) {
             if (e.getTransactionType() == null
                     || !e.getTransactionType().getId()
@@ -75,6 +67,7 @@ public class InvTransactionDsConv extends
                                 + ds.getTransactionType() + "  ");
             }
             e.setTransactionType(x);
+
         } else {
             e.setTransactionType(null);
         }
@@ -93,6 +86,7 @@ public class InvTransactionDsConv extends
                                 + ds.getFromInventory() + "  ");
             }
             e.setFromInventory(x);
+
         } else {
             e.setFromInventory(null);
         }
@@ -111,38 +105,10 @@ public class InvTransactionDsConv extends
                                 + ds.getToInventory() + "  ");
             }
             e.setToInventory(x);
+
         } else {
             e.setToInventory(null);
         }
-    }
-
-    @Override
-    public void entityToModel(InvTransaction e, InvTransactionDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setEventDate(e.getEventDate());
-        ds.setTransactionTypeId(((e.getTransactionType() != null)) ? e
-                .getTransactionType().getId() : null);
-        ds.setTransactionType(((e.getTransactionType() != null)) ? e
-                .getTransactionType().getName() : null);
-        ds.setHasFromInventory(((e.getTransactionType() != null)) ? e
-                .getTransactionType().getHasFromInventory() : null);
-        ds.setHasToInventory(((e.getTransactionType() != null)) ? e
-                .getTransactionType().getHasToInventory() : null);
-        ds.setFromInventoryId(((e.getFromInventory() != null)) ? e
-                .getFromInventory().getId() : null);
-        ds.setFromInventory(((e.getFromInventory() != null)) ? e
-                .getFromInventory().getCode() : null);
-        ds.setToInventoryId(((e.getToInventory() != null)) ? e.getToInventory()
-                .getId() : null);
-        ds.setToInventory(((e.getToInventory() != null)) ? e.getToInventory()
-                .getCode() : null);
     }
 
 }

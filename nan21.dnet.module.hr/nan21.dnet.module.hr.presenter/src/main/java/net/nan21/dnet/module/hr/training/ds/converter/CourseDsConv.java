@@ -16,22 +16,8 @@ import net.nan21.dnet.module.hr.training.domain.entity.Course;
 public class CourseDsConv extends AbstractDsConverter<CourseDs, Course>
         implements IDsConverter<CourseDs, Course> {
 
-    protected void modelToEntityAttributes(CourseDs ds, Course e)
-            throws Exception {
-        e.setName(ds.getName());
-        e.setCode(ds.getCode());
-        e.setActive(ds.getActive());
-        e.setNotes(ds.getNotes());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setIntendedAudience(ds.getIntendedAudience());
-        e.setDeliveredCompetences(ds.getDeliveredCompetences());
-        e.setRequirements(ds.getRequirements());
-    }
-
     protected void modelToEntityReferences(CourseDs ds, Course e)
             throws Exception {
-
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -56,29 +42,10 @@ public class CourseDsConv extends AbstractDsConverter<CourseDs, Course>
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(Course e, CourseDs ds) throws Exception {
-        ds.setName(e.getName());
-        ds.setCode(e.getCode());
-        ds.setActive(e.getActive());
-        ds.setNotes(e.getNotes());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setIntendedAudience(e.getIntendedAudience());
-        ds.setDeliveredCompetences(e.getDeliveredCompetences());
-        ds.setRequirements(e.getRequirements());
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
     }
 
 }

@@ -21,15 +21,8 @@ public class ProdClassificationDsConv extends
         AbstractDsConverter<ProdClassificationDs, ProdClassification> implements
         IDsConverter<ProdClassificationDs, ProdClassification> {
 
-    protected void modelToEntityAttributes(ProdClassificationDs ds,
-            ProdClassification e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(ProdClassificationDs ds,
             ProdClassification e) throws Exception {
-
         if (ds.getProductId() != null) {
             if (e.getProduct() == null
                     || !e.getProduct().getId().equals(ds.getProductId())) {
@@ -75,6 +68,7 @@ public class ProdClassificationDsConv extends
                                 + ds.getProductCode() + "  ");
             }
             e.setProduct(x);
+
         } else {
             e.setProduct(null);
         }
@@ -95,6 +89,7 @@ public class ProdClassificationDsConv extends
                                 + ds.getClassificationSystem() + "  ");
             }
             e.setClassSystem(x);
+
         } else {
             e.setClassSystem(null);
         }
@@ -120,35 +115,10 @@ public class ProdClassificationDsConv extends
                                 + ds.getClassificationCode() + "  ");
             }
             e.setClassCode(x);
+
         } else {
             e.setClassCode(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ProdClassification e, ProdClassificationDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setProductId(((e.getProduct() != null)) ? e.getProduct().getId()
-                : null);
-        ds.setProductCode(((e.getProduct() != null)) ? e.getProduct().getCode()
-                : null);
-        ds.setClassificationSystemId(((e.getClassSystem() != null)) ? e
-                .getClassSystem().getId() : null);
-        ds.setClassificationSystem(((e.getClassSystem() != null)) ? e
-                .getClassSystem().getCode() : null);
-        ds.setClassificationId(((e.getClassCode() != null)) ? e.getClassCode()
-                .getId() : null);
-        ds.setClassificationCode(((e.getClassCode() != null)) ? e
-                .getClassCode().getCode() : null);
-        ds.setClassificationName(((e.getClassCode() != null)) ? e
-                .getClassCode().getName() : null);
     }
 
 }

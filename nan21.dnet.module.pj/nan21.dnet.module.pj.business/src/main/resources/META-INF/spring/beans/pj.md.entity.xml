@@ -19,6 +19,9 @@
  	<bean id="ProjectVersionService" scope="prototype"
 	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ProjectVersionService"  />  
  
+ 	<bean id="ProjectAttachmentService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ProjectAttachmentService"  />  
+ 
  	<bean id="IssueService" scope="prototype"
 	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueService"  />  
  
@@ -30,6 +33,9 @@
  
  	<bean id="IssueLinkService" scope="prototype"
 	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueLinkService"  />  
+ 
+ 	<bean id="IssueAttachmentService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueAttachmentService"  />  
    
 </beans>
    

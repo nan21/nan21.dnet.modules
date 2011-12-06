@@ -11,7 +11,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.Grade" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="Grade" />
@@ -22,7 +21,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.Grade" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="GradeLov" />
@@ -44,7 +42,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeRateLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.GradeRate" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.GradeRateLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="GradeRateLov" />
@@ -66,7 +63,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.PayScale" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScaleDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PayScale" />
@@ -77,7 +73,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.PayScale" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScaleLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PayScaleLov" />
@@ -99,7 +94,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScalePointLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.PayScalePoint" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.grade.ds.converter.PayScalePointLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PayScalePointLov" />

@@ -21,15 +21,8 @@ public class ProjectMemberDsConv extends
         AbstractDsConverter<ProjectMemberDs, ProjectMember> implements
         IDsConverter<ProjectMemberDs, ProjectMember> {
 
-    protected void modelToEntityAttributes(ProjectMemberDs ds, ProjectMember e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-    }
-
     protected void modelToEntityReferences(ProjectMemberDs ds, ProjectMember e)
             throws Exception {
-
         if (ds.getProjectId() != null) {
             if (e.getProject() == null
                     || !e.getProject().getId().equals(ds.getProjectId())) {
@@ -72,6 +65,7 @@ public class ProjectMemberDsConv extends
                                 + ds.getProject() + "  ");
             }
             e.setProject(x);
+
         } else {
             e.setProject(null);
         }
@@ -90,6 +84,7 @@ public class ProjectMemberDsConv extends
                                 + ds.getRole() + "  ");
             }
             e.setProjectRole(x);
+
         } else {
             e.setProjectRole(null);
         }
@@ -108,33 +103,10 @@ public class ProjectMemberDsConv extends
                                 + ds.getMember() + "  ");
             }
             e.setMember(x);
+
         } else {
             e.setMember(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ProjectMember e, ProjectMemberDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setProjectId(((e.getProject() != null)) ? e.getProject().getId()
-                : null);
-        ds.setProject(((e.getProject() != null)) ? e.getProject().getCode()
-                : null);
-        ds.setProjectName(((e.getProject() != null)) ? e.getProject().getName()
-                : null);
-        ds.setRoleId(((e.getProjectRole() != null)) ? e.getProjectRole()
-                .getId() : null);
-        ds.setRole(((e.getProjectRole() != null)) ? e.getProjectRole()
-                .getName() : null);
-        ds.setMemberId(((e.getMember() != null)) ? e.getMember().getId() : null);
-        ds.setMember(((e.getMember() != null)) ? e.getMember().getName() : null);
     }
 
 }

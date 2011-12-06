@@ -20,18 +20,8 @@ public class SalesInvoiceItemDsConv extends
         AbstractDsConverter<SalesInvoiceItemDs, SalesInvoiceItem> implements
         IDsConverter<SalesInvoiceItemDs, SalesInvoiceItem> {
 
-    protected void modelToEntityAttributes(SalesInvoiceItemDs ds,
-            SalesInvoiceItem e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setQuantity(ds.getQuantity());
-        e.setUnitPrice(ds.getUnitPrice());
-        e.setNetAmount(ds.getNetAmount());
-    }
-
     protected void modelToEntityReferences(SalesInvoiceItemDs ds,
             SalesInvoiceItem e) throws Exception {
-
         if (ds.getInvoiceId() != null) {
             if (e.getInvoice() == null
                     || !e.getInvoice().getId().equals(ds.getInvoiceId())) {
@@ -69,6 +59,7 @@ public class SalesInvoiceItemDsConv extends
                                 + ds.getUomCode() + "  ");
             }
             e.setUom(x);
+
         } else {
             e.setUom(null);
         }
@@ -87,31 +78,10 @@ public class SalesInvoiceItemDsConv extends
                                 + ds.getItemCode() + "  ");
             }
             e.setItem(x);
+
         } else {
             e.setItem(null);
         }
-    }
-
-    @Override
-    public void entityToModel(SalesInvoiceItem e, SalesInvoiceItemDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setQuantity(e.getQuantity());
-        ds.setUnitPrice(e.getUnitPrice());
-        ds.setNetAmount(e.getNetAmount());
-        ds.setInvoiceId(((e.getInvoice() != null)) ? e.getInvoice().getId()
-                : null);
-        ds.setItemId(((e.getItem() != null)) ? e.getItem().getId() : null);
-        ds.setItemCode(((e.getItem() != null)) ? e.getItem().getCode() : null);
-        ds.setItemName(((e.getItem() != null)) ? e.getItem().getName() : null);
-        ds.setUomId(((e.getUom() != null)) ? e.getUom().getId() : null);
-        ds.setUomCode(((e.getUom() != null)) ? e.getUom().getCode() : null);
     }
 
 }

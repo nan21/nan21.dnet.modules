@@ -31,7 +31,11 @@ implements IFileUploadService {
 		  
 		IAttachmentService s = (IAttachmentService)sl.findEntityService(Attachment.class, (List<IEntityServiceFactory>) sl.getAppContext().getBean("osgiEntityServiceFactories"));
 		Long id = Long.decode(p1);
-		Attachment a = s.findById(id);
+		//Attachment a = s.findById(id);
+		//Attachment a = (Attachment)s.getEntityManager().createNamedQuery(Attachment.NQ_FIND_BY_ID).setParameter("pId", id).getSingleResult();
+		Attachment a = (Attachment)s.getEntityManager().createQuery("SELECT e FROM Attachment e WHERE e.id = :pId").setParameter("pId", id).getSingleResult();
+		
+		
 		String path = a.getType().getUploadPath();
 		String extension = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf('.')+1);
 		String newFileName = id + "." + extension;

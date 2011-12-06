@@ -18,16 +18,8 @@ public class JobRequirementDsConv extends
         AbstractDsConverter<JobRequirementDs, JobRequirement> implements
         IDsConverter<JobRequirementDs, JobRequirement> {
 
-    protected void modelToEntityAttributes(JobRequirementDs ds, JobRequirement e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setNotes(ds.getNotes());
-    }
-
     protected void modelToEntityReferences(JobRequirementDs ds, JobRequirement e)
             throws Exception {
-
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
                 e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
@@ -58,27 +50,10 @@ public class JobRequirementDsConv extends
                                 + ds.getRequirement() + "  ");
             }
             e.setRequirement(x);
+
         } else {
             e.setRequirement(null);
         }
-    }
-
-    @Override
-    public void entityToModel(JobRequirement e, JobRequirementDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setNotes(e.getNotes());
-        ds.setJobId(((e.getJob() != null)) ? e.getJob().getId() : null);
-        ds.setRequirementId(((e.getRequirement() != null)) ? e.getRequirement()
-                .getId() : null);
-        ds.setRequirement(((e.getRequirement() != null)) ? e.getRequirement()
-                .getName() : null);
     }
 
 }

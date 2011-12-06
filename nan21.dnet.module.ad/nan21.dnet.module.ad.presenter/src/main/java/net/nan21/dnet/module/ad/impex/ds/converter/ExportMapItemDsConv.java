@@ -19,18 +19,8 @@ public class ExportMapItemDsConv extends
         AbstractDsConverter<ExportMapItemDs, ExportMapItem> implements
         IDsConverter<ExportMapItemDs, ExportMapItem> {
 
-    protected void modelToEntityAttributes(ExportMapItemDs ds, ExportMapItem e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setSequenceNo(ds.getSequenceNo());
-        e.setFileName(ds.getFileName());
-        e.setActive(ds.getActive());
-    }
-
     protected void modelToEntityReferences(ExportMapItemDs ds, ExportMapItem e)
             throws Exception {
-
         if (ds.getExportMapId() != null) {
             if (e.getExportMap() == null
                     || !e.getExportMap().getId().equals(ds.getExportMapId())) {
@@ -64,6 +54,7 @@ public class ExportMapItemDsConv extends
                                 + ds.getExportMap() + "  ");
             }
             e.setExportMap(x);
+
         } else {
             e.setExportMap(null);
         }
@@ -82,32 +73,10 @@ public class ExportMapItemDsConv extends
                                 + ds.getCsvExport() + "  ");
             }
             e.setCsvExport(x);
+
         } else {
             e.setCsvExport(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ExportMapItem e, ExportMapItemDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setSequenceNo(e.getSequenceNo());
-        ds.setFileName(e.getFileName());
-        ds.setActive(e.getActive());
-        ds.setExportMapId(((e.getExportMap() != null)) ? e.getExportMap()
-                .getId() : null);
-        ds.setExportMap(((e.getExportMap() != null)) ? e.getExportMap()
-                .getName() : null);
-        ds.setCsvExportId(((e.getCsvExport() != null)) ? e.getCsvExport()
-                .getId() : null);
-        ds.setCsvExport(((e.getCsvExport() != null)) ? e.getCsvExport()
-                .getName() : null);
     }
 
 }

@@ -258,10 +258,12 @@ public class ActTask implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         event.updateAttributeWithObject("createdAt", new Date());
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActTask e = (ActTask) event.getSource();
 
     }

@@ -19,21 +19,8 @@ public class ProductAttributeDsConv extends
         AbstractDsConverter<ProductAttributeDs, ProductAttribute> implements
         IDsConverter<ProductAttributeDs, ProductAttribute> {
 
-    protected void modelToEntityAttributes(ProductAttributeDs ds,
-            ProductAttribute e) throws Exception {
-        e.setName(ds.getName());
-        e.setActive(ds.getActive());
-        e.setDescription(ds.getDescription());
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setTitle(ds.getTitle());
-        e.setDataType(ds.getDataType());
-        e.setListOfvalues(ds.getListOfvalues());
-    }
-
     protected void modelToEntityReferences(ProductAttributeDs ds,
             ProductAttribute e) throws Exception {
-
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -65,6 +52,7 @@ public class ProductAttributeDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
@@ -83,31 +71,10 @@ public class ProductAttributeDsConv extends
                                 + ds.getUom() + "  ");
             }
             e.setUom(x);
+
         } else {
             e.setUom(null);
         }
-    }
-
-    @Override
-    public void entityToModel(ProductAttribute e, ProductAttributeDs ds)
-            throws Exception {
-        ds.setName(e.getName());
-        ds.setActive(e.getActive());
-        ds.setDescription(e.getDescription());
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setTitle(e.getTitle());
-        ds.setDataType(e.getDataType());
-        ds.setListOfvalues(e.getListOfvalues());
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
-        ds.setUomId(((e.getUom() != null)) ? e.getUom().getId() : null);
-        ds.setUom(((e.getUom() != null)) ? e.getUom().getName() : null);
     }
 
 }

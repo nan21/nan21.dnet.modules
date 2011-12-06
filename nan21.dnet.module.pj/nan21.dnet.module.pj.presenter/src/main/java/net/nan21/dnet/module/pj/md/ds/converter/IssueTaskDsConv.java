@@ -22,17 +22,8 @@ public class IssueTaskDsConv extends
         AbstractDsConverter<IssueTaskDs, IssueTask> implements
         IDsConverter<IssueTaskDs, IssueTask> {
 
-    protected void modelToEntityAttributes(IssueTaskDs ds, IssueTask e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setSummary(ds.getSummary());
-        e.setDescription(ds.getDescription());
-    }
-
     protected void modelToEntityReferences(IssueTaskDs ds, IssueTask e)
             throws Exception {
-
         if (ds.getIssueId() != null) {
             if (e.getIssue() == null
                     || !e.getIssue().getId().equals(ds.getIssueId())) {
@@ -81,6 +72,7 @@ public class IssueTaskDsConv extends
                                 + ds.getIssue() + "  ");
             }
             e.setIssue(x);
+
         } else {
             e.setIssue(null);
         }
@@ -99,6 +91,7 @@ public class IssueTaskDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
@@ -117,75 +110,10 @@ public class IssueTaskDsConv extends
                                 + ds.getStatus() + "  ");
             }
             e.setStatus(x);
+
         } else {
             e.setStatus(null);
         }
-    }
-
-    @Override
-    public void entityToModel(IssueTask e, IssueTaskDs ds) throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setSummary(e.getSummary());
-        ds.setDescription(e.getDescription());
-        ds.setIssueId(((e.getIssue() != null)) ? e.getIssue().getId() : null);
-        ds.setIssue(((e.getIssue() != null)) ? e.getIssue().getCode() : null);
-        ds.setIssueSummary(((e.getIssue() != null)) ? e.getIssue().getSummary()
-                : null);
-        ds.setIssuePriorityId(((e.getIssue() != null) && (e.getIssue()
-                .getPriority() != null)) ? e.getIssue().getPriority().getId()
-                : null);
-        ds.setIssuePriority(((e.getIssue() != null) && (e.getIssue()
-                .getPriority() != null)) ? e.getIssue().getPriority().getName()
-                : null);
-        ds.setIssueTypeId(((e.getIssue() != null) && (e.getIssue().getType() != null)) ? e
-                .getIssue().getType().getId()
-                : null);
-        ds.setIssueType(((e.getIssue() != null) && (e.getIssue().getType() != null)) ? e
-                .getIssue().getType().getName()
-                : null);
-        ds.setIssueStatusId(((e.getIssue() != null) && (e.getIssue()
-                .getStatus() != null)) ? e.getIssue().getStatus().getId()
-                : null);
-        ds.setIssueStatus(((e.getIssue() != null) && (e.getIssue().getStatus() != null)) ? e
-                .getIssue().getStatus().getName()
-                : null);
-        ds.setIssueSeverityId(((e.getIssue() != null) && (e.getIssue()
-                .getSeverity() != null)) ? e.getIssue().getSeverity().getId()
-                : null);
-        ds.setIssueSeverity(((e.getIssue() != null) && (e.getIssue()
-                .getSeverity() != null)) ? e.getIssue().getSeverity().getName()
-                : null);
-        ds.setIssuePrioritySequenceNo(((e.getIssue() != null) && (e.getIssue()
-                .getPriority() != null)) ? e.getIssue().getPriority()
-                .getSequenceNo() : null);
-        ds.setIssueBusinessObject(((e.getIssue() != null)) ? e.getIssue()
-                .getBusinessObject() : null);
-        ds.setIssueClassName(((e.getIssue() != null)) ? e.getIssue()
-                .getClassName() : null);
-        ds.setProjectId(((e.getIssue() != null) && (e.getIssue().getProject() != null)) ? e
-                .getIssue().getProject().getId()
-                : null);
-        ds.setProject(((e.getIssue() != null) && (e.getIssue().getProject() != null)) ? e
-                .getIssue().getProject().getCode()
-                : null);
-        ds.setProjectName(((e.getIssue() != null) && (e.getIssue().getProject() != null)) ? e
-                .getIssue().getProject().getName()
-                : null);
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
-        ds.setStatusId(((e.getStatus() != null)) ? e.getStatus().getId() : null);
-        ds.setStatus(((e.getStatus() != null)) ? e.getStatus().getName() : null);
-        ds.setAssigneeId(((e.getAssignee() != null)) ? e.getAssignee().getId()
-                : null);
-        ds.setAssignee(((e.getAssignee() != null) && (e.getAssignee()
-                .getMember() != null)) ? e.getAssignee().getMember().getName()
-                : null);
     }
 
 }

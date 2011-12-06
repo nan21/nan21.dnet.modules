@@ -141,9 +141,11 @@ public class ActIdentityLink implements Serializable, IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
+
         ActIdentityLink e = (ActIdentityLink) event.getSource();
 
     }

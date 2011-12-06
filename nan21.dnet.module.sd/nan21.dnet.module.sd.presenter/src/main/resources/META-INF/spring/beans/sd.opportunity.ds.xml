@@ -22,7 +22,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStatusDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStatus" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunityStatusDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OpportunityStatus" />
@@ -33,7 +32,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStatusLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStatus" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunityStatusLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OpportunityStatusLov" />
@@ -44,7 +42,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityPriorityDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityPriority" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunityPriorityDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OpportunityPriority" />
@@ -55,7 +52,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityPriorityLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityPriority" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunityPriorityLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OpportunityPriorityLov" />
@@ -66,7 +62,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunitySourceDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunitySource" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunitySourceDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OpportunitySource" />
@@ -77,7 +72,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunitySourceLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunitySource" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunitySourceLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OpportunitySourceLov" />
@@ -88,7 +82,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStageDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStage" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunityStageDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OpportunityStage" />
@@ -99,7 +92,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStageLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStage" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunityStageLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OpportunityStageLov" />
@@ -110,7 +102,6 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityResultReasonDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityResultReason" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunityResultReasonDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OpportunityResultReason" />
@@ -121,11 +112,21 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityResultReasonLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityResultReason" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunityResultReasonLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OpportunityResultReasonLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityResultReasonLovDs" />
+	</bean>
+   
+ 	<bean id="OpportunityAttachmentDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityAttachmentDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityAttachment" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunityAttachmentDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="OpportunityAttachment" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityAttachmentDs" />
 	</bean>
       
 </beans>

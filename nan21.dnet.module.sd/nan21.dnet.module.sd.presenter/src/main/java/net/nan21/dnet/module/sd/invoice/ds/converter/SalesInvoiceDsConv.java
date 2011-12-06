@@ -27,22 +27,8 @@ public class SalesInvoiceDsConv extends
         AbstractDsConverter<SalesInvoiceDs, SalesInvoice> implements
         IDsConverter<SalesInvoiceDs, SalesInvoice> {
 
-    protected void modelToEntityAttributes(SalesInvoiceDs ds, SalesInvoice e)
-            throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setDocNo(ds.getDocNo());
-        e.setDocDate(ds.getDocDate());
-        e.setBusinessObject(ds.getBusinessObject());
-        e.setTotalNetAmount(ds.getTotalNetAmount());
-        e.setTotalTaxAmount(ds.getTotalTaxAmount());
-        e.setTotalAmount(ds.getTotalAmount());
-        e.setClassName(ds.getClassName());
-    }
-
     protected void modelToEntityReferences(SalesInvoiceDs ds, SalesInvoice e)
             throws Exception {
-
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
@@ -119,6 +105,7 @@ public class SalesInvoiceDsConv extends
                                 + ds.getCurrency() + "  ");
             }
             e.setCurrency(x);
+
         } else {
             e.setCurrency(null);
         }
@@ -137,6 +124,7 @@ public class SalesInvoiceDsConv extends
                                 + ds.getType() + "  ");
             }
             e.setType(x);
+
         } else {
             e.setType(null);
         }
@@ -155,6 +143,7 @@ public class SalesInvoiceDsConv extends
                                 + ds.getStatus() + "  ");
             }
             e.setStatus(x);
+
         } else {
             e.setStatus(null);
         }
@@ -173,6 +162,7 @@ public class SalesInvoiceDsConv extends
                                 + ds.getSupplier() + "  ");
             }
             e.setSupplier(x);
+
         } else {
             e.setSupplier(null);
         }
@@ -191,56 +181,10 @@ public class SalesInvoiceDsConv extends
                                 + ds.getCustomerCode() + "  ");
             }
             e.setCustomer(x);
+
         } else {
             e.setCustomer(null);
         }
-    }
-
-    @Override
-    public void entityToModel(SalesInvoice e, SalesInvoiceDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setDocNo(e.getDocNo());
-        ds.setDocDate(e.getDocDate());
-        ds.setBusinessObject(e.getBusinessObject());
-        ds.setTotalNetAmount(e.getTotalNetAmount());
-        ds.setTotalTaxAmount(e.getTotalTaxAmount());
-        ds.setTotalAmount(e.getTotalAmount());
-        ds.setClassName(e.getClassName());
-        ds.setStatusId(((e.getStatus() != null)) ? e.getStatus().getId() : null);
-        ds.setStatus(((e.getStatus() != null)) ? e.getStatus().getName() : null);
-        ds.setTypeId(((e.getType() != null)) ? e.getType().getId() : null);
-        ds.setType(((e.getType() != null)) ? e.getType().getName() : null);
-        ds.setCurrencyId(((e.getCurrency() != null)) ? e.getCurrency().getId()
-                : null);
-        ds.setCurrency(((e.getCurrency() != null)) ? e.getCurrency().getCode()
-                : null);
-        ds.setCustomerId(((e.getCustomer() != null)) ? e.getCustomer().getId()
-                : null);
-        ds.setCustomerCode(((e.getCustomer() != null)) ? e.getCustomer()
-                .getCode() : null);
-        ds.setCustomer(((e.getCustomer() != null)) ? e.getCustomer().getName()
-                : null);
-        ds.setBillToLocationId(((e.getBillToLocation() != null)) ? e
-                .getBillToLocation().getId() : null);
-        ds.setBillToLocation(((e.getBillToLocation() != null)) ? e
-                .getBillToLocation().getAsString() : null);
-        ds.setBillToContactId(((e.getBillToContact() != null)) ? e
-                .getBillToContact().getId() : null);
-        ds.setBillToContact(((e.getBillToContact() != null)) ? e
-                .getBillToContact().getName() : null);
-        ds.setSupplierId(((e.getSupplier() != null)) ? e.getSupplier().getId()
-                : null);
-        ds.setSupplier(((e.getSupplier() != null)) ? e.getSupplier().getCode()
-                : null);
-        ds.setSalesOrderId(((e.getSalesOrder() != null)) ? e.getSalesOrder()
-                .getId() : null);
     }
 
 }

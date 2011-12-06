@@ -18,20 +18,8 @@ public class EmployeeLicenseDsConv extends
         AbstractDsConverter<EmployeeLicenseDs, EmployeeLicense> implements
         IDsConverter<EmployeeLicenseDs, EmployeeLicense> {
 
-    protected void modelToEntityAttributes(EmployeeLicenseDs ds,
-            EmployeeLicense e) throws Exception {
-        e.setClientId(ds.getClientId());
-        e.setVersion(ds.getVersion());
-        e.setDocumentNo(ds.getDocumentNo());
-        e.setIssuedBy(ds.getIssuedBy());
-        e.setValidFrom(ds.getValidFrom());
-        e.setValidTo(ds.getValidTo());
-        e.setNotes(ds.getNotes());
-    }
-
     protected void modelToEntityReferences(EmployeeLicenseDs ds,
             EmployeeLicense e) throws Exception {
-
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -64,32 +52,10 @@ public class EmployeeLicenseDsConv extends
                                 + ds.getLicenseType() + "  ");
             }
             e.setLicenseType(x);
+
         } else {
             e.setLicenseType(null);
         }
-    }
-
-    @Override
-    public void entityToModel(EmployeeLicense e, EmployeeLicenseDs ds)
-            throws Exception {
-        ds.setId(e.getId());
-        ds.setClientId(e.getClientId());
-        ds.setCreatedAt(e.getCreatedAt());
-        ds.setModifiedAt(e.getModifiedAt());
-        ds.setCreatedBy(e.getCreatedBy());
-        ds.setModifiedBy(e.getModifiedBy());
-        ds.setVersion(e.getVersion());
-        ds.setDocumentNo(e.getDocumentNo());
-        ds.setIssuedBy(e.getIssuedBy());
-        ds.setValidFrom(e.getValidFrom());
-        ds.setValidTo(e.getValidTo());
-        ds.setNotes(e.getNotes());
-        ds.setEmployeeId(((e.getEmployee() != null)) ? e.getEmployee().getId()
-                : null);
-        ds.setLicenseTypeId(((e.getLicenseType() != null)) ? e.getLicenseType()
-                .getId() : null);
-        ds.setLicenseType(((e.getLicenseType() != null)) ? e.getLicenseType()
-                .getName() : null);
     }
 
 }
