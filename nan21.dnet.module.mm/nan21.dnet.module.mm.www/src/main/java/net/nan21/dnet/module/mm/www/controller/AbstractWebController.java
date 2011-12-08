@@ -1,10 +1,8 @@
 package net.nan21.dnet.module.mm.www.controller;
 
-import java.util.List;
 
-import net.nan21.dnet.core.api.SystemConfig;
+import net.nan21.dnet.core.api.ISystemConfig;
 import net.nan21.dnet.core.api.service.IDsService;
-import net.nan21.dnet.core.api.service.IDsServiceFactory;
 import net.nan21.dnet.core.api.session.Params;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.api.session.User;
@@ -30,13 +28,13 @@ public class AbstractWebController {
 	//protected List<IDsServiceFactory> serviceFactories;
 	 
 	@Autowired
-	protected SystemConfig systemConfig;
+	protected ISystemConfig systemConfig;
 	
 	
 	protected void prepareRequest() throws Exception  {
 		String username = "Guest";
 	    String displayName = "Guest";     
-	    char[] password;
+	    //char[] password;
 	    UserPreferences preferences = null;
 	    
 	    boolean accountExpired = false;
@@ -117,11 +115,11 @@ public class AbstractWebController {
 //		this.serviceFactories = serviceFactories;
 //	}
 
-	public SystemConfig getSystemConfig() {
+	public ISystemConfig getSystemConfig() {
 		return systemConfig;
 	}
 
-	public void setSystemConfig(SystemConfig systemConfig) {
+	public void setSystemConfig(ISystemConfig systemConfig) {
 		this.systemConfig = systemConfig;
 	} 
 }

@@ -34,7 +34,7 @@ public class CourseDsConv extends AbstractDsConverter<CourseDs, Course>
         if (ds.getType() != null && !ds.getType().equals("")) {
             CourseType x = null;
             try {
-                x = ((ICourseTypeService) getService(ICourseTypeService.class))
+                x = ((ICourseTypeService) findEntityService(CourseType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -25,10 +25,15 @@
 		<prop key="eclipselink.application-location"></prop>
 		<prop key="eclipselink.ddl-generation.output-mode">database</prop>
 		<prop key="eclipselink.logging.level">FINEST</prop>
-		<prop key="eclipselink.logging.timestamp">FINEST</prop>
-		<prop key="eclipselink.logging.session">FINEST</prop>
-		<prop key="eclipselink.logging.thread">FINEST</prop>
-		<prop key="eclipselink.logging.exceptions">FINEST</prop>
+		<prop key="eclipselink.logging.timestamp">true</prop>
+		<prop key="eclipselink.logging.session">true</prop>
+		<prop key="eclipselink.logging.thread">true</prop>
+		<prop key="eclipselink.logging.exceptions">true</prop>
+				 
+		<prop key="eclipselink.cache.type.default">SoftWeak</prop>
+		<prop key="eclipselink.cache.size.default">1000</prop>
+		<prop key="eclipselink.cache.shared.default">false</prop>
+		<prop key="eclipselink.flush-clear.cache">DropInvalidate</prop>
 	</osgi-compendium:cm-properties> 
 	
 	<context:annotation-config />
@@ -64,6 +69,12 @@
 							<prop key="eclipselink.logging.session">${eclipselink.logging.session}</prop>
 							<prop key="eclipselink.logging.thread">${eclipselink.logging.thread}</prop>
 							<prop key="eclipselink.logging.exceptions">${eclipselink.logging.exceptions}</prop>
+							
+							<prop key="eclipselink.cache.type.default">${eclipselink.cache.type.default}</prop>
+							<prop key="eclipselink.cache.size.default">${eclipselink.cache.size.default}</prop>
+							<prop key="eclipselink.cache.shared.default">${eclipselink.cache.shared.default}</prop>
+							<prop key="eclipselink.flush-clear.cache">${eclipselink.flush-clear.cache}</prop>
+							
 						</props>
 					</constructor-arg>
 				</bean>
@@ -129,6 +140,7 @@
 	
 	<bean id="setupParticipant" class="net.nan21.dnet.module.ad._businessdelegates.Setup_AD" scope="singleton" >		
 		<property name="ranking" value="199"></property>
+		<property name="systemConfig" ref="systemConfig"></property>
 	</bean>
 	 
 	<!-- Domain services -->

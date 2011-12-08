@@ -56,7 +56,7 @@ public class BpBankAccountDsConv extends
         if (ds.getCurrencyCode() != null && !ds.getCurrencyCode().equals("")) {
             Currency x = null;
             try {
-                x = ((ICurrencyService) getService(ICurrencyService.class))
+                x = ((ICurrencyService) findEntityService(Currency.class))
                         .findByCode(ds.getClientId(), ds.getCurrencyCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -75,7 +75,7 @@ public class BpBankAccountDsConv extends
         if (ds.getBankCode() != null && !ds.getBankCode().equals("")) {
             Bank x = null;
             try {
-                x = ((IBankService) getService(IBankService.class)).findByCode(
+                x = ((IBankService) findEntityService(Bank.class)).findByCode(
                         ds.getClientId(), ds.getBankCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -94,7 +94,7 @@ public class BpBankAccountDsConv extends
         if (ds.getBpartnerCode() != null && !ds.getBpartnerCode().equals("")) {
             BusinessPartner x = null;
             try {
-                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
                         .findByCode(ds.getClientId(), ds.getBpartnerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

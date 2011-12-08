@@ -46,7 +46,7 @@ public class PositionCourseDsConv extends
         if (ds.getPositionCode() != null && !ds.getPositionCode().equals("")) {
             Position x = null;
             try {
-                x = ((IPositionService) getService(IPositionService.class))
+                x = ((IPositionService) findEntityService(Position.class))
                         .findByCode(ds.getClientId(), ds.getPositionCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -65,7 +65,7 @@ public class PositionCourseDsConv extends
         if (ds.getCourseCode() != null && !ds.getCourseCode().equals("")) {
             Course x = null;
             try {
-                x = ((ICourseService) getService(ICourseService.class))
+                x = ((ICourseService) findEntityService(Course.class))
                         .findByCode(ds.getClientId(), ds.getCourseCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

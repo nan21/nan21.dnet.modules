@@ -36,7 +36,7 @@ public class DsAccessControlDsConv extends
         if (ds.getAccessControl() != null && !ds.getAccessControl().equals("")) {
             AccessControl x = null;
             try {
-                x = ((IAccessControlService) getService(IAccessControlService.class))
+                x = ((IAccessControlService) findEntityService(AccessControl.class))
                         .findByName(ds.getClientId(), ds.getAccessControl());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -59,7 +59,7 @@ public class OrganizationHierarchyItemDsConv
         if (ds.getHierarchy() != null && !ds.getHierarchy().equals("")) {
             OrganizationHierarchy x = null;
             try {
-                x = ((IOrganizationHierarchyService) getService(IOrganizationHierarchyService.class))
+                x = ((IOrganizationHierarchyService) findEntityService(OrganizationHierarchy.class))
                         .findByName(ds.getClientId(), ds.getHierarchy());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -80,7 +80,7 @@ public class OrganizationHierarchyItemDsConv
                 && !ds.getOrganizationCode().equals("")) {
             Organization x = null;
             try {
-                x = ((IOrganizationService) getService(IOrganizationService.class))
+                x = ((IOrganizationService) findEntityService(Organization.class))
                         .findByCode(ds.getClientId(), ds.getOrganizationCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -99,7 +99,7 @@ public class OrganizationHierarchyItemDsConv
         if (ds.getParentCode() != null && !ds.getParentCode().equals("")) {
             Organization x = null;
             try {
-                x = ((IOrganizationService) getService(IOrganizationService.class))
+                x = ((IOrganizationService) findEntityService(Organization.class))
                         .findByCode(ds.getClientId(), ds.getParentCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

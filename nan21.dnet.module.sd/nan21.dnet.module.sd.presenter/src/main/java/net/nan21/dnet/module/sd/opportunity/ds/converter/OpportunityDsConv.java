@@ -108,7 +108,7 @@ public class OpportunityDsConv extends
         if (ds.getStatus() != null && !ds.getStatus().equals("")) {
             OpportunityStatus x = null;
             try {
-                x = ((IOpportunityStatusService) getService(IOpportunityStatusService.class))
+                x = ((IOpportunityStatusService) findEntityService(OpportunityStatus.class))
                         .findByName(ds.getClientId(), ds.getStatus());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -127,7 +127,7 @@ public class OpportunityDsConv extends
         if (ds.getPriority() != null && !ds.getPriority().equals("")) {
             OpportunityPriority x = null;
             try {
-                x = ((IOpportunityPriorityService) getService(IOpportunityPriorityService.class))
+                x = ((IOpportunityPriorityService) findEntityService(OpportunityPriority.class))
                         .findByName(ds.getClientId(), ds.getPriority());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -146,7 +146,7 @@ public class OpportunityDsConv extends
         if (ds.getCurrency() != null && !ds.getCurrency().equals("")) {
             Currency x = null;
             try {
-                x = ((ICurrencyService) getService(ICurrencyService.class))
+                x = ((ICurrencyService) findEntityService(Currency.class))
                         .findByCode(ds.getClientId(), ds.getCurrency());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -165,7 +165,7 @@ public class OpportunityDsConv extends
         if (ds.getSalesStage() != null && !ds.getSalesStage().equals("")) {
             OpportunityStage x = null;
             try {
-                x = ((IOpportunityStageService) getService(IOpportunityStageService.class))
+                x = ((IOpportunityStageService) findEntityService(OpportunityStage.class))
                         .findByName(ds.getClientId(), ds.getSalesStage());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -184,7 +184,7 @@ public class OpportunityDsConv extends
         if (ds.getLeadSource() != null && !ds.getLeadSource().equals("")) {
             OpportunitySource x = null;
             try {
-                x = ((IOpportunitySourceService) getService(IOpportunitySourceService.class))
+                x = ((IOpportunitySourceService) findEntityService(OpportunitySource.class))
                         .findByName(ds.getClientId(), ds.getLeadSource());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -203,7 +203,7 @@ public class OpportunityDsConv extends
         if (ds.getResultReason() != null && !ds.getResultReason().equals("")) {
             OpportunityResultReason x = null;
             try {
-                x = ((IOpportunityResultReasonService) getService(IOpportunityResultReasonService.class))
+                x = ((IOpportunityResultReasonService) findEntityService(OpportunityResultReason.class))
                         .findByName(ds.getClientId(), ds.getResultReason());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

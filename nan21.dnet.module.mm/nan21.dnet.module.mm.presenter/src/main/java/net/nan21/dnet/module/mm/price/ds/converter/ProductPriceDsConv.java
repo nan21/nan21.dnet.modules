@@ -43,7 +43,7 @@ public class ProductPriceDsConv extends
         if (ds.getProduct() != null && !ds.getProduct().equals("")) {
             Product x = null;
             try {
-                x = ((IProductService) getService(IProductService.class))
+                x = ((IProductService) findEntityService(Product.class))
                         .findByName(ds.getClientId(), ds.getProduct());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

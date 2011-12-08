@@ -43,7 +43,7 @@ public class IssueTextDsConv extends
         if (ds.getIssueTextType() != null && !ds.getIssueTextType().equals("")) {
             IssueTextType x = null;
             try {
-                x = ((IIssueTextTypeService) getService(IIssueTextTypeService.class))
+                x = ((IIssueTextTypeService) findEntityService(IssueTextType.class))
                         .findByName(ds.getClientId(), ds.getIssueTextType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

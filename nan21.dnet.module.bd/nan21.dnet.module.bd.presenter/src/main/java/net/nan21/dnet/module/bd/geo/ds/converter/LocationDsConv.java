@@ -45,7 +45,7 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
         if (ds.getCountryCode() != null && !ds.getCountryCode().equals("")) {
             Country x = null;
             try {
-                x = ((ICountryService) getService(ICountryService.class))
+                x = ((ICountryService) findEntityService(Country.class))
                         .findByCode(ds.getClientId(), ds.getCountryCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -65,7 +65,7 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
                 && ds.getRegionCode() != null && !ds.getRegionCode().equals("")) {
             Region x = null;
             try {
-                x = ((IRegionService) getService(IRegionService.class))
+                x = ((IRegionService) findEntityService(Region.class))
                         .findByCodeAndCountry(ds.getClientId(),
                                 ds.getCountryId(), ds.getRegionCode());
             } catch (javax.persistence.NoResultException exception) {

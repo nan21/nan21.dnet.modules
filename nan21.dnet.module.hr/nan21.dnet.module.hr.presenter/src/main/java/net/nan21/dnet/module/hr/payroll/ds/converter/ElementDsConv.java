@@ -34,7 +34,7 @@ public class ElementDsConv extends AbstractDsConverter<ElementDs, Element>
         if (ds.getType() != null && !ds.getType().equals("")) {
             ElementType x = null;
             try {
-                x = ((IElementTypeService) getService(IElementTypeService.class))
+                x = ((IElementTypeService) findEntityService(ElementType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

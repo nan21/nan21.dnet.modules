@@ -45,7 +45,7 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
                 && !ds.getOrganizationCode().equals("")) {
             Organization x = null;
             try {
-                x = ((IOrganizationService) getService(IOrganizationService.class))
+                x = ((IOrganizationService) findEntityService(Organization.class))
                         .findByCode(ds.getClientId(), ds.getOrganizationCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -63,7 +63,7 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
         if (ds.getJobCode() != null && !ds.getJobCode().equals("")) {
             Job x = null;
             try {
-                x = ((IJobService) getService(IJobService.class)).findByCode(
+                x = ((IJobService) findEntityService(Job.class)).findByCode(
                         ds.getClientId(), ds.getJobCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

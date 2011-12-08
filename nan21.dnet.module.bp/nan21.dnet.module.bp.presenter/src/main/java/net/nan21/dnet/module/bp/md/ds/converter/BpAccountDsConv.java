@@ -115,7 +115,7 @@ public class BpAccountDsConv extends
                 && !ds.getBusinessPartner().equals("")) {
             BusinessPartner x = null;
             try {
-                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
                         .findByCode(ds.getClientId(), ds.getBusinessPartner());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -134,7 +134,7 @@ public class BpAccountDsConv extends
         if (ds.getOrganization() != null && !ds.getOrganization().equals("")) {
             Organization x = null;
             try {
-                x = ((IOrganizationService) getService(IOrganizationService.class))
+                x = ((IOrganizationService) findEntityService(Organization.class))
                         .findByCode(ds.getClientId(), ds.getOrganization());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -153,7 +153,7 @@ public class BpAccountDsConv extends
         if (ds.getCustomerGroup() != null && !ds.getCustomerGroup().equals("")) {
             CustomerGroup x = null;
             try {
-                x = ((ICustomerGroupService) getService(ICustomerGroupService.class))
+                x = ((ICustomerGroupService) findEntityService(CustomerGroup.class))
                         .findByCode(ds.getClientId(), ds.getCustomerGroup());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -173,7 +173,7 @@ public class BpAccountDsConv extends
                 && !ds.getCustomerPaymentMethod().equals("")) {
             PaymentMethod x = null;
             try {
-                x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
+                x = ((IPaymentMethodService) findEntityService(PaymentMethod.class))
                         .findByName(ds.getClientId(),
                                 ds.getCustomerPaymentMethod());
             } catch (javax.persistence.NoResultException exception) {
@@ -194,7 +194,7 @@ public class BpAccountDsConv extends
                 && !ds.getCustomerPaymentTerm().equals("")) {
             PaymentTerm x = null;
             try {
-                x = ((IPaymentTermService) getService(IPaymentTermService.class))
+                x = ((IPaymentTermService) findEntityService(PaymentTerm.class))
                         .findByName(ds.getClientId(),
                                 ds.getCustomerPaymentTerm());
             } catch (javax.persistence.NoResultException exception) {
@@ -214,7 +214,7 @@ public class BpAccountDsConv extends
         if (ds.getVendorGroup() != null && !ds.getVendorGroup().equals("")) {
             VendorGroup x = null;
             try {
-                x = ((IVendorGroupService) getService(IVendorGroupService.class))
+                x = ((IVendorGroupService) findEntityService(VendorGroup.class))
                         .findByCode(ds.getClientId(), ds.getVendorGroup());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -234,7 +234,7 @@ public class BpAccountDsConv extends
                 && !ds.getVendorPaymentMethod().equals("")) {
             PaymentMethod x = null;
             try {
-                x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
+                x = ((IPaymentMethodService) findEntityService(PaymentMethod.class))
                         .findByName(ds.getClientId(),
                                 ds.getVendorPaymentMethod());
             } catch (javax.persistence.NoResultException exception) {
@@ -255,7 +255,7 @@ public class BpAccountDsConv extends
                 && !ds.getVendorPaymentTerm().equals("")) {
             PaymentTerm x = null;
             try {
-                x = ((IPaymentTermService) getService(IPaymentTermService.class))
+                x = ((IPaymentTermService) findEntityService(PaymentTerm.class))
                         .findByName(ds.getClientId(), ds.getVendorPaymentTerm());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

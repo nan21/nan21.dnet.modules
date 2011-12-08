@@ -35,7 +35,7 @@ public class CurrencyXRateAverageDsConv extends
         if (ds.getProviderCode() != null && !ds.getProviderCode().equals("")) {
             CurrencyXRateProvider x = null;
             try {
-                x = ((ICurrencyXRateProviderService) getService(ICurrencyXRateProviderService.class))
+                x = ((ICurrencyXRateProviderService) findEntityService(CurrencyXRateProvider.class))
                         .findByCode(ds.getClientId(), ds.getProviderCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

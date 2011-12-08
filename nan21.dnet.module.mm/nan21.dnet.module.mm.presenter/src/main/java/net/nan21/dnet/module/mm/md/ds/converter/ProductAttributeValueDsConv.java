@@ -35,7 +35,7 @@ public class ProductAttributeValueDsConv extends
         }
 
         if (ds.getAttributeId() == null) {
-            ProductAttribute x = ((IProductAttributeService) getService(IProductAttributeService.class))
+            ProductAttribute x = ((IProductAttributeService) findEntityService(ProductAttribute.class))
                     .findByName(Session.user.get().getClientId(),
                             ds.getAttribute());
 
@@ -60,7 +60,7 @@ public class ProductAttributeValueDsConv extends
         if (ds.getProductCode() != null && !ds.getProductCode().equals("")) {
             Product x = null;
             try {
-                x = ((IProductService) getService(IProductService.class))
+                x = ((IProductService) findEntityService(Product.class))
                         .findByCode(ds.getClientId(), ds.getProductCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -80,7 +80,7 @@ public class ProductAttributeValueDsConv extends
         if (ds.getAttributeId() != null && !ds.getAttributeId().equals("")) {
             ProductAttributeGroupAttribute x = null;
             try {
-                x = ((IProductAttributeGroupAttributeService) getService(IProductAttributeGroupAttributeService.class))
+                x = ((IProductAttributeGroupAttributeService) findEntityService(ProductAttributeGroupAttribute.class))
                         .findByName(ds.getClientId(), e.getProduct()
                                 .getAttributeGroup().getId(),
                                 ds.getAttributeId());

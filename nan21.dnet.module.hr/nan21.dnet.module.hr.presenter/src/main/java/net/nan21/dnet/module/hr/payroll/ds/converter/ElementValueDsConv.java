@@ -54,7 +54,7 @@ public class ElementValueDsConv extends
         if (ds.getElement() != null && !ds.getElement().equals("")) {
             Element x = null;
             try {
-                x = ((IElementService) getService(IElementService.class))
+                x = ((IElementService) findEntityService(Element.class))
                         .findByName(ds.getClientId(), ds.getElement());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -73,7 +73,7 @@ public class ElementValueDsConv extends
         if (ds.getPeriod() != null && !ds.getPeriod().equals("")) {
             PayrollPeriod x = null;
             try {
-                x = ((IPayrollPeriodService) getService(IPayrollPeriodService.class))
+                x = ((IPayrollPeriodService) findEntityService(PayrollPeriod.class))
                         .findByName(ds.getClientId(), ds.getPeriod());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

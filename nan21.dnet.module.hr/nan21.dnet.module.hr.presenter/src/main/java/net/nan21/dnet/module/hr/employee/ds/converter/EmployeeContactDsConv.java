@@ -45,7 +45,7 @@ public class EmployeeContactDsConv extends
         if (ds.getRelationship() != null && !ds.getRelationship().equals("")) {
             EmployeeContactRelationship x = null;
             try {
-                x = ((IEmployeeContactRelationshipService) getService(IEmployeeContactRelationshipService.class))
+                x = ((IEmployeeContactRelationshipService) findEntityService(EmployeeContactRelationship.class))
                         .findByName(ds.getClientId(), ds.getRelationship());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

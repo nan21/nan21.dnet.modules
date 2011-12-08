@@ -46,7 +46,7 @@ public class PriceListDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             PriceListType x = null;
             try {
-                x = ((IPriceListTypeService) getService(IPriceListTypeService.class))
+                x = ((IPriceListTypeService) findEntityService(PriceListType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -65,7 +65,7 @@ public class PriceListDsConv extends
         if (ds.getCurrency() != null && !ds.getCurrency().equals("")) {
             Currency x = null;
             try {
-                x = ((ICurrencyService) getService(ICurrencyService.class))
+                x = ((ICurrencyService) findEntityService(Currency.class))
                         .findByCode(ds.getClientId(), ds.getCurrency());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -35,7 +35,7 @@ public class AbsenceReasonDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             AbsenceType x = null;
             try {
-                x = ((IAbsenceTypeService) getService(IAbsenceTypeService.class))
+                x = ((IAbsenceTypeService) findEntityService(AbsenceType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

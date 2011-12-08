@@ -46,7 +46,7 @@ public class ProjectAttachmentDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             AttachmentType x = null;
             try {
-                x = ((IAttachmentTypeService) getService(IAttachmentTypeService.class))
+                x = ((IAttachmentTypeService) findEntityService(AttachmentType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -65,7 +65,7 @@ public class ProjectAttachmentDsConv extends
         if (ds.getProject() != null && !ds.getProject().equals("")) {
             Project x = null;
             try {
-                x = ((IProjectService) getService(IProjectService.class))
+                x = ((IProjectService) findEntityService(Project.class))
                         .findByCode(ds.getClientId(), ds.getProject());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

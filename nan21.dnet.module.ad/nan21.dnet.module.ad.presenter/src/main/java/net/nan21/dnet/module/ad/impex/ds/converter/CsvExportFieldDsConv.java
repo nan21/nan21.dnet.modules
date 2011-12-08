@@ -35,7 +35,7 @@ public class CsvExportFieldDsConv extends
         if (ds.getCsvExport() != null && !ds.getCsvExport().equals("")) {
             CsvExport x = null;
             try {
-                x = ((ICsvExportService) getService(ICsvExportService.class))
+                x = ((ICsvExportService) findEntityService(CsvExport.class))
                         .findByName(ds.getClientId(), ds.getCsvExport());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

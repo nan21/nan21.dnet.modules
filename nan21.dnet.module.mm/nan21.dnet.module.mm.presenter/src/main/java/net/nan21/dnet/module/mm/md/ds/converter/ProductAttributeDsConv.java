@@ -44,7 +44,7 @@ public class ProductAttributeDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             ProductAttributeType x = null;
             try {
-                x = ((IProductAttributeTypeService) getService(IProductAttributeTypeService.class))
+                x = ((IProductAttributeTypeService) findEntityService(ProductAttributeType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -63,7 +63,7 @@ public class ProductAttributeDsConv extends
         if (ds.getUom() != null && !ds.getUom().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) getService(IUomService.class)).findByName(
+                x = ((IUomService) findEntityService(Uom.class)).findByName(
                         ds.getClientId(), ds.getUom());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

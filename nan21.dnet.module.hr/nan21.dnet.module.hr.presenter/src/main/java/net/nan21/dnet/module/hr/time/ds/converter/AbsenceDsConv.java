@@ -56,7 +56,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
         if (ds.getEmployeeCode() != null && !ds.getEmployeeCode().equals("")) {
             Employee x = null;
             try {
-                x = ((IEmployeeService) getService(IEmployeeService.class))
+                x = ((IEmployeeService) findEntityService(Employee.class))
                         .findByCode(ds.getClientId(), ds.getEmployeeCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -75,7 +75,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
         if (ds.getReason() != null && !ds.getReason().equals("")) {
             AbsenceReason x = null;
             try {
-                x = ((IAbsenceReasonService) getService(IAbsenceReasonService.class))
+                x = ((IAbsenceReasonService) findEntityService(AbsenceReason.class))
                         .findByName(ds.getClientId(), ds.getReason());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -94,7 +94,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
         if (ds.getType() != null && !ds.getType().equals("")) {
             AbsenceType x = null;
             try {
-                x = ((IAbsenceTypeService) getService(IAbsenceTypeService.class))
+                x = ((IAbsenceTypeService) findEntityService(AbsenceType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

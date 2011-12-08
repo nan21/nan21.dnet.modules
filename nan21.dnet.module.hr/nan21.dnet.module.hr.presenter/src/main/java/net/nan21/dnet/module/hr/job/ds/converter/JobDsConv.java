@@ -32,7 +32,7 @@ public class JobDsConv extends AbstractDsConverter<JobDs, Job> implements
         if (ds.getType() != null && !ds.getType().equals("")) {
             JobType x = null;
             try {
-                x = ((IJobTypeService) getService(IJobTypeService.class))
+                x = ((IJobTypeService) findEntityService(JobType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

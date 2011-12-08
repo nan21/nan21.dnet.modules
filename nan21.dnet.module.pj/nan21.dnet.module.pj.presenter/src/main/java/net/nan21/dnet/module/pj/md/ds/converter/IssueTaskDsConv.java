@@ -64,7 +64,7 @@ public class IssueTaskDsConv extends
         if (ds.getIssue() != null && !ds.getIssue().equals("")) {
             Issue x = null;
             try {
-                x = ((IIssueService) getService(IIssueService.class))
+                x = ((IIssueService) findEntityService(Issue.class))
                         .findByCode(ds.getClientId(), ds.getIssue());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -83,7 +83,7 @@ public class IssueTaskDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             IssueTaskType x = null;
             try {
-                x = ((IIssueTaskTypeService) getService(IIssueTaskTypeService.class))
+                x = ((IIssueTaskTypeService) findEntityService(IssueTaskType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -102,7 +102,7 @@ public class IssueTaskDsConv extends
         if (ds.getStatus() != null && !ds.getStatus().equals("")) {
             IssueTaskStatus x = null;
             try {
-                x = ((IIssueTaskStatusService) getService(IIssueTaskStatusService.class))
+                x = ((IIssueTaskStatusService) findEntityService(IssueTaskStatus.class))
                         .findByName(ds.getClientId(), ds.getStatus());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

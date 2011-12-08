@@ -45,7 +45,7 @@ public class PayScaleRateValueDsConv extends
                 && !ds.getScalePointCode().equals("")) {
             PayScalePoint x = null;
             try {
-                x = ((IPayScalePointService) getService(IPayScalePointService.class))
+                x = ((IPayScalePointService) findEntityService(PayScalePoint.class))
                         .findByScale_code(ds.getClientId(),
                                 ds.getScaleRateId(), ds.getScalePointCode());
             } catch (javax.persistence.NoResultException exception) {

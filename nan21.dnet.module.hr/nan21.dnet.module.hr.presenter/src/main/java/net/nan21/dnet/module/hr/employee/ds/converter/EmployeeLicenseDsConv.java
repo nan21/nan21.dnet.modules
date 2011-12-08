@@ -44,7 +44,7 @@ public class EmployeeLicenseDsConv extends
         if (ds.getLicenseType() != null && !ds.getLicenseType().equals("")) {
             LicenseType x = null;
             try {
-                x = ((ILicenseTypeService) getService(ILicenseTypeService.class))
+                x = ((ILicenseTypeService) findEntityService(LicenseType.class))
                         .findByName(ds.getClientId(), ds.getLicenseType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

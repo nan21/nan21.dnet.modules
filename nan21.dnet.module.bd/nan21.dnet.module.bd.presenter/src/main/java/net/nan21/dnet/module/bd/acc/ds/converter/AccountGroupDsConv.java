@@ -35,7 +35,7 @@ public class AccountGroupDsConv extends
         if (ds.getAccSchema() != null && !ds.getAccSchema().equals("")) {
             AccSchema x = null;
             try {
-                x = ((IAccSchemaService) getService(IAccSchemaService.class))
+                x = ((IAccSchemaService) findEntityService(AccSchema.class))
                         .findByCode(ds.getClientId(), ds.getAccSchema());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -44,7 +44,7 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
         if (ds.getElement() != null && !ds.getElement().equals("")) {
             Element x = null;
             try {
-                x = ((IElementService) getService(IElementService.class))
+                x = ((IElementService) findEntityService(Element.class))
                         .findByName(ds.getClientId(), ds.getElement());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -64,7 +64,7 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
                 && !ds.getCrossReference().equals("")) {
             Element x = null;
             try {
-                x = ((IElementService) getService(IElementService.class))
+                x = ((IElementService) findEntityService(Element.class))
                         .findByName(ds.getClientId(), ds.getCrossReference());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

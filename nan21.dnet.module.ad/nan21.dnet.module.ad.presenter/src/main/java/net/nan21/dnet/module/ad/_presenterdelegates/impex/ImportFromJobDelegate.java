@@ -25,8 +25,7 @@ public class ImportFromJobDelegate extends
 				.getResultList();
 
 		ImportFromMapDelegate d = new ImportFromMapDelegate();
-		d.setAppContext(appContext);
-		d.setEntityServiceFactories(this.entityServiceFactories);
+		this.prepareDelegate(d);		 
 		for (ImportJobItem item : items) {
 			ImportMapDs mapDs = new ImportMapDs();
 			mapDs.setId(item.getMap().getId());

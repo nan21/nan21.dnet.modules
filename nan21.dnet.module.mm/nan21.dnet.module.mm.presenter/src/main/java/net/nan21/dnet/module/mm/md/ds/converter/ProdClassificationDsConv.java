@@ -60,7 +60,7 @@ public class ProdClassificationDsConv extends
         if (ds.getProductCode() != null && !ds.getProductCode().equals("")) {
             Product x = null;
             try {
-                x = ((IProductService) getService(IProductService.class))
+                x = ((IProductService) findEntityService(Product.class))
                         .findByCode(ds.getClientId(), ds.getProductCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -80,7 +80,7 @@ public class ProdClassificationDsConv extends
                 && !ds.getClassificationSystem().equals("")) {
             ClassificationSystem x = null;
             try {
-                x = ((IClassificationSystemService) getService(IClassificationSystemService.class))
+                x = ((IClassificationSystemService) findEntityService(ClassificationSystem.class))
                         .findByCode(ds.getClientId(),
                                 ds.getClassificationSystem());
             } catch (javax.persistence.NoResultException exception) {
@@ -103,7 +103,7 @@ public class ProdClassificationDsConv extends
                 && !ds.getClassificationCode().equals("")) {
             ClassificationCode x = null;
             try {
-                x = ((IClassificationCodeService) getService(IClassificationCodeService.class))
+                x = ((IClassificationCodeService) findEntityService(ClassificationCode.class))
                         .findBySyscode(ds.getClientId(),
                                 ds.getClassificationSystemId(),
                                 ds.getClassificationCode());

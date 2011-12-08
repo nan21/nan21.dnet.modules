@@ -46,7 +46,7 @@ public class ProductAttachmentDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             AttachmentType x = null;
             try {
-                x = ((IAttachmentTypeService) getService(IAttachmentTypeService.class))
+                x = ((IAttachmentTypeService) findEntityService(AttachmentType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -65,7 +65,7 @@ public class ProductAttachmentDsConv extends
         if (ds.getProduct() != null && !ds.getProduct().equals("")) {
             Product x = null;
             try {
-                x = ((IProductService) getService(IProductService.class))
+                x = ((IProductService) findEntityService(Product.class))
                         .findByCode(ds.getClientId(), ds.getProduct());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

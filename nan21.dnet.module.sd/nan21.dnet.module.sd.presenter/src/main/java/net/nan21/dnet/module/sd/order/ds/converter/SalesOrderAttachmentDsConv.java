@@ -43,7 +43,7 @@ public class SalesOrderAttachmentDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             AttachmentType x = null;
             try {
-                x = ((IAttachmentTypeService) getService(IAttachmentTypeService.class))
+                x = ((IAttachmentTypeService) findEntityService(AttachmentType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

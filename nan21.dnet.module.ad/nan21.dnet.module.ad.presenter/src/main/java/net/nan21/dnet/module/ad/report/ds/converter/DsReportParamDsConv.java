@@ -44,7 +44,7 @@ public class DsReportParamDsConv extends
                 && ds.getParamCode() != null && !ds.getParamCode().equals("")) {
             ReportParam x = null;
             try {
-                x = ((IReportParamService) getService(IReportParamService.class))
+                x = ((IReportParamService) findEntityService(ReportParam.class))
                         .findByCode(ds.getClientId(), ds.getReportId(),
                                 ds.getParamCode());
             } catch (javax.persistence.NoResultException exception) {

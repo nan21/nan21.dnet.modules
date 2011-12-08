@@ -36,7 +36,7 @@ public class StockLocatorDsConv extends
         if (ds.getSubInventory() != null && !ds.getSubInventory().equals("")) {
             SubInventory x = null;
             try {
-                x = ((ISubInventoryService) getService(ISubInventoryService.class))
+                x = ((ISubInventoryService) findEntityService(SubInventory.class))
                         .findByName(ds.getClientId(), ds.getSubInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

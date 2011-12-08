@@ -57,7 +57,7 @@ public class MyCalendarTaskDsConv extends
         if (ds.getBpartnerCode() != null && !ds.getBpartnerCode().equals("")) {
             BusinessPartner x = null;
             try {
-                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
                         .findByCode(ds.getClientId(), ds.getBpartnerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -78,7 +78,7 @@ public class MyCalendarTaskDsConv extends
                 && !ds.getPriorityName().equals("")) {
             CalendarEventPriority x = null;
             try {
-                x = ((ICalendarEventPriorityService) getService(ICalendarEventPriorityService.class))
+                x = ((ICalendarEventPriorityService) findEntityService(CalendarEventPriority.class))
                         .findByType_and_name(ds.getClientId(),
                                 ds.getEventType(), ds.getPriorityName());
             } catch (javax.persistence.NoResultException exception) {
@@ -101,7 +101,7 @@ public class MyCalendarTaskDsConv extends
                 && ds.getStatusName() != null && !ds.getStatusName().equals("")) {
             CalendarEventStatus x = null;
             try {
-                x = ((ICalendarEventStatusService) getService(ICalendarEventStatusService.class))
+                x = ((ICalendarEventStatusService) findEntityService(CalendarEventStatus.class))
                         .findByType_and_name(ds.getClientId(),
                                 ds.getEventType(), ds.getStatusName());
             } catch (javax.persistence.NoResultException exception) {

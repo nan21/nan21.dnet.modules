@@ -35,7 +35,7 @@ public class PayrollPeriodDsConv extends
         if (ds.getPayrollName() != null && !ds.getPayrollName().equals("")) {
             Payroll x = null;
             try {
-                x = ((IPayrollService) getService(IPayrollService.class))
+                x = ((IPayrollService) findEntityService(Payroll.class))
                         .findByName(ds.getClientId(), ds.getPayrollName());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

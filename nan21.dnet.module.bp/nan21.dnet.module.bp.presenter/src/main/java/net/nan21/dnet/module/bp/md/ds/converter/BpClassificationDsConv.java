@@ -61,7 +61,7 @@ public class BpClassificationDsConv extends
                 && !ds.getBusinessPartner().equals("")) {
             BusinessPartner x = null;
             try {
-                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
                         .findByCode(ds.getClientId(), ds.getBusinessPartner());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -81,7 +81,7 @@ public class BpClassificationDsConv extends
                 && !ds.getClassificationSystem().equals("")) {
             ClassificationSystem x = null;
             try {
-                x = ((IClassificationSystemService) getService(IClassificationSystemService.class))
+                x = ((IClassificationSystemService) findEntityService(ClassificationSystem.class))
                         .findByCode(ds.getClientId(),
                                 ds.getClassificationSystem());
             } catch (javax.persistence.NoResultException exception) {
@@ -104,7 +104,7 @@ public class BpClassificationDsConv extends
                 && !ds.getClassificationCode().equals("")) {
             ClassificationCode x = null;
             try {
-                x = ((IClassificationCodeService) getService(IClassificationCodeService.class))
+                x = ((IClassificationCodeService) findEntityService(ClassificationCode.class))
                         .findBySyscode(ds.getClientId(),
                                 ds.getClassificationSystemId(),
                                 ds.getClassificationCode());

@@ -35,7 +35,7 @@ public class SysDsFieldDsConv extends
         if (ds.getDataSource() != null && !ds.getDataSource().equals("")) {
             SysDataSource x = null;
             try {
-                x = ((ISysDataSourceService) getService(ISysDataSourceService.class))
+                x = ((ISysDataSourceService) findEntityService(SysDataSource.class))
                         .findByName(ds.getClientId(), ds.getDataSource());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

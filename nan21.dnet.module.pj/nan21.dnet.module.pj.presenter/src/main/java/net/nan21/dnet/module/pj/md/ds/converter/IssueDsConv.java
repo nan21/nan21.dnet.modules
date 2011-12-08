@@ -140,7 +140,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         if (ds.getProject() != null && !ds.getProject().equals("")) {
             Project x = null;
             try {
-                x = ((IProjectService) getService(IProjectService.class))
+                x = ((IProjectService) findEntityService(Project.class))
                         .findByCode(ds.getClientId(), ds.getProject());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -158,7 +158,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         if (ds.getType() != null && !ds.getType().equals("")) {
             IssueType x = null;
             try {
-                x = ((IIssueTypeService) getService(IIssueTypeService.class))
+                x = ((IIssueTypeService) findEntityService(IssueType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -177,7 +177,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         if (ds.getStatus() != null && !ds.getStatus().equals("")) {
             IssueStatus x = null;
             try {
-                x = ((IIssueStatusService) getService(IIssueStatusService.class))
+                x = ((IIssueStatusService) findEntityService(IssueStatus.class))
                         .findByName(ds.getClientId(), ds.getStatus());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -196,7 +196,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         if (ds.getPriority() != null && !ds.getPriority().equals("")) {
             IssuePriority x = null;
             try {
-                x = ((IIssuePriorityService) getService(IIssuePriorityService.class))
+                x = ((IIssuePriorityService) findEntityService(IssuePriority.class))
                         .findByName(ds.getClientId(), ds.getPriority());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -215,7 +215,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         if (ds.getResolution() != null && !ds.getResolution().equals("")) {
             IssueResolution x = null;
             try {
-                x = ((IIssueResolutionService) getService(IIssueResolutionService.class))
+                x = ((IIssueResolutionService) findEntityService(IssueResolution.class))
                         .findByName(ds.getClientId(), ds.getResolution());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -234,7 +234,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         if (ds.getSeverity() != null && !ds.getSeverity().equals("")) {
             IssueSeverity x = null;
             try {
-                x = ((IIssueSeverityService) getService(IIssueSeverityService.class))
+                x = ((IIssueSeverityService) findEntityService(IssueSeverity.class))
                         .findByName(ds.getClientId(), ds.getSeverity());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -253,7 +253,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         if (ds.getAssigneeRole() != null && !ds.getAssigneeRole().equals("")) {
             ProjectRole x = null;
             try {
-                x = ((IProjectRoleService) getService(IProjectRoleService.class))
+                x = ((IProjectRoleService) findEntityService(ProjectRole.class))
                         .findByName(ds.getClientId(), ds.getAssigneeRole());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -274,7 +274,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                 && !ds.getReportedVersion().equals("")) {
             ProjectVersion x = null;
             try {
-                x = ((IProjectVersionService) getService(IProjectVersionService.class))
+                x = ((IProjectVersionService) findEntityService(ProjectVersion.class))
                         .findByName(ds.getClientId(), ds.getProjectId(),
                                 ds.getReportedVersion());
             } catch (javax.persistence.NoResultException exception) {
@@ -297,7 +297,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                 && !ds.getTargetVersion().equals("")) {
             ProjectVersion x = null;
             try {
-                x = ((IProjectVersionService) getService(IProjectVersionService.class))
+                x = ((IProjectVersionService) findEntityService(ProjectVersion.class))
                         .findByName(ds.getClientId(), ds.getProjectId(),
                                 ds.getTargetVersion());
             } catch (javax.persistence.NoResultException exception) {
@@ -320,7 +320,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                 && !ds.getFixedInVersion().equals("")) {
             ProjectVersion x = null;
             try {
-                x = ((IProjectVersionService) getService(IProjectVersionService.class))
+                x = ((IProjectVersionService) findEntityService(ProjectVersion.class))
                         .findByName(ds.getClientId(), ds.getProjectId(),
                                 ds.getFixedInVersion());
             } catch (javax.persistence.NoResultException exception) {

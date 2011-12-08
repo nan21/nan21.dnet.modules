@@ -7,38 +7,6 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
- 	<bean id="LandFormTypeDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormTypeDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.ux.example.domain.entity.LandFormType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ux.example.ds.converter.LandFormTypeDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="LandFormType" />
-		<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormTypeDs" />
-	</bean>
-   
- 	<bean id="LandFormTypeLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormTypeLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.ux.example.domain.entity.LandFormType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ux.example.ds.converter.LandFormTypeLovDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="LandFormTypeLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormTypeLovDs" />
-	</bean>
-   
- 	<bean id="LandFormDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.ux.example.domain.entity.LandForm" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.ux.example.ds.converter.LandFormDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="LandForm" />
-		<property name="modelClass" value="net.nan21.dnet.module.ux.example.ds.model.LandFormDs" />
-	</bean>
-      
+ 
 </beans>
    

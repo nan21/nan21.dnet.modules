@@ -57,7 +57,7 @@ public class ProjectMemberDsConv extends
         if (ds.getProject() != null && !ds.getProject().equals("")) {
             Project x = null;
             try {
-                x = ((IProjectService) getService(IProjectService.class))
+                x = ((IProjectService) findEntityService(Project.class))
                         .findByCode(ds.getClientId(), ds.getProject());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -76,7 +76,7 @@ public class ProjectMemberDsConv extends
         if (ds.getRole() != null && !ds.getRole().equals("")) {
             ProjectRole x = null;
             try {
-                x = ((IProjectRoleService) getService(IProjectRoleService.class))
+                x = ((IProjectRoleService) findEntityService(ProjectRole.class))
                         .findByName(ds.getClientId(), ds.getRole());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -95,7 +95,7 @@ public class ProjectMemberDsConv extends
         if (ds.getMember() != null && !ds.getMember().equals("")) {
             Assignable x = null;
             try {
-                x = ((IAssignableService) getService(IAssignableService.class))
+                x = ((IAssignableService) findEntityService(Assignable.class))
                         .findByName(ds.getClientId(), ds.getMember());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

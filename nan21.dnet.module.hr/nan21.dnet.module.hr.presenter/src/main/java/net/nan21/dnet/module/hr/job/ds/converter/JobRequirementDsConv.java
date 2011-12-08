@@ -42,7 +42,7 @@ public class JobRequirementDsConv extends
         if (ds.getRequirement() != null && !ds.getRequirement().equals("")) {
             WorkRequirement x = null;
             try {
-                x = ((IWorkRequirementService) getService(IWorkRequirementService.class))
+                x = ((IWorkRequirementService) findEntityService(WorkRequirement.class))
                         .findByName(ds.getClientId(), ds.getRequirement());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

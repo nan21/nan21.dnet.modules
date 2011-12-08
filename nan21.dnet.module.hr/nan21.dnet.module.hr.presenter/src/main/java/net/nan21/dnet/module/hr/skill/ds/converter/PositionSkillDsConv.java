@@ -57,7 +57,7 @@ public class PositionSkillDsConv extends
                 && !ds.getRequiredLevel().equals("")) {
             RatingLevel x = null;
             try {
-                x = ((IRatingLevelService) getService(IRatingLevelService.class))
+                x = ((IRatingLevelService) findEntityService(RatingLevel.class))
                         .findByName(ds.getClientId(), ds.getRatingScaleId(),
                                 ds.getRequiredLevel());
             } catch (javax.persistence.NoResultException exception) {
@@ -79,7 +79,7 @@ public class PositionSkillDsConv extends
         if (ds.getCompetence() != null && !ds.getCompetence().equals("")) {
             Skill x = null;
             try {
-                x = ((ISkillService) getService(ISkillService.class))
+                x = ((ISkillService) findEntityService(Skill.class))
                         .findByName(ds.getClientId(), ds.getCompetence());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -34,7 +34,7 @@ public class UserDsConv extends AbstractDsConverter<UserDs, User> implements
         if (ds.getAccountType() != null && !ds.getAccountType().equals("")) {
             UserType x = null;
             try {
-                x = ((IUserTypeService) getService(IUserTypeService.class))
+                x = ((IUserTypeService) findEntityService(UserType.class))
                         .findByName(ds.getClientId(), ds.getAccountType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

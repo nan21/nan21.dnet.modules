@@ -46,7 +46,7 @@ public class ExportMapItemDsConv extends
         if (ds.getExportMap() != null && !ds.getExportMap().equals("")) {
             ExportMap x = null;
             try {
-                x = ((IExportMapService) getService(IExportMapService.class))
+                x = ((IExportMapService) findEntityService(ExportMap.class))
                         .findByName(ds.getClientId(), ds.getExportMap());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -65,7 +65,7 @@ public class ExportMapItemDsConv extends
         if (ds.getCsvExport() != null && !ds.getCsvExport().equals("")) {
             CsvExport x = null;
             try {
-                x = ((ICsvExportService) getService(ICsvExportService.class))
+                x = ((ICsvExportService) findEntityService(CsvExport.class))
                         .findByName(ds.getClientId(), ds.getCsvExport());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

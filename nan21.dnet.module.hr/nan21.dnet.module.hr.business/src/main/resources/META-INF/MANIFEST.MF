@@ -77,20 +77,21 @@ Bundle-SymbolicName: nan21.dnet.module.hr.business
 Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,javax.v
- alidation;version="[1.0,2.0)",net.nan21.dnet.core.api.service,net.nan
- 21.dnet.core.api.setup,net.nan21.dnet.core.business.persistenceunit,n
- et.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.currency
- .domain.entity,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.d
- net.module.bd.org.domain.entity,net.nan21.dnet.module.hr.employee.dom
- ain.entity,net.nan21.dnet.module.hr.grade.domain.entity,net.nan21.dne
- t.module.hr.job.domain.entity,net.nan21.dnet.module.hr.payroll.domain
- .entity,net.nan21.dnet.module.hr.skill.domain.entity,net.nan21.dnet.m
- odule.hr.time.domain.entity,net.nan21.dnet.module.hr.training.domain.
- entity,org.aopalliance.aop;version="[1.0,2.0)",org.hibernate.validato
- r;version="[4.0,5.0)",org.hibernate.validator.constraints;version="[4
- .0,5.0)",org.springframework.aop;version="[3.0,3.1)",org.springframew
- ork.aop.framework;version="[3.0,3.1)",org.springframework.context.wea
- ving;version="[3.0,3.1)",org.springframework.orm.jpa,org.springframew
- ork.orm.jpa.vendor,org.springframework.transaction;version="[3.0,3.1)
- ",org.springframework.transaction.aspectj;version="[3.0,3.1)"
+ alidation;version="[1.0,2.0)",net.nan21.dnet.core.api,net.nan21.dnet.
+ core.api.service,net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bu
+ siness.persistenceunit,net.nan21.dnet.core.business.service,net.nan21
+ .dnet.module.bd.currency.domain.entity,net.nan21.dnet.module.bd.geo.d
+ omain.entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dne
+ t.module.hr.employee.domain.entity,net.nan21.dnet.module.hr.grade.dom
+ ain.entity,net.nan21.dnet.module.hr.job.domain.entity,net.nan21.dnet.
+ module.hr.payroll.domain.entity,net.nan21.dnet.module.hr.skill.domain
+ .entity,net.nan21.dnet.module.hr.time.domain.entity,net.nan21.dnet.mo
+ dule.hr.training.domain.entity,org.aopalliance.aop;version="[1.0,2.0)
+ ",org.hibernate.validator;version="[4.0,5.0)",org.hibernate.validator
+ .constraints;version="[4.0,5.0)",org.springframework.aop;version="[3.
+ 0,3.1)",org.springframework.aop.framework;version="[3.0,3.1)",org.spr
+ ingframework.context.weaving;version="[3.0,3.1)",org.springframework.
+ orm.jpa,org.springframework.orm.jpa.vendor,org.springframework.transa
+ ction;version="[3.0,3.1)",org.springframework.transaction.aspectj;ver
+ sion="[3.0,3.1)"
 

@@ -26,6 +26,6 @@
 	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" >		  
 	</bean>
 	
-	<import resource="beans/ux.example.ds.xml"/>
+	<!-- <import resource="beans/ux.example.ds.xml"/>  -->
 
 </beans>

@@ -34,7 +34,7 @@ public class RegionDsConv extends AbstractDsConverter<RegionDs, Region>
         if (ds.getCountryCode() != null && !ds.getCountryCode().equals("")) {
             Country x = null;
             try {
-                x = ((ICountryService) getService(ICountryService.class))
+                x = ((ICountryService) findEntityService(Country.class))
                         .findByCode(ds.getClientId(), ds.getCountryCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

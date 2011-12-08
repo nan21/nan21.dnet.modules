@@ -35,7 +35,7 @@ public class GradeRateDsConv extends
         if (ds.getCurrencyCode() != null && !ds.getCurrencyCode().equals("")) {
             Currency x = null;
             try {
-                x = ((ICurrencyService) getService(ICurrencyService.class))
+                x = ((ICurrencyService) findEntityService(Currency.class))
                         .findByCode(ds.getClientId(), ds.getCurrencyCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

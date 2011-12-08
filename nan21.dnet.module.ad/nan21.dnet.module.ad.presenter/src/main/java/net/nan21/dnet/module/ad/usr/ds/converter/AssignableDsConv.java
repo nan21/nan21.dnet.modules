@@ -35,7 +35,7 @@ public class AssignableDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             AssignableType x = null;
             try {
-                x = ((IAssignableTypeService) getService(IAssignableTypeService.class))
+                x = ((IAssignableTypeService) findEntityService(AssignableType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

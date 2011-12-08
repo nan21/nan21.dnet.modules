@@ -35,7 +35,7 @@ public class IssueTypeDsConv extends
         if (ds.getCategory() != null && !ds.getCategory().equals("")) {
             IssueCategory x = null;
             try {
-                x = ((IIssueCategoryService) getService(IIssueCategoryService.class))
+                x = ((IIssueCategoryService) findEntityService(IssueCategory.class))
                         .findByName(ds.getClientId(), ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

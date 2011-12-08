@@ -35,7 +35,7 @@ public class OrganizationDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             OrganizationType x = null;
             try {
-                x = ((IOrganizationTypeService) getService(IOrganizationTypeService.class))
+                x = ((IOrganizationTypeService) findEntityService(OrganizationType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -43,7 +43,7 @@ public class ProjectDsConv extends AbstractDsConverter<ProjectDs, Project>
         if (ds.getType() != null && !ds.getType().equals("")) {
             ProjectType x = null;
             try {
-                x = ((IProjectTypeService) getService(IProjectTypeService.class))
+                x = ((IProjectTypeService) findEntityService(ProjectType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

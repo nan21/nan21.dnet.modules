@@ -32,16 +32,16 @@ Bundle-SymbolicName: nan21.dnet.module.pj.business
 Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,javax.v
- alidation;version="[1.0,2.0)",net.nan21.dnet.core.api.service,net.nan
- 21.dnet.core.api.setup,net.nan21.dnet.core.business.persistenceunit,n
- et.nan21.dnet.core.business.service,net.nan21.dnet.module.ad.usr.doma
- in.entity,net.nan21.dnet.module.pj.base.domain.entity,net.nan21.dnet.
- module.pj.md.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",or
- g.hibernate.validator;version="[4.0,5.0)",org.hibernate.validator.con
- straints;version="[4.0,5.0)",org.springframework.aop;version="[3.0,3.
- 1)",org.springframework.aop.framework;version="[3.0,3.1)",org.springf
- ramework.context.weaving;version="[3.0,3.1)",org.springframework.orm.
- jpa,org.springframework.orm.jpa.vendor,org.springframework.transactio
- n;version="[3.0,3.1)",org.springframework.transaction.aspectj;version
- ="[3.0,3.1)"
+ alidation;version="[1.0,2.0)",net.nan21.dnet.core.api,net.nan21.dnet.
+ core.api.service,net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bu
+ siness.persistenceunit,net.nan21.dnet.core.business.service,net.nan21
+ .dnet.module.ad.usr.domain.entity,net.nan21.dnet.module.pj.base.domai
+ n.entity,net.nan21.dnet.module.pj.md.domain.entity,org.aopalliance.ao
+ p;version="[1.0,2.0)",org.hibernate.validator;version="[4.0,5.0)",org
+ .hibernate.validator.constraints;version="[4.0,5.0)",org.springframew
+ ork.aop;version="[3.0,3.1)",org.springframework.aop.framework;version
+ ="[3.0,3.1)",org.springframework.context.weaving;version="[3.0,3.1)",
+ org.springframework.orm.jpa,org.springframework.orm.jpa.vendor,org.sp
+ ringframework.transaction;version="[3.0,3.1)",org.springframework.tra
+ nsaction.aspectj;version="[3.0,3.1)"
 

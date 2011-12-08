@@ -6,12 +6,7 @@
 				http://www.springframework.org/schema/beans/spring-beans.xsd
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
-   
- 	<bean id="LandFormTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.ux.example.business.serviceimpl.LandFormTypeService"  />  
- 
- 	<bean id="LandFormService" scope="prototype"
-	  		class="net.nan21.dnet.module.ux.example.business.serviceimpl.LandFormService"  />  
+    
    
 </beans>
    

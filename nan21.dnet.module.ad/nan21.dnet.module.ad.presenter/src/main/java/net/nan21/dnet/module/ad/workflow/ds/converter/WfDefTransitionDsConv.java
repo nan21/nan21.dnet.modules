@@ -52,7 +52,7 @@ public class WfDefTransitionDsConv extends
         if (ds.getSource() != null && !ds.getSource().equals("")) {
             WfDefNode x = null;
             try {
-                x = ((IWfDefNodeService) getService(IWfDefNodeService.class))
+                x = ((IWfDefNodeService) findEntityService(WfDefNode.class))
                         .findByName(ds.getClientId(), ds.getSource());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -71,7 +71,7 @@ public class WfDefTransitionDsConv extends
         if (ds.getTarget() != null && !ds.getTarget().equals("")) {
             WfDefNode x = null;
             try {
-                x = ((IWfDefNodeService) getService(IWfDefNodeService.class))
+                x = ((IWfDefNodeService) findEntityService(WfDefNode.class))
                         .findByName(ds.getClientId(), ds.getTarget());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

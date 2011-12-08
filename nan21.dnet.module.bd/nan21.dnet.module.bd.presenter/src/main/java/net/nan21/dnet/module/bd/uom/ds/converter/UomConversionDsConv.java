@@ -42,7 +42,7 @@ public class UomConversionDsConv extends
         if (ds.getSourceCode() != null && !ds.getSourceCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) getService(IUomService.class)).findByCode(
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(
                         ds.getClientId(), ds.getSourceCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -61,7 +61,7 @@ public class UomConversionDsConv extends
         if (ds.getTargetCode() != null && !ds.getTargetCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) getService(IUomService.class)).findByCode(
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(
                         ds.getClientId(), ds.getTargetCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

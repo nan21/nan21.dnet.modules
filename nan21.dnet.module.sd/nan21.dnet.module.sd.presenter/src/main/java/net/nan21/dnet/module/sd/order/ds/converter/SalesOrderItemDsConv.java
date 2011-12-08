@@ -49,7 +49,7 @@ public class SalesOrderItemDsConv extends
         if (ds.getProductCode() != null && !ds.getProductCode().equals("")) {
             Product x = null;
             try {
-                x = ((IProductService) getService(IProductService.class))
+                x = ((IProductService) findEntityService(Product.class))
                         .findByCode(ds.getClientId(), ds.getProductCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

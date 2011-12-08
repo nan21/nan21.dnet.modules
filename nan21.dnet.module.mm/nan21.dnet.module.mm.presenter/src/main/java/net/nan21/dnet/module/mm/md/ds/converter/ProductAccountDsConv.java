@@ -59,7 +59,7 @@ public class ProductAccountDsConv extends
                 && !ds.getOrganizationCode().equals("")) {
             Organization x = null;
             try {
-                x = ((IOrganizationService) getService(IOrganizationService.class))
+                x = ((IOrganizationService) findEntityService(Organization.class))
                         .findByCode(ds.getClientId(), ds.getOrganizationCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -78,7 +78,7 @@ public class ProductAccountDsConv extends
         if (ds.getGroupCode() != null && !ds.getGroupCode().equals("")) {
             ProductAccountGroup x = null;
             try {
-                x = ((IProductAccountGroupService) getService(IProductAccountGroupService.class))
+                x = ((IProductAccountGroupService) findEntityService(ProductAccountGroup.class))
                         .findByCode(ds.getClientId(), ds.getGroupCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -97,7 +97,7 @@ public class ProductAccountDsConv extends
         if (ds.getProductCode() != null && !ds.getProductCode().equals("")) {
             Product x = null;
             try {
-                x = ((IProductService) getService(IProductService.class))
+                x = ((IProductService) findEntityService(Product.class))
                         .findByCode(ds.getClientId(), ds.getProductCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

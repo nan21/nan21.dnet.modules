@@ -52,7 +52,7 @@ public class IssueLinkDsConv extends
         if (ds.getLinkType() != null && !ds.getLinkType().equals("")) {
             IssueLinkType x = null;
             try {
-                x = ((IIssueLinkTypeService) getService(IIssueLinkTypeService.class))
+                x = ((IIssueLinkTypeService) findEntityService(IssueLinkType.class))
                         .findByName(ds.getClientId(), ds.getLinkType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

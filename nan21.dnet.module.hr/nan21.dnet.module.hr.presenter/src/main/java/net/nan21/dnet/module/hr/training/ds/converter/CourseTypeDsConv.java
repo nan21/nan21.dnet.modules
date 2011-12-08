@@ -35,7 +35,7 @@ public class CourseTypeDsConv extends
         if (ds.getCategory() != null && !ds.getCategory().equals("")) {
             CourseCategory x = null;
             try {
-                x = ((ICourseCategoryService) getService(ICourseCategoryService.class))
+                x = ((ICourseCategoryService) findEntityService(CourseCategory.class))
                         .findByName(ds.getClientId(), ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

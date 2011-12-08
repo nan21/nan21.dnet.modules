@@ -25,10 +25,15 @@
 		<prop key="eclipselink.application-location"></prop>
 		<prop key="eclipselink.ddl-generation.output-mode">database</prop>
 		<prop key="eclipselink.logging.level">FINEST</prop>
-		<prop key="eclipselink.logging.timestamp">FINEST</prop>
-		<prop key="eclipselink.logging.session">FINEST</prop>
-		<prop key="eclipselink.logging.thread">FINEST</prop>
-		<prop key="eclipselink.logging.exceptions">FINEST</prop>
+		<prop key="eclipselink.logging.timestamp">true</prop>
+		<prop key="eclipselink.logging.session">true</prop>
+		<prop key="eclipselink.logging.thread">true</prop>
+		<prop key="eclipselink.logging.exceptions">true</prop>
+				 
+		<prop key="eclipselink.cache.type.default">SoftWeak</prop>
+		<prop key="eclipselink.cache.size.default">1000</prop>
+		<prop key="eclipselink.cache.shared.default">false</prop>
+		<prop key="eclipselink.flush-clear.cache">DropInvalidate</prop>		
 	</osgi-compendium:cm-properties>
 			
 	<context:annotation-config />
@@ -53,7 +58,7 @@
 					<constructor-arg value="${emf.persistenceUnitName}" />
 					<constructor-arg ref="osgiDataSource" />
 					<constructor-arg>
-						<props>
+						<props> 
 							<prop key="eclipselink.ddl-generation">${eclipselink.ddl-generation}</prop>
 							<prop key="eclipselink.application-location">${eclipselink.application-location}</prop>
 							<prop key="eclipselink.create-ddl-jdbc-file-name">create_nan21_dnet_module_ux.sql</prop>
@@ -64,6 +69,11 @@
 							<prop key="eclipselink.logging.session">${eclipselink.logging.session}</prop>
 							<prop key="eclipselink.logging.thread">${eclipselink.logging.thread}</prop>
 							<prop key="eclipselink.logging.exceptions">${eclipselink.logging.exceptions}</prop>
+							
+							<prop key="eclipselink.cache.type.default">${eclipselink.cache.type.default}</prop>
+							<prop key="eclipselink.cache.size.default">${eclipselink.cache.size.default}</prop>
+							<prop key="eclipselink.cache.shared.default">${eclipselink.cache.shared.default}</prop>
+							<prop key="eclipselink.flush-clear.cache">${eclipselink.flush-clear.cache}</prop>
 						</props>
 					</constructor-arg>
 				</bean>
@@ -73,6 +83,13 @@
 	<bean id="jpaDialect"
 		class="org.springframework.orm.jpa.vendor.EclipseLinkJpaDialect" />
 
+	<bean id="baseAsgnTxService" scope="prototype"
+	  		class="net.nan21.dnet.core.business.service.BaseAsgnTxService"  />  
+
+	<bean id="asgnTxServiceFactory" class="net.nan21.dnet.core.business.service.AsgnTxServiceFactory">
+		<property name="name" value="nan21.dnet.module.ux.business" />
+	</bean>  	
+	
 	<!-- Transaction manager -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
@@ -88,15 +105,44 @@
 			<tx:method name="insert" read-only="false" />
 			<tx:method name="update" read-only="false" />
 			<tx:method name="delete*" read-only="false" />
+			<tx:method name="do*" read-only="false" />
 		</tx:attributes>
 	</tx:advice>
 	
+	<tx:advice id="txAdviceAsgn" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="setup" read-only="false" />
+			<tx:method name="reset" read-only="false" />
+			<tx:method name="save" read-only="false" />		
+			<tx:method name="move*" read-only="false" />				
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- => uncomment for setup-participant
+	<tx:advice id="txAdviceSetupParticipant" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="execute" read-only="false" />					
+		</tx:attributes>
+	</tx:advice> -->
+	
 	<aop:config>
-		<aop:pointcut id="entityServiceMethods" expression="bean(*Service)" />
+		<aop:pointcut id="entityServiceMethods" expression="bean(*Service)" />		
+		<aop:pointcut id="asgnTxServiceMethods" expression="bean(baseAsgnTxService)" />
+		<!-- => uncomment for setup-participant
+		<aop:pointcut id="setupParticipantRun" expression="bean(setupParticipant)" /> -->
+		 
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="entityServiceMethods" />
+		<aop:advisor advice-ref="txAdviceAsgn" pointcut-ref="asgnTxServiceMethods" />
+		<!-- => uncomment for setup-participant
+		<aop:advisor advice-ref="txAdviceSetupParticipant" pointcut-ref="setupParticipantRun" /> -->		 
 	</aop:config>
 	
-	<!-- Domain services -->
-	<import resource="beans/ux.example.entity.xml" />
+	<!-- => uncomment for setup-participant
+	<bean id="setupParticipant" class="net.nan21.dnet.module.ux._businessdelegates.Setup_UX" scope="singleton" >		
+		<property name="ranking" value="140"></property>
+	</bean> -->
+	
+	<!-- Domain services => uncomment for entity service definitions Place them in the specified file.
+	<import resource="beans/ux.example.entity.xml" /> -->
 
 </beans>

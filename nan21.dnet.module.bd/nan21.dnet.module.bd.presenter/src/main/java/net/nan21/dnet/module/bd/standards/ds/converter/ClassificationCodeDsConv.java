@@ -36,7 +36,7 @@ public class ClassificationCodeDsConv extends
         if (ds.getClassSystem() != null && !ds.getClassSystem().equals("")) {
             ClassificationSystem x = null;
             try {
-                x = ((IClassificationSystemService) getService(IClassificationSystemService.class))
+                x = ((IClassificationSystemService) findEntityService(ClassificationSystem.class))
                         .findByCode(ds.getClientId(), ds.getClassSystem());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

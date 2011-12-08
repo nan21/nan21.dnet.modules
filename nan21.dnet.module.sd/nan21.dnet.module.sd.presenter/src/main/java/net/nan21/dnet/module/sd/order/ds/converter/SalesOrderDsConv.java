@@ -138,7 +138,7 @@ public class SalesOrderDsConv extends
         if (ds.getCurrency() != null && !ds.getCurrency().equals("")) {
             Currency x = null;
             try {
-                x = ((ICurrencyService) getService(ICurrencyService.class))
+                x = ((ICurrencyService) findEntityService(Currency.class))
                         .findByCode(ds.getClientId(), ds.getCurrency());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -158,7 +158,7 @@ public class SalesOrderDsConv extends
                 && !ds.getDeliveryMethod().equals("")) {
             DeliveryMethod x = null;
             try {
-                x = ((IDeliveryMethodService) getService(IDeliveryMethodService.class))
+                x = ((IDeliveryMethodService) findEntityService(DeliveryMethod.class))
                         .findByName(ds.getClientId(), ds.getDeliveryMethod());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -177,7 +177,7 @@ public class SalesOrderDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             SalesOrderType x = null;
             try {
-                x = ((ISalesOrderTypeService) getService(ISalesOrderTypeService.class))
+                x = ((ISalesOrderTypeService) findEntityService(SalesOrderType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -196,7 +196,7 @@ public class SalesOrderDsConv extends
         if (ds.getStatus() != null && !ds.getStatus().equals("")) {
             SalesOrderStatus x = null;
             try {
-                x = ((ISalesOrderStatusService) getService(ISalesOrderStatusService.class))
+                x = ((ISalesOrderStatusService) findEntityService(SalesOrderStatus.class))
                         .findByName(ds.getClientId(), ds.getStatus());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -215,7 +215,7 @@ public class SalesOrderDsConv extends
         if (ds.getPaymentMethod() != null && !ds.getPaymentMethod().equals("")) {
             PaymentMethod x = null;
             try {
-                x = ((IPaymentMethodService) getService(IPaymentMethodService.class))
+                x = ((IPaymentMethodService) findEntityService(PaymentMethod.class))
                         .findByName(ds.getClientId(), ds.getPaymentMethod());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -234,7 +234,7 @@ public class SalesOrderDsConv extends
         if (ds.getCustomerCode() != null && !ds.getCustomerCode().equals("")) {
             BusinessPartner x = null;
             try {
-                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
                         .findByCode(ds.getClientId(), ds.getCustomerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -253,7 +253,7 @@ public class SalesOrderDsConv extends
         if (ds.getSupplier() != null && !ds.getSupplier().equals("")) {
             Organization x = null;
             try {
-                x = ((IOrganizationService) getService(IOrganizationService.class))
+                x = ((IOrganizationService) findEntityService(Organization.class))
                         .findByCode(ds.getClientId(), ds.getSupplier());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -272,7 +272,7 @@ public class SalesOrderDsConv extends
         if (ds.getBillToCode() != null && !ds.getBillToCode().equals("")) {
             BusinessPartner x = null;
             try {
-                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
                         .findByCode(ds.getClientId(), ds.getBillToCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -291,7 +291,7 @@ public class SalesOrderDsConv extends
         if (ds.getShipToCode() != null && !ds.getShipToCode().equals("")) {
             BusinessPartner x = null;
             try {
-                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
                         .findByCode(ds.getClientId(), ds.getShipToCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -36,7 +36,7 @@ public class RatingLevelDsConv extends
         if (ds.getRatingScale() != null && !ds.getRatingScale().equals("")) {
             RatingScale x = null;
             try {
-                x = ((IRatingScaleService) getService(IRatingScaleService.class))
+                x = ((IRatingScaleService) findEntityService(RatingScale.class))
                         .findByName(ds.getClientId(), ds.getRatingScale());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

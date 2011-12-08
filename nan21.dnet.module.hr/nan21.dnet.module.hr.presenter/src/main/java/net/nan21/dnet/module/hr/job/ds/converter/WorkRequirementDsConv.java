@@ -35,7 +35,7 @@ public class WorkRequirementDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             WorkRequirementType x = null;
             try {
-                x = ((IWorkRequirementTypeService) getService(IWorkRequirementTypeService.class))
+                x = ((IWorkRequirementTypeService) findEntityService(WorkRequirementType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

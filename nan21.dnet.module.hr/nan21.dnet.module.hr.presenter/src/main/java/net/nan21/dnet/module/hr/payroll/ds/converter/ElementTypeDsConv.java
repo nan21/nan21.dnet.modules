@@ -35,7 +35,7 @@ public class ElementTypeDsConv extends
         if (ds.getCategory() != null && !ds.getCategory().equals("")) {
             ElementCategory x = null;
             try {
-                x = ((IElementCategoryService) getService(IElementCategoryService.class))
+                x = ((IElementCategoryService) findEntityService(ElementCategory.class))
                         .findByName(ds.getClientId(), ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

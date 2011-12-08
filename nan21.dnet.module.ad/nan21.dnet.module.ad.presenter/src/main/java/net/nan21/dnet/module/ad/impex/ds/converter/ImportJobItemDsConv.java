@@ -44,7 +44,7 @@ public class ImportJobItemDsConv extends
         if (ds.getJobName() != null && !ds.getJobName().equals("")) {
             ImportJob x = null;
             try {
-                x = ((IImportJobService) getService(IImportJobService.class))
+                x = ((IImportJobService) findEntityService(ImportJob.class))
                         .findByName(ds.getClientId(), ds.getJobName());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -63,7 +63,7 @@ public class ImportJobItemDsConv extends
         if (ds.getMapName() != null && !ds.getMapName().equals("")) {
             ImportMap x = null;
             try {
-                x = ((IImportMapService) getService(IImportMapService.class))
+                x = ((IImportMapService) findEntityService(ImportMap.class))
                         .findByName(ds.getClientId(), ds.getMapName());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

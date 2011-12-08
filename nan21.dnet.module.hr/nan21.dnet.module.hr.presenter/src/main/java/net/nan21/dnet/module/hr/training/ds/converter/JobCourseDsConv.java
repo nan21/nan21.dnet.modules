@@ -43,7 +43,7 @@ public class JobCourseDsConv extends
         if (ds.getJobCode() != null && !ds.getJobCode().equals("")) {
             Job x = null;
             try {
-                x = ((IJobService) getService(IJobService.class)).findByCode(
+                x = ((IJobService) findEntityService(Job.class)).findByCode(
                         ds.getClientId(), ds.getJobCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -62,7 +62,7 @@ public class JobCourseDsConv extends
         if (ds.getCourseCode() != null && !ds.getCourseCode().equals("")) {
             Course x = null;
             try {
-                x = ((ICourseService) getService(ICourseService.class))
+                x = ((ICourseService) findEntityService(Course.class))
                         .findByCode(ds.getClientId(), ds.getCourseCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

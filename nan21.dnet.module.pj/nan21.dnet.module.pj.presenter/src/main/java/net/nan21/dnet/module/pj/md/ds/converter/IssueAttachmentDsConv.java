@@ -45,7 +45,7 @@ public class IssueAttachmentDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             AttachmentType x = null;
             try {
-                x = ((IAttachmentTypeService) getService(IAttachmentTypeService.class))
+                x = ((IAttachmentTypeService) findEntityService(AttachmentType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -64,7 +64,7 @@ public class IssueAttachmentDsConv extends
         if (ds.getIssue() != null && !ds.getIssue().equals("")) {
             Issue x = null;
             try {
-                x = ((IIssueService) getService(IIssueService.class))
+                x = ((IIssueService) findEntityService(Issue.class))
                         .findByCode(ds.getClientId(), ds.getIssue());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

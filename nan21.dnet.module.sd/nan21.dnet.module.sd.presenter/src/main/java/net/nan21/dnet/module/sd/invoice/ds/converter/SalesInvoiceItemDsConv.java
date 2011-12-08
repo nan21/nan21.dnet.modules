@@ -51,7 +51,7 @@ public class SalesInvoiceItemDsConv extends
         if (ds.getUomCode() != null && !ds.getUomCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) getService(IUomService.class)).findByCode(
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(
                         ds.getClientId(), ds.getUomCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -70,7 +70,7 @@ public class SalesInvoiceItemDsConv extends
         if (ds.getItemCode() != null && !ds.getItemCode().equals("")) {
             Product x = null;
             try {
-                x = ((IProductService) getService(IProductService.class))
+                x = ((IProductService) findEntityService(Product.class))
                         .findByCode(ds.getClientId(), ds.getItemCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

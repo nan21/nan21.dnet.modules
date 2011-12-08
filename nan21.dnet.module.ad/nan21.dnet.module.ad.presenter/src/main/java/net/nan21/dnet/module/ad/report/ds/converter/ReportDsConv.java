@@ -35,7 +35,7 @@ public class ReportDsConv extends AbstractDsConverter<ReportDs, Report>
         if (ds.getReportServer() != null && !ds.getReportServer().equals("")) {
             ReportServer x = null;
             try {
-                x = ((IReportServerService) getService(IReportServerService.class))
+                x = ((IReportServerService) findEntityService(ReportServer.class))
                         .findByName(ds.getClientId(), ds.getReportServer());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

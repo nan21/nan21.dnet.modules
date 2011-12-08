@@ -85,7 +85,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                 && !ds.getManufacturerCode().equals("")) {
             ProductManufacturer x = null;
             try {
-                x = ((IProductManufacturerService) getService(IProductManufacturerService.class))
+                x = ((IProductManufacturerService) findEntityService(ProductManufacturer.class))
                         .findByCode(ds.getClientId(), ds.getManufacturerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -105,7 +105,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                 && !ds.getDefaultUomCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) getService(IUomService.class)).findByCode(
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(
                         ds.getClientId(), ds.getDefaultUomCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -123,7 +123,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         if (ds.getDimUomCode() != null && !ds.getDimUomCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) getService(IUomService.class)).findByCode(
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(
                         ds.getClientId(), ds.getDimUomCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -142,7 +142,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         if (ds.getVolumeUomCode() != null && !ds.getVolumeUomCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) getService(IUomService.class)).findByCode(
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(
                         ds.getClientId(), ds.getVolumeUomCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -161,7 +161,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         if (ds.getWeightUomCode() != null && !ds.getWeightUomCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) getService(IUomService.class)).findByCode(
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(
                         ds.getClientId(), ds.getWeightUomCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -181,7 +181,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                 && !ds.getAttributeGroup().equals("")) {
             ProductAttributeGroup x = null;
             try {
-                x = ((IProductAttributeGroupService) getService(IProductAttributeGroupService.class))
+                x = ((IProductAttributeGroupService) findEntityService(ProductAttributeGroup.class))
                         .findByName(ds.getClientId(), ds.getAttributeGroup());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -44,7 +44,7 @@ public class ExportJobItemDsConv extends
         if (ds.getJobName() != null && !ds.getJobName().equals("")) {
             ExportJob x = null;
             try {
-                x = ((IExportJobService) getService(IExportJobService.class))
+                x = ((IExportJobService) findEntityService(ExportJob.class))
                         .findByName(ds.getClientId(), ds.getJobName());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -63,7 +63,7 @@ public class ExportJobItemDsConv extends
         if (ds.getMapName() != null && !ds.getMapName().equals("")) {
             ExportMap x = null;
             try {
-                x = ((IExportMapService) getService(IExportMapService.class))
+                x = ((IExportMapService) findEntityService(ExportMap.class))
                         .findByName(ds.getClientId(), ds.getMapName());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

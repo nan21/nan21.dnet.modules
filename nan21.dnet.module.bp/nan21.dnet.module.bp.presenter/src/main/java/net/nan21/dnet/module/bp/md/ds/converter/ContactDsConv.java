@@ -34,7 +34,7 @@ public class ContactDsConv extends AbstractDsConverter<ContactDs, Contact>
         if (ds.getBpartnerCode() != null && !ds.getBpartnerCode().equals("")) {
             BusinessPartner x = null;
             try {
-                x = ((IBusinessPartnerService) getService(IBusinessPartnerService.class))
+                x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
                         .findByCode(ds.getClientId(), ds.getBpartnerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -71,7 +71,7 @@ public class Setup_AD extends AbstractPresenterSetupParticipant implements
 
 			ImportFromJobDelegate importFromJobDelegate = new ImportFromJobDelegate();
 			importFromJobDelegate.setAppContext(appContext);
-			importFromJobDelegate.setEntityServiceFactories(getEntityServiceFactories());			
+			//importFromJobDelegate.setEntityServiceFactories(getEntityServiceFactories());			
 			importFromJobDelegate.execute(importFromJob);
 		}
 		this.tasks.clear();

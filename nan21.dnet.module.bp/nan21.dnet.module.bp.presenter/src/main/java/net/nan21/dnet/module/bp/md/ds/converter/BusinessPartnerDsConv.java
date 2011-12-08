@@ -46,7 +46,7 @@ public class BusinessPartnerDsConv extends
         if (ds.getCountryCode() != null && !ds.getCountryCode().equals("")) {
             Country x = null;
             try {
-                x = ((ICountryService) getService(ICountryService.class))
+                x = ((ICountryService) findEntityService(Country.class))
                         .findByCode(ds.getClientId(), ds.getCountryCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -66,7 +66,7 @@ public class BusinessPartnerDsConv extends
                 && ds.getLegalForm() != null && !ds.getLegalForm().equals("")) {
             CompanyLegalForm x = null;
             try {
-                x = ((ICompanyLegalFormService) getService(ICompanyLegalFormService.class))
+                x = ((ICompanyLegalFormService) findEntityService(CompanyLegalForm.class))
                         .findByName(ds.getClientId(), ds.getCountryId(),
                                 ds.getLegalForm());
             } catch (javax.persistence.NoResultException exception) {

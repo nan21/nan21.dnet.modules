@@ -35,7 +35,7 @@ public class ImportMapItemDsConv extends
         if (ds.getImportMapName() != null && !ds.getImportMapName().equals("")) {
             ImportMap x = null;
             try {
-                x = ((IImportMapService) getService(IImportMapService.class))
+                x = ((IImportMapService) findEntityService(ImportMap.class))
                         .findByName(ds.getClientId(), ds.getImportMapName());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

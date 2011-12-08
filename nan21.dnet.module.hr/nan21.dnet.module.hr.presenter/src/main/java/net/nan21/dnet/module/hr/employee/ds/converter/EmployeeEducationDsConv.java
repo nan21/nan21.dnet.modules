@@ -43,7 +43,7 @@ public class EmployeeEducationDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             EducationType x = null;
             try {
-                x = ((IEducationTypeService) getService(IEducationTypeService.class))
+                x = ((IEducationTypeService) findEntityService(EducationType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -35,7 +35,7 @@ public class ProductAttributeTypeDsConv extends
         if (ds.getCategory() != null && !ds.getCategory().equals("")) {
             ProductAttributeCategory x = null;
             try {
-                x = ((IProductAttributeCategoryService) getService(IProductAttributeCategoryService.class))
+                x = ((IProductAttributeCategoryService) findEntityService(ProductAttributeCategory.class))
                         .findByName(ds.getClientId(), ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -35,7 +35,7 @@ public class SkillTypeDsConv extends
         if (ds.getCategory() != null && !ds.getCategory().equals("")) {
             SkillCategory x = null;
             try {
-                x = ((ISkillCategoryService) getService(ISkillCategoryService.class))
+                x = ((ISkillCategoryService) findEntityService(SkillCategory.class))
                         .findByName(ds.getClientId(), ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

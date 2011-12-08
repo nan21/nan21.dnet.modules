@@ -46,7 +46,7 @@ public class InvTransactionTypeDsConv extends
         if (ds.getAction() != null && !ds.getAction().equals("")) {
             InvTransactionAction x = null;
             try {
-                x = ((IInvTransactionActionService) getService(IInvTransactionActionService.class))
+                x = ((IInvTransactionActionService) findEntityService(InvTransactionAction.class))
                         .findByName(ds.getClientId(), ds.getAction());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -65,7 +65,7 @@ public class InvTransactionTypeDsConv extends
         if (ds.getSourceType() != null && !ds.getSourceType().equals("")) {
             InvTransactionSourceType x = null;
             try {
-                x = ((IInvTransactionSourceTypeService) getService(IInvTransactionSourceTypeService.class))
+                x = ((IInvTransactionSourceTypeService) findEntityService(InvTransactionSourceType.class))
                         .findByName(ds.getClientId(), ds.getSourceType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

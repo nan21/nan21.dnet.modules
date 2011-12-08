@@ -30,7 +30,6 @@
 	 
 	 
 	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator">
-	 
 	</bean> 
 	
 	<bean id="asgnServiceFactory" class="net.nan21.dnet.core.presenter.service.AsgnServiceFactory" >
@@ -42,6 +41,7 @@
 	
 	<bean id="setupParticipant" class="net.nan21.dnet.module.ad._presenterdelegates.Setup_AD" scope="singleton" >		
 		<property name="ranking" value="100"></property>
+		<property name="systemConfig" ref="systemConfig"></property>
 	</bean>
 	
 	<import resource="beans/ad.client.ds.xml"/>

@@ -46,7 +46,7 @@ public class PayScaleRateDsConv extends
         if (ds.getCurrencyCode() != null && !ds.getCurrencyCode().equals("")) {
             Currency x = null;
             try {
-                x = ((ICurrencyService) getService(ICurrencyService.class))
+                x = ((ICurrencyService) findEntityService(Currency.class))
                         .findByCode(ds.getClientId(), ds.getCurrencyCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -65,7 +65,7 @@ public class PayScaleRateDsConv extends
         if (ds.getPayScaleCode() != null && !ds.getPayScaleCode().equals("")) {
             PayScale x = null;
             try {
-                x = ((IPayScaleService) getService(IPayScaleService.class))
+                x = ((IPayScaleService) findEntityService(PayScale.class))
                         .findByCode(ds.getClientId(), ds.getPayScaleCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

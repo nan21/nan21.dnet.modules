@@ -35,7 +35,7 @@ public class CommunicationChannelDsConv extends
         if (ds.getType() != null && !ds.getType().equals("")) {
             CommunicationChannelType x = null;
             try {
-                x = ((ICommunicationChannelTypeService) getService(ICommunicationChannelTypeService.class))
+                x = ((ICommunicationChannelTypeService) findEntityService(CommunicationChannelType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

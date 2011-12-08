@@ -86,7 +86,7 @@ public class InvTransactionLineDsConv extends
         if (ds.getItemCode() != null && !ds.getItemCode().equals("")) {
             Product x = null;
             try {
-                x = ((IProductService) getService(IProductService.class))
+                x = ((IProductService) findEntityService(Product.class))
                         .findByCode(ds.getClientId(), ds.getItemCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -106,7 +106,7 @@ public class InvTransactionLineDsConv extends
                 && !ds.getFromSubInventory().equals("")) {
             SubInventory x = null;
             try {
-                x = ((ISubInventoryService) getService(ISubInventoryService.class))
+                x = ((ISubInventoryService) findEntityService(SubInventory.class))
                         .findByName(ds.getClientId(), ds.getFromSubInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -126,7 +126,7 @@ public class InvTransactionLineDsConv extends
                 && !ds.getToSubInventory().equals("")) {
             SubInventory x = null;
             try {
-                x = ((ISubInventoryService) getService(ISubInventoryService.class))
+                x = ((ISubInventoryService) findEntityService(SubInventory.class))
                         .findByName(ds.getClientId(), ds.getToSubInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -145,7 +145,7 @@ public class InvTransactionLineDsConv extends
         if (ds.getFromLocator() != null && !ds.getFromLocator().equals("")) {
             StockLocator x = null;
             try {
-                x = ((IStockLocatorService) getService(IStockLocatorService.class))
+                x = ((IStockLocatorService) findEntityService(StockLocator.class))
                         .findByName(ds.getClientId(), ds.getFromLocator());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -164,7 +164,7 @@ public class InvTransactionLineDsConv extends
         if (ds.getToLocator() != null && !ds.getToLocator().equals("")) {
             StockLocator x = null;
             try {
-                x = ((IStockLocatorService) getService(IStockLocatorService.class))
+                x = ((IStockLocatorService) findEntityService(StockLocator.class))
                         .findByName(ds.getClientId(), ds.getToLocator());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

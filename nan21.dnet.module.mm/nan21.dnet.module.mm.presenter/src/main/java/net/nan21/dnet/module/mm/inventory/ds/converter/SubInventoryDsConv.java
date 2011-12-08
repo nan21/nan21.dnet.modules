@@ -35,7 +35,7 @@ public class SubInventoryDsConv extends
         if (ds.getInventory() != null && !ds.getInventory().equals("")) {
             Organization x = null;
             try {
-                x = ((IOrganizationService) getService(IOrganizationService.class))
+                x = ((IOrganizationService) findEntityService(Organization.class))
                         .findByCode(ds.getClientId(), ds.getInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

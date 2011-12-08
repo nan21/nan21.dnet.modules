@@ -45,7 +45,7 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
         if (ds.getType() != null && !ds.getType().equals("")) {
             SkillType x = null;
             try {
-                x = ((ISkillTypeService) getService(ISkillTypeService.class))
+                x = ((ISkillTypeService) findEntityService(SkillType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -64,7 +64,7 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
         if (ds.getRatingScale() != null && !ds.getRatingScale().equals("")) {
             RatingScale x = null;
             try {
-                x = ((IRatingScaleService) getService(IRatingScaleService.class))
+                x = ((IRatingScaleService) findEntityService(RatingScale.class))
                         .findByName(ds.getClientId(), ds.getRatingScale());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

@@ -108,7 +108,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getEmployerCode() != null && !ds.getEmployerCode().equals("")) {
             Organization x = null;
             try {
-                x = ((IOrganizationService) getService(IOrganizationService.class))
+                x = ((IOrganizationService) findEntityService(Organization.class))
                         .findByCode(ds.getClientId(), ds.getEmployerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -128,7 +128,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                 && !ds.getCitizenshipCode().equals("")) {
             Country x = null;
             try {
-                x = ((ICountryService) getService(ICountryService.class))
+                x = ((ICountryService) findEntityService(Country.class))
                         .findByCode(ds.getClientId(), ds.getCitizenshipCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -147,7 +147,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getType() != null && !ds.getType().equals("")) {
             EmploymentType x = null;
             try {
-                x = ((IEmploymentTypeService) getService(IEmploymentTypeService.class))
+                x = ((IEmploymentTypeService) findEntityService(EmploymentType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -166,7 +166,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getPositionCode() != null && !ds.getPositionCode().equals("")) {
             Position x = null;
             try {
-                x = ((IPositionService) getService(IPositionService.class))
+                x = ((IPositionService) findEntityService(Position.class))
                         .findByCode(ds.getClientId(), ds.getPositionCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -184,7 +184,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getJobCode() != null && !ds.getJobCode().equals("")) {
             Job x = null;
             try {
-                x = ((IJobService) getService(IJobService.class)).findByCode(
+                x = ((IJobService) findEntityService(Job.class)).findByCode(
                         ds.getClientId(), ds.getJobCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -204,7 +204,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
                 && !ds.getOrganizationCode().equals("")) {
             Organization x = null;
             try {
-                x = ((IOrganizationService) getService(IOrganizationService.class))
+                x = ((IOrganizationService) findEntityService(Organization.class))
                         .findByCode(ds.getClientId(), ds.getOrganizationCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -223,7 +223,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getGradeCode() != null && !ds.getGradeCode().equals("")) {
             Grade x = null;
             try {
-                x = ((IGradeService) getService(IGradeService.class))
+                x = ((IGradeService) findEntityService(Grade.class))
                         .findByCode(ds.getClientId(), ds.getGradeCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -242,7 +242,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getPayroll() != null && !ds.getPayroll().equals("")) {
             Payroll x = null;
             try {
-                x = ((IPayrollService) getService(IPayrollService.class))
+                x = ((IPayrollService) findEntityService(Payroll.class))
                         .findByName(ds.getClientId(), ds.getPayroll());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

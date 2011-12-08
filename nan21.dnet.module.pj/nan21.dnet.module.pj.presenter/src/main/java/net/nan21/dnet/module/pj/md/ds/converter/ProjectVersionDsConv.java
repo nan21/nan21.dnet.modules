@@ -47,7 +47,7 @@ public class ProjectVersionDsConv extends
         if (ds.getProject() != null && !ds.getProject().equals("")) {
             Project x = null;
             try {
-                x = ((IProjectService) getService(IProjectService.class))
+                x = ((IProjectService) findEntityService(Project.class))
                         .findByCode(ds.getClientId(), ds.getProject());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -68,7 +68,7 @@ public class ProjectVersionDsConv extends
                 && !ds.getProjectVersion().equals("")) {
             ProjectVersion x = null;
             try {
-                x = ((IProjectVersionService) getService(IProjectVersionService.class))
+                x = ((IProjectVersionService) findEntityService(ProjectVersion.class))
                         .findByName(ds.getClientId(), ds.getProjectId(),
                                 ds.getProjectVersion());
             } catch (javax.persistence.NoResultException exception) {

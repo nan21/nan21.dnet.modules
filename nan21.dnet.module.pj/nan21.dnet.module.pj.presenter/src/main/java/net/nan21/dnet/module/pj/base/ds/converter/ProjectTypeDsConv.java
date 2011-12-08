@@ -35,7 +35,7 @@ public class ProjectTypeDsConv extends
         if (ds.getCategory() != null && !ds.getCategory().equals("")) {
             ProjectCategory x = null;
             try {
-                x = ((IProjectCategoryService) getService(IProjectCategoryService.class))
+                x = ((IProjectCategoryService) findEntityService(ProjectCategory.class))
                         .findByName(ds.getClientId(), ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

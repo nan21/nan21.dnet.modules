@@ -59,7 +59,7 @@ public class InvTransactionDsConv extends
                 && !ds.getTransactionType().equals("")) {
             InvTransactionType x = null;
             try {
-                x = ((IInvTransactionTypeService) getService(IInvTransactionTypeService.class))
+                x = ((IInvTransactionTypeService) findEntityService(InvTransactionType.class))
                         .findByName(ds.getClientId(), ds.getTransactionType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -78,7 +78,7 @@ public class InvTransactionDsConv extends
         if (ds.getFromInventory() != null && !ds.getFromInventory().equals("")) {
             Organization x = null;
             try {
-                x = ((IOrganizationService) getService(IOrganizationService.class))
+                x = ((IOrganizationService) findEntityService(Organization.class))
                         .findByName(ds.getClientId(), ds.getFromInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -97,7 +97,7 @@ public class InvTransactionDsConv extends
         if (ds.getToInventory() != null && !ds.getToInventory().equals("")) {
             Organization x = null;
             try {
-                x = ((IOrganizationService) getService(IOrganizationService.class))
+                x = ((IOrganizationService) findEntityService(Organization.class))
                         .findByName(ds.getClientId(), ds.getToInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

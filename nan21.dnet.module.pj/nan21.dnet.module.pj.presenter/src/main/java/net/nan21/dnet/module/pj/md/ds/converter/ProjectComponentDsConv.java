@@ -35,7 +35,7 @@ public class ProjectComponentDsConv extends
         if (ds.getProject() != null && !ds.getProject().equals("")) {
             Project x = null;
             try {
-                x = ((IProjectService) getService(IProjectService.class))
+                x = ((IProjectService) findEntityService(Project.class))
                         .findByCode(ds.getClientId(), ds.getProject());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

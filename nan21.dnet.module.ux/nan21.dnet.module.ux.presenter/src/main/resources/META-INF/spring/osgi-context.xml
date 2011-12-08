@@ -7,11 +7,17 @@
 	http://www.springframework.org/schema/osgi 
 		http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 		
+	
+	<osgi:reference id="systemConfig" cardinality="1..1"
+		interface="net.nan21.dnet.core.api.ISystemConfig" />
+			
 	<osgi:reference id="osgiDataSource" cardinality="0..1"
 		interface="javax.sql.DataSource" />
 		
+		
+	<!-- => uncomment for ui contributions
 	<osgi:service ref="menuProvider" ranking="0"
-		interface="net.nan21.dnet.core.api.ui.extjs.IExtensionProvider" />
+		interface="net.nan21.dnet.core.api.ui.extjs.IExtensionProvider" /> -->
 		
 	<osgi:service ref="dsServiceFactory" ranking="0"
 		interface="net.nan21.dnet.core.api.service.IDsServiceFactory" />
@@ -20,5 +26,10 @@
 		interface="net.nan21.dnet.core.api.descriptor.IDsDefinitions" />
 		
 	<osgi:list id="osgiEntityServiceFactories" cardinality="1..N"
-		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />	
+		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />
+			
+	<!--  => uncomment for file upload services	
+	<osgi:service ref="fileUploadServiceFactory" ranking="0"
+		interface="net.nan21.dnet.core.api.service.IFileUploadServiceFactory" />	 -->
+				
 </beans>

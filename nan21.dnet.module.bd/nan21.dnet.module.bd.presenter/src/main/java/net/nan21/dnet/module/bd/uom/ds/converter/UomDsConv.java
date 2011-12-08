@@ -31,7 +31,7 @@ public class UomDsConv extends AbstractDsConverter<UomDs, Uom> implements
         if (ds.getType() != null && !ds.getType().equals("")) {
             UomType x = null;
             try {
-                x = ((IUomTypeService) getService(IUomTypeService.class))
+                x = ((IUomTypeService) findEntityService(UomType.class))
                         .findByName(ds.getClientId(), ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
