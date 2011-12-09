@@ -6,15 +6,22 @@
 package net.nan21.dnet.module.mm.md.ds.model;
 
 import java.util.Date;
+import javax.persistence.QueryHint;
+import net.nan21.dnet.core.api.annotation.DsQueryHints;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import org.eclipse.persistence.config.QueryHints;
 
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = ProductAttributeValue.class)
+@DsQueryHints({
+        @QueryHint(name = QueryHints.LEFT_FETCH, value = "e.product.attributeGroup"),
+        @QueryHint(name = QueryHints.LEFT_FETCH, value = "e.groupAttribute.attribute.type"),
+        @QueryHint(name = QueryHints.LEFT_FETCH, value = "e.groupAttribute.attribute.uom") })
 public class ProductAttributeValueDs extends
         AbstractDsModel<ProductAttributeValue> implements IModelWithId,
         IModelWithClientId {
