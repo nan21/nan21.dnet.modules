@@ -182,6 +182,17 @@
 		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeLovDs" />
 	</bean>
    
+ 	<bean id="ProductAttributeGroupAttributeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeGroupAttributeDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroupAttribute" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttributeGroupAttributeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProductAttributeGroupAttribute" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeGroupAttributeDs" />
+	</bean>
+   
  	<bean id="ProductAttributeValueDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs" />

@@ -125,6 +125,7 @@
 		</tx:attributes>
 	</tx:advice> -->
 	
+	
 	<aop:config>
 		<aop:pointcut id="entityServiceMethods" expression="bean(*Service)" />		
 		<aop:pointcut id="asgnTxServiceMethods" expression="bean(baseAsgnTxService)" />
@@ -141,6 +142,9 @@
 	<bean id="setupParticipant" class="net.nan21.dnet.module.ux._businessdelegates.Setup_UX" scope="singleton" >		
 		<property name="ranking" value="140"></property>
 	</bean> -->
+	
+	<bean id="serviceLocator" class="net.nan21.dnet.core.business.service.ServiceLocatorBusiness">
+	</bean> 
 	
 	<!-- Domain services => uncomment for entity service definitions Place them in the specified file.
 	<import resource="beans/ux.example.entity.xml" /> -->

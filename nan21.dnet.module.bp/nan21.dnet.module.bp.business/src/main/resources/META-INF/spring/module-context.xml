@@ -139,6 +139,8 @@
 		<property name="ranking" value="170"></property>
 	</bean>
 	
+	<bean id="serviceLocator" class="net.nan21.dnet.core.business.service.ServiceLocatorBusiness">
+	</bean> 
 	
 	<!-- Domain services -->
 	<import resource="beans/bp.base.entity.xml" />

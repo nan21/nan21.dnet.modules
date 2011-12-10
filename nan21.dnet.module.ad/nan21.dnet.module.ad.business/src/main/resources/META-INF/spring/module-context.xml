@@ -142,6 +142,9 @@
 		<property name="ranking" value="199"></property>
 		<property name="systemConfig" ref="systemConfig"></property>
 	</bean>
+	
+	<bean id="serviceLocator" class="net.nan21.dnet.core.business.service.ServiceLocatorBusiness">
+	</bean> 
 	 
 	<!-- Domain services -->
 	<import resource="beans/ad.client.entity.xml" />

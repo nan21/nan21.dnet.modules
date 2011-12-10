@@ -139,7 +139,10 @@
 	<bean id="setupParticipant" class="net.nan21.dnet.module.hr._businessdelegates.Setup_HR" scope="singleton" >		
 		<property name="ranking" value="150"></property>
 	</bean>
-	  
+	 
+	<bean id="serviceLocator" class="net.nan21.dnet.core.business.service.ServiceLocatorBusiness">
+	</bean> 
+	 
 	<!-- Domain services -->
 	<import resource="beans/hr.grade.entity.xml" />
 	<import resource="beans/hr.skill.entity.xml" />

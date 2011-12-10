@@ -54,11 +54,12 @@
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductCategory</class>
 		
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup</class>
-		
-		<!-- <class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory</class>
-		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroupAttribute</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute</class>
-		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue</class> -->
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType</class>
+		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory</class>
+		 
 		
 		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceListType</class> 
 		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceList</class>

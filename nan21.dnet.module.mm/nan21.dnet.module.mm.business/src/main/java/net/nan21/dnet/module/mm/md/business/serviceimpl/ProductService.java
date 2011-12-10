@@ -9,6 +9,7 @@ import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
+import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductCategory;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer;
 
@@ -128,6 +129,18 @@ public class ProductService extends AbstractEntityService<Product> {
                         Product.class)
                 .setParameter("pAttributeGroupId", attributeGroupId)
                 .getResultList();
+    }
+
+    public List<Product> findByAttributes(ProductAttributeValue attributes) {
+        return this.findByAttributesId(attributes.getId());
+    }
+
+    public List<Product> findByAttributesId(Long attributesId) {
+        return (List<Product>) this.em
+                .createQuery(
+                        "select e from Product e where e.attributes.id = :pAttributesId",
+                        Product.class)
+                .setParameter("pAttributesId", attributesId).getResultList();
     }
 
 }
