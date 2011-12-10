@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.ux</artifactId>
-	<version>1.0.0.M4</version>
+	<version>1.0.0.M5</version>
 	<name>DNet UX: User extensions</name>	
 	<description>DNet UX: User extensions</description>
 	<packaging>pom</packaging>	
