@@ -210,6 +210,11 @@
 				<version>2.3</version>
 				<configuration>
 						<classesDirectory>target/prepared-package</classesDirectory>
+						<archive>
+						<manifestFile>
+							src/main/resources/META-INF/MANIFEST.MF
+						</manifestFile>
+					</archive>
 					</configuration> 
 				 
 			</plugin>				
