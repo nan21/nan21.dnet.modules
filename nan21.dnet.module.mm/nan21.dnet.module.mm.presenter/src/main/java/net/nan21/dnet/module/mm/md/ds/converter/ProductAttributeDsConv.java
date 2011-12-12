@@ -63,7 +63,7 @@ public class ProductAttributeDsConv extends
         if (ds.getUom() != null && !ds.getUom().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) findEntityService(Uom.class)).findByName(
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(
                         ds.getClientId(), ds.getUom());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

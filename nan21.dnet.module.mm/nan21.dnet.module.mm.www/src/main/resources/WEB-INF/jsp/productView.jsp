@@ -12,7 +12,7 @@
 	items="${attachments}">
 	<c:if test="${attachment.type == 'Product image' }">
 		<img src="${attachment.url}" alt="${attachment.name}"
-			title="ss${attachment.name}" />
+			title="${attachment.name}" />
 	</c:if>
 
 </c:forEach></div>

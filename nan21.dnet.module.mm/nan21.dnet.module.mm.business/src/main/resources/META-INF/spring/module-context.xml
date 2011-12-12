@@ -146,6 +146,7 @@
 	
 	<!-- Domain services -->
 	<import resource="beans/mm.md.entity.xml" />
+	<import resource="beans/mm.price.entity.xml" />
 	<import resource="beans/mm.inventory.entity.xml" />
 	
 </beans>

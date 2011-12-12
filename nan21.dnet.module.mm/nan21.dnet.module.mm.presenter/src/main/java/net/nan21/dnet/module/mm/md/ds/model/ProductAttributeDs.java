@@ -85,7 +85,7 @@ public class ProductAttributeDs extends AbstractDsModel<ProductAttribute>
     @DsField(join = "left", path = "uom.id")
     private Long uomId;
 
-    @DsField(join = "left", path = "uom.name")
+    @DsField(join = "left", path = "uom.code")
     private String uom;
 
     public ProductAttributeDs() {
