@@ -21,5 +21,8 @@
 		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />	
 		
 	<osgi:service ref="setupParticipant" ranking="500"
-		interface="net.nan21.dnet.core.api.setup.ISetupParticipant" />		
+		interface="net.nan21.dnet.core.api.setup.ISetupParticipant" />	
+		
+	<osgi:list id="osgiEntityServiceFactories" cardinality="0..N"
+		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />		
 </beans>

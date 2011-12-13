@@ -25,4 +25,7 @@
 	<osgi:list id="osgiInitDataProviderFactories" cardinality="0..N"
 		interface="net.nan21.dnet.core.api.setup.IInitDataProviderFactory"></osgi:list>
 
+	<osgi:list id="osgiEntityServiceFactories" cardinality="0..N"
+		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />
+		
 </beans>
