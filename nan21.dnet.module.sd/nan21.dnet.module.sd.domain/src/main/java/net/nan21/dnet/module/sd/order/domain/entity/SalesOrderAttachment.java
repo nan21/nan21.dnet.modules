@@ -47,7 +47,7 @@ public class SalesOrderAttachment extends Attachment implements Serializable,
     public static final String NQ_FIND_BY_IDS = "SalesOrderAttachment.findByIds";
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesOrder.class)
-    @JoinColumn(name = "TARGETID", referencedColumnName = "ID")
+    @JoinColumn(name = "SALESORDER_ID", referencedColumnName = "ID")
     private SalesOrder order;
 
     /* ============== getters - setters ================== */

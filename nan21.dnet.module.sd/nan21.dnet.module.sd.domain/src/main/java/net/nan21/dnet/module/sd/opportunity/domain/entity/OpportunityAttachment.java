@@ -47,7 +47,7 @@ public class OpportunityAttachment extends Attachment implements Serializable,
     public static final String NQ_FIND_BY_IDS = "OpportunityAttachment.findByIds";
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Opportunity.class)
-    @JoinColumn(name = "TARGETID", referencedColumnName = "ID")
+    @JoinColumn(name = "OPPORTUNITY_ID", referencedColumnName = "ID")
     private Opportunity opportunity;
 
     /* ============== getters - setters ================== */

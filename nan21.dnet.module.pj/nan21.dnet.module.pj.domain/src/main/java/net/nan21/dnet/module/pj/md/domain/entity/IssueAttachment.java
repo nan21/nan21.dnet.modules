@@ -47,7 +47,7 @@ public class IssueAttachment extends Attachment implements Serializable,
     public static final String NQ_FIND_BY_IDS = "IssueAttachment.findByIds";
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Issue.class)
-    @JoinColumn(name = "TARGETID", referencedColumnName = "ID")
+    @JoinColumn(name = "ISSUE_ID", referencedColumnName = "ID")
     private Issue issue;
 
     /* ============== getters - setters ================== */

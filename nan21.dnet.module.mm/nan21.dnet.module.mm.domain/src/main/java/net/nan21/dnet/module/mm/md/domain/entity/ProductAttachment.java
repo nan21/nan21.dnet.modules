@@ -47,7 +47,7 @@ public class ProductAttachment extends Attachment implements Serializable,
     public static final String NQ_FIND_BY_IDS = "ProductAttachment.findByIds";
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
-    @JoinColumn(name = "TARGETID", referencedColumnName = "ID")
+    @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
     private Product product;
 
     /* ============== getters - setters ================== */

@@ -47,7 +47,7 @@ public class SalesInvoiceAttachment extends Attachment implements Serializable,
     public static final String NQ_FIND_BY_IDS = "SalesInvoiceAttachment.findByIds";
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesInvoice.class)
-    @JoinColumn(name = "TARGETID", referencedColumnName = "ID")
+    @JoinColumn(name = "SALESINVOICE_ID", referencedColumnName = "ID")
     private SalesInvoice invoice;
 
     /* ============== getters - setters ================== */

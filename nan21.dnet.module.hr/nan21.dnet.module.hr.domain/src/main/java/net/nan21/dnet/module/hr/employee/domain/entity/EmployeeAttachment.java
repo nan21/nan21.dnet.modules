@@ -47,7 +47,7 @@ public class EmployeeAttachment extends Attachment implements Serializable,
     public static final String NQ_FIND_BY_IDS = "EmployeeAttachment.findByIds";
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
-    @JoinColumn(name = "TARGETID", referencedColumnName = "ID")
+    @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")
     private Employee employee;
 
     /* ============== getters - setters ================== */

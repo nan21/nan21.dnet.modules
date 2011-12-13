@@ -47,7 +47,7 @@ public class ProjectAttachment extends Attachment implements Serializable,
     public static final String NQ_FIND_BY_IDS = "ProjectAttachment.findByIds";
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Project.class)
-    @JoinColumn(name = "TARGETID", referencedColumnName = "ID")
+    @JoinColumn(name = "PROJECT_ID", referencedColumnName = "ID")
     private Project project;
 
     /* ============== getters - setters ================== */

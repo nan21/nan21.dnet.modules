@@ -39,7 +39,11 @@ import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
-/** Product attachments.*/
+/** Product attachments.
+ * Read only reference fields are a temporary hack due to the fact that the 
+ * SINGLE_TABLE inheritance DDL generation cannot update the root table 
+ * 
+ */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TARGETTYPE", discriminatorType = DiscriminatorType.STRING, length = 32)
@@ -84,13 +88,45 @@ public class Attachment implements Serializable, IModelWithId,
     @Column(name = "NOTES", length = 4000)
     private String notes;
 
+    /** TargetType. */
+    @Column(name = "TARGETTYPE", length = 255)
+    private String targetType;
+
     /** TargetId. */
     @Column(name = "TARGETID", insertable = false, updatable = false)
     private Long targetId;
 
-    /** TargetType. */
-    @Column(name = "TARGETTYPE", length = 255)
-    private String targetType;
+    /** ProductId. */
+    @Column(name = "PRODUCT_ID", insertable = false, updatable = false)
+    private Long productId;
+
+    /** IssueId. */
+    @Column(name = "ISSUE_ID", insertable = false, updatable = false)
+    private Long issueId;
+
+    /** ProjectId. */
+    @Column(name = "PROJECT_ID", insertable = false, updatable = false)
+    private Long projectId;
+
+    /** EmployeeId. */
+    @Column(name = "EMPLOYEE_ID", insertable = false, updatable = false)
+    private Long employeeId;
+
+    /** BpartnerId. */
+    @Column(name = "BPARTNER_ID", insertable = false, updatable = false)
+    private Long bpartnerId;
+
+    /** OpportunityId. */
+    @Column(name = "OPPORTUNITY_ID", insertable = false, updatable = false)
+    private Long opportunityId;
+
+    /** SalesInvoiceId. */
+    @Column(name = "SALESINVOICE_ID", insertable = false, updatable = false)
+    private Long salesInvoiceId;
+
+    /** SalesOrderId. */
+    @Column(name = "SALESORDER_ID", insertable = false, updatable = false)
+    private Long salesOrderId;
 
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
@@ -188,6 +224,14 @@ public class Attachment implements Serializable, IModelWithId,
 
     }
 
+    public String getTargetType() {
+        return this.targetType;
+    }
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
+    }
+
     public Long getTargetId() {
         return this.targetId;
     }
@@ -196,12 +240,68 @@ public class Attachment implements Serializable, IModelWithId,
         this.targetId = targetId;
     }
 
-    public String getTargetType() {
-        return this.targetType;
+    public Long getProductId() {
+        return this.productId;
     }
 
-    public void setTargetType(String targetType) {
-        this.targetType = targetType;
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
+
+    public Long getIssueId() {
+        return this.issueId;
+    }
+
+    public void setIssueId(Long issueId) {
+        this.issueId = issueId;
+    }
+
+    public Long getProjectId() {
+        return this.projectId;
+    }
+
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
+    }
+
+    public Long getEmployeeId() {
+        return this.employeeId;
+    }
+
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public Long getBpartnerId() {
+        return this.bpartnerId;
+    }
+
+    public void setBpartnerId(Long bpartnerId) {
+        this.bpartnerId = bpartnerId;
+    }
+
+    public Long getOpportunityId() {
+        return this.opportunityId;
+    }
+
+    public void setOpportunityId(Long opportunityId) {
+        this.opportunityId = opportunityId;
+    }
+
+    public Long getSalesInvoiceId() {
+        return this.salesInvoiceId;
+    }
+
+    public void setSalesInvoiceId(Long salesInvoiceId) {
+        this.salesInvoiceId = salesInvoiceId;
+    }
+
+    public Long getSalesOrderId() {
+        return this.salesOrderId;
+    }
+
+    public void setSalesOrderId(Long salesOrderId) {
+        this.salesOrderId = salesOrderId;
     }
 
     public Long getClientId() {
