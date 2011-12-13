@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/PriceListTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/PriceListType", "nan21.dnet.module.mm.ui.extjs/ds/PriceListDs", "nan21.dnet.module.mm.ui.extjs/dc/PriceList","nan21.dnet.module.mm.ui.extjs/ds/PriceListTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/PriceListTypes","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies"]);
+Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/PriceListTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/PriceListType", "nan21.dnet.module.mm.ui.extjs/ds/PriceListDs", "nan21.dnet.module.mm.ui.extjs/dc/PriceList","nan21.dnet.module.mm.ui.extjs/ds/PriceListTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/PriceListTypes","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.mm.ui.extjs/ds/PriceListTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/PriceListTypes","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies"]);
 
 Ext.define("net.nan21.dnet.module.mm.price.frame.PriceList_UI", {  
 	extend: "dnet.base.AbstractUi",
@@ -7,15 +7,15 @@ Ext.define("net.nan21.dnet.module.mm.price.frame.PriceList_UI", {
 	 _name_ : "net.nan21.dnet.module.mm.price.frame.PriceList_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("type", new net.nan21.dnet.module.mm.price.dc.PriceListType({}))
-		.addDc("pricelist", new net.nan21.dnet.module.mm.price.dc.PriceList({}))		;		
+		.addDc("type", new net.nan21.dnet.module.mm.price.dc.PriceListType({multiEdit:true}))
+		.addDc("pricelist", new net.nan21.dnet.module.mm.price.dc.PriceList({multiEdit:true}))		;		
 	}	 
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("type",{ name:"typeFilter", xtype:"net.nan21.dnet.module.mm.price.dc.PriceListType$Filter"})	 
+		.addDcFilterFormView("type",{ name:"typeFilter", xtype:"net.nan21.dnet.module.mm.price.dc.PriceListType$Filter",height:50})	 
 		.addDcView("type",{ name:"typeEditList", xtype:"net.nan21.dnet.module.mm.price.dc.PriceListType$EditList", frame:true})	 
-		.addDcFilterFormView("pricelist",{ name:"pricelistFilter", xtype:"net.nan21.dnet.module.mm.price.dc.PriceList$Filter"})	 
+		.addDcFilterFormView("pricelist",{ name:"pricelistFilter", xtype:"net.nan21.dnet.module.mm.price.dc.PriceList$FilterH",height:80})	 
 		.addDcView("pricelist",{ name:"pricelistEditList", xtype:"net.nan21.dnet.module.mm.price.dc.PriceList$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasPriceList", layout:"border", defaults:{split:true},title:"Price lists",preventHeader:true})  	 

@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductPriceDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductPrice"]);
+Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/PriceListDs", "nan21.dnet.module.mm.ui.extjs/dc/PriceList", "nan21.dnet.module.mm.ui.extjs/ds/ProductPriceDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductPrice","nan21.dnet.module.mm.ui.extjs/ds/PriceListTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/PriceListTypes","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.mm.ui.extjs/ds/ProductLovDs","nan21.dnet.module.mm.ui.extjs/lov/Products","nan21.dnet.module.mm.ui.extjs/ds/ProductCategoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductCategories","nan21.dnet.module.mm.ui.extjs/ds/ProductLovDs","nan21.dnet.module.mm.ui.extjs/lov/Products"]);
 
 Ext.define("net.nan21.dnet.module.mm.price.frame.ProductPrice_UI", {  
 	extend: "dnet.base.AbstractUi",
@@ -7,28 +7,34 @@ Ext.define("net.nan21.dnet.module.mm.price.frame.ProductPrice_UI", {
 	 _name_ : "net.nan21.dnet.module.mm.price.frame.ProductPrice_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("price", new net.nan21.dnet.module.mm.price.dc.ProductPrice({}))		;		
+		.addDc("pricelist", new net.nan21.dnet.module.mm.price.dc.PriceList({}))
+		.addDc("price", new net.nan21.dnet.module.mm.price.dc.ProductPrice({multiEdit:true}))		
+		.linkDc("price", "pricelist",{fields:[ {childField:"priceListId", parentField:"id"} ]} );		
 	}	 
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("price",{ name:"priceFilter", xtype:"net.nan21.dnet.module.mm.price.dc.ProductPrice$Filter"})	 
+		.addDcFilterFormView("pricelist",{ name:"pricelistFilter", xtype:"net.nan21.dnet.module.mm.price.dc.PriceList$FilterV",width:300})	 
+		.addDcView("pricelist",{ name:"pricelistList", xtype:"net.nan21.dnet.module.mm.price.dc.PriceList$List"})	 
+		.addDcFilterFormView("price",{ name:"priceFilter", xtype:"net.nan21.dnet.module.mm.price.dc.ProductPrice$Filter",width:300})	 
 		.addDcView("price",{ name:"priceEditList", xtype:"net.nan21.dnet.module.mm.price.dc.ProductPrice$EditList", frame:true})	 
-		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasPrice", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "main", layout:"border", defaults:{split:true}})  	 
+		.addPanel({name: "pricePanel", layout:"border", defaults:{split:true},height:400})  	 
 ;	 	
 	}
 
 	,_linkElements_: function() {
 		this._getBuilder_()		
-	 	.addChildrenTo("main", ["canvasPrice"]) 				 		
-		.addChildrenTo("canvasPrice",["priceFilter","priceEditList"] ,["north","center"])	
-	 	.addToolbarTo("canvasPrice","tlbPriceEditList")	  	
+		.addChildrenTo("main",["pricelistFilter","pricelistList","pricePanel"] ,["west","center","south"])	
+		.addChildrenTo("pricePanel",["priceEditList","priceFilter"] ,["center","west"])	
+	 	.addToolbarTo("main","tlbPricelistList")	  	
+	 	.addToolbarTo("pricePanel","tlbPriceEditList")	  	
 	}
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbPriceEditList", {dc:"price"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbPricelistList", {dc:"pricelist"}).addQuery().end()
+			.beginToolbar("tlbPriceEditList", {dc:"price"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
 	}
 
 });  

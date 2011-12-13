@@ -1,13 +1,16 @@
-"name";"code";"folder";"active"
-"Electronics";"GR_ELECTR";"true";"true"
-"Computer Components";"GR_COMP_COMP";"true";"true"
-"Computers & Accessories";"GR_COMP";"true";"true"
-"RAM";"RAM";"false";"true"
-"Hard-disk drives";"HDD";"false";"true"
-"Monitors";"Monitor";"false";"true"
-"Servers";"Server";"false";"true"
-"Desktop computers";"Desktop";"false";"true"
-"Plasma TV";"PlasmaTV";"false";"true"
-"HDTVs";"HDTV";"false";"true"
-"Netbooks";"Netbook";"false";"true"
-"Laptops";"Laptop";"false";"true"
+"name";"code";"folder";"active";"notes"
+"Bedroom";"bed";"false";"false";
+"Computer Components";"GR_COMP_COMP";"true";"true";
+"Computers & Accessories";"GR_COMP";"true";"true";
+"Desktop computers";"desktop";"false";"true";
+"Electronics";"GR_ELECTR";"true";"true";
+"HDTVs";"tv_hd";"false";"true";
+"Hard-disk drives";"hdd";"false";"true";
+"Laptops";"laptop";"false";"true";
+"Monitors";"monitor";"false";"true";
+"Netbooks";"netbook";"false";"true";
+"Plasma TV";"tv_plasma";"false";"true";
+"RAM";"memory_ram";"false";"true";
+"Servers";"server";"false";"true";
+"Sofas";"sofa";"false";"false";
+"Watches";"watch";"false";"false";

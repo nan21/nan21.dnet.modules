@@ -30,11 +30,13 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Filter", {
 		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",anchor:"-20",maxLength:32  })
 		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
+		.addLov({ name:"productCategory", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductCategories", paramIndex:"productCategory",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "productCategoryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210, height:50}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor", width:150, defaults:{
+labelAlign:"right",labelWidth:70}}) 
 		.addPanel({ name:"col3", layout:"anchor",width:210}) 
-		.addPanel({ name:"col4", layout:"anchor",width:210}) 
+		.addPanel({ name:"col4", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
@@ -43,7 +45,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Filter", {
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["storable","active"])
 		.addChildrenTo("col3",["manufacturerCode","manufacturerProductNo"])
-		.addChildrenTo("col4",["attributeGroup"])
+		.addChildrenTo("col4",["attributeGroup","productCategory"])
 	}
 }); 
  		 

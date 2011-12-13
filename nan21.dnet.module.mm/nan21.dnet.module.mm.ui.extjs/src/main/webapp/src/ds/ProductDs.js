@@ -82,7 +82,7 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductDsFilter" , {
 Ext.define("net.nan21.dnet.module.mm.md.ds.param.ProductDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 	
-		{name:"productCategoryId",type:"int"},	
+		{name:"productCategoryId",type:"int", useNull:true},	
 		{name:"productCategory",type:"string"}
 	]
 }); 

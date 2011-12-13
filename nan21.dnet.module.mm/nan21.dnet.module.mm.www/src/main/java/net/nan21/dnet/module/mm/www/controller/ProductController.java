@@ -12,6 +12,7 @@ import net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductDs;
+import net.nan21.dnet.module.mm.md.ds.param.ProductDsParam;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -31,8 +32,14 @@ public class ProductController extends AbstractWebController {
  
 			IDsService service = this.findDsService(ProductDs.class);			 
 			IQueryBuilder builder = service.createQueryBuilder().addFetchLimit(
-					0, 20);			 
-			List products = service.find(new ProductDs(), null, builder);			 
+					0, 20);		
+			ProductDsParam param = new ProductDsParam();
+			
+			if( request.getParameter("categoryId") != null) {
+				param.setProductCategoryId( Long.parseLong( request.getParameter("categoryId") ));
+			} 
+			
+			List products = service.find(new ProductDs(), param, builder);			 
 			List categories = this.getCategories();
 
 			return new ModelAndView("productList")

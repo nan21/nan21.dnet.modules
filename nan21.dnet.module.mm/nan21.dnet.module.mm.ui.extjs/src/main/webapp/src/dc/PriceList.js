@@ -17,24 +17,46 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceList", {
 
  	
 
-Ext.define("net.nan21.dnet.module.mm.price.dc.PriceList$Filter", {
+Ext.define("net.nan21.dnet.module.mm.price.dc.PriceList$FilterH", {
 	extend: "dnet.base.AbstractDcvFilterForm",
- 	alias: "widget.net.nan21.dnet.module.mm.price.dc.PriceList$Filter",
+ 	alias: "widget.net.nan21.dnet.module.mm.price.dc.PriceList$FilterH",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"type", dataIndex:"type",anchor:"-20",maxLength:255  })
-		.addTextField({ name:"currency", dataIndex:"currency",anchor:"-20",maxLength:32  })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.mm.price.lovs.PriceListTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
+		.addDateField({ name:"validAt", paramIndex:"validAt",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
+		.addPanel({ name:"col2", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["type","currency"])
-		.addChildrenTo("col2",["currency"])
+		.addChildrenTo("col2",["validAt"])
+	}
+}); 
+ 	
+
+Ext.define("net.nan21.dnet.module.mm.price.dc.PriceList$FilterV", {
+	extend: "dnet.base.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.mm.price.dc.PriceList$FilterV",
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.mm.price.lovs.PriceListTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
+		.addDateField({ name:"validAt", paramIndex:"validAt",anchor:"-20" ,format:Ext.DATE_FORMAT })
+		//containers
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["col1"])
+		.addChildrenTo("col1",["type","currency","validAt"])
 	}
 }); 
  	
@@ -60,3 +82,26 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceList$EditList", {
 	  ;  		   
 	}  
 });
+ 		 
+Ext.define("net.nan21.dnet.module.mm.price.dc.PriceList$List", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.mm.price.dc.PriceList$List",
+	
+	 _noImport_: true
+	,_noExport_: true
+	,_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addTextColumn({ name:"type", dataIndex:"type",width:120 })   	
+		.addTextColumn({ name:"currency", dataIndex:"currency",width:100 })   	
+		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Ext.DATE_FORMAT})   	      	     
+		.addDateColumn({ name:"validTo", dataIndex:"validTo",format:Ext.DATE_FORMAT})   	      	     
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
+		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
+		.addNumberColumn({ name:"currencyId", dataIndex:"currencyId", hidden:true,format:"0",width:70 })  
+	  ;		   
+	}
+});
+ 

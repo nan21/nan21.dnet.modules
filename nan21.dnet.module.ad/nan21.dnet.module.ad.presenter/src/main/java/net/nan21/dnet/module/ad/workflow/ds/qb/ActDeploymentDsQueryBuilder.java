@@ -21,12 +21,12 @@ public class ActDeploymentDsQueryBuilder extends
 
     @Override
     public void beforeBuildWhere() {
-        if (this.params.getFrom() != null) {
+        if (this.params != null && this.params.getFrom() != null) {
             addFilterCondition("  e.deployTime >= :from ");
             addCustomFilterItem("from", this.params.getFrom());
         }
 
-        if (this.params.getTo() != null) {
+        if (this.params != null && this.params.getTo() != null) {
             addFilterCondition("  e.deployTime <= :to ");
             addCustomFilterItem("to", this.params.getTo());
         }

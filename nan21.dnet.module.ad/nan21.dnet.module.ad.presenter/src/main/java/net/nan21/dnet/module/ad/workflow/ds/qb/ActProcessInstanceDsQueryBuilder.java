@@ -21,12 +21,12 @@ public class ActProcessInstanceDsQueryBuilder extends
 
     @Override
     public void beforeBuildWhere() {
-        if (this.params.getFrom() != null) {
+        if (this.params != null && this.params.getFrom() != null) {
             addFilterCondition("  e.startTime >= :from ");
             addCustomFilterItem("from", this.params.getFrom());
         }
 
-        if (this.params.getTo() != null) {
+        if (this.params != null && this.params.getTo() != null) {
             addFilterCondition("  e.startTime <= :to ");
             addCustomFilterItem("to", this.params.getTo());
         }

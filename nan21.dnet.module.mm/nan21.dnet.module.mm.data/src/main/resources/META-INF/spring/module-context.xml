@@ -47,7 +47,21 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/mm/data/md/ProductAttribute.csv" />
 							</bean> 
-							 
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="42" />
+								<property name="dsName" value="ProductAttributeGroup" />
+								<property name="destPath" value="demo-data/mm" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/mm/data/md/ProductAttributeGroup.csv" />
+							</bean>  
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="44" />
+								<property name="dsName" value="ProductAttributeGroupAttribute" />
+								<property name="destPath" value="demo-data/mm" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/mm/data/md/ProductAttributeGroupAttribute.csv" />
+							</bean> 
+							
 							 
 							 <bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="50" />
@@ -73,6 +87,33 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/mm/data/md/Product.csv" />
 							</bean> 
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="120" />
+								<property name="dsName" value="ProductAttachment" />
+								<property name="destPath" value="demo-data/mm" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/mm/data/md/ProductAttachment.csv" />
+							</bean> 
+							 
+						</list>
+					</property>
+				</bean>
+				
+				
+				
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="315" />
+					<property name="name" value="mm-price" />
+					<property name="items">
+						<list>							 
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="PriceListType" />
+								<property name="destPath" value="demo-data/mm" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/mm/data/price/PriceListType.csv" />
+							</bean>							 
 						</list>
 					</property>
 				</bean>
@@ -107,8 +148,6 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/mm/data/inventory/InvTransactionType.csv" />
 							</bean>
-						  
-						  
 						  
 						  	<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="60" />

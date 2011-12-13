@@ -8,19 +8,19 @@ package net.nan21.dnet.module.mm.price.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceListType;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 
 import net.nan21.dnet.module.mm.price.domain.entity.ProductPrice;
 
 public interface IProductPriceService extends IEntityService<ProductPrice> {
 
-    public ProductPrice findByName(Long clientId, PriceListType priceList,
+    public ProductPrice findByName(Long clientId, PriceList priceList,
             Product product);
 
     public ProductPrice findByName(Long clientId, Long priceListId,
             Long productId);
 
-    public List<ProductPrice> findByPriceList(PriceListType priceList);
+    public List<ProductPrice> findByPriceList(PriceList priceList);
 
     public List<ProductPrice> findByPriceListId(Long priceListId);
 

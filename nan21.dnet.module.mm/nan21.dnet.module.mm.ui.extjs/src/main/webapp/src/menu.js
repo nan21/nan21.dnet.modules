@@ -15,8 +15,10 @@ net.nan21.dnet.module.mm.menu.crm = [
 ,		 
 	{"id":"sm_mm_md", "text":"Master-data", leaf:false, children:[
 		
+		{id:"ProductCategory_UI", text:Dnet.translate("ui","ProductCategory_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", _bundle_:BUNDLE_ID},		
 		{id:"Product_UI", text:Dnet.translate("ui","Product_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.Product_UI", _bundle_:BUNDLE_ID},		
-		{id:"ProductCategory_UI", text:Dnet.translate("ui","ProductCategory_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", _bundle_:BUNDLE_ID}	]}
+		{id:"ProductAttachment_UI", text:Dnet.translate("ui","ProductAttachment_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAttachment_UI", _bundle_:BUNDLE_ID},		
+		{id:"ProductAttributeValue_UI", text:Dnet.translate("ui","ProductAttributeValue_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAttributeValue_UI", _bundle_:BUNDLE_ID}	]}
 ,		 
 	{"id":"sm_mm_inventory", "text":"Inventory", leaf:false, children:[
 		
@@ -27,7 +29,8 @@ net.nan21.dnet.module.mm.menu.crm = [
 	{"id":"sm_mm_price", "text":"Price", leaf:false, children:[
 		
 		{id:"PriceList_UI", text:Dnet.translate("ui","PriceList_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.price.frame.PriceList_UI", _bundle_:BUNDLE_ID},		
-		{id:"ProductPrice_UI", text:Dnet.translate("ui","ProductPrice_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.price.frame.ProductPrice_UI", _bundle_:BUNDLE_ID}	]}
+		{id:"ProductPrice_UI", text:Dnet.translate("ui","ProductPrice_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.price.frame.ProductPrice_UI", _bundle_:BUNDLE_ID},		
+		{id:"ProductPriceReport_UI", text:Dnet.translate("ui","ProductPriceReport_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.price.frame.ProductPriceReport_UI", _bundle_:BUNDLE_ID}	]}
 	]}
  
    ];  

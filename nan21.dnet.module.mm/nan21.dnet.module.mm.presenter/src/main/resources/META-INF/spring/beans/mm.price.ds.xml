@@ -31,6 +31,8 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.price.domain.entity.PriceList" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.mm.price.ds.param.PriceListDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.mm.price.ds.qb.PriceListDsQueryBuilder" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.mm.price.ds.converter.PriceListDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -42,11 +44,25 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.ProductPriceDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.price.domain.entity.ProductPrice" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.mm.price.ds.param.ProductPriceDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.mm.price.ds.qb.ProductPriceDsQueryBuilder" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.mm.price.ds.converter.ProductPriceDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductPrice" />
 		<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.ProductPriceDs" />
+	</bean>
+   
+ 	<bean id="ProductPriceReportDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.ProductPriceReportDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.price.domain.entity.ProductPrice" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.mm.price.ds.param.ProductPriceReportDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.mm.price.ds.qb.ProductPriceReportDsQueryBuilder" />	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProductPriceReport" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.ProductPriceReportDs" />
 	</bean>
       
 </beans>

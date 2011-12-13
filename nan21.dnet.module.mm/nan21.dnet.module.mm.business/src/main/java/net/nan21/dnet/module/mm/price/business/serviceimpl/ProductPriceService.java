@@ -9,7 +9,7 @@ import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 import net.nan21.dnet.module.mm.price.business.service.IProductPriceService;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceListType;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.price.domain.entity.ProductPrice;
@@ -31,7 +31,7 @@ public class ProductPriceService extends AbstractEntityService<ProductPrice>
         return ProductPrice.class;
     }
 
-    public ProductPrice findByName(Long clientId, PriceListType priceList,
+    public ProductPrice findByName(Long clientId, PriceList priceList,
             Product product) {
         return (ProductPrice) this.em
                 .createNamedQuery(ProductPrice.NQ_FIND_BY_NAME)
@@ -49,7 +49,7 @@ public class ProductPriceService extends AbstractEntityService<ProductPrice>
                 .setParameter("pProductId", productId).getSingleResult();
     }
 
-    public List<ProductPrice> findByPriceList(PriceListType priceList) {
+    public List<ProductPrice> findByPriceList(PriceList priceList) {
         return this.findByPriceListId(priceList.getId());
     }
 

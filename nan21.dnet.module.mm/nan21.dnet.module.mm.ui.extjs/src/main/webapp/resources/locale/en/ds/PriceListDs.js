@@ -7,4 +7,5 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.PriceListDs$Trl", {
 	,validFrom__lbl : "Valid From"
 	,validTo__lbl : "Valid To"
 	
+	,validAt__lbl :"Valid At"
 });

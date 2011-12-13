@@ -16,6 +16,10 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.PriceListDs" , {
 		{name:"currency",type:"string" },
 		{name:"validFrom",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"validTo",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT }
+	],
+	validations: [  
+		{field: "validFrom", type: 'presence'}, 
+		{field: "validTo", type: 'presence'}
 	]
 });
 
@@ -40,7 +44,8 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.PriceListDsFilter" , {
 	
 Ext.define("net.nan21.dnet.module.mm.price.ds.param.PriceListDsParam", {
 	extend: 'Ext.data.Model',
-	fields: [ 
+	fields: [ 	
+		{name:"validAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT}
 	]
 }); 
  

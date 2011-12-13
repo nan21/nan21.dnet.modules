@@ -6,4 +6,6 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceDs$Trl", {
 	,productName__lbl : "Product Name"
 	,price__lbl : "Price"
 	
+	,productCategoryId__lbl :"Product Category Id"
+	,productCategory__lbl :"Product Category"
 });

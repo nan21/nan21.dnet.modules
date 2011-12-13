@@ -52,6 +52,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.Product" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.mm.md.ds.param.ProductDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.mm.md.ds.qb.ProductDsQueryBuilder" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

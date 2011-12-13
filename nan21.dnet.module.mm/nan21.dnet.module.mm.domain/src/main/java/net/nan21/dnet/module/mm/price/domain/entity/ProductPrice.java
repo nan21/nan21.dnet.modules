@@ -29,7 +29,7 @@ import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceListType;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -118,9 +118,9 @@ public class ProductPrice implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PriceListType.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PriceList.class)
     @JoinColumn(name = "PRICELIST_ID", referencedColumnName = "ID")
-    private PriceListType priceList;
+    private PriceList priceList;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
     @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
     private Product product;
@@ -200,11 +200,11 @@ public class ProductPrice implements Serializable, IModelWithId,
 
     }
 
-    public PriceListType getPriceList() {
+    public PriceList getPriceList() {
         return this.priceList;
     }
 
-    public void setPriceList(PriceListType priceList) {
+    public void setPriceList(PriceList priceList) {
         this.priceList = priceList;
     }
 

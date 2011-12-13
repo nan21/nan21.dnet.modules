@@ -68,7 +68,8 @@ public class PriceList implements Serializable, IModelWithId,
 
     /** ValidTo. */
     @Temporal(TemporalType.DATE)
-    @Column(name = "VALIDTO")
+    @Column(name = "VALIDTO", nullable = false)
+    @NotNull
     private Date validTo;
 
     /** Owner client */

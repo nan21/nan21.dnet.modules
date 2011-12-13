@@ -8,7 +8,7 @@ package net.nan21.dnet.module.mm.price.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.mm.md.business.service.IProductService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceListType;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.mm.price.ds.model.ProductPriceDs;
@@ -32,8 +32,8 @@ public class ProductPriceDsConv extends
         if (ds.getPriceListId() != null) {
             if (e.getPriceList() == null
                     || !e.getPriceList().getId().equals(ds.getPriceListId())) {
-                e.setPriceList((PriceListType) this.em.find(
-                        PriceListType.class, ds.getPriceListId()));
+                e.setPriceList((PriceList) this.em.find(PriceList.class,
+                        ds.getPriceListId()));
             }
         }
     }

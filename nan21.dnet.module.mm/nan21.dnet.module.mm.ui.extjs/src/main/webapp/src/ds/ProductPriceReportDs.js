@@ -1,6 +1,6 @@
  
    	 
-Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceDs" , {
+Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceReportDs" , {
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"id",type:"int", useNull:true },
@@ -11,6 +11,12 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceDs" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"priceListId",type:"int", useNull:true },
+		{name:"typeId",type:"int", useNull:true },
+		{name:"type",type:"string" },
+		{name:"currencyId",type:"int", useNull:true },
+		{name:"currency",type:"string" },
+		{name:"validFrom",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"validTo",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"productId",type:"int", useNull:true },
 		{name:"product",type:"string" },
 		{name:"productName",type:"string" },
@@ -18,7 +24,7 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceDs" , {
 	]
 });
 
-Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceDsFilter" , {
+Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceReportDsFilter" , {
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"id",type:"int", useNull:true },
@@ -29,6 +35,12 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceDsFilter" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"priceListId",type:"int", useNull:true },
+		{name:"typeId",type:"int", useNull:true },
+		{name:"type",type:"string" },
+		{name:"currencyId",type:"int", useNull:true },
+		{name:"currency",type:"string" },
+		{name:"validFrom",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"validTo",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
 		{name:"productId",type:"int", useNull:true },
 		{name:"product",type:"string" },
 		{name:"productName",type:"string" },
@@ -36,9 +48,10 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceDsFilter" , {
 	] 
 });
 	
-Ext.define("net.nan21.dnet.module.mm.price.ds.param.ProductPriceDsParam", {
+Ext.define("net.nan21.dnet.module.mm.price.ds.param.ProductPriceReportDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 	
+		{name:"validAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT},	
 		{name:"productCategoryId",type:"int", useNull:true},	
 		{name:"productCategory",type:"string"}
 	]

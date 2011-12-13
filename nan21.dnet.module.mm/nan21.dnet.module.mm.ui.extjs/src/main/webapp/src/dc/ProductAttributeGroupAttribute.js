@@ -23,26 +23,26 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$Filter
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"group", dataIndex:"group",anchor:"-20",maxLength:255  })
-		.addTextField({ name:"attribute", dataIndex:"attribute",anchor:"-20",maxLength:255  })
+		.addLov({ name:"group", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"group",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "groupId"} ]  })
+		.addLov({ name:"attribute", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttribute", dataIndex:"attribute",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeId"} ]  })
 		.addBooleanField({ name:"inDescription", dataIndex:"inDescription",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
 		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["group"])
-		.addChildrenTo("col2",["attribute"])
+		.addChildrenTo("col1",["group","attribute"])
+		.addChildrenTo("col2",["inDescription"])
 	}
 }); 
  	
  	 
-Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$CEditList", {
+Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$CtxEditList", {
 	extend: "dnet.base.AbstractDcvEditableGrid",
-	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$CEditList",
+	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$CtxEditList",
 	
 	 _noImport_: false
 	,_noExport_: false
@@ -59,6 +59,30 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$CEditL
 		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"groupId", dataIndex:"groupId", hidden:true, align:"right",format:"0",width:70})
+	  ;  		   
+	}  
+});
+ 	
+ 	 
+Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$EditList", {
+	extend: "dnet.base.AbstractDcvEditableGrid",
+	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$EditList",
+	
+	 _noImport_: false
+	,_noExport_: false
+	,_defineColumns_: function () {
+		this._getBuilder_()
+		.addLov({name:"group", xtype:"gridcolumn", dataIndex:"group",width:120,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "groupId"} ]} })
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",format:"0",width:70,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
+		.addLov({name:"attribute", xtype:"gridcolumn", dataIndex:"attribute",width:120,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttribute" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "attributeId"} ]} })
+		.addBooleanColumn({ name:"inDescription", dataIndex:"inDescription"})
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Ext.DATETIME_FORMAT})
+		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
+		.addNumberColumn({ name:"groupId", dataIndex:"groupId", hidden:true, align:"right",format:"0",width:70})
+		.addNumberColumn({ name:"attributeId", dataIndex:"attributeId", hidden:true, align:"right",format:"0",width:70})
 	  ;  		   
 	}  
 });
