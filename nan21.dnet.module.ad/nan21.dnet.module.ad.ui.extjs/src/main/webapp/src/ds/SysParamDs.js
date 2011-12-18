@@ -1,6 +1,6 @@
  
    	 
-Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDs" , {
+Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysParamDs" , {
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"name",type:"string" },
@@ -14,7 +14,8 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDs" , {
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
-		{name:"iconUrl",type:"string" }
+		{name:"defaultValue",type:"string" },
+		{name:"value",type:"string" }
 	],
 	validations: [  
 		{field: "code", type: 'presence'}, 
@@ -23,7 +24,7 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDs" , {
 	
 });
 
-Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDsFilter" , {
+Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysParamDsFilter" , {
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"name",type:"string" },
@@ -37,11 +38,12 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDsFilter" , 
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
-		{name:"iconUrl",type:"string" }
+		{name:"defaultValue",type:"string" },
+		{name:"value",type:"string" }
 	] 
 });
 	
-Ext.define("net.nan21.dnet.module.mm.md.ds.param.ProductManufacturerDsParam", {
+Ext.define("net.nan21.dnet.module.ad.system.ds.param.SysParamDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 
 	]

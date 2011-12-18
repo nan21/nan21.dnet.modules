@@ -79,6 +79,10 @@ public class ProductCategory implements Serializable, IModelWithId,
     @NotNull
     private Boolean folder;
 
+    /** IconUrl. */
+    @Column(name = "ICONURL", length = 255)
+    private String iconUrl;
+
     /** Name. */
     @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
@@ -149,6 +153,14 @@ public class ProductCategory implements Serializable, IModelWithId,
 
     public void setFolder(Boolean folder) {
         this.folder = folder;
+    }
+
+    public String getIconUrl() {
+        return this.iconUrl;
+    }
+
+    public void setIconUrl(String iconUrl) {
+        this.iconUrl = iconUrl;
     }
 
     public String getName() {

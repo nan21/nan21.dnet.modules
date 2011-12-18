@@ -14,7 +14,8 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDs" , {
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
-		{name:"folder",type:"boolean" }
+		{name:"folder",type:"boolean" },
+		{name:"iconUrl",type:"string" }
 	],
 	validations: [  
 		{field: "code", type: 'presence'}, 
@@ -37,7 +38,8 @@ Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDsFilter" , {
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
-		{name:"folder",type:"boolean", useNull:true }
+		{name:"folder",type:"boolean", useNull:true },
+		{name:"iconUrl",type:"string" }
 	] 
 });
 	

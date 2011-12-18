@@ -1,33 +1,54 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="/../header.jsp" />
 
+ 
 
-<h1 class="procut-name">${product.name}</h1>
+
+
+
+<h1 class="product-name">${product.name}</h1>
  
 <div class="wrapper">
 
 <div class="col1">
 
-<div id="slider"><c:forEach var="attachment"
+<div >
+	<img alt="Photo: ${product.name}" src="http://dnet.nan21.net/static-demo-resources/MM/products/${product.code}.jpg">
+</div>
+
+<!-- <div id="slider"><c:forEach var="attachment"
 	items="${attachments}">
 	<c:if test="${attachment.type == 'Product image' }">
 		<img src="${attachment.url}" alt="${attachment.name}"
 			title="${attachment.name}" />
 	</c:if>
 
-</c:forEach></div>
+</c:forEach></div> -->
 
-<p class="procut-description">${product.notes}</p>
+
+<p class="product-description">${product.notes}</p>
 
 <div>
 <h3 class="section-title">Images</h3>
+<div id="gallery">
+    <ul>
+ 
+		<c:forEach var="attachment" items="${attachments}">
+		<c:if test="${attachment.type == 'Product image' }">
+		 
+			 <li>
+				<a href="${attachment.url}" title="${attachment.name} | ${product.name}" >		
+		                <img src="${attachment.url}" width="72" height="72" alt="" />		
+		            </a>		
+		        </li>
+		</c:if>	
+		</c:forEach>	 
+	</ul>
+</div>
 
-<c:forEach var="attachment" items="${attachments}">
-<c:if test="${attachment.type == 'Product image' }">
-	<a href="${attachment.url}">${attachment.name}
-	</a> &nbsp;&nbsp;&nbsp;&nbsp;
-</c:if>	
-</c:forEach>
+
+
+
 
 <h3 class="section-title">Links</h3>
 <c:forEach var="attachment" items="${attachments}">
@@ -115,30 +136,21 @@
 </div>
 </div>
 
+<script type="text/javascript">
 
-<script>
-    $('#slider').nivoSlider({
-        effect:'fold', //fold  Specify sets like: 'fold, fade, sliceDown, sliceDownLeft, sliceUp, sliceUpLeft, sliceUpDown, sliceUpDownLeft'
-        slices:17,
-        animSpeed:100,
-        pauseTime:4500,
-        startSlide:0, //Set starting Slide (0 index)
-        directionNav:true, //Next & Prev
-        directionNavHide:false, //Only show on hover
-        controlNav:true, //1,2,3...
-        controlNavThumbs:false, //Use thumbnails for Control Nav
-        controlNavThumbsFromRel:false, //Use image rel for thumbs
-        controlNavThumbsSearch: '.jpg', //Replace this with...
-        controlNavThumbsReplace: '_thumb.jpg', //...this in thumb Image src
-        keyboardNav:true, //Use left & right arrows
-        pauseOnHover:true, //Stop animation while hovering
-        manualAdvance:false, //Force manual transitions
-        captionOpacity:1, //Universal caption opacity
-        beforeChange: function(){},
-        //afterChange: function(){Cufon.refresh();},
-        slideshowEnd: function(){} //Triggers after all slides have been shown
+    $(function() {
+        $('#gallery a').lightBox({        	 
+        	overlayOpacity: 0.6,
+			imageLoading:			'/nan21.dnet.core.www/resources/jquery-lightbox/images/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
+			imageBtnPrev:			'/nan21.dnet.core.www/resources/jquery-lightbox/images/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
+			imageBtnNext:			'/nan21.dnet.core.www/resources/jquery-lightbox/images/lightbox-btn-next.gif',			// (string) Path and the name of the next button image
+			imageBtnClose:			'/nan21.dnet.core.www/resources/jquery-lightbox/images/lightbox-btn-close.gif',		// (string) Path and the name of the close btn
+			imageBlank:				'/nan21.dnet.core.www/resources/jquery-lightbox/images/lightbox-blank.gif',			// (string) Path and the name of a blank image (one pixel)
+        	containerResizeSpeed: 350        	 
+           });
     });
-  
-</script>
+
+    </script>
+ 
 <jsp:include page="/../footer.jsp" />
 

@@ -31,6 +31,7 @@ public class ProductCategoryDs extends AbstractDsModel<ProductCategory>
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fFOLDER = "folder";
+    public static final String fICONURL = "iconUrl";
 
     @DsField()
     private String name;
@@ -67,6 +68,9 @@ public class ProductCategoryDs extends AbstractDsModel<ProductCategory>
 
     @DsField()
     private Boolean folder;
+
+    @DsField()
+    private String iconUrl;
 
     public ProductCategoryDs() {
         super();
@@ -171,6 +175,14 @@ public class ProductCategoryDs extends AbstractDsModel<ProductCategory>
 
     public void setFolder(Boolean folder) {
         this.folder = folder;
+    }
+
+    public String getIconUrl() {
+        return this.iconUrl;
+    }
+
+    public void setIconUrl(String iconUrl) {
+        this.iconUrl = iconUrl;
     }
 
 }

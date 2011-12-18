@@ -1,16 +1,7 @@
-"name";"code";"folder";"active";"notes"
-"Bedroom";"bed";"false";"false";
-"Computer Components";"GR_COMP_COMP";"true";"true";
-"Computers & Accessories";"GR_COMP";"true";"true";
-"Desktop computers";"desktop";"false";"true";
-"Electronics";"GR_ELECTR";"true";"true";
-"HDTVs";"tv_hd";"false";"true";
-"Hard-disk drives";"hdd";"false";"true";
-"Laptops";"laptop";"false";"true";
-"Monitors";"monitor";"false";"true";
-"Netbooks";"netbook";"false";"true";
-"Plasma TV";"tv_plasma";"false";"true";
-"RAM";"memory_ram";"false";"true";
-"Servers";"server";"false";"true";
-"Sofas";"sofa";"false";"false";
-"Watches";"watch";"false";"false";
+"name";"code";"iconUrl";"folder";"active";"notes"
+"Bedroom";"bed";"http://dnet.nan21.net/static-demo-resources/MM/product-categories/bedroom.gif";"false";"true";
+"Laptops";"laptop";"http://dnet.nan21.net/static-demo-resources/MM/product-categories/laptop.jpg";"false";"true";
+"Mouse";"mouse";"http://dnet.nan21.net/static-demo-resources/MM/product-categories/mice.jpg";"false";"true";
+"Shirts";"shirt";"http://dnet.nan21.net/static-demo-resources/MM/product-categories/shirt.jpg";"false";"true";
+"Sofas";"sofa";"http://dnet.nan21.net/static-demo-resources/MM/product-categories/sofa.jpg";"false";"true";
+"Watches";"watch";"http://dnet.nan21.net/static-demo-resources/MM/product-categories/watch.jpg";"false";"true";

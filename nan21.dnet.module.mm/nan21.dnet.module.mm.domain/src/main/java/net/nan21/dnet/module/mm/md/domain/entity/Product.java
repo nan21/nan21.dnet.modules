@@ -84,6 +84,10 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
      */
     public static final String NQ_FIND_BY_NAME = "Product.findByName";
 
+    /** Description. */
+    @Column(name = "DESCRIPTION", length = 400)
+    private String description;
+
     /** Flag which specifies if it is a physical-storable item. */
     @Column(name = "STORABLE", nullable = false)
     @NotNull
@@ -199,6 +203,14 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
     private Collection<ProductAttributeValue> attributes;
 
     /* ============== getters - setters ================== */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Boolean getStorable() {
         return this.storable;

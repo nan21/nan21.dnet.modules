@@ -12,6 +12,8 @@ import net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductDs;
+import net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDs;
+import net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerLovDs;
 import net.nan21.dnet.module.mm.md.ds.param.ProductDsParam;
 
 import org.springframework.context.annotation.Scope;
@@ -24,6 +26,41 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/product")
 public class ProductController extends AbstractWebController {
 
+	
+	@RequestMapping("/home")
+	public ModelAndView home(HttpServletRequest request) throws Exception {
+
+		try {
+			this.prepareRequest(); 
+ 
+//			IDsService service = this.findDsService(ProductDs.class);			 
+//			IQueryBuilder builder = service.createQueryBuilder().addFetchLimit(
+//					0, 20);		
+//			ProductDsParam param = new ProductDsParam();
+//			ProductDs filter = new ProductDs();
+//			filter.setActive(true);
+//			
+//			if( request.getParameter("categoryId") != null) {
+//				param.setProductCategoryId( Long.parseLong( request.getParameter("categoryId") ));
+//			} 
+//			if( request.getParameter("manufacturerId") != null) {
+//				filter.setManufacturerId( Long.parseLong( request.getParameter("manufacturerId") ));
+//			} 
+//			
+//			List products = service.find(filter, param, builder);			 
+			List categories = this.getCategories();
+			List manufacturers = this.getManufacturers();
+			
+			return new ModelAndView("home")
+				.addObject("categories", categories)
+				.addObject("manufacturers", manufacturers);
+				//.addObject("products", products);
+
+		} finally {
+			this.finishRequest();
+		}
+	}
+	
 	@RequestMapping("/list")
 	public ModelAndView list(HttpServletRequest request) throws Exception {
 
@@ -34,16 +71,23 @@ public class ProductController extends AbstractWebController {
 			IQueryBuilder builder = service.createQueryBuilder().addFetchLimit(
 					0, 20);		
 			ProductDsParam param = new ProductDsParam();
+			ProductDs filter = new ProductDs();
+			filter.setActive(true);
 			
 			if( request.getParameter("categoryId") != null) {
 				param.setProductCategoryId( Long.parseLong( request.getParameter("categoryId") ));
 			} 
+			if( request.getParameter("manufacturerId") != null) {
+				filter.setManufacturerId( Long.parseLong( request.getParameter("manufacturerId") ));
+			} 
 			
-			List products = service.find(new ProductDs(), param, builder);			 
+			List products = service.find(filter, param, builder);			 
 			List categories = this.getCategories();
-
+			List manufacturers = this.getManufacturers();
+			
 			return new ModelAndView("productList")
 				.addObject("categories", categories)
+				.addObject("manufacturers", manufacturers)
 				.addObject("products", products);
 
 		} finally {
@@ -90,29 +134,23 @@ public class ProductController extends AbstractWebController {
 		}
 
 	}
-
-	/*
-	 * @RequestMapping("/meow") public ModelAndView cat(HttpServletRequest
-	 * request) throws IOException { URL host =
-	 * request.getServletContext().getResource
-	 * ("host:/WEB-INF/sample.properties"); Properties host_props = new
-	 * Properties(); if(host != null){ host_props.load(host.openStream()); } URL
-	 * snap =
-	 * request.getServletContext().getResource("/WEB-INF/sample.properties");
-	 * Properties snap_props = new Properties(); if(snap != null){
-	 * snap_props.load(snap.openStream()); } return new
-	 * ModelAndView("index").addObject("host",
-	 * host_props.getProperty("some.property")) .addObject("snap",
-	 * snap_props.getProperty("some.property")); }
-	 */
-
+ 
 	protected List getCategories() throws Exception {
-		IDsService service = this.serviceLocator.findDsService("ProductCategoryDs");
+		IDsService service = this.serviceLocator.findDsService(ProductCategoryDs.class.getSimpleName());
 		service.setSystemConfig(this.systemConfig);
+		ProductCategoryDs filter = new ProductCategoryDs();
+		filter.setActive(true);
 		IQueryBuilder builder = service.createQueryBuilder();			 
-		return service.find(new ProductCategoryDs(), null, builder);
+		return service.find(filter, null, builder);
 	}
 	
-	
+	protected List getManufacturers() throws Exception {
+		IDsService service = this.serviceLocator.findDsService(ProductManufacturerDs.class.getSimpleName());
+		service.setSystemConfig(this.systemConfig);
+		ProductManufacturerDs filter = new ProductManufacturerDs();
+		filter.setActive(true);
+		IQueryBuilder builder = service.createQueryBuilder();			 
+		return service.find(filter, null, builder);
+	}
 	
 }

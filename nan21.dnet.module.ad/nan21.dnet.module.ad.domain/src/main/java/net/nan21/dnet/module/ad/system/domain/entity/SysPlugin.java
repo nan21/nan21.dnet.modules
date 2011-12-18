@@ -3,7 +3,7 @@
  * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms.
  */
-package net.nan21.dnet.module.mm.md.domain.entity;
+package net.nan21.dnet.module.ad.system.domain.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -31,60 +31,42 @@ import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
-/** Product manufacturers.*/
+/** SysPlugin. */
 @Entity
-@Table(name = ProductManufacturer.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "MM_PROD_MANUFACTURER_UK1", columnNames = {
-                "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "MM_PROD_MANUFACTURER_UK2", columnNames = {
-                "CLIENTID", "NAME" }) })
+@Table(name = SysPlugin.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_SYSPLUGIN_UK1", columnNames = {
+        "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ProductManufacturer.findById", query = "SELECT e FROM ProductManufacturer e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductManufacturer.findByIds", query = "SELECT e FROM ProductManufacturer e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductManufacturer.findByCode", query = "SELECT e FROM ProductManufacturer e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductManufacturer.findByName", query = "SELECT e FROM ProductManufacturer e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class ProductManufacturer implements Serializable, IModelWithId,
+        @NamedQuery(name = "SysPlugin.findById", query = "SELECT e FROM SysPlugin e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "SysPlugin.findByIds", query = "SELECT e FROM SysPlugin e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "SysPlugin.findByName", query = "SELECT e FROM SysPlugin e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+public class SysPlugin implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "MM_PROD_MANUFACTURER";
-    public static final String SEQUENCE_NAME = "MM_PROD_MANUFACTURER_SEQ";
+    public static final String TABLE_NAME = "AD_SYSPLUGIN";
+    public static final String SEQUENCE_NAME = "AD_SYSPLUGIN_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
     /**
      * Named query find by ID.
      */
-    public static final String NQ_FIND_BY_ID = "ProductManufacturer.findById";
+    public static final String NQ_FIND_BY_ID = "SysPlugin.findById";
 
     /**
      * Named query find by IDs.
      */
-    public static final String NQ_FIND_BY_IDS = "ProductManufacturer.findByIds";
-
-    /**
-     * Named query find by unique key: Code.
-     */
-    public static final String NQ_FIND_BY_CODE = "ProductManufacturer.findByCode";
+    public static final String NQ_FIND_BY_IDS = "SysPlugin.findByIds";
 
     /**
      * Named query find by unique key: Name.
      */
-    public static final String NQ_FIND_BY_NAME = "ProductManufacturer.findByName";
-
-    /** IconUrl. */
-    @Column(name = "ICONURL", length = 255)
-    private String iconUrl;
+    public static final String NQ_FIND_BY_NAME = "SysPlugin.findByName";
 
     /** Name. */
     @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
-
-    /** Code. */
-    @Column(name = "CODE", nullable = false, length = 32)
-    @NotBlank
-    private String code;
 
     /** Flag which indicates if this record is used.*/
     @Column(name = "ACTIVE", nullable = false)
@@ -92,8 +74,8 @@ public class ProductManufacturer implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES", length = 4000)
-    private String notes;
+    @Column(name = "DESCRIPTION", length = 400)
+    private String description;
 
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
@@ -137,28 +119,12 @@ public class ProductManufacturer implements Serializable, IModelWithId,
 
     /* ============== getters - setters ================== */
 
-    public String getIconUrl() {
-        return this.iconUrl;
-    }
-
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
-    }
-
     public String getName() {
         return this.name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public Boolean getActive() {
@@ -169,12 +135,12 @@ public class ProductManufacturer implements Serializable, IModelWithId,
         this.active = active;
     }
 
-    public String getNotes() {
-        return this.notes;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getClientId() {
@@ -259,7 +225,7 @@ public class ProductManufacturer implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProductManufacturer e = (ProductManufacturer) event.getSource();
+        SysPlugin e = (SysPlugin) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());
 

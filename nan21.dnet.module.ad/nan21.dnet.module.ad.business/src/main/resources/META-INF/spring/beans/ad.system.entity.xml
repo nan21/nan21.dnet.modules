@@ -7,6 +7,15 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="SysPluginService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.SysPluginService"  />  
+ 
+ 	<bean id="SysParamService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.SysParamService"  />  
+ 
+ 	<bean id="SysParamValueService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.SysParamValueService"  />  
+ 
  	<bean id="SysDataSourceService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.SysDataSourceService"  />  
  

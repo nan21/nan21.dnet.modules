@@ -1,14 +1,10 @@
 "product";"type";"name";"location";"notes"
-"LPT_ASSUS_X54HY_SX030D";"Product image";"Front view";"http://dnet.nan21.net/static-demo-resources/images/laptop-assus-big-1.jpg";
-"SOFA_VAN";"Product image";"Front view";"http://dnet.nan21.net/static-demo-resources/images/sofa-text-big.jpg";
-"LPT_TOSHIBA_L755_18P";"Product image";"Front view";"http://dnet.nan21.net/static-demo-resources/images/laptop-toshiba-big-1.jpg";
+"LPT_TOSHIBA_L755-18P";"Product image";"Side view right";"http://dnet.nan21.net/static-demo-resources/images/laptop-toshiba-big-3.jpg";
+"LPT_ASSUS_X54HY-SX030D";"Product image";"Front view";"http://dnet.nan21.net/static-demo-resources/images/laptop-assus-big-1.jpg";
 "LPT_SAMSUNG_RC710";"Product image";"Front view";"http://dnet.nan21.net/static-demo-resources/images/laptop-samsung-big-1.jpg";
-"WATCH_CITIZEN_BM7080_54E";"Product image";"Front view";"http://dnet.nan21.net/static-demo-resources/images/watch_citizen.jpg";
-"BED_M2";"Product image";"Front view";"http://dnet.nan21.net/static-demo-resources/images/bed-big.jpg";
-"SOFA_LEATHER_1";"Product image";"Front view";"http://dnet.nan21.net/static-demo-resources/images/sofa-leather-big.jpg";
-"LPT_TOSHIBA_L755_18P";"Product image";"Side view left";"http://dnet.nan21.net/static-demo-resources/images/laptop-toshiba-big-2.jpg";
-"LPT_SAMSUNG_RC710";"Product image";"Side view left";"http://dnet.nan21.net/static-demo-resources/images/laptop-samsung-big-2.jpg";
-"LPT_ASSUS_X54HY_SX030D";"Product image";"Side view left";"http://dnet.nan21.net/static-demo-resources/images/laptop-assus-big-2.jpg";
-"LPT_TOSHIBA_L755_18P";"Product image";"Side view right";"http://dnet.nan21.net/static-demo-resources/images/laptop-toshiba-big-3.jpg";
 "LPT_SAMSUNG_RC710";"Product image";"Side view right";"http://dnet.nan21.net/static-demo-resources/images/laptop-samsung-big-3.jpg";
-"LPT_ASSUS_X54HY_SX030D";"Product image";"Side view right";"http://dnet.nan21.net/static-demo-resources/images/laptop-assus-big-3.jpg";
+"LPT_ASSUS_X54HY-SX030D";"Product image";"Side view left";"http://dnet.nan21.net/static-demo-resources/images/laptop-assus-big-2.jpg";
+"LPT_ASSUS_X54HY-SX030D";"Product image";"Side view right";"http://dnet.nan21.net/static-demo-resources/images/laptop-assus-big-3.jpg";
+"LPT_TOSHIBA_L755-18P";"Product image";"Side view left";"http://dnet.nan21.net/static-demo-resources/images/laptop-toshiba-big-2.jpg";
+"LPT_TOSHIBA_L755-18P";"Product image";"Front view";"http://dnet.nan21.net/static-demo-resources/images/laptop-toshiba-big-1.jpg";
+"LPT_SAMSUNG_RC710";"Product image";"Side view left";"http://dnet.nan21.net/static-demo-resources/images/laptop-samsung-big-2.jpg";

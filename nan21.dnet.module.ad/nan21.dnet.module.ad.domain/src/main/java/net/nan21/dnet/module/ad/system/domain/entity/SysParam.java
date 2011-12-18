@@ -3,7 +3,7 @@
  * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms.
  */
-package net.nan21.dnet.module.mm.md.domain.entity;
+package net.nan21.dnet.module.ad.system.domain.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -31,50 +31,53 @@ import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
-/** Product manufacturers.*/
+/** SysParam. */
 @Entity
-@Table(name = ProductManufacturer.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "MM_PROD_MANUFACTURER_UK1", columnNames = {
-                "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "MM_PROD_MANUFACTURER_UK2", columnNames = {
-                "CLIENTID", "NAME" }) })
+@Table(name = SysParam.TABLE_NAME, uniqueConstraints = {
+        @UniqueConstraint(name = "AD_SYSPARAM_UK1", columnNames = { "CLIENTID",
+                "CODE" }),
+        @UniqueConstraint(name = "AD_SYSPARAM_UK2", columnNames = { "CLIENTID",
+                "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ProductManufacturer.findById", query = "SELECT e FROM ProductManufacturer e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductManufacturer.findByIds", query = "SELECT e FROM ProductManufacturer e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductManufacturer.findByCode", query = "SELECT e FROM ProductManufacturer e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductManufacturer.findByName", query = "SELECT e FROM ProductManufacturer e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class ProductManufacturer implements Serializable, IModelWithId,
-        IModelWithClientId {
+        @NamedQuery(name = "SysParam.findById", query = "SELECT e FROM SysParam e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "SysParam.findByIds", query = "SELECT e FROM SysParam e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "SysParam.findByCode", query = "SELECT e FROM SysParam e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "SysParam.findByName", query = "SELECT e FROM SysParam e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+public class SysParam implements Serializable, IModelWithId, IModelWithClientId {
 
-    public static final String TABLE_NAME = "MM_PROD_MANUFACTURER";
-    public static final String SEQUENCE_NAME = "MM_PROD_MANUFACTURER_SEQ";
+    public static final String TABLE_NAME = "AD_SYSPARAM";
+    public static final String SEQUENCE_NAME = "AD_SYSPARAM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
     /**
      * Named query find by ID.
      */
-    public static final String NQ_FIND_BY_ID = "ProductManufacturer.findById";
+    public static final String NQ_FIND_BY_ID = "SysParam.findById";
 
     /**
      * Named query find by IDs.
      */
-    public static final String NQ_FIND_BY_IDS = "ProductManufacturer.findByIds";
+    public static final String NQ_FIND_BY_IDS = "SysParam.findByIds";
 
     /**
      * Named query find by unique key: Code.
      */
-    public static final String NQ_FIND_BY_CODE = "ProductManufacturer.findByCode";
+    public static final String NQ_FIND_BY_CODE = "SysParam.findByCode";
 
     /**
      * Named query find by unique key: Name.
      */
-    public static final String NQ_FIND_BY_NAME = "ProductManufacturer.findByName";
+    public static final String NQ_FIND_BY_NAME = "SysParam.findByName";
 
-    /** IconUrl. */
-    @Column(name = "ICONURL", length = 255)
-    private String iconUrl;
+    /** DefaultValue. */
+    @Column(name = "DEFAULTVALUE", length = 400)
+    private String defaultValue;
+
+    /** Value. */
+    @Column(name = "VALUE", length = 400)
+    private String value;
 
     /** Name. */
     @Column(name = "NAME", nullable = false, length = 255)
@@ -137,12 +140,20 @@ public class ProductManufacturer implements Serializable, IModelWithId,
 
     /* ============== getters - setters ================== */
 
-    public String getIconUrl() {
-        return this.iconUrl;
+    public String getDefaultValue() {
+        return this.defaultValue;
     }
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public String getName() {
@@ -259,7 +270,7 @@ public class ProductManufacturer implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProductManufacturer e = (ProductManufacturer) event.getSource();
+        SysParam e = (SysParam) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());
 

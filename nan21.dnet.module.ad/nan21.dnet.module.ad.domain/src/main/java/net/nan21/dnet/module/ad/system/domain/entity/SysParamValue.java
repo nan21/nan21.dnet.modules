@@ -3,14 +3,17 @@
  * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms.
  */
-package net.nan21.dnet.module.mm.md.domain.entity;
+package net.nan21.dnet.module.ad.system.domain.entity;
 
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
@@ -18,82 +21,47 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.module.ad.system.domain.entity.SysParam;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
-/** Product manufacturers.*/
+/** SysParamValue. */
 @Entity
-@Table(name = ProductManufacturer.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "MM_PROD_MANUFACTURER_UK1", columnNames = {
-                "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "MM_PROD_MANUFACTURER_UK2", columnNames = {
-                "CLIENTID", "NAME" }) })
+@Table(name = SysParamValue.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ProductManufacturer.findById", query = "SELECT e FROM ProductManufacturer e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductManufacturer.findByIds", query = "SELECT e FROM ProductManufacturer e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductManufacturer.findByCode", query = "SELECT e FROM ProductManufacturer e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductManufacturer.findByName", query = "SELECT e FROM ProductManufacturer e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class ProductManufacturer implements Serializable, IModelWithId,
+        @NamedQuery(name = "SysParamValue.findById", query = "SELECT e FROM SysParamValue e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "SysParamValue.findByIds", query = "SELECT e FROM SysParamValue e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+public class SysParamValue implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "MM_PROD_MANUFACTURER";
-    public static final String SEQUENCE_NAME = "MM_PROD_MANUFACTURER_SEQ";
+    public static final String TABLE_NAME = "AD_SYSPARAMVAL";
+    public static final String SEQUENCE_NAME = "AD_SYSPARAMVAL_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
     /**
      * Named query find by ID.
      */
-    public static final String NQ_FIND_BY_ID = "ProductManufacturer.findById";
+    public static final String NQ_FIND_BY_ID = "SysParamValue.findById";
 
     /**
      * Named query find by IDs.
      */
-    public static final String NQ_FIND_BY_IDS = "ProductManufacturer.findByIds";
+    public static final String NQ_FIND_BY_IDS = "SysParamValue.findByIds";
 
-    /**
-     * Named query find by unique key: Code.
-     */
-    public static final String NQ_FIND_BY_CODE = "ProductManufacturer.findByCode";
-
-    /**
-     * Named query find by unique key: Name.
-     */
-    public static final String NQ_FIND_BY_NAME = "ProductManufacturer.findByName";
-
-    /** IconUrl. */
-    @Column(name = "ICONURL", length = 255)
-    private String iconUrl;
-
-    /** Name. */
-    @Column(name = "NAME", nullable = false, length = 255)
-    @NotBlank
-    private String name;
-
-    /** Code. */
-    @Column(name = "CODE", nullable = false, length = 32)
-    @NotBlank
-    private String code;
-
-    /** Flag which indicates if this record is used.*/
-    @Column(name = "ACTIVE", nullable = false)
-    @NotNull
-    private Boolean active;
-
-    /** Notes about this record. */
-    @Column(name = "NOTES", length = 4000)
-    private String notes;
+    /** Value. */
+    @Column(name = "VALUE", length = 400)
+    private String value;
 
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
@@ -134,47 +102,18 @@ public class ProductManufacturer implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = SysParam.class)
+    @JoinColumn(name = "SYSPARAM_ID", referencedColumnName = "ID")
+    private SysParam sysParam;
 
     /* ============== getters - setters ================== */
 
-    public String getIconUrl() {
-        return this.iconUrl;
+    public String getValue() {
+        return this.value;
     }
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Boolean getActive() {
-        return this.active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public String getNotes() {
-        return this.notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public Long getClientId() {
@@ -242,6 +181,14 @@ public class ProductManufacturer implements Serializable, IModelWithId,
 
     }
 
+    public SysParam getSysParam() {
+        return this.sysParam;
+    }
+
+    public void setSysParam(SysParam sysParam) {
+        this.sysParam = sysParam;
+    }
+
     public void aboutToInsert(DescriptorEvent event) {
 
         event.updateAttributeWithObject("createdAt", new Date());
@@ -252,14 +199,11 @@ public class ProductManufacturer implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
-        if (this.active == null) {
-            event.updateAttributeWithObject("active", false);
-        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProductManufacturer e = (ProductManufacturer) event.getSource();
+        SysParamValue e = (SysParamValue) event.getSource();
         e.setModifiedAt(new Date());
         e.setModifiedBy(Session.user.get().getUsername());
 

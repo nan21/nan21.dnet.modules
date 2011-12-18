@@ -7,6 +7,16 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="SysParamDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysParamDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysParam" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysParam" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysParamDs" />
+	</bean>
+   
  	<bean id="SysDataSourceDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs" />

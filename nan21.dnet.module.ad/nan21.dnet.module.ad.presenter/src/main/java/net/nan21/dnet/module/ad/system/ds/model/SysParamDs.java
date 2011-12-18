@@ -3,7 +3,7 @@
  * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms.
  */
-package net.nan21.dnet.module.mm.md.ds.model;
+package net.nan21.dnet.module.ad.system.ds.model;
 
 import java.util.Date;
 import net.nan21.dnet.core.api.annotation.SortField;
@@ -11,13 +11,13 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
 
-import net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer;
+import net.nan21.dnet.module.ad.system.domain.entity.SysParam;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ProductManufacturer.class, sort = { @SortField(field = ProductManufacturerDs.fNAME) })
-public class ProductManufacturerDs extends AbstractDsModel<ProductManufacturer>
-        implements IModelWithId, IModelWithClientId {
+@Ds(entity = SysParam.class, sort = { @SortField(field = SysParamDs.fNAME) })
+public class SysParamDs extends AbstractDsModel<SysParam> implements
+        IModelWithId, IModelWithClientId {
 
     public static final String fNAME = "name";
     public static final String fCODE = "code";
@@ -30,7 +30,8 @@ public class ProductManufacturerDs extends AbstractDsModel<ProductManufacturer>
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
-    public static final String fICONURL = "iconUrl";
+    public static final String fDEFAULTVALUE = "defaultValue";
+    public static final String fVALUE = "value";
 
     @DsField()
     private String name;
@@ -66,13 +67,16 @@ public class ProductManufacturerDs extends AbstractDsModel<ProductManufacturer>
     private Long version;
 
     @DsField()
-    private String iconUrl;
+    private String defaultValue;
 
-    public ProductManufacturerDs() {
+    @DsField()
+    private String value;
+
+    public SysParamDs() {
         super();
     }
 
-    public ProductManufacturerDs(ProductManufacturer e) {
+    public SysParamDs(SysParam e) {
         super(e);
     }
 
@@ -165,12 +169,20 @@ public class ProductManufacturerDs extends AbstractDsModel<ProductManufacturer>
         this.version = version;
     }
 
-    public String getIconUrl() {
-        return this.iconUrl;
+    public String getDefaultValue() {
+        return this.defaultValue;
     }
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
 }
