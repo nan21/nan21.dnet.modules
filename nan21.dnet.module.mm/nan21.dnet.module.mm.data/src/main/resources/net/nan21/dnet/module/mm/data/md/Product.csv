@@ -1,21 +1,21 @@
-"code";"name";"active";"storable";"defaultUomCode";"attributeGroup";"manufacturerCode";"weight";"weightUomCode";"dimWidth";"dimHeight";"dimDepth";"dimUomCode"
-"BED_B1";"Bed B1";"true";"true";"EA";"bed";;"23.0";"KG";"178.0";"67.0";"220.0";"CM"
-"LPT_ASSUS_X54HY-SX030D";"Laptop Assus X54HY-SX030D";"true";"true";"EA";"laptop";"assus";"2060.0";"G";"331.0";"27.0";"236.0";"MM"
-"LPT_SAMSUNG_RC710";"Laptop Samsung RC710";"true";"true";"EA";"laptop";"samsung";"2940.0";"G";"419.0";"29.0";"276.0";"MM"
-"LPT_TOSHIBA_L755-18P";"Laptop Toshiba L755-18P";"true";"true";"EA";"laptop";"toshiba";"3.0";"KG";"414.0";"28.0";"274.0";"MM"
-"MOUSE_ATECH_X6-60D";"Mouse A4Tech Glaser X6-60D";"true";"true";"EA";;"atech";;;;;;
-"MOUSE_ATECH_N-350-1";"Mouse A4Tech N-350-1";"true";"true";"EA";;"atech";;;;;;
-"MOUSE_LOGI_M345";"Mouse Logitech M345";"true";"true";"EA";;"logi";;;;;;
-"MOUSE_ATECH_X-718BK";"Mouse optic A4Tech X-718BK";"true";"true";"EA";;"atech";;;;;;
-"SHIRT_HM_BLUE";"Shirt H&M blue";"true";"true";"EA";;"hm";;;;;;
-"SHIRT_HM_BUSINESS";"Shirt H&M business";"true";"true";"EA";;"hm";;;;;;
-"SHIRT_HM_GREEN";"Shirt H&M green";"true";"true";"EA";;"hm";;;;;;
-"SHIRT_HM_RED";"Shirt H&M red";"true";"true";"EA";;"hm";;;;;;
-"SOFA_SF-1";"Sofa leather SF-1";"true";"true";"EA";"sofa";;"3.0";"KG";"414.0";"28.0";"274.0";"MM"
-"SOFA_SF-2";"Sofa textile SF-2";"true";"true";"EA";"sofa";;"23.0";"KG";"414.0";"67.0";"89.0";"CM"
-"WATCH_CASIO_AMW330B-1A";"Watch Casio AMW330B-1A";"true";"true";"EA";"watch";"casio";;;;;;
-"WATCH_CASIO_AWG101-1A";"Watch Casio AWG101-1A";"true";"true";"EA";"watch";"casio";;;;;;
-"WATCH_CASIO_GW530A-1V";"Watch Casio GW530A-1V";"true";"true";"EA";"watch";"casio";;;;;;
-"WATCH_CITIZEN_BL5250-02L";"Watch Citizen BL5250-02L";"true";"true";"EA";"watch";"citizen";;;;;;
-"WATCH_CITIZEN_BL5400-52A";"Watch Citizen BL5400-52A";"true";"true";"EA";"watch";"citizen";;;;;;
-"WATCH_CITIZEN_BM7080-54E";"Watch Citizen BM7080-54E";"true";"true";"EA";"watch";"citizen";"3.0";"KG";"414.0";"28.0";"274.0";"MM"
+"name";"code";"active";"storable";"showInCatalog";"defaultUomCode";"attributeGroup";"manufacturerCode";"weight";"weightUomCode";"dimWidth";"dimHeight";"dimDepth"
+"Bed B1";"BED_B1";"true";"true";"true";"EA";"bed";;"23.0";"KG";"178.0";"67.0";"220.0"
+"Laptop Assus X54HY-SX030D";"LPT_ASSUS_X54HY-SX030D";"true";"true";"true";"EA";"laptop";"assus";"2060.0";"G";"331.0";"27.0";"236.0"
+"Laptop Samsung RC710";"LPT_SAMSUNG_RC710";"true";"true";"true";"EA";"laptop";"samsung";"2940.0";"G";"419.0";"29.0";"276.0"
+"Laptop Toshiba L755-18P";"LPT_TOSHIBA_L755-18P";"true";"true";"true";"EA";"laptop";"toshiba";"3.0";"KG";"414.0";"28.0";"274.0"
+"Mouse A4Tech Glaser X6-60D";"MOUSE_ATECH_X6-60D";"true";"true";"true";"EA";;"atech";;;;;
+"Mouse A4Tech N-350-1";"MOUSE_ATECH_N-350-1";"true";"true";"true";"EA";;"atech";;;;;
+"Mouse Logitech M345";"MOUSE_LOGI_M345";"true";"true";"true";"EA";;"logi";;;;;
+"Mouse optic A4Tech X-718BK";"MOUSE_ATECH_X-718BK";"true";"true";"true";"EA";;"atech";;;;;
+"Shirt H&M blue";"SHIRT_HM_BLUE";"true";"true";"true";"EA";;"hm";;;;;
+"Shirt H&M business";"SHIRT_HM_BUSINESS";"true";"true";"true";"EA";;"hm";;;;;
+"Shirt H&M green";"SHIRT_HM_GREEN";"true";"true";"true";"EA";;"hm";;;;;
+"Shirt H&M red";"SHIRT_HM_RED";"true";"true";"true";"EA";;"hm";;;;;
+"Sofa leather SF-1";"SOFA_SF-1";"true";"true";"true";"EA";"sofa";;"3.0";"KG";"414.0";"28.0";"274.0"
+"Sofa textile SF-2";"SOFA_SF-2";"true";"true";"true";"EA";"sofa";;"23.0";"KG";"414.0";"67.0";"89.0"
+"Watch Casio AMW330B-1A";"WATCH_CASIO_AMW330B-1A";"true";"true";"true";"EA";"watch";"casio";;;;;
+"Watch Casio AWG101-1A";"WATCH_CASIO_AWG101-1A";"true";"true";"true";"EA";"watch";"casio";;;;;
+"Watch Casio GW530A-1V";"WATCH_CASIO_GW530A-1V";"true";"true";"true";"EA";"watch";"casio";;;;;
+"Watch Citizen BL5250-02L";"WATCH_CITIZEN_BL5250-02L";"true";"true";"true";"EA";"watch";"citizen";;;;;
+"Watch Citizen BL5400-52A";"WATCH_CITIZEN_BL5400-52A";"true";"true";"true";"EA";"watch";"citizen";;;;;
+"Watch Citizen BM7080-54E";"WATCH_CITIZEN_BM7080-54E";"true";"true";"true";"EA";"watch";"citizen";"3.0";"KG";"414.0";"28.0";"274.0"
