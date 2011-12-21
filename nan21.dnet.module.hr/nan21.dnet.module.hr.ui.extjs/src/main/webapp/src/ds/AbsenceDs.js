@@ -5,8 +5,8 @@ Ext.define("net.nan21.dnet.module.hr.time.ds.model.AbsenceDs" , {
 	fields: [ 
 		{name:"id",type:"int", useNull:true },
 		{name:"clientId",type:"int", useNull:true },
-		{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"createdAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"modifiedAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
@@ -17,7 +17,7 @@ Ext.define("net.nan21.dnet.module.hr.time.ds.model.AbsenceDs" , {
 		{name:"type",type:"string" },
 		{name:"reasonId",type:"int", useNull:true },
 		{name:"reason",type:"string" },
-		{name:"eventDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"eventDate",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"hours",type:"int", useNull:true },
 		{name:"notes",type:"string" },
 		{name:"posted",type:"boolean" }
@@ -29,8 +29,8 @@ Ext.define("net.nan21.dnet.module.hr.time.ds.model.AbsenceDsFilter" , {
 	fields: [ 
 		{name:"id",type:"int", useNull:true },
 		{name:"clientId",type:"int", useNull:true },
-		{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"createdAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"modifiedAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
@@ -41,7 +41,7 @@ Ext.define("net.nan21.dnet.module.hr.time.ds.model.AbsenceDsFilter" , {
 		{name:"type",type:"string" },
 		{name:"reasonId",type:"int", useNull:true },
 		{name:"reason",type:"string" },
-		{name:"eventDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"eventDate",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"hours",type:"int", useNull:true },
 		{name:"notes",type:"string" },
 		{name:"posted",type:"boolean", useNull:true }
@@ -51,8 +51,8 @@ Ext.define("net.nan21.dnet.module.hr.time.ds.model.AbsenceDsFilter" , {
 Ext.define("net.nan21.dnet.module.hr.time.ds.param.AbsenceDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 	
-		{name:"from",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT},	
-		{name:"to",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT}
+		{name:"from",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT},	
+		{name:"to",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT}
 	]
 }); 
  

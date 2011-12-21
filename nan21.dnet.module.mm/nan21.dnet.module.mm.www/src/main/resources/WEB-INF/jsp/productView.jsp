@@ -13,7 +13,18 @@
 <div class="col1">
 
 <div >
-	<img alt="Photo: ${product.name}" src="http://dnet.nan21.net/static-demo-resources/MM/products/${product.code}.jpg">
+
+	<c:choose>
+		<c:when test='${product.imageUrl == null }'>
+	         <img src="${product_image_baseurl}/${product.code}${product_image_suffix}.${product_image_ext}" title="${product.name}" alt="${product.name}"/>
+	    </c:when>
+	    <c:when test='${product.imageUrl.startsWith("http")}'>
+	         <img src="${product.imageUrl}" title="${product.name}" alt="${product.name}"/>
+	    </c:when>
+	    <c:otherwise>
+	        <img src=" ${product_image_baseurl}/${product.imageUrl}" title="${product.name}" alt="${product.name}"/>
+	    </c:otherwise>
+	</c:choose>
 </div>
 
 <!-- <div id="slider"><c:forEach var="attachment"

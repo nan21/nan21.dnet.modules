@@ -57,8 +57,8 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$List", {
 		.addBooleanColumn({ name:"systemClient", dataIndex:"systemClient"})   	     
 		.addTextColumn({ name:"adminRole", dataIndex:"adminRole", hidden:true,width:100 })   	
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
 		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
 	  ;		   

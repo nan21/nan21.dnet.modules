@@ -5,8 +5,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeLicenseDs" , {
 	fields: [ 
 		{name:"id",type:"int", useNull:true },
 		{name:"clientId",type:"int", useNull:true },
-		{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"createdAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"modifiedAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
@@ -15,8 +15,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeLicenseDs" , {
 		{name:"licenseType",type:"string" },
 		{name:"documentNo",type:"string" },
 		{name:"issuedBy",type:"string" },
-		{name:"validFrom",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"validTo",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"validFrom",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"validTo",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"notes",type:"string" }
 	]
 });
@@ -26,8 +26,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeLicenseDsFilter" 
 	fields: [ 
 		{name:"id",type:"int", useNull:true },
 		{name:"clientId",type:"int", useNull:true },
-		{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"createdAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"modifiedAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
@@ -36,8 +36,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeLicenseDsFilter" 
 		{name:"licenseType",type:"string" },
 		{name:"documentNo",type:"string" },
 		{name:"issuedBy",type:"string" },
-		{name:"validFrom",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"validTo",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"validFrom",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"validTo",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"notes",type:"string" }
 	] 
 });

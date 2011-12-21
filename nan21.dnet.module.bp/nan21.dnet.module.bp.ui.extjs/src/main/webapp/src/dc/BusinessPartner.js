@@ -71,10 +71,10 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$List", {
 		.addTextColumn({ name:"gender", dataIndex:"gender", hidden:true,width:60 })   	
 		.addTextColumn({ name:"legalForm", dataIndex:"legalForm",width:120 })   	
 		.addTextColumn({ name:"registrationNo", dataIndex:"registrationNo",width:100 })   	
-		.addDateColumn({ name:"registrationDate", dataIndex:"registrationDate", hidden:true,format:Ext.DATE_FORMAT})   	      	     
+		.addDateColumn({ name:"registrationDate", dataIndex:"registrationDate", hidden:true,format:Dnet.DATE_FORMAT})   	      	     
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
 		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
 	  ;		   

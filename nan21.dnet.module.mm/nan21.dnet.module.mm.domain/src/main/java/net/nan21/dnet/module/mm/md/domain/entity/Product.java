@@ -84,6 +84,19 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
      */
     public static final String NQ_FIND_BY_NAME = "Product.findByName";
 
+    /** IconUrl. */
+    @Column(name = "ICONURL", length = 255)
+    private String iconUrl;
+
+    /** ImageUrl. */
+    @Column(name = "IMAGEURL", length = 255)
+    private String imageUrl;
+
+    /** ShowInCatalog. */
+    @Column(name = "SHOWINCATALOG", nullable = false)
+    @NotNull
+    private Boolean showInCatalog;
+
     /** Description. */
     @Column(name = "DESCRIPTION", length = 400)
     private String description;
@@ -203,6 +216,30 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
     private Collection<ProductAttributeValue> attributes;
 
     /* ============== getters - setters ================== */
+
+    public String getIconUrl() {
+        return this.iconUrl;
+    }
+
+    public void setIconUrl(String iconUrl) {
+        this.iconUrl = iconUrl;
+    }
+
+    public String getImageUrl() {
+        return this.imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public Boolean getShowInCatalog() {
+        return this.showInCatalog;
+    }
+
+    public void setShowInCatalog(Boolean showInCatalog) {
+        this.showInCatalog = showInCatalog;
+    }
 
     public String getDescription() {
         return this.description;
@@ -456,6 +493,9 @@ public class Product implements Serializable, IModelWithId, IModelWithClientId {
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.showInCatalog == null) {
+            event.updateAttributeWithObject("showInCatalog", false);
+        }
         if (this.storable == null) {
             event.updateAttributeWithObject("storable", false);
         }

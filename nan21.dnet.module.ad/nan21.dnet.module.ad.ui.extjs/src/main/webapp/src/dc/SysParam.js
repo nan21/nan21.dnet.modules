@@ -49,14 +49,14 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$List", {
 	,_noExport_: false
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
-		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
-		.addTextColumn({ name:"value", dataIndex:"value",width:200 })   	
+		.addTextColumn({ name:"code", dataIndex:"code", width:200 })   	
+		.addTextColumn({ name:"name", dataIndex:"name", width:200 })   	
+		.addTextColumn({ name:"value", dataIndex:"value", width:250 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 	  ;		   
 	}
@@ -74,18 +74,18 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Edit", {
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:80,anchor:"-20"   })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:100,anchor:"-20"   })
 		.addTextField({ name:"defaultValue", dataIndex:"defaultValue",anchor:"-20" ,maxLength:400  })
 		.addTextField({ name:"value", dataIndex:"value",anchor:"-20" ,maxLength:400  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:500})     
+		.addPanel({ name:"col1", layout:"anchor" , width:600})     
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ])
-		.addChildrenTo("col1",["code","name","notes","value"])
+		.addChildrenTo("col1",["code","name","notes","active","value"])
 ;
 	}	
 });

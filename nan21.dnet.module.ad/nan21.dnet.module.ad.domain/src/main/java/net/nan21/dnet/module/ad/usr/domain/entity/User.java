@@ -30,6 +30,7 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
+import net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat;
 import net.nan21.dnet.module.ad.usr.domain.entity.UserType;
 import net.nan21.dnet.module.ad.usr.domain.eventhandler.UserEventHandler;
 import org.eclipse.persistence.annotations.Customizer;
@@ -78,6 +79,14 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "PASSWORD", nullable = false, length = 255)
     @NotBlank
     private String password;
+
+    /** DecimalSeparator. */
+    @Column(name = "DECIMALSEPARATOR", length = 1)
+    private String decimalSeparator;
+
+    /** ThousandSeparator. */
+    @Column(name = "THOUSANDSEPARATOR", length = 1)
+    private String thousandSeparator;
 
     /** Name. */
     @Column(name = "NAME", nullable = false, length = 255)
@@ -137,6 +146,9 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = SysDateFormat.class)
+    @JoinColumn(name = "DATEFORMAT_ID", referencedColumnName = "ID")
+    private SysDateFormat dateFormat;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = UserType.class)
     @JoinColumn(name = "ACCOUNTTYPE_ID", referencedColumnName = "ID")
     private UserType accountType;
@@ -165,6 +177,22 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getDecimalSeparator() {
+        return this.decimalSeparator;
+    }
+
+    public void setDecimalSeparator(String decimalSeparator) {
+        this.decimalSeparator = decimalSeparator;
+    }
+
+    public String getThousandSeparator() {
+        return this.thousandSeparator;
+    }
+
+    public void setThousandSeparator(String thousandSeparator) {
+        this.thousandSeparator = thousandSeparator;
     }
 
     public String getName() {
@@ -262,6 +290,14 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setClassName(String className) {
 
+    }
+
+    public SysDateFormat getDateFormat() {
+        return this.dateFormat;
+    }
+
+    public void setDateFormat(SysDateFormat dateFormat) {
+        this.dateFormat = dateFormat;
     }
 
     public UserType getAccountType() {

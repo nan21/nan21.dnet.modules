@@ -22,6 +22,9 @@
 	<osgi:service ref="setupParticipant" 
 		interface="net.nan21.dnet.core.api.setup.ISetupParticipant" />	
 
+	<osgi:service ref="startupParticipant" 
+		interface="net.nan21.dnet.core.api.setup.IStartupParticipant" />	
+		
 	<osgi:list id="osgiInitDataProviderFactories" cardinality="0..N"
 		interface="net.nan21.dnet.core.api.setup.IInitDataProviderFactory"></osgi:list>
 

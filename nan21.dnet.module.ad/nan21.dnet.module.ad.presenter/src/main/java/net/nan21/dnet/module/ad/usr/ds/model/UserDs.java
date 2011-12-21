@@ -33,6 +33,10 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
     public static final String fLOCKED = "locked";
     public static final String fACCOUNTTYPE = "accountType";
     public static final String fACCOUNTTYPEID = "accountTypeId";
+    public static final String fDECIMALSEPARATOR = "decimalSeparator";
+    public static final String fTHOUSANDSEPARATOR = "thousandSeparator";
+    public static final String fDATEFORMATID = "dateFormatId";
+    public static final String fDATEFORMAT = "dateFormat";
 
     @DsField()
     private String name;
@@ -75,6 +79,18 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
 
     @DsField(join = "left", path = "accountType.id")
     private Long accountTypeId;
+
+    @DsField()
+    private String decimalSeparator;
+
+    @DsField()
+    private String thousandSeparator;
+
+    @DsField(join = "left", path = "dateFormat.id")
+    private Long dateFormatId;
+
+    @DsField(join = "left", path = "dateFormat.name")
+    private String dateFormat;
 
     public UserDs() {
         super();
@@ -195,6 +211,38 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
 
     public void setAccountTypeId(Long accountTypeId) {
         this.accountTypeId = accountTypeId;
+    }
+
+    public String getDecimalSeparator() {
+        return this.decimalSeparator;
+    }
+
+    public void setDecimalSeparator(String decimalSeparator) {
+        this.decimalSeparator = decimalSeparator;
+    }
+
+    public String getThousandSeparator() {
+        return this.thousandSeparator;
+    }
+
+    public void setThousandSeparator(String thousandSeparator) {
+        this.thousandSeparator = thousandSeparator;
+    }
+
+    public Long getDateFormatId() {
+        return this.dateFormatId;
+    }
+
+    public void setDateFormatId(Long dateFormatId) {
+        this.dateFormatId = dateFormatId;
+    }
+
+    public String getDateFormat() {
+        return this.dateFormat;
+    }
+
+    public void setDateFormat(String dateFormat) {
+        this.dateFormat = dateFormat;
     }
 
 }

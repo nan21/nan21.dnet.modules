@@ -33,15 +33,15 @@
     	  <property name="serviceFactories" ref="osgiDsServiceFactories"></property>
     </bean>   -->	 
     
- 	<bean id="systemConfig" class="net.nan21.dnet.core.api.SystemConfig"
-		scope="singleton">
-		<property name="disableFetchGroups" value="${sys.disableFetchGroups}" />
-		<property name="workingMode" value="${sys.workingMode}" />
-	</bean>
+ 	 
  	 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
+    
+    <osgi:reference id="systemConfig" cardinality="1..1"
+		interface="net.nan21.dnet.core.api.ISystemConfig" />
+		
      <osgi:list  id="osgiDsServiceFactories" cardinality="0..N"
 		interface="net.nan21.dnet.core.api.service.IDsServiceFactory" />   
 </beans>

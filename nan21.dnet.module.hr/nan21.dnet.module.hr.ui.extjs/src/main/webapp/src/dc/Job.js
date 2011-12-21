@@ -54,8 +54,8 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Job$List", {
 		.addTextColumn({ name:"type", dataIndex:"type",width:120 })   	
 		.addTextColumn({ name:"notes", dataIndex:"notes",width:200 })   	
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
 		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
 	  ;		   
@@ -77,8 +77,8 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Job$EditList", {
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:4000,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "4000"}} })
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
 		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
 	  ;  		   

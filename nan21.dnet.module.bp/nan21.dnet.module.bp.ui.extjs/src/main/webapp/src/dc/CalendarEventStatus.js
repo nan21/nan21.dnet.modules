@@ -52,8 +52,8 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$EditList", 
 		.addComboColumn({ name:"eventType", dataIndex:"eventType", trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false"),editor: {xtype: 'combo', mode: 'local', selectOnFocus:true, valueField: 'bv', displayField: 'tv' ,store:[ "call", "meeting", "task"] , triggerAction:'all', forceSelection:true }})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
 		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
 	  ;  		   

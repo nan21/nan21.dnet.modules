@@ -55,8 +55,8 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.City$List", {
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
 		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
 	  ;		   
@@ -79,8 +79,8 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.City$CtxEditList", {
 		.addNumberColumn({ name:"countryId", dataIndex:"countryId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"regionId", dataIndex:"regionId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Ext.DATETIME_FORMAT})
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
 		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
 	  ;  		   

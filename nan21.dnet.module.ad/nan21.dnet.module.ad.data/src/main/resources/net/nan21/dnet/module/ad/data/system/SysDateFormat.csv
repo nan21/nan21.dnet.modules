@@ -1,0 +1,4 @@
+"name";"active";"extjsDateFormat";"extjsTimeFormat";"extjsDateTimeFormat";"extjsAltFormats";"javaDateFormat";"javaTimeFormat";"javaDateTimeFormat"
+"DD-MM-YYYY";"true";"d-m-Y";"H:i";"d-m-Y H:i";"j|j-n|d|d-m";"dd-MM-yyyy";"kk:mm";"dd-MM-yyyy kk:mm"
+"DD.MM.YYYY";"true";"d.m.Y";"H:i";"d.m.Y H:i";"j|j.n|d|d.m";"dd.MM.yyyy";"kk:mm";"dd.MM.yyyy kk:mm"
+"MM/DD/YYYY";"true";"m/d/Y";"H:i";"m/d/Y H:i";"j|n/j|d|m/d";"MM/dd/yyyy";"kk:mm";"MM/dd/yyyy kk:mm"

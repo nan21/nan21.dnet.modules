@@ -30,6 +30,10 @@ public class ProductDs extends AbstractDsModel<Product> implements
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fICONURL = "iconUrl";
+    public static final String fIMAGEURL = "imageUrl";
+    public static final String fDESCRIPTION = "description";
+    public static final String fSHOWINCATALOG = "showInCatalog";
     public static final String fSTORABLE = "storable";
     public static final String fWEIGHT = "weight";
     public static final String fVOLUME = "volume";
@@ -84,6 +88,18 @@ public class ProductDs extends AbstractDsModel<Product> implements
 
     @DsField()
     private Long version;
+
+    @DsField()
+    private String iconUrl;
+
+    @DsField()
+    private String imageUrl;
+
+    @DsField()
+    private String description;
+
+    @DsField()
+    private Boolean showInCatalog;
 
     @DsField()
     private Boolean storable;
@@ -243,6 +259,38 @@ public class ProductDs extends AbstractDsModel<Product> implements
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public String getIconUrl() {
+        return this.iconUrl;
+    }
+
+    public void setIconUrl(String iconUrl) {
+        this.iconUrl = iconUrl;
+    }
+
+    public String getImageUrl() {
+        return this.imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Boolean getShowInCatalog() {
+        return this.showInCatalog;
+    }
+
+    public void setShowInCatalog(Boolean showInCatalog) {
+        this.showInCatalog = showInCatalog;
     }
 
     public Boolean getStorable() {

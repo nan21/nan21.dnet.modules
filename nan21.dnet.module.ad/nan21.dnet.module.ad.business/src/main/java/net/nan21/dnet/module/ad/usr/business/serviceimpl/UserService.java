@@ -7,6 +7,7 @@ package net.nan21.dnet.module.ad.usr.business.serviceimpl;
 
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat;
 import net.nan21.dnet.module.ad.usr.business.service.IUserService;
 import net.nan21.dnet.module.ad.usr.domain.entity.Role;
 import net.nan21.dnet.module.ad.usr.domain.entity.UserGroup;
@@ -38,6 +39,18 @@ public class UserService extends AbstractEntityService<User> implements
         return (User) this.em.createNamedQuery(User.NQ_FIND_BY_CODE)
                 .setParameter("pClientId", clientId)
                 .setParameter("pCode", code).getSingleResult();
+    }
+
+    public List<User> findByDateFormat(SysDateFormat dateFormat) {
+        return this.findByDateFormatId(dateFormat.getId());
+    }
+
+    public List<User> findByDateFormatId(Long dateFormatId) {
+        return (List<User>) this.em
+                .createQuery(
+                        "select e from User e where e.dateFormat.id = :pDateFormatId",
+                        User.class).setParameter("pDateFormatId", dateFormatId)
+                .getResultList();
     }
 
     public List<User> findByAccountType(UserType accountType) {

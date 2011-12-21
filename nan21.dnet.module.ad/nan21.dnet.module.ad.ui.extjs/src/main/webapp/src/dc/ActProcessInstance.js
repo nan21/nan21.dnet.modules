@@ -54,7 +54,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List", {
 		.addTextColumn({ name:"id", dataIndex:"id", hidden:true,width:200 })   	
 		.addTextColumn({ name:"process", dataIndex:"process",width:200 })   	
 		.addTextColumn({ name:"processInstanceId", dataIndex:"processInstanceId", hidden:true,width:200 })   	
-		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"startedBy", dataIndex:"startedBy",width:100 })   	
 		.addTextColumn({ name:"startAction", dataIndex:"startAction", width:100 })   	
 	  ;		   

@@ -10,7 +10,19 @@
 		<c:forEach var="category" items="${categories}" >
 			<div class="prod-list-item">
 				<div style="height:130px;margin:auto;border:1px solid #ccc;">
-					<img src="${category.iconUrl}" title="${category.name}" alt="${category.name}"/>
+					
+					<c:choose>
+						<c:when test='${category.iconUrl == null }'>
+					         <img src="${categ_icon_baseurl}/${category.code}.${categ_icon_ext}" title="${category.name}" alt="${category.name}"/>
+					    </c:when>
+					    <c:when test='${category.iconUrl.startsWith("http")}'>
+					         <img src="${category.iconUrl}" title="${category.name}" alt="${category.name}"/>
+					    </c:when>
+					    <c:otherwise>
+					        <img src=" ${categ_icon_baseurl}/${category.iconUrl}" title="${category.name}" alt="${category.name}"/>
+					    </c:otherwise>
+					</c:choose>
+ 
 				</div>
 				
 				<div>
@@ -37,10 +49,20 @@
 		
 		<c:forEach var="manufacturer" items="${manufacturers}" >
 			<div style="float:left;padding:20px;">
-			 
 			<a
-				href="../../web/product/list?manufacturerId=${manufacturer.id}"><img src="${manufacturer.iconUrl}" 
-			title="${manufacturer.name}" alt="${manufacturer.name}"/></a>
+				href="../../web/product/list?manufacturerId=${manufacturer.id}">
+			 	<c:choose>
+						<c:when test='${manufacturer.iconUrl == null }'>
+					         <img src="${manufact_icon_baseurl}/${manufacturer.code}.${manufact_icon_ext}" title="${manufacturer.name}" alt="${manufacturer.name}"/>
+					    </c:when>
+					    <c:when test='${manufacturer.iconUrl.startsWith("http")}'>
+					         <img src="${manufacturer.iconUrl}" title="${manufacturer.name}" alt="${manufacturer.name}"/>
+					    </c:when>
+					    <c:otherwise>
+					        <img src=" ${manufact_icon_baseurl}/${manufacturer.iconUrl}" title="${manufacturer.name}" alt="${manufacturer.name}"/>
+					    </c:otherwise>
+					</c:choose>
+			</a>
 			</div>
 			 			 
 		</c:forEach>

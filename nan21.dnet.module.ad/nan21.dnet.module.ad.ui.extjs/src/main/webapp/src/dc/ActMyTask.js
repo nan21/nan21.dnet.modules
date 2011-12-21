@@ -46,9 +46,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List", {
 		.addTextColumn({ name:"id", dataIndex:"id", hidden:true,width:200 })   	
 		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
 		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
-		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Ext.DATETIME_FORMAT})   	      	     
-		.addNumberColumn({ name:"priority", dataIndex:"priority", hidden:true,format:Ext.NUMBER_FORMAT_INT })  
-		.addDateColumn({ name:"dueDate", dataIndex:"dueDate",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Dnet.DATETIME_FORMAT})   	      	     
+		.addNumberColumn({ name:"priority", dataIndex:"priority", hidden:true })  
+		.addDateColumn({ name:"dueDate", dataIndex:"dueDate",format:Dnet.DATETIME_FORMAT})   	      	     
 	  ;		   
 	}
 });

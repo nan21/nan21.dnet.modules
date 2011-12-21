@@ -28,6 +28,7 @@
 		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReportParam</class>
 		
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysParam</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDataSource</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsField</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent</class>

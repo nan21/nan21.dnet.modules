@@ -6,14 +6,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import net.nan21.dnet.core.api.action.IQueryBuilder;
 import net.nan21.dnet.core.api.service.IDsService;
- 
-import net.nan21.dnet.module.ad.data.ds.model.AttachmentDs;
+import net.nan21.dnet.core.api.session.Session;
+
 import net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDs;
-import net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerLovDs;
 import net.nan21.dnet.module.mm.md.ds.param.ProductDsParam;
 
 import org.springframework.context.annotation.Scope;
@@ -50,8 +49,12 @@ public class ProductController extends AbstractWebController {
 //			List products = service.find(filter, param, builder);			 
 			List categories = this.getCategories();
 			List manufacturers = this.getManufacturers();
-			
+			 
 			return new ModelAndView("home")
+				.addObject("categ_icon_baseurl", this.getSystemConfig().getSysParamValue("MM_PRODCATEG_ICON_BASEURL"))
+				.addObject("categ_icon_ext", this.getSystemConfig().getSysParamValue("MM_PRODCATEG_ICON_EXT"))
+				.addObject("manufact_icon_baseurl", this.getSystemConfig().getSysParamValue("MM_MANUFACT_ICON_BASEURL"))
+				.addObject("manufact_icon_ext", this.getSystemConfig().getSysParamValue("MM_MANUFACT_ICON_EXT"))
 				.addObject("categories", categories)
 				.addObject("manufacturers", manufacturers);
 				//.addObject("products", products);
@@ -73,6 +76,8 @@ public class ProductController extends AbstractWebController {
 			ProductDsParam param = new ProductDsParam();
 			ProductDs filter = new ProductDs();
 			filter.setActive(true);
+			filter.setShowInCatalog(true);
+			filter.setClientId(Session.user.get().getClientId());
 			
 			if( request.getParameter("categoryId") != null) {
 				param.setProductCategoryId( Long.parseLong( request.getParameter("categoryId") ));
@@ -86,6 +91,9 @@ public class ProductController extends AbstractWebController {
 			List manufacturers = this.getManufacturers();
 			
 			return new ModelAndView("productList")
+				.addObject("product_icon_baseurl", this.getSystemConfig().getSysParamValue("MM_PRODUCT_ICON_BASEURL"))
+				.addObject("product_icon_ext", this.getSystemConfig().getSysParamValue("MM_PRODUCT_ICON_EXT"))
+				.addObject("product_icon_suffix", this.getSystemConfig().getSysParamValue("MM_PRODUCT_ICON_SUFFIX")) 
 				.addObject("categories", categories)
 				.addObject("manufacturers", manufacturers)
 				.addObject("products", products);
@@ -124,6 +132,9 @@ public class ProductController extends AbstractWebController {
 			List categories = this.getCategories();
 			
 			return new ModelAndView("productView")
+				.addObject("product_image_baseurl", this.getSystemConfig().getSysParamValue("MM_PRODUCT_IMAGE_BASEURL"))
+				.addObject("product_image_ext", this.getSystemConfig().getSysParamValue("MM_PRODUCT_IMAGE_EXT"))
+				.addObject("product_image_suffix", this.getSystemConfig().getSysParamValue("MM_PRODUCT_IMAGE_SUFFIX")) 
 				.addObject("categories", categories)
 				.addObject("product", product )
 				.addObject("attributes", attributes)			 
@@ -140,6 +151,7 @@ public class ProductController extends AbstractWebController {
 		service.setSystemConfig(this.systemConfig);
 		ProductCategoryDs filter = new ProductCategoryDs();
 		filter.setActive(true);
+		filter.setClientId(Session.user.get().getClientId());
 		IQueryBuilder builder = service.createQueryBuilder();			 
 		return service.find(filter, null, builder);
 	}
@@ -149,6 +161,7 @@ public class ProductController extends AbstractWebController {
 		service.setSystemConfig(this.systemConfig);
 		ProductManufacturerDs filter = new ProductManufacturerDs();
 		filter.setActive(true);
+		filter.setClientId(Session.user.get().getClientId());
 		IQueryBuilder builder = service.createQueryBuilder();			 
 		return service.find(filter, null, builder);
 	}

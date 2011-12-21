@@ -12,11 +12,11 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDs" , {
 		{name:"name",type:"string" },
 		{name:"description",type:"string" },
 		{name:"assignee",type:"string" },
-		{name:"startTime",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"endTime",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"startTime",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"endTime",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"duration",type:"int", useNull:true },
 		{name:"priority",type:"int", useNull:true },
-		{name:"dueDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT }
+		{name:"dueDate",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT }
 	]
 });
 
@@ -32,11 +32,11 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDsFilter" 
 		{name:"name",type:"string" },
 		{name:"description",type:"string" },
 		{name:"assignee",type:"string" },
-		{name:"startTime",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"endTime",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"startTime",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"endTime",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"duration",type:"int", useNull:true },
 		{name:"priority",type:"int", useNull:true },
-		{name:"dueDate",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT }
+		{name:"dueDate",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT }
 	] 
 });
 	

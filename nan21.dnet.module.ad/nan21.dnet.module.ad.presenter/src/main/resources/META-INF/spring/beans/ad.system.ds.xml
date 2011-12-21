@@ -11,6 +11,16 @@
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysParamDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysParam" />
+	  	<property name="rpcFilter" >
+	  		<map>
+	  			<entry key="refreshSysConfig">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.system.SysParamDelegate"/>
+	  				<constructor-arg name="methodName" value="reloadSysConfig" />
+	  			</bean>	
+	  			</entry>	 
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SysParam" />
@@ -108,6 +118,26 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SysDsEventLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventLovDs" />
+	</bean>
+   
+ 	<bean id="SysDateFormatDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDateFormat" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatDs" />
+	</bean>
+   
+ 	<bean id="SysDateFormatLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDateFormatLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatLovDs" />
 	</bean>
       
 </beans>

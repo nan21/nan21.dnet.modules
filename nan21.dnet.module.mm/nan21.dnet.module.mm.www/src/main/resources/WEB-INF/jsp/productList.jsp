@@ -24,7 +24,20 @@
 		<c:forEach varStatus="x" var="product" items="${products}" >
 			<div class="prod-list-item"  style="height:200px;margin:auto;">
 				<div style="padding-bottom:10px;border-bottom:1px solid #ccc;">
-					<img src="http://dnet.nan21.net/static-demo-resources/MM/products/${product.code}-small.jpg" />
+					
+					
+					<c:choose>
+						<c:when test='${product.iconUrl == null }'>
+					         <img src="${product_icon_baseurl}/${product.code}${product_icon_suffix}.${product_icon_ext}" title="${product.name}" alt="${product.name}"/>
+					    </c:when>
+					    <c:when test='${product.iconUrl.startsWith("http")}'>
+					         <img src="${product.iconUrl}" title="${product.name}" alt="${product.name}"/>
+					    </c:when>
+					    <c:otherwise>
+					        <img src=" ${product_icon_baseurl}/${product.iconUrl}" title="${product.name}" alt="${product.name}"/>
+					    </c:otherwise>
+					</c:choose>
+			 	 
 				</div>	
 				<div>
 				<h4>${product.name} </h4>

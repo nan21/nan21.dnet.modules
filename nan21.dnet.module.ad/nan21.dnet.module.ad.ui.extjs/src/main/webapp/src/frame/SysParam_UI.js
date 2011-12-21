@@ -12,8 +12,11 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysParam_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
+		.addButton({name:"btnSynchronize",text:"Update cache", tooltip:"Update cached configuration parameters of the running application to work with the current values.",iconCls:"icon-action-synchronize",disabled:false
+			,handler: this.onBtnSynchronize,scope:this	})	
+							 	
 		.addDcFilterFormView("sysparam",{ name:"sysparamFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$Filter",height:80})	 
-		.addDcView("sysparam",{ name:"sysparamList", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$List"})	 
+		.addDcView("sysparam",{ name:"sysparamList", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnSynchronize") ]}]})	 
 		.addDcFormView("sysparam",{ name:"sysparamEdit", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$Edit",width:450})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
@@ -36,4 +39,13 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysParam_UI", {
 			.beginToolbar("tlbSysparamEdit", {dc:"sysparam"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end(); 	
 	}
 
+
+	,onBtnSynchronize: function() {
+		var s={modal:true, callbacks:{} };
+		try{ 
+			this._getDc_("sysparam").doServiceFilter("refreshSysConfig", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
+	}					 	
 });  

@@ -1,6 +1,9 @@
 
 Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductDs$Trl", {     	
-	storable__lbl : "Storable"
+	iconUrl__lbl : "Icon Url"
+	,imageUrl__lbl : "Image Url"
+	,showInCatalog__lbl : "Show In Catalog"
+	,storable__lbl : "Storable"
 	,weight__lbl : "Weight"
 	,volume__lbl : "Volume"
 	,dimWidth__lbl : "Width"

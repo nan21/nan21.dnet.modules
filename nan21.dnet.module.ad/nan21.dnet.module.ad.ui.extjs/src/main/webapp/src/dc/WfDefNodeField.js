@@ -30,8 +30,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefNodeField$CtxEditList", {
 		.addBooleanColumn({ name:"required", dataIndex:"required"})
 		.addNumberColumn({ name:"nodeId", dataIndex:"nodeId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Ext.DATETIME_FORMAT})
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
 		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
 	  ;  		   

@@ -5,8 +5,8 @@ Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelDs" , 
 	fields: [ 
 		{name:"id",type:"int", useNull:true },
 		{name:"clientId",type:"int", useNull:true },
-		{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"createdAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"modifiedAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
@@ -15,8 +15,8 @@ Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelDs" , 
 		{name:"targetId",type:"int", useNull:true },
 		{name:"targetType",type:"string" },
 		{name:"value",type:"string" },
-		{name:"validFrom",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"validTo",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT }
+		{name:"validFrom",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"validTo",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT }
 	]
 });
 
@@ -25,8 +25,8 @@ Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelDsFilt
 	fields: [ 
 		{name:"id",type:"int", useNull:true },
 		{name:"clientId",type:"int", useNull:true },
-		{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"createdAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"modifiedAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
@@ -35,8 +35,8 @@ Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelDsFilt
 		{name:"targetId",type:"int", useNull:true },
 		{name:"targetType",type:"string" },
 		{name:"value",type:"string" },
-		{name:"validFrom",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"validTo",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT }
+		{name:"validFrom",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"validTo",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT }
 	] 
 });
 	

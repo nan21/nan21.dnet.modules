@@ -59,10 +59,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List", {
 		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
 		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
 		.addTextColumn({ name:"assignee", dataIndex:"assignee",width:100 })   	
-		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Ext.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"endTime", dataIndex:"endTime",format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Dnet.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"endTime", dataIndex:"endTime",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addNumberColumn({ name:"priority", dataIndex:"priority", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"dueDate", dataIndex:"dueDate", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"dueDate", dataIndex:"dueDate", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
 	  ;		   
 	}
 });

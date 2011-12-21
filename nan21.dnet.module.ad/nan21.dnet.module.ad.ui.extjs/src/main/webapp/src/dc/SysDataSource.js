@@ -50,7 +50,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDataSource$List", {
 		.addTextColumn({ name:"model", dataIndex:"model", width:350 })   	
 		.addTextColumn({ name:"description", dataIndex:"description", hidden:true,width:200 })   	
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
 	  ;		   
 	}

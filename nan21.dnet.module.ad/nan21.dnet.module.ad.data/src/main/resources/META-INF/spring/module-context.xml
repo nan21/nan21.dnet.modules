@@ -20,6 +20,30 @@
 			<list>
 			
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="5" />
+					<property name="name" value="ad-system" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="SysDateFormat" />
+								<property name="destPath" value="demo-data/ad" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/ad/data/system/SysDateFormat.csv" />
+							</bean>	
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="SysParam" />
+								<property name="destPath" value="demo-data/ad" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/ad/data/system/SysParam.csv" />
+							</bean>						   
+						</list>
+					</property>
+				</bean>
+				
+				
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="10" />
 					<property name="name" value="ad-usr" />
 					<property name="items">

@@ -36,6 +36,9 @@
  
  	<bean id="BusinessObjectService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.BusinessObjectService"  />  
+ 
+ 	<bean id="SysDateFormatService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.SysDateFormatService"  />  
    
 </beans>
    

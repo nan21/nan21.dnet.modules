@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/UserDs", "nan21.dnet.module.ad.ui.extjs/dc/User","nan21.dnet.module.ad.ui.extjs/ds/UserTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/UserTypes","nan21.dnet.module.ad.ui.extjs/ds/UserTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/UserTypes","nan21.dnet.module.ad.ui.extjs/asgn/UserRoles","nan21.dnet.module.ad.ui.extjs/asgn/UserUserGroups"]);
+Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/UserDs", "nan21.dnet.module.ad.ui.extjs/dc/User","nan21.dnet.module.ad.ui.extjs/ds/UserTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/UserTypes","nan21.dnet.module.ad.ui.extjs/ds/SysDateFormatLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDateFormats","nan21.dnet.module.ad.ui.extjs/ds/UserTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/UserTypes","nan21.dnet.module.ad.ui.extjs/asgn/UserRoles","nan21.dnet.module.ad.ui.extjs/asgn/UserUserGroups"]);
 
 Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {  
 	extend: "dnet.base.AbstractUi",

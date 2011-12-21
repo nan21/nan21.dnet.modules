@@ -52,7 +52,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance$List", {
 		.addTextColumn({ name:"locator", dataIndex:"locator",width:120 })   	
 		.addTextColumn({ name:"item", dataIndex:"item",width:100 })   	
 		.addTextColumn({ name:"itemName", dataIndex:"itemName",width:200 })   	
-		.addNumberColumn({ name:"quantity", dataIndex:"quantity",format:Ext.NUMBER_FORMAT_DEC })  
+		.addNumberColumn({ name:"quantity", dataIndex:"quantity",decimals:2 })  
 		.addTextColumn({ name:"uom", dataIndex:"uom",width:100 })   	
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"subInventoryId", dataIndex:"subInventoryId", hidden:true,format:"0",width:70 })  

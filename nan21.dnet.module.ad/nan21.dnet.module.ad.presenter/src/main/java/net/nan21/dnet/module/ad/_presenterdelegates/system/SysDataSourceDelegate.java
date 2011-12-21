@@ -7,8 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.persistence.Query;
-
 import net.nan21.dnet.core.api.descriptor.IDsDefinition;
 import net.nan21.dnet.core.api.descriptor.IDsDefinitions;
 import net.nan21.dnet.core.api.session.Session;

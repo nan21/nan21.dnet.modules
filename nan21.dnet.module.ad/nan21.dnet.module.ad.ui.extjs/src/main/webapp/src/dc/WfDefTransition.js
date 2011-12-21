@@ -49,8 +49,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$CtxEditList", {
 		.addNumberColumn({ name:"targetId", dataIndex:"targetId", hidden:true, align:"right",format:"0",width:70})
 		.addTextColumn({ name:"target", dataIndex:"target",width:120,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Ext.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Ext.DATETIME_FORMAT})
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
 		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
 	  ;  		   

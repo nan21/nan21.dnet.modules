@@ -139,9 +139,11 @@
 	
 	
 	<bean id="setupParticipant" class="net.nan21.dnet.module.ad._businessdelegates.Setup_AD" scope="singleton" >		
-		<property name="ranking" value="199"></property>
-		<property name="systemConfig" ref="systemConfig"></property>
+		<property name="ranking" value="199"></property>		
 	</bean>
+	 
+	<bean id="startupParticipant" class="net.nan21.dnet.module.ad._businessdelegates.Startup_AD" />		 
+ 
 	
 	<bean id="serviceLocator" class="net.nan21.dnet.core.business.service.ServiceLocatorBusiness">
 	</bean> 
@@ -154,4 +156,7 @@
 	<import resource="beans/ad.system.entity.xml" />
 	<import resource="beans/ad.usr.entity.xml" />
 	<import resource="beans/ad.workflow.entity.xml" />
+	
+	
+	
 </beans>

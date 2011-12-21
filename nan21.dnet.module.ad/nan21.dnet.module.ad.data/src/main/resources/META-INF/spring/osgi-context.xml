@@ -9,5 +9,4 @@
 	
 	<osgi:service ref="initDataProviderFactory" ranking="900"
 		interface="net.nan21.dnet.core.api.setup.IInitDataProviderFactory" />
-		
 </beans>

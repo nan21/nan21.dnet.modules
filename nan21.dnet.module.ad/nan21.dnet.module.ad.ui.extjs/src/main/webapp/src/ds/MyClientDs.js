@@ -9,8 +9,8 @@ Ext.define("net.nan21.dnet.module.ad.client.ds.model.MyClientDs" , {
 		{name:"maintenanceLanguage",type:"string" },
 		{name:"adminRole",type:"string" },
 		{name:"id",type:"int", useNull:true },
-		{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"createdAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"modifiedAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" }
 	]
@@ -25,8 +25,8 @@ Ext.define("net.nan21.dnet.module.ad.client.ds.model.MyClientDsFilter" , {
 		{name:"maintenanceLanguage",type:"string" },
 		{name:"adminRole",type:"string" },
 		{name:"id",type:"int", useNull:true },
-		{name:"createdAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
-		{name:"modifiedAt",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"createdAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
+		{name:"modifiedAt",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" }
 	] 

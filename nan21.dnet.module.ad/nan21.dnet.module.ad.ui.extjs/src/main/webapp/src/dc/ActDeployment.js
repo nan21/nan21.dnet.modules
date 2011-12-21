@@ -49,7 +49,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List", {
 		this._getBuilder_()	
 		.addTextColumn({ name:"id", dataIndex:"id", hidden:true,width:200 })   	
 		.addTextColumn({ name:"name", dataIndex:"name", width:300 })   	
-		.addDateColumn({ name:"deployTime", dataIndex:"deployTime", width:150,format:Ext.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"deployTime", dataIndex:"deployTime", width:150,format:Dnet.DATETIME_FORMAT})   	      	     
 	  ;		   
 	}
 });

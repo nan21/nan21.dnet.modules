@@ -42,8 +42,8 @@ public class AbstractWebController {
 	    boolean credentialsExpired= false;
 	    boolean enabled = true;
 	    
-	    String clientCode = "SYS";
-	    Long clientId = 1L;
+	    String clientCode = this.systemConfig.getPortalClientCode();
+	    Long clientId = Long.parseLong(this.systemConfig.getPortalClientId());
 	    
 	    String employeeCode = "xxx";
 	    Long employeeId = 0L;

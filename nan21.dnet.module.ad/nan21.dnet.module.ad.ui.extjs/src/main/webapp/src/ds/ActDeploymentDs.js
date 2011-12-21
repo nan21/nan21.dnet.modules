@@ -5,7 +5,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentDs" , {
 	fields: [ 
 		{name:"id",type:"string" },
 		{name:"name",type:"string" },
-		{name:"deployTime",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"deployTime",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"fullName",type:"string" }
 	]
 });
@@ -15,7 +15,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentDsFilter" , 
 	fields: [ 
 		{name:"id",type:"string" },
 		{name:"name",type:"string" },
-		{name:"deployTime",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT },
+		{name:"deployTime",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"fullName",type:"string" }
 	] 
 });
@@ -23,8 +23,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentDsFilter" , 
 Ext.define("net.nan21.dnet.module.ad.workflow.ds.param.ActDeploymentDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 	
-		{name:"from",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT},	
-		{name:"to",type:"date" ,dateFormat:Ext.MODEL_DATE_FORMAT}
+		{name:"from",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT},	
+		{name:"to",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT}
 	]
 }); 
  
