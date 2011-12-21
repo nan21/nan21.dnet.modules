@@ -15,7 +15,7 @@
 <div >
 
 	<c:choose>
-		<c:when test='${product.imageUrl == null }'>
+		<c:when test='${product.imageUrl == null || product.imageUrl == ""}'>
 	         <img src="${product_image_baseurl}/${product.code}${product_image_suffix}.${product_image_ext}" title="${product.name}" alt="${product.name}"/>
 	    </c:when>
 	    <c:when test='${product.imageUrl.startsWith("http")}'>
@@ -26,17 +26,7 @@
 	    </c:otherwise>
 	</c:choose>
 </div>
-
-<!-- <div id="slider"><c:forEach var="attachment"
-	items="${attachments}">
-	<c:if test="${attachment.type == 'Product image' }">
-		<img src="${attachment.url}" alt="${attachment.name}"
-			title="${attachment.name}" />
-	</c:if>
-
-</c:forEach></div> -->
-
-
+ 
 <p class="product-description">${product.notes}</p>
 
 <div>
@@ -111,12 +101,7 @@
 
 
 </div>
-
-
-
-
-
-
+ 
 <div class="wrapper">
 <h3 class="section-title">Categories</h3>
 <div class="col200">

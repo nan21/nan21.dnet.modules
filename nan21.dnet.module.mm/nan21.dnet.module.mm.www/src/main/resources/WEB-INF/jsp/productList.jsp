@@ -27,7 +27,7 @@
 					
 					
 					<c:choose>
-						<c:when test='${product.iconUrl == null }'>
+						<c:when test='${product.iconUrl == null || product.iconUrl == "" }'>
 					         <img src="${product_icon_baseurl}/${product.code}${product_icon_suffix}.${product_icon_ext}" title="${product.name}" alt="${product.name}"/>
 					    </c:when>
 					    <c:when test='${product.iconUrl.startsWith("http")}'>
