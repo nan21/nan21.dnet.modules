@@ -7,9 +7,10 @@ package net.nan21.dnet.module.mm.price.business.serviceimpl;
 
 import java.util.List;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 import net.nan21.dnet.module.mm.price.business.service.IProductPriceService;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceListVersion;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.price.domain.entity.ProductPrice;
@@ -31,34 +32,36 @@ public class ProductPriceService extends AbstractEntityService<ProductPrice>
         return ProductPrice.class;
     }
 
-    public ProductPrice findByName(Long clientId, PriceList priceList,
-            Product product) {
+    public ProductPrice findByName(Long clientId,
+            PriceListVersion priceListVersion, Product product) {
         return (ProductPrice) this.em
                 .createNamedQuery(ProductPrice.NQ_FIND_BY_NAME)
                 .setParameter("pClientId", clientId)
-                .setParameter("pPriceList", priceList)
+                .setParameter("pPriceListVersion", priceListVersion)
                 .setParameter("pProduct", product).getSingleResult();
     }
 
-    public ProductPrice findByName(Long clientId, Long priceListId,
+    public ProductPrice findByName(Long clientId, Long priceListVersionId,
             Long productId) {
         return (ProductPrice) this.em
                 .createNamedQuery(ProductPrice.NQ_FIND_BY_NAME_PRIMITIVE)
                 .setParameter("pClientId", clientId)
-                .setParameter("pPriceListId", priceListId)
+                .setParameter("pPriceListVersionId", priceListVersionId)
                 .setParameter("pProductId", productId).getSingleResult();
     }
 
-    public List<ProductPrice> findByPriceList(PriceList priceList) {
-        return this.findByPriceListId(priceList.getId());
+    public List<ProductPrice> findByPriceListVersion(
+            PriceListVersion priceListVersion) {
+        return this.findByPriceListVersionId(priceListVersion.getId());
     }
 
-    public List<ProductPrice> findByPriceListId(Long priceListId) {
+    public List<ProductPrice> findByPriceListVersionId(Long priceListVersionId) {
         return (List<ProductPrice>) this.em
                 .createQuery(
-                        "select e from ProductPrice e where e.priceList.id = :pPriceListId",
+                        "select e from ProductPrice e where e.priceListVersion.id = :pPriceListVersionId",
                         ProductPrice.class)
-                .setParameter("pPriceListId", priceListId).getResultList();
+                .setParameter("pPriceListVersionId", priceListVersionId)
+                .getResultList();
     }
 
     public List<ProductPrice> findByProduct(Product product) {
@@ -71,6 +74,18 @@ public class ProductPriceService extends AbstractEntityService<ProductPrice>
                         "select e from ProductPrice e where e.product.id = :pProductId",
                         ProductPrice.class)
                 .setParameter("pProductId", productId).getResultList();
+    }
+
+    public List<ProductPrice> findByUom(Uom uom) {
+        return this.findByUomId(uom.getId());
+    }
+
+    public List<ProductPrice> findByUomId(Long uomId) {
+        return (List<ProductPrice>) this.em
+                .createQuery(
+                        "select e from ProductPrice e where e.uom.id = :pUomId",
+                        ProductPrice.class).setParameter("pUomId", uomId)
+                .getResultList();
     }
 
 }

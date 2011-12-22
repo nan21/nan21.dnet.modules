@@ -6,9 +6,12 @@
 package net.nan21.dnet.module.mm.price.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.uom.business.service.IUomService;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.business.service.IProductService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.mm.price.business.service.IPriceListVersionService;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceListVersion;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.mm.price.ds.model.ProductPriceDs;
@@ -29,12 +32,22 @@ public class ProductPriceDsConv extends
         } else {
             this.lookup_product_Product(ds, e);
         }
-        if (ds.getPriceListId() != null) {
-            if (e.getPriceList() == null
-                    || !e.getPriceList().getId().equals(ds.getPriceListId())) {
-                e.setPriceList((PriceList) this.em.find(PriceList.class,
-                        ds.getPriceListId()));
+        if (ds.getPriceListVersionId() != null) {
+            if (e.getPriceListVersion() == null
+                    || !e.getPriceListVersion().getId()
+                            .equals(ds.getPriceListVersionId())) {
+                e.setPriceListVersion((PriceListVersion) this.em.find(
+                        PriceListVersion.class, ds.getPriceListVersionId()));
             }
+        } else {
+            this.lookup_priceListVersion_PriceListVersion(ds, e);
+        }
+        if (ds.getUomId() != null) {
+            if (e.getUom() == null || !e.getUom().getId().equals(ds.getUomId())) {
+                e.setUom((Uom) this.em.find(Uom.class, ds.getUomId()));
+            }
+        } else {
+            this.lookup_uom_Uom(ds, e);
         }
     }
 
@@ -54,6 +67,45 @@ public class ProductPriceDsConv extends
 
         } else {
             e.setProduct(null);
+        }
+    }
+
+    protected void lookup_priceListVersion_PriceListVersion(ProductPriceDs ds,
+            ProductPrice e) throws Exception {
+        if (ds.getPriceListVersion() != null
+                && !ds.getPriceListVersion().equals("")) {
+            PriceListVersion x = null;
+            try {
+                x = ((IPriceListVersionService) findEntityService(PriceListVersion.class))
+                        .findByName(ds.getClientId(), ds.getPriceListVersion());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PriceListVersion` reference:  `priceListVersion` = "
+                                + ds.getPriceListVersion() + "  ");
+            }
+            e.setPriceListVersion(x);
+
+        } else {
+            e.setPriceListVersion(null);
+        }
+    }
+
+    protected void lookup_uom_Uom(ProductPriceDs ds, ProductPrice e)
+            throws Exception {
+        if (ds.getUom() != null && !ds.getUom().equals("")) {
+            Uom x = null;
+            try {
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(
+                        ds.getClientId(), ds.getUom());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Uom` reference:  `uom` = "
+                                + ds.getUom() + "  ");
+            }
+            e.setUom(x);
+
+        } else {
+            e.setUom(null);
         }
     }
 

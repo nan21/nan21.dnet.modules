@@ -78,7 +78,7 @@ public class InvTransactionService extends
     public List<InvTransaction> findByLinesId(Long linesId) {
         return (List<InvTransaction>) this.em
                 .createQuery(
-                        "select e from InvTransaction e where e.lines.id = :pLinesId",
+                        "select distinct e from InvTransaction e , IN (e.lines) c where c.id = :pLinesId",
                         InvTransaction.class).setParameter("pLinesId", linesId)
                 .getResultList();
     }

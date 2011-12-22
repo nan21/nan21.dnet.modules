@@ -143,7 +143,7 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     public List<SalesInvoice> findByLinesId(Long linesId) {
         return (List<SalesInvoice>) this.em
                 .createQuery(
-                        "select e from SalesInvoice e where e.lines.id = :pLinesId",
+                        "select distinct e from SalesInvoice e , IN (e.lines) c where c.id = :pLinesId",
                         SalesInvoice.class).setParameter("pLinesId", linesId)
                 .getResultList();
     }

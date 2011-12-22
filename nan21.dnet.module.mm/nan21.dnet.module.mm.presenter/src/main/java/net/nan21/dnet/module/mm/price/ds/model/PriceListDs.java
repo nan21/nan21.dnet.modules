@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.price.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,10 +15,13 @@ import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = PriceList.class)
+@Ds(entity = PriceList.class, sort = { @SortField(field = PriceListDs.fNAME) })
 public class PriceListDs extends AbstractDsModel<PriceList> implements
         IModelWithId, IModelWithClientId {
 
+    public static final String fNAME = "name";
+    public static final String fACTIVE = "active";
+    public static final String fDESCRIPTION = "description";
     public static final String fID = "id";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
@@ -25,12 +29,18 @@ public class PriceListDs extends AbstractDsModel<PriceList> implements
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
-    public static final String fTYPEID = "typeId";
-    public static final String fTYPE = "type";
     public static final String fCURRENCYID = "currencyId";
     public static final String fCURRENCY = "currency";
-    public static final String fVALIDFROM = "validFrom";
-    public static final String fVALIDTO = "validTo";
+    public static final String fISDEFAULT = "isDefault";
+
+    @DsField()
+    private String name;
+
+    @DsField()
+    private Boolean active;
+
+    @DsField()
+    private String description;
 
     @DsField()
     private Long id;
@@ -53,12 +63,6 @@ public class PriceListDs extends AbstractDsModel<PriceList> implements
     @DsField()
     private Long version;
 
-    @DsField(join = "left", path = "type.id")
-    private Long typeId;
-
-    @DsField(join = "left", path = "type.name")
-    private String type;
-
     @DsField(join = "left", path = "currency.id")
     private Long currencyId;
 
@@ -66,10 +70,7 @@ public class PriceListDs extends AbstractDsModel<PriceList> implements
     private String currency;
 
     @DsField()
-    private Date validFrom;
-
-    @DsField()
-    private Date validTo;
+    private Boolean isDefault;
 
     public PriceListDs() {
         super();
@@ -77,6 +78,30 @@ public class PriceListDs extends AbstractDsModel<PriceList> implements
 
     public PriceListDs(PriceList e) {
         super(e);
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getId() {
@@ -136,22 +161,6 @@ public class PriceListDs extends AbstractDsModel<PriceList> implements
         this.version = version;
     }
 
-    public Long getTypeId() {
-        return this.typeId;
-    }
-
-    public void setTypeId(Long typeId) {
-        this.typeId = typeId;
-    }
-
-    public String getType() {
-        return this.type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public Long getCurrencyId() {
         return this.currencyId;
     }
@@ -168,20 +177,12 @@ public class PriceListDs extends AbstractDsModel<PriceList> implements
         this.currency = currency;
     }
 
-    public Date getValidFrom() {
-        return this.validFrom;
+    public Boolean getIsDefault() {
+        return this.isDefault;
     }
 
-    public void setValidFrom(Date validFrom) {
-        this.validFrom = validFrom;
-    }
-
-    public Date getValidTo() {
-        return this.validTo;
-    }
-
-    public void setValidTo(Date validTo) {
-        this.validTo = validTo;
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
     }
 
 }

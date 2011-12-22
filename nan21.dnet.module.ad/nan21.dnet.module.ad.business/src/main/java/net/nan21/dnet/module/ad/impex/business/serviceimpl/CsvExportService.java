@@ -43,7 +43,7 @@ public class CsvExportService extends AbstractEntityService<CsvExport>
     public List<CsvExport> findByFieldsId(Long fieldsId) {
         return (List<CsvExport>) this.em
                 .createQuery(
-                        "select e from CsvExport e where e.fields.id = :pFieldsId",
+                        "select distinct e from CsvExport e , IN (e.fields) c where c.id = :pFieldsId",
                         CsvExport.class).setParameter("pFieldsId", fieldsId)
                 .getResultList();
     }

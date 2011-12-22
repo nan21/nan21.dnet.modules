@@ -26,15 +26,17 @@ public class ProductPriceReportDs extends AbstractDsModel<ProductPrice>
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fPRICELISTID = "priceListId";
-    public static final String fTYPEID = "typeId";
-    public static final String fTYPE = "type";
+    public static final String fPRICELIST = "priceList";
     public static final String fCURRENCYID = "currencyId";
     public static final String fCURRENCY = "currency";
+    public static final String fPRICELISTVERSIONID = "priceListVersionId";
+    public static final String fPRICELISTVERSION = "priceListVersion";
     public static final String fVALIDFROM = "validFrom";
-    public static final String fVALIDTO = "validTo";
     public static final String fPRODUCTID = "productId";
     public static final String fPRODUCT = "product";
     public static final String fPRODUCTNAME = "productName";
+    public static final String fUOMID = "uomId";
+    public static final String fUOM = "uom";
     public static final String fPRICE = "price";
 
     @DsField()
@@ -58,26 +60,26 @@ public class ProductPriceReportDs extends AbstractDsModel<ProductPrice>
     @DsField()
     private Long version;
 
-    @DsField(join = "left", path = "priceList.id")
+    @DsField(join = "left", path = "priceListVersion.priceList.id")
     private Long priceListId;
 
-    @DsField(join = "left", path = "priceList.type.id")
-    private Long typeId;
+    @DsField(join = "left", path = "priceListVersion.priceList.name")
+    private String priceList;
 
-    @DsField(join = "left", path = "priceList.type.name")
-    private String type;
-
-    @DsField(join = "left", path = "priceList.currency.id")
+    @DsField(join = "left", path = "priceListVersion.priceList.currency.id")
     private Long currencyId;
 
-    @DsField(join = "left", path = "priceList.currency.code")
+    @DsField(join = "left", path = "priceListVersion.priceList.currency.code")
     private String currency;
 
-    @DsField(join = "left", path = "priceList.validFrom")
-    private Date validFrom;
+    @DsField(join = "left", path = "priceListVersion.id")
+    private Long priceListVersionId;
 
-    @DsField(join = "left", path = "priceList.validTo")
-    private Date validTo;
+    @DsField(join = "left", path = "priceListVersion.name")
+    private String priceListVersion;
+
+    @DsField(join = "left", path = "priceListVersion.validFrom")
+    private Date validFrom;
 
     @DsField(join = "left", path = "product.id")
     private Long productId;
@@ -87,6 +89,12 @@ public class ProductPriceReportDs extends AbstractDsModel<ProductPrice>
 
     @DsField(join = "left", path = "product.name")
     private String productName;
+
+    @DsField(join = "left", path = "uom.id")
+    private Long uomId;
+
+    @DsField(join = "left", path = "uom.code")
+    private String uom;
 
     @DsField()
     private Float price;
@@ -164,20 +172,12 @@ public class ProductPriceReportDs extends AbstractDsModel<ProductPrice>
         this.priceListId = priceListId;
     }
 
-    public Long getTypeId() {
-        return this.typeId;
+    public String getPriceList() {
+        return this.priceList;
     }
 
-    public void setTypeId(Long typeId) {
-        this.typeId = typeId;
-    }
-
-    public String getType() {
-        return this.type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public void setPriceList(String priceList) {
+        this.priceList = priceList;
     }
 
     public Long getCurrencyId() {
@@ -196,20 +196,28 @@ public class ProductPriceReportDs extends AbstractDsModel<ProductPrice>
         this.currency = currency;
     }
 
+    public Long getPriceListVersionId() {
+        return this.priceListVersionId;
+    }
+
+    public void setPriceListVersionId(Long priceListVersionId) {
+        this.priceListVersionId = priceListVersionId;
+    }
+
+    public String getPriceListVersion() {
+        return this.priceListVersion;
+    }
+
+    public void setPriceListVersion(String priceListVersion) {
+        this.priceListVersion = priceListVersion;
+    }
+
     public Date getValidFrom() {
         return this.validFrom;
     }
 
     public void setValidFrom(Date validFrom) {
         this.validFrom = validFrom;
-    }
-
-    public Date getValidTo() {
-        return this.validTo;
-    }
-
-    public void setValidTo(Date validTo) {
-        this.validTo = validTo;
     }
 
     public Long getProductId() {
@@ -234,6 +242,22 @@ public class ProductPriceReportDs extends AbstractDsModel<ProductPrice>
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public Long getUomId() {
+        return this.uomId;
+    }
+
+    public void setUomId(Long uomId) {
+        this.uomId = uomId;
+    }
+
+    public String getUom() {
+        return this.uom;
+    }
+
+    public void setUom(String uom) {
+        this.uom = uom;
     }
 
     public Float getPrice() {

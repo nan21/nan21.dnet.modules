@@ -21,6 +21,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
@@ -28,7 +29,6 @@ import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceListType;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -37,11 +37,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** PriceList. */
 @Entity
-@Table(name = PriceList.TABLE_NAME)
+@Table(name = PriceList.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PRICE_LIST_UK1", columnNames = {
+        "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "PriceList.findById", query = "SELECT e FROM PriceList e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "PriceList.findByIds", query = "SELECT e FROM PriceList e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = "PriceList.findByIds", query = "SELECT e FROM PriceList e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "PriceList.findByName", query = "SELECT e FROM PriceList e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PriceList implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -60,17 +62,29 @@ public class PriceList implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_IDS = "PriceList.findByIds";
 
-    /** ValidFrom. */
-    @Temporal(TemporalType.DATE)
-    @Column(name = "VALIDFROM", nullable = false)
-    @NotNull
-    private Date validFrom;
+    /**
+     * Named query find by unique key: Name.
+     */
+    public static final String NQ_FIND_BY_NAME = "PriceList.findByName";
 
-    /** ValidTo. */
-    @Temporal(TemporalType.DATE)
-    @Column(name = "VALIDTO", nullable = false)
+    /** IsDefault. */
+    @Column(name = "ISDEFAULT", nullable = false)
     @NotNull
-    private Date validTo;
+    private Boolean isDefault;
+
+    /** Name. */
+    @Column(name = "NAME", nullable = false, length = 255)
+    @NotBlank
+    private String name;
+
+    /** Flag which indicates if this record is used.*/
+    @Column(name = "ACTIVE", nullable = false)
+    @NotNull
+    private Boolean active;
+
+    /** Notes about this record. */
+    @Column(name = "DESCRIPTION", length = 400)
+    private String description;
 
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
@@ -111,29 +125,42 @@ public class PriceList implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PriceListType.class)
-    @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
-    private PriceListType type;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
     @JoinColumn(name = "CURRENCY_ID", referencedColumnName = "ID")
     private Currency currency;
 
     /* ============== getters - setters ================== */
 
-    public Date getValidFrom() {
-        return this.validFrom;
+    public Boolean getIsDefault() {
+        return this.isDefault;
     }
 
-    public void setValidFrom(Date validFrom) {
-        this.validFrom = validFrom;
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
     }
 
-    public Date getValidTo() {
-        return this.validTo;
+    public String getName() {
+        return this.name;
     }
 
-    public void setValidTo(Date validTo) {
-        this.validTo = validTo;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getClientId() {
@@ -201,14 +228,6 @@ public class PriceList implements Serializable, IModelWithId,
 
     }
 
-    public PriceListType getType() {
-        return this.type;
-    }
-
-    public void setType(PriceListType type) {
-        this.type = type;
-    }
-
     public Currency getCurrency() {
         return this.currency;
     }
@@ -227,6 +246,12 @@ public class PriceList implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.isDefault == null) {
+            event.updateAttributeWithObject("isDefault", false);
+        }
+        if (this.active == null) {
+            event.updateAttributeWithObject("active", false);
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

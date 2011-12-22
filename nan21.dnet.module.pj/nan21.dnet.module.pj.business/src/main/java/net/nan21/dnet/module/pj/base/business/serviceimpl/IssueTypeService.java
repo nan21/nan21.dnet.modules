@@ -56,7 +56,7 @@ public class IssueTypeService extends AbstractEntityService<IssueType>
     public List<IssueType> findByProjectTypesId(Long projectTypesId) {
         return (List<IssueType>) this.em
                 .createQuery(
-                        "select e from IssueType e where e.projectTypes.id = :pProjectTypesId",
+                        "select distinct e from IssueType e , IN (e.projectTypes) c where c.id = :pProjectTypesId",
                         IssueType.class)
                 .setParameter("pProjectTypesId", projectTypesId)
                 .getResultList();

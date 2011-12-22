@@ -44,7 +44,7 @@ public class WfDefProcessService extends AbstractEntityService<WfDefProcess>
     public List<WfDefProcess> findByNodesId(Long nodesId) {
         return (List<WfDefProcess>) this.em
                 .createQuery(
-                        "select e from WfDefProcess e where e.nodes.id = :pNodesId",
+                        "select distinct e from WfDefProcess e , IN (e.nodes) c where c.id = :pNodesId",
                         WfDefProcess.class).setParameter("pNodesId", nodesId)
                 .getResultList();
     }

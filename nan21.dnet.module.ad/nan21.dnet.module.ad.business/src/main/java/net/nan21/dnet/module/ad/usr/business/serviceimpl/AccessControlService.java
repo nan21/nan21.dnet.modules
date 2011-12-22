@@ -45,7 +45,7 @@ public class AccessControlService extends AbstractEntityService<AccessControl>
     public List<AccessControl> findByDsRulesId(Long dsRulesId) {
         return (List<AccessControl>) this.em
                 .createQuery(
-                        "select e from AccessControl e where e.dsRules.id = :pDsRulesId",
+                        "select distinct e from AccessControl e , IN (e.dsRules) c where c.id = :pDsRulesId",
                         AccessControl.class)
                 .setParameter("pDsRulesId", dsRulesId).getResultList();
     }
@@ -57,7 +57,7 @@ public class AccessControlService extends AbstractEntityService<AccessControl>
     public List<AccessControl> findByRolesId(Long rolesId) {
         return (List<AccessControl>) this.em
                 .createQuery(
-                        "select e from AccessControl e where e.roles.id = :pRolesId",
+                        "select distinct e from AccessControl e , IN (e.roles) c where c.id = :pRolesId",
                         AccessControl.class).setParameter("pRolesId", rolesId)
                 .getResultList();
     }

@@ -25,10 +25,13 @@ public class ProductPriceDs extends AbstractDsModel<ProductPrice> implements
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
-    public static final String fPRICELISTID = "priceListId";
+    public static final String fPRICELISTVERSIONID = "priceListVersionId";
+    public static final String fPRICELISTVERSION = "priceListVersion";
     public static final String fPRODUCTID = "productId";
     public static final String fPRODUCT = "product";
     public static final String fPRODUCTNAME = "productName";
+    public static final String fUOMID = "uomId";
+    public static final String fUOM = "uom";
     public static final String fPRICE = "price";
 
     @DsField()
@@ -52,8 +55,11 @@ public class ProductPriceDs extends AbstractDsModel<ProductPrice> implements
     @DsField()
     private Long version;
 
-    @DsField(join = "left", path = "priceList.id")
-    private Long priceListId;
+    @DsField(join = "left", path = "priceListVersion.id")
+    private Long priceListVersionId;
+
+    @DsField(join = "left", path = "priceListVersion.name")
+    private String priceListVersion;
 
     @DsField(join = "left", path = "product.id")
     private Long productId;
@@ -63,6 +69,12 @@ public class ProductPriceDs extends AbstractDsModel<ProductPrice> implements
 
     @DsField(join = "left", path = "product.name")
     private String productName;
+
+    @DsField(join = "left", path = "uom.id")
+    private Long uomId;
+
+    @DsField(join = "left", path = "uom.code")
+    private String uom;
 
     @DsField()
     private Float price;
@@ -132,12 +144,20 @@ public class ProductPriceDs extends AbstractDsModel<ProductPrice> implements
         this.version = version;
     }
 
-    public Long getPriceListId() {
-        return this.priceListId;
+    public Long getPriceListVersionId() {
+        return this.priceListVersionId;
     }
 
-    public void setPriceListId(Long priceListId) {
-        this.priceListId = priceListId;
+    public void setPriceListVersionId(Long priceListVersionId) {
+        this.priceListVersionId = priceListVersionId;
+    }
+
+    public String getPriceListVersion() {
+        return this.priceListVersion;
+    }
+
+    public void setPriceListVersion(String priceListVersion) {
+        this.priceListVersion = priceListVersion;
     }
 
     public Long getProductId() {
@@ -162,6 +182,22 @@ public class ProductPriceDs extends AbstractDsModel<ProductPrice> implements
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public Long getUomId() {
+        return this.uomId;
+    }
+
+    public void setUomId(Long uomId) {
+        this.uomId = uomId;
+    }
+
+    public String getUom() {
+        return this.uom;
+    }
+
+    public void setUom(String uom) {
+        this.uom = uom;
     }
 
     public Float getPrice() {

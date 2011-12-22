@@ -81,7 +81,7 @@ public class ProjectVersionService extends
     public List<ProjectVersion> findByAffectingIssuesId(Long affectingIssuesId) {
         return (List<ProjectVersion>) this.em
                 .createQuery(
-                        "select e from ProjectVersion e where e.affectingIssues.id = :pAffectingIssuesId",
+                        "select distinct e from ProjectVersion e , IN (e.affectingIssues) c where c.id = :pAffectingIssuesId",
                         ProjectVersion.class)
                 .setParameter("pAffectingIssuesId", affectingIssuesId)
                 .getResultList();

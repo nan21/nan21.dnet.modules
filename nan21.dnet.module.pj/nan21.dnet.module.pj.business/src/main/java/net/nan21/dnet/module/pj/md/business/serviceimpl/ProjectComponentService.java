@@ -83,7 +83,7 @@ public class ProjectComponentService extends
     public List<ProjectComponent> findByAffectingIssuesId(Long affectingIssuesId) {
         return (List<ProjectComponent>) this.em
                 .createQuery(
-                        "select e from ProjectComponent e where e.affectingIssues.id = :pAffectingIssuesId",
+                        "select distinct e from ProjectComponent e , IN (e.affectingIssues) c where c.id = :pAffectingIssuesId",
                         ProjectComponent.class)
                 .setParameter("pAffectingIssuesId", affectingIssuesId)
                 .getResultList();

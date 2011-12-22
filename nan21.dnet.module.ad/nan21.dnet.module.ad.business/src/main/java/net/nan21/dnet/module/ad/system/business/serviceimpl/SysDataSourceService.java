@@ -51,7 +51,7 @@ public class SysDataSourceService extends AbstractEntityService<SysDataSource>
     public List<SysDataSource> findByFieldsId(Long fieldsId) {
         return (List<SysDataSource>) this.em
                 .createQuery(
-                        "select e from SysDataSource e where e.fields.id = :pFieldsId",
+                        "select distinct e from SysDataSource e , IN (e.fields) c where c.id = :pFieldsId",
                         SysDataSource.class)
                 .setParameter("pFieldsId", fieldsId).getResultList();
     }

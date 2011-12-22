@@ -52,7 +52,7 @@ public class ProductCategoryService extends
     public List<ProductCategory> findByProductsId(Long productsId) {
         return (List<ProductCategory>) this.em
                 .createQuery(
-                        "select e from ProductCategory e where e.products.id = :pProductsId",
+                        "select distinct e from ProductCategory e , IN (e.products) c where c.id = :pProductsId",
                         ProductCategory.class)
                 .setParameter("pProductsId", productsId).getResultList();
     }

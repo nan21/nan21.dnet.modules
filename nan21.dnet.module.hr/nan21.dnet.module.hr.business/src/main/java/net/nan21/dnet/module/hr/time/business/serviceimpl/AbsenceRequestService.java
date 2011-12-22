@@ -76,7 +76,7 @@ public class AbsenceRequestService extends
     public List<AbsenceRequest> findByItemsId(Long itemsId) {
         return (List<AbsenceRequest>) this.em
                 .createQuery(
-                        "select e from AbsenceRequest e where e.items.id = :pItemsId",
+                        "select distinct e from AbsenceRequest e , IN (e.items) c where c.id = :pItemsId",
                         AbsenceRequest.class).setParameter("pItemsId", itemsId)
                 .getResultList();
     }

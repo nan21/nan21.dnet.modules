@@ -163,7 +163,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByAffectedVersionsId(Long affectedVersionsId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.affectedVersions.id = :pAffectedVersionsId",
+                        "select distinct e from Issue e , IN (e.affectedVersions) c where c.id = :pAffectedVersionsId",
                         Issue.class)
                 .setParameter("pAffectedVersionsId", affectedVersionsId)
                 .getResultList();
@@ -177,7 +177,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByAffectedComponentsId(Long affectedComponentsId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.affectedComponents.id = :pAffectedComponentsId",
+                        "select distinct e from Issue e , IN (e.affectedComponents) c where c.id = :pAffectedComponentsId",
                         Issue.class)
                 .setParameter("pAffectedComponentsId", affectedComponentsId)
                 .getResultList();

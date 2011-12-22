@@ -43,7 +43,7 @@ public class ExportMapService extends AbstractEntityService<ExportMap>
     public List<ExportMap> findByItemsId(Long itemsId) {
         return (List<ExportMap>) this.em
                 .createQuery(
-                        "select e from ExportMap e where e.items.id = :pItemsId",
+                        "select distinct e from ExportMap e , IN (e.items) c where c.id = :pItemsId",
                         ExportMap.class).setParameter("pItemsId", itemsId)
                 .getResultList();
     }

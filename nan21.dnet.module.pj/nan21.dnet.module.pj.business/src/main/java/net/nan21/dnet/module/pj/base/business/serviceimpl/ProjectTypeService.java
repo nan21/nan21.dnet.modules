@@ -58,7 +58,7 @@ public class ProjectTypeService extends AbstractEntityService<ProjectType>
     public List<ProjectType> findByProjectRolesId(Long projectRolesId) {
         return (List<ProjectType>) this.em
                 .createQuery(
-                        "select e from ProjectType e where e.projectRoles.id = :pProjectRolesId",
+                        "select distinct e from ProjectType e , IN (e.projectRoles) c where c.id = :pProjectRolesId",
                         ProjectType.class)
                 .setParameter("pProjectRolesId", projectRolesId)
                 .getResultList();
@@ -71,7 +71,7 @@ public class ProjectTypeService extends AbstractEntityService<ProjectType>
     public List<ProjectType> findByItemTypesId(Long itemTypesId) {
         return (List<ProjectType>) this.em
                 .createQuery(
-                        "select e from ProjectType e where e.itemTypes.id = :pItemTypesId",
+                        "select distinct e from ProjectType e , IN (e.itemTypes) c where c.id = :pItemTypesId",
                         ProjectType.class)
                 .setParameter("pItemTypesId", itemTypesId).getResultList();
     }

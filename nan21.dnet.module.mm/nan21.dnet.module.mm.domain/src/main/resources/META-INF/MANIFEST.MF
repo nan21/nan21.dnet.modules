@@ -22,12 +22,13 @@ Export-Package: net.nan21.dnet.module.mm.inventory.domain.entity;versi
  module.mm.price.domain.entity;version="1.0.0.M5";uses:="javax.persist
  ence,javax.validation.constraints,javax.xml.bind.annotation,net.nan21
  .dnet.core.api.model,net.nan21.dnet.module.bd.currency.domain.entity,
- net.nan21.dnet.module.mm.md.domain.entity,org.eclipse.persistence.ann
- otations,org.eclipse.persistence.descriptors,org.eclipse.persistence.
- descriptors.changetracking,org.eclipse.persistence.indirection,org.ec
- lipse.persistence.internal.descriptors,org.eclipse.persistence.intern
- al.weaving,org.eclipse.persistence.queries,org.eclipse.persistence.se
- ssions,org.hibernate.validator.constraints"
+ net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.mm.m
+ d.domain.entity,org.eclipse.persistence.annotations,org.eclipse.persi
+ stence.descriptors,org.eclipse.persistence.descriptors.changetracking
+ ,org.eclipse.persistence.indirection,org.eclipse.persistence.internal
+ .descriptors,org.eclipse.persistence.internal.weaving,org.eclipse.per
+ sistence.queries,org.eclipse.persistence.sessions,org.hibernate.valid
+ ator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M5,1.0.0.M5]",nan21.dnet.module.ad.d
  omain;version="[1.0.0.M5,1.0.0.M5]",nan21.dnet.module.bd.domain;versi

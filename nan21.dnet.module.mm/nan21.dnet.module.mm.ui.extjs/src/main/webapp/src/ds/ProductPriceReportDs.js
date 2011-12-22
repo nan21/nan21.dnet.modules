@@ -11,15 +11,17 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceReportDs" , {
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"priceListId",type:"int", useNull:true },
-		{name:"typeId",type:"int", useNull:true },
-		{name:"type",type:"string" },
+		{name:"priceList",type:"string" },
 		{name:"currencyId",type:"int", useNull:true },
 		{name:"currency",type:"string" },
+		{name:"priceListVersionId",type:"int", useNull:true },
+		{name:"priceListVersion",type:"string" },
 		{name:"validFrom",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
-		{name:"validTo",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"productId",type:"int", useNull:true },
 		{name:"product",type:"string" },
 		{name:"productName",type:"string" },
+		{name:"uomId",type:"int", useNull:true },
+		{name:"uom",type:"string" },
 		{name:"price",type:"float", useNull:true }
 	]
 });
@@ -35,15 +37,17 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceReportDsFilter" 
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
 		{name:"priceListId",type:"int", useNull:true },
-		{name:"typeId",type:"int", useNull:true },
-		{name:"type",type:"string" },
+		{name:"priceList",type:"string" },
 		{name:"currencyId",type:"int", useNull:true },
 		{name:"currency",type:"string" },
+		{name:"priceListVersionId",type:"int", useNull:true },
+		{name:"priceListVersion",type:"string" },
 		{name:"validFrom",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
-		{name:"validTo",type:"date" ,dateFormat:Dnet.MODEL_DATE_FORMAT },
 		{name:"productId",type:"int", useNull:true },
 		{name:"product",type:"string" },
 		{name:"productName",type:"string" },
+		{name:"uomId",type:"int", useNull:true },
+		{name:"uom",type:"string" },
 		{name:"price",type:"float", useNull:true }
 	] 
 });

@@ -5,35 +5,38 @@ Export-Package: net.nan21.dnet.module.mm._presenterdelegates.inventory
  esenterdelegates.md;version="1.0.0.M5";uses:="net.nan21.dnet.core.api
  .action,net.nan21.dnet.core.api.service,net.nan21.dnet.core.presenter
  .service,org.springframework.web.multipart",net.nan21.dnet.module.mm.
- inventory.ds.converter;version="1.0.0.M5";uses:="net.nan21.dnet.core.
- api.converter,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.
- module.mm.inventory.domain.entity,net.nan21.dnet.module.mm.inventory.
- ds.model",net.nan21.dnet.module.mm.inventory.ds.model;version="1.0.0.
- M5";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api
- .model,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.mm.i
- nventory.domain.entity",net.nan21.dnet.module.mm.md.asgn;version="1.0
- .0.M5";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.
- presenter.model,net.nan21.dnet.module.mm.md.domain.entity",net.nan21.
- dnet.module.mm.md.ds.converter;version="1.0.0.M5";uses:="net.nan21.dn
- et.core.api.converter,net.nan21.dnet.core.presenter.converter,net.nan
- 21.dnet.module.mm.md.domain.entity,net.nan21.dnet.module.mm.md.ds.mod
- el",net.nan21.dnet.module.mm.md.ds.model;version="1.0.0.M5";uses:="ne
- t.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.model,net.na
- n21.dnet.core.presenter.model,net.nan21.dnet.module.mm.md.domain.enti
- ty",net.nan21.dnet.module.mm.md.ds.param;version="1.0.0.M5";uses:="ne
- t.nan21.dnet.core.presenter.model",net.nan21.dnet.module.mm.md.ds.qb;
- version="1.0.0.M5";uses:="net.nan21.dnet.core.presenter.action,net.na
- n21.dnet.module.mm.md.ds.model",net.nan21.dnet.module.mm.price.ds.con
- verter;version="1.0.0.M5";uses:="net.nan21.dnet.core.api.converter,ne
- t.nan21.dnet.core.presenter.converter,net.nan21.dnet.module.mm.price.
- domain.entity,net.nan21.dnet.module.mm.price.ds.model",net.nan21.dnet
- .module.mm.price.ds.model;version="1.0.0.M5";uses:="net.nan21.dnet.co
- re.api.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.p
- resenter.model,net.nan21.dnet.module.mm.price.domain.entity",net.nan2
- 1.dnet.module.mm.price.ds.param;version="1.0.0.M5";uses:="net.nan21.d
- net.core.presenter.model",net.nan21.dnet.module.mm.price.ds.qb;versio
- n="1.0.0.M5";uses:="net.nan21.dnet.core.presenter.action,net.nan21.dn
- et.module.mm.price.ds.model"
+ _presenterdelegates.price;version="1.0.0.M5";uses:="net.nan21.dnet.co
+ re.presenter.service,net.nan21.dnet.module.mm.price.ds.model,net.nan2
+ 1.dnet.module.mm.price.ds.param",net.nan21.dnet.module.mm.inventory.d
+ s.converter;version="1.0.0.M5";uses:="net.nan21.dnet.core.api.convert
+ er,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.module.mm.i
+ nventory.domain.entity,net.nan21.dnet.module.mm.inventory.ds.model",n
+ et.nan21.dnet.module.mm.inventory.ds.model;version="1.0.0.M5";uses:="
+ net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.model,net.
+ nan21.dnet.core.presenter.model,net.nan21.dnet.module.mm.inventory.do
+ main.entity",net.nan21.dnet.module.mm.md.asgn;version="1.0.0.M5";uses
+ :="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.presenter.m
+ odel,net.nan21.dnet.module.mm.md.domain.entity",net.nan21.dnet.module
+ .mm.md.ds.converter;version="1.0.0.M5";uses:="net.nan21.dnet.core.api
+ .converter,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.mod
+ ule.mm.md.domain.entity,net.nan21.dnet.module.mm.md.ds.model",net.nan
+ 21.dnet.module.mm.md.ds.model;version="1.0.0.M5";uses:="net.nan21.dne
+ t.core.api.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.co
+ re.presenter.model,net.nan21.dnet.module.mm.md.domain.entity",net.nan
+ 21.dnet.module.mm.md.ds.param;version="1.0.0.M5";uses:="net.nan21.dne
+ t.core.presenter.model",net.nan21.dnet.module.mm.md.ds.qb;version="1.
+ 0.0.M5";uses:="net.nan21.dnet.core.presenter.action,net.nan21.dnet.mo
+ dule.mm.md.ds.model",net.nan21.dnet.module.mm.price.ds.converter;vers
+ ion="1.0.0.M5";uses:="net.nan21.dnet.core.api.converter,net.nan21.dne
+ t.core.presenter.converter,net.nan21.dnet.module.mm.price.domain.enti
+ ty,net.nan21.dnet.module.mm.price.ds.model",net.nan21.dnet.module.mm.
+ price.ds.model;version="1.0.0.M5";uses:="net.nan21.dnet.core.api.anno
+ tation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.mo
+ del,net.nan21.dnet.module.mm.price.domain.entity",net.nan21.dnet.modu
+ le.mm.price.ds.param;version="1.0.0.M5";uses:="net.nan21.dnet.core.pr
+ esenter.model",net.nan21.dnet.module.mm.price.ds.qb;version="1.0.0.M5
+ ";uses:="net.nan21.dnet.core.presenter.action,net.nan21.dnet.module.m
+ m.price.ds.model"
 Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M5,1.0.0.M5]",na
  n21.dnet.core.presenter;version="[1.0.0.M5,1.0.0.M5]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.5)

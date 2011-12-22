@@ -56,7 +56,7 @@ public class WfDefNodeService extends AbstractEntityService<WfDefNode>
     public List<WfDefNode> findByFieldsId(Long fieldsId) {
         return (List<WfDefNode>) this.em
                 .createQuery(
-                        "select e from WfDefNode e where e.fields.id = :pFieldsId",
+                        "select distinct e from WfDefNode e , IN (e.fields) c where c.id = :pFieldsId",
                         WfDefNode.class).setParameter("pFieldsId", fieldsId)
                 .getResultList();
     }

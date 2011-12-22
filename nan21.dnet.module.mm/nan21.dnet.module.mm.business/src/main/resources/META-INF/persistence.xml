@@ -40,6 +40,7 @@
 		
 		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceListType</class> 
 		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceList</class>
+		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceListVersion</class>
 		<class>net.nan21.dnet.module.mm.price.domain.entity.ProductPrice</class>
 		 
 		<!-- Dependencies -->

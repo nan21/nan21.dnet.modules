@@ -13,6 +13,9 @@
  	<bean id="PriceListService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.price.business.serviceimpl.PriceListService"  />  
  
+ 	<bean id="PriceListVersionService" scope="prototype"
+	  		class="net.nan21.dnet.module.mm.price.business.serviceimpl.PriceListVersionService"  />  
+ 
  	<bean id="ProductPriceService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.price.business.serviceimpl.ProductPriceService"  />  
    

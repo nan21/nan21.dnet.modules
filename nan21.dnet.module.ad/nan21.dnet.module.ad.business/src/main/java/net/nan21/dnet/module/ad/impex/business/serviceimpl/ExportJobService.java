@@ -43,7 +43,7 @@ public class ExportJobService extends AbstractEntityService<ExportJob>
     public List<ExportJob> findByItemsId(Long itemsId) {
         return (List<ExportJob>) this.em
                 .createQuery(
-                        "select e from ExportJob e where e.items.id = :pItemsId",
+                        "select distinct e from ExportJob e , IN (e.items) c where c.id = :pItemsId",
                         ExportJob.class).setParameter("pItemsId", itemsId)
                 .getResultList();
     }

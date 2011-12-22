@@ -29,7 +29,6 @@ net.nan21.dnet.module.mm.menu.crm = [
 	{"id":"sm_mm_price", "text":"Price", leaf:false, children:[
 		
 		{id:"PriceList_UI", text:Dnet.translate("ui","PriceList_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.price.frame.PriceList_UI", _bundle_:BUNDLE_ID},		
-		{id:"ProductPrice_UI", text:Dnet.translate("ui","ProductPrice_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.price.frame.ProductPrice_UI", _bundle_:BUNDLE_ID},		
 		{id:"ProductPriceReport_UI", text:Dnet.translate("ui","ProductPriceReport_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.price.frame.ProductPriceReport_UI", _bundle_:BUNDLE_ID}	]}
 	]}
  

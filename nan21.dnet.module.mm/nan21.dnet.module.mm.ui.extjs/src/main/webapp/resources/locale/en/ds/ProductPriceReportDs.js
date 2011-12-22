@@ -1,15 +1,17 @@
 
 Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceReportDs$Trl", {     	
 	priceListId__lbl : "Price List Id"
-	,typeId__lbl : "Type Id"
-	,type__lbl : "Type"
+	,priceList__lbl : "Price List"
 	,currencyId__lbl : "Currency Id"
 	,currency__lbl : "Currency"
+	,priceListVersionId__lbl : "Price List Version Id"
+	,priceListVersion__lbl : "Price List Version"
 	,validFrom__lbl : "Valid From"
-	,validTo__lbl : "Valid To"
 	,productId__lbl : "Product Id"
 	,product__lbl : "Product"
 	,productName__lbl : "Product Name"
+	,uomId__lbl : "Uom Id"
+	,uom__lbl : "Uom"
 	,price__lbl : "Price"
 	
 	,validAt__lbl :"Valid At"

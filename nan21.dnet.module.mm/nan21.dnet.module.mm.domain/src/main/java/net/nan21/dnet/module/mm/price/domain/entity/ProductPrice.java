@@ -28,8 +28,9 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceListVersion;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -39,13 +40,13 @@ import org.hibernate.validator.constraints.NotBlank;
 /** ProductPrice. */
 @Entity
 @Table(name = ProductPrice.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PROD_PRICE_UK1", columnNames = {
-        "CLIENTID", "PRICELIST_ID", "PRODUCT_ID" }) })
+        "CLIENTID", "PRICELISTVERSION_ID", "PRODUCT_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
         @NamedQuery(name = "ProductPrice.findById", query = "SELECT e FROM ProductPrice e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProductPrice.findByIds", query = "SELECT e FROM ProductPrice e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductPrice.findByName", query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceList = :pPriceList and e.product = :pProduct ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductPrice.findByName_PRIMITIVE", query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceList.id = :pPriceListId and e.product.id = :pProductId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = "ProductPrice.findByName", query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceListVersion = :pPriceListVersion and e.product = :pProduct ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "ProductPrice.findByName_PRIMITIVE", query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceListVersion.id = :pPriceListVersionId and e.product.id = :pProductId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductPrice implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -118,12 +119,15 @@ public class ProductPrice implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PriceList.class)
-    @JoinColumn(name = "PRICELIST_ID", referencedColumnName = "ID")
-    private PriceList priceList;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PriceListVersion.class)
+    @JoinColumn(name = "PRICELISTVERSION_ID", referencedColumnName = "ID")
+    private PriceListVersion priceListVersion;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
     @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
     private Product product;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
+    @JoinColumn(name = "UOM_ID", referencedColumnName = "ID")
+    private Uom uom;
 
     /* ============== getters - setters ================== */
 
@@ -200,12 +204,12 @@ public class ProductPrice implements Serializable, IModelWithId,
 
     }
 
-    public PriceList getPriceList() {
-        return this.priceList;
+    public PriceListVersion getPriceListVersion() {
+        return this.priceListVersion;
     }
 
-    public void setPriceList(PriceList priceList) {
-        this.priceList = priceList;
+    public void setPriceListVersion(PriceListVersion priceListVersion) {
+        this.priceListVersion = priceListVersion;
     }
 
     public Product getProduct() {
@@ -214,6 +218,14 @@ public class ProductPrice implements Serializable, IModelWithId,
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public Uom getUom() {
+        return this.uom;
+    }
+
+    public void setUom(Uom uom) {
+        this.uom = uom;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

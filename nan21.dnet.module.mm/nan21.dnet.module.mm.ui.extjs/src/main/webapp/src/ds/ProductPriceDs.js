@@ -10,10 +10,13 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceDs" , {
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
-		{name:"priceListId",type:"int", useNull:true },
+		{name:"priceListVersionId",type:"int", useNull:true },
+		{name:"priceListVersion",type:"string" },
 		{name:"productId",type:"int", useNull:true },
 		{name:"product",type:"string" },
 		{name:"productName",type:"string" },
+		{name:"uomId",type:"int", useNull:true },
+		{name:"uom",type:"string" },
 		{name:"price",type:"float", useNull:true }
 	]
 });
@@ -28,10 +31,13 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceDsFilter" , {
 		{name:"createdBy",type:"string" },
 		{name:"modifiedBy",type:"string" },
 		{name:"version",type:"int", useNull:true },
-		{name:"priceListId",type:"int", useNull:true },
+		{name:"priceListVersionId",type:"int", useNull:true },
+		{name:"priceListVersion",type:"string" },
 		{name:"productId",type:"int", useNull:true },
 		{name:"product",type:"string" },
 		{name:"productName",type:"string" },
+		{name:"uomId",type:"int", useNull:true },
+		{name:"uom",type:"string" },
 		{name:"price",type:"float", useNull:true }
 	] 
 });

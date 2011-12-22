@@ -112,7 +112,7 @@ public class ProductService extends AbstractEntityService<Product> {
     public List<Product> findByCategoriesId(Long categoriesId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product e where e.categories.id = :pCategoriesId",
+                        "select distinct e from Product e , IN (e.categories) c where c.id = :pCategoriesId",
                         Product.class)
                 .setParameter("pCategoriesId", categoriesId).getResultList();
     }
@@ -138,7 +138,7 @@ public class ProductService extends AbstractEntityService<Product> {
     public List<Product> findByAttributesId(Long attributesId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product e where e.attributes.id = :pAttributesId",
+                        "select distinct e from Product e , IN (e.attributes) c where c.id = :pAttributesId",
                         Product.class)
                 .setParameter("pAttributesId", attributesId).getResultList();
     }

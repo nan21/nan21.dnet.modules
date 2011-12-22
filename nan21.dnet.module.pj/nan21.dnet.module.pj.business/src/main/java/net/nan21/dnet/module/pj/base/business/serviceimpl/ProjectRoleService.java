@@ -44,7 +44,7 @@ public class ProjectRoleService extends AbstractEntityService<ProjectRole>
     public List<ProjectRole> findByProjectTypesId(Long projectTypesId) {
         return (List<ProjectRole>) this.em
                 .createQuery(
-                        "select e from ProjectRole e where e.projectTypes.id = :pProjectTypesId",
+                        "select distinct e from ProjectRole e , IN (e.projectTypes) c where c.id = :pProjectTypesId",
                         ProjectRole.class)
                 .setParameter("pProjectTypesId", projectTypesId)
                 .getResultList();
