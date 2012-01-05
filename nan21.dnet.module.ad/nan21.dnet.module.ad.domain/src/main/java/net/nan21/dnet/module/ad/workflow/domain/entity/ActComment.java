@@ -35,8 +35,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = ActComment.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ActComment.findById", query = "SELECT e FROM ActComment e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ActComment.findByIds", query = "SELECT e FROM ActComment e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ActComment.NQ_FIND_BY_ID, query = "SELECT e FROM ActComment e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ActComment.NQ_FIND_BY_IDS, query = "SELECT e FROM ActComment e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActComment implements Serializable, IModelWithId {
@@ -198,8 +198,6 @@ public class ActComment implements Serializable, IModelWithId {
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
-
-        ActComment e = (ActComment) event.getSource();
 
     }
 

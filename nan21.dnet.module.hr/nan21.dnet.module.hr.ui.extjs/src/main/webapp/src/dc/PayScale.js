@@ -27,18 +27,15 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScale$Filter", {
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		this._elems_.get("main")["items"] = [
-	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("name")] }
-	  ,	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("code")] }
-	  ,	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("active")] }
-];
+		.addChildrenTo("main",["col1"])
+		.addChildrenTo("col1",["name","code","active"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

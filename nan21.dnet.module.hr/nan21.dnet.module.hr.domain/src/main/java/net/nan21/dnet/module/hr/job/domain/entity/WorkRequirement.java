@@ -37,13 +37,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** WorkRequirement. */
 @Entity
-@Table(name = WorkRequirement.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_WORK_REQUIREMENT_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = WorkRequirement.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = WorkRequirement.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "WorkRequirement.findById", query = "SELECT e FROM WorkRequirement e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "WorkRequirement.findByIds", query = "SELECT e FROM WorkRequirement e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "WorkRequirement.findByName", query = "SELECT e FROM WorkRequirement e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = WorkRequirement.NQ_FIND_BY_ID, query = "SELECT e FROM WorkRequirement e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = WorkRequirement.NQ_FIND_BY_IDS, query = "SELECT e FROM WorkRequirement e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = WorkRequirement.NQ_FIND_BY_NAME, query = "SELECT e FROM WorkRequirement e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class WorkRequirement implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -240,9 +240,9 @@ public class WorkRequirement implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        WorkRequirement e = (WorkRequirement) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

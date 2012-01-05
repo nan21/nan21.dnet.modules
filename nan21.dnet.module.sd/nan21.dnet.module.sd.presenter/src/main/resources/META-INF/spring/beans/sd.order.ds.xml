@@ -10,6 +10,7 @@
  	<bean id="SalesOrderDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrder" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderDsConv" />
 	</bean>
@@ -21,6 +22,7 @@
  	<bean id="SalesOrderItemDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderItemDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderItemDsConv" />
 	</bean>
@@ -32,6 +34,7 @@
  	<bean id="SalesOrderTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderTypeDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -42,6 +45,7 @@
  	<bean id="SalesOrderTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -52,6 +56,7 @@
  	<bean id="SalesOrderStatusDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderStatusDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -62,6 +67,7 @@
  	<bean id="SalesOrderStatusLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderStatusLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -72,6 +78,7 @@
  	<bean id="SalesOrderAttachmentDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderAttachmentDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderAttachmentDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderAttachment" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderAttachmentDsConv" />
 	</bean>

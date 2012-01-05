@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ProjectCategory. */
 @Entity
-@Table(name = ProjectCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "PJ_PROJECT_CATEGORY_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = ProjectCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ProjectCategory.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ProjectCategory.findById", query = "SELECT e FROM ProjectCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProjectCategory.findByIds", query = "SELECT e FROM ProjectCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProjectCategory.findByName", query = "SELECT e FROM ProjectCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ProjectCategory.NQ_FIND_BY_ID, query = "SELECT e FROM ProjectCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectCategory.NQ_FIND_BY_IDS, query = "SELECT e FROM ProjectCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectCategory.NQ_FIND_BY_NAME, query = "SELECT e FROM ProjectCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectCategory implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -225,9 +225,9 @@ public class ProjectCategory implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProjectCategory e = (ProjectCategory) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

@@ -1,22 +1,23 @@
  
    	 
-Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpContactLovDs" , {
+Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpContactLovDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"bpartnerId",type:"int", useNull:true }
+		{name:"id", type:"int", useNull:true},
+		{name:"clientId", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"bpartnerId", type:"int", useNull:true}
 	]
 });
 
-Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpContactLovDsFilter" , {
+Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpContactLovDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"bpartnerId",type:"int", useNull:true }
+		{name:"id", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"bpartnerId", type:"int", useNull:true},
+		{name:"bpartnerId_From",type:"int", useNull:true},
+		{name:"bpartnerId_To",type:"int", useNull:true}
 	] 
 });
 	

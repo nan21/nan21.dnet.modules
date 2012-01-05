@@ -36,16 +36,16 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Product categories. */
 @Entity
 @Table(name = ProductCategory.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "MM_PROD_CATEGORY_UK1", columnNames = {
+        @UniqueConstraint(name = ProductCategory.TABLE_NAME + "_UK1", columnNames = {
                 "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "MM_PROD_CATEGORY_UK2", columnNames = {
+        @UniqueConstraint(name = ProductCategory.TABLE_NAME + "_UK2", columnNames = {
                 "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ProductCategory.findById", query = "SELECT e FROM ProductCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductCategory.findByIds", query = "SELECT e FROM ProductCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductCategory.findByCode", query = "SELECT e FROM ProductCategory e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductCategory.findByName", query = "SELECT e FROM ProductCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ProductCategory.NQ_FIND_BY_ID, query = "SELECT e FROM ProductCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductCategory.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductCategory.NQ_FIND_BY_CODE, query = "SELECT e FROM ProductCategory e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductCategory.NQ_FIND_BY_NAME, query = "SELECT e FROM ProductCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductCategory implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -288,9 +288,9 @@ public class ProductCategory implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProductCategory e = (ProductCategory) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

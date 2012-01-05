@@ -39,8 +39,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = CsvExportField.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "CsvExportField.findById", query = "SELECT e FROM CsvExportField e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CsvExportField.findByIds", query = "SELECT e FROM CsvExportField e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = CsvExportField.NQ_FIND_BY_ID, query = "SELECT e FROM CsvExportField e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CsvExportField.NQ_FIND_BY_IDS, query = "SELECT e FROM CsvExportField e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CsvExportField implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -243,9 +243,9 @@ public class CsvExportField implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        CsvExportField e = (CsvExportField) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

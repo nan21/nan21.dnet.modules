@@ -14,9 +14,9 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("subinv",{ name:"subinvFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter",height:80})	 
+		.addDcFilterFormView("subinv",{ name:"subinvFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter",height:120})	 
 		.addDcView("subinv",{ name:"subinvList", xtype:"net.nan21.dnet.module.mm.inventory.dc.SubInventory$List"})	 
-		.addDcFormView("subinv",{ name:"subinvEdit", xtype:"net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit",height:130})	 
+		.addDcFormView("subinv",{ name:"subinvEdit", xtype:"net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit",height:150})	 
 		.addDcFilterFormView("sloc",{ name:"slocFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocator$Filter"})	 
 		.addDcView("sloc",{ name:"slocEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocator$CtxEditList", frame:true,title:"Stock locators"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 

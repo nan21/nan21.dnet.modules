@@ -29,6 +29,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter", {
 		.addTextField({ name:"firstName", dataIndex:"firstName",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"lastName", dataIndex:"lastName",anchor:"-20",maxLength:255  })
 		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender",anchor:"-20",store:[ "male", "female"]  })
+		.addLov({ name:"legalForm", xtype:"net.nan21.dnet.module.bp.base.lovs.CompanyLegalForms", dataIndex:"legalForm",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "legalFormId"} ]  })
 		.addTextField({ name:"companyName", dataIndex:"companyName",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"registrationNo", dataIndex:"registrationNo",anchor:"-20",maxLength:32  })
 		.addTextField({ name:"taxPayerNo", dataIndex:"taxPayerNo",anchor:"-20",maxLength:255  })
@@ -36,18 +37,18 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter", {
 		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor", width:220}) 
-		.addPanel({ name:"col2", layout:"anchor", width:220}) 
-		.addPanel({ name:"col3", layout:"anchor", width:220}) 
-		.addPanel({ name:"col4", layout:"anchor", width:220}) 
+		.addPanel({ name:"col2", layout:"anchor",title:"Person", width:240,xtype:"fieldset", border:true, collapsible:true}) 
+		.addPanel({ name:"col3", layout:"anchor",title:"Company", width:240,xtype:"fieldset", border:true, collapsible:true}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3","col4"])
-		.addChildrenTo("col1",["name","code","active"])
-		.addChildrenTo("col2",["type","countryCode","taxPayerNo"])
-		.addChildrenTo("col3",["firstName","lastName","gender"])
-		.addChildrenTo("col4",["companyName","registrationNo"])
+		.addChildrenTo("main",["col1","col2","col3"])
+		.addChildrenTo("col1",["name","code","active","type","countryCode","taxPayerNo"])
+		.addChildrenTo("col2",["firstName","lastName","gender"])
+		.addChildrenTo("col3",["companyName","registrationNo","legalForm"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

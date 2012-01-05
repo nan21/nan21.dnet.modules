@@ -14,7 +14,7 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.Contact_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("c",{ name:"cFilter", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$Filter",height:80})	 
+		.addDcFilterFormView("c",{ name:"cFilter", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$Filter",height:120})	 
 		.addDcView("c",{ name:"cList", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$List"})	 
 		.addDcFormView("c",{ name:"cEdit", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$Edit",height:120})	 
 		.addDcView("communic",{ name:"communicEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannel$EditList", frame:true,title:"Communication"})	 

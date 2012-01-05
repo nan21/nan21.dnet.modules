@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ElementCategory. */
 @Entity
-@Table(name = ElementCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_ELEMENT_CATEGORY_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = ElementCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ElementCategory.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ElementCategory.findById", query = "SELECT e FROM ElementCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ElementCategory.findByIds", query = "SELECT e FROM ElementCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ElementCategory.findByName", query = "SELECT e FROM ElementCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ElementCategory.NQ_FIND_BY_ID, query = "SELECT e FROM ElementCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ElementCategory.NQ_FIND_BY_IDS, query = "SELECT e FROM ElementCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ElementCategory.NQ_FIND_BY_NAME, query = "SELECT e FROM ElementCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ElementCategory implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -225,9 +225,9 @@ public class ElementCategory implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ElementCategory e = (ElementCategory) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

@@ -39,13 +39,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ProjectMember. */
 @Entity
-@Table(name = ProjectMember.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "PJ_PROJECT_MEMBER_UK1", columnNames = {
-        "CLIENTID", "PROJECT_ID", "MEMBER_ID" }) })
+@Table(name = ProjectMember.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ProjectMember.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "PROJECT_ID", "MEMBER_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ProjectMember.findById", query = "SELECT e FROM ProjectMember e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProjectMember.findByIds", query = "SELECT e FROM ProjectMember e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProjectMember.findByName", query = "SELECT e FROM ProjectMember e WHERE e.clientId = :pClientId and  e.project = :pProject and e.member = :pMember ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectMember.NQ_FIND_BY_ID, query = "SELECT e FROM ProjectMember e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectMember.NQ_FIND_BY_IDS, query = "SELECT e FROM ProjectMember e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectMember.NQ_FIND_BY_NAME, query = "SELECT e FROM ProjectMember e WHERE e.clientId = :pClientId and  e.project = :pProject and e.member = :pMember ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProjectMember.findByName_PRIMITIVE", query = "SELECT e FROM ProjectMember e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.member.id = :pMemberId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectMember implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -229,9 +229,9 @@ public class ProjectMember implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProjectMember e = (ProjectMember) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

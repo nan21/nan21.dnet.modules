@@ -16,13 +16,13 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Element_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("elems",{ name:"exprFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Filter",height:80})	 
+		.addDcFilterFormView("elems",{ name:"exprFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Filter",height:120})	 
 		.addDcView("elems",{ name:"exprList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$List"})	 
 		.addDcFormView("elems",{ name:"exprEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Edit",height:120})	 
 		.addDcView("vars",{ name:"varEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Variable$CtxEditList", frame:true})	 
-		.addDcFilterFormView("ecateg",{ name:"ecategFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementCategory$Filter",height:40})	 
+		.addDcFilterFormView("ecateg",{ name:"ecategFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementCategory$Filter",height:120})	 
 		.addDcView("ecateg",{ name:"ecategEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementCategory$EditList", frame:true})	 
-		.addDcFilterFormView("etype",{ name:"etypeFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementType$Filter",height:60})	 
+		.addDcFilterFormView("etype",{ name:"etypeFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementType$Filter",height:120})	 
 		.addDcView("etype",{ name:"etypeEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasElems", layout:"border", defaults:{split:true},title:"Elements > List",preventHeader:true})  	 

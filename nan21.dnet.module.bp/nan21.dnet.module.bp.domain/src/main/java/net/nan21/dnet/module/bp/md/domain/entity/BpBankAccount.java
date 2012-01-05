@@ -39,13 +39,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Business partner bank accounts. */
 @Entity
-@Table(name = BpBankAccount.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BP_BP_BANKACCOUNT_UK1", columnNames = {
-        "CLIENTID", "BPARTNER_ID", "ACCOUNTNO" }) })
+@Table(name = BpBankAccount.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = BpBankAccount.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "BPARTNER_ID", "ACCOUNTNO" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "BpBankAccount.findById", query = "SELECT e FROM BpBankAccount e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "BpBankAccount.findByIds", query = "SELECT e FROM BpBankAccount e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "BpBankAccount.findByAccount", query = "SELECT e FROM BpBankAccount e WHERE e.clientId = :pClientId and  e.bpartner = :pBpartner and e.accountNo = :pAccountNo ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = BpBankAccount.NQ_FIND_BY_ID, query = "SELECT e FROM BpBankAccount e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = BpBankAccount.NQ_FIND_BY_IDS, query = "SELECT e FROM BpBankAccount e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = BpBankAccount.NQ_FIND_BY_ACCOUNT, query = "SELECT e FROM BpBankAccount e WHERE e.clientId = :pClientId and  e.bpartner = :pBpartner and e.accountNo = :pAccountNo ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "BpBankAccount.findByAccount_PRIMITIVE", query = "SELECT e FROM BpBankAccount e WHERE e.clientId = :pClientId and  e.bpartner.id = :pBpartnerId and e.accountNo = :pAccountNo ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class BpBankAccount implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -298,9 +298,9 @@ public class BpBankAccount implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        BpBankAccount e = (BpBankAccount) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

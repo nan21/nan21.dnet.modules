@@ -27,15 +27,15 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter", {
 		.addLov({ name:"payScaleCode", xtype:"net.nan21.dnet.module.hr.grade.lovs.PayScales", dataIndex:"payScaleCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "payScaleId"} ]  })
 		.addLov({ name:"currencyCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currencyCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["name"])
-		.addChildrenTo("col2",["payScaleCode","currencyCode"])
+		.addChildrenTo("main",["col1"])
+		.addChildrenTo("col1",["name","payScaleCode","currencyCode"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

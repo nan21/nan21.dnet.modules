@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BpAccount_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$Filter",height:80})	 
+		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$Filter",height:120})	 
 		.addDcView("m",{ name:"mList", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$List"})	 
 		.addDcFormView("m",{ name:"mEdit", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 

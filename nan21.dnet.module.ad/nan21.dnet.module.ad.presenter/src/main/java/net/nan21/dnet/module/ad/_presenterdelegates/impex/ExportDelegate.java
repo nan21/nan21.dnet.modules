@@ -10,22 +10,20 @@ import net.nan21.dnet.core.api.action.SortToken;
 import net.nan21.dnet.core.api.service.IDsService;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.presenter.action.DsCsvExport;
-import net.nan21.dnet.core.presenter.service.BaseDsDelegate;
+import net.nan21.dnet.core.presenter.service.AbstractDsDelegate;
 import net.nan21.dnet.module.ad.impex.business.service.ICsvExportFieldService;
 import net.nan21.dnet.module.ad.impex.business.service.ICsvExportService;
-import net.nan21.dnet.module.ad.impex.business.service.IExportMapItemService;
 import net.nan21.dnet.module.ad.impex.business.service.IExportMapService;
 import net.nan21.dnet.module.ad.impex.domain.entity.CsvExport;
 import net.nan21.dnet.module.ad.impex.domain.entity.CsvExportField;
 import net.nan21.dnet.module.ad.impex.domain.entity.CsvExportSort;
 import net.nan21.dnet.module.ad.impex.domain.entity.ExportMap;
-import net.nan21.dnet.module.ad.impex.domain.entity.ExportMapItem;
 import net.nan21.dnet.module.ad.impex.ds.model.ExportJobDs;
 import net.nan21.dnet.module.ad.impex.ds.model.ExportJobItemDs;
 import net.nan21.dnet.module.ad.impex.ds.model.ExportMapDs;
 import net.nan21.dnet.module.ad.impex.ds.model.ExportMapItemDs;
 
-public class ExportDelegate extends BaseDsDelegate {
+public class ExportDelegate extends AbstractDsDelegate  {
  
 	
 	public void exportFromJob(ExportJobDs ds) throws Exception {

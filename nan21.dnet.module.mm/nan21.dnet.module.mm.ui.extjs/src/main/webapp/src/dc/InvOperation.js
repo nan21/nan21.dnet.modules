@@ -36,16 +36,16 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation$Filter", {
 		.addPanel({ name:"col1", layout:"anchor", width:250}) 
 		.addPanel({ name:"col2", layout:"anchor", width:250}) 
 		.addPanel({ name:"col3", layout:"anchor",width:210}) 
-		.addPanel({ name:"col4", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3","col4"])
+		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["itemCode","inventory"])
 		.addChildrenTo("col2",["subInventory","locator"])
-		.addChildrenTo("col3",["direction"])
-		.addChildrenTo("col4",["transactionId","transactionLineId"])
+		.addChildrenTo("col3",["direction","transactionId","transactionLineId"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

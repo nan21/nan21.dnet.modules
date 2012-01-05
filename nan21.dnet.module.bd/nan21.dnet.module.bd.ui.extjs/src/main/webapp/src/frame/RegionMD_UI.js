@@ -14,7 +14,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.frame.RegionMD_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("region",{ name:"regionFilter", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$Filter",height:80})	 
+		.addDcFilterFormView("region",{ name:"regionFilter", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$Filter",height:120})	 
 		.addDcView("region",{ name:"regionList", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$List"})	 
 		.addDcFormView("region",{ name:"regionEdit", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$Edit",height:140})	 
 		.addDcView("city",{ name:"cityEditList", xtype:"net.nan21.dnet.module.bd.geo.dc.City$CtxEditList", frame:true})	 

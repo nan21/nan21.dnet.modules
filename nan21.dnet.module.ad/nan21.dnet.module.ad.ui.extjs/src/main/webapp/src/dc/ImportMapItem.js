@@ -29,16 +29,16 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMapItem$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor", width:250}) 
-		.addPanel({ name:"col2", layout:"anchor", width:250}) 
-		.addPanel({ name:"col3", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["importMapName"])
-		.addChildrenTo("col2",["dataSource","fileName"])
-		.addChildrenTo("col3",["active"])
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["importMapName","dataSource","fileName"])
+		.addChildrenTo("col2",["active"])
+    	.addAuditFilter({})	
 	}
 }); 
  	
@@ -78,9 +78,11 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMapItem$ImportFileForm", {
 		//containers
 		.addPanel({ name:"main", layout:"anchor", autoScroll:true, width:400, defaults:{
 labelAlign:"right",labelWidth:140}}) 
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["importFileLocation","importDataSource"])
+    	.addAuditFilter({})	
 	}
 }); 

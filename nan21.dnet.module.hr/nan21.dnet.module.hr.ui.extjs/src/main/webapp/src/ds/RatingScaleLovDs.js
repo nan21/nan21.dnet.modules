@@ -1,22 +1,21 @@
  
    	 
-Ext.define("net.nan21.dnet.module.hr.skill.ds.model.RatingScaleLovDs" , {
+Ext.define("net.nan21.dnet.module.hr.skill.ds.model.RatingScaleLovDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean" }
+		{name:"id", type:"int", useNull:true},
+		{name:"clientId", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean"}
 	]
 });
 
-Ext.define("net.nan21.dnet.module.hr.skill.ds.model.RatingScaleLovDsFilter" , {
+Ext.define("net.nan21.dnet.module.hr.skill.ds.model.RatingScaleLovDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean", useNull:true }
+		{name:"id", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean", useNull:true}
 	] 
 });
 	

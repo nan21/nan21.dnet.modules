@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** SysDateFormat. */
 @Entity
-@Table(name = SysDateFormat.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_SYSDATEFORMAT_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = SysDateFormat.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = SysDateFormat.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "SysDateFormat.findById", query = "SELECT e FROM SysDateFormat e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SysDateFormat.findByIds", query = "SELECT e FROM SysDateFormat e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SysDateFormat.findByName", query = "SELECT e FROM SysDateFormat e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = SysDateFormat.NQ_FIND_BY_ID, query = "SELECT e FROM SysDateFormat e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SysDateFormat.NQ_FIND_BY_IDS, query = "SELECT e FROM SysDateFormat e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SysDateFormat.NQ_FIND_BY_NAME, query = "SELECT e FROM SysDateFormat e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysDateFormat implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -309,9 +309,9 @@ public class SysDateFormat implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        SysDateFormat e = (SysDateFormat) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

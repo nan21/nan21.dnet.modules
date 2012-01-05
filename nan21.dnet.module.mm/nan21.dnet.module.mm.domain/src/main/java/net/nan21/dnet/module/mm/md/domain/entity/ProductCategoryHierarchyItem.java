@@ -75,9 +75,6 @@ public class ProductCategoryHierarchyItem implements Serializable {
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProductCategoryHierarchyItem e = (ProductCategoryHierarchyItem) event
-                .getSource();
-
     }
 
 }

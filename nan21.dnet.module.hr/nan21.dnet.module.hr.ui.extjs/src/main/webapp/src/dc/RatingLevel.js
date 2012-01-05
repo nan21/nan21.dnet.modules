@@ -27,18 +27,17 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingLevel$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"ratingScale", xtype:"net.nan21.dnet.module.hr.skill.lovs.RatingScales", dataIndex:"ratingScale",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "ratingScaleId"} ]  })
 		//containers
-		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor", width:250}) 
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		this._elems_.get("main")["items"] = [
-	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("name")] }
-	  ,	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("ratingScale")] }
-	  ,	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("active")] }
-];
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["name","active"])
+		.addChildrenTo("col2",["ratingScale"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

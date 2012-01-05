@@ -38,17 +38,17 @@ import org.hibernate.validator.constraints.NotBlank;
 /** ReportParam. */
 @Entity
 @Table(name = ReportParam.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "AD_REPORT_PARAM_UK1", columnNames = {
+        @UniqueConstraint(name = ReportParam.TABLE_NAME + "_UK1", columnNames = {
                 "CLIENTID", "REPORT_ID", "CODE" }),
-        @UniqueConstraint(name = "AD_REPORT_PARAM_UK2", columnNames = {
+        @UniqueConstraint(name = ReportParam.TABLE_NAME + "_UK2", columnNames = {
                 "CLIENTID", "REPORT_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ReportParam.findById", query = "SELECT e FROM ReportParam e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ReportParam.findByIds", query = "SELECT e FROM ReportParam e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ReportParam.findByCode", query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report = :pReport and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ReportParam.NQ_FIND_BY_ID, query = "SELECT e FROM ReportParam e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ReportParam.NQ_FIND_BY_IDS, query = "SELECT e FROM ReportParam e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ReportParam.NQ_FIND_BY_CODE, query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report = :pReport and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ReportParam.findByCode_PRIMITIVE", query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report.id = :pReportId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ReportParam.findByName", query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report = :pReport and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ReportParam.NQ_FIND_BY_NAME, query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report = :pReport and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ReportParam.findByName_PRIMITIVE", query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report.id = :pReportId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ReportParam implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -315,9 +315,9 @@ public class ReportParam implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ReportParam e = (ReportParam) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

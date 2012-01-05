@@ -28,15 +28,17 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.Bank$Filter", {
 		.addTextField({ name:"swiftCode", dataIndex:"swiftCode",anchor:"-20",maxLength:32  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:250, height:50}) 
-		.addPanel({ name:"col2", layout:"anchor", width:250}) 
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["swiftCode","active"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

@@ -17,6 +17,7 @@ net.nan21.dnet.module.ad.menu.ad = [
 		{id:"Roles", text:Dnet.translate("ui","Role_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.Role_UI", _bundle_:BUNDLE_ID},		
 		{id:"Users", text:Dnet.translate("ui","Users_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.Users_UI", _bundle_:BUNDLE_ID},		
 		{id:"AccessControl_UI", text:Dnet.translate("ui","AccessControl_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.AccessControl_UI", _bundle_:BUNDLE_ID},		
+		{id:"DsAccessControl_UI", text:Dnet.translate("ui","DsAccessControl_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI", _bundle_:BUNDLE_ID},		
 		{id:"Assignables_UI", text:Dnet.translate("ui","Assignables_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.Assignables_UI", _bundle_:BUNDLE_ID}	]}
 ,		 
 	{"id":"sm_ad_system", "text":"System components", leaf:false, children:[

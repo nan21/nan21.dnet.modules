@@ -13,9 +13,9 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Assignables_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("assignableType",{ name:"assignableTypeFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.AssignableType$Filter",height:40})	 
+		.addDcFilterFormView("assignableType",{ name:"assignableTypeFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.AssignableType$Filter",height:120})	 
 		.addDcView("assignableType",{ name:"assignableTypeEditList", xtype:"net.nan21.dnet.module.ad.usr.dc.AssignableType$EditList", frame:true})	 
-		.addDcFilterFormView("assignable",{ name:"assignableFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.Assignable$Filter",height:80})	 
+		.addDcFilterFormView("assignable",{ name:"assignableFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.Assignable$Filter",height:120})	 
 		.addDcView("assignable",{ name:"assignableEditList", xtype:"net.nan21.dnet.module.ad.usr.dc.Assignable$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Assignable types",preventHeader:true})  	 

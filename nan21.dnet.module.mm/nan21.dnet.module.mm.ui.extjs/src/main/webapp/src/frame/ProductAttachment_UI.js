@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.ProductAttachment_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("attch",{ name:"attchFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttachment$Filter",height:80})	 
+		.addDcFilterFormView("attch",{ name:"attchFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttachment$Filter",height:120})	 
 		.addDcView("attch",{ name:"attchEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttachment$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

@@ -24,7 +24,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {
 		.addButton({name:"btnSavePassword",text:"Save", tooltip:"Save new password",disabled:false
 			,handler: this.onBtnSavePassword,scope:this	})	
 							 	
-		.addDcFilterFormView("usr",{ name:"usrFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Filter",height:80})	 
+		.addDcFilterFormView("usr",{ name:"usrFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Filter",height:120})	 
 		.addDcView("usr",{ name:"usrList", xtype:"net.nan21.dnet.module.ad.usr.dc.User$List"})	 
 		.addDcFormView("usr",{ name:"usrEdit", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Edit",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnRoles") ,this._elems_.get("btnAsgnGroups") ,this._elems_.get("btnChangePassword") ]}]})	 
 		.addDcFormView("usr",{ name:"canvasPassword", xtype:"net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm"})	 

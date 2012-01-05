@@ -41,13 +41,13 @@ import org.hibernate.validator.constraints.NotBlank;
  Can be private individuals, companies or groups.	 
  */
 @Entity
-@Table(name = BusinessPartner.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BP_BUSINESS_PARTNER_UK1", columnNames = {
-        "CLIENTID", "CODE" }) })
+@Table(name = BusinessPartner.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = BusinessPartner.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "CODE" }) })
 @Customizer(BusinessPartnerEventHandler.class)
 @NamedQueries({
-        @NamedQuery(name = "BusinessPartner.findById", query = "SELECT e FROM BusinessPartner e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "BusinessPartner.findByIds", query = "SELECT e FROM BusinessPartner e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "BusinessPartner.findByCode", query = "SELECT e FROM BusinessPartner e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = BusinessPartner.NQ_FIND_BY_ID, query = "SELECT e FROM BusinessPartner e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = BusinessPartner.NQ_FIND_BY_IDS, query = "SELECT e FROM BusinessPartner e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = BusinessPartner.NQ_FIND_BY_CODE, query = "SELECT e FROM BusinessPartner e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class BusinessPartner implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -430,9 +430,9 @@ public class BusinessPartner implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        BusinessPartner e = (BusinessPartner) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

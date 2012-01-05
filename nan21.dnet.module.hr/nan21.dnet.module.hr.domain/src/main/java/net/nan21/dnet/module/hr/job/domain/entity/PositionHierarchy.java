@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** PositionHierarchy. */
 @Entity
-@Table(name = PositionHierarchy.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_POSITION_HIERARCHY_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = PositionHierarchy.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = PositionHierarchy.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "PositionHierarchy.findById", query = "SELECT e FROM PositionHierarchy e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "PositionHierarchy.findByIds", query = "SELECT e FROM PositionHierarchy e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "PositionHierarchy.findByName", query = "SELECT e FROM PositionHierarchy e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = PositionHierarchy.NQ_FIND_BY_ID, query = "SELECT e FROM PositionHierarchy e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = PositionHierarchy.NQ_FIND_BY_IDS, query = "SELECT e FROM PositionHierarchy e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = PositionHierarchy.NQ_FIND_BY_NAME, query = "SELECT e FROM PositionHierarchy e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PositionHierarchy implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -251,9 +251,9 @@ public class PositionHierarchy implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        PositionHierarchy e = (PositionHierarchy) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

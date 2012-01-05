@@ -38,17 +38,17 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Variable. */
 @Entity
 @Table(name = Variable.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "HR_VARIABLE_UK1", columnNames = { "CLIENTID",
-                "ELEMENT_ID", "CODE" }),
-        @UniqueConstraint(name = "HR_VARIABLE_UK2", columnNames = { "CLIENTID",
-                "ELEMENT_ID", "NAME" }) })
+        @UniqueConstraint(name = Variable.TABLE_NAME + "_UK1", columnNames = {
+                "CLIENTID", "ELEMENT_ID", "CODE" }),
+        @UniqueConstraint(name = Variable.TABLE_NAME + "_UK2", columnNames = {
+                "CLIENTID", "ELEMENT_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "Variable.findById", query = "SELECT e FROM Variable e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Variable.findByIds", query = "SELECT e FROM Variable e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Variable.findByCode", query = "SELECT e FROM Variable e WHERE e.clientId = :pClientId and  e.element = :pElement and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Variable.NQ_FIND_BY_ID, query = "SELECT e FROM Variable e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Variable.NQ_FIND_BY_IDS, query = "SELECT e FROM Variable e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Variable.NQ_FIND_BY_CODE, query = "SELECT e FROM Variable e WHERE e.clientId = :pClientId and  e.element = :pElement and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Variable.findByCode_PRIMITIVE", query = "SELECT e FROM Variable e WHERE e.clientId = :pClientId and  e.element.id = :pElementId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Variable.findByName", query = "SELECT e FROM Variable e WHERE e.clientId = :pClientId and  e.element = :pElement and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Variable.NQ_FIND_BY_NAME, query = "SELECT e FROM Variable e WHERE e.clientId = :pClientId and  e.element = :pElement and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Variable.findByName_PRIMITIVE", query = "SELECT e FROM Variable e WHERE e.clientId = :pClientId and  e.element.id = :pElementId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Variable implements Serializable, IModelWithId, IModelWithClientId {
 
@@ -284,9 +284,9 @@ public class Variable implements Serializable, IModelWithId, IModelWithClientId 
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        Variable e = (Variable) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

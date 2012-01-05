@@ -37,13 +37,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** CompanyLegalForm. */
 @Entity
-@Table(name = CompanyLegalForm.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BP_COMP_LEGAL_FORM_UK1", columnNames = {
-        "CLIENTID", "COUNTRY_ID", "NAME" }) })
+@Table(name = CompanyLegalForm.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = CompanyLegalForm.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "COUNTRY_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "CompanyLegalForm.findById", query = "SELECT e FROM CompanyLegalForm e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CompanyLegalForm.findByIds", query = "SELECT e FROM CompanyLegalForm e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CompanyLegalForm.findByName", query = "SELECT e FROM CompanyLegalForm e WHERE e.clientId = :pClientId and  e.country = :pCountry and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CompanyLegalForm.NQ_FIND_BY_ID, query = "SELECT e FROM CompanyLegalForm e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CompanyLegalForm.NQ_FIND_BY_IDS, query = "SELECT e FROM CompanyLegalForm e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CompanyLegalForm.NQ_FIND_BY_NAME, query = "SELECT e FROM CompanyLegalForm e WHERE e.clientId = :pClientId and  e.country = :pCountry and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "CompanyLegalForm.findByName_PRIMITIVE", query = "SELECT e FROM CompanyLegalForm e WHERE e.clientId = :pClientId and  e.country.id = :pCountryId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CompanyLegalForm implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -246,9 +246,9 @@ public class CompanyLegalForm implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        CompanyLegalForm e = (CompanyLegalForm) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

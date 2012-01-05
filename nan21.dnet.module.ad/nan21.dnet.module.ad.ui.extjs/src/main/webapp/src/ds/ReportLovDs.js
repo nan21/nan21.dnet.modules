@@ -1,24 +1,23 @@
  
    	 
-Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportLovDs" , {
+Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportLovDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"code",type:"string" },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean" }
+		{name:"id", type:"int", useNull:true},
+		{name:"clientId", type:"int", useNull:true},
+		{name:"code", type:"string"},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean"}
 	]
 });
 
-Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportLovDsFilter" , {
+Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportLovDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"code",type:"string" },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean", useNull:true }
+		{name:"id", type:"int", useNull:true},
+		{name:"code", type:"string"},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean", useNull:true}
 	] 
 });
 	

@@ -42,8 +42,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = IssueTask.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "IssueTask.findById", query = "SELECT e FROM IssueTask e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "IssueTask.findByIds", query = "SELECT e FROM IssueTask e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = IssueTask.NQ_FIND_BY_ID, query = "SELECT e FROM IssueTask e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = IssueTask.NQ_FIND_BY_IDS, query = "SELECT e FROM IssueTask e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class IssueTask implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -252,9 +252,9 @@ public class IssueTask implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        IssueTask e = (IssueTask) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

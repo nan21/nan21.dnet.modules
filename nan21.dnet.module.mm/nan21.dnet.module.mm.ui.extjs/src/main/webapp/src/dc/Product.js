@@ -36,17 +36,17 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Filter", {
 		.addPanel({ name:"col1", layout:"anchor",width:210}) 
 		.addPanel({ name:"col2", layout:"anchor", width:150, defaults:{
 labelAlign:"right",labelWidth:70}}) 
-		.addPanel({ name:"col3", layout:"anchor",width:210}) 
-		.addPanel({ name:"col4", layout:"anchor", width:250}) 
+		.addPanel({ name:"col3", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3","col4"])
-		.addChildrenTo("col1",["name","code"])
+		.addChildrenTo("main",["col1","col2","col3"])
+		.addChildrenTo("col1",["name","code","manufacturerCode","manufacturerProductNo"])
 		.addChildrenTo("col2",["storable","active","showInCatalog"])
-		.addChildrenTo("col3",["manufacturerCode","manufacturerProductNo"])
-		.addChildrenTo("col4",["attributeGroup","productCategory"])
+		.addChildrenTo("col3",["attributeGroup","productCategory"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 
@@ -60,9 +60,9 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$List", {
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
 		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
-		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
-		.addBooleanColumn({ name:"storable", dataIndex:"storable"})   	     
-		.addBooleanColumn({ name:"showInCatalog", dataIndex:"showInCatalog"})   	     
+		.addBooleanColumn({ name:"active", dataIndex:"active", width:60})   	     
+		.addBooleanColumn({ name:"storable", dataIndex:"storable", width:60})   	     
+		.addBooleanColumn({ name:"showInCatalog", dataIndex:"showInCatalog", width:60})   	     
 		.addNumberColumn({ name:"defaultUomId", dataIndex:"defaultUomId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"defaultUomCode", dataIndex:"defaultUomCode",width:100 })   	
 		.addTextColumn({ name:"attributeGroup", dataIndex:"attributeGroup",width:120 })   	

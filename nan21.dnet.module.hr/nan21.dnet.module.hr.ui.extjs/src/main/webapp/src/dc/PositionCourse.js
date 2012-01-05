@@ -26,10 +26,12 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$Filter", {
 		.addTextField({ name:"courseName", dataIndex:"courseName",anchor:"-20",maxLength:255  })
 		//containers
 		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210}) 
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["courseName"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

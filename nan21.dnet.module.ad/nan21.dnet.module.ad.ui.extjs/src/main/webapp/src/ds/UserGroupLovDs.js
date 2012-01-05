@@ -1,22 +1,21 @@
  
    	 
-Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserGroupLovDs" , {
+Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserGroupLovDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean" }
+		{name:"id", type:"int", useNull:true},
+		{name:"clientId", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean"}
 	]
 });
 
-Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserGroupLovDsFilter" , {
+Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserGroupLovDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean", useNull:true }
+		{name:"id", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean", useNull:true}
 	] 
 });
 	

@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** OpportunityStage. */
 @Entity
-@Table(name = OpportunityStage.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "SD_OPRT_STAGE_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = OpportunityStage.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = OpportunityStage.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "OpportunityStage.findById", query = "SELECT e FROM OpportunityStage e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "OpportunityStage.findByIds", query = "SELECT e FROM OpportunityStage e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "OpportunityStage.findByName", query = "SELECT e FROM OpportunityStage e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = OpportunityStage.NQ_FIND_BY_ID, query = "SELECT e FROM OpportunityStage e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = OpportunityStage.NQ_FIND_BY_IDS, query = "SELECT e FROM OpportunityStage e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = OpportunityStage.NQ_FIND_BY_NAME, query = "SELECT e FROM OpportunityStage e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class OpportunityStage implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -225,9 +225,9 @@ public class OpportunityStage implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        OpportunityStage e = (OpportunityStage) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

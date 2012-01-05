@@ -34,6 +34,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$Filter", {
 		.addPanel({ name:"col2", layout:"anchor", width:220}) 
 		.addPanel({ name:"col3", layout:"anchor", width:220}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -41,6 +42,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$Filter", {
 		.addChildrenTo("col1",["firstName","lastName"])
 		.addChildrenTo("col2",["employerCode","code"])
 		.addChildrenTo("col3",["gender","maritalStatus"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

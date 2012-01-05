@@ -46,8 +46,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = Opportunity.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "Opportunity.findById", query = "SELECT e FROM Opportunity e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Opportunity.findByIds", query = "SELECT e FROM Opportunity e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = Opportunity.NQ_FIND_BY_ID, query = "SELECT e FROM Opportunity e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Opportunity.NQ_FIND_BY_IDS, query = "SELECT e FROM Opportunity e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Opportunity implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -388,9 +388,9 @@ public class Opportunity implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        Opportunity e = (Opportunity) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

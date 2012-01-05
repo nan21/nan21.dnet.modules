@@ -10,6 +10,7 @@
  	<bean id="UserDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.UserDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.User" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.usr.ds.param.UserDsParam" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserDsConv" />
@@ -32,6 +33,7 @@
  	<bean id="MyUserSettingsDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MyUserSettingsDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.MyUserSettingsDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.User" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.MyUserSettingsDsConv" />
 	</bean>
@@ -43,6 +45,7 @@
  	<bean id="UserLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.UserLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.User" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -53,6 +56,7 @@
  	<bean id="UserTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.UserTypeDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -63,6 +67,7 @@
  	<bean id="UserTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.UserTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -73,6 +78,7 @@
  	<bean id="UserGroupDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserGroupDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.UserGroupDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserGroup" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -83,6 +89,7 @@
  	<bean id="UserGroupLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserGroupLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.UserGroupLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserGroup" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -93,6 +100,7 @@
  	<bean id="RoleDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.RoleDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.RoleDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -103,6 +111,7 @@
  	<bean id="RoleLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.RoleLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.RoleLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -113,6 +122,7 @@
  	<bean id="RolesOfUserLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.RolesOfUserLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.RolesOfUserLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -123,6 +133,7 @@
  	<bean id="AccessControlDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.AccessControlDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AccessControl" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -133,6 +144,7 @@
  	<bean id="AccessControlLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.AccessControlLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AccessControl" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -143,6 +155,7 @@
  	<bean id="DsAccessControlDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.DsAccessControlDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.DsAccessControlDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.DsAccessControl" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.DsAccessControlDsConv" />
 	</bean>
@@ -154,6 +167,7 @@
  	<bean id="AssignableTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.AssignableTypeDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AssignableType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -164,6 +178,7 @@
  	<bean id="AssignableTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.AssignableTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AssignableType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -174,6 +189,7 @@
  	<bean id="AssignableDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.AssignableDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Assignable" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AssignableDsConv" />
 	</bean>
@@ -185,6 +201,7 @@
  	<bean id="AssignableLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.AssignableLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Assignable" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

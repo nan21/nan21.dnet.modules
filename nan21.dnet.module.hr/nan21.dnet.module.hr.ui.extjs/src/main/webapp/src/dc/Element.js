@@ -31,15 +31,15 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$Filter", {
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210}) 
 		.addPanel({ name:"col2", layout:"anchor", width:250}) 
-		.addPanel({ name:"col3", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["name","code"])
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["name","code","active"])
 		.addChildrenTo("col2",["type","dataType"])
-		.addChildrenTo("col3",["active"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

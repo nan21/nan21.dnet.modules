@@ -39,16 +39,16 @@ import org.hibernate.validator.constraints.NotBlank;
 /** CustomerGroup. */
 @Entity
 @Table(name = CustomerGroup.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "BP_CUSTOMER_GROUP_UK1", columnNames = {
+        @UniqueConstraint(name = CustomerGroup.TABLE_NAME + "_UK1", columnNames = {
                 "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "BP_CUSTOMER_GROUP_UK2", columnNames = {
+        @UniqueConstraint(name = CustomerGroup.TABLE_NAME + "_UK2", columnNames = {
                 "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "CustomerGroup.findById", query = "SELECT e FROM CustomerGroup e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CustomerGroup.findByIds", query = "SELECT e FROM CustomerGroup e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CustomerGroup.findByCode", query = "SELECT e FROM CustomerGroup e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CustomerGroup.findByName", query = "SELECT e FROM CustomerGroup e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = CustomerGroup.NQ_FIND_BY_ID, query = "SELECT e FROM CustomerGroup e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CustomerGroup.NQ_FIND_BY_IDS, query = "SELECT e FROM CustomerGroup e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CustomerGroup.NQ_FIND_BY_CODE, query = "SELECT e FROM CustomerGroup e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CustomerGroup.NQ_FIND_BY_NAME, query = "SELECT e FROM CustomerGroup e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CustomerGroup implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -286,9 +286,9 @@ public class CustomerGroup implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        CustomerGroup e = (CustomerGroup) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

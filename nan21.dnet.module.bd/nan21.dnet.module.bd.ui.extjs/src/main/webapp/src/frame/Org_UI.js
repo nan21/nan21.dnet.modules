@@ -18,13 +18,13 @@ Ext.define("net.nan21.dnet.module.bd.org.frame.Org_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("org",{ name:"orgFilter", xtype:"net.nan21.dnet.module.bd.org.dc.Organization$Filter",height:80})	 
+		.addDcFilterFormView("org",{ name:"orgFilter", xtype:"net.nan21.dnet.module.bd.org.dc.Organization$Filter",height:120})	 
 		.addDcView("org",{ name:"orgList", xtype:"net.nan21.dnet.module.bd.org.dc.Organization$List"})	 
 		.addDcFormView("org",{ name:"orgEdit", xtype:"net.nan21.dnet.module.bd.org.dc.Organization$Edit",height:160})	 
-		.addDcFilterFormView("hierarchy",{ name:"hierarchyFilter", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Filter",height:40})	 
+		.addDcFilterFormView("hierarchy",{ name:"hierarchyFilter", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Filter",height:120})	 
 		.addDcView("hierarchy",{ name:"hierarchyList", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$List"})	 
 		.addDcFormView("hierarchy",{ name:"hierarchyEdit", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Edit",height:100})	 
-		.addDcFilterFormView("orgtype",{ name:"orgtypeFilter", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationType$Filter",height:80})	 
+		.addDcFilterFormView("orgtype",{ name:"orgtypeFilter", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationType$Filter",height:120})	 
 		.addDcView("orgtype",{ name:"orgtypeEditList", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationType$EditList", frame:true})	 
 		.addDcView("address",{ name:"addressList", xtype:"net.nan21.dnet.module.bd.geo.dc.Location$ListCtx"})	 
 		.addDcFormView("address",{ name:"addressEdit", xtype:"net.nan21.dnet.module.bd.geo.dc.Location$EditCtx"})	 

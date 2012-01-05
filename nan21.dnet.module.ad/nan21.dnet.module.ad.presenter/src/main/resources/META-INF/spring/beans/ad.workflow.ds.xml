@@ -10,6 +10,7 @@
  	<bean id="ActDeploymentDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActDeploymentDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActDeploymentDsParam" />	
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActDeploymentDsQueryBuilder" />	
@@ -22,6 +23,7 @@
  	<bean id="ActDeploymentLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActDeploymentLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -32,6 +34,7 @@
  	<bean id="ActProcessDefinitionDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActProcessDefinitionDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActProcessDefinitionDsParam" />	
 	  	<property name="rpcData" >
@@ -65,6 +68,7 @@
  	<bean id="ActProcessDefinitionLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActProcessDefinitionLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -75,6 +79,7 @@
  	<bean id="ActProcessInstanceDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActProcessInstanceDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessInstanceHistory" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActProcessInstanceDsParam" />	
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActProcessInstanceDsQueryBuilder" />	
@@ -97,6 +102,7 @@
  	<bean id="ActProcessInstanceHistoryDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceHistoryDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActProcessInstanceHistoryDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessInstanceHistory" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActProcessInstanceHistoryDsParam" />	
 	</bean>
@@ -108,6 +114,7 @@
  	<bean id="ActTaskInstanceDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActTaskInstanceDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.workflow.ds.param.ActTaskInstanceDsParam" />	
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActTaskInstanceDsQueryBuilder" />	
@@ -136,6 +143,7 @@
  	<bean id="ActTaskInstanceHistoryDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActTaskInstanceHistoryDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -146,6 +154,7 @@
  	<bean id="ActMyTaskDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActMyTaskDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActMyTaskDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActTask" />
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActMyTaskDsQueryBuilder" />	
 	  	<property name="rpcData" >
@@ -167,6 +176,7 @@
  	<bean id="ActMyTaskHistoryDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActMyTaskHistoryDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActMyTaskHistoryDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory" />
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.workflow.ds.qb.ActMyTaskHistoryDsQueryBuilder" />	
 	</bean>
@@ -178,6 +188,7 @@
  	<bean id="ActAvailableTaskDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActAvailableTaskDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActAvailableTaskDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActTask" />
 	  	<property name="rpcData" >
 	  		<map>
@@ -198,6 +209,7 @@
  	<bean id="WfDefProcessDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefProcessDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.WfDefProcessDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess" />
 	  	<property name="rpcData" >
 	  		<map>
@@ -224,6 +236,7 @@
  	<bean id="WfDefNodeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.WfDefNodeDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefNodeDsConv" />
 	</bean>
@@ -235,6 +248,7 @@
  	<bean id="WfDefNodeFieldDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeFieldDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.WfDefNodeFieldDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeField" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefNodeFieldDsConv" />
 	</bean>
@@ -246,6 +260,7 @@
  	<bean id="WfDefTransitionDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefTransitionDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.WfDefTransitionDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.WfDefTransition" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.workflow.ds.converter.WfDefTransitionDsConv" />
 	</bean>

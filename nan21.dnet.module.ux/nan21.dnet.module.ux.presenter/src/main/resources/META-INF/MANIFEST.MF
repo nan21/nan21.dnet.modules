@@ -1,15 +1,15 @@
 Manifest-Version: 1.0
-Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M5,1.0.0.M5]",na
- n21.dnet.core.presenter;version="[1.0.0.M5,1.0.0.M5]",javax.persisten
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M6,1.0.0.M6]",na
+ n21.dnet.core.presenter;version="[1.0.0.M6,1.0.0.M6]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.5)
  ",org.eclipse.persistence.core;version="[2.0,2.5)",nan21.dnet.module.
- ux.domain;version="[1.0.0.M5,1.0.0.M5]",nan21.dnet.module.ad.domain;v
- ersion="[1.0.0.M5,1.0.0.M5]",nan21.dnet.module.bd.domain;version="[1.
- 0.0.M5,1.0.0.M5]",nan21.dnet.module.ux.business;version="[1.0.0.M5,1.
- 0.0.M5]",nan21.dnet.module.ad.business;version="[1.0.0.M5,1.0.0.M5]",
- nan21.dnet.module.bd.business;version="[1.0.0.M5,1.0.0.M5]"
+ ux.domain;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.module.ad.domain;v
+ ersion="[1.0.0.M6,1.0.0.M6]",nan21.dnet.module.bd.domain;version="[1.
+ 0.0.M6,1.0.0.M6]",nan21.dnet.module.ux.business;version="[1.0.0.M6,1.
+ 0.0.M6]",nan21.dnet.module.ad.business;version="[1.0.0.M6,1.0.0.M6]",
+ nan21.dnet.module.bd.business;version="[1.0.0.M6,1.0.0.M6]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M5
+Bundle-Version: 1.0.0.M6
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet UX - presenter
 Bundle-ManifestVersion: 2

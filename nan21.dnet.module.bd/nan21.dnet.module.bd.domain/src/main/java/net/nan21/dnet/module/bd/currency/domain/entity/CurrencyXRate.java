@@ -38,13 +38,14 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Exchange rate values.*/
 @Entity
-@Table(name = CurrencyXRate.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BD_CURRENCY_XRATE_UK1", columnNames = {
-        "CLIENTID", "PROVIDER_ID", "SOURCE_ID", "TARGET_ID", "VALIDAT" }) })
+@Table(name = CurrencyXRate.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = CurrencyXRate.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "PROVIDER_ID", "SOURCE_ID",
+        "TARGET_ID", "VALIDAT" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "CurrencyXRate.findById", query = "SELECT e FROM CurrencyXRate e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CurrencyXRate.findByIds", query = "SELECT e FROM CurrencyXRate e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CurrencyXRate.findByValid", query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and  e.provider = :pProvider and e.source = :pSource and e.target = :pTarget and e.validAt = :pValidAt ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_ID, query = "SELECT e FROM CurrencyXRate e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_IDS, query = "SELECT e FROM CurrencyXRate e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_VALID, query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and  e.provider = :pProvider and e.source = :pSource and e.target = :pTarget and e.validAt = :pValidAt ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "CurrencyXRate.findByValid_PRIMITIVE", query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and  e.provider.id = :pProviderId and e.source.id = :pSourceId and e.target.id = :pTargetId and e.validAt = :pValidAt ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CurrencyXRate implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -255,9 +256,9 @@ public class CurrencyXRate implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        CurrencyXRate e = (CurrencyXRate) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

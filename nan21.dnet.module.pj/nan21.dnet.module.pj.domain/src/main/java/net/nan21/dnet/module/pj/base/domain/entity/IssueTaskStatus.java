@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** IssueTaskStatus. */
 @Entity
-@Table(name = IssueTaskStatus.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "PJ_ISSUETASK_STATUS_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = IssueTaskStatus.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = IssueTaskStatus.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "IssueTaskStatus.findById", query = "SELECT e FROM IssueTaskStatus e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "IssueTaskStatus.findByIds", query = "SELECT e FROM IssueTaskStatus e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "IssueTaskStatus.findByName", query = "SELECT e FROM IssueTaskStatus e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = IssueTaskStatus.NQ_FIND_BY_ID, query = "SELECT e FROM IssueTaskStatus e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = IssueTaskStatus.NQ_FIND_BY_IDS, query = "SELECT e FROM IssueTaskStatus e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = IssueTaskStatus.NQ_FIND_BY_NAME, query = "SELECT e FROM IssueTaskStatus e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class IssueTaskStatus implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -225,9 +225,9 @@ public class IssueTaskStatus implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        IssueTaskStatus e = (IssueTaskStatus) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

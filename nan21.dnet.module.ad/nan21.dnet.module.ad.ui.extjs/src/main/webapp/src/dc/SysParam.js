@@ -29,15 +29,15 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Filter", {
 		.addTextField({ name:"defaultValue", dataIndex:"defaultValue",anchor:"-20",maxLength:400  })
 		.addTextField({ name:"value", dataIndex:"value",anchor:"-20",maxLength:400  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["name","code"])
-		.addChildrenTo("col2",["value"])
+		.addChildrenTo("main",["col1"])
+		.addChildrenTo("col1",["name","code","value"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

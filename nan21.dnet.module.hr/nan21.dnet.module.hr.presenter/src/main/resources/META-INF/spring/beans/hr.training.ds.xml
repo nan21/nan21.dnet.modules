@@ -10,6 +10,7 @@
  	<bean id="CourseCategoryDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseCategoryDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.filter.CourseCategoryDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseCategory" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -20,6 +21,7 @@
  	<bean id="CourseCategoryLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseCategoryLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.filter.CourseCategoryLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseCategory" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -30,6 +32,7 @@
  	<bean id="CourseTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.filter.CourseTypeDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseType" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.CourseTypeDsConv" />
 	</bean>
@@ -41,6 +44,7 @@
  	<bean id="CourseTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.filter.CourseTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -51,6 +55,7 @@
  	<bean id="CourseDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.filter.CourseDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.Course" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.CourseDsConv" />
 	</bean>
@@ -62,6 +67,7 @@
  	<bean id="CourseLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.filter.CourseLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.Course" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -72,6 +78,7 @@
  	<bean id="JobCourseDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.JobCourseDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.filter.JobCourseDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.JobCourse" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.JobCourseDsConv" />
 	</bean>
@@ -83,6 +90,7 @@
  	<bean id="PositionCourseDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.PositionCourseDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.filter.PositionCourseDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.PositionCourse" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.training.ds.converter.PositionCourseDsConv" />
 	</bean>

@@ -37,13 +37,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** PriceList. */
 @Entity
-@Table(name = PriceList.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PRICE_LIST_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = PriceList.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = PriceList.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "PriceList.findById", query = "SELECT e FROM PriceList e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "PriceList.findByIds", query = "SELECT e FROM PriceList e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "PriceList.findByName", query = "SELECT e FROM PriceList e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = PriceList.NQ_FIND_BY_ID, query = "SELECT e FROM PriceList e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = PriceList.NQ_FIND_BY_IDS, query = "SELECT e FROM PriceList e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = PriceList.NQ_FIND_BY_NAME, query = "SELECT e FROM PriceList e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PriceList implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -256,9 +256,9 @@ public class PriceList implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        PriceList e = (PriceList) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

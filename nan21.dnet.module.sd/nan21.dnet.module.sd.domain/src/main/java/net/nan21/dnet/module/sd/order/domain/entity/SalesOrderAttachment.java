@@ -29,8 +29,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 @DiscriminatorValue("SalesOrder")
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "SalesOrderAttachment.findById", query = "SELECT e FROM SalesOrderAttachment e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SalesOrderAttachment.findByIds", query = "SELECT e FROM SalesOrderAttachment e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = SalesOrderAttachment.NQ_FIND_BY_ID, query = "SELECT e FROM SalesOrderAttachment e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SalesOrderAttachment.NQ_FIND_BY_IDS, query = "SELECT e FROM SalesOrderAttachment e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SalesOrderAttachment extends Attachment implements Serializable,
         IModelWithId, IModelWithClientId {
 
@@ -66,7 +66,6 @@ public class SalesOrderAttachment extends Attachment implements Serializable,
 
     public void aboutToUpdate(DescriptorEvent event) {
         super.aboutToUpdate(event);
-        SalesOrderAttachment e = (SalesOrderAttachment) event.getSource();
 
     }
 

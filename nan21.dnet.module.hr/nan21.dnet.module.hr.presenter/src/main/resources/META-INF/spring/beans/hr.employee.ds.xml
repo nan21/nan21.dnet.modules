@@ -10,6 +10,7 @@
  	<bean id="EmployeeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmployeeDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.Employee" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeDsConv" />
 	</bean>
@@ -21,6 +22,7 @@
  	<bean id="EmployeeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmployeeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.Employee" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -31,6 +33,7 @@
  	<bean id="EmployeeContactDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmployeeContactDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContact" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeContactDsConv" />
 	</bean>
@@ -42,6 +45,7 @@
  	<bean id="EmployeeEducationDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeEducationDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmployeeEducationDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeEducation" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeEducationDsConv" />
 	</bean>
@@ -53,6 +57,7 @@
  	<bean id="EmployeeWorkExperienceDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeWorkExperienceDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmployeeWorkExperienceDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeWorkExperience" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeWorkExperienceDsConv" />
 	</bean>
@@ -64,6 +69,7 @@
  	<bean id="EmployeeLicenseDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeLicenseDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmployeeLicenseDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeLicense" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeLicenseDsConv" />
 	</bean>
@@ -75,6 +81,7 @@
  	<bean id="EducationTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EducationTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EducationTypeDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EducationType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -85,6 +92,7 @@
  	<bean id="EducationTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EducationTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EducationTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EducationType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -95,6 +103,7 @@
  	<bean id="LicenseTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.LicenseTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.LicenseTypeDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.LicenseType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -105,6 +114,7 @@
  	<bean id="LicenseTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.LicenseTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.LicenseTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.LicenseType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -115,6 +125,7 @@
  	<bean id="EmployeeContactRelationshipDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactRelationshipDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmployeeContactRelationshipDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContactRelationship" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -125,6 +136,7 @@
  	<bean id="EmployeeContactRelationshipLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactRelationshipLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmployeeContactRelationshipLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContactRelationship" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -135,6 +147,7 @@
  	<bean id="EmploymentTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmploymentTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmploymentTypeDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmploymentType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -145,6 +158,7 @@
  	<bean id="EmploymentTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmploymentTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmploymentTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmploymentType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -155,6 +169,7 @@
  	<bean id="EmployeeAttachmentDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeAttachmentDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmployeeAttachmentDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeAttachment" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeAttachmentDsConv" />
 	</bean>

@@ -1,24 +1,25 @@
  
    	 
-Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusLovDs" , {
+Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusLovDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean" },
-		{name:"sequenceNo",type:"int", useNull:true }
+		{name:"id", type:"int", useNull:true},
+		{name:"clientId", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean"},
+		{name:"sequenceNo", type:"int", useNull:true}
 	]
 });
 
-Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusLovDsFilter" , {
+Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusLovDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean", useNull:true },
-		{name:"sequenceNo",type:"int", useNull:true }
+		{name:"id", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean", useNull:true},
+		{name:"sequenceNo", type:"int", useNull:true},
+		{name:"sequenceNo_From",type:"int", useNull:true},
+		{name:"sequenceNo_To",type:"int", useNull:true}
 	] 
 });
 	

@@ -28,15 +28,17 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.AttachmentType$Filter", {
 		.addCombo({ name:"category", xtype:"combo", dataIndex:"category",anchor:"-20",store:[ "image", "document"]  })
 		.addCombo({ name:"useInContext", xtype:"combo", dataIndex:"useInContext",anchor:"-20",store:[ "BusinessPartner.company", "BusinessPartner.person", "Product", "Employee", "Opportunity", "Project", "ProjectIssue", "SalesInvoice", "SalesOrder"]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:280}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor", width:280}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["name","useInContext"])
-		.addChildrenTo("col2",["category","active"])
+		.addChildrenTo("col1",["name","active"])
+		.addChildrenTo("col2",["category","useInContext"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

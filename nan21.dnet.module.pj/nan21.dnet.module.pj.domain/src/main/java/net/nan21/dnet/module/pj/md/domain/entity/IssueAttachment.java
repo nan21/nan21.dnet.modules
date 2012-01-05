@@ -29,8 +29,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 @DiscriminatorValue("ProjectIssue")
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "IssueAttachment.findById", query = "SELECT e FROM IssueAttachment e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "IssueAttachment.findByIds", query = "SELECT e FROM IssueAttachment e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = IssueAttachment.NQ_FIND_BY_ID, query = "SELECT e FROM IssueAttachment e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = IssueAttachment.NQ_FIND_BY_IDS, query = "SELECT e FROM IssueAttachment e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class IssueAttachment extends Attachment implements Serializable,
         IModelWithId, IModelWithClientId {
 
@@ -66,7 +66,6 @@ public class IssueAttachment extends Attachment implements Serializable,
 
     public void aboutToUpdate(DescriptorEvent event) {
         super.aboutToUpdate(event);
-        IssueAttachment e = (IssueAttachment) event.getSource();
 
     }
 

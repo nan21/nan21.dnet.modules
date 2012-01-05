@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** CourseCategory. */
 @Entity
-@Table(name = CourseCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_COURSE_CATEGORY_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = CourseCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = CourseCategory.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "CourseCategory.findById", query = "SELECT e FROM CourseCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CourseCategory.findByIds", query = "SELECT e FROM CourseCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CourseCategory.findByName", query = "SELECT e FROM CourseCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = CourseCategory.NQ_FIND_BY_ID, query = "SELECT e FROM CourseCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CourseCategory.NQ_FIND_BY_IDS, query = "SELECT e FROM CourseCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CourseCategory.NQ_FIND_BY_NAME, query = "SELECT e FROM CourseCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CourseCategory implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -225,9 +225,9 @@ public class CourseCategory implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        CourseCategory e = (CourseCategory) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

@@ -40,13 +40,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ProjectVersion. */
 @Entity
-@Table(name = ProjectVersion.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "PJ_PROJECT_VERSION_UK1", columnNames = {
-        "CLIENTID", "PROJECT_ID", "NAME" }) })
+@Table(name = ProjectVersion.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ProjectVersion.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "PROJECT_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ProjectVersion.findById", query = "SELECT e FROM ProjectVersion e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProjectVersion.findByIds", query = "SELECT e FROM ProjectVersion e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProjectVersion.findByName", query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and  e.project = :pProject and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectVersion.NQ_FIND_BY_ID, query = "SELECT e FROM ProjectVersion e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectVersion.NQ_FIND_BY_IDS, query = "SELECT e FROM ProjectVersion e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectVersion.NQ_FIND_BY_NAME, query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and  e.project = :pProject and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProjectVersion.findByName_PRIMITIVE", query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectVersion implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -298,9 +298,9 @@ public class ProjectVersion implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProjectVersion e = (ProjectVersion) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

@@ -41,8 +41,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = QualificationSkill.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "QualificationSkill.findById", query = "SELECT e FROM QualificationSkill e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "QualificationSkill.findByIds", query = "SELECT e FROM QualificationSkill e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = QualificationSkill.NQ_FIND_BY_ID, query = "SELECT e FROM QualificationSkill e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = QualificationSkill.NQ_FIND_BY_IDS, query = "SELECT e FROM QualificationSkill e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class QualificationSkill implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -215,9 +215,9 @@ public class QualificationSkill implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        QualificationSkill e = (QualificationSkill) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

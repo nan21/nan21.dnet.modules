@@ -1,18 +1,13 @@
 package net.nan21.dnet.module.ad._presenterdelegates.workflow;
 
 import java.io.InputStream;
-
-import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.repository.ProcessDefinition;
-
-import net.nan21.dnet.core.presenter.model.EmptyParam;
-import net.nan21.dnet.core.presenter.service.BaseDsDelegate;
+import net.nan21.dnet.core.presenter.service.AbstractDsDelegate;
 import net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionDs;
 
-public class ActProcessDefinitionDelegate extends BaseDsDelegate<ActProcessDefinitionDs, EmptyParam> {
-
-	
+public class ActProcessDefinitionDelegate extends AbstractDsDelegate {
+ 
 	public InputStream getStartForm(ActProcessDefinitionDs ds) {
 		InputStream stream = getWorkflowRepositoryService().getResourceAsStream(
 				ds.getDeploymentId(), "org/activiti/examples/taskforms/request.form");

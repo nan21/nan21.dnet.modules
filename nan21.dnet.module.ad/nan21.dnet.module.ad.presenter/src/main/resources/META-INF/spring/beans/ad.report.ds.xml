@@ -10,6 +10,7 @@
  	<bean id="ReportServerDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportServerDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.ReportServerDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportServer" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -20,6 +21,7 @@
  	<bean id="ReportServerLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportServerLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.ReportServerLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportServer" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -30,6 +32,7 @@
  	<bean id="ReportDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.ReportDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.Report" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.ReportDsConv" />
 	</bean>
@@ -41,6 +44,7 @@
  	<bean id="ReportLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.ReportLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.Report" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -51,6 +55,7 @@
  	<bean id="ReportParamDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.ReportParamDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportParam" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.ReportParamDsConv" />
 	</bean>
@@ -62,6 +67,7 @@
  	<bean id="ReportParamLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.ReportParamLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportParam" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -72,6 +78,7 @@
  	<bean id="DsReportDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.DsReportDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.DsReport" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.DsReportDsConv" />
 	</bean>
@@ -83,6 +90,7 @@
  	<bean id="DsReportParamDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportParamDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.DsReportParamDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.DsReportParam" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.DsReportParamDsConv" />
 	</bean>

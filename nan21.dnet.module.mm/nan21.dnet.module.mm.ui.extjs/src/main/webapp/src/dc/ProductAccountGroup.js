@@ -26,16 +26,15 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAccountGroup$Filter", {
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		//containers
-		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		this._elems_.get("main")["items"] = [
-	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("name")] }
-	  ,	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("code")] }
-];
+		.addChildrenTo("main",["col1"])
+		.addChildrenTo("col1",["name","code"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product attribute category definition.*/
 @Entity
-@Table(name = ProductAttributeCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PROD_ATTR_CATEG_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = ProductAttributeCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ProductAttributeCategory.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ProductAttributeCategory.findById", query = "SELECT e FROM ProductAttributeCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductAttributeCategory.findByIds", query = "SELECT e FROM ProductAttributeCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductAttributeCategory.findByName", query = "SELECT e FROM ProductAttributeCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ProductAttributeCategory.NQ_FIND_BY_ID, query = "SELECT e FROM ProductAttributeCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductAttributeCategory.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductAttributeCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductAttributeCategory.NQ_FIND_BY_NAME, query = "SELECT e FROM ProductAttributeCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAttributeCategory implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -225,10 +225,9 @@ public class ProductAttributeCategory implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProductAttributeCategory e = (ProductAttributeCategory) event
-                .getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

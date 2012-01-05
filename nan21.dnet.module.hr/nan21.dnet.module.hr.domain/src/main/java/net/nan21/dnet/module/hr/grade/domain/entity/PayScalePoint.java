@@ -37,13 +37,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** PayScalePoint. */
 @Entity
-@Table(name = PayScalePoint.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_PAY_SCALE_POINT_UK1", columnNames = {
-        "CLIENTID", "PAYSCALE_ID", "CODE" }) })
+@Table(name = PayScalePoint.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = PayScalePoint.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "PAYSCALE_ID", "CODE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "PayScalePoint.findById", query = "SELECT e FROM PayScalePoint e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "PayScalePoint.findByIds", query = "SELECT e FROM PayScalePoint e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "PayScalePoint.findByScale_code", query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and  e.payScale = :pPayScale and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = PayScalePoint.NQ_FIND_BY_ID, query = "SELECT e FROM PayScalePoint e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = PayScalePoint.NQ_FIND_BY_IDS, query = "SELECT e FROM PayScalePoint e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = PayScalePoint.NQ_FIND_BY_SCALE_CODE, query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and  e.payScale = :pPayScale and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "PayScalePoint.findByScale_code_PRIMITIVE", query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and  e.payScale.id = :pPayScaleId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayScalePoint implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -230,9 +230,9 @@ public class PayScalePoint implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        PayScalePoint e = (PayScalePoint) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

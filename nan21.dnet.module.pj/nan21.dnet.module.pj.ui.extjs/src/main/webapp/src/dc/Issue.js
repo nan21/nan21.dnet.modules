@@ -40,6 +40,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Filter", {
 		.addPanel({ name:"col2", layout:"anchor", width:250}) 
 		.addPanel({ name:"col4", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -47,6 +48,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Filter", {
 		.addChildrenTo("col1",["id","code","project","type","assignee"])
 		.addChildrenTo("col2",["severity","priority","status","resolution"])
 		.addChildrenTo("col4",["reportedVersion","targetVersion","fixedInVersion"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

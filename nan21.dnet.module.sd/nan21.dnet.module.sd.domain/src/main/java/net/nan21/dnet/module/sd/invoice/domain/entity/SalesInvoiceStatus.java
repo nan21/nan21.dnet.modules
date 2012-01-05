@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** SalesInvoiceStatus. */
 @Entity
-@Table(name = SalesInvoiceStatus.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "SD_SALES_INVOICE_STATUS_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = SalesInvoiceStatus.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = SalesInvoiceStatus.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "SalesInvoiceStatus.findById", query = "SELECT e FROM SalesInvoiceStatus e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SalesInvoiceStatus.findByIds", query = "SELECT e FROM SalesInvoiceStatus e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SalesInvoiceStatus.findByName", query = "SELECT e FROM SalesInvoiceStatus e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = SalesInvoiceStatus.NQ_FIND_BY_ID, query = "SELECT e FROM SalesInvoiceStatus e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SalesInvoiceStatus.NQ_FIND_BY_IDS, query = "SELECT e FROM SalesInvoiceStatus e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SalesInvoiceStatus.NQ_FIND_BY_NAME, query = "SELECT e FROM SalesInvoiceStatus e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SalesInvoiceStatus implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -238,9 +238,9 @@ public class SalesInvoiceStatus implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        SalesInvoiceStatus e = (SalesInvoiceStatus) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

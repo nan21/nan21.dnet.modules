@@ -34,16 +34,16 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Accounting schema definition.  */
 @Entity
 @Table(name = AccSchema.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "BD_ACC_SCHEMA_UK1", columnNames = {
+        @UniqueConstraint(name = AccSchema.TABLE_NAME + "_UK1", columnNames = {
                 "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "BD_ACC_SCHEMA_UK2", columnNames = {
+        @UniqueConstraint(name = AccSchema.TABLE_NAME + "_UK2", columnNames = {
                 "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "AccSchema.findById", query = "SELECT e FROM AccSchema e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "AccSchema.findByIds", query = "SELECT e FROM AccSchema e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "AccSchema.findByCode", query = "SELECT e FROM AccSchema e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "AccSchema.findByName", query = "SELECT e FROM AccSchema e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = AccSchema.NQ_FIND_BY_ID, query = "SELECT e FROM AccSchema e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = AccSchema.NQ_FIND_BY_IDS, query = "SELECT e FROM AccSchema e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = AccSchema.NQ_FIND_BY_CODE, query = "SELECT e FROM AccSchema e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = AccSchema.NQ_FIND_BY_NAME, query = "SELECT e FROM AccSchema e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AccSchema implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -247,9 +247,9 @@ public class AccSchema implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        AccSchema e = (AccSchema) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

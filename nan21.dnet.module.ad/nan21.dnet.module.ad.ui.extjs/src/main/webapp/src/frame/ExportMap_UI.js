@@ -20,7 +20,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ExportMap_UI", {
 		.addButton({name:"btnRunExportItem",text:"Export selected", tooltip:"Export the selected item (one at a time).",iconCls:"icon-action-export",disabled:true
 			,handler: this.onBtnRunExportItem,scope:this,stateManager:{name:"selected_one", dc:"item" }	})	
 							 	
-		.addDcFilterFormView("map",{ name:"mapFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMap$Filter",height:50})	 
+		.addDcFilterFormView("map",{ name:"mapFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMap$Filter",height:120})	 
 		.addDcView("map",{ name:"mapList", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMap$List"})	 
 		.addDcFormView("map",{ name:"mapEdit", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMap$Edit",height:120,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnRunExportMap") ,this._elems_.get("btnRunExportItem") ]}]})	 
 		.addDcFilterFormView("item",{ name:"itemFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMapItem$Filter"})	 

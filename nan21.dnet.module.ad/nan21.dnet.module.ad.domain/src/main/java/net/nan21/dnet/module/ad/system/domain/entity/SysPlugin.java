@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** SysPlugin. */
 @Entity
-@Table(name = SysPlugin.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_SYSPLUGIN_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = SysPlugin.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = SysPlugin.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "SysPlugin.findById", query = "SELECT e FROM SysPlugin e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SysPlugin.findByIds", query = "SELECT e FROM SysPlugin e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SysPlugin.findByName", query = "SELECT e FROM SysPlugin e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = SysPlugin.NQ_FIND_BY_ID, query = "SELECT e FROM SysPlugin e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SysPlugin.NQ_FIND_BY_IDS, query = "SELECT e FROM SysPlugin e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SysPlugin.NQ_FIND_BY_NAME, query = "SELECT e FROM SysPlugin e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysPlugin implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -225,9 +225,9 @@ public class SysPlugin implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        SysPlugin e = (SysPlugin) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

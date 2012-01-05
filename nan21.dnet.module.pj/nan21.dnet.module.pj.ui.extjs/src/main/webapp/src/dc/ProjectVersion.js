@@ -32,11 +32,13 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$Filter", {
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["name","project"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

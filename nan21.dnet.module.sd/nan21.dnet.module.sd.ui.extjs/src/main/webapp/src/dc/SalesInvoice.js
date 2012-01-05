@@ -33,15 +33,15 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter", {
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210}) 
 		.addPanel({ name:"col2", layout:"anchor", width:250}) 
-		.addPanel({ name:"col3", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
+		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["docNo","docDate","currency"])
-		.addChildrenTo("col2",["supplier","customer"])
-		.addChildrenTo("col3",["type","status"])
+		.addChildrenTo("col2",["supplier","customer","type","status"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

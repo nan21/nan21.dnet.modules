@@ -29,7 +29,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {
 		.addButton({name:"btnAsgnCategories",text:"Assign Categories", tooltip:"Add product to categories",disabled:true
 			,handler: this.onBtnAsgnCategories,scope:this,stateManager:{name:"record_is_clean", dc:"prod" }	})	
 							 	
-		.addDcFilterFormView("prod",{ name:"prodFilter", xtype:"net.nan21.dnet.module.mm.md.dc.Product$Filter",height:120})	 
+		.addDcFilterFormView("prod",{ name:"prodFilter", xtype:"net.nan21.dnet.module.mm.md.dc.Product$Filter",height:140})	 
 		.addDcView("prod",{ name:"prodList", xtype:"net.nan21.dnet.module.mm.md.dc.Product$List"})	 
 		.addDcFormView("prod",{ name:"prodEdit", xtype:"net.nan21.dnet.module.mm.md.dc.Product$Edit",height:180,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnCategories") ]}]})	 
 		.addDcFormView("prod",{ name:"prodEditInfo", xtype:"net.nan21.dnet.module.mm.md.dc.Product$EditInfo",title:"Details"})	 

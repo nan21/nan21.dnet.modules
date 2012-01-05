@@ -33,6 +33,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter", {
 		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"col3", layout:"anchor", width:280}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -40,6 +41,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter", {
 		.addChildrenTo("col1",["name"])
 		.addChildrenTo("col2",["category","resourceName"])
 		.addChildrenTo("col3",["deployment"])
+    		
 	}
 }); 
  		 

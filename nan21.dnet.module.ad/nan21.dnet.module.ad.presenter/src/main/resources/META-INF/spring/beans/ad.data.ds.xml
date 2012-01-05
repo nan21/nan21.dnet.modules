@@ -10,6 +10,7 @@
  	<bean id="NoteDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.NoteDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.data.ds.filter.NoteDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.data.domain.entity.Note" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -20,6 +21,7 @@
  	<bean id="AttachmentTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.data.ds.filter.AttachmentTypeDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.data.domain.entity.AttachmentType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -30,6 +32,7 @@
  	<bean id="AttachmentTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.data.ds.filter.AttachmentTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.data.domain.entity.AttachmentType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -40,6 +43,7 @@
  	<bean id="AttachmentDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.AttachmentDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.data.ds.filter.AttachmentDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.data.domain.entity.Attachment" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.data.ds.converter.AttachmentDsConv" />
 	</bean>

@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** EmployeeContactType. */
 @Entity
-@Table(name = EmployeeContactType.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_EMPLOYEE_CONTACT_TYPE_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = EmployeeContactType.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = EmployeeContactType.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "EmployeeContactType.findById", query = "SELECT e FROM EmployeeContactType e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "EmployeeContactType.findByIds", query = "SELECT e FROM EmployeeContactType e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "EmployeeContactType.findByName", query = "SELECT e FROM EmployeeContactType e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = EmployeeContactType.NQ_FIND_BY_ID, query = "SELECT e FROM EmployeeContactType e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = EmployeeContactType.NQ_FIND_BY_IDS, query = "SELECT e FROM EmployeeContactType e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = EmployeeContactType.NQ_FIND_BY_NAME, query = "SELECT e FROM EmployeeContactType e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class EmployeeContactType implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -225,9 +225,9 @@ public class EmployeeContactType implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        EmployeeContactType e = (EmployeeContactType) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

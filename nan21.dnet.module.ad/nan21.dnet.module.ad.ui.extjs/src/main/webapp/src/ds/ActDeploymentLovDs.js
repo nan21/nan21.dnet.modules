@@ -1,20 +1,20 @@
  
    	 
-Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentLovDs" , {
+Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentLovDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"string" },
-		{name:"name",type:"string" },
-		{name:"fullName",type:"string" }
+		{name:"id", type:"string"},
+		{name:"name", type:"string"},
+		{name:"fullName", type:"string"}
 	]
 });
 
-Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentLovDsFilter" , {
+Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentLovDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"string" },
-		{name:"name",type:"string" },
-		{name:"fullName",type:"string" }
+		{name:"id", type:"string"},
+		{name:"name", type:"string"},
+		{name:"fullName", type:"string"}
 	] 
 });
 	

@@ -39,8 +39,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = AbsenceRequestItem.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "AbsenceRequestItem.findById", query = "SELECT e FROM AbsenceRequestItem e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "AbsenceRequestItem.findByIds", query = "SELECT e FROM AbsenceRequestItem e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = AbsenceRequestItem.NQ_FIND_BY_ID, query = "SELECT e FROM AbsenceRequestItem e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = AbsenceRequestItem.NQ_FIND_BY_IDS, query = "SELECT e FROM AbsenceRequestItem e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AbsenceRequestItem implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -218,9 +218,9 @@ public class AbsenceRequestItem implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        AbsenceRequestItem e = (AbsenceRequestItem) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

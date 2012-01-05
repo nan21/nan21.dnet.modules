@@ -38,13 +38,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ExportJobItem. */
 @Entity
-@Table(name = ExportJobItem.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_EXP_JOB_ITEM_UK1", columnNames = {
-        "CLIENTID", "JOB_ID", "MAP_ID" }) })
+@Table(name = ExportJobItem.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ExportJobItem.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "JOB_ID", "MAP_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ExportJobItem.findById", query = "SELECT e FROM ExportJobItem e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ExportJobItem.findByIds", query = "SELECT e FROM ExportJobItem e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ExportJobItem.findByJob_map", query = "SELECT e FROM ExportJobItem e WHERE e.clientId = :pClientId and  e.job = :pJob and e.map = :pMap ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ExportJobItem.NQ_FIND_BY_ID, query = "SELECT e FROM ExportJobItem e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ExportJobItem.NQ_FIND_BY_IDS, query = "SELECT e FROM ExportJobItem e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ExportJobItem.NQ_FIND_BY_JOB_MAP, query = "SELECT e FROM ExportJobItem e WHERE e.clientId = :pClientId and  e.job = :pJob and e.map = :pMap ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ExportJobItem.findByJob_map_PRIMITIVE", query = "SELECT e FROM ExportJobItem e WHERE e.clientId = :pClientId and  e.job.id = :pJobId and e.map.id = :pMapId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ExportJobItem implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -246,9 +246,9 @@ public class ExportJobItem implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ExportJobItem e = (ExportJobItem) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

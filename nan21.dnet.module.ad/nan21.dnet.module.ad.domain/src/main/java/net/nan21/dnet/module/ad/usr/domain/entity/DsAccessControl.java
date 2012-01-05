@@ -37,13 +37,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** DsAccessControl. */
 @Entity
-@Table(name = DsAccessControl.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_ACCESS_CONTROL_DS_UK1", columnNames = {
-        "CLIENTID", "ACCESSCONTROL_ID", "DSNAME" }) })
+@Table(name = DsAccessControl.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = DsAccessControl.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "ACCESSCONTROL_ID", "DSNAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "DsAccessControl.findById", query = "SELECT e FROM DsAccessControl e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "DsAccessControl.findByIds", query = "SELECT e FROM DsAccessControl e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "DsAccessControl.findByUnique", query = "SELECT e FROM DsAccessControl e WHERE e.clientId = :pClientId and  e.accessControl = :pAccessControl and e.dsName = :pDsName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = DsAccessControl.NQ_FIND_BY_ID, query = "SELECT e FROM DsAccessControl e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = DsAccessControl.NQ_FIND_BY_IDS, query = "SELECT e FROM DsAccessControl e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = DsAccessControl.NQ_FIND_BY_UNIQUE, query = "SELECT e FROM DsAccessControl e WHERE e.clientId = :pClientId and  e.accessControl = :pAccessControl and e.dsName = :pDsName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "DsAccessControl.findByUnique_PRIMITIVE", query = "SELECT e FROM DsAccessControl e WHERE e.clientId = :pClientId and  e.accessControl.id = :pAccessControlId and e.dsName = :pDsName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class DsAccessControl implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -314,9 +314,9 @@ public class DsAccessControl implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        DsAccessControl e = (DsAccessControl) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

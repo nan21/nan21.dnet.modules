@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.frame.UomConversion_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.uom.dc.UomConversion$Filter",height:80})	 
+		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.uom.dc.UomConversion$Filter",height:120})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.bd.uom.dc.UomConversion$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",preventHeader:true})  	 

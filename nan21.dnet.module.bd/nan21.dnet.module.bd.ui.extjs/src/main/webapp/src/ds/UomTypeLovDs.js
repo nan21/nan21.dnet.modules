@@ -1,22 +1,21 @@
  
    	 
-Ext.define("net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDs" , {
+Ext.define("net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean" }
+		{name:"id", type:"int", useNull:true},
+		{name:"clientId", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean"}
 	]
 });
 
-Ext.define("net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDsFilter" , {
+Ext.define("net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean", useNull:true }
+		{name:"id", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean", useNull:true}
 	] 
 });
 	

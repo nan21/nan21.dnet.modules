@@ -39,8 +39,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = ActActivityInstanceHistory.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ActActivityInstanceHistory.findById", query = "SELECT e FROM ActActivityInstanceHistory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ActActivityInstanceHistory.findByIds", query = "SELECT e FROM ActActivityInstanceHistory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ActActivityInstanceHistory.NQ_FIND_BY_ID, query = "SELECT e FROM ActActivityInstanceHistory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ActActivityInstanceHistory.NQ_FIND_BY_IDS, query = "SELECT e FROM ActActivityInstanceHistory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActActivityInstanceHistory implements Serializable, IModelWithId {
@@ -213,9 +213,6 @@ public class ActActivityInstanceHistory implements Serializable, IModelWithId {
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
-
-        ActActivityInstanceHistory e = (ActActivityInstanceHistory) event
-                .getSource();
 
     }
 

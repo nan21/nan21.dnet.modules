@@ -37,6 +37,7 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$Filter", {
 		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"col3", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -44,6 +45,7 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$Filter", {
 		.addChildrenTo("col1",["employee","type","reason"])
 		.addChildrenTo("col2",["posted"])
 		.addChildrenTo("col3",["from","to"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

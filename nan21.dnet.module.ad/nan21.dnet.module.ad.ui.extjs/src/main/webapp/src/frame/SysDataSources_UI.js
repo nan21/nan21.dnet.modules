@@ -17,7 +17,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", {
 		.addButton({name:"btnSynchronize",text:"Synchronize", tooltip:"Scan classpath and synchronize catalog with deployed instances.",iconCls:"icon-action-synchronize",disabled:false
 			,handler: this.onBtnSynchronize,scope:this	})	
 							 	
-		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter",height:40})	 
+		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter",height:120})	 
 		.addDcView("m",{ name:"mList", xtype:"net.nan21.dnet.module.ad.system.dc.SysDataSource$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnSynchronize") ]}]})	 
 		.addDcView("fields",{ name:"listFields", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsField$CtxList",title:"Fields"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 

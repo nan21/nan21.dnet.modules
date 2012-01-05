@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** SalesInvoiceType. */
 @Entity
-@Table(name = SalesInvoiceType.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "SD_SALES_INVOICE_TYPE_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = SalesInvoiceType.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = SalesInvoiceType.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "SalesInvoiceType.findById", query = "SELECT e FROM SalesInvoiceType e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SalesInvoiceType.findByIds", query = "SELECT e FROM SalesInvoiceType e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SalesInvoiceType.findByName", query = "SELECT e FROM SalesInvoiceType e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = SalesInvoiceType.NQ_FIND_BY_ID, query = "SELECT e FROM SalesInvoiceType e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SalesInvoiceType.NQ_FIND_BY_IDS, query = "SELECT e FROM SalesInvoiceType e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SalesInvoiceType.NQ_FIND_BY_NAME, query = "SELECT e FROM SalesInvoiceType e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SalesInvoiceType implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -225,9 +225,9 @@ public class SalesInvoiceType implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        SalesInvoiceType e = (SalesInvoiceType) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

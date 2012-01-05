@@ -31,17 +31,17 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter", {
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.sd.order.lovs.SalesOrderType", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
 		.addPanel({ name:"col2", layout:"anchor", width:250}) 
-		.addPanel({ name:"col3", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["docNo","docDate","currency"])
-		.addChildrenTo("col2",["type","status"])
-		.addChildrenTo("col3",["customer","deliveryMethod"])
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["docNo","docDate","currency","type","status"])
+		.addChildrenTo("col2",["customer","deliveryMethod"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

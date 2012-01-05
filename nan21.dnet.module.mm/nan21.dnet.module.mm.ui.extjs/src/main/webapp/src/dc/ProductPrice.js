@@ -29,16 +29,16 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPrice$Filter", {
 		.addLov({ name:"uom", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasureCode", dataIndex:"uom",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "uomId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor", width:280}) 
-		.addPanel({ name:"col2", layout:"anchor", width:280}) 
-		.addPanel({ name:"col3", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["product"])
-		.addChildrenTo("col2",["productCategory"])
-		.addChildrenTo("col3",["uom"])
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["product","productCategory"])
+		.addChildrenTo("col2",["uom"])
+    	.addAuditFilter({})	
 	}
 }); 
  	
@@ -55,11 +55,13 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPrice$FilterV", {
 		//containers
 		.addPanel({ name:"col1", layout:"anchor", width:280}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["product","price","productCategory"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

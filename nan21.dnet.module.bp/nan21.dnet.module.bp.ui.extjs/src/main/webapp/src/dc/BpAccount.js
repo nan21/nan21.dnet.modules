@@ -31,12 +31,14 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$Filter", {
 		.addPanel({ name:"col1", layout:"anchor", width:220}) 
 		.addPanel({ name:"col2", layout:"anchor", width:220}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["organization","businessPartner"])
 		.addChildrenTo("col2",["customerGroup","vendorGroup"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 
@@ -66,9 +68,9 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$List", {
 		.addTextColumn({ name:"vendorPaymentTerm", dataIndex:"vendorPaymentTerm",width:120 })   	
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
 	  ;		   
 	}
 });

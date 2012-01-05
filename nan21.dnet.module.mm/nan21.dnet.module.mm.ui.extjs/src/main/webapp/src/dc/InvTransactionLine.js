@@ -34,6 +34,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$Filter", {
 		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"col3", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -41,6 +42,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$Filter", {
 		.addChildrenTo("col1",["itemCode"])
 		.addChildrenTo("col2",["fromSubInventory","fromLocator"])
 		.addChildrenTo("col3",["toSubInventory","toLocator"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

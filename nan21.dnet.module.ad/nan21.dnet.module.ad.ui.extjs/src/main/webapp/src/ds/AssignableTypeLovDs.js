@@ -1,22 +1,21 @@
  
    	 
-Ext.define("net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeLovDs" , {
+Ext.define("net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeLovDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean" }
+		{name:"id", type:"int", useNull:true},
+		{name:"clientId", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean"}
 	]
 });
 
-Ext.define("net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeLovDsFilter" , {
+Ext.define("net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeLovDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean", useNull:true }
+		{name:"id", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean", useNull:true}
 	] 
 });
 	

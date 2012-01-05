@@ -1,7 +1,6 @@
 package net.nan21.dnet.module.mm._presenterdelegates.md;
  
 import java.io.File;
-import java.net.URI;
 import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -11,8 +10,6 @@ import net.nan21.dnet.core.api.service.IEntityServiceFactory;
 import net.nan21.dnet.core.api.service.IFileUploadService;
 import net.nan21.dnet.core.presenter.service.AbstractFileUploadService;
 import net.nan21.dnet.core.presenter.service.ServiceLocator;
-import net.nan21.dnet.module.ad.data.business.service.IAttachmentService;
-import net.nan21.dnet.module.ad.data.domain.entity.Attachment;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttachmentService;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttachment;
 

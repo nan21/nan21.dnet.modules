@@ -28,8 +28,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = TempAsgn.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "TempAsgn.findById", query = "SELECT e FROM TempAsgn e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "TempAsgn.findByIds", query = "SELECT e FROM TempAsgn e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = TempAsgn.NQ_FIND_BY_ID, query = "SELECT e FROM TempAsgn e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = TempAsgn.NQ_FIND_BY_IDS, query = "SELECT e FROM TempAsgn e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 @ReadOnly
 public class TempAsgn implements Serializable, IModelWithId {
 
@@ -83,8 +83,6 @@ public class TempAsgn implements Serializable, IModelWithId {
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
-
-        TempAsgn e = (TempAsgn) event.getSource();
 
     }
 

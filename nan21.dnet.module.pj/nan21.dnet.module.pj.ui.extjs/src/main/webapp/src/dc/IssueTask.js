@@ -41,6 +41,7 @@ labelAlign:"right",labelWidth:70}})
 labelAlign:"right",labelWidth:70}}) 
 		.addPanel({ name:"col3", layout:"anchor",title:"Issue", width:270,xtype:"fieldset", border:true, collapsible:true}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -48,6 +49,7 @@ labelAlign:"right",labelWidth:70}})
 		.addChildrenTo("col1",["type","status","assignee","id"])
 		.addChildrenTo("col2",["project","issue"])
 		.addChildrenTo("col3",["issueType","issuePriority","issueSeverity","issueStatus"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

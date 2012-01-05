@@ -28,6 +28,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$Filter", {
 		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ]  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -39,6 +40,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$Filter", {
 	  ,	    {layout:"anchor", border:false 
 	      ,items:[ this._elems_.get("assignee")] }
 ];
+    		
 	}
 }); 
  		 

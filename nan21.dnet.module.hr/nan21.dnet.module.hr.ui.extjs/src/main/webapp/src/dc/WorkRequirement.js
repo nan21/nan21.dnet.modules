@@ -27,18 +27,15 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.WorkRequirement$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.job.lovs.WorkRequirementTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
-		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		this._elems_.get("main")["items"] = [
-	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("name")] }
-	  ,	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("type")] }
-	  ,	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("active")] }
-];
+		.addChildrenTo("main",["col1"])
+		.addChildrenTo("col1",["name","type","active"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

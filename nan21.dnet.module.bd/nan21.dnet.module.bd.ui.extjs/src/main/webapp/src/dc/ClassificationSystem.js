@@ -29,17 +29,17 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$Filter", 
 		.addBooleanField({ name:"internal", dataIndex:"internal",anchor:"-20"  })
 		.addCombo({ name:"useInContext", xtype:"combo", dataIndex:"useInContext",anchor:"-20",store:[ "BusinessPartner.company", "BusinessPartner.person", "Product"]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
-		.addPanel({ name:"col3", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
+		.addPanel({ name:"col2", layout:"anchor", width:200}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["code","name"])
-		.addChildrenTo("col2",["useInContext"])
-		.addChildrenTo("col3",["active","internal"])
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["code","name","useInContext"])
+		.addChildrenTo("col2",["active","internal"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

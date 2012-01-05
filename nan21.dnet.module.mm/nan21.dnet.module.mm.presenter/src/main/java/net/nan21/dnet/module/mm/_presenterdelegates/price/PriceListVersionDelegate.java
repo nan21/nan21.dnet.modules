@@ -3,7 +3,7 @@ package net.nan21.dnet.module.mm._presenterdelegates.price;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.nan21.dnet.core.presenter.service.BaseDsDelegate;
+import net.nan21.dnet.core.presenter.service.AbstractDsDelegate;
 import net.nan21.dnet.module.mm.md.business.service.IProductService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 import net.nan21.dnet.module.mm.price.business.service.IProductPriceService;
@@ -12,7 +12,7 @@ import net.nan21.dnet.module.mm.price.domain.entity.ProductPrice;
 import net.nan21.dnet.module.mm.price.ds.model.PriceListVersionDs;
 import net.nan21.dnet.module.mm.price.ds.param.PriceListVersionDsParam;
 
-public class PriceListVersionDelegate extends BaseDsDelegate<PriceListVersionDs, PriceListVersionDsParam>{
+public class PriceListVersionDelegate extends AbstractDsDelegate {
 
 	
 	public void addProductsFromCategory(PriceListVersionDs ds, PriceListVersionDsParam params) throws Exception {

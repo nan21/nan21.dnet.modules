@@ -31,12 +31,14 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$Filter", {
 		.addPanel({ name:"col1", layout:"anchor", width:220}) 
 		.addPanel({ name:"col2", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["firstName","lastName"])
 		.addChildrenTo("col2",["bpartnerCode","gender"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

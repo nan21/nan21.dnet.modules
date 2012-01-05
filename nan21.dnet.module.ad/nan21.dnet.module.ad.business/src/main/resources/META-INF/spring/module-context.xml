@@ -100,8 +100,8 @@
 	
 	<tx:annotation-driven mode="aspectj" />
 	<bean id="entityServiceFactory" class="net.nan21.dnet.core.business.service.EntityServiceFactory">
-	</bean>
-	
+	</bean> 
+	 
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="insert" read-only="false" />
@@ -110,7 +110,7 @@
 			<tx:method name="do*" read-only="false" />				
 		</tx:attributes>
 	</tx:advice>
-	
+	 
 	<tx:advice id="txAdviceAsgn" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="setup" read-only="false" />

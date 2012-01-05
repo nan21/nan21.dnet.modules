@@ -118,7 +118,7 @@
 			<tx:method name="move*" read-only="false" />				
 		</tx:attributes>
 	</tx:advice>
-	
+	 
 	<tx:advice id="txAdviceSetupParticipant" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="execute" read-only="false" />					

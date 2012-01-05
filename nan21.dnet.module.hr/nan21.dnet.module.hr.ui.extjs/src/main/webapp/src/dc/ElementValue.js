@@ -27,15 +27,15 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter", {
 		.addLov({ name:"employeeName", xtype:"net.nan21.dnet.module.hr.employee.lovs.Employees", dataIndex:"employeeName",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "employeeId"} ]  })
 		.addLov({ name:"period", xtype:"net.nan21.dnet.module.hr.payroll.lovs.PayrollPeriods", dataIndex:"period",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "periodId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["element","period"])
-		.addChildrenTo("col2",["employeeName"])
+		.addChildrenTo("main",["col1"])
+		.addChildrenTo("col1",["element","period","employeeName"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

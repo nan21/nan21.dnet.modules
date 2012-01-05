@@ -39,13 +39,14 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** ProductPrice. */
 @Entity
-@Table(name = ProductPrice.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PROD_PRICE_UK1", columnNames = {
-        "CLIENTID", "PRICELISTVERSION_ID", "PRODUCT_ID" }) })
+@Table(name = ProductPrice.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ProductPrice.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "PRICELISTVERSION_ID",
+        "PRODUCT_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ProductPrice.findById", query = "SELECT e FROM ProductPrice e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductPrice.findByIds", query = "SELECT e FROM ProductPrice e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductPrice.findByName", query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceListVersion = :pPriceListVersion and e.product = :pProduct ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductPrice.NQ_FIND_BY_ID, query = "SELECT e FROM ProductPrice e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductPrice.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductPrice e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductPrice.NQ_FIND_BY_NAME, query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceListVersion = :pPriceListVersion and e.product = :pProduct ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProductPrice.findByName_PRIMITIVE", query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceListVersion.id = :pPriceListVersionId and e.product.id = :pProductId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductPrice implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -242,9 +243,9 @@ public class ProductPrice implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProductPrice e = (ProductPrice) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

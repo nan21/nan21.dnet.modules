@@ -13,9 +13,9 @@ Ext.define("net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("status",{ name:"statusFilter", xtype:"net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$Filter",height:80})	 
+		.addDcFilterFormView("status",{ name:"statusFilter", xtype:"net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$Filter",height:120})	 
 		.addDcView("status",{ name:"statusEditList", xtype:"net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$EditList", frame:true})	 
-		.addDcFilterFormView("priority",{ name:"priorityFilter", xtype:"net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority$Filter",height:80})	 
+		.addDcFilterFormView("priority",{ name:"priorityFilter", xtype:"net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority$Filter",height:120})	 
 		.addDcView("priority",{ name:"priorityEditList", xtype:"net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasStatus", layout:"border", defaults:{split:true},title:"Event status",preventHeader:true})  	 

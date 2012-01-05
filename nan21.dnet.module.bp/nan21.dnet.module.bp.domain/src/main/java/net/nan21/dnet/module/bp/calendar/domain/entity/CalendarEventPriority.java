@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** CalendarEventPriority. */
 @Entity
-@Table(name = CalendarEventPriority.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BP_CLNDR_EVENT_PRIORITY_UK1", columnNames = {
-        "CLIENTID", "EVENTTYPE", "NAME" }) })
+@Table(name = CalendarEventPriority.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = CalendarEventPriority.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "EVENTTYPE", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "CalendarEventPriority.findById", query = "SELECT e FROM CalendarEventPriority e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CalendarEventPriority.findByIds", query = "SELECT e FROM CalendarEventPriority e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CalendarEventPriority.findByType_and_name", query = "SELECT e FROM CalendarEventPriority e WHERE e.clientId = :pClientId and  e.eventType = :pEventType and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = CalendarEventPriority.NQ_FIND_BY_ID, query = "SELECT e FROM CalendarEventPriority e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CalendarEventPriority.NQ_FIND_BY_IDS, query = "SELECT e FROM CalendarEventPriority e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CalendarEventPriority.NQ_FIND_BY_TYPE_AND_NAME, query = "SELECT e FROM CalendarEventPriority e WHERE e.clientId = :pClientId and  e.eventType = :pEventType and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CalendarEventPriority implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -237,9 +237,9 @@ public class CalendarEventPriority implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        CalendarEventPriority e = (CalendarEventPriority) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

@@ -13,6 +13,7 @@
  	<bean id="OrganizationHierarchyItemsAsgnService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItemsAsgn" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItemsAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />		 
 	  	<property name="leftTable" value="BD_ORGANIZATION" />
 		this.rightTable = "BD_ORG_HIERARCHY_ITEM";

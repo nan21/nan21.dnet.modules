@@ -1,22 +1,21 @@
  
    	 
-Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs" , {
+Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean" }
+		{name:"id", type:"int", useNull:true},
+		{name:"clientId", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean"}
 	]
 });
 
-Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDsFilter" , {
+Ext.define("net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean", useNull:true }
+		{name:"id", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean", useNull:true}
 	] 
 });
 	

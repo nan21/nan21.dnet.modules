@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.UserTypes_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("userType",{ name:"filterUserType", xtype:"net.nan21.dnet.module.ad.usr.dc.UserType$Filter",height:40})	 
+		.addDcFilterFormView("userType",{ name:"filterUserType", xtype:"net.nan21.dnet.module.ad.usr.dc.UserType$Filter",height:120})	 
 		.addDcView("userType",{ name:"listUserType", xtype:"net.nan21.dnet.module.ad.usr.dc.UserType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

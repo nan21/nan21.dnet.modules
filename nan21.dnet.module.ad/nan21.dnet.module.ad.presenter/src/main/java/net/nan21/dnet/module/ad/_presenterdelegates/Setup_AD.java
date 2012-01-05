@@ -12,9 +12,7 @@ import net.nan21.dnet.core.api.setup.SetupTask;
 import net.nan21.dnet.core.api.setup.SetupTaskParam;
 import net.nan21.dnet.core.presenter.service.AbstractPresenterSetupParticipant;
 import net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobDelegate;
-import net.nan21.dnet.module.ad._presenterdelegates.system.SysDataSourceDelegate;
 import net.nan21.dnet.module.ad.client.business.service.IClientService;
-import net.nan21.dnet.module.ad.client.business.serviceimpl.ClientService;
 import net.nan21.dnet.module.ad.client.domain.entity.Client;
 import net.nan21.dnet.module.ad.impex.business.service.IImportJobService;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportJob;
@@ -47,10 +45,10 @@ public class Setup_AD extends AbstractPresenterSetupParticipant implements
 	@Override
 	protected void onExecute() throws Exception {
 
-		SysDataSourceDelegate d = new SysDataSourceDelegate();
-		d.setAppContext(appContext);
-		d.execute(null, null);
-
+		//SysDataSourceDelegate d = new SysDataSourceDelegate();
+		//d.setAppContext(appContext);
+		//d.synchronizeCatalog(null);
+ 
 		SetupTask task = (SetupTask) tasks.get(0);
 
 		Map<String, ISetupTaskParam> paramMap = task.getParamsAsMap();

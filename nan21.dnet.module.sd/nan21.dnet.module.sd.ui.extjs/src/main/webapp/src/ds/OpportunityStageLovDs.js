@@ -1,22 +1,21 @@
  
    	 
-Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStageLovDs" , {
+Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStageLovDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean" }
+		{name:"id", type:"int", useNull:true},
+		{name:"clientId", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean"}
 	]
 });
 
-Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStageLovDsFilter" , {
+Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStageLovDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"id",type:"int", useNull:true },
-		{name:"clientId",type:"int", useNull:true },
-		{name:"name",type:"string" },
-		{name:"active",type:"boolean", useNull:true }
+		{name:"id", type:"int", useNull:true},
+		{name:"name", type:"string"},
+		{name:"active", type:"boolean", useNull:true}
 	] 
 });
 	

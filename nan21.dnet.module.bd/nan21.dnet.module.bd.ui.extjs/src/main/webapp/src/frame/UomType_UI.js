@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.frame.UomType_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("type",{ name:"typeFilter", xtype:"net.nan21.dnet.module.bd.uom.dc.UomType$Filter",height:80})	 
+		.addDcFilterFormView("type",{ name:"typeFilter", xtype:"net.nan21.dnet.module.bd.uom.dc.UomType$Filter",height:120})	 
 		.addDcView("type",{ name:"typeEditList", xtype:"net.nan21.dnet.module.bd.uom.dc.UomType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

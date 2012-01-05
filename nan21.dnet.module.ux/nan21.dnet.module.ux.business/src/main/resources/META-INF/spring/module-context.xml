@@ -108,7 +108,7 @@
 			<tx:method name="do*" read-only="false" />
 		</tx:attributes>
 	</tx:advice>
-	
+	 
 	<tx:advice id="txAdviceAsgn" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="setup" read-only="false" />

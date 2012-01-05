@@ -7,15 +7,17 @@ package net.nan21.dnet.module.bp.calendar.ds.qb;
 
 import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
 import net.nan21.dnet.core.presenter.model.EmptyParam;
+import net.nan21.dnet.module.bp.calendar.ds.filter.MyCalendarMeetingDsFilter;
 
 import net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarMeetingDs;
 import net.nan21.dnet.core.api.session.Session;
 
-public class MyCalendarMeetingDsQueryBuilder extends
-        QueryBuilderWithJpql<MyCalendarMeetingDs, EmptyParam> {
+public class MyCalendarMeetingDsQueryBuilder
+        extends
+        QueryBuilderWithJpql<MyCalendarMeetingDs, MyCalendarMeetingDsFilter, EmptyParam> {
 
     @Override
-    public void setFilter(MyCalendarMeetingDs filter) {
+    public void setFilter(MyCalendarMeetingDsFilter filter) {
         filter.setCreatedBy(Session.user.get().getUsername());
         this.filter = filter;
     }

@@ -42,8 +42,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = InvBalance.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "InvBalance.findById", query = "SELECT e FROM InvBalance e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "InvBalance.findByIds", query = "SELECT e FROM InvBalance e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = InvBalance.NQ_FIND_BY_ID, query = "SELECT e FROM InvBalance e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = InvBalance.NQ_FIND_BY_IDS, query = "SELECT e FROM InvBalance e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class InvBalance implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -240,9 +240,9 @@ public class InvBalance implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        InvBalance e = (InvBalance) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

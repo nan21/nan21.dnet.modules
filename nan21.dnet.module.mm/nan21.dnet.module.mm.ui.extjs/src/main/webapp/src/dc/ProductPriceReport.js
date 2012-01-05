@@ -33,8 +33,10 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport$Filter", {
 		//containers
 		.addPanel({ name:"col1", layout:"anchor", width:250}) 
 		.addPanel({ name:"col2", layout:"anchor", width:280}) 
-		.addPanel({ name:"col3", layout:"anchor", width:250}) 
+		.addPanel({ name:"col3", layout:"anchor", width:200, defaults:{
+labelAlign:"right",labelWidth:70}}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -42,6 +44,7 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport$Filter", {
 		.addChildrenTo("col1",["priceList","priceListVersion","currency"])
 		.addChildrenTo("col2",["product","productCategory"])
 		.addChildrenTo("col3",["validAt","price"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

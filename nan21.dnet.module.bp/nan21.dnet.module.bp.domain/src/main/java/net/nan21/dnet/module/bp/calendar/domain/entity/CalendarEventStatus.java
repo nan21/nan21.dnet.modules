@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** CalendarEventStatus. */
 @Entity
-@Table(name = CalendarEventStatus.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BP_CLNDR_EVENT_STATUS_UK1", columnNames = {
-        "CLIENTID", "EVENTTYPE", "NAME" }) })
+@Table(name = CalendarEventStatus.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = CalendarEventStatus.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "EVENTTYPE", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "CalendarEventStatus.findById", query = "SELECT e FROM CalendarEventStatus e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CalendarEventStatus.findByIds", query = "SELECT e FROM CalendarEventStatus e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CalendarEventStatus.findByType_and_name", query = "SELECT e FROM CalendarEventStatus e WHERE e.clientId = :pClientId and  e.eventType = :pEventType and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = CalendarEventStatus.NQ_FIND_BY_ID, query = "SELECT e FROM CalendarEventStatus e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CalendarEventStatus.NQ_FIND_BY_IDS, query = "SELECT e FROM CalendarEventStatus e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CalendarEventStatus.NQ_FIND_BY_TYPE_AND_NAME, query = "SELECT e FROM CalendarEventStatus e WHERE e.clientId = :pClientId and  e.eventType = :pEventType and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CalendarEventStatus implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -237,9 +237,9 @@ public class CalendarEventStatus implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        CalendarEventStatus e = (CalendarEventStatus) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

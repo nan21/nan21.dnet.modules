@@ -39,13 +39,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product accounts.*/
 @Entity
-@Table(name = ProductAccount.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PROD_ACCOUNT_UK1", columnNames = {
-        "CLIENTID", "PRODUCT_ID", "ORGANIZATION_ID" }) })
+@Table(name = ProductAccount.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ProductAccount.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "PRODUCT_ID", "ORGANIZATION_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ProductAccount.findById", query = "SELECT e FROM ProductAccount e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductAccount.findByIds", query = "SELECT e FROM ProductAccount e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductAccount.findByCode", query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and  e.product = :pProduct and e.organization = :pOrganization ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductAccount.NQ_FIND_BY_ID, query = "SELECT e FROM ProductAccount e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductAccount.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductAccount e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductAccount.NQ_FIND_BY_CODE, query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and  e.product = :pProduct and e.organization = :pOrganization ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProductAccount.findByCode_PRIMITIVE", query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.organization.id = :pOrganizationId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAccount implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -229,9 +229,9 @@ public class ProductAccount implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProductAccount e = (ProductAccount) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

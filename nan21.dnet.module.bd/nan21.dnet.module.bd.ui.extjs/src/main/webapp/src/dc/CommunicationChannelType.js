@@ -28,6 +28,7 @@ Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter"
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -39,6 +40,7 @@ Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter"
 	  ,	    {layout:"anchor", border:false 
 	      ,items:[ this._elems_.get("active")] }
 ];
+    	.addAuditFilter({})	
 	}
 }); 
  	

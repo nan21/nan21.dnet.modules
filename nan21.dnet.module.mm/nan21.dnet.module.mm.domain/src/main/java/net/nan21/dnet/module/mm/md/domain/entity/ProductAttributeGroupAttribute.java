@@ -38,13 +38,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Product attribute group.*/
 @Entity
-@Table(name = ProductAttributeGroupAttribute.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "MM_PROD_ATTRGRP_ATTR_UK1", columnNames = {
-        "CLIENTID", "GROUP_ID", "ATTRIBUTE_ID" }) })
+@Table(name = ProductAttributeGroupAttribute.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ProductAttributeGroupAttribute.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "GROUP_ID", "ATTRIBUTE_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ProductAttributeGroupAttribute.findById", query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductAttributeGroupAttribute.findByIds", query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductAttributeGroupAttribute.findByName", query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.clientId = :pClientId and  e.group = :pGroup and e.attribute = :pAttribute ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductAttributeGroupAttribute.NQ_FIND_BY_ID, query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductAttributeGroupAttribute.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductAttributeGroupAttribute.NQ_FIND_BY_NAME, query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.clientId = :pClientId and  e.group = :pGroup and e.attribute = :pAttribute ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProductAttributeGroupAttribute.findByName_PRIMITIVE", query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.clientId = :pClientId and  e.group.id = :pGroupId and e.attribute.id = :pAttributeId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAttributeGroupAttribute implements Serializable,
         IModelWithId, IModelWithClientId {
@@ -245,10 +245,9 @@ public class ProductAttributeGroupAttribute implements Serializable,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ProductAttributeGroupAttribute e = (ProductAttributeGroupAttribute) event
-                .getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

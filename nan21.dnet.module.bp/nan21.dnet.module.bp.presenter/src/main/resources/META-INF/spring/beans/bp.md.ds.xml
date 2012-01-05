@@ -10,6 +10,7 @@
  	<bean id="BusinessPartnerDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.md.ds.filter.BusinessPartnerDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BusinessPartnerDsConv" />
 	</bean>
@@ -21,6 +22,7 @@
  	<bean id="BusinessPartnerLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.md.ds.filter.BusinessPartnerLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -31,6 +33,7 @@
  	<bean id="ContactDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.ContactDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.md.ds.filter.ContactDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.Contact" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.ContactDsConv" />
 	</bean>
@@ -42,6 +45,7 @@
  	<bean id="ContactLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.ContactLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.md.ds.filter.ContactLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.Contact" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -52,6 +56,7 @@
  	<bean id="BpContactLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpContactLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.md.ds.filter.BpContactLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.Contact" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -62,6 +67,7 @@
  	<bean id="BpBankAccountDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpBankAccountDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.md.ds.filter.BpBankAccountDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BpBankAccount" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BpBankAccountDsConv" />
 	</bean>
@@ -73,6 +79,7 @@
  	<bean id="BpBankAccountLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpBankAccountLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.md.ds.filter.BpBankAccountLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BpBankAccount" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -83,6 +90,7 @@
  	<bean id="BpAccountDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpAccountDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.md.ds.filter.BpAccountDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BpAccount" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BpAccountDsConv" />
 	</bean>
@@ -94,6 +102,7 @@
  	<bean id="BpClassificationDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpClassificationDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.md.ds.filter.BpClassificationDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BpClassification" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BpClassificationDsConv" />
 	</bean>

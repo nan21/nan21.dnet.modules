@@ -27,15 +27,15 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$Filter", {
 		.addCombo({ name:"eventType", xtype:"combo", dataIndex:"eventType",anchor:"-20",store:[ "call", "meeting", "task"]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210, height:50}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["name"])
-		.addChildrenTo("col2",["eventType","active"])
+		.addChildrenTo("main",["col1"])
+		.addChildrenTo("col1",["name","eventType","active"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

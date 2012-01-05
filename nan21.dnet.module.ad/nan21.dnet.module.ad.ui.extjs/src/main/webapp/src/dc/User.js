@@ -29,17 +29,18 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addBooleanField({ name:"locked", dataIndex:"locked",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
-		.addPanel({ name:"col3", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
+		.addPanel({ name:"col2", layout:"anchor", width:200, defaults:{
+labelAlign:"right",labelWidth:70}}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["name","code"])
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["name","code","accountType"])
 		.addChildrenTo("col2",["active","locked"])
-		.addChildrenTo("col3",["accountType"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

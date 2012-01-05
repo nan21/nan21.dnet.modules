@@ -27,10 +27,12 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$Filter", {
 		.addTextField({ name:"target", dataIndex:"target",anchor:"-20",maxLength:255  })
 		//containers
 		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210}) 
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["source","target"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

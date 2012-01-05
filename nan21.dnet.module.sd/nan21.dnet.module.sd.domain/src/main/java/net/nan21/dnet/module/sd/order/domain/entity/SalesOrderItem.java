@@ -41,8 +41,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = SalesOrderItem.TABLE_NAME)
 @Customizer(SalesOrderItemEventHandler.class)
 @NamedQueries({
-        @NamedQuery(name = "SalesOrderItem.findById", query = "SELECT e FROM SalesOrderItem e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SalesOrderItem.findByIds", query = "SELECT e FROM SalesOrderItem e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = SalesOrderItem.NQ_FIND_BY_ID, query = "SELECT e FROM SalesOrderItem e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SalesOrderItem.NQ_FIND_BY_IDS, query = "SELECT e FROM SalesOrderItem e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SalesOrderItem implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -251,9 +251,9 @@ public class SalesOrderItem implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        SalesOrderItem e = (SalesOrderItem) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

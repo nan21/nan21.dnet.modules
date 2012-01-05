@@ -40,16 +40,16 @@ import org.hibernate.validator.constraints.NotBlank;
 /** SysDataSource. */
 @Entity
 @Table(name = SysDataSource.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "AD_SYSDATASOURCE_UK1", columnNames = {
+        @UniqueConstraint(name = SysDataSource.TABLE_NAME + "_UK1", columnNames = {
                 "CLIENTID", "NAME" }),
-        @UniqueConstraint(name = "AD_SYSDATASOURCE_UK2", columnNames = {
+        @UniqueConstraint(name = SysDataSource.TABLE_NAME + "_UK2", columnNames = {
                 "CLIENTID", "MODEL" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "SysDataSource.findById", query = "SELECT e FROM SysDataSource e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SysDataSource.findByIds", query = "SELECT e FROM SysDataSource e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SysDataSource.findByName", query = "SELECT e FROM SysDataSource e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SysDataSource.findByModel", query = "SELECT e FROM SysDataSource e WHERE e.clientId = :pClientId and  e.model = :pModel ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = SysDataSource.NQ_FIND_BY_ID, query = "SELECT e FROM SysDataSource e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SysDataSource.NQ_FIND_BY_IDS, query = "SELECT e FROM SysDataSource e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SysDataSource.NQ_FIND_BY_NAME, query = "SELECT e FROM SysDataSource e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SysDataSource.NQ_FIND_BY_MODEL, query = "SELECT e FROM SysDataSource e WHERE e.clientId = :pClientId and  e.model = :pModel ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysDataSource implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -273,9 +273,9 @@ public class SysDataSource implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        SysDataSource e = (SysDataSource) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

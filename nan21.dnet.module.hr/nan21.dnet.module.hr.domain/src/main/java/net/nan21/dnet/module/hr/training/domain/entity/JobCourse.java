@@ -40,8 +40,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = JobCourse.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "JobCourse.findById", query = "SELECT e FROM JobCourse e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "JobCourse.findByIds", query = "SELECT e FROM JobCourse e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = JobCourse.NQ_FIND_BY_ID, query = "SELECT e FROM JobCourse e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = JobCourse.NQ_FIND_BY_IDS, query = "SELECT e FROM JobCourse e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class JobCourse implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -233,9 +233,9 @@ public class JobCourse implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        JobCourse e = (JobCourse) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

@@ -20,7 +20,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ExportJob_UI", {
 		.addButton({name:"btnRunExportItem",text:"Export selected", tooltip:"Export the selected set (one at a time).",iconCls:"icon-action-export",disabled:true
 			,handler: this.onBtnRunExportItem,scope:this,stateManager:{name:"selected_one", dc:"item" }	})	
 							 	
-		.addDcFilterFormView("job",{ name:"jobFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportJob$Filter",height:50})	 
+		.addDcFilterFormView("job",{ name:"jobFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportJob$Filter",height:120})	 
 		.addDcView("job",{ name:"jobList", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportJob$List"})	 
 		.addDcFormView("job",{ name:"jobEdit", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportJob$Edit",height:140,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnRunExport") ,this._elems_.get("btnRunExportItem") ]}]})	 
 		.addDcView("item",{ name:"itemEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportJobItem$CtxEditList", frame:true})	 

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.mm.www.controller;version="1.0.0
- .M5";uses:="javax.servlet.http,net.nan21.dnet.core.api,net.nan21.dnet
+ .M6";uses:="javax.servlet.http,net.nan21.dnet.core.api,net.nan21.dnet
  .core.api.service,net.nan21.dnet.core.presenter.service,org.springfra
  mework.beans.factory.annotation,org.springframework.context,org.sprin
  gframework.context.annotation,org.springframework.stereotype,org.spri
@@ -9,17 +9,17 @@ Bundle-ClassPath: WEB-INF/classes
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet MM - www
 Import-Bundle: org.eclipse.virgo.snaps.api;version="[3.0,4.0)",nan21.d
- net.core.api;version="[1.0.0.M5,1.0.0.M5]",nan21.dnet.core.domain;ver
- sion="[1.0.0.M5,1.0.0.M5]",javax.persistence;version="[2.0,2.1)",org.
+ net.core.api;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.core.domain;ver
+ sion="[1.0.0.M6,1.0.0.M6]",javax.persistence;version="[2.0,2.1)",org.
  eclipse.persistence.jpa;version="[2.1,2.5)",org.eclipse.persistence.c
  ore;version="[2.0,2.5)",nan21.dnet.module.mm.domain;version="[1.0.0.M
- 5,1.0.0.M5]",nan21.dnet.module.ad.domain;version="[1.0.0.M5,1.0.0.M5]
- ",nan21.dnet.module.bd.domain;version="[1.0.0.M5,1.0.0.M5]",nan21.dne
- t.module.mm.presenter;version="[1.0.0.M5,1.0.0.M5]",nan21.dnet.module
- .ad.presenter;version="[1.0.0.M5,1.0.0.M5]",nan21.dnet.module.bd.pres
- enter;version="[1.0.0.M5,1.0.0.M5]"
+ 6,1.0.0.M6]",nan21.dnet.module.ad.domain;version="[1.0.0.M6,1.0.0.M6]
+ ",nan21.dnet.module.bd.domain;version="[1.0.0.M6,1.0.0.M6]",nan21.dne
+ t.module.mm.presenter;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.module
+ .ad.presenter;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.module.bd.pres
+ enter;version="[1.0.0.M6,1.0.0.M6]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M5
+Bundle-Version: 1.0.0.M6
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.mm.www

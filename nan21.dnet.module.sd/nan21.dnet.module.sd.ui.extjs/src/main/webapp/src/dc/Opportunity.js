@@ -34,15 +34,15 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Filter", {
 		//containers
 		.addPanel({ name:"col1", layout:"anchor", width:250}) 
 		.addPanel({ name:"col2", layout:"anchor", width:250}) 
-		.addPanel({ name:"col3", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["name","account","assignedTo"])
-		.addChildrenTo("col2",["status","priority"])
-		.addChildrenTo("col3",["salesStage","leadSource","resultReason"])
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["name","account","assignedTo","status","priority"])
+		.addChildrenTo("col2",["salesStage","leadSource","resultReason"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

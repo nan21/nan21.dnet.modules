@@ -1,16 +1,10 @@
 package net.nan21.dnet.module.ad._businessdelegates;
 
 import java.io.File;
-import java.io.IOException;
-import java.math.BigInteger;
-import java.security.MessageDigest;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.persistence.tools.file.FileUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.FileCopyUtils;
 
 import net.nan21.dnet.core.api.session.Session;
@@ -30,9 +24,6 @@ import net.nan21.dnet.module.ad.impex.domain.entity.ImportJob;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportJobItem;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportMap;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem;
-import net.nan21.dnet.module.ad.usr.domain.entity.Role;
-import net.nan21.dnet.module.ad.usr.domain.entity.User;
-import net.nan21.dnet.module.ad.usr.domain.entity.UserType;
 
 public class Setup_AD extends AbstractBusinessSetupParticipant
 implements ISetupParticipant {

@@ -37,13 +37,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** RatingLevel. */
 @Entity
-@Table(name = RatingLevel.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_RATING_LEVEL_UK1", columnNames = {
-        "CLIENTID", "RATINGSCALE_ID", "NAME" }) })
+@Table(name = RatingLevel.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = RatingLevel.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "RATINGSCALE_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "RatingLevel.findById", query = "SELECT e FROM RatingLevel e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "RatingLevel.findByIds", query = "SELECT e FROM RatingLevel e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "RatingLevel.findByName", query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and  e.ratingScale = :pRatingScale and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = RatingLevel.NQ_FIND_BY_ID, query = "SELECT e FROM RatingLevel e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = RatingLevel.NQ_FIND_BY_IDS, query = "SELECT e FROM RatingLevel e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = RatingLevel.NQ_FIND_BY_NAME, query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and  e.ratingScale = :pRatingScale and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "RatingLevel.findByName_PRIMITIVE", query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and  e.ratingScale.id = :pRatingScaleId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class RatingLevel implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -259,9 +259,9 @@ public class RatingLevel implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        RatingLevel e = (RatingLevel) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

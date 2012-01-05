@@ -27,15 +27,15 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.Assignable$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.ad.usr.lovs.AssignableTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["name","type"])
-		.addChildrenTo("col2",["active"])
+		.addChildrenTo("main",["col1"])
+		.addChildrenTo("col1",["name","active","type"])
+    	.addAuditFilter({})	
 	}
 }); 
  	

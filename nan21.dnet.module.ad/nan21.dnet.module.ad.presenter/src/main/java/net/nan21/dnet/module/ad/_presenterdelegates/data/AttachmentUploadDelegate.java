@@ -1,7 +1,6 @@
 package net.nan21.dnet.module.ad._presenterdelegates.data;
  
 import java.io.File;
-import java.net.URI;
 import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;

@@ -33,13 +33,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** AbsenceCategory. */
 @Entity
-@Table(name = AbsenceCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "HR_ABSENCE_CATEGORY_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = AbsenceCategory.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = AbsenceCategory.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "AbsenceCategory.findById", query = "SELECT e FROM AbsenceCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "AbsenceCategory.findByIds", query = "SELECT e FROM AbsenceCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "AbsenceCategory.findByName", query = "SELECT e FROM AbsenceCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = AbsenceCategory.NQ_FIND_BY_ID, query = "SELECT e FROM AbsenceCategory e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = AbsenceCategory.NQ_FIND_BY_IDS, query = "SELECT e FROM AbsenceCategory e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = AbsenceCategory.NQ_FIND_BY_NAME, query = "SELECT e FROM AbsenceCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AbsenceCategory implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -225,9 +225,9 @@ public class AbsenceCategory implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        AbsenceCategory e = (AbsenceCategory) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

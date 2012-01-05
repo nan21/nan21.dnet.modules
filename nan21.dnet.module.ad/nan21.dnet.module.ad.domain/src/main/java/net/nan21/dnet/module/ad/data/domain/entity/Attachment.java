@@ -51,8 +51,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = Attachment.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "Attachment.findById", query = "SELECT e FROM Attachment e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Attachment.findByIds", query = "SELECT e FROM Attachment e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = Attachment.NQ_FIND_BY_ID, query = "SELECT e FROM Attachment e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Attachment.NQ_FIND_BY_IDS, query = "SELECT e FROM Attachment e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Attachment implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -391,9 +391,9 @@ public class Attachment implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        Attachment e = (Attachment) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

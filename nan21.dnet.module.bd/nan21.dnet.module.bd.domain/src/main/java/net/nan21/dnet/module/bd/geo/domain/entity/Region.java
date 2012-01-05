@@ -37,13 +37,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Region. */
 @Entity
-@Table(name = Region.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "BD_GEO_REGION_UK1", columnNames = {
-        "CLIENTID", "COUNTRY_ID", "CODE" }) })
+@Table(name = Region.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = Region.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "COUNTRY_ID", "CODE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "Region.findById", query = "SELECT e FROM Region e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Region.findByIds", query = "SELECT e FROM Region e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Region.findByCodeAndCountry", query = "SELECT e FROM Region e WHERE e.clientId = :pClientId and  e.country = :pCountry and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Region.NQ_FIND_BY_ID, query = "SELECT e FROM Region e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Region.NQ_FIND_BY_IDS, query = "SELECT e FROM Region e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Region.NQ_FIND_BY_CODEANDCOUNTRY, query = "SELECT e FROM Region e WHERE e.clientId = :pClientId and  e.country = :pCountry and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Region.findByCodeAndCountry_PRIMITIVE", query = "SELECT e FROM Region e WHERE e.clientId = :pClientId and  e.country.id = :pCountryId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Region implements Serializable, IModelWithId, IModelWithClientId {
 
@@ -270,9 +270,9 @@ public class Region implements Serializable, IModelWithId, IModelWithClientId {
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        Region e = (Region) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

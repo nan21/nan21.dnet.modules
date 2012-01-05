@@ -24,7 +24,7 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI", {
 		.addButton({name:"btnUploadAttachment",text:"Upload...", tooltip:"Upload attachment file.",disabled:true
 			,handler: this.onBtnUploadAttachment,scope:this,stateManager:{name:"selected_one_clean", dc:"atch" }	})	
 							 	
-		.addDcFilterFormView("order",{ name:"orderFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter",height:110})	 
+		.addDcFilterFormView("order",{ name:"orderFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter",height:150})	 
 		.addDcView("order",{ name:"orderList", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$List"})	 
 		.addDcFormView("order",{ name:"orderEdit", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$Edit",height:180})	 
 		.addDcView("item",{ name:"itemEditList", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrderItem$EditList", frame:true,title:"Items"})	 

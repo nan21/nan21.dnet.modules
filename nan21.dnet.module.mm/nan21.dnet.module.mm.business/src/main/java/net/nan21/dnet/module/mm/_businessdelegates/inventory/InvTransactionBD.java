@@ -1,12 +1,7 @@
 package net.nan21.dnet.module.mm._businessdelegates.inventory;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;  
 import java.util.List;
-
-import org.eclipse.persistence.config.CacheUsage;
-import org.eclipse.persistence.config.QueryHints;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate; 
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvOperation;

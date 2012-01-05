@@ -27,7 +27,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI", {
 		.addButton({name:"btnUploadAttachment",text:"Upload...", tooltip:"Upload attachment file.",disabled:true
 			,handler: this.onBtnUploadAttachment,scope:this,stateManager:{name:"selected_one_clean", dc:"atch" }	})	
 							 	
-		.addDcFilterFormView("opportunity",{ name:"opportunityFilter", xtype:"net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Filter"})	 
+		.addDcFilterFormView("opportunity",{ name:"opportunityFilter", xtype:"net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Filter",height:150})	 
 		.addDcView("opportunity",{ name:"opportunityList", xtype:"net.nan21.dnet.module.sd.opportunity.dc.Opportunity$List"})	 
 		.addDcFormView("opportunity",{ name:"opportunityEdit", xtype:"net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Edit",height:220})	 
 		.addDcView("note",{ name:"noteList", xtype:"net.nan21.dnet.module.ad.data.dc.Note$List",width:300})	 

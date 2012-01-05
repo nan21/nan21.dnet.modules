@@ -28,6 +28,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectComponent$Filter", {
 		.addTextField({ name:"project", dataIndex:"project",anchor:"-20",maxLength:32  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -39,6 +40,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectComponent$Filter", {
 	  ,	    {layout:"anchor", border:false 
 	      ,items:[ this._elems_.get("active")] }
 ];
+    		
 	}
 }); 
  	

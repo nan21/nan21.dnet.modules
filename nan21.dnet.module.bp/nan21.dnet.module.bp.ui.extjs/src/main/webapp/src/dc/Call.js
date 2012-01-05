@@ -36,6 +36,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$Filter", {
 		.addPanel({ name:"col3", layout:"anchor",width:210}) 
 		.addPanel({ name:"col4", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -44,6 +45,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$Filter", {
 		.addChildrenTo("col2",["statusName","priorityName"])
 		.addChildrenTo("col3",["startDate","endDate"])
 		.addChildrenTo("col4",["bpartnerCode","contact"])
+    		
 	}
 }); 
  		 

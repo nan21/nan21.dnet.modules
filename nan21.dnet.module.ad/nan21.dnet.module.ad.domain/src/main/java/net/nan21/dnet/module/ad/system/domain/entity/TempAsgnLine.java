@@ -67,8 +67,6 @@ public class TempAsgnLine implements Serializable {
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        TempAsgnLine e = (TempAsgnLine) event.getSource();
-
     }
 
 }

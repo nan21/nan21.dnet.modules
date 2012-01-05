@@ -16,7 +16,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.CsvExport_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("csv",{ name:"csvFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.CsvExport$Filter",height:50})	 
+		.addDcFilterFormView("csv",{ name:"csvFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.CsvExport$Filter",height:120})	 
 		.addDcView("csv",{ name:"csvEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.CsvExport$EditList", frame:true})	 
 		.addDcView("field",{ name:"fieldCtxEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.CsvExportField$CtxEditList", frame:true,title:"Fields"})	 
 		.addDcView("sort",{ name:"sortCtxEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.CsvExportSort$CtxEditList", frame:true,title:"Sort"})	 

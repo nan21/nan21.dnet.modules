@@ -37,13 +37,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** WfDefNodeField. */
 @Entity
-@Table(name = WfDefNodeField.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = "AD_WFDEF_NODE_FIELD_UK1", columnNames = {
-        "CLIENTID", "NAME" }) })
+@Table(name = WfDefNodeField.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = WfDefNodeField.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "WfDefNodeField.findById", query = "SELECT e FROM WfDefNodeField e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "WfDefNodeField.findByIds", query = "SELECT e FROM WfDefNodeField e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "WfDefNodeField.findByName", query = "SELECT e FROM WfDefNodeField e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = WfDefNodeField.NQ_FIND_BY_ID, query = "SELECT e FROM WfDefNodeField e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = WfDefNodeField.NQ_FIND_BY_IDS, query = "SELECT e FROM WfDefNodeField e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = WfDefNodeField.NQ_FIND_BY_NAME, query = "SELECT e FROM WfDefNodeField e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class WfDefNodeField implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -269,9 +269,9 @@ public class WfDefNodeField implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        WfDefNodeField e = (WfDefNodeField) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

@@ -26,14 +26,14 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Filter", {
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addTextField({ name:"iso", dataIndex:"iso",anchor:"-20",maxLength:32  })
-		.addNumberField({ name:"countryId", dataIndex:"countryId",anchor:"-20"  })
-		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
+		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210}) 
 		.addPanel({ name:"col2", layout:"anchor",width:210}) 
 		.addPanel({ name:"col3", layout:"anchor",width:210}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Filter", {
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["countryCode","iso"])
 		.addChildrenTo("col3",["active"])
+    	.addAuditFilter({})	
 	}
 }); 
  		 

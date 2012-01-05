@@ -38,17 +38,17 @@ import org.hibernate.validator.constraints.NotBlank;
 /** ClassificationCode. */
 @Entity
 @Table(name = ClassificationCode.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "BD_CLASS_CODE_UK1", columnNames = {
+        @UniqueConstraint(name = ClassificationCode.TABLE_NAME + "_UK1", columnNames = {
                 "CLIENTID", "CLASSSYSTEM_ID", "CODE" }),
-        @UniqueConstraint(name = "BD_CLASS_CODE_UK2", columnNames = {
+        @UniqueConstraint(name = ClassificationCode.TABLE_NAME + "_UK2", columnNames = {
                 "CLIENTID", "CLASSSYSTEM_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "ClassificationCode.findById", query = "SELECT e FROM ClassificationCode e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ClassificationCode.findByIds", query = "SELECT e FROM ClassificationCode e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ClassificationCode.findBySyscode", query = "SELECT e FROM ClassificationCode e WHERE e.clientId = :pClientId and  e.classSystem = :pClassSystem and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ClassificationCode.NQ_FIND_BY_ID, query = "SELECT e FROM ClassificationCode e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ClassificationCode.NQ_FIND_BY_IDS, query = "SELECT e FROM ClassificationCode e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ClassificationCode.NQ_FIND_BY_SYSCODE, query = "SELECT e FROM ClassificationCode e WHERE e.clientId = :pClientId and  e.classSystem = :pClassSystem and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ClassificationCode.findBySyscode_PRIMITIVE", query = "SELECT e FROM ClassificationCode e WHERE e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ClassificationCode.findBySysname", query = "SELECT e FROM ClassificationCode e WHERE e.clientId = :pClientId and  e.classSystem = :pClassSystem and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ClassificationCode.NQ_FIND_BY_SYSNAME, query = "SELECT e FROM ClassificationCode e WHERE e.clientId = :pClientId and  e.classSystem = :pClassSystem and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ClassificationCode.findBySysname_PRIMITIVE", query = "SELECT e FROM ClassificationCode e WHERE e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ClassificationCode implements Serializable, IModelWithId,
         IModelWithClientId {
@@ -274,9 +274,9 @@ public class ClassificationCode implements Serializable, IModelWithId,
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        ClassificationCode e = (ClassificationCode) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

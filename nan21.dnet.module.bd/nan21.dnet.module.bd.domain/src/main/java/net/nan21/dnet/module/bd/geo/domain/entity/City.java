@@ -40,8 +40,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = City.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "City.findById", query = "SELECT e FROM City e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "City.findByIds", query = "SELECT e FROM City e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = City.NQ_FIND_BY_ID, query = "SELECT e FROM City e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = City.NQ_FIND_BY_IDS, query = "SELECT e FROM City e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class City implements Serializable, IModelWithId, IModelWithClientId {
 
     public static final String TABLE_NAME = "BD_GEO_CITY";
@@ -243,9 +243,9 @@ public class City implements Serializable, IModelWithId, IModelWithClientId {
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        City e = (City) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 

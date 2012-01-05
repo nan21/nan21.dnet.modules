@@ -34,16 +34,16 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Country. */
 @Entity
 @Table(name = Country.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "BD_GEO_COUNTRY_UK1", columnNames = {
+        @UniqueConstraint(name = Country.TABLE_NAME + "_UK1", columnNames = {
                 "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = "BD_GEO_COUNTRY_UK2", columnNames = {
+        @UniqueConstraint(name = Country.TABLE_NAME + "_UK2", columnNames = {
                 "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = "Country.findById", query = "SELECT e FROM Country e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Country.findByIds", query = "SELECT e FROM Country e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Country.findByCode", query = "SELECT e FROM Country e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Country.findByName", query = "SELECT e FROM Country e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = Country.NQ_FIND_BY_ID, query = "SELECT e FROM Country e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Country.NQ_FIND_BY_IDS, query = "SELECT e FROM Country e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Country.NQ_FIND_BY_CODE, query = "SELECT e FROM Country e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Country.NQ_FIND_BY_NAME, query = "SELECT e FROM Country e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Country implements Serializable, IModelWithId, IModelWithClientId {
 
     public static final String TABLE_NAME = "BD_GEO_COUNTRY";
@@ -310,9 +310,9 @@ public class Country implements Serializable, IModelWithId, IModelWithClientId {
 
     public void aboutToUpdate(DescriptorEvent event) {
 
-        Country e = (Country) event.getSource();
-        e.setModifiedAt(new Date());
-        e.setModifiedBy(Session.user.get().getUsername());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
 
     }
 
