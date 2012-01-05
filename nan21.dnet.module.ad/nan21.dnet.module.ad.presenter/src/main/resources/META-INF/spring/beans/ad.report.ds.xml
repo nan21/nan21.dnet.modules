@@ -21,7 +21,7 @@
  	<bean id="ReportServerLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportServerLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.ReportServerLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportServerLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportServer" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="ReportLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.ReportLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.Report" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -67,7 +67,7 @@
  	<bean id="ReportParamLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.ReportParamLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportParam" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

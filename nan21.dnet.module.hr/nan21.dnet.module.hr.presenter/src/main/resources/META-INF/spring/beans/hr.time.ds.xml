@@ -21,7 +21,7 @@
  	<bean id="AbsenceCategoryLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.time.ds.filter.AbsenceCategoryLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceCategory" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="AbsenceTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.time.ds.filter.AbsenceTypeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -67,7 +67,7 @@
  	<bean id="AbsenceReasonLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.time.ds.filter.AbsenceReasonLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceReason" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

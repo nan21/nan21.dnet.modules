@@ -21,7 +21,7 @@
  	<bean id="GradeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.grade.ds.filter.GradeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.Grade" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="GradeRateLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeRateLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.grade.ds.filter.GradeRateLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.grade.ds.model.GradeRateLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.GradeRate" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -78,7 +78,7 @@
  	<bean id="PayScaleLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.grade.ds.filter.PayScaleLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScaleLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.PayScale" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -101,7 +101,7 @@
  	<bean id="PayScalePointLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScalePointLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.grade.ds.filter.PayScalePointLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.grade.ds.model.PayScalePointLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.grade.domain.entity.PayScalePoint" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

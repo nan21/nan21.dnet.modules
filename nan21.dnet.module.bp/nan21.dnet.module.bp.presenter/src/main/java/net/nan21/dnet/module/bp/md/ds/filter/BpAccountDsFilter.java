@@ -16,13 +16,7 @@ public class BpAccountDsFilter extends AbstractDsFilter implements
 
     private Long id;
 
-    private Long id_From;
-    private Long id_To;
-
     private Long clientId;
-
-    private Long clientId_From;
-    private Long clientId_To;
 
     private Date createdAt;
 
@@ -108,14 +102,6 @@ public class BpAccountDsFilter extends AbstractDsFilter implements
         return this.id;
     }
 
-    public Long getId_From() {
-        return this.id_From;
-    }
-
-    public Long getId_To() {
-        return this.id_To;
-    }
-
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
@@ -125,24 +111,8 @@ public class BpAccountDsFilter extends AbstractDsFilter implements
         return this.clientId;
     }
 
-    public Long getClientId_From() {
-        return this.clientId_From;
-    }
-
-    public Long getClientId_To() {
-        return this.clientId_To;
-    }
-
     public void setClientId(Long clientId) {
         this.clientId = clientId;
-    }
-
-    public void setClientId_From(Long clientId_From) {
-        this.clientId_From = clientId_From;
-    }
-
-    public void setClientId_To(Long clientId_To) {
-        this.clientId_To = clientId_To;
     }
 
     public Date getCreatedAt() {

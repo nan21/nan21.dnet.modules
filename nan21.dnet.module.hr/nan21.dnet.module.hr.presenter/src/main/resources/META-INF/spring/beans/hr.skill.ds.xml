@@ -21,7 +21,7 @@
  	<bean id="RatingScaleLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingScaleLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.filter.RatingScaleLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingScaleLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.RatingScale" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="RatingLevelLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingLevelLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.filter.RatingLevelLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingLevelLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.RatingLevel" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -66,7 +66,7 @@
  	<bean id="SkillCategoryLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillCategoryLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.filter.SkillCategoryLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.SkillCategory" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -89,7 +89,7 @@
  	<bean id="SkillTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.filter.SkillTypeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.SkillType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -112,7 +112,7 @@
  	<bean id="SkillLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.filter.SkillLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.Skill" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -134,7 +134,7 @@
  	<bean id="QualificationLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.QualificationLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.filter.QualificationLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.QualificationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.Qualification" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

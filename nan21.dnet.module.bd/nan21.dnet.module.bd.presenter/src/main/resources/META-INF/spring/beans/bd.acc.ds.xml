@@ -21,7 +21,7 @@
  	<bean id="AccSchemaLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccSchemaLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.acc.ds.filter.AccSchemaLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccSchemaLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.AccSchema" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="AccountGroupLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.acc.ds.filter.AccountGroupLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -67,7 +67,7 @@
  	<bean id="AccountLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.acc.ds.filter.AccountLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.Account" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

@@ -21,7 +21,7 @@
  	<bean id="ClassificationSystemLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.standards.ds.filter.ClassificationSystemLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="ClassificationCodeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationCodeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.standards.ds.filter.ClassificationCodeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationCodeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

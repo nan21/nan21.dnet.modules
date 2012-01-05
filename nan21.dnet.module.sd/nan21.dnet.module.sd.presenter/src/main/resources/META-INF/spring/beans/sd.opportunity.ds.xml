@@ -33,7 +33,7 @@
  	<bean id="OpportunityStatusLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStatusLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.opportunity.ds.filter.OpportunityStatusLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStatusLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStatus" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -55,7 +55,7 @@
  	<bean id="OpportunityPriorityLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityPriorityLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.opportunity.ds.filter.OpportunityPriorityLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityPriorityLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityPriority" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -77,7 +77,7 @@
  	<bean id="OpportunitySourceLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunitySourceLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.opportunity.ds.filter.OpportunitySourceLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunitySourceLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunitySource" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -99,7 +99,7 @@
  	<bean id="OpportunityStageLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStageLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.opportunity.ds.filter.OpportunityStageLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStageLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStage" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -121,7 +121,7 @@
  	<bean id="OpportunityResultReasonLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityResultReasonLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.opportunity.ds.filter.OpportunityResultReasonLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityResultReasonLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityResultReason" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

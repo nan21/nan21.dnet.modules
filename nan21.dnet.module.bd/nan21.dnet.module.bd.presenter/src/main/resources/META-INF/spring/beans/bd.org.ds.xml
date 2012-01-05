@@ -21,7 +21,7 @@
  	<bean id="OrganizationTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.filter.OrganizationTypeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.OrganizationType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="OrganizationLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.filter.OrganizationLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -55,7 +55,7 @@
  	<bean id="LegalEntityOrganizationLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.LegalEntityOrganizationLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.filter.LegalEntityOrganizationLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.LegalEntityOrganizationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -66,7 +66,7 @@
  	<bean id="InventoryOrganizationLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.InventoryOrganizationLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.filter.InventoryOrganizationLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.InventoryOrganizationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -77,7 +77,7 @@
  	<bean id="CarrierOrganizationLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.CarrierOrganizationLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.filter.CarrierOrganizationLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.CarrierOrganizationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -88,7 +88,7 @@
  	<bean id="ExternalOrganizationLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.ExternalOrganizationLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.filter.ExternalOrganizationLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.ExternalOrganizationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

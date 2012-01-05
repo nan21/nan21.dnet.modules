@@ -21,7 +21,7 @@
  	<bean id="UomTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.filter.UomTypeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.UomType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="UomLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.filter.UomLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -55,7 +55,7 @@
  	<bean id="UomMassLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomMassLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.filter.UomMassLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomMassLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -66,7 +66,7 @@
  	<bean id="UomLengthLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLengthLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.filter.UomLengthLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLengthLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -77,7 +77,7 @@
  	<bean id="UomVolumeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomVolumeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.filter.UomVolumeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomVolumeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

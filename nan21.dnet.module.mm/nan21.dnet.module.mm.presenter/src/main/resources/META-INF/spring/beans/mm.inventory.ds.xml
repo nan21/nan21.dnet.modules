@@ -22,7 +22,7 @@
  	<bean id="SubInventoryLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.SubInventoryLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.filter.SubInventoryLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.model.SubInventoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="StockLocatorTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.StockLocatorTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.filter.StockLocatorTypeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.model.StockLocatorTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.StockLocatorType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -67,7 +67,7 @@
  	<bean id="StockLocatorLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.StockLocatorLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.filter.StockLocatorLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.model.StockLocatorLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -89,7 +89,7 @@
  	<bean id="InvTransactionSourceTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.filter.InvTransactionSourceTypeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -111,7 +111,7 @@
  	<bean id="InvTransactionActionLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionActionLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.filter.InvTransactionActionLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionActionLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -134,7 +134,7 @@
  	<bean id="InvTransactionTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.filter.InvTransactionTypeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

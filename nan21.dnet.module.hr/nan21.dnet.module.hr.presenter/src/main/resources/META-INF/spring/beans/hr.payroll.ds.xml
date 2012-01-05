@@ -21,7 +21,7 @@
  	<bean id="ElementCategoryLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementCategoryLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.filter.ElementCategoryLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.ElementCategory" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="ElementTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.filter.ElementTypeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.ElementType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -67,7 +67,7 @@
  	<bean id="ElementLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.filter.ElementLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.Element" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -113,7 +113,7 @@
  	<bean id="PayrollLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.filter.PayrollLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.Payroll" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -136,7 +136,7 @@
  	<bean id="PayrollPeriodLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.filter.PayrollPeriodLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

@@ -21,7 +21,7 @@
  	<bean id="CsvExportLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.CsvExportLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.filter.CsvExportLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.model.CsvExportLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.CsvExport" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -77,7 +77,7 @@
  	<bean id="ExportMapLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportMapLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.filter.ExportMapLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportMapLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ExportMap" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -131,7 +131,7 @@
  	<bean id="ExportJobLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportJobLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.filter.ExportJobLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportJobLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ExportJob" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -185,7 +185,7 @@
  	<bean id="ImportMapLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.filter.ImportMapLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportMap" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -250,7 +250,7 @@
  	<bean id="ImportJobLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.filter.ImportJobLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportJob" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

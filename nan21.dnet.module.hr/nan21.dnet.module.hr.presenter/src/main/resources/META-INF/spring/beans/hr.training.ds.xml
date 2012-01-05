@@ -21,7 +21,7 @@
  	<bean id="CourseCategoryLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseCategoryLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.filter.CourseCategoryLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseCategory" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="CourseTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.filter.CourseTypeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -67,7 +67,7 @@
  	<bean id="CourseLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.filter.CourseLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.Course" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

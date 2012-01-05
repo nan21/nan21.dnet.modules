@@ -21,7 +21,7 @@
  	<bean id="CountryLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.CountryLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.geo.ds.filter.CountryLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.geo.ds.model.CountryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Country" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -44,7 +44,7 @@
  	<bean id="RegionLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.RegionLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.geo.ds.filter.RegionLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.geo.ds.model.RegionLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Region" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -79,7 +79,7 @@
  	<bean id="LocationLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.LocationLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.geo.ds.filter.LocationLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.geo.ds.model.LocationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Location" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -90,7 +90,7 @@
  	<bean id="LocationToBillLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.LocationToBillLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.geo.ds.filter.LocationToBillLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.geo.ds.model.LocationToBillLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Location" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -101,7 +101,7 @@
  	<bean id="LocationToShipLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.geo.ds.model.LocationToShipLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.geo.ds.filter.LocationToShipLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.geo.ds.model.LocationToShipLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.geo.domain.entity.Location" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

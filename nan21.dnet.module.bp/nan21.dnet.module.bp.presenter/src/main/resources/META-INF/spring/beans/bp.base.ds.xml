@@ -21,7 +21,7 @@
  	<bean id="BankLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.BankLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.filter.BankLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.model.BankLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.Bank" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -43,7 +43,7 @@
  	<bean id="CustomerGroupLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.CustomerGroupLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.filter.CustomerGroupLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.model.CustomerGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.CustomerGroup" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -65,7 +65,7 @@
  	<bean id="VendorGroupLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.VendorGroupLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.filter.VendorGroupLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.model.VendorGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.VendorGroup" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -87,7 +87,7 @@
  	<bean id="PaymentMethodLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentMethodLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.filter.PaymentMethodLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentMethodLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -109,7 +109,7 @@
  	<bean id="PaymentTermLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentTermLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.filter.PaymentTermLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentTermLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.PaymentTerm" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -131,7 +131,7 @@
  	<bean id="DeliveryMethodLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.DeliveryMethodLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.filter.DeliveryMethodLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.model.DeliveryMethodLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -144,6 +144,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.CompanyLegalFormDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.filter.CompanyLegalFormDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bp.base.ds.converter.CompanyLegalFormDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CompanyLegalForm" />
@@ -153,7 +154,7 @@
  	<bean id="CompanyLegalFormLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.CompanyLegalFormLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.filter.CompanyLegalFormLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.model.CompanyLegalFormLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

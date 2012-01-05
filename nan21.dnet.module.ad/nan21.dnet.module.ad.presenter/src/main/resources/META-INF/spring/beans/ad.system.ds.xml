@@ -52,7 +52,7 @@
  	<bean id="SysDataSourceLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysDataSourceLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -75,7 +75,7 @@
  	<bean id="SysDsFieldLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysDsFieldLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsField" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -98,7 +98,7 @@
  	<bean id="SysDsServiceLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysDsServiceLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsService" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -121,7 +121,7 @@
  	<bean id="SysDsEventLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysDsEventLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -143,7 +143,7 @@
  	<bean id="SysDateFormatLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysDateFormatLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

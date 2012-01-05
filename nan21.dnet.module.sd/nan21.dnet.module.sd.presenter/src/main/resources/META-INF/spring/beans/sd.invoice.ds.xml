@@ -45,7 +45,7 @@
  	<bean id="SalesInvoiceTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesInvoiceTypeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -67,7 +67,7 @@
  	<bean id="SalesInvoiceStatusLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesInvoiceStatusLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

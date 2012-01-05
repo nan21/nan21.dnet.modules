@@ -23,7 +23,7 @@
  	<bean id="ActDeploymentLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActDeploymentLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -68,7 +68,7 @@
  	<bean id="ActProcessDefinitionLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActProcessDefinitionLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

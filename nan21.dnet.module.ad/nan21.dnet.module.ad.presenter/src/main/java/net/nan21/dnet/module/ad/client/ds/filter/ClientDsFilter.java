@@ -34,9 +34,6 @@ public class ClientDsFilter extends AbstractDsFilter implements IModelWithId {
 
     private Long id;
 
-    private Long id_From;
-    private Long id_To;
-
     private Date createdAt;
 
     private Date createdAt_From;
@@ -133,14 +130,6 @@ public class ClientDsFilter extends AbstractDsFilter implements IModelWithId {
 
     public Long getId() {
         return this.id;
-    }
-
-    public Long getId_From() {
-        return this.id_From;
-    }
-
-    public Long getId_To() {
-        return this.id_To;
     }
 
     public void setId(Object id) {

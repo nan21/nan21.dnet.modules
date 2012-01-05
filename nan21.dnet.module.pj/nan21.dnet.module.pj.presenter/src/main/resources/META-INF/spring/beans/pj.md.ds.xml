@@ -22,7 +22,7 @@
  	<bean id="ProjectLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.filter.ProjectLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.Project" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -45,7 +45,7 @@
  	<bean id="ProjectVersionLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectVersionLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.filter.ProjectVersionLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectVersionLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -68,7 +68,7 @@
  	<bean id="ProjectComponentLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectComponentLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.filter.ProjectComponentLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectComponentLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -91,7 +91,7 @@
  	<bean id="ProjectMemberLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectMemberLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.filter.ProjectMemberLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectMemberLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectMember" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -126,7 +126,7 @@
  	<bean id="IssueLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.filter.IssueLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.Issue" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
