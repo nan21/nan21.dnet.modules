@@ -83,6 +83,11 @@ public class SysDataSource implements Serializable, IModelWithId,
     @NotBlank
     private String model;
 
+    /** IsAsgn. */
+    @Column(name = "ISASGN", nullable = false)
+    @NotNull
+    private Boolean isAsgn;
+
     /** Name. */
     @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
@@ -149,6 +154,14 @@ public class SysDataSource implements Serializable, IModelWithId,
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public Boolean getIsAsgn() {
+        return this.isAsgn;
+    }
+
+    public void setIsAsgn(Boolean isAsgn) {
+        this.isAsgn = isAsgn;
     }
 
     public String getName() {
@@ -266,6 +279,9 @@ public class SysDataSource implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.isAsgn == null) {
+            event.updateAttributeWithObject("isAsgn", false);
+        }
         if (this.active == null) {
             event.updateAttributeWithObject("active", false);
         }

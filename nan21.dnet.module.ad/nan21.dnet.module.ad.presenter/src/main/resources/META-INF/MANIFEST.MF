@@ -75,7 +75,9 @@ Export-Package: net.nan21.dnet.module.ad._presenterdelegates;version="
  core.api.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core
  .presenter.model,net.nan21.dnet.module.ad.usr.domain.entity",net.nan2
  1.dnet.module.ad.usr.ds.param;version="1.0.0.M6";uses:="net.nan21.dne
- t.core.presenter.model",net.nan21.dnet.module.ad.workflow.ds.converte
+ t.core.presenter.model",net.nan21.dnet.module.ad.usr.ds.qb;version="1
+ .0.0.M6";uses:="net.nan21.dnet.core.presenter.action,net.nan21.dnet.m
+ odule.ad.usr.ds.filter",net.nan21.dnet.module.ad.workflow.ds.converte
  r;version="1.0.0.M6";uses:="net.nan21.dnet.core.api.converter,net.nan
  21.dnet.core.presenter.converter,net.nan21.dnet.module.ad.workflow.do
  main.entity,net.nan21.dnet.module.ad.workflow.ds.model",net.nan21.dne

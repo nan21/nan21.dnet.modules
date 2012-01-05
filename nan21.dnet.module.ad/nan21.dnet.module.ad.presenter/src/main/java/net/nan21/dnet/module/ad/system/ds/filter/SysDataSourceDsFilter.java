@@ -40,6 +40,8 @@ public class SysDataSourceDsFilter extends AbstractDsFilter implements
 
     private String model;
 
+    private Boolean isAsgn;
+
     public String getName() {
         return this.name;
     }
@@ -151,6 +153,14 @@ public class SysDataSourceDsFilter extends AbstractDsFilter implements
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public Boolean getIsAsgn() {
+        return this.isAsgn;
+    }
+
+    public void setIsAsgn(Boolean isAsgn) {
+        this.isAsgn = isAsgn;
     }
 
 }

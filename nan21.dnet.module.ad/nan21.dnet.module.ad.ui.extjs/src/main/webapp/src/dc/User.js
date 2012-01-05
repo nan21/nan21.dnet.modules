@@ -28,18 +28,19 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Filter", {
 		.addLov({ name:"accountType", xtype:"net.nan21.dnet.module.ad.usr.lovs.UserTypes", dataIndex:"accountType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "accountTypeId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addBooleanField({ name:"locked", dataIndex:"locked",anchor:"-20"  })
+		.addLov({ name:"withRole", xtype:"net.nan21.dnet.module.ad.usr.lovs.Roles", paramIndex:"withRole",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "withRoleId"} ]  })
+		.addLov({ name:"inGroup", xtype:"net.nan21.dnet.module.ad.usr.lovs.UserGroups", paramIndex:"inGroup",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "inGroupId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:250}) 
-		.addPanel({ name:"col2", layout:"anchor", width:200, defaults:{
-labelAlign:"right",labelWidth:70}}) 
+		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col2", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["name","code","accountType"])
-		.addChildrenTo("col2",["active","locked"])
+		.addChildrenTo("col1",["name","code","active","locked"])
+		.addChildrenTo("col2",["accountType","withRole","inGroup"])
     	.addAuditFilter({})	
 	}
 }); 

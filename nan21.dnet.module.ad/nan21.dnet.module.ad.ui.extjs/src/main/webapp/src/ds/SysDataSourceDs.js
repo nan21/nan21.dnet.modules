@@ -13,7 +13,8 @@ Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs" ,{
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
-		{name:"model", type:"string"}
+		{name:"model", type:"string"},
+		{name:"isAsgn", type:"boolean"}
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
@@ -36,7 +37,8 @@ Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDsFilter" ,{
 		{name:"modifiedAt_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
-		{name:"model", type:"string"}
+		{name:"model", type:"string"},
+		{name:"isAsgn", type:"boolean", useNull:true}
 	] 
 });
 	

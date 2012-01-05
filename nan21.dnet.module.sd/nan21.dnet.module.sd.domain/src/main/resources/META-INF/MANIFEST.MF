@@ -9,37 +9,36 @@ Export-Package: net.nan21.dnet.module.sd.invoice.domain.entity;version
  omain.entity,net.nan21.dnet.module.sd.order.domain.entity,org.eclipse
  .persistence.annotations,org.eclipse.persistence.descriptors,org.ecli
  pse.persistence.descriptors.changetracking,org.eclipse.persistence.in
- direction,org.eclipse.persistence.internal.descriptors,org.eclipse.pe
- rsistence.internal.weaving,org.eclipse.persistence.queries,org.eclips
- e.persistence.sessions,org.hibernate.validator.constraints",net.nan21
- .dnet.module.sd.invoice.domain.eventhandler;version="1.0.0.M6";uses:=
- "net.nan21.dnet.core.domain.eventhandler,org.eclipse.persistence.desc
- riptors",net.nan21.dnet.module.sd.opportunity.domain.entity;version="
- 1.0.0.M6";uses:="javax.persistence,javax.validation.constraints,javax
- .xml.bind.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.mod
- ule.ad.data.domain.entity,net.nan21.dnet.module.ad.usr.domain.entity,
- net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.module
- .bp.md.domain.entity,org.eclipse.persistence.annotations,org.eclipse.
- persistence.descriptors,org.eclipse.persistence.descriptors.changetra
- cking,org.eclipse.persistence.indirection,org.eclipse.persistence.int
- ernal.descriptors,org.eclipse.persistence.internal.weaving,org.eclips
- e.persistence.queries,org.eclipse.persistence.sessions,org.hibernate.
- validator.constraints",net.nan21.dnet.module.sd.order.domain.entity;v
- ersion="1.0.0.M6";uses:="javax.persistence,javax.validation.constrain
- ts,javax.xml.bind.annotation,net.nan21.dnet.core.api.model,net.nan21.
- dnet.module.ad.data.domain.entity,net.nan21.dnet.module.bd.currency.d
- omain.entity,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dne
- t.module.bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.ent
- ity,net.nan21.dnet.module.bp.base.domain.entity,net.nan21.dnet.module
- .bp.md.domain.entity,net.nan21.dnet.module.mm.md.domain.entity,net.na
- n21.dnet.module.mm.price.domain.entity,org.eclipse.persistence.annota
- tions,org.eclipse.persistence.descriptors,org.eclipse.persistence.des
- criptors.changetracking,org.eclipse.persistence.indirection,org.eclip
- se.persistence.internal.descriptors,org.eclipse.persistence.internal.
- weaving,org.eclipse.persistence.queries,org.eclipse.persistence.sessi
- ons,org.hibernate.validator.constraints",net.nan21.dnet.module.sd.ord
- er.domain.eventhandler;version="1.0.0.M6";uses:="net.nan21.dnet.core.
- domain.eventhandler,org.eclipse.persistence.descriptors"
+ ternal.descriptors,org.eclipse.persistence.internal.weaving,org.eclip
+ se.persistence.queries,org.eclipse.persistence.sessions,org.hibernate
+ .validator.constraints",net.nan21.dnet.module.sd.invoice.domain.event
+ handler;version="1.0.0.M6";uses:="net.nan21.dnet.core.domain.eventhan
+ dler,org.eclipse.persistence.descriptors",net.nan21.dnet.module.sd.op
+ portunity.domain.entity;version="1.0.0.M6";uses:="javax.persistence,j
+ avax.validation.constraints,javax.xml.bind.annotation,net.nan21.dnet.
+ core.api.model,net.nan21.dnet.module.ad.data.domain.entity,net.nan21.
+ dnet.module.ad.usr.domain.entity,net.nan21.dnet.module.bd.currency.do
+ main.entity,net.nan21.dnet.module.bp.md.domain.entity,org.eclipse.per
+ sistence.annotations,org.eclipse.persistence.descriptors,org.eclipse.
+ persistence.descriptors.changetracking,org.eclipse.persistence.intern
+ al.descriptors,org.eclipse.persistence.internal.weaving,org.eclipse.p
+ ersistence.queries,org.eclipse.persistence.sessions,org.hibernate.val
+ idator.constraints",net.nan21.dnet.module.sd.order.domain.entity;vers
+ ion="1.0.0.M6";uses:="javax.persistence,javax.validation.constraints,
+ javax.xml.bind.annotation,net.nan21.dnet.core.api.model,net.nan21.dne
+ t.module.ad.data.domain.entity,net.nan21.dnet.module.bd.currency.doma
+ in.entity,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.m
+ odule.bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity
+ ,net.nan21.dnet.module.bp.base.domain.entity,net.nan21.dnet.module.bp
+ .md.domain.entity,net.nan21.dnet.module.mm.md.domain.entity,net.nan21
+ .dnet.module.mm.price.domain.entity,org.eclipse.persistence.annotatio
+ ns,org.eclipse.persistence.descriptors,org.eclipse.persistence.descri
+ ptors.changetracking,org.eclipse.persistence.internal.descriptors,org
+ .eclipse.persistence.internal.weaving,org.eclipse.persistence.queries
+ ,org.eclipse.persistence.sessions,org.hibernate.validator.constraints
+ ",net.nan21.dnet.module.sd.order.domain.eventhandler;version="1.0.0.M
+ 6";uses:="net.nan21.dnet.core.domain.eventhandler,org.eclipse.persist
+ ence.descriptors"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.module.ad.d
  omain;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.module.bd.domain;versi
@@ -67,13 +66,13 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  md.domain.entity,net.nan21.dnet.module.mm.price.domain.entity,org.aop
  alliance.aop;version="[1.0,2.0)",org.eclipse.persistence.annotations,
  org.eclipse.persistence.descriptors,org.eclipse.persistence.descripto
- rs.changetracking,org.eclipse.persistence.indirection,org.eclipse.per
- sistence.internal.descriptors,org.eclipse.persistence.internal.jpa,or
- g.eclipse.persistence.internal.weaving,org.eclipse.persistence.querie
- s,org.eclipse.persistence.sessions,org.hibernate.validator;version="[
- 4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)",org
- .springframework.aop;version="[3.0,3.1)",org.springframework.aop.fram
- ework;version="[3.0,3.1)",org.springframework.context.weaving;version
- ="[3.0,3.1)",org.springframework.transaction;version="[3.0,3.1)",org.
- springframework.transaction.aspectj;version="[3.0,3.1)"
+ rs.changetracking,org.eclipse.persistence.internal.descriptors,org.ec
+ lipse.persistence.internal.jpa,org.eclipse.persistence.internal.weavi
+ ng,org.eclipse.persistence.queries,org.eclipse.persistence.sessions,o
+ rg.hibernate.validator;version="[4.0,5.0)",org.hibernate.validator.co
+ nstraints;version="[4.0,5.0)",org.springframework.aop;version="[3.0,3
+ .1)",org.springframework.aop.framework;version="[3.0,3.1)",org.spring
+ framework.context.weaving;version="[3.0,3.1)",org.springframework.tra
+ nsaction;version="[3.0,3.1)",org.springframework.transaction.aspectj;
+ version="[3.0,3.1)"
 

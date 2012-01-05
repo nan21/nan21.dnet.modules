@@ -25,6 +25,9 @@
  	<bean id="DsAccessControlService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.DsAccessControlService"  />  
  
+ 	<bean id="AsgnAccessControlService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.AsgnAccessControlService"  />  
+ 
  	<bean id="AssignableTypeService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.AssignableTypeService"  />  
  

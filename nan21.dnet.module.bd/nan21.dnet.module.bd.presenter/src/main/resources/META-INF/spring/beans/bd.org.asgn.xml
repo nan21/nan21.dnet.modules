@@ -24,6 +24,7 @@
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OrganizationHierarchyItems" />
+		<property name="asgn" value="true" />
 		<property name="modelClass" value="net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItemsAsgn" />
 	</bean>
        

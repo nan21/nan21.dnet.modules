@@ -63,7 +63,11 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.param.UserDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"newPassword", type:"string"},
-		{name:"confirmPassword", type:"string"}
+		{name:"confirmPassword", type:"string"},
+		{name:"withRoleId", type:"int", useNull:true},
+		{name:"withRole", type:"string"},
+		{name:"inGroupId", type:"int", useNull:true},
+		{name:"inGroup", type:"string"}
 	]
 }); 
  

@@ -29,6 +29,7 @@ public class SysDataSourceDelegate extends AbstractDsDelegate {
 				e.setName(def.getName());
 				e.setModel(def.getModelClass().getCanonicalName());
 				e.setActive(true);
+				e.setIsAsgn(def.isAsgn());
 				
 				Field[] fields = def.getModelClass().getDeclaredFields();
 				for(Field field:fields) {

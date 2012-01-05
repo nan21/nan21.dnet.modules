@@ -1,6 +1,7 @@
 
-Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.SubInventoryDs$Trl", {     	
-	inventoryId__lbl : "Inventory Id"
-	,inventory__lbl : "Inventory"
-	
+Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.SubInventoryDs$Trl", {  	  	
+	inventoryId__lbl : "Inventory Id",
+	inventory__lbl : "Inventory",
+		
+	id__lbl :"ID"
 });

@@ -35,7 +35,9 @@ import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
-/** DsAccessControl. */
+/**
+ * Access control rules for data-source components.
+ */
 @Entity
 @Table(name = DsAccessControl.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = DsAccessControl.TABLE_NAME
         + "_UK1", columnNames = { "CLIENTID", "ACCESSCONTROL_ID", "DSNAME" }) })

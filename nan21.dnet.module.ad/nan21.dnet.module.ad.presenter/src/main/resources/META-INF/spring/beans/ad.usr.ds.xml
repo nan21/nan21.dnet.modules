@@ -13,6 +13,7 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.UserDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.User" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.ad.usr.ds.param.UserDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.usr.ds.qb.UserDsQueryBuilder" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.UserDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
@@ -135,6 +136,18 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.AccessControlDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AccessControl" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.ad.usr.ds.param.AccessControlDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.usr.ds.qb.AccessControlDsQueryBuilder" />	
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="copyRulesFromAccessControl">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.usr.AccessControlPD"/>
+	  				<constructor-arg name="methodName" value="copyRulesFromAccessControl" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccessControl" />
@@ -162,6 +175,18 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="DsAccessControl" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.DsAccessControlDs" />
+	</bean>
+   
+ 	<bean id="AsgnAccessControlDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AsgnAccessControlDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.AsgnAccessControlDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AsgnAccessControl" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.AsgnAccessControlDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AsgnAccessControl" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AsgnAccessControlDs" />
 	</bean>
    
  	<bean id="AssignableTypeDsService" scope="prototype"

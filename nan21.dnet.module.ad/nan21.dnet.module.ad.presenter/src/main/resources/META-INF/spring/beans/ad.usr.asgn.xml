@@ -23,6 +23,7 @@
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserRoles" />
+		<property name="asgn" value="true" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.UserRolesAsgn" />
 	</bean>
    
@@ -42,6 +43,7 @@
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RolesOfUser" />
+		<property name="asgn" value="true" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.RolesOfUserAsgn" />
 	</bean>
    
@@ -61,6 +63,7 @@
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserUserGroups" />
+		<property name="asgn" value="true" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.UserUserGroupsAsgn" />
 	</bean>
    
@@ -80,6 +83,7 @@
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserGroupUsers" />
+		<property name="asgn" value="true" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.UserGroupUsersAsgn" />
 	</bean>
    
@@ -99,6 +103,7 @@
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccessControlRoles" />
+		<property name="asgn" value="true" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.AccessControlRolesAsgn" />
 	</bean>
    
@@ -118,6 +123,7 @@
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RolesOfAccessControl" />
+		<property name="asgn" value="true" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.RolesOfAccessControlAsgn" />
 	</bean>
        

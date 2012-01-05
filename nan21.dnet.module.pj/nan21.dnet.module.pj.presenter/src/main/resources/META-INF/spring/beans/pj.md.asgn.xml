@@ -23,6 +23,7 @@
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueAffectedVersions" />
+		<property name="asgn" value="true" />
 		<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.IssueAffectedVersionsAsgn" />
 	</bean>
    
@@ -42,6 +43,7 @@
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueAffectedComponents" />
+		<property name="asgn" value="true" />
 		<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponentsAsgn" />
 	</bean>
        

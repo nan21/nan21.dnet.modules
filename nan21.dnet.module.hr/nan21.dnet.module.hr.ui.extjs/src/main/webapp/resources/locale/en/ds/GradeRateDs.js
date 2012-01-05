@@ -1,6 +1,7 @@
 
-Ext.define("net.nan21.dnet.module.hr.grade.ds.model.GradeRateDs$Trl", {     	
-	currencyId__lbl : "Currency Id"
-	,currencyCode__lbl : "Currency Code"
-	
+Ext.define("net.nan21.dnet.module.hr.grade.ds.model.GradeRateDs$Trl", {  	  	
+	currencyId__lbl : "Currency Id",
+	currencyCode__lbl : "Currency Code",
+		
+	id__lbl :"ID"
 });

@@ -30,6 +30,7 @@ public class SysDataSourceDs extends AbstractDsModel<SysDataSource> implements
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fMODEL = "model";
+    public static final String fISASGN = "isAsgn";
 
     @DsField()
     private String name;
@@ -63,6 +64,9 @@ public class SysDataSourceDs extends AbstractDsModel<SysDataSource> implements
 
     @DsField()
     private String model;
+
+    @DsField()
+    private Boolean isAsgn;
 
     public SysDataSourceDs() {
         super();
@@ -159,6 +163,14 @@ public class SysDataSourceDs extends AbstractDsModel<SysDataSource> implements
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public Boolean getIsAsgn() {
+        return this.isAsgn;
+    }
+
+    public void setIsAsgn(Boolean isAsgn) {
+        this.isAsgn = isAsgn;
     }
 
 }

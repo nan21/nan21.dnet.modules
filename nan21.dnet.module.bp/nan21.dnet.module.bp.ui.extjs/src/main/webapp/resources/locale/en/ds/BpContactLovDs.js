@@ -1,4 +1,5 @@
 
-Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpContactLovDs$Trl", {     	
-	
+Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpContactLovDs$Trl", {  	  	
+		
+	id__lbl :"ID"
 });

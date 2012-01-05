@@ -1,4 +1,5 @@
 
-Ext.define("net.nan21.dnet.module.hr.grade.ds.model.PayScaleDs$Trl", {     	
-	
+Ext.define("net.nan21.dnet.module.hr.grade.ds.model.PayScaleDs$Trl", {  	  	
+		
+	id__lbl :"ID"
 });

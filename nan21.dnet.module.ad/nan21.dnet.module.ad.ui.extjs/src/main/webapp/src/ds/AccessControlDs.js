@@ -41,6 +41,13 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.AccessControlDsFilter" ,{
 Ext.define("net.nan21.dnet.module.ad.usr.ds.param.AccessControlDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 
+		{name:"withRoleId", type:"int", useNull:true},
+		{name:"withRole", type:"string"},
+		{name:"copyFromId", type:"int", useNull:true},
+		{name:"copyFrom", type:"string"},
+		{name:"resetRules", type:"boolean"},
+		{name:"skipDs", type:"boolean"},
+		{name:"skipAsgn", type:"boolean"}
 	]
 }); 
  

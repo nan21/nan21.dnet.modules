@@ -1,6 +1,7 @@
 
-Ext.define("net.nan21.dnet.module.hr.training.ds.model.CourseTypeDs$Trl", {     	
-	categoryId__lbl : "Category Id"
-	,category__lbl : "Category"
-	
+Ext.define("net.nan21.dnet.module.hr.training.ds.model.CourseTypeDs$Trl", {  	  	
+	categoryId__lbl : "Category Id",
+	category__lbl : "Category",
+		
+	id__lbl :"ID"
 });

@@ -25,15 +25,16 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
+		.addLov({ name:"withRole", xtype:"net.nan21.dnet.module.ad.usr.lovs.Roles", paramIndex:"withRole",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "withRoleId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
+		.addPanel({ name:"col1", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
-		.addChildrenTo("col1",["name","active"])
+		.addChildrenTo("col1",["name","active","withRole"])
     	.addAuditFilter({})	
 	}
 }); 
@@ -57,4 +58,27 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$EditList", {
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
 	  ;  		   
 	}  
+});
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$CopyRulesFromSource", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.ad.usr.dc.AccessControl$CopyRulesFromSource",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addLov({ name:"copyFrom", xtype:"net.nan21.dnet.module.ad.usr.lovs.AccessControls", paramIndex:"copyFrom",anchor:"-20" ,retFieldMapping: [{lovField:"id", dsParam: "copyFromId"} ]  })
+		.addCheckbox({ name:"skipDs", paramIndex:"skipDs"  })
+		.addCheckbox({ name:"skipAsgn", paramIndex:"skipAsgn"  })
+		.addCheckbox({ name:"resetRules", paramIndex:"resetRules"  })
+		//containers
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250})     
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["copyFrom","skipDs","skipAsgn","resetRules"])
+;
+	}	
 });

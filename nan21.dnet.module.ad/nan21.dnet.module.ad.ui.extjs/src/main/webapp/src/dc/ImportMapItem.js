@@ -83,6 +83,6 @@ labelAlign:"right",labelWidth:140}})
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["importFileLocation","importDataSource"])
-    	.addAuditFilter({})	
+    		
 	}
 }); 

@@ -1,4 +1,5 @@
 
-Ext.define("net.nan21.dnet.module.bp.base.ds.model.VendorGroupDs$Trl", {     	
-	
+Ext.define("net.nan21.dnet.module.bp.base.ds.model.VendorGroupDs$Trl", {  	  	
+		
+	id__lbl :"ID"
 });

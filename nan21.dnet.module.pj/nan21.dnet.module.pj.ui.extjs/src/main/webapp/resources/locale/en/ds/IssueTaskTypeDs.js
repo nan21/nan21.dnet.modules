@@ -1,4 +1,5 @@
 
-Ext.define("net.nan21.dnet.module.pj.base.ds.model.IssueTaskTypeDs$Trl", {     	
-	
+Ext.define("net.nan21.dnet.module.pj.base.ds.model.IssueTaskTypeDs$Trl", {  	  	
+		
+	id__lbl :"ID"
 });

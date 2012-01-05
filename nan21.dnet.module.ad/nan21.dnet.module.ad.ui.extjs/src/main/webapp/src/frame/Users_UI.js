@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/UserDs", "nan21.dnet.module.ad.ui.extjs/dc/User","nan21.dnet.module.ad.ui.extjs/ds/UserTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/UserTypes","nan21.dnet.module.ad.ui.extjs/ds/SysDateFormatLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDateFormats","nan21.dnet.module.ad.ui.extjs/ds/UserTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/UserTypes","nan21.dnet.module.ad.ui.extjs/asgn/UserRoles","nan21.dnet.module.ad.ui.extjs/asgn/UserUserGroups"]);
+Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/UserDs", "nan21.dnet.module.ad.ui.extjs/dc/User","nan21.dnet.module.ad.ui.extjs/ds/UserTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/UserTypes","nan21.dnet.module.ad.ui.extjs/ds/SysDateFormatLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDateFormats","nan21.dnet.module.ad.ui.extjs/ds/UserTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/UserTypes","nan21.dnet.module.ad.ui.extjs/ds/RoleLovDs","nan21.dnet.module.ad.ui.extjs/lov/Roles","nan21.dnet.module.ad.ui.extjs/ds/UserGroupLovDs","nan21.dnet.module.ad.ui.extjs/lov/UserGroups","nan21.dnet.module.ad.ui.extjs/asgn/UserRoles","nan21.dnet.module.ad.ui.extjs/asgn/UserUserGroups"]);
 
 Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {  
 	extend: "dnet.base.AbstractUi",
@@ -24,7 +24,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {
 		.addButton({name:"btnSavePassword",text:"Save", tooltip:"Save new password",disabled:false
 			,handler: this.onBtnSavePassword,scope:this	})	
 							 	
-		.addDcFilterFormView("usr",{ name:"usrFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Filter",height:120})	 
+		.addDcFilterFormView("usr",{ name:"usrFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Filter",height:140})	 
 		.addDcView("usr",{ name:"usrList", xtype:"net.nan21.dnet.module.ad.usr.dc.User$List"})	 
 		.addDcFormView("usr",{ name:"usrEdit", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Edit",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnRoles") ,this._elems_.get("btnAsgnGroups") ,this._elems_.get("btnChangePassword") ]}]})	 
 		.addDcFormView("usr",{ name:"canvasPassword", xtype:"net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm"})	 
