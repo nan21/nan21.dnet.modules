@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbDsAccessEditList", {dc:"dsAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbDsAccessEditList", {dc:"dsAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"DS rules"}).end(); 	
 	}
 
 });  

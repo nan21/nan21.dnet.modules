@@ -34,7 +34,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Role_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbRolList", {dc:"rol"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"List"}).end(); 	
+			.beginToolbar("tlbRolList", {dc:"rol"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Roles"}).end(); 	
 	}
 
 

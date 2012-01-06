@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysDateFormat_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbFmtEditList", {dc:"fmt"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbFmtEditList", {dc:"fmt"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Date formats"}).end(); 	
 	}
 
 });  

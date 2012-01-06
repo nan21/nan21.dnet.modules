@@ -58,8 +58,8 @@ Ext.define("net.nan21.dnet.module.pj.base.frame.Projects_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbProjectList", {dc:"project"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbProjectEdit", {dc:"project"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbProjectList", {dc:"project"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Projects"}).end()
+			.beginToolbar("tlbProjectEdit", {dc:"project"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Project"}).end()
 			.beginToolbar("tlbVersionEditList", {dc:"version"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Versions"}).end()
 			.beginToolbar("tlbComponentEditList", {dc:"component"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Components"}).end()
 			.beginToolbar("tlbMemberEditList", {dc:"member"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Team"}).end()

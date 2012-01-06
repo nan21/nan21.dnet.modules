@@ -28,5 +28,9 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.IssueDs$Trl", {
 	fixedInVersion__lbl : "Fixed In Version",
 	businessObject__lbl : "Business Object",
 		
+	affectedVersionId__lbl :"Affected Version Id",
+	affectedVersion__lbl :"Affected Version",
+	affectedComponentId__lbl :"Affected Component Id",
+	affectedComponent__lbl :"Affected Component",
 	id__lbl :"ID"
 });

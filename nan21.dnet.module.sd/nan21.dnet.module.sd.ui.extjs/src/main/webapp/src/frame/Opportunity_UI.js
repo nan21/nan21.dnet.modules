@@ -71,13 +71,13 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbOpportunityList", {dc:"opportunity"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbOpportunityEdit", {dc:"opportunity"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
+			.beginToolbar("tlbOpportunityList", {dc:"opportunity"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Opportunities"}).end()
+			.beginToolbar("tlbOpportunityEdit", {dc:"opportunity"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Opportunity"}).end()
 			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
 			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().end()
 			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().end()
-			.beginToolbar("tlbCalendarList", {dc:"event"}).addQuery().addEdit({inContainer:"eventPanel",showView:"eventEditPanel"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().end()
-			.beginToolbar("tlbCalendarEdit", {dc:"event"}).addBack({inContainer:"eventPanel",showView:"eventList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().end(); 	
+			.beginToolbar("tlbCalendarList", {dc:"event"}).addQuery().addEdit({inContainer:"eventPanel",showView:"eventEditPanel"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Activities"}).end()
+			.beginToolbar("tlbCalendarEdit", {dc:"event"}).addBack({inContainer:"eventPanel",showView:"eventList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Activity"}).end(); 	
 	}
 
 
@@ -85,6 +85,9 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI", {
 this._getWindow_("wdwEventCreate").close();			 	
 		this._selectEventEditorForm_();
 	}					 	
+	,onUploadSuccess: function() {	
+this._getDc_("atch").doQuery();			 	
+	}
 	,_whenCreateNewEvent_: function() {	
 this._getWindow_("wdwEventCreate").show();			 	
 	}

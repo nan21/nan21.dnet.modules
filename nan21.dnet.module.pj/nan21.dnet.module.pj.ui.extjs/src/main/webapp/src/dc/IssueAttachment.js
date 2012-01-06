@@ -39,3 +39,26 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueAttachment$CtxEditList", {
 	  ;  		   
 	}  
 });
+ 		 
+Ext.define("net.nan21.dnet.module.pj.md.dc.IssueAttachment$CtxList", {
+	extend: "dnet.base.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.pj.md.dc.IssueAttachment$CtxList",
+	
+	 _noImport_: false
+	,_noExport_: false
+	,_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addTextColumn({ name:"issue", dataIndex:"issue", hidden:true,width:100 })   	
+		.addTextColumn({ name:"type", dataIndex:"type",width:120 })   	
+		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
+		.addTextColumn({ name:"location", dataIndex:"location",width:200 })   	
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200 })   	
+		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
+		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
+		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
+		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
+		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
+	  ;		   
+	}
+});
+ 

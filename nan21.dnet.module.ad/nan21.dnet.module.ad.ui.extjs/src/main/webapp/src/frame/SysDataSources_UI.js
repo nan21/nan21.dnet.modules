@@ -22,7 +22,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", {
 		.addDcView("fields",{ name:"listFields", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsField$CtxList",title:"Fields"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "panelDetails", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:400}}) 	  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -36,7 +36,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMList", {dc:"m"}).addQuery().addSeparator().addSeparator().addTitle({"text":"List"}).end(); 	
+			.beginToolbar("tlbMList", {dc:"m"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Data-sources"}).end(); 	
 	}
 
 

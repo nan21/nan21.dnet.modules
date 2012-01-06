@@ -35,9 +35,13 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Filter", {
 		.addLov({ name:"reportedVersion", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersions", dataIndex:"reportedVersion",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportedVersionId"} ]  })
 		.addLov({ name:"targetVersion", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersions", dataIndex:"targetVersion",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "targetVersionId"} ]  })
 		.addLov({ name:"fixedInVersion", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersions", dataIndex:"fixedInVersion",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "fixedInVersionId"} ]  })
+		.addLov({ name:"affectedComponent", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectComponents", paramIndex:"affectedComponent",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "affectedComponentId"} ]  })
+		.addLov({ name:"affectedVersion", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersions", paramIndex:"affectedVersion",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "affectedVersionId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:250}) 
-		.addPanel({ name:"col2", layout:"anchor", width:250}) 
+		.addPanel({ name:"col1", layout:"anchor", width:220, defaults:{
+labelAlign:"right",labelWidth:70}}) 
+		.addPanel({ name:"col2", layout:"anchor", width:220, defaults:{
+labelAlign:"right",labelWidth:70}}) 
 		.addPanel({ name:"col4", layout:"anchor", width:250}) 
 		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
 		
@@ -47,7 +51,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Filter", {
 		.addChildrenTo("main",["col1","col2","col4"])
 		.addChildrenTo("col1",["id","code","project","type","assignee"])
 		.addChildrenTo("col2",["severity","priority","status","resolution"])
-		.addChildrenTo("col4",["reportedVersion","targetVersion","fixedInVersion"])
+		.addChildrenTo("col4",["reportedVersion","targetVersion","fixedInVersion","affectedComponent","affectedVersion"])
     	.addAuditFilter({})	
 	}
 }); 
@@ -68,11 +72,11 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$List", {
 		.addTextColumn({ name:"description", dataIndex:"description", hidden:true,width:200 })   	
 		.addDateColumn({ name:"dueDate", dataIndex:"dueDate",format:Dnet.DATE_FORMAT})   	      	     
 		.addDateColumn({ name:"resolutionDate", dataIndex:"resolutionDate", hidden:true,format:Dnet.DATE_FORMAT})   	      	     
-		.addTextColumn({ name:"type", dataIndex:"type",width:120 })   	
-		.addTextColumn({ name:"status", dataIndex:"status",width:120 })   	
-		.addTextColumn({ name:"priority", dataIndex:"priority",width:120 })   	
-		.addTextColumn({ name:"resolution", dataIndex:"resolution",width:120 })   	
-		.addTextColumn({ name:"severity", dataIndex:"severity",width:120 })   	
+		.addTextColumn({ name:"type", dataIndex:"type", width:90 })   	
+		.addTextColumn({ name:"status", dataIndex:"status", width:90 })   	
+		.addTextColumn({ name:"priority", dataIndex:"priority", width:90 })   	
+		.addTextColumn({ name:"resolution", dataIndex:"resolution", width:90 })   	
+		.addTextColumn({ name:"severity", dataIndex:"severity", width:90 })   	
 		.addTextColumn({ name:"assignee", dataIndex:"assignee",width:120 })   	
 		.addTextColumn({ name:"assigneeRole", dataIndex:"assigneeRole", hidden:true,width:120 })   	
 		.addTextColumn({ name:"reportedVersion", dataIndex:"reportedVersion", hidden:true,width:120 })   	

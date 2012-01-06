@@ -15,7 +15,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI", {
 		.addDcFilterFormView("xrate",{ name:"xrateFilter", xtype:"net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter",height:120})	 
 		.addDcView("xrate",{ name:"xrateEditList", xtype:"net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -23,12 +23,12 @@ Ext.define("net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI", {
 		this._getBuilder_()		
 	 	.addChildrenTo("main", ["canvas1"]) 				 		
 		.addChildrenTo("canvas1",["xrateFilter","xrateEditList"] ,["north","center"])	
-	 	.addToolbarTo("main","tlbXrateEditList")	  	
+	 	.addToolbarTo("canvas1","tlbXrateEditList")	  	
 	}
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbXrateEditList", {dc:"xrate"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbXrateEditList", {dc:"xrate"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Exchange rates"}).end(); 	
 	}
 
 });  

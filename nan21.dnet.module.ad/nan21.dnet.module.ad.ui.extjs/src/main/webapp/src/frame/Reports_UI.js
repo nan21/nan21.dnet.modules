@@ -26,8 +26,8 @@ Ext.define("net.nan21.dnet.module.ad.report.frame.Reports_UI", {
 		.addDcView("dsparam",{ name:"dsparamList", xtype:"net.nan21.dnet.module.ad.report.dc.DsReportParam$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "repDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "dsRep", layout:"border", defaults:{split:true},title:"Data-source links"})  	 
 ;	 	
 	}
@@ -48,8 +48,8 @@ Ext.define("net.nan21.dnet.module.ad.report.frame.Reports_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbRepList", {dc:"rep"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
-			.beginToolbar("tlbRepEdit", {dc:"rep"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
+			.beginToolbar("tlbRepList", {dc:"rep"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Reports"}).end()
+			.beginToolbar("tlbRepEdit", {dc:"rep"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Report"}).end()
 			.beginToolbar("tlbParamList", {dc:"params"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Parameters"}).end()
 			.beginToolbar("tlbDsRepList", {dc:"dsrep"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end()
 			.beginToolbar("tlbDsParamList", {dc:"dsparam"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	

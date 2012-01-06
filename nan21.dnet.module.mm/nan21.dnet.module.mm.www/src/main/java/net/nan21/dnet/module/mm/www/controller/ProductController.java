@@ -8,6 +8,11 @@ import net.nan21.dnet.core.api.action.IQueryBuilder;
 import net.nan21.dnet.core.api.service.IDsService;
 import net.nan21.dnet.core.api.session.Session;
 
+import net.nan21.dnet.module.mm.md.ds.filter.ProductAttachmentDsFilter;
+import net.nan21.dnet.module.mm.md.ds.filter.ProductAttributeValueDsFilter;
+import net.nan21.dnet.module.mm.md.ds.filter.ProductCategoryDsFilter;
+import net.nan21.dnet.module.mm.md.ds.filter.ProductDsFilter;
+import net.nan21.dnet.module.mm.md.ds.filter.ProductManufacturerDsFilter;
 import net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDs;
@@ -74,7 +79,7 @@ public class ProductController extends AbstractWebController {
 			IQueryBuilder builder = service.createQueryBuilder().addFetchLimit(
 					0, 20);		
 			ProductDsParam param = new ProductDsParam();
-			ProductDs filter = new ProductDs();
+			ProductDsFilter filter = new ProductDsFilter();
 			filter.setActive(true);
 			filter.setShowInCatalog(true);
 			filter.setClientId(Session.user.get().getClientId());
@@ -86,9 +91,9 @@ public class ProductController extends AbstractWebController {
 				filter.setManufacturerId( Long.parseLong( request.getParameter("manufacturerId") ));
 			} 
 			
-			List products = service.find(filter, param, builder);			 
-			List categories = this.getCategories();
-			List manufacturers = this.getManufacturers();
+			List<ProductDs> products = service.find(filter, param, builder);			 
+			List<ProductCategoryDs> categories = this.getCategories();
+			List<ProductManufacturerDs> manufacturers = this.getManufacturers();
 			
 			return new ModelAndView("productList")
 				.addObject("product_icon_baseurl", this.getSystemConfig().getSysParamValue("MM_PRODUCT_ICON_BASEURL"))
@@ -117,14 +122,14 @@ public class ProductController extends AbstractWebController {
 			}
 			 
 			IDsService attributesService = this.findDsService(ProductAttributeValueDs.class);
-			ProductAttributeValueDs attributesFilter = new ProductAttributeValueDs();			
+			ProductAttributeValueDsFilter attributesFilter = new ProductAttributeValueDsFilter();			
 			attributesFilter.setProductId(product.getId());			
 			List attributes = attributesService.find(attributesFilter, null, 
 					attributesService.createQueryBuilder()
 					.addSortInfo(new String[] { ProductAttributeValueDs.fTYPE, ProductAttributeValueDs.fTITLE  }));
 			 
 			IDsService attachmentsService = this.findDsService(ProductAttachmentDs.class);
-			ProductAttachmentDs attachmentsFilter = new ProductAttachmentDs();			
+			ProductAttachmentDsFilter attachmentsFilter = new ProductAttachmentDsFilter();			
 			attachmentsFilter.setProductId(product.getId());	
 			//attachmentsFilter.setTargetType(product.getBusinessObject());	
 			List attachments = attachmentsService.find(attachmentsFilter, null, null);
@@ -146,20 +151,20 @@ public class ProductController extends AbstractWebController {
 
 	}
  
-	protected List getCategories() throws Exception {
+	protected List<ProductCategoryDs> getCategories() throws Exception {
 		IDsService service = this.serviceLocator.findDsService(ProductCategoryDs.class.getSimpleName());
 		service.setSystemConfig(this.systemConfig);
-		ProductCategoryDs filter = new ProductCategoryDs();
+		ProductCategoryDsFilter filter = new ProductCategoryDsFilter();
 		filter.setActive(true);
 		filter.setClientId(Session.user.get().getClientId());
 		IQueryBuilder builder = service.createQueryBuilder();			 
-		return service.find(filter, null, builder);
+		return (List<ProductCategoryDs>)service.find(filter, null, builder);
 	}
 	
 	protected List getManufacturers() throws Exception {
 		IDsService service = this.serviceLocator.findDsService(ProductManufacturerDs.class.getSimpleName());
 		service.setSystemConfig(this.systemConfig);
-		ProductManufacturerDs filter = new ProductManufacturerDs();
+		ProductManufacturerDsFilter filter = new ProductManufacturerDsFilter();
 		filter.setActive(true);
 		filter.setClientId(Session.user.get().getClientId());
 		IQueryBuilder builder = service.createQueryBuilder();			 

@@ -56,10 +56,10 @@ Ext.define("net.nan21.dnet.module.mm.price.frame.PriceList_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbPricelistEditList", {dc:"pricelist"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end()
-			.beginToolbar("tlbVersionEditList", {dc:"version"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end()
-			.beginToolbar("tlbVersionView", {dc:"version"}).addBack().addPrevRec().addNextRec().addSeparator().addAutoLoad().end()
-			.beginToolbar("tlbPriceEditList", {dc:"price"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
+			.beginToolbar("tlbPricelistEditList", {dc:"pricelist"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Price lists"}).end()
+			.beginToolbar("tlbVersionEditList", {dc:"version"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Price list versions"}).end()
+			.beginToolbar("tlbVersionView", {dc:"version"}).addBack().addPrevRec().addNextRec().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Price list version"}).end()
+			.beginToolbar("tlbPriceEditList", {dc:"price"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Product price"}).end(); 	
 	}
 
 

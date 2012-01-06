@@ -120,6 +120,10 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.IssueDsFilter" ,{
 Ext.define("net.nan21.dnet.module.pj.md.ds.param.IssueDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 
+		{name:"affectedVersionId", type:"int", useNull:true},
+		{name:"affectedVersion", type:"string"},
+		{name:"affectedComponentId", type:"int", useNull:true},
+		{name:"affectedComponent", type:"string"}
 	]
 }); 
  

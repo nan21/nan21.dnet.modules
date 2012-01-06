@@ -21,7 +21,10 @@ Export-Package: net.nan21.dnet.module.pj._presenterdelegates.md;versio
  er.model",net.nan21.dnet.module.pj.md.ds.model;version="1.0.0.M6";use
  s:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.model,
  net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.pj.md.domai
- n.entity"
+ n.entity",net.nan21.dnet.module.pj.md.ds.param;version="1.0.0.M6";use
+ s:="net.nan21.dnet.core.presenter.model",net.nan21.dnet.module.pj.md.
+ ds.qb;version="1.0.0.M6";uses:="net.nan21.dnet.core.presenter.action,
+ net.nan21.dnet.module.pj.md.ds.filter"
 Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M6,1.0.0.M6]",na
  n21.dnet.core.presenter;version="[1.0.0.M6,1.0.0.M6]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.5)
@@ -43,13 +46,14 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  an21.dnet.core.api.converter,net.nan21.dnet.core.api.descriptor,net.n
  an21.dnet.core.api.model,net.nan21.dnet.core.api.service,net.nan21.dn
  et.core.api.ui.extjs,net.nan21.dnet.core.api.ui.extjs.impl,net.nan21.
- dnet.core.presenter.converter,net.nan21.dnet.core.presenter.model,net
- .nan21.dnet.core.presenter.service,net.nan21.dnet.module.ad.data.busi
- ness.service,net.nan21.dnet.module.ad.data.domain.entity,net.nan21.dn
- et.module.ad.usr.business.service,net.nan21.dnet.module.ad.usr.domain
- .entity,net.nan21.dnet.module.pj.base.business.service,net.nan21.dnet
- .module.pj.base.domain.entity,net.nan21.dnet.module.pj.md.business.se
- rvice,net.nan21.dnet.module.pj.md.domain.entity,org.springframework.c
- ontext,org.springframework.context.weaving;version="[3.0,3.1)",org.sp
- ringframework.web.multipart;version="[3.0,3.1)"
+ dnet.core.presenter.action,net.nan21.dnet.core.presenter.converter,ne
+ t.nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter.servi
+ ce,net.nan21.dnet.module.ad.data.business.service,net.nan21.dnet.modu
+ le.ad.data.domain.entity,net.nan21.dnet.module.ad.usr.business.servic
+ e,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.dnet.module.pj
+ .base.business.service,net.nan21.dnet.module.pj.base.domain.entity,ne
+ t.nan21.dnet.module.pj.md.business.service,net.nan21.dnet.module.pj.m
+ d.domain.entity,org.springframework.context,org.springframework.conte
+ xt.weaving;version="[3.0,3.1)",org.springframework.web.multipart;vers
+ ion="[3.0,3.1)"
 

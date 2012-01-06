@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.AsgnAccessControl_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbAsgnAccessEditList", {dc:"asgnAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbAsgnAccessEditList", {dc:"asgnAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"ASGN rules"}).end(); 	
 	}
 
 });  

@@ -116,6 +116,8 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.filter.IssueDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.Issue" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.pj.md.ds.param.IssueDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.pj.md.ds.qb.IssueDsQueryBuilder" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.IssueDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

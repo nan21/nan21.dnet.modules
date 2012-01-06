@@ -21,6 +21,9 @@
  
  	<bean id="BpClassificationService" scope="prototype"
 	  		class="net.nan21.dnet.module.bp.md.business.serviceimpl.BpClassificationService"  />  
+ 
+ 	<bean id="BpAttachmentService" scope="prototype"
+	  		class="net.nan21.dnet.module.bp.md.business.serviceimpl.BpAttachmentService"  />  
    
 </beans>
    

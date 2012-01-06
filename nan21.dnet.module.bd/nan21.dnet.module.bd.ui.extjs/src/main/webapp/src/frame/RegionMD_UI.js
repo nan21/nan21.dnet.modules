@@ -19,8 +19,8 @@ Ext.define("net.nan21.dnet.module.bd.geo.frame.RegionMD_UI", {
 		.addDcFormView("region",{ name:"regionEdit", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$Edit",height:140})	 
 		.addDcView("city",{ name:"cityEditList", xtype:"net.nan21.dnet.module.bd.geo.dc.City$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -30,15 +30,15 @@ Ext.define("net.nan21.dnet.module.bd.geo.frame.RegionMD_UI", {
 		.addChildrenTo("canvas1",["regionFilter","regionList"] ,["north","center"])	
 		.addChildrenTo("canvas2",["regionEdit","cityEditList"] ,["north","center"])	
 	 	.addToolbarTo("canvas1","tlbRegionList")	  	
-	 	.addToolbarTo("regionEdit","tlbRegionEdit")	  	
+	 	.addToolbarTo("canvas2","tlbRegionEdit")	  	
 	 	.addToolbarTo("cityEditList","tlbCityList")	  	
 	}
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbRegionList", {dc:"region"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
-			.beginToolbar("tlbRegionEdit", {dc:"region"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end()
-			.beginToolbar("tlbCityList", {dc:"city"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
+			.beginToolbar("tlbRegionList", {dc:"region"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Regions"}).end()
+			.beginToolbar("tlbRegionEdit", {dc:"region"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Region"}).end()
+			.beginToolbar("tlbCityList", {dc:"city"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Cities"}).end(); 	
 	}
 
 });  

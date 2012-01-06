@@ -36,9 +36,9 @@ Ext.define("net.nan21.dnet.module.bd.uom.frame.UomMD_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbUomList", {dc:"uom"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
-			.beginToolbar("tlbUomEdit", {dc:"uom"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
-			.beginToolbar("tlbCnvEditList", {dc:"cnv"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
+			.beginToolbar("tlbUomList", {dc:"uom"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Units of measure"}).end()
+			.beginToolbar("tlbUomEdit", {dc:"uom"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Unit of measure"}).end()
+			.beginToolbar("tlbCnvEditList", {dc:"cnv"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"UoM conversions"}).end(); 	
 	}
 
 });  
