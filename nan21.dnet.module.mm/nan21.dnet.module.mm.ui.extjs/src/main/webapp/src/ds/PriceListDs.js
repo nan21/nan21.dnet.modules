@@ -18,9 +18,9 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.PriceListDs" ,{
 		{name:"isDefault", type:"boolean"}
 	],
 	validations: [  
+		{field: "currency", type: 'presence'}, 
 		{field: "name", type: 'presence'}
-	]	
-	
+	]
 });
 
 Ext.define("net.nan21.dnet.module.mm.price.ds.model.PriceListDsFilter" ,{

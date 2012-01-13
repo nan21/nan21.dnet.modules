@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 
@@ -90,9 +90,9 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Edit", {
 		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		.addLov({ name:"billToLocation", xtype:"net.nan21.dnet.module.bd.geo.lovs.LocationsToBill", dataIndex:"billToLocation",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "billToLocationId"} ],filterFieldMapping: [{lovField:"targetId", dsField: "customerId"} ]  })
 		.addLov({ name:"billToContact", xtype:"net.nan21.dnet.module.bp.md.lovs.BpContacts", dataIndex:"billToContact",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "billToContactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "customerId"} ]  })
-		.addNumberField({ name:"totalNetAmount", dataIndex:"totalNetAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
-		.addNumberField({ name:"totalTaxAmount", dataIndex:"totalTaxAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
-		.addNumberField({ name:"totalAmount", dataIndex:"totalAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
+		.addDisplayFieldNumber({name:"totalNetAmount", dataIndex:"totalNetAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
+		.addDisplayFieldNumber({name:"totalTaxAmount", dataIndex:"totalTaxAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
+		.addDisplayFieldNumber({name:"totalAmount", dataIndex:"totalAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"customer",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "customerId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" ,width:250})     

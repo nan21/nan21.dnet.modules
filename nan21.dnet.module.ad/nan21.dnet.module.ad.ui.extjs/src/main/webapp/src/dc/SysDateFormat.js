@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDateFormat", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

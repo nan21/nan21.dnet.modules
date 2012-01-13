@@ -111,6 +111,28 @@
 		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectAttachmentDs" />
 	</bean>
    
+ 	<bean id="IssueChangelogDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueChangelogDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.filter.IssueChangelogDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.Issue" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueChangelog" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueChangelogDs" />
+	</bean>
+   
+ 	<bean id="IssueRoadmapDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueRoadmapDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.filter.IssueRoadmapDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.Issue" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueRoadmap" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueRoadmapDs" />
+	</bean>
+   
  	<bean id="IssueDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueDs" />

@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.Role", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

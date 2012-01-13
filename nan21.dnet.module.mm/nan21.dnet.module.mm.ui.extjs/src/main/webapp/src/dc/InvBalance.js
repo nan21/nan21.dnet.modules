@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

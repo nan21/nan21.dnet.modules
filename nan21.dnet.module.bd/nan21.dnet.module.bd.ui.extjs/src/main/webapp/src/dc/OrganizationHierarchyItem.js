@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

@@ -18,9 +18,9 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.PriceListVersionDs" ,{
 		{name:"validFrom", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	],
 	validations: [  
+		{field: "validFrom", type: 'presence'}, 
 		{field: "name", type: 'presence'}
-	]	
-	
+	]
 });
 
 Ext.define("net.nan21.dnet.module.mm.price.ds.model.PriceListVersionDsFilter" ,{

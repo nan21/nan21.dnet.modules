@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 
@@ -100,9 +100,9 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20",noEdit:true  ,maxLength:255  })
+		.addDisplayFieldText({ name:"name", dataIndex:"name", fieldStyle:"font-weight:bold;"  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:90})     
+		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:"90%"})     
 		;     
 	}
 	,_linkElements_: function () {

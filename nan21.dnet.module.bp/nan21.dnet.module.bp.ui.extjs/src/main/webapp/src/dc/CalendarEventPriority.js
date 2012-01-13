@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

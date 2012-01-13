@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationCode", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

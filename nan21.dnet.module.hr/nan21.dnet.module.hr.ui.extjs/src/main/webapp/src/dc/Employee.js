@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 
@@ -133,9 +133,9 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditOther", {
 		.addCheckbox({ name:"assignToPosition", dataIndex:"assignToPosition",listeners:{change:{scope:this, fn:this.onAssignToPositionChange}}  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.employee.lovs.EmploymentTypes", dataIndex:"type",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addLov({ name:"positionCode", xtype:"net.nan21.dnet.module.hr.job.lovs.Positions", dataIndex:"positionCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "positionId"} ,{lovField:"name", dsField: "positionName"} ]  })
-		.addTextField({ name:"positionName", dataIndex:"positionName",anchor:"-20",noEdit:true  ,maxLength:255  })
+		.addDisplayFieldText({ name:"positionName", dataIndex:"positionName"  })
 		.addLov({ name:"jobCode", xtype:"net.nan21.dnet.module.hr.job.lovs.Jobs", dataIndex:"jobCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "jobId"} ,{lovField:"name", dsField: "jobName"} ]  })
-		.addTextField({ name:"jobName", dataIndex:"jobName",anchor:"-20",noEdit:true  ,maxLength:255  })
+		.addDisplayFieldText({ name:"jobName", dataIndex:"jobName"  })
 		.addLov({ name:"gradeCode", xtype:"net.nan21.dnet.module.hr.grade.lovs.Grades", dataIndex:"gradeCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "gradeId"} ]  })
 		.addLov({ name:"organizationCode", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"organizationCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
 		//containers

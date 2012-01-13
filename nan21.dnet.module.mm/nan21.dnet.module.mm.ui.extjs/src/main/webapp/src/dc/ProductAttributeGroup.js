@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroup", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

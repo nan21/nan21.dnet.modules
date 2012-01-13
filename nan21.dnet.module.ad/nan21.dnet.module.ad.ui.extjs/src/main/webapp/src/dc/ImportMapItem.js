@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMapItem", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 
@@ -127,7 +127,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditCall", {
 		.addChildrenTo("main",["row1" ,"row2" ,"row3" ])
 		.addChildrenTo("row1",["subject"])
 		.addChildrenTo("row2",["col1" ,"col2" ])
-		.addChildrenTo("col1",["startDate","dueDate"])
+		.addChildrenTo("col1",["startDate","endDate","dueDate"])
 		.addChildrenTo("col2",["statusName","priorityName","contact"])
 		.addChildrenTo("row3",["notes"])
 ;

@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.AbsenceCategory", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

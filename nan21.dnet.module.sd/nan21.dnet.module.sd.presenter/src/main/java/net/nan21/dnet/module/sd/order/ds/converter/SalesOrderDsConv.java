@@ -17,6 +17,8 @@ import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
 import net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.mm.price.business.service.IPriceListService;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderStatusService;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderTypeService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus;
@@ -40,6 +42,15 @@ public class SalesOrderDsConv extends
             }
         } else {
             this.lookup_currency_Currency(ds, e);
+        }
+        if (ds.getPriceListId() != null) {
+            if (e.getPriceList() == null
+                    || !e.getPriceList().getId().equals(ds.getPriceListId())) {
+                e.setPriceList((PriceList) this.em.find(PriceList.class,
+                        ds.getPriceListId()));
+            }
+        } else {
+            this.lookup_priceList_PriceList(ds, e);
         }
         if (ds.getDeliveryMethodId() != null) {
             if (e.getDeliveryMethod() == null
@@ -149,6 +160,25 @@ public class SalesOrderDsConv extends
 
         } else {
             e.setCurrency(null);
+        }
+    }
+
+    protected void lookup_priceList_PriceList(SalesOrderDs ds, SalesOrder e)
+            throws Exception {
+        if (ds.getPriceList() != null && !ds.getPriceList().equals("")) {
+            PriceList x = null;
+            try {
+                x = ((IPriceListService) findEntityService(PriceList.class))
+                        .findByName(ds.getClientId(), ds.getPriceList());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PriceList` reference:  `priceList` = "
+                                + ds.getPriceList() + "  ");
+            }
+            e.setPriceList(x);
+
+        } else {
+            e.setPriceList(null);
         }
     }
 

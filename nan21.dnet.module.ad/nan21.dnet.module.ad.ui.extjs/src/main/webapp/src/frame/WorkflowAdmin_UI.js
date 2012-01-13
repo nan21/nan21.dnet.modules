@@ -32,7 +32,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 			,handler: this.onBtnKillProcessInstance,scope:this,stateManager:{name:"selected_one", dc:"dcRunningInstance" }	})	
 							 	
 		.addButton({name:"btnSaveAssignTask",text:"Save", tooltip:"Save assignement. Leave field empty to un-assign it.",iconCls:"icon-action-save",disabled:true
-			,handler: this.onBtnSaveAssignTask,scope:this,stateManager:{name:"record_is_dirty", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.record.data.endTime);}}	})	
+			,handler: this.onBtnSaveAssignTask,scope:this,stateManager:{name:"record_is_dirty", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.dc.record.data.endTime);}}	})	
 							 	
 		.addButton({name:"btnCompleteTask",text:"Complete task", tooltip:"Mark selected task as completed.",iconCls:"icon-action-commit",disabled:true
 			,handler: this.onBtnCompleteTask,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.dc.record.data.endTime);}}	})	
@@ -119,7 +119,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 	,onBtnSaveAssignTask: function() {
 		var s={modal:true, callbacks:{} };
 		var successFn = function(dc,response,serviceName,specs) { 	this._getWindow_("wdwAssignTask").close();			 	
-;	this._getDc_("dcRunningTask").discardChanges();			 	
+;	this._getDc_("dcRunningTask").doCancel();			 	
 ;	this._getDc_("dcRunningTask").doQuery();			 	
 			}; 
 		s.callbacks['successFn'] = successFn; 

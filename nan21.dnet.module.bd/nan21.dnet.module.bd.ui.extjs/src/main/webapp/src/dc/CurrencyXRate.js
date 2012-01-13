@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 
@@ -54,7 +54,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$EditList", {
 		.addLov({name:"sourceCode", xtype:"gridcolumn", dataIndex:"sourceCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "sourceId"} ]} })
 		.addLov({name:"targetCode", xtype:"gridcolumn", dataIndex:"targetCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "targetId"} ]} })
 		.addDateColumn({ name:"validAt", dataIndex:"validAt",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true, format:Dnet.DATE_FORMAT}})
-		.addNumberColumn({ name:"value", dataIndex:"value", align:"right",decimals:2,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
+		.addNumberColumn({ name:"value", dataIndex:"value", align:"right",decimals:6,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:6 } })
 		.addNumberColumn({ name:"providerId", dataIndex:"providerId", hidden:true, align:"right",format:"0",width:70})
 		.addLov({name:"providerCode", xtype:"gridcolumn", dataIndex:"providerCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "providerId"} ]} })
 		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})

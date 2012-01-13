@@ -71,6 +71,13 @@ public class SalesOrderDsFilter extends AbstractDsFilter implements
 
     private String currency;
 
+    private Long priceListId;
+
+    private Long priceListId_From;
+    private Long priceListId_To;
+
+    private String priceList;
+
     private Long paymentMethodId;
 
     private Long paymentMethodId_From;
@@ -396,6 +403,38 @@ public class SalesOrderDsFilter extends AbstractDsFilter implements
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public Long getPriceListId() {
+        return this.priceListId;
+    }
+
+    public Long getPriceListId_From() {
+        return this.priceListId_From;
+    }
+
+    public Long getPriceListId_To() {
+        return this.priceListId_To;
+    }
+
+    public void setPriceListId(Long priceListId) {
+        this.priceListId = priceListId;
+    }
+
+    public void setPriceListId_From(Long priceListId_From) {
+        this.priceListId_From = priceListId_From;
+    }
+
+    public void setPriceListId_To(Long priceListId_To) {
+        this.priceListId_To = priceListId_To;
+    }
+
+    public String getPriceList() {
+        return this.priceList;
+    }
+
+    public void setPriceList(String priceList) {
+        this.priceList = priceList;
     }
 
     public Long getPaymentMethodId() {

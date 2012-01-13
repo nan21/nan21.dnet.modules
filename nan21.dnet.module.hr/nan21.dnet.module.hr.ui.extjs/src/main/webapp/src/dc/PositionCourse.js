@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

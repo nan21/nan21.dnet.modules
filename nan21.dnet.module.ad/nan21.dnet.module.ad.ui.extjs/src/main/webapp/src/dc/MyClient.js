@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 
@@ -24,15 +24,15 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20",noEdit:true  ,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20",noEdit:true  ,maxLength:32  })
+		.addDisplayFieldText({ name:"name", dataIndex:"name"  })
+		.addDisplayFieldText({ name:"code", dataIndex:"code"  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
 		.addTextField({ name:"maintenanceLanguage", dataIndex:"maintenanceLanguage",anchor:"-20" ,maxLength:5,caseRestriction:"uppercase",vtype:"alpha"  })
 		.addTextField({ name:"adminRole", dataIndex:"adminRole",anchor:"-20" ,allowBlank:false,maxLength:32  })
-		.addDateField({ name:"createdAt", dataIndex:"createdAt",anchor:"-20",noEdit:true, hideTrigger:true })
-		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",anchor:"-20",noEdit:true, hideTrigger:true })
-		.addTextField({ name:"createdBy", dataIndex:"createdBy",anchor:"-20",noEdit:true  ,maxLength:32  })
-		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",anchor:"-20",noEdit:true  ,maxLength:32  })
+		.addDisplayFieldDate({name:"createdAt", dataIndex:"createdAt"  })
+		.addDisplayFieldDate({name:"modifiedAt", dataIndex:"modifiedAt"  })
+		.addDisplayFieldText({ name:"createdBy", dataIndex:"createdBy"  })
+		.addDisplayFieldText({ name:"modifiedBy", dataIndex:"modifiedBy"  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:350})     
 		.addPanel({ name:"col3", layout:"anchor" , width:220})     

@@ -11,6 +11,8 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {
 	customer__lbl : "Customer",
 	currencyId__lbl : "Currency Id",
 	currency__lbl : "Currency",
+	priceListId__lbl : "Price List Id",
+	priceList__lbl : "Price List",
 	paymentMethodId__lbl : "Payment Method Id",
 	paymentMethod__lbl : "Payment Method",
 	deliveryMethodId__lbl : "Delivery Method Id",

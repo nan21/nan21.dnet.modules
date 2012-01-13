@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.OpportunityPriority", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

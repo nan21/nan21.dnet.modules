@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementType", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

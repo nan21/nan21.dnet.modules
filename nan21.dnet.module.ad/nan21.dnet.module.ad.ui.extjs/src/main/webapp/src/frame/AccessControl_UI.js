@@ -70,11 +70,21 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.AccessControl_UI", {
 	}					 	
 
 	,onBtnShowUiAsgnRules: function() {
-		getApplication().showFrameByName("nan21.dnet.module.ad.ui.extjs","net.nan21.dnet.module.ad.usr.frame.AsgnAccessControl_UI");	 	
+		var bundle = "nan21.dnet.module.ad.ui.extjs";
+		var frame = "net.nan21.dnet.module.ad.usr.frame.AsgnAccessControl_UI";
+		
+		getApplication().showFrameByName("nan21.dnet.module.ad.ui.extjs","net.nan21.dnet.module.ad.usr.frame.AsgnAccessControl_UI");
+		
+		
 	}					 	
 
 	,onBtnShowUiDsRules: function() {
-		getApplication().showFrameByName("nan21.dnet.module.ad.ui.extjs","net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI");	 	
+		var bundle = "nan21.dnet.module.ad.ui.extjs";
+		var frame = "net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI";
+		
+		getApplication().showFrameByName("nan21.dnet.module.ad.ui.extjs","net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI");
+		
+		
 	}					 	
 
 	,onBtnCopyRules: function() {

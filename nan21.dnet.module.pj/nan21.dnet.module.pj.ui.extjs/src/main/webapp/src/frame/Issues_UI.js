@@ -38,9 +38,18 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Issues_UI", {
 		.addButton({name:"btnCancelLink",text:"Cancel", tooltip:"Cancel",disabled:true
 			,handler: this.onBtnCancelLink,scope:this,stateManager:{name:"record_is_dirty", dc:"link" }	})	
 							 	
+		.addButton({name:"btnTaskUi",text:"Tasks editor", tooltip:"Open standalone task editor frame",disabled:false
+			,handler: this.onBtnTaskUi,scope:this	})	
+							 	
+		.addButton({name:"btnRoadmapUi",text:"Roadmap", tooltip:"Open roadmap frame",disabled:false
+			,handler: this.onBtnRoadmapUi,scope:this	})	
+							 	
+		.addButton({name:"btnChangelogUi",text:"Changelog", tooltip:"Open changelog frame",disabled:false
+			,handler: this.onBtnChangelogUi,scope:this	})	
+							 	
 		.addDcFilterFormView("issue",{ name:"issueFilter", xtype:"net.nan21.dnet.module.pj.md.dc.Issue$Filter",height:180})	 
 		.addDcView("issue",{ name:"issueList", xtype:"net.nan21.dnet.module.pj.md.dc.Issue$List"})	 
-		.addDcFormView("issue",{ name:"issueEdit", xtype:"net.nan21.dnet.module.pj.md.dc.Issue$Edit",height:250,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnAffectedVersions") ,this._elems_.get("btnAsgnAffectedComps") ]}]})	 
+		.addDcFormView("issue",{ name:"issueEdit", xtype:"net.nan21.dnet.module.pj.md.dc.Issue$Edit",height:220,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnAffectedVersions") ,this._elems_.get("btnAsgnAffectedComps") ]}]})	 
 		.addDcFormView("issue",{ name:"issueEditText", xtype:"net.nan21.dnet.module.pj.md.dc.Issue$EditText",title:"Description"})	 
 		.addDcView("link",{ name:"linkList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList",title:"Links"})	 
 		.addDcFormView("link",{ name:"linkCreate", xtype:"net.nan21.dnet.module.pj.md.dc.IssueLink$CtxCreate"})	 
@@ -84,7 +93,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Issues_UI", {
 	,_defineToolbars_: function() {
 		this._getBuilder_()
 			.beginToolbar("tlbIssueList", {dc:"issue"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Issues"}).end()
-			.beginToolbar("tlbIssueEdit", {dc:"issue"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Issue"}).end()
+			.beginToolbar("tlbIssueEdit", {dc:"issue"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addButtons([this._elems_.get("btnTaskUi") ,this._elems_.get("btnChangelogUi") ,this._elems_.get("btnRoadmapUi") ]).addSeparator().addSeparator().addTitle({"text":"Issue"}).end()
 			.beginToolbar("tlbLinkList", {dc:"link"}).addQuery().addNew().addDeleteSelected().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Links"}).end()
 			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
 			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Notes"}).end()
@@ -110,6 +119,33 @@ this._getDc_("link").doSave();
 this._getDc_("link").doCancel();			 	
 this._getWindow_("wdwIssueLinkCreate").close();			 	
 	}					 	
+
+	,onBtnTaskUi: function() {
+		var bundle = "nan21.dnet.module.pj.ui.extjs";
+		var frame = "net.nan21.dnet.module.pj.md.frame.IssueTask_UI";
+		
+		getApplication().showFrameByName("nan21.dnet.module.pj.ui.extjs","net.nan21.dnet.module.pj.md.frame.IssueTask_UI");
+		
+		
+	}					 	
+
+	,onBtnRoadmapUi: function() {
+		var bundle = "nan21.dnet.module.pj.ui.extjs";
+		var frame = "net.nan21.dnet.module.pj.md.frame.IssueRoadmap_UI";
+		
+		getApplication().showFrameByName("nan21.dnet.module.pj.ui.extjs","net.nan21.dnet.module.pj.md.frame.IssueRoadmap_UI");
+		
+		
+	}					 	
+
+	,onBtnChangelogUi: function() {
+		var bundle = "nan21.dnet.module.pj.ui.extjs";
+		var frame = "net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI";
+		
+		getApplication().showFrameByName("nan21.dnet.module.pj.ui.extjs","net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI");
+		
+		
+	}					 	
 	,onUploadSuccess: function() {	
 this._getDc_("atch").doQuery();			 	
 	}
@@ -132,5 +168,17 @@ this._getWindow_("wdwIssueLinkCreate").show();
 	}
 	,_afterDefineDcs_: function() {	
 		this._getDc_("link").on("afterDoNew", this._whenCreateNewLink_, this);
+	}
+	,_when_called_to_edit_: function(params) {	
+		
+		var issue = this._getDc_("issue");
+		if (issue.isDirty()) {
+			this._alert_dirty_();
+			return;
+		}
+		issue.doClearQuery();
+		issue.setFilterValue("code", params.code );
+		issue.doQuery();
+		this._showStackedViewElement_("main",1);
 	}
 });  

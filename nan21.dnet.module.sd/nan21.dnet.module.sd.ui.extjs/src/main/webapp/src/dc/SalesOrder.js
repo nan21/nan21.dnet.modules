@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 
@@ -56,9 +56,9 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$List", {
 		.addTextColumn({ name:"supplierCode", dataIndex:"supplier",width:100 })   	
 		.addTextColumn({ name:"docNo", dataIndex:"docNo",width:100 })   	
 		.addDateColumn({ name:"docDate", dataIndex:"docDate",format:Dnet.DATE_FORMAT})   	      	     
-		.addTextColumn({ name:"type", dataIndex:"type",width:120 })   	
-		.addTextColumn({ name:"status", dataIndex:"status",width:120 })   	
-		.addTextColumn({ name:"currency", dataIndex:"currency",width:100 })   	
+		.addTextColumn({ name:"type", dataIndex:"type", width:70 })   	
+		.addTextColumn({ name:"status", dataIndex:"status", width:70 })   	
+		.addTextColumn({ name:"currency", dataIndex:"currency", width:70 })   	
 		.addTextColumn({ name:"customerCode", dataIndex:"customerCode", hidden:true,width:100 })   	
 		.addTextColumn({ name:"customer", dataIndex:"customer",width:200 })   	
 		.addNumberColumn({ name:"totalNetAmount", dataIndex:"totalNetAmount",decimals:2 })  
@@ -96,17 +96,18 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$Edit", {
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.sd.order.lovs.SalesOrderType", dataIndex:"type",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addTextField({ name:"docNo", dataIndex:"docNo",anchor:"-20" ,maxLength:32  })
 		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,allowBlank:false})
+		.addLov({ name:"priceList", xtype:"net.nan21.dnet.module.mm.price.lovs.PriceList", dataIndex:"priceList",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priceListId"} ,{lovField:"currencyId", dsField: "currencyId"} ,{lovField:"currency", dsField: "currency"} ]  })
 		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		.addLov({ name:"deliveryMethod", xtype:"net.nan21.dnet.module.bp.base.lovs.DeliveryMethods", dataIndex:"deliveryMethod",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "deliveryMethodId"} ]  })
 		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"customer",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "customerId"} ,{lovField:"id", dsField: "billToId"} ,{lovField:"name", dsField: "billTo"} ,{lovField:"id", dsField: "shipToId"} ,{lovField:"name", dsField: "shipTo"} ]  })
-		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"supplier",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
+		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"supplier",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
 		.addLov({ name:"billTo", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartnersName", dataIndex:"billTo",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "billToId"} ]  })
 		.addLov({ name:"billToLocation", xtype:"net.nan21.dnet.module.bd.geo.lovs.LocationsToBill", dataIndex:"billToLocation",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "billToLocationId"} ],filterFieldMapping: [{lovField:"targetId", dsField: "billToId"} ]  })
 		.addLov({ name:"shipTo", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartnersName", dataIndex:"shipTo",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "shipToId"} ]  })
 		.addLov({ name:"shipToLocation", xtype:"net.nan21.dnet.module.bd.geo.lovs.LocationsToShip", dataIndex:"shipToLocation",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "shipToLocationId"} ],filterFieldMapping: [{lovField:"targetId", dsField: "billToId"} ]  })
-		.addNumberField({ name:"totalNetAmount", dataIndex:"totalNetAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
-		.addNumberField({ name:"totalTaxAmount", dataIndex:"totalTaxAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
-		.addNumberField({ name:"totalAmount", dataIndex:"totalAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
+		.addDisplayFieldNumber({name:"totalNetAmount", dataIndex:"totalNetAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
+		.addDisplayFieldNumber({name:"totalTaxAmount", dataIndex:"totalTaxAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
+		.addDisplayFieldNumber({name:"totalAmount", dataIndex:"totalAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" ,width:250})     
 		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
@@ -118,8 +119,8 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ,"col4" ])
-		.addChildrenTo("col1",["supplier","customer","type","status","currency"])
-		.addChildrenTo("col2",["docNo","docDate","deliveryMethod"])
+		.addChildrenTo("col1",["supplier","customer","type","status"])
+		.addChildrenTo("col2",["docNo","docDate","deliveryMethod","priceList","currency"])
 		.addChildrenTo("col3",["billTo","billToLocation","shipTo","shipToLocation"])
 		.addChildrenTo("col4",["totalNetAmount","totalTaxAmount","totalAmount"])
 ;

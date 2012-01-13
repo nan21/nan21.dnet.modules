@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 
@@ -23,7 +23,6 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Filter", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addNumberField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20"  })
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addLov({ name:"project", xtype:"net.nan21.dnet.module.pj.md.lovs.Projects", dataIndex:"project",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "projectId"} ]  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
@@ -49,7 +48,7 @@ labelAlign:"right",labelWidth:70}})
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col4"])
-		.addChildrenTo("col1",["id","code","project","type","assignee"])
+		.addChildrenTo("col1",["code","project","type","assignee"])
 		.addChildrenTo("col2",["severity","priority","status","resolution"])
 		.addChildrenTo("col4",["reportedVersion","targetVersion","fixedInVersion","affectedComponent","affectedVersion"])
     	.addAuditFilter({})	
@@ -101,14 +100,13 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addNumberField({ name:"id", dataIndex:"id",anchor:"-20",noEdit:true   , style: "text-align:right;" })
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
 		.addNumberField({ name:"projectId", dataIndex:"projectId",anchor:"-20",noEdit:true   , style: "text-align:right;" })
 		.addLov({ name:"project", xtype:"net.nan21.dnet.module.pj.md.lovs.Projects", dataIndex:"project",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "projectId"} ,{lovField:"name", dsField: "projectName"} ]  })
-		.addTextField({ name:"projectName", dataIndex:"projectName",anchor:"-20",noEdit:true  ,maxLength:255  })
+		.addDisplayFieldText({ name:"projectName", dataIndex:"projectName"  })
 		.addTextField({ name:"summary", dataIndex:"summary",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addDateField({ name:"dueDate", dataIndex:"dueDate",anchor:"-20" })
-		.addDateField({ name:"resolutionDate", dataIndex:"resolutionDate",anchor:"-20",noEdit:true, hideTrigger:true })
+		.addDisplayFieldDate({name:"resolutionDate", dataIndex:"resolutionDate"  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTypes", dataIndex:"type",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addLov({ name:"status", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueStatus", dataIndex:"status",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
 		.addLov({ name:"priority", xtype:"net.nan21.dnet.module.pj.base.lovs.IssuePriorities", dataIndex:"priority",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
@@ -133,7 +131,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
-		.addChildrenTo("col1",["project","projectName","type","severity","priority","code","id"])
+		.addChildrenTo("col1",["project","projectName","type","severity","priority","code"])
 		.addChildrenTo("col2",["row1" ,"row2" ])
 		.addChildrenTo("row1",["summary"])
 		.addChildrenTo("row2",["col3" ,"col4" ,"col5" ])
@@ -161,6 +159,62 @@ labelAlign:"top"}})
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["description"])
+;
+	}	
+});
+ 	
+
+Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$View", {
+	extend: "dnet.base.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.pj.md.dc.Issue$View",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addDisplayFieldText({ name:"code", dataIndex:"code"  })
+		.addDisplayFieldNumber({name:"projectId", dataIndex:"projectId"  })
+		.addDisplayFieldText({ name:"project", dataIndex:"project"  })
+		.addDisplayFieldText({ name:"projectName", dataIndex:"projectName"  })
+		.addDisplayFieldText({ name:"summary", dataIndex:"summary"  })
+		.addDisplayFieldDate({name:"dueDate", dataIndex:"dueDate"  })
+		.addDisplayFieldDate({name:"resolutionDate", dataIndex:"resolutionDate"  })
+		.addDisplayFieldText({ name:"type", dataIndex:"type"  })
+		.addDisplayFieldText({ name:"status", dataIndex:"status"  })
+		.addDisplayFieldText({ name:"priority", dataIndex:"priority"  })
+		.addDisplayFieldText({ name:"resolution", dataIndex:"resolution"  })
+		.addDisplayFieldText({ name:"severity", dataIndex:"severity"  })
+		.addDisplayFieldText({ name:"assignee", dataIndex:"assignee"  })
+		.addDisplayFieldText({ name:"assigneeRole", dataIndex:"assigneeRole"  })
+		.addDisplayFieldText({ name:"reportedVersion", dataIndex:"reportedVersion"  })
+		.addDisplayFieldText({ name:"targetVersion", dataIndex:"targetVersion"  })
+		.addDisplayFieldText({ name:"fixedInVersion", dataIndex:"fixedInVersion"  })
+		.addDisplayFieldText({ name:"description", dataIndex:"description", asText:true, fieldStyle:"height:auto;"  })
+		//containers
+		.addPanel({ name:"r2", layout:"anchor" , width:"100%", defaults:{
+labelAlign:"top"}})     
+		.addPanel({ name:"col1", layout:"anchor" , width:260})     
+		.addPanel({ name:"row1", layout:"anchor" , width:600})     
+		.addPanel({ name:"col3", layout:"anchor" , width:250})     
+		.addPanel({ name:"col4", layout:"anchor" ,title:"Versions", width:250,xtype:"fieldset", border:false, collapsible:true})     
+		.addPanel({ name:"col5", layout:"anchor" , width:250})     
+		.addPanel({ name:"main" , autoScroll:true })      	 
+		.addPanel({ name:"col2"  })      	 
+		.addPanel({ name:"r1", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
+		.addPanel({ name:"row2", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, width:750 }) 
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["r1" ,"r2" ])
+		.addChildrenTo("r2",["description"])
+		.addChildrenTo("r1",["col1" ,"col2" ])
+		.addChildrenTo("col1",["project","projectName","type","severity","priority","code"])
+		.addChildrenTo("col2",["row1" ,"row2" ])
+		.addChildrenTo("row1",["summary"])
+		.addChildrenTo("row2",["col3" ,"col4" ,"col5" ])
+		.addChildrenTo("col3",["assignee","status","resolution"])
+		.addChildrenTo("col4",["reportedVersion","targetVersion","fixedInVersion"])
+		.addChildrenTo("col5",["dueDate","resolutionDate"])
 ;
 	}	
 });

@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 
@@ -113,7 +113,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextField({ name:"type", dataIndex:"type",anchor:"-20",noEdit:true  ,maxLength:16  })
+		.addDisplayFieldText({ name:"type", dataIndex:"type"  })
 		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
 		.addTextField({ name:"taxPayerNo", dataIndex:"taxPayerNo",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"firstName", dataIndex:"firstName",anchor:"-20" ,maxLength:255,listeners:{change:{scope:this, fn:this._updatePersonName_}}  })

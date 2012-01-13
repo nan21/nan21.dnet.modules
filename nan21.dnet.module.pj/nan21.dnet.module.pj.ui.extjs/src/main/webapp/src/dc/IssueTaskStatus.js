@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.pj.base.dc.IssueTaskStatus", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

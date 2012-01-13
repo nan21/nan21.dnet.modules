@@ -10,7 +10,12 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Task", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
+	},
+	initNewRecordInstance : function(o) {
+		o.eventType = "task";
+		return o;
 	}
+	
 });
 
 

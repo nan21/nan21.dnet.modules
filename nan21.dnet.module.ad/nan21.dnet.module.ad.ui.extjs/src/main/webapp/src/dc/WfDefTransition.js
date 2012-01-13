@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefTransition", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

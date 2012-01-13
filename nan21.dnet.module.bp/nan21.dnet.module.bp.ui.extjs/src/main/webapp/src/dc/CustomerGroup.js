@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.CustomerGroup", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 

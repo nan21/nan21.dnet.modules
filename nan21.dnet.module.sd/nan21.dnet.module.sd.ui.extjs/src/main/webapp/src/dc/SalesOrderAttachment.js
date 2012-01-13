@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderAttachment", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}
+	}	
 });
 
 
