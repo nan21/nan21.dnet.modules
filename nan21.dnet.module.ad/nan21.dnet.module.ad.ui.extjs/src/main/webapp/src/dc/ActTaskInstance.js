@@ -23,8 +23,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addCheckbox({ name:"hideActive" ,paramIndex:"hideActive" ,listeners:{check:{scope:this, fn:this._doQuery_}} })
-		.addCheckbox({ name:"hideCompleted" ,paramIndex:"hideCompleted" ,listeners:{check:{scope:this, fn:this._doQuery_}} })
+		.addCheckbox({ name:"hideActive" ,paramIndex:"hideActive" ,listeners:{change:{scope:this, fn:this._doQuery_}} })
+		.addCheckbox({ name:"hideCompleted" ,paramIndex:"hideCompleted" ,listeners:{change:{scope:this, fn:this._doQuery_}} })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor",width:210, defaults:{
 labelAlign:"right",labelWidth:150}}) 

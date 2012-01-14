@@ -10,7 +10,10 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	}	
+	},	
+	afterDoCopy: function() {
+		this.record.set("summary", "Copy of "+ this.record.get("summary"));
+	}
 });
 
 
@@ -100,9 +103,8 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
-		.addNumberField({ name:"projectId", dataIndex:"projectId",anchor:"-20",noEdit:true   , style: "text-align:right;" })
-		.addLov({ name:"project", xtype:"net.nan21.dnet.module.pj.md.lovs.Projects", dataIndex:"project",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "projectId"} ,{lovField:"name", dsField: "projectName"} ]  })
+		.addDisplayFieldText({ name:"code", dataIndex:"code"  })
+		.addLov({ name:"project", xtype:"net.nan21.dnet.module.pj.md.lovs.Projects", dataIndex:"project",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "projectId"} ,{lovField:"name", dsField: "projectName"} ]  })
 		.addDisplayFieldText({ name:"projectName", dataIndex:"projectName"  })
 		.addTextField({ name:"summary", dataIndex:"summary",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addDateField({ name:"dueDate", dataIndex:"dueDate",anchor:"-20" })
