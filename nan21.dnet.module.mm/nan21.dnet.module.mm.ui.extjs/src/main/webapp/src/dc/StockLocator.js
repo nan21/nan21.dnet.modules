@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.StockLocator", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.inventory.ds.model.StockLocatorDs",
 	filterModel: "net.nan21.dnet.module.mm.inventory.ds.model.StockLocatorDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.StockLocator", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.StockLocator$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.StockLocator$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -44,7 +44,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.StockLocator$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.StockLocator$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.StockLocator$CtxEditList",
 	
 	 _noImport_: false

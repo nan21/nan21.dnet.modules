@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.UserType", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.usr.ds.model.UserTypeDs",
 	filterModel: "net.nan21.dnet.module.ad.usr.ds.model.UserTypeDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.UserType", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.UserType$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.usr.dc.UserType$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.UserType$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.UserType$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.UserType$EditList",
 	
 	 _noImport_: false

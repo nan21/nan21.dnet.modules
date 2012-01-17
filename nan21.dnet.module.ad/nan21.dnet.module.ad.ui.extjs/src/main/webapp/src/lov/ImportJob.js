@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.ad.impex.lovs.ImportJob", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.ad.impex.lovs.ImportJob",
  
 	displayField:"name",

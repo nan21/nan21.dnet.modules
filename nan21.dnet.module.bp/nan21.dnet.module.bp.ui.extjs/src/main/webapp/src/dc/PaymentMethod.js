@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bp.base.dc.PaymentMethod", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.base.ds.model.PaymentMethodDs",
 	filterModel: "net.nan21.dnet.module.bp.base.ds.model.PaymentMethodDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.PaymentMethod", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.base.dc.PaymentMethod$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bp.base.dc.PaymentMethod$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.PaymentMethod$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bp.base.dc.PaymentMethod$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bp.base.dc.PaymentMethod$EditList",
 	
 	 _noImport_: false

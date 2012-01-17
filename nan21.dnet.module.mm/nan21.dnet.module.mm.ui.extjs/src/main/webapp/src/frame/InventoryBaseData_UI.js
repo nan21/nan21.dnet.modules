@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/StockLocatorTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/StockLocatorType", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionSourceTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionSourceType", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionActionDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionAction", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionType","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionSourceTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionSourceTypeS","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionActionLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionActions","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionSourceTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionSourceTypeS","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionActionLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionActions"]);
 
 Ext.define("net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI",
 	
 	 _name_ : "net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI"

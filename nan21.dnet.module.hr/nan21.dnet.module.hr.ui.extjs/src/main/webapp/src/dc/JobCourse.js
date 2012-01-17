@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.training.ds.model.JobCourseDs",
 	filterModel: "net.nan21.dnet.module.hr.training.ds.model.JobCourseDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.training.dc.JobCourse$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -37,7 +37,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$JobCtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.training.dc.JobCourse$JobCtxEditList",
 	
 	 _noImport_: true
@@ -60,7 +60,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$JobCtxEditList", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$CourseCtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.training.dc.JobCourse$CourseCtxEditList",
 	
 	 _noImport_: true

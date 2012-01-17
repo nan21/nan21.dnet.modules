@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.pj.base.dc.IssueSeverity", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.pj.base.ds.model.IssueSeverityDs",
 	filterModel: "net.nan21.dnet.module.pj.base.ds.model.IssueSeverityDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.base.dc.IssueSeverity", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.base.dc.IssueSeverity$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.pj.base.dc.IssueSeverity$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.pj.base.dc.IssueSeverity$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.pj.base.dc.IssueSeverity$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.pj.base.dc.IssueSeverity$EditList",
 	
 	 _noImport_: false

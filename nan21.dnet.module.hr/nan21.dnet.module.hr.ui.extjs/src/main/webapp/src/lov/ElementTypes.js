@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.hr.payroll.lovs.ElementTypes", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.hr.payroll.lovs.ElementTypes",
  
 	displayField:"name",

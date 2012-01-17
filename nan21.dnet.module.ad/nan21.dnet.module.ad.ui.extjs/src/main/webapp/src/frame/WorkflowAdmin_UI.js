@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessDefinition", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessInstance", "nan21.dnet.module.ad.ui.extjs/ds/ActTaskInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/ActTaskInstance", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessInstanceHistoryDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessInstanceHistory", "nan21.dnet.module.ad.ui.extjs/ds/ActTaskInstanceHistoryDs", "nan21.dnet.module.ad.ui.extjs/dc/ActTaskInstanceHistory", "nan21.dnet.module.ad.ui.extjs/ds/ActDeploymentDs", "nan21.dnet.module.ad.ui.extjs/dc/ActDeployment","nan21.dnet.module.ad.ui.extjs/ds/ActDeploymentLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActDeployments","nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActProcessDefinitions","nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActProcessDefinitions"]);
 
 Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI"
@@ -147,11 +147,11 @@ this._getDc_("dcDeployment").doQuery();
 	}
 	,startProcessInstanceWithForm: function() {	
 		
-		dnet.base.WorkflowFormFactory.createStartForm(this._getDc_("dcProcess").getRecord().data.id );
+		dnet.core.base.WorkflowFormFactory.createStartForm(this._getDc_("dcProcess").getRecord().data.id );
 	}
 	,onBtnCompleteTask: function() {	
 		
-		dnet.base.WorkflowFormFactory.createTaskForm(this._getDc_("dcRunningTask").getRecord().data.id ); 
+		dnet.core.base.WorkflowFormFactory.createTaskForm(this._getDc_("dcRunningTask").getRecord().data.id ); 
 	}
 	,startProcessInstance: function() {	
 		var p=this._getDc_("dcProcess").getRecord().data; 
@@ -172,7 +172,7 @@ this._getDc_("dcDeployment").doQuery();
 		window.open(Dnet.wfProcessInstanceAPI(id).diagram,"ProcessDiagram","width=500,height=400");
 	}
 	,onBtnUploadForDeployment: function() {	
-		var w=new dnet.base.FileUploadWindow({_uploadUrl_:"/nan21.dnet.core.web/upload/deployUploadedWorkflow"});w.show();
+		var w=new dnet.core.base.FileUploadWindow({_uploadUrl_:"/nan21.dnet.core.web/upload/deployUploadedWorkflow"});w.show();
 	}
 	,onBtnDeleteDeployment: function() {	
 		

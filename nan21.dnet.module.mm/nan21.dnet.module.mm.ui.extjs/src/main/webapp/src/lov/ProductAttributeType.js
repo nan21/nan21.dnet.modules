@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.mm.md.lovs.ProductAttributeType", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.mm.md.lovs.ProductAttributeType",
  
 	displayField:"name",

@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.pj.ui.extjs/ds/IssueChangelogDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueChangelog", "nan21.dnet.module.pj.ui.extjs/ds/IssueDs", "nan21.dnet.module.pj.ui.extjs/dc/Issue","nan21.dnet.module.pj.ui.extjs/ds/ProjectLovDs","nan21.dnet.module.pj.ui.extjs/lov/Projects","nan21.dnet.module.pj.ui.extjs/ds/IssueTypeLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueTypes","nan21.dnet.module.pj.ui.extjs/ds/IssueStatusLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueStatus","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions"]);
 
 Ext.define("net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI",
 	
 	 _name_ : "net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI"

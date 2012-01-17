@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs",
 	filterModel: "net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.pj.md.dc.ProjectVersion$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -44,7 +44,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.ProjectVersion$EditList",
 	
 	 _noImport_: false
@@ -71,7 +71,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$EditList", {
  	
  	 
 Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.ProjectVersion$CtxEditList",
 	
 	 _noImport_: false

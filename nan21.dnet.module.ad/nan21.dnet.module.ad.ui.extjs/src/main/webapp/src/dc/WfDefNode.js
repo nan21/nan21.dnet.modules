@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefNode", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeDs",
 	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.WfDefNodeDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefNode", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefNode$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.WfDefNode$CtxEditList",
 	
 	 _noImport_: true

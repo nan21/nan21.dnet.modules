@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/SysParamDs", "nan21.dnet.module.ad.ui.extjs/dc/SysParam"]);
 
 Ext.define("net.nan21.dnet.module.ad.system.frame.SysParam_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.system.frame.SysParam_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.system.frame.SysParam_UI"

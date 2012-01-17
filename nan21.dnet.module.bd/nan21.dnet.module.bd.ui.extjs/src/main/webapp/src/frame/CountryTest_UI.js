@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/CountryDs", "nan21.dnet.module.bd.ui.extjs/dc/Country", "nan21.dnet.module.bd.ui.extjs/ds/RegionDs", "nan21.dnet.module.bd.ui.extjs/dc/Region"]);
 
 Ext.define("net.nan21.dnet.module.bd.geo.frame.CountryTest_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.bd.geo.frame.CountryTest_UI",
 	
 	 _name_ : "net.nan21.dnet.module.bd.geo.frame.CountryTest_UI"

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDataSource", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs",
 	filterModel: "net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDataSource", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDataSource$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.system.dc.SysDataSource$List",
 	
 	 _noImport_: true

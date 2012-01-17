@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.User", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.usr.ds.model.UserDs",
 	filterModel: "net.nan21.dnet.module.ad.usr.ds.model.UserDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.usr.dc.User$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -46,7 +46,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.User$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.usr.dc.User$List",
 	
 	 _noImport_: false
@@ -74,7 +74,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$List", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.User$Edit",
 	
 	_defineElements_: function () {	
@@ -106,7 +106,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Edit", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm",
 	
 	_defineElements_: function () {	

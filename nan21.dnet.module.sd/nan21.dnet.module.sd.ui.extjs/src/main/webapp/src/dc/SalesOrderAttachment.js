@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderAttachment", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.sd.order.ds.model.SalesOrderAttachmentDs",
 	filterModel: "net.nan21.dnet.module.sd.order.ds.model.SalesOrderAttachmentDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderAttachment", {
  	
  	 
 Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderAttachment$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.sd.order.dc.SalesOrderAttachment$CtxEditList",
 	
 	 _noImport_: false

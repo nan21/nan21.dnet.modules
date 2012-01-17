@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/ElementValueDs", "nan21.dnet.module.hr.ui.extjs/dc/ElementValue","nan21.dnet.module.hr.ui.extjs/ds/ElementLovDs","nan21.dnet.module.hr.ui.extjs/lov/Elements","nan21.dnet.module.hr.ui.extjs/ds/EmployeeLovDs","nan21.dnet.module.hr.ui.extjs/lov/Employees","nan21.dnet.module.hr.ui.extjs/ds/PayrollPeriodLovDs","nan21.dnet.module.hr.ui.extjs/lov/PayrollPeriods"]);
 
 Ext.define("net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI",
 	
 	 _name_ : "net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI"

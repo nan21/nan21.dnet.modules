@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderType", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeDs",
 	filterModel: "net.nan21.dnet.module.sd.order.ds.model.SalesOrderTypeDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderType", {
  	
 
 Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderType$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.sd.order.dc.SalesOrderType$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderType$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderType$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.sd.order.dc.SalesOrderType$EditList",
 	
 	 _noImport_: false

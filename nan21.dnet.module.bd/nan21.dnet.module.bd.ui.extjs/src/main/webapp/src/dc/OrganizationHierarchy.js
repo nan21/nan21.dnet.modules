@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDs",
 	filterModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$List",
 	
 	 _noImport_: false
@@ -63,7 +63,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$List", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$EditList",
 	
 	 _noImport_: false
@@ -86,7 +86,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$EditList", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Edit",
 	
 	_defineElements_: function () {	

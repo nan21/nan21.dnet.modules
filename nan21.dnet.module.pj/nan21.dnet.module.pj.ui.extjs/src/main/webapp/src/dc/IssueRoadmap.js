@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueRoadmap", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.pj.md.ds.model.IssueRoadmapDs",
 	filterModel: "net.nan21.dnet.module.pj.md.ds.model.IssueRoadmapDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueRoadmap", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueRoadmap$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueRoadmap$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -52,7 +52,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueRoadmap$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueRoadmap$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.pj.md.dc.IssueRoadmap$List",
 	
 	 _noImport_: false

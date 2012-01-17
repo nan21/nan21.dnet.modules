@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingLevel", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.RatingLevelDs",
 	filterModel: "net.nan21.dnet.module.hr.skill.ds.model.RatingLevelDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingLevel", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingLevel$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.skill.dc.RatingLevel$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingLevel$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingLevel$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.skill.dc.RatingLevel$CtxEditList",
 	
 	 _noImport_: true
@@ -66,7 +66,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingLevel$CtxEditList", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingLevel$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.skill.dc.RatingLevel$EditList",
 	
 	 _noImport_: false

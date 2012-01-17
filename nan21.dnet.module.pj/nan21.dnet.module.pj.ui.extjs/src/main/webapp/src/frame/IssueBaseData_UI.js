@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.pj.ui.extjs/ds/IssueCategoryDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueCategory", "nan21.dnet.module.pj.ui.extjs/ds/IssueTypeDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueType", "nan21.dnet.module.pj.ui.extjs/ds/IssueStatusDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueStatus", "nan21.dnet.module.pj.ui.extjs/ds/IssuePriorityDs", "nan21.dnet.module.pj.ui.extjs/dc/IssuePriority", "nan21.dnet.module.pj.ui.extjs/ds/IssueSeverityDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueSeverity", "nan21.dnet.module.pj.ui.extjs/ds/IssueResolutionDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueResolution", "nan21.dnet.module.pj.ui.extjs/ds/IssueLinkTypeDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueLinkType", "nan21.dnet.module.pj.ui.extjs/ds/IssueTaskTypeDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueTaskType", "nan21.dnet.module.pj.ui.extjs/ds/IssueTaskStatusDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueTaskStatus","nan21.dnet.module.pj.ui.extjs/ds/IssueCategoryLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueCategories","nan21.dnet.module.pj.ui.extjs/ds/IssueCategoryLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueCategories"]);
 
 Ext.define("net.nan21.dnet.module.pj.base.frame.IssueBaseData_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.pj.base.frame.IssueBaseData_UI",
 	
 	 _name_ : "net.nan21.dnet.module.pj.base.frame.IssueBaseData_UI"

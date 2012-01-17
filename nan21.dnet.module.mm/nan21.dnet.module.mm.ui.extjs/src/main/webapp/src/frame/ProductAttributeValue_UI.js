@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeValueDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeValue","nan21.dnet.module.mm.ui.extjs/ds/ProductLovDs","nan21.dnet.module.mm.ui.extjs/lov/Products","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttribute","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeType"]);
 
 Ext.define("net.nan21.dnet.module.mm.md.frame.ProductAttributeValue_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.mm.md.frame.ProductAttributeValue_UI",
 	
 	 _name_ : "net.nan21.dnet.module.mm.md.frame.ProductAttributeValue_UI"

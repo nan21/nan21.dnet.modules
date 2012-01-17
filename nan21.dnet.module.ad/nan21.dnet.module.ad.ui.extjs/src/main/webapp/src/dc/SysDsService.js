@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsService", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsServiceDs",
 	filterModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsServiceDsFilter",
@@ -17,7 +17,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsService", {
 
  		 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList",
 	
 	 _noImport_: false

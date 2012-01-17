@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.training.dc.CourseCategory", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.training.ds.model.CourseCategoryDs",
 	filterModel: "net.nan21.dnet.module.hr.training.ds.model.CourseCategoryDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.CourseCategory", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.training.dc.CourseCategory$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.training.dc.CourseCategory$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.CourseCategory$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.training.dc.CourseCategory$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.training.dc.CourseCategory$EditList",
 	
 	 _noImport_: false

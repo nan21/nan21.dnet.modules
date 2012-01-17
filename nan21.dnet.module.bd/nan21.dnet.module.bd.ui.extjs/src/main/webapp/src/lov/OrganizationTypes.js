@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.bd.org.lovs.OrganizationTypes", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.bd.org.lovs.OrganizationTypes",
  
 	displayField:"name",

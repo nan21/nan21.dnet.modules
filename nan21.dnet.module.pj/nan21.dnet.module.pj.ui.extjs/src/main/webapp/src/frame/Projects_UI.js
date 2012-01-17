@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.pj.ui.extjs/ds/ProjectDs", "nan21.dnet.module.pj.ui.extjs/dc/Project", "nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionDs", "nan21.dnet.module.pj.ui.extjs/dc/ProjectVersion", "nan21.dnet.module.pj.ui.extjs/ds/ProjectComponentDs", "nan21.dnet.module.pj.ui.extjs/dc/ProjectComponent", "nan21.dnet.module.pj.ui.extjs/ds/ProjectMemberDs", "nan21.dnet.module.pj.ui.extjs/dc/ProjectMember", "nan21.dnet.module.pj.ui.extjs/ds/ProjectAttachmentDs", "nan21.dnet.module.pj.ui.extjs/dc/ProjectAttachment","nan21.dnet.module.pj.ui.extjs/ds/ProjectTypeLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectTypes","nan21.dnet.module.pj.ui.extjs/ds/ProjectMemberLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectMembers","nan21.dnet.module.pj.ui.extjs/ds/ProjectTypeLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectTypes","nan21.dnet.module.pj.ui.extjs/ds/ProjectMemberLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectMembers","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.ad.ui.extjs/ds/AttachmentTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/AttachmentTypes","nan21.dnet.module.ad.ui.extjs/ds/AssignableLovDs","nan21.dnet.module.ad.ui.extjs/lov/Assignables","nan21.dnet.module.pj.ui.extjs/ds/ProjectRoleLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectRoles"]);
 
 Ext.define("net.nan21.dnet.module.pj.base.frame.Projects_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.pj.base.frame.Projects_UI",
 	
 	 _name_ : "net.nan21.dnet.module.pj.base.frame.Projects_UI"
@@ -70,7 +70,7 @@ Ext.define("net.nan21.dnet.module.pj.base.frame.Projects_UI", {
 this._getDc_("atch").doQuery();			 	
 	}
 	,onBtnUploadAttachment: function() {	
-		var w=new dnet.base.FileUploadWindow({
+		var w=new dnet.core.base.FileUploadWindow({
     		_nameFieldValue_: this._getDc_("atch").getRecord().get("name"),
     		_p1Value_: this._getDc_("atch").getRecord().get("id"),
     		_uploadUrl_:"/nan21.dnet.core.web/upload/projectAttachmentUpload",

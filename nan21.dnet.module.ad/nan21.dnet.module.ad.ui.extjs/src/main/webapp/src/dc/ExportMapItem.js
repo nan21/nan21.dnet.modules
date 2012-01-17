@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.impex.ds.model.ExportMapItemDs",
 	filterModel: "net.nan21.dnet.module.ad.impex.ds.model.ExportMapItemDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ExportMapItem$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -44,7 +44,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ExportMapItem$CtxEditList",
 	
 	 _noImport_: false

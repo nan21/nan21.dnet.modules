@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.data.dc.Note", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.data.ds.model.NoteDs",
 	filterModel: "net.nan21.dnet.module.ad.data.ds.model.NoteDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Note", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.data.dc.Note$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.data.dc.Note$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -38,7 +38,7 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Note$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.data.dc.Note$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.data.dc.Note$List",
 	
 	 _noImport_: true
@@ -58,7 +58,7 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Note$List", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.data.dc.Note$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.data.dc.Note$Edit",
 	
 	_defineElements_: function () {	

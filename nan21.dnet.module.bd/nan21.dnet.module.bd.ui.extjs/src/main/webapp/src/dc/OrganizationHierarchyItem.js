@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyItemDs",
 	filterModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyItemDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem$CtxEditList",
 	
 	 _noImport_: false
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem$CtxEditLis
 });
  	
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem$TreeView", {
-	extend: "dnet.base.AbstractDcvTree",
+	extend: "dnet.core.dc.AbstractDcvTree",
 	alias: "widget.net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem$TreeView",
  
 	_defineColumns_: function () {		

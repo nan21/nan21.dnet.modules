@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJobItem", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportJobItemDs",
 	filterModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportJobItemDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJobItem", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJobItem$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ImportJobItem$CtxEditList",
 	
 	 _noImport_: false

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.currency.dc.Currency", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.currency.ds.model.CurrencyDs",
 	filterModel: "net.nan21.dnet.module.bd.currency.ds.model.CurrencyDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.Currency", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.currency.dc.Currency$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bd.currency.dc.Currency$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.Currency$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bd.currency.dc.Currency$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.currency.dc.Currency$EditList",
 	
 	 _noImport_: false

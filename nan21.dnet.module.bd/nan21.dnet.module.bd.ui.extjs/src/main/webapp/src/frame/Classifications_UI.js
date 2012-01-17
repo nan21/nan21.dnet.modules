@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/ClassificationSystemDs", "nan21.dnet.module.bd.ui.extjs/dc/ClassificationSystem", "nan21.dnet.module.bd.ui.extjs/ds/ClassificationCodeDs", "nan21.dnet.module.bd.ui.extjs/dc/ClassificationCode","nan21.dnet.module.bd.ui.extjs/ds/ClassificationSystemLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationSystems","nan21.dnet.module.bd.ui.extjs/ds/ClassificationSystemLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationSystems"]);
 
 Ext.define("net.nan21.dnet.module.bd.standards.frame.Classifications_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.bd.standards.frame.Classifications_UI",
 	
 	 _name_ : "net.nan21.dnet.module.bd.standards.frame.Classifications_UI"

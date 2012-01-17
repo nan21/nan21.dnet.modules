@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentDs",
 	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -42,7 +42,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List",
 	
 	 _noImport_: false

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueAttachment", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.pj.md.ds.model.IssueAttachmentDs",
 	filterModel: "net.nan21.dnet.module.pj.md.ds.model.IssueAttachmentDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueAttachment", {
  	
  	 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueAttachment$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueAttachment$CtxEditList",
 	
 	 _noImport_: false
@@ -41,7 +41,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueAttachment$CtxEditList", {
 });
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueAttachment$CtxList", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.pj.md.dc.IssueAttachment$CtxList",
 	
 	 _noImport_: false

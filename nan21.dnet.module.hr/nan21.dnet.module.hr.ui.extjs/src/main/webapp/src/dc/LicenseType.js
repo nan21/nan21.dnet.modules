@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.employee.dc.LicenseType", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.employee.ds.model.LicenseTypeDs",
 	filterModel: "net.nan21.dnet.module.hr.employee.ds.model.LicenseTypeDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.LicenseType", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.employee.dc.LicenseType$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.employee.dc.LicenseType$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.LicenseType$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.employee.dc.LicenseType$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.employee.dc.LicenseType$EditList",
 	
 	 _noImport_: false

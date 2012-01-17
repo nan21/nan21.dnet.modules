@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.pj.md.ds.model.IssueLinkDs",
 	filterModel: "net.nan21.dnet.module.pj.md.ds.model.IssueLinkDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueLink$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -45,7 +45,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList",
 	
 	 _noImport_: false
@@ -71,7 +71,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$CtxCreate", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueLink$CtxCreate",
 	
 	_defineElements_: function () {	

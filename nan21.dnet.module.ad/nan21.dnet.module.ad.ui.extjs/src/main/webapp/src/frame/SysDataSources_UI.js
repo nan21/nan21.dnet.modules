@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDataSource", "nan21.dnet.module.ad.ui.extjs/ds/SysDsFieldDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDsField"]);
 
 Ext.define("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.system.frame.SysDataSources_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.system.frame.SysDataSources_UI"

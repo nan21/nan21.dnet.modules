@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.bp.md.lovs.BusinessPartnersName", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.bp.md.lovs.BusinessPartnersName",
  
 	displayField:"name",

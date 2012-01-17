@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.bp.ui.extjs/ds/BankDs", "nan21.dnet.module.bp.ui.extjs/dc/Bank"]);
 
 Ext.define("net.nan21.dnet.module.bp.base.frame.Bank_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.bp.base.frame.Bank_UI",
 	
 	 _name_ : "net.nan21.dnet.module.bp.base.frame.Bank_UI"

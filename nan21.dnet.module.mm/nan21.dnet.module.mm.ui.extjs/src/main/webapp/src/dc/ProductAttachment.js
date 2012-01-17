@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttachment", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs",
 	filterModel: "net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttachment", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttachment$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttachment$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -44,7 +44,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttachment$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttachment$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttachment$CtxEditList",
 	
 	 _noImport_: false
@@ -68,7 +68,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttachment$CtxEditList", {
  	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttachment$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttachment$EditList",
 	
 	 _noImport_: false

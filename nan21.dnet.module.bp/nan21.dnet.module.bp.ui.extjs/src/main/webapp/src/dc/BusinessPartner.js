@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs",
 	filterModel: "net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -53,7 +53,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bp.md.dc.BusinessPartner$List",
 	
 	 _noImport_: false
@@ -85,7 +85,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$List", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Create", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.bp.md.dc.BusinessPartner$Create",
 	
 	_defineElements_: function () {	
@@ -105,7 +105,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Create", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit",
 	
 	_defineElements_: function () {	

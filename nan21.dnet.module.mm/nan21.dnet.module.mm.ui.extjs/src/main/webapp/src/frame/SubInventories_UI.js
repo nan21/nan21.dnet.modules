@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/SubInventoryDs", "nan21.dnet.module.mm.ui.extjs/dc/SubInventory", "nan21.dnet.module.mm.ui.extjs/ds/StockLocatorDs", "nan21.dnet.module.mm.ui.extjs/dc/StockLocator","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocatorTypes","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocatorTypes"]);
 
 Ext.define("net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI",
 	
 	 _name_ : "net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI"

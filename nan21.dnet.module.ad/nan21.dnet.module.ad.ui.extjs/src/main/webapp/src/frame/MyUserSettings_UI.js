@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/MyUserSettingsDs", "nan21.dnet.module.ad.ui.extjs/dc/MyUserSettings","nan21.dnet.module.ad.ui.extjs/ds/SysDateFormatLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDateFormats"]);
 
 Ext.define("net.nan21.dnet.module.ad.usr.frame.MyUserSettings_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.usr.frame.MyUserSettings_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.usr.frame.MyUserSettings_UI"

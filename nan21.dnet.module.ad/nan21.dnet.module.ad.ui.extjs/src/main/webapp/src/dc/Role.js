@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.Role", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.usr.ds.model.RoleDs",
 	filterModel: "net.nan21.dnet.module.ad.usr.ds.model.RoleDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.Role", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.Role$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.usr.dc.Role$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.Role$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.Role$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.Role$EditList",
 	
 	 _noImport_: false

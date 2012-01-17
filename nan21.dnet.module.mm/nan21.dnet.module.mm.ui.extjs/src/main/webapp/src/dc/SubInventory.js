@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.inventory.ds.model.SubInventoryDs",
 	filterModel: "net.nan21.dnet.module.mm.inventory.ds.model.SubInventoryDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -42,7 +42,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.mm.inventory.dc.SubInventory$List",
 	
 	 _noImport_: false
@@ -66,7 +66,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$List", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit",
 	
 	_defineElements_: function () {	

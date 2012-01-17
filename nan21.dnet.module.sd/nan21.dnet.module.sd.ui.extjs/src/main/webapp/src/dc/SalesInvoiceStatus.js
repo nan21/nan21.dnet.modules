@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusDs",
 	filterModel: "net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus", {
  	
 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$EditList",
 	
 	 _noImport_: false

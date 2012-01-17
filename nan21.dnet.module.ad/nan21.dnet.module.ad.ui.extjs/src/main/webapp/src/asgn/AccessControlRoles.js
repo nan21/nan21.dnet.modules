@@ -4,13 +4,13 @@ Ext.define("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Model" , {
 	fields:  [{name:"id",type:"string"},{name:"name",type:"string"},{name:"description",type:"string"}]
 });
 Ext.define("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles", {
-	extend: "dnet.base.AbstractAsgn",
+	extend: "dnet.core.asgn.AbstractAsgn",
 	dsName: "AccessControlRoles", 
 	recordModel: "net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Model"
 });	 
  
 Ext.define("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$List", {
-	extend: "dnet.base.AbstractAsgnGrid",
+	extend: "dnet.core.asgn.AbstractAsgnGrid",
 	alias:[ "widget.net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Left","widget.net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Right" ],
 	_defineColumns_: function () {
 		this._getBuilder_()		
@@ -21,7 +21,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$List", {
 });
 
 Ext.define("net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Ui", {
-	extend: "dnet.base.AbstractAsgnUi",
+	extend: "dnet.core.asgn.AbstractAsgnUi",
 	alias: "widget.net.nan21.dnet.module.ad.usr.asgn.AccessControlRoles$Ui",
  	 width:700
 	,height:400 

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bp.base.dc.Bank", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.base.ds.model.BankDs",
 	filterModel: "net.nan21.dnet.module.bp.base.ds.model.BankDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.Bank", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.base.dc.Bank$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bp.base.dc.Bank$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -44,7 +44,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.Bank$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bp.base.dc.Bank$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bp.base.dc.Bank$EditList",
 	
 	 _noImport_: false

@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/RatingLevelDs", "nan21.dnet.module.hr.ui.extjs/dc/RatingLevel","nan21.dnet.module.hr.ui.extjs/ds/RatingScaleLovDs","nan21.dnet.module.hr.ui.extjs/lov/RatingScales","nan21.dnet.module.hr.ui.extjs/ds/RatingScaleLovDs","nan21.dnet.module.hr.ui.extjs/lov/RatingScales"]);
 
 Ext.define("net.nan21.dnet.module.hr.skill.frame.RatingLevel_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.hr.skill.frame.RatingLevel_UI",
 	
 	 _name_ : "net.nan21.dnet.module.hr.skill.frame.RatingLevel_UI"

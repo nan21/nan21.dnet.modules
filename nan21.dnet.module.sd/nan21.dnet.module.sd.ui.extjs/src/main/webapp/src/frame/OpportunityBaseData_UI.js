@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.sd.ui.extjs/ds/OpportunityPriorityDs", "nan21.dnet.module.sd.ui.extjs/dc/OpportunityPriority", "nan21.dnet.module.sd.ui.extjs/ds/OpportunityStatusDs", "nan21.dnet.module.sd.ui.extjs/dc/OpportunityStatus", "nan21.dnet.module.sd.ui.extjs/ds/OpportunitySourceDs", "nan21.dnet.module.sd.ui.extjs/dc/OpportunitySource", "nan21.dnet.module.sd.ui.extjs/ds/OpportunityStageDs", "nan21.dnet.module.sd.ui.extjs/dc/OpportunityStage", "nan21.dnet.module.sd.ui.extjs/ds/OpportunityResultReasonDs", "nan21.dnet.module.sd.ui.extjs/dc/OpportunityResultReason"]);
 
 Ext.define("net.nan21.dnet.module.sd.opportunity.frame.OpportunityBaseData_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.sd.opportunity.frame.OpportunityBaseData_UI",
 	
 	 _name_ : "net.nan21.dnet.module.sd.opportunity.frame.OpportunityBaseData_UI"

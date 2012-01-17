@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceHistoryDs",
 	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceHistoryDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -46,7 +46,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filte
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List",
 	
 	 _noImport_: true

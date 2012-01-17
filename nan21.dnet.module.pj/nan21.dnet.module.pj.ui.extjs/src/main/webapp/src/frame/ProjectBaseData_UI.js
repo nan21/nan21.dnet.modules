@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.pj.ui.extjs/ds/ProjectCategoryDs", "nan21.dnet.module.pj.ui.extjs/dc/ProjectCategory", "nan21.dnet.module.pj.ui.extjs/ds/ProjectTypeDs", "nan21.dnet.module.pj.ui.extjs/dc/ProjectType", "nan21.dnet.module.pj.ui.extjs/ds/ProjectRoleDs", "nan21.dnet.module.pj.ui.extjs/dc/ProjectRole","nan21.dnet.module.pj.ui.extjs/ds/ProjectCategoryLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectCategories","nan21.dnet.module.pj.ui.extjs/ds/ProjectCategoryLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectCategories"]);
 
 Ext.define("net.nan21.dnet.module.pj.base.frame.ProjectBaseData_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.pj.base.frame.ProjectBaseData_UI",
 	
 	 _name_ : "net.nan21.dnet.module.pj.base.frame.ProjectBaseData_UI"

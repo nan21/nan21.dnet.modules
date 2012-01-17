@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.bp.calendar.lovs.CalendarEventPrioritiesMeeting", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.bp.calendar.lovs.CalendarEventPrioritiesMeeting",
  
 	displayField:"name",

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeDs",
 	filterModel: "net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -46,7 +46,7 @@ Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter"
  	
  	 
 Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$EditList",
 	
 	 _noImport_: false

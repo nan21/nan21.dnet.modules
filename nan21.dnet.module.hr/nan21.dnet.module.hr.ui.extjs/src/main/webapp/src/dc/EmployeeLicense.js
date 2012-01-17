@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeLicense", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.employee.ds.model.EmployeeLicenseDs",
 	filterModel: "net.nan21.dnet.module.hr.employee.ds.model.EmployeeLicenseDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeLicense", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeLicense$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.employee.dc.EmployeeLicense$EditList",
 	
 	 _noImport_: false

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.org.dc.Organization", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationDs",
 	filterModel: "net.nan21.dnet.module.bd.org.ds.model.OrganizationDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bd.org.dc.Organization$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -44,7 +44,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bd.org.dc.Organization$List",
 	
 	 _noImport_: false
@@ -70,7 +70,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$List", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.bd.org.dc.Organization$Edit",
 	
 	_defineElements_: function () {	

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.Product", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.md.ds.model.ProductDs",
 	filterModel: "net.nan21.dnet.module.mm.md.ds.model.ProductDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.md.dc.Product$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -51,7 +51,7 @@ labelAlign:"right",labelWidth:70}})
 }); 
  		 
 Ext.define("net.nan21.dnet.module.mm.md.dc.Product$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.mm.md.dc.Product$List",
 	
 	 _noImport_: false
@@ -94,7 +94,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$List", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.Product$CtxFormName",
 	
 	_defineElements_: function () {	
@@ -114,7 +114,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.Product$Edit",
 	
 	_defineElements_: function () {	
@@ -151,7 +151,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Edit", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.Product$EditInfo", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.Product$EditInfo",
 	
 	_defineElements_: function () {	

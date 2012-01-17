@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDs",
 	filterModel: "net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod$CtxEditList",
 	
 	 _noImport_: false

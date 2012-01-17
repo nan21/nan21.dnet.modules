@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateDs",
 	filterModel: "net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List",
 	
 	 _noImport_: false
@@ -67,7 +67,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Edit",
 	
 	_defineElements_: function () {	

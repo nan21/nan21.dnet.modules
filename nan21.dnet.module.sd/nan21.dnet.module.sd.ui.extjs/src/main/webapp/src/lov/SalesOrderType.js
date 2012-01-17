@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.sd.order.lovs.SalesOrderType", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.sd.order.lovs.SalesOrderType",
  
 	displayField:"name",

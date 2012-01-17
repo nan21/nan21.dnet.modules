@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.Grade", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.grade.ds.model.GradeDs",
 	filterModel: "net.nan21.dnet.module.hr.grade.ds.model.GradeDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.Grade", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.Grade$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.grade.dc.Grade$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -41,7 +41,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.Grade$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.Grade$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.grade.dc.Grade$EditList",
 	
 	 _noImport_: false

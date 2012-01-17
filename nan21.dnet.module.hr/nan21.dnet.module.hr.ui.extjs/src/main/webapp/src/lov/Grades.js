@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.hr.grade.lovs.Grades", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.hr.grade.lovs.Grades",
  
 	displayField:"code",

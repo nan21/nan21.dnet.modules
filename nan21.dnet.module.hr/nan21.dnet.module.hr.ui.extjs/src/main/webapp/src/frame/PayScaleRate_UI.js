@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/PayScaleRateDs", "nan21.dnet.module.hr.ui.extjs/dc/PayScaleRate", "nan21.dnet.module.hr.ui.extjs/ds/PayScaleRateValueDs", "nan21.dnet.module.hr.ui.extjs/dc/PayScaleRateValue","nan21.dnet.module.hr.ui.extjs/ds/PayScaleLovDs","nan21.dnet.module.hr.ui.extjs/lov/PayScales","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.hr.ui.extjs/ds/PayScaleLovDs","nan21.dnet.module.hr.ui.extjs/lov/PayScales","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.hr.ui.extjs/ds/PayScalePointLovDs","nan21.dnet.module.hr.ui.extjs/lov/PayScalePoints"]);
 
 Ext.define("net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI",
 	
 	 _name_ : "net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI"

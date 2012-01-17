@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.SkillType", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.SkillTypeDs",
 	filterModel: "net.nan21.dnet.module.hr.skill.ds.model.SkillTypeDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.SkillType", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.SkillType$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.skill.dc.SkillType$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.SkillType$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.SkillType$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.skill.dc.SkillType$EditList",
 	
 	 _noImport_: false

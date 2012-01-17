@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/SysDateFormatDs", "nan21.dnet.module.ad.ui.extjs/dc/SysDateFormat"]);
 
 Ext.define("net.nan21.dnet.module.ad.system.frame.SysDateFormat_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.system.frame.SysDateFormat_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.system.frame.SysDateFormat_UI"

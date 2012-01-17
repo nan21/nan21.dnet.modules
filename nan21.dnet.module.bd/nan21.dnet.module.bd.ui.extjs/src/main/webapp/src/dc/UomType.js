@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.uom.dc.UomType", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.uom.ds.model.UomTypeDs",
 	filterModel: "net.nan21.dnet.module.bd.uom.ds.model.UomTypeDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.UomType", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.uom.dc.UomType$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bd.uom.dc.UomType$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.UomType$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bd.uom.dc.UomType$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.uom.dc.UomType$EditList",
 	
 	 _noImport_: false

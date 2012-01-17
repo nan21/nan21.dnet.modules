@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.bd.uom.lovs.UomMass", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.bd.uom.lovs.UomMass",
  
 	displayField:"code",

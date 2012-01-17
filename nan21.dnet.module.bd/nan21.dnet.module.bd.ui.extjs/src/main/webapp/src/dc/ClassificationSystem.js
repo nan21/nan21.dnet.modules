@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemDs",
 	filterModel: "net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -45,7 +45,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$Filter", 
  	
  	 
 Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$EditList",
 	
 	 _noImport_: false

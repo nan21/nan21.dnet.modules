@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.pj.base.dc.IssueCategory", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.pj.base.ds.model.IssueCategoryDs",
 	filterModel: "net.nan21.dnet.module.pj.base.ds.model.IssueCategoryDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.base.dc.IssueCategory", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.base.dc.IssueCategory$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.pj.base.dc.IssueCategory$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.pj.base.dc.IssueCategory$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.pj.base.dc.IssueCategory$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.pj.base.dc.IssueCategory$EditList",
 	
 	 _noImport_: false

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDs",
 	filterModel: "net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem", {
  	
  	 
 Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxEditList",
 	
 	 _noImport_: true
@@ -44,7 +44,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxEditList", {
 });
  		 
 Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxList", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxList",
 	
 	 _noImport_: true
@@ -72,7 +72,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxList", {
  	
 
 Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$EditForm", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.sd.order.dc.SalesOrderItem$EditForm",
 	
 	_defineElements_: function () {	

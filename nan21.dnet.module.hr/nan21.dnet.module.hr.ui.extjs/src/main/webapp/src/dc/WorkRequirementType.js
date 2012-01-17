@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.job.dc.WorkRequirementType", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.job.ds.model.WorkRequirementTypeDs",
 	filterModel: "net.nan21.dnet.module.hr.job.ds.model.WorkRequirementTypeDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.WorkRequirementType", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.job.dc.WorkRequirementType$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.job.dc.WorkRequirementType$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.WorkRequirementType$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.job.dc.WorkRequirementType$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.job.dc.WorkRequirementType$EditList",
 	
 	 _noImport_: false

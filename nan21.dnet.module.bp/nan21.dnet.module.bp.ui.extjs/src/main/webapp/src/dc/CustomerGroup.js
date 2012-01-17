@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bp.base.dc.CustomerGroup", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.base.ds.model.CustomerGroupDs",
 	filterModel: "net.nan21.dnet.module.bp.base.ds.model.CustomerGroupDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.CustomerGroup", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.base.dc.CustomerGroup$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bp.base.dc.CustomerGroup$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -41,7 +41,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.CustomerGroup$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bp.base.dc.CustomerGroup$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bp.base.dc.CustomerGroup$EditList",
 	
 	 _noImport_: false

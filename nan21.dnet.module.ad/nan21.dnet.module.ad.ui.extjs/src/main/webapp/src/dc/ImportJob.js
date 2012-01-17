@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJob", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportJobDs",
 	filterModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportJobDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJob", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJob$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ImportJob$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJob$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJob$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.impex.dc.ImportJob$List",
 	
 	 _noImport_: false
@@ -61,7 +61,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJob$List", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJob$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ImportJob$Edit",
 	
 	_defineElements_: function () {	

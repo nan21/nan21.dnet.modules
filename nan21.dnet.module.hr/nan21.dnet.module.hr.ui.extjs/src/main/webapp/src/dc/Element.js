@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.payroll.ds.model.ElementDs",
 	filterModel: "net.nan21.dnet.module.hr.payroll.ds.model.ElementDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.payroll.dc.Element$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -44,7 +44,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.hr.payroll.dc.Element$List",
 	
 	 _noImport_: false
@@ -68,7 +68,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$List", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.hr.payroll.dc.Element$Edit",
 	
 	_defineElements_: function () {	

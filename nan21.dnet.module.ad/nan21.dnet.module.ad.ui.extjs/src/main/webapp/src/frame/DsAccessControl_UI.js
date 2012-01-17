@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/DsAccessControlDs", "nan21.dnet.module.ad.ui.extjs/dc/DsAccessControl","nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceDsLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDataSourceDs","nan21.dnet.module.ad.ui.extjs/ds/AccessControlLovDs","nan21.dnet.module.ad.ui.extjs/lov/AccessControls","nan21.dnet.module.ad.ui.extjs/ds/AccessControlLovDs","nan21.dnet.module.ad.ui.extjs/lov/AccessControls","nan21.dnet.module.ad.ui.extjs/ds/SysDataSourceDsLovDs","nan21.dnet.module.ad.ui.extjs/lov/SysDataSourceDs"]);
 
 Ext.define("net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI"

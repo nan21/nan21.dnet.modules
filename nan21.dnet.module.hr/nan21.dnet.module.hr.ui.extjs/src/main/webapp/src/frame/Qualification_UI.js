@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/QualificationDs", "nan21.dnet.module.hr.ui.extjs/dc/Qualification", "nan21.dnet.module.hr.ui.extjs/ds/QualificationSkillDs", "nan21.dnet.module.hr.ui.extjs/dc/QualificationSkill","nan21.dnet.module.hr.ui.extjs/ds/SkillLovDs","nan21.dnet.module.hr.ui.extjs/lov/Skills","nan21.dnet.module.hr.ui.extjs/ds/RatingLevelLovDs","nan21.dnet.module.hr.ui.extjs/lov/RatingLevels"]);
 
 Ext.define("net.nan21.dnet.module.hr.skill.frame.Qualification_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.hr.skill.frame.Qualification_UI",
 	
 	 _name_ : "net.nan21.dnet.module.hr.skill.frame.Qualification_UI"

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Location", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.geo.ds.model.LocationDs",
 	filterModel: "net.nan21.dnet.module.bd.geo.ds.model.LocationDsFilter",
@@ -17,7 +17,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location", {
 
  		 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$ListCtx", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bd.geo.dc.Location$ListCtx",
 	
 	 _noImport_: true
@@ -47,7 +47,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$ListCtx", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$EditCtx", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Location$EditCtx",
 	
 	_defineElements_: function () {	

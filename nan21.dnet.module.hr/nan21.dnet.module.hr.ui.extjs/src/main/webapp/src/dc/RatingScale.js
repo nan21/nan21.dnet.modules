@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.RatingScaleDs",
 	filterModel: "net.nan21.dnet.module.hr.skill.ds.model.RatingScaleDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.hr.skill.dc.RatingScale$List",
 	
 	 _noImport_: false
@@ -61,7 +61,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$List", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit",
 	
 	_defineElements_: function () {	

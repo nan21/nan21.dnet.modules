@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMap", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportMapDs",
 	filterModel: "net.nan21.dnet.module.ad.impex.ds.model.ImportMapDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMap", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMap$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ImportMap$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMap$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMap$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.impex.dc.ImportMap$List",
 	
 	 _noImport_: false
@@ -61,7 +61,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMap$List", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMap$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ImportMap$Edit",
 	
 	_defineElements_: function () {	

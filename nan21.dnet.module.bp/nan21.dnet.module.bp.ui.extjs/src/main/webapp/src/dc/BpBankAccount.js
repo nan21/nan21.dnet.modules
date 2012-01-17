@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BpBankAccount", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.md.ds.model.BpBankAccountDs",
 	filterModel: "net.nan21.dnet.module.bp.md.ds.model.BpBankAccountDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpBankAccount", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BpBankAccount$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bp.md.dc.BpBankAccount$CtxEditList",
 	
 	 _noImport_: true

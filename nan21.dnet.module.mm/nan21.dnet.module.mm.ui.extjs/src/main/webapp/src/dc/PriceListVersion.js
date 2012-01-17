@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.price.ds.model.PriceListVersionDs",
 	filterModel: "net.nan21.dnet.module.mm.price.ds.model.PriceListVersionDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.price.dc.PriceListVersion$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.price.dc.PriceListVersion$CtxEditList",
 	
 	 _noImport_: false
@@ -66,7 +66,7 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$CtxEditList", {
  	
  	 
 Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.price.dc.PriceListVersion$EditList",
 	
 	 _noImport_: false
@@ -90,7 +90,7 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$EditList", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$CtxView", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.mm.price.dc.PriceListVersion$CtxView",
 	
 	_defineElements_: function () {	
@@ -116,7 +116,7 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$CtxView", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$CopyProductsFromCategory", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.mm.price.dc.PriceListVersion$CopyProductsFromCategory",
 	
 	_defineElements_: function () {	

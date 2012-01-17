@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.usr.ds.model.DsAccessControlDs",
 	filterModel: "net.nan21.dnet.module.ad.usr.ds.model.DsAccessControlDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.usr.dc.DsAccessControl$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -50,7 +50,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.DsAccessControl$EditList",
 	
 	 _noImport_: false
@@ -77,7 +77,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl$EditList", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.DsAccessControl$CtxEditList",
 	
 	 _noImport_: true

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs",
 	filterModel: "net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -45,7 +45,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$CtxEditList",
 	
 	 _noImport_: true
@@ -70,7 +70,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$CtxEditList", {
 		var ed = null;
 		
 		if (!Ext.isEmpty(record.data.listOfvalues)) {
-	    	ed = new dnet.base.LocalCombo({store:record.data.listOfvalues.split(",")});
+	    	ed = new dnet.core.lov.LocalCombo({store:record.data.listOfvalues.split(",")});
 	    }
 		else if (record.data.dataType == "integer" || record.data.dataType == "decimal") {
 	    	ed = new Ext.form.field.Number({ });
@@ -79,7 +79,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$CtxEditList", {
 	    	ed = new Ext.form.field.Date({});
 	    }
 	    else if (record.data.dataType == "boolean") {
-	    	ed = new dnet.base.LocalCombo({store:["true","false"]});
+	    	ed = new dnet.core.lov.LocalCombo({store:["true","false"]});
 	    }
  
 	    if(ed){
@@ -93,7 +93,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$CtxEditList", {
  	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList",
 	
 	 _noImport_: true
@@ -119,7 +119,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
 		var ed = null;
 		
 		if (!Ext.isEmpty(record.data.listOfvalues)) {
-	    	ed = new dnet.base.LocalCombo({store:record.data.listOfvalues.split(",")});
+	    	ed = new dnet.core.lov.LocalCombo({store:record.data.listOfvalues.split(",")});
 	    }
 		else if (record.data.dataType == "integer" || record.data.dataType == "decimal") {
 	    	ed = new Ext.form.field.Number({ });
@@ -128,7 +128,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
 	    	ed = new Ext.form.field.Date({});
 	    }
 	    else if (record.data.dataType == "boolean") {
-	    	ed = new dnet.base.LocalCombo({store:["true","false"]});
+	    	ed = new dnet.core.lov.LocalCombo({store:["true","false"]});
 	    }
  
 	    if(ed){

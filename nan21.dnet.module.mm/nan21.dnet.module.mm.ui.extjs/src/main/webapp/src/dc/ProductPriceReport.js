@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.price.ds.model.ProductPriceReportDs",
 	filterModel: "net.nan21.dnet.module.mm.price.ds.model.ProductPriceReportDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.price.dc.ProductPriceReport$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -49,7 +49,7 @@ labelAlign:"right",labelWidth:70}})
 }); 
  		 
 Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.mm.price.dc.ProductPriceReport$List",
 	
 	 _noImport_: false

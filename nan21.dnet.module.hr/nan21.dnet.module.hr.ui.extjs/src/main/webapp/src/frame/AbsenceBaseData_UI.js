@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/AbsenceCategoryDs", "nan21.dnet.module.hr.ui.extjs/dc/AbsenceCategory", "nan21.dnet.module.hr.ui.extjs/ds/AbsenceTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/AbsenceType", "nan21.dnet.module.hr.ui.extjs/ds/AbsenceReasonDs", "nan21.dnet.module.hr.ui.extjs/dc/AbsenceReason","nan21.dnet.module.hr.ui.extjs/ds/AbsenceCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/AbsenceCategories","nan21.dnet.module.hr.ui.extjs/ds/AbsenceTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/AbsenceTypes","nan21.dnet.module.hr.ui.extjs/ds/AbsenceCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/AbsenceCategories","nan21.dnet.module.hr.ui.extjs/ds/AbsenceTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/AbsenceTypes"]);
 
 Ext.define("net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI",
 	
 	 _name_ : "net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI"

@@ -4,13 +4,13 @@ Ext.define("net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$Model" , {
 	fields:  [{name:"id",type:"string"},{name:"code",type:"string"},{name:"name",type:"string"}]
 });
 Ext.define("net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct", {
-	extend: "dnet.base.AbstractAsgn",
+	extend: "dnet.core.asgn.AbstractAsgn",
 	dsName: "CategoriesOfProduct", 
 	recordModel: "net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$Model"
 });	 
  
 Ext.define("net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$List", {
-	extend: "dnet.base.AbstractAsgnGrid",
+	extend: "dnet.core.asgn.AbstractAsgnGrid",
 	alias:[ "widget.net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$Left","widget.net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$Right" ],
 	_defineColumns_: function () {
 		this._getBuilder_()		
@@ -21,7 +21,7 @@ Ext.define("net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$List", {
 });
 
 Ext.define("net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$Ui", {
-	extend: "dnet.base.AbstractAsgnUi",
+	extend: "dnet.core.asgn.AbstractAsgnUi",
 	alias: "widget.net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$Ui",
  	 width:700
 	,height:400 

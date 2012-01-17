@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventStatusDs",
 	filterModel: "net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventStatusDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -41,7 +41,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$EditList",
 	
 	 _noImport_: false

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.City", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.geo.ds.model.CityDs",
 	filterModel: "net.nan21.dnet.module.bd.geo.ds.model.CityDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.City", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.City$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bd.geo.dc.City$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -42,7 +42,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.City$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.City$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bd.geo.dc.City$List",
 	
 	 _noImport_: false
@@ -68,7 +68,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.City$List", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.City$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.City$CtxEditList",
 	
 	 _noImport_: true

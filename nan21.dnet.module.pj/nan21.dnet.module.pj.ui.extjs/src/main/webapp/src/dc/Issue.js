@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.Issue", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.pj.md.ds.model.IssueDs",
 	filterModel: "net.nan21.dnet.module.pj.md.ds.model.IssueDsFilter",
@@ -10,10 +10,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue", {
         config = config || {};
         Ext.apply(this, config);
         this.callParent();
-	},	
-	afterDoCopy: function() {
-		this.record.set("summary", "Copy of "+ this.record.get("summary"));
-	}
+	}	
 });
 
 
@@ -21,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.pj.md.dc.Issue$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -59,7 +56,7 @@ labelAlign:"right",labelWidth:70}})
 }); 
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.pj.md.dc.Issue$List",
 	
 	 _noImport_: false
@@ -97,7 +94,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$List", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.Issue$Edit",
 	
 	_defineElements_: function () {	
@@ -146,7 +143,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Edit", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$EditText", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.Issue$EditText",
 	
 	_defineElements_: function () {	
@@ -167,7 +164,7 @@ labelAlign:"top"}})
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$View", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.Issue$View",
 	
 	_defineElements_: function () {	

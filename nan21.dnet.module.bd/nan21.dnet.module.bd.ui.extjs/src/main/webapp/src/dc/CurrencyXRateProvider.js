@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateProviderDs",
 	filterModel: "net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateProviderDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -42,7 +42,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider$Filter", 
 }); 
  		 
 Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider$List",
 	
 	 _noImport_: false
@@ -66,7 +66,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider$List", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.currency.dc.CurrencyXRateProvider$EditList",
 	
 	 _noImport_: false

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.time.dc.AbsenceReason", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonDs",
 	filterModel: "net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.AbsenceReason", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.time.dc.AbsenceReason$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.time.dc.AbsenceReason$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.AbsenceReason$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.time.dc.AbsenceReason$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.time.dc.AbsenceReason$EditList",
 	
 	 _noImport_: false

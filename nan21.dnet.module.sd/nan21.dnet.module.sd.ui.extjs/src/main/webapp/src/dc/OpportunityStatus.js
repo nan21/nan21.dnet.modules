@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.sd.opportunity.dc.OpportunityStatus", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStatusDs",
 	filterModel: "net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityStatusDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.OpportunityStatus", {
  	
 
 Ext.define("net.nan21.dnet.module.sd.opportunity.dc.OpportunityStatus$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.sd.opportunity.dc.OpportunityStatus$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.OpportunityStatus$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.sd.opportunity.dc.OpportunityStatus$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.sd.opportunity.dc.OpportunityStatus$EditList",
 	
 	 _noImport_: false

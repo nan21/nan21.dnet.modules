@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.sd.ui.extjs/ds/SalesOrderTypeDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesOrderType", "nan21.dnet.module.sd.ui.extjs/ds/SalesOrderStatusDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesOrderStatus"]);
 
 Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI",
 	
 	 _name_ : "net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI"

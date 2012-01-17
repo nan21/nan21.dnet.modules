@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarCallDs",
 	filterModel: "net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarCallDsFilter",
@@ -23,7 +23,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.Call$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -55,7 +55,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bp.calendar.dc.Call$List",
 	
 	 _noImport_: false
@@ -82,7 +82,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$List", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.Call$EditList",
 	
 	 _noImport_: false
@@ -107,7 +107,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$EditList", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.Call$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.Call$Edit",
 	
 	_defineElements_: function () {	

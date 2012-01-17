@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeEducation", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.employee.ds.model.EmployeeEducationDs",
 	filterModel: "net.nan21.dnet.module.hr.employee.ds.model.EmployeeEducationDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeEducation", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeEducation$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.employee.dc.EmployeeEducation$EditList",
 	
 	 _noImport_: false

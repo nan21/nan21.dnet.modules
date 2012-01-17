@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.training.ds.model.PositionCourseDs",
 	filterModel: "net.nan21.dnet.module.hr.training.ds.model.PositionCourseDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.training.dc.PositionCourse$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -37,7 +37,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$PositionCtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.training.dc.PositionCourse$PositionCtxEditList",
 	
 	 _noImport_: true
@@ -60,7 +60,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$PositionCtxEditL
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$CourseCtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.training.dc.PositionCourse$CourseCtxEditList",
 	
 	 _noImport_: true

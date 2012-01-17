@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.client.dc.Client", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.client.ds.model.ClientDs",
 	filterModel: "net.nan21.dnet.module.ad.client.ds.model.ClientDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.client.dc.Client$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -42,7 +42,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.client.dc.Client$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.client.dc.Client$List",
 	
 	 _noImport_: false
@@ -70,7 +70,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$List", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.client.dc.Client$Edit",
 	
 	_defineElements_: function () {	
@@ -101,7 +101,7 @@ labelAlign:"right",labelWidth:120}})
  	
 
 Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Create", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.client.dc.Client$Create",
 	
 	_defineElements_: function () {	

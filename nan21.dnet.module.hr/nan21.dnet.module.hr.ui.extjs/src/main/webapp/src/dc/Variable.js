@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.payroll.dc.Variable", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.payroll.ds.model.VariableDs",
 	filterModel: "net.nan21.dnet.module.hr.payroll.ds.model.VariableDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Variable", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.payroll.dc.Variable$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.payroll.dc.Variable$CtxEditList",
 	
 	 _noImport_: false

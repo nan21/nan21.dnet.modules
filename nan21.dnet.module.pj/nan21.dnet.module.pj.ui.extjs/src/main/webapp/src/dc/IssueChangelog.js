@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueChangelog", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.pj.md.ds.model.IssueChangelogDs",
 	filterModel: "net.nan21.dnet.module.pj.md.ds.model.IssueChangelogDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueChangelog", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueChangelog$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueChangelog$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -52,7 +52,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueChangelog$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueChangelog$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.pj.md.dc.IssueChangelog$List",
 	
 	 _noImport_: false

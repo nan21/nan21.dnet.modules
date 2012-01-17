@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/JobTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/JobType", "nan21.dnet.module.hr.ui.extjs/ds/WorkRequirementTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/WorkRequirementType", "nan21.dnet.module.hr.ui.extjs/ds/WorkRequirementDs", "nan21.dnet.module.hr.ui.extjs/dc/WorkRequirement","nan21.dnet.module.hr.ui.extjs/ds/WorkRequirementTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/WorkRequirementTypes","nan21.dnet.module.hr.ui.extjs/ds/WorkRequirementTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/WorkRequirementTypes"]);
 
 Ext.define("net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI",
 	
 	 _name_ : "net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI"

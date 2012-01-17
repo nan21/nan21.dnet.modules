@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.inventory.ds.model.InvOperationDs",
 	filterModel: "net.nan21.dnet.module.mm.inventory.ds.model.InvOperationDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.InvOperation$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -50,7 +50,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.mm.inventory.dc.InvOperation$List",
 	
 	 _noImport_: false

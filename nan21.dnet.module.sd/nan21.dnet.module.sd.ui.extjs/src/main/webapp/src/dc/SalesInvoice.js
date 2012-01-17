@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs",
 	filterModel: "net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice", {
  	
 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -46,7 +46,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$List",
 	
 	 _noImport_: false
@@ -76,7 +76,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$List", {
  	
 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Edit",
 	
 	_defineElements_: function () {	

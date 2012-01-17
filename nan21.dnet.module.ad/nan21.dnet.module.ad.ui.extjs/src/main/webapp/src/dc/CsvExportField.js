@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.CsvExportField", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.impex.ds.model.CsvExportFieldDs",
 	filterModel: "net.nan21.dnet.module.ad.impex.ds.model.CsvExportFieldDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.CsvExportField", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.CsvExportField$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.CsvExportField$CtxEditList",
 	
 	 _noImport_: false

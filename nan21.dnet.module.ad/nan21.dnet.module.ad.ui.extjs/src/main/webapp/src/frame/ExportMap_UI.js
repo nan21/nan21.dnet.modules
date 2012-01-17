@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ExportMapDs", "nan21.dnet.module.ad.ui.extjs/dc/ExportMap", "nan21.dnet.module.ad.ui.extjs/ds/ExportMapItemDs", "nan21.dnet.module.ad.ui.extjs/dc/ExportMapItem","nan21.dnet.module.ad.ui.extjs/ds/CsvExportLovDs","nan21.dnet.module.ad.ui.extjs/lov/CsvExports"]);
 
 Ext.define("net.nan21.dnet.module.ad.impex.frame.ExportMap_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.impex.frame.ExportMap_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.impex.frame.ExportMap_UI"

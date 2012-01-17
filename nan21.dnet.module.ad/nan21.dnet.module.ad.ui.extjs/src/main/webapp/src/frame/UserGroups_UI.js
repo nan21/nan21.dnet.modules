@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/UserGroupDs", "nan21.dnet.module.ad.ui.extjs/dc/UserGroup","nan21.dnet.module.ad.ui.extjs/asgn/UserGroupUsers"]);
 
 Ext.define("net.nan21.dnet.module.ad.usr.frame.UserGroups_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.usr.frame.UserGroups_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.usr.frame.UserGroups_UI"

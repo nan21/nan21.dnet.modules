@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Country", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.geo.ds.model.CountryDs",
 	filterModel: "net.nan21.dnet.module.bd.geo.ds.model.CountryDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Country$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -46,7 +46,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bd.geo.dc.Country$List",
 	
 	 _noImport_: false
@@ -72,7 +72,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$List", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Country$EditList",
 	
 	 _noImport_: false
@@ -97,7 +97,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$EditList", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Country$Edit",
 	
 	_defineElements_: function () {	

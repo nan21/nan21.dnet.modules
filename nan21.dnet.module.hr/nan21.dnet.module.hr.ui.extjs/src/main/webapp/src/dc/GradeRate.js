@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.grade.ds.model.GradeRateDs",
 	filterModel: "net.nan21.dnet.module.hr.grade.ds.model.GradeRateDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -42,7 +42,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.hr.grade.dc.GradeRate$List",
 	
 	 _noImport_: false
@@ -66,7 +66,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$List", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit",
 	
 	_defineElements_: function () {	

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventPriorityDs",
 	filterModel: "net.nan21.dnet.module.bp.calendar.ds.model.CalendarEventPriorityDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -41,7 +41,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority$Filter", 
  	
  	 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.CalendarEventPriority$EditList",
 	
 	 _noImport_: false

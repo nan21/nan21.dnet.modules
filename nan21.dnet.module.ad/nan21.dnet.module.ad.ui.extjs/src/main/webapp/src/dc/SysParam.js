@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysParamDs",
 	filterModel: "net.nan21.dnet.module.ad.system.ds.model.SysParamDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.system.dc.SysParam$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -42,7 +42,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.system.dc.SysParam$List",
 	
 	 _noImport_: false
@@ -65,7 +65,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$List", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.system.dc.SysParam$Edit",
 	
 	_defineElements_: function () {	

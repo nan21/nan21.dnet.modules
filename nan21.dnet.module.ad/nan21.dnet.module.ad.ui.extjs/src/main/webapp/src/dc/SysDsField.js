@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsField", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsFieldDs",
 	filterModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsFieldDsFilter",
@@ -17,7 +17,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsField", {
 
  		 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsField$CtxList", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.system.dc.SysDsField$CtxList",
 	
 	 _noImport_: true

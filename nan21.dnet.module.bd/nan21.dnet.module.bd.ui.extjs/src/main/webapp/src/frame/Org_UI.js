@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/OrganizationDs", "nan21.dnet.module.bd.ui.extjs/dc/Organization", "nan21.dnet.module.bd.ui.extjs/ds/LocationDs", "nan21.dnet.module.bd.ui.extjs/dc/Location", "nan21.dnet.module.bd.ui.extjs/ds/OrganizationHierarchyDs", "nan21.dnet.module.bd.ui.extjs/dc/OrganizationHierarchy", "nan21.dnet.module.bd.ui.extjs/ds/OrganizationHierarchyItemDs", "nan21.dnet.module.bd.ui.extjs/dc/OrganizationHierarchyItem", "nan21.dnet.module.bd.ui.extjs/ds/OrganizationTypeDs", "nan21.dnet.module.bd.ui.extjs/dc/OrganizationType","nan21.dnet.module.bd.ui.extjs/ds/OrganizationTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/OrganizationTypes","nan21.dnet.module.bd.ui.extjs/ds/CountryLovDs","nan21.dnet.module.bd.ui.extjs/lov/Countries","nan21.dnet.module.bd.ui.extjs/ds/RegionLovDs","nan21.dnet.module.bd.ui.extjs/lov/Regions","nan21.dnet.module.bd.ui.extjs/ds/OrganizationTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/OrganizationTypes","nan21.dnet.module.bd.ui.extjs/ds/OrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/Organizations","nan21.dnet.module.bd.ui.extjs/ds/OrganizationHierarchyItemLovDs","nan21.dnet.module.bd.ui.extjs/lov/OrganizationHierarchyItems"]);
 
 Ext.define("net.nan21.dnet.module.bd.org.frame.Org_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.bd.org.frame.Org_UI",
 	
 	 _name_ : "net.nan21.dnet.module.bd.org.frame.Org_UI"

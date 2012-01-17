@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsEvent", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsEventDs",
 	filterModel: "net.nan21.dnet.module.ad.system.ds.model.SysDsEventDsFilter",
@@ -17,7 +17,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsEvent", {
 
  		 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList",
 	
 	 _noImport_: false

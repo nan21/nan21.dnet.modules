@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ExportJobDs", "nan21.dnet.module.ad.ui.extjs/dc/ExportJob", "nan21.dnet.module.ad.ui.extjs/ds/ExportJobItemDs", "nan21.dnet.module.ad.ui.extjs/dc/ExportJobItem","nan21.dnet.module.ad.ui.extjs/ds/ExportMapLovDs","nan21.dnet.module.ad.ui.extjs/lov/ExportMaps"]);
 
 Ext.define("net.nan21.dnet.module.ad.impex.frame.ExportJob_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.impex.frame.ExportJob_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.impex.frame.ExportJob_UI"

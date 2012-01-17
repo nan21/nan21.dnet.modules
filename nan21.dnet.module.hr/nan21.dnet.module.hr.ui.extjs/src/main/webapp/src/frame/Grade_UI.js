@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/GradeDs", "nan21.dnet.module.hr.ui.extjs/dc/Grade"]);
 
 Ext.define("net.nan21.dnet.module.hr.grade.frame.Grade_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.hr.grade.frame.Grade_UI",
 	
 	 _name_ : "net.nan21.dnet.module.hr.grade.frame.Grade_UI"

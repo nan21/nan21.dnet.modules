@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/CourseCategoryDs", "nan21.dnet.module.hr.ui.extjs/dc/CourseCategory", "nan21.dnet.module.hr.ui.extjs/ds/CourseTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/CourseType","nan21.dnet.module.hr.ui.extjs/ds/CourseCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/CourseCategories","nan21.dnet.module.hr.ui.extjs/ds/CourseCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/CourseCategories"]);
 
 Ext.define("net.nan21.dnet.module.hr.training.frame.CourseType_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.hr.training.frame.CourseType_UI",
 	
 	 _name_ : "net.nan21.dnet.module.hr.training.frame.CourseType_UI"

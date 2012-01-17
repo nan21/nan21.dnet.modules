@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.usr.ds.model.AccessControlDs",
 	filterModel: "net.nan21.dnet.module.ad.usr.ds.model.AccessControlDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.usr.dc.AccessControl$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -41,7 +41,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.AccessControl$EditList",
 	
 	 _noImport_: false
@@ -62,7 +62,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$EditList", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$CopyRulesFromSource", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.AccessControl$CopyRulesFromSource",
 	
 	_defineElements_: function () {	

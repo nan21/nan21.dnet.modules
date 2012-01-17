@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRateValue", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.grade.ds.model.GradeRateValueDs",
 	filterModel: "net.nan21.dnet.module.hr.grade.ds.model.GradeRateValueDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRateValue", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRateValue$CtxEditList4GradeRate", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.grade.dc.GradeRateValue$CtxEditList4GradeRate",
 	
 	 _noImport_: true

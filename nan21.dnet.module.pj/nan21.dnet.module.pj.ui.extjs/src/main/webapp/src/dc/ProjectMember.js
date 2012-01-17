@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectMember", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.pj.md.ds.model.ProjectMemberDs",
 	filterModel: "net.nan21.dnet.module.pj.md.ds.model.ProjectMemberDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectMember", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectMember$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.pj.md.dc.ProjectMember$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectMember$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectMember$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.ProjectMember$CtxEditList",
 	
 	 _noImport_: false

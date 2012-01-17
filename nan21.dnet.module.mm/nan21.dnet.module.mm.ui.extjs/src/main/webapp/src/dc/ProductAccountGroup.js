@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAccountGroup", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.md.ds.model.ProductAccountGroupDs",
 	filterModel: "net.nan21.dnet.module.mm.md.ds.model.ProductAccountGroupDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAccountGroup", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAccountGroup$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAccountGroup$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAccountGroup$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAccountGroup$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAccountGroup$EditList",
 	
 	 _noImport_: false

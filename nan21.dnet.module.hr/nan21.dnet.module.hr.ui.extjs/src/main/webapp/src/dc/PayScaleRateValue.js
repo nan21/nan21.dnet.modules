@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRateValue", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateValueDs",
 	filterModel: "net.nan21.dnet.module.hr.grade.ds.model.PayScaleRateValueDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRateValue", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRateValue$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.grade.dc.PayScaleRateValue$CtxEditList",
 	
 	 _noImport_: true

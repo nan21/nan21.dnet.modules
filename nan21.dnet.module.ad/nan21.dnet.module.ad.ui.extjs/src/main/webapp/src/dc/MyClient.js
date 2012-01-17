@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.client.ds.model.MyClientDs",
 	filterModel: "net.nan21.dnet.module.ad.client.ds.model.MyClientDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.client.dc.MyClient$Edit",
 	
 	_defineElements_: function () {	

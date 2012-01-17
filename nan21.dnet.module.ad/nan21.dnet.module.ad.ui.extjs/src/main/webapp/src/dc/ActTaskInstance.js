@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDs",
 	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -46,7 +46,7 @@ labelAlign:"right",labelWidth:150}})
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List",
 	
 	 _noImport_: true
@@ -72,7 +72,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm",
 	
 	_defineElements_: function () {	

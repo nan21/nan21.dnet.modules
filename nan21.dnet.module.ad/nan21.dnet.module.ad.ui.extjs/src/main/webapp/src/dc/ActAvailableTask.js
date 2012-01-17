@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActAvailableTaskDs",
 	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.ActAvailableTaskDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -38,7 +38,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActAvailableTask$List",
 	
 	 _noImport_: true

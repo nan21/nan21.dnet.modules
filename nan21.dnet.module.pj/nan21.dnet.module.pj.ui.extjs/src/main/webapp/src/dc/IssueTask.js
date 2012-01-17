@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.pj.md.ds.model.IssueTaskDs",
 	filterModel: "net.nan21.dnet.module.pj.md.ds.model.IssueTaskDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueTask$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -54,7 +54,7 @@ labelAlign:"right",labelWidth:70}})
 }); 
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.pj.md.dc.IssueTask$List",
 	
 	 _noImport_: false
@@ -87,7 +87,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$List", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueTask$Edit",
 	
 	_defineElements_: function () {	
@@ -95,8 +95,8 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"summary", dataIndex:"summary",anchor:"-20" ,maxLength:255  })
 		.addTextArea({ name:"description", dataIndex:"description",height:80,anchor:"-20"   })
-		.addLov({ name:"type", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTaskTypes", dataIndex:"type",anchor:"-20" ,noUpdate:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
-		.addLov({ name:"status", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTaskStatuses", dataIndex:"status",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
+		.addDisplayFieldText({ name:"type", dataIndex:"type"  })
+		.addLov({ name:"status", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTaskStatuses", dataIndex:"status",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
 		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:300})     
@@ -115,7 +115,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$Edit", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$ViewDescription", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueTask$ViewDescription",
 	
 	_defineElements_: function () {	
@@ -140,7 +140,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$ViewDescription", {
  	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$View", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueTask$View",
 	
 	_defineElements_: function () {	

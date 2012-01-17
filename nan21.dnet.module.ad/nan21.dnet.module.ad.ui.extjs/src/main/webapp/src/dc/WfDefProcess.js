@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.workflow.ds.model.WfDefProcessDs",
 	filterModel: "net.nan21.dnet.module.ad.workflow.ds.model.WfDefProcessDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List",
 	
 	 _noImport_: false
@@ -61,7 +61,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit",
 	
 	_defineElements_: function () {	

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.AssignableType", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeDs",
 	filterModel: "net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AssignableType", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.AssignableType$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.usr.dc.AssignableType$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AssignableType$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.AssignableType$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.AssignableType$EditList",
 	
 	 _noImport_: false

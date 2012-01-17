@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDateFormat", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.system.ds.model.SysDateFormatDs",
 	filterModel: "net.nan21.dnet.module.ad.system.ds.model.SysDateFormatDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDateFormat", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDateFormat$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.system.dc.SysDateFormat$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDateFormat$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysDateFormat$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.system.dc.SysDateFormat$EditList",
 	
 	 _noImport_: false

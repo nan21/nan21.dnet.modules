@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectAttachment", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.pj.md.ds.model.ProjectAttachmentDs",
 	filterModel: "net.nan21.dnet.module.pj.md.ds.model.ProjectAttachmentDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectAttachment", {
  	
  	 
 Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectAttachment$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.ProjectAttachment$CtxEditList",
 	
 	 _noImport_: false

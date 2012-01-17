@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemDs",
 	filterModel: "net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem", {
  	
  	 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem$EditList",
 	
 	 _noImport_: true

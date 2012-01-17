@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeDs",
 	filterModel: "net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType$Filte
  	
  	 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.InvTransactionSourceType$EditList",
 	
 	 _noImport_: false

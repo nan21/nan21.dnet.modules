@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceTypeDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesInvoiceType", "nan21.dnet.module.sd.ui.extjs/ds/SalesInvoiceStatusDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesInvoiceStatus"]);
 
 Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI",
 	
 	 _name_ : "net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI"

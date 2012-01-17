@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/WfDefProcessDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefProcess", "nan21.dnet.module.ad.ui.extjs/ds/WfDefNodeDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefNode", "nan21.dnet.module.ad.ui.extjs/ds/WfDefNodeFieldDs", "nan21.dnet.module.ad.ui.extjs/dc/WfDefNodeField"]);
 
 Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI"

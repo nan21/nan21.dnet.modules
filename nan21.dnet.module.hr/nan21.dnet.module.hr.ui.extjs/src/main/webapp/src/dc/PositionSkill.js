@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.PositionSkill", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.PositionSkillDs",
 	filterModel: "net.nan21.dnet.module.hr.skill.ds.model.PositionSkillDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.PositionSkill", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.PositionSkill$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.skill.dc.PositionSkill$CtxEditList",
 	
 	 _noImport_: true

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.report.dc.DsReportParam", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.report.ds.model.DsReportParamDs",
 	filterModel: "net.nan21.dnet.module.ad.report.ds.model.DsReportParamDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.DsReportParam", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.report.dc.DsReportParam$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.report.dc.DsReportParam$CtxEditList",
 	
 	 _noImport_: true

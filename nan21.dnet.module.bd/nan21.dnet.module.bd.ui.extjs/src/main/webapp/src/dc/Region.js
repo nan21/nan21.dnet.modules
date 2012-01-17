@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Region", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bd.geo.ds.model.RegionDs",
 	filterModel: "net.nan21.dnet.module.bd.geo.ds.model.RegionDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Region$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -46,7 +46,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bd.geo.dc.Region$List",
 	
 	 _noImport_: false
@@ -72,7 +72,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$List", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$EditListContext", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Region$EditListContext",
 	
 	 _noImport_: true
@@ -96,7 +96,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$EditListContext", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Region$EditList",
 	
 	 _noImport_: false
@@ -121,7 +121,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$EditList", {
  	
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Region$Edit",
 	
 	_defineElements_: function () {	

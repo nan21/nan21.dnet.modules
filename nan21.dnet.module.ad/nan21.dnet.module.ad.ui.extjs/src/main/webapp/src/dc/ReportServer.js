@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.report.dc.ReportServer", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.report.ds.model.ReportServerDs",
 	filterModel: "net.nan21.dnet.module.ad.report.ds.model.ReportServerDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.ReportServer", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.report.dc.ReportServer$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.ad.report.dc.ReportServer$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.ReportServer$Filter", {
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.report.dc.ReportServer$EditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.report.dc.ReportServer$EditList",
 	
 	 _noImport_: false

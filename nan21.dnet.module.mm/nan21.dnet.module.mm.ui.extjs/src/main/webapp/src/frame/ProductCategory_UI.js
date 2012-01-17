@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductCategoryDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductCategory","nan21.dnet.module.mm.ui.extjs/asgn/ProductsOfCategory"]);
 
 Ext.define("net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.mm.md.frame.ProductCategory_UI",
 	
 	 _name_ : "net.nan21.dnet.module.mm.md.frame.ProductCategory_UI"

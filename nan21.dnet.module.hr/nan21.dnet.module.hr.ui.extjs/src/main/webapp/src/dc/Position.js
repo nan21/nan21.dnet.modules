@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.job.dc.Position", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.job.ds.model.PositionDs",
 	filterModel: "net.nan21.dnet.module.hr.job.ds.model.PositionDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.job.dc.Position$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.hr.job.dc.Position$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -44,7 +44,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.hr.job.dc.Position$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.hr.job.dc.Position$List",
 	
 	 _noImport_: false
@@ -69,7 +69,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position$List", {
  	
 
 Ext.define("net.nan21.dnet.module.hr.job.dc.Position$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.hr.job.dc.Position$Edit",
 	
 	_defineElements_: function () {	

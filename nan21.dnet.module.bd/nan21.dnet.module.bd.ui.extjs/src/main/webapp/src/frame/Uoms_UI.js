@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/UomDs", "nan21.dnet.module.bd.ui.extjs/dc/Uom","nan21.dnet.module.bd.ui.extjs/ds/UomTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomType","nan21.dnet.module.bd.ui.extjs/ds/UomTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomType"]);
 
 Ext.define("net.nan21.dnet.module.bd.uom.frame.Uoms_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.bd.uom.frame.Uoms_UI",
 	
 	 _name_ : "net.nan21.dnet.module.bd.uom.frame.Uoms_UI"

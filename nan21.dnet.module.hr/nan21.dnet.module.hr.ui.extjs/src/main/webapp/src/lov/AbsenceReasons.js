@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.hr.time.lovs.AbsenceReasons", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.hr.time.lovs.AbsenceReasons",
  
 	displayField:"name",

@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/UserTypeDs", "nan21.dnet.module.ad.ui.extjs/dc/UserType"]);
 
 Ext.define("net.nan21.dnet.module.ad.usr.frame.UserTypes_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.usr.frame.UserTypes_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.usr.frame.UserTypes_UI"

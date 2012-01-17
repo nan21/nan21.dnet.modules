@@ -1,7 +1,7 @@
 Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/RoleDs", "nan21.dnet.module.ad.ui.extjs/dc/Role","nan21.dnet.module.ad.ui.extjs/asgn/RolesOfUser","nan21.dnet.module.ad.ui.extjs/asgn/RolesOfAccessControl"]);
 
 Ext.define("net.nan21.dnet.module.ad.usr.frame.Role_UI", {  
-	extend: "dnet.base.AbstractUi",
+	extend: "dnet.core.ui.AbstractUi",
 	alias:"widget.net.nan21.dnet.module.ad.usr.frame.Role_UI",
 	
 	 _name_ : "net.nan21.dnet.module.ad.usr.frame.Role_UI"

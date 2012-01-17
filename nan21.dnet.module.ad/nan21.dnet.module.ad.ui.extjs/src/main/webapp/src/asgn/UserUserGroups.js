@@ -4,13 +4,13 @@ Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Model" , {
 	fields:  [{name:"id",type:"string"},{name:"name",type:"string"},{name:"description",type:"string"}]
 });
 Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups", {
-	extend: "dnet.base.AbstractAsgn",
+	extend: "dnet.core.asgn.AbstractAsgn",
 	dsName: "UserUserGroups", 
 	recordModel: "net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Model"
 });	 
  
 Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$List", {
-	extend: "dnet.base.AbstractAsgnGrid",
+	extend: "dnet.core.asgn.AbstractAsgnGrid",
 	alias:[ "widget.net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Left","widget.net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Right" ],
 	_defineColumns_: function () {
 		this._getBuilder_()		
@@ -21,7 +21,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$List", {
 });
 
 Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui", {
-	extend: "dnet.base.AbstractAsgnUi",
+	extend: "dnet.core.asgn.AbstractAsgnUi",
 	alias: "widget.net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui",
  	 width:700
 	,height:400 

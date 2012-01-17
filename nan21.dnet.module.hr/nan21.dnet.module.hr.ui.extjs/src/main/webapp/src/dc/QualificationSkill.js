@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.QualificationSkill", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.hr.skill.ds.model.QualificationSkillDs",
 	filterModel: "net.nan21.dnet.module.hr.skill.ds.model.QualificationSkillDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.QualificationSkill", {
  	
  	 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.QualificationSkill$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.skill.dc.QualificationSkill$CtxEditList",
 	
 	 _noImport_: true

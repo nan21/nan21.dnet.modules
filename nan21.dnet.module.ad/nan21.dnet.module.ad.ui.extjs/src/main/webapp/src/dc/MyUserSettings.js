@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.MyUserSettings", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.ad.usr.ds.model.MyUserSettingsDs",
 	filterModel: "net.nan21.dnet.module.ad.usr.ds.model.MyUserSettingsDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MyUserSettings", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.MyUserSettings$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.MyUserSettings$Edit",
 	
 	_defineElements_: function () {	

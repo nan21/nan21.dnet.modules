@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.bp.md.dc.Contact", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.bp.md.ds.model.ContactDs",
 	filterModel: "net.nan21.dnet.module.bp.md.ds.model.ContactDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.bp.md.dc.Contact$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bp.md.dc.Contact$List",
 	
 	 _noImport_: false
@@ -70,7 +70,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$List", {
  	
  	 
 Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$CtxEditList", {
-	extend: "dnet.base.AbstractDcvEditableGrid",
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bp.md.dc.Contact$CtxEditList",
 	
 	 _noImport_: true
@@ -94,7 +94,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$CtxEditList", {
  	
 
 Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$Edit", {
-	extend: "dnet.base.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvForm",
 	alias: "widget.net.nan21.dnet.module.bp.md.dc.Contact$Edit",
 	
 	_defineElements_: function () {	

@@ -1,7 +1,7 @@
    
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance", {
-	extend: "dnet.base.AbstractDc",
+	extend: "dnet.core.dc.AbstractDc",
  
 	recordModel: "net.nan21.dnet.module.mm.inventory.ds.model.InvBalanceDs",
 	filterModel: "net.nan21.dnet.module.mm.inventory.ds.model.InvBalanceDsFilter",
@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance", {
  	
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance$Filter", {
-	extend: "dnet.base.AbstractDcvFilterForm",
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
  	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.InvBalance$Filter",
 	_defineElements_: function () {	
 		//controls	
@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance$Filter", {
 }); 
  		 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance$List", {
-	extend: "dnet.base.AbstractDcvGrid",
+	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.mm.inventory.dc.InvBalance$List",
 	
 	 _noImport_: false

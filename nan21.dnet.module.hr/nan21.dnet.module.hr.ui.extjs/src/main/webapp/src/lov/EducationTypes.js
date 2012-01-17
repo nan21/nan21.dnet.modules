@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.hr.employee.lovs.EducationTypes", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.hr.employee.lovs.EducationTypes",
  
 	displayField:"name",

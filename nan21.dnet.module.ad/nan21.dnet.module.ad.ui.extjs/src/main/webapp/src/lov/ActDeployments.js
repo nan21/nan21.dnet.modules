@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.ad.workflow.lovs.ActDeployments", {
-	extend: "dnet.base.AbstractCombo",
+	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.ad.workflow.lovs.ActDeployments",
  
 	displayField:"fullName",
