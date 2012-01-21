@@ -16,13 +16,13 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.AccessControl_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addButton({name:"btnAsgnRoleToAccessCtrl",text:"Roles", tooltip:"Assign selected access right to roles",disabled:true
+		.addButton({name:"btnAsgnRoleToAccessCtrl",text:"Roles", tooltip:"Assign selected privilege to roles",disabled:true
 			,handler: this.onBtnAsgnRoleToAccessCtrl,scope:this,stateManager:{name:"selected_one_clean", dc:"ctrl" }	})	
 							 	
-		.addButton({name:"btnShowUiAsgnRules",text:"Assignment rules", tooltip:"Open assignment rules frame",disabled:false
+		.addButton({name:"btnShowUiAsgnRules",text:"ASGN rules", tooltip:"Open assignment rules frame",disabled:false
 			,handler: this.onBtnShowUiAsgnRules,scope:this	})	
 							 	
-		.addButton({name:"btnShowUiDsRules",text:"Data-source rules", tooltip:"Open data-source rules frame",disabled:false
+		.addButton({name:"btnShowUiDsRules",text:"DS rules", tooltip:"Open data-source rules frame",disabled:false
 			,handler: this.onBtnShowUiDsRules,scope:this	})	
 							 	
 		.addButton({name:"btnCopyRules",text:"Copy rules", tooltip:"Copy rules from another privilege",disabled:true

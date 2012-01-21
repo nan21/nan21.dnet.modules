@@ -1,0 +1,33 @@
+
+Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceReportDs$Trl", {  	  	
+	priceListId__lbl :    "Listă (ID)",
+	
+	priceList__lbl :    "Listă",
+	
+	currencyId__lbl :    "Monedă (ID)",
+	
+	currency__lbl :    "Monedă (Cod)",
+	
+	priceListVersionId__lbl :    "Versiune (ID)",
+	
+	priceListVersion__lbl :    "Versiune",
+	
+	validFrom__lbl :    "De la",
+	
+	productId__lbl :    "Articol (ID)",
+	
+	product__lbl :    "Articol (Cod)",
+	
+	productName__lbl :    "Articol",
+	
+	uomId__lbl :    "UM (ID)",
+	
+	uom__lbl :    "UM (Cod)",
+	
+	price__lbl :  "Preţ",
+		 
+	validAt__lbl : "Valabil la",
+	productCategoryId__lbl : "Categorie ID",
+	productCategory__lbl : "Categorie",
+	id__lbl :"ID"
+});

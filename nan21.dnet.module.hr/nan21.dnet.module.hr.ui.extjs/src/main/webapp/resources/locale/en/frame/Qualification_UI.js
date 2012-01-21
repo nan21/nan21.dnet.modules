@@ -1,7 +1,9 @@
 
 Ext.define("net.nan21.dnet.module.hr.skill.frame.Qualification_UI$Trl", {  	  	
-	skillCtxEditList__ttl : "Required competence",canvas1__ttl : "Edit list",
+	
+	tlbQualifEditList__ttl : "Qualifications",
+	tlbSkillCtxEditList__ttl : "Required competences",
 	
 	
-	title: "Qualification_UI"
+	title: "Qualifications"
 });

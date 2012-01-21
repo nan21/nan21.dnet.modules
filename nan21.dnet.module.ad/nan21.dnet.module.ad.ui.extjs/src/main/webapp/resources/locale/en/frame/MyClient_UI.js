@@ -1,7 +1,8 @@
 
 Ext.define("net.nan21.dnet.module.ad.client.frame.MyClient_UI$Trl", {  	  	
-	canvas1__ttl : "Editor",
+	
+	clientEditTlb__ttl : "Client info",
 	
 	
-	title: "Client_UI"
+	title: "Client info"
 });

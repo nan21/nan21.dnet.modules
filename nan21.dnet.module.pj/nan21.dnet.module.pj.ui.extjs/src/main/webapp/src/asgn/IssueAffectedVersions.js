@@ -22,7 +22,7 @@ Ext.define("net.nan21.dnet.module.pj.md.asgn.IssueAffectedVersions$List", {
 Ext.define("net.nan21.dnet.module.pj.md.asgn.IssueAffectedVersions$Ui", {
 	extend: "dnet.core.asgn.AbstractAsgnUi",
 	alias: "widget.net.nan21.dnet.module.pj.md.asgn.IssueAffectedVersions$Ui",
- 	 width:650
+ 	 width:700
 	,height:400 
 	,title:"Affected versions"
 	,_controller_:net.nan21.dnet.module.pj.md.asgn.IssueAffectedVersions

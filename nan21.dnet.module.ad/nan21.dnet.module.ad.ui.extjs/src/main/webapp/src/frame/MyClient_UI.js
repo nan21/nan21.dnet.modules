@@ -14,7 +14,7 @@ Ext.define("net.nan21.dnet.module.ad.client.frame.MyClient_UI", {
 		this._getBuilder_()	
 		.addDcFormView("client",{ name:"clientEdit", xtype:"net.nan21.dnet.module.ad.client.dc.MyClient$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -27,7 +27,7 @@ Ext.define("net.nan21.dnet.module.ad.client.frame.MyClient_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("clientEditTlb", {dc:"client"}).addSave().addCancel().addSeparator().addSeparator().addTitle({"text":"Editor"}).end(); 	
+			.beginToolbar("clientEditTlb", {dc:"client"}).addSave().addCancel().addSeparator().addSeparator().addTitle({"text":"Client info"}).end(); 	
 	}
 
 	,loadCurrentClient: function() {	

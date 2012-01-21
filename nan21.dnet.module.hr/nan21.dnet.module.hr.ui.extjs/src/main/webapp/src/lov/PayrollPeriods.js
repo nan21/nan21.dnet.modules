@@ -6,7 +6,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.lovs.PayrollPeriods", {
 	displayField:"name",
 	listConfig: {		
 		getInnerTpl: function() { 
-			return '<span>{name}, {startDate}, {endDate}</span>';
+			return '<span>{name}</span>';
 		},
 		width:250
 	},		 

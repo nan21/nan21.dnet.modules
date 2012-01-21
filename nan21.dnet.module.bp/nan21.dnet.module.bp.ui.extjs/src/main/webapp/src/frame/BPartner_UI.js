@@ -52,7 +52,7 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BPartner_UI", {
 		.addPanel({name: "addressPanel",layout:"card", activeItem:0,title:"Address"})  	 
 		.addPanel({name: "bpDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true,onActivateDoLayoutFor:["bpDetailsTab"]})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true,onActivateDoLayoutFor:["bpEdit","bpDetailsTab"]})  	 
 		.addPanel({name: "notesPanel", layout:"border", defaults:{split:true},title:"Notes"})  	 
 		.addPanel({name: "addressEditWrapper", layout:"fit"})
 		

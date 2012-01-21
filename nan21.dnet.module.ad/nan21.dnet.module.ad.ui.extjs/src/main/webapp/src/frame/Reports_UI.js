@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.ad.report.frame.Reports_UI", {
 		.addPanel({name: "repDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
-		.addPanel({name: "dsRep", layout:"border", defaults:{split:true},title:"Data-source links"})  	 
+		.addPanel({name: "dsRep", layout:"border", defaults:{split:true},title:"DS links"})  	 
 ;	 	
 	}
 

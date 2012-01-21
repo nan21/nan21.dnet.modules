@@ -15,7 +15,7 @@ Ext.define("net.nan21.dnet.module.bp.base.frame.Bank_UI", {
 		.addDcFilterFormView("bank",{ name:"bankFilter", xtype:"net.nan21.dnet.module.bp.base.dc.Bank$Filter",height:120})	 
 		.addDcView("bank",{ name:"bankEditList", xtype:"net.nan21.dnet.module.bp.base.dc.Bank$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.bp.base.frame.Bank_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlb", {dc:"bank"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end(); 	
+			.beginToolbar("tlb", {dc:"bank"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Banks"}).end(); 	
 	}
 
 });  

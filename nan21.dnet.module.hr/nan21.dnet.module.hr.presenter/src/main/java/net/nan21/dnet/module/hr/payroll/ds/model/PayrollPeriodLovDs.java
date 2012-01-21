@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.hr.payroll.ds.model;
 
-import java.util.Date;
 import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
@@ -22,8 +21,6 @@ public class PayrollPeriodLovDs extends AbstractDsModel<PayrollPeriod>
     public static final String fID = "id";
     public static final String fCLIENTID = "clientId";
     public static final String fNAME = "name";
-    public static final String fSTARTDATE = "startDate";
-    public static final String fENDDATE = "endDate";
     public static final String fACTIVE = "active";
     public static final String fPAYROLLID = "payrollId";
 
@@ -35,12 +32,6 @@ public class PayrollPeriodLovDs extends AbstractDsModel<PayrollPeriod>
 
     @DsField()
     private String name;
-
-    @DsField()
-    private Date startDate;
-
-    @DsField()
-    private Date endDate;
 
     @DsField()
     private Boolean active;
@@ -79,22 +70,6 @@ public class PayrollPeriodLovDs extends AbstractDsModel<PayrollPeriod>
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Date getStartDate() {
-        return this.startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return this.endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
     }
 
     public Boolean getActive() {

@@ -16,11 +16,11 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Payroll_UI", {
 		this._getBuilder_()	
 		.addDcFilterFormView("payroll",{ name:"payrollFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter",height:120})	 
 		.addDcView("payroll",{ name:"payrollList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$List"})	 
-		.addDcFormView("payroll",{ name:"payrollEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit",height:90})	 
+		.addDcFormView("payroll",{ name:"payrollEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit",height:120})	 
 		.addDcView("period",{ name:"periodCtxEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -36,9 +36,9 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Payroll_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbPayrollList", {dc:"payroll"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
-			.beginToolbar("tlbPayrollEdit", {dc:"payroll"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
-			.beginToolbar("tlbPeriodCtxEditList", {dc:"period"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
+			.beginToolbar("tlbPayrollList", {dc:"payroll"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Payrolls"}).end()
+			.beginToolbar("tlbPayrollEdit", {dc:"payroll"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Payrolls"}).end()
+			.beginToolbar("tlbPeriodCtxEditList", {dc:"period"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Periods"}).end(); 	
 	}
 
 });  

@@ -19,8 +19,8 @@ Ext.define("net.nan21.dnet.module.hr.grade.frame.GradeRate_UI", {
 		.addDcFormView("rate",{ name:"rateEdit", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit",height:120})	 
 		.addDcView("value",{ name:"valueEditList", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRateValue$CtxEditList4GradeRate", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -36,9 +36,9 @@ Ext.define("net.nan21.dnet.module.hr.grade.frame.GradeRate_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbRateList", {dc:"rate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
-			.beginToolbar("tlbRateEdit", {dc:"rate"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
-			.beginToolbar("tlbValueEditList", {dc:"value"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
+			.beginToolbar("tlbRateList", {dc:"rate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Grade rates"}).end()
+			.beginToolbar("tlbRateEdit", {dc:"rate"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Grade rate"}).end()
+			.beginToolbar("tlbValueEditList", {dc:"value"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Values"}).end(); 	
 	}
 
 });  

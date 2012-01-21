@@ -15,7 +15,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI", {
 		.addDcFilterFormView("expval",{ name:"expvalFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter",height:120})	 
 		.addDcView("expval",{ name:"expvalList", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementValue$List"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbExpvalList", {dc:"expval"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end(); 	
+			.beginToolbar("tlbExpvalList", {dc:"expval"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Element values"}).end(); 	
 	}
 
 });  

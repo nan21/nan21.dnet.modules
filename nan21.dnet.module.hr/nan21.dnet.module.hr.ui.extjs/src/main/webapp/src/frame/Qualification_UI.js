@@ -16,10 +16,10 @@ Ext.define("net.nan21.dnet.module.hr.skill.frame.Qualification_UI", {
 		this._getBuilder_()	
 		.addDcFilterFormView("qualif",{ name:"qualifFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.Qualification$Filter",height:40})	 
 		.addDcView("qualif",{ name:"qualifEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.Qualification$EditList", frame:true})	 
-		.addDcView("skill",{ name:"skillCtxEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.QualificationSkill$CtxEditList", frame:true,title:"Required competence"})	 
+		.addDcView("skill",{ name:"skillCtxEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.QualificationSkill$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "panelRequirements", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:500}}) 	  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -34,8 +34,8 @@ Ext.define("net.nan21.dnet.module.hr.skill.frame.Qualification_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbQualifEditList", {dc:"qualif"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end()
-			.beginToolbar("tlbSkillCtxEditList", {dc:"skill"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Required competence"}).end(); 	
+			.beginToolbar("tlbQualifEditList", {dc:"qualif"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Qualifications"}).end()
+			.beginToolbar("tlbSkillCtxEditList", {dc:"skill"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Required competences"}).end(); 	
 	}
 
 });  

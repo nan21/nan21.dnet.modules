@@ -1,7 +1,10 @@
 
 Ext.define("net.nan21.dnet.module.hr.grade.frame.PayScale_UI$Trl", {  	  	
-	pointEditList__ttl : "Progression points",canvas1__ttl : "List",canvas2__ttl : "Editor",
+	
+	tlbScaleList__ttl : "Pay scales",
+	tlbScaleEdit__ttl : "Pay scale",
+	tlbPointEditList__ttl : "Progression points",
 	
 	
-	title: "PayScale_UI"
+	title: "Pay scales"
 });

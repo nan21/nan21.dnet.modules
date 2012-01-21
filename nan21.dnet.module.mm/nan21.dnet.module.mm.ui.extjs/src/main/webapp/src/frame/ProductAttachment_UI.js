@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.ProductAttachment_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbAttchEditList", {dc:"attch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbAttchEditList", {dc:"attch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Product attachments"}).end(); 	
 	}
 
 });  

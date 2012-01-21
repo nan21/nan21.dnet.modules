@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI", {
 		.addDcFormView("event",{ name:"eventEditTask", xtype:"net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditTask",title:"Task"})	 
 		.addDcFormView("event",{ name:"eventCreate", xtype:"net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$Create"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "eventPanel",layout:"card", activeItem:0,title:"Activities"})  	 
+		.addPanel({name: "eventPanel",layout:"card", activeItem:0,title:"Events"})  	 
 		.addPanel({name: "eventEditPanel",layout:"card", activeItem:0})  	 
 		.addPanel({name: "opportunityDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
@@ -76,8 +76,8 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI", {
 			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
 			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().end()
 			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().end()
-			.beginToolbar("tlbCalendarList", {dc:"event"}).addQuery().addEdit({inContainer:"eventPanel",showView:"eventEditPanel"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Activities"}).end()
-			.beginToolbar("tlbCalendarEdit", {dc:"event"}).addBack({inContainer:"eventPanel",showView:"eventList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Activity"}).end(); 	
+			.beginToolbar("tlbCalendarList", {dc:"event"}).addQuery().addEdit({inContainer:"eventPanel",showView:"eventEditPanel"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Events"}).end()
+			.beginToolbar("tlbCalendarEdit", {dc:"event"}).addBack({inContainer:"eventPanel",showView:"eventList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Event"}).end(); 	
 	}
 
 

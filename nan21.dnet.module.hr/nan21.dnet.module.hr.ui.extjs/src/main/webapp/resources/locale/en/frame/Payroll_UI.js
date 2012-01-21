@@ -1,7 +1,10 @@
 
 Ext.define("net.nan21.dnet.module.hr.payroll.frame.Payroll_UI$Trl", {  	  	
-	canvas1__ttl : "List",canvas2__ttl : "Editor",
+	
+	tlbPayrollList__ttl : "Payrolls",
+	tlbPayrollEdit__ttl : "Payrolls",
+	tlbPeriodCtxEditList__ttl : "Periods",
 	
 	
-	title: "Payroll_UI"
+	title: "Payroll"
 });

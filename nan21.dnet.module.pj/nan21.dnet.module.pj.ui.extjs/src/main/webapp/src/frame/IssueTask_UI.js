@@ -67,8 +67,8 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssueTask_UI", {
 		this._getBuilder_()
 			.beginToolbar("tlbTaskList", {dc:"task"}).addQuery().addEdit().addSeparator().addSeparator().addTitle({"text":"Issue tasks"}).end()
 			.beginToolbar("tlbTaskEdit", {dc:"task"}).addBack().addSave().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addButtons([this._elems_.get("btnIssueUi") ]).addSeparator().addSeparator().addTitle({"text":"Issue task"}).end()
-			.beginToolbar("tlbLinkList", {dc:"link"}).addQuery().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Issue links"}).end()
-			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Issue attachments"}).end()
+			.beginToolbar("tlbLinkList", {dc:"link"}).addQuery().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Links"}).end()
+			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
 			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().end()
 			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().end(); 	
 	}

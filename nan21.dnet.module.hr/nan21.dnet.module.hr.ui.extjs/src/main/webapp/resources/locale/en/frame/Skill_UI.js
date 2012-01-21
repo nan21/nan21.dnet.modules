@@ -1,7 +1,8 @@
 
 Ext.define("net.nan21.dnet.module.hr.skill.frame.Skill_UI$Trl", {  	  	
-	canvas1__ttl : "Edit list",
+	
+	tlb__ttl : "Skills",
 	
 	
-	title: "Skill_UI"
+	title: "Skills"
 });

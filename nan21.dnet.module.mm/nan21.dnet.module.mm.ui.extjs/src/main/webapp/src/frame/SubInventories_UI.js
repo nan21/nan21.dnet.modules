@@ -18,10 +18,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", {
 		.addDcView("subinv",{ name:"subinvList", xtype:"net.nan21.dnet.module.mm.inventory.dc.SubInventory$List"})	 
 		.addDcFormView("subinv",{ name:"subinvEdit", xtype:"net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit",height:150})	 
 		.addDcFilterFormView("sloc",{ name:"slocFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocator$Filter"})	 
-		.addDcView("sloc",{ name:"slocEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocator$CtxEditList", frame:true,title:"Stock locators"})	 
+		.addDcView("sloc",{ name:"slocEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocator$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -37,8 +37,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbSubinvList", {dc:"subinv"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
-			.beginToolbar("tlbSubinvEdit", {dc:"subinv"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
+			.beginToolbar("tlbSubinvList", {dc:"subinv"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Sub-inventories"}).end()
+			.beginToolbar("tlbSubinvEdit", {dc:"subinv"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Sub-inventory"}).end()
 			.beginToolbar("tlbSlocEditList", {dc:"sloc"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Stock locators"}).end(); 	
 	}
 

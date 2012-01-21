@@ -25,8 +25,8 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Element_UI", {
 		.addDcFilterFormView("etype",{ name:"etypeFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementType$Filter",height:120})	 
 		.addDcView("etype",{ name:"etypeEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasElems", layout:"border", defaults:{split:true},title:"Elements > List",preventHeader:true})  	 
-		.addPanel({name: "canvasElemEdit", layout:"border", defaults:{split:true},title:"Elements > Editor",preventHeader:true})  	 
+		.addPanel({name: "canvasElems", layout:"border", defaults:{split:true},title:"Elements",preventHeader:true})  	 
+		.addPanel({name: "canvasElemEdit", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Element categories",preventHeader:true})  	 
 		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Element types",preventHeader:true})  	 
 			
@@ -56,7 +56,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Element_UI", {
 	,_defineToolbars_: function() {
 		this._getBuilder_()
 			.beginToolbar("tlbExprList", {dc:"elems"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Elements > List"}).end()
-			.beginToolbar("tlbExprEdit", {dc:"elems"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Elements > Editor"}).end()
+			.beginToolbar("tlbExprEdit", {dc:"elems"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Element"}).end()
 			.beginToolbar("tlbVarEditList", {dc:"vars"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end()
 			.beginToolbar("tlbEcategEditList", {dc:"ecateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Element categories"}).end()
 			.beginToolbar("tlbEtypeEditList", {dc:"etype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Element types"}).end(); 	

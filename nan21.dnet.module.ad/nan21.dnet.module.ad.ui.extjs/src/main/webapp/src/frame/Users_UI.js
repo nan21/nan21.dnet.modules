@@ -33,7 +33,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		
 		.addWindow({name:"wdwChangePassword", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("canvasPassword")]
-,modal:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnSavePassword") ]}}) 	
+,title:"Change password",modal:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnSavePassword") ]}}) 	
 ;	 	
 	}
 

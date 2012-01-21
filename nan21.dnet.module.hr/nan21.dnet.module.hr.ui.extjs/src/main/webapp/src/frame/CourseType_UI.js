@@ -18,8 +18,8 @@ Ext.define("net.nan21.dnet.module.hr.training.frame.CourseType_UI", {
 		.addDcFilterFormView("ctype",{ name:"ctypeFilter", xtype:"net.nan21.dnet.module.hr.training.dc.CourseType$Filter",height:120})	 
 		.addDcView("ctype",{ name:"ctypeEditList", xtype:"net.nan21.dnet.module.hr.training.dc.CourseType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasCategory", layout:"border", defaults:{split:true},title:"Course Categories",preventHeader:true})  	 
-		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Course Types",preventHeader:true})  	 
+		.addPanel({name: "canvasCategory", layout:"border", defaults:{split:true},title:"Course categories",preventHeader:true})  	 
+		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Course types",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -41,8 +41,8 @@ Ext.define("net.nan21.dnet.module.hr.training.frame.CourseType_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbCcategEditList", {dc:"ccateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Course Categories"}).end()
-			.beginToolbar("tlbCtypeEditList", {dc:"ctype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Course Types"}).end(); 	
+			.beginToolbar("tlbCcategEditList", {dc:"ccateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Course categories"}).end()
+			.beginToolbar("tlbCtypeEditList", {dc:"ctype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Course types"}).end(); 	
 	}
 
 });  

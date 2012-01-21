@@ -147,7 +147,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit", {
 		.addChildrenTo("formCompanyCol1",["companyName"])
 		.addChildrenTo("formCompanyCol2",["legalForm","registrationNo","registrationDate"])
 		.addChildrenTo("formPerson",["formPersonCol1" ,"formPersonCol2" ])
-		.addChildrenTo("formPersonCol1",["firstName","middleName","lastName"])
+		.addChildrenTo("formPersonCol1",["lastName","firstName","middleName"])
 		.addChildrenTo("formPersonCol2",["identityCardNo","passportNo","gender","birthDate"])
 		.addChildrenTo("col1",["type","countryCode","taxPayerNo","code","active"])
 ;

@@ -1,7 +1,10 @@
 
 Ext.define("net.nan21.dnet.module.hr.skill.frame.RatingScale_UI$Trl", {  	  	
-	levelCtxEditList__ttl : "Proficiency levels",canvas1__ttl : "List",canvas2__ttl : "Editor",
+	
+	tlbScaleList__ttl : "Rating scales",
+	tlbScaleEdit__ttl : "Rating scale",
+	tlbLevelCtxEditList__ttl : "Proficiency levels",
 	
 	
-	title: "RatingScale_UI"
+	title: "Rating scales"
 });

@@ -91,7 +91,7 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$Edit", {
 		.addLov({ name:"reason", xtype:"net.nan21.dnet.module.hr.time.lovs.AbsenceReasons", dataIndex:"reason",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reasonId"} ],filterFieldMapping: [{lovField:"typeId", dsField: "typeId"} ]  })
 		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20" ,allowBlank:false})
 		.addNumberField({ name:"hours", dataIndex:"hours",anchor:"-20" ,allowBlank:false , style: "text-align:right;" })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:100,anchor:"-20"   })
 		//containers
 		.addPanel({ name:"col1", layout:"anchor" , width:300})     
 		.addPanel({ name:"col2", layout:"anchor" ,width:250})     

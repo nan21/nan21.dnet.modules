@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvOperations_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("invop",{ name:"invopFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvOperation$Filter"})	 
+		.addDcFilterFormView("invop",{ name:"invopFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvOperation$Filter",height:120})	 
 		.addDcView("invop",{ name:"invopList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvOperation$List"})	 
 		.addPanel({name: "main", layout:"border", defaults:{split:true}})  	 
 ;	 	
@@ -26,7 +26,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvOperations_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbInvopList", {dc:"invop"}).addQuery().end(); 	
+			.beginToolbar("tlbInvopList", {dc:"invop"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Inventory operations"}).end(); 	
 	}
 
 });  

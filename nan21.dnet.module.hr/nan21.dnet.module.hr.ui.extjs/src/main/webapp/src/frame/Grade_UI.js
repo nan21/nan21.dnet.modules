@@ -15,7 +15,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.frame.Grade_UI", {
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.hr.grade.dc.Grade$Filter",height:120})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.hr.grade.dc.Grade$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.frame.Grade_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlb", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end(); 	
+			.beginToolbar("tlb", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Grades"}).end(); 	
 	}
 
 });  

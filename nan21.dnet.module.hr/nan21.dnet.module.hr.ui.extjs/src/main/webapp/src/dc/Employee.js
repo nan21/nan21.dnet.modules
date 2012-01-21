@@ -107,7 +107,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditMain", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
-		.addChildrenTo("col1",["firstName","lastName","middleName"])
+		.addChildrenTo("col1",["lastName","firstName","middleName"])
 		.addChildrenTo("col2",["employerCode","code"])
 		.addChildrenTo("col3",["gender","birthdate","maritalStatus"])
 ;

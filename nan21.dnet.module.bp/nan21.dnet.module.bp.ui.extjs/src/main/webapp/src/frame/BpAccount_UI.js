@@ -16,8 +16,8 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BpAccount_UI", {
 		.addDcView("m",{ name:"mList", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$List"})	 
 		.addDcFormView("m",{ name:"mEdit", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -32,8 +32,8 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BpAccount_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMList", {dc:"m"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
-			.beginToolbar("tlbMEdit", {dc:"m"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end(); 	
+			.beginToolbar("tlbMList", {dc:"m"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"BP accounts"}).end()
+			.beginToolbar("tlbMEdit", {dc:"m"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"BP account"}).end(); 	
 	}
 
 });  

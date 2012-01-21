@@ -33,7 +33,7 @@ Ext.define("net.nan21.dnet.module.bd.org.frame.Org_UI", {
 		.addPanel({name: "panelHierarchy",layout:"card", activeItem:0})  	 
 		.addPanel({name: "addressPanel",layout:"card", activeItem:0,title:"Address"})  	 
 		.addPanel({name: "canvasOrg", layout:"border", defaults:{split:true},title:"Organizations",preventHeader:true})  	 
-		.addPanel({name: "canvasOrgEdit", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvasOrgEdit", layout:"border", defaults:{split:true},title:"Organization",preventHeader:true})  	 
 		.addPanel({name: "canvasHierarchy", layout:"border", defaults:{split:true},title:"Hierarchies",preventHeader:true})  	 
 		.addPanel({name: "panelHierarchyList", layout:"border", defaults:{split:true}})  	 
 		.addPanel({name: "panelHierarchyEdit", layout:"border", defaults:{split:true}})  	 
@@ -74,7 +74,7 @@ Ext.define("net.nan21.dnet.module.bd.org.frame.Org_UI", {
 	,_defineToolbars_: function() {
 		this._getBuilder_()
 			.beginToolbar("tlbOrgList", {dc:"org"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Organizations"}).end()
-			.beginToolbar("tlbOrgEdit", {dc:"org"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
+			.beginToolbar("tlbOrgEdit", {dc:"org"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Organization"}).end()
 			.beginToolbar("tlbHierarchyList", {dc:"hierarchy"}).addQuery().addEdit({inContainer:"panelHierarchy",showView:"panelHierarchyEdit"}).addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Hierarchies"}).end()
 			.beginToolbar("tlbHierarchyEdit", {dc:"hierarchy"}).addBack({inContainer:"panelHierarchy",showView:"panelHierarchyList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Hierarchy"}).end()
 			.beginToolbar("tlbItemsEditList", {dc:"items"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end()

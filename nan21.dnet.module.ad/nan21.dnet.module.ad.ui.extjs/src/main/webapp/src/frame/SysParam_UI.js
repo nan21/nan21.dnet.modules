@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysParam_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addButton({name:"btnSynchronize",text:"Update cache", tooltip:"Update cached configuration parameters of the running application to work with the current values.",iconCls:"icon-action-synchronize",disabled:false
+		.addButton({name:"btnSynchronize",text:"Update cache", tooltip:"Propagate changes to the cached configuration parameters",iconCls:"icon-action-synchronize",disabled:false
 			,handler: this.onBtnSynchronize,scope:this	})	
 							 	
 		.addDcFilterFormView("sysparam",{ name:"sysparamFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$Filter",height:120})	 

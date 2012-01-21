@@ -67,11 +67,6 @@ public class PayrollPeriod implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_NAME = "PayrollPeriod.findByName";
 
-    /** Name. */
-    @Column(name = "NAME", nullable = false, length = 255)
-    @NotBlank
-    private String name;
-
     /** StartDate. */
     @Temporal(TemporalType.DATE)
     @Column(name = "STARTDATE", nullable = false)
@@ -80,8 +75,14 @@ public class PayrollPeriod implements Serializable, IModelWithId,
 
     /** EndDate. */
     @Temporal(TemporalType.DATE)
-    @Column(name = "ENDDATE")
+    @Column(name = "ENDDATE", nullable = false)
+    @NotNull
     private Date endDate;
+
+    /** Name. */
+    @Column(name = "NAME", nullable = false, length = 255)
+    @NotBlank
+    private String name;
 
     /** Flag which indicates if this record is used.*/
     @Column(name = "ACTIVE", nullable = false)
@@ -89,8 +90,8 @@ public class PayrollPeriod implements Serializable, IModelWithId,
     private Boolean active;
 
     /** Notes about this record. */
-    @Column(name = "NOTES", length = 4000)
-    private String notes;
+    @Column(name = "DESCRIPTION", length = 400)
+    private String description;
 
     /** Owner client */
     @Column(name = "CLIENTID", nullable = false)
@@ -137,14 +138,6 @@ public class PayrollPeriod implements Serializable, IModelWithId,
 
     /* ============== getters - setters ================== */
 
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Date getStartDate() {
         return this.startDate;
     }
@@ -161,6 +154,14 @@ public class PayrollPeriod implements Serializable, IModelWithId,
         this.endDate = endDate;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Boolean getActive() {
         return this.active;
     }
@@ -169,12 +170,12 @@ public class PayrollPeriod implements Serializable, IModelWithId,
         this.active = active;
     }
 
-    public String getNotes() {
-        return this.notes;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getClientId() {

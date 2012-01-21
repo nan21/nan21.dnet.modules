@@ -1,7 +1,10 @@
 
 Ext.define("net.nan21.dnet.module.hr.grade.frame.GradeRate_UI$Trl", {  	  	
-	canvas1__ttl : "List",canvas2__ttl : "Editor",
+	
+	tlbRateList__ttl : "Grade rates",
+	tlbRateEdit__ttl : "Grade rate",
+	tlbValueEditList__ttl : "Values",
 	
 	
-	title: "GradeRate_UI"
+	title: "Grade rates"
 });

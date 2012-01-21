@@ -20,10 +20,8 @@ public class PayrollPeriodDs extends AbstractDsModel<PayrollPeriod> implements
         IModelWithId, IModelWithClientId {
 
     public static final String fNAME = "name";
-    public static final String fSTARTDATE = "startDate";
-    public static final String fENDDATE = "endDate";
     public static final String fACTIVE = "active";
-    public static final String fNOTES = "notes";
+    public static final String fDESCRIPTION = "description";
     public static final String fID = "id";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
@@ -33,21 +31,17 @@ public class PayrollPeriodDs extends AbstractDsModel<PayrollPeriod> implements
     public static final String fVERSION = "version";
     public static final String fPAYROLLID = "payrollId";
     public static final String fPAYROLLNAME = "payrollName";
+    public static final String fSTARTDATE = "startDate";
+    public static final String fENDDATE = "endDate";
 
     @DsField()
     private String name;
 
     @DsField()
-    private Date startDate;
-
-    @DsField()
-    private Date endDate;
-
-    @DsField()
     private Boolean active;
 
     @DsField()
-    private String notes;
+    private String description;
 
     @DsField()
     private Long id;
@@ -76,6 +70,12 @@ public class PayrollPeriodDs extends AbstractDsModel<PayrollPeriod> implements
     @DsField(join = "left", path = "payroll.name")
     private String payrollName;
 
+    @DsField()
+    private Date startDate;
+
+    @DsField()
+    private Date endDate;
+
     public PayrollPeriodDs() {
         super();
     }
@@ -92,22 +92,6 @@ public class PayrollPeriodDs extends AbstractDsModel<PayrollPeriod> implements
         this.name = name;
     }
 
-    public Date getStartDate() {
-        return this.startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return this.endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
     public Boolean getActive() {
         return this.active;
     }
@@ -116,12 +100,12 @@ public class PayrollPeriodDs extends AbstractDsModel<PayrollPeriod> implements
         this.active = active;
     }
 
-    public String getNotes() {
-        return this.notes;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getId() {
@@ -195,6 +179,22 @@ public class PayrollPeriodDs extends AbstractDsModel<PayrollPeriod> implements
 
     public void setPayrollName(String payrollName) {
         this.payrollName = payrollName;
+    }
+
+    public Date getStartDate() {
+        return this.startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return this.endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
 }

@@ -32,8 +32,8 @@ Ext.define("net.nan21.dnet.module.hr.time.frame.Absence_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbAbsenceList", {dc:"absence"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().end()
-			.beginToolbar("tlbAbsenceEdit", {dc:"absence"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().end(); 	
+			.beginToolbar("tlbAbsenceList", {dc:"absence"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Absences"}).end()
+			.beginToolbar("tlbAbsenceEdit", {dc:"absence"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Absence"}).end(); 	
 	}
 
 });  

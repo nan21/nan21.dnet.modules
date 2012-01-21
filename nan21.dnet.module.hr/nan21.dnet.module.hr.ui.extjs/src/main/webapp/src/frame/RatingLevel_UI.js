@@ -15,7 +15,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.frame.RatingLevel_UI", {
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingLevel$Filter",height:120})	 
 		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingLevel$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"Edit list",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.frame.RatingLevel_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Edit list"}).end(); 	
+			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Rating levels"}).end(); 	
 	}
 
 });  

@@ -28,8 +28,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI", {
 		.addDcView("dcNode",{ name:"elistNode", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefNode$CtxEditList", frame:true})	 
 		.addDcView("dcField",{ name:"elistField", xtype:"net.nan21.dnet.module.ad.workflow.dc.WfDefNodeField$CtxEditList", frame:true,width:500})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "panelDetails", layout:"border", defaults:{split:true}})  	 
 ;	 	
 	}
@@ -48,9 +48,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbProcessList", {dc:"dcProcess"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
-			.beginToolbar("tlbProcessEdit", {dc:"dcProcess"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
-			.beginToolbar("tlbNodeCtxEditList", {dc:"dcNode"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end()
+			.beginToolbar("tlbProcessList", {dc:"dcProcess"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Workflow definitions"}).end()
+			.beginToolbar("tlbProcessEdit", {dc:"dcProcess"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Workflow definition"}).end()
+			.beginToolbar("tlbNodeCtxEditList", {dc:"dcNode"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Elements"}).end()
 			.beginToolbar("tlbTransitionEditList", {dc:"dcField"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
 	}
 

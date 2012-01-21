@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvBalance_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbInvbalanceList", {dc:"invbalance"}).addQuery().end(); 	
+			.beginToolbar("tlbInvbalanceList", {dc:"invbalance"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Stocks"}).end(); 	
 	}
 
 });  

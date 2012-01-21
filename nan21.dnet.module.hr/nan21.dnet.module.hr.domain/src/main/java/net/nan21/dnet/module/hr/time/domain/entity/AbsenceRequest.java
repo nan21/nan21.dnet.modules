@@ -70,16 +70,16 @@ public class AbsenceRequest implements Serializable, IModelWithId,
     @NotNull
     private Date startDate;
 
-    /** Status. */
-    @Column(name = "STATUS", nullable = false, length = 16)
-    @NotBlank
-    private String status;
-
     /** EndDate. */
     @Temporal(TemporalType.DATE)
     @Column(name = "ENDDATE", nullable = false)
     @NotNull
     private Date endDate;
+
+    /** Status. */
+    @Column(name = "STATUS", nullable = false, length = 16)
+    @NotBlank
+    private String status;
 
     /** HoursPerDay. */
     @Column(name = "HOURSPERDAY", nullable = false)
@@ -164,20 +164,20 @@ public class AbsenceRequest implements Serializable, IModelWithId,
         this.startDate = startDate;
     }
 
-    public String getStatus() {
-        return this.status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public Date getEndDate() {
         return this.endDate;
     }
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Integer getHoursPerDay() {

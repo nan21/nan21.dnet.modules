@@ -1,7 +1,9 @@
 
 Ext.define("net.nan21.dnet.module.bp.md.frame.BpAccount_UI$Trl", {  	  	
-	canvas1__ttl : "List",canvas2__ttl : "Editor",
+	
+	tlbMList__ttl : "BP accounts",
+	tlbMEdit__ttl : "BP account",
 	
 	
-	title: "BpAccount_UI"
+	title: "BP accounts"
 });

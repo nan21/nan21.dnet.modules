@@ -41,14 +41,14 @@ public interface IProductService extends IEntityService<Product> {
 
     public List<Product> findByManufacturerId(Long manufacturerId);
 
-    public List<Product> findByCategories(ProductCategory categories);
-
-    public List<Product> findByCategoriesId(Long categoriesId);
-
     public List<Product> findByAttributeGroup(
             ProductAttributeGroup attributeGroup);
 
     public List<Product> findByAttributeGroupId(Long attributeGroupId);
+
+    public List<Product> findByCategories(ProductCategory categories);
+
+    public List<Product> findByCategoriesId(Long categoriesId);
 
     public List<Product> findByAttributes(ProductAttributeValue attributes);
 

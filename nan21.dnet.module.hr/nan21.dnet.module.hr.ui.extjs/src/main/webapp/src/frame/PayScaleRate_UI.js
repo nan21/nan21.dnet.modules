@@ -17,10 +17,10 @@ Ext.define("net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI", {
 		.addDcFilterFormView("srate",{ name:"srateFilter", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter",height:120})	 
 		.addDcView("srate",{ name:"srateList", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRate$List"})	 
 		.addDcFormView("srate",{ name:"srateEdit", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Edit",height:120})	 
-		.addDcView("value",{ name:"valueEditList", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRateValue$CtxEditList", frame:true,title:"Progression point rates"})	 
+		.addDcView("value",{ name:"valueEditList", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScaleRateValue$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},title:"List",preventHeader:true})  	 
-		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},title:"Editor",preventHeader:true})  	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}
 
@@ -36,8 +36,8 @@ Ext.define("net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbSrateList", {dc:"srate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"List"}).end()
-			.beginToolbar("tlbSrateEdit", {dc:"srate"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Editor"}).end()
+			.beginToolbar("tlbSrateList", {dc:"srate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Pay scale rates"}).end()
+			.beginToolbar("tlbSrateEdit", {dc:"srate"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Pay scale rate"}).end()
 			.beginToolbar("tlbSalueEditList", {dc:"value"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Progression point rates"}).end(); 	
 	}
 
