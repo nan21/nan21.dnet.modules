@@ -15,6 +15,10 @@ Ext.define("net.nan21.dnet.module.pj.base.frame.Projects_UI$Trl", {
 	btnViewAttachment__desc : "Deschide ataşamente",
 	btnUploadAttachment__ttl : "Upload...",
 	btnUploadAttachment__desc : "Upload ataşamente",
+	btnRoadmapUi__ttl : "Roadmap",
+	btnRoadmapUi__desc : "Afişează Roadmap pentru versiunea selectată",
+	btnChangelogUi__ttl : "Changelog",
+	btnChangelogUi__desc : "Afişează Changelog pentru versiunea selectată",
 	
 	title: "Proiecte"
 });	

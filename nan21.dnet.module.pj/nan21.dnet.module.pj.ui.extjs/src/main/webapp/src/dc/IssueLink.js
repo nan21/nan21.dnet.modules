@@ -59,11 +59,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList", {
 		.addNumberColumn({ name:"targetIssueId", dataIndex:"targetIssueId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"targetIssue", dataIndex:"targetIssue", width:60 })   	
 		.addTextColumn({ name:"targetSummary", dataIndex:"targetSummary", width:150 })   	
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -80,7 +76,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$CtxCreate", {
 		.addLov({ name:"targetIssue", xtype:"net.nan21.dnet.module.pj.md.lovs.Issues", dataIndex:"targetIssue",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "targetIssueId"} ]  })
 		.addLov({ name:"linkType", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueLinkTypes", dataIndex:"linkType",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "linkTypeId"} ]  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250})     
+		.addPanel({ name:"main", layout:"form" , autoScroll:true})     
 		;     
 	}
 	,_linkElements_: function () {

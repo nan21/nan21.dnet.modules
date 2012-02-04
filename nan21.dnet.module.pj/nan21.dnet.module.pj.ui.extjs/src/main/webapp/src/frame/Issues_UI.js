@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.pj.ui.extjs/ds/IssueDs", "nan21.dnet.module.pj.ui.extjs/dc/Issue", "nan21.dnet.module.pj.ui.extjs/ds/IssueLinkDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueLink", "nan21.dnet.module.pj.ui.extjs/ds/IssueAttachmentDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueAttachment", "nan21.dnet.module.ad.ui.extjs/ds/NoteDs", "nan21.dnet.module.ad.ui.extjs/dc/Note", "nan21.dnet.module.pj.ui.extjs/ds/IssueTaskDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueTaskCtx","nan21.dnet.module.pj.ui.extjs/ds/ProjectLovDs","nan21.dnet.module.pj.ui.extjs/lov/Projects","nan21.dnet.module.pj.ui.extjs/ds/IssueTypeLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueTypes","nan21.dnet.module.pj.ui.extjs/ds/IssueStatusLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueStatus","nan21.dnet.module.pj.ui.extjs/ds/IssuePriorityLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssuePriorities","nan21.dnet.module.pj.ui.extjs/ds/IssueResolutionLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueResolutions","nan21.dnet.module.pj.ui.extjs/ds/IssueSeverityLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueSeverities","nan21.dnet.module.pj.ui.extjs/ds/ProjectMemberLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectMembers","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.pj.ui.extjs/ds/IssueLovDs","nan21.dnet.module.pj.ui.extjs/lov/Issues","nan21.dnet.module.pj.ui.extjs/ds/IssueLinkTypeLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueLinkTypes","nan21.dnet.module.pj.ui.extjs/ds/IssueTaskTypeLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueTaskTypes","nan21.dnet.module.pj.ui.extjs/ds/IssueTaskStatusLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueTaskStatuses","nan21.dnet.module.pj.ui.extjs/ds/ProjectMemberLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectMembers","nan21.dnet.module.pj.ui.extjs/ds/ProjectLovDs","nan21.dnet.module.pj.ui.extjs/lov/Projects","nan21.dnet.module.pj.ui.extjs/ds/IssueTypeLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueTypes","nan21.dnet.module.pj.ui.extjs/ds/IssueStatusLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueStatus","nan21.dnet.module.pj.ui.extjs/ds/IssuePriorityLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssuePriorities","nan21.dnet.module.pj.ui.extjs/ds/IssueResolutionLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueResolutions","nan21.dnet.module.pj.ui.extjs/ds/IssueSeverityLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueSeverities","nan21.dnet.module.ad.ui.extjs/ds/AssignableLovDs","nan21.dnet.module.ad.ui.extjs/lov/Assignables","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.pj.ui.extjs/ds/ProjectComponentLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectComponents","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.ad.ui.extjs/ds/AttachmentTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/AttachmentTypes","nan21.dnet.module.pj.ui.extjs/asgn/IssueAffectedVersions","nan21.dnet.module.pj.ui.extjs/asgn/IssueAffectedComponents"]);
+Dnet.doImport(["", "nan21.dnet.module.pj.ui.extjs/ds/IssueDs", "nan21.dnet.module.pj.ui.extjs/dc/Issue", "nan21.dnet.module.pj.ui.extjs/ds/IssueLinkDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueLink", "nan21.dnet.module.ad.ui.extjs/ds/AttachmentDs", "nan21.dnet.module.ad.ui.extjs/dc/Attachment", "nan21.dnet.module.ad.ui.extjs/ds/NoteDs", "nan21.dnet.module.ad.ui.extjs/dc/Note", "nan21.dnet.module.pj.ui.extjs/ds/IssueTaskDs", "nan21.dnet.module.pj.ui.extjs/dc/IssueTaskCtx","nan21.dnet.module.pj.ui.extjs/ds/ProjectLovDs","nan21.dnet.module.pj.ui.extjs/lov/Projects","nan21.dnet.module.pj.ui.extjs/ds/IssueTypeLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueTypes","nan21.dnet.module.pj.ui.extjs/ds/IssueStatusLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueStatus","nan21.dnet.module.pj.ui.extjs/ds/IssuePriorityLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssuePriorities","nan21.dnet.module.pj.ui.extjs/ds/IssueResolutionLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueResolutions","nan21.dnet.module.pj.ui.extjs/ds/IssueSeverityLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueSeverities","nan21.dnet.module.pj.ui.extjs/ds/ProjectMemberLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectMembers","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionReleasedLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersionsReleased","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionPlannedLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersionsPlanned","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.pj.ui.extjs/ds/IssueLovDs","nan21.dnet.module.pj.ui.extjs/lov/Issues","nan21.dnet.module.pj.ui.extjs/ds/IssueLinkTypeLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueLinkTypes","nan21.dnet.module.pj.ui.extjs/ds/IssueTaskTypeLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueTaskTypes","nan21.dnet.module.pj.ui.extjs/ds/IssueTaskStatusLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueTaskStatuses","nan21.dnet.module.pj.ui.extjs/ds/ProjectMemberLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectMembers","nan21.dnet.module.pj.ui.extjs/ds/ProjectLovDs","nan21.dnet.module.pj.ui.extjs/lov/Projects","nan21.dnet.module.pj.ui.extjs/ds/IssueTypeLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueTypes","nan21.dnet.module.pj.ui.extjs/ds/IssueStatusLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueStatus","nan21.dnet.module.pj.ui.extjs/ds/IssuePriorityLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssuePriorities","nan21.dnet.module.pj.ui.extjs/ds/IssueResolutionLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueResolutions","nan21.dnet.module.pj.ui.extjs/ds/IssueSeverityLovDs","nan21.dnet.module.pj.ui.extjs/lov/IssueSeverities","nan21.dnet.module.ad.ui.extjs/ds/AssignableLovDs","nan21.dnet.module.ad.ui.extjs/lov/Assignables","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectVersions","nan21.dnet.module.pj.ui.extjs/ds/ProjectComponentLovDs","nan21.dnet.module.pj.ui.extjs/lov/ProjectComponents","nan21.dnet.module.ad.ui.extjs/ds/AttachmentTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/AttachmentTypes","nan21.dnet.module.pj.ui.extjs/asgn/IssueAffectedVersions","nan21.dnet.module.pj.ui.extjs/asgn/IssueAffectedComponents"]);
 
 Ext.define("net.nan21.dnet.module.pj.md.frame.Issues_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
@@ -9,12 +9,12 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Issues_UI", {
 		this._getBuilder_()
 		.addDc("issue", new net.nan21.dnet.module.pj.md.dc.Issue({}))
 		.addDc("link", new net.nan21.dnet.module.pj.md.dc.IssueLink({}))
-		.addDc("atch", new net.nan21.dnet.module.pj.md.dc.IssueAttachment({multiEdit:true}))
+		.addDc("atch", new net.nan21.dnet.module.ad.data.dc.Attachment({multiEdit:true}))
 		.addDc("note", new net.nan21.dnet.module.ad.data.dc.Note({}))
 		.addDc("task", new net.nan21.dnet.module.pj.md.dc.IssueTaskCtx({}))		
 		.linkDc("link", "issue",{fields:[ {childField:"sourceIssueId", parentField:"id"} ]} )
-		.linkDc("atch", "issue",{fields:[ {childField:"issueId", parentField:"id"} ]} )
-		.linkDc("note", "issue",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} )
+		.linkDc("atch", "issue",{fields:[ {childField:"targetUuid", parentField:"uuid"},{childField:"targetType", parentField:"entityFQN"} ]} )
+		.linkDc("note", "issue",{fields:[ {childField:"targetUuid", parentField:"uuid"},{childField:"targetType", parentField:"entityFQN"} ]} )
 		.linkDc("task", "issue",{fields:[ {childField:"issueId", parentField:"id"} ]} );		
 	}	 
 
@@ -53,21 +53,22 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Issues_UI", {
 		.addDcFormView("issue",{ name:"issueEditText", xtype:"net.nan21.dnet.module.pj.md.dc.Issue$EditText",title:"Description"})	 
 		.addDcView("link",{ name:"linkList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList",title:"Links"})	 
 		.addDcFormView("link",{ name:"linkCreate", xtype:"net.nan21.dnet.module.pj.md.dc.IssueLink$CtxCreate"})	 
-		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueAttachment$CtxEditList", frame:true,title:"Attachments",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnViewAttachment") ,this._elems_.get("btnUploadAttachment") ]}]})	 
+		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", frame:true,title:"Attachments",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnViewAttachment") ,this._elems_.get("btnUploadAttachment") ]}]})	 
 		.addDcView("note",{ name:"noteList", xtype:"net.nan21.dnet.module.ad.data.dc.Note$List",width:300})	 
 		.addDcFormView("note",{ name:"noteEdit", xtype:"net.nan21.dnet.module.ad.data.dc.Note$Edit"})	 
 		.addDcView("task",{ name:"taskList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$List"})	 
 		.addDcFormView("task",{ name:"taskEdit", xtype:"net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "tasksPanel",layout:"card", activeItem:0,title:"Tasks"})  	 
-		.addPanel({name: "issueDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
+
+		.addPanel({name: "issueDetailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true,onActivateDoLayoutFor:["issueDetailsTab"]})  	 
-		.addPanel({name: "notesPanel", layout:"border", defaults:{split:true},title:"Comments"})  	 
+		.addPanel({name: "notesPanel", layout:"border", defaults:{split:true},title:"Notes"})  	 
 		.addPanel({name: "taskEditWrapper", layout:"fit"})
 		
 		.addWindow({name:"wdwIssueLinkCreate", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("linkCreate")]
-,title:"Create link",modal:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnSaveLink") ,this._elems_.get("btnCancelLink") ]}}) 	
+,title:"Create link",modal:true,width:400,height:150,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnSaveLink") ,this._elems_.get("btnCancelLink") ]}}) 	
 ;	 	
 	}
 
@@ -156,7 +157,7 @@ this._getWindow_("wdwIssueLinkCreate").show();
 		var w=new dnet.core.base.FileUploadWindow({
     		_nameFieldValue_: this._getDc_("atch").getRecord().get("name"),
     		_p1Value_: this._getDc_("atch").getRecord().get("id"),
-    		_uploadUrl_:"/nan21.dnet.core.web/upload/projectIssueAttachmentUpload",
+    		_uploadUrl_:"/nan21.dnet.core.web/upload/adDataAttachment",
     		_succesCallbackFn_ : this.onUploadSuccess,
     		_succesCallbackScope_: this
     	});w.show();
@@ -178,6 +179,8 @@ this._getWindow_("wdwIssueLinkCreate").show();
 		}
 		issue.doClearQuery();
 		issue.setFilterValue("code", params.code );
+		issue.setFilterValue("projectId", params.projectId );
+		issue.setFilterValue("project", params.project );
 		issue.doQuery();
 		this._showStackedViewElement_("main",1);
 	}

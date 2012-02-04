@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectAttachmentDs$Trl", {  	  	
-	typeId__lbl :    "Tip (ID)",
+	uuid__lbl :  "@uuid",	typeId__lbl :    "Tip (ID)",
 	type__lbl :    "Tip",
 	category__lbl :    "Categorie",
 	projectId__lbl :    "Proiect (ID)",

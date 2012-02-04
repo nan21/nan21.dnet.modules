@@ -21,15 +21,16 @@ Ext.define("net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponents$List", {
 
 Ext.define("net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponents$Ui", {
 	extend: "dnet.core.asgn.AbstractAsgnUi",
-	alias: "widget.net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponents$Ui",
- 	 width:700
-	,height:400 
-	,title:"Affected components"
-	,_controller_:net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponents
-	,_filterFields_: [["id","Id"],["name","Name"]]
-	,_defaultFilterField_ : "name" 
-	 
-	,_defineElements_: function () {
+		 
+ 	width:700,
+	height:400,
+	title:"Affected components",
+
+	_controller_:net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponents,
+	_filterFields_: [["id","Id"],["name","Name"]],
+	_defaultFilterField_ : "name", 
+
+	_defineElements_: function () {
 		this._getBuilder_()
 			.addLeftGrid({ xtype:"net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponents$Left"})
 			.addRightGrid({ xtype:"net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponents$Right"})

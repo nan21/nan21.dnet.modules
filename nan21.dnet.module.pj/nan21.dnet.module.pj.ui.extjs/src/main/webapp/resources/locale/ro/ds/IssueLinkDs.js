@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.IssueLinkDs$Trl", {  	  	
-	sourceIssueId__lbl :    "Sursă (ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	sourceIssueId__lbl :    "Sursă (ID)",
 	sourceIssue__lbl :    "Sursă (Cod)",
 	sourceSummary__lbl :    "Subiect",
 	targetIssueId__lbl :    "Destinaţie (ID)",

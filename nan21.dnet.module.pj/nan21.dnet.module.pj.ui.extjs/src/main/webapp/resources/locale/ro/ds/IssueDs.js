@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.IssueDs$Trl", {  	  	
-	projectId__lbl :    "Proiect (ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	projectId__lbl :    "Proiect (ID)",
 	project__lbl :    "Proiect (Cod)",
 	projectName__lbl :    "Proiect",
 	summary__lbl :  "Subiect",
@@ -19,7 +19,7 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.IssueDs$Trl", {
 	assignee__lbl :  "Alocat la",
 	assigneeRoleId__lbl :    " (ID)",
 	assigneeRole__lbl :    "",
-	className__lbl :  "@className",	reportedVersionId__lbl :    "Reclamat în vers. (ID)",
+	reportedVersionId__lbl :    "Reclamat în vers. (ID)",
 	reportedVersion__lbl :    "Reclamat în vers.",
 	targetVersionId__lbl :    "Planificat ptr. vers. (ID)",
 	targetVersion__lbl :    "Planificat ptr. vers.",

@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.IssueDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	projectId__lbl : "Project Id",
 	project__lbl : "Project",
 	projectName__lbl : "Project Name",
@@ -19,7 +21,6 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.IssueDs$Trl", {
 	assignee__lbl : "Assignee",
 	assigneeRoleId__lbl : "Assignee Role Id",
 	assigneeRole__lbl : "Assignee Role",
-	className__lbl : "Class Name",
 	reportedVersionId__lbl : "Reported Version Id",
 	reportedVersion__lbl : "Reported Version",
 	targetVersionId__lbl : "Target Version Id",

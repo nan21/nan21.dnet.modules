@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.IssueAttachmentDs$Trl", {  	  	
-	typeId__lbl :    "Tip (ID)",
+	uuid__lbl :  "@uuid",	typeId__lbl :    "Tip (ID)",
 	type__lbl :    "Tip",
 	category__lbl :    "Categorie",
 	issueId__lbl :    "Incident (ID)",

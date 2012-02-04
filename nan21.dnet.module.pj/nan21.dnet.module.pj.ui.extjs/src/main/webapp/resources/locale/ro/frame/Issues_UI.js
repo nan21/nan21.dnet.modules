@@ -4,7 +4,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Issues_UI$Trl", {
 	atchEditList__ttl : "Ataşamente",
 	wdwIssueLinkCreate__ttl : "Crează relaţie",
 	tasksPanel__ttl : "Activităţi",
-	notesPanel__ttl : "Comentarii",
+	notesPanel__ttl : "Note",
 	
 	tlbIssueList__ttl : "Incidente",
 	tlbIssueEdit__ttl : "Incident",

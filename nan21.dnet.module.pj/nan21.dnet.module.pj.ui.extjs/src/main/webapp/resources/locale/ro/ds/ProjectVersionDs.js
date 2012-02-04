@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs$Trl", {  	  	
-	projectId__lbl :    "Proiect (ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	projectId__lbl :    "Proiect (ID)",
 	project__lbl :    "Proiect (Cod)",
 	projectName__lbl :    "Proiect",
 	planDate__lbl :  "Planificat la",
@@ -8,5 +8,7 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs$Trl", {
 	projectVersionId__lbl :    "Versiune (ID)",
 	projectVersion__lbl :    "Versiune",
 		 
+	hideReleased__lbl : "Fara publicate",
+	hideDue__lbl : "Fara ne-publicate",
 	id__lbl :"ID"
 });

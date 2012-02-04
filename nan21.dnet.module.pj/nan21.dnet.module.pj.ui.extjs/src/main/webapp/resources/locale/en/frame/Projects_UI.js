@@ -16,6 +16,10 @@ Ext.define("net.nan21.dnet.module.pj.base.frame.Projects_UI$Trl", {
 	btnViewAttachment__desc : "View the selected attachment",
 	btnUploadAttachment__ttl : "Upload...",
 	btnUploadAttachment__desc : "Upload attachment file.",
+	btnRoadmapUi__ttl : "Roadmap",
+	btnRoadmapUi__desc : "Show roadmap for selected version",
+	btnChangelogUi__ttl : "Changelog",
+	btnChangelogUi__desc : "Show Changelog for selected version",
 	
 	title: "Projects"
 });

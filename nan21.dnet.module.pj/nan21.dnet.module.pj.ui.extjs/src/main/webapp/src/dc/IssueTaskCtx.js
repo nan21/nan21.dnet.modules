@@ -57,14 +57,10 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$List", {
 		.addTextColumn({ name:"status", dataIndex:"status",width:120 })   	
 		.addTextColumn({ name:"summary", dataIndex:"summary",width:200 })   	
 		.addTextColumn({ name:"description", dataIndex:"description", hidden:true,width:200 })   	
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"typeId", dataIndex:"typeId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"statusId", dataIndex:"statusId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"assigneeId", dataIndex:"assigneeId", hidden:true,format:"0",width:70 })  
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -84,9 +80,9 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$Edit", {
 		.addLov({ name:"status", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTaskStatuses", dataIndex:"status",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
 		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:280})     
-		.addPanel({ name:"col2", layout:"anchor" , width:500})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"col1", layout:"form" , width:280})     
+		.addPanel({ name:"col2", layout:"form" , width:500})     
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {

@@ -35,12 +35,12 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$Filter", {
 		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ]  })
 		.addNumberField({ name:"issueId", dataIndex:"issueId",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",title:"Task", width:250,xtype:"fieldset", border:true, collapsible:true, defaults:{
+		.addPanel({ name:"col1", layout:"form",title:"Task", width:250,xtype:"fieldset", border:true, collapsible:true, defaults:{
 labelAlign:"right",labelWidth:70}}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210, defaults:{
+		.addPanel({ name:"col2", layout:"form",width:210, defaults:{
 labelAlign:"right",labelWidth:70}}) 
-		.addPanel({ name:"col3", layout:"anchor",title:"Issue", width:270,xtype:"fieldset", border:true, collapsible:true}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col3", layout:"form",title:"Issue", width:270,xtype:"fieldset", border:true, collapsible:true}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -61,7 +61,6 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$List", {
 	,_noExport_: false
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addNumberColumn({ name:"id", dataIndex:"id",format:"0",width:70 })  
 		.addTextColumn({ name:"type", dataIndex:"type",width:120 })   	
 		.addTextColumn({ name:"assignee", dataIndex:"assignee",width:120 })   	
 		.addTextColumn({ name:"status", dataIndex:"status",width:120 })   	
@@ -72,14 +71,11 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$List", {
 		.addTextColumn({ name:"issueSeverity", dataIndex:"issueSeverity",width:120 })   	
 		.addTextColumn({ name:"issueType", dataIndex:"issueType",width:120 })   	
 		.addTextColumn({ name:"description", dataIndex:"description", hidden:true,width:200 })   	
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
 		.addNumberColumn({ name:"typeId", dataIndex:"typeId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"statusId", dataIndex:"statusId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"assigneeId", dataIndex:"assigneeId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"issueId", dataIndex:"issueId", hidden:true,format:"0",width:70 })  
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -99,9 +95,9 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$Edit", {
 		.addLov({ name:"status", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTaskStatuses", dataIndex:"status",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
 		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300})     
-		.addPanel({ name:"col2", layout:"anchor" , width:550})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"col1", layout:"form" , width:300})     
+		.addPanel({ name:"col2", layout:"form" , width:550})     
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {
@@ -128,7 +124,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$ViewDescription", {
 		.addTextField({ name:"status", dataIndex:"status",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:255  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,title:"Task info",width:250})     
+		.addPanel({ name:"main", layout:"form" , autoScroll:true,title:"Task info"})     
 		;     
 	}
 	,_linkElements_: function () {
@@ -158,9 +154,9 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$View", {
 		.addTextField({ name:"status", dataIndex:"status",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:255  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" ,title:"Task info",width:250,xtype:"fieldset", border:false, collapsible:true})     
-		.addPanel({ name:"col2", layout:"anchor" ,title:"Task description",width:250,xtype:"fieldset", border:false, collapsible:true})     
-		.addPanel({ name:"col3", layout:"anchor" ,title:"Issue info",width:250,xtype:"fieldset", border:false, collapsible:true})     
+		.addPanel({ name:"col1", layout:"form" ,title:"Task info",width:250,xtype:"fieldset", border:true, collapsible:true})     
+		.addPanel({ name:"col2", layout:"form" ,title:"Task description",width:250,xtype:"fieldset", border:true, collapsible:true})     
+		.addPanel({ name:"col3", layout:"form" ,title:"Issue info",width:250,xtype:"fieldset", border:true, collapsible:true})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
 		;     
 	}

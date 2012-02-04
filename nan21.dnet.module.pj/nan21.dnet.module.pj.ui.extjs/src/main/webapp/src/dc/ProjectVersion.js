@@ -23,21 +23,31 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$Filter", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
+		.addLov({ name:"project", xtype:"net.nan21.dnet.module.pj.md.lovs.Projects", dataIndex:"project",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "projectId"} ]  })
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
-		.addTextField({ name:"project", dataIndex:"project",anchor:"-20",maxLength:32  })
-		.addDateField({ name:"planDate", dataIndex:"planDate",anchor:"-20" ,format:Ext.DATE_FORMAT })
-		.addDateField({ name:"releaseDate", dataIndex:"releaseDate",anchor:"-20" ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"planDate_From", dataIndex:"planDate_From", emptyText:"From" })
+		.addDateField({ name:"planDate_To", dataIndex:"planDate_To", emptyText:"To" })
+		.addFieldContainer({name: "planDate", fieldLabel:"Plan Date"}) 
+		.addChildrenTo("planDate",["planDate_From", "planDate_To"]) 
+
+		.addDateField({ name:"releaseDate_From", dataIndex:"releaseDate_From", emptyText:"From" })
+		.addDateField({ name:"releaseDate_To", dataIndex:"releaseDate_To", emptyText:"To" })
+		.addFieldContainer({name: "releaseDate", fieldLabel:"Release Date"}) 
+		.addChildrenTo("releaseDate",["releaseDate_From", "releaseDate_To"]) 
+
 		.addTextField({ name:"projectVersion", dataIndex:"projectVersion",anchor:"-20",maxLength:255  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:300}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1"])
-		.addChildrenTo("col1",["name","project"])
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["project","name","active"])
+		.addChildrenTo("col2",["planDate","releaseDate"])
     	.addAuditFilter({})	
 	}
 }); 
@@ -49,6 +59,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$EditList", {
 	
 	 _noImport_: false
 	,_noExport_: false
+	,_bulkEditFields_ : ["planDate","active","description"]
 	,_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"project", xtype:"gridcolumn", dataIndex:"project",width:100,editor:{xtype:"net.nan21.dnet.module.pj.md.lovs.Projects" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "projectId"} ]} })
@@ -56,15 +67,11 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$EditList", {
 		.addDateColumn({ name:"planDate", dataIndex:"planDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true, format:Dnet.DATE_FORMAT}})
 		.addDateColumn({ name:"releaseDate", dataIndex:"releaseDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true, format:Dnet.DATE_FORMAT}})
 		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:400,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "400"}} })
-		.addTextColumn({ name:"projectVersion", dataIndex:"projectVersion",width:120,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addLov({name:"projectVersion", xtype:"gridcolumn", dataIndex:"projectVersion",width:120,editor:{xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersions" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "projectVersionId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"projectVersionId", dataIndex:"projectVersionId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"projectId", dataIndex:"projectId", hidden:true, align:"right",format:"0",width:70})
+	  	.addDefaults()
 	  ;  		   
 	}  
 });
@@ -76,6 +83,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$CtxEditList", {
 	
 	 _noImport_: false
 	,_noExport_: false
+	,_bulkEditFields_ : ["planDate","active","description"]
 	,_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"project", dataIndex:"project", hidden:true,width:100 })
@@ -85,13 +93,9 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$CtxEditList", {
 		.addDateColumn({ name:"releaseDate", dataIndex:"releaseDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true, format:Dnet.DATE_FORMAT}})
 		.addLov({name:"projectVersion", xtype:"gridcolumn", dataIndex:"projectVersion",width:120,editor:{xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersions" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "projectVersionId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"projectId", dataIndex:"projectId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"projectVersionId", dataIndex:"projectVersionId", hidden:true, align:"right",format:"0",width:70})
+	  	.addDefaults()
 	  ;  		   
 	}  
 });
