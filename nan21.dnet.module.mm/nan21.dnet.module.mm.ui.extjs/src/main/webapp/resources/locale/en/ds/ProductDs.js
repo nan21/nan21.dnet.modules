@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	iconUrl__lbl : "Icon Url",
 	imageUrl__lbl : "Image Url",
 	showInCatalog__lbl : "Show In Catalog",

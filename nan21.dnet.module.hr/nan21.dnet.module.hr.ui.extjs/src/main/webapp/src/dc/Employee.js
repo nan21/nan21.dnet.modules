@@ -30,10 +30,10 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$Filter", {
 		.addCombo({ name:"maritalStatus", xtype:"combo", dataIndex:"maritalStatus",anchor:"-20",store:[ "single", "married", "divorced", "widow", "other"]  })
 		.addLov({ name:"employerCode", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"employerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "employerId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:220}) 
-		.addPanel({ name:"col2", layout:"anchor", width:220}) 
-		.addPanel({ name:"col3", layout:"anchor", width:220}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form", width:220}) 
+		.addPanel({ name:"col2", layout:"form", width:220}) 
+		.addPanel({ name:"col3", layout:"form", width:220}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -71,11 +71,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$List", {
 		.addTextColumn({ name:"organizationCode", dataIndex:"organizationCode",width:100 })   	
 		.addTextColumn({ name:"jobCode", dataIndex:"jobCode",width:100 })   	
 		.addTextColumn({ name:"jobName", dataIndex:"jobName", hidden:true,width:200 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -98,10 +94,10 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditMain", {
 		.addCombo({ name:"gender", xtype:"localcombo", dataIndex:"gender",anchor:"-20" ,store:[ "male", "female"]  })
 		.addCombo({ name:"maritalStatus", xtype:"localcombo", dataIndex:"maritalStatus",anchor:"-20" ,store:[ "single", "married", "divorced", "widow", "other"]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300})     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
-		.addPanel({ name:"col3", layout:"anchor" ,width:250})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"col1", layout:"form" , width:300})     
+		.addPanel({ name:"col2", layout:"form" ,width:250})     
+		.addPanel({ name:"col3", layout:"form" ,width:250})     
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {
@@ -139,12 +135,12 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditOther", {
 		.addLov({ name:"gradeCode", xtype:"net.nan21.dnet.module.hr.grade.lovs.Grades", dataIndex:"gradeCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "gradeId"} ]  })
 		.addLov({ name:"organizationCode", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"organizationCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300})     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250, defaults:{
+		.addPanel({ name:"col1", layout:"form" , width:300})     
+		.addPanel({ name:"col2", layout:"form" ,width:250, defaults:{
 labelAlign:"right",labelWidth:110}})     
-		.addPanel({ name:"col3", layout:"anchor" , width:350, defaults:{
+		.addPanel({ name:"col3", layout:"form" , width:350, defaults:{
 labelAlign:"right",labelWidth:110}})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {

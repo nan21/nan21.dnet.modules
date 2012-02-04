@@ -27,8 +27,8 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter", {
 		.addLov({ name:"employeeName", xtype:"net.nan21.dnet.module.hr.employee.lovs.Employees", dataIndex:"employeeName",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "employeeId"} ]  })
 		.addLov({ name:"period", xtype:"net.nan21.dnet.module.hr.payroll.lovs.PayrollPeriods", dataIndex:"period",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "periodId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:250}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -54,9 +54,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementValue$List", {
 		.addTextColumn({ name:"value", dataIndex:"value",width:200 })   	
 		.addNumberColumn({ name:"periodId", dataIndex:"periodId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"period", dataIndex:"period",width:120 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
+	  	.addDefaults()
 	  ;		   
 	}
 });

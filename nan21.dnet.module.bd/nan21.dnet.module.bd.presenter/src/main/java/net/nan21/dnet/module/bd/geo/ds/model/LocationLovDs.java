@@ -19,7 +19,7 @@ public class LocationLovDs extends AbstractDsModel<Location> implements
 
     public static final String fID = "id";
     public static final String fCLIENTID = "clientId";
-    public static final String fTARGETID = "targetId";
+    public static final String fTARGETUUID = "targetUuid";
     public static final String fTARGETTYPE = "targetType";
     public static final String fASSTRING = "asString";
     public static final String fACTIVE = "active";
@@ -31,7 +31,7 @@ public class LocationLovDs extends AbstractDsModel<Location> implements
     private Long clientId;
 
     @DsField()
-    private Long targetId;
+    private String targetUuid;
 
     @DsField()
     private String targetType;
@@ -67,12 +67,12 @@ public class LocationLovDs extends AbstractDsModel<Location> implements
         this.clientId = clientId;
     }
 
-    public Long getTargetId() {
-        return this.targetId;
+    public String getTargetUuid() {
+        return this.targetUuid;
     }
 
-    public void setTargetId(Long targetId) {
-        this.targetId = targetId;
+    public void setTargetUuid(String targetUuid) {
+        this.targetUuid = targetUuid;
     }
 
     public String getTargetType() {

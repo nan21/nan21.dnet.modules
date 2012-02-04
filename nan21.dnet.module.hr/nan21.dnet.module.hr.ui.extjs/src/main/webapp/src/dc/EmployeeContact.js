@@ -33,11 +33,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeContact$CtxEditList", {
 		.addNumberColumn({ name:"relationshipId", dataIndex:"relationshipId", hidden:true, align:"right",format:"0",width:70})
 		.addLov({name:"relationship", xtype:"gridcolumn", dataIndex:"relationship",width:120,editor:{xtype:"net.nan21.dnet.module.hr.employee.lovs.EmployeeContactRelationships" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "relationshipId"} ]} })
 		.addBooleanColumn({ name:"isDependent", dataIndex:"isDependent"})
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
+	  	.addDefaults()
 	  ;  		   
 	}  
 });

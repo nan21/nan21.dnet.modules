@@ -148,7 +148,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                                 + ds.getProject() + "  ");
             }
             e.setProject(x);
-
+            ds.setProjectId(x.getId());
         } else {
             e.setProject(null);
         }

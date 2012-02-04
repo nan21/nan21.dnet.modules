@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionTypeDs$Trl", {  	  	
-	sourceTypeId__lbl :    "Sursă (ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	sourceTypeId__lbl :    "Sursă (ID)",
 	sourceType__lbl :    "Sursă",
 	actionId__lbl :    "Acţiune (ID)",
 	action__lbl :    "Acţiune",

@@ -7,6 +7,7 @@ package net.nan21.dnet.module.hr.employee.domain.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -71,10 +72,6 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
      * Named query find by unique key: Code.
      */
     public static final String NQ_FIND_BY_CODE = "Employee.findByCode";
-
-    /** Code. */
-    @Column(name = "CODE", length = 32)
-    private String code;
 
     /** LastName. */
     @Column(name = "LASTNAME", nullable = false, length = 255)
@@ -158,45 +155,92 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     @Column(name = "BASESALARY", scale = 2)
     private Float baseSalary;
 
-    /** Owner client */
+    /**
+     * Name of entity.
+     */
+    @Column(name = "NAME", nullable = false, length = 255)
+    @NotBlank
+    private String name;
+
+    /**
+     * Code of entity.
+     */
+    @Column(name = "CODE", nullable = false, length = 32)
+    @NotBlank
+    private String code;
+
+    /**
+     * Flag which indicates if this record is used.
+     */
+    @Column(name = "ACTIVE", nullable = false)
+    @NotNull
+    private Boolean active;
+
+    /**
+     * Notes about this record. 
+     */
+    @Column(name = "NOTES", length = 4000)
+    private String notes;
+
+    /**
+     * Identifies the client(tenant) which owns this record.
+     */
     @Column(name = "CLIENTID", nullable = false)
     @NotNull
     private Long clientId;
 
-    /** Timestamp when this record was created.*/
+    /**
+     * Timestamp when this record was created.
+     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREATEDAT", nullable = false)
     @NotNull
     private Date createdAt;
 
-    /** Timestamp when this record was last modified.*/
+    /**
+     * Timestamp when this record was last modified.
+     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "MODIFIEDAT", nullable = false)
     @NotNull
     private Date modifiedAt;
 
-    /** User who created this record.*/
+    /**
+     * User who created this record.
+     */
     @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
-    /** User who last modified this record.*/
+    /**
+     * User who last modified this record.
+     */
     @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
     @Version
-    /** Record version number used by the persistence framework. */
+    /** 
+     * Record version number used by the persistence framework.
+     */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
 
-    /** System generated unique identifier */
+    /**
+     * System generated unique identifier.
+     */
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
+
+    /**
+     * System generated UID. Useful for data import-export and data-replication
+     */
+    @Column(name = "UUID", length = 36)
+    private String uuid;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "EMPLOYER_ID", referencedColumnName = "ID")
     private Organization employer;
@@ -223,14 +267,6 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     private Payroll payroll;
 
     /* ============== getters - setters ================== */
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
 
     public String getLastName() {
         return this.lastName;
@@ -273,11 +309,11 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     }
 
     @Transient
-    public String getName() {
+    public String getFullName() {
         return this.lastName + " " + this.firstName;
     }
 
-    public void setName(String name) {
+    public void setFullName(String fullName) {
 
     }
 
@@ -411,6 +447,38 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
 
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public String getNotes() {
+        return this.notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
     public Long getClientId() {
         return this.clientId;
     }
@@ -465,6 +533,14 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     @Transient
@@ -550,11 +626,18 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.uuid == null || this.uuid.equals("")) {
+            event.updateAttributeWithObject("uuid", UUID.randomUUID()
+                    .toString().toUpperCase());
+        }
         if (this.hasDisability == null) {
             event.updateAttributeWithObject("hasDisability", false);
         }
         if (this.assignToPosition == null) {
             event.updateAttributeWithObject("assignToPosition", false);
+        }
+        if (this.active == null) {
+            event.updateAttributeWithObject("active", false);
         }
         if (this.code == null || this.code.equals("")) {
             event.updateAttributeWithObject("code", "E-" + this.getId());

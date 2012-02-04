@@ -30,10 +30,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$Filter", {
 		.addLov({ name:"sourceType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionSourceTypeS", dataIndex:"sourceType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "sourceTypeId"} ]  })
 		.addLov({ name:"action", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionActions", dataIndex:"action",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "actionId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor", width:250}) 
-		.addPanel({ name:"col3", layout:"anchor",width:210}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"col3", layout:"form",width:210}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -62,13 +62,9 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$EditList", 
 		.addBooleanColumn({ name:"hasFromInventory", dataIndex:"hasFromInventory"})
 		.addBooleanColumn({ name:"hasToInventory", dataIndex:"hasToInventory"})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"sourceTypeId", dataIndex:"sourceTypeId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"actionId", dataIndex:"actionId", hidden:true, align:"right",format:"0",width:70})
+	  	.addDefaults()
 	  ;  		   
 	}  
 });

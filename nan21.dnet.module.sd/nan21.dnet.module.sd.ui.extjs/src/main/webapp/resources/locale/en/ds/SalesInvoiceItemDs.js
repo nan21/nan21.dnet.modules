@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	invoiceId__lbl : "Invoice Id",
 	itemId__lbl : "Item Id",
 	itemCode__lbl : "Item Code",

@@ -165,18 +165,6 @@
 		<property name="name" value="EmploymentTypeLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmploymentTypeLovDs" />
 	</bean>
-   
- 	<bean id="EmployeeAttachmentDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeAttachmentDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmployeeAttachmentDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeAttachment" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeAttachmentDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="EmployeeAttachment" />
-		<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeAttachmentDs" />
-	</bean>
       
 </beans>
    

@@ -127,6 +127,49 @@
 						</list>
 					</property>
 				</bean>
+				
+				
+				
+				
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="720" />
+					<property name="name" value="pj-md" />
+					<property name="items">
+						<list>
+							 
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="Project" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/md/Project.csv" />
+							</bean> 
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="ProjectVersion" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/md/ProjectVersion.csv" />
+							</bean> 
+							    
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="ProjectComponent" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/md/ProjectComponent.csv" />
+							</bean>  
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="40" />
+								<property name="dsName" value="ProjectMember" />
+								<property name="destPath" value="demo-data/pj" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/pj/data/md/ProjectMember.csv" />
+							</bean>  
+						</list>
+					</property>
+				</bean>
 				 
 			</list>
 		</property>

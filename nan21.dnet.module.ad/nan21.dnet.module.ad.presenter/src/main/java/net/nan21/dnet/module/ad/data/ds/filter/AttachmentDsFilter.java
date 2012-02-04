@@ -16,6 +16,8 @@ public class AttachmentDsFilter extends AbstractDsFilter implements
 
     private Long id;
 
+    private String uuid;
+
     private Long clientId;
 
     private Date createdAt;
@@ -32,10 +34,9 @@ public class AttachmentDsFilter extends AbstractDsFilter implements
 
     private String modifiedBy;
 
-    private Long targetId;
+    private String entityFQN;
 
-    private Long targetId_From;
-    private Long targetId_To;
+    private String targetUuid;
 
     private String targetType;
 
@@ -63,6 +64,14 @@ public class AttachmentDsFilter extends AbstractDsFilter implements
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -137,28 +146,20 @@ public class AttachmentDsFilter extends AbstractDsFilter implements
         this.modifiedBy = modifiedBy;
     }
 
-    public Long getTargetId() {
-        return this.targetId;
+    public String getEntityFQN() {
+        return this.entityFQN;
     }
 
-    public Long getTargetId_From() {
-        return this.targetId_From;
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
-    public Long getTargetId_To() {
-        return this.targetId_To;
+    public String getTargetUuid() {
+        return this.targetUuid;
     }
 
-    public void setTargetId(Long targetId) {
-        this.targetId = targetId;
-    }
-
-    public void setTargetId_From(Long targetId_From) {
-        this.targetId_From = targetId_From;
-    }
-
-    public void setTargetId_To(Long targetId_To) {
-        this.targetId_To = targetId_To;
+    public void setTargetUuid(String targetUuid) {
+        this.targetUuid = targetUuid;
     }
 
     public String getTargetType() {

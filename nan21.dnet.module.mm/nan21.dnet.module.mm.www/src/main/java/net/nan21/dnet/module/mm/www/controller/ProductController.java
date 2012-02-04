@@ -8,12 +8,12 @@ import net.nan21.dnet.core.api.action.IQueryBuilder;
 import net.nan21.dnet.core.api.service.IDsService;
 import net.nan21.dnet.core.api.session.Session;
 
-import net.nan21.dnet.module.mm.md.ds.filter.ProductAttachmentDsFilter;
+import net.nan21.dnet.module.ad.data.ds.filter.AttachmentDsFilter;
+import net.nan21.dnet.module.ad.data.ds.model.AttachmentDs;
 import net.nan21.dnet.module.mm.md.ds.filter.ProductAttributeValueDsFilter;
 import net.nan21.dnet.module.mm.md.ds.filter.ProductCategoryDsFilter;
 import net.nan21.dnet.module.mm.md.ds.filter.ProductDsFilter;
 import net.nan21.dnet.module.mm.md.ds.filter.ProductManufacturerDsFilter;
-import net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDs;
 import net.nan21.dnet.module.mm.md.ds.model.ProductDs;
@@ -36,22 +36,7 @@ public class ProductController extends AbstractWebController {
 
 		try {
 			this.prepareRequest(); 
- 
-//			IDsService service = this.findDsService(ProductDs.class);			 
-//			IQueryBuilder builder = service.createQueryBuilder().addFetchLimit(
-//					0, 20);		
-//			ProductDsParam param = new ProductDsParam();
-//			ProductDs filter = new ProductDs();
-//			filter.setActive(true);
-//			
-//			if( request.getParameter("categoryId") != null) {
-//				param.setProductCategoryId( Long.parseLong( request.getParameter("categoryId") ));
-//			} 
-//			if( request.getParameter("manufacturerId") != null) {
-//				filter.setManufacturerId( Long.parseLong( request.getParameter("manufacturerId") ));
-//			} 
-//			
-//			List products = service.find(filter, param, builder);			 
+ 		 
 			List categories = this.getCategories();
 			List manufacturers = this.getManufacturers();
 			 
@@ -62,7 +47,6 @@ public class ProductController extends AbstractWebController {
 				.addObject("manufact_icon_ext", this.getSystemConfig().getSysParamValue("MM_MANUFACT_ICON_EXT"))
 				.addObject("categories", categories)
 				.addObject("manufacturers", manufacturers);
-				//.addObject("products", products);
 
 		} finally {
 			this.finishRequest();
@@ -128,9 +112,10 @@ public class ProductController extends AbstractWebController {
 					attributesService.createQueryBuilder()
 					.addSortInfo(new String[] { ProductAttributeValueDs.fTYPE, ProductAttributeValueDs.fTITLE  }));
 			 
-			IDsService attachmentsService = this.findDsService(ProductAttachmentDs.class);
-			ProductAttachmentDsFilter attachmentsFilter = new ProductAttachmentDsFilter();			
-			attachmentsFilter.setProductId(product.getId());	
+			IDsService attachmentsService = this.findDsService(AttachmentDs.class);
+			AttachmentDsFilter attachmentsFilter = new AttachmentDsFilter();			
+			attachmentsFilter.setTargetType( product.getEntityFQN() );
+			attachmentsFilter.setTargetUuid( product.getUuid() );
 			//attachmentsFilter.setTargetType(product.getBusinessObject());	
 			List attachments = attachmentsService.find(attachmentsFilter, null, null);
 			 

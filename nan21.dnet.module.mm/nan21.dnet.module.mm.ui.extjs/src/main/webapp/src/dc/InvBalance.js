@@ -28,9 +28,9 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance$Filter", {
 		.addLov({ name:"item", xtype:"net.nan21.dnet.module.mm.md.lovs.Products", dataIndex:"item",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "itemId"} ]  })
 		.addLov({ name:"uom", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"uom",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "uomId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:250}) 
-		.addPanel({ name:"col2", layout:"anchor", width:250}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -56,11 +56,11 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance$List", {
 		.addTextColumn({ name:"itemName", dataIndex:"itemName",width:200 })   	
 		.addNumberColumn({ name:"quantity", dataIndex:"quantity",decimals:2 })  
 		.addTextColumn({ name:"uom", dataIndex:"uom",width:100 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"subInventoryId", dataIndex:"subInventoryId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"locatorId", dataIndex:"locatorId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"itemId", dataIndex:"itemId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"uomId", dataIndex:"uomId", hidden:true,format:"0",width:70 })  
+	  	.addDefaults()
 	  ;		   
 	}
 });

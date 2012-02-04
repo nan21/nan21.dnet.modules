@@ -110,18 +110,6 @@
 		<property name="name" value="BpClassification" />
 		<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpClassificationDs" />
 	</bean>
-   
- 	<bean id="BpAttachmentDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpAttachmentDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.md.ds.filter.BpAttachmentDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.bp.md.domain.entity.BpAttachment" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bp.md.ds.converter.BpAttachmentDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="BpAttachment" />
-		<property name="modelClass" value="net.nan21.dnet.module.bp.md.ds.model.BpAttachmentDs" />
-	</bean>
       
 </beans>
    

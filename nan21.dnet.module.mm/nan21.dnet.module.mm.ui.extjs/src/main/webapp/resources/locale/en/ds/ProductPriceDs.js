@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.mm.price.ds.model.ProductPriceDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	priceListVersionId__lbl : "Price List Version Id",
 	priceListVersion__lbl : "Price List Version",
 	productId__lbl : "Product Id",

@@ -10,5 +10,5 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMap_UI$Trl", {
 	btnRunImportItem__ttl : "Import selected",
 	btnRunImportItem__desc : "Import the selected file (one at a time).",
 	
-	title: "Import map"
+	title: "Import sets"
 });

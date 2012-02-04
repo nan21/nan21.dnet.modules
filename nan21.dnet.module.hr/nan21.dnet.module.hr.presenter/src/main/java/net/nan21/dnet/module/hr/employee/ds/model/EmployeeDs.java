@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.employee.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,21 +15,26 @@ import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = Employee.class)
+@Ds(entity = Employee.class, sort = { @SortField(field = EmployeeDs.fNAME) })
 public class EmployeeDs extends AbstractDsModel<Employee> implements
         IModelWithId, IModelWithClientId {
 
+    public static final String fNAME = "name";
+    public static final String fCODE = "code";
+    public static final String fACTIVE = "active";
+    public static final String fNOTES = "notes";
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fEMPLOYERID = "employerId";
     public static final String fEMPLOYERCODE = "employerCode";
     public static final String fBUSINESSOBJECT = "businessObject";
-    public static final String fCODE = "code";
     public static final String fFIRSTNAME = "firstName";
     public static final String fLASTNAME = "lastName";
     public static final String fMIDDLENAME = "middleName";
@@ -65,7 +71,22 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
     public static final String fPAYROLL = "payroll";
 
     @DsField()
+    private String name;
+
+    @DsField()
+    private String code;
+
+    @DsField()
+    private Boolean active;
+
+    @DsField()
+    private String notes;
+
+    @DsField()
     private Long id;
+
+    @DsField()
+    private String uuid;
 
     @DsField()
     private Long clientId;
@@ -85,6 +106,9 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
     @DsField()
     private Long version;
 
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
+
     @DsField(join = "left", path = "employer.id")
     private Long employerId;
 
@@ -93,9 +117,6 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
 
     @DsField(fetch = false)
     private String businessObject;
-
-    @DsField()
-    private String code;
 
     @DsField()
     private String firstName;
@@ -207,6 +228,38 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
         super(e);
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public String getNotes() {
+        return this.notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
     public Long getId() {
         return this.id;
     }
@@ -214,6 +267,14 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -264,6 +325,14 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
         this.version = version;
     }
 
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
+    }
+
     public Long getEmployerId() {
         return this.employerId;
     }
@@ -286,14 +355,6 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
 
     public void setBusinessObject(String businessObject) {
         this.businessObject = businessObject;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public String getFirstName() {

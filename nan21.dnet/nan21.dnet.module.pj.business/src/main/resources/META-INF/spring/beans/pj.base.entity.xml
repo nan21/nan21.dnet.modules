@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="ProjectCategoryService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ProjectCategoryService"  />  
+ 
+ 	<bean id="ProjectTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ProjectTypeService"  />  
+ 
+ 	<bean id="ProjectRoleService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ProjectRoleService"  />  
+ 
+ 	<bean id="ProjectStatusService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.ProjectStatusService"  />  
+ 
+ 	<bean id="IssueCategoryService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueCategoryService"  />  
+ 
+ 	<bean id="IssueTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueTypeService"  />  
+ 
+ 	<bean id="IssueStatusService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueStatusService"  />  
+ 
+ 	<bean id="IssuePriorityService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssuePriorityService"  />  
+ 
+ 	<bean id="IssueSeverityService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueSeverityService"  />  
+ 
+ 	<bean id="IssueResolutionService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueResolutionService"  />  
+ 
+ 	<bean id="IssueTextTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueTextTypeService"  />  
+ 
+ 	<bean id="IssueLinkTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueLinkTypeService"  />  
+ 
+ 	<bean id="IssueTaskTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueTaskTypeService"  />  
+ 
+ 	<bean id="IssueTaskStatusService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.base.business.serviceimpl.IssueTaskStatusService"  />  
+   
+</beans>
+   

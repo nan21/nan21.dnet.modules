@@ -44,6 +44,5 @@
 	 
 	 <!-- Other beans / services  -->
 	 
-	 <bean id="employeeAttachmentUploadService"  scope="prototype" 
-  		class="net.nan21.dnet.module.hr._presenterdelegates.employee.EmployeeAttachmentUploadDelegate"></bean>
+	 
 </beans>

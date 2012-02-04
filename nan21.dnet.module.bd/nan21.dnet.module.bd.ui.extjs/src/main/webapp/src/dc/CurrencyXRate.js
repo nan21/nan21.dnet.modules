@@ -28,9 +28,9 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter", {
 		.addLov({ name:"providerCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders", dataIndex:"providerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "providerId"} ]  })
 		.addDateField({ name:"validAt", dataIndex:"validAt",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor", width:250}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -57,11 +57,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$EditList", {
 		.addNumberColumn({ name:"value", dataIndex:"value", align:"right",decimals:6,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:6 } })
 		.addNumberColumn({ name:"providerId", dataIndex:"providerId", hidden:true, align:"right",format:"0",width:70})
 		.addLov({name:"providerCode", xtype:"gridcolumn", dataIndex:"providerCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.CurrencyXRateProviders" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "providerId"} ]} })
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
+	  	.addDefaults()
 	  ;  		   
 	}  
 });

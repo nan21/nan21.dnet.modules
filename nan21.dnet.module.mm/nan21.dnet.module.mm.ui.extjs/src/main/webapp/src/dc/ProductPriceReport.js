@@ -31,11 +31,11 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport$Filter", {
 		.addLov({ name:"productCategory", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductCategories", paramIndex:"productCategory",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "productCategoryId"} ]  })
 		.addNumberField({ name:"price", dataIndex:"price",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:250}) 
-		.addPanel({ name:"col2", layout:"anchor", width:280}) 
-		.addPanel({ name:"col3", layout:"anchor", width:200, defaults:{
+		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form", width:280}) 
+		.addPanel({ name:"col3", layout:"form", width:200, defaults:{
 labelAlign:"right",labelWidth:70}}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -63,12 +63,8 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport$List", {
 		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT})   	      	     
 		.addTextColumn({ name:"priceList", dataIndex:"priceList",width:120 })   	
 		.addTextColumn({ name:"priceListVersion", dataIndex:"priceListVersion",width:120 })   	
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"productId", dataIndex:"productId", hidden:true,format:"0",width:70 })  
+	  	.addDefaults()
 	  ;		   
 	}
 });

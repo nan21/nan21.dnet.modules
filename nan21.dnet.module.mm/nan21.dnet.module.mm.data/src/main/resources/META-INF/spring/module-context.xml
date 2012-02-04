@@ -90,11 +90,11 @@
 							
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="120" />
-								<property name="dsName" value="ProductAttachment" />
+								<property name="dsName" value="Attachment" />
 								<property name="destPath" value="demo-data/mm" />
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/mm/data/md/ProductAttachment.csv" />
-							</bean> 
+							</bean>  
 							 
 						</list>
 					</property>

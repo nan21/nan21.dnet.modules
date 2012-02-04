@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.ElementValueDs$Trl", {  	  	
-	elementId__lbl :    "Element (ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	elementId__lbl :    "Element (ID)",
 	element__lbl :    "Element",
 	employeeId__lbl :    "Angajat (ID)",
 	employeeName__lbl :    "Angajat",

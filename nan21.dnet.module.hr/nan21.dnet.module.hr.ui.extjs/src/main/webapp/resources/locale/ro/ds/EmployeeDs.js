@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs$Trl", {  	  	
-	employerId__lbl :    "Angajator (ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	employerId__lbl :    "Angajator (ID)",
 	employerCode__lbl :    "Angajator (Cod)",
 	businessObject__lbl :  "@businessObject",	firstName__lbl :  "Prenume",
 	lastName__lbl :  "Nume",

@@ -38,9 +38,9 @@
 	<import resource="beans/bp.md.ds.xml"/>
 	<import resource="beans/bp.calendar.ds.xml"/>
 	
-	 <!-- Other beans / services  -->
+	 <!-- Other beans / services  
 	 
 	 <bean id="bpAttachmentUploadService"  scope="prototype" 
   		class="net.nan21.dnet.module.bp._presenterdelegates.md.BpAttachmentUploadDelegate"></bean>
-	 
+	 -->
 </beans>

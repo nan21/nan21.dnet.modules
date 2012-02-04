@@ -39,7 +39,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.AccessControl_UI", {
 		.addDcFilterFormView("asgnAccess",{ name:"asgnAccessFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.AsgnAccessControl$Filter"})	 
 		.addDcView("asgnAccess",{ name:"asgnAccessCtxEditList", xtype:"net.nan21.dnet.module.ad.usr.dc.AsgnAccessControl$CtxEditList", frame:true,title:"Assignment"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "detailTabs", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id(),height:220}}) 	 
+
+		.addPanel({name: "detailTabs", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id(),height:220}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		
 		.addWindow({name:"wdwCopyRules", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("privilegeCopyRules")]

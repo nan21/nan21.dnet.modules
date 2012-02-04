@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.hr.grade.ds.model.GradeRateValueDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	gradeId__lbl : "Grade Id",
 	gradeName__lbl : "Grade Name",
 	gradeRateId__lbl : "Grade Rate Id",

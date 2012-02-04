@@ -3,21 +3,19 @@ Bundle-ManifestVersion: 2
 Bundle-Name: DNet PJ - presenter
 Bundle-SymbolicName: nan21.dnet.module.pj.presenter
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M6
+Bundle-Version: 1.0.0.M7
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Import-Package: 
  org.springframework.context.weaving;version="[3.0,3.1)",
  org.springframework.web.multipart;version="[3.0,3.1)"
 Import-Bundle:  
- nan21.dnet.core.domain;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.core.presenter;version="[1.0.0.M6,1.0.0.M6]", 
+ nan21.dnet.core.domain;version="[1.0.0.M7,1.0.0.M7]", 
+ nan21.dnet.core.presenter;version="[1.0.0.M7,1.0.0.M7]", 
  javax.persistence;version="[2.0,2.1)", 
  org.eclipse.persistence.jpa;version="[2.1,2.5)", 
  org.eclipse.persistence.core;version="[2.0,2.5)", 
- nan21.dnet.module.pj.domain;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.module.ad.domain;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.module.bd.domain;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.module.pj.business;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.module.ad.business;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.module.bd.business;version="[1.0.0.M6,1.0.0.M6]"
+ nan21.dnet.module.pj.domain;version="[1.0.0.M7,1.0.0.M7]", 
+ nan21.dnet.module.ad.domain;version="[1.0.0.M7,1.0.0.M7]", 
+ nan21.dnet.module.pj.business;version="[1.0.0.M7,1.0.0.M7]", 
+ nan21.dnet.module.ad.business;version="[1.0.0.M7,1.0.0.M7]"
 

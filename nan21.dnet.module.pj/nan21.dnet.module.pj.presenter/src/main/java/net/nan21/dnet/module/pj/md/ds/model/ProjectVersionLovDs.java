@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.pj.md.ds.model;
 
+import java.util.Date;
 import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ProjectVersion.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = ProjectVersionLovDs.fNAME) })
+@Ds(entity = ProjectVersion.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = ProjectVersionLovDs.fPLANDATE, desc = true) })
 public class ProjectVersionLovDs extends AbstractDsModel<ProjectVersion>
         implements IModelWithId, IModelWithClientId {
 
@@ -23,6 +24,7 @@ public class ProjectVersionLovDs extends AbstractDsModel<ProjectVersion>
     public static final String fNAME = "name";
     public static final String fACTIVE = "active";
     public static final String fPROJECTID = "projectId";
+    public static final String fPLANDATE = "planDate";
 
     @DsField()
     private Long id;
@@ -38,6 +40,9 @@ public class ProjectVersionLovDs extends AbstractDsModel<ProjectVersion>
 
     @DsField(join = "left", path = "project.id")
     private Long projectId;
+
+    @DsField()
+    private Date planDate;
 
     public ProjectVersionLovDs() {
         super();
@@ -86,6 +91,14 @@ public class ProjectVersionLovDs extends AbstractDsModel<ProjectVersion>
 
     public void setProjectId(Long projectId) {
         this.projectId = projectId;
+    }
+
+    public Date getPlanDate() {
+        return this.planDate;
+    }
+
+    public void setPlanDate(Date planDate) {
+        this.planDate = planDate;
     }
 
 }

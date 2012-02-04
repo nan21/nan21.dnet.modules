@@ -32,13 +32,9 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxEditList", {
 		.addLov({name:"uomCode", xtype:"gridcolumn", dataIndex:"uomCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "uomId"} ]} })
 		.addNumberColumn({ name:"netUnitPrice", dataIndex:"netUnitPrice", align:"right",decimals:2,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
 		.addNumberColumn({ name:"netAmount", dataIndex:"netAmount", align:"right",decimals:2})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"salesOrderId", dataIndex:"salesOrderId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"productId", dataIndex:"productId", hidden:true, align:"right",format:"0",width:70})
+	  	.addDefaults()
 	  ;  		   
 	}  
 });
@@ -58,13 +54,9 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxList", {
 		.addTextColumn({ name:"uomCode", dataIndex:"uomCode",width:100 })   	
 		.addNumberColumn({ name:"netUnitPrice", dataIndex:"netUnitPrice",decimals:2 })  
 		.addNumberColumn({ name:"netAmount", dataIndex:"netAmount",decimals:2 })  
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
 		.addNumberColumn({ name:"salesOrderId", dataIndex:"salesOrderId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"productId", dataIndex:"productId", hidden:true,format:"0",width:70 })  
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -85,8 +77,8 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$EditForm", {
 		.addNumberField({ name:"netUnitPrice", dataIndex:"netUnitPrice",anchor:"-20"  , style: "text-align:right;" })
 		.addNumberField({ name:"netAmount", dataIndex:"netAmount",anchor:"-20",noEdit:true   , style: "text-align:right;" })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:400})     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
+		.addPanel({ name:"col1", layout:"form" , width:400})     
+		.addPanel({ name:"col2", layout:"form" ,width:250})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
 		;     
 	}

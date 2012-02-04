@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpAttachmentDs$Trl", {  	  	
-	typeId__lbl :    "Tip (ID)",
+	uuid__lbl :  "@uuid",	typeId__lbl :    "Tip (ID)",
 	type__lbl :    "Tip",
 	category__lbl :    "Categorie",
 	businessPartnerId__lbl :    "Terţ (ID)",

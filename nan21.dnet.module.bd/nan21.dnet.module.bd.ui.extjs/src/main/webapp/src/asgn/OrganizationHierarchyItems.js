@@ -22,15 +22,16 @@ Ext.define("net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$List", 
 
 Ext.define("net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Ui", {
 	extend: "dnet.core.asgn.AbstractAsgnUi",
-	alias: "widget.net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Ui",
- 	 width:500
-	,height:300 
-	,title:"User roles"
-	,_controller_:net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems
-	,_filterFields_: [["id","Id"],["code","Code"],["name","Name"]]
-	,_defaultFilterField_ : "code" 
-	 
-	,_defineElements_: function () {
+		 
+ 	width:500,
+	height:300,
+	title:"User roles",
+
+	_controller_:net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems,
+	_filterFields_: [["id","Id"],["code","Code"],["name","Name"]],
+	_defaultFilterField_ : "code", 
+
+	_defineElements_: function () {
 		this._getBuilder_()
 			.addLeftGrid({ xtype:"net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Left"})
 			.addRightGrid({ xtype:"net.nan21.dnet.module.bd.org.asgn.OrganizationHierarchyItems$Right"})

@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.bd.org.frame.Org_UI", {
 		.addDc("hierarchy", new net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy({}))
 		.addDc("items", new net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem({multiEdit:true}))
 		.addDc("orgtype", new net.nan21.dnet.module.bd.org.dc.OrganizationType({multiEdit:true}))		
-		.linkDc("address", "org",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} )
+		.linkDc("address", "org",{fields:[ {childField:"targetUuid", parentField:"uuid"},{childField:"targetType", parentField:"className"} ]} )
 		.linkDc("items", "hierarchy",{fields:[ {childField:"hierarchyId", parentField:"id"} ]} );		
 	}	 
 

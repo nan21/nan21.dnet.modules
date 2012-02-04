@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.mm.www.controller;version="1.0.0
- .M6";uses:="javax.servlet.http,net.nan21.dnet.core.api,net.nan21.dnet
+ .M7";uses:="javax.servlet.http,net.nan21.dnet.core.api,net.nan21.dnet
  .core.api.service,net.nan21.dnet.core.presenter.service,org.springfra
  mework.beans.factory.annotation,org.springframework.context,org.sprin
  gframework.context.annotation,org.springframework.stereotype,org.spri
@@ -9,60 +9,62 @@ Bundle-ClassPath: WEB-INF/classes
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet MM - www
 Import-Bundle: org.eclipse.virgo.snaps.api;version="[3.0,4.0)",nan21.d
- net.core.api;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.core.domain;ver
- sion="[1.0.0.M6,1.0.0.M6]",javax.persistence;version="[2.0,2.1)",org.
+ net.core.api;version="[1.0.0.M7,1.0.0.M7]",nan21.dnet.core.domain;ver
+ sion="[1.0.0.M7,1.0.0.M7]",javax.persistence;version="[2.0,2.1)",org.
  eclipse.persistence.jpa;version="[2.1,2.5)",org.eclipse.persistence.c
  ore;version="[2.0,2.5)",nan21.dnet.module.mm.domain;version="[1.0.0.M
- 6,1.0.0.M6]",nan21.dnet.module.ad.domain;version="[1.0.0.M6,1.0.0.M6]
- ",nan21.dnet.module.bd.domain;version="[1.0.0.M6,1.0.0.M6]",nan21.dne
- t.module.mm.presenter;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.module
- .ad.presenter;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.module.bd.pres
- enter;version="[1.0.0.M6,1.0.0.M6]"
+ 7,1.0.0.M7]",nan21.dnet.module.ad.domain;version="[1.0.0.M7,1.0.0.M7]
+ ",nan21.dnet.module.bd.domain;version="[1.0.0.M7,1.0.0.M7]",nan21.dne
+ t.module.mm.presenter;version="[1.0.0.M7,1.0.0.M7]",nan21.dnet.module
+ .ad.presenter;version="[1.0.0.M7,1.0.0.M7]",nan21.dnet.module.bd.pres
+ enter;version="[1.0.0.M7,1.0.0.M7]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M6
+Bundle-Version: 1.0.0.M7
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.mm.www
 Import-Package: javax.servlet.http,javax.servlet.jsp.jstl.core;version
  ="[1.2,2.0)",net.nan21.dnet.core.api,net.nan21.dnet.core.api.action,n
  et.nan21.dnet.core.api.service,net.nan21.dnet.core.api.session,net.na
- n21.dnet.core.presenter.service,net.nan21.dnet.module.mm.md.ds.filter
- ,net.nan21.dnet.module.mm.md.ds.model,net.nan21.dnet.module.mm.md.ds.
- param,org.apache.taglibs.standard;version="[1.1.2,2.0)",org.apache.ta
- glibs.standard.extra.spath;version="[1.1.2,2.0)",org.apache.taglibs.s
- tandard.functions;version="[1.1.2,2.0)",org.apache.taglibs.standard.l
- ang.jstl;version="[1.1.2,2.0)",org.apache.taglibs.standard.lang.jstl.
- parser;version="[1.1.2,2.0)",org.apache.taglibs.standard.lang.jstl.te
- st;version="[1.1.2,2.0)",org.apache.taglibs.standard.lang.jstl.test.b
- eans;version="[1.1.2,2.0)",org.apache.taglibs.standard.lang.support;v
- ersion="[1.1.2,2.0)",org.apache.taglibs.standard.resources;version="[
- 1.1.2,2.0)",org.apache.taglibs.standard.tag.common.core;version="[1.1
- .2,2.0)",org.apache.taglibs.standard.tag.common.fmt;version="[1.1.2,2
- .0)",org.apache.taglibs.standard.tag.common.sql;version="[1.1.2,2.0)"
- ,org.apache.taglibs.standard.tag.common.xml;version="[1.1.2,2.0)",org
- .apache.taglibs.standard.tag.el.core;version="[1.1.2,2.0)",org.apache
- .taglibs.standard.tag.el.fmt;version="[1.1.2,2.0)",org.apache.taglibs
- .standard.tag.el.sql;version="[1.1.2,2.0)",org.apache.taglibs.standar
- d.tag.el.xml;version="[1.1.2,2.0)",org.apache.taglibs.standard.tag.rt
- .core;version="[1.1.2,2.0)",org.apache.taglibs.standard.tag.rt.fmt;ve
- rsion="[1.1.2,2.0)",org.apache.taglibs.standard.tag.rt.sql;version="[
- 1.1.2,2.0)",org.apache.taglibs.standard.tag.rt.xml;version="[1.1.2,2.
- 0)",org.apache.taglibs.standard.tei;version="[1.1.2,2.0)",org.apache.
- taglibs.standard.tlv;version="[1.1.2,2.0)",org.eclipse.virgo.snaps.co
- re;version="[3.0,4.0)",org.eclipse.virgo.web.dm;version="[2.0,4.0]",o
- rg.springframework.beans.factory.annotation;version="[3.0,3.1)",org.s
- pringframework.beans.factory.config;version="[3.0,3.1)",org.springfra
- mework.context,org.springframework.context.annotation,org.springframe
- work.context.config;version="[3.0,3.1)",org.springframework.orm.jpa;v
- ersion="[3.0,3.1)",org.springframework.osgi;version="[1.2.1,1.2.1]",o
- rg.springframework.osgi.compendium.config;version="[1.2.1,1.2.1]",org
- .springframework.osgi.config;version="[1.2.1,1.2.1]",org.springframew
- ork.osgi.context;version="[1.2.1,1.2.1]",org.springframework.stereoty
- pe,org.springframework.web.bind.annotation;version="[3.0,3.1)",org.sp
- ringframework.web.context;version="[3.0,3.1)",org.springframework.web
- .servlet;version="[3.0,3.1)",org.springframework.web.servlet.handler;
- version="[3.0,3.1)",org.springframework.web.servlet.mvc;version="[3.0
- ,3.1)",org.springframework.web.servlet.view;version="[3.0,3.1)"
+ n21.dnet.core.presenter.service,net.nan21.dnet.module.ad.data.ds.filt
+ er,net.nan21.dnet.module.ad.data.ds.model,net.nan21.dnet.module.mm.md
+ .ds.filter,net.nan21.dnet.module.mm.md.ds.model,net.nan21.dnet.module
+ .mm.md.ds.param,org.apache.taglibs.standard;version="[1.1.2,2.0)",org
+ .apache.taglibs.standard.extra.spath;version="[1.1.2,2.0)",org.apache
+ .taglibs.standard.functions;version="[1.1.2,2.0)",org.apache.taglibs.
+ standard.lang.jstl;version="[1.1.2,2.0)",org.apache.taglibs.standard.
+ lang.jstl.parser;version="[1.1.2,2.0)",org.apache.taglibs.standard.la
+ ng.jstl.test;version="[1.1.2,2.0)",org.apache.taglibs.standard.lang.j
+ stl.test.beans;version="[1.1.2,2.0)",org.apache.taglibs.standard.lang
+ .support;version="[1.1.2,2.0)",org.apache.taglibs.standard.resources;
+ version="[1.1.2,2.0)",org.apache.taglibs.standard.tag.common.core;ver
+ sion="[1.1.2,2.0)",org.apache.taglibs.standard.tag.common.fmt;version
+ ="[1.1.2,2.0)",org.apache.taglibs.standard.tag.common.sql;version="[1
+ .1.2,2.0)",org.apache.taglibs.standard.tag.common.xml;version="[1.1.2
+ ,2.0)",org.apache.taglibs.standard.tag.el.core;version="[1.1.2,2.0)",
+ org.apache.taglibs.standard.tag.el.fmt;version="[1.1.2,2.0)",org.apac
+ he.taglibs.standard.tag.el.sql;version="[1.1.2,2.0)",org.apache.tagli
+ bs.standard.tag.el.xml;version="[1.1.2,2.0)",org.apache.taglibs.stand
+ ard.tag.rt.core;version="[1.1.2,2.0)",org.apache.taglibs.standard.tag
+ .rt.fmt;version="[1.1.2,2.0)",org.apache.taglibs.standard.tag.rt.sql;
+ version="[1.1.2,2.0)",org.apache.taglibs.standard.tag.rt.xml;version=
+ "[1.1.2,2.0)",org.apache.taglibs.standard.tei;version="[1.1.2,2.0)",o
+ rg.apache.taglibs.standard.tlv;version="[1.1.2,2.0)",org.eclipse.virg
+ o.snaps.core;version="[3.0,4.0)",org.eclipse.virgo.web.dm;version="[2
+ .0,4.0]",org.springframework.beans.factory.annotation;version="[3.0,3
+ .1)",org.springframework.beans.factory.config;version="[3.0,3.1)",org
+ .springframework.context,org.springframework.context.annotation,org.s
+ pringframework.context.config;version="[3.0,3.1)",org.springframework
+ .orm.jpa;version="[3.0,3.1)",org.springframework.osgi;version="[1.2.1
+ ,1.2.1]",org.springframework.osgi.compendium.config;version="[1.2.1,1
+ .2.1]",org.springframework.osgi.config;version="[1.2.1,1.2.1]",org.sp
+ ringframework.osgi.context;version="[1.2.1,1.2.1]",org.springframewor
+ k.stereotype,org.springframework.web.bind.annotation;version="[3.0,3.
+ 1)",org.springframework.web.context;version="[3.0,3.1)",org.springfra
+ mework.web.servlet;version="[3.0,3.1)",org.springframework.web.servle
+ t.handler;version="[3.0,3.1)",org.springframework.web.servlet.mvc;ver
+ sion="[3.0,3.1)",org.springframework.web.servlet.view;version="[3.0,3
+ .1)"
 Snap-Host: nan21.dnet.core.www;version="[1.0,2.0)"
 Snap-ContextPath: /mm
 

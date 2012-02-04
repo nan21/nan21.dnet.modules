@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	accountId__lbl : "Account Id",
 	account__lbl : "Account",
 	closeDate__lbl : "Close Date",

@@ -22,12 +22,10 @@
 		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType</class>
 		  
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.Project</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectAttachment</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectMember</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.Issue</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueAttachment</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueTask</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueText</class>
 		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueLink</class>

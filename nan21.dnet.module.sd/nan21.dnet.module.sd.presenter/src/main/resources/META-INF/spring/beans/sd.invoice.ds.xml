@@ -74,18 +74,6 @@
 		<property name="name" value="SalesInvoiceStatusLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusLovDs" />
 	</bean>
-   
- 	<bean id="SalesInvoiceAttachmentDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceAttachmentDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesInvoiceAttachmentDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceAttachment" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.SalesInvoiceAttachmentDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="SalesInvoiceAttachment" />
-		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceAttachmentDs" />
-	</bean>
       
 </beans>
    

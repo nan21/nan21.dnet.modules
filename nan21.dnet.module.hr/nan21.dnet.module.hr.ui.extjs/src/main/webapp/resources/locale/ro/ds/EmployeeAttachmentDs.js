@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeAttachmentDs$Trl", {  	  	
-	typeId__lbl :    "Tip (ID)",
+	uuid__lbl :  "@uuid",	typeId__lbl :    "Tip (ID)",
 	type__lbl :    "Tip",
 	category__lbl :    "Categorie",
 	employeeId__lbl :    "Angajat (ID)",

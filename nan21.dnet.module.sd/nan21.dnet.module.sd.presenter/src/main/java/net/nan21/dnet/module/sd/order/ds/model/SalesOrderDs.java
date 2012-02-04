@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.sd.order.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,18 +15,23 @@ import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = SalesOrder.class)
+@Ds(entity = SalesOrder.class, sort = { @SortField(field = SalesOrderDs.fNAME) })
 public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
         IModelWithId, IModelWithClientId {
 
+    public static final String fNAME = "name";
+    public static final String fCODE = "code";
+    public static final String fACTIVE = "active";
+    public static final String fNOTES = "notes";
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
-    public static final String fDOCNO = "docNo";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fDOCDATE = "docDate";
     public static final String fBUSINESSOBJECT = "businessObject";
     public static final String fTYPEID = "typeId";
@@ -33,6 +39,7 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     public static final String fSTATUSID = "statusId";
     public static final String fSTATUS = "status";
     public static final String fCUSTOMERID = "customerId";
+    public static final String fCUSTOMERUUID = "customerUuid";
     public static final String fCUSTOMERCODE = "customerCode";
     public static final String fCUSTOMER = "customer";
     public static final String fCURRENCYID = "currencyId";
@@ -46,11 +53,13 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     public static final String fSUPPLIERID = "supplierId";
     public static final String fSUPPLIER = "supplier";
     public static final String fBILLTOID = "billToId";
+    public static final String fBILLTOUUID = "billToUuid";
     public static final String fBILLTOCODE = "billToCode";
     public static final String fBILLTO = "billTo";
     public static final String fBILLTOLOCATIONID = "billToLocationId";
     public static final String fBILLTOLOCATION = "billToLocation";
     public static final String fSHIPTOID = "shipToId";
+    public static final String fSHIPTOUUID = "shipToUuid";
     public static final String fSHIPTOCODE = "shipToCode";
     public static final String fSHIPTO = "shipTo";
     public static final String fSHIPTOLOCATIONID = "shipToLocationId";
@@ -61,7 +70,22 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     public static final String fCLASSNAME = "className";
 
     @DsField()
+    private String name;
+
+    @DsField()
+    private String code;
+
+    @DsField()
+    private Boolean active;
+
+    @DsField()
+    private String notes;
+
+    @DsField()
     private Long id;
+
+    @DsField()
+    private String uuid;
 
     @DsField()
     private Long clientId;
@@ -81,8 +105,8 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     @DsField()
     private Long version;
 
-    @DsField()
-    private String docNo;
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
 
     @DsField()
     private Date docDate;
@@ -104,6 +128,9 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     @DsField(join = "left", path = "customer.id")
     private Long customerId;
+
+    @DsField(join = "left", path = "customer.uuid")
+    private String customerUuid;
 
     @DsField(join = "left", path = "customer.code")
     private String customerCode;
@@ -144,6 +171,9 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     @DsField(join = "left", path = "billTo.id")
     private Long billToId;
 
+    @DsField(join = "left", path = "billTo.uuid")
+    private String billToUuid;
+
     @DsField(join = "left", path = "billTo.code")
     private String billToCode;
 
@@ -158,6 +188,9 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     @DsField(join = "left", path = "shipTo.id")
     private Long shipToId;
+
+    @DsField(join = "left", path = "shipTo.uuid")
+    private String shipToUuid;
 
     @DsField(join = "left", path = "shipTo.code")
     private String shipToCode;
@@ -191,6 +224,38 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
         super(e);
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public String getNotes() {
+        return this.notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
     public Long getId() {
         return this.id;
     }
@@ -198,6 +263,14 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -248,12 +321,12 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
         this.version = version;
     }
 
-    public String getDocNo() {
-        return this.docNo;
+    public String getEntityFQN() {
+        return this.entityFQN;
     }
 
-    public void setDocNo(String docNo) {
-        this.docNo = docNo;
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
     public Date getDocDate() {
@@ -310,6 +383,14 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     public void setCustomerId(Long customerId) {
         this.customerId = customerId;
+    }
+
+    public String getCustomerUuid() {
+        return this.customerUuid;
+    }
+
+    public void setCustomerUuid(String customerUuid) {
+        this.customerUuid = customerUuid;
     }
 
     public String getCustomerCode() {
@@ -416,6 +497,14 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
         this.billToId = billToId;
     }
 
+    public String getBillToUuid() {
+        return this.billToUuid;
+    }
+
+    public void setBillToUuid(String billToUuid) {
+        this.billToUuid = billToUuid;
+    }
+
     public String getBillToCode() {
         return this.billToCode;
     }
@@ -454,6 +543,14 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     public void setShipToId(Long shipToId) {
         this.shipToId = shipToId;
+    }
+
+    public String getShipToUuid() {
+        return this.shipToUuid;
+    }
+
+    public void setShipToUuid(String shipToUuid) {
+        this.shipToUuid = shipToUuid;
     }
 
     public String getShipToCode() {

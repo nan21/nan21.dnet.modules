@@ -32,9 +32,9 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Filter", {
 		.addLov({ name:"resultReason", xtype:"net.nan21.dnet.module.sd.opportunity.lovs.OpportunityResultReasons", dataIndex:"resultReason",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "resultReasonId"} ]  })
 		.addLov({ name:"assignedTo", xtype:"net.nan21.dnet.module.ad.usr.lovs.Assignables", dataIndex:"assignedTo",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assignedToId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:250}) 
-		.addPanel({ name:"col2", layout:"anchor", width:250}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -68,13 +68,9 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$List", {
 		.addTextColumn({ name:"campaign", dataIndex:"campaign", hidden:true,width:200 })   	
 		.addTextColumn({ name:"resultReason", dataIndex:"resultReason", hidden:true,width:120 })   	
 		.addTextColumn({ name:"resultNote", dataIndex:"resultNote", hidden:true,width:200 })   	
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"assignedToId", dataIndex:"assignedToId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"accountId", dataIndex:"accountId", hidden:true,format:"0",width:70 })  
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -104,12 +100,12 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Edit", {
 		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		.addLov({ name:"assignedTo", xtype:"net.nan21.dnet.module.ad.usr.lovs.Assignables", dataIndex:"assignedTo",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assignedToId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:350, defaults:{
+		.addPanel({ name:"col1", layout:"form" , width:350, defaults:{
 labelAlign:"right",labelWidth:110}})     
-		.addPanel({ name:"col2", layout:"anchor" , width:300})     
-		.addPanel({ name:"col3", layout:"anchor" , width:400, defaults:{
+		.addPanel({ name:"col2", layout:"form" , width:300})     
+		.addPanel({ name:"col3", layout:"form" , width:400, defaults:{
 labelAlign:"top"}})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {

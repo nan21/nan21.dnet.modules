@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs$Trl", {  	  	
-	type__lbl :  "Tip",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	type__lbl :  "Tip",
 	businessObject__lbl :  "@businessObject",	countryId__lbl :    "Ţara (ID)",
 	countryCode__lbl :    "Ţara (Cod)",
 	taxPayerNo__lbl :  "CUI/CNP",

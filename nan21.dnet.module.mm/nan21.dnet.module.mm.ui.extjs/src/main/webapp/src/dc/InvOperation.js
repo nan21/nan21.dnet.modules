@@ -33,10 +33,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation$Filter", {
 		.addNumberField({ name:"transactionLineId", dataIndex:"transactionLineId",anchor:"-20"  })
 		.addNumberField({ name:"quantity", dataIndex:"quantity",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:250}) 
-		.addPanel({ name:"col2", layout:"anchor", width:250}) 
-		.addPanel({ name:"col3", layout:"anchor",width:210}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"col3", layout:"form",width:210}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -65,17 +65,13 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation$List", {
 		.addTextColumn({ name:"locator", dataIndex:"locator",width:120 })   	
 		.addTextColumn({ name:"direction", dataIndex:"direction",width:60 })   	
 		.addNumberColumn({ name:"quantity", dataIndex:"quantity",decimals:2 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"itemId", dataIndex:"itemId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"inventoryId", dataIndex:"inventoryId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"subInventoryId", dataIndex:"subInventoryId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"locatorId", dataIndex:"locatorId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"transactionId", dataIndex:"transactionId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"transactionLineId", dataIndex:"transactionLineId", hidden:true,format:"0",width:70 })  
+	  	.addDefaults()
 	  ;		   
 	}
 });

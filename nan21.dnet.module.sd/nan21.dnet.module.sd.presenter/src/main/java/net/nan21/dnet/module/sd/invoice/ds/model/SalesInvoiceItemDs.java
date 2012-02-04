@@ -19,12 +19,14 @@ public class SalesInvoiceItemDs extends AbstractDsModel<SalesInvoiceItem>
         implements IModelWithId, IModelWithClientId {
 
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fINVOICEID = "invoiceId";
     public static final String fITEMID = "itemId";
     public static final String fITEMCODE = "itemCode";
@@ -37,6 +39,9 @@ public class SalesInvoiceItemDs extends AbstractDsModel<SalesInvoiceItem>
 
     @DsField()
     private Long id;
+
+    @DsField()
+    private String uuid;
 
     @DsField()
     private Long clientId;
@@ -55,6 +60,9 @@ public class SalesInvoiceItemDs extends AbstractDsModel<SalesInvoiceItem>
 
     @DsField()
     private Long version;
+
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
 
     @DsField(join = "left", path = "invoice.id")
     private Long invoiceId;
@@ -98,6 +106,14 @@ public class SalesInvoiceItemDs extends AbstractDsModel<SalesInvoiceItem>
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -146,6 +162,14 @@ public class SalesInvoiceItemDs extends AbstractDsModel<SalesInvoiceItem>
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
     public Long getInvoiceId() {

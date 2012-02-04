@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.pj.md.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,17 +15,19 @@ import net.nan21.dnet.module.pj.md.domain.entity.Issue;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = Issue.class)
+@Ds(entity = Issue.class, sort = { @SortField(field = IssueDs.fMODIFIEDAT, desc = true) })
 public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
         IModelWithClientId {
 
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fPROJECTID = "projectId";
     public static final String fPROJECT = "project";
     public static final String fPROJECTNAME = "projectName";
@@ -47,7 +50,6 @@ public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
     public static final String fASSIGNEE = "assignee";
     public static final String fASSIGNEEROLEID = "assigneeRoleId";
     public static final String fASSIGNEEROLE = "assigneeRole";
-    public static final String fCLASSNAME = "className";
     public static final String fREPORTEDVERSIONID = "reportedVersionId";
     public static final String fREPORTEDVERSION = "reportedVersion";
     public static final String fTARGETVERSIONID = "targetVersionId";
@@ -58,6 +60,9 @@ public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
 
     @DsField()
     private Long id;
+
+    @DsField()
+    private String uuid;
 
     @DsField()
     private Long clientId;
@@ -76,6 +81,9 @@ public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
 
     @DsField()
     private Long version;
+
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
 
     @DsField(join = "left", path = "project.id")
     private Long projectId;
@@ -143,9 +151,6 @@ public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
     @DsField(join = "left", path = "assigneeRole.name")
     private String assigneeRole;
 
-    @DsField(fetch = false)
-    private String className;
-
     @DsField(join = "left", path = "reportedVersion.id")
     private Long reportedVersionId;
 
@@ -182,6 +187,14 @@ public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -230,6 +243,14 @@ public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
     public Long getProjectId() {
@@ -406,14 +427,6 @@ public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
 
     public void setAssigneeRole(String assigneeRole) {
         this.assigneeRole = assigneeRole;
-    }
-
-    public String getClassName() {
-        return this.className;
-    }
-
-    public void setClassName(String className) {
-        this.className = className;
     }
 
     public Long getReportedVersionId() {

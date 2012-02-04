@@ -19,7 +19,6 @@
 		<class>net.nan21.dnet.module.bp.md.domain.entity.Contact</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.BpAccount</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.BpClassification</class> 
-		<class>net.nan21.dnet.module.bp.md.domain.entity.BpAttachment</class> 
 		 
 		<class>net.nan21.dnet.module.bp.calendar.domain.entity.CalendarEvent</class>
 		<class>net.nan21.dnet.module.bp.calendar.domain.entity.CalendarEventStatus</class>

@@ -29,10 +29,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter", {
 		.addDateField({ name:"from", paramIndex:"from",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		.addDateField({ name:"to", paramIndex:"to",anchor:"-20" ,format:Ext.DATE_FORMAT })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:300}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
-		.addPanel({ name:"col3", layout:"anchor",width:210}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form", width:300}) 
+		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col3", layout:"form",width:210}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -53,12 +53,12 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List", {
 	,_noExport_: false
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addTextColumn({ name:"id", dataIndex:"id", hidden:true,width:200 })   	
 		.addTextColumn({ name:"process", dataIndex:"process",width:200 })   	
 		.addTextColumn({ name:"processInstanceId", dataIndex:"processInstanceId", hidden:true,width:200 })   	
 		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"startedBy", dataIndex:"startedBy",width:100 })   	
 		.addTextColumn({ name:"startAction", dataIndex:"startAction", width:100 })   	
+	  	.addDefaults()
 	  ;		   
 	}
 });

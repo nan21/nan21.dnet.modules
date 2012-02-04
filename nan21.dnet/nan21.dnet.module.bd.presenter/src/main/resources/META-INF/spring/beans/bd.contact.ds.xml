@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="CommunicationChannelTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.contact.ds.filter.CommunicationChannelTypeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CommunicationChannelType" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeDs" />
+	</bean>
+   
+ 	<bean id="CommunicationChannelTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CommunicationChannelTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs" />
+	</bean>
+   
+ 	<bean id="CommunicationChannelDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.contact.ds.filter.CommunicationChannelDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannel" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.contact.ds.converter.CommunicationChannelDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CommunicationChannel" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelDs" />
+	</bean>
+      
+</beans>
+   

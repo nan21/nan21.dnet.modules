@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarMeetingDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	subject__lbl : "Subject",
 	startDate__lbl : "Start Date",
 	endDate__lbl : "End Date",

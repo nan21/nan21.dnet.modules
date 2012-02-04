@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -69,11 +70,6 @@ public class SalesInvoice implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_IDS = "SalesInvoice.findByIds";
 
-    /** DocNo. */
-    @Column(name = "DOCNO", nullable = false, length = 32)
-    @NotBlank
-    private String docNo;
-
     /** DocDate. */
     @Temporal(TemporalType.DATE)
     @Column(name = "DOCDATE", nullable = false)
@@ -92,45 +88,92 @@ public class SalesInvoice implements Serializable, IModelWithId,
     @Column(name = "TOTALAMOUNT", scale = 2)
     private Float totalAmount;
 
-    /** Owner client */
+    /**
+     * Name of entity.
+     */
+    @Column(name = "NAME", nullable = false, length = 255)
+    @NotBlank
+    private String name;
+
+    /**
+     * Code of entity.
+     */
+    @Column(name = "CODE", nullable = false, length = 32)
+    @NotBlank
+    private String code;
+
+    /**
+     * Flag which indicates if this record is used.
+     */
+    @Column(name = "ACTIVE", nullable = false)
+    @NotNull
+    private Boolean active;
+
+    /**
+     * Notes about this record. 
+     */
+    @Column(name = "NOTES", length = 4000)
+    private String notes;
+
+    /**
+     * Identifies the client(tenant) which owns this record.
+     */
     @Column(name = "CLIENTID", nullable = false)
     @NotNull
     private Long clientId;
 
-    /** Timestamp when this record was created.*/
+    /**
+     * Timestamp when this record was created.
+     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREATEDAT", nullable = false)
     @NotNull
     private Date createdAt;
 
-    /** Timestamp when this record was last modified.*/
+    /**
+     * Timestamp when this record was last modified.
+     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "MODIFIEDAT", nullable = false)
     @NotNull
     private Date modifiedAt;
 
-    /** User who created this record.*/
+    /**
+     * User who created this record.
+     */
     @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
-    /** User who last modified this record.*/
+    /**
+     * User who last modified this record.
+     */
     @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
     @Version
-    /** Record version number used by the persistence framework. */
+    /** 
+     * Record version number used by the persistence framework.
+     */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
 
-    /** System generated unique identifier */
+    /**
+     * System generated unique identifier.
+     */
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
+
+    /**
+     * System generated UID. Useful for data import-export and data-replication
+     */
+    @Column(name = "UUID", length = 36)
+    private String uuid;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesInvoiceStatus.class)
     @JoinColumn(name = "STATUS_ID", referencedColumnName = "ID")
     private SalesInvoiceStatus status;
@@ -160,14 +203,6 @@ public class SalesInvoice implements Serializable, IModelWithId,
     private Collection<SalesInvoiceItem> lines;
 
     /* ============== getters - setters ================== */
-
-    public String getDocNo() {
-        return this.docNo;
-    }
-
-    public void setDocNo(String docNo) {
-        this.docNo = docNo;
-    }
 
     public Date getDocDate() {
         return this.docDate;
@@ -208,6 +243,38 @@ public class SalesInvoice implements Serializable, IModelWithId,
 
     public void setBusinessObject(String businessObject) {
 
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public String getNotes() {
+        return this.notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
     public Long getClientId() {
@@ -264,6 +331,14 @@ public class SalesInvoice implements Serializable, IModelWithId,
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     @Transient
@@ -365,6 +440,16 @@ public class SalesInvoice implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.uuid == null || this.uuid.equals("")) {
+            event.updateAttributeWithObject("uuid", UUID.randomUUID()
+                    .toString().toUpperCase());
+        }
+        if (this.active == null) {
+            event.updateAttributeWithObject("active", false);
+        }
+        if (this.code == null || this.code.equals("")) {
+            event.updateAttributeWithObject("code", "INV-" + this.getId());
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

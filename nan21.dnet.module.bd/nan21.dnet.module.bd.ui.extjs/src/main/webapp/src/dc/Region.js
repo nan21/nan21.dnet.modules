@@ -29,10 +29,10 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
-		.addPanel({ name:"col3", layout:"anchor",width:210}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col3", layout:"form",width:210}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -60,11 +60,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$List", {
 		.addTextColumn({ name:"countryCode", dataIndex:"countryCode",width:100 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 		.addTextColumn({ name:"notes", dataIndex:"notes",width:200 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -77,6 +73,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$EditListContext", {
 	
 	 _noImport_: true
 	,_noExport_: true
+	,_bulkEditFields_ : ["active","notes"]
 	,_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
@@ -85,11 +82,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$EditListContext", {
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:4000,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "4000"}} })
 		.addNumberColumn({ name:"countryId", dataIndex:"countryId", hidden:true, align:"right",format:"0",width:70})
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
+	  	.addDefaults()
 	  ;  		   
 	}  
 });
@@ -101,6 +94,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$EditList", {
 	
 	 _noImport_: false
 	,_noExport_: false
+	,_bulkEditFields_ : ["countryCode","active","notes"]
 	,_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"countryCode", xtype:"gridcolumn", dataIndex:"countryCode", width:150,editor:{xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "countryId"} ]} })
@@ -110,11 +104,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$EditList", {
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:4000,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "4000"}} })
 		.addNumberColumn({ name:"countryId", dataIndex:"countryId", hidden:true, align:"right",format:"0",width:70})
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
+	  	.addDefaults()
 	  ;  		   
 	}  
 });
@@ -134,10 +124,10 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Edit", {
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300})     
-		.addPanel({ name:"col2", layout:"anchor" , width:250})     
-		.addPanel({ name:"col3", layout:"anchor" , width:300})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"col1", layout:"form" , width:300})     
+		.addPanel({ name:"col2", layout:"form" , width:250})     
+		.addPanel({ name:"col3", layout:"form" , width:300})     
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {

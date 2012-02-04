@@ -22,15 +22,16 @@ Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$List", {
 
 Ext.define("net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui", {
 	extend: "dnet.core.asgn.AbstractAsgnUi",
-	alias: "widget.net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Ui",
- 	 width:700
-	,height:400 
-	,title:"Assign groups to user"
-	,_controller_:net.nan21.dnet.module.ad.usr.asgn.UserUserGroups
-	,_filterFields_: [["id","Id"],["name","Name"]]
-	,_defaultFilterField_ : "name" 
-	 
-	,_defineElements_: function () {
+		 
+ 	width:700,
+	height:400,
+	title:"Assign groups to user",
+
+	_controller_:net.nan21.dnet.module.ad.usr.asgn.UserUserGroups,
+	_filterFields_: [["id","Id"],["name","Name"]],
+	_defaultFilterField_ : "name", 
+
+	_defineElements_: function () {
 		this._getBuilder_()
 			.addLeftGrid({ xtype:"net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Left"})
 			.addRightGrid({ xtype:"net.nan21.dnet.module.ad.usr.asgn.UserUserGroups$Right"})

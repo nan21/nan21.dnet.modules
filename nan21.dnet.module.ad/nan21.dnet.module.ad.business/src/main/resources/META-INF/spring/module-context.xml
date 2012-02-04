@@ -137,7 +137,7 @@
 		<aop:advisor advice-ref="txAdviceSetupParticipant" pointcut-ref="setupParticipantRun" />				 
 	</aop:config>
 	
-	
+
 	<bean id="setupParticipant" class="net.nan21.dnet.module.ad._businessdelegates.Setup_AD" scope="singleton" >		
 		<property name="ranking" value="199"></property>		
 	</bean>

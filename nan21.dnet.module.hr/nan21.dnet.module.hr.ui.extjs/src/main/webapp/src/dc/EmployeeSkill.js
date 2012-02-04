@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.EmployeeSkill$Filter", {
 		.addTextField({ name:"skill", dataIndex:"skill",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"skillLevel", dataIndex:"skillLevel",anchor:"-20",maxLength:255  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210}) 
+		.addPanel({ name:"main", layout:"form", autoScroll:true,width:210}) 
 		
 	}
 	,_linkElements_: function () {
@@ -52,11 +52,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.EmployeeSkill$EditList", {
 		.addLov({name:"skill", xtype:"gridcolumn", dataIndex:"skill",width:120,editor:{xtype:"net.nan21.dnet.module.hr.skill.lovs.Skills" , selectOnFocus:true,allowBlank:false,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "skillId"} ,{lovField:"ratingScaleId", dsField: "ratingScaleId"} ]} })
 		.addNumberColumn({ name:"skillLevelId", dataIndex:"skillLevelId", hidden:true, align:"right",format:"0",width:70})
 		.addLov({name:"skillLevel", xtype:"gridcolumn", dataIndex:"skillLevel",width:120,editor:{xtype:"net.nan21.dnet.module.hr.skill.lovs.RatingLevels" , selectOnFocus:true,allowBlank:false,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "skillLevelId"} ],filterFieldMapping: [{lovField:"ratingScaleId", dsField: "ratingScaleId"} ]} })
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
+	  	.addDefaults()
 	  ;  		   
 	}  
 });

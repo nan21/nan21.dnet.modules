@@ -20,12 +20,14 @@ public class EmployeeWorkExperienceDs extends
         IModelWithClientId {
 
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fEMPLOYEEID = "employeeId";
     public static final String fFROMDATE = "fromDate";
     public static final String fTODATE = "toDate";
@@ -34,6 +36,9 @@ public class EmployeeWorkExperienceDs extends
 
     @DsField()
     private Long id;
+
+    @DsField()
+    private String uuid;
 
     @DsField()
     private Long clientId;
@@ -52,6 +57,9 @@ public class EmployeeWorkExperienceDs extends
 
     @DsField()
     private Long version;
+
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
 
     @DsField(join = "left", path = "employee.id")
     private Long employeeId;
@@ -83,6 +91,14 @@ public class EmployeeWorkExperienceDs extends
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -131,6 +147,14 @@ public class EmployeeWorkExperienceDs extends
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
     public Long getEmployeeId() {

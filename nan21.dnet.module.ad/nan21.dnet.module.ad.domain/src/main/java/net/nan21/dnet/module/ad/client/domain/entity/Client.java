@@ -7,6 +7,7 @@ package net.nan21.dnet.module.ad.client.domain.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -118,40 +119,58 @@ public class Client implements Serializable, IModelWithId {
     @NotNull
     private Boolean systemClient;
 
-    /** Timestamp when this record was created.*/
+    /**
+     * Timestamp when this record was created.
+     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREATEDAT", nullable = false)
     @NotNull
     private Date createdAt;
 
-    /** Timestamp when this record was last modified.*/
+    /**
+     * Timestamp when this record was last modified.
+     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "MODIFIEDAT", nullable = false)
     @NotNull
     private Date modifiedAt;
 
-    /** User who created this record.*/
+    /**
+     * User who created this record.
+     */
     @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
-    /** User who last modified this record.*/
+    /**
+     * User who last modified this record.
+     */
     @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
     @Version
-    /** Record version number used by the persistence framework. */
+    /** 
+     * Record version number used by the persistence framework.
+     */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
 
-    /** System generated unique identifier */
+    /**
+     * System generated unique identifier.
+     */
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
+
+    /**
+     * System generated UID. Useful for data import-export and data-replication
+     */
+    @Column(name = "UUID", length = 36)
+    private String uuid;
 
     /* ============== getters - setters ================== */
 
@@ -315,6 +334,14 @@ public class Client implements Serializable, IModelWithId {
         this.id = id;
     }
 
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     @Transient
     public String getClassName() {
         return this.getClass().getCanonicalName();
@@ -332,6 +359,10 @@ public class Client implements Serializable, IModelWithId {
                 .getUsername());
         event.updateAttributeWithObject("modifiedBy", Session.user.get()
                 .getUsername());
+        if (this.uuid == null || this.uuid.equals("")) {
+            event.updateAttributeWithObject("uuid", UUID.randomUUID()
+                    .toString().toUpperCase());
+        }
         if (this.systemClient == null) {
             event.updateAttributeWithObject("systemClient", false);
         }

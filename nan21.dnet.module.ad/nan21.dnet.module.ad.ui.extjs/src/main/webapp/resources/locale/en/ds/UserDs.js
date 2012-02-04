@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	locked__lbl : "Locked",
 	accountType__lbl : "Account Type",
 	accountTypeId__lbl : "Account Type Id",

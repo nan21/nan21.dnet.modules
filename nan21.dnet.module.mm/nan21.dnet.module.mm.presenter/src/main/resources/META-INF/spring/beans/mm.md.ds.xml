@@ -224,18 +224,6 @@
 		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs" />
 	</bean>
    
- 	<bean id="ProductAttachmentDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.md.ds.filter.ProductAttachmentDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.ProductAttachment" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.mm.md.ds.converter.ProductAttachmentDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ProductAttachment" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAttachmentDs" />
-	</bean>
-   
  	<bean id="ProdClassificationDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProdClassificationDs" />

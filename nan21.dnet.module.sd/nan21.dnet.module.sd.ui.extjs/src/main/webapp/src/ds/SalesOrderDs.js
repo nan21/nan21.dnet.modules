@@ -3,14 +3,19 @@
 Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
+		{name:"name", type:"string"},
+		{name:"code", type:"string"},
+		{name:"active", type:"boolean"},
+		{name:"notes", type:"string"},
 		{name:"id", type:"int", useNull:true},
+		{name:"uuid", type:"string"},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"createdAt", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"modifiedAt", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
-		{name:"docNo", type:"string"},
+		{name:"entityFQN", type:"string"},
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"businessObject", type:"string"},
 		{name:"typeId", type:"int", useNull:true},
@@ -18,6 +23,7 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" ,{
 		{name:"statusId", type:"int", useNull:true},
 		{name:"status", type:"string"},
 		{name:"customerId", type:"int", useNull:true},
+		{name:"customerUuid", type:"string"},
 		{name:"customerCode", type:"string"},
 		{name:"customer", type:"string"},
 		{name:"currencyId", type:"int", useNull:true},
@@ -31,11 +37,13 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" ,{
 		{name:"supplierId", type:"int", useNull:true},
 		{name:"supplier", type:"string"},
 		{name:"billToId", type:"int", useNull:true},
+		{name:"billToUuid", type:"string"},
 		{name:"billToCode", type:"string"},
 		{name:"billTo", type:"string"},
 		{name:"billToLocationId", type:"int", useNull:true},
 		{name:"billToLocation", type:"string"},
 		{name:"shipToId", type:"int", useNull:true},
+		{name:"shipToUuid", type:"string"},
 		{name:"shipToCode", type:"string"},
 		{name:"shipTo", type:"string"},
 		{name:"shipToLocationId", type:"int", useNull:true},
@@ -44,13 +52,23 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" ,{
 		{name:"totalNetAmount", type:"float", useNull:true},
 		{name:"totalTaxAmount", type:"float", useNull:true},
 		{name:"className", type:"string"}
-	]
+	],
+	validations: [  
+		{field: "code", type: 'presence'}, 
+		{field: "name", type: 'presence'}
+	]	
+	
 });
 
 Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
+		{name:"name", type:"string"},
+		{name:"code", type:"string"},
+		{name:"active", type:"boolean", useNull:true},
+		{name:"notes", type:"string"},
 		{name:"id", type:"int", useNull:true},
+		{name:"uuid", type:"string"},
 		{name:"createdAt", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"createdAt_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"createdAt_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
@@ -59,7 +77,7 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDsFilter" ,{
 		{name:"modifiedAt_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
-		{name:"docNo", type:"string"},
+		{name:"entityFQN", type:"string"},
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
@@ -75,6 +93,7 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDsFilter" ,{
 		{name:"customerId", type:"int", useNull:true},
 		{name:"customerId_From",type:"int", useNull:true},
 		{name:"customerId_To",type:"int", useNull:true},
+		{name:"customerUuid", type:"string"},
 		{name:"customerCode", type:"string"},
 		{name:"customer", type:"string"},
 		{name:"currencyId", type:"int", useNull:true},
@@ -100,6 +119,7 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDsFilter" ,{
 		{name:"billToId", type:"int", useNull:true},
 		{name:"billToId_From",type:"int", useNull:true},
 		{name:"billToId_To",type:"int", useNull:true},
+		{name:"billToUuid", type:"string"},
 		{name:"billToCode", type:"string"},
 		{name:"billTo", type:"string"},
 		{name:"billToLocationId", type:"int", useNull:true},
@@ -109,6 +129,7 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDsFilter" ,{
 		{name:"shipToId", type:"int", useNull:true},
 		{name:"shipToId_From",type:"int", useNull:true},
 		{name:"shipToId_To",type:"int", useNull:true},
+		{name:"shipToUuid", type:"string"},
 		{name:"shipToCode", type:"string"},
 		{name:"shipTo", type:"string"},
 		{name:"shipToLocationId", type:"int", useNull:true},

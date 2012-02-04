@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.ad.usr.ds.model.AccessControlDs$Trl", {  	  	
-		 
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",		 
 	withRoleId__lbl : "Cu rol ID",
 	withRole__lbl : "Cu rol",
 	copyFromId__lbl : "Copiază de la ID",

@@ -16,9 +16,7 @@
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAccountGroup</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAccount</class>
  		<class>net.nan21.dnet.module.mm.md.domain.entity.ProdClassification</class>
- 
- 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttachment</class>
- 
+  
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute</class>

@@ -7,7 +7,6 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.Employee</class>
-		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeAttachment</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContact</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeEducation</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeWorkExperience</class>

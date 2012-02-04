@@ -41,9 +41,9 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$Filter", {
 		.addBooleanField({ name:"allDay", dataIndex:"allDay",anchor:"-20"  })
 		.addNumberField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -70,8 +70,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$List", {
 		.addTextColumn({ name:"statusName", dataIndex:"statusName",width:120 })   	
 		.addTextColumn({ name:"priorityName", dataIndex:"priorityName",width:120 })   	
 		.addTextColumn({ name:"reminder", dataIndex:"reminder",width:100 })   	
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -87,7 +86,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$Create", {
 		this._getBuilder_()	
 		.addCombo({ name:"eventType", xtype:"localcombo", dataIndex:"eventType",anchor:"-20" ,store:[ "call", "meeting", "task"]  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:250})     
+		.addPanel({ name:"main", layout:"form" , autoScroll:true, width:250})     
 		;     
 	}
 	,_linkElements_: function () {
@@ -114,12 +113,12 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditCall", {
 		.addLov({ name:"priorityName", xtype:"net.nan21.dnet.module.bp.calendar.lovs.CalendarEventPrioritiesCall", dataIndex:"priorityName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
 		.addLov({ name:"contact", xtype:"net.nan21.dnet.module.bp.md.lovs.BpContacts", dataIndex:"contact",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "contactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "bpartnerId"} ]  })
 		//containers
-		.addPanel({ name:"row1", layout:"anchor" , width:700})     
-		.addPanel({ name:"col1", layout:"anchor" , width:280})     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
-		.addPanel({ name:"row3", layout:"anchor" , width:700})     
+		.addPanel({ name:"row1", layout:"form" , width:700})     
+		.addPanel({ name:"col1", layout:"form" , width:280})     
+		.addPanel({ name:"col2", layout:"form" ,width:250})     
+		.addPanel({ name:"row3", layout:"form" , width:700})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
-		.addPanel({ name:"row2", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
+		.addPanel({ name:"row2",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
 		;     
 	}
 	,_linkElements_: function () {
@@ -153,14 +152,14 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditMeeting", {
 		.addLov({ name:"priorityName", xtype:"net.nan21.dnet.module.bp.calendar.lovs.CalendarEventPrioritiesMeeting", dataIndex:"priorityName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
 		.addLov({ name:"contact", xtype:"net.nan21.dnet.module.bp.md.lovs.BpContacts", dataIndex:"contact",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "contactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "bpartnerId"} ]  })
 		//containers
-		.addPanel({ name:"row1", layout:"anchor" , width:700})     
-		.addPanel({ name:"col1", layout:"anchor" , width:280})     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
-		.addPanel({ name:"col3", layout:"anchor" ,width:250, defaults:{
+		.addPanel({ name:"row1", layout:"form" , width:700})     
+		.addPanel({ name:"col1", layout:"form" , width:280})     
+		.addPanel({ name:"col2", layout:"form" ,width:250})     
+		.addPanel({ name:"col3", layout:"form" ,width:250, defaults:{
 labelAlign:"top"}})     
-		.addPanel({ name:"row3", layout:"anchor" , width:700})     
+		.addPanel({ name:"row3", layout:"form" , width:700})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
-		.addPanel({ name:"row2", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
+		.addPanel({ name:"row2",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
 		;     
 	}
 	,_linkElements_: function () {
@@ -192,12 +191,12 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditTask", {
 		.addLov({ name:"statusName", xtype:"net.nan21.dnet.module.bp.calendar.lovs.CalendarEventStatusTask", dataIndex:"statusName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
 		.addLov({ name:"priorityName", xtype:"net.nan21.dnet.module.bp.calendar.lovs.CalendarEventPrioritiesTask", dataIndex:"priorityName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
 		//containers
-		.addPanel({ name:"row1", layout:"anchor" , width:700})     
-		.addPanel({ name:"col1", layout:"anchor" , width:280})     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
-		.addPanel({ name:"row3", layout:"anchor" , width:700})     
+		.addPanel({ name:"row1", layout:"form" , width:700})     
+		.addPanel({ name:"col1", layout:"form" , width:280})     
+		.addPanel({ name:"col2", layout:"form" ,width:250})     
+		.addPanel({ name:"row3", layout:"form" , width:700})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
-		.addPanel({ name:"row2", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
+		.addPanel({ name:"row2",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
 		;     
 	}
 	,_linkElements_: function () {

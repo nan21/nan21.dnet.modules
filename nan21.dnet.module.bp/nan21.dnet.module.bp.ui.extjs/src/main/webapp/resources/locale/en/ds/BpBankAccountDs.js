@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpBankAccountDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	bankId__lbl : "Bank Id",
 	bankCode__lbl : "Bank Code",
 	bankBranch__lbl : "Bank Branch",

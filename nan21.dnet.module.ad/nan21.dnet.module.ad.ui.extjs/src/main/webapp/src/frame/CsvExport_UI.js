@@ -21,7 +21,8 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.CsvExport_UI", {
 		.addDcView("field",{ name:"fieldCtxEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.CsvExportField$CtxEditList", frame:true,title:"Fields"})	 
 		.addDcView("sort",{ name:"sortCtxEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.CsvExportSort$CtxEditList", frame:true,title:"Sort"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "detailsAccordion", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id(),width:500}}) 	 
+
+		.addPanel({name: "detailsAccordion", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id(),width:500}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}

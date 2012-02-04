@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.hr.time.ds.model.AbsenceDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	employeeId__lbl : "Employee Id",
 	employeeCode__lbl : "Employee Code",
 	employee__lbl : "Employee",

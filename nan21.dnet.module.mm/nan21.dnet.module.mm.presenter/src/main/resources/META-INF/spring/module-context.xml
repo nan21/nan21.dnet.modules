@@ -46,7 +46,5 @@
 	
 	 <!-- Other beans / services  -->
 	 
-	 <bean id="productAttachmentUploadService"  scope="prototype" 
-  		class="net.nan21.dnet.module.mm._presenterdelegates.md.ProductAttachmentUploadDelegate"></bean>
-	 
+ 
 </beans>

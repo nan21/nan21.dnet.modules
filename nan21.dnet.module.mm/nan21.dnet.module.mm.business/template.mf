@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: DNet MM - business
 Bundle-SymbolicName: nan21.dnet.module.mm.business
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M6
+Bundle-Version: 1.0.0.M7
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Import-Template: 
  javax.persistence.*;version="[2.0,2.1)",
@@ -23,11 +23,11 @@ Import-Package:
  org.hibernate.validator.constraints;version="[4.0,5.0)"
 Import-Bundle:  
  org.eclipse.persistence.core;version="[2.0,2.5)", 
- nan21.dnet.core.domain;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.core.business;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.module.ad.domain;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.module.bd.domain;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.module.mm.domain;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.module.ad.business;version="[1.0.0.M6,1.0.0.M6]", 
- nan21.dnet.module.bd.business;version="[1.0.0.M6,1.0.0.M6]"
+ nan21.dnet.core.domain;version="[1.0.0.M7,1.0.0.M7]", 
+ nan21.dnet.core.business;version="[1.0.0.M7,1.0.0.M7]", 
+ nan21.dnet.module.ad.domain;version="[1.0.0.M7,1.0.0.M7]", 
+ nan21.dnet.module.bd.domain;version="[1.0.0.M7,1.0.0.M7]", 
+ nan21.dnet.module.mm.domain;version="[1.0.0.M7,1.0.0.M7]", 
+ nan21.dnet.module.ad.business;version="[1.0.0.M7,1.0.0.M7]", 
+ nan21.dnet.module.bd.business;version="[1.0.0.M7,1.0.0.M7]"
 

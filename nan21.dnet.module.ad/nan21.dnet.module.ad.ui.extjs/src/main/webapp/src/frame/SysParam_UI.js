@@ -17,7 +17,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysParam_UI", {
 							 	
 		.addDcFilterFormView("sysparam",{ name:"sysparamFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$Filter",height:120})	 
 		.addDcView("sysparam",{ name:"sysparamList", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnSynchronize") ]}]})	 
-		.addDcFormView("sysparam",{ name:"sysparamEdit", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$Edit",width:450})	 
+		.addDcFormView("sysparam",{ name:"sysparamEdit", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 

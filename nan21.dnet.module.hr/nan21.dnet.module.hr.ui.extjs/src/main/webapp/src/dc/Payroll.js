@@ -26,8 +26,8 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter", {
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addCombo({ name:"periodType", xtype:"combo", dataIndex:"periodType",anchor:"-20",store:[ "calendar-month", "semi-month"]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:250}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -50,11 +50,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$List", {
 		.addTextColumn({ name:"periodType", dataIndex:"periodType",width:100 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -73,9 +69,9 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit", {
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
 		.addCombo({ name:"periodType", xtype:"localcombo", dataIndex:"periodType",anchor:"-20" ,allowBlank:false,store:[ "calendar-month", "semi-month"]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:300})     
-		.addPanel({ name:"col2", layout:"anchor" , width:350})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"col1", layout:"form" , width:300})     
+		.addPanel({ name:"col2", layout:"form" , width:350})     
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {

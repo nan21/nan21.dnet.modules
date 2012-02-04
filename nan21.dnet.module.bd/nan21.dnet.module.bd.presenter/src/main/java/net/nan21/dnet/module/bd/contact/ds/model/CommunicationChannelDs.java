@@ -20,15 +20,17 @@ public class CommunicationChannelDs extends
         IModelWithClientId {
 
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
-    public static final String fTARGETID = "targetId";
+    public static final String fTARGETUUID = "targetUuid";
     public static final String fTARGETTYPE = "targetType";
     public static final String fVALUE = "value";
     public static final String fVALIDFROM = "validFrom";
@@ -36,6 +38,9 @@ public class CommunicationChannelDs extends
 
     @DsField()
     private Long id;
+
+    @DsField()
+    private String uuid;
 
     @DsField()
     private Long clientId;
@@ -55,6 +60,9 @@ public class CommunicationChannelDs extends
     @DsField()
     private Long version;
 
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
+
     @DsField(join = "left", path = "type.id")
     private Long typeId;
 
@@ -62,7 +70,7 @@ public class CommunicationChannelDs extends
     private String type;
 
     @DsField()
-    private Long targetId;
+    private String targetUuid;
 
     @DsField()
     private String targetType;
@@ -91,6 +99,14 @@ public class CommunicationChannelDs extends
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -141,6 +157,14 @@ public class CommunicationChannelDs extends
         this.version = version;
     }
 
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
+    }
+
     public Long getTypeId() {
         return this.typeId;
     }
@@ -157,12 +181,12 @@ public class CommunicationChannelDs extends
         this.type = type;
     }
 
-    public Long getTargetId() {
-        return this.targetId;
+    public String getTargetUuid() {
+        return this.targetUuid;
     }
 
-    public void setTargetId(Long targetId) {
-        this.targetId = targetId;
+    public void setTargetUuid(String targetUuid) {
+        this.targetUuid = targetUuid;
     }
 
     public String getTargetType() {

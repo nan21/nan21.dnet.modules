@@ -31,9 +31,6 @@
  	<bean id="ProductAccountService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAccountService"  />  
  
- 	<bean id="ProductAttachmentService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttachmentService"  />  
- 
  	<bean id="ProductAttributeCategoryService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.md.business.serviceimpl.ProductAttributeCategoryService"  />  
  

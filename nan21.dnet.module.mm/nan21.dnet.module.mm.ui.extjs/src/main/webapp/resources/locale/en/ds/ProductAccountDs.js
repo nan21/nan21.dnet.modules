@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.mm.md.ds.model.ProductAccountDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	organizationId__lbl : "Organization Id",
 	organizationCode__lbl : "Organization Code",
 	groupId__lbl : "Group Id",

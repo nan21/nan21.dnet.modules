@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.bd.geo.ds.model.LocationDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	regionName__lbl : "Region Name",
 	cityName__lbl : "City Name",
 	adress__lbl : "Adress",
@@ -11,7 +13,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.ds.model.LocationDs$Trl", {
 	shipping__lbl : "Shipping",
 	billing__lbl : "Billing",
 	mailing__lbl : "Mailing",
-	targetId__lbl : "Target Id",
+	targetUuid__lbl : "Target Uuid",
 	targetType__lbl : "Target Type",
 		
 	id__lbl :"ID"

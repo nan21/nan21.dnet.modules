@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.bp.md.ds.model.BusinessPartnerDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	type__lbl : "Type",
 	businessObject__lbl : "Business Object",
 	countryId__lbl : "Country Id",

@@ -16,6 +16,8 @@ public class LocationDsFilter extends AbstractDsFilter implements IModelWithId,
 
     private Long id;
 
+    private String uuid;
+
     private Long clientId;
 
     private Date createdAt;
@@ -31,6 +33,8 @@ public class LocationDsFilter extends AbstractDsFilter implements IModelWithId,
     private String createdBy;
 
     private String modifiedBy;
+
+    private String entityFQN;
 
     private String regionName;
 
@@ -67,10 +71,7 @@ public class LocationDsFilter extends AbstractDsFilter implements IModelWithId,
 
     private Boolean mailing;
 
-    private Long targetId;
-
-    private Long targetId_From;
-    private Long targetId_To;
+    private String targetUuid;
 
     private String targetType;
 
@@ -81,6 +82,14 @@ public class LocationDsFilter extends AbstractDsFilter implements IModelWithId,
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -153,6 +162,14 @@ public class LocationDsFilter extends AbstractDsFilter implements IModelWithId,
 
     public void setModifiedBy(String modifiedBy) {
         this.modifiedBy = modifiedBy;
+    }
+
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
     public String getRegionName() {
@@ -307,28 +324,12 @@ public class LocationDsFilter extends AbstractDsFilter implements IModelWithId,
         this.mailing = mailing;
     }
 
-    public Long getTargetId() {
-        return this.targetId;
+    public String getTargetUuid() {
+        return this.targetUuid;
     }
 
-    public Long getTargetId_From() {
-        return this.targetId_From;
-    }
-
-    public Long getTargetId_To() {
-        return this.targetId_To;
-    }
-
-    public void setTargetId(Long targetId) {
-        this.targetId = targetId;
-    }
-
-    public void setTargetId_From(Long targetId_From) {
-        this.targetId_From = targetId_From;
-    }
-
-    public void setTargetId_To(Long targetId_To) {
-        this.targetId_To = targetId_To;
+    public void setTargetUuid(String targetUuid) {
+        this.targetUuid = targetUuid;
     }
 
     public String getTargetType() {

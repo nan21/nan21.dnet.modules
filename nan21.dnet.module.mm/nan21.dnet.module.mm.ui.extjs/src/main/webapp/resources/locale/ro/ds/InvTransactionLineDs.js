@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionLineDs$Trl", {  	  	
-	transactionId__lbl :    "Tranzacţie (ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	transactionId__lbl :    "Tranzacţie (ID)",
 	fromInventoryId__lbl :    "Gestiune sursă (ID)",
 	toInventoryId__lbl :    "Gestiune destinaţie (ID)",
 	itemId__lbl :    "Articol (ID)",

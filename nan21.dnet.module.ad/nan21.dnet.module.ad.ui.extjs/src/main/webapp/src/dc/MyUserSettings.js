@@ -32,8 +32,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MyUserSettings$Edit", {
 		.addCombo({ name:"thousandSeparator", xtype:"localcombo", dataIndex:"thousandSeparator",anchor:"-20" ,store:[ ".", ","]  })
 		.addLov({ name:"dateFormat", xtype:"net.nan21.dnet.module.ad.system.lovs.SysDateFormats", dataIndex:"dateFormat",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "dateFormatId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" ,title:"Regional settings", width:300,xtype:"fieldset", border:false, collapsible:true})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"col1", layout:"form" ,title:"Regional settings", width:300,xtype:"fieldset", border:true, collapsible:true})     
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {

@@ -10,8 +10,8 @@
  	<bean id="AbstractAuditableDsDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractAuditableDsDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.dnet.meta.domain.filter.AbstractAuditableDsDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractAuditable" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractAuditableDsDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbstractAuditableDs" />
@@ -21,8 +21,8 @@
  	<bean id="AbstractAuditableWithPeriodDsDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractAuditableWithPeriodDsDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.dnet.meta.domain.filter.AbstractAuditableWithPeriodDsDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractAuditableWithPeriod" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractAuditableWithPeriodDsDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbstractAuditableWithPeriodDs" />
@@ -32,8 +32,8 @@
  	<bean id="AbstractTypeDsDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeDsDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.dnet.meta.domain.filter.AbstractTypeDsDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeDsDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbstractTypeDs" />
@@ -43,8 +43,8 @@
  	<bean id="AbstractTypeWithPeriodDsDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithPeriodDsDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.dnet.meta.domain.filter.AbstractTypeWithPeriodDsDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractTypeWithPeriod" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeWithPeriodDsDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbstractTypeWithPeriodDs" />
@@ -54,8 +54,8 @@
  	<bean id="AbstractTypeWithCodeDsDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithCodeDsDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.dnet.meta.domain.filter.AbstractTypeWithCodeDsDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractTypeWithCode" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeWithCodeDsDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbstractTypeWithCodeDs" />
@@ -65,8 +65,8 @@
  	<bean id="AbstractAuditableLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractAuditableLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.dnet.meta.domain.filter.AbstractAuditableLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractAuditable" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractAuditableLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbstractAuditableLov" />
@@ -76,8 +76,8 @@
  	<bean id="AbstractTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.dnet.meta.domain.filter.AbstractTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractType" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbstractTypeLov" />
@@ -87,8 +87,8 @@
  	<bean id="AbstractTypeWithPeriodLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithPeriodLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.dnet.meta.domain.filter.AbstractTypeWithPeriodLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractTypeWithPeriod" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeWithPeriodLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbstractTypeWithPeriodLov" />
@@ -98,8 +98,8 @@
  	<bean id="AbstractTypeWithCodeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.dnet.meta.domain.model.AbstractTypeWithCodeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.dnet.meta.domain.filter.AbstractTypeWithCodeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.dnet.meta.domain.AbstractTypeWithCode" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.dnet.meta.domain.converter.AbstractTypeWithCodeLovDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbstractTypeWithCodeLov" />

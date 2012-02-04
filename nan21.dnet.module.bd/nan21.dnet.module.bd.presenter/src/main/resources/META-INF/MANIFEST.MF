@@ -1,76 +1,76 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.bd.acc.ds.converter;version="1.0
- .0.M6";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.p
+ .0.M7";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.p
  resenter.converter,net.nan21.dnet.module.bd.acc.domain.entity,net.nan
  21.dnet.module.bd.acc.ds.model",net.nan21.dnet.module.bd.acc.ds.filte
- r;version="1.0.0.M6";uses:="net.nan21.dnet.core.api.model,net.nan21.d
+ r;version="1.0.0.M7";uses:="net.nan21.dnet.core.api.model,net.nan21.d
  net.core.presenter.model",net.nan21.dnet.module.bd.acc.ds.model;versi
- on="1.0.0.M6";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dne
+ on="1.0.0.M7";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dne
  t.core.api.model,net.nan21.dnet.core.presenter.model,net.nan21.dnet.m
  odule.bd.acc.domain.entity",net.nan21.dnet.module.bd.contact.ds.conve
- rter;version="1.0.0.M6";uses:="net.nan21.dnet.core.api.converter,net.
+ rter;version="1.0.0.M7";uses:="net.nan21.dnet.core.api.converter,net.
  nan21.dnet.core.presenter.converter,net.nan21.dnet.module.bd.contact.
  domain.entity,net.nan21.dnet.module.bd.contact.ds.model",net.nan21.dn
- et.module.bd.contact.ds.filter;version="1.0.0.M6";uses:="net.nan21.dn
+ et.module.bd.contact.ds.filter;version="1.0.0.M7";uses:="net.nan21.dn
  et.core.api.model,net.nan21.dnet.core.presenter.model",net.nan21.dnet
- .module.bd.contact.ds.model;version="1.0.0.M6";uses:="net.nan21.dnet.
+ .module.bd.contact.ds.model;version="1.0.0.M7";uses:="net.nan21.dnet.
  core.api.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core
  .presenter.model,net.nan21.dnet.module.bd.contact.domain.entity",net.
- nan21.dnet.module.bd.currency.ds.converter;version="1.0.0.M6";uses:="
+ nan21.dnet.module.bd.currency.ds.converter;version="1.0.0.M7";uses:="
  net.nan21.dnet.core.api.converter,net.nan21.dnet.core.presenter.conve
  rter,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.m
  odule.bd.currency.ds.model",net.nan21.dnet.module.bd.currency.ds.filt
- er;version="1.0.0.M6";uses:="net.nan21.dnet.core.api.model,net.nan21.
+ er;version="1.0.0.M7";uses:="net.nan21.dnet.core.api.model,net.nan21.
  dnet.core.presenter.model",net.nan21.dnet.module.bd.currency.ds.model
- ;version="1.0.0.M6";uses:="net.nan21.dnet.core.api.annotation,net.nan
+ ;version="1.0.0.M7";uses:="net.nan21.dnet.core.api.annotation,net.nan
  21.dnet.core.api.model,net.nan21.dnet.core.presenter.model,net.nan21.
  dnet.module.bd.currency.domain.entity",net.nan21.dnet.module.bd.geo.d
- s.converter;version="1.0.0.M6";uses:="net.nan21.dnet.core.api.convert
+ s.converter;version="1.0.0.M7";uses:="net.nan21.dnet.core.api.convert
  er,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.module.bd.g
  eo.domain.entity,net.nan21.dnet.module.bd.geo.ds.model",net.nan21.dne
- t.module.bd.geo.ds.filter;version="1.0.0.M6";uses:="net.nan21.dnet.co
+ t.module.bd.geo.ds.filter;version="1.0.0.M7";uses:="net.nan21.dnet.co
  re.api.model,net.nan21.dnet.core.presenter.model",net.nan21.dnet.modu
- le.bd.geo.ds.model;version="1.0.0.M6";uses:="net.nan21.dnet.core.api.
+ le.bd.geo.ds.model;version="1.0.0.M7";uses:="net.nan21.dnet.core.api.
  annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.presente
  r.model,net.nan21.dnet.module.bd.geo.domain.entity",net.nan21.dnet.mo
- dule.bd.org.asgn;version="1.0.0.M6";uses:="net.nan21.dnet.core.api.an
+ dule.bd.org.asgn;version="1.0.0.M7";uses:="net.nan21.dnet.core.api.an
  notation,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.bd
  .org.domain.entity",net.nan21.dnet.module.bd.org.ds.converter;version
- ="1.0.0.M6";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.c
+ ="1.0.0.M7";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.c
  ore.presenter.converter,net.nan21.dnet.module.bd.org.domain.entity,ne
  t.nan21.dnet.module.bd.org.ds.model",net.nan21.dnet.module.bd.org.ds.
- filter;version="1.0.0.M6";uses:="net.nan21.dnet.core.api.model,net.na
+ filter;version="1.0.0.M7";uses:="net.nan21.dnet.core.api.model,net.na
  n21.dnet.core.presenter.model",net.nan21.dnet.module.bd.org.ds.model;
- version="1.0.0.M6";uses:="net.nan21.dnet.core.api.annotation,net.nan2
+ version="1.0.0.M7";uses:="net.nan21.dnet.core.api.annotation,net.nan2
  1.dnet.core.api.model,net.nan21.dnet.core.presenter.model,net.nan21.d
  net.module.bd.org.domain.entity",net.nan21.dnet.module.bd.standards.d
- s.converter;version="1.0.0.M6";uses:="net.nan21.dnet.core.api.convert
+ s.converter;version="1.0.0.M7";uses:="net.nan21.dnet.core.api.convert
  er,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.module.bd.s
  tandards.domain.entity,net.nan21.dnet.module.bd.standards.ds.model",n
- et.nan21.dnet.module.bd.standards.ds.filter;version="1.0.0.M6";uses:=
+ et.nan21.dnet.module.bd.standards.ds.filter;version="1.0.0.M7";uses:=
  "net.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.model",n
- et.nan21.dnet.module.bd.standards.ds.model;version="1.0.0.M6";uses:="
+ et.nan21.dnet.module.bd.standards.ds.model;version="1.0.0.M7";uses:="
  net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.model,net.
  nan21.dnet.core.presenter.model,net.nan21.dnet.module.bd.standards.do
  main.entity",net.nan21.dnet.module.bd.uom.ds.converter;version="1.0.0
- .M6";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.pre
+ .M7";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.pre
  senter.converter,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21
  .dnet.module.bd.uom.ds.model",net.nan21.dnet.module.bd.uom.ds.filter;
- version="1.0.0.M6";uses:="net.nan21.dnet.core.api.model,net.nan21.dne
+ version="1.0.0.M7";uses:="net.nan21.dnet.core.api.model,net.nan21.dne
  t.core.presenter.model",net.nan21.dnet.module.bd.uom.ds.model;version
- ="1.0.0.M6";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.
+ ="1.0.0.M7";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.
  core.api.model,net.nan21.dnet.core.presenter.model,net.nan21.dnet.mod
  ule.bd.uom.domain.entity"
-Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M6,1.0.0.M6]",na
- n21.dnet.core.presenter;version="[1.0.0.M6,1.0.0.M6]",javax.persisten
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M7,1.0.0.M7]",na
+ n21.dnet.core.presenter;version="[1.0.0.M7,1.0.0.M7]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.5)
  ",org.eclipse.persistence.core;version="[2.0,2.5)",nan21.dnet.module.
- bd.domain;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.module.bd.business
- ;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.module.ad.domain;version="[
- 1.0.0.M6,1.0.0.M6]",nan21.dnet.module.ad.business;version="[1.0.0.M6,
- 1.0.0.M6]"
+ bd.domain;version="[1.0.0.M7,1.0.0.M7]",nan21.dnet.module.bd.business
+ ;version="[1.0.0.M7,1.0.0.M7]",nan21.dnet.module.ad.domain;version="[
+ 1.0.0.M7,1.0.0.M7]",nan21.dnet.module.ad.business;version="[1.0.0.M7,
+ 1.0.0.M7]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M6
+Bundle-Version: 1.0.0.M7
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet BD - presenter
 Bundle-ManifestVersion: 2

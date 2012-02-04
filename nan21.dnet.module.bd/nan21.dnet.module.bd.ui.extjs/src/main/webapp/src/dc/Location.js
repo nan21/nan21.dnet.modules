@@ -21,7 +21,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$ListCtx", {
 	alias:"widget.net.nan21.dnet.module.bd.geo.dc.Location$ListCtx",
 	
 	 _noImport_: true
-	,_noExport_: true
+	,_noExport_: false
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"countryCode", dataIndex:"countryCode",width:100 })   	
@@ -33,13 +33,11 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$ListCtx", {
 		.addBooleanColumn({ name:"mailing", dataIndex:"mailing", width:60})   	     
 		.addBooleanColumn({ name:"shipping", dataIndex:"shipping", width:60})   	     
 		.addBooleanColumn({ name:"active", dataIndex:"active", width:60})   	     
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"countryId", dataIndex:"countryId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"regionId", dataIndex:"regionId", hidden:true,format:"0",width:70 })  
+		.addTextColumn({ name:"targetType", dataIndex:"targetType", hidden:true,width:150 })   	
+		.addTextColumn({ name:"targetUuid", dataIndex:"targetUuid", hidden:true,width:100 })   	
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -63,10 +61,10 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$EditCtx", {
 		.addCheckbox({ name:"shipping", dataIndex:"shipping"  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:250})     
-		.addPanel({ name:"col2", layout:"anchor" , width:350})     
-		.addPanel({ name:"col3", layout:"anchor" , width:200})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"col1", layout:"form" , width:250})     
+		.addPanel({ name:"col2", layout:"form" , width:350})     
+		.addPanel({ name:"col3", layout:"form" , width:200})     
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {

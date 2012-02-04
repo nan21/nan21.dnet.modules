@@ -35,6 +35,8 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.filter.ProjectVersionDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.pj.md.ds.param.ProjectVersionDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.pj.md.ds.qb.ProjectVersionDsQueryBuilder" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.ProjectVersionDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -51,6 +53,28 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectVersionLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectVersionLovDs" />
+	</bean>
+   
+ 	<bean id="ProjectVersionPlannedLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectVersionPlannedLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectVersionPlannedLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectVersionPlannedLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectVersionPlannedLovDs" />
+	</bean>
+   
+ 	<bean id="ProjectVersionReleasedLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectVersionReleasedLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectVersionReleasedLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectVersionReleasedLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectVersionReleasedLovDs" />
 	</bean>
    
  	<bean id="ProjectComponentDsService" scope="prototype"
@@ -97,18 +121,6 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectMemberLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectMemberLovDs" />
-	</bean>
-   
- 	<bean id="ProjectAttachmentDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectAttachmentDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.filter.ProjectAttachmentDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectAttachment" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.ProjectAttachmentDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ProjectAttachment" />
-		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.ProjectAttachmentDs" />
 	</bean>
    
  	<bean id="IssueChangelogDsService" scope="prototype"
@@ -192,18 +204,6 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueLink" />
 		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueLinkDs" />
-	</bean>
-   
- 	<bean id="IssueAttachmentDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueAttachmentDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.ds.filter.IssueAttachmentDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.IssueAttachment" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.pj.md.ds.converter.IssueAttachmentDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="IssueAttachment" />
-		<property name="modelClass" value="net.nan21.dnet.module.pj.md.ds.model.IssueAttachmentDs" />
 	</bean>
       
 </beans>

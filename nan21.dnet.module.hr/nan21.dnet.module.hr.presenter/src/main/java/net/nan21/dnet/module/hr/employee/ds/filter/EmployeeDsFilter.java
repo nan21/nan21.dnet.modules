@@ -14,7 +14,17 @@ import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
 public class EmployeeDsFilter extends AbstractDsFilter implements IModelWithId,
         IModelWithClientId {
 
+    private String name;
+
+    private String code;
+
+    private Boolean active;
+
+    private String notes;
+
     private Long id;
+
+    private String uuid;
 
     private Long clientId;
 
@@ -32,6 +42,8 @@ public class EmployeeDsFilter extends AbstractDsFilter implements IModelWithId,
 
     private String modifiedBy;
 
+    private String entityFQN;
+
     private Long employerId;
 
     private Long employerId_From;
@@ -40,8 +52,6 @@ public class EmployeeDsFilter extends AbstractDsFilter implements IModelWithId,
     private String employerCode;
 
     private String businessObject;
-
-    private String code;
 
     private String firstName;
 
@@ -147,6 +157,38 @@ public class EmployeeDsFilter extends AbstractDsFilter implements IModelWithId,
 
     private String payroll;
 
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public String getNotes() {
+        return this.notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
     public Long getId() {
         return this.id;
     }
@@ -154,6 +196,14 @@ public class EmployeeDsFilter extends AbstractDsFilter implements IModelWithId,
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -228,6 +278,14 @@ public class EmployeeDsFilter extends AbstractDsFilter implements IModelWithId,
         this.modifiedBy = modifiedBy;
     }
 
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
+    }
+
     public Long getEmployerId() {
         return this.employerId;
     }
@@ -266,14 +324,6 @@ public class EmployeeDsFilter extends AbstractDsFilter implements IModelWithId,
 
     public void setBusinessObject(String businessObject) {
         this.businessObject = businessObject;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public String getFirstName() {

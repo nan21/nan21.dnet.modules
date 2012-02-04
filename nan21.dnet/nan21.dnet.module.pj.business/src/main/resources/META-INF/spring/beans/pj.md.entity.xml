@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="ProjectService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ProjectService"  />  
+ 
+ 	<bean id="ProjectMemberService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ProjectMemberService"  />  
+ 
+ 	<bean id="ProjectComponentService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ProjectComponentService"  />  
+ 
+ 	<bean id="ProjectVersionService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ProjectVersionService"  />  
+ 
+ 	<bean id="ProjectAttachmentService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.ProjectAttachmentService"  />  
+ 
+ 	<bean id="IssueService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueService"  />  
+ 
+ 	<bean id="IssueTaskService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueTaskService"  />  
+ 
+ 	<bean id="IssueTextService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueTextService"  />  
+ 
+ 	<bean id="IssueLinkService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueLinkService"  />  
+ 
+ 	<bean id="IssueAttachmentService" scope="prototype"
+	  		class="net.nan21.dnet.module.pj.md.business.serviceimpl.IssueAttachmentService"  />  
+   
+</beans>
+   

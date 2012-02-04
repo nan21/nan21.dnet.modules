@@ -36,9 +36,6 @@
  
  	<bean id="EmploymentTypeService" scope="prototype"
 	  		class="net.nan21.dnet.module.hr.employee.business.serviceimpl.EmploymentTypeService"  />  
- 
- 	<bean id="EmployeeAttachmentService" scope="prototype"
-	  		class="net.nan21.dnet.module.hr.employee.business.serviceimpl.EmployeeAttachmentService"  />  
    
 </beans>
    

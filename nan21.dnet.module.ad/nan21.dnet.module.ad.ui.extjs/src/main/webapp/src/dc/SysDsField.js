@@ -26,6 +26,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsField$CtxList", {
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name", width:200 })   	
 		.addTextColumn({ name:"dataType", dataIndex:"dataType",width:150 })   	
+	  	.addDefaults()
 	  ;		   
 	}
 });

@@ -74,18 +74,6 @@
 		<property name="name" value="SalesOrderStatusLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusLovDs" />
 	</bean>
-   
- 	<bean id="SalesOrderAttachmentDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderAttachmentDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderAttachmentDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderAttachment" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderAttachmentDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="SalesOrderAttachment" />
-		<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderAttachmentDs" />
-	</bean>
       
 </beans>
    

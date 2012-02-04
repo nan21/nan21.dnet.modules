@@ -43,10 +43,6 @@
 
 	<!-- Other beans / services  -->
 	
-	<bean id="projectAttachmentUploadService" scope="prototype"
-		class="net.nan21.dnet.module.pj._presenterdelegates.md.ProjectAttachmentUploadDelegate"></bean>
-		
-	<bean id="projectIssueAttachmentUploadService" scope="prototype"
-		class="net.nan21.dnet.module.pj._presenterdelegates.md.IssueAttachmentUploadDelegate"></bean>
+ 
 		
 </beans>

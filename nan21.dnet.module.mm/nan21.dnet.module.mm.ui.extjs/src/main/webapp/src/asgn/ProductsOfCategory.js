@@ -22,15 +22,16 @@ Ext.define("net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$List", {
 
 Ext.define("net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Ui", {
 	extend: "dnet.core.asgn.AbstractAsgnUi",
-	alias: "widget.net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Ui",
- 	 width:700
-	,height:400 
-	,title:"Assign attributes to group"
-	,_controller_:net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory
-	,_filterFields_: [["id","Id"],["code","Code"],["name","Name"]]
-	,_defaultFilterField_ : "code" 
-	 
-	,_defineElements_: function () {
+		 
+ 	width:700,
+	height:400,
+	title:"Assign attributes to group",
+
+	_controller_:net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory,
+	_filterFields_: [["id","Id"],["code","Code"],["name","Name"]],
+	_defaultFilterField_ : "code", 
+
+	_defineElements_: function () {
 		this._getBuilder_()
 			.addLeftGrid({ xtype:"net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Left"})
 			.addRightGrid({ xtype:"net.nan21.dnet.module.mm.md.asgn.ProductsOfCategory$Right"})

@@ -25,6 +25,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsEvent$CtxList", {
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name",width:100 })   	
+	  	.addDefaults()
 	  ;		   
 	}
 });

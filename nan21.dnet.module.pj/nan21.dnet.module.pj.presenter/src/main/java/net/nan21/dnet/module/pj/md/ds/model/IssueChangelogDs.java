@@ -23,12 +23,14 @@ public class IssueChangelogDs extends AbstractDsModel<Issue> implements
         IModelWithId, IModelWithClientId {
 
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fPROJECTID = "projectId";
     public static final String fPROJECT = "project";
     public static final String fPROJECTNAME = "projectName";
@@ -49,6 +51,9 @@ public class IssueChangelogDs extends AbstractDsModel<Issue> implements
     private Long id;
 
     @DsField()
+    private String uuid;
+
+    @DsField()
     private Long clientId;
 
     @DsField()
@@ -65,6 +70,9 @@ public class IssueChangelogDs extends AbstractDsModel<Issue> implements
 
     @DsField()
     private Long version;
+
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
 
     @DsField(join = "left", path = "project.id")
     private Long projectId;
@@ -128,6 +136,14 @@ public class IssueChangelogDs extends AbstractDsModel<Issue> implements
 
     }
 
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public Long getClientId() {
         return this.clientId;
     }
@@ -174,6 +190,14 @@ public class IssueChangelogDs extends AbstractDsModel<Issue> implements
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
     public Long getProjectId() {

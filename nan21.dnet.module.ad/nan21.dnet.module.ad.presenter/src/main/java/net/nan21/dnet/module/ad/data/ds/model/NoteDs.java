@@ -19,18 +19,23 @@ public class NoteDs extends AbstractDsModel<Note> implements IModelWithId,
         IModelWithClientId {
 
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fNOTE = "note";
-    public static final String fTARGETID = "targetId";
+    public static final String fTARGETUUID = "targetUuid";
     public static final String fTARGETTYPE = "targetType";
 
     @DsField()
     private Long id;
+
+    @DsField()
+    private String uuid;
 
     @DsField()
     private Long clientId;
@@ -50,11 +55,14 @@ public class NoteDs extends AbstractDsModel<Note> implements IModelWithId,
     @DsField()
     private Long version;
 
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
+
     @DsField()
     private String note;
 
     @DsField()
-    private Long targetId;
+    private String targetUuid;
 
     @DsField()
     private String targetType;
@@ -74,6 +82,14 @@ public class NoteDs extends AbstractDsModel<Note> implements IModelWithId,
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -124,6 +140,14 @@ public class NoteDs extends AbstractDsModel<Note> implements IModelWithId,
         this.version = version;
     }
 
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
+    }
+
     public String getNote() {
         return this.note;
     }
@@ -132,12 +156,12 @@ public class NoteDs extends AbstractDsModel<Note> implements IModelWithId,
         this.note = note;
     }
 
-    public Long getTargetId() {
-        return this.targetId;
+    public String getTargetUuid() {
+        return this.targetUuid;
     }
 
-    public void setTargetId(Long targetId) {
-        this.targetId = targetId;
+    public void setTargetUuid(String targetUuid) {
+        this.targetUuid = targetUuid;
     }
 
     public String getTargetType() {

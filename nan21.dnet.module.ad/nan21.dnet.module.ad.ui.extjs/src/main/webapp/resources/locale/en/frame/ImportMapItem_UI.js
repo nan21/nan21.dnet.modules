@@ -1,5 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI$Trl", {  	  	
+	wdwImportFile__ttl : "Import file from server",
 	
 	
 	btnRunImport__ttl : "Import selected",

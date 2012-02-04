@@ -17,7 +17,6 @@ net.nan21.dnet.module.mm.menu.crm = [
 		
 		{id:"ProductCategory_UI", text:Dnet.translate("ui","ProductCategory_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", _bundle_:BUNDLE_ID},		
 		{id:"Product_UI", text:Dnet.translate("ui","Product_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.Product_UI", _bundle_:BUNDLE_ID},		
-		{id:"ProductAttachment_UI", text:Dnet.translate("ui","ProductAttachment_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAttachment_UI", _bundle_:BUNDLE_ID},		
 		{id:"ProductAttributeValue_UI", text:Dnet.translate("ui","ProductAttributeValue_UI"), leaf:true, _frame_:"net.nan21.dnet.module.mm.md.frame.ProductAttributeValue_UI", _bundle_:BUNDLE_ID}	]}
 ,		 
 	{"id":"sm_mm_inventory", "text":"Inventory", leaf:false, children:[

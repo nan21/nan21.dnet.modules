@@ -22,6 +22,8 @@ public class AttachmentTypeDsFilter extends AbstractDsFilter implements
 
     private Long id;
 
+    private String uuid;
+
     private Long clientId;
 
     private Date createdAt;
@@ -37,6 +39,8 @@ public class AttachmentTypeDsFilter extends AbstractDsFilter implements
     private String createdBy;
 
     private String modifiedBy;
+
+    private String entityFQN;
 
     private String category;
 
@@ -77,6 +81,14 @@ public class AttachmentTypeDsFilter extends AbstractDsFilter implements
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -149,6 +161,14 @@ public class AttachmentTypeDsFilter extends AbstractDsFilter implements
 
     public void setModifiedBy(String modifiedBy) {
         this.modifiedBy = modifiedBy;
+    }
+
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
     public String getCategory() {

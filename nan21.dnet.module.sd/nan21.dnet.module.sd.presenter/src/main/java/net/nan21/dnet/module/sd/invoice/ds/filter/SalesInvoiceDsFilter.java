@@ -14,7 +14,17 @@ import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
 public class SalesInvoiceDsFilter extends AbstractDsFilter implements
         IModelWithId, IModelWithClientId {
 
+    private String name;
+
+    private String code;
+
+    private Boolean active;
+
+    private String notes;
+
     private Long id;
+
+    private String uuid;
 
     private Long clientId;
 
@@ -32,7 +42,7 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
 
     private String modifiedBy;
 
-    private String docNo;
+    private String entityFQN;
 
     private Date docDate;
 
@@ -82,6 +92,8 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
     private Long customerId_From;
     private Long customerId_To;
 
+    private String customerUuid;
+
     private String customerCode;
 
     private String customer;
@@ -114,6 +126,38 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
 
     private String className;
 
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public String getNotes() {
+        return this.notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
     public Long getId() {
         return this.id;
     }
@@ -121,6 +165,14 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -195,12 +247,12 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
         this.modifiedBy = modifiedBy;
     }
 
-    public String getDocNo() {
-        return this.docNo;
+    public String getEntityFQN() {
+        return this.entityFQN;
     }
 
-    public void setDocNo(String docNo) {
-        this.docNo = docNo;
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
     public Date getDocDate() {
@@ -425,6 +477,14 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
 
     public void setCustomerId_To(Long customerId_To) {
         this.customerId_To = customerId_To;
+    }
+
+    public String getCustomerUuid() {
+        return this.customerUuid;
+    }
+
+    public void setCustomerUuid(String customerUuid) {
+        this.customerUuid = customerUuid;
     }
 
     public String getCustomerCode() {

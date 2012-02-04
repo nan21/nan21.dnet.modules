@@ -26,11 +26,11 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter", {
 		.addCheckbox({ name:"hideActive" ,paramIndex:"hideActive" ,listeners:{change:{scope:this, fn:this._doQuery_}} })
 		.addCheckbox({ name:"hideCompleted" ,paramIndex:"hideCompleted" ,listeners:{change:{scope:this, fn:this._doQuery_}} })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210, defaults:{
+		.addPanel({ name:"col1", layout:"form",width:210, defaults:{
 labelAlign:"right",labelWidth:150}}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210, defaults:{
+		.addPanel({ name:"col2", layout:"form",width:210, defaults:{
 labelAlign:"right",labelWidth:150}}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -53,7 +53,6 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List", {
 	,_noExport_: false
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addTextColumn({ name:"id", dataIndex:"id", hidden:true,width:200 })   	
 		.addTextColumn({ name:"processId", dataIndex:"processId", hidden:true,width:200 })   	
 		.addTextColumn({ name:"taskKey", dataIndex:"taskKey",width:200 })   	
 		.addTextColumn({ name:"processInstanceId", dataIndex:"processInstanceId", hidden:true,width:200 })   	
@@ -65,6 +64,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List", {
 		.addDateColumn({ name:"endTime", dataIndex:"endTime",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addNumberColumn({ name:"priority", dataIndex:"priority", hidden:true,format:"0",width:70 })  
 		.addDateColumn({ name:"dueDate", dataIndex:"dueDate", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -80,7 +80,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm", {
 		this._getBuilder_()	
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:32  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250})     
+		.addPanel({ name:"main", layout:"form" , autoScroll:true})     
 		;     
 	}
 	,_linkElements_: function () {

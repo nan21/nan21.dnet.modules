@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderStatusDs$Trl", {  	  	
-	sequenceNo__lbl :  "Secvenţă",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	sequenceNo__lbl :  "Secvenţă",
 		 
 	id__lbl :"ID"
 });

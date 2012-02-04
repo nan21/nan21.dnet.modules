@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.UUID;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -90,59 +91,85 @@ public class WfDefNode implements Serializable, IModelWithId,
     @NotBlank
     private String taskType;
 
-    /** Name. */
+    /**
+     * Name of entity.
+     */
     @Column(name = "NAME", nullable = false, length = 255)
     @NotBlank
     private String name;
 
-    /** Flag which indicates if this record is used.*/
+    /** 
+     * Flag which indicates if this record is actively used.
+     */
     @Column(name = "ACTIVE", nullable = false)
     @NotNull
     private Boolean active;
 
-    /** Notes about this record. */
+    /**
+     * Description of entity.
+     */
     @Column(name = "DESCRIPTION", length = 400)
     private String description;
 
-    /** Owner client */
+    /**
+     * Identifies the client(tenant) which owns this record.
+     */
     @Column(name = "CLIENTID", nullable = false)
     @NotNull
     private Long clientId;
 
-    /** Timestamp when this record was created.*/
+    /**
+     * Timestamp when this record was created.
+     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREATEDAT", nullable = false)
     @NotNull
     private Date createdAt;
 
-    /** Timestamp when this record was last modified.*/
+    /**
+     * Timestamp when this record was last modified.
+     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "MODIFIEDAT", nullable = false)
     @NotNull
     private Date modifiedAt;
 
-    /** User who created this record.*/
+    /**
+     * User who created this record.
+     */
     @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
-    /** User who last modified this record.*/
+    /**
+     * User who last modified this record.
+     */
     @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
     @Version
-    /** Record version number used by the persistence framework. */
+    /** 
+     * Record version number used by the persistence framework.
+     */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
 
-    /** System generated unique identifier */
+    /**
+     * System generated unique identifier.
+     */
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
+
+    /**
+     * System generated UID. Useful for data import-export and data-replication
+     */
+    @Column(name = "UUID", length = 36)
+    private String uuid;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = WfDefProcess.class)
     @JoinColumn(name = "PROCESS_ID", referencedColumnName = "ID")
     private WfDefProcess process;
@@ -265,6 +292,14 @@ public class WfDefNode implements Serializable, IModelWithId,
         this.id = id;
     }
 
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     @Transient
     public String getClassName() {
         return this.getClass().getCanonicalName();
@@ -308,6 +343,10 @@ public class WfDefNode implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.uuid == null || this.uuid.equals("")) {
+            event.updateAttributeWithObject("uuid", UUID.randomUUID()
+                    .toString().toUpperCase());
+        }
         if (this.startWithPrevious == null) {
             event.updateAttributeWithObject("startWithPrevious", false);
         }

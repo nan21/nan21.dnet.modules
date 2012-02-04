@@ -1,6 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs$Trl", {  	  	
-	docNo__lbl : "Doc No",
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	docDate__lbl : "Doc Date",
 	businessObject__lbl : "Business Object",
 	status__lbl : "Status",
@@ -12,6 +13,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs$Trl", {
 	totalTaxAmount__lbl : "Total Tax Amount",
 	totalAmount__lbl : "Total Amount",
 	customerId__lbl : "Customer Id",
+	customerUuid__lbl : "Customer Uuid",
 	customerCode__lbl : "Customer Code",
 	customer__lbl : "Customer",
 	billToLocationId__lbl : "Bill To Location Id",

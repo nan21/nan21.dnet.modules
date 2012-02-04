@@ -19,13 +19,15 @@ public class AttachmentDs extends AbstractDsModel<Attachment> implements
         IModelWithId, IModelWithClientId {
 
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
-    public static final String fTARGETID = "targetId";
+    public static final String fENTITYFQN = "entityFQN";
+    public static final String fTARGETUUID = "targetUuid";
     public static final String fTARGETTYPE = "targetType";
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
@@ -37,6 +39,9 @@ public class AttachmentDs extends AbstractDsModel<Attachment> implements
 
     @DsField()
     private Long id;
+
+    @DsField()
+    private String uuid;
 
     @DsField()
     private Long clientId;
@@ -56,8 +61,11 @@ public class AttachmentDs extends AbstractDsModel<Attachment> implements
     @DsField()
     private Long version;
 
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
+
     @DsField()
-    private Long targetId;
+    private String targetUuid;
 
     @DsField()
     private String targetType;
@@ -98,6 +106,14 @@ public class AttachmentDs extends AbstractDsModel<Attachment> implements
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -148,12 +164,20 @@ public class AttachmentDs extends AbstractDsModel<Attachment> implements
         this.version = version;
     }
 
-    public Long getTargetId() {
-        return this.targetId;
+    public String getEntityFQN() {
+        return this.entityFQN;
     }
 
-    public void setTargetId(Long targetId) {
-        this.targetId = targetId;
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
+    }
+
+    public String getTargetUuid() {
+        return this.targetUuid;
+    }
+
+    public void setTargetUuid(String targetUuid) {
+        this.targetUuid = targetUuid;
     }
 
     public String getTargetType() {

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="SysParamDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysParamDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysParamDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysParam" />
+	  	<property name="rpcFilter" >
+	  		<map>
+	  			<entry key="refreshSysConfig">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.system.SysParamDelegate"/>
+	  				<constructor-arg name="methodName" value="reloadSysConfig" />
+	  			</bean>	
+	  			</entry>	 
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysParam" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysParamDs" />
+	</bean>
+   
+ 	<bean id="SysDataSourceDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysDataSourceDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
+	  	<property name="rpcFilter" >
+	  		<map>
+	  			<entry key="synchronizeCatalog">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.system.SysDataSourceDelegate"/>
+	  				<constructor-arg name="methodName" value="synchronizeCatalog" />
+	  			</bean>	
+	  			</entry>	 
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDataSource" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs" />
+	</bean>
+   
+ 	<bean id="SysDataSourceLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDataSourceLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceLovDs" />
+	</bean>
+   
+ 	<bean id="SysDataSourceDsLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDsLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDsLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDataSourceDsLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDsLovDs" />
+	</bean>
+   
+ 	<bean id="SysDataSourceAsgnLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceAsgnLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceAsgnLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDataSourceAsgnLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceAsgnLovDs" />
+	</bean>
+   
+ 	<bean id="SysDsFieldDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysDsFieldDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsField" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsFieldDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsField" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldDs" />
+	</bean>
+   
+ 	<bean id="SysDsFieldLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsField" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsFieldLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldLovDs" />
+	</bean>
+   
+ 	<bean id="SysDsServiceDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysDsServiceDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsService" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsServiceDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsService" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceDs" />
+	</bean>
+   
+ 	<bean id="SysDsServiceLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsService" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsServiceLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceLovDs" />
+	</bean>
+   
+ 	<bean id="SysDsEventDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysDsEventDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysDsEventDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsEvent" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventDs" />
+	</bean>
+   
+ 	<bean id="SysDsEventLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDsEventLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventLovDs" />
+	</bean>
+   
+ 	<bean id="SysDateFormatDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysDateFormatDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDateFormat" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatDs" />
+	</bean>
+   
+ 	<bean id="SysDateFormatLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysDateFormatLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatLovDs" />
+	</bean>
+      
+</beans>
+   

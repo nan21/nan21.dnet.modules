@@ -32,10 +32,10 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl$Filter", {
 		.addBooleanField({ name:"importAllowed", dataIndex:"importAllowed",anchor:"-20"  })
 		.addBooleanField({ name:"exportAllowed", dataIndex:"exportAllowed",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor", width:250}) 
-		.addPanel({ name:"col2", layout:"anchor", width:200}) 
-		.addPanel({ name:"col3", layout:"anchor", width:200}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form", width:180}) 
+		.addPanel({ name:"col3", layout:"form", width:180}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -55,6 +55,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl$EditList", {
 	
 	 _noImport_: false
 	,_noExport_: false
+	,_bulkEditFields_ : ["queryAllowed","insertAllowed","updateAllowed","deleteAllowed","importAllowed","exportAllowed"]
 	,_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"accessControl", xtype:"gridcolumn", dataIndex:"accessControl",width:120,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.AccessControls" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "accessControlId"} ]} })
@@ -65,12 +66,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl$EditList", {
 		.addBooleanColumn({ name:"deleteAllowed", dataIndex:"deleteAllowed"})
 		.addBooleanColumn({ name:"importAllowed", dataIndex:"importAllowed"})
 		.addBooleanColumn({ name:"exportAllowed", dataIndex:"exportAllowed"})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"accessControlId", dataIndex:"accessControlId", hidden:true, align:"right",format:"0",width:70})
+	  	.addDefaults()
 	  ;  		   
 	}  
 });
@@ -82,6 +79,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl$CtxEditList", {
 	
 	 _noImport_: true
 	,_noExport_: true
+	,_bulkEditFields_ : ["queryAllowed","insertAllowed","updateAllowed","deleteAllowed","importAllowed","exportAllowed"]
 	,_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"dsName", xtype:"gridcolumn", dataIndex:"dsName",width:200,editor:{xtype:"net.nan21.dnet.module.ad.system.lovs.SysDataSourceDs" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: []} })
@@ -91,12 +89,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.DsAccessControl$CtxEditList", {
 		.addBooleanColumn({ name:"deleteAllowed", dataIndex:"deleteAllowed"})
 		.addBooleanColumn({ name:"importAllowed", dataIndex:"importAllowed"})
 		.addBooleanColumn({ name:"exportAllowed", dataIndex:"exportAllowed"})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"accessControlId", dataIndex:"accessControlId", hidden:true, align:"right",format:"0",width:70})
+	  	.addDefaults()
 	  ;  		   
 	}  
 });

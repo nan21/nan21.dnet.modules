@@ -19,15 +19,18 @@ public class IssueTaskDs extends AbstractDsModel<IssueTask> implements
         IModelWithId, IModelWithClientId {
 
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fSUMMARY = "summary";
     public static final String fDESCRIPTION = "description";
     public static final String fISSUEID = "issueId";
+    public static final String fISSUEUUID = "issueUuId";
     public static final String fISSUE = "issue";
     public static final String fISSUESUMMARY = "issueSummary";
     public static final String fISSUEPRIORITYID = "issuePriorityId";
@@ -55,6 +58,9 @@ public class IssueTaskDs extends AbstractDsModel<IssueTask> implements
     private Long id;
 
     @DsField()
+    private String uuid;
+
+    @DsField()
     private Long clientId;
 
     @DsField()
@@ -72,6 +78,9 @@ public class IssueTaskDs extends AbstractDsModel<IssueTask> implements
     @DsField()
     private Long version;
 
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
+
     @DsField()
     private String summary;
 
@@ -80,6 +89,9 @@ public class IssueTaskDs extends AbstractDsModel<IssueTask> implements
 
     @DsField(join = "left", path = "issue.id")
     private Long issueId;
+
+    @DsField(join = "left", path = "issue.uuid")
+    private String issueUuId;
 
     @DsField(join = "left", path = "issue.code")
     private String issue;
@@ -164,6 +176,14 @@ public class IssueTaskDs extends AbstractDsModel<IssueTask> implements
 
     }
 
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public Long getClientId() {
         return this.clientId;
     }
@@ -212,6 +232,14 @@ public class IssueTaskDs extends AbstractDsModel<IssueTask> implements
         this.version = version;
     }
 
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
+    }
+
     public String getSummary() {
         return this.summary;
     }
@@ -234,6 +262,14 @@ public class IssueTaskDs extends AbstractDsModel<IssueTask> implements
 
     public void setIssueId(Long issueId) {
         this.issueId = issueId;
+    }
+
+    public String getIssueUuId() {
+        return this.issueUuId;
+    }
+
+    public void setIssueUuId(String issueUuId) {
+        this.issueUuId = issueUuId;
     }
 
     public String getIssue() {

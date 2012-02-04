@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.ad.report.ds.model.DsReportParamDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	dsReportId__lbl : "Ds Report Id",
 	reportId__lbl : "Report Id",
 	reportCode__lbl : "Report Code",

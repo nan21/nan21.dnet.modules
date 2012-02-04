@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysDateFormatDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	extjsDateFormat__lbl : "Extjs Date Format",
 	extjsTimeFormat__lbl : "Extjs Time Format",
 	extjsDateTimeFormat__lbl : "Extjs Date Time Format",

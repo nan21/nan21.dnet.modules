@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	importMapId__lbl : "Import Map Id",
 	importMapName__lbl : "Import Map Name",
 	sequenceNo__lbl : "Sequence No",

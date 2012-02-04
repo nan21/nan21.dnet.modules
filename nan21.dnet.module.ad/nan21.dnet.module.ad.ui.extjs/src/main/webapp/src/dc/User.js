@@ -31,9 +31,9 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Filter", {
 		.addLov({ name:"withRole", xtype:"net.nan21.dnet.module.ad.usr.lovs.Roles", paramIndex:"withRole",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "withRoleId"} ]  })
 		.addLov({ name:"inGroup", xtype:"net.nan21.dnet.module.ad.usr.lovs.UserGroups", paramIndex:"inGroup",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "inGroupId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor", width:250}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -62,11 +62,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$List", {
 		.addTextColumn({ name:"thousandSeparator", dataIndex:"thousandSeparator", hidden:true,width:50 })   	
 		.addTextColumn({ name:"dateFormat", dataIndex:"dateFormat", hidden:true,width:120 })   	
 		.addTextColumn({ name:"notes", dataIndex:"notes", hidden:true,width:200 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })   	
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -90,9 +86,9 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Edit", {
 		.addCombo({ name:"thousandSeparator", xtype:"localcombo", dataIndex:"thousandSeparator",anchor:"-20" ,store:[ ".", ","]  })
 		.addLov({ name:"dateFormat", xtype:"net.nan21.dnet.module.ad.system.lovs.SysDateFormats", dataIndex:"dateFormat",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "dateFormatId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:350})     
-		.addPanel({ name:"col2", layout:"anchor" ,title:"Regional settings", width:280,xtype:"fieldset", border:false, collapsible:true})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"col1", layout:"form" , width:350})     
+		.addPanel({ name:"col2", layout:"form" ,title:"Regional settings", width:280,xtype:"fieldset", border:true, collapsible:true})     
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {
@@ -115,7 +111,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm", {
 		.addTextField({ name:"newPassword", paramIndex:"newPassword",anchor:"-20" ,allowBlank:false  })
 		.addTextField({ name:"confirmPassword", paramIndex:"confirmPassword",anchor:"-20" ,allowBlank:false  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:350})     
+		.addPanel({ name:"main", layout:"form" , autoScroll:true, width:350})     
 		;     
 	}
 	,_linkElements_: function () {

@@ -20,11 +20,13 @@ public class MyCalendarCallDs extends AbstractDsModel<CalendarEvent> implements
         IModelWithId, IModelWithClientId {
 
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fSUBJECT = "subject";
     public static final String fSTARTDATE = "startDate";
     public static final String fENDDATE = "endDate";
@@ -48,6 +50,9 @@ public class MyCalendarCallDs extends AbstractDsModel<CalendarEvent> implements
     private Long id;
 
     @DsField()
+    private String uuid;
+
+    @DsField()
     private Long clientId;
 
     @DsField()
@@ -61,6 +66,9 @@ public class MyCalendarCallDs extends AbstractDsModel<CalendarEvent> implements
 
     @DsField()
     private Long version;
+
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
 
     @DsField()
     private String subject;
@@ -133,6 +141,14 @@ public class MyCalendarCallDs extends AbstractDsModel<CalendarEvent> implements
 
     }
 
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public Long getClientId() {
         return this.clientId;
     }
@@ -171,6 +187,14 @@ public class MyCalendarCallDs extends AbstractDsModel<CalendarEvent> implements
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
     public String getSubject() {

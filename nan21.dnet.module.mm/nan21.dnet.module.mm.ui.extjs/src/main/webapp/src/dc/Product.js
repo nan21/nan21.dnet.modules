@@ -33,11 +33,11 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Filter", {
 		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
 		.addLov({ name:"productCategory", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductCategories", paramIndex:"productCategory",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "productCategoryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor", width:150, defaults:{
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:150, defaults:{
 labelAlign:"right",labelWidth:70}}) 
-		.addPanel({ name:"col3", layout:"anchor", width:250}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col3", layout:"form", width:250}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -82,11 +82,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$List", {
 		.addTextColumn({ name:"dimUomCode", dataIndex:"dimUomCode", hidden:true,width:100 })   	
 		.addTextColumn({ name:"iconUrl", dataIndex:"iconUrl", hidden:true,width:100 })   	
 		.addTextColumn({ name:"imageUrl", dataIndex:"imageUrl", hidden:true,width:100 })   	
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true,format:"0",width:70 })  
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })   	
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })   	
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -102,7 +98,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", {
 		this._getBuilder_()	
 		.addDisplayFieldText({ name:"name", dataIndex:"name", fieldStyle:"font-weight:bold;"  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true, width:"90%"})     
+		.addPanel({ name:"main", layout:"form" , autoScroll:true, width:"90%"})     
 		;     
 	}
 	,_linkElements_: function () {
@@ -129,12 +125,12 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Edit", {
 		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
 		.addLov({ name:"defaultUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"defaultUomCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "defaultUomId"} ]  })
 		//containers
-		.addPanel({ name:"row1", layout:"anchor" , width:700})     
-		.addPanel({ name:"col1", layout:"anchor" , width:350})     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
-		.addPanel({ name:"col3", layout:"anchor" , width:200})     
+		.addPanel({ name:"row1", layout:"form" , width:700})     
+		.addPanel({ name:"col1", layout:"form" , width:350})     
+		.addPanel({ name:"col2", layout:"form" ,width:250})     
+		.addPanel({ name:"col3", layout:"form" , width:200})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
-		.addPanel({ name:"row2", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} }) 
+		.addPanel({ name:"row2",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
 		;     
 	}
 	,_linkElements_: function () {
@@ -171,11 +167,11 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$EditInfo", {
 		.addTextField({ name:"iconUrl", dataIndex:"iconUrl",anchor:"-20" ,maxLength:255  })
 		.addTextField({ name:"imageUrl", dataIndex:"imageUrl",anchor:"-20" ,maxLength:255  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" ,title:"Physical", width:300,xtype:"fieldset", border:false, collapsible:true})     
-		.addPanel({ name:"col2", layout:"anchor" ,title:"Dimensions", width:300,xtype:"fieldset", border:false, collapsible:true})     
-		.addPanel({ name:"col3", layout:"anchor" ,title:"Image", width:400,xtype:"fieldset", border:false, collapsible:true, defaults:{
+		.addPanel({ name:"col1", layout:"form" ,title:"Physical", width:250,xtype:"fieldset", border:true, collapsible:true})     
+		.addPanel({ name:"col2", layout:"form" ,title:"Dimensions", width:250,xtype:"fieldset", border:true, collapsible:true})     
+		.addPanel({ name:"col3", layout:"form" ,title:"Image", width:400,xtype:"fieldset", border:true, collapsible:true, defaults:{
 labelAlign:"top"}})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {

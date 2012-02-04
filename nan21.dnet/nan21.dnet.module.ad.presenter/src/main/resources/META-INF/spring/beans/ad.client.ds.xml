@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="ClientDsService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.client.ds.serviceext.ClientDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.client.ds.model.ClientDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.client.ds.filter.ClientDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.client.domain.entity.Client" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.ad.client.ds.param.ClientDsParam" />	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Client" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.client.ds.model.ClientDs" />
+	</bean>
+   
+ 	<bean id="MyClientDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.client.ds.model.MyClientDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.client.ds.filter.MyClientDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.client.domain.entity.Client" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="MyClient" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.client.ds.model.MyClientDs" />
+	</bean>
+      
+</beans>
+   

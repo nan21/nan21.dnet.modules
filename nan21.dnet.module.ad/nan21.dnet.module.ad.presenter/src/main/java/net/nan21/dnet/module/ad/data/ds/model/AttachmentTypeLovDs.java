@@ -36,7 +36,7 @@ public class AttachmentTypeLovDs extends AbstractDsModel<AttachmentType>
     @DsField()
     private Boolean active;
 
-    @DsField()
+    @DsField(jpqlFilter = " :useInContext like e.useInContext ")
     private String useInContext;
 
     public AttachmentTypeLovDs() {

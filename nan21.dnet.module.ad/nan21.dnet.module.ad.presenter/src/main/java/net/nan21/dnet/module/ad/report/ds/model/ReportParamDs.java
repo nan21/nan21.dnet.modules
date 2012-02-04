@@ -24,12 +24,14 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
     public static final String fACTIVE = "active";
     public static final String fNOTES = "notes";
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fREPORTID = "reportId";
     public static final String fREPORTCODE = "reportCode";
     public static final String fDEFAULTVALUE = "defaultValue";
@@ -51,6 +53,9 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
     private Long id;
 
     @DsField()
+    private String uuid;
+
+    @DsField()
     private Long clientId;
 
     @DsField()
@@ -67,6 +72,9 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
 
     @DsField()
     private Long version;
+
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
 
     @DsField(join = "left", path = "report.id")
     private Long reportId;
@@ -129,6 +137,14 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
 
     }
 
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public Long getClientId() {
         return this.clientId;
     }
@@ -175,6 +191,14 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
     public Long getReportId() {

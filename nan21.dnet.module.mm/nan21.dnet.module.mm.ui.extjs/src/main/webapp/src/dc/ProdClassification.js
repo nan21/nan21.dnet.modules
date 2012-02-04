@@ -27,9 +27,9 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProdClassification$Filter", {
 		.addTextField({ name:"classificationSystem", dataIndex:"classificationSystem",anchor:"-20",maxLength:32  })
 		.addTextField({ name:"classificationCode", dataIndex:"classificationCode",anchor:"-20",maxLength:32  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -53,13 +53,9 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProdClassification$CtxEditList", {
 		.addLov({name:"classificationSystem", xtype:"gridcolumn", dataIndex:"classificationSystem", width:150,editor:{xtype:"net.nan21.dnet.module.bd.standards.lovs.ClassificationSystems" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "classificationSystemId"} ],filterFieldMapping: [{lovField:"useInContext",value: "Product"} ]} })
 		.addLov({name:"classificationCode", xtype:"gridcolumn", dataIndex:"classificationCode", width:150,editor:{xtype:"net.nan21.dnet.module.bd.standards.lovs.ClassificationCodes" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "classificationId"} ,{lovField:"name", dsField: "classificationName"} ],filterFieldMapping: [{lovField:"classSystemId", dsField: "classificationSystemId"} ]} })
 		.addTextColumn({ name:"classificationName", dataIndex:"classificationName", width:300 })
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
 		.addNumberColumn({ name:"classSystemId", dataIndex:"classificationSystemId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"classCodeId", dataIndex:"classificationId", hidden:true, align:"right",format:"0",width:70})
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
+	  	.addDefaults()
 	  ;  		   
 	}  
 });

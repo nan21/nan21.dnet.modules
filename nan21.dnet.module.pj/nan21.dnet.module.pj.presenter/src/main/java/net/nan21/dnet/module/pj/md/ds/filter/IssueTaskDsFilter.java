@@ -16,6 +16,8 @@ public class IssueTaskDsFilter extends AbstractDsFilter implements
 
     private Long id;
 
+    private String uuid;
+
     private Long clientId;
 
     private Date createdAt;
@@ -32,6 +34,8 @@ public class IssueTaskDsFilter extends AbstractDsFilter implements
 
     private String modifiedBy;
 
+    private String entityFQN;
+
     private String summary;
 
     private String description;
@@ -40,6 +44,8 @@ public class IssueTaskDsFilter extends AbstractDsFilter implements
 
     private Long issueId_From;
     private Long issueId_To;
+
+    private String issueUuId;
 
     private String issue;
 
@@ -121,6 +127,14 @@ public class IssueTaskDsFilter extends AbstractDsFilter implements
 
     }
 
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public Long getClientId() {
         return this.clientId;
     }
@@ -193,6 +207,14 @@ public class IssueTaskDsFilter extends AbstractDsFilter implements
         this.modifiedBy = modifiedBy;
     }
 
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
+    }
+
     public String getSummary() {
         return this.summary;
     }
@@ -231,6 +253,14 @@ public class IssueTaskDsFilter extends AbstractDsFilter implements
 
     public void setIssueId_To(Long issueId_To) {
         this.issueId_To = issueId_To;
+    }
+
+    public String getIssueUuId() {
+        return this.issueUuId;
+    }
+
+    public void setIssueUuId(String issueUuId) {
+        this.issueUuId = issueUuId;
     }
 
     public String getIssue() {

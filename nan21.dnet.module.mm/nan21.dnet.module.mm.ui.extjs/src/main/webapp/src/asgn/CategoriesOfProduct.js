@@ -22,15 +22,16 @@ Ext.define("net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$List", {
 
 Ext.define("net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$Ui", {
 	extend: "dnet.core.asgn.AbstractAsgnUi",
-	alias: "widget.net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$Ui",
- 	 width:700
-	,height:400 
-	,title:"Assign categories to product"
-	,_controller_:net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct
-	,_filterFields_: [["id","Id"],["code","Code"],["name","Name"]]
-	,_defaultFilterField_ : "code" 
-	 
-	,_defineElements_: function () {
+		 
+ 	width:700,
+	height:400,
+	title:"Assign categories to product",
+
+	_controller_:net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct,
+	_filterFields_: [["id","Id"],["code","Code"],["name","Name"]],
+	_defaultFilterField_ : "code", 
+
+	_defineElements_: function () {
 		this._getBuilder_()
 			.addLeftGrid({ xtype:"net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$Left"})
 			.addRightGrid({ xtype:"net.nan21.dnet.module.mm.md.asgn.CategoriesOfProduct$Right"})

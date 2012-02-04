@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	transactionTypeId__lbl : "Transaction Type Id",
 	transactionType__lbl : "Transaction Type",
 	hasFromInventory__lbl : "Has From Inventory",

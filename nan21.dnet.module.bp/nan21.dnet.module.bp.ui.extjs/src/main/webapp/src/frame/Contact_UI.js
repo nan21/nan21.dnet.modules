@@ -9,7 +9,7 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.Contact_UI", {
 		this._getBuilder_()
 		.addDc("c", new net.nan21.dnet.module.bp.md.dc.Contact({}))
 		.addDc("communic", new net.nan21.dnet.module.bd.contact.dc.CommunicationChannel({multiEdit:true}))		
-		.linkDc("communic", "c",{fields:[ {childField:"targetId", parentField:"id"},{childField:"targetType", parentField:"className"} ]} );		
+		.linkDc("communic", "c",{fields:[ {childField:"targetUuid", parentField:"uuid"},{childField:"targetType", parentField:"className"} ]} );		
 	}	 
 
 	,_defineElements_: function() {							
@@ -19,7 +19,8 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.Contact_UI", {
 		.addDcFormView("c",{ name:"cEdit", xtype:"net.nan21.dnet.module.bp.md.dc.Contact$Edit",height:120})	 
 		.addDcView("communic",{ name:"communicEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannel$EditList", frame:true,title:"Communication"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "bpDetailsTab", _wrapped_:true, layout:"fit",frame:"true" ,items:{ xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}}) 	 
+
+		.addPanel({name: "bpDetailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	

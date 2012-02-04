@@ -31,11 +31,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Variable$CtxEditList", {
 		.addNumberColumn({ name:"crossReferenceId", dataIndex:"crossReferenceId", hidden:true, align:"right",format:"0",width:70})
 		.addLov({name:"crossReference", xtype:"gridcolumn", dataIndex:"crossReference",width:200,editor:{xtype:"net.nan21.dnet.module.hr.payroll.lovs.Elements" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "crossReferenceId"} ]} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt",format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy",width:100 })
+	  	.addDefaults()
 	  ;  		   
 	}  
 });

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="ProjectCategoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.ProjectCategoryDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectCategory" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryDs" />
+	</bean>
+   
+ 	<bean id="ProjectCategoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectCategoryLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryLovDs" />
+	</bean>
+   
+ 	<bean id="ProjectRoleDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.ProjectRoleDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectRole" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectRole" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleDs" />
+	</bean>
+   
+ 	<bean id="ProjectRoleLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectRole" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectRoleLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleLovDs" />
+	</bean>
+   
+ 	<bean id="ProjectTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.ProjectTypeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.ProjectTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectType" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeDs" />
+	</bean>
+   
+ 	<bean id="ProjectTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeLovDs" />
+	</bean>
+   
+ 	<bean id="ProjectStatusDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectStatusDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.ProjectStatusDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectStatus" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectStatusDs" />
+	</bean>
+   
+ 	<bean id="ProjectStatusLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectStatusLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.ProjectStatusLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProjectStatusLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectStatusLovDs" />
+	</bean>
+   
+ 	<bean id="IssueCategoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueCategoryDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueCategoryDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueCategory" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueCategory" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueCategoryDs" />
+	</bean>
+   
+ 	<bean id="IssueCategoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueCategoryLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueCategoryLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueCategory" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueCategoryLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueCategoryLovDs" />
+	</bean>
+   
+ 	<bean id="IssueTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTypeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueType" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.pj.base.ds.converter.IssueTypeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueType" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTypeDs" />
+	</bean>
+   
+ 	<bean id="IssueTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTypeLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTypeLovDs" />
+	</bean>
+   
+ 	<bean id="IssueStatusDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueStatusDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueStatusDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueStatus" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueStatusDs" />
+	</bean>
+   
+ 	<bean id="IssueStatusLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueStatusLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueStatusLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueStatusLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueStatusLovDs" />
+	</bean>
+   
+ 	<bean id="IssueSeverityDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueSeverityDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueSeverityDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueSeverity" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueSeverity" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueSeverityDs" />
+	</bean>
+   
+ 	<bean id="IssueSeverityLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueSeverityLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueSeverityLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueSeverity" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueSeverityLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueSeverityLovDs" />
+	</bean>
+   
+ 	<bean id="IssuePriorityDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssuePriorityDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssuePriorityDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssuePriority" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssuePriority" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssuePriorityDs" />
+	</bean>
+   
+ 	<bean id="IssuePriorityLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssuePriorityLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssuePriorityLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssuePriority" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssuePriorityLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssuePriorityLovDs" />
+	</bean>
+   
+ 	<bean id="IssueResolutionDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueResolutionDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueResolutionDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueResolution" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueResolution" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueResolutionDs" />
+	</bean>
+   
+ 	<bean id="IssueResolutionLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueResolutionLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueResolutionLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueResolution" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueResolutionLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueResolutionLovDs" />
+	</bean>
+   
+ 	<bean id="IssueTextTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTextTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTextTypeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTextType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueTextType" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTextTypeDs" />
+	</bean>
+   
+ 	<bean id="IssueTextTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTextTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTextTypeLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTextType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueTextTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTextTypeLovDs" />
+	</bean>
+   
+ 	<bean id="IssueLinkTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueLinkTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueLinkTypeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueLinkType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueLinkType" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueLinkTypeDs" />
+	</bean>
+   
+ 	<bean id="IssueLinkTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueLinkTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueLinkTypeLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueLinkType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueLinkTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueLinkTypeLovDs" />
+	</bean>
+   
+ 	<bean id="IssueTaskTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTaskTypeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueTaskType" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskTypeDs" />
+	</bean>
+   
+ 	<bean id="IssueTaskTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTaskTypeLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueTaskTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskTypeLovDs" />
+	</bean>
+   
+ 	<bean id="IssueTaskStatusDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskStatusDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTaskStatusDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTaskStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueTaskStatus" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskStatusDs" />
+	</bean>
+   
+ 	<bean id="IssueTaskStatusLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskStatusLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTaskStatusLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTaskStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="IssueTaskStatusLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskStatusLovDs" />
+	</bean>
+      
+</beans>
+   

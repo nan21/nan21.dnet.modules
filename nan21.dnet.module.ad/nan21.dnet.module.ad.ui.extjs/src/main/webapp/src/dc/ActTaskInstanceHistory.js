@@ -32,7 +32,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter",
 		.addTextField({ name:"description",_sharedLabel_:true, dataIndex:"description",anchor:"-20",maxLength:4000  })
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20",maxLength:32  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor", autoScroll:true,width:210}) 
+		.addPanel({ name:"main", layout:"form", autoScroll:true,width:210}) 
 		
 	}
 	,_linkElements_: function () {
@@ -50,7 +50,6 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List", {
 	,_noExport_: false
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addTextColumn({ name:"id", dataIndex:"id", hidden:true,width:200 })   	
 		.addTextColumn({ name:"processDefinitionId", dataIndex:"processDefinitionId", hidden:true,width:200 })   	
 		.addTextColumn({ name:"taskDefinitionKey", dataIndex:"taskDefinitionKey", hidden:true,width:200 })   	
 		.addTextColumn({ name:"processInstanceId", dataIndex:"processInstanceId", hidden:true,width:200 })   	
@@ -61,6 +60,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List", {
 		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addNumberColumn({ name:"priority", dataIndex:"priority", hidden:true,format:"0",width:70 })  
 		.addDateColumn({ name:"dueDate", dataIndex:"dueDate", hidden:true,format:Dnet.DATETIME_FORMAT})   	      	     
+	  	.addDefaults()
 	  ;		   
 	}
 });
@@ -76,7 +76,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignFo
 		this._getBuilder_()	
 		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:32  })
 		//containers
-		.addPanel({ name:"main", layout:"anchor" , autoScroll:true,width:250})     
+		.addPanel({ name:"main", layout:"form" , autoScroll:true})     
 		;     
 	}
 	,_linkElements_: function () {

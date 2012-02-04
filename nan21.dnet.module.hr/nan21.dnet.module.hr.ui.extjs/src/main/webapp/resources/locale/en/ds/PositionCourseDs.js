@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.hr.training.ds.model.PositionCourseDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	positionId__lbl : "Position Id",
 	positionCode__lbl : "Position Code",
 	positionName__lbl : "Position Name",

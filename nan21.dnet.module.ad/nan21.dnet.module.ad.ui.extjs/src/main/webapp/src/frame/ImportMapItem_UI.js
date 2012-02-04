@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", {
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		
 		.addWindow({name:"wdwImportFile", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("importFileForm")]
-,modal:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnImportFileRun") ]}}) 	
+,title:"Import file from server",modal:true,width:500,height:140,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnImportFileRun") ]}}) 	
 ;	 	
 	}
 

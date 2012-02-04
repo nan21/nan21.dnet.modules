@@ -24,6 +24,8 @@ public class ProjectDsFilter extends AbstractDsFilter implements IModelWithId,
 
     private Long id;
 
+    private String uuid;
+
     private Long clientId;
 
     private Date createdAt;
@@ -40,12 +42,16 @@ public class ProjectDsFilter extends AbstractDsFilter implements IModelWithId,
 
     private String modifiedBy;
 
+    private String entityFQN;
+
     private Long typeId;
 
     private Long typeId_From;
     private Long typeId_To;
 
     private String type;
+
+    private Boolean isPublic;
 
     private Long projectLeadId;
 
@@ -93,6 +99,14 @@ public class ProjectDsFilter extends AbstractDsFilter implements IModelWithId,
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -167,6 +181,14 @@ public class ProjectDsFilter extends AbstractDsFilter implements IModelWithId,
         this.modifiedBy = modifiedBy;
     }
 
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
+    }
+
     public Long getTypeId() {
         return this.typeId;
     }
@@ -197,6 +219,14 @@ public class ProjectDsFilter extends AbstractDsFilter implements IModelWithId,
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Boolean getIsPublic() {
+        return this.isPublic;
+    }
+
+    public void setIsPublic(Boolean isPublic) {
+        this.isPublic = isPublic;
     }
 
     public Long getProjectLeadId() {

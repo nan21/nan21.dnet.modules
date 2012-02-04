@@ -10,5 +10,5 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ExportMap_UI$Trl", {
 	btnRunExportItem__ttl : "Export selected",
 	btnRunExportItem__desc : "Export the selected item (one at a time).",
 	
-	title: "Export map"
+	title: "Export sets"
 });

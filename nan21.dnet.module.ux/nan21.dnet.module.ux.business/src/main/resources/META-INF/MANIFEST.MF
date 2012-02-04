@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.core.busine
- ss;version="[1.0.0.M6,1.0.0.M6]",nan21.dnet.module.ad.domain;version=
- "[1.0.0.M6,1.0.0.M6]",nan21.dnet.module.bd.domain;version="[1.0.0.M6,
- 1.0.0.M6]",nan21.dnet.module.ux.domain;version="[1.0.0.M6,1.0.0.M6]",
- nan21.dnet.module.ad.business;version="[1.0.0.M6,1.0.0.M6]",nan21.dne
- t.module.bd.business;version="[1.0.0.M6,1.0.0.M6]"
+ dnet.core.domain;version="[1.0.0.M7,1.0.0.M7]",nan21.dnet.core.busine
+ ss;version="[1.0.0.M7,1.0.0.M7]",nan21.dnet.module.ad.domain;version=
+ "[1.0.0.M7,1.0.0.M7]",nan21.dnet.module.bd.domain;version="[1.0.0.M7,
+ 1.0.0.M7]",nan21.dnet.module.ux.domain;version="[1.0.0.M7,1.0.0.M7]",
+ nan21.dnet.module.ad.business;version="[1.0.0.M7,1.0.0.M7]",nan21.dne
+ t.module.bd.business;version="[1.0.0.M7,1.0.0.M7]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M6
+Bundle-Version: 1.0.0.M7
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet UX - business
 Bundle-ManifestVersion: 2

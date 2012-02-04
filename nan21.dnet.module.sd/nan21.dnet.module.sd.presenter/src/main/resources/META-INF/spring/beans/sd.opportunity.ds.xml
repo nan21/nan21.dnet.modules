@@ -128,18 +128,6 @@
 		<property name="name" value="OpportunityResultReasonLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityResultReasonLovDs" />
 	</bean>
-   
- 	<bean id="OpportunityAttachmentDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityAttachmentDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.opportunity.ds.filter.OpportunityAttachmentDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityAttachment" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.sd.opportunity.ds.converter.OpportunityAttachmentDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="OpportunityAttachment" />
-		<property name="modelClass" value="net.nan21.dnet.module.sd.opportunity.ds.model.OpportunityAttachmentDs" />
-	</bean>
       
 </beans>
    

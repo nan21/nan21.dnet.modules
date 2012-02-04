@@ -6,13 +6,9 @@ Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarEventDs$Trl", {
 	dueDate__lbl :  "Planificat la",
 	eventType__lbl :  "Tip",
 	priorityId__lbl :    "Prioritate (ID)",
-	
 	priorityName__lbl :    "Prioritate",
-	
 	contactId__lbl :    "Contact (ID)",
-	
 	contact__lbl :    "Contact",
-	
 	location__lbl :  "Locaţie",
 	url__lbl :  "URL",
 	reminder__lbl :  "Notificare",

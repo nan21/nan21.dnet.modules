@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.ad.usr.ds.model.AccessControlDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 		
 	withRoleId__lbl :"With Role Id",
 	withRole__lbl :"With Role",

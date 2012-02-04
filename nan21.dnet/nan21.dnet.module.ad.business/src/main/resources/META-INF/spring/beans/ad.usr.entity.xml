@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="UserTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.UserTypeService"  />  
+ 
+ 	<bean id="UserService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.UserService"  />  
+ 
+ 	<bean id="UserGroupService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.UserGroupService"  />  
+ 
+ 	<bean id="RoleService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.RoleService"  />  
+ 
+ 	<bean id="AccessControlService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.AccessControlService"  />  
+ 
+ 	<bean id="DsAccessControlService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.DsAccessControlService"  />  
+ 
+ 	<bean id="AsgnAccessControlService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.AsgnAccessControlService"  />  
+ 
+ 	<bean id="AssignableTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.AssignableTypeService"  />  
+ 
+ 	<bean id="AssignableService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.AssignableService"  />  
+   
+</beans>
+   

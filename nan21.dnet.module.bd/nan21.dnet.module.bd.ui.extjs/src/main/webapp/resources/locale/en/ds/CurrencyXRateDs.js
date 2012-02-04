@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.bd.currency.ds.model.CurrencyXRateDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	sourceId__lbl : "Source Id",
 	sourceCode__lbl : "Source Code",
 	targetId__lbl : "Target Id",

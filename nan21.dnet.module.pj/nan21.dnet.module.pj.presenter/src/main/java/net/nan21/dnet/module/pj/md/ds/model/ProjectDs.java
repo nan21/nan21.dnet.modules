@@ -24,14 +24,17 @@ public class ProjectDs extends AbstractDsModel<Project> implements
     public static final String fACTIVE = "active";
     public static final String fNOTES = "notes";
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
+    public static final String fISPUBLIC = "isPublic";
     public static final String fPROJECTLEADID = "projectLeadId";
     public static final String fPROJECTLEAD = "projectLead";
 
@@ -51,6 +54,9 @@ public class ProjectDs extends AbstractDsModel<Project> implements
     private Long id;
 
     @DsField()
+    private String uuid;
+
+    @DsField()
     private Long clientId;
 
     @DsField()
@@ -68,11 +74,17 @@ public class ProjectDs extends AbstractDsModel<Project> implements
     @DsField()
     private Long version;
 
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
+
     @DsField(join = "left", path = "type.id")
     private Long typeId;
 
     @DsField(join = "left", path = "type.name")
     private String type;
+
+    @DsField()
+    private Boolean isPublic;
 
     @DsField(join = "left", path = "projectLead.id")
     private Long projectLeadId;
@@ -129,6 +141,14 @@ public class ProjectDs extends AbstractDsModel<Project> implements
 
     }
 
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public Long getClientId() {
         return this.clientId;
     }
@@ -177,6 +197,14 @@ public class ProjectDs extends AbstractDsModel<Project> implements
         this.version = version;
     }
 
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
+    }
+
     public Long getTypeId() {
         return this.typeId;
     }
@@ -191,6 +219,14 @@ public class ProjectDs extends AbstractDsModel<Project> implements
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Boolean getIsPublic() {
+        return this.isPublic;
+    }
+
+    public void setIsPublic(Boolean isPublic) {
+        this.isPublic = isPublic;
     }
 
     public Long getProjectLeadId() {

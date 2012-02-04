@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="UomTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.filter.UomTypeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.UomType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="UomType" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomTypeDs" />
+	</bean>
+   
+ 	<bean id="UomTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.UomType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="UomTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDs" />
+	</bean>
+   
+ 	<bean id="UomDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.filter.UomDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.uom.ds.converter.UomDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Uom" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomDs" />
+	</bean>
+   
+ 	<bean id="UomLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="UomLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLovDs" />
+	</bean>
+   
+ 	<bean id="UomMassLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomMassLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomMassLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="UomMassLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomMassLovDs" />
+	</bean>
+   
+ 	<bean id="UomLengthLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLengthLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLengthLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="UomLengthLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLengthLovDs" />
+	</bean>
+   
+ 	<bean id="UomVolumeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomVolumeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomVolumeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="UomVolumeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomVolumeLovDs" />
+	</bean>
+   
+ 	<bean id="UomConversionDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomConversionDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.filter.UomConversionDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.UomConversion" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.uom.ds.converter.UomConversionDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="UomConversion" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomConversionDs" />
+	</bean>
+      
+</beans>
+   

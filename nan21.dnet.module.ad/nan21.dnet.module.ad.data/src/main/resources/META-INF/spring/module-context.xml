@@ -54,6 +54,20 @@
 								<property name="destPath" value="demo-data/ad" />
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/ad/data/usr/UserGroup.csv" />
+							</bean>	
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="AssignableType" />
+								<property name="destPath" value="demo-data/ad" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/ad/data/usr/AssignableType.csv" />
+							</bean>	
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="Assignable" />
+								<property name="destPath" value="demo-data/ad" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/ad/data/usr/Assignable.csv" />
 							</bean>						   
 						</list>
 					</property>

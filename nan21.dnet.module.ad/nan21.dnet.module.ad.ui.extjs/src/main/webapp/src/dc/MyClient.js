@@ -34,9 +34,9 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient$Edit", {
 		.addDisplayFieldText({ name:"createdBy", dataIndex:"createdBy"  })
 		.addDisplayFieldText({ name:"modifiedBy", dataIndex:"modifiedBy"  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:350})     
-		.addPanel({ name:"col3", layout:"anchor" , width:220})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"col1", layout:"form" , width:350})     
+		.addPanel({ name:"col3", layout:"form" , width:220})     
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {

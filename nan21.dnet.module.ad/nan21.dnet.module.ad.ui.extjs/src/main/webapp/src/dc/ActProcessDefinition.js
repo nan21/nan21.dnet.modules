@@ -29,10 +29,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter", {
 		.addTextField({ name:"resourceName", dataIndex:"resourceName",anchor:"-20",maxLength:255  })
 		.addLov({ name:"deployment", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActDeployments", paramIndex:"deployment",anchor:"-20",retFieldMapping: [{lovField:"id", dsField: "deploymentId"} ,{lovField:"fullName", dsParam: "deployment"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
-		.addPanel({ name:"col3", layout:"anchor", width:280}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col3", layout:"form", width:280}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -53,12 +53,11 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List", {
 	,_noExport_: false
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addTextColumn({ name:"id", dataIndex:"id", hidden:true,width:200 })   	
 		.addTextColumn({ name:"name", dataIndex:"name", width:200 })   	
-		.addNumberColumn({ name:"version", dataIndex:"version",format:"0",width:70 })  
 		.addTextColumn({ name:"category", dataIndex:"category",width:200 })   	
 		.addTextColumn({ name:"resourceName", dataIndex:"resourceName", width:200 })   	
 		.addTextColumn({ name:"diagramResourceName", dataIndex:"diagramResourceName", hidden:true, width:200 })   	
+	  	.addDefaults()
 	  ;		   
 	}
 });

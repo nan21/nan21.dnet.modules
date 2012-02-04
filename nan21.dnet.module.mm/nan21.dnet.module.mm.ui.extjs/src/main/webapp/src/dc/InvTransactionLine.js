@@ -30,10 +30,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$Filter", {
 		.addTextField({ name:"toSubInventory", dataIndex:"toSubInventory",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"toLocator", dataIndex:"toLocator",anchor:"-20",maxLength:255  })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor",width:210}) 
-		.addPanel({ name:"col2", layout:"anchor",width:210}) 
-		.addPanel({ name:"col3", layout:"anchor",width:210}) 
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'} , autoScroll:true })     
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col3", layout:"form",width:210}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
@@ -62,17 +62,13 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditList", 
 		.addLov({name:"toSubInventory", xtype:"gridcolumn", dataIndex:"toSubInventory", width:150,editor:{xtype:"net.nan21.dnet.module.mm.inventory.lovs.SubInventorys" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "toSubInventoryId"} ],filterFieldMapping: [{lovField:"inventoryId", dsField: "toInventoryId"} ]} })
 		.addLov({name:"toLocator", xtype:"gridcolumn", dataIndex:"toLocator", width:150,editor:{xtype:"net.nan21.dnet.module.mm.inventory.lovs.StockLocators" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "toLocatorId"} ],filterFieldMapping: [{lovField:"subInventoryId", dsField: "toSubInventoryId"} ]} })
 		.addNumberColumn({ name:"quantity", dataIndex:"quantity", align:"right",decimals:2,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
-		.addDateColumn({ name:"createdAt", dataIndex:"createdAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addDateColumn({ name:"modifiedAt", dataIndex:"modifiedAt", hidden:true,format:Dnet.DATETIME_FORMAT})
-		.addTextColumn({ name:"createdBy", dataIndex:"createdBy", hidden:true,width:100 })
-		.addTextColumn({ name:"modifiedBy", dataIndex:"modifiedBy", hidden:true,width:100 })
-		.addNumberColumn({ name:"id", dataIndex:"id", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"transactionId", dataIndex:"transactionId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"itemId", dataIndex:"itemId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"fromSubInventoryId", dataIndex:"fromSubInventoryId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"fromLocatorId", dataIndex:"fromLocatorId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"toSubInventoryId", dataIndex:"toSubInventoryId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"toLocatorId", dataIndex:"toLocatorId", hidden:true, align:"right",format:"0",width:70})
+	  	.addDefaults()
 	  ;  		   
 	}  
 });
@@ -88,9 +84,9 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$CtxFormView
 		.addTextField({ name:"item", dataIndex:"item",anchor:"-20",noEdit:true  ,maxLength:255  })
 		.addNumberField({ name:"quantity", dataIndex:"quantity",anchor:"-20",noEdit:true   , style: "text-align:right;" })
 		//containers
-		.addPanel({ name:"col1", layout:"anchor" , width:500})     
-		.addPanel({ name:"col2", layout:"anchor" ,width:250})     
-		.addPanel({ name:"main", layout:"hbox", layoutConfig: { align:'top' , pack:'start'}, autoScroll:true }) 
+		.addPanel({ name:"col1", layout:"form" , width:500})     
+		.addPanel({ name:"col2", layout:"form" ,width:250})     
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {

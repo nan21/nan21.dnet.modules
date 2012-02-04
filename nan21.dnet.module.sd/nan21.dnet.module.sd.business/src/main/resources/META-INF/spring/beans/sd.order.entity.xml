@@ -18,9 +18,6 @@
  
  	<bean id="SalesOrderStatusService" scope="prototype"
 	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderStatusService"  />  
- 
- 	<bean id="SalesOrderAttachmentService" scope="prototype"
-	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderAttachmentService"  />  
    
 </beans>
    

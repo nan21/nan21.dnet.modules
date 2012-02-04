@@ -7,6 +7,7 @@ package net.nan21.dnet.module.hr.time.domain.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -70,45 +71,65 @@ public class AbsenceRequestItem implements Serializable, IModelWithId,
     @NotNull
     private Integer hours;
 
-    /** Owner client */
+    /**
+     * Identifies the client(tenant) which owns this record.
+     */
     @Column(name = "CLIENTID", nullable = false)
     @NotNull
     private Long clientId;
 
-    /** Timestamp when this record was created.*/
+    /**
+     * Timestamp when this record was created.
+     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREATEDAT", nullable = false)
     @NotNull
     private Date createdAt;
 
-    /** Timestamp when this record was last modified.*/
+    /**
+     * Timestamp when this record was last modified.
+     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "MODIFIEDAT", nullable = false)
     @NotNull
     private Date modifiedAt;
 
-    /** User who created this record.*/
+    /**
+     * User who created this record.
+     */
     @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
-    /** User who last modified this record.*/
+    /**
+     * User who last modified this record.
+     */
     @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
     @Version
-    /** Record version number used by the persistence framework. */
+    /** 
+     * Record version number used by the persistence framework.
+     */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
 
-    /** System generated unique identifier */
+    /**
+     * System generated unique identifier.
+     */
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
+
+    /**
+     * System generated UID. Useful for data import-export and data-replication
+     */
+    @Column(name = "UUID", length = 36)
+    private String uuid;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AbsenceRequest.class)
     @JoinColumn(name = "ABSENCEREQUEST_ID", referencedColumnName = "ID")
     private AbsenceRequest absenceRequest;
@@ -187,6 +208,14 @@ public class AbsenceRequestItem implements Serializable, IModelWithId,
         this.id = id;
     }
 
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     @Transient
     public String getClassName() {
         return this.getClass().getCanonicalName();
@@ -214,6 +243,10 @@ public class AbsenceRequestItem implements Serializable, IModelWithId,
                 .getUsername());
         event.updateAttributeWithObject("clientId", Session.user.get()
                 .getClientId());
+        if (this.uuid == null || this.uuid.equals("")) {
+            event.updateAttributeWithObject("uuid", UUID.randomUUID()
+                    .toString().toUpperCase());
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

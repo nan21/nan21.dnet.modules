@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.bd.geo.ds.model.CountryDs$Trl", {  	  	
-	iso2__lbl :  "ISO-2",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	iso2__lbl :  "ISO-2",
 	iso3__lbl :  "ISO-3",
 	hasRegions__lbl :  "Cu judeţe",
 	currency__lbl :  "Monedă",

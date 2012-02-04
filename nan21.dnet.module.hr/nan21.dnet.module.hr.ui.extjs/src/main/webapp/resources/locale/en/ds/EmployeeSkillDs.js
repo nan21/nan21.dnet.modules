@@ -1,5 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.hr.skill.ds.model.EmployeeSkillDs$Trl", {  	  	
+	uuid__lbl : "Uuid",
+	entityFQN__lbl : "Entity FQN",
 	employeeId__lbl : "Employee Id",
 	skillId__lbl : "Skill Id",
 	skill__lbl : "Skill",

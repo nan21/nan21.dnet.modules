@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.bp.md.ds.model.BpAccountDs$Trl", {  	  	
-	businessPartnerId__lbl :    "Terţ (ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	businessPartnerId__lbl :    "Terţ (ID)",
 	businessPartner__lbl :    "Terţ (Cod)",
 	organizationId__lbl :    "Organizatţe (ID)",
 	organization__lbl :    "Organizatţe (Cod)",

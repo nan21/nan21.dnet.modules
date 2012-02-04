@@ -19,12 +19,14 @@ public class JobCourseDs extends AbstractDsModel<JobCourse> implements
         IModelWithId, IModelWithClientId {
 
     public static final String fID = "id";
+    public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
     public static final String fCREATEDAT = "createdAt";
     public static final String fMODIFIEDAT = "modifiedAt";
     public static final String fCREATEDBY = "createdBy";
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
+    public static final String fENTITYFQN = "entityFQN";
     public static final String fJOBID = "jobId";
     public static final String fJOBCODE = "jobCode";
     public static final String fJOBNAME = "jobName";
@@ -36,6 +38,9 @@ public class JobCourseDs extends AbstractDsModel<JobCourse> implements
 
     @DsField()
     private Long id;
+
+    @DsField()
+    private String uuid;
 
     @DsField()
     private Long clientId;
@@ -54,6 +59,9 @@ public class JobCourseDs extends AbstractDsModel<JobCourse> implements
 
     @DsField()
     private Long version;
+
+    @DsField(fetch = false, path = "className")
+    private String entityFQN;
 
     @DsField(join = "left", path = "job.id")
     private Long jobId;
@@ -94,6 +102,14 @@ public class JobCourseDs extends AbstractDsModel<JobCourse> implements
     public void setId(Object id) {
         this.id = this._asLong_(id);
 
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public Long getClientId() {
@@ -142,6 +158,14 @@ public class JobCourseDs extends AbstractDsModel<JobCourse> implements
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public String getEntityFQN() {
+        return this.entityFQN;
+    }
+
+    public void setEntityFQN(String entityFQN) {
+        this.entityFQN = entityFQN;
     }
 
     public Long getJobId() {
