@@ -82,6 +82,9 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$List", {
 		.addTextColumn({ name:"reportedVersion", dataIndex:"reportedVersion", hidden:true,width:120 })   	
 		.addTextColumn({ name:"targetVersion", dataIndex:"targetVersion", hidden:true,width:120 })   	
 		.addTextColumn({ name:"fixedInVersion", dataIndex:"fixedInVersion", hidden:true,width:120 })   	
+		.addNumberColumn({ name:"businessValue", dataIndex:"businessValue", width:80 })  
+		.addNumberColumn({ name:"estimatedEffort", dataIndex:"estimatedEffort", hidden:true, width:80 })  
+		.addNumberColumn({ name:"clarity", dataIndex:"clarity", hidden:true, width:80 })  
 		.addNumberColumn({ name:"projectId", dataIndex:"projectId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"assigneeId", dataIndex:"assigneeId", hidden:true,format:"0",width:70 })  
 	  	.addDefaults()
@@ -114,12 +117,15 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Edit", {
 		.addLov({ name:"reportedVersion", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersionsReleased", dataIndex:"reportedVersion",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportedVersionId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]  })
 		.addLov({ name:"targetVersion", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersionsPlanned", dataIndex:"targetVersion",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "targetVersionId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]  })
 		.addLov({ name:"fixedInVersion", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersions", dataIndex:"fixedInVersion",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "fixedInVersionId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]  })
+		.addNumberField({ name:"businessValue", dataIndex:"businessValue",anchor:"-20"  , style: "text-align:right;" })
+		.addNumberField({ name:"estimatedEffort", dataIndex:"estimatedEffort",anchor:"-20"  , style: "text-align:right;" })
+		.addNumberField({ name:"clarity", dataIndex:"clarity",anchor:"-20"  , style: "text-align:right;" })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:260})     
 		.addPanel({ name:"row1", layout:"form" , width:600})     
 		.addPanel({ name:"col3", layout:"form" , width:250})     
-		.addPanel({ name:"col4", layout:"form" ,title:"Versions", width:250,xtype:"fieldset", border:true, collapsible:true})     
-		.addPanel({ name:"col5", layout:"form" , width:250})     
+		.addPanel({ name:"col4", layout:"form" ,title:"Versions", width:220,xtype:"fieldset", border:true, collapsible:true})     
+		.addPanel({ name:"col5", layout:"form" , width:200})     
 		.addPanel({ name:"col2"  })      	 
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		.addPanel({ name:"row2",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
@@ -134,7 +140,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Edit", {
 		.addChildrenTo("row2",["col3" ,"col4" ,"col5" ])
 		.addChildrenTo("col3",["assignee","priority","severity","resolution"])
 		.addChildrenTo("col4",["reportedVersion","targetVersion","fixedInVersion"])
-		.addChildrenTo("col5",["dueDate","resolutionDate"])
+		.addChildrenTo("col5",["dueDate","resolutionDate","businessValue","clarity","estimatedEffort"])
 ;
 	}	
 });
@@ -185,6 +191,9 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$View", {
 		.addDisplayFieldText({ name:"reportedVersion", dataIndex:"reportedVersion"  })
 		.addDisplayFieldText({ name:"targetVersion", dataIndex:"targetVersion"  })
 		.addDisplayFieldText({ name:"fixedInVersion", dataIndex:"fixedInVersion"  })
+		.addDisplayFieldNumber({name:"businessValue", dataIndex:"businessValue"  })
+		.addDisplayFieldNumber({name:"estimatedEffort", dataIndex:"estimatedEffort"  })
+		.addDisplayFieldNumber({name:"clarity", dataIndex:"clarity"  })
 		.addDisplayFieldText({ name:"description", dataIndex:"description", asText:true, fieldStyle:"height:auto;"  })
 		//containers
 		.addPanel({ name:"r2", layout:"form" , width:"90%", defaults:{
@@ -211,7 +220,7 @@ labelAlign:"top"}})
 		.addChildrenTo("row2",["col3" ,"col4" ,"col5" ])
 		.addChildrenTo("col3",["assignee","status","resolution"])
 		.addChildrenTo("col4",["reportedVersion","targetVersion","fixedInVersion"])
-		.addChildrenTo("col5",["dueDate","resolutionDate"])
+		.addChildrenTo("col5",["dueDate","resolutionDate","businessValue","clarity","estimatedEffort"])
 ;
 	}	
 });

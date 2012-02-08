@@ -68,6 +68,10 @@ public class Assignable implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_NAME = "Assignable.findByName";
 
+    /** UserCode. */
+    @Column(name = "USERCODE", length = 32)
+    private String userCode;
+
     /**
      * Name of entity.
      */
@@ -152,6 +156,14 @@ public class Assignable implements Serializable, IModelWithId,
     private AssignableType assignableType;
 
     /* ============== getters - setters ================== */
+
+    public String getUserCode() {
+        return this.userCode;
+    }
+
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
+    }
 
     public String getName() {
         return this.name;

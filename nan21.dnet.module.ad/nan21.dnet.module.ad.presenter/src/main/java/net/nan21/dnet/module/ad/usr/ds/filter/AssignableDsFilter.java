@@ -49,6 +49,8 @@ public class AssignableDsFilter extends AbstractDsFilter implements
 
     private String type;
 
+    private String userCode;
+
     public String getName() {
         return this.name;
     }
@@ -200,6 +202,14 @@ public class AssignableDsFilter extends AbstractDsFilter implements
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getUserCode() {
+        return this.userCode;
+    }
+
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
     }
 
 }

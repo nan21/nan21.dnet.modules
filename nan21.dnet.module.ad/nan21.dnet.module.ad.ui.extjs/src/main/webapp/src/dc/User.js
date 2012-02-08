@@ -76,7 +76,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,noUpdate:true ,allowBlank:false,maxLength:32  })
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addLov({ name:"accountType", xtype:"net.nan21.dnet.module.ad.usr.lovs.UserTypes", dataIndex:"accountType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "accountTypeId"} ]  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })

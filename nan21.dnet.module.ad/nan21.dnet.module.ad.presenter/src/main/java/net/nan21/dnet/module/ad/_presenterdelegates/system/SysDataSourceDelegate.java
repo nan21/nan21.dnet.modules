@@ -14,6 +14,7 @@ import net.nan21.dnet.core.presenter.service.AbstractDsDelegate;
 import net.nan21.dnet.module.ad.system.business.service.ISysDataSourceService;
 import net.nan21.dnet.module.ad.system.domain.entity.SysDataSource;
 import net.nan21.dnet.module.ad.system.domain.entity.SysDsField;
+import net.nan21.dnet.module.ad.system.domain.entity.SysDsService;
 import net.nan21.dnet.module.ad.system.ds.filter.SysDataSourceDsFilter;
  
 public class SysDataSourceDelegate extends AbstractDsDelegate {
@@ -41,13 +42,26 @@ public class SysDataSourceDelegate extends AbstractDsDelegate {
 	                    e.addToFields(f);
 	                }	                
 	            }
+				
+				List<String> serviceMethods = def.getServiceMethods();
+				if(serviceMethods != null) {
+					for(String sm: serviceMethods) {
+						SysDsService sme = new SysDsService();
+						sme.setActive(true);
+						sme.setDataSource(e);
+						sme.setName(sm);
+						e.addToServiceMethods(sme);
+					}
+				}
+				//
 				result.add(e);
 			}
 		}
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("clientId", Session.user.get().getClientId());
  
-		srv.update("delete from "+SysDsField.class.getSimpleName()+"  where clientId = :clientId", params );		 
+		srv.update("delete from "+SysDsField.class.getSimpleName()+"  where clientId = :clientId", params );
+		srv.update("delete from "+SysDsService.class.getSimpleName()+"  where clientId = :clientId", params );	
 		srv.update("delete from "+SysDataSource.class.getSimpleName()+"  where clientId = :clientId", params);
 		srv.insert(result);		
 	}

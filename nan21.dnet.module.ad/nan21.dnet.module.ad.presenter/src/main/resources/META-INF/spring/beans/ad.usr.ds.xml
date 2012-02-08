@@ -23,12 +23,24 @@
 	  				<constructor-arg name="methodName" value="changePassword" />
 	  			</bean>	
 	  			</entry>	  			
+	  			<entry key="createAssignableResource">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.usr.UserPD"/>
+	  				<constructor-arg name="methodName" value="createAssignableResource" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="User" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">changePassword</value>
+	  			<value type="java.lang.String">createAssignableResource</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="MyUserSettingsDsService" scope="prototype"
@@ -152,6 +164,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccessControl" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">copyRulesFromAccessControl</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="AccessControlLovDsService" scope="prototype"
@@ -163,6 +180,18 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccessControlLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlLovDs" />
+	</bean>
+   
+ 	<bean id="DsMethodAccessControlDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.DsMethodAccessControlDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.DsMethodAccessControlDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.DsMethodAccessControl" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.DsMethodAccessControlDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="DsMethodAccessControl" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.DsMethodAccessControlDs" />
 	</bean>
    
  	<bean id="DsAccessControlDsService" scope="prototype"

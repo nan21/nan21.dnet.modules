@@ -33,6 +33,7 @@ public class AssignableDs extends AbstractDsModel<Assignable> implements
     public static final String fENTITYFQN = "entityFQN";
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
+    public static final String fUSERCODE = "userCode";
 
     @DsField()
     private String name;
@@ -75,6 +76,9 @@ public class AssignableDs extends AbstractDsModel<Assignable> implements
 
     @DsField(join = "left", path = "assignableType.name")
     private String type;
+
+    @DsField()
+    private String userCode;
 
     public AssignableDs() {
         super();
@@ -195,6 +199,14 @@ public class AssignableDs extends AbstractDsModel<Assignable> implements
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getUserCode() {
+        return this.userCode;
+    }
+
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
     }
 
 }

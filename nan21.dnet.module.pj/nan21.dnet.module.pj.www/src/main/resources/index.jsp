@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>DNet eBusiness Suite</title>
-	<meta http-equiv="REFRESH" content="0;url=web/projects/list">
+	<meta http-equiv="REFRESH" content="0;url=web/dc/view/ProjectDs/Home?id=1">
 </head>
 <body>
 </body>

@@ -173,6 +173,10 @@ public class SysDataSource implements Serializable, IModelWithId,
     @CascadeOnDelete
     private Collection<SysDsField> fields;
 
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = SysDsService.class, mappedBy = "dataSource", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<SysDsService> serviceMethods;
+
     /* ============== getters - setters ================== */
 
     public String getModel() {
@@ -302,6 +306,22 @@ public class SysDataSource implements Serializable, IModelWithId,
         }
         e.setDataSource(this);
         this.fields.add(e);
+    }
+
+    public Collection<SysDsService> getServiceMethods() {
+        return this.serviceMethods;
+    }
+
+    public void setServiceMethods(Collection<SysDsService> serviceMethods) {
+        this.serviceMethods = serviceMethods;
+    }
+
+    public void addToServiceMethods(SysDsService e) {
+        if (this.serviceMethods == null) {
+            this.serviceMethods = new ArrayList<SysDsService>();
+        }
+        e.setDataSource(this);
+        this.serviceMethods.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

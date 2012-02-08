@@ -25,7 +25,8 @@ public class ClientBD extends AbstractBusinessDelegate{
 		
 		net.nan21.dnet.core.api.session.User su = Session.user.get();
 		net.nan21.dnet.core.api.session.User newUser = new 
-			net.nan21.dnet.core.api.session.User(su.getUsername(), su.getUsername(), "", false, false, false, true, client.getCode(), client.getId(), null, null, null); 
+			net.nan21.dnet.core.api.session.User(su.getUsername(), su.getUsername(), "", 
+					false, false, false, true, client.getCode(), client.getId(), null, null, null, null, null); 
 		 
 		
 		try {

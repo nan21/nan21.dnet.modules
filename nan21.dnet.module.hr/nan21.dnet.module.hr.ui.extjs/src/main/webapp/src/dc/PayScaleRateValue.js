@@ -27,10 +27,10 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRateValue$CtxEditList", {
 		this._getBuilder_()
 		.addNumberColumn({ name:"scaleRateId", dataIndex:"scaleRateId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"scalePointId", dataIndex:"scalePointId", hidden:true, align:"right",format:"0",width:70})
-		.addLov({name:"scalePointCode", xtype:"gridcolumn", dataIndex:"scalePointCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.grade.lovs.PayScalePoints" , selectOnFocus:true,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "scalePointId"} ]} })
-		.addNumberColumn({ name:"value", dataIndex:"value", align:"right",decimals:2,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
-		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true, format:Dnet.DATE_FORMAT}})
-		.addDateColumn({ name:"validTo", dataIndex:"validTo",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true, format:Dnet.DATE_FORMAT}})
+		.addLov({name:"scalePointCode", xtype:"gridcolumn", dataIndex:"scalePointCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.grade.lovs.PayScalePoints" , selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "scalePointId"} ]} })
+		.addNumberColumn({ name:"value", dataIndex:"value", align:"right",decimals:2,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
+		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
+		.addDateColumn({ name:"validTo", dataIndex:"validTo",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 	  	.addDefaults()
 	  ;  		   
 	}  

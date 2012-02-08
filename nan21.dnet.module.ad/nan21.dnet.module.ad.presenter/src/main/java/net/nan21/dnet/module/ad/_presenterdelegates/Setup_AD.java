@@ -33,7 +33,7 @@ public class Setup_AD extends AbstractPresenterSetupParticipant implements
 		
 		net.nan21.dnet.core.api.session.User su = Session.user.get();
 		net.nan21.dnet.core.api.session.User newUser = new 
-			net.nan21.dnet.core.api.session.User(su.getUsername(), su.getUsername(), "", false, false, false, true, c.getCode(), c.getId(), null, null, null); 
+			net.nan21.dnet.core.api.session.User(su.getUsername(), su.getUsername(), "", false, false, false, true, c.getCode(), c.getId(), null, null, null, null, null); 
 		Session.user.set(newUser);
 		Params p = new Params();
 		p.setAdminRole(c.getAdminRole());

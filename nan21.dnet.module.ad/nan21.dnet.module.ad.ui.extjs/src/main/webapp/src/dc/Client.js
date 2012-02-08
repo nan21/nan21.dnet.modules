@@ -128,4 +128,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Create", {
 		.addChildrenTo("col3",["defaultImportPath","defaultExportPath","tempPath"])
 ;
 	}	
+	,_shouldValidate_: function() {	
+		return this._controller_.record.phantom;
+	}
 });

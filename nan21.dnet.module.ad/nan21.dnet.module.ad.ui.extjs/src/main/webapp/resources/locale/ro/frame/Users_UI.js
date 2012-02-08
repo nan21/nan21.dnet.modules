@@ -12,6 +12,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI$Trl", {
 	btnChangePassword__desc : "Schimbă parola utilizatorului",
 	btnSavePassword__ttl : "Salvează",
 	btnSavePassword__desc : "Salvează noua parolă",
+	btnCreateAssignable__ttl : "Crează resursă",
+	btnCreateAssignable__desc : "Crează resursă asignabila",
 	
 	title: "Utilizatori"
 });	

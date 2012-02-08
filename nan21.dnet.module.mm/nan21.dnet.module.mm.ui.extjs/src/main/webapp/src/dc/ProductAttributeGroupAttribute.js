@@ -52,8 +52,8 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$CtxEdi
 		this._getBuilder_()
 		.addTextColumn({ name:"group", dataIndex:"group", hidden:true,width:120 })
 		.addNumberColumn({ name:"attributeId", dataIndex:"attributeId", hidden:true, align:"right",format:"0",width:70})
-		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",format:"0",width:70,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
-		.addLov({name:"attribute", xtype:"gridcolumn", dataIndex:"attribute",width:120,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttribute" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "attributeId"} ]} })
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",format:"0",width:70,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
+		.addLov({name:"attribute", xtype:"gridcolumn", dataIndex:"attribute",width:120,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttribute" , selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "attributeId"} ]} })
 		.addBooleanColumn({ name:"inDescription", dataIndex:"inDescription"})
 		.addNumberColumn({ name:"groupId", dataIndex:"groupId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()
@@ -70,9 +70,9 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$EditLi
 	,_noExport_: false
 	,_defineColumns_: function () {
 		this._getBuilder_()
-		.addLov({name:"group", xtype:"gridcolumn", dataIndex:"group",width:120,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "groupId"} ]} })
-		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",format:"0",width:70,editor:{xtype:"numberfield", selectOnFocus:true ,decimalPrecision:2 } })
-		.addLov({name:"attribute", xtype:"gridcolumn", dataIndex:"attribute",width:120,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttribute" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "attributeId"} ]} })
+		.addLov({name:"group", xtype:"gridcolumn", dataIndex:"group",width:120,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeGroup" , selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "groupId"} ]} })
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",format:"0",width:70,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
+		.addLov({name:"attribute", xtype:"gridcolumn", dataIndex:"attribute",width:120,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttribute" , selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "attributeId"} ]} })
 		.addBooleanColumn({ name:"inDescription", dataIndex:"inDescription"})
 		.addNumberColumn({ name:"groupId", dataIndex:"groupId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"attributeId", dataIndex:"attributeId", hidden:true, align:"right",format:"0",width:70})

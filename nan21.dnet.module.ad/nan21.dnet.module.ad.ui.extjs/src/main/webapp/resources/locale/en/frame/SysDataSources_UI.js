@@ -1,6 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI$Trl", {  	  	
 	listFields__ttl : "Fields",
+	listServices__ttl : "Services",
 	
 	tlbMList__ttl : "Data-sources",
 	

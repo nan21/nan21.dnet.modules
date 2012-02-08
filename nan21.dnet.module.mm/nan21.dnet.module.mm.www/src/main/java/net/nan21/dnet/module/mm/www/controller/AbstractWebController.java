@@ -53,7 +53,7 @@ public class AbstractWebController {
 		try { 
             
             user = new User(username, displayName, "", accountExpired, accountLocked, credentialsExpired, enabled
-            		,clientCode, clientId, preferences, employeeCode,employeeId);
+            		,clientCode, clientId, preferences, employeeCode,employeeId, null, null);
             params = new Params();                          
              
         } catch (ClassCastException e) {

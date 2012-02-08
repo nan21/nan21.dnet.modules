@@ -13,6 +13,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI$Trl", {
 	btnChangePassword__desc : "Change the user`s password",
 	btnSavePassword__ttl : "Save",
 	btnSavePassword__desc : "Save new password",
+	btnCreateAssignable__ttl : "Create assignable",
+	btnCreateAssignable__desc : "Create assignable resource record",
 	
 	title: "Users"
 });

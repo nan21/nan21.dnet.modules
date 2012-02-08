@@ -63,6 +63,13 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ActProcessDefinition" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">serviceStartProcess</value>
+	  			<value type="java.lang.String">getDiagram</value>
+	  			<value type="java.lang.String">getStartForm</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="ActProcessDefinitionLovDsService" scope="prototype"
@@ -97,6 +104,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ActProcessInstance" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">killProcessInstance</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="ActProcessInstanceHistoryDsService" scope="prototype"
@@ -138,6 +150,12 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ActTaskInstance" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">assignTask</value>
+	  			<value type="java.lang.String">completeTask</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="ActTaskInstanceHistoryDsService" scope="prototype"
@@ -171,6 +189,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ActMyTask" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActMyTaskDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">completeTask</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="ActMyTaskHistoryDsService" scope="prototype"
@@ -204,6 +227,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ActAvailableTask" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActAvailableTaskDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">assignTask</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="WfDefProcessDsService" scope="prototype"
@@ -231,6 +259,12 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="WfDefProcess" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.WfDefProcessDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">deployProcess</value>
+	  			<value type="java.lang.String">getDiagram</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="WfDefNodeDsService" scope="prototype"

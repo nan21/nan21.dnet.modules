@@ -72,6 +72,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ExportMap" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportMapDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">runExport</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="ExportMapLovDsService" scope="prototype"
@@ -105,6 +110,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ExportMapItem" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportMapItemDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">runExport</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="ExportJobDsService" scope="prototype"
@@ -126,6 +136,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ExportJob" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportJobDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">runExport</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="ExportJobLovDsService" scope="prototype"
@@ -159,6 +174,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ExportJobItem" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportJobItemDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">runExport</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="ImportMapDsService" scope="prototype"
@@ -180,6 +200,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ImportMap" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">runImport</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="ImportMapLovDsService" scope="prototype"
@@ -224,6 +249,12 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ImportMapItem" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">runImport</value>
+	  			<value type="java.lang.String">runImportFile</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="ImportJobDsService" scope="prototype"
@@ -245,6 +276,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ImportJob" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">runImport</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="ImportJobLovDsService" scope="prototype"
@@ -278,6 +314,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ImportJobItem" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobItemDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">runImport</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
       
 </beans>

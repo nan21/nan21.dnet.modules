@@ -45,7 +45,7 @@ public class AbstractWebController {
 
 			user = new User(username, displayName, "", accountExpired,
 					accountLocked, credentialsExpired, enabled, clientCode,
-					clientId, preferences, employeeCode, employeeId);
+					clientId, preferences, employeeCode, employeeId, null, null);
 			params = new Params();
 
 		} catch (ClassCastException e) {

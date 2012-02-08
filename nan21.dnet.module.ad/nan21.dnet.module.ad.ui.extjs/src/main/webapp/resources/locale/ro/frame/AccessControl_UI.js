@@ -1,11 +1,13 @@
 Ext.define("net.nan21.dnet.module.ad.usr.frame.AccessControl_UI$Trl", { 
 	dsAccessCtxEditList__ttl : "Data-source",
 	asgnAccessCtxEditList__ttl : "Assignment",
+	dsMtdAccessCtxEditList__ttl : "Metode",
 	wdwCopyRules__ttl : "Alege sursa",
 	
 	tlbCtrlEditList__ttl : "Privilegii",
 	tlbDsAccessCtxEditList__ttl : "Reguli DS",
 	tlbAsgnAccessCtxEditList__ttl : "Reguli ASGN",
+	tlbDsMtdAccessCtxEditList__ttl : "Metode DS",
 	
 	btnAsgnRoleToAccessCtrl__ttl : "Roluri",
 	btnAsgnRoleToAccessCtrl__desc : "Atribuie privilegiul selectat la roluri",

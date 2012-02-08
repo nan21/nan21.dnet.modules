@@ -73,12 +73,12 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$CtxEditList", {
 	,_noExport_: true
 	,_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"firstName", dataIndex:"firstName", width:120,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addTextColumn({ name:"lastName", dataIndex:"lastName", width:120,editor:{xtype:"textfield", selectOnFocus:true,allowBlank:false,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addTextColumn({ name:"firstName", dataIndex:"firstName", width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addTextColumn({ name:"lastName", dataIndex:"lastName", width:120,editor:{xtype:"textfield", selectOnFocus:true,allowBlank:false ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addComboColumn({ name:"gender", dataIndex:"gender", trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false"),editor: {xtype: 'combo', mode: 'local', selectOnFocus:true, valueField: 'bv', displayField: 'tv' ,store:[ "male", "female"] , triggerAction:'all', forceSelection:true }})
-		.addTextColumn({ name:"position", dataIndex:"position",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addDateColumn({ name:"birthdate", dataIndex:"birthdate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true, format:Dnet.DATE_FORMAT}})
+		.addComboColumn({ name:"gender", dataIndex:"gender", trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false"),editor: {xtype: 'combo', mode: 'local', selectOnFocus:true 	, valueField: 'bv', displayField: 'tv' ,store:[ "male", "female"] , triggerAction:'all', forceSelection:true }})
+		.addTextColumn({ name:"position", dataIndex:"position",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addDateColumn({ name:"birthdate", dataIndex:"birthdate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 	  	.addDefaults()
 	  ;  		   
 	}  

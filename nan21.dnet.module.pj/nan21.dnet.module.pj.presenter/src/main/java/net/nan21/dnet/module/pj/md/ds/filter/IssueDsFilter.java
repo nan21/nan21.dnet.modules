@@ -51,6 +51,21 @@ public class IssueDsFilter extends AbstractDsFilter implements IModelWithId,
 
     private String description;
 
+    private Integer businessValue;
+
+    private Integer businessValue_From;
+    private Integer businessValue_To;
+
+    private Integer estimatedEffort;
+
+    private Integer estimatedEffort_From;
+    private Integer estimatedEffort_To;
+
+    private Integer clarity;
+
+    private Integer clarity_From;
+    private Integer clarity_To;
+
     private Date dueDate;
 
     private Date dueDate_From;
@@ -292,6 +307,78 @@ public class IssueDsFilter extends AbstractDsFilter implements IModelWithId,
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getBusinessValue() {
+        return this.businessValue;
+    }
+
+    public Integer getBusinessValue_From() {
+        return this.businessValue_From;
+    }
+
+    public Integer getBusinessValue_To() {
+        return this.businessValue_To;
+    }
+
+    public void setBusinessValue(Integer businessValue) {
+        this.businessValue = businessValue;
+    }
+
+    public void setBusinessValue_From(Integer businessValue_From) {
+        this.businessValue_From = businessValue_From;
+    }
+
+    public void setBusinessValue_To(Integer businessValue_To) {
+        this.businessValue_To = businessValue_To;
+    }
+
+    public Integer getEstimatedEffort() {
+        return this.estimatedEffort;
+    }
+
+    public Integer getEstimatedEffort_From() {
+        return this.estimatedEffort_From;
+    }
+
+    public Integer getEstimatedEffort_To() {
+        return this.estimatedEffort_To;
+    }
+
+    public void setEstimatedEffort(Integer estimatedEffort) {
+        this.estimatedEffort = estimatedEffort;
+    }
+
+    public void setEstimatedEffort_From(Integer estimatedEffort_From) {
+        this.estimatedEffort_From = estimatedEffort_From;
+    }
+
+    public void setEstimatedEffort_To(Integer estimatedEffort_To) {
+        this.estimatedEffort_To = estimatedEffort_To;
+    }
+
+    public Integer getClarity() {
+        return this.clarity;
+    }
+
+    public Integer getClarity_From() {
+        return this.clarity_From;
+    }
+
+    public Integer getClarity_To() {
+        return this.clarity_To;
+    }
+
+    public void setClarity(Integer clarity) {
+        this.clarity = clarity;
+    }
+
+    public void setClarity_From(Integer clarity_From) {
+        this.clarity_From = clarity_From;
+    }
+
+    public void setClarity_To(Integer clarity_To) {
+        this.clarity_To = clarity_To;
     }
 
     public Date getDueDate() {

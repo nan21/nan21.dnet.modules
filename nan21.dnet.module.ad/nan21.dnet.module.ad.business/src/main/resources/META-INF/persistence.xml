@@ -45,6 +45,8 @@
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.AccessControl</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.DsAccessControl</class>	
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.AsgnAccessControl</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.DsMethodAccessControl</class>
+		
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>		
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
 		 

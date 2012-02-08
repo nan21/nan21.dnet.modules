@@ -162,6 +162,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvTransaction" />
 		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">postTransaction</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="InvTransactionLineDsService" scope="prototype"

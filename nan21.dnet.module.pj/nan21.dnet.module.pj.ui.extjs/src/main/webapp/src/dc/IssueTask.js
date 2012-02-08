@@ -35,11 +35,11 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$Filter", {
 		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ]  })
 		.addNumberField({ name:"issueId", dataIndex:"issueId",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",title:"Task", width:250,xtype:"fieldset", border:true, collapsible:true, defaults:{
+		.addPanel({ name:"col1", layout:"form",title:"Task", width:220,xtype:"fieldset", border:true, collapsible:true, defaults:{
 labelAlign:"right",labelWidth:70}}) 
-		.addPanel({ name:"col2", layout:"form",width:210, defaults:{
+		.addPanel({ name:"col2", layout:"form", width:220, defaults:{
 labelAlign:"right",labelWidth:70}}) 
-		.addPanel({ name:"col3", layout:"form",title:"Issue", width:270,xtype:"fieldset", border:true, collapsible:true}) 
+		.addPanel({ name:"col3", layout:"form",title:"Issue", width:250,xtype:"fieldset", border:true, collapsible:true}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}

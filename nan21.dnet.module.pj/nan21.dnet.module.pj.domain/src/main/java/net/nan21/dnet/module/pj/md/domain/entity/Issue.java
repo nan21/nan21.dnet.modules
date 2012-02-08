@@ -94,6 +94,18 @@ public class Issue implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "DESCRIPTION", length = 4000)
     private String description;
 
+    /** BusinessValue. */
+    @Column(name = "BUSINESSVALUE")
+    private Integer businessValue;
+
+    /** EstimatedEffort. */
+    @Column(name = "ESTIMATEDEFFORT")
+    private Integer estimatedEffort;
+
+    /** Clarity. */
+    @Column(name = "CLARITY")
+    private Integer clarity;
+
     /** DueDate. */
     @Temporal(TemporalType.DATE)
     @Column(name = "DUEDATE")
@@ -229,6 +241,30 @@ public class Issue implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getBusinessValue() {
+        return this.businessValue;
+    }
+
+    public void setBusinessValue(Integer businessValue) {
+        this.businessValue = businessValue;
+    }
+
+    public Integer getEstimatedEffort() {
+        return this.estimatedEffort;
+    }
+
+    public void setEstimatedEffort(Integer estimatedEffort) {
+        this.estimatedEffort = estimatedEffort;
+    }
+
+    public Integer getClarity() {
+        return this.clarity;
+    }
+
+    public void setClarity(Integer clarity) {
+        this.clarity = clarity;
     }
 
     public Date getDueDate() {

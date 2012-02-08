@@ -79,6 +79,12 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PriceListVersion" />
 		<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListVersionDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">addProductsFromCategory</value>
+	  			<value type="java.lang.String">addProductsFromPriceListVersion</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="PriceListVersionLovDsService" scope="prototype"

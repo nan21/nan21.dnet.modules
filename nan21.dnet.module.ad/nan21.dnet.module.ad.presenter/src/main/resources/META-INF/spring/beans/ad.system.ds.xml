@@ -26,6 +26,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SysParam" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysParamDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">refreshSysConfig</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="SysDataSourceDsService" scope="prototype"
@@ -47,6 +52,11 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SysDataSource" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">synchronizeCatalog</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="SysDataSourceLovDsService" scope="prototype"

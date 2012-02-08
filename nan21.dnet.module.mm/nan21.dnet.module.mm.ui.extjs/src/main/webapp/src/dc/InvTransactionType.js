@@ -55,10 +55,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$EditList", 
 	,_noExport_: false
 	,_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true,maxLength:400,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "400"}} })
-		.addLov({name:"sourceType", xtype:"gridcolumn", dataIndex:"sourceType",width:120,editor:{xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionSourceTypeS" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "sourceTypeId"} ]} })
-		.addLov({name:"action", xtype:"gridcolumn", dataIndex:"action",width:120,editor:{xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionActions" , selectOnFocus:true,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "actionId"} ]} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "400"}} })
+		.addLov({name:"sourceType", xtype:"gridcolumn", dataIndex:"sourceType",width:120,editor:{xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionSourceTypeS" , selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "sourceTypeId"} ]} })
+		.addLov({name:"action", xtype:"gridcolumn", dataIndex:"action",width:120,editor:{xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionActions" , selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "actionId"} ]} })
 		.addBooleanColumn({ name:"hasFromInventory", dataIndex:"hasFromInventory"})
 		.addBooleanColumn({ name:"hasToInventory", dataIndex:"hasToInventory"})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})

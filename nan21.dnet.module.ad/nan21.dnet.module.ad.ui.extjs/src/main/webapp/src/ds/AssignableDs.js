@@ -16,7 +16,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.AssignableDs" ,{
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
 		{name:"typeId", type:"int", useNull:true},
-		{name:"type", type:"string"}
+		{name:"type", type:"string"},
+		{name:"userCode", type:"string"}
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
@@ -44,7 +45,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.AssignableDsFilter" ,{
 		{name:"typeId", type:"int", useNull:true},
 		{name:"typeId_From",type:"int", useNull:true},
 		{name:"typeId_To",type:"int", useNull:true},
-		{name:"type", type:"string"}
+		{name:"type", type:"string"},
+		{name:"userCode", type:"string"}
 	] 
 });
 	

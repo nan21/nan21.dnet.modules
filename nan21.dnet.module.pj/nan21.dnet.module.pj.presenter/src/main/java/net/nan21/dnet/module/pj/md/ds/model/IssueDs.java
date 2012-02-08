@@ -34,6 +34,9 @@ public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
     public static final String fCODE = "code";
     public static final String fSUMMARY = "summary";
     public static final String fDESCRIPTION = "description";
+    public static final String fBUSINESSVALUE = "businessValue";
+    public static final String fESTIMATEDEFFORT = "estimatedEffort";
+    public static final String fCLARITY = "clarity";
     public static final String fDUEDATE = "dueDate";
     public static final String fRESOLUTIONDATE = "resolutionDate";
     public static final String fTYPEID = "typeId";
@@ -102,6 +105,15 @@ public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
 
     @DsField()
     private String description;
+
+    @DsField()
+    private Integer businessValue;
+
+    @DsField()
+    private Integer estimatedEffort;
+
+    @DsField()
+    private Integer clarity;
 
     @DsField()
     private Date dueDate;
@@ -299,6 +311,30 @@ public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getBusinessValue() {
+        return this.businessValue;
+    }
+
+    public void setBusinessValue(Integer businessValue) {
+        this.businessValue = businessValue;
+    }
+
+    public Integer getEstimatedEffort() {
+        return this.estimatedEffort;
+    }
+
+    public void setEstimatedEffort(Integer estimatedEffort) {
+        this.estimatedEffort = estimatedEffort;
+    }
+
+    public Integer getClarity() {
+        return this.clarity;
+    }
+
+    public void setClarity(Integer clarity) {
+        this.clarity = clarity;
     }
 
     public Date getDueDate() {
