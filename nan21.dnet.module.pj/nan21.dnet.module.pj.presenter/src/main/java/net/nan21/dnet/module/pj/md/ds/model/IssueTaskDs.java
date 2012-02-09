@@ -27,7 +27,7 @@ public class IssueTaskDs extends AbstractDsModel<IssueTask> implements
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fENTITYFQN = "entityFQN";
-    public static final String fSUMMARY = "summary";
+    public static final String fCODE = "code";
     public static final String fDESCRIPTION = "description";
     public static final String fISSUEID = "issueId";
     public static final String fISSUEUUID = "issueUuId";
@@ -82,7 +82,7 @@ public class IssueTaskDs extends AbstractDsModel<IssueTask> implements
     private String entityFQN;
 
     @DsField()
-    private String summary;
+    private String code;
 
     @DsField()
     private String description;
@@ -240,12 +240,12 @@ public class IssueTaskDs extends AbstractDsModel<IssueTask> implements
         this.entityFQN = entityFQN;
     }
 
-    public String getSummary() {
-        return this.summary;
+    public String getCode() {
+        return this.code;
     }
 
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getDescription() {

@@ -109,3 +109,24 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	
+
+Ext.define("net.nan21.dnet.module.pj.md.dc.IssueMnt$EditText", {
+	extend: "dnet.core.dc.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueMnt$EditText",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addTextArea({ name:"description", dataIndex:"description",height:120,anchor:"-20"   })
+		//containers
+		.addPanel({ name:"main", layout:"form" , autoScroll:true, defaults:{
+labelAlign:"top"}})     
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["description"])
+;
+	}	
+});

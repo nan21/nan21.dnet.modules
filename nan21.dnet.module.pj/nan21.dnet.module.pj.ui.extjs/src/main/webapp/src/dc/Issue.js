@@ -32,7 +32,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$Filter", {
 		.addLov({ name:"priority", xtype:"net.nan21.dnet.module.pj.base.lovs.IssuePriorities", dataIndex:"priority",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
 		.addLov({ name:"resolution", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueResolutions", dataIndex:"resolution",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "resolutionId"} ]  })
 		.addLov({ name:"severity", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueSeverities", dataIndex:"severity",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "severityId"} ]  })
-		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.ad.usr.lovs.Assignables", dataIndex:"assignee",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ]  })
+		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]  })
 		.addLov({ name:"reportedVersion", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersions", dataIndex:"reportedVersion",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportedVersionId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]  })
 		.addLov({ name:"targetVersion", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersions", dataIndex:"targetVersion",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "targetVersionId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]  })
 		.addLov({ name:"fixedInVersion", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectVersions", dataIndex:"fixedInVersion",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "fixedInVersionId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]  })
@@ -162,6 +162,29 @@ labelAlign:"top"}})
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["description"])
+;
+	}	
+});
+ 	
+
+Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$ViewDescription", {
+	extend: "dnet.core.dc.AbstractDcvForm",
+	alias: "widget.net.nan21.dnet.module.pj.md.dc.Issue$ViewDescription",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addDisplayFieldText({ name:"description", dataIndex:"description", asText:true, fieldStyle:"height:auto;"  })
+		//containers
+		.addPanel({ name:"r1", layout:"form" , width:"90%", defaults:{
+labelAlign:"top"}})     
+		.addPanel({ name:"main" , autoScroll:true })      	 
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["r1" ])
+		.addChildrenTo("r1",["description"])
 ;
 	}	
 });

@@ -2,7 +2,6 @@
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.IssueTaskDs$Trl", {  	  	
 	uuid__lbl : "Uuid",
 	entityFQN__lbl : "Entity FQN",
-	summary__lbl : "Summary",
 	issueId__lbl : "Issue Id",
 	issueUuId__lbl : "Issue Uu Id",
 	issue__lbl : "Issue",

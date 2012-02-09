@@ -36,7 +36,7 @@ public class IssueTaskDsFilter extends AbstractDsFilter implements
 
     private String entityFQN;
 
-    private String summary;
+    private String code;
 
     private String description;
 
@@ -215,12 +215,12 @@ public class IssueTaskDsFilter extends AbstractDsFilter implements
         this.entityFQN = entityFQN;
     }
 
-    public String getSummary() {
-        return this.summary;
+    public String getCode() {
+        return this.code;
     }
 
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getDescription() {

@@ -11,7 +11,7 @@
 				<th>Status</th>	  
 				<th>Type</th>	  
 				<th>Assignee</th>	  
-				<th>Summary</th>	  
+				<th>Code</th>	  
             </tr>
         </thead>
         <tbody>
@@ -20,7 +20,7 @@
 				<td>${ds.status}</td>  	
 				<td>${ds.type}</td>  	
 				<td>${ds.assignee}</td>  	
-				<td>${ds.summary}</td>  	
+				<td>${ds.code}</td>  	
             </tr>
 			</c:forEach>
 		</tbody>

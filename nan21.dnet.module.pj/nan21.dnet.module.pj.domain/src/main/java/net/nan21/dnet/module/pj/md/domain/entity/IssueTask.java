@@ -63,10 +63,10 @@ public class IssueTask implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_IDS = "IssueTask.findByIds";
 
-    /** Summary. */
-    @Column(name = "SUMMARY", nullable = false, length = 255)
+    /** Code. */
+    @Column(name = "CODE", nullable = false, length = 32)
     @NotBlank
-    private String summary;
+    private String code;
 
     /** Description. */
     @Column(name = "DESCRIPTION", length = 4000)
@@ -146,12 +146,12 @@ public class IssueTask implements Serializable, IModelWithId,
 
     /* ============== getters - setters ================== */
 
-    public String getSummary() {
-        return this.summary;
+    public String getCode() {
+        return this.code;
     }
 
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getDescription() {
@@ -280,6 +280,9 @@ public class IssueTask implements Serializable, IModelWithId,
         if (this.uuid == null || this.uuid.equals("")) {
             event.updateAttributeWithObject("uuid", UUID.randomUUID()
                     .toString().toUpperCase());
+        }
+        if (this.code == null || this.code.equals("")) {
+            event.updateAttributeWithObject("code", "T-" + this.getId());
         }
     }
 

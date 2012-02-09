@@ -25,7 +25,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$Filter", {
 		this._getBuilder_()	
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTaskTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addLov({ name:"status", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTaskStatuses", dataIndex:"status",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
-		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ]  })
+		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]  })
 		//containers
 		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
 		
@@ -52,10 +52,10 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$List", {
 	,_noExport_: false
 	,_defineColumns_: function () {	
 		this._getBuilder_()	
+		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
 		.addTextColumn({ name:"type", dataIndex:"type",width:120 })   	
 		.addTextColumn({ name:"assignee", dataIndex:"assignee",width:120 })   	
 		.addTextColumn({ name:"status", dataIndex:"status",width:120 })   	
-		.addTextColumn({ name:"summary", dataIndex:"summary",width:200 })   	
 		.addTextColumn({ name:"description", dataIndex:"description", hidden:true,width:200 })   	
 		.addNumberColumn({ name:"typeId", dataIndex:"typeId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"statusId", dataIndex:"statusId", hidden:true,format:"0",width:70 })  
@@ -74,11 +74,11 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"summary", dataIndex:"summary",anchor:"-20" ,maxLength:255  })
-		.addTextArea({ name:"description", dataIndex:"description",height:80,anchor:"-20"   })
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20",noEdit:true  ,maxLength:32  })
+		.addTextArea({ name:"description", dataIndex:"description",height:120,anchor:"-20"   })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTaskTypes", dataIndex:"type",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addLov({ name:"status", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTaskStatuses", dataIndex:"status",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
-		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ]  })
+		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:280})     
 		.addPanel({ name:"col2", layout:"form" , width:500})     
@@ -88,8 +88,8 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
-		.addChildrenTo("col1",["type","assignee","status"])
-		.addChildrenTo("col2",["summary","description"])
+		.addChildrenTo("col1",["type","assignee","status","code"])
+		.addChildrenTo("col2",["description"])
 ;
 	}	
 });

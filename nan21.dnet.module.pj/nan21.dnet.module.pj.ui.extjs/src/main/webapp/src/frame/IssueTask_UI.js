@@ -32,7 +32,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssueTask_UI", {
 		.addDcFilterFormView("task",{ name:"taskFilter", xtype:"net.nan21.dnet.module.pj.md.dc.IssueTask$Filter",height:180})	 
 		.addDcView("task",{ name:"taskList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueTask$List"})	 
 		.addDcFormView("task",{ name:"taskEdit", xtype:"net.nan21.dnet.module.pj.md.dc.IssueTask$Edit",height:180})	 
-		.addDcFormView("issue",{ name:"issueEdit", xtype:"net.nan21.dnet.module.pj.md.dc.Issue$View"})	 
+		.addDcFormView("issue",{ name:"issueView", xtype:"net.nan21.dnet.module.pj.md.dc.Issue$View"})	 
 		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", frame:true,title:"Issue attachments",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnViewAttachment") ]}]})	 
 		.addDcView("note",{ name:"noteList", xtype:"net.nan21.dnet.module.ad.data.dc.Note$List",width:300})	 
 		.addDcFormView("note",{ name:"noteEdit", xtype:"net.nan21.dnet.module.ad.data.dc.Note$Edit"})	 
@@ -54,7 +54,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssueTask_UI", {
 		.addChildrenTo("canvas1",["taskFilter","taskList"] ,["north","center"])	
 		.addChildrenTo("canvas2",["taskEdit","taskDetailsTab"] ,["north","center"])	
 	 	.addChildrenTo("taskDetailsTab", ["issueInfoPanel","atchEditList","linkEditList","notesPanel"]) 				 		
-	 	.addChildrenTo("issueInfoPanel", ["issueEdit"]) 				 		
+	 	.addChildrenTo("issueInfoPanel", ["issueView"]) 				 		
 		.addChildrenTo("notesPanel",["noteList","noteEdit"] ,["west","center"])	
 	 	.addToolbarTo("canvas1","tlbTaskList")	  	
 	 	.addToolbarTo("canvas2","tlbTaskEdit")	  	
@@ -82,7 +82,9 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssueTask_UI", {
 		getApplication().showFrame(frame,{
 	 		url:Dnet.buildUiPath(bundle, frame, false),  	 		 
 	 		params: {
-	 			code: this._getDc_("task").getRecord().get("issue")	 			
+	 			code: this._getDc_("task").getRecord().get("issue")	 			,
+	 			projectId: this._getDc_("issue").getRecord().get("projectId")	 			,
+	 			project: this._getDc_("issue").getRecord().get("project")	 			
 		    }, 				      
 	 		callback: function (params) {	           
 	          this._when_called_to_edit_(params);                                    

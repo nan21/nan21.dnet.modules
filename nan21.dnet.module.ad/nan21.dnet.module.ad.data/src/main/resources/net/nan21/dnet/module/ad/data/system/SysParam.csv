@@ -1,4 +1,5 @@
 "code";"name";"value";"active"
+"CORE_EXP_HTML_CSS";"Css file location for HTML export";"http://localhost:8081/nan21.dnet.core.ui.extjs/resources/css/export-html.css";"true"
 "MM_MANUFACT_ICON_BASEURL";"Manufacturer icon base url";"http://dnet.nan21.net/static-demo-resources/MM/product-manufacturers";"true"
 "MM_MANUFACT_ICON_EXT";"Manufacturer icon default extension";"jpg";"true"
 "MM_PRODCATEG_ICON_BASEURL";"Product category icon base url";"http://dnet.nan21.net/static-demo-resources/MM/product-categories";"true"
