@@ -248,7 +248,7 @@ public class MenuItem implements Serializable, IModelWithId, IModelWithClientId 
 
     @Transient
     public Boolean getLeafNode() {
-        return this.frame != null;
+        return (this.frame != null && !this.frame.equals(""));
     }
 
     public void setLeafNode(Boolean leafNode) {
