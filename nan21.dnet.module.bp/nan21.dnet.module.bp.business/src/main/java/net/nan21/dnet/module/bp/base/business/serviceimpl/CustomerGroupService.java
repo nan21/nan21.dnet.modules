@@ -53,7 +53,7 @@ public class CustomerGroupService extends AbstractEntityService<CustomerGroup>
     public List<CustomerGroup> findByPaymentMethodId(Long paymentMethodId) {
         return (List<CustomerGroup>) this.em
                 .createQuery(
-                        "select e from CustomerGroup e where e.clientId = :pClientId and  e.paymentMethod.id = :pPaymentMethodId",
+                        "select e from CustomerGroup e where e.clientId = :pClientId and e.paymentMethod.id = :pPaymentMethodId",
                         CustomerGroup.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPaymentMethodId", paymentMethodId)
@@ -67,7 +67,7 @@ public class CustomerGroupService extends AbstractEntityService<CustomerGroup>
     public List<CustomerGroup> findByPaymentTermId(Long paymentTermId) {
         return (List<CustomerGroup>) this.em
                 .createQuery(
-                        "select e from CustomerGroup e where e.clientId = :pClientId and  e.paymentTerm.id = :pPaymentTermId",
+                        "select e from CustomerGroup e where e.clientId = :pClientId and e.paymentTerm.id = :pPaymentTermId",
                         CustomerGroup.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPaymentTermId", paymentTermId).getResultList();

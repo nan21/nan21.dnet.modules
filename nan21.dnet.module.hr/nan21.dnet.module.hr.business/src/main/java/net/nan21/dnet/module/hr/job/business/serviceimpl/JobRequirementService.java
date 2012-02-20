@@ -39,7 +39,7 @@ public class JobRequirementService extends
     public List<JobRequirement> findByJobId(Long jobId) {
         return (List<JobRequirement>) this.em
                 .createQuery(
-                        "select e from JobRequirement e where e.clientId = :pClientId and  e.job.id = :pJobId",
+                        "select e from JobRequirement e where e.clientId = :pClientId and e.job.id = :pJobId",
                         JobRequirement.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pJobId", jobId).getResultList();
@@ -52,7 +52,7 @@ public class JobRequirementService extends
     public List<JobRequirement> findByRequirementId(Long requirementId) {
         return (List<JobRequirement>) this.em
                 .createQuery(
-                        "select e from JobRequirement e where e.clientId = :pClientId and  e.requirement.id = :pRequirementId",
+                        "select e from JobRequirement e where e.clientId = :pClientId and e.requirement.id = :pRequirementId",
                         JobRequirement.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRequirementId", requirementId).getResultList();

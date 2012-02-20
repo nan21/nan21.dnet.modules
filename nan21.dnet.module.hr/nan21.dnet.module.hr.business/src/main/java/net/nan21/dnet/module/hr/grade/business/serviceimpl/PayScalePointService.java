@@ -54,7 +54,7 @@ public class PayScalePointService extends AbstractEntityService<PayScalePoint>
     public List<PayScalePoint> findByPayScaleId(Long payScaleId) {
         return (List<PayScalePoint>) this.em
                 .createQuery(
-                        "select e from PayScalePoint e where e.clientId = :pClientId and  e.payScale.id = :pPayScaleId",
+                        "select e from PayScalePoint e where e.clientId = :pClientId and e.payScale.id = :pPayScaleId",
                         PayScalePoint.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPayScaleId", payScaleId).getResultList();

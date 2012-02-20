@@ -41,7 +41,7 @@ public class GradePayScalePointService extends
     public List<GradePayScalePoint> findByGradePayScaleId(Long gradePayScaleId) {
         return (List<GradePayScalePoint>) this.em
                 .createQuery(
-                        "select e from GradePayScalePoint e where e.clientId = :pClientId and  e.gradePayScale.id = :pGradePayScaleId",
+                        "select e from GradePayScalePoint e where e.clientId = :pClientId and e.gradePayScale.id = :pGradePayScaleId",
                         GradePayScalePoint.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pGradePayScaleId", gradePayScaleId)
@@ -55,7 +55,7 @@ public class GradePayScalePointService extends
     public List<GradePayScalePoint> findByPointId(Long pointId) {
         return (List<GradePayScalePoint>) this.em
                 .createQuery(
-                        "select e from GradePayScalePoint e where e.clientId = :pClientId and  e.point.id = :pPointId",
+                        "select e from GradePayScalePoint e where e.clientId = :pClientId and e.point.id = :pPointId",
                         GradePayScalePoint.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPointId", pointId).getResultList();

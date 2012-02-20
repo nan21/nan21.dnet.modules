@@ -53,7 +53,7 @@ public class VendorGroupService extends AbstractEntityService<VendorGroup>
     public List<VendorGroup> findByPaymentMethodId(Long paymentMethodId) {
         return (List<VendorGroup>) this.em
                 .createQuery(
-                        "select e from VendorGroup e where e.clientId = :pClientId and  e.paymentMethod.id = :pPaymentMethodId",
+                        "select e from VendorGroup e where e.clientId = :pClientId and e.paymentMethod.id = :pPaymentMethodId",
                         VendorGroup.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPaymentMethodId", paymentMethodId)
@@ -67,7 +67,7 @@ public class VendorGroupService extends AbstractEntityService<VendorGroup>
     public List<VendorGroup> findByPaymentTermId(Long paymentTermId) {
         return (List<VendorGroup>) this.em
                 .createQuery(
-                        "select e from VendorGroup e where e.clientId = :pClientId and  e.paymentTerm.id = :pPaymentTermId",
+                        "select e from VendorGroup e where e.clientId = :pClientId and e.paymentTerm.id = :pPaymentTermId",
                         VendorGroup.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPaymentTermId", paymentTermId).getResultList();

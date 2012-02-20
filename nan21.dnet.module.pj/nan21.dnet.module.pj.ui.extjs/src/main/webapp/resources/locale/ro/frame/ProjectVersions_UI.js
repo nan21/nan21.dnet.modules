@@ -1,4 +1,4 @@
-Ext.define("net.nan21.dnet.module.pj.base.frame.ProjectVersions_UI$Trl", { 
+Ext.define("net.nan21.dnet.module.pj.md.frame.ProjectVersions_UI$Trl", { 
 	
 	tlbVersionEditList__ttl : "Versiuni proiecte",
 	

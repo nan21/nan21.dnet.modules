@@ -39,7 +39,7 @@ public class EmployeeWorkExperienceService extends
     public List<EmployeeWorkExperience> findByEmployeeId(Long employeeId) {
         return (List<EmployeeWorkExperience>) this.em
                 .createQuery(
-                        "select e from EmployeeWorkExperience e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
+                        "select e from EmployeeWorkExperience e where e.clientId = :pClientId and e.employee.id = :pEmployeeId",
                         EmployeeWorkExperience.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();

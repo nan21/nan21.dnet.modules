@@ -41,7 +41,7 @@ public class CurrencyXRateAverageService extends
     public List<CurrencyXRateAverage> findByProviderId(Long providerId) {
         return (List<CurrencyXRateAverage>) this.em
                 .createQuery(
-                        "select e from CurrencyXRateAverage e where e.clientId = :pClientId and  e.provider.id = :pProviderId",
+                        "select e from CurrencyXRateAverage e where e.clientId = :pClientId and e.provider.id = :pProviderId",
                         CurrencyXRateAverage.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProviderId", providerId).getResultList();
@@ -54,7 +54,7 @@ public class CurrencyXRateAverageService extends
     public List<CurrencyXRateAverage> findBySourceId(Long sourceId) {
         return (List<CurrencyXRateAverage>) this.em
                 .createQuery(
-                        "select e from CurrencyXRateAverage e where e.clientId = :pClientId and  e.source.id = :pSourceId",
+                        "select e from CurrencyXRateAverage e where e.clientId = :pClientId and e.source.id = :pSourceId",
                         CurrencyXRateAverage.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSourceId", sourceId).getResultList();
@@ -67,7 +67,7 @@ public class CurrencyXRateAverageService extends
     public List<CurrencyXRateAverage> findByTargetId(Long targetId) {
         return (List<CurrencyXRateAverage>) this.em
                 .createQuery(
-                        "select e from CurrencyXRateAverage e where e.clientId = :pClientId and  e.target.id = :pTargetId",
+                        "select e from CurrencyXRateAverage e where e.clientId = :pClientId and e.target.id = :pTargetId",
                         CurrencyXRateAverage.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTargetId", targetId).getResultList();

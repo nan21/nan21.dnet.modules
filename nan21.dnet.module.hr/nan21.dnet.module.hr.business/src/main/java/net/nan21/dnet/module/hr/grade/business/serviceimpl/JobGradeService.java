@@ -39,7 +39,7 @@ public class JobGradeService extends AbstractEntityService<JobGrade> implements
     public List<JobGrade> findByJobId(Long jobId) {
         return (List<JobGrade>) this.em
                 .createQuery(
-                        "select e from JobGrade e where e.clientId = :pClientId and  e.job.id = :pJobId",
+                        "select e from JobGrade e where e.clientId = :pClientId and e.job.id = :pJobId",
                         JobGrade.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pJobId", jobId).getResultList();
@@ -52,7 +52,7 @@ public class JobGradeService extends AbstractEntityService<JobGrade> implements
     public List<JobGrade> findByGradeId(Long gradeId) {
         return (List<JobGrade>) this.em
                 .createQuery(
-                        "select e from JobGrade e where e.clientId = :pClientId and  e.grade.id = :pGradeId",
+                        "select e from JobGrade e where e.clientId = :pClientId and e.grade.id = :pGradeId",
                         JobGrade.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pGradeId", gradeId).getResultList();

@@ -45,7 +45,7 @@ public class AbsenceReasonService extends AbstractEntityService<AbsenceReason>
     public List<AbsenceReason> findByTypeId(Long typeId) {
         return (List<AbsenceReason>) this.em
                 .createQuery(
-                        "select e from AbsenceReason e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from AbsenceReason e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         AbsenceReason.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();

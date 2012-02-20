@@ -45,7 +45,7 @@ public class BusinessPartnerService extends
     public List<BusinessPartner> findByCountryId(Long countryId) {
         return (List<BusinessPartner>) this.em
                 .createQuery(
-                        "select e from BusinessPartner e where e.clientId = :pClientId and  e.country.id = :pCountryId",
+                        "select e from BusinessPartner e where e.clientId = :pClientId and e.country.id = :pCountryId",
                         BusinessPartner.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCountryId", countryId).getResultList();
@@ -58,7 +58,7 @@ public class BusinessPartnerService extends
     public List<BusinessPartner> findByLegalFormId(Long legalFormId) {
         return (List<BusinessPartner>) this.em
                 .createQuery(
-                        "select e from BusinessPartner e where e.clientId = :pClientId and  e.legalForm.id = :pLegalFormId",
+                        "select e from BusinessPartner e where e.clientId = :pClientId and e.legalForm.id = :pLegalFormId",
                         BusinessPartner.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLegalFormId", legalFormId).getResultList();

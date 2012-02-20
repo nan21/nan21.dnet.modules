@@ -51,7 +51,7 @@ public class AccountService extends AbstractEntityService<Account> implements
     public List<Account> findByAccSchemaId(Long accSchemaId) {
         return (List<Account>) this.em
                 .createQuery(
-                        "select e from Account e where e.clientId = :pClientId and  e.accSchema.id = :pAccSchemaId",
+                        "select e from Account e where e.clientId = :pClientId and e.accSchema.id = :pAccSchemaId",
                         Account.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAccSchemaId", accSchemaId).getResultList();
@@ -64,7 +64,7 @@ public class AccountService extends AbstractEntityService<Account> implements
     public List<Account> findByAccGroupId(Long accGroupId) {
         return (List<Account>) this.em
                 .createQuery(
-                        "select e from Account e where e.clientId = :pClientId and  e.accGroup.id = :pAccGroupId",
+                        "select e from Account e where e.clientId = :pClientId and e.accGroup.id = :pAccGroupId",
                         Account.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAccGroupId", accGroupId).getResultList();

@@ -41,7 +41,7 @@ public class IssueTaskService extends AbstractEntityService<IssueTask>
     public List<IssueTask> findByIssueId(Long issueId) {
         return (List<IssueTask>) this.em
                 .createQuery(
-                        "select e from IssueTask e where e.clientId = :pClientId and  e.issue.id = :pIssueId",
+                        "select e from IssueTask e where e.clientId = :pClientId and e.issue.id = :pIssueId",
                         IssueTask.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pIssueId", issueId).getResultList();
@@ -54,7 +54,7 @@ public class IssueTaskService extends AbstractEntityService<IssueTask>
     public List<IssueTask> findByTypeId(Long typeId) {
         return (List<IssueTask>) this.em
                 .createQuery(
-                        "select e from IssueTask e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from IssueTask e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         IssueTask.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();
@@ -67,7 +67,7 @@ public class IssueTaskService extends AbstractEntityService<IssueTask>
     public List<IssueTask> findByStatusId(Long statusId) {
         return (List<IssueTask>) this.em
                 .createQuery(
-                        "select e from IssueTask e where e.clientId = :pClientId and  e.status.id = :pStatusId",
+                        "select e from IssueTask e where e.clientId = :pClientId and e.status.id = :pStatusId",
                         IssueTask.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pStatusId", statusId).getResultList();
@@ -80,7 +80,7 @@ public class IssueTaskService extends AbstractEntityService<IssueTask>
     public List<IssueTask> findByAssigneeId(Long assigneeId) {
         return (List<IssueTask>) this.em
                 .createQuery(
-                        "select e from IssueTask e where e.clientId = :pClientId and  e.assignee.id = :pAssigneeId",
+                        "select e from IssueTask e where e.clientId = :pClientId and e.assignee.id = :pAssigneeId",
                         IssueTask.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAssigneeId", assigneeId).getResultList();

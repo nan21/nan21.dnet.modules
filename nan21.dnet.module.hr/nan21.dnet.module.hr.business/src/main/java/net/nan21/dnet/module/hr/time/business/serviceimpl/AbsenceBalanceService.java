@@ -38,7 +38,7 @@ public class AbsenceBalanceService extends
     public List<AbsenceBalance> findByEmployeeId(Long employeeId) {
         return (List<AbsenceBalance>) this.em
                 .createQuery(
-                        "select e from AbsenceBalance e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
+                        "select e from AbsenceBalance e where e.clientId = :pClientId and e.employee.id = :pEmployeeId",
                         AbsenceBalance.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();

@@ -41,7 +41,7 @@ public class OrganizationHierarchyItemService extends
     public List<OrganizationHierarchyItem> findByHierarchyId(Long hierarchyId) {
         return (List<OrganizationHierarchyItem>) this.em
                 .createQuery(
-                        "select e from OrganizationHierarchyItem e where e.clientId = :pClientId and  e.hierarchy.id = :pHierarchyId",
+                        "select e from OrganizationHierarchyItem e where e.clientId = :pClientId and e.hierarchy.id = :pHierarchyId",
                         OrganizationHierarchyItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pHierarchyId", hierarchyId).getResultList();
@@ -56,7 +56,7 @@ public class OrganizationHierarchyItemService extends
             Long organizationId) {
         return (List<OrganizationHierarchyItem>) this.em
                 .createQuery(
-                        "select e from OrganizationHierarchyItem e where e.clientId = :pClientId and  e.organization.id = :pOrganizationId",
+                        "select e from OrganizationHierarchyItem e where e.clientId = :pClientId and e.organization.id = :pOrganizationId",
                         OrganizationHierarchyItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pOrganizationId", organizationId)
@@ -70,7 +70,7 @@ public class OrganizationHierarchyItemService extends
     public List<OrganizationHierarchyItem> findByParentId(Long parentId) {
         return (List<OrganizationHierarchyItem>) this.em
                 .createQuery(
-                        "select e from OrganizationHierarchyItem e where e.clientId = :pClientId and  e.parent.id = :pParentId",
+                        "select e from OrganizationHierarchyItem e where e.clientId = :pClientId and e.parent.id = :pParentId",
                         OrganizationHierarchyItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pParentId", parentId).getResultList();

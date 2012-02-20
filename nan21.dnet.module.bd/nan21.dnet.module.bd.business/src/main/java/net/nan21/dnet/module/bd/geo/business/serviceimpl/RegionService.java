@@ -54,7 +54,7 @@ public class RegionService extends AbstractEntityService<Region> implements
     public List<Region> findByCountryId(Long countryId) {
         return (List<Region>) this.em
                 .createQuery(
-                        "select e from Region e where e.clientId = :pClientId and  e.country.id = :pCountryId",
+                        "select e from Region e where e.clientId = :pClientId and e.country.id = :pCountryId",
                         Region.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCountryId", countryId).getResultList();

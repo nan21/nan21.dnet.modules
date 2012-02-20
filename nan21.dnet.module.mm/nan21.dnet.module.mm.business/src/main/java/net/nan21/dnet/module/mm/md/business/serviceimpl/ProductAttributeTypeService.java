@@ -47,7 +47,7 @@ public class ProductAttributeTypeService extends
     public List<ProductAttributeType> findByCategoryId(Long categoryId) {
         return (List<ProductAttributeType>) this.em
                 .createQuery(
-                        "select e from ProductAttributeType e where e.clientId = :pClientId and  e.category.id = :pCategoryId",
+                        "select e from ProductAttributeType e where e.clientId = :pClientId and e.category.id = :pCategoryId",
                         ProductAttributeType.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCategoryId", categoryId).getResultList();

@@ -42,7 +42,7 @@ public class InvOperationService extends AbstractEntityService<InvOperation>
     public List<InvOperation> findByInventoryId(Long inventoryId) {
         return (List<InvOperation>) this.em
                 .createQuery(
-                        "select e from InvOperation e where e.clientId = :pClientId and  e.inventory.id = :pInventoryId",
+                        "select e from InvOperation e where e.clientId = :pClientId and e.inventory.id = :pInventoryId",
                         InvOperation.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pInventoryId", inventoryId).getResultList();
@@ -55,7 +55,7 @@ public class InvOperationService extends AbstractEntityService<InvOperation>
     public List<InvOperation> findBySubInventoryId(Long subInventoryId) {
         return (List<InvOperation>) this.em
                 .createQuery(
-                        "select e from InvOperation e where e.clientId = :pClientId and  e.subInventory.id = :pSubInventoryId",
+                        "select e from InvOperation e where e.clientId = :pClientId and e.subInventory.id = :pSubInventoryId",
                         InvOperation.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSubInventoryId", subInventoryId)
@@ -69,7 +69,7 @@ public class InvOperationService extends AbstractEntityService<InvOperation>
     public List<InvOperation> findByLocatorId(Long locatorId) {
         return (List<InvOperation>) this.em
                 .createQuery(
-                        "select e from InvOperation e where e.clientId = :pClientId and  e.locator.id = :pLocatorId",
+                        "select e from InvOperation e where e.clientId = :pClientId and e.locator.id = :pLocatorId",
                         InvOperation.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLocatorId", locatorId).getResultList();
@@ -82,7 +82,7 @@ public class InvOperationService extends AbstractEntityService<InvOperation>
     public List<InvOperation> findByItemId(Long itemId) {
         return (List<InvOperation>) this.em
                 .createQuery(
-                        "select e from InvOperation e where e.clientId = :pClientId and  e.item.id = :pItemId",
+                        "select e from InvOperation e where e.clientId = :pClientId and e.item.id = :pItemId",
                         InvOperation.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pItemId", itemId).getResultList();
@@ -96,7 +96,7 @@ public class InvOperationService extends AbstractEntityService<InvOperation>
     public List<InvOperation> findByTransactionLineId(Long transactionLineId) {
         return (List<InvOperation>) this.em
                 .createQuery(
-                        "select e from InvOperation e where e.clientId = :pClientId and  e.transactionLine.id = :pTransactionLineId",
+                        "select e from InvOperation e where e.clientId = :pClientId and e.transactionLine.id = :pTransactionLineId",
                         InvOperation.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTransactionLineId", transactionLineId)

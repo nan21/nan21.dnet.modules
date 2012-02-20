@@ -53,7 +53,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByProjectId(Long projectId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and  e.project.id = :pProjectId",
+                        "select e from Issue e where e.clientId = :pClientId and e.project.id = :pProjectId",
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProjectId", projectId).getResultList();
@@ -66,7 +66,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByStatusId(Long statusId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and  e.status.id = :pStatusId",
+                        "select e from Issue e where e.clientId = :pClientId and e.status.id = :pStatusId",
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pStatusId", statusId).getResultList();
@@ -79,7 +79,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByTypeId(Long typeId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from Issue e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();
@@ -92,7 +92,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByPriorityId(Long priorityId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and  e.priority.id = :pPriorityId",
+                        "select e from Issue e where e.clientId = :pClientId and e.priority.id = :pPriorityId",
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPriorityId", priorityId).getResultList();
@@ -105,7 +105,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByResolutionId(Long resolutionId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and  e.resolution.id = :pResolutionId",
+                        "select e from Issue e where e.clientId = :pClientId and e.resolution.id = :pResolutionId",
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pResolutionId", resolutionId).getResultList();
@@ -118,7 +118,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findBySeverityId(Long severityId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and  e.severity.id = :pSeverityId",
+                        "select e from Issue e where e.clientId = :pClientId and e.severity.id = :pSeverityId",
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSeverityId", severityId).getResultList();
@@ -131,7 +131,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByReportedVersionId(Long reportedVersionId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and  e.reportedVersion.id = :pReportedVersionId",
+                        "select e from Issue e where e.clientId = :pClientId and e.reportedVersion.id = :pReportedVersionId",
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pReportedVersionId", reportedVersionId)
@@ -145,7 +145,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByTargetVersionId(Long targetVersionId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and  e.targetVersion.id = :pTargetVersionId",
+                        "select e from Issue e where e.clientId = :pClientId and e.targetVersion.id = :pTargetVersionId",
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTargetVersionId", targetVersionId)
@@ -159,7 +159,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByFixedInVersionId(Long fixedInVersionId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and  e.fixedInVersion.id = :pFixedInVersionId",
+                        "select e from Issue e where e.clientId = :pClientId and e.fixedInVersion.id = :pFixedInVersionId",
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pFixedInVersionId", fixedInVersionId)
@@ -202,7 +202,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByAssigneeId(Long assigneeId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and  e.assignee.id = :pAssigneeId",
+                        "select e from Issue e where e.clientId = :pClientId and e.assignee.id = :pAssigneeId",
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAssigneeId", assigneeId).getResultList();
@@ -215,7 +215,7 @@ public class IssueService extends AbstractEntityService<Issue> implements
     public List<Issue> findByAssigneeRoleId(Long assigneeRoleId) {
         return (List<Issue>) this.em
                 .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and  e.assigneeRole.id = :pAssigneeRoleId",
+                        "select e from Issue e where e.clientId = :pClientId and e.assigneeRole.id = :pAssigneeRoleId",
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAssigneeRoleId", assigneeRoleId)

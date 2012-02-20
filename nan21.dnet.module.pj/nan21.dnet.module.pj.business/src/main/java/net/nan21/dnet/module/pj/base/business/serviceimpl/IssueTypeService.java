@@ -45,7 +45,7 @@ public class IssueTypeService extends AbstractEntityService<IssueType>
     public List<IssueType> findByCategoryId(Long categoryId) {
         return (List<IssueType>) this.em
                 .createQuery(
-                        "select e from IssueType e where e.clientId = :pClientId and  e.category.id = :pCategoryId",
+                        "select e from IssueType e where e.clientId = :pClientId and e.category.id = :pCategoryId",
                         IssueType.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCategoryId", categoryId).getResultList();

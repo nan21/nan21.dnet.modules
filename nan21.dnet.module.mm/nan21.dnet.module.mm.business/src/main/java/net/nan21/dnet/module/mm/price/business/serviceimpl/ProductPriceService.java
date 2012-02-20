@@ -58,7 +58,7 @@ public class ProductPriceService extends AbstractEntityService<ProductPrice>
     public List<ProductPrice> findByPriceListVersionId(Long priceListVersionId) {
         return (List<ProductPrice>) this.em
                 .createQuery(
-                        "select e from ProductPrice e where e.clientId = :pClientId and  e.priceListVersion.id = :pPriceListVersionId",
+                        "select e from ProductPrice e where e.clientId = :pClientId and e.priceListVersion.id = :pPriceListVersionId",
                         ProductPrice.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPriceListVersionId", priceListVersionId)
@@ -72,7 +72,7 @@ public class ProductPriceService extends AbstractEntityService<ProductPrice>
     public List<ProductPrice> findByProductId(Long productId) {
         return (List<ProductPrice>) this.em
                 .createQuery(
-                        "select e from ProductPrice e where e.clientId = :pClientId and  e.product.id = :pProductId",
+                        "select e from ProductPrice e where e.clientId = :pClientId and e.product.id = :pProductId",
                         ProductPrice.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProductId", productId).getResultList();
@@ -85,7 +85,7 @@ public class ProductPriceService extends AbstractEntityService<ProductPrice>
     public List<ProductPrice> findByUomId(Long uomId) {
         return (List<ProductPrice>) this.em
                 .createQuery(
-                        "select e from ProductPrice e where e.clientId = :pClientId and  e.uom.id = :pUomId",
+                        "select e from ProductPrice e where e.clientId = :pClientId and e.uom.id = :pUomId",
                         ProductPrice.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pUomId", uomId).getResultList();

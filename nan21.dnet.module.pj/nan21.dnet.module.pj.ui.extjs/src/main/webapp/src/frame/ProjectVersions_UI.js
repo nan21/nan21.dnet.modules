@@ -1,10 +1,10 @@
 Dnet.doImport(["", "nan21.dnet.module.pj.ui.extjs/ds/ProjectVersionDs", "nan21.dnet.module.pj.ui.extjs/dc/ProjectVersion","nan21.dnet.module.pj.ui.extjs/ds/ProjectLovDs","nan21.dnet.module.pj.ui.extjs/lov/Projects","nan21.dnet.module.pj.ui.extjs/ds/ProjectLovDs","nan21.dnet.module.pj.ui.extjs/lov/Projects"]);
 
-Ext.define("net.nan21.dnet.module.pj.base.frame.ProjectVersions_UI", {  
+Ext.define("net.nan21.dnet.module.pj.md.frame.ProjectVersions_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
-	alias:"widget.net.nan21.dnet.module.pj.base.frame.ProjectVersions_UI",
+	alias:"widget.net.nan21.dnet.module.pj.md.frame.ProjectVersions_UI",
 	
-	 _name_ : "net.nan21.dnet.module.pj.base.frame.ProjectVersions_UI"
+	 _name_ : "net.nan21.dnet.module.pj.md.frame.ProjectVersions_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
 		.addDc("version", new net.nan21.dnet.module.pj.md.dc.ProjectVersion({multiEdit:true}))		;		

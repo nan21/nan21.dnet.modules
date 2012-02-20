@@ -39,7 +39,7 @@ public class CommunicationChannelService extends
     public List<CommunicationChannel> findByTypeId(Long typeId) {
         return (List<CommunicationChannel>) this.em
                 .createQuery(
-                        "select e from CommunicationChannel e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from CommunicationChannel e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         CommunicationChannel.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();

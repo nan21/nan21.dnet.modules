@@ -40,7 +40,7 @@ public class ElementValueService extends AbstractEntityService<ElementValue>
     public List<ElementValue> findByElementId(Long elementId) {
         return (List<ElementValue>) this.em
                 .createQuery(
-                        "select e from ElementValue e where e.clientId = :pClientId and  e.element.id = :pElementId",
+                        "select e from ElementValue e where e.clientId = :pClientId and e.element.id = :pElementId",
                         ElementValue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pElementId", elementId).getResultList();
@@ -53,7 +53,7 @@ public class ElementValueService extends AbstractEntityService<ElementValue>
     public List<ElementValue> findByEmployeeId(Long employeeId) {
         return (List<ElementValue>) this.em
                 .createQuery(
-                        "select e from ElementValue e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
+                        "select e from ElementValue e where e.clientId = :pClientId and e.employee.id = :pEmployeeId",
                         ElementValue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();
@@ -66,7 +66,7 @@ public class ElementValueService extends AbstractEntityService<ElementValue>
     public List<ElementValue> findByPeriodId(Long periodId) {
         return (List<ElementValue>) this.em
                 .createQuery(
-                        "select e from ElementValue e where e.clientId = :pClientId and  e.period.id = :pPeriodId",
+                        "select e from ElementValue e where e.clientId = :pClientId and e.period.id = :pPeriodId",
                         ElementValue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPeriodId", periodId).getResultList();

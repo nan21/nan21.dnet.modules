@@ -40,7 +40,7 @@ public class PositionSkillService extends AbstractEntityService<PositionSkill>
     public List<PositionSkill> findByPositionId(Long positionId) {
         return (List<PositionSkill>) this.em
                 .createQuery(
-                        "select e from PositionSkill e where e.clientId = :pClientId and  e.position.id = :pPositionId",
+                        "select e from PositionSkill e where e.clientId = :pClientId and e.position.id = :pPositionId",
                         PositionSkill.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPositionId", positionId).getResultList();
@@ -53,7 +53,7 @@ public class PositionSkillService extends AbstractEntityService<PositionSkill>
     public List<PositionSkill> findBySkillId(Long skillId) {
         return (List<PositionSkill>) this.em
                 .createQuery(
-                        "select e from PositionSkill e where e.clientId = :pClientId and  e.skill.id = :pSkillId",
+                        "select e from PositionSkill e where e.clientId = :pClientId and e.skill.id = :pSkillId",
                         PositionSkill.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSkillId", skillId).getResultList();
@@ -66,7 +66,7 @@ public class PositionSkillService extends AbstractEntityService<PositionSkill>
     public List<PositionSkill> findByRequiredLevelId(Long requiredLevelId) {
         return (List<PositionSkill>) this.em
                 .createQuery(
-                        "select e from PositionSkill e where e.clientId = :pClientId and  e.requiredLevel.id = :pRequiredLevelId",
+                        "select e from PositionSkill e where e.clientId = :pClientId and e.requiredLevel.id = :pRequiredLevelId",
                         PositionSkill.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRequiredLevelId", requiredLevelId)

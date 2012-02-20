@@ -41,7 +41,7 @@ public class CalendarEventService extends AbstractEntityService<CalendarEvent>
     public List<CalendarEvent> findByStatusId(Long statusId) {
         return (List<CalendarEvent>) this.em
                 .createQuery(
-                        "select e from CalendarEvent e where e.clientId = :pClientId and  e.status.id = :pStatusId",
+                        "select e from CalendarEvent e where e.clientId = :pClientId and e.status.id = :pStatusId",
                         CalendarEvent.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pStatusId", statusId).getResultList();
@@ -54,7 +54,7 @@ public class CalendarEventService extends AbstractEntityService<CalendarEvent>
     public List<CalendarEvent> findByPriorityId(Long priorityId) {
         return (List<CalendarEvent>) this.em
                 .createQuery(
-                        "select e from CalendarEvent e where e.clientId = :pClientId and  e.priority.id = :pPriorityId",
+                        "select e from CalendarEvent e where e.clientId = :pClientId and e.priority.id = :pPriorityId",
                         CalendarEvent.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPriorityId", priorityId).getResultList();
@@ -67,7 +67,7 @@ public class CalendarEventService extends AbstractEntityService<CalendarEvent>
     public List<CalendarEvent> findByBpartnerId(Long bpartnerId) {
         return (List<CalendarEvent>) this.em
                 .createQuery(
-                        "select e from CalendarEvent e where e.clientId = :pClientId and  e.bpartner.id = :pBpartnerId",
+                        "select e from CalendarEvent e where e.clientId = :pClientId and e.bpartner.id = :pBpartnerId",
                         CalendarEvent.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBpartnerId", bpartnerId).getResultList();
@@ -80,7 +80,7 @@ public class CalendarEventService extends AbstractEntityService<CalendarEvent>
     public List<CalendarEvent> findByContactId(Long contactId) {
         return (List<CalendarEvent>) this.em
                 .createQuery(
-                        "select e from CalendarEvent e where e.clientId = :pClientId and  e.contact.id = :pContactId",
+                        "select e from CalendarEvent e where e.clientId = :pClientId and e.contact.id = :pContactId",
                         CalendarEvent.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pContactId", contactId).getResultList();

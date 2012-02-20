@@ -44,7 +44,7 @@ public class PriceListService extends AbstractEntityService<PriceList>
     public List<PriceList> findByCurrencyId(Long currencyId) {
         return (List<PriceList>) this.em
                 .createQuery(
-                        "select e from PriceList e where e.clientId = :pClientId and  e.currency.id = :pCurrencyId",
+                        "select e from PriceList e where e.clientId = :pClientId and e.currency.id = :pCurrencyId",
                         PriceList.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCurrencyId", currencyId).getResultList();

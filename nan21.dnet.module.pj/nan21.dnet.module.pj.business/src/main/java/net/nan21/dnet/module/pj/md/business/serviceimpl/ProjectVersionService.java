@@ -55,7 +55,7 @@ public class ProjectVersionService extends
     public List<ProjectVersion> findByProjectId(Long projectId) {
         return (List<ProjectVersion>) this.em
                 .createQuery(
-                        "select e from ProjectVersion e where e.clientId = :pClientId and  e.project.id = :pProjectId",
+                        "select e from ProjectVersion e where e.clientId = :pClientId and e.project.id = :pProjectId",
                         ProjectVersion.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProjectId", projectId).getResultList();

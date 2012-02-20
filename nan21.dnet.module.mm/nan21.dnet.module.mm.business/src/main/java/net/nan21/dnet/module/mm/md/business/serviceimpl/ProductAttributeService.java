@@ -47,7 +47,7 @@ public class ProductAttributeService extends
     public List<ProductAttribute> findByTypeId(Long typeId) {
         return (List<ProductAttribute>) this.em
                 .createQuery(
-                        "select e from ProductAttribute e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from ProductAttribute e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         ProductAttribute.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();
@@ -60,7 +60,7 @@ public class ProductAttributeService extends
     public List<ProductAttribute> findByUomId(Long uomId) {
         return (List<ProductAttribute>) this.em
                 .createQuery(
-                        "select e from ProductAttribute e where e.clientId = :pClientId and  e.uom.id = :pUomId",
+                        "select e from ProductAttribute e where e.clientId = :pClientId and e.uom.id = :pUomId",
                         ProductAttribute.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pUomId", uomId).getResultList();

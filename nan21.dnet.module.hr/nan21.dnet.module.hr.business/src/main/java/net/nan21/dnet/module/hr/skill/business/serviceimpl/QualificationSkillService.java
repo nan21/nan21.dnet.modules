@@ -42,7 +42,7 @@ public class QualificationSkillService extends
     public List<QualificationSkill> findByQualificationId(Long qualificationId) {
         return (List<QualificationSkill>) this.em
                 .createQuery(
-                        "select e from QualificationSkill e where e.clientId = :pClientId and  e.qualification.id = :pQualificationId",
+                        "select e from QualificationSkill e where e.clientId = :pClientId and e.qualification.id = :pQualificationId",
                         QualificationSkill.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pQualificationId", qualificationId)
@@ -56,7 +56,7 @@ public class QualificationSkillService extends
     public List<QualificationSkill> findBySkillId(Long skillId) {
         return (List<QualificationSkill>) this.em
                 .createQuery(
-                        "select e from QualificationSkill e where e.clientId = :pClientId and  e.skill.id = :pSkillId",
+                        "select e from QualificationSkill e where e.clientId = :pClientId and e.skill.id = :pSkillId",
                         QualificationSkill.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSkillId", skillId).getResultList();
@@ -70,7 +70,7 @@ public class QualificationSkillService extends
     public List<QualificationSkill> findByRequiredLevelId(Long requiredLevelId) {
         return (List<QualificationSkill>) this.em
                 .createQuery(
-                        "select e from QualificationSkill e where e.clientId = :pClientId and  e.requiredLevel.id = :pRequiredLevelId",
+                        "select e from QualificationSkill e where e.clientId = :pClientId and e.requiredLevel.id = :pRequiredLevelId",
                         QualificationSkill.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRequiredLevelId", requiredLevelId)

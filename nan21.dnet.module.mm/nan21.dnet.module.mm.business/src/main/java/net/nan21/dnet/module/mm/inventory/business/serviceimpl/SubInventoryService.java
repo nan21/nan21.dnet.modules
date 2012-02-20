@@ -45,7 +45,7 @@ public class SubInventoryService extends AbstractEntityService<SubInventory>
     public List<SubInventory> findByInventoryId(Long inventoryId) {
         return (List<SubInventory>) this.em
                 .createQuery(
-                        "select e from SubInventory e where e.clientId = :pClientId and  e.inventory.id = :pInventoryId",
+                        "select e from SubInventory e where e.clientId = :pClientId and e.inventory.id = :pInventoryId",
                         SubInventory.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pInventoryId", inventoryId).getResultList();

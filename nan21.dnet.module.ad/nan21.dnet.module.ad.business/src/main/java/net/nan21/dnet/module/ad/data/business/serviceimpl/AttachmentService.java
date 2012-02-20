@@ -38,7 +38,7 @@ public class AttachmentService extends AbstractEntityService<Attachment>
     public List<Attachment> findByTypeId(Long typeId) {
         return (List<Attachment>) this.em
                 .createQuery(
-                        "select e from Attachment e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from Attachment e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         Attachment.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();

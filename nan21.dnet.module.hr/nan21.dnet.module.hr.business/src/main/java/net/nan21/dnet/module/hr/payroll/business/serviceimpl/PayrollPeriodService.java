@@ -45,7 +45,7 @@ public class PayrollPeriodService extends AbstractEntityService<PayrollPeriod>
     public List<PayrollPeriod> findByPayrollId(Long payrollId) {
         return (List<PayrollPeriod>) this.em
                 .createQuery(
-                        "select e from PayrollPeriod e where e.clientId = :pClientId and  e.payroll.id = :pPayrollId",
+                        "select e from PayrollPeriod e where e.clientId = :pClientId and e.payroll.id = :pPayrollId",
                         PayrollPeriod.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPayrollId", payrollId).getResultList();

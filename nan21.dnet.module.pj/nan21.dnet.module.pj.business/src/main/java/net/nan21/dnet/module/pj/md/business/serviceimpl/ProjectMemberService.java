@@ -56,7 +56,7 @@ public class ProjectMemberService extends AbstractEntityService<ProjectMember>
     public List<ProjectMember> findByProjectId(Long projectId) {
         return (List<ProjectMember>) this.em
                 .createQuery(
-                        "select e from ProjectMember e where e.clientId = :pClientId and  e.project.id = :pProjectId",
+                        "select e from ProjectMember e where e.clientId = :pClientId and e.project.id = :pProjectId",
                         ProjectMember.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProjectId", projectId).getResultList();
@@ -69,7 +69,7 @@ public class ProjectMemberService extends AbstractEntityService<ProjectMember>
     public List<ProjectMember> findByMemberId(Long memberId) {
         return (List<ProjectMember>) this.em
                 .createQuery(
-                        "select e from ProjectMember e where e.clientId = :pClientId and  e.member.id = :pMemberId",
+                        "select e from ProjectMember e where e.clientId = :pClientId and e.member.id = :pMemberId",
                         ProjectMember.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pMemberId", memberId).getResultList();
@@ -82,7 +82,7 @@ public class ProjectMemberService extends AbstractEntityService<ProjectMember>
     public List<ProjectMember> findByProjectRoleId(Long projectRoleId) {
         return (List<ProjectMember>) this.em
                 .createQuery(
-                        "select e from ProjectMember e where e.clientId = :pClientId and  e.projectRole.id = :pProjectRoleId",
+                        "select e from ProjectMember e where e.clientId = :pClientId and e.projectRole.id = :pProjectRoleId",
                         ProjectMember.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProjectRoleId", projectRoleId).getResultList();

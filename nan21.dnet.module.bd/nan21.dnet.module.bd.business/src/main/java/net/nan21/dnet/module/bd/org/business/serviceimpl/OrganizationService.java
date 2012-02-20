@@ -52,7 +52,7 @@ public class OrganizationService extends AbstractEntityService<Organization>
     public List<Organization> findByTypeId(Long typeId) {
         return (List<Organization>) this.em
                 .createQuery(
-                        "select e from Organization e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from Organization e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         Organization.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();

@@ -40,7 +40,7 @@ public class AbsenceService extends AbstractEntityService<Absence> implements
     public List<Absence> findByEmployeeId(Long employeeId) {
         return (List<Absence>) this.em
                 .createQuery(
-                        "select e from Absence e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
+                        "select e from Absence e where e.clientId = :pClientId and e.employee.id = :pEmployeeId",
                         Absence.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();
@@ -53,7 +53,7 @@ public class AbsenceService extends AbstractEntityService<Absence> implements
     public List<Absence> findByTypeId(Long typeId) {
         return (List<Absence>) this.em
                 .createQuery(
-                        "select e from Absence e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from Absence e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         Absence.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();
@@ -66,7 +66,7 @@ public class AbsenceService extends AbstractEntityService<Absence> implements
     public List<Absence> findByReasonId(Long reasonId) {
         return (List<Absence>) this.em
                 .createQuery(
-                        "select e from Absence e where e.clientId = :pClientId and  e.reason.id = :pReasonId",
+                        "select e from Absence e where e.clientId = :pClientId and e.reason.id = :pReasonId",
                         Absence.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pReasonId", reasonId).getResultList();

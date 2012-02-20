@@ -51,7 +51,7 @@ public class ProjectService extends AbstractEntityService<Project> implements
     public List<Project> findByTypeId(Long typeId) {
         return (List<Project>) this.em
                 .createQuery(
-                        "select e from Project e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from Project e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         Project.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();
@@ -64,7 +64,7 @@ public class ProjectService extends AbstractEntityService<Project> implements
     public List<Project> findByProjectLeadId(Long projectLeadId) {
         return (List<Project>) this.em
                 .createQuery(
-                        "select e from Project e where e.clientId = :pClientId and  e.projectLead.id = :pProjectLeadId",
+                        "select e from Project e where e.clientId = :pClientId and e.projectLead.id = :pProjectLeadId",
                         Project.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProjectLeadId", projectLeadId).getResultList();

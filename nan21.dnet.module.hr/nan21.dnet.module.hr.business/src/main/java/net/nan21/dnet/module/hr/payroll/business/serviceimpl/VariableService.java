@@ -68,7 +68,7 @@ public class VariableService extends AbstractEntityService<Variable> implements
     public List<Variable> findByElementId(Long elementId) {
         return (List<Variable>) this.em
                 .createQuery(
-                        "select e from Variable e where e.clientId = :pClientId and  e.element.id = :pElementId",
+                        "select e from Variable e where e.clientId = :pClientId and e.element.id = :pElementId",
                         Variable.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pElementId", elementId).getResultList();
@@ -81,7 +81,7 @@ public class VariableService extends AbstractEntityService<Variable> implements
     public List<Variable> findByCrossReferenceId(Long crossReferenceId) {
         return (List<Variable>) this.em
                 .createQuery(
-                        "select e from Variable e where e.clientId = :pClientId and  e.crossReference.id = :pCrossReferenceId",
+                        "select e from Variable e where e.clientId = :pClientId and e.crossReference.id = :pCrossReferenceId",
                         Variable.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCrossReferenceId", crossReferenceId)

@@ -57,7 +57,7 @@ public class ProjectComponentService extends
     public List<ProjectComponent> findByComponentLeadId(Long componentLeadId) {
         return (List<ProjectComponent>) this.em
                 .createQuery(
-                        "select e from ProjectComponent e where e.clientId = :pClientId and  e.componentLead.id = :pComponentLeadId",
+                        "select e from ProjectComponent e where e.clientId = :pClientId and e.componentLead.id = :pComponentLeadId",
                         ProjectComponent.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pComponentLeadId", componentLeadId)
@@ -71,7 +71,7 @@ public class ProjectComponentService extends
     public List<ProjectComponent> findByProjectId(Long projectId) {
         return (List<ProjectComponent>) this.em
                 .createQuery(
-                        "select e from ProjectComponent e where e.clientId = :pClientId and  e.project.id = :pProjectId",
+                        "select e from ProjectComponent e where e.clientId = :pClientId and e.project.id = :pProjectId",
                         ProjectComponent.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProjectId", projectId).getResultList();

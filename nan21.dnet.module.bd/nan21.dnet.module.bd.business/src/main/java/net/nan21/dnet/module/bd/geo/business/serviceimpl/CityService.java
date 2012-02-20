@@ -39,7 +39,7 @@ public class CityService extends AbstractEntityService<City> implements
     public List<City> findByCountryId(Long countryId) {
         return (List<City>) this.em
                 .createQuery(
-                        "select e from City e where e.clientId = :pClientId and  e.country.id = :pCountryId",
+                        "select e from City e where e.clientId = :pClientId and e.country.id = :pCountryId",
                         City.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCountryId", countryId).getResultList();
@@ -52,7 +52,7 @@ public class CityService extends AbstractEntityService<City> implements
     public List<City> findByRegionId(Long regionId) {
         return (List<City>) this.em
                 .createQuery(
-                        "select e from City e where e.clientId = :pClientId and  e.region.id = :pRegionId",
+                        "select e from City e where e.clientId = :pClientId and e.region.id = :pRegionId",
                         City.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRegionId", regionId).getResultList();

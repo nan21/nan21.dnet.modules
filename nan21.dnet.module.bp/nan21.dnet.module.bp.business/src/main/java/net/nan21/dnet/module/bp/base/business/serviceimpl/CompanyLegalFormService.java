@@ -55,7 +55,7 @@ public class CompanyLegalFormService extends
     public List<CompanyLegalForm> findByCountryId(Long countryId) {
         return (List<CompanyLegalForm>) this.em
                 .createQuery(
-                        "select e from CompanyLegalForm e where e.clientId = :pClientId and  e.country.id = :pCountryId",
+                        "select e from CompanyLegalForm e where e.clientId = :pClientId and e.country.id = :pCountryId",
                         CompanyLegalForm.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCountryId", countryId).getResultList();

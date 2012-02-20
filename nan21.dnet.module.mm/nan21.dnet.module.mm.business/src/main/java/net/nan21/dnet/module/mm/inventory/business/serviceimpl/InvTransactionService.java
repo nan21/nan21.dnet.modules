@@ -41,7 +41,7 @@ public class InvTransactionService extends
     public List<InvTransaction> findByTransactionTypeId(Long transactionTypeId) {
         return (List<InvTransaction>) this.em
                 .createQuery(
-                        "select e from InvTransaction e where e.clientId = :pClientId and  e.transactionType.id = :pTransactionTypeId",
+                        "select e from InvTransaction e where e.clientId = :pClientId and e.transactionType.id = :pTransactionTypeId",
                         InvTransaction.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTransactionTypeId", transactionTypeId)
@@ -55,7 +55,7 @@ public class InvTransactionService extends
     public List<InvTransaction> findByFromInventoryId(Long fromInventoryId) {
         return (List<InvTransaction>) this.em
                 .createQuery(
-                        "select e from InvTransaction e where e.clientId = :pClientId and  e.fromInventory.id = :pFromInventoryId",
+                        "select e from InvTransaction e where e.clientId = :pClientId and e.fromInventory.id = :pFromInventoryId",
                         InvTransaction.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pFromInventoryId", fromInventoryId)
@@ -69,7 +69,7 @@ public class InvTransactionService extends
     public List<InvTransaction> findByToInventoryId(Long toInventoryId) {
         return (List<InvTransaction>) this.em
                 .createQuery(
-                        "select e from InvTransaction e where e.clientId = :pClientId and  e.toInventory.id = :pToInventoryId",
+                        "select e from InvTransaction e where e.clientId = :pClientId and e.toInventory.id = :pToInventoryId",
                         InvTransaction.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pToInventoryId", toInventoryId).getResultList();

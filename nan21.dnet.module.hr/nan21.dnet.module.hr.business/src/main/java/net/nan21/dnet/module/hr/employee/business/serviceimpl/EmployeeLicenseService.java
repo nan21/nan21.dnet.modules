@@ -40,7 +40,7 @@ public class EmployeeLicenseService extends
     public List<EmployeeLicense> findByEmployeeId(Long employeeId) {
         return (List<EmployeeLicense>) this.em
                 .createQuery(
-                        "select e from EmployeeLicense e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
+                        "select e from EmployeeLicense e where e.clientId = :pClientId and e.employee.id = :pEmployeeId",
                         EmployeeLicense.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();
@@ -53,7 +53,7 @@ public class EmployeeLicenseService extends
     public List<EmployeeLicense> findByLicenseTypeId(Long licenseTypeId) {
         return (List<EmployeeLicense>) this.em
                 .createQuery(
-                        "select e from EmployeeLicense e where e.clientId = :pClientId and  e.licenseType.id = :pLicenseTypeId",
+                        "select e from EmployeeLicense e where e.clientId = :pClientId and e.licenseType.id = :pLicenseTypeId",
                         EmployeeLicense.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLicenseTypeId", licenseTypeId).getResultList();

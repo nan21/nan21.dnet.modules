@@ -47,7 +47,7 @@ public class ProjectTypeService extends AbstractEntityService<ProjectType>
     public List<ProjectType> findByCategoryId(Long categoryId) {
         return (List<ProjectType>) this.em
                 .createQuery(
-                        "select e from ProjectType e where e.clientId = :pClientId and  e.category.id = :pCategoryId",
+                        "select e from ProjectType e where e.clientId = :pClientId and e.category.id = :pCategoryId",
                         ProjectType.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCategoryId", categoryId).getResultList();

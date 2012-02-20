@@ -39,7 +39,7 @@ public class SalesOrderItemService extends
     public List<SalesOrderItem> findBySalesOrderId(Long salesOrderId) {
         return (List<SalesOrderItem>) this.em
                 .createQuery(
-                        "select e from SalesOrderItem e where e.clientId = :pClientId and  e.salesOrder.id = :pSalesOrderId",
+                        "select e from SalesOrderItem e where e.clientId = :pClientId and e.salesOrder.id = :pSalesOrderId",
                         SalesOrderItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSalesOrderId", salesOrderId).getResultList();
@@ -52,7 +52,7 @@ public class SalesOrderItemService extends
     public List<SalesOrderItem> findByProductId(Long productId) {
         return (List<SalesOrderItem>) this.em
                 .createQuery(
-                        "select e from SalesOrderItem e where e.clientId = :pClientId and  e.product.id = :pProductId",
+                        "select e from SalesOrderItem e where e.clientId = :pClientId and e.product.id = :pProductId",
                         SalesOrderItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProductId", productId).getResultList();
@@ -65,7 +65,7 @@ public class SalesOrderItemService extends
     public List<SalesOrderItem> findByUomId(Long uomId) {
         return (List<SalesOrderItem>) this.em
                 .createQuery(
-                        "select e from SalesOrderItem e where e.clientId = :pClientId and  e.uom.id = :pUomId",
+                        "select e from SalesOrderItem e where e.clientId = :pClientId and e.uom.id = :pUomId",
                         SalesOrderItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pUomId", uomId).getResultList();

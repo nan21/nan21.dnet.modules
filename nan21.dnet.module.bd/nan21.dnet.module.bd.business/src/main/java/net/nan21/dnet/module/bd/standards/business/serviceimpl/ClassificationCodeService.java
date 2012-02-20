@@ -76,7 +76,7 @@ public class ClassificationCodeService extends
     public List<ClassificationCode> findByClassSystemId(Long classSystemId) {
         return (List<ClassificationCode>) this.em
                 .createQuery(
-                        "select e from ClassificationCode e where e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId",
+                        "select e from ClassificationCode e where e.clientId = :pClientId and e.classSystem.id = :pClassSystemId",
                         ClassificationCode.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassSystemId", classSystemId).getResultList();

@@ -46,7 +46,7 @@ public class WorkRequirementService extends
     public List<WorkRequirement> findByTypeId(Long typeId) {
         return (List<WorkRequirement>) this.em
                 .createQuery(
-                        "select e from WorkRequirement e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from WorkRequirement e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         WorkRequirement.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();

@@ -41,7 +41,7 @@ public class BpClassificationService extends
     public List<BpClassification> findByBpId(Long bpId) {
         return (List<BpClassification>) this.em
                 .createQuery(
-                        "select e from BpClassification e where e.clientId = :pClientId and  e.bp.id = :pBpId",
+                        "select e from BpClassification e where e.clientId = :pClientId and e.bp.id = :pBpId",
                         BpClassification.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBpId", bpId).getResultList();
@@ -55,7 +55,7 @@ public class BpClassificationService extends
     public List<BpClassification> findByClassSystemId(Long classSystemId) {
         return (List<BpClassification>) this.em
                 .createQuery(
-                        "select e from BpClassification e where e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId",
+                        "select e from BpClassification e where e.clientId = :pClientId and e.classSystem.id = :pClassSystemId",
                         BpClassification.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassSystemId", classSystemId).getResultList();
@@ -68,7 +68,7 @@ public class BpClassificationService extends
     public List<BpClassification> findByClassCodeId(Long classCodeId) {
         return (List<BpClassification>) this.em
                 .createQuery(
-                        "select e from BpClassification e where e.clientId = :pClientId and  e.classCode.id = :pClassCodeId",
+                        "select e from BpClassification e where e.clientId = :pClientId and e.classCode.id = :pClassCodeId",
                         BpClassification.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassCodeId", classCodeId).getResultList();

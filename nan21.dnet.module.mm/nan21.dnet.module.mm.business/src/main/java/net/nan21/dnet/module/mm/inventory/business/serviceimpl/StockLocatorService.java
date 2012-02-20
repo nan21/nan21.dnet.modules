@@ -46,7 +46,7 @@ public class StockLocatorService extends AbstractEntityService<StockLocator>
     public List<StockLocator> findBySubInventoryId(Long subInventoryId) {
         return (List<StockLocator>) this.em
                 .createQuery(
-                        "select e from StockLocator e where e.clientId = :pClientId and  e.subInventory.id = :pSubInventoryId",
+                        "select e from StockLocator e where e.clientId = :pClientId and e.subInventory.id = :pSubInventoryId",
                         StockLocator.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSubInventoryId", subInventoryId)
@@ -60,7 +60,7 @@ public class StockLocatorService extends AbstractEntityService<StockLocator>
     public List<StockLocator> findByLocatorTypeId(Long locatorTypeId) {
         return (List<StockLocator>) this.em
                 .createQuery(
-                        "select e from StockLocator e where e.clientId = :pClientId and  e.locatorType.id = :pLocatorTypeId",
+                        "select e from StockLocator e where e.clientId = :pClientId and e.locatorType.id = :pLocatorTypeId",
                         StockLocator.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLocatorTypeId", locatorTypeId).getResultList();

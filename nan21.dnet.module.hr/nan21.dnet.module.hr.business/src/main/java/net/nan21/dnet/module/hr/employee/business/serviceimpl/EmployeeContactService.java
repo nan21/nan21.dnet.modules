@@ -41,7 +41,7 @@ public class EmployeeContactService extends
     public List<EmployeeContact> findByEmployeeId(Long employeeId) {
         return (List<EmployeeContact>) this.em
                 .createQuery(
-                        "select e from EmployeeContact e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
+                        "select e from EmployeeContact e where e.clientId = :pClientId and e.employee.id = :pEmployeeId",
                         EmployeeContact.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();
@@ -54,7 +54,7 @@ public class EmployeeContactService extends
     public List<EmployeeContact> findByTypeId(Long typeId) {
         return (List<EmployeeContact>) this.em
                 .createQuery(
-                        "select e from EmployeeContact e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from EmployeeContact e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         EmployeeContact.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();
@@ -68,7 +68,7 @@ public class EmployeeContactService extends
     public List<EmployeeContact> findByRelationshipId(Long relationshipId) {
         return (List<EmployeeContact>) this.em
                 .createQuery(
-                        "select e from EmployeeContact e where e.clientId = :pClientId and  e.relationship.id = :pRelationshipId",
+                        "select e from EmployeeContact e where e.clientId = :pClientId and e.relationship.id = :pRelationshipId",
                         EmployeeContact.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRelationshipId", relationshipId)

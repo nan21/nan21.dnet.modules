@@ -61,7 +61,7 @@ public class ProductAttributeGroupAttributeService extends
     public List<ProductAttributeGroupAttribute> findByGroupId(Long groupId) {
         return (List<ProductAttributeGroupAttribute>) this.em
                 .createQuery(
-                        "select e from ProductAttributeGroupAttribute e where e.clientId = :pClientId and  e.group.id = :pGroupId",
+                        "select e from ProductAttributeGroupAttribute e where e.clientId = :pClientId and e.group.id = :pGroupId",
                         ProductAttributeGroupAttribute.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pGroupId", groupId).getResultList();
@@ -76,7 +76,7 @@ public class ProductAttributeGroupAttributeService extends
             Long attributeId) {
         return (List<ProductAttributeGroupAttribute>) this.em
                 .createQuery(
-                        "select e from ProductAttributeGroupAttribute e where e.clientId = :pClientId and  e.attribute.id = :pAttributeId",
+                        "select e from ProductAttributeGroupAttribute e where e.clientId = :pClientId and e.attribute.id = :pAttributeId",
                         ProductAttributeGroupAttribute.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAttributeId", attributeId).getResultList();

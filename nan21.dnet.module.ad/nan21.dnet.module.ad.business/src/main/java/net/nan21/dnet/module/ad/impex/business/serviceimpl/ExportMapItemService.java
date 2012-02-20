@@ -39,7 +39,7 @@ public class ExportMapItemService extends AbstractEntityService<ExportMapItem>
     public List<ExportMapItem> findByExportMapId(Long exportMapId) {
         return (List<ExportMapItem>) this.em
                 .createQuery(
-                        "select e from ExportMapItem e where e.clientId = :pClientId and  e.exportMap.id = :pExportMapId",
+                        "select e from ExportMapItem e where e.clientId = :pClientId and e.exportMap.id = :pExportMapId",
                         ExportMapItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pExportMapId", exportMapId).getResultList();
@@ -52,7 +52,7 @@ public class ExportMapItemService extends AbstractEntityService<ExportMapItem>
     public List<ExportMapItem> findByCsvExportId(Long csvExportId) {
         return (List<ExportMapItem>) this.em
                 .createQuery(
-                        "select e from ExportMapItem e where e.clientId = :pClientId and  e.csvExport.id = :pCsvExportId",
+                        "select e from ExportMapItem e where e.clientId = :pClientId and e.csvExport.id = :pCsvExportId",
                         ExportMapItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCsvExportId", csvExportId).getResultList();

@@ -41,7 +41,7 @@ public class InvTransactionLineService extends
     public List<InvTransactionLine> findByInvTransactionId(Long invTransactionId) {
         return (List<InvTransactionLine>) this.em
                 .createQuery(
-                        "select e from InvTransactionLine e where e.clientId = :pClientId and  e.invTransaction.id = :pInvTransactionId",
+                        "select e from InvTransactionLine e where e.clientId = :pClientId and e.invTransaction.id = :pInvTransactionId",
                         InvTransactionLine.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pInvTransactionId", invTransactionId)
@@ -55,7 +55,7 @@ public class InvTransactionLineService extends
     public List<InvTransactionLine> findByItemId(Long itemId) {
         return (List<InvTransactionLine>) this.em
                 .createQuery(
-                        "select e from InvTransactionLine e where e.clientId = :pClientId and  e.item.id = :pItemId",
+                        "select e from InvTransactionLine e where e.clientId = :pClientId and e.item.id = :pItemId",
                         InvTransactionLine.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pItemId", itemId).getResultList();
@@ -70,7 +70,7 @@ public class InvTransactionLineService extends
             Long fromSubInventoryId) {
         return (List<InvTransactionLine>) this.em
                 .createQuery(
-                        "select e from InvTransactionLine e where e.clientId = :pClientId and  e.fromSubInventory.id = :pFromSubInventoryId",
+                        "select e from InvTransactionLine e where e.clientId = :pClientId and e.fromSubInventory.id = :pFromSubInventoryId",
                         InvTransactionLine.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pFromSubInventoryId", fromSubInventoryId)
@@ -84,7 +84,7 @@ public class InvTransactionLineService extends
     public List<InvTransactionLine> findByFromLocatorId(Long fromLocatorId) {
         return (List<InvTransactionLine>) this.em
                 .createQuery(
-                        "select e from InvTransactionLine e where e.clientId = :pClientId and  e.fromLocator.id = :pFromLocatorId",
+                        "select e from InvTransactionLine e where e.clientId = :pClientId and e.fromLocator.id = :pFromLocatorId",
                         InvTransactionLine.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pFromLocatorId", fromLocatorId).getResultList();
@@ -98,7 +98,7 @@ public class InvTransactionLineService extends
     public List<InvTransactionLine> findByToSubInventoryId(Long toSubInventoryId) {
         return (List<InvTransactionLine>) this.em
                 .createQuery(
-                        "select e from InvTransactionLine e where e.clientId = :pClientId and  e.toSubInventory.id = :pToSubInventoryId",
+                        "select e from InvTransactionLine e where e.clientId = :pClientId and e.toSubInventory.id = :pToSubInventoryId",
                         InvTransactionLine.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pToSubInventoryId", toSubInventoryId)
@@ -112,7 +112,7 @@ public class InvTransactionLineService extends
     public List<InvTransactionLine> findByToLocatorId(Long toLocatorId) {
         return (List<InvTransactionLine>) this.em
                 .createQuery(
-                        "select e from InvTransactionLine e where e.clientId = :pClientId and  e.toLocator.id = :pToLocatorId",
+                        "select e from InvTransactionLine e where e.clientId = :pClientId and e.toLocator.id = :pToLocatorId",
                         InvTransactionLine.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pToLocatorId", toLocatorId).getResultList();

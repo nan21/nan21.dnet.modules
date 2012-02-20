@@ -57,7 +57,7 @@ public class BpBankAccountService extends AbstractEntityService<BpBankAccount>
     public List<BpBankAccount> findByBpartnerId(Long bpartnerId) {
         return (List<BpBankAccount>) this.em
                 .createQuery(
-                        "select e from BpBankAccount e where e.clientId = :pClientId and  e.bpartner.id = :pBpartnerId",
+                        "select e from BpBankAccount e where e.clientId = :pClientId and e.bpartner.id = :pBpartnerId",
                         BpBankAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBpartnerId", bpartnerId).getResultList();
@@ -70,7 +70,7 @@ public class BpBankAccountService extends AbstractEntityService<BpBankAccount>
     public List<BpBankAccount> findByBankId(Long bankId) {
         return (List<BpBankAccount>) this.em
                 .createQuery(
-                        "select e from BpBankAccount e where e.clientId = :pClientId and  e.bank.id = :pBankId",
+                        "select e from BpBankAccount e where e.clientId = :pClientId and e.bank.id = :pBankId",
                         BpBankAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBankId", bankId).getResultList();
@@ -83,7 +83,7 @@ public class BpBankAccountService extends AbstractEntityService<BpBankAccount>
     public List<BpBankAccount> findByCurrencyId(Long currencyId) {
         return (List<BpBankAccount>) this.em
                 .createQuery(
-                        "select e from BpBankAccount e where e.clientId = :pClientId and  e.currency.id = :pCurrencyId",
+                        "select e from BpBankAccount e where e.clientId = :pClientId and e.currency.id = :pCurrencyId",
                         BpBankAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCurrencyId", currencyId).getResultList();

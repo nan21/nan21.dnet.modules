@@ -50,7 +50,7 @@ public class UomService extends AbstractEntityService<Uom> implements
     public List<Uom> findByTypeId(Long typeId) {
         return (List<Uom>) this.em
                 .createQuery(
-                        "select e from Uom e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from Uom e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         Uom.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();

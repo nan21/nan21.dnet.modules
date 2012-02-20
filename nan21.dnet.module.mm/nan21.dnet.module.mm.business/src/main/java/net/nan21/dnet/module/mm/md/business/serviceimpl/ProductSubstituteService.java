@@ -39,7 +39,7 @@ public class ProductSubstituteService extends
     public List<ProductSubstitute> findByRefProductId(Long refProductId) {
         return (List<ProductSubstitute>) this.em
                 .createQuery(
-                        "select e from ProductSubstitute e where e.clientId = :pClientId and  e.refProduct.id = :pRefProductId",
+                        "select e from ProductSubstitute e where e.clientId = :pClientId and e.refProduct.id = :pRefProductId",
                         ProductSubstitute.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRefProductId", refProductId).getResultList();
@@ -52,7 +52,7 @@ public class ProductSubstituteService extends
     public List<ProductSubstitute> findByEquivalenceId(Long equivalenceId) {
         return (List<ProductSubstitute>) this.em
                 .createQuery(
-                        "select e from ProductSubstitute e where e.clientId = :pClientId and  e.equivalence.id = :pEquivalenceId",
+                        "select e from ProductSubstitute e where e.clientId = :pClientId and e.equivalence.id = :pEquivalenceId",
                         ProductSubstitute.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEquivalenceId", equivalenceId).getResultList();

@@ -38,7 +38,7 @@ public class CsvExportFieldService extends
     public List<CsvExportField> findByCsvExportId(Long csvExportId) {
         return (List<CsvExportField>) this.em
                 .createQuery(
-                        "select e from CsvExportField e where e.clientId = :pClientId and  e.csvExport.id = :pCsvExportId",
+                        "select e from CsvExportField e where e.clientId = :pClientId and e.csvExport.id = :pCsvExportId",
                         CsvExportField.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCsvExportId", csvExportId).getResultList();

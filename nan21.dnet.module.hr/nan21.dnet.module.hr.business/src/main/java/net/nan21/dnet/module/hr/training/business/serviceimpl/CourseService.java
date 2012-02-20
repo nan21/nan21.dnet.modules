@@ -50,7 +50,7 @@ public class CourseService extends AbstractEntityService<Course> implements
     public List<Course> findByTypeId(Long typeId) {
         return (List<Course>) this.em
                 .createQuery(
-                        "select e from Course e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        "select e from Course e where e.clientId = :pClientId and e.type.id = :pTypeId",
                         Course.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();

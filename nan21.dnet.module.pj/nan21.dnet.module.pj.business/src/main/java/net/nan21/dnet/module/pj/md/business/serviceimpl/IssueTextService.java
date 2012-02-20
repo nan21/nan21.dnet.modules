@@ -39,7 +39,7 @@ public class IssueTextService extends AbstractEntityService<IssueText>
     public List<IssueText> findByIssueId(Long issueId) {
         return (List<IssueText>) this.em
                 .createQuery(
-                        "select e from IssueText e where e.clientId = :pClientId and  e.issue.id = :pIssueId",
+                        "select e from IssueText e where e.clientId = :pClientId and e.issue.id = :pIssueId",
                         IssueText.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pIssueId", issueId).getResultList();
@@ -52,7 +52,7 @@ public class IssueTextService extends AbstractEntityService<IssueText>
     public List<IssueText> findByIssueTextTypeId(Long issueTextTypeId) {
         return (List<IssueText>) this.em
                 .createQuery(
-                        "select e from IssueText e where e.clientId = :pClientId and  e.issueTextType.id = :pIssueTextTypeId",
+                        "select e from IssueText e where e.clientId = :pClientId and e.issueTextType.id = :pIssueTextTypeId",
                         IssueText.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pIssueTextTypeId", issueTextTypeId)

@@ -38,7 +38,7 @@ public class DsReportService extends AbstractEntityService<DsReport> implements
     public List<DsReport> findByReportId(Long reportId) {
         return (List<DsReport>) this.em
                 .createQuery(
-                        "select e from DsReport e where e.clientId = :pClientId and  e.report.id = :pReportId",
+                        "select e from DsReport e where e.clientId = :pClientId and e.report.id = :pReportId",
                         DsReport.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pReportId", reportId).getResultList();

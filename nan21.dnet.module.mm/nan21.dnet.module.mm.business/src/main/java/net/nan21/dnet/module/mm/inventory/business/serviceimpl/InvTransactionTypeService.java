@@ -48,7 +48,7 @@ public class InvTransactionTypeService extends
     public List<InvTransactionType> findBySourceTypeId(Long sourceTypeId) {
         return (List<InvTransactionType>) this.em
                 .createQuery(
-                        "select e from InvTransactionType e where e.clientId = :pClientId and  e.sourceType.id = :pSourceTypeId",
+                        "select e from InvTransactionType e where e.clientId = :pClientId and e.sourceType.id = :pSourceTypeId",
                         InvTransactionType.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSourceTypeId", sourceTypeId).getResultList();
@@ -61,7 +61,7 @@ public class InvTransactionTypeService extends
     public List<InvTransactionType> findByActionId(Long actionId) {
         return (List<InvTransactionType>) this.em
                 .createQuery(
-                        "select e from InvTransactionType e where e.clientId = :pClientId and  e.action.id = :pActionId",
+                        "select e from InvTransactionType e where e.clientId = :pClientId and e.action.id = :pActionId",
                         InvTransactionType.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pActionId", actionId).getResultList();

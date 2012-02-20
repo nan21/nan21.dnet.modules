@@ -41,7 +41,7 @@ public class InvBalanceService extends AbstractEntityService<InvBalance>
     public List<InvBalance> findBySubInventoryId(Long subInventoryId) {
         return (List<InvBalance>) this.em
                 .createQuery(
-                        "select e from InvBalance e where e.clientId = :pClientId and  e.subInventory.id = :pSubInventoryId",
+                        "select e from InvBalance e where e.clientId = :pClientId and e.subInventory.id = :pSubInventoryId",
                         InvBalance.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSubInventoryId", subInventoryId)
@@ -55,7 +55,7 @@ public class InvBalanceService extends AbstractEntityService<InvBalance>
     public List<InvBalance> findByLocatorId(Long locatorId) {
         return (List<InvBalance>) this.em
                 .createQuery(
-                        "select e from InvBalance e where e.clientId = :pClientId and  e.locator.id = :pLocatorId",
+                        "select e from InvBalance e where e.clientId = :pClientId and e.locator.id = :pLocatorId",
                         InvBalance.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLocatorId", locatorId).getResultList();
@@ -68,7 +68,7 @@ public class InvBalanceService extends AbstractEntityService<InvBalance>
     public List<InvBalance> findByItemId(Long itemId) {
         return (List<InvBalance>) this.em
                 .createQuery(
-                        "select e from InvBalance e where e.clientId = :pClientId and  e.item.id = :pItemId",
+                        "select e from InvBalance e where e.clientId = :pClientId and e.item.id = :pItemId",
                         InvBalance.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pItemId", itemId).getResultList();
@@ -81,7 +81,7 @@ public class InvBalanceService extends AbstractEntityService<InvBalance>
     public List<InvBalance> findByUomId(Long uomId) {
         return (List<InvBalance>) this.em
                 .createQuery(
-                        "select e from InvBalance e where e.clientId = :pClientId and  e.uom.id = :pUomId",
+                        "select e from InvBalance e where e.clientId = :pClientId and e.uom.id = :pUomId",
                         InvBalance.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pUomId", uomId).getResultList();

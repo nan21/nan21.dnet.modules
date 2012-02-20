@@ -44,7 +44,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByBpId(Long bpId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount e where e.clientId = :pClientId and  e.bp.id = :pBpId",
+                        "select e from BpAccount e where e.clientId = :pClientId and e.bp.id = :pBpId",
                         BpAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBpId", bpId).getResultList();
@@ -57,7 +57,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByOrganizationId(Long organizationId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount e where e.clientId = :pClientId and  e.organization.id = :pOrganizationId",
+                        "select e from BpAccount e where e.clientId = :pClientId and e.organization.id = :pOrganizationId",
                         BpAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pOrganizationId", organizationId)
@@ -71,7 +71,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByCustGroupId(Long custGroupId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount e where e.clientId = :pClientId and  e.custGroup.id = :pCustGroupId",
+                        "select e from BpAccount e where e.clientId = :pClientId and e.custGroup.id = :pCustGroupId",
                         BpAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCustGroupId", custGroupId).getResultList();
@@ -85,7 +85,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByCustPaymentMethodId(Long custPaymentMethodId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount e where e.clientId = :pClientId and  e.custPaymentMethod.id = :pCustPaymentMethodId",
+                        "select e from BpAccount e where e.clientId = :pClientId and e.custPaymentMethod.id = :pCustPaymentMethodId",
                         BpAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCustPaymentMethodId", custPaymentMethodId)
@@ -99,7 +99,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByCustPaymentTermId(Long custPaymentTermId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount e where e.clientId = :pClientId and  e.custPaymentTerm.id = :pCustPaymentTermId",
+                        "select e from BpAccount e where e.clientId = :pClientId and e.custPaymentTerm.id = :pCustPaymentTermId",
                         BpAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCustPaymentTermId", custPaymentTermId)
@@ -114,7 +114,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByCustDeliveryMethodId(Long custDeliveryMethodId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount e where e.clientId = :pClientId and  e.custDeliveryMethod.id = :pCustDeliveryMethodId",
+                        "select e from BpAccount e where e.clientId = :pClientId and e.custDeliveryMethod.id = :pCustDeliveryMethodId",
                         BpAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCustDeliveryMethodId", custDeliveryMethodId)
@@ -128,7 +128,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByVendGroupId(Long vendGroupId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount e where e.clientId = :pClientId and  e.vendGroup.id = :pVendGroupId",
+                        "select e from BpAccount e where e.clientId = :pClientId and e.vendGroup.id = :pVendGroupId",
                         BpAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pVendGroupId", vendGroupId).getResultList();
@@ -142,7 +142,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByVendPaymentMethodId(Long vendPaymentMethodId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount e where e.clientId = :pClientId and  e.vendPaymentMethod.id = :pVendPaymentMethodId",
+                        "select e from BpAccount e where e.clientId = :pClientId and e.vendPaymentMethod.id = :pVendPaymentMethodId",
                         BpAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pVendPaymentMethodId", vendPaymentMethodId)
@@ -156,7 +156,7 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
     public List<BpAccount> findByVendPaymentTermId(Long vendPaymentTermId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount e where e.clientId = :pClientId and  e.vendPaymentTerm.id = :pVendPaymentTermId",
+                        "select e from BpAccount e where e.clientId = :pClientId and e.vendPaymentTerm.id = :pVendPaymentTermId",
                         BpAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pVendPaymentTermId", vendPaymentTermId)

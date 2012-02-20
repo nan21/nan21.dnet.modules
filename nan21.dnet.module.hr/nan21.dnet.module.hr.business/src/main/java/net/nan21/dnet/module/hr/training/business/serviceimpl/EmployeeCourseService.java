@@ -39,7 +39,7 @@ public class EmployeeCourseService extends
     public List<EmployeeCourse> findByEmployeeId(Long employeeId) {
         return (List<EmployeeCourse>) this.em
                 .createQuery(
-                        "select e from EmployeeCourse e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
+                        "select e from EmployeeCourse e where e.clientId = :pClientId and e.employee.id = :pEmployeeId",
                         EmployeeCourse.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();
@@ -52,7 +52,7 @@ public class EmployeeCourseService extends
     public List<EmployeeCourse> findByCourseId(Long courseId) {
         return (List<EmployeeCourse>) this.em
                 .createQuery(
-                        "select e from EmployeeCourse e where e.clientId = :pClientId and  e.course.id = :pCourseId",
+                        "select e from EmployeeCourse e where e.clientId = :pClientId and e.course.id = :pCourseId",
                         EmployeeCourse.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCourseId", courseId).getResultList();

@@ -45,7 +45,7 @@ public class OpportunityService extends AbstractEntityService<Opportunity>
     public List<Opportunity> findByAccountId(Long accountId) {
         return (List<Opportunity>) this.em
                 .createQuery(
-                        "select e from Opportunity e where e.clientId = :pClientId and  e.account.id = :pAccountId",
+                        "select e from Opportunity e where e.clientId = :pClientId and e.account.id = :pAccountId",
                         Opportunity.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAccountId", accountId).getResultList();
@@ -58,7 +58,7 @@ public class OpportunityService extends AbstractEntityService<Opportunity>
     public List<Opportunity> findByExpectedCurrencyId(Long expectedCurrencyId) {
         return (List<Opportunity>) this.em
                 .createQuery(
-                        "select e from Opportunity e where e.clientId = :pClientId and  e.expectedCurrency.id = :pExpectedCurrencyId",
+                        "select e from Opportunity e where e.clientId = :pClientId and e.expectedCurrency.id = :pExpectedCurrencyId",
                         Opportunity.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pExpectedCurrencyId", expectedCurrencyId)
@@ -72,7 +72,7 @@ public class OpportunityService extends AbstractEntityService<Opportunity>
     public List<Opportunity> findBySalesStageId(Long salesStageId) {
         return (List<Opportunity>) this.em
                 .createQuery(
-                        "select e from Opportunity e where e.clientId = :pClientId and  e.salesStage.id = :pSalesStageId",
+                        "select e from Opportunity e where e.clientId = :pClientId and e.salesStage.id = :pSalesStageId",
                         Opportunity.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSalesStageId", salesStageId).getResultList();
@@ -85,7 +85,7 @@ public class OpportunityService extends AbstractEntityService<Opportunity>
     public List<Opportunity> findByStatusId(Long statusId) {
         return (List<Opportunity>) this.em
                 .createQuery(
-                        "select e from Opportunity e where e.clientId = :pClientId and  e.status.id = :pStatusId",
+                        "select e from Opportunity e where e.clientId = :pClientId and e.status.id = :pStatusId",
                         Opportunity.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pStatusId", statusId).getResultList();
@@ -98,7 +98,7 @@ public class OpportunityService extends AbstractEntityService<Opportunity>
     public List<Opportunity> findByPriorityId(Long priorityId) {
         return (List<Opportunity>) this.em
                 .createQuery(
-                        "select e from Opportunity e where e.clientId = :pClientId and  e.priority.id = :pPriorityId",
+                        "select e from Opportunity e where e.clientId = :pClientId and e.priority.id = :pPriorityId",
                         Opportunity.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPriorityId", priorityId).getResultList();
@@ -111,7 +111,7 @@ public class OpportunityService extends AbstractEntityService<Opportunity>
     public List<Opportunity> findByLeadSourceId(Long leadSourceId) {
         return (List<Opportunity>) this.em
                 .createQuery(
-                        "select e from Opportunity e where e.clientId = :pClientId and  e.leadSource.id = :pLeadSourceId",
+                        "select e from Opportunity e where e.clientId = :pClientId and e.leadSource.id = :pLeadSourceId",
                         Opportunity.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLeadSourceId", leadSourceId).getResultList();
@@ -125,7 +125,7 @@ public class OpportunityService extends AbstractEntityService<Opportunity>
     public List<Opportunity> findByResultReasonId(Long resultReasonId) {
         return (List<Opportunity>) this.em
                 .createQuery(
-                        "select e from Opportunity e where e.clientId = :pClientId and  e.resultReason.id = :pResultReasonId",
+                        "select e from Opportunity e where e.clientId = :pClientId and e.resultReason.id = :pResultReasonId",
                         Opportunity.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pResultReasonId", resultReasonId)
@@ -139,7 +139,7 @@ public class OpportunityService extends AbstractEntityService<Opportunity>
     public List<Opportunity> findByAssignedToId(Long assignedToId) {
         return (List<Opportunity>) this.em
                 .createQuery(
-                        "select e from Opportunity e where e.clientId = :pClientId and  e.assignedTo.id = :pAssignedToId",
+                        "select e from Opportunity e where e.clientId = :pClientId and e.assignedTo.id = :pAssignedToId",
                         Opportunity.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAssignedToId", assignedToId).getResultList();

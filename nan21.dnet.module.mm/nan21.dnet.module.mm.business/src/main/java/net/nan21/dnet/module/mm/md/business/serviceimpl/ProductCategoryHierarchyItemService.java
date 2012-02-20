@@ -41,7 +41,7 @@ public class ProductCategoryHierarchyItemService extends
     public List<ProductCategoryHierarchyItem> findByHierarchyId(Long hierarchyId) {
         return (List<ProductCategoryHierarchyItem>) this.em
                 .createQuery(
-                        "select e from ProductCategoryHierarchyItem e where e.clientId = :pClientId and  e.hierarchy.id = :pHierarchyId",
+                        "select e from ProductCategoryHierarchyItem e where e.clientId = :pClientId and e.hierarchy.id = :pHierarchyId",
                         ProductCategoryHierarchyItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pHierarchyId", hierarchyId).getResultList();
@@ -54,7 +54,7 @@ public class ProductCategoryHierarchyItemService extends
     public List<ProductCategoryHierarchyItem> findByProductId(Long productId) {
         return (List<ProductCategoryHierarchyItem>) this.em
                 .createQuery(
-                        "select e from ProductCategoryHierarchyItem e where e.clientId = :pClientId and  e.product.id = :pProductId",
+                        "select e from ProductCategoryHierarchyItem e where e.clientId = :pClientId and e.product.id = :pProductId",
                         ProductCategoryHierarchyItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProductId", productId).getResultList();
@@ -67,7 +67,7 @@ public class ProductCategoryHierarchyItemService extends
     public List<ProductCategoryHierarchyItem> findByParentId(Long parentId) {
         return (List<ProductCategoryHierarchyItem>) this.em
                 .createQuery(
-                        "select e from ProductCategoryHierarchyItem e where e.clientId = :pClientId and  e.parent.id = :pParentId",
+                        "select e from ProductCategoryHierarchyItem e where e.clientId = :pClientId and e.parent.id = :pParentId",
                         ProductCategoryHierarchyItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pParentId", parentId).getResultList();

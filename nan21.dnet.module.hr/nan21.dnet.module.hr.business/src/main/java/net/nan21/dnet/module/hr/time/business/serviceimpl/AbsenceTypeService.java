@@ -45,7 +45,7 @@ public class AbsenceTypeService extends AbstractEntityService<AbsenceType>
     public List<AbsenceType> findByCategoryId(Long categoryId) {
         return (List<AbsenceType>) this.em
                 .createQuery(
-                        "select e from AbsenceType e where e.clientId = :pClientId and  e.category.id = :pCategoryId",
+                        "select e from AbsenceType e where e.clientId = :pClientId and e.category.id = :pCategoryId",
                         AbsenceType.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCategoryId", categoryId).getResultList();

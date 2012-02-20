@@ -39,7 +39,7 @@ public class IssueLinkService extends AbstractEntityService<IssueLink>
     public List<IssueLink> findBySourceIssueId(Long sourceIssueId) {
         return (List<IssueLink>) this.em
                 .createQuery(
-                        "select e from IssueLink e where e.clientId = :pClientId and  e.sourceIssue.id = :pSourceIssueId",
+                        "select e from IssueLink e where e.clientId = :pClientId and e.sourceIssue.id = :pSourceIssueId",
                         IssueLink.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSourceIssueId", sourceIssueId).getResultList();
@@ -52,7 +52,7 @@ public class IssueLinkService extends AbstractEntityService<IssueLink>
     public List<IssueLink> findByTargetIssueId(Long targetIssueId) {
         return (List<IssueLink>) this.em
                 .createQuery(
-                        "select e from IssueLink e where e.clientId = :pClientId and  e.targetIssue.id = :pTargetIssueId",
+                        "select e from IssueLink e where e.clientId = :pClientId and e.targetIssue.id = :pTargetIssueId",
                         IssueLink.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTargetIssueId", targetIssueId).getResultList();
@@ -65,7 +65,7 @@ public class IssueLinkService extends AbstractEntityService<IssueLink>
     public List<IssueLink> findByLinkTypeId(Long linkTypeId) {
         return (List<IssueLink>) this.em
                 .createQuery(
-                        "select e from IssueLink e where e.clientId = :pClientId and  e.linkType.id = :pLinkTypeId",
+                        "select e from IssueLink e where e.clientId = :pClientId and e.linkType.id = :pLinkTypeId",
                         IssueLink.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLinkTypeId", linkTypeId).getResultList();

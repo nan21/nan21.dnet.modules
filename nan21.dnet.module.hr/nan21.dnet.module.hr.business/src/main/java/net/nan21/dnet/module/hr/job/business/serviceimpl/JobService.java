@@ -50,7 +50,7 @@ public class JobService extends AbstractEntityService<Job> implements
     public List<Job> findByJobTypeId(Long jobTypeId) {
         return (List<Job>) this.em
                 .createQuery(
-                        "select e from Job e where e.clientId = :pClientId and  e.jobType.id = :pJobTypeId",
+                        "select e from Job e where e.clientId = :pClientId and e.jobType.id = :pJobTypeId",
                         Job.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pJobTypeId", jobTypeId).getResultList();

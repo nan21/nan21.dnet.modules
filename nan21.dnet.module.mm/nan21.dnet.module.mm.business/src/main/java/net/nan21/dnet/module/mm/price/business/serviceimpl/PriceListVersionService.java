@@ -46,7 +46,7 @@ public class PriceListVersionService extends
     public List<PriceListVersion> findByPriceListId(Long priceListId) {
         return (List<PriceListVersion>) this.em
                 .createQuery(
-                        "select e from PriceListVersion e where e.clientId = :pClientId and  e.priceList.id = :pPriceListId",
+                        "select e from PriceListVersion e where e.clientId = :pClientId and e.priceList.id = :pPriceListId",
                         PriceListVersion.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPriceListId", priceListId).getResultList();
