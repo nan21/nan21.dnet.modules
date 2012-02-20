@@ -87,7 +87,7 @@
 							</bean>		
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="70" />
-								<property name="dsName" value="MenuItemParent" />
+								<property name="dsName" value="MenuItem" />
 								<property name="destPath" value="demo-data/ad" />
 								<property name="ukFieldName" value="name" />
 								<property name="file"

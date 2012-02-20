@@ -71,8 +71,7 @@ public class MenuItem implements Serializable, IModelWithId, IModelWithClientId 
     public static final String NQ_FIND_BY_NAME = "MenuItem.findByName";
 
     /** SequenceNo. */
-    @Column(name = "SEQUENCENO", nullable = false)
-    @NotNull
+    @Column(name = "SEQUENCENO")
     private Integer sequenceNo;
 
     /** Title. */

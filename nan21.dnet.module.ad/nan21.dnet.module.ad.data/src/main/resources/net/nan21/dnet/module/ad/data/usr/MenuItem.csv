@@ -10,7 +10,7 @@
 "BPartner_UI";"Business partners";;"10";"net.nan21.dnet.module.bp.md.frame.BPartner_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"33D9B4AC-45B1-4883-BB09-805DF6924034"
 "Bank_UI";"Banks";;"20";"net.nan21.dnet.module.bp.base.frame.Bank_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"EB074EFD-670D-4AB2-BA7B-4724ECE0065E"
 "BpAccount_UI";"Business partner accounts";;"30";"net.nan21.dnet.module.bp.md.frame.BpAccount_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"F7F63C02-70BC-49AA-8BD8-0E4ADE5B8A44"
-"CalendarEventTypeDef_UI";"Calendar event definitions";;;"net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"FB99FFEA-380D-4823-B4A2-E94B6BC3EF8C"
+"CalendarEventTypeDef_UI";"Calendar event definitions";;"10";"net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"FB99FFEA-380D-4823-B4A2-E94B6BC3EF8C"
 "Classifications_UI";"Classifications";;"10";"net.nan21.dnet.module.bd.standards.frame.Classifications_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"F9AC9074-2391-4D7F-8D56-038447272376"
 "Contact_UI";"Contacts";;"20";"net.nan21.dnet.module.bp.md.frame.Contact_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"9B7FE821-8AEF-452C-B532-5B2DEC4AB63F"
 "Countries_UI";"Countries";;"10";"net.nan21.dnet.module.bd.geo.frame.Countries_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"35C0E843-2635-483B-A0B9-61E42184EC79"
