@@ -43,8 +43,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "GROUP_ID", "ATTRIBUTE_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = ProductAttributeGroupAttribute.NQ_FIND_BY_ID, query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = ProductAttributeGroupAttribute.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductAttributeGroupAttribute.NQ_FIND_BY_ID, query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductAttributeGroupAttribute.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProductAttributeGroupAttribute.NQ_FIND_BY_NAME, query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.clientId = :pClientId and  e.group = :pGroup and e.attribute = :pAttribute ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProductAttributeGroupAttribute.findByName_PRIMITIVE", query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.clientId = :pClientId and  e.group.id = :pGroupId and e.attribute.id = :pAttributeId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAttributeGroupAttribute implements Serializable,

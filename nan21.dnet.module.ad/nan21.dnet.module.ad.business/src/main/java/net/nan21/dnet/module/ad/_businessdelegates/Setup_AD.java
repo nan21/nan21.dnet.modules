@@ -237,6 +237,7 @@ implements ISetupParticipant {
 					importMapItem.setDataSourceName(initDataItem.getDsName());
 					importMapItem.setFileName(initDataItem.getDestPath()+"/"+initDataItem.getFile().getName());
 					importMapItem.setSequenceNo(Integer.parseInt(initDataItem.getSequence()));
+					importMapItem.setUkFieldName(initDataItem.getUkFieldName());
 					importMapItem.setImportMap(importMap);
 					importMap.addToItems(importMapItem);
 					String path = importPath+"/"+initDataItem.getDestPath();

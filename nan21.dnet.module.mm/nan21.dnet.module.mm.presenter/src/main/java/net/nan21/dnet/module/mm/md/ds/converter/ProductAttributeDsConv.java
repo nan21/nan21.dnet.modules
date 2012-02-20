@@ -19,8 +19,10 @@ public class ProductAttributeDsConv extends
         AbstractDsConverter<ProductAttributeDs, ProductAttribute> implements
         IDsConverter<ProductAttributeDs, ProductAttribute> {
 
+    @Override
     protected void modelToEntityReferences(ProductAttributeDs ds,
-            ProductAttribute e) throws Exception {
+            ProductAttribute e, boolean isInsert) throws Exception {
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -30,6 +32,7 @@ public class ProductAttributeDsConv extends
         } else {
             this.lookup_type_ProductAttributeType(ds, e);
         }
+
         if (ds.getUomId() != null) {
             if (e.getUom() == null || !e.getUom().getId().equals(ds.getUomId())) {
                 e.setUom((Uom) this.em.find(Uom.class, ds.getUomId()));
@@ -37,6 +40,7 @@ public class ProductAttributeDsConv extends
         } else {
             this.lookup_uom_Uom(ds, e);
         }
+
     }
 
     protected void lookup_type_ProductAttributeType(ProductAttributeDs ds,
@@ -45,7 +49,7 @@ public class ProductAttributeDsConv extends
             ProductAttributeType x = null;
             try {
                 x = ((IProductAttributeTypeService) findEntityService(ProductAttributeType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProductAttributeType` reference:  `type` = "
@@ -63,8 +67,8 @@ public class ProductAttributeDsConv extends
         if (ds.getUom() != null && !ds.getUom().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) findEntityService(Uom.class)).findByCode(
-                        ds.getClientId(), ds.getUom());
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(ds
+                        .getUom());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Uom` reference:  `uom` = "

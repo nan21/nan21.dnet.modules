@@ -17,8 +17,10 @@ public class DsAccessControlDsConv extends
         AbstractDsConverter<DsAccessControlDs, DsAccessControl> implements
         IDsConverter<DsAccessControlDs, DsAccessControl> {
 
+    @Override
     protected void modelToEntityReferences(DsAccessControlDs ds,
-            DsAccessControl e) throws Exception {
+            DsAccessControl e, boolean isInsert) throws Exception {
+
         if (ds.getAccessControlId() != null) {
             if (e.getAccessControl() == null
                     || !e.getAccessControl().getId()
@@ -29,6 +31,7 @@ public class DsAccessControlDsConv extends
         } else {
             this.lookup_accessControl_AccessControl(ds, e);
         }
+
     }
 
     protected void lookup_accessControl_AccessControl(DsAccessControlDs ds,
@@ -37,7 +40,7 @@ public class DsAccessControlDsConv extends
             AccessControl x = null;
             try {
                 x = ((IAccessControlService) findEntityService(AccessControl.class))
-                        .findByName(ds.getClientId(), ds.getAccessControl());
+                        .findByName(ds.getAccessControl());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `AccessControl` reference:  `accessControl` = "

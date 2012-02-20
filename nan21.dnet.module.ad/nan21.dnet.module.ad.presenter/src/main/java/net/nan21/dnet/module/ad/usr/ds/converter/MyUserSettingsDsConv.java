@@ -17,8 +17,10 @@ public class MyUserSettingsDsConv extends
         AbstractDsConverter<MyUserSettingsDs, User> implements
         IDsConverter<MyUserSettingsDs, User> {
 
-    protected void modelToEntityReferences(MyUserSettingsDs ds, User e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(MyUserSettingsDs ds, User e,
+            boolean isInsert) throws Exception {
+
         if (ds.getDateFormatId() != null) {
             if (e.getDateFormat() == null
                     || !e.getDateFormat().getId().equals(ds.getDateFormatId())) {
@@ -28,6 +30,7 @@ public class MyUserSettingsDsConv extends
         } else {
             this.lookup_dateFormat_SysDateFormat(ds, e);
         }
+
     }
 
     protected void lookup_dateFormat_SysDateFormat(MyUserSettingsDs ds, User e)
@@ -36,7 +39,7 @@ public class MyUserSettingsDsConv extends
             SysDateFormat x = null;
             try {
                 x = ((ISysDateFormatService) findEntityService(SysDateFormat.class))
-                        .findByName(ds.getClientId(), ds.getDateFormat());
+                        .findByName(ds.getDateFormat());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `SysDateFormat` reference:  `dateFormat` = "

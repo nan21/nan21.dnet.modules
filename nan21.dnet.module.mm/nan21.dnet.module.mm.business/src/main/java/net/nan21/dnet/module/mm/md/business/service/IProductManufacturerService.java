@@ -12,8 +12,8 @@ import net.nan21.dnet.module.mm.md.domain.entity.ProductManufacturer;
 public interface IProductManufacturerService extends
         IEntityService<ProductManufacturer> {
 
-    public ProductManufacturer findByCode(Long clientId, String code);
+    public ProductManufacturer findByCode(String code);
 
-    public ProductManufacturer findByName(Long clientId, String name);
+    public ProductManufacturer findByName(String name);
 
 }

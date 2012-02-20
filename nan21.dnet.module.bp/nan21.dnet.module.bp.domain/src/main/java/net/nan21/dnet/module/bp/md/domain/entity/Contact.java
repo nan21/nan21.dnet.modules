@@ -40,8 +40,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = Contact.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = Contact.NQ_FIND_BY_ID, query = "SELECT e FROM Contact e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = Contact.NQ_FIND_BY_IDS, query = "SELECT e FROM Contact e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = Contact.NQ_FIND_BY_ID, query = "SELECT e FROM Contact e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Contact.NQ_FIND_BY_IDS, query = "SELECT e FROM Contact e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Contact implements Serializable, IModelWithId, IModelWithClientId {
 
     public static final String TABLE_NAME = "BP_CONTACT";

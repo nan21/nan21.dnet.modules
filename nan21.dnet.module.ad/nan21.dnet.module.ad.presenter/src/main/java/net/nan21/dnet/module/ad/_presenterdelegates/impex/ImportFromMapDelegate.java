@@ -22,7 +22,11 @@ public class ImportFromMapDelegate extends AbstractDsDelegate {
 			String fileName = item.getFileName();
 	        String dsName = item.getDataSourceName()+"Ds";
 	        String path = Session.params.get().getDefaultImportPath();	        	
-	        this.findDsService(dsName).doImport(fileName, path);
+	        if (item.getUkFieldName() != null && !item.getUkFieldName().equals("")) {
+				this.findDsService(dsName).doImport(fileName, path, item.getUkFieldName(), 0);
+			} else {
+				this.findDsService(dsName).doImport(fileName, path);
+			}
 		}
 		
 	}

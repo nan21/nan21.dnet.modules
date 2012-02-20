@@ -19,8 +19,10 @@ public class PayScaleRateDsConv extends
         AbstractDsConverter<PayScaleRateDs, PayScaleRate> implements
         IDsConverter<PayScaleRateDs, PayScaleRate> {
 
-    protected void modelToEntityReferences(PayScaleRateDs ds, PayScaleRate e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(PayScaleRateDs ds, PayScaleRate e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
@@ -30,6 +32,7 @@ public class PayScaleRateDsConv extends
         } else {
             this.lookup_currency_Currency(ds, e);
         }
+
         if (ds.getPayScaleId() != null) {
             if (e.getPayScale() == null
                     || !e.getPayScale().getId().equals(ds.getPayScaleId())) {
@@ -39,6 +42,7 @@ public class PayScaleRateDsConv extends
         } else {
             this.lookup_payScale_PayScale(ds, e);
         }
+
     }
 
     protected void lookup_currency_Currency(PayScaleRateDs ds, PayScaleRate e)
@@ -47,7 +51,7 @@ public class PayScaleRateDsConv extends
             Currency x = null;
             try {
                 x = ((ICurrencyService) findEntityService(Currency.class))
-                        .findByCode(ds.getClientId(), ds.getCurrencyCode());
+                        .findByCode(ds.getCurrencyCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Currency` reference:  `currencyCode` = "
@@ -66,7 +70,7 @@ public class PayScaleRateDsConv extends
             PayScale x = null;
             try {
                 x = ((IPayScaleService) findEntityService(PayScale.class))
-                        .findByCode(ds.getClientId(), ds.getPayScaleCode());
+                        .findByCode(ds.getPayScaleCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `PayScale` reference:  `payScaleCode` = "

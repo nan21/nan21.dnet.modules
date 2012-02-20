@@ -17,8 +17,10 @@ public class RatingLevelDsConv extends
         AbstractDsConverter<RatingLevelDs, RatingLevel> implements
         IDsConverter<RatingLevelDs, RatingLevel> {
 
-    protected void modelToEntityReferences(RatingLevelDs ds, RatingLevel e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(RatingLevelDs ds, RatingLevel e,
+            boolean isInsert) throws Exception {
+
         if (ds.getRatingScaleId() != null) {
             if (e.getRatingScale() == null
                     || !e.getRatingScale().getId()
@@ -29,6 +31,7 @@ public class RatingLevelDsConv extends
         } else {
             this.lookup_ratingScale_RatingScale(ds, e);
         }
+
     }
 
     protected void lookup_ratingScale_RatingScale(RatingLevelDs ds,
@@ -37,7 +40,7 @@ public class RatingLevelDsConv extends
             RatingScale x = null;
             try {
                 x = ((IRatingScaleService) findEntityService(RatingScale.class))
-                        .findByName(ds.getClientId(), ds.getRatingScale());
+                        .findByName(ds.getRatingScale());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `RatingScale` reference:  `ratingScale` = "

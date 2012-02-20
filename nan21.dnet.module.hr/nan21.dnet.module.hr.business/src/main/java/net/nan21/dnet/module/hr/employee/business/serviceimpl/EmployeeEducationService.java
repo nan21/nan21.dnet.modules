@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.employee.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.employee.business.service.IEmployeeEducationService;
 import net.nan21.dnet.module.hr.employee.domain.entity.EducationType;
@@ -39,8 +40,9 @@ public class EmployeeEducationService extends
     public List<EmployeeEducation> findByEmployeeId(Long employeeId) {
         return (List<EmployeeEducation>) this.em
                 .createQuery(
-                        "select e from EmployeeEducation e where e.employee.id = :pEmployeeId",
+                        "select e from EmployeeEducation e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
                         EmployeeEducation.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();
     }
 
@@ -51,8 +53,9 @@ public class EmployeeEducationService extends
     public List<EmployeeEducation> findByTypeId(Long typeId) {
         return (List<EmployeeEducation>) this.em
                 .createQuery(
-                        "select e from EmployeeEducation e where e.type.id = :pTypeId",
+                        "select e from EmployeeEducation e where e.clientId = :pClientId and  e.type.id = :pTypeId",
                         EmployeeEducation.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();
     }
 

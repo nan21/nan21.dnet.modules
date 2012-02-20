@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.sd.invoice.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
@@ -45,9 +46,10 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     public List<SalesInvoice> findByStatusId(Long statusId) {
         return (List<SalesInvoice>) this.em
                 .createQuery(
-                        "select e from SalesInvoice e where e.status.id = :pStatusId",
-                        SalesInvoice.class).setParameter("pStatusId", statusId)
-                .getResultList();
+                        "select e from SalesInvoice e where e.clientId = :pClientId and  e.status.id = :pStatusId",
+                        SalesInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pStatusId", statusId).getResultList();
     }
 
     public List<SalesInvoice> findByType(SalesInvoiceType type) {
@@ -57,9 +59,10 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     public List<SalesInvoice> findByTypeId(Long typeId) {
         return (List<SalesInvoice>) this.em
                 .createQuery(
-                        "select e from SalesInvoice e where e.type.id = :pTypeId",
-                        SalesInvoice.class).setParameter("pTypeId", typeId)
-                .getResultList();
+                        "select e from SalesInvoice e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        SalesInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pTypeId", typeId).getResultList();
     }
 
     public List<SalesInvoice> findByCurrency(Currency currency) {
@@ -69,8 +72,9 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     public List<SalesInvoice> findByCurrencyId(Long currencyId) {
         return (List<SalesInvoice>) this.em
                 .createQuery(
-                        "select e from SalesInvoice e where e.currency.id = :pCurrencyId",
+                        "select e from SalesInvoice e where e.clientId = :pClientId and  e.currency.id = :pCurrencyId",
                         SalesInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCurrencyId", currencyId).getResultList();
     }
 
@@ -81,8 +85,9 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     public List<SalesInvoice> findByCustomerId(Long customerId) {
         return (List<SalesInvoice>) this.em
                 .createQuery(
-                        "select e from SalesInvoice e where e.customer.id = :pCustomerId",
+                        "select e from SalesInvoice e where e.clientId = :pClientId and  e.customer.id = :pCustomerId",
                         SalesInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCustomerId", customerId).getResultList();
     }
 
@@ -93,8 +98,9 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     public List<SalesInvoice> findByBillToLocationId(Long billToLocationId) {
         return (List<SalesInvoice>) this.em
                 .createQuery(
-                        "select e from SalesInvoice e where e.billToLocation.id = :pBillToLocationId",
+                        "select e from SalesInvoice e where e.clientId = :pClientId and  e.billToLocation.id = :pBillToLocationId",
                         SalesInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBillToLocationId", billToLocationId)
                 .getResultList();
     }
@@ -106,8 +112,9 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     public List<SalesInvoice> findByBillToContactId(Long billToContactId) {
         return (List<SalesInvoice>) this.em
                 .createQuery(
-                        "select e from SalesInvoice e where e.billToContact.id = :pBillToContactId",
+                        "select e from SalesInvoice e where e.clientId = :pClientId and  e.billToContact.id = :pBillToContactId",
                         SalesInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBillToContactId", billToContactId)
                 .getResultList();
     }
@@ -119,8 +126,9 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     public List<SalesInvoice> findBySupplierId(Long supplierId) {
         return (List<SalesInvoice>) this.em
                 .createQuery(
-                        "select e from SalesInvoice e where e.supplier.id = :pSupplierId",
+                        "select e from SalesInvoice e where e.clientId = :pClientId and  e.supplier.id = :pSupplierId",
                         SalesInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSupplierId", supplierId).getResultList();
     }
 
@@ -131,8 +139,9 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     public List<SalesInvoice> findBySalesOrderId(Long salesOrderId) {
         return (List<SalesInvoice>) this.em
                 .createQuery(
-                        "select e from SalesInvoice e where e.salesOrder.id = :pSalesOrderId",
+                        "select e from SalesInvoice e where e.clientId = :pClientId and  e.salesOrder.id = :pSalesOrderId",
                         SalesInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSalesOrderId", salesOrderId).getResultList();
     }
 
@@ -143,9 +152,10 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     public List<SalesInvoice> findByLinesId(Long linesId) {
         return (List<SalesInvoice>) this.em
                 .createQuery(
-                        "select distinct e from SalesInvoice e , IN (e.lines) c where c.id = :pLinesId",
-                        SalesInvoice.class).setParameter("pLinesId", linesId)
-                .getResultList();
+                        "select distinct e from SalesInvoice e , IN (e.lines) c where e.clientId = :pClientId and c.id = :pLinesId",
+                        SalesInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pLinesId", linesId).getResultList();
     }
 
 }

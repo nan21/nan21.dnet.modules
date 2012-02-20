@@ -21,8 +21,10 @@ public class ProductAccountDsConv extends
         AbstractDsConverter<ProductAccountDs, ProductAccount> implements
         IDsConverter<ProductAccountDs, ProductAccount> {
 
-    protected void modelToEntityReferences(ProductAccountDs ds, ProductAccount e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ProductAccountDs ds,
+            ProductAccount e, boolean isInsert) throws Exception {
+
         if (ds.getOrganizationId() != null) {
             if (e.getOrganization() == null
                     || !e.getOrganization().getId()
@@ -33,6 +35,7 @@ public class ProductAccountDsConv extends
         } else {
             this.lookup_organization_Organization(ds, e);
         }
+
         if (ds.getGroupId() != null) {
             if (e.getGroup() == null
                     || !e.getGroup().getId().equals(ds.getGroupId())) {
@@ -42,6 +45,7 @@ public class ProductAccountDsConv extends
         } else {
             this.lookup_group_ProductAccountGroup(ds, e);
         }
+
         if (ds.getProductId() != null) {
             if (e.getProduct() == null
                     || !e.getProduct().getId().equals(ds.getProductId())) {
@@ -51,6 +55,7 @@ public class ProductAccountDsConv extends
         } else {
             this.lookup_product_Product(ds, e);
         }
+
     }
 
     protected void lookup_organization_Organization(ProductAccountDs ds,
@@ -60,7 +65,7 @@ public class ProductAccountDsConv extends
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getClientId(), ds.getOrganizationCode());
+                        .findByCode(ds.getOrganizationCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Organization` reference:  `organizationCode` = "
@@ -79,7 +84,7 @@ public class ProductAccountDsConv extends
             ProductAccountGroup x = null;
             try {
                 x = ((IProductAccountGroupService) findEntityService(ProductAccountGroup.class))
-                        .findByCode(ds.getClientId(), ds.getGroupCode());
+                        .findByCode(ds.getGroupCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProductAccountGroup` reference:  `groupCode` = "
@@ -98,7 +103,7 @@ public class ProductAccountDsConv extends
             Product x = null;
             try {
                 x = ((IProductService) findEntityService(Product.class))
-                        .findByCode(ds.getClientId(), ds.getProductCode());
+                        .findByCode(ds.getProductCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Product` reference:  `productCode` = "

@@ -12,6 +12,6 @@ import net.nan21.dnet.module.mm.inventory.domain.entity.StockLocatorType;
 public interface IStockLocatorTypeService extends
         IEntityService<StockLocatorType> {
 
-    public StockLocatorType findByName(Long clientId, String name);
+    public StockLocatorType findByName(String name);
 
 }

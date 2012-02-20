@@ -17,8 +17,10 @@ public class ProjectTypeDsConv extends
         AbstractDsConverter<ProjectTypeDs, ProjectType> implements
         IDsConverter<ProjectTypeDs, ProjectType> {
 
-    protected void modelToEntityReferences(ProjectTypeDs ds, ProjectType e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ProjectTypeDs ds, ProjectType e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
@@ -28,6 +30,7 @@ public class ProjectTypeDsConv extends
         } else {
             this.lookup_category_ProjectCategory(ds, e);
         }
+
     }
 
     protected void lookup_category_ProjectCategory(ProjectTypeDs ds,
@@ -36,7 +39,7 @@ public class ProjectTypeDsConv extends
             ProjectCategory x = null;
             try {
                 x = ((IProjectCategoryService) findEntityService(ProjectCategory.class))
-                        .findByName(ds.getClientId(), ds.getCategory());
+                        .findByName(ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProjectCategory` reference:  `category` = "

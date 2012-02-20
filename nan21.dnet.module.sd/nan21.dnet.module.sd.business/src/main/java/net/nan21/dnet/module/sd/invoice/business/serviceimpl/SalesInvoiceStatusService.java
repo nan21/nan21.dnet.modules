@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.sd.invoice.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceStatusService;
 
@@ -29,10 +30,10 @@ public class SalesInvoiceStatusService extends
         return SalesInvoiceStatus.class;
     }
 
-    public SalesInvoiceStatus findByName(Long clientId, String name) {
+    public SalesInvoiceStatus findByName(String name) {
         return (SalesInvoiceStatus) this.em
                 .createNamedQuery(SalesInvoiceStatus.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

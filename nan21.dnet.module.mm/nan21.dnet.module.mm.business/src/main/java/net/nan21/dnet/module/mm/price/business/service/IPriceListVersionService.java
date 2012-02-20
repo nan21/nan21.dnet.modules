@@ -14,7 +14,7 @@ import net.nan21.dnet.module.mm.price.domain.entity.PriceListVersion;
 public interface IPriceListVersionService extends
         IEntityService<PriceListVersion> {
 
-    public PriceListVersion findByName(Long clientId, String name);
+    public PriceListVersion findByName(String name);
 
     public List<PriceListVersion> findByPriceList(PriceList priceList);
 

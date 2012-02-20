@@ -21,8 +21,10 @@ public class BpClassificationDsConv extends
         AbstractDsConverter<BpClassificationDs, BpClassification> implements
         IDsConverter<BpClassificationDs, BpClassification> {
 
+    @Override
     protected void modelToEntityReferences(BpClassificationDs ds,
-            BpClassification e) throws Exception {
+            BpClassification e, boolean isInsert) throws Exception {
+
         if (ds.getBusinessPartnerId() != null) {
             if (e.getBp() == null
                     || !e.getBp().getId().equals(ds.getBusinessPartnerId())) {
@@ -32,6 +34,7 @@ public class BpClassificationDsConv extends
         } else {
             this.lookup_bp_BusinessPartner(ds, e);
         }
+
         if (ds.getClassificationSystemId() != null) {
             if (e.getClassSystem() == null
                     || !e.getClassSystem().getId()
@@ -43,6 +46,7 @@ public class BpClassificationDsConv extends
         } else {
             this.lookup_classSystem_ClassificationSystem(ds, e);
         }
+
         if (ds.getClassificationId() != null) {
             if (e.getClassCode() == null
                     || !e.getClassCode().getId()
@@ -53,6 +57,7 @@ public class BpClassificationDsConv extends
         } else {
             this.lookup_classCode_ClassificationCode(ds, e);
         }
+
     }
 
     protected void lookup_bp_BusinessPartner(BpClassificationDs ds,
@@ -62,7 +67,7 @@ public class BpClassificationDsConv extends
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
-                        .findByCode(ds.getClientId(), ds.getBusinessPartner());
+                        .findByCode(ds.getBusinessPartner());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `BusinessPartner` reference:  `businessPartner` = "
@@ -82,8 +87,7 @@ public class BpClassificationDsConv extends
             ClassificationSystem x = null;
             try {
                 x = ((IClassificationSystemService) findEntityService(ClassificationSystem.class))
-                        .findByCode(ds.getClientId(),
-                                ds.getClassificationSystem());
+                        .findByCode(ds.getClassificationSystem());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ClassificationSystem` reference:  `classificationSystem` = "
@@ -105,8 +109,7 @@ public class BpClassificationDsConv extends
             ClassificationCode x = null;
             try {
                 x = ((IClassificationCodeService) findEntityService(ClassificationCode.class))
-                        .findBySyscode(ds.getClientId(),
-                                ds.getClassificationSystemId(),
+                        .findBySyscode(ds.getClassificationSystemId(),
                                 ds.getClassificationCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

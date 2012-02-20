@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.impex.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.impex.business.service.IImportMapService;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem;
@@ -30,9 +31,9 @@ public class ImportMapService extends AbstractEntityService<ImportMap>
         return ImportMap.class;
     }
 
-    public ImportMap findByName(Long clientId, String name) {
+    public ImportMap findByName(String name) {
         return (ImportMap) this.em.createNamedQuery(ImportMap.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -43,9 +44,10 @@ public class ImportMapService extends AbstractEntityService<ImportMap>
     public List<ImportMap> findByItemsId(Long itemsId) {
         return (List<ImportMap>) this.em
                 .createQuery(
-                        "select distinct e from ImportMap e , IN (e.items) c where c.id = :pItemsId",
-                        ImportMap.class).setParameter("pItemsId", itemsId)
-                .getResultList();
+                        "select distinct e from ImportMap e , IN (e.items) c where e.clientId = :pClientId and c.id = :pItemsId",
+                        ImportMap.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pItemsId", itemsId).getResultList();
     }
 
 }

@@ -12,13 +12,26 @@ public class ImportFromMapItemDelegate extends AbstractDsDelegate {
 		String fileName = ds.getFileName();
 		String dsName = ds.getDataSource() + "Ds";
 		String path = Session.params.get().getDefaultImportPath();
-		this.findDsService(dsName).doImport(fileName, path);
+		if (ds.getUkFieldName() != null && !ds.getUkFieldName().equals("")) {
+			this.findDsService(dsName).doImport(fileName, path,
+					ds.getUkFieldName(), 0);
+		} else {
+			this.findDsService(dsName).doImport(fileName, path);
+		}
 	}
 
 	public void importFile(ImportMapItemDsFilter ds, ImportMapItemDsParam params)
 			throws Exception {
 		String fileName = params.getImportFileLocation();
 		String dsName = params.getImportDataSource() + "Ds";
-		this.findDsService(dsName).doImport(fileName);
+		  
+		if (params.getImportUkFieldName() != null
+				&& !params.getImportUkFieldName().equals("")) {
+			this.findDsService(dsName).doImport(fileName,
+					params.getImportUkFieldName(), 0);
+		} else {
+			this.findDsService(dsName).doImport(fileName);
+		}
+
 	}
 }

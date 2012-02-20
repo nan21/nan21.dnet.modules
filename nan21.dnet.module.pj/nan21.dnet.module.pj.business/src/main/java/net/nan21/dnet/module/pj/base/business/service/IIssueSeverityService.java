@@ -11,6 +11,6 @@ import net.nan21.dnet.module.pj.base.domain.entity.IssueSeverity;
 
 public interface IIssueSeverityService extends IEntityService<IssueSeverity> {
 
-    public IssueSeverity findByName(Long clientId, String name);
+    public IssueSeverity findByName(String name);
 
 }

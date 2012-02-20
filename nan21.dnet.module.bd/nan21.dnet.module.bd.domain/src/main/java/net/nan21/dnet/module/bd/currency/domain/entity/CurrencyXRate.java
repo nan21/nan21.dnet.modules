@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
         "TARGET_ID", "VALIDAT" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_ID, query = "SELECT e FROM CurrencyXRate e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_IDS, query = "SELECT e FROM CurrencyXRate e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_ID, query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_IDS, query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_VALID, query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and  e.provider = :pProvider and e.source = :pSource and e.target = :pTarget and e.validAt = :pValidAt ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "CurrencyXRate.findByValid_PRIMITIVE", query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and  e.provider.id = :pProviderId and e.source.id = :pSourceId and e.target.id = :pTargetId and e.validAt = :pValidAt ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CurrencyXRate implements Serializable, IModelWithId,

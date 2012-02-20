@@ -32,31 +32,31 @@ public class IssueTextDs extends AbstractDsModel<IssueText> implements
     public static final String fISSUETEXTTYPE = "issueTextType";
     public static final String fCONTENT = "content";
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long id;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String uuid;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long clientId;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date createdAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date modifiedAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String createdBy;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String modifiedBy;
 
     @DsField()
     private Long version;
 
-    @DsField(fetch = false, path = "className")
+    @DsField(noUpdate = true, fetch = false, path = "className")
     private String entityFQN;
 
     @DsField(join = "left", path = "issue.id")

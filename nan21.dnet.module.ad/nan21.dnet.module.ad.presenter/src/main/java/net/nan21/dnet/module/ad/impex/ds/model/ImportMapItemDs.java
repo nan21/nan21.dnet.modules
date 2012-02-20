@@ -33,33 +33,34 @@ public class ImportMapItemDs extends AbstractDsModel<ImportMapItem> implements
     public static final String fSEQUENCENO = "sequenceNo";
     public static final String fDATASOURCE = "dataSource";
     public static final String fFILENAME = "fileName";
+    public static final String fUKFIELDNAME = "ukFieldName";
     public static final String fACTIVE = "active";
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long id;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String uuid;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long clientId;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date createdAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date modifiedAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String createdBy;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String modifiedBy;
 
     @DsField()
     private Long version;
 
-    @DsField(fetch = false, path = "className")
+    @DsField(noUpdate = true, fetch = false, path = "className")
     private String entityFQN;
 
     @DsField(join = "left", path = "importMap.id")
@@ -76,6 +77,9 @@ public class ImportMapItemDs extends AbstractDsModel<ImportMapItem> implements
 
     @DsField()
     private String fileName;
+
+    @DsField()
+    private String ukFieldName;
 
     @DsField()
     private Boolean active;
@@ -199,6 +203,14 @@ public class ImportMapItemDs extends AbstractDsModel<ImportMapItem> implements
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public String getUkFieldName() {
+        return this.ukFieldName;
+    }
+
+    public void setUkFieldName(String ukFieldName) {
+        this.ukFieldName = ukFieldName;
     }
 
     public Boolean getActive() {

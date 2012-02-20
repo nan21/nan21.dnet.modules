@@ -11,6 +11,6 @@ import net.nan21.dnet.module.hr.training.domain.entity.CourseCategory;
 
 public interface ICourseCategoryService extends IEntityService<CourseCategory> {
 
-    public CourseCategory findByName(Long clientId, String name);
+    public CourseCategory findByName(String name);
 
 }

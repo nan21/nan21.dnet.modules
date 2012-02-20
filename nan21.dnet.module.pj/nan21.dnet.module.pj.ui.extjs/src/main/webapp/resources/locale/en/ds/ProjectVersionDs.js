@@ -7,8 +7,6 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs$Trl", {
 	projectName__lbl : "Project Name",
 	planDate__lbl : "Plan Date",
 	releaseDate__lbl : "Release Date",
-	projectVersionId__lbl : "Project Version Id",
-	projectVersion__lbl : "Project Version",
 		
 	hideReleased__lbl :"Hide Released",
 	hideDue__lbl :"Hide Due",

@@ -11,6 +11,6 @@ import net.nan21.dnet.module.mm.price.domain.entity.PriceListType;
 
 public interface IPriceListTypeService extends IEntityService<PriceListType> {
 
-    public PriceListType findByName(Long clientId, String name);
+    public PriceListType findByName(String name);
 
 }

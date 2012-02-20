@@ -13,7 +13,7 @@ Ext.define("net.nan21.dnet.module.hr.time.frame.Absence_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("absence",{ name:"absenceFilter", xtype:"net.nan21.dnet.module.hr.time.dc.Absence$Filter",height:120})	 
-		.addDcView("absence",{ name:"absenceList", xtype:"net.nan21.dnet.module.hr.time.dc.Absence$List"})	 
+		.addDcGridView("absence",{ name:"absenceList", xtype:"net.nan21.dnet.module.hr.time.dc.Absence$List"})	 
 		.addDcFormView("absence",{ name:"absenceEdit", xtype:"net.nan21.dnet.module.hr.time.dc.Absence$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

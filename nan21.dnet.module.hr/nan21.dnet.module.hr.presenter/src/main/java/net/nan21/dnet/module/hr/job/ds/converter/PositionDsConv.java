@@ -18,8 +18,10 @@ import net.nan21.dnet.module.hr.job.domain.entity.Position;
 public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
         implements IDsConverter<PositionDs, Position> {
 
-    protected void modelToEntityReferences(PositionDs ds, Position e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(PositionDs ds, Position e,
+            boolean isInsert) throws Exception {
+
         if (ds.getOrganizationId() != null) {
             if (e.getOrganization() == null
                     || !e.getOrganization().getId()
@@ -30,6 +32,7 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
         } else {
             this.lookup_organization_Organization(ds, e);
         }
+
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
                 e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
@@ -37,6 +40,7 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
         } else {
             this.lookup_job_Job(ds, e);
         }
+
     }
 
     protected void lookup_organization_Organization(PositionDs ds, Position e)
@@ -46,7 +50,7 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getClientId(), ds.getOrganizationCode());
+                        .findByCode(ds.getOrganizationCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Organization` reference:  `organizationCode` = "
@@ -63,8 +67,8 @@ public class PositionDsConv extends AbstractDsConverter<PositionDs, Position>
         if (ds.getJobCode() != null && !ds.getJobCode().equals("")) {
             Job x = null;
             try {
-                x = ((IJobService) findEntityService(Job.class)).findByCode(
-                        ds.getClientId(), ds.getJobCode());
+                x = ((IJobService) findEntityService(Job.class)).findByCode(ds
+                        .getJobCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Job` reference:  `jobCode` = "

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttributeTypeService;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory;
@@ -31,10 +32,10 @@ public class ProductAttributeTypeService extends
         return ProductAttributeType.class;
     }
 
-    public ProductAttributeType findByName(Long clientId, String name) {
+    public ProductAttributeType findByName(String name) {
         return (ProductAttributeType) this.em
                 .createNamedQuery(ProductAttributeType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -46,8 +47,9 @@ public class ProductAttributeTypeService extends
     public List<ProductAttributeType> findByCategoryId(Long categoryId) {
         return (List<ProductAttributeType>) this.em
                 .createQuery(
-                        "select e from ProductAttributeType e where e.category.id = :pCategoryId",
+                        "select e from ProductAttributeType e where e.clientId = :pClientId and  e.category.id = :pCategoryId",
                         ProductAttributeType.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCategoryId", categoryId).getResultList();
     }
 

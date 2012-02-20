@@ -11,6 +11,6 @@ import net.nan21.dnet.module.ad.usr.domain.entity.UserType;
 
 public interface IUserTypeService extends IEntityService<UserType> {
 
-    public UserType findByName(Long clientId, String name);
+    public UserType findByName(String name);
 
 }

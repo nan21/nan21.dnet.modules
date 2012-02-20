@@ -35,8 +35,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = Client.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = Client.NQ_FIND_BY_ID, query = "SELECT e FROM Client e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = Client.NQ_FIND_BY_IDS, query = "SELECT e FROM Client e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = Client.NQ_FIND_BY_ID, query = "SELECT e FROM Client e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Client.NQ_FIND_BY_IDS, query = "SELECT e FROM Client e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Client implements Serializable, IModelWithId {
 
     public static final String TABLE_NAME = "AD_CLIENT";
@@ -70,7 +70,7 @@ public class Client implements Serializable, IModelWithId {
     @Column(name = "MAINTENANCELANGUAGE", length = 5)
     private String maintenanceLanguage;
 
-    /**
+    /** 
     	Specify which is the default access rule if there is no explicit entry in ACL list.
     	<BR> Possible values are:
     	 <li> deny: by default deny access to data-source function if there is no explicit access defined in ACL.

@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.job.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.job.business.service.IWorkRequirementTypeService;
 
@@ -29,10 +30,10 @@ public class WorkRequirementTypeService extends
         return WorkRequirementType.class;
     }
 
-    public WorkRequirementType findByName(Long clientId, String name) {
+    public WorkRequirementType findByName(String name) {
         return (WorkRequirementType) this.em
                 .createNamedQuery(WorkRequirementType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

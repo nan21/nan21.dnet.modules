@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.employee.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -36,9 +37,9 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
         return Employee.class;
     }
 
-    public Employee findByCode(Long clientId, String code) {
+    public Employee findByCode(String code) {
         return (Employee) this.em.createNamedQuery(Employee.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
@@ -49,9 +50,10 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
     public List<Employee> findByEmployerId(Long employerId) {
         return (List<Employee>) this.em
                 .createQuery(
-                        "select e from Employee e where e.employer.id = :pEmployerId",
-                        Employee.class).setParameter("pEmployerId", employerId)
-                .getResultList();
+                        "select e from Employee e where e.clientId = :pClientId and  e.employer.id = :pEmployerId",
+                        Employee.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pEmployerId", employerId).getResultList();
     }
 
     public List<Employee> findByCitizenship(Country citizenship) {
@@ -61,8 +63,9 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
     public List<Employee> findByCitizenshipId(Long citizenshipId) {
         return (List<Employee>) this.em
                 .createQuery(
-                        "select e from Employee e where e.citizenship.id = :pCitizenshipId",
+                        "select e from Employee e where e.clientId = :pClientId and  e.citizenship.id = :pCitizenshipId",
                         Employee.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCitizenshipId", citizenshipId).getResultList();
     }
 
@@ -73,9 +76,10 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
     public List<Employee> findByTypeId(Long typeId) {
         return (List<Employee>) this.em
                 .createQuery(
-                        "select e from Employee e where e.type.id = :pTypeId",
-                        Employee.class).setParameter("pTypeId", typeId)
-                .getResultList();
+                        "select e from Employee e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        Employee.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pTypeId", typeId).getResultList();
     }
 
     public List<Employee> findByPosition(Position position) {
@@ -85,9 +89,10 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
     public List<Employee> findByPositionId(Long positionId) {
         return (List<Employee>) this.em
                 .createQuery(
-                        "select e from Employee e where e.position.id = :pPositionId",
-                        Employee.class).setParameter("pPositionId", positionId)
-                .getResultList();
+                        "select e from Employee e where e.clientId = :pClientId and  e.position.id = :pPositionId",
+                        Employee.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pPositionId", positionId).getResultList();
     }
 
     public List<Employee> findByJob(Job job) {
@@ -97,9 +102,10 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
     public List<Employee> findByJobId(Long jobId) {
         return (List<Employee>) this.em
                 .createQuery(
-                        "select e from Employee e where e.job.id = :pJobId",
-                        Employee.class).setParameter("pJobId", jobId)
-                .getResultList();
+                        "select e from Employee e where e.clientId = :pClientId and  e.job.id = :pJobId",
+                        Employee.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJobId", jobId).getResultList();
     }
 
     public List<Employee> findByOrganization(Organization organization) {
@@ -109,8 +115,9 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
     public List<Employee> findByOrganizationId(Long organizationId) {
         return (List<Employee>) this.em
                 .createQuery(
-                        "select e from Employee e where e.organization.id = :pOrganizationId",
+                        "select e from Employee e where e.clientId = :pClientId and  e.organization.id = :pOrganizationId",
                         Employee.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pOrganizationId", organizationId)
                 .getResultList();
     }
@@ -122,9 +129,10 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
     public List<Employee> findByGradeId(Long gradeId) {
         return (List<Employee>) this.em
                 .createQuery(
-                        "select e from Employee e where e.grade.id = :pGradeId",
-                        Employee.class).setParameter("pGradeId", gradeId)
-                .getResultList();
+                        "select e from Employee e where e.clientId = :pClientId and  e.grade.id = :pGradeId",
+                        Employee.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pGradeId", gradeId).getResultList();
     }
 
     public List<Employee> findByPayroll(Payroll payroll) {
@@ -134,9 +142,10 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
     public List<Employee> findByPayrollId(Long payrollId) {
         return (List<Employee>) this.em
                 .createQuery(
-                        "select e from Employee e where e.payroll.id = :pPayrollId",
-                        Employee.class).setParameter("pPayrollId", payrollId)
-                .getResultList();
+                        "select e from Employee e where e.clientId = :pClientId and  e.payroll.id = :pPayrollId",
+                        Employee.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pPayrollId", payrollId).getResultList();
     }
 
 }

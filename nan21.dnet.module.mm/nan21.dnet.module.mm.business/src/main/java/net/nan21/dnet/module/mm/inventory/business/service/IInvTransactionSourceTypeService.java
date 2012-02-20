@@ -12,6 +12,6 @@ import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType
 public interface IInvTransactionSourceTypeService extends
         IEntityService<InvTransactionSourceType> {
 
-    public InvTransactionSourceType findByName(Long clientId, String name);
+    public InvTransactionSourceType findByName(String name);
 
 }

@@ -15,10 +15,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("subinv",{ name:"subinvFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter",height:120})	 
-		.addDcView("subinv",{ name:"subinvList", xtype:"net.nan21.dnet.module.mm.inventory.dc.SubInventory$List"})	 
+		.addDcGridView("subinv",{ name:"subinvList", xtype:"net.nan21.dnet.module.mm.inventory.dc.SubInventory$List"})	 
 		.addDcFormView("subinv",{ name:"subinvEdit", xtype:"net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit",height:150})	 
 		.addDcFilterFormView("sloc",{ name:"slocFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocator$Filter"})	 
-		.addDcView("sloc",{ name:"slocEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocator$CtxEditList", frame:true})	 
+		.addDcEditGridView("sloc",{ name:"slocEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.StockLocator$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 

@@ -15,9 +15,9 @@ Ext.define("net.nan21.dnet.module.hr.grade.frame.PayScale_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("scale",{ name:"scaleFilter", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScale$Filter",height:120})	 
-		.addDcView("scale",{ name:"scaleList", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScale$List"})	 
+		.addDcGridView("scale",{ name:"scaleList", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScale$List"})	 
 		.addDcFormView("scale",{ name:"scaleEdit", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScale$Edit",height:120})	 
-		.addDcView("point",{ name:"pointEditList", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScalePoint$CtxEditList", frame:true})	 
+		.addDcEditGridView("point",{ name:"pointEditList", xtype:"net.nan21.dnet.module.hr.grade.dc.PayScalePoint$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 

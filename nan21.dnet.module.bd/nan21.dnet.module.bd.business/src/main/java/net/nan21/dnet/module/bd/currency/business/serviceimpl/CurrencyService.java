@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bd.currency.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 
@@ -28,15 +29,15 @@ public class CurrencyService extends AbstractEntityService<Currency> implements
         return Currency.class;
     }
 
-    public Currency findByCode(Long clientId, String code) {
+    public Currency findByCode(String code) {
         return (Currency) this.em.createNamedQuery(Currency.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public Currency findByName(Long clientId, String name) {
+    public Currency findByName(String name) {
         return (Currency) this.em.createNamedQuery(Currency.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

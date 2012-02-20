@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.skill.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.skill.business.service.IRatingScaleService;
 
@@ -28,10 +29,10 @@ public class RatingScaleService extends AbstractEntityService<RatingScale>
         return RatingScale.class;
     }
 
-    public RatingScale findByName(Long clientId, String name) {
+    public RatingScale findByName(String name) {
         return (RatingScale) this.em
                 .createNamedQuery(RatingScale.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

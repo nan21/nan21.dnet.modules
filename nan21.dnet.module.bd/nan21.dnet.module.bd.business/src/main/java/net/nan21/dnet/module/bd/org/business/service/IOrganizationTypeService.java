@@ -12,6 +12,6 @@ import net.nan21.dnet.module.bd.org.domain.entity.OrganizationType;
 public interface IOrganizationTypeService extends
         IEntityService<OrganizationType> {
 
-    public OrganizationType findByName(Long clientId, String name);
+    public OrganizationType findByName(String name);
 
 }

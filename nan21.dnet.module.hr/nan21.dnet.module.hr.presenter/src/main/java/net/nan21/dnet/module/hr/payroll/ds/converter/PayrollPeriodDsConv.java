@@ -17,8 +17,10 @@ public class PayrollPeriodDsConv extends
         AbstractDsConverter<PayrollPeriodDs, PayrollPeriod> implements
         IDsConverter<PayrollPeriodDs, PayrollPeriod> {
 
-    protected void modelToEntityReferences(PayrollPeriodDs ds, PayrollPeriod e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(PayrollPeriodDs ds, PayrollPeriod e,
+            boolean isInsert) throws Exception {
+
         if (ds.getPayrollId() != null) {
             if (e.getPayroll() == null
                     || !e.getPayroll().getId().equals(ds.getPayrollId())) {
@@ -28,6 +30,7 @@ public class PayrollPeriodDsConv extends
         } else {
             this.lookup_payroll_Payroll(ds, e);
         }
+
     }
 
     protected void lookup_payroll_Payroll(PayrollPeriodDs ds, PayrollPeriod e)
@@ -36,7 +39,7 @@ public class PayrollPeriodDsConv extends
             Payroll x = null;
             try {
                 x = ((IPayrollService) findEntityService(Payroll.class))
-                        .findByName(ds.getClientId(), ds.getPayrollName());
+                        .findByName(ds.getPayrollName());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Payroll` reference:  `payrollName` = "

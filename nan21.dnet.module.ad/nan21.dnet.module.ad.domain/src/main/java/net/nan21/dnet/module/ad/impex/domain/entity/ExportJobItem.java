@@ -43,8 +43,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "JOB_ID", "MAP_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = ExportJobItem.NQ_FIND_BY_ID, query = "SELECT e FROM ExportJobItem e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = ExportJobItem.NQ_FIND_BY_IDS, query = "SELECT e FROM ExportJobItem e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ExportJobItem.NQ_FIND_BY_ID, query = "SELECT e FROM ExportJobItem e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ExportJobItem.NQ_FIND_BY_IDS, query = "SELECT e FROM ExportJobItem e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ExportJobItem.NQ_FIND_BY_JOB_MAP, query = "SELECT e FROM ExportJobItem e WHERE e.clientId = :pClientId and  e.job = :pJob and e.map = :pMap ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ExportJobItem.findByJob_map_PRIMITIVE", query = "SELECT e FROM ExportJobItem e WHERE e.clientId = :pClientId and  e.job.id = :pJobId and e.map.id = :pMapId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ExportJobItem implements Serializable, IModelWithId,

@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.pj.base.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.pj.base.business.service.IIssueCategoryService;
 
@@ -28,10 +29,10 @@ public class IssueCategoryService extends AbstractEntityService<IssueCategory>
         return IssueCategory.class;
     }
 
-    public IssueCategory findByName(Long clientId, String name) {
+    public IssueCategory findByName(String name) {
         return (IssueCategory) this.em
                 .createNamedQuery(IssueCategory.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

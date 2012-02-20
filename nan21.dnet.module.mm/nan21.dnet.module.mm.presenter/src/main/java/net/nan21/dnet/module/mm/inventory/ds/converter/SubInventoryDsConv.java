@@ -17,8 +17,10 @@ public class SubInventoryDsConv extends
         AbstractDsConverter<SubInventoryDs, SubInventory> implements
         IDsConverter<SubInventoryDs, SubInventory> {
 
-    protected void modelToEntityReferences(SubInventoryDs ds, SubInventory e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(SubInventoryDs ds, SubInventory e,
+            boolean isInsert) throws Exception {
+
         if (ds.getInventoryId() != null) {
             if (e.getInventory() == null
                     || !e.getInventory().getId().equals(ds.getInventoryId())) {
@@ -28,6 +30,7 @@ public class SubInventoryDsConv extends
         } else {
             this.lookup_inventory_Organization(ds, e);
         }
+
     }
 
     protected void lookup_inventory_Organization(SubInventoryDs ds,
@@ -36,7 +39,7 @@ public class SubInventoryDsConv extends
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getClientId(), ds.getInventory());
+                        .findByCode(ds.getInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Organization` reference:  `inventory` = "

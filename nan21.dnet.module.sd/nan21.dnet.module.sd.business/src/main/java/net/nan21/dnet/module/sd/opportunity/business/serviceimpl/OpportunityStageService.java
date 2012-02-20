@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.sd.opportunity.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.sd.opportunity.business.service.IOpportunityStageService;
 
@@ -29,10 +30,10 @@ public class OpportunityStageService extends
         return OpportunityStage.class;
     }
 
-    public OpportunityStage findByName(Long clientId, String name) {
+    public OpportunityStage findByName(String name) {
         return (OpportunityStage) this.em
                 .createNamedQuery(OpportunityStage.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

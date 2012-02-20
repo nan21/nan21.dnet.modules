@@ -17,8 +17,10 @@ public class ClassificationCodeDsConv extends
         AbstractDsConverter<ClassificationCodeDs, ClassificationCode> implements
         IDsConverter<ClassificationCodeDs, ClassificationCode> {
 
+    @Override
     protected void modelToEntityReferences(ClassificationCodeDs ds,
-            ClassificationCode e) throws Exception {
+            ClassificationCode e, boolean isInsert) throws Exception {
+
         if (ds.getClassSystemId() != null) {
             if (e.getClassSystem() == null
                     || !e.getClassSystem().getId()
@@ -29,6 +31,7 @@ public class ClassificationCodeDsConv extends
         } else {
             this.lookup_classSystem_ClassificationSystem(ds, e);
         }
+
     }
 
     protected void lookup_classSystem_ClassificationSystem(
@@ -37,7 +40,7 @@ public class ClassificationCodeDsConv extends
             ClassificationSystem x = null;
             try {
                 x = ((IClassificationSystemService) findEntityService(ClassificationSystem.class))
-                        .findByCode(ds.getClientId(), ds.getClassSystem());
+                        .findByCode(ds.getClassSystem());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ClassificationSystem` reference:  `classSystem` = "

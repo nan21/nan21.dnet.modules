@@ -11,6 +11,6 @@ import net.nan21.dnet.module.bp.base.domain.entity.PaymentTerm;
 
 public interface IPaymentTermService extends IEntityService<PaymentTerm> {
 
-    public PaymentTerm findByName(Long clientId, String name);
+    public PaymentTerm findByName(String name);
 
 }

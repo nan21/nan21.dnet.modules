@@ -13,7 +13,7 @@ import net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory;
 
 public interface ISubInventoryService extends IEntityService<SubInventory> {
 
-    public SubInventory findByName(Long clientId, String name);
+    public SubInventory findByName(String name);
 
     public List<SubInventory> findByInventory(Organization inventory);
 

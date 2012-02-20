@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.training.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.job.domain.entity.Job;
 import net.nan21.dnet.module.hr.training.business.service.IJobCourseService;
@@ -38,9 +39,10 @@ public class JobCourseService extends AbstractEntityService<JobCourse>
     public List<JobCourse> findByJobId(Long jobId) {
         return (List<JobCourse>) this.em
                 .createQuery(
-                        "select e from JobCourse e where e.job.id = :pJobId",
-                        JobCourse.class).setParameter("pJobId", jobId)
-                .getResultList();
+                        "select e from JobCourse e where e.clientId = :pClientId and  e.job.id = :pJobId",
+                        JobCourse.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJobId", jobId).getResultList();
     }
 
     public List<JobCourse> findByCourse(Course course) {
@@ -50,9 +52,10 @@ public class JobCourseService extends AbstractEntityService<JobCourse>
     public List<JobCourse> findByCourseId(Long courseId) {
         return (List<JobCourse>) this.em
                 .createQuery(
-                        "select e from JobCourse e where e.course.id = :pCourseId",
-                        JobCourse.class).setParameter("pCourseId", courseId)
-                .getResultList();
+                        "select e from JobCourse e where e.clientId = :pClientId and  e.course.id = :pCourseId",
+                        JobCourse.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pCourseId", courseId).getResultList();
     }
 
 }

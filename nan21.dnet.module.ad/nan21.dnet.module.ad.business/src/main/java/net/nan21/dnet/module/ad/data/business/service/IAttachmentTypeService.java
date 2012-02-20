@@ -11,6 +11,6 @@ import net.nan21.dnet.module.ad.data.domain.entity.AttachmentType;
 
 public interface IAttachmentTypeService extends IEntityService<AttachmentType> {
 
-    public AttachmentType findByName(Long clientId, String name);
+    public AttachmentType findByName(String name);
 
 }

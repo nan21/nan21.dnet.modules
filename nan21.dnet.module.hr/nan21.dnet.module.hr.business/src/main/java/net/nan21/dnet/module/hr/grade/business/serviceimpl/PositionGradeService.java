@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.grade.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.grade.business.service.IPositionGradeService;
 import net.nan21.dnet.module.hr.grade.domain.entity.Grade;
@@ -38,8 +39,9 @@ public class PositionGradeService extends AbstractEntityService<PositionGrade>
     public List<PositionGrade> findByPositionId(Long positionId) {
         return (List<PositionGrade>) this.em
                 .createQuery(
-                        "select e from PositionGrade e where e.position.id = :pPositionId",
+                        "select e from PositionGrade e where e.clientId = :pClientId and  e.position.id = :pPositionId",
                         PositionGrade.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPositionId", positionId).getResultList();
     }
 
@@ -50,9 +52,10 @@ public class PositionGradeService extends AbstractEntityService<PositionGrade>
     public List<PositionGrade> findByGradeId(Long gradeId) {
         return (List<PositionGrade>) this.em
                 .createQuery(
-                        "select e from PositionGrade e where e.grade.id = :pGradeId",
-                        PositionGrade.class).setParameter("pGradeId", gradeId)
-                .getResultList();
+                        "select e from PositionGrade e where e.clientId = :pClientId and  e.grade.id = :pGradeId",
+                        PositionGrade.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pGradeId", gradeId).getResultList();
     }
 
 }

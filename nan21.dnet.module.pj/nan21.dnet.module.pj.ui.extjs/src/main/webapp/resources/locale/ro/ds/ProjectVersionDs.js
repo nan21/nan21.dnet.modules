@@ -5,8 +5,6 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs$Trl", {
 	projectName__lbl :    "Proiect",
 	planDate__lbl :  "Planificat la",
 	releaseDate__lbl :  "Publicat la",
-	projectVersionId__lbl :    "Versiune (ID)",
-	projectVersion__lbl :    "Versiune",
 		 
 	hideReleased__lbl : "Fara publicate",
 	hideDue__lbl : "Fara ne-publicate",

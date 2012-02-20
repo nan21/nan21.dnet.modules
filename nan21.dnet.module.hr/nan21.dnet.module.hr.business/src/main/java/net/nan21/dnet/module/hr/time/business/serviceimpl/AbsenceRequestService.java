@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.time.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 import net.nan21.dnet.module.hr.time.business.service.IAbsenceRequestService;
@@ -40,8 +41,9 @@ public class AbsenceRequestService extends
     public List<AbsenceRequest> findByEmployeeId(Long employeeId) {
         return (List<AbsenceRequest>) this.em
                 .createQuery(
-                        "select e from AbsenceRequest e where e.employee.id = :pEmployeeId",
+                        "select e from AbsenceRequest e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
                         AbsenceRequest.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();
     }
 
@@ -52,9 +54,10 @@ public class AbsenceRequestService extends
     public List<AbsenceRequest> findByTypeId(Long typeId) {
         return (List<AbsenceRequest>) this.em
                 .createQuery(
-                        "select e from AbsenceRequest e where e.type.id = :pTypeId",
-                        AbsenceRequest.class).setParameter("pTypeId", typeId)
-                .getResultList();
+                        "select e from AbsenceRequest e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        AbsenceRequest.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pTypeId", typeId).getResultList();
     }
 
     public List<AbsenceRequest> findByReason(AbsenceReason reason) {
@@ -64,8 +67,9 @@ public class AbsenceRequestService extends
     public List<AbsenceRequest> findByReasonId(Long reasonId) {
         return (List<AbsenceRequest>) this.em
                 .createQuery(
-                        "select e from AbsenceRequest e where e.reason.id = :pReasonId",
+                        "select e from AbsenceRequest e where e.clientId = :pClientId and  e.reason.id = :pReasonId",
                         AbsenceRequest.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pReasonId", reasonId).getResultList();
     }
 
@@ -76,9 +80,10 @@ public class AbsenceRequestService extends
     public List<AbsenceRequest> findByItemsId(Long itemsId) {
         return (List<AbsenceRequest>) this.em
                 .createQuery(
-                        "select distinct e from AbsenceRequest e , IN (e.items) c where c.id = :pItemsId",
-                        AbsenceRequest.class).setParameter("pItemsId", itemsId)
-                .getResultList();
+                        "select distinct e from AbsenceRequest e , IN (e.items) c where e.clientId = :pClientId and c.id = :pItemsId",
+                        AbsenceRequest.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pItemsId", itemsId).getResultList();
     }
 
 }

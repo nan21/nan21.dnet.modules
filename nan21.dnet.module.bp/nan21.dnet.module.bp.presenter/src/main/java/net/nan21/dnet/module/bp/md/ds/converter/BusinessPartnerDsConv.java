@@ -19,8 +19,10 @@ public class BusinessPartnerDsConv extends
         AbstractDsConverter<BusinessPartnerDs, BusinessPartner> implements
         IDsConverter<BusinessPartnerDs, BusinessPartner> {
 
+    @Override
     protected void modelToEntityReferences(BusinessPartnerDs ds,
-            BusinessPartner e) throws Exception {
+            BusinessPartner e, boolean isInsert) throws Exception {
+
         if (ds.getCountryId() != null) {
             if (e.getCountry() == null
                     || !e.getCountry().getId().equals(ds.getCountryId())) {
@@ -30,6 +32,7 @@ public class BusinessPartnerDsConv extends
         } else {
             this.lookup_country_Country(ds, e);
         }
+
         if (ds.getLegalFormId() != null) {
             if (e.getLegalForm() == null
                     || !e.getLegalForm().getId().equals(ds.getLegalFormId())) {
@@ -39,6 +42,7 @@ public class BusinessPartnerDsConv extends
         } else {
             this.lookup_legalForm_CompanyLegalForm(ds, e);
         }
+
     }
 
     protected void lookup_country_Country(BusinessPartnerDs ds,
@@ -47,7 +51,7 @@ public class BusinessPartnerDsConv extends
             Country x = null;
             try {
                 x = ((ICountryService) findEntityService(Country.class))
-                        .findByCode(ds.getClientId(), ds.getCountryCode());
+                        .findByCode(ds.getCountryCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Country` reference:  `countryCode` = "
@@ -67,8 +71,7 @@ public class BusinessPartnerDsConv extends
             CompanyLegalForm x = null;
             try {
                 x = ((ICompanyLegalFormService) findEntityService(CompanyLegalForm.class))
-                        .findByName(ds.getClientId(), ds.getCountryId(),
-                                ds.getLegalForm());
+                        .findByName(ds.getCountryId(), ds.getLegalForm());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `CompanyLegalForm` reference:  `countryId` = "

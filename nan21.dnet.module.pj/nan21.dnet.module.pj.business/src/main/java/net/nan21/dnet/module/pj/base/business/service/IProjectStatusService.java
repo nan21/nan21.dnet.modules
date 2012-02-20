@@ -11,6 +11,6 @@ import net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus;
 
 public interface IProjectStatusService extends IEntityService<ProjectStatus> {
 
-    public ProjectStatus findByName(Long clientId, String name);
+    public ProjectStatus findByName(String name);
 
 }

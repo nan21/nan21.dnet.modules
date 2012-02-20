@@ -1,0 +1,6 @@
+"name";"title";"active";"description"
+"AD";"Administration";"true";"Administration menu"
+"BD";"Base-data";"true";
+"CRM";"CRM";"true";"CRM menu"
+"HRM";"Human Resources";"true";"HRM menu"
+"PJ";"Tracker";"true";"Project/Issue menu"

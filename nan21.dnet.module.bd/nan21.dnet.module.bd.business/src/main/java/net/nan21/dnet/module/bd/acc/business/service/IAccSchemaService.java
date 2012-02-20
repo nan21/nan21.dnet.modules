@@ -11,8 +11,8 @@ import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
 
 public interface IAccSchemaService extends IEntityService<AccSchema> {
 
-    public AccSchema findByCode(Long clientId, String code);
+    public AccSchema findByCode(String code);
 
-    public AccSchema findByName(Long clientId, String name);
+    public AccSchema findByName(String name);
 
 }

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.training.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.job.domain.entity.Position;
 import net.nan21.dnet.module.hr.training.business.service.IPositionCourseService;
@@ -38,8 +39,9 @@ public class PositionCourseService extends
     public List<PositionCourse> findByPositionId(Long positionId) {
         return (List<PositionCourse>) this.em
                 .createQuery(
-                        "select e from PositionCourse e where e.position.id = :pPositionId",
+                        "select e from PositionCourse e where e.clientId = :pClientId and  e.position.id = :pPositionId",
                         PositionCourse.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPositionId", positionId).getResultList();
     }
 
@@ -50,8 +52,9 @@ public class PositionCourseService extends
     public List<PositionCourse> findByCourseId(Long courseId) {
         return (List<PositionCourse>) this.em
                 .createQuery(
-                        "select e from PositionCourse e where e.course.id = :pCourseId",
+                        "select e from PositionCourse e where e.clientId = :pClientId and  e.course.id = :pCourseId",
                         PositionCourse.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCourseId", courseId).getResultList();
     }
 

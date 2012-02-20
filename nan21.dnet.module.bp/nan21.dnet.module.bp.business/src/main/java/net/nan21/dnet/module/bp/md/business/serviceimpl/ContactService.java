@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bp.md.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bp.md.business.service.IContactService;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
@@ -37,9 +38,10 @@ public class ContactService extends AbstractEntityService<Contact> implements
     public List<Contact> findByBpartnerId(Long bpartnerId) {
         return (List<Contact>) this.em
                 .createQuery(
-                        "select e from Contact e where e.bpartner.id = :pBpartnerId",
-                        Contact.class).setParameter("pBpartnerId", bpartnerId)
-                .getResultList();
+                        "select e from Contact e where e.clientId = :pClientId and  e.bpartner.id = :pBpartnerId",
+                        Contact.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pBpartnerId", bpartnerId).getResultList();
     }
 
 }

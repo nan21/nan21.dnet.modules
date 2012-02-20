@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.inventory.business.service.IInvBalanceService;
@@ -40,8 +41,9 @@ public class InvBalanceService extends AbstractEntityService<InvBalance>
     public List<InvBalance> findBySubInventoryId(Long subInventoryId) {
         return (List<InvBalance>) this.em
                 .createQuery(
-                        "select e from InvBalance e where e.subInventory.id = :pSubInventoryId",
+                        "select e from InvBalance e where e.clientId = :pClientId and  e.subInventory.id = :pSubInventoryId",
                         InvBalance.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSubInventoryId", subInventoryId)
                 .getResultList();
     }
@@ -53,9 +55,10 @@ public class InvBalanceService extends AbstractEntityService<InvBalance>
     public List<InvBalance> findByLocatorId(Long locatorId) {
         return (List<InvBalance>) this.em
                 .createQuery(
-                        "select e from InvBalance e where e.locator.id = :pLocatorId",
-                        InvBalance.class).setParameter("pLocatorId", locatorId)
-                .getResultList();
+                        "select e from InvBalance e where e.clientId = :pClientId and  e.locator.id = :pLocatorId",
+                        InvBalance.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pLocatorId", locatorId).getResultList();
     }
 
     public List<InvBalance> findByItem(Product item) {
@@ -65,9 +68,10 @@ public class InvBalanceService extends AbstractEntityService<InvBalance>
     public List<InvBalance> findByItemId(Long itemId) {
         return (List<InvBalance>) this.em
                 .createQuery(
-                        "select e from InvBalance e where e.item.id = :pItemId",
-                        InvBalance.class).setParameter("pItemId", itemId)
-                .getResultList();
+                        "select e from InvBalance e where e.clientId = :pClientId and  e.item.id = :pItemId",
+                        InvBalance.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pItemId", itemId).getResultList();
     }
 
     public List<InvBalance> findByUom(Uom uom) {
@@ -77,9 +81,10 @@ public class InvBalanceService extends AbstractEntityService<InvBalance>
     public List<InvBalance> findByUomId(Long uomId) {
         return (List<InvBalance>) this.em
                 .createQuery(
-                        "select e from InvBalance e where e.uom.id = :pUomId",
-                        InvBalance.class).setParameter("pUomId", uomId)
-                .getResultList();
+                        "select e from InvBalance e where e.clientId = :pClientId and  e.uom.id = :pUomId",
+                        InvBalance.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pUomId", uomId).getResultList();
     }
 
 }

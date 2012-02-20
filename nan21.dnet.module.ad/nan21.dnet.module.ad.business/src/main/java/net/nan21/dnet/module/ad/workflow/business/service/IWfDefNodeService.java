@@ -14,7 +14,7 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode;
 
 public interface IWfDefNodeService extends IEntityService<WfDefNode> {
 
-    public WfDefNode findByName(Long clientId, String name);
+    public WfDefNode findByName(String name);
 
     public List<WfDefNode> findByProcess(WfDefProcess process);
 

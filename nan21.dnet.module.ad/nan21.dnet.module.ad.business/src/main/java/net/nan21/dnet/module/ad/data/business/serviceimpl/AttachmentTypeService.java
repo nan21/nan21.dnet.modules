@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.ad.data.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.data.business.service.IAttachmentTypeService;
 
@@ -28,10 +29,10 @@ public class AttachmentTypeService extends
         return AttachmentType.class;
     }
 
-    public AttachmentType findByName(Long clientId, String name) {
+    public AttachmentType findByName(String name) {
         return (AttachmentType) this.em
                 .createNamedQuery(AttachmentType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

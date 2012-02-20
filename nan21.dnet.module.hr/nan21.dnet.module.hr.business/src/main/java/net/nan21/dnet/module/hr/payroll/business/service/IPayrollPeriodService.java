@@ -13,7 +13,7 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod;
 
 public interface IPayrollPeriodService extends IEntityService<PayrollPeriod> {
 
-    public PayrollPeriod findByName(Long clientId, String name);
+    public PayrollPeriod findByName(String name);
 
     public List<PayrollPeriod> findByPayroll(Payroll payroll);
 

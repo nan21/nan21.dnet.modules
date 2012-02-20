@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.report.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.report.business.service.IReportParamService;
 import net.nan21.dnet.module.ad.report.domain.entity.Report;
@@ -30,34 +31,34 @@ public class ReportParamService extends AbstractEntityService<ReportParam>
         return ReportParam.class;
     }
 
-    public ReportParam findByCode(Long clientId, Report report, String code) {
+    public ReportParam findByCode(Report report, String code) {
         return (ReportParam) this.em
                 .createNamedQuery(ReportParam.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pReport", report).setParameter("pCode", code)
                 .getSingleResult();
     }
 
-    public ReportParam findByCode(Long clientId, Long reportId, String code) {
+    public ReportParam findByCode(Long reportId, String code) {
         return (ReportParam) this.em
                 .createNamedQuery(ReportParam.NQ_FIND_BY_CODE_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pReportId", reportId)
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public ReportParam findByName(Long clientId, Report report, String name) {
+    public ReportParam findByName(Report report, String name) {
         return (ReportParam) this.em
                 .createNamedQuery(ReportParam.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pReport", report).setParameter("pName", name)
                 .getSingleResult();
     }
 
-    public ReportParam findByName(Long clientId, Long reportId, String name) {
+    public ReportParam findByName(Long reportId, String name) {
         return (ReportParam) this.em
                 .createNamedQuery(ReportParam.NQ_FIND_BY_NAME_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pReportId", reportId)
                 .setParameter("pName", name).getSingleResult();
     }
@@ -69,9 +70,10 @@ public class ReportParamService extends AbstractEntityService<ReportParam>
     public List<ReportParam> findByReportId(Long reportId) {
         return (List<ReportParam>) this.em
                 .createQuery(
-                        "select e from ReportParam e where e.report.id = :pReportId",
-                        ReportParam.class).setParameter("pReportId", reportId)
-                .getResultList();
+                        "select e from ReportParam e where e.clientId = :pClientId and  e.report.id = :pReportId",
+                        ReportParam.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pReportId", reportId).getResultList();
     }
 
 }

@@ -11,6 +11,6 @@ import net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat;
 
 public interface ISysDateFormatService extends IEntityService<SysDateFormat> {
 
-    public SysDateFormat findByName(Long clientId, String name);
+    public SysDateFormat findByName(String name);
 
 }

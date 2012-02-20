@@ -41,8 +41,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = JobCourse.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = JobCourse.NQ_FIND_BY_ID, query = "SELECT e FROM JobCourse e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = JobCourse.NQ_FIND_BY_IDS, query = "SELECT e FROM JobCourse e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = JobCourse.NQ_FIND_BY_ID, query = "SELECT e FROM JobCourse e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = JobCourse.NQ_FIND_BY_IDS, query = "SELECT e FROM JobCourse e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class JobCourse implements Serializable, IModelWithId,
         IModelWithClientId {
 

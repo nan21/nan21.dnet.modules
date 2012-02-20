@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.pj.base.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.pj.base.business.service.IIssuePriorityService;
 
@@ -28,10 +29,10 @@ public class IssuePriorityService extends AbstractEntityService<IssuePriority>
         return IssuePriority.class;
     }
 
-    public IssuePriority findByName(Long clientId, String name) {
+    public IssuePriority findByName(String name) {
         return (IssuePriority) this.em
                 .createNamedQuery(IssuePriority.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

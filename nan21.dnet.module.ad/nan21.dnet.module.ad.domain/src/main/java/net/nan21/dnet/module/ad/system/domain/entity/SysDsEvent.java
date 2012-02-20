@@ -42,8 +42,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "DATASOURCE_ID", "EVENTTYPE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = SysDsEvent.NQ_FIND_BY_ID, query = "SELECT e FROM SysDsEvent e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = SysDsEvent.NQ_FIND_BY_IDS, query = "SELECT e FROM SysDsEvent e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SysDsEvent.NQ_FIND_BY_ID, query = "SELECT e FROM SysDsEvent e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SysDsEvent.NQ_FIND_BY_IDS, query = "SELECT e FROM SysDsEvent e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = SysDsEvent.NQ_FIND_BY_NAME, query = "SELECT e FROM SysDsEvent e WHERE e.clientId = :pClientId and  e.dataSource = :pDataSource and e.eventType = :pEventType ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "SysDsEvent.findByName_PRIMITIVE", query = "SELECT e FROM SysDsEvent e WHERE e.clientId = :pClientId and  e.dataSource.id = :pDataSourceId and e.eventType = :pEventType ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysDsEvent implements Serializable, IModelWithId,

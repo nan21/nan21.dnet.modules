@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.time.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.time.business.service.IAbsenceCategoryService;
 
@@ -29,10 +30,10 @@ public class AbsenceCategoryService extends
         return AbsenceCategory.class;
     }
 
-    public AbsenceCategory findByName(Long clientId, String name) {
+    public AbsenceCategory findByName(String name) {
         return (AbsenceCategory) this.em
                 .createNamedQuery(AbsenceCategory.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

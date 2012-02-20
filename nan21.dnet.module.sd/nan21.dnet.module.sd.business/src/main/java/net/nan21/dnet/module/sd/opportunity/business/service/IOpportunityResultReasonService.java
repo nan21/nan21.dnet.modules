@@ -12,6 +12,6 @@ import net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityResultReaso
 public interface IOpportunityResultReasonService extends
         IEntityService<OpportunityResultReason> {
 
-    public OpportunityResultReason findByName(Long clientId, String name);
+    public OpportunityResultReason findByName(String name);
 
 }

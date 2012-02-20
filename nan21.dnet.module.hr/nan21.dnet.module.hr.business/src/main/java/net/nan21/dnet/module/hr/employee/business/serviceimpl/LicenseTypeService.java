@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.employee.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.employee.business.service.ILicenseTypeService;
 
@@ -28,10 +29,10 @@ public class LicenseTypeService extends AbstractEntityService<LicenseType>
         return LicenseType.class;
     }
 
-    public LicenseType findByName(Long clientId, String name) {
+    public LicenseType findByName(String name) {
         return (LicenseType) this.em
                 .createNamedQuery(LicenseType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

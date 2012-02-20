@@ -14,7 +14,7 @@ import net.nan21.dnet.module.hr.job.domain.entity.WorkRequirement;
 public interface IWorkRequirementService extends
         IEntityService<WorkRequirement> {
 
-    public WorkRequirement findByName(Long clientId, String name);
+    public WorkRequirement findByName(String name);
 
     public List<WorkRequirement> findByType(WorkRequirementType type);
 

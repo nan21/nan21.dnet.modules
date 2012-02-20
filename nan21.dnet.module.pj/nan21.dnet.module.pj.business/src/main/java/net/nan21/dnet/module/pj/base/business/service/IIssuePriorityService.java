@@ -11,6 +11,6 @@ import net.nan21.dnet.module.pj.base.domain.entity.IssuePriority;
 
 public interface IIssuePriorityService extends IEntityService<IssuePriority> {
 
-    public IssuePriority findByName(Long clientId, String name);
+    public IssuePriority findByName(String name);
 
 }

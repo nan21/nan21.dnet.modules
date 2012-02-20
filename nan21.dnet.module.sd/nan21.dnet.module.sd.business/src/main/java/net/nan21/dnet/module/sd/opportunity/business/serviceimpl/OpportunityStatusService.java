@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.sd.opportunity.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.sd.opportunity.business.service.IOpportunityStatusService;
 
@@ -29,10 +30,10 @@ public class OpportunityStatusService extends
         return OpportunityStatus.class;
     }
 
-    public OpportunityStatus findByName(Long clientId, String name) {
+    public OpportunityStatus findByName(String name) {
         return (OpportunityStatus) this.em
                 .createNamedQuery(OpportunityStatus.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.uom.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.business.service.IUomService;
 import net.nan21.dnet.module.bd.uom.domain.entity.UomType;
@@ -30,15 +31,15 @@ public class UomService extends AbstractEntityService<Uom> implements
         return Uom.class;
     }
 
-    public Uom findByCode(Long clientId, String code) {
+    public Uom findByCode(String code) {
         return (Uom) this.em.createNamedQuery(Uom.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public Uom findByName(Long clientId, String name) {
+    public Uom findByName(String name) {
         return (Uom) this.em.createNamedQuery(Uom.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -48,9 +49,11 @@ public class UomService extends AbstractEntityService<Uom> implements
 
     public List<Uom> findByTypeId(Long typeId) {
         return (List<Uom>) this.em
-                .createQuery("select e from Uom e where e.type.id = :pTypeId",
-                        Uom.class).setParameter("pTypeId", typeId)
-                .getResultList();
+                .createQuery(
+                        "select e from Uom e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        Uom.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pTypeId", typeId).getResultList();
     }
 
 }

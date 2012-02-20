@@ -19,8 +19,10 @@ public class ExportMapItemDsConv extends
         AbstractDsConverter<ExportMapItemDs, ExportMapItem> implements
         IDsConverter<ExportMapItemDs, ExportMapItem> {
 
-    protected void modelToEntityReferences(ExportMapItemDs ds, ExportMapItem e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ExportMapItemDs ds, ExportMapItem e,
+            boolean isInsert) throws Exception {
+
         if (ds.getExportMapId() != null) {
             if (e.getExportMap() == null
                     || !e.getExportMap().getId().equals(ds.getExportMapId())) {
@@ -30,6 +32,7 @@ public class ExportMapItemDsConv extends
         } else {
             this.lookup_exportMap_ExportMap(ds, e);
         }
+
         if (ds.getCsvExportId() != null) {
             if (e.getCsvExport() == null
                     || !e.getCsvExport().getId().equals(ds.getCsvExportId())) {
@@ -39,6 +42,7 @@ public class ExportMapItemDsConv extends
         } else {
             this.lookup_csvExport_CsvExport(ds, e);
         }
+
     }
 
     protected void lookup_exportMap_ExportMap(ExportMapItemDs ds,
@@ -47,7 +51,7 @@ public class ExportMapItemDsConv extends
             ExportMap x = null;
             try {
                 x = ((IExportMapService) findEntityService(ExportMap.class))
-                        .findByName(ds.getClientId(), ds.getExportMap());
+                        .findByName(ds.getExportMap());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ExportMap` reference:  `exportMap` = "
@@ -66,7 +70,7 @@ public class ExportMapItemDsConv extends
             CsvExport x = null;
             try {
                 x = ((ICsvExportService) findEntityService(CsvExport.class))
-                        .findByName(ds.getClientId(), ds.getCsvExport());
+                        .findByName(ds.getCsvExport());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `CsvExport` reference:  `csvExport` = "

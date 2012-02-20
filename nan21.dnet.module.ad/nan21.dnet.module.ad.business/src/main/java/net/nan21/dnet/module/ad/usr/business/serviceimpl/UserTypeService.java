@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.ad.usr.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.usr.business.service.IUserTypeService;
 
@@ -28,9 +29,9 @@ public class UserTypeService extends AbstractEntityService<UserType> implements
         return UserType.class;
     }
 
-    public UserType findByName(Long clientId, String name) {
+    public UserType findByName(String name) {
         return (UserType) this.em.createNamedQuery(UserType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

@@ -18,13 +18,16 @@ public class JobRequirementDsConv extends
         AbstractDsConverter<JobRequirementDs, JobRequirement> implements
         IDsConverter<JobRequirementDs, JobRequirement> {
 
-    protected void modelToEntityReferences(JobRequirementDs ds, JobRequirement e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(JobRequirementDs ds,
+            JobRequirement e, boolean isInsert) throws Exception {
+
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
                 e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
             }
         }
+
         if (ds.getRequirementId() != null) {
             if (e.getRequirement() == null
                     || !e.getRequirement().getId()
@@ -35,6 +38,7 @@ public class JobRequirementDsConv extends
         } else {
             this.lookup_requirement_WorkRequirement(ds, e);
         }
+
     }
 
     protected void lookup_requirement_WorkRequirement(JobRequirementDs ds,
@@ -43,7 +47,7 @@ public class JobRequirementDsConv extends
             WorkRequirement x = null;
             try {
                 x = ((IWorkRequirementService) findEntityService(WorkRequirement.class))
-                        .findByName(ds.getClientId(), ds.getRequirement());
+                        .findByName(ds.getRequirement());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `WorkRequirement` reference:  `requirement` = "

@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.grade.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.grade.business.service.IGradeService;
 
@@ -28,15 +29,15 @@ public class GradeService extends AbstractEntityService<Grade> implements
         return Grade.class;
     }
 
-    public Grade findByCode(Long clientId, String code) {
+    public Grade findByCode(String code) {
         return (Grade) this.em.createNamedQuery(Grade.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public Grade findByName(Long clientId, String name) {
+    public Grade findByName(String name) {
         return (Grade) this.em.createNamedQuery(Grade.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

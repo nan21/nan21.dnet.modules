@@ -28,8 +28,10 @@ import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         implements IDsConverter<EmployeeDs, Employee> {
 
-    protected void modelToEntityReferences(EmployeeDs ds, Employee e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(EmployeeDs ds, Employee e,
+            boolean isInsert) throws Exception {
+
         if (ds.getEmployerId() != null) {
             if (e.getEmployer() == null
                     || !e.getEmployer().getId().equals(ds.getEmployerId())) {
@@ -39,6 +41,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         } else {
             this.lookup_employer_Organization(ds, e);
         }
+
         if (ds.getCitizenshipId() != null) {
             if (e.getCitizenship() == null
                     || !e.getCitizenship().getId()
@@ -49,6 +52,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         } else {
             this.lookup_citizenship_Country(ds, e);
         }
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -58,6 +62,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         } else {
             this.lookup_type_EmploymentType(ds, e);
         }
+
         if (ds.getPositionId() != null) {
             if (e.getPosition() == null
                     || !e.getPosition().getId().equals(ds.getPositionId())) {
@@ -67,6 +72,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         } else {
             this.lookup_position_Position(ds, e);
         }
+
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
                 e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
@@ -74,6 +80,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         } else {
             this.lookup_job_Job(ds, e);
         }
+
         if (ds.getOrganizationId() != null) {
             if (e.getOrganization() == null
                     || !e.getOrganization().getId()
@@ -84,6 +91,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         } else {
             this.lookup_organization_Organization(ds, e);
         }
+
         if (ds.getGradeId() != null) {
             if (e.getGrade() == null
                     || !e.getGrade().getId().equals(ds.getGradeId())) {
@@ -92,6 +100,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         } else {
             this.lookup_grade_Grade(ds, e);
         }
+
         if (ds.getPayrollId() != null) {
             if (e.getPayroll() == null
                     || !e.getPayroll().getId().equals(ds.getPayrollId())) {
@@ -101,6 +110,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         } else {
             this.lookup_payroll_Payroll(ds, e);
         }
+
     }
 
     protected void lookup_employer_Organization(EmployeeDs ds, Employee e)
@@ -109,7 +119,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getClientId(), ds.getEmployerCode());
+                        .findByCode(ds.getEmployerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Organization` reference:  `employerCode` = "
@@ -129,7 +139,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
             Country x = null;
             try {
                 x = ((ICountryService) findEntityService(Country.class))
-                        .findByCode(ds.getClientId(), ds.getCitizenshipCode());
+                        .findByCode(ds.getCitizenshipCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Country` reference:  `citizenshipCode` = "
@@ -148,7 +158,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
             EmploymentType x = null;
             try {
                 x = ((IEmploymentTypeService) findEntityService(EmploymentType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `EmploymentType` reference:  `type` = "
@@ -167,7 +177,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
             Position x = null;
             try {
                 x = ((IPositionService) findEntityService(Position.class))
-                        .findByCode(ds.getClientId(), ds.getPositionCode());
+                        .findByCode(ds.getPositionCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Position` reference:  `positionCode` = "
@@ -184,8 +194,8 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         if (ds.getJobCode() != null && !ds.getJobCode().equals("")) {
             Job x = null;
             try {
-                x = ((IJobService) findEntityService(Job.class)).findByCode(
-                        ds.getClientId(), ds.getJobCode());
+                x = ((IJobService) findEntityService(Job.class)).findByCode(ds
+                        .getJobCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Job` reference:  `jobCode` = "
@@ -205,7 +215,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getClientId(), ds.getOrganizationCode());
+                        .findByCode(ds.getOrganizationCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Organization` reference:  `organizationCode` = "
@@ -224,7 +234,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
             Grade x = null;
             try {
                 x = ((IGradeService) findEntityService(Grade.class))
-                        .findByCode(ds.getClientId(), ds.getGradeCode());
+                        .findByCode(ds.getGradeCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Grade` reference:  `gradeCode` = "
@@ -243,7 +253,7 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
             Payroll x = null;
             try {
                 x = ((IPayrollService) findEntityService(Payroll.class))
-                        .findByName(ds.getClientId(), ds.getPayroll());
+                        .findByName(ds.getPayroll());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Payroll` reference:  `payroll` = "

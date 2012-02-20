@@ -39,6 +39,9 @@
  
  	<bean id="SysDateFormatService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.SysDateFormatService"  />  
+ 
+ 	<bean id="UiViewStateService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.UiViewStateService"  />  
    
 </beans>
    

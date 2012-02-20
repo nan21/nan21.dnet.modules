@@ -15,9 +15,9 @@ Ext.define("net.nan21.dnet.module.bd.geo.frame.CountryMD_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("country",{ name:"countryFilter", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$Filter",height:120})	 
-		.addDcView("country",{ name:"countryList", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$List"})	 
+		.addDcGridView("country",{ name:"countryList", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$List"})	 
 		.addDcFormView("country",{ name:"countryEdit", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$Edit",height:140})	 
-		.addDcView("region",{ name:"regionEditList", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$EditListContext", frame:true})	 
+		.addDcEditGridView("region",{ name:"regionEditList", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$EditListContext", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 

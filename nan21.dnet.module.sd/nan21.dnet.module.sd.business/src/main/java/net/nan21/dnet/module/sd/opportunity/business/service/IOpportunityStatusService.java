@@ -12,6 +12,6 @@ import net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStatus;
 public interface IOpportunityStatusService extends
         IEntityService<OpportunityStatus> {
 
-    public OpportunityStatus findByName(Long clientId, String name);
+    public OpportunityStatus findByName(String name);
 
 }

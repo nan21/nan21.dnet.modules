@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bp.md.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bp.base.domain.entity.Bank;
@@ -32,20 +33,19 @@ public class BpBankAccountService extends AbstractEntityService<BpBankAccount>
         return BpBankAccount.class;
     }
 
-    public BpBankAccount findByAccount(Long clientId, BusinessPartner bpartner,
+    public BpBankAccount findByAccount(BusinessPartner bpartner,
             String accountNo) {
         return (BpBankAccount) this.em
                 .createNamedQuery(BpBankAccount.NQ_FIND_BY_ACCOUNT)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBpartner", bpartner)
                 .setParameter("pAccountNo", accountNo).getSingleResult();
     }
 
-    public BpBankAccount findByAccount(Long clientId, Long bpartnerId,
-            String accountNo) {
+    public BpBankAccount findByAccount(Long bpartnerId, String accountNo) {
         return (BpBankAccount) this.em
                 .createNamedQuery(BpBankAccount.NQ_FIND_BY_ACCOUNT_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBpartnerId", bpartnerId)
                 .setParameter("pAccountNo", accountNo).getSingleResult();
     }
@@ -57,8 +57,9 @@ public class BpBankAccountService extends AbstractEntityService<BpBankAccount>
     public List<BpBankAccount> findByBpartnerId(Long bpartnerId) {
         return (List<BpBankAccount>) this.em
                 .createQuery(
-                        "select e from BpBankAccount e where e.bpartner.id = :pBpartnerId",
+                        "select e from BpBankAccount e where e.clientId = :pClientId and  e.bpartner.id = :pBpartnerId",
                         BpBankAccount.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBpartnerId", bpartnerId).getResultList();
     }
 
@@ -69,9 +70,10 @@ public class BpBankAccountService extends AbstractEntityService<BpBankAccount>
     public List<BpBankAccount> findByBankId(Long bankId) {
         return (List<BpBankAccount>) this.em
                 .createQuery(
-                        "select e from BpBankAccount e where e.bank.id = :pBankId",
-                        BpBankAccount.class).setParameter("pBankId", bankId)
-                .getResultList();
+                        "select e from BpBankAccount e where e.clientId = :pClientId and  e.bank.id = :pBankId",
+                        BpBankAccount.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pBankId", bankId).getResultList();
     }
 
     public List<BpBankAccount> findByCurrency(Currency currency) {
@@ -81,8 +83,9 @@ public class BpBankAccountService extends AbstractEntityService<BpBankAccount>
     public List<BpBankAccount> findByCurrencyId(Long currencyId) {
         return (List<BpBankAccount>) this.em
                 .createQuery(
-                        "select e from BpBankAccount e where e.currency.id = :pCurrencyId",
+                        "select e from BpBankAccount e where e.clientId = :pClientId and  e.currency.id = :pCurrencyId",
                         BpBankAccount.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCurrencyId", currencyId).getResultList();
     }
 

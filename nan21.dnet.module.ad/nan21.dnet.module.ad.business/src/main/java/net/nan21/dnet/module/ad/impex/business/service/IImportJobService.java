@@ -13,7 +13,7 @@ import net.nan21.dnet.module.ad.impex.domain.entity.ImportJob;
 
 public interface IImportJobService extends IEntityService<ImportJob> {
 
-    public ImportJob findByName(Long clientId, String name);
+    public ImportJob findByName(String name);
 
     public List<ImportJob> findByItems(ImportJobItem items);
 

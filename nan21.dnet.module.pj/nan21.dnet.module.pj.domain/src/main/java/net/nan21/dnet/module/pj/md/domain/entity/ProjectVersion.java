@@ -32,7 +32,6 @@ import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
-import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -45,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "PROJECT_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = ProjectVersion.NQ_FIND_BY_ID, query = "SELECT e FROM ProjectVersion e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = ProjectVersion.NQ_FIND_BY_IDS, query = "SELECT e FROM ProjectVersion e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectVersion.NQ_FIND_BY_ID, query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectVersion.NQ_FIND_BY_IDS, query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProjectVersion.NQ_FIND_BY_NAME, query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and  e.project = :pProject and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProjectVersion.findByName_PRIMITIVE", query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectVersion implements Serializable, IModelWithId,
@@ -170,9 +169,6 @@ public class ProjectVersion implements Serializable, IModelWithId,
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Project.class)
     @JoinColumn(name = "PROJECT_ID", referencedColumnName = "ID")
     private Project project;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProjectVersion.class)
-    @JoinColumn(name = "PROJECTVERSION_ID", referencedColumnName = "ID")
-    private ProjectVersion projectVersion;
 
     @ManyToMany(mappedBy = "affectedVersions")
     private Collection<Issue> affectingIssues;
@@ -298,14 +294,6 @@ public class ProjectVersion implements Serializable, IModelWithId,
 
     public void setProject(Project project) {
         this.project = project;
-    }
-
-    public ProjectVersion getProjectVersion() {
-        return this.projectVersion;
-    }
-
-    public void setProjectVersion(ProjectVersion projectVersion) {
-        this.projectVersion = projectVersion;
     }
 
     public Collection<Issue> getAffectingIssues() {

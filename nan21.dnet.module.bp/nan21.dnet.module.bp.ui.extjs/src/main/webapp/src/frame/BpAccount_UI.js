@@ -13,7 +13,7 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BpAccount_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$Filter",height:120})	 
-		.addDcView("m",{ name:"mList", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$List"})	 
+		.addDcGridView("m",{ name:"mList", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$List"})	 
 		.addDcFormView("m",{ name:"mEdit", xtype:"net.nan21.dnet.module.bp.md.dc.BpAccount$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

@@ -13,11 +13,9 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Region;
 
 public interface IRegionService extends IEntityService<Region> {
 
-    public Region findByCodeAndCountry(Long clientId, Country country,
-            String code);
+    public Region findByCodeAndCountry(Country country, String code);
 
-    public Region findByCodeAndCountry(Long clientId, Long countryId,
-            String code);
+    public Region findByCodeAndCountry(Long countryId, String code);
 
     public List<Region> findByCountry(Country country);
 

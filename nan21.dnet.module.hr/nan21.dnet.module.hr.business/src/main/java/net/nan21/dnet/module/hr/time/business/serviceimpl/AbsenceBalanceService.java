@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.time.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 import net.nan21.dnet.module.hr.time.business.service.IAbsenceBalanceService;
@@ -37,8 +38,9 @@ public class AbsenceBalanceService extends
     public List<AbsenceBalance> findByEmployeeId(Long employeeId) {
         return (List<AbsenceBalance>) this.em
                 .createQuery(
-                        "select e from AbsenceBalance e where e.employee.id = :pEmployeeId",
+                        "select e from AbsenceBalance e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
                         AbsenceBalance.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();
     }
 

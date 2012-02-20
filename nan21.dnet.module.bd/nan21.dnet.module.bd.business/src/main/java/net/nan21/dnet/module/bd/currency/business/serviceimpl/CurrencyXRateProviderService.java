@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bd.currency.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyXRateProviderService;
 
@@ -29,17 +30,17 @@ public class CurrencyXRateProviderService extends
         return CurrencyXRateProvider.class;
     }
 
-    public CurrencyXRateProvider findByCode(Long clientId, String code) {
+    public CurrencyXRateProvider findByCode(String code) {
         return (CurrencyXRateProvider) this.em
                 .createNamedQuery(CurrencyXRateProvider.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public CurrencyXRateProvider findByName(Long clientId, String name) {
+    public CurrencyXRateProvider findByName(String name) {
         return (CurrencyXRateProvider) this.em
                 .createNamedQuery(CurrencyXRateProvider.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

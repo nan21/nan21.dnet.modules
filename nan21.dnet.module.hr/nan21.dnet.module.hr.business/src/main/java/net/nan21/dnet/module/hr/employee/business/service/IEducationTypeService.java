@@ -11,6 +11,6 @@ import net.nan21.dnet.module.hr.employee.domain.entity.EducationType;
 
 public interface IEducationTypeService extends IEntityService<EducationType> {
 
-    public EducationType findByName(Long clientId, String name);
+    public EducationType findByName(String name);
 
 }

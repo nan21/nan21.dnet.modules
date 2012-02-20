@@ -13,7 +13,7 @@ Ext.define("net.nan21.dnet.module.bd.contact.frame.CommunicationChannelTypes_UI"
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter",height:40})	 
-		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$EditList", frame:true})	 
+		.addDcEditGridView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	

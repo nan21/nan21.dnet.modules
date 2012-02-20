@@ -13,7 +13,7 @@ import net.nan21.dnet.module.ad.impex.domain.entity.ImportMap;
 
 public interface IImportMapService extends IEntityService<ImportMap> {
 
-    public ImportMap findByName(Long clientId, String name);
+    public ImportMap findByName(String name);
 
     public List<ImportMap> findByItems(ImportMapItem items);
 

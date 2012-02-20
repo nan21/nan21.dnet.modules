@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.report.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.report.business.service.IReportService;
 import net.nan21.dnet.module.ad.report.domain.entity.ReportServer;
@@ -30,15 +31,15 @@ public class ReportService extends AbstractEntityService<Report> implements
         return Report.class;
     }
 
-    public Report findByCode(Long clientId, String code) {
+    public Report findByCode(String code) {
         return (Report) this.em.createNamedQuery(Report.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public Report findByName(Long clientId, String name) {
+    public Report findByName(String name) {
         return (Report) this.em.createNamedQuery(Report.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -49,8 +50,9 @@ public class ReportService extends AbstractEntityService<Report> implements
     public List<Report> findByReportServerId(Long reportServerId) {
         return (List<Report>) this.em
                 .createQuery(
-                        "select e from Report e where e.reportServer.id = :pReportServerId",
+                        "select e from Report e where e.clientId = :pClientId and  e.reportServer.id = :pReportServerId",
                         Report.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pReportServerId", reportServerId)
                 .getResultList();
     }

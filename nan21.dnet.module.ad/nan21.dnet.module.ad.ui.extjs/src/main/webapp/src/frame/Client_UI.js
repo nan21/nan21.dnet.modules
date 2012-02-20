@@ -13,7 +13,7 @@ Ext.define("net.nan21.dnet.module.ad.client.frame.Client_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("client",{ name:"clientFilter", xtype:"net.nan21.dnet.module.ad.client.dc.Client$Filter",height:120})	 
-		.addDcView("client",{ name:"clientList", xtype:"net.nan21.dnet.module.ad.client.dc.Client$List"})	 
+		.addDcGridView("client",{ name:"clientList", xtype:"net.nan21.dnet.module.ad.client.dc.Client$List"})	 
 		.addDcFormView("client",{ name:"clientEdit", xtype:"net.nan21.dnet.module.ad.client.dc.Client$Edit"})	 
 		.addDcFormView("client",{ name:"clientCreate", xtype:"net.nan21.dnet.module.ad.client.dc.Client$Create"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 

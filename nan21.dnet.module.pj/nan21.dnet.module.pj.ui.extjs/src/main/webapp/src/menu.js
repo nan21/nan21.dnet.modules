@@ -11,7 +11,7 @@ net.nan21.dnet.module.pj.menu.pim = [
  ,		 
 	{"id":"pim_project", "text":"Projects", leaf:false, children:[
 		
-		{id:"Projects_UI", text:Dnet.translate("ui","Projects_UI"), leaf:true, _frame_:"net.nan21.dnet.module.pj.base.frame.Projects_UI", _bundle_:BUNDLE_ID},		
+		{id:"Projects_UI", text:Dnet.translate("ui","Projects_UI"), leaf:true, _frame_:"net.nan21.dnet.module.pj.md.frame.Projects_UI", _bundle_:BUNDLE_ID},		
 		{id:"ProjectVersions_UI", text:Dnet.translate("ui","ProjectVersions_UI"), leaf:true, _frame_:"net.nan21.dnet.module.pj.base.frame.ProjectVersions_UI", _bundle_:BUNDLE_ID},		
 		{id:"IssueRoadmap_UI", text:Dnet.translate("ui","IssueRoadmap_UI"), leaf:true, _frame_:"net.nan21.dnet.module.pj.md.frame.IssueRoadmap_UI", _bundle_:BUNDLE_ID},		
 		{id:"IssueChangelog_UI", text:Dnet.translate("ui","IssueChangelog_UI"), leaf:true, _frame_:"net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI", _bundle_:BUNDLE_ID}	]}

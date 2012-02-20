@@ -17,8 +17,10 @@ public class CurrencyXRateAverageDsConv extends
         AbstractDsConverter<CurrencyXRateAverageDs, CurrencyXRateAverage>
         implements IDsConverter<CurrencyXRateAverageDs, CurrencyXRateAverage> {
 
+    @Override
     protected void modelToEntityReferences(CurrencyXRateAverageDs ds,
-            CurrencyXRateAverage e) throws Exception {
+            CurrencyXRateAverage e, boolean isInsert) throws Exception {
+
         if (ds.getProviderId() != null) {
             if (e.getProvider() == null
                     || !e.getProvider().getId().equals(ds.getProviderId())) {
@@ -28,6 +30,7 @@ public class CurrencyXRateAverageDsConv extends
         } else {
             this.lookup_provider_CurrencyXRateProvider(ds, e);
         }
+
     }
 
     protected void lookup_provider_CurrencyXRateProvider(
@@ -36,7 +39,7 @@ public class CurrencyXRateAverageDsConv extends
             CurrencyXRateProvider x = null;
             try {
                 x = ((ICurrencyXRateProviderService) findEntityService(CurrencyXRateProvider.class))
-                        .findByCode(ds.getClientId(), ds.getProviderCode());
+                        .findByCode(ds.getProviderCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `CurrencyXRateProvider` reference:  `providerCode` = "

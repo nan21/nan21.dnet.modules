@@ -46,31 +46,31 @@ public class BpAccountDs extends AbstractDsModel<BpAccount> implements
     public static final String fVENDORPAYMENTTERMID = "vendorPaymentTermId";
     public static final String fVENDORPAYMENTTERM = "vendorPaymentTerm";
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long id;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String uuid;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long clientId;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date createdAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date modifiedAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String createdBy;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String modifiedBy;
 
     @DsField()
     private Long version;
 
-    @DsField(fetch = false, path = "className")
+    @DsField(noUpdate = true, fetch = false, path = "className")
     private String entityFQN;
 
     @DsField(join = "left", path = "bp.id")

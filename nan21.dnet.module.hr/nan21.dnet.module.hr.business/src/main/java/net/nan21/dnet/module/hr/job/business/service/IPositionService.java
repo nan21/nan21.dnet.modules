@@ -15,9 +15,9 @@ import net.nan21.dnet.module.hr.job.domain.entity.Position;
 
 public interface IPositionService extends IEntityService<Position> {
 
-    public Position findByCode(Long clientId, String code);
+    public Position findByCode(String code);
 
-    public Position findByName(Long clientId, String name);
+    public Position findByName(String name);
 
     public List<Position> findByOrganization(Organization organization);
 

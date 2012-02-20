@@ -42,8 +42,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "PAYSCALE_ID", "CODE" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = PayScalePoint.NQ_FIND_BY_ID, query = "SELECT e FROM PayScalePoint e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = PayScalePoint.NQ_FIND_BY_IDS, query = "SELECT e FROM PayScalePoint e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = PayScalePoint.NQ_FIND_BY_ID, query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = PayScalePoint.NQ_FIND_BY_IDS, query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = PayScalePoint.NQ_FIND_BY_SCALE_CODE, query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and  e.payScale = :pPayScale and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "PayScalePoint.findByScale_code_PRIMITIVE", query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and  e.payScale.id = :pPayScaleId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayScalePoint implements Serializable, IModelWithId,

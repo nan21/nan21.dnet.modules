@@ -17,8 +17,10 @@ import net.nan21.dnet.module.pj.md.domain.entity.Project;
 public class ProjectDsConv extends AbstractDsConverter<ProjectDs, Project>
         implements IDsConverter<ProjectDs, Project> {
 
-    protected void modelToEntityReferences(ProjectDs ds, Project e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ProjectDs ds, Project e,
+            boolean isInsert) throws Exception {
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -28,6 +30,7 @@ public class ProjectDsConv extends AbstractDsConverter<ProjectDs, Project>
         } else {
             this.lookup_type_ProjectType(ds, e);
         }
+
         if (ds.getProjectLeadId() != null) {
             if (e.getProjectLead() == null
                     || !e.getProjectLead().getId()
@@ -36,6 +39,7 @@ public class ProjectDsConv extends AbstractDsConverter<ProjectDs, Project>
                         ProjectMember.class, ds.getProjectLeadId()));
             }
         }
+
     }
 
     protected void lookup_type_ProjectType(ProjectDs ds, Project e)
@@ -44,7 +48,7 @@ public class ProjectDsConv extends AbstractDsConverter<ProjectDs, Project>
             ProjectType x = null;
             try {
                 x = ((IProjectTypeService) findEntityService(ProjectType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProjectType` reference:  `type` = "

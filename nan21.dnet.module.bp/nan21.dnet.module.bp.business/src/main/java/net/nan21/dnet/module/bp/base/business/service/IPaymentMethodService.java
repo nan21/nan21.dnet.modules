@@ -11,6 +11,6 @@ import net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod;
 
 public interface IPaymentMethodService extends IEntityService<PaymentMethod> {
 
-    public PaymentMethod findByName(Long clientId, String name);
+    public PaymentMethod findByName(String name);
 
 }

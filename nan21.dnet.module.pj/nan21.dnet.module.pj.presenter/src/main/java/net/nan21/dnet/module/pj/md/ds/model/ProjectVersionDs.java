@@ -36,8 +36,6 @@ public class ProjectVersionDs extends AbstractDsModel<ProjectVersion> implements
     public static final String fPROJECTNAME = "projectName";
     public static final String fPLANDATE = "planDate";
     public static final String fRELEASEDATE = "releaseDate";
-    public static final String fPROJECTVERSIONID = "projectVersionId";
-    public static final String fPROJECTVERSION = "projectVersion";
 
     @DsField()
     private String name;
@@ -48,31 +46,31 @@ public class ProjectVersionDs extends AbstractDsModel<ProjectVersion> implements
     @DsField()
     private String description;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long id;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String uuid;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long clientId;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date createdAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date modifiedAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String createdBy;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String modifiedBy;
 
     @DsField()
     private Long version;
 
-    @DsField(fetch = false, path = "className")
+    @DsField(noUpdate = true, fetch = false, path = "className")
     private String entityFQN;
 
     @DsField(join = "left", path = "project.id")
@@ -89,12 +87,6 @@ public class ProjectVersionDs extends AbstractDsModel<ProjectVersion> implements
 
     @DsField()
     private Date releaseDate;
-
-    @DsField(join = "left", path = "projectVersion.id")
-    private Long projectVersionId;
-
-    @DsField(join = "left", path = "projectVersion.name")
-    private String projectVersion;
 
     public ProjectVersionDs() {
         super();
@@ -239,22 +231,6 @@ public class ProjectVersionDs extends AbstractDsModel<ProjectVersion> implements
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
-    }
-
-    public Long getProjectVersionId() {
-        return this.projectVersionId;
-    }
-
-    public void setProjectVersionId(Long projectVersionId) {
-        this.projectVersionId = projectVersionId;
-    }
-
-    public String getProjectVersion() {
-        return this.projectVersion;
-    }
-
-    public void setProjectVersion(String projectVersion) {
-        this.projectVersion = projectVersion;
     }
 
 }

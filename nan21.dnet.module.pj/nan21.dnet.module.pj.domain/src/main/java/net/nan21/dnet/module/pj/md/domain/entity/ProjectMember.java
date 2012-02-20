@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "PROJECT_ID", "MEMBER_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = ProjectMember.NQ_FIND_BY_ID, query = "SELECT e FROM ProjectMember e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = ProjectMember.NQ_FIND_BY_IDS, query = "SELECT e FROM ProjectMember e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectMember.NQ_FIND_BY_ID, query = "SELECT e FROM ProjectMember e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProjectMember.NQ_FIND_BY_IDS, query = "SELECT e FROM ProjectMember e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProjectMember.NQ_FIND_BY_NAME, query = "SELECT e FROM ProjectMember e WHERE e.clientId = :pClientId and  e.project = :pProject and e.member = :pMember ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProjectMember.findByName_PRIMITIVE", query = "SELECT e FROM ProjectMember e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.member.id = :pMemberId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectMember implements Serializable, IModelWithId,

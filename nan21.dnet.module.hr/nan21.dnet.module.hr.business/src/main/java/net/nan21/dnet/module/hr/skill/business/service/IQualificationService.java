@@ -11,6 +11,6 @@ import net.nan21.dnet.module.hr.skill.domain.entity.Qualification;
 
 public interface IQualificationService extends IEntityService<Qualification> {
 
-    public Qualification findByName(Long clientId, String name);
+    public Qualification findByName(String name);
 
 }

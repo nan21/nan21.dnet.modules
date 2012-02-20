@@ -14,7 +14,7 @@
 		interface="javax.sql.DataSource" />
 		
 	<osgi:service ref="menuProvider" ranking="0"
-		interface="net.nan21.dnet.core.api.ui.extjs.IExtensionProvider" />
+		interface="net.nan21.dnet.core.api.ui.extjs.IExtensionContentProvider" />
 		
 	<osgi:service ref="dsServiceFactory" ranking="0"
 		interface="net.nan21.dnet.core.api.service.IDsServiceFactory" />

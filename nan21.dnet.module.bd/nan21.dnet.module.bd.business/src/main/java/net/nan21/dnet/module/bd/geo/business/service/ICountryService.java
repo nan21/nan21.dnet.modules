@@ -11,8 +11,8 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 
 public interface ICountryService extends IEntityService<Country> {
 
-    public Country findByCode(Long clientId, String code);
+    public Country findByCode(String code);
 
-    public Country findByName(Long clientId, String name);
+    public Country findByName(String name);
 
 }

@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.pj.base.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.pj.base.business.service.IIssueTextTypeService;
 
@@ -28,10 +29,10 @@ public class IssueTextTypeService extends AbstractEntityService<IssueTextType>
         return IssueTextType.class;
     }
 
-    public IssueTextType findByName(Long clientId, String name) {
+    public IssueTextType findByName(String name) {
         return (IssueTextType) this.em
                 .createNamedQuery(IssueTextType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.usr.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat;
 import net.nan21.dnet.module.ad.usr.business.service.IUserService;
@@ -35,9 +36,9 @@ public class UserService extends AbstractEntityService<User> implements
         return User.class;
     }
 
-    public User findByCode(Long clientId, String code) {
+    public User findByCode(String code) {
         return (User) this.em.createNamedQuery(User.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
@@ -48,9 +49,10 @@ public class UserService extends AbstractEntityService<User> implements
     public List<User> findByDateFormatId(Long dateFormatId) {
         return (List<User>) this.em
                 .createQuery(
-                        "select e from User e where e.dateFormat.id = :pDateFormatId",
-                        User.class).setParameter("pDateFormatId", dateFormatId)
-                .getResultList();
+                        "select e from User e where e.clientId = :pClientId and e.dateFormat.id = :pDateFormatId",
+                        User.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pDateFormatId", dateFormatId).getResultList();
     }
 
     public List<User> findByAccountType(UserType accountType) {
@@ -60,8 +62,9 @@ public class UserService extends AbstractEntityService<User> implements
     public List<User> findByAccountTypeId(Long accountTypeId) {
         return (List<User>) this.em
                 .createQuery(
-                        "select e from User e where e.accountType.id = :pAccountTypeId",
+                        "select e from User e where e.clientId = :pClientId and e.accountType.id = :pAccountTypeId",
                         User.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAccountTypeId", accountTypeId).getResultList();
     }
 
@@ -72,9 +75,10 @@ public class UserService extends AbstractEntityService<User> implements
     public List<User> findByRolesId(Long rolesId) {
         return (List<User>) this.em
                 .createQuery(
-                        "select distinct e from User e , IN (e.roles) c where c.id = :pRolesId",
-                        User.class).setParameter("pRolesId", rolesId)
-                .getResultList();
+                        "select distinct e from User e , IN (e.roles) c where e.clientId = :pClientId and c.id = :pRolesId",
+                        User.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pRolesId", rolesId).getResultList();
     }
 
     public List<User> findByGroups(UserGroup groups) {
@@ -84,9 +88,10 @@ public class UserService extends AbstractEntityService<User> implements
     public List<User> findByGroupsId(Long groupsId) {
         return (List<User>) this.em
                 .createQuery(
-                        "select distinct e from User e , IN (e.groups) c where c.id = :pGroupsId",
-                        User.class).setParameter("pGroupsId", groupsId)
-                .getResultList();
+                        "select distinct e from User e , IN (e.groups) c where e.clientId = :pClientId and c.id = :pGroupsId",
+                        User.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pGroupsId", groupsId).getResultList();
     }
 
     public void doChangePassword(Long userId, String newPassword)

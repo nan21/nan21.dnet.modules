@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.impex.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.impex.business.service.IExportMapItemService;
 import net.nan21.dnet.module.ad.impex.domain.entity.CsvExport;
@@ -38,8 +39,9 @@ public class ExportMapItemService extends AbstractEntityService<ExportMapItem>
     public List<ExportMapItem> findByExportMapId(Long exportMapId) {
         return (List<ExportMapItem>) this.em
                 .createQuery(
-                        "select e from ExportMapItem e where e.exportMap.id = :pExportMapId",
+                        "select e from ExportMapItem e where e.clientId = :pClientId and  e.exportMap.id = :pExportMapId",
                         ExportMapItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pExportMapId", exportMapId).getResultList();
     }
 
@@ -50,8 +52,9 @@ public class ExportMapItemService extends AbstractEntityService<ExportMapItem>
     public List<ExportMapItem> findByCsvExportId(Long csvExportId) {
         return (List<ExportMapItem>) this.em
                 .createQuery(
-                        "select e from ExportMapItem e where e.csvExport.id = :pCsvExportId",
+                        "select e from ExportMapItem e where e.clientId = :pClientId and  e.csvExport.id = :pCsvExportId",
                         ExportMapItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCsvExportId", csvExportId).getResultList();
     }
 

@@ -11,6 +11,6 @@ import net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType;
 
 public interface IIssueTaskTypeService extends IEntityService<IssueTaskType> {
 
-    public IssueTaskType findByName(Long clientId, String name);
+    public IssueTaskType findByName(String name);
 
 }

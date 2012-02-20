@@ -12,6 +12,6 @@ import net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityPriority;
 public interface IOpportunityPriorityService extends
         IEntityService<OpportunityPriority> {
 
-    public OpportunityPriority findByName(Long clientId, String name);
+    public OpportunityPriority findByName(String name);
 
 }

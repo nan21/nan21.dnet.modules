@@ -18,8 +18,10 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
         implements IDsConverter<LocationDs, Location> {
 
-    protected void modelToEntityReferences(LocationDs ds, Location e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(LocationDs ds, Location e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCountryId() != null) {
             if (e.getCountry() == null
                     || !e.getCountry().getId().equals(ds.getCountryId())) {
@@ -29,6 +31,7 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
         } else {
             this.lookup_country_Country(ds, e);
         }
+
         if (ds.getRegionId() != null) {
             if (e.getRegion() == null
                     || !e.getRegion().getId().equals(ds.getRegionId())) {
@@ -38,6 +41,7 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
         } else {
             this.lookup_region_Region(ds, e);
         }
+
     }
 
     protected void lookup_country_Country(LocationDs ds, Location e)
@@ -46,7 +50,7 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
             Country x = null;
             try {
                 x = ((ICountryService) findEntityService(Country.class))
-                        .findByCode(ds.getClientId(), ds.getCountryCode());
+                        .findByCode(ds.getCountryCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Country` reference:  `countryCode` = "
@@ -66,8 +70,8 @@ public class LocationDsConv extends AbstractDsConverter<LocationDs, Location>
             Region x = null;
             try {
                 x = ((IRegionService) findEntityService(Region.class))
-                        .findByCodeAndCountry(ds.getClientId(),
-                                ds.getCountryId(), ds.getRegionCode());
+                        .findByCodeAndCountry(ds.getCountryId(),
+                                ds.getRegionCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Region` reference:  `countryId` = "

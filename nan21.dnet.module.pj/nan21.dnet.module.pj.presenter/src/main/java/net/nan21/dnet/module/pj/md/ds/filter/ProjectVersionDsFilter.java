@@ -61,13 +61,6 @@ public class ProjectVersionDsFilter extends AbstractDsFilter implements
     private Date releaseDate_From;
     private Date releaseDate_To;
 
-    private Long projectVersionId;
-
-    private Long projectVersionId_From;
-    private Long projectVersionId_To;
-
-    private String projectVersion;
-
     public String getName() {
         return this.name;
     }
@@ -275,38 +268,6 @@ public class ProjectVersionDsFilter extends AbstractDsFilter implements
 
     public void setReleaseDate_To(Date releaseDate_To) {
         this.releaseDate_To = releaseDate_To;
-    }
-
-    public Long getProjectVersionId() {
-        return this.projectVersionId;
-    }
-
-    public Long getProjectVersionId_From() {
-        return this.projectVersionId_From;
-    }
-
-    public Long getProjectVersionId_To() {
-        return this.projectVersionId_To;
-    }
-
-    public void setProjectVersionId(Long projectVersionId) {
-        this.projectVersionId = projectVersionId;
-    }
-
-    public void setProjectVersionId_From(Long projectVersionId_From) {
-        this.projectVersionId_From = projectVersionId_From;
-    }
-
-    public void setProjectVersionId_To(Long projectVersionId_To) {
-        this.projectVersionId_To = projectVersionId_To;
-    }
-
-    public String getProjectVersion() {
-        return this.projectVersion;
-    }
-
-    public void setProjectVersion(String projectVersion) {
-        this.projectVersion = projectVersion;
     }
 
 }

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine;
@@ -40,8 +41,9 @@ public class InvTransactionService extends
     public List<InvTransaction> findByTransactionTypeId(Long transactionTypeId) {
         return (List<InvTransaction>) this.em
                 .createQuery(
-                        "select e from InvTransaction e where e.transactionType.id = :pTransactionTypeId",
+                        "select e from InvTransaction e where e.clientId = :pClientId and  e.transactionType.id = :pTransactionTypeId",
                         InvTransaction.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTransactionTypeId", transactionTypeId)
                 .getResultList();
     }
@@ -53,8 +55,9 @@ public class InvTransactionService extends
     public List<InvTransaction> findByFromInventoryId(Long fromInventoryId) {
         return (List<InvTransaction>) this.em
                 .createQuery(
-                        "select e from InvTransaction e where e.fromInventory.id = :pFromInventoryId",
+                        "select e from InvTransaction e where e.clientId = :pClientId and  e.fromInventory.id = :pFromInventoryId",
                         InvTransaction.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pFromInventoryId", fromInventoryId)
                 .getResultList();
     }
@@ -66,8 +69,9 @@ public class InvTransactionService extends
     public List<InvTransaction> findByToInventoryId(Long toInventoryId) {
         return (List<InvTransaction>) this.em
                 .createQuery(
-                        "select e from InvTransaction e where e.toInventory.id = :pToInventoryId",
+                        "select e from InvTransaction e where e.clientId = :pClientId and  e.toInventory.id = :pToInventoryId",
                         InvTransaction.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pToInventoryId", toInventoryId).getResultList();
     }
 
@@ -78,9 +82,10 @@ public class InvTransactionService extends
     public List<InvTransaction> findByLinesId(Long linesId) {
         return (List<InvTransaction>) this.em
                 .createQuery(
-                        "select distinct e from InvTransaction e , IN (e.lines) c where c.id = :pLinesId",
-                        InvTransaction.class).setParameter("pLinesId", linesId)
-                .getResultList();
+                        "select distinct e from InvTransaction e , IN (e.lines) c where e.clientId = :pClientId and c.id = :pLinesId",
+                        InvTransaction.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pLinesId", linesId).getResultList();
     }
 
     public void doPostTransaction(Long transactionId) throws Exception {

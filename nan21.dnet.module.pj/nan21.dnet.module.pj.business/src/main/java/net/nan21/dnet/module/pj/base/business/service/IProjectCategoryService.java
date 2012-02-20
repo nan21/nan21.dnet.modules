@@ -12,6 +12,6 @@ import net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory;
 public interface IProjectCategoryService extends
         IEntityService<ProjectCategory> {
 
-    public ProjectCategory findByName(Long clientId, String name);
+    public ProjectCategory findByName(String name);
 
 }

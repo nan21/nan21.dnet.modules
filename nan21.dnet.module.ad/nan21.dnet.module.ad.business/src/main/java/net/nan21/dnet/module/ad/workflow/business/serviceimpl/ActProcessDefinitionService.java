@@ -38,7 +38,7 @@ public class ActProcessDefinitionService extends
     public List<ActProcessDefinition> findByDeploymentId(String deploymentId) {
         return (List<ActProcessDefinition>) this.em
                 .createQuery(
-                        "select e from ActProcessDefinition e where e.deployment.id = :pDeploymentId",
+                        "select e from ActProcessDefinition e where  e.deployment.id = :pDeploymentId",
                         ActProcessDefinition.class)
                 .setParameter("pDeploymentId", deploymentId).getResultList();
     }

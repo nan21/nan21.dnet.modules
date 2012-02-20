@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.job.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.job.business.service.IJobTypeService;
 
@@ -28,9 +29,9 @@ public class JobTypeService extends AbstractEntityService<JobType> implements
         return JobType.class;
     }
 
-    public JobType findByName(Long clientId, String name) {
+    public JobType findByName(String name) {
         return (JobType) this.em.createNamedQuery(JobType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

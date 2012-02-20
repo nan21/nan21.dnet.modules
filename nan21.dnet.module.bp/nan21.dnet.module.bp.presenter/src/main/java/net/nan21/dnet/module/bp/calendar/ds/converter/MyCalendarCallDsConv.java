@@ -22,8 +22,10 @@ public class MyCalendarCallDsConv extends
         AbstractDsConverter<MyCalendarCallDs, CalendarEvent> implements
         IDsConverter<MyCalendarCallDs, CalendarEvent> {
 
-    protected void modelToEntityReferences(MyCalendarCallDs ds, CalendarEvent e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(MyCalendarCallDs ds,
+            CalendarEvent e, boolean isInsert) throws Exception {
+
         if (ds.getBpartnerId() != null) {
             if (e.getBpartner() == null
                     || !e.getBpartner().getId().equals(ds.getBpartnerId())) {
@@ -33,6 +35,7 @@ public class MyCalendarCallDsConv extends
         } else {
             this.lookup_bpartner_BusinessPartner(ds, e);
         }
+
         if (ds.getContactId() != null) {
             if (e.getContact() == null
                     || !e.getContact().getId().equals(ds.getContactId())) {
@@ -40,6 +43,7 @@ public class MyCalendarCallDsConv extends
                         ds.getContactId()));
             }
         }
+
         if (ds.getPriorityId() != null) {
             if (e.getPriority() == null
                     || !e.getPriority().getId().equals(ds.getPriorityId())) {
@@ -49,6 +53,7 @@ public class MyCalendarCallDsConv extends
         } else {
             this.lookup_priority_CalendarEventPriority(ds, e);
         }
+
         if (ds.getStatusId() != null) {
             if (e.getStatus() == null
                     || !e.getStatus().getId().equals(ds.getStatusId())) {
@@ -58,6 +63,7 @@ public class MyCalendarCallDsConv extends
         } else {
             this.lookup_status_CalendarEventStatus(ds, e);
         }
+
     }
 
     protected void lookup_bpartner_BusinessPartner(MyCalendarCallDs ds,
@@ -66,7 +72,7 @@ public class MyCalendarCallDsConv extends
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
-                        .findByCode(ds.getClientId(), ds.getBpartnerCode());
+                        .findByCode(ds.getBpartnerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `BusinessPartner` reference:  `bpartnerCode` = "
@@ -87,8 +93,8 @@ public class MyCalendarCallDsConv extends
             CalendarEventPriority x = null;
             try {
                 x = ((ICalendarEventPriorityService) findEntityService(CalendarEventPriority.class))
-                        .findByType_and_name(ds.getClientId(),
-                                ds.getEventType(), ds.getPriorityName());
+                        .findByType_and_name(ds.getEventType(),
+                                ds.getPriorityName());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `CalendarEventPriority` reference:  `eventType` = "
@@ -110,8 +116,8 @@ public class MyCalendarCallDsConv extends
             CalendarEventStatus x = null;
             try {
                 x = ((ICalendarEventStatusService) findEntityService(CalendarEventStatus.class))
-                        .findByType_and_name(ds.getClientId(),
-                                ds.getEventType(), ds.getStatusName());
+                        .findByType_and_name(ds.getEventType(),
+                                ds.getStatusName());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `CalendarEventStatus` reference:  `eventType` = "

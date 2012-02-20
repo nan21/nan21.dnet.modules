@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bd.geo.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.business.service.ICountryService;
 
@@ -28,15 +29,15 @@ public class CountryService extends AbstractEntityService<Country> implements
         return Country.class;
     }
 
-    public Country findByCode(Long clientId, String code) {
+    public Country findByCode(String code) {
         return (Country) this.em.createNamedQuery(Country.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public Country findByName(Long clientId, String name) {
+    public Country findByName(String name) {
         return (Country) this.em.createNamedQuery(Country.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

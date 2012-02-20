@@ -22,7 +22,7 @@ import net.nan21.dnet.module.pj.md.domain.entity.Issue;
 
 public interface IIssueService extends IEntityService<Issue> {
 
-    public Issue findByCode(Long clientId, String code);
+    public Issue findByCode(String code);
 
     public List<Issue> findByProject(Project project);
 

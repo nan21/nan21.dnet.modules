@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bd.org.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationTypeService;
 
@@ -29,10 +30,10 @@ public class OrganizationTypeService extends
         return OrganizationType.class;
     }
 
-    public OrganizationType findByName(Long clientId, String name) {
+    public OrganizationType findByName(String name) {
         return (OrganizationType) this.em
                 .createNamedQuery(OrganizationType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

@@ -12,6 +12,6 @@ import net.nan21.dnet.module.mm.md.domain.entity.ProductCategoryHierarchy;
 public interface IProductCategoryHierarchyService extends
         IEntityService<ProductCategoryHierarchy> {
 
-    public ProductCategoryHierarchy findByName(Long clientId, String name);
+    public ProductCategoryHierarchy findByName(String name);
 
 }

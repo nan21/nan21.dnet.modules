@@ -14,7 +14,7 @@ import net.nan21.dnet.module.ad.usr.domain.entity.AccessControl;
 
 public interface IAccessControlService extends IEntityService<AccessControl> {
 
-    public AccessControl findByName(Long clientId, String name);
+    public AccessControl findByName(String name);
 
     public List<AccessControl> findByDsRules(DsAccessControl dsRules);
 

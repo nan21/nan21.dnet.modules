@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.inventory.business.service.IInvTransactionActionService;
 
@@ -29,10 +30,10 @@ public class InvTransactionActionService extends
         return InvTransactionAction.class;
     }
 
-    public InvTransactionAction findByName(Long clientId, String name) {
+    public InvTransactionAction findByName(String name) {
         return (InvTransactionAction) this.em
                 .createNamedQuery(InvTransactionAction.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

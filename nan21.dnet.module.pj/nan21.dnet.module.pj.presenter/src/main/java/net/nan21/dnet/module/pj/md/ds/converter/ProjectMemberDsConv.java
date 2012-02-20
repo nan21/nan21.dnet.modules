@@ -21,8 +21,10 @@ public class ProjectMemberDsConv extends
         AbstractDsConverter<ProjectMemberDs, ProjectMember> implements
         IDsConverter<ProjectMemberDs, ProjectMember> {
 
-    protected void modelToEntityReferences(ProjectMemberDs ds, ProjectMember e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ProjectMemberDs ds, ProjectMember e,
+            boolean isInsert) throws Exception {
+
         if (ds.getProjectId() != null) {
             if (e.getProject() == null
                     || !e.getProject().getId().equals(ds.getProjectId())) {
@@ -32,6 +34,7 @@ public class ProjectMemberDsConv extends
         } else {
             this.lookup_project_Project(ds, e);
         }
+
         if (ds.getRoleId() != null) {
             if (e.getProjectRole() == null
                     || !e.getProjectRole().getId().equals(ds.getRoleId())) {
@@ -41,6 +44,7 @@ public class ProjectMemberDsConv extends
         } else {
             this.lookup_projectRole_ProjectRole(ds, e);
         }
+
         if (ds.getMemberId() != null) {
             if (e.getMember() == null
                     || !e.getMember().getId().equals(ds.getMemberId())) {
@@ -50,6 +54,7 @@ public class ProjectMemberDsConv extends
         } else {
             this.lookup_member_Assignable(ds, e);
         }
+
     }
 
     protected void lookup_project_Project(ProjectMemberDs ds, ProjectMember e)
@@ -58,7 +63,7 @@ public class ProjectMemberDsConv extends
             Project x = null;
             try {
                 x = ((IProjectService) findEntityService(Project.class))
-                        .findByCode(ds.getClientId(), ds.getProject());
+                        .findByCode(ds.getProject());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Project` reference:  `project` = "
@@ -77,7 +82,7 @@ public class ProjectMemberDsConv extends
             ProjectRole x = null;
             try {
                 x = ((IProjectRoleService) findEntityService(ProjectRole.class))
-                        .findByName(ds.getClientId(), ds.getRole());
+                        .findByName(ds.getRole());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProjectRole` reference:  `role` = "
@@ -96,7 +101,7 @@ public class ProjectMemberDsConv extends
             Assignable x = null;
             try {
                 x = ((IAssignableService) findEntityService(Assignable.class))
-                        .findByName(ds.getClientId(), ds.getMember());
+                        .findByName(ds.getMember());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Assignable` reference:  `member` = "

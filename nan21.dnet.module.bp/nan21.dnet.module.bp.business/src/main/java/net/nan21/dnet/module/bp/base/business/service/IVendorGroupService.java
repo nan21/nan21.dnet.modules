@@ -14,9 +14,9 @@ import net.nan21.dnet.module.bp.base.domain.entity.VendorGroup;
 
 public interface IVendorGroupService extends IEntityService<VendorGroup> {
 
-    public VendorGroup findByCode(Long clientId, String code);
+    public VendorGroup findByCode(String code);
 
-    public VendorGroup findByName(Long clientId, String name);
+    public VendorGroup findByName(String name);
 
     public List<VendorGroup> findByPaymentMethod(PaymentMethod paymentMethod);
 

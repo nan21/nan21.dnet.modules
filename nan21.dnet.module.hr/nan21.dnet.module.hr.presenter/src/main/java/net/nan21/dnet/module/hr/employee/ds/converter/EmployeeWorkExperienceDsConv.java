@@ -17,8 +17,10 @@ public class EmployeeWorkExperienceDsConv extends
         implements
         IDsConverter<EmployeeWorkExperienceDs, EmployeeWorkExperience> {
 
+    @Override
     protected void modelToEntityReferences(EmployeeWorkExperienceDs ds,
-            EmployeeWorkExperience e) throws Exception {
+            EmployeeWorkExperience e, boolean isInsert) throws Exception {
+
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -26,6 +28,7 @@ public class EmployeeWorkExperienceDsConv extends
                         ds.getEmployeeId()));
             }
         }
+
     }
 
 }

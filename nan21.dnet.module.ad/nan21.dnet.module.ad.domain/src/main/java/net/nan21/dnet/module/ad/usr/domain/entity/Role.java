@@ -41,8 +41,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = Role.NQ_FIND_BY_ID, query = "SELECT e FROM Role e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = Role.NQ_FIND_BY_IDS, query = "SELECT e FROM Role e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Role.NQ_FIND_BY_ID, query = "SELECT e FROM Role e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Role.NQ_FIND_BY_IDS, query = "SELECT e FROM Role e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = Role.NQ_FIND_BY_NAME, query = "SELECT e FROM Role e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Role implements Serializable, IModelWithId, IModelWithClientId {
 
@@ -152,6 +152,14 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
     @ManyToMany
     @JoinTable(name = "AD_ROLES_ACCESSCTRL")
     private Collection<AccessControl> accessControls;
+
+    @ManyToMany
+    @JoinTable(name = "AD_ROLES_MENU")
+    private Collection<Menu> menus;
+
+    @ManyToMany
+    @JoinTable(name = "AD_ROLES_MENUITEM")
+    private Collection<MenuItem> menuItems;
 
     /* ============== getters - setters ================== */
 
@@ -266,6 +274,22 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setAccessControls(Collection<AccessControl> accessControls) {
         this.accessControls = accessControls;
+    }
+
+    public Collection<Menu> getMenus() {
+        return this.menus;
+    }
+
+    public void setMenus(Collection<Menu> menus) {
+        this.menus = menus;
+    }
+
+    public Collection<MenuItem> getMenuItems() {
+        return this.menuItems;
+    }
+
+    public void setMenuItems(Collection<MenuItem> menuItems) {
+        this.menuItems = menuItems;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

@@ -14,10 +14,9 @@ import net.nan21.dnet.module.ad.impex.domain.entity.ExportJobItem;
 
 public interface IExportJobItemService extends IEntityService<ExportJobItem> {
 
-    public ExportJobItem findByJob_map(Long clientId, ExportJob job,
-            ExportMap map);
+    public ExportJobItem findByJob_map(ExportJob job, ExportMap map);
 
-    public ExportJobItem findByJob_map(Long clientId, Long jobId, Long mapId);
+    public ExportJobItem findByJob_map(Long jobId, Long mapId);
 
     public List<ExportJobItem> findByJob(ExportJob job);
 

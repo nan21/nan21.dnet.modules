@@ -18,9 +18,9 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", {
 			,handler: this.onBtnPostTransaction,scope:this,stateManager:{name:"record_is_clean", dc:"tx" , and: function(evnt) {return (!(evnt.dc.record.data.eventDate));}}	})	
 							 	
 		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter",height:40})	 
-		.addDcView("tx",{ name:"txList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List"})	 
+		.addDcGridView("tx",{ name:"txList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List"})	 
 		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit",height:120,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnPostTransaction") ]}]})	 
-		.addDcView("txline",{ name:"txlineEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditList", frame:true})	 
+		.addDcEditGridView("txline",{ name:"txlineEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditList", frame:true})	 
 		.addDcFormView("txline",{ name:"txlineCtxFormView", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$CtxFormView",height:40})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

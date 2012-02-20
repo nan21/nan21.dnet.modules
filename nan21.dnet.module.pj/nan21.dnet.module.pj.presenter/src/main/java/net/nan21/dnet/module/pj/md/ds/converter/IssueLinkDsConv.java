@@ -18,8 +18,10 @@ public class IssueLinkDsConv extends
         AbstractDsConverter<IssueLinkDs, IssueLink> implements
         IDsConverter<IssueLinkDs, IssueLink> {
 
-    protected void modelToEntityReferences(IssueLinkDs ds, IssueLink e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(IssueLinkDs ds, IssueLink e,
+            boolean isInsert) throws Exception {
+
         if (ds.getSourceIssueId() != null) {
             if (e.getSourceIssue() == null
                     || !e.getSourceIssue().getId()
@@ -28,6 +30,7 @@ public class IssueLinkDsConv extends
                         ds.getSourceIssueId()));
             }
         }
+
         if (ds.getTargetIssueId() != null) {
             if (e.getTargetIssue() == null
                     || !e.getTargetIssue().getId()
@@ -36,6 +39,7 @@ public class IssueLinkDsConv extends
                         ds.getTargetIssueId()));
             }
         }
+
         if (ds.getLinkTypeId() != null) {
             if (e.getLinkType() == null
                     || !e.getLinkType().getId().equals(ds.getLinkTypeId())) {
@@ -45,6 +49,7 @@ public class IssueLinkDsConv extends
         } else {
             this.lookup_linkType_IssueLinkType(ds, e);
         }
+
     }
 
     protected void lookup_linkType_IssueLinkType(IssueLinkDs ds, IssueLink e)
@@ -53,7 +58,7 @@ public class IssueLinkDsConv extends
             IssueLinkType x = null;
             try {
                 x = ((IIssueLinkTypeService) findEntityService(IssueLinkType.class))
-                        .findByName(ds.getClientId(), ds.getLinkType());
+                        .findByName(ds.getLinkType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `IssueLinkType` reference:  `linkType` = "

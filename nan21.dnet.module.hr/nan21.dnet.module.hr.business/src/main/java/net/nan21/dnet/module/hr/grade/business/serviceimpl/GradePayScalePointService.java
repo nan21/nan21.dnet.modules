@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.grade.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.grade.business.service.IGradePayScalePointService;
 import net.nan21.dnet.module.hr.grade.domain.entity.GradePayScale;
@@ -40,8 +41,9 @@ public class GradePayScalePointService extends
     public List<GradePayScalePoint> findByGradePayScaleId(Long gradePayScaleId) {
         return (List<GradePayScalePoint>) this.em
                 .createQuery(
-                        "select e from GradePayScalePoint e where e.gradePayScale.id = :pGradePayScaleId",
+                        "select e from GradePayScalePoint e where e.clientId = :pClientId and  e.gradePayScale.id = :pGradePayScaleId",
                         GradePayScalePoint.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pGradePayScaleId", gradePayScaleId)
                 .getResultList();
     }
@@ -53,8 +55,9 @@ public class GradePayScalePointService extends
     public List<GradePayScalePoint> findByPointId(Long pointId) {
         return (List<GradePayScalePoint>) this.em
                 .createQuery(
-                        "select e from GradePayScalePoint e where e.point.id = :pPointId",
+                        "select e from GradePayScalePoint e where e.clientId = :pClientId and  e.point.id = :pPointId",
                         GradePayScalePoint.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPointId", pointId).getResultList();
     }
 

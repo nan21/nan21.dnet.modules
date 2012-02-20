@@ -21,8 +21,10 @@ public class BpBankAccountDsConv extends
         AbstractDsConverter<BpBankAccountDs, BpBankAccount> implements
         IDsConverter<BpBankAccountDs, BpBankAccount> {
 
-    protected void modelToEntityReferences(BpBankAccountDs ds, BpBankAccount e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(BpBankAccountDs ds, BpBankAccount e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
@@ -32,6 +34,7 @@ public class BpBankAccountDsConv extends
         } else {
             this.lookup_currency_Currency(ds, e);
         }
+
         if (ds.getBankId() != null) {
             if (e.getBank() == null
                     || !e.getBank().getId().equals(ds.getBankId())) {
@@ -40,6 +43,7 @@ public class BpBankAccountDsConv extends
         } else {
             this.lookup_bank_Bank(ds, e);
         }
+
         if (ds.getBpartnerId() != null) {
             if (e.getBpartner() == null
                     || !e.getBpartner().getId().equals(ds.getBpartnerId())) {
@@ -49,6 +53,7 @@ public class BpBankAccountDsConv extends
         } else {
             this.lookup_bpartner_BusinessPartner(ds, e);
         }
+
     }
 
     protected void lookup_currency_Currency(BpBankAccountDs ds, BpBankAccount e)
@@ -57,7 +62,7 @@ public class BpBankAccountDsConv extends
             Currency x = null;
             try {
                 x = ((ICurrencyService) findEntityService(Currency.class))
-                        .findByCode(ds.getClientId(), ds.getCurrencyCode());
+                        .findByCode(ds.getCurrencyCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Currency` reference:  `currencyCode` = "
@@ -75,8 +80,8 @@ public class BpBankAccountDsConv extends
         if (ds.getBankCode() != null && !ds.getBankCode().equals("")) {
             Bank x = null;
             try {
-                x = ((IBankService) findEntityService(Bank.class)).findByCode(
-                        ds.getClientId(), ds.getBankCode());
+                x = ((IBankService) findEntityService(Bank.class))
+                        .findByCode(ds.getBankCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Bank` reference:  `bankCode` = "
@@ -95,7 +100,7 @@ public class BpBankAccountDsConv extends
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
-                        .findByCode(ds.getClientId(), ds.getBpartnerCode());
+                        .findByCode(ds.getBpartnerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `BusinessPartner` reference:  `bpartnerCode` = "

@@ -11,6 +11,6 @@ import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
 
 public interface IDeliveryMethodService extends IEntityService<DeliveryMethod> {
 
-    public DeliveryMethod findByName(Long clientId, String name);
+    public DeliveryMethod findByName(String name);
 
 }

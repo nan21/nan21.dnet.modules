@@ -12,8 +12,8 @@ import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem;
 public interface IClassificationSystemService extends
         IEntityService<ClassificationSystem> {
 
-    public ClassificationSystem findByCode(Long clientId, String code);
+    public ClassificationSystem findByCode(String code);
 
-    public ClassificationSystem findByName(Long clientId, String name);
+    public ClassificationSystem findByName(String name);
 
 }

@@ -40,7 +40,7 @@ public class ActProcessInstanceHistoryService extends
             String processDefinitionId) {
         return (List<ActProcessInstanceHistory>) this.em
                 .createQuery(
-                        "select e from ActProcessInstanceHistory e where e.processDefinition.id = :pProcessDefinitionId",
+                        "select e from ActProcessInstanceHistory e where  e.processDefinition.id = :pProcessDefinitionId",
                         ActProcessInstanceHistory.class)
                 .setParameter("pProcessDefinitionId", processDefinitionId)
                 .getResultList();

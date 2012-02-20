@@ -13,13 +13,13 @@ import net.nan21.dnet.module.ad.report.domain.entity.ReportParam;
 
 public interface IReportParamService extends IEntityService<ReportParam> {
 
-    public ReportParam findByCode(Long clientId, Report report, String code);
+    public ReportParam findByCode(Report report, String code);
 
-    public ReportParam findByCode(Long clientId, Long reportId, String code);
+    public ReportParam findByCode(Long reportId, String code);
 
-    public ReportParam findByName(Long clientId, Report report, String name);
+    public ReportParam findByName(Report report, String name);
 
-    public ReportParam findByName(Long clientId, Long reportId, String name);
+    public ReportParam findByName(Long reportId, String name);
 
     public List<ReportParam> findByReport(Report report);
 

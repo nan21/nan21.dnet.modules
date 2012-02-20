@@ -14,11 +14,11 @@ import net.nan21.dnet.module.ad.usr.domain.entity.DsMethodAccessControl;
 public interface IDsMethodAccessControlService extends
         IEntityService<DsMethodAccessControl> {
 
-    public DsMethodAccessControl findByUnique(Long clientId,
-            AccessControl accessControl, String dsName);
+    public DsMethodAccessControl findByUnique(AccessControl accessControl,
+            String dsName);
 
-    public DsMethodAccessControl findByUnique(Long clientId,
-            Long accessControlId, String dsName);
+    public DsMethodAccessControl findByUnique(Long accessControlId,
+            String dsName);
 
     public List<DsMethodAccessControl> findByAccessControl(
             AccessControl accessControl);

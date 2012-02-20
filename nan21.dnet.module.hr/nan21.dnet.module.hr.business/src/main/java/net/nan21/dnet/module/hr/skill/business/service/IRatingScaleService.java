@@ -11,6 +11,6 @@ import net.nan21.dnet.module.hr.skill.domain.entity.RatingScale;
 
 public interface IRatingScaleService extends IEntityService<RatingScale> {
 
-    public RatingScale findByName(Long clientId, String name);
+    public RatingScale findByName(String name);
 
 }

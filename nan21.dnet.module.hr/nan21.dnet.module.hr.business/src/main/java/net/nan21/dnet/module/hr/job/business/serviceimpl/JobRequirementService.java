@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.job.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.job.business.service.IJobRequirementService;
 import net.nan21.dnet.module.hr.job.domain.entity.Job;
@@ -38,9 +39,10 @@ public class JobRequirementService extends
     public List<JobRequirement> findByJobId(Long jobId) {
         return (List<JobRequirement>) this.em
                 .createQuery(
-                        "select e from JobRequirement e where e.job.id = :pJobId",
-                        JobRequirement.class).setParameter("pJobId", jobId)
-                .getResultList();
+                        "select e from JobRequirement e where e.clientId = :pClientId and  e.job.id = :pJobId",
+                        JobRequirement.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJobId", jobId).getResultList();
     }
 
     public List<JobRequirement> findByRequirement(WorkRequirement requirement) {
@@ -50,8 +52,9 @@ public class JobRequirementService extends
     public List<JobRequirement> findByRequirementId(Long requirementId) {
         return (List<JobRequirement>) this.em
                 .createQuery(
-                        "select e from JobRequirement e where e.requirement.id = :pRequirementId",
+                        "select e from JobRequirement e where e.clientId = :pClientId and  e.requirement.id = :pRequirementId",
                         JobRequirement.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRequirementId", requirementId).getResultList();
     }
 

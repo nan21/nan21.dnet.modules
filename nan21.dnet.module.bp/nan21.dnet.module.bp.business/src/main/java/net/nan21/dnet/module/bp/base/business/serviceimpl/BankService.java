@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bp.base.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bp.base.business.service.IBankService;
 
@@ -28,15 +29,15 @@ public class BankService extends AbstractEntityService<Bank> implements
         return Bank.class;
     }
 
-    public Bank findByCode(Long clientId, String code) {
+    public Bank findByCode(String code) {
         return (Bank) this.em.createNamedQuery(Bank.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public Bank findByName(Long clientId, String name) {
+    public Bank findByName(String name) {
         return (Bank) this.em.createNamedQuery(Bank.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

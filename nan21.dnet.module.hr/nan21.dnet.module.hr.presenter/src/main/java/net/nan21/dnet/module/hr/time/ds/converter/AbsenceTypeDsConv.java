@@ -17,8 +17,10 @@ public class AbsenceTypeDsConv extends
         AbstractDsConverter<AbsenceTypeDs, AbsenceType> implements
         IDsConverter<AbsenceTypeDs, AbsenceType> {
 
-    protected void modelToEntityReferences(AbsenceTypeDs ds, AbsenceType e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(AbsenceTypeDs ds, AbsenceType e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
@@ -28,6 +30,7 @@ public class AbsenceTypeDsConv extends
         } else {
             this.lookup_category_AbsenceCategory(ds, e);
         }
+
     }
 
     protected void lookup_category_AbsenceCategory(AbsenceTypeDs ds,
@@ -36,7 +39,7 @@ public class AbsenceTypeDsConv extends
             AbsenceCategory x = null;
             try {
                 x = ((IAbsenceCategoryService) findEntityService(AbsenceCategory.class))
-                        .findByName(ds.getClientId(), ds.getCategory());
+                        .findByName(ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `AbsenceCategory` reference:  `category` = "

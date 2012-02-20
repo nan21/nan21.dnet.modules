@@ -17,8 +17,10 @@ public class PriceListDsConv extends
         AbstractDsConverter<PriceListDs, PriceList> implements
         IDsConverter<PriceListDs, PriceList> {
 
-    protected void modelToEntityReferences(PriceListDs ds, PriceList e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(PriceListDs ds, PriceList e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
@@ -28,6 +30,7 @@ public class PriceListDsConv extends
         } else {
             this.lookup_currency_Currency(ds, e);
         }
+
     }
 
     protected void lookup_currency_Currency(PriceListDs ds, PriceList e)
@@ -36,7 +39,7 @@ public class PriceListDsConv extends
             Currency x = null;
             try {
                 x = ((ICurrencyService) findEntityService(Currency.class))
-                        .findByCode(ds.getClientId(), ds.getCurrency());
+                        .findByCode(ds.getCurrency());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Currency` reference:  `currency` = "

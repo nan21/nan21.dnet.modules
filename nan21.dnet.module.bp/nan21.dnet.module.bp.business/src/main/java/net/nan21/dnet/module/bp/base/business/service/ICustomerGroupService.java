@@ -14,9 +14,9 @@ import net.nan21.dnet.module.bp.base.domain.entity.CustomerGroup;
 
 public interface ICustomerGroupService extends IEntityService<CustomerGroup> {
 
-    public CustomerGroup findByCode(Long clientId, String code);
+    public CustomerGroup findByCode(String code);
 
-    public CustomerGroup findByName(Long clientId, String name);
+    public CustomerGroup findByName(String name);
 
     public List<CustomerGroup> findByPaymentMethod(PaymentMethod paymentMethod);
 

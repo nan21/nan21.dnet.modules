@@ -13,7 +13,7 @@ import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 
 public interface IAssignableService extends IEntityService<Assignable> {
 
-    public Assignable findByName(Long clientId, String name);
+    public Assignable findByName(String name);
 
     public List<Assignable> findByAssignableType(AssignableType assignableType);
 

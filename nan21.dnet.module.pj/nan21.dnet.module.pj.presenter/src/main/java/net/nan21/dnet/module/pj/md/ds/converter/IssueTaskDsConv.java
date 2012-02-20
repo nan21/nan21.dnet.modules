@@ -22,8 +22,10 @@ public class IssueTaskDsConv extends
         AbstractDsConverter<IssueTaskDs, IssueTask> implements
         IDsConverter<IssueTaskDs, IssueTask> {
 
-    protected void modelToEntityReferences(IssueTaskDs ds, IssueTask e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(IssueTaskDs ds, IssueTask e,
+            boolean isInsert) throws Exception {
+
         if (ds.getIssueId() != null) {
             if (e.getIssue() == null
                     || !e.getIssue().getId().equals(ds.getIssueId())) {
@@ -32,6 +34,7 @@ public class IssueTaskDsConv extends
         } else {
             this.lookup_issue_Issue(ds, e);
         }
+
         if (ds.getAssigneeId() != null) {
             if (e.getAssignee() == null
                     || !e.getAssignee().getId().equals(ds.getAssigneeId())) {
@@ -39,6 +42,7 @@ public class IssueTaskDsConv extends
                         ds.getAssigneeId()));
             }
         }
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -48,6 +52,7 @@ public class IssueTaskDsConv extends
         } else {
             this.lookup_type_IssueTaskType(ds, e);
         }
+
         if (ds.getStatusId() != null) {
             if (e.getStatus() == null
                     || !e.getStatus().getId().equals(ds.getStatusId())) {
@@ -57,6 +62,7 @@ public class IssueTaskDsConv extends
         } else {
             this.lookup_status_IssueTaskStatus(ds, e);
         }
+
     }
 
     protected void lookup_issue_Issue(IssueTaskDs ds, IssueTask e)
@@ -65,7 +71,7 @@ public class IssueTaskDsConv extends
             Issue x = null;
             try {
                 x = ((IIssueService) findEntityService(Issue.class))
-                        .findByCode(ds.getClientId(), ds.getIssue());
+                        .findByCode(ds.getIssue());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Issue` reference:  `issue` = "
@@ -84,7 +90,7 @@ public class IssueTaskDsConv extends
             IssueTaskType x = null;
             try {
                 x = ((IIssueTaskTypeService) findEntityService(IssueTaskType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `IssueTaskType` reference:  `type` = "
@@ -103,7 +109,7 @@ public class IssueTaskDsConv extends
             IssueTaskStatus x = null;
             try {
                 x = ((IIssueTaskStatusService) findEntityService(IssueTaskStatus.class))
-                        .findByName(ds.getClientId(), ds.getStatus());
+                        .findByName(ds.getStatus());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `IssueTaskStatus` reference:  `status` = "

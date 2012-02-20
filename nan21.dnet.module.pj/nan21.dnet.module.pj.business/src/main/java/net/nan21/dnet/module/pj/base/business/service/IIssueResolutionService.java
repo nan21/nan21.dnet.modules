@@ -12,6 +12,6 @@ import net.nan21.dnet.module.pj.base.domain.entity.IssueResolution;
 public interface IIssueResolutionService extends
         IEntityService<IssueResolution> {
 
-    public IssueResolution findByName(Long clientId, String name);
+    public IssueResolution findByName(String name);
 
 }

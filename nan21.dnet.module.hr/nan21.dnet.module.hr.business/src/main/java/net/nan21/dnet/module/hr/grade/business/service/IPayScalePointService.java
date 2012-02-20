@@ -13,11 +13,9 @@ import net.nan21.dnet.module.hr.grade.domain.entity.PayScalePoint;
 
 public interface IPayScalePointService extends IEntityService<PayScalePoint> {
 
-    public PayScalePoint findByScale_code(Long clientId, PayScale payScale,
-            String code);
+    public PayScalePoint findByScale_code(PayScale payScale, String code);
 
-    public PayScalePoint findByScale_code(Long clientId, Long payScaleId,
-            String code);
+    public PayScalePoint findByScale_code(Long payScaleId, String code);
 
     public List<PayScalePoint> findByPayScale(PayScale payScale);
 

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.inventory.business.service.IInvTransactionTypeService;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction;
@@ -32,10 +33,10 @@ public class InvTransactionTypeService extends
         return InvTransactionType.class;
     }
 
-    public InvTransactionType findByName(Long clientId, String name) {
+    public InvTransactionType findByName(String name) {
         return (InvTransactionType) this.em
                 .createNamedQuery(InvTransactionType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -47,8 +48,9 @@ public class InvTransactionTypeService extends
     public List<InvTransactionType> findBySourceTypeId(Long sourceTypeId) {
         return (List<InvTransactionType>) this.em
                 .createQuery(
-                        "select e from InvTransactionType e where e.sourceType.id = :pSourceTypeId",
+                        "select e from InvTransactionType e where e.clientId = :pClientId and  e.sourceType.id = :pSourceTypeId",
                         InvTransactionType.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSourceTypeId", sourceTypeId).getResultList();
     }
 
@@ -59,8 +61,9 @@ public class InvTransactionTypeService extends
     public List<InvTransactionType> findByActionId(Long actionId) {
         return (List<InvTransactionType>) this.em
                 .createQuery(
-                        "select e from InvTransactionType e where e.action.id = :pActionId",
+                        "select e from InvTransactionType e where e.clientId = :pClientId and  e.action.id = :pActionId",
                         InvTransactionType.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pActionId", actionId).getResultList();
     }
 

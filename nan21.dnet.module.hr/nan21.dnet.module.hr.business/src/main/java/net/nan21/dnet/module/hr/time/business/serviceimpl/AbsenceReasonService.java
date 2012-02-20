@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.time.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.time.business.service.IAbsenceReasonService;
 import net.nan21.dnet.module.hr.time.domain.entity.AbsenceType;
@@ -30,10 +31,10 @@ public class AbsenceReasonService extends AbstractEntityService<AbsenceReason>
         return AbsenceReason.class;
     }
 
-    public AbsenceReason findByName(Long clientId, String name) {
+    public AbsenceReason findByName(String name) {
         return (AbsenceReason) this.em
                 .createNamedQuery(AbsenceReason.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -44,9 +45,10 @@ public class AbsenceReasonService extends AbstractEntityService<AbsenceReason>
     public List<AbsenceReason> findByTypeId(Long typeId) {
         return (List<AbsenceReason>) this.em
                 .createQuery(
-                        "select e from AbsenceReason e where e.type.id = :pTypeId",
-                        AbsenceReason.class).setParameter("pTypeId", typeId)
-                .getResultList();
+                        "select e from AbsenceReason e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        AbsenceReason.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pTypeId", typeId).getResultList();
     }
 
 }

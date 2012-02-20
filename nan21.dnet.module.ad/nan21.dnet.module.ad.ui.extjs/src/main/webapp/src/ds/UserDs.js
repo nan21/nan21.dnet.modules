@@ -4,7 +4,6 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"name", type:"string"},
-		{name:"code", type:"string"},
 		{name:"active", type:"boolean"},
 		{name:"notes", type:"string"},
 		{name:"id", type:"int", useNull:true},
@@ -16,6 +15,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserDs" ,{
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
 		{name:"locked", type:"boolean"},
 		{name:"accountType", type:"string"},
 		{name:"accountTypeId", type:"int", useNull:true},
@@ -35,7 +35,6 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"name", type:"string"},
-		{name:"code", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
 		{name:"notes", type:"string"},
 		{name:"id", type:"int", useNull:true},
@@ -49,6 +48,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserDsFilter" ,{
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
 		{name:"locked", type:"boolean", useNull:true},
 		{name:"accountType", type:"string"},
 		{name:"accountTypeId", type:"int", useNull:true},

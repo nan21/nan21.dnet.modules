@@ -17,14 +17,17 @@ public class GradeRateValueDsConv extends
         AbstractDsConverter<GradeRateValueDs, GradeRateValue> implements
         IDsConverter<GradeRateValueDs, GradeRateValue> {
 
-    protected void modelToEntityReferences(GradeRateValueDs ds, GradeRateValue e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(GradeRateValueDs ds,
+            GradeRateValue e, boolean isInsert) throws Exception {
+
         if (ds.getGradeId() != null) {
             if (e.getGrade() == null
                     || !e.getGrade().getId().equals(ds.getGradeId())) {
                 e.setGrade((Grade) this.em.find(Grade.class, ds.getGradeId()));
             }
         }
+
         if (ds.getGradeRateId() != null) {
             if (e.getGradeRate() == null
                     || !e.getGradeRate().getId().equals(ds.getGradeRateId())) {
@@ -32,6 +35,7 @@ public class GradeRateValueDsConv extends
                         ds.getGradeRateId()));
             }
         }
+
     }
 
 }

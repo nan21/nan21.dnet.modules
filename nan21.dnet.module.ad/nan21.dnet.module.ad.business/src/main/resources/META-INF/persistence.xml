@@ -35,8 +35,8 @@
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsService</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgn</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.BusinessObject</class>
-		 
+		<class>net.nan21.dnet.module.ad.system.domain.entity.BusinessObject</class>		
+		<class>net.nan21.dnet.module.ad.system.domain.entity.UiViewState</class>  
 		
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.User</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserGroup</class>
@@ -46,7 +46,8 @@
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.DsAccessControl</class>	
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.AsgnAccessControl</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.DsMethodAccessControl</class>
-		
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.Menu</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.MenuItem</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>		
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
 		 

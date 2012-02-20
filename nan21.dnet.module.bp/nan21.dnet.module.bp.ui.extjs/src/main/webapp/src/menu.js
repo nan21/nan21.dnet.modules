@@ -15,22 +15,14 @@ net.nan21.dnet.module.bp.menu.crm = [
 		{id:"BPartner_UI", text:Dnet.translate("ui","BPartner_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bp.md.frame.BPartner_UI", _bundle_:BUNDLE_ID},		
 		{id:"Contact_UI", text:Dnet.translate("ui","Contact_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bp.md.frame.Contact_UI", _bundle_:BUNDLE_ID},		
 		{id:"BpAccount_UI", text:Dnet.translate("ui","BpAccount_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bp.md.frame.BpAccount_UI", _bundle_:BUNDLE_ID}	]}
+ ,		 
+	{"id":"sm_cal", "text":"Calendar", leaf:false, children:[
+		
+		{id:"MyCalendarEvent_UI", text:Dnet.translate("ui","MyCalendarEvent_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI", _bundle_:BUNDLE_ID}	]}
  
    ];  
 if (Dnet.navigationTreeMenus.crm == undefined) {
 	Dnet.navigationTreeMenus.crm = { name: "mbMenuCRM" , title :"CRM: Customer Relationships", children: [] };
 }       
     Dnet.navigationTreeMenus.crm.children = Dnet.navigationTreeMenus.crm.children.concat(net.nan21.dnet.module.bp.menu.crm);
-   
-Ext.ns('net.nan21.dnet.module.bp.menu');
-var BUNDLE_ID = "nan21.dnet.module.bp.ui.extjs";
-
-net.nan21.dnet.module.bp.menu.my = [
-		
-		{id:"MyCalendarEvent_UI", text:Dnet.translate("ui","MyCalendarEvent_UI"), leaf:true, _frame_:"net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI", _bundle_:BUNDLE_ID} 
-   ];  
-if (Dnet.navigationTreeMenus.my == undefined) {
-	Dnet.navigationTreeMenus.my = { name: "mbMenuMY" , title :"MY: My Dnet", children: [] };
-}       
-    Dnet.navigationTreeMenus.my.children = Dnet.navigationTreeMenus.my.children.concat(net.nan21.dnet.module.bp.menu.my);
     

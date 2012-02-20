@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.impex.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.impex.business.service.IImportJobItemService;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportJob;
@@ -31,18 +32,18 @@ public class ImportJobItemService extends AbstractEntityService<ImportJobItem>
         return ImportJobItem.class;
     }
 
-    public ImportJobItem findByJob_map(Long clientId, ImportJob job,
-            ImportMap map) {
+    public ImportJobItem findByJob_map(ImportJob job, ImportMap map) {
         return (ImportJobItem) this.em
                 .createNamedQuery(ImportJobItem.NQ_FIND_BY_JOB_MAP)
-                .setParameter("pClientId", clientId).setParameter("pJob", job)
-                .setParameter("pMap", map).getSingleResult();
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJob", job).setParameter("pMap", map)
+                .getSingleResult();
     }
 
-    public ImportJobItem findByJob_map(Long clientId, Long jobId, Long mapId) {
+    public ImportJobItem findByJob_map(Long jobId, Long mapId) {
         return (ImportJobItem) this.em
                 .createNamedQuery(ImportJobItem.NQ_FIND_BY_JOB_MAP_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pJobId", jobId).setParameter("pMapId", mapId)
                 .getSingleResult();
     }
@@ -54,9 +55,10 @@ public class ImportJobItemService extends AbstractEntityService<ImportJobItem>
     public List<ImportJobItem> findByJobId(Long jobId) {
         return (List<ImportJobItem>) this.em
                 .createQuery(
-                        "select e from ImportJobItem e where e.job.id = :pJobId",
-                        ImportJobItem.class).setParameter("pJobId", jobId)
-                .getResultList();
+                        "select e from ImportJobItem e where e.clientId = :pClientId and  e.job.id = :pJobId",
+                        ImportJobItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJobId", jobId).getResultList();
     }
 
     public List<ImportJobItem> findByMap(ImportMap map) {
@@ -66,9 +68,10 @@ public class ImportJobItemService extends AbstractEntityService<ImportJobItem>
     public List<ImportJobItem> findByMapId(Long mapId) {
         return (List<ImportJobItem>) this.em
                 .createQuery(
-                        "select e from ImportJobItem e where e.map.id = :pMapId",
-                        ImportJobItem.class).setParameter("pMapId", mapId)
-                .getResultList();
+                        "select e from ImportJobItem e where e.clientId = :pClientId and  e.map.id = :pMapId",
+                        ImportJobItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pMapId", mapId).getResultList();
     }
 
 }

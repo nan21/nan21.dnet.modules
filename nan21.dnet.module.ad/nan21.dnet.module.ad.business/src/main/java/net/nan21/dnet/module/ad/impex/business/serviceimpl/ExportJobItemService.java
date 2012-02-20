@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.impex.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.impex.business.service.IExportJobItemService;
 import net.nan21.dnet.module.ad.impex.domain.entity.ExportJob;
@@ -31,18 +32,18 @@ public class ExportJobItemService extends AbstractEntityService<ExportJobItem>
         return ExportJobItem.class;
     }
 
-    public ExportJobItem findByJob_map(Long clientId, ExportJob job,
-            ExportMap map) {
+    public ExportJobItem findByJob_map(ExportJob job, ExportMap map) {
         return (ExportJobItem) this.em
                 .createNamedQuery(ExportJobItem.NQ_FIND_BY_JOB_MAP)
-                .setParameter("pClientId", clientId).setParameter("pJob", job)
-                .setParameter("pMap", map).getSingleResult();
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJob", job).setParameter("pMap", map)
+                .getSingleResult();
     }
 
-    public ExportJobItem findByJob_map(Long clientId, Long jobId, Long mapId) {
+    public ExportJobItem findByJob_map(Long jobId, Long mapId) {
         return (ExportJobItem) this.em
                 .createNamedQuery(ExportJobItem.NQ_FIND_BY_JOB_MAP_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pJobId", jobId).setParameter("pMapId", mapId)
                 .getSingleResult();
     }
@@ -54,9 +55,10 @@ public class ExportJobItemService extends AbstractEntityService<ExportJobItem>
     public List<ExportJobItem> findByJobId(Long jobId) {
         return (List<ExportJobItem>) this.em
                 .createQuery(
-                        "select e from ExportJobItem e where e.job.id = :pJobId",
-                        ExportJobItem.class).setParameter("pJobId", jobId)
-                .getResultList();
+                        "select e from ExportJobItem e where e.clientId = :pClientId and  e.job.id = :pJobId",
+                        ExportJobItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJobId", jobId).getResultList();
     }
 
     public List<ExportJobItem> findByMap(ExportMap map) {
@@ -66,9 +68,10 @@ public class ExportJobItemService extends AbstractEntityService<ExportJobItem>
     public List<ExportJobItem> findByMapId(Long mapId) {
         return (List<ExportJobItem>) this.em
                 .createQuery(
-                        "select e from ExportJobItem e where e.map.id = :pMapId",
-                        ExportJobItem.class).setParameter("pMapId", mapId)
-                .getResultList();
+                        "select e from ExportJobItem e where e.clientId = :pClientId and  e.map.id = :pMapId",
+                        ExportJobItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pMapId", mapId).getResultList();
     }
 
 }

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode;
 import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem;
@@ -40,8 +41,9 @@ public class ProdClassificationService extends
     public List<ProdClassification> findByProductId(Long productId) {
         return (List<ProdClassification>) this.em
                 .createQuery(
-                        "select e from ProdClassification e where e.product.id = :pProductId",
+                        "select e from ProdClassification e where e.clientId = :pClientId and  e.product.id = :pProductId",
                         ProdClassification.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProductId", productId).getResultList();
     }
 
@@ -53,8 +55,9 @@ public class ProdClassificationService extends
     public List<ProdClassification> findByClassSystemId(Long classSystemId) {
         return (List<ProdClassification>) this.em
                 .createQuery(
-                        "select e from ProdClassification e where e.classSystem.id = :pClassSystemId",
+                        "select e from ProdClassification e where e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId",
                         ProdClassification.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassSystemId", classSystemId).getResultList();
     }
 
@@ -65,8 +68,9 @@ public class ProdClassificationService extends
     public List<ProdClassification> findByClassCodeId(Long classCodeId) {
         return (List<ProdClassification>) this.em
                 .createQuery(
-                        "select e from ProdClassification e where e.classCode.id = :pClassCodeId",
+                        "select e from ProdClassification e where e.clientId = :pClientId and  e.classCode.id = :pClassCodeId",
                         ProdClassification.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassCodeId", classCodeId).getResultList();
     }
 

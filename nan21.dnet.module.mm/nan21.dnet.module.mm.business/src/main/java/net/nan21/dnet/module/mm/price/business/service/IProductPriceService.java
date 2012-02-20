@@ -15,11 +15,10 @@ import net.nan21.dnet.module.mm.price.domain.entity.ProductPrice;
 
 public interface IProductPriceService extends IEntityService<ProductPrice> {
 
-    public ProductPrice findByName(Long clientId,
-            PriceListVersion priceListVersion, Product product);
+    public ProductPrice findByName(PriceListVersion priceListVersion,
+            Product product);
 
-    public ProductPrice findByName(Long clientId, Long priceListVersionId,
-            Long productId);
+    public ProductPrice findByName(Long priceListVersionId, Long productId);
 
     public List<ProductPrice> findByPriceListVersion(
             PriceListVersion priceListVersion);

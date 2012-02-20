@@ -11,6 +11,6 @@ import net.nan21.dnet.module.ad.system.domain.entity.BusinessObject;
 
 public interface IBusinessObjectService extends IEntityService<BusinessObject> {
 
-    public BusinessObject findByName(Long clientId, String name);
+    public BusinessObject findByName(String name);
 
 }

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.system.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.system.business.service.ISysDataSourceService;
 import net.nan21.dnet.module.ad.system.domain.entity.SysDsField;
@@ -31,17 +32,17 @@ public class SysDataSourceService extends AbstractEntityService<SysDataSource>
         return SysDataSource.class;
     }
 
-    public SysDataSource findByName(Long clientId, String name) {
+    public SysDataSource findByName(String name) {
         return (SysDataSource) this.em
                 .createNamedQuery(SysDataSource.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
-    public SysDataSource findByModel(Long clientId, String model) {
+    public SysDataSource findByModel(String model) {
         return (SysDataSource) this.em
                 .createNamedQuery(SysDataSource.NQ_FIND_BY_MODEL)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pModel", model).getSingleResult();
     }
 
@@ -52,8 +53,9 @@ public class SysDataSourceService extends AbstractEntityService<SysDataSource>
     public List<SysDataSource> findByFieldsId(Long fieldsId) {
         return (List<SysDataSource>) this.em
                 .createQuery(
-                        "select distinct e from SysDataSource e , IN (e.fields) c where c.id = :pFieldsId",
+                        "select distinct e from SysDataSource e , IN (e.fields) c where e.clientId = :pClientId and c.id = :pFieldsId",
                         SysDataSource.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pFieldsId", fieldsId).getResultList();
     }
 
@@ -64,8 +66,9 @@ public class SysDataSourceService extends AbstractEntityService<SysDataSource>
     public List<SysDataSource> findByServiceMethodsId(Long serviceMethodsId) {
         return (List<SysDataSource>) this.em
                 .createQuery(
-                        "select distinct e from SysDataSource e , IN (e.serviceMethods) c where c.id = :pServiceMethodsId",
+                        "select distinct e from SysDataSource e , IN (e.serviceMethods) c where e.clientId = :pClientId and c.id = :pServiceMethodsId",
                         SysDataSource.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pServiceMethodsId", serviceMethodsId)
                 .getResultList();
     }

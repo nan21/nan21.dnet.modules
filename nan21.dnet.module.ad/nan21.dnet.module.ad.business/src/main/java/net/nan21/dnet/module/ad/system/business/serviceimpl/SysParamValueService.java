@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.system.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.system.business.service.ISysParamValueService;
 import net.nan21.dnet.module.ad.system.domain.entity.SysParam;
@@ -37,8 +38,9 @@ public class SysParamValueService extends AbstractEntityService<SysParamValue>
     public List<SysParamValue> findBySysParamId(Long sysParamId) {
         return (List<SysParamValue>) this.em
                 .createQuery(
-                        "select e from SysParamValue e where e.sysParam.id = :pSysParamId",
+                        "select e from SysParamValue e where e.clientId = :pClientId and e.sysParam.id = :pSysParamId",
                         SysParamValue.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSysParamId", sysParamId).getResultList();
     }
 

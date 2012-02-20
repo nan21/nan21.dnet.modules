@@ -16,8 +16,10 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.Variable;
 public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
         implements IDsConverter<VariableDs, Variable> {
 
-    protected void modelToEntityReferences(VariableDs ds, Variable e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(VariableDs ds, Variable e,
+            boolean isInsert) throws Exception {
+
         if (ds.getElementId() != null) {
             if (e.getElement() == null
                     || !e.getElement().getId().equals(ds.getElementId())) {
@@ -27,6 +29,7 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
         } else {
             this.lookup_element_Element(ds, e);
         }
+
         if (ds.getCrossReferenceId() != null) {
             if (e.getCrossReference() == null
                     || !e.getCrossReference().getId()
@@ -37,6 +40,7 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
         } else {
             this.lookup_crossReference_Element(ds, e);
         }
+
     }
 
     protected void lookup_element_Element(VariableDs ds, Variable e)
@@ -45,7 +49,7 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
             Element x = null;
             try {
                 x = ((IElementService) findEntityService(Element.class))
-                        .findByName(ds.getClientId(), ds.getElement());
+                        .findByName(ds.getElement());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Element` reference:  `element` = "
@@ -65,7 +69,7 @@ public class VariableDsConv extends AbstractDsConverter<VariableDs, Variable>
             Element x = null;
             try {
                 x = ((IElementService) findEntityService(Element.class))
-                        .findByName(ds.getClientId(), ds.getCrossReference());
+                        .findByName(ds.getCrossReference());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Element` reference:  `crossReference` = "

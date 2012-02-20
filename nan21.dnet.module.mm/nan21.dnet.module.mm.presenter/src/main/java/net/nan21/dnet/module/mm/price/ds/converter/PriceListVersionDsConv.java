@@ -17,8 +17,10 @@ public class PriceListVersionDsConv extends
         AbstractDsConverter<PriceListVersionDs, PriceListVersion> implements
         IDsConverter<PriceListVersionDs, PriceListVersion> {
 
+    @Override
     protected void modelToEntityReferences(PriceListVersionDs ds,
-            PriceListVersion e) throws Exception {
+            PriceListVersion e, boolean isInsert) throws Exception {
+
         if (ds.getPriceListId() != null) {
             if (e.getPriceList() == null
                     || !e.getPriceList().getId().equals(ds.getPriceListId())) {
@@ -28,6 +30,7 @@ public class PriceListVersionDsConv extends
         } else {
             this.lookup_priceList_PriceList(ds, e);
         }
+
     }
 
     protected void lookup_priceList_PriceList(PriceListVersionDs ds,
@@ -36,7 +39,7 @@ public class PriceListVersionDsConv extends
             PriceList x = null;
             try {
                 x = ((IPriceListService) findEntityService(PriceList.class))
-                        .findByName(ds.getClientId(), ds.getPriceList());
+                        .findByName(ds.getPriceList());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `PriceList` reference:  `priceList` = "

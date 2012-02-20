@@ -14,7 +14,7 @@ import net.nan21.dnet.module.hr.grade.domain.entity.PayScaleRate;
 
 public interface IPayScaleRateService extends IEntityService<PayScaleRate> {
 
-    public PayScaleRate findByName(Long clientId, String name);
+    public PayScaleRate findByName(String name);
 
     public List<PayScaleRate> findByPayScale(PayScale payScale);
 

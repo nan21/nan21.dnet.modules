@@ -18,8 +18,10 @@ public class EmployeeContactDsConv extends
         AbstractDsConverter<EmployeeContactDs, EmployeeContact> implements
         IDsConverter<EmployeeContactDs, EmployeeContact> {
 
+    @Override
     protected void modelToEntityReferences(EmployeeContactDs ds,
-            EmployeeContact e) throws Exception {
+            EmployeeContact e, boolean isInsert) throws Exception {
+
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -27,6 +29,7 @@ public class EmployeeContactDsConv extends
                         ds.getEmployeeId()));
             }
         }
+
         if (ds.getRelationshipId() != null) {
             if (e.getRelationship() == null
                     || !e.getRelationship().getId()
@@ -38,6 +41,7 @@ public class EmployeeContactDsConv extends
         } else {
             this.lookup_relationship_EmployeeContactRelationship(ds, e);
         }
+
     }
 
     protected void lookup_relationship_EmployeeContactRelationship(
@@ -46,7 +50,7 @@ public class EmployeeContactDsConv extends
             EmployeeContactRelationship x = null;
             try {
                 x = ((IEmployeeContactRelationshipService) findEntityService(EmployeeContactRelationship.class))
-                        .findByName(ds.getClientId(), ds.getRelationship());
+                        .findByName(ds.getRelationship());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `EmployeeContactRelationship` reference:  `relationship` = "

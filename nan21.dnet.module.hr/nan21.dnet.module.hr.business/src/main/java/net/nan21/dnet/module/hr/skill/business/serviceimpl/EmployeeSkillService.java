@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.skill.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 import net.nan21.dnet.module.hr.skill.business.service.IEmployeeSkillService;
@@ -39,8 +40,9 @@ public class EmployeeSkillService extends AbstractEntityService<EmployeeSkill>
     public List<EmployeeSkill> findByEmployeeId(Long employeeId) {
         return (List<EmployeeSkill>) this.em
                 .createQuery(
-                        "select e from EmployeeSkill e where e.employee.id = :pEmployeeId",
+                        "select e from EmployeeSkill e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
                         EmployeeSkill.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();
     }
 
@@ -51,9 +53,10 @@ public class EmployeeSkillService extends AbstractEntityService<EmployeeSkill>
     public List<EmployeeSkill> findBySkillId(Long skillId) {
         return (List<EmployeeSkill>) this.em
                 .createQuery(
-                        "select e from EmployeeSkill e where e.skill.id = :pSkillId",
-                        EmployeeSkill.class).setParameter("pSkillId", skillId)
-                .getResultList();
+                        "select e from EmployeeSkill e where e.clientId = :pClientId and  e.skill.id = :pSkillId",
+                        EmployeeSkill.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pSkillId", skillId).getResultList();
     }
 
     public List<EmployeeSkill> findBySkillLevel(RatingLevel skillLevel) {
@@ -63,8 +66,9 @@ public class EmployeeSkillService extends AbstractEntityService<EmployeeSkill>
     public List<EmployeeSkill> findBySkillLevelId(Long skillLevelId) {
         return (List<EmployeeSkill>) this.em
                 .createQuery(
-                        "select e from EmployeeSkill e where e.skillLevel.id = :pSkillLevelId",
+                        "select e from EmployeeSkill e where e.clientId = :pClientId and  e.skillLevel.id = :pSkillLevelId",
                         EmployeeSkill.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSkillLevelId", skillLevelId).getResultList();
     }
 

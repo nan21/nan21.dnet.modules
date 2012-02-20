@@ -21,8 +21,11 @@ public class ProductAttributeGroupAttributeDsConv
         implements
         IDsConverter<ProductAttributeGroupAttributeDs, ProductAttributeGroupAttribute> {
 
+    @Override
     protected void modelToEntityReferences(ProductAttributeGroupAttributeDs ds,
-            ProductAttributeGroupAttribute e) throws Exception {
+            ProductAttributeGroupAttribute e, boolean isInsert)
+            throws Exception {
+
         if (ds.getGroupId() != null) {
             if (e.getGroup() == null
                     || !e.getGroup().getId().equals(ds.getGroupId())) {
@@ -32,6 +35,7 @@ public class ProductAttributeGroupAttributeDsConv
         } else {
             this.lookup_group_ProductAttributeGroup(ds, e);
         }
+
         if (ds.getAttributeId() != null) {
             if (e.getAttribute() == null
                     || !e.getAttribute().getId().equals(ds.getAttributeId())) {
@@ -41,6 +45,7 @@ public class ProductAttributeGroupAttributeDsConv
         } else {
             this.lookup_attribute_ProductAttribute(ds, e);
         }
+
     }
 
     protected void lookup_group_ProductAttributeGroup(
@@ -50,7 +55,7 @@ public class ProductAttributeGroupAttributeDsConv
             ProductAttributeGroup x = null;
             try {
                 x = ((IProductAttributeGroupService) findEntityService(ProductAttributeGroup.class))
-                        .findByName(ds.getClientId(), ds.getGroup());
+                        .findByName(ds.getGroup());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProductAttributeGroup` reference:  `group` = "
@@ -70,7 +75,7 @@ public class ProductAttributeGroupAttributeDsConv
             ProductAttribute x = null;
             try {
                 x = ((IProductAttributeService) findEntityService(ProductAttribute.class))
-                        .findByName(ds.getClientId(), ds.getAttribute());
+                        .findByName(ds.getAttribute());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProductAttribute` reference:  `attribute` = "

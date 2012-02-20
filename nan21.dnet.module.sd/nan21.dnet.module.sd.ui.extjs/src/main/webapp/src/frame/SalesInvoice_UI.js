@@ -25,12 +25,12 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {
 			,handler: this.onBtnUploadAttachment,scope:this,stateManager:{name:"selected_one_clean", dc:"atch" }	})	
 							 	
 		.addDcFilterFormView("inv",{ name:"invFilter", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter",height:150})	 
-		.addDcView("inv",{ name:"invList", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$List"})	 
+		.addDcGridView("inv",{ name:"invList", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$List"})	 
 		.addDcFormView("inv",{ name:"invEdit", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Edit",height:150})	 
-		.addDcView("item",{ name:"itemEditList", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem$EditList", frame:true,title:"Items"})	 
-		.addDcView("note",{ name:"noteList", xtype:"net.nan21.dnet.module.ad.data.dc.Note$List",width:300})	 
+		.addDcEditGridView("item",{ name:"itemEditList", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem$EditList", frame:true,title:"Items"})	 
+		.addDcGridView("note",{ name:"noteList", xtype:"net.nan21.dnet.module.ad.data.dc.Note$List",width:300})	 
 		.addDcFormView("note",{ name:"noteEdit", xtype:"net.nan21.dnet.module.ad.data.dc.Note$Edit"})	 
-		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", frame:true,title:"Attachments",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnViewAttachment") ,this._elems_.get("btnUploadAttachment") ]}]})	 
+		.addDcEditGridView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", frame:true,title:"Attachments",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnViewAttachment") ,this._elems_.get("btnUploadAttachment") ]}]})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
 		.addPanel({name: "invDetailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 

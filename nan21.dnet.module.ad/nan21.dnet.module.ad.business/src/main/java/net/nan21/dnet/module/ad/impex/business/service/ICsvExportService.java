@@ -13,7 +13,7 @@ import net.nan21.dnet.module.ad.impex.domain.entity.CsvExport;
 
 public interface ICsvExportService extends IEntityService<CsvExport> {
 
-    public CsvExport findByName(Long clientId, String name);
+    public CsvExport findByName(String name);
 
     public List<CsvExport> findByFields(CsvExportField fields);
 

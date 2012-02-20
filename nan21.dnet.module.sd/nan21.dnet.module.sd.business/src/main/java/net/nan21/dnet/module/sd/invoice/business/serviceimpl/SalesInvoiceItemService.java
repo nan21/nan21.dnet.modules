@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.sd.invoice.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
@@ -38,8 +39,9 @@ public class SalesInvoiceItemService extends
     public List<SalesInvoiceItem> findByInvoiceId(Long invoiceId) {
         return (List<SalesInvoiceItem>) this.em
                 .createQuery(
-                        "select e from SalesInvoiceItem e where e.invoice.id = :pInvoiceId",
+                        "select e from SalesInvoiceItem e where e.clientId = :pClientId and  e.invoice.id = :pInvoiceId",
                         SalesInvoiceItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pInvoiceId", invoiceId).getResultList();
     }
 
@@ -50,9 +52,10 @@ public class SalesInvoiceItemService extends
     public List<SalesInvoiceItem> findByItemId(Long itemId) {
         return (List<SalesInvoiceItem>) this.em
                 .createQuery(
-                        "select e from SalesInvoiceItem e where e.item.id = :pItemId",
-                        SalesInvoiceItem.class).setParameter("pItemId", itemId)
-                .getResultList();
+                        "select e from SalesInvoiceItem e where e.clientId = :pClientId and  e.item.id = :pItemId",
+                        SalesInvoiceItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pItemId", itemId).getResultList();
     }
 
     public List<SalesInvoiceItem> findByUom(Uom uom) {
@@ -62,9 +65,10 @@ public class SalesInvoiceItemService extends
     public List<SalesInvoiceItem> findByUomId(Long uomId) {
         return (List<SalesInvoiceItem>) this.em
                 .createQuery(
-                        "select e from SalesInvoiceItem e where e.uom.id = :pUomId",
-                        SalesInvoiceItem.class).setParameter("pUomId", uomId)
-                .getResultList();
+                        "select e from SalesInvoiceItem e where e.clientId = :pClientId and  e.uom.id = :pUomId",
+                        SalesInvoiceItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pUomId", uomId).getResultList();
     }
 
 }

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.system.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.system.business.service.ISysDsEventService;
 import net.nan21.dnet.module.ad.system.domain.entity.SysDataSource;
@@ -30,20 +31,18 @@ public class SysDsEventService extends AbstractEntityService<SysDsEvent>
         return SysDsEvent.class;
     }
 
-    public SysDsEvent findByName(Long clientId, SysDataSource dataSource,
-            String eventType) {
+    public SysDsEvent findByName(SysDataSource dataSource, String eventType) {
         return (SysDsEvent) this.em
                 .createNamedQuery(SysDsEvent.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pDataSource", dataSource)
                 .setParameter("pEventType", eventType).getSingleResult();
     }
 
-    public SysDsEvent findByName(Long clientId, Long dataSourceId,
-            String eventType) {
+    public SysDsEvent findByName(Long dataSourceId, String eventType) {
         return (SysDsEvent) this.em
                 .createNamedQuery(SysDsEvent.NQ_FIND_BY_NAME_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pDataSourceId", dataSourceId)
                 .setParameter("pEventType", eventType).getSingleResult();
     }
@@ -55,8 +54,9 @@ public class SysDsEventService extends AbstractEntityService<SysDsEvent>
     public List<SysDsEvent> findByDataSourceId(Long dataSourceId) {
         return (List<SysDsEvent>) this.em
                 .createQuery(
-                        "select e from SysDsEvent e where e.dataSource.id = :pDataSourceId",
+                        "select e from SysDsEvent e where e.clientId = :pClientId and e.dataSource.id = :pDataSourceId",
                         SysDsEvent.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pDataSourceId", dataSourceId).getResultList();
     }
 

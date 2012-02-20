@@ -42,8 +42,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "COUNTRY_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = CompanyLegalForm.NQ_FIND_BY_ID, query = "SELECT e FROM CompanyLegalForm e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = CompanyLegalForm.NQ_FIND_BY_IDS, query = "SELECT e FROM CompanyLegalForm e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CompanyLegalForm.NQ_FIND_BY_ID, query = "SELECT e FROM CompanyLegalForm e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = CompanyLegalForm.NQ_FIND_BY_IDS, query = "SELECT e FROM CompanyLegalForm e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = CompanyLegalForm.NQ_FIND_BY_NAME, query = "SELECT e FROM CompanyLegalForm e WHERE e.clientId = :pClientId and  e.country = :pCountry and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "CompanyLegalForm.findByName_PRIMITIVE", query = "SELECT e FROM CompanyLegalForm e WHERE e.clientId = :pClientId and  e.country.id = :pCountryId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CompanyLegalForm implements Serializable, IModelWithId,

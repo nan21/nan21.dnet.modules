@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.employee.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.employee.business.service.IEducationTypeService;
 
@@ -28,10 +29,10 @@ public class EducationTypeService extends AbstractEntityService<EducationType>
         return EducationType.class;
     }
 
-    public EducationType findByName(Long clientId, String name) {
+    public EducationType findByName(String name) {
         return (EducationType) this.em
                 .createNamedQuery(EducationType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

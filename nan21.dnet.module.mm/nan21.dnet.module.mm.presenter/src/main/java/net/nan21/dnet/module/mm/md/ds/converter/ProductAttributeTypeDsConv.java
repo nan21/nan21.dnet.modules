@@ -17,8 +17,10 @@ public class ProductAttributeTypeDsConv extends
         AbstractDsConverter<ProductAttributeTypeDs, ProductAttributeType>
         implements IDsConverter<ProductAttributeTypeDs, ProductAttributeType> {
 
+    @Override
     protected void modelToEntityReferences(ProductAttributeTypeDs ds,
-            ProductAttributeType e) throws Exception {
+            ProductAttributeType e, boolean isInsert) throws Exception {
+
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
@@ -28,6 +30,7 @@ public class ProductAttributeTypeDsConv extends
         } else {
             this.lookup_category_ProductAttributeCategory(ds, e);
         }
+
     }
 
     protected void lookup_category_ProductAttributeCategory(
@@ -36,7 +39,7 @@ public class ProductAttributeTypeDsConv extends
             ProductAttributeCategory x = null;
             try {
                 x = ((IProductAttributeCategoryService) findEntityService(ProductAttributeCategory.class))
-                        .findByName(ds.getClientId(), ds.getCategory());
+                        .findByName(ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProductAttributeCategory` reference:  `category` = "

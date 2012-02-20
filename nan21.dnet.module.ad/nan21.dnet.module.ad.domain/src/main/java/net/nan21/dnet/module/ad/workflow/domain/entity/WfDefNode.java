@@ -47,8 +47,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = WfDefNode.NQ_FIND_BY_ID, query = "SELECT e FROM WfDefNode e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = WfDefNode.NQ_FIND_BY_IDS, query = "SELECT e FROM WfDefNode e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = WfDefNode.NQ_FIND_BY_ID, query = "SELECT e FROM WfDefNode e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = WfDefNode.NQ_FIND_BY_IDS, query = "SELECT e FROM WfDefNode e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = WfDefNode.NQ_FIND_BY_NAME, query = "SELECT e FROM WfDefNode e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class WfDefNode implements Serializable, IModelWithId,
         IModelWithClientId {

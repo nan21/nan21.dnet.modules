@@ -41,7 +41,7 @@ public class ActTaskInstanceHistoryService extends
             String processDefinitionId) {
         return (List<ActTaskInstanceHistory>) this.em
                 .createQuery(
-                        "select e from ActTaskInstanceHistory e where e.processDefinition.id = :pProcessDefinitionId",
+                        "select e from ActTaskInstanceHistory e where  e.processDefinition.id = :pProcessDefinitionId",
                         ActTaskInstanceHistory.class)
                 .setParameter("pProcessDefinitionId", processDefinitionId)
                 .getResultList();
@@ -55,7 +55,7 @@ public class ActTaskInstanceHistoryService extends
     public List<ActTaskInstanceHistory> findByParentId(String parentId) {
         return (List<ActTaskInstanceHistory>) this.em
                 .createQuery(
-                        "select e from ActTaskInstanceHistory e where e.parent.id = :pParentId",
+                        "select e from ActTaskInstanceHistory e where  e.parent.id = :pParentId",
                         ActTaskInstanceHistory.class)
                 .setParameter("pParentId", parentId).getResultList();
     }

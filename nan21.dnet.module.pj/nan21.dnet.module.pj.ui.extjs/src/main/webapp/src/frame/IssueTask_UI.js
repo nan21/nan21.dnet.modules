@@ -30,14 +30,14 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssueTask_UI", {
 			,handler: this.onBtnIssueUi,scope:this,stateManager:{name:"selected_one", dc:"issue" }	})	
 							 	
 		.addDcFilterFormView("task",{ name:"taskFilter", xtype:"net.nan21.dnet.module.pj.md.dc.IssueTask$Filter",height:180})	 
-		.addDcView("task",{ name:"taskList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueTask$List"})	 
+		.addDcGridView("task",{ name:"taskList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueTask$List"})	 
 		.addDcFormView("task",{ name:"taskEdit", xtype:"net.nan21.dnet.module.pj.md.dc.IssueTask$Edit",height:180})	 
 		.addDcFormView("issue",{ name:"issueView", xtype:"net.nan21.dnet.module.pj.md.dc.Issue$View"})	 
-		.addDcView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", frame:true,title:"Issue attachments",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnViewAttachment") ]}]})	 
-		.addDcView("note",{ name:"noteList", xtype:"net.nan21.dnet.module.ad.data.dc.Note$List",width:300})	 
+		.addDcEditGridView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", frame:true,title:"Issue attachments",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnViewAttachment") ]}]})	 
+		.addDcGridView("note",{ name:"noteList", xtype:"net.nan21.dnet.module.ad.data.dc.Note$List",width:300})	 
 		.addDcFormView("note",{ name:"noteEdit", xtype:"net.nan21.dnet.module.ad.data.dc.Note$Edit"})	 
 		.addDcFilterFormView("link",{ name:"linkFilter", xtype:"net.nan21.dnet.module.pj.md.dc.IssueLink$Filter"})	 
-		.addDcView("link",{ name:"linkEditList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList",title:"Issue links"})	 
+		.addDcGridView("link",{ name:"linkEditList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList",title:"Issue links"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
 		.addPanel({name: "taskDetailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 

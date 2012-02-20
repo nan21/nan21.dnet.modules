@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.md.business.service.IProductManufacturerService;
 
@@ -29,17 +30,17 @@ public class ProductManufacturerService extends
         return ProductManufacturer.class;
     }
 
-    public ProductManufacturer findByCode(Long clientId, String code) {
+    public ProductManufacturer findByCode(String code) {
         return (ProductManufacturer) this.em
                 .createNamedQuery(ProductManufacturer.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public ProductManufacturer findByName(Long clientId, String name) {
+    public ProductManufacturer findByName(String name) {
         return (ProductManufacturer) this.em
                 .createNamedQuery(ProductManufacturer.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

@@ -20,8 +20,10 @@ public class SalesInvoiceItemDsConv extends
         AbstractDsConverter<SalesInvoiceItemDs, SalesInvoiceItem> implements
         IDsConverter<SalesInvoiceItemDs, SalesInvoiceItem> {
 
+    @Override
     protected void modelToEntityReferences(SalesInvoiceItemDs ds,
-            SalesInvoiceItem e) throws Exception {
+            SalesInvoiceItem e, boolean isInsert) throws Exception {
+
         if (ds.getInvoiceId() != null) {
             if (e.getInvoice() == null
                     || !e.getInvoice().getId().equals(ds.getInvoiceId())) {
@@ -29,6 +31,7 @@ public class SalesInvoiceItemDsConv extends
                         ds.getInvoiceId()));
             }
         }
+
         if (ds.getUomId() != null) {
             if (e.getUom() == null || !e.getUom().getId().equals(ds.getUomId())) {
                 e.setUom((Uom) this.em.find(Uom.class, ds.getUomId()));
@@ -36,6 +39,7 @@ public class SalesInvoiceItemDsConv extends
         } else {
             this.lookup_uom_Uom(ds, e);
         }
+
         if (ds.getItemId() != null) {
             if (e.getItem() == null
                     || !e.getItem().getId().equals(ds.getItemId())) {
@@ -44,6 +48,7 @@ public class SalesInvoiceItemDsConv extends
         } else {
             this.lookup_item_Product(ds, e);
         }
+
     }
 
     protected void lookup_uom_Uom(SalesInvoiceItemDs ds, SalesInvoiceItem e)
@@ -51,8 +56,8 @@ public class SalesInvoiceItemDsConv extends
         if (ds.getUomCode() != null && !ds.getUomCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) findEntityService(Uom.class)).findByCode(
-                        ds.getClientId(), ds.getUomCode());
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(ds
+                        .getUomCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Uom` reference:  `uomCode` = "
@@ -71,7 +76,7 @@ public class SalesInvoiceItemDsConv extends
             Product x = null;
             try {
                 x = ((IProductService) findEntityService(Product.class))
-                        .findByCode(ds.getClientId(), ds.getItemCode());
+                        .findByCode(ds.getItemCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Product` reference:  `itemCode` = "

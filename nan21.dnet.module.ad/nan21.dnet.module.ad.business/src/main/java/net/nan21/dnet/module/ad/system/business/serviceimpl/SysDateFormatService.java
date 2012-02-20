@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.ad.system.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.system.business.service.ISysDateFormatService;
 
@@ -28,10 +29,10 @@ public class SysDateFormatService extends AbstractEntityService<SysDateFormat>
         return SysDateFormat.class;
     }
 
-    public SysDateFormat findByName(Long clientId, String name) {
+    public SysDateFormat findByName(String name) {
         return (SysDateFormat) this.em
                 .createNamedQuery(SysDateFormat.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

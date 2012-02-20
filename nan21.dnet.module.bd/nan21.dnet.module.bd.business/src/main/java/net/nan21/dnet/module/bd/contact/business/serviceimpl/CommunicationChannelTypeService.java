@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bd.contact.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.contact.business.service.ICommunicationChannelTypeService;
 
@@ -29,10 +30,10 @@ public class CommunicationChannelTypeService extends
         return CommunicationChannelType.class;
     }
 
-    public CommunicationChannelType findByName(Long clientId, String name) {
+    public CommunicationChannelType findByName(String name) {
         return (CommunicationChannelType) this.em
                 .createNamedQuery(CommunicationChannelType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

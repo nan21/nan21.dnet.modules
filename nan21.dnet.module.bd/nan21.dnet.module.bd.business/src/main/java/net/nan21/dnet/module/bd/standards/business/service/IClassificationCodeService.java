@@ -14,17 +14,15 @@ import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode;
 public interface IClassificationCodeService extends
         IEntityService<ClassificationCode> {
 
-    public ClassificationCode findBySyscode(Long clientId,
-            ClassificationSystem classSystem, String code);
-
-    public ClassificationCode findBySyscode(Long clientId, Long classSystemId,
+    public ClassificationCode findBySyscode(ClassificationSystem classSystem,
             String code);
 
-    public ClassificationCode findBySysname(Long clientId,
-            ClassificationSystem classSystem, String name);
+    public ClassificationCode findBySyscode(Long classSystemId, String code);
 
-    public ClassificationCode findBySysname(Long clientId, Long classSystemId,
+    public ClassificationCode findBySysname(ClassificationSystem classSystem,
             String name);
+
+    public ClassificationCode findBySysname(Long classSystemId, String name);
 
     public List<ClassificationCode> findByClassSystem(
             ClassificationSystem classSystem);

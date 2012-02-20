@@ -11,6 +11,6 @@ import net.nan21.dnet.module.bd.uom.domain.entity.UomType;
 
 public interface IUomTypeService extends IEntityService<UomType> {
 
-    public UomType findByName(Long clientId, String name);
+    public UomType findByName(String name);
 
 }

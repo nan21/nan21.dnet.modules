@@ -20,8 +20,10 @@ public class EmployeeSkillDsConv extends
         AbstractDsConverter<EmployeeSkillDs, EmployeeSkill> implements
         IDsConverter<EmployeeSkillDs, EmployeeSkill> {
 
-    protected void modelToEntityReferences(EmployeeSkillDs ds, EmployeeSkill e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(EmployeeSkillDs ds, EmployeeSkill e,
+            boolean isInsert) throws Exception {
+
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -29,6 +31,7 @@ public class EmployeeSkillDsConv extends
                         ds.getEmployeeId()));
             }
         }
+
         if (ds.getSkillId() != null) {
             if (e.getSkill() == null
                     || !e.getSkill().getId().equals(ds.getSkillId())) {
@@ -37,6 +40,7 @@ public class EmployeeSkillDsConv extends
         } else {
             this.lookup_skill_Skill(ds, e);
         }
+
         if (ds.getSkillLevelId() != null) {
             if (e.getSkillLevel() == null
                     || !e.getSkillLevel().getId().equals(ds.getSkillLevelId())) {
@@ -46,6 +50,7 @@ public class EmployeeSkillDsConv extends
         } else {
             this.lookup_skillLevel_RatingLevel(ds, e);
         }
+
     }
 
     protected void lookup_skill_Skill(EmployeeSkillDs ds, EmployeeSkill e)
@@ -54,7 +59,7 @@ public class EmployeeSkillDsConv extends
             Skill x = null;
             try {
                 x = ((ISkillService) findEntityService(Skill.class))
-                        .findByName(ds.getClientId(), ds.getSkill());
+                        .findByName(ds.getSkill());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Skill` reference:  `skill` = "
@@ -74,8 +79,7 @@ public class EmployeeSkillDsConv extends
             RatingLevel x = null;
             try {
                 x = ((IRatingLevelService) findEntityService(RatingLevel.class))
-                        .findByName(ds.getClientId(), ds.getRatingScaleId(),
-                                ds.getSkillLevel());
+                        .findByName(ds.getRatingScaleId(), ds.getSkillLevel());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `RatingLevel` reference:  `ratingScaleId` = "

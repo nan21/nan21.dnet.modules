@@ -11,8 +11,8 @@ import net.nan21.dnet.module.hr.grade.domain.entity.Grade;
 
 public interface IGradeService extends IEntityService<Grade> {
 
-    public Grade findByCode(Long clientId, String code);
+    public Grade findByCode(String code);
 
-    public Grade findByName(Long clientId, String name);
+    public Grade findByName(String name);
 
 }

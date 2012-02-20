@@ -17,8 +17,10 @@ public class WorkRequirementDsConv extends
         AbstractDsConverter<WorkRequirementDs, WorkRequirement> implements
         IDsConverter<WorkRequirementDs, WorkRequirement> {
 
+    @Override
     protected void modelToEntityReferences(WorkRequirementDs ds,
-            WorkRequirement e) throws Exception {
+            WorkRequirement e, boolean isInsert) throws Exception {
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -28,6 +30,7 @@ public class WorkRequirementDsConv extends
         } else {
             this.lookup_type_WorkRequirementType(ds, e);
         }
+
     }
 
     protected void lookup_type_WorkRequirementType(WorkRequirementDs ds,
@@ -36,7 +39,7 @@ public class WorkRequirementDsConv extends
             WorkRequirementType x = null;
             try {
                 x = ((IWorkRequirementTypeService) findEntityService(WorkRequirementType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `WorkRequirementType` reference:  `type` = "

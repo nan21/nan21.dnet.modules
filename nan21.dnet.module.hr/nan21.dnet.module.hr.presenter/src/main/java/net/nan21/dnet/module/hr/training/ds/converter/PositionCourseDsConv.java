@@ -19,8 +19,10 @@ public class PositionCourseDsConv extends
         AbstractDsConverter<PositionCourseDs, PositionCourse> implements
         IDsConverter<PositionCourseDs, PositionCourse> {
 
-    protected void modelToEntityReferences(PositionCourseDs ds, PositionCourse e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(PositionCourseDs ds,
+            PositionCourse e, boolean isInsert) throws Exception {
+
         if (ds.getPositionId() != null) {
             if (e.getPosition() == null
                     || !e.getPosition().getId().equals(ds.getPositionId())) {
@@ -30,6 +32,7 @@ public class PositionCourseDsConv extends
         } else {
             this.lookup_position_Position(ds, e);
         }
+
         if (ds.getCourseId() != null) {
             if (e.getCourse() == null
                     || !e.getCourse().getId().equals(ds.getCourseId())) {
@@ -39,6 +42,7 @@ public class PositionCourseDsConv extends
         } else {
             this.lookup_course_Course(ds, e);
         }
+
     }
 
     protected void lookup_position_Position(PositionCourseDs ds,
@@ -47,7 +51,7 @@ public class PositionCourseDsConv extends
             Position x = null;
             try {
                 x = ((IPositionService) findEntityService(Position.class))
-                        .findByCode(ds.getClientId(), ds.getPositionCode());
+                        .findByCode(ds.getPositionCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Position` reference:  `positionCode` = "
@@ -66,7 +70,7 @@ public class PositionCourseDsConv extends
             Course x = null;
             try {
                 x = ((ICourseService) findEntityService(Course.class))
-                        .findByCode(ds.getClientId(), ds.getCourseCode());
+                        .findByCode(ds.getCourseCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Course` reference:  `courseCode` = "

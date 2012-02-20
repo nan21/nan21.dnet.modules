@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bd.standards.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.standards.business.service.IClassificationSystemService;
 
@@ -29,17 +30,17 @@ public class ClassificationSystemService extends
         return ClassificationSystem.class;
     }
 
-    public ClassificationSystem findByCode(Long clientId, String code) {
+    public ClassificationSystem findByCode(String code) {
         return (ClassificationSystem) this.em
                 .createNamedQuery(ClassificationSystem.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public ClassificationSystem findByName(Long clientId, String name) {
+    public ClassificationSystem findByName(String name) {
         return (ClassificationSystem) this.em
                 .createNamedQuery(ClassificationSystem.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

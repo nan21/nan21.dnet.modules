@@ -11,8 +11,8 @@ import net.nan21.dnet.module.bp.base.domain.entity.Bank;
 
 public interface IBankService extends IEntityService<Bank> {
 
-    public Bank findByCode(Long clientId, String code);
+    public Bank findByCode(String code);
 
-    public Bank findByName(Long clientId, String name);
+    public Bank findByName(String name);
 
 }

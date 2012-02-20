@@ -18,8 +18,10 @@ public class EmployeeEducationDsConv extends
         AbstractDsConverter<EmployeeEducationDs, EmployeeEducation> implements
         IDsConverter<EmployeeEducationDs, EmployeeEducation> {
 
+    @Override
     protected void modelToEntityReferences(EmployeeEducationDs ds,
-            EmployeeEducation e) throws Exception {
+            EmployeeEducation e, boolean isInsert) throws Exception {
+
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -27,6 +29,7 @@ public class EmployeeEducationDsConv extends
                         ds.getEmployeeId()));
             }
         }
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -36,6 +39,7 @@ public class EmployeeEducationDsConv extends
         } else {
             this.lookup_type_EducationType(ds, e);
         }
+
     }
 
     protected void lookup_type_EducationType(EmployeeEducationDs ds,
@@ -44,7 +48,7 @@ public class EmployeeEducationDsConv extends
             EducationType x = null;
             try {
                 x = ((IEducationTypeService) findEntityService(EducationType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `EducationType` reference:  `type` = "

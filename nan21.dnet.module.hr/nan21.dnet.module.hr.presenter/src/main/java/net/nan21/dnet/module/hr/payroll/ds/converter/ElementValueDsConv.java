@@ -20,8 +20,10 @@ public class ElementValueDsConv extends
         AbstractDsConverter<ElementValueDs, ElementValue> implements
         IDsConverter<ElementValueDs, ElementValue> {
 
-    protected void modelToEntityReferences(ElementValueDs ds, ElementValue e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ElementValueDs ds, ElementValue e,
+            boolean isInsert) throws Exception {
+
         if (ds.getElementId() != null) {
             if (e.getElement() == null
                     || !e.getElement().getId().equals(ds.getElementId())) {
@@ -31,6 +33,7 @@ public class ElementValueDsConv extends
         } else {
             this.lookup_element_Element(ds, e);
         }
+
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -38,6 +41,7 @@ public class ElementValueDsConv extends
                         ds.getEmployeeId()));
             }
         }
+
         if (ds.getPeriodId() != null) {
             if (e.getPeriod() == null
                     || !e.getPeriod().getId().equals(ds.getPeriodId())) {
@@ -47,6 +51,7 @@ public class ElementValueDsConv extends
         } else {
             this.lookup_period_PayrollPeriod(ds, e);
         }
+
     }
 
     protected void lookup_element_Element(ElementValueDs ds, ElementValue e)
@@ -55,7 +60,7 @@ public class ElementValueDsConv extends
             Element x = null;
             try {
                 x = ((IElementService) findEntityService(Element.class))
-                        .findByName(ds.getClientId(), ds.getElement());
+                        .findByName(ds.getElement());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Element` reference:  `element` = "
@@ -74,7 +79,7 @@ public class ElementValueDsConv extends
             PayrollPeriod x = null;
             try {
                 x = ((IPayrollPeriodService) findEntityService(PayrollPeriod.class))
-                        .findByName(ds.getClientId(), ds.getPeriod());
+                        .findByName(ds.getPeriod());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `PayrollPeriod` reference:  `period` = "

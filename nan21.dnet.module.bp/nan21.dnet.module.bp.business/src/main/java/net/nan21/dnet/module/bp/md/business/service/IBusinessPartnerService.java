@@ -15,7 +15,7 @@ import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 public interface IBusinessPartnerService extends
         IEntityService<BusinessPartner> {
 
-    public BusinessPartner findByCode(Long clientId, String code);
+    public BusinessPartner findByCode(String code);
 
     public List<BusinessPartner> findByCountry(Country country);
 

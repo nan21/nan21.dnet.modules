@@ -16,8 +16,10 @@ public class PayScalePointDsConv extends
         AbstractDsConverter<PayScalePointDs, PayScalePoint> implements
         IDsConverter<PayScalePointDs, PayScalePoint> {
 
-    protected void modelToEntityReferences(PayScalePointDs ds, PayScalePoint e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(PayScalePointDs ds, PayScalePoint e,
+            boolean isInsert) throws Exception {
+
         if (ds.getPayScaleId() != null) {
             if (e.getPayScale() == null
                     || !e.getPayScale().getId().equals(ds.getPayScaleId())) {
@@ -25,6 +27,7 @@ public class PayScalePointDsConv extends
                         ds.getPayScaleId()));
             }
         }
+
     }
 
 }

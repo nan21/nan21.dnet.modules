@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.geo.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.business.service.IRegionService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
@@ -30,20 +31,18 @@ public class RegionService extends AbstractEntityService<Region> implements
         return Region.class;
     }
 
-    public Region findByCodeAndCountry(Long clientId, Country country,
-            String code) {
+    public Region findByCodeAndCountry(Country country, String code) {
         return (Region) this.em
                 .createNamedQuery(Region.NQ_FIND_BY_CODEANDCOUNTRY)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCountry", country).setParameter("pCode", code)
                 .getSingleResult();
     }
 
-    public Region findByCodeAndCountry(Long clientId, Long countryId,
-            String code) {
+    public Region findByCodeAndCountry(Long countryId, String code) {
         return (Region) this.em
                 .createNamedQuery(Region.NQ_FIND_BY_CODEANDCOUNTRY_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCountryId", countryId)
                 .setParameter("pCode", code).getSingleResult();
     }
@@ -55,9 +54,10 @@ public class RegionService extends AbstractEntityService<Region> implements
     public List<Region> findByCountryId(Long countryId) {
         return (List<Region>) this.em
                 .createQuery(
-                        "select e from Region e where e.country.id = :pCountryId",
-                        Region.class).setParameter("pCountryId", countryId)
-                .getResultList();
+                        "select e from Region e where e.clientId = :pClientId and  e.country.id = :pCountryId",
+                        Region.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pCountryId", countryId).getResultList();
     }
 
 }

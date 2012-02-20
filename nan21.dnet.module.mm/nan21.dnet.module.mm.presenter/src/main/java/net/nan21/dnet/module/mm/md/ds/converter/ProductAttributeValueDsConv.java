@@ -6,7 +6,6 @@
 package net.nan21.dnet.module.mm.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttributeGroupAttributeService;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttributeService;
 import net.nan21.dnet.module.mm.md.business.service.IProductService;
@@ -22,8 +21,10 @@ public class ProductAttributeValueDsConv extends
         AbstractDsConverter<ProductAttributeValueDs, ProductAttributeValue>
         implements IDsConverter<ProductAttributeValueDs, ProductAttributeValue> {
 
+    @Override
     protected void modelToEntityReferences(ProductAttributeValueDs ds,
-            ProductAttributeValue e) throws Exception {
+            ProductAttributeValue e, boolean isInsert) throws Exception {
+
         if (ds.getProductId() != null) {
             if (e.getProduct() == null
                     || !e.getProduct().getId().equals(ds.getProductId())) {
@@ -36,8 +37,7 @@ public class ProductAttributeValueDsConv extends
 
         if (ds.getAttributeId() == null) {
             ProductAttribute x = ((IProductAttributeService) findEntityService(ProductAttribute.class))
-                    .findByName(Session.user.get().getClientId(),
-                            ds.getAttribute());
+                    .findByName(ds.getAttribute());
 
             ds.setAttributeId(x.getId());
         }
@@ -53,6 +53,7 @@ public class ProductAttributeValueDsConv extends
         } else {
             this.lookup_groupAttribute_ProductAttributeGroupAttribute(ds, e);
         }
+
     }
 
     protected void lookup_product_Product(ProductAttributeValueDs ds,
@@ -61,7 +62,7 @@ public class ProductAttributeValueDsConv extends
             Product x = null;
             try {
                 x = ((IProductService) findEntityService(Product.class))
-                        .findByCode(ds.getClientId(), ds.getProductCode());
+                        .findByCode(ds.getProductCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Product` reference:  `productCode` = "
@@ -81,8 +82,7 @@ public class ProductAttributeValueDsConv extends
             ProductAttributeGroupAttribute x = null;
             try {
                 x = ((IProductAttributeGroupAttributeService) findEntityService(ProductAttributeGroupAttribute.class))
-                        .findByName(ds.getClientId(), e.getProduct()
-                                .getAttributeGroup().getId(),
+                        .findByName(e.getProduct().getAttributeGroup().getId(),
                                 ds.getAttributeId());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

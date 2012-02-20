@@ -27,8 +27,10 @@ public class SalesInvoiceDsConv extends
         AbstractDsConverter<SalesInvoiceDs, SalesInvoice> implements
         IDsConverter<SalesInvoiceDs, SalesInvoice> {
 
-    protected void modelToEntityReferences(SalesInvoiceDs ds, SalesInvoice e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(SalesInvoiceDs ds, SalesInvoice e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
@@ -38,6 +40,7 @@ public class SalesInvoiceDsConv extends
         } else {
             this.lookup_currency_Currency(ds, e);
         }
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -47,6 +50,7 @@ public class SalesInvoiceDsConv extends
         } else {
             this.lookup_type_SalesInvoiceType(ds, e);
         }
+
         if (ds.getStatusId() != null) {
             if (e.getStatus() == null
                     || !e.getStatus().getId().equals(ds.getStatusId())) {
@@ -56,6 +60,7 @@ public class SalesInvoiceDsConv extends
         } else {
             this.lookup_status_SalesInvoiceStatus(ds, e);
         }
+
         if (ds.getSupplierId() != null) {
             if (e.getSupplier() == null
                     || !e.getSupplier().getId().equals(ds.getSupplierId())) {
@@ -65,6 +70,7 @@ public class SalesInvoiceDsConv extends
         } else {
             this.lookup_supplier_Organization(ds, e);
         }
+
         if (ds.getCustomerId() != null) {
             if (e.getCustomer() == null
                     || !e.getCustomer().getId().equals(ds.getCustomerId())) {
@@ -74,6 +80,7 @@ public class SalesInvoiceDsConv extends
         } else {
             this.lookup_customer_BusinessPartner(ds, e);
         }
+
         if (ds.getBillToContactId() != null) {
             if (e.getBillToContact() == null
                     || !e.getBillToContact().getId()
@@ -82,6 +89,7 @@ public class SalesInvoiceDsConv extends
                         ds.getBillToContactId()));
             }
         }
+
         if (ds.getBillToLocationId() != null) {
             if (e.getBillToLocation() == null
                     || !e.getBillToLocation().getId()
@@ -90,6 +98,7 @@ public class SalesInvoiceDsConv extends
                         ds.getBillToLocationId()));
             }
         }
+
     }
 
     protected void lookup_currency_Currency(SalesInvoiceDs ds, SalesInvoice e)
@@ -98,7 +107,7 @@ public class SalesInvoiceDsConv extends
             Currency x = null;
             try {
                 x = ((ICurrencyService) findEntityService(Currency.class))
-                        .findByCode(ds.getClientId(), ds.getCurrency());
+                        .findByCode(ds.getCurrency());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Currency` reference:  `currency` = "
@@ -117,7 +126,7 @@ public class SalesInvoiceDsConv extends
             SalesInvoiceType x = null;
             try {
                 x = ((ISalesInvoiceTypeService) findEntityService(SalesInvoiceType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `SalesInvoiceType` reference:  `type` = "
@@ -136,7 +145,7 @@ public class SalesInvoiceDsConv extends
             SalesInvoiceStatus x = null;
             try {
                 x = ((ISalesInvoiceStatusService) findEntityService(SalesInvoiceStatus.class))
-                        .findByName(ds.getClientId(), ds.getStatus());
+                        .findByName(ds.getStatus());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `SalesInvoiceStatus` reference:  `status` = "
@@ -155,7 +164,7 @@ public class SalesInvoiceDsConv extends
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getClientId(), ds.getSupplier());
+                        .findByCode(ds.getSupplier());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Organization` reference:  `supplier` = "
@@ -174,7 +183,7 @@ public class SalesInvoiceDsConv extends
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
-                        .findByCode(ds.getClientId(), ds.getCustomerCode());
+                        .findByCode(ds.getCustomerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `BusinessPartner` reference:  `customerCode` = "

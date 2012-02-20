@@ -17,12 +17,12 @@ Ext.define("net.nan21.dnet.module.hr.training.frame.Course_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("course",{ name:"courseFilter", xtype:"net.nan21.dnet.module.hr.training.dc.Course$Filter",height:120})	 
-		.addDcView("course",{ name:"courseList", xtype:"net.nan21.dnet.module.hr.training.dc.Course$List"})	 
+		.addDcGridView("course",{ name:"courseList", xtype:"net.nan21.dnet.module.hr.training.dc.Course$List"})	 
 		.addDcFormView("course",{ name:"courseEdit", xtype:"net.nan21.dnet.module.hr.training.dc.Course$Edit"})	 
-		.addDcView("job",{ name:"jobList", xtype:"net.nan21.dnet.module.hr.training.dc.JobCourse$CourseCtxEditList", frame:true,title:"Jobs"})	 
-		.addDcView("position",{ name:"positionList", xtype:"net.nan21.dnet.module.hr.training.dc.PositionCourse$CourseCtxEditList", frame:true,title:"Positions"})	 
+		.addDcEditGridView("job",{ name:"jobList", xtype:"net.nan21.dnet.module.hr.training.dc.JobCourse$CourseCtxEditList", frame:true,title:"Jobs"})	 
+		.addDcEditGridView("position",{ name:"positionList", xtype:"net.nan21.dnet.module.hr.training.dc.PositionCourse$CourseCtxEditList", frame:true,title:"Positions"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "details", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:450}}) 	  	 
+		.addPanel({name: "details", layout:"accordion", activeItem:0, id:Ext.id(),width:450}) 	  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	

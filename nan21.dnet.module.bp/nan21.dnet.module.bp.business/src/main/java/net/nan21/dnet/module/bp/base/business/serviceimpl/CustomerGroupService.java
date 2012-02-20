@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bp.base.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bp.base.business.service.ICustomerGroupService;
 import net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod;
@@ -31,17 +32,17 @@ public class CustomerGroupService extends AbstractEntityService<CustomerGroup>
         return CustomerGroup.class;
     }
 
-    public CustomerGroup findByCode(Long clientId, String code) {
+    public CustomerGroup findByCode(String code) {
         return (CustomerGroup) this.em
                 .createNamedQuery(CustomerGroup.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public CustomerGroup findByName(Long clientId, String name) {
+    public CustomerGroup findByName(String name) {
         return (CustomerGroup) this.em
                 .createNamedQuery(CustomerGroup.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -52,8 +53,9 @@ public class CustomerGroupService extends AbstractEntityService<CustomerGroup>
     public List<CustomerGroup> findByPaymentMethodId(Long paymentMethodId) {
         return (List<CustomerGroup>) this.em
                 .createQuery(
-                        "select e from CustomerGroup e where e.paymentMethod.id = :pPaymentMethodId",
+                        "select e from CustomerGroup e where e.clientId = :pClientId and  e.paymentMethod.id = :pPaymentMethodId",
                         CustomerGroup.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPaymentMethodId", paymentMethodId)
                 .getResultList();
     }
@@ -65,8 +67,9 @@ public class CustomerGroupService extends AbstractEntityService<CustomerGroup>
     public List<CustomerGroup> findByPaymentTermId(Long paymentTermId) {
         return (List<CustomerGroup>) this.em
                 .createQuery(
-                        "select e from CustomerGroup e where e.paymentTerm.id = :pPaymentTermId",
+                        "select e from CustomerGroup e where e.clientId = :pClientId and  e.paymentTerm.id = :pPaymentTermId",
                         CustomerGroup.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPaymentTermId", paymentTermId).getResultList();
     }
 

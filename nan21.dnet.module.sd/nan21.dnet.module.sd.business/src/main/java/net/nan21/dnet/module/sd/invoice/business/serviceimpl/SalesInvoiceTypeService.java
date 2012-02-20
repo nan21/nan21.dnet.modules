@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.sd.invoice.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceTypeService;
 
@@ -29,10 +30,10 @@ public class SalesInvoiceTypeService extends
         return SalesInvoiceType.class;
     }
 
-    public SalesInvoiceType findByName(Long clientId, String name) {
+    public SalesInvoiceType findByName(String name) {
         return (SalesInvoiceType) this.em
                 .createNamedQuery(SalesInvoiceType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

@@ -32,8 +32,8 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport$Filter", {
 		.addNumberField({ name:"price", dataIndex:"price",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:250}) 
-		.addPanel({ name:"col2", layout:"form", width:280}) 
-		.addPanel({ name:"col3", layout:"form", width:200, defaults:{
+		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"col3", layout:"form", width:180, defaults:{
 labelAlign:"right",labelWidth:70}}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		

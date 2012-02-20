@@ -16,7 +16,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.UserGroups_UI", {
 			,handler: this.onBtnAsgnUsers,scope:this,stateManager:{name:"selected_one_clean", dc:"dcGroup" }	})	
 							 	
 		.addDcFilterFormView("dcGroup",{ name:"filterGroup", xtype:"net.nan21.dnet.module.ad.usr.dc.UserGroup$Filter",height:120})	 
-		.addDcView("dcGroup",{ name:"elistGroup", xtype:"net.nan21.dnet.module.ad.usr.dc.UserGroup$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnUsers") ]}]})	 
+		.addDcEditGridView("dcGroup",{ name:"elistGroup", xtype:"net.nan21.dnet.module.ad.usr.dc.UserGroup$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnUsers") ]}]})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	

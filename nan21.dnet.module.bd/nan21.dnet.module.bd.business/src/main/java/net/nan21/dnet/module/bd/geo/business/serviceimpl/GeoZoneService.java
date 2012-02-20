@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bd.geo.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.business.service.IGeoZoneService;
 
@@ -28,9 +29,9 @@ public class GeoZoneService extends AbstractEntityService<GeoZone> implements
         return GeoZone.class;
     }
 
-    public GeoZone findByName(Long clientId, String name) {
+    public GeoZone findByName(String name) {
         return (GeoZone) this.em.createNamedQuery(GeoZone.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

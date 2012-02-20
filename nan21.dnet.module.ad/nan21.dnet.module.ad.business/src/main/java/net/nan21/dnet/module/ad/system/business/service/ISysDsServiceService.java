@@ -13,10 +13,9 @@ import net.nan21.dnet.module.ad.system.domain.entity.SysDsService;
 
 public interface ISysDsServiceService extends IEntityService<SysDsService> {
 
-    public SysDsService findByName(Long clientId, SysDataSource dataSource,
-            String name);
+    public SysDsService findByName(SysDataSource dataSource, String name);
 
-    public SysDsService findByName(Long clientId, Long dataSourceId, String name);
+    public SysDsService findByName(Long dataSourceId, String name);
 
     public List<SysDsService> findByDataSource(SysDataSource dataSource);
 

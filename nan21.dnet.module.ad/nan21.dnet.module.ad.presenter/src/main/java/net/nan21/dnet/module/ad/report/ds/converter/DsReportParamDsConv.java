@@ -18,8 +18,10 @@ public class DsReportParamDsConv extends
         AbstractDsConverter<DsReportParamDs, DsReportParam> implements
         IDsConverter<DsReportParamDs, DsReportParam> {
 
-    protected void modelToEntityReferences(DsReportParamDs ds, DsReportParam e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(DsReportParamDs ds, DsReportParam e,
+            boolean isInsert) throws Exception {
+
         if (ds.getDsReportId() != null) {
             if (e.getDsReport() == null
                     || !e.getDsReport().getId().equals(ds.getDsReportId())) {
@@ -27,6 +29,7 @@ public class DsReportParamDsConv extends
                         ds.getDsReportId()));
             }
         }
+
         if (ds.getParamId() != null) {
             if (e.getReportParam() == null
                     || !e.getReportParam().getId().equals(ds.getParamId())) {
@@ -36,6 +39,7 @@ public class DsReportParamDsConv extends
         } else {
             this.lookup_reportParam_ReportParam(ds, e);
         }
+
     }
 
     protected void lookup_reportParam_ReportParam(DsReportParamDs ds,
@@ -45,8 +49,7 @@ public class DsReportParamDsConv extends
             ReportParam x = null;
             try {
                 x = ((IReportParamService) findEntityService(ReportParam.class))
-                        .findByCode(ds.getClientId(), ds.getReportId(),
-                                ds.getParamCode());
+                        .findByCode(ds.getReportId(), ds.getParamCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ReportParam` reference:  `reportId` = "

@@ -12,6 +12,6 @@ import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContactType;
 public interface IEmployeeContactTypeService extends
         IEntityService<EmployeeContactType> {
 
-    public EmployeeContactType findByName(Long clientId, String name);
+    public EmployeeContactType findByName(String name);
 
 }

@@ -12,6 +12,6 @@ import net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchy;
 public interface IOrganizationHierarchyService extends
         IEntityService<OrganizationHierarchy> {
 
-    public OrganizationHierarchy findByName(Long clientId, String name);
+    public OrganizationHierarchy findByName(String name);
 
 }

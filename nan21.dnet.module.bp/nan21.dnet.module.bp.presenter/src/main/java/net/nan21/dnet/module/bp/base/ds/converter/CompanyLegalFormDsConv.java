@@ -17,8 +17,10 @@ public class CompanyLegalFormDsConv extends
         AbstractDsConverter<CompanyLegalFormDs, CompanyLegalForm> implements
         IDsConverter<CompanyLegalFormDs, CompanyLegalForm> {
 
+    @Override
     protected void modelToEntityReferences(CompanyLegalFormDs ds,
-            CompanyLegalForm e) throws Exception {
+            CompanyLegalForm e, boolean isInsert) throws Exception {
+
         if (ds.getCountryId() != null) {
             if (e.getCountry() == null
                     || !e.getCountry().getId().equals(ds.getCountryId())) {
@@ -28,6 +30,7 @@ public class CompanyLegalFormDsConv extends
         } else {
             this.lookup_country_Country(ds, e);
         }
+
     }
 
     protected void lookup_country_Country(CompanyLegalFormDs ds,
@@ -36,7 +39,7 @@ public class CompanyLegalFormDsConv extends
             Country x = null;
             try {
                 x = ((ICountryService) findEntityService(Country.class))
-                        .findByCode(ds.getClientId(), ds.getCountry());
+                        .findByCode(ds.getCountry());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Country` reference:  `country` = "

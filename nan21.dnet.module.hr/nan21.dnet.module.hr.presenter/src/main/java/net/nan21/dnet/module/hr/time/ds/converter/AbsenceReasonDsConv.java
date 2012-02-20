@@ -17,8 +17,10 @@ public class AbsenceReasonDsConv extends
         AbstractDsConverter<AbsenceReasonDs, AbsenceReason> implements
         IDsConverter<AbsenceReasonDs, AbsenceReason> {
 
-    protected void modelToEntityReferences(AbsenceReasonDs ds, AbsenceReason e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(AbsenceReasonDs ds, AbsenceReason e,
+            boolean isInsert) throws Exception {
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -28,6 +30,7 @@ public class AbsenceReasonDsConv extends
         } else {
             this.lookup_type_AbsenceType(ds, e);
         }
+
     }
 
     protected void lookup_type_AbsenceType(AbsenceReasonDs ds, AbsenceReason e)
@@ -36,7 +39,7 @@ public class AbsenceReasonDsConv extends
             AbsenceType x = null;
             try {
                 x = ((IAbsenceTypeService) findEntityService(AbsenceType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `AbsenceType` reference:  `type` = "

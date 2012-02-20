@@ -13,7 +13,7 @@ import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 
 public interface IPriceListService extends IEntityService<PriceList> {
 
-    public PriceList findByName(Long clientId, String name);
+    public PriceList findByName(String name);
 
     public List<PriceList> findByCurrency(Currency currency);
 

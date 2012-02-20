@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssueRoadmap_UI", {
 			,handler: this.onBtnIssueUi,scope:this,stateManager:{name:"selected_one", dc:"issue" }	})	
 							 	
 		.addDcFilterFormView("issue",{ name:"issueFilter", xtype:"net.nan21.dnet.module.pj.md.dc.IssueRoadmap$Filter",height:100})	 
-		.addDcView("issue",{ name:"issueList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueRoadmap$List"})	 
+		.addDcGridView("issue",{ name:"issueList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueRoadmap$List"})	 
 		.addDcFormView("issueInfo",{ name:"infoView", xtype:"net.nan21.dnet.module.pj.md.dc.Issue$View",height:200})	 
 		.addPanel({name: "main", layout:"border", defaults:{split:true}})  	 
 ;	 	

@@ -21,8 +21,10 @@ public class OrganizationHierarchyItemDsConv
         implements
         IDsConverter<OrganizationHierarchyItemDs, OrganizationHierarchyItem> {
 
+    @Override
     protected void modelToEntityReferences(OrganizationHierarchyItemDs ds,
-            OrganizationHierarchyItem e) throws Exception {
+            OrganizationHierarchyItem e, boolean isInsert) throws Exception {
+
         if (ds.getHierarchyId() != null) {
             if (e.getHierarchy() == null
                     || !e.getHierarchy().getId().equals(ds.getHierarchyId())) {
@@ -32,6 +34,7 @@ public class OrganizationHierarchyItemDsConv
         } else {
             this.lookup_hierarchy_OrganizationHierarchy(ds, e);
         }
+
         if (ds.getOrganizationId() != null) {
             if (e.getOrganization() == null
                     || !e.getOrganization().getId()
@@ -42,6 +45,7 @@ public class OrganizationHierarchyItemDsConv
         } else {
             this.lookup_organization_Organization(ds, e);
         }
+
         if (ds.getParentId() != null) {
             if (e.getParent() == null
                     || !e.getParent().getId().equals(ds.getParentId())) {
@@ -51,6 +55,7 @@ public class OrganizationHierarchyItemDsConv
         } else {
             this.lookup_parent_Organization(ds, e);
         }
+
     }
 
     protected void lookup_hierarchy_OrganizationHierarchy(
@@ -60,7 +65,7 @@ public class OrganizationHierarchyItemDsConv
             OrganizationHierarchy x = null;
             try {
                 x = ((IOrganizationHierarchyService) findEntityService(OrganizationHierarchy.class))
-                        .findByName(ds.getClientId(), ds.getHierarchy());
+                        .findByName(ds.getHierarchy());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `OrganizationHierarchy` reference:  `hierarchy` = "
@@ -81,7 +86,7 @@ public class OrganizationHierarchyItemDsConv
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getClientId(), ds.getOrganizationCode());
+                        .findByCode(ds.getOrganizationCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Organization` reference:  `organizationCode` = "
@@ -100,7 +105,7 @@ public class OrganizationHierarchyItemDsConv
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getClientId(), ds.getParentCode());
+                        .findByCode(ds.getParentCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Organization` reference:  `parentCode` = "

@@ -16,8 +16,6 @@ public class UserDsFilter extends AbstractDsFilter implements IModelWithId,
 
     private String name;
 
-    private String code;
-
     private Boolean active;
 
     private String notes;
@@ -43,6 +41,8 @@ public class UserDsFilter extends AbstractDsFilter implements IModelWithId,
     private String modifiedBy;
 
     private String entityFQN;
+
+    private String code;
 
     private Boolean locked;
 
@@ -70,14 +70,6 @@ public class UserDsFilter extends AbstractDsFilter implements IModelWithId,
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public Boolean getActive() {
@@ -191,6 +183,14 @@ public class UserDsFilter extends AbstractDsFilter implements IModelWithId,
 
     public void setEntityFQN(String entityFQN) {
         this.entityFQN = entityFQN;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Boolean getLocked() {

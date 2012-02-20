@@ -45,8 +45,8 @@ import org.hibernate.validator.constraints.NotBlank;
         "PRODUCT_ID" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = ProductPrice.NQ_FIND_BY_ID, query = "SELECT e FROM ProductPrice e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = ProductPrice.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductPrice e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductPrice.NQ_FIND_BY_ID, query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ProductPrice.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProductPrice.NQ_FIND_BY_NAME, query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceListVersion = :pPriceListVersion and e.product = :pProduct ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "ProductPrice.findByName_PRIMITIVE", query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceListVersion.id = :pPriceListVersionId and e.product.id = :pProductId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductPrice implements Serializable, IModelWithId,

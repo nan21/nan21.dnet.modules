@@ -1,6 +1,7 @@
 Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI$Trl", { 
 	wdwImportFile__ttl : "Importă un fişier de pe server",
 	
+	tlbMapItemEditList__ttl : "Import fişiere",
 	
 	btnRunImport__ttl : "Importă selecţia",
 	btnRunImport__desc : "Importă selecţia (una câte una ).",

@@ -19,9 +19,7 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs" ,{
 		{name:"project", type:"string"},
 		{name:"projectName", type:"string"},
 		{name:"planDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"releaseDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"projectVersionId", type:"int", useNull:true},
-		{name:"projectVersion", type:"string"}
+		{name:"releaseDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
@@ -56,11 +54,7 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDsFilter" ,{
 		{name:"planDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"releaseDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"releaseDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"releaseDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"projectVersionId", type:"int", useNull:true},
-		{name:"projectVersionId_From",type:"int", useNull:true},
-		{name:"projectVersionId_To",type:"int", useNull:true},
-		{name:"projectVersion", type:"string"}
+		{name:"releaseDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	] 
 });
 	

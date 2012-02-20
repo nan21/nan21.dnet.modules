@@ -11,6 +11,6 @@ import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType;
 
 public interface ISalesOrderTypeService extends IEntityService<SalesOrderType> {
 
-    public SalesOrderType findByName(Long clientId, String name);
+    public SalesOrderType findByName(String name);
 
 }

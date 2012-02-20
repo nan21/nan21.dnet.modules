@@ -12,7 +12,6 @@ import net.nan21.dnet.module.bp.calendar.domain.entity.CalendarEventStatus;
 public interface ICalendarEventStatusService extends
         IEntityService<CalendarEventStatus> {
 
-    public CalendarEventStatus findByType_and_name(Long clientId,
-            String eventType, String name);
+    public CalendarEventStatus findByType_and_name(String eventType, String name);
 
 }

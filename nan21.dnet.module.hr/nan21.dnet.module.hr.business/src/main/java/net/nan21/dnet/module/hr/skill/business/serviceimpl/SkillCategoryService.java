@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.skill.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.skill.business.service.ISkillCategoryService;
 
@@ -28,10 +29,10 @@ public class SkillCategoryService extends AbstractEntityService<SkillCategory>
         return SkillCategory.class;
     }
 
-    public SkillCategory findByName(Long clientId, String name) {
+    public SkillCategory findByName(String name) {
         return (SkillCategory) this.em
                 .createNamedQuery(SkillCategory.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

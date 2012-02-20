@@ -15,10 +15,10 @@ import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeValue;
 public interface IProductAttributeValueService extends
         IEntityService<ProductAttributeValue> {
 
-    public ProductAttributeValue findByName(Long clientId, Product product,
+    public ProductAttributeValue findByName(Product product,
             ProductAttributeGroupAttribute groupAttribute);
 
-    public ProductAttributeValue findByName(Long clientId, Long productId,
+    public ProductAttributeValue findByName(Long productId,
             Long groupAttributeId);
 
     public List<ProductAttributeValue> findByProduct(Product product);

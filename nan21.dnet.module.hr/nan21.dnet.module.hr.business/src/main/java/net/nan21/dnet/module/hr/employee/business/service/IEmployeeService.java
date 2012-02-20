@@ -19,7 +19,7 @@ import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 
 public interface IEmployeeService extends IEntityService<Employee> {
 
-    public Employee findByCode(Long clientId, String code);
+    public Employee findByCode(String code);
 
     public List<Employee> findByEmployer(Organization employer);
 

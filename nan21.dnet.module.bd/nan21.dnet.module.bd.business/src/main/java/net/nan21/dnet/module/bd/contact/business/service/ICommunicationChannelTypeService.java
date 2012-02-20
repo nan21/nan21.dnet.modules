@@ -12,6 +12,6 @@ import net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType;
 public interface ICommunicationChannelTypeService extends
         IEntityService<CommunicationChannelType> {
 
-    public CommunicationChannelType findByName(Long clientId, String name);
+    public CommunicationChannelType findByName(String name);
 
 }

@@ -11,8 +11,8 @@ import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 
 public interface ICurrencyService extends IEntityService<Currency> {
 
-    public Currency findByCode(Long clientId, String code);
+    public Currency findByCode(String code);
 
-    public Currency findByName(Long clientId, String name);
+    public Currency findByName(String name);
 
 }

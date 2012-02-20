@@ -13,7 +13,7 @@ import net.nan21.dnet.module.hr.skill.domain.entity.SkillType;
 
 public interface ISkillTypeService extends IEntityService<SkillType> {
 
-    public SkillType findByName(Long clientId, String name);
+    public SkillType findByName(String name);
 
     public List<SkillType> findByCategory(SkillCategory category);
 

@@ -13,9 +13,9 @@ import net.nan21.dnet.module.hr.training.domain.entity.Course;
 
 public interface ICourseService extends IEntityService<Course> {
 
-    public Course findByCode(Long clientId, String code);
+    public Course findByCode(String code);
 
-    public Course findByName(Long clientId, String name);
+    public Course findByName(String name);
 
     public List<Course> findByType(CourseType type);
 

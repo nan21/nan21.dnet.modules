@@ -18,8 +18,10 @@ public class EmployeeLicenseDsConv extends
         AbstractDsConverter<EmployeeLicenseDs, EmployeeLicense> implements
         IDsConverter<EmployeeLicenseDs, EmployeeLicense> {
 
+    @Override
     protected void modelToEntityReferences(EmployeeLicenseDs ds,
-            EmployeeLicense e) throws Exception {
+            EmployeeLicense e, boolean isInsert) throws Exception {
+
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -27,6 +29,7 @@ public class EmployeeLicenseDsConv extends
                         ds.getEmployeeId()));
             }
         }
+
         if (ds.getLicenseTypeId() != null) {
             if (e.getLicenseType() == null
                     || !e.getLicenseType().getId()
@@ -37,6 +40,7 @@ public class EmployeeLicenseDsConv extends
         } else {
             this.lookup_licenseType_LicenseType(ds, e);
         }
+
     }
 
     protected void lookup_licenseType_LicenseType(EmployeeLicenseDs ds,
@@ -45,7 +49,7 @@ public class EmployeeLicenseDsConv extends
             LicenseType x = null;
             try {
                 x = ((ILicenseTypeService) findEntityService(LicenseType.class))
-                        .findByName(ds.getClientId(), ds.getLicenseType());
+                        .findByName(ds.getLicenseType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `LicenseType` reference:  `licenseType` = "

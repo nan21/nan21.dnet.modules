@@ -21,8 +21,10 @@ public class ProdClassificationDsConv extends
         AbstractDsConverter<ProdClassificationDs, ProdClassification> implements
         IDsConverter<ProdClassificationDs, ProdClassification> {
 
+    @Override
     protected void modelToEntityReferences(ProdClassificationDs ds,
-            ProdClassification e) throws Exception {
+            ProdClassification e, boolean isInsert) throws Exception {
+
         if (ds.getProductId() != null) {
             if (e.getProduct() == null
                     || !e.getProduct().getId().equals(ds.getProductId())) {
@@ -32,6 +34,7 @@ public class ProdClassificationDsConv extends
         } else {
             this.lookup_product_Product(ds, e);
         }
+
         if (ds.getClassificationSystemId() != null) {
             if (e.getClassSystem() == null
                     || !e.getClassSystem().getId()
@@ -43,6 +46,7 @@ public class ProdClassificationDsConv extends
         } else {
             this.lookup_classSystem_ClassificationSystem(ds, e);
         }
+
         if (ds.getClassificationId() != null) {
             if (e.getClassCode() == null
                     || !e.getClassCode().getId()
@@ -53,6 +57,7 @@ public class ProdClassificationDsConv extends
         } else {
             this.lookup_classCode_ClassificationCode(ds, e);
         }
+
     }
 
     protected void lookup_product_Product(ProdClassificationDs ds,
@@ -61,7 +66,7 @@ public class ProdClassificationDsConv extends
             Product x = null;
             try {
                 x = ((IProductService) findEntityService(Product.class))
-                        .findByCode(ds.getClientId(), ds.getProductCode());
+                        .findByCode(ds.getProductCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Product` reference:  `productCode` = "
@@ -81,8 +86,7 @@ public class ProdClassificationDsConv extends
             ClassificationSystem x = null;
             try {
                 x = ((IClassificationSystemService) findEntityService(ClassificationSystem.class))
-                        .findByCode(ds.getClientId(),
-                                ds.getClassificationSystem());
+                        .findByCode(ds.getClassificationSystem());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ClassificationSystem` reference:  `classificationSystem` = "
@@ -104,8 +108,7 @@ public class ProdClassificationDsConv extends
             ClassificationCode x = null;
             try {
                 x = ((IClassificationCodeService) findEntityService(ClassificationCode.class))
-                        .findBySyscode(ds.getClientId(),
-                                ds.getClassificationSystemId(),
+                        .findBySyscode(ds.getClassificationSystemId(),
                                 ds.getClassificationCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

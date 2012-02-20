@@ -50,8 +50,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = SalesInvoice.TABLE_NAME)
 @Customizer(SalesInvoiceEventHandler.class)
 @NamedQueries({
-        @NamedQuery(name = SalesInvoice.NQ_FIND_BY_ID, query = "SELECT e FROM SalesInvoice e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = SalesInvoice.NQ_FIND_BY_IDS, query = "SELECT e FROM SalesInvoice e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = SalesInvoice.NQ_FIND_BY_ID, query = "SELECT e FROM SalesInvoice e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SalesInvoice.NQ_FIND_BY_IDS, query = "SELECT e FROM SalesInvoice e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SalesInvoice implements Serializable, IModelWithId,
         IModelWithClientId {
 

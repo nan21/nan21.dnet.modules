@@ -12,8 +12,8 @@ import net.nan21.dnet.module.mm.md.domain.entity.ProductAccountGroup;
 public interface IProductAccountGroupService extends
         IEntityService<ProductAccountGroup> {
 
-    public ProductAccountGroup findByCode(Long clientId, String code);
+    public ProductAccountGroup findByCode(String code);
 
-    public ProductAccountGroup findByName(Long clientId, String name);
+    public ProductAccountGroup findByName(String name);
 
 }

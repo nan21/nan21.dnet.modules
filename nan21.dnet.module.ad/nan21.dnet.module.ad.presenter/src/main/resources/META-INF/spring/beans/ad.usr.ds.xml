@@ -218,6 +218,74 @@
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AsgnAccessControlDs" />
 	</bean>
    
+ 	<bean id="MenuDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.MenuDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Menu" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Menu" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuDs" />
+	</bean>
+   
+ 	<bean id="MenuRtLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuRtLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.MenuRtLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Menu" />
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.usr.ds.qbext.MenuRtLovDsQueryBuilder" />	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="MenuRtLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuRtLovDs" />
+	</bean>
+   
+ 	<bean id="MenuLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.MenuLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Menu" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="MenuLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuLovDs" />
+	</bean>
+   
+ 	<bean id="MenuItemDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuItemDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.MenuItemDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.MenuItem" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.MenuItemDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="MenuItem" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuItemDs" />
+	</bean>
+   
+ 	<bean id="MenuItemRtLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuItemRtLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.MenuItemRtLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.MenuItem" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="MenuItemRtLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuItemRtLovDs" />
+	</bean>
+   
+ 	<bean id="MenuItemLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuItemLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.MenuItemLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.MenuItem" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="MenuItemLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuItemLovDs" />
+	</bean>
+   
  	<bean id="AssignableTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeDs" />

@@ -13,7 +13,7 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeField;
 
 public interface IWfDefNodeFieldService extends IEntityService<WfDefNodeField> {
 
-    public WfDefNodeField findByName(Long clientId, String name);
+    public WfDefNodeField findByName(String name);
 
     public List<WfDefNodeField> findByNode(WfDefNode node);
 

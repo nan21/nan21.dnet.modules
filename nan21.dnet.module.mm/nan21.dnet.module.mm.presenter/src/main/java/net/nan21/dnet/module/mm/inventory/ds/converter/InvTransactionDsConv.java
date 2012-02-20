@@ -19,8 +19,10 @@ public class InvTransactionDsConv extends
         AbstractDsConverter<InvTransactionDs, InvTransaction> implements
         IDsConverter<InvTransactionDs, InvTransaction> {
 
-    protected void modelToEntityReferences(InvTransactionDs ds, InvTransaction e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(InvTransactionDs ds,
+            InvTransaction e, boolean isInsert) throws Exception {
+
         if (ds.getTransactionTypeId() != null) {
             if (e.getTransactionType() == null
                     || !e.getTransactionType().getId()
@@ -31,6 +33,7 @@ public class InvTransactionDsConv extends
         } else {
             this.lookup_transactionType_InvTransactionType(ds, e);
         }
+
         if (ds.getFromInventoryId() != null) {
             if (e.getFromInventory() == null
                     || !e.getFromInventory().getId()
@@ -41,6 +44,7 @@ public class InvTransactionDsConv extends
         } else {
             this.lookup_fromInventory_Organization(ds, e);
         }
+
         if (ds.getToInventoryId() != null) {
             if (e.getToInventory() == null
                     || !e.getToInventory().getId()
@@ -51,6 +55,7 @@ public class InvTransactionDsConv extends
         } else {
             this.lookup_toInventory_Organization(ds, e);
         }
+
     }
 
     protected void lookup_transactionType_InvTransactionType(
@@ -60,7 +65,7 @@ public class InvTransactionDsConv extends
             InvTransactionType x = null;
             try {
                 x = ((IInvTransactionTypeService) findEntityService(InvTransactionType.class))
-                        .findByName(ds.getClientId(), ds.getTransactionType());
+                        .findByName(ds.getTransactionType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `InvTransactionType` reference:  `transactionType` = "
@@ -79,7 +84,7 @@ public class InvTransactionDsConv extends
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByName(ds.getClientId(), ds.getFromInventory());
+                        .findByName(ds.getFromInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Organization` reference:  `fromInventory` = "
@@ -98,7 +103,7 @@ public class InvTransactionDsConv extends
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByName(ds.getClientId(), ds.getToInventory());
+                        .findByName(ds.getToInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Organization` reference:  `toInventory` = "

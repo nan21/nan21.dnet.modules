@@ -11,6 +11,6 @@ import net.nan21.dnet.module.ad.system.domain.entity.SysPlugin;
 
 public interface ISysPluginService extends IEntityService<SysPlugin> {
 
-    public SysPlugin findByName(Long clientId, String name);
+    public SysPlugin findByName(String name);
 
 }

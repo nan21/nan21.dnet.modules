@@ -52,6 +52,8 @@ public class ImportMapItemDsFilter extends AbstractDsFilter implements
 
     private String fileName;
 
+    private String ukFieldName;
+
     private Boolean active;
 
     public Long getId() {
@@ -221,6 +223,14 @@ public class ImportMapItemDsFilter extends AbstractDsFilter implements
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public String getUkFieldName() {
+        return this.ukFieldName;
+    }
+
+    public void setUkFieldName(String ukFieldName) {
+        this.ukFieldName = ukFieldName;
     }
 
     public Boolean getActive() {

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.system.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.system.business.service.ISysDsServiceService;
 import net.nan21.dnet.module.ad.system.domain.entity.SysDataSource;
@@ -30,19 +31,18 @@ public class SysDsServiceService extends AbstractEntityService<SysDsService>
         return SysDsService.class;
     }
 
-    public SysDsService findByName(Long clientId, SysDataSource dataSource,
-            String name) {
+    public SysDsService findByName(SysDataSource dataSource, String name) {
         return (SysDsService) this.em
                 .createNamedQuery(SysDsService.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pDataSource", dataSource)
                 .setParameter("pName", name).getSingleResult();
     }
 
-    public SysDsService findByName(Long clientId, Long dataSourceId, String name) {
+    public SysDsService findByName(Long dataSourceId, String name) {
         return (SysDsService) this.em
                 .createNamedQuery(SysDsService.NQ_FIND_BY_NAME_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pDataSourceId", dataSourceId)
                 .setParameter("pName", name).getSingleResult();
     }
@@ -54,8 +54,9 @@ public class SysDsServiceService extends AbstractEntityService<SysDsService>
     public List<SysDsService> findByDataSourceId(Long dataSourceId) {
         return (List<SysDsService>) this.em
                 .createQuery(
-                        "select e from SysDsService e where e.dataSource.id = :pDataSourceId",
+                        "select e from SysDsService e where e.clientId = :pClientId and e.dataSource.id = :pDataSourceId",
                         SysDsService.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pDataSourceId", dataSourceId).getResultList();
     }
 

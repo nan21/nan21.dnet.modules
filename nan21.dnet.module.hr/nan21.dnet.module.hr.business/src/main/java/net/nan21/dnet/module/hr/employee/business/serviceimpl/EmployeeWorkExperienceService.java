@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.employee.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.employee.business.service.IEmployeeWorkExperienceService;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
@@ -38,8 +39,9 @@ public class EmployeeWorkExperienceService extends
     public List<EmployeeWorkExperience> findByEmployeeId(Long employeeId) {
         return (List<EmployeeWorkExperience>) this.em
                 .createQuery(
-                        "select e from EmployeeWorkExperience e where e.employee.id = :pEmployeeId",
+                        "select e from EmployeeWorkExperience e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
                         EmployeeWorkExperience.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();
     }
 

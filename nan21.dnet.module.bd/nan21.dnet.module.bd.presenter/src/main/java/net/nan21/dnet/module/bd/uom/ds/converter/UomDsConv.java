@@ -16,7 +16,10 @@ import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 public class UomDsConv extends AbstractDsConverter<UomDs, Uom> implements
         IDsConverter<UomDs, Uom> {
 
-    protected void modelToEntityReferences(UomDs ds, Uom e) throws Exception {
+    @Override
+    protected void modelToEntityReferences(UomDs ds, Uom e, boolean isInsert)
+            throws Exception {
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -25,6 +28,7 @@ public class UomDsConv extends AbstractDsConverter<UomDs, Uom> implements
         } else {
             this.lookup_type_UomType(ds, e);
         }
+
     }
 
     protected void lookup_type_UomType(UomDs ds, Uom e) throws Exception {
@@ -32,7 +36,7 @@ public class UomDsConv extends AbstractDsConverter<UomDs, Uom> implements
             UomType x = null;
             try {
                 x = ((IUomTypeService) findEntityService(UomType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `UomType` reference:  `type` = "

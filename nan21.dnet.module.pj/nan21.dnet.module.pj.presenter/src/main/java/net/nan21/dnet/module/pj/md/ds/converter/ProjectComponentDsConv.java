@@ -17,8 +17,10 @@ public class ProjectComponentDsConv extends
         AbstractDsConverter<ProjectComponentDs, ProjectComponent> implements
         IDsConverter<ProjectComponentDs, ProjectComponent> {
 
+    @Override
     protected void modelToEntityReferences(ProjectComponentDs ds,
-            ProjectComponent e) throws Exception {
+            ProjectComponent e, boolean isInsert) throws Exception {
+
         if (ds.getProjectId() != null) {
             if (e.getProject() == null
                     || !e.getProject().getId().equals(ds.getProjectId())) {
@@ -28,6 +30,7 @@ public class ProjectComponentDsConv extends
         } else {
             this.lookup_project_Project(ds, e);
         }
+
     }
 
     protected void lookup_project_Project(ProjectComponentDs ds,
@@ -36,7 +39,7 @@ public class ProjectComponentDsConv extends
             Project x = null;
             try {
                 x = ((IProjectService) findEntityService(Project.class))
-                        .findByCode(ds.getClientId(), ds.getProject());
+                        .findByCode(ds.getProject());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Project` reference:  `project` = "

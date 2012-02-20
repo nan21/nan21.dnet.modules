@@ -19,13 +19,16 @@ import net.nan21.dnet.module.hr.skill.domain.entity.JobSkill;
 public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
         implements IDsConverter<JobSkillDs, JobSkill> {
 
-    protected void modelToEntityReferences(JobSkillDs ds, JobSkill e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(JobSkillDs ds, JobSkill e,
+            boolean isInsert) throws Exception {
+
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
                 e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
             }
         }
+
         if (ds.getRequiredLevelId() != null) {
             if (e.getRequiredLevel() == null
                     || !e.getRequiredLevel().getId()
@@ -36,6 +39,7 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
         } else {
             this.lookup_requiredLevel_RatingLevel(ds, e);
         }
+
         if (ds.getCompetenceId() != null) {
             if (e.getSkill() == null
                     || !e.getSkill().getId().equals(ds.getCompetenceId())) {
@@ -45,6 +49,7 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
         } else {
             this.lookup_skill_Skill(ds, e);
         }
+
     }
 
     protected void lookup_requiredLevel_RatingLevel(JobSkillDs ds, JobSkill e)
@@ -55,7 +60,7 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
             RatingLevel x = null;
             try {
                 x = ((IRatingLevelService) findEntityService(RatingLevel.class))
-                        .findByName(ds.getClientId(), ds.getRatingScaleId(),
+                        .findByName(ds.getRatingScaleId(),
                                 ds.getRequiredLevel());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
@@ -77,7 +82,7 @@ public class JobSkillDsConv extends AbstractDsConverter<JobSkillDs, JobSkill>
             Skill x = null;
             try {
                 x = ((ISkillService) findEntityService(Skill.class))
-                        .findByName(ds.getClientId(), ds.getCompetence());
+                        .findByName(ds.getCompetence());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Skill` reference:  `competence` = "

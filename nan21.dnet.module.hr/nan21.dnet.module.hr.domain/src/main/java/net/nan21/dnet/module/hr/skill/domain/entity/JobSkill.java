@@ -42,8 +42,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = JobSkill.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = JobSkill.NQ_FIND_BY_ID, query = "SELECT e FROM JobSkill e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = JobSkill.NQ_FIND_BY_IDS, query = "SELECT e FROM JobSkill e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = JobSkill.NQ_FIND_BY_ID, query = "SELECT e FROM JobSkill e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = JobSkill.NQ_FIND_BY_IDS, query = "SELECT e FROM JobSkill e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class JobSkill implements Serializable, IModelWithId, IModelWithClientId {
 
     public static final String TABLE_NAME = "HR_JOB_SKILL";

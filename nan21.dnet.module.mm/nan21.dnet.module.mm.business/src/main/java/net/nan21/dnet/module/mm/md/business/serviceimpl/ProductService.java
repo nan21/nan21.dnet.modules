@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
@@ -32,15 +33,15 @@ public class ProductService extends AbstractEntityService<Product> {
         return Product.class;
     }
 
-    public Product findByCode(Long clientId, String code) {
+    public Product findByCode(String code) {
         return (Product) this.em.createNamedQuery(Product.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public Product findByName(Long clientId, String name) {
+    public Product findByName(String name) {
         return (Product) this.em.createNamedQuery(Product.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -51,8 +52,9 @@ public class ProductService extends AbstractEntityService<Product> {
     public List<Product> findByDefaultUomId(Long defaultUomId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product e where e.defaultUom.id = :pDefaultUomId",
+                        "select e from Product e where e.clientId = :pClientId and  e.defaultUom.id = :pDefaultUomId",
                         Product.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pDefaultUomId", defaultUomId).getResultList();
     }
 
@@ -63,8 +65,9 @@ public class ProductService extends AbstractEntityService<Product> {
     public List<Product> findByWeightUomId(Long weightUomId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product e where e.weightUom.id = :pWeightUomId",
+                        "select e from Product e where e.clientId = :pClientId and  e.weightUom.id = :pWeightUomId",
                         Product.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pWeightUomId", weightUomId).getResultList();
     }
 
@@ -75,8 +78,9 @@ public class ProductService extends AbstractEntityService<Product> {
     public List<Product> findByVolumeUomId(Long volumeUomId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product e where e.volumeUom.id = :pVolumeUomId",
+                        "select e from Product e where e.clientId = :pClientId and  e.volumeUom.id = :pVolumeUomId",
                         Product.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pVolumeUomId", volumeUomId).getResultList();
     }
 
@@ -87,9 +91,10 @@ public class ProductService extends AbstractEntityService<Product> {
     public List<Product> findByDimUomId(Long dimUomId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product e where e.dimUom.id = :pDimUomId",
-                        Product.class).setParameter("pDimUomId", dimUomId)
-                .getResultList();
+                        "select e from Product e where e.clientId = :pClientId and  e.dimUom.id = :pDimUomId",
+                        Product.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pDimUomId", dimUomId).getResultList();
     }
 
     public List<Product> findByManufacturer(ProductManufacturer manufacturer) {
@@ -99,8 +104,9 @@ public class ProductService extends AbstractEntityService<Product> {
     public List<Product> findByManufacturerId(Long manufacturerId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product e where e.manufacturer.id = :pManufacturerId",
+                        "select e from Product e where e.clientId = :pClientId and  e.manufacturer.id = :pManufacturerId",
                         Product.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pManufacturerId", manufacturerId)
                 .getResultList();
     }
@@ -113,8 +119,9 @@ public class ProductService extends AbstractEntityService<Product> {
     public List<Product> findByAttributeGroupId(Long attributeGroupId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product e where e.attributeGroup.id = :pAttributeGroupId",
+                        "select e from Product e where e.clientId = :pClientId and  e.attributeGroup.id = :pAttributeGroupId",
                         Product.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAttributeGroupId", attributeGroupId)
                 .getResultList();
     }
@@ -126,8 +133,9 @@ public class ProductService extends AbstractEntityService<Product> {
     public List<Product> findByCategoriesId(Long categoriesId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select distinct e from Product e , IN (e.categories) c where c.id = :pCategoriesId",
+                        "select distinct e from Product e , IN (e.categories) c where e.clientId = :pClientId and c.id = :pCategoriesId",
                         Product.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCategoriesId", categoriesId).getResultList();
     }
 
@@ -138,8 +146,9 @@ public class ProductService extends AbstractEntityService<Product> {
     public List<Product> findByAttributesId(Long attributesId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select distinct e from Product e , IN (e.attributes) c where c.id = :pAttributesId",
+                        "select distinct e from Product e , IN (e.attributes) c where e.clientId = :pClientId and c.id = :pAttributesId",
                         Product.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAttributesId", attributesId).getResultList();
     }
 

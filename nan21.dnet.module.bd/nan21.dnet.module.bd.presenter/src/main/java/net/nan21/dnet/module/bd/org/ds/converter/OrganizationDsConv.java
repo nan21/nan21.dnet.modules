@@ -17,8 +17,10 @@ public class OrganizationDsConv extends
         AbstractDsConverter<OrganizationDs, Organization> implements
         IDsConverter<OrganizationDs, Organization> {
 
-    protected void modelToEntityReferences(OrganizationDs ds, Organization e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(OrganizationDs ds, Organization e,
+            boolean isInsert) throws Exception {
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -28,6 +30,7 @@ public class OrganizationDsConv extends
         } else {
             this.lookup_type_OrganizationType(ds, e);
         }
+
     }
 
     protected void lookup_type_OrganizationType(OrganizationDs ds,
@@ -36,7 +39,7 @@ public class OrganizationDsConv extends
             OrganizationType x = null;
             try {
                 x = ((IOrganizationTypeService) findEntityService(OrganizationType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `OrganizationType` reference:  `type` = "

@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.sd.order.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderTypeService;
 
@@ -28,10 +29,10 @@ public class SalesOrderTypeService extends
         return SalesOrderType.class;
     }
 
-    public SalesOrderType findByName(Long clientId, String name) {
+    public SalesOrderType findByName(String name) {
         return (SalesOrderType) this.em
                 .createNamedQuery(SalesOrderType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

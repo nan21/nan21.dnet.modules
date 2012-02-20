@@ -13,13 +13,13 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.Variable;
 
 public interface IVariableService extends IEntityService<Variable> {
 
-    public Variable findByCode(Long clientId, Element element, String code);
+    public Variable findByCode(Element element, String code);
 
-    public Variable findByCode(Long clientId, Long elementId, String code);
+    public Variable findByCode(Long elementId, String code);
 
-    public Variable findByName(Long clientId, Element element, String name);
+    public Variable findByName(Element element, String name);
 
-    public Variable findByName(Long clientId, Long elementId, String name);
+    public Variable findByName(Long elementId, String name);
 
     public List<Variable> findByElement(Element element);
 

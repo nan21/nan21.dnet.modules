@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.md.business.service.IProductSubstituteService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
@@ -38,8 +39,9 @@ public class ProductSubstituteService extends
     public List<ProductSubstitute> findByRefProductId(Long refProductId) {
         return (List<ProductSubstitute>) this.em
                 .createQuery(
-                        "select e from ProductSubstitute e where e.refProduct.id = :pRefProductId",
+                        "select e from ProductSubstitute e where e.clientId = :pClientId and  e.refProduct.id = :pRefProductId",
                         ProductSubstitute.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRefProductId", refProductId).getResultList();
     }
 
@@ -50,8 +52,9 @@ public class ProductSubstituteService extends
     public List<ProductSubstitute> findByEquivalenceId(Long equivalenceId) {
         return (List<ProductSubstitute>) this.em
                 .createQuery(
-                        "select e from ProductSubstitute e where e.equivalence.id = :pEquivalenceId",
+                        "select e from ProductSubstitute e where e.clientId = :pClientId and  e.equivalence.id = :pEquivalenceId",
                         ProductSubstitute.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEquivalenceId", equivalenceId).getResultList();
     }
 

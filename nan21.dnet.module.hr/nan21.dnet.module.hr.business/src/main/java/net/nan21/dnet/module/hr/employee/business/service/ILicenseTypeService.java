@@ -11,6 +11,6 @@ import net.nan21.dnet.module.hr.employee.domain.entity.LicenseType;
 
 public interface ILicenseTypeService extends IEntityService<LicenseType> {
 
-    public LicenseType findByName(Long clientId, String name);
+    public LicenseType findByName(String name);
 
 }

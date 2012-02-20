@@ -13,11 +13,9 @@ import net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent;
 
 public interface ISysDsEventService extends IEntityService<SysDsEvent> {
 
-    public SysDsEvent findByName(Long clientId, SysDataSource dataSource,
-            String eventType);
+    public SysDsEvent findByName(SysDataSource dataSource, String eventType);
 
-    public SysDsEvent findByName(Long clientId, Long dataSourceId,
-            String eventType);
+    public SysDsEvent findByName(Long dataSourceId, String eventType);
 
     public List<SysDsEvent> findByDataSource(SysDataSource dataSource);
 

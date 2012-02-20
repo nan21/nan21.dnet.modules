@@ -17,6 +17,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs" ,{
 		{name:"sequenceNo", type:"int", useNull:true},
 		{name:"dataSource", type:"string"},
 		{name:"fileName", type:"string"},
+		{name:"ukFieldName", type:"string"},
 		{name:"active", type:"boolean"}
 	]
 });
@@ -44,6 +45,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDsFilter" ,{
 		{name:"sequenceNo_To",type:"int", useNull:true},
 		{name:"dataSource", type:"string"},
 		{name:"fileName", type:"string"},
+		{name:"ukFieldName", type:"string"},
 		{name:"active", type:"boolean", useNull:true}
 	] 
 });
@@ -52,7 +54,8 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.param.ImportMapItemDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"importFileLocation", type:"string"},
-		{name:"importDataSource", type:"string"}
+		{name:"importDataSource", type:"string"},
+		{name:"importUkFieldName", type:"string"}
 	]
 }); 
  

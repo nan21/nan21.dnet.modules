@@ -11,6 +11,6 @@ import net.nan21.dnet.module.bd.geo.domain.entity.RegionType;
 
 public interface IRegionTypeService extends IEntityService<RegionType> {
 
-    public RegionType findByName(Long clientId, String name);
+    public RegionType findByName(String name);
 
 }

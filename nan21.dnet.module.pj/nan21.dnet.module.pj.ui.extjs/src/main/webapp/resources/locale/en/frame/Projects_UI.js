@@ -1,5 +1,5 @@
 
-Ext.define("net.nan21.dnet.module.pj.base.frame.Projects_UI$Trl", {  	  	
+Ext.define("net.nan21.dnet.module.pj.md.frame.Projects_UI$Trl", {  	  	
 	versionEditList__ttl : "Versions",
 	componentEditList__ttl : "Components",
 	atchEditList__ttl : "Attachments",

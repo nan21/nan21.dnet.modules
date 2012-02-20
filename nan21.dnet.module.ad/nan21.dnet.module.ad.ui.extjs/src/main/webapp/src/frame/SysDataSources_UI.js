@@ -20,11 +20,11 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", {
 			,handler: this.onBtnSynchronize,scope:this	})	
 							 	
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter",height:120})	 
-		.addDcView("m",{ name:"mList", xtype:"net.nan21.dnet.module.ad.system.dc.SysDataSource$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnSynchronize") ]}]})	 
-		.addDcView("fields",{ name:"listFields", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsField$CtxList",title:"Fields"})	 
-		.addDcView("services",{ name:"listServices", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList",title:"Services"})	 
+		.addDcGridView("m",{ name:"mList", xtype:"net.nan21.dnet.module.ad.system.dc.SysDataSource$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnSynchronize") ]}]})	 
+		.addDcGridView("fields",{ name:"listFields", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsField$CtxList",title:"Fields"})	 
+		.addDcGridView("services",{ name:"listServices", xtype:"net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList",title:"Services"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "panelDetails", _wrapped_:true, layout:"fit",frame:"false" ,items:{ layout:"accordion", activeItem:0, id:Ext.id(),width:400}}) 	  	 
+		.addPanel({name: "panelDetails", layout:"accordion", activeItem:0, id:Ext.id(),width:400}) 	  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}

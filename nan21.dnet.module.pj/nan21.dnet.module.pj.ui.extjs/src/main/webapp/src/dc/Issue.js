@@ -155,13 +155,15 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$EditText", {
 		this._getBuilder_()	
 		.addTextArea({ name:"description", dataIndex:"description",height:250,anchor:"-20"   })
 		//containers
-		.addPanel({ name:"main", layout:"form" , autoScroll:true, defaults:{
+		.addPanel({ name:"r1", layout:"form" , width:"90%", defaults:{
 labelAlign:"top"}})     
+		.addPanel({ name:"main" , autoScroll:true })      	 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["description"])
+		.addChildrenTo("main",["r1" ])
+		.addChildrenTo("r1",["description"])
 ;
 	}	
 });

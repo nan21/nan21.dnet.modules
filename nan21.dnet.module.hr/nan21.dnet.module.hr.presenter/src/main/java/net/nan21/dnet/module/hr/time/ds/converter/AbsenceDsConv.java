@@ -20,8 +20,10 @@ import net.nan21.dnet.module.hr.time.domain.entity.Absence;
 public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
         implements IDsConverter<AbsenceDs, Absence> {
 
-    protected void modelToEntityReferences(AbsenceDs ds, Absence e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(AbsenceDs ds, Absence e,
+            boolean isInsert) throws Exception {
+
         if (ds.getEmployeeId() != null) {
             if (e.getEmployee() == null
                     || !e.getEmployee().getId().equals(ds.getEmployeeId())) {
@@ -31,6 +33,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
         } else {
             this.lookup_employee_Employee(ds, e);
         }
+
         if (ds.getReasonId() != null) {
             if (e.getReason() == null
                     || !e.getReason().getId().equals(ds.getReasonId())) {
@@ -40,6 +43,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
         } else {
             this.lookup_reason_AbsenceReason(ds, e);
         }
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -49,6 +53,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
         } else {
             this.lookup_type_AbsenceType(ds, e);
         }
+
     }
 
     protected void lookup_employee_Employee(AbsenceDs ds, Absence e)
@@ -57,7 +62,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
             Employee x = null;
             try {
                 x = ((IEmployeeService) findEntityService(Employee.class))
-                        .findByCode(ds.getClientId(), ds.getEmployeeCode());
+                        .findByCode(ds.getEmployeeCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Employee` reference:  `employeeCode` = "
@@ -76,7 +81,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
             AbsenceReason x = null;
             try {
                 x = ((IAbsenceReasonService) findEntityService(AbsenceReason.class))
-                        .findByName(ds.getClientId(), ds.getReason());
+                        .findByName(ds.getReason());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `AbsenceReason` reference:  `reason` = "
@@ -95,7 +100,7 @@ public class AbsenceDsConv extends AbstractDsConverter<AbsenceDs, Absence>
             AbsenceType x = null;
             try {
                 x = ((IAbsenceTypeService) findEntityService(AbsenceType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `AbsenceType` reference:  `type` = "

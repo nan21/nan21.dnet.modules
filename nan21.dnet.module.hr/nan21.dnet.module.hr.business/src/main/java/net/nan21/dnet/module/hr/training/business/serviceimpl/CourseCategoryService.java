@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.training.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.training.business.service.ICourseCategoryService;
 
@@ -28,10 +29,10 @@ public class CourseCategoryService extends
         return CourseCategory.class;
     }
 
-    public CourseCategory findByName(Long clientId, String name) {
+    public CourseCategory findByName(String name) {
         return (CourseCategory) this.em
                 .createNamedQuery(CourseCategory.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

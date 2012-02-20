@@ -22,8 +22,10 @@ public class InvTransactionLineDsConv extends
         AbstractDsConverter<InvTransactionLineDs, InvTransactionLine> implements
         IDsConverter<InvTransactionLineDs, InvTransactionLine> {
 
+    @Override
     protected void modelToEntityReferences(InvTransactionLineDs ds,
-            InvTransactionLine e) throws Exception {
+            InvTransactionLine e, boolean isInsert) throws Exception {
+
         if (ds.getTransactionId() != null) {
             if (e.getInvTransaction() == null
                     || !e.getInvTransaction().getId()
@@ -32,6 +34,7 @@ public class InvTransactionLineDsConv extends
                         InvTransaction.class, ds.getTransactionId()));
             }
         }
+
         if (ds.getItemId() != null) {
             if (e.getItem() == null
                     || !e.getItem().getId().equals(ds.getItemId())) {
@@ -40,6 +43,7 @@ public class InvTransactionLineDsConv extends
         } else {
             this.lookup_item_Product(ds, e);
         }
+
         if (ds.getFromSubInventoryId() != null) {
             if (e.getFromSubInventory() == null
                     || !e.getFromSubInventory().getId()
@@ -50,6 +54,7 @@ public class InvTransactionLineDsConv extends
         } else {
             this.lookup_fromSubInventory_SubInventory(ds, e);
         }
+
         if (ds.getToSubInventoryId() != null) {
             if (e.getToSubInventory() == null
                     || !e.getToSubInventory().getId()
@@ -60,6 +65,7 @@ public class InvTransactionLineDsConv extends
         } else {
             this.lookup_toSubInventory_SubInventory(ds, e);
         }
+
         if (ds.getFromLocatorId() != null) {
             if (e.getFromLocator() == null
                     || !e.getFromLocator().getId()
@@ -70,6 +76,7 @@ public class InvTransactionLineDsConv extends
         } else {
             this.lookup_fromLocator_StockLocator(ds, e);
         }
+
         if (ds.getToLocatorId() != null) {
             if (e.getToLocator() == null
                     || !e.getToLocator().getId().equals(ds.getToLocatorId())) {
@@ -79,6 +86,7 @@ public class InvTransactionLineDsConv extends
         } else {
             this.lookup_toLocator_StockLocator(ds, e);
         }
+
     }
 
     protected void lookup_item_Product(InvTransactionLineDs ds,
@@ -87,7 +95,7 @@ public class InvTransactionLineDsConv extends
             Product x = null;
             try {
                 x = ((IProductService) findEntityService(Product.class))
-                        .findByCode(ds.getClientId(), ds.getItemCode());
+                        .findByCode(ds.getItemCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Product` reference:  `itemCode` = "
@@ -107,7 +115,7 @@ public class InvTransactionLineDsConv extends
             SubInventory x = null;
             try {
                 x = ((ISubInventoryService) findEntityService(SubInventory.class))
-                        .findByName(ds.getClientId(), ds.getFromSubInventory());
+                        .findByName(ds.getFromSubInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `SubInventory` reference:  `fromSubInventory` = "
@@ -127,7 +135,7 @@ public class InvTransactionLineDsConv extends
             SubInventory x = null;
             try {
                 x = ((ISubInventoryService) findEntityService(SubInventory.class))
-                        .findByName(ds.getClientId(), ds.getToSubInventory());
+                        .findByName(ds.getToSubInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `SubInventory` reference:  `toSubInventory` = "
@@ -146,7 +154,7 @@ public class InvTransactionLineDsConv extends
             StockLocator x = null;
             try {
                 x = ((IStockLocatorService) findEntityService(StockLocator.class))
-                        .findByName(ds.getClientId(), ds.getFromLocator());
+                        .findByName(ds.getFromLocator());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `StockLocator` reference:  `fromLocator` = "
@@ -165,7 +173,7 @@ public class InvTransactionLineDsConv extends
             StockLocator x = null;
             try {
                 x = ((IStockLocatorService) findEntityService(StockLocator.class))
-                        .findByName(ds.getClientId(), ds.getToLocator());
+                        .findByName(ds.getToLocator());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `StockLocator` reference:  `toLocator` = "

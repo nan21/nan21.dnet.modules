@@ -15,9 +15,9 @@ Ext.define("net.nan21.dnet.module.mm.price.frame.ProductPrice_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("pricelist",{ name:"pricelistFilter", xtype:"net.nan21.dnet.module.mm.price.dc.PriceList$FilterV",width:300})	 
-		.addDcView("pricelist",{ name:"pricelistList", xtype:"net.nan21.dnet.module.mm.price.dc.PriceList$List"})	 
+		.addDcGridView("pricelist",{ name:"pricelistList", xtype:"net.nan21.dnet.module.mm.price.dc.PriceList$List"})	 
 		.addDcFilterFormView("price",{ name:"priceFilter", xtype:"net.nan21.dnet.module.mm.price.dc.ProductPrice$Filter",width:300})	 
-		.addDcView("price",{ name:"priceEditList", xtype:"net.nan21.dnet.module.mm.price.dc.ProductPrice$EditList", frame:true})	 
+		.addDcEditGridView("price",{ name:"priceEditList", xtype:"net.nan21.dnet.module.mm.price.dc.ProductPrice$EditList", frame:true})	 
 		.addPanel({name: "main", layout:"border", defaults:{split:true}})  	 
 		.addPanel({name: "pricePanel", layout:"border", defaults:{split:true},height:400})  	 
 ;	 	

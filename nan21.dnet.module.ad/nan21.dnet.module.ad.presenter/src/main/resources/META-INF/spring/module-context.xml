@@ -14,11 +14,14 @@
 
 	<context:annotation-config />
 	  
-	<bean id="menuProvider" class="net.nan21.dnet.core.api.ui.extjs.impl.ExtensionProvider" >
+	<!-- <bean id="menuProvider" class="net.nan21.dnet.core.api.ui.extjs.impl.ExtensionProvider" >
 		<property name="fileName" value="src/menu.js"></property>
 		<property name="bundleName" value="nan21.dnet.module.ad.ui.extjs"></property>
+	</bean> -->
+	 <bean id="menuProvider" class="net.nan21.dnet.module.ad._presenterdelegates.ExtensionProviderMainMenu" >		  
 	</bean>
-	 
+	
+	
 	<bean id="dsServiceFactory" class="net.nan21.dnet.core.presenter.service.DsServiceFactory" >
 		 <property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>
@@ -44,16 +47,22 @@
 		<property name="systemConfig" ref="systemConfig"></property>
 	</bean>
 	
+	
+	
+	
+	
+	
 	<import resource="beans/ad.client.ds.xml"/>
 	<import resource="beans/ad.data.ds.xml"/>
 	<import resource="beans/ad.impex.ds.xml"/>
 	<import resource="beans/ad.report.ds.xml"/>
-	<import resource="beans/ad.system.ds.xml"/>
+	<import resource="beans/ad.system.ds.xml"/>	
 	<import resource="beans/ad.usr.ds.xml"/>
  	<import resource="beans/ad.workflow.ds.xml"/>
  	
   	<import resource="beans/ad.usr.asgn.xml"/>
-  
+ 
+  	
     <!-- Other beans / services  -->
   
   	<bean id="deployUploadedWorkflowService"  scope="prototype" 

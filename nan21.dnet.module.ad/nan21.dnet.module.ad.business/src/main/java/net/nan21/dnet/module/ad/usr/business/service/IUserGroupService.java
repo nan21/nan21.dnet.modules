@@ -13,7 +13,7 @@ import net.nan21.dnet.module.ad.usr.domain.entity.UserGroup;
 
 public interface IUserGroupService extends IEntityService<UserGroup> {
 
-    public UserGroup findByName(Long clientId, String name);
+    public UserGroup findByName(String name);
 
     public List<UserGroup> findByUsers(User users);
 

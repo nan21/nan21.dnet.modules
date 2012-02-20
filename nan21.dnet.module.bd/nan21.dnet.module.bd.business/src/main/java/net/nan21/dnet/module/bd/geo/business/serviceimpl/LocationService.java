@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.geo.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.business.service.ILocationService;
 import net.nan21.dnet.module.bd.geo.domain.entity.City;
@@ -39,9 +40,10 @@ public class LocationService extends AbstractEntityService<Location> implements
     public List<Location> findByCountryId(Long countryId) {
         return (List<Location>) this.em
                 .createQuery(
-                        "select e from Location e where e.country.id = :pCountryId",
-                        Location.class).setParameter("pCountryId", countryId)
-                .getResultList();
+                        "select e from Location e where e.clientId = :pClientId and  e.country.id = :pCountryId",
+                        Location.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pCountryId", countryId).getResultList();
     }
 
     public List<Location> findByRegion(Region region) {
@@ -51,9 +53,10 @@ public class LocationService extends AbstractEntityService<Location> implements
     public List<Location> findByRegionId(Long regionId) {
         return (List<Location>) this.em
                 .createQuery(
-                        "select e from Location e where e.region.id = :pRegionId",
-                        Location.class).setParameter("pRegionId", regionId)
-                .getResultList();
+                        "select e from Location e where e.clientId = :pClientId and  e.region.id = :pRegionId",
+                        Location.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pRegionId", regionId).getResultList();
     }
 
     public List<Location> findByCity(City city) {
@@ -63,9 +66,10 @@ public class LocationService extends AbstractEntityService<Location> implements
     public List<Location> findByCityId(Long cityId) {
         return (List<Location>) this.em
                 .createQuery(
-                        "select e from Location e where e.city.id = :pCityId",
-                        Location.class).setParameter("pCityId", cityId)
-                .getResultList();
+                        "select e from Location e where e.clientId = :pClientId and  e.city.id = :pCityId",
+                        Location.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pCityId", cityId).getResultList();
     }
 
 }

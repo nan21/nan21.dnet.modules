@@ -13,7 +13,7 @@ import net.nan21.dnet.module.hr.grade.domain.entity.GradeRate;
 
 public interface IGradeRateService extends IEntityService<GradeRate> {
 
-    public GradeRate findByName(Long clientId, String name);
+    public GradeRate findByName(String name);
 
     public List<GradeRate> findByCurrency(Currency currency);
 

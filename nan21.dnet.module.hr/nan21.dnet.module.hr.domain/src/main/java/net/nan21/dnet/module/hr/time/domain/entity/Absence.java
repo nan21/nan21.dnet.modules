@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = Absence.TABLE_NAME)
 @Customizer(AbsenceEventHandler.class)
 @NamedQueries({
-        @NamedQuery(name = Absence.NQ_FIND_BY_ID, query = "SELECT e FROM Absence e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = Absence.NQ_FIND_BY_IDS, query = "SELECT e FROM Absence e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = Absence.NQ_FIND_BY_ID, query = "SELECT e FROM Absence e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Absence.NQ_FIND_BY_IDS, query = "SELECT e FROM Absence e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Absence implements Serializable, IModelWithId, IModelWithClientId {
 
     public static final String TABLE_NAME = "HR_ABSENCE";

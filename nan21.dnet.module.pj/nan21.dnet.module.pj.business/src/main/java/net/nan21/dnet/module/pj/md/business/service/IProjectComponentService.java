@@ -16,11 +16,9 @@ import net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent;
 public interface IProjectComponentService extends
         IEntityService<ProjectComponent> {
 
-    public ProjectComponent findByName(Long clientId, Project project,
-            String name);
+    public ProjectComponent findByName(Project project, String name);
 
-    public ProjectComponent findByName(Long clientId, Long projectId,
-            String name);
+    public ProjectComponent findByName(Long projectId, String name);
 
     public List<ProjectComponent> findByComponentLead(Assignable componentLead);
 

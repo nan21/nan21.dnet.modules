@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.job.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -32,15 +33,15 @@ public class PositionService extends AbstractEntityService<Position> implements
         return Position.class;
     }
 
-    public Position findByCode(Long clientId, String code) {
+    public Position findByCode(String code) {
         return (Position) this.em.createNamedQuery(Position.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public Position findByName(Long clientId, String name) {
+    public Position findByName(String name) {
         return (Position) this.em.createNamedQuery(Position.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -51,8 +52,9 @@ public class PositionService extends AbstractEntityService<Position> implements
     public List<Position> findByOrganizationId(Long organizationId) {
         return (List<Position>) this.em
                 .createQuery(
-                        "select e from Position e where e.organization.id = :pOrganizationId",
+                        "select e from Position e where e.clientId = :pClientId and  e.organization.id = :pOrganizationId",
                         Position.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pOrganizationId", organizationId)
                 .getResultList();
     }
@@ -64,9 +66,10 @@ public class PositionService extends AbstractEntityService<Position> implements
     public List<Position> findByJobId(Long jobId) {
         return (List<Position>) this.em
                 .createQuery(
-                        "select e from Position e where e.job.id = :pJobId",
-                        Position.class).setParameter("pJobId", jobId)
-                .getResultList();
+                        "select e from Position e where e.clientId = :pClientId and  e.job.id = :pJobId",
+                        Position.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJobId", jobId).getResultList();
     }
 
     public List<Position> findByLocation(Location location) {
@@ -76,9 +79,10 @@ public class PositionService extends AbstractEntityService<Position> implements
     public List<Position> findByLocationId(Long locationId) {
         return (List<Position>) this.em
                 .createQuery(
-                        "select e from Position e where e.location.id = :pLocationId",
-                        Position.class).setParameter("pLocationId", locationId)
-                .getResultList();
+                        "select e from Position e where e.clientId = :pClientId and  e.location.id = :pLocationId",
+                        Position.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pLocationId", locationId).getResultList();
     }
 
 }

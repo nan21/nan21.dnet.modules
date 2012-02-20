@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "BPARTNER_ID", "ACCOUNTNO" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = BpBankAccount.NQ_FIND_BY_ID, query = "SELECT e FROM BpBankAccount e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = BpBankAccount.NQ_FIND_BY_IDS, query = "SELECT e FROM BpBankAccount e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = BpBankAccount.NQ_FIND_BY_ID, query = "SELECT e FROM BpBankAccount e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = BpBankAccount.NQ_FIND_BY_IDS, query = "SELECT e FROM BpBankAccount e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = BpBankAccount.NQ_FIND_BY_ACCOUNT, query = "SELECT e FROM BpBankAccount e WHERE e.clientId = :pClientId and  e.bpartner = :pBpartner and e.accountNo = :pAccountNo ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "BpBankAccount.findByAccount_PRIMITIVE", query = "SELECT e FROM BpBankAccount e WHERE e.clientId = :pClientId and  e.bpartner.id = :pBpartnerId and e.accountNo = :pAccountNo ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class BpBankAccount implements Serializable, IModelWithId,

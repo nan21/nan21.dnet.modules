@@ -18,8 +18,10 @@ import net.nan21.dnet.module.hr.skill.domain.entity.Skill;
 public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
         IDsConverter<SkillDs, Skill> {
 
-    protected void modelToEntityReferences(SkillDs ds, Skill e)
+    @Override
+    protected void modelToEntityReferences(SkillDs ds, Skill e, boolean isInsert)
             throws Exception {
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -29,6 +31,7 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
         } else {
             this.lookup_type_SkillType(ds, e);
         }
+
         if (ds.getRatingScaleId() != null) {
             if (e.getRatingScale() == null
                     || !e.getRatingScale().getId()
@@ -39,6 +42,7 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
         } else {
             this.lookup_ratingScale_RatingScale(ds, e);
         }
+
     }
 
     protected void lookup_type_SkillType(SkillDs ds, Skill e) throws Exception {
@@ -46,7 +50,7 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
             SkillType x = null;
             try {
                 x = ((ISkillTypeService) findEntityService(SkillType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `SkillType` reference:  `type` = "
@@ -65,7 +69,7 @@ public class SkillDsConv extends AbstractDsConverter<SkillDs, Skill> implements
             RatingScale x = null;
             try {
                 x = ((IRatingScaleService) findEntityService(RatingScale.class))
-                        .findByName(ds.getClientId(), ds.getRatingScale());
+                        .findByName(ds.getRatingScale());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `RatingScale` reference:  `ratingScale` = "

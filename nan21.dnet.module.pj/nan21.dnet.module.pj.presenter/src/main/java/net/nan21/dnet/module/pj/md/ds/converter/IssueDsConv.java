@@ -31,17 +31,22 @@ import net.nan21.dnet.module.pj.md.domain.entity.Issue;
 public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         IDsConverter<IssueDs, Issue> {
 
-    protected void modelToEntityReferences(IssueDs ds, Issue e)
+    @Override
+    protected void modelToEntityReferences(IssueDs ds, Issue e, boolean isInsert)
             throws Exception {
-        if (ds.getProjectId() != null) {
-            if (e.getProject() == null
-                    || !e.getProject().getId().equals(ds.getProjectId())) {
-                e.setProject((Project) this.em.find(Project.class,
-                        ds.getProjectId()));
+
+        if (isInsert) {
+            if (ds.getProjectId() != null) {
+                if (e.getProject() == null
+                        || !e.getProject().getId().equals(ds.getProjectId())) {
+                    e.setProject((Project) this.em.find(Project.class,
+                            ds.getProjectId()));
+                }
+            } else {
+                this.lookup_project_Project(ds, e);
             }
-        } else {
-            this.lookup_project_Project(ds, e);
         }
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -51,6 +56,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         } else {
             this.lookup_type_IssueType(ds, e);
         }
+
         if (ds.getStatusId() != null) {
             if (e.getStatus() == null
                     || !e.getStatus().getId().equals(ds.getStatusId())) {
@@ -60,6 +66,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         } else {
             this.lookup_status_IssueStatus(ds, e);
         }
+
         if (ds.getPriorityId() != null) {
             if (e.getPriority() == null
                     || !e.getPriority().getId().equals(ds.getPriorityId())) {
@@ -69,6 +76,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         } else {
             this.lookup_priority_IssuePriority(ds, e);
         }
+
         if (ds.getResolutionId() != null) {
             if (e.getResolution() == null
                     || !e.getResolution().getId().equals(ds.getResolutionId())) {
@@ -78,6 +86,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         } else {
             this.lookup_resolution_IssueResolution(ds, e);
         }
+
         if (ds.getSeverityId() != null) {
             if (e.getSeverity() == null
                     || !e.getSeverity().getId().equals(ds.getSeverityId())) {
@@ -87,6 +96,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         } else {
             this.lookup_severity_IssueSeverity(ds, e);
         }
+
         if (ds.getAssigneeId() != null) {
             if (e.getAssignee() == null
                     || !e.getAssignee().getId().equals(ds.getAssigneeId())) {
@@ -94,6 +104,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
                         ds.getAssigneeId()));
             }
         }
+
         if (ds.getAssigneeRoleId() != null) {
             if (e.getAssigneeRole() == null
                     || !e.getAssigneeRole().getId()
@@ -104,6 +115,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         } else {
             this.lookup_assigneeRole_ProjectRole(ds, e);
         }
+
         if (ds.getReportedVersionId() != null) {
             if (e.getReportedVersion() == null
                     || !e.getReportedVersion().getId()
@@ -114,6 +126,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         } else {
             this.lookup_reportedVersion_ProjectVersion(ds, e);
         }
+
         if (ds.getTargetVersionId() != null) {
             if (e.getTargetVersion() == null
                     || !e.getTargetVersion().getId()
@@ -124,6 +137,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         } else {
             this.lookup_targetVersion_ProjectVersion(ds, e);
         }
+
         if (ds.getFixedInVersionId() != null) {
             if (e.getFixedInVersion() == null
                     || !e.getFixedInVersion().getId()
@@ -134,6 +148,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
         } else {
             this.lookup_fixedInVersion_ProjectVersion(ds, e);
         }
+
     }
 
     protected void lookup_project_Project(IssueDs ds, Issue e) throws Exception {
@@ -141,7 +156,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
             Project x = null;
             try {
                 x = ((IProjectService) findEntityService(Project.class))
-                        .findByCode(ds.getClientId(), ds.getProject());
+                        .findByCode(ds.getProject());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Project` reference:  `project` = "
@@ -159,7 +174,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
             IssueType x = null;
             try {
                 x = ((IIssueTypeService) findEntityService(IssueType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `IssueType` reference:  `type` = "
@@ -178,7 +193,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
             IssueStatus x = null;
             try {
                 x = ((IIssueStatusService) findEntityService(IssueStatus.class))
-                        .findByName(ds.getClientId(), ds.getStatus());
+                        .findByName(ds.getStatus());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `IssueStatus` reference:  `status` = "
@@ -197,7 +212,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
             IssuePriority x = null;
             try {
                 x = ((IIssuePriorityService) findEntityService(IssuePriority.class))
-                        .findByName(ds.getClientId(), ds.getPriority());
+                        .findByName(ds.getPriority());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `IssuePriority` reference:  `priority` = "
@@ -216,7 +231,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
             IssueResolution x = null;
             try {
                 x = ((IIssueResolutionService) findEntityService(IssueResolution.class))
-                        .findByName(ds.getClientId(), ds.getResolution());
+                        .findByName(ds.getResolution());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `IssueResolution` reference:  `resolution` = "
@@ -235,7 +250,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
             IssueSeverity x = null;
             try {
                 x = ((IIssueSeverityService) findEntityService(IssueSeverity.class))
-                        .findByName(ds.getClientId(), ds.getSeverity());
+                        .findByName(ds.getSeverity());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `IssueSeverity` reference:  `severity` = "
@@ -254,7 +269,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
             ProjectRole x = null;
             try {
                 x = ((IProjectRoleService) findEntityService(ProjectRole.class))
-                        .findByName(ds.getClientId(), ds.getAssigneeRole());
+                        .findByName(ds.getAssigneeRole());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProjectRole` reference:  `assigneeRole` = "
@@ -275,8 +290,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
             ProjectVersion x = null;
             try {
                 x = ((IProjectVersionService) findEntityService(ProjectVersion.class))
-                        .findByName(ds.getClientId(), ds.getProjectId(),
-                                ds.getReportedVersion());
+                        .findByName(ds.getProjectId(), ds.getReportedVersion());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProjectVersion` reference:  `projectId` = "
@@ -298,8 +312,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
             ProjectVersion x = null;
             try {
                 x = ((IProjectVersionService) findEntityService(ProjectVersion.class))
-                        .findByName(ds.getClientId(), ds.getProjectId(),
-                                ds.getTargetVersion());
+                        .findByName(ds.getProjectId(), ds.getTargetVersion());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProjectVersion` reference:  `projectId` = "
@@ -321,8 +334,7 @@ public class IssueDsConv extends AbstractDsConverter<IssueDs, Issue> implements
             ProjectVersion x = null;
             try {
                 x = ((IProjectVersionService) findEntityService(ProjectVersion.class))
-                        .findByName(ds.getClientId(), ds.getProjectId(),
-                                ds.getFixedInVersion());
+                        .findByName(ds.getProjectId(), ds.getFixedInVersion());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProjectVersion` reference:  `projectId` = "

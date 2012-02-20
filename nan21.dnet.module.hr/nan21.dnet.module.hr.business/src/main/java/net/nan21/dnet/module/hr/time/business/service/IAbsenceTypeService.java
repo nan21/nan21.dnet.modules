@@ -13,7 +13,7 @@ import net.nan21.dnet.module.hr.time.domain.entity.AbsenceType;
 
 public interface IAbsenceTypeService extends IEntityService<AbsenceType> {
 
-    public AbsenceType findByName(Long clientId, String name);
+    public AbsenceType findByName(String name);
 
     public List<AbsenceType> findByCategory(AbsenceCategory category);
 

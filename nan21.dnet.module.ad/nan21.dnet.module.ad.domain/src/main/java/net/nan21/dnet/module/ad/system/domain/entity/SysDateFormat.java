@@ -32,14 +32,17 @@ import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
-/** SysDateFormat. */
+/**
+ * Define date formats available to users.
+ *  
+ */
 @Entity
 @Table(name = SysDateFormat.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = SysDateFormat.TABLE_NAME
         + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = SysDateFormat.NQ_FIND_BY_ID, query = "SELECT e FROM SysDateFormat e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = SysDateFormat.NQ_FIND_BY_IDS, query = "SELECT e FROM SysDateFormat e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SysDateFormat.NQ_FIND_BY_ID, query = "SELECT e FROM SysDateFormat e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = SysDateFormat.NQ_FIND_BY_IDS, query = "SELECT e FROM SysDateFormat e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = SysDateFormat.NQ_FIND_BY_NAME, query = "SELECT e FROM SysDateFormat e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysDateFormat implements Serializable, IModelWithId,
         IModelWithClientId {

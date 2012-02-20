@@ -42,8 +42,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "RATINGSCALE_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = RatingLevel.NQ_FIND_BY_ID, query = "SELECT e FROM RatingLevel e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = RatingLevel.NQ_FIND_BY_IDS, query = "SELECT e FROM RatingLevel e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = RatingLevel.NQ_FIND_BY_ID, query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = RatingLevel.NQ_FIND_BY_IDS, query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = RatingLevel.NQ_FIND_BY_NAME, query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and  e.ratingScale = :pRatingScale and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "RatingLevel.findByName_PRIMITIVE", query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and  e.ratingScale.id = :pRatingScaleId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class RatingLevel implements Serializable, IModelWithId,

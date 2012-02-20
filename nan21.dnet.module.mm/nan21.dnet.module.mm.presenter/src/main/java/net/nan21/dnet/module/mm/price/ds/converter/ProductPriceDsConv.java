@@ -21,8 +21,10 @@ public class ProductPriceDsConv extends
         AbstractDsConverter<ProductPriceDs, ProductPrice> implements
         IDsConverter<ProductPriceDs, ProductPrice> {
 
-    protected void modelToEntityReferences(ProductPriceDs ds, ProductPrice e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ProductPriceDs ds, ProductPrice e,
+            boolean isInsert) throws Exception {
+
         if (ds.getProductId() != null) {
             if (e.getProduct() == null
                     || !e.getProduct().getId().equals(ds.getProductId())) {
@@ -32,6 +34,7 @@ public class ProductPriceDsConv extends
         } else {
             this.lookup_product_Product(ds, e);
         }
+
         if (ds.getPriceListVersionId() != null) {
             if (e.getPriceListVersion() == null
                     || !e.getPriceListVersion().getId()
@@ -42,6 +45,7 @@ public class ProductPriceDsConv extends
         } else {
             this.lookup_priceListVersion_PriceListVersion(ds, e);
         }
+
         if (ds.getUomId() != null) {
             if (e.getUom() == null || !e.getUom().getId().equals(ds.getUomId())) {
                 e.setUom((Uom) this.em.find(Uom.class, ds.getUomId()));
@@ -49,6 +53,7 @@ public class ProductPriceDsConv extends
         } else {
             this.lookup_uom_Uom(ds, e);
         }
+
     }
 
     protected void lookup_product_Product(ProductPriceDs ds, ProductPrice e)
@@ -57,7 +62,7 @@ public class ProductPriceDsConv extends
             Product x = null;
             try {
                 x = ((IProductService) findEntityService(Product.class))
-                        .findByName(ds.getClientId(), ds.getProduct());
+                        .findByName(ds.getProduct());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Product` reference:  `product` = "
@@ -77,7 +82,7 @@ public class ProductPriceDsConv extends
             PriceListVersion x = null;
             try {
                 x = ((IPriceListVersionService) findEntityService(PriceListVersion.class))
-                        .findByName(ds.getClientId(), ds.getPriceListVersion());
+                        .findByName(ds.getPriceListVersion());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `PriceListVersion` reference:  `priceListVersion` = "
@@ -95,8 +100,8 @@ public class ProductPriceDsConv extends
         if (ds.getUom() != null && !ds.getUom().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) findEntityService(Uom.class)).findByCode(
-                        ds.getClientId(), ds.getUom());
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(ds
+                        .getUom());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Uom` reference:  `uom` = "

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.mm.inventory.business.service.ISubInventoryService;
@@ -30,10 +31,10 @@ public class SubInventoryService extends AbstractEntityService<SubInventory>
         return SubInventory.class;
     }
 
-    public SubInventory findByName(Long clientId, String name) {
+    public SubInventory findByName(String name) {
         return (SubInventory) this.em
                 .createNamedQuery(SubInventory.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -44,8 +45,9 @@ public class SubInventoryService extends AbstractEntityService<SubInventory>
     public List<SubInventory> findByInventoryId(Long inventoryId) {
         return (List<SubInventory>) this.em
                 .createQuery(
-                        "select e from SubInventory e where e.inventory.id = :pInventoryId",
+                        "select e from SubInventory e where e.clientId = :pClientId and  e.inventory.id = :pInventoryId",
                         SubInventory.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pInventoryId", inventoryId).getResultList();
     }
 

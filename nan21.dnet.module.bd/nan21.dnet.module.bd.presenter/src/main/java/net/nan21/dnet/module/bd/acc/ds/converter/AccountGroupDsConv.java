@@ -17,8 +17,10 @@ public class AccountGroupDsConv extends
         AbstractDsConverter<AccountGroupDs, AccountGroup> implements
         IDsConverter<AccountGroupDs, AccountGroup> {
 
-    protected void modelToEntityReferences(AccountGroupDs ds, AccountGroup e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(AccountGroupDs ds, AccountGroup e,
+            boolean isInsert) throws Exception {
+
         if (ds.getAccSchemaId() != null) {
             if (e.getAccSchema() == null
                     || !e.getAccSchema().getId().equals(ds.getAccSchemaId())) {
@@ -28,6 +30,7 @@ public class AccountGroupDsConv extends
         } else {
             this.lookup_accSchema_AccSchema(ds, e);
         }
+
     }
 
     protected void lookup_accSchema_AccSchema(AccountGroupDs ds, AccountGroup e)
@@ -36,7 +39,7 @@ public class AccountGroupDsConv extends
             AccSchema x = null;
             try {
                 x = ((IAccSchemaService) findEntityService(AccSchema.class))
-                        .findByCode(ds.getClientId(), ds.getAccSchema());
+                        .findByCode(ds.getAccSchema());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `AccSchema` reference:  `accSchema` = "

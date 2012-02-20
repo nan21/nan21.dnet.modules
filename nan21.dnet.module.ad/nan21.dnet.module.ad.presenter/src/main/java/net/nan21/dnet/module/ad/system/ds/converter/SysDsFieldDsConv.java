@@ -17,8 +17,10 @@ public class SysDsFieldDsConv extends
         AbstractDsConverter<SysDsFieldDs, SysDsField> implements
         IDsConverter<SysDsFieldDs, SysDsField> {
 
-    protected void modelToEntityReferences(SysDsFieldDs ds, SysDsField e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(SysDsFieldDs ds, SysDsField e,
+            boolean isInsert) throws Exception {
+
         if (ds.getDataSourceId() != null) {
             if (e.getDataSource() == null
                     || !e.getDataSource().getId().equals(ds.getDataSourceId())) {
@@ -28,6 +30,7 @@ public class SysDsFieldDsConv extends
         } else {
             this.lookup_dataSource_SysDataSource(ds, e);
         }
+
     }
 
     protected void lookup_dataSource_SysDataSource(SysDsFieldDs ds, SysDsField e)
@@ -36,7 +39,7 @@ public class SysDsFieldDsConv extends
             SysDataSource x = null;
             try {
                 x = ((ISysDataSourceService) findEntityService(SysDataSource.class))
-                        .findByName(ds.getClientId(), ds.getDataSource());
+                        .findByName(ds.getDataSource());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `SysDataSource` reference:  `dataSource` = "

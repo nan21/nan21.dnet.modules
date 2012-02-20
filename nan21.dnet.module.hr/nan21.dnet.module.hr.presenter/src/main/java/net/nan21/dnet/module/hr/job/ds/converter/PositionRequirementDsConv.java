@@ -18,8 +18,10 @@ public class PositionRequirementDsConv extends
         AbstractDsConverter<PositionRequirementDs, PositionRequirement>
         implements IDsConverter<PositionRequirementDs, PositionRequirement> {
 
+    @Override
     protected void modelToEntityReferences(PositionRequirementDs ds,
-            PositionRequirement e) throws Exception {
+            PositionRequirement e, boolean isInsert) throws Exception {
+
         if (ds.getPositionId() != null) {
             if (e.getPosition() == null
                     || !e.getPosition().getId().equals(ds.getPositionId())) {
@@ -27,6 +29,7 @@ public class PositionRequirementDsConv extends
                         ds.getPositionId()));
             }
         }
+
         if (ds.getRequirementId() != null) {
             if (e.getRequirement() == null
                     || !e.getRequirement().getId()
@@ -37,6 +40,7 @@ public class PositionRequirementDsConv extends
         } else {
             this.lookup_requirement_WorkRequirement(ds, e);
         }
+
     }
 
     protected void lookup_requirement_WorkRequirement(PositionRequirementDs ds,
@@ -45,7 +49,7 @@ public class PositionRequirementDsConv extends
             WorkRequirement x = null;
             try {
                 x = ((IWorkRequirementService) findEntityService(WorkRequirement.class))
-                        .findByName(ds.getClientId(), ds.getRequirement());
+                        .findByName(ds.getRequirement());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `WorkRequirement` reference:  `requirement` = "

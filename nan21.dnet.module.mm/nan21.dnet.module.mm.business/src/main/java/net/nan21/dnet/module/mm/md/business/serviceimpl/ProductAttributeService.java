@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttributeService;
@@ -32,10 +33,10 @@ public class ProductAttributeService extends
         return ProductAttribute.class;
     }
 
-    public ProductAttribute findByName(Long clientId, String name) {
+    public ProductAttribute findByName(String name) {
         return (ProductAttribute) this.em
                 .createNamedQuery(ProductAttribute.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -46,9 +47,10 @@ public class ProductAttributeService extends
     public List<ProductAttribute> findByTypeId(Long typeId) {
         return (List<ProductAttribute>) this.em
                 .createQuery(
-                        "select e from ProductAttribute e where e.type.id = :pTypeId",
-                        ProductAttribute.class).setParameter("pTypeId", typeId)
-                .getResultList();
+                        "select e from ProductAttribute e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        ProductAttribute.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pTypeId", typeId).getResultList();
     }
 
     public List<ProductAttribute> findByUom(Uom uom) {
@@ -58,9 +60,10 @@ public class ProductAttributeService extends
     public List<ProductAttribute> findByUomId(Long uomId) {
         return (List<ProductAttribute>) this.em
                 .createQuery(
-                        "select e from ProductAttribute e where e.uom.id = :pUomId",
-                        ProductAttribute.class).setParameter("pUomId", uomId)
-                .getResultList();
+                        "select e from ProductAttribute e where e.clientId = :pClientId and  e.uom.id = :pUomId",
+                        ProductAttribute.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pUomId", uomId).getResultList();
     }
 
 }

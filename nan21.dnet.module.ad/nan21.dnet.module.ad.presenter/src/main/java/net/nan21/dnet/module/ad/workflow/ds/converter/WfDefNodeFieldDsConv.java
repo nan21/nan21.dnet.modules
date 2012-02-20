@@ -16,8 +16,10 @@ public class WfDefNodeFieldDsConv extends
         AbstractDsConverter<WfDefNodeFieldDs, WfDefNodeField> implements
         IDsConverter<WfDefNodeFieldDs, WfDefNodeField> {
 
-    protected void modelToEntityReferences(WfDefNodeFieldDs ds, WfDefNodeField e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(WfDefNodeFieldDs ds,
+            WfDefNodeField e, boolean isInsert) throws Exception {
+
         if (ds.getNodeId() != null) {
             if (e.getNode() == null
                     || !e.getNode().getId().equals(ds.getNodeId())) {
@@ -25,6 +27,7 @@ public class WfDefNodeFieldDsConv extends
                         ds.getNodeId()));
             }
         }
+
     }
 
 }

@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.ad.usr.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.usr.business.service.IAssignableTypeService;
 
@@ -28,10 +29,10 @@ public class AssignableTypeService extends
         return AssignableType.class;
     }
 
-    public AssignableType findByName(Long clientId, String name) {
+    public AssignableType findByName(String name) {
         return (AssignableType) this.em
                 .createNamedQuery(AssignableType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

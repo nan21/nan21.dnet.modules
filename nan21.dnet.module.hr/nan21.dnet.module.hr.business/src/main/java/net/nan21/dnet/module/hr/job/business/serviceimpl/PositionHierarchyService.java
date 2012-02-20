@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.job.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.job.business.service.IPositionHierarchyService;
 
@@ -29,10 +30,10 @@ public class PositionHierarchyService extends
         return PositionHierarchy.class;
     }
 
-    public PositionHierarchy findByName(Long clientId, String name) {
+    public PositionHierarchy findByName(String name) {
         return (PositionHierarchy) this.em
                 .createNamedQuery(PositionHierarchy.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

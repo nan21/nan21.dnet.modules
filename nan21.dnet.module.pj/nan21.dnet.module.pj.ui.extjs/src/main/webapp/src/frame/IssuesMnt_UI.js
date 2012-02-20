@@ -13,15 +13,15 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssuesMnt_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("issue",{ name:"issueFilter", xtype:"net.nan21.dnet.module.pj.md.dc.IssueMnt$Filter",height:180})	 
-		.addDcView("issue",{ name:"issueList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueMnt$EditList", frame:true})	 
-		.addDcFormView("issue",{ name:"issueEditText", xtype:"net.nan21.dnet.module.pj.md.dc.IssueMnt$ViewText",height:100})	 
+		.addDcEditGridView("issue",{ name:"issueList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueMnt$EditList", frame:true})	 
+		.addDcFormView("issue",{ name:"issueViewText", xtype:"net.nan21.dnet.module.pj.md.dc.IssueMnt$EditText",height:120,title:"Description", collapsible:true, collapsed:true})	 
 		.addPanel({name: "main", layout:"border", defaults:{split:true}})  	 
 ;	 	
 	}
 
 	,_linkElements_: function() {
 		this._getBuilder_()		
-		.addChildrenTo("main",["issueFilter","issueList","issueEditText"] ,["north","center","south"])	
+		.addChildrenTo("main",["issueFilter","issueList","issueViewText"] ,["north","center","south"])	
 	 	.addToolbarTo("main","tlbIssueList")	  	
 	}
 

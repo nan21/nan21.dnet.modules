@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.acc.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.acc.business.service.IAccountGroupService;
 import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
@@ -30,17 +31,17 @@ public class AccountGroupService extends AbstractEntityService<AccountGroup>
         return AccountGroup.class;
     }
 
-    public AccountGroup findByCode(Long clientId, String code) {
+    public AccountGroup findByCode(String code) {
         return (AccountGroup) this.em
                 .createNamedQuery(AccountGroup.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public AccountGroup findByName(Long clientId, String name) {
+    public AccountGroup findByName(String name) {
         return (AccountGroup) this.em
                 .createNamedQuery(AccountGroup.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -51,8 +52,9 @@ public class AccountGroupService extends AbstractEntityService<AccountGroup>
     public List<AccountGroup> findByAccSchemaId(Long accSchemaId) {
         return (List<AccountGroup>) this.em
                 .createQuery(
-                        "select e from AccountGroup e where e.accSchema.id = :pAccSchemaId",
+                        "select e from AccountGroup e where e.clientId = :pClientId and  e.accSchema.id = :pAccSchemaId",
                         AccountGroup.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAccSchemaId", accSchemaId).getResultList();
     }
 

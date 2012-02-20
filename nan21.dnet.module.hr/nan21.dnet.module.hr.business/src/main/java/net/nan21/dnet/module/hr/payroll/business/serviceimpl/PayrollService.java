@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.payroll.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.payroll.business.service.IPayrollService;
 
@@ -28,9 +29,9 @@ public class PayrollService extends AbstractEntityService<Payroll> implements
         return Payroll.class;
     }
 
-    public Payroll findByName(Long clientId, String name) {
+    public Payroll findByName(String name) {
         return (Payroll) this.em.createNamedQuery(Payroll.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

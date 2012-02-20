@@ -11,9 +11,11 @@ public class ImportMapItemDsParam extends EmptyParam {
 
     public static final String fIMPORTFILELOCATION = "importFileLocation";
     public static final String fIMPORTDATASOURCE = "importDataSource";
+    public static final String fIMPORTUKFIELDNAME = "importUkFieldName";
 
     private String importFileLocation;
     private String importDataSource;
+    private String importUkFieldName;
 
     public String getImportFileLocation() {
         return this.importFileLocation;
@@ -29,6 +31,14 @@ public class ImportMapItemDsParam extends EmptyParam {
 
     public void setImportDataSource(String importDataSource) {
         this.importDataSource = importDataSource;
+    }
+
+    public String getImportUkFieldName() {
+        return this.importUkFieldName;
+    }
+
+    public void setImportUkFieldName(String importUkFieldName) {
+        this.importUkFieldName = importUkFieldName;
     }
 
 }

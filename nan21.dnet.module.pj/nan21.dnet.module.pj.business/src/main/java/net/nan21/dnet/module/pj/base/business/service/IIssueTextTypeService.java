@@ -11,6 +11,6 @@ import net.nan21.dnet.module.pj.base.domain.entity.IssueTextType;
 
 public interface IIssueTextTypeService extends IEntityService<IssueTextType> {
 
-    public IssueTextType findByName(Long clientId, String name);
+    public IssueTextType findByName(String name);
 
 }

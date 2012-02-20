@@ -12,6 +12,6 @@ import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
 public interface IProductAttributeGroupService extends
         IEntityService<ProductAttributeGroup> {
 
-    public ProductAttributeGroup findByName(Long clientId, String name);
+    public ProductAttributeGroup findByName(String name);
 
 }

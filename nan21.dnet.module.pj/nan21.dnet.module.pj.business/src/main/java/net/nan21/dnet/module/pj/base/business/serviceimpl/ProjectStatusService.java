@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.pj.base.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.pj.base.business.service.IProjectStatusService;
 
@@ -28,10 +29,10 @@ public class ProjectStatusService extends AbstractEntityService<ProjectStatus>
         return ProjectStatus.class;
     }
 
-    public ProjectStatus findByName(Long clientId, String name) {
+    public ProjectStatus findByName(String name) {
         return (ProjectStatus) this.em
                 .createNamedQuery(ProjectStatus.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

@@ -17,8 +17,10 @@ public class SkillTypeDsConv extends
         AbstractDsConverter<SkillTypeDs, SkillType> implements
         IDsConverter<SkillTypeDs, SkillType> {
 
-    protected void modelToEntityReferences(SkillTypeDs ds, SkillType e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(SkillTypeDs ds, SkillType e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
@@ -28,6 +30,7 @@ public class SkillTypeDsConv extends
         } else {
             this.lookup_category_SkillCategory(ds, e);
         }
+
     }
 
     protected void lookup_category_SkillCategory(SkillTypeDs ds, SkillType e)
@@ -36,7 +39,7 @@ public class SkillTypeDsConv extends
             SkillCategory x = null;
             try {
                 x = ((ISkillCategoryService) findEntityService(SkillCategory.class))
-                        .findByName(ds.getClientId(), ds.getCategory());
+                        .findByName(ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `SkillCategory` reference:  `category` = "

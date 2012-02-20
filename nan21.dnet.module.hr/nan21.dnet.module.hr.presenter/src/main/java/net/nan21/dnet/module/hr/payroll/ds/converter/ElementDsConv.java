@@ -16,8 +16,10 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.Element;
 public class ElementDsConv extends AbstractDsConverter<ElementDs, Element>
         implements IDsConverter<ElementDs, Element> {
 
-    protected void modelToEntityReferences(ElementDs ds, Element e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ElementDs ds, Element e,
+            boolean isInsert) throws Exception {
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -27,6 +29,7 @@ public class ElementDsConv extends AbstractDsConverter<ElementDs, Element>
         } else {
             this.lookup_type_ElementType(ds, e);
         }
+
     }
 
     protected void lookup_type_ElementType(ElementDs ds, Element e)
@@ -35,7 +38,7 @@ public class ElementDsConv extends AbstractDsConverter<ElementDs, Element>
             ElementType x = null;
             try {
                 x = ((IElementTypeService) findEntityService(ElementType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ElementType` reference:  `type` = "

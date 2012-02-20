@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.skill.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.skill.business.service.IQualificationSkillService;
 import net.nan21.dnet.module.hr.skill.domain.entity.Qualification;
@@ -41,8 +42,9 @@ public class QualificationSkillService extends
     public List<QualificationSkill> findByQualificationId(Long qualificationId) {
         return (List<QualificationSkill>) this.em
                 .createQuery(
-                        "select e from QualificationSkill e where e.qualification.id = :pQualificationId",
+                        "select e from QualificationSkill e where e.clientId = :pClientId and  e.qualification.id = :pQualificationId",
                         QualificationSkill.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pQualificationId", qualificationId)
                 .getResultList();
     }
@@ -54,8 +56,9 @@ public class QualificationSkillService extends
     public List<QualificationSkill> findBySkillId(Long skillId) {
         return (List<QualificationSkill>) this.em
                 .createQuery(
-                        "select e from QualificationSkill e where e.skill.id = :pSkillId",
+                        "select e from QualificationSkill e where e.clientId = :pClientId and  e.skill.id = :pSkillId",
                         QualificationSkill.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSkillId", skillId).getResultList();
     }
 
@@ -67,8 +70,9 @@ public class QualificationSkillService extends
     public List<QualificationSkill> findByRequiredLevelId(Long requiredLevelId) {
         return (List<QualificationSkill>) this.em
                 .createQuery(
-                        "select e from QualificationSkill e where e.requiredLevel.id = :pRequiredLevelId",
+                        "select e from QualificationSkill e where e.clientId = :pClientId and  e.requiredLevel.id = :pRequiredLevelId",
                         QualificationSkill.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRequiredLevelId", requiredLevelId)
                 .getResultList();
     }

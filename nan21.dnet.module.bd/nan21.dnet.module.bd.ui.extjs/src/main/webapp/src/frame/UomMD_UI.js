@@ -15,9 +15,9 @@ Ext.define("net.nan21.dnet.module.bd.uom.frame.UomMD_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("uom",{ name:"uomFilter", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$Filter",height:120})	 
-		.addDcView("uom",{ name:"uomList", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$List"})	 
+		.addDcGridView("uom",{ name:"uomList", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$List"})	 
 		.addDcFormView("uom",{ name:"uomEdit", xtype:"net.nan21.dnet.module.bd.uom.dc.Uom$Edit",height:125})	 
-		.addDcView("cnv",{ name:"cnvEditList", xtype:"net.nan21.dnet.module.bd.uom.dc.UomConversion$CtxEditList", frame:true})	 
+		.addDcEditGridView("cnv",{ name:"cnvEditList", xtype:"net.nan21.dnet.module.bd.uom.dc.UomConversion$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.workflow.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.workflow.business.service.IWfDefNodeService;
 import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeField;
@@ -31,9 +32,9 @@ public class WfDefNodeService extends AbstractEntityService<WfDefNode>
         return WfDefNode.class;
     }
 
-    public WfDefNode findByName(Long clientId, String name) {
+    public WfDefNode findByName(String name) {
         return (WfDefNode) this.em.createNamedQuery(WfDefNode.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -44,9 +45,10 @@ public class WfDefNodeService extends AbstractEntityService<WfDefNode>
     public List<WfDefNode> findByProcessId(Long processId) {
         return (List<WfDefNode>) this.em
                 .createQuery(
-                        "select e from WfDefNode e where e.process.id = :pProcessId",
-                        WfDefNode.class).setParameter("pProcessId", processId)
-                .getResultList();
+                        "select e from WfDefNode e where e.clientId = :pClientId and e.process.id = :pProcessId",
+                        WfDefNode.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pProcessId", processId).getResultList();
     }
 
     public List<WfDefNode> findByFields(WfDefNodeField fields) {
@@ -56,9 +58,10 @@ public class WfDefNodeService extends AbstractEntityService<WfDefNode>
     public List<WfDefNode> findByFieldsId(Long fieldsId) {
         return (List<WfDefNode>) this.em
                 .createQuery(
-                        "select distinct e from WfDefNode e , IN (e.fields) c where c.id = :pFieldsId",
-                        WfDefNode.class).setParameter("pFieldsId", fieldsId)
-                .getResultList();
+                        "select distinct e from WfDefNode e , IN (e.fields) c where e.clientId = :pClientId and c.id = :pFieldsId",
+                        WfDefNode.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pFieldsId", fieldsId).getResultList();
     }
 
 }

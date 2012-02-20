@@ -14,11 +14,9 @@ import net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm;
 public interface ICompanyLegalFormService extends
         IEntityService<CompanyLegalForm> {
 
-    public CompanyLegalForm findByName(Long clientId, Country country,
-            String name);
+    public CompanyLegalForm findByName(Country country, String name);
 
-    public CompanyLegalForm findByName(Long clientId, Long countryId,
-            String name);
+    public CompanyLegalForm findByName(Long countryId, String name);
 
     public List<CompanyLegalForm> findByCountry(Country country);
 

@@ -16,8 +16,10 @@ public class WfDefNodeDsConv extends
         AbstractDsConverter<WfDefNodeDs, WfDefNode> implements
         IDsConverter<WfDefNodeDs, WfDefNode> {
 
-    protected void modelToEntityReferences(WfDefNodeDs ds, WfDefNode e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(WfDefNodeDs ds, WfDefNode e,
+            boolean isInsert) throws Exception {
+
         if (ds.getProcessId() != null) {
             if (e.getProcess() == null
                     || !e.getProcess().getId().equals(ds.getProcessId())) {
@@ -25,6 +27,7 @@ public class WfDefNodeDsConv extends
                         ds.getProcessId()));
             }
         }
+
     }
 
 }

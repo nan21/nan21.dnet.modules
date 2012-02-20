@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.skill.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.job.domain.entity.Job;
 import net.nan21.dnet.module.hr.skill.business.service.IJobSkillService;
@@ -39,9 +40,10 @@ public class JobSkillService extends AbstractEntityService<JobSkill> implements
     public List<JobSkill> findByJobId(Long jobId) {
         return (List<JobSkill>) this.em
                 .createQuery(
-                        "select e from JobSkill e where e.job.id = :pJobId",
-                        JobSkill.class).setParameter("pJobId", jobId)
-                .getResultList();
+                        "select e from JobSkill e where e.clientId = :pClientId and  e.job.id = :pJobId",
+                        JobSkill.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJobId", jobId).getResultList();
     }
 
     public List<JobSkill> findBySkill(Skill skill) {
@@ -51,9 +53,10 @@ public class JobSkillService extends AbstractEntityService<JobSkill> implements
     public List<JobSkill> findBySkillId(Long skillId) {
         return (List<JobSkill>) this.em
                 .createQuery(
-                        "select e from JobSkill e where e.skill.id = :pSkillId",
-                        JobSkill.class).setParameter("pSkillId", skillId)
-                .getResultList();
+                        "select e from JobSkill e where e.clientId = :pClientId and  e.skill.id = :pSkillId",
+                        JobSkill.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pSkillId", skillId).getResultList();
     }
 
     public List<JobSkill> findByRequiredLevel(RatingLevel requiredLevel) {
@@ -63,8 +66,9 @@ public class JobSkillService extends AbstractEntityService<JobSkill> implements
     public List<JobSkill> findByRequiredLevelId(Long requiredLevelId) {
         return (List<JobSkill>) this.em
                 .createQuery(
-                        "select e from JobSkill e where e.requiredLevel.id = :pRequiredLevelId",
+                        "select e from JobSkill e where e.clientId = :pClientId and  e.requiredLevel.id = :pRequiredLevelId",
                         JobSkill.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRequiredLevelId", requiredLevelId)
                 .getResultList();
     }

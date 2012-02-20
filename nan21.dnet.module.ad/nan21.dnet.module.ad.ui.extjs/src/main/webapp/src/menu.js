@@ -16,8 +16,10 @@ net.nan21.dnet.module.ad.menu.ad = [
 		{id:"UserTypes_UI", text:Dnet.translate("ui","UserTypes_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.UserTypes_UI", _bundle_:BUNDLE_ID},		
 		{id:"Roles", text:Dnet.translate("ui","Role_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.Role_UI", _bundle_:BUNDLE_ID},		
 		{id:"Users", text:Dnet.translate("ui","Users_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.Users_UI", _bundle_:BUNDLE_ID},		
+		{id:"Menu_UI", text:Dnet.translate("ui","Menu_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.Menu_UI", _bundle_:BUNDLE_ID},		
 		{id:"AccessControl_UI", text:Dnet.translate("ui","AccessControl_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.AccessControl_UI", _bundle_:BUNDLE_ID},		
 		{id:"DsAccessControl_UI", text:Dnet.translate("ui","DsAccessControl_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI", _bundle_:BUNDLE_ID},		
+		{id:"DsMethodAccessControl_UI", text:Dnet.translate("ui","DsMethodAccessControl_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.DsMethodAccessControl_UI", _bundle_:BUNDLE_ID},		
 		{id:"AsgnAccessControl_UI", text:Dnet.translate("ui","AsgnAccessControl_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.AsgnAccessControl_UI", _bundle_:BUNDLE_ID},		
 		{id:"Assignables_UI", text:Dnet.translate("ui","Assignables_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.usr.frame.Assignables_UI", _bundle_:BUNDLE_ID}	]}
 ,		 
@@ -25,7 +27,8 @@ net.nan21.dnet.module.ad.menu.ad = [
 		
 		{id:"SysDataSources_UI", text:Dnet.translate("ui","SysDataSources_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", _bundle_:BUNDLE_ID},		
 		{id:"SysParam_UI", text:Dnet.translate("ui","SysParam_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.system.frame.SysParam_UI", _bundle_:BUNDLE_ID},		
-		{id:"SysDateFormat_UI", text:Dnet.translate("ui","SysDateFormat_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.system.frame.SysDateFormat_UI", _bundle_:BUNDLE_ID}	]}
+		{id:"SysDateFormat_UI", text:Dnet.translate("ui","SysDateFormat_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.system.frame.SysDateFormat_UI", _bundle_:BUNDLE_ID},		
+		{id:"UiViewState_UI", text:Dnet.translate("ui","UiViewState_UI"), leaf:true, _frame_:"net.nan21.dnet.module.ad.system.frame.UiViewState_UI", _bundle_:BUNDLE_ID}	]}
 ,		 
 	{"id":"sm_ad_report", "text":"Report integration", leaf:false, children:[
 		

@@ -15,11 +15,9 @@ import net.nan21.dnet.module.mm.md.domain.entity.ProductAccount;
 
 public interface IProductAccountService extends IEntityService<ProductAccount> {
 
-    public ProductAccount findByCode(Long clientId, Product product,
-            Organization organization);
+    public ProductAccount findByCode(Product product, Organization organization);
 
-    public ProductAccount findByCode(Long clientId, Long productId,
-            Long organizationId);
+    public ProductAccount findByCode(Long productId, Long organizationId);
 
     public List<ProductAccount> findByOrganization(Organization organization);
 

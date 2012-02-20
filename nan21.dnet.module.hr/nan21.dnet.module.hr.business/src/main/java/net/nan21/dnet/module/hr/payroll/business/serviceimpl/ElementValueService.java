@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.payroll.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 import net.nan21.dnet.module.hr.payroll.business.service.IElementValueService;
@@ -39,8 +40,9 @@ public class ElementValueService extends AbstractEntityService<ElementValue>
     public List<ElementValue> findByElementId(Long elementId) {
         return (List<ElementValue>) this.em
                 .createQuery(
-                        "select e from ElementValue e where e.element.id = :pElementId",
+                        "select e from ElementValue e where e.clientId = :pClientId and  e.element.id = :pElementId",
                         ElementValue.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pElementId", elementId).getResultList();
     }
 
@@ -51,8 +53,9 @@ public class ElementValueService extends AbstractEntityService<ElementValue>
     public List<ElementValue> findByEmployeeId(Long employeeId) {
         return (List<ElementValue>) this.em
                 .createQuery(
-                        "select e from ElementValue e where e.employee.id = :pEmployeeId",
+                        "select e from ElementValue e where e.clientId = :pClientId and  e.employee.id = :pEmployeeId",
                         ElementValue.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEmployeeId", employeeId).getResultList();
     }
 
@@ -63,9 +66,10 @@ public class ElementValueService extends AbstractEntityService<ElementValue>
     public List<ElementValue> findByPeriodId(Long periodId) {
         return (List<ElementValue>) this.em
                 .createQuery(
-                        "select e from ElementValue e where e.period.id = :pPeriodId",
-                        ElementValue.class).setParameter("pPeriodId", periodId)
-                .getResultList();
+                        "select e from ElementValue e where e.clientId = :pClientId and  e.period.id = :pPeriodId",
+                        ElementValue.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pPeriodId", periodId).getResultList();
     }
 
 }

@@ -19,8 +19,10 @@ public class SalesOrderItemDsConv extends
         AbstractDsConverter<SalesOrderItemDs, SalesOrderItem> implements
         IDsConverter<SalesOrderItemDs, SalesOrderItem> {
 
-    protected void modelToEntityReferences(SalesOrderItemDs ds, SalesOrderItem e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(SalesOrderItemDs ds,
+            SalesOrderItem e, boolean isInsert) throws Exception {
+
         if (ds.getSalesOrderId() != null) {
             if (e.getSalesOrder() == null
                     || !e.getSalesOrder().getId().equals(ds.getSalesOrderId())) {
@@ -28,11 +30,13 @@ public class SalesOrderItemDsConv extends
                         ds.getSalesOrderId()));
             }
         }
+
         if (ds.getUomId() != null) {
             if (e.getUom() == null || !e.getUom().getId().equals(ds.getUomId())) {
                 e.setUom((Uom) this.em.find(Uom.class, ds.getUomId()));
             }
         }
+
         if (ds.getProductId() != null) {
             if (e.getProduct() == null
                     || !e.getProduct().getId().equals(ds.getProductId())) {
@@ -42,6 +46,7 @@ public class SalesOrderItemDsConv extends
         } else {
             this.lookup_product_Product(ds, e);
         }
+
     }
 
     protected void lookup_product_Product(SalesOrderItemDs ds, SalesOrderItem e)
@@ -50,7 +55,7 @@ public class SalesOrderItemDsConv extends
             Product x = null;
             try {
                 x = ((IProductService) findEntityService(Product.class))
-                        .findByCode(ds.getClientId(), ds.getProductCode());
+                        .findByCode(ds.getProductCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Product` reference:  `productCode` = "

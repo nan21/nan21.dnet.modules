@@ -12,6 +12,6 @@ import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus;
 public interface ISalesInvoiceStatusService extends
         IEntityService<SalesInvoiceStatus> {
 
-    public SalesInvoiceStatus findByName(Long clientId, String name);
+    public SalesInvoiceStatus findByName(String name);
 
 }

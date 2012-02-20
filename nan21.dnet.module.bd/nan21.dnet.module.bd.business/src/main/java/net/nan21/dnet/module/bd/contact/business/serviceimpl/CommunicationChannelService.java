@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.contact.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.contact.business.service.ICommunicationChannelService;
 import net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType;
@@ -38,8 +39,9 @@ public class CommunicationChannelService extends
     public List<CommunicationChannel> findByTypeId(Long typeId) {
         return (List<CommunicationChannel>) this.em
                 .createQuery(
-                        "select e from CommunicationChannel e where e.type.id = :pTypeId",
+                        "select e from CommunicationChannel e where e.clientId = :pClientId and  e.type.id = :pTypeId",
                         CommunicationChannel.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();
     }
 

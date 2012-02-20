@@ -12,6 +12,6 @@ import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType;
 public interface ISalesInvoiceTypeService extends
         IEntityService<SalesInvoiceType> {
 
-    public SalesInvoiceType findByName(Long clientId, String name);
+    public SalesInvoiceType findByName(String name);
 
 }

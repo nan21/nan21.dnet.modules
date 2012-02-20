@@ -7,6 +7,7 @@ package net.nan21.dnet.module.bd.currency.business.serviceimpl;
 
 import java.util.Date;
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyXRateService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
@@ -32,23 +33,22 @@ public class CurrencyXRateService extends AbstractEntityService<CurrencyXRate>
         return CurrencyXRate.class;
     }
 
-    public CurrencyXRate findByValid(Long clientId,
-            CurrencyXRateProvider provider, Currency source, Currency target,
-            Date validAt) {
+    public CurrencyXRate findByValid(CurrencyXRateProvider provider,
+            Currency source, Currency target, Date validAt) {
         return (CurrencyXRate) this.em
                 .createNamedQuery(CurrencyXRate.NQ_FIND_BY_VALID)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProvider", provider)
                 .setParameter("pSource", source)
                 .setParameter("pTarget", target)
                 .setParameter("pValidAt", validAt).getSingleResult();
     }
 
-    public CurrencyXRate findByValid(Long clientId, Long providerId,
-            Long sourceId, Long targetId, Date validAt) {
+    public CurrencyXRate findByValid(Long providerId, Long sourceId,
+            Long targetId, Date validAt) {
         return (CurrencyXRate) this.em
                 .createNamedQuery(CurrencyXRate.NQ_FIND_BY_VALID_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProviderId", providerId)
                 .setParameter("pSourceId", sourceId)
                 .setParameter("pTargetId", targetId)
@@ -62,8 +62,9 @@ public class CurrencyXRateService extends AbstractEntityService<CurrencyXRate>
     public List<CurrencyXRate> findByProviderId(Long providerId) {
         return (List<CurrencyXRate>) this.em
                 .createQuery(
-                        "select e from CurrencyXRate e where e.provider.id = :pProviderId",
+                        "select e from CurrencyXRate e where e.clientId = :pClientId and  e.provider.id = :pProviderId",
                         CurrencyXRate.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProviderId", providerId).getResultList();
     }
 
@@ -74,8 +75,9 @@ public class CurrencyXRateService extends AbstractEntityService<CurrencyXRate>
     public List<CurrencyXRate> findBySourceId(Long sourceId) {
         return (List<CurrencyXRate>) this.em
                 .createQuery(
-                        "select e from CurrencyXRate e where e.source.id = :pSourceId",
+                        "select e from CurrencyXRate e where e.clientId = :pClientId and  e.source.id = :pSourceId",
                         CurrencyXRate.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSourceId", sourceId).getResultList();
     }
 
@@ -86,8 +88,9 @@ public class CurrencyXRateService extends AbstractEntityService<CurrencyXRate>
     public List<CurrencyXRate> findByTargetId(Long targetId) {
         return (List<CurrencyXRate>) this.em
                 .createQuery(
-                        "select e from CurrencyXRate e where e.target.id = :pTargetId",
+                        "select e from CurrencyXRate e where e.clientId = :pClientId and  e.target.id = :pTargetId",
                         CurrencyXRate.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTargetId", targetId).getResultList();
     }
 

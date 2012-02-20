@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.pj.base.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.pj.base.business.service.IIssueTypeService;
 import net.nan21.dnet.module.pj.base.domain.entity.IssueCategory;
@@ -31,9 +32,9 @@ public class IssueTypeService extends AbstractEntityService<IssueType>
         return IssueType.class;
     }
 
-    public IssueType findByName(Long clientId, String name) {
+    public IssueType findByName(String name) {
         return (IssueType) this.em.createNamedQuery(IssueType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -44,8 +45,9 @@ public class IssueTypeService extends AbstractEntityService<IssueType>
     public List<IssueType> findByCategoryId(Long categoryId) {
         return (List<IssueType>) this.em
                 .createQuery(
-                        "select e from IssueType e where e.category.id = :pCategoryId",
+                        "select e from IssueType e where e.clientId = :pClientId and  e.category.id = :pCategoryId",
                         IssueType.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCategoryId", categoryId).getResultList();
     }
 
@@ -56,8 +58,9 @@ public class IssueTypeService extends AbstractEntityService<IssueType>
     public List<IssueType> findByProjectTypesId(Long projectTypesId) {
         return (List<IssueType>) this.em
                 .createQuery(
-                        "select distinct e from IssueType e , IN (e.projectTypes) c where c.id = :pProjectTypesId",
+                        "select distinct e from IssueType e , IN (e.projectTypes) c where e.clientId = :pClientId and c.id = :pProjectTypesId",
                         IssueType.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProjectTypesId", projectTypesId)
                 .getResultList();
     }

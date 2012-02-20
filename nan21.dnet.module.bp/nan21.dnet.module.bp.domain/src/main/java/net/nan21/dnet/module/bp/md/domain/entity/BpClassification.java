@@ -42,8 +42,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = BpClassification.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = BpClassification.NQ_FIND_BY_ID, query = "SELECT e FROM BpClassification e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = BpClassification.NQ_FIND_BY_IDS, query = "SELECT e FROM BpClassification e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = BpClassification.NQ_FIND_BY_ID, query = "SELECT e FROM BpClassification e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = BpClassification.NQ_FIND_BY_IDS, query = "SELECT e FROM BpClassification e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class BpClassification implements Serializable, IModelWithId,
         IModelWithClientId {
 

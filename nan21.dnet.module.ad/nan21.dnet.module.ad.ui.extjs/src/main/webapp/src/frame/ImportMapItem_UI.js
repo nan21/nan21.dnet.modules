@@ -22,13 +22,13 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", {
 			,handler: this.onBtnImportFileRun,scope:this	})	
 							 	
 		.addDcFilterFormView("mapItem",{ name:"mapItemFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$Filter",height:120})	 
-		.addDcView("mapItem",{ name:"mapItemEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnRunImport") ,this._elems_.get("btnImportFileShow") ]}]})	 
+		.addDcEditGridView("mapItem",{ name:"mapItemEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnRunImport") ,this._elems_.get("btnImportFileShow") ]}]})	 
 		.addDcFilterFormView("mapItem",{ name:"importFileForm", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$ImportFileForm"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		
 		.addWindow({name:"wdwImportFile", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("importFileForm")]
-,title:"Import file from server",modal:true,width:500,height:140,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnImportFileRun") ]}}) 	
+,title:"Import file from server",modal:true,width:500,height:170,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnImportFileRun") ]}}) 	
 ;	 	
 	}
 
@@ -41,7 +41,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMapItemEditList", {dc:"mapItem"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlbMapItemEditList", {dc:"mapItem"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Import files"}).end(); 	
 	}
 
 
@@ -76,6 +76,7 @@ this._getWindow_("wdwImportFile").show();
 		var mapItem = this._getDc_("mapItem");
 		mapItem.setParamValue("importDataSource",null);
 		mapItem.setParamValue("importFileLocation",null);
+		mapItem.setParamValue("ukFieldName",null);
 		
 	}
 });  

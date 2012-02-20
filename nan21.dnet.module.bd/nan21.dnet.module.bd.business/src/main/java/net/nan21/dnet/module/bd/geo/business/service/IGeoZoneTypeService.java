@@ -11,6 +11,6 @@ import net.nan21.dnet.module.bd.geo.domain.entity.GeoZoneType;
 
 public interface IGeoZoneTypeService extends IEntityService<GeoZoneType> {
 
-    public GeoZoneType findByName(Long clientId, String name);
+    public GeoZoneType findByName(String name);
 
 }

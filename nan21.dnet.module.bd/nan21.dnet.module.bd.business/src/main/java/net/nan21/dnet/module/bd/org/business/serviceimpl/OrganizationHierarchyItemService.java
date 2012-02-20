@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.org.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationHierarchyItemService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -40,8 +41,9 @@ public class OrganizationHierarchyItemService extends
     public List<OrganizationHierarchyItem> findByHierarchyId(Long hierarchyId) {
         return (List<OrganizationHierarchyItem>) this.em
                 .createQuery(
-                        "select e from OrganizationHierarchyItem e where e.hierarchy.id = :pHierarchyId",
+                        "select e from OrganizationHierarchyItem e where e.clientId = :pClientId and  e.hierarchy.id = :pHierarchyId",
                         OrganizationHierarchyItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pHierarchyId", hierarchyId).getResultList();
     }
 
@@ -54,8 +56,9 @@ public class OrganizationHierarchyItemService extends
             Long organizationId) {
         return (List<OrganizationHierarchyItem>) this.em
                 .createQuery(
-                        "select e from OrganizationHierarchyItem e where e.organization.id = :pOrganizationId",
+                        "select e from OrganizationHierarchyItem e where e.clientId = :pClientId and  e.organization.id = :pOrganizationId",
                         OrganizationHierarchyItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pOrganizationId", organizationId)
                 .getResultList();
     }
@@ -67,8 +70,9 @@ public class OrganizationHierarchyItemService extends
     public List<OrganizationHierarchyItem> findByParentId(Long parentId) {
         return (List<OrganizationHierarchyItem>) this.em
                 .createQuery(
-                        "select e from OrganizationHierarchyItem e where e.parent.id = :pParentId",
+                        "select e from OrganizationHierarchyItem e where e.clientId = :pClientId and  e.parent.id = :pParentId",
                         OrganizationHierarchyItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pParentId", parentId).getResultList();
     }
 

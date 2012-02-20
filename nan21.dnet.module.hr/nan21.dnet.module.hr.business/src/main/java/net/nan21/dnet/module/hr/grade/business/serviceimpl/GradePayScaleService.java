@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.grade.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.grade.business.service.IGradePayScaleService;
 import net.nan21.dnet.module.hr.grade.domain.entity.Grade;
@@ -39,9 +40,10 @@ public class GradePayScaleService extends AbstractEntityService<GradePayScale>
     public List<GradePayScale> findByGradeId(Long gradeId) {
         return (List<GradePayScale>) this.em
                 .createQuery(
-                        "select e from GradePayScale e where e.grade.id = :pGradeId",
-                        GradePayScale.class).setParameter("pGradeId", gradeId)
-                .getResultList();
+                        "select e from GradePayScale e where e.clientId = :pClientId and  e.grade.id = :pGradeId",
+                        GradePayScale.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pGradeId", gradeId).getResultList();
     }
 
     public List<GradePayScale> findByPayScale(PayScale payScale) {
@@ -51,8 +53,9 @@ public class GradePayScaleService extends AbstractEntityService<GradePayScale>
     public List<GradePayScale> findByPayScaleId(Long payScaleId) {
         return (List<GradePayScale>) this.em
                 .createQuery(
-                        "select e from GradePayScale e where e.payScale.id = :pPayScaleId",
+                        "select e from GradePayScale e where e.clientId = :pClientId and  e.payScale.id = :pPayScaleId",
                         GradePayScale.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPayScaleId", payScaleId).getResultList();
     }
 
@@ -63,8 +66,9 @@ public class GradePayScaleService extends AbstractEntityService<GradePayScale>
     public List<GradePayScale> findByCeilingId(Long ceilingId) {
         return (List<GradePayScale>) this.em
                 .createQuery(
-                        "select e from GradePayScale e where e.ceiling.id = :pCeilingId",
+                        "select e from GradePayScale e where e.clientId = :pClientId and  e.ceiling.id = :pCeilingId",
                         GradePayScale.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCeilingId", ceilingId).getResultList();
     }
 

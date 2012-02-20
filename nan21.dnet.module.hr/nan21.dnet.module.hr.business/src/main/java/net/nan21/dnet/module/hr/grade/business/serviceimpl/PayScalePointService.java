@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.grade.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.grade.business.service.IPayScalePointService;
 import net.nan21.dnet.module.hr.grade.domain.entity.PayScale;
@@ -30,20 +31,18 @@ public class PayScalePointService extends AbstractEntityService<PayScalePoint>
         return PayScalePoint.class;
     }
 
-    public PayScalePoint findByScale_code(Long clientId, PayScale payScale,
-            String code) {
+    public PayScalePoint findByScale_code(PayScale payScale, String code) {
         return (PayScalePoint) this.em
                 .createNamedQuery(PayScalePoint.NQ_FIND_BY_SCALE_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPayScale", payScale)
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public PayScalePoint findByScale_code(Long clientId, Long payScaleId,
-            String code) {
+    public PayScalePoint findByScale_code(Long payScaleId, String code) {
         return (PayScalePoint) this.em
                 .createNamedQuery(PayScalePoint.NQ_FIND_BY_SCALE_CODE_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPayScaleId", payScaleId)
                 .setParameter("pCode", code).getSingleResult();
     }
@@ -55,8 +54,9 @@ public class PayScalePointService extends AbstractEntityService<PayScalePoint>
     public List<PayScalePoint> findByPayScaleId(Long payScaleId) {
         return (List<PayScalePoint>) this.em
                 .createQuery(
-                        "select e from PayScalePoint e where e.payScale.id = :pPayScaleId",
+                        "select e from PayScalePoint e where e.clientId = :pClientId and  e.payScale.id = :pPayScaleId",
                         PayScalePoint.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPayScaleId", payScaleId).getResultList();
     }
 

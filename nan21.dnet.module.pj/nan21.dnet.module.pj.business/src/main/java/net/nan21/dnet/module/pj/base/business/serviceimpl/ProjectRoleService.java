@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.pj.base.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.pj.base.business.service.IProjectRoleService;
 import net.nan21.dnet.module.pj.base.domain.entity.ProjectType;
@@ -30,10 +31,10 @@ public class ProjectRoleService extends AbstractEntityService<ProjectRole>
         return ProjectRole.class;
     }
 
-    public ProjectRole findByName(Long clientId, String name) {
+    public ProjectRole findByName(String name) {
         return (ProjectRole) this.em
                 .createNamedQuery(ProjectRole.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -44,8 +45,9 @@ public class ProjectRoleService extends AbstractEntityService<ProjectRole>
     public List<ProjectRole> findByProjectTypesId(Long projectTypesId) {
         return (List<ProjectRole>) this.em
                 .createQuery(
-                        "select distinct e from ProjectRole e , IN (e.projectTypes) c where c.id = :pProjectTypesId",
+                        "select distinct e from ProjectRole e , IN (e.projectTypes) c where e.clientId = :pClientId and c.id = :pProjectTypesId",
                         ProjectRole.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProjectTypesId", projectTypesId)
                 .getResultList();
     }

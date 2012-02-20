@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.time.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.time.business.service.IAbsenceRequestItemService;
 import net.nan21.dnet.module.hr.time.domain.entity.AbsenceRequest;
@@ -39,8 +40,9 @@ public class AbsenceRequestItemService extends
     public List<AbsenceRequestItem> findByAbsenceRequestId(Long absenceRequestId) {
         return (List<AbsenceRequestItem>) this.em
                 .createQuery(
-                        "select e from AbsenceRequestItem e where e.absenceRequest.id = :pAbsenceRequestId",
+                        "select e from AbsenceRequestItem e where e.clientId = :pClientId and  e.absenceRequest.id = :pAbsenceRequestId",
                         AbsenceRequestItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAbsenceRequestId", absenceRequestId)
                 .getResultList();
     }

@@ -16,8 +16,10 @@ import net.nan21.dnet.module.ad.report.domain.entity.DsReport;
 public class DsReportDsConv extends AbstractDsConverter<DsReportDs, DsReport>
         implements IDsConverter<DsReportDs, DsReport> {
 
-    protected void modelToEntityReferences(DsReportDs ds, DsReport e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(DsReportDs ds, DsReport e,
+            boolean isInsert) throws Exception {
+
         if (ds.getReportId() != null) {
             if (e.getReport() == null
                     || !e.getReport().getId().equals(ds.getReportId())) {
@@ -27,6 +29,7 @@ public class DsReportDsConv extends AbstractDsConverter<DsReportDs, DsReport>
         } else {
             this.lookup_report_Report(ds, e);
         }
+
     }
 
     protected void lookup_report_Report(DsReportDs ds, DsReport e)
@@ -35,7 +38,7 @@ public class DsReportDsConv extends AbstractDsConverter<DsReportDs, DsReport>
             Report x = null;
             try {
                 x = ((IReportService) findEntityService(Report.class))
-                        .findByCode(ds.getClientId(), ds.getReportCode());
+                        .findByCode(ds.getReportCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Report` reference:  `reportCode` = "

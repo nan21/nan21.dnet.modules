@@ -20,8 +20,10 @@ import net.nan21.dnet.module.mm.md.domain.entity.Product;
 public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         implements IDsConverter<ProductDs, Product> {
 
-    protected void modelToEntityReferences(ProductDs ds, Product e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ProductDs ds, Product e,
+            boolean isInsert) throws Exception {
+
         if (ds.getManufacturerId() != null) {
             if (e.getManufacturer() == null
                     || !e.getManufacturer().getId()
@@ -32,6 +34,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         } else {
             this.lookup_manufacturer_ProductManufacturer(ds, e);
         }
+
         if (ds.getDefaultUomId() != null) {
             if (e.getDefaultUom() == null
                     || !e.getDefaultUom().getId().equals(ds.getDefaultUomId())) {
@@ -41,6 +44,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         } else {
             this.lookup_defaultUom_Uom(ds, e);
         }
+
         if (ds.getDimUomId() != null) {
             if (e.getDimUom() == null
                     || !e.getDimUom().getId().equals(ds.getDimUomId())) {
@@ -49,6 +53,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         } else {
             this.lookup_dimUom_Uom(ds, e);
         }
+
         if (ds.getVolumeUomId() != null) {
             if (e.getVolumeUom() == null
                     || !e.getVolumeUom().getId().equals(ds.getVolumeUomId())) {
@@ -58,6 +63,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         } else {
             this.lookup_volumeUom_Uom(ds, e);
         }
+
         if (ds.getWeightUomId() != null) {
             if (e.getWeightUom() == null
                     || !e.getWeightUom().getId().equals(ds.getWeightUomId())) {
@@ -67,6 +73,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         } else {
             this.lookup_weightUom_Uom(ds, e);
         }
+
         if (ds.getAttributeGroupId() != null) {
             if (e.getAttributeGroup() == null
                     || !e.getAttributeGroup().getId()
@@ -77,6 +84,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         } else {
             this.lookup_attributeGroup_ProductAttributeGroup(ds, e);
         }
+
     }
 
     protected void lookup_manufacturer_ProductManufacturer(ProductDs ds,
@@ -86,7 +94,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
             ProductManufacturer x = null;
             try {
                 x = ((IProductManufacturerService) findEntityService(ProductManufacturer.class))
-                        .findByCode(ds.getClientId(), ds.getManufacturerCode());
+                        .findByCode(ds.getManufacturerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProductManufacturer` reference:  `manufacturerCode` = "
@@ -105,8 +113,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
                 && !ds.getDefaultUomCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) findEntityService(Uom.class)).findByCode(
-                        ds.getClientId(), ds.getDefaultUomCode());
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(ds
+                        .getDefaultUomCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Uom` reference:  `defaultUomCode` = "
@@ -123,8 +131,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         if (ds.getDimUomCode() != null && !ds.getDimUomCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) findEntityService(Uom.class)).findByCode(
-                        ds.getClientId(), ds.getDimUomCode());
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(ds
+                        .getDimUomCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Uom` reference:  `dimUomCode` = "
@@ -142,8 +150,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         if (ds.getVolumeUomCode() != null && !ds.getVolumeUomCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) findEntityService(Uom.class)).findByCode(
-                        ds.getClientId(), ds.getVolumeUomCode());
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(ds
+                        .getVolumeUomCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Uom` reference:  `volumeUomCode` = "
@@ -161,8 +169,8 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         if (ds.getWeightUomCode() != null && !ds.getWeightUomCode().equals("")) {
             Uom x = null;
             try {
-                x = ((IUomService) findEntityService(Uom.class)).findByCode(
-                        ds.getClientId(), ds.getWeightUomCode());
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(ds
+                        .getWeightUomCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Uom` reference:  `weightUomCode` = "
@@ -182,7 +190,7 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
             ProductAttributeGroup x = null;
             try {
                 x = ((IProductAttributeGroupService) findEntityService(ProductAttributeGroup.class))
-                        .findByName(ds.getClientId(), ds.getAttributeGroup());
+                        .findByName(ds.getAttributeGroup());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ProductAttributeGroup` reference:  `attributeGroup` = "

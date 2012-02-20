@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bd.acc.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.acc.business.service.IAccSchemaService;
 
@@ -28,15 +29,15 @@ public class AccSchemaService extends AbstractEntityService<AccSchema>
         return AccSchema.class;
     }
 
-    public AccSchema findByCode(Long clientId, String code) {
+    public AccSchema findByCode(String code) {
         return (AccSchema) this.em.createNamedQuery(AccSchema.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public AccSchema findByName(Long clientId, String name) {
+    public AccSchema findByName(String name) {
         return (AccSchema) this.em.createNamedQuery(AccSchema.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

@@ -14,9 +14,9 @@ import net.nan21.dnet.module.bd.acc.domain.entity.Account;
 
 public interface IAccountService extends IEntityService<Account> {
 
-    public Account findByCode(Long clientId, String code);
+    public Account findByCode(String code);
 
-    public Account findByName(Long clientId, String name);
+    public Account findByName(String name);
 
     public List<Account> findByAccSchema(AccSchema accSchema);
 

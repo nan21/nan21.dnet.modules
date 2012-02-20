@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.pj.md.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.pj.base.domain.entity.IssueTaskStatus;
 import net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType;
@@ -40,9 +41,10 @@ public class IssueTaskService extends AbstractEntityService<IssueTask>
     public List<IssueTask> findByIssueId(Long issueId) {
         return (List<IssueTask>) this.em
                 .createQuery(
-                        "select e from IssueTask e where e.issue.id = :pIssueId",
-                        IssueTask.class).setParameter("pIssueId", issueId)
-                .getResultList();
+                        "select e from IssueTask e where e.clientId = :pClientId and  e.issue.id = :pIssueId",
+                        IssueTask.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pIssueId", issueId).getResultList();
     }
 
     public List<IssueTask> findByType(IssueTaskType type) {
@@ -52,9 +54,10 @@ public class IssueTaskService extends AbstractEntityService<IssueTask>
     public List<IssueTask> findByTypeId(Long typeId) {
         return (List<IssueTask>) this.em
                 .createQuery(
-                        "select e from IssueTask e where e.type.id = :pTypeId",
-                        IssueTask.class).setParameter("pTypeId", typeId)
-                .getResultList();
+                        "select e from IssueTask e where e.clientId = :pClientId and  e.type.id = :pTypeId",
+                        IssueTask.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pTypeId", typeId).getResultList();
     }
 
     public List<IssueTask> findByStatus(IssueTaskStatus status) {
@@ -64,9 +67,10 @@ public class IssueTaskService extends AbstractEntityService<IssueTask>
     public List<IssueTask> findByStatusId(Long statusId) {
         return (List<IssueTask>) this.em
                 .createQuery(
-                        "select e from IssueTask e where e.status.id = :pStatusId",
-                        IssueTask.class).setParameter("pStatusId", statusId)
-                .getResultList();
+                        "select e from IssueTask e where e.clientId = :pClientId and  e.status.id = :pStatusId",
+                        IssueTask.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pStatusId", statusId).getResultList();
     }
 
     public List<IssueTask> findByAssignee(ProjectMember assignee) {
@@ -76,8 +80,9 @@ public class IssueTaskService extends AbstractEntityService<IssueTask>
     public List<IssueTask> findByAssigneeId(Long assigneeId) {
         return (List<IssueTask>) this.em
                 .createQuery(
-                        "select e from IssueTask e where e.assignee.id = :pAssigneeId",
+                        "select e from IssueTask e where e.clientId = :pClientId and  e.assignee.id = :pAssigneeId",
                         IssueTask.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAssigneeId", assigneeId).getResultList();
     }
 

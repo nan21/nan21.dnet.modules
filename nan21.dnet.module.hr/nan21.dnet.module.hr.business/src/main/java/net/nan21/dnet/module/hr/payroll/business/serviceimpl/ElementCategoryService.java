@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.payroll.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.payroll.business.service.IElementCategoryService;
 
@@ -29,10 +30,10 @@ public class ElementCategoryService extends
         return ElementCategory.class;
     }
 
-    public ElementCategory findByName(Long clientId, String name) {
+    public ElementCategory findByName(String name) {
         return (ElementCategory) this.em
                 .createNamedQuery(ElementCategory.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

@@ -11,6 +11,6 @@ import net.nan21.dnet.module.pj.base.domain.entity.IssueStatus;
 
 public interface IIssueStatusService extends IEntityService<IssueStatus> {
 
-    public IssueStatus findByName(Long clientId, String name);
+    public IssueStatus findByName(String name);
 
 }

@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bp.base.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bp.base.business.service.IPaymentMethodService;
 
@@ -28,10 +29,10 @@ public class PaymentMethodService extends AbstractEntityService<PaymentMethod>
         return PaymentMethod.class;
     }
 
-    public PaymentMethod findByName(Long clientId, String name) {
+    public PaymentMethod findByName(String name) {
         return (PaymentMethod) this.em
                 .createNamedQuery(PaymentMethod.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

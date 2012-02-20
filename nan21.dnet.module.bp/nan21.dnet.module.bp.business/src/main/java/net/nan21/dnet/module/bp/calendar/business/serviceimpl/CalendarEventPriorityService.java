@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bp.calendar.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bp.calendar.business.service.ICalendarEventPriorityService;
 
@@ -29,12 +30,12 @@ public class CalendarEventPriorityService extends
         return CalendarEventPriority.class;
     }
 
-    public CalendarEventPriority findByType_and_name(Long clientId,
-            String eventType, String name) {
+    public CalendarEventPriority findByType_and_name(String eventType,
+            String name) {
         return (CalendarEventPriority) this.em
                 .createNamedQuery(
                         CalendarEventPriority.NQ_FIND_BY_TYPE_AND_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEventType", eventType)
                 .setParameter("pName", name).getSingleResult();
     }

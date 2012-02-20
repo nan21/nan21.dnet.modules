@@ -12,8 +12,8 @@ import net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRateProvider;
 public interface ICurrencyXRateProviderService extends
         IEntityService<CurrencyXRateProvider> {
 
-    public CurrencyXRateProvider findByCode(Long clientId, String code);
+    public CurrencyXRateProvider findByCode(String code);
 
-    public CurrencyXRateProvider findByName(Long clientId, String name);
+    public CurrencyXRateProvider findByName(String name);
 
 }

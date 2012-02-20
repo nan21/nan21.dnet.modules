@@ -17,8 +17,10 @@ public class IssueTypeDsConv extends
         AbstractDsConverter<IssueTypeDs, IssueType> implements
         IDsConverter<IssueTypeDs, IssueType> {
 
-    protected void modelToEntityReferences(IssueTypeDs ds, IssueType e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(IssueTypeDs ds, IssueType e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
@@ -28,6 +30,7 @@ public class IssueTypeDsConv extends
         } else {
             this.lookup_category_IssueCategory(ds, e);
         }
+
     }
 
     protected void lookup_category_IssueCategory(IssueTypeDs ds, IssueType e)
@@ -36,7 +39,7 @@ public class IssueTypeDsConv extends
             IssueCategory x = null;
             try {
                 x = ((IIssueCategoryService) findEntityService(IssueCategory.class))
-                        .findByName(ds.getClientId(), ds.getCategory());
+                        .findByName(ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `IssueCategory` reference:  `category` = "

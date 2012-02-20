@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
         + "_UK1", columnNames = { "CLIENTID", "ACCESSCONTROL_ID", "DSNAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = DsMethodAccessControl.NQ_FIND_BY_ID, query = "SELECT e FROM DsMethodAccessControl e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = DsMethodAccessControl.NQ_FIND_BY_IDS, query = "SELECT e FROM DsMethodAccessControl e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = DsMethodAccessControl.NQ_FIND_BY_ID, query = "SELECT e FROM DsMethodAccessControl e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = DsMethodAccessControl.NQ_FIND_BY_IDS, query = "SELECT e FROM DsMethodAccessControl e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = DsMethodAccessControl.NQ_FIND_BY_UNIQUE, query = "SELECT e FROM DsMethodAccessControl e WHERE e.clientId = :pClientId and  e.accessControl = :pAccessControl and e.dsName = :pDsName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "DsMethodAccessControl.findByUnique_PRIMITIVE", query = "SELECT e FROM DsMethodAccessControl e WHERE e.clientId = :pClientId and  e.accessControl.id = :pAccessControlId and e.dsName = :pDsName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class DsMethodAccessControl implements Serializable, IModelWithId,

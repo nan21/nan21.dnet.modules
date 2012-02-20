@@ -44,28 +44,28 @@ public class MyCalendarMeetingDs extends AbstractDsModel<CalendarEvent>
     public static final String fEMINDER = "eminder";
     public static final String fALLDAY = "allDay";
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long id;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String uuid;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long clientId;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date createdAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date modifiedAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String modifiedBy;
 
     @DsField()
     private Long version;
 
-    @DsField(fetch = false, path = "className")
+    @DsField(noUpdate = true, fetch = false, path = "className")
     private String entityFQN;
 
     @DsField()

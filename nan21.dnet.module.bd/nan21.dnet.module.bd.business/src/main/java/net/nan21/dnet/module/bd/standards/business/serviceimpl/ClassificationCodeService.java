@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bd.standards.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.standards.business.service.IClassificationCodeService;
 import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem;
@@ -31,40 +32,38 @@ public class ClassificationCodeService extends
         return ClassificationCode.class;
     }
 
-    public ClassificationCode findBySyscode(Long clientId,
-            ClassificationSystem classSystem, String code) {
+    public ClassificationCode findBySyscode(ClassificationSystem classSystem,
+            String code) {
         return (ClassificationCode) this.em
                 .createNamedQuery(ClassificationCode.NQ_FIND_BY_SYSCODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassSystem", classSystem)
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public ClassificationCode findBySyscode(Long clientId, Long classSystemId,
-            String code) {
+    public ClassificationCode findBySyscode(Long classSystemId, String code) {
         return (ClassificationCode) this.em
                 .createNamedQuery(
                         ClassificationCode.NQ_FIND_BY_SYSCODE_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassSystemId", classSystemId)
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public ClassificationCode findBySysname(Long clientId,
-            ClassificationSystem classSystem, String name) {
+    public ClassificationCode findBySysname(ClassificationSystem classSystem,
+            String name) {
         return (ClassificationCode) this.em
                 .createNamedQuery(ClassificationCode.NQ_FIND_BY_SYSNAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassSystem", classSystem)
                 .setParameter("pName", name).getSingleResult();
     }
 
-    public ClassificationCode findBySysname(Long clientId, Long classSystemId,
-            String name) {
+    public ClassificationCode findBySysname(Long classSystemId, String name) {
         return (ClassificationCode) this.em
                 .createNamedQuery(
                         ClassificationCode.NQ_FIND_BY_SYSNAME_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassSystemId", classSystemId)
                 .setParameter("pName", name).getSingleResult();
     }
@@ -77,8 +76,9 @@ public class ClassificationCodeService extends
     public List<ClassificationCode> findByClassSystemId(Long classSystemId) {
         return (List<ClassificationCode>) this.em
                 .createQuery(
-                        "select e from ClassificationCode e where e.classSystem.id = :pClassSystemId",
+                        "select e from ClassificationCode e where e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId",
                         ClassificationCode.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassSystemId", classSystemId).getResultList();
     }
 

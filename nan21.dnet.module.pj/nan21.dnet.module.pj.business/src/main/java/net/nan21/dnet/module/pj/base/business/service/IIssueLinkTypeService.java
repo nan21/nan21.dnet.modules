@@ -11,6 +11,6 @@ import net.nan21.dnet.module.pj.base.domain.entity.IssueLinkType;
 
 public interface IIssueLinkTypeService extends IEntityService<IssueLinkType> {
 
-    public IssueLinkType findByName(Long clientId, String name);
+    public IssueLinkType findByName(String name);
 
 }

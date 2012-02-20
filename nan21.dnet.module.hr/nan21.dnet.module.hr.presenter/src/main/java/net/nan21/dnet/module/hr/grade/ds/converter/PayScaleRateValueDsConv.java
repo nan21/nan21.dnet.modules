@@ -18,8 +18,10 @@ public class PayScaleRateValueDsConv extends
         AbstractDsConverter<PayScaleRateValueDs, PayScaleRateValue> implements
         IDsConverter<PayScaleRateValueDs, PayScaleRateValue> {
 
+    @Override
     protected void modelToEntityReferences(PayScaleRateValueDs ds,
-            PayScaleRateValue e) throws Exception {
+            PayScaleRateValue e, boolean isInsert) throws Exception {
+
         if (ds.getScaleRateId() != null) {
             if (e.getScaleRate() == null
                     || !e.getScaleRate().getId().equals(ds.getScaleRateId())) {
@@ -27,6 +29,7 @@ public class PayScaleRateValueDsConv extends
                         ds.getScaleRateId()));
             }
         }
+
         if (ds.getScalePointId() != null) {
             if (e.getScalePoint() == null
                     || !e.getScalePoint().getId().equals(ds.getScalePointId())) {
@@ -36,6 +39,7 @@ public class PayScaleRateValueDsConv extends
         } else {
             this.lookup_scalePoint_PayScalePoint(ds, e);
         }
+
     }
 
     protected void lookup_scalePoint_PayScalePoint(PayScaleRateValueDs ds,
@@ -46,8 +50,8 @@ public class PayScaleRateValueDsConv extends
             PayScalePoint x = null;
             try {
                 x = ((IPayScalePointService) findEntityService(PayScalePoint.class))
-                        .findByScale_code(ds.getClientId(),
-                                ds.getScaleRateId(), ds.getScalePointCode());
+                        .findByScale_code(ds.getScaleRateId(),
+                                ds.getScalePointCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `PayScalePoint` reference:  `scaleRateId` = "

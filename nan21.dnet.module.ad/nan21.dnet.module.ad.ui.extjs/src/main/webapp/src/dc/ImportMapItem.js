@@ -71,6 +71,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMapItem$ImportFileForm", {
 		this._getBuilder_()	
 		.addLov({ name:"importDataSource", xtype:"net.nan21.dnet.module.ad.system.lovs.SysDataSource", paramIndex:"importDataSource",anchor:"-20",retFieldMapping: []  })
 		.addTextField({ name:"importFileLocation", paramIndex:"importFileLocation",anchor:"-20"  })
+		.addTextField({ name:"importUkFieldName", paramIndex:"importUkFieldName",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"main", layout:"form", autoScroll:true, width:400, defaults:{
 labelAlign:"right",labelWidth:140}}) 
@@ -78,7 +79,7 @@ labelAlign:"right",labelWidth:140}})
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["importFileLocation","importDataSource"])
+		.addChildrenTo("main",["importFileLocation","importDataSource","importUkFieldName"])
     		
 	}
 }); 

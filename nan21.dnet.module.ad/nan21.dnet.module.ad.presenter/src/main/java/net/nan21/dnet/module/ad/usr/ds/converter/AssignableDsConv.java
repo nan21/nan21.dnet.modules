@@ -17,8 +17,10 @@ public class AssignableDsConv extends
         AbstractDsConverter<AssignableDs, Assignable> implements
         IDsConverter<AssignableDs, Assignable> {
 
-    protected void modelToEntityReferences(AssignableDs ds, Assignable e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(AssignableDs ds, Assignable e,
+            boolean isInsert) throws Exception {
+
         if (ds.getTypeId() != null) {
             if (e.getAssignableType() == null
                     || !e.getAssignableType().getId().equals(ds.getTypeId())) {
@@ -28,6 +30,7 @@ public class AssignableDsConv extends
         } else {
             this.lookup_assignableType_AssignableType(ds, e);
         }
+
     }
 
     protected void lookup_assignableType_AssignableType(AssignableDs ds,
@@ -36,7 +39,7 @@ public class AssignableDsConv extends
             AssignableType x = null;
             try {
                 x = ((IAssignableTypeService) findEntityService(AssignableType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `AssignableType` reference:  `type` = "

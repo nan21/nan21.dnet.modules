@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.skill.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.skill.business.service.IRatingLevelService;
 import net.nan21.dnet.module.hr.skill.domain.entity.RatingScale;
@@ -30,19 +31,18 @@ public class RatingLevelService extends AbstractEntityService<RatingLevel>
         return RatingLevel.class;
     }
 
-    public RatingLevel findByName(Long clientId, RatingScale ratingScale,
-            String name) {
+    public RatingLevel findByName(RatingScale ratingScale, String name) {
         return (RatingLevel) this.em
                 .createNamedQuery(RatingLevel.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRatingScale", ratingScale)
                 .setParameter("pName", name).getSingleResult();
     }
 
-    public RatingLevel findByName(Long clientId, Long ratingScaleId, String name) {
+    public RatingLevel findByName(Long ratingScaleId, String name) {
         return (RatingLevel) this.em
                 .createNamedQuery(RatingLevel.NQ_FIND_BY_NAME_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRatingScaleId", ratingScaleId)
                 .setParameter("pName", name).getSingleResult();
     }
@@ -54,8 +54,9 @@ public class RatingLevelService extends AbstractEntityService<RatingLevel>
     public List<RatingLevel> findByRatingScaleId(Long ratingScaleId) {
         return (List<RatingLevel>) this.em
                 .createQuery(
-                        "select e from RatingLevel e where e.ratingScale.id = :pRatingScaleId",
+                        "select e from RatingLevel e where e.clientId = :pClientId and  e.ratingScale.id = :pRatingScaleId",
                         RatingLevel.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pRatingScaleId", ratingScaleId).getResultList();
     }
 

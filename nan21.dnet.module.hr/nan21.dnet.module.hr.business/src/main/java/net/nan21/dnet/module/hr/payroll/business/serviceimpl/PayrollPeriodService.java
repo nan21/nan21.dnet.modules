@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.payroll.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.payroll.business.service.IPayrollPeriodService;
 import net.nan21.dnet.module.hr.payroll.domain.entity.Payroll;
@@ -30,10 +31,10 @@ public class PayrollPeriodService extends AbstractEntityService<PayrollPeriod>
         return PayrollPeriod.class;
     }
 
-    public PayrollPeriod findByName(Long clientId, String name) {
+    public PayrollPeriod findByName(String name) {
         return (PayrollPeriod) this.em
                 .createNamedQuery(PayrollPeriod.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -44,8 +45,9 @@ public class PayrollPeriodService extends AbstractEntityService<PayrollPeriod>
     public List<PayrollPeriod> findByPayrollId(Long payrollId) {
         return (List<PayrollPeriod>) this.em
                 .createQuery(
-                        "select e from PayrollPeriod e where e.payroll.id = :pPayrollId",
+                        "select e from PayrollPeriod e where e.clientId = :pClientId and  e.payroll.id = :pPayrollId",
                         PayrollPeriod.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPayrollId", payrollId).getResultList();
     }
 

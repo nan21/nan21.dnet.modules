@@ -15,12 +15,11 @@ import net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRate;
 
 public interface ICurrencyXRateService extends IEntityService<CurrencyXRate> {
 
-    public CurrencyXRate findByValid(Long clientId,
-            CurrencyXRateProvider provider, Currency source, Currency target,
-            Date validAt);
+    public CurrencyXRate findByValid(CurrencyXRateProvider provider,
+            Currency source, Currency target, Date validAt);
 
-    public CurrencyXRate findByValid(Long clientId, Long providerId,
-            Long sourceId, Long targetId, Date validAt);
+    public CurrencyXRate findByValid(Long providerId, Long sourceId,
+            Long targetId, Date validAt);
 
     public List<CurrencyXRate> findByProvider(CurrencyXRateProvider provider);
 

@@ -20,7 +20,6 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
         IModelWithClientId {
 
     public static final String fNAME = "name";
-    public static final String fCODE = "code";
     public static final String fACTIVE = "active";
     public static final String fNOTES = "notes";
     public static final String fID = "id";
@@ -32,6 +31,7 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fENTITYFQN = "entityFQN";
+    public static final String fCODE = "code";
     public static final String fLOCKED = "locked";
     public static final String fACCOUNTTYPE = "accountType";
     public static final String fACCOUNTTYPEID = "accountTypeId";
@@ -42,9 +42,6 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
 
     @DsField()
     private String name;
-
-    @DsField()
-    private String code;
 
     @DsField()
     private Boolean active;
@@ -58,19 +55,19 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
     @DsField()
     private String uuid;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long clientId;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date createdAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date modifiedAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String createdBy;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String modifiedBy;
 
     @DsField()
@@ -78,6 +75,9 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
 
     @DsField(fetch = false, path = "className")
     private String entityFQN;
+
+    @DsField(noUpdate = true)
+    private String code;
 
     @DsField()
     private Boolean locked;
@@ -114,14 +114,6 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public Boolean getActive() {
@@ -211,6 +203,14 @@ public class UserDs extends AbstractDsModel<User> implements IModelWithId,
 
     public void setEntityFQN(String entityFQN) {
         this.entityFQN = entityFQN;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Boolean getLocked() {

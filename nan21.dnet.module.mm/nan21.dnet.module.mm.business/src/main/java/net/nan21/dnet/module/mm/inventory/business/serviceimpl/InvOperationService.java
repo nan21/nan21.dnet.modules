@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.mm.inventory.business.service.IInvOperationService;
@@ -41,8 +42,9 @@ public class InvOperationService extends AbstractEntityService<InvOperation>
     public List<InvOperation> findByInventoryId(Long inventoryId) {
         return (List<InvOperation>) this.em
                 .createQuery(
-                        "select e from InvOperation e where e.inventory.id = :pInventoryId",
+                        "select e from InvOperation e where e.clientId = :pClientId and  e.inventory.id = :pInventoryId",
                         InvOperation.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pInventoryId", inventoryId).getResultList();
     }
 
@@ -53,8 +55,9 @@ public class InvOperationService extends AbstractEntityService<InvOperation>
     public List<InvOperation> findBySubInventoryId(Long subInventoryId) {
         return (List<InvOperation>) this.em
                 .createQuery(
-                        "select e from InvOperation e where e.subInventory.id = :pSubInventoryId",
+                        "select e from InvOperation e where e.clientId = :pClientId and  e.subInventory.id = :pSubInventoryId",
                         InvOperation.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSubInventoryId", subInventoryId)
                 .getResultList();
     }
@@ -66,8 +69,9 @@ public class InvOperationService extends AbstractEntityService<InvOperation>
     public List<InvOperation> findByLocatorId(Long locatorId) {
         return (List<InvOperation>) this.em
                 .createQuery(
-                        "select e from InvOperation e where e.locator.id = :pLocatorId",
+                        "select e from InvOperation e where e.clientId = :pClientId and  e.locator.id = :pLocatorId",
                         InvOperation.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLocatorId", locatorId).getResultList();
     }
 
@@ -78,9 +82,10 @@ public class InvOperationService extends AbstractEntityService<InvOperation>
     public List<InvOperation> findByItemId(Long itemId) {
         return (List<InvOperation>) this.em
                 .createQuery(
-                        "select e from InvOperation e where e.item.id = :pItemId",
-                        InvOperation.class).setParameter("pItemId", itemId)
-                .getResultList();
+                        "select e from InvOperation e where e.clientId = :pClientId and  e.item.id = :pItemId",
+                        InvOperation.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pItemId", itemId).getResultList();
     }
 
     public List<InvOperation> findByTransactionLine(
@@ -91,8 +96,9 @@ public class InvOperationService extends AbstractEntityService<InvOperation>
     public List<InvOperation> findByTransactionLineId(Long transactionLineId) {
         return (List<InvOperation>) this.em
                 .createQuery(
-                        "select e from InvOperation e where e.transactionLine.id = :pTransactionLineId",
+                        "select e from InvOperation e where e.clientId = :pClientId and  e.transactionLine.id = :pTransactionLineId",
                         InvOperation.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTransactionLineId", transactionLineId)
                 .getResultList();
     }

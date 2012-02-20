@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.ad.report.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.report.business.service.IReportServerService;
 
@@ -28,10 +29,10 @@ public class ReportServerService extends AbstractEntityService<ReportServer>
         return ReportServer.class;
     }
 
-    public ReportServer findByName(Long clientId, String name) {
+    public ReportServer findByName(String name) {
         return (ReportServer) this.em
                 .createNamedQuery(ReportServer.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

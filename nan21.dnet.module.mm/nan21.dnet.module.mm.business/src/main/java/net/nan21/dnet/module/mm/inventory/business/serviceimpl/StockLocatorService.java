@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.inventory.business.service.IStockLocatorService;
 import net.nan21.dnet.module.mm.inventory.domain.entity.StockLocatorType;
@@ -31,10 +32,10 @@ public class StockLocatorService extends AbstractEntityService<StockLocator>
         return StockLocator.class;
     }
 
-    public StockLocator findByName(Long clientId, String name) {
+    public StockLocator findByName(String name) {
         return (StockLocator) this.em
                 .createNamedQuery(StockLocator.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -45,8 +46,9 @@ public class StockLocatorService extends AbstractEntityService<StockLocator>
     public List<StockLocator> findBySubInventoryId(Long subInventoryId) {
         return (List<StockLocator>) this.em
                 .createQuery(
-                        "select e from StockLocator e where e.subInventory.id = :pSubInventoryId",
+                        "select e from StockLocator e where e.clientId = :pClientId and  e.subInventory.id = :pSubInventoryId",
                         StockLocator.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pSubInventoryId", subInventoryId)
                 .getResultList();
     }
@@ -58,8 +60,9 @@ public class StockLocatorService extends AbstractEntityService<StockLocator>
     public List<StockLocator> findByLocatorTypeId(Long locatorTypeId) {
         return (List<StockLocator>) this.em
                 .createQuery(
-                        "select e from StockLocator e where e.locatorType.id = :pLocatorTypeId",
+                        "select e from StockLocator e where e.clientId = :pClientId and  e.locatorType.id = :pLocatorTypeId",
                         StockLocator.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLocatorTypeId", locatorTypeId).getResultList();
     }
 

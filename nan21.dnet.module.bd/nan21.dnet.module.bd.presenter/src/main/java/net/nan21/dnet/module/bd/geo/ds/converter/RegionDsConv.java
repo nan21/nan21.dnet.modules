@@ -16,8 +16,10 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Region;
 public class RegionDsConv extends AbstractDsConverter<RegionDs, Region>
         implements IDsConverter<RegionDs, Region> {
 
-    protected void modelToEntityReferences(RegionDs ds, Region e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(RegionDs ds, Region e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCountryId() != null) {
             if (e.getCountry() == null
                     || !e.getCountry().getId().equals(ds.getCountryId())) {
@@ -27,6 +29,7 @@ public class RegionDsConv extends AbstractDsConverter<RegionDs, Region>
         } else {
             this.lookup_country_Country(ds, e);
         }
+
     }
 
     protected void lookup_country_Country(RegionDs ds, Region e)
@@ -35,7 +38,7 @@ public class RegionDsConv extends AbstractDsConverter<RegionDs, Region>
             Country x = null;
             try {
                 x = ((ICountryService) findEntityService(Country.class))
-                        .findByCode(ds.getClientId(), ds.getCountryCode());
+                        .findByCode(ds.getCountryCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Country` reference:  `countryCode` = "

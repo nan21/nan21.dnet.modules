@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.pj.base.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.pj.base.business.service.IProjectTypeService;
 import net.nan21.dnet.module.pj.base.domain.entity.IssueType;
@@ -32,10 +33,10 @@ public class ProjectTypeService extends AbstractEntityService<ProjectType>
         return ProjectType.class;
     }
 
-    public ProjectType findByName(Long clientId, String name) {
+    public ProjectType findByName(String name) {
         return (ProjectType) this.em
                 .createNamedQuery(ProjectType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -46,8 +47,9 @@ public class ProjectTypeService extends AbstractEntityService<ProjectType>
     public List<ProjectType> findByCategoryId(Long categoryId) {
         return (List<ProjectType>) this.em
                 .createQuery(
-                        "select e from ProjectType e where e.category.id = :pCategoryId",
+                        "select e from ProjectType e where e.clientId = :pClientId and  e.category.id = :pCategoryId",
                         ProjectType.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCategoryId", categoryId).getResultList();
     }
 
@@ -58,8 +60,9 @@ public class ProjectTypeService extends AbstractEntityService<ProjectType>
     public List<ProjectType> findByProjectRolesId(Long projectRolesId) {
         return (List<ProjectType>) this.em
                 .createQuery(
-                        "select distinct e from ProjectType e , IN (e.projectRoles) c where c.id = :pProjectRolesId",
+                        "select distinct e from ProjectType e , IN (e.projectRoles) c where e.clientId = :pClientId and c.id = :pProjectRolesId",
                         ProjectType.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProjectRolesId", projectRolesId)
                 .getResultList();
     }
@@ -71,8 +74,9 @@ public class ProjectTypeService extends AbstractEntityService<ProjectType>
     public List<ProjectType> findByItemTypesId(Long itemTypesId) {
         return (List<ProjectType>) this.em
                 .createQuery(
-                        "select distinct e from ProjectType e , IN (e.itemTypes) c where c.id = :pItemTypesId",
+                        "select distinct e from ProjectType e , IN (e.itemTypes) c where e.clientId = :pClientId and c.id = :pItemTypesId",
                         ProjectType.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pItemTypesId", itemTypesId).getResultList();
     }
 

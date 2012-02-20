@@ -14,7 +14,7 @@ import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType;
 public interface IProductAttributeTypeService extends
         IEntityService<ProductAttributeType> {
 
-    public ProductAttributeType findByName(Long clientId, String name);
+    public ProductAttributeType findByName(String name);
 
     public List<ProductAttributeType> findByCategory(
             ProductAttributeCategory category);

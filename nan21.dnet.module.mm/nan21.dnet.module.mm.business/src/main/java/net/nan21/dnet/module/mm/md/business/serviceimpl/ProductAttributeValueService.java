@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttributeValueService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
@@ -32,22 +33,22 @@ public class ProductAttributeValueService extends
         return ProductAttributeValue.class;
     }
 
-    public ProductAttributeValue findByName(Long clientId, Product product,
+    public ProductAttributeValue findByName(Product product,
             ProductAttributeGroupAttribute groupAttribute) {
         return (ProductAttributeValue) this.em
                 .createNamedQuery(ProductAttributeValue.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProduct", product)
                 .setParameter("pGroupAttribute", groupAttribute)
                 .getSingleResult();
     }
 
-    public ProductAttributeValue findByName(Long clientId, Long productId,
+    public ProductAttributeValue findByName(Long productId,
             Long groupAttributeId) {
         return (ProductAttributeValue) this.em
                 .createNamedQuery(
                         ProductAttributeValue.NQ_FIND_BY_NAME_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProductId", productId)
                 .setParameter("pGroupAttributeId", groupAttributeId)
                 .getSingleResult();
@@ -60,8 +61,9 @@ public class ProductAttributeValueService extends
     public List<ProductAttributeValue> findByProductId(Long productId) {
         return (List<ProductAttributeValue>) this.em
                 .createQuery(
-                        "select e from ProductAttributeValue e where e.product.id = :pProductId",
+                        "select e from ProductAttributeValue e where e.clientId = :pClientId and  e.product.id = :pProductId",
                         ProductAttributeValue.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProductId", productId).getResultList();
     }
 
@@ -74,8 +76,9 @@ public class ProductAttributeValueService extends
             Long groupAttributeId) {
         return (List<ProductAttributeValue>) this.em
                 .createQuery(
-                        "select e from ProductAttributeValue e where e.groupAttribute.id = :pGroupAttributeId",
+                        "select e from ProductAttributeValue e where e.clientId = :pClientId and  e.groupAttribute.id = :pGroupAttributeId",
                         ProductAttributeValue.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pGroupAttributeId", groupAttributeId)
                 .getResultList();
     }

@@ -17,8 +17,10 @@ public class GradeRateDsConv extends
         AbstractDsConverter<GradeRateDs, GradeRate> implements
         IDsConverter<GradeRateDs, GradeRate> {
 
-    protected void modelToEntityReferences(GradeRateDs ds, GradeRate e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(GradeRateDs ds, GradeRate e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
@@ -28,6 +30,7 @@ public class GradeRateDsConv extends
         } else {
             this.lookup_currency_Currency(ds, e);
         }
+
     }
 
     protected void lookup_currency_Currency(GradeRateDs ds, GradeRate e)
@@ -36,7 +39,7 @@ public class GradeRateDsConv extends
             Currency x = null;
             try {
                 x = ((ICurrencyService) findEntityService(Currency.class))
-                        .findByCode(ds.getClientId(), ds.getCurrencyCode());
+                        .findByCode(ds.getCurrencyCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Currency` reference:  `currencyCode` = "

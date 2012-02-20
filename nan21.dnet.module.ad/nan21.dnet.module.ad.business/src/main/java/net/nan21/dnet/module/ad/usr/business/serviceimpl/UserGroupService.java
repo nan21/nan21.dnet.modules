@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.usr.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.usr.business.service.IUserGroupService;
 import net.nan21.dnet.module.ad.usr.domain.entity.User;
@@ -30,9 +31,9 @@ public class UserGroupService extends AbstractEntityService<UserGroup>
         return UserGroup.class;
     }
 
-    public UserGroup findByName(Long clientId, String name) {
+    public UserGroup findByName(String name) {
         return (UserGroup) this.em.createNamedQuery(UserGroup.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -43,9 +44,10 @@ public class UserGroupService extends AbstractEntityService<UserGroup>
     public List<UserGroup> findByUsersId(Long usersId) {
         return (List<UserGroup>) this.em
                 .createQuery(
-                        "select distinct e from UserGroup e , IN (e.users) c where c.id = :pUsersId",
-                        UserGroup.class).setParameter("pUsersId", usersId)
-                .getResultList();
+                        "select distinct e from UserGroup e , IN (e.users) c where e.clientId = :pClientId and c.id = :pUsersId",
+                        UserGroup.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pUsersId", usersId).getResultList();
     }
 
 }

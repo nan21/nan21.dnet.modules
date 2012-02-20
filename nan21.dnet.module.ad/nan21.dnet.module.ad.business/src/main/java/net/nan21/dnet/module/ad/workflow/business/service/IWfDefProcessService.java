@@ -13,7 +13,7 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess;
 
 public interface IWfDefProcessService extends IEntityService<WfDefProcess> {
 
-    public WfDefProcess findByName(Long clientId, String name);
+    public WfDefProcess findByName(String name);
 
     public List<WfDefProcess> findByNodes(WfDefNode nodes);
 

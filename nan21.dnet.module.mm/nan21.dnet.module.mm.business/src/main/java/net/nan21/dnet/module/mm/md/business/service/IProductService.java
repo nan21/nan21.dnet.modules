@@ -17,9 +17,9 @@ import net.nan21.dnet.module.mm.md.domain.entity.Product;
 
 public interface IProductService extends IEntityService<Product> {
 
-    public Product findByCode(Long clientId, String code);
+    public Product findByCode(String code);
 
-    public Product findByName(Long clientId, String name);
+    public Product findByName(String name);
 
     public List<Product> findByDefaultUom(Uom defaultUom);
 

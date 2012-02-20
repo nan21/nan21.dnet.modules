@@ -45,8 +45,8 @@ import org.hibernate.validator.constraints.NotBlank;
                 "CLIENTID", "ELEMENT_ID", "NAME" }) })
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = Variable.NQ_FIND_BY_ID, query = "SELECT e FROM Variable e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = Variable.NQ_FIND_BY_IDS, query = "SELECT e FROM Variable e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Variable.NQ_FIND_BY_ID, query = "SELECT e FROM Variable e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Variable.NQ_FIND_BY_IDS, query = "SELECT e FROM Variable e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = Variable.NQ_FIND_BY_CODE, query = "SELECT e FROM Variable e WHERE e.clientId = :pClientId and  e.element = :pElement and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = "Variable.findByCode_PRIMITIVE", query = "SELECT e FROM Variable e WHERE e.clientId = :pClientId and  e.element.id = :pElementId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = Variable.NQ_FIND_BY_NAME, query = "SELECT e FROM Variable e WHERE e.clientId = :pClientId and  e.element = :pElement and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),

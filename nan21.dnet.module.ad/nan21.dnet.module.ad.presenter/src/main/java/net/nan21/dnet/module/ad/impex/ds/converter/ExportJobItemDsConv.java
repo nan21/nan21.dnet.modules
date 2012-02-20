@@ -19,8 +19,10 @@ public class ExportJobItemDsConv extends
         AbstractDsConverter<ExportJobItemDs, ExportJobItem> implements
         IDsConverter<ExportJobItemDs, ExportJobItem> {
 
-    protected void modelToEntityReferences(ExportJobItemDs ds, ExportJobItem e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ExportJobItemDs ds, ExportJobItem e,
+            boolean isInsert) throws Exception {
+
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
                 e.setJob((ExportJob) this.em.find(ExportJob.class,
@@ -29,6 +31,7 @@ public class ExportJobItemDsConv extends
         } else {
             this.lookup_job_ExportJob(ds, e);
         }
+
         if (ds.getMapId() != null) {
             if (e.getMap() == null || !e.getMap().getId().equals(ds.getMapId())) {
                 e.setMap((ExportMap) this.em.find(ExportMap.class,
@@ -37,6 +40,7 @@ public class ExportJobItemDsConv extends
         } else {
             this.lookup_map_ExportMap(ds, e);
         }
+
     }
 
     protected void lookup_job_ExportJob(ExportJobItemDs ds, ExportJobItem e)
@@ -45,7 +49,7 @@ public class ExportJobItemDsConv extends
             ExportJob x = null;
             try {
                 x = ((IExportJobService) findEntityService(ExportJob.class))
-                        .findByName(ds.getClientId(), ds.getJobName());
+                        .findByName(ds.getJobName());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ExportJob` reference:  `jobName` = "
@@ -64,7 +68,7 @@ public class ExportJobItemDsConv extends
             ExportMap x = null;
             try {
                 x = ((IExportMapService) findEntityService(ExportMap.class))
-                        .findByName(ds.getClientId(), ds.getMapName());
+                        .findByName(ds.getMapName());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ExportMap` reference:  `mapName` = "

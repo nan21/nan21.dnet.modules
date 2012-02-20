@@ -19,11 +19,11 @@ Ext.define("net.nan21.dnet.module.hr.job.frame.Position_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("pos",{ name:"posFilter", xtype:"net.nan21.dnet.module.hr.job.dc.Position$Filter",height:120})	 
-		.addDcView("pos",{ name:"posList", xtype:"net.nan21.dnet.module.hr.job.dc.Position$List"})	 
+		.addDcGridView("pos",{ name:"posList", xtype:"net.nan21.dnet.module.hr.job.dc.Position$List"})	 
 		.addDcFormView("pos",{ name:"posEdit", xtype:"net.nan21.dnet.module.hr.job.dc.Position$Edit",height:180})	 
-		.addDcView("skill",{ name:"skillCtxEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.PositionSkill$CtxEditList", frame:true,title:"Competences"})	 
-		.addDcView("req",{ name:"reqCtxEditList", xtype:"net.nan21.dnet.module.hr.job.dc.PositionRequirement$CtxEditList", frame:true,title:"Requirements"})	 
-		.addDcView("course",{ name:"courseCtxEditList", xtype:"net.nan21.dnet.module.hr.training.dc.PositionCourse$PositionCtxEditList", frame:true,title:"Courses"})	 
+		.addDcEditGridView("skill",{ name:"skillCtxEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.PositionSkill$CtxEditList", frame:true,title:"Competences"})	 
+		.addDcEditGridView("req",{ name:"reqCtxEditList", xtype:"net.nan21.dnet.module.hr.job.dc.PositionRequirement$CtxEditList", frame:true,title:"Requirements"})	 
+		.addDcEditGridView("course",{ name:"courseCtxEditList", xtype:"net.nan21.dnet.module.hr.training.dc.PositionCourse$PositionCtxEditList", frame:true,title:"Courses"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
 		.addPanel({name: "detailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 

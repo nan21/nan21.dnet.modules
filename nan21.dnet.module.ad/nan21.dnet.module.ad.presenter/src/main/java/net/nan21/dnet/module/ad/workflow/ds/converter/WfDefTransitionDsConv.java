@@ -18,8 +18,10 @@ public class WfDefTransitionDsConv extends
         AbstractDsConverter<WfDefTransitionDs, WfDefTransition> implements
         IDsConverter<WfDefTransitionDs, WfDefTransition> {
 
+    @Override
     protected void modelToEntityReferences(WfDefTransitionDs ds,
-            WfDefTransition e) throws Exception {
+            WfDefTransition e, boolean isInsert) throws Exception {
+
         if (ds.getProcessId() != null) {
             if (e.getProcess() == null
                     || !e.getProcess().getId().equals(ds.getProcessId())) {
@@ -27,6 +29,7 @@ public class WfDefTransitionDsConv extends
                         ds.getProcessId()));
             }
         }
+
         if (ds.getSourceId() != null) {
             if (e.getSource() == null
                     || !e.getSource().getId().equals(ds.getSourceId())) {
@@ -36,6 +39,7 @@ public class WfDefTransitionDsConv extends
         } else {
             this.lookup_source_WfDefNode(ds, e);
         }
+
         if (ds.getTargetId() != null) {
             if (e.getTarget() == null
                     || !e.getTarget().getId().equals(ds.getTargetId())) {
@@ -45,6 +49,7 @@ public class WfDefTransitionDsConv extends
         } else {
             this.lookup_target_WfDefNode(ds, e);
         }
+
     }
 
     protected void lookup_source_WfDefNode(WfDefTransitionDs ds,
@@ -53,7 +58,7 @@ public class WfDefTransitionDsConv extends
             WfDefNode x = null;
             try {
                 x = ((IWfDefNodeService) findEntityService(WfDefNode.class))
-                        .findByName(ds.getClientId(), ds.getSource());
+                        .findByName(ds.getSource());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `WfDefNode` reference:  `source` = "
@@ -72,7 +77,7 @@ public class WfDefTransitionDsConv extends
             WfDefNode x = null;
             try {
                 x = ((IWfDefNodeService) findEntityService(WfDefNode.class))
-                        .findByName(ds.getClientId(), ds.getTarget());
+                        .findByName(ds.getTarget());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `WfDefNode` reference:  `target` = "

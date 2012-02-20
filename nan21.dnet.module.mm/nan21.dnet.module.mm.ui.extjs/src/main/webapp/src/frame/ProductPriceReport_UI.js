@@ -13,7 +13,7 @@ Ext.define("net.nan21.dnet.module.mm.price.frame.ProductPriceReport_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("prodprice",{ name:"prodpriceFilter", xtype:"net.nan21.dnet.module.mm.price.dc.ProductPriceReport$Filter",height:110})	 
-		.addDcView("prodprice",{ name:"prodpriceList", xtype:"net.nan21.dnet.module.mm.price.dc.ProductPriceReport$List"})	 
+		.addDcGridView("prodprice",{ name:"prodpriceList", xtype:"net.nan21.dnet.module.mm.price.dc.ProductPriceReport$List"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	

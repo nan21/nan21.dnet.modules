@@ -16,7 +16,10 @@ import net.nan21.dnet.module.hr.job.domain.entity.Job;
 public class JobDsConv extends AbstractDsConverter<JobDs, Job> implements
         IDsConverter<JobDs, Job> {
 
-    protected void modelToEntityReferences(JobDs ds, Job e) throws Exception {
+    @Override
+    protected void modelToEntityReferences(JobDs ds, Job e, boolean isInsert)
+            throws Exception {
+
         if (ds.getTypeId() != null) {
             if (e.getJobType() == null
                     || !e.getJobType().getId().equals(ds.getTypeId())) {
@@ -26,6 +29,7 @@ public class JobDsConv extends AbstractDsConverter<JobDs, Job> implements
         } else {
             this.lookup_jobType_JobType(ds, e);
         }
+
     }
 
     protected void lookup_jobType_JobType(JobDs ds, Job e) throws Exception {
@@ -33,7 +37,7 @@ public class JobDsConv extends AbstractDsConverter<JobDs, Job> implements
             JobType x = null;
             try {
                 x = ((IJobTypeService) findEntityService(JobType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `JobType` reference:  `type` = "

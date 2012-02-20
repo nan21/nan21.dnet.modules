@@ -12,6 +12,6 @@ import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus;
 public interface ISalesOrderStatusService extends
         IEntityService<SalesOrderStatus> {
 
-    public SalesOrderStatus findByName(Long clientId, String name);
+    public SalesOrderStatus findByName(String name);
 
 }

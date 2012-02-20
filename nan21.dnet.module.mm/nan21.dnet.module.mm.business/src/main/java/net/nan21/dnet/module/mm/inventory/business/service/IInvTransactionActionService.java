@@ -12,6 +12,6 @@ import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction;
 public interface IInvTransactionActionService extends
         IEntityService<InvTransactionAction> {
 
-    public InvTransactionAction findByName(Long clientId, String name);
+    public InvTransactionAction findByName(String name);
 
 }

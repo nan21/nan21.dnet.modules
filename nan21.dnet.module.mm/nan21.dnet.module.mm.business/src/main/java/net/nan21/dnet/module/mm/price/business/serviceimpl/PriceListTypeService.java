@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.mm.price.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.price.business.service.IPriceListTypeService;
 
@@ -28,10 +29,10 @@ public class PriceListTypeService extends AbstractEntityService<PriceListType>
         return PriceListType.class;
     }
 
-    public PriceListType findByName(Long clientId, String name) {
+    public PriceListType findByName(String name) {
         return (PriceListType) this.em
                 .createNamedQuery(PriceListType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

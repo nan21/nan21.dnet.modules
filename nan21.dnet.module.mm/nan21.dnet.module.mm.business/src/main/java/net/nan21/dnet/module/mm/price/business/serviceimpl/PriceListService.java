@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.price.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.mm.price.business.service.IPriceListService;
@@ -30,9 +31,9 @@ public class PriceListService extends AbstractEntityService<PriceList>
         return PriceList.class;
     }
 
-    public PriceList findByName(Long clientId, String name) {
+    public PriceList findByName(String name) {
         return (PriceList) this.em.createNamedQuery(PriceList.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -43,8 +44,9 @@ public class PriceListService extends AbstractEntityService<PriceList>
     public List<PriceList> findByCurrencyId(Long currencyId) {
         return (List<PriceList>) this.em
                 .createQuery(
-                        "select e from PriceList e where e.currency.id = :pCurrencyId",
+                        "select e from PriceList e where e.clientId = :pClientId and  e.currency.id = :pCurrencyId",
                         PriceList.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCurrencyId", currencyId).getResultList();
     }
 

@@ -17,8 +17,10 @@ public class AttachmentDsConv extends
         AbstractDsConverter<AttachmentDs, Attachment> implements
         IDsConverter<AttachmentDs, Attachment> {
 
-    protected void modelToEntityReferences(AttachmentDs ds, Attachment e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(AttachmentDs ds, Attachment e,
+            boolean isInsert) throws Exception {
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -28,6 +30,7 @@ public class AttachmentDsConv extends
         } else {
             this.lookup_type_AttachmentType(ds, e);
         }
+
     }
 
     protected void lookup_type_AttachmentType(AttachmentDs ds, Attachment e)
@@ -36,7 +39,7 @@ public class AttachmentDsConv extends
             AttachmentType x = null;
             try {
                 x = ((IAttachmentTypeService) findEntityService(AttachmentType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `AttachmentType` reference:  `type` = "

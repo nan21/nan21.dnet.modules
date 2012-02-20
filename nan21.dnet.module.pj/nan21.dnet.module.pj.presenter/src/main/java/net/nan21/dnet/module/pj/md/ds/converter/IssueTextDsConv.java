@@ -18,14 +18,17 @@ public class IssueTextDsConv extends
         AbstractDsConverter<IssueTextDs, IssueText> implements
         IDsConverter<IssueTextDs, IssueText> {
 
-    protected void modelToEntityReferences(IssueTextDs ds, IssueText e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(IssueTextDs ds, IssueText e,
+            boolean isInsert) throws Exception {
+
         if (ds.getIssueId() != null) {
             if (e.getIssue() == null
                     || !e.getIssue().getId().equals(ds.getIssueId())) {
                 e.setIssue((Issue) this.em.find(Issue.class, ds.getIssueId()));
             }
         }
+
         if (ds.getIssueTextTypeId() != null) {
             if (e.getIssueTextType() == null
                     || !e.getIssueTextType().getId()
@@ -36,6 +39,7 @@ public class IssueTextDsConv extends
         } else {
             this.lookup_issueTextType_IssueTextType(ds, e);
         }
+
     }
 
     protected void lookup_issueTextType_IssueTextType(IssueTextDs ds,
@@ -44,7 +48,7 @@ public class IssueTextDsConv extends
             IssueTextType x = null;
             try {
                 x = ((IIssueTextTypeService) findEntityService(IssueTextType.class))
-                        .findByName(ds.getClientId(), ds.getIssueTextType());
+                        .findByName(ds.getIssueTextType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `IssueTextType` reference:  `issueTextType` = "

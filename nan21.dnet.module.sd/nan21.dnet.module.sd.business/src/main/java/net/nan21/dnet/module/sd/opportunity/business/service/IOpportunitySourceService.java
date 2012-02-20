@@ -12,6 +12,6 @@ import net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunitySource;
 public interface IOpportunitySourceService extends
         IEntityService<OpportunitySource> {
 
-    public OpportunitySource findByName(Long clientId, String name);
+    public OpportunitySource findByName(String name);
 
 }

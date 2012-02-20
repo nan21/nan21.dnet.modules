@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.job.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.job.business.service.IJobService;
 import net.nan21.dnet.module.hr.job.domain.entity.JobType;
@@ -30,15 +31,15 @@ public class JobService extends AbstractEntityService<Job> implements
         return Job.class;
     }
 
-    public Job findByCode(Long clientId, String code) {
+    public Job findByCode(String code) {
         return (Job) this.em.createNamedQuery(Job.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public Job findByName(Long clientId, String name) {
+    public Job findByName(String name) {
         return (Job) this.em.createNamedQuery(Job.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -49,9 +50,10 @@ public class JobService extends AbstractEntityService<Job> implements
     public List<Job> findByJobTypeId(Long jobTypeId) {
         return (List<Job>) this.em
                 .createQuery(
-                        "select e from Job e where e.jobType.id = :pJobTypeId",
-                        Job.class).setParameter("pJobTypeId", jobTypeId)
-                .getResultList();
+                        "select e from Job e where e.clientId = :pClientId and  e.jobType.id = :pJobTypeId",
+                        Job.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJobTypeId", jobTypeId).getResultList();
     }
 
 }

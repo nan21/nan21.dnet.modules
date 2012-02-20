@@ -19,11 +19,11 @@ Ext.define("net.nan21.dnet.module.ad.report.frame.Reports_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("rep",{ name:"repFilter", xtype:"net.nan21.dnet.module.ad.report.dc.Report$Filter",height:120})	 
-		.addDcView("rep",{ name:"repList", xtype:"net.nan21.dnet.module.ad.report.dc.Report$List"})	 
+		.addDcGridView("rep",{ name:"repList", xtype:"net.nan21.dnet.module.ad.report.dc.Report$List"})	 
 		.addDcFormView("rep",{ name:"repEdit", xtype:"net.nan21.dnet.module.ad.report.dc.Report$Edit",height:140})	 
-		.addDcView("params",{ name:"paramEditList", xtype:"net.nan21.dnet.module.ad.report.dc.ReportParam$CtxEditList", frame:true,title:"Parameters"})	 
-		.addDcView("dsrep",{ name:"dsrepList", xtype:"net.nan21.dnet.module.ad.report.dc.DsReport$ReportCtxList", frame:true,width:450})	 
-		.addDcView("dsparam",{ name:"dsparamList", xtype:"net.nan21.dnet.module.ad.report.dc.DsReportParam$CtxEditList", frame:true})	 
+		.addDcEditGridView("params",{ name:"paramEditList", xtype:"net.nan21.dnet.module.ad.report.dc.ReportParam$CtxEditList", frame:true,title:"Parameters"})	 
+		.addDcEditGridView("dsrep",{ name:"dsrepList", xtype:"net.nan21.dnet.module.ad.report.dc.DsReport$ReportCtxList", frame:true,width:450})	 
+		.addDcEditGridView("dsparam",{ name:"dsparamList", xtype:"net.nan21.dnet.module.ad.report.dc.DsReportParam$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
 		.addPanel({name: "repDetailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 

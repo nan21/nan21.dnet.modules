@@ -15,11 +15,10 @@ import net.nan21.dnet.module.bp.md.domain.entity.BpBankAccount;
 
 public interface IBpBankAccountService extends IEntityService<BpBankAccount> {
 
-    public BpBankAccount findByAccount(Long clientId, BusinessPartner bpartner,
+    public BpBankAccount findByAccount(BusinessPartner bpartner,
             String accountNo);
 
-    public BpBankAccount findByAccount(Long clientId, Long bpartnerId,
-            String accountNo);
+    public BpBankAccount findByAccount(Long bpartnerId, String accountNo);
 
     public List<BpBankAccount> findByBpartner(BusinessPartner bpartner);
 

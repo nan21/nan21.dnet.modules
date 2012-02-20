@@ -11,6 +11,6 @@ import net.nan21.dnet.module.hr.job.domain.entity.JobType;
 
 public interface IJobTypeService extends IEntityService<JobType> {
 
-    public JobType findByName(Long clientId, String name);
+    public JobType findByName(String name);
 
 }

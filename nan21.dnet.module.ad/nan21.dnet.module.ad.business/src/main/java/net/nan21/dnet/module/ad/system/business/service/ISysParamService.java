@@ -11,8 +11,8 @@ import net.nan21.dnet.module.ad.system.domain.entity.SysParam;
 
 public interface ISysParamService extends IEntityService<SysParam> {
 
-    public SysParam findByCode(Long clientId, String code);
+    public SysParam findByCode(String code);
 
-    public SysParam findByName(Long clientId, String name);
+    public SysParam findByName(String name);
 
 }

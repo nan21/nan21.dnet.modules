@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.usr.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.usr.business.service.IAsgnAccessControlService;
 import net.nan21.dnet.module.ad.usr.domain.entity.AccessControl;
@@ -31,20 +32,19 @@ public class AsgnAccessControlService extends
         return AsgnAccessControl.class;
     }
 
-    public AsgnAccessControl findByUnique(Long clientId,
-            AccessControl accessControl, String dsName) {
+    public AsgnAccessControl findByUnique(AccessControl accessControl,
+            String dsName) {
         return (AsgnAccessControl) this.em
                 .createNamedQuery(AsgnAccessControl.NQ_FIND_BY_UNIQUE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAccessControl", accessControl)
                 .setParameter("pDsName", dsName).getSingleResult();
     }
 
-    public AsgnAccessControl findByUnique(Long clientId, Long accessControlId,
-            String dsName) {
+    public AsgnAccessControl findByUnique(Long accessControlId, String dsName) {
         return (AsgnAccessControl) this.em
                 .createNamedQuery(AsgnAccessControl.NQ_FIND_BY_UNIQUE_PRIMITIVE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAccessControlId", accessControlId)
                 .setParameter("pDsName", dsName).getSingleResult();
     }
@@ -57,8 +57,9 @@ public class AsgnAccessControlService extends
     public List<AsgnAccessControl> findByAccessControlId(Long accessControlId) {
         return (List<AsgnAccessControl>) this.em
                 .createQuery(
-                        "select e from AsgnAccessControl e where e.accessControl.id = :pAccessControlId",
+                        "select e from AsgnAccessControl e where e.clientId = :pClientId and e.accessControl.id = :pAccessControlId",
                         AsgnAccessControl.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAccessControlId", accessControlId)
                 .getResultList();
     }

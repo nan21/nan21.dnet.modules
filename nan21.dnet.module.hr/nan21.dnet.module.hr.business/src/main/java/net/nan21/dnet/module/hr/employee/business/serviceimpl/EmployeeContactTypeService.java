@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.employee.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.employee.business.service.IEmployeeContactTypeService;
 
@@ -29,10 +30,10 @@ public class EmployeeContactTypeService extends
         return EmployeeContactType.class;
     }
 
-    public EmployeeContactType findByName(Long clientId, String name) {
+    public EmployeeContactType findByName(String name) {
         return (EmployeeContactType) this.em
                 .createNamedQuery(EmployeeContactType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

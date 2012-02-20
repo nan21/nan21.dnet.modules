@@ -17,8 +17,10 @@ public class ElementTypeDsConv extends
         AbstractDsConverter<ElementTypeDs, ElementType> implements
         IDsConverter<ElementTypeDs, ElementType> {
 
-    protected void modelToEntityReferences(ElementTypeDs ds, ElementType e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ElementTypeDs ds, ElementType e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
@@ -28,6 +30,7 @@ public class ElementTypeDsConv extends
         } else {
             this.lookup_category_ElementCategory(ds, e);
         }
+
     }
 
     protected void lookup_category_ElementCategory(ElementTypeDs ds,
@@ -36,7 +39,7 @@ public class ElementTypeDsConv extends
             ElementCategory x = null;
             try {
                 x = ((IElementCategoryService) findEntityService(ElementCategory.class))
-                        .findByName(ds.getClientId(), ds.getCategory());
+                        .findByName(ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `ElementCategory` reference:  `category` = "

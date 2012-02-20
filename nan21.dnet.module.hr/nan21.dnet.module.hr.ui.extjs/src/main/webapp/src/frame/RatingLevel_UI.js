@@ -13,7 +13,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.frame.RatingLevel_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingLevel$Filter",height:120})	 
-		.addDcView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingLevel$EditList", frame:true})	 
+		.addDcEditGridView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingLevel$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	

@@ -13,7 +13,7 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.ElementType;
 
 public interface IElementTypeService extends IEntityService<ElementType> {
 
-    public ElementType findByName(Long clientId, String name);
+    public ElementType findByName(String name);
 
     public List<ElementType> findByCategory(ElementCategory category);
 

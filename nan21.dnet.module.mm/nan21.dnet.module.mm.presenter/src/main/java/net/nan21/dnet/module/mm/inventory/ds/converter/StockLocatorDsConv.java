@@ -17,8 +17,10 @@ public class StockLocatorDsConv extends
         AbstractDsConverter<StockLocatorDs, StockLocator> implements
         IDsConverter<StockLocatorDs, StockLocator> {
 
-    protected void modelToEntityReferences(StockLocatorDs ds, StockLocator e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(StockLocatorDs ds, StockLocator e,
+            boolean isInsert) throws Exception {
+
         if (ds.getSubInventoryId() != null) {
             if (e.getSubInventory() == null
                     || !e.getSubInventory().getId()
@@ -29,6 +31,7 @@ public class StockLocatorDsConv extends
         } else {
             this.lookup_subInventory_SubInventory(ds, e);
         }
+
     }
 
     protected void lookup_subInventory_SubInventory(StockLocatorDs ds,
@@ -37,7 +40,7 @@ public class StockLocatorDsConv extends
             SubInventory x = null;
             try {
                 x = ((ISubInventoryService) findEntityService(SubInventory.class))
-                        .findByName(ds.getClientId(), ds.getSubInventory());
+                        .findByName(ds.getSubInventory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `SubInventory` reference:  `subInventory` = "

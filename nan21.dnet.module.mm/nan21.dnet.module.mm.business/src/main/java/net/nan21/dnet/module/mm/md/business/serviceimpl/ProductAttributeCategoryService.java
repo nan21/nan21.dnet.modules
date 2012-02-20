@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.md.business.service.IProductAttributeCategoryService;
 
@@ -29,10 +30,10 @@ public class ProductAttributeCategoryService extends
         return ProductAttributeCategory.class;
     }
 
-    public ProductAttributeCategory findByName(Long clientId, String name) {
+    public ProductAttributeCategory findByName(String name) {
         return (ProductAttributeCategory) this.em
                 .createNamedQuery(ProductAttributeCategory.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

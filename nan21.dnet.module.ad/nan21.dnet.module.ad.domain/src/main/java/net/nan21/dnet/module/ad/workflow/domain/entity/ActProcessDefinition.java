@@ -37,8 +37,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = ActProcessDefinition.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = ActProcessDefinition.NQ_FIND_BY_ID, query = "SELECT e FROM ActProcessDefinition e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = ActProcessDefinition.NQ_FIND_BY_IDS, query = "SELECT e FROM ActProcessDefinition e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ActProcessDefinition.NQ_FIND_BY_ID, query = "SELECT e FROM ActProcessDefinition e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ActProcessDefinition.NQ_FIND_BY_IDS, query = "SELECT e FROM ActProcessDefinition e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 @ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActProcessDefinition implements Serializable, IModelWithId {

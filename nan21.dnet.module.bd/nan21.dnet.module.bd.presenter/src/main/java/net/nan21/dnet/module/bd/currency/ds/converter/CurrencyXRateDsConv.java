@@ -18,8 +18,10 @@ public class CurrencyXRateDsConv extends
         AbstractDsConverter<CurrencyXRateDs, CurrencyXRate> implements
         IDsConverter<CurrencyXRateDs, CurrencyXRate> {
 
-    protected void modelToEntityReferences(CurrencyXRateDs ds, CurrencyXRate e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(CurrencyXRateDs ds, CurrencyXRate e,
+            boolean isInsert) throws Exception {
+
         if (ds.getSourceId() != null) {
             if (e.getSource() == null
                     || !e.getSource().getId().equals(ds.getSourceId())) {
@@ -27,6 +29,7 @@ public class CurrencyXRateDsConv extends
                         ds.getSourceId()));
             }
         }
+
         if (ds.getTargetId() != null) {
             if (e.getTarget() == null
                     || !e.getTarget().getId().equals(ds.getTargetId())) {
@@ -34,6 +37,7 @@ public class CurrencyXRateDsConv extends
                         ds.getTargetId()));
             }
         }
+
         if (ds.getProviderId() != null) {
             if (e.getProvider() == null
                     || !e.getProvider().getId().equals(ds.getProviderId())) {
@@ -43,6 +47,7 @@ public class CurrencyXRateDsConv extends
         } else {
             this.lookup_provider_CurrencyXRateProvider(ds, e);
         }
+
     }
 
     protected void lookup_provider_CurrencyXRateProvider(CurrencyXRateDs ds,
@@ -51,7 +56,7 @@ public class CurrencyXRateDsConv extends
             CurrencyXRateProvider x = null;
             try {
                 x = ((ICurrencyXRateProviderService) findEntityService(CurrencyXRateProvider.class))
-                        .findByCode(ds.getClientId(), ds.getProviderCode());
+                        .findByCode(ds.getProviderCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `CurrencyXRateProvider` reference:  `providerCode` = "

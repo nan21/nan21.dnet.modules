@@ -19,8 +19,10 @@ public class JobCourseDsConv extends
         AbstractDsConverter<JobCourseDs, JobCourse> implements
         IDsConverter<JobCourseDs, JobCourse> {
 
-    protected void modelToEntityReferences(JobCourseDs ds, JobCourse e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(JobCourseDs ds, JobCourse e,
+            boolean isInsert) throws Exception {
+
         if (ds.getJobId() != null) {
             if (e.getJob() == null || !e.getJob().getId().equals(ds.getJobId())) {
                 e.setJob((Job) this.em.find(Job.class, ds.getJobId()));
@@ -28,6 +30,7 @@ public class JobCourseDsConv extends
         } else {
             this.lookup_job_Job(ds, e);
         }
+
         if (ds.getCourseId() != null) {
             if (e.getCourse() == null
                     || !e.getCourse().getId().equals(ds.getCourseId())) {
@@ -37,14 +40,15 @@ public class JobCourseDsConv extends
         } else {
             this.lookup_course_Course(ds, e);
         }
+
     }
 
     protected void lookup_job_Job(JobCourseDs ds, JobCourse e) throws Exception {
         if (ds.getJobCode() != null && !ds.getJobCode().equals("")) {
             Job x = null;
             try {
-                x = ((IJobService) findEntityService(Job.class)).findByCode(
-                        ds.getClientId(), ds.getJobCode());
+                x = ((IJobService) findEntityService(Job.class)).findByCode(ds
+                        .getJobCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Job` reference:  `jobCode` = "
@@ -63,7 +67,7 @@ public class JobCourseDsConv extends
             Course x = null;
             try {
                 x = ((ICourseService) findEntityService(Course.class))
-                        .findByCode(ds.getClientId(), ds.getCourseCode());
+                        .findByCode(ds.getCourseCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Course` reference:  `courseCode` = "

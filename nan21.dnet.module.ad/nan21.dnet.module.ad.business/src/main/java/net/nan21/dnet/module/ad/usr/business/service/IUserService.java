@@ -16,7 +16,7 @@ import net.nan21.dnet.module.ad.usr.domain.entity.User;
 
 public interface IUserService extends IEntityService<User> {
 
-    public User findByCode(Long clientId, String code);
+    public User findByCode(String code);
 
     public List<User> findByDateFormat(SysDateFormat dateFormat);
 

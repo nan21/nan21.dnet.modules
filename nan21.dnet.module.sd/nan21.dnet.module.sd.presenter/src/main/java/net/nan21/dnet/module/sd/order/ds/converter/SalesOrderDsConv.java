@@ -32,8 +32,10 @@ public class SalesOrderDsConv extends
         AbstractDsConverter<SalesOrderDs, SalesOrder> implements
         IDsConverter<SalesOrderDs, SalesOrder> {
 
-    protected void modelToEntityReferences(SalesOrderDs ds, SalesOrder e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(SalesOrderDs ds, SalesOrder e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCurrencyId() != null) {
             if (e.getCurrency() == null
                     || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
@@ -43,6 +45,7 @@ public class SalesOrderDsConv extends
         } else {
             this.lookup_currency_Currency(ds, e);
         }
+
         if (ds.getPriceListId() != null) {
             if (e.getPriceList() == null
                     || !e.getPriceList().getId().equals(ds.getPriceListId())) {
@@ -52,6 +55,7 @@ public class SalesOrderDsConv extends
         } else {
             this.lookup_priceList_PriceList(ds, e);
         }
+
         if (ds.getDeliveryMethodId() != null) {
             if (e.getDeliveryMethod() == null
                     || !e.getDeliveryMethod().getId()
@@ -62,6 +66,7 @@ public class SalesOrderDsConv extends
         } else {
             this.lookup_deliveryMethod_DeliveryMethod(ds, e);
         }
+
         if (ds.getTypeId() != null) {
             if (e.getType() == null
                     || !e.getType().getId().equals(ds.getTypeId())) {
@@ -71,6 +76,7 @@ public class SalesOrderDsConv extends
         } else {
             this.lookup_type_SalesOrderType(ds, e);
         }
+
         if (ds.getStatusId() != null) {
             if (e.getStatus() == null
                     || !e.getStatus().getId().equals(ds.getStatusId())) {
@@ -80,6 +86,7 @@ public class SalesOrderDsConv extends
         } else {
             this.lookup_status_SalesOrderStatus(ds, e);
         }
+
         if (ds.getPaymentMethodId() != null) {
             if (e.getPaymentMethod() == null
                     || !e.getPaymentMethod().getId()
@@ -90,6 +97,7 @@ public class SalesOrderDsConv extends
         } else {
             this.lookup_paymentMethod_PaymentMethod(ds, e);
         }
+
         if (ds.getCustomerId() != null) {
             if (e.getCustomer() == null
                     || !e.getCustomer().getId().equals(ds.getCustomerId())) {
@@ -99,6 +107,7 @@ public class SalesOrderDsConv extends
         } else {
             this.lookup_customer_BusinessPartner(ds, e);
         }
+
         if (ds.getSupplierId() != null) {
             if (e.getSupplier() == null
                     || !e.getSupplier().getId().equals(ds.getSupplierId())) {
@@ -108,6 +117,7 @@ public class SalesOrderDsConv extends
         } else {
             this.lookup_supplier_Organization(ds, e);
         }
+
         if (ds.getBillToId() != null) {
             if (e.getBillTo() == null
                     || !e.getBillTo().getId().equals(ds.getBillToId())) {
@@ -117,6 +127,7 @@ public class SalesOrderDsConv extends
         } else {
             this.lookup_billTo_BusinessPartner(ds, e);
         }
+
         if (ds.getShipToId() != null) {
             if (e.getShipTo() == null
                     || !e.getShipTo().getId().equals(ds.getShipToId())) {
@@ -126,6 +137,7 @@ public class SalesOrderDsConv extends
         } else {
             this.lookup_shipTo_BusinessPartner(ds, e);
         }
+
         if (ds.getBillToLocationId() != null) {
             if (e.getBillToLocation() == null
                     || !e.getBillToLocation().getId()
@@ -134,6 +146,7 @@ public class SalesOrderDsConv extends
                         ds.getBillToLocationId()));
             }
         }
+
         if (ds.getShipToLocationId() != null) {
             if (e.getShipToLocation() == null
                     || !e.getShipToLocation().getId()
@@ -142,6 +155,7 @@ public class SalesOrderDsConv extends
                         ds.getShipToLocationId()));
             }
         }
+
     }
 
     protected void lookup_currency_Currency(SalesOrderDs ds, SalesOrder e)
@@ -150,7 +164,7 @@ public class SalesOrderDsConv extends
             Currency x = null;
             try {
                 x = ((ICurrencyService) findEntityService(Currency.class))
-                        .findByCode(ds.getClientId(), ds.getCurrency());
+                        .findByCode(ds.getCurrency());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Currency` reference:  `currency` = "
@@ -169,7 +183,7 @@ public class SalesOrderDsConv extends
             PriceList x = null;
             try {
                 x = ((IPriceListService) findEntityService(PriceList.class))
-                        .findByName(ds.getClientId(), ds.getPriceList());
+                        .findByName(ds.getPriceList());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `PriceList` reference:  `priceList` = "
@@ -189,7 +203,7 @@ public class SalesOrderDsConv extends
             DeliveryMethod x = null;
             try {
                 x = ((IDeliveryMethodService) findEntityService(DeliveryMethod.class))
-                        .findByName(ds.getClientId(), ds.getDeliveryMethod());
+                        .findByName(ds.getDeliveryMethod());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `DeliveryMethod` reference:  `deliveryMethod` = "
@@ -208,7 +222,7 @@ public class SalesOrderDsConv extends
             SalesOrderType x = null;
             try {
                 x = ((ISalesOrderTypeService) findEntityService(SalesOrderType.class))
-                        .findByName(ds.getClientId(), ds.getType());
+                        .findByName(ds.getType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `SalesOrderType` reference:  `type` = "
@@ -227,7 +241,7 @@ public class SalesOrderDsConv extends
             SalesOrderStatus x = null;
             try {
                 x = ((ISalesOrderStatusService) findEntityService(SalesOrderStatus.class))
-                        .findByName(ds.getClientId(), ds.getStatus());
+                        .findByName(ds.getStatus());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `SalesOrderStatus` reference:  `status` = "
@@ -246,7 +260,7 @@ public class SalesOrderDsConv extends
             PaymentMethod x = null;
             try {
                 x = ((IPaymentMethodService) findEntityService(PaymentMethod.class))
-                        .findByName(ds.getClientId(), ds.getPaymentMethod());
+                        .findByName(ds.getPaymentMethod());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `PaymentMethod` reference:  `paymentMethod` = "
@@ -265,7 +279,7 @@ public class SalesOrderDsConv extends
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
-                        .findByCode(ds.getClientId(), ds.getCustomerCode());
+                        .findByCode(ds.getCustomerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `BusinessPartner` reference:  `customerCode` = "
@@ -284,7 +298,7 @@ public class SalesOrderDsConv extends
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getClientId(), ds.getSupplier());
+                        .findByCode(ds.getSupplier());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Organization` reference:  `supplier` = "
@@ -303,7 +317,7 @@ public class SalesOrderDsConv extends
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
-                        .findByCode(ds.getClientId(), ds.getBillToCode());
+                        .findByCode(ds.getBillToCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `BusinessPartner` reference:  `billToCode` = "
@@ -322,7 +336,7 @@ public class SalesOrderDsConv extends
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
-                        .findByCode(ds.getClientId(), ds.getShipToCode());
+                        .findByCode(ds.getShipToCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `BusinessPartner` reference:  `shipToCode` = "

@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.bp.md.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode;
 import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem;
@@ -40,9 +41,10 @@ public class BpClassificationService extends
     public List<BpClassification> findByBpId(Long bpId) {
         return (List<BpClassification>) this.em
                 .createQuery(
-                        "select e from BpClassification e where e.bp.id = :pBpId",
-                        BpClassification.class).setParameter("pBpId", bpId)
-                .getResultList();
+                        "select e from BpClassification e where e.clientId = :pClientId and  e.bp.id = :pBpId",
+                        BpClassification.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pBpId", bpId).getResultList();
     }
 
     public List<BpClassification> findByClassSystem(
@@ -53,8 +55,9 @@ public class BpClassificationService extends
     public List<BpClassification> findByClassSystemId(Long classSystemId) {
         return (List<BpClassification>) this.em
                 .createQuery(
-                        "select e from BpClassification e where e.classSystem.id = :pClassSystemId",
+                        "select e from BpClassification e where e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId",
                         BpClassification.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassSystemId", classSystemId).getResultList();
     }
 
@@ -65,8 +68,9 @@ public class BpClassificationService extends
     public List<BpClassification> findByClassCodeId(Long classCodeId) {
         return (List<BpClassification>) this.em
                 .createQuery(
-                        "select e from BpClassification e where e.classCode.id = :pClassCodeId",
+                        "select e from BpClassification e where e.clientId = :pClientId and  e.classCode.id = :pClassCodeId",
                         BpClassification.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pClassCodeId", classCodeId).getResultList();
     }
 

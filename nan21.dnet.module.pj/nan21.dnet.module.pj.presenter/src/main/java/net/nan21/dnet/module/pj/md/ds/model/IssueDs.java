@@ -61,43 +61,43 @@ public class IssueDs extends AbstractDsModel<Issue> implements IModelWithId,
     public static final String fFIXEDINVERSION = "fixedInVersion";
     public static final String fBUSINESSOBJECT = "businessObject";
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long id;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String uuid;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Long clientId;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date createdAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date modifiedAt;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String createdBy;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String modifiedBy;
 
     @DsField()
     private Long version;
 
-    @DsField(fetch = false, path = "className")
+    @DsField(noUpdate = true, fetch = false, path = "className")
     private String entityFQN;
 
-    @DsField(join = "left", path = "project.id")
+    @DsField(noUpdate = true, join = "left", path = "project.id")
     private Long projectId;
 
-    @DsField(join = "left", path = "project.code")
+    @DsField(noUpdate = true, join = "left", path = "project.code")
     private String project;
 
-    @DsField(join = "left", path = "project.name")
+    @DsField(noUpdate = true, join = "left", path = "project.name")
     private String projectName;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String code;
 
     @DsField()

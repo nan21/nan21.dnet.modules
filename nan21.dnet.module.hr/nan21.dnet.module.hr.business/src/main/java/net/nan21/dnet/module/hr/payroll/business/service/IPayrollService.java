@@ -11,6 +11,6 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.Payroll;
 
 public interface IPayrollService extends IEntityService<Payroll> {
 
-    public Payroll findByName(Long clientId, String name);
+    public Payroll findByName(String name);
 
 }

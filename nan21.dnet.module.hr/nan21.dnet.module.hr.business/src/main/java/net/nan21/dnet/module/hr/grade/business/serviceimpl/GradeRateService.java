@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.grade.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.hr.grade.business.service.IGradeRateService;
@@ -30,9 +31,9 @@ public class GradeRateService extends AbstractEntityService<GradeRate>
         return GradeRate.class;
     }
 
-    public GradeRate findByName(Long clientId, String name) {
+    public GradeRate findByName(String name) {
         return (GradeRate) this.em.createNamedQuery(GradeRate.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -43,8 +44,9 @@ public class GradeRateService extends AbstractEntityService<GradeRate>
     public List<GradeRate> findByCurrencyId(Long currencyId) {
         return (List<GradeRate>) this.em
                 .createQuery(
-                        "select e from GradeRate e where e.currency.id = :pCurrencyId",
+                        "select e from GradeRate e where e.clientId = :pClientId and  e.currency.id = :pCurrencyId",
                         GradeRate.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCurrencyId", currencyId).getResultList();
     }
 

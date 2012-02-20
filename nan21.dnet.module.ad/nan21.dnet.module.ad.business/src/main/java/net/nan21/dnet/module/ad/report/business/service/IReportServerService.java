@@ -11,6 +11,6 @@ import net.nan21.dnet.module.ad.report.domain.entity.ReportServer;
 
 public interface IReportServerService extends IEntityService<ReportServer> {
 
-    public ReportServer findByName(Long clientId, String name);
+    public ReportServer findByName(String name);
 
 }

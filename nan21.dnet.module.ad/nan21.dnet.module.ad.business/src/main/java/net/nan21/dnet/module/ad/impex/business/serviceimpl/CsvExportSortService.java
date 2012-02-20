@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.impex.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.impex.business.service.ICsvExportSortService;
 import net.nan21.dnet.module.ad.impex.domain.entity.CsvExport;
@@ -37,8 +38,9 @@ public class CsvExportSortService extends AbstractEntityService<CsvExportSort>
     public List<CsvExportSort> findByCsvExportId(Long csvExportId) {
         return (List<CsvExportSort>) this.em
                 .createQuery(
-                        "select e from CsvExportSort e where e.csvExport.id = :pCsvExportId",
+                        "select e from CsvExportSort e where e.clientId = :pClientId and  e.csvExport.id = :pCsvExportId",
                         CsvExportSort.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCsvExportId", csvExportId).getResultList();
     }
 

@@ -1,0 +1,13 @@
+"name";"title";"menu";"sequenceNo";"frame";"bundle";"active";"description"
+"pjm-frame-base-issue";"Issue base data";;"20";"net.nan21.dnet.module.pj.base.frame.IssueBaseData_UI";"nan21.dnet.module.pj.ui.extjs";"true";
+"pjm-frame-base-project";"Project base data";;"10";"net.nan21.dnet.module.pj.base.frame.ProjectBaseData_UI";"nan21.dnet.module.pj.ui.extjs";"true";
+"pjm-frame-changelog";"Changelog";;"40";"net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI";"nan21.dnet.module.pj.ui.extjs";"true";
+"pjm-frame-issuemnt";"Issue maintenance";;"20";"net.nan21.dnet.module.pj.md.frame.IssuesMnt_UI";"nan21.dnet.module.pj.ui.extjs";"true";
+"pjm-frame-issues";"Incidents";;"10";"net.nan21.dnet.module.pj.md.frame.Issues_UI";"nan21.dnet.module.pj.ui.extjs";"true";
+"pjm-frame-issuetask";"Tasks";;"30";"net.nan21.dnet.module.pj.md.frame.IssueTask_UI";"nan21.dnet.module.pj.ui.extjs";"true";
+"pjm-frame-projects";"Projects";;"10";"net.nan21.dnet.module.pj.md.frame.Projects_UI";"nan21.dnet.module.pj.ui.extjs";"true";
+"pjm-frame-roadmap";"Roadmap";;"30";"net.nan21.dnet.module.pj.md.frame.IssueRoadmap_UI";"nan21.dnet.module.pj.ui.extjs";"true";
+"pjm-frame-versions";"Project versions";;"20";"net.nan21.dnet.module.pj.md.frame.ProjectVersions_UI";"nan21.dnet.module.pj.ui.extjs";"true";
+"pjm-menu-base";"Base data";"PJT";"10";;;"true";
+"pjm-menu-issues";"Incidents";"PJT";"20";;;"true";
+"pjm-menu-projects";"Projects";"PJT";"30";;;"true";

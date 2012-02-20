@@ -16,8 +16,10 @@ import net.nan21.dnet.module.bp.md.domain.entity.Contact;
 public class ContactDsConv extends AbstractDsConverter<ContactDs, Contact>
         implements IDsConverter<ContactDs, Contact> {
 
-    protected void modelToEntityReferences(ContactDs ds, Contact e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(ContactDs ds, Contact e,
+            boolean isInsert) throws Exception {
+
         if (ds.getBpartnerId() != null) {
             if (e.getBpartner() == null
                     || !e.getBpartner().getId().equals(ds.getBpartnerId())) {
@@ -27,6 +29,7 @@ public class ContactDsConv extends AbstractDsConverter<ContactDs, Contact>
         } else {
             this.lookup_bpartner_BusinessPartner(ds, e);
         }
+
     }
 
     protected void lookup_bpartner_BusinessPartner(ContactDs ds, Contact e)
@@ -35,7 +38,7 @@ public class ContactDsConv extends AbstractDsConverter<ContactDs, Contact>
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
-                        .findByCode(ds.getClientId(), ds.getBpartnerCode());
+                        .findByCode(ds.getBpartnerCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `BusinessPartner` reference:  `bpartnerCode` = "

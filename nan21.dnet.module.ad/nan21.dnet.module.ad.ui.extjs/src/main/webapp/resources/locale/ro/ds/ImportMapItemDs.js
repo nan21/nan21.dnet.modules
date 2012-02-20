@@ -5,8 +5,10 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs$Trl", {
 	sequenceNo__lbl :  "Secvenţă",
 	dataSource__lbl :  "Data-source",
 	fileName__lbl :  "Fişier",
+	ukFieldName__lbl :  "Camp UK",
 		 
 	importFileLocation__lbl : "Locaţie fişier",
 	importDataSource__lbl : "Data-source",
+	importUkFieldName__lbl : "Camp UK",
 	id__lbl :"ID"
 });

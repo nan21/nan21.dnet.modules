@@ -17,8 +17,10 @@ public class CsvExportFieldDsConv extends
         AbstractDsConverter<CsvExportFieldDs, CsvExportField> implements
         IDsConverter<CsvExportFieldDs, CsvExportField> {
 
-    protected void modelToEntityReferences(CsvExportFieldDs ds, CsvExportField e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(CsvExportFieldDs ds,
+            CsvExportField e, boolean isInsert) throws Exception {
+
         if (ds.getCsvExportId() != null) {
             if (e.getCsvExport() == null
                     || !e.getCsvExport().getId().equals(ds.getCsvExportId())) {
@@ -28,6 +30,7 @@ public class CsvExportFieldDsConv extends
         } else {
             this.lookup_csvExport_CsvExport(ds, e);
         }
+
     }
 
     protected void lookup_csvExport_CsvExport(CsvExportFieldDs ds,
@@ -36,7 +39,7 @@ public class CsvExportFieldDsConv extends
             CsvExport x = null;
             try {
                 x = ((ICsvExportService) findEntityService(CsvExport.class))
-                        .findByName(ds.getClientId(), ds.getCsvExport());
+                        .findByName(ds.getCsvExport());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `CsvExport` reference:  `csvExport` = "

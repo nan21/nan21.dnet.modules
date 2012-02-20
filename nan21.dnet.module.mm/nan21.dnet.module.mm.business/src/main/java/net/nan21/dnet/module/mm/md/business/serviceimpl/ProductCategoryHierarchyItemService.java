@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.mm.md.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.mm.md.business.service.IProductCategoryHierarchyItemService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
@@ -40,8 +41,9 @@ public class ProductCategoryHierarchyItemService extends
     public List<ProductCategoryHierarchyItem> findByHierarchyId(Long hierarchyId) {
         return (List<ProductCategoryHierarchyItem>) this.em
                 .createQuery(
-                        "select e from ProductCategoryHierarchyItem e where e.hierarchy.id = :pHierarchyId",
+                        "select e from ProductCategoryHierarchyItem e where e.clientId = :pClientId and  e.hierarchy.id = :pHierarchyId",
                         ProductCategoryHierarchyItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pHierarchyId", hierarchyId).getResultList();
     }
 
@@ -52,8 +54,9 @@ public class ProductCategoryHierarchyItemService extends
     public List<ProductCategoryHierarchyItem> findByProductId(Long productId) {
         return (List<ProductCategoryHierarchyItem>) this.em
                 .createQuery(
-                        "select e from ProductCategoryHierarchyItem e where e.product.id = :pProductId",
+                        "select e from ProductCategoryHierarchyItem e where e.clientId = :pClientId and  e.product.id = :pProductId",
                         ProductCategoryHierarchyItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProductId", productId).getResultList();
     }
 
@@ -64,8 +67,9 @@ public class ProductCategoryHierarchyItemService extends
     public List<ProductCategoryHierarchyItem> findByParentId(Long parentId) {
         return (List<ProductCategoryHierarchyItem>) this.em
                 .createQuery(
-                        "select e from ProductCategoryHierarchyItem e where e.parent.id = :pParentId",
+                        "select e from ProductCategoryHierarchyItem e where e.clientId = :pClientId and  e.parent.id = :pParentId",
                         ProductCategoryHierarchyItem.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pParentId", parentId).getResultList();
     }
 

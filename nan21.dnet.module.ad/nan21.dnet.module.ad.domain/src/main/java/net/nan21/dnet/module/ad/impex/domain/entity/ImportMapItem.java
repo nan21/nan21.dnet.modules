@@ -40,8 +40,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = ImportMapItem.TABLE_NAME)
 @Customizer(DomainEntityEventAdapter.class)
 @NamedQueries({
-        @NamedQuery(name = ImportMapItem.NQ_FIND_BY_ID, query = "SELECT e FROM ImportMapItem e WHERE e.id = :pId", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = ImportMapItem.NQ_FIND_BY_IDS, query = "SELECT e FROM ImportMapItem e WHERE e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ImportMapItem.NQ_FIND_BY_ID, query = "SELECT e FROM ImportMapItem e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ImportMapItem.NQ_FIND_BY_IDS, query = "SELECT e FROM ImportMapItem e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ImportMapItem implements Serializable, IModelWithId,
         IModelWithClientId {
 
@@ -73,6 +73,10 @@ public class ImportMapItem implements Serializable, IModelWithId,
     /** FileName. */
     @Column(name = "FILENAME", length = 255)
     private String fileName;
+
+    /** UkFieldName. */
+    @Column(name = "UKFIELDNAME", length = 32)
+    private String ukFieldName;
 
     /** Active. */
     @Column(name = "ACTIVE", nullable = false)
@@ -166,6 +170,14 @@ public class ImportMapItem implements Serializable, IModelWithId,
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public String getUkFieldName() {
+        return this.ukFieldName;
+    }
+
+    public void setUkFieldName(String ukFieldName) {
+        this.ukFieldName = ukFieldName;
     }
 
     public Boolean getActive() {

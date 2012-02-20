@@ -19,8 +19,10 @@ public class InvTransactionTypeDsConv extends
         AbstractDsConverter<InvTransactionTypeDs, InvTransactionType> implements
         IDsConverter<InvTransactionTypeDs, InvTransactionType> {
 
+    @Override
     protected void modelToEntityReferences(InvTransactionTypeDs ds,
-            InvTransactionType e) throws Exception {
+            InvTransactionType e, boolean isInsert) throws Exception {
+
         if (ds.getActionId() != null) {
             if (e.getAction() == null
                     || !e.getAction().getId().equals(ds.getActionId())) {
@@ -30,6 +32,7 @@ public class InvTransactionTypeDsConv extends
         } else {
             this.lookup_action_InvTransactionAction(ds, e);
         }
+
         if (ds.getSourceTypeId() != null) {
             if (e.getSourceType() == null
                     || !e.getSourceType().getId().equals(ds.getSourceTypeId())) {
@@ -39,6 +42,7 @@ public class InvTransactionTypeDsConv extends
         } else {
             this.lookup_sourceType_InvTransactionSourceType(ds, e);
         }
+
     }
 
     protected void lookup_action_InvTransactionAction(InvTransactionTypeDs ds,
@@ -47,7 +51,7 @@ public class InvTransactionTypeDsConv extends
             InvTransactionAction x = null;
             try {
                 x = ((IInvTransactionActionService) findEntityService(InvTransactionAction.class))
-                        .findByName(ds.getClientId(), ds.getAction());
+                        .findByName(ds.getAction());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `InvTransactionAction` reference:  `action` = "
@@ -66,7 +70,7 @@ public class InvTransactionTypeDsConv extends
             InvTransactionSourceType x = null;
             try {
                 x = ((IInvTransactionSourceTypeService) findEntityService(InvTransactionSourceType.class))
-                        .findByName(ds.getClientId(), ds.getSourceType());
+                        .findByName(ds.getSourceType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `InvTransactionSourceType` reference:  `sourceType` = "

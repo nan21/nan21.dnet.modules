@@ -13,7 +13,7 @@ import net.nan21.dnet.module.pj.base.domain.entity.ProjectRole;
 
 public interface IProjectRoleService extends IEntityService<ProjectRole> {
 
-    public ProjectRole findByName(Long clientId, String name);
+    public ProjectRole findByName(String name);
 
     public List<ProjectRole> findByProjectTypes(ProjectType projectTypes);
 

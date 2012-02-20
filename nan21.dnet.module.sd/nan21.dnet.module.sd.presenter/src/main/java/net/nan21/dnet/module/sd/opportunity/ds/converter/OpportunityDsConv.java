@@ -29,8 +29,10 @@ public class OpportunityDsConv extends
         AbstractDsConverter<OpportunityDs, Opportunity> implements
         IDsConverter<OpportunityDs, Opportunity> {
 
-    protected void modelToEntityReferences(OpportunityDs ds, Opportunity e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(OpportunityDs ds, Opportunity e,
+            boolean isInsert) throws Exception {
+
         if (ds.getAccountId() != null) {
             if (e.getAccount() == null
                     || !e.getAccount().getId().equals(ds.getAccountId())) {
@@ -38,6 +40,7 @@ public class OpportunityDsConv extends
                         BusinessPartner.class, ds.getAccountId()));
             }
         }
+
         if (ds.getStatusId() != null) {
             if (e.getStatus() == null
                     || !e.getStatus().getId().equals(ds.getStatusId())) {
@@ -47,6 +50,7 @@ public class OpportunityDsConv extends
         } else {
             this.lookup_status_OpportunityStatus(ds, e);
         }
+
         if (ds.getPriorityId() != null) {
             if (e.getPriority() == null
                     || !e.getPriority().getId().equals(ds.getPriorityId())) {
@@ -56,6 +60,7 @@ public class OpportunityDsConv extends
         } else {
             this.lookup_priority_OpportunityPriority(ds, e);
         }
+
         if (ds.getCurrencyId() != null) {
             if (e.getExpectedCurrency() == null
                     || !e.getExpectedCurrency().getId()
@@ -66,6 +71,7 @@ public class OpportunityDsConv extends
         } else {
             this.lookup_expectedCurrency_Currency(ds, e);
         }
+
         if (ds.getSalesStageId() != null) {
             if (e.getSalesStage() == null
                     || !e.getSalesStage().getId().equals(ds.getSalesStageId())) {
@@ -75,6 +81,7 @@ public class OpportunityDsConv extends
         } else {
             this.lookup_salesStage_OpportunityStage(ds, e);
         }
+
         if (ds.getLeadSourceId() != null) {
             if (e.getLeadSource() == null
                     || !e.getLeadSource().getId().equals(ds.getLeadSourceId())) {
@@ -84,6 +91,7 @@ public class OpportunityDsConv extends
         } else {
             this.lookup_leadSource_OpportunitySource(ds, e);
         }
+
         if (ds.getResultReasonId() != null) {
             if (e.getResultReason() == null
                     || !e.getResultReason().getId()
@@ -94,6 +102,7 @@ public class OpportunityDsConv extends
         } else {
             this.lookup_resultReason_OpportunityResultReason(ds, e);
         }
+
         if (ds.getAssignedToId() != null) {
             if (e.getAssignedTo() == null
                     || !e.getAssignedTo().getId().equals(ds.getAssignedToId())) {
@@ -101,6 +110,7 @@ public class OpportunityDsConv extends
                         ds.getAssignedToId()));
             }
         }
+
     }
 
     protected void lookup_status_OpportunityStatus(OpportunityDs ds,
@@ -109,7 +119,7 @@ public class OpportunityDsConv extends
             OpportunityStatus x = null;
             try {
                 x = ((IOpportunityStatusService) findEntityService(OpportunityStatus.class))
-                        .findByName(ds.getClientId(), ds.getStatus());
+                        .findByName(ds.getStatus());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `OpportunityStatus` reference:  `status` = "
@@ -128,7 +138,7 @@ public class OpportunityDsConv extends
             OpportunityPriority x = null;
             try {
                 x = ((IOpportunityPriorityService) findEntityService(OpportunityPriority.class))
-                        .findByName(ds.getClientId(), ds.getPriority());
+                        .findByName(ds.getPriority());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `OpportunityPriority` reference:  `priority` = "
@@ -147,7 +157,7 @@ public class OpportunityDsConv extends
             Currency x = null;
             try {
                 x = ((ICurrencyService) findEntityService(Currency.class))
-                        .findByCode(ds.getClientId(), ds.getCurrency());
+                        .findByCode(ds.getCurrency());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Currency` reference:  `currency` = "
@@ -166,7 +176,7 @@ public class OpportunityDsConv extends
             OpportunityStage x = null;
             try {
                 x = ((IOpportunityStageService) findEntityService(OpportunityStage.class))
-                        .findByName(ds.getClientId(), ds.getSalesStage());
+                        .findByName(ds.getSalesStage());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `OpportunityStage` reference:  `salesStage` = "
@@ -185,7 +195,7 @@ public class OpportunityDsConv extends
             OpportunitySource x = null;
             try {
                 x = ((IOpportunitySourceService) findEntityService(OpportunitySource.class))
-                        .findByName(ds.getClientId(), ds.getLeadSource());
+                        .findByName(ds.getLeadSource());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `OpportunitySource` reference:  `leadSource` = "
@@ -204,7 +214,7 @@ public class OpportunityDsConv extends
             OpportunityResultReason x = null;
             try {
                 x = ((IOpportunityResultReasonService) findEntityService(OpportunityResultReason.class))
-                        .findByName(ds.getClientId(), ds.getResultReason());
+                        .findByName(ds.getResultReason());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `OpportunityResultReason` reference:  `resultReason` = "

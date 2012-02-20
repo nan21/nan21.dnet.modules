@@ -13,7 +13,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.ProductBaseData_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addDcFilterFormView("manufact",{ name:"manufactFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductManufacturer$Filter",height:120})	 
-		.addDcView("manufact",{ name:"manufactEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductManufacturer$EditList", frame:true})	 
+		.addDcEditGridView("manufact",{ name:"manufactEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductManufacturer$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasManufact", layout:"border", defaults:{split:true},title:"Manufacturers",preventHeader:true})  	 
 			

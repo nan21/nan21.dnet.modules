@@ -12,6 +12,6 @@ import net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStage;
 public interface IOpportunityStageService extends
         IEntityService<OpportunityStage> {
 
-    public OpportunityStage findByName(Long clientId, String name);
+    public OpportunityStage findByName(String name);
 
 }

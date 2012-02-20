@@ -12,6 +12,6 @@ import net.nan21.dnet.module.hr.job.domain.entity.PositionHierarchy;
 public interface IPositionHierarchyService extends
         IEntityService<PositionHierarchy> {
 
-    public PositionHierarchy findByName(Long clientId, String name);
+    public PositionHierarchy findByName(String name);
 
 }

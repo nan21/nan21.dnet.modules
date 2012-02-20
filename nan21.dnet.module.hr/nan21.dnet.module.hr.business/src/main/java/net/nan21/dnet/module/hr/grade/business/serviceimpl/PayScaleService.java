@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.grade.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.grade.business.service.IPayScaleService;
 
@@ -28,15 +29,15 @@ public class PayScaleService extends AbstractEntityService<PayScale> implements
         return PayScale.class;
     }
 
-    public PayScale findByCode(Long clientId, String code) {
+    public PayScale findByCode(String code) {
         return (PayScale) this.em.createNamedQuery(PayScale.NQ_FIND_BY_CODE)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public PayScale findByName(Long clientId, String name) {
+    public PayScale findByName(String name) {
         return (PayScale) this.em.createNamedQuery(PayScale.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 

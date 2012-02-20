@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.payroll.business.serviceimpl;
 
 import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.payroll.business.service.IElementTypeService;
 import net.nan21.dnet.module.hr.payroll.domain.entity.ElementCategory;
@@ -30,10 +31,10 @@ public class ElementTypeService extends AbstractEntityService<ElementType>
         return ElementType.class;
     }
 
-    public ElementType findByName(Long clientId, String name) {
+    public ElementType findByName(String name) {
         return (ElementType) this.em
                 .createNamedQuery(ElementType.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pName", name).getSingleResult();
     }
 
@@ -44,8 +45,9 @@ public class ElementTypeService extends AbstractEntityService<ElementType>
     public List<ElementType> findByCategoryId(Long categoryId) {
         return (List<ElementType>) this.em
                 .createQuery(
-                        "select e from ElementType e where e.category.id = :pCategoryId",
+                        "select e from ElementType e where e.clientId = :pClientId and  e.category.id = :pCategoryId",
                         ElementType.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCategoryId", categoryId).getResultList();
     }
 

@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.bp.calendar.business.serviceimpl;
 
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bp.calendar.business.service.ICalendarEventStatusService;
 
@@ -29,11 +30,10 @@ public class CalendarEventStatusService extends
         return CalendarEventStatus.class;
     }
 
-    public CalendarEventStatus findByType_and_name(Long clientId,
-            String eventType, String name) {
+    public CalendarEventStatus findByType_and_name(String eventType, String name) {
         return (CalendarEventStatus) this.em
                 .createNamedQuery(CalendarEventStatus.NQ_FIND_BY_TYPE_AND_NAME)
-                .setParameter("pClientId", clientId)
+                .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pEventType", eventType)
                 .setParameter("pName", name).getSingleResult();
     }

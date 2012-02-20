@@ -20,8 +20,10 @@ public class QualificationSkillDsConv extends
         AbstractDsConverter<QualificationSkillDs, QualificationSkill> implements
         IDsConverter<QualificationSkillDs, QualificationSkill> {
 
+    @Override
     protected void modelToEntityReferences(QualificationSkillDs ds,
-            QualificationSkill e) throws Exception {
+            QualificationSkill e, boolean isInsert) throws Exception {
+
         if (ds.getQualificationId() != null) {
             if (e.getQualification() == null
                     || !e.getQualification().getId()
@@ -30,6 +32,7 @@ public class QualificationSkillDsConv extends
                         Qualification.class, ds.getQualificationId()));
             }
         }
+
         if (ds.getSkillId() != null) {
             if (e.getSkill() == null
                     || !e.getSkill().getId().equals(ds.getSkillId())) {
@@ -38,6 +41,7 @@ public class QualificationSkillDsConv extends
         } else {
             this.lookup_skill_Skill(ds, e);
         }
+
         if (ds.getRequiredLevelId() != null) {
             if (e.getRequiredLevel() == null
                     || !e.getRequiredLevel().getId()
@@ -48,6 +52,7 @@ public class QualificationSkillDsConv extends
         } else {
             this.lookup_requiredLevel_RatingLevel(ds, e);
         }
+
     }
 
     protected void lookup_skill_Skill(QualificationSkillDs ds,
@@ -56,7 +61,7 @@ public class QualificationSkillDsConv extends
             Skill x = null;
             try {
                 x = ((ISkillService) findEntityService(Skill.class))
-                        .findByName(ds.getClientId(), ds.getSkill());
+                        .findByName(ds.getSkill());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Skill` reference:  `skill` = "
@@ -77,7 +82,7 @@ public class QualificationSkillDsConv extends
             RatingLevel x = null;
             try {
                 x = ((IRatingLevelService) findEntityService(RatingLevel.class))
-                        .findByName(ds.getClientId(), ds.getRatingScaleId(),
+                        .findByName(ds.getRatingScaleId(),
                                 ds.getRequiredLevel());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(

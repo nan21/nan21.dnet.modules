@@ -17,8 +17,10 @@ public class CourseTypeDsConv extends
         AbstractDsConverter<CourseTypeDs, CourseType> implements
         IDsConverter<CourseTypeDs, CourseType> {
 
-    protected void modelToEntityReferences(CourseTypeDs ds, CourseType e)
-            throws Exception {
+    @Override
+    protected void modelToEntityReferences(CourseTypeDs ds, CourseType e,
+            boolean isInsert) throws Exception {
+
         if (ds.getCategoryId() != null) {
             if (e.getCategory() == null
                     || !e.getCategory().getId().equals(ds.getCategoryId())) {
@@ -28,6 +30,7 @@ public class CourseTypeDsConv extends
         } else {
             this.lookup_category_CourseCategory(ds, e);
         }
+
     }
 
     protected void lookup_category_CourseCategory(CourseTypeDs ds, CourseType e)
@@ -36,7 +39,7 @@ public class CourseTypeDsConv extends
             CourseCategory x = null;
             try {
                 x = ((ICourseCategoryService) findEntityService(CourseCategory.class))
-                        .findByName(ds.getClientId(), ds.getCategory());
+                        .findByName(ds.getCategory());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `CourseCategory` reference:  `category` = "
