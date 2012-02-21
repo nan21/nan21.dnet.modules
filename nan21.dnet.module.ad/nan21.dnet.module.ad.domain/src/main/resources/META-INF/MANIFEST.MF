@@ -38,19 +38,23 @@ Export-Package: net.nan21.dnet.module.ad.client.domain.entity;version=
  org.eclipse.persistence.queries,org.eclipse.persistence.sessions,org.
  hibernate.validator.constraints",net.nan21.dnet.module.ad.usr.domain.
  entity;version="1.0.0.M7";uses:="javax.persistence,javax.validation.c
- onstraints,net.nan21.dnet.core.api.model,net.nan21.dnet.module.ad.sys
- tem.domain.entity,org.eclipse.persistence.annotations,org.eclipse.per
- sistence.descriptors,org.hibernate.validator.constraints",net.nan21.d
- net.module.ad.usr.domain.eventhandler;version="1.0.0.M7";uses:="net.n
- an21.dnet.core.domain.eventhandler,org.eclipse.persistence.descriptor
- s",net.nan21.dnet.module.ad.workflow.domain.entity;version="1.0.0.M7"
- ;uses:="javax.persistence,javax.validation.constraints,javax.xml.bind
- .annotation,net.nan21.dnet.core.api.model,org.eclipse.persistence.ann
- otations,org.eclipse.persistence.descriptors,org.eclipse.persistence.
- descriptors.changetracking,org.eclipse.persistence.indirection,org.ec
- lipse.persistence.internal.descriptors,org.eclipse.persistence.intern
- al.weaving,org.eclipse.persistence.queries,org.eclipse.persistence.se
- ssions,org.hibernate.validator.constraints"
+ onstraints,javax.xml.bind.annotation,net.nan21.dnet.core.api.model,ne
+ t.nan21.dnet.module.ad.system.domain.entity,org.eclipse.persistence.a
+ nnotations,org.eclipse.persistence.descriptors,org.eclipse.persistenc
+ e.descriptors.changetracking,org.eclipse.persistence.indirection,org.
+ eclipse.persistence.internal.descriptors,org.eclipse.persistence.inte
+ rnal.weaving,org.eclipse.persistence.queries,org.eclipse.persistence.
+ sessions,org.hibernate.validator.constraints",net.nan21.dnet.module.a
+ d.usr.domain.eventhandler;version="1.0.0.M7";uses:="net.nan21.dnet.co
+ re.domain.eventhandler,org.eclipse.persistence.descriptors",net.nan21
+ .dnet.module.ad.workflow.domain.entity;version="1.0.0.M7";uses:="java
+ x.persistence,javax.validation.constraints,javax.xml.bind.annotation,
+ net.nan21.dnet.core.api.model,org.eclipse.persistence.annotations,org
+ .eclipse.persistence.descriptors,org.eclipse.persistence.descriptors.
+ changetracking,org.eclipse.persistence.indirection,org.eclipse.persis
+ tence.internal.descriptors,org.eclipse.persistence.internal.weaving,o
+ rg.eclipse.persistence.queries,org.eclipse.persistence.sessions,org.h
+ ibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M7,1.0.0.M7]"
 Bundle-Vendor: Nan21 

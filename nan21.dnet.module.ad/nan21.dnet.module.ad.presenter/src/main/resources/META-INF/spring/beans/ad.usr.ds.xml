@@ -269,6 +269,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuItemRtLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.MenuItemRtLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.MenuItem" />
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.usr.ds.qbext.MenuItemRtLovDsQueryBuilder" />	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="MenuItemRtLov" />
