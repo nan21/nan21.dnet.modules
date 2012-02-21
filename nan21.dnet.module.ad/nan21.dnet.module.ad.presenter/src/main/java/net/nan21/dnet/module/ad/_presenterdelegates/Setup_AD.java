@@ -1,6 +1,7 @@
 package net.nan21.dnet.module.ad._presenterdelegates;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import net.nan21.dnet.core.api.session.Params;
@@ -60,7 +61,7 @@ public class Setup_AD extends AbstractPresenterSetupParticipant implements
 			IImportJobService importJobService  = (IImportJobService)this.findEntityService(ImportJob.class);
 			
 			ImportJob ij = (ImportJob)  importJobService.getEntityManager().createQuery(
-					"select e from ImportJob e where e.name = :name")
+					"select e from "+ImportJob.class.getSimpleName()+" e where e.name = :name")
 					.setParameter("name", "Initial demo data import")
 					.getResultList().get(0);
 
@@ -86,7 +87,12 @@ public class Setup_AD extends AbstractPresenterSetupParticipant implements
 	private void createTasks() {
 		this.tasks = new ArrayList<ISetupTask>();
 		try {
-			if(this.findEntityService(ImportJob.class).findAll().size() > 0 ) {
+			 
+			List<ImportJob> ijlist = (List<ImportJob>)  this.findEntityService(ImportJob.class).getEntityManager().createQuery(
+			"select e from "+ImportJob.class.getSimpleName()+" e")			 
+			.getResultList();	
+			
+			if(ijlist.size() > 0 ) {
 				return;
 			}			
 		} catch(Exception e) {
