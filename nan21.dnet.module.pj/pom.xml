@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.pj</artifactId>
-	<version>1.0.0.M7</version>
+	<version>1.0.0.M8</version>
 	<name>DNet PJ: Project management</name>	
 	<description>DNet PJ: Project management</description>
 	<packaging>pom</packaging>	
@@ -19,5 +19,6 @@
 		<module>nan21.dnet.module.pj.parent</module>
 		<module>nan21.dnet.module.pj.data</module>
 		<module>nan21.dnet.module.pj.www</module>
+		<module>nan21.dnet.module.pj.db</module>
 	</modules>	
 </project>	 
