@@ -18,6 +18,7 @@
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">
 		    <column name="SEQ_NAME" value="MM_PRODCATEGHRCH_ITEM_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
 		</insert>
 	</changeSet>
 </databaseChangeLog>

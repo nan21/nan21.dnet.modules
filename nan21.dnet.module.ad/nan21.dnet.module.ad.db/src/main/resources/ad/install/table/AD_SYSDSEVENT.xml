@@ -35,6 +35,7 @@
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">
 		    <column name="SEQ_NAME" value="AD_SYSDSEVENT_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
 		</insert>
 	</changeSet>
 </databaseChangeLog>
