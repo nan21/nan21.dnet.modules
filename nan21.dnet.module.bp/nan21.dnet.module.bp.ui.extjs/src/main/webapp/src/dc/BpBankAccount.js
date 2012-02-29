@@ -21,9 +21,9 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpBankAccount$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bp.md.dc.BpBankAccount$CtxEditList",
 	
-	 _noImport_: true
-	,_noExport_: true
-	,_defineColumns_: function () {
+	_noImport_: true,
+	_noExport_: true,
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"bpartnerCode", dataIndex:"bpartnerCode", hidden:true,width:100 })
 		.addLov({name:"bankCode", xtype:"gridcolumn", dataIndex:"bankCode",width:100,editor:{xtype:"net.nan21.dnet.module.bp.base.lovs.Banks" , selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "bankId"} ]} })

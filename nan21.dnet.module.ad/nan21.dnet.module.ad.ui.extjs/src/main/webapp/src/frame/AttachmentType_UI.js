@@ -26,7 +26,7 @@ Ext.define("net.nan21.dnet.module.ad.data.frame.AttachmentType_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbAttchTypeEditList", {dc:"attchType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Attachment types"}).end(); 	
+			.beginToolbar("tlbAttchTypeEditList", {dc:"attchType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Attachment types"}).end(); 	
 	}
 
 });  

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="BD_CURRENCY_XRATE">
+			<column name="CLIENTID" type="number(3)">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDBY" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="ID" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDBY" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="UUID" type="varchar2(36)">
+				<constraints  /></column>	 
+			<column name="VALIDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="VALUE" type="number(12,6)">
+				<constraints nullable="false" /></column>	 
+			<column name="VERSION" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="PROVIDER_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="SOURCE_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="TARGET_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="BD_CURRENCY_XRATE" constraintName="PK_CURRENCY_XRATE" columnNames="ID" />
+    </changeSet>       
+	<changeSet author="amathe" id="UK-1">
+		<addUniqueConstraint tableName="BD_CURRENCY_XRATE" constraintName="UK_CURRENCY_XRATE1" columnNames="CLIENTID, PROVIDER_ID,SOURCE_ID,TARGET_ID,VALIDAT" />
+	</changeSet>
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="BD_CURRENCY_XRATE_SEQ"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

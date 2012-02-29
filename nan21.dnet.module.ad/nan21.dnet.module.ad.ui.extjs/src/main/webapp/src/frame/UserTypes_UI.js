@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.UserTypes_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbGroupEditList", {dc:"userType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"User types"}).end(); 	
+			.beginToolbar("tlbGroupEditList", {dc:"userType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"User types"}).end(); 	
 	}
 
 });  

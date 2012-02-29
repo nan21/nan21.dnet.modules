@@ -6,10 +6,11 @@
 package net.nan21.dnet.module.bp.md.domain.eventhandler;
 
 import org.eclipse.persistence.descriptors.DescriptorEvent;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityBaseEventHandler;
+
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 
-public class BusinessPartnerEventHandler extends DomainEntityBaseEventHandler {
+public class BusinessPartnerEventHandler extends DefaultEventHandler {
 
     @Override
     public void preInsert(DescriptorEvent event) {

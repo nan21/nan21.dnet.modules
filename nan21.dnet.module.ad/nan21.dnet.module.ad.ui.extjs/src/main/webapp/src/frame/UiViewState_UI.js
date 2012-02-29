@@ -29,7 +29,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.UiViewState_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbViewstateList", {dc:"viewstate"}).addQuery().addSeparator().addSeparator().addTitle({"text":"View states"}).end(); 	
+			.beginToolbar("tlbViewstateList", {dc:"viewstate"}).addQuery().addReports().addSeparator().addSeparator().addTitle({"text":"View states"}).end(); 	
 	}
 
 });  

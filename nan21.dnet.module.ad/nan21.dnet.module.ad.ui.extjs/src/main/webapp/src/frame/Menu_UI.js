@@ -48,8 +48,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Menu_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMenuEditList", {dc:"menu"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Menus"}).end()
-			.beginToolbar("tlbMenuitemList", {dc:"menuitem"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Menu items"}).end(); 	
+			.beginToolbar("tlbMenuEditList", {dc:"menu"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Menus"}).end()
+			.beginToolbar("tlbMenuitemList", {dc:"menuitem"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Menu items"}).end(); 	
 	}
 
 

@@ -41,9 +41,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$CtxEditList",
 	
-	 _noImport_: true
-	,_noExport_: true
-	,_defineColumns_: function () {
+	_noImport_: true,
+	_noExport_: true,
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"processId", dataIndex:"processId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"sourceId", dataIndex:"sourceId", hidden:true, align:"right",format:"0",width:70})

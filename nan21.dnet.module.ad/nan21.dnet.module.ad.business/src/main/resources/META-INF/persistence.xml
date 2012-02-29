@@ -26,6 +26,7 @@
 		<class>net.nan21.dnet.module.ad.report.domain.entity.ReportParam</class>
 		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReport</class>
 		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReportParam</class>
+		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReportUsage</class>
 		
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysParam</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat</class>
@@ -37,6 +38,8 @@
 		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.BusinessObject</class>		
 		<class>net.nan21.dnet.module.ad.system.domain.entity.UiViewState</class>  
+		<class>net.nan21.dnet.module.ad.system.domain.entity.AuditEntry</class>  
+		<class>net.nan21.dnet.module.ad.system.domain.entity.AuditField</class>  
 		
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.User</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserGroup</class>
@@ -48,6 +51,7 @@
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.DsMethodAccessControl</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Menu</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.MenuItem</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.Bookmark</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>		
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
 		 

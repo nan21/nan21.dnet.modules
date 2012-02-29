@@ -68,7 +68,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 		.addPanel({name: "canvasFinishedInstance", layout:"border", defaults:{split:true},title:"Finished instances",preventHeader:true})  	 
 		.addPanel({name: "canvasDeployment", layout:"border", defaults:{split:true},title:"Deployments",preventHeader:true})  	 
 		
-		.addWindow({name:"wdwAssignTask", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("formRunningTaskAsgn")]
+		.addWindow({name:"wdwAssignTask", closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("formRunningTaskAsgn")]
 ,title:"Assign task",modal:true,width:300,height:100,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnSaveAssignTask") ]}}) 	
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
@@ -96,10 +96,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbProcessList", {dc:"dcProcess"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Processes defined"}).end()
-			.beginToolbar("tlbRunningInstanceList", {dc:"dcRunningInstance"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Running instances"}).end()
-			.beginToolbar("tlbFinishedInstanceList", {dc:"dcFinishedInstance"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Finished instances"}).end()
-			.beginToolbar("tlbDeploymentList", {dc:"dcDeployment"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Deployments"}).end(); 	
+			.beginToolbar("tlbProcessList", {dc:"dcProcess"}).addQuery().addReports().addSeparator().addSeparator().addTitle({"text":"Processes defined"}).end()
+			.beginToolbar("tlbRunningInstanceList", {dc:"dcRunningInstance"}).addQuery().addReports().addSeparator().addSeparator().addTitle({"text":"Running instances"}).end()
+			.beginToolbar("tlbFinishedInstanceList", {dc:"dcFinishedInstance"}).addQuery().addReports().addSeparator().addSeparator().addTitle({"text":"Finished instances"}).end()
+			.beginToolbar("tlbDeploymentList", {dc:"dcDeployment"}).addQuery().addReports().addSeparator().addSeparator().addTitle({"text":"Deployments"}).end(); 	
 	}
 
 

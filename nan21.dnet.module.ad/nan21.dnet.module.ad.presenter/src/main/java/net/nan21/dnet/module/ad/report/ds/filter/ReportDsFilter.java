@@ -51,6 +51,10 @@ public class ReportDsFilter extends AbstractDsFilter implements IModelWithId,
 
     private String reportServer;
 
+    private String serverUrl;
+
+    private String contextPath;
+
     public String getName() {
         return this.name;
     }
@@ -210,6 +214,22 @@ public class ReportDsFilter extends AbstractDsFilter implements IModelWithId,
 
     public void setReportServer(String reportServer) {
         this.reportServer = reportServer;
+    }
+
+    public String getServerUrl() {
+        return this.serverUrl;
+    }
+
+    public void setServerUrl(String serverUrl) {
+        this.serverUrl = serverUrl;
+    }
+
+    public String getContextPath() {
+        return this.contextPath;
+    }
+
+    public void setContextPath(String contextPath) {
+        this.contextPath = contextPath;
     }
 
 }

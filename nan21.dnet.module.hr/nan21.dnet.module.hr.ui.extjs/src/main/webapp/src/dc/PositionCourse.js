@@ -40,9 +40,9 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$PositionCtxEditL
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.training.dc.PositionCourse$PositionCtxEditList",
 	
-	 _noImport_: true
-	,_noExport_: true
-	,_defineColumns_: function () {
+	_noImport_: true,
+	_noExport_: true,
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"courseCode", xtype:"gridcolumn", dataIndex:"courseCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.training.lovs.Courses" , selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "courseId"} ,{lovField:"name", dsField: "courseName"} ]} })
 		.addTextColumn({ name:"courseName", dataIndex:"courseName",width:200 })
@@ -59,9 +59,9 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$CourseCtxEditLis
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.training.dc.PositionCourse$CourseCtxEditList",
 	
-	 _noImport_: true
-	,_noExport_: true
-	,_defineColumns_: function () {
+	_noImport_: true,
+	_noExport_: true,
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"positionCode", xtype:"gridcolumn", dataIndex:"positionCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.job.lovs.Positions" , selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "positionId"} ,{lovField:"name", dsField: "positionName"} ]} })
 		.addTextColumn({ name:"positionName", dataIndex:"positionName",width:200 })

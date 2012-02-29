@@ -21,9 +21,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Variable$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.payroll.dc.Variable$CtxEditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"elementId", dataIndex:"elementId", hidden:true, align:"right",format:"0",width:70})
 		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} })

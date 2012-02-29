@@ -28,7 +28,7 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeGroup;
 import org.eclipse.persistence.annotations.Customizer;
@@ -41,7 +41,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table(name = ProductAttributeGroupAttribute.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ProductAttributeGroupAttribute.TABLE_NAME
         + "_UK1", columnNames = { "CLIENTID", "GROUP_ID", "ATTRIBUTE_ID" }) })
-@Customizer(DomainEntityEventAdapter.class)
+@Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = ProductAttributeGroupAttribute.NQ_FIND_BY_ID, query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProductAttributeGroupAttribute.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductAttributeGroupAttribute e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -130,6 +130,12 @@ public class ProductAttributeGroupAttribute implements Serializable,
     private Long version;
 
     /**
+     * System generated UID. Useful for data import-export and data-replication
+     */
+    @Column(name = "UUID", length = 36)
+    private String uuid;
+
+    /**
      * System generated unique identifier.
      */
     @Column(name = "ID", nullable = false)
@@ -137,12 +143,6 @@ public class ProductAttributeGroupAttribute implements Serializable,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-
-    /**
-     * System generated UID. Useful for data import-export and data-replication
-     */
-    @Column(name = "UUID", length = 36)
-    private String uuid;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAttributeGroup.class)
     @JoinColumn(name = "GROUP_ID", referencedColumnName = "ID")
     private ProductAttributeGroup group;
@@ -216,20 +216,20 @@ public class ProductAttributeGroupAttribute implements Serializable,
         this.version = version;
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getUuid() {
         return this.uuid;
     }
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Transient

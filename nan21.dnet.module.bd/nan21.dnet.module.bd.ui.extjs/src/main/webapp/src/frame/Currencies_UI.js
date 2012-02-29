@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.frame.Currencies_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMain", {dc:"currency"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Currencies"}).end(); 	
+			.beginToolbar("tlbMain", {dc:"currency"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Currencies"}).end(); 	
 	}
 
 });  

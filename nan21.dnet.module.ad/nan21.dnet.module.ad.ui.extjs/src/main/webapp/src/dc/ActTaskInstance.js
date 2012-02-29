@@ -49,9 +49,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List",
 	
-	 _noImport_: true
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_noImport_: true,
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"processId", dataIndex:"processId", hidden:true,width:200 })   	
 		.addTextColumn({ name:"taskKey", dataIndex:"taskKey",width:200 })   	

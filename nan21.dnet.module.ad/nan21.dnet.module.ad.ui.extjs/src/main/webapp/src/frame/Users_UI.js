@@ -35,7 +35,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		
-		.addWindow({name:"wdwChangePassword", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("canvasPassword")]
+		.addWindow({name:"wdwChangePassword", closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("canvasPassword")]
 ,title:"Change password",modal:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnSavePassword") ]}}) 	
 ;	 	
 	}
@@ -51,8 +51,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbUsrList", {dc:"usr"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Users"}).end()
-			.beginToolbar("tlbUsrEdit", {dc:"usr"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"User"}).end(); 	
+			.beginToolbar("tlbUsrList", {dc:"usr"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Users"}).end()
+			.beginToolbar("tlbUsrEdit", {dc:"usr"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"User"}).end(); 	
 	}
 
 

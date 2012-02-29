@@ -27,7 +27,7 @@ Ext.define("net.nan21.dnet.module.ad.client.frame.MyClient_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("clientEditTlb", {dc:"client"}).addSave().addCancel().addSeparator().addSeparator().addTitle({"text":"Client info"}).end(); 	
+			.beginToolbar("clientEditTlb", {dc:"client"}).addSave().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Client info"}).end(); 	
 	}
 
 	,loadCurrentClient: function() {	

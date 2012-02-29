@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.DsMethodAccessControl_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbDsAccessEditList", {dc:"dsAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"DS method rules"}).end(); 	
+			.beginToolbar("tlbDsAccessEditList", {dc:"dsAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"DS method rules"}).end(); 	
 	}
 
 });  

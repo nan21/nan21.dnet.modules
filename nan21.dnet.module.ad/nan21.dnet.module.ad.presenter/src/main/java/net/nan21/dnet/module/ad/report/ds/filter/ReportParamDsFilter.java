@@ -51,9 +51,20 @@ public class ReportParamDsFilter extends AbstractDsFilter implements
 
     private String reportCode;
 
+    private Integer sequenceNo;
+
+    private Integer sequenceNo_From;
+    private Integer sequenceNo_To;
+
     private String defaultValue;
 
     private String dataType;
+
+    private String listOfValues;
+
+    private Boolean noEdit;
+
+    private Boolean mandatory;
 
     public String getName() {
         return this.name;
@@ -216,6 +227,30 @@ public class ReportParamDsFilter extends AbstractDsFilter implements
         this.reportCode = reportCode;
     }
 
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
+    }
+
+    public Integer getSequenceNo_From() {
+        return this.sequenceNo_From;
+    }
+
+    public Integer getSequenceNo_To() {
+        return this.sequenceNo_To;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
+    }
+
+    public void setSequenceNo_From(Integer sequenceNo_From) {
+        this.sequenceNo_From = sequenceNo_From;
+    }
+
+    public void setSequenceNo_To(Integer sequenceNo_To) {
+        this.sequenceNo_To = sequenceNo_To;
+    }
+
     public String getDefaultValue() {
         return this.defaultValue;
     }
@@ -230,6 +265,30 @@ public class ReportParamDsFilter extends AbstractDsFilter implements
 
     public void setDataType(String dataType) {
         this.dataType = dataType;
+    }
+
+    public String getListOfValues() {
+        return this.listOfValues;
+    }
+
+    public void setListOfValues(String listOfValues) {
+        this.listOfValues = listOfValues;
+    }
+
+    public Boolean getNoEdit() {
+        return this.noEdit;
+    }
+
+    public void setNoEdit(Boolean noEdit) {
+        this.noEdit = noEdit;
+    }
+
+    public Boolean getMandatory() {
+        return this.mandatory;
+    }
+
+    public void setMandatory(Boolean mandatory) {
+        this.mandatory = mandatory;
     }
 
 }

@@ -34,6 +34,8 @@ public class ReportDs extends AbstractDsModel<Report> implements IModelWithId,
     public static final String fENTITYFQN = "entityFQN";
     public static final String fREPORTSERVERID = "reportServerId";
     public static final String fREPORTSERVER = "reportServer";
+    public static final String fSERVERURL = "serverUrl";
+    public static final String fCONTEXTPATH = "contextPath";
 
     @DsField()
     private String name;
@@ -79,6 +81,12 @@ public class ReportDs extends AbstractDsModel<Report> implements IModelWithId,
 
     @DsField(join = "left", path = "reportServer.name")
     private String reportServer;
+
+    @DsField(join = "left", path = "reportServer.url")
+    private String serverUrl;
+
+    @DsField()
+    private String contextPath;
 
     public ReportDs() {
         super();
@@ -207,6 +215,22 @@ public class ReportDs extends AbstractDsModel<Report> implements IModelWithId,
 
     public void setReportServer(String reportServer) {
         this.reportServer = reportServer;
+    }
+
+    public String getServerUrl() {
+        return this.serverUrl;
+    }
+
+    public void setServerUrl(String serverUrl) {
+        this.serverUrl = serverUrl;
+    }
+
+    public String getContextPath() {
+        return this.contextPath;
+    }
+
+    public void setContextPath(String contextPath) {
+        this.contextPath = contextPath;
     }
 
 }

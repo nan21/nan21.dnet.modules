@@ -61,9 +61,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Issue$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.pj.md.dc.Issue$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"code", dataIndex:"code", width:80 })   	
 		.addTextColumn({ name:"project", dataIndex:"project", width:80 })   	

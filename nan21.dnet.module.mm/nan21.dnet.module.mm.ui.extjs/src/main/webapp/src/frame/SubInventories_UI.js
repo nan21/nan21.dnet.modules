@@ -37,9 +37,9 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbSubinvList", {dc:"subinv"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Sub-inventories"}).end()
-			.beginToolbar("tlbSubinvEdit", {dc:"subinv"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Sub-inventory"}).end()
-			.beginToolbar("tlbSlocEditList", {dc:"sloc"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Stock locators"}).end(); 	
+			.beginToolbar("tlbSubinvList", {dc:"subinv"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Sub-inventories"}).end()
+			.beginToolbar("tlbSubinvEdit", {dc:"subinv"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Sub-inventory"}).end()
+			.beginToolbar("tlbSlocEditList", {dc:"sloc"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Stock locators"}).end(); 	
 	}
 
 });  

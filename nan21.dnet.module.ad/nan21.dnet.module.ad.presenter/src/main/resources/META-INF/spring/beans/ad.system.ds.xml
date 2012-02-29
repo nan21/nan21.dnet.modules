@@ -206,6 +206,17 @@
 		<property name="name" value="UiViewStateRTLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.UiViewStateRTLovDs" />
 	</bean>
+   
+ 	<bean id="AuditFieldRepDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.AuditFieldRepDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.AuditFieldRepDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.AuditField" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AuditFieldRep" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.AuditFieldRepDs" />
+	</bean>
       
 </beans>
    

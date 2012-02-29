@@ -21,9 +21,9 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.QualificationSkill$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.skill.dc.QualificationSkill$CtxEditList",
 	
-	 _noImport_: true
-	,_noExport_: true
-	,_defineColumns_: function () {
+	_noImport_: true,
+	_noExport_: true,
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"qualificationId", dataIndex:"qualificationId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"skillId", dataIndex:"skillId", hidden:true, align:"right",format:"0",width:70})

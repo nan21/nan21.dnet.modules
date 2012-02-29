@@ -21,9 +21,9 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScalePoint$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.grade.dc.PayScalePoint$CtxEditList",
 	
-	 _noImport_: true
-	,_noExport_: true
-	,_defineColumns_: function () {
+	_noImport_: true,
+	_noExport_: true,
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"payScaleId", dataIndex:"payScaleId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })

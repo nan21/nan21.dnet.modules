@@ -47,9 +47,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.Assignable$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.Assignable$EditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"type", xtype:"gridcolumn", dataIndex:"type", width:150,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.AssignableTypes" , selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "typeId"} ]} })
 		.addTextColumn({ name:"name", dataIndex:"name", width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })

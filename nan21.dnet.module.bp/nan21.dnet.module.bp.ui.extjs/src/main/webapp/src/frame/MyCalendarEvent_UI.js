@@ -53,12 +53,12 @@ Ext.define("net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("callEvntListTlb", {dc:"callEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Calls"}).end()
-			.beginToolbar("callEvntEditTlb", {dc:"callEvnt"}).addSave().addNew().addCopy().addCancel().end()
-			.beginToolbar("meetingEvntListTlb", {dc:"meetingEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Meetings"}).end()
-			.beginToolbar("meetingEvntEditTlb", {dc:"meetingEvnt"}).addSave().addNew().addCopy().addCancel().end()
-			.beginToolbar("taskEvntListTlb", {dc:"taskEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Tasks"}).end()
-			.beginToolbar("taskEvntEditTlb", {dc:"taskEvnt"}).addSave().addNew().addCopy().addCancel().end(); 	
+			.beginToolbar("callEvntListTlb", {dc:"callEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Calls"}).end()
+			.beginToolbar("callEvntEditTlb", {dc:"callEvnt"}).addSave().addNew().addCopy().addCancel().addReports().end()
+			.beginToolbar("meetingEvntListTlb", {dc:"meetingEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Meetings"}).end()
+			.beginToolbar("meetingEvntEditTlb", {dc:"meetingEvnt"}).addSave().addNew().addCopy().addCancel().addReports().end()
+			.beginToolbar("taskEvntListTlb", {dc:"taskEvnt"}).addQuery().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Tasks"}).end()
+			.beginToolbar("taskEvntEditTlb", {dc:"taskEvnt"}).addSave().addNew().addCopy().addCancel().addReports().end(); 	
 	}
 
 });  

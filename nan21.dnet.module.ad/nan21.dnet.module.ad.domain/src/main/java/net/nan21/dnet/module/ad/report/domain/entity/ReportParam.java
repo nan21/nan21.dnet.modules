@@ -28,7 +28,7 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.ad.report.domain.entity.Report;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -43,7 +43,7 @@ import org.hibernate.validator.constraints.NotBlank;
                 "CLIENTID", "REPORT_ID", "CODE" }),
         @UniqueConstraint(name = ReportParam.TABLE_NAME + "_UK2", columnNames = {
                 "CLIENTID", "REPORT_ID", "NAME" }) })
-@Customizer(DomainEntityEventAdapter.class)
+@Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = ReportParam.NQ_FIND_BY_ID, query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ReportParam.NQ_FIND_BY_IDS, query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
@@ -89,10 +89,20 @@ public class ReportParam implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_NAME_PRIMITIVE = "ReportParam.findByName_PRIMITIVE";
 
+    /** SequenceNo. */
+    @Column(name = "SEQUENCENO", nullable = false)
+    @NotNull
+    private Integer sequenceNo;
+
     /** Mandatory. */
     @Column(name = "MANDATORY", nullable = false)
     @NotNull
     private Boolean mandatory;
+
+    /** NoEdit. */
+    @Column(name = "NOEDIT", nullable = false)
+    @NotNull
+    private Boolean noEdit;
 
     /** DataType. */
     @Column(name = "DATATYPE", nullable = false, length = 32)
@@ -102,6 +112,10 @@ public class ReportParam implements Serializable, IModelWithId,
     /** DefaultValue. */
     @Column(name = "DEFAULTVALUE", length = 400)
     private String defaultValue;
+
+    /** ListOfValues. */
+    @Column(name = "LISTOFVALUES", length = 400)
+    private String listOfValues;
 
     /**
      * Name of entity.
@@ -176,6 +190,12 @@ public class ReportParam implements Serializable, IModelWithId,
     private Long version;
 
     /**
+     * System generated UID. Useful for data import-export and data-replication
+     */
+    @Column(name = "UUID", length = 36)
+    private String uuid;
+
+    /**
      * System generated unique identifier.
      */
     @Column(name = "ID", nullable = false)
@@ -183,17 +203,19 @@ public class ReportParam implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-
-    /**
-     * System generated UID. Useful for data import-export and data-replication
-     */
-    @Column(name = "UUID", length = 36)
-    private String uuid;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Report.class)
     @JoinColumn(name = "REPORT_ID", referencedColumnName = "ID")
     private Report report;
 
     /* ============== getters - setters ================== */
+
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
+    }
 
     public Boolean getMandatory() {
         return this.mandatory;
@@ -201,6 +223,14 @@ public class ReportParam implements Serializable, IModelWithId,
 
     public void setMandatory(Boolean mandatory) {
         this.mandatory = mandatory;
+    }
+
+    public Boolean getNoEdit() {
+        return this.noEdit;
+    }
+
+    public void setNoEdit(Boolean noEdit) {
+        this.noEdit = noEdit;
     }
 
     public String getDataType() {
@@ -217,6 +247,14 @@ public class ReportParam implements Serializable, IModelWithId,
 
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
+    }
+
+    public String getListOfValues() {
+        return this.listOfValues;
+    }
+
+    public void setListOfValues(String listOfValues) {
+        this.listOfValues = listOfValues;
     }
 
     public String getName() {
@@ -299,20 +337,20 @@ public class ReportParam implements Serializable, IModelWithId,
         this.version = version;
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getUuid() {
         return this.uuid;
     }
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Transient
@@ -348,6 +386,9 @@ public class ReportParam implements Serializable, IModelWithId,
         }
         if (this.mandatory == null) {
             event.updateAttributeWithObject("mandatory", false);
+        }
+        if (this.noEdit == null) {
+            event.updateAttributeWithObject("noEdit", false);
         }
         if (this.active == null) {
             event.updateAttributeWithObject("active", false);

@@ -49,9 +49,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bd.geo.dc.Country$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
 		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
@@ -71,10 +69,8 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Country$EditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_bulkEditFields_ : ["active","notes"]
-	,_defineColumns_: function () {
+	_bulkEditFields_ : ["active","notes"],
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} })
 		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })

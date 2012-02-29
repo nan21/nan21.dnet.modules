@@ -43,9 +43,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementValue$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.hr.payroll.dc.ElementValue$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addNumberColumn({ name:"elementId", dataIndex:"elementId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"element", dataIndex:"element",width:200 })   	

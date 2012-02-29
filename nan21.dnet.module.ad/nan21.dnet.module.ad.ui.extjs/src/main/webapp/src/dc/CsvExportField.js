@@ -21,9 +21,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.CsvExportField$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.CsvExportField$CtxEditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"csvExport", dataIndex:"csvExport", hidden:true,width:120 })
 		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right", width:60,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })

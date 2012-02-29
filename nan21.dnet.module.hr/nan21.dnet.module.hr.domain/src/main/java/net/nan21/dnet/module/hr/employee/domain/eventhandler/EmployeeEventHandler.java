@@ -9,10 +9,10 @@ import org.eclipse.persistence.descriptors.ClassDescriptor;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.eclipse.persistence.history.HistoryPolicy;
 
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityBaseEventHandler;
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 
-public class EmployeeEventHandler extends DomainEntityBaseEventHandler {
+public class EmployeeEventHandler extends DefaultEventHandler {
 	
 	@Override
 	public void customize(ClassDescriptor descriptor) {

@@ -54,9 +54,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.usr.dc.MenuItem$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name",width:120 })   	
 		.addTextColumn({ name:"title", dataIndex:"title",width:200 })   	
@@ -77,10 +75,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.MenuItem$EditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_bulkEditFields_ : ["menu","menuItem","active","bundle","frame","sequenceNo"]
-	,_defineColumns_: function () {
+	_bulkEditFields_ : ["menu","menuItem","active","bundle","frame","sequenceNo"],
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
 		.addTextColumn({ name:"title", dataIndex:"title",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })

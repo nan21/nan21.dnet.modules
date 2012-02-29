@@ -46,9 +46,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bp.md.dc.Contact$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"firstName", dataIndex:"firstName", width:120 })   	
 		.addTextColumn({ name:"lastName", dataIndex:"lastName", width:120 })   	
@@ -69,9 +67,9 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.Contact$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bp.md.dc.Contact$CtxEditList",
 	
-	 _noImport_: true
-	,_noExport_: true
-	,_defineColumns_: function () {
+	_noImport_: true,
+	_noExport_: true,
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"firstName", dataIndex:"firstName", width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
 		.addTextColumn({ name:"lastName", dataIndex:"lastName", width:120,editor:{xtype:"textfield", selectOnFocus:true,allowBlank:false ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })

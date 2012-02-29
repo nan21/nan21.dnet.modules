@@ -26,7 +26,7 @@ Ext.define("net.nan21.dnet.module.ad.data.frame.Attachments_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addDeleteSelected().end(); 	
+			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addDeleteSelected().addReports().end(); 	
 	}
 
 });  

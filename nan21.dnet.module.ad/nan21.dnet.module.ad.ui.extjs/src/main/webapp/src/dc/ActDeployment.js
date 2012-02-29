@@ -45,9 +45,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name", width:300 })   	
 		.addDateColumn({ name:"deployTime", dataIndex:"deployTime", width:150,format:Dnet.DATETIME_FORMAT})   	      	     

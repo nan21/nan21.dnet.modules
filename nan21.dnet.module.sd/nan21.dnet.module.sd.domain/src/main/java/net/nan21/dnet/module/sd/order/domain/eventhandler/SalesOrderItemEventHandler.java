@@ -6,10 +6,10 @@
 package net.nan21.dnet.module.sd.order.domain.eventhandler;
 
 import org.eclipse.persistence.descriptors.DescriptorEvent;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityBaseEventHandler;
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 
-public class SalesOrderItemEventHandler extends DomainEntityBaseEventHandler {
+public class SalesOrderItemEventHandler extends DefaultEventHandler {
 	
 	@Override
     public void preInsert(DescriptorEvent event) {

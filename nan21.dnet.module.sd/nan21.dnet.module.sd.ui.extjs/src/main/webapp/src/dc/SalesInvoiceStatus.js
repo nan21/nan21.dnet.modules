@@ -43,9 +43,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$EditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })

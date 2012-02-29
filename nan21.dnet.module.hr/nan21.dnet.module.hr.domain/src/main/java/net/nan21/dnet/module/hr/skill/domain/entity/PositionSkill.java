@@ -27,7 +27,7 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.hr.job.domain.entity.Position;
 import net.nan21.dnet.module.hr.skill.domain.entity.RatingLevel;
 import net.nan21.dnet.module.hr.skill.domain.entity.Skill;
@@ -40,7 +40,7 @@ import org.hibernate.validator.constraints.NotBlank;
 /** PositionSkill. */
 @Entity
 @Table(name = PositionSkill.TABLE_NAME)
-@Customizer(DomainEntityEventAdapter.class)
+@Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = PositionSkill.NQ_FIND_BY_ID, query = "SELECT e FROM PositionSkill e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = PositionSkill.NQ_FIND_BY_IDS, query = "SELECT e FROM PositionSkill e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
@@ -108,6 +108,12 @@ public class PositionSkill implements Serializable, IModelWithId,
     private Long version;
 
     /**
+     * System generated UID. Useful for data import-export and data-replication
+     */
+    @Column(name = "UUID", length = 36)
+    private String uuid;
+
+    /**
      * System generated unique identifier.
      */
     @Column(name = "ID", nullable = false)
@@ -115,12 +121,6 @@ public class PositionSkill implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-
-    /**
-     * System generated UID. Useful for data import-export and data-replication
-     */
-    @Column(name = "UUID", length = 36)
-    private String uuid;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Position.class)
     @JoinColumn(name = "POSITION_ID", referencedColumnName = "ID")
     private Position position;
@@ -181,20 +181,20 @@ public class PositionSkill implements Serializable, IModelWithId,
         this.version = version;
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getUuid() {
         return this.uuid;
     }
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Transient

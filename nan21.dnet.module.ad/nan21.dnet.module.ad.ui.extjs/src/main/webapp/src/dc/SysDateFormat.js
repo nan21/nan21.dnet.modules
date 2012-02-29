@@ -43,10 +43,8 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDateFormat$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.system.dc.SysDateFormat$EditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_bulkEditFields_ : ["active","extjsDateFormat","extjsTimeFormat","extjsDateTimeFormat","extjsAltFormats","javaDateFormat","javaTimeFormat","javaDateTimeFormat"]
-	,_defineColumns_: function () {
+	_bulkEditFields_ : ["active","extjsDateFormat","extjsTimeFormat","extjsDateTimeFormat","extjsAltFormats","javaDateFormat","javaTimeFormat","javaDateTimeFormat"],
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})

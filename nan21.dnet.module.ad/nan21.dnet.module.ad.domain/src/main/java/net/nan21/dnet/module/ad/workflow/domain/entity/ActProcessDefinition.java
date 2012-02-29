@@ -21,7 +21,7 @@ import javax.persistence.Transient;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
@@ -35,7 +35,7 @@ import org.hibernate.validator.constraints.NotBlank;
 /** ActProcessDefinition. */
 @Entity
 @Table(name = ActProcessDefinition.TABLE_NAME)
-@Customizer(DomainEntityEventAdapter.class)
+@Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = ActProcessDefinition.NQ_FIND_BY_ID, query = "SELECT e FROM ActProcessDefinition e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActProcessDefinition.NQ_FIND_BY_IDS, query = "SELECT e FROM ActProcessDefinition e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })

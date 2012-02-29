@@ -49,9 +49,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List"
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List",
 	
-	 _noImport_: true
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_noImport_: true,
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"process", dataIndex:"process",width:200 })   	
 		.addNumberColumn({ name:"processVersion", dataIndex:"processVersion",format:"0",width:70 })  

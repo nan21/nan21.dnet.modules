@@ -41,8 +41,8 @@ Ext.define("net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("statusTlb", {dc:"status"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Event status"}).end()
-			.beginToolbar("priorityTlb", {dc:"priority"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Event priority"}).end(); 	
+			.beginToolbar("statusTlb", {dc:"status"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Event status"}).end()
+			.beginToolbar("priorityTlb", {dc:"priority"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Event priority"}).end(); 	
 	}
 
 });  

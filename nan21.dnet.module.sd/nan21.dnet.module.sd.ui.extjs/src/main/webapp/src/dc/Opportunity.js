@@ -50,9 +50,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.sd.opportunity.dc.Opportunity$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name", width:150 })   	
 		.addTextColumn({ name:"account", dataIndex:"account",width:200 })   	

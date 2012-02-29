@@ -59,11 +59,11 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.frame.OpportunityBaseData_UI", 
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbPriorityEditList", {dc:"priority"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Priority"}).end()
-			.beginToolbar("tlbStatusEditList", {dc:"status"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Status"}).end()
-			.beginToolbar("tlbSourceEditList", {dc:"source"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Lead source"}).end()
-			.beginToolbar("tlbStageEditList", {dc:"stage"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Sales stage"}).end()
-			.beginToolbar("tlbResultEditList", {dc:"result"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Result reason"}).end(); 	
+			.beginToolbar("tlbPriorityEditList", {dc:"priority"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Priority"}).end()
+			.beginToolbar("tlbStatusEditList", {dc:"status"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Status"}).end()
+			.beginToolbar("tlbSourceEditList", {dc:"source"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Lead source"}).end()
+			.beginToolbar("tlbStageEditList", {dc:"stage"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Sales stage"}).end()
+			.beginToolbar("tlbResultEditList", {dc:"result"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Result reason"}).end(); 	
 	}
 
 });  

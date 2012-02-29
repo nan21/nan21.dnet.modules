@@ -53,10 +53,10 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("educTypeTlb", {dc:"educType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Education type"}).end()
-			.beginToolbar("contactRelTlb", {dc:"contactRel"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Contact relationship"}).end()
-			.beginToolbar("licTypeTlb", {dc:"licType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"License types"}).end()
-			.beginToolbar("asgnTypeTlb", {dc:"asgnType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Employment types"}).end(); 	
+			.beginToolbar("educTypeTlb", {dc:"educType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Education type"}).end()
+			.beginToolbar("contactRelTlb", {dc:"contactRel"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Contact relationship"}).end()
+			.beginToolbar("licTypeTlb", {dc:"licType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"License types"}).end()
+			.beginToolbar("asgnTypeTlb", {dc:"asgnType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Employment types"}).end(); 	
 	}
 
 });  

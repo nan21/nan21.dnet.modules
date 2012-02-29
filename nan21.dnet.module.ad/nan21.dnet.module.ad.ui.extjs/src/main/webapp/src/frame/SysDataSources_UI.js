@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMList", {dc:"m"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Data-sources"}).end(); 	
+			.beginToolbar("tlbMList", {dc:"m"}).addQuery().addReports().addSeparator().addSeparator().addTitle({"text":"Data-sources"}).end(); 	
 	}
 
 

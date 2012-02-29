@@ -1,0 +1,12 @@
+  
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_HR_POSITION_REQUIREMENT1" baseTableName="HR_POSITION_REQUIREMENT" baseColumnNames="POSITION_ID"  referencedTableName="HR_POSITION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_HR_POSITION_REQUIREMENT2" baseTableName="HR_POSITION_REQUIREMENT" baseColumnNames="REQUIREMENT_ID"  referencedTableName="HR_WORK_REQUIREMENT"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

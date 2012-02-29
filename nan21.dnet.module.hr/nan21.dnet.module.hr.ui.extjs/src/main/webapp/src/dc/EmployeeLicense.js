@@ -21,9 +21,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeLicense$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.employee.dc.EmployeeLicense$EditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"employeeId", dataIndex:"employeeId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"licenseTypeId", dataIndex:"licenseTypeId", hidden:true, align:"right",format:"0",width:70})

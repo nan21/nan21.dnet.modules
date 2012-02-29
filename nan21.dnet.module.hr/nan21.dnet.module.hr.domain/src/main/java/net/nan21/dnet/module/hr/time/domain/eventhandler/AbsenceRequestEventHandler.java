@@ -6,10 +6,10 @@
 package net.nan21.dnet.module.hr.time.domain.eventhandler;
 
 import org.eclipse.persistence.descriptors.DescriptorEvent;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityBaseEventHandler;
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.hr.time.domain.entity.AbsenceRequest;
 
-public class AbsenceRequestEventHandler extends DomainEntityBaseEventHandler {
+public class AbsenceRequestEventHandler extends DefaultEventHandler {
 	
 	@Override
     public void preInsert(DescriptorEvent event) {

@@ -162,6 +162,12 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     private Long version;
 
     /**
+     * System generated UID. Useful for data import-export and data-replication
+     */
+    @Column(name = "UUID", length = 36)
+    private String uuid;
+
+    /**
      * System generated unique identifier.
      */
     @Column(name = "ID", nullable = false)
@@ -169,12 +175,6 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-
-    /**
-     * System generated UID. Useful for data import-export and data-replication
-     */
-    @Column(name = "UUID", length = 36)
-    private String uuid;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SysDateFormat.class)
     @JoinColumn(name = "DATEFORMAT_ID", referencedColumnName = "ID")
     private SysDateFormat dateFormat;
@@ -304,20 +304,20 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
         this.version = version;
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getUuid() {
         return this.uuid;
     }
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Transient

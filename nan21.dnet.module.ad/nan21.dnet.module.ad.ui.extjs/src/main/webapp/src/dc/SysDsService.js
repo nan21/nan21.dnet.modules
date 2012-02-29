@@ -20,9 +20,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.system.dc.SysDsService$CtxList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name", width:200 })   	
 	  	.addDefaults()

@@ -39,9 +39,9 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.CsvExport_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbCsvEditList", {dc:"csv"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"CSV exports"}).end()
-			.beginToolbar("tlbFieldCtxEditList", {dc:"field"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Fields"}).end()
-			.beginToolbar("tlbSortCtxEditList", {dc:"sort"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Sort"}).end(); 	
+			.beginToolbar("tlbCsvEditList", {dc:"csv"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"CSV exports"}).end()
+			.beginToolbar("tlbFieldCtxEditList", {dc:"field"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Fields"}).end()
+			.beginToolbar("tlbSortCtxEditList", {dc:"sort"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Sort"}).end(); 	
 	}
 
 });  

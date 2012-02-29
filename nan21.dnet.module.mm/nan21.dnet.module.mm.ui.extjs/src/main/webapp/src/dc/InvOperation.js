@@ -53,9 +53,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.mm.inventory.dc.InvOperation$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"itemCode", dataIndex:"itemCode",width:100 })   	
 		.addTextColumn({ name:"item", dataIndex:"item",width:200 })   	

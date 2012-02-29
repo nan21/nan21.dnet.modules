@@ -1,0 +1,15 @@
+  
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_BP_BP_CLASSIFIC1" baseTableName="BP_BP_CLASSIFIC" baseColumnNames="BP_ID"  referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_BP_BP_CLASSIFIC2" baseTableName="BP_BP_CLASSIFIC" baseColumnNames="CLASSSYSTEM_ID"  referencedTableName="BD_CLASS_SYSTEM"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_BP_BP_CLASSIFIC3" baseTableName="BP_BP_CLASSIFIC" baseColumnNames="CLASSCODE_ID"  referencedTableName="BD_CLASS_CODE"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

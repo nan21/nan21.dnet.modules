@@ -45,9 +45,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.system.dc.SysParam$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"code", dataIndex:"code", width:200 })   	
 		.addTextColumn({ name:"name", dataIndex:"name", width:200 })   	

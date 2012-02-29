@@ -26,7 +26,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvOperations_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbInvopList", {dc:"invop"}).addQuery().addSeparator().addSeparator().addTitle({"text":"Inventory operations"}).end(); 	
+			.beginToolbar("tlbInvopList", {dc:"invop"}).addQuery().addReports().addSeparator().addSeparator().addTitle({"text":"Inventory operations"}).end(); 	
 	}
 
 });  

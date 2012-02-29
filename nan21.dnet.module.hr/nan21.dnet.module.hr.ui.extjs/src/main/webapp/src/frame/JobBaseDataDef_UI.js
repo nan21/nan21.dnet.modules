@@ -47,9 +47,9 @@ Ext.define("net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbJobType", {dc:"jobType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Job types"}).end()
-			.beginToolbar("tlbWrType", {dc:"wrType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Work requirement types"}).end()
-			.beginToolbar("tlbWr", {dc:"wr"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Work requirement"}).end(); 	
+			.beginToolbar("tlbJobType", {dc:"jobType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Job types"}).end()
+			.beginToolbar("tlbWrType", {dc:"wrType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Work requirement types"}).end()
+			.beginToolbar("tlbWr", {dc:"wr"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Work requirement"}).end(); 	
 	}
 
 });  

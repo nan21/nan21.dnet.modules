@@ -21,9 +21,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeWorkExperience$EditList
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.employee.dc.EmployeeWorkExperience$EditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"employeeId", dataIndex:"employeeId", hidden:true, align:"right",format:"0",width:70})
 		.addDateColumn({ name:"fromDate", dataIndex:"fromDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})

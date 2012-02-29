@@ -46,9 +46,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bp.md.dc.BpAccount$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addNumberColumn({ name:"organizationId", dataIndex:"organizationId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"organization", dataIndex:"organization",width:100 })   	

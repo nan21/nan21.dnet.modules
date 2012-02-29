@@ -21,9 +21,8 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxEditList",
 	
-	 _noImport_: true
-	,_noExport_: false
-	,_defineColumns_: function () {
+	_noImport_: true,
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"productCode", xtype:"gridcolumn", dataIndex:"productCode",width:100,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.Products" , selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "productId"} ,{lovField:"name", dsField: "productName"} ]} })
 		.addTextColumn({ name:"productName", dataIndex:"productName",width:200 })
@@ -43,9 +42,8 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxList", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxList",
 	
-	 _noImport_: true
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_noImport_: true,
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"productCode", dataIndex:"productCode",width:100 })   	
 		.addTextColumn({ name:"productName", dataIndex:"productName",width:200 })   	

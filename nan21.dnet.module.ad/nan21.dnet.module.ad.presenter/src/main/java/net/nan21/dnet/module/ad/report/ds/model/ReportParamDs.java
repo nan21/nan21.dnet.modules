@@ -34,8 +34,12 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
     public static final String fENTITYFQN = "entityFQN";
     public static final String fREPORTID = "reportId";
     public static final String fREPORTCODE = "reportCode";
+    public static final String fSEQUENCENO = "sequenceNo";
     public static final String fDEFAULTVALUE = "defaultValue";
     public static final String fDATATYPE = "dataType";
+    public static final String fLISTOFVALUES = "listOfValues";
+    public static final String fNOEDIT = "noEdit";
+    public static final String fMANDATORY = "mandatory";
 
     @DsField()
     private String name;
@@ -83,10 +87,22 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
     private String reportCode;
 
     @DsField()
+    private Integer sequenceNo;
+
+    @DsField()
     private String defaultValue;
 
     @DsField()
     private String dataType;
+
+    @DsField()
+    private String listOfValues;
+
+    @DsField()
+    private Boolean noEdit;
+
+    @DsField()
+    private Boolean mandatory;
 
     public ReportParamDs() {
         super();
@@ -217,6 +233,14 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
         this.reportCode = reportCode;
     }
 
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
+    }
+
     public String getDefaultValue() {
         return this.defaultValue;
     }
@@ -231,6 +255,30 @@ public class ReportParamDs extends AbstractDsModel<ReportParam> implements
 
     public void setDataType(String dataType) {
         this.dataType = dataType;
+    }
+
+    public String getListOfValues() {
+        return this.listOfValues;
+    }
+
+    public void setListOfValues(String listOfValues) {
+        this.listOfValues = listOfValues;
+    }
+
+    public Boolean getNoEdit() {
+        return this.noEdit;
+    }
+
+    public void setNoEdit(Boolean noEdit) {
+        this.noEdit = noEdit;
+    }
+
+    public Boolean getMandatory() {
+        return this.mandatory;
+    }
+
+    public void setMandatory(Boolean mandatory) {
+        this.mandatory = mandatory;
     }
 
 }

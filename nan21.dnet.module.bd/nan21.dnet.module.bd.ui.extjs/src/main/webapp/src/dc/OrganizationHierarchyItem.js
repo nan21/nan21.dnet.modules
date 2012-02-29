@@ -21,9 +21,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem$CtxEditLis
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem$CtxEditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"hierarchyId", dataIndex:"hierarchyId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"organizationId", dataIndex:"organizationId", hidden:true, align:"right",format:"0",width:70})

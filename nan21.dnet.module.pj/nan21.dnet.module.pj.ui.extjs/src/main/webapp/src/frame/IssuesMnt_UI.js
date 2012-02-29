@@ -27,7 +27,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssuesMnt_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbIssueList", {dc:"issue"}).addQuery().addSave().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Issue maintenance"}).end(); 	
+			.beginToolbar("tlbIssueList", {dc:"issue"}).addQuery().addSave().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Issue maintenance"}).end(); 	
 	}
 
 });  

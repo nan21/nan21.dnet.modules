@@ -27,6 +27,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Filter", {
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addLov({ name:"reportServer", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServer",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
+		.addTextField({ name:"contextPath", dataIndex:"contextPath",anchor:"-20",maxLength:255  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
 		.addPanel({ name:"col2", layout:"form",width:210}) 
@@ -37,7 +38,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","code"])
-		.addChildrenTo("col2",["reportServer","active"])
+		.addChildrenTo("col2",["reportServer","contextPath","active"])
     	.addAuditFilter({})	
 	}
 }); 
@@ -46,15 +47,14 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.report.dc.Report$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
 		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 		.addTextColumn({ name:"notes", dataIndex:"notes",width:200 })   	
 		.addTextColumn({ name:"reportServer", dataIndex:"reportServer",width:120 })   	
+		.addTextColumn({ name:"contextPath", dataIndex:"contextPath",width:200 })   	
 		.addNumberColumn({ name:"reportServerId", dataIndex:"reportServerId", hidden:true,format:"0",width:70 })  
 	  	.addDefaults()
 	  ;		   
@@ -72,8 +72,9 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
+		.addTextField({ name:"contextPath", dataIndex:"contextPath",anchor:"-20" ,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:100,anchor:"-20"   })
 		.addLov({ name:"reportServer", xtype:"net.nan21.dnet.module.ad.report.lovs.ReportServers", dataIndex:"reportServer",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "reportServerId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
@@ -84,7 +85,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.Report$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
-		.addChildrenTo("col1",["name","code","reportServer","active"])
+		.addChildrenTo("col1",["name","code","reportServer","contextPath","active"])
 		.addChildrenTo("col2",["notes"])
 ;
 	}	

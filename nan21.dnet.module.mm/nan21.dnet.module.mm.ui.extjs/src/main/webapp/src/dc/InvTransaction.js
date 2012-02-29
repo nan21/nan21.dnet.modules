@@ -46,9 +46,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addDateColumn({ name:"eventDate", dataIndex:"eventDate",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"transactionType", dataIndex:"transactionType", width:150 })   	

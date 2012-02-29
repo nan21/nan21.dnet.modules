@@ -46,9 +46,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.mm.inventory.dc.InvBalance$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"subInventory", dataIndex:"subInventory",width:120 })   	
 		.addTextColumn({ name:"locator", dataIndex:"locator",width:120 })   	

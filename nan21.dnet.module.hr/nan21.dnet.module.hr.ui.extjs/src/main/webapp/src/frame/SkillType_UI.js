@@ -41,8 +41,8 @@ Ext.define("net.nan21.dnet.module.hr.skill.frame.SkillType_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbscateg", {dc:"scateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Categories"}).end()
-			.beginToolbar("tlbstype", {dc:"stype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Types"}).end(); 	
+			.beginToolbar("tlbscateg", {dc:"scateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Categories"}).end()
+			.beginToolbar("tlbstype", {dc:"stype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Types"}).end(); 	
 	}
 
 });  

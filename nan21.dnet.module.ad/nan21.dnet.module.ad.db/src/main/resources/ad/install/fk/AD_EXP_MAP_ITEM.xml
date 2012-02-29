@@ -1,0 +1,12 @@
+  
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_AD_EXP_MAP_ITEM1" baseTableName="AD_EXP_MAP_ITEM" baseColumnNames="EXPORTMAP_ID"  referencedTableName="AD_EXP_MAP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_AD_EXP_MAP_ITEM2" baseTableName="AD_EXP_MAP_ITEM" baseColumnNames="CSVEXPORT_ID"  referencedTableName="AD_CSV_EXP"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

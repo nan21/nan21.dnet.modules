@@ -164,6 +164,12 @@ public class SalesOrder implements Serializable, IModelWithId,
     private Long version;
 
     /**
+     * System generated UID. Useful for data import-export and data-replication
+     */
+    @Column(name = "UUID", length = 36)
+    private String uuid;
+
+    /**
      * System generated unique identifier.
      */
     @Column(name = "ID", nullable = false)
@@ -171,12 +177,6 @@ public class SalesOrder implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-
-    /**
-     * System generated UID. Useful for data import-export and data-replication
-     */
-    @Column(name = "UUID", length = 36)
-    private String uuid;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesOrderStatus.class)
     @JoinColumn(name = "STATUS_ID", referencedColumnName = "ID")
     private SalesOrderStatus status;
@@ -341,20 +341,20 @@ public class SalesOrder implements Serializable, IModelWithId,
         this.version = version;
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getUuid() {
         return this.uuid;
     }
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Transient

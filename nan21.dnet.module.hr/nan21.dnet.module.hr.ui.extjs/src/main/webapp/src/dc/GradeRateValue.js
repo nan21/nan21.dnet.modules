@@ -21,9 +21,9 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRateValue$CtxEditList4GradeRa
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.grade.dc.GradeRateValue$CtxEditList4GradeRate",
 	
-	 _noImport_: true
-	,_noExport_: true
-	,_defineColumns_: function () {
+	_noImport_: true,
+	_noExport_: true,
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"gradeRateId", dataIndex:"gradeRateId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"gradeId", dataIndex:"gradeId", hidden:true, align:"right",format:"0",width:70})

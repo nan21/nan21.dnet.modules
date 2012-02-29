@@ -67,7 +67,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Issues_UI", {
 		.addPanel({name: "notesPanel", layout:"border", defaults:{split:true},title:"Notes"})  	 
 		.addPanel({name: "taskEditWrapper", layout:"fit"})
 		
-		.addWindow({name:"wdwIssueLinkCreate", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("linkCreate")]
+		.addWindow({name:"wdwIssueLinkCreate", closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("linkCreate")]
 ,title:"Create link",modal:true,width:400,height:150,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnSaveLink") ,this._elems_.get("btnCancelLink") ]}}) 	
 ;	 	
 	}
@@ -93,14 +93,14 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Issues_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbIssueList", {dc:"issue"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Issues"}).end()
-			.beginToolbar("tlbIssueEdit", {dc:"issue"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addButtons([this._elems_.get("btnTaskUi") ,this._elems_.get("btnChangelogUi") ,this._elems_.get("btnRoadmapUi") ]).addSeparator().addSeparator().addTitle({"text":"Issue"}).end()
-			.beginToolbar("tlbLinkList", {dc:"link"}).addQuery().addNew().addDeleteSelected().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Links"}).end()
-			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
-			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Notes"}).end()
-			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().end()
-			.beginToolbar("tlbTaskList", {dc:"task"}).addQuery().addEdit({inContainer:"tasksPanel",showView:"taskEditWrapper"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Tasks"}).end()
-			.beginToolbar("tlbTaskEdit", {dc:"task"}).addBack({inContainer:"tasksPanel",showView:"taskList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Task"}).end(); 	
+			.beginToolbar("tlbIssueList", {dc:"issue"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Issues"}).end()
+			.beginToolbar("tlbIssueEdit", {dc:"issue"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addButtons([this._elems_.get("btnTaskUi") ,this._elems_.get("btnChangelogUi") ,this._elems_.get("btnRoadmapUi") ]).addReports().addSeparator().addSeparator().addTitle({"text":"Issue"}).end()
+			.beginToolbar("tlbLinkList", {dc:"link"}).addQuery().addNew().addDeleteSelected().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Links"}).end()
+			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
+			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Notes"}).end()
+			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().addReports().end()
+			.beginToolbar("tlbTaskList", {dc:"task"}).addQuery().addEdit({inContainer:"tasksPanel",showView:"taskEditWrapper"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Tasks"}).end()
+			.beginToolbar("tlbTaskEdit", {dc:"task"}).addBack({inContainer:"tasksPanel",showView:"taskList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Task"}).end(); 	
 	}
 
 

@@ -33,8 +33,8 @@ Ext.define("net.nan21.dnet.module.mm.price.frame.ProductPrice_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbPricelistList", {dc:"pricelist"}).addQuery().end()
-			.beginToolbar("tlbPriceEditList", {dc:"price"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().end(); 	
+			.beginToolbar("tlbPricelistList", {dc:"pricelist"}).addQuery().addReports().end()
+			.beginToolbar("tlbPriceEditList", {dc:"price"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().end(); 	
 	}
 
 });  

@@ -53,9 +53,7 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.hr.time.dc.Absence$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"employeeCode", dataIndex:"employeeCode",width:100 })   	
 		.addTextColumn({ name:"employee", dataIndex:"employee",width:200 })   	

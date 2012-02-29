@@ -35,7 +35,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.ProductBaseData_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbManufact", {dc:"manufact"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Manufacturers"}).end(); 	
+			.beginToolbar("tlbManufact", {dc:"manufact"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Manufacturers"}).end(); 	
 	}
 
 });  

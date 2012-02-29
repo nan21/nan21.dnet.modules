@@ -42,9 +42,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name",width:120 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     

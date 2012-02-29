@@ -1,55 +1,55 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.ad._businessdelegates;version="1
- .0.0.M7";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bus
+ .0.0.M8";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bus
  iness.service",net.nan21.dnet.module.ad._businessdelegates.client;ver
- sion="1.0.0.M7";uses:="net.nan21.dnet.core.business.service,net.nan21
+ sion="1.0.0.M8";uses:="net.nan21.dnet.core.business.service,net.nan21
  .dnet.module.ad.client.domain.entity",net.nan21.dnet.module.ad.client
- .business.service;version="1.0.0.M7";uses:="net.nan21.dnet.core.api.s
+ .business.service;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.s
  ervice,net.nan21.dnet.module.ad.client.domain.entity",net.nan21.dnet.
- module.ad.client.business.serviceimpl;version="1.0.0.M7";uses:="javax
+ module.ad.client.business.serviceimpl;version="1.0.0.M8";uses:="javax
  .persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.modu
  le.ad.client.business.service,net.nan21.dnet.module.ad.client.domain.
  entity",net.nan21.dnet.module.ad.data.business.service;version="1.0.0
- .M7";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.
+ .M8";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.
  data.domain.entity",net.nan21.dnet.module.ad.data.business.serviceimp
- l;version="1.0.0.M7";uses:="javax.persistence,net.nan21.dnet.core.bus
+ l;version="1.0.0.M8";uses:="javax.persistence,net.nan21.dnet.core.bus
  iness.service,net.nan21.dnet.module.ad.data.business.service,net.nan2
  1.dnet.module.ad.data.domain.entity",net.nan21.dnet.module.ad.impex.b
- usiness.service;version="1.0.0.M7";uses:="net.nan21.dnet.core.api.ser
+ usiness.service;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.ser
  vice,net.nan21.dnet.module.ad.impex.domain.entity",net.nan21.dnet.mod
- ule.ad.impex.business.serviceimpl;version="1.0.0.M7";uses:="javax.per
+ ule.ad.impex.business.serviceimpl;version="1.0.0.M8";uses:="javax.per
  sistence,net.nan21.dnet.core.business.service,net.nan21.dnet.module.a
  d.impex.business.service,net.nan21.dnet.module.ad.impex.domain.entity
- ",net.nan21.dnet.module.ad.report.business.service;version="1.0.0.M7"
+ ",net.nan21.dnet.module.ad.report.business.service;version="1.0.0.M8"
  ;uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.repo
  rt.domain.entity",net.nan21.dnet.module.ad.report.business.serviceimp
- l;version="1.0.0.M7";uses:="javax.persistence,net.nan21.dnet.core.bus
+ l;version="1.0.0.M8";uses:="javax.persistence,net.nan21.dnet.core.bus
  iness.service,net.nan21.dnet.module.ad.report.business.service,net.na
  n21.dnet.module.ad.report.domain.entity",net.nan21.dnet.module.ad.sys
- tem.business.service;version="1.0.0.M7";uses:="net.nan21.dnet.core.ap
+ tem.business.service;version="1.0.0.M8";uses:="net.nan21.dnet.core.ap
  i.service,net.nan21.dnet.module.ad.system.domain.entity",net.nan21.dn
- et.module.ad.system.business.serviceimpl;version="1.0.0.M7";uses:="ja
+ et.module.ad.system.business.serviceimpl;version="1.0.0.M8";uses:="ja
  vax.persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.m
  odule.ad.system.business.service,net.nan21.dnet.module.ad.system.doma
  in.entity",net.nan21.dnet.module.ad.usr.business.service;version="1.0
- .0.M7";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.a
+ .0.M8";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.a
  d.system.domain.entity,net.nan21.dnet.module.ad.usr.domain.entity",ne
- t.nan21.dnet.module.ad.usr.business.serviceimpl;version="1.0.0.M7";us
+ t.nan21.dnet.module.ad.usr.business.serviceimpl;version="1.0.0.M8";us
  es:="javax.persistence,net.nan21.dnet.core.business.service,net.nan21
  .dnet.module.ad.system.domain.entity,net.nan21.dnet.module.ad.usr.bus
  iness.service,net.nan21.dnet.module.ad.usr.domain.entity",net.nan21.d
- net.module.ad.workflow.business.service;version="1.0.0.M7";uses:="net
+ net.module.ad.workflow.business.service;version="1.0.0.M8";uses:="net
  .nan21.dnet.core.api.service,net.nan21.dnet.module.ad.workflow.domain
  .entity",net.nan21.dnet.module.ad.workflow.business.serviceimpl;versi
- on="1.0.0.M7";uses:="javax.persistence,net.nan21.dnet.core.business.s
+ on="1.0.0.M8";uses:="javax.persistence,net.nan21.dnet.core.business.s
  ervice,net.nan21.dnet.module.ad.workflow.business.service,net.nan21.d
  net.module.ad.workflow.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.M7,1.0.0.M7]",nan21.dnet.core.busine
- ss;version="[1.0.0.M7,1.0.0.M7]",nan21.dnet.module.ad.domain;version=
- "[1.0.0.M7,1.0.0.M7]"
+ dnet.core.domain;version="[1.0.0.M8,1.0.0.M8]",nan21.dnet.core.busine
+ ss;version="[1.0.0.M8,1.0.0.M8]",nan21.dnet.module.ad.domain;version=
+ "[1.0.0.M8,1.0.0.M8]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M7
+Bundle-Version: 1.0.0.M8
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet AD - business
 Bundle-ManifestVersion: 2

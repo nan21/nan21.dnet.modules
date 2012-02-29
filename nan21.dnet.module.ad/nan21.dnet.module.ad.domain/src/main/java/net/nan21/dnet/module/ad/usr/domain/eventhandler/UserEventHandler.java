@@ -6,10 +6,11 @@
 package net.nan21.dnet.module.ad.usr.domain.eventhandler;
 
 import org.eclipse.persistence.descriptors.DescriptorEvent;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityBaseEventHandler;
+ 
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.ad.usr.domain.entity.User;
 
-public class UserEventHandler extends DomainEntityBaseEventHandler {
+public class UserEventHandler extends DefaultEventHandler {
 	
 	@Override
     public void preInsert(DescriptorEvent event) {        

@@ -47,7 +47,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI", {
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "notesPanel", layout:"border", defaults:{split:true},title:"Notes"})  	 
 		
-		.addWindow({name:"wdwEventCreate", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("eventCreate")]
+		.addWindow({name:"wdwEventCreate", closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("eventCreate")]
 ,title:"Select type",modal:true,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnCreateEventContinue") ]}}) 	
 ;	 	
 	}
@@ -72,13 +72,13 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbOpportunityList", {dc:"opportunity"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Opportunities"}).end()
-			.beginToolbar("tlbOpportunityEdit", {dc:"opportunity"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Opportunity"}).end()
-			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
-			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().end()
-			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().end()
-			.beginToolbar("tlbCalendarList", {dc:"event"}).addQuery().addEdit({inContainer:"eventPanel",showView:"eventEditPanel"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Events"}).end()
-			.beginToolbar("tlbCalendarEdit", {dc:"event"}).addBack({inContainer:"eventPanel",showView:"eventList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Event"}).end(); 	
+			.beginToolbar("tlbOpportunityList", {dc:"opportunity"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Opportunities"}).end()
+			.beginToolbar("tlbOpportunityEdit", {dc:"opportunity"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Opportunity"}).end()
+			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
+			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().addReports().end()
+			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().addReports().end()
+			.beginToolbar("tlbCalendarList", {dc:"event"}).addQuery().addEdit({inContainer:"eventPanel",showView:"eventEditPanel"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Events"}).end()
+			.beginToolbar("tlbCalendarEdit", {dc:"event"}).addBack({inContainer:"eventPanel",showView:"eventList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Event"}).end(); 	
 	}
 
 

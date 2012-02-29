@@ -44,7 +44,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.AccessControl_UI", {
 		.addPanel({name: "detailTabs", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id(),height:220}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		
-		.addWindow({name:"wdwCopyRules", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("privilegeCopyRules")]
+		.addWindow({name:"wdwCopyRules", closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("privilegeCopyRules")]
 ,title:"Select source",modal:true,width:400,height:180,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnCopyRulesExec") ]}}) 	
 ;	 	
 	}
@@ -62,10 +62,10 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.AccessControl_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbCtrlEditList", {dc:"ctrl"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Privileges"}).end()
-			.beginToolbar("tlbDsAccessCtxEditList", {dc:"dsAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"DS rules"}).end()
-			.beginToolbar("tlbAsgnAccessCtxEditList", {dc:"asgnAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"ASGN rules"}).end()
-			.beginToolbar("tlbDsMtdAccessCtxEditList", {dc:"dsMtdAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"DS Methods"}).end(); 	
+			.beginToolbar("tlbCtrlEditList", {dc:"ctrl"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Privileges"}).end()
+			.beginToolbar("tlbDsAccessCtxEditList", {dc:"dsAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"DS rules"}).end()
+			.beginToolbar("tlbAsgnAccessCtxEditList", {dc:"asgnAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"ASGN rules"}).end()
+			.beginToolbar("tlbDsMtdAccessCtxEditList", {dc:"dsMtdAccess"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"DS Methods"}).end(); 	
 	}
 
 

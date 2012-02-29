@@ -27,7 +27,7 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.ad.impex.domain.entity.CsvExport;
 import net.nan21.dnet.module.ad.impex.domain.entity.ExportMap;
 import org.eclipse.persistence.annotations.Customizer;
@@ -39,7 +39,7 @@ import org.hibernate.validator.constraints.NotBlank;
 /** ExportMapItem. */
 @Entity
 @Table(name = ExportMapItem.TABLE_NAME)
-@Customizer(DomainEntityEventAdapter.class)
+@Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = ExportMapItem.NQ_FIND_BY_ID, query = "SELECT e FROM ExportMapItem e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ExportMapItem.NQ_FIND_BY_IDS, query = "SELECT e FROM ExportMapItem e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
@@ -121,6 +121,12 @@ public class ExportMapItem implements Serializable, IModelWithId,
     private Long version;
 
     /**
+     * System generated UID. Useful for data import-export and data-replication
+     */
+    @Column(name = "UUID", length = 36)
+    private String uuid;
+
+    /**
      * System generated unique identifier.
      */
     @Column(name = "ID", nullable = false)
@@ -128,12 +134,6 @@ public class ExportMapItem implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-
-    /**
-     * System generated UID. Useful for data import-export and data-replication
-     */
-    @Column(name = "UUID", length = 36)
-    private String uuid;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ExportMap.class)
     @JoinColumn(name = "EXPORTMAP_ID", referencedColumnName = "ID")
     private ExportMap exportMap;
@@ -215,20 +215,20 @@ public class ExportMapItem implements Serializable, IModelWithId,
         this.version = version;
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getUuid() {
         return this.uuid;
     }
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Transient

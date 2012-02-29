@@ -32,7 +32,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbIssueList", {dc:"issue"}).addQuery().addSeparator().addSeparator().addButtons([this._elems_.get("btnIssueUi") ]).addSeparator().addSeparator().addTitle({"text":"Changelog"}).end(); 	
+			.beginToolbar("tlbIssueList", {dc:"issue"}).addQuery().addSeparator().addSeparator().addButtons([this._elems_.get("btnIssueUi") ]).addReports().addSeparator().addSeparator().addTitle({"text":"Changelog"}).end(); 	
 	}
 
 

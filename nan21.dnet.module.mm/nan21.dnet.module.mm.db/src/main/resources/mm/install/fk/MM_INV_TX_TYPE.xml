@@ -1,0 +1,12 @@
+  
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_MM_INV_TX_TYPE1" baseTableName="MM_INV_TX_TYPE" baseColumnNames="SOURCETYPE_ID"  referencedTableName="MM_INV_TX_SRCTYPE"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_MM_INV_TX_TYPE2" baseTableName="MM_INV_TX_TYPE" baseColumnNames="ACTION_ID"  referencedTableName="MM_INV_TX_ACTION"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

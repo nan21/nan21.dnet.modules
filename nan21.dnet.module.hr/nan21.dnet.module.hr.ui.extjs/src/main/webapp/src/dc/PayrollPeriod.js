@@ -21,9 +21,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod$CtxEditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"payrollId", dataIndex:"payrollId", hidden:true, align:"right",format:"0",width:70})
 		.addTextColumn({ name:"payrollName", dataIndex:"payrollName", hidden:true,width:120 })

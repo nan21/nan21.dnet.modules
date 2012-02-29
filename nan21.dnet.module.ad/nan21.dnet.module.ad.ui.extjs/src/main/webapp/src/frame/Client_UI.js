@@ -36,9 +36,9 @@ Ext.define("net.nan21.dnet.module.ad.client.frame.Client_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbClientList", {dc:"client"}).addQuery().addEdit().addNew({autoEdit:"false",showView:"canvas3"}).addSeparator().addSeparator().addTitle({"text":"Clients"}).end()
-			.beginToolbar("tlbClientEdit", {dc:"client"}).addBack().addSave().addNew({autoEdit:"false",showView:"canvas3"}).addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Client"}).end()
-			.beginToolbar("tlbClientCreate", {dc:"client"}).addBack().addSave().addNew({autoEdit:"false",showView:"canvas3"}).addCancel().addPrevRec().addNextRec().end(); 	
+			.beginToolbar("tlbClientList", {dc:"client"}).addQuery().addEdit().addNew({autoEdit:"false",showView:"canvas3"}).addReports().addSeparator().addSeparator().addTitle({"text":"Clients"}).end()
+			.beginToolbar("tlbClientEdit", {dc:"client"}).addBack().addSave().addNew({autoEdit:"false",showView:"canvas3"}).addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Client"}).end()
+			.beginToolbar("tlbClientCreate", {dc:"client"}).addBack().addSave().addNew({autoEdit:"false",showView:"canvas3"}).addCancel().addPrevRec().addNextRec().addReports().end(); 	
 	}
 
 });  

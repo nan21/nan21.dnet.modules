@@ -37,7 +37,7 @@ Ext.define("net.nan21.dnet.module.mm.price.frame.PriceList_UI", {
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "pricePanel", layout:"border", defaults:{split:true}})  	 
 		
-		.addWindow({name:"wdwVersionCopyProdFromCateg", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("versionCopyProdFromCateg")]
+		.addWindow({name:"wdwVersionCopyProdFromCateg", closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("versionCopyProdFromCateg")]
 ,title:"Select product category",modal:true,width:400,height:100,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnAddProdByCategExec") ]}}) 	
 ;	 	
 	}
@@ -56,10 +56,10 @@ Ext.define("net.nan21.dnet.module.mm.price.frame.PriceList_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbPricelistEditList", {dc:"pricelist"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Price lists"}).end()
-			.beginToolbar("tlbVersionEditList", {dc:"version"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Price list versions"}).end()
-			.beginToolbar("tlbVersionView", {dc:"version"}).addBack().addPrevRec().addNextRec().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Price list version"}).end()
-			.beginToolbar("tlbPriceEditList", {dc:"price"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Product price"}).end(); 	
+			.beginToolbar("tlbPricelistEditList", {dc:"pricelist"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Price lists"}).end()
+			.beginToolbar("tlbVersionEditList", {dc:"version"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Price list versions"}).end()
+			.beginToolbar("tlbVersionView", {dc:"version"}).addBack().addPrevRec().addNextRec().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Price list version"}).end()
+			.beginToolbar("tlbPriceEditList", {dc:"price"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Product price"}).end(); 	
 	}
 
 

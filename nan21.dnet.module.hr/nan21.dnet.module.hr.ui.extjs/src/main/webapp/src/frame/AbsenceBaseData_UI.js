@@ -47,9 +47,9 @@ Ext.define("net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbabcategFilter", {dc:"abscateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Absence categories"}).end()
-			.beginToolbar("tlbabstypeFilter", {dc:"abstype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Absence types"}).end()
-			.beginToolbar("tlbabsreasonFilter", {dc:"absreason"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Absence reasons"}).end(); 	
+			.beginToolbar("tlbabcategFilter", {dc:"abscateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Absence categories"}).end()
+			.beginToolbar("tlbabstypeFilter", {dc:"abstype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Absence types"}).end()
+			.beginToolbar("tlbabsreasonFilter", {dc:"absreason"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Absence reasons"}).end(); 	
 	}
 
 });  

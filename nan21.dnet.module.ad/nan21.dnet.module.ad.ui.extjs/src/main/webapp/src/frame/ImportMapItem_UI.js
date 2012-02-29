@@ -27,7 +27,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", {
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		
-		.addWindow({name:"wdwImportFile", closable:true, closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("importFileForm")]
+		.addWindow({name:"wdwImportFile", closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("importFileForm")]
 ,title:"Import file from server",modal:true,width:500,height:170,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnImportFileRun") ]}}) 	
 ;	 	
 	}
@@ -41,7 +41,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMapItemEditList", {dc:"mapItem"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Import files"}).end(); 	
+			.beginToolbar("tlbMapItemEditList", {dc:"mapItem"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Import files"}).end(); 	
 	}
 
 

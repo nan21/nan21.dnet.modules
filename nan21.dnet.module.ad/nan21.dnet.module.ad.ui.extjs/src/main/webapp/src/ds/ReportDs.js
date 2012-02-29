@@ -17,7 +17,9 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportDs" ,{
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
 		{name:"reportServerId", type:"int", useNull:true},
-		{name:"reportServer", type:"string"}
+		{name:"reportServer", type:"string"},
+		{name:"serverUrl", type:"string"},
+		{name:"contextPath", type:"string"}
 	],
 	validations: [  
 		{field: "code", type: 'presence'}, 
@@ -47,7 +49,9 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportDsFilter" ,{
 		{name:"reportServerId", type:"int", useNull:true},
 		{name:"reportServerId_From",type:"int", useNull:true},
 		{name:"reportServerId_To",type:"int", useNull:true},
-		{name:"reportServer", type:"string"}
+		{name:"reportServer", type:"string"},
+		{name:"serverUrl", type:"string"},
+		{name:"contextPath", type:"string"}
 	] 
 });
 	

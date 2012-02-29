@@ -37,6 +37,9 @@
  	<bean id="MenuItemService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.MenuItemService"  />  
  
+ 	<bean id="BookmarkService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.BookmarkService"  />  
+ 
  	<bean id="AssignableTypeService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.usr.business.serviceimpl.AssignableTypeService"  />  
  

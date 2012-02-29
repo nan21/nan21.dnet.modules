@@ -1,0 +1,12 @@
+  
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_MM_STOCKLOCATOR1" baseTableName="MM_STOCKLOCATOR" baseColumnNames="SUBINVENTORY_ID"  referencedTableName="MM_SUBINVENTORY"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_MM_STOCKLOCATOR2" baseTableName="MM_STOCKLOCATOR" baseColumnNames="LOCATORTYPE_ID"  referencedTableName="MM_STOCKLOCATORTYPE"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

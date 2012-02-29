@@ -48,9 +48,9 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$CtxEditList",
 	
-	 _noImport_: true
-	,_noExport_: true
-	,_defineColumns_: function () {
+	_noImport_: true,
+	_noExport_: true,
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"attribute", dataIndex:"attribute", hidden:true,width:120 })
 		.addTextColumn({ name:"title", dataIndex:"title",width:200 })
@@ -92,9 +92,8 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList",
 	
-	 _noImport_: true
-	,_noExport_: false
-	,_defineColumns_: function () {
+	_noImport_: true,
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"product", dataIndex:"productCode", width:150 })
 		.addTextColumn({ name:"attribute", dataIndex:"attribute", hidden:true,width:120 })

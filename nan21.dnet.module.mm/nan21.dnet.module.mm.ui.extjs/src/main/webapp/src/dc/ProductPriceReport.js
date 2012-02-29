@@ -52,9 +52,7 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.mm.price.dc.ProductPriceReport$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"product", dataIndex:"product",width:100 })   	
 		.addTextColumn({ name:"productName", dataIndex:"productName",width:200 })   	

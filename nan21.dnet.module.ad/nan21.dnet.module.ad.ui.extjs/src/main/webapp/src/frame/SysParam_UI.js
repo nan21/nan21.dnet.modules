@@ -35,8 +35,8 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysParam_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbSysparamList", {dc:"sysparam"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"System parameters"}).end()
-			.beginToolbar("tlbSysparamEdit", {dc:"sysparam"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"System parameter"}).end(); 	
+			.beginToolbar("tlbSysparamList", {dc:"sysparam"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"System parameters"}).end()
+			.beginToolbar("tlbSysparamEdit", {dc:"sysparam"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"System parameter"}).end(); 	
 	}
 
 

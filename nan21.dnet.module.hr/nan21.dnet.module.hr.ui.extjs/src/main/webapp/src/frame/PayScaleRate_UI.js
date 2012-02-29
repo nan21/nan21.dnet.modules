@@ -36,9 +36,9 @@ Ext.define("net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbSrateList", {dc:"srate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addSeparator().addSeparator().addTitle({"text":"Pay scale rates"}).end()
-			.beginToolbar("tlbSrateEdit", {dc:"srate"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addSeparator().addTitle({"text":"Pay scale rate"}).end()
-			.beginToolbar("tlbSalueEditList", {dc:"value"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addSeparator().addSeparator().addTitle({"text":"Progression point rates"}).end(); 	
+			.beginToolbar("tlbSrateList", {dc:"srate"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Pay scale rates"}).end()
+			.beginToolbar("tlbSrateEdit", {dc:"srate"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Pay scale rate"}).end()
+			.beginToolbar("tlbSalueEditList", {dc:"value"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Progression point rates"}).end(); 	
 	}
 
 });  

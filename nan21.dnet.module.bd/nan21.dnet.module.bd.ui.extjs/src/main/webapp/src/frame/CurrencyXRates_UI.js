@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbXrateEditList", {dc:"xrate"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Exchange rates"}).end(); 	
+			.beginToolbar("tlbXrateEditList", {dc:"xrate"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Exchange rates"}).end(); 	
 	}
 
 });  

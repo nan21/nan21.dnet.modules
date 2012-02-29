@@ -21,6 +21,9 @@
  
  	<bean id="DsReportParamService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.report.business.serviceimpl.DsReportParamService"  />  
+ 
+ 	<bean id="DsReportUsageService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.report.business.serviceimpl.DsReportUsageService"  />  
    
 </beans>
    

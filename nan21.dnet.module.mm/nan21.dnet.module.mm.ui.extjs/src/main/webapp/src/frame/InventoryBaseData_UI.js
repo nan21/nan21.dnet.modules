@@ -53,10 +53,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbSloctypeEditList", {dc:"sloctype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Locator types"}).end()
-			.beginToolbar("tlbTxsrctypeEditList", {dc:"txsrctype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Transaction source type"}).end()
-			.beginToolbar("tlbTxactionEditList", {dc:"txaction"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Transaction action"}).end()
-			.beginToolbar("tlbTxtypeEditList", {dc:"txtype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Transaction type"}).end(); 	
+			.beginToolbar("tlbSloctypeEditList", {dc:"sloctype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Locator types"}).end()
+			.beginToolbar("tlbTxsrctypeEditList", {dc:"txsrctype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Transaction source type"}).end()
+			.beginToolbar("tlbTxactionEditList", {dc:"txaction"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Transaction action"}).end()
+			.beginToolbar("tlbTxtypeEditList", {dc:"txtype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Transaction type"}).end(); 	
 	}
 
 });  

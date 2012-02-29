@@ -41,8 +41,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Assignables_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbAssignableTypeEditList", {dc:"assignableType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Assignable types"}).end()
-			.beginToolbar("tlbAssignableEditList", {dc:"assignable"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Assignable resources"}).end(); 	
+			.beginToolbar("tlbAssignableTypeEditList", {dc:"assignableType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Assignable types"}).end()
+			.beginToolbar("tlbAssignableEditList", {dc:"assignable"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Assignable resources"}).end(); 	
 	}
 
 });  

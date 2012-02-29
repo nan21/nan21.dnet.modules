@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="PJ_ITEM">
+			<column name="BUSINESSVALUE" type="number(4)">
+				<constraints  /></column>	 
+			<column name="CLARITY" type="number(4)">
+				<constraints  /></column>	 
+			<column name="CLIENTID" type="number(3)">
+				<constraints nullable="false" /></column>	 
+			<column name="CODE" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDBY" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="DESCRIPTION" type="varchar2(4000)">
+				<constraints  /></column>	 
+			<column name="DUEDATE" type="date">
+				<constraints  /></column>	 
+			<column name="ESTIMATEDEFFORT" type="number(4)">
+				<constraints  /></column>	 
+			<column name="ID" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDBY" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="RESOLUTIONDATE" type="date">
+				<constraints  /></column>	 
+			<column name="SUMMARY" type="varchar2(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="UUID" type="varchar2(36)">
+				<constraints  /></column>	 
+			<column name="VERSION" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="ASSIGNEEROLE_ID" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="ASSIGNEE_ID" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="FIXEDINVERSION_ID" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="PRIORITY_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="PROJECT_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="REPORTEDVERSION_ID" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="RESOLUTION_ID" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="SEVERITY_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="STATUS_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="TARGETVERSION_ID" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="TYPE_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="PJ_ITEM" constraintName="PK_ITEM" columnNames="ID" />
+    </changeSet>       
+	<changeSet author="amathe" id="UK-1">
+		<addUniqueConstraint tableName="PJ_ITEM" constraintName="UK_ITEM1" columnNames="CLIENTID, CODE" />
+	</changeSet>
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="PJ_ITEM_SEQ"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

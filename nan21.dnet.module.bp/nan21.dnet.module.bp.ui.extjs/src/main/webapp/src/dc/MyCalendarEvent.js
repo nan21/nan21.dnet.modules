@@ -59,9 +59,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$List",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"eventType", dataIndex:"eventType",width:100 })   	
 		.addTextColumn({ name:"subject", dataIndex:"subject",width:200 })   	

@@ -62,10 +62,8 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueMnt$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueMnt$EditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_bulkEditFields_ : ["dueDate","type","status","priority","severity","assignee","reportedVersion","targetVersion","fixedInVersion","resolution","businessValue","estimatedEffort","clarity"]
-	,_defineColumns_: function () {
+	_bulkEditFields_ : ["dueDate","type","status","priority","severity","assignee","reportedVersion","targetVersion","fixedInVersion","resolution","businessValue","estimatedEffort","clarity"],
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"code", dataIndex:"code", width:80 })
 		.addTextColumn({ name:"project", dataIndex:"project", width:80 })

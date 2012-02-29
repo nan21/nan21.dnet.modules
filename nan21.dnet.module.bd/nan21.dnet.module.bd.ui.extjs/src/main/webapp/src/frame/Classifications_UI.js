@@ -41,8 +41,8 @@ Ext.define("net.nan21.dnet.module.bd.standards.frame.Classifications_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbClasssysEditList", {dc:"classsys"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Classification systems"}).end()
-			.beginToolbar("tlbClasscodeEditList", {dc:"classcode"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addSeparator().addTitle({"text":"Classification codes"}).end(); 	
+			.beginToolbar("tlbClasssysEditList", {dc:"classsys"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Classification systems"}).end()
+			.beginToolbar("tlbClasscodeEditList", {dc:"classcode"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Classification codes"}).end(); 	
 	}
 
 });  

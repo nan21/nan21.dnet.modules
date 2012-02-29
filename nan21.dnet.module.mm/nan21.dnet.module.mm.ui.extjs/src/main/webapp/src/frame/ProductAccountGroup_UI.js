@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.ProductAccountGroup_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlb", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().end(); 	
+			.beginToolbar("tlb", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().end(); 	
 	}
 
 });  

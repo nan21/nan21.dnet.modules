@@ -18,8 +18,12 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportParamDs" ,{
 		{name:"entityFQN", type:"string"},
 		{name:"reportId", type:"int", useNull:true},
 		{name:"reportCode", type:"string"},
+		{name:"sequenceNo", type:"int", useNull:true},
 		{name:"defaultValue", type:"string"},
-		{name:"dataType", type:"string"}
+		{name:"dataType", type:"string"},
+		{name:"listOfValues", type:"string"},
+		{name:"noEdit", type:"boolean"},
+		{name:"mandatory", type:"boolean"}
 	],
 	validations: [  
 		{field: "code", type: 'presence'}, 
@@ -50,8 +54,14 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.ReportParamDsFilter" ,{
 		{name:"reportId_From",type:"int", useNull:true},
 		{name:"reportId_To",type:"int", useNull:true},
 		{name:"reportCode", type:"string"},
+		{name:"sequenceNo", type:"int", useNull:true},
+		{name:"sequenceNo_From",type:"int", useNull:true},
+		{name:"sequenceNo_To",type:"int", useNull:true},
 		{name:"defaultValue", type:"string"},
-		{name:"dataType", type:"string"}
+		{name:"dataType", type:"string"},
+		{name:"listOfValues", type:"string"},
+		{name:"noEdit", type:"boolean", useNull:true},
+		{name:"mandatory", type:"boolean", useNull:true}
 	] 
 });
 	

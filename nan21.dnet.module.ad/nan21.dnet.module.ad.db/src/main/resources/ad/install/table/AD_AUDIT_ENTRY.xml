@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="AD_AUDIT_ENTRY">
+			<column name="CLIENTID" type="number(3)">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDBY" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="ID" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="OPERATION" type="varchar2(16)">
+				<constraints nullable="false" /></column>	 
+			<column name="SOURCEFQN" type="varchar2(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="SOURCEID" type="varchar2(255)">
+				<constraints  /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="AD_AUDIT_ENTRY" constraintName="PK_AUDIT_ENTRY" columnNames="ID" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="AD_AUDIT_ENTRY_SEQ"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

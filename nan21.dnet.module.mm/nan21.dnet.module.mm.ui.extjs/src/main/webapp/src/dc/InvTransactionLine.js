@@ -51,9 +51,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditList", 
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {
+	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"itemCode", xtype:"gridcolumn", dataIndex:"itemCode", width:150,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.Products" , selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "itemId"} ,{lovField:"name", dsField: "item"} ]} })
 		.addTextColumn({ name:"item", dataIndex:"item", hidden:true,width:200 })

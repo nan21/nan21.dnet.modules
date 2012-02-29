@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -21,7 +21,7 @@ import org.hibernate.validator.constraints.NotBlank;
 /** TempAsgnLine. */
 @Entity
 @Table(name = TempAsgnLine.TABLE_NAME)
-@Customizer(DomainEntityEventAdapter.class)
+@Customizer(DefaultEventHandler.class)
 @NamedQueries({})
 @ReadOnly
 public class TempAsgnLine implements Serializable {

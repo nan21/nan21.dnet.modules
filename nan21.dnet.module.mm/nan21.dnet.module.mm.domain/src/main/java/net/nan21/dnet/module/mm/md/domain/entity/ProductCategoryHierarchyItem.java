@@ -13,7 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.Table;
-import net.nan21.dnet.core.domain.eventhandler.DomainEntityEventAdapter;
+import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 import net.nan21.dnet.module.mm.md.domain.entity.ProductCategoryHierarchy;
 import org.eclipse.persistence.annotations.Customizer;
@@ -22,7 +22,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 /** ProductCategoryHierarchyItem. */
 @Entity
 @Table(name = ProductCategoryHierarchyItem.TABLE_NAME)
-@Customizer(DomainEntityEventAdapter.class)
+@Customizer(DefaultEventHandler.class)
 @NamedQueries({})
 public class ProductCategoryHierarchyItem implements Serializable {
 

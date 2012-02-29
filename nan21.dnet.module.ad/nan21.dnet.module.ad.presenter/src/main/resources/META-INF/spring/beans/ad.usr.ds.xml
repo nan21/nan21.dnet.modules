@@ -287,6 +287,29 @@
 		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MenuItemLovDs" />
 	</bean>
    
+ 	<bean id="BookmarkDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.BookmarkDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.BookmarkDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Bookmark" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.BookmarkDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Bookmark" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.BookmarkDs" />
+	</bean>
+   
+ 	<bean id="BookmarkRtLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.BookmarkRtLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.BookmarkRtLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Bookmark" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="BookmarkRtLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.BookmarkRtLovDs" />
+	</bean>
+   
  	<bean id="AssignableTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeDs" />

@@ -64,6 +64,17 @@
 		<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamDs" />
 	</bean>
    
+ 	<bean id="ReportParamRtDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamRtDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.ReportParamRtDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportParam" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ReportParamRt" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamRtDs" />
+	</bean>
+   
  	<bean id="ReportParamLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamLovDs" />
@@ -97,6 +108,40 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="DsReportParam" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportParamDs" />
+	</bean>
+   
+ 	<bean id="DsReportUsageDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportUsageDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.DsReportUsageDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.DsReportUsage" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.report.ds.converter.DsReportUsageDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="DsReportUsage" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportUsageDs" />
+	</bean>
+   
+ 	<bean id="DsReportUsageRtDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportUsageRtDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.DsReportUsageRtDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.DsReportUsage" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="DsReportUsageRt" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportUsageRtDs" />
+	</bean>
+   
+ 	<bean id="DsReportParamRtDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportParamRtDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.DsReportParamRtDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.DsReportParam" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="DsReportParamRt" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportParamRtDs" />
 	</bean>
       
 </beans>

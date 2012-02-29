@@ -48,9 +48,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
 	alias:"widget.net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList",
 	
-	 _noImport_: false
-	,_noExport_: false
-	,_defineColumns_: function () {	
+	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addNumberColumn({ name:"sourceIssueId", dataIndex:"sourceIssueId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"sourceIssue", dataIndex:"sourceIssue", width:60 })   	

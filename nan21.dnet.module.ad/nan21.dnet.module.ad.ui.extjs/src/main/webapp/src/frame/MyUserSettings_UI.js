@@ -25,7 +25,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.MyUserSettings_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbUsrEdit", {dc:"usr"}).addSave().addCancel().end(); 	
+			.beginToolbar("tlbUsrEdit", {dc:"usr"}).addSave().addCancel().addReports().end(); 	
 	}
 
 	,loadCurrentUser: function() {	
