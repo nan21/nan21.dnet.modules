@@ -1,5 +1,0 @@
-
-Ext.define("net.nan21.dnet.module.pj.base.ds.model.IssueStatusLovDs$Trl", {  	  	
-		 
-	id__lbl :"ID"
-});

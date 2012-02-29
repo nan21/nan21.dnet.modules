@@ -1,6 +1,0 @@
-
-Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.StockLocatorLovDs$Trl", {  	  	
-	subInventoryId__lbl :    "Sub-gestiune (ID)",
-		 
-	id__lbl :"ID"
-});
