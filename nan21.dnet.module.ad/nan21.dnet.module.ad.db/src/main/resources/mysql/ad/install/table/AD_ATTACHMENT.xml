@@ -14,7 +14,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="ID" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="LOCATION" type="text(400)">
+			<column name="LOCATION" type="text">
 				<constraints  /></column>	 
 			<column name="MODIFIEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 
@@ -22,7 +22,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="NAME" type="varchar(255)">
 				<constraints nullable="false" /></column>	 
-			<column name="NOTES" type="text(4000)">
+			<column name="NOTES" type="text">
 				<constraints  /></column>	 
 			<column name="TARGETTYPE" type="varchar(255)">
 				<constraints  /></column>	 

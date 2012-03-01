@@ -12,7 +12,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="DESCRIPTION" type="text(400)">
+			<column name="DESCRIPTION" type="text">
 				<constraints  /></column>	 
 			<column name="EVENTTYPE" type="varchar(16)">
 				<constraints  /></column>	 

@@ -12,9 +12,9 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="DESCRIPTION" type="text(400)">
+			<column name="DESCRIPTION" type="text">
 				<constraints  /></column>	 
-			<column name="EXTJSALTFORMATS" type="text(400)">
+			<column name="EXTJSALTFORMATS" type="text">
 				<constraints  /></column>	 
 			<column name="EXTJSDATEFORMAT" type="varchar(255)">
 				<constraints  /></column>	 

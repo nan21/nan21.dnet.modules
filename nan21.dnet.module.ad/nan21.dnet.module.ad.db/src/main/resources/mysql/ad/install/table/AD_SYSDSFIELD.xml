@@ -14,7 +14,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DATATYPE" type="varchar(255)">
 				<constraints nullable="false" /></column>	 
-			<column name="DESCRIPTION" type="text(400)">
+			<column name="DESCRIPTION" type="text">
 				<constraints  /></column>	 
 			<column name="ID" type="bigint(19)">
 				<constraints nullable="false" /></column>	 

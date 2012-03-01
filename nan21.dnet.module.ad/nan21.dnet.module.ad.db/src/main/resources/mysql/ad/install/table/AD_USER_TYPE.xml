@@ -14,7 +14,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="DESCRIPTION" type="text(400)">
+			<column name="DESCRIPTION" type="text">
 				<constraints  /></column>	 
 			<column name="EMPLOYEEACCOUNT" type="int(1)">
 				<constraints nullable="false" /></column>	 

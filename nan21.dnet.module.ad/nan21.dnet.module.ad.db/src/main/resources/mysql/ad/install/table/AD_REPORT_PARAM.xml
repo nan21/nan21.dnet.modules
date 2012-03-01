@@ -16,11 +16,11 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DATATYPE" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="DEFAULTVALUE" type="text(400)">
+			<column name="DEFAULTVALUE" type="text">
 				<constraints  /></column>	 
 			<column name="ID" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="LISTOFVALUES" type="text(400)">
+			<column name="LISTOFVALUES" type="text">
 				<constraints  /></column>	 
 			<column name="MANDATORY" type="int(1)">
 				<constraints nullable="false" /></column>	 
@@ -32,7 +32,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="NOEDIT" type="int(1)">
 				<constraints nullable="false" /></column>	 
-			<column name="NOTES" type="text(4000)">
+			<column name="NOTES" type="text">
 				<constraints  /></column>	 
 			<column name="SEQUENCENO" type="int(4)">
 				<constraints nullable="false" /></column>	 

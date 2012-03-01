@@ -6,7 +6,7 @@
         <createTable tableName="BD_GEO_LOCATION">
 			<column name="ACTIVE" type="int(1)">
 				<constraints nullable="false" /></column>	 
-			<column name="ADRESS" type="text(400)">
+			<column name="ADRESS" type="text">
 				<constraints  /></column>	 
 			<column name="CITYNAME" type="varchar(255)">
 				<constraints  /></column>	 
@@ -28,7 +28,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="NOTES" type="text(4000)">
+			<column name="NOTES" type="text">
 				<constraints  /></column>	 
 			<column name="REGIONNAME" type="varchar(255)">
 				<constraints  /></column>	 

@@ -10,7 +10,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="DCKEY" type="text(400)">
+			<column name="DCKEY" type="text">
 				<constraints  /></column>	 
 			<column name="FRAMENAME" type="varchar(255)">
 				<constraints  /></column>	 
@@ -20,7 +20,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="TOOLBARKEY" type="text(400)">
+			<column name="TOOLBARKEY" type="text">
 				<constraints  /></column>	 
 			<column name="UUID" type="varchar(36)">
 				<constraints  /></column>	 

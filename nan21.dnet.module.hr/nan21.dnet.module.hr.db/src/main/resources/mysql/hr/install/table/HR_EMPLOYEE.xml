@@ -50,7 +50,7 @@
 				<constraints  /></column>	 
 			<column name="NICKNAME" type="varchar(255)">
 				<constraints  /></column>	 
-			<column name="NOTES" type="text(4000)">
+			<column name="NOTES" type="text">
 				<constraints  /></column>	 
 			<column name="OFFICEEMAIL" type="varchar(128)">
 				<constraints  /></column>	 

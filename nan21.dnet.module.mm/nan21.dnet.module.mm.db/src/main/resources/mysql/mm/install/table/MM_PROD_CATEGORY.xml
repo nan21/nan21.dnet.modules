@@ -26,7 +26,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="NAME" type="varchar(255)">
 				<constraints nullable="false" /></column>	 
-			<column name="NOTES" type="text(4000)">
+			<column name="NOTES" type="text">
 				<constraints  /></column>	 
 			<column name="UUID" type="varchar(36)">
 				<constraints  /></column>	 

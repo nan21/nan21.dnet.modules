@@ -6,7 +6,7 @@
         <createTable tableName="HR_ABSENCE_REQUEST">
 			<column name="CLIENTID" type="bigint(3)">
 				<constraints nullable="false" /></column>	 
-			<column name="COMMENTS" type="text(400)">
+			<column name="COMMENTS" type="text">
 				<constraints  /></column>	 
 			<column name="CREATEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 

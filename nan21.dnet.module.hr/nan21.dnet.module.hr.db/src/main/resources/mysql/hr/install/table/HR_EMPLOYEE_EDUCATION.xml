@@ -22,7 +22,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="NOTES" type="text(4000)">
+			<column name="NOTES" type="text">
 				<constraints  /></column>	 
 			<column name="TODATE" type="date">
 				<constraints  /></column>	 

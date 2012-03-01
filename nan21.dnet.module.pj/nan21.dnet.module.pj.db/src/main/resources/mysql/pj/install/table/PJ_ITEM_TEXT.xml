@@ -6,7 +6,7 @@
         <createTable tableName="PJ_ITEM_TEXT">
 			<column name="CLIENTID" type="bigint(3)">
 				<constraints nullable="false" /></column>	 
-			<column name="CONTENT" type="text(400)">
+			<column name="CONTENT" type="text">
 				<constraints  /></column>	 
 			<column name="CREATEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 

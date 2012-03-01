@@ -14,11 +14,11 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="DELIVEREDCOMPETENCES" type="text(4000)">
+			<column name="DELIVEREDCOMPETENCES" type="text">
 				<constraints  /></column>	 
 			<column name="ID" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="INTENDEDAUDIENCE" type="text(4000)">
+			<column name="INTENDEDAUDIENCE" type="text">
 				<constraints  /></column>	 
 			<column name="MODIFIEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 
@@ -26,9 +26,9 @@
 				<constraints nullable="false" /></column>	 
 			<column name="NAME" type="varchar(255)">
 				<constraints nullable="false" /></column>	 
-			<column name="NOTES" type="text(4000)">
+			<column name="NOTES" type="text">
 				<constraints  /></column>	 
-			<column name="REQUIREMENTS" type="text(4000)">
+			<column name="REQUIREMENTS" type="text">
 				<constraints  /></column>	 
 			<column name="UUID" type="varchar(36)">
 				<constraints  /></column>	 

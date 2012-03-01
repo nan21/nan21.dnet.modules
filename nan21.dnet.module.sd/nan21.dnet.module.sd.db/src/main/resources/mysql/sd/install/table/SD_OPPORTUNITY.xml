@@ -14,7 +14,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="DESCRIPTION" type="text(400)">
+			<column name="DESCRIPTION" type="text">
 				<constraints  /></column>	 
 			<column name="EXPECTEDAMOUNT" type="decimal(12,2)">
 				<constraints nullable="false" /></column>	 
@@ -30,7 +30,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="PROBABILITY" type="decimal(3,2)">
 				<constraints  /></column>	 
-			<column name="RESULTNOTE" type="text(4000)">
+			<column name="RESULTNOTE" type="text">
 				<constraints  /></column>	 
 			<column name="UUID" type="varchar(36)">
 				<constraints  /></column>	 

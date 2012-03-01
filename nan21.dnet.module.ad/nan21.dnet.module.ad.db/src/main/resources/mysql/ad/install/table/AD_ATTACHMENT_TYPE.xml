@@ -16,7 +16,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="DESCRIPTION" type="text(400)">
+			<column name="DESCRIPTION" type="text">
 				<constraints  /></column>	 
 			<column name="ID" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
@@ -26,7 +26,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="NAME" type="varchar(255)">
 				<constraints nullable="false" /></column>	 
-			<column name="UPLOADPATH" type="text(400)">
+			<column name="UPLOADPATH" type="text">
 				<constraints  /></column>	 
 			<column name="USEINCONTEXT" type="varchar(255)">
 				<constraints nullable="false" /></column>	 

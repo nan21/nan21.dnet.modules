@@ -16,7 +16,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="NOTE" type="text(4000)">
+			<column name="NOTE" type="text">
 				<constraints  /></column>	 
 			<column name="TARGETTYPE" type="varchar(255)">
 				<constraints  /></column>	 

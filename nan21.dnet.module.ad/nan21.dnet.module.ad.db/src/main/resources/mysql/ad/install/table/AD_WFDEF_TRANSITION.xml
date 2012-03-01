@@ -6,7 +6,7 @@
         <createTable tableName="AD_WFDEF_TRANSITION">
 			<column name="CLIENTID" type="bigint(3)">
 				<constraints nullable="false" /></column>	 
-			<column name="COND" type="text(4000)">
+			<column name="COND" type="text">
 				<constraints  /></column>	 
 			<column name="CREATEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 
