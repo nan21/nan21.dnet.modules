@@ -4,11 +4,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <changeSet author="amathe" id="TBL">
         <createTable tableName="MM_PRODCATEGHRCH_ITEM">
-			<column name="HIERARCHY_ID" type="number(19)">	 
+			<column name="HIERARCHY_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="PARENT_ID" type="number(19)">	 
+			<column name="PARENT_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="PRODUCT_ID" type="number(19)">	 
+			<column name="PRODUCT_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

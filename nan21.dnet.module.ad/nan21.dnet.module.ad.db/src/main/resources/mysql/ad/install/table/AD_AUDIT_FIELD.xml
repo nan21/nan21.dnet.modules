@@ -18,7 +18,7 @@
 				<constraints  /></column>	 
 			<column name="OLDVALUE" type="text">
 				<constraints  /></column>	 
-			<column name="AUDITENTRY_ID" type="number(19)">	 
+			<column name="AUDITENTRY_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

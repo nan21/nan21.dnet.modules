@@ -36,21 +36,21 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="ACCOUNT_ID" type="number(19)">	 
+			<column name="ACCOUNT_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="ASSIGNEDTO_ID" type="number(19)">	 
+			<column name="ASSIGNEDTO_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="EXPECTEDCURRENCY_ID" type="number(19)">	 
+			<column name="EXPECTEDCURRENCY_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="LEADSOURCE_ID" type="number(19)">	 
+			<column name="LEADSOURCE_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="PRIORITY_ID" type="number(19)">	 
+			<column name="PRIORITY_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="RESULTREASON_ID" type="number(19)">	 
+			<column name="RESULTREASON_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="SALESSTAGE_ID" type="number(19)">	 
+			<column name="SALESSTAGE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="STATUS_ID" type="number(19)">	 
+			<column name="STATUS_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

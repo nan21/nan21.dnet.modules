@@ -24,9 +24,9 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="COURSE_ID" type="number(19)">	 
+			<column name="COURSE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="JOB_ID" type="number(19)">	 
+			<column name="JOB_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

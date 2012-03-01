@@ -22,9 +22,9 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="EQUIVALENCE_ID" type="number(19)">	 
+			<column name="EQUIVALENCE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="REFPRODUCT_ID" type="number(19)">	 
+			<column name="REFPRODUCT_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

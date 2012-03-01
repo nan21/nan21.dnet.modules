@@ -26,11 +26,11 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="INVOICE_ID" type="number(19)">	 
+			<column name="INVOICE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="ITEM_ID" type="number(19)">	 
+			<column name="ITEM_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="UOM_ID" type="number(19)">	 
+			<column name="UOM_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

@@ -24,23 +24,23 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="BP_ID" type="number(19)">	 
+			<column name="BP_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="CUSTDELIVERYMETHOD_ID" type="number(19)">	 
+			<column name="CUSTDELIVERYMETHOD_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="CUSTGROUP_ID" type="number(19)">	 
+			<column name="CUSTGROUP_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="CUSTPAYMENTMETHOD_ID" type="number(19)">	 
+			<column name="CUSTPAYMENTMETHOD_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="CUSTPAYMENTTERM_ID" type="number(19)">	 
+			<column name="CUSTPAYMENTTERM_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="ORGANIZATION_ID" type="number(19)">	 
+			<column name="ORGANIZATION_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="VENDGROUP_ID" type="number(19)">	 
+			<column name="VENDGROUP_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="VENDPAYMENTMETHOD_ID" type="number(19)">	 
+			<column name="VENDPAYMENTMETHOD_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="VENDPAYMENTTERM_ID" type="number(19)">	 
+			<column name="VENDPAYMENTTERM_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

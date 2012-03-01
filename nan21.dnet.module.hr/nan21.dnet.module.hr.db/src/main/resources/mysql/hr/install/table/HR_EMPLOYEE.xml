@@ -66,21 +66,21 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="CITIZENSHIP_ID" type="number(19)">	 
+			<column name="CITIZENSHIP_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="EMPLOYER_ID" type="number(19)">	 
+			<column name="EMPLOYER_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="GRADE_ID" type="number(19)">	 
+			<column name="GRADE_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="JOB_ID" type="number(19)">	 
+			<column name="JOB_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="ORGANIZATION_ID" type="number(19)">	 
+			<column name="ORGANIZATION_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="PAYROLL_ID" type="number(19)">	 
+			<column name="PAYROLL_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="POSITION_ID" type="number(19)">	 
+			<column name="POSITION_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="TYPE_ID" type="number(19)">	 
+			<column name="TYPE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

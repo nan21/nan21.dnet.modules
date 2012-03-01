@@ -22,11 +22,11 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="ELEMENT_ID" type="number(19)">	 
+			<column name="ELEMENT_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="EMPLOYEE_ID" type="number(19)">	 
+			<column name="EMPLOYEE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="PERIOD_ID" type="number(19)">	 
+			<column name="PERIOD_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

@@ -22,9 +22,9 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="GRADEPAYSCALE_ID" type="number(19)">	 
+			<column name="GRADEPAYSCALE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="POINT_ID" type="number(19)">	 
+			<column name="POINT_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

@@ -22,9 +22,9 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="GROUPATTRIBUTE_ID" type="number(19)">	 
+			<column name="GROUPATTRIBUTE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="PRODUCT_ID" type="number(19)">	 
+			<column name="PRODUCT_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

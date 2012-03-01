@@ -20,11 +20,11 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="LINKTYPE_ID" type="number(19)">	 
+			<column name="LINKTYPE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="SOURCEISSUE_ID" type="number(19)">	 
+			<column name="SOURCEISSUE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="TARGETISSUE_ID" type="number(19)">	 
+			<column name="TARGETISSUE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

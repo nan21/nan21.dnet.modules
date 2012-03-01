@@ -5,9 +5,9 @@
 	
 	<changeSet author="amathe" id="TBL">
 		<createTable tableName="MM_PRODCATEG_PRODUCTS"> 
-			<column name="CATEGORIES_ID" type="number(19)" >
+			<column name="CATEGORIES_ID" type="bigint(19)" >
 				<constraints nullable="false"/></column>	 	
-			<column name="PRODUCTS_ID" type="number(19)" >
+			<column name="PRODUCTS_ID" type="bigint(19)" >
 				<constraints nullable="false"/></column>		 	
 		</createTable> 
 	</changeSet>	

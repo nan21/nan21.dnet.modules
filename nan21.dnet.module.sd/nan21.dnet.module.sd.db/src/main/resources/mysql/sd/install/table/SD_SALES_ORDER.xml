@@ -36,29 +36,29 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="BILLTOLOCATION_ID" type="number(19)">	 
+			<column name="BILLTOLOCATION_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="BILLTO_ID" type="number(19)">	 
+			<column name="BILLTO_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="CURRENCY_ID" type="number(19)">	 
+			<column name="CURRENCY_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="CUSTOMER_ID" type="number(19)">	 
+			<column name="CUSTOMER_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="DELIVERYMETHOD_ID" type="number(19)">	 
+			<column name="DELIVERYMETHOD_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="PAYMENTMETHOD_ID" type="number(19)">	 
+			<column name="PAYMENTMETHOD_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="PRICELIST_ID" type="number(19)">	 
+			<column name="PRICELIST_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="SHIPTOLOCATION_ID" type="number(19)">	 
+			<column name="SHIPTOLOCATION_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="SHIPTO_ID" type="number(19)">	 
+			<column name="SHIPTO_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="STATUS_ID" type="number(19)">	 
+			<column name="STATUS_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="SUPPLIER_ID" type="number(19)">	 
+			<column name="SUPPLIER_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="TYPE_ID" type="number(19)">	 
+			<column name="TYPE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

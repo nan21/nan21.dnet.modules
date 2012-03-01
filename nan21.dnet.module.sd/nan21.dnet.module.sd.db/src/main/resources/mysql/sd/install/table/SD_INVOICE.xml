@@ -36,21 +36,21 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="BILLTOCONTACT_ID" type="number(19)">	 
+			<column name="BILLTOCONTACT_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="BILLTOLOCATION_ID" type="number(19)">	 
+			<column name="BILLTOLOCATION_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="CURRENCY_ID" type="number(19)">	 
+			<column name="CURRENCY_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="CUSTOMER_ID" type="number(19)">	 
+			<column name="CUSTOMER_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="SALESORDER_ID" type="number(19)">	 
+			<column name="SALESORDER_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="STATUS_ID" type="number(19)">	 
+			<column name="STATUS_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="SUPPLIER_ID" type="number(19)">	 
+			<column name="SUPPLIER_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="TYPE_ID" type="number(19)">	 
+			<column name="TYPE_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

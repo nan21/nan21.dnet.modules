@@ -5,9 +5,9 @@
 	
 	<changeSet author="amathe" id="TBL">
 		<createTable tableName="AD_ROLES_MENU"> 
-			<column name="MENUS_ID" type="number(19)" >
+			<column name="MENUS_ID" type="bigint(19)" >
 				<constraints nullable="false"/></column>	 	
-			<column name="ROLES_ID" type="number(19)" >
+			<column name="ROLES_ID" type="bigint(19)" >
 				<constraints nullable="false"/></column>		 	
 		</createTable> 
 	</changeSet>	

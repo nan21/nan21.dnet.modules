@@ -50,17 +50,17 @@
 				<constraints  /></column>	 
 			<column name="WEIGHT" type="decimal(12,2)">
 				<constraints  /></column>	 
-			<column name="ATTRIBUTEGROUP_ID" type="number(19)">	 
+			<column name="ATTRIBUTEGROUP_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="DEFAULTUOM_ID" type="number(19)">	 
+			<column name="DEFAULTUOM_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="DIMUOM_ID" type="number(19)">	 
+			<column name="DIMUOM_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="MANUFACTURER_ID" type="number(19)">	 
+			<column name="MANUFACTURER_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="VOLUMEUOM_ID" type="number(19)">	 
+			<column name="VOLUMEUOM_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="WEIGHTUOM_ID" type="number(19)">	 
+			<column name="WEIGHTUOM_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

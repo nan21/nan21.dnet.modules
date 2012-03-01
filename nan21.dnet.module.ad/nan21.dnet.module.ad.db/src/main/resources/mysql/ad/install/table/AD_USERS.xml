@@ -36,9 +36,9 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="ACCOUNTTYPE_ID" type="number(19)">	 
+			<column name="ACCOUNTTYPE_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="DATEFORMAT_ID" type="number(19)">	 
+			<column name="DATEFORMAT_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

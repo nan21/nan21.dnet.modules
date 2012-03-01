@@ -36,27 +36,27 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="ASSIGNEEROLE_ID" type="number(19)">	 
+			<column name="ASSIGNEEROLE_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="ASSIGNEE_ID" type="number(19)">	 
+			<column name="ASSIGNEE_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="FIXEDINVERSION_ID" type="number(19)">	 
+			<column name="FIXEDINVERSION_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="PRIORITY_ID" type="number(19)">	 
+			<column name="PRIORITY_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="PROJECT_ID" type="number(19)">	 
+			<column name="PROJECT_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="REPORTEDVERSION_ID" type="number(19)">	 
+			<column name="REPORTEDVERSION_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="RESOLUTION_ID" type="number(19)">	 
+			<column name="RESOLUTION_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="SEVERITY_ID" type="number(19)">	 
+			<column name="SEVERITY_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="STATUS_ID" type="number(19)">	 
+			<column name="STATUS_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="TARGETVERSION_ID" type="number(19)">	 
+			<column name="TARGETVERSION_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="TYPE_ID" type="number(19)">	 
+			<column name="TYPE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

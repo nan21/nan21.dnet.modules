@@ -5,9 +5,9 @@
 	
 	<changeSet author="amathe" id="TBL">
 		<createTable tableName="PJ_ITEM_COMPS"> 
-			<column name="AFFECTEDCOMPONENTS_ID" type="number(19)" >
+			<column name="AFFECTEDCOMPONENTS_ID" type="bigint(19)" >
 				<constraints nullable="false"/></column>	 	
-			<column name="AFFECTINGISSUES_ID" type="number(19)" >
+			<column name="AFFECTINGISSUES_ID" type="bigint(19)" >
 				<constraints nullable="false"/></column>		 	
 		</createTable> 
 	</changeSet>	

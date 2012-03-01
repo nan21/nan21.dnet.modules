@@ -20,11 +20,11 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="EMPLOYEE_ID" type="number(19)">	 
+			<column name="EMPLOYEE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="SKILLLEVEL_ID" type="number(19)">	 
+			<column name="SKILLLEVEL_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="SKILL_ID" type="number(19)">	 
+			<column name="SKILL_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

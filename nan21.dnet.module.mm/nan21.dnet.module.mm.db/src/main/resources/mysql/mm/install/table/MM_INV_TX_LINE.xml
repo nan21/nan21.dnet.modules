@@ -22,17 +22,17 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="FROMLOCATOR_ID" type="number(19)">	 
+			<column name="FROMLOCATOR_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="FROM_SUBINV_ID" type="number(19)">	 
+			<column name="FROM_SUBINV_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="INVTRANSACTION_ID" type="number(19)">	 
+			<column name="INVTRANSACTION_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="ITEM_ID" type="number(19)">	 
+			<column name="ITEM_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="TOLOCATOR_ID" type="number(19)">	 
+			<column name="TOLOCATOR_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="TO_SUBINV_ID" type="number(19)">	 
+			<column name="TO_SUBINV_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

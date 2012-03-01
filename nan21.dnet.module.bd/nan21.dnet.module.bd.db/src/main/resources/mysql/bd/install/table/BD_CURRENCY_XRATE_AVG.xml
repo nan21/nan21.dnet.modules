@@ -26,11 +26,11 @@
 				<constraints nullable="false" /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="PROVIDER_ID" type="number(19)">	 
+			<column name="PROVIDER_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="SOURCE_ID" type="number(19)">	 
+			<column name="SOURCE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="TARGET_ID" type="number(19)">	 
+			<column name="TARGET_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    
