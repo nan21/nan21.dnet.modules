@@ -1,0 +1,20 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_MM_PRODCATEGHRCH_ITEM1" 
+				baseTableName="MM_PRODCATEGHRCH_ITEM" baseColumnNames="HIERARCHY_ID"  
+				referencedTableName="MM_PRODCATEG_HIERARCHY"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_MM_PRODCATEGHRCH_ITEM2" 
+				baseTableName="MM_PRODCATEGHRCH_ITEM" baseColumnNames="PRODUCT_ID"  
+				referencedTableName="MM_PRODUCT"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_MM_PRODCATEGHRCH_ITEM3" 
+				baseTableName="MM_PRODCATEGHRCH_ITEM" baseColumnNames="PARENT_ID"  
+				referencedTableName="MM_PRODUCT"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

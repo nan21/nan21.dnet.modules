@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_PJ_PROJECT_COMPONENT1" 
+				baseTableName="PJ_PROJECT_COMPONENT" baseColumnNames="COMPONENTLEAD_ID"  
+				referencedTableName="AD_ASSIGNABLE"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_PJ_PROJECT_COMPONENT2" 
+				baseTableName="PJ_PROJECT_COMPONENT" baseColumnNames="PROJECT_ID"  
+				referencedTableName="PJ_PROJECT"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

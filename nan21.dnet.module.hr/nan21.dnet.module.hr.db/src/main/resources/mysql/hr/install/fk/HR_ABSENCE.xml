@@ -1,0 +1,20 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_HR_ABSENCE1" 
+				baseTableName="HR_ABSENCE" baseColumnNames="EMPLOYEE_ID"  
+				referencedTableName="HR_EMPLOYEE"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_HR_ABSENCE2" 
+				baseTableName="HR_ABSENCE" baseColumnNames="TYPE_ID"  
+				referencedTableName="HR_ABSENCE_TYPE"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_HR_ABSENCE3" 
+				baseTableName="HR_ABSENCE" baseColumnNames="REASON_ID"  
+				referencedTableName="HR_ABSENCE_REASON"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

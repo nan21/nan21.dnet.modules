@@ -1,0 +1,20 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_MM_PROD_ACCOUNT1" 
+				baseTableName="MM_PROD_ACCOUNT" baseColumnNames="ORGANIZATION_ID"  
+				referencedTableName="BD_ORGANIZATION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_MM_PROD_ACCOUNT2" 
+				baseTableName="MM_PROD_ACCOUNT" baseColumnNames="GROUP_ID"  
+				referencedTableName="MM_PROD_ACCOUNT_GROUP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_MM_PROD_ACCOUNT3" 
+				baseTableName="MM_PROD_ACCOUNT" baseColumnNames="PRODUCT_ID"  
+				referencedTableName="MM_PRODUCT"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

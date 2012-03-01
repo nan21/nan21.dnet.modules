@@ -1,0 +1,35 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_MM_PRODUCT1" 
+				baseTableName="MM_PRODUCT" baseColumnNames="DEFAULTUOM_ID"  
+				referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_MM_PRODUCT2" 
+				baseTableName="MM_PRODUCT" baseColumnNames="WEIGHTUOM_ID"  
+				referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_MM_PRODUCT3" 
+				baseTableName="MM_PRODUCT" baseColumnNames="VOLUMEUOM_ID"  
+				referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_MM_PRODUCT4" 
+				baseTableName="MM_PRODUCT" baseColumnNames="DIMUOM_ID"  
+				referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-5">
+		<addForeignKeyConstraint constraintName="FK_MM_PRODUCT5" 
+				baseTableName="MM_PRODUCT" baseColumnNames="MANUFACTURER_ID"  
+				referencedTableName="MM_PROD_MANUFACTURER"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-6">
+		<addForeignKeyConstraint constraintName="FK_MM_PRODUCT6" 
+				baseTableName="MM_PRODUCT" baseColumnNames="ATTRIBUTEGROUP_ID"  
+				referencedTableName="MM_PROD_ATTR_GRP"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

@@ -1,4 +1,4 @@
-"reportCode";"code";"name";"dataType";"defaultValue";"active"
-"sample_birt";"__report";"Report name";"string";"test.rptdesign";"true"
-"sample_birt";"sample";"Sample parameter";"string";"";"true"
-"sample_birt";"__format";"Output format";"string";"html";"true"
+"reportCode";"code";"name";"dataType";"defaultValue";"active";"sequenceNo"
+"sample_birt";"__report";"Report name";"string";"test.rptdesign";"true";1
+"sample_birt";"sample";"Sample parameter";"string";"";"true";2
+"sample_birt";"__format";"Output format";"string";"html";"true";3

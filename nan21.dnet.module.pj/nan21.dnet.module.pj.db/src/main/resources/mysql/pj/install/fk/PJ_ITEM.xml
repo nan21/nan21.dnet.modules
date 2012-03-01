@@ -1,0 +1,60 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_PJ_ITEM1" 
+				baseTableName="PJ_ITEM" baseColumnNames="PROJECT_ID"  
+				referencedTableName="PJ_PROJECT"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_PJ_ITEM2" 
+				baseTableName="PJ_ITEM" baseColumnNames="STATUS_ID"  
+				referencedTableName="PJ_ISSUE_STATUS"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_PJ_ITEM3" 
+				baseTableName="PJ_ITEM" baseColumnNames="TYPE_ID"  
+				referencedTableName="PJ_ISSUE_TYPE"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_PJ_ITEM4" 
+				baseTableName="PJ_ITEM" baseColumnNames="PRIORITY_ID"  
+				referencedTableName="PJ_ISSUE_PRIORITY"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-5">
+		<addForeignKeyConstraint constraintName="FK_PJ_ITEM5" 
+				baseTableName="PJ_ITEM" baseColumnNames="RESOLUTION_ID"  
+				referencedTableName="PJ_ISSUE_RESOLUTION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-6">
+		<addForeignKeyConstraint constraintName="FK_PJ_ITEM6" 
+				baseTableName="PJ_ITEM" baseColumnNames="SEVERITY_ID"  
+				referencedTableName="PJ_ISSUE_SEVERITY"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-7">
+		<addForeignKeyConstraint constraintName="FK_PJ_ITEM7" 
+				baseTableName="PJ_ITEM" baseColumnNames="REPORTEDVERSION_ID"  
+				referencedTableName="PJ_PROJECT_VERSION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-8">
+		<addForeignKeyConstraint constraintName="FK_PJ_ITEM8" 
+				baseTableName="PJ_ITEM" baseColumnNames="TARGETVERSION_ID"  
+				referencedTableName="PJ_PROJECT_VERSION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-9">
+		<addForeignKeyConstraint constraintName="FK_PJ_ITEM9" 
+				baseTableName="PJ_ITEM" baseColumnNames="FIXEDINVERSION_ID"  
+				referencedTableName="PJ_PROJECT_VERSION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-10">
+		<addForeignKeyConstraint constraintName="FK_PJ_ITEM10" 
+				baseTableName="PJ_ITEM" baseColumnNames="ASSIGNEE_ID"  
+				referencedTableName="PJ_PROJECT_MEMBER"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-11">
+		<addForeignKeyConstraint constraintName="FK_PJ_ITEM11" 
+				baseTableName="PJ_ITEM" baseColumnNames="ASSIGNEEROLE_ID"  
+				referencedTableName="PJ_PROJECT_ROLE"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

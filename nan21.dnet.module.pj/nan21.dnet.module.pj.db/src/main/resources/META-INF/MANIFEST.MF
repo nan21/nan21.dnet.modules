@@ -1,6 +1,4 @@
 Manifest-Version: 1.0
-Export-Package: pj.install.fk;version="1.0.0.M8",pj.install.table;vers
- ion="1.0.0.M8"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0.M8
 Tool: Bundlor 1.0.0.RELEASE
