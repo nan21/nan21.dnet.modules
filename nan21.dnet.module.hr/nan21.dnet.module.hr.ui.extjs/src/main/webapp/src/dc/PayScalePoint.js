@@ -27,7 +27,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScalePoint$CtxEditList", {
 		this._getBuilder_()
 		.addNumberColumn({ name:"payScaleId", dataIndex:"payScaleId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
-		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} })
+		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
 	  	.addDefaults()
 	  ;  		   
 	}  

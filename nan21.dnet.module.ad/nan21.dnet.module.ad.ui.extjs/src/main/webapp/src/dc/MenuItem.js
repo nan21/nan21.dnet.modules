@@ -78,18 +78,18 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$EditList", {
 	_bulkEditFields_ : ["menu","menuItem","active","bundle","frame","sequenceNo"],
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addTextColumn({ name:"title", dataIndex:"title",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addLov({name:"menu", xtype:"gridcolumn", dataIndex:"menu",width:120,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.Menus" , selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "menuId"} ]} })
-		.addLov({name:"menuItem", xtype:"gridcolumn", dataIndex:"menuItem",width:120,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.MenuItems" , selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "menuItemId"} ]} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"title", dataIndex:"title",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addLov({name:"menu", xtype:"gridcolumn", dataIndex:"menu",width:120,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.Menus" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "menuId"} ]} })
+		.addLov({name:"menuItem", xtype:"gridcolumn", dataIndex:"menuItem",width:120,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.MenuItems" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "menuItemId"} ]} })
 		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
-		.addTextColumn({ name:"frame", dataIndex:"frame",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addTextColumn({ name:"bundle", dataIndex:"bundle",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addTextColumn({ name:"frame", dataIndex:"frame",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"bundle", dataIndex:"bundle",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "400"}} })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
 		.addBooleanColumn({ name:"separatorBefore", dataIndex:"separatorBefore"})
 		.addBooleanColumn({ name:"separatorAfter", dataIndex:"separatorAfter"})
-		.addTextColumn({ name:"iconUrl", dataIndex:"iconUrl",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addTextColumn({ name:"iconUrl", dataIndex:"iconUrl",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
 	  	.addDefaults()
 	  ;  		   
 	}  

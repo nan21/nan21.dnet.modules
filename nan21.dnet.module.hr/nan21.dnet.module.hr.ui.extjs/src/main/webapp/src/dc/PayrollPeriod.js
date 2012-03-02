@@ -25,7 +25,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod$CtxEditList", {
 		this._getBuilder_()
 		.addNumberColumn({ name:"payrollId", dataIndex:"payrollId", hidden:true, align:"right",format:"0",width:70})
 		.addTextColumn({ name:"payrollName", dataIndex:"payrollName", hidden:true,width:120 })
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
 		.addDateColumn({ name:"startDate", dataIndex:"startDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addDateColumn({ name:"endDate", dataIndex:"endDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})

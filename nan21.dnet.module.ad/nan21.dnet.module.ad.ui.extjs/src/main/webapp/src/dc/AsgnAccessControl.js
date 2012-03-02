@@ -52,8 +52,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AsgnAccessControl$EditList", {
 	_bulkEditFields_ : ["queryAllowed","updateAllowed"],
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addLov({name:"accessControl", xtype:"gridcolumn", dataIndex:"accessControl",width:120,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.AccessControls" , selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: [{lovField:"id", dsField: "accessControlId"} ]} })
-		.addLov({name:"dsName", xtype:"gridcolumn", dataIndex:"dsName",width:200,editor:{xtype:"net.nan21.dnet.module.ad.system.lovs.SysDataSourceAsgn" , selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: []} })
+		.addLov({name:"accessControl", xtype:"gridcolumn", dataIndex:"accessControl",width:120,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.AccessControls" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "accessControlId"} ]} })
+		.addLov({name:"dsName", xtype:"gridcolumn", dataIndex:"dsName",width:200,editor:{xtype:"net.nan21.dnet.module.ad.system.lovs.SysDataSourceAsgn" , selectOnFocus:true ,maxLength:255,retFieldMapping: []} })
 		.addBooleanColumn({ name:"queryAllowed", dataIndex:"queryAllowed"})
 		.addBooleanColumn({ name:"updateAllowed", dataIndex:"updateAllowed"})
 		.addNumberColumn({ name:"accessControlId", dataIndex:"accessControlId", hidden:true, align:"right",format:"0",width:70})
@@ -72,7 +72,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AsgnAccessControl$CtxEditList", {
 	_bulkEditFields_ : ["queryAllowed","updateAllowed"],
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addLov({name:"dsName", xtype:"gridcolumn", dataIndex:"dsName",width:200,editor:{xtype:"net.nan21.dnet.module.ad.system.lovs.SysDataSourceAsgn" , selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"},retFieldMapping: []} })
+		.addLov({name:"dsName", xtype:"gridcolumn", dataIndex:"dsName",width:200,editor:{xtype:"net.nan21.dnet.module.ad.system.lovs.SysDataSourceAsgn" , selectOnFocus:true ,maxLength:255,retFieldMapping: []} })
 		.addBooleanColumn({ name:"queryAllowed", dataIndex:"queryAllowed"})
 		.addBooleanColumn({ name:"updateAllowed", dataIndex:"updateAllowed"})
 		.addNumberColumn({ name:"accessControlId", dataIndex:"accessControlId", hidden:true, align:"right",format:"0",width:70})

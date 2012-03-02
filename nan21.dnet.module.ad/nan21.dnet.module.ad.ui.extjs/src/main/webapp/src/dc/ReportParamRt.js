@@ -25,7 +25,7 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.ReportParamRt$TestRt", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"parameterName", dataIndex:"parameterName",width:200 })
-		.addTextColumn({ name:"value", dataIndex:"value",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "400"}} })
+		.addTextColumn({ name:"value", dataIndex:"value",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
 	  	.addDefaults()
 	  ;  		   
 	}  

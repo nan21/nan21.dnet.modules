@@ -46,15 +46,15 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDateFormat$EditList", {
 	_bulkEditFields_ : ["active","extjsDateFormat","extjsTimeFormat","extjsDateTimeFormat","extjsAltFormats","javaDateFormat","javaTimeFormat","javaDateTimeFormat"],
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"extjsDateFormat", dataIndex:"extjsDateFormat", width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addTextColumn({ name:"extjsTimeFormat", dataIndex:"extjsTimeFormat", width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addTextColumn({ name:"extjsDateTimeFormat", dataIndex:"extjsDateTimeFormat", width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addTextColumn({ name:"extjsAltFormats", dataIndex:"extjsAltFormats", width:150,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "400"}} })
-		.addTextColumn({ name:"javaDateFormat", dataIndex:"javaDateFormat", width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addTextColumn({ name:"javaTimeFormat", dataIndex:"javaTimeFormat", width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addTextColumn({ name:"javaDateTimeFormat", dataIndex:"javaDateTimeFormat", width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
+		.addTextColumn({ name:"extjsDateFormat", dataIndex:"extjsDateFormat", width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"extjsTimeFormat", dataIndex:"extjsTimeFormat", width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"extjsDateTimeFormat", dataIndex:"extjsDateTimeFormat", width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"extjsAltFormats", dataIndex:"extjsAltFormats", width:150,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"javaDateFormat", dataIndex:"javaDateFormat", width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"javaTimeFormat", dataIndex:"javaTimeFormat", width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"javaDateTimeFormat", dataIndex:"javaDateTimeFormat", width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
 	  	.addDefaults()
 	  ;  		   
 	}  

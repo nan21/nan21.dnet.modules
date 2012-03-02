@@ -72,13 +72,13 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$EditList", {
 	_bulkEditFields_ : ["active","notes"],
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"}} })
-		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "255"}} })
-		.addTextColumn({ name:"iso2", dataIndex:"iso2",width:50,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:2,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "2"},caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
-		.addTextColumn({ name:"iso3", dataIndex:"iso3",width:50,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:3,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "3"},caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
+		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"iso2", dataIndex:"iso2",width:50,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:2,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
+		.addTextColumn({ name:"iso3", dataIndex:"iso3",width:50,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:3,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
 		.addBooleanColumn({ name:"hasRegions", dataIndex:"hasRegions"})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "4000"}} })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
 	  	.addDefaults()
 	  ;  		   
 	}  

@@ -44,7 +44,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$JobCtxEditList", {
 	_noExport_: true,
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addLov({name:"courseCode", xtype:"gridcolumn", dataIndex:"courseCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.training.lovs.Courses" , selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "courseId"} ,{lovField:"name", dsField: "courseName"} ]} })
+		.addLov({name:"courseCode", xtype:"gridcolumn", dataIndex:"courseCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.training.lovs.Courses" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "courseId"} ,{lovField:"name", dsField: "courseName"} ]} })
 		.addTextColumn({ name:"courseName", dataIndex:"courseName",width:200 })
 		.addNumberColumn({ name:"validFor", dataIndex:"validFor", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addNumberColumn({ name:"jobId", dataIndex:"jobId", hidden:true, align:"right",format:"0",width:70})
@@ -63,7 +63,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$CourseCtxEditList", {
 	_noExport_: true,
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addLov({name:"jobCode", xtype:"gridcolumn", dataIndex:"jobCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.job.lovs.Jobs" , selectOnFocus:true ,maxLength:32,autoCreate: {tag: "input", type: "text", autocomplete: "off", size: "20", maxlength: "32"},retFieldMapping: [{lovField:"id", dsField: "jobId"} ,{lovField:"name", dsField: "jobName"} ]} })
+		.addLov({name:"jobCode", xtype:"gridcolumn", dataIndex:"jobCode",width:100,editor:{xtype:"net.nan21.dnet.module.hr.job.lovs.Jobs" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "jobId"} ,{lovField:"name", dsField: "jobName"} ]} })
 		.addTextColumn({ name:"jobName", dataIndex:"jobName",width:200 })
 		.addNumberColumn({ name:"validFor", dataIndex:"validFor", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addNumberColumn({ name:"jobId", dataIndex:"jobId", hidden:true, align:"right",format:"0",width:70})
