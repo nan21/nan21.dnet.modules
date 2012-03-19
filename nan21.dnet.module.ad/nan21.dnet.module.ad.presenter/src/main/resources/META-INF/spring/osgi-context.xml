@@ -12,13 +12,16 @@
 			
 	<osgi:reference id="osgiDataSource" cardinality="0..1"
 		interface="javax.sql.DataSource" />
-		
+	
 	<osgi:service ref="menuProvider" ranking="0"
 		interface="net.nan21.dnet.core.api.ui.extjs.IExtensionContentProvider" />
-	
+			
 	<osgi:service ref="reportProvider" ranking="0"
 		interface="net.nan21.dnet.core.api.ui.extjs.IExtensionContentProviderFrame" />
-		
+	
+	<osgi:service ref="scriptFormDbProvider" ranking="0"
+		interface="net.nan21.dnet.core.api.ui.extjs.IExtensionProviderFrame" />
+			
 			
 	<osgi:service ref="dsServiceFactory" ranking="0"
 		interface="net.nan21.dnet.core.api.service.IDsServiceFactory" />

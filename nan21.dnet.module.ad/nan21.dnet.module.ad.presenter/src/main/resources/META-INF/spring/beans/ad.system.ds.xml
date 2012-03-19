@@ -161,6 +161,17 @@
 		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventLovDs" />
 	</bean>
    
+ 	<bean id="SysFrameExtensionDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysFrameExtensionDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysFrameExtensionDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysFrameExtension" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysFrameExtension" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysFrameExtensionDs" />
+	</bean>
+   
  	<bean id="SysDateFormatDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatDs" />

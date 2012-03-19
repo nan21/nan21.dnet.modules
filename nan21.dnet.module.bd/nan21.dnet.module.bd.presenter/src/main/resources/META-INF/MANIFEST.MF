@@ -79,19 +79,18 @@ Bundle-SymbolicName: nan21.dnet.module.bd.presenter
 Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  t.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.converter,ne
  t.nan21.dnet.core.api.descriptor,net.nan21.dnet.core.api.model,net.na
- n21.dnet.core.api.service,net.nan21.dnet.core.api.ui.extjs,net.nan21.
- dnet.core.api.ui.extjs.impl,net.nan21.dnet.core.presenter.converter,n
- et.nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter.serv
- ice,net.nan21.dnet.module.bd.acc.business.service,net.nan21.dnet.modu
- le.bd.acc.domain.entity,net.nan21.dnet.module.bd.contact.business.ser
- vice,net.nan21.dnet.module.bd.contact.domain.entity,net.nan21.dnet.mo
- dule.bd.currency.business.service,net.nan21.dnet.module.bd.currency.d
- omain.entity,net.nan21.dnet.module.bd.geo.business.service,net.nan21.
- dnet.module.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.busines
- s.service,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.m
- odule.bd.standards.business.service,net.nan21.dnet.module.bd.standard
- s.domain.entity,net.nan21.dnet.module.bd.uom.business.service,net.nan
- 21.dnet.module.bd.uom.domain.entity,org.springframework.context.weavi
- ng;version="[3.0,3.1)",org.springframework.web.multipart;version="[3.
- 0,3.1)"
+ n21.dnet.core.api.service,net.nan21.dnet.core.presenter.converter,net
+ .nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter.servic
+ e,net.nan21.dnet.module.bd.acc.business.service,net.nan21.dnet.module
+ .bd.acc.domain.entity,net.nan21.dnet.module.bd.contact.business.servi
+ ce,net.nan21.dnet.module.bd.contact.domain.entity,net.nan21.dnet.modu
+ le.bd.currency.business.service,net.nan21.dnet.module.bd.currency.dom
+ ain.entity,net.nan21.dnet.module.bd.geo.business.service,net.nan21.dn
+ et.module.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.business.
+ service,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.mod
+ ule.bd.standards.business.service,net.nan21.dnet.module.bd.standards.
+ domain.entity,net.nan21.dnet.module.bd.uom.business.service,net.nan21
+ .dnet.module.bd.uom.domain.entity,org.springframework.context.weaving
+ ;version="[3.0,3.1)",org.springframework.web.multipart;version="[3.0,
+ 3.1)"
 

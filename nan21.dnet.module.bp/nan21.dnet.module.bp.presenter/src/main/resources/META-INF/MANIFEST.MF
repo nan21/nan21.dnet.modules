@@ -50,19 +50,18 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  t.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.converter,ne
  t.nan21.dnet.core.api.descriptor,net.nan21.dnet.core.api.model,net.na
  n21.dnet.core.api.service,net.nan21.dnet.core.api.session,net.nan21.d
- net.core.api.ui.extjs,net.nan21.dnet.core.api.ui.extjs.impl,net.nan21
- .dnet.core.presenter.action,net.nan21.dnet.core.presenter.converter,n
- et.nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter.serv
- ice,net.nan21.dnet.module.bd.currency.business.service,net.nan21.dnet
- .module.bd.currency.domain.entity,net.nan21.dnet.module.bd.geo.busine
- ss.service,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.
- module.bd.org.business.service,net.nan21.dnet.module.bd.org.domain.en
- tity,net.nan21.dnet.module.bd.standards.business.service,net.nan21.dn
- et.module.bd.standards.domain.entity,net.nan21.dnet.module.bp.base.bu
- siness.service,net.nan21.dnet.module.bp.base.domain.entity,net.nan21.
- dnet.module.bp.calendar.business.service,net.nan21.dnet.module.bp.cal
- endar.domain.entity,net.nan21.dnet.module.bp.md.business.service,net.
- nan21.dnet.module.bp.md.domain.entity,org.springframework.context.wea
- ving;version="[3.0,3.1)",org.springframework.web.multipart;version="[
- 3.0,3.1)"
+ net.core.presenter.action,net.nan21.dnet.core.presenter.converter,net
+ .nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter.servic
+ e,net.nan21.dnet.module.bd.currency.business.service,net.nan21.dnet.m
+ odule.bd.currency.domain.entity,net.nan21.dnet.module.bd.geo.business
+ .service,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.mo
+ dule.bd.org.business.service,net.nan21.dnet.module.bd.org.domain.enti
+ ty,net.nan21.dnet.module.bd.standards.business.service,net.nan21.dnet
+ .module.bd.standards.domain.entity,net.nan21.dnet.module.bp.base.busi
+ ness.service,net.nan21.dnet.module.bp.base.domain.entity,net.nan21.dn
+ et.module.bp.calendar.business.service,net.nan21.dnet.module.bp.calen
+ dar.domain.entity,net.nan21.dnet.module.bp.md.business.service,net.na
+ n21.dnet.module.bp.md.domain.entity,org.springframework.context.weavi
+ ng;version="[3.0,3.1)",org.springframework.web.multipart;version="[3.
+ 0,3.1)"
 

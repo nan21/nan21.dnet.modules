@@ -59,19 +59,18 @@ Bundle-SymbolicName: nan21.dnet.module.mm.presenter
 Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  t.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.converter,ne
  t.nan21.dnet.core.api.descriptor,net.nan21.dnet.core.api.model,net.na
- n21.dnet.core.api.service,net.nan21.dnet.core.api.ui.extjs,net.nan21.
- dnet.core.api.ui.extjs.impl,net.nan21.dnet.core.presenter.action,net.
- nan21.dnet.core.presenter.converter,net.nan21.dnet.core.presenter.mod
- el,net.nan21.dnet.core.presenter.service,net.nan21.dnet.module.bd.cur
- rency.business.service,net.nan21.dnet.module.bd.currency.domain.entit
- y,net.nan21.dnet.module.bd.org.business.service,net.nan21.dnet.module
- .bd.org.domain.entity,net.nan21.dnet.module.bd.standards.business.ser
- vice,net.nan21.dnet.module.bd.standards.domain.entity,net.nan21.dnet.
- module.bd.uom.business.service,net.nan21.dnet.module.bd.uom.domain.en
- tity,net.nan21.dnet.module.mm.inventory.business.service,net.nan21.dn
- et.module.mm.inventory.domain.entity,net.nan21.dnet.module.mm.md.busi
- ness.service,net.nan21.dnet.module.mm.md.domain.entity,net.nan21.dnet
- .module.mm.price.business.service,net.nan21.dnet.module.mm.price.doma
- in.entity,org.springframework.context.weaving;version="[3.0,3.1)",org
- .springframework.web.multipart;version="[3.0,3.1)"
+ n21.dnet.core.api.service,net.nan21.dnet.core.presenter.action,net.na
+ n21.dnet.core.presenter.converter,net.nan21.dnet.core.presenter.model
+ ,net.nan21.dnet.core.presenter.service,net.nan21.dnet.module.bd.curre
+ ncy.business.service,net.nan21.dnet.module.bd.currency.domain.entity,
+ net.nan21.dnet.module.bd.org.business.service,net.nan21.dnet.module.b
+ d.org.domain.entity,net.nan21.dnet.module.bd.standards.business.servi
+ ce,net.nan21.dnet.module.bd.standards.domain.entity,net.nan21.dnet.mo
+ dule.bd.uom.business.service,net.nan21.dnet.module.bd.uom.domain.enti
+ ty,net.nan21.dnet.module.mm.inventory.business.service,net.nan21.dnet
+ .module.mm.inventory.domain.entity,net.nan21.dnet.module.mm.md.busine
+ ss.service,net.nan21.dnet.module.mm.md.domain.entity,net.nan21.dnet.m
+ odule.mm.price.business.service,net.nan21.dnet.module.mm.price.domain
+ .entity,org.springframework.context.weaving;version="[3.0,3.1)",org.s
+ pringframework.web.multipart;version="[3.0,3.1)"
 

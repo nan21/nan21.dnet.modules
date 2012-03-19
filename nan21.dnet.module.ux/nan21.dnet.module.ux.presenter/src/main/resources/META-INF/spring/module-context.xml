@@ -14,11 +14,7 @@
 	<context:load-time-weaver aspectj-weaving="on"/>
 	<context:annotation-config />
 	  
-	<bean id="menuProvider" class="net.nan21.dnet.core.api.ui.extjs.impl.ExtensionProvider" >
-		<property name="fileName" value="src/menu.js"></property>
-		<property name="bundleName" value="nan21.dnet.module.ux.ui.extjs"></property>
-	</bean>
-	
+ 
 	<bean id="dsServiceFactory" class="net.nan21.dnet.core.presenter.service.DsServiceFactory" >
 		 <property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>

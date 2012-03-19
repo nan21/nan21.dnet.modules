@@ -16,8 +16,6 @@ Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.ux.presenter
 Import-Package: javax.sql,net.nan21.dnet.core.api,net.nan21.dnet.core.
- api.descriptor,net.nan21.dnet.core.api.service,net.nan21.dnet.core.ap
- i.ui.extjs.impl,net.nan21.dnet.core.presenter.model,net.nan21.dnet.co
- re.presenter.service,org.springframework.context.weaving;version="[3.
- 0,3.1)"
+ presenter.model,net.nan21.dnet.core.presenter.service,org.springframe
+ work.context.weaving;version="[3.0,3.1)"
 

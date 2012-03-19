@@ -40,14 +40,13 @@ Bundle-SymbolicName: nan21.dnet.module.pj.presenter
 Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  t.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.converter,ne
  t.nan21.dnet.core.api.descriptor,net.nan21.dnet.core.api.model,net.na
- n21.dnet.core.api.service,net.nan21.dnet.core.api.ui.extjs,net.nan21.
- dnet.core.api.ui.extjs.impl,net.nan21.dnet.core.presenter.action,net.
- nan21.dnet.core.presenter.converter,net.nan21.dnet.core.presenter.mod
- el,net.nan21.dnet.core.presenter.service,net.nan21.dnet.module.ad.usr
- .business.service,net.nan21.dnet.module.ad.usr.domain.entity,net.nan2
- 1.dnet.module.pj.base.business.service,net.nan21.dnet.module.pj.base.
- domain.entity,net.nan21.dnet.module.pj.md.business.service,net.nan21.
- dnet.module.pj.md.domain.entity,org.springframework.context.weaving;v
- ersion="[3.0,3.1)",org.springframework.web.multipart;version="[3.0,3.
- 1)"
+ n21.dnet.core.api.service,net.nan21.dnet.core.presenter.action,net.na
+ n21.dnet.core.presenter.converter,net.nan21.dnet.core.presenter.model
+ ,net.nan21.dnet.core.presenter.service,net.nan21.dnet.module.ad.usr.b
+ usiness.service,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.
+ dnet.module.pj.base.business.service,net.nan21.dnet.module.pj.base.do
+ main.entity,net.nan21.dnet.module.pj.md.business.service,net.nan21.dn
+ et.module.pj.md.domain.entity,org.springframework.context.weaving;ver
+ sion="[3.0,3.1)",org.springframework.web.multipart;version="[3.0,3.1)
+ "
 

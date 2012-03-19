@@ -60,7 +60,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectVersion$EditList", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"project", xtype:"gridcolumn", dataIndex:"project",width:100,editor:{xtype:"net.nan21.dnet.module.pj.md.lovs.Projects" , selectOnFocus:true ,noUpdate:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "projectId"} ]} })
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:10} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
 		.addDateColumn({ name:"planDate", dataIndex:"planDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addDateColumn({ name:"releaseDate", dataIndex:"releaseDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })

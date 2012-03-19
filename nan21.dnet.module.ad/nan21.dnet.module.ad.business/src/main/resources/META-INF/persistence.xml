@@ -34,6 +34,7 @@
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsField</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsService</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysFrameExtension</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgn</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
 		<class>net.nan21.dnet.module.ad.system.domain.entity.BusinessObject</class>		

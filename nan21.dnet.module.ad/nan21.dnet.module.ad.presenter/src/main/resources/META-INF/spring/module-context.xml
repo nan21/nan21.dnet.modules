@@ -14,13 +14,12 @@
 
 	<context:annotation-config />
 	  
-	<!-- <bean id="menuProvider" class="net.nan21.dnet.core.api.ui.extjs.impl.ExtensionProvider" >
-		<property name="fileName" value="src/menu.js"></property>
-		<property name="bundleName" value="nan21.dnet.module.ad.ui.extjs"></property>
-	</bean> -->
+	 
 	 <bean id="menuProvider" class="net.nan21.dnet.module.ad._presenterdelegates.ExtensionProviderMainMenu" >		  
 	</bean>
 	 <bean id="reportProvider" class="net.nan21.dnet.module.ad._presenterdelegates.ExtensionProviderFrameReports" >		  
+	</bean>
+	 <bean id="scriptFormDbProvider" class="net.nan21.dnet.module.ad._presenterdelegates.ExtensionProviderFrameScriptFromDb" >		  
 	</bean>
 	
 	<bean id="dsServiceFactory" class="net.nan21.dnet.core.presenter.service.DsServiceFactory" >

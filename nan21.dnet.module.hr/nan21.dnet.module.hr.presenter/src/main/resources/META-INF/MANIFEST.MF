@@ -81,23 +81,22 @@ Bundle-SymbolicName: nan21.dnet.module.hr.presenter
 Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  t.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.converter,ne
  t.nan21.dnet.core.api.descriptor,net.nan21.dnet.core.api.model,net.na
- n21.dnet.core.api.service,net.nan21.dnet.core.api.ui.extjs,net.nan21.
- dnet.core.api.ui.extjs.impl,net.nan21.dnet.core.presenter.action,net.
- nan21.dnet.core.presenter.converter,net.nan21.dnet.core.presenter.mod
- el,net.nan21.dnet.core.presenter.service,net.nan21.dnet.module.bd.cur
- rency.business.service,net.nan21.dnet.module.bd.currency.domain.entit
- y,net.nan21.dnet.module.bd.geo.business.service,net.nan21.dnet.module
- .bd.geo.domain.entity,net.nan21.dnet.module.bd.org.business.service,n
- et.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.hr.em
- ployee.business.service,net.nan21.dnet.module.hr.employee.domain.enti
- ty,net.nan21.dnet.module.hr.grade.business.service,net.nan21.dnet.mod
- ule.hr.grade.domain.entity,net.nan21.dnet.module.hr.job.business.serv
- ice,net.nan21.dnet.module.hr.job.domain.entity,net.nan21.dnet.module.
- hr.payroll.business.service,net.nan21.dnet.module.hr.payroll.domain.e
- ntity,net.nan21.dnet.module.hr.skill.business.service,net.nan21.dnet.
- module.hr.skill.domain.entity,net.nan21.dnet.module.hr.time.business.
- service,net.nan21.dnet.module.hr.time.domain.entity,net.nan21.dnet.mo
- dule.hr.training.business.service,net.nan21.dnet.module.hr.training.d
- omain.entity,org.springframework.context.weaving;version="[3.0,3.1)",
- org.springframework.web.multipart;version="[3.0,3.1)"
+ n21.dnet.core.api.service,net.nan21.dnet.core.presenter.action,net.na
+ n21.dnet.core.presenter.converter,net.nan21.dnet.core.presenter.model
+ ,net.nan21.dnet.core.presenter.service,net.nan21.dnet.module.bd.curre
+ ncy.business.service,net.nan21.dnet.module.bd.currency.domain.entity,
+ net.nan21.dnet.module.bd.geo.business.service,net.nan21.dnet.module.b
+ d.geo.domain.entity,net.nan21.dnet.module.bd.org.business.service,net
+ .nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.hr.empl
+ oyee.business.service,net.nan21.dnet.module.hr.employee.domain.entity
+ ,net.nan21.dnet.module.hr.grade.business.service,net.nan21.dnet.modul
+ e.hr.grade.domain.entity,net.nan21.dnet.module.hr.job.business.servic
+ e,net.nan21.dnet.module.hr.job.domain.entity,net.nan21.dnet.module.hr
+ .payroll.business.service,net.nan21.dnet.module.hr.payroll.domain.ent
+ ity,net.nan21.dnet.module.hr.skill.business.service,net.nan21.dnet.mo
+ dule.hr.skill.domain.entity,net.nan21.dnet.module.hr.time.business.se
+ rvice,net.nan21.dnet.module.hr.time.domain.entity,net.nan21.dnet.modu
+ le.hr.training.business.service,net.nan21.dnet.module.hr.training.dom
+ ain.entity,org.springframework.context.weaving;version="[3.0,3.1)",or
+ g.springframework.web.multipart;version="[3.0,3.1)"
 
