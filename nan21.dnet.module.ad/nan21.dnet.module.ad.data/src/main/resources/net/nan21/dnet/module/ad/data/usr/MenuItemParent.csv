@@ -83,6 +83,7 @@
 "SysDataSources_UI";"ad-menu-system"
 "SysDateFormat_UI";"ad-menu-system"
 "SysParam_UI";"ad-menu-system"
+"SysFrameExtension_UI";"ad-menu-system"
 "UiViewState_UI";"ad-menu-system"
 "UomConversion_UI";"bd-menu-uom"
 "UomMD_UI";"bd-menu-uom"

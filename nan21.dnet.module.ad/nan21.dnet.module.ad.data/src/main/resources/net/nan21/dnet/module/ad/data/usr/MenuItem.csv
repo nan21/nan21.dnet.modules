@@ -84,6 +84,7 @@
 "SysDateFormat_UI";"Date formats";;"30";"net.nan21.dnet.module.ad.system.frame.SysDateFormat_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"0F20D128-6996-446E-881C-26E55F9B65ED"
 "SysParam_UI";"System parameters";;"20";"net.nan21.dnet.module.ad.system.frame.SysParam_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"08908ECE-12DD-4906-8D89-E49A7680F4AA"
 "UiViewState_UI";"View states";;"50";"net.nan21.dnet.module.ad.system.frame.UiViewState_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"C355F41B-C79A-456F-BD66-A70FE28301A3"
+"SysFrameExtension_UI";"Frame extensions";;"60";"net.nan21.dnet.module.ad.system.frame.SysFrameExtension_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"C355F41B-C79A-456F-BD66-A70FE28501A3"
 "UomConversion_UI";"Unit of measure conversions";;"40";"net.nan21.dnet.module.bd.uom.frame.UomConversion_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"70AF42FC-0CFC-4341-9358-768CC17F608F"
 "UomMD_UI";"Unit of measure with details";;"30";"net.nan21.dnet.module.bd.uom.frame.UomMD_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"1207ED1F-6C67-436E-9FDD-B0ED353F347E"
 "UomType_UI";"Unit of measure types";;"10";"net.nan21.dnet.module.bd.uom.frame.UomType_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"904E688A-2D8D-4315-A7FE-B6236BE498FA"
