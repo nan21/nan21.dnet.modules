@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.UUID;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -35,10 +36,9 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
-import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus;
-import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType;
 import net.nan21.dnet.module.sd.invoice.domain.eventhandler.SalesInvoiceEventHandler;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -55,8 +55,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class SalesInvoice implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "SD_INVOICE";
-    public static final String SEQUENCE_NAME = "SD_INVOICE_SEQ";
+    public static final String TABLE_NAME = "SD_SALES_INVOICE";
+    public static final String SEQUENCE_NAME = "SD_SALES_INVOICE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -69,6 +69,11 @@ public class SalesInvoice implements Serializable, IModelWithId,
      * Named query find by IDs.
      */
     public static final String NQ_FIND_BY_IDS = "SalesInvoice.findByIds";
+
+    /** Code. */
+    @Column(name = "CODE", nullable = false, length = 32)
+    @NotBlank
+    private String code;
 
     /** DocDate. */
     @Temporal(TemporalType.DATE)
@@ -87,33 +92,6 @@ public class SalesInvoice implements Serializable, IModelWithId,
     /** TotalAmount. */
     @Column(name = "TOTALAMOUNT", scale = 2)
     private Float totalAmount;
-
-    /**
-     * Name of entity.
-     */
-    @Column(name = "NAME", nullable = false, length = 255)
-    @NotBlank
-    private String name;
-
-    /**
-     * Code of entity.
-     */
-    @Column(name = "CODE", nullable = false, length = 32)
-    @NotBlank
-    private String code;
-
-    /**
-     * Flag which indicates if this record is used.
-     */
-    @Column(name = "ACTIVE", nullable = false)
-    @NotNull
-    private Boolean active;
-
-    /**
-     * Notes about this record. 
-     */
-    @Column(name = "NOTES", length = 4000)
-    private String notes;
 
     /**
      * Identifies the client(tenant) which owns this record.
@@ -174,12 +152,6 @@ public class SalesInvoice implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesInvoiceStatus.class)
-    @JoinColumn(name = "STATUS_ID", referencedColumnName = "ID")
-    private SalesInvoiceStatus status;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesInvoiceType.class)
-    @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
-    private SalesInvoiceType type;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
     @JoinColumn(name = "CURRENCY_ID", referencedColumnName = "ID")
     private Currency currency;
@@ -199,10 +171,19 @@ public class SalesInvoice implements Serializable, IModelWithId,
     @JoinColumn(name = "SALESORDER_ID", referencedColumnName = "ID")
     private SalesOrder salesOrder;
 
-    @OneToMany(fetch = FetchType.LAZY, targetEntity = SalesInvoiceItem.class, mappedBy = "invoice")
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = SalesInvoiceItem.class, mappedBy = "invoice", cascade = CascadeType.ALL)
+    @CascadeOnDelete
     private Collection<SalesInvoiceItem> lines;
 
     /* ============== getters - setters ================== */
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public Date getDocDate() {
         return this.docDate;
@@ -243,38 +224,6 @@ public class SalesInvoice implements Serializable, IModelWithId,
 
     public void setBusinessObject(String businessObject) {
 
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Boolean getActive() {
-        return this.active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public String getNotes() {
-        return this.notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
     }
 
     public Long getClientId() {
@@ -348,22 +297,6 @@ public class SalesInvoice implements Serializable, IModelWithId,
 
     public void setClassName(String className) {
 
-    }
-
-    public SalesInvoiceStatus getStatus() {
-        return this.status;
-    }
-
-    public void setStatus(SalesInvoiceStatus status) {
-        this.status = status;
-    }
-
-    public SalesInvoiceType getType() {
-        return this.type;
-    }
-
-    public void setType(SalesInvoiceType type) {
-        this.type = type;
     }
 
     public Currency getCurrency() {
@@ -444,11 +377,8 @@ public class SalesInvoice implements Serializable, IModelWithId,
             event.updateAttributeWithObject("uuid", UUID.randomUUID()
                     .toString().toUpperCase());
         }
-        if (this.active == null) {
-            event.updateAttributeWithObject("active", false);
-        }
         if (this.code == null || this.code.equals("")) {
-            event.updateAttributeWithObject("code", "INV-" + this.getId());
+            event.updateAttributeWithObject("code", "SI-" + this.getId());
         }
     }
 

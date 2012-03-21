@@ -49,6 +49,8 @@ public class PriceListDsFilter extends AbstractDsFilter implements
 
     private String currency;
 
+    private Boolean salesList;
+
     private Boolean isDefault;
 
     public String getName() {
@@ -202,6 +204,14 @@ public class PriceListDsFilter extends AbstractDsFilter implements
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public Boolean getSalesList() {
+        return this.salesList;
+    }
+
+    public void setSalesList(Boolean salesList) {
+        this.salesList = salesList;
     }
 
     public Boolean getIsDefault() {

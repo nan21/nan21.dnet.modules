@@ -41,19 +41,19 @@
 	  		<map>
 	  			<entry key="serviceStartProcess">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActProcessDefinitionDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActProcessDefinitionPD"/>
 	  				<constructor-arg name="methodName" value="startInstance" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="getDiagram">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActProcessDefinitionDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActProcessDefinitionPD"/>
 	  				<constructor-arg name="methodName" value="getDiagram" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="getStartForm">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActProcessDefinitionDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActProcessDefinitionPD"/>
 	  				<constructor-arg name="methodName" value="getStartForm" />
 	  			</bean>	
 	  			</entry>	  			
@@ -94,7 +94,7 @@
 	  		<map>
 	  			<entry key="killProcessInstance">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActProcessInstanceDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActProcessInstancePD"/>
 	  				<constructor-arg name="methodName" value="killInstance" />
 	  			</bean>	
 	  			</entry>	  			
@@ -134,13 +134,13 @@
 	  		<map>
 	  			<entry key="assignTask">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActTaskInstanceDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActTaskInstancePD"/>
 	  				<constructor-arg name="methodName" value="assignTask" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="completeTask">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActTaskInstanceDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActTaskInstancePD"/>
 	  				<constructor-arg name="methodName" value="completeTask" />
 	  			</bean>	
 	  			</entry>	  			
@@ -179,7 +179,7 @@
 	  		<map>
 	  			<entry key="completeTask">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActMyTaskDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActMyTaskPD"/>
 	  				<constructor-arg name="methodName" value="complete" />
 	  			</bean>	
 	  			</entry>	  			
@@ -217,7 +217,7 @@
 	  		<map>
 	  			<entry key="assignTask">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActAvailableTaskDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.ActAvailableTaskPD"/>
 	  				<constructor-arg name="methodName" value="claim" />
 	  			</bean>	
 	  			</entry>	  			
@@ -243,13 +243,13 @@
 	  		<map>
 	  			<entry key="deployProcess">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.WfDefProcessDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.WfDefProcessPD"/>
 	  				<constructor-arg name="methodName" value="deployProcess" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="getDiagram">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.WfDefProcessDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.workflow.WfDefProcessPD"/>
 	  				<constructor-arg name="methodName" value="getDiagram" />
 	  			</bean>	
 	  			</entry>	  			

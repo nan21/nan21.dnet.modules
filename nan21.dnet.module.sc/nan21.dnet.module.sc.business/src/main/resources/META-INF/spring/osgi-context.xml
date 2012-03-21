@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/osgi 
+		http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+	
+	
+	<osgi:reference id="systemConfig" cardinality="1..1"
+		interface="net.nan21.dnet.core.api.ISystemConfig" />
+			
+	<osgi:reference id="osgiDataSource" cardinality="0..1"
+		interface="javax.sql.DataSource" />
+		
+	<osgi:service ref="entityServiceFactory" ranking="0"
+		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />
+	
+	<osgi:service ref="asgnTxServiceFactory" ranking="0"
+		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />	
+		
+	<!-- <osgi:service ref="setupParticipant" ranking="400"
+		interface="net.nan21.dnet.core.api.setup.ISetupParticipant" />	 -->
+	
+	<osgi:list id="osgiEntityServiceFactories" cardinality="0..N"
+		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />	
+</beans>

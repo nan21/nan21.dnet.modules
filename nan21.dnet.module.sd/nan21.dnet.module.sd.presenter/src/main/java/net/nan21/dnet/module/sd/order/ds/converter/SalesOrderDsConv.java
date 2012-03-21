@@ -19,10 +19,6 @@ import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.mm.price.business.service.IPriceListService;
 import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
-import net.nan21.dnet.module.sd.order.business.service.ISalesOrderStatusService;
-import net.nan21.dnet.module.sd.order.business.service.ISalesOrderTypeService;
-import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus;
-import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs;
@@ -65,26 +61,6 @@ public class SalesOrderDsConv extends
             }
         } else {
             this.lookup_deliveryMethod_DeliveryMethod(ds, e);
-        }
-
-        if (ds.getTypeId() != null) {
-            if (e.getType() == null
-                    || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((SalesOrderType) this.em.find(SalesOrderType.class,
-                        ds.getTypeId()));
-            }
-        } else {
-            this.lookup_type_SalesOrderType(ds, e);
-        }
-
-        if (ds.getStatusId() != null) {
-            if (e.getStatus() == null
-                    || !e.getStatus().getId().equals(ds.getStatusId())) {
-                e.setStatus((SalesOrderStatus) this.em.find(
-                        SalesOrderStatus.class, ds.getStatusId()));
-            }
-        } else {
-            this.lookup_status_SalesOrderStatus(ds, e);
         }
 
         if (ds.getPaymentMethodId() != null) {
@@ -213,44 +189,6 @@ public class SalesOrderDsConv extends
 
         } else {
             e.setDeliveryMethod(null);
-        }
-    }
-
-    protected void lookup_type_SalesOrderType(SalesOrderDs ds, SalesOrder e)
-            throws Exception {
-        if (ds.getType() != null && !ds.getType().equals("")) {
-            SalesOrderType x = null;
-            try {
-                x = ((ISalesOrderTypeService) findEntityService(SalesOrderType.class))
-                        .findByName(ds.getType());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `SalesOrderType` reference:  `type` = "
-                                + ds.getType() + "  ");
-            }
-            e.setType(x);
-
-        } else {
-            e.setType(null);
-        }
-    }
-
-    protected void lookup_status_SalesOrderStatus(SalesOrderDs ds, SalesOrder e)
-            throws Exception {
-        if (ds.getStatus() != null && !ds.getStatus().equals("")) {
-            SalesOrderStatus x = null;
-            try {
-                x = ((ISalesOrderStatusService) findEntityService(SalesOrderStatus.class))
-                        .findByName(ds.getStatus());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `SalesOrderStatus` reference:  `status` = "
-                                + ds.getStatus() + "  ");
-            }
-            e.setStatus(x);
-
-        } else {
-            e.setStatus(null);
         }
     }
 

@@ -52,6 +52,28 @@
 		<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListLovDs" />
 	</bean>
    
+ 	<bean id="PriceListSalesLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListSalesLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.mm.price.ds.filter.PriceListSalesLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.price.domain.entity.PriceList" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PriceListSalesLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListSalesLovDs" />
+	</bean>
+   
+ 	<bean id="PriceListPurchaseLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListPurchaseLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.mm.price.ds.filter.PriceListPurchaseLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.price.domain.entity.PriceList" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PriceListPurchaseLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListPurchaseLovDs" />
+	</bean>
+   
  	<bean id="PriceListVersionDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListVersionDs" />
@@ -63,13 +85,13 @@
 	  		<map>
 	  			<entry key="addProductsFromCategory">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.mm._presenterdelegates.price.PriceListVersionDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.mm._presenterdelegates.price.PriceListVersionPD"/>
 	  				<constructor-arg name="methodName" value="addProductsFromCategory" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="addProductsFromPriceListVersion">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.mm._presenterdelegates.price.PriceListVersionDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.mm._presenterdelegates.price.PriceListVersionPD"/>
 	  				<constructor-arg name="methodName" value="addProductsFromPriceListVersion" />
 	  			</bean>	
 	  			</entry>	  			

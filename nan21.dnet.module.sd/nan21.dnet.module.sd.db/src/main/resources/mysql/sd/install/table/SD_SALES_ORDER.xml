@@ -4,8 +4,6 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <changeSet author="amathe" id="TBL">
         <createTable tableName="SD_SALES_ORDER">
-			<column name="ACTIVE" type="int(1)">
-				<constraints nullable="false" /></column>	 
 			<column name="CLIENTID" type="bigint(3)">
 				<constraints nullable="false" /></column>	 
 			<column name="CODE" type="varchar(32)">
@@ -22,10 +20,6 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="NAME" type="varchar(255)">
-				<constraints nullable="false" /></column>	 
-			<column name="NOTES" type="text">
-				<constraints  /></column>	 
 			<column name="TOTALAMOUNT" type="decimal(12,2)">
 				<constraints  /></column>	 
 			<column name="TOTALNETAMOUNT" type="decimal(12,2)">
@@ -54,11 +48,7 @@
 				<constraints  /></column>	 
 			<column name="SHIPTO_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="STATUS_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
 			<column name="SUPPLIER_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
-			<column name="TYPE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

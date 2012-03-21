@@ -15,7 +15,7 @@ import net.nan21.dnet.module.ad.usr.domain.entity.MenuItem;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = MenuItem.class, sort = { @SortField(field = MenuItemDs.fNAME) })
+@Ds(entity = MenuItem.class, sort = { @SortField(field = MenuItemDs.fSEQUENCENO) })
 public class MenuItemDs extends AbstractDsModel<MenuItem> implements
         IModelWithId, IModelWithClientId {
 

@@ -13,21 +13,11 @@ import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
-import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus;
-import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 
 public interface ISalesInvoiceService extends IEntityService<SalesInvoice> {
-
-    public List<SalesInvoice> findByStatus(SalesInvoiceStatus status);
-
-    public List<SalesInvoice> findByStatusId(Long statusId);
-
-    public List<SalesInvoice> findByType(SalesInvoiceType type);
-
-    public List<SalesInvoice> findByTypeId(Long typeId);
 
     public List<SalesInvoice> findByCurrency(Currency currency);
 

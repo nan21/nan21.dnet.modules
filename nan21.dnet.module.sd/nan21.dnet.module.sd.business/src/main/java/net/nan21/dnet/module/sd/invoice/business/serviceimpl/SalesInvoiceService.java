@@ -15,8 +15,6 @@ import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
-import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus;
-import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
 import javax.persistence.EntityManager;
@@ -37,32 +35,6 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     @Override
     protected Class<SalesInvoice> getEntityClass() {
         return SalesInvoice.class;
-    }
-
-    public List<SalesInvoice> findByStatus(SalesInvoiceStatus status) {
-        return this.findByStatusId(status.getId());
-    }
-
-    public List<SalesInvoice> findByStatusId(Long statusId) {
-        return (List<SalesInvoice>) this.em
-                .createQuery(
-                        "select e from SalesInvoice e where e.clientId = :pClientId and e.status.id = :pStatusId",
-                        SalesInvoice.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pStatusId", statusId).getResultList();
-    }
-
-    public List<SalesInvoice> findByType(SalesInvoiceType type) {
-        return this.findByTypeId(type.getId());
-    }
-
-    public List<SalesInvoice> findByTypeId(Long typeId) {
-        return (List<SalesInvoice>) this.em
-                .createQuery(
-                        "select e from SalesInvoice e where e.clientId = :pClientId and e.type.id = :pTypeId",
-                        SalesInvoice.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pTypeId", typeId).getResultList();
     }
 
     public List<SalesInvoice> findByCurrency(Currency currency) {

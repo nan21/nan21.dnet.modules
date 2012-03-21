@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.PriceListDs$Trl", {
 	entityFQN__lbl : "Entity FQN",
 	currencyId__lbl : "Currency Id",
 	currency__lbl : "Currency",
+	salesList__lbl : "Sales List",
 	isDefault__lbl : "Is Default",
 		
 	id__lbl :"ID"

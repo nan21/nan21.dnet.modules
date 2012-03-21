@@ -14,10 +14,6 @@ import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
-import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceStatusService;
-import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceTypeService;
-import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus;
-import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs;
@@ -39,26 +35,6 @@ public class SalesInvoiceDsConv extends
             }
         } else {
             this.lookup_currency_Currency(ds, e);
-        }
-
-        if (ds.getTypeId() != null) {
-            if (e.getType() == null
-                    || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((SalesInvoiceType) this.em.find(
-                        SalesInvoiceType.class, ds.getTypeId()));
-            }
-        } else {
-            this.lookup_type_SalesInvoiceType(ds, e);
-        }
-
-        if (ds.getStatusId() != null) {
-            if (e.getStatus() == null
-                    || !e.getStatus().getId().equals(ds.getStatusId())) {
-                e.setStatus((SalesInvoiceStatus) this.em.find(
-                        SalesInvoiceStatus.class, ds.getStatusId()));
-            }
-        } else {
-            this.lookup_status_SalesInvoiceStatus(ds, e);
         }
 
         if (ds.getSupplierId() != null) {
@@ -117,44 +93,6 @@ public class SalesInvoiceDsConv extends
 
         } else {
             e.setCurrency(null);
-        }
-    }
-
-    protected void lookup_type_SalesInvoiceType(SalesInvoiceDs ds,
-            SalesInvoice e) throws Exception {
-        if (ds.getType() != null && !ds.getType().equals("")) {
-            SalesInvoiceType x = null;
-            try {
-                x = ((ISalesInvoiceTypeService) findEntityService(SalesInvoiceType.class))
-                        .findByName(ds.getType());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `SalesInvoiceType` reference:  `type` = "
-                                + ds.getType() + "  ");
-            }
-            e.setType(x);
-
-        } else {
-            e.setType(null);
-        }
-    }
-
-    protected void lookup_status_SalesInvoiceStatus(SalesInvoiceDs ds,
-            SalesInvoice e) throws Exception {
-        if (ds.getStatus() != null && !ds.getStatus().equals("")) {
-            SalesInvoiceStatus x = null;
-            try {
-                x = ((ISalesInvoiceStatusService) findEntityService(SalesInvoiceStatus.class))
-                        .findByName(ds.getStatus());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `SalesInvoiceStatus` reference:  `status` = "
-                                + ds.getStatus() + "  ");
-            }
-            e.setStatus(x);
-
-        } else {
-            e.setStatus(null);
         }
     }
 

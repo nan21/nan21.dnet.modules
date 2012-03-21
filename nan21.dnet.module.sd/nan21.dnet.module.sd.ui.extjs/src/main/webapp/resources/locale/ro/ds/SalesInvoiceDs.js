@@ -1,10 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs$Trl", {  	  	
 	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docDate__lbl :  "Din",
-	businessObject__lbl :  "@businessObject",	status__lbl :    "Stare",
-	typeId__lbl :    "Tip (ID)",
-	type__lbl :    "Tip",
-	currencyId__lbl :    "Moneda (ID)",
+	businessObject__lbl :  "@businessObject",	currencyId__lbl :    "Moneda (ID)",
 	currency__lbl :    "Moneda (Cod)",
 	totalNetAmount__lbl :  "Total Net",
 	totalTaxAmount__lbl :  "Total TVA",
@@ -20,6 +17,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs$Trl", {
 	supplierId__lbl :    "Org. furnizor (ID)",
 	supplier__lbl :    "Org. furnizor (Cod)",
 	salesOrderId__lbl :    " (ID)",
+	salesOrderCode__lbl :    " (Cod)",
 	className__lbl :  "@className",		 
 	id__lbl :"ID"
 });

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="SC_PURCHASE_ORDER_STATUS">
+			<column name="ACTIVE" type="int(1)">
+				<constraints nullable="false" /></column>	 
+			<column name="CLIENTID" type="bigint(3)">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDAT" type="datetime">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDBY" type="varchar(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="DESCRIPTION" type="text">
+				<constraints  /></column>	 
+			<column name="ID" type="bigint(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDAT" type="datetime">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDBY" type="varchar(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="NAME" type="varchar(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="SEQUENCENO" type="int(4)">
+				<constraints nullable="false" /></column>	 
+			<column name="UUID" type="varchar(36)">
+				<constraints  /></column>	 
+			<column name="VERSION" type="bigint(19)">
+				<constraints nullable="false" /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="SC_PURCHASE_ORDER_STATUS" constraintName="PK_PURCHASE_ORDER_STATUS" columnNames="ID" />
+    </changeSet>       
+	<changeSet author="amathe" id="UK-1">
+		<addUniqueConstraint tableName="SC_PURCHASE_ORDER_STATUS" constraintName="UK_PURCHASE_ORDER_STATUS1" columnNames="CLIENTID, NAME" />
+	</changeSet>
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="SC_PURCHASE_ORDER_STATUS_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

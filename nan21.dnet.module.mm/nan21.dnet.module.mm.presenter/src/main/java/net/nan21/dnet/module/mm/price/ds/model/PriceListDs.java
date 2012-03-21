@@ -33,6 +33,7 @@ public class PriceListDs extends AbstractDsModel<PriceList> implements
     public static final String fENTITYFQN = "entityFQN";
     public static final String fCURRENCYID = "currencyId";
     public static final String fCURRENCY = "currency";
+    public static final String fSALESLIST = "salesList";
     public static final String fISDEFAULT = "isDefault";
 
     @DsField()
@@ -76,6 +77,9 @@ public class PriceListDs extends AbstractDsModel<PriceList> implements
 
     @DsField(join = "left", path = "currency.code")
     private String currency;
+
+    @DsField()
+    private Boolean salesList;
 
     @DsField()
     private Boolean isDefault;
@@ -199,6 +203,14 @@ public class PriceListDs extends AbstractDsModel<PriceList> implements
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public Boolean getSalesList() {
+        return this.salesList;
+    }
+
+    public void setSalesList(Boolean salesList) {
+        this.salesList = salesList;
     }
 
     public Boolean getIsDefault() {

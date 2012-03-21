@@ -13,10 +13,25 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrder" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="createInvoice">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesOrderPD"/>
+	  				<constructor-arg name="methodName" value="generateInvoice" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesOrder" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">createInvoice</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="SalesOrderItemDsService" scope="prototype"

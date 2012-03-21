@@ -14,14 +14,6 @@ import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
 public class SalesInvoiceDsFilter extends AbstractDsFilter implements
         IModelWithId, IModelWithClientId {
 
-    private String name;
-
-    private String code;
-
-    private Boolean active;
-
-    private String notes;
-
     private Long id;
 
     private String uuid;
@@ -44,26 +36,14 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
 
     private String entityFQN;
 
+    private String code;
+
     private Date docDate;
 
     private Date docDate_From;
     private Date docDate_To;
 
     private String businessObject;
-
-    private Long statusId;
-
-    private Long statusId_From;
-    private Long statusId_To;
-
-    private String status;
-
-    private Long typeId;
-
-    private Long typeId_From;
-    private Long typeId_To;
-
-    private String type;
 
     private Long currencyId;
 
@@ -124,39 +104,9 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
     private Long salesOrderId_From;
     private Long salesOrderId_To;
 
+    private String salesOrderCode;
+
     private String className;
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Boolean getActive() {
-        return this.active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public String getNotes() {
-        return this.notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
 
     public Long getId() {
         return this.id;
@@ -255,6 +205,14 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
         this.entityFQN = entityFQN;
     }
 
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     public Date getDocDate() {
         return this.docDate;
     }
@@ -285,70 +243,6 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
 
     public void setBusinessObject(String businessObject) {
         this.businessObject = businessObject;
-    }
-
-    public Long getStatusId() {
-        return this.statusId;
-    }
-
-    public Long getStatusId_From() {
-        return this.statusId_From;
-    }
-
-    public Long getStatusId_To() {
-        return this.statusId_To;
-    }
-
-    public void setStatusId(Long statusId) {
-        this.statusId = statusId;
-    }
-
-    public void setStatusId_From(Long statusId_From) {
-        this.statusId_From = statusId_From;
-    }
-
-    public void setStatusId_To(Long statusId_To) {
-        this.statusId_To = statusId_To;
-    }
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Long getTypeId() {
-        return this.typeId;
-    }
-
-    public Long getTypeId_From() {
-        return this.typeId_From;
-    }
-
-    public Long getTypeId_To() {
-        return this.typeId_To;
-    }
-
-    public void setTypeId(Long typeId) {
-        this.typeId = typeId;
-    }
-
-    public void setTypeId_From(Long typeId_From) {
-        this.typeId_From = typeId_From;
-    }
-
-    public void setTypeId_To(Long typeId_To) {
-        this.typeId_To = typeId_To;
-    }
-
-    public String getType() {
-        return this.type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public Long getCurrencyId() {
@@ -621,6 +515,14 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
 
     public void setSalesOrderId_To(Long salesOrderId_To) {
         this.salesOrderId_To = salesOrderId_To;
+    }
+
+    public String getSalesOrderCode() {
+        return this.salesOrderCode;
+    }
+
+    public void setSalesOrderCode(String salesOrderCode) {
+        this.salesOrderCode = salesOrderCode;
     }
 
     public String getClassName() {

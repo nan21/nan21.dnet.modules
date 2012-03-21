@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="PurchaseOrderDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sc.order.ds.filter.PurchaseOrderDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sc.order.ds.converter.PurchaseOrderDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PurchaseOrder" />
+		<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderDs" />
+	</bean>
+   
+ 	<bean id="PurchaseOrderItemDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderItemDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sc.order.ds.filter.PurchaseOrderItemDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderItem" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sc.order.ds.converter.PurchaseOrderItemDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PurchaseOrderItem" />
+		<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderItemDs" />
+	</bean>
+   
+ 	<bean id="PurchaseOrderTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sc.order.ds.filter.PurchaseOrderTypeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PurchaseOrderType" />
+		<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderTypeDs" />
+	</bean>
+   
+ 	<bean id="PurchaseOrderTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PurchaseOrderTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderTypeLovDs" />
+	</bean>
+   
+ 	<bean id="PurchaseOrderStatusDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderStatusDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sc.order.ds.filter.PurchaseOrderStatusDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PurchaseOrderStatus" />
+		<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderStatusDs" />
+	</bean>
+   
+ 	<bean id="PurchaseOrderStatusLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderStatusLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderStatusLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PurchaseOrderStatusLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderStatusLovDs" />
+	</bean>
+      
+</beans>
+   

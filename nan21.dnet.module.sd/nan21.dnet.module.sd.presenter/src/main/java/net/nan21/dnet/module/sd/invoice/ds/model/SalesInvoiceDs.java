@@ -6,7 +6,6 @@
 package net.nan21.dnet.module.sd.invoice.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -15,14 +14,10 @@ import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = SalesInvoice.class, sort = { @SortField(field = SalesInvoiceDs.fNAME) })
+@Ds(entity = SalesInvoice.class)
 public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
         IModelWithId, IModelWithClientId {
 
-    public static final String fNAME = "name";
-    public static final String fCODE = "code";
-    public static final String fACTIVE = "active";
-    public static final String fNOTES = "notes";
     public static final String fID = "id";
     public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
@@ -32,12 +27,9 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fENTITYFQN = "entityFQN";
+    public static final String fCODE = "code";
     public static final String fDOCDATE = "docDate";
     public static final String fBUSINESSOBJECT = "businessObject";
-    public static final String fSTATUSID = "statusId";
-    public static final String fSTATUS = "status";
-    public static final String fTYPEID = "typeId";
-    public static final String fTYPE = "type";
     public static final String fCURRENCYID = "currencyId";
     public static final String fCURRENCY = "currency";
     public static final String fTOTALNETAMOUNT = "totalNetAmount";
@@ -54,24 +46,13 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
     public static final String fSUPPLIERID = "supplierId";
     public static final String fSUPPLIER = "supplier";
     public static final String fSALESORDERID = "salesOrderId";
+    public static final String fSALESORDERCODE = "salesOrderCode";
     public static final String fCLASSNAME = "className";
 
-    @DsField()
-    private String name;
-
-    @DsField()
-    private String code;
-
-    @DsField()
-    private Boolean active;
-
-    @DsField()
-    private String notes;
-
-    @DsField()
+    @DsField(noUpdate = true)
     private Long id;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String uuid;
 
     @DsField(noUpdate = true)
@@ -92,26 +73,17 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
     @DsField()
     private Long version;
 
-    @DsField(fetch = false, path = "className")
+    @DsField(noUpdate = true, fetch = false, path = "className")
     private String entityFQN;
+
+    @DsField()
+    private String code;
 
     @DsField()
     private Date docDate;
 
     @DsField(fetch = false)
     private String businessObject;
-
-    @DsField(join = "left", path = "status.id")
-    private Long statusId;
-
-    @DsField(join = "left", path = "status.name")
-    private String status;
-
-    @DsField(join = "left", path = "type.id")
-    private Long typeId;
-
-    @DsField(join = "left", path = "type.name")
-    private String type;
 
     @DsField(join = "left", path = "currency.id")
     private Long currencyId;
@@ -161,6 +133,9 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
     @DsField(join = "left", path = "salesOrder.id")
     private Long salesOrderId;
 
+    @DsField(join = "left", path = "salesOrder.code")
+    private String salesOrderCode;
+
     @DsField(fetch = false)
     private String className;
 
@@ -170,38 +145,6 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
 
     public SalesInvoiceDs(SalesInvoice e) {
         super(e);
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Boolean getActive() {
-        return this.active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public String getNotes() {
-        return this.notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
     }
 
     public Long getId() {
@@ -277,6 +220,14 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
         this.entityFQN = entityFQN;
     }
 
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     public Date getDocDate() {
         return this.docDate;
     }
@@ -291,38 +242,6 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
 
     public void setBusinessObject(String businessObject) {
         this.businessObject = businessObject;
-    }
-
-    public Long getStatusId() {
-        return this.statusId;
-    }
-
-    public void setStatusId(Long statusId) {
-        this.statusId = statusId;
-    }
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Long getTypeId() {
-        return this.typeId;
-    }
-
-    public void setTypeId(Long typeId) {
-        this.typeId = typeId;
-    }
-
-    public String getType() {
-        return this.type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public Long getCurrencyId() {
@@ -451,6 +370,14 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
 
     public void setSalesOrderId(Long salesOrderId) {
         this.salesOrderId = salesOrderId;
+    }
+
+    public String getSalesOrderCode() {
+        return this.salesOrderCode;
+    }
+
+    public void setSalesOrderCode(String salesOrderCode) {
+        this.salesOrderCode = salesOrderCode;
     }
 
     public String getClassName() {

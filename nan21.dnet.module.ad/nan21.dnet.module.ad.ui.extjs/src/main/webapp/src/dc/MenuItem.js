@@ -78,11 +78,11 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$EditList", {
 	_bulkEditFields_ : ["menu","menuItem","active","bundle","frame","sequenceNo"],
 	_defineColumns_: function () {
 		this._getBuilder_()
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
 		.addTextColumn({ name:"title", dataIndex:"title",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
 		.addLov({name:"menu", xtype:"gridcolumn", dataIndex:"menu",width:120,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.Menus" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "menuId"} ]} })
 		.addLov({name:"menuItem", xtype:"gridcolumn", dataIndex:"menuItem",width:120,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.MenuItems" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "menuItemId"} ]} })
-		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addTextColumn({ name:"frame", dataIndex:"frame",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
 		.addTextColumn({ name:"bundle", dataIndex:"bundle",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})

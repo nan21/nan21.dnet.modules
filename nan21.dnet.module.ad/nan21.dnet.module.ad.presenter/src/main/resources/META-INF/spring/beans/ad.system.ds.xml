@@ -16,7 +16,7 @@
 	  		<map>
 	  			<entry key="refreshSysConfig">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.system.SysParamDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.system.SysParamPD"/>
 	  				<constructor-arg name="methodName" value="reloadSysConfig" />
 	  			</bean>	
 	  			</entry>	 
@@ -42,7 +42,7 @@
 	  		<map>
 	  			<entry key="synchronizeCatalog">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.system.SysDataSourceDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.system.SysDataSourcePD"/>
 	  				<constructor-arg name="methodName" value="synchronizeCatalog" />
 	  			</bean>	
 	  			</entry>	 

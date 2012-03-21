@@ -17,11 +17,10 @@ import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
-import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus;
-import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
+import net.nan21.dnet.module.sd._businessdelegates.order.SalesOrderToInvoiceBD;
 
 public class SalesOrderService extends AbstractEntityService<SalesOrder>
         implements ISalesOrderService {
@@ -38,32 +37,6 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
     @Override
     protected Class<SalesOrder> getEntityClass() {
         return SalesOrder.class;
-    }
-
-    public List<SalesOrder> findByStatus(SalesOrderStatus status) {
-        return this.findByStatusId(status.getId());
-    }
-
-    public List<SalesOrder> findByStatusId(Long statusId) {
-        return (List<SalesOrder>) this.em
-                .createQuery(
-                        "select e from SalesOrder e where e.clientId = :pClientId and e.status.id = :pStatusId",
-                        SalesOrder.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pStatusId", statusId).getResultList();
-    }
-
-    public List<SalesOrder> findByType(SalesOrderType type) {
-        return this.findByTypeId(type.getId());
-    }
-
-    public List<SalesOrder> findByTypeId(Long typeId) {
-        return (List<SalesOrder>) this.em
-                .createQuery(
-                        "select e from SalesOrder e where e.clientId = :pClientId and e.type.id = :pTypeId",
-                        SalesOrder.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pTypeId", typeId).getResultList();
     }
 
     public List<SalesOrder> findByPriceList(PriceList priceList) {
@@ -211,6 +184,11 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
                         SalesOrder.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLinesId", linesId).getResultList();
+    }
+
+    public void doGenerateInvoice(SalesOrder salesOrder) throws Exception {
+        this.getBusinessDelegate(SalesOrderToInvoiceBD.class).generateInvoice(
+                salesOrder);
     }
 
 }

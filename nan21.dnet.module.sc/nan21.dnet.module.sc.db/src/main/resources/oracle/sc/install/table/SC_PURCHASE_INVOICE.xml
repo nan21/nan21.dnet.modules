@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="SC_PURCHASE_INVOICE">
+			<column name="CLIENTID" type="number(3)">
+				<constraints nullable="false" /></column>	 
+			<column name="CODE" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDBY" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="DOCDATE" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="ID" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDBY" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="TOTALAMOUNT" type="number(12,2)">
+				<constraints  /></column>	 
+			<column name="TOTALNETAMOUNT" type="number(12,2)">
+				<constraints  /></column>	 
+			<column name="TOTALTAXAMOUNT" type="number(12,2)">
+				<constraints  /></column>	 
+			<column name="UUID" type="varchar2(36)">
+				<constraints  /></column>	 
+			<column name="VERSION" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="CURRENCY_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="CUSTOMER_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="PURCHASEORDER_ID" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="SUPPLIER_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="SC_PURCHASE_INVOICE" constraintName="PK_PURCHASE_INVOICE" columnNames="ID" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="SC_PURCHASE_INVOICE_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

@@ -79,6 +79,9 @@ public class SalesInvoiceItemService
 						"select sum(i.netAmount) from SalesInvoiceItem i where i.invoice.id = :invoiceId")
 				.setParameter("invoiceId", invoiceId).getSingleResult();
 		SalesInvoice invoice = this.em.find(SalesInvoice.class, invoiceId);
+		if (x==null) {
+			x = 0D;
+		}
 		invoice.setTotalNetAmount(x.floatValue());
 		this.em.merge(invoice);
 	}

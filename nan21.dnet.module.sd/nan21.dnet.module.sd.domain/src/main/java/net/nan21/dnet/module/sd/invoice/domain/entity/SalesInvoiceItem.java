@@ -47,8 +47,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class SalesInvoiceItem implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "SD_INVOICE_ITEM";
-    public static final String SEQUENCE_NAME = "SD_INVOICE_ITEM_SEQ";
+    public static final String TABLE_NAME = "SD_SALES_INVOICE_ITEM";
+    public static final String SEQUENCE_NAME = "SD_SALES_INVOICE_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

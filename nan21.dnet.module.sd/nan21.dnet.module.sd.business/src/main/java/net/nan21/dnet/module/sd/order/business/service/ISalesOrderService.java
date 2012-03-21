@@ -15,20 +15,10 @@ import net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
-import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus;
-import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType;
 
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
 public interface ISalesOrderService extends IEntityService<SalesOrder> {
-
-    public List<SalesOrder> findByStatus(SalesOrderStatus status);
-
-    public List<SalesOrder> findByStatusId(Long statusId);
-
-    public List<SalesOrder> findByType(SalesOrderType type);
-
-    public List<SalesOrder> findByTypeId(Long typeId);
 
     public List<SalesOrder> findByPriceList(PriceList priceList);
 
@@ -73,5 +63,7 @@ public interface ISalesOrderService extends IEntityService<SalesOrder> {
     public List<SalesOrder> findByLines(SalesOrderItem lines);
 
     public List<SalesOrder> findByLinesId(Long linesId);
+
+    public void doGenerateInvoice(SalesOrder salesOrder) throws Exception;
 
 }

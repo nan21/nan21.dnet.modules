@@ -3,10 +3,6 @@
 Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"name", type:"string"},
-		{name:"code", type:"string"},
-		{name:"active", type:"boolean"},
-		{name:"notes", type:"string"},
 		{name:"id", type:"int", useNull:true},
 		{name:"uuid", type:"string"},
 		{name:"clientId", type:"int", useNull:true},
@@ -16,12 +12,9 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs" ,{
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"businessObject", type:"string"},
-		{name:"statusId", type:"int", useNull:true},
-		{name:"status", type:"string"},
-		{name:"typeId", type:"int", useNull:true},
-		{name:"type", type:"string"},
 		{name:"currencyId", type:"int", useNull:true},
 		{name:"currency", type:"string"},
 		{name:"totalNetAmount", type:"float", useNull:true},
@@ -38,6 +31,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs" ,{
 		{name:"supplierId", type:"int", useNull:true},
 		{name:"supplier", type:"string"},
 		{name:"salesOrderId", type:"int", useNull:true},
+		{name:"salesOrderCode", type:"string"},
 		{name:"className", type:"string"}
 	],
 	validations: [  
@@ -48,10 +42,6 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs" ,{
 Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"name", type:"string"},
-		{name:"code", type:"string"},
-		{name:"active", type:"boolean", useNull:true},
-		{name:"notes", type:"string"},
 		{name:"id", type:"int", useNull:true},
 		{name:"uuid", type:"string"},
 		{name:"createdAt", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
@@ -63,18 +53,11 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDsFilter" ,{
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"businessObject", type:"string"},
-		{name:"statusId", type:"int", useNull:true},
-		{name:"statusId_From",type:"int", useNull:true},
-		{name:"statusId_To",type:"int", useNull:true},
-		{name:"status", type:"string"},
-		{name:"typeId", type:"int", useNull:true},
-		{name:"typeId_From",type:"int", useNull:true},
-		{name:"typeId_To",type:"int", useNull:true},
-		{name:"type", type:"string"},
 		{name:"currencyId", type:"int", useNull:true},
 		{name:"currencyId_From",type:"int", useNull:true},
 		{name:"currencyId_To",type:"int", useNull:true},
@@ -109,6 +92,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDsFilter" ,{
 		{name:"salesOrderId", type:"int", useNull:true},
 		{name:"salesOrderId_From",type:"int", useNull:true},
 		{name:"salesOrderId_To",type:"int", useNull:true},
+		{name:"salesOrderCode", type:"string"},
 		{name:"className", type:"string"}
 	] 
 });

@@ -62,7 +62,7 @@
 	  		<map>
 	  			<entry key="runExport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ExportDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ExportPD"/>
 	  				<constructor-arg name="methodName" value="exportFromMap" />
 	  			</bean>	
 	  			</entry>	  			
@@ -100,7 +100,7 @@
 	  		<map>
 	  			<entry key="runExport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ExportDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ExportPD"/>
 	  				<constructor-arg name="methodName" value="exportFromMapItem" />
 	  			</bean>	
 	  			</entry>	  			
@@ -126,7 +126,7 @@
 	  		<map>
 	  			<entry key="runExport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ExportDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ExportPD"/>
 	  				<constructor-arg name="methodName" value="exportFromJob" />
 	  			</bean>	
 	  			</entry>	  			
@@ -164,7 +164,7 @@
 	  		<map>
 	  			<entry key="runExport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ExportDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ExportPD"/>
 	  				<constructor-arg name="methodName" value="exportFromJobItem" />
 	  			</bean>	
 	  			</entry>	  			
@@ -190,7 +190,7 @@
 	  		<map>
 	  			<entry key="runImport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapPD"/>
 	  				<constructor-arg name="methodName" value="execute" />
 	  			</bean>	
 	  			</entry>	  			
@@ -229,7 +229,7 @@
 	  		<map>
 	  			<entry key="runImport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapItemDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapItemPD"/>
 	  				<constructor-arg name="methodName" value="execute" />
 	  			</bean>	
 	  			</entry>	  			
@@ -239,7 +239,7 @@
 	  		<map>
 	  			<entry key="runImportFile">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapItemDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromMapItemPD"/>
 	  				<constructor-arg name="methodName" value="importFile" />
 	  			</bean>	
 	  			</entry>	 
@@ -266,7 +266,7 @@
 	  		<map>
 	  			<entry key="runImport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobPD"/>
 	  				<constructor-arg name="methodName" value="execute" />
 	  			</bean>	
 	  			</entry>	  			
@@ -304,7 +304,7 @@
 	  		<map>
 	  			<entry key="runImport">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobItemDelegate"/>
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobItemPD"/>
 	  				<constructor-arg name="methodName" value="execute" />
 	  			</bean>	
 	  			</entry>	  			

@@ -17,6 +17,7 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.PriceListDs" ,{
 		{name:"entityFQN", type:"string"},
 		{name:"currencyId", type:"int", useNull:true},
 		{name:"currency", type:"string"},
+		{name:"salesList", type:"boolean"},
 		{name:"isDefault", type:"boolean"}
 	],
 	validations: [  
@@ -46,6 +47,7 @@ Ext.define("net.nan21.dnet.module.mm.price.ds.model.PriceListDsFilter" ,{
 		{name:"currencyId_From",type:"int", useNull:true},
 		{name:"currencyId_To",type:"int", useNull:true},
 		{name:"currency", type:"string"},
+		{name:"salesList", type:"boolean", useNull:true},
 		{name:"isDefault", type:"boolean", useNull:true}
 	] 
 });

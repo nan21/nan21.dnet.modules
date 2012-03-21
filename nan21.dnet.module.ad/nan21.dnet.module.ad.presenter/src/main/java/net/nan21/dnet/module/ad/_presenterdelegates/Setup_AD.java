@@ -12,7 +12,7 @@ import net.nan21.dnet.core.api.setup.ISetupTaskParam;
 import net.nan21.dnet.core.api.setup.SetupTask;
 import net.nan21.dnet.core.api.setup.SetupTaskParam;
 import net.nan21.dnet.core.presenter.service.AbstractPresenterSetupParticipant;
-import net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobDelegate;
+import net.nan21.dnet.module.ad._presenterdelegates.impex.ImportFromJobPD;
 import net.nan21.dnet.module.ad.client.business.service.IClientService;
 import net.nan21.dnet.module.ad.client.domain.entity.Client;
 import net.nan21.dnet.module.ad.impex.business.service.IImportJobService;
@@ -68,7 +68,7 @@ public class Setup_AD extends AbstractPresenterSetupParticipant implements
 			ImportJobDs importFromJob = new ImportJobDs();
 			importFromJob.setId(ij.getId());
 
-			ImportFromJobDelegate importFromJobDelegate = new ImportFromJobDelegate();
+			ImportFromJobPD importFromJobDelegate = new ImportFromJobPD();
 			importFromJobDelegate.setAppContext(appContext);
 			//importFromJobDelegate.setEntityServiceFactories(getEntityServiceFactories());			
 			importFromJobDelegate.execute(importFromJob);

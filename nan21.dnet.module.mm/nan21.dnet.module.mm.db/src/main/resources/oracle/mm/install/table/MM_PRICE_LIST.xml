@@ -24,6 +24,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="NAME" type="varchar2(255)">
 				<constraints nullable="false" /></column>	 
+			<column name="SALESLIST" type="number(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="UUID" type="varchar2(36)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="number(19)">

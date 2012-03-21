@@ -73,6 +73,11 @@ public class PriceList implements Serializable, IModelWithId,
     @NotNull
     private Boolean isDefault;
 
+    /** SalesList. */
+    @Column(name = "SALESLIST", nullable = false)
+    @NotNull
+    private Boolean salesList;
+
     /**
      * Name of entity.
      */
@@ -164,6 +169,14 @@ public class PriceList implements Serializable, IModelWithId,
 
     public void setIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
+    }
+
+    public Boolean getSalesList() {
+        return this.salesList;
+    }
+
+    public void setSalesList(Boolean salesList) {
+        this.salesList = salesList;
     }
 
     public String getName() {
@@ -287,6 +300,9 @@ public class PriceList implements Serializable, IModelWithId,
         }
         if (this.isDefault == null) {
             event.updateAttributeWithObject("isDefault", false);
+        }
+        if (this.salesList == null) {
+            event.updateAttributeWithObject("salesList", false);
         }
         if (this.active == null) {
             event.updateAttributeWithObject("active", false);

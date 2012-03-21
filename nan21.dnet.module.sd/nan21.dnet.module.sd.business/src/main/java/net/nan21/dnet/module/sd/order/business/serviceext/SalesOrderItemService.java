@@ -78,6 +78,9 @@ public class SalesOrderItemService
 						"select sum(i.netAmount) from SalesOrderItem i where i.salesOrder.id = :orderId")
 				.setParameter("orderId", orderId).getSingleResult();
 		SalesOrder order = this.em.find(SalesOrder.class, orderId);
+		if (x==null) {
+			x = 0D;
+		}
 		order.setTotalNetAmount(x.floatValue());
 		this.em.merge(order);
 	}

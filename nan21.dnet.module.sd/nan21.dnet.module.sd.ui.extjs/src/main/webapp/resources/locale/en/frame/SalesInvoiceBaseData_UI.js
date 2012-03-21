@@ -1,11 +1,11 @@
 
 Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI$Trl", {  	  	
-	canvasInvType__ttl : "Invoice type",
-	canvasInvStatus__ttl : "Invoice status",
+	canvasInvType__ttl : "Sales invoice type",
+	canvasInvStatus__ttl : "Sales invoice status",
 	
-	tlbInvType__ttl : "Invoice type",
-	tlbInvStatus__ttl : "Invoice status",
+	tlbInvType__ttl : "Sales invoice type",
+	tlbInvStatus__ttl : "Sales invoice status",
 	
 	
-	title: "SD Base data"
+	title: "Sales invoice base data"
 });

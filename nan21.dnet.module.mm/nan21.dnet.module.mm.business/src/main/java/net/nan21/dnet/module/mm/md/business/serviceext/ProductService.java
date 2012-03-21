@@ -7,7 +7,7 @@ package net.nan21.dnet.module.mm.md.business.serviceext;
 
 import java.util.List;
 
-import net.nan21.dnet.module.mm._businessdelegates.md.SynchronizeProductAttribute;
+import net.nan21.dnet.module.mm._businessdelegates.md.SynchronizeProductAttributeBD;
 import net.nan21.dnet.module.mm.md.business.service.IProductService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 
@@ -19,7 +19,7 @@ public class ProductService extends
 	protected void postInsert(List<Product> list) throws Exception {
 		for (Product product : list) {
 			if (product.getAttributeGroup() != null) {
-				this.getBusinessDelegate(SynchronizeProductAttribute.class)
+				this.getBusinessDelegate(SynchronizeProductAttributeBD.class)
 				.addAttributesToProduct(product);
 			}
 		}
@@ -40,7 +40,7 @@ public class ProductService extends
 	protected void postUpdate(List<Product> list) throws Exception {
 		for (Product product : list) {
 			if (product.getAttributeGroup() != null) {
-				this.getBusinessDelegate(SynchronizeProductAttribute.class)
+				this.getBusinessDelegate(SynchronizeProductAttributeBD.class)
 				.synchronizeProductAttributes(product);
 			}
 		}

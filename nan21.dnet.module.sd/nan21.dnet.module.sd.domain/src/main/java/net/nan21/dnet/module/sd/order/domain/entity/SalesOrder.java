@@ -38,8 +38,6 @@ import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
 import net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
-import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus;
-import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType;
 import net.nan21.dnet.module.sd.order.domain.eventhandler.SalesOrderEventHandler;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
@@ -73,6 +71,11 @@ public class SalesOrder implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_IDS = "SalesOrder.findByIds";
 
+    /** Code. */
+    @Column(name = "CODE", nullable = false, length = 32)
+    @NotBlank
+    private String code;
+
     /** DocDate. */
     @Temporal(TemporalType.DATE)
     @Column(name = "DOCDATE", nullable = false)
@@ -90,33 +93,6 @@ public class SalesOrder implements Serializable, IModelWithId,
     /** TotalAmount. */
     @Column(name = "TOTALAMOUNT", scale = 2)
     private Float totalAmount;
-
-    /**
-     * Name of entity.
-     */
-    @Column(name = "NAME", nullable = false, length = 255)
-    @NotBlank
-    private String name;
-
-    /**
-     * Code of entity.
-     */
-    @Column(name = "CODE", nullable = false, length = 32)
-    @NotBlank
-    private String code;
-
-    /**
-     * Flag which indicates if this record is used.
-     */
-    @Column(name = "ACTIVE", nullable = false)
-    @NotNull
-    private Boolean active;
-
-    /**
-     * Notes about this record. 
-     */
-    @Column(name = "NOTES", length = 4000)
-    private String notes;
 
     /**
      * Identifies the client(tenant) which owns this record.
@@ -177,12 +153,6 @@ public class SalesOrder implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesOrderStatus.class)
-    @JoinColumn(name = "STATUS_ID", referencedColumnName = "ID")
-    private SalesOrderStatus status;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesOrderType.class)
-    @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
-    private SalesOrderType type;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PriceList.class)
     @JoinColumn(name = "PRICELIST_ID", referencedColumnName = "ID")
     private PriceList priceList;
@@ -219,6 +189,14 @@ public class SalesOrder implements Serializable, IModelWithId,
     private Collection<SalesOrderItem> lines;
 
     /* ============== getters - setters ================== */
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public Date getDocDate() {
         return this.docDate;
@@ -259,38 +237,6 @@ public class SalesOrder implements Serializable, IModelWithId,
 
     public void setBusinessObject(String businessObject) {
 
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Boolean getActive() {
-        return this.active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public String getNotes() {
-        return this.notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
     }
 
     public Long getClientId() {
@@ -364,22 +310,6 @@ public class SalesOrder implements Serializable, IModelWithId,
 
     public void setClassName(String className) {
 
-    }
-
-    public SalesOrderStatus getStatus() {
-        return this.status;
-    }
-
-    public void setStatus(SalesOrderStatus status) {
-        this.status = status;
-    }
-
-    public SalesOrderType getType() {
-        return this.type;
-    }
-
-    public void setType(SalesOrderType type) {
-        this.type = type;
     }
 
     public PriceList getPriceList() {
@@ -491,9 +421,6 @@ public class SalesOrder implements Serializable, IModelWithId,
         if (this.uuid == null || this.uuid.equals("")) {
             event.updateAttributeWithObject("uuid", UUID.randomUUID()
                     .toString().toUpperCase());
-        }
-        if (this.active == null) {
-            event.updateAttributeWithObject("active", false);
         }
         if (this.code == null || this.code.equals("")) {
             event.updateAttributeWithObject("code", "SO-" + this.getId());

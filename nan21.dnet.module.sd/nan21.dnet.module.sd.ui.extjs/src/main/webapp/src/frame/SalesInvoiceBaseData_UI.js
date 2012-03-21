@@ -18,8 +18,8 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI", {
 		.addDcFilterFormView("invStatus",{ name:"invStatusFilter", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$Filter",height:120})	 
 		.addDcEditGridView("invStatus",{ name:"invStatusEditList", xtype:"net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceStatus$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasInvType", layout:"border", defaults:{split:true},title:"Invoice type",preventHeader:true})  	 
-		.addPanel({name: "canvasInvStatus", layout:"border", defaults:{split:true},title:"Invoice status",preventHeader:true})  	 
+		.addPanel({name: "canvasInvType", layout:"border", defaults:{split:true},title:"Sales invoice type",preventHeader:true})  	 
+		.addPanel({name: "canvasInvStatus", layout:"border", defaults:{split:true},title:"Sales invoice status",preventHeader:true})  	 
 			
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
@@ -41,8 +41,8 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbInvType", {dc:"invType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Invoice type"}).end()
-			.beginToolbar("tlbInvStatus", {dc:"invStatus"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Invoice status"}).end(); 	
+			.beginToolbar("tlbInvType", {dc:"invType"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Sales invoice type"}).end()
+			.beginToolbar("tlbInvStatus", {dc:"invStatus"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Sales invoice status"}).end(); 	
 	}
 
 });  

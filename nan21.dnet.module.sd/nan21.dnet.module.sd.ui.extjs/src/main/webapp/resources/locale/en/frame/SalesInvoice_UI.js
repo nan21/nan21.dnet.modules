@@ -4,8 +4,8 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI$Trl", {
 	atchEditList__ttl : "Attachments",
 	notesPanel__ttl : "Notes",
 	
-	tlbInvList__ttl : "Invoices",
-	tlbInvEdit__ttl : "Invoice",
+	tlbInvList__ttl : "Sales invoices",
+	tlbInvEdit__ttl : "Sales invoice",
 	
 	btnViewAttachment__ttl : "View",
 	btnViewAttachment__desc : "View the selected attachment",

@@ -1,10 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {  	  	
 	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docDate__lbl :  "Din",
-	businessObject__lbl :  "@businessObject",	typeId__lbl :    "Tip (ID)",
-	type__lbl :    "Tip",
-	status__lbl :    "Stare",
-	customerId__lbl :    "Terţ (ID)",
+	businessObject__lbl :  "@businessObject",	customerId__lbl :    "Terţ (ID)",
 	customerUuid__lbl :    "Uuid",
 	customerCode__lbl :    "Terţ (Cod)",
 	customer__lbl :    "Terţ",
