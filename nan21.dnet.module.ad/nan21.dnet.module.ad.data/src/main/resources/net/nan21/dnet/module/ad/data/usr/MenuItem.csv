@@ -1,135 +1,142 @@
-"name";"title";"menu";"sequenceNo";"frame";"bundle";"active";"description";"separatorBefore";"separatorAfter";"iconUrl";"uuid"
-"AbsenceBaseData_UI";"Absence base data";;"10";"net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"522F2ED5-B27C-4FC4-8873-F2A61CB5FC8B"
-"Absence_UI";"Absences";;"20";"net.nan21.dnet.module.hr.time.frame.Absence_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"C857C0D4-4E58-4558-B6B0-60F876458228"
-"AccessControl_UI";"Access rights";;"10";"net.nan21.dnet.module.ad.usr.frame.AccessControl_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"BA12DB53-F68B-49B2-8FC1-762BBC6AAEDA"
-"AsgnAccessControl_UI";"Access rights - ASGN";;"30";"net.nan21.dnet.module.ad.usr.frame.AsgnAccessControl_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"7A0AE1EC-115D-4C7F-B0EE-9E53F9EBB919"
-"Assignables_UI";"Assignable resources";;"50";"net.nan21.dnet.module.ad.usr.frame.Assignables_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"CA6114A4-BDE3-4BED-BC94-E8DCB3D26E83"
-"AttachmentType_UI";"Attachment types";;"10";"net.nan21.dnet.module.ad.data.frame.AttachmentType_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"6835FDF8-A421-483F-BB1A-2AB0377E50FF"
-"Attachments_UI";"Attachments";;"20";"net.nan21.dnet.module.ad.data.frame.Attachments_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"A31E4E9E-DC95-4391-9F4D-B93D06903C52"
-"BP_BaseData_UI";"Definitions (BP)";;"10";"net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"80DFC3ED-C7DD-4D4A-B989-092587D34C4E"
-"BPartner_UI";"Business partners";;"10";"net.nan21.dnet.module.bp.md.frame.BPartner_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"33D9B4AC-45B1-4883-BB09-805DF6924034"
-"Bank_UI";"Banks";;"20";"net.nan21.dnet.module.bp.base.frame.Bank_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"EB074EFD-670D-4AB2-BA7B-4724ECE0065E"
-"BpAccount_UI";"Business partner accounts";;"30";"net.nan21.dnet.module.bp.md.frame.BpAccount_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"F7F63C02-70BC-49AA-8BD8-0E4ADE5B8A44"
-"CalendarEventTypeDef_UI";"Calendar event definitions";;"10";"net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"FB99FFEA-380D-4823-B4A2-E94B6BC3EF8C"
-"Classifications_UI";"Classifications";;"10";"net.nan21.dnet.module.bd.standards.frame.Classifications_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"F9AC9074-2391-4D7F-8D56-038447272376"
-"Contact_UI";"Contacts";;"20";"net.nan21.dnet.module.bp.md.frame.Contact_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"9B7FE821-8AEF-452C-B532-5B2DEC4AB63F"
-"Countries_UI";"Countries";;"10";"net.nan21.dnet.module.bd.geo.frame.Countries_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"35C0E843-2635-483B-A0B9-61E42184EC79"
-"CountryMD_UI";"Country with details";;"20";"net.nan21.dnet.module.bd.geo.frame.CountryMD_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"4AAAE545-0B6F-4CBA-A2D7-28261FA3E91F"
-"CourseType_UI";"Course types";;"10";"net.nan21.dnet.module.hr.training.frame.CourseType_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"732CE018-2C60-4EED-AAC6-5CA010983964"
-"Course_UI";"Courses";;"20";"net.nan21.dnet.module.hr.training.frame.Course_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"2DA20104-FBB8-4E83-982D-8DB3320CD676"
-"CsvExport_UI";"CSV exports";;"10";"net.nan21.dnet.module.ad.impex.frame.CsvExport_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"0F4610A3-8225-4396-BF0D-ADE6EFD21402"
-"Currencies_UI";"Currencies";;"10";"net.nan21.dnet.module.bd.currency.frame.Currencies_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"22E6157A-9EE8-4DBE-812D-E99E8F6C673F"
-"CurrencyXRates_UI";"Currency exchange rates";;"30";"net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"F1FE9743-652C-476D-B580-35F58E2295C2"
-"CurrencyXrateProvider_UI";"Currency exchange rate providers";;"20";"net.nan21.dnet.module.bd.currency.frame.CurrencyXrateProvider_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"1BA00D5D-BC21-4B41-A9DE-747624586E3B"
-"DsAccessControl_UI";"Access rights - DS";;"20";"net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"45CDD0AA-9270-48FA-84AD-688C8D846BCC"
-"DsMethodAccessControl_UI";"Access rights - DS method";;"40";"net.nan21.dnet.module.ad.usr.frame.DsMethodAccessControl_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"0A1E2CEC-CF34-4704-8FD9-4A9ECD382F21"
-"ElementValue_UI";"Element values";;"10";"net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"B9999F69-5750-4EB9-91DA-0EC4B01D3F3D"
-"Element_UI";"Elements";;"20";"net.nan21.dnet.module.hr.payroll.frame.Element_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"A6FDCCF2-B457-42A7-96CF-E0949A9A0654"
-"EmployeeTypeDefs_UI";"Employee base data definition";;"10";"net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"660D8559-7AF4-4FA5-9020-B6B112C283C9"
-"Employee_UI";"Employees";;"20";"net.nan21.dnet.module.hr.employee.frame.Employee_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"E6C6F1E6-C3B6-4363-9D6F-21AEB4B7009A"
-"ExportJob_UI";"Export jobs";;"30";"net.nan21.dnet.module.ad.impex.frame.ExportJob_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"DBE332BD-D604-4092-93F6-61FED7D321A3"
-"ExportMap_UI";"Export file-sets";;"20";"net.nan21.dnet.module.ad.impex.frame.ExportMap_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"37BE5999-BEEB-4FA3-A9B5-C8B23D96F29D"
-"GradeRate_UI";"Grade rates";;"10";"net.nan21.dnet.module.hr.grade.frame.GradeRate_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"3107807A-4092-4395-803B-45FF0977CE8C"
-"Grade_UI";"Grades";;"20";"net.nan21.dnet.module.hr.grade.frame.Grade_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"0E5E2A2C-EFD0-42C3-B5CF-0B0D9A81B5C0"
-"ImportJob_UI";"Impport jobs";;"30";"net.nan21.dnet.module.ad.impex.frame.ImportJob_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"8E3DDCCB-0676-417C-AAD5-D938911570E1"
-"ImportMapItem_UI";"Import files";;"20";"net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"8D982970-B6AA-4462-B97A-EDC7AA337802"
-"ImportMap_UI";"Import file-sets";;"10";"net.nan21.dnet.module.ad.impex.frame.ImportMap_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"F184A86E-8359-4C6C-92EF-F4A99325EE3A"
-"InvOperations_UI";"Inventory operations";;"30";"net.nan21.dnet.module.mm.inventory.frame.InvOperations_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"27AF9F03-43DB-4836-9A7F-1AB023F251BC"
-"InvTransactions_UI";"Inventory transactions";;"20";"net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"B52B3BCD-9C40-4F62-BEF9-DE82221E1ED5"
-"InventoryBaseData_UI";"Inventory base data";;"40";"net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"D1079654-2C0A-4086-840C-D18EE36A5939"
-"IssueBaseData_UI";"Issue base data";;"20";"net.nan21.dnet.module.pj.base.frame.IssueBaseData_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";;"AAB121E7-54C9-4E90-87CF-FE3D64E3C0BD"
-"IssueChangelog_UI";"Changelog";;"40";"net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";;"0EC48B7A-4D17-4110-AA22-DA4913241C26"
-"IssueRoadmap_UI";"Roadmap";;"30";"net.nan21.dnet.module.pj.md.frame.IssueRoadmap_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";;"F063307D-4A6D-46EC-8839-04365080980C"
-"IssueTask_UI";"Tasks";;"30";"net.nan21.dnet.module.pj.md.frame.IssueTask_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";;"96E581A5-5E6E-4C46-9B58-629E33C419AF"
-"IssuesMnt_UI";"Issue maintenance";;"20";"net.nan21.dnet.module.pj.md.frame.IssuesMnt_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";;"0A8483B0-1646-4008-B6AB-3514F70DED22"
-"Issues_UI";"Incidents";;"10";"net.nan21.dnet.module.pj.md.frame.Issues_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";;"6CDF6D2F-8D91-405B-8E57-50BC45902E91"
-"JobBaseDataDef_UI";"Job base data definitions";;"10";"net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"B0E2114A-1B88-4689-97DD-C3917591ED64"
-"Job_UI";"Jobs";;"20";"net.nan21.dnet.module.hr.job.frame.Job_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"38618BFA-DA7F-4E25-9F7C-CCB0E3B8874A"
-"Menu_UI";"Menus";;"40";"net.nan21.dnet.module.ad.usr.frame.Menu_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"999755EE-A83A-453B-838D-41BA279B09B4"
-"MyCalendarEvent_UI";"Calendar events";;;"net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";;"B311141F-FE2C-482F-B101-BB13329240B6"
-"MyClient_UI";"Client info";;"10";"net.nan21.dnet.module.ad.client.frame.MyClient_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"03105902-7512-45A3-919D-0D434EA33819"
-"OpportunityBaseData_UI";"Opportunity base data";;"10";"net.nan21.dnet.module.sd.opportunity.frame.OpportunityBaseData_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";;"4296BA9A-9BBC-4EC1-A77A-FB3795897E11"
-"Opportunity_UI";"Opportunities";;"20";"net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";;"794F5109-6D0B-4220-8026-E56372961850"
-"Org_UI";"Organizations";;"10";"net.nan21.dnet.module.bd.org.frame.Org_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"11F0C89B-9991-472C-8932-40D94DA62401"
-"PayScaleRate_UI";"Pay scale rates";;"30";"net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"A7257F1B-E5EF-41A2-A0D9-1E60F233C01D"
-"PayScale_UI";"Pay scales";;"40";"net.nan21.dnet.module.hr.grade.frame.PayScale_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"2B8977CC-1841-4A4C-ABD8-2C5D2E734D4D"
-"Payroll_UI";"Payroll";;"30";"net.nan21.dnet.module.hr.payroll.frame.Payroll_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"4DA765B8-4D36-4A83-89DC-999EFFD8C25A"
-"Position_UI";"Positions";;"30";"net.nan21.dnet.module.hr.job.frame.Position_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"24254F8C-22C2-4040-99A6-BB9E5FA1AE1F"
-"PriceList_UI";"Price-lists";;"10";"net.nan21.dnet.module.mm.price.frame.PriceList_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"3D2C20C9-843F-4516-8718-B2F2BC3BB2E5"
-"ProductAccountGroup_UI";"Product account groups";;"30";"net.nan21.dnet.module.mm.md.frame.ProductAccountGroup_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"E1BF16D2-4660-4792-9F93-57C17E8DD9E3"
-"ProductAttributeDefs_UI";"Attributes definition";;"20";"net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"CEF0C535-E7F7-41F0-9557-E3419C861920"
-"ProductAttributeValue_UI";"Product atributes";;"30";"net.nan21.dnet.module.mm.md.frame.ProductAttributeValue_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"6A3BD52C-48EC-41E6-9DBF-7A07E6A067D0"
-"ProductBaseData_UI";"Product base data";;"10";"net.nan21.dnet.module.mm.md.frame.ProductBaseData_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"8A40E48C-6092-4226-9F07-236496466E1E"
-"ProductCategory_UI";"Product categories";;"10";"net.nan21.dnet.module.mm.md.frame.ProductCategory_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"4454BBF2-783E-4A94-A72F-1E29050E0169"
-"ProductPriceReport_UI";"Price report";;"20";"net.nan21.dnet.module.mm.price.frame.ProductPriceReport_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"3AD3E183-88FB-4518-89D2-21282035C1C4"
-"Product_UI";"Products";;"20";"net.nan21.dnet.module.mm.md.frame.Product_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"C1714DA7-E704-4D28-85B8-9E5FB71F556D"
-"ProjectBaseData_UI";"Project base data";;"10";"net.nan21.dnet.module.pj.base.frame.ProjectBaseData_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";;"9536ED86-1754-45C7-B776-3E380E698791"
-"ProjectVersions_UI";"Project versions";;"20";"net.nan21.dnet.module.pj.md.frame.ProjectVersions_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";;"F573A295-7BE5-41E8-8FAA-74C7DFE090A2"
-"Projects_UI";"Projects";;"10";"net.nan21.dnet.module.pj.md.frame.Projects_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";;"4E43439D-D01F-46E2-B148-B30EE1078991"
-"RatingLevel_UI";"Rating levels";;"10";"net.nan21.dnet.module.hr.skill.frame.RatingLevel_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"F945F7B0-0660-4402-BD5F-21F5E2F94C52"
-"RatingScale_UI";"Rating scales";;"20";"net.nan21.dnet.module.hr.skill.frame.RatingScale_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"2DC16C8C-E7A5-4311-A6BD-126A31748331"
-"RegionMD_UI";"Region with details";;"40";"net.nan21.dnet.module.bd.geo.frame.RegionMD_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"D9538029-7A50-4D6B-84B3-30B73D9BD65A"
-"Regions_UI";"Regions";;"30";"net.nan21.dnet.module.bd.geo.frame.Regions_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"697FF206-F04E-428B-89E3-2C998B5182A1"
-"ReportServers_UI";"Report servers";;"10";"net.nan21.dnet.module.ad.report.frame.ReportServers_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"1E7590B4-66FE-4063-AF08-512E6478C97D"
-"Reports_UI";"Reports";;"20";"net.nan21.dnet.module.ad.report.frame.Reports_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"77B8A608-D5DF-44BC-B28D-B5A0F951F142"
-"Role_UI";"Roles";;"40";"net.nan21.dnet.module.ad.usr.frame.Role_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"003B44E3-7842-4F23-92A1-916CEDC240BF"
-"SalesInvoiceBaseData_UI";"Base data(Sales invoice)";;"10";"net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";;"474B6B6F-B5E9-4B9E-B025-C1A8D527F96B"
-"SalesInvoice_UI";"Invoices";;"20";"net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";;"F9A480B3-F92A-4C4C-94E5-D53A7B67ED23"
-"SalesOrderBaseData_UI";"Base data(Sales orders)";;"10";"net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";;"6F29E752-5E87-44B8-8EE0-DA5EC6B1A6E7"
-"SalesOrder_UI";"Orders";;"20";"net.nan21.dnet.module.sd.order.frame.SalesOrder_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";;"4DC1DF9C-C14B-4592-B066-2F4A67922E47"
-"SkillType_UI";"Competence types";;"30";"net.nan21.dnet.module.hr.skill.frame.SkillType_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"A515AA21-D60E-49FE-B646-F213C8219B3D"
-"Skill_UI";"Competences";;"40";"net.nan21.dnet.module.hr.skill.frame.Skill_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";;"EAC412A6-A53B-40E1-9877-DF52111303D6"
-"SubInventories_UI";"Sub-inventories";;"10";"net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";;"42F44EA5-DB7F-490F-B1B2-ACF14413029C"
-"SysDataSources_UI";"System components: Data-sources";;"10";"net.nan21.dnet.module.ad.system.frame.SysDataSources_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"9B1F01F8-A830-4E36-BF00-DEA18A07BDAF"
-"SysDateFormat_UI";"Date formats";;"30";"net.nan21.dnet.module.ad.system.frame.SysDateFormat_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"0F20D128-6996-446E-881C-26E55F9B65ED"
-"SysParam_UI";"System parameters";;"20";"net.nan21.dnet.module.ad.system.frame.SysParam_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"08908ECE-12DD-4906-8D89-E49A7680F4AA"
-"UiViewState_UI";"View states";;"50";"net.nan21.dnet.module.ad.system.frame.UiViewState_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"C355F41B-C79A-456F-BD66-A70FE28301A3"
-"SysFrameExtension_UI";"Frame extensions";;"60";"net.nan21.dnet.module.ad.system.frame.SysFrameExtension_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"C355F41B-C79A-456F-BD66-A70FE28501A3"
-"UomConversion_UI";"Unit of measure conversions";;"40";"net.nan21.dnet.module.bd.uom.frame.UomConversion_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"70AF42FC-0CFC-4341-9358-768CC17F608F"
-"UomMD_UI";"Unit of measure with details";;"30";"net.nan21.dnet.module.bd.uom.frame.UomMD_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"1207ED1F-6C67-436E-9FDD-B0ED353F347E"
-"UomType_UI";"Unit of measure types";;"10";"net.nan21.dnet.module.bd.uom.frame.UomType_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"904E688A-2D8D-4315-A7FE-B6236BE498FA"
-"Uoms_UI";"Units of measure";;"20";"net.nan21.dnet.module.bd.uom.frame.Uoms_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";;"0BC544DC-7999-494D-A093-558D5BD889B8"
-"UserGroups_UI";"User groups";;"20";"net.nan21.dnet.module.ad.usr.frame.UserGroups_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"DCC19BA4-1FD3-42D0-B19A-37D5CB36E4B8"
-"UserTypes_UI";"User types";;"30";"net.nan21.dnet.module.ad.usr.frame.UserTypes_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"C9939FDF-9CF5-4A18-8292-A22926368F81"
-"Users_UI";"Users";;"10";"net.nan21.dnet.module.ad.usr.frame.Users_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"C69ED778-B50B-4953-BBA7-BCD65113FFE9"
-"WorkflowAdmin_UI";"Workflow admin console";;"20";"net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"B527DADD-BEE7-449D-B234-7512501D1ABA"
-"WorkflowDef_UI";"Workflow definition";;"10";"net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"E4AB79DD-0700-45CF-B26D-6C5CA42592BE"
-"WorkflowTodo_UI";"Tasks";;"30";"net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";;"7885FA11-FADF-4C44-AA6E-16A52BFDA2D8"
-"ad-menu-acl";"Access control";;"2";;;"true";;"false";"false";;"522573B7-0D03-428E-994C-A0E2E5ADB1B5"
-"ad-menu-client";"Client";"AD";"10";;;"true";;"false";"false";;"ED392E4B-EC85-438B-A2E8-ED086CC89E7C"
-"ad-menu-data";"Data";"AD";"40";;;"true";;"false";"false";;"0D2B7435-2E2B-4797-9925-5AC417677E22"
-"ad-menu-exp";"Export";;"2";;;"true";;"false";"false";;"0C4D1FCD-AC15-47EE-8C74-D037A6E4377C"
-"ad-menu-imp";"Import";;"1";;;"true";;"false";"false";;"231C334A-6E0A-44E4-BF86-1F0CFD82C90C"
-"ad-menu-impex";"Import-Export";"AD";"50";;;"true";;"false";"false";;"BF6A5BBF-09BE-448A-B0B1-C6858FDF24DB"
-"ad-menu-rep";"Reports";"AD";"70";;;"true";;"false";"false";;"351364AC-E358-4C3A-B22B-80606A7A88DB"
-"ad-menu-security";"Security";"AD";"20";;;"true";;"false";"false";;"65DB33F0-DA4F-4064-9451-1B2C2CDF3B32"
-"ad-menu-system";"System";"AD";"30";;;"true";;"false";"false";;"D7270A0D-E838-4C32-AB17-29ED0B20BD94"
-"ad-menu-usr";"Users";;"1";;;"true";;"false";"false";;"DD6B7033-E87C-455F-AB57-1C448BA88B6A"
-"ad-menu-wf";"Workflow";"AD";"60";;;"true";;"false";"false";;"F393FA55-868C-4793-9D37-6B1183385FC1"
-"bd-menu-currency";"Currencies";"BD";"20";;;"true";;"false";"false";;"574456B6-741D-4F75-B404-63E23CF93C3B"
-"bd-menu-geo";"Geography";"BD";"30";;;"true";;"false";"false";;"1DEEAFB3-6117-41DE-B260-362B2EA0D0FB"
-"bd-menu-org";"Organizations";"BD";"40";;;"true";;"false";"false";;"F4C94171-01C2-42EB-BD82-CAA56C8D557C"
-"bd-menu-stds";"Standards";"BD";"50";;;"true";;"false";"false";;"0A43541D-B258-47DD-AEA1-C239FC366BF1"
-"bd-menu-uom";"Measuring units";"BD";"10";;;"true";;"false";"false";;"5E549EAB-C944-4745-B34B-65550C221E75"
-"bp-menu";"Business partners";"CRM";;;;"true";;"false";"false";;"BDD34306-97D6-487E-9CD6-6023755E855E"
-"bp-menu-base";"Base-data";;;;;"true";;"false";"false";;"E154C409-3A88-4857-AB5B-1C1CB9D9EAB6"
-"bp-menu-md";"Master-data";;;;;"true";;"false";"false";;"9DB01654-484F-4FEE-9306-4FDC353DD71A"
-"hr-menu-employee";"Employees";"HRM";"40";;;"true";;"false";"false";;"6DA2194B-F4CD-4C95-B895-27FF78D4D779"
-"hr-menu-grade";"Grades";"HRM";"20";;;"true";;"false";"false";;"7411FF0B-5491-4045-ADD3-B7C9680E3E6D"
-"hr-menu-job";"Jobs";"HRM";"30";;;"true";;"false";"false";;"C8C0706F-0C77-4752-BF21-5562038107C8"
-"hr-menu-payroll";"Payroll";"HRM";"50";;;"true";;"false";"false";;"FE71B7E3-69F4-471A-911F-331BF54C171B"
-"hr-menu-skill";"Competence";"HRM";"10";;;"true";;"false";"false";;"85DB0731-CBBA-4342-A436-25A4BB6CB9FA"
-"hr-menu-time";"Time management";"HRM";"70";;;"true";;"false";"false";;"2F16BB22-1F91-45F0-A92C-3793FEAD316D"
-"hr-menu-training";"Training";"HRM";"60";;;"true";;"false";"false";;"E816561D-B3FB-4C67-8DFF-CF51288E761E"
-"mm-menu";"Material management";"CRM";;;;"true";;"false";"false";;"F15C78BF-46B9-44A2-8275-9C92AF824425"
-"mm-menu-base";"Base-data";;"10";;;"true";;"false";"false";;"6DD1ADC9-3F00-49D6-A797-D2752A9CBC66"
-"mm-menu-inventory";"Inventory";;"30";;;"true";;"false";"false";;"E42B4DAD-ACDF-4A5C-8851-FADB3769494B"
-"mm-menu-md";"Master-data";;"20";;;"true";;"false";"false";;"6F941C0A-24F7-439E-95ED-D71751FA32CD"
-"mm-menu-price";"Price";;"40";;;"true";;"false";"false";;"B394F3B8-B119-4E0D-995A-EB27A23DF631"
-"pj-menu-base";"Base data";"PJ";"10";;;"true";;"false";"false";;"4AAD067E-820C-402E-B9E9-4F4ACE25336E"
-"pj-menu-issues";"Incidents";"PJ";"20";;;"true";;"false";"false";;"D308B693-8111-411E-90D6-6ACB8D38E5D6"
-"pj-menu-projects";"Projects";"PJ";"30";;;"true";;"false";"false";;"ECC5AEF7-528E-4E1E-8E7D-641EC048A698"
-"sd-menu";"Sales & Distribution";"CRM";"40";;;"true";;"false";"false";;"54F954C7-344E-45F9-BF53-4A1EAC282EDA"
-"sd-menu-invoice";"Invoices";;"30";;;"true";;"false";"false";;"C8E224AF-2A75-4A0C-BD5E-83CE4361F1FD"
-"sd-menu-opportunity";"Opportunities";;"10";;;"true";;"false";"false";;"4849F390-0662-45F5-953E-EEA73B4149D0"
-"sd-menu-order";"Orders";;"20";;;"true";;"false";"false";;"0C24524A-5818-47D1-987A-E7B2650B67FE"
+"sequenceNo";"name";"title";"menu";"frame";"bundle";"active";"description";"separatorBefore";"separatorAfter";"iconUrl"
+"1";"ad-menu-imp";"Import";;;;"true";;"false";"false";
+"1";"ad-menu-usr";"Users";;;;"true";;"false";"false";
+"2";"ad-menu-acl";"Access control";;;;"true";;"false";"false";
+"2";"ad-menu-exp";"Export";;;;"true";;"false";"false";
+"10";"OpportunityBaseData_UI";"Opportunity base data";;"net.nan21.dnet.module.sd.opportunity.frame.OpportunityBaseData_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";
+"10";"BP_BaseData_UI";"Definitions (BP)";;"net.nan21.dnet.module.bp.base.frame.BP_BaseData_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";
+"10";"EmployeeTypeDefs_UI";"Employee base data definition";;"net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"10";"RatingLevel_UI";"Rating levels";;"net.nan21.dnet.module.hr.skill.frame.RatingLevel_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"10";"MyClient_UI";"Client info";;"net.nan21.dnet.module.ad.client.frame.MyClient_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"10";"GradeRate_UI";"Grade rates";;"net.nan21.dnet.module.hr.grade.frame.GradeRate_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"10";"BPartner_UI";"Business partners";;"net.nan21.dnet.module.bp.md.frame.BPartner_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";
+"10";"sd-menu-opportunity";"Opportunities";"SD";;;"true";;"false";"false";
+"10";"ReportServers_UI";"Report servers";;"net.nan21.dnet.module.ad.report.frame.ReportServers_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"10";"SubInventories_UI";"Sub-inventories";;"net.nan21.dnet.module.mm.inventory.frame.SubInventories_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"10";"Currencies_UI";"Currencies";;"net.nan21.dnet.module.bd.currency.frame.Currencies_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"10";"CsvExport_UI";"CSV exports";;"net.nan21.dnet.module.ad.impex.frame.CsvExport_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"10";"AccessControl_UI";"Access rights";;"net.nan21.dnet.module.ad.usr.frame.AccessControl_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"10";"ElementValue_UI";"Element values";;"net.nan21.dnet.module.hr.payroll.frame.ElementValue_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"10";"Classifications_UI";"Classifications";;"net.nan21.dnet.module.bd.standards.frame.Classifications_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"10";"ProductCategory_UI";"Product categories";;"net.nan21.dnet.module.mm.md.frame.ProductCategory_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"10";"CourseType_UI";"Course types";;"net.nan21.dnet.module.hr.training.frame.CourseType_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"10";"pj-menu-base";"Base data";"PJ";;;"true";;"false";"false";
+"10";"JobBaseDataDef_UI";"Job base data definitions";;"net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"10";"AttachmentType_UI";"Attachment types";;"net.nan21.dnet.module.ad.data.frame.AttachmentType_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"10";"bd-menu-uom";"Measuring units";;;;"true";;"false";"false";
+"10";"AbsenceBaseData_UI";"Absence base data";;"net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"10";"ProjectBaseData_UI";"Project base data";;"net.nan21.dnet.module.pj.base.frame.ProjectBaseData_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
+"10";"Users_UI";"Users";;"net.nan21.dnet.module.ad.usr.frame.Users_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"10";"Org_UI";"Organizations";;"net.nan21.dnet.module.bd.org.frame.Org_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"10";"Projects_UI";"Projects";;"net.nan21.dnet.module.pj.md.frame.Projects_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
+"10";"bd-menu";"Base data";"MDM";;;"true";;"false";"false";
+"10";"Issues_UI";"Incidents";;"net.nan21.dnet.module.pj.md.frame.Issues_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
+"10";"ImportMap_UI";"Import file-sets";;"net.nan21.dnet.module.ad.impex.frame.ImportMap_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"10";"PriceList_UI";"Price-lists";;"net.nan21.dnet.module.mm.price.frame.PriceList_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"10";"ad-menu-client";"Client";"AD";;;"true";;"false";"false";
+"10";"UomType_UI";"Unit of measure types";;"net.nan21.dnet.module.bd.uom.frame.UomType_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"10";"mm-menu-base";"Base-data";;;;"true";;"false";"false";
+"10";"hr-menu-skill";"Competence";"HRM";;;"true";;"false";"false";
+"10";"SalesOrderBaseData_UI";"Base data(Sales orders)";;"net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI";"nan21.dnet.module.sd.ui.extjs";"false";;"false";"false";
+"10";"PurchaseInvoiceBaseData_UI";"Base data(Purchase invoice)";;"net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoiceBaseData_UI";"nan21.dnet.module.sc.ui.extjs";"false";;"false";"false";
+"10";"PurchaseOrderBaseData_UI";"Base data(Purchase orders)";;"net.nan21.dnet.module.sc.order.frame.PurchaseOrderBaseData_UI";"nan21.dnet.module.sc.ui.extjs";"false";;"false";"false";
+"10";"SalesInvoiceBaseData_UI";"Base data(Sales invoice)";;"net.nan21.dnet.module.sd.invoice.frame.SalesInvoiceBaseData_UI";"nan21.dnet.module.sd.ui.extjs";"false";;"false";"false";
+"10";"Countries_UI";"Countries";;"net.nan21.dnet.module.bd.geo.frame.Countries_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"10";"SysDataSources_UI";"System components: Data-sources";;"net.nan21.dnet.module.ad.system.frame.SysDataSources_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"10";"WorkflowDef_UI";"Workflow definition";;"net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"10";"CalendarEventTypeDef_UI";"Calendar event definitions";;"net.nan21.dnet.module.bp.calendar.frame.CalendarEventTypeDef_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";
+"10";"ProductBaseData_UI";"Product base data";;"net.nan21.dnet.module.mm.md.frame.ProductBaseData_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"20";"SalesInvoice_UI";"Invoices";;"net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";
+"20";"ImportMapItem_UI";"Import files";;"net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"20";"ad-menu-system";"System";"AD";;;"true";;"false";"false";
+"20";"UserGroups_UI";"User groups";;"net.nan21.dnet.module.ad.usr.frame.UserGroups_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"20";"Course_UI";"Courses";;"net.nan21.dnet.module.hr.training.frame.Course_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"20";"InvTransactions_UI";"Inventory transactions";;"net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"20";"Job_UI";"Jobs";;"net.nan21.dnet.module.hr.job.frame.Job_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"20";"ProductPriceReport_UI";"Price report";;"net.nan21.dnet.module.mm.price.frame.ProductPriceReport_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"20";"ProjectVersions_UI";"Project versions";;"net.nan21.dnet.module.pj.md.frame.ProjectVersions_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
+"20";"Absence_UI";"Absences";;"net.nan21.dnet.module.hr.time.frame.Absence_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"20";"IssueBaseData_UI";"Issue base data";;"net.nan21.dnet.module.pj.base.frame.IssueBaseData_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
+"20";"CurrencyXrateProvider_UI";"Currency exchange rate providers";;"net.nan21.dnet.module.bd.currency.frame.CurrencyXrateProvider_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"20";"Contact_UI";"Contacts";;"net.nan21.dnet.module.bp.md.frame.Contact_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";
+"20";"Bank_UI";"Banks";;"net.nan21.dnet.module.bp.base.frame.Bank_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";
+"20";"Opportunity_UI";"Opportunities";;"net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";
+"20";"Element_UI";"Elements";;"net.nan21.dnet.module.hr.payroll.frame.Element_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"20";"ProductAttributeDefs_UI";"Attributes definition";;"net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"20";"Product_UI";"Products";;"net.nan21.dnet.module.mm.md.frame.Product_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"20";"Reports_UI";"Reports";;"net.nan21.dnet.module.ad.report.frame.Reports_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"20";"WorkflowAdmin_UI";"Workflow admin console";;"net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"20";"PurchaseOrder_UI";"Orders";;"net.nan21.dnet.module.sc.order.frame.PurchaseOrder_UI";"nan21.dnet.module.sc.ui.extjs";"true";;"false";"false";
+"20";"PurchaseInvoice_UI";"Invoices";;"net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI";"nan21.dnet.module.sc.ui.extjs";"true";;"false";"false";
+"20";"sc-menu-order";"Orders";"SCM";;;"true";;"false";"false";
+"20";"SysParam_UI";"System parameters";;"net.nan21.dnet.module.ad.system.frame.SysParam_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"20";"Employee_UI";"Employees";;"net.nan21.dnet.module.hr.employee.frame.Employee_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"20";"IssuesMnt_UI";"Issue maintenance";;"net.nan21.dnet.module.pj.md.frame.IssuesMnt_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
+"20";"DsAccessControl_UI";"Access rights - DS";;"net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"20";"bp-menu";"Business partners";"MDM";;;"true";;"false";"false";
+"20";"ExportMap_UI";"Export file-sets";;"net.nan21.dnet.module.ad.impex.frame.ExportMap_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"20";"hr-menu-grade";"Grades";"HRM";;;"true";;"false";"false";
+"20";"CountryMD_UI";"Country with details";;"net.nan21.dnet.module.bd.geo.frame.CountryMD_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"20";"bd-menu-currency";"Currencies";;;;"true";;"false";"false";
+"20";"Uoms_UI";"Units of measure";;"net.nan21.dnet.module.bd.uom.frame.Uoms_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"20";"RatingScale_UI";"Rating scales";;"net.nan21.dnet.module.hr.skill.frame.RatingScale_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"20";"sd-menu-order";"Orders";"SD";;;"true";;"false";"false";
+"20";"SalesOrder_UI";"Orders";;"net.nan21.dnet.module.sd.order.frame.SalesOrder_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";
+"20";"Grade_UI";"Grades";;"net.nan21.dnet.module.hr.grade.frame.Grade_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"20";"pj-menu-issues";"Incidents";"PJ";;;"true";;"false";"false";
+"20";"Attachments_UI";"Attachments";;"net.nan21.dnet.module.ad.data.frame.Attachments_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"20";"mm-menu-md";"Master-data";;;;"true";;"false";"false";
+"30";"ProductAccountGroup_UI";"Product account groups";;"net.nan21.dnet.module.mm.md.frame.ProductAccountGroup_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"30";"mm-menu";"Material management";"MDM";;;"true";;"false";"false";
+"30";"pj-menu-projects";"Projects";"PJ";;;"true";;"false";"false";
+"30";"ExportJob_UI";"Export jobs";;"net.nan21.dnet.module.ad.impex.frame.ExportJob_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"30";"WorkflowTodo_UI";"Tasks";;"net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"30";"PayScaleRate_UI";"Pay scale rates";;"net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"30";"ProductAttributeValue_UI";"Product atributes";;"net.nan21.dnet.module.mm.md.frame.ProductAttributeValue_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"30";"IssueRoadmap_UI";"Roadmap";;"net.nan21.dnet.module.pj.md.frame.IssueRoadmap_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
+"30";"Position_UI";"Positions";;"net.nan21.dnet.module.hr.job.frame.Position_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"30";"UserTypes_UI";"User types";;"net.nan21.dnet.module.ad.usr.frame.UserTypes_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"30";"AsgnAccessControl_UI";"Access rights - ASGN";;"net.nan21.dnet.module.ad.usr.frame.AsgnAccessControl_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"30";"BpAccount_UI";"Business partner accounts";;"net.nan21.dnet.module.bp.md.frame.BpAccount_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";
+"30";"sc-menu-invoice";"Invoices";"SCM";;;"true";;"false";"false";
+"30";"InvOperations_UI";"Inventory operations";;"net.nan21.dnet.module.mm.inventory.frame.InvOperations_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"30";"bd-menu-geo";"Geography";;;;"true";;"false";"false";
+"30";"SysDateFormat_UI";"Date formats";;"net.nan21.dnet.module.ad.system.frame.SysDateFormat_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"30";"Payroll_UI";"Payroll";;"net.nan21.dnet.module.hr.payroll.frame.Payroll_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"30";"SkillType_UI";"Competence types";;"net.nan21.dnet.module.hr.skill.frame.SkillType_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"30";"Regions_UI";"Regions";;"net.nan21.dnet.module.bd.geo.frame.Regions_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"30";"UomMD_UI";"Unit of measure with details";;"net.nan21.dnet.module.bd.uom.frame.UomMD_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"30";"mm-menu-inventory";"Inventory";;;;"true";;"false";"false";
+"30";"IssueTask_UI";"Tasks";;"net.nan21.dnet.module.pj.md.frame.IssueTask_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
+"30";"ad-menu-security";"Security";"AD";;;"true";;"false";"false";
+"30";"hr-menu-job";"Jobs";"HRM";;;"true";;"false";"false";
+"30";"CurrencyXRates_UI";"Currency exchange rates";;"net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"30";"ImportJob_UI";"Impport jobs";;"net.nan21.dnet.module.ad.impex.frame.ImportJob_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"30";"sd-menu-invoice";"Invoices";"SD";;;"true";;"false";"false";
+"40";"ad-menu-data";"Data";"AD";;;"true";;"false";"false";
+"40";"InventoryBaseData_UI";"Inventory base data";;"net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"40";"hr-menu-employee";"Employees";"HRM";;;"true";;"false";"false";
+"40";"DsMethodAccessControl_UI";"Access rights - DS method";;"net.nan21.dnet.module.ad.usr.frame.DsMethodAccessControl_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"40";"Role_UI";"Roles";;"net.nan21.dnet.module.ad.usr.frame.Role_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"40";"mm-menu-price";"Price";;;;"true";;"false";"false";
+"40";"IssueChangelog_UI";"Changelog";;"net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
+"40";"PayScale_UI";"Pay scales";;"net.nan21.dnet.module.hr.grade.frame.PayScale_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"40";"bd-menu-org";"Organizations";;;;"true";;"false";"false";
+"40";"UomConversion_UI";"Unit of measure conversions";;"net.nan21.dnet.module.bd.uom.frame.UomConversion_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"40";"RegionMD_UI";"Region with details";;"net.nan21.dnet.module.bd.geo.frame.RegionMD_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"40";"Menu_UI";"Menus";;"net.nan21.dnet.module.ad.usr.frame.Menu_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"40";"Skill_UI";"Competences";;"net.nan21.dnet.module.hr.skill.frame.Skill_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"50";"UiViewState_UI";"View states";;"net.nan21.dnet.module.ad.system.frame.UiViewState_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"50";"ad-menu-impex";"Import-Export";"AD";;;"true";;"false";"false";
+"50";"bd-menu-stds";"Standards";;;;"true";;"false";"false";
+"50";"SysFrameExtension_UI";"Frame extensions";;"net.nan21.dnet.module.ad.system.frame.SysFrameExtension_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"50";"hr-menu-payroll";"Payroll";"HRM";;;"true";;"false";"false";
+"50";"Assignables_UI";"Assignable resources";;"net.nan21.dnet.module.ad.usr.frame.Assignables_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"60";"hr-menu-training";"Training";"HRM";;;"true";;"false";"false";
+"60";"ad-menu-wf";"Workflow";"AD";;;"true";;"false";"false";
+"70";"hr-menu-time";"Time management";"HRM";;;"true";;"false";"false";
+"70";"AuditFieldRep_UI";"Audit trails";;"net.nan21.dnet.module.ad.system.frame.AuditFieldRep_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
+"70";"ad-menu-rep";"Reports";"AD";;;"true";;"false";"false";
+;"MyCalendarEvent_UI";"Calendar events";;"net.nan21.dnet.module.bp.calendar.frame.MyCalendarEvent_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";
+;"bp-menu-base";"Base-data";;;;"true";;"false";"false";
+;"bp-menu-md";"Master-data";;;;"true";;"false";"false";

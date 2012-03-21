@@ -1,6 +1,7 @@
 "name";"title";"active";"description"
-"AD";"Administration";"true";"Administration menu"
-"BD";"Base-data";"true";
-"CRM";"CRM";"true";"CRM menu"
-"HRM";"Human Resources";"true";"HRM menu"
-"PJ";"Tracker";"true";"Project/Issue menu"
+"AD";"Administration";"true";
+"HRM";"Human Resources Managment";"true";
+"MDM";"Master-data Management";"true";
+"PJ";"Project Managment";"true";
+"SCM";"Purchasing";"true";
+"SD";"Sales & Distribution";"true";

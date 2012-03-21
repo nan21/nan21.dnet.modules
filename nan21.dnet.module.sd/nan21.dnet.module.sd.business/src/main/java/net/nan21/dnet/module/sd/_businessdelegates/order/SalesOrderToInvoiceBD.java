@@ -15,6 +15,13 @@ public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 
 	public SalesInvoice generateInvoice(SalesOrder order) throws Exception {
 
+		List<SalesInvoice> invs = ((ISalesInvoiceService)this.findEntityService(SalesInvoice.class)).findBySalesOrderId(order.getId());
+		if (invs.size() > 0) {
+			String invCode = invs.get(0).getCode();
+			throw new Exception("Sales order is already invoiced ! Check invoice "+ invCode  );
+		}
+		
+		
 		SalesInvoice invoice = new SalesInvoice();
 
 		if (order.getBillTo() != null) {
