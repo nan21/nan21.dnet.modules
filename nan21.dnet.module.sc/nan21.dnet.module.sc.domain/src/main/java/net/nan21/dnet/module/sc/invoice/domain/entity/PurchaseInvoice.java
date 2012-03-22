@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.UUID;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -35,6 +36,7 @@ import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.sc.invoice.domain.eventhandler.PurchaseInvoiceEventHandler;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -161,7 +163,8 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
     @JoinColumn(name = "PURCHASEORDER_ID", referencedColumnName = "ID")
     private PurchaseOrder purchaseOrder;
 
-    @OneToMany(fetch = FetchType.LAZY, targetEntity = PurchaseInvoiceItem.class, mappedBy = "invoice")
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = PurchaseInvoiceItem.class, mappedBy = "invoice", cascade = CascadeType.ALL)
+    @CascadeOnDelete
     private Collection<PurchaseInvoiceItem> lines;
 
     /* ============== getters - setters ================== */

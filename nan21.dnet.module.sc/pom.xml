@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.nan21.dnet</groupId>
+	<artifactId>nan21.dnet.module.sc</artifactId>
+	<version>1.0.0.M8</version>
+	<name>DNet SC: Supply Chain (Procurement)</name>	
+	<description>DNet SC: Supply Chain (Procurement)</description>
+	<packaging>pom</packaging>	
+	
+	<!-- ========================== Modules ========================== -->
+	
+	<modules>
+		<module>nan21.dnet.module.sc.domain</module>
+		<module>nan21.dnet.module.sc.business</module>
+		<module>nan21.dnet.module.sc.presenter</module>
+		<module>nan21.dnet.module.sc.ui.extjs</module>
+		<module>nan21.dnet.module.sc.parent</module>
+		<module>nan21.dnet.module.sc.data</module>
+		<module>nan21.dnet.module.sc.db</module>
+	</modules>	
+</project>	 
