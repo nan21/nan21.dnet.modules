@@ -18,6 +18,7 @@
         <module>nan21.dnet.module.pj</module>
         <module>nan21.dnet.module.bp</module>
         <module>nan21.dnet.module.hr</module>
+        <module>nan21.dnet.module.sc</module>
         <module>nan21.dnet.module.sd</module>
         <module>nan21.dnet.module.ux</module>
 	</modules>	
