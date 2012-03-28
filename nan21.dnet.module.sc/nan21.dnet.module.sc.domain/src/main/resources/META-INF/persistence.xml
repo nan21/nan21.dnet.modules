@@ -51,6 +51,9 @@
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
 		 <class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
 		
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.TaxCategory</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.Tax</class>
+		
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

@@ -13,6 +13,12 @@
  	<bean id="SalesOrderItemService" scope="prototype"
 	  		class="net.nan21.dnet.module.sd.order.business.serviceext.SalesOrderItemService"  />  
  
+ 	<bean id="SalesOrderTaxService" scope="prototype"
+	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderTaxService"  />  
+ 
+ 	<bean id="SalesOrderItemTaxService" scope="prototype"
+	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderItemTaxService"  />  
+ 
  	<bean id="SalesOrderTypeService" scope="prototype"
 	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderTypeService"  />  
  

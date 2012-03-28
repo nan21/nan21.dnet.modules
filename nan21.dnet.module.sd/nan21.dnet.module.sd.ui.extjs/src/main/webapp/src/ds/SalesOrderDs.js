@@ -44,6 +44,9 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" ,{
 		{name:"totalAmount", type:"float", useNull:true},
 		{name:"totalNetAmount", type:"float", useNull:true},
 		{name:"totalTaxAmount", type:"float", useNull:true},
+		{name:"confirmed", type:"boolean"},
+		{name:"invoiced", type:"boolean"},
+		{name:"delivered", type:"boolean"},
 		{name:"className", type:"string"}
 	]
 });
@@ -122,6 +125,9 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDsFilter" ,{
 		{name:"totalTaxAmount", type:"float", useNull:true},
 		{name:"totalTaxAmount_From",type:"float", useNull:true},
 		{name:"totalTaxAmount_To",type:"float", useNull:true},
+		{name:"confirmed", type:"boolean", useNull:true},
+		{name:"invoiced", type:"boolean", useNull:true},
+		{name:"delivered", type:"boolean", useNull:true},
 		{name:"className", type:"string"}
 	] 
 });

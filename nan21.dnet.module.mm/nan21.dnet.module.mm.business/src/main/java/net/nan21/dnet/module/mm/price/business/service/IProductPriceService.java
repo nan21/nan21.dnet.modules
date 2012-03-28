@@ -12,6 +12,7 @@ import net.nan21.dnet.module.mm.md.domain.entity.Product;
 import net.nan21.dnet.module.mm.price.domain.entity.PriceListVersion;
 
 import net.nan21.dnet.module.mm.price.domain.entity.ProductPrice;
+import java.util.Date;
 
 public interface IProductPriceService extends IEntityService<ProductPrice> {
 
@@ -32,5 +33,14 @@ public interface IProductPriceService extends IEntityService<ProductPrice> {
     public List<ProductPrice> findByUom(Uom uom);
 
     public List<ProductPrice> findByUomId(Long uomId);
+
+    public ProductPrice getDefaultSalesProductPrice(Long productId,
+            Date eventDate) throws Exception;
+
+    public ProductPrice getDefaultPurchaseProductPrice(Long productId,
+            Date eventDate) throws Exception;
+
+    public ProductPrice getProductPrice(Long productId, Long priceListId,
+            Date eventDate) throws Exception;
 
 }

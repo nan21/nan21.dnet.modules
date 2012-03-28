@@ -10,14 +10,13 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
-import net.nan21.dnet.module.mm.price.business.service.IProductPriceService;
 import net.nan21.dnet.module.mm.price.domain.entity.PriceListVersion;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.price.domain.entity.ProductPrice;
+import java.util.Date;
 
-public class ProductPriceService extends AbstractEntityService<ProductPrice>
-        implements IProductPriceService {
+public class ProductPriceService extends AbstractEntityService<ProductPrice> {
 
     public ProductPriceService() {
         super();

@@ -94,7 +94,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssueTask_UI", {
 		
 	}					 	
 	,onUploadSuccess: function() {	
-this._getDc_("atch").doQuery();			 	
+		this._getDc_("atch").doQuery();			 	
 	}
 	,onBtnUploadAttachment: function() {	
 		var w=new dnet.core.base.FileUploadWindow({

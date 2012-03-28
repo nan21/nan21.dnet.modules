@@ -17,6 +17,7 @@ import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
+import net.nan21.dnet.module.sd._businessdelegates.order.SalesOrderToInvoiceBD;
 
 public interface ISalesOrderService extends IEntityService<SalesOrder> {
 

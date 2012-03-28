@@ -32,13 +32,13 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 			,handler: this.onBtnKillProcessInstance,scope:this,stateManager:{name:"selected_one", dc:"dcRunningInstance" }	})	
 							 	
 		.addButton({name:"btnSaveAssignTask",text:"Save", tooltip:"Save assignement. Leave field empty to un-assign it.",iconCls:"icon-action-save",disabled:true
-			,handler: this.onBtnSaveAssignTask,scope:this,stateManager:{name:"record_is_dirty", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.dc.record.data.endTime);}}	})	
+			,handler: this.onBtnSaveAssignTask,scope:this,stateManager:{name:"record_is_dirty", dc:"dcRunningTask" , and: function(dc) {return (!dc.record.data.endTime);}}	})	
 							 	
 		.addButton({name:"btnCompleteTask",text:"Complete task", tooltip:"Mark selected task as completed.",iconCls:"icon-action-commit",disabled:true
-			,handler: this.onBtnCompleteTask,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.dc.record.data.endTime);}}	})	
+			,handler: this.onBtnCompleteTask,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask" , and: function(dc) {return (!dc.record.data.endTime);}}	})	
 							 	
 		.addButton({name:"btnOpenAsignTaskWindow",text:"Assign task", tooltip:"(Re-)Assign the selected task.",disabled:true
-			,handler: this.onBtnOpenAsignTaskWindow,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask" , and: function(evnt) {return (!evnt.dc.record.data.endTime);}}	})	
+			,handler: this.onBtnOpenAsignTaskWindow,scope:this,stateManager:{name:"selected_one", dc:"dcRunningTask" , and: function(dc) {return (!dc.record.data.endTime);}}	})	
 							 	
 		.addButton({name:"btnUploadForDeployment",text:"Upload...", tooltip:"Upload process definition archive to be deployed.",disabled:false
 			,handler: this.onBtnUploadForDeployment,scope:this	})	
@@ -105,7 +105,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 
 	,onBtnKillProcessInstance: function() {
 		var s={modal:true, callbacks:{} };
-		var successFn = function(dc,response,serviceName,specs) { 	this._getDc_("dcRunningInstance").doQuery();			 	
+		var successFn = function(dc,response,serviceName,specs) { 			this._getDc_("dcRunningInstance").doQuery();			 	
 			}; 
 		s.callbacks['successFn'] = successFn; 
 		s.callbacks['successScope'] = this;
@@ -118,9 +118,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 
 	,onBtnSaveAssignTask: function() {
 		var s={modal:true, callbacks:{} };
-		var successFn = function(dc,response,serviceName,specs) { 	this._getWindow_("wdwAssignTask").close();			 	
-;	this._getDc_("dcRunningTask").doCancel();			 	
-;	this._getDc_("dcRunningTask").doQuery();			 	
+		var successFn = function(dc,response,serviceName,specs) { 			this._getWindow_("wdwAssignTask").close();			 	
+;			this._getDc_("dcRunningTask").doCancel();			 	
+;			this._getDc_("dcRunningTask").doQuery();			 	
 			}; 
 		s.callbacks['successFn'] = successFn; 
 		s.callbacks['successScope'] = this;
@@ -132,10 +132,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 	}					 	
 
 	,onBtnOpenAsignTaskWindow: function() {
-this._getWindow_("wdwAssignTask").show();			 	
+		this._getWindow_("wdwAssignTask").show();			 	
 	}					 	
 	,startProcess: function() {	
-this._getDc_("dcDeployment").doQuery();			 	
+		this._getDc_("dcDeployment").doQuery();			 	
 	}
 	,startProcessInstanceNoForm: function() {	
 		var s={modal:true, callbacks:{} };

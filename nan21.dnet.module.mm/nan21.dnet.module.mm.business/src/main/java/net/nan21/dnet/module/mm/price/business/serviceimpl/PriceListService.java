@@ -9,13 +9,11 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.mm.price.business.service.IPriceListService;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 
-public class PriceListService extends AbstractEntityService<PriceList>
-        implements IPriceListService {
+public class PriceListService extends AbstractEntityService<PriceList> {
 
     public PriceListService() {
         super();

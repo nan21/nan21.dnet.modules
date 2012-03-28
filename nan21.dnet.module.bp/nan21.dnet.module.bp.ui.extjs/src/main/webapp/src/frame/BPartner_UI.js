@@ -101,14 +101,14 @@ Ext.define("net.nan21.dnet.module.bp.md.frame.BPartner_UI", {
 
 
 	,onBtnCreateBpContinue: function() {
-this._getWindow_("wdwBpCreate").close();			 	
+		this._getWindow_("wdwBpCreate").close();			 	
 		this._selectBpEditorForm_();
 	}					 	
 	,onUploadSuccess: function() {	
-this._getDc_("atch").doQuery();			 	
+		this._getDc_("atch").doQuery();			 	
 	}
 	,_whenCreateNewBp_: function() {	
-this._getWindow_("wdwBpCreate").show();			 	
+		this._getWindow_("wdwBpCreate").show();			 	
 	}
 	,onBtnUploadAttachment: function() {	
 		var w=new dnet.core.base.FileUploadWindow({

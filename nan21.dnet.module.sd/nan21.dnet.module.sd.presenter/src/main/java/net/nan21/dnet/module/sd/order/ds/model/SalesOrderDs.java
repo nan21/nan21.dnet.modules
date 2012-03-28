@@ -59,6 +59,9 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     public static final String fTOTALAMOUNT = "totalAmount";
     public static final String fTOTALNETAMOUNT = "totalNetAmount";
     public static final String fTOTALTAXAMOUNT = "totalTaxAmount";
+    public static final String fCONFIRMED = "confirmed";
+    public static final String fINVOICED = "invoiced";
+    public static final String fDELIVERED = "delivered";
     public static final String fCLASSNAME = "className";
 
     @DsField(noUpdate = true)
@@ -183,6 +186,15 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     @DsField()
     private Float totalTaxAmount;
+
+    @DsField(noInsert = true, noUpdate = true)
+    private Boolean confirmed;
+
+    @DsField(noInsert = true, noUpdate = true)
+    private Boolean invoiced;
+
+    @DsField(noInsert = true, noUpdate = true)
+    private Boolean delivered;
 
     @DsField(fetch = false)
     private String className;
@@ -522,6 +534,30 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     public void setTotalTaxAmount(Float totalTaxAmount) {
         this.totalTaxAmount = totalTaxAmount;
+    }
+
+    public Boolean getConfirmed() {
+        return this.confirmed;
+    }
+
+    public void setConfirmed(Boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    public Boolean getInvoiced() {
+        return this.invoiced;
+    }
+
+    public void setInvoiced(Boolean invoiced) {
+        this.invoiced = invoiced;
+    }
+
+    public Boolean getDelivered() {
+        return this.delivered;
+    }
+
+    public void setDelivered(Boolean delivered) {
+        this.delivered = delivered;
     }
 
     public String getClassName() {

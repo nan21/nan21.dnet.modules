@@ -15,7 +15,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addButton({name:"btnPostTransaction",text:"Post transaction", tooltip:"Post current transaction to create movement operations.",iconCls:"icon-gears",disabled:true
-			,handler: this.onBtnPostTransaction,scope:this,stateManager:{name:"record_is_clean", dc:"tx" , and: function(evnt) {return (!(evnt.dc.record.data.eventDate));}}	})	
+			,handler: this.onBtnPostTransaction,scope:this,stateManager:{name:"record_is_clean", dc:"tx" , and: function(dc) {return (!(dc.record.data.eventDate));}}	})	
 							 	
 		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter",height:40})	 
 		.addDcGridView("tx",{ name:"txList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List"})	 

@@ -29,7 +29,6 @@
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchy</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchyItem</class>
 		
-		
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>
 		
@@ -37,7 +36,9 @@
 		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup</class>
 		<class>net.nan21.dnet.module.bd.acc.domain.entity.Account</class>
 		
-		 
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.TaxCategory</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.Tax</class>
+		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

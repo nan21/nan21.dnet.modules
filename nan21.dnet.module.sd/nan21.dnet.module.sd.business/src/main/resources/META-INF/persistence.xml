@@ -11,7 +11,9 @@
 		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem</class>
 		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType</class>
 		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus</class>
-		
+		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderTax</class>
+		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax</class>
+		 
 		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice</class>
 		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem</class>
 		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType</class>
@@ -64,7 +66,10 @@
 		<class>net.nan21.dnet.module.mm.price.domain.entity.ProductPrice</class>
 		
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
-		 <class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
+		 
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.TaxCategory</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.Tax</class>
 		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

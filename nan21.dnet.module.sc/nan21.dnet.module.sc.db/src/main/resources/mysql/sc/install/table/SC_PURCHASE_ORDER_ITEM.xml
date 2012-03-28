@@ -22,6 +22,8 @@
 				<constraints  /></column>	 
 			<column name="QTYORDERED" type="decimal(12,2)">
 				<constraints  /></column>	 
+			<column name="TAXAMOUNT" type="decimal(12,2)">
+				<constraints nullable="false" /></column>	 
 			<column name="UUID" type="varchar(36)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
@@ -29,6 +31,8 @@
 			<column name="PRODUCT_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="PURCHASEORDER_ID" type="bigint(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="TAX_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="UOM_ID" type="bigint(19)">	 
 				<constraints  /></column>	 

@@ -30,6 +30,6 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {
 	totalAmount__lbl :  "Total",
 	totalNetAmount__lbl :  "Total Net",
 	totalTaxAmount__lbl :  "Total taxe",
-	className__lbl :  "@className",		 
+	confirmed__lbl :  "@confirmed",	invoiced__lbl :  "@invoiced",	delivered__lbl :  "@delivered",	className__lbl :  "@className",		 
 	id__lbl :"ID"
 });

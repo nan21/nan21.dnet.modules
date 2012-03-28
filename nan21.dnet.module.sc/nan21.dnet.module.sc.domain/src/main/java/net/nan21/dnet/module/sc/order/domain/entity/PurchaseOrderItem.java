@@ -6,8 +6,11 @@
 package net.nan21.dnet.module.sc.order.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.UUID;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,6 +20,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -27,10 +31,12 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
+import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 import net.nan21.dnet.module.sc.order.domain.eventhandler.PurchaseOrderItemEventHandler;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -73,6 +79,11 @@ public class PurchaseOrderItem implements Serializable, IModelWithId,
     /** NetAmount. */
     @Column(name = "NETAMOUNT", scale = 2)
     private Float netAmount;
+
+    /** TaxAmount. */
+    @Column(name = "TAXAMOUNT", nullable = false, scale = 2)
+    @NotNull
+    private Float taxAmount;
 
     /**
      * Identifies the client(tenant) which owns this record.
@@ -142,6 +153,13 @@ public class PurchaseOrderItem implements Serializable, IModelWithId,
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
     @JoinColumn(name = "UOM_ID", referencedColumnName = "ID")
     private Uom uom;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Tax.class)
+    @JoinColumn(name = "TAX_ID", referencedColumnName = "ID")
+    private Tax tax;
+
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = PurchaseOrderItemTax.class, mappedBy = "salesOrderItem", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<PurchaseOrderItemTax> itemTaxes;
 
     /* ============== getters - setters ================== */
 
@@ -167,6 +185,14 @@ public class PurchaseOrderItem implements Serializable, IModelWithId,
 
     public void setNetAmount(Float netAmount) {
         this.netAmount = netAmount;
+    }
+
+    public Float getTaxAmount() {
+        return this.taxAmount;
+    }
+
+    public void setTaxAmount(Float taxAmount) {
+        this.taxAmount = taxAmount;
     }
 
     public Long getClientId() {
@@ -264,6 +290,30 @@ public class PurchaseOrderItem implements Serializable, IModelWithId,
 
     public void setUom(Uom uom) {
         this.uom = uom;
+    }
+
+    public Tax getTax() {
+        return this.tax;
+    }
+
+    public void setTax(Tax tax) {
+        this.tax = tax;
+    }
+
+    public Collection<PurchaseOrderItemTax> getItemTaxes() {
+        return this.itemTaxes;
+    }
+
+    public void setItemTaxes(Collection<PurchaseOrderItemTax> itemTaxes) {
+        this.itemTaxes = itemTaxes;
+    }
+
+    public void addToItemTaxes(PurchaseOrderItemTax e) {
+        if (this.itemTaxes == null) {
+            this.itemTaxes = new ArrayList<PurchaseOrderItemTax>();
+        }
+        e.setSalesOrderItem(this);
+        this.itemTaxes.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

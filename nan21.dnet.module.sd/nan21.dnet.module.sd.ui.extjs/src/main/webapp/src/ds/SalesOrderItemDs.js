@@ -20,7 +20,14 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDs" ,{
 		{name:"uomCode", type:"string"},
 		{name:"qtyOrdered", type:"float", useNull:true},
 		{name:"netUnitPrice", type:"float", useNull:true},
-		{name:"netAmount", type:"float", useNull:true}
+		{name:"netAmount", type:"float", useNull:true},
+		{name:"taxId", type:"int", useNull:true},
+		{name:"tax", type:"string"},
+		{name:"taxAmount", type:"float", useNull:true}
+	],
+	validations: [  
+		{field: "qtyOrdered", type: 'presence'}, 
+		{field: "netUnitPrice", type: 'presence'}
 	]
 });
 
@@ -58,7 +65,14 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDsFilter" ,{
 		{name:"netUnitPrice_To",type:"float", useNull:true},
 		{name:"netAmount", type:"float", useNull:true},
 		{name:"netAmount_From",type:"float", useNull:true},
-		{name:"netAmount_To",type:"float", useNull:true}
+		{name:"netAmount_To",type:"float", useNull:true},
+		{name:"taxId", type:"int", useNull:true},
+		{name:"taxId_From",type:"int", useNull:true},
+		{name:"taxId_To",type:"int", useNull:true},
+		{name:"tax", type:"string"},
+		{name:"taxAmount", type:"float", useNull:true},
+		{name:"taxAmount_From",type:"float", useNull:true},
+		{name:"taxAmount_To",type:"float", useNull:true}
 	] 
 });
 	

@@ -94,7 +94,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addDisplayFieldText({ name:"name", dataIndex:"name", fieldStyle:"font-weight:bold;"  })
+		.addDisplayFieldText({ name:"name", dataIndex:"name", fieldCls:"displayfield important-field"  })
 		//containers
 		.addPanel({ name:"main", layout:"form" , autoScroll:true, width:"90%"})     
 		;     

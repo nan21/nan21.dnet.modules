@@ -81,8 +81,8 @@ Ext.define("net.nan21.dnet.module.ad.report.frame.Reports_UI", {
 
 
 	,onBtnTestReport: function() {
-this._getWindow_("wdwTestReport").show();			 	
-this._getDc_("paramsRt").doQuery();			 	
+		this._getWindow_("wdwTestReport").show();			 	
+		this._getDc_("paramsRt").doQuery();			 	
 	}					 	
 
 	,onBtnRunReport: function() {
@@ -90,8 +90,8 @@ this._getDc_("paramsRt").doQuery();
 	}					 	
 
 	,onBtnCancelReport: function() {
-this._getDc_("paramsRt").doCancel();			 	
-this._getWindow_("wdwTestReport").close();			 	
+		this._getDc_("paramsRt").doCancel();			 	
+		this._getWindow_("wdwTestReport").close();			 	
 	}					 	
 	,_runReport_: function() {	
 		var paramsDc = this._getDc_("paramsRt")

@@ -45,7 +45,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysDataSources_UI", {
 
 	,onBtnSynchronize: function() {
 		var s={modal:true, callbacks:{} };
-		var successFn = function(dc,response,serviceName,specs) { 	this._getDc_("m").doQuery();			 	
+		var successFn = function(dc,response,serviceName,specs) { 			this._getDc_("m").doQuery();			 	
 			}; 
 		s.callbacks['successFn'] = successFn; 
 		s.callbacks['successScope'] = this;

@@ -64,13 +64,13 @@ Ext.define("net.nan21.dnet.module.mm.price.frame.PriceList_UI", {
 
 
 	,onBtnAddProdByCateg: function() {
-this._getWindow_("wdwVersionCopyProdFromCateg").show();			 	
+		this._getWindow_("wdwVersionCopyProdFromCateg").show();			 	
 	}					 	
 
 	,onBtnAddProdByCategExec: function() {
 		var s={modal:true, callbacks:{} };
-		var successFn = function(dc,response,serviceName,specs) { 	this._getWindow_("wdwVersionCopyProdFromCateg").close();			 	
-;	this._getDc_("price").doQuery();			 	
+		var successFn = function(dc,response,serviceName,specs) { 			this._getWindow_("wdwVersionCopyProdFromCateg").close();			 	
+;			this._getDc_("price").doQuery();			 	
 			}; 
 		s.callbacks['successFn'] = successFn; 
 		s.callbacks['successScope'] = this;

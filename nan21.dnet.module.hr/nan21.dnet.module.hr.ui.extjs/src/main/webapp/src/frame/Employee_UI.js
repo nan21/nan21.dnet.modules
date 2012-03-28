@@ -104,7 +104,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI", {
 	}
 
 	,onUploadSuccess: function() {	
-this._getDc_("atch").doQuery();			 	
+		this._getDc_("atch").doQuery();			 	
 	}
 	,onBtnUploadAttachment: function() {	
 		var w=new dnet.core.base.FileUploadWindow({

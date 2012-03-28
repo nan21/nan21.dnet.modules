@@ -36,6 +36,9 @@ public class SalesOrderItemDs extends AbstractDsModel<SalesOrderItem> implements
     public static final String fQTYORDERED = "qtyOrdered";
     public static final String fNETUNITPRICE = "netUnitPrice";
     public static final String fNETAMOUNT = "netAmount";
+    public static final String fTAXID = "taxId";
+    public static final String fTAX = "tax";
+    public static final String fTAXAMOUNT = "taxAmount";
 
     @DsField(noUpdate = true)
     private Long id;
@@ -64,7 +67,7 @@ public class SalesOrderItemDs extends AbstractDsModel<SalesOrderItem> implements
     @DsField(noUpdate = true, fetch = false, path = "className")
     private String entityFQN;
 
-    @DsField(join = "left", path = "salesOrder.id")
+    @DsField(noUpdate = true, join = "left", path = "salesOrder.id")
     private Long salesOrderId;
 
     @DsField(join = "left", path = "product.id")
@@ -88,8 +91,17 @@ public class SalesOrderItemDs extends AbstractDsModel<SalesOrderItem> implements
     @DsField()
     private Float netUnitPrice;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Float netAmount;
+
+    @DsField(join = "left", path = "tax.id")
+    private Long taxId;
+
+    @DsField(join = "left", path = "tax.name")
+    private String tax;
+
+    @DsField(noUpdate = true)
+    private Float taxAmount;
 
     public SalesOrderItemDs() {
         super();
@@ -242,6 +254,30 @@ public class SalesOrderItemDs extends AbstractDsModel<SalesOrderItem> implements
 
     public void setNetAmount(Float netAmount) {
         this.netAmount = netAmount;
+    }
+
+    public Long getTaxId() {
+        return this.taxId;
+    }
+
+    public void setTaxId(Long taxId) {
+        this.taxId = taxId;
+    }
+
+    public String getTax() {
+        return this.tax;
+    }
+
+    public void setTax(String tax) {
+        this.tax = tax;
+    }
+
+    public Float getTaxAmount() {
+        return this.taxAmount;
+    }
+
+    public void setTaxAmount(Float taxAmount) {
+        this.taxAmount = taxAmount;
     }
 
 }

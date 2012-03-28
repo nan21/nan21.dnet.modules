@@ -92,14 +92,14 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.AccessControl_UI", {
 	}					 	
 
 	,onBtnCopyRules: function() {
-this._getWindow_("wdwCopyRules").show();			 	
+		this._getWindow_("wdwCopyRules").show();			 	
 	}					 	
 
 	,onBtnCopyRulesExec: function() {
 		var s={modal:true, callbacks:{} };
-		var successFn = function(dc,response,serviceName,specs) { 	this._getWindow_("wdwCopyRules").close();			 	
-;	this._getDc_("dsAccess").doQuery();			 	
-;	this._getDc_("asgnAccess").doQuery();			 	
+		var successFn = function(dc,response,serviceName,specs) { 			this._getWindow_("wdwCopyRules").close();			 	
+;			this._getDc_("dsAccess").doQuery();			 	
+;			this._getDc_("asgnAccess").doQuery();			 	
 			}; 
 		s.callbacks['successFn'] = successFn; 
 		s.callbacks['successScope'] = this;

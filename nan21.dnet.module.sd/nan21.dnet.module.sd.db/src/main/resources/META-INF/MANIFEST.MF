@@ -1,7 +1,4 @@
 Manifest-Version: 1.0
-Export-Package: mysql.sd.install.fk;version="1.0.0.M8",mysql.sd.instal
- l.table;version="1.0.0.M8",oracle.sd.install.fk;version="1.0.0.M8",or
- acle.sd.install.table;version="1.0.0.M8"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0.M8
 Tool: Bundlor 1.0.0.RELEASE

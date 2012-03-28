@@ -65,12 +65,12 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {
 	}					 	
 
 	,onBtnChangePassword: function() {
-this._getWindow_("wdwChangePassword").show();			 	
+		this._getWindow_("wdwChangePassword").show();			 	
 	}					 	
 
 	,onBtnSavePassword: function() {
 		var s={modal:true, callbacks:{} };
-		var successFn = function(dc,response,serviceName,specs) { 	this._getWindow_("wdwChangePassword").close();			 	
+		var successFn = function(dc,response,serviceName,specs) { 			this._getWindow_("wdwChangePassword").close();			 	
 			}; 
 		s.callbacks['successFn'] = successFn; 
 		s.callbacks['successScope'] = this;

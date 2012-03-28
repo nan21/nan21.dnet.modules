@@ -8,6 +8,7 @@ package net.nan21.dnet.module.ad.client.business.service;
 import net.nan21.dnet.core.api.service.IEntityService;
 
 import net.nan21.dnet.module.ad.client.domain.entity.Client;
+import net.nan21.dnet.module.ad._businessdelegates.client.ClientBD;
 
 public interface IClientService extends IEntityService<Client> {
 

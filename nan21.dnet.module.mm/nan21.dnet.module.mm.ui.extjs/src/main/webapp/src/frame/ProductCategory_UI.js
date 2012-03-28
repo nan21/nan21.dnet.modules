@@ -13,7 +13,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.ProductCategory_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addButton({name:"btnAsgnCategories",text:"Assign Products", tooltip:"Add products to selected category",disabled:true
-			,handler: this.onBtnAsgnCategories,scope:this,stateManager:{name:"selected_one_clean", dc:"categ" , and: function(evnt) {return ( !evnt.dc.record.data.folder );}}	})	
+			,handler: this.onBtnAsgnCategories,scope:this,stateManager:{name:"selected_one_clean", dc:"categ" , and: function(dc) {return ( !dc.record.data.folder );}}	})	
 							 	
 		.addDcFilterFormView("categ",{ name:"categFilter", xtype:"net.nan21.dnet.module.mm.md.dc.ProductCategory$Filter",height:120})	 
 		.addDcEditGridView("categ",{ name:"categEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductCategory$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnCategories") ]}]})	 

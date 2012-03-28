@@ -15,10 +15,28 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="createInvoice">
+	  			<entry key="generateInvoice">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesOrderPD"/>
 	  				<constructor-arg name="methodName" value="generateInvoice" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="generateDelivery">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesOrderPD"/>
+	  				<constructor-arg name="methodName" value="generateDelivery" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="confirmOrder">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesOrderPD"/>
+	  				<constructor-arg name="methodName" value="confirmOrder" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="unConfirmOrder">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesOrderPD"/>
+	  				<constructor-arg name="methodName" value="unConfirmOrder" />
 	  			</bean>	
 	  			</entry>	  			
 	  		</map>
@@ -29,7 +47,10 @@
 		<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" />
 	  	<property name="serviceMethods" >
 	  		<list>
-	  			<value type="java.lang.String">createInvoice</value>
+	  			<value type="java.lang.String">generateInvoice</value>
+	  			<value type="java.lang.String">generateDelivery</value>
+	  			<value type="java.lang.String">confirmOrder</value>
+	  			<value type="java.lang.String">unConfirmOrder</value>
 			</list>	  		 
 	  	</property>	
 	</bean>
@@ -40,10 +61,49 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderItemDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderItemDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="onProductChange">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesOrderItemPD"/>
+	  				<constructor-arg name="methodName" value="onProductChange" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesOrderItem" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">onProductChange</value>
+			</list>	  		 
+	  	</property>	
+	</bean>
+   
+ 	<bean id="SalesOrderItemTaxDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemTaxDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderItemTaxDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderItemTaxDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SalesOrderItemTax" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemTaxDs" />
+	</bean>
+   
+ 	<bean id="SalesOrderTaxDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderTaxDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderTaxDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderTax" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesOrderTaxDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SalesOrderTax" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderTaxDs" />
 	</bean>
    
  	<bean id="SalesOrderTypeDsService" scope="prototype"

@@ -12,6 +12,7 @@ import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
 
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction;
+import net.nan21.dnet.module.mm._businessdelegates.inventory.InvTransactionBD;
 
 public interface IInvTransactionService extends IEntityService<InvTransaction> {
 

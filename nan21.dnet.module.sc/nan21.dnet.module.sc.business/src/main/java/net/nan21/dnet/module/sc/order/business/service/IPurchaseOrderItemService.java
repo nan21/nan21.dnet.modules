@@ -7,9 +7,11 @@ package net.nan21.dnet.module.sc.order.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
+import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
+import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderItemTax;
 
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderItem;
 
@@ -28,5 +30,14 @@ public interface IPurchaseOrderItemService extends
     public List<PurchaseOrderItem> findByUom(Uom uom);
 
     public List<PurchaseOrderItem> findByUomId(Long uomId);
+
+    public List<PurchaseOrderItem> findByTax(Tax tax);
+
+    public List<PurchaseOrderItem> findByTaxId(Long taxId);
+
+    public List<PurchaseOrderItem> findByItemTaxes(
+            PurchaseOrderItemTax itemTaxes);
+
+    public List<PurchaseOrderItem> findByItemTaxesId(Long itemTaxesId);
 
 }

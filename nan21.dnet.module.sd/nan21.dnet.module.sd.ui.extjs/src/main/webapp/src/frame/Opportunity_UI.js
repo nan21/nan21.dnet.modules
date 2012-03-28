@@ -83,14 +83,14 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI", {
 
 
 	,onBtnCreateEventContinue: function() {
-this._getWindow_("wdwEventCreate").close();			 	
+		this._getWindow_("wdwEventCreate").close();			 	
 		this._selectEventEditorForm_();
 	}					 	
 	,onUploadSuccess: function() {	
-this._getDc_("atch").doQuery();			 	
+		this._getDc_("atch").doQuery();			 	
 	}
 	,_whenCreateNewEvent_: function() {	
-this._getWindow_("wdwEventCreate").show();			 	
+		this._getWindow_("wdwEventCreate").show();			 	
 	}
 	,onBtnViewAttachment: function() {	
 		

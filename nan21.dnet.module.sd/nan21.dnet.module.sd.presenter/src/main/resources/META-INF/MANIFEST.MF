@@ -55,18 +55,19 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  .nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter.servic
  e,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.dnet.module.bd
  .currency.business.service,net.nan21.dnet.module.bd.currency.domain.e
- ntity,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.modul
- e.bd.org.business.service,net.nan21.dnet.module.bd.org.domain.entity,
- net.nan21.dnet.module.bd.uom.business.service,net.nan21.dnet.module.b
- d.uom.domain.entity,net.nan21.dnet.module.bp.base.business.service,ne
- t.nan21.dnet.module.bp.base.domain.entity,net.nan21.dnet.module.bp.md
- .business.service,net.nan21.dnet.module.bp.md.domain.entity,net.nan21
- .dnet.module.mm.md.business.service,net.nan21.dnet.module.mm.md.domai
- n.entity,net.nan21.dnet.module.mm.price.business.service,net.nan21.dn
- et.module.mm.price.domain.entity,net.nan21.dnet.module.sd.invoice.dom
- ain.entity,net.nan21.dnet.module.sd.opportunity.business.service,net.
- nan21.dnet.module.sd.opportunity.domain.entity,net.nan21.dnet.module.
- sd.order.business.service,net.nan21.dnet.module.sd.order.domain.entit
- y,org.springframework.context.weaving;version="[3.0,3.1)",org.springf
- ramework.web.multipart;version="[3.0,3.1)"
+ ntity,net.nan21.dnet.module.bd.fin.business.service,net.nan21.dnet.mo
+ dule.bd.fin.domain.entity,net.nan21.dnet.module.bd.geo.domain.entity,
+ net.nan21.dnet.module.bd.org.business.service,net.nan21.dnet.module.b
+ d.org.domain.entity,net.nan21.dnet.module.bd.uom.business.service,net
+ .nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.bp.base
+ .business.service,net.nan21.dnet.module.bp.base.domain.entity,net.nan
+ 21.dnet.module.bp.md.business.service,net.nan21.dnet.module.bp.md.dom
+ ain.entity,net.nan21.dnet.module.mm.md.business.service,net.nan21.dne
+ t.module.mm.md.domain.entity,net.nan21.dnet.module.mm.price.business.
+ service,net.nan21.dnet.module.mm.price.domain.entity,net.nan21.dnet.m
+ odule.sd.invoice.domain.entity,net.nan21.dnet.module.sd.opportunity.b
+ usiness.service,net.nan21.dnet.module.sd.opportunity.domain.entity,ne
+ t.nan21.dnet.module.sd.order.business.service,net.nan21.dnet.module.s
+ d.order.domain.entity,org.springframework.context.weaving;version="[3
+ .0,3.1)",org.springframework.web.multipart;version="[3.0,3.1)"
 

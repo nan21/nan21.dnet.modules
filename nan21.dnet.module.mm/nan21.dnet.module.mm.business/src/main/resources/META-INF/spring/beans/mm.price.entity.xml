@@ -11,13 +11,13 @@
 	  		class="net.nan21.dnet.module.mm.price.business.serviceimpl.PriceListTypeService"  />  
  
  	<bean id="PriceListService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm.price.business.serviceimpl.PriceListService"  />  
+	  		class="net.nan21.dnet.module.mm.price.business.serviceext.PriceListService"  />  
  
  	<bean id="PriceListVersionService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.price.business.serviceimpl.PriceListVersionService"  />  
  
  	<bean id="ProductPriceService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm.price.business.serviceimpl.ProductPriceService"  />  
+	  		class="net.nan21.dnet.module.mm.price.business.serviceext.ProductPriceService"  />  
    
 </beans>
    

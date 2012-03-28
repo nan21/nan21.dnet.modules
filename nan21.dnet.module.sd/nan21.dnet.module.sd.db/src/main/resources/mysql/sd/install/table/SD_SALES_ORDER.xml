@@ -8,13 +8,19 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CODE" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="CONFIRMED" type="int(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="CREATEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="DELIVERED" type="int(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="DOCDATE" type="date">
 				<constraints nullable="false" /></column>	 
 			<column name="ID" type="bigint(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="INVOICED" type="int(1)">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 

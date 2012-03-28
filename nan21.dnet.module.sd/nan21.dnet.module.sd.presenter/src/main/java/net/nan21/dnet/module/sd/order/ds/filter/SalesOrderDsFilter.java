@@ -142,6 +142,12 @@ public class SalesOrderDsFilter extends AbstractDsFilter implements
     private Float totalTaxAmount_From;
     private Float totalTaxAmount_To;
 
+    private Boolean confirmed;
+
+    private Boolean invoiced;
+
+    private Boolean delivered;
+
     private String className;
 
     public Long getId() {
@@ -719,6 +725,30 @@ public class SalesOrderDsFilter extends AbstractDsFilter implements
 
     public void setTotalTaxAmount_To(Float totalTaxAmount_To) {
         this.totalTaxAmount_To = totalTaxAmount_To;
+    }
+
+    public Boolean getConfirmed() {
+        return this.confirmed;
+    }
+
+    public void setConfirmed(Boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    public Boolean getInvoiced() {
+        return this.invoiced;
+    }
+
+    public void setInvoiced(Boolean invoiced) {
+        this.invoiced = invoiced;
+    }
+
+    public Boolean getDelivered() {
+        return this.delivered;
+    }
+
+    public void setDelivered(Boolean delivered) {
+        this.delivered = delivered;
     }
 
     public String getClassName() {

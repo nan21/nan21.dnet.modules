@@ -68,8 +68,8 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrderItem$EditForm", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"productCode", xtype:"net.nan21.dnet.module.mm.md.lovs.Products", dataIndex:"productCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "productId"} ,{lovField:"name", dsField: "productName"} ]  })
-		.addTextField({ name:"productName", dataIndex:"productName",anchor:"-20",noEdit:true  ,maxLength:255  })
+		.addLov({ name:"productCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductsWithUom", dataIndex:"productCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "productId"} ,{lovField:"name", dsField: "productName"} ,{lovField:"uom", dsField: "uomCode"} ,{lovField:"uomId", dsField: "uomId"} ]  })
+		.addDisplayFieldText({ name:"productName", dataIndex:"productName"  })
 		.addNumberField({ name:"qtyOrdered", dataIndex:"qtyOrdered",anchor:"-20"  , style: "text-align:right;" })
 		.addLov({ name:"uomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"uomCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "uomId"} ]  })
 		.addNumberField({ name:"netUnitPrice", dataIndex:"netUnitPrice",anchor:"-20"  , style: "text-align:right;" })
@@ -77,14 +77,18 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrderItem$EditForm", {
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:400})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     
+		.addPanel({ name:"col3", layout:"form" ,width:250})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
+		.addPanel({ name:"row2",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1" ,"col2" ])
+		.addChildrenTo("main",["col1" ,"row2" ])
 		.addChildrenTo("col1",["productCode","productName"])
-		.addChildrenTo("col2",["qtyOrdered","uomCode","netUnitPrice","netAmount"])
+		.addChildrenTo("row2",["col2" ,"col3" ])
+		.addChildrenTo("col2",["qtyOrdered","uomCode","netUnitPrice"])
+		.addChildrenTo("col3",["netAmount"])
 ;
 	}	
 });

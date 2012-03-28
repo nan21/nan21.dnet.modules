@@ -13,6 +13,8 @@ import net.nan21.dnet.module.ad.usr.domain.entity.UserGroup;
 import net.nan21.dnet.module.ad.usr.domain.entity.UserType;
 
 import net.nan21.dnet.module.ad.usr.domain.entity.User;
+import java.security.MessageDigest;
+import java.math.BigInteger;
 
 public interface IUserService extends IEntityService<User> {
 

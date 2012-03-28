@@ -70,7 +70,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI", {
 
 	,onBtnClaimTask: function() {
 		var s={modal:true, callbacks:{} };
-		var successFn = function(dc,response,serviceName,specs) { 	this._getDc_("dcAvailabletask").doQuery();			 	
+		var successFn = function(dc,response,serviceName,specs) { 			this._getDc_("dcAvailabletask").doQuery();			 	
 			}; 
 		s.callbacks['successFn'] = successFn; 
 		s.callbacks['successScope'] = this;

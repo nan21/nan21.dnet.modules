@@ -33,12 +33,15 @@ Export-Package: net.nan21.dnet.module.mm._businessdelegates;version="1
  uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.curre
  ncy.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan2
  1.dnet.module.mm.md.domain.entity,net.nan21.dnet.module.mm.price.doma
- in.entity",net.nan21.dnet.module.mm.price.business.serviceimpl;versio
- n="1.0.0.M8";uses:="javax.persistence,net.nan21.dnet.core.business.se
- rvice,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.
- module.bd.uom.domain.entity,net.nan21.dnet.module.mm.md.domain.entity
- ,net.nan21.dnet.module.mm.price.business.service,net.nan21.dnet.modul
- e.mm.price.domain.entity"
+ in.entity",net.nan21.dnet.module.mm.price.business.serviceext;version
+ ="1.0.0.M8";uses:="net.nan21.dnet.module.mm.price.business.service,ne
+ t.nan21.dnet.module.mm.price.business.serviceimpl,net.nan21.dnet.modu
+ le.mm.price.domain.entity",net.nan21.dnet.module.mm.price.business.se
+ rviceimpl;version="1.0.0.M8";uses:="javax.persistence,net.nan21.dnet.
+ core.business.service,net.nan21.dnet.module.bd.currency.domain.entity
+ ,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.mm.
+ md.domain.entity,net.nan21.dnet.module.mm.price.business.service,net.
+ nan21.dnet.module.mm.price.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M8,1.0.0.M8]",nan21.dnet.core.busine
  ss;version="[1.0.0.M8,1.0.0.M8]",nan21.dnet.module.ad.domain;version=
@@ -70,5 +73,6 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  amework;version="[3.0,3.1)",org.springframework.context.weaving;versi
  on="[3.0,3.1)",org.springframework.orm.jpa,org.springframework.orm.jp
  a.vendor,org.springframework.transaction;version="[3.0,3.1)",org.spri
- ngframework.transaction.aspectj;version="[3.0,3.1)"
+ ngframework.transaction.aspectj;version="[3.0,3.1)",org.springframewo
+ rk.util
 

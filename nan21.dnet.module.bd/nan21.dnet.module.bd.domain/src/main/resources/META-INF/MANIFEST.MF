@@ -22,14 +22,14 @@ Export-Package: net.nan21.dnet.module.bd.acc.domain.entity;version="1.
  .indirection,org.eclipse.persistence.internal.descriptors,org.eclipse
  .persistence.internal.weaving,org.eclipse.persistence.queries,org.ecl
  ipse.persistence.sessions,org.hibernate.validator.constraints",net.na
- n21.dnet.module.bd.geo.domain.entity;version="1.0.0.M8";uses:="javax.
+ n21.dnet.module.bd.fin.domain.entity;version="1.0.0.M8";uses:="javax.
  persistence,javax.validation.constraints,javax.xml.bind.annotation,ne
  t.nan21.dnet.core.api.model,org.eclipse.persistence.annotations,org.e
  clipse.persistence.descriptors,org.eclipse.persistence.descriptors.ch
  angetracking,org.eclipse.persistence.indirection,org.eclipse.persiste
  nce.internal.descriptors,org.eclipse.persistence.internal.weaving,org
  .eclipse.persistence.queries,org.eclipse.persistence.sessions,org.hib
- ernate.validator.constraints",net.nan21.dnet.module.bd.org.domain.ent
+ ernate.validator.constraints",net.nan21.dnet.module.bd.geo.domain.ent
  ity;version="1.0.0.M8";uses:="javax.persistence,javax.validation.cons
  traints,javax.xml.bind.annotation,net.nan21.dnet.core.api.model,org.e
  clipse.persistence.annotations,org.eclipse.persistence.descriptors,or
@@ -37,14 +37,14 @@ Export-Package: net.nan21.dnet.module.bd.acc.domain.entity;version="1.
  nce.indirection,org.eclipse.persistence.internal.descriptors,org.ecli
  pse.persistence.internal.weaving,org.eclipse.persistence.queries,org.
  eclipse.persistence.sessions,org.hibernate.validator.constraints",net
- .nan21.dnet.module.bd.standards.domain.entity;version="1.0.0.M8";uses
- :="javax.persistence,javax.validation.constraints,javax.xml.bind.anno
- tation,net.nan21.dnet.core.api.model,org.eclipse.persistence.annotati
- ons,org.eclipse.persistence.descriptors,org.eclipse.persistence.descr
- iptors.changetracking,org.eclipse.persistence.indirection,org.eclipse
- .persistence.internal.descriptors,org.eclipse.persistence.internal.we
- aving,org.eclipse.persistence.queries,org.eclipse.persistence.session
- s,org.hibernate.validator.constraints",net.nan21.dnet.module.bd.uom.d
+ .nan21.dnet.module.bd.org.domain.entity;version="1.0.0.M8";uses:="jav
+ ax.persistence,javax.validation.constraints,javax.xml.bind.annotation
+ ,net.nan21.dnet.core.api.model,org.eclipse.persistence.annotations,or
+ g.eclipse.persistence.descriptors,org.eclipse.persistence.descriptors
+ .changetracking,org.eclipse.persistence.indirection,org.eclipse.persi
+ stence.internal.descriptors,org.eclipse.persistence.internal.weaving,
+ org.eclipse.persistence.queries,org.eclipse.persistence.sessions,org.
+ hibernate.validator.constraints",net.nan21.dnet.module.bd.standards.d
  omain.entity;version="1.0.0.M8";uses:="javax.persistence,javax.valida
  tion.constraints,javax.xml.bind.annotation,net.nan21.dnet.core.api.mo
  del,org.eclipse.persistence.annotations,org.eclipse.persistence.descr
@@ -52,7 +52,14 @@ Export-Package: net.nan21.dnet.module.bd.acc.domain.entity;version="1.
  .persistence.indirection,org.eclipse.persistence.internal.descriptors
  ,org.eclipse.persistence.internal.weaving,org.eclipse.persistence.que
  ries,org.eclipse.persistence.sessions,org.hibernate.validator.constra
- ints"
+ ints",net.nan21.dnet.module.bd.uom.domain.entity;version="1.0.0.M8";u
+ ses:="javax.persistence,javax.validation.constraints,javax.xml.bind.a
+ nnotation,net.nan21.dnet.core.api.model,org.eclipse.persistence.annot
+ ations,org.eclipse.persistence.descriptors,org.eclipse.persistence.de
+ scriptors.changetracking,org.eclipse.persistence.indirection,org.ecli
+ pse.persistence.internal.descriptors,org.eclipse.persistence.internal
+ .weaving,org.eclipse.persistence.queries,org.eclipse.persistence.sess
+ ions,org.hibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M8,1.0.0.M8]",nan21.dnet.module.ad.d
  omain;version="[1.0.0.M8,1.0.0.M8]"

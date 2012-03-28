@@ -1,8 +1,10 @@
 
 Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI$Trl", {  	  	
+	orderEditDetails__ttl : "Details",
+	itemTaxList__ttl : "Item taxes",
 	atchEditList__ttl : "Attachments",
 	notesPanel__ttl : "Notes",
-	itemsPanel__ttl : "Items",
+	linesPanel__ttl : "Items",
 	
 	tlbOrderList__ttl : "Sales orders",
 	tlbOrderEdit__ttl : "Sales order",
@@ -11,8 +13,14 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI$Trl", {
 	btnViewAttachment__desc : "View the selected attachment",
 	btnUploadAttachment__ttl : "Upload...",
 	btnUploadAttachment__desc : "Upload attachment file.",
+	btnConfirmOrder__ttl : "Confirm",
+	btnConfirmOrder__desc : "Confirm order.",
+	btnUnConfirmOrder__ttl : "Un-Confirm",
+	btnUnConfirmOrder__desc : "Un-Confirm order.",
 	btnCreateInvoice__ttl : "Generate Invoice",
 	btnCreateInvoice__desc : "Generate Invoice",
+	btnCreateDelivery__ttl : "Generate Delivery",
+	btnCreateDelivery__desc : "Generate Delivery",
 	
 	title: "Sales orders"
 });

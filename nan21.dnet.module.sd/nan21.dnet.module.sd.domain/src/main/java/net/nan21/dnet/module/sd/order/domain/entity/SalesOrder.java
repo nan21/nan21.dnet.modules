@@ -94,6 +94,21 @@ public class SalesOrder implements Serializable, IModelWithId,
     @Column(name = "TOTALAMOUNT", scale = 2)
     private Float totalAmount;
 
+    /** Confirmed. */
+    @Column(name = "CONFIRMED", nullable = false)
+    @NotNull
+    private Boolean confirmed;
+
+    /** Invoiced. */
+    @Column(name = "INVOICED", nullable = false)
+    @NotNull
+    private Boolean invoiced;
+
+    /** Delivered. */
+    @Column(name = "DELIVERED", nullable = false)
+    @NotNull
+    private Boolean delivered;
+
     /**
      * Identifies the client(tenant) which owns this record.
      */
@@ -228,6 +243,30 @@ public class SalesOrder implements Serializable, IModelWithId,
 
     public void setTotalAmount(Float totalAmount) {
         this.totalAmount = totalAmount;
+    }
+
+    public Boolean getConfirmed() {
+        return this.confirmed;
+    }
+
+    public void setConfirmed(Boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    public Boolean getInvoiced() {
+        return this.invoiced;
+    }
+
+    public void setInvoiced(Boolean invoiced) {
+        this.invoiced = invoiced;
+    }
+
+    public Boolean getDelivered() {
+        return this.delivered;
+    }
+
+    public void setDelivered(Boolean delivered) {
+        this.delivered = delivered;
     }
 
     @Transient
@@ -421,6 +460,15 @@ public class SalesOrder implements Serializable, IModelWithId,
         if (this.uuid == null || this.uuid.equals("")) {
             event.updateAttributeWithObject("uuid", UUID.randomUUID()
                     .toString().toUpperCase());
+        }
+        if (this.confirmed == null) {
+            event.updateAttributeWithObject("confirmed", false);
+        }
+        if (this.invoiced == null) {
+            event.updateAttributeWithObject("invoiced", false);
+        }
+        if (this.delivered == null) {
+            event.updateAttributeWithObject("delivered", false);
         }
         if (this.code == null || this.code.equals("")) {
             event.updateAttributeWithObject("code", "SO-" + this.getId());

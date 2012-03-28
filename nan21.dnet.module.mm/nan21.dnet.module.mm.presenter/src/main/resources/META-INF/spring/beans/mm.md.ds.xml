@@ -76,6 +76,17 @@
 		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductLovDs" />
 	</bean>
    
+ 	<bean id="ProductWithUomLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductWithUomLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductWithUomLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.md.domain.entity.Product" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProductWithUomLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductWithUomLovDs" />
+	</bean>
+   
  	<bean id="ProductAccountGroupDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.md.ds.model.ProductAccountGroupDs" />

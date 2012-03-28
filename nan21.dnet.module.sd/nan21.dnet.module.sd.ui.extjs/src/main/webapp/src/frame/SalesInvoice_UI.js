@@ -66,7 +66,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {
 	}
 
 	,onUploadSuccess: function() {	
-this._getDc_("atch").doQuery();			 	
+		this._getDc_("atch").doQuery();			 	
 	}
 	,onBtnUploadAttachment: function() {	
 		var w=new dnet.core.base.FileUploadWindow({

@@ -113,12 +113,12 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Issues_UI", {
 	}					 	
 
 	,onBtnSaveLink: function() {
-this._getDc_("link").doSave();			 	
+		this._getDc_("link").doSave();			 	
 	}					 	
 
 	,onBtnCancelLink: function() {
-this._getDc_("link").doCancel();			 	
-this._getWindow_("wdwIssueLinkCreate").close();			 	
+		this._getDc_("link").doCancel();			 	
+		this._getWindow_("wdwIssueLinkCreate").close();			 	
 	}					 	
 
 	,onBtnTaskUi: function() {
@@ -148,10 +148,10 @@ this._getWindow_("wdwIssueLinkCreate").close();
 		
 	}					 	
 	,onUploadSuccess: function() {	
-this._getDc_("atch").doQuery();			 	
+		this._getDc_("atch").doQuery();			 	
 	}
 	,_whenCreateNewLink_: function() {	
-this._getWindow_("wdwIssueLinkCreate").show();			 	
+		this._getWindow_("wdwIssueLinkCreate").show();			 	
 	}
 	,onBtnUploadAttachment: function() {	
 		var w=new dnet.core.base.FileUploadWindow({

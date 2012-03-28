@@ -19,4 +19,6 @@ public interface IPriceListService extends IEntityService<PriceList> {
 
     public List<PriceList> findByCurrencyId(Long currencyId);
 
+    public PriceList findDefaultPriceList(boolean salesList) throws Exception;
+
 }

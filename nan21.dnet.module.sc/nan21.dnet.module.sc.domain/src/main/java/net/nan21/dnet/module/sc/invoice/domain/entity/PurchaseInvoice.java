@@ -91,6 +91,16 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
     @Column(name = "TOTALAMOUNT", scale = 2)
     private Float totalAmount;
 
+    /** Confirmed. */
+    @Column(name = "CONFIRMED", nullable = false)
+    @NotNull
+    private Boolean confirmed;
+
+    /** Posted. */
+    @Column(name = "POSTED", nullable = false)
+    @NotNull
+    private Boolean posted;
+
     /**
      * Identifies the client(tenant) which owns this record.
      */
@@ -207,6 +217,22 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
 
     public void setTotalAmount(Float totalAmount) {
         this.totalAmount = totalAmount;
+    }
+
+    public Boolean getConfirmed() {
+        return this.confirmed;
+    }
+
+    public void setConfirmed(Boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    public Boolean getPosted() {
+        return this.posted;
+    }
+
+    public void setPosted(Boolean posted) {
+        this.posted = posted;
     }
 
     @Transient
@@ -352,6 +378,12 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
         if (this.uuid == null || this.uuid.equals("")) {
             event.updateAttributeWithObject("uuid", UUID.randomUUID()
                     .toString().toUpperCase());
+        }
+        if (this.confirmed == null) {
+            event.updateAttributeWithObject("confirmed", false);
+        }
+        if (this.posted == null) {
+            event.updateAttributeWithObject("posted", false);
         }
         if (this.code == null || this.code.equals("")) {
             event.updateAttributeWithObject("code", "PI-" + this.getId());
