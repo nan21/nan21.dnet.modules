@@ -6,8 +6,11 @@
 package net.nan21.dnet.module.sd.invoice.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.UUID;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,6 +20,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -27,10 +31,12 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
+import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.module.sd.invoice.domain.eventhandler.SalesInvoiceItemEventHandler;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -47,8 +53,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class SalesInvoiceItem implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "SD_SALES_INVOICE_ITEM";
-    public static final String SEQUENCE_NAME = "SD_SALES_INVOICE_ITEM_SEQ";
+    public static final String TABLE_NAME = "SD_SI_ITEM";
+    public static final String SEQUENCE_NAME = "SD_SI_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -73,6 +79,11 @@ public class SalesInvoiceItem implements Serializable, IModelWithId,
     /** NetAmount. */
     @Column(name = "NETAMOUNT", scale = 2)
     private Float netAmount;
+
+    /** TaxAmount. */
+    @Column(name = "TAXAMOUNT", nullable = false, scale = 2)
+    @NotNull
+    private Float taxAmount;
 
     /**
      * Identifies the client(tenant) which owns this record.
@@ -134,14 +145,21 @@ public class SalesInvoiceItem implements Serializable, IModelWithId,
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesInvoice.class)
-    @JoinColumn(name = "INVOICE_ID", referencedColumnName = "ID")
-    private SalesInvoice invoice;
+    @JoinColumn(name = "SALESINVOICE_ID", referencedColumnName = "ID")
+    private SalesInvoice salesInvoice;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
-    @JoinColumn(name = "ITEM_ID", referencedColumnName = "ID")
-    private Product item;
+    @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
+    private Product product;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
     @JoinColumn(name = "UOM_ID", referencedColumnName = "ID")
     private Uom uom;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Tax.class)
+    @JoinColumn(name = "TAX_ID", referencedColumnName = "ID")
+    private Tax tax;
+
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = SalesInvoiceItemTax.class, mappedBy = "salesInvoiceItem", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<SalesInvoiceItemTax> itemTaxes;
 
     /* ============== getters - setters ================== */
 
@@ -167,6 +185,14 @@ public class SalesInvoiceItem implements Serializable, IModelWithId,
 
     public void setNetAmount(Float netAmount) {
         this.netAmount = netAmount;
+    }
+
+    public Float getTaxAmount() {
+        return this.taxAmount;
+    }
+
+    public void setTaxAmount(Float taxAmount) {
+        this.taxAmount = taxAmount;
     }
 
     public Long getClientId() {
@@ -242,20 +268,20 @@ public class SalesInvoiceItem implements Serializable, IModelWithId,
 
     }
 
-    public SalesInvoice getInvoice() {
-        return this.invoice;
+    public SalesInvoice getSalesInvoice() {
+        return this.salesInvoice;
     }
 
-    public void setInvoice(SalesInvoice invoice) {
-        this.invoice = invoice;
+    public void setSalesInvoice(SalesInvoice salesInvoice) {
+        this.salesInvoice = salesInvoice;
     }
 
-    public Product getItem() {
-        return this.item;
+    public Product getProduct() {
+        return this.product;
     }
 
-    public void setItem(Product item) {
-        this.item = item;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public Uom getUom() {
@@ -264,6 +290,30 @@ public class SalesInvoiceItem implements Serializable, IModelWithId,
 
     public void setUom(Uom uom) {
         this.uom = uom;
+    }
+
+    public Tax getTax() {
+        return this.tax;
+    }
+
+    public void setTax(Tax tax) {
+        this.tax = tax;
+    }
+
+    public Collection<SalesInvoiceItemTax> getItemTaxes() {
+        return this.itemTaxes;
+    }
+
+    public void setItemTaxes(Collection<SalesInvoiceItemTax> itemTaxes) {
+        this.itemTaxes = itemTaxes;
+    }
+
+    public void addToItemTaxes(SalesInvoiceItemTax e) {
+        if (this.itemTaxes == null) {
+            this.itemTaxes = new ArrayList<SalesInvoiceItemTax>();
+        }
+        e.setSalesInvoiceItem(this);
+        this.itemTaxes.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

@@ -14,11 +14,12 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderDs" ,{
 		{name:"entityFQN", type:"string"},
 		{name:"code", type:"string"},
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"businessObject", type:"string"},
 		{name:"customerId", type:"int", useNull:true},
-		{name:"customerUuid", type:"string"},
-		{name:"customerCode", type:"string"},
 		{name:"customer", type:"string"},
+		{name:"supplierId", type:"int", useNull:true},
+		{name:"supplierUuid", type:"string"},
+		{name:"supplierCode", type:"string"},
+		{name:"supplier", type:"string"},
 		{name:"currencyId", type:"int", useNull:true},
 		{name:"currency", type:"string"},
 		{name:"priceListId", type:"int", useNull:true},
@@ -27,12 +28,12 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderDs" ,{
 		{name:"paymentMethod", type:"string"},
 		{name:"deliveryMethodId", type:"int", useNull:true},
 		{name:"deliveryMethod", type:"string"},
-		{name:"supplierId", type:"int", useNull:true},
-		{name:"supplier", type:"string"},
 		{name:"totalAmount", type:"float", useNull:true},
 		{name:"totalNetAmount", type:"float", useNull:true},
 		{name:"totalTaxAmount", type:"float", useNull:true},
-		{name:"className", type:"string"}
+		{name:"confirmed", type:"boolean"},
+		{name:"className", type:"string"},
+		{name:"businessObject", type:"string"}
 	]
 });
 
@@ -54,13 +55,16 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderDsFilter" ,{
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"businessObject", type:"string"},
 		{name:"customerId", type:"int", useNull:true},
 		{name:"customerId_From",type:"int", useNull:true},
 		{name:"customerId_To",type:"int", useNull:true},
-		{name:"customerUuid", type:"string"},
-		{name:"customerCode", type:"string"},
 		{name:"customer", type:"string"},
+		{name:"supplierId", type:"int", useNull:true},
+		{name:"supplierId_From",type:"int", useNull:true},
+		{name:"supplierId_To",type:"int", useNull:true},
+		{name:"supplierUuid", type:"string"},
+		{name:"supplierCode", type:"string"},
+		{name:"supplier", type:"string"},
 		{name:"currencyId", type:"int", useNull:true},
 		{name:"currencyId_From",type:"int", useNull:true},
 		{name:"currencyId_To",type:"int", useNull:true},
@@ -77,10 +81,6 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderDsFilter" ,{
 		{name:"deliveryMethodId_From",type:"int", useNull:true},
 		{name:"deliveryMethodId_To",type:"int", useNull:true},
 		{name:"deliveryMethod", type:"string"},
-		{name:"supplierId", type:"int", useNull:true},
-		{name:"supplierId_From",type:"int", useNull:true},
-		{name:"supplierId_To",type:"int", useNull:true},
-		{name:"supplier", type:"string"},
 		{name:"totalAmount", type:"float", useNull:true},
 		{name:"totalAmount_From",type:"float", useNull:true},
 		{name:"totalAmount_To",type:"float", useNull:true},
@@ -90,7 +90,9 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderDsFilter" ,{
 		{name:"totalTaxAmount", type:"float", useNull:true},
 		{name:"totalTaxAmount_From",type:"float", useNull:true},
 		{name:"totalTaxAmount_To",type:"float", useNull:true},
-		{name:"className", type:"string"}
+		{name:"confirmed", type:"boolean", useNull:true},
+		{name:"className", type:"string"},
+		{name:"businessObject", type:"string"}
 	] 
 });
 	

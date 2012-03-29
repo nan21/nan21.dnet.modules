@@ -74,24 +74,28 @@ public class SalesOrderDsConv extends
             this.lookup_paymentMethod_PaymentMethod(ds, e);
         }
 
-        if (ds.getCustomerId() != null) {
-            if (e.getCustomer() == null
-                    || !e.getCustomer().getId().equals(ds.getCustomerId())) {
-                e.setCustomer((BusinessPartner) this.em.find(
-                        BusinessPartner.class, ds.getCustomerId()));
+        if (isInsert) {
+            if (ds.getCustomerId() != null) {
+                if (e.getCustomer() == null
+                        || !e.getCustomer().getId().equals(ds.getCustomerId())) {
+                    e.setCustomer((BusinessPartner) this.em.find(
+                            BusinessPartner.class, ds.getCustomerId()));
+                }
+            } else {
+                this.lookup_customer_BusinessPartner(ds, e);
             }
-        } else {
-            this.lookup_customer_BusinessPartner(ds, e);
         }
 
-        if (ds.getSupplierId() != null) {
-            if (e.getSupplier() == null
-                    || !e.getSupplier().getId().equals(ds.getSupplierId())) {
-                e.setSupplier((Organization) this.em.find(Organization.class,
-                        ds.getSupplierId()));
+        if (isInsert) {
+            if (ds.getSupplierId() != null) {
+                if (e.getSupplier() == null
+                        || !e.getSupplier().getId().equals(ds.getSupplierId())) {
+                    e.setSupplier((Organization) this.em.find(
+                            Organization.class, ds.getSupplierId()));
+                }
+            } else {
+                this.lookup_supplier_Organization(ds, e);
             }
-        } else {
-            this.lookup_supplier_Organization(ds, e);
         }
 
         if (ds.getBillToId() != null) {

@@ -43,7 +43,30 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
     private Date docDate_From;
     private Date docDate_To;
 
-    private String businessObject;
+    private Long supplierId;
+
+    private Long supplierId_From;
+    private Long supplierId_To;
+
+    private String supplier;
+
+    private Long customerId;
+
+    private Long customerId_From;
+    private Long customerId_To;
+
+    private String customerUuid;
+
+    private String customerCode;
+
+    private String customer;
+
+    private Long priceListId;
+
+    private Long priceListId_From;
+    private Long priceListId_To;
+
+    private String priceList;
 
     private Long currencyId;
 
@@ -67,17 +90,6 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
     private Float totalAmount_From;
     private Float totalAmount_To;
 
-    private Long customerId;
-
-    private Long customerId_From;
-    private Long customerId_To;
-
-    private String customerUuid;
-
-    private String customerCode;
-
-    private String customer;
-
     private Long billToLocationId;
 
     private Long billToLocationId_From;
@@ -92,13 +104,6 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
 
     private String billToContact;
 
-    private Long supplierId;
-
-    private Long supplierId_From;
-    private Long supplierId_To;
-
-    private String supplier;
-
     private Long salesOrderId;
 
     private Long salesOrderId_From;
@@ -106,7 +111,13 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
 
     private String salesOrderCode;
 
+    private Boolean confirmed;
+
+    private Boolean posted;
+
     private String className;
+
+    private String businessObject;
 
     public Long getId() {
         return this.id;
@@ -237,12 +248,116 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
         this.docDate_To = docDate_To;
     }
 
-    public String getBusinessObject() {
-        return this.businessObject;
+    public Long getSupplierId() {
+        return this.supplierId;
     }
 
-    public void setBusinessObject(String businessObject) {
-        this.businessObject = businessObject;
+    public Long getSupplierId_From() {
+        return this.supplierId_From;
+    }
+
+    public Long getSupplierId_To() {
+        return this.supplierId_To;
+    }
+
+    public void setSupplierId(Long supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    public void setSupplierId_From(Long supplierId_From) {
+        this.supplierId_From = supplierId_From;
+    }
+
+    public void setSupplierId_To(Long supplierId_To) {
+        this.supplierId_To = supplierId_To;
+    }
+
+    public String getSupplier() {
+        return this.supplier;
+    }
+
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
+    }
+
+    public Long getCustomerId() {
+        return this.customerId;
+    }
+
+    public Long getCustomerId_From() {
+        return this.customerId_From;
+    }
+
+    public Long getCustomerId_To() {
+        return this.customerId_To;
+    }
+
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
+
+    public void setCustomerId_From(Long customerId_From) {
+        this.customerId_From = customerId_From;
+    }
+
+    public void setCustomerId_To(Long customerId_To) {
+        this.customerId_To = customerId_To;
+    }
+
+    public String getCustomerUuid() {
+        return this.customerUuid;
+    }
+
+    public void setCustomerUuid(String customerUuid) {
+        this.customerUuid = customerUuid;
+    }
+
+    public String getCustomerCode() {
+        return this.customerCode;
+    }
+
+    public void setCustomerCode(String customerCode) {
+        this.customerCode = customerCode;
+    }
+
+    public String getCustomer() {
+        return this.customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
+    public Long getPriceListId() {
+        return this.priceListId;
+    }
+
+    public Long getPriceListId_From() {
+        return this.priceListId_From;
+    }
+
+    public Long getPriceListId_To() {
+        return this.priceListId_To;
+    }
+
+    public void setPriceListId(Long priceListId) {
+        this.priceListId = priceListId;
+    }
+
+    public void setPriceListId_From(Long priceListId_From) {
+        this.priceListId_From = priceListId_From;
+    }
+
+    public void setPriceListId_To(Long priceListId_To) {
+        this.priceListId_To = priceListId_To;
+    }
+
+    public String getPriceList() {
+        return this.priceList;
+    }
+
+    public void setPriceList(String priceList) {
+        this.priceList = priceList;
     }
 
     public Long getCurrencyId() {
@@ -349,54 +464,6 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
         this.totalAmount_To = totalAmount_To;
     }
 
-    public Long getCustomerId() {
-        return this.customerId;
-    }
-
-    public Long getCustomerId_From() {
-        return this.customerId_From;
-    }
-
-    public Long getCustomerId_To() {
-        return this.customerId_To;
-    }
-
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
-
-    public void setCustomerId_From(Long customerId_From) {
-        this.customerId_From = customerId_From;
-    }
-
-    public void setCustomerId_To(Long customerId_To) {
-        this.customerId_To = customerId_To;
-    }
-
-    public String getCustomerUuid() {
-        return this.customerUuid;
-    }
-
-    public void setCustomerUuid(String customerUuid) {
-        this.customerUuid = customerUuid;
-    }
-
-    public String getCustomerCode() {
-        return this.customerCode;
-    }
-
-    public void setCustomerCode(String customerCode) {
-        this.customerCode = customerCode;
-    }
-
-    public String getCustomer() {
-        return this.customer;
-    }
-
-    public void setCustomer(String customer) {
-        this.customer = customer;
-    }
-
     public Long getBillToLocationId() {
         return this.billToLocationId;
     }
@@ -461,38 +528,6 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
         this.billToContact = billToContact;
     }
 
-    public Long getSupplierId() {
-        return this.supplierId;
-    }
-
-    public Long getSupplierId_From() {
-        return this.supplierId_From;
-    }
-
-    public Long getSupplierId_To() {
-        return this.supplierId_To;
-    }
-
-    public void setSupplierId(Long supplierId) {
-        this.supplierId = supplierId;
-    }
-
-    public void setSupplierId_From(Long supplierId_From) {
-        this.supplierId_From = supplierId_From;
-    }
-
-    public void setSupplierId_To(Long supplierId_To) {
-        this.supplierId_To = supplierId_To;
-    }
-
-    public String getSupplier() {
-        return this.supplier;
-    }
-
-    public void setSupplier(String supplier) {
-        this.supplier = supplier;
-    }
-
     public Long getSalesOrderId() {
         return this.salesOrderId;
     }
@@ -525,12 +560,36 @@ public class SalesInvoiceDsFilter extends AbstractDsFilter implements
         this.salesOrderCode = salesOrderCode;
     }
 
+    public Boolean getConfirmed() {
+        return this.confirmed;
+    }
+
+    public void setConfirmed(Boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    public Boolean getPosted() {
+        return this.posted;
+    }
+
+    public void setPosted(Boolean posted) {
+        this.posted = posted;
+    }
+
     public String getClassName() {
         return this.className;
     }
 
     public void setClassName(String className) {
         this.className = className;
+    }
+
+    public String getBusinessObject() {
+        return this.businessObject;
+    }
+
+    public void setBusinessObject(String businessObject) {
+        this.businessObject = businessObject;
     }
 
 }

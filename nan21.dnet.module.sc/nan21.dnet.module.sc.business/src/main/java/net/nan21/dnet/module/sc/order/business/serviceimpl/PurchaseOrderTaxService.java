@@ -33,17 +33,19 @@ public class PurchaseOrderTaxService extends
         return PurchaseOrderTax.class;
     }
 
-    public List<PurchaseOrderTax> findBySalesOrder(PurchaseOrder salesOrder) {
-        return this.findBySalesOrderId(salesOrder.getId());
+    public List<PurchaseOrderTax> findByPurchaseOrder(
+            PurchaseOrder purchaseOrder) {
+        return this.findByPurchaseOrderId(purchaseOrder.getId());
     }
 
-    public List<PurchaseOrderTax> findBySalesOrderId(Long salesOrderId) {
+    public List<PurchaseOrderTax> findByPurchaseOrderId(Long purchaseOrderId) {
         return (List<PurchaseOrderTax>) this.em
                 .createQuery(
-                        "select e from PurchaseOrderTax e where e.clientId = :pClientId and e.salesOrder.id = :pSalesOrderId",
+                        "select e from PurchaseOrderTax e where e.clientId = :pClientId and e.purchaseOrder.id = :pPurchaseOrderId",
                         PurchaseOrderTax.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pSalesOrderId", salesOrderId).getResultList();
+                .setParameter("pPurchaseOrderId", purchaseOrderId)
+                .getResultList();
     }
 
     public List<PurchaseOrderTax> findByTax(Tax tax) {

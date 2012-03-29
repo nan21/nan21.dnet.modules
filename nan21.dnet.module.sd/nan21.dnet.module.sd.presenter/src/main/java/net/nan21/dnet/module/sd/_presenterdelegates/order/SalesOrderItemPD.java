@@ -18,13 +18,13 @@ public class SalesOrderItemPD extends AbstractDsDelegate {
 				.findEntityService(ProductPrice.class);
 		ProductPrice pr = srv.getProductPrice(ds.getProductId(), so.getPriceList().getId(), so.getDocDate());
 		
-		ds.setNetUnitPrice(pr.getPrice());
+		ds.setUnitPrice(pr.getPrice());
 		ds.setUomId(pr.getUom().getId());
 		ds.setUomCode(pr.getUom().getCode());
 		
 		// reset other 
 		ds.setNetAmount(1F *pr.getPrice() );
 		ds.setTaxAmount(0F);
-		ds.setQtyOrdered(1F);
+		ds.setQuantity(1F);
 	}
 }

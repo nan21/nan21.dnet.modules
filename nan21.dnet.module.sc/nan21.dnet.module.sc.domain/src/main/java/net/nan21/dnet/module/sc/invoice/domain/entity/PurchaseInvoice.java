@@ -160,20 +160,20 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
-    @JoinColumn(name = "CURRENCY_ID", referencedColumnName = "ID")
-    private Currency currency;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "SUPPLIER_ID", referencedColumnName = "ID")
     private BusinessPartner supplier;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "ID")
     private Organization customer;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
+    @JoinColumn(name = "CURRENCY_ID", referencedColumnName = "ID")
+    private Currency currency;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PurchaseOrder.class)
     @JoinColumn(name = "PURCHASEORDER_ID", referencedColumnName = "ID")
     private PurchaseOrder purchaseOrder;
 
-    @OneToMany(fetch = FetchType.LAZY, targetEntity = PurchaseInvoiceItem.class, mappedBy = "invoice", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = PurchaseInvoiceItem.class, mappedBy = "purchaseInvoice", cascade = CascadeType.ALL)
     @CascadeOnDelete
     private Collection<PurchaseInvoiceItem> lines;
 
@@ -317,14 +317,6 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
 
     }
 
-    public Currency getCurrency() {
-        return this.currency;
-    }
-
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
-    }
-
     public BusinessPartner getSupplier() {
         return this.supplier;
     }
@@ -339,6 +331,14 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
 
     public void setCustomer(Organization customer) {
         this.customer = customer;
+    }
+
+    public Currency getCurrency() {
+        return this.currency;
+    }
+
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
     }
 
     public PurchaseOrder getPurchaseOrder() {
@@ -361,7 +361,7 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
         if (this.lines == null) {
             this.lines = new ArrayList<PurchaseInvoiceItem>();
         }
-        e.setInvoice(this);
+        e.setPurchaseInvoice(this);
         this.lines.add(e);
     }
 

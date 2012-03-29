@@ -24,7 +24,7 @@ public class Setup_SD extends AbstractBusinessSetupParticipant implements
 		// there is nothing to setup here, this one is run to enforce that the
 		// database objects are created in the right order
 		// in case the object creation is managed by eclipselink
-		Long i = (Long) this.em.createQuery("select count(e) from SalesOrderType e")
+		Long i = (Long) this.em.createQuery("select count(e) from SalesOrder e")
 				.getResultList().get(0);
 
 	}

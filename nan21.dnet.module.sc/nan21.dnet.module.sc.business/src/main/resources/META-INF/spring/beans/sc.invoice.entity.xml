@@ -13,11 +13,11 @@
  	<bean id="PurchaseInvoiceItemService" scope="prototype"
 	  		class="net.nan21.dnet.module.sc.invoice.business.serviceext.PurchaseInvoiceItemService"  />  
  
- 	<bean id="PurchaseInvoiceTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.sc.invoice.business.serviceimpl.PurchaseInvoiceTypeService"  />  
+ 	<bean id="PurchaseInvoiceTaxService" scope="prototype"
+	  		class="net.nan21.dnet.module.sc.invoice.business.serviceimpl.PurchaseInvoiceTaxService"  />  
  
- 	<bean id="PurchaseInvoiceStatusService" scope="prototype"
-	  		class="net.nan21.dnet.module.sc.invoice.business.serviceimpl.PurchaseInvoiceStatusService"  />  
+ 	<bean id="PurchaseInvoiceItemTaxService" scope="prototype"
+	  		class="net.nan21.dnet.module.sc.invoice.business.serviceimpl.PurchaseInvoiceItemTaxService"  />  
    
 </beans>
    

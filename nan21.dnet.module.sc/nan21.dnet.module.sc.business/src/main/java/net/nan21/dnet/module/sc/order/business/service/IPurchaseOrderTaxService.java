@@ -15,9 +15,10 @@ import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderTax;
 public interface IPurchaseOrderTaxService extends
         IEntityService<PurchaseOrderTax> {
 
-    public List<PurchaseOrderTax> findBySalesOrder(PurchaseOrder salesOrder);
+    public List<PurchaseOrderTax> findByPurchaseOrder(
+            PurchaseOrder purchaseOrder);
 
-    public List<PurchaseOrderTax> findBySalesOrderId(Long salesOrderId);
+    public List<PurchaseOrderTax> findByPurchaseOrderId(Long purchaseOrderId);
 
     public List<PurchaseOrderTax> findByTax(Tax tax);
 

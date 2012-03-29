@@ -8,9 +8,12 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderItemDs$Trl", {
 	productName__lbl : "Product Name",
 	uomId__lbl : "Uom Id",
 	uomCode__lbl : "Uom Code",
-	qtyOrdered__lbl : "Qty Ordered",
-	netUnitPrice__lbl : "Net Unit Price",
+	quantity__lbl : "Quantity",
+	unitPrice__lbl : "Unit Price",
 	netAmount__lbl : "Net Amount",
+	taxAmount__lbl : "Tax Amount",
+	taxId__lbl : "Tax Id",
+	tax__lbl : "Tax",
 		
 	id__lbl :"ID"
 });

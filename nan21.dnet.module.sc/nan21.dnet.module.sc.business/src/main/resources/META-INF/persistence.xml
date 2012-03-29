@@ -9,16 +9,14 @@
 		 
 		<class>net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder</class>
 		<class>net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderItem</class>
-		<class>net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderType</class>
-		<class>net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderStatus</class>
 		<class>net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderTax</class>
 		<class>net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderItemTax</class>
 		 
 		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoice</class>
 		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem</class>
-		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceType</class>
-		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceStatus</class>
- 
+ 		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceTax</class>
+		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItemTax</class>
+		
 		<!-- Dependencies -->
 		
 		<class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>

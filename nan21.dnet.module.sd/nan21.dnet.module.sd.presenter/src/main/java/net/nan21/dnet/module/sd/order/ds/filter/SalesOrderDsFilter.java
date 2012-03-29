@@ -43,7 +43,12 @@ public class SalesOrderDsFilter extends AbstractDsFilter implements
     private Date docDate_From;
     private Date docDate_To;
 
-    private String businessObject;
+    private Long supplierId;
+
+    private Long supplierId_From;
+    private Long supplierId_To;
+
+    private String supplier;
 
     private Long customerId;
 
@@ -83,13 +88,6 @@ public class SalesOrderDsFilter extends AbstractDsFilter implements
     private Long deliveryMethodId_To;
 
     private String deliveryMethod;
-
-    private Long supplierId;
-
-    private Long supplierId_From;
-    private Long supplierId_To;
-
-    private String supplier;
 
     private Long billToId;
 
@@ -149,6 +147,8 @@ public class SalesOrderDsFilter extends AbstractDsFilter implements
     private Boolean delivered;
 
     private String className;
+
+    private String businessObject;
 
     public Long getId() {
         return this.id;
@@ -279,12 +279,36 @@ public class SalesOrderDsFilter extends AbstractDsFilter implements
         this.docDate_To = docDate_To;
     }
 
-    public String getBusinessObject() {
-        return this.businessObject;
+    public Long getSupplierId() {
+        return this.supplierId;
     }
 
-    public void setBusinessObject(String businessObject) {
-        this.businessObject = businessObject;
+    public Long getSupplierId_From() {
+        return this.supplierId_From;
+    }
+
+    public Long getSupplierId_To() {
+        return this.supplierId_To;
+    }
+
+    public void setSupplierId(Long supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    public void setSupplierId_From(Long supplierId_From) {
+        this.supplierId_From = supplierId_From;
+    }
+
+    public void setSupplierId_To(Long supplierId_To) {
+        this.supplierId_To = supplierId_To;
+    }
+
+    public String getSupplier() {
+        return this.supplier;
+    }
+
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
     }
 
     public Long getCustomerId() {
@@ -461,38 +485,6 @@ public class SalesOrderDsFilter extends AbstractDsFilter implements
 
     public void setDeliveryMethod(String deliveryMethod) {
         this.deliveryMethod = deliveryMethod;
-    }
-
-    public Long getSupplierId() {
-        return this.supplierId;
-    }
-
-    public Long getSupplierId_From() {
-        return this.supplierId_From;
-    }
-
-    public Long getSupplierId_To() {
-        return this.supplierId_To;
-    }
-
-    public void setSupplierId(Long supplierId) {
-        this.supplierId = supplierId;
-    }
-
-    public void setSupplierId_From(Long supplierId_From) {
-        this.supplierId_From = supplierId_From;
-    }
-
-    public void setSupplierId_To(Long supplierId_To) {
-        this.supplierId_To = supplierId_To;
-    }
-
-    public String getSupplier() {
-        return this.supplier;
-    }
-
-    public void setSupplier(String supplier) {
-        this.supplier = supplier;
     }
 
     public Long getBillToId() {
@@ -757,6 +749,14 @@ public class SalesOrderDsFilter extends AbstractDsFilter implements
 
     public void setClassName(String className) {
         this.className = className;
+    }
+
+    public String getBusinessObject() {
+        return this.businessObject;
+    }
+
+    public void setBusinessObject(String businessObject) {
+        this.businessObject = businessObject;
     }
 
 }

@@ -3,7 +3,8 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {
 	uuid__lbl : "Uuid",
 	entityFQN__lbl : "Entity FQN",
 	docDate__lbl : "Doc Date",
-	businessObject__lbl : "Business Object",
+	supplierId__lbl : "Supplier Id",
+	supplier__lbl : "Supplier",
 	customerId__lbl : "Customer Id",
 	customerUuid__lbl : "Customer Uuid",
 	customerCode__lbl : "Customer Code",
@@ -16,8 +17,6 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {
 	paymentMethod__lbl : "Payment Method",
 	deliveryMethodId__lbl : "Delivery Method Id",
 	deliveryMethod__lbl : "Delivery Method",
-	supplierId__lbl : "Supplier Id",
-	supplier__lbl : "Supplier",
 	billToId__lbl : "Bill To Id",
 	billToUuid__lbl : "Bill To Uuid",
 	billToCode__lbl : "Bill To Code",
@@ -37,6 +36,7 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {
 	invoiced__lbl : "Invoiced",
 	delivered__lbl : "Delivered",
 	className__lbl : "Class Name",
+	businessObject__lbl : "Business Object",
 		
 	id__lbl :"ID"
 });

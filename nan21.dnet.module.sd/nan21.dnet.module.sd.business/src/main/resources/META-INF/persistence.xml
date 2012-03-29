@@ -9,15 +9,13 @@
 		 
 		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrder</class>
 		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem</class>
-		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderType</class>
-		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderStatus</class>
 		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderTax</class>
 		<class>net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax</class>
 		 
 		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice</class>
 		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem</class>
-		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType</class>
-		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus</class>
+		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceTax</class>
+		<class>net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItemTax</class>
 
 		<class>net.nan21.dnet.module.sd.opportunity.domain.entity.Opportunity</class>
 		<class>net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStatus</class>

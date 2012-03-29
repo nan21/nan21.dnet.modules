@@ -2,15 +2,18 @@
 Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceItemDs$Trl", {  	  	
 	uuid__lbl : "Uuid",
 	entityFQN__lbl : "Entity FQN",
-	invoiceId__lbl : "Invoice Id",
-	itemId__lbl : "Item Id",
-	itemCode__lbl : "Item Code",
-	itemName__lbl : "Item Name",
+	purchaseInvoiceId__lbl : "Purchase Invoice Id",
+	productId__lbl : "Product Id",
+	productCode__lbl : "Product Code",
+	productName__lbl : "Product Name",
 	quantity__lbl : "Quantity",
 	uomId__lbl : "Uom Id",
 	uomCode__lbl : "Uom Code",
 	unitPrice__lbl : "Unit Price",
 	netAmount__lbl : "Net Amount",
+	taxAmount__lbl : "Tax Amount",
+	taxId__lbl : "Tax Id",
+	tax__lbl : "Tax",
 		
 	id__lbl :"ID"
 });

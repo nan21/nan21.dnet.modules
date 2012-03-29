@@ -18,10 +18,6 @@ import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoice;
 public interface IPurchaseInvoiceService extends
         IEntityService<PurchaseInvoice> {
 
-    public List<PurchaseInvoice> findByCurrency(Currency currency);
-
-    public List<PurchaseInvoice> findByCurrencyId(Long currencyId);
-
     public List<PurchaseInvoice> findBySupplier(BusinessPartner supplier);
 
     public List<PurchaseInvoice> findBySupplierId(Long supplierId);
@@ -29,6 +25,10 @@ public interface IPurchaseInvoiceService extends
     public List<PurchaseInvoice> findByCustomer(Organization customer);
 
     public List<PurchaseInvoice> findByCustomerId(Long customerId);
+
+    public List<PurchaseInvoice> findByCurrency(Currency currency);
+
+    public List<PurchaseInvoice> findByCurrencyId(Long currencyId);
 
     public List<PurchaseInvoice> findByPurchaseOrder(PurchaseOrder purchaseOrder);
 

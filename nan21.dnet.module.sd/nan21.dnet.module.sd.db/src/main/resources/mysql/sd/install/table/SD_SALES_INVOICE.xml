@@ -42,6 +42,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CUSTOMER_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
+			<column name="PRICELIST_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
 			<column name="SALESORDER_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
 			<column name="SUPPLIER_ID" type="bigint(19)">	 

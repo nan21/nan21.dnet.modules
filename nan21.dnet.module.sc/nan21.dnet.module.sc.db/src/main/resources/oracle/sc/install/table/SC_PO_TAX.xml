@@ -24,7 +24,7 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="number(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="SALESORDER_ID" type="number(19)">	 
+			<column name="PURCHASEORDER_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="TAX_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 

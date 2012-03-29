@@ -12,12 +12,17 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 
 public interface ISalesInvoiceService extends IEntityService<SalesInvoice> {
+
+    public List<SalesInvoice> findByPriceList(PriceList priceList);
+
+    public List<SalesInvoice> findByPriceListId(Long priceListId);
 
     public List<SalesInvoice> findByCurrency(Currency currency);
 

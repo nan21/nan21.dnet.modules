@@ -8,6 +8,8 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI$Trl", {
 	
 	tlbOrderList__ttl : "Sales orders",
 	tlbOrderEdit__ttl : "Sales order",
+	tlbItemList__ttl : "Order items",
+	tlbItemEdit__ttl : "Order item",
 	
 	btnViewAttachment__ttl : "View",
 	btnViewAttachment__desc : "View the selected attachment",
@@ -21,6 +23,8 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI$Trl", {
 	btnCreateInvoice__desc : "Generate Invoice",
 	btnCreateDelivery__ttl : "Generate Delivery",
 	btnCreateDelivery__desc : "Generate Delivery",
+	btnShowInvoice__ttl : "Show Invoice",
+	btnShowInvoice__desc : "Show the invoice linked to this sales order",
 	
 	title: "Sales orders"
 });

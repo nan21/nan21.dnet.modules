@@ -14,6 +14,8 @@ import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
+import net.nan21.dnet.module.mm.price.business.service.IPriceListService;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs;
@@ -27,34 +29,50 @@ public class SalesInvoiceDsConv extends
     protected void modelToEntityReferences(SalesInvoiceDs ds, SalesInvoice e,
             boolean isInsert) throws Exception {
 
-        if (ds.getCurrencyId() != null) {
-            if (e.getCurrency() == null
-                    || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
-                e.setCurrency((Currency) this.em.find(Currency.class,
-                        ds.getCurrencyId()));
+        if (isInsert) {
+            if (ds.getCurrencyId() != null) {
+                if (e.getCurrency() == null
+                        || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
+                    e.setCurrency((Currency) this.em.find(Currency.class,
+                            ds.getCurrencyId()));
+                }
+            } else {
+                this.lookup_currency_Currency(ds, e);
             }
-        } else {
-            this.lookup_currency_Currency(ds, e);
         }
 
-        if (ds.getSupplierId() != null) {
-            if (e.getSupplier() == null
-                    || !e.getSupplier().getId().equals(ds.getSupplierId())) {
-                e.setSupplier((Organization) this.em.find(Organization.class,
-                        ds.getSupplierId()));
+        if (ds.getPriceListId() != null) {
+            if (e.getPriceList() == null
+                    || !e.getPriceList().getId().equals(ds.getPriceListId())) {
+                e.setPriceList((PriceList) this.em.find(PriceList.class,
+                        ds.getPriceListId()));
             }
         } else {
-            this.lookup_supplier_Organization(ds, e);
+            this.lookup_priceList_PriceList(ds, e);
         }
 
-        if (ds.getCustomerId() != null) {
-            if (e.getCustomer() == null
-                    || !e.getCustomer().getId().equals(ds.getCustomerId())) {
-                e.setCustomer((BusinessPartner) this.em.find(
-                        BusinessPartner.class, ds.getCustomerId()));
+        if (isInsert) {
+            if (ds.getSupplierId() != null) {
+                if (e.getSupplier() == null
+                        || !e.getSupplier().getId().equals(ds.getSupplierId())) {
+                    e.setSupplier((Organization) this.em.find(
+                            Organization.class, ds.getSupplierId()));
+                }
+            } else {
+                this.lookup_supplier_Organization(ds, e);
             }
-        } else {
-            this.lookup_customer_BusinessPartner(ds, e);
+        }
+
+        if (isInsert) {
+            if (ds.getCustomerId() != null) {
+                if (e.getCustomer() == null
+                        || !e.getCustomer().getId().equals(ds.getCustomerId())) {
+                    e.setCustomer((BusinessPartner) this.em.find(
+                            BusinessPartner.class, ds.getCustomerId()));
+                }
+            } else {
+                this.lookup_customer_BusinessPartner(ds, e);
+            }
         }
 
         if (ds.getBillToContactId() != null) {
@@ -93,6 +111,25 @@ public class SalesInvoiceDsConv extends
 
         } else {
             e.setCurrency(null);
+        }
+    }
+
+    protected void lookup_priceList_PriceList(SalesInvoiceDs ds, SalesInvoice e)
+            throws Exception {
+        if (ds.getPriceList() != null && !ds.getPriceList().equals("")) {
+            PriceList x = null;
+            try {
+                x = ((IPriceListService) findEntityService(PriceList.class))
+                        .findByName(ds.getPriceList());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PriceList` reference:  `priceList` = "
+                                + ds.getPriceList() + "  ");
+            }
+            e.setPriceList(x);
+
+        } else {
+            e.setPriceList(null);
         }
     }
 

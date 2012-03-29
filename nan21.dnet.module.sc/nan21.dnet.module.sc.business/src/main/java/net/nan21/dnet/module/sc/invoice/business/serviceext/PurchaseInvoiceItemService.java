@@ -8,24 +8,36 @@ package net.nan21.dnet.module.sc.invoice.business.serviceext;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.nan21.dnet.module.sc._businessdelegates.order.PurchaseTaxBD;
 import net.nan21.dnet.module.sc.invoice.business.service.IPurchaseInvoiceItemService;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoice;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
+import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItemTax;
 
 public class PurchaseInvoiceItemService
-        extends
-        net.nan21.dnet.module.sc.invoice.business.serviceimpl.PurchaseInvoiceItemService
-        implements IPurchaseInvoiceItemService {
+		extends
+		net.nan21.dnet.module.sc.invoice.business.serviceimpl.PurchaseInvoiceItemService
+		implements IPurchaseInvoiceItemService {
 
 	private List<Long> invoiceIds;
+
+	@Override
+	protected void postUpdate(PurchaseInvoiceItem e) throws Exception {
+		this.calculateTaxes(e);
+	}
+
+	@Override
+	protected void postInsert(PurchaseInvoiceItem e) throws Exception {
+		this.calculateTaxes(e);
+	}
 
 	@Override
 	protected void postInsert(List<PurchaseInvoiceItem> list) {
 		invoiceIds = new ArrayList<Long>();
 		for (PurchaseInvoiceItem item : list) {
-			if (!invoiceIds.contains(item.getInvoice().getId())) {
-				this.updateAmount(item.getInvoice().getId());
-				invoiceIds.add(item.getInvoice().getId());
+			if (!invoiceIds.contains(item.getPurchaseInvoice().getId())) {
+				this.updateAmount(item.getPurchaseInvoice().getId());
+				invoiceIds.add(item.getPurchaseInvoice().getId());
 			}
 		}
 		invoiceIds = null;
@@ -35,9 +47,9 @@ public class PurchaseInvoiceItemService
 	protected void postUpdate(List<PurchaseInvoiceItem> list) {
 		invoiceIds = new ArrayList<Long>();
 		for (PurchaseInvoiceItem item : list) {
-			if (!invoiceIds.contains(item.getInvoice())) {
-				this.updateAmount(item.getInvoice().getId());
-				invoiceIds.add(item.getInvoice().getId());
+			if (!invoiceIds.contains(item.getPurchaseInvoice())) {
+				this.updateAmount(item.getPurchaseInvoice().getId());
+				invoiceIds.add(item.getPurchaseInvoice().getId());
 			}
 		}
 		invoiceIds = null;
@@ -48,7 +60,7 @@ public class PurchaseInvoiceItemService
 		this.invoiceIds = new ArrayList<Long>();
 		List<PurchaseInvoiceItem> items = this.findByIds(ids);
 		for (PurchaseInvoiceItem item : items) {
-			this.invoiceIds.add(item.getInvoice().getId());
+			this.invoiceIds.add(item.getPurchaseInvoice().getId());
 		}
 	}
 
@@ -64,7 +76,7 @@ public class PurchaseInvoiceItemService
 	protected void preDeleteById(Object id) {
 		invoiceIds = new ArrayList<Long>();
 		invoiceIds.add(this.em.getReference(PurchaseInvoiceItem.class, id)
-				.getInvoice().getId());
+				.getPurchaseInvoice().getId());
 	}
 
 	@Override
@@ -75,16 +87,54 @@ public class PurchaseInvoiceItemService
 
 	private void updateAmount(Long invoiceId) {
 		this.em.flush();
-		Double x = (Double) this.em
+		Object[] x = (Object[]) this.em
 				.createQuery(
-						"select sum(i.netAmount) from PurchaseInvoiceItem i where i.invoice.id = :invoiceId")
+						"select sum(i.netAmount), sum(i.taxAmount) from PurchaseInvoiceItem i " +
+						"where i.purchaseInvoice.id = :invoiceId")
 				.setParameter("invoiceId", invoiceId).getSingleResult();
-		PurchaseInvoice invoice = this.em.find(PurchaseInvoice.class, invoiceId);
-		if (x==null) {
-			x = 0D;
+		PurchaseInvoice invoice = this.em
+				.find(PurchaseInvoice.class, invoiceId);
+
+		Double totalNet = (Double) x[0];
+		Double totalTax = (Double) x[1];
+		if (totalNet == null) {
+			totalNet = 0D;
 		}
-		invoice.setTotalNetAmount(x.floatValue());
+		if (totalTax == null) {
+			totalTax = 0D;
+		}
+
+		invoice.setTotalNetAmount(totalNet.floatValue());
+		invoice.setTotalTaxAmount(totalTax.floatValue());
+
 		this.em.merge(invoice);
 	}
-	
+
+	protected void calculateTaxes(PurchaseInvoiceItem item) throws Exception {
+
+		if (item.getTax() != null) {
+			PurchaseTaxBD delegate = this
+					.getBusinessDelegate(PurchaseTaxBD.class);
+			List<PurchaseInvoiceItemTax> itemTaxes = new ArrayList<PurchaseInvoiceItemTax>();
+
+			delegate.createItemTax(item, null, itemTaxes);
+			Float taxAmount = 0F;
+			for (PurchaseInvoiceItemTax itemTax : itemTaxes) {
+				taxAmount += itemTax.getTaxAmount();
+			}
+			item.setTaxAmount(taxAmount);
+			this.em.merge(item);
+			// this.getEntityManager().flush();
+			this.em.createQuery(
+					"delete from "
+							+ PurchaseInvoiceItemTax.class.getSimpleName()
+							+ " e where e.purchaseInvoiceItem.id = :itemId")
+					.setParameter("itemId", item.getId()).executeUpdate();
+
+			for (PurchaseInvoiceItemTax itemTax : itemTaxes) {
+				this.em.persist(itemTax);
+			}
+		}
+	}
+
 }

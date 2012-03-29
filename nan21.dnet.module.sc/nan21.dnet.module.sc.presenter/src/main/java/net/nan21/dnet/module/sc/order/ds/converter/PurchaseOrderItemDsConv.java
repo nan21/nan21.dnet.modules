@@ -6,6 +6,8 @@
 package net.nan21.dnet.module.sc.order.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.fin.business.service.ITaxService;
+import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.business.service.IProductService;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
@@ -23,12 +25,14 @@ public class PurchaseOrderItemDsConv extends
     protected void modelToEntityReferences(PurchaseOrderItemDs ds,
             PurchaseOrderItem e, boolean isInsert) throws Exception {
 
-        if (ds.getPurchaseOrderId() != null) {
-            if (e.getPurchaseOrder() == null
-                    || !e.getPurchaseOrder().getId()
-                            .equals(ds.getPurchaseOrderId())) {
-                e.setPurchaseOrder((PurchaseOrder) this.em.find(
-                        PurchaseOrder.class, ds.getPurchaseOrderId()));
+        if (isInsert) {
+            if (ds.getPurchaseOrderId() != null) {
+                if (e.getPurchaseOrder() == null
+                        || !e.getPurchaseOrder().getId()
+                                .equals(ds.getPurchaseOrderId())) {
+                    e.setPurchaseOrder((PurchaseOrder) this.em.find(
+                            PurchaseOrder.class, ds.getPurchaseOrderId()));
+                }
             }
         }
 
@@ -46,6 +50,14 @@ public class PurchaseOrderItemDsConv extends
             }
         } else {
             this.lookup_product_Product(ds, e);
+        }
+
+        if (ds.getTaxId() != null) {
+            if (e.getTax() == null || !e.getTax().getId().equals(ds.getTaxId())) {
+                e.setTax((Tax) this.em.find(Tax.class, ds.getTaxId()));
+            }
+        } else {
+            this.lookup_tax_Tax(ds, e);
         }
 
     }
@@ -66,6 +78,25 @@ public class PurchaseOrderItemDsConv extends
 
         } else {
             e.setProduct(null);
+        }
+    }
+
+    protected void lookup_tax_Tax(PurchaseOrderItemDs ds, PurchaseOrderItem e)
+            throws Exception {
+        if (ds.getTax() != null && !ds.getTax().equals("")) {
+            Tax x = null;
+            try {
+                x = ((ITaxService) findEntityService(Tax.class)).findByName(ds
+                        .getTax());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Tax` reference:  `tax` = "
+                                + ds.getTax() + "  ");
+            }
+            e.setTax(x);
+
+        } else {
+            e.setTax(null);
         }
     }
 

@@ -24,7 +24,7 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="SALESORDERITEM_ID" type="bigint(19)">	 
+			<column name="PURCHASEORDERITEM_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="TAX_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 

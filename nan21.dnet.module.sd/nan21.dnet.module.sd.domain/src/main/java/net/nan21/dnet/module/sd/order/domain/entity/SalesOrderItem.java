@@ -53,8 +53,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class SalesOrderItem implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "SD_SALES_ORDER_ITEM";
-    public static final String SEQUENCE_NAME = "SD_SALES_ORDER_ITEM_SEQ";
+    public static final String TABLE_NAME = "SD_SO_ITEM";
+    public static final String SEQUENCE_NAME = "SD_SO_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -68,15 +68,15 @@ public class SalesOrderItem implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_IDS = "SalesOrderItem.findByIds";
 
-    /** QtyOrdered. */
-    @Column(name = "QTYORDERED", nullable = false, scale = 2)
+    /** Quantity. */
+    @Column(name = "QUANTITY", nullable = false, scale = 2)
     @NotNull
-    private Float qtyOrdered;
+    private Float quantity;
 
-    /** NetUnitPrice. */
-    @Column(name = "NETUNITPRICE", nullable = false, scale = 2)
+    /** UnitPrice. */
+    @Column(name = "UNITPRICE", nullable = false, scale = 2)
     @NotNull
-    private Float netUnitPrice;
+    private Float unitPrice;
 
     /** NetAmount. */
     @Column(name = "NETAMOUNT", nullable = false, scale = 2)
@@ -166,20 +166,20 @@ public class SalesOrderItem implements Serializable, IModelWithId,
 
     /* ============== getters - setters ================== */
 
-    public Float getQtyOrdered() {
-        return this.qtyOrdered;
+    public Float getQuantity() {
+        return this.quantity;
     }
 
-    public void setQtyOrdered(Float qtyOrdered) {
-        this.qtyOrdered = qtyOrdered;
+    public void setQuantity(Float quantity) {
+        this.quantity = quantity;
     }
 
-    public Float getNetUnitPrice() {
-        return this.netUnitPrice;
+    public Float getUnitPrice() {
+        return this.unitPrice;
     }
 
-    public void setNetUnitPrice(Float netUnitPrice) {
-        this.netUnitPrice = netUnitPrice;
+    public void setUnitPrice(Float unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     public Float getNetAmount() {

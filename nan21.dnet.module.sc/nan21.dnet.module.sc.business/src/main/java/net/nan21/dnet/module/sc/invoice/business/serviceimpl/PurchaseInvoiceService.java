@@ -36,19 +36,6 @@ public class PurchaseInvoiceService extends
         return PurchaseInvoice.class;
     }
 
-    public List<PurchaseInvoice> findByCurrency(Currency currency) {
-        return this.findByCurrencyId(currency.getId());
-    }
-
-    public List<PurchaseInvoice> findByCurrencyId(Long currencyId) {
-        return (List<PurchaseInvoice>) this.em
-                .createQuery(
-                        "select e from PurchaseInvoice e where e.clientId = :pClientId and e.currency.id = :pCurrencyId",
-                        PurchaseInvoice.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pCurrencyId", currencyId).getResultList();
-    }
-
     public List<PurchaseInvoice> findBySupplier(BusinessPartner supplier) {
         return this.findBySupplierId(supplier.getId());
     }
@@ -73,6 +60,19 @@ public class PurchaseInvoiceService extends
                         PurchaseInvoice.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCustomerId", customerId).getResultList();
+    }
+
+    public List<PurchaseInvoice> findByCurrency(Currency currency) {
+        return this.findByCurrencyId(currency.getId());
+    }
+
+    public List<PurchaseInvoice> findByCurrencyId(Long currencyId) {
+        return (List<PurchaseInvoice>) this.em
+                .createQuery(
+                        "select e from PurchaseInvoice e where e.clientId = :pClientId and e.currency.id = :pCurrencyId",
+                        PurchaseInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pCurrencyId", currencyId).getResultList();
     }
 
     public List<PurchaseInvoice> findByPurchaseOrder(PurchaseOrder purchaseOrder) {

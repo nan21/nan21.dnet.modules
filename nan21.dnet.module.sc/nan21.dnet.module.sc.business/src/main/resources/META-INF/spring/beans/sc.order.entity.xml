@@ -7,12 +7,6 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
- 	<bean id="PurchaseOrderTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.sc.order.business.serviceimpl.PurchaseOrderTypeService"  />  
- 
- 	<bean id="PurchaseOrderStatusService" scope="prototype"
-	  		class="net.nan21.dnet.module.sc.order.business.serviceimpl.PurchaseOrderStatusService"  />  
- 
  	<bean id="PurchaseOrderService" scope="prototype"
 	  		class="net.nan21.dnet.module.sc.order.business.serviceimpl.PurchaseOrderService"  />  
  

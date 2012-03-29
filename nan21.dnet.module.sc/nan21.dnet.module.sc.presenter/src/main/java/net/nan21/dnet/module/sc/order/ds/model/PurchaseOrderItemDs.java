@@ -33,9 +33,12 @@ public class PurchaseOrderItemDs extends AbstractDsModel<PurchaseOrderItem>
     public static final String fPRODUCTNAME = "productName";
     public static final String fUOMID = "uomId";
     public static final String fUOMCODE = "uomCode";
-    public static final String fQTYORDERED = "qtyOrdered";
-    public static final String fNETUNITPRICE = "netUnitPrice";
+    public static final String fQUANTITY = "quantity";
+    public static final String fUNITPRICE = "unitPrice";
     public static final String fNETAMOUNT = "netAmount";
+    public static final String fTAXAMOUNT = "taxAmount";
+    public static final String fTAXID = "taxId";
+    public static final String fTAX = "tax";
 
     @DsField(noUpdate = true)
     private Long id;
@@ -64,7 +67,7 @@ public class PurchaseOrderItemDs extends AbstractDsModel<PurchaseOrderItem>
     @DsField(noUpdate = true, fetch = false, path = "className")
     private String entityFQN;
 
-    @DsField(join = "left", path = "purchaseOrder.id")
+    @DsField(noUpdate = true, join = "left", path = "purchaseOrder.id")
     private Long purchaseOrderId;
 
     @DsField(join = "left", path = "product.id")
@@ -83,13 +86,22 @@ public class PurchaseOrderItemDs extends AbstractDsModel<PurchaseOrderItem>
     private String uomCode;
 
     @DsField()
-    private Float qtyOrdered;
+    private Float quantity;
 
     @DsField()
-    private Float netUnitPrice;
+    private Float unitPrice;
 
-    @DsField()
+    @DsField(noInsert = true, noUpdate = true)
     private Float netAmount;
+
+    @DsField(noInsert = true, noUpdate = true)
+    private Float taxAmount;
+
+    @DsField(join = "left", path = "tax.id")
+    private Long taxId;
+
+    @DsField(join = "left", path = "tax.name")
+    private String tax;
 
     public PurchaseOrderItemDs() {
         super();
@@ -220,20 +232,20 @@ public class PurchaseOrderItemDs extends AbstractDsModel<PurchaseOrderItem>
         this.uomCode = uomCode;
     }
 
-    public Float getQtyOrdered() {
-        return this.qtyOrdered;
+    public Float getQuantity() {
+        return this.quantity;
     }
 
-    public void setQtyOrdered(Float qtyOrdered) {
-        this.qtyOrdered = qtyOrdered;
+    public void setQuantity(Float quantity) {
+        this.quantity = quantity;
     }
 
-    public Float getNetUnitPrice() {
-        return this.netUnitPrice;
+    public Float getUnitPrice() {
+        return this.unitPrice;
     }
 
-    public void setNetUnitPrice(Float netUnitPrice) {
-        this.netUnitPrice = netUnitPrice;
+    public void setUnitPrice(Float unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     public Float getNetAmount() {
@@ -242,6 +254,30 @@ public class PurchaseOrderItemDs extends AbstractDsModel<PurchaseOrderItem>
 
     public void setNetAmount(Float netAmount) {
         this.netAmount = netAmount;
+    }
+
+    public Float getTaxAmount() {
+        return this.taxAmount;
+    }
+
+    public void setTaxAmount(Float taxAmount) {
+        this.taxAmount = taxAmount;
+    }
+
+    public Long getTaxId() {
+        return this.taxId;
+    }
+
+    public void setTaxId(Long taxId) {
+        this.taxId = taxId;
+    }
+
+    public String getTax() {
+        return this.tax;
+    }
+
+    public void setTax(String tax) {
+        this.tax = tax;
     }
 
 }

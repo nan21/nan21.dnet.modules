@@ -31,7 +31,7 @@ public class SalesOrderPD extends AbstractDsDelegate {
 				.findEntityService(SalesOrder.class));
 		SalesOrder order = soService.findById(ds.getId());
 		soService.doGenerateInvoice(order);
-
+		ds.setInvoiced(true);
 	}
 	public void generateDelivery(SalesOrderDs ds) throws Exception {
 		throw new Exception("This feature is not implemented yet. ");

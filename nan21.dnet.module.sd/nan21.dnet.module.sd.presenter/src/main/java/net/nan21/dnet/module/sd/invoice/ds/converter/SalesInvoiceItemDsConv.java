@@ -6,6 +6,8 @@
 package net.nan21.dnet.module.sd.invoice.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.fin.business.service.ITaxService;
+import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.business.service.IUomService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.business.service.IProductService;
@@ -24,11 +26,14 @@ public class SalesInvoiceItemDsConv extends
     protected void modelToEntityReferences(SalesInvoiceItemDs ds,
             SalesInvoiceItem e, boolean isInsert) throws Exception {
 
-        if (ds.getInvoiceId() != null) {
-            if (e.getInvoice() == null
-                    || !e.getInvoice().getId().equals(ds.getInvoiceId())) {
-                e.setInvoice((SalesInvoice) this.em.find(SalesInvoice.class,
-                        ds.getInvoiceId()));
+        if (isInsert) {
+            if (ds.getSalesInvoiceId() != null) {
+                if (e.getSalesInvoice() == null
+                        || !e.getSalesInvoice().getId()
+                                .equals(ds.getSalesInvoiceId())) {
+                    e.setSalesInvoice((SalesInvoice) this.em.find(
+                            SalesInvoice.class, ds.getSalesInvoiceId()));
+                }
             }
         }
 
@@ -40,13 +45,22 @@ public class SalesInvoiceItemDsConv extends
             this.lookup_uom_Uom(ds, e);
         }
 
-        if (ds.getItemId() != null) {
-            if (e.getItem() == null
-                    || !e.getItem().getId().equals(ds.getItemId())) {
-                e.setItem((Product) this.em.find(Product.class, ds.getItemId()));
+        if (ds.getProductId() != null) {
+            if (e.getProduct() == null
+                    || !e.getProduct().getId().equals(ds.getProductId())) {
+                e.setProduct((Product) this.em.find(Product.class,
+                        ds.getProductId()));
             }
         } else {
-            this.lookup_item_Product(ds, e);
+            this.lookup_product_Product(ds, e);
+        }
+
+        if (ds.getTaxId() != null) {
+            if (e.getTax() == null || !e.getTax().getId().equals(ds.getTaxId())) {
+                e.setTax((Tax) this.em.find(Tax.class, ds.getTaxId()));
+            }
+        } else {
+            this.lookup_tax_Tax(ds, e);
         }
 
     }
@@ -70,22 +84,41 @@ public class SalesInvoiceItemDsConv extends
         }
     }
 
-    protected void lookup_item_Product(SalesInvoiceItemDs ds, SalesInvoiceItem e)
-            throws Exception {
-        if (ds.getItemCode() != null && !ds.getItemCode().equals("")) {
+    protected void lookup_product_Product(SalesInvoiceItemDs ds,
+            SalesInvoiceItem e) throws Exception {
+        if (ds.getProductCode() != null && !ds.getProductCode().equals("")) {
             Product x = null;
             try {
                 x = ((IProductService) findEntityService(Product.class))
-                        .findByCode(ds.getItemCode());
+                        .findByCode(ds.getProductCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `Product` reference:  `itemCode` = "
-                                + ds.getItemCode() + "  ");
+                        "Invalid value provided to find `Product` reference:  `productCode` = "
+                                + ds.getProductCode() + "  ");
             }
-            e.setItem(x);
+            e.setProduct(x);
 
         } else {
-            e.setItem(null);
+            e.setProduct(null);
+        }
+    }
+
+    protected void lookup_tax_Tax(SalesInvoiceItemDs ds, SalesInvoiceItem e)
+            throws Exception {
+        if (ds.getTax() != null && !ds.getTax().equals("")) {
+            Tax x = null;
+            try {
+                x = ((ITaxService) findEntityService(Tax.class)).findByName(ds
+                        .getTax());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Tax` reference:  `tax` = "
+                                + ds.getTax() + "  ");
+            }
+            e.setTax(x);
+
+        } else {
+            e.setTax(null);
         }
     }
 

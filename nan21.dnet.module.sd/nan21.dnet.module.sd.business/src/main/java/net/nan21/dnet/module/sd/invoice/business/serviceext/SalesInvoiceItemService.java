@@ -8,9 +8,11 @@ package net.nan21.dnet.module.sd.invoice.business.serviceext;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.nan21.dnet.module.sd._businessdelegates.order.SalesTaxBD;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceItemService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
+import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItemTax;
  
 public class SalesInvoiceItemService 
 	extends net.nan21.dnet.module.sd.invoice.business.serviceimpl.SalesInvoiceItemService
@@ -19,12 +21,22 @@ public class SalesInvoiceItemService
 	private List<Long> invoiceIds;
 
 	@Override
+	protected void postUpdate(SalesInvoiceItem e) throws Exception {
+		this.calculateTaxes(e);
+	}
+
+	@Override
+	protected void postInsert(SalesInvoiceItem e) throws Exception {
+		this.calculateTaxes(e);
+	}
+	
+	@Override
 	protected void postInsert(List<SalesInvoiceItem> list) {
 		invoiceIds = new ArrayList<Long>();
 		for (SalesInvoiceItem item : list) {
-			if (!invoiceIds.contains(item.getInvoice().getId())) {
-				this.updateAmount(item.getInvoice().getId());
-				invoiceIds.add(item.getInvoice().getId());
+			if (!invoiceIds.contains(item.getSalesInvoice().getId())) {
+				this.updateAmount(item.getSalesInvoice().getId());
+				invoiceIds.add(item.getSalesInvoice().getId());
 			}
 		}
 		invoiceIds = null;
@@ -34,9 +46,9 @@ public class SalesInvoiceItemService
 	protected void postUpdate(List<SalesInvoiceItem> list) {
 		invoiceIds = new ArrayList<Long>();
 		for (SalesInvoiceItem item : list) {
-			if (!invoiceIds.contains(item.getInvoice())) {
-				this.updateAmount(item.getInvoice().getId());
-				invoiceIds.add(item.getInvoice().getId());
+			if (!invoiceIds.contains(item.getSalesInvoice() )) {
+				this.updateAmount(item.getSalesInvoice().getId());
+				invoiceIds.add(item.getSalesInvoice().getId());
 			}
 		}
 		invoiceIds = null;
@@ -47,7 +59,7 @@ public class SalesInvoiceItemService
 		this.invoiceIds = new ArrayList<Long>();
 		List<SalesInvoiceItem> items = this.findByIds(ids);
 		for (SalesInvoiceItem item : items) {
-			this.invoiceIds.add(item.getInvoice().getId());
+			this.invoiceIds.add(item.getSalesInvoice().getId());
 		}
 	}
 
@@ -63,7 +75,7 @@ public class SalesInvoiceItemService
 	protected void preDeleteById(Object id) {
 		invoiceIds = new ArrayList<Long>();
 		invoiceIds.add(this.em.getReference(SalesInvoiceItem.class, id)
-				.getInvoice().getId());
+				.getSalesInvoice().getId());
 	}
 
 	@Override
@@ -74,17 +86,52 @@ public class SalesInvoiceItemService
 
 	private void updateAmount(Long invoiceId) {
 		this.em.flush();
-		Double x = (Double) this.em
+		Object[] x = (Object[]) this.em
 				.createQuery(
-						"select sum(i.netAmount) from SalesInvoiceItem i where i.invoice.id = :invoiceId")
+						"select sum(i.netAmount), sum(i.taxAmount) from SalesInvoiceItem i where i.invoice.id = :invoiceId")
 				.setParameter("invoiceId", invoiceId).getSingleResult();
 		SalesInvoice invoice = this.em.find(SalesInvoice.class, invoiceId);
-		if (x==null) {
-			x = 0D;
+		 
+		Double totalNet = (Double)x[0];
+		Double totalTax = (Double)x[1];
+		if (totalNet == null) {
+			totalNet = 0D;
 		}
-		invoice.setTotalNetAmount(x.floatValue());
+		if (totalTax == null) {
+			totalTax = 0D;
+		}
+		invoice.setTotalNetAmount(totalNet.floatValue());
+		invoice.setTotalTaxAmount(totalTax.floatValue());
+		 
 		this.em.merge(invoice);
 	}
+	
+	
+	protected void calculateTaxes(SalesInvoiceItem item) throws Exception {
+
+		if (item.getTax() != null) {
+			SalesTaxBD delegate = this.getBusinessDelegate(SalesTaxBD.class);
+			List<SalesInvoiceItemTax> itemTaxes = new ArrayList<SalesInvoiceItemTax>();
+
+			delegate.createItemTax(item, null, itemTaxes);
+			Float taxAmount = 0F;
+			for (SalesInvoiceItemTax itemTax : itemTaxes) {
+				taxAmount += itemTax.getTaxAmount();
+			}
+			item.setTaxAmount(taxAmount);
+			this.em.merge(item);
+			//this.getEntityManager().flush();
+			this.em.createQuery(
+					"delete from " + SalesInvoiceItemTax.class.getSimpleName()
+							+ " e where e.salesInvoiceItem.id = :itemId")
+					.setParameter("itemId", item.getId()).executeUpdate();
+			
+			for (SalesInvoiceItemTax itemTax : itemTaxes) {
+				this.em.persist(itemTax);
+			}
+		}
+	}
+	
 	
 }
 

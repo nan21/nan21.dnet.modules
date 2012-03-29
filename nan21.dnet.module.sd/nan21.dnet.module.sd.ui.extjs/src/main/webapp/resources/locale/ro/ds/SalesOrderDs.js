@@ -1,7 +1,9 @@
 
 Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {  	  	
 	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docDate__lbl :  "Din",
-	businessObject__lbl :  "@businessObject",	customerId__lbl :    "Terţ (ID)",
+	supplierId__lbl :    "Org. furnizor (ID)",
+	supplier__lbl :    "Org. furnizor (Cod)",
+	customerId__lbl :    "Terţ (ID)",
 	customerUuid__lbl :    "Uuid",
 	customerCode__lbl :    "Terţ (Cod)",
 	customer__lbl :    "Terţ",
@@ -13,8 +15,6 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {
 	paymentMethod__lbl :    "Mod plată",
 	deliveryMethodId__lbl :    "Mod livrare (ID)",
 	deliveryMethod__lbl :    "Mod livrare",
-	supplierId__lbl :    "Org. furnizor (ID)",
-	supplier__lbl :    "Org. furnizor (Cod)",
 	billToId__lbl :    "Terţ factură (ID)",
 	billToUuid__lbl :    "Uuid",
 	billToCode__lbl :    "Terţ factură (Cod)",
@@ -30,6 +30,6 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {
 	totalAmount__lbl :  "Total",
 	totalNetAmount__lbl :  "Total Net",
 	totalTaxAmount__lbl :  "Total taxe",
-	confirmed__lbl :  "@confirmed",	invoiced__lbl :  "@invoiced",	delivered__lbl :  "@delivered",	className__lbl :  "@className",		 
+	confirmed__lbl :  "@confirmed",	invoiced__lbl :  "@invoiced",	delivered__lbl :  "@delivered",	className__lbl :  "@className",	businessObject__lbl :  "@businessObject",		 
 	id__lbl :"ID"
 });

@@ -13,10 +13,46 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesInvoiceDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.SalesInvoiceDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="confirmInvoice">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
+	  				<constructor-arg name="methodName" value="confirmInvoice" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="unConfirmInvoice">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
+	  				<constructor-arg name="methodName" value="unConfirmInvoice" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="postInvoice">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
+	  				<constructor-arg name="methodName" value="postInvoice" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="unPostInvoice">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
+	  				<constructor-arg name="methodName" value="unPostInvoice" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesInvoice" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">confirmInvoice</value>
+	  			<value type="java.lang.String">unConfirmInvoice</value>
+	  			<value type="java.lang.String">postInvoice</value>
+	  			<value type="java.lang.String">unPostInvoice</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="SalesInvoiceItemDsService" scope="prototype"
@@ -25,54 +61,47 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesInvoiceItemDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.SalesInvoiceItemDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="onProductChange">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoiceItemPD"/>
+	  				<constructor-arg name="methodName" value="onProductChange" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesInvoiceItem" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">onProductChange</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
- 	<bean id="SalesInvoiceTypeDsService" scope="prototype"
+ 	<bean id="SalesInvoiceItemTaxDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesInvoiceTypeDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemTaxDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesInvoiceItemTaxDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItemTax" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="SalesInvoiceType" />
-		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeDs" />
+		<property name="name" value="SalesInvoiceItemTax" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemTaxDs" />
 	</bean>
    
- 	<bean id="SalesInvoiceTypeLovDsService" scope="prototype"
+ 	<bean id="SalesInvoiceTaxDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceType" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTaxDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesInvoiceTaxDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceTax" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="SalesInvoiceTypeLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTypeLovDs" />
-	</bean>
-   
- 	<bean id="SalesInvoiceStatusDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesInvoiceStatusDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="SalesInvoiceStatus" />
-		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusDs" />
-	</bean>
-   
- 	<bean id="SalesInvoiceStatusLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceStatus" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="SalesInvoiceStatusLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceStatusLovDs" />
+		<property name="name" value="SalesInvoiceTax" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTaxDs" />
 	</bean>
       
 </beans>

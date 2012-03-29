@@ -18,12 +18,6 @@
  
  	<bean id="SalesOrderItemTaxService" scope="prototype"
 	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderItemTaxService"  />  
- 
- 	<bean id="SalesOrderTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderTypeService"  />  
- 
- 	<bean id="SalesOrderStatusService" scope="prototype"
-	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderStatusService"  />  
    
 </beans>
    

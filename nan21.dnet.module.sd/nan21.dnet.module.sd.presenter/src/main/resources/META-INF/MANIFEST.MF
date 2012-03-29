@@ -1,33 +1,35 @@
 Manifest-Version: 1.0
-Export-Package: net.nan21.dnet.module.sd._presenterdelegates.order;ver
- sion="1.0.0.M8";uses:="net.nan21.dnet.core.presenter.service,net.nan2
- 1.dnet.module.sd.order.ds.model",net.nan21.dnet.module.sd.invoice.ds.
- converter;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.converter
- ,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.module.sd.inv
- oice.domain.entity,net.nan21.dnet.module.sd.invoice.ds.model",net.nan
- 21.dnet.module.sd.invoice.ds.filter;version="1.0.0.M8";uses:="net.nan
- 21.dnet.core.api.model,net.nan21.dnet.core.presenter.model",net.nan21
- .dnet.module.sd.invoice.ds.model;version="1.0.0.M8";uses:="net.nan21.
- dnet.core.api.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet
- .core.presenter.model,net.nan21.dnet.module.sd.invoice.domain.entity"
- ,net.nan21.dnet.module.sd.opportunity.ds.converter;version="1.0.0.M8"
- ;uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.present
- er.converter,net.nan21.dnet.module.sd.opportunity.domain.entity,net.n
- an21.dnet.module.sd.opportunity.ds.model",net.nan21.dnet.module.sd.op
- portunity.ds.filter;version="1.0.0.M8";uses:="net.nan21.dnet.core.api
- .model,net.nan21.dnet.core.presenter.model",net.nan21.dnet.module.sd.
- opportunity.ds.model;version="1.0.0.M8";uses:="net.nan21.dnet.core.ap
- i.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.presen
- ter.model,net.nan21.dnet.module.sd.opportunity.domain.entity",net.nan
- 21.dnet.module.sd.order.ds.converter;version="1.0.0.M8";uses:="net.na
- n21.dnet.core.api.converter,net.nan21.dnet.core.presenter.converter,n
- et.nan21.dnet.module.sd.order.domain.entity,net.nan21.dnet.module.sd.
- order.ds.model",net.nan21.dnet.module.sd.order.ds.filter;version="1.0
- .0.M8";uses:="net.nan21.dnet.core.api.model,net.nan21.dnet.core.prese
- nter.model",net.nan21.dnet.module.sd.order.ds.model;version="1.0.0.M8
- ";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.m
- odel,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.sd.ord
- er.domain.entity"
+Export-Package: net.nan21.dnet.module.sd._presenterdelegates.invoice;v
+ ersion="1.0.0.M8";uses:="net.nan21.dnet.core.presenter.service,net.na
+ n21.dnet.module.sd.invoice.ds.model",net.nan21.dnet.module.sd._presen
+ terdelegates.order;version="1.0.0.M8";uses:="net.nan21.dnet.core.pres
+ enter.service,net.nan21.dnet.module.sd.order.ds.model",net.nan21.dnet
+ .module.sd.invoice.ds.converter;version="1.0.0.M8";uses:="net.nan21.d
+ net.core.api.converter,net.nan21.dnet.core.presenter.converter,net.na
+ n21.dnet.module.sd.invoice.domain.entity,net.nan21.dnet.module.sd.inv
+ oice.ds.model",net.nan21.dnet.module.sd.invoice.ds.filter;version="1.
+ 0.0.M8";uses:="net.nan21.dnet.core.api.model,net.nan21.dnet.core.pres
+ enter.model",net.nan21.dnet.module.sd.invoice.ds.model;version="1.0.0
+ .M8";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.ap
+ i.model,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.sd.
+ invoice.domain.entity",net.nan21.dnet.module.sd.opportunity.ds.conver
+ ter;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.converter,net.n
+ an21.dnet.core.presenter.converter,net.nan21.dnet.module.sd.opportuni
+ ty.domain.entity,net.nan21.dnet.module.sd.opportunity.ds.model",net.n
+ an21.dnet.module.sd.opportunity.ds.filter;version="1.0.0.M8";uses:="n
+ et.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.model",net
+ .nan21.dnet.module.sd.opportunity.ds.model;version="1.0.0.M8";uses:="
+ net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.model,net.
+ nan21.dnet.core.presenter.model,net.nan21.dnet.module.sd.opportunity.
+ domain.entity",net.nan21.dnet.module.sd.order.ds.converter;version="1
+ .0.0.M8";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core
+ .presenter.converter,net.nan21.dnet.module.sd.order.domain.entity,net
+ .nan21.dnet.module.sd.order.ds.model",net.nan21.dnet.module.sd.order.
+ ds.filter;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.model,net
+ .nan21.dnet.core.presenter.model",net.nan21.dnet.module.sd.order.ds.m
+ odel;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.annotation,net
+ .nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.model,net.na
+ n21.dnet.module.sd.order.domain.entity"
 Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M8,1.0.0.M8]",na
  n21.dnet.core.presenter;version="[1.0.0.M8,1.0.0.M8]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.5)
@@ -65,9 +67,10 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  ain.entity,net.nan21.dnet.module.mm.md.business.service,net.nan21.dne
  t.module.mm.md.domain.entity,net.nan21.dnet.module.mm.price.business.
  service,net.nan21.dnet.module.mm.price.domain.entity,net.nan21.dnet.m
- odule.sd.invoice.domain.entity,net.nan21.dnet.module.sd.opportunity.b
- usiness.service,net.nan21.dnet.module.sd.opportunity.domain.entity,ne
- t.nan21.dnet.module.sd.order.business.service,net.nan21.dnet.module.s
- d.order.domain.entity,org.springframework.context.weaving;version="[3
- .0,3.1)",org.springframework.web.multipart;version="[3.0,3.1)"
+ odule.sd.invoice.business.service,net.nan21.dnet.module.sd.invoice.do
+ main.entity,net.nan21.dnet.module.sd.opportunity.business.service,net
+ .nan21.dnet.module.sd.opportunity.domain.entity,net.nan21.dnet.module
+ .sd.order.business.service,net.nan21.dnet.module.sd.order.domain.enti
+ ty,org.springframework.context.weaving;version="[3.0,3.1)",org.spring
+ framework.web.multipart;version="[3.0,3.1)"
 

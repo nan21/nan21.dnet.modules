@@ -3,13 +3,13 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_INVOICE1" baseTableName="SC_PURCHASE_INVOICE" baseColumnNames="CURRENCY_ID"  referencedTableName="BD_CURRENCY"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_INVOICE1" baseTableName="SC_PURCHASE_INVOICE" baseColumnNames="SUPPLIER_ID"  referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_INVOICE2" baseTableName="SC_PURCHASE_INVOICE" baseColumnNames="SUPPLIER_ID"  referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_INVOICE2" baseTableName="SC_PURCHASE_INVOICE" baseColumnNames="CUSTOMER_ID"  referencedTableName="BD_ORGANIZATION"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_INVOICE3" baseTableName="SC_PURCHASE_INVOICE" baseColumnNames="CUSTOMER_ID"  referencedTableName="BD_ORGANIZATION"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_INVOICE3" baseTableName="SC_PURCHASE_INVOICE" baseColumnNames="CURRENCY_ID"  referencedTableName="BD_CURRENCY"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_INVOICE4" baseTableName="SC_PURCHASE_INVOICE" baseColumnNames="PURCHASEORDER_ID"  referencedTableName="SC_PURCHASE_ORDER"  referencedColumnNames="ID" />

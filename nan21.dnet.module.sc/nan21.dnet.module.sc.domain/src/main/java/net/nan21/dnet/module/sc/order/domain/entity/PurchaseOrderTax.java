@@ -131,8 +131,8 @@ public class PurchaseOrderTax implements Serializable, IModelWithId,
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PurchaseOrder.class)
-    @JoinColumn(name = "SALESORDER_ID", referencedColumnName = "ID")
-    private PurchaseOrder salesOrder;
+    @JoinColumn(name = "PURCHASEORDER_ID", referencedColumnName = "ID")
+    private PurchaseOrder purchaseOrder;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Tax.class)
     @JoinColumn(name = "TAX_ID", referencedColumnName = "ID")
     private Tax tax;
@@ -228,12 +228,12 @@ public class PurchaseOrderTax implements Serializable, IModelWithId,
 
     }
 
-    public PurchaseOrder getSalesOrder() {
-        return this.salesOrder;
+    public PurchaseOrder getPurchaseOrder() {
+        return this.purchaseOrder;
     }
 
-    public void setSalesOrder(PurchaseOrder salesOrder) {
-        this.salesOrder = salesOrder;
+    public void setPurchaseOrder(PurchaseOrder purchaseOrder) {
+        this.purchaseOrder = purchaseOrder;
     }
 
     public Tax getTax() {

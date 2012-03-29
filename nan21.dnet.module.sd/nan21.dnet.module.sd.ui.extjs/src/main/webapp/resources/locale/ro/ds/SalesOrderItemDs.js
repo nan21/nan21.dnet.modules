@@ -6,12 +6,12 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDs$Trl", {
 	productName__lbl :    "Articol",
 	uomId__lbl :    "UM (ID)",
 	uomCode__lbl :    "UM (Cod)",
-	qtyOrdered__lbl :  "Cantitate",
-	netUnitPrice__lbl :  "Preţ unitar",
+	quantity__lbl :  "Cantitate",
+	unitPrice__lbl :  "Preţ unitar",
 	netAmount__lbl :  "Valoare",
+	taxAmount__lbl :  "Valoare taxe",
 	taxId__lbl :    "Taxă (ID)",
 	tax__lbl :    "Taxă",
-	taxAmount__lbl :  "Valoare taxe",
 		 
 	id__lbl :"ID"
 });

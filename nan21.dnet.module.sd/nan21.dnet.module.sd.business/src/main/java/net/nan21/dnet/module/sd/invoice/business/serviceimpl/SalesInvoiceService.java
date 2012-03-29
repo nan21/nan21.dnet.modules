@@ -13,6 +13,7 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
@@ -35,6 +36,19 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
     @Override
     protected Class<SalesInvoice> getEntityClass() {
         return SalesInvoice.class;
+    }
+
+    public List<SalesInvoice> findByPriceList(PriceList priceList) {
+        return this.findByPriceListId(priceList.getId());
+    }
+
+    public List<SalesInvoice> findByPriceListId(Long priceListId) {
+        return (List<SalesInvoice>) this.em
+                .createQuery(
+                        "select e from SalesInvoice e where e.clientId = :pClientId and e.priceList.id = :pPriceListId",
+                        SalesInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pPriceListId", priceListId).getResultList();
     }
 
     public List<SalesInvoice> findByCurrency(Currency currency) {

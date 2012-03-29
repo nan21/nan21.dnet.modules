@@ -36,19 +36,19 @@ public class PurchaseInvoiceItemDsFilter extends AbstractDsFilter implements
 
     private String entityFQN;
 
-    private Long invoiceId;
+    private Long purchaseInvoiceId;
 
-    private Long invoiceId_From;
-    private Long invoiceId_To;
+    private Long purchaseInvoiceId_From;
+    private Long purchaseInvoiceId_To;
 
-    private Long itemId;
+    private Long productId;
 
-    private Long itemId_From;
-    private Long itemId_To;
+    private Long productId_From;
+    private Long productId_To;
 
-    private String itemCode;
+    private String productCode;
 
-    private String itemName;
+    private String productName;
 
     private Float quantity;
 
@@ -71,6 +71,18 @@ public class PurchaseInvoiceItemDsFilter extends AbstractDsFilter implements
 
     private Float netAmount_From;
     private Float netAmount_To;
+
+    private Float taxAmount;
+
+    private Float taxAmount_From;
+    private Float taxAmount_To;
+
+    private Long taxId;
+
+    private Long taxId_From;
+    private Long taxId_To;
+
+    private String tax;
 
     public Long getId() {
         return this.id;
@@ -169,68 +181,68 @@ public class PurchaseInvoiceItemDsFilter extends AbstractDsFilter implements
         this.entityFQN = entityFQN;
     }
 
-    public Long getInvoiceId() {
-        return this.invoiceId;
+    public Long getPurchaseInvoiceId() {
+        return this.purchaseInvoiceId;
     }
 
-    public Long getInvoiceId_From() {
-        return this.invoiceId_From;
+    public Long getPurchaseInvoiceId_From() {
+        return this.purchaseInvoiceId_From;
     }
 
-    public Long getInvoiceId_To() {
-        return this.invoiceId_To;
+    public Long getPurchaseInvoiceId_To() {
+        return this.purchaseInvoiceId_To;
     }
 
-    public void setInvoiceId(Long invoiceId) {
-        this.invoiceId = invoiceId;
+    public void setPurchaseInvoiceId(Long purchaseInvoiceId) {
+        this.purchaseInvoiceId = purchaseInvoiceId;
     }
 
-    public void setInvoiceId_From(Long invoiceId_From) {
-        this.invoiceId_From = invoiceId_From;
+    public void setPurchaseInvoiceId_From(Long purchaseInvoiceId_From) {
+        this.purchaseInvoiceId_From = purchaseInvoiceId_From;
     }
 
-    public void setInvoiceId_To(Long invoiceId_To) {
-        this.invoiceId_To = invoiceId_To;
+    public void setPurchaseInvoiceId_To(Long purchaseInvoiceId_To) {
+        this.purchaseInvoiceId_To = purchaseInvoiceId_To;
     }
 
-    public Long getItemId() {
-        return this.itemId;
+    public Long getProductId() {
+        return this.productId;
     }
 
-    public Long getItemId_From() {
-        return this.itemId_From;
+    public Long getProductId_From() {
+        return this.productId_From;
     }
 
-    public Long getItemId_To() {
-        return this.itemId_To;
+    public Long getProductId_To() {
+        return this.productId_To;
     }
 
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
-    public void setItemId_From(Long itemId_From) {
-        this.itemId_From = itemId_From;
+    public void setProductId_From(Long productId_From) {
+        this.productId_From = productId_From;
     }
 
-    public void setItemId_To(Long itemId_To) {
-        this.itemId_To = itemId_To;
+    public void setProductId_To(Long productId_To) {
+        this.productId_To = productId_To;
     }
 
-    public String getItemCode() {
-        return this.itemCode;
+    public String getProductCode() {
+        return this.productCode;
     }
 
-    public void setItemCode(String itemCode) {
-        this.itemCode = itemCode;
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
     }
 
-    public String getItemName() {
-        return this.itemName;
+    public String getProductName() {
+        return this.productName;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public Float getQuantity() {
@@ -335,6 +347,62 @@ public class PurchaseInvoiceItemDsFilter extends AbstractDsFilter implements
 
     public void setNetAmount_To(Float netAmount_To) {
         this.netAmount_To = netAmount_To;
+    }
+
+    public Float getTaxAmount() {
+        return this.taxAmount;
+    }
+
+    public Float getTaxAmount_From() {
+        return this.taxAmount_From;
+    }
+
+    public Float getTaxAmount_To() {
+        return this.taxAmount_To;
+    }
+
+    public void setTaxAmount(Float taxAmount) {
+        this.taxAmount = taxAmount;
+    }
+
+    public void setTaxAmount_From(Float taxAmount_From) {
+        this.taxAmount_From = taxAmount_From;
+    }
+
+    public void setTaxAmount_To(Float taxAmount_To) {
+        this.taxAmount_To = taxAmount_To;
+    }
+
+    public Long getTaxId() {
+        return this.taxId;
+    }
+
+    public Long getTaxId_From() {
+        return this.taxId_From;
+    }
+
+    public Long getTaxId_To() {
+        return this.taxId_To;
+    }
+
+    public void setTaxId(Long taxId) {
+        this.taxId = taxId;
+    }
+
+    public void setTaxId_From(Long taxId_From) {
+        this.taxId_From = taxId_From;
+    }
+
+    public void setTaxId_To(Long taxId_To) {
+        this.taxId_To = taxId_To;
+    }
+
+    public String getTax() {
+        return this.tax;
+    }
+
+    public void setTax(String tax) {
+        this.tax = tax;
     }
 
 }

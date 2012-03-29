@@ -29,20 +29,22 @@ public class PurchaseInvoiceDs extends AbstractDsModel<PurchaseInvoice>
     public static final String fENTITYFQN = "entityFQN";
     public static final String fCODE = "code";
     public static final String fDOCDATE = "docDate";
-    public static final String fBUSINESSOBJECT = "businessObject";
+    public static final String fCUSTOMERID = "customerId";
+    public static final String fCUSTOMER = "customer";
+    public static final String fSUPPLIERID = "supplierId";
+    public static final String fSUPPLIERUUID = "supplierUuid";
+    public static final String fSUPPLIERCODE = "supplierCode";
+    public static final String fSUPPLIER = "supplier";
     public static final String fCURRENCYID = "currencyId";
     public static final String fCURRENCY = "currency";
     public static final String fTOTALNETAMOUNT = "totalNetAmount";
     public static final String fTOTALTAXAMOUNT = "totalTaxAmount";
     public static final String fTOTALAMOUNT = "totalAmount";
-    public static final String fCUSTOMERID = "customerId";
-    public static final String fCUSTOMERUUID = "customerUuid";
-    public static final String fCUSTOMERCODE = "customerCode";
-    public static final String fCUSTOMER = "customer";
-    public static final String fSUPPLIERID = "supplierId";
-    public static final String fSUPPLIER = "supplier";
+    public static final String fCONFIRMED = "confirmed";
+    public static final String fPOSTED = "posted";
     public static final String fPURCHASEORDERID = "purchaseOrderId";
     public static final String fCLASSNAME = "className";
+    public static final String fBUSINESSOBJECT = "businessObject";
 
     @DsField(noUpdate = true)
     private Long id;
@@ -77,8 +79,23 @@ public class PurchaseInvoiceDs extends AbstractDsModel<PurchaseInvoice>
     @DsField()
     private Date docDate;
 
-    @DsField(fetch = false)
-    private String businessObject;
+    @DsField(noUpdate = true, join = "left", path = "customer.id")
+    private Long customerId;
+
+    @DsField(noUpdate = true, join = "left", path = "customer.code")
+    private String customer;
+
+    @DsField(noUpdate = true, join = "left", path = "supplier.id")
+    private Long supplierId;
+
+    @DsField(noUpdate = true, join = "left", path = "supplier.uuid")
+    private String supplierUuid;
+
+    @DsField(noUpdate = true, join = "left", path = "supplier.code")
+    private String supplierCode;
+
+    @DsField(noUpdate = true, join = "left", path = "supplier.name")
+    private String supplier;
 
     @DsField(join = "left", path = "currency.id")
     private Long currencyId;
@@ -95,29 +112,20 @@ public class PurchaseInvoiceDs extends AbstractDsModel<PurchaseInvoice>
     @DsField()
     private Float totalAmount;
 
-    @DsField(join = "left", path = "customer.id")
-    private Long customerId;
+    @DsField()
+    private Boolean confirmed;
 
-    @DsField(join = "left", path = "customer.uuid")
-    private String customerUuid;
-
-    @DsField(join = "left", path = "customer.code")
-    private String customerCode;
-
-    @DsField(join = "left", path = "customer.name")
-    private String customer;
-
-    @DsField(join = "left", path = "supplier.id")
-    private Long supplierId;
-
-    @DsField(join = "left", path = "supplier.code")
-    private String supplier;
+    @DsField()
+    private Boolean posted;
 
     @DsField(join = "left", path = "purchaseOrder.id")
     private Long purchaseOrderId;
 
     @DsField(fetch = false)
     private String className;
+
+    @DsField(fetch = false)
+    private String businessObject;
 
     public PurchaseInvoiceDs() {
         super();
@@ -216,12 +224,52 @@ public class PurchaseInvoiceDs extends AbstractDsModel<PurchaseInvoice>
         this.docDate = docDate;
     }
 
-    public String getBusinessObject() {
-        return this.businessObject;
+    public Long getCustomerId() {
+        return this.customerId;
     }
 
-    public void setBusinessObject(String businessObject) {
-        this.businessObject = businessObject;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getCustomer() {
+        return this.customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
+    public Long getSupplierId() {
+        return this.supplierId;
+    }
+
+    public void setSupplierId(Long supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    public String getSupplierUuid() {
+        return this.supplierUuid;
+    }
+
+    public void setSupplierUuid(String supplierUuid) {
+        this.supplierUuid = supplierUuid;
+    }
+
+    public String getSupplierCode() {
+        return this.supplierCode;
+    }
+
+    public void setSupplierCode(String supplierCode) {
+        this.supplierCode = supplierCode;
+    }
+
+    public String getSupplier() {
+        return this.supplier;
+    }
+
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
     }
 
     public Long getCurrencyId() {
@@ -264,52 +312,20 @@ public class PurchaseInvoiceDs extends AbstractDsModel<PurchaseInvoice>
         this.totalAmount = totalAmount;
     }
 
-    public Long getCustomerId() {
-        return this.customerId;
+    public Boolean getConfirmed() {
+        return this.confirmed;
     }
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
+    public void setConfirmed(Boolean confirmed) {
+        this.confirmed = confirmed;
     }
 
-    public String getCustomerUuid() {
-        return this.customerUuid;
+    public Boolean getPosted() {
+        return this.posted;
     }
 
-    public void setCustomerUuid(String customerUuid) {
-        this.customerUuid = customerUuid;
-    }
-
-    public String getCustomerCode() {
-        return this.customerCode;
-    }
-
-    public void setCustomerCode(String customerCode) {
-        this.customerCode = customerCode;
-    }
-
-    public String getCustomer() {
-        return this.customer;
-    }
-
-    public void setCustomer(String customer) {
-        this.customer = customer;
-    }
-
-    public Long getSupplierId() {
-        return this.supplierId;
-    }
-
-    public void setSupplierId(Long supplierId) {
-        this.supplierId = supplierId;
-    }
-
-    public String getSupplier() {
-        return this.supplier;
-    }
-
-    public void setSupplier(String supplier) {
-        this.supplier = supplier;
+    public void setPosted(Boolean posted) {
+        this.posted = posted;
     }
 
     public Long getPurchaseOrderId() {
@@ -326,6 +342,14 @@ public class PurchaseInvoiceDs extends AbstractDsModel<PurchaseInvoice>
 
     public void setClassName(String className) {
         this.className = className;
+    }
+
+    public String getBusinessObject() {
+        return this.businessObject;
+    }
+
+    public void setBusinessObject(String businessObject) {
+        this.businessObject = businessObject;
     }
 
 }

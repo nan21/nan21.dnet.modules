@@ -24,8 +24,8 @@ public class SalesOrderItemEventHandler extends DefaultEventHandler {
     }
 	
 	private void calculateLineAmount(SalesOrderItem e) {
-	    if (e.getNetUnitPrice() != null && e.getQtyOrdered() != null ) {
-            e.setNetAmount(e.getNetUnitPrice() * e.getQtyOrdered());
+	    if (e.getUnitPrice() != null && e.getQuantity() != null ) {
+            e.setNetAmount(e.getUnitPrice() * e.getQuantity());
         }
 	}
 }

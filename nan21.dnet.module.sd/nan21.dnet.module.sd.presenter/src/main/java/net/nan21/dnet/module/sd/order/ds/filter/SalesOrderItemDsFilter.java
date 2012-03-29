@@ -57,20 +57,25 @@ public class SalesOrderItemDsFilter extends AbstractDsFilter implements
 
     private String uomCode;
 
-    private Float qtyOrdered;
+    private Float quantity;
 
-    private Float qtyOrdered_From;
-    private Float qtyOrdered_To;
+    private Float quantity_From;
+    private Float quantity_To;
 
-    private Float netUnitPrice;
+    private Float unitPrice;
 
-    private Float netUnitPrice_From;
-    private Float netUnitPrice_To;
+    private Float unitPrice_From;
+    private Float unitPrice_To;
 
     private Float netAmount;
 
     private Float netAmount_From;
     private Float netAmount_To;
+
+    private Float taxAmount;
+
+    private Float taxAmount_From;
+    private Float taxAmount_To;
 
     private Long taxId;
 
@@ -78,11 +83,6 @@ public class SalesOrderItemDsFilter extends AbstractDsFilter implements
     private Long taxId_To;
 
     private String tax;
-
-    private Float taxAmount;
-
-    private Float taxAmount_From;
-    private Float taxAmount_To;
 
     public Long getId() {
         return this.id;
@@ -277,52 +277,52 @@ public class SalesOrderItemDsFilter extends AbstractDsFilter implements
         this.uomCode = uomCode;
     }
 
-    public Float getQtyOrdered() {
-        return this.qtyOrdered;
+    public Float getQuantity() {
+        return this.quantity;
     }
 
-    public Float getQtyOrdered_From() {
-        return this.qtyOrdered_From;
+    public Float getQuantity_From() {
+        return this.quantity_From;
     }
 
-    public Float getQtyOrdered_To() {
-        return this.qtyOrdered_To;
+    public Float getQuantity_To() {
+        return this.quantity_To;
     }
 
-    public void setQtyOrdered(Float qtyOrdered) {
-        this.qtyOrdered = qtyOrdered;
+    public void setQuantity(Float quantity) {
+        this.quantity = quantity;
     }
 
-    public void setQtyOrdered_From(Float qtyOrdered_From) {
-        this.qtyOrdered_From = qtyOrdered_From;
+    public void setQuantity_From(Float quantity_From) {
+        this.quantity_From = quantity_From;
     }
 
-    public void setQtyOrdered_To(Float qtyOrdered_To) {
-        this.qtyOrdered_To = qtyOrdered_To;
+    public void setQuantity_To(Float quantity_To) {
+        this.quantity_To = quantity_To;
     }
 
-    public Float getNetUnitPrice() {
-        return this.netUnitPrice;
+    public Float getUnitPrice() {
+        return this.unitPrice;
     }
 
-    public Float getNetUnitPrice_From() {
-        return this.netUnitPrice_From;
+    public Float getUnitPrice_From() {
+        return this.unitPrice_From;
     }
 
-    public Float getNetUnitPrice_To() {
-        return this.netUnitPrice_To;
+    public Float getUnitPrice_To() {
+        return this.unitPrice_To;
     }
 
-    public void setNetUnitPrice(Float netUnitPrice) {
-        this.netUnitPrice = netUnitPrice;
+    public void setUnitPrice(Float unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
-    public void setNetUnitPrice_From(Float netUnitPrice_From) {
-        this.netUnitPrice_From = netUnitPrice_From;
+    public void setUnitPrice_From(Float unitPrice_From) {
+        this.unitPrice_From = unitPrice_From;
     }
 
-    public void setNetUnitPrice_To(Float netUnitPrice_To) {
-        this.netUnitPrice_To = netUnitPrice_To;
+    public void setUnitPrice_To(Float unitPrice_To) {
+        this.unitPrice_To = unitPrice_To;
     }
 
     public Float getNetAmount() {
@@ -347,6 +347,30 @@ public class SalesOrderItemDsFilter extends AbstractDsFilter implements
 
     public void setNetAmount_To(Float netAmount_To) {
         this.netAmount_To = netAmount_To;
+    }
+
+    public Float getTaxAmount() {
+        return this.taxAmount;
+    }
+
+    public Float getTaxAmount_From() {
+        return this.taxAmount_From;
+    }
+
+    public Float getTaxAmount_To() {
+        return this.taxAmount_To;
+    }
+
+    public void setTaxAmount(Float taxAmount) {
+        this.taxAmount = taxAmount;
+    }
+
+    public void setTaxAmount_From(Float taxAmount_From) {
+        this.taxAmount_From = taxAmount_From;
+    }
+
+    public void setTaxAmount_To(Float taxAmount_To) {
+        this.taxAmount_To = taxAmount_To;
     }
 
     public Long getTaxId() {
@@ -379,30 +403,6 @@ public class SalesOrderItemDsFilter extends AbstractDsFilter implements
 
     public void setTax(String tax) {
         this.tax = tax;
-    }
-
-    public Float getTaxAmount() {
-        return this.taxAmount;
-    }
-
-    public Float getTaxAmount_From() {
-        return this.taxAmount_From;
-    }
-
-    public Float getTaxAmount_To() {
-        return this.taxAmount_To;
-    }
-
-    public void setTaxAmount(Float taxAmount) {
-        this.taxAmount = taxAmount;
-    }
-
-    public void setTaxAmount_From(Float taxAmount_From) {
-        this.taxAmount_From = taxAmount_From;
-    }
-
-    public void setTaxAmount_To(Float taxAmount_To) {
-        this.taxAmount_To = taxAmount_To;
     }
 
 }

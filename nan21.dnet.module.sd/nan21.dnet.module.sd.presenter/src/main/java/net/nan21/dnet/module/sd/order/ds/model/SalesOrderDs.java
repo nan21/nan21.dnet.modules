@@ -29,7 +29,8 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     public static final String fENTITYFQN = "entityFQN";
     public static final String fCODE = "code";
     public static final String fDOCDATE = "docDate";
-    public static final String fBUSINESSOBJECT = "businessObject";
+    public static final String fSUPPLIERID = "supplierId";
+    public static final String fSUPPLIER = "supplier";
     public static final String fCUSTOMERID = "customerId";
     public static final String fCUSTOMERUUID = "customerUuid";
     public static final String fCUSTOMERCODE = "customerCode";
@@ -42,8 +43,6 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     public static final String fPAYMENTMETHOD = "paymentMethod";
     public static final String fDELIVERYMETHODID = "deliveryMethodId";
     public static final String fDELIVERYMETHOD = "deliveryMethod";
-    public static final String fSUPPLIERID = "supplierId";
-    public static final String fSUPPLIER = "supplier";
     public static final String fBILLTOID = "billToId";
     public static final String fBILLTOUUID = "billToUuid";
     public static final String fBILLTOCODE = "billToCode";
@@ -63,6 +62,7 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     public static final String fINVOICED = "invoiced";
     public static final String fDELIVERED = "delivered";
     public static final String fCLASSNAME = "className";
+    public static final String fBUSINESSOBJECT = "businessObject";
 
     @DsField(noUpdate = true)
     private Long id;
@@ -94,22 +94,25 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     @DsField()
     private String code;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private Date docDate;
 
-    @DsField(fetch = false)
-    private String businessObject;
+    @DsField(noUpdate = true, join = "left", path = "supplier.id")
+    private Long supplierId;
 
-    @DsField(join = "left", path = "customer.id")
+    @DsField(noUpdate = true, join = "left", path = "supplier.code")
+    private String supplier;
+
+    @DsField(noUpdate = true, join = "left", path = "customer.id")
     private Long customerId;
 
-    @DsField(join = "left", path = "customer.uuid")
+    @DsField(noUpdate = true, join = "left", path = "customer.uuid")
     private String customerUuid;
 
-    @DsField(join = "left", path = "customer.code")
+    @DsField(noUpdate = true, join = "left", path = "customer.code")
     private String customerCode;
 
-    @DsField(join = "left", path = "customer.name")
+    @DsField(noUpdate = true, join = "left", path = "customer.name")
     private String customer;
 
     @DsField(join = "left", path = "currency.id")
@@ -135,12 +138,6 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     @DsField(join = "left", path = "deliveryMethod.name")
     private String deliveryMethod;
-
-    @DsField(join = "left", path = "supplier.id")
-    private Long supplierId;
-
-    @DsField(join = "left", path = "supplier.code")
-    private String supplier;
 
     @DsField(join = "left", path = "billTo.id")
     private Long billToId;
@@ -178,13 +175,13 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     @DsField(join = "left", fetch = false, path = "shipToLocation.asString")
     private String shipToLocation;
 
-    @DsField()
+    @DsField(noInsert = true, noUpdate = true)
     private Float totalAmount;
 
-    @DsField()
+    @DsField(noInsert = true, noUpdate = true)
     private Float totalNetAmount;
 
-    @DsField()
+    @DsField(noInsert = true, noUpdate = true)
     private Float totalTaxAmount;
 
     @DsField(noInsert = true, noUpdate = true)
@@ -196,8 +193,11 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
     @DsField(noInsert = true, noUpdate = true)
     private Boolean delivered;
 
-    @DsField(fetch = false)
+    @DsField(noInsert = true, noUpdate = true, fetch = false)
     private String className;
+
+    @DsField(noInsert = true, noUpdate = true, fetch = false)
+    private String businessObject;
 
     public SalesOrderDs() {
         super();
@@ -296,12 +296,20 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
         this.docDate = docDate;
     }
 
-    public String getBusinessObject() {
-        return this.businessObject;
+    public Long getSupplierId() {
+        return this.supplierId;
     }
 
-    public void setBusinessObject(String businessObject) {
-        this.businessObject = businessObject;
+    public void setSupplierId(Long supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    public String getSupplier() {
+        return this.supplier;
+    }
+
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
     }
 
     public Long getCustomerId() {
@@ -398,22 +406,6 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     public void setDeliveryMethod(String deliveryMethod) {
         this.deliveryMethod = deliveryMethod;
-    }
-
-    public Long getSupplierId() {
-        return this.supplierId;
-    }
-
-    public void setSupplierId(Long supplierId) {
-        this.supplierId = supplierId;
-    }
-
-    public String getSupplier() {
-        return this.supplier;
-    }
-
-    public void setSupplier(String supplier) {
-        this.supplier = supplier;
     }
 
     public Long getBillToId() {
@@ -566,6 +558,14 @@ public class SalesOrderDs extends AbstractDsModel<SalesOrder> implements
 
     public void setClassName(String className) {
         this.className = className;
+    }
+
+    public String getBusinessObject() {
+        return this.businessObject;
+    }
+
+    public void setBusinessObject(String businessObject) {
+        this.businessObject = businessObject;
     }
 
 }

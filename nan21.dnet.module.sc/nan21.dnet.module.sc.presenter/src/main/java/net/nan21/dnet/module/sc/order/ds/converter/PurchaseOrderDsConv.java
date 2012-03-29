@@ -73,24 +73,28 @@ public class PurchaseOrderDsConv extends
             this.lookup_paymentMethod_PaymentMethod(ds, e);
         }
 
-        if (ds.getCustomerId() != null) {
-            if (e.getCustomer() == null
-                    || !e.getCustomer().getId().equals(ds.getCustomerId())) {
-                e.setCustomer((Organization) this.em.find(Organization.class,
-                        ds.getCustomerId()));
+        if (isInsert) {
+            if (ds.getCustomerId() != null) {
+                if (e.getCustomer() == null
+                        || !e.getCustomer().getId().equals(ds.getCustomerId())) {
+                    e.setCustomer((Organization) this.em.find(
+                            Organization.class, ds.getCustomerId()));
+                }
+            } else {
+                this.lookup_customer_Organization(ds, e);
             }
-        } else {
-            this.lookup_customer_Organization(ds, e);
         }
 
-        if (ds.getSupplierId() != null) {
-            if (e.getSupplier() == null
-                    || !e.getSupplier().getId().equals(ds.getSupplierId())) {
-                e.setSupplier((BusinessPartner) this.em.find(
-                        BusinessPartner.class, ds.getSupplierId()));
+        if (isInsert) {
+            if (ds.getSupplierId() != null) {
+                if (e.getSupplier() == null
+                        || !e.getSupplier().getId().equals(ds.getSupplierId())) {
+                    e.setSupplier((BusinessPartner) this.em.find(
+                            BusinessPartner.class, ds.getSupplierId()));
+                }
+            } else {
+                this.lookup_supplier_BusinessPartner(ds, e);
             }
-        } else {
-            this.lookup_supplier_BusinessPartner(ds, e);
         }
 
     }
@@ -174,15 +178,15 @@ public class PurchaseOrderDsConv extends
 
     protected void lookup_customer_Organization(PurchaseOrderDs ds,
             PurchaseOrder e) throws Exception {
-        if (ds.getCustomerCode() != null && !ds.getCustomerCode().equals("")) {
+        if (ds.getCustomer() != null && !ds.getCustomer().equals("")) {
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getCustomerCode());
+                        .findByCode(ds.getCustomer());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `Organization` reference:  `customerCode` = "
-                                + ds.getCustomerCode() + "  ");
+                        "Invalid value provided to find `Organization` reference:  `customer` = "
+                                + ds.getCustomer() + "  ");
             }
             e.setCustomer(x);
 

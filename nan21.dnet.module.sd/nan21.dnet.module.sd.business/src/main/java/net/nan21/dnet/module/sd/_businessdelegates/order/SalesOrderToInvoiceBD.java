@@ -7,9 +7,11 @@ import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
+import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItemTax;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderItemService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
+import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax;
 
 public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 
@@ -20,8 +22,7 @@ public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 			String invCode = invs.get(0).getCode();
 			throw new Exception("Sales order is already invoiced ! Check invoice "+ invCode  );
 		}
-		
-		
+		 
 		SalesInvoice invoice = new SalesInvoice();
 
 		if (order.getBillTo() != null) {
@@ -31,6 +32,8 @@ public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 		}
 		
 		invoice.setCurrency(order.getCurrency());
+		invoice.setPriceList(order.getPriceList());
+		
 		invoice.setDocDate(new Date());
 		invoice.setBillToLocation(order.getBillToLocation());
 		// invoice.setBillToContact(order.getb)
@@ -46,19 +49,32 @@ public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 		for (SalesOrderItem orderItem : items) {
 			SalesInvoiceItem invItem = new SalesInvoiceItem();
 
-			invItem.setInvoice(invoice);
-			invItem.setItem(orderItem.getProduct());
-			invItem.setQuantity(orderItem.getQtyOrdered());
-			invItem.setUnitPrice(orderItem.getNetUnitPrice());
+			invItem.setSalesInvoice(invoice);
+			invItem.setProduct(orderItem.getProduct());
+			invItem.setQuantity(orderItem.getQuantity());
+			invItem.setUnitPrice(orderItem.getUnitPrice());
 			invItem.setNetAmount(orderItem.getNetAmount());
+			invItem.setTaxAmount(orderItem.getTaxAmount());
+			invItem.setTax(orderItem.getTax());
 			invItem.setUom(orderItem.getUom());
 
 			invoice.addToLines(invItem);
+			for(SalesOrderItemTax soTax : orderItem.getItemTaxes()) {
+				SalesInvoiceItemTax siTax = new SalesInvoiceItemTax();
+				siTax.setBaseAmount(soTax.getBaseAmount());
+				siTax.setTax(soTax.getTax());
+				siTax.setTaxAmount(soTax.getTaxAmount());
+				siTax.setSalesInvoiceItem(invItem);
+				invItem.addToItemTaxes(siTax);
+			}			
 		}
 
 		ISalesInvoiceService srv = (ISalesInvoiceService) this
 				.findEntityService(SalesInvoice.class);
 		srv.insert(invoice);
+		
+		order.setInvoiced(true);
+		srv.getEntityManager().merge(order);
 		return invoice;
 
 	}

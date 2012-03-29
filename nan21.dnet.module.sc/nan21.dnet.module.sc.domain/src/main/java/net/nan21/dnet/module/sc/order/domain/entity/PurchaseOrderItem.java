@@ -53,8 +53,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class PurchaseOrderItem implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "SC_PURCHASE_ORDER_ITEM";
-    public static final String SEQUENCE_NAME = "SC_PURCHASE_ORDER_ITEM_SEQ";
+    public static final String TABLE_NAME = "SC_PO_ITEM";
+    public static final String SEQUENCE_NAME = "SC_PO_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -68,13 +68,13 @@ public class PurchaseOrderItem implements Serializable, IModelWithId,
      */
     public static final String NQ_FIND_BY_IDS = "PurchaseOrderItem.findByIds";
 
-    /** QtyOrdered. */
-    @Column(name = "QTYORDERED", scale = 2)
-    private Float qtyOrdered;
+    /** Quantity. */
+    @Column(name = "QUANTITY", scale = 2)
+    private Float quantity;
 
-    /** NetUnitPrice. */
-    @Column(name = "NETUNITPRICE", scale = 2)
-    private Float netUnitPrice;
+    /** UnitPrice. */
+    @Column(name = "UNITPRICE", scale = 2)
+    private Float unitPrice;
 
     /** NetAmount. */
     @Column(name = "NETAMOUNT", scale = 2)
@@ -157,26 +157,26 @@ public class PurchaseOrderItem implements Serializable, IModelWithId,
     @JoinColumn(name = "TAX_ID", referencedColumnName = "ID")
     private Tax tax;
 
-    @OneToMany(fetch = FetchType.LAZY, targetEntity = PurchaseOrderItemTax.class, mappedBy = "salesOrderItem", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = PurchaseOrderItemTax.class, mappedBy = "purchaseOrderItem", cascade = CascadeType.ALL)
     @CascadeOnDelete
     private Collection<PurchaseOrderItemTax> itemTaxes;
 
     /* ============== getters - setters ================== */
 
-    public Float getQtyOrdered() {
-        return this.qtyOrdered;
+    public Float getQuantity() {
+        return this.quantity;
     }
 
-    public void setQtyOrdered(Float qtyOrdered) {
-        this.qtyOrdered = qtyOrdered;
+    public void setQuantity(Float quantity) {
+        this.quantity = quantity;
     }
 
-    public Float getNetUnitPrice() {
-        return this.netUnitPrice;
+    public Float getUnitPrice() {
+        return this.unitPrice;
     }
 
-    public void setNetUnitPrice(Float netUnitPrice) {
-        this.netUnitPrice = netUnitPrice;
+    public void setUnitPrice(Float unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     public Float getNetAmount() {
@@ -312,7 +312,7 @@ public class PurchaseOrderItem implements Serializable, IModelWithId,
         if (this.itemTaxes == null) {
             this.itemTaxes = new ArrayList<PurchaseOrderItemTax>();
         }
-        e.setSalesOrderItem(this);
+        e.setPurchaseOrderItem(this);
         this.itemTaxes.add(e);
     }
 

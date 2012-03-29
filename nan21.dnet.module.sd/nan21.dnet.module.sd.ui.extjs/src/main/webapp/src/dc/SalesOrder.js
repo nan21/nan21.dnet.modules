@@ -24,22 +24,32 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
-		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,format:Ext.DATE_FORMAT })
+		.addDateField({ name:"docDate_From", dataIndex:"docDate_From", emptyText:"From" })
+		.addDateField({ name:"docDate_To", dataIndex:"docDate_To", emptyText:"To" })
+		.addFieldContainer({name: "docDate", fieldLabel:"Doc Date"}) 
+		.addChildrenTo("docDate",["docDate_From", "docDate_To"]) 
+
 		.addLov({ name:"deliveryMethod", xtype:"net.nan21.dnet.module.bp.base.lovs.DeliveryMethods", dataIndex:"deliveryMethod",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "deliveryMethodId"} ]  })
 		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"customer",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "customerId"} ]  })
 		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"supplier",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
 		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
+		.addLov({ name:"priceList", xtype:"net.nan21.dnet.module.mm.price.lovs.PriceListSales", dataIndex:"priceList",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priceListId"} ]  })
+		.addBooleanField({ name:"confirmed", dataIndex:"confirmed",anchor:"-20"  })
+		.addBooleanField({ name:"invoiced", dataIndex:"invoiced",anchor:"-20"  })
+		.addBooleanField({ name:"delivered", dataIndex:"delivered",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"form", width:250}) 
-		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"col1", layout:"form", width:220}) 
+		.addPanel({ name:"col2", layout:"form", width:300}) 
+		.addPanel({ name:"col3", layout:"form", width:180}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["code","docDate","currency"])
-		.addChildrenTo("col2",["supplier","customer","deliveryMethod"])
+		.addChildrenTo("main",["col1","col2","col3"])
+		.addChildrenTo("col1",["code","currency","priceList","deliveryMethod"])
+		.addChildrenTo("col2",["docDate","supplier","customer"])
+		.addChildrenTo("col3",["confirmed","invoiced","delivered"])
     	.addAuditFilter({})	
 	}
 }); 
@@ -59,7 +69,10 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$List", {
 		.addNumberColumn({ name:"totalNetAmount", dataIndex:"totalNetAmount",decimals:2 })  
 		.addNumberColumn({ name:"totalTaxAmount", dataIndex:"totalTaxAmount",decimals:2 })  
 		.addNumberColumn({ name:"totalAmount", dataIndex:"totalAmount",decimals:2 })  
-		.addNumberColumn({ name:"deliveryMethodId", dataIndex:"deliveryMethodId", hidden:true,format:"0",width:70 })  
+		.addBooleanColumn({ name:"confirmed", dataIndex:"confirmed"})   	     
+		.addBooleanColumn({ name:"invoiced", dataIndex:"invoiced"})   	     
+		.addBooleanColumn({ name:"delivered", dataIndex:"delivered"})   	     
+		.addTextColumn({ name:"priceList", dataIndex:"priceList",width:120 })   	
 		.addTextColumn({ name:"deliveryMethod", dataIndex:"deliveryMethod", hidden:true,width:120 })   	
 		.addTextColumn({ name:"billTo", dataIndex:"billTo", hidden:true,width:200 })   	
 		.addTextColumn({ name:"billToCode", dataIndex:"billToCode", hidden:true,width:100 })   	
@@ -69,6 +82,8 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$List", {
 		.addNumberColumn({ name:"customerId", dataIndex:"customerId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"billToId", dataIndex:"billToId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"shipToId", dataIndex:"shipToId", hidden:true,format:"0",width:70 })  
+		.addNumberColumn({ name:"deliveryMethodId", dataIndex:"deliveryMethodId", hidden:true,format:"0",width:70 })  
+		.addNumberColumn({ name:"priceListId", dataIndex:"priceListId", hidden:true,format:"0",width:70 })  
 	  	.addDefaults()
 	  ;		   
 	}
@@ -84,7 +99,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$EditMain", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
-		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,allowBlank:false})
+		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,noUpdate:true ,allowBlank:false})
 		.addLov({ name:"priceList", xtype:"net.nan21.dnet.module.mm.price.lovs.PriceListSales", dataIndex:"priceList",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priceListId"} ,{lovField:"currencyId", dsField: "currencyId"} ,{lovField:"currency", dsField: "currency"} ]  })
 		.addDisplayFieldText({ name:"currency", dataIndex:"currency", fieldCls:"displayfield important-field"  })
 		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"customer",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "customerId"} ,{lovField:"id", dsField: "billToId"} ,{lovField:"name", dsField: "billTo"} ,{lovField:"id", dsField: "shipToId"} ,{lovField:"name", dsField: "shipTo"} ]  })
@@ -155,12 +170,18 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$EditDetails", {
 	}	
 	,_afterApplyStates_: function(record) {	
 		
-			if ( record.get("invoiced") ) {
-				this._disableFields_(["billTo","billToLocation" ]);
-			}
-			if ( record.get("delivered") ) {
-				this._disableFields_(["shipTo","shipToLocation" ]);
-			}
+		if ( record.get("invoiced") ) {
+			this._disableFields_(["billTo","billToLocation" ]);
+		}
+		if ( record.get("delivered") ) {
+			this._disableFields_(["shipTo","shipToLocation" ]);
+		}
 		
+	}
+	,_endDefine_: function() {	
+		
+		this._controller_.on("afterDoServiceSuccess", function(dc, response, name, options) {
+		 	this._applyStates_(dc.record);
+		 } , this )
 	}
 });

@@ -18,16 +18,16 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDs" ,{
 		{name:"productName", type:"string"},
 		{name:"uomId", type:"int", useNull:true},
 		{name:"uomCode", type:"string"},
-		{name:"qtyOrdered", type:"float", useNull:true},
-		{name:"netUnitPrice", type:"float", useNull:true},
+		{name:"quantity", type:"float", useNull:true},
+		{name:"unitPrice", type:"float", useNull:true},
 		{name:"netAmount", type:"float", useNull:true},
+		{name:"taxAmount", type:"float", useNull:true},
 		{name:"taxId", type:"int", useNull:true},
-		{name:"tax", type:"string"},
-		{name:"taxAmount", type:"float", useNull:true}
+		{name:"tax", type:"string"}
 	],
 	validations: [  
-		{field: "qtyOrdered", type: 'presence'}, 
-		{field: "netUnitPrice", type: 'presence'}
+		{field: "quantity", type: 'presence'}, 
+		{field: "unitPrice", type: 'presence'}
 	]
 });
 
@@ -57,22 +57,22 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemDsFilter" ,{
 		{name:"uomId_From",type:"int", useNull:true},
 		{name:"uomId_To",type:"int", useNull:true},
 		{name:"uomCode", type:"string"},
-		{name:"qtyOrdered", type:"float", useNull:true},
-		{name:"qtyOrdered_From",type:"float", useNull:true},
-		{name:"qtyOrdered_To",type:"float", useNull:true},
-		{name:"netUnitPrice", type:"float", useNull:true},
-		{name:"netUnitPrice_From",type:"float", useNull:true},
-		{name:"netUnitPrice_To",type:"float", useNull:true},
+		{name:"quantity", type:"float", useNull:true},
+		{name:"quantity_From",type:"float", useNull:true},
+		{name:"quantity_To",type:"float", useNull:true},
+		{name:"unitPrice", type:"float", useNull:true},
+		{name:"unitPrice_From",type:"float", useNull:true},
+		{name:"unitPrice_To",type:"float", useNull:true},
 		{name:"netAmount", type:"float", useNull:true},
 		{name:"netAmount_From",type:"float", useNull:true},
 		{name:"netAmount_To",type:"float", useNull:true},
+		{name:"taxAmount", type:"float", useNull:true},
+		{name:"taxAmount_From",type:"float", useNull:true},
+		{name:"taxAmount_To",type:"float", useNull:true},
 		{name:"taxId", type:"int", useNull:true},
 		{name:"taxId_From",type:"int", useNull:true},
 		{name:"taxId_To",type:"int", useNull:true},
-		{name:"tax", type:"string"},
-		{name:"taxAmount", type:"float", useNull:true},
-		{name:"taxAmount_From",type:"float", useNull:true},
-		{name:"taxAmount_To",type:"float", useNull:true}
+		{name:"tax", type:"string"}
 	] 
 });
 	

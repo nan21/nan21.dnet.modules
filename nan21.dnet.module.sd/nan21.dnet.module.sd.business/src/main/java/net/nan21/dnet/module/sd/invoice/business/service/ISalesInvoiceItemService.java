@@ -7,25 +7,35 @@ package net.nan21.dnet.module.sd.invoice.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
+import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.md.domain.entity.Product;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
+import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItemTax;
 
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
 
 public interface ISalesInvoiceItemService extends
         IEntityService<SalesInvoiceItem> {
 
-    public List<SalesInvoiceItem> findByInvoice(SalesInvoice invoice);
+    public List<SalesInvoiceItem> findBySalesInvoice(SalesInvoice salesInvoice);
 
-    public List<SalesInvoiceItem> findByInvoiceId(Long invoiceId);
+    public List<SalesInvoiceItem> findBySalesInvoiceId(Long salesInvoiceId);
 
-    public List<SalesInvoiceItem> findByItem(Product item);
+    public List<SalesInvoiceItem> findByProduct(Product product);
 
-    public List<SalesInvoiceItem> findByItemId(Long itemId);
+    public List<SalesInvoiceItem> findByProductId(Long productId);
 
     public List<SalesInvoiceItem> findByUom(Uom uom);
 
     public List<SalesInvoiceItem> findByUomId(Long uomId);
+
+    public List<SalesInvoiceItem> findByTax(Tax tax);
+
+    public List<SalesInvoiceItem> findByTaxId(Long taxId);
+
+    public List<SalesInvoiceItem> findByItemTaxes(SalesInvoiceItemTax itemTaxes);
+
+    public List<SalesInvoiceItem> findByItemTaxesId(Long itemTaxesId);
 
 }

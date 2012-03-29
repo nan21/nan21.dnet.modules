@@ -27,15 +27,18 @@ public class SalesInvoiceItemDs extends AbstractDsModel<SalesInvoiceItem>
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fENTITYFQN = "entityFQN";
-    public static final String fINVOICEID = "invoiceId";
-    public static final String fITEMID = "itemId";
-    public static final String fITEMCODE = "itemCode";
-    public static final String fITEMNAME = "itemName";
+    public static final String fSALESINVOICEID = "salesInvoiceId";
+    public static final String fPRODUCTID = "productId";
+    public static final String fPRODUCTCODE = "productCode";
+    public static final String fPRODUCTNAME = "productName";
     public static final String fQUANTITY = "quantity";
     public static final String fUOMID = "uomId";
     public static final String fUOMCODE = "uomCode";
     public static final String fUNITPRICE = "unitPrice";
     public static final String fNETAMOUNT = "netAmount";
+    public static final String fTAXAMOUNT = "taxAmount";
+    public static final String fTAXID = "taxId";
+    public static final String fTAX = "tax";
 
     @DsField(noUpdate = true)
     private Long id;
@@ -64,17 +67,17 @@ public class SalesInvoiceItemDs extends AbstractDsModel<SalesInvoiceItem>
     @DsField(noUpdate = true, fetch = false, path = "className")
     private String entityFQN;
 
-    @DsField(join = "left", path = "invoice.id")
-    private Long invoiceId;
+    @DsField(noUpdate = true, join = "left", path = "salesInvoice.id")
+    private Long salesInvoiceId;
 
-    @DsField(join = "left", path = "item.id")
-    private Long itemId;
+    @DsField(join = "left", path = "product.id")
+    private Long productId;
 
-    @DsField(join = "left", path = "item.code")
-    private String itemCode;
+    @DsField(join = "left", path = "product.code")
+    private String productCode;
 
-    @DsField(join = "left", path = "item.name")
-    private String itemName;
+    @DsField(join = "left", path = "product.name")
+    private String productName;
 
     @DsField()
     private Float quantity;
@@ -88,8 +91,17 @@ public class SalesInvoiceItemDs extends AbstractDsModel<SalesInvoiceItem>
     @DsField()
     private Float unitPrice;
 
-    @DsField()
+    @DsField(noInsert = true, noUpdate = true)
     private Float netAmount;
+
+    @DsField(noInsert = true, noUpdate = true)
+    private Float taxAmount;
+
+    @DsField(join = "left", path = "tax.id")
+    private Long taxId;
+
+    @DsField(join = "left", path = "tax.name")
+    private String tax;
 
     public SalesInvoiceItemDs() {
         super();
@@ -172,36 +184,36 @@ public class SalesInvoiceItemDs extends AbstractDsModel<SalesInvoiceItem>
         this.entityFQN = entityFQN;
     }
 
-    public Long getInvoiceId() {
-        return this.invoiceId;
+    public Long getSalesInvoiceId() {
+        return this.salesInvoiceId;
     }
 
-    public void setInvoiceId(Long invoiceId) {
-        this.invoiceId = invoiceId;
+    public void setSalesInvoiceId(Long salesInvoiceId) {
+        this.salesInvoiceId = salesInvoiceId;
     }
 
-    public Long getItemId() {
-        return this.itemId;
+    public Long getProductId() {
+        return this.productId;
     }
 
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
-    public String getItemCode() {
-        return this.itemCode;
+    public String getProductCode() {
+        return this.productCode;
     }
 
-    public void setItemCode(String itemCode) {
-        this.itemCode = itemCode;
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
     }
 
-    public String getItemName() {
-        return this.itemName;
+    public String getProductName() {
+        return this.productName;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public Float getQuantity() {
@@ -242,6 +254,30 @@ public class SalesInvoiceItemDs extends AbstractDsModel<SalesInvoiceItem>
 
     public void setNetAmount(Float netAmount) {
         this.netAmount = netAmount;
+    }
+
+    public Float getTaxAmount() {
+        return this.taxAmount;
+    }
+
+    public void setTaxAmount(Float taxAmount) {
+        this.taxAmount = taxAmount;
+    }
+
+    public Long getTaxId() {
+        return this.taxId;
+    }
+
+    public void setTaxId(Long taxId) {
+        this.taxId = taxId;
+    }
+
+    public String getTax() {
+        return this.tax;
+    }
+
+    public void setTax(String tax) {
+        this.tax = tax;
     }
 
 }

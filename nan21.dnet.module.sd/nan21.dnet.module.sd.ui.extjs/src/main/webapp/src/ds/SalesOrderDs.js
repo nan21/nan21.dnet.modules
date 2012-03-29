@@ -14,7 +14,8 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" ,{
 		{name:"entityFQN", type:"string"},
 		{name:"code", type:"string"},
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"businessObject", type:"string"},
+		{name:"supplierId", type:"int", useNull:true},
+		{name:"supplier", type:"string"},
 		{name:"customerId", type:"int", useNull:true},
 		{name:"customerUuid", type:"string"},
 		{name:"customerCode", type:"string"},
@@ -27,8 +28,6 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" ,{
 		{name:"paymentMethod", type:"string"},
 		{name:"deliveryMethodId", type:"int", useNull:true},
 		{name:"deliveryMethod", type:"string"},
-		{name:"supplierId", type:"int", useNull:true},
-		{name:"supplier", type:"string"},
 		{name:"billToId", type:"int", useNull:true},
 		{name:"billToUuid", type:"string"},
 		{name:"billToCode", type:"string"},
@@ -47,7 +46,8 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs" ,{
 		{name:"confirmed", type:"boolean"},
 		{name:"invoiced", type:"boolean"},
 		{name:"delivered", type:"boolean"},
-		{name:"className", type:"string"}
+		{name:"className", type:"string"},
+		{name:"businessObject", type:"string"}
 	]
 });
 
@@ -69,7 +69,10 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDsFilter" ,{
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"businessObject", type:"string"},
+		{name:"supplierId", type:"int", useNull:true},
+		{name:"supplierId_From",type:"int", useNull:true},
+		{name:"supplierId_To",type:"int", useNull:true},
+		{name:"supplier", type:"string"},
 		{name:"customerId", type:"int", useNull:true},
 		{name:"customerId_From",type:"int", useNull:true},
 		{name:"customerId_To",type:"int", useNull:true},
@@ -92,10 +95,6 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDsFilter" ,{
 		{name:"deliveryMethodId_From",type:"int", useNull:true},
 		{name:"deliveryMethodId_To",type:"int", useNull:true},
 		{name:"deliveryMethod", type:"string"},
-		{name:"supplierId", type:"int", useNull:true},
-		{name:"supplierId_From",type:"int", useNull:true},
-		{name:"supplierId_To",type:"int", useNull:true},
-		{name:"supplier", type:"string"},
 		{name:"billToId", type:"int", useNull:true},
 		{name:"billToId_From",type:"int", useNull:true},
 		{name:"billToId_To",type:"int", useNull:true},
@@ -128,7 +127,8 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDsFilter" ,{
 		{name:"confirmed", type:"boolean", useNull:true},
 		{name:"invoiced", type:"boolean", useNull:true},
 		{name:"delivered", type:"boolean", useNull:true},
-		{name:"className", type:"string"}
+		{name:"className", type:"string"},
+		{name:"businessObject", type:"string"}
 	] 
 });
 	

@@ -36,6 +36,7 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
+import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.invoice.domain.eventhandler.SalesInvoiceEventHandler;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
@@ -162,6 +163,9 @@ public class SalesInvoice implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PriceList.class)
+    @JoinColumn(name = "PRICELIST_ID", referencedColumnName = "ID")
+    private PriceList priceList;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
     @JoinColumn(name = "CURRENCY_ID", referencedColumnName = "ID")
     private Currency currency;
@@ -181,7 +185,7 @@ public class SalesInvoice implements Serializable, IModelWithId,
     @JoinColumn(name = "SALESORDER_ID", referencedColumnName = "ID")
     private SalesOrder salesOrder;
 
-    @OneToMany(fetch = FetchType.LAZY, targetEntity = SalesInvoiceItem.class, mappedBy = "invoice", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = SalesInvoiceItem.class, mappedBy = "salesInvoice", cascade = CascadeType.ALL)
     @CascadeOnDelete
     private Collection<SalesInvoiceItem> lines;
 
@@ -325,6 +329,14 @@ public class SalesInvoice implements Serializable, IModelWithId,
 
     }
 
+    public PriceList getPriceList() {
+        return this.priceList;
+    }
+
+    public void setPriceList(PriceList priceList) {
+        this.priceList = priceList;
+    }
+
     public Currency getCurrency() {
         return this.currency;
     }
@@ -385,7 +397,7 @@ public class SalesInvoice implements Serializable, IModelWithId,
         if (this.lines == null) {
             this.lines = new ArrayList<SalesInvoiceItem>();
         }
-        e.setInvoice(this);
+        e.setSalesInvoice(this);
         this.lines.add(e);
     }
 

@@ -4,7 +4,7 @@
     
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_SC_PO_TAX1" 
-				baseTableName="SC_PO_TAX" baseColumnNames="SALESORDER_ID"  
+				baseTableName="SC_PO_TAX" baseColumnNames="PURCHASEORDER_ID"  
 				referencedTableName="SC_PURCHASE_ORDER"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">

@@ -6,14 +6,10 @@
 package net.nan21.dnet.module.sd.order.business.serviceext;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-import net.nan21.dnet.module.bd.fin.business.service.ITaxService;
-import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.sd._businessdelegates.order.SalesTaxBD;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderItemService;
-import net.nan21.dnet.module.sd.order.business.service.ISalesOrderItemTaxService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax;
@@ -25,7 +21,7 @@ public class SalesOrderItemService
 
 	private List<Long> orderIds;
 
-	// private ISalesOrderItemTaxService itemTaxService;
+ 
 
 	@Override
 	protected void postUpdate(SalesOrderItem e) throws Exception {
@@ -58,16 +54,6 @@ public class SalesOrderItemService
 				orderIds.add(item.getSalesOrder().getId());
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		orderIds = null;
 	}
 
@@ -108,9 +94,9 @@ public class SalesOrderItemService
 						"select sum(i.netAmount), sum(i.taxAmount) from SalesOrderItem i where i.salesOrder.id = :orderId")
 				.setParameter("orderId", orderId).getSingleResult();
 		SalesOrder order = this.em.find(SalesOrder.class, orderId);
-		 
-		Double totalNet = (Double)x[0];
-		Double totalTax = (Double)x[1];
+
+		Double totalNet = (Double) x[0];
+		Double totalTax = (Double) x[1];
 		if (totalNet == null) {
 			totalNet = 0D;
 		}
@@ -128,31 +114,22 @@ public class SalesOrderItemService
 			SalesTaxBD delegate = this.getBusinessDelegate(SalesTaxBD.class);
 			List<SalesOrderItemTax> itemTaxes = new ArrayList<SalesOrderItemTax>();
 
-			delegate.createSalesItemTax(item, null, itemTaxes);
+			delegate.createItemTax(item, null, itemTaxes);
 			Float taxAmount = 0F;
 			for (SalesOrderItemTax itemTax : itemTaxes) {
 				taxAmount += itemTax.getTaxAmount();
 			}
 			item.setTaxAmount(taxAmount);
-			this.getEntityManager().merge(item);
+			this.em.merge(item);
 			this.em.createQuery(
 					"delete from " + SalesOrderItemTax.class.getSimpleName()
 							+ " e where e.salesOrderItem.id = :itemId")
 					.setParameter("itemId", item.getId()).executeUpdate();
 
 			for (SalesOrderItemTax itemTax : itemTaxes) {
-				this.getEntityManager().persist(itemTax);
+				this.em.persist(itemTax);
 			}
 		}
 	}
-
-	// protected ISalesOrderItemTaxService getItemTaxService() throws Exception
-	// {
-	// if (this.itemTaxService == null) {
-	// this.itemTaxService =
-	// (ISalesOrderItemTaxService)this.findEntityService(SalesOrderItemTax.class);
-	// }
-	// return this.itemTaxService;
-	// }
 
 }
