@@ -44,6 +44,24 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
+ 	
+
+Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$FilterPG", {
+	extend: "dnet.core.dc.AbstractDcvFilterPropGrid",
+ 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Country$FilterPG",
+	_defineElements_: function () {	
+		this._getBuilder_()	
+		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",maxLength:255  })
+		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",maxLength:32  })
+		.addTextField({ name:"iso2", dataIndex:"iso2",maxLength:2,caseRestriction:"uppercase"  })
+		.addTextField({ name:"iso3", dataIndex:"iso3",maxLength:3,caseRestriction:"uppercase"  })
+		 
+		
+	}
+	
+}); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -64,6 +82,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$List", {
 });
  
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -73,20 +92,21 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$EditList", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
-		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addTextColumn({ name:"iso2", dataIndex:"iso2",width:50,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:2,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
 		.addTextColumn({ name:"iso3", dataIndex:"iso3",width:50,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:3,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
 		.addBooleanColumn({ name:"hasRegions", dataIndex:"hasRegions"})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Country$Edit",
 	
 	_defineElements_: function () {	
@@ -117,3 +137,29 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$Edit", {
 ;
 	}	
 });
+ 	
+ 	
+
+Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$EditPG", {
+	extend: "dnet.core.dc.AbstractDcvEditPropGrid",
+	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Country$EditPG",
+	
+	_defineElements_: function () {	
+		this._getBuilder_()	
+		.addNumberField({ name:"id", dataIndex:"id",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
+		.addTextField({ name:"code", dataIndex:"code",editor:{xtype:"textfield", selectOnFocus:true,allowBlank:false ,maxLength:32} })
+		.addTextField({ name:"name", dataIndex:"name",editor:{xtype:"textfield", selectOnFocus:true,allowBlank:false } })
+		.addTextField({ name:"notes", dataIndex:"notes",editor:{xtype:"textfield", selectOnFocus:true } })
+		.addBooleanField({ name:"active", dataIndex:"active"  })
+		.addBooleanField({ name:"hasRegions", dataIndex:"hasRegions"  })
+		.addTextField({ name:"iso2", dataIndex:"iso2",editor:{xtype:"textfield", selectOnFocus:true ,maxLength:2,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
+		.addTextField({ name:"iso3", dataIndex:"iso3",editor:{xtype:"textfield", selectOnFocus:true ,maxLength:3,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
+		.addDateField({ name:"createdAt", dataIndex:"createdAt",editor:{xtype:"textfield", noEdit:true} })
+		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",editor:{xtype:"textfield", noEdit:true} })
+		.addTextField({ name:"createdBy", dataIndex:"createdBy",editor:{xtype:"textfield", noEdit:true}  })
+		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",editor:{xtype:"textfield", noEdit:true}  })
+		;     
+	}
+	 	
+});
+ 	

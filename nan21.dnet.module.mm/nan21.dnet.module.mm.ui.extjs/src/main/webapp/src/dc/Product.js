@@ -49,6 +49,7 @@ labelAlign:"right",labelWidth:70}})
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.mm.md.dc.Product$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -86,9 +87,10 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.Product$CtxFormName",
 	
 	_defineElements_: function () {	
@@ -106,9 +108,10 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$CtxFormName", {
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.Product$Edit",
 	
 	_defineElements_: function () {	
@@ -143,9 +146,10 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.Product$Edit", {
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.mm.md.dc.Product$EditInfo", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.mm.md.dc.Product$EditInfo",
 	
 	_defineElements_: function () {	
@@ -181,3 +185,4 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	

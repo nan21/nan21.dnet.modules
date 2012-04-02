@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.mm.inventory.domain.entity;versi
- on="1.0.0.M8";uses:="javax.persistence,javax.validation.constraints,j
+ on="1.0.0.M9";uses:="javax.persistence,javax.validation.constraints,j
  avax.xml.bind.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet
  .module.bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.enti
  ty,net.nan21.dnet.module.mm.md.domain.entity,org.eclipse.persistence.
@@ -9,7 +9,7 @@ Export-Package: net.nan21.dnet.module.mm.inventory.domain.entity;versi
  .eclipse.persistence.internal.descriptors,org.eclipse.persistence.int
  ernal.weaving,org.eclipse.persistence.queries,org.eclipse.persistence
  .sessions,org.hibernate.validator.constraints",net.nan21.dnet.module.
- mm.md.domain.entity;version="1.0.0.M8";uses:="javax.persistence,javax
+ mm.md.domain.entity;version="1.0.0.M9";uses:="javax.persistence,javax
  .validation.constraints,javax.xml.bind.annotation,net.nan21.dnet.core
  .api.model,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.
  module.bd.standards.domain.entity,net.nan21.dnet.module.bd.uom.domain
@@ -19,7 +19,7 @@ Export-Package: net.nan21.dnet.module.mm.inventory.domain.entity;versi
  tors,org.eclipse.persistence.internal.weaving,org.eclipse.persistence
  .queries,org.eclipse.persistence.sessions,org.hibernate.validator.con
  straints",net.nan21.dnet.module.mm.price.domain.entity;version="1.0.0
- .M8";uses:="javax.persistence,javax.validation.constraints,javax.xml.
+ .M9";uses:="javax.persistence,javax.validation.constraints,javax.xml.
  bind.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.module.b
  d.currency.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,n
  et.nan21.dnet.module.mm.md.domain.entity,org.eclipse.persistence.anno
@@ -29,11 +29,11 @@ Export-Package: net.nan21.dnet.module.mm.inventory.domain.entity;versi
  l.weaving,org.eclipse.persistence.queries,org.eclipse.persistence.ses
  sions,org.hibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.M8,1.0.0.M8]",nan21.dnet.module.ad.d
- omain;version="[1.0.0.M8,1.0.0.M8]",nan21.dnet.module.bd.domain;versi
- on="[1.0.0.M8,1.0.0.M8]"
+ dnet.core.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.ad.d
+ omain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.domain;versi
+ on="[1.0.0.M9,1.0.0.M9]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M8
+Bundle-Version: 1.0.0.M9
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet MM - domain
 Bundle-ManifestVersion: 2

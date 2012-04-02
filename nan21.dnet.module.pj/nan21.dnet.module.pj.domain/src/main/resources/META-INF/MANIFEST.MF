@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.pj.base.domain.entity;version="1
- .0.0.M8";uses:="javax.persistence,javax.validation.constraints,javax.
+ .0.0.M9";uses:="javax.persistence,javax.validation.constraints,javax.
  xml.bind.annotation,net.nan21.dnet.core.api.model,org.eclipse.persist
  ence.annotations,org.eclipse.persistence.descriptors,org.eclipse.pers
  istence.descriptors.changetracking,org.eclipse.persistence.indirectio
  n,org.eclipse.persistence.internal.descriptors,org.eclipse.persistenc
  e.internal.weaving,org.eclipse.persistence.queries,org.eclipse.persis
  tence.sessions,org.hibernate.validator.constraints",net.nan21.dnet.mo
- dule.pj.md.domain.entity;version="1.0.0.M8";uses:="javax.persistence,
+ dule.pj.md.domain.entity;version="1.0.0.M9";uses:="javax.persistence,
  javax.validation.constraints,javax.xml.bind.annotation,net.nan21.dnet
  .core.api.model,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.
  dnet.module.pj.base.domain.entity,org.eclipse.persistence.annotations
@@ -17,10 +17,10 @@ Export-Package: net.nan21.dnet.module.pj.base.domain.entity;version="1
  ng,org.eclipse.persistence.queries,org.eclipse.persistence.sessions,o
  rg.hibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.M8,1.0.0.M8]",nan21.dnet.module.ad.d
- omain;version="[1.0.0.M8,1.0.0.M8]"
+ dnet.core.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.ad.d
+ omain;version="[1.0.0.M9,1.0.0.M9]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M8
+Bundle-Version: 1.0.0.M9
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet PJ - domain
 Bundle-ManifestVersion: 2

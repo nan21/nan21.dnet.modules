@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.pj.business</artifactId>
-	<version>1.0.0.M8</version>
+	<version>1.0.0.M9</version>
 	<name>DNet PJ - business</name>	
 	<description>DNet PJ - business</description>
 	<packaging>jar</packaging>	
@@ -16,42 +16,42 @@
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.api</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.domain</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.business</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.ad.domain</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.pj.domain</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.ad.business</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	

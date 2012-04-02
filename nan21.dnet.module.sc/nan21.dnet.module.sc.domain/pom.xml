@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.sc.domain</artifactId>
-	<version>1.0.0.M8</version>
+	<version>1.0.0.M9</version>
 	<name>DNet SC - domain</name>	
 	<description>DNet SC - domain</description>
 	<packaging>jar</packaging>	
@@ -16,42 +16,42 @@
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.api</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.domain</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.ad.domain</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.bd.domain</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.bp.domain</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.mm.domain</artifactId>
-			<version>1.0.0.M8</version>
+			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
@@ -191,7 +191,7 @@
 	                                <property name="path_persistenceinfo"  value="${basedir}/target/classes"/>                 
 	                                <property name="my_repo"  value="${user.home}/.m2/repository"/>
 	                                
-	                                <ant antfile="${basedir}/eclipselink-static-weave.xml"  > 
+	                                <ant antfile="${basedir}/eclipselink-static-weave.xml">
 	                                    <target name="weaving"/>
 	                                </ant>
 	                            </target>                            

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.sc.invoice.domain.entity;version
- ="1.0.0.M8";uses:="javax.persistence,javax.validation.constraints,jav
+ ="1.0.0.M9";uses:="javax.persistence,javax.validation.constraints,jav
  ax.xml.bind.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.m
  odule.bd.currency.domain.entity,net.nan21.dnet.module.bd.fin.domain.e
  ntity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.modul
@@ -12,9 +12,9 @@ Export-Package: net.nan21.dnet.module.sc.invoice.domain.entity;version
  escriptors,org.eclipse.persistence.internal.weaving,org.eclipse.persi
  stence.queries,org.eclipse.persistence.sessions,org.hibernate.validat
  or.constraints",net.nan21.dnet.module.sc.invoice.domain.eventhandler;
- version="1.0.0.M8";uses:="net.nan21.dnet.core.domain.eventhandler,org
+ version="1.0.0.M9";uses:="net.nan21.dnet.core.domain.eventhandler,org
  .eclipse.persistence.descriptors",net.nan21.dnet.module.sc.order.doma
- in.entity;version="1.0.0.M8";uses:="javax.persistence,javax.validatio
+ in.entity;version="1.0.0.M9";uses:="javax.persistence,javax.validatio
  n.constraints,javax.xml.bind.annotation,net.nan21.dnet.core.api.model
  ,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.modul
  e.bd.fin.domain.entity,net.nan21.dnet.module.bd.org.domain.entity,net
@@ -27,16 +27,16 @@ Export-Package: net.nan21.dnet.module.sc.invoice.domain.entity;version
  rs,org.eclipse.persistence.internal.weaving,org.eclipse.persistence.q
  ueries,org.eclipse.persistence.sessions,org.hibernate.validator.const
  raints",net.nan21.dnet.module.sc.order.domain.eventhandler;version="1
- .0.0.M8";uses:="net.nan21.dnet.core.domain.eventhandler,org.eclipse.p
+ .0.0.M9";uses:="net.nan21.dnet.core.domain.eventhandler,org.eclipse.p
  ersistence.descriptors"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.M8,1.0.0.M8]",nan21.dnet.module.ad.d
- omain;version="[1.0.0.M8,1.0.0.M8]",nan21.dnet.module.bd.domain;versi
- on="[1.0.0.M8,1.0.0.M8]",nan21.dnet.module.bp.domain;version="[1.0.0.
- M8,1.0.0.M8]",nan21.dnet.module.mm.domain;version="[1.0.0.M8,1.0.0.M8
+ dnet.core.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.ad.d
+ omain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.domain;versi
+ on="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bp.domain;version="[1.0.0.
+ M9,1.0.0.M9]",nan21.dnet.module.mm.domain;version="[1.0.0.M9,1.0.0.M9
  ]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M8
+Bundle-Version: 1.0.0.M9
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet SC - domain
 Bundle-ManifestVersion: 2

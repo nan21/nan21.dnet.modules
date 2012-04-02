@@ -1,78 +1,78 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.hr.employee.ds.converter;version
- ="1.0.0.M8";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.c
+ ="1.0.0.M9";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.c
  ore.presenter.converter,net.nan21.dnet.module.hr.employee.domain.enti
  ty,net.nan21.dnet.module.hr.employee.ds.model",net.nan21.dnet.module.
- hr.employee.ds.filter;version="1.0.0.M8";uses:="net.nan21.dnet.core.a
+ hr.employee.ds.filter;version="1.0.0.M9";uses:="net.nan21.dnet.core.a
  pi.model,net.nan21.dnet.core.presenter.model",net.nan21.dnet.module.h
- r.employee.ds.model;version="1.0.0.M8";uses:="net.nan21.dnet.core.api
+ r.employee.ds.model;version="1.0.0.M9";uses:="net.nan21.dnet.core.api
  .annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.present
  er.model,net.nan21.dnet.module.hr.employee.domain.entity",net.nan21.d
- net.module.hr.grade.ds.converter;version="1.0.0.M8";uses:="net.nan21.
+ net.module.hr.grade.ds.converter;version="1.0.0.M9";uses:="net.nan21.
  dnet.core.api.converter,net.nan21.dnet.core.presenter.converter,net.n
  an21.dnet.module.hr.grade.domain.entity,net.nan21.dnet.module.hr.grad
  e.ds.model",net.nan21.dnet.module.hr.grade.ds.filter;version="1.0.0.M
- 8";uses:="net.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter
- .model",net.nan21.dnet.module.hr.grade.ds.model;version="1.0.0.M8";us
+ 9";uses:="net.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter
+ .model",net.nan21.dnet.module.hr.grade.ds.model;version="1.0.0.M9";us
  es:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.model
  ,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.hr.grade.d
  omain.entity",net.nan21.dnet.module.hr.job.ds.converter;version="1.0.
- 0.M8";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.pr
+ 0.M9";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.pr
  esenter.converter,net.nan21.dnet.module.hr.job.domain.entity,net.nan2
  1.dnet.module.hr.job.ds.model",net.nan21.dnet.module.hr.job.ds.filter
- ;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.model,net.nan21.dn
+ ;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.model,net.nan21.dn
  et.core.presenter.model",net.nan21.dnet.module.hr.job.ds.model;versio
- n="1.0.0.M8";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet
+ n="1.0.0.M9";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet
  .core.api.model,net.nan21.dnet.core.presenter.model,net.nan21.dnet.mo
  dule.hr.job.domain.entity",net.nan21.dnet.module.hr.payroll.ds.conver
- ter;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.converter,net.n
+ ter;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.converter,net.n
  an21.dnet.core.presenter.converter,net.nan21.dnet.module.hr.payroll.d
  omain.entity,net.nan21.dnet.module.hr.payroll.ds.model",net.nan21.dne
- t.module.hr.payroll.ds.filter;version="1.0.0.M8";uses:="net.nan21.dne
+ t.module.hr.payroll.ds.filter;version="1.0.0.M9";uses:="net.nan21.dne
  t.core.api.model,net.nan21.dnet.core.presenter.model",net.nan21.dnet.
- module.hr.payroll.ds.model;version="1.0.0.M8";uses:="net.nan21.dnet.c
+ module.hr.payroll.ds.model;version="1.0.0.M9";uses:="net.nan21.dnet.c
  ore.api.annotation,net.nan21.dnet.core.api.model,net.nan21.dnet.core.
  presenter.model,net.nan21.dnet.module.hr.payroll.domain.entity",net.n
- an21.dnet.module.hr.skill.ds.converter;version="1.0.0.M8";uses:="net.
+ an21.dnet.module.hr.skill.ds.converter;version="1.0.0.M9";uses:="net.
  nan21.dnet.core.api.converter,net.nan21.dnet.core.presenter.converter
  ,net.nan21.dnet.module.hr.skill.domain.entity,net.nan21.dnet.module.h
  r.skill.ds.model",net.nan21.dnet.module.hr.skill.ds.filter;version="1
- .0.0.M8";uses:="net.nan21.dnet.core.api.model,net.nan21.dnet.core.pre
+ .0.0.M9";uses:="net.nan21.dnet.core.api.model,net.nan21.dnet.core.pre
  senter.model",net.nan21.dnet.module.hr.skill.ds.model;version="1.0.0.
- M8";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api
+ M9";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api
  .model,net.nan21.dnet.core.presenter.model,net.nan21.dnet.module.hr.s
  kill.domain.entity",net.nan21.dnet.module.hr.time.ds.converter;versio
- n="1.0.0.M8";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.
+ n="1.0.0.M9";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.
  core.presenter.converter,net.nan21.dnet.module.hr.time.domain.entity,
  net.nan21.dnet.module.hr.time.ds.model",net.nan21.dnet.module.hr.time
- .ds.filter;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.model,ne
+ .ds.filter;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.model,ne
  t.nan21.dnet.core.presenter.model",net.nan21.dnet.module.hr.time.ds.m
- odel;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.annotation,net
+ odel;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.annotation,net
  .nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.model,net.na
  n21.dnet.module.hr.time.domain.entity",net.nan21.dnet.module.hr.time.
- ds.param;version="1.0.0.M8";uses:="net.nan21.dnet.core.presenter.mode
- l",net.nan21.dnet.module.hr.time.ds.qb;version="1.0.0.M8";uses:="net.
+ ds.param;version="1.0.0.M9";uses:="net.nan21.dnet.core.presenter.mode
+ l",net.nan21.dnet.module.hr.time.ds.qb;version="1.0.0.M9";uses:="net.
  nan21.dnet.core.presenter.action,net.nan21.dnet.module.hr.time.ds.fil
- ter",net.nan21.dnet.module.hr.training.ds.converter;version="1.0.0.M8
+ ter",net.nan21.dnet.module.hr.training.ds.converter;version="1.0.0.M9
  ";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.presen
  ter.converter,net.nan21.dnet.module.hr.training.domain.entity,net.nan
  21.dnet.module.hr.training.ds.model",net.nan21.dnet.module.hr.trainin
- g.ds.filter;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.model,n
+ g.ds.filter;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.model,n
  et.nan21.dnet.core.presenter.model",net.nan21.dnet.module.hr.training
- .ds.model;version="1.0.0.M8";uses:="net.nan21.dnet.core.api.annotatio
+ .ds.model;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.annotatio
  n,net.nan21.dnet.core.api.model,net.nan21.dnet.core.presenter.model,n
  et.nan21.dnet.module.hr.training.domain.entity"
-Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M8,1.0.0.M8]",na
- n21.dnet.core.presenter;version="[1.0.0.M8,1.0.0.M8]",javax.persisten
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M9,1.0.0.M9]",na
+ n21.dnet.core.presenter;version="[1.0.0.M9,1.0.0.M9]",javax.persisten
  ce;version="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.5)
  ",org.eclipse.persistence.core;version="[2.0,2.5)",nan21.dnet.module.
- hr.domain;version="[1.0.0.M8,1.0.0.M8]",nan21.dnet.module.ad.domain;v
- ersion="[1.0.0.M8,1.0.0.M8]",nan21.dnet.module.bd.domain;version="[1.
- 0.0.M8,1.0.0.M8]",nan21.dnet.module.hr.business;version="[1.0.0.M8,1.
- 0.0.M8]",nan21.dnet.module.ad.business;version="[1.0.0.M8,1.0.0.M8]",
- nan21.dnet.module.bd.business;version="[1.0.0.M8,1.0.0.M8]"
+ hr.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.ad.domain;v
+ ersion="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.domain;version="[1.
+ 0.0.M9,1.0.0.M9]",nan21.dnet.module.hr.business;version="[1.0.0.M9,1.
+ 0.0.M9]",nan21.dnet.module.ad.business;version="[1.0.0.M9,1.0.0.M9]",
+ nan21.dnet.module.bd.business;version="[1.0.0.M9,1.0.0.M9]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M8
+Bundle-Version: 1.0.0.M9
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet HR - presenter
 Bundle-ManifestVersion: 2
