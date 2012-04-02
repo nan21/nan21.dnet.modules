@@ -28,8 +28,9 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.PositionRequirement$CtxEditList", {
 		.addNumberColumn({ name:"positionId", dataIndex:"positionId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"requirementId", dataIndex:"requirementId", hidden:true, align:"right",format:"0",width:70})
 		.addLov({name:"requirement", xtype:"gridcolumn", dataIndex:"requirement", width:300,editor:{xtype:"net.nan21.dnet.module.hr.job.lovs.WorkRequirements" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "requirementId"} ]} })
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

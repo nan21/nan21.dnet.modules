@@ -44,6 +44,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter", {
     		
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -61,3 +62,4 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List", {
 	}
 });
  
+ 	

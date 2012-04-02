@@ -43,6 +43,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Project$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.Project$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -65,9 +66,10 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Project$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.Project$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.Project$Edit",
 	
 	_defineElements_: function () {	
@@ -95,3 +97,4 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	

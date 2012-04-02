@@ -45,6 +45,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -74,9 +75,10 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Edit",
 	
 	_defineElements_: function () {	
@@ -115,3 +117,4 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	

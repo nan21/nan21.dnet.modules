@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -48,15 +49,16 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$CtxEditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addNumberColumn({ name:"priceListId", dataIndex:"priceListId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	
  	
  	 
 Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$EditList", {
@@ -65,20 +67,21 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"priceList", dataIndex:"priceList",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"priceList", dataIndex:"priceList",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addNumberColumn({ name:"priceListId", dataIndex:"priceListId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$CtxView", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.mm.price.dc.PriceListVersion$CtxView",
 	
 	_defineElements_: function () {	
@@ -102,9 +105,10 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$CtxView", {
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$CopyProductsFromCategory", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.mm.price.dc.PriceListVersion$CopyProductsFromCategory",
 	
 	_defineElements_: function () {	
@@ -121,3 +125,4 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$CopyProductsFromC
 ;
 	}	
 });
+ 	

@@ -38,6 +38,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementValue$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementValue$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -57,3 +58,4 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementValue$List", {
 	}
 });
  
+ 	

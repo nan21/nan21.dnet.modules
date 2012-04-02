@@ -43,6 +43,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$Filter", {
     		
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -63,9 +64,10 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$CtxCreate", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueLink$CtxCreate",
 	
 	_defineElements_: function () {	
@@ -83,3 +85,4 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$CtxCreate", {
 ;
 	}	
 });
+ 	

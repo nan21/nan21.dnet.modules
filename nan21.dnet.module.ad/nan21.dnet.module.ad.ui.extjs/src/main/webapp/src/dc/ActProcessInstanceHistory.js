@@ -44,6 +44,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filte
     		
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -66,3 +67,4 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List"
 	}
 });
  
+ 	

@@ -37,6 +37,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -55,6 +56,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$List", {
 });
  
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -62,19 +64,20 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addDateColumn({ name:"startDate", dataIndex:"startDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addDateColumn({ name:"endDate", dataIndex:"endDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Edit",
 	
 	_defineElements_: function () {	
@@ -99,3 +102,4 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Edit", {
 ;
 	}	
 });
+ 	

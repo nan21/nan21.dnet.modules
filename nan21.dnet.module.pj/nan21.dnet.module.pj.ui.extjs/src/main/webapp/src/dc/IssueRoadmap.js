@@ -50,6 +50,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueRoadmap$Filter", {
     		
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueRoadmap$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -72,3 +73,4 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueRoadmap$List", {
 	}
 });
  
+ 	

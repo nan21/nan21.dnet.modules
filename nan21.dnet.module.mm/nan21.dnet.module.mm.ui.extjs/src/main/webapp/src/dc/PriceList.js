@@ -43,6 +43,7 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceList$FilterH", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.mm.price.dc.PriceList$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -50,8 +51,8 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceList$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addLov({name:"currency", xtype:"gridcolumn", dataIndex:"currency",width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]} })
 		.addBooleanColumn({ name:"salesList", dataIndex:"salesList"})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
@@ -61,3 +62,4 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceList$EditList", {
 	  ;  		   
 	}  
 });
+ 	

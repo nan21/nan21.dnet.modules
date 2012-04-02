@@ -43,6 +43,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$Filter", {
     		
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -64,9 +65,10 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$Edit",
 	
 	_defineElements_: function () {	
@@ -91,3 +93,4 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTaskCtx$Edit", {
 ;
 	}	
 });
+ 	

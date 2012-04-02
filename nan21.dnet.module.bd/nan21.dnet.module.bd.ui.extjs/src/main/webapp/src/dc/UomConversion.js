@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.UomConversion$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bd.uom.dc.UomConversion$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -58,6 +59,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.UomConversion$EditList", {
 	}  
 });
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bd.uom.dc.UomConversion$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -74,3 +76,4 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.UomConversion$CtxEditList", {
 	  ;  		   
 	}  
 });
+ 	

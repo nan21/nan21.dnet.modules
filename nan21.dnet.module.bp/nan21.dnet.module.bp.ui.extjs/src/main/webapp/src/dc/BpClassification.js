@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpClassification$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BpClassification$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -59,3 +60,4 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpClassification$CtxEditList", {
 	  ;  		   
 	}  
 });
+ 	

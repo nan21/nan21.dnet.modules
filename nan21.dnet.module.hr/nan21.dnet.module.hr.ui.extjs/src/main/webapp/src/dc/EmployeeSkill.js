@@ -38,6 +38,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.EmployeeSkill$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.EmployeeSkill$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -54,3 +55,4 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.EmployeeSkill$EditList", {
 	  ;  		   
 	}  
 });
+ 	

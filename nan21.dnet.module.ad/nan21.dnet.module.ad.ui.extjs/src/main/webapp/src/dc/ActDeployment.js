@@ -40,6 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter", {
     		
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -54,3 +55,4 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List", {
 	}
 });
  
+ 	

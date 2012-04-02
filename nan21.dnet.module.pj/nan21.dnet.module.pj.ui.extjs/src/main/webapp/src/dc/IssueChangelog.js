@@ -50,6 +50,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueChangelog$Filter", {
     		
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueChangelog$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -71,3 +72,4 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueChangelog$List", {
 	}
 });
  
+ 	

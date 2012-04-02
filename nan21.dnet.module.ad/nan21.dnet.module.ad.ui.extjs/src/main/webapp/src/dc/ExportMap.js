@@ -37,6 +37,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMap$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMap$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -53,9 +54,10 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMap$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMap$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ExportMap$Edit",
 	
 	_defineElements_: function () {	
@@ -78,3 +80,4 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMap$Edit", {
 ;
 	}	
 });
+ 	

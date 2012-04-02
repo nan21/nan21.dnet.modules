@@ -42,9 +42,10 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$ListCtx", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$EditCtx", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Location$EditCtx",
 	
 	_defineElements_: function () {	
@@ -75,3 +76,4 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$EditCtx", {
 ;
 	}	
 });
+ 	

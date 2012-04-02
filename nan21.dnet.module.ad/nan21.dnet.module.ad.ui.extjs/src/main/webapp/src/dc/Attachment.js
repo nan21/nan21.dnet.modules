@@ -42,6 +42,7 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Attachment$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -50,15 +51,16 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"type", xtype:"gridcolumn", dataIndex:"type",width:120,editor:{xtype:"net.nan21.dnet.module.ad.data.lovs.AttachmentTypes" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ],filterFieldMapping: [{lovField:"useInContext", dsField: "targetType"} ]} })
-		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"location", dataIndex:"location",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
-		.addTextColumn({ name:"targetType", dataIndex:"targetType", hidden:true,width:150,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"targetUuid", dataIndex:"targetUuid", hidden:true,width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:36} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"location", dataIndex:"location",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"targetType", dataIndex:"targetType", hidden:true,width:150,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"targetUuid", dataIndex:"targetUuid", hidden:true,width:100,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.data.dc.Attachment$List", {
@@ -67,13 +69,14 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Attachment$List", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"type", dataIndex:"type",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"location", dataIndex:"location",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
-		.addTextColumn({ name:"targetType", dataIndex:"targetType", hidden:true,width:150,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"targetUuid", dataIndex:"targetUuid", hidden:true,width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:36} })
+		.addTextColumn({ name:"type", dataIndex:"type",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"location", dataIndex:"location",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"targetType", dataIndex:"targetType", hidden:true,width:150,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"targetUuid", dataIndex:"targetUuid", hidden:true,width:100,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

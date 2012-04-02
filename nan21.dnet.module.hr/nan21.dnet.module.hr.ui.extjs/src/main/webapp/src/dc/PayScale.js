@@ -38,6 +38,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScale$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScale$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -55,9 +56,10 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScale$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScale$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.hr.grade.dc.PayScale$Edit",
 	
 	_defineElements_: function () {	
@@ -82,3 +84,4 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	

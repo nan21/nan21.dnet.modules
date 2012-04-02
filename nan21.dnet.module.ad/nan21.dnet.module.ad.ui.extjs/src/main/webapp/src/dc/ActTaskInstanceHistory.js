@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$Filter",
     		
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -65,9 +66,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignForm", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignForm",
 	
 	_defineElements_: function () {	
@@ -84,3 +86,4 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$AssignFo
 ;
 	}	
 });
+ 	

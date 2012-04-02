@@ -50,6 +50,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -77,9 +78,10 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$Edit",
 	
 	_defineElements_: function () {	
@@ -124,3 +126,4 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$Edit", {
 			 } , this )
 	}
 });
+ 	

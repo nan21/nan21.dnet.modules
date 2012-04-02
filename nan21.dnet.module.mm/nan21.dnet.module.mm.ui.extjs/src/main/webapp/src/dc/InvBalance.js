@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -63,3 +64,4 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvBalance$List", {
 	}
 });
  
+ 	

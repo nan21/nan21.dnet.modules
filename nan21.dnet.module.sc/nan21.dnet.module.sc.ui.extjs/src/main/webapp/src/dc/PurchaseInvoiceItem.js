@@ -41,9 +41,10 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem$CtxList", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem$EditForm", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem$EditForm",
 	
 	_defineElements_: function () {	
@@ -83,3 +84,4 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem$EditForm", {
 		r.endEdit(); 
 	}
 });
+ 	

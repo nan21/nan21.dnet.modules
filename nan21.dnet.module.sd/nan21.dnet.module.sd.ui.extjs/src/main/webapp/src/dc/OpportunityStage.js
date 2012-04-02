@@ -38,6 +38,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.OpportunityStage$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.sd.opportunity.dc.OpportunityStage$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -45,10 +46,11 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.OpportunityStage$EditList", 
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name", width:150,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"name", dataIndex:"name", width:150,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

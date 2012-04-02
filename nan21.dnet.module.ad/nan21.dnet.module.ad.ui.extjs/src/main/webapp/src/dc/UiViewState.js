@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.UiViewState$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.system.dc.UiViewState$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -57,9 +58,10 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.UiViewState$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.UiViewState$ViewState", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.system.dc.UiViewState$ViewState",
 	
 	_defineElements_: function () {	
@@ -77,3 +79,4 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	

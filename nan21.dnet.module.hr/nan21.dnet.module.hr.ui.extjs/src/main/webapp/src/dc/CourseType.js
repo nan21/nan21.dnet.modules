@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.CourseType$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.hr.training.dc.CourseType$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -49,10 +50,11 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.CourseType$EditList", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"category", xtype:"gridcolumn", dataIndex:"category",width:120,editor:{xtype:"net.nan21.dnet.module.hr.training.lovs.CourseCategories" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]} })
-		.addTextColumn({ name:"name", dataIndex:"name", width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"name", dataIndex:"name", width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

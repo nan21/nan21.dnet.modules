@@ -43,6 +43,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationCode$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationCode$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -51,8 +52,8 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationCode$EditList", 
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
-		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addLov({name:"classSystem", xtype:"gridcolumn", dataIndex:"classSystem",width:100,editor:{xtype:"net.nan21.dnet.module.bd.standards.lovs.ClassificationSystems" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "classSystemId"} ]} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addNumberColumn({ name:"classSystemId", dataIndex:"classSystemId", hidden:true, align:"right",format:"0",width:70})
@@ -60,3 +61,4 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationCode$EditList", 
 	  ;  		   
 	}  
 });
+ 	

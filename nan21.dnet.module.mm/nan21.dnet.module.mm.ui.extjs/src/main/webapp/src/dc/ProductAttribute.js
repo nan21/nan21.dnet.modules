@@ -44,6 +44,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttribute$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttribute$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -51,10 +52,10 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttribute$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"title", dataIndex:"title",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
-		.addTextColumn({ name:"listOfvalues", dataIndex:"listOfvalues",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"title", dataIndex:"title",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"listOfvalues", dataIndex:"listOfvalues",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addLov({name:"type", xtype:"gridcolumn", dataIndex:"type",width:120,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeType" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]} })
 		.addComboColumn({ name:"dataType", dataIndex:"dataType", trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false"),editor: {xtype: 'combo', mode: 'local', selectOnFocus:true 	, valueField: 'bv', displayField: 'tv' ,store:[ "string", "text", "integer", "decimal", "boolean", "date"] , triggerAction:'all', forceSelection:true }})
 		.addLov({name:"uomType", xtype:"gridcolumn", dataIndex:"uom", width:80,editor:{xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasureCode" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "uomId"} ]} })
@@ -64,3 +65,4 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttribute$EditList", {
 	  ;  		   
 	}  
 });
+ 	

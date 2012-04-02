@@ -42,6 +42,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -59,3 +60,4 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$EditList", {
 	  ;  		   
 	}  
 });
+ 	

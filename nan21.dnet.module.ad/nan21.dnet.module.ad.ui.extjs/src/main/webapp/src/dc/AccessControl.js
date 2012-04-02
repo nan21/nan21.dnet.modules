@@ -39,6 +39,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -47,17 +48,18 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$EditList", {
 	_bulkEditFields_ : ["active","description"],
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"description", dataIndex:"description", width:300,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"description", dataIndex:"description", width:300,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$CopyRulesFromSource", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.AccessControl$CopyRulesFromSource",
 	
 	_defineElements_: function () {	
@@ -77,3 +79,4 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$CopyRulesFromSource", 
 ;
 	}	
 });
+ 	

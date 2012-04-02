@@ -42,6 +42,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.StockLocator$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.StockLocator$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -49,8 +50,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.StockLocator$CtxEditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addLov({name:"locatorType", xtype:"gridcolumn", dataIndex:"locatorType",width:120,editor:{xtype:"net.nan21.dnet.module.mm.inventory.lovs.StockLocatorTypes" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "locatorTypeId"} ]} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addNumberColumn({ name:"subInventoryId", dataIndex:"subInventoryId", hidden:true, align:"right",format:"0",width:70})
@@ -59,3 +60,4 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.StockLocator$CtxEditList", {
 	  ;  		   
 	}  
 });
+ 	

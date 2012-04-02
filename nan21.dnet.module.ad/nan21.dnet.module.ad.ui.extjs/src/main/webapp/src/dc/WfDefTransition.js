@@ -36,6 +36,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -47,10 +48,11 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$CtxEditList", {
 		this._getBuilder_()
 		.addNumberColumn({ name:"processId", dataIndex:"processId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"sourceId", dataIndex:"sourceId", hidden:true, align:"right",format:"0",width:70})
-		.addTextColumn({ name:"source", dataIndex:"source",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"source", dataIndex:"source",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addNumberColumn({ name:"targetId", dataIndex:"targetId", hidden:true, align:"right",format:"0",width:70})
-		.addTextColumn({ name:"target", dataIndex:"target",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"target", dataIndex:"target",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

@@ -42,6 +42,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.hr.job.dc.Position$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -61,9 +62,10 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.hr.job.dc.Position$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.hr.job.dc.Position$Edit",
 	
 	_defineElements_: function () {	
@@ -90,3 +92,4 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	

@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -70,9 +71,10 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bp.md.dc.BpAccount$Edit",
 	
 	_defineElements_: function () {	
@@ -106,3 +108,4 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BpAccount$Edit", {
 ;
 	}	
 });
+ 	

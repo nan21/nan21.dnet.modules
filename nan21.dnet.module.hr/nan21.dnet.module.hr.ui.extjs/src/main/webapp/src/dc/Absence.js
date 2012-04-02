@@ -48,6 +48,7 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -72,9 +73,10 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.hr.time.dc.Absence$Edit",
 	
 	_defineElements_: function () {	
@@ -103,3 +105,4 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	

@@ -46,6 +46,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -71,9 +72,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditList", 
 	}  
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$CtxFormView", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$CtxFormView",
 	
 	_defineElements_: function () {	
@@ -95,3 +97,4 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$CtxFormView
 ;
 	}	
 });
+ 	

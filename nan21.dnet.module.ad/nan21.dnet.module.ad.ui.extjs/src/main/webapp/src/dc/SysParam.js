@@ -40,6 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -57,9 +58,10 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.system.dc.SysParam$Edit",
 	
 	_defineElements_: function () {	
@@ -83,3 +85,4 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Edit", {
 ;
 	}	
 });
+ 	

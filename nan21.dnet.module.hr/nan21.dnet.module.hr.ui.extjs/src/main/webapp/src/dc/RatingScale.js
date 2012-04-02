@@ -37,6 +37,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -53,9 +54,10 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit",
 	
 	_defineElements_: function () {	
@@ -78,3 +80,4 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$Edit", {
 ;
 	}	
 });
+ 	

@@ -51,6 +51,7 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -78,9 +79,10 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.sc.order.dc.PurchaseOrder$Edit",
 	
 	_defineElements_: function () {	
@@ -125,3 +127,4 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$Edit", {
 			 } , this )
 	}
 });
+ 	

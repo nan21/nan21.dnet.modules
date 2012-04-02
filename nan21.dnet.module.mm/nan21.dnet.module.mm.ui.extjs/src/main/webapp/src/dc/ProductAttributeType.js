@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeType$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeType$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -48,8 +49,8 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeType$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addLov({name:"category", xtype:"gridcolumn", dataIndex:"category",width:120,editor:{xtype:"net.nan21.dnet.module.mm.md.lovs.ProductAttributeCategory" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addNumberColumn({ name:"categoryId", dataIndex:"categoryId", hidden:true, align:"right",format:"0",width:70})
@@ -57,3 +58,4 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeType$EditList", {
 	  ;  		   
 	}  
 });
+ 	

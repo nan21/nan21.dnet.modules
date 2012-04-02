@@ -49,6 +49,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -70,6 +71,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$List", {
 });
  
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -79,25 +81,26 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$EditList", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"title", dataIndex:"title",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"title", dataIndex:"title",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addLov({name:"menu", xtype:"gridcolumn", dataIndex:"menu",width:120,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.Menus" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "menuId"} ]} })
 		.addLov({name:"menuItem", xtype:"gridcolumn", dataIndex:"menuItem",width:120,editor:{xtype:"net.nan21.dnet.module.ad.usr.lovs.MenuItems" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "menuItemId"} ]} })
-		.addTextColumn({ name:"frame", dataIndex:"frame",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"bundle", dataIndex:"bundle",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"frame", dataIndex:"frame",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"bundle", dataIndex:"bundle",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"separatorBefore", dataIndex:"separatorBefore"})
 		.addBooleanColumn({ name:"separatorAfter", dataIndex:"separatorAfter"})
-		.addTextColumn({ name:"iconUrl", dataIndex:"iconUrl",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"iconUrl", dataIndex:"iconUrl",width:100,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.MenuItem$Edit",
 	
 	_defineElements_: function () {	
@@ -127,3 +130,4 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$Edit", {
 ;
 	}	
 });
+ 	

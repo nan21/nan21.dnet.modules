@@ -42,6 +42,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -62,9 +63,10 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bd.org.dc.Organization$Edit",
 	
 	_defineElements_: function () {	
@@ -90,3 +92,4 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$Edit", {
 ;
 	}	
 });
+ 	

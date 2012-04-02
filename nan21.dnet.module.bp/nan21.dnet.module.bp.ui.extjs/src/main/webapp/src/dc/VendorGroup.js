@@ -39,6 +39,7 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.VendorGroup$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bp.base.dc.VendorGroup$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -46,10 +47,11 @@ Ext.define("net.nan21.dnet.module.bp.base.dc.VendorGroup$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

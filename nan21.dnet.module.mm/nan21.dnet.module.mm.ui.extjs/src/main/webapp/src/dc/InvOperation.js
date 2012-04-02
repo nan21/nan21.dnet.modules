@@ -48,6 +48,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -74,3 +75,4 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvOperation$List", {
 	}
 });
  
+ 	

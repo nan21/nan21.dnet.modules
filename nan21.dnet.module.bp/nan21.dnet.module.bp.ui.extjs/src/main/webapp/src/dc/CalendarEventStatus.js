@@ -39,6 +39,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -46,10 +47,11 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.CalendarEventStatus$EditList", 
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addComboColumn({ name:"eventType", dataIndex:"eventType", trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false"),editor: {xtype: 'combo', mode: 'local', selectOnFocus:true 	, valueField: 'bv', displayField: 'tv' ,store:[ "call", "meeting", "task"] , triggerAction:'all', forceSelection:true }})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

@@ -36,6 +36,7 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Note$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.data.dc.Note$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -52,9 +53,10 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Note$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.data.dc.Note$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.data.dc.Note$Edit",
 	
 	_defineElements_: function () {	
@@ -72,3 +74,4 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	

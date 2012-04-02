@@ -51,6 +51,7 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -77,9 +78,10 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Create", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bp.md.dc.BusinessPartner$Create",
 	
 	_defineElements_: function () {	
@@ -97,9 +99,10 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Create", {
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit",
 	
 	_defineElements_: function () {	
@@ -178,3 +181,4 @@ Ext.define("net.nan21.dnet.module.bp.md.dc.BusinessPartner$Edit", {
 		}
 	}
 });
+ 	

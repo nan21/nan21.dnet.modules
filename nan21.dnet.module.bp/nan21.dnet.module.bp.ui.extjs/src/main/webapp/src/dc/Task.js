@@ -52,6 +52,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Task$Filter", {
     		
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.Task$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -76,6 +77,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Task$List", {
 });
  
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.Task$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -83,23 +85,24 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Task$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"subject", dataIndex:"subject",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"subject", dataIndex:"subject",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addDateColumn({ name:"startDate", dataIndex:"startDate",format:Dnet.DATETIME_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addDateColumn({ name:"endDate", dataIndex:"endDate",format:Dnet.DATETIME_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addDateColumn({ name:"dueDate", dataIndex:"dueDate",format:Dnet.DATETIME_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addNumberColumn({ name:"statusId", dataIndex:"statusId", hidden:true, align:"right",format:"0",width:70})
-		.addTextColumn({ name:"statusName", dataIndex:"statusName",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"statusName", dataIndex:"statusName",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addNumberColumn({ name:"priorityId", dataIndex:"priorityId", hidden:true, align:"right",format:"0",width:70})
-		.addTextColumn({ name:"priorityName", dataIndex:"priorityName",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"priorityName", dataIndex:"priorityName",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.Task$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.Task$Edit",
 	
 	_defineElements_: function () {	
@@ -139,3 +142,4 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.Task$Edit", {
 ;
 	}	
 });
+ 	

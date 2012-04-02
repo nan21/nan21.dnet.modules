@@ -37,6 +37,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -54,9 +55,10 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit",
 	
 	_defineElements_: function () {	
@@ -80,3 +82,4 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit", {
 ;
 	}	
 });
+ 	

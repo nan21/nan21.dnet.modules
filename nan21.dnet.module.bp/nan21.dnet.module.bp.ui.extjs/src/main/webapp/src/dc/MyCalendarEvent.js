@@ -54,6 +54,7 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -74,9 +75,10 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$Create", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$Create",
 	
 	_defineElements_: function () {	
@@ -94,9 +96,10 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$Create", {
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditCall", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditCall",
 	
 	_defineElements_: function () {	
@@ -131,9 +134,10 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditCall", {
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditMeeting", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditMeeting",
 	
 	_defineElements_: function () {	
@@ -173,9 +177,10 @@ labelAlign:"top"}})
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditTask", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditTask",
 	
 	_defineElements_: function () {	
@@ -208,3 +213,4 @@ Ext.define("net.nan21.dnet.module.bp.calendar.dc.MyCalendarEvent$EditTask", {
 ;
 	}	
 });
+ 	

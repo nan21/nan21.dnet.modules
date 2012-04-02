@@ -52,6 +52,7 @@ labelAlign:"right",labelWidth:70}})
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -80,9 +81,10 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueTask$Edit",
 	
 	_defineElements_: function () {	
@@ -109,9 +111,10 @@ labelAlign:"top"}})
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$ViewDescription", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueTask$ViewDescription",
 	
 	_defineElements_: function () {	
@@ -132,9 +135,10 @@ labelAlign:"top"}})
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$View", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueTask$View",
 	
 	_defineElements_: function () {	
@@ -167,3 +171,4 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$View", {
 ;
 	}	
 });
+ 	

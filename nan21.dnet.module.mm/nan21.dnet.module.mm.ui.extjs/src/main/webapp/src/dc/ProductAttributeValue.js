@@ -43,6 +43,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -54,7 +55,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$CtxEditList", {
 		this._getBuilder_()
 		.addTextColumn({ name:"attribute", dataIndex:"attribute", hidden:true,width:120 })
 		.addTextColumn({ name:"title", dataIndex:"title",width:200 })
-		.addTextColumn({ name:"value", dataIndex:"value",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"value", dataIndex:"value",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addTextColumn({ name:"uom", dataIndex:"uom",width:100 })
 		.addNumberColumn({ name:"productId", dataIndex:"productId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"attributeId", dataIndex:"attributeId", hidden:true, align:"right",format:"0",width:70})
@@ -87,6 +88,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$CtxEditList", {
 	}
 });
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -98,7 +100,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
 		.addTextColumn({ name:"product", dataIndex:"productCode", width:150 })
 		.addTextColumn({ name:"attribute", dataIndex:"attribute", hidden:true,width:120 })
 		.addTextColumn({ name:"title", dataIndex:"title",width:200 })
-		.addTextColumn({ name:"value", dataIndex:"value",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"value", dataIndex:"value",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addTextColumn({ name:"uom", dataIndex:"uom",width:100 })
 		.addNumberColumn({ name:"productId", dataIndex:"productId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"attributeId", dataIndex:"attributeId", hidden:true, align:"right",format:"0",width:70})
@@ -130,3 +132,4 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$EditList", {
 	    
 	}
 });
+ 	

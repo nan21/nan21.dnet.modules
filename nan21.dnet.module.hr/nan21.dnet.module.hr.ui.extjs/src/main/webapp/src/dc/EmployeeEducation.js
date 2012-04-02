@@ -28,10 +28,11 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeEducation$EditList", {
 		.addLov({name:"type", xtype:"gridcolumn", dataIndex:"type",width:120,editor:{xtype:"net.nan21.dnet.module.hr.employee.lovs.EducationTypes" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]} })
 		.addDateColumn({ name:"fromDate", dataIndex:"fromDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addDateColumn({ name:"toDate", dataIndex:"toDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
-		.addTextColumn({ name:"institute", dataIndex:"institute",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"degree", dataIndex:"degree",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
+		.addTextColumn({ name:"institute", dataIndex:"institute",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"degree", dataIndex:"degree",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

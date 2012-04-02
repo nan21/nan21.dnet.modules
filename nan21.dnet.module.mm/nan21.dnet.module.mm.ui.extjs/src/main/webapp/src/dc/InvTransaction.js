@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter", {
     		
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -59,9 +60,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit",
 	
 	_defineElements_: function () {	
@@ -85,3 +87,4 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit", {
 ;
 	}	
 });
+ 	

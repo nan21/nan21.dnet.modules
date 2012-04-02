@@ -42,6 +42,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysFrameExtension$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.ad.system.dc.SysFrameExtension$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -49,13 +50,14 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysFrameExtension$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"frameFQN", dataIndex:"frameFQN",width:150,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"frameFQN", dataIndex:"frameFQN",width:150,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
-		.addTextColumn({ name:"fileLocation", dataIndex:"fileLocation",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"fileLocation", dataIndex:"fileLocation",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"relativePath", dataIndex:"relativePath"})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

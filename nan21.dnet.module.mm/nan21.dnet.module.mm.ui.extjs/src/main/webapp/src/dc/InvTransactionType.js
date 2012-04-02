@@ -46,6 +46,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -53,8 +54,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$EditList", 
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addLov({name:"sourceType", xtype:"gridcolumn", dataIndex:"sourceType",width:120,editor:{xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionSourceTypeS" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "sourceTypeId"} ]} })
 		.addLov({name:"action", xtype:"gridcolumn", dataIndex:"action",width:120,editor:{xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionActions" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "actionId"} ]} })
 		.addBooleanColumn({ name:"hasFromInventory", dataIndex:"hasFromInventory"})
@@ -66,3 +67,4 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransactionType$EditList", 
 	  ;  		   
 	}  
 });
+ 	

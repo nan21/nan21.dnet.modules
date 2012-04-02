@@ -25,14 +25,15 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefNode$CtxEditList", {
 	_noExport_: true,
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addComboColumn({ name:"type", dataIndex:"taskType", trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false"),editor: {xtype: 'combo', mode: 'local', selectOnFocus:true 	, valueField: 'bv', displayField: 'tv' ,store:[ "userTask"] , triggerAction:'all', forceSelection:true }})
-		.addTextColumn({ name:"assignToUser", dataIndex:"assignToUser",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
-		.addTextColumn({ name:"assignToGroup", dataIndex:"assignToGroup",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"assignToUser", dataIndex:"assignToUser",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"assignToGroup", dataIndex:"assignToGroup",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"startWithPrevious", dataIndex:"startWithPrevious"})
 		.addNumberColumn({ name:"processId", dataIndex:"processId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

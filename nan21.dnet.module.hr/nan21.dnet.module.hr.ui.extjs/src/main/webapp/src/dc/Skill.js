@@ -42,6 +42,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.Skill$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.Skill$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -50,12 +51,13 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.Skill$EditList", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"type", xtype:"gridcolumn", dataIndex:"type",width:120,editor:{xtype:"net.nan21.dnet.module.hr.skill.lovs.SkillTypes" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]} })
-		.addTextColumn({ name:"name", dataIndex:"name", width:200,editor:{xtype:"textfield", selectOnFocus:true,allowBlank:false ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name", width:200,editor:{xtype:"textfield", selectOnFocus:true,allowBlank:false } })
 		.addLov({name:"ratingScale", xtype:"gridcolumn", dataIndex:"ratingScale",width:120,editor:{xtype:"net.nan21.dnet.module.hr.skill.lovs.RatingScales" , selectOnFocus:true,allowBlank:false ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "ratingScaleId"} ]} })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addNumberColumn({ name:"typeId", dataIndex:"typeId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

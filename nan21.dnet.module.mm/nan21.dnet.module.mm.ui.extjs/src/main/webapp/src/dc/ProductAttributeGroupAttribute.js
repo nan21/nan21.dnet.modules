@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$Filter
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -59,6 +60,7 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$CtxEdi
 	}  
 });
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -76,3 +78,4 @@ Ext.define("net.nan21.dnet.module.mm.md.dc.ProductAttributeGroupAttribute$EditLi
 	  ;  		   
 	}  
 });
+ 	

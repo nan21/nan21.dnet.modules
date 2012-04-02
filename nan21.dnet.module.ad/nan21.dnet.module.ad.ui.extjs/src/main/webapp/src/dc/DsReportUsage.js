@@ -25,10 +25,11 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.DsReportUsage$CtxEditList", {
 	_noExport_: true,
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"frameName", dataIndex:"frameName",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"dcKey", dataIndex:"dcKey",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
-		.addTextColumn({ name:"toolbarKey", dataIndex:"toolbarKey",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"frameName", dataIndex:"frameName",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"dcKey", dataIndex:"dcKey",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"toolbarKey", dataIndex:"toolbarKey",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

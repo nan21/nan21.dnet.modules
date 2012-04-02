@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.client.dc.MyClient$Edit",
 	
 	_defineElements_: function () {	
@@ -47,3 +47,4 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.MyClient$Edit", {
 ;
 	}	
 });
+ 	

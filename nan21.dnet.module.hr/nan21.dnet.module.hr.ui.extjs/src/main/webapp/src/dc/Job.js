@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Job$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.hr.job.dc.Job$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -59,6 +60,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Job$List", {
 });
  
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.hr.job.dc.Job$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -66,18 +68,19 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Job$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.hr.job.dc.Job$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.hr.job.dc.Job$Edit",
 	
 	_defineElements_: function () {	
@@ -103,3 +106,4 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	

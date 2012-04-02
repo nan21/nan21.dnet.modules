@@ -36,6 +36,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActMyTask$Filter", {
     		
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -54,3 +55,4 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActMyTask$List", {
 	}
 });
  
+ 	

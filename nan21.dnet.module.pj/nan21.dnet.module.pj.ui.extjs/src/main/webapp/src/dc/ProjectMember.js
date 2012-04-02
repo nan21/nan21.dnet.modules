@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectMember$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectMember$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -57,3 +58,4 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.ProjectMember$CtxEditList", {
 	  ;  		   
 	}  
 });
+ 	

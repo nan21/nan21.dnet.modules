@@ -44,6 +44,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationType$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationType$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -51,7 +52,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationType$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"virtualEntity", dataIndex:"virtualEntity", width:80})
 		.addBooleanColumn({ name:"legalEntity", dataIndex:"legalEntity", width:80})
 		.addBooleanColumn({ name:"external", dataIndex:"external", width:80})
@@ -59,8 +60,9 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationType$EditList", {
 		.addBooleanColumn({ name:"carrier", dataIndex:"carrier", width:80})
 		.addBooleanColumn({ name:"accountingEnabled", dataIndex:"accountingEnabled", hidden:true, width:80})
 		.addBooleanColumn({ name:"active", dataIndex:"active", width:80})
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

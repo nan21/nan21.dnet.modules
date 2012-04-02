@@ -47,6 +47,7 @@ labelAlign:"right",labelWidth:70}})
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -67,3 +68,4 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.ProductPriceReport$List", {
 	}
 });
  
+ 	

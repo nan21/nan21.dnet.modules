@@ -57,6 +57,7 @@ labelAlign:"right",labelWidth:70}})
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueMnt$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -68,7 +69,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueMnt$EditList", {
 		.addTextColumn({ name:"code", dataIndex:"code", width:80 })
 		.addTextColumn({ name:"project", dataIndex:"project", width:90 })
 		.addTextColumn({ name:"projectName", dataIndex:"projectName", hidden:true,width:200 })
-		.addTextColumn({ name:"summary", dataIndex:"summary",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"summary", dataIndex:"summary",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addDateColumn({ name:"dueDate", dataIndex:"dueDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addLov({name:"type", xtype:"gridcolumn", dataIndex:"type", width:80,editor:{xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTypes" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]} })
 		.addLov({name:"status", xtype:"gridcolumn", dataIndex:"status", width:80,editor:{xtype:"net.nan21.dnet.module.pj.base.lovs.IssueStatus" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]} })
@@ -87,9 +88,10 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueMnt$EditList", {
 	}  
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueMnt$ViewText", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueMnt$ViewText",
 	
 	_defineElements_: function () {	
@@ -108,9 +110,10 @@ labelAlign:"top"}})
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.pj.md.dc.IssueMnt$EditText", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.pj.md.dc.IssueMnt$EditText",
 	
 	_defineElements_: function () {	
@@ -128,3 +131,4 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	

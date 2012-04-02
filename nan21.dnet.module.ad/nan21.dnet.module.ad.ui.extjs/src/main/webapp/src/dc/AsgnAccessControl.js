@@ -44,6 +44,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AsgnAccessControl$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.AsgnAccessControl$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -61,6 +62,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AsgnAccessControl$EditList", {
 	  ;  		   
 	}  
 });
+ 	
  	
  	 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.AsgnAccessControl$CtxEditList", {
@@ -80,3 +82,4 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AsgnAccessControl$CtxEditList", {
 	  ;  		   
 	}  
 });
+ 	

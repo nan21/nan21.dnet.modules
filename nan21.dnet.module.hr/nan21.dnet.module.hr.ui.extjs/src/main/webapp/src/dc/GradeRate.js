@@ -40,6 +40,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -58,9 +59,10 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit",
 	
 	_defineElements_: function () {	
@@ -85,3 +87,4 @@ labelAlign:"top"}})
 ;
 	}	
 });
+ 	

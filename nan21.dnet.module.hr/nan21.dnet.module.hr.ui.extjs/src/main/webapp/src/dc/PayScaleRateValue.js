@@ -35,3 +35,4 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRateValue$CtxEditList", {
 	  ;  		   
 	}  
 });
+ 	

@@ -42,6 +42,7 @@ Ext.define("net.nan21.dnet.module.bd.fin.dc.Tax$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.bd.fin.dc.Tax$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -64,9 +65,10 @@ Ext.define("net.nan21.dnet.module.bd.fin.dc.Tax$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.bd.fin.dc.Tax$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.bd.fin.dc.Tax$Edit",
 	
 	_defineElements_: function () {	
@@ -93,3 +95,4 @@ Ext.define("net.nan21.dnet.module.bd.fin.dc.Tax$Edit", {
 ;
 	}	
 });
+ 	

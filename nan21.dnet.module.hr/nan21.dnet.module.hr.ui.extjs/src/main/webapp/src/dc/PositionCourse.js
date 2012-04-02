@@ -35,6 +35,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$PositionCtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -54,6 +55,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$PositionCtxEditL
 	}  
 });
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$CourseCtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -72,3 +74,4 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.PositionCourse$CourseCtxEditLis
 	  ;  		   
 	}  
 });
+ 	

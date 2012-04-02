@@ -52,6 +52,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -79,9 +80,10 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$EditMain", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$EditMain",
 	
 	_defineElements_: function () {	
@@ -129,9 +131,10 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$EditMain", {
 	}
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$EditDetails", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$EditDetails",
 	
 	_defineElements_: function () {	
@@ -164,3 +167,4 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$EditDetails", {
 			 } , this )
 	}
 });
+ 	

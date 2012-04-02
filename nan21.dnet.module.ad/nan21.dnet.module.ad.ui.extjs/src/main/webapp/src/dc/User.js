@@ -44,6 +44,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.User$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -66,9 +67,10 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.User$Edit",
 	
 	_defineElements_: function () {	
@@ -98,9 +100,10 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Edit", {
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm",
 	
 	_defineElements_: function () {	
@@ -118,3 +121,4 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm", {
 ;
 	}	
 });
+ 	

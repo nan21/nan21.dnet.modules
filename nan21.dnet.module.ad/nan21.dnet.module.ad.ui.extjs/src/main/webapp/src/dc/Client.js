@@ -40,6 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.client.dc.Client$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -62,9 +63,10 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.client.dc.Client$Edit",
 	
 	_defineElements_: function () {	
@@ -93,9 +95,10 @@ labelAlign:"right",labelWidth:120}})
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Create", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.client.dc.Client$Create",
 	
 	_defineElements_: function () {	
@@ -130,3 +133,4 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Create", {
 		return this._controller_.record.phantom;
 	}
 });
+ 	

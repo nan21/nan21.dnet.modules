@@ -37,6 +37,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -53,9 +54,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit",
 	
 	_defineElements_: function () {	
@@ -78,3 +80,4 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit", {
 ;
 	}	
 });
+ 	

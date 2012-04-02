@@ -40,6 +40,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.City$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.City$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -60,6 +61,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.City$List", {
 });
  
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.City$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -69,12 +71,13 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.City$CtxEditList", {
 	_noExport_: true,
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addNumberColumn({ name:"countryId", dataIndex:"countryId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"regionId", dataIndex:"regionId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

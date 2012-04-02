@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.Course$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.hr.training.dc.Course$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -62,9 +63,10 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.Course$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.hr.training.dc.Course$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.hr.training.dc.Course$Edit",
 	
 	_defineElements_: function () {	
@@ -90,3 +92,4 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.Course$Edit", {
 ;
 	}	
 });
+ 	

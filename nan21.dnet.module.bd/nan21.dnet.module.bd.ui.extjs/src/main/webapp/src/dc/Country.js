@@ -147,17 +147,17 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$EditPG", {
 	_defineElements_: function () {	
 		this._getBuilder_()	
 		.addNumberField({ name:"id", dataIndex:"id",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
-		.addTextField({ name:"code", dataIndex:"code",editor:{xtype:"textfield", selectOnFocus:true,allowBlank:false ,maxLength:32} })
-		.addTextField({ name:"name", dataIndex:"name",editor:{xtype:"textfield", selectOnFocus:true,allowBlank:false } })
-		.addTextField({ name:"notes", dataIndex:"notes",editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextField({ name:"code", dataIndex:"code",editor:{ selectOnFocus:true,allowBlank:false ,maxLength:32} })
+		.addTextField({ name:"name", dataIndex:"name",editor:{ selectOnFocus:true,allowBlank:false } })
+		.addTextField({ name:"notes", dataIndex:"notes",editor:{ selectOnFocus:true } })
 		.addBooleanField({ name:"active", dataIndex:"active"  })
 		.addBooleanField({ name:"hasRegions", dataIndex:"hasRegions"  })
-		.addTextField({ name:"iso2", dataIndex:"iso2",editor:{xtype:"textfield", selectOnFocus:true ,maxLength:2,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
-		.addTextField({ name:"iso3", dataIndex:"iso3",editor:{xtype:"textfield", selectOnFocus:true ,maxLength:3,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
+		.addTextField({ name:"iso2", dataIndex:"iso2",editor:{ selectOnFocus:true ,maxLength:2,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
+		.addTextField({ name:"iso3", dataIndex:"iso3",editor:{ selectOnFocus:true ,maxLength:3,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
 		.addDateField({ name:"createdAt", dataIndex:"createdAt",editor:{xtype:"textfield", noEdit:true} })
 		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",editor:{xtype:"textfield", noEdit:true} })
-		.addTextField({ name:"createdBy", dataIndex:"createdBy",editor:{xtype:"textfield", noEdit:true}  })
-		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",editor:{xtype:"textfield", noEdit:true}  })
+		.addTextField({ name:"createdBy", dataIndex:"createdBy",editor:{ noEdit:true}  })
+		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",editor:{ noEdit:true}  })
 		;     
 	}
 	 	

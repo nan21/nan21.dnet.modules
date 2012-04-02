@@ -41,6 +41,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.Currency$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.bd.currency.dc.Currency$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -49,14 +50,15 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.Currency$EditList", {
 	_bulkEditFields_ : ["standardPrecision","active","notes"],
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
 		.addTextColumn({ name:"iso3", dataIndex:"iso3",width:50,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:3,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
 		.addNumberColumn({ name:"standardPrecision", dataIndex:"standardPrecision", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"symbol", dataIndex:"symbol", width:60,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
+		.addTextColumn({ name:"symbol", dataIndex:"symbol", width:60,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

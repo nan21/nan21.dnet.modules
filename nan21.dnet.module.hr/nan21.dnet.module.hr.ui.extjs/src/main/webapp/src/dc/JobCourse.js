@@ -35,6 +35,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$Filter", {
 	}
 }); 
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$JobCtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -54,6 +55,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$JobCtxEditList", {
 	}  
 });
  	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$CourseCtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -72,3 +74,4 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.JobCourse$CourseCtxEditList", {
 	  ;  		   
 	}  
 });
+ 	

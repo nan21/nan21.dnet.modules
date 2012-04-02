@@ -43,6 +43,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.AuditFieldRep$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.ad.system.dc.AuditFieldRep$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -61,3 +62,4 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.AuditFieldRep$List", {
 	}
 });
  
+ 	

@@ -45,6 +45,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -75,9 +76,10 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditMain", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.hr.employee.dc.Employee$EditMain",
 	
 	_defineElements_: function () {	
@@ -108,9 +110,10 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditMain", {
 	}	
 });
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditOther", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.hr.employee.dc.Employee$EditOther",
 	
 	_defineElements_: function () {	
@@ -183,3 +186,4 @@ labelAlign:"right",labelWidth:110}})
 			}
 	}
 });
+ 	

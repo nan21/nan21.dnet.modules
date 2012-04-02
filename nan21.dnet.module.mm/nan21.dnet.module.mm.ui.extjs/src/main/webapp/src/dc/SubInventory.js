@@ -40,6 +40,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Filter", {
     	.addAuditFilter({})	
 	}
 }); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -58,9 +59,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$List", {
 });
  
  	
+ 	
 
 Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit",
 	
 	_defineElements_: function () {	
@@ -84,3 +86,4 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.SubInventory$Edit", {
 ;
 	}	
 });
+ 	

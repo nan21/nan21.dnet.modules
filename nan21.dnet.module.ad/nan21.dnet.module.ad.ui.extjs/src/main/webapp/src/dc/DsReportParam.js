@@ -28,8 +28,9 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.DsReportParam$CtxEditList", {
 		.addLov({name:"paramCode", xtype:"gridcolumn", dataIndex:"paramCode",width:100,editor:{xtype:"net.nan21.dnet.module.ad.report.lovs.ReportParams" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "paramId"} ,{lovField:"name", dsField: "paramName"} ],filterFieldMapping: [{lovField:"reportId", dsField: "reportId"} ]} })
 		.addTextColumn({ name:"paramName", dataIndex:"paramName",width:200 })
 		.addLov({name:"dsField", xtype:"gridcolumn", dataIndex:"dsField",width:200,editor:{xtype:"net.nan21.dnet.module.ad.system.lovs.SysDsFields" , selectOnFocus:true ,maxLength:255,retFieldMapping: [],filterFieldMapping: [{lovField:"dataSourceName", dsField: "dataSource"} ]} })
-		.addTextColumn({ name:"staticValue", dataIndex:"staticValue",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:400} })
+		.addTextColumn({ name:"staticValue", dataIndex:"staticValue",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

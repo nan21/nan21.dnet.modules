@@ -26,12 +26,13 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.EmployeeLicense$EditList", {
 		.addNumberColumn({ name:"employeeId", dataIndex:"employeeId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"licenseTypeId", dataIndex:"licenseTypeId", hidden:true, align:"right",format:"0",width:70})
 		.addLov({name:"licenseType", xtype:"gridcolumn", dataIndex:"licenseType",width:120,editor:{xtype:"net.nan21.dnet.module.hr.employee.lovs.LicenseTypes" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "licenseTypeId"} ]} })
-		.addTextColumn({ name:"documentNo", dataIndex:"documentNo",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
-		.addTextColumn({ name:"issuedBy", dataIndex:"issuedBy",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:255} })
+		.addTextColumn({ name:"documentNo", dataIndex:"documentNo",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"issuedBy", dataIndex:"issuedBy",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addDateColumn({ name:"validTo", dataIndex:"validTo",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:4000} })
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
 });
+ 	

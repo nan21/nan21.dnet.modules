@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MyUserSettings", {
  	
 
 Ext.define("net.nan21.dnet.module.ad.usr.dc.MyUserSettings$Edit", {
-	extend: "dnet.core.dc.AbstractDcvForm",
+	extend: "dnet.core.dc.AbstractDcvEditForm",
 	alias: "widget.net.nan21.dnet.module.ad.usr.dc.MyUserSettings$Edit",
 	
 	_defineElements_: function () {	
@@ -43,3 +43,4 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MyUserSettings$Edit", {
 ;
 	}	
 });
+ 	
