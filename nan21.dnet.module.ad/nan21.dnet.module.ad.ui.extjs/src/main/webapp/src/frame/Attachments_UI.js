@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.ad.data.frame.Attachments_UI", {
 	 _name_ : "net.nan21.dnet.module.ad.data.frame.Attachments_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("atch", new net.nan21.dnet.module.ad.data.dc.Attachment({}))		;		
+		.addDc("atch", new net.nan21.dnet.module.ad.data.dc.Attachment({multiEdit:true}))		;		
 	}	 
 
 	,_defineElements_: function() {							

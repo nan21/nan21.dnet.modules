@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysFrameExtension_UI", {
 	 _name_ : "net.nan21.dnet.module.ad.system.frame.SysFrameExtension_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("extensions", new net.nan21.dnet.module.ad.system.dc.SysFrameExtension({}))		;		
+		.addDc("extensions", new net.nan21.dnet.module.ad.system.dc.SysFrameExtension({multiEdit:true}))		;		
 	}	 
 
 	,_defineElements_: function() {							

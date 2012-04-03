@@ -29,18 +29,16 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$Filter", {
 		.addTextField({ name:"iso3", dataIndex:"iso3",anchor:"-20",maxLength:3,caseRestriction:"uppercase"  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210}) 
-		.addPanel({ name:"col2", layout:"form",width:210}) 
-		.addPanel({ name:"col4", layout:"form",width:210}) 
+		.addPanel({ name:"col1", layout:"form", width:220}) 
+		.addPanel({ name:"col2", layout:"form", width:220}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col4"])
+		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","code"])
-		.addChildrenTo("col2",["iso2","iso3"])
-		.addChildrenTo("col4",["active"])
+		.addChildrenTo("col2",["iso2","iso3","active"])
     	.addAuditFilter({})	
 	}
 }); 
