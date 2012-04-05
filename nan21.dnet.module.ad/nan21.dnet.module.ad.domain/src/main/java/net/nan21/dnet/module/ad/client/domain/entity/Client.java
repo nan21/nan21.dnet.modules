@@ -79,7 +79,7 @@ public class Client implements Serializable, IModelWithId {
     @Column(name = "DEFAULTDSACCESSRULE", length = 32)
     private String defaultDsAccessRule;
 
-    /**
+    /** 
     	Specify which is the administrator role. 
     	Access rights are not checked for the users having this role granted so they have access to ALL of the functions.
      */

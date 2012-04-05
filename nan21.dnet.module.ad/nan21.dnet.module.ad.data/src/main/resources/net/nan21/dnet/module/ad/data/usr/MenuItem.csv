@@ -26,6 +26,7 @@
 "10";"bd-menu-uom";"Measuring units";;;;"true";;"false";"false";
 "5";"TaxCategories_UI";"Taxe categories";;"net.nan21.dnet.module.bd.fin.frame.TaxCategories_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
 "10";"Tax_UI";"Taxes";;"net.nan21.dnet.module.bd.fin.frame.Tax_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"30";"PaymentBaseData_UI";"Payment Base data";;"net.nan21.dnet.module.bd.fin.frame.PaymentBaseData_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
 "60";"bd-menu-fin";"Financials";;;;"true";;"false";"false";
 "10";"AbsenceBaseData_UI";"Absence base data";;"net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
 "10";"ProjectBaseData_UI";"Project base data";;"net.nan21.dnet.module.pj.base.frame.ProjectBaseData_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";

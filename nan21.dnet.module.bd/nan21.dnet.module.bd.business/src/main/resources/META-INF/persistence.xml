@@ -38,6 +38,9 @@
 		
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.TaxCategory</class>
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.Tax</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.FinDocType</class>
 		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

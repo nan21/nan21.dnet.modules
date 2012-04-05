@@ -6,15 +6,15 @@
 package net.nan21.dnet.module.bp.md.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.fin.business.service.IPaymentMethodService;
+import net.nan21.dnet.module.bd.fin.business.service.IPaymentTermService;
+import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.base.business.service.ICustomerGroupService;
-import net.nan21.dnet.module.bp.base.business.service.IPaymentMethodService;
-import net.nan21.dnet.module.bp.base.business.service.IPaymentTermService;
 import net.nan21.dnet.module.bp.base.business.service.IVendorGroupService;
 import net.nan21.dnet.module.bp.base.domain.entity.CustomerGroup;
-import net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod;
-import net.nan21.dnet.module.bp.base.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.bp.base.domain.entity.VendorGroup;
 import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;

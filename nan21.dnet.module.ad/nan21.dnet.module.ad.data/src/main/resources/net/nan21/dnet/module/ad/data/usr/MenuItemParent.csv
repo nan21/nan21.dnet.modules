@@ -94,6 +94,7 @@
 "Uoms_UI";"bd-menu-uom"
 "TaxCategories_UI";"bd-menu-fin"
 "Tax_UI";"bd-menu-fin"
+"PaymentBaseData_UI";"bd-menu-fin"
 "UserGroups_UI";"ad-menu-usr"
 "UserTypes_UI";"ad-menu-usr"
 "Users_UI";"ad-menu-usr"

@@ -71,28 +71,35 @@
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.ad.business</artifactId>
+			<artifactId>nan21.dnet.module.ad.business.api</artifactId>
 			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.bd.business</artifactId>
+			<artifactId>nan21.dnet.module.bd.business.api</artifactId>
 			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.bp.business</artifactId>
+			<artifactId>nan21.dnet.module.bp.business.api</artifactId>
 			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.mm.business</artifactId>
+			<artifactId>nan21.dnet.module.mm.business.api</artifactId>
+			<version>1.0.0.M9</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>	
+		<dependency>
+			<groupId>net.nan21.dnet</groupId>
+			<artifactId>nan21.dnet.module.sc.business.api</artifactId>
 			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>

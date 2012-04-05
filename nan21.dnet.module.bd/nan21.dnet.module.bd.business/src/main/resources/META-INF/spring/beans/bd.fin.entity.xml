@@ -7,11 +7,20 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="PaymentMethodService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.fin.business.serviceimpl.PaymentMethodService"  />  
+ 
+ 	<bean id="PaymentTermService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.fin.business.serviceimpl.PaymentTermService"  />  
+ 
  	<bean id="TaxCategoryService" scope="prototype"
 	  		class="net.nan21.dnet.module.bd.fin.business.serviceimpl.TaxCategoryService"  />  
  
  	<bean id="TaxService" scope="prototype"
 	  		class="net.nan21.dnet.module.bd.fin.business.serviceimpl.TaxService"  />  
+ 
+ 	<bean id="FinDocTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.fin.business.serviceimpl.FinDocTypeService"  />  
    
 </beans>
    

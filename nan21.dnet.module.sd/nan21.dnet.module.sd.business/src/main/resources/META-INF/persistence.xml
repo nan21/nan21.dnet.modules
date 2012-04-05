@@ -43,7 +43,7 @@
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner</class>
 		<class>net.nan21.dnet.module.bp.md.domain.entity.Contact</class>
-		<class>net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod</class>
+
 		<class>net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod</class>
 		<class>net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.Product</class>
@@ -68,6 +68,9 @@
 		 
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.TaxCategory</class>
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.Tax</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm</class>
+		
 		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

@@ -12,10 +12,10 @@
 		<addForeignKeyConstraint constraintName="FK_BP_BP_CUSTOMER_INFO3" baseTableName="BP_BP_CUSTOMER_INFO" baseColumnNames="CUSTGROUP_ID"  referencedTableName="BP_CUSTOMER_GROUP"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
-		<addForeignKeyConstraint constraintName="FK_BP_BP_CUSTOMER_INFO4" baseTableName="BP_BP_CUSTOMER_INFO" baseColumnNames="CUSTPAYMENTMETHOD_ID"  referencedTableName="BP_PAYMENT_METHOD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_BP_BP_CUSTOMER_INFO4" baseTableName="BP_BP_CUSTOMER_INFO" baseColumnNames="CUSTPAYMENTMETHOD_ID"  referencedTableName="BD_PAYMENT_METHOD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
-		<addForeignKeyConstraint constraintName="FK_BP_BP_CUSTOMER_INFO5" baseTableName="BP_BP_CUSTOMER_INFO" baseColumnNames="CUSTPAYMENTTERM_ID"  referencedTableName="BP_PAYMENT_TERM"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_BP_BP_CUSTOMER_INFO5" baseTableName="BP_BP_CUSTOMER_INFO" baseColumnNames="CUSTPAYMENTTERM_ID"  referencedTableName="BD_PAYMENT_TERM"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-6">
 		<addForeignKeyConstraint constraintName="FK_BP_BP_CUSTOMER_INFO6" baseTableName="BP_BP_CUSTOMER_INFO" baseColumnNames="CUSTDELIVERYMETHOD_ID"  referencedTableName="BP_DELIVERY_METHOD"  referencedColumnNames="ID" />
@@ -24,9 +24,9 @@
 		<addForeignKeyConstraint constraintName="FK_BP_BP_CUSTOMER_INFO7" baseTableName="BP_BP_CUSTOMER_INFO" baseColumnNames="VENDGROUP_ID"  referencedTableName="BP_VENDOR_GROUP"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-8">
-		<addForeignKeyConstraint constraintName="FK_BP_BP_CUSTOMER_INFO8" baseTableName="BP_BP_CUSTOMER_INFO" baseColumnNames="VENDPAYMENTMETHOD_ID"  referencedTableName="BP_PAYMENT_METHOD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_BP_BP_CUSTOMER_INFO8" baseTableName="BP_BP_CUSTOMER_INFO" baseColumnNames="VENDPAYMENTMETHOD_ID"  referencedTableName="BD_PAYMENT_METHOD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-9">
-		<addForeignKeyConstraint constraintName="FK_BP_BP_CUSTOMER_INFO9" baseTableName="BP_BP_CUSTOMER_INFO" baseColumnNames="VENDPAYMENTTERM_ID"  referencedTableName="BP_PAYMENT_TERM"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_BP_BP_CUSTOMER_INFO9" baseTableName="BP_BP_CUSTOMER_INFO" baseColumnNames="VENDPAYMENTTERM_ID"  referencedTableName="BD_PAYMENT_TERM"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

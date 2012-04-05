@@ -8,9 +8,9 @@ package net.nan21.dnet.module.bp.base.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.bp.base.business.service.IVendorGroupService;
-import net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod;
-import net.nan21.dnet.module.bp.base.domain.entity.PaymentTerm;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.bp.base.domain.entity.VendorGroup;

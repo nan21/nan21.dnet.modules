@@ -62,6 +62,72 @@
 		<property name="name" value="TaxApplicableLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.TaxApplicableLovDs" />
 	</bean>
+   
+ 	<bean id="PaymentMethodDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.PaymentMethodDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentMethod" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodDs" />
+	</bean>
+   
+ 	<bean id="PaymentMethodLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentMethodLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodLovDs" />
+	</bean>
+   
+ 	<bean id="PaymentTermDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.PaymentTermDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.PaymentTermDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentTerm" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.PaymentTermDs" />
+	</bean>
+   
+ 	<bean id="PaymentTermLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.PaymentTermLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.model.PaymentTermLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentTermLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.PaymentTermLovDs" />
+	</bean>
+   
+ 	<bean id="FinDocTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.FinDocTypeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.FinDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FinDocType" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeDs" />
+	</bean>
+   
+ 	<bean id="FinDocTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.FinDocTypeLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.FinDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FinDocTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeLovDs" />
+	</bean>
       
 </beans>
    

@@ -15,7 +15,7 @@ Import-Bundle:
  org.eclipse.persistence.jpa;version="[2.1,2.5)", 
  org.eclipse.persistence.core;version="[2.0,2.5)", 
  nan21.dnet.module.bd.domain;version="[1.0.0.M9,1.0.0.M9]", 
- nan21.dnet.module.bd.business;version="[1.0.0.M9,1.0.0.M9]", 
  nan21.dnet.module.ad.domain;version="[1.0.0.M9,1.0.0.M9]", 
- nan21.dnet.module.ad.business;version="[1.0.0.M9,1.0.0.M9]"
+ nan21.dnet.module.bd.business.api;version="[1.0.0.M9,1.0.0.M9]", 
+ nan21.dnet.module.ad.business.api;version="[1.0.0.M9,1.0.0.M9]"
 

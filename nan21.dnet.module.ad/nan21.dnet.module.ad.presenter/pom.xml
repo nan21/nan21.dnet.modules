@@ -50,7 +50,7 @@
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.ad.business</artifactId>
+			<artifactId>nan21.dnet.module.ad.business.api</artifactId>
 			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>compile</scope>

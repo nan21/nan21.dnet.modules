@@ -5,8 +5,8 @@
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.ad.business</artifactId>
 	<version>1.0.0.M9</version>
-	<name>DNet AD - business</name>	
-	<description>DNet AD - business</description>
+	<name>DNet AD - business implementation</name>	
+	<description>DNet AD - business implementation</description>
 	<packaging>jar</packaging>	
 	
 	<!-- ===================== Dependencies ===================== -->
@@ -40,6 +40,13 @@
 			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>compile</scope>
+		</dependency>	
+		<dependency>
+			<groupId>net.nan21.dnet</groupId>
+			<artifactId>nan21.dnet.module.ad.business.api</artifactId>
+			<version>1.0.0.M9</version>
+			<type>jar</type>
+			<scope>provided</scope>
 		</dependency>	
 		 
 		<!-- External libraries -->

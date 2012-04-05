@@ -5,50 +5,39 @@ Export-Package: net.nan21.dnet.module.mm._businessdelegates;version="1
  version="1.0.0.M9";uses:="net.nan21.dnet.core.business.service",net.n
  an21.dnet.module.mm._businessdelegates.md;version="1.0.0.M9";uses:="n
  et.nan21.dnet.core.business.service,net.nan21.dnet.module.mm.md.domai
- n.entity",net.nan21.dnet.module.mm.inventory.business.service;version
- ="1.0.0.M9";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mod
- ule.bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,n
- et.nan21.dnet.module.mm.inventory.domain.entity,net.nan21.dnet.module
- .mm.md.domain.entity",net.nan21.dnet.module.mm.inventory.business.ser
- viceext;version="1.0.0.M9";uses:="net.nan21.dnet.module.mm.inventory.
- business.service,net.nan21.dnet.module.mm.inventory.business.servicei
- mpl",net.nan21.dnet.module.mm.inventory.business.serviceimpl;version=
- "1.0.0.M9";uses:="javax.persistence,net.nan21.dnet.core.business.serv
- ice,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.
- bd.uom.domain.entity,net.nan21.dnet.module.mm.inventory.business.serv
- ice,net.nan21.dnet.module.mm.inventory.domain.entity,net.nan21.dnet.m
- odule.mm.md.domain.entity",net.nan21.dnet.module.mm.md.business.servi
- ce;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.service,net.nan2
- 1.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd.standards
- .domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.d
- net.module.mm.md.domain.entity",net.nan21.dnet.module.mm.md.business.
- serviceext;version="1.0.0.M9";uses:="net.nan21.dnet.module.mm.md.busi
- ness.service,net.nan21.dnet.module.mm.md.business.serviceimpl",net.na
- n21.dnet.module.mm.md.business.serviceimpl;version="1.0.0.M9";uses:="
- javax.persistence,net.nan21.dnet.core.business.service,net.nan21.dnet
- .module.bd.org.domain.entity,net.nan21.dnet.module.bd.standards.domai
- n.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.mo
- dule.mm.md.business.service,net.nan21.dnet.module.mm.md.domain.entity
- ",net.nan21.dnet.module.mm.price.business.service;version="1.0.0.M9";
- uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.curre
- ncy.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan2
- 1.dnet.module.mm.md.domain.entity,net.nan21.dnet.module.mm.price.doma
- in.entity",net.nan21.dnet.module.mm.price.business.serviceext;version
- ="1.0.0.M9";uses:="net.nan21.dnet.module.mm.price.business.service,ne
- t.nan21.dnet.module.mm.price.business.serviceimpl,net.nan21.dnet.modu
- le.mm.price.domain.entity",net.nan21.dnet.module.mm.price.business.se
- rviceimpl;version="1.0.0.M9";uses:="javax.persistence,net.nan21.dnet.
- core.business.service,net.nan21.dnet.module.bd.currency.domain.entity
- ,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.mm.
- md.domain.entity,net.nan21.dnet.module.mm.price.business.service,net.
- nan21.dnet.module.mm.price.domain.entity"
+ n.entity",net.nan21.dnet.module.mm.inventory.business.serviceext;vers
+ ion="1.0.0.M9";uses:="net.nan21.dnet.module.mm.inventory.business.ser
+ vice,net.nan21.dnet.module.mm.inventory.business.serviceimpl",net.nan
+ 21.dnet.module.mm.inventory.business.serviceimpl;version="1.0.0.M9";u
+ ses:="javax.persistence,net.nan21.dnet.core.business.service,net.nan2
+ 1.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domai
+ n.entity,net.nan21.dnet.module.mm.inventory.business.service,net.nan2
+ 1.dnet.module.mm.inventory.domain.entity,net.nan21.dnet.module.mm.md.
+ domain.entity",net.nan21.dnet.module.mm.md.business.serviceext;versio
+ n="1.0.0.M9";uses:="net.nan21.dnet.module.mm.md.business.service,net.
+ nan21.dnet.module.mm.md.business.serviceimpl",net.nan21.dnet.module.m
+ m.md.business.serviceimpl;version="1.0.0.M9";uses:="javax.persistence
+ ,net.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.org.do
+ main.entity,net.nan21.dnet.module.bd.standards.domain.entity,net.nan2
+ 1.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.mm.md.busine
+ ss.service,net.nan21.dnet.module.mm.md.domain.entity",net.nan21.dnet.
+ module.mm.price.business.serviceext;version="1.0.0.M9";uses:="net.nan
+ 21.dnet.module.mm.price.business.service,net.nan21.dnet.module.mm.pri
+ ce.business.serviceimpl,net.nan21.dnet.module.mm.price.domain.entity"
+ ,net.nan21.dnet.module.mm.price.business.serviceimpl;version="1.0.0.M
+ 9";uses:="javax.persistence,net.nan21.dnet.core.business.service,net.
+ nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.module.bd.
+ uom.domain.entity,net.nan21.dnet.module.mm.md.domain.entity,net.nan21
+ .dnet.module.mm.price.business.service,net.nan21.dnet.module.mm.price
+ .domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.core.busine
  ss;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.ad.domain;version=
  "[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.domain;version="[1.0.0.M9,
  1.0.0.M9]",nan21.dnet.module.mm.domain;version="[1.0.0.M9,1.0.0.M9]",
- nan21.dnet.module.ad.business;version="[1.0.0.M9,1.0.0.M9]",nan21.dne
- t.module.bd.business;version="[1.0.0.M9,1.0.0.M9]"
+ nan21.dnet.module.ad.business.api;version="[1.0.0.M9,1.0.0.M9]",nan21
+ .dnet.module.bd.business.api;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet
+ .module.mm.business.api;version="[1.0.0.M9,1.0.0.M9]"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0.M9
 Tool: Bundlor 1.0.0.RELEASE
@@ -65,14 +54,16 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  .core.business.service,net.nan21.dnet.module.bd.currency.domain.entit
  y,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd
  .standards.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,n
- et.nan21.dnet.module.mm.inventory.domain.entity,net.nan21.dnet.module
- .mm.md.domain.entity,net.nan21.dnet.module.mm.price.domain.entity,org
- .aopalliance.aop;version="[1.0,2.0)",org.hibernate.validator;version=
- "[4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)",o
- rg.springframework.aop;version="[3.0,3.1)",org.springframework.aop.fr
- amework;version="[3.0,3.1)",org.springframework.context.weaving;versi
- on="[3.0,3.1)",org.springframework.orm.jpa,org.springframework.orm.jp
- a.vendor,org.springframework.transaction;version="[3.0,3.1)",org.spri
- ngframework.transaction.aspectj;version="[3.0,3.1)",org.springframewo
- rk.util
+ et.nan21.dnet.module.mm.inventory.business.service,net.nan21.dnet.mod
+ ule.mm.inventory.domain.entity,net.nan21.dnet.module.mm.md.business.s
+ ervice,net.nan21.dnet.module.mm.md.domain.entity,net.nan21.dnet.modul
+ e.mm.price.business.service,net.nan21.dnet.module.mm.price.domain.ent
+ ity,org.aopalliance.aop;version="[1.0,2.0)",org.hibernate.validator;v
+ ersion="[4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,
+ 5.0)",org.springframework.aop;version="[3.0,3.1)",org.springframework
+ .aop.framework;version="[3.0,3.1)",org.springframework.context.weavin
+ g;version="[3.0,3.1)",org.springframework.orm.jpa,org.springframework
+ .orm.jpa.vendor,org.springframework.transaction;version="[3.0,3.1)",o
+ rg.springframework.transaction.aspectj;version="[3.0,3.1)",org.spring
+ framework.util
 

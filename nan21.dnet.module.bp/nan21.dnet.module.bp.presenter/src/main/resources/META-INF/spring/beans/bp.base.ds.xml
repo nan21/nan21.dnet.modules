@@ -73,50 +73,6 @@
 		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.VendorGroupLovDs" />
 	</bean>
    
- 	<bean id="PaymentMethodDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentMethodDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.filter.PaymentMethodDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="PaymentMethod" />
-		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentMethodDs" />
-	</bean>
-   
- 	<bean id="PaymentMethodLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentMethodLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentMethodLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="PaymentMethodLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentMethodLovDs" />
-	</bean>
-   
- 	<bean id="PaymentTermDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentTermDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.filter.PaymentTermDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.PaymentTerm" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="PaymentTerm" />
-		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentTermDs" />
-	</bean>
-   
- 	<bean id="PaymentTermLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentTermLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentTermLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.bp.base.domain.entity.PaymentTerm" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="PaymentTermLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.PaymentTermLovDs" />
-	</bean>
-   
  	<bean id="DeliveryMethodDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bp.base.ds.model.DeliveryMethodDs" />

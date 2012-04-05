@@ -38,11 +38,11 @@ Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M9,1.0.0.M9]",na
  ersion="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.domain;version="[1.
  0.0.M9,1.0.0.M9]",nan21.dnet.module.bp.domain;version="[1.0.0.M9,1.0.
  0.M9]",nan21.dnet.module.mm.domain;version="[1.0.0.M9,1.0.0.M9]",nan2
- 1.dnet.module.sd.business;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.mo
- dule.ad.business;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.b
- usiness;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bp.business;v
- ersion="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.mm.business;version="[
- 1.0.0.M9,1.0.0.M9]"
+ 1.dnet.module.ad.business.api;version="[1.0.0.M9,1.0.0.M9]",nan21.dne
+ t.module.bd.business.api;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.mod
+ ule.bp.business.api;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.m
+ m.business.api;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.sd.bus
+ iness.api;version="[1.0.0.M9,1.0.0.M9]"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0.M9
 Tool: Bundlor 1.0.0.RELEASE

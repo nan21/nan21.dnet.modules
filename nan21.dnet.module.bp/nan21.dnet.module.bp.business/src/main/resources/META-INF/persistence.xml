@@ -9,8 +9,6 @@
 		<class>net.nan21.dnet.module.bp.base.domain.entity.CustomerGroup</class>
 		<class>net.nan21.dnet.module.bp.base.domain.entity.VendorGroup</class>
 		<class>net.nan21.dnet.module.bp.base.domain.entity.Bank</class>
-		<class>net.nan21.dnet.module.bp.base.domain.entity.PaymentMethod</class>
-		<class>net.nan21.dnet.module.bp.base.domain.entity.PaymentTerm</class>
 		<class>net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod</class>
 		<class>net.nan21.dnet.module.bp.base.domain.entity.CompanyLegalForm</class>
 		 
@@ -34,6 +32,9 @@
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
+		
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm</class>
 		
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>

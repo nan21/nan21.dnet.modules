@@ -68,9 +68,10 @@ Import-Bundle: nan21.dnet.core.domain;version="[1.0.0.M9,1.0.0.M9]",na
  ",org.eclipse.persistence.core;version="[2.0,2.5)",nan21.dnet.module.
  hr.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.ad.domain;v
  ersion="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.domain;version="[1.
- 0.0.M9,1.0.0.M9]",nan21.dnet.module.hr.business;version="[1.0.0.M9,1.
- 0.0.M9]",nan21.dnet.module.ad.business;version="[1.0.0.M9,1.0.0.M9]",
- nan21.dnet.module.bd.business;version="[1.0.0.M9,1.0.0.M9]"
+ 0.0.M9,1.0.0.M9]",nan21.dnet.module.ad.business.api;version="[1.0.0.M
+ 9,1.0.0.M9]",nan21.dnet.module.bd.business.api;version="[1.0.0.M9,1.0
+ .0.M9]",nan21.dnet.module.hr.business.api;version="[1.0.0.M9,1.0.0.M9
+ ]"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0.M9
 Tool: Bundlor 1.0.0.RELEASE

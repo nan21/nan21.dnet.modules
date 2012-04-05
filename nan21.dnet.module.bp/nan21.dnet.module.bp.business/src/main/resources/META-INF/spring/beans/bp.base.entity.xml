@@ -16,12 +16,6 @@
  	<bean id="BankService" scope="prototype"
 	  		class="net.nan21.dnet.module.bp.base.business.serviceimpl.BankService"  />  
  
- 	<bean id="PaymentMethodService" scope="prototype"
-	  		class="net.nan21.dnet.module.bp.base.business.serviceimpl.PaymentMethodService"  />  
- 
- 	<bean id="PaymentTermService" scope="prototype"
-	  		class="net.nan21.dnet.module.bp.base.business.serviceimpl.PaymentTermService"  />  
- 
  	<bean id="DeliveryMethodService" scope="prototype"
 	  		class="net.nan21.dnet.module.bp.base.business.serviceimpl.DeliveryMethodService"  />  
  
