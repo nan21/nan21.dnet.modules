@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.ad</artifactId>
-	<version>1.0.0.M8</version>
+	<version>1.0.0.M9</version>
 	<name>DNet AD: Administration</name>	
 	<description>DNet AD: Administration</description>
 	<packaging>pom</packaging>	
@@ -13,6 +13,7 @@
 	
 	<modules>
 		<module>nan21.dnet.module.ad.domain</module>
+		<module>nan21.dnet.module.ad.business.api</module>
 		<module>nan21.dnet.module.ad.business</module>
 		<module>nan21.dnet.module.ad.presenter</module>
 		<module>nan21.dnet.module.ad.ui.extjs</module>

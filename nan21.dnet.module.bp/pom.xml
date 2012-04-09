@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.bp</artifactId>
-	<version>1.0.0.M8</version>
+	<version>1.0.0.M9</version>
 	<name>DNet BP: Business partners</name>	
 	<description>DNet BP: Business partners</description>
 	<packaging>pom</packaging>	
@@ -13,6 +13,7 @@
 	
 	<modules>
 		<module>nan21.dnet.module.bp.domain</module>
+		<module>nan21.dnet.module.bp.business.api</module>
 		<module>nan21.dnet.module.bp.business</module>
 		<module>nan21.dnet.module.bp.presenter</module>
 		<module>nan21.dnet.module.bp.ui.extjs</module>

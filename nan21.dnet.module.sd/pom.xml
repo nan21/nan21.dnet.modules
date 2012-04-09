@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.sd</artifactId>
-	<version>1.0.0.M8</version>
+	<version>1.0.0.M9</version>
 	<name>DNet SD: Sales and Distribution</name>	
 	<description>DNet SD: Sales and Distribution</description>
 	<packaging>pom</packaging>	
@@ -13,6 +13,7 @@
 	
 	<modules>
 		<module>nan21.dnet.module.sd.domain</module>
+		<module>nan21.dnet.module.sd.business.api</module>
 		<module>nan21.dnet.module.sd.business</module>
 		<module>nan21.dnet.module.sd.presenter</module>
 		<module>nan21.dnet.module.sd.ui.extjs</module>

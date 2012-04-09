@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.bd</artifactId>
-	<version>1.0.0.M8</version>
+	<version>1.0.0.M9</version>
 	<name>DNet BD: Base data</name>	
 	<description>DNet BD: Base data</description>
 	<packaging>pom</packaging>	
@@ -13,6 +13,7 @@
 	
 	<modules>
 		<module>nan21.dnet.module.bd.domain</module>
+		<module>nan21.dnet.module.bd.business.api</module>
 		<module>nan21.dnet.module.bd.business</module>
 		<module>nan21.dnet.module.bd.presenter</module>
 		<module>nan21.dnet.module.bd.ui.extjs</module>

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.ux</artifactId>
-	<version>1.0.0.M8</version>
+	<version>1.0.0.M9</version>
 	<name>DNet UX: User extensions</name>	
 	<description>DNet UX: User extensions</description>
 	<packaging>pom</packaging>	
@@ -13,6 +13,7 @@
 	
 	<modules>
 		<module>nan21.dnet.module.ux.domain</module>
+		<module>nan21.dnet.module.ux.business.api</module>
 		<module>nan21.dnet.module.ux.business</module>
 		<module>nan21.dnet.module.ux.presenter</module>
 		<module>nan21.dnet.module.ux.ui.extjs</module>
