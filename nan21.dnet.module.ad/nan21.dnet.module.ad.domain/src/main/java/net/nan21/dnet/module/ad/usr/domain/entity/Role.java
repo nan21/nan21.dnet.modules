@@ -46,8 +46,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = Role.NQ_FIND_BY_NAME, query = "SELECT e FROM Role e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Role implements Serializable, IModelWithId, IModelWithClientId {
 
-    public static final String TABLE_NAME = "AD_ROLES";
-    public static final String SEQUENCE_NAME = "AD_ROLES_SEQ";
+    public static final String TABLE_NAME = "AD_ROLE";
+    public static final String SEQUENCE_NAME = "AD_ROLE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -150,15 +150,15 @@ public class Role implements Serializable, IModelWithId, IModelWithClientId {
     private Collection<User> users;
 
     @ManyToMany
-    @JoinTable(name = "AD_ROLES_ACCESSCTRL")
+    @JoinTable(name = "AD_ROLE_ACCESSCTRLS")
     private Collection<AccessControl> accessControls;
 
     @ManyToMany
-    @JoinTable(name = "AD_ROLES_MENU")
+    @JoinTable(name = "AD_ROLE_MENUS")
     private Collection<Menu> menus;
 
     @ManyToMany
-    @JoinTable(name = "AD_ROLES_MENUITEM")
+    @JoinTable(name = "AD_ROLE_MENUITEMS")
     private Collection<MenuItem> menuItems;
 
     /* ============== getters - setters ================== */

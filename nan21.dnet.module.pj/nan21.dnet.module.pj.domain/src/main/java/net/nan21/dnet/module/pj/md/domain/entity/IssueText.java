@@ -46,8 +46,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class IssueText implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "PJ_ITEM_TEXT";
-    public static final String SEQUENCE_NAME = "PJ_ITEM_TEXT_SEQ";
+    public static final String TABLE_NAME = "PJ_ISSUE_TEXT";
+    public static final String SEQUENCE_NAME = "PJ_ISSUE_TEXT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

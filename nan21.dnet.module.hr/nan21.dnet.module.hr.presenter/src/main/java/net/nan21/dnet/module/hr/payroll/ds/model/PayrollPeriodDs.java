@@ -35,6 +35,8 @@ public class PayrollPeriodDs extends AbstractDsModel<PayrollPeriod> implements
     public static final String fPAYROLLNAME = "payrollName";
     public static final String fSTARTDATE = "startDate";
     public static final String fENDDATE = "endDate";
+    public static final String fPROCESSED = "processed";
+    public static final String fCLOSED = "closed";
 
     @DsField()
     private String name;
@@ -83,6 +85,12 @@ public class PayrollPeriodDs extends AbstractDsModel<PayrollPeriod> implements
 
     @DsField()
     private Date endDate;
+
+    @DsField()
+    private Boolean processed;
+
+    @DsField()
+    private Boolean closed;
 
     public PayrollPeriodDs() {
         super();
@@ -219,6 +227,22 @@ public class PayrollPeriodDs extends AbstractDsModel<PayrollPeriod> implements
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Boolean getProcessed() {
+        return this.processed;
+    }
+
+    public void setProcessed(Boolean processed) {
+        this.processed = processed;
+    }
+
+    public Boolean getClosed() {
+        return this.closed;
+    }
+
+    public void setClosed(Boolean closed) {
+        this.closed = closed;
     }
 
 }

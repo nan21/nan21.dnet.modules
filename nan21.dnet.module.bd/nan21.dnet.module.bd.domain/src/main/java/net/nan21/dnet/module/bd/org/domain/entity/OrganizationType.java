@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class OrganizationType implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "BD_ORGTYPE";
-    public static final String SEQUENCE_NAME = "BD_ORGTYPE_SEQ";
+    public static final String TABLE_NAME = "BD_ORG_TYPE";
+    public static final String SEQUENCE_NAME = "BD_ORG_TYPE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

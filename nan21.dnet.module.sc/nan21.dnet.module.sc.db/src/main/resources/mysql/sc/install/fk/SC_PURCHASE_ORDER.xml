@@ -15,7 +15,7 @@
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER3" 
 				baseTableName="SC_PURCHASE_ORDER" baseColumnNames="PAYMENTMETHOD_ID"  
-				referencedTableName="BD_PAYMENT_METHOD"  referencedColumnNames="ID" />
+				referencedTableName="BD_PAY_METHOD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER4" 

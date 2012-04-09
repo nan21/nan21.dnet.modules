@@ -53,6 +53,11 @@ public class ElementDsFilter extends AbstractDsFilter implements IModelWithId,
 
     private String dataType;
 
+    private Integer sequenceNo;
+
+    private Integer sequenceNo_From;
+    private Integer sequenceNo_To;
+
     public String getName() {
         return this.name;
     }
@@ -220,6 +225,30 @@ public class ElementDsFilter extends AbstractDsFilter implements IModelWithId,
 
     public void setDataType(String dataType) {
         this.dataType = dataType;
+    }
+
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
+    }
+
+    public Integer getSequenceNo_From() {
+        return this.sequenceNo_From;
+    }
+
+    public Integer getSequenceNo_To() {
+        return this.sequenceNo_To;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
+    }
+
+    public void setSequenceNo_From(Integer sequenceNo_From) {
+        this.sequenceNo_From = sequenceNo_From;
+    }
+
+    public void setSequenceNo_To(Integer sequenceNo_To) {
+        this.sequenceNo_To = sequenceNo_To;
     }
 
 }

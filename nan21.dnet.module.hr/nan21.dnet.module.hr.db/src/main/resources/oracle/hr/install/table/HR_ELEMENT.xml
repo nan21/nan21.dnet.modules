@@ -26,6 +26,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="NOTES" type="varchar2(4000)">
 				<constraints  /></column>	 
+			<column name="SEQUENCENO" type="number(4)">
+				<constraints nullable="false" /></column>	 
 			<column name="UUID" type="varchar2(36)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="number(19)">

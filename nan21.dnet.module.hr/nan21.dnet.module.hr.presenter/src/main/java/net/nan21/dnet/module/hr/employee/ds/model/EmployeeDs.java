@@ -6,7 +6,6 @@
 package net.nan21.dnet.module.hr.employee.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -15,14 +14,10 @@ import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = Employee.class, sort = { @SortField(field = EmployeeDs.fNAME) })
+@Ds(entity = Employee.class)
 public class EmployeeDs extends AbstractDsModel<Employee> implements
         IModelWithId, IModelWithClientId {
 
-    public static final String fNAME = "name";
-    public static final String fCODE = "code";
-    public static final String fACTIVE = "active";
-    public static final String fNOTES = "notes";
     public static final String fID = "id";
     public static final String fUUID = "uuid";
     public static final String fCLIENTID = "clientId";
@@ -32,6 +27,7 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
     public static final String fMODIFIEDBY = "modifiedBy";
     public static final String fVERSION = "version";
     public static final String fENTITYFQN = "entityFQN";
+    public static final String fCODE = "code";
     public static final String fEMPLOYERID = "employerId";
     public static final String fEMPLOYERCODE = "employerCode";
     public static final String fBUSINESSOBJECT = "businessObject";
@@ -70,22 +66,10 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
     public static final String fPAYROLLID = "payrollId";
     public static final String fPAYROLL = "payroll";
 
-    @DsField()
-    private String name;
-
-    @DsField()
-    private String code;
-
-    @DsField()
-    private Boolean active;
-
-    @DsField()
-    private String notes;
-
-    @DsField()
+    @DsField(noUpdate = true)
     private Long id;
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String uuid;
 
     @DsField(noUpdate = true)
@@ -106,8 +90,11 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
     @DsField()
     private Long version;
 
-    @DsField(fetch = false, path = "className")
+    @DsField(noUpdate = true, fetch = false, path = "className")
     private String entityFQN;
+
+    @DsField()
+    private String code;
 
     @DsField(join = "left", path = "employer.id")
     private Long employerId;
@@ -228,38 +215,6 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
         super(e);
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Boolean getActive() {
-        return this.active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public String getNotes() {
-        return this.notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
     public Long getId() {
         return this.id;
     }
@@ -331,6 +286,14 @@ public class EmployeeDs extends AbstractDsModel<Employee> implements
 
     public void setEntityFQN(String entityFQN) {
         this.entityFQN = entityFQN;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Long getEmployerId() {

@@ -6,8 +6,11 @@
 package net.nan21.dnet.module.hr.employee.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.UUID;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,6 +20,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -36,6 +40,7 @@ import net.nan21.dnet.module.hr.grade.domain.entity.Grade;
 import net.nan21.dnet.module.hr.job.domain.entity.Job;
 import net.nan21.dnet.module.hr.job.domain.entity.Position;
 import net.nan21.dnet.module.hr.payroll.domain.entity.Payroll;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -72,6 +77,11 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
      * Named query find by unique key: Code.
      */
     public static final String NQ_FIND_BY_CODE = "Employee.findByCode";
+
+    /** Code. */
+    @Column(name = "CODE", nullable = false, length = 32)
+    @NotBlank
+    private String code;
 
     /** LastName. */
     @Column(name = "LASTNAME", nullable = false, length = 255)
@@ -154,33 +164,6 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     /** BaseSalary. */
     @Column(name = "BASESALARY", scale = 2)
     private Float baseSalary;
-
-    /**
-     * Name of entity.
-     */
-    @Column(name = "NAME", nullable = false, length = 255)
-    @NotBlank
-    private String name;
-
-    /**
-     * Code of entity.
-     */
-    @Column(name = "CODE", nullable = false, length = 32)
-    @NotBlank
-    private String code;
-
-    /**
-     * Flag which indicates if this record is used.
-     */
-    @Column(name = "ACTIVE", nullable = false)
-    @NotNull
-    private Boolean active;
-
-    /**
-     * Notes about this record. 
-     */
-    @Column(name = "NOTES", length = 4000)
-    private String notes;
 
     /**
      * Identifies the client(tenant) which owns this record.
@@ -266,7 +249,19 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     @JoinColumn(name = "PAYROLL_ID", referencedColumnName = "ID")
     private Payroll payroll;
 
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = EmployeeContact.class, mappedBy = "employee", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<EmployeeContact> contacts;
+
     /* ============== getters - setters ================== */
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public String getLastName() {
         return this.lastName;
@@ -309,11 +304,11 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
     }
 
     @Transient
-    public String getFullName() {
+    public String getName() {
         return this.lastName + " " + this.firstName;
     }
 
-    public void setFullName(String fullName) {
+    public void setName(String name) {
 
     }
 
@@ -445,38 +440,6 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
 
     public void setBusinessObject(String businessObject) {
 
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Boolean getActive() {
-        return this.active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public String getNotes() {
-        return this.notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
     }
 
     public Long getClientId() {
@@ -616,6 +579,22 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
         this.payroll = payroll;
     }
 
+    public Collection<EmployeeContact> getContacts() {
+        return this.contacts;
+    }
+
+    public void setContacts(Collection<EmployeeContact> contacts) {
+        this.contacts = contacts;
+    }
+
+    public void addToContacts(EmployeeContact e) {
+        if (this.contacts == null) {
+            this.contacts = new ArrayList<EmployeeContact>();
+        }
+        e.setEmployee(this);
+        this.contacts.add(e);
+    }
+
     public void aboutToInsert(DescriptorEvent event) {
 
         event.updateAttributeWithObject("createdAt", new Date());
@@ -635,9 +614,6 @@ public class Employee implements Serializable, IModelWithId, IModelWithClientId 
         }
         if (this.assignToPosition == null) {
             event.updateAttributeWithObject("assignToPosition", false);
-        }
-        if (this.active == null) {
-            event.updateAttributeWithObject("active", false);
         }
         if (this.code == null || this.code.equals("")) {
             event.updateAttributeWithObject("code", "E-" + this.getId());

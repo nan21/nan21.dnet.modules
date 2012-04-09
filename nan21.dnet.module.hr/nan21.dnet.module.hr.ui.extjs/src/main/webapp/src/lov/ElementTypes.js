@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.lovs.ElementTypes", {
 		},
 		width:250
 	},		 
-	_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.payroll.frame.Element_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasType"},
+	_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.payroll.frame.ElementBaseData_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasType"},
 	recordModel: "net.nan21.dnet.module.hr.payroll.ds.model.ElementTypeLovDs",
 	_dataProviderName_:"ElementTypeLovDs"	 		
 	

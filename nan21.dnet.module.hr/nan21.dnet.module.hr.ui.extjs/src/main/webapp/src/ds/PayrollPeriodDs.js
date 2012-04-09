@@ -18,7 +18,9 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDs" ,{
 		{name:"payrollId", type:"int", useNull:true},
 		{name:"payrollName", type:"string"},
 		{name:"startDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"endDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
+		{name:"endDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"processed", type:"boolean"},
+		{name:"closed", type:"boolean"}
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
@@ -52,7 +54,9 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDsFilter" ,{
 		{name:"startDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"endDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"endDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"endDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
+		{name:"endDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"processed", type:"boolean", useNull:true},
+		{name:"closed", type:"boolean", useNull:true}
 	] 
 });
 	

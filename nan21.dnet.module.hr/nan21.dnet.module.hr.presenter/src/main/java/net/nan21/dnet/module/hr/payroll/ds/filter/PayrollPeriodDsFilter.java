@@ -59,6 +59,10 @@ public class PayrollPeriodDsFilter extends AbstractDsFilter implements
     private Date endDate_From;
     private Date endDate_To;
 
+    private Boolean processed;
+
+    private Boolean closed;
+
     public String getName() {
         return this.name;
     }
@@ -258,6 +262,22 @@ public class PayrollPeriodDsFilter extends AbstractDsFilter implements
 
     public void setEndDate_To(Date endDate_To) {
         this.endDate_To = endDate_To;
+    }
+
+    public Boolean getProcessed() {
+        return this.processed;
+    }
+
+    public void setProcessed(Boolean processed) {
+        this.processed = processed;
+    }
+
+    public Boolean getClosed() {
+        return this.closed;
+    }
+
+    public void setClosed(Boolean closed) {
+        this.closed = closed;
     }
 
 }

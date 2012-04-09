@@ -52,6 +52,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$List", {
 		this._getBuilder_()	
 		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
 		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo" })  
 		.addTextColumn({ name:"dataType", dataIndex:"dataType",width:100 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 		.addTextColumn({ name:"notes", dataIndex:"notes",width:200 })   	
@@ -60,6 +61,27 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$List", {
 	}
 });
  
+ 	
+ 	
+ 	 
+Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$EditList", {
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
+	alias: "widget.net.nan21.dnet.module.hr.payroll.dc.Element$EditList",
+	
+	_bulkEditFields_ : ["type","dataType","active"],
+	_defineColumns_: function () {
+		this._getBuilder_()
+		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
+		.addLov({name:"type", xtype:"gridcolumn", dataIndex:"type",width:120,editor:{xtype:"net.nan21.dnet.module.hr.payroll.lovs.ElementTypes" , selectOnFocus:true,allowBlank:false ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]} })
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
+		.addComboColumn({ name:"dataType", dataIndex:"dataType", trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false"),editor: {xtype: 'combo', mode: 'local', selectOnFocus:true 	, valueField: 'bv', displayField: 'tv' ,store:[ "string", "number", "boolean", "date"] , triggerAction:'all', forceSelection:true }})
+		.addBooleanColumn({ name:"active", dataIndex:"active"})
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+	  	.addDefaults()
+	  ;  		   
+	}  
+});
  	
  	
 
@@ -72,14 +94,16 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addNumberField({ name:"sequenceNo", dataIndex:"sequenceNo",anchor:"-20"  , style: "text-align:right;" })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:80,anchor:"-20"   })
 		.addCombo({ name:"dataType", xtype:"localcombo", dataIndex:"dataType",anchor:"-20" ,allowBlank:false,store:[ "string", "number", "boolean", "date"]  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.payroll.lovs.ElementTypes", dataIndex:"type",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     
-		.addPanel({ name:"col3", layout:"form" , width:350})     
+		.addPanel({ name:"col3", layout:"form" , width:350, defaults:{
+labelAlign:"top"}})     
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
@@ -87,7 +111,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Element$Edit", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
 		.addChildrenTo("col1",["name","code","type"])
-		.addChildrenTo("col2",["dataType","active"])
+		.addChildrenTo("col2",["dataType","sequenceNo","active"])
 		.addChildrenTo("col3",["notes"])
 ;
 	}	

@@ -43,6 +43,15 @@ public class ElementValueDsFilter extends AbstractDsFilter implements
 
     private String element;
 
+    private String elementName;
+
+    private Integer sequenceNo;
+
+    private Integer sequenceNo_From;
+    private Integer sequenceNo_To;
+
+    private String dataType;
+
     private Long employeeId;
 
     private Long employeeId_From;
@@ -58,6 +67,16 @@ public class ElementValueDsFilter extends AbstractDsFilter implements
     private Long periodId_To;
 
     private String period;
+
+    private Date periodStart;
+
+    private Date periodStart_From;
+    private Date periodStart_To;
+
+    private Date periodEnd;
+
+    private Date periodEnd_From;
+    private Date periodEnd_To;
 
     public Long getId() {
         return this.id;
@@ -188,6 +207,46 @@ public class ElementValueDsFilter extends AbstractDsFilter implements
         this.element = element;
     }
 
+    public String getElementName() {
+        return this.elementName;
+    }
+
+    public void setElementName(String elementName) {
+        this.elementName = elementName;
+    }
+
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
+    }
+
+    public Integer getSequenceNo_From() {
+        return this.sequenceNo_From;
+    }
+
+    public Integer getSequenceNo_To() {
+        return this.sequenceNo_To;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
+    }
+
+    public void setSequenceNo_From(Integer sequenceNo_From) {
+        this.sequenceNo_From = sequenceNo_From;
+    }
+
+    public void setSequenceNo_To(Integer sequenceNo_To) {
+        this.sequenceNo_To = sequenceNo_To;
+    }
+
+    public String getDataType() {
+        return this.dataType;
+    }
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
+
     public Long getEmployeeId() {
         return this.employeeId;
     }
@@ -258,6 +317,54 @@ public class ElementValueDsFilter extends AbstractDsFilter implements
 
     public void setPeriod(String period) {
         this.period = period;
+    }
+
+    public Date getPeriodStart() {
+        return this.periodStart;
+    }
+
+    public Date getPeriodStart_From() {
+        return this.periodStart_From;
+    }
+
+    public Date getPeriodStart_To() {
+        return this.periodStart_To;
+    }
+
+    public void setPeriodStart(Date periodStart) {
+        this.periodStart = periodStart;
+    }
+
+    public void setPeriodStart_From(Date periodStart_From) {
+        this.periodStart_From = periodStart_From;
+    }
+
+    public void setPeriodStart_To(Date periodStart_To) {
+        this.periodStart_To = periodStart_To;
+    }
+
+    public Date getPeriodEnd() {
+        return this.periodEnd;
+    }
+
+    public Date getPeriodEnd_From() {
+        return this.periodEnd_From;
+    }
+
+    public Date getPeriodEnd_To() {
+        return this.periodEnd_To;
+    }
+
+    public void setPeriodEnd(Date periodEnd) {
+        this.periodEnd = periodEnd;
+    }
+
+    public void setPeriodEnd_From(Date periodEnd_From) {
+        this.periodEnd_From = periodEnd_From;
+    }
+
+    public void setPeriodEnd_To(Date periodEnd_To) {
+        this.periodEnd_To = periodEnd_To;
     }
 
 }

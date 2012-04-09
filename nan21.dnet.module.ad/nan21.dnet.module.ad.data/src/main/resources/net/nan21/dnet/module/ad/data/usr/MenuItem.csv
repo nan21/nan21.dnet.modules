@@ -65,7 +65,11 @@
 "20";"Contact_UI";"Contacts";;"net.nan21.dnet.module.bp.md.frame.Contact_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";
 "20";"Bank_UI";"Banks";;"net.nan21.dnet.module.bp.base.frame.Bank_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";
 "20";"Opportunity_UI";"Opportunities";;"net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";
-"20";"Element_UI";"Elements";;"net.nan21.dnet.module.hr.payroll.frame.Element_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"20";"ElementBaseData_UI";"Element base data";;"net.nan21.dnet.module.hr.payroll.frame.ElementBaseData_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"30";"Element_UI";"Elements setup";;"net.nan21.dnet.module.hr.payroll.frame.Element_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"50";"Elements_UI";"Elements";;"net.nan21.dnet.module.hr.payroll.frame.Elements_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"60";"ElementInputs_UI";"Element inputs";;"net.nan21.dnet.module.hr.payroll.frame.ElementInputs_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
+"70";"ElementFormulas_UI";"Element formulas";;"net.nan21.dnet.module.hr.payroll.frame.ElementFormulas_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
 "20";"ProductAttributeDefs_UI";"Attributes definition";;"net.nan21.dnet.module.mm.md.frame.ProductAttributeDefs_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
 "20";"Product_UI";"Products";;"net.nan21.dnet.module.mm.md.frame.Product_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
 "20";"Reports_UI";"Reports";;"net.nan21.dnet.module.ad.report.frame.Reports_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
@@ -135,6 +139,7 @@
 "50";"bd-menu-stds";"Standards";;;;"true";;"false";"false";
 "50";"SysFrameExtension_UI";"Frame extensions";;"net.nan21.dnet.module.ad.system.frame.SysFrameExtension_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
 "50";"hr-menu-payroll";"Payroll";"HRM";;;"true";;"false";"false";
+"5";"hr-menu-payroll-setup";"Setup";;;;"true";;"false";"false";
 "50";"Assignables_UI";"Assignable resources";;"net.nan21.dnet.module.ad.usr.frame.Assignables_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
 "60";"hr-menu-training";"Training";"HRM";;;"true";;"false";"false";
 "60";"ad-menu-wf";"Workflow";"AD";;;"true";;"false";"false";

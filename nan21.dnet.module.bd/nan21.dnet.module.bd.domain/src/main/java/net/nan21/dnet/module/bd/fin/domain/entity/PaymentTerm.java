@@ -46,8 +46,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class PaymentTerm implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "BD_PAYMENT_TERM";
-    public static final String SEQUENCE_NAME = "BD_PAYMENT_TERM_SEQ";
+    public static final String TABLE_NAME = "BD_PAY_TERM";
+    public static final String SEQUENCE_NAME = "BD_PAY_TERM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

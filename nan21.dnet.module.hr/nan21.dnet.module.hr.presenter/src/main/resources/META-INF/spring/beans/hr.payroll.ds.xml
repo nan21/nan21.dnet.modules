@@ -75,16 +75,28 @@
 		<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementLovDs" />
 	</bean>
    
- 	<bean id="VariableDsService" scope="prototype"
+ 	<bean id="ElementInputDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.VariableDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.filter.VariableDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.Variable" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.VariableDsConv" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementInputDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.filter.ElementInputDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.ElementInput" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.ElementInputDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="Variable" />
-		<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.VariableDs" />
+		<property name="name" value="ElementInput" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementInputDs" />
+	</bean>
+   
+ 	<bean id="ElementFormulaDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementFormulaDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.filter.ElementFormulaDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.ElementFormula" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.ElementFormulaDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ElementFormula" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementFormulaDs" />
 	</bean>
    
  	<bean id="ElementValueDsService" scope="prototype"
@@ -127,10 +139,46 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.filter.PayrollPeriodDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.hr.payroll.ds.converter.PayrollPeriodDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="open">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.hr._presenterdelegates.payroll.PayrollPeriodProcessorPD"/>
+	  				<constructor-arg name="methodName" value="open" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="process">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.hr._presenterdelegates.payroll.PayrollPeriodProcessorPD"/>
+	  				<constructor-arg name="methodName" value="process" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="clear">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.hr._presenterdelegates.payroll.PayrollPeriodProcessorPD"/>
+	  				<constructor-arg name="methodName" value="clear" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="close">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.hr._presenterdelegates.payroll.PayrollPeriodProcessorPD"/>
+	  				<constructor-arg name="methodName" value="close" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PayrollPeriod" />
 		<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">open</value>
+	  			<value type="java.lang.String">process</value>
+	  			<value type="java.lang.String">clear</value>
+	  			<value type="java.lang.String">close</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="PayrollPeriodLovDsService" scope="prototype"

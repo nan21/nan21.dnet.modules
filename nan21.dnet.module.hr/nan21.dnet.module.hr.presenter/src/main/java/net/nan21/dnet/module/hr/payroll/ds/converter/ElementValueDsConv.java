@@ -60,7 +60,7 @@ public class ElementValueDsConv extends
             Element x = null;
             try {
                 x = ((IElementService) findEntityService(Element.class))
-                        .findByName(ds.getElement());
+                        .findByCode(ds.getElement());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
                         "Invalid value provided to find `Element` reference:  `element` = "

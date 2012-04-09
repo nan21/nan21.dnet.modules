@@ -51,8 +51,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ProjectType implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "PJ_PROJECT_TYPE";
-    public static final String SEQUENCE_NAME = "PJ_PROJECT_TYPE_SEQ";
+    public static final String TABLE_NAME = "PJ_PRJ_TYPE";
+    public static final String SEQUENCE_NAME = "PJ_PRJ_TYPE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -155,11 +155,11 @@ public class ProjectType implements Serializable, IModelWithId,
     private ProjectCategory category;
 
     @ManyToMany
-    @JoinTable(name = "PJ_PROJECTTYPE_ROLES")
+    @JoinTable(name = "PJ_PRJTYPE_ROLES")
     private Collection<ProjectRole> projectRoles;
 
     @ManyToMany
-    @JoinTable(name = "PJ_PROJECTTYPE_ISSUETYPE")
+    @JoinTable(name = "PJ_PRJTYPE_ISSUETYPE")
     private Collection<IssueType> itemTypes;
 
     /* ============== getters - setters ================== */

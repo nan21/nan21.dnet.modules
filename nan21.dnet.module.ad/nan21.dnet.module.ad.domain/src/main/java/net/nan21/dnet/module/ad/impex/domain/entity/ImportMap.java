@@ -50,8 +50,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ImportMap implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "AD_IMPORT_MAP";
-    public static final String SEQUENCE_NAME = "AD_IMPORT_MAP_SEQ";
+    public static final String TABLE_NAME = "AD_IMP_MAP";
+    public static final String SEQUENCE_NAME = "AD_IMP_MAP_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

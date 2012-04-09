@@ -35,6 +35,7 @@ public class ElementDs extends AbstractDsModel<Element> implements
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
     public static final String fDATATYPE = "dataType";
+    public static final String fSEQUENCENO = "sequenceNo";
 
     @DsField()
     private String name;
@@ -83,6 +84,9 @@ public class ElementDs extends AbstractDsModel<Element> implements
 
     @DsField()
     private String dataType;
+
+    @DsField()
+    private Integer sequenceNo;
 
     public ElementDs() {
         super();
@@ -219,6 +223,14 @@ public class ElementDs extends AbstractDsModel<Element> implements
 
     public void setDataType(String dataType) {
         this.dataType = dataType;
+    }
+
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
     }
 
 }

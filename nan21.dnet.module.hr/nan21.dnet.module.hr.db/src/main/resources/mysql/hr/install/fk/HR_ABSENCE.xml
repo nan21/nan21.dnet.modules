@@ -10,11 +10,11 @@
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_HR_ABSENCE2" 
 				baseTableName="HR_ABSENCE" baseColumnNames="TYPE_ID"  
-				referencedTableName="HR_ABSENCE_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="HR_ABSN_TYPE"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_HR_ABSENCE3" 
 				baseTableName="HR_ABSENCE" baseColumnNames="REASON_ID"  
-				referencedTableName="HR_ABSENCE_REASON"  referencedColumnNames="ID" />
+				referencedTableName="HR_ABSN_REASON"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

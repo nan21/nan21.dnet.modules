@@ -16,8 +16,11 @@
  	<bean id="ElementService" scope="prototype"
 	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.ElementService"  />  
  
- 	<bean id="VariableService" scope="prototype"
-	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.VariableService"  />  
+ 	<bean id="ElementInputService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.ElementInputService"  />  
+ 
+ 	<bean id="ElementFormulaService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.ElementFormulaService"  />  
  
  	<bean id="ElementValueService" scope="prototype"
 	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.ElementValueService"  />  

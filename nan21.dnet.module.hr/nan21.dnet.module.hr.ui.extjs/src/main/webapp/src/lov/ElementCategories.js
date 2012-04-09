@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.lovs.ElementCategories", {
 		},
 		width:250
 	},		 
-	_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.payroll.frame.Element_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasCateg"},
+	_editDialog_:{custom:false, name: "net.nan21.dnet.module.hr.payroll.frame.ElementBaseData_UI",bundle:"nan21.dnet.module.hr.ui.extjs",tocElement: "canvasCateg"},
 	recordModel: "net.nan21.dnet.module.hr.payroll.ds.model.ElementCategoryLovDs",
 	_dataProviderName_:"ElementCategoryLovDs"	 		
 	

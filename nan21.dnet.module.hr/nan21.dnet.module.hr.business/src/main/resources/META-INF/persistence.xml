@@ -41,8 +41,10 @@
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.ElementCategory</class>
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.ElementType</class>
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.Element</class>
-		<class>net.nan21.dnet.module.hr.payroll.domain.entity.Variable</class>
+		<class>net.nan21.dnet.module.hr.payroll.domain.entity.ElementInput</class>
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.ElementValue</class>
+		<class>net.nan21.dnet.module.hr.payroll.domain.entity.ElementFormula</class>
+		
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.Payroll</class>
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod</class>
 		

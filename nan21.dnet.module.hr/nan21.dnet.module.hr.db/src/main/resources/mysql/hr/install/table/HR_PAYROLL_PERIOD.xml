@@ -8,6 +8,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CLIENTID" type="bigint(3)">
 				<constraints nullable="false" /></column>	 
+			<column name="CLOSED" type="int(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="CREATEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
@@ -23,6 +25,8 @@
 			<column name="MODIFIEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
 			<column name="NAME" type="varchar(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="PROCESSED" type="int(1)">
 				<constraints nullable="false" /></column>	 
 			<column name="STARTDATE" type="date">
 				<constraints nullable="false" /></column>	 

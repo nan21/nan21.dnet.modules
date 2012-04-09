@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ProjectStatus implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "PJ_PROJECT_STATUS";
-    public static final String SEQUENCE_NAME = "PJ_PROJECT_STATUS_SEQ";
+    public static final String TABLE_NAME = "PJ_PRJ_STATUS";
+    public static final String SEQUENCE_NAME = "PJ_PRJ_STATUS_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

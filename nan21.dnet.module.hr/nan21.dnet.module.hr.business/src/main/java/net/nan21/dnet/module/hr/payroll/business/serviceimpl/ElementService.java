@@ -9,6 +9,8 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.hr.payroll.business.service.IElementService;
+import net.nan21.dnet.module.hr.payroll.domain.entity.ElementFormula;
+import net.nan21.dnet.module.hr.payroll.domain.entity.ElementInput;
 import net.nan21.dnet.module.hr.payroll.domain.entity.ElementType;
 
 import javax.persistence.EntityManager;
@@ -54,6 +56,32 @@ public class ElementService extends AbstractEntityService<Element> implements
                         Element.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTypeId", typeId).getResultList();
+    }
+
+    public List<Element> findByVariables(ElementInput variables) {
+        return this.findByVariablesId(variables.getId());
+    }
+
+    public List<Element> findByVariablesId(Long variablesId) {
+        return (List<Element>) this.em
+                .createQuery(
+                        "select distinct e from Element e , IN (e.variables) c where e.clientId = :pClientId and c.id = :pVariablesId",
+                        Element.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pVariablesId", variablesId).getResultList();
+    }
+
+    public List<Element> findByFormulas(ElementFormula formulas) {
+        return this.findByFormulasId(formulas.getId());
+    }
+
+    public List<Element> findByFormulasId(Long formulasId) {
+        return (List<Element>) this.em
+                .createQuery(
+                        "select distinct e from Element e , IN (e.formulas) c where e.clientId = :pClientId and c.id = :pFormulasId",
+                        Element.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pFormulasId", formulasId).getResultList();
     }
 
 }

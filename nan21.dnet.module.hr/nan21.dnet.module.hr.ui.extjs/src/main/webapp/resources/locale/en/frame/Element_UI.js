@@ -1,14 +1,13 @@
 
 Ext.define("net.nan21.dnet.module.hr.payroll.frame.Element_UI$Trl", {  	  	
-	canvasElems__ttl : "Elements",
-	canvasCateg__ttl : "Element categories",
-	canvasType__ttl : "Element types",
+	inputEditList__ttl : "Input values",
+	formulaPanel__ttl : "Formula",
 	
-	tlbExprList__ttl : "Elements > List",
-	tlbExprEdit__ttl : "Element",
-	tlbEcategEditList__ttl : "Element categories",
-	tlbEtypeEditList__ttl : "Element types",
+	tlbElemList__ttl : "Elements",
+	tlbElemmEdit__ttl : "Element",
+	tlbInputEditList__ttl : "Input values",
+	tlbFormulaList__ttl : "Formula",
 	
 	
-	title: "Elements"
+	title: "Elements setup"
 });

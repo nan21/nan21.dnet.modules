@@ -14,14 +14,6 @@ import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
 public class EmployeeDsFilter extends AbstractDsFilter implements IModelWithId,
         IModelWithClientId {
 
-    private String name;
-
-    private String code;
-
-    private Boolean active;
-
-    private String notes;
-
     private Long id;
 
     private String uuid;
@@ -43,6 +35,8 @@ public class EmployeeDsFilter extends AbstractDsFilter implements IModelWithId,
     private String modifiedBy;
 
     private String entityFQN;
+
+    private String code;
 
     private Long employerId;
 
@@ -157,38 +151,6 @@ public class EmployeeDsFilter extends AbstractDsFilter implements IModelWithId,
 
     private String payroll;
 
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Boolean getActive() {
-        return this.active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public String getNotes() {
-        return this.notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
     public Long getId() {
         return this.id;
     }
@@ -284,6 +246,14 @@ public class EmployeeDsFilter extends AbstractDsFilter implements IModelWithId,
 
     public void setEntityFQN(String entityFQN) {
         this.entityFQN = entityFQN;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Long getEmployerId() {

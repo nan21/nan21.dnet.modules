@@ -1,0 +1,14 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_HR_QUALIF_SKILL1" baseTableName="HR_QUALIF_SKILL" baseColumnNames="QUALIFICATION_ID"  referencedTableName="HR_QUALIFICATION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_HR_QUALIF_SKILL2" baseTableName="HR_QUALIF_SKILL" baseColumnNames="SKILL_ID"  referencedTableName="HR_SKILL"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_HR_QUALIF_SKILL3" baseTableName="HR_QUALIF_SKILL" baseColumnNames="REQUIREDLEVEL_ID"  referencedTableName="HR_RATING_LEVEL"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

@@ -9,6 +9,7 @@ import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContact;
 import net.nan21.dnet.module.hr.employee.domain.entity.EmploymentType;
 import net.nan21.dnet.module.hr.grade.domain.entity.Grade;
 import net.nan21.dnet.module.hr.job.domain.entity.Job;
@@ -52,5 +53,9 @@ public interface IEmployeeService extends IEntityService<Employee> {
     public List<Employee> findByPayroll(Payroll payroll);
 
     public List<Employee> findByPayrollId(Long payrollId);
+
+    public List<Employee> findByContacts(EmployeeContact contacts);
+
+    public List<Employee> findByContactsId(Long contactsId);
 
 }

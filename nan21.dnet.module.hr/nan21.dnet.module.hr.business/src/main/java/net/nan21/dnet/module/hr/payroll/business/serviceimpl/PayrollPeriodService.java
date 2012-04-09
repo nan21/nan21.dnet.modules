@@ -13,6 +13,7 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.Payroll;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod;
+import net.nan21.dnet.module.hr._businessdelegates.payroll.PayrollPeriodProcessorBD;
 
 public class PayrollPeriodService extends AbstractEntityService<PayrollPeriod>
         implements IPayrollPeriodService {
@@ -49,6 +50,15 @@ public class PayrollPeriodService extends AbstractEntityService<PayrollPeriod>
                         PayrollPeriod.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPayrollId", payrollId).getResultList();
+    }
+
+    public void doProcess(PayrollPeriod period) throws Exception {
+        this.getBusinessDelegate(PayrollPeriodProcessorBD.class)
+                .process(period);
+    }
+
+    public void doClear(PayrollPeriod period) throws Exception {
+        this.getBusinessDelegate(PayrollPeriodProcessorBD.class).clear(period);
     }
 
 }

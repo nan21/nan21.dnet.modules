@@ -1,0 +1,17 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE_TASK1" baseTableName="PJ_ISSUE_TASK" baseColumnNames="ISSUE_ID"  referencedTableName="PJ_ISSUE"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE_TASK2" baseTableName="PJ_ISSUE_TASK" baseColumnNames="TYPE_ID"  referencedTableName="PJ_ISSUETASK_TYPE"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE_TASK3" baseTableName="PJ_ISSUE_TASK" baseColumnNames="STATUS_ID"  referencedTableName="PJ_ISSUETASK_STATUS"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE_TASK4" baseTableName="PJ_ISSUE_TASK" baseColumnNames="ASSIGNEE_ID"  referencedTableName="PJ_PRJ_MEMBER"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

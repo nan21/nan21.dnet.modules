@@ -18,7 +18,8 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.ElementDs" ,{
 		{name:"entityFQN", type:"string"},
 		{name:"typeId", type:"int", useNull:true},
 		{name:"type", type:"string"},
-		{name:"dataType", type:"string"}
+		{name:"dataType", type:"string"},
+		{name:"sequenceNo", type:"int", useNull:true}
 	],
 	validations: [  
 		{field: "code", type: 'presence'}, 
@@ -49,7 +50,10 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.ElementDsFilter" ,{
 		{name:"typeId_From",type:"int", useNull:true},
 		{name:"typeId_To",type:"int", useNull:true},
 		{name:"type", type:"string"},
-		{name:"dataType", type:"string"}
+		{name:"dataType", type:"string"},
+		{name:"sequenceNo", type:"int", useNull:true},
+		{name:"sequenceNo_From",type:"int", useNull:true},
+		{name:"sequenceNo_To",type:"int", useNull:true}
 	] 
 });
 	

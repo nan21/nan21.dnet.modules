@@ -47,8 +47,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class QualificationSkill implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "HR_QUALIFICATION_SKILL";
-    public static final String SEQUENCE_NAME = "HR_QUALIFICATION_SKILL_SEQ";
+    public static final String TABLE_NAME = "HR_QUALIF_SKILL";
+    public static final String SEQUENCE_NAME = "HR_QUALIF_SKILL_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

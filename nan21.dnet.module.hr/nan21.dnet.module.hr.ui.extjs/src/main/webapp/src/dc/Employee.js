@@ -28,7 +28,10 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$Filter", {
 		.addTextField({ name:"lastName", dataIndex:"lastName",anchor:"-20",maxLength:255  })
 		.addCombo({ name:"gender", xtype:"combo", dataIndex:"gender",anchor:"-20",store:[ "male", "female"]  })
 		.addCombo({ name:"maritalStatus", xtype:"combo", dataIndex:"maritalStatus",anchor:"-20",store:[ "single", "married", "divorced", "widow", "other"]  })
-		.addLov({ name:"employerCode", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"employerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "employerId"} ]  })
+		.addLov({ name:"employerCode", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"employerCode",anchor:"-20",allowBlank:false,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "employerId"} ]  })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.employee.lovs.EmploymentTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addLov({ name:"jobCode", xtype:"net.nan21.dnet.module.hr.job.lovs.Jobs", dataIndex:"jobCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "jobId"} ,{lovField:"name", dsField: "jobName"} ]  })
+		.addLov({ name:"payroll", xtype:"net.nan21.dnet.module.hr.payroll.lovs.Payrolls", dataIndex:"payroll",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "payrollId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:220}) 
 		.addPanel({ name:"col2", layout:"form", width:220}) 
@@ -39,8 +42,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$Filter", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["firstName","lastName"])
-		.addChildrenTo("col2",["employerCode","code"])
+		.addChildrenTo("col1",["employerCode","firstName","lastName","code"])
+		.addChildrenTo("col2",["type","jobCode","payroll"])
 		.addChildrenTo("col3",["gender","maritalStatus"])
     	.addAuditFilter({})	
 	}
@@ -135,6 +138,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditOther", {
 		.addDisplayFieldText({ name:"jobName", dataIndex:"jobName"  })
 		.addLov({ name:"gradeCode", xtype:"net.nan21.dnet.module.hr.grade.lovs.Grades", dataIndex:"gradeCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "gradeId"} ]  })
 		.addLov({ name:"organizationCode", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"organizationCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
+		.addNumberField({ name:"baseSalary", dataIndex:"baseSalary",anchor:"-20"  , style: "text-align:right;" })
+		.addLov({ name:"payroll", xtype:"net.nan21.dnet.module.hr.payroll.lovs.Payrolls", dataIndex:"payroll",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "payrollId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" ,width:250, defaults:{
@@ -148,7 +153,7 @@ labelAlign:"right",labelWidth:110}})
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
 		.addChildrenTo("col1",["citizenshipCode","passportNo","ssnNo","sinNo","officeEmail","currentHireDate","firstHireDate"])
-		.addChildrenTo("col2",["assignToPosition","positionCode","jobCode","organizationCode","gradeCode"])
+		.addChildrenTo("col2",["assignToPosition","positionCode","jobCode","organizationCode","gradeCode","payroll","baseSalary"])
 		.addChildrenTo("col3",["type","positionName","jobName"])
 ;
 	}	

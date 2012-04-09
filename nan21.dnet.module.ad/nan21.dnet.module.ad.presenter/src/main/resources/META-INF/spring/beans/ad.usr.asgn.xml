@@ -15,8 +15,8 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.UserRolesAsgn" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.asgn.UserRolesAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />		 
-	  	<property name="leftTable" value="AD_ROLES" />
-	  	<property name="rightTable" value="AD_USERS_ROLES" />
+	  	<property name="leftTable" value="AD_ROLE" />
+	  	<property name="rightTable" value="AD_USER_ROLES" />
 	  	<property name="rightItemIdField" value="ROLES_ID" />
 	  	<property name="rightObjectIdField" value="USERS_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
@@ -35,8 +35,8 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.RolesOfUserAsgn" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.asgn.RolesOfUserAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.User" />		 
-	  	<property name="leftTable" value="AD_USERS" />
-	  	<property name="rightTable" value="AD_USERS_ROLES" />
+	  	<property name="leftTable" value="AD_USER" />
+	  	<property name="rightTable" value="AD_USER_ROLES" />
 	  	<property name="rightItemIdField" value="USERS_ID" />
 	  	<property name="rightObjectIdField" value="ROLES_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
@@ -56,7 +56,7 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.asgn.UserUserGroupsAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserGroup" />		 
 	  	<property name="leftTable" value="AD_USER_GROUP" />
-	  	<property name="rightTable" value="AD_USRGROUP_USER" />
+	  	<property name="rightTable" value="AD_USER_USRGROUPS" />
 	  	<property name="rightItemIdField" value="GROUPS_ID" />
 	  	<property name="rightObjectIdField" value="USERS_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
@@ -75,8 +75,8 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.UserGroupUsersAsgn" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.asgn.UserGroupUsersAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.User" />		 
-	  	<property name="leftTable" value="AD_USERS" />
-	  	<property name="rightTable" value="AD_USRGROUP_USER" />
+	  	<property name="leftTable" value="AD_USER" />
+	  	<property name="rightTable" value="AD_USER_USRGROUPS" />
 	  	<property name="rightItemIdField" value="USERS_ID" />
 	  	<property name="rightObjectIdField" value="GROUPS_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
@@ -95,8 +95,8 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.AccessControlRolesAsgn" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.asgn.AccessControlRolesAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />		 
-	  	<property name="leftTable" value="AD_ROLES" />
-	  	<property name="rightTable" value="AD_ROLES_ACCESSCTRL" />
+	  	<property name="leftTable" value="AD_ROLE" />
+	  	<property name="rightTable" value="AD_ROLE_ACCESSCTRLS" />
 	  	<property name="rightItemIdField" value="ROLES_ID" />
 	  	<property name="rightObjectIdField" value="ACCESSCONTROLS_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
@@ -116,7 +116,7 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.asgn.RolesOfAccessControlAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AccessControl" />		 
 	  	<property name="leftTable" value="AD_ACCESS_CONTROL" />
-	  	<property name="rightTable" value="AD_ROLES_ACCESSCTRL" />
+	  	<property name="rightTable" value="AD_ROLE_ACCESSCTRLS" />
 	  	<property name="rightItemIdField" value="ACCESSCONTROLS_ID" />
 	  	<property name="rightObjectIdField" value="ROLES_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
@@ -135,8 +135,8 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.MenuItemRolesAsgn" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.asgn.MenuItemRolesAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />		 
-	  	<property name="leftTable" value="AD_ROLES" />
-	  	<property name="rightTable" value="AD_ROLES_MENUITEM" />
+	  	<property name="leftTable" value="AD_ROLE" />
+	  	<property name="rightTable" value="AD_ROLE_MENUITEMS" />
 	  	<property name="rightItemIdField" value="ROLES_ID" />
 	  	<property name="rightObjectIdField" value="MENUITEMS_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
@@ -156,7 +156,7 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.asgn.RoleMenuItemsAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.MenuItem" />		 
 	  	<property name="leftTable" value="AD_MENU_ITEM" />
-	  	<property name="rightTable" value="AD_ROLES_MENUITEM" />
+	  	<property name="rightTable" value="AD_ROLE_MENUITEMS" />
 	  	<property name="rightItemIdField" value="MENUITEMS_ID" />
 	  	<property name="rightObjectIdField" value="ROLES_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
@@ -175,8 +175,8 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.asgn.MenuRolesAsgn" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.asgn.MenuRolesAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />		 
-	  	<property name="leftTable" value="AD_ROLES" />
-	  	<property name="rightTable" value="AD_ROLES_MENU" />
+	  	<property name="leftTable" value="AD_ROLE" />
+	  	<property name="rightTable" value="AD_ROLE_MENUS" />
 	  	<property name="rightItemIdField" value="ROLES_ID" />
 	  	<property name="rightObjectIdField" value="MENUS_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  
@@ -196,7 +196,7 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.asgn.RoleMenusAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Menu" />		 
 	  	<property name="leftTable" value="AD_MENU" />
-	  	<property name="rightTable" value="AD_ROLES_MENU" />
+	  	<property name="rightTable" value="AD_ROLE_MENUS" />
 	  	<property name="rightItemIdField" value="MENUS_ID" />
 	  	<property name="rightObjectIdField" value="ROLES_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business" /> 	  	  

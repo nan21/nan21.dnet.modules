@@ -80,6 +80,16 @@ public class PayrollPeriod implements Serializable, IModelWithId,
     @NotNull
     private Date endDate;
 
+    /** Processed. */
+    @Column(name = "PROCESSED", nullable = false)
+    @NotNull
+    private Boolean processed;
+
+    /** Closed. */
+    @Column(name = "CLOSED", nullable = false)
+    @NotNull
+    private Boolean closed;
+
     /**
      * Name of entity.
      */
@@ -179,6 +189,22 @@ public class PayrollPeriod implements Serializable, IModelWithId,
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Boolean getProcessed() {
+        return this.processed;
+    }
+
+    public void setProcessed(Boolean processed) {
+        this.processed = processed;
+    }
+
+    public Boolean getClosed() {
+        return this.closed;
+    }
+
+    public void setClosed(Boolean closed) {
+        this.closed = closed;
     }
 
     public String getName() {
@@ -299,6 +325,12 @@ public class PayrollPeriod implements Serializable, IModelWithId,
         if (this.uuid == null || this.uuid.equals("")) {
             event.updateAttributeWithObject("uuid", UUID.randomUUID()
                     .toString().toUpperCase());
+        }
+        if (this.processed == null) {
+            event.updateAttributeWithObject("processed", false);
+        }
+        if (this.closed == null) {
+            event.updateAttributeWithObject("closed", false);
         }
         if (this.active == null) {
             event.updateAttributeWithObject("active", false);

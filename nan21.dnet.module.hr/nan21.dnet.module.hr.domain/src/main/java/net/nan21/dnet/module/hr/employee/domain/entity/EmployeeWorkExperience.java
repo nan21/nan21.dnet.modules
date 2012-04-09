@@ -45,8 +45,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class EmployeeWorkExperience implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "HR_EMPLOYEE_WORK_EXP";
-    public static final String SEQUENCE_NAME = "HR_EMPLOYEE_WORK_EXP_SEQ";
+    public static final String TABLE_NAME = "HR_EMPL_WORK_EXP";
+    public static final String SEQUENCE_NAME = "HR_EMPL_WORK_EXP_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -10,7 +10,7 @@ import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem;
 
 public interface IClassificationSystemService extends
-        IEntityService<ClassificationSystem> { 
+        IEntityService<ClassificationSystem> {
 
     public ClassificationSystem findByCode(String code);
 

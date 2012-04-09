@@ -6,8 +6,11 @@
 package net.nan21.dnet.module.hr.payroll.domain.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.UUID;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,6 +20,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -30,6 +34,7 @@ import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.hr.payroll.domain.entity.ElementType;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -80,6 +85,11 @@ public class Element implements Serializable, IModelWithId, IModelWithClientId {
     @Column(name = "DATATYPE", nullable = false, length = 32)
     @NotBlank
     private String dataType;
+
+    /** SequenceNo. */
+    @Column(name = "SEQUENCENO", nullable = false)
+    @NotNull
+    private Integer sequenceNo;
 
     /**
      * Name of entity.
@@ -171,6 +181,14 @@ public class Element implements Serializable, IModelWithId, IModelWithClientId {
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private ElementType type;
 
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = ElementInput.class, mappedBy = "element", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<ElementInput> variables;
+
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = ElementFormula.class, mappedBy = "element", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<ElementFormula> formulas;
+
     /* ============== getters - setters ================== */
 
     public String getDataType() {
@@ -179,6 +197,14 @@ public class Element implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setDataType(String dataType) {
         this.dataType = dataType;
+    }
+
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
     }
 
     public String getName() {
@@ -292,6 +318,38 @@ public class Element implements Serializable, IModelWithId, IModelWithClientId {
 
     public void setType(ElementType type) {
         this.type = type;
+    }
+
+    public Collection<ElementInput> getVariables() {
+        return this.variables;
+    }
+
+    public void setVariables(Collection<ElementInput> variables) {
+        this.variables = variables;
+    }
+
+    public void addToVariables(ElementInput e) {
+        if (this.variables == null) {
+            this.variables = new ArrayList<ElementInput>();
+        }
+        e.setElement(this);
+        this.variables.add(e);
+    }
+
+    public Collection<ElementFormula> getFormulas() {
+        return this.formulas;
+    }
+
+    public void setFormulas(Collection<ElementFormula> formulas) {
+        this.formulas = formulas;
+    }
+
+    public void addToFormulas(ElementFormula e) {
+        if (this.formulas == null) {
+            this.formulas = new ArrayList<ElementFormula>();
+        }
+        e.setElement(this);
+        this.formulas.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

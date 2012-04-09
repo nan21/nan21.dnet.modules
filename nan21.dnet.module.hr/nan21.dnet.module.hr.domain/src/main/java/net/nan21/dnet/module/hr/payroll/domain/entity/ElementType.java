@@ -48,8 +48,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ElementType implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "HR_ELEMENT_TYPE";
-    public static final String SEQUENCE_NAME = "HR_ELEMENT_TYPE_SEQ";
+    public static final String TABLE_NAME = "HR_ELEM_TYPE";
+    public static final String SEQUENCE_NAME = "HR_ELEM_TYPE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

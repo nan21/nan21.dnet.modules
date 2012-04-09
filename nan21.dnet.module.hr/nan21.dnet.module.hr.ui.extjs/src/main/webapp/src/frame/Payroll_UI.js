@@ -14,9 +14,21 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Payroll_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
+		.addButton({name:"btnOpenPeriod",text:"Open", tooltip:"Open payroll period",disabled:true
+			,handler: this.onBtnOpenPeriod,scope:this,stateManager:{name:"selected_one_clean", dc:"period" , and: function(dc) {return (dc.record && !dc.record.get("active") && !dc.record.get("closed")  );}}	})	
+							 	
+		.addButton({name:"btnClosePeriod",text:"Close", tooltip:"Close payroll period",disabled:true
+			,handler: this.onBtnClosePeriod,scope:this,stateManager:{name:"selected_one_clean", dc:"period" , and: function(dc) {return (dc.record  && dc.record.get("processed")  && ! dc.record.get("closed")  );}}	})	
+							 	
+		.addButton({name:"btnProcessPeriod",text:"Process", tooltip:"Process payroll period",iconCls:"icon-gears",disabled:true
+			,handler: this.onBtnProcessPeriod,scope:this,stateManager:{name:"selected_one_clean", dc:"period" , and: function(dc) {return (dc.record && dc.record.get("active") && !dc.record.get("processed")  );}}	})	
+							 	
+		.addButton({name:"btnClearPeriod",text:"Clear", tooltip:"Delete processed values",iconCls:"icon-action-rollback",disabled:true
+			,handler: this.onBtnClearPeriod,scope:this,stateManager:{name:"selected_one_clean", dc:"period" , and: function(dc) {return (dc.record && dc.record.get("active") && dc.record.get("processed")  );}}	})	
+							 	
 		.addDcFilterFormView("payroll",{ name:"payrollFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter",height:120})	 
 		.addDcGridView("payroll",{ name:"payrollList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$List"})	 
-		.addDcFormView("payroll",{ name:"payrollEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit",height:120})	 
+		.addDcFormView("payroll",{ name:"payrollEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit",height:150,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnOpenPeriod") ,this._elems_.get("btnProcessPeriod") ,this._elems_.get("btnClearPeriod") ,this._elems_.get("btnClosePeriod") ]}]})	 
 		.addDcEditGridView("period",{ name:"periodCtxEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
@@ -41,4 +53,40 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Payroll_UI", {
 			.beginToolbar("tlbPeriodCtxEditList", {dc:"period"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Periods"}).end(); 	
 	}
 
+
+	,onBtnOpenPeriod: function() {
+		var s={modal:true, callbacks:{} };
+		try{ 
+			this._getDc_("period").doService("open", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
+	}					 	
+
+	,onBtnClosePeriod: function() {
+		var s={modal:true, callbacks:{} };
+		try{ 
+			this._getDc_("period").doService("close", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
+	}					 	
+
+	,onBtnProcessPeriod: function() {
+		var s={modal:true, callbacks:{} };
+		try{ 
+			this._getDc_("period").doService("process", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
+	}					 	
+
+	,onBtnClearPeriod: function() {
+		var s={modal:true, callbacks:{} };
+		try{ 
+			this._getDc_("period").doService("clear", s); 
+		}catch(e){
+			dnet.base.DcExceptions.showMessage(e);
+		}
+	}					 	
 });  

@@ -51,8 +51,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class DsMethodAccessControl implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "AD_ACCESS_CONTROL_DSMTHD";
-    public static final String SEQUENCE_NAME = "AD_ACCESS_CONTROL_DSMTHD_SEQ";
+    public static final String TABLE_NAME = "AD_ACCESSCTRL_DSMTHD";
+    public static final String SEQUENCE_NAME = "AD_ACCESSCTRL_DSMTHD_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

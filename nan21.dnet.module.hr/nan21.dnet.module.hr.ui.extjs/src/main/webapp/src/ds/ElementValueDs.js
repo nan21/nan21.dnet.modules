@@ -14,11 +14,16 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.ElementValueDs" ,{
 		{name:"entityFQN", type:"string"},
 		{name:"elementId", type:"int", useNull:true},
 		{name:"element", type:"string"},
+		{name:"elementName", type:"string"},
+		{name:"sequenceNo", type:"int", useNull:true},
+		{name:"dataType", type:"string"},
 		{name:"employeeId", type:"int", useNull:true},
 		{name:"employeeName", type:"string"},
 		{name:"value", type:"string"},
 		{name:"periodId", type:"int", useNull:true},
-		{name:"period", type:"string"}
+		{name:"period", type:"string"},
+		{name:"periodStart", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"periodEnd", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	]
 });
 
@@ -40,6 +45,11 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.ElementValueDsFilter" ,{
 		{name:"elementId_From",type:"int", useNull:true},
 		{name:"elementId_To",type:"int", useNull:true},
 		{name:"element", type:"string"},
+		{name:"elementName", type:"string"},
+		{name:"sequenceNo", type:"int", useNull:true},
+		{name:"sequenceNo_From",type:"int", useNull:true},
+		{name:"sequenceNo_To",type:"int", useNull:true},
+		{name:"dataType", type:"string"},
 		{name:"employeeId", type:"int", useNull:true},
 		{name:"employeeId_From",type:"int", useNull:true},
 		{name:"employeeId_To",type:"int", useNull:true},
@@ -48,7 +58,13 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.ElementValueDsFilter" ,{
 		{name:"periodId", type:"int", useNull:true},
 		{name:"periodId_From",type:"int", useNull:true},
 		{name:"periodId_To",type:"int", useNull:true},
-		{name:"period", type:"string"}
+		{name:"period", type:"string"},
+		{name:"periodStart", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"periodStart_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"periodStart_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"periodEnd", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"periodEnd_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"periodEnd_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	] 
 });
 	

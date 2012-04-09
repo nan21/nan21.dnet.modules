@@ -58,8 +58,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = Issue.NQ_FIND_BY_CODE, query = "SELECT e FROM Issue e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Issue implements Serializable, IModelWithId, IModelWithClientId {
 
-    public static final String TABLE_NAME = "PJ_ITEM";
-    public static final String SEQUENCE_NAME = "PJ_ITEM_SEQ";
+    public static final String TABLE_NAME = "PJ_ISSUE";
+    public static final String SEQUENCE_NAME = "PJ_ISSUE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

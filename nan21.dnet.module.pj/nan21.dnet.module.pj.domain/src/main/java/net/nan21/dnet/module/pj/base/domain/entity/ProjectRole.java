@@ -46,8 +46,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ProjectRole implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "PJ_PROJECT_ROLE";
-    public static final String SEQUENCE_NAME = "PJ_PROJECT_ROLE_SEQ";
+    public static final String TABLE_NAME = "PJ_PRJ_ROLE";
+    public static final String SEQUENCE_NAME = "PJ_PRJ_ROLE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

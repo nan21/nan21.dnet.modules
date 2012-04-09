@@ -46,8 +46,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class PositionGrade implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "HR_POSITION_GRADE";
-    public static final String SEQUENCE_NAME = "HR_POSITION_GRADE_SEQ";
+    public static final String TABLE_NAME = "HR_POSTN_GRADE";
+    public static final String SEQUENCE_NAME = "HR_POSTN_GRADE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

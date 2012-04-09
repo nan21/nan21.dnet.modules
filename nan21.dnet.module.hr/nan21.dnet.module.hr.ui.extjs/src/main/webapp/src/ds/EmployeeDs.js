@@ -3,10 +3,6 @@
 Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"name", type:"string"},
-		{name:"code", type:"string"},
-		{name:"active", type:"boolean"},
-		{name:"notes", type:"string"},
 		{name:"id", type:"int", useNull:true},
 		{name:"uuid", type:"string"},
 		{name:"clientId", type:"int", useNull:true},
@@ -16,6 +12,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs" ,{
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
 		{name:"employerId", type:"int", useNull:true},
 		{name:"employerCode", type:"string"},
 		{name:"businessObject", type:"string"},
@@ -63,10 +60,6 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeDs" ,{
 Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
-		{name:"name", type:"string"},
-		{name:"code", type:"string"},
-		{name:"active", type:"boolean", useNull:true},
-		{name:"notes", type:"string"},
 		{name:"id", type:"int", useNull:true},
 		{name:"uuid", type:"string"},
 		{name:"createdAt", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
@@ -78,6 +71,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeDsFilter" ,{
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
 		{name:"employerId", type:"int", useNull:true},
 		{name:"employerId_From",type:"int", useNull:true},
 		{name:"employerId_To",type:"int", useNull:true},

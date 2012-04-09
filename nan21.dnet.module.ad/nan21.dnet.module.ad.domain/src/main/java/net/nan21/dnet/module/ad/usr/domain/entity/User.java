@@ -51,8 +51,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = User.NQ_FIND_BY_CODE, query = "SELECT e FROM User e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class User implements Serializable, IModelWithId, IModelWithClientId {
 
-    public static final String TABLE_NAME = "AD_USERS";
-    public static final String SEQUENCE_NAME = "AD_USERS_SEQ";
+    public static final String TABLE_NAME = "AD_USER";
+    public static final String SEQUENCE_NAME = "AD_USER_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -183,11 +183,11 @@ public class User implements Serializable, IModelWithId, IModelWithClientId {
     private UserType accountType;
 
     @ManyToMany
-    @JoinTable(name = "AD_USERS_ROLES")
+    @JoinTable(name = "AD_USER_ROLES")
     private Collection<Role> roles;
 
     @ManyToMany
-    @JoinTable(name = "AD_USRGROUP_USER")
+    @JoinTable(name = "AD_USER_USRGROUPS")
     private Collection<UserGroup> groups;
 
     /* ============== getters - setters ================== */

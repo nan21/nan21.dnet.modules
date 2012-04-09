@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.hr.payroll.ds.model;
 
+import java.util.Date;
 import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
@@ -14,15 +15,18 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = PayrollPeriod.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = PayrollPeriodLovDs.fNAME) })
+@Ds(entity = PayrollPeriod.class, jpqlWhere = "", sort = { @SortField(field = PayrollPeriodLovDs.fSTARTDATE, desc = true) })
 public class PayrollPeriodLovDs extends AbstractDsModel<PayrollPeriod>
         implements IModelWithId, IModelWithClientId {
 
     public static final String fID = "id";
     public static final String fCLIENTID = "clientId";
     public static final String fNAME = "name";
-    public static final String fACTIVE = "active";
     public static final String fPAYROLLID = "payrollId";
+    public static final String fACTIVE = "active";
+    public static final String fPROCESSED = "processed";
+    public static final String fCLOSED = "closed";
+    public static final String fSTARTDATE = "startDate";
 
     @DsField()
     private Long id;
@@ -33,11 +37,20 @@ public class PayrollPeriodLovDs extends AbstractDsModel<PayrollPeriod>
     @DsField()
     private String name;
 
+    @DsField(join = "left", path = "payroll.id")
+    private Long payrollId;
+
     @DsField()
     private Boolean active;
 
-    @DsField(join = "left", path = "payroll.id")
-    private Long payrollId;
+    @DsField()
+    private Boolean processed;
+
+    @DsField()
+    private Boolean closed;
+
+    @DsField()
+    private Date startDate;
 
     public PayrollPeriodLovDs() {
         super();
@@ -72,6 +85,14 @@ public class PayrollPeriodLovDs extends AbstractDsModel<PayrollPeriod>
         this.name = name;
     }
 
+    public Long getPayrollId() {
+        return this.payrollId;
+    }
+
+    public void setPayrollId(Long payrollId) {
+        this.payrollId = payrollId;
+    }
+
     public Boolean getActive() {
         return this.active;
     }
@@ -80,12 +101,28 @@ public class PayrollPeriodLovDs extends AbstractDsModel<PayrollPeriod>
         this.active = active;
     }
 
-    public Long getPayrollId() {
-        return this.payrollId;
+    public Boolean getProcessed() {
+        return this.processed;
     }
 
-    public void setPayrollId(Long payrollId) {
-        this.payrollId = payrollId;
+    public void setProcessed(Boolean processed) {
+        this.processed = processed;
+    }
+
+    public Boolean getClosed() {
+        return this.closed;
+    }
+
+    public void setClosed(Boolean closed) {
+        this.closed = closed;
+    }
+
+    public Date getStartDate() {
+        return this.startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
 }

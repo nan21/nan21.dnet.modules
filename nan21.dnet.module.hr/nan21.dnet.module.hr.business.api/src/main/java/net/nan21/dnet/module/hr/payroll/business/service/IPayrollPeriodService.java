@@ -19,4 +19,8 @@ public interface IPayrollPeriodService extends IEntityService<PayrollPeriod> {
 
     public List<PayrollPeriod> findByPayrollId(Long payrollId);
 
+    public void doProcess(PayrollPeriod period) throws Exception;
+
+    public void doClear(PayrollPeriod period) throws Exception;
+
 }

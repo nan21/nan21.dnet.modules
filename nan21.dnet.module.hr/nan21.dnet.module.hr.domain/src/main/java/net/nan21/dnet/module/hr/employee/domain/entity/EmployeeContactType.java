@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class EmployeeContactType implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "HR_EMPLOYEE_CONTACT_TYPE";
-    public static final String SEQUENCE_NAME = "HR_EMPLOYEE_CONTACT_TYPE_SEQ";
+    public static final String TABLE_NAME = "HR_EMPL_CONTACT_TYPE";
+    public static final String SEQUENCE_NAME = "HR_EMPL_CONTACT_TYPE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

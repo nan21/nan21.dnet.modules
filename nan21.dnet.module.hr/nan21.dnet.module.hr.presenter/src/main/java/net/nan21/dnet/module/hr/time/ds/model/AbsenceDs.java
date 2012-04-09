@@ -72,7 +72,7 @@ public class AbsenceDs extends AbstractDsModel<Absence> implements
     @DsField(join = "left", path = "employee.code")
     private String employeeCode;
 
-    @DsField(join = "left", path = "employee.name")
+    @DsField(join = "left", orderBy = "lastName,firstName", fetch = false, path = "employee.name")
     private String employee;
 
     @DsField(join = "left", path = "type.id")

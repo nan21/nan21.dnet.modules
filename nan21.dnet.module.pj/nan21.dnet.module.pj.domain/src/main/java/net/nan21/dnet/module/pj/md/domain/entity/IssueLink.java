@@ -46,8 +46,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class IssueLink implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "PJ_ITEM_LINK";
-    public static final String SEQUENCE_NAME = "PJ_ITEM_LINK_SEQ";
+    public static final String TABLE_NAME = "PJ_ISSUE_LINK";
+    public static final String SEQUENCE_NAME = "PJ_ISSUE_LINK_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

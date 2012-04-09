@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="HR_ABSN_REQUEST">
+			<column name="CLIENTID" type="number(3)">
+				<constraints nullable="false" /></column>	 
+			<column name="COMMENTS" type="varchar2(400)">
+				<constraints  /></column>	 
+			<column name="CREATEDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDBY" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="CURRENTOWNER" type="varchar2(32)">
+				<constraints  /></column>	 
+			<column name="ENDDATE" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="HOURSPERDAY" type="number(4)">
+				<constraints nullable="false" /></column>	 
+			<column name="ID" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDBY" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="PREVIOUSOWNER" type="varchar2(32)">
+				<constraints  /></column>	 
+			<column name="STARTDATE" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="STATUS" type="varchar2(16)">
+				<constraints nullable="false" /></column>	 
+			<column name="TOTALHOURS" type="number(4)">
+				<constraints  /></column>	 
+			<column name="UUID" type="varchar2(36)">
+				<constraints  /></column>	 
+			<column name="VERSION" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="EMPLOYEE_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="REASON_ID" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="TYPE_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="HR_ABSN_REQUEST" constraintName="PK_ABSN_REQUEST" columnNames="ID" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="HR_ABSN_REQUEST_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

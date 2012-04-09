@@ -35,16 +35,14 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.Absence$Filter", {
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:250}) 
 		.addPanel({ name:"col2", layout:"form",width:210}) 
-		.addPanel({ name:"col3", layout:"form", width:250}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col3","col2"])
+		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["employee","type","reason"])
-		.addChildrenTo("col2",["posted"])
-		.addChildrenTo("col3",["from","to"])
+		.addChildrenTo("col2",["from","to","posted"])
     	.addAuditFilter({})	
 	}
 }); 

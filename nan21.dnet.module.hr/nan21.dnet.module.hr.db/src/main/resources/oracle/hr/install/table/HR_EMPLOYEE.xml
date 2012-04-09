@@ -4,8 +4,6 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <changeSet author="amathe" id="TBL">
         <createTable tableName="HR_EMPLOYEE">
-			<column name="ACTIVE" type="number(1)">
-				<constraints nullable="false" /></column>	 
 			<column name="ASSIGNTOPOSITION" type="number(1)">
 				<constraints nullable="false" /></column>	 
 			<column name="BASESALARY" type="number(12,2)">
@@ -42,15 +40,11 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="NAME" type="varchar2(255)">
-				<constraints nullable="false" /></column>	 
 			<column name="NAMEPREFIX" type="varchar2(255)">
 				<constraints  /></column>	 
 			<column name="NAMESUFFIX" type="varchar2(255)">
 				<constraints  /></column>	 
 			<column name="NICKNAME" type="varchar2(255)">
-				<constraints  /></column>	 
-			<column name="NOTES" type="varchar2(4000)">
 				<constraints  /></column>	 
 			<column name="OFFICEEMAIL" type="varchar2(128)">
 				<constraints  /></column>	 

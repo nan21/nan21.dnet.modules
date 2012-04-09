@@ -28,7 +28,9 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod$CtxEditList", {
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addDateColumn({ name:"startDate", dataIndex:"startDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addDateColumn({ name:"endDate", dataIndex:"endDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
-		.addBooleanColumn({ name:"active", dataIndex:"active"})
+		.addBooleanColumn({ name:"active", dataIndex:"active",_noEdit_:true})
+		.addBooleanColumn({ name:"processed", dataIndex:"processed",_noEdit_:true})
+		.addBooleanColumn({ name:"closed", dataIndex:"closed",_noEdit_:true})
 	  	.addDefaults()
 	  ;  		   
 	}  

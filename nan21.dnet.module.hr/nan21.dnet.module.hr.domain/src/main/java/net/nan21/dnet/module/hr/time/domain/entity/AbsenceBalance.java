@@ -45,8 +45,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class AbsenceBalance implements Serializable, IModelWithId,
         IModelWithClientId {
 
-    public static final String TABLE_NAME = "HR_ABSENCE_BALANCE";
-    public static final String SEQUENCE_NAME = "HR_ABSENCE_BALANCE_SEQ";
+    public static final String TABLE_NAME = "HR_ABSN_BALANCE";
+    public static final String SEQUENCE_NAME = "HR_ABSN_BALANCE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -11,6 +11,7 @@ import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.hr.employee.business.service.IEmployeeService;
+import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContact;
 import net.nan21.dnet.module.hr.employee.domain.entity.EmploymentType;
 import net.nan21.dnet.module.hr.grade.domain.entity.Grade;
 import net.nan21.dnet.module.hr.job.domain.entity.Job;
@@ -146,6 +147,19 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
                         Employee.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPayrollId", payrollId).getResultList();
+    }
+
+    public List<Employee> findByContacts(EmployeeContact contacts) {
+        return this.findByContactsId(contacts.getId());
+    }
+
+    public List<Employee> findByContactsId(Long contactsId) {
+        return (List<Employee>) this.em
+                .createQuery(
+                        "select distinct e from Employee e , IN (e.contacts) c where e.clientId = :pClientId and c.id = :pContactsId",
+                        Employee.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pContactsId", contactsId).getResultList();
     }
 
 }

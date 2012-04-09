@@ -5,11 +5,11 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_PJ_ITEM_PRJVERSIONS1" 
 				baseTableName="PJ_ITEM_PRJVERSIONS" baseColumnNames="AFFECTEDVERSIONS_ID"  
-				referencedTableName="PJ_PROJECT_VERSION"  referencedColumnNames="ID" />
+				referencedTableName="PJ_PRJ_VERSION"  referencedColumnNames="ID" />
 	 </changeSet>
 	 <changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_PJ_ITEM_PRJVERSIONS2" 
 				baseTableName="PJ_ITEM_PRJVERSIONS" baseColumnNames="AFFECTINGISSUES_ID"  
-				referencedTableName="PJ_ITEM"  referencedColumnNames="ID" />
+				referencedTableName="PJ_ISSUE"  referencedColumnNames="ID" />
 	 </changeSet>
 </databaseChangeLog>

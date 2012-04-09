@@ -6,6 +6,8 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDs$Trl", {
 	payrollName__lbl : "Payroll Name",
 	startDate__lbl : "Start Date",
 	endDate__lbl : "End Date",
+	processed__lbl : "Processed",
+	closed__lbl : "Closed",
 		
 	id__lbl :"ID"
 });

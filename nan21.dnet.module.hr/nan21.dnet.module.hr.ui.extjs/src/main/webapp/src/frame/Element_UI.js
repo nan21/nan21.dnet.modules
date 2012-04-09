@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/ElementCategoryDs", "nan21.dnet.module.hr.ui.extjs/dc/ElementCategory", "nan21.dnet.module.hr.ui.extjs/ds/ElementTypeDs", "nan21.dnet.module.hr.ui.extjs/dc/ElementType", "nan21.dnet.module.hr.ui.extjs/ds/ElementDs", "nan21.dnet.module.hr.ui.extjs/dc/Element", "nan21.dnet.module.hr.ui.extjs/ds/VariableDs", "nan21.dnet.module.hr.ui.extjs/dc/Variable","nan21.dnet.module.hr.ui.extjs/ds/ElementTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/ElementTypes","nan21.dnet.module.hr.ui.extjs/ds/ElementTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/ElementTypes","nan21.dnet.module.hr.ui.extjs/ds/ElementCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/ElementCategories","nan21.dnet.module.hr.ui.extjs/ds/ElementLovDs","nan21.dnet.module.hr.ui.extjs/lov/Elements","nan21.dnet.module.hr.ui.extjs/ds/ElementCategoryLovDs","nan21.dnet.module.hr.ui.extjs/lov/ElementCategories"]);
+Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/ElementDs", "nan21.dnet.module.hr.ui.extjs/dc/Element", "nan21.dnet.module.hr.ui.extjs/ds/ElementInputDs", "nan21.dnet.module.hr.ui.extjs/dc/ElementInput", "nan21.dnet.module.hr.ui.extjs/ds/ElementFormulaDs", "nan21.dnet.module.hr.ui.extjs/dc/ElementFormula","nan21.dnet.module.hr.ui.extjs/ds/ElementTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/ElementTypes","nan21.dnet.module.hr.ui.extjs/ds/ElementTypeLovDs","nan21.dnet.module.hr.ui.extjs/lov/ElementTypes","nan21.dnet.module.hr.ui.extjs/ds/ElementLovDs","nan21.dnet.module.hr.ui.extjs/lov/ElementsCode"]);
 
 Ext.define("net.nan21.dnet.module.hr.payroll.frame.Element_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
@@ -7,59 +7,49 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Element_UI", {
 	 _name_ : "net.nan21.dnet.module.hr.payroll.frame.Element_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("ecateg", new net.nan21.dnet.module.hr.payroll.dc.ElementCategory({multiEdit:true}))
-		.addDc("etype", new net.nan21.dnet.module.hr.payroll.dc.ElementType({multiEdit:true}))
-		.addDc("elems", new net.nan21.dnet.module.hr.payroll.dc.Element({}))
-		.addDc("vars", new net.nan21.dnet.module.hr.payroll.dc.Variable({multiEdit:true}))		
-		.linkDc("vars", "elems",{fields:[ {childField:"elementId", parentField:"id"} ]} );		
+		.addDc("elem", new net.nan21.dnet.module.hr.payroll.dc.Element({}))
+		.addDc("input", new net.nan21.dnet.module.hr.payroll.dc.ElementInput({multiEdit:true}))
+		.addDc("formula", new net.nan21.dnet.module.hr.payroll.dc.ElementFormula({multiEdit:true}))		
+		.linkDc("input", "elem",{fields:[ {childField:"elementId", parentField:"id"} ]} )
+		.linkDc("formula", "elem",{fetchMode:"auto",fields:[ {childField:"elementId", parentField:"id"} ]} );		
 	}	 
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("elems",{ name:"exprFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Filter",height:120})	 
-		.addDcGridView("elems",{ name:"exprList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$List"})	 
-		.addDcFormView("elems",{ name:"exprEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Edit",height:120})	 
-		.addDcEditGridView("vars",{ name:"varEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Variable$CtxEditList", frame:true})	 
-		.addDcFilterFormView("ecateg",{ name:"ecategFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementCategory$Filter",height:120})	 
-		.addDcEditGridView("ecateg",{ name:"ecategEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementCategory$EditList", frame:true})	 
-		.addDcFilterFormView("etype",{ name:"etypeFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementType$Filter",height:120})	 
-		.addDcEditGridView("etype",{ name:"etypeEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementType$EditList", frame:true})	 
+		.addDcFilterFormView("elem",{ name:"elemFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Filter",height:120})	 
+		.addDcGridView("elem",{ name:"elemList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$List"})	 
+		.addDcFormView("elem",{ name:"elemEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Element$Edit",height:120})	 
+		.addDcEditGridView("input",{ name:"inputEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementInput$CtxEditList", frame:true,title:"Input values"})	 
+		.addDcEditGridView("formula",{ name:"formulaList", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementFormula$CtxEditList", frame:true,width:300})	 
+		.addDcFormView("formula",{ name:"formulaEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementFormula$EditExpression"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
-		.addPanel({name: "canvasElems", layout:"border", defaults:{split:true},title:"Elements",preventHeader:true})  	 
-		.addPanel({name: "canvasElemEdit", layout:"border", defaults:{split:true},preventHeader:true})  	 
-		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Element categories",preventHeader:true})  	 
-		.addPanel({name: "canvasType", layout:"border", defaults:{split:true},title:"Element types",preventHeader:true})  	 
-			
-		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
-				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
-		})
-		.addToc(["canvasElems","canvasType","canvasCateg"]);
-		this._mainViewName_  = "_main_with_toc_";	 	
+
+		.addPanel({name: "detailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
+		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
+		.addPanel({name: "formulaPanel", layout:"border", defaults:{split:true},title:"Formula"})  	 
+;	 	
 	}
 
 	,_linkElements_: function() {
 		this._getBuilder_()		
-	 	.addChildrenTo("main", ["canvasElems","canvasElemEdit","canvasType","canvasCateg"]) 				 		
-		.addChildrenTo("canvasElems",["exprFilter","exprList"] ,["north","center"])	
-		.addChildrenTo("canvasElemEdit",["exprEdit","varEditList"] ,["north","center"])	
-		.addChildrenTo("canvasCateg",["ecategFilter","ecategEditList"] ,["north","center"])	
-		.addChildrenTo("canvasType",["etypeFilter","etypeEditList"] ,["north","center"])	
-				
-		.addChildrenTo("_main_with_toc_",["main","_toc_"]).change("main",{region: "center"})
-	 	.addToolbarTo("canvasElems","tlbExprList")	  	
-	 	.addToolbarTo("canvasElemEdit","tlbExprEdit")	  	
-	 	.addToolbarTo("varEditList","tlbVarEditList")	  	
-	 	.addToolbarTo("canvasCateg","tlbEcategEditList")	  	
-	 	.addToolbarTo("canvasType","tlbEtypeEditList")	  	
+	 	.addChildrenTo("main", ["canvas1","canvas2"]) 				 		
+		.addChildrenTo("canvas1",["elemFilter","elemList"] ,["north","center"])	
+		.addChildrenTo("canvas2",["elemEdit","detailsTab"] ,["north","center"])	
+	 	.addChildrenTo("detailsTab", ["inputEditList","formulaPanel"]) 				 		
+		.addChildrenTo("formulaPanel",["formulaList","formulaEdit"] ,["west","center"])	
+	 	.addToolbarTo("canvas1","tlbElemList")	  	
+	 	.addToolbarTo("canvas2","tlbElemmEdit")	  	
+	 	.addToolbarTo("inputEditList","tlbInputEditList")	  	
+	 	.addToolbarTo("formulaPanel","tlbFormulaList")	  	
 	}
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbExprList", {dc:"elems"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Elements > List"}).end()
-			.beginToolbar("tlbExprEdit", {dc:"elems"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Element"}).end()
-			.beginToolbar("tlbVarEditList", {dc:"vars"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().end()
-			.beginToolbar("tlbEcategEditList", {dc:"ecateg"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Element categories"}).end()
-			.beginToolbar("tlbEtypeEditList", {dc:"etype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Element types"}).end(); 	
+			.beginToolbar("tlbElemList", {dc:"elem"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Elements"}).end()
+			.beginToolbar("tlbElemmEdit", {dc:"elem"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Element"}).end()
+			.beginToolbar("tlbInputEditList", {dc:"input"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Input values"}).end()
+			.beginToolbar("tlbFormulaList", {dc:"formula"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Formula"}).end(); 	
 	}
 
 });  

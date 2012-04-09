@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.hr.payroll.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.model.AbstractDsModel;
@@ -14,7 +15,7 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.ElementValue;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = ElementValue.class)
+@Ds(entity = ElementValue.class, sort = { @SortField(field = ElementValueDs.fSEQUENCENO) })
 public class ElementValueDs extends AbstractDsModel<ElementValue> implements
         IModelWithId, IModelWithClientId {
 
@@ -29,11 +30,16 @@ public class ElementValueDs extends AbstractDsModel<ElementValue> implements
     public static final String fENTITYFQN = "entityFQN";
     public static final String fELEMENTID = "elementId";
     public static final String fELEMENT = "element";
+    public static final String fELEMENTNAME = "elementName";
+    public static final String fSEQUENCENO = "sequenceNo";
+    public static final String fDATATYPE = "dataType";
     public static final String fEMPLOYEEID = "employeeId";
     public static final String fEMPLOYEENAME = "employeeName";
     public static final String fVALUE = "value";
     public static final String fPERIODID = "periodId";
     public static final String fPERIOD = "period";
+    public static final String fPERIODSTART = "periodStart";
+    public static final String fPERIODEND = "periodEnd";
 
     @DsField(noUpdate = true)
     private Long id;
@@ -65,13 +71,22 @@ public class ElementValueDs extends AbstractDsModel<ElementValue> implements
     @DsField(join = "left", path = "element.id")
     private Long elementId;
 
-    @DsField(join = "left", path = "element.name")
+    @DsField(join = "left", path = "element.code")
     private String element;
+
+    @DsField(join = "left", path = "element.name")
+    private String elementName;
+
+    @DsField(join = "left", path = "element.sequenceNo")
+    private Integer sequenceNo;
+
+    @DsField(join = "left", path = "element.dataType")
+    private String dataType;
 
     @DsField(join = "left", path = "employee.id")
     private Long employeeId;
 
-    @DsField(join = "left", path = "employee.name")
+    @DsField(join = "left", orderBy = "lastName,firstName", fetch = false, path = "employee.name")
     private String employeeName;
 
     @DsField()
@@ -82,6 +97,12 @@ public class ElementValueDs extends AbstractDsModel<ElementValue> implements
 
     @DsField(join = "left", path = "period.name")
     private String period;
+
+    @DsField(join = "left", path = "period.startDate")
+    private Date periodStart;
+
+    @DsField(join = "left", path = "period.endDate")
+    private Date periodEnd;
 
     public ElementValueDs() {
         super();
@@ -180,6 +201,30 @@ public class ElementValueDs extends AbstractDsModel<ElementValue> implements
         this.element = element;
     }
 
+    public String getElementName() {
+        return this.elementName;
+    }
+
+    public void setElementName(String elementName) {
+        this.elementName = elementName;
+    }
+
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
+    }
+
+    public String getDataType() {
+        return this.dataType;
+    }
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
+
     public Long getEmployeeId() {
         return this.employeeId;
     }
@@ -218,6 +263,22 @@ public class ElementValueDs extends AbstractDsModel<ElementValue> implements
 
     public void setPeriod(String period) {
         this.period = period;
+    }
+
+    public Date getPeriodStart() {
+        return this.periodStart;
+    }
+
+    public void setPeriodStart(Date periodStart) {
+        this.periodStart = periodStart;
+    }
+
+    public Date getPeriodEnd() {
+        return this.periodEnd;
+    }
+
+    public void setPeriodEnd(Date periodEnd) {
+        this.periodEnd = periodEnd;
     }
 
 }
