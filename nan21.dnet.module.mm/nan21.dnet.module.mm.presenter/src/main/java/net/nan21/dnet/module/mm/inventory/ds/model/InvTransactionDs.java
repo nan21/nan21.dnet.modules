@@ -6,27 +6,17 @@
 package net.nan21.dnet.module.mm.inventory.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
 
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = InvTransaction.class)
-public class InvTransactionDs extends AbstractDsModel<InvTransaction> implements
-        IModelWithId, IModelWithClientId {
+public class InvTransactionDs extends AbstractAuditableDs<InvTransaction> {
 
-    public static final String fID = "id";
-    public static final String fUUID = "uuid";
-    public static final String fCLIENTID = "clientId";
-    public static final String fCREATEDAT = "createdAt";
-    public static final String fMODIFIEDAT = "modifiedAt";
-    public static final String fCREATEDBY = "createdBy";
-    public static final String fMODIFIEDBY = "modifiedBy";
-    public static final String fVERSION = "version";
-    public static final String fENTITYFQN = "entityFQN";
+    public static final String fDOCTYPEID = "docTypeId";
+    public static final String fDOCTYPE = "docType";
     public static final String fTRANSACTIONTYPEID = "transactionTypeId";
     public static final String fTRANSACTIONTYPE = "transactionType";
     public static final String fHASFROMINVENTORY = "hasFromInventory";
@@ -35,34 +25,15 @@ public class InvTransactionDs extends AbstractDsModel<InvTransaction> implements
     public static final String fFROMINVENTORY = "fromInventory";
     public static final String fTOINVENTORYID = "toInventoryId";
     public static final String fTOINVENTORY = "toInventory";
+    public static final String fCONFIRMED = "confirmed";
+    public static final String fPOSTED = "posted";
     public static final String fEVENTDATE = "eventDate";
 
-    @DsField(noUpdate = true)
-    private Long id;
+    @DsField(join = "left", path = "docType.id")
+    private Long docTypeId;
 
-    @DsField(noUpdate = true)
-    private String uuid;
-
-    @DsField(noUpdate = true)
-    private Long clientId;
-
-    @DsField(noUpdate = true)
-    private Date createdAt;
-
-    @DsField(noUpdate = true)
-    private Date modifiedAt;
-
-    @DsField(noUpdate = true)
-    private String createdBy;
-
-    @DsField(noUpdate = true)
-    private String modifiedBy;
-
-    @DsField()
-    private Long version;
-
-    @DsField(noUpdate = true, fetch = false, path = "className")
-    private String entityFQN;
+    @DsField(join = "left", path = "docType.name")
+    private String docType;
 
     @DsField(join = "left", path = "transactionType.id")
     private Long transactionTypeId;
@@ -89,6 +60,12 @@ public class InvTransactionDs extends AbstractDsModel<InvTransaction> implements
     private String toInventory;
 
     @DsField()
+    private Boolean confirmed;
+
+    @DsField()
+    private Boolean posted;
+
+    @DsField()
     private Date eventDate;
 
     public InvTransactionDs() {
@@ -99,77 +76,20 @@ public class InvTransactionDs extends AbstractDsModel<InvTransaction> implements
         super(e);
     }
 
-    public Long getId() {
-        return this.id;
+    public Long getDocTypeId() {
+        return this.docTypeId;
     }
 
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
+    public void setDocTypeId(Long docTypeId) {
+        this.docTypeId = docTypeId;
     }
 
-    public String getUuid() {
-        return this.uuid;
+    public String getDocType() {
+        return this.docType;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
-
-    public Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getModifiedAt() {
-        return this.modifiedAt;
-    }
-
-    public void setModifiedAt(Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    public String getCreatedBy() {
-        return this.createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getModifiedBy() {
-        return this.modifiedBy;
-    }
-
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
-    }
-
-    public Long getVersion() {
-        return this.version;
-    }
-
-    public void setVersion(Long version) {
-        this.version = version;
-    }
-
-    public String getEntityFQN() {
-        return this.entityFQN;
-    }
-
-    public void setEntityFQN(String entityFQN) {
-        this.entityFQN = entityFQN;
+    public void setDocType(String docType) {
+        this.docType = docType;
     }
 
     public Long getTransactionTypeId() {
@@ -234,6 +154,22 @@ public class InvTransactionDs extends AbstractDsModel<InvTransaction> implements
 
     public void setToInventory(String toInventory) {
         this.toInventory = toInventory;
+    }
+
+    public Boolean getConfirmed() {
+        return this.confirmed;
+    }
+
+    public void setConfirmed(Boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    public Boolean getPosted() {
+        return this.posted;
+    }
+
+    public void setPosted(Boolean posted) {
+        this.posted = posted;
     }
 
     public Date getEventDate() {

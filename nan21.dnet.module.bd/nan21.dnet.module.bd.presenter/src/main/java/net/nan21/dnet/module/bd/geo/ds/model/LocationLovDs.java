@@ -5,30 +5,19 @@
  */
 package net.nan21.dnet.module.bd.geo.ds.model;
 
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableLov;
 
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = Location.class, jpqlWhere = " e.active = true ")
-public class LocationLovDs extends AbstractDsModel<Location> implements
-        IModelWithId, IModelWithClientId {
+public class LocationLovDs extends AbstractAuditableLov<Location> {
 
-    public static final String fID = "id";
-    public static final String fCLIENTID = "clientId";
     public static final String fTARGETUUID = "targetUuid";
     public static final String fTARGETTYPE = "targetType";
     public static final String fASSTRING = "asString";
     public static final String fACTIVE = "active";
-
-    @DsField()
-    private Long id;
-
-    @DsField()
-    private Long clientId;
 
     @DsField()
     private String targetUuid;
@@ -48,23 +37,6 @@ public class LocationLovDs extends AbstractDsModel<Location> implements
 
     public LocationLovDs(Location e) {
         super(e);
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
     }
 
     public String getTargetUuid() {

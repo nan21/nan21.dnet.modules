@@ -157,7 +157,26 @@
 						</list>
 					</property>
 				</bean>
-				
+			
+			
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="180" />
+					<property name="name" value="bd-fin" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="FinDocType" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/fin/FinDocType.csv" />
+							</bean>
+							
+							 
+						</list>
+					</property>
+				</bean>
+					
 			</list>
 		</property>
 	</bean>

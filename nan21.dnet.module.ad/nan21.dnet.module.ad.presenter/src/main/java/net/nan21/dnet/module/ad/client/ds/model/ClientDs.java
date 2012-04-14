@@ -6,15 +6,14 @@
 package net.nan21.dnet.module.ad.client.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.X_AbstractAuditedDs;
 
 import net.nan21.dnet.module.ad.client.domain.entity.Client;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = Client.class)
-public class ClientDs extends AbstractDsModel<Client> implements IModelWithId {
+public class ClientDs extends X_AbstractAuditedDs<Client> {
 
     public static final String fNAME = "name";
     public static final String fCODE = "code";

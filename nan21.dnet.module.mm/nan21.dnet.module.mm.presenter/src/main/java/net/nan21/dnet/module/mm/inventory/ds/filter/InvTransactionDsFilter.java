@@ -6,35 +6,16 @@
 package net.nan21.dnet.module.mm.inventory.ds.filter;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDsFilter;
 
-import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
+public class InvTransactionDsFilter extends AbstractAuditableDsFilter {
 
-public class InvTransactionDsFilter extends AbstractDsFilter implements
-        IModelWithId, IModelWithClientId {
+    private Long docTypeId;
 
-    private Long id;
+    private Long docTypeId_From;
+    private Long docTypeId_To;
 
-    private String uuid;
-
-    private Long clientId;
-
-    private Date createdAt;
-
-    private Date createdAt_From;
-    private Date createdAt_To;
-
-    private Date modifiedAt;
-
-    private Date modifiedAt_From;
-    private Date modifiedAt_To;
-
-    private String createdBy;
-
-    private String modifiedBy;
-
-    private String entityFQN;
+    private String docType;
 
     private Long transactionTypeId;
 
@@ -61,106 +42,45 @@ public class InvTransactionDsFilter extends AbstractDsFilter implements
 
     private String toInventory;
 
+    private Boolean confirmed;
+
+    private Boolean posted;
+
     private Date eventDate;
 
     private Date eventDate_From;
     private Date eventDate_To;
 
-    public Long getId() {
-        return this.id;
+    public Long getDocTypeId() {
+        return this.docTypeId;
     }
 
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
+    public Long getDocTypeId_From() {
+        return this.docTypeId_From;
     }
 
-    public String getUuid() {
-        return this.uuid;
+    public Long getDocTypeId_To() {
+        return this.docTypeId_To;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setDocTypeId(Long docTypeId) {
+        this.docTypeId = docTypeId;
     }
 
-    public Long getClientId() {
-        return this.clientId;
+    public void setDocTypeId_From(Long docTypeId_From) {
+        this.docTypeId_From = docTypeId_From;
     }
 
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
+    public void setDocTypeId_To(Long docTypeId_To) {
+        this.docTypeId_To = docTypeId_To;
     }
 
-    public Date getCreatedAt() {
-        return this.createdAt;
+    public String getDocType() {
+        return this.docType;
     }
 
-    public Date getCreatedAt_From() {
-        return this.createdAt_From;
-    }
-
-    public Date getCreatedAt_To() {
-        return this.createdAt_To;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public void setCreatedAt_From(Date createdAt_From) {
-        this.createdAt_From = createdAt_From;
-    }
-
-    public void setCreatedAt_To(Date createdAt_To) {
-        this.createdAt_To = createdAt_To;
-    }
-
-    public Date getModifiedAt() {
-        return this.modifiedAt;
-    }
-
-    public Date getModifiedAt_From() {
-        return this.modifiedAt_From;
-    }
-
-    public Date getModifiedAt_To() {
-        return this.modifiedAt_To;
-    }
-
-    public void setModifiedAt(Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    public void setModifiedAt_From(Date modifiedAt_From) {
-        this.modifiedAt_From = modifiedAt_From;
-    }
-
-    public void setModifiedAt_To(Date modifiedAt_To) {
-        this.modifiedAt_To = modifiedAt_To;
-    }
-
-    public String getCreatedBy() {
-        return this.createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getModifiedBy() {
-        return this.modifiedBy;
-    }
-
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
-    }
-
-    public String getEntityFQN() {
-        return this.entityFQN;
-    }
-
-    public void setEntityFQN(String entityFQN) {
-        this.entityFQN = entityFQN;
+    public void setDocType(String docType) {
+        this.docType = docType;
     }
 
     public Long getTransactionTypeId() {
@@ -273,6 +193,22 @@ public class InvTransactionDsFilter extends AbstractDsFilter implements
 
     public void setToInventory(String toInventory) {
         this.toInventory = toInventory;
+    }
+
+    public Boolean getConfirmed() {
+        return this.confirmed;
+    }
+
+    public void setConfirmed(Boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    public Boolean getPosted() {
+        return this.posted;
+    }
+
+    public void setPosted(Boolean posted) {
+        this.posted = posted;
     }
 
     public Date getEventDate() {

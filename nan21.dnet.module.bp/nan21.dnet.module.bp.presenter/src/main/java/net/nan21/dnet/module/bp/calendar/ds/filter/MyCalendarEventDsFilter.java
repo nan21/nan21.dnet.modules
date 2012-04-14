@@ -6,13 +6,9 @@
 package net.nan21.dnet.module.bp.calendar.ds.filter;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDsFilter;
 
-import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
-
-public class MyCalendarEventDsFilter extends AbstractDsFilter implements
-        IModelWithId, IModelWithClientId {
+public class MyCalendarEventDsFilter extends AbstractAuditableDsFilter {
 
     private String subject;
 

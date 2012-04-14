@@ -12,10 +12,14 @@ import java.util.Date;
 import java.util.UUID;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -31,9 +35,10 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
-import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
+import net.nan21.dnet.module.mm.inventory.domain.eventhandler.InvTransactionEventHandler;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -43,8 +48,10 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** InvTransaction. */
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "SOURCETYPE", discriminatorType = DiscriminatorType.STRING, length = 32)
 @Table(name = InvTransaction.TABLE_NAME)
-@Customizer(DefaultEventHandler.class)
+@Customizer(InvTransactionEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = InvTransaction.NQ_FIND_BY_ID, query = "SELECT e FROM InvTransaction e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = InvTransaction.NQ_FIND_BY_IDS, query = "SELECT e FROM InvTransaction e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
@@ -71,9 +78,24 @@ public class InvTransaction implements Serializable, IModelWithId,
     @Column(name = "EVENTDATE")
     private Date eventDate;
 
+    /** SourceType. */
+    @Column(name = "SOURCETYPE", nullable = false, length = 32)
+    @NotBlank
+    private String sourceType;
+
     /** Source. */
     @Column(name = "SOURCE", length = 255)
     private String source;
+
+    /** Confirmed. */
+    @Column(name = "CONFIRMED", nullable = false)
+    @NotNull
+    private Boolean confirmed;
+
+    /** Posted. */
+    @Column(name = "POSTED", nullable = false)
+    @NotNull
+    private Boolean posted;
 
     /**
      * Identifies the client(tenant) which owns this record.
@@ -134,6 +156,9 @@ public class InvTransaction implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FinDocType.class)
+    @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
+    private FinDocType docType;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = InvTransactionType.class)
     @JoinColumn(name = "TRANSACTIONTYPE_ID", referencedColumnName = "ID")
     private InvTransactionType transactionType;
@@ -158,12 +183,36 @@ public class InvTransaction implements Serializable, IModelWithId,
         this.eventDate = eventDate;
     }
 
+    public String getSourceType() {
+        return this.sourceType;
+    }
+
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
+    }
+
     public String getSource() {
         return this.source;
     }
 
     public void setSource(String source) {
         this.source = source;
+    }
+
+    public Boolean getConfirmed() {
+        return this.confirmed;
+    }
+
+    public void setConfirmed(Boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    public Boolean getPosted() {
+        return this.posted;
+    }
+
+    public void setPosted(Boolean posted) {
+        this.posted = posted;
     }
 
     public Long getClientId() {
@@ -239,6 +288,14 @@ public class InvTransaction implements Serializable, IModelWithId,
 
     }
 
+    public FinDocType getDocType() {
+        return this.docType;
+    }
+
+    public void setDocType(FinDocType docType) {
+        this.docType = docType;
+    }
+
     public InvTransactionType getTransactionType() {
         return this.transactionType;
     }
@@ -292,6 +349,12 @@ public class InvTransaction implements Serializable, IModelWithId,
         if (this.uuid == null || this.uuid.equals("")) {
             event.updateAttributeWithObject("uuid", UUID.randomUUID()
                     .toString().toUpperCase());
+        }
+        if (this.confirmed == null) {
+            event.updateAttributeWithObject("confirmed", false);
+        }
+        if (this.posted == null) {
+            event.updateAttributeWithObject("posted", false);
         }
     }
 

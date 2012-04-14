@@ -20,7 +20,8 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDs" ,{
 		{name:"accountingEnabled", type:"boolean"},
 		{name:"inventory", type:"boolean"},
 		{name:"external", type:"boolean"},
-		{name:"carrier", type:"boolean"}
+		{name:"carrier", type:"boolean"},
+		{name:"warehouse", type:"boolean"}
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
@@ -50,7 +51,8 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDsFilter" ,{
 		{name:"accountingEnabled", type:"boolean", useNull:true},
 		{name:"inventory", type:"boolean", useNull:true},
 		{name:"external", type:"boolean", useNull:true},
-		{name:"carrier", type:"boolean", useNull:true}
+		{name:"carrier", type:"boolean", useNull:true},
+		{name:"warehouse", type:"boolean", useNull:true}
 	] 
 });
 	

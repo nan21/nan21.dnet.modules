@@ -5,9 +5,7 @@
  */
 package net.nan21.dnet.module.bd.org.ds.model;
 
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableLov;
 
 import net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchyItem;
 import net.nan21.dnet.core.api.annotation.Ds;
@@ -15,20 +13,11 @@ import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = OrganizationHierarchyItem.class)
 public class OrganizationHierarchyItemLovDs extends
-        AbstractDsModel<OrganizationHierarchyItem> implements IModelWithId,
-        IModelWithClientId {
+        AbstractAuditableLov<OrganizationHierarchyItem> {
 
-    public static final String fID = "id";
-    public static final String fCLIENTID = "clientId";
     public static final String fHIERARCHYID = "hierarchyId";
     public static final String fORGANIZATIONID = "organizationId";
     public static final String fORGANIZATIONCODE = "organizationCode";
-
-    @DsField()
-    private Long id;
-
-    @DsField()
-    private Long clientId;
 
     @DsField(join = "left", path = "hierarchy.id")
     private Long hierarchyId;
@@ -45,23 +34,6 @@ public class OrganizationHierarchyItemLovDs extends
 
     public OrganizationHierarchyItemLovDs(OrganizationHierarchyItem e) {
         super(e);
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
     }
 
     public Long getHierarchyId() {

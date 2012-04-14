@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.ad.client.ds.model.ClientDs$Trl", {  	  	
-	maintenanceLanguage__lbl :  "Limbă",
+	entityFQN__lbl :  "@entityFQN",	maintenanceLanguage__lbl :  "Limbă",
 	defaultImportPath__lbl :  "Cale import",
 	defaultExportPath__lbl :  "Cale export",
 	tempPath__lbl :  "Cale temporară",

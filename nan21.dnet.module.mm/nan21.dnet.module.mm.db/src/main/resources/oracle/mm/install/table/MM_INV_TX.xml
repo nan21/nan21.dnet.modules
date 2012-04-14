@@ -6,6 +6,8 @@
         <createTable tableName="MM_INV_TX">
 			<column name="CLIENTID" type="number(3)">
 				<constraints nullable="false" /></column>	 
+			<column name="CONFIRMED" type="number(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="CREATEDAT" type="date">
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar2(32)">
@@ -18,11 +20,17 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="POSTED" type="number(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="SOURCE" type="varchar2(255)">
 				<constraints  /></column>	 
+			<column name="SOURCETYPE" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
 			<column name="UUID" type="varchar2(36)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="DOCTYPE_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="FROMINVENTORY_ID" type="number(19)">	 
 				<constraints  /></column>	 

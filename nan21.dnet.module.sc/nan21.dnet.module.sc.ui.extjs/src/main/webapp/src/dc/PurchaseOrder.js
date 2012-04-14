@@ -35,9 +35,13 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$Filter", {
 		.addLov({ name:"priceList", xtype:"net.nan21.dnet.module.mm.price.lovs.PriceListPurchase", dataIndex:"priceList",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priceListId"} ]  })
 		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		.addBooleanField({ name:"confirmed", dataIndex:"confirmed",anchor:"-20"  })
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesPO", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.bd.fin.lovs.PaymentMethod", dataIndex:"paymentMethod",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
+		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.bd.fin.lovs.PaymentTerm", dataIndex:"paymentTerm",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
+		.addLov({ name:"warehouse", xtype:"net.nan21.dnet.module.bd.org.lovs.WarehouseOrganizations", dataIndex:"inventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "inventoryId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form", width:220}) 
-		.addPanel({ name:"col2", layout:"form", width:300}) 
+		.addPanel({ name:"col1", layout:"form", width:300}) 
+		.addPanel({ name:"col2", layout:"form", width:220}) 
 		.addPanel({ name:"col3", layout:"form", width:180}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
@@ -45,8 +49,8 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$Filter", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["code","currency","priceList","deliveryMethod"])
-		.addChildrenTo("col2",["docDate","supplier","customer"])
+		.addChildrenTo("col1",["supplier","customer","warehouse","docType","docDate"])
+		.addChildrenTo("col2",["code","currency","priceList","deliveryMethod"])
 		.addChildrenTo("col3",["confirmed"])
     	.addAuditFilter({})	
 	}
@@ -60,11 +64,13 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$List", {
 	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"customer", dataIndex:"customer",width:100 })   	
+		.addTextColumn({ name:"inventory", dataIndex:"inventory", hidden:true,width:100 })   	
 		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
 		.addDateColumn({ name:"docDate", dataIndex:"docDate",format:Dnet.DATE_FORMAT})   	      	     
 		.addTextColumn({ name:"currency", dataIndex:"currency", width:70 })   	
 		.addTextColumn({ name:"supplierCode", dataIndex:"supplier", hidden:true,width:200 })   	
 		.addTextColumn({ name:"supplier", dataIndex:"supplier",width:200 })   	
+		.addTextColumn({ name:"docType", dataIndex:"docType",width:120 })   	
 		.addNumberColumn({ name:"totalNetAmount", dataIndex:"totalNetAmount",decimals:2 })  
 		.addNumberColumn({ name:"totalTaxAmount", dataIndex:"totalTaxAmount",decimals:2 })  
 		.addNumberColumn({ name:"totalAmount", dataIndex:"totalAmount",decimals:2 })  
@@ -81,23 +87,27 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$List", {
  	
  	
 
-Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$Edit", {
+Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$EditMain", {
 	extend: "dnet.core.dc.AbstractDcvEditForm",
-	alias: "widget.net.nan21.dnet.module.sc.order.dc.PurchaseOrder$Edit",
+	alias: "widget.net.nan21.dnet.module.sc.order.dc.PurchaseOrder$EditMain",
 	
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
+		.addLov({ name:"warehouse", xtype:"net.nan21.dnet.module.bd.org.lovs.WarehouseOrganizations", dataIndex:"inventory",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "inventoryId"} ]  })
 		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,allowBlank:false})
 		.addLov({ name:"priceList", xtype:"net.nan21.dnet.module.mm.price.lovs.PriceListPurchase", dataIndex:"priceList",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priceListId"} ,{lovField:"currencyId", dsField: "currencyId"} ,{lovField:"currency", dsField: "currency"} ]  })
 		.addDisplayFieldText({ name:"currency", dataIndex:"currency", fieldCls:"displayfield important-field"  })
-		.addLov({ name:"deliveryMethod", xtype:"net.nan21.dnet.module.bp.base.lovs.DeliveryMethods", dataIndex:"deliveryMethod",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "deliveryMethodId"} ]  })
 		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"supplier",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
 		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"customer",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "customerId"} ]  })
 		.addDisplayFieldNumber({name:"totalNetAmount", dataIndex:"totalNetAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addDisplayFieldNumber({name:"totalTaxAmount", dataIndex:"totalTaxAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addDisplayFieldNumber({name:"totalAmount", dataIndex:"totalAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesPO", dataIndex:"docType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addDisplayFieldBoolean({ name:"confirmed", dataIndex:"confirmed"  })
+		.addDateField({ name:"plannedDeliveryDate", dataIndex:"plannedDeliveryDate",anchor:"-20" })
+		.addTextArea({ name:"deliveryNotes", dataIndex:"deliveryNotes",height:80,anchor:"-20"   })
 		//containers
 		.addPanel({ name:"col1", layout:"form" ,width:250})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     
@@ -108,8 +118,8 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col4" ])
-		.addChildrenTo("col1",["supplier","customer","code"])
-		.addChildrenTo("col2",["docDate","deliveryMethod","priceList","currency"])
+		.addChildrenTo("col1",["supplier","customer","docType","warehouse","code"])
+		.addChildrenTo("col2",["docDate","priceList","currency","confirmed"])
 		.addChildrenTo("col4",["totalNetAmount","totalTaxAmount","totalAmount"])
 ;
 	}	
@@ -125,6 +135,55 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$Edit", {
 			this._controller_.on("afterDoServiceSuccess", function(dc, response, name, options) {
 			 	this._applyStates_(dc.record);
 			 } , this )
+	}
+});
+ 	
+ 	
+
+Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$EditDetails", {
+	extend: "dnet.core.dc.AbstractDcvEditForm",
+	alias: "widget.net.nan21.dnet.module.sc.order.dc.PurchaseOrder$EditDetails",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addDateField({ name:"plannedDeliveryDate", dataIndex:"plannedDeliveryDate",anchor:"-20" })
+		.addTextArea({ name:"deliveryNotes", dataIndex:"deliveryNotes",height:80,anchor:"-20"   })
+		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.bd.fin.lovs.PaymentMethod", dataIndex:"paymentMethod",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
+		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.bd.fin.lovs.PaymentTerm", dataIndex:"paymentTerm",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
+		.addLov({ name:"deliveryMethod", xtype:"net.nan21.dnet.module.bp.base.lovs.DeliveryMethods", dataIndex:"deliveryMethod",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "deliveryMethodId"} ]  })
+		//containers
+		.addPanel({ name:"panelShipping", layout:"form" ,title:"Delivery", width:400,xtype:"fieldset", border:true, collapsible:true})     
+		.addPanel({ name:"panelPayment", layout:"form" ,title:"Payment", width:400,xtype:"fieldset", border:true, collapsible:true})     
+		.addPanel({ name:"col1"  })      	 
+		.addPanel({ name:"col2"  })      	 
+		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["col1" ,"col2" ])
+		.addChildrenTo("col1",["panelShipping" ])
+		.addChildrenTo("col2",["panelPayment" ])
+		.addChildrenTo("panelShipping",["deliveryMethod","plannedDeliveryDate","deliveryNotes"])
+		.addChildrenTo("panelPayment",["paymentMethod","paymentTerm"])
+;
+	}	
+	,_afterApplyStates_: function(record) {	
+		
+		if ( record.get("invoiced") ) {
+			this._disableFields_(["billTo","billToLocation" ]);
+		}
+		if ( record.get("delivered") ) {
+			this._disableFields_(["shipTo","shipToLocation" ]);
+		}
+		
+	}
+	,_endDefine_: function() {	
+		
+		this._controller_.on("afterDoServiceSuccess", function(dc, response, name, options) {
+		 	this._applyStates_(dc.record);
+		 } , this )
 	}
 });
  	

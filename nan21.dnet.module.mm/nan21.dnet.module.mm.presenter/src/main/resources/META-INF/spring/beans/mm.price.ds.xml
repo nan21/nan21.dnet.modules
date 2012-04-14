@@ -7,28 +7,6 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
- 	<bean id="PriceListTypeDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListTypeDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.price.ds.filter.PriceListTypeDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.price.domain.entity.PriceListType" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="PriceListType" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListTypeDs" />
-	</bean>
-   
- 	<bean id="PriceListTypeLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.price.ds.filter.PriceListTypeLovDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.price.domain.entity.PriceListType" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="PriceListTypeLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListTypeLovDs" />
-	</bean>
-   
  	<bean id="PriceListDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.price.ds.model.PriceListDs" />

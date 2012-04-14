@@ -5,17 +5,10 @@
  */
 package net.nan21.dnet.module.bd.org.ds.filter;
 
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableLovFilter;
 
-import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
-
-public class OrganizationHierarchyItemLovDsFilter extends AbstractDsFilter
-        implements IModelWithId, IModelWithClientId {
-
-    private Long id;
-
-    private Long clientId;
+public class OrganizationHierarchyItemLovDsFilter extends
+        AbstractAuditableLovFilter {
 
     private Long hierarchyId;
 
@@ -28,23 +21,6 @@ public class OrganizationHierarchyItemLovDsFilter extends AbstractDsFilter
     private Long organizationId_To;
 
     private String organizationCode;
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
 
     public Long getHierarchyId() {
         return this.hierarchyId;

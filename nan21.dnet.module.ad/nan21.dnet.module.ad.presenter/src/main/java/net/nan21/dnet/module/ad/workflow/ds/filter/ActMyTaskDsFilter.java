@@ -6,11 +6,9 @@
 package net.nan21.dnet.module.ad.workflow.ds.filter;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.presenter.model.base.AbstractBaseDsFilter;
 
-import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
-
-public class ActMyTaskDsFilter extends AbstractDsFilter implements IModelWithId {
+public class ActMyTaskDsFilter extends AbstractBaseDsFilter {
 
     private String id;
 

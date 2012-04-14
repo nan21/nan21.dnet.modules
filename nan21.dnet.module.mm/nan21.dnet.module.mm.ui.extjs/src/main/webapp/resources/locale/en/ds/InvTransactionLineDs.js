@@ -8,6 +8,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionLineDs$Trl
 	itemId__lbl : "Item Id",
 	itemCode__lbl : "Item Code",
 	item__lbl : "Item",
+	uomId__lbl : "Uom Id",
+	uom__lbl : "Uom",
 	fromSubInventoryId__lbl : "From Sub Inventory Id",
 	fromSubInventory__lbl : "From Sub Inventory",
 	fromLocatorId__lbl : "From Locator Id",

@@ -17,6 +17,8 @@
  		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceTax</class>
 		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItemTax</class>
 		
+		<class>net.nan21.dnet.module.sc.order.domain.entity.PurchaseInventoryTransaction</class>
+		
 		<!-- Dependencies -->
 		
 		<class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>
@@ -27,8 +29,6 @@
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Region</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.City</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Location</class>
-		<class>net.nan21.dnet.module.ad.org.domain.entity.Organization</class>
-		<class>net.nan21.dnet.module.ad.org.domain.entity.OrganizationType</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>
@@ -49,8 +49,6 @@
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory</class>
 		 
-		
-		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceListType</class> 
 		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceList</class>
 		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceListVersion</class>
 		<class>net.nan21.dnet.module.mm.price.domain.entity.ProductPrice</class>
@@ -62,6 +60,18 @@
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.Tax</class>
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod</class>
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.FinDocType</class>
+		
+		
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.StockLocatorType</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvOperation</class>  
+		
 		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

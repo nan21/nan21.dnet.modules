@@ -30,9 +30,7 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="number(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="ACTION_ID" type="number(19)">	 
-				<constraints nullable="false" /></column>	 
-			<column name="SOURCETYPE_ID" type="number(19)">	 
+			<column name="DOCTYPE_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

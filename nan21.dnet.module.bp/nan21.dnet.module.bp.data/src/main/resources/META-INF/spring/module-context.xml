@@ -52,6 +52,15 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/bp/data/base/PaymentMethod.csv" />
 							</bean>  
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="50" />
+								<property name="dsName" value="CompanyLegalForm" />
+								<property name="destPath" value="demo-data/bp" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bp/data/base/CompanyLegalForm.csv" />
+							</bean>  
+							
 						</list>
 					</property>
 				</bean>

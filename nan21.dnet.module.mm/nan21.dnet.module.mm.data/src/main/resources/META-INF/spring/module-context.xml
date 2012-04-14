@@ -99,21 +99,29 @@
 						</list>
 					</property>
 				</bean>
-				
-				
-				
+				 
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="315" />
 					<property name="name" value="mm-price" />
 					<property name="items">
 						<list>							 
+							  
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="10" />
-								<property name="dsName" value="PriceListType" />
+								<property name="sequence" value="20" />
+								<property name="dsName" value="PriceList" />
 								<property name="destPath" value="demo-data/mm" />
 								<property name="file"
-									value="classpath:net/nan21/dnet/module/mm/data/price/PriceListType.csv" />
-							</bean>							 
+									value="classpath:net/nan21/dnet/module/mm/data/price/PriceList.csv" />
+							</bean>
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="PriceListVersion" />
+								<property name="destPath" value="demo-data/mm" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/mm/data/price/PriceListVersion.csv" />
+							</bean>
+														 
 						</list>
 					</property>
 				</bean>
@@ -132,14 +140,7 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/mm/data/inventory/InvTransactionAction.csv" />
 							</bean>
-						 
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="20" />
-								<property name="dsName" value="InvTransactionSourceType" />
-								<property name="destPath" value="demo-data/mm" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/mm/data/inventory/InvTransactionSourceType.csv" />
-							</bean>
+				 
 						  
 						  	<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="30" />

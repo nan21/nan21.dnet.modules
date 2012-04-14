@@ -20,6 +20,8 @@
 		
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>
+		
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.FinDocType</class>
 		 
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>

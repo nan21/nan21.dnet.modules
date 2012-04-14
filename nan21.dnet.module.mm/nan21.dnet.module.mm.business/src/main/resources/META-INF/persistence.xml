@@ -30,13 +30,12 @@
 		 
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType</class>
-		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine</class>
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvOperation</class>  
 		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvBalance</class> 
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransfer</class>
 		
-		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceListType</class> 
 		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceList</class>
 		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceListVersion</class>
 		<class>net.nan21.dnet.module.mm.price.domain.entity.ProductPrice</class>
@@ -58,6 +57,8 @@
 		
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>
+		
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.FinDocType</class>
 		 
 		<properties>
 			<property name="eclipselink.weaving" value="none" />

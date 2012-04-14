@@ -6,37 +6,31 @@
 package net.nan21.dnet.module.sd.invoice.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
 
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = SalesInvoice.class)
-public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
-        IModelWithId, IModelWithClientId {
+public class SalesInvoiceDs extends AbstractAuditableDs<SalesInvoice> {
 
-    public static final String fID = "id";
-    public static final String fUUID = "uuid";
-    public static final String fCLIENTID = "clientId";
-    public static final String fCREATEDAT = "createdAt";
-    public static final String fMODIFIEDAT = "modifiedAt";
-    public static final String fCREATEDBY = "createdBy";
-    public static final String fMODIFIEDBY = "modifiedBy";
-    public static final String fVERSION = "version";
-    public static final String fENTITYFQN = "entityFQN";
     public static final String fCODE = "code";
     public static final String fDOCDATE = "docDate";
     public static final String fSUPPLIERID = "supplierId";
     public static final String fSUPPLIER = "supplier";
+    public static final String fDOCTYPEID = "docTypeId";
+    public static final String fDOCTYPE = "docType";
     public static final String fCUSTOMERID = "customerId";
     public static final String fCUSTOMERUUID = "customerUuid";
     public static final String fCUSTOMERCODE = "customerCode";
     public static final String fCUSTOMER = "customer";
     public static final String fPRICELISTID = "priceListId";
     public static final String fPRICELIST = "priceList";
+    public static final String fPAYMENTMETHODID = "paymentMethodId";
+    public static final String fPAYMENTMETHOD = "paymentMethod";
+    public static final String fPAYMENTTERMID = "paymentTermId";
+    public static final String fPAYMENTTERM = "paymentTerm";
     public static final String fCURRENCYID = "currencyId";
     public static final String fCURRENCY = "currency";
     public static final String fTOTALNETAMOUNT = "totalNetAmount";
@@ -53,33 +47,6 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
     public static final String fCLASSNAME = "className";
     public static final String fBUSINESSOBJECT = "businessObject";
 
-    @DsField(noUpdate = true)
-    private Long id;
-
-    @DsField(noUpdate = true)
-    private String uuid;
-
-    @DsField(noUpdate = true)
-    private Long clientId;
-
-    @DsField(noUpdate = true)
-    private Date createdAt;
-
-    @DsField(noUpdate = true)
-    private Date modifiedAt;
-
-    @DsField(noUpdate = true)
-    private String createdBy;
-
-    @DsField(noUpdate = true)
-    private String modifiedBy;
-
-    @DsField()
-    private Long version;
-
-    @DsField(noUpdate = true, fetch = false, path = "className")
-    private String entityFQN;
-
     @DsField()
     private String code;
 
@@ -91,6 +58,12 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
 
     @DsField(noUpdate = true, join = "left", path = "supplier.code")
     private String supplier;
+
+    @DsField(join = "left", path = "docType.id")
+    private Long docTypeId;
+
+    @DsField(join = "left", path = "docType.name")
+    private String docType;
 
     @DsField(noUpdate = true, join = "left", path = "customer.id")
     private Long customerId;
@@ -109,6 +82,18 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
 
     @DsField(join = "left", path = "priceList.name")
     private String priceList;
+
+    @DsField(join = "left", path = "paymentMethod.id")
+    private Long paymentMethodId;
+
+    @DsField(join = "left", path = "paymentMethod.name")
+    private String paymentMethod;
+
+    @DsField(join = "left", path = "paymentTerm.id")
+    private Long paymentTermId;
+
+    @DsField(join = "left", path = "paymentTerm.name")
+    private String paymentTerm;
 
     @DsField(noUpdate = true, join = "left", path = "currency.id")
     private Long currencyId;
@@ -163,79 +148,6 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
         super(e);
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public String getUuid() {
-        return this.uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
-
-    public Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getModifiedAt() {
-        return this.modifiedAt;
-    }
-
-    public void setModifiedAt(Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    public String getCreatedBy() {
-        return this.createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getModifiedBy() {
-        return this.modifiedBy;
-    }
-
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
-    }
-
-    public Long getVersion() {
-        return this.version;
-    }
-
-    public void setVersion(Long version) {
-        this.version = version;
-    }
-
-    public String getEntityFQN() {
-        return this.entityFQN;
-    }
-
-    public void setEntityFQN(String entityFQN) {
-        this.entityFQN = entityFQN;
-    }
-
     public String getCode() {
         return this.code;
     }
@@ -266,6 +178,22 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
 
     public void setSupplier(String supplier) {
         this.supplier = supplier;
+    }
+
+    public Long getDocTypeId() {
+        return this.docTypeId;
+    }
+
+    public void setDocTypeId(Long docTypeId) {
+        this.docTypeId = docTypeId;
+    }
+
+    public String getDocType() {
+        return this.docType;
+    }
+
+    public void setDocType(String docType) {
+        this.docType = docType;
     }
 
     public Long getCustomerId() {
@@ -314,6 +242,38 @@ public class SalesInvoiceDs extends AbstractDsModel<SalesInvoice> implements
 
     public void setPriceList(String priceList) {
         this.priceList = priceList;
+    }
+
+    public Long getPaymentMethodId() {
+        return this.paymentMethodId;
+    }
+
+    public void setPaymentMethodId(Long paymentMethodId) {
+        this.paymentMethodId = paymentMethodId;
+    }
+
+    public String getPaymentMethod() {
+        return this.paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public Long getPaymentTermId() {
+        return this.paymentTermId;
+    }
+
+    public void setPaymentTermId(Long paymentTermId) {
+        this.paymentTermId = paymentTermId;
+    }
+
+    public String getPaymentTerm() {
+        return this.paymentTerm;
+    }
+
+    public void setPaymentTerm(String paymentTerm) {
+        this.paymentTerm = paymentTerm;
     }
 
     public Long getCurrencyId() {

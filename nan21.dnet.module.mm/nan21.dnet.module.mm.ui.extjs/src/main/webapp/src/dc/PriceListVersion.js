@@ -25,10 +25,10 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
-		.addTextField({ name:"priceList", dataIndex:"priceList",anchor:"-20",maxLength:255  })
+		.addLov({ name:"priceList", xtype:"net.nan21.dnet.module.mm.price.lovs.PriceList", dataIndex:"priceList",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priceListId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
-		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:180}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
@@ -67,8 +67,8 @@ Ext.define("net.nan21.dnet.module.mm.price.dc.PriceListVersion$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
-		.addTextColumn({ name:"priceList", dataIndex:"priceList",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addLov({name:"priceList", xtype:"gridcolumn", dataIndex:"priceList", width:150,editor:{xtype:"net.nan21.dnet.module.mm.price.lovs.PriceList" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priceListId"} ]} })
+		.addTextColumn({ name:"name", dataIndex:"name", width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })

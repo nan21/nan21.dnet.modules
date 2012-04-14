@@ -3,7 +3,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.lovs.PayScalePoints", {
 	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.hr.grade.lovs.PayScalePoints",
  
-	displayField:"name",
+	displayField:"id",
 	listConfig: {		
 		getInnerTpl: function() { 
 			return '<span>{name}</span>';

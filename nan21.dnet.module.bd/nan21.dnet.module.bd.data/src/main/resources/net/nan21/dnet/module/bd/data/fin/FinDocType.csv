@@ -1,0 +1,5 @@
+"name";"description";"category";"active"
+"Purchase Invoice";;"PI";"true"
+"Purchase Order";;"PO";"true"
+"Sales Invoice";;"SI";"true"
+"Sales Order";;"SO";"true"

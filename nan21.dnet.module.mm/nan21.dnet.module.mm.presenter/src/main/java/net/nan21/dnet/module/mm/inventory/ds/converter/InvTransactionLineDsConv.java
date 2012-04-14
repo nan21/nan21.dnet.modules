@@ -6,6 +6,8 @@
 package net.nan21.dnet.module.mm.inventory.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.uom.business.service.IUomService;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.inventory.business.service.IStockLocatorService;
 import net.nan21.dnet.module.mm.inventory.business.service.ISubInventoryService;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction;
@@ -42,6 +44,14 @@ public class InvTransactionLineDsConv extends
             }
         } else {
             this.lookup_item_Product(ds, e);
+        }
+
+        if (ds.getUomId() != null) {
+            if (e.getUom() == null || !e.getUom().getId().equals(ds.getUomId())) {
+                e.setUom((Uom) this.em.find(Uom.class, ds.getUomId()));
+            }
+        } else {
+            this.lookup_uom_Uom(ds, e);
         }
 
         if (ds.getFromSubInventoryId() != null) {
@@ -105,6 +115,25 @@ public class InvTransactionLineDsConv extends
 
         } else {
             e.setItem(null);
+        }
+    }
+
+    protected void lookup_uom_Uom(InvTransactionLineDs ds, InvTransactionLine e)
+            throws Exception {
+        if (ds.getUom() != null && !ds.getUom().equals("")) {
+            Uom x = null;
+            try {
+                x = ((IUomService) findEntityService(Uom.class)).findByCode(ds
+                        .getUom());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Uom` reference:  `uom` = "
+                                + ds.getUom() + "  ");
+            }
+            e.setUom(x);
+
+        } else {
+            e.setUom(null);
         }
     }
 

@@ -103,6 +103,40 @@
 		<property name="name" value="SalesOrderTax" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderTaxDs" />
 	</bean>
+   
+ 	<bean id="SalesDeliveryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesDeliveryDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesInventoryTransaction" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.order.ds.converter.SalesDeliveryDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="confirm">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesDeliveryPD"/>
+	  				<constructor-arg name="methodName" value="confirm" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="unConfirm">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesDeliveryPD"/>
+	  				<constructor-arg name="methodName" value="unConfirm" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SalesDelivery" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">confirm</value>
+	  			<value type="java.lang.String">unConfirm</value>
+			</list>	  		 
+	  	</property>	
+	</bean>
       
 </beans>
    

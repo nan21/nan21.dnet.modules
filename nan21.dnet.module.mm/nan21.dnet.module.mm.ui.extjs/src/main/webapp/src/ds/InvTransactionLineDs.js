@@ -18,6 +18,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionLineDs" ,{
 		{name:"itemId", type:"int", useNull:true},
 		{name:"itemCode", type:"string"},
 		{name:"item", type:"string"},
+		{name:"uomId", type:"int", useNull:true},
+		{name:"uom", type:"string"},
 		{name:"fromSubInventoryId", type:"int", useNull:true},
 		{name:"fromSubInventory", type:"string"},
 		{name:"fromLocatorId", type:"int", useNull:true},
@@ -27,6 +29,11 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionLineDs" ,{
 		{name:"toLocatorId", type:"int", useNull:true},
 		{name:"toLocator", type:"string"},
 		{name:"quantity", type:"float", useNull:true}
+	],
+	validations: [  
+		{field: "itemCode", type: 'presence'}, 
+		{field: "quantity", type: 'presence'}, 
+		{field: "uom", type: 'presence'}
 	]
 });
 
@@ -58,6 +65,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionLineDsFilt
 		{name:"itemId_To",type:"int", useNull:true},
 		{name:"itemCode", type:"string"},
 		{name:"item", type:"string"},
+		{name:"uomId", type:"int", useNull:true},
+		{name:"uomId_From",type:"int", useNull:true},
+		{name:"uomId_To",type:"int", useNull:true},
+		{name:"uom", type:"string"},
 		{name:"fromSubInventoryId", type:"int", useNull:true},
 		{name:"fromSubInventoryId_From",type:"int", useNull:true},
 		{name:"fromSubInventoryId_To",type:"int", useNull:true},

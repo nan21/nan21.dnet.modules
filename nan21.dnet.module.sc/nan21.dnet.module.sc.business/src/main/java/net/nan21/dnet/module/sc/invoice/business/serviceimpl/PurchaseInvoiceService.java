@@ -9,6 +9,8 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
+import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.sc.invoice.business.service.IPurchaseInvoiceService;
@@ -34,6 +36,19 @@ public class PurchaseInvoiceService extends
     @Override
     protected Class<PurchaseInvoice> getEntityClass() {
         return PurchaseInvoice.class;
+    }
+
+    public List<PurchaseInvoice> findByDocType(FinDocType docType) {
+        return this.findByDocTypeId(docType.getId());
+    }
+
+    public List<PurchaseInvoice> findByDocTypeId(Long docTypeId) {
+        return (List<PurchaseInvoice>) this.em
+                .createQuery(
+                        "select e from PurchaseInvoice e where e.clientId = :pClientId and e.docType.id = :pDocTypeId",
+                        PurchaseInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pDocTypeId", docTypeId).getResultList();
     }
 
     public List<PurchaseInvoice> findBySupplier(BusinessPartner supplier) {
@@ -73,6 +88,33 @@ public class PurchaseInvoiceService extends
                         PurchaseInvoice.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCurrencyId", currencyId).getResultList();
+    }
+
+    public List<PurchaseInvoice> findByPaymentMethod(PaymentMethod paymentMethod) {
+        return this.findByPaymentMethodId(paymentMethod.getId());
+    }
+
+    public List<PurchaseInvoice> findByPaymentMethodId(Long paymentMethodId) {
+        return (List<PurchaseInvoice>) this.em
+                .createQuery(
+                        "select e from PurchaseInvoice e where e.clientId = :pClientId and e.paymentMethod.id = :pPaymentMethodId",
+                        PurchaseInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pPaymentMethodId", paymentMethodId)
+                .getResultList();
+    }
+
+    public List<PurchaseInvoice> findByPaymentTerm(PaymentMethod paymentTerm) {
+        return this.findByPaymentTermId(paymentTerm.getId());
+    }
+
+    public List<PurchaseInvoice> findByPaymentTermId(Long paymentTermId) {
+        return (List<PurchaseInvoice>) this.em
+                .createQuery(
+                        "select e from PurchaseInvoice e where e.clientId = :pClientId and e.paymentTerm.id = :pPaymentTermId",
+                        PurchaseInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pPaymentTermId", paymentTermId).getResultList();
     }
 
     public List<PurchaseInvoice> findByPurchaseOrder(PurchaseOrder purchaseOrder) {

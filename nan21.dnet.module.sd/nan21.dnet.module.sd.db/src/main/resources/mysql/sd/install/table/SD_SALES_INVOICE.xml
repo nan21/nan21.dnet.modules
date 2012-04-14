@@ -42,6 +42,12 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CUSTOMER_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
+			<column name="DOCTYPE_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
+			<column name="PAYMENTMETHOD_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
+			<column name="PAYMENTTERM_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
 			<column name="PRICELIST_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
 			<column name="SALESORDER_ID" type="bigint(19)">	 

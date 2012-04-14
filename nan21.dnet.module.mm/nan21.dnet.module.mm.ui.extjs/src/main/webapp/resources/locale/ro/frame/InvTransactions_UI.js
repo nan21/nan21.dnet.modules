@@ -1,9 +1,8 @@
 Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI$Trl", { 
 	
 	tlbTxList__ttl : "Tranzacţii",
+	tlbTxlineEditList__ttl : "Articole",
 	
-	btnPostTransaction__ttl : "Înregistrează",
-	btnPostTransaction__desc : "Înregistrează tranzacţia",
 	
-	title: "Tranzacţii"
+	title: "Tranzacţii gestiune"
 });	

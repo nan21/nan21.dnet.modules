@@ -6,7 +6,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.lovs.Employees", {
 	displayField:"name",
 	listConfig: {		
 		getInnerTpl: function() { 
-			return '<span>{name}, {code}</span>';
+			return '<span>{code}, {name}</span>';
 		},
 		width:250
 	},		 

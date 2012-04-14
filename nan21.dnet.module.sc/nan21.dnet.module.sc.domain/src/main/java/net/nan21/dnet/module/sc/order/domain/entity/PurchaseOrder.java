@@ -32,6 +32,7 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
@@ -80,6 +81,15 @@ public class PurchaseOrder implements Serializable, IModelWithId,
     @Column(name = "DOCDATE", nullable = false)
     @NotNull
     private Date docDate;
+
+    /** PlannedDeliveryDate. */
+    @Temporal(TemporalType.DATE)
+    @Column(name = "PLANNEDDELIVERYDATE")
+    private Date plannedDeliveryDate;
+
+    /** DeliveryNotes. */
+    @Column(name = "DELIVERYNOTES", length = 4000)
+    private String deliveryNotes;
 
     /** TotalNetAmount. */
     @Column(name = "TOTALNETAMOUNT", scale = 2)
@@ -157,6 +167,15 @@ public class PurchaseOrder implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FinDocType.class)
+    @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
+    private FinDocType docType;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
+    @JoinColumn(name = "SUPPLIER_ID", referencedColumnName = "ID")
+    private BusinessPartner supplier;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
+    @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "ID")
+    private Organization customer;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PriceList.class)
     @JoinColumn(name = "PRICELIST_ID", referencedColumnName = "ID")
     private PriceList priceList;
@@ -166,15 +185,15 @@ public class PurchaseOrder implements Serializable, IModelWithId,
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
     @JoinColumn(name = "PAYMENTMETHOD_ID", referencedColumnName = "ID")
     private PaymentMethod paymentMethod;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
+    @JoinColumn(name = "PAYMENTTERM_ID", referencedColumnName = "ID")
+    private PaymentMethod paymentTerm;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
+    @JoinColumn(name = "INVENTORY_ID", referencedColumnName = "ID")
+    private Organization inventory;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = DeliveryMethod.class)
     @JoinColumn(name = "DELIVERYMETHOD_ID", referencedColumnName = "ID")
     private DeliveryMethod deliveryMethod;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
-    @JoinColumn(name = "SUPPLIER_ID", referencedColumnName = "ID")
-    private BusinessPartner supplier;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
-    @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "ID")
-    private Organization customer;
 
     @OneToMany(fetch = FetchType.LAZY, targetEntity = PurchaseOrderItem.class, mappedBy = "purchaseOrder", cascade = CascadeType.ALL)
     @CascadeOnDelete
@@ -196,6 +215,22 @@ public class PurchaseOrder implements Serializable, IModelWithId,
 
     public void setDocDate(Date docDate) {
         this.docDate = docDate;
+    }
+
+    public Date getPlannedDeliveryDate() {
+        return this.plannedDeliveryDate;
+    }
+
+    public void setPlannedDeliveryDate(Date plannedDeliveryDate) {
+        this.plannedDeliveryDate = plannedDeliveryDate;
+    }
+
+    public String getDeliveryNotes() {
+        return this.deliveryNotes;
+    }
+
+    public void setDeliveryNotes(String deliveryNotes) {
+        this.deliveryNotes = deliveryNotes;
     }
 
     public Float getTotalNetAmount() {
@@ -312,6 +347,30 @@ public class PurchaseOrder implements Serializable, IModelWithId,
 
     }
 
+    public FinDocType getDocType() {
+        return this.docType;
+    }
+
+    public void setDocType(FinDocType docType) {
+        this.docType = docType;
+    }
+
+    public BusinessPartner getSupplier() {
+        return this.supplier;
+    }
+
+    public void setSupplier(BusinessPartner supplier) {
+        this.supplier = supplier;
+    }
+
+    public Organization getCustomer() {
+        return this.customer;
+    }
+
+    public void setCustomer(Organization customer) {
+        this.customer = customer;
+    }
+
     public PriceList getPriceList() {
         return this.priceList;
     }
@@ -336,28 +395,28 @@ public class PurchaseOrder implements Serializable, IModelWithId,
         this.paymentMethod = paymentMethod;
     }
 
+    public PaymentMethod getPaymentTerm() {
+        return this.paymentTerm;
+    }
+
+    public void setPaymentTerm(PaymentMethod paymentTerm) {
+        this.paymentTerm = paymentTerm;
+    }
+
+    public Organization getInventory() {
+        return this.inventory;
+    }
+
+    public void setInventory(Organization inventory) {
+        this.inventory = inventory;
+    }
+
     public DeliveryMethod getDeliveryMethod() {
         return this.deliveryMethod;
     }
 
     public void setDeliveryMethod(DeliveryMethod deliveryMethod) {
         this.deliveryMethod = deliveryMethod;
-    }
-
-    public BusinessPartner getSupplier() {
-        return this.supplier;
-    }
-
-    public void setSupplier(BusinessPartner supplier) {
-        this.supplier = supplier;
-    }
-
-    public Organization getCustomer() {
-        return this.customer;
-    }
-
-    public void setCustomer(Organization customer) {
-        this.customer = customer;
     }
 
     public Collection<PurchaseOrderItem> getLines() {

@@ -38,6 +38,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="VIRTUALENTITY" type="int(1)">
 				<constraints nullable="false" /></column>	 
+			<column name="WAREHOUSE" type="int(1)">
+				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

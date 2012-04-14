@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.bp.calendar.ds.model.MyCalendarEventDs$Trl", {  	  	
-	subject__lbl :  "Titlu",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	subject__lbl :  "Titlu",
 	startDate__lbl :  "De la",
 	endDate__lbl :  "Până la",
 	dueDate__lbl :  "Planificat la",

@@ -36,7 +36,8 @@
 "10";"bd-menu";"Base data";"MDM";;;"true";;"false";"false";
 "10";"Issues_UI";"Incidents";;"net.nan21.dnet.module.pj.md.frame.Issues_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
 "10";"ImportMap_UI";"Import file-sets";;"net.nan21.dnet.module.ad.impex.frame.ImportMap_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
-"10";"PriceList_UI";"Price-lists";;"net.nan21.dnet.module.mm.price.frame.PriceList_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"10";"PriceList_UI";"Price lists";;"net.nan21.dnet.module.mm.price.frame.PriceList_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"12";"PriceListVersions_UI";"Price list versions";;"net.nan21.dnet.module.mm.price.frame.PriceListVersions_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
 "10";"ad-menu-client";"Client";"AD";;;"true";;"false";"false";
 "10";"UomType_UI";"Unit of measure types";;"net.nan21.dnet.module.bd.uom.frame.UomType_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
 "10";"mm-menu-base";"Base-data";;;;"true";;"false";"false";
@@ -55,7 +56,8 @@
 "20";"ad-menu-system";"System";"AD";;;"true";;"false";"false";
 "20";"UserGroups_UI";"User groups";;"net.nan21.dnet.module.ad.usr.frame.UserGroups_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
 "20";"Course_UI";"Courses";;"net.nan21.dnet.module.hr.training.frame.Course_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
-"20";"InvTransactions_UI";"Inventory transactions";;"net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"60";"InvTransactions_UI";"Transactions overview";;"net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"40";"InvTransfer_UI";"Goods transfer";;"net.nan21.dnet.module.mm.inventory.frame.InvTransfer_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
 "20";"Job_UI";"Jobs";;"net.nan21.dnet.module.hr.job.frame.Job_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
 "20";"ProductPriceReport_UI";"Price report";;"net.nan21.dnet.module.mm.price.frame.ProductPriceReport_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
 "20";"ProjectVersions_UI";"Project versions";;"net.nan21.dnet.module.pj.md.frame.ProjectVersions_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
@@ -75,6 +77,7 @@
 "20";"Reports_UI";"Reports";;"net.nan21.dnet.module.ad.report.frame.Reports_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
 "20";"WorkflowAdmin_UI";"Workflow admin console";;"net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
 "20";"PurchaseOrder_UI";"Orders";;"net.nan21.dnet.module.sc.order.frame.PurchaseOrder_UI";"nan21.dnet.module.sc.ui.extjs";"true";;"false";"false";
+"30";"PurchaseReception_UI";"Goods reception";;"net.nan21.dnet.module.sc.order.frame.PurchaseReception_UI";"nan21.dnet.module.sc.ui.extjs";"true";;"false";"false";
 "20";"PurchaseInvoice_UI";"Invoices";;"net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI";"nan21.dnet.module.sc.ui.extjs";"true";;"false";"false";
 "20";"sc-menu-order";"Orders";"SCM";;;"true";;"false";"false";
 "20";"SysParam_UI";"System parameters";;"net.nan21.dnet.module.ad.system.frame.SysParam_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
@@ -90,6 +93,7 @@
 "20";"RatingScale_UI";"Rating scales";;"net.nan21.dnet.module.hr.skill.frame.RatingScale_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
 "20";"sd-menu-order";"Orders";"SD";;;"true";;"false";"false";
 "20";"SalesOrder_UI";"Orders";;"net.nan21.dnet.module.sd.order.frame.SalesOrder_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";
+"30";"SalesDelivery_UI";"Goods delivery";;"net.nan21.dnet.module.sd.order.frame.SalesDelivery_UI";"nan21.dnet.module.sd.ui.extjs";"true";;"false";"false";
 "20";"Grade_UI";"Grades";;"net.nan21.dnet.module.hr.grade.frame.Grade_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
 "20";"pj-menu-issues";"Incidents";"PJ";;;"true";;"false";"false";
 "20";"Attachments_UI";"Attachments";;"net.nan21.dnet.module.ad.data.frame.Attachments_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
@@ -107,7 +111,7 @@
 "30";"AsgnAccessControl_UI";"Access rights - ASGN";;"net.nan21.dnet.module.ad.usr.frame.AsgnAccessControl_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
 "30";"BpAccount_UI";"Business partner accounts";;"net.nan21.dnet.module.bp.md.frame.BpAccount_UI";"nan21.dnet.module.bp.ui.extjs";"true";;"false";"false";
 "30";"sc-menu-invoice";"Invoices";"SCM";;;"true";;"false";"false";
-"30";"InvOperations_UI";"Inventory operations";;"net.nan21.dnet.module.mm.inventory.frame.InvOperations_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"70";"InvOperations_UI";"Movements overview";;"net.nan21.dnet.module.mm.inventory.frame.InvOperations_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
 "30";"bd-menu-geo";"Geography";;;;"true";;"false";"false";
 "30";"SysDateFormat_UI";"Date formats";;"net.nan21.dnet.module.ad.system.frame.SysDateFormat_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
 "30";"Payroll_UI";"Payroll";;"net.nan21.dnet.module.hr.payroll.frame.Payroll_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
@@ -122,7 +126,7 @@
 "30";"ImportJob_UI";"Impport jobs";;"net.nan21.dnet.module.ad.impex.frame.ImportJob_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
 "30";"sd-menu-invoice";"Invoices";"SD";;;"true";;"false";"false";
 "40";"ad-menu-data";"Data";"AD";;;"true";;"false";"false";
-"40";"InventoryBaseData_UI";"Inventory base data";;"net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"30";"InventoryBaseData_UI";"Inventory base data";;"net.nan21.dnet.module.mm.inventory.frame.InventoryBaseData_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
 "40";"hr-menu-employee";"Employees";"HRM";;;"true";;"false";"false";
 "40";"DsMethodAccessControl_UI";"Access rights - DS method";;"net.nan21.dnet.module.ad.usr.frame.DsMethodAccessControl_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
 "40";"Role_UI";"Roles";;"net.nan21.dnet.module.ad.usr.frame.Role_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";

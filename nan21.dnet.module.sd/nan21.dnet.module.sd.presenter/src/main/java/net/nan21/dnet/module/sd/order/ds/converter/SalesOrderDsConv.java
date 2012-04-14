@@ -8,7 +8,9 @@ package net.nan21.dnet.module.sd.order.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
+import net.nan21.dnet.module.bd.fin.business.service.IFinDocTypeService;
 import net.nan21.dnet.module.bd.fin.business.service.IPaymentMethodService;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
@@ -52,6 +54,26 @@ public class SalesOrderDsConv extends
             this.lookup_priceList_PriceList(ds, e);
         }
 
+        if (ds.getInventoryId() != null) {
+            if (e.getInventory() == null
+                    || !e.getInventory().getId().equals(ds.getInventoryId())) {
+                e.setInventory((Organization) this.em.find(Organization.class,
+                        ds.getInventoryId()));
+            }
+        } else {
+            this.lookup_inventory_Organization(ds, e);
+        }
+
+        if (ds.getDocTypeId() != null) {
+            if (e.getDocType() == null
+                    || !e.getDocType().getId().equals(ds.getDocTypeId())) {
+                e.setDocType((FinDocType) this.em.find(FinDocType.class,
+                        ds.getDocTypeId()));
+            }
+        } else {
+            this.lookup_docType_FinDocType(ds, e);
+        }
+
         if (ds.getDeliveryMethodId() != null) {
             if (e.getDeliveryMethod() == null
                     || !e.getDeliveryMethod().getId()
@@ -72,6 +94,17 @@ public class SalesOrderDsConv extends
             }
         } else {
             this.lookup_paymentMethod_PaymentMethod(ds, e);
+        }
+
+        if (ds.getPaymentTermId() != null) {
+            if (e.getPaymentTerm() == null
+                    || !e.getPaymentTerm().getId()
+                            .equals(ds.getPaymentTermId())) {
+                e.setPaymentTerm((PaymentMethod) this.em.find(
+                        PaymentMethod.class, ds.getPaymentTermId()));
+            }
+        } else {
+            this.lookup_paymentTerm_PaymentMethod(ds, e);
         }
 
         if (isInsert) {
@@ -176,6 +209,44 @@ public class SalesOrderDsConv extends
         }
     }
 
+    protected void lookup_inventory_Organization(SalesOrderDs ds, SalesOrder e)
+            throws Exception {
+        if (ds.getInventory() != null && !ds.getInventory().equals("")) {
+            Organization x = null;
+            try {
+                x = ((IOrganizationService) findEntityService(Organization.class))
+                        .findByCode(ds.getInventory());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Organization` reference:  `inventory` = "
+                                + ds.getInventory() + "  ");
+            }
+            e.setInventory(x);
+
+        } else {
+            e.setInventory(null);
+        }
+    }
+
+    protected void lookup_docType_FinDocType(SalesOrderDs ds, SalesOrder e)
+            throws Exception {
+        if (ds.getDocType() != null && !ds.getDocType().equals("")) {
+            FinDocType x = null;
+            try {
+                x = ((IFinDocTypeService) findEntityService(FinDocType.class))
+                        .findByName(ds.getDocType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `FinDocType` reference:  `docType` = "
+                                + ds.getDocType() + "  ");
+            }
+            e.setDocType(x);
+
+        } else {
+            e.setDocType(null);
+        }
+    }
+
     protected void lookup_deliveryMethod_DeliveryMethod(SalesOrderDs ds,
             SalesOrder e) throws Exception {
         if (ds.getDeliveryMethod() != null
@@ -212,6 +283,25 @@ public class SalesOrderDsConv extends
 
         } else {
             e.setPaymentMethod(null);
+        }
+    }
+
+    protected void lookup_paymentTerm_PaymentMethod(SalesOrderDs ds,
+            SalesOrder e) throws Exception {
+        if (ds.getPaymentTerm() != null && !ds.getPaymentTerm().equals("")) {
+            PaymentMethod x = null;
+            try {
+                x = ((IPaymentMethodService) findEntityService(PaymentMethod.class))
+                        .findByName(ds.getPaymentTerm());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PaymentMethod` reference:  `paymentTerm` = "
+                                + ds.getPaymentTerm() + "  ");
+            }
+            e.setPaymentTerm(x);
+
+        } else {
+            e.setPaymentTerm(null);
         }
     }
 

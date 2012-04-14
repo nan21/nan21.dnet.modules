@@ -8,6 +8,7 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDs$Trl", {
 	inventory__lbl : "Inventory",
 	external__lbl : "External",
 	carrier__lbl : "Carrier",
+	warehouse__lbl : "Warehouse",
 		
 	id__lbl :"ID"
 });

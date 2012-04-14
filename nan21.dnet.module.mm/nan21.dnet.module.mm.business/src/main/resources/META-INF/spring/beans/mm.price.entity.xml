@@ -7,9 +7,6 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
- 	<bean id="PriceListTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm.price.business.serviceimpl.PriceListTypeService"  />  
- 
  	<bean id="PriceListService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.price.business.serviceext.PriceListService"  />  
  

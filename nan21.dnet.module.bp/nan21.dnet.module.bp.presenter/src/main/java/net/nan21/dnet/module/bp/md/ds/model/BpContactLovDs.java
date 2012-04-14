@@ -5,28 +5,17 @@
  */
 package net.nan21.dnet.module.bp.md.ds.model;
 
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableLov;
 
 import net.nan21.dnet.module.bp.md.domain.entity.Contact;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = Contact.class)
-public class BpContactLovDs extends AbstractDsModel<Contact> implements
-        IModelWithId, IModelWithClientId {
+public class BpContactLovDs extends AbstractAuditableLov<Contact> {
 
-    public static final String fID = "id";
-    public static final String fCLIENTID = "clientId";
     public static final String fNAME = "name";
     public static final String fBPARTNERID = "bpartnerId";
-
-    @DsField()
-    private Long id;
-
-    @DsField()
-    private Long clientId;
 
     @DsField(fetch = false, jpqlFilter = " e.lastName like :name ")
     private String name;
@@ -40,23 +29,6 @@ public class BpContactLovDs extends AbstractDsModel<Contact> implements
 
     public BpContactLovDs(Contact e) {
         super(e);
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
     }
 
     public String getName() {

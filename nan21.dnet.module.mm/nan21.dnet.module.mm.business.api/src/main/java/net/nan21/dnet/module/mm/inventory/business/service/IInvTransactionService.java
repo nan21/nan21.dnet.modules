@@ -7,6 +7,7 @@ package net.nan21.dnet.module.mm.inventory.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
@@ -14,6 +15,10 @@ import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction;
 
 public interface IInvTransactionService extends IEntityService<InvTransaction> {
+
+    public List<InvTransaction> findByDocType(FinDocType docType);
+
+    public List<InvTransaction> findByDocTypeId(Long docTypeId);
 
     public List<InvTransaction> findByTransactionType(
             InvTransactionType transactionType);

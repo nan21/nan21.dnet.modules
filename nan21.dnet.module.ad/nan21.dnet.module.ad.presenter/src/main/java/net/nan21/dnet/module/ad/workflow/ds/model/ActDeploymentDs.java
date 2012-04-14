@@ -7,16 +7,14 @@ package net.nan21.dnet.module.ad.workflow.ds.model;
 
 import java.util.Date;
 import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractBaseDs;
 
 import net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = ActDeployment.class, sort = { @SortField(field = ActDeploymentDs.fDEPLOYTIME, desc = true) })
-public class ActDeploymentDs extends AbstractDsModel<ActDeployment> implements
-        IModelWithId {
+public class ActDeploymentDs extends AbstractBaseDs<ActDeployment> {
 
     public static final String fID = "id";
     public static final String fNAME = "name";

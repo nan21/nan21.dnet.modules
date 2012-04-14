@@ -1,0 +1,3 @@
+"name";"description";"currency";"salesList";"active";"isDefault"
+"purchase-default";"Default purchase list";"RON";"false";"true";"true"
+"sales-default";"Default sales list";"RON";"true";"true";"true"

@@ -5,86 +5,26 @@
  */
 package net.nan21.dnet.module.mm.inventory.ds.model;
 
-import java.util.Date;
 import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
 
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = InvTransactionType.class, sort = { @SortField(field = InvTransactionTypeDs.fNAME) })
-public class InvTransactionTypeDs extends AbstractDsModel<InvTransactionType>
-        implements IModelWithId, IModelWithClientId {
+public class InvTransactionTypeDs extends AbstractTypeDs<InvTransactionType> {
 
-    public static final String fNAME = "name";
-    public static final String fACTIVE = "active";
-    public static final String fDESCRIPTION = "description";
-    public static final String fID = "id";
-    public static final String fUUID = "uuid";
-    public static final String fCLIENTID = "clientId";
-    public static final String fCREATEDAT = "createdAt";
-    public static final String fMODIFIEDAT = "modifiedAt";
-    public static final String fCREATEDBY = "createdBy";
-    public static final String fMODIFIEDBY = "modifiedBy";
-    public static final String fVERSION = "version";
-    public static final String fENTITYFQN = "entityFQN";
-    public static final String fSOURCETYPEID = "sourceTypeId";
-    public static final String fSOURCETYPE = "sourceType";
-    public static final String fACTIONID = "actionId";
-    public static final String fACTION = "action";
+    public static final String fDOCTYPEID = "docTypeId";
+    public static final String fDOCTYPE = "docType";
     public static final String fHASFROMINVENTORY = "hasFromInventory";
     public static final String fHASTOINVENTORY = "hasToInventory";
 
-    @DsField()
-    private String name;
+    @DsField(join = "left", path = "docType.id")
+    private Long docTypeId;
 
-    @DsField()
-    private Boolean active;
-
-    @DsField()
-    private String description;
-
-    @DsField(noUpdate = true)
-    private Long id;
-
-    @DsField(noUpdate = true)
-    private String uuid;
-
-    @DsField(noUpdate = true)
-    private Long clientId;
-
-    @DsField(noUpdate = true)
-    private Date createdAt;
-
-    @DsField(noUpdate = true)
-    private Date modifiedAt;
-
-    @DsField(noUpdate = true)
-    private String createdBy;
-
-    @DsField(noUpdate = true)
-    private String modifiedBy;
-
-    @DsField()
-    private Long version;
-
-    @DsField(noUpdate = true, fetch = false, path = "className")
-    private String entityFQN;
-
-    @DsField(join = "left", path = "sourceType.id")
-    private Long sourceTypeId;
-
-    @DsField(join = "left", path = "sourceType.name")
-    private String sourceType;
-
-    @DsField(join = "left", path = "action.id")
-    private Long actionId;
-
-    @DsField(join = "left", path = "action.name")
-    private String action;
+    @DsField(join = "left", path = "docType.name")
+    private String docType;
 
     @DsField()
     private Boolean hasFromInventory;
@@ -100,133 +40,20 @@ public class InvTransactionTypeDs extends AbstractDsModel<InvTransactionType>
         super(e);
     }
 
-    public String getName() {
-        return this.name;
+    public Long getDocTypeId() {
+        return this.docTypeId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDocTypeId(Long docTypeId) {
+        this.docTypeId = docTypeId;
     }
 
-    public Boolean getActive() {
-        return this.active;
+    public String getDocType() {
+        return this.docType;
     }
 
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public String getUuid() {
-        return this.uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
-
-    public Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getModifiedAt() {
-        return this.modifiedAt;
-    }
-
-    public void setModifiedAt(Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    public String getCreatedBy() {
-        return this.createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getModifiedBy() {
-        return this.modifiedBy;
-    }
-
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
-    }
-
-    public Long getVersion() {
-        return this.version;
-    }
-
-    public void setVersion(Long version) {
-        this.version = version;
-    }
-
-    public String getEntityFQN() {
-        return this.entityFQN;
-    }
-
-    public void setEntityFQN(String entityFQN) {
-        this.entityFQN = entityFQN;
-    }
-
-    public Long getSourceTypeId() {
-        return this.sourceTypeId;
-    }
-
-    public void setSourceTypeId(Long sourceTypeId) {
-        this.sourceTypeId = sourceTypeId;
-    }
-
-    public String getSourceType() {
-        return this.sourceType;
-    }
-
-    public void setSourceType(String sourceType) {
-        this.sourceType = sourceType;
-    }
-
-    public Long getActionId() {
-        return this.actionId;
-    }
-
-    public void setActionId(Long actionId) {
-        this.actionId = actionId;
-    }
-
-    public String getAction() {
-        return this.action;
-    }
-
-    public void setAction(String action) {
-        this.action = action;
+    public void setDocType(String docType) {
+        this.docType = docType;
     }
 
     public Boolean getHasFromInventory() {

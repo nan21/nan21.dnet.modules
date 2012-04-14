@@ -1,0 +1,14 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_INV_TX1" baseTableName="SD_SALES_INV_TX" baseColumnNames="CUSTOMER_ID"  referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_INV_TX2" baseTableName="SD_SALES_INV_TX" baseColumnNames="DELIVERYLOCATION_ID"  referencedTableName="BD_GEO_LOCATION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_INV_TX3" baseTableName="SD_SALES_INV_TX" baseColumnNames="SALESORDER_ID"  referencedTableName="SD_SALES_ORDER"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

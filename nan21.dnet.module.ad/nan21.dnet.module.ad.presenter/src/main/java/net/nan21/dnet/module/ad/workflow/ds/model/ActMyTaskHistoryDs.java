@@ -7,16 +7,14 @@ package net.nan21.dnet.module.ad.workflow.ds.model;
 
 import java.util.Date;
 import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractBaseDs;
 
 import net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = ActTaskInstanceHistory.class, jpqlWhere = " e.endTime is not null ", sort = { @SortField(field = ActMyTaskHistoryDs.fSTARTTIME, desc = true) })
-public class ActMyTaskHistoryDs extends AbstractDsModel<ActTaskInstanceHistory>
-        implements IModelWithId {
+public class ActMyTaskHistoryDs extends AbstractBaseDs<ActTaskInstanceHistory> {
 
     public static final String fID = "id";
     public static final String fPROCESSID = "processId";

@@ -6,16 +6,14 @@
 package net.nan21.dnet.module.ad.workflow.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractBaseDs;
 
 import net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = ActTaskInstanceHistory.class)
-public class ActTaskInstanceDs extends AbstractDsModel<ActTaskInstanceHistory>
-        implements IModelWithId {
+public class ActTaskInstanceDs extends AbstractBaseDs<ActTaskInstanceHistory> {
 
     public static final String fID = "id";
     public static final String fPROCESSID = "processId";

@@ -28,6 +28,7 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction;
 import net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator;
 import net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory;
@@ -145,6 +146,9 @@ public class InvTransactionLine implements Serializable, IModelWithId,
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = StockLocator.class)
     @JoinColumn(name = "TOLOCATOR_ID", referencedColumnName = "ID")
     private StockLocator toLocator;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
+    @JoinColumn(name = "UOM_ID", referencedColumnName = "ID")
+    private Uom uom;
 
     /* ============== getters - setters ================== */
 
@@ -275,6 +279,14 @@ public class InvTransactionLine implements Serializable, IModelWithId,
 
     public void setToLocator(StockLocator toLocator) {
         this.toLocator = toLocator;
+    }
+
+    public Uom getUom() {
+        return this.uom;
+    }
+
+    public void setUom(Uom uom) {
+        this.uom = uom;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

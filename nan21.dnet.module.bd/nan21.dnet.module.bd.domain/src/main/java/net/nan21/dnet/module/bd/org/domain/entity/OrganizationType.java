@@ -94,6 +94,11 @@ public class OrganizationType implements Serializable, IModelWithId,
     @NotNull
     private Boolean carrier;
 
+    /** Warehouse. */
+    @Column(name = "WAREHOUSE", nullable = false)
+    @NotNull
+    private Boolean warehouse;
+
     /**
      * Name of entity.
      */
@@ -224,6 +229,14 @@ public class OrganizationType implements Serializable, IModelWithId,
         this.carrier = carrier;
     }
 
+    public Boolean getWarehouse() {
+        return this.warehouse;
+    }
+
+    public void setWarehouse(Boolean warehouse) {
+        this.warehouse = warehouse;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -352,6 +365,9 @@ public class OrganizationType implements Serializable, IModelWithId,
         }
         if (this.carrier == null) {
             event.updateAttributeWithObject("carrier", false);
+        }
+        if (this.warehouse == null) {
+            event.updateAttributeWithObject("warehouse", false);
         }
         if (this.active == null) {
             event.updateAttributeWithObject("active", false);

@@ -8,9 +8,8 @@ package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.mm.inventory.business.service.IInvTransactionTypeService;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
@@ -40,31 +39,17 @@ public class InvTransactionTypeService extends
                 .setParameter("pName", name).getSingleResult();
     }
 
-    public List<InvTransactionType> findBySourceType(
-            InvTransactionSourceType sourceType) {
-        return this.findBySourceTypeId(sourceType.getId());
+    public List<InvTransactionType> findByDocType(FinDocType docType) {
+        return this.findByDocTypeId(docType.getId());
     }
 
-    public List<InvTransactionType> findBySourceTypeId(Long sourceTypeId) {
+    public List<InvTransactionType> findByDocTypeId(Long docTypeId) {
         return (List<InvTransactionType>) this.em
                 .createQuery(
-                        "select e from InvTransactionType e where e.clientId = :pClientId and e.sourceType.id = :pSourceTypeId",
+                        "select e from InvTransactionType e where e.clientId = :pClientId and e.docType.id = :pDocTypeId",
                         InvTransactionType.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pSourceTypeId", sourceTypeId).getResultList();
-    }
-
-    public List<InvTransactionType> findByAction(InvTransactionAction action) {
-        return this.findByActionId(action.getId());
-    }
-
-    public List<InvTransactionType> findByActionId(Long actionId) {
-        return (List<InvTransactionType>) this.em
-                .createQuery(
-                        "select e from InvTransactionType e where e.clientId = :pClientId and e.action.id = :pActionId",
-                        InvTransactionType.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pActionId", actionId).getResultList();
+                .setParameter("pDocTypeId", docTypeId).getResultList();
     }
 
 }

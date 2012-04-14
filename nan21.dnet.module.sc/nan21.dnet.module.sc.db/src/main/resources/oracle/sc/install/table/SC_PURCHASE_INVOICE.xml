@@ -38,6 +38,12 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CUSTOMER_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
+			<column name="DOCTYPE_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="PAYMENTMETHOD_ID" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="PAYMENTTERM_ID" type="number(19)">	 
+				<constraints  /></column>	 
 			<column name="PURCHASEORDER_ID" type="number(19)">	 
 				<constraints  /></column>	 
 			<column name="SUPPLIER_ID" type="number(19)">	 

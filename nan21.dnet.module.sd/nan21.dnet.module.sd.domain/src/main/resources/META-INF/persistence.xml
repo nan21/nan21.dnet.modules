@@ -41,8 +41,7 @@
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttribute</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeType</class>
 		<class>net.nan21.dnet.module.mm.md.domain.entity.ProductAttributeCategory</class>
-		
-		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceListType</class> 
+ 
 		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceList</class>
 		<class>net.nan21.dnet.module.mm.price.domain.entity.PriceListVersion</class>
 		<class>net.nan21.dnet.module.mm.price.domain.entity.ProductPrice</class>
@@ -54,6 +53,17 @@
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.Tax</class>
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod</class>
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.FinDocType</class>
+		
+		
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.StockLocatorType</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine</class>
+		<class>net.nan21.dnet.module.mm.inventory.domain.entity.InvOperation</class>  
 		
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>

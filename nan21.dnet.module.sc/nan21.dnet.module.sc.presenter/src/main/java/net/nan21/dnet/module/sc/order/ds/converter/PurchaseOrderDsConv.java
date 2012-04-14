@@ -8,7 +8,9 @@ package net.nan21.dnet.module.sc.order.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
+import net.nan21.dnet.module.bd.fin.business.service.IFinDocTypeService;
 import net.nan21.dnet.module.bd.fin.business.service.IPaymentMethodService;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -41,6 +43,26 @@ public class PurchaseOrderDsConv extends
             this.lookup_currency_Currency(ds, e);
         }
 
+        if (ds.getInventoryId() != null) {
+            if (e.getInventory() == null
+                    || !e.getInventory().getId().equals(ds.getInventoryId())) {
+                e.setInventory((Organization) this.em.find(Organization.class,
+                        ds.getInventoryId()));
+            }
+        } else {
+            this.lookup_inventory_Organization(ds, e);
+        }
+
+        if (ds.getDocTypeId() != null) {
+            if (e.getDocType() == null
+                    || !e.getDocType().getId().equals(ds.getDocTypeId())) {
+                e.setDocType((FinDocType) this.em.find(FinDocType.class,
+                        ds.getDocTypeId()));
+            }
+        } else {
+            this.lookup_docType_FinDocType(ds, e);
+        }
+
         if (ds.getPriceListId() != null) {
             if (e.getPriceList() == null
                     || !e.getPriceList().getId().equals(ds.getPriceListId())) {
@@ -71,6 +93,17 @@ public class PurchaseOrderDsConv extends
             }
         } else {
             this.lookup_paymentMethod_PaymentMethod(ds, e);
+        }
+
+        if (ds.getPaymentTermId() != null) {
+            if (e.getPaymentTerm() == null
+                    || !e.getPaymentTerm().getId()
+                            .equals(ds.getPaymentTermId())) {
+                e.setPaymentTerm((PaymentMethod) this.em.find(
+                        PaymentMethod.class, ds.getPaymentTermId()));
+            }
+        } else {
+            this.lookup_paymentTerm_PaymentMethod(ds, e);
         }
 
         if (isInsert) {
@@ -115,6 +148,44 @@ public class PurchaseOrderDsConv extends
 
         } else {
             e.setCurrency(null);
+        }
+    }
+
+    protected void lookup_inventory_Organization(PurchaseOrderDs ds,
+            PurchaseOrder e) throws Exception {
+        if (ds.getInventory() != null && !ds.getInventory().equals("")) {
+            Organization x = null;
+            try {
+                x = ((IOrganizationService) findEntityService(Organization.class))
+                        .findByCode(ds.getInventory());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Organization` reference:  `inventory` = "
+                                + ds.getInventory() + "  ");
+            }
+            e.setInventory(x);
+
+        } else {
+            e.setInventory(null);
+        }
+    }
+
+    protected void lookup_docType_FinDocType(PurchaseOrderDs ds, PurchaseOrder e)
+            throws Exception {
+        if (ds.getDocType() != null && !ds.getDocType().equals("")) {
+            FinDocType x = null;
+            try {
+                x = ((IFinDocTypeService) findEntityService(FinDocType.class))
+                        .findByName(ds.getDocType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `FinDocType` reference:  `docType` = "
+                                + ds.getDocType() + "  ");
+            }
+            e.setDocType(x);
+
+        } else {
+            e.setDocType(null);
         }
     }
 
@@ -176,6 +247,25 @@ public class PurchaseOrderDsConv extends
         }
     }
 
+    protected void lookup_paymentTerm_PaymentMethod(PurchaseOrderDs ds,
+            PurchaseOrder e) throws Exception {
+        if (ds.getPaymentTerm() != null && !ds.getPaymentTerm().equals("")) {
+            PaymentMethod x = null;
+            try {
+                x = ((IPaymentMethodService) findEntityService(PaymentMethod.class))
+                        .findByName(ds.getPaymentTerm());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PaymentMethod` reference:  `paymentTerm` = "
+                                + ds.getPaymentTerm() + "  ");
+            }
+            e.setPaymentTerm(x);
+
+        } else {
+            e.setPaymentTerm(null);
+        }
+    }
+
     protected void lookup_customer_Organization(PurchaseOrderDs ds,
             PurchaseOrder e) throws Exception {
         if (ds.getCustomer() != null && !ds.getCustomer().equals("")) {
@@ -197,15 +287,15 @@ public class PurchaseOrderDsConv extends
 
     protected void lookup_supplier_BusinessPartner(PurchaseOrderDs ds,
             PurchaseOrder e) throws Exception {
-        if (ds.getSupplier() != null && !ds.getSupplier().equals("")) {
+        if (ds.getSupplierCode() != null && !ds.getSupplierCode().equals("")) {
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
-                        .findByCode(ds.getSupplier());
+                        .findByCode(ds.getSupplierCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `BusinessPartner` reference:  `supplier` = "
-                                + ds.getSupplier() + "  ");
+                        "Invalid value provided to find `BusinessPartner` reference:  `supplierCode` = "
+                                + ds.getSupplierCode() + "  ");
             }
             e.setSupplier(x);
 

@@ -5,17 +5,9 @@
  */
 package net.nan21.dnet.module.ad.system.ds.filter;
 
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableLovFilter;
 
-import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
-
-public class UiViewStateRTLovDsFilter extends AbstractDsFilter implements
-        IModelWithId, IModelWithClientId {
-
-    private Long id;
-
-    private Long clientId;
+public class UiViewStateRTLovDsFilter extends AbstractAuditableLovFilter {
 
     private String name;
 
@@ -26,23 +18,6 @@ public class UiViewStateRTLovDsFilter extends AbstractDsFilter implements
     private String stateValue;
 
     private String owner;
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
 
     public String getName() {
         return this.name;

@@ -128,6 +128,50 @@
 		<property name="name" value="FinDocTypeLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeLovDs" />
 	</bean>
+   
+ 	<bean id="FinDocTypeSOLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeSOLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.FinDocTypeSOLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.FinDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FinDocTypeSOLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeSOLovDs" />
+	</bean>
+   
+ 	<bean id="FinDocTypeSILovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeSILovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.FinDocTypeSILovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.FinDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FinDocTypeSILov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeSILovDs" />
+	</bean>
+   
+ 	<bean id="FinDocTypePOLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypePOLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.FinDocTypePOLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.FinDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FinDocTypePOLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypePOLovDs" />
+	</bean>
+   
+ 	<bean id="FinDocTypePILovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypePILovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.FinDocTypePILovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.FinDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FinDocTypePILov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypePILovDs" />
+	</bean>
       
 </beans>
    

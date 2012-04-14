@@ -23,21 +23,30 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addNumberField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20"  })
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypes", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ],filterFieldMapping: [{lovField:"docTypeId", dsField: "docTypeId"} ]  })
 		.addLov({ name:"fromInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"fromInventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "fromInventoryId"} ]  })
 		.addLov({ name:"toInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"toInventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "toInventoryId"} ]  })
-		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ]  })
+		.addDateField({ name:"eventDate_From", dataIndex:"eventDate_From", emptyText:"From" })
+		.addDateField({ name:"eventDate_To", dataIndex:"eventDate_To", emptyText:"To" })
+		.addFieldContainer({name: "eventDate", fieldLabel:"Event Date"}) 
+		.addChildrenTo("eventDate",["eventDate_From", "eventDate_To"]) 
+
+		.addBooleanField({ name:"confirmed", dataIndex:"confirmed",anchor:"-20"  })
+		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"form", width:250}) 
-		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col1", layout:"form", width:300}) 
+		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"col3", layout:"form", width:180}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["transactionType"])
-		.addChildrenTo("col2",["id"])
+		.addChildrenTo("main",["col1","col2","col3"])
+		.addChildrenTo("col1",["docType","transactionType","eventDate"])
+		.addChildrenTo("col2",["fromInventory","toInventory"])
+		.addChildrenTo("col3",["confirmed","posted"])
     		
 	}
 }); 
@@ -49,42 +58,20 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List", {
 	
 	_defineColumns_: function () {	
 		this._getBuilder_()	
+		.addTextColumn({ name:"docType", dataIndex:"docType",width:120 })   	
+		.addTextColumn({ name:"transactionType", dataIndex:"transactionType",width:120 })   	
 		.addDateColumn({ name:"eventDate", dataIndex:"eventDate",format:Dnet.DATETIME_FORMAT})   	      	     
-		.addTextColumn({ name:"transactionType", dataIndex:"transactionType", width:150 })   	
 		.addTextColumn({ name:"fromInventory", dataIndex:"fromInventory", width:150 })   	
 		.addTextColumn({ name:"toInventory", dataIndex:"toInventory", width:150 })   	
+		.addBooleanColumn({ name:"confirmed", dataIndex:"confirmed"})   	     
+		.addBooleanColumn({ name:"posted", dataIndex:"posted"})   	     
+		.addNumberColumn({ name:"docTypeId", dataIndex:"docTypeId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"transactionTypeId", dataIndex:"transactionTypeId", hidden:true,format:"0",width:70 })  
+		.addNumberColumn({ name:"fromInventoryId", dataIndex:"fromInventoryId", hidden:true,format:"0",width:70 })  
+		.addNumberColumn({ name:"toInventoryId", dataIndex:"toInventoryId", hidden:true,format:"0",width:70 })  
 	  	.addDefaults()
 	  ;		   
 	}
 });
  
- 	
- 	
-
-Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit", {
-	extend: "dnet.core.dc.AbstractDcvEditForm",
-	alias: "widget.net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Edit",
-	
-	_defineElements_: function () {	
-		//controls	
-		this._getBuilder_()	
-		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20",noEdit:true, hideTrigger:true })
-		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ]  })
-		.addLov({ name:"fromInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"fromInventory",anchor:"-20" ,noUpdate:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "fromInventoryId"} ]  })
-		.addLov({ name:"toInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"toInventory",anchor:"-20" ,noUpdate:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "toInventoryId"} ]  })
-		//containers
-		.addPanel({ name:"col1", layout:"form" , width:300})     
-		.addPanel({ name:"col2", layout:"form" , width:300})     
-		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
-		;     
-	}
-	,_linkElements_: function () {
-		this._getBuilder_()
-		.addChildrenTo("main",["col1" ,"col2" ])
-		.addChildrenTo("col1",["transactionType","eventDate"])
-		.addChildrenTo("col2",["fromInventory","toInventory"])
-;
-	}	
-});
  	

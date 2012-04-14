@@ -6,6 +6,8 @@
 package net.nan21.dnet.module.mm.inventory.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.fin.business.service.IFinDocTypeService;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.mm.inventory.business.service.IInvTransactionTypeService;
@@ -22,6 +24,16 @@ public class InvTransactionDsConv extends
     @Override
     protected void modelToEntityReferences(InvTransactionDs ds,
             InvTransaction e, boolean isInsert) throws Exception {
+
+        if (ds.getDocTypeId() != null) {
+            if (e.getDocType() == null
+                    || !e.getDocType().getId().equals(ds.getDocTypeId())) {
+                e.setDocType((FinDocType) this.em.find(FinDocType.class,
+                        ds.getDocTypeId()));
+            }
+        } else {
+            this.lookup_docType_FinDocType(ds, e);
+        }
 
         if (ds.getTransactionTypeId() != null) {
             if (e.getTransactionType() == null
@@ -56,6 +68,25 @@ public class InvTransactionDsConv extends
             this.lookup_toInventory_Organization(ds, e);
         }
 
+    }
+
+    protected void lookup_docType_FinDocType(InvTransactionDs ds,
+            InvTransaction e) throws Exception {
+        if (ds.getDocType() != null && !ds.getDocType().equals("")) {
+            FinDocType x = null;
+            try {
+                x = ((IFinDocTypeService) findEntityService(FinDocType.class))
+                        .findByName(ds.getDocType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `FinDocType` reference:  `docType` = "
+                                + ds.getDocType() + "  ");
+            }
+            e.setDocType(x);
+
+        } else {
+            e.setDocType(null);
+        }
     }
 
     protected void lookup_transactionType_InvTransactionType(

@@ -6,19 +6,9 @@
 package net.nan21.dnet.module.ad.system.ds.filter;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.presenter.model.base.AbstractSimpleDsFilter;
 
-import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
-
-public class AuditFieldRepDsFilter extends AbstractDsFilter implements
-        IModelWithId, IModelWithClientId {
-
-    private Long id;
-
-    private Long clientId;
-
-    private String entityFQN;
+public class AuditFieldRepDsFilter extends AbstractSimpleDsFilter {
 
     private String operation;
 
@@ -38,31 +28,6 @@ public class AuditFieldRepDsFilter extends AbstractDsFilter implements
     private Date createdAt_To;
 
     private String createdBy;
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getEntityFQN() {
-        return this.entityFQN;
-    }
-
-    public void setEntityFQN(String entityFQN) {
-        this.entityFQN = entityFQN;
-    }
 
     public String getOperation() {
         return this.operation;

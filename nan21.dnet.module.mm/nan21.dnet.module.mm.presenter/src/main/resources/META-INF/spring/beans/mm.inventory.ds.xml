@@ -75,50 +75,6 @@
 		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.StockLocatorLovDs" />
 	</bean>
    
- 	<bean id="InvTransactionSourceTypeDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.filter.InvTransactionSourceTypeDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="InvTransactionSourceType" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeDs" />
-	</bean>
-   
- 	<bean id="InvTransactionSourceTypeLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="InvTransactionSourceTypeLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionSourceTypeLovDs" />
-	</bean>
-   
- 	<bean id="InvTransactionActionDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionActionDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.filter.InvTransactionActionDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="InvTransactionAction" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionActionDs" />
-	</bean>
-   
- 	<bean id="InvTransactionActionLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionActionLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionActionLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="InvTransactionActionLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionActionLovDs" />
-	</bean>
-   
  	<bean id="InvTransactionTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionTypeDs" />
@@ -148,25 +104,10 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.filter.InvTransactionDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvTransactionDsConv" />
-	  	<property name="rpcData" >
-	  		<map>
-	  			<entry key="postTransaction">
-	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
-	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.mm._presenterdelegates.inventory.InvTransactionPD"/>
-	  				<constructor-arg name="methodName" value="postTransaction" />
-	  			</bean>	
-	  			</entry>	  			
-	  		</map>
-	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvTransaction" />
 		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionDs" />
-	  	<property name="serviceMethods" >
-	  		<list>
-	  			<value type="java.lang.String">postTransaction</value>
-			</list>	  		 
-	  	</property>	
 	</bean>
    
  	<bean id="InvTransactionLineDsService" scope="prototype"
@@ -179,6 +120,47 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvTransactionLine" />
 		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionLineDs" />
+	</bean>
+   
+ 	<bean id="InvTransferDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransferDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.mm.inventory.ds.filter.InvTransferDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.mm.inventory.domain.entity.InvTransfer" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.mm.inventory.ds.converter.InvTransferDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="confirm">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.mm._presenterdelegates.inventory.InvTransferPD"/>
+	  				<constructor-arg name="methodName" value="confirm" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="unConfirm">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.mm._presenterdelegates.inventory.InvTransferPD"/>
+	  				<constructor-arg name="methodName" value="unConfirm" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="post">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.mm._presenterdelegates.inventory.InvTransferPD"/>
+	  				<constructor-arg name="methodName" value="post" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="InvTransfer" />
+		<property name="modelClass" value="net.nan21.dnet.module.mm.inventory.ds.model.InvTransferDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">confirm</value>
+	  			<value type="java.lang.String">unConfirm</value>
+	  			<value type="java.lang.String">post</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="InvOperationDsService" scope="prototype"

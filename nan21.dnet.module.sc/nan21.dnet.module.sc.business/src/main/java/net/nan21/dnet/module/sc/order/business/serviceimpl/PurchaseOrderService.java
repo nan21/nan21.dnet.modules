@@ -9,6 +9,7 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
@@ -35,6 +36,45 @@ public class PurchaseOrderService extends AbstractEntityService<PurchaseOrder>
     @Override
     protected Class<PurchaseOrder> getEntityClass() {
         return PurchaseOrder.class;
+    }
+
+    public List<PurchaseOrder> findByDocType(FinDocType docType) {
+        return this.findByDocTypeId(docType.getId());
+    }
+
+    public List<PurchaseOrder> findByDocTypeId(Long docTypeId) {
+        return (List<PurchaseOrder>) this.em
+                .createQuery(
+                        "select e from PurchaseOrder e where e.clientId = :pClientId and e.docType.id = :pDocTypeId",
+                        PurchaseOrder.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pDocTypeId", docTypeId).getResultList();
+    }
+
+    public List<PurchaseOrder> findBySupplier(BusinessPartner supplier) {
+        return this.findBySupplierId(supplier.getId());
+    }
+
+    public List<PurchaseOrder> findBySupplierId(Long supplierId) {
+        return (List<PurchaseOrder>) this.em
+                .createQuery(
+                        "select e from PurchaseOrder e where e.clientId = :pClientId and e.supplier.id = :pSupplierId",
+                        PurchaseOrder.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pSupplierId", supplierId).getResultList();
+    }
+
+    public List<PurchaseOrder> findByCustomer(Organization customer) {
+        return this.findByCustomerId(customer.getId());
+    }
+
+    public List<PurchaseOrder> findByCustomerId(Long customerId) {
+        return (List<PurchaseOrder>) this.em
+                .createQuery(
+                        "select e from PurchaseOrder e where e.clientId = :pClientId and e.customer.id = :pCustomerId",
+                        PurchaseOrder.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pCustomerId", customerId).getResultList();
     }
 
     public List<PurchaseOrder> findByPriceList(PriceList priceList) {
@@ -77,6 +117,32 @@ public class PurchaseOrderService extends AbstractEntityService<PurchaseOrder>
                 .getResultList();
     }
 
+    public List<PurchaseOrder> findByPaymentTerm(PaymentMethod paymentTerm) {
+        return this.findByPaymentTermId(paymentTerm.getId());
+    }
+
+    public List<PurchaseOrder> findByPaymentTermId(Long paymentTermId) {
+        return (List<PurchaseOrder>) this.em
+                .createQuery(
+                        "select e from PurchaseOrder e where e.clientId = :pClientId and e.paymentTerm.id = :pPaymentTermId",
+                        PurchaseOrder.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pPaymentTermId", paymentTermId).getResultList();
+    }
+
+    public List<PurchaseOrder> findByInventory(Organization inventory) {
+        return this.findByInventoryId(inventory.getId());
+    }
+
+    public List<PurchaseOrder> findByInventoryId(Long inventoryId) {
+        return (List<PurchaseOrder>) this.em
+                .createQuery(
+                        "select e from PurchaseOrder e where e.clientId = :pClientId and e.inventory.id = :pInventoryId",
+                        PurchaseOrder.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pInventoryId", inventoryId).getResultList();
+    }
+
     public List<PurchaseOrder> findByDeliveryMethod(
             DeliveryMethod deliveryMethod) {
         return this.findByDeliveryMethodId(deliveryMethod.getId());
@@ -90,32 +156,6 @@ public class PurchaseOrderService extends AbstractEntityService<PurchaseOrder>
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pDeliveryMethodId", deliveryMethodId)
                 .getResultList();
-    }
-
-    public List<PurchaseOrder> findBySupplier(BusinessPartner supplier) {
-        return this.findBySupplierId(supplier.getId());
-    }
-
-    public List<PurchaseOrder> findBySupplierId(Long supplierId) {
-        return (List<PurchaseOrder>) this.em
-                .createQuery(
-                        "select e from PurchaseOrder e where e.clientId = :pClientId and e.supplier.id = :pSupplierId",
-                        PurchaseOrder.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pSupplierId", supplierId).getResultList();
-    }
-
-    public List<PurchaseOrder> findByCustomer(Organization customer) {
-        return this.findByCustomerId(customer.getId());
-    }
-
-    public List<PurchaseOrder> findByCustomerId(Long customerId) {
-        return (List<PurchaseOrder>) this.em
-                .createQuery(
-                        "select e from PurchaseOrder e where e.clientId = :pClientId and e.customer.id = :pCustomerId",
-                        PurchaseOrder.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pCustomerId", customerId).getResultList();
     }
 
     public List<PurchaseOrder> findByLines(PurchaseOrderItem lines) {

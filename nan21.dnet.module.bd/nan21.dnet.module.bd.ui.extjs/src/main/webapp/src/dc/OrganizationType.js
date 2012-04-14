@@ -28,6 +28,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationType$Filter", {
 		.addBooleanField({ name:"external", dataIndex:"external",anchor:"-20"  })
 		.addBooleanField({ name:"carrier", dataIndex:"carrier",anchor:"-20"  })
 		.addBooleanField({ name:"inventory", dataIndex:"inventory",anchor:"-20"  })
+		.addBooleanField({ name:"warehouse", dataIndex:"warehouse",anchor:"-20"  })
 		.addBooleanField({ name:"legalEntity", dataIndex:"legalEntity",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
@@ -57,6 +58,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationType$EditList", {
 		.addBooleanColumn({ name:"legalEntity", dataIndex:"legalEntity", width:80})
 		.addBooleanColumn({ name:"external", dataIndex:"external", width:80})
 		.addBooleanColumn({ name:"inventory", dataIndex:"inventory", width:80})
+		.addBooleanColumn({ name:"warehouse", dataIndex:"warehouse", width:80})
 		.addBooleanColumn({ name:"carrier", dataIndex:"carrier", width:80})
 		.addBooleanColumn({ name:"accountingEnabled", dataIndex:"accountingEnabled", hidden:true, width:80})
 		.addBooleanColumn({ name:"active", dataIndex:"active", width:80})

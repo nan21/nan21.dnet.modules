@@ -6,9 +6,7 @@
 package net.nan21.dnet.module.pj.md.ds.model;
 
 import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableLov;
 
 import net.nan21.dnet.module.pj.md.domain.entity.ProjectMember;
 import net.nan21.dnet.core.api.annotation.Ds;
@@ -17,22 +15,13 @@ import net.nan21.dnet.core.api.annotation.DsField;
 @Ds(entity = ProjectMember.class, sort = {
         @SortField(field = ProjectMemberLovDs.fMEMBER),
         @SortField(field = ProjectMemberLovDs.fROLE) })
-public class ProjectMemberLovDs extends AbstractDsModel<ProjectMember>
-        implements IModelWithId, IModelWithClientId {
+public class ProjectMemberLovDs extends AbstractAuditableLov<ProjectMember> {
 
-    public static final String fID = "id";
-    public static final String fCLIENTID = "clientId";
     public static final String fPROJECTID = "projectId";
     public static final String fROLEID = "roleId";
     public static final String fROLE = "role";
     public static final String fMEMBERID = "memberId";
     public static final String fMEMBER = "member";
-
-    @DsField()
-    private Long id;
-
-    @DsField()
-    private Long clientId;
 
     @DsField(join = "left", path = "project.id")
     private Long projectId;
@@ -55,23 +44,6 @@ public class ProjectMemberLovDs extends AbstractDsModel<ProjectMember>
 
     public ProjectMemberLovDs(ProjectMember e) {
         super(e);
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
     }
 
     public Long getProjectId() {

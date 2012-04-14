@@ -8,6 +8,7 @@ package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction;
 import net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator;
 import net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory;
@@ -116,6 +117,19 @@ public class InvTransactionLineService extends
                         InvTransactionLine.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pToLocatorId", toLocatorId).getResultList();
+    }
+
+    public List<InvTransactionLine> findByUom(Uom uom) {
+        return this.findByUomId(uom.getId());
+    }
+
+    public List<InvTransactionLine> findByUomId(Long uomId) {
+        return (List<InvTransactionLine>) this.em
+                .createQuery(
+                        "select e from InvTransactionLine e where e.clientId = :pClientId and e.uom.id = :pUomId",
+                        InvTransactionLine.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pUomId", uomId).getResultList();
     }
 
 }

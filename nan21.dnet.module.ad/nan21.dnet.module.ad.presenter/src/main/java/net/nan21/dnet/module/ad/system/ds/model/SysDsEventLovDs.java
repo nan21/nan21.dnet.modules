@@ -5,29 +5,18 @@
  */
 package net.nan21.dnet.module.ad.system.ds.model;
 
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableLov;
 
 import net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = SysDsEvent.class)
-public class SysDsEventLovDs extends AbstractDsModel<SysDsEvent> implements
-        IModelWithId, IModelWithClientId {
+public class SysDsEventLovDs extends AbstractAuditableLov<SysDsEvent> {
 
-    public static final String fID = "id";
-    public static final String fCLIENTID = "clientId";
     public static final String fDATASOURCEID = "dataSourceId";
     public static final String fDATASOURCENAME = "dataSourceName";
     public static final String fNAME = "name";
-
-    @DsField()
-    private Long id;
-
-    @DsField()
-    private Long clientId;
 
     @DsField(join = "left", path = "dataSource.id")
     private Long dataSourceId;
@@ -44,23 +33,6 @@ public class SysDsEventLovDs extends AbstractDsModel<SysDsEvent> implements
 
     public SysDsEventLovDs(SysDsEvent e) {
         super(e);
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
     }
 
     public Long getDataSourceId() {

@@ -6,16 +6,14 @@
 package net.nan21.dnet.module.ad.workflow.ds.model;
 
 import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractBaseDs;
 
 import net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = ActDeployment.class, sort = { @SortField(field = ActDeploymentLovDs.fNAME) })
-public class ActDeploymentLovDs extends AbstractDsModel<ActDeployment>
-        implements IModelWithId {
+public class ActDeploymentLovDs extends AbstractBaseDs<ActDeployment> {
 
     public static final String fID = "id";
     public static final String fNAME = "name";

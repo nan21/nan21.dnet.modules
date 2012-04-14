@@ -6,10 +6,8 @@
 package net.nan21.dnet.module.ad.system.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractSimpleDs;
 import net.nan21.dnet.module.ad.system.ds.filter.UiViewStateRTLovDsFilter;
 import net.nan21.dnet.module.ad.system.ds.param.UiViewStateRTLovDsParam;
 
@@ -18,12 +16,8 @@ import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = AuditField.class)
-public class AuditFieldRepDs extends AbstractDsModel<AuditField> implements
-        IModelWithId, IModelWithClientId {
+public class AuditFieldRepDs extends AbstractSimpleDs<AuditField> {
 
-    public static final String fID = "id";
-    public static final String fCLIENTID = "clientId";
-    public static final String fENTITYFQN = "entityFQN";
     public static final String fOPERATION = "operation";
     public static final String fSOURCEFQN = "sourceFQN";
     public static final String fSOURCEID = "sourceId";
@@ -32,15 +26,6 @@ public class AuditFieldRepDs extends AbstractDsModel<AuditField> implements
     public static final String fNEWVALUE = "newValue";
     public static final String fCREATEDAT = "createdAt";
     public static final String fCREATEDBY = "createdBy";
-
-    @DsField(noUpdate = true)
-    private Long id;
-
-    @DsField(noUpdate = true)
-    private Long clientId;
-
-    @DsField(noUpdate = true, fetch = false, path = "className")
-    private String entityFQN;
 
     @DsField(join = "left", path = "auditEntry.operation")
     private String operation;
@@ -72,31 +57,6 @@ public class AuditFieldRepDs extends AbstractDsModel<AuditField> implements
 
     public AuditFieldRepDs(AuditField e) {
         super(e);
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getEntityFQN() {
-        return this.entityFQN;
-    }
-
-    public void setEntityFQN(String entityFQN) {
-        this.entityFQN = entityFQN;
     }
 
     public String getOperation() {

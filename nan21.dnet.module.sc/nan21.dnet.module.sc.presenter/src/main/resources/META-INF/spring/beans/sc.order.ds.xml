@@ -89,6 +89,52 @@
 		<property name="name" value="PurchaseOrderTax" />
 		<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderTaxDs" />
 	</bean>
+   
+ 	<bean id="PurchaseInventoryTransactionDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseInventoryTransactionDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sc.order.ds.filter.PurchaseInventoryTransactionDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sc.order.domain.entity.PurchaseInventoryTransaction" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sc.order.ds.converter.PurchaseInventoryTransactionDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PurchaseInventoryTransaction" />
+		<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseInventoryTransactionDs" />
+	</bean>
+   
+ 	<bean id="PurchaseReceptionDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseReceptionDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sc.order.ds.filter.PurchaseReceptionDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sc.order.domain.entity.PurchaseInventoryTransaction" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sc.order.ds.converter.PurchaseReceptionDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="confirm">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sc._presenterdelegates.order.PurchaseReceptionPD"/>
+	  				<constructor-arg name="methodName" value="confirm" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="unConfirm">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sc._presenterdelegates.order.PurchaseReceptionPD"/>
+	  				<constructor-arg name="methodName" value="unConfirm" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PurchaseReception" />
+		<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseReceptionDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">confirm</value>
+	  			<value type="java.lang.String">unConfirm</value>
+			</list>	  		 
+	  	</property>	
+	</bean>
       
 </beans>
    

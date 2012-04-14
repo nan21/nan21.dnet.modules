@@ -5,12 +5,9 @@
  */
 package net.nan21.dnet.module.ad.workflow.ds.filter;
 
-import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.presenter.model.base.AbstractBaseDsFilter;
 
-import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
-
-public class ActProcessDefinitionDsFilter extends AbstractDsFilter implements
-        IModelWithId {
+public class ActProcessDefinitionDsFilter extends AbstractBaseDsFilter {
 
     private String id;
 
@@ -25,6 +22,11 @@ public class ActProcessDefinitionDsFilter extends AbstractDsFilter implements
     private String resourceName;
 
     private String diagramResourceName;
+
+    private Long version;
+
+    private Long version_From;
+    private Long version_To;
 
     private String deploymentId;
 
@@ -85,6 +87,30 @@ public class ActProcessDefinitionDsFilter extends AbstractDsFilter implements
 
     public void setDiagramResourceName(String diagramResourceName) {
         this.diagramResourceName = diagramResourceName;
+    }
+
+    public Long getVersion() {
+        return this.version;
+    }
+
+    public Long getVersion_From() {
+        return this.version_From;
+    }
+
+    public Long getVersion_To() {
+        return this.version_To;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    public void setVersion_From(Long version_From) {
+        this.version_From = version_From;
+    }
+
+    public void setVersion_To(Long version_To) {
+        this.version_To = version_To;
     }
 
     public String getDeploymentId() {

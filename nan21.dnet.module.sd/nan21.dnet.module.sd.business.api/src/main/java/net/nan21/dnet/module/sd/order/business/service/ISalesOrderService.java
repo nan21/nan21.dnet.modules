@@ -8,6 +8,7 @@ package net.nan21.dnet.module.sd.order.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -19,6 +20,18 @@ import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
 public interface ISalesOrderService extends IEntityService<SalesOrder> {
+
+    public List<SalesOrder> findByDocType(FinDocType docType);
+
+    public List<SalesOrder> findByDocTypeId(Long docTypeId);
+
+    public List<SalesOrder> findByCustomer(BusinessPartner customer);
+
+    public List<SalesOrder> findByCustomerId(Long customerId);
+
+    public List<SalesOrder> findBySupplier(Organization supplier);
+
+    public List<SalesOrder> findBySupplierId(Long supplierId);
 
     public List<SalesOrder> findByPriceList(PriceList priceList);
 
@@ -32,17 +45,21 @@ public interface ISalesOrderService extends IEntityService<SalesOrder> {
 
     public List<SalesOrder> findByPaymentMethodId(Long paymentMethodId);
 
+    public List<SalesOrder> findByPaymentTerm(PaymentMethod paymentTerm);
+
+    public List<SalesOrder> findByPaymentTermId(Long paymentTermId);
+
+    public List<SalesOrder> findByInventory(Organization inventory);
+
+    public List<SalesOrder> findByInventoryId(Long inventoryId);
+
     public List<SalesOrder> findByDeliveryMethod(DeliveryMethod deliveryMethod);
 
     public List<SalesOrder> findByDeliveryMethodId(Long deliveryMethodId);
 
-    public List<SalesOrder> findByCustomer(BusinessPartner customer);
+    public List<SalesOrder> findByCarrier(Organization carrier);
 
-    public List<SalesOrder> findByCustomerId(Long customerId);
-
-    public List<SalesOrder> findBySupplier(Organization supplier);
-
-    public List<SalesOrder> findBySupplierId(Long supplierId);
+    public List<SalesOrder> findByCarrierId(Long carrierId);
 
     public List<SalesOrder> findByBillTo(BusinessPartner billTo);
 

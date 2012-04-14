@@ -8,6 +8,7 @@ package net.nan21.dnet.module.mm.inventory.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
@@ -31,6 +32,19 @@ public class InvTransactionService extends
     @Override
     protected Class<InvTransaction> getEntityClass() {
         return InvTransaction.class;
+    }
+
+    public List<InvTransaction> findByDocType(FinDocType docType) {
+        return this.findByDocTypeId(docType.getId());
+    }
+
+    public List<InvTransaction> findByDocTypeId(Long docTypeId) {
+        return (List<InvTransaction>) this.em
+                .createQuery(
+                        "select e from InvTransaction e where e.clientId = :pClientId and e.docType.id = :pDocTypeId",
+                        InvTransaction.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pDocTypeId", docTypeId).getResultList();
     }
 
     public List<InvTransaction> findByTransactionType(

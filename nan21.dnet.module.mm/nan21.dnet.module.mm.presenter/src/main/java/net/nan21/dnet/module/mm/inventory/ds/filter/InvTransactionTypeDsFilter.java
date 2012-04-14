@@ -5,244 +5,51 @@
  */
 package net.nan21.dnet.module.mm.inventory.ds.filter;
 
-import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeDsFilter;
 
-import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
+public class InvTransactionTypeDsFilter extends AbstractTypeDsFilter {
 
-public class InvTransactionTypeDsFilter extends AbstractDsFilter implements
-        IModelWithId, IModelWithClientId {
+    private Long docTypeId;
 
-    private String name;
+    private Long docTypeId_From;
+    private Long docTypeId_To;
 
-    private Boolean active;
-
-    private String description;
-
-    private Long id;
-
-    private String uuid;
-
-    private Long clientId;
-
-    private Date createdAt;
-
-    private Date createdAt_From;
-    private Date createdAt_To;
-
-    private Date modifiedAt;
-
-    private Date modifiedAt_From;
-    private Date modifiedAt_To;
-
-    private String createdBy;
-
-    private String modifiedBy;
-
-    private String entityFQN;
-
-    private Long sourceTypeId;
-
-    private Long sourceTypeId_From;
-    private Long sourceTypeId_To;
-
-    private String sourceType;
-
-    private Long actionId;
-
-    private Long actionId_From;
-    private Long actionId_To;
-
-    private String action;
+    private String docType;
 
     private Boolean hasFromInventory;
 
     private Boolean hasToInventory;
 
-    public String getName() {
-        return this.name;
+    public Long getDocTypeId() {
+        return this.docTypeId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Long getDocTypeId_From() {
+        return this.docTypeId_From;
     }
 
-    public Boolean getActive() {
-        return this.active;
+    public Long getDocTypeId_To() {
+        return this.docTypeId_To;
     }
 
-    public void setActive(Boolean active) {
-        this.active = active;
+    public void setDocTypeId(Long docTypeId) {
+        this.docTypeId = docTypeId;
     }
 
-    public String getDescription() {
-        return this.description;
+    public void setDocTypeId_From(Long docTypeId_From) {
+        this.docTypeId_From = docTypeId_From;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDocTypeId_To(Long docTypeId_To) {
+        this.docTypeId_To = docTypeId_To;
     }
 
-    public Long getId() {
-        return this.id;
+    public String getDocType() {
+        return this.docType;
     }
 
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public String getUuid() {
-        return this.uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
-
-    public Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    public Date getCreatedAt_From() {
-        return this.createdAt_From;
-    }
-
-    public Date getCreatedAt_To() {
-        return this.createdAt_To;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public void setCreatedAt_From(Date createdAt_From) {
-        this.createdAt_From = createdAt_From;
-    }
-
-    public void setCreatedAt_To(Date createdAt_To) {
-        this.createdAt_To = createdAt_To;
-    }
-
-    public Date getModifiedAt() {
-        return this.modifiedAt;
-    }
-
-    public Date getModifiedAt_From() {
-        return this.modifiedAt_From;
-    }
-
-    public Date getModifiedAt_To() {
-        return this.modifiedAt_To;
-    }
-
-    public void setModifiedAt(Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    public void setModifiedAt_From(Date modifiedAt_From) {
-        this.modifiedAt_From = modifiedAt_From;
-    }
-
-    public void setModifiedAt_To(Date modifiedAt_To) {
-        this.modifiedAt_To = modifiedAt_To;
-    }
-
-    public String getCreatedBy() {
-        return this.createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getModifiedBy() {
-        return this.modifiedBy;
-    }
-
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
-    }
-
-    public String getEntityFQN() {
-        return this.entityFQN;
-    }
-
-    public void setEntityFQN(String entityFQN) {
-        this.entityFQN = entityFQN;
-    }
-
-    public Long getSourceTypeId() {
-        return this.sourceTypeId;
-    }
-
-    public Long getSourceTypeId_From() {
-        return this.sourceTypeId_From;
-    }
-
-    public Long getSourceTypeId_To() {
-        return this.sourceTypeId_To;
-    }
-
-    public void setSourceTypeId(Long sourceTypeId) {
-        this.sourceTypeId = sourceTypeId;
-    }
-
-    public void setSourceTypeId_From(Long sourceTypeId_From) {
-        this.sourceTypeId_From = sourceTypeId_From;
-    }
-
-    public void setSourceTypeId_To(Long sourceTypeId_To) {
-        this.sourceTypeId_To = sourceTypeId_To;
-    }
-
-    public String getSourceType() {
-        return this.sourceType;
-    }
-
-    public void setSourceType(String sourceType) {
-        this.sourceType = sourceType;
-    }
-
-    public Long getActionId() {
-        return this.actionId;
-    }
-
-    public Long getActionId_From() {
-        return this.actionId_From;
-    }
-
-    public Long getActionId_To() {
-        return this.actionId_To;
-    }
-
-    public void setActionId(Long actionId) {
-        this.actionId = actionId;
-    }
-
-    public void setActionId_From(Long actionId_From) {
-        this.actionId_From = actionId_From;
-    }
-
-    public void setActionId_To(Long actionId_To) {
-        this.actionId_To = actionId_To;
-    }
-
-    public String getAction() {
-        return this.action;
-    }
-
-    public void setAction(String action) {
-        this.action = action;
+    public void setDocType(String docType) {
+        this.docType = docType;
     }
 
     public Boolean getHasFromInventory() {

@@ -6,35 +6,16 @@
 package net.nan21.dnet.module.hr.time.ds.model;
 
 import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeLov;
 
 import net.nan21.dnet.module.hr.time.domain.entity.AbsenceReason;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = AbsenceReason.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = AbsenceReasonLovDs.fNAME) })
-public class AbsenceReasonLovDs extends AbstractDsModel<AbsenceReason>
-        implements IModelWithId, IModelWithClientId {
+public class AbsenceReasonLovDs extends AbstractTypeLov<AbsenceReason> {
 
-    public static final String fID = "id";
-    public static final String fCLIENTID = "clientId";
-    public static final String fNAME = "name";
-    public static final String fACTIVE = "active";
     public static final String fTYPEID = "typeId";
-
-    @DsField()
-    private Long id;
-
-    @DsField()
-    private Long clientId;
-
-    @DsField()
-    private String name;
-
-    @DsField()
-    private Boolean active;
 
     @DsField(join = "left", path = "type.id")
     private Long typeId;
@@ -45,39 +26,6 @@ public class AbsenceReasonLovDs extends AbstractDsModel<AbsenceReason>
 
     public AbsenceReasonLovDs(AbsenceReason e) {
         super(e);
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Boolean getActive() {
-        return this.active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
     }
 
     public Long getTypeId() {

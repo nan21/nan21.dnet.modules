@@ -3,33 +3,45 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER1" baseTableName="SD_SALES_ORDER" baseColumnNames="PRICELIST_ID"  referencedTableName="MM_PRICE_LIST"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER1" baseTableName="SD_SALES_ORDER" baseColumnNames="DOCTYPE_ID"  referencedTableName="BD_FINDOC_TYPE"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER2" baseTableName="SD_SALES_ORDER" baseColumnNames="CURRENCY_ID"  referencedTableName="BD_CURRENCY"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER2" baseTableName="SD_SALES_ORDER" baseColumnNames="CUSTOMER_ID"  referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER3" baseTableName="SD_SALES_ORDER" baseColumnNames="PAYMENTMETHOD_ID"  referencedTableName="BD_PAY_METHOD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER3" baseTableName="SD_SALES_ORDER" baseColumnNames="SUPPLIER_ID"  referencedTableName="BD_ORGANIZATION"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
-		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER4" baseTableName="SD_SALES_ORDER" baseColumnNames="DELIVERYMETHOD_ID"  referencedTableName="BP_DELIVERY_METHOD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER4" baseTableName="SD_SALES_ORDER" baseColumnNames="PRICELIST_ID"  referencedTableName="MM_PRICE_LIST"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
-		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER5" baseTableName="SD_SALES_ORDER" baseColumnNames="CUSTOMER_ID"  referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER5" baseTableName="SD_SALES_ORDER" baseColumnNames="CURRENCY_ID"  referencedTableName="BD_CURRENCY"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-6">
-		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER6" baseTableName="SD_SALES_ORDER" baseColumnNames="SUPPLIER_ID"  referencedTableName="BD_ORGANIZATION"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER6" baseTableName="SD_SALES_ORDER" baseColumnNames="PAYMENTMETHOD_ID"  referencedTableName="BD_PAY_METHOD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-7">
-		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER7" baseTableName="SD_SALES_ORDER" baseColumnNames="BILLTO_ID"  referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER7" baseTableName="SD_SALES_ORDER" baseColumnNames="PAYMENTTERM_ID"  referencedTableName="BD_PAY_METHOD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-8">
-		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER8" baseTableName="SD_SALES_ORDER" baseColumnNames="BILLTOLOCATION_ID"  referencedTableName="BD_GEO_LOCATION"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER8" baseTableName="SD_SALES_ORDER" baseColumnNames="INVENTORY_ID"  referencedTableName="BD_ORGANIZATION"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-9">
-		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER9" baseTableName="SD_SALES_ORDER" baseColumnNames="SHIPTO_ID"  referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER9" baseTableName="SD_SALES_ORDER" baseColumnNames="DELIVERYMETHOD_ID"  referencedTableName="BP_DELIVERY_METHOD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-10">
-		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER10" baseTableName="SD_SALES_ORDER" baseColumnNames="SHIPTOLOCATION_ID"  referencedTableName="BD_GEO_LOCATION"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER10" baseTableName="SD_SALES_ORDER" baseColumnNames="CARRIER_ID"  referencedTableName="BD_ORGANIZATION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-11">
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER11" baseTableName="SD_SALES_ORDER" baseColumnNames="BILLTO_ID"  referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-12">
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER12" baseTableName="SD_SALES_ORDER" baseColumnNames="BILLTOLOCATION_ID"  referencedTableName="BD_GEO_LOCATION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-13">
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER13" baseTableName="SD_SALES_ORDER" baseColumnNames="SHIPTO_ID"  referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-14">
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER14" baseTableName="SD_SALES_ORDER" baseColumnNames="SHIPTOLOCATION_ID"  referencedTableName="BD_GEO_LOCATION"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

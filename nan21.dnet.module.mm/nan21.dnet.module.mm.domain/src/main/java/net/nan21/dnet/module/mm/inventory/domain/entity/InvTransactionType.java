@@ -29,8 +29,7 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionAction;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionSourceType;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -158,12 +157,9 @@ public class InvTransactionType implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = InvTransactionSourceType.class)
-    @JoinColumn(name = "SOURCETYPE_ID", referencedColumnName = "ID")
-    private InvTransactionSourceType sourceType;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = InvTransactionAction.class)
-    @JoinColumn(name = "ACTION_ID", referencedColumnName = "ID")
-    private InvTransactionAction action;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FinDocType.class)
+    @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
+    private FinDocType docType;
 
     /* ============== getters - setters ================== */
 
@@ -280,20 +276,12 @@ public class InvTransactionType implements Serializable, IModelWithId,
 
     }
 
-    public InvTransactionSourceType getSourceType() {
-        return this.sourceType;
+    public FinDocType getDocType() {
+        return this.docType;
     }
 
-    public void setSourceType(InvTransactionSourceType sourceType) {
-        this.sourceType = sourceType;
-    }
-
-    public InvTransactionAction getAction() {
-        return this.action;
-    }
-
-    public void setAction(InvTransactionAction action) {
-        this.action = action;
+    public void setDocType(FinDocType docType) {
+        this.docType = docType;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

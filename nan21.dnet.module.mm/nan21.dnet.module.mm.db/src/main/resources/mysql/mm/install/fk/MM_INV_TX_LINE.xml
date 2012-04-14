@@ -32,4 +32,9 @@
 				baseTableName="MM_INV_TX_LINE" baseColumnNames="TOLOCATOR_ID"  
 				referencedTableName="MM_STOCKLOCATOR"  referencedColumnNames="ID" />
 	</changeSet>	
+	<changeSet author="amathe" id="FK-7">
+		<addForeignKeyConstraint constraintName="FK_MM_INV_TX_LINE7" 
+				baseTableName="MM_INV_TX_LINE" baseColumnNames="UOM_ID"  
+				referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+	</changeSet>	
 </databaseChangeLog>    

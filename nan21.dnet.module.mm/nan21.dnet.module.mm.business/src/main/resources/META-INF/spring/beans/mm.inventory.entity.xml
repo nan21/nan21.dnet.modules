@@ -19,17 +19,14 @@
  	<bean id="InvTransactionTypeService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvTransactionTypeService"  />  
  
- 	<bean id="InvTransactionSourceTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvTransactionSourceTypeService"  />  
- 
- 	<bean id="InvTransactionActionService" scope="prototype"
-	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvTransactionActionService"  />  
- 
  	<bean id="InvTransactionService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.inventory.business.serviceext.InvTransactionService"  />  
  
  	<bean id="InvTransactionLineService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.inventory.business.serviceext.InvTransactionLineService"  />  
+ 
+ 	<bean id="InvTransferService" scope="prototype"
+	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvTransferService"  />  
  
  	<bean id="InvOperationService" scope="prototype"
 	  		class="net.nan21.dnet.module.mm.inventory.business.serviceimpl.InvOperationService"  />  

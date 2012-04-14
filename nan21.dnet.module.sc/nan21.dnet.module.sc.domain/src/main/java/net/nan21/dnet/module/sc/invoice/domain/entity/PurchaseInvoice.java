@@ -32,6 +32,8 @@ import net.nan21.dnet.core.api.model.IModelWithClientId;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
+import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.sc.invoice.domain.eventhandler.PurchaseInvoiceEventHandler;
@@ -160,6 +162,9 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FinDocType.class)
+    @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
+    private FinDocType docType;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "SUPPLIER_ID", referencedColumnName = "ID")
     private BusinessPartner supplier;
@@ -169,6 +174,12 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
     @JoinColumn(name = "CURRENCY_ID", referencedColumnName = "ID")
     private Currency currency;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
+    @JoinColumn(name = "PAYMENTMETHOD_ID", referencedColumnName = "ID")
+    private PaymentMethod paymentMethod;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
+    @JoinColumn(name = "PAYMENTTERM_ID", referencedColumnName = "ID")
+    private PaymentMethod paymentTerm;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PurchaseOrder.class)
     @JoinColumn(name = "PURCHASEORDER_ID", referencedColumnName = "ID")
     private PurchaseOrder purchaseOrder;
@@ -317,6 +328,14 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
 
     }
 
+    public FinDocType getDocType() {
+        return this.docType;
+    }
+
+    public void setDocType(FinDocType docType) {
+        this.docType = docType;
+    }
+
     public BusinessPartner getSupplier() {
         return this.supplier;
     }
@@ -339,6 +358,22 @@ public class PurchaseInvoice implements Serializable, IModelWithId,
 
     public void setCurrency(Currency currency) {
         this.currency = currency;
+    }
+
+    public PaymentMethod getPaymentMethod() {
+        return this.paymentMethod;
+    }
+
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public PaymentMethod getPaymentTerm() {
+        return this.paymentTerm;
+    }
+
+    public void setPaymentTerm(PaymentMethod paymentTerm) {
+        this.paymentTerm = paymentTerm;
     }
 
     public PurchaseOrder getPurchaseOrder() {

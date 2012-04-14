@@ -6,29 +6,19 @@
 package net.nan21.dnet.module.sc.order.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.presenter.model.AbstractDsModel;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
 
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = PurchaseOrder.class)
-public class PurchaseOrderDs extends AbstractDsModel<PurchaseOrder> implements
-        IModelWithId, IModelWithClientId {
+public class PurchaseOrderDs extends AbstractAuditableDs<PurchaseOrder> {
 
-    public static final String fID = "id";
-    public static final String fUUID = "uuid";
-    public static final String fCLIENTID = "clientId";
-    public static final String fCREATEDAT = "createdAt";
-    public static final String fMODIFIEDAT = "modifiedAt";
-    public static final String fCREATEDBY = "createdBy";
-    public static final String fMODIFIEDBY = "modifiedBy";
-    public static final String fVERSION = "version";
-    public static final String fENTITYFQN = "entityFQN";
     public static final String fCODE = "code";
     public static final String fDOCDATE = "docDate";
+    public static final String fDOCTYPEID = "docTypeId";
+    public static final String fDOCTYPE = "docType";
     public static final String fCUSTOMERID = "customerId";
     public static final String fCUSTOMER = "customer";
     public static final String fSUPPLIERID = "supplierId";
@@ -41,8 +31,14 @@ public class PurchaseOrderDs extends AbstractDsModel<PurchaseOrder> implements
     public static final String fPRICELIST = "priceList";
     public static final String fPAYMENTMETHODID = "paymentMethodId";
     public static final String fPAYMENTMETHOD = "paymentMethod";
+    public static final String fPAYMENTTERMID = "paymentTermId";
+    public static final String fPAYMENTTERM = "paymentTerm";
     public static final String fDELIVERYMETHODID = "deliveryMethodId";
     public static final String fDELIVERYMETHOD = "deliveryMethod";
+    public static final String fINVENTORYID = "inventoryId";
+    public static final String fINVENTORY = "inventory";
+    public static final String fPLANNEDDELIVERYDATE = "plannedDeliveryDate";
+    public static final String fDELIVERYNOTES = "deliveryNotes";
     public static final String fTOTALAMOUNT = "totalAmount";
     public static final String fTOTALNETAMOUNT = "totalNetAmount";
     public static final String fTOTALTAXAMOUNT = "totalTaxAmount";
@@ -50,38 +46,17 @@ public class PurchaseOrderDs extends AbstractDsModel<PurchaseOrder> implements
     public static final String fCLASSNAME = "className";
     public static final String fBUSINESSOBJECT = "businessObject";
 
-    @DsField(noUpdate = true)
-    private Long id;
-
-    @DsField(noUpdate = true)
-    private String uuid;
-
-    @DsField(noUpdate = true)
-    private Long clientId;
-
-    @DsField(noUpdate = true)
-    private Date createdAt;
-
-    @DsField(noUpdate = true)
-    private Date modifiedAt;
-
-    @DsField(noUpdate = true)
-    private String createdBy;
-
-    @DsField(noUpdate = true)
-    private String modifiedBy;
-
-    @DsField()
-    private Long version;
-
-    @DsField(noUpdate = true, fetch = false, path = "className")
-    private String entityFQN;
-
     @DsField()
     private String code;
 
     @DsField(noUpdate = true)
     private Date docDate;
+
+    @DsField(join = "left", path = "docType.id")
+    private Long docTypeId;
+
+    @DsField(join = "left", path = "docType.name")
+    private String docType;
 
     @DsField(noUpdate = true, join = "left", path = "customer.id")
     private Long customerId;
@@ -119,11 +94,29 @@ public class PurchaseOrderDs extends AbstractDsModel<PurchaseOrder> implements
     @DsField(join = "left", path = "paymentMethod.name")
     private String paymentMethod;
 
+    @DsField(join = "left", path = "paymentTerm.id")
+    private Long paymentTermId;
+
+    @DsField(join = "left", path = "paymentTerm.name")
+    private String paymentTerm;
+
     @DsField(join = "left", path = "deliveryMethod.id")
     private Long deliveryMethodId;
 
     @DsField(join = "left", path = "deliveryMethod.name")
     private String deliveryMethod;
+
+    @DsField(join = "left", path = "inventory.id")
+    private Long inventoryId;
+
+    @DsField(join = "left", path = "inventory.code")
+    private String inventory;
+
+    @DsField()
+    private Date plannedDeliveryDate;
+
+    @DsField()
+    private String deliveryNotes;
 
     @DsField(noInsert = true, noUpdate = true)
     private Float totalAmount;
@@ -151,79 +144,6 @@ public class PurchaseOrderDs extends AbstractDsModel<PurchaseOrder> implements
         super(e);
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public String getUuid() {
-        return this.uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
-
-    public Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getModifiedAt() {
-        return this.modifiedAt;
-    }
-
-    public void setModifiedAt(Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    public String getCreatedBy() {
-        return this.createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getModifiedBy() {
-        return this.modifiedBy;
-    }
-
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
-    }
-
-    public Long getVersion() {
-        return this.version;
-    }
-
-    public void setVersion(Long version) {
-        this.version = version;
-    }
-
-    public String getEntityFQN() {
-        return this.entityFQN;
-    }
-
-    public void setEntityFQN(String entityFQN) {
-        this.entityFQN = entityFQN;
-    }
-
     public String getCode() {
         return this.code;
     }
@@ -238,6 +158,22 @@ public class PurchaseOrderDs extends AbstractDsModel<PurchaseOrder> implements
 
     public void setDocDate(Date docDate) {
         this.docDate = docDate;
+    }
+
+    public Long getDocTypeId() {
+        return this.docTypeId;
+    }
+
+    public void setDocTypeId(Long docTypeId) {
+        this.docTypeId = docTypeId;
+    }
+
+    public String getDocType() {
+        return this.docType;
+    }
+
+    public void setDocType(String docType) {
+        this.docType = docType;
     }
 
     public Long getCustomerId() {
@@ -336,6 +272,22 @@ public class PurchaseOrderDs extends AbstractDsModel<PurchaseOrder> implements
         this.paymentMethod = paymentMethod;
     }
 
+    public Long getPaymentTermId() {
+        return this.paymentTermId;
+    }
+
+    public void setPaymentTermId(Long paymentTermId) {
+        this.paymentTermId = paymentTermId;
+    }
+
+    public String getPaymentTerm() {
+        return this.paymentTerm;
+    }
+
+    public void setPaymentTerm(String paymentTerm) {
+        this.paymentTerm = paymentTerm;
+    }
+
     public Long getDeliveryMethodId() {
         return this.deliveryMethodId;
     }
@@ -350,6 +302,38 @@ public class PurchaseOrderDs extends AbstractDsModel<PurchaseOrder> implements
 
     public void setDeliveryMethod(String deliveryMethod) {
         this.deliveryMethod = deliveryMethod;
+    }
+
+    public Long getInventoryId() {
+        return this.inventoryId;
+    }
+
+    public void setInventoryId(Long inventoryId) {
+        this.inventoryId = inventoryId;
+    }
+
+    public String getInventory() {
+        return this.inventory;
+    }
+
+    public void setInventory(String inventory) {
+        this.inventory = inventory;
+    }
+
+    public Date getPlannedDeliveryDate() {
+        return this.plannedDeliveryDate;
+    }
+
+    public void setPlannedDeliveryDate(Date plannedDeliveryDate) {
+        this.plannedDeliveryDate = plannedDeliveryDate;
+    }
+
+    public String getDeliveryNotes() {
+        return this.deliveryNotes;
+    }
+
+    public void setDeliveryNotes(String deliveryNotes) {
+        this.deliveryNotes = deliveryNotes;
     }
 
     public Float getTotalAmount() {

@@ -16,6 +16,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DELIVERED" type="number(1)">
 				<constraints nullable="false" /></column>	 
+			<column name="DELIVERYNOTES" type="varchar2(4000)">
+				<constraints  /></column>	 
 			<column name="DOCDATE" type="date">
 				<constraints nullable="false" /></column>	 
 			<column name="ID" type="number(19)">
@@ -26,6 +28,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="PLANNEDDELIVERYDATE" type="date">
+				<constraints  /></column>	 
 			<column name="TOTALAMOUNT" type="number(12,2)">
 				<constraints  /></column>	 
 			<column name="TOTALNETAMOUNT" type="number(12,2)">
@@ -40,13 +44,21 @@
 				<constraints  /></column>	 
 			<column name="BILLTO_ID" type="number(19)">	 
 				<constraints  /></column>	 
+			<column name="CARRIER_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
 			<column name="CURRENCY_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="CUSTOMER_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="DELIVERYMETHOD_ID" type="number(19)">	 
 				<constraints  /></column>	 
+			<column name="DOCTYPE_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="INVENTORY_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
 			<column name="PAYMENTMETHOD_ID" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="PAYMENTTERM_ID" type="number(19)">	 
 				<constraints  /></column>	 
 			<column name="PRICELIST_ID" type="number(19)">	 
 				<constraints  /></column>	 

@@ -18,6 +18,9 @@
  
  	<bean id="PurchaseOrderItemTaxService" scope="prototype"
 	  		class="net.nan21.dnet.module.sc.order.business.serviceimpl.PurchaseOrderItemTaxService"  />  
+ 
+ 	<bean id="PurchaseInventoryTransactionService" scope="prototype"
+	  		class="net.nan21.dnet.module.sc.order.business.serviceimpl.PurchaseInventoryTransactionService"  />  
    
 </beans>
    

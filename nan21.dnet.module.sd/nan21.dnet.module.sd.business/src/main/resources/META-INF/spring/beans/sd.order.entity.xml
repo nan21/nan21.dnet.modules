@@ -18,6 +18,9 @@
  
  	<bean id="SalesOrderItemTaxService" scope="prototype"
 	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesOrderItemTaxService"  />  
+ 
+ 	<bean id="SalesInventoryTransactionService" scope="prototype"
+	  		class="net.nan21.dnet.module.sd.order.business.serviceimpl.SalesInventoryTransactionService"  />  
    
 </beans>
    

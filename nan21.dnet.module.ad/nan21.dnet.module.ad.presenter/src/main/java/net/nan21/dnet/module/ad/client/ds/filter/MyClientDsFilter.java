@@ -6,11 +6,9 @@
 package net.nan21.dnet.module.ad.client.ds.filter;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.presenter.model.base.X_AbstractAuditedDsFilter;
 
-import net.nan21.dnet.core.presenter.model.AbstractDsFilter;
-
-public class MyClientDsFilter extends AbstractDsFilter implements IModelWithId {
+public class MyClientDsFilter extends X_AbstractAuditedDsFilter {
 
     private String name;
 
