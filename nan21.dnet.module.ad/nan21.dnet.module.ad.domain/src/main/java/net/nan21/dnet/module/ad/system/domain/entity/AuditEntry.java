@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.ad.system.domain.entity;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -22,12 +21,9 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
+import net.nan21.dnet.core.domain.model.AbstractSimpleEntity;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -41,8 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = AuditEntry.NQ_FIND_BY_ID, query = "SELECT e FROM AuditEntry e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = AuditEntry.NQ_FIND_BY_IDS, query = "SELECT e FROM AuditEntry e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class AuditEntry implements Serializable, IModelWithId,
-        IModelWithClientId {
+public class AuditEntry extends AbstractSimpleEntity {
 
     public static final String TABLE_NAME = "AD_AUDIT_ENTRY";
     public static final String SEQUENCE_NAME = "AD_AUDIT_ENTRY_SEQ";
@@ -58,6 +53,15 @@ public class AuditEntry implements Serializable, IModelWithId,
      * Named query find by IDs.
      */
     public static final String NQ_FIND_BY_IDS = "AuditEntry.findByIds";
+
+    /**
+     * System generated unique identifier.
+     */
+    @Column(name = "ID", nullable = false)
+    @NotNull
+    @Id
+    @GeneratedValue(generator = SEQUENCE_NAME)
+    private Long id;
 
     /** Operation. */
     @Column(name = "OPERATION", nullable = false, length = 16)
@@ -84,26 +88,18 @@ public class AuditEntry implements Serializable, IModelWithId,
     @Column(name = "SOURCEID", length = 255)
     private String sourceId;
 
-    /**
-     * Identifies the client(tenant) which owns this record.
-     */
-    @Column(name = "CLIENTID", nullable = false)
-    @NotNull
-    private Long clientId;
-
-    /**
-     * System generated unique identifier.
-     */
-    @Column(name = "ID", nullable = false)
-    @NotNull
-    @Id
-    @GeneratedValue(generator = SEQUENCE_NAME)
-    private Long id;
-
     @OneToMany(fetch = FetchType.LAZY, targetEntity = AuditField.class, mappedBy = "auditEntry", cascade = CascadeType.PERSIST)
     private Collection<AuditField> auditFields;
 
     /* ============== getters - setters ================== */
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getOperation() {
         return this.operation;
@@ -145,31 +141,6 @@ public class AuditEntry implements Serializable, IModelWithId,
         this.sourceId = sourceId;
     }
 
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Transient
-    public String getClassName() {
-        return this.getClass().getCanonicalName();
-    }
-
-    public void setClassName(String className) {
-
-    }
-
     public Collection<AuditField> getAuditFields() {
         return this.auditFields;
     }
@@ -188,15 +159,12 @@ public class AuditEntry implements Serializable, IModelWithId,
 
     public void aboutToInsert(DescriptorEvent event) {
 
-        event.updateAttributeWithObject("createdAt", new Date());
-        event.updateAttributeWithObject("createdBy", Session.user.get()
-                .getUsername());
-        event.updateAttributeWithObject("clientId", Session.user.get()
-                .getClientId());
+        super.aboutToInsert(event);
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
-
+        super.aboutToUpdate(event);
     }
 
 }

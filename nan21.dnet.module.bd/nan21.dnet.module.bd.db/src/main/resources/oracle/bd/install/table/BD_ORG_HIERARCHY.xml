@@ -12,6 +12,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="DESCRIPTION" type="varchar2(400)">
+				<constraints  /></column>	 
 			<column name="ENDDATE" type="date">
 				<constraints  /></column>	 
 			<column name="ID" type="number(19)">
@@ -22,8 +24,6 @@
 				<constraints nullable="false" /></column>	 
 			<column name="NAME" type="varchar2(255)">
 				<constraints nullable="false" /></column>	 
-			<column name="NOTES" type="varchar2(4000)">
-				<constraints  /></column>	 
 			<column name="STARTDATE" type="date">
 				<constraints nullable="false" /></column>	 
 			<column name="UUID" type="varchar2(36)">

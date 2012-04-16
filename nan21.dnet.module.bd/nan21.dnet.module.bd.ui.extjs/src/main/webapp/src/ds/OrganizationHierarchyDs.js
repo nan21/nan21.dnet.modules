@@ -4,10 +4,8 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"name", type:"string"},
-		{name:"startDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"endDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"active", type:"boolean"},
-		{name:"notes", type:"string"},
+		{name:"description", type:"string"},
 		{name:"id", type:"int", useNull:true},
 		{name:"uuid", type:"string"},
 		{name:"clientId", type:"int", useNull:true},
@@ -16,7 +14,9 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDs" ,{
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
-		{name:"entityFQN", type:"string"}
+		{name:"entityFQN", type:"string"},
+		{name:"startDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"endDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
@@ -28,14 +28,8 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDsFilter"
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"name", type:"string"},
-		{name:"startDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"startDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"startDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"endDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"endDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"endDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"active", type:"boolean", useNull:true},
-		{name:"notes", type:"string"},
+		{name:"description", type:"string"},
 		{name:"id", type:"int", useNull:true},
 		{name:"uuid", type:"string"},
 		{name:"createdAt", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
@@ -46,7 +40,13 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyDsFilter"
 		{name:"modifiedAt_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
-		{name:"entityFQN", type:"string"}
+		{name:"entityFQN", type:"string"},
+		{name:"startDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"startDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"startDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"endDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"endDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"endDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	] 
 });
 	

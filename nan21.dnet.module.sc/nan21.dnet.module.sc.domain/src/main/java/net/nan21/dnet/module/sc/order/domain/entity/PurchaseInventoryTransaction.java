@@ -5,18 +5,19 @@
  */
 package net.nan21.dnet.module.sc.order.domain.entity;
 
-import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
+import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction;
@@ -36,8 +37,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 @NamedQueries({
         @NamedQuery(name = PurchaseInventoryTransaction.NQ_FIND_BY_ID, query = "SELECT e FROM PurchaseInventoryTransaction e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = PurchaseInventoryTransaction.NQ_FIND_BY_IDS, query = "SELECT e FROM PurchaseInventoryTransaction e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class PurchaseInventoryTransaction extends InvTransaction implements
-        Serializable, IModelWithId, IModelWithClientId {
+public class PurchaseInventoryTransaction extends InvTransaction {
 
     public static final String TABLE_NAME = "SC_PURCHASE_INV_TX";
     public static final String SEQUENCE_NAME = "SC_PURCHASE_INV_TX_SEQ";
@@ -54,6 +54,15 @@ public class PurchaseInventoryTransaction extends InvTransaction implements
      */
     public static final String NQ_FIND_BY_IDS = "PurchaseInventoryTransaction.findByIds";
 
+    /**
+     * System generated unique identifier.
+     */
+    @Column(name = "ID", nullable = false)
+    @NotNull
+    @Id
+    @GeneratedValue(generator = SEQUENCE_NAME)
+    private Long id;
+
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "SUPPLIER_ID", referencedColumnName = "ID")
     private BusinessPartner supplier;
@@ -62,6 +71,14 @@ public class PurchaseInventoryTransaction extends InvTransaction implements
     private PurchaseOrder purchaseOrder;
 
     /* ============== getters - setters ================== */
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public BusinessPartner getSupplier() {
         return this.supplier;
@@ -80,12 +97,13 @@ public class PurchaseInventoryTransaction extends InvTransaction implements
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         super.aboutToInsert(event);
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
         super.aboutToUpdate(event);
-
     }
 
 }

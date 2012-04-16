@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.ad.system.domain.entity;
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -24,7 +23,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({})
 @ReadOnly
-public class TempAsgnLine implements Serializable {
+public class TempAsgnLine {
 
     public static final String TABLE_NAME = "AD_TEMP_ASGN_LINE";
     public static final String SEQUENCE_NAME = "AD_TEMP_ASGN_LINE_SEQ";

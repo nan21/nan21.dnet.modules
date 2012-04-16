@@ -9,15 +9,14 @@ Bundle-ClassPath: WEB-INF/classes
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet MM - www
 Import-Bundle: org.eclipse.virgo.snaps.api;version="[3.0,4.0)",nan21.d
- net.core.api;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.core.domain;ver
- sion="[1.0.0.M9,1.0.0.M9]",javax.persistence;version="[2.0,2.1)",org.
- eclipse.persistence.jpa;version="[2.1,2.5)",org.eclipse.persistence.c
- ore;version="[2.0,2.5)",nan21.dnet.module.mm.domain;version="[1.0.0.M
- 9,1.0.0.M9]",nan21.dnet.module.ad.domain;version="[1.0.0.M9,1.0.0.M9]
- ",nan21.dnet.module.bd.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dne
- t.module.mm.presenter;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module
- .ad.presenter;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.pres
- enter;version="[1.0.0.M9,1.0.0.M9]"
+ net.core.api;version="[1.0.0.M9,1.0.0.M9]",javax.persistence;version=
+ "[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.5)",org.eclip
+ se.persistence.core;version="[2.0,2.5)",nan21.dnet.module.mm.domain;v
+ ersion="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.ad.domain;version="[1.
+ 0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.domain;version="[1.0.0.M9,1.0.
+ 0.M9]",nan21.dnet.module.mm.presenter;version="[1.0.0.M9,1.0.0.M9]",n
+ an21.dnet.module.ad.presenter;version="[1.0.0.M9,1.0.0.M9]",nan21.dne
+ t.module.bd.presenter;version="[1.0.0.M9,1.0.0.M9]"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0.M9
 Bundle-ManifestVersion: 2

@@ -5,19 +5,19 @@
  */
 package net.nan21.dnet.module.sd.order.domain.entity;
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
+import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
@@ -38,8 +38,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 @NamedQueries({
         @NamedQuery(name = SalesInventoryTransaction.NQ_FIND_BY_ID, query = "SELECT e FROM SalesInventoryTransaction e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = SalesInventoryTransaction.NQ_FIND_BY_IDS, query = "SELECT e FROM SalesInventoryTransaction e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class SalesInventoryTransaction extends InvTransaction implements
-        Serializable, IModelWithId, IModelWithClientId {
+public class SalesInventoryTransaction extends InvTransaction {
 
     public static final String TABLE_NAME = "SD_SALES_INV_TX";
     public static final String SEQUENCE_NAME = "SD_SALES_INV_TX_SEQ";
@@ -56,6 +55,15 @@ public class SalesInventoryTransaction extends InvTransaction implements
      */
     public static final String NQ_FIND_BY_IDS = "SalesInventoryTransaction.findByIds";
 
+    /**
+     * System generated unique identifier.
+     */
+    @Column(name = "ID", nullable = false)
+    @NotNull
+    @Id
+    @GeneratedValue(generator = SEQUENCE_NAME)
+    private Long id;
+
     /** DeliveryNotes. */
     @Column(name = "DELIVERYNOTES", length = 4000)
     private String deliveryNotes;
@@ -70,6 +78,14 @@ public class SalesInventoryTransaction extends InvTransaction implements
     private SalesOrder salesOrder;
 
     /* ============== getters - setters ================== */
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getDeliveryNotes() {
         return this.deliveryNotes;
@@ -104,12 +120,13 @@ public class SalesInventoryTransaction extends InvTransaction implements
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
         super.aboutToInsert(event);
+
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
         super.aboutToUpdate(event);
-
     }
 
 }

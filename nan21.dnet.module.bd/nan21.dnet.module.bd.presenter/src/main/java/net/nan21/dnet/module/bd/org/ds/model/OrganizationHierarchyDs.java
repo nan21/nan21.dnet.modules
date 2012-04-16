@@ -5,8 +5,9 @@
  */
 package net.nan21.dnet.module.bd.org.ds.model;
 
+import java.util.Date;
 import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithPeriodDs;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
 
 import net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchy;
 import net.nan21.dnet.core.api.annotation.Ds;
@@ -14,7 +15,16 @@ import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = OrganizationHierarchy.class, sort = { @SortField(field = OrganizationHierarchyDs.fNAME) })
 public class OrganizationHierarchyDs extends
-        AbstractTypeWithPeriodDs<OrganizationHierarchy> {
+        AbstractTypeDs<OrganizationHierarchy> {
+
+    public static final String fSTARTDATE = "startDate";
+    public static final String fENDDATE = "endDate";
+
+    @DsField()
+    private Date startDate;
+
+    @DsField()
+    private Date endDate;
 
     public OrganizationHierarchyDs() {
         super();
@@ -22,6 +32,22 @@ public class OrganizationHierarchyDs extends
 
     public OrganizationHierarchyDs(OrganizationHierarchy e) {
         super(e);
+    }
+
+    public Date getStartDate() {
+        return this.startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return this.endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
 }

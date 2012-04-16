@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.ad.workflow.domain.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +18,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
@@ -39,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = ActComment.NQ_FIND_BY_IDS, query = "SELECT e FROM ActComment e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 @ReadOnly
 @Cache(type = CacheType.NONE)
-public class ActComment implements Serializable, IModelWithId {
+public class ActComment {
 
     public static final String TABLE_NAME = "ACT_HI_COMMENT";
     public static final String SEQUENCE_NAME = "ACT_HI_COMMENT_SEQ";

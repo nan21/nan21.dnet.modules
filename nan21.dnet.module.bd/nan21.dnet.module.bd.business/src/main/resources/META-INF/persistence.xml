@@ -42,6 +42,8 @@
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm</class>
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.FinDocType</class>
 		
+		<class>net.nan21.dnet.core.domain.model.AbstractType</class>
+		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

@@ -22,6 +22,11 @@
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>
 		
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.FinDocType</class>
+		
+		<class>net.nan21.dnet.core.domain.model.AbstractSimpleEntity</class>
+		<class>net.nan21.dnet.core.domain.model.AbstractAuditable</class>
+		<class>net.nan21.dnet.core.domain.model.AbstractType</class>
+		<class>net.nan21.dnet.core.domain.model.AbstractTypeWithCode</class>
 		 
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>

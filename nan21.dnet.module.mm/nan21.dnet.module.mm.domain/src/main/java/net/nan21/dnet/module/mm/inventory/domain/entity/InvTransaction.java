@@ -5,11 +5,9 @@
  */
 package net.nan21.dnet.module.mm.inventory.domain.entity;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.UUID;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -29,12 +27,9 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
-import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.model.IModelWithClientId;
-import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
+import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
@@ -55,8 +50,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = InvTransaction.NQ_FIND_BY_ID, query = "SELECT e FROM InvTransaction e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = InvTransaction.NQ_FIND_BY_IDS, query = "SELECT e FROM InvTransaction e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class InvTransaction implements Serializable, IModelWithId,
-        IModelWithClientId {
+public class InvTransaction extends AbstractAuditable {
 
     public static final String TABLE_NAME = "MM_INV_TX";
     public static final String SEQUENCE_NAME = "MM_INV_TX_SEQ";
@@ -72,6 +66,15 @@ public class InvTransaction implements Serializable, IModelWithId,
      * Named query find by IDs.
      */
     public static final String NQ_FIND_BY_IDS = "InvTransaction.findByIds";
+
+    /**
+     * System generated unique identifier.
+     */
+    @Column(name = "ID", nullable = false)
+    @NotNull
+    @Id
+    @GeneratedValue(generator = SEQUENCE_NAME)
+    private Long id;
 
     /** EventDate. */
     @Temporal(TemporalType.TIMESTAMP)
@@ -96,66 +99,6 @@ public class InvTransaction implements Serializable, IModelWithId,
     @Column(name = "POSTED", nullable = false)
     @NotNull
     private Boolean posted;
-
-    /**
-     * Identifies the client(tenant) which owns this record.
-     */
-    @Column(name = "CLIENTID", nullable = false)
-    @NotNull
-    private Long clientId;
-
-    /**
-     * Timestamp when this record was created.
-     */
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "CREATEDAT", nullable = false)
-    @NotNull
-    private Date createdAt;
-
-    /**
-     * Timestamp when this record was last modified.
-     */
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "MODIFIEDAT", nullable = false)
-    @NotNull
-    private Date modifiedAt;
-
-    /**
-     * User who created this record.
-     */
-    @Column(name = "CREATEDBY", nullable = false, length = 32)
-    @NotBlank
-    private String createdBy;
-
-    /**
-     * User who last modified this record.
-     */
-    @Column(name = "MODIFIEDBY", nullable = false, length = 32)
-    @NotBlank
-    private String modifiedBy;
-
-    @Version
-    /** 
-     * Record version number used by the persistence framework.
-     */
-    @Column(name = "VERSION", nullable = false)
-    @NotNull
-    private Long version;
-
-    /**
-     * System generated UID. Useful for data import-export and data-replication
-     */
-    @Column(name = "UUID", length = 36)
-    private String uuid;
-
-    /**
-     * System generated unique identifier.
-     */
-    @Column(name = "ID", nullable = false)
-    @NotNull
-    @Id
-    @GeneratedValue(generator = SEQUENCE_NAME)
-    private Long id;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = FinDocType.class)
     @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
     private FinDocType docType;
@@ -174,6 +117,14 @@ public class InvTransaction implements Serializable, IModelWithId,
     private Collection<InvTransactionLine> lines;
 
     /* ============== getters - setters ================== */
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Date getEventDate() {
         return this.eventDate;
@@ -213,79 +164,6 @@ public class InvTransaction implements Serializable, IModelWithId,
 
     public void setPosted(Boolean posted) {
         this.posted = posted;
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
-    }
-
-    public Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getModifiedAt() {
-        return this.modifiedAt;
-    }
-
-    public void setModifiedAt(Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    public String getCreatedBy() {
-        return this.createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getModifiedBy() {
-        return this.modifiedBy;
-    }
-
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
-    }
-
-    public Long getVersion() {
-        return this.version;
-    }
-
-    public void setVersion(Long version) {
-        this.version = version;
-    }
-
-    public String getUuid() {
-        return this.uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Transient
-    public String getClassName() {
-        return this.getClass().getCanonicalName();
-    }
-
-    public void setClassName(String className) {
-
     }
 
     public FinDocType getDocType() {
@@ -338,18 +216,8 @@ public class InvTransaction implements Serializable, IModelWithId,
 
     public void aboutToInsert(DescriptorEvent event) {
 
-        event.updateAttributeWithObject("createdAt", new Date());
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("createdBy", Session.user.get()
-                .getUsername());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
-        event.updateAttributeWithObject("clientId", Session.user.get()
-                .getClientId());
-        if (this.uuid == null || this.uuid.equals("")) {
-            event.updateAttributeWithObject("uuid", UUID.randomUUID()
-                    .toString().toUpperCase());
-        }
+        super.aboutToInsert(event);
+
         if (this.confirmed == null) {
             event.updateAttributeWithObject("confirmed", false);
         }
@@ -359,11 +227,10 @@ public class InvTransaction implements Serializable, IModelWithId,
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
-
+        super.aboutToUpdate(event);
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("modifiedBy", Session.user.get()
                 .getUsername());
-
     }
 
 }

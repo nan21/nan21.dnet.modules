@@ -5,9 +5,8 @@
  */
 package net.nan21.dnet.module.bd.org.ds.filter;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithPeriodLovFilter;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeLovFilter;
 
-public class OrganizationHierarchyLovDsFilter extends
-        AbstractTypeWithPeriodLovFilter {
+public class OrganizationHierarchyLovDsFilter extends AbstractTypeLovFilter {
 
 }

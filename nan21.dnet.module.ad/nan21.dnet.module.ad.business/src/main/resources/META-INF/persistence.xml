@@ -81,7 +81,13 @@
 		<class>net.nan21.dnet.module.ad.data.domain.entity.Note</class>
 		<class>net.nan21.dnet.module.ad.data.domain.entity.AttachmentType</class>
 		<class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>
-		 
+		
+		
+		<class>net.nan21.dnet.core.domain.model.AbstractSimpleEntity</class>
+		<class>net.nan21.dnet.core.domain.model.AbstractAuditable</class>
+		<class>net.nan21.dnet.core.domain.model.AbstractType</class>
+		<class>net.nan21.dnet.core.domain.model.AbstractTypeWithCode</class>
+		  
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

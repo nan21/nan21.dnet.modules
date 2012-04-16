@@ -54,7 +54,6 @@ Import-Package:
 Import-Bundle:  
  org.eclipse.virgo.snaps.api;version="[3.0,4.0)", 
  nan21.dnet.core.api;version="[1.0.0.M9,1.0.0.M9]", 
- nan21.dnet.core.domain;version="[1.0.0.M9,1.0.0.M9]", 
  javax.persistence;version="[2.0,2.1)", 
  org.eclipse.persistence.jpa;version="[2.1,2.5)", 
  org.eclipse.persistence.core;version="[2.0,2.5)", 

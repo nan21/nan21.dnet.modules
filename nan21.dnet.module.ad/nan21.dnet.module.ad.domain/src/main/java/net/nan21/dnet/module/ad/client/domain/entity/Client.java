@@ -5,9 +5,7 @@
  */
 package net.nan21.dnet.module.ad.client.domain.entity;
 
-import java.io.Serializable;
 import java.util.Date;
-import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +19,6 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Customizer;
@@ -37,7 +34,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = Client.NQ_FIND_BY_ID, query = "SELECT e FROM Client e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = Client.NQ_FIND_BY_IDS, query = "SELECT e FROM Client e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class Client implements Serializable, IModelWithId {
+public class Client {
 
     public static final String TABLE_NAME = "AD_CLIENT";
     public static final String SEQUENCE_NAME = "AD_CLIENT_SEQ";
@@ -70,7 +67,7 @@ public class Client implements Serializable, IModelWithId {
     @Column(name = "MAINTENANCELANGUAGE", length = 5)
     private String maintenanceLanguage;
 
-    /** 
+    /**   
     	Specify which is the default access rule if there is no explicit entry in ACL list.
     	<BR> Possible values are:
     	 <li> deny: by default deny access to data-source function if there is no explicit access defined in ACL.
@@ -119,53 +116,39 @@ public class Client implements Serializable, IModelWithId {
     @NotNull
     private Boolean systemClient;
 
-    /**
-     * Timestamp when this record was created.
-     */
+    /** CreatedAt. */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREATEDAT", nullable = false)
     @NotNull
     private Date createdAt;
 
-    /**
-     * Timestamp when this record was last modified.
-     */
+    /** ModifiedAt. */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "MODIFIEDAT", nullable = false)
     @NotNull
     private Date modifiedAt;
 
-    /**
-     * User who created this record.
-     */
+    /** CreatedBy. */
     @Column(name = "CREATEDBY", nullable = false, length = 32)
     @NotBlank
     private String createdBy;
 
-    /**
-     * User who last modified this record.
-     */
+    /** ModifiedBy. */
     @Column(name = "MODIFIEDBY", nullable = false, length = 32)
     @NotBlank
     private String modifiedBy;
 
     @Version
-    /** 
-     * Record version number used by the persistence framework.
-     */
+    /** Version. */
     @Column(name = "VERSION", nullable = false)
     @NotNull
     private Long version;
 
-    /**
-     * System generated UID. Useful for data import-export and data-replication
-     */
+    /** Uuid. */
     @Column(name = "UUID", length = 36)
     private String uuid;
 
-    /**
-     * System generated unique identifier.
-     */
+    /** Id. */
     @Column(name = "ID", nullable = false)
     @NotNull
     @Id
@@ -353,16 +336,6 @@ public class Client implements Serializable, IModelWithId {
 
     public void aboutToInsert(DescriptorEvent event) {
 
-        event.updateAttributeWithObject("createdAt", new Date());
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("createdBy", Session.user.get()
-                .getUsername());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
-        if (this.uuid == null || this.uuid.equals("")) {
-            event.updateAttributeWithObject("uuid", UUID.randomUUID()
-                    .toString().toUpperCase());
-        }
         if (this.systemClient == null) {
             event.updateAttributeWithObject("systemClient", false);
         }
@@ -373,7 +346,6 @@ public class Client implements Serializable, IModelWithId {
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("modifiedBy", Session.user.get()
                 .getUsername());
-
     }
 
 }

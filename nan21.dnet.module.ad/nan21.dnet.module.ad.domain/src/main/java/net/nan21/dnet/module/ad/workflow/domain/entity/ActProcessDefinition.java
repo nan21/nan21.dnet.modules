@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.ad.workflow.domain.entity;
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -20,7 +19,6 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment;
 import org.eclipse.persistence.annotations.Cache;
@@ -41,7 +39,7 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = ActProcessDefinition.NQ_FIND_BY_IDS, query = "SELECT e FROM ActProcessDefinition e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 @ReadOnly
 @Cache(type = CacheType.NONE)
-public class ActProcessDefinition implements Serializable, IModelWithId {
+public class ActProcessDefinition {
 
     public static final String TABLE_NAME = "ACT_RE_PROCDEF";
     public static final String SEQUENCE_NAME = "ACT_RE_PROCDEF_SEQ";

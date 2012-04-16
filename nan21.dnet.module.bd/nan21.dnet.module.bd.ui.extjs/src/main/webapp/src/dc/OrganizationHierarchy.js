@@ -49,7 +49,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$List", {
 		.addDateColumn({ name:"startDate", dataIndex:"startDate",format:Dnet.DATE_FORMAT})   	      	     
 		.addDateColumn({ name:"endDate", dataIndex:"endDate",format:Dnet.DATE_FORMAT})   	      	     
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
-		.addTextColumn({ name:"notes", dataIndex:"notes", hidden:true,width:200 })   	
+		.addTextColumn({ name:"description", dataIndex:"description", hidden:true,width:200 })   	
 	  	.addDefaults()
 	  ;		   
 	}
@@ -68,7 +68,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$EditList", {
 		.addDateColumn({ name:"startDate", dataIndex:"startDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addDateColumn({ name:"endDate", dataIndex:"endDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  
@@ -87,7 +87,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Edit", {
 		.addDateField({ name:"startDate", dataIndex:"startDate",anchor:"-20" })
 		.addDateField({ name:"endDate", dataIndex:"endDate",anchor:"-20" })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:40,anchor:"-20"   })
+		.addTextArea({ name:"description", dataIndex:"description",height:40,anchor:"-20"   })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     
@@ -97,7 +97,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchy$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
-		.addChildrenTo("col1",["name","notes"])
+		.addChildrenTo("col1",["name","description"])
 		.addChildrenTo("col2",["startDate","endDate","active"])
 ;
 	}	

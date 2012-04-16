@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.mm.md.domain.entity;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -24,7 +23,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 @Table(name = ProductCategoryHierarchyItem.TABLE_NAME)
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({})
-public class ProductCategoryHierarchyItem implements Serializable {
+public class ProductCategoryHierarchyItem {
 
     public static final String TABLE_NAME = "MM_PRODCATEGHRCH_ITEM";
     public static final String SEQUENCE_NAME = "MM_PRODCATEGHRCH_ITEM_SEQ";
