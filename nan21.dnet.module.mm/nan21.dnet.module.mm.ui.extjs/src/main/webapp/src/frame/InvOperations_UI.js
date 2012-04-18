@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvOperations_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("invop",{ name:"invopFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvOperation$Filter",height:120})	 
+		.addDcFilterFormView("invop",{ name:"invopFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvOperation$Filter",height:140})	 
 		.addDcGridView("invop",{ name:"invopList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvOperation$List"})	 
 		.addPanel({name: "main", layout:"border", defaults:{split:true}})  	 
 ;	 	

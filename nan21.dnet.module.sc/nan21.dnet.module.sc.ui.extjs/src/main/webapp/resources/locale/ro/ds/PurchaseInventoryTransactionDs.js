@@ -10,7 +10,7 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseInventoryTransaction
 	fromInventory__lbl :    "Gestiune sursă (Cod)",
 	toInventoryId__lbl :    "Gestiune destinaţie (ID)",
 	toInventory__lbl :    "Gestiune destinaţie (Cod)",
-	eventDate__lbl :  "Data",
+	eventDate__lbl :  "Dată eveniment",
 		 
 	id__lbl :"ID"
 });

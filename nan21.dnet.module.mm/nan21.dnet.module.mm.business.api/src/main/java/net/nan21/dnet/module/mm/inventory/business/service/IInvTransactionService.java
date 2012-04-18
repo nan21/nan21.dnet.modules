@@ -37,6 +37,8 @@ public interface IInvTransactionService extends IEntityService<InvTransaction> {
 
     public List<InvTransaction> findByLinesId(Long linesId);
 
-    public void doPostTransaction(Long transactionId) throws Exception;
+    public void doConfirm(Long transactionId) throws Exception;
+
+    public void doUnConfirm(Long transactionId) throws Exception;
 
 }

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
@@ -15,7 +16,7 @@ import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax;
 
 public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 
-	public SalesInvoice generateInvoice(SalesOrder order) throws Exception {
+	public SalesInvoice generateInvoice(SalesOrder order,FinDocType invDocType) throws Exception {
 
 		List<SalesInvoice> invs = ((ISalesInvoiceService)this.findEntityService(SalesInvoice.class)).findBySalesOrderId(order.getId());
 		if (invs.size() > 0) {
@@ -33,7 +34,7 @@ public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 		
 		invoice.setCurrency(order.getCurrency());
 		invoice.setPriceList(order.getPriceList());
-		
+		invoice.setDocType(invDocType);
 		invoice.setDocDate(new Date());
 		invoice.setBillToLocation(order.getBillToLocation());
 		// invoice.setBillToContact(order.getb)
@@ -43,6 +44,9 @@ public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 		invoice.setTotalNetAmount(order.getTotalNetAmount());
 		invoice.setTotalTaxAmount(order.getTotalTaxAmount());
 		
+		invoice.setPaymentMethod(order.getPaymentMethod());
+		invoice.setPaymentTerm(order.getPaymentTerm());
+				
 		List<SalesOrderItem> items = ((ISalesOrderItemService) this
 				.findEntityService(SalesOrderItem.class))
 				.findBySalesOrderId(order.getId());

@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/InvTransferDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransfer", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionLineDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionLine","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypes","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypes","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.mm.ui.extjs/ds/ProductWithUomLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductsWithUom","nan21.dnet.module.mm.ui.extjs/ds/SubInventoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/SubInventorys","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocators","nan21.dnet.module.mm.ui.extjs/ds/SubInventoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/SubInventorys","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocators","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasureCode"]);
+Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/InvTransferDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransfer", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionLineDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionLine","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypeInvInOutLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypesInvInOut","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypeInvInOutLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypesInvInOut","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.bd.ui.extjs/ds/InventoryOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/InventoryOrganizations","nan21.dnet.module.mm.ui.extjs/ds/ProductWithUomLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductsWithUom","nan21.dnet.module.mm.ui.extjs/ds/SubInventoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/SubInventorys","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocators","nan21.dnet.module.mm.ui.extjs/ds/SubInventoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/SubInventorys","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocators","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasureCode"]);
 
 Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvTransfer_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
@@ -23,9 +23,9 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvTransfer_UI", {
 		.addButton({name:"btnPost",text:"Post", tooltip:"Post current transaction to create movement operations.",iconCls:"icon-gears",disabled:true
 			,handler: this.onBtnPost,scope:this,stateManager:{name:"record_is_clean", dc:"tx" , and: function(dc) {return (dc.record && dc.record.get("confirmed")&& !dc.record.get("posted") );}}	})	
 							 	
-		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransfer$Filter",height:120})	 
+		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransfer$Filter",height:140})	 
 		.addDcGridView("tx",{ name:"txList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransfer$List"})	 
-		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransfer$Edit",height:180,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnConfirm") ,this._elems_.get("btnUnConfirm") ,this._elems_.get("btnPost") ]}]})	 
+		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransfer$Edit",height:180,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnConfirm") ,this._elems_.get("btnUnConfirm") ]}]})	 
 		.addDcEditGridView("txline",{ name:"txlineList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditList", frame:true})	 
 		.addDcFormView("txline",{ name:"txlineCtxFormView", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$CtxFormView",height:40})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
@@ -78,4 +78,31 @@ Ext.define("net.nan21.dnet.module.mm.inventory.frame.InvTransfer_UI", {
 			dnet.base.DcExceptions.showMessage(e);
 		}
 	}					 	
+	,onAfterDefineDcs: function() {	
+				 
+		this._getDc_("tx").on("afterDoServiceSuccess", 
+		function() {this._syncReadOnlyStates_(); } , this );
+		
+		this._getDc_("tx").on("recordChange", this._syncReadOnlyStates_, this );
+		
+	}
+	,_syncReadOnlyStates_: function() {	
+		
+		var txRec = this._getDc_("tx").getRecord();
+		if (!txRec) { return; }
+		var itemsDc = this._getDc_("txline");
+		if (txRec.get("confirmed")) {
+			if (!itemsDc.isReadOnly()) {
+				itemsDc.setReadOnly(true);
+			}
+		} else {
+			if (itemsDc.isReadOnly()) {
+				itemsDc.setReadOnly(false);
+			}
+		}
+		
+	}
+	,_afterDefineDcs_: function() {	
+		this.onAfterDefineDcs();
+	}
 });  

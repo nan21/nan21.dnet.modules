@@ -9,6 +9,13 @@ import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDsFilter;
 
 public class InvBalanceDsFilter extends AbstractAuditableDsFilter {
 
+    private Long inventoryId;
+
+    private Long inventoryId_From;
+    private Long inventoryId_To;
+
+    private String inventory;
+
     private Long subInventoryId;
 
     private Long subInventoryId_From;
@@ -43,6 +50,38 @@ public class InvBalanceDsFilter extends AbstractAuditableDsFilter {
     private Long uomId_To;
 
     private String uom;
+
+    public Long getInventoryId() {
+        return this.inventoryId;
+    }
+
+    public Long getInventoryId_From() {
+        return this.inventoryId_From;
+    }
+
+    public Long getInventoryId_To() {
+        return this.inventoryId_To;
+    }
+
+    public void setInventoryId(Long inventoryId) {
+        this.inventoryId = inventoryId;
+    }
+
+    public void setInventoryId_From(Long inventoryId_From) {
+        this.inventoryId_From = inventoryId_From;
+    }
+
+    public void setInventoryId_To(Long inventoryId_To) {
+        this.inventoryId_To = inventoryId_To;
+    }
+
+    public String getInventory() {
+        return this.inventory;
+    }
+
+    public void setInventory(String inventory) {
+        this.inventory = inventory;
+    }
 
     public Long getSubInventoryId() {
         return this.subInventoryId;

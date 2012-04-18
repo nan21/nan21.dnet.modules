@@ -27,6 +27,7 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseReceptionDs" ,{
 		{name:"warehouseId", type:"int", useNull:true},
 		{name:"warehouse", type:"string"},
 		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"confirmed", type:"boolean"},
 		{name:"posted", type:"boolean"}
 	]
@@ -75,6 +76,9 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseReceptionDsFilter" ,
 		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"eventDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"eventDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"confirmed", type:"boolean", useNull:true},
 		{name:"posted", type:"boolean", useNull:true}
 	] 

@@ -102,8 +102,12 @@ public class InvTransactionService extends
                 .setParameter("pLinesId", linesId).getResultList();
     }
 
-    public void doPostTransaction(Long transactionId) throws Exception {
-        this.getBusinessDelegate(InvTransactionBD.class).postTransaction(
+    public void doConfirm(Long transactionId) throws Exception {
+        this.getBusinessDelegate(InvTransactionBD.class).confirm(transactionId);
+    }
+
+    public void doUnConfirm(Long transactionId) throws Exception {
+        this.getBusinessDelegate(InvTransactionBD.class).unConfirm(
                 transactionId);
     }
 

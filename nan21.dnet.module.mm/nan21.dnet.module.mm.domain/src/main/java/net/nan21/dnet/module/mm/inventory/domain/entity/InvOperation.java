@@ -24,6 +24,7 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine;
 import net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator;
 import net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory;
@@ -96,6 +97,9 @@ public class InvOperation extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = InvTransactionLine.class)
     @JoinColumn(name = "TRANSACTIONLINE_ID", referencedColumnName = "ID")
     private InvTransactionLine transactionLine;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
+    @JoinColumn(name = "UOM_ID", referencedColumnName = "ID")
+    private Uom uom;
 
     /* ============== getters - setters ================== */
 
@@ -169,6 +173,14 @@ public class InvOperation extends AbstractAuditable {
 
     public void setTransactionLine(InvTransactionLine transactionLine) {
         this.transactionLine = transactionLine;
+    }
+
+    public Uom getUom() {
+        return this.uom;
+    }
+
+    public void setUom(Uom uom) {
+        this.uom = uom;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

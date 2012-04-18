@@ -24,7 +24,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesDelivery$Filter", {
 		//controls	
 		this._getBuilder_()	
 		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"customer",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "customerId"} ]  })
-		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypes", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesSOInvOut", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
 		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ],filterFieldMapping: [{lovField:"docTypeId", dsField: "docTypeId"} ]  })
 		.addLov({ name:"warehouse", xtype:"net.nan21.dnet.module.bd.org.lovs.WarehouseOrganizations", dataIndex:"warehouse",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "warehouseId"} ]  })
 		.addLov({ name:"carrier", xtype:"net.nan21.dnet.module.bd.org.lovs.CarrierOrganizations", dataIndex:"carrier",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "carrierId"} ]  })
@@ -33,8 +33,14 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesDelivery$Filter", {
 		.addFieldContainer({name: "eventDate", fieldLabel:"Event Date"}) 
 		.addChildrenTo("eventDate",["eventDate_From", "eventDate_To"]) 
 
+		.addDateField({ name:"docDate_From", dataIndex:"docDate_From", emptyText:"From" })
+		.addDateField({ name:"docDate_To", dataIndex:"docDate_To", emptyText:"To" })
+		.addFieldContainer({name: "docDate", fieldLabel:"Doc Date"}) 
+		.addChildrenTo("docDate",["docDate_From", "docDate_To"]) 
+
 		.addBooleanField({ name:"confirmed", dataIndex:"confirmed",anchor:"-20"  })
 		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
+		.addTextField({ name:"salesOrder", dataIndex:"salesOrder",anchor:"-20",maxLength:32  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:250}) 
 		.addPanel({ name:"col2", layout:"form", width:300}) 
@@ -46,8 +52,8 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesDelivery$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["customer","warehouse","carrier"])
-		.addChildrenTo("col2",["docType","transactionType","eventDate"])
-		.addChildrenTo("col3",["confirmed","posted"])
+		.addChildrenTo("col2",["docType","transactionType","docDate","eventDate"])
+		.addChildrenTo("col3",["salesOrder","confirmed","posted"])
     	.addAuditFilter({})	
 	}
 }); 
@@ -62,9 +68,11 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesDelivery$List", {
 		.addTextColumn({ name:"warehouse", dataIndex:"warehouse",width:100 })   	
 		.addTextColumn({ name:"docType", dataIndex:"docType",width:120 })   	
 		.addTextColumn({ name:"transactionType", dataIndex:"transactionType",width:120 })   	
+		.addDateColumn({ name:"docDate", dataIndex:"docDate",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addDateColumn({ name:"eventDate", dataIndex:"eventDate",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"customer", dataIndex:"customer",width:200 })   	
 		.addTextColumn({ name:"carrier", dataIndex:"carrier",width:100 })   	
+		.addTextColumn({ name:"salesOrder", dataIndex:"salesOrder",width:100 })   	
 		.addBooleanColumn({ name:"confirmed", dataIndex:"confirmed"})   	     
 		.addBooleanColumn({ name:"posted", dataIndex:"posted"})   	     
 		.addNumberColumn({ name:"warehouseId", dataIndex:"warehouseId", hidden:true,format:"0",width:70 })  
@@ -87,11 +95,13 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesDelivery$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
+		.addDisplayFieldText({ name:"salesOrder", dataIndex:"salesOrder"  })
 		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"customer",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "customerId"} ]  })
 		.addLov({ name:"warehouse", xtype:"net.nan21.dnet.module.bd.org.lovs.WarehouseOrganizations", dataIndex:"warehouse",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "warehouseId"} ]  })
 		.addLov({ name:"carrier", xtype:"net.nan21.dnet.module.bd.org.lovs.CarrierOrganizations", dataIndex:"carrier",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "carrierId"} ]  })
-		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20" ,allowBlank:false})
-		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypes", dataIndex:"docType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addDisplayFieldDate({name:"eventDate", dataIndex:"eventDate"  })
+		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,allowBlank:false})
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesSOInvOut", dataIndex:"docType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
 		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ],filterFieldMapping: [{lovField:"docTypeId", dsField: "docTypeId"} ]  })
 		.addDisplayFieldBoolean({ name:"confirmed", dataIndex:"confirmed"  })
 		.addDisplayFieldBoolean({ name:"posted", dataIndex:"posted"  })
@@ -106,9 +116,22 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesDelivery$Edit", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
 		.addChildrenTo("col1",["warehouse","customer","carrier"])
-		.addChildrenTo("col2",["docType","transactionType"])
-		.addChildrenTo("col3",["eventDate","confirmed","posted"])
+		.addChildrenTo("col2",["docType","transactionType","salesOrder"])
+		.addChildrenTo("col3",["docDate","eventDate","confirmed","posted"])
 ;
 	}	
+	,_beforeApplyStates_: function(record) {	
+		
+			if (record.get("confirmed") || record.get("posted") ) {
+				this._disableAllFields_();
+				return false;
+			}
+	}
+	,_endDefine_: function() {	
+		
+			this._controller_.on("afterDoServiceSuccess", function(dc, response, name, options) {
+			 	this._applyStates_(dc.record);
+			 } , this )
+	}
 });
  	

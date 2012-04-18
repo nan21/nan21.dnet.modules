@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.sd.ui.extjs/ds/SalesDeliveryDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesDelivery", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionLineDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionLine","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/WarehouseOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/WarehouseOrganizations","nan21.dnet.module.bd.ui.extjs/ds/CarrierOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/CarrierOrganizations","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypes","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypes","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bd.ui.extjs/ds/WarehouseOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/WarehouseOrganizations","nan21.dnet.module.bd.ui.extjs/ds/CarrierOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/CarrierOrganizations","nan21.dnet.module.mm.ui.extjs/ds/ProductWithUomLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductsWithUom","nan21.dnet.module.mm.ui.extjs/ds/SubInventoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/SubInventorys","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocators","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasureCode"]);
+Dnet.doImport(["", "nan21.dnet.module.sd.ui.extjs/ds/SalesDeliveryDs", "nan21.dnet.module.sd.ui.extjs/dc/SalesDelivery", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionLineDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionLine","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/WarehouseOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/WarehouseOrganizations","nan21.dnet.module.bd.ui.extjs/ds/CarrierOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/CarrierOrganizations","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypeSOInvOutLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypesSOInvOut","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypeSOInvOutLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypesSOInvOut","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bd.ui.extjs/ds/WarehouseOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/WarehouseOrganizations","nan21.dnet.module.bd.ui.extjs/ds/CarrierOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/CarrierOrganizations","nan21.dnet.module.mm.ui.extjs/ds/ProductWithUomLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductsWithUom","nan21.dnet.module.mm.ui.extjs/ds/SubInventoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/SubInventorys","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocators","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasureCode"]);
 
 Ext.define("net.nan21.dnet.module.sd.order.frame.SalesDelivery_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
@@ -66,4 +66,46 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesDelivery_UI", {
 			dnet.base.DcExceptions.showMessage(e);
 		}
 	}					 	
+	,onAfterDefineDcs: function() {	
+		
+		 
+		this._getDc_("tx").on("afterDoServiceSuccess", 
+		function() {this._syncReadOnlyStates_(); } , this );
+		
+		this._getDc_("tx").on("recordChange", this._syncReadOnlyStates_, this );
+		
+	}
+	,_syncReadOnlyStates_: function() {	
+		
+		var txRec = this._getDc_("tx").getRecord();
+		if (!txRec) { return; }
+		var itemsDc = this._getDc_("txline");
+		if (txRec.get("confirmed")) {
+			if (!itemsDc.isReadOnly()) {
+				itemsDc.setReadOnly(true);
+			}
+		} else {
+			if (itemsDc.isReadOnly()) {
+				itemsDc.setReadOnly(false);
+			}
+		}
+		
+	}
+	,_when_called_to_edit_by_so_: function(params) {	
+		
+		var tx = this._getDc_("tx");
+		if (tx.isDirty()) {
+			this._alert_dirty_();
+			return;
+		}
+		tx.doClearQuery();
+		//inv.setFilterValue("salesOrderId", params.salesOrderId );
+		tx.setFilterValue("salesOrder", params.salesOrderCode );
+		tx.doQuery();
+		this._showStackedViewElement_("main",1);
+		
+	}
+	,_afterDefineDcs_: function() {	
+		this.onAfterDefineDcs();
+	}
 });  

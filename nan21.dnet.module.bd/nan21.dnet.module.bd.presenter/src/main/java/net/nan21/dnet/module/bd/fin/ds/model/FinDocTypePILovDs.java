@@ -12,7 +12,7 @@ import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = FinDocType.class, jpqlWhere = " e.category = 'PI' ", sort = { @SortField(field = FinDocTypePILovDs.fNAME) })
+@Ds(entity = FinDocType.class, jpqlWhere = " e.active=true and e.category = 'purchase-invoice' ", sort = { @SortField(field = FinDocTypePILovDs.fNAME) })
 public class FinDocTypePILovDs extends AbstractTypeLov<FinDocType> {
 
     public static final String fCATEGORY = "category";

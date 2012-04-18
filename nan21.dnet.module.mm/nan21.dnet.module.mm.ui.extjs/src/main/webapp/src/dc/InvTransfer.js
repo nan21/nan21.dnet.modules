@@ -23,7 +23,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransfer$Filter", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypes", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesInvInOut", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
 		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ],filterFieldMapping: [{lovField:"docTypeId", dsField: "docTypeId"} ]  })
 		.addLov({ name:"fromInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"fromInventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "fromInventoryId"} ]  })
 		.addLov({ name:"toInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"toInventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "toInventoryId"} ]  })
@@ -31,6 +31,11 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransfer$Filter", {
 		.addDateField({ name:"eventDate_To", dataIndex:"eventDate_To", emptyText:"To" })
 		.addFieldContainer({name: "eventDate", fieldLabel:"Event Date"}) 
 		.addChildrenTo("eventDate",["eventDate_From", "eventDate_To"]) 
+
+		.addDateField({ name:"docDate_From", dataIndex:"docDate_From", emptyText:"From" })
+		.addDateField({ name:"docDate_To", dataIndex:"docDate_To", emptyText:"To" })
+		.addFieldContainer({name: "docDate", fieldLabel:"Doc Date"}) 
+		.addChildrenTo("docDate",["docDate_From", "docDate_To"]) 
 
 		.addBooleanField({ name:"confirmed", dataIndex:"confirmed",anchor:"-20"  })
 		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
@@ -44,7 +49,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransfer$Filter", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["docType","transactionType","eventDate"])
+		.addChildrenTo("col1",["docType","transactionType","eventDate","docDate"])
 		.addChildrenTo("col2",["fromInventory","toInventory"])
 		.addChildrenTo("col3",["confirmed","posted"])
     		
@@ -60,6 +65,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransfer$List", {
 		this._getBuilder_()	
 		.addTextColumn({ name:"docType", dataIndex:"docType",width:120 })   	
 		.addTextColumn({ name:"transactionType", dataIndex:"transactionType",width:120 })   	
+		.addDateColumn({ name:"docDate", dataIndex:"docDate",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addDateColumn({ name:"eventDate", dataIndex:"eventDate",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"fromInventory", dataIndex:"fromInventory", width:150 })   	
 		.addTextColumn({ name:"toInventory", dataIndex:"toInventory", width:150 })   	
@@ -86,8 +92,9 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransfer$Edit", {
 		this._getBuilder_()	
 		.addLov({ name:"fromInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"fromInventory",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "fromInventoryId"} ]  })
 		.addLov({ name:"toInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"toInventory",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "toInventoryId"} ]  })
-		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20" })
-		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypes", dataIndex:"docType",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addDisplayFieldDate({name:"eventDate", dataIndex:"eventDate"  })
+		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,allowBlank:false})
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesInvInOut", dataIndex:"docType",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
 		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ],filterFieldMapping: [{lovField:"docTypeId", dsField: "docTypeId"} ]  })
 		.addDisplayFieldBoolean({ name:"confirmed", dataIndex:"confirmed"  })
 		.addDisplayFieldBoolean({ name:"posted", dataIndex:"posted"  })
@@ -101,7 +108,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransfer$Edit", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
 		.addChildrenTo("col1",["docType","transactionType","fromInventory","toInventory"])
-		.addChildrenTo("col2",["eventDate","confirmed","posted"])
+		.addChildrenTo("col2",["docDate","eventDate","confirmed","posted"])
 ;
 	}	
 });

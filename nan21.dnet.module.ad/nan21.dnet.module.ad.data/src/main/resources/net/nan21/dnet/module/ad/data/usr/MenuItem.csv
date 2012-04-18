@@ -57,6 +57,7 @@
 "20";"UserGroups_UI";"User groups";;"net.nan21.dnet.module.ad.usr.frame.UserGroups_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
 "20";"Course_UI";"Courses";;"net.nan21.dnet.module.hr.training.frame.Course_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
 "60";"InvTransactions_UI";"Transactions overview";;"net.nan21.dnet.module.mm.inventory.frame.InvTransactions_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
+"80";"InvBalance_UI";"Stocks";;"net.nan21.dnet.module.mm.inventory.frame.InvBalance_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
 "40";"InvTransfer_UI";"Goods transfer";;"net.nan21.dnet.module.mm.inventory.frame.InvTransfer_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";
 "20";"Job_UI";"Jobs";;"net.nan21.dnet.module.hr.job.frame.Job_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
 "20";"ProductPriceReport_UI";"Price report";;"net.nan21.dnet.module.mm.price.frame.ProductPriceReport_UI";"nan21.dnet.module.mm.ui.extjs";"true";;"false";"false";

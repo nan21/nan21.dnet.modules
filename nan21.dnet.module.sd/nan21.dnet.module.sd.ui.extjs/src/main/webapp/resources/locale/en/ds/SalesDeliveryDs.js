@@ -19,6 +19,7 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs$Trl", {
 	confirmed__lbl : "Confirmed",
 	posted__lbl : "Posted",
 	eventDate__lbl : "Event Date",
+	docDate__lbl : "Doc Date",
 		
 	id__lbl :"ID"
 });

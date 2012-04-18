@@ -6,13 +6,14 @@
 package net.nan21.dnet.module.mm.inventory.ds.model;
 
 import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
 
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransfer;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = InvTransfer.class)
+@Ds(entity = InvTransfer.class, sort = { @SortField(field = InvTransferDs.fEVENTDATE, desc = true) })
 public class InvTransferDs extends AbstractAuditableDs<InvTransfer> {
 
     public static final String fDOCTYPEID = "docTypeId";
@@ -28,6 +29,7 @@ public class InvTransferDs extends AbstractAuditableDs<InvTransfer> {
     public static final String fCONFIRMED = "confirmed";
     public static final String fPOSTED = "posted";
     public static final String fEVENTDATE = "eventDate";
+    public static final String fDOCDATE = "docDate";
 
     @DsField(join = "left", path = "docType.id")
     private Long docTypeId;
@@ -67,6 +69,9 @@ public class InvTransferDs extends AbstractAuditableDs<InvTransfer> {
 
     @DsField()
     private Date eventDate;
+
+    @DsField()
+    private Date docDate;
 
     public InvTransferDs() {
         super();
@@ -178,6 +183,14 @@ public class InvTransferDs extends AbstractAuditableDs<InvTransfer> {
 
     public void setEventDate(Date eventDate) {
         this.eventDate = eventDate;
+    }
+
+    public Date getDocDate() {
+        return this.docDate;
+    }
+
+    public void setDocDate(Date docDate) {
+        this.docDate = docDate;
     }
 
 }

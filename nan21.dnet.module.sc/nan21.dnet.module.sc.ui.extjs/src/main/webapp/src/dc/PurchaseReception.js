@@ -24,7 +24,7 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseReception$Filter", {
 		//controls	
 		this._getBuilder_()	
 		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"supplier",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
-		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypes", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesPOInvIn", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
 		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ],filterFieldMapping: [{lovField:"docTypeId", dsField: "docTypeId"} ]  })
 		.addLov({ name:"warehouse", xtype:"net.nan21.dnet.module.bd.org.lovs.WarehouseOrganizations", dataIndex:"warehouse",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "warehouseId"} ]  })
 		.addLov({ name:"carrier", xtype:"net.nan21.dnet.module.bd.org.lovs.CarrierOrganizations", dataIndex:"carrier",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "carrierId"} ]  })
@@ -32,6 +32,11 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseReception$Filter", {
 		.addDateField({ name:"eventDate_To", dataIndex:"eventDate_To", emptyText:"To" })
 		.addFieldContainer({name: "eventDate", fieldLabel:"Event Date"}) 
 		.addChildrenTo("eventDate",["eventDate_From", "eventDate_To"]) 
+
+		.addDateField({ name:"docDate_From", dataIndex:"docDate_From", emptyText:"From" })
+		.addDateField({ name:"docDate_To", dataIndex:"docDate_To", emptyText:"To" })
+		.addFieldContainer({name: "docDate", fieldLabel:"Doc Date"}) 
+		.addChildrenTo("docDate",["docDate_From", "docDate_To"]) 
 
 		.addBooleanField({ name:"confirmed", dataIndex:"confirmed",anchor:"-20"  })
 		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
@@ -46,7 +51,7 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseReception$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["supplier","warehouse","carrier"])
-		.addChildrenTo("col2",["docType","transactionType","eventDate"])
+		.addChildrenTo("col2",["docType","transactionType","docDate","eventDate"])
 		.addChildrenTo("col3",["confirmed","posted"])
     	.addAuditFilter({})	
 	}
@@ -62,6 +67,7 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseReception$List", {
 		.addTextColumn({ name:"warehouse", dataIndex:"warehouse",width:100 })   	
 		.addTextColumn({ name:"docType", dataIndex:"docType",width:120 })   	
 		.addTextColumn({ name:"transactionType", dataIndex:"transactionType",width:120 })   	
+		.addDateColumn({ name:"docDate", dataIndex:"docDate",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addDateColumn({ name:"eventDate", dataIndex:"eventDate",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"supplier", dataIndex:"supplier",width:200 })   	
 		.addTextColumn({ name:"carrier", dataIndex:"carrier",width:100 })   	
@@ -90,8 +96,9 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseReception$Edit", {
 		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"supplier",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
 		.addLov({ name:"warehouse", xtype:"net.nan21.dnet.module.bd.org.lovs.WarehouseOrganizations", dataIndex:"warehouse",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "warehouseId"} ]  })
 		.addLov({ name:"carrier", xtype:"net.nan21.dnet.module.bd.org.lovs.CarrierOrganizations", dataIndex:"carrier",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "carrierId"} ]  })
-		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20" })
-		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypes", dataIndex:"docType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,allowBlank:false})
+		.addDisplayFieldDate({name:"eventDate", dataIndex:"eventDate"  })
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesPOInvIn", dataIndex:"docType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
 		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ],filterFieldMapping: [{lovField:"docTypeId", dsField: "docTypeId"} ]  })
 		.addDisplayFieldBoolean({ name:"confirmed", dataIndex:"confirmed"  })
 		.addDisplayFieldBoolean({ name:"posted", dataIndex:"posted"  })
@@ -107,8 +114,21 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseReception$Edit", {
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
 		.addChildrenTo("col1",["warehouse","supplier","carrier"])
 		.addChildrenTo("col2",["docType","transactionType"])
-		.addChildrenTo("col3",["eventDate","confirmed","posted"])
+		.addChildrenTo("col3",["docDate","eventDate","confirmed","posted"])
 ;
 	}	
+	,_beforeApplyStates_: function(record) {	
+		
+			if (record.get("confirmed") || record.get("posted") ) {
+				this._disableAllFields_();
+				return false;
+			}
+	}
+	,_endDefine_: function() {	
+		
+			this._controller_.on("afterDoServiceSuccess", function(dc, response, name, options) {
+			 	this._applyStates_(dc.record);
+			 } , this )
+	}
 });
  	

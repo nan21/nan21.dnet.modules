@@ -5,6 +5,7 @@
  */
 package net.nan21.dnet.module.mm.inventory.ds.filter;
 
+import java.util.Date;
 import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDsFilter;
 
 public class InvOperationDsFilter extends AbstractAuditableDsFilter {
@@ -17,6 +18,11 @@ public class InvOperationDsFilter extends AbstractAuditableDsFilter {
     private String itemCode;
 
     private String item;
+
+    private Date eventDate;
+
+    private Date eventDate_From;
+    private Date eventDate_To;
 
     private Long inventoryId;
 
@@ -58,6 +64,13 @@ public class InvOperationDsFilter extends AbstractAuditableDsFilter {
     private Float quantity_From;
     private Float quantity_To;
 
+    private Long uomId;
+
+    private Long uomId_From;
+    private Long uomId_To;
+
+    private String uom;
+
     public Long getItemId() {
         return this.itemId;
     }
@@ -96,6 +109,30 @@ public class InvOperationDsFilter extends AbstractAuditableDsFilter {
 
     public void setItem(String item) {
         this.item = item;
+    }
+
+    public Date getEventDate() {
+        return this.eventDate;
+    }
+
+    public Date getEventDate_From() {
+        return this.eventDate_From;
+    }
+
+    public Date getEventDate_To() {
+        return this.eventDate_To;
+    }
+
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
+    }
+
+    public void setEventDate_From(Date eventDate_From) {
+        this.eventDate_From = eventDate_From;
+    }
+
+    public void setEventDate_To(Date eventDate_To) {
+        this.eventDate_To = eventDate_To;
     }
 
     public Long getInventoryId() {
@@ -280,6 +317,38 @@ public class InvOperationDsFilter extends AbstractAuditableDsFilter {
 
     public void setQuantity_To(Float quantity_To) {
         this.quantity_To = quantity_To;
+    }
+
+    public Long getUomId() {
+        return this.uomId;
+    }
+
+    public Long getUomId_From() {
+        return this.uomId_From;
+    }
+
+    public Long getUomId_To() {
+        return this.uomId_To;
+    }
+
+    public void setUomId(Long uomId) {
+        this.uomId = uomId;
+    }
+
+    public void setUomId_From(Long uomId_From) {
+        this.uomId_From = uomId_From;
+    }
+
+    public void setUomId_To(Long uomId_To) {
+        this.uomId_To = uomId_To;
+    }
+
+    public String getUom() {
+        return this.uom;
+    }
+
+    public void setUom(String uom) {
+        this.uom = uom;
     }
 
 }

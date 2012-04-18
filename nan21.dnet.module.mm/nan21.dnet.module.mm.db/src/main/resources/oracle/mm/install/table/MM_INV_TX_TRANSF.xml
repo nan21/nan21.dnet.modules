@@ -12,6 +12,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="DOCDATE" type="date">
+				<constraints nullable="false" /></column>	 
 			<column name="EVENTDATE" type="date">
 				<constraints  /></column>	 
 			<column name="ID" type="number(19)">

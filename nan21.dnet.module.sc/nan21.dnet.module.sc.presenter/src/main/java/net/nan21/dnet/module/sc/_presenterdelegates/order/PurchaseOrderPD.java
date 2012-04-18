@@ -11,18 +11,18 @@ public class PurchaseOrderPD extends AbstractDsDelegate {
 	public void confirmOrder(PurchaseOrderDs ds) throws Exception {
 		IPurchaseOrderService srv = ((IPurchaseOrderService) this
 				.findEntityService(PurchaseOrder.class));
-		PurchaseOrder invoice = srv.findById(ds.getId());
-		invoice.setConfirmed(true);
-		srv.update(invoice);
+		PurchaseOrder entity = srv.findById(ds.getId());
+		entity.setConfirmed(true);
+		srv.update(entity);
 		ds.setConfirmed(true);
 	}
 
 	public void unConfirmOrder(PurchaseOrderDs ds) throws Exception {
 		IPurchaseOrderService srv = ((IPurchaseOrderService) this
 				.findEntityService(PurchaseOrder.class));
-		PurchaseOrder invoice = srv.findById(ds.getId());
-		invoice.setConfirmed(false);
-		srv.update(invoice);
+		PurchaseOrder entity = srv.findById(ds.getId());
+		entity.setConfirmed(false);
+		srv.update(entity);
 		ds.setConfirmed(false);
 	}
 }

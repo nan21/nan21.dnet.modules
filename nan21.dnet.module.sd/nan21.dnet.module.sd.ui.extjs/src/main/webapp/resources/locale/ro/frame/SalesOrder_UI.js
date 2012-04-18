@@ -2,6 +2,8 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI$Trl", {
 	orderEditDetails__ttl : "Detalii",
 	itemTaxList__ttl : "Taxe linie comandă",
 	atchEditList__ttl : "Ataşamente",
+	wdwGenDelivery__ttl : "Generează livrare",
+	wdwGenInvoice__ttl : "Generează factură",
 	notesPanel__ttl : "Note",
 	linesPanel__ttl : "Linii",
 	
@@ -22,8 +24,14 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI$Trl", {
 	btnCreateInvoice__desc : "Generează factură",
 	btnCreateDelivery__ttl : "Generează livrare",
 	btnCreateDelivery__desc : "Generează livrare",
-	btnShowInvoice__ttl : "Arată factura",
+	btnCreateDeliveryOk__ttl : "OK",
+	btnCreateDeliveryOk__desc : "Generează livrare",
+	btnCreateInvoiceOk__ttl : "OK",
+	btnCreateInvoiceOk__desc : "Generează factura",
+	btnShowInvoice__ttl : "Arată factură",
 	btnShowInvoice__desc : "Arată factura asociată acestei comenzi.",
+	btnShowDelivery__ttl : "Arată livrare",
+	btnShowDelivery__desc : "Arată avizul de expeditie asociat acestei comenzi.",
 	
 	title: "Comenzi client"
 });	

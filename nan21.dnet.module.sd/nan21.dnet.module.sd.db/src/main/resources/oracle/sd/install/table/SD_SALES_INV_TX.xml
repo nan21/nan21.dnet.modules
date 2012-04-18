@@ -14,6 +14,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DELIVERYNOTES" type="varchar2(4000)">
 				<constraints  /></column>	 
+			<column name="DOCDATE" type="date">
+				<constraints nullable="false" /></column>	 
 			<column name="EVENTDATE" type="date">
 				<constraints  /></column>	 
 			<column name="ID" type="number(19)">

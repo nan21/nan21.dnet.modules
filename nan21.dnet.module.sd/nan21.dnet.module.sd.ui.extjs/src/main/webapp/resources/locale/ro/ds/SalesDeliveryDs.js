@@ -14,7 +14,8 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs$Trl", {
 	carrier__lbl :    "Gestiune destinaţie (Cod)",
 	warehouseId__lbl :    "Gestiune sursă (ID)",
 	warehouse__lbl :    "Gestiune sursă (Cod)",
-	confirmed__lbl :  "@confirmed",	posted__lbl :  "@posted",	eventDate__lbl :  "Data",
+	confirmed__lbl :  "@confirmed",	posted__lbl :  "@posted",	eventDate__lbl :  "Dată eveniment",
+	docDate__lbl :  "Dată doc.",
 		 
 	id__lbl :"ID"
 });

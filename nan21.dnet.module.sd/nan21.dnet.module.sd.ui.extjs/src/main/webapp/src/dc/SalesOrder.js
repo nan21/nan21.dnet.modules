@@ -117,19 +117,23 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$EditMain", {
 		.addDisplayFieldNumber({name:"totalTaxAmount", dataIndex:"totalTaxAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addDisplayFieldNumber({name:"totalAmount", dataIndex:"totalAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addDisplayFieldBoolean({ name:"confirmed", dataIndex:"confirmed"  })
+		.addDisplayFieldBoolean({ name:"invoiced", dataIndex:"invoiced"  })
+		.addDisplayFieldBoolean({ name:"delivered", dataIndex:"delivered"  })
 		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesSO", dataIndex:"docType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" ,width:250})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     
+		.addPanel({ name:"col3", layout:"form" , width:180})     
 		.addPanel({ name:"col4", layout:"form" ,width:250})     
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1" ,"col2" ,"col4" ])
+		.addChildrenTo("main",["col1" ,"col2" ,"col3" ,"col4" ])
 		.addChildrenTo("col1",["supplier","customer","docType","warehouse","code"])
-		.addChildrenTo("col2",["docDate","priceList","currency","confirmed"])
+		.addChildrenTo("col2",["docDate","priceList","currency"])
+		.addChildrenTo("col3",["confirmed","invoiced","delivered"])
 		.addChildrenTo("col4",["totalNetAmount","totalTaxAmount","totalAmount"])
 ;
 	}	
@@ -166,8 +170,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$EditDetails", {
 		.addLov({ name:"shipTo", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartnersName", dataIndex:"shipTo",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "shipToId"} ]  })
 		.addLov({ name:"shipToLocation", xtype:"net.nan21.dnet.module.bd.geo.lovs.LocationsToShip", dataIndex:"shipToLocation",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "shipToLocationId"} ],filterFieldMapping: [{lovField:"targetUuid", dsField: "shipToUuid"} ]  })
 		.addLov({ name:"deliveryMethod", xtype:"net.nan21.dnet.module.bp.base.lovs.DeliveryMethods", dataIndex:"deliveryMethod",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "deliveryMethodId"} ]  })
-		.addDisplayFieldBoolean({ name:"invoiced", dataIndex:"invoiced"  })
-		.addDisplayFieldBoolean({ name:"delivered", dataIndex:"delivered"  })
+		.addLov({ name:"carrier", xtype:"net.nan21.dnet.module.bd.org.lovs.CarrierOrganizations", dataIndex:"carrier",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "carrierId"} ]  })
 		//containers
 		.addPanel({ name:"panelBilling", layout:"form" ,title:"Invoice", width:400,xtype:"fieldset", border:true, collapsible:true})     
 		.addPanel({ name:"panelShipping", layout:"form" ,title:"Delivery", width:400,xtype:"fieldset", border:true, collapsible:true})     
@@ -182,18 +185,18 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$EditDetails", {
 		.addChildrenTo("main",["col1" ,"col2" ])
 		.addChildrenTo("col1",["panelShipping" ])
 		.addChildrenTo("col2",["panelPayment" ,"panelBilling" ])
-		.addChildrenTo("panelBilling",["billTo","billToLocation","invoiced"])
-		.addChildrenTo("panelShipping",["shipTo","shipToLocation","deliveryMethod","delivered","plannedDeliveryDate","deliveryNotes"])
+		.addChildrenTo("panelBilling",["billTo","billToLocation"])
+		.addChildrenTo("panelShipping",["shipTo","shipToLocation","plannedDeliveryDate","deliveryMethod","carrier","deliveryNotes"])
 		.addChildrenTo("panelPayment",["paymentMethod","paymentTerm"])
 ;
 	}	
 	,_afterApplyStates_: function(record) {	
 		
 		if ( record.get("invoiced") ) {
-			this._disableFields_(["billTo","billToLocation" ]);
+			this._disableFields_(["billTo","billToLocation","paymentMethod", "paymentTerm" ]);
 		}
 		if ( record.get("delivered") ) {
-			this._disableFields_(["shipTo","shipToLocation" ]);
+			this._disableFields_(["shipTo","shipToLocation", "carrier", "deliveryMethod", "deliveryNotes" , "plannedDeliveryDate" ]);
 		}
 		
 	}
@@ -203,5 +206,51 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$EditDetails", {
 		 	this._applyStates_(dc.record);
 		 } , this )
 	}
+});
+ 	
+ 	
+
+Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$FrmGenDelivery", {
+	extend: "dnet.core.dc.AbstractDcvEditForm",
+	alias: "widget.net.nan21.dnet.module.sd.order.dc.SalesOrder$FrmGenDelivery",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addLov({ name:"delivDocType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesSOInvOut", paramIndex:"delivDocType",anchor:"-20" ,retFieldMapping: [{lovField:"id", dsParam: "delivDocTypeId"} ]  })
+		.addLov({ name:"delivTxType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", paramIndex:"delivTxType",anchor:"-20" ,retFieldMapping: [{lovField:"id", dsParam: "delivTxTypeId"} ],filterFieldMapping: [{lovField:"docTypeId", dsParam:"delivDocTypeId"} ]  })
+		.addDateField({ name:"delivEventDate", paramIndex:"delivEventData",anchor:"-20" })
+		//containers
+		.addPanel({ name:"main", layout:"form" , autoScroll:true, defaults:{
+labelAlign:"right",labelWidth:140}})     
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["delivDocType","delivTxType","delivEventDate"])
+;
+	}	
+});
+ 	
+ 	
+
+Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$FrmGenInvoice", {
+	extend: "dnet.core.dc.AbstractDcvEditForm",
+	alias: "widget.net.nan21.dnet.module.sd.order.dc.SalesOrder$FrmGenInvoice",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addLov({ name:"invDocType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesSI", paramIndex:"invDocType",anchor:"-20" ,retFieldMapping: [{lovField:"id", dsParam: "invDocTypeId"} ]  })
+		//containers
+		.addPanel({ name:"main", layout:"form" , autoScroll:true, defaults:{
+labelAlign:"right",labelWidth:140}})     
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["invDocType"])
+;
+	}	
 });
  	

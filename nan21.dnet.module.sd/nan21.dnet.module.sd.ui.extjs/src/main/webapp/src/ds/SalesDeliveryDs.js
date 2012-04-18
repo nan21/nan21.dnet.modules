@@ -28,7 +28,8 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs" ,{
 		{name:"warehouse", type:"string"},
 		{name:"confirmed", type:"boolean"},
 		{name:"posted", type:"boolean"},
-		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
+		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	]
 });
 
@@ -76,7 +77,10 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDsFilter" ,{
 		{name:"posted", type:"boolean", useNull:true},
 		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"eventDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"eventDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
+		{name:"eventDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	] 
 });
 	

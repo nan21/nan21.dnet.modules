@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {  	  	
-	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docDate__lbl :  "Din",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docDate__lbl :  "Dată doc.",
 	supplierId__lbl :    "Org. furnizor (ID)",
 	supplier__lbl :    "Org. furnizor (Cod)",
 	docTypeId__lbl :    "Tip doc (ID)",
@@ -39,5 +39,12 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {
 	totalNetAmount__lbl :  "Total Net",
 	totalTaxAmount__lbl :  "Total taxe",
 	confirmed__lbl :  "@confirmed",	invoiced__lbl :  "@invoiced",	delivered__lbl :  "@delivered",	className__lbl :  "@className",	businessObject__lbl :  "@businessObject",		 
+	delivDocTypeId__lbl : "ID tip doc livrare",
+	delivDocType__lbl : "Tip doc livrare",
+	delivTxTypeId__lbl : "ID tip tranzactie livrare",
+	delivTxType__lbl : "ID tip tranzactie livrare",
+	delivEventData__lbl : "Data livarare",
+	invDocTypeId__lbl : "ID tip factura",
+	invDocType__lbl : "Tip factura",
 	id__lbl :"ID"
 });

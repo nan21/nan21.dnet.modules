@@ -8,6 +8,7 @@ package net.nan21.dnet.module.mm.inventory.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine;
 import net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator;
 import net.nan21.dnet.module.mm.inventory.domain.entity.SubInventory;
@@ -37,5 +38,9 @@ public interface IInvOperationService extends IEntityService<InvOperation> {
             InvTransactionLine transactionLine);
 
     public List<InvOperation> findByTransactionLineId(Long transactionLineId);
+
+    public List<InvOperation> findByUom(Uom uom);
+
+    public List<InvOperation> findByUomId(Long uomId);
 
 }

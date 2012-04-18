@@ -2,6 +2,8 @@
 Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvBalanceDs$Trl", {  	  	
 	uuid__lbl : "Uuid",
 	entityFQN__lbl : "Entity FQN",
+	inventoryId__lbl : "Inventory Id",
+	inventory__lbl : "Inventory",
 	subInventoryId__lbl : "Sub Inventory Id",
 	subInventory__lbl : "Sub Inventory",
 	locatorId__lbl : "Locator Id",

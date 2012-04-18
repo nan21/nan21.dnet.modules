@@ -140,6 +140,17 @@
 		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeSOLovDs" />
 	</bean>
    
+ 	<bean id="FinDocTypeSOInvOutLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeSOInvOutLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.FinDocTypeSOInvOutLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.FinDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FinDocTypeSOInvOutLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeSOInvOutLovDs" />
+	</bean>
+   
  	<bean id="FinDocTypeSILovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeSILovDs" />
@@ -162,6 +173,17 @@
 		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypePOLovDs" />
 	</bean>
    
+ 	<bean id="FinDocTypePOInvInLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypePOInvInLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.FinDocTypePOInvInLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.FinDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FinDocTypePOInvInLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypePOInvInLovDs" />
+	</bean>
+   
  	<bean id="FinDocTypePILovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypePILovDs" />
@@ -171,6 +193,17 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="FinDocTypePILov" />
 		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypePILovDs" />
+	</bean>
+   
+ 	<bean id="FinDocTypeInvInOutLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeInvInOutLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.FinDocTypeInvInOutLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.FinDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FinDocTypeInvInOutLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.FinDocTypeInvInOutLovDs" />
 	</bean>
       
 </beans>

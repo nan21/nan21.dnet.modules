@@ -6,7 +6,7 @@
         <createTable tableName="BD_FINDOC_TYPE">
 			<column name="ACTIVE" type="int(1)">
 				<constraints nullable="false" /></column>	 
-			<column name="CATEGORY" type="varchar(16)">
+			<column name="CATEGORY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
 			<column name="CLIENTID" type="bigint(3)">
 				<constraints nullable="false" /></column>	 

@@ -14,6 +14,8 @@ import net.nan21.dnet.core.api.annotation.DsField;
 @Ds(entity = InvBalance.class)
 public class InvBalanceDs extends AbstractAuditableDs<InvBalance> {
 
+    public static final String fINVENTORYID = "inventoryId";
+    public static final String fINVENTORY = "inventory";
     public static final String fSUBINVENTORYID = "subInventoryId";
     public static final String fSUBINVENTORY = "subInventory";
     public static final String fLOCATORID = "locatorId";
@@ -24,6 +26,12 @@ public class InvBalanceDs extends AbstractAuditableDs<InvBalance> {
     public static final String fQUANTITY = "quantity";
     public static final String fUOMID = "uomId";
     public static final String fUOM = "uom";
+
+    @DsField(join = "left", path = "subInventory.inventory.id")
+    private Long inventoryId;
+
+    @DsField(join = "left", path = "subInventory.inventory.name")
+    private String inventory;
 
     @DsField(join = "left", path = "subInventory.id")
     private Long subInventoryId;
@@ -61,6 +69,22 @@ public class InvBalanceDs extends AbstractAuditableDs<InvBalance> {
 
     public InvBalanceDs(InvBalance e) {
         super(e);
+    }
+
+    public Long getInventoryId() {
+        return this.inventoryId;
+    }
+
+    public void setInventoryId(Long inventoryId) {
+        this.inventoryId = inventoryId;
+    }
+
+    public String getInventory() {
+        return this.inventory;
+    }
+
+    public void setInventory(String inventory) {
+        this.inventory = inventory;
     }
 
     public Long getSubInventoryId() {

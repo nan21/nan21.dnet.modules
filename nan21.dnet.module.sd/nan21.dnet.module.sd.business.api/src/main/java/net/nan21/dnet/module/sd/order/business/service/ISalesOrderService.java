@@ -18,6 +18,8 @@ import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
+import java.util.Date;
+import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
 
 public interface ISalesOrderService extends IEntityService<SalesOrder> {
 
@@ -81,6 +83,11 @@ public interface ISalesOrderService extends IEntityService<SalesOrder> {
 
     public List<SalesOrder> findByLinesId(Long linesId);
 
-    public void doGenerateInvoice(SalesOrder salesOrder) throws Exception;
+    public void doGenerateInvoice(SalesOrder salesOrder, FinDocType invDocType)
+            throws Exception;
+
+    public void doGenerateDelivery(SalesOrder salesOrder,
+            FinDocType deliveryDocType, InvTransactionType delivTxType,
+            Date delivEventDate) throws Exception;
 
 }

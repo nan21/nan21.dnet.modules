@@ -12,19 +12,19 @@ import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = FinDocType.class, jpqlWhere = " e.active=true and e.category = 'sales-order' ", sort = { @SortField(field = FinDocTypeSOLovDs.fNAME) })
-public class FinDocTypeSOLovDs extends AbstractTypeLov<FinDocType> {
+@Ds(entity = FinDocType.class, jpqlWhere = " e.active=true and e.category = 'purchase-inventory-in' ", sort = { @SortField(field = FinDocTypePOInvInLovDs.fNAME) })
+public class FinDocTypePOInvInLovDs extends AbstractTypeLov<FinDocType> {
 
     public static final String fCATEGORY = "category";
 
     @DsField()
     private String category;
 
-    public FinDocTypeSOLovDs() {
+    public FinDocTypePOInvInLovDs() {
         super();
     }
 
-    public FinDocTypeSOLovDs(FinDocType e) {
+    public FinDocTypePOInvInLovDs(FinDocType e) {
         super(e);
     }
 

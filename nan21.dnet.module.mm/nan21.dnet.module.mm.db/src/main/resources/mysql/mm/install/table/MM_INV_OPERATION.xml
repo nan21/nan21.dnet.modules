@@ -36,6 +36,8 @@
 				<constraints  /></column>	 
 			<column name="TRANSACTIONLINE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
+			<column name="UOM_ID" type="bigint(19)">	 
+				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

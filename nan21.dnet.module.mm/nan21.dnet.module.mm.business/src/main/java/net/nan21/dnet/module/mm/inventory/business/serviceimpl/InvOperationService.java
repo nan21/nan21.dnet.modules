@@ -9,6 +9,7 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.mm.inventory.business.service.IInvOperationService;
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine;
 import net.nan21.dnet.module.mm.inventory.domain.entity.StockLocator;
@@ -101,6 +102,19 @@ public class InvOperationService extends AbstractEntityService<InvOperation>
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pTransactionLineId", transactionLineId)
                 .getResultList();
+    }
+
+    public List<InvOperation> findByUom(Uom uom) {
+        return this.findByUomId(uom.getId());
+    }
+
+    public List<InvOperation> findByUomId(Long uomId) {
+        return (List<InvOperation>) this.em
+                .createQuery(
+                        "select e from InvOperation e where e.clientId = :pClientId and e.uom.id = :pUomId",
+                        InvOperation.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pUomId", uomId).getResultList();
     }
 
 }

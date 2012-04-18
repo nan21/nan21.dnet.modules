@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.sc.ui.extjs/ds/PurchaseReceptionDs", "nan21.dnet.module.sc.ui.extjs/dc/PurchaseReception", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionLineDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionLine","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/WarehouseOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/WarehouseOrganizations","nan21.dnet.module.bd.ui.extjs/ds/CarrierOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/CarrierOrganizations","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypes","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypes","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bd.ui.extjs/ds/WarehouseOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/WarehouseOrganizations","nan21.dnet.module.bd.ui.extjs/ds/CarrierOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/CarrierOrganizations","nan21.dnet.module.mm.ui.extjs/ds/ProductWithUomLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductsWithUom","nan21.dnet.module.mm.ui.extjs/ds/SubInventoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/SubInventorys","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocators","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasureCode"]);
+Dnet.doImport(["", "nan21.dnet.module.sc.ui.extjs/ds/PurchaseReceptionDs", "nan21.dnet.module.sc.ui.extjs/dc/PurchaseReception", "nan21.dnet.module.mm.ui.extjs/ds/InvTransactionLineDs", "nan21.dnet.module.mm.ui.extjs/dc/InvTransactionLine","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/WarehouseOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/WarehouseOrganizations","nan21.dnet.module.bd.ui.extjs/ds/CarrierOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/CarrierOrganizations","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypePOInvInLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypesPOInvIn","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bp.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.bp.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/FinDocTypePOInvInLovDs","nan21.dnet.module.bd.ui.extjs/lov/FinDocTypesPOInvIn","nan21.dnet.module.mm.ui.extjs/ds/InvTransactionTypeLovDs","nan21.dnet.module.mm.ui.extjs/lov/InvTransactionTypes","nan21.dnet.module.bd.ui.extjs/ds/WarehouseOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/WarehouseOrganizations","nan21.dnet.module.bd.ui.extjs/ds/CarrierOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/CarrierOrganizations","nan21.dnet.module.mm.ui.extjs/ds/ProductWithUomLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductsWithUom","nan21.dnet.module.mm.ui.extjs/ds/SubInventoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/SubInventorys","nan21.dnet.module.mm.ui.extjs/ds/StockLocatorLovDs","nan21.dnet.module.mm.ui.extjs/lov/StockLocators","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasureCode"]);
 
 Ext.define("net.nan21.dnet.module.sc.order.frame.PurchaseReception_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
@@ -20,7 +20,7 @@ Ext.define("net.nan21.dnet.module.sc.order.frame.PurchaseReception_UI", {
 		.addButton({name:"btnUnConfirm",text:"Un-Confirm", tooltip:"Un-Confirm reception.",iconCls:"icon-action-rollback",disabled:true
 			,handler: this.onBtnUnConfirm,scope:this,stateManager:{name:"selected_one_clean", dc:"tx" , and: function(dc) {return (dc.record && dc.record.get("confirmed")&& !dc.record.get("posted") );}}	})	
 							 	
-		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.sc.order.dc.PurchaseReception$Filter",height:120})	 
+		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.sc.order.dc.PurchaseReception$Filter",height:150})	 
 		.addDcGridView("tx",{ name:"txList", xtype:"net.nan21.dnet.module.sc.order.dc.PurchaseReception$List"})	 
 		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.sc.order.dc.PurchaseReception$Edit",height:160,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnConfirm") ,this._elems_.get("btnUnConfirm") ]}]})	 
 		.addDcEditGridView("txline",{ name:"txlineEditList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvTransactionLine$EditListTo", frame:true})	 
@@ -66,4 +66,31 @@ Ext.define("net.nan21.dnet.module.sc.order.frame.PurchaseReception_UI", {
 			dnet.base.DcExceptions.showMessage(e);
 		}
 	}					 	
+	,onAfterDefineDcs: function() {	
+				 
+		this._getDc_("tx").on("afterDoServiceSuccess", 
+		function() {this._syncReadOnlyStates_(); } , this );
+		
+		this._getDc_("tx").on("recordChange", this._syncReadOnlyStates_, this );
+		
+	}
+	,_syncReadOnlyStates_: function() {	
+		
+		var txRec = this._getDc_("tx").getRecord();
+		if (!txRec) { return; }
+		var itemsDc = this._getDc_("txline");
+		if (txRec.get("confirmed")) {
+			if (!itemsDc.isReadOnly()) {
+				itemsDc.setReadOnly(true);
+			}
+		} else {
+			if (itemsDc.isReadOnly()) {
+				itemsDc.setReadOnly(false);
+			}
+		}
+		
+	}
+	,_afterDefineDcs_: function() {	
+		this.onAfterDefineDcs();
+	}
 });  

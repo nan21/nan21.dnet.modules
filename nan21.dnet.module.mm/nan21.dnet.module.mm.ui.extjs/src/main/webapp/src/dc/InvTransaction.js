@@ -32,6 +32,11 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter", {
 		.addFieldContainer({name: "eventDate", fieldLabel:"Event Date"}) 
 		.addChildrenTo("eventDate",["eventDate_From", "eventDate_To"]) 
 
+		.addDateField({ name:"docDate_From", dataIndex:"docDate_From", emptyText:"From" })
+		.addDateField({ name:"docDate_To", dataIndex:"docDate_To", emptyText:"To" })
+		.addFieldContainer({name: "docDate", fieldLabel:"Doc Date"}) 
+		.addChildrenTo("docDate",["docDate_From", "docDate_To"]) 
+
 		.addBooleanField({ name:"confirmed", dataIndex:"confirmed",anchor:"-20"  })
 		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
 		//containers
@@ -44,7 +49,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["docType","transactionType","eventDate"])
+		.addChildrenTo("col1",["docType","transactionType","eventDate","docDate"])
 		.addChildrenTo("col2",["fromInventory","toInventory"])
 		.addChildrenTo("col3",["confirmed","posted"])
     		
@@ -60,6 +65,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$List", {
 		this._getBuilder_()	
 		.addTextColumn({ name:"docType", dataIndex:"docType",width:120 })   	
 		.addTextColumn({ name:"transactionType", dataIndex:"transactionType",width:120 })   	
+		.addDateColumn({ name:"docDate", dataIndex:"docDate",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addDateColumn({ name:"eventDate", dataIndex:"eventDate",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"fromInventory", dataIndex:"fromInventory", width:150 })   	
 		.addTextColumn({ name:"toInventory", dataIndex:"toInventory", width:150 })   	

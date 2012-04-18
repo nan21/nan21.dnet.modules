@@ -22,6 +22,9 @@ import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import net.nan21.dnet.module.sd._businessdelegates.order.SalesOrderToInvoiceBD;
+import net.nan21.dnet.module.sd._businessdelegates.order.SalesOrderToDeliveryBD;
+import java.util.Date;
+import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
 
 public class SalesOrderService extends AbstractEntityService<SalesOrder>
         implements ISalesOrderService {
@@ -239,9 +242,18 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
                 .setParameter("pLinesId", linesId).getResultList();
     }
 
-    public void doGenerateInvoice(SalesOrder salesOrder) throws Exception {
+    public void doGenerateInvoice(SalesOrder salesOrder, FinDocType invDocType)
+            throws Exception {
         this.getBusinessDelegate(SalesOrderToInvoiceBD.class).generateInvoice(
-                salesOrder);
+                salesOrder, invDocType);
+    }
+
+    public void doGenerateDelivery(SalesOrder salesOrder,
+            FinDocType deliveryDocType, InvTransactionType delivTxType,
+            Date delivEventDate) throws Exception {
+        this.getBusinessDelegate(SalesOrderToDeliveryBD.class)
+                .generateDelivery(salesOrder, deliveryDocType, delivTxType,
+                        delivEventDate);
     }
 
 }

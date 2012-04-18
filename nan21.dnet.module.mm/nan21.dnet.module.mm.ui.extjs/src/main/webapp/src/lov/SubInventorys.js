@@ -6,7 +6,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.lovs.SubInventorys", {
 	displayField:"name",
 	listConfig: {		
 		getInnerTpl: function() { 
-			return '<span>{name}, {inventoryId}</span>';
+			return '<span>{name}</span>';
 		},
 		width:250
 	},		 

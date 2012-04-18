@@ -31,6 +31,7 @@ public class PurchaseReceptionDs extends
     public static final String fWAREHOUSEID = "warehouseId";
     public static final String fWAREHOUSE = "warehouse";
     public static final String fEVENTDATE = "eventDate";
+    public static final String fDOCDATE = "docDate";
     public static final String fCONFIRMED = "confirmed";
     public static final String fPOSTED = "posted";
 
@@ -78,6 +79,9 @@ public class PurchaseReceptionDs extends
 
     @DsField()
     private Date eventDate;
+
+    @DsField()
+    private Date docDate;
 
     @DsField()
     private Boolean confirmed;
@@ -211,6 +215,14 @@ public class PurchaseReceptionDs extends
 
     public void setEventDate(Date eventDate) {
         this.eventDate = eventDate;
+    }
+
+    public Date getDocDate() {
+        return this.docDate;
+    }
+
+    public void setDocDate(Date docDate) {
+        this.docDate = docDate;
     }
 
     public Boolean getConfirmed() {

@@ -17,6 +17,7 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseReceptionDs$Trl", {
 	warehouseId__lbl : "Warehouse Id",
 	warehouse__lbl : "Warehouse",
 	eventDate__lbl : "Event Date",
+	docDate__lbl : "Doc Date",
 	confirmed__lbl : "Confirmed",
 	posted__lbl : "Posted",
 		

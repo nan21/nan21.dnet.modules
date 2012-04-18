@@ -1,9 +1,12 @@
 package net.nan21.dnet.module.sd._presenterdelegates.order;
 
 import net.nan21.dnet.core.presenter.service.AbstractDsDelegate;
+import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
+import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs;
+import net.nan21.dnet.module.sd.order.ds.param.SalesOrderDsParam;
 
 public class SalesOrderPD extends AbstractDsDelegate {
 
@@ -25,16 +28,30 @@ public class SalesOrderPD extends AbstractDsDelegate {
 		ds.setConfirmed(false);
 	}
 
-	public void generateInvoice(SalesOrderDs ds) throws Exception {
+	public void generateInvoice(SalesOrderDs ds, SalesOrderDsParam params)
+			throws Exception {
 		ISalesOrderService service = ((ISalesOrderService) this
 				.findEntityService(SalesOrder.class));
+		FinDocType docType = service.getEntityManager().find(FinDocType.class,
+				params.getInvDocTypeId());
 		SalesOrder entity = service.findById(ds.getId());
-		service.doGenerateInvoice(entity);
+		service.doGenerateInvoice(entity, docType);
 		ds.setInvoiced(true);
 	}
 
-	public void generateDelivery(SalesOrderDs ds) throws Exception {
-		throw new Exception("This feature is not implemented yet. ");
+	public void generateDelivery(SalesOrderDs ds, SalesOrderDsParam params)
+			throws Exception {
+		ISalesOrderService service = ((ISalesOrderService) this
+				.findEntityService(SalesOrder.class));
+		FinDocType docType = service.getEntityManager().find(FinDocType.class,
+				params.getDelivDocTypeId());
+		InvTransactionType txType = service.getEntityManager().find(
+				InvTransactionType.class, params.getDelivTxTypeId());
+
+		SalesOrder entity = service.findById(ds.getId());
+		service.doGenerateDelivery(entity, docType, txType, params
+				.getDelivEventData());
+		ds.setDelivered(true);
 	}
 
 }

@@ -122,6 +122,18 @@
 	  				<constructor-arg name="methodName" value="unConfirm" />
 	  			</bean>	
 	  			</entry>	  			
+	  			<entry key="post">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sc._presenterdelegates.order.PurchaseReceptionPD"/>
+	  				<constructor-arg name="methodName" value="post" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="unPost">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sc._presenterdelegates.order.PurchaseReceptionPD"/>
+	  				<constructor-arg name="methodName" value="unPost" />
+	  			</bean>	
+	  			</entry>	  			
 	  		</map>
 	  	</property>	
 	</bean>
@@ -132,6 +144,8 @@
 	  		<list>
 	  			<value type="java.lang.String">confirm</value>
 	  			<value type="java.lang.String">unConfirm</value>
+	  			<value type="java.lang.String">post</value>
+	  			<value type="java.lang.String">unPost</value>
 			</list>	  		 
 	  	</property>	
 	</bean>

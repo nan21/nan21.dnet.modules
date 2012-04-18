@@ -5,18 +5,21 @@
  */
 package net.nan21.dnet.module.mm.inventory.ds.model;
 
+import java.util.Date;
+import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
 
 import net.nan21.dnet.module.mm.inventory.domain.entity.InvOperation;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = InvOperation.class)
+@Ds(entity = InvOperation.class, sort = { @SortField(field = InvOperationDs.fEVENTDATE, desc = true) })
 public class InvOperationDs extends AbstractAuditableDs<InvOperation> {
 
     public static final String fITEMID = "itemId";
     public static final String fITEMCODE = "itemCode";
     public static final String fITEM = "item";
+    public static final String fEVENTDATE = "eventDate";
     public static final String fINVENTORYID = "inventoryId";
     public static final String fINVENTORY = "inventory";
     public static final String fINVENTORYNAME = "inventoryName";
@@ -28,6 +31,8 @@ public class InvOperationDs extends AbstractAuditableDs<InvOperation> {
     public static final String fTRANSACTIONLINEID = "transactionLineId";
     public static final String fDIRECTION = "direction";
     public static final String fQUANTITY = "quantity";
+    public static final String fUOMID = "uomId";
+    public static final String fUOM = "uom";
 
     @DsField(join = "left", path = "item.id")
     private Long itemId;
@@ -37,6 +42,9 @@ public class InvOperationDs extends AbstractAuditableDs<InvOperation> {
 
     @DsField(join = "left", path = "item.name")
     private String item;
+
+    @DsField()
+    private Date eventDate;
 
     @DsField(join = "left", path = "inventory.id")
     private Long inventoryId;
@@ -71,6 +79,12 @@ public class InvOperationDs extends AbstractAuditableDs<InvOperation> {
     @DsField()
     private Float quantity;
 
+    @DsField(join = "left", path = "uom.id")
+    private Long uomId;
+
+    @DsField(join = "left", path = "uom.code")
+    private String uom;
+
     public InvOperationDs() {
         super();
     }
@@ -101,6 +115,14 @@ public class InvOperationDs extends AbstractAuditableDs<InvOperation> {
 
     public void setItem(String item) {
         this.item = item;
+    }
+
+    public Date getEventDate() {
+        return this.eventDate;
+    }
+
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
     }
 
     public Long getInventoryId() {
@@ -189,6 +211,22 @@ public class InvOperationDs extends AbstractAuditableDs<InvOperation> {
 
     public void setQuantity(Float quantity) {
         this.quantity = quantity;
+    }
+
+    public Long getUomId() {
+        return this.uomId;
+    }
+
+    public void setUomId(Long uomId) {
+        this.uomId = uomId;
+    }
+
+    public String getUom() {
+        return this.uom;
+    }
+
+    public void setUom(String uom) {
+        this.uom = uom;
     }
 
 }

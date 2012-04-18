@@ -24,7 +24,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionDs" ,{
 		{name:"toInventory", type:"string"},
 		{name:"confirmed", type:"boolean"},
 		{name:"posted", type:"boolean"},
-		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
+		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	]
 });
 
@@ -64,7 +65,10 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvTransactionDsFilter" 
 		{name:"posted", type:"boolean", useNull:true},
 		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"eventDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"eventDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
+		{name:"eventDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	] 
 });
 	

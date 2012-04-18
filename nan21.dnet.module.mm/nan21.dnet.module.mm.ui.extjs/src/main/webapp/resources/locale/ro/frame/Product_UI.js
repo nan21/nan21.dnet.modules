@@ -1,6 +1,7 @@
 Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI$Trl", { 
 	prodEditInfo__ttl : "Detalii",
 	attrEditList__ttl : "Atribute",
+	stockList__ttl : "Stocuri",
 	atchEditList__ttl : "Ataşamente",
 	classificEdit__ttl : "Clasificări",
 	notesPanel__ttl : "Note",
@@ -10,6 +11,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI$Trl", {
 	tlbAttrEditList__ttl : "Atribute",
 	tlbAtchList__ttl : "Ataşamente",
 	tlbClassific__ttl : "Clasificări",
+	tlbStockList__ttl : "Stocuri",
 	
 	btnViewAttachment__ttl : "Deschide",
 	btnViewAttachment__desc : "Deschide ataşamentul selectat",

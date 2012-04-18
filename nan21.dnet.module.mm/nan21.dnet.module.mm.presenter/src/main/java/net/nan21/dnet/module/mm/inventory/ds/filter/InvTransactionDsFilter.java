@@ -51,6 +51,11 @@ public class InvTransactionDsFilter extends AbstractAuditableDsFilter {
     private Date eventDate_From;
     private Date eventDate_To;
 
+    private Date docDate;
+
+    private Date docDate_From;
+    private Date docDate_To;
+
     public Long getDocTypeId() {
         return this.docTypeId;
     }
@@ -233,6 +238,30 @@ public class InvTransactionDsFilter extends AbstractAuditableDsFilter {
 
     public void setEventDate_To(Date eventDate_To) {
         this.eventDate_To = eventDate_To;
+    }
+
+    public Date getDocDate() {
+        return this.docDate;
+    }
+
+    public Date getDocDate_From() {
+        return this.docDate_From;
+    }
+
+    public Date getDocDate_To() {
+        return this.docDate_To;
+    }
+
+    public void setDocDate(Date docDate) {
+        this.docDate = docDate;
+    }
+
+    public void setDocDate_From(Date docDate_From) {
+        this.docDate_From = docDate_From;
+    }
+
+    public void setDocDate_To(Date docDate_To) {
+        this.docDate_To = docDate_To;
     }
 
 }

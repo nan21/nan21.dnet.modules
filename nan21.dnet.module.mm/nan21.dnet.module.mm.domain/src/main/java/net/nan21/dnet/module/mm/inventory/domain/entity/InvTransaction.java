@@ -76,6 +76,12 @@ public class InvTransaction extends AbstractAuditable {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
+    /** DocDate. */
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "DOCDATE", nullable = false)
+    @NotNull
+    private Date docDate;
+
     /** EventDate. */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "EVENTDATE")
@@ -124,6 +130,14 @@ public class InvTransaction extends AbstractAuditable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getDocDate() {
+        return this.docDate;
+    }
+
+    public void setDocDate(Date docDate) {
+        this.docDate = docDate;
     }
 
     public Date getEventDate() {

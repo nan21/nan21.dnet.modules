@@ -2,6 +2,7 @@
 Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI$Trl", {  	  	
 	prodEditInfo__ttl : "Details",
 	attrEditList__ttl : "Attributes",
+	stockList__ttl : "Stocks",
 	atchEditList__ttl : "Attachments",
 	classificEdit__ttl : "Classifications",
 	notesPanel__ttl : "Notes",
@@ -11,6 +12,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI$Trl", {
 	tlbAttrEditList__ttl : "Attributes",
 	tlbAtchList__ttl : "Attachments",
 	tlbClassific__ttl : "Classifications",
+	tlbStockList__ttl : "Stocks",
 	
 	btnViewAttachment__ttl : "View",
 	btnViewAttachment__desc : "View the selected attachment",

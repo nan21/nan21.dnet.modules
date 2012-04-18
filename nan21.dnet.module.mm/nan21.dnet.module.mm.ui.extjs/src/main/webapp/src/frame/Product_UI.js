@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductDs", "nan21.dnet.module.mm.ui.extjs/dc/Product", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeValueDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeValue", "nan21.dnet.module.ad.ui.extjs/ds/AttachmentDs", "nan21.dnet.module.ad.ui.extjs/dc/Attachment", "nan21.dnet.module.mm.ui.extjs/ds/ProdClassificationDs", "nan21.dnet.module.mm.ui.extjs/dc/ProdClassification", "nan21.dnet.module.ad.ui.extjs/ds/NoteDs", "nan21.dnet.module.ad.ui.extjs/dc/Note","nan21.dnet.module.mm.ui.extjs/ds/ProductManufacturerLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductManufacturers","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeGroup","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.bd.ui.extjs/ds/UomMassLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomMass","nan21.dnet.module.bd.ui.extjs/ds/UomVolumeLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomVolume","nan21.dnet.module.bd.ui.extjs/ds/UomLengthLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomLength","nan21.dnet.module.mm.ui.extjs/ds/ProductManufacturerLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductManufacturers","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeGroup","nan21.dnet.module.mm.ui.extjs/ds/ProductCategoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductCategories","nan21.dnet.module.ad.ui.extjs/ds/AttachmentTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/AttachmentTypes","nan21.dnet.module.bd.ui.extjs/ds/ClassificationSystemLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationSystems","nan21.dnet.module.bd.ui.extjs/ds/ClassificationCodeLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationCodes","nan21.dnet.module.mm.ui.extjs/asgn/CategoriesOfProduct"]);
+Dnet.doImport(["", "nan21.dnet.module.mm.ui.extjs/ds/ProductDs", "nan21.dnet.module.mm.ui.extjs/dc/Product", "nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeValueDs", "nan21.dnet.module.mm.ui.extjs/dc/ProductAttributeValue", "nan21.dnet.module.ad.ui.extjs/ds/AttachmentDs", "nan21.dnet.module.ad.ui.extjs/dc/Attachment", "nan21.dnet.module.mm.ui.extjs/ds/ProdClassificationDs", "nan21.dnet.module.mm.ui.extjs/dc/ProdClassification", "nan21.dnet.module.ad.ui.extjs/ds/NoteDs", "nan21.dnet.module.ad.ui.extjs/dc/Note", "nan21.dnet.module.mm.ui.extjs/ds/InvBalanceDs", "nan21.dnet.module.mm.ui.extjs/dc/InvBalance","nan21.dnet.module.mm.ui.extjs/ds/ProductManufacturerLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductManufacturers","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeGroup","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.bd.ui.extjs/ds/UomMassLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomMass","nan21.dnet.module.bd.ui.extjs/ds/UomVolumeLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomVolume","nan21.dnet.module.bd.ui.extjs/ds/UomLengthLovDs","nan21.dnet.module.bd.ui.extjs/lov/UomLength","nan21.dnet.module.mm.ui.extjs/ds/ProductManufacturerLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductManufacturers","nan21.dnet.module.mm.ui.extjs/ds/ProductAttributeGroupLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductAttributeGroup","nan21.dnet.module.mm.ui.extjs/ds/ProductCategoryLovDs","nan21.dnet.module.mm.ui.extjs/lov/ProductCategories","nan21.dnet.module.ad.ui.extjs/ds/AttachmentTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/AttachmentTypes","nan21.dnet.module.bd.ui.extjs/ds/ClassificationSystemLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationSystems","nan21.dnet.module.bd.ui.extjs/ds/ClassificationCodeLovDs","nan21.dnet.module.bd.ui.extjs/lov/ClassificationCodes","nan21.dnet.module.mm.ui.extjs/asgn/CategoriesOfProduct"]);
 
 Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
@@ -11,11 +11,13 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {
 		.addDc("attr", new net.nan21.dnet.module.mm.md.dc.ProductAttributeValue({multiEdit:true}))
 		.addDc("atch", new net.nan21.dnet.module.ad.data.dc.Attachment({multiEdit:true}))
 		.addDc("classific", new net.nan21.dnet.module.mm.md.dc.ProdClassification({multiEdit:true}))
-		.addDc("note", new net.nan21.dnet.module.ad.data.dc.Note({}))		
+		.addDc("note", new net.nan21.dnet.module.ad.data.dc.Note({}))
+		.addDc("stock", new net.nan21.dnet.module.mm.inventory.dc.InvBalance({}))		
 		.linkDc("attr", "prod",{fields:[ {childField:"productId", parentField:"id"} ]} )
 		.linkDc("atch", "prod",{fields:[ {childField:"targetUuid", parentField:"uuid"},{childField:"targetType", parentField:"entityFQN"} ]} )
 		.linkDc("classific", "prod",{fields:[ {childField:"productId", parentField:"id"} ]} )
-		.linkDc("note", "prod",{fields:[ {childField:"targetUuid", parentField:"uuid"},{childField:"targetType", parentField:"className"} ]} );		
+		.linkDc("note", "prod",{fields:[ {childField:"targetUuid", parentField:"uuid"},{childField:"targetType", parentField:"className"} ]} )
+		.linkDc("stock", "prod",{fields:[ {childField:"itemId", parentField:"id"} ]} );		
 	}	 
 
 	,_defineElements_: function() {							
@@ -35,6 +37,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {
 		.addDcFormView("prod",{ name:"prodEditInfo", xtype:"net.nan21.dnet.module.mm.md.dc.Product$EditInfo",title:"Details"})	 
 		.addDcFormView("prod",{ name:"prodCtxFormName", xtype:"net.nan21.dnet.module.mm.md.dc.Product$CtxFormName",height:50})	 
 		.addDcEditGridView("attr",{ name:"attrEditList", xtype:"net.nan21.dnet.module.mm.md.dc.ProductAttributeValue$CtxEditList", frame:true,title:"Attributes"})	 
+		.addDcGridView("stock",{ name:"stockList", xtype:"net.nan21.dnet.module.mm.inventory.dc.InvBalance$CtxListProduct",title:"Stocks"})	 
 		.addDcEditGridView("atch",{ name:"atchEditList", xtype:"net.nan21.dnet.module.ad.data.dc.Attachment$CtxEditList", frame:true,title:"Attachments",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnViewAttachment") ,this._elems_.get("btnUploadAttachment") ]}]})	 
 		.addDcEditGridView("classific",{ name:"classificEdit", xtype:"net.nan21.dnet.module.mm.md.dc.ProdClassification$CtxEditList", frame:true,title:"Classifications"})	 
 		.addDcGridView("note",{ name:"noteList", xtype:"net.nan21.dnet.module.ad.data.dc.Note$List",width:300})	 
@@ -53,7 +56,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {
 	 	.addChildrenTo("main", ["canvas1","canvas2"]) 				 		
 		.addChildrenTo("canvas1",["prodFilter","prodList","prodCtxFormName"] ,["north","center","south"])	
 		.addChildrenTo("canvas2",["prodEdit","prodDetailsTab"] ,["north","center"])	
-	 	.addChildrenTo("prodDetailsTab", ["prodEditInfo","attrEditList","classificEdit","atchEditList","notesPanel"]) 				 		
+	 	.addChildrenTo("prodDetailsTab", ["prodEditInfo","attrEditList","classificEdit","atchEditList","notesPanel","stockList"]) 				 		
 		.addChildrenTo("notesPanel",["noteList","noteEdit"] ,["west","center"])	
 	 	.addToolbarTo("canvas1","tlbProdList")	  	
 	 	.addToolbarTo("canvas2","tlbProdEdit")	  	
@@ -62,6 +65,7 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {
 	 	.addToolbarTo("classificEdit","tlbClassific")	  	
 	 	.addToolbarTo("noteList","tlbNoteList")	  	
 	 	.addToolbarTo("noteEdit","tlbNoteEdit")	  	
+	 	.addToolbarTo("stockList","tlbStockList")	  	
 	}
 
 	,_defineToolbars_: function() {
@@ -72,7 +76,8 @@ Ext.define("net.nan21.dnet.module.mm.md.frame.Product_UI", {
 			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
 			.beginToolbar("tlbClassific", {dc:"classific"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Classifications"}).end()
 			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().addReports().end()
-			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().addReports().end(); 	
+			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().addReports().end()
+			.beginToolbar("tlbStockList", {dc:"stock"}).addQuery().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Stocks"}).end(); 	
 	}
 
 

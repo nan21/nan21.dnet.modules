@@ -3,31 +3,33 @@ Export-Package: net.nan21.dnet.module.sd._presenterdelegates.invoice;v
  ersion="1.0.0.M9";uses:="net.nan21.dnet.core.presenter.service,net.na
  n21.dnet.module.sd.invoice.ds.model",net.nan21.dnet.module.sd._presen
  terdelegates.order;version="1.0.0.M9";uses:="net.nan21.dnet.core.pres
- enter.service,net.nan21.dnet.module.sd.order.ds.model",net.nan21.dnet
- .module.sd.invoice.ds.converter;version="1.0.0.M9";uses:="net.nan21.d
- net.core.api.converter,net.nan21.dnet.core.presenter.converter,net.na
- n21.dnet.module.sd.invoice.domain.entity,net.nan21.dnet.module.sd.inv
- oice.ds.model",net.nan21.dnet.module.sd.invoice.ds.filter;version="1.
- 0.0.M9";uses:="net.nan21.dnet.core.presenter.model.base",net.nan21.dn
- et.module.sd.invoice.ds.model;version="1.0.0.M9";uses:="net.nan21.dne
- t.core.api.annotation,net.nan21.dnet.core.presenter.model.base,net.na
- n21.dnet.module.sd.invoice.domain.entity",net.nan21.dnet.module.sd.op
- portunity.ds.converter;version="1.0.0.M9";uses:="net.nan21.dnet.core.
- api.converter,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.
- module.sd.opportunity.domain.entity,net.nan21.dnet.module.sd.opportun
- ity.ds.model",net.nan21.dnet.module.sd.opportunity.ds.filter;version=
- "1.0.0.M9";uses:="net.nan21.dnet.core.presenter.model.base",net.nan21
- .dnet.module.sd.opportunity.ds.model;version="1.0.0.M9";uses:="net.na
- n21.dnet.core.api.annotation,net.nan21.dnet.core.presenter.model.base
- ,net.nan21.dnet.module.sd.opportunity.domain.entity",net.nan21.dnet.m
- odule.sd.order.ds.converter;version="1.0.0.M9";uses:="net.nan21.dnet.
- core.api.converter,net.nan21.dnet.core.presenter.converter,net.nan21.
- dnet.module.sd.order.domain.entity,net.nan21.dnet.module.sd.order.ds.
- model",net.nan21.dnet.module.sd.order.ds.filter;version="1.0.0.M9";us
- es:="net.nan21.dnet.core.presenter.model.base",net.nan21.dnet.module.
- sd.order.ds.model;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.a
- nnotation,net.nan21.dnet.core.presenter.model.base,net.nan21.dnet.mod
- ule.sd.order.domain.entity"
+ enter.service,net.nan21.dnet.module.sd.order.ds.model,net.nan21.dnet.
+ module.sd.order.ds.param",net.nan21.dnet.module.sd.invoice.ds.convert
+ er;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.converter,net.na
+ n21.dnet.core.presenter.converter,net.nan21.dnet.module.sd.invoice.do
+ main.entity,net.nan21.dnet.module.sd.invoice.ds.model",net.nan21.dnet
+ .module.sd.invoice.ds.filter;version="1.0.0.M9";uses:="net.nan21.dnet
+ .core.presenter.model.base",net.nan21.dnet.module.sd.invoice.ds.model
+ ;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.annotation,net.nan
+ 21.dnet.core.presenter.model.base,net.nan21.dnet.module.sd.invoice.do
+ main.entity",net.nan21.dnet.module.sd.opportunity.ds.converter;versio
+ n="1.0.0.M9";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.
+ core.presenter.converter,net.nan21.dnet.module.sd.opportunity.domain.
+ entity,net.nan21.dnet.module.sd.opportunity.ds.model",net.nan21.dnet.
+ module.sd.opportunity.ds.filter;version="1.0.0.M9";uses:="net.nan21.d
+ net.core.presenter.model.base",net.nan21.dnet.module.sd.opportunity.d
+ s.model;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.annotation,
+ net.nan21.dnet.core.presenter.model.base,net.nan21.dnet.module.sd.opp
+ ortunity.domain.entity",net.nan21.dnet.module.sd.order.ds.converter;v
+ ersion="1.0.0.M9";uses:="net.nan21.dnet.core.api.converter,net.nan21.
+ dnet.core.presenter.converter,net.nan21.dnet.module.sd.order.domain.e
+ ntity,net.nan21.dnet.module.sd.order.ds.model",net.nan21.dnet.module.
+ sd.order.ds.filter;version="1.0.0.M9";uses:="net.nan21.dnet.core.pres
+ enter.model.base",net.nan21.dnet.module.sd.order.ds.model;version="1.
+ 0.0.M9";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core
+ .presenter.model.base,net.nan21.dnet.module.sd.order.domain.entity",n
+ et.nan21.dnet.module.sd.order.ds.param;version="1.0.0.M9";uses:="net.
+ nan21.dnet.core.presenter.model"
 Import-Bundle: nan21.dnet.core.presenter;version="[1.0.0.M9,1.0.0.M9]"
  ,javax.persistence;version="[2.0,2.1)",org.eclipse.persistence.jpa;ve
  rsion="[2.1,2.5)",org.eclipse.persistence.core;version="[2.0,2.5)",na

@@ -15,6 +15,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvOperationDs" ,{
 		{name:"itemId", type:"int", useNull:true},
 		{name:"itemCode", type:"string"},
 		{name:"item", type:"string"},
+		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"inventoryId", type:"int", useNull:true},
 		{name:"inventory", type:"string"},
 		{name:"inventoryName", type:"string"},
@@ -25,7 +26,9 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvOperationDs" ,{
 		{name:"transactionId", type:"int", useNull:true},
 		{name:"transactionLineId", type:"int", useNull:true},
 		{name:"direction", type:"string"},
-		{name:"quantity", type:"float", useNull:true}
+		{name:"quantity", type:"float", useNull:true},
+		{name:"uomId", type:"int", useNull:true},
+		{name:"uom", type:"string"}
 	]
 });
 
@@ -48,6 +51,9 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvOperationDsFilter" ,{
 		{name:"itemId_To",type:"int", useNull:true},
 		{name:"itemCode", type:"string"},
 		{name:"item", type:"string"},
+		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"eventDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"eventDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"inventoryId", type:"int", useNull:true},
 		{name:"inventoryId_From",type:"int", useNull:true},
 		{name:"inventoryId_To",type:"int", useNull:true},
@@ -70,7 +76,11 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvOperationDsFilter" ,{
 		{name:"direction", type:"string"},
 		{name:"quantity", type:"float", useNull:true},
 		{name:"quantity_From",type:"float", useNull:true},
-		{name:"quantity_To",type:"float", useNull:true}
+		{name:"quantity_To",type:"float", useNull:true},
+		{name:"uomId", type:"int", useNull:true},
+		{name:"uomId_From",type:"int", useNull:true},
+		{name:"uomId_To",type:"int", useNull:true},
+		{name:"uom", type:"string"}
 	] 
 });
 	

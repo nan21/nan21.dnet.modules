@@ -5,6 +5,7 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvOperationDs$Trl", {
 	itemId__lbl : "Item Id",
 	itemCode__lbl : "Item Code",
 	item__lbl : "Item",
+	eventDate__lbl : "Event Date",
 	inventoryId__lbl : "Inventory Id",
 	inventory__lbl : "Inventory",
 	inventoryName__lbl : "Inventory Name",
@@ -16,6 +17,8 @@ Ext.define("net.nan21.dnet.module.mm.inventory.ds.model.InvOperationDs$Trl", {
 	transactionLineId__lbl : "Transaction Line Id",
 	direction__lbl : "Direction",
 	quantity__lbl : "Quantity",
+	uomId__lbl : "Uom Id",
+	uom__lbl : "Uom",
 		
 	id__lbl :"ID"
 });

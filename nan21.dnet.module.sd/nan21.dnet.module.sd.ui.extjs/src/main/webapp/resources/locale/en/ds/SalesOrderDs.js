@@ -48,5 +48,12 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {
 	className__lbl : "Class Name",
 	businessObject__lbl : "Business Object",
 		
+	delivDocTypeId__lbl :"Delivery doc. type ID",
+	delivDocType__lbl :"Delivery doc. type",
+	delivTxTypeId__lbl :"Delivery transact. type ID",
+	delivTxType__lbl :"Delivery transact. type",
+	delivEventData__lbl :"Delivery date",
+	invDocTypeId__lbl :"Invoice type ID",
+	invDocType__lbl :"Invoice type",
 	id__lbl :"ID"
 });

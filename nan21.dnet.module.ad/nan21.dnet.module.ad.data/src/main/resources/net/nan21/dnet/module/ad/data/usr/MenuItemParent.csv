@@ -40,6 +40,7 @@
 "ImportMap_UI";"ad-menu-imp"
 "InvOperations_UI";"mm-menu-inventory"
 "InvTransactions_UI";"mm-menu-inventory"
+"InvBalance_UI";"mm-menu-inventory"
 "InvTransfer_UI";"mm-menu-inventory"
 "InventoryBaseData_UI";"mm-menu-base"
 "IssueBaseData_UI";"pj-menu-base"
