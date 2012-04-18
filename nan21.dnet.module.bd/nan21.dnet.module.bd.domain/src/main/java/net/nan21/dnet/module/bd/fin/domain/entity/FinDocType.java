@@ -66,7 +66,7 @@ public class FinDocType extends AbstractType {
     private Long id;
 
     /** Category. */
-    @Column(name = "CATEGORY", nullable = false, length = 16)
+    @Column(name = "CATEGORY", nullable = false, length = 32)
     @NotBlank
     private String category;
 
