@@ -6,6 +6,7 @@
 package net.nan21.dnet.module.ad.client.domain.entity;
 
 import java.util.Date;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -335,6 +336,17 @@ public class Client {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
+        event.updateAttributeWithObject("createdAt", new Date());
+        event.updateAttributeWithObject("modifiedAt", new Date());
+        event.updateAttributeWithObject("createdBy", Session.user.get()
+                .getUsername());
+        event.updateAttributeWithObject("modifiedBy", Session.user.get()
+                .getUsername());
+        if (this.uuid == null || this.uuid.equals("")) {
+            event.updateAttributeWithObject("uuid", UUID.randomUUID()
+                    .toString().toUpperCase());
+        }
 
         if (this.systemClient == null) {
             event.updateAttributeWithObject("systemClient", false);

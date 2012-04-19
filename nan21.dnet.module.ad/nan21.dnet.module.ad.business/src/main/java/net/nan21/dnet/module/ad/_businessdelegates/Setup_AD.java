@@ -68,44 +68,6 @@ implements ISetupParticipant {
 				paramMap.get(PARAM_USER_NAME).getValue(), 
 				paramMap.get(PARAM_USER_PASSWORD).getValue());
 		
-//		Role radmin = new Role();
-//		radmin.setName(ROLE_ADMIN);
-//		radmin.setActive(true);
-//		radmin.setDescription("Administrator role for un-restricted access to business functions.");
-//		this.em.persist(radmin);
-//		
-//		Role ruser = new Role();
-//		ruser.setName(ROLE_USER);
-//		ruser.setActive(true);
-//		ruser.setDescription("Application role which allows a user to use the application.");
-//		this.em.persist(ruser);
-//		 
-//		UserType t = new UserType();
-//		t.setName("Default");	
-//		t.setActive(true);
-//		this.em.persist(t);
-//		
-//		Collection<Role> roles = new ArrayList<Role>();
-//		roles.add(radmin);
-//		roles.add(ruser);
-//	 
-//		
-//		User u = new User();
-//		String password = paramMap.get(PARAM_USER_PASSWORD).getValue();
-//		u.setCode(paramMap.get(PARAM_USER_CODE).getValue());
-//		u.setName(paramMap.get(PARAM_USER_NAME).getValue());
-//		u.setActive(true);
-//		MessageDigest messageDigest = MessageDigest.getInstance("MD5");  
-//		messageDigest.update(password.getBytes(),0, password.length());  
-//		String hashedPass = new BigInteger(1,messageDigest.digest()).toString(16);  
-//		if (hashedPass.length() < 32) { 
-//		   hashedPass = "0" + hashedPass; 
-//		}
-//		
-//		u.setPassword(hashedPass);	
-//		u.setRoles(roles);
-//		this.em.persist(u);
-		
 		// run in context of the client
 		net.nan21.dnet.core.api.session.User su = Session.user.get();
 		net.nan21.dnet.core.api.session.User newUser = new 
@@ -114,8 +76,7 @@ implements ISetupParticipant {
 		Session.user.set(newUser);
 		
 		reqisterInitialDataImports(defaultImportPath);
-		
-		
+				
 		this.tasks.clear();
 		
 		this.tasks = null;

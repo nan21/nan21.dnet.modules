@@ -2,7 +2,6 @@ package net.nan21.dnet.module.ad._businessdelegates.client;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -50,8 +49,7 @@ public class ClientBD extends AbstractBusinessDelegate{
 			Collection<Role> roles = new ArrayList<Role>();
 			roles.add(radmin);
 			roles.add(ruser);
-		 
-			
+		  
 			User u = new User();
 			 
 			u.setCode(userCode);
