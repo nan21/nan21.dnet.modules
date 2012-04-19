@@ -65,6 +65,10 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", {
 			}; 
 		s.callbacks['successFn'] = successFn; 
 		s.callbacks['successScope'] = this;
+		var failureFn = function(dc,response,serviceName,specs) { 			this._getWindow_("wdwImportFile").close();			 	
+			}; 
+		s.callbacks['failureFn'] = failureFn; 
+		s.callbacks['failureScope'] = this;
 		try{ 
 			this._getDc_("mapItem").doServiceFilter("runImportFile", s); 
 		}catch(e){
@@ -76,7 +80,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", {
 		var mapItem = this._getDc_("mapItem");
 		mapItem.setParamValue("importDataSource",null);
 		mapItem.setParamValue("importFileLocation",null);
-		mapItem.setParamValue("ukFieldName",null);
+		mapItem.setParamValue("importUkFieldName",null);
 		
 	}
 });  
