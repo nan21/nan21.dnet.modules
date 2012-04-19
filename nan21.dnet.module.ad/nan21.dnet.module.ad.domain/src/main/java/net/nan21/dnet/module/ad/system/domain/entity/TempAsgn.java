@@ -13,6 +13,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
+import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.annotations.ReadOnly;
@@ -29,7 +30,7 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = TempAsgn.NQ_FIND_BY_ID, query = "SELECT e FROM TempAsgn e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = TempAsgn.NQ_FIND_BY_IDS, query = "SELECT e FROM TempAsgn e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 @ReadOnly
-public class TempAsgn {
+public class TempAsgn implements IModelWithId {
 
     public static final String TABLE_NAME = "AD_TEMP_ASGN";
     public static final String SEQUENCE_NAME = "AD_TEMP_ASGN_SEQ";

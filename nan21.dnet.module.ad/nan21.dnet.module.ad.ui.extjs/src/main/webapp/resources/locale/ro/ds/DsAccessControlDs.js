@@ -7,7 +7,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.DsAccessControlDs$Trl", {
 	deleteAllowed__lbl :  "Ştergere",
 	importAllowed__lbl :  "Import",
 	exportAllowed__lbl :  "Export",
-	accessControlId__lbl :    "Privilegiu (ID)",
+	accessControlId__lbl :    "Privilegiu(ID)",
 	accessControl__lbl :    "Privilegiu",
 		 
 	id__lbl :"ID"

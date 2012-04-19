@@ -40,18 +40,20 @@ Ext.define("net.nan21.dnet.module.mm.inventory.dc.InvTransaction$Filter", {
 		.addBooleanField({ name:"confirmed", dataIndex:"confirmed",anchor:"-20"  })
 		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"form", width:300}) 
-		.addPanel({ name:"col2", layout:"form", width:250}) 
-		.addPanel({ name:"col3", layout:"form", width:180}) 
+		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col3", layout:"form", width:300}) 
+		.addPanel({ name:"col4", layout:"form", width:180}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["docType","transactionType","eventDate","docDate"])
+		.addChildrenTo("main",["col1","col2","col3","col4"])
+		.addChildrenTo("col1",["docType","transactionType"])
 		.addChildrenTo("col2",["fromInventory","toInventory"])
-		.addChildrenTo("col3",["confirmed","posted"])
+		.addChildrenTo("col3",["eventDate","docDate"])
+		.addChildrenTo("col4",["confirmed","posted"])
     		
 	}
 }); 

@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceHistoryDs$Trl", {  	  	
-	processInstanceId__lbl :  "@processInstanceId",	processId__lbl :    " (ID)",
+	processInstanceId__lbl :  "@processInstanceId",	processId__lbl :    "(ID)",
 	process__lbl :    "",
 	processVersion__lbl :    "Versiune",
 	startTime__lbl :  "Început la",

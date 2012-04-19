@@ -1,10 +1,10 @@
 
 Ext.define("net.nan21.dnet.module.ad.report.ds.model.DsReportParamDs$Trl", {  	  	
-	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	dsReportId__lbl :    "Raport (ID)",
-	reportId__lbl :    "Raport (ID)",
-	reportCode__lbl :    "Raport (Cod)",
-	paramId__lbl :    "Parametru (ID)",
-	paramCode__lbl :    "Parametru (Cod)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	dsReportId__lbl :    "Raport(ID)",
+	reportId__lbl :    "Raport(ID)",
+	reportCode__lbl :    "Raport",
+	paramId__lbl :    "Parametru(ID)",
+	paramCode__lbl :    "Parametru",
 	paramName__lbl :    "Parametru",
 	dataSource__lbl :    "Data Source",
 	dsField__lbl :  "Câmp",

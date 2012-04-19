@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.ad.client.ds.model;
 
-import java.util.Date;
 import net.nan21.dnet.core.api.service.IDsService;
 import net.nan21.dnet.core.presenter.model.base.X_AbstractAuditedDs;
 import net.nan21.dnet.core.presenter.service.AbstractDsService;
@@ -24,11 +23,6 @@ public class MyClientDs extends X_AbstractAuditedDs<Client> {
     public static final String fNOTES = "notes";
     public static final String fMAINTENANCELANGUAGE = "maintenanceLanguage";
     public static final String fADMINROLE = "adminRole";
-    public static final String fID = "id";
-    public static final String fCREATEDAT = "createdAt";
-    public static final String fMODIFIEDAT = "modifiedAt";
-    public static final String fCREATEDBY = "createdBy";
-    public static final String fMODIFIEDBY = "modifiedBy";
 
     @DsField()
     private String name;
@@ -44,21 +38,6 @@ public class MyClientDs extends X_AbstractAuditedDs<Client> {
 
     @DsField()
     private String adminRole;
-
-    @DsField()
-    private Long id;
-
-    @DsField()
-    private Date createdAt;
-
-    @DsField()
-    private Date modifiedAt;
-
-    @DsField()
-    private String createdBy;
-
-    @DsField()
-    private String modifiedBy;
 
     public MyClientDs() {
         super();
@@ -106,47 +85,6 @@ public class MyClientDs extends X_AbstractAuditedDs<Client> {
 
     public void setAdminRole(String adminRole) {
         this.adminRole = adminRole;
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Object id) {
-        this.id = this._asLong_(id);
-
-    }
-
-    public Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getModifiedAt() {
-        return this.modifiedAt;
-    }
-
-    public void setModifiedAt(Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    public String getCreatedBy() {
-        return this.createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getModifiedBy() {
-        return this.modifiedBy;
-    }
-
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
     }
 
 }

@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActMyTaskDs$Trl", {  	  	
-	processId__lbl :    " (ID)",
+	processId__lbl :    "(ID)",
 	process__lbl :    "",
 	taskKey__lbl :  "Cheie activitate",
 	processInstanceId__lbl :  "@processInstanceId",	executionId__lbl :  "@executionId",	owner__lbl :  "Alocat la",

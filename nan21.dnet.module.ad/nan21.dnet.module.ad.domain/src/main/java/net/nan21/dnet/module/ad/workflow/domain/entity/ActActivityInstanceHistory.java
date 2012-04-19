@@ -21,6 +21,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
+import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition;
 import org.eclipse.persistence.annotations.Cache;
@@ -41,7 +42,7 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = ActActivityInstanceHistory.NQ_FIND_BY_IDS, query = "SELECT e FROM ActActivityInstanceHistory e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 @ReadOnly
 @Cache(type = CacheType.NONE)
-public class ActActivityInstanceHistory {
+public class ActActivityInstanceHistory implements IModelWithId {
 
     public static final String TABLE_NAME = "ACT_HI_ACTINST";
     public static final String SEQUENCE_NAME = "ACT_HI_ACTINST_SEQ";

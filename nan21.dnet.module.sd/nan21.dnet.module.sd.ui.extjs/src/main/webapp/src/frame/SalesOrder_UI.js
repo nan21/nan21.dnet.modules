@@ -50,7 +50,7 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI", {
 		.addButton({name:"btnShowDelivery",text:"Show delivery", tooltip:"Show the delivery note linked to this sales order",disabled:true
 			,handler: this.onBtnShowDelivery,scope:this,stateManager:{name:"selected_one", dc:"order" , and: function(dc) {return (dc.record && dc.record.get("delivered"));}}	})	
 							 	
-		.addDcFilterFormView("order",{ name:"orderFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter",height:160})	 
+		.addDcFilterFormView("order",{ name:"orderFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter",height:180})	 
 		.addDcGridView("order",{ name:"orderList", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$List"})	 
 		.addDcFormView("order",{ name:"orderEditMain", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$EditMain",height:200,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnConfirmOrder") ,this._elems_.get("btnUnConfirmOrder") ,this._elems_.get("btnCreateInvoice") ,this._elems_.get("btnShowInvoice") ,this._elems_.get("btnCreateDelivery") ,this._elems_.get("btnShowDelivery") ]}]})	 
 		.addDcFormView("order",{ name:"orderGenDelivery", xtype:"net.nan21.dnet.module.sd.order.dc.SalesOrder$FrmGenDelivery"})	 

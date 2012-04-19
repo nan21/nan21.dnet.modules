@@ -20,6 +20,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
+import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Customizer;
@@ -35,7 +36,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = Client.NQ_FIND_BY_ID, query = "SELECT e FROM Client e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = Client.NQ_FIND_BY_IDS, query = "SELECT e FROM Client e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class Client {
+public class Client implements IModelWithId {
 
     public static final String TABLE_NAME = "AD_CLIENT";
     public static final String SEQUENCE_NAME = "AD_CLIENT_SEQ";

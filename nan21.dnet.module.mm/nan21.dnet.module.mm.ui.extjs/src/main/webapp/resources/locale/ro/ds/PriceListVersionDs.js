@@ -1,6 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.mm.price.ds.model.PriceListVersionDs$Trl", {  	  	
-	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	priceListId__lbl :    "Listă (ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	priceListId__lbl :    "Listă(ID)",
 	priceList__lbl :    "Listă",
 	validFrom__lbl :  "De la",
 		 

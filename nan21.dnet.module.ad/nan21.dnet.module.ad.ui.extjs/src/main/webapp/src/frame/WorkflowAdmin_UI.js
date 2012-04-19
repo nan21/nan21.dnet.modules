@@ -124,6 +124,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 			}; 
 		s.callbacks['successFn'] = successFn; 
 		s.callbacks['successScope'] = this;
+		var failureFn = function(dc,response,serviceName,specs) { 			this._getDc_("dcRunningTask").doCancel();			 	
+			}; 
+		s.callbacks['failureFn'] = failureFn; 
+		s.callbacks['failureScope'] = this;
 		try{ 
 			this._getDc_("dcRunningTask").doService("assignTask", s); 
 		}catch(e){

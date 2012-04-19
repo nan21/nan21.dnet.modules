@@ -14,6 +14,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
@@ -33,7 +34,7 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = ActAttachment.NQ_FIND_BY_IDS, query = "SELECT e FROM ActAttachment e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 @ReadOnly
 @Cache(type = CacheType.NONE)
-public class ActAttachment {
+public class ActAttachment implements IModelWithId {
 
     public static final String TABLE_NAME = "ACT_HI_ATTACHMENT";
     public static final String SEQUENCE_NAME = "ACT_HI_ATTACHMENT_SEQ";
