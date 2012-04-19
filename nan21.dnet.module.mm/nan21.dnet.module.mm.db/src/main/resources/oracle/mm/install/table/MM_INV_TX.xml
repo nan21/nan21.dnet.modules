@@ -27,7 +27,7 @@
 			<column name="SOURCE" type="varchar2(255)">
 				<constraints  /></column>	 
 			<column name="SOURCETYPE" type="varchar2(32)">
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="UUID" type="varchar2(36)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="number(19)">

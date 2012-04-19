@@ -39,7 +39,6 @@ import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
-import org.hibernate.validator.constraints.NotBlank;
 
 /** InvTransaction. */
 @Entity
@@ -88,8 +87,7 @@ public class InvTransaction extends AbstractAuditable {
     private Date eventDate;
 
     /** SourceType. */
-    @Column(name = "SOURCETYPE", nullable = false, length = 32)
-    @NotBlank
+    @Column(name = "SOURCETYPE", length = 32)
     private String sourceType;
 
     /** Source. */
