@@ -100,7 +100,7 @@ public class SysDsService extends AbstractType {
 
         super.aboutToInsert(event);
 
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

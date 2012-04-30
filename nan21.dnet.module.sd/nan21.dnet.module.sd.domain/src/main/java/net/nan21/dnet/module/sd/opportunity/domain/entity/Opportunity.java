@@ -26,7 +26,7 @@ import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
 import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityPriority;
 import net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityResultReason;
 import net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunitySource;
@@ -244,7 +244,7 @@ public class Opportunity extends AbstractType {
 
         super.aboutToInsert(event);
 
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

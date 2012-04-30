@@ -24,33 +24,43 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$Filter", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
+		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"customer",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "customerId"} ]  })
+		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.md.bp.lovs.CustomersName", dataIndex:"supplier",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
+		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
+		.addBooleanField({ name:"confirmed", dataIndex:"confirmed",anchor:"-20"  })
+		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.tx.lovs.TxDocTypesPI", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.bd.tx.lovs.PaymentMethod", dataIndex:"paymentMethod",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
+		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.bd.tx.lovs.PaymentTerm", dataIndex:"paymentTerm",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
 		.addDateField({ name:"docDate_From", dataIndex:"docDate_From", emptyText:"From" })
 		.addDateField({ name:"docDate_To", dataIndex:"docDate_To", emptyText:"To" })
 		.addFieldContainer({name: "docDate", fieldLabel:"Doc Date"}) 
 		.addChildrenTo("docDate",["docDate_From", "docDate_To"]) 
 
-		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"customer",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "customerId"} ]  })
-		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"supplier",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
-		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
-		.addBooleanField({ name:"confirmed", dataIndex:"confirmed",anchor:"-20"  })
-		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
-		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesPI", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
-		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.bd.fin.lovs.PaymentMethod", dataIndex:"paymentMethod",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
-		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.bd.fin.lovs.PaymentTerm", dataIndex:"paymentTerm",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
+		.addNumberField({ name:"totalAmount_From", dataIndex:"totalAmount_From", emptyText:"From" })
+		.addNumberField({ name:"totalAmount_To", dataIndex:"totalAmount_To", emptyText:"To" })
+		.addFieldContainer({name: "totalAmount", fieldLabel:"Total Amount"})  
+		.addChildrenTo("totalAmount",["totalAmount_From", "totalAmount_To"]) 
+
+		.addNumberField({ name:"totalNetAmount_From", dataIndex:"totalNetAmount_From", emptyText:"From" })
+		.addNumberField({ name:"totalNetAmount_To", dataIndex:"totalNetAmount_To", emptyText:"To" })
+		.addFieldContainer({name: "totalNetAmount", fieldLabel:"Total Net Amount"})  
+		.addChildrenTo("totalNetAmount",["totalNetAmount_From", "totalNetAmount_To"]) 
+
 		//containers
-		.addPanel({ name:"col1", layout:"form", width:300}) 
-		.addPanel({ name:"col2", layout:"form", width:220}) 
-		.addPanel({ name:"col3", layout:"form", width:180}) 
+		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form", width:200}) 
+		.addPanel({ name:"col3", layout:"form", width:300}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col3"])
-		.addChildrenTo("col1",["customer","supplier","docType","docDate"])
-		.addChildrenTo("col2",["code","currency"])
-		.addChildrenTo("col3",["confirmed","posted"])
-    	.addAuditFilter({})	
+		.addChildrenTo("col1",["customer","supplier","docType","code"])
+		.addChildrenTo("col2",["currency","confirmed","posted"])
+		.addChildrenTo("col3",["docDate","totalAmount","totalNetAmount"])
+    	.addAuditFilter()	
 	}
 }); 
  	
@@ -92,7 +102,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$Edit", {
 		//controls	
 		this._getBuilder_()	
 		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"customer",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "customerId"} ]  })
-		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"supplier",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
+		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.md.bp.lovs.CustomersName", dataIndex:"supplier",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
 		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,allowBlank:false})
 		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
@@ -101,9 +111,9 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$Edit", {
 		.addDisplayFieldNumber({name:"totalAmount", dataIndex:"totalAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addDisplayFieldBoolean({ name:"confirmed", dataIndex:"confirmed"  })
 		.addDisplayFieldBoolean({ name:"posted", dataIndex:"posted"  })
-		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.fin.lovs.FinDocTypesPI", dataIndex:"docType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
-		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.bd.fin.lovs.PaymentMethod", dataIndex:"paymentMethod",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
-		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.bd.fin.lovs.PaymentTerm", dataIndex:"paymentTerm",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.tx.lovs.TxDocTypesPI", dataIndex:"docType",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.bd.tx.lovs.PaymentMethod", dataIndex:"paymentMethod",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
+		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.bd.tx.lovs.PaymentTerm", dataIndex:"paymentTerm",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" ,width:250})     
 		.addPanel({ name:"col2", layout:"form" , width:200})     

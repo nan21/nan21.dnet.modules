@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$Filter", 
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["code","name","useInContext"])
 		.addChildrenTo("col2",["active","internal"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

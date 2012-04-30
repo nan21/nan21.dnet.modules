@@ -28,13 +28,14 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.Contact;
+import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.domain.eventhandler.SalesOrderEventHandler;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
@@ -122,9 +123,9 @@ public class SalesOrder extends AbstractAuditable {
     @Column(name = "DELIVERED", nullable = false)
     @NotNull
     private Boolean delivered;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FinDocType.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = TxDocType.class)
     @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
-    private FinDocType docType;
+    private TxDocType docType;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "ID")
     private BusinessPartner customer;
@@ -158,12 +159,18 @@ public class SalesOrder extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Location.class)
     @JoinColumn(name = "BILLTOLOCATION_ID", referencedColumnName = "ID")
     private Location billToLocation;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Contact.class)
+    @JoinColumn(name = "BILLTOCONTACT_ID", referencedColumnName = "ID")
+    private Contact billToContact;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "SHIPTO_ID", referencedColumnName = "ID")
     private BusinessPartner shipTo;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Location.class)
     @JoinColumn(name = "SHIPTOLOCATION_ID", referencedColumnName = "ID")
     private Location shipToLocation;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Contact.class)
+    @JoinColumn(name = "SHIPTOCONTACT_ID", referencedColumnName = "ID")
+    private Contact shipToContact;
 
     @OneToMany(fetch = FetchType.LAZY, targetEntity = SalesOrderItem.class, mappedBy = "salesOrder", cascade = CascadeType.ALL)
     @CascadeOnDelete
@@ -268,11 +275,11 @@ public class SalesOrder extends AbstractAuditable {
 
     }
 
-    public FinDocType getDocType() {
+    public TxDocType getDocType() {
         return this.docType;
     }
 
-    public void setDocType(FinDocType docType) {
+    public void setDocType(TxDocType docType) {
         this.docType = docType;
     }
 
@@ -364,6 +371,14 @@ public class SalesOrder extends AbstractAuditable {
         this.billToLocation = billToLocation;
     }
 
+    public Contact getBillToContact() {
+        return this.billToContact;
+    }
+
+    public void setBillToContact(Contact billToContact) {
+        this.billToContact = billToContact;
+    }
+
     public BusinessPartner getShipTo() {
         return this.shipTo;
     }
@@ -378,6 +393,14 @@ public class SalesOrder extends AbstractAuditable {
 
     public void setShipToLocation(Location shipToLocation) {
         this.shipToLocation = shipToLocation;
+    }
+
+    public Contact getShipToContact() {
+        return this.shipToContact;
+    }
+
+    public void setShipToContact(Contact shipToContact) {
+        this.shipToContact = shipToContact;
     }
 
     public Collection<SalesOrderItem> getLines() {
@@ -400,16 +423,16 @@ public class SalesOrder extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.confirmed == null) {
+        if (this.getConfirmed() == null) {
             event.updateAttributeWithObject("confirmed", false);
         }
-        if (this.invoiced == null) {
+        if (this.getInvoiced() == null) {
             event.updateAttributeWithObject("invoiced", false);
         }
-        if (this.delivered == null) {
+        if (this.getDelivered() == null) {
             event.updateAttributeWithObject("delivered", false);
         }
-        if (this.code == null || this.code.equals("")) {
+        if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "SO-" + this.getId());
         }
     }

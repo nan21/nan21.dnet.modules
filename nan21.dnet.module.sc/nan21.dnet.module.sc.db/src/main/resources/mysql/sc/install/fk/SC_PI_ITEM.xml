@@ -10,7 +10,7 @@
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_SC_PI_ITEM2" 
 				baseTableName="SC_PI_ITEM" baseColumnNames="PRODUCT_ID"  
-				referencedTableName="MM_PRODUCT"  referencedColumnNames="ID" />
+				referencedTableName="MD_PRODUCT"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_SC_PI_ITEM3" 

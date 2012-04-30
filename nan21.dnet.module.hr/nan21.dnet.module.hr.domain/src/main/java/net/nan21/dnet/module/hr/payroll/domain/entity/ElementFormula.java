@@ -139,7 +139,7 @@ public class ElementFormula extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.staticValue == null) {
+        if (this.getStaticValue() == null) {
             event.updateAttributeWithObject("staticValue", false);
         }
     }

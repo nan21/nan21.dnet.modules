@@ -1,0 +1,4 @@
+"name";"days";"description";"active"
+"15 days";"15";"Within 15 days";"true"
+"30 days";"30";"Within 30 days";"true"
+"Immediate";"0";"Immediate payment";"true"

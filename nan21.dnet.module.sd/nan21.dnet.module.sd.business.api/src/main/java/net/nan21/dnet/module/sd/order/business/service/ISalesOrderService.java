@@ -8,22 +8,23 @@ package net.nan21.dnet.module.sd.order.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.Contact;
+import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import java.util.Date;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType;
 
 public interface ISalesOrderService extends IEntityService<SalesOrder> {
 
-    public List<SalesOrder> findByDocType(FinDocType docType);
+    public List<SalesOrder> findByDocType(TxDocType docType);
 
     public List<SalesOrder> findByDocTypeId(Long docTypeId);
 
@@ -71,6 +72,10 @@ public interface ISalesOrderService extends IEntityService<SalesOrder> {
 
     public List<SalesOrder> findByBillToLocationId(Long billToLocationId);
 
+    public List<SalesOrder> findByBillToContact(Contact billToContact);
+
+    public List<SalesOrder> findByBillToContactId(Long billToContactId);
+
     public List<SalesOrder> findByShipTo(BusinessPartner shipTo);
 
     public List<SalesOrder> findByShipToId(Long shipToId);
@@ -79,15 +84,19 @@ public interface ISalesOrderService extends IEntityService<SalesOrder> {
 
     public List<SalesOrder> findByShipToLocationId(Long shipToLocationId);
 
+    public List<SalesOrder> findByShipToContact(Contact shipToContact);
+
+    public List<SalesOrder> findByShipToContactId(Long shipToContactId);
+
     public List<SalesOrder> findByLines(SalesOrderItem lines);
 
     public List<SalesOrder> findByLinesId(Long linesId);
 
-    public void doGenerateInvoice(SalesOrder salesOrder, FinDocType invDocType)
+    public void doGenerateInvoice(SalesOrder salesOrder, TxDocType invDocType)
             throws Exception;
 
     public void doGenerateDelivery(SalesOrder salesOrder,
-            FinDocType deliveryDocType, InvTransactionType delivTxType,
+            TxDocType deliveryDocType, InvTransactionType delivTxType,
             Date delivEventDate) throws Exception;
 
 }

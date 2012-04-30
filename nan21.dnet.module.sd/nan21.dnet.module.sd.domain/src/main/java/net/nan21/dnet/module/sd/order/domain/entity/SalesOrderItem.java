@@ -21,12 +21,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.mm.md.domain.entity.Product;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import net.nan21.dnet.module.sd.order.domain.eventhandler.SalesOrderItemEventHandler;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
@@ -144,6 +145,15 @@ public class SalesOrderItem extends AbstractAuditable {
 
     public void setTaxAmount(Float taxAmount) {
         this.taxAmount = taxAmount;
+    }
+
+    @Transient
+    public Float getLineAmount() {
+        return this.netAmount + this.taxAmount;
+    }
+
+    public void setLineAmount(Float lineAmount) {
+
     }
 
     public SalesOrder getSalesOrder() {

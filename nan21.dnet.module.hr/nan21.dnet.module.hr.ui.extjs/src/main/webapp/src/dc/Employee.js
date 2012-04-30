@@ -45,7 +45,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$Filter", {
 		.addChildrenTo("col1",["employerCode","firstName","lastName","code"])
 		.addChildrenTo("col2",["type","jobCode","payroll"])
 		.addChildrenTo("col3",["gender","maritalStatus"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

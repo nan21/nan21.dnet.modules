@@ -40,6 +40,8 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="number(19)">
 				<constraints nullable="false" /></column>	 
+			<column name="BILLTOCONTACT_ID" type="number(19)">	 
+				<constraints  /></column>	 
 			<column name="BILLTOLOCATION_ID" type="number(19)">	 
 				<constraints  /></column>	 
 			<column name="BILLTO_ID" type="number(19)">	 
@@ -61,6 +63,8 @@
 			<column name="PAYMENTTERM_ID" type="number(19)">	 
 				<constraints  /></column>	 
 			<column name="PRICELIST_ID" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="SHIPTOCONTACT_ID" type="number(19)">	 
 				<constraints  /></column>	 
 			<column name="SHIPTOLOCATION_ID" type="number(19)">	 
 				<constraints  /></column>	 

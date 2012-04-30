@@ -49,7 +49,7 @@ labelAlign:"right",labelWidth:70}})
 		.addChildrenTo("col1",["type","status","assignee","code"])
 		.addChildrenTo("col2",["project","issue"])
 		.addChildrenTo("col3",["issueType","issuePriority","issueSeverity","issueStatus"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

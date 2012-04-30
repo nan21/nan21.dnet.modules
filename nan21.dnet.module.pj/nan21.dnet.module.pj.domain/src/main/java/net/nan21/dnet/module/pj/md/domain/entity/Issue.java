@@ -354,7 +354,7 @@ public class Issue extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.code == null || this.code.equals("")) {
+        if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "I-" + this.getId());
         }
     }

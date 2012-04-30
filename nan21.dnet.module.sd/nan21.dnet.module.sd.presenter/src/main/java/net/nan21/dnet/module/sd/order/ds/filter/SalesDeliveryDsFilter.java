@@ -19,13 +19,6 @@ public class SalesDeliveryDsFilter extends AbstractAuditableDsFilter {
 
     private String customer;
 
-    private Long docTypeId;
-
-    private Long docTypeId_From;
-    private Long docTypeId_To;
-
-    private String docType;
-
     private Long salesOrderId;
 
     private Long salesOrderId_From;
@@ -55,6 +48,20 @@ public class SalesDeliveryDsFilter extends AbstractAuditableDsFilter {
     private Long warehouseId_To;
 
     private String warehouse;
+
+    private Long deliveryLocationId;
+
+    private Long deliveryLocationId_From;
+    private Long deliveryLocationId_To;
+
+    private String deliveryLocation;
+
+    private Long deliveryContactId;
+
+    private Long deliveryContactId_From;
+    private Long deliveryContactId_To;
+
+    private String deliveryContact;
 
     private Boolean confirmed;
 
@@ -108,38 +115,6 @@ public class SalesDeliveryDsFilter extends AbstractAuditableDsFilter {
 
     public void setCustomer(String customer) {
         this.customer = customer;
-    }
-
-    public Long getDocTypeId() {
-        return this.docTypeId;
-    }
-
-    public Long getDocTypeId_From() {
-        return this.docTypeId_From;
-    }
-
-    public Long getDocTypeId_To() {
-        return this.docTypeId_To;
-    }
-
-    public void setDocTypeId(Long docTypeId) {
-        this.docTypeId = docTypeId;
-    }
-
-    public void setDocTypeId_From(Long docTypeId_From) {
-        this.docTypeId_From = docTypeId_From;
-    }
-
-    public void setDocTypeId_To(Long docTypeId_To) {
-        this.docTypeId_To = docTypeId_To;
-    }
-
-    public String getDocType() {
-        return this.docType;
-    }
-
-    public void setDocType(String docType) {
-        this.docType = docType;
     }
 
     public Long getSalesOrderId() {
@@ -276,6 +251,70 @@ public class SalesDeliveryDsFilter extends AbstractAuditableDsFilter {
 
     public void setWarehouse(String warehouse) {
         this.warehouse = warehouse;
+    }
+
+    public Long getDeliveryLocationId() {
+        return this.deliveryLocationId;
+    }
+
+    public Long getDeliveryLocationId_From() {
+        return this.deliveryLocationId_From;
+    }
+
+    public Long getDeliveryLocationId_To() {
+        return this.deliveryLocationId_To;
+    }
+
+    public void setDeliveryLocationId(Long deliveryLocationId) {
+        this.deliveryLocationId = deliveryLocationId;
+    }
+
+    public void setDeliveryLocationId_From(Long deliveryLocationId_From) {
+        this.deliveryLocationId_From = deliveryLocationId_From;
+    }
+
+    public void setDeliveryLocationId_To(Long deliveryLocationId_To) {
+        this.deliveryLocationId_To = deliveryLocationId_To;
+    }
+
+    public String getDeliveryLocation() {
+        return this.deliveryLocation;
+    }
+
+    public void setDeliveryLocation(String deliveryLocation) {
+        this.deliveryLocation = deliveryLocation;
+    }
+
+    public Long getDeliveryContactId() {
+        return this.deliveryContactId;
+    }
+
+    public Long getDeliveryContactId_From() {
+        return this.deliveryContactId_From;
+    }
+
+    public Long getDeliveryContactId_To() {
+        return this.deliveryContactId_To;
+    }
+
+    public void setDeliveryContactId(Long deliveryContactId) {
+        this.deliveryContactId = deliveryContactId;
+    }
+
+    public void setDeliveryContactId_From(Long deliveryContactId_From) {
+        this.deliveryContactId_From = deliveryContactId_From;
+    }
+
+    public void setDeliveryContactId_To(Long deliveryContactId_To) {
+        this.deliveryContactId_To = deliveryContactId_To;
+    }
+
+    public String getDeliveryContact() {
+        return this.deliveryContact;
+    }
+
+    public void setDeliveryContact(String deliveryContact) {
+        this.deliveryContact = deliveryContact;
     }
 
     public Boolean getConfirmed() {

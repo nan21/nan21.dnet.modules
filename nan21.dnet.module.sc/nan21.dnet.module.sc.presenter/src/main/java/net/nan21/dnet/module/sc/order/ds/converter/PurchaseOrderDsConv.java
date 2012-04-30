@@ -8,18 +8,18 @@ package net.nan21.dnet.module.sc.order.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.fin.business.service.IFinDocTypeService;
-import net.nan21.dnet.module.bd.fin.business.service.IPaymentMethodService;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.base.business.service.IDeliveryMethodService;
-import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
-import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.mm.price.business.service.IPriceListService;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.bd.tx.business.service.IDeliveryMethodService;
+import net.nan21.dnet.module.bd.tx.business.service.IPaymentMethodService;
+import net.nan21.dnet.module.bd.tx.business.service.ITxDocTypeService;
+import net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.mm.price.business.service.IPriceListService;
+import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderDs;
@@ -56,11 +56,11 @@ public class PurchaseOrderDsConv extends
         if (ds.getDocTypeId() != null) {
             if (e.getDocType() == null
                     || !e.getDocType().getId().equals(ds.getDocTypeId())) {
-                e.setDocType((FinDocType) this.em.find(FinDocType.class,
+                e.setDocType((TxDocType) this.em.find(TxDocType.class,
                         ds.getDocTypeId()));
             }
         } else {
-            this.lookup_docType_FinDocType(ds, e);
+            this.lookup_docType_TxDocType(ds, e);
         }
 
         if (ds.getPriceListId() != null) {
@@ -170,16 +170,16 @@ public class PurchaseOrderDsConv extends
         }
     }
 
-    protected void lookup_docType_FinDocType(PurchaseOrderDs ds, PurchaseOrder e)
+    protected void lookup_docType_TxDocType(PurchaseOrderDs ds, PurchaseOrder e)
             throws Exception {
         if (ds.getDocType() != null && !ds.getDocType().equals("")) {
-            FinDocType x = null;
+            TxDocType x = null;
             try {
-                x = ((IFinDocTypeService) findEntityService(FinDocType.class))
+                x = ((ITxDocTypeService) findEntityService(TxDocType.class))
                         .findByName(ds.getDocType());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `FinDocType` reference:  `docType` = "
+                        "Invalid value provided to find `TxDocType` reference:  `docType` = "
                                 + ds.getDocType() + "  ");
             }
             e.setDocType(x);

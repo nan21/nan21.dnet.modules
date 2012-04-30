@@ -9,7 +9,7 @@ import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.sd.opportunity.business.service.IOpportunityPriorityService;
 import net.nan21.dnet.module.sd.opportunity.business.service.IOpportunityResultReasonService;
 import net.nan21.dnet.module.sd.opportunity.business.service.IOpportunitySourceService;

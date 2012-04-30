@@ -103,6 +103,18 @@
 		<property name="name" value="SalesInvoiceTax" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTaxDs" />
 	</bean>
+   
+ 	<bean id="PaymentInDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.PaymentInDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.PaymentInDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.PaymentIn" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.PaymentInDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentIn" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.PaymentInDs" />
+	</bean>
       
 </beans>
    

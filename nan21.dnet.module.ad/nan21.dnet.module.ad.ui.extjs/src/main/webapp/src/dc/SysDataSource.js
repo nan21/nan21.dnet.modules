@@ -35,7 +35,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysDataSource$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["name","model","isAsgn"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

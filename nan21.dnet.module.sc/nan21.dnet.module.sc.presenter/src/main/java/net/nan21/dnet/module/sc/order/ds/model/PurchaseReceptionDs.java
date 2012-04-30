@@ -19,8 +19,6 @@ public class PurchaseReceptionDs extends
     public static final String fSUPPLIERID = "supplierId";
     public static final String fSUPPLIERCODE = "supplierCode";
     public static final String fSUPPLIER = "supplier";
-    public static final String fDOCTYPEID = "docTypeId";
-    public static final String fDOCTYPE = "docType";
     public static final String fPURCHASEORDERID = "purchaseOrderId";
     public static final String fPURCHASEORDERUUID = "purchaseOrderUuid";
     public static final String fPURCHASEORDER = "purchaseOrder";
@@ -43,12 +41,6 @@ public class PurchaseReceptionDs extends
 
     @DsField(noUpdate = true, join = "left", path = "supplier.name")
     private String supplier;
-
-    @DsField(join = "left", path = "docType.id")
-    private Long docTypeId;
-
-    @DsField(join = "left", path = "docType.name")
-    private String docType;
 
     @DsField(join = "left", path = "purchaseOrder.id")
     private Long purchaseOrderId;
@@ -119,22 +111,6 @@ public class PurchaseReceptionDs extends
 
     public void setSupplier(String supplier) {
         this.supplier = supplier;
-    }
-
-    public Long getDocTypeId() {
-        return this.docTypeId;
-    }
-
-    public void setDocTypeId(Long docTypeId) {
-        this.docTypeId = docTypeId;
-    }
-
-    public String getDocType() {
-        return this.docType;
-    }
-
-    public void setDocType(String docType) {
-        this.docType = docType;
     }
 
     public Long getPurchaseOrderId() {

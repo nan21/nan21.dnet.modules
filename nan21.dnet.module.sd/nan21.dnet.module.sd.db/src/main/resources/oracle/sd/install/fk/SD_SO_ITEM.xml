@@ -6,7 +6,7 @@
 		<addForeignKeyConstraint constraintName="FK_SD_SO_ITEM1" baseTableName="SD_SO_ITEM" baseColumnNames="SALESORDER_ID"  referencedTableName="SD_SALES_ORDER"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_SD_SO_ITEM2" baseTableName="SD_SO_ITEM" baseColumnNames="PRODUCT_ID"  referencedTableName="MM_PRODUCT"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SO_ITEM2" baseTableName="SD_SO_ITEM" baseColumnNames="PRODUCT_ID"  referencedTableName="MD_PRODUCT"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_SD_SO_ITEM3" baseTableName="SD_SO_ITEM" baseColumnNames="UOM_ID"  referencedTableName="BD_UOM"  referencedColumnNames="ID" />

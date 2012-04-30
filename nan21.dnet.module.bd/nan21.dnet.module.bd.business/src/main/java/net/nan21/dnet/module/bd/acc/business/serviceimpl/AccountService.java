@@ -10,7 +10,6 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.acc.business.service.IAccountService;
 import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.bd.acc.domain.entity.Account;
@@ -55,19 +54,6 @@ public class AccountService extends AbstractEntityService<Account> implements
                         Account.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAccSchemaId", accSchemaId).getResultList();
-    }
-
-    public List<Account> findByAccGroup(AccountGroup accGroup) {
-        return this.findByAccGroupId(accGroup.getId());
-    }
-
-    public List<Account> findByAccGroupId(Long accGroupId) {
-        return (List<Account>) this.em
-                .createQuery(
-                        "select e from Account e where e.clientId = :pClientId and e.accGroup.id = :pAccGroupId",
-                        Account.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pAccGroupId", accGroupId).getResultList();
     }
 
 }

@@ -1,8 +1,8 @@
 package net.nan21.dnet.module.sd._presenterdelegates.invoice;
 
 import net.nan21.dnet.core.presenter.service.AbstractDsDelegate;
-import net.nan21.dnet.module.mm.price.business.service.IProductPriceService;
-import net.nan21.dnet.module.mm.price.domain.entity.ProductPrice;
+import net.nan21.dnet.module.md.mm.price.business.service.IProductPriceService;
+import net.nan21.dnet.module.md.mm.price.domain.entity.ProductPrice;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemDs;

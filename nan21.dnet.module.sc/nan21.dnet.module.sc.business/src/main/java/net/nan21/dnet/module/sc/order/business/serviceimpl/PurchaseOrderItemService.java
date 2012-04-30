@@ -10,7 +10,7 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.mm.md.domain.entity.Product;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderItemTax;
 

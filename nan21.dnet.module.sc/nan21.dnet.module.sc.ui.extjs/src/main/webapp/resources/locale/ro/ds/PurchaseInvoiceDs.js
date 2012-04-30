@@ -13,12 +13,14 @@ Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceDs$Trl", {
 	paymentMethod__lbl :    "Mod plată",
 	paymentTermId__lbl :    "Termen plată(ID)",
 	paymentTerm__lbl :    "Termen plată",
-	currencyId__lbl :    "Moneda(ID)",
-	currency__lbl :    "Moneda",
+	currencyId__lbl :    "Monedă(ID)",
+	currency__lbl :    "Monedă",
 	totalNetAmount__lbl :  "Total Net",
 	totalTaxAmount__lbl :  "Total TVA",
 	totalAmount__lbl :  "Total",
-	confirmed__lbl :  "@confirmed",	posted__lbl :  "@posted",	purchaseOrderId__lbl :    "(ID)",
+	confirmed__lbl :  "Confirmat",
+	posted__lbl :  "Inregistrat",
+	purchaseOrderId__lbl :    "(ID)",
 	className__lbl :  "@className",	businessObject__lbl :  "@businessObject",		 
 	id__lbl :"ID"
 });

@@ -32,7 +32,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefTransition$Filter", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["source","target"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

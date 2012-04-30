@@ -5,45 +5,45 @@
 	<persistence-unit name="net.nan21.dnet"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		
+		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccSchema</class>
+		<class>net.nan21.dnet.module.bd.acc.domain.entity.Account</class>
+		
+		<class>net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType</class>
+		<class>net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannel</class>
+		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
+		
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRateProvider</class>
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRate</class>
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRateAverage</class>
 		
-		<class>net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType</class>
-		<class>net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannel</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.TaxCategory</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.Tax</class>
 		
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Region</class>
-		<class>net.nan21.dnet.module.bd.geo.domain.entity.RegionType</class>		
+		<class>net.nan21.dnet.module.bd.geo.domain.entity.RegionType</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.City</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Location</class>
 		
-		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
-		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>
-		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>
-		
-				
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchy</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchyItem</class>
 		
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
-		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>
+		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationItem</class>
 		
-		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccSchema</class>
-		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup</class>
-		<class>net.nan21.dnet.module.bd.acc.domain.entity.Account</class>
+		<class>net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod</class>
+		<class>net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm</class>
+		<class>net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod</class>
+		<class>net.nan21.dnet.module.bd.tx.domain.entity.TxDocType</class>
+		<class>net.nan21.dnet.module.bd.tx.domain.entity.TxDocSequence</class>
 		
-		<class>net.nan21.dnet.module.bd.fin.domain.entity.TaxCategory</class>
-		<class>net.nan21.dnet.module.bd.fin.domain.entity.Tax</class>
-		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod</class>
-		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm</class>
-		<class>net.nan21.dnet.module.bd.fin.domain.entity.FinDocType</class>
-		
-		<class>net.nan21.dnet.core.domain.model.AbstractType</class>
-		
+		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
+		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>
+		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

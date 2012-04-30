@@ -149,13 +149,13 @@ public class PayrollPeriod extends AbstractType {
 
         super.aboutToInsert(event);
 
-        if (this.processed == null) {
+        if (this.getProcessed() == null) {
             event.updateAttributeWithObject("processed", false);
         }
-        if (this.closed == null) {
+        if (this.getClosed() == null) {
             event.updateAttributeWithObject("closed", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

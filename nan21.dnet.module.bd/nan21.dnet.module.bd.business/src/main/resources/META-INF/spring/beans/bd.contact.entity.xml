@@ -12,6 +12,9 @@
  
  	<bean id="CommunicationChannelService" scope="prototype"
 	  		class="net.nan21.dnet.module.bd.contact.business.serviceimpl.CommunicationChannelService"  />  
+ 
+ 	<bean id="PersonService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.contact.business.serviceimpl.PersonService"  />  
    
 </beans>
    

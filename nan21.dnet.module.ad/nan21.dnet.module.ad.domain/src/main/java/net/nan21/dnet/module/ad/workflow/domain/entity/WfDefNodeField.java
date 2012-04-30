@@ -120,10 +120,10 @@ public class WfDefNodeField extends AbstractType {
 
         super.aboutToInsert(event);
 
-        if (this.required == null) {
+        if (this.getRequired() == null) {
             event.updateAttributeWithObject("required", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

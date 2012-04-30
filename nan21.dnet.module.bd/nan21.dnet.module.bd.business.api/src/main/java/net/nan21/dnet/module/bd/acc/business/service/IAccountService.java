@@ -8,7 +8,6 @@ package net.nan21.dnet.module.bd.acc.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup;
 
 import net.nan21.dnet.module.bd.acc.domain.entity.Account;
 
@@ -21,9 +20,5 @@ public interface IAccountService extends IEntityService<Account> {
     public List<Account> findByAccSchema(AccSchema accSchema);
 
     public List<Account> findByAccSchemaId(Long accSchemaId);
-
-    public List<Account> findByAccGroup(AccountGroup accGroup);
-
-    public List<Account> findByAccGroupId(Long accGroupId);
 
 }

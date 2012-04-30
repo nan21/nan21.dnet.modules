@@ -21,30 +21,36 @@ Export-Package: net.nan21.dnet.module.bd.acc.domain.entity;version="1.
  onstraints,javax.xml.bind.annotation,net.nan21.dnet.core.domain.model
  ,org.eclipse.persistence.annotations,org.eclipse.persistence.descript
  ors,org.eclipse.persistence.indirection,org.eclipse.persistence.inter
- nal.descriptors,org.eclipse.persistence.internal.weaving,org.hibernat
- e.validator.constraints",net.nan21.dnet.module.bd.geo.domain.entity;v
- ersion="1.0.0.M9";uses:="javax.persistence,javax.validation.constrain
- ts,javax.xml.bind.annotation,net.nan21.dnet.core.domain.model,org.ecl
- ipse.persistence.annotations,org.eclipse.persistence.descriptors,org.
- eclipse.persistence.indirection,org.eclipse.persistence.internal.desc
- riptors,org.eclipse.persistence.internal.weaving",net.nan21.dnet.modu
- le.bd.org.domain.entity;version="1.0.0.M9";uses:="javax.persistence,j
- avax.validation.constraints,javax.xml.bind.annotation,net.nan21.dnet.
- core.domain.model,org.eclipse.persistence.annotations,org.eclipse.per
- sistence.descriptors,org.eclipse.persistence.indirection,org.eclipse.
- persistence.internal.descriptors,org.eclipse.persistence.internal.wea
- ving",net.nan21.dnet.module.bd.standards.domain.entity;version="1.0.0
- .M9";uses:="javax.persistence,javax.validation.constraints,javax.xml.
- bind.annotation,net.nan21.dnet.core.domain.model,org.eclipse.persiste
- nce.annotations,org.eclipse.persistence.descriptors,org.eclipse.persi
- stence.indirection,org.eclipse.persistence.internal.descriptors,org.e
- clipse.persistence.internal.weaving,org.hibernate.validator.constrain
- ts",net.nan21.dnet.module.bd.uom.domain.entity;version="1.0.0.M9";use
- s:="javax.persistence,javax.validation.constraints,javax.xml.bind.ann
- otation,net.nan21.dnet.core.domain.model,org.eclipse.persistence.anno
- tations,org.eclipse.persistence.descriptors,org.eclipse.persistence.i
- ndirection,org.eclipse.persistence.internal.descriptors,org.eclipse.p
- ersistence.internal.weaving,org.hibernate.validator.constraints"
+ nal.descriptors,org.eclipse.persistence.internal.weaving",net.nan21.d
+ net.module.bd.geo.domain.entity;version="1.0.0.M9";uses:="javax.persi
+ stence,javax.validation.constraints,javax.xml.bind.annotation,net.nan
+ 21.dnet.core.domain.model,org.eclipse.persistence.annotations,org.ecl
+ ipse.persistence.descriptors,org.eclipse.persistence.indirection,org.
+ eclipse.persistence.internal.descriptors,org.eclipse.persistence.inte
+ rnal.weaving",net.nan21.dnet.module.bd.org.domain.entity;version="1.0
+ .0.M9";uses:="javax.persistence,javax.validation.constraints,javax.xm
+ l.bind.annotation,net.nan21.dnet.core.domain.model,org.eclipse.persis
+ tence.annotations,org.eclipse.persistence.descriptors,org.eclipse.per
+ sistence.indirection,org.eclipse.persistence.internal.descriptors,org
+ .eclipse.persistence.internal.weaving",net.nan21.dnet.module.bd.stand
+ ards.domain.entity;version="1.0.0.M9";uses:="javax.persistence,javax.
+ validation.constraints,javax.xml.bind.annotation,net.nan21.dnet.core.
+ domain.model,org.eclipse.persistence.annotations,org.eclipse.persiste
+ nce.descriptors,org.eclipse.persistence.indirection,org.eclipse.persi
+ stence.internal.descriptors,org.eclipse.persistence.internal.weaving,
+ org.hibernate.validator.constraints",net.nan21.dnet.module.bd.tx.doma
+ in.entity;version="1.0.0.M9";uses:="javax.persistence,javax.validatio
+ n.constraints,javax.xml.bind.annotation,net.nan21.dnet.core.domain.mo
+ del,org.eclipse.persistence.annotations,org.eclipse.persistence.descr
+ iptors,org.eclipse.persistence.indirection,org.eclipse.persistence.in
+ ternal.descriptors,org.eclipse.persistence.internal.weaving,org.hiber
+ nate.validator.constraints",net.nan21.dnet.module.bd.uom.domain.entit
+ y;version="1.0.0.M9";uses:="javax.persistence,javax.validation.constr
+ aints,javax.xml.bind.annotation,net.nan21.dnet.core.domain.model,org.
+ eclipse.persistence.annotations,org.eclipse.persistence.descriptors,o
+ rg.eclipse.persistence.indirection,org.eclipse.persistence.internal.d
+ escriptors,org.eclipse.persistence.internal.weaving,org.hibernate.val
+ idator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.ad.d
  omain;version="[1.0.0.M9,1.0.0.M9]"

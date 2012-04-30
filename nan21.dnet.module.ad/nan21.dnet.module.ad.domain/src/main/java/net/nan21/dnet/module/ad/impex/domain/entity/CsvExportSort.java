@@ -122,7 +122,7 @@ public class CsvExportSort extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.descend == null) {
+        if (this.getDescend() == null) {
             event.updateAttributeWithObject("descend", false);
         }
     }

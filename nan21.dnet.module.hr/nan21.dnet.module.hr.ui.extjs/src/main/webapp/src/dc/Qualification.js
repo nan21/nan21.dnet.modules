@@ -37,7 +37,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.Qualification$Filter", {
 	  ,	    {layout:"anchor", border:false 
 	      ,items:[ this._elems_.get("active")] }
 ];
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

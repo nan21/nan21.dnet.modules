@@ -191,13 +191,13 @@ public class ReportParam extends AbstractTypeWithCode {
 
         super.aboutToInsert(event);
 
-        if (this.mandatory == null) {
+        if (this.getMandatory() == null) {
             event.updateAttributeWithObject("mandatory", false);
         }
-        if (this.noEdit == null) {
+        if (this.getNoEdit() == null) {
             event.updateAttributeWithObject("noEdit", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
@@ -16,14 +16,19 @@ import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax;
 
 public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 
-	public SalesInvoice generateInvoice(SalesOrder order,FinDocType invDocType) throws Exception {
+	public SalesInvoice generateInvoice(SalesOrder order, TxDocType invDocType)
+			throws Exception {
 
-		List<SalesInvoice> invs = ((ISalesInvoiceService)this.findEntityService(SalesInvoice.class)).findBySalesOrderId(order.getId());
+		List<SalesInvoice> invs = ((ISalesInvoiceService) this
+				.findEntityService(SalesInvoice.class))
+				.findBySalesOrderId(order.getId());
 		if (invs.size() > 0) {
 			String invCode = invs.get(0).getCode();
-			throw new Exception("Sales order is already invoiced ! Check invoice "+ invCode  );
+			throw new Exception(
+					"Sales order is already invoiced ! Check invoice "
+							+ invCode);
 		}
-		 
+
 		SalesInvoice invoice = new SalesInvoice();
 
 		if (order.getBillTo() != null) {
@@ -31,22 +36,22 @@ public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 		} else {
 			invoice.setCustomer(order.getCustomer());
 		}
-		
+
 		invoice.setCurrency(order.getCurrency());
 		invoice.setPriceList(order.getPriceList());
 		invoice.setDocType(invDocType);
 		invoice.setDocDate(new Date());
 		invoice.setBillToLocation(order.getBillToLocation());
-		// invoice.setBillToContact(order.getb)
+		invoice.setBillToContact(order.getBillToContact());
 		invoice.setSalesOrder(order);
 		invoice.setSupplier(order.getSupplier());
 		invoice.setTotalAmount(order.getTotalAmount());
 		invoice.setTotalNetAmount(order.getTotalNetAmount());
 		invoice.setTotalTaxAmount(order.getTotalTaxAmount());
-		
+
 		invoice.setPaymentMethod(order.getPaymentMethod());
 		invoice.setPaymentTerm(order.getPaymentTerm());
-				
+
 		List<SalesOrderItem> items = ((ISalesOrderItemService) this
 				.findEntityService(SalesOrderItem.class))
 				.findBySalesOrderId(order.getId());
@@ -63,20 +68,20 @@ public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 			invItem.setUom(orderItem.getUom());
 
 			invoice.addToLines(invItem);
-			for(SalesOrderItemTax soTax : orderItem.getItemTaxes()) {
+			for (SalesOrderItemTax soTax : orderItem.getItemTaxes()) {
 				SalesInvoiceItemTax siTax = new SalesInvoiceItemTax();
 				siTax.setBaseAmount(soTax.getBaseAmount());
 				siTax.setTax(soTax.getTax());
 				siTax.setTaxAmount(soTax.getTaxAmount());
 				siTax.setSalesInvoiceItem(invItem);
 				invItem.addToItemTaxes(siTax);
-			}			
+			}
 		}
 
 		ISalesInvoiceService srv = (ISalesInvoiceService) this
 				.findEntityService(SalesInvoice.class);
 		srv.insert(invoice);
-		
+
 		order.setInvoiced(true);
 		srv.getEntityManager().merge(order);
 		return invoice;

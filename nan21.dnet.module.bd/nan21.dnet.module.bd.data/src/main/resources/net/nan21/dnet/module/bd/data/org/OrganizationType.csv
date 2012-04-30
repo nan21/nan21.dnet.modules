@@ -1,6 +1,6 @@
-"name";"virtualEntity";"legalEntity";"external";"inventory";"carrier";"accountingEnabled";"active"
-"Company";"false";"true";"false";"false";"false";"true";"true"
-"Department";"false";"false";"false";"false";"false";"false";"true"
-"External carrier";"false";"false";"true";"true";"true";"false";"true"
-"Store";"false";"false";"false";"true";"false";"false";"true"
-"Warehouse";"false";"false";"false";"true";"false";"false";"true"
+"name";"virtualEntity";"legalEntity";"external";"inventory";"warehouse";"carrier";"active";"description"
+"Company";"false";"true";"false";"false";"false";"false";"true";
+"Department";"false";"false";"false";"false";"false";"false";"true";
+"External carrier";"false";"false";"true";"true";"false";"true";"true";
+"Store";"false";"false";"false";"true";"true";"false";"true";
+"Warehouse";"false";"false";"false";"true";"true";"false";"true";

@@ -38,7 +38,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.Assignable$Filter", {
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["name","userCode"])
 		.addChildrenTo("col2",["type","active"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

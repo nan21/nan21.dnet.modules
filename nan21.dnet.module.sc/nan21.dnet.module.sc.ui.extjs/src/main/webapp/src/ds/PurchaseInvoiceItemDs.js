@@ -22,6 +22,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceItemDs" ,{
 		{name:"unitPrice", type:"float", useNull:true},
 		{name:"netAmount", type:"float", useNull:true},
 		{name:"taxAmount", type:"float", useNull:true},
+		{name:"lineAmount", type:"float", useNull:true},
 		{name:"taxId", type:"int", useNull:true},
 		{name:"tax", type:"string"}
 	]
@@ -65,6 +66,9 @@ Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceItemDsFilte
 		{name:"taxAmount", type:"float", useNull:true},
 		{name:"taxAmount_From",type:"float", useNull:true},
 		{name:"taxAmount_To",type:"float", useNull:true},
+		{name:"lineAmount", type:"float", useNull:true},
+		{name:"lineAmount_From",type:"float", useNull:true},
+		{name:"lineAmount_To",type:"float", useNull:true},
 		{name:"taxId", type:"int", useNull:true},
 		{name:"taxId_From",type:"int", useNull:true},
 		{name:"taxId_To",type:"int", useNull:true},

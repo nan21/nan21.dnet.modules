@@ -6,14 +6,14 @@
 package net.nan21.dnet.module.sd.order.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.bd.fin.business.service.IFinDocTypeService;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
+import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.mm.inventory.business.service.IInvTransactionTypeService;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
+import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.Contact;
+import net.nan21.dnet.module.md.tx.inventory.business.service.IInvTransactionTypeService;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs;
@@ -35,16 +35,6 @@ public class SalesDeliveryDsConv extends
             }
         } else {
             this.lookup_customer_BusinessPartner(ds, e);
-        }
-
-        if (ds.getDocTypeId() != null) {
-            if (e.getDocType() == null
-                    || !e.getDocType().getId().equals(ds.getDocTypeId())) {
-                e.setDocType((FinDocType) this.em.find(FinDocType.class,
-                        ds.getDocTypeId()));
-            }
-        } else {
-            this.lookup_docType_FinDocType(ds, e);
         }
 
         if (ds.getTransactionTypeId() != null) {
@@ -79,6 +69,24 @@ public class SalesDeliveryDsConv extends
             this.lookup_fromInventory_Organization(ds, e);
         }
 
+        if (ds.getDeliveryLocationId() != null) {
+            if (e.getDeliveryLocation() == null
+                    || !e.getDeliveryLocation().getId()
+                            .equals(ds.getDeliveryLocationId())) {
+                e.setDeliveryLocation((Location) this.em.find(Location.class,
+                        ds.getDeliveryLocationId()));
+            }
+        }
+
+        if (ds.getDeliveryContactId() != null) {
+            if (e.getDeliveryContact() == null
+                    || !e.getDeliveryContact().getId()
+                            .equals(ds.getDeliveryContactId())) {
+                e.setDeliveryContact((Contact) this.em.find(Contact.class,
+                        ds.getDeliveryContactId()));
+            }
+        }
+
     }
 
     protected void lookup_customer_BusinessPartner(SalesDeliveryDs ds,
@@ -97,25 +105,6 @@ public class SalesDeliveryDsConv extends
 
         } else {
             e.setCustomer(null);
-        }
-    }
-
-    protected void lookup_docType_FinDocType(SalesDeliveryDs ds,
-            SalesInventoryTransaction e) throws Exception {
-        if (ds.getDocType() != null && !ds.getDocType().equals("")) {
-            FinDocType x = null;
-            try {
-                x = ((IFinDocTypeService) findEntityService(FinDocType.class))
-                        .findByName(ds.getDocType());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `FinDocType` reference:  `docType` = "
-                                + ds.getDocType() + "  ");
-            }
-            e.setDocType(x);
-
-        } else {
-            e.setDocType(null);
         }
     }
 

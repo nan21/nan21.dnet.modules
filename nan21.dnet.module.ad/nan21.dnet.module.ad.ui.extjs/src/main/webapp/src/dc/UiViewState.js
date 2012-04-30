@@ -38,7 +38,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.UiViewState$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","createdBy"])
 		.addChildrenTo("col2",["cmpType","cmp"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

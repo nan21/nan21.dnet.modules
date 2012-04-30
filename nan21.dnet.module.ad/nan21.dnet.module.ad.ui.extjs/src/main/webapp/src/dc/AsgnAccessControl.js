@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AsgnAccessControl$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["accessControl","dsName"])
 		.addChildrenTo("col2",["queryAllowed","updateAllowed"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

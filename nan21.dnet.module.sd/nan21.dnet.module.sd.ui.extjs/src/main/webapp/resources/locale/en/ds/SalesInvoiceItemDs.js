@@ -12,6 +12,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemDs$Trl", {
 	unitPrice__lbl : "Unit Price",
 	netAmount__lbl : "Net Amount",
 	taxAmount__lbl : "Tax Amount",
+	lineAmount__lbl : "Line Amount",
 	taxId__lbl : "Tax Id",
 	tax__lbl : "Tax",
 		

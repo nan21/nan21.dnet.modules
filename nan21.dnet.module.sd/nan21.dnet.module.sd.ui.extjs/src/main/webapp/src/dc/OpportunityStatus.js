@@ -34,7 +34,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.OpportunityStatus$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["name","active"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

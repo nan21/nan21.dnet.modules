@@ -38,7 +38,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.CurrencyXRate$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["sourceCode","targetCode"])
 		.addChildrenTo("col2",["providerCode","validAt"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

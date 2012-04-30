@@ -169,10 +169,10 @@ public class WfDefNode extends AbstractType {
 
         super.aboutToInsert(event);
 
-        if (this.startWithPrevious == null) {
+        if (this.getStartWithPrevious() == null) {
             event.updateAttributeWithObject("startWithPrevious", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

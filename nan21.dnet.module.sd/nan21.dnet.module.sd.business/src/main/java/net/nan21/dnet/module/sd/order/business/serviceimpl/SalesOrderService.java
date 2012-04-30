@@ -9,13 +9,14 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.Contact;
+import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 
@@ -24,7 +25,7 @@ import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import net.nan21.dnet.module.sd._businessdelegates.order.SalesOrderToInvoiceBD;
 import net.nan21.dnet.module.sd._businessdelegates.order.SalesOrderToDeliveryBD;
 import java.util.Date;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType;
 
 public class SalesOrderService extends AbstractEntityService<SalesOrder>
         implements ISalesOrderService {
@@ -43,7 +44,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
         return SalesOrder.class;
     }
 
-    public List<SalesOrder> findByDocType(FinDocType docType) {
+    public List<SalesOrder> findByDocType(TxDocType docType) {
         return this.findByDocTypeId(docType.getId());
     }
 
@@ -202,6 +203,20 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
                 .getResultList();
     }
 
+    public List<SalesOrder> findByBillToContact(Contact billToContact) {
+        return this.findByBillToContactId(billToContact.getId());
+    }
+
+    public List<SalesOrder> findByBillToContactId(Long billToContactId) {
+        return (List<SalesOrder>) this.em
+                .createQuery(
+                        "select e from SalesOrder e where e.clientId = :pClientId and e.billToContact.id = :pBillToContactId",
+                        SalesOrder.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pBillToContactId", billToContactId)
+                .getResultList();
+    }
+
     public List<SalesOrder> findByShipTo(BusinessPartner shipTo) {
         return this.findByShipToId(shipTo.getId());
     }
@@ -229,6 +244,20 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
                 .getResultList();
     }
 
+    public List<SalesOrder> findByShipToContact(Contact shipToContact) {
+        return this.findByShipToContactId(shipToContact.getId());
+    }
+
+    public List<SalesOrder> findByShipToContactId(Long shipToContactId) {
+        return (List<SalesOrder>) this.em
+                .createQuery(
+                        "select e from SalesOrder e where e.clientId = :pClientId and e.shipToContact.id = :pShipToContactId",
+                        SalesOrder.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pShipToContactId", shipToContactId)
+                .getResultList();
+    }
+
     public List<SalesOrder> findByLines(SalesOrderItem lines) {
         return this.findByLinesId(lines.getId());
     }
@@ -242,14 +271,14 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
                 .setParameter("pLinesId", linesId).getResultList();
     }
 
-    public void doGenerateInvoice(SalesOrder salesOrder, FinDocType invDocType)
+    public void doGenerateInvoice(SalesOrder salesOrder, TxDocType invDocType)
             throws Exception {
         this.getBusinessDelegate(SalesOrderToInvoiceBD.class).generateInvoice(
                 salesOrder, invDocType);
     }
 
     public void doGenerateDelivery(SalesOrder salesOrder,
-            FinDocType deliveryDocType, InvTransactionType delivTxType,
+            TxDocType deliveryDocType, InvTransactionType delivTxType,
             Date delivEventDate) throws Exception {
         this.getBusinessDelegate(SalesOrderToDeliveryBD.class)
                 .generateDelivery(salesOrder, deliveryDocType, delivTxType,

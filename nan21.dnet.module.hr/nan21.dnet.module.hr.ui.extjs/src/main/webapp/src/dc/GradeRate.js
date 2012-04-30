@@ -37,7 +37,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name"])
 		.addChildrenTo("col2",["currencyCode","active"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

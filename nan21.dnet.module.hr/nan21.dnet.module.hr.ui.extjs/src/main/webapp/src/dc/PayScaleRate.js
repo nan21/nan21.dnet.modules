@@ -35,7 +35,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.PayScaleRate$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["name","payScaleCode","currencyCode"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

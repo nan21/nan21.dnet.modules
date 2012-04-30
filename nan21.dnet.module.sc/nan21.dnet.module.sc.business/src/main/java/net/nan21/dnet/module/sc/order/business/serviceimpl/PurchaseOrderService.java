@@ -9,12 +9,12 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sc.order.business.service.IPurchaseOrderService;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderItem;
 
@@ -38,7 +38,7 @@ public class PurchaseOrderService extends AbstractEntityService<PurchaseOrder>
         return PurchaseOrder.class;
     }
 
-    public List<PurchaseOrder> findByDocType(FinDocType docType) {
+    public List<PurchaseOrder> findByDocType(TxDocType docType) {
         return this.findByDocTypeId(docType.getId());
     }
 

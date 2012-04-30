@@ -9,19 +9,20 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.bp.md.domain.entity.Contact;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.Contact;
+import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
+import net.nan21.dnet.module.sd._businessdelegates.invoice.SalesInvoiceToAccDocBD;
 
 public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
         implements ISalesInvoiceService {
@@ -93,7 +94,7 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
                 .setParameter("pPaymentTermId", paymentTermId).getResultList();
     }
 
-    public List<SalesInvoice> findByDocType(FinDocType docType) {
+    public List<SalesInvoice> findByDocType(TxDocType docType) {
         return this.findByDocTypeId(docType.getId());
     }
 
@@ -184,6 +185,11 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
                         SalesInvoice.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLinesId", linesId).getResultList();
+    }
+
+    public void doPost(SalesInvoice salesInvoice) throws Exception {
+        this.getBusinessDelegate(SalesInvoiceToAccDocBD.class).postInvoice(
+                salesInvoice);
     }
 
 }

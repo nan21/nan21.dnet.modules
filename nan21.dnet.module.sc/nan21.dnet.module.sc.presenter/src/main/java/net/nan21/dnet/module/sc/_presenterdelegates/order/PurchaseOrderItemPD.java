@@ -1,8 +1,8 @@
 package net.nan21.dnet.module.sc._presenterdelegates.order;
 
 import net.nan21.dnet.core.presenter.service.AbstractDsDelegate;
-import net.nan21.dnet.module.mm.price.business.service.IProductPriceService;
-import net.nan21.dnet.module.mm.price.domain.entity.ProductPrice;
+import net.nan21.dnet.module.md.mm.price.business.service.IProductPriceService;
+import net.nan21.dnet.module.md.mm.price.domain.entity.ProductPrice;
 import net.nan21.dnet.module.sc.order.business.service.IPurchaseOrderService;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 import net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderItemDs;

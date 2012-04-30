@@ -1,5 +1,5 @@
 
-Ext.define("net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodLovDs$Trl", {  	  	
+Ext.define("net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodLovDs$Trl", {  	  	
 		 
 	id__lbl :"ID"
 });

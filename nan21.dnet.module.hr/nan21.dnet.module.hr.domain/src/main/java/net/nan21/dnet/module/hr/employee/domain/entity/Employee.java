@@ -479,13 +479,13 @@ public class Employee extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.hasDisability == null) {
+        if (this.getHasDisability() == null) {
             event.updateAttributeWithObject("hasDisability", false);
         }
-        if (this.assignToPosition == null) {
+        if (this.getAssignToPosition() == null) {
             event.updateAttributeWithObject("assignToPosition", false);
         }
-        if (this.code == null || this.code.equals("")) {
+        if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "E-" + this.getId());
         }
     }

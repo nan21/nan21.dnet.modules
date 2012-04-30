@@ -37,7 +37,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["name","code","value"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

@@ -1,0 +1,4 @@
+"name";"description";"delivery";"externalCourier";"active"
+"Courier";"Deliver by external courier";"true";"true";"true"
+"Delivery";"Deliver by internal distribution";"true";"false";"true"
+"Pickup";"Direct pickup from warehouse";"false";"false";"true"

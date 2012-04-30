@@ -5,12 +5,12 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER1" 
 				baseTableName="SD_SALES_ORDER" baseColumnNames="DOCTYPE_ID"  
-				referencedTableName="BD_FINDOC_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="BD_TXDOC_TYPE"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER2" 
 				baseTableName="SD_SALES_ORDER" baseColumnNames="CUSTOMER_ID"  
-				referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+				referencedTableName="MD_BP"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER3" 
@@ -20,7 +20,7 @@
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER4" 
 				baseTableName="SD_SALES_ORDER" baseColumnNames="PRICELIST_ID"  
-				referencedTableName="MM_PRICE_LIST"  referencedColumnNames="ID" />
+				referencedTableName="MD_PRICE_LIST"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER5" 
@@ -45,7 +45,7 @@
 	<changeSet author="amathe" id="FK-9">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER9" 
 				baseTableName="SD_SALES_ORDER" baseColumnNames="DELIVERYMETHOD_ID"  
-				referencedTableName="BP_DELIVERY_METHOD"  referencedColumnNames="ID" />
+				referencedTableName="BD_DELIVERY_METHOD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-10">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER10" 
@@ -55,7 +55,7 @@
 	<changeSet author="amathe" id="FK-11">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER11" 
 				baseTableName="SD_SALES_ORDER" baseColumnNames="BILLTO_ID"  
-				referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+				referencedTableName="MD_BP"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-12">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER12" 
@@ -64,12 +64,22 @@
 	</changeSet>	
 	<changeSet author="amathe" id="FK-13">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER13" 
-				baseTableName="SD_SALES_ORDER" baseColumnNames="SHIPTO_ID"  
-				referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+				baseTableName="SD_SALES_ORDER" baseColumnNames="BILLTOCONTACT_ID"  
+				referencedTableName="MD_BP_CONTACT"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-14">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER14" 
+				baseTableName="SD_SALES_ORDER" baseColumnNames="SHIPTO_ID"  
+				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-15">
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER15" 
 				baseTableName="SD_SALES_ORDER" baseColumnNames="SHIPTOLOCATION_ID"  
 				referencedTableName="BD_GEO_LOCATION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-16">
+		<addForeignKeyConstraint constraintName="FK_SD_SALES_ORDER16" 
+				baseTableName="SD_SALES_ORDER" baseColumnNames="SHIPTOCONTACT_ID"  
+				referencedTableName="MD_BP_CONTACT"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

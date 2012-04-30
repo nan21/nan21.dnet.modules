@@ -18,8 +18,6 @@ Ext.define("net.nan21.dnet.module.bd.acc.ds.model.AccountDs" ,{
 		{name:"entityFQN", type:"string"},
 		{name:"accSchemaId", type:"int", useNull:true},
 		{name:"accSchema", type:"string"},
-		{name:"accGroupId", type:"int", useNull:true},
-		{name:"accGroup", type:"string"},
 		{name:"sign", type:"string"},
 		{name:"summary", type:"boolean"}
 	],
@@ -52,10 +50,6 @@ Ext.define("net.nan21.dnet.module.bd.acc.ds.model.AccountDsFilter" ,{
 		{name:"accSchemaId_From",type:"int", useNull:true},
 		{name:"accSchemaId_To",type:"int", useNull:true},
 		{name:"accSchema", type:"string"},
-		{name:"accGroupId", type:"int", useNull:true},
-		{name:"accGroupId_From",type:"int", useNull:true},
-		{name:"accGroupId_To",type:"int", useNull:true},
-		{name:"accGroup", type:"string"},
 		{name:"sign", type:"string"},
 		{name:"summary", type:"boolean", useNull:true}
 	] 

@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter"
 	  ,	    {layout:"anchor", border:false 
 	      ,items:[ this._elems_.get("active")] }
 ];
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

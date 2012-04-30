@@ -29,29 +29,6 @@
 		<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccSchemaLovDs" />
 	</bean>
    
- 	<bean id="AccountGroupDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.acc.ds.filter.AccountGroupDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.acc.ds.converter.AccountGroupDsConv" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="AccountGroup" />
-		<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupDs" />
-	</bean>
-   
- 	<bean id="AccountGroupLovDsService" scope="prototype"
-	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup" />
-	</bean>
-	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="AccountGroupLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountGroupLovDs" />
-	</bean>
-   
  	<bean id="AccountDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.acc.ds.model.AccountDs" />

@@ -32,6 +32,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem$CtxList", {
 		.addNumberColumn({ name:"netAmount", dataIndex:"netAmount",decimals:2 })  
 		.addTextColumn({ name:"tax", dataIndex:"tax", hidden:true,width:120 })   	
 		.addNumberColumn({ name:"taxAmount", dataIndex:"taxAmount",decimals:2 })  
+		.addNumberColumn({ name:"lineAmount", dataIndex:"lineAmount",decimals:2 })  
 		.addNumberColumn({ name:"salesInvoiceId", dataIndex:"salesInvoiceId", hidden:true,format:"0",width:70 })  
 		.addNumberColumn({ name:"productId", dataIndex:"productId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"taxId", dataIndex:"taxId", hidden:true,width:70 })   	
@@ -50,7 +51,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem$EditForm", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"productCode", xtype:"net.nan21.dnet.module.mm.md.lovs.ProductsWithUom", dataIndex:"productCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "productId"} ,{lovField:"name", dsField: "productName"} ,{lovField:"uom", dsField: "uomCode"} ,{lovField:"uomId", dsField: "uomId"} ]  })
+		.addLov({ name:"productCode", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductsWithUom", dataIndex:"productCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "productId"} ,{lovField:"name", dsField: "productName"} ,{lovField:"uom", dsField: "uomCode"} ,{lovField:"uomId", dsField: "uomId"} ]  })
 		.addHiddenField({ name:"productId", dataIndex:"productId",listeners:{change:{scope:this, fn:this.onProductChange}}  })
 		.addDisplayFieldText({ name:"productName", dataIndex:"productName"  })
 		.addNumberField({ name:"quantity", dataIndex:"quantity",anchor:"-20" ,listeners:{change:{scope:this, fn:this.calcNetAmount}} , style: "text-align:right;" })
@@ -58,6 +59,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem$EditForm", {
 		.addNumberField({ name:"unitPrice", dataIndex:"unitPrice",anchor:"-20" ,allowBlank:false,listeners:{change:{scope:this, fn:this.calcNetAmount}} , style: "text-align:right;" })
 		.addDisplayFieldNumber({name:"netAmount", dataIndex:"netAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addDisplayFieldNumber({name:"taxAmount", dataIndex:"taxAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
+		.addDisplayFieldNumber({name:"lineAmount", dataIndex:"lineAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addLov({ name:"tax", xtype:"net.nan21.dnet.module.bd.fin.lovs.TaxApplicables", dataIndex:"tax",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "taxId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:400})     
@@ -73,7 +75,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoiceItem$EditForm", {
 		.addChildrenTo("col1",["productId","productCode","productName"])
 		.addChildrenTo("row2",["col2" ,"col3" ])
 		.addChildrenTo("col2",["quantity","uomCode","unitPrice","tax"])
-		.addChildrenTo("col3",["netAmount","taxAmount"])
+		.addChildrenTo("col3",["netAmount","taxAmount","lineAmount"])
 ;
 	}	
 	,onProductChange: function() {	

@@ -255,16 +255,16 @@ public class Location extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-        if (this.forShipping == null) {
+        if (this.getForShipping() == null) {
             event.updateAttributeWithObject("forShipping", false);
         }
-        if (this.forBilling == null) {
+        if (this.getForBilling() == null) {
             event.updateAttributeWithObject("forBilling", false);
         }
-        if (this.forMailing == null) {
+        if (this.getForMailing() == null) {
             event.updateAttributeWithObject("forMailing", false);
         }
     }

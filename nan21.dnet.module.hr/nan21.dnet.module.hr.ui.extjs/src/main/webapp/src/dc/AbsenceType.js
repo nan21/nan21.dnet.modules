@@ -34,7 +34,7 @@ Ext.define("net.nan21.dnet.module.hr.time.dc.AbsenceType$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["name","category"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

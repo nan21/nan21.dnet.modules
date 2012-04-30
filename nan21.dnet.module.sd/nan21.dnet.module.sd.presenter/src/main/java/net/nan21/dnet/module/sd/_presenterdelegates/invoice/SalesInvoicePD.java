@@ -29,8 +29,7 @@ public class SalesInvoicePD extends AbstractDsDelegate {
 		ISalesInvoiceService srv = ((ISalesInvoiceService) this
 				.findEntityService(SalesInvoice.class));
 		SalesInvoice invoice = srv.findById(ds.getId());
-		invoice.setPosted(true);
-		srv.update(invoice);
+		srv.doPost(invoice);
 		ds.setPosted(true);
 	}
 

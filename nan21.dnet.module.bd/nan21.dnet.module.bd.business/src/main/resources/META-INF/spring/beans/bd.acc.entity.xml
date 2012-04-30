@@ -10,9 +10,6 @@
  	<bean id="AccSchemaService" scope="prototype"
 	  		class="net.nan21.dnet.module.bd.acc.business.serviceimpl.AccSchemaService"  />  
  
- 	<bean id="AccountGroupService" scope="prototype"
-	  		class="net.nan21.dnet.module.bd.acc.business.serviceimpl.AccountGroupService"  />  
- 
  	<bean id="AccountService" scope="prototype"
 	  		class="net.nan21.dnet.module.bd.acc.business.serviceimpl.AccountService"  />  
    

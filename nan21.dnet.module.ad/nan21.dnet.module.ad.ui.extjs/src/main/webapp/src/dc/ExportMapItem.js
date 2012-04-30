@@ -38,7 +38,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["exportMap","csvExport"])
 		.addChildrenTo("col2",["active"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

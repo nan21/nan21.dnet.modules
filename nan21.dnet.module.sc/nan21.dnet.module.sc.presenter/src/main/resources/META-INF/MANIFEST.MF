@@ -25,13 +25,12 @@ Import-Bundle: nan21.dnet.core.presenter;version="[1.0.0.M9,1.0.0.M9]"
  rsion="[2.1,2.5)",org.eclipse.persistence.core;version="[2.0,2.5)",na
  n21.dnet.module.sc.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.mo
  dule.ad.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.dom
- ain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bp.domain;version
- ="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.mm.domain;version="[1.0.0.M9
- ,1.0.0.M9]",nan21.dnet.module.ad.business.api;version="[1.0.0.M9,1.0.
- 0.M9]",nan21.dnet.module.bd.business.api;version="[1.0.0.M9,1.0.0.M9]
- ",nan21.dnet.module.bp.business.api;version="[1.0.0.M9,1.0.0.M9]",nan
- 21.dnet.module.mm.business.api;version="[1.0.0.M9,1.0.0.M9]",nan21.dn
- et.module.sc.business.api;version="[1.0.0.M9,1.0.0.M9]"
+ ain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.md.domain;version
+ ="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.ad.business.api;version="[1.
+ 0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.business.api;version="[1.0.0.M
+ 9,1.0.0.M9]",nan21.dnet.module.md.business.api;version="[1.0.0.M9,1.0
+ .0.M9]",nan21.dnet.module.sc.business.api;version="[1.0.0.M9,1.0.0.M9
+ ]"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0.M9
 Tool: Bundlor 1.0.0.RELEASE
@@ -48,17 +47,17 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  an21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.module.bd.f
  in.business.service,net.nan21.dnet.module.bd.fin.domain.entity,net.na
  n21.dnet.module.bd.org.business.service,net.nan21.dnet.module.bd.org.
- domain.entity,net.nan21.dnet.module.bd.uom.business.service,net.nan21
- .dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.bp.base.busin
- ess.service,net.nan21.dnet.module.bp.base.domain.entity,net.nan21.dne
- t.module.bp.md.business.service,net.nan21.dnet.module.bp.md.domain.en
- tity,net.nan21.dnet.module.mm.inventory.business.service,net.nan21.dn
- et.module.mm.inventory.domain.entity,net.nan21.dnet.module.mm.md.busi
- ness.service,net.nan21.dnet.module.mm.md.domain.entity,net.nan21.dnet
- .module.mm.price.business.service,net.nan21.dnet.module.mm.price.doma
- in.entity,net.nan21.dnet.module.sc.invoice.business.service,net.nan21
- .dnet.module.sc.invoice.domain.entity,net.nan21.dnet.module.sc.order.
- business.service,net.nan21.dnet.module.sc.order.domain.entity,org.spr
- ingframework.context.weaving;version="[3.0,3.1)",org.springframework.
- web.multipart;version="[3.0,3.1)"
+ domain.entity,net.nan21.dnet.module.bd.tx.business.service,net.nan21.
+ dnet.module.bd.tx.domain.entity,net.nan21.dnet.module.bd.uom.business
+ .service,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.mo
+ dule.md.bp.business.service,net.nan21.dnet.module.md.bp.domain.entity
+ ,net.nan21.dnet.module.md.mm.price.business.service,net.nan21.dnet.mo
+ dule.md.mm.price.domain.entity,net.nan21.dnet.module.md.mm.prod.busin
+ ess.service,net.nan21.dnet.module.md.mm.prod.domain.entity,net.nan21.
+ dnet.module.md.tx.inventory.business.service,net.nan21.dnet.module.md
+ .tx.inventory.domain.entity,net.nan21.dnet.module.sc.invoice.business
+ .service,net.nan21.dnet.module.sc.invoice.domain.entity,net.nan21.dne
+ t.module.sc.order.business.service,net.nan21.dnet.module.sc.order.dom
+ ain.entity,org.springframework.context.weaving;version="[3.0,3.1)",or
+ g.springframework.web.multipart;version="[3.0,3.1)"
 

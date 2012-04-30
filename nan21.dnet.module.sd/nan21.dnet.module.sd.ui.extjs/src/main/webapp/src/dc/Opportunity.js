@@ -24,7 +24,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Filter", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addLov({ name:"account", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartnersName", dataIndex:"account",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "accountId"} ]  })
+		.addLov({ name:"account", xtype:"net.nan21.dnet.module.md.bp.lovs.BusinessPartnersName", dataIndex:"account",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "accountId"} ]  })
 		.addLov({ name:"status", xtype:"net.nan21.dnet.module.sd.opportunity.lovs.OpportunityStatuses", dataIndex:"status",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
 		.addLov({ name:"priority", xtype:"net.nan21.dnet.module.sd.opportunity.lovs.OpportunityPriorities", dataIndex:"priority",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
 		.addLov({ name:"salesStage", xtype:"net.nan21.dnet.module.sd.opportunity.lovs.OpportunityStages", dataIndex:"salesStage",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "salesStageId"} ]  })
@@ -42,7 +42,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","account","assignedTo","status","priority"])
 		.addChildrenTo("col2",["salesStage","leadSource","resultReason"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	
@@ -86,7 +86,7 @@ Ext.define("net.nan21.dnet.module.sd.opportunity.dc.Opportunity$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addTextArea({ name:"description", dataIndex:"description",height:80,anchor:"-20"   })
-		.addLov({ name:"account", xtype:"net.nan21.dnet.module.bp.md.lovs.BusinessPartnersName", dataIndex:"account",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "accountId"} ]  })
+		.addLov({ name:"account", xtype:"net.nan21.dnet.module.md.bp.lovs.BusinessPartnersName", dataIndex:"account",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "accountId"} ]  })
 		.addLov({ name:"status", xtype:"net.nan21.dnet.module.sd.opportunity.lovs.OpportunityStatuses", dataIndex:"status",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
 		.addLov({ name:"priority", xtype:"net.nan21.dnet.module.sd.opportunity.lovs.OpportunityPriorities", dataIndex:"priority",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
 		.addLov({ name:"salesStage", xtype:"net.nan21.dnet.module.sd.opportunity.lovs.OpportunityStages", dataIndex:"salesStage",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "salesStageId"} ]  })

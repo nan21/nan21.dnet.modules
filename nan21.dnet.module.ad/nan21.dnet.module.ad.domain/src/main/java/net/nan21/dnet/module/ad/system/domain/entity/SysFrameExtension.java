@@ -156,10 +156,10 @@ public class SysFrameExtension extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.relativePath == null) {
+        if (this.getRelativePath() == null) {
             event.updateAttributeWithObject("relativePath", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

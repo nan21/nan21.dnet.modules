@@ -23,7 +23,7 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseInventoryTransaction$Filte
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"supplier",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
+		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.md.bp.lovs.CustomersName", dataIndex:"supplier",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
 		.addTextField({ name:"transactionType", dataIndex:"transactionType",anchor:"-20",maxLength:255  })
 		.addLov({ name:"toInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"toInventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "toInventoryId"} ]  })
 		.addLov({ name:"fromInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"fromInventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "fromInventoryId"} ]  })
@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseInventoryTransaction$Filte
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["supplier"])
 		.addChildrenTo("col2",["transactionType","fromInventory","toInventory"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	
@@ -76,11 +76,11 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseInventoryTransaction$Edit"
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.bp.md.lovs.CustomersName", dataIndex:"supplier",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
+		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.md.bp.lovs.CustomersName", dataIndex:"supplier",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
 		.addLov({ name:"fromInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"fromInventory",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "fromInventoryId"} ]  })
 		.addLov({ name:"toInventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"toInventory",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "toInventoryId"} ]  })
 		.addDateField({ name:"eventDate", dataIndex:"eventDate",anchor:"-20" })
-		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.mm.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ]  })
+		.addLov({ name:"transactionType", xtype:"net.nan21.dnet.module.md.tx.inventory.lovs.InvTransactionTypes", dataIndex:"transactionType",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "transactionTypeId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" , width:300})     

@@ -1,6 +1,6 @@
  
    	 
-Ext.define("net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodDs" ,{
+Ext.define("net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"name", type:"string"},
@@ -22,7 +22,7 @@ Ext.define("net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodDs" ,{
 	
 });
 
-Ext.define("net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodDsFilter" ,{
+Ext.define("net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"name", type:"string"},
@@ -42,7 +42,7 @@ Ext.define("net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodDsFilter" ,{
 	] 
 });
 	
-Ext.define("net.nan21.dnet.module.bd.fin.ds.param.PaymentMethodDsParam", {
+Ext.define("net.nan21.dnet.module.bd.tx.ds.param.PaymentMethodDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 
 	]

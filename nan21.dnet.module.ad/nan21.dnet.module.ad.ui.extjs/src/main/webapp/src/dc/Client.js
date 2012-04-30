@@ -37,7 +37,7 @@ Ext.define("net.nan21.dnet.module.ad.client.dc.Client$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["systemClient"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

@@ -1,7 +1,7 @@
 
-Ext.define("net.nan21.dnet.module.bd.fin.lovs.PaymentTerm", {
+Ext.define("net.nan21.dnet.module.bd.tx.lovs.PaymentTerm", {
 	extend: "dnet.core.lov.AbstractCombo",
-	alias: "widget.net.nan21.dnet.module.bd.fin.lovs.PaymentTerm",
+	alias: "widget.net.nan21.dnet.module.bd.tx.lovs.PaymentTerm",
  
 	displayField:"name",
 	listConfig: {		
@@ -10,8 +10,8 @@ Ext.define("net.nan21.dnet.module.bd.fin.lovs.PaymentTerm", {
 		},
 		width:250
 	},		 
-	_editDialog_:{custom:false, name: "net.nan21.dnet.module.bd.fin.frame.PaymentBaseData_UI",bundle:"nan21.dnet.module.bd.ui.extjs",tocElement: "canvasPayTerm"},
-	recordModel: "net.nan21.dnet.module.bd.fin.ds.model.PaymentTermLovDs",
+	_editDialog_:{custom:false, name: "net.nan21.dnet.module.bd.tx.frame.TxBaseData_UI",bundle:"nan21.dnet.module.bd.ui.extjs",tocElement: "canvasPayTerm"},
+	recordModel: "net.nan21.dnet.module.bd.tx.ds.model.PaymentTermLovDs",
 	_dataProviderName_:"PaymentTermLovDs"	 		
 	
 }); 

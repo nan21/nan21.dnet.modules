@@ -29,27 +29,27 @@
 		<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemLovDs" />
 	</bean>
    
- 	<bean id="ClassificationCodeDsService" scope="prototype"
+ 	<bean id="ClassificationItemDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationCodeDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.standards.ds.filter.ClassificationCodeDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.bd.standards.ds.converter.ClassificationCodeDsConv" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationItemDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.standards.ds.filter.ClassificationItemDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.standards.domain.entity.ClassificationItem" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.standards.ds.converter.ClassificationItemDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ClassificationCode" />
-		<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationCodeDs" />
+		<property name="name" value="ClassificationItem" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationItemDs" />
 	</bean>
    
- 	<bean id="ClassificationCodeLovDsService" scope="prototype"
+ 	<bean id="ClassificationItemLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationCodeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationCodeLovDs" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationItemLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationItemLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.standards.domain.entity.ClassificationItem" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ClassificationCodeLov" />
-		<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationCodeLovDs" />
+		<property name="name" value="ClassificationItemLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationItemLovDs" />
 	</bean>
       
 </beans>

@@ -8,7 +8,8 @@ package net.nan21.dnet.module.sd.order.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.Contact;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
 import net.nan21.dnet.module.sd.order.domain.entity.SalesInventoryTransaction;
@@ -26,6 +27,12 @@ public interface ISalesInventoryTransactionService extends
 
     public List<SalesInventoryTransaction> findByDeliveryLocationId(
             Long deliveryLocationId);
+
+    public List<SalesInventoryTransaction> findByDeliveryContact(
+            Contact deliveryContact);
+
+    public List<SalesInventoryTransaction> findByDeliveryContactId(
+            Long deliveryContactId);
 
     public List<SalesInventoryTransaction> findBySalesOrder(
             SalesOrder salesOrder);

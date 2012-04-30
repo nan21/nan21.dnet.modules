@@ -45,12 +45,16 @@ public class SalesOrderDs extends AbstractAuditableDs<SalesOrder> {
     public static final String fBILLTO = "billTo";
     public static final String fBILLTOLOCATIONID = "billToLocationId";
     public static final String fBILLTOLOCATION = "billToLocation";
+    public static final String fBILLTOCONTACTID = "billToContactId";
+    public static final String fBILLTOCONTACT = "billToContact";
     public static final String fSHIPTOID = "shipToId";
     public static final String fSHIPTOUUID = "shipToUuid";
     public static final String fSHIPTOCODE = "shipToCode";
     public static final String fSHIPTO = "shipTo";
     public static final String fSHIPTOLOCATIONID = "shipToLocationId";
     public static final String fSHIPTOLOCATION = "shipToLocation";
+    public static final String fSHIPTOCONTACTID = "shipToContactId";
+    public static final String fSHIPTOCONTACT = "shipToContact";
     public static final String fCARRIERID = "carrierId";
     public static final String fCARRIER = "carrier";
     public static final String fTOTALAMOUNT = "totalAmount";
@@ -152,6 +156,12 @@ public class SalesOrderDs extends AbstractAuditableDs<SalesOrder> {
     @DsField(join = "left", fetch = false, path = "billToLocation.asString")
     private String billToLocation;
 
+    @DsField(join = "left", path = "billToContact.id")
+    private Long billToContactId;
+
+    @DsField(join = "left", fetch = false, path = "billToContact.name")
+    private String billToContact;
+
     @DsField(join = "left", path = "shipTo.id")
     private Long shipToId;
 
@@ -169,6 +179,12 @@ public class SalesOrderDs extends AbstractAuditableDs<SalesOrder> {
 
     @DsField(join = "left", fetch = false, path = "shipToLocation.asString")
     private String shipToLocation;
+
+    @DsField(join = "left", path = "shipToContact.id")
+    private Long shipToContactId;
+
+    @DsField(join = "left", fetch = false, path = "shipToContact.name")
+    private String shipToContact;
 
     @DsField(join = "left", path = "carrier.id")
     private Long carrierId;
@@ -448,6 +464,22 @@ public class SalesOrderDs extends AbstractAuditableDs<SalesOrder> {
         this.billToLocation = billToLocation;
     }
 
+    public Long getBillToContactId() {
+        return this.billToContactId;
+    }
+
+    public void setBillToContactId(Long billToContactId) {
+        this.billToContactId = billToContactId;
+    }
+
+    public String getBillToContact() {
+        return this.billToContact;
+    }
+
+    public void setBillToContact(String billToContact) {
+        this.billToContact = billToContact;
+    }
+
     public Long getShipToId() {
         return this.shipToId;
     }
@@ -494,6 +526,22 @@ public class SalesOrderDs extends AbstractAuditableDs<SalesOrder> {
 
     public void setShipToLocation(String shipToLocation) {
         this.shipToLocation = shipToLocation;
+    }
+
+    public Long getShipToContactId() {
+        return this.shipToContactId;
+    }
+
+    public void setShipToContactId(Long shipToContactId) {
+        this.shipToContactId = shipToContactId;
+    }
+
+    public String getShipToContact() {
+        return this.shipToContact;
+    }
+
+    public void setShipToContact(String shipToContact) {
+        this.shipToContact = shipToContact;
     }
 
     public Long getCarrierId() {

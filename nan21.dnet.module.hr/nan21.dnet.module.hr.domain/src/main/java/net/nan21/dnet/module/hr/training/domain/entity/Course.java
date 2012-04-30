@@ -138,10 +138,10 @@ public class Course extends AbstractTypeWithCode {
 
         super.aboutToInsert(event);
 
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-        if (this.code == null || this.code.equals("")) {
+        if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "CRS-" + this.getId());
         }
     }

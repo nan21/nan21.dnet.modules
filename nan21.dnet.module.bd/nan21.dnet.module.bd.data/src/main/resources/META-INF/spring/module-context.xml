@@ -13,11 +13,11 @@
 	<bean id="initDataProviderFactory" class="net.nan21.dnet.core.api.setup.InitDataProviderFactory">
 		<property name="name" value="nan21.dnet.module.bd.data"></property>
 	</bean>
-	
 	<bean id="initDataProvider" scope="prototype"
 		class="net.nan21.dnet.core.api.setup.InitDataProvider">
 		<property name="list">
 			<list>
+				<!-- Currencies -->
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="110" />
 					<property name="name" value="bd-currency" />
@@ -30,7 +30,6 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/bd/data/currency/Currency.csv" />
 							</bean>
-							
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="20" />
 								<property name="dsName" value="CurrencyXRateProvider" />
@@ -38,11 +37,10 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/bd/data/currency/CurrencyXRateProvider.csv" />
 							</bean>
-							
 						</list>
 					</property>
 				</bean>
-				
+				<!-- Measuring units -->
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="120" />
 					<property name="name" value="bd-uom" />
@@ -55,7 +53,6 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/bd/data/uom/UomType.csv" />
 							</bean>
-							
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="20" />
 								<property name="dsName" value="Uom" />
@@ -66,7 +63,7 @@
 						</list>
 					</property>
 				</bean>
-				
+				<!-- Geography -->
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="130" />
 					<property name="name" value="bd-geo" />
@@ -79,7 +76,6 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/bd/data/geo/Country.csv" />
 							</bean>
-							
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="20" />
 								<property name="dsName" value="Region" />
@@ -87,12 +83,17 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/bd/data/geo/Region.csv" />
 							</bean>
-							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="50" />
+								<property name="dsName" value="Location" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/geo/Location.csv" />
+							</bean>
 						</list>
 					</property>
 				</bean>
-				
-				
+				<!-- Contact -->
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="140" />
 					<property name="name" value="bd-contact" />
@@ -108,8 +109,8 @@
 						</list>
 					</property>
 				</bean>
-				
-				 <bean class="net.nan21.dnet.core.api.setup.InitData">
+				<!-- Organization -->
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="150" />
 					<property name="name" value="bd-org" />
 					<property name="items">
@@ -121,7 +122,6 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/bd/data/org/OrganizationType.csv" />
 							</bean>
-							
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="20" />
 								<property name="dsName" value="Organization" />
@@ -132,8 +132,7 @@
 						</list>
 					</property>
 				</bean>
-				
-				
+				<!-- Classification standards -->
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="160" />
 					<property name="name" value="bd-standards" />
@@ -146,37 +145,76 @@
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/bd/data/standards/ClassificationSystem.csv" />
 							</bean>
-							
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="20" />
-								<property name="dsName" value="ClassificationCode" />
+								<property name="dsName" value="ClassificationItem" />
 								<property name="destPath" value="demo-data/bd" />
 								<property name="file"
-									value="classpath:net/nan21/dnet/module/bd/data/standards/ClassificationCode.csv" />
+									value="classpath:net/nan21/dnet/module/bd/data/standards/ClassificationItem.csv" />
 							</bean>
 						</list>
 					</property>
 				</bean>
-			
-			
+				<!-- Financial base data -->
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
-					<property name="sequence" value="180" />
+					<property name="sequence" value="170" />
 					<property name="name" value="bd-fin" />
 					<property name="items">
 						<list>
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="10" />
-								<property name="dsName" value="FinDocType" />
+								<property name="dsName" value="TaxCategory" />
 								<property name="destPath" value="demo-data/bd" />
 								<property name="file"
-									value="classpath:net/nan21/dnet/module/bd/data/fin/FinDocType.csv" />
+									value="classpath:net/nan21/dnet/module/bd/data/fin/TaxCategory.csv" />
 							</bean>
-							
-							 
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="Tax" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/fin/Tax.csv" />
+							</bean>
 						</list>
 					</property>
 				</bean>
-					
+				<!-- Transactions base data -->
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="180" />
+					<property name="name" value="bd-tx" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="TxDocType" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/tx/TxDocType.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="DeliveryMethod" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/tx/DeliveryMethod.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="50" />
+								<property name="dsName" value="PaymentMethod" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/tx/PaymentMethod.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="60" />
+								<property name="dsName" value="PaymentTerm" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/tx/PaymentTerm.csv" />
+							</bean>
+						</list>
+					</property>
+				</bean>
 			</list>
 		</property>
 	</bean>

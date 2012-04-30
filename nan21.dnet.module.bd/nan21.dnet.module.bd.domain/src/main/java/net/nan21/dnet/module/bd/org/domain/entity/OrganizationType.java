@@ -169,28 +169,28 @@ public class OrganizationType extends AbstractType {
 
         super.aboutToInsert(event);
 
-        if (this.virtualEntity == null) {
+        if (this.getVirtualEntity() == null) {
             event.updateAttributeWithObject("virtualEntity", false);
         }
-        if (this.legalEntity == null) {
+        if (this.getLegalEntity() == null) {
             event.updateAttributeWithObject("legalEntity", false);
         }
-        if (this.accountingEnabled == null) {
+        if (this.getAccountingEnabled() == null) {
             event.updateAttributeWithObject("accountingEnabled", false);
         }
-        if (this.external == null) {
+        if (this.getExternal() == null) {
             event.updateAttributeWithObject("external", false);
         }
-        if (this.inventory == null) {
+        if (this.getInventory() == null) {
             event.updateAttributeWithObject("inventory", false);
         }
-        if (this.carrier == null) {
+        if (this.getCarrier() == null) {
             event.updateAttributeWithObject("carrier", false);
         }
-        if (this.warehouse == null) {
+        if (this.getWarehouse() == null) {
             event.updateAttributeWithObject("warehouse", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

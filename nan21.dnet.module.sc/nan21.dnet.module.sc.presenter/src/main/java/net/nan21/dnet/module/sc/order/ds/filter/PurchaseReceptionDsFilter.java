@@ -19,13 +19,6 @@ public class PurchaseReceptionDsFilter extends AbstractAuditableDsFilter {
 
     private String supplier;
 
-    private Long docTypeId;
-
-    private Long docTypeId_From;
-    private Long docTypeId_To;
-
-    private String docType;
-
     private Long purchaseOrderId;
 
     private Long purchaseOrderId_From;
@@ -108,38 +101,6 @@ public class PurchaseReceptionDsFilter extends AbstractAuditableDsFilter {
 
     public void setSupplier(String supplier) {
         this.supplier = supplier;
-    }
-
-    public Long getDocTypeId() {
-        return this.docTypeId;
-    }
-
-    public Long getDocTypeId_From() {
-        return this.docTypeId_From;
-    }
-
-    public Long getDocTypeId_To() {
-        return this.docTypeId_To;
-    }
-
-    public void setDocTypeId(Long docTypeId) {
-        this.docTypeId = docTypeId;
-    }
-
-    public void setDocTypeId_From(Long docTypeId_From) {
-        this.docTypeId_From = docTypeId_From;
-    }
-
-    public void setDocTypeId_To(Long docTypeId_To) {
-        this.docTypeId_To = docTypeId_To;
-    }
-
-    public String getDocType() {
-        return this.docType;
-    }
-
-    public void setDocType(String docType) {
-        this.docType = docType;
     }
 
     public Long getPurchaseOrderId() {

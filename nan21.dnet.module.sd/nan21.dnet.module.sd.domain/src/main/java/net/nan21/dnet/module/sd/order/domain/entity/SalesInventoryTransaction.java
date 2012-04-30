@@ -20,8 +20,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransaction;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.Contact;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransaction;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
@@ -73,6 +74,9 @@ public class SalesInventoryTransaction extends InvTransaction {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Location.class)
     @JoinColumn(name = "DELIVERYLOCATION_ID", referencedColumnName = "ID")
     private Location deliveryLocation;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Contact.class)
+    @JoinColumn(name = "DELIVERYCONTACT_ID", referencedColumnName = "ID")
+    private Contact deliveryContact;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesOrder.class)
     @JoinColumn(name = "SALESORDER_ID", referencedColumnName = "ID")
     private SalesOrder salesOrder;
@@ -109,6 +113,14 @@ public class SalesInventoryTransaction extends InvTransaction {
 
     public void setDeliveryLocation(Location deliveryLocation) {
         this.deliveryLocation = deliveryLocation;
+    }
+
+    public Contact getDeliveryContact() {
+        return this.deliveryContact;
+    }
+
+    public void setDeliveryContact(Contact deliveryContact) {
+        this.deliveryContact = deliveryContact;
     }
 
     public SalesOrder getSalesOrder() {

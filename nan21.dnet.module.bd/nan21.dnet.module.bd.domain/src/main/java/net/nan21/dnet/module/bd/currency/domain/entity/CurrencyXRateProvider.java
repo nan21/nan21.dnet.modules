@@ -99,7 +99,7 @@ public class CurrencyXRateProvider extends AbstractTypeWithCode {
 
         super.aboutToInsert(event);
 
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

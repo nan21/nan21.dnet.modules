@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="PaymentMethodDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.PaymentMethodDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentMethod" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodDs" />
+	</bean>
+   
+ 	<bean id="PaymentMethodLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentMethodLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodLovDs" />
+	</bean>
+   
+ 	<bean id="PaymentTermDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentTermDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.PaymentTermDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentTerm" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentTermDs" />
+	</bean>
+   
+ 	<bean id="PaymentTermLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentTermLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentTermLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentTermLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentTermLovDs" />
+	</bean>
+   
+ 	<bean id="DeliveryMethodDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.DeliveryMethodDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.DeliveryMethodDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="DeliveryMethod" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.DeliveryMethodDs" />
+	</bean>
+   
+ 	<bean id="DeliveryMethodLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.DeliveryMethodLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.DeliveryMethodLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="DeliveryMethodLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.DeliveryMethodLovDs" />
+	</bean>
+   
+ 	<bean id="TxDocTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocType" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeDs" />
+	</bean>
+   
+ 	<bean id="TxDocTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypeLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeLovDs" />
+	</bean>
+   
+ 	<bean id="TxDocTypeSOLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSOLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypeSOLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocTypeSOLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSOLovDs" />
+	</bean>
+   
+ 	<bean id="TxDocTypeSOInvOutLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSOInvOutLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypeSOInvOutLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocTypeSOInvOutLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSOInvOutLovDs" />
+	</bean>
+   
+ 	<bean id="TxDocTypeSILovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSILovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypeSILovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocTypeSILov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSILovDs" />
+	</bean>
+   
+ 	<bean id="TxDocTypePOLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePOLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypePOLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocTypePOLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePOLovDs" />
+	</bean>
+   
+ 	<bean id="TxDocTypePOInvInLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePOInvInLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypePOInvInLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocTypePOInvInLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePOInvInLovDs" />
+	</bean>
+   
+ 	<bean id="TxDocTypePILovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePILovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypePILovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocTypePILov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePILovDs" />
+	</bean>
+   
+ 	<bean id="TxDocTypeInvInOutLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeInvInOutLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypeInvInOutLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocTypeInvInOutLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeInvInOutLovDs" />
+	</bean>
+   
+ 	<bean id="TxDocSequenceDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocSequenceDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocSequenceDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocSequence" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocSequence" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocSequenceDs" />
+	</bean>
+   
+ 	<bean id="TxDocSequenceLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocSequenceLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocSequenceLovDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocSequence" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocSequenceLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocSequenceLovDs" />
+	</bean>
+      
+</beans>
+   

@@ -3,16 +3,16 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER1" baseTableName="SC_PURCHASE_ORDER" baseColumnNames="DOCTYPE_ID"  referencedTableName="BD_FINDOC_TYPE"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER1" baseTableName="SC_PURCHASE_ORDER" baseColumnNames="DOCTYPE_ID"  referencedTableName="BD_TXDOC_TYPE"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER2" baseTableName="SC_PURCHASE_ORDER" baseColumnNames="SUPPLIER_ID"  referencedTableName="BP_BUSINESS_PARTNER"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER2" baseTableName="SC_PURCHASE_ORDER" baseColumnNames="SUPPLIER_ID"  referencedTableName="MD_BP"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER3" baseTableName="SC_PURCHASE_ORDER" baseColumnNames="CUSTOMER_ID"  referencedTableName="BD_ORGANIZATION"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
-		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER4" baseTableName="SC_PURCHASE_ORDER" baseColumnNames="PRICELIST_ID"  referencedTableName="MM_PRICE_LIST"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER4" baseTableName="SC_PURCHASE_ORDER" baseColumnNames="PRICELIST_ID"  referencedTableName="MD_PRICE_LIST"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
 		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER5" baseTableName="SC_PURCHASE_ORDER" baseColumnNames="CURRENCY_ID"  referencedTableName="BD_CURRENCY"  referencedColumnNames="ID" />
@@ -27,6 +27,6 @@
 		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER8" baseTableName="SC_PURCHASE_ORDER" baseColumnNames="INVENTORY_ID"  referencedTableName="BD_ORGANIZATION"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-9">
-		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER9" baseTableName="SC_PURCHASE_ORDER" baseColumnNames="DELIVERYMETHOD_ID"  referencedTableName="BP_DELIVERY_METHOD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_PURCHASE_ORDER9" baseTableName="SC_PURCHASE_ORDER" baseColumnNames="DELIVERYMETHOD_ID"  referencedTableName="BD_DELIVERY_METHOD"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

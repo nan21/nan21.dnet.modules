@@ -103,6 +103,18 @@
 		<property name="name" value="PurchaseInvoiceTax" />
 		<property name="modelClass" value="net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceTaxDs" />
 	</bean>
+   
+ 	<bean id="PaymentOutDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sc.invoice.ds.model.PaymentOutDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sc.invoice.ds.filter.PaymentOutDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sc.invoice.domain.entity.PaymentOut" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sc.invoice.ds.converter.PaymentOutDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentOut" />
+		<property name="modelClass" value="net.nan21.dnet.module.sc.invoice.ds.model.PaymentOutDs" />
+	</bean>
       
 </beans>
    

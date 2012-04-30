@@ -34,7 +34,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.EducationType$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["name","active"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

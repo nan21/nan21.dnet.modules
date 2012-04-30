@@ -109,6 +109,13 @@ public class SalesOrderDsFilter extends AbstractAuditableDsFilter {
 
     private String billToLocation;
 
+    private Long billToContactId;
+
+    private Long billToContactId_From;
+    private Long billToContactId_To;
+
+    private String billToContact;
+
     private Long shipToId;
 
     private Long shipToId_From;
@@ -126,6 +133,13 @@ public class SalesOrderDsFilter extends AbstractAuditableDsFilter {
     private Long shipToLocationId_To;
 
     private String shipToLocation;
+
+    private Long shipToContactId;
+
+    private Long shipToContactId_From;
+    private Long shipToContactId_To;
+
+    private String shipToContact;
 
     private Long carrierId;
 
@@ -607,6 +621,38 @@ public class SalesOrderDsFilter extends AbstractAuditableDsFilter {
         this.billToLocation = billToLocation;
     }
 
+    public Long getBillToContactId() {
+        return this.billToContactId;
+    }
+
+    public Long getBillToContactId_From() {
+        return this.billToContactId_From;
+    }
+
+    public Long getBillToContactId_To() {
+        return this.billToContactId_To;
+    }
+
+    public void setBillToContactId(Long billToContactId) {
+        this.billToContactId = billToContactId;
+    }
+
+    public void setBillToContactId_From(Long billToContactId_From) {
+        this.billToContactId_From = billToContactId_From;
+    }
+
+    public void setBillToContactId_To(Long billToContactId_To) {
+        this.billToContactId_To = billToContactId_To;
+    }
+
+    public String getBillToContact() {
+        return this.billToContact;
+    }
+
+    public void setBillToContact(String billToContact) {
+        this.billToContact = billToContact;
+    }
+
     public Long getShipToId() {
         return this.shipToId;
     }
@@ -685,6 +731,38 @@ public class SalesOrderDsFilter extends AbstractAuditableDsFilter {
 
     public void setShipToLocation(String shipToLocation) {
         this.shipToLocation = shipToLocation;
+    }
+
+    public Long getShipToContactId() {
+        return this.shipToContactId;
+    }
+
+    public Long getShipToContactId_From() {
+        return this.shipToContactId_From;
+    }
+
+    public Long getShipToContactId_To() {
+        return this.shipToContactId_To;
+    }
+
+    public void setShipToContactId(Long shipToContactId) {
+        this.shipToContactId = shipToContactId;
+    }
+
+    public void setShipToContactId_From(Long shipToContactId_From) {
+        this.shipToContactId_From = shipToContactId_From;
+    }
+
+    public void setShipToContactId_To(Long shipToContactId_To) {
+        this.shipToContactId_To = shipToContactId_To;
+    }
+
+    public String getShipToContact() {
+        return this.shipToContact;
+    }
+
+    public void setShipToContact(String shipToContact) {
+        this.shipToContact = shipToContact;
     }
 
     public Long getCarrierId() {

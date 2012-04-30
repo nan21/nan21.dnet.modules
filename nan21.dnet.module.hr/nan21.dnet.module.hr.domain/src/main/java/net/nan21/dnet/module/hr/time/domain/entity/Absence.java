@@ -165,7 +165,7 @@ public class Absence extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.posted == null) {
+        if (this.getPosted() == null) {
             event.updateAttributeWithObject("posted", false);
         }
     }

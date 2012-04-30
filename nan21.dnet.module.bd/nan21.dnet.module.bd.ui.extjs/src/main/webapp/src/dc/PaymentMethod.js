@@ -1,11 +1,11 @@
    
 
-Ext.define("net.nan21.dnet.module.bd.fin.dc.PaymentMethod", {
+Ext.define("net.nan21.dnet.module.bd.tx.dc.PaymentMethod", {
 	extend: "dnet.core.dc.AbstractDc",
  
-	recordModel: "net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodDs",
-	filterModel: "net.nan21.dnet.module.bd.fin.ds.model.PaymentMethodDsFilter",
-	paramModel: "net.nan21.dnet.module.bd.fin.ds.param.PaymentMethodDsParam",
+	recordModel: "net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodDs",
+	filterModel: "net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodDsFilter",
+	paramModel: "net.nan21.dnet.module.bd.tx.ds.param.PaymentMethodDsParam",
 	constructor : function(config) {
         config = config || {};
         Ext.apply(this, config);
@@ -17,9 +17,9 @@ Ext.define("net.nan21.dnet.module.bd.fin.dc.PaymentMethod", {
 
  	
 
-Ext.define("net.nan21.dnet.module.bd.fin.dc.PaymentMethod$Filter", {
+Ext.define("net.nan21.dnet.module.bd.tx.dc.PaymentMethod$Filter", {
 	extend: "dnet.core.dc.AbstractDcvFilterForm",
- 	alias: "widget.net.nan21.dnet.module.bd.fin.dc.PaymentMethod$Filter",
+ 	alias: "widget.net.nan21.dnet.module.bd.tx.dc.PaymentMethod$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -34,21 +34,21 @@ Ext.define("net.nan21.dnet.module.bd.fin.dc.PaymentMethod$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["name","active"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	
  	
  	 
-Ext.define("net.nan21.dnet.module.bd.fin.dc.PaymentMethod$EditList", {
+Ext.define("net.nan21.dnet.module.bd.tx.dc.PaymentMethod$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
-	alias: "widget.net.nan21.dnet.module.bd.fin.dc.PaymentMethod$EditList",
+	alias: "widget.net.nan21.dnet.module.bd.tx.dc.PaymentMethod$EditList",
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
-		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addBooleanColumn({ name:"active", dataIndex:"active"})
 	  	.addDefaults()
 	  ;  		   
 	}  

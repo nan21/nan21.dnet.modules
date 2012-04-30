@@ -1,0 +1,10 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_BD_PAY_METHOD1" 
+				baseTableName="BD_PAY_METHOD" baseColumnNames="DOCTYPE_ID"  
+				referencedTableName="BD_TXDOC_TYPE"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

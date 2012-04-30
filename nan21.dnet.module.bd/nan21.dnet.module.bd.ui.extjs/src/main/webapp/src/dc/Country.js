@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["iso2","iso3","active"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

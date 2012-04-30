@@ -160,10 +160,10 @@ public class SysDataSource extends AbstractType {
 
         super.aboutToInsert(event);
 
-        if (this.isAsgn == null) {
+        if (this.getIsAsgn() == null) {
             event.updateAttributeWithObject("isAsgn", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

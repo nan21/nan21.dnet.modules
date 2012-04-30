@@ -23,7 +23,6 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccountGroup;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -91,9 +90,6 @@ public class Account extends AbstractTypeWithCode {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccSchema.class)
     @JoinColumn(name = "ACCSCHEMA_ID", referencedColumnName = "ID")
     private AccSchema accSchema;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccountGroup.class)
-    @JoinColumn(name = "ACCGROUP_ID", referencedColumnName = "ID")
-    private AccountGroup accGroup;
 
     /* ============== getters - setters ================== */
 
@@ -129,22 +125,14 @@ public class Account extends AbstractTypeWithCode {
         this.accSchema = accSchema;
     }
 
-    public AccountGroup getAccGroup() {
-        return this.accGroup;
-    }
-
-    public void setAccGroup(AccountGroup accGroup) {
-        this.accGroup = accGroup;
-    }
-
     public void aboutToInsert(DescriptorEvent event) {
 
         super.aboutToInsert(event);
 
-        if (this.summary == null) {
+        if (this.getSummary() == null) {
             event.updateAttributeWithObject("summary", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

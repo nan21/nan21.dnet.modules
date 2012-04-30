@@ -19,8 +19,6 @@ public class SalesDeliveryDs extends
     public static final String fCUSTOMERID = "customerId";
     public static final String fCUSTOMERCODE = "customerCode";
     public static final String fCUSTOMER = "customer";
-    public static final String fDOCTYPEID = "docTypeId";
-    public static final String fDOCTYPE = "docType";
     public static final String fSALESORDERID = "salesOrderId";
     public static final String fSALESORDERUUID = "salesOrderUuid";
     public static final String fSALESORDER = "salesOrder";
@@ -30,6 +28,10 @@ public class SalesDeliveryDs extends
     public static final String fCARRIER = "carrier";
     public static final String fWAREHOUSEID = "warehouseId";
     public static final String fWAREHOUSE = "warehouse";
+    public static final String fDELIVERYLOCATIONID = "deliveryLocationId";
+    public static final String fDELIVERYLOCATION = "deliveryLocation";
+    public static final String fDELIVERYCONTACTID = "deliveryContactId";
+    public static final String fDELIVERYCONTACT = "deliveryContact";
     public static final String fCONFIRMED = "confirmed";
     public static final String fPOSTED = "posted";
     public static final String fEVENTDATE = "eventDate";
@@ -43,12 +45,6 @@ public class SalesDeliveryDs extends
 
     @DsField(noUpdate = true, join = "left", path = "customer.name")
     private String customer;
-
-    @DsField(join = "left", path = "docType.id")
-    private Long docTypeId;
-
-    @DsField(join = "left", path = "docType.name")
-    private String docType;
 
     @DsField(join = "left", path = "salesOrder.id")
     private Long salesOrderId;
@@ -76,6 +72,18 @@ public class SalesDeliveryDs extends
 
     @DsField(join = "left", path = "fromInventory.code")
     private String warehouse;
+
+    @DsField(join = "left", path = "deliveryLocation.id")
+    private Long deliveryLocationId;
+
+    @DsField(join = "left", fetch = false, path = "deliveryLocation.asString")
+    private String deliveryLocation;
+
+    @DsField(join = "left", path = "deliveryContact.id")
+    private Long deliveryContactId;
+
+    @DsField(join = "left", fetch = false, path = "deliveryContact.name")
+    private String deliveryContact;
 
     @DsField()
     private Boolean confirmed;
@@ -119,22 +127,6 @@ public class SalesDeliveryDs extends
 
     public void setCustomer(String customer) {
         this.customer = customer;
-    }
-
-    public Long getDocTypeId() {
-        return this.docTypeId;
-    }
-
-    public void setDocTypeId(Long docTypeId) {
-        this.docTypeId = docTypeId;
-    }
-
-    public String getDocType() {
-        return this.docType;
-    }
-
-    public void setDocType(String docType) {
-        this.docType = docType;
     }
 
     public Long getSalesOrderId() {
@@ -207,6 +199,38 @@ public class SalesDeliveryDs extends
 
     public void setWarehouse(String warehouse) {
         this.warehouse = warehouse;
+    }
+
+    public Long getDeliveryLocationId() {
+        return this.deliveryLocationId;
+    }
+
+    public void setDeliveryLocationId(Long deliveryLocationId) {
+        this.deliveryLocationId = deliveryLocationId;
+    }
+
+    public String getDeliveryLocation() {
+        return this.deliveryLocation;
+    }
+
+    public void setDeliveryLocation(String deliveryLocation) {
+        this.deliveryLocation = deliveryLocation;
+    }
+
+    public Long getDeliveryContactId() {
+        return this.deliveryContactId;
+    }
+
+    public void setDeliveryContactId(Long deliveryContactId) {
+        this.deliveryContactId = deliveryContactId;
+    }
+
+    public String getDeliveryContact() {
+        return this.deliveryContact;
+    }
+
+    public void setDeliveryContact(String deliveryContact) {
+        this.deliveryContact = deliveryContact;
     }
 
     public Boolean getConfirmed() {

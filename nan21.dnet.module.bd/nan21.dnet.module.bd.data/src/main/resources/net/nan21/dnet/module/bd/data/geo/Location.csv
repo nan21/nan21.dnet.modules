@@ -1,0 +1,5 @@
+"countryCode";"regionCode";"cityName";"adress";"billing";"mailing";"shipping";"active";"notes";"uuid"
+"ROMANIA";"BUCURESTI";"BUCURESTI";"Str Iazului 33";"true";"true";"true";"true";;"30562621-906D-4A04-A645-BD93130EC421"
+"ROMANIA";"BRASOV";"BRASOV";"Str Dorului 45";"true";"true";"true";"true";;"98359AD7-4C77-42DF-A1CD-B97C68768ECC"
+"ROMANIA";"BRASOV";"SACELE";"Str Mare 21";"true";"true";"true";"true";;"D14D1329-8D89-4506-92A3-8C049B47938B"
+"ROMANIA";"BRAILA";"BRAILA";"Str Oarecare 73";"true";"true";"true";"true";;"8A2D0253-D2B6-43C5-8C95-08B84651A29E"

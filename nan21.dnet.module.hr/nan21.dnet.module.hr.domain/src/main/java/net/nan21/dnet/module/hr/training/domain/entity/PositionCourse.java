@@ -124,7 +124,7 @@ public class PositionCourse extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.mandatory == null) {
+        if (this.getMandatory() == null) {
             event.updateAttributeWithObject("mandatory", false);
         }
     }

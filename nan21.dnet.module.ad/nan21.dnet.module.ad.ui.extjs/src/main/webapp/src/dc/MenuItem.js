@@ -46,7 +46,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$Filter", {
 		.addChildrenTo("col1",["name","title","frame","bundle"])
 		.addChildrenTo("col2",["active","separatorBefore","separatorAfter"])
 		.addChildrenTo("col3",["menu","menuItem","iconUrl"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

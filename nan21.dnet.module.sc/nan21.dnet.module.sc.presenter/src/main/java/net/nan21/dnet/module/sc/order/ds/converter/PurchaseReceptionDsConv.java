@@ -6,14 +6,12 @@
 package net.nan21.dnet.module.sc.order.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.bd.fin.business.service.IFinDocTypeService;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.mm.inventory.business.service.IInvTransactionTypeService;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
+import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.tx.inventory.business.service.IInvTransactionTypeService;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sc.order.ds.model.PurchaseReceptionDs;
@@ -36,16 +34,6 @@ public class PurchaseReceptionDsConv extends
             }
         } else {
             this.lookup_supplier_BusinessPartner(ds, e);
-        }
-
-        if (ds.getDocTypeId() != null) {
-            if (e.getDocType() == null
-                    || !e.getDocType().getId().equals(ds.getDocTypeId())) {
-                e.setDocType((FinDocType) this.em.find(FinDocType.class,
-                        ds.getDocTypeId()));
-            }
-        } else {
-            this.lookup_docType_FinDocType(ds, e);
         }
 
         if (ds.getTransactionTypeId() != null) {
@@ -97,25 +85,6 @@ public class PurchaseReceptionDsConv extends
 
         } else {
             e.setSupplier(null);
-        }
-    }
-
-    protected void lookup_docType_FinDocType(PurchaseReceptionDs ds,
-            PurchaseInventoryTransaction e) throws Exception {
-        if (ds.getDocType() != null && !ds.getDocType().equals("")) {
-            FinDocType x = null;
-            try {
-                x = ((IFinDocTypeService) findEntityService(FinDocType.class))
-                        .findByName(ds.getDocType());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `FinDocType` reference:  `docType` = "
-                                + ds.getDocType() + "  ");
-            }
-            e.setDocType(x);
-
-        } else {
-            e.setDocType(null);
         }
     }
 

@@ -5,8 +5,6 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseReceptionDs$Trl", {
 	supplierId__lbl : "Supplier Id",
 	supplierCode__lbl : "Supplier Code",
 	supplier__lbl : "Supplier",
-	docTypeId__lbl : "Doc Type Id",
-	docType__lbl : "Doc Type",
 	purchaseOrderId__lbl : "Purchase Order Id",
 	purchaseOrderUuid__lbl : "Purchase Order Uuid",
 	purchaseOrder__lbl : "Purchase Order",

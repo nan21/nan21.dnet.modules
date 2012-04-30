@@ -10,8 +10,8 @@
  	<bean id="ClassificationSystemService" scope="prototype"
 	  		class="net.nan21.dnet.module.bd.standards.business.serviceimpl.ClassificationSystemService"  />  
  
- 	<bean id="ClassificationCodeService" scope="prototype"
-	  		class="net.nan21.dnet.module.bd.standards.business.serviceimpl.ClassificationCodeService"  />  
+ 	<bean id="ClassificationItemService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.standards.business.serviceimpl.ClassificationItemService"  />  
    
 </beans>
    

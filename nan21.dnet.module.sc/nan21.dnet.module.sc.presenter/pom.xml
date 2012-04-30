@@ -50,14 +50,7 @@
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.bp.domain</artifactId>
-			<version>1.0.0.M9</version>
-			<type>jar</type>
-			<scope>provided</scope>
-		</dependency>	
-		<dependency>
-			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.mm.domain</artifactId>
+			<artifactId>nan21.dnet.module.md.domain</artifactId>
 			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>
@@ -85,14 +78,7 @@
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.bp.business.api</artifactId>
-			<version>1.0.0.M9</version>
-			<type>jar</type>
-			<scope>provided</scope>
-		</dependency>	
-		<dependency>
-			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.mm.business.api</artifactId>
+			<artifactId>nan21.dnet.module.md.business.api</artifactId>
 			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>provided</scope>

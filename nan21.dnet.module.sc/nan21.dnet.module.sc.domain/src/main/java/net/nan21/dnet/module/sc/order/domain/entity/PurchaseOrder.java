@@ -28,12 +28,12 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sc.order.domain.eventhandler.PurchaseOrderEventHandler;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
@@ -111,9 +111,9 @@ public class PurchaseOrder extends AbstractAuditable {
     @Column(name = "CONFIRMED", nullable = false)
     @NotNull
     private Boolean confirmed;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FinDocType.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = TxDocType.class)
     @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
-    private FinDocType docType;
+    private TxDocType docType;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "SUPPLIER_ID", referencedColumnName = "ID")
     private BusinessPartner supplier;
@@ -226,11 +226,11 @@ public class PurchaseOrder extends AbstractAuditable {
 
     }
 
-    public FinDocType getDocType() {
+    public TxDocType getDocType() {
         return this.docType;
     }
 
-    public void setDocType(FinDocType docType) {
+    public void setDocType(TxDocType docType) {
         this.docType = docType;
     }
 
@@ -318,10 +318,10 @@ public class PurchaseOrder extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.confirmed == null) {
+        if (this.getConfirmed() == null) {
             event.updateAttributeWithObject("confirmed", false);
         }
-        if (this.code == null || this.code.equals("")) {
+        if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "PO-" + this.getId());
         }
     }

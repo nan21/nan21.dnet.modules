@@ -8,13 +8,13 @@ package net.nan21.dnet.module.sd.invoice.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.bp.md.domain.entity.Contact;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.Contact;
+import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
@@ -38,7 +38,7 @@ public interface ISalesInvoiceService extends IEntityService<SalesInvoice> {
 
     public List<SalesInvoice> findByPaymentTermId(Long paymentTermId);
 
-    public List<SalesInvoice> findByDocType(FinDocType docType);
+    public List<SalesInvoice> findByDocType(TxDocType docType);
 
     public List<SalesInvoice> findByDocTypeId(Long docTypeId);
 
@@ -65,5 +65,7 @@ public interface ISalesInvoiceService extends IEntityService<SalesInvoice> {
     public List<SalesInvoice> findByLines(SalesInvoiceItem lines);
 
     public List<SalesInvoice> findByLinesId(Long linesId);
+
+    public void doPost(SalesInvoice salesInvoice) throws Exception;
 
 }

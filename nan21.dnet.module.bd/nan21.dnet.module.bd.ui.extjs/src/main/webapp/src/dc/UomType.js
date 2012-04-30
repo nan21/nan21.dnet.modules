@@ -37,7 +37,7 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.UomType$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","active"])
 		.addChildrenTo("col2",["category"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

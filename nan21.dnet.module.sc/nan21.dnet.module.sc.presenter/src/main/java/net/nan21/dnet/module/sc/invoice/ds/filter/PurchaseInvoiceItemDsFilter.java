@@ -50,6 +50,11 @@ public class PurchaseInvoiceItemDsFilter extends AbstractAuditableDsFilter {
     private Float taxAmount_From;
     private Float taxAmount_To;
 
+    private Float lineAmount;
+
+    private Float lineAmount_From;
+    private Float lineAmount_To;
+
     private Long taxId;
 
     private Long taxId_From;
@@ -247,6 +252,30 @@ public class PurchaseInvoiceItemDsFilter extends AbstractAuditableDsFilter {
 
     public void setTaxAmount_To(Float taxAmount_To) {
         this.taxAmount_To = taxAmount_To;
+    }
+
+    public Float getLineAmount() {
+        return this.lineAmount;
+    }
+
+    public Float getLineAmount_From() {
+        return this.lineAmount_From;
+    }
+
+    public Float getLineAmount_To() {
+        return this.lineAmount_To;
+    }
+
+    public void setLineAmount(Float lineAmount) {
+        this.lineAmount = lineAmount;
+    }
+
+    public void setLineAmount_From(Float lineAmount_From) {
+        this.lineAmount_From = lineAmount_From;
+    }
+
+    public void setLineAmount_To(Float lineAmount_To) {
+        this.lineAmount_To = lineAmount_To;
     }
 
     public Long getTaxId() {

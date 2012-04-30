@@ -4,9 +4,9 @@ import java.util.Date;
 import java.util.List;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionLine;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionLine;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType;
 import net.nan21.dnet.module.sd.order.business.service.ISalesInventoryTransactionService;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderItemService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesInventoryTransaction;
@@ -16,7 +16,7 @@ import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 public class SalesOrderToDeliveryBD extends AbstractBusinessDelegate {
 
 	public SalesInventoryTransaction generateDelivery(SalesOrder order,
-			FinDocType deliveryDocType, InvTransactionType delivTxType,
+			TxDocType deliveryDocType, InvTransactionType delivTxType,
 			Date delivEventDate) throws Exception {
 
 		List<SalesInventoryTransaction> deliveries = ((ISalesInventoryTransactionService) this
@@ -33,8 +33,8 @@ public class SalesOrderToDeliveryBD extends AbstractBusinessDelegate {
 		deliv.setSalesOrder(order);
 		deliv.setDeliveryLocation(order.getShipToLocation());
 		deliv.setDeliveryNotes(order.getDeliveryNotes());
-
-		deliv.setDocType(deliveryDocType);
+		deliv.setDeliveryContact(order.getShipToContact());
+		//deliv.setDocType(deliveryDocType);
 		deliv.setTransactionType(delivTxType);
 
 		deliv.setFromInventory(order.getInventory());

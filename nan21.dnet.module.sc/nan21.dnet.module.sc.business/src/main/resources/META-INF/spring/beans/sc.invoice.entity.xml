@@ -18,6 +18,9 @@
  
  	<bean id="PurchaseInvoiceItemTaxService" scope="prototype"
 	  		class="net.nan21.dnet.module.sc.invoice.business.serviceimpl.PurchaseInvoiceItemTaxService"  />  
+ 
+ 	<bean id="PaymentOutService" scope="prototype"
+	  		class="net.nan21.dnet.module.sc.invoice.business.serviceimpl.PaymentOutService"  />  
    
 </beans>
    

@@ -1,11 +1,11 @@
    
 
-Ext.define("net.nan21.dnet.module.bd.fin.dc.PaymentTerm", {
+Ext.define("net.nan21.dnet.module.bd.tx.dc.PaymentTerm", {
 	extend: "dnet.core.dc.AbstractDc",
  
-	recordModel: "net.nan21.dnet.module.bd.fin.ds.model.PaymentTermDs",
-	filterModel: "net.nan21.dnet.module.bd.fin.ds.model.PaymentTermDsFilter",
-	paramModel: "net.nan21.dnet.module.bd.fin.ds.param.PaymentTermDsParam",
+	recordModel: "net.nan21.dnet.module.bd.tx.ds.model.PaymentTermDs",
+	filterModel: "net.nan21.dnet.module.bd.tx.ds.model.PaymentTermDsFilter",
+	paramModel: "net.nan21.dnet.module.bd.tx.ds.param.PaymentTermDsParam",
 	constructor : function(config) {
         config = config || {};
         Ext.apply(this, config);
@@ -17,9 +17,9 @@ Ext.define("net.nan21.dnet.module.bd.fin.dc.PaymentTerm", {
 
  	
 
-Ext.define("net.nan21.dnet.module.bd.fin.dc.PaymentTerm$Filter", {
+Ext.define("net.nan21.dnet.module.bd.tx.dc.PaymentTerm$Filter", {
 	extend: "dnet.core.dc.AbstractDcvFilterForm",
- 	alias: "widget.net.nan21.dnet.module.bd.fin.dc.PaymentTerm$Filter",
+ 	alias: "widget.net.nan21.dnet.module.bd.tx.dc.PaymentTerm$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -34,15 +34,15 @@ Ext.define("net.nan21.dnet.module.bd.fin.dc.PaymentTerm$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["name","active"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	
  	
  	 
-Ext.define("net.nan21.dnet.module.bd.fin.dc.PaymentTerm$EditList", {
+Ext.define("net.nan21.dnet.module.bd.tx.dc.PaymentTerm$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
-	alias: "widget.net.nan21.dnet.module.bd.fin.dc.PaymentTerm$EditList",
+	alias: "widget.net.nan21.dnet.module.bd.tx.dc.PaymentTerm$EditList",
 	
 	_defineColumns_: function () {
 		this._getBuilder_()

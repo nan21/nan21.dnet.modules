@@ -53,7 +53,7 @@ labelAlign:"right",labelWidth:70}})
 		.addChildrenTo("col1",["project","type","code","summary","description"])
 		.addChildrenTo("col2",["status","severity","priority","resolution","assignee"])
 		.addChildrenTo("col4",["reportedVersion","targetVersion","fixedInVersion","affectedComponent","affectedVersion"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

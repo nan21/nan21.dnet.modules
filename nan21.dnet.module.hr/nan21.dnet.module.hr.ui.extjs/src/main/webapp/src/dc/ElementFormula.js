@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.ElementFormula$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1"])
 		.addChildrenTo("col1",["element","validFrom","validTo"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

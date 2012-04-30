@@ -37,7 +37,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.City$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name"])
 		.addChildrenTo("col2",["countryCode"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

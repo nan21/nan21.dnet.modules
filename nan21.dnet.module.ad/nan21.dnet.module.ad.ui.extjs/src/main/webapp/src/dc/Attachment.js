@@ -38,7 +38,7 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Attachment$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","type"])
 		.addChildrenTo("col2",["targetType","targetUuid"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

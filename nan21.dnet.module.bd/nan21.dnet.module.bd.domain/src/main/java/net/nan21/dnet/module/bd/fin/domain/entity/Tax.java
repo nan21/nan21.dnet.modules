@@ -153,10 +153,10 @@ public class Tax extends AbstractType {
 
         super.aboutToInsert(event);
 
-        if (this.summary == null) {
+        if (this.getSummary() == null) {
             event.updateAttributeWithObject("summary", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

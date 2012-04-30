@@ -8,10 +8,10 @@ package net.nan21.dnet.module.sc.order.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.md.business.service.IBusinessPartnerService;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.mm.inventory.business.service.IInvTransactionTypeService;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
+import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.tx.inventory.business.service.IInvTransactionTypeService;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sc.order.ds.model.PurchaseInventoryTransactionDs;

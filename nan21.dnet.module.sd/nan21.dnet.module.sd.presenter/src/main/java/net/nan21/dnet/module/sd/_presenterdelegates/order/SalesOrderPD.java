@@ -1,8 +1,8 @@
 package net.nan21.dnet.module.sd._presenterdelegates.order;
 
 import net.nan21.dnet.core.presenter.service.AbstractDsDelegate;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.mm.inventory.domain.entity.InvTransactionType;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs;
@@ -32,7 +32,7 @@ public class SalesOrderPD extends AbstractDsDelegate {
 			throws Exception {
 		ISalesOrderService service = ((ISalesOrderService) this
 				.findEntityService(SalesOrder.class));
-		FinDocType docType = service.getEntityManager().find(FinDocType.class,
+		TxDocType docType = service.getEntityManager().find(TxDocType.class,
 				params.getInvDocTypeId());
 		SalesOrder entity = service.findById(ds.getId());
 		service.doGenerateInvoice(entity, docType);
@@ -43,7 +43,7 @@ public class SalesOrderPD extends AbstractDsDelegate {
 			throws Exception {
 		ISalesOrderService service = ((ISalesOrderService) this
 				.findEntityService(SalesOrder.class));
-		FinDocType docType = service.getEntityManager().find(FinDocType.class,
+		TxDocType docType = service.getEntityManager().find(TxDocType.class,
 				params.getDelivDocTypeId());
 		InvTransactionType txType = service.getEntityManager().find(
 				InvTransactionType.class, params.getDelivTxTypeId());

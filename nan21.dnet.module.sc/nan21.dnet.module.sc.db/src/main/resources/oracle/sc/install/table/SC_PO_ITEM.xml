@@ -19,7 +19,7 @@
 			<column name="NETAMOUNT" type="number(12,2)">
 				<constraints  /></column>	 
 			<column name="QUANTITY" type="number(12,2)">
-				<constraints  /></column>	 
+				<constraints nullable="false" /></column>	 
 			<column name="TAXAMOUNT" type="number(12,2)">
 				<constraints nullable="false" /></column>	 
 			<column name="UNITPRICE" type="number(12,2)">

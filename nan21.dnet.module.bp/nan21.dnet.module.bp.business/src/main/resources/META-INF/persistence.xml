@@ -35,6 +35,8 @@
 		
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod</class>
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.PaymentTerm</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.FinDocType</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.DocSequence</class> 
 		
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationCode</class>

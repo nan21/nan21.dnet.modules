@@ -188,7 +188,7 @@ public class EmployeeContact extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.isDependent == null) {
+        if (this.getIsDependent() == null) {
             event.updateAttributeWithObject("isDependent", false);
         }
     }

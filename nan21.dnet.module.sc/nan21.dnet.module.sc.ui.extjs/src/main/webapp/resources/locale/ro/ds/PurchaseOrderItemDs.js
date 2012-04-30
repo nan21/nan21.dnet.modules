@@ -8,8 +8,9 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderItemDs$Trl", {
 	uomCode__lbl :    "UM",
 	quantity__lbl :  "Cantitate",
 	unitPrice__lbl :  "Preţ unitar",
-	netAmount__lbl :  "Valoare",
+	netAmount__lbl :  "Valoare netă",
 	taxAmount__lbl :  "Valoare taxe",
+	lineAmount__lbl :  "Valoare",
 	taxId__lbl :    "Taxă(ID)",
 	tax__lbl :    "Taxă",
 		 

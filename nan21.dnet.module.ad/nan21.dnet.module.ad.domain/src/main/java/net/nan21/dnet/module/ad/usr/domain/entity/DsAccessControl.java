@@ -193,22 +193,22 @@ public class DsAccessControl extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.queryAllowed == null) {
+        if (this.getQueryAllowed() == null) {
             event.updateAttributeWithObject("queryAllowed", false);
         }
-        if (this.insertAllowed == null) {
+        if (this.getInsertAllowed() == null) {
             event.updateAttributeWithObject("insertAllowed", false);
         }
-        if (this.updateAllowed == null) {
+        if (this.getUpdateAllowed() == null) {
             event.updateAttributeWithObject("updateAllowed", false);
         }
-        if (this.deleteAllowed == null) {
+        if (this.getDeleteAllowed() == null) {
             event.updateAttributeWithObject("deleteAllowed", false);
         }
-        if (this.importAllowed == null) {
+        if (this.getImportAllowed() == null) {
             event.updateAttributeWithObject("importAllowed", false);
         }
-        if (this.exportAllowed == null) {
+        if (this.getExportAllowed() == null) {
             event.updateAttributeWithObject("exportAllowed", false);
         }
     }

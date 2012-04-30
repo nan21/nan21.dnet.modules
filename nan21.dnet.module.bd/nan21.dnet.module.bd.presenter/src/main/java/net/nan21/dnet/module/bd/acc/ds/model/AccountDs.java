@@ -17,8 +17,6 @@ public class AccountDs extends AbstractTypeWithCodeDs<Account> {
 
     public static final String fACCSCHEMAID = "accSchemaId";
     public static final String fACCSCHEMA = "accSchema";
-    public static final String fACCGROUPID = "accGroupId";
-    public static final String fACCGROUP = "accGroup";
     public static final String fSIGN = "sign";
     public static final String fSUMMARY = "summary";
 
@@ -27,12 +25,6 @@ public class AccountDs extends AbstractTypeWithCodeDs<Account> {
 
     @DsField(join = "left", path = "accSchema.code")
     private String accSchema;
-
-    @DsField(join = "left", path = "accGroup.id")
-    private Long accGroupId;
-
-    @DsField(join = "left", path = "accGroup.code")
-    private String accGroup;
 
     @DsField()
     private String sign;
@@ -62,22 +54,6 @@ public class AccountDs extends AbstractTypeWithCodeDs<Account> {
 
     public void setAccSchema(String accSchema) {
         this.accSchema = accSchema;
-    }
-
-    public Long getAccGroupId() {
-        return this.accGroupId;
-    }
-
-    public void setAccGroupId(Long accGroupId) {
-        this.accGroupId = accGroupId;
-    }
-
-    public String getAccGroup() {
-        return this.accGroup;
-    }
-
-    public void setAccGroup(String accGroup) {
-        this.accGroup = accGroup;
     }
 
     public String getSign() {

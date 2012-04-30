@@ -8,19 +8,19 @@ package net.nan21.dnet.module.sc.order.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.base.domain.entity.DeliveryMethod;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderItem;
 
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 
 public interface IPurchaseOrderService extends IEntityService<PurchaseOrder> {
 
-    public List<PurchaseOrder> findByDocType(FinDocType docType);
+    public List<PurchaseOrder> findByDocType(TxDocType docType);
 
     public List<PurchaseOrder> findByDocTypeId(Long docTypeId);
 

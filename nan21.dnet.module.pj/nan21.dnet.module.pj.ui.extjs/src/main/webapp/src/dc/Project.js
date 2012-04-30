@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.Project$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["type","projectLead"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

@@ -41,7 +41,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationType$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","active","external"])
 		.addChildrenTo("col2",["legalEntity","inventory","carrier"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

@@ -1,17 +1,4 @@
 Manifest-Version: 1.0
-Export-Package: net.nan21.dnet.module.bp.base.business.service;version
- ="1.0.0.M9";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mod
- ule.bd.fin.domain.entity,net.nan21.dnet.module.bd.geo.domain.entity,n
- et.nan21.dnet.module.bp.base.domain.entity",net.nan21.dnet.module.bp.
- calendar.business.service;version="1.0.0.M9";uses:="net.nan21.dnet.co
- re.api.service,net.nan21.dnet.module.bp.calendar.domain.entity,net.na
- n21.dnet.module.bp.md.domain.entity",net.nan21.dnet.module.bp.md.busi
- ness.service;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.servic
- e,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.modu
- le.bd.fin.domain.entity,net.nan21.dnet.module.bd.geo.domain.entity,ne
- t.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd.sta
- ndards.domain.entity,net.nan21.dnet.module.bp.base.domain.entity,net.
- nan21.dnet.module.bp.md.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.module.ad.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module
  .bd.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bp.domain;
@@ -25,17 +12,11 @@ Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.bp.business.api
 Import-Package: javax.persistence.criteria;version="[2.0,2.1)",javax.p
  ersistence.metamodel;version="[2.0,2.1)",javax.persistence.spi;versio
- n="[2.0,2.1)",javax.validation;version="[1.0,2.0)",net.nan21.dnet.cor
- e.api.service,net.nan21.dnet.module.bd.currency.domain.entity,net.nan
- 21.dnet.module.bd.fin.domain.entity,net.nan21.dnet.module.bd.geo.doma
- in.entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.m
- odule.bd.standards.domain.entity,net.nan21.dnet.module.bp.base.domain
- .entity,net.nan21.dnet.module.bp.calendar.domain.entity,net.nan21.dne
- t.module.bp.md.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",
- org.hibernate.validator;version="[4.0,5.0)",org.hibernate.validator.c
- onstraints;version="[4.0,5.0)",org.springframework.aop;version="[3.0,
- 3.1)",org.springframework.aop.framework;version="[3.0,3.1)",org.sprin
- gframework.context.weaving;version="[3.0,3.1)",org.springframework.tr
- ansaction;version="[3.0,3.1)",org.springframework.transaction.aspectj
- ;version="[3.0,3.1)"
+ n="[2.0,2.1)",javax.validation;version="[1.0,2.0)",org.aopalliance.ao
+ p;version="[1.0,2.0)",org.hibernate.validator;version="[4.0,5.0)",org
+ .hibernate.validator.constraints;version="[4.0,5.0)",org.springframew
+ ork.aop;version="[3.0,3.1)",org.springframework.aop.framework;version
+ ="[3.0,3.1)",org.springframework.context.weaving;version="[3.0,3.1)",
+ org.springframework.transaction;version="[3.0,3.1)",org.springframewo
+ rk.transaction.aspectj;version="[3.0,3.1)"
 

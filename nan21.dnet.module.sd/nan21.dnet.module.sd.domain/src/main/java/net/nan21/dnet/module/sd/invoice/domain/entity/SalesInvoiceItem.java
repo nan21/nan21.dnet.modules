@@ -21,12 +21,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.mm.md.domain.entity.Product;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.module.sd.invoice.domain.eventhandler.SalesInvoiceItemEventHandler;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
@@ -69,15 +70,18 @@ public class SalesInvoiceItem extends AbstractAuditable {
     private Long id;
 
     /** Quantity. */
-    @Column(name = "QUANTITY", scale = 2)
+    @Column(name = "QUANTITY", nullable = false, scale = 2)
+    @NotNull
     private Float quantity;
 
     /** UnitPrice. */
-    @Column(name = "UNITPRICE", scale = 2)
+    @Column(name = "UNITPRICE", nullable = false, scale = 2)
+    @NotNull
     private Float unitPrice;
 
     /** NetAmount. */
-    @Column(name = "NETAMOUNT", scale = 2)
+    @Column(name = "NETAMOUNT", nullable = false, scale = 2)
+    @NotNull
     private Float netAmount;
 
     /** TaxAmount. */
@@ -141,6 +145,15 @@ public class SalesInvoiceItem extends AbstractAuditable {
 
     public void setTaxAmount(Float taxAmount) {
         this.taxAmount = taxAmount;
+    }
+
+    @Transient
+    public Float getLineAmount() {
+        return this.netAmount + this.taxAmount;
+    }
+
+    public void setLineAmount(Float lineAmount) {
+
     }
 
     public SalesInvoice getSalesInvoice() {

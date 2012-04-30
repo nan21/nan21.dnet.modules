@@ -25,6 +25,7 @@ public class PurchaseInvoiceItemDs extends
     public static final String fUNITPRICE = "unitPrice";
     public static final String fNETAMOUNT = "netAmount";
     public static final String fTAXAMOUNT = "taxAmount";
+    public static final String fLINEAMOUNT = "lineAmount";
     public static final String fTAXID = "taxId";
     public static final String fTAX = "tax";
 
@@ -57,6 +58,9 @@ public class PurchaseInvoiceItemDs extends
 
     @DsField(noInsert = true, noUpdate = true)
     private Float taxAmount;
+
+    @DsField(noInsert = true, noUpdate = true, fetch = false)
+    private Float lineAmount;
 
     @DsField(join = "left", path = "tax.id")
     private Long taxId;
@@ -150,6 +154,14 @@ public class PurchaseInvoiceItemDs extends
 
     public void setTaxAmount(Float taxAmount) {
         this.taxAmount = taxAmount;
+    }
+
+    public Float getLineAmount() {
+        return this.lineAmount;
+    }
+
+    public void setLineAmount(Float lineAmount) {
+        this.lineAmount = lineAmount;
     }
 
     public Long getTaxId() {

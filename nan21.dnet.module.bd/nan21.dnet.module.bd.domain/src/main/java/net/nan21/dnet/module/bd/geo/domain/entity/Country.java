@@ -148,10 +148,10 @@ public class Country extends AbstractTypeWithCode {
 
         super.aboutToInsert(event);
 
-        if (this.hasRegions == null) {
+        if (this.getHasRegions() == null) {
             event.updateAttributeWithObject("hasRegions", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

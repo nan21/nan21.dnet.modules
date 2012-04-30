@@ -16,13 +16,6 @@ public class AccountDsFilter extends AbstractTypeWithCodeDsFilter {
 
     private String accSchema;
 
-    private Long accGroupId;
-
-    private Long accGroupId_From;
-    private Long accGroupId_To;
-
-    private String accGroup;
-
     private String sign;
 
     private Boolean summary;
@@ -57,38 +50,6 @@ public class AccountDsFilter extends AbstractTypeWithCodeDsFilter {
 
     public void setAccSchema(String accSchema) {
         this.accSchema = accSchema;
-    }
-
-    public Long getAccGroupId() {
-        return this.accGroupId;
-    }
-
-    public Long getAccGroupId_From() {
-        return this.accGroupId_From;
-    }
-
-    public Long getAccGroupId_To() {
-        return this.accGroupId_To;
-    }
-
-    public void setAccGroupId(Long accGroupId) {
-        this.accGroupId = accGroupId;
-    }
-
-    public void setAccGroupId_From(Long accGroupId_From) {
-        this.accGroupId_From = accGroupId_From;
-    }
-
-    public void setAccGroupId_To(Long accGroupId_To) {
-        this.accGroupId_To = accGroupId_To;
-    }
-
-    public String getAccGroup() {
-        return this.accGroup;
-    }
-
-    public void setAccGroup(String accGroup) {
-        this.accGroup = accGroup;
     }
 
     public String getSign() {

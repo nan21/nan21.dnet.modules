@@ -13,7 +13,6 @@
 	<context:load-time-weaver aspectj-weaving="on" />
 	<context:annotation-config />
  
-	
 	<bean id="dsServiceFactory" class="net.nan21.dnet.core.presenter.service.DsServiceFactory">
 		<property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>

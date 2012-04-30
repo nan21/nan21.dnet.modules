@@ -38,7 +38,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysFrameExtension$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["frameFQN","fileLocation"])
 		.addChildrenTo("col2",["relativePath","active"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

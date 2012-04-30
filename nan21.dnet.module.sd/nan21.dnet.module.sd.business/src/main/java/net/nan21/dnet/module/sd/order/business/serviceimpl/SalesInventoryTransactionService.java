@@ -9,7 +9,8 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.Contact;
 import net.nan21.dnet.module.sd.order.business.service.ISalesInventoryTransactionService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
@@ -61,6 +62,22 @@ public class SalesInventoryTransactionService extends
                         SalesInventoryTransaction.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pDeliveryLocationId", deliveryLocationId)
+                .getResultList();
+    }
+
+    public List<SalesInventoryTransaction> findByDeliveryContact(
+            Contact deliveryContact) {
+        return this.findByDeliveryContactId(deliveryContact.getId());
+    }
+
+    public List<SalesInventoryTransaction> findByDeliveryContactId(
+            Long deliveryContactId) {
+        return (List<SalesInventoryTransaction>) this.em
+                .createQuery(
+                        "select e from SalesInventoryTransaction e where e.clientId = :pClientId and e.deliveryContact.id = :pDeliveryContactId",
+                        SalesInventoryTransaction.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pDeliveryContactId", deliveryContactId)
                 .getResultList();
     }
 

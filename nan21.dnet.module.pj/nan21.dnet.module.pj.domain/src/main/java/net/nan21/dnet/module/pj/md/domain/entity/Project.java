@@ -127,10 +127,10 @@ public class Project extends AbstractTypeWithCode {
 
         super.aboutToInsert(event);
 
-        if (this.isPublic == null) {
+        if (this.getIsPublic() == null) {
             event.updateAttributeWithObject("isPublic", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

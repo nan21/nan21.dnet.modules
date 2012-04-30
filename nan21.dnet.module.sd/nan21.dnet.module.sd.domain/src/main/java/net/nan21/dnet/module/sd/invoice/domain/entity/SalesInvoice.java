@@ -28,13 +28,13 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.bp.md.domain.entity.Contact;
-import net.nan21.dnet.module.mm.price.domain.entity.PriceList;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.bp.domain.entity.Contact;
+import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.invoice.domain.eventhandler.SalesInvoiceEventHandler;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
@@ -121,9 +121,9 @@ public class SalesInvoice extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
     @JoinColumn(name = "PAYMENTTERM_ID", referencedColumnName = "ID")
     private PaymentMethod paymentTerm;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FinDocType.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = TxDocType.class)
     @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
-    private FinDocType docType;
+    private TxDocType docType;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "ID")
     private BusinessPartner customer;
@@ -251,11 +251,11 @@ public class SalesInvoice extends AbstractAuditable {
         this.paymentTerm = paymentTerm;
     }
 
-    public FinDocType getDocType() {
+    public TxDocType getDocType() {
         return this.docType;
     }
 
-    public void setDocType(FinDocType docType) {
+    public void setDocType(TxDocType docType) {
         this.docType = docType;
     }
 
@@ -319,13 +319,13 @@ public class SalesInvoice extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-        if (this.confirmed == null) {
+        if (this.getConfirmed() == null) {
             event.updateAttributeWithObject("confirmed", false);
         }
-        if (this.posted == null) {
+        if (this.getPosted() == null) {
             event.updateAttributeWithObject("posted", false);
         }
-        if (this.code == null || this.code.equals("")) {
+        if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "SI-" + this.getId());
         }
     }

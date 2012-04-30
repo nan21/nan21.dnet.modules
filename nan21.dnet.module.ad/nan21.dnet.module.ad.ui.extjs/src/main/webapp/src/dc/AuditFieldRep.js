@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.AuditFieldRep$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["sourceFQN","sourceId","operation"])
 		.addChildrenTo("col2",["fieldName","oldValue","newValue"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

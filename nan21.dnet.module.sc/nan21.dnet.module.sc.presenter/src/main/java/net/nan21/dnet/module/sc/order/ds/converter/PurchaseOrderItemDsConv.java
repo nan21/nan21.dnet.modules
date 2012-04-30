@@ -9,8 +9,8 @@ import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.fin.business.service.ITaxService;
 import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.mm.md.business.service.IProductService;
-import net.nan21.dnet.module.mm.md.domain.entity.Product;
+import net.nan21.dnet.module.md.mm.prod.business.service.IProductService;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;

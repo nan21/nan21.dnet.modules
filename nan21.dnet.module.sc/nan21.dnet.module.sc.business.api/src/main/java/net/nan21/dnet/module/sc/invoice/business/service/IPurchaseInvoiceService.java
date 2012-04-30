@@ -8,10 +8,10 @@ package net.nan21.dnet.module.sc.invoice.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
-import net.nan21.dnet.module.bd.fin.domain.entity.FinDocType;
-import net.nan21.dnet.module.bd.fin.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bp.md.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 
@@ -20,7 +20,7 @@ import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoice;
 public interface IPurchaseInvoiceService extends
         IEntityService<PurchaseInvoice> {
 
-    public List<PurchaseInvoice> findByDocType(FinDocType docType);
+    public List<PurchaseInvoice> findByDocType(TxDocType docType);
 
     public List<PurchaseInvoice> findByDocTypeId(Long docTypeId);
 

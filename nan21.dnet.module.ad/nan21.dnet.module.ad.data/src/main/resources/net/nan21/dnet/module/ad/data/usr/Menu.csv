@@ -1,7 +1,7 @@
 "name";"title";"active";"description"
 "AD";"Administration";"true";
-"HRM";"Human Resources Managment";"true";
-"MDM";"Master-data Management";"true";
+"HR";"Human Resources Managment";"true";
+"MD";"Master-data Management";"true";
 "PJ";"Project Managment";"true";
-"SCM";"Purchasing";"true";
+"SC";"Purchasing";"true";
 "SD";"Sales & Distribution";"true";

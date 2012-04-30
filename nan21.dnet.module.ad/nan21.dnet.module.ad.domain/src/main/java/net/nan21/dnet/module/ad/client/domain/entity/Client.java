@@ -349,7 +349,7 @@ public class Client implements IModelWithId {
                     .toString().toUpperCase());
         }
 
-        if (this.systemClient == null) {
+        if (this.getSystemClient() == null) {
             event.updateAttributeWithObject("systemClient", false);
         }
     }

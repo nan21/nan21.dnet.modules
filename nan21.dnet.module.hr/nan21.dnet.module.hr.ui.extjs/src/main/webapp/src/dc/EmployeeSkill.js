@@ -34,7 +34,7 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.EmployeeSkill$Filter", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["createdBy","modifiedBy","skill","skillLevel"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

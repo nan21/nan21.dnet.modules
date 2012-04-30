@@ -3,9 +3,9 @@
 Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationCode", {
 	extend: "dnet.core.dc.AbstractDc",
  
-	recordModel: "net.nan21.dnet.module.bd.standards.ds.model.ClassificationCodeDs",
-	filterModel: "net.nan21.dnet.module.bd.standards.ds.model.ClassificationCodeDsFilter",
-	paramModel: "net.nan21.dnet.module.bd.standards.ds.param.ClassificationCodeDsParam",
+	recordModel: "net.nan21.dnet.module.bd.standards.ds.model.ClassificationItemDs",
+	filterModel: "net.nan21.dnet.module.bd.standards.ds.model.ClassificationItemDsFilter",
+	paramModel: "net.nan21.dnet.module.bd.standards.ds.param.ClassificationItemDsParam",
 	constructor : function(config) {
         config = config || {};
         Ext.apply(this, config);
@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationCode$Filter", {
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","code"])
 		.addChildrenTo("col2",["classSystem","active"])
-    	.addAuditFilter({})	
+    	.addAuditFilter()	
 	}
 }); 
  	

@@ -108,13 +108,13 @@ public class UserType extends AbstractType {
 
         super.aboutToInsert(event);
 
-        if (this.employeeAccount == null) {
+        if (this.getEmployeeAccount() == null) {
             event.updateAttributeWithObject("employeeAccount", false);
         }
-        if (this.bpAccount == null) {
+        if (this.getBpAccount() == null) {
             event.updateAttributeWithObject("bpAccount", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }

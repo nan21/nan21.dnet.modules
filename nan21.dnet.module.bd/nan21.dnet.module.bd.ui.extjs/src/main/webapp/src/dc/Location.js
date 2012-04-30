@@ -15,6 +15,40 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Location", {
 
 
 
+ 	
+
+Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$Filter", {
+	extend: "dnet.core.dc.AbstractDcvFilterForm",
+ 	alias: "widget.net.nan21.dnet.module.bd.geo.dc.Location$Filter",
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
+		.addLov({ name:"regionCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Regions", dataIndex:"regionCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "regionId"} ],filterFieldMapping: [{lovField:"countryId", dsField: "countryId"} ]  })
+		.addTextField({ name:"cityName", dataIndex:"cityName",anchor:"-20",maxLength:255  })
+		.addTextField({ name:"targetUuid", dataIndex:"targetUuid",anchor:"-20",maxLength:36  })
+		.addTextField({ name:"targetType", dataIndex:"targetType",anchor:"-20",maxLength:255  })
+		.addBooleanField({ name:"billing", dataIndex:"billing",anchor:"-20"  })
+		.addBooleanField({ name:"mailing", dataIndex:"mailing",anchor:"-20"  })
+		.addBooleanField({ name:"shipping", dataIndex:"shipping",anchor:"-20"  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
+		//containers
+		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form", width:180}) 
+		.addPanel({ name:"col3", layout:"form", width:250}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
+		
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["col1","col2","col3"])
+		.addChildrenTo("col1",["countryCode","regionCode","cityName"])
+		.addChildrenTo("col2",["billing","mailing","shipping","active"])
+		.addChildrenTo("col3",["targetType","targetUuid"])
+    	.addAuditFilter()	
+	}
+}); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.bd.geo.dc.Location$ListCtx", {
 	extend: "dnet.core.dc.AbstractDcvGrid",

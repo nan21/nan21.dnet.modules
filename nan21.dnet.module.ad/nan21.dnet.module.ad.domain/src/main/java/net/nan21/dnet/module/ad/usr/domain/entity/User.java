@@ -183,10 +183,10 @@ public class User extends AbstractTypeWithCode {
 
         super.aboutToInsert(event);
 
-        if (this.locked == null) {
+        if (this.getLocked() == null) {
             event.updateAttributeWithObject("locked", false);
         }
-        if (this.active == null) {
+        if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
     }
