@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="AccDocDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccDocDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.AccDocDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.tx.fin.ds.converter.AccDocDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccDoc" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccDocDs" />
+	</bean>
+   
+ 	<bean id="AccDocLineDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.AccDocLineDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.tx.fin.ds.converter.AccDocLineDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccDocLine" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineDs" />
+	</bean>
+   
+ 	<bean id="AccDocLineCtxDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineCtxDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.AccDocLineCtxDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccDocLineCtx" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineCtxDs" />
+	</bean>
+   
+ 	<bean id="AccOperationDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccOperationDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.AccOperationDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.AccOperation" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccOperation" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccOperationDs" />
+	</bean>
+   
+ 	<bean id="AccBalanceDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccBalanceDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.AccBalanceDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.AccBalance" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AccBalance" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccBalanceDs" />
+	</bean>
+      
+</beans>
+   

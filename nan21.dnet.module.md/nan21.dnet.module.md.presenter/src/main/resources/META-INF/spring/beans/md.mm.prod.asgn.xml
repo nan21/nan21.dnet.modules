@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+   
+   
+	<!-- CategoriesOfProduct -->
+ 	<bean id="CategoriesOfProductAsgnService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.asgn.CategoriesOfProductAsgn" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.asgn.CategoriesOfProductAsgn" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory" />		 
+	  	<property name="leftTable" value="MD_PROD_CATEG" />
+	  	<property name="rightTable" value="MD_PROD_PRODCATEGS" />
+	  	<property name="rightItemIdField" value="CATEGORIES_ID" />
+	  	<property name="rightObjectIdField" value="PRODUCTS_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.md.business" /> 	  	  
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CategoriesOfProduct" />
+		<property name="asgn" value="true" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.asgn.CategoriesOfProductAsgn" />
+	</bean>
+   
+   
+   
+	<!-- ProductsOfCategory -->
+ 	<bean id="ProductsOfCategoryAsgnService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseAsgnService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.asgn.ProductsOfCategoryAsgn" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.asgn.ProductsOfCategoryAsgn" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.Product" />		 
+	  	<property name="leftTable" value="MD_PROD" />
+	  	<property name="rightTable" value="MD_PROD_PRODCATEGS" />
+	  	<property name="rightItemIdField" value="PRODUCTS_ID" />
+	  	<property name="rightObjectIdField" value="CATEGORIES_ID" /> 	
+	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.md.business" /> 	  	  
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ProductsOfCategory" />
+		<property name="asgn" value="true" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.asgn.ProductsOfCategoryAsgn" />
+	</bean>
+       
+</beans>
+   

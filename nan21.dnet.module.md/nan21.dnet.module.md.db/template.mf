@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DNet MD - db
+Bundle-SymbolicName: nan21.dnet.module.md.db
+Bundle-Vendor: Nan21 
+Bundle-Version: 1.0.0.M9
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="CalendarEventPriorityDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.filter.CalendarEventPriorityDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventPriority" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CalendarEventPriority" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityDs" />
+	</bean>
+   
+ 	<bean id="CalendarEventPriorityCallLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityCallLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityCallLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventPriority" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CalendarEventPriorityCallLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityCallLovDs" />
+	</bean>
+   
+ 	<bean id="CalendarEventPriorityMeetingLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityMeetingLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityMeetingLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventPriority" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CalendarEventPriorityMeetingLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityMeetingLovDs" />
+	</bean>
+   
+ 	<bean id="CalendarEventPriorityTaskLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityTaskLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityTaskLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventPriority" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CalendarEventPriorityTaskLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityTaskLovDs" />
+	</bean>
+   
+ 	<bean id="CalendarEventStatusDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.filter.CalendarEventStatusDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CalendarEventStatus" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusDs" />
+	</bean>
+   
+ 	<bean id="CalendarEventStatusCallLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusCallLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusCallLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CalendarEventStatusCallLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusCallLovDs" />
+	</bean>
+   
+ 	<bean id="CalendarEventStatusMeetingLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusMeetingLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusMeetingLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CalendarEventStatusMeetingLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusMeetingLovDs" />
+	</bean>
+   
+ 	<bean id="CalendarEventStatusTaskLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusTaskLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusTaskLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventStatus" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CalendarEventStatusTaskLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusTaskLovDs" />
+	</bean>
+   
+ 	<bean id="MyCalendarCallDsService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.activity.ds.service.MyCalendarCallDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.MyCalendarCallDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.filter.MyCalendarCallDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEvent" />
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.md.activity.ds.qb.MyCalendarCallDsQueryBuilder" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.activity.ds.converter.MyCalendarCallDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="MyCalendarCall" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.MyCalendarCallDs" />
+	</bean>
+   
+ 	<bean id="MyCalendarMeetingDsService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.activity.ds.service.MyCalendarMeetingDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.MyCalendarMeetingDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.filter.MyCalendarMeetingDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEvent" />
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.md.activity.ds.qb.MyCalendarMeetingDsQueryBuilder" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.activity.ds.converter.MyCalendarMeetingDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="MyCalendarMeeting" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.MyCalendarMeetingDs" />
+	</bean>
+   
+ 	<bean id="MyCalendarTaskDsService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.activity.ds.service.MyCalendarTaskDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.MyCalendarTaskDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.filter.MyCalendarTaskDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEvent" />
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.md.activity.ds.qb.MyCalendarTaskDsQueryBuilder" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.activity.ds.converter.MyCalendarTaskDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="MyCalendarTask" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.MyCalendarTaskDs" />
+	</bean>
+   
+ 	<bean id="MyCalendarEventDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.MyCalendarEventDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.filter.MyCalendarEventDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEvent" />
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.md.activity.ds.qb.MyCalendarEventDsQueryBuilder" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.activity.ds.converter.MyCalendarEventDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="MyCalendarEvent" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.MyCalendarEventDs" />
+	</bean>
+      
+</beans>
+   

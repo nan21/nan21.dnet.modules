@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-Vendor: Nan21 
+Bundle-Version: 1.0.0.M9
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-Name: DNet MD - data
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+Bundle-SymbolicName: nan21.dnet.module.md.data
+Import-Package: net.nan21.dnet.core.api.setup
+

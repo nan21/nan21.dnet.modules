@@ -1,0 +1,25 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_MD_ACTIVITY1" 
+				baseTableName="MD_ACTIVITY" baseColumnNames="STATUS_ID"  
+				referencedTableName="MD_ACTIVITY_STATUS"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_MD_ACTIVITY2" 
+				baseTableName="MD_ACTIVITY" baseColumnNames="PRIORITY_ID"  
+				referencedTableName="MD_ACTIVITY_PRIORITY"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_MD_ACTIVITY3" 
+				baseTableName="MD_ACTIVITY" baseColumnNames="BPARTNER_ID"  
+				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_MD_ACTIVITY4" 
+				baseTableName="MD_ACTIVITY" baseColumnNames="CONTACT_ID"  
+				referencedTableName="MD_BP_CONTACT"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

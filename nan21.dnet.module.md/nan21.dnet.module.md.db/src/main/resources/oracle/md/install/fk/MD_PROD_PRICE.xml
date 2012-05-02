@@ -1,0 +1,14 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_MD_PROD_PRICE1" baseTableName="MD_PROD_PRICE" baseColumnNames="PRICELISTVERSION_ID"  referencedTableName="MD_PRICE_LIST_VERSION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_MD_PROD_PRICE2" baseTableName="MD_PROD_PRICE" baseColumnNames="PRODUCT_ID"  referencedTableName="MD_PROD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_MD_PROD_PRICE3" baseTableName="MD_PROD_PRICE" baseColumnNames="UOM_ID"  referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

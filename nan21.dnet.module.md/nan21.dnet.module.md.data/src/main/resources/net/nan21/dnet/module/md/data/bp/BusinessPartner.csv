@@ -1,0 +1,5 @@
+"code";"name";"companyName";"type";"countryCode";"taxPayerNo";"active";"identityCardNo";"legalForm";"registrationNo";"registrationDate";"uuid"
+"C-1";"Customer One";"Customer One";"company";"ROMANIA";"RO12345";"true";;"SA";;;"3EAF5430-22F0-4904-A56B-DC7E6BE7E398"
+"C-2";"Customer Two";"Customer Two";"company";"ROMANIA";"RO54321";"true";;"SRL";;;"9AFB3326-61A2-48EE-8FAA-88615DFCB188"
+"C-3";"Supplier One";"Supplier One";"company";"ROMANIA";"RO111111";"true";;"SA";;;"9CEE836F-58B7-4D0B-8C18-9D3F62C2B680"
+"C-4";"Supplier Two";"Supplier Two";"company";"ROMANIA";"RO99999";"true";;"SRL";;;"8D837BAC-621D-4B70-B2DB-099E0958C84A"

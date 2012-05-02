@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="SubInventoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.SubInventoryDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.filter.SubInventoryDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.SubInventory" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.org.ds.converter.SubInventoryDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SubInventory" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.SubInventoryDs" />
+	</bean>
+   
+ 	<bean id="SubInventoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.SubInventoryLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.model.SubInventoryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.SubInventory" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SubInventoryLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.SubInventoryLovDs" />
+	</bean>
+   
+ 	<bean id="StockLocatorTypeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorTypeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.filter.StockLocatorTypeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.StockLocatorType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="StockLocatorType" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorTypeDs" />
+	</bean>
+   
+ 	<bean id="StockLocatorTypeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorTypeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorTypeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.StockLocatorType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="StockLocatorTypeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorTypeLovDs" />
+	</bean>
+   
+ 	<bean id="StockLocatorDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.filter.StockLocatorDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.StockLocator" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.org.ds.converter.StockLocatorDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="StockLocator" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorDs" />
+	</bean>
+   
+ 	<bean id="StockLocatorLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.StockLocator" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="StockLocatorLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorLovDs" />
+	</bean>
+      
+</beans>
+   

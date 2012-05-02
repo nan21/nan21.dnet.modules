@@ -1,0 +1,50 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_ACCOUNT1" 
+				baseTableName="MD_BP_ACCOUNT" baseColumnNames="BP_ID"  
+				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_ACCOUNT2" 
+				baseTableName="MD_BP_ACCOUNT" baseColumnNames="ORGANIZATION_ID"  
+				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_ACCOUNT3" 
+				baseTableName="MD_BP_ACCOUNT" baseColumnNames="CUSTGROUP_ID"  
+				referencedTableName="MD_BP_CUSTGROUP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_ACCOUNT4" 
+				baseTableName="MD_BP_ACCOUNT" baseColumnNames="CUSTPAYMENTMETHOD_ID"  
+				referencedTableName="BD_PAY_METHOD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-5">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_ACCOUNT5" 
+				baseTableName="MD_BP_ACCOUNT" baseColumnNames="CUSTPAYMENTTERM_ID"  
+				referencedTableName="BD_PAY_TERM"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-6">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_ACCOUNT6" 
+				baseTableName="MD_BP_ACCOUNT" baseColumnNames="CUSTDELIVERYMETHOD_ID"  
+				referencedTableName="BD_DELIVERY_METHOD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-7">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_ACCOUNT7" 
+				baseTableName="MD_BP_ACCOUNT" baseColumnNames="VENDGROUP_ID"  
+				referencedTableName="MD_BP_VENDGROUP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-8">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_ACCOUNT8" 
+				baseTableName="MD_BP_ACCOUNT" baseColumnNames="VENDPAYMENTMETHOD_ID"  
+				referencedTableName="BD_PAY_METHOD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-9">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_ACCOUNT9" 
+				baseTableName="MD_BP_ACCOUNT" baseColumnNames="VENDPAYMENTTERM_ID"  
+				referencedTableName="BD_PAY_TERM"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

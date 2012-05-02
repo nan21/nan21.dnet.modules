@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="BusinessPartnerService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.BusinessPartnerService"  />  
+ 
+ 	<bean id="ContactService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.ContactService"  />  
+ 
+ 	<bean id="BpClassificationService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.BpClassificationService"  />  
+ 
+ 	<bean id="BpBankAccountService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.BpBankAccountService"  />  
+ 
+ 	<bean id="CompanyLegalFormService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.CompanyLegalFormService"  />  
+ 
+ 	<bean id="BankService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.BankService"  />  
+ 
+ 	<bean id="BpAccountService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.BpAccountService"  />  
+ 
+ 	<bean id="BpAccountAcctService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.BpAccountAcctService"  />  
+ 
+ 	<bean id="CustomerGroupService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.CustomerGroupService"  />  
+ 
+ 	<bean id="CustomerGroupAcctService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.CustomerGroupAcctService"  />  
+ 
+ 	<bean id="VendorGroupService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.VendorGroupService"  />  
+ 
+ 	<bean id="VendorGroupAcctService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.VendorGroupAcctService"  />  
+   
+</beans>
+   

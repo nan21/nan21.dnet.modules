@@ -1,0 +1,23 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_TX_INV_OPERATION1" baseTableName="TX_INV_OPERATION" baseColumnNames="INVENTORY_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_TX_INV_OPERATION2" baseTableName="TX_INV_OPERATION" baseColumnNames="FROM_SUBINV_ID"  referencedTableName="MD_SUBINVENTORY"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_TX_INV_OPERATION3" baseTableName="TX_INV_OPERATION" baseColumnNames="LOCATOR_ID"  referencedTableName="MD_STOCKLOCATOR"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_TX_INV_OPERATION4" baseTableName="TX_INV_OPERATION" baseColumnNames="ITEM_ID"  referencedTableName="MD_PROD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-5">
+		<addForeignKeyConstraint constraintName="FK_TX_INV_OPERATION5" baseTableName="TX_INV_OPERATION" baseColumnNames="TRANSACTIONLINE_ID"  referencedTableName="TX_INV_TX_LINE"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-6">
+		<addForeignKeyConstraint constraintName="FK_TX_INV_OPERATION6" baseTableName="TX_INV_OPERATION" baseColumnNames="UOM_ID"  referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    
