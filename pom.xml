@@ -4,19 +4,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.modules</artifactId>
-	<version>1.0.0.M8</version>
+	<version>1.0.0.M9</version>
 	<name>DNet modules</name>	
 	<description>DNet modules</description>
-	<packaging>pom</packaging>	
+	<packaging>pom</packaging>
 
 	<!-- ========================== Modules ========================== -->
 	
 	<modules>
 		<module>nan21.dnet.module.ad</module>
         <module>nan21.dnet.module.bd</module>
+        <module>nan21.dnet.module.md</module>
         <module>nan21.dnet.module.mm</module>
         <module>nan21.dnet.module.pj</module>
-        <module>nan21.dnet.module.bp</module>
         <module>nan21.dnet.module.hr</module>
         <module>nan21.dnet.module.sc</module>
         <module>nan21.dnet.module.sd</module>
