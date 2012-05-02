@@ -12,14 +12,7 @@
 	<!-- ========================== Modules ========================== -->
 	
 	<modules>
-		<module>nan21.dnet.module.mm.domain</module>
-		<module>nan21.dnet.module.mm.business.api</module>
-		<module>nan21.dnet.module.mm.business</module>
-		<module>nan21.dnet.module.mm.presenter</module>
-		<module>nan21.dnet.module.mm.ui.extjs</module>
 		<module>nan21.dnet.module.mm.parent</module>
-		<module>nan21.dnet.module.mm.data</module>
 		<module>nan21.dnet.module.mm.www</module>
-		<module>nan21.dnet.module.mm.db</module>
 	</modules>	
 </project>	 
