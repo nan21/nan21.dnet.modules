@@ -20,6 +20,6 @@
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_SD_SALES_INV_TX4" 
 				baseTableName="SD_SALES_INV_TX" baseColumnNames="SALESORDER_ID"  
-				referencedTableName="SD_SALES_ORDER"  referencedColumnNames="ID" />
+				referencedTableName="SD_SO"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

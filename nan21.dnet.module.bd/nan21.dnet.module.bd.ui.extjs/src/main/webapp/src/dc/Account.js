@@ -71,6 +71,7 @@ Ext.define("net.nan21.dnet.module.bd.acc.dc.Account$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.bd.acc.dc.Account$EditList",
 	
+	_bulkEditFields_ : ["accSchema","sign","summary","active"],
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })

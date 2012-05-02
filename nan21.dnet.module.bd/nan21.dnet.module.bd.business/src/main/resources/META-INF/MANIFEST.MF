@@ -13,24 +13,25 @@ Export-Package: net.nan21.dnet.module.bd._businessdelegates;version="1
  odule.bd.currency.business.service,net.nan21.dnet.module.bd.currency.
  domain.entity",net.nan21.dnet.module.bd.fin.business.serviceimpl;vers
  ion="1.0.0.M9";uses:="javax.persistence,net.nan21.dnet.core.business.
- service,net.nan21.dnet.module.bd.fin.business.service,net.nan21.dnet.
- module.bd.fin.domain.entity",net.nan21.dnet.module.bd.geo.business.se
- rviceimpl;version="1.0.0.M9";uses:="javax.persistence,net.nan21.dnet.
- core.business.service,net.nan21.dnet.module.bd.geo.business.service,n
- et.nan21.dnet.module.bd.geo.domain.entity",net.nan21.dnet.module.bd.o
- rg.business.serviceimpl;version="1.0.0.M9";uses:="javax.persistence,n
- et.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.org.busi
- ness.service,net.nan21.dnet.module.bd.org.domain.entity",net.nan21.dn
- et.module.bd.standards.business.serviceimpl;version="1.0.0.M9";uses:=
- "javax.persistence,net.nan21.dnet.core.business.service,net.nan21.dne
- t.module.bd.standards.business.service,net.nan21.dnet.module.bd.stand
- ards.domain.entity",net.nan21.dnet.module.bd.tx.business.serviceimpl;
- version="1.0.0.M9";uses:="javax.persistence,net.nan21.dnet.core.busin
- ess.service,net.nan21.dnet.module.bd.tx.business.service,net.nan21.dn
- et.module.bd.tx.domain.entity",net.nan21.dnet.module.bd.uom.business.
- serviceimpl;version="1.0.0.M9";uses:="javax.persistence,net.nan21.dne
- t.core.business.service,net.nan21.dnet.module.bd.uom.business.service
- ,net.nan21.dnet.module.bd.uom.domain.entity"
+ service,net.nan21.dnet.module.bd.acc.domain.entity,net.nan21.dnet.mod
+ ule.bd.fin.business.service,net.nan21.dnet.module.bd.fin.domain.entit
+ y",net.nan21.dnet.module.bd.geo.business.serviceimpl;version="1.0.0.M
+ 9";uses:="javax.persistence,net.nan21.dnet.core.business.service,net.
+ nan21.dnet.module.bd.geo.business.service,net.nan21.dnet.module.bd.ge
+ o.domain.entity",net.nan21.dnet.module.bd.org.business.serviceimpl;ve
+ rsion="1.0.0.M9";uses:="javax.persistence,net.nan21.dnet.core.busines
+ s.service,net.nan21.dnet.module.bd.org.business.service,net.nan21.dne
+ t.module.bd.org.domain.entity",net.nan21.dnet.module.bd.standards.bus
+ iness.serviceimpl;version="1.0.0.M9";uses:="javax.persistence,net.nan
+ 21.dnet.core.business.service,net.nan21.dnet.module.bd.standards.busi
+ ness.service,net.nan21.dnet.module.bd.standards.domain.entity",net.na
+ n21.dnet.module.bd.tx.business.serviceimpl;version="1.0.0.M9";uses:="
+ javax.persistence,net.nan21.dnet.core.business.service,net.nan21.dnet
+ .module.bd.tx.business.service,net.nan21.dnet.module.bd.tx.domain.ent
+ ity",net.nan21.dnet.module.bd.uom.business.serviceimpl;version="1.0.0
+ .M9";uses:="javax.persistence,net.nan21.dnet.core.business.service,ne
+ t.nan21.dnet.module.bd.uom.business.service,net.nan21.dnet.module.bd.
+ uom.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.core.busine
  ss;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.bd.domain;version=
@@ -62,12 +63,12 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  rvice,net.nan21.dnet.module.bd.standards.domain.entity,net.nan21.dnet
  .module.bd.tx.business.service,net.nan21.dnet.module.bd.tx.domain.ent
  ity,net.nan21.dnet.module.bd.uom.business.service,net.nan21.dnet.modu
- le.bd.uom.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.h
- ibernate.validator;version="[4.0,5.0)",org.hibernate.validator.constr
- aints;version="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)"
- ,org.springframework.aop.framework;version="[3.0,3.1)",org.springfram
- ework.context.weaving;version="[3.0,3.1)",org.springframework.orm.jpa
- ,org.springframework.orm.jpa.vendor,org.springframework.transaction;v
- ersion="[3.0,3.1)",org.springframework.transaction.aspectj;version="[
- 3.0,3.1)"
+ le.bd.uom.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.e
+ clipse.persistence.jpa;version="[2.1,2.5)",org.hibernate.validator;ve
+ rsion="[4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,5
+ .0)",org.springframework.aop;version="[3.0,3.1)",org.springframework.
+ aop.framework;version="[3.0,3.1)",org.springframework.context.weaving
+ ;version="[3.0,3.1)",org.springframework.orm.jpa,org.springframework.
+ orm.jpa.vendor,org.springframework.transaction;version="[3.0,3.1)",or
+ g.springframework.transaction.aspectj;version="[3.0,3.1)"
 

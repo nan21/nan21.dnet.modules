@@ -155,6 +155,30 @@
 						</list>
 					</property>
 				</bean>
+				<!-- Accounting base data -->
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="165" />
+					<property name="name" value="bd-acc" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="AccSchema" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/acc/AccSchema.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="Account" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/acc/Account.csv" />
+							</bean> 
+						</list>
+					</property>
+				</bean>
+				
 				<!-- Financial base data -->
 				<bean class="net.nan21.dnet.core.api.setup.InitData">
 					<property name="sequence" value="170" />

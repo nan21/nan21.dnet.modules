@@ -1,5 +1,7 @@
 Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI$Trl", { 
 	invEditDetails__ttl : "Detalii",
+	taxList__ttl : "Taxe",
+	accDocLineList__ttl : "Contabilitate",
 	itemTaxList__ttl : "Taxe linie factură",
 	atchEditList__ttl : "Ataşamente",
 	linesPanel__ttl : "Linii",
@@ -7,6 +9,8 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI$Trl", {
 	
 	tlbInvList__ttl : "Facturi client",
 	tlbInvEdit__ttl : "Factură client",
+	tlbTaxList__ttl : "Taxe",
+	tlbAccDocLineList__ttl : "Contabilitate",
 	tlbItemList__ttl : "Linii factură",
 	tlbItemEdit__ttl : "Linie factură",
 	

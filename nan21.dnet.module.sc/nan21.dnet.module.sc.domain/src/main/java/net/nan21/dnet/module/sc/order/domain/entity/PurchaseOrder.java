@@ -51,8 +51,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = PurchaseOrder.NQ_FIND_BY_IDS, query = "SELECT e FROM PurchaseOrder e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PurchaseOrder extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "SC_PURCHASE_ORDER";
-    public static final String SEQUENCE_NAME = "SC_PURCHASE_ORDER_SEQ";
+    public static final String TABLE_NAME = "SC_PO";
+    public static final String SEQUENCE_NAME = "SC_PO_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -29,7 +29,7 @@
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.mm.domain</artifactId>
+			<artifactId>nan21.dnet.module.md.domain</artifactId>
 			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>compile</scope>
@@ -50,7 +50,7 @@
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.mm.presenter</artifactId>
+			<artifactId>nan21.dnet.module.md.presenter</artifactId>
 			<version>1.0.0.M9</version>
 			<type>jar</type>
 			<scope>compile</scope>

@@ -12,6 +12,9 @@
  
  	<bean id="TaxService" scope="prototype"
 	  		class="net.nan21.dnet.module.bd.fin.business.serviceimpl.TaxService"  />  
+ 
+ 	<bean id="TaxAcctService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.fin.business.serviceimpl.TaxAcctService"  />  
    
 </beans>
    

@@ -13,6 +13,7 @@ import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
+import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceTax;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoice;
@@ -51,5 +52,13 @@ public interface IPurchaseInvoiceService extends
     public List<PurchaseInvoice> findByLines(PurchaseInvoiceItem lines);
 
     public List<PurchaseInvoice> findByLinesId(Long linesId);
+
+    public List<PurchaseInvoice> findByTaxes(PurchaseInvoiceTax taxes);
+
+    public List<PurchaseInvoice> findByTaxesId(Long taxesId);
+
+    public void doPost(PurchaseInvoice invoice) throws Exception;
+
+    public void doUnPost(PurchaseInvoice invoice) throws Exception;
 
 }

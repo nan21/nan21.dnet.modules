@@ -1,9 +1,10 @@
 
 Ext.define("net.nan21.dnet.module.bd.fin.ds.model.TaxDs$Trl", {  	  	
-	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	rate__lbl :  "@rate",	summary__lbl :  "@summary",	categoryId__lbl :    "(ID)",
-	category__lbl :    "",
-	parentTaxId__lbl :    "(ID)",
-	parentTax__lbl :    "",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	rate__lbl :  "Rată",
+	summary__lbl :  "@summary",	categoryId__lbl :    "Categorie(ID)",
+	category__lbl :    "Categorie",
+	parentTaxId__lbl :    "Părinte(ID)",
+	parentTax__lbl :    "Părinte",
 		 
 	id__lbl :"ID"
 });

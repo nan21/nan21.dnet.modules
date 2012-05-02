@@ -10,16 +10,16 @@ import net.nan21.dnet.core.api.session.Session;
 
 import net.nan21.dnet.module.ad.data.ds.filter.AttachmentDsFilter;
 import net.nan21.dnet.module.ad.data.ds.model.AttachmentDs;
-import net.nan21.dnet.module.mm.md.ds.filter.ProductAttributeValueDsFilter;
-import net.nan21.dnet.module.mm.md.ds.filter.ProductCategoryDsFilter;
-import net.nan21.dnet.module.mm.md.ds.filter.ProductDsFilter;
-import net.nan21.dnet.module.mm.md.ds.filter.ProductManufacturerDsFilter;
-import net.nan21.dnet.module.mm.md.ds.model.ProductAttributeValueDs;
-import net.nan21.dnet.module.mm.md.ds.model.ProductCategoryDs;
-import net.nan21.dnet.module.mm.md.ds.model.ProductDs;
-import net.nan21.dnet.module.mm.md.ds.model.ProductManufacturerDs;
-import net.nan21.dnet.module.mm.md.ds.param.ProductDsParam;
-
+import net.nan21.dnet.module.md.mm.prod.ds.filter.ProductAttributeValueDsFilter;
+import net.nan21.dnet.module.md.mm.prod.ds.filter.ProductCategoryDsFilter;
+import net.nan21.dnet.module.md.mm.prod.ds.filter.ProductDsFilter;
+import net.nan21.dnet.module.md.mm.prod.ds.filter.ProductManufacturerDsFilter;
+import net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeValueDs;
+import net.nan21.dnet.module.md.mm.prod.ds.model.ProductCategoryDs;
+import net.nan21.dnet.module.md.mm.prod.ds.model.ProductDs;
+import net.nan21.dnet.module.md.mm.prod.ds.model.ProductManufacturerDs;
+import net.nan21.dnet.module.md.mm.prod.ds.param.ProductDsParam;
+ 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

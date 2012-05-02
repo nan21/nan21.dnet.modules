@@ -18,6 +18,7 @@ import net.nan21.dnet.module.md.bp.domain.entity.Contact;
 import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
+import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceTax;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
 import javax.persistence.EntityManager;
@@ -187,9 +188,27 @@ public class SalesInvoiceService extends AbstractEntityService<SalesInvoice>
                 .setParameter("pLinesId", linesId).getResultList();
     }
 
-    public void doPost(SalesInvoice salesInvoice) throws Exception {
+    public List<SalesInvoice> findByTaxes(SalesInvoiceTax taxes) {
+        return this.findByTaxesId(taxes.getId());
+    }
+
+    public List<SalesInvoice> findByTaxesId(Long taxesId) {
+        return (List<SalesInvoice>) this.em
+                .createQuery(
+                        "select distinct e from SalesInvoice e , IN (e.taxes) c where e.clientId = :pClientId and c.id = :pTaxesId",
+                        SalesInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pTaxesId", taxesId).getResultList();
+    }
+
+    public void doPost(SalesInvoice invoice) throws Exception {
         this.getBusinessDelegate(SalesInvoiceToAccDocBD.class).postInvoice(
-                salesInvoice);
+                invoice);
+    }
+
+    public void doUnPost(SalesInvoice invoice) throws Exception {
+        this.getBusinessDelegate(SalesInvoiceToAccDocBD.class).unPostInvoice(
+                invoice);
     }
 
 }

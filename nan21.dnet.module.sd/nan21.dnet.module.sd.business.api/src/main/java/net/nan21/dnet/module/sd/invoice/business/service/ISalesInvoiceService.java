@@ -16,6 +16,7 @@ import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.bp.domain.entity.Contact;
 import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
+import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceTax;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
@@ -66,6 +67,12 @@ public interface ISalesInvoiceService extends IEntityService<SalesInvoice> {
 
     public List<SalesInvoice> findByLinesId(Long linesId);
 
-    public void doPost(SalesInvoice salesInvoice) throws Exception;
+    public List<SalesInvoice> findByTaxes(SalesInvoiceTax taxes);
+
+    public List<SalesInvoice> findByTaxesId(Long taxesId);
+
+    public void doPost(SalesInvoice invoice) throws Exception;
+
+    public void doUnPost(SalesInvoice invoice) throws Exception;
 
 }

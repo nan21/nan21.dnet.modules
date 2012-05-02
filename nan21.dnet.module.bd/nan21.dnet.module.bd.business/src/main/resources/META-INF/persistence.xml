@@ -20,6 +20,7 @@
 		
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.TaxCategory</class>
 		<class>net.nan21.dnet.module.bd.fin.domain.entity.Tax</class>
+		<class>net.nan21.dnet.module.bd.fin.domain.entity.TaxAcct</class>
 		
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Region</class>

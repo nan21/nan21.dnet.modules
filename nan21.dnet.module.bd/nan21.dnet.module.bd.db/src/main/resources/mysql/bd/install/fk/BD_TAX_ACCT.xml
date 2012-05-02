@@ -1,0 +1,25 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_BD_TAX_ACCT1" 
+				baseTableName="BD_TAX_ACCT" baseColumnNames="TAX_ID"  
+				referencedTableName="BD_TAX"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_BD_TAX_ACCT2" 
+				baseTableName="BD_TAX_ACCT" baseColumnNames="ACCSCHEMA_ID"  
+				referencedTableName="BD_ACC_SCHEMA"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_BD_TAX_ACCT3" 
+				baseTableName="BD_TAX_ACCT" baseColumnNames="SALESACCOUNT_ID"  
+				referencedTableName="BD_ACC_ACCOUNT"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_BD_TAX_ACCT4" 
+				baseTableName="BD_TAX_ACCT" baseColumnNames="PURCHASEACCOUNT_ID"  
+				referencedTableName="BD_ACC_ACCOUNT"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

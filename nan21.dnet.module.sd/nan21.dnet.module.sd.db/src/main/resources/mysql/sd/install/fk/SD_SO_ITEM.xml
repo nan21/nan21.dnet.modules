@@ -5,12 +5,12 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_SD_SO_ITEM1" 
 				baseTableName="SD_SO_ITEM" baseColumnNames="SALESORDER_ID"  
-				referencedTableName="SD_SALES_ORDER"  referencedColumnNames="ID" />
+				referencedTableName="SD_SO"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_SD_SO_ITEM2" 
 				baseTableName="SD_SO_ITEM" baseColumnNames="PRODUCT_ID"  
-				referencedTableName="MD_PRODUCT"  referencedColumnNames="ID" />
+				referencedTableName="MD_PROD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_SD_SO_ITEM3" 

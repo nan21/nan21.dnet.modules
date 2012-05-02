@@ -15,10 +15,12 @@ import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.sc.invoice.business.service.IPurchaseInvoiceService;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
+import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceTax;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoice;
+import net.nan21.dnet.module.sc._businessdelegates.invoice.PurchaseInvoiceToAccDocBD;
 
 public class PurchaseInvoiceService extends
         AbstractEntityService<PurchaseInvoice> implements
@@ -142,6 +144,29 @@ public class PurchaseInvoiceService extends
                         PurchaseInvoice.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLinesId", linesId).getResultList();
+    }
+
+    public List<PurchaseInvoice> findByTaxes(PurchaseInvoiceTax taxes) {
+        return this.findByTaxesId(taxes.getId());
+    }
+
+    public List<PurchaseInvoice> findByTaxesId(Long taxesId) {
+        return (List<PurchaseInvoice>) this.em
+                .createQuery(
+                        "select distinct e from PurchaseInvoice e , IN (e.taxes) c where e.clientId = :pClientId and c.id = :pTaxesId",
+                        PurchaseInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pTaxesId", taxesId).getResultList();
+    }
+
+    public void doPost(PurchaseInvoice invoice) throws Exception {
+        this.getBusinessDelegate(PurchaseInvoiceToAccDocBD.class).postInvoice(
+                invoice);
+    }
+
+    public void doUnPost(PurchaseInvoice invoice) throws Exception {
+        this.getBusinessDelegate(PurchaseInvoiceToAccDocBD.class)
+                .unPostInvoice(invoice);
     }
 
 }

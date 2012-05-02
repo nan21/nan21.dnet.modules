@@ -35,8 +35,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = OpportunityResultReason.NQ_FIND_BY_NAME, query = "SELECT e FROM OpportunityResultReason e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class OpportunityResultReason extends AbstractType {
 
-    public static final String TABLE_NAME = "SD_OPRT_REASON";
-    public static final String SEQUENCE_NAME = "SD_OPRT_REASON_SEQ";
+    public static final String TABLE_NAME = "SD_OPORT_REASON";
+    public static final String SEQUENCE_NAME = "SD_OPORT_REASON_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

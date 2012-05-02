@@ -8,11 +8,13 @@ package net.nan21.dnet.module.sc.invoice.business.serviceext;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.sc._businessdelegates.order.PurchaseTaxBD;
 import net.nan21.dnet.module.sc.invoice.business.service.IPurchaseInvoiceItemService;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoice;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItemTax;
+import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceTax;
 
 public class PurchaseInvoiceItemService
 		extends
@@ -87,10 +89,9 @@ public class PurchaseInvoiceItemService
 
 	private void updateAmount(Long invoiceId) {
 		this.em.flush();
-		Object[] x = (Object[]) this.em
-				.createQuery(
-						"select sum(i.netAmount), sum(i.taxAmount) from PurchaseInvoiceItem i " +
-						"where i.purchaseInvoice.id = :invoiceId")
+		Object[] x = (Object[]) this.em.createQuery(
+				"select sum(i.netAmount), sum(i.taxAmount) from PurchaseInvoiceItem i "
+						+ "where i.purchaseInvoice.id = :invoiceId")
 				.setParameter("invoiceId", invoiceId).getSingleResult();
 		PurchaseInvoice invoice = this.em
 				.find(PurchaseInvoice.class, invoiceId);
@@ -106,6 +107,40 @@ public class PurchaseInvoiceItemService
 
 		invoice.setTotalNetAmount(totalNet.floatValue());
 		invoice.setTotalTaxAmount(totalTax.floatValue());
+
+		// re-create taxes
+		// delete existing
+		this.em.createQuery(
+				"delete from PurchaseInvoiceTax t "
+						+ " where t.purchaseInvoice.id = :invoiceId")
+				.setParameter("invoiceId", invoiceId).executeUpdate();
+
+		// create new
+
+		List<Object[]> taxes = (List<Object[]>) this.em
+				.createQuery(
+						"select i.tax,  sum(i.baseAmount), sum(i.taxAmount) from PurchaseInvoiceItemTax i "
+								+ " where i.purchaseInvoiceItem.purchaseInvoice.id = :invoiceId "
+								+ " group by i.tax ").setParameter("invoiceId",
+						invoiceId).getResultList();
+		for (Object[] tax : taxes) {
+			Tax t = (Tax) tax[0];
+			Double baseval = (Double) tax[1];
+			Double taxval = (Double) tax[2];
+			if (baseval == null) {
+				baseval = 0D;
+			}
+			if (taxval == null) {
+				taxval = 0D;
+			}
+
+			PurchaseInvoiceTax invTax = new PurchaseInvoiceTax();
+			invTax.setPurchaseInvoice(invoice);
+			invTax.setTax(t);
+			invTax.setBaseAmount(baseval.floatValue());
+			invTax.setTaxAmount(taxval.floatValue());
+			invoice.addToTaxes(invTax);
+		}
 
 		this.em.merge(invoice);
 	}

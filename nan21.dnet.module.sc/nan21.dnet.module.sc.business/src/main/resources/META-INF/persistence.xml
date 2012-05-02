@@ -27,6 +27,9 @@
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
 		 
 		<!-- BD  --> 
+		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccSchema</class>
+		<class>net.nan21.dnet.module.bd.acc.domain.entity.Account</class>
+		
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
 		
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
@@ -86,6 +89,8 @@
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionLine</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvOperation</class>  
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.Payment</class> 
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc</class> 
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine</class> 
 		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

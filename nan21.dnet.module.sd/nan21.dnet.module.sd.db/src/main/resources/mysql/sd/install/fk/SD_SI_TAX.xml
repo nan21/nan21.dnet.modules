@@ -5,7 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_SD_SI_TAX1" 
 				baseTableName="SD_SI_TAX" baseColumnNames="SALESINVOICE_ID"  
-				referencedTableName="SD_SALES_INVOICE"  referencedColumnNames="ID" />
+				referencedTableName="SD_SI"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_SD_SI_TAX2" 

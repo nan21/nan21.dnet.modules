@@ -62,6 +62,18 @@
 		<property name="name" value="TaxApplicableLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.TaxApplicableLovDs" />
 	</bean>
+   
+ 	<bean id="TaxAcctDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.TaxAcctDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.TaxAcctDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.TaxAcct" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.fin.ds.converter.TaxAcctDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TaxAcct" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.TaxAcctDs" />
+	</bean>
       
 </beans>
    

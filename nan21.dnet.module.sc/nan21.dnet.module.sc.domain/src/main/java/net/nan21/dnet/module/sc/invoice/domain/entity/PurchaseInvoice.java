@@ -50,8 +50,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = PurchaseInvoice.NQ_FIND_BY_IDS, query = "SELECT e FROM PurchaseInvoice e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PurchaseInvoice extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "SC_PURCHASE_INVOICE";
-    public static final String SEQUENCE_NAME = "SC_PURCHASE_INVOICE_SEQ";
+    public static final String TABLE_NAME = "SC_PI";
+    public static final String SEQUENCE_NAME = "SC_PI_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -131,6 +131,10 @@ public class PurchaseInvoice extends AbstractAuditable {
     @OneToMany(fetch = FetchType.LAZY, targetEntity = PurchaseInvoiceItem.class, mappedBy = "purchaseInvoice", cascade = CascadeType.ALL)
     @CascadeOnDelete
     private Collection<PurchaseInvoiceItem> lines;
+
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = PurchaseInvoiceTax.class, mappedBy = "purchaseInvoice", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<PurchaseInvoiceTax> taxes;
 
     /* ============== getters - setters ================== */
 
@@ -277,6 +281,22 @@ public class PurchaseInvoice extends AbstractAuditable {
         }
         e.setPurchaseInvoice(this);
         this.lines.add(e);
+    }
+
+    public Collection<PurchaseInvoiceTax> getTaxes() {
+        return this.taxes;
+    }
+
+    public void setTaxes(Collection<PurchaseInvoiceTax> taxes) {
+        this.taxes = taxes;
+    }
+
+    public void addToTaxes(PurchaseInvoiceTax e) {
+        if (this.taxes == null) {
+            this.taxes = new ArrayList<PurchaseInvoiceTax>();
+        }
+        e.setPurchaseInvoice(this);
+        this.taxes.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {
