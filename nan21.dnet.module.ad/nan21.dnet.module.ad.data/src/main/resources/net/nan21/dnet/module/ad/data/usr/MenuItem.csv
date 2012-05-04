@@ -25,7 +25,8 @@
 "10";"fi-menu-base";"Base data";"FI";;;"true";;"false";"false";
 "20";"fi-menu-tx";"Transactions";"FI";;;"true";;"false";"false";
 "10";"PayAccount_UI";"Financial accounts";;"net.nan21.dnet.module.md.org.frame.PayAccount_UI";"nan21.dnet.module.md.ui.extjs";"true";;"false";"false";
-"10";"AccDoc_UI";"Accounting documents";;"net.nan21.dnet.module.md.tx.fin.frame.AccDoc_UI";"nan21.dnet.module.md.ui.extjs";"true";;"false";"false";
+"60";"AccDoc_UI";"Accounting documents";;"net.nan21.dnet.module.md.tx.fin.frame.AccDoc_UI";"nan21.dnet.module.md.ui.extjs";"true";;"false";"false";
+"30";"Payment_UI";"Payments";;"net.nan21.dnet.module.md.tx.fin.frame.Payment_UI";"nan21.dnet.module.md.ui.extjs";"true";;"false";"false";
 "10";"JobBaseDataDef_UI";"Job base data definitions";;"net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
 "10";"AttachmentType_UI";"Attachment types";;"net.nan21.dnet.module.ad.data.frame.AttachmentType_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
 "10";"bd-menu-uom";"Measuring units";;;;"true";;"false";"false";

@@ -7,6 +7,17 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="PaymentDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.PaymentDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.PaymentDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.Payment" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Payment" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.PaymentDs" />
+	</bean>
+   
  	<bean id="AccDocDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccDocDs" />

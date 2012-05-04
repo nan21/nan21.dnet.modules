@@ -20,6 +20,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DOCDATE" type="date">
 				<constraints nullable="false" /></column>	 
+			<column name="DOCNO" type="varchar2(255)">
+				<constraints  /></column>	 
 			<column name="ID" type="number(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDAT" type="date">

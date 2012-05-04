@@ -118,6 +118,7 @@
 "AccSchema_UI";"bd-menu-acc"
 "Account_UI";"bd-menu-acc"
 "AccDoc_UI";"fi-menu-tx"
+"Payment_UI";"fi-menu-tx"
 "PayAccount_UI";"fi-menu-base"
 "ad-menu-acl";"ad-menu-security"
 "ad-menu-exp";"ad-menu-impex"
