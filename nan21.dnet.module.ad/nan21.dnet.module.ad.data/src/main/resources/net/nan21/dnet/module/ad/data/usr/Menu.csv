@@ -2,6 +2,7 @@
 "AD";"Administration";"true";
 "HR";"Human Resources Managment";"true";
 "MD";"Master-data Management";"true";
+"FI";"Financials";"true";
 "PJ";"Project Managment";"true";
 "SC";"Purchasing";"true";
 "SD";"Sales & Distribution";"true";

@@ -24,10 +24,29 @@ public class AccDocDsFilter extends AbstractAuditableDsFilter {
 
     private String accSchema;
 
+    private String docNo;
+
+    private Long docTypeId;
+
+    private Long docTypeId_From;
+    private Long docTypeId_To;
+
+    private String docType;
+
     private Date docDate;
 
     private Date docDate_From;
     private Date docDate_To;
+
+    private Float dbAmount;
+
+    private Float dbAmount_From;
+    private Float dbAmount_To;
+
+    private Float crAmount;
+
+    private Float crAmount_From;
+    private Float crAmount_To;
 
     public Long getOrgId() {
         return this.orgId;
@@ -93,6 +112,46 @@ public class AccDocDsFilter extends AbstractAuditableDsFilter {
         this.accSchema = accSchema;
     }
 
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
+    }
+
+    public Long getDocTypeId() {
+        return this.docTypeId;
+    }
+
+    public Long getDocTypeId_From() {
+        return this.docTypeId_From;
+    }
+
+    public Long getDocTypeId_To() {
+        return this.docTypeId_To;
+    }
+
+    public void setDocTypeId(Long docTypeId) {
+        this.docTypeId = docTypeId;
+    }
+
+    public void setDocTypeId_From(Long docTypeId_From) {
+        this.docTypeId_From = docTypeId_From;
+    }
+
+    public void setDocTypeId_To(Long docTypeId_To) {
+        this.docTypeId_To = docTypeId_To;
+    }
+
+    public String getDocType() {
+        return this.docType;
+    }
+
+    public void setDocType(String docType) {
+        this.docType = docType;
+    }
+
     public Date getDocDate() {
         return this.docDate;
     }
@@ -115,6 +174,54 @@ public class AccDocDsFilter extends AbstractAuditableDsFilter {
 
     public void setDocDate_To(Date docDate_To) {
         this.docDate_To = docDate_To;
+    }
+
+    public Float getDbAmount() {
+        return this.dbAmount;
+    }
+
+    public Float getDbAmount_From() {
+        return this.dbAmount_From;
+    }
+
+    public Float getDbAmount_To() {
+        return this.dbAmount_To;
+    }
+
+    public void setDbAmount(Float dbAmount) {
+        this.dbAmount = dbAmount;
+    }
+
+    public void setDbAmount_From(Float dbAmount_From) {
+        this.dbAmount_From = dbAmount_From;
+    }
+
+    public void setDbAmount_To(Float dbAmount_To) {
+        this.dbAmount_To = dbAmount_To;
+    }
+
+    public Float getCrAmount() {
+        return this.crAmount;
+    }
+
+    public Float getCrAmount_From() {
+        return this.crAmount_From;
+    }
+
+    public Float getCrAmount_To() {
+        return this.crAmount_To;
+    }
+
+    public void setCrAmount(Float crAmount) {
+        this.crAmount = crAmount;
+    }
+
+    public void setCrAmount_From(Float crAmount_From) {
+        this.crAmount_From = crAmount_From;
+    }
+
+    public void setCrAmount_To(Float crAmount_To) {
+        this.crAmount_To = crAmount_To;
     }
 
 }

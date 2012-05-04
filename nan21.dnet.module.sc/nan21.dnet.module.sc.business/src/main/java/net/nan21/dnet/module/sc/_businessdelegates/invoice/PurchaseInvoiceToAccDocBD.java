@@ -59,6 +59,9 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 
 	protected AccDoc generateAccDoc(PurchaseInvoice invoice, AccSchema schema)
 			throws Exception {
+		Float totalCrAmount = 0F;
+		Float totalDbAmount = 0F;
+
 		AccDoc accDoc = new AccDoc();
 		accDoc.setDocDate(invoice.getDocDate());
 		accDoc.setOrg(invoice.getCustomer());
@@ -74,6 +77,9 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 		try {
 			crAccount = this.getPurchaseAccount(invoice.getSupplier().getId(),
 					invoice.getCustomer().getId(), schema.getId());
+			if (crAccount == null) {
+				throw new NoResultException();
+			}
 		} catch (NoResultException e) {
 			throw new RuntimeException(
 					"No purchase account found for business partner "
@@ -85,12 +91,17 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 		line.setCrAccount(crAccount.getCode());
 		accDoc.addToLines(line);
 
+		totalCrAmount += line.getCrAmount();
+
 		// tax
 		for (PurchaseInvoiceTax tax : invoice.getTaxes()) {
 			Account dbAccount = null;
 			try {
 				dbAccount = this.getTaxAccount(tax.getTax().getId(), invoice
 						.getCustomer().getId(), schema.getId());
+				if (dbAccount == null) {
+					throw new NoResultException();
+				}
 			} catch (NoResultException e) {
 				throw new RuntimeException("No posting account found for tax "
 						+ tax.getTax().getName() + " for accounting schema "
@@ -102,6 +113,7 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 			itemLine.setDbAccount(dbAccount.getCode());
 			itemLine.setDbAmount(tax.getTaxAmount());
 			accDoc.addToLines(itemLine);
+			totalDbAmount += itemLine.getDbAmount();
 		}
 
 		// product expense
@@ -111,6 +123,9 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 			try {
 				dbAccount = getExpenseAccount(item.getProduct().getId(),
 						invoice.getCustomer().getId(), schema.getId());
+				if (dbAccount == null) {
+					throw new NoResultException();
+				}
 			} catch (NoResultException e) {
 				throw new RuntimeException(
 						"No expense account found for product "
@@ -126,8 +141,12 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 			itemLine.setDbAccount(dbAccount.getCode());
 			itemLine.setDbAmount(item.getNetAmount());
 			accDoc.addToLines(itemLine);
-
+			totalDbAmount += itemLine.getDbAmount();
 		}
+
+		accDoc.setCrAmount(totalCrAmount);
+		accDoc.setDbAmount(totalDbAmount);
+
 		return accDoc;
 	}
 
@@ -177,10 +196,8 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 				.findEntityService(VendorGroupAcct.class);
 		VendorGroupAcct groupAcct = groupAcctService.findByGroup_schema(group
 				.getId(), accSchemaId);
-		if (groupAcct.getPurchaseAccount() != null) {
-			return groupAcct.getPurchaseAccount();
-		}
-		return null;
+		return groupAcct.getPurchaseAccount();
+
 	}
 
 	private Account getExpenseAccount(Long productId, Long organizationId,
@@ -214,10 +231,9 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 
 		ProductAccountGroupAcct groupAcct = groupAcctService
 				.findByGroup_schema(group.getId(), accSchemaId);
-		if (groupAcct.getExpenseAccount() != null) {
-			return groupAcct.getExpenseAccount();
-		}
-		return null;
+
+		return groupAcct.getExpenseAccount();
+
 	}
 
 }

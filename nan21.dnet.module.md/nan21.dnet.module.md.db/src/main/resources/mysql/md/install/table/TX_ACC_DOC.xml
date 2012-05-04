@@ -6,10 +6,14 @@
         <createTable tableName="TX_ACC_DOC">
 			<column name="CLIENTID" type="bigint(3)">
 				<constraints nullable="false" /></column>	 
+			<column name="CRAMOUNT" type="decimal(12,2)">
+				<constraints  /></column>	 
 			<column name="CREATEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="DBAMOUNT" type="decimal(12,2)">
+				<constraints  /></column>	 
 			<column name="DOCDATE" type="date">
 				<constraints nullable="false" /></column>	 
 			<column name="DOCNO" type="varchar(255)">

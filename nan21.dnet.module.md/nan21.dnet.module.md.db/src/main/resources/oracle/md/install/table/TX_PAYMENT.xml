@@ -6,6 +6,8 @@
         <createTable tableName="TX_PAYMENT">
 			<column name="AMOUNT" type="number(12,2)">
 				<constraints  /></column>	 
+			<column name="APPROVED" type="number(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="CLIENTID" type="number(3)">
 				<constraints nullable="false" /></column>	 
 			<column name="CODE" type="varchar2(32)">
@@ -18,6 +20,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DOCDATE" type="date">
 				<constraints nullable="false" /></column>	 
+			<column name="DOCNO" type="varchar2(255)">
+				<constraints  /></column>	 
 			<column name="ID" type="number(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDAT" type="date">
@@ -36,10 +40,16 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CURRENCY_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="ORG_ID" type="number(19)">	 
+			<column name="FROMACCOUNT_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="FROMORG_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="PAYMENTMETHOD_ID" type="number(19)">	 
 				<constraints  /></column>	 
+			<column name="TOACCOUNT_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="TOORG_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

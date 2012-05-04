@@ -89,3 +89,18 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.dc.InvBalance$CtxListProduct",
 });
  
  	
+ 	
+
+Ext.define("net.nan21.dnet.module.md.tx.inventory.dc.InvBalance$CtxFilterProduct", {
+	extend: "dnet.core.dc.AbstractDcvFilterPropGrid",
+ 	alias: "widget.net.nan21.dnet.module.md.tx.inventory.dc.InvBalance$CtxFilterProduct",
+	_defineElements_: function () {	
+		this._getBuilder_()	
+		.addLov({ name:"subInventory", dataIndex:"subInventory",editor:{ xtype:"net.nan21.dnet.module.md.org.lovs.SubInventorys", selectOnFocus:true,retFieldMapping: [{lovField:"id", dsField: "subInventoryId"} ]}  })
+		.addLov({ name:"locator", dataIndex:"locator",editor:{ xtype:"net.nan21.dnet.module.md.org.lovs.StockLocators", selectOnFocus:true,retFieldMapping: [{lovField:"id", dsField: "locatorId"} ],filterFieldMapping: [{lovField:"subInventoryId", dsField: "subInventoryId"} ]}  })
+		 
+		
+	}
+	
+}); 
+ 	

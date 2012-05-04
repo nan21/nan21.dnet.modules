@@ -7,6 +7,15 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="PayAccountService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.org.business.serviceimpl.PayAccountService"  />  
+ 
+ 	<bean id="PayAccountAcctService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.org.business.serviceimpl.PayAccountAcctService"  />  
+ 
+ 	<bean id="PayAccountMethodService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.org.business.serviceimpl.PayAccountMethodService"  />  
+ 
  	<bean id="SubInventoryService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.org.business.serviceimpl.SubInventoryService"  />  
  

@@ -17,15 +17,19 @@ public class PaymentInDs extends AbstractAuditableDs<PaymentIn> {
 
     public static final String fCODE = "code";
     public static final String fDOCDATE = "docDate";
-    public static final String fPAYTOID = "payToId";
-    public static final String fPAYTO = "payTo";
-    public static final String fPAYTONAME = "payToName";
+    public static final String fDOCNO = "docNo";
+    public static final String fPAYFROMID = "payFromId";
+    public static final String fPAYFROM = "payFrom";
+    public static final String fPAYFROMNAME = "payFromName";
     public static final String fORGID = "orgId";
     public static final String fORG = "org";
+    public static final String fTOACCOUNTID = "toAccountId";
+    public static final String fTOACCOUNT = "toAccount";
     public static final String fCURRENCYID = "currencyId";
     public static final String fCURRENCY = "currency";
     public static final String fPAYMENTMETHODID = "paymentMethodId";
     public static final String fPAYMENTMETHOD = "paymentMethod";
+    public static final String fPAYMENTMETHODTYPE = "paymentMethodType";
     public static final String fAMOUNT = "amount";
     public static final String fCONFIRMED = "confirmed";
     public static final String fPOSTED = "posted";
@@ -36,20 +40,29 @@ public class PaymentInDs extends AbstractAuditableDs<PaymentIn> {
     @DsField()
     private Date docDate;
 
+    @DsField()
+    private String docNo;
+
     @DsField(join = "left", path = "bpartner.id")
-    private Long payToId;
+    private Long payFromId;
 
     @DsField(join = "left", path = "bpartner.code")
-    private String payTo;
+    private String payFrom;
 
     @DsField(join = "left", path = "bpartner.name")
-    private String payToName;
+    private String payFromName;
 
-    @DsField(join = "left", path = "org.id")
+    @DsField(join = "left", path = "toOrg.id")
     private Long orgId;
 
-    @DsField(join = "left", path = "org.code")
+    @DsField(join = "left", path = "toOrg.code")
     private String org;
+
+    @DsField(join = "left", path = "toAccount.id")
+    private Long toAccountId;
+
+    @DsField(join = "left", path = "toAccount.name")
+    private String toAccount;
 
     @DsField(join = "left", path = "currency.id")
     private Long currencyId;
@@ -62,6 +75,9 @@ public class PaymentInDs extends AbstractAuditableDs<PaymentIn> {
 
     @DsField(join = "left", path = "paymentMethod.name")
     private String paymentMethod;
+
+    @DsField(join = "left", path = "paymentMethod.type")
+    private String paymentMethodType;
 
     @DsField()
     private Float amount;
@@ -96,28 +112,36 @@ public class PaymentInDs extends AbstractAuditableDs<PaymentIn> {
         this.docDate = docDate;
     }
 
-    public Long getPayToId() {
-        return this.payToId;
+    public String getDocNo() {
+        return this.docNo;
     }
 
-    public void setPayToId(Long payToId) {
-        this.payToId = payToId;
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
     }
 
-    public String getPayTo() {
-        return this.payTo;
+    public Long getPayFromId() {
+        return this.payFromId;
     }
 
-    public void setPayTo(String payTo) {
-        this.payTo = payTo;
+    public void setPayFromId(Long payFromId) {
+        this.payFromId = payFromId;
     }
 
-    public String getPayToName() {
-        return this.payToName;
+    public String getPayFrom() {
+        return this.payFrom;
     }
 
-    public void setPayToName(String payToName) {
-        this.payToName = payToName;
+    public void setPayFrom(String payFrom) {
+        this.payFrom = payFrom;
+    }
+
+    public String getPayFromName() {
+        return this.payFromName;
+    }
+
+    public void setPayFromName(String payFromName) {
+        this.payFromName = payFromName;
     }
 
     public Long getOrgId() {
@@ -134,6 +158,22 @@ public class PaymentInDs extends AbstractAuditableDs<PaymentIn> {
 
     public void setOrg(String org) {
         this.org = org;
+    }
+
+    public Long getToAccountId() {
+        return this.toAccountId;
+    }
+
+    public void setToAccountId(Long toAccountId) {
+        this.toAccountId = toAccountId;
+    }
+
+    public String getToAccount() {
+        return this.toAccount;
+    }
+
+    public void setToAccount(String toAccount) {
+        this.toAccount = toAccount;
     }
 
     public Long getCurrencyId() {
@@ -166,6 +206,14 @@ public class PaymentInDs extends AbstractAuditableDs<PaymentIn> {
 
     public void setPaymentMethod(String paymentMethod) {
         this.paymentMethod = paymentMethod;
+    }
+
+    public String getPaymentMethodType() {
+        return this.paymentMethodType;
+    }
+
+    public void setPaymentMethodType(String paymentMethodType) {
+        this.paymentMethodType = paymentMethodType;
     }
 
     public Float getAmount() {

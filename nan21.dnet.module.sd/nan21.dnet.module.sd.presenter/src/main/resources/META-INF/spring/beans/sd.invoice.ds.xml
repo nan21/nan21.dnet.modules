@@ -110,10 +110,46 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.PaymentInDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.PaymentIn" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.PaymentInDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="confirm">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.PaymentInPD"/>
+	  				<constructor-arg name="methodName" value="confirm" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="unConfirm">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.PaymentInPD"/>
+	  				<constructor-arg name="methodName" value="unConfirm" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="post">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.PaymentInPD"/>
+	  				<constructor-arg name="methodName" value="post" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="unPost">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.PaymentInPD"/>
+	  				<constructor-arg name="methodName" value="unPost" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PaymentIn" />
 		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.PaymentInDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">confirm</value>
+	  			<value type="java.lang.String">unConfirm</value>
+	  			<value type="java.lang.String">post</value>
+	  			<value type="java.lang.String">unPost</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
       
 </beans>

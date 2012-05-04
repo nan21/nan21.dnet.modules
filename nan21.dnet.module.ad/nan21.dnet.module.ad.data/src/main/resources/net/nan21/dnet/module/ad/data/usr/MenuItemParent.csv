@@ -117,6 +117,8 @@
 "TaxCategories_UI";"bd-menu-fin"
 "AccSchema_UI";"bd-menu-acc"
 "Account_UI";"bd-menu-acc"
+"AccDoc_UI";"fi-menu-tx"
+"PayAccount_UI";"fi-menu-base"
 "ad-menu-acl";"ad-menu-security"
 "ad-menu-exp";"ad-menu-impex"
 "ad-menu-imp";"ad-menu-impex"

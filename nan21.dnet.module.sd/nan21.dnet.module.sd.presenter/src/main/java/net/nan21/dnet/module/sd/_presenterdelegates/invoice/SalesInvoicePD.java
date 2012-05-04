@@ -10,36 +10,31 @@ public class SalesInvoicePD extends AbstractDsDelegate {
 	public void confirmInvoice(SalesInvoiceDs ds) throws Exception {
 		ISalesInvoiceService srv = ((ISalesInvoiceService) this
 				.findEntityService(SalesInvoice.class));
-		SalesInvoice invoice = srv.findById(ds.getId());
-		invoice.setConfirmed(true);
-		srv.update(invoice);
-		ds.setConfirmed(true);
+		SalesInvoice e = srv.findById(ds.getId());
+		e.setConfirmed(true);
+		srv.update(e);
 	}
 
 	public void unConfirmInvoice(SalesInvoiceDs ds) throws Exception {
 		ISalesInvoiceService srv = ((ISalesInvoiceService) this
 				.findEntityService(SalesInvoice.class));
-		SalesInvoice invoice = srv.findById(ds.getId());
-		invoice.setConfirmed(false);
-		srv.update(invoice);
-		ds.setConfirmed(false);
+		SalesInvoice e = srv.findById(ds.getId());
+		e.setConfirmed(false);
+		srv.update(e);
 	}
 
 	public void postInvoice(SalesInvoiceDs ds) throws Exception {
 		ISalesInvoiceService srv = ((ISalesInvoiceService) this
 				.findEntityService(SalesInvoice.class));
-		SalesInvoice invoice = srv.findById(ds.getId());
-		srv.doPost(invoice);
-		ds.setPosted(true);
+		SalesInvoice e = srv.findById(ds.getId());
+		srv.doPost(e);
 	}
 
 	public void unPostInvoice(SalesInvoiceDs ds) throws Exception {
 		ISalesInvoiceService srv = ((ISalesInvoiceService) this
 				.findEntityService(SalesInvoice.class));
-		SalesInvoice invoice = srv.findById(ds.getId());
-		invoice.setPosted(false);
-		srv.update(invoice);
-		ds.setPosted(false);
+		SalesInvoice e = srv.findById(ds.getId());
+		srv.doUnPost(e);
 	}
 
 }

@@ -14,6 +14,13 @@ public class AccDocLineCtxDsFilter extends AbstractAuditableDsFilter {
     private Long accDocId_From;
     private Long accDocId_To;
 
+    private Long accSchemaId;
+
+    private Long accSchemaId_From;
+    private Long accSchemaId_To;
+
+    private String accSchema;
+
     private Long docTypeId;
 
     private Long docTypeId_From;
@@ -59,6 +66,38 @@ public class AccDocLineCtxDsFilter extends AbstractAuditableDsFilter {
 
     public void setAccDocId_To(Long accDocId_To) {
         this.accDocId_To = accDocId_To;
+    }
+
+    public Long getAccSchemaId() {
+        return this.accSchemaId;
+    }
+
+    public Long getAccSchemaId_From() {
+        return this.accSchemaId_From;
+    }
+
+    public Long getAccSchemaId_To() {
+        return this.accSchemaId_To;
+    }
+
+    public void setAccSchemaId(Long accSchemaId) {
+        this.accSchemaId = accSchemaId;
+    }
+
+    public void setAccSchemaId_From(Long accSchemaId_From) {
+        this.accSchemaId_From = accSchemaId_From;
+    }
+
+    public void setAccSchemaId_To(Long accSchemaId_To) {
+        this.accSchemaId_To = accSchemaId_To;
+    }
+
+    public String getAccSchema() {
+        return this.accSchema;
+    }
+
+    public void setAccSchema(String accSchema) {
+        this.accSchema = accSchema;
     }
 
     public Long getDocTypeId() {

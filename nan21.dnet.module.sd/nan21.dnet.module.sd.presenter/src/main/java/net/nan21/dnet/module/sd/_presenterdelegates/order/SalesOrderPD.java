@@ -13,19 +13,17 @@ public class SalesOrderPD extends AbstractDsDelegate {
 	public void confirmOrder(SalesOrderDs ds) throws Exception {
 		ISalesOrderService service = ((ISalesOrderService) this
 				.findEntityService(SalesOrder.class));
-		SalesOrder entity = service.findById(ds.getId());
-		entity.setConfirmed(true);
-		service.update(entity);
-		ds.setConfirmed(true);
+		SalesOrder e = service.findById(ds.getId());
+		e.setConfirmed(true);
+		service.update(e);
 	}
 
 	public void unConfirmOrder(SalesOrderDs ds) throws Exception {
 		ISalesOrderService service = ((ISalesOrderService) this
 				.findEntityService(SalesOrder.class));
-		SalesOrder entity = service.findById(ds.getId());
-		entity.setConfirmed(false);
-		service.update(entity);
-		ds.setConfirmed(false);
+		SalesOrder e = service.findById(ds.getId());
+		e.setConfirmed(false);
+		service.update(e);
 	}
 
 	public void generateInvoice(SalesOrderDs ds, SalesOrderDsParam params)
@@ -34,9 +32,8 @@ public class SalesOrderPD extends AbstractDsDelegate {
 				.findEntityService(SalesOrder.class));
 		TxDocType docType = service.getEntityManager().find(TxDocType.class,
 				params.getInvDocTypeId());
-		SalesOrder entity = service.findById(ds.getId());
-		service.doGenerateInvoice(entity, docType);
-		ds.setInvoiced(true);
+		SalesOrder e = service.findById(ds.getId());
+		service.doGenerateInvoice(e, docType);
 	}
 
 	public void generateDelivery(SalesOrderDs ds, SalesOrderDsParam params)
@@ -48,10 +45,9 @@ public class SalesOrderPD extends AbstractDsDelegate {
 		InvTransactionType txType = service.getEntityManager().find(
 				InvTransactionType.class, params.getDelivTxTypeId());
 
-		SalesOrder entity = service.findById(ds.getId());
-		service.doGenerateDelivery(entity, docType, txType, params
+		SalesOrder e = service.findById(ds.getId());
+		service.doGenerateDelivery(e, docType, txType, params
 				.getDelivEventData());
-		ds.setDelivered(true);
 	}
 
 }

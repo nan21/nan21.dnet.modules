@@ -36,21 +36,24 @@ Export-Package: net.nan21.dnet.module.md._businessdelegates;version="1
  ss.service,net.nan21.dnet.module.md.mm.prod.domain.entity",net.nan21.
  dnet.module.md.org.business.serviceimpl;version="1.0.0.M9";uses:="jav
  ax.persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.mo
- dule.bd.org.domain.entity,net.nan21.dnet.module.md.org.business.servi
- ce,net.nan21.dnet.module.md.org.domain.entity",net.nan21.dnet.module.
- md.tx.fin.business.serviceimpl;version="1.0.0.M9";uses:="javax.persis
- tence,net.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.a
- cc.domain.entity,net.nan21.dnet.module.bd.currency.domain.entity,net.
- nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd.tx.do
- main.entity,net.nan21.dnet.module.md.bp.domain.entity,net.nan21.dnet.
- module.md.tx.fin.business.service,net.nan21.dnet.module.md.tx.fin.dom
- ain.entity",net.nan21.dnet.module.md.tx.inventory.business.serviceimp
- l;version="1.0.0.M9";uses:="javax.persistence,net.nan21.dnet.core.bus
- iness.service,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dn
- et.module.bd.tx.domain.entity,net.nan21.dnet.module.bd.uom.domain.ent
- ity,net.nan21.dnet.module.md.mm.prod.domain.entity,net.nan21.dnet.mod
- ule.md.org.domain.entity,net.nan21.dnet.module.md.tx.inventory.busine
- ss.service,net.nan21.dnet.module.md.tx.inventory.domain.entity"
+ dule.bd.acc.domain.entity,net.nan21.dnet.module.bd.currency.domain.en
+ tity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module
+ .bd.tx.domain.entity,net.nan21.dnet.module.md.org.business.service,ne
+ t.nan21.dnet.module.md.org.domain.entity",net.nan21.dnet.module.md.tx
+ .fin.business.serviceimpl;version="1.0.0.M9";uses:="javax.persistence
+ ,net.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.acc.do
+ main.entity,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21
+ .dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd.tx.domain.
+ entity,net.nan21.dnet.module.md.bp.domain.entity,net.nan21.dnet.modul
+ e.md.org.domain.entity,net.nan21.dnet.module.md.tx.fin.business.servi
+ ce,net.nan21.dnet.module.md.tx.fin.domain.entity",net.nan21.dnet.modu
+ le.md.tx.inventory.business.serviceimpl;version="1.0.0.M9";uses:="jav
+ ax.persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.mo
+ dule.bd.org.domain.entity,net.nan21.dnet.module.bd.tx.domain.entity,n
+ et.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.md.mm
+ .prod.domain.entity,net.nan21.dnet.module.md.org.domain.entity,net.na
+ n21.dnet.module.md.tx.inventory.business.service,net.nan21.dnet.modul
+ e.md.tx.inventory.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.core.busine
  ss;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.ad.domain;version=

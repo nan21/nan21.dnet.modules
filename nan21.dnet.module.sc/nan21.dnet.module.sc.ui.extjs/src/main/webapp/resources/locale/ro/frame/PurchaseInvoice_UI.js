@@ -1,8 +1,9 @@
 Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI$Trl", { 
 	taxList__ttl : "Taxe",
-	accDocLineList__ttl : "Contabilitate",
+	accDocLineFilter__ttl : "Filtru",
 	itemTaxList__ttl : "Taxe linie factură",
 	atchEditList__ttl : "Ataşamente",
+	accDocPanel__ttl : "Contabilitate",
 	linesPanel__ttl : "Linii",
 	notesPanel__ttl : "Note",
 	

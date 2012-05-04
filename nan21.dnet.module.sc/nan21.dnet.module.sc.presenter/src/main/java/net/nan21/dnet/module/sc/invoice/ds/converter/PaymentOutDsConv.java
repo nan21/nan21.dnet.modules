@@ -14,6 +14,8 @@ import net.nan21.dnet.module.bd.tx.business.service.IPaymentMethodService;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.org.business.service.IPayAccountService;
+import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sc.invoice.ds.model.PaymentOutDs;
@@ -48,13 +50,25 @@ public class PaymentOutDsConv extends
             this.lookup_paymentMethod_PaymentMethod(ds, e);
         }
 
+        if (ds.getFromAccountId() != null) {
+            if (e.getFromAccount() == null
+                    || !e.getFromAccount().getId()
+                            .equals(ds.getFromAccountId())) {
+                e.setFromAccount((PayAccount) this.em.find(PayAccount.class,
+                        ds.getFromAccountId()));
+            }
+        } else {
+            this.lookup_fromAccount_PayAccount(ds, e);
+        }
+
         if (ds.getOrgId() != null) {
-            if (e.getOrg() == null || !e.getOrg().getId().equals(ds.getOrgId())) {
-                e.setOrg((Organization) this.em.find(Organization.class,
+            if (e.getFromOrg() == null
+                    || !e.getFromOrg().getId().equals(ds.getOrgId())) {
+                e.setFromOrg((Organization) this.em.find(Organization.class,
                         ds.getOrgId()));
             }
         } else {
-            this.lookup_org_Organization(ds, e);
+            this.lookup_fromOrg_Organization(ds, e);
         }
 
         if (ds.getPayToId() != null) {
@@ -107,7 +121,26 @@ public class PaymentOutDsConv extends
         }
     }
 
-    protected void lookup_org_Organization(PaymentOutDs ds, PaymentOut e)
+    protected void lookup_fromAccount_PayAccount(PaymentOutDs ds, PaymentOut e)
+            throws Exception {
+        if (ds.getFromAccount() != null && !ds.getFromAccount().equals("")) {
+            PayAccount x = null;
+            try {
+                x = ((IPayAccountService) findEntityService(PayAccount.class))
+                        .findByName(ds.getFromAccount());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PayAccount` reference:  `fromAccount` = "
+                                + ds.getFromAccount() + "  ");
+            }
+            e.setFromAccount(x);
+
+        } else {
+            e.setFromAccount(null);
+        }
+    }
+
+    protected void lookup_fromOrg_Organization(PaymentOutDs ds, PaymentOut e)
             throws Exception {
         if (ds.getOrg() != null && !ds.getOrg().equals("")) {
             Organization x = null;
@@ -119,10 +152,10 @@ public class PaymentOutDsConv extends
                         "Invalid value provided to find `Organization` reference:  `org` = "
                                 + ds.getOrg() + "  ");
             }
-            e.setOrg(x);
+            e.setFromOrg(x);
 
         } else {
-            e.setOrg(null);
+            e.setFromOrg(null);
         }
     }
 

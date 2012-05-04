@@ -14,6 +14,8 @@ import net.nan21.dnet.module.bd.tx.business.service.IPaymentMethodService;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.org.business.service.IPayAccountService;
+import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sd.invoice.ds.model.PaymentInDs;
@@ -48,20 +50,31 @@ public class PaymentInDsConv extends
             this.lookup_paymentMethod_PaymentMethod(ds, e);
         }
 
+        if (ds.getToAccountId() != null) {
+            if (e.getToAccount() == null
+                    || !e.getToAccount().getId().equals(ds.getToAccountId())) {
+                e.setToAccount((PayAccount) this.em.find(PayAccount.class,
+                        ds.getToAccountId()));
+            }
+        } else {
+            this.lookup_toAccount_PayAccount(ds, e);
+        }
+
         if (ds.getOrgId() != null) {
-            if (e.getOrg() == null || !e.getOrg().getId().equals(ds.getOrgId())) {
-                e.setOrg((Organization) this.em.find(Organization.class,
+            if (e.getToOrg() == null
+                    || !e.getToOrg().getId().equals(ds.getOrgId())) {
+                e.setToOrg((Organization) this.em.find(Organization.class,
                         ds.getOrgId()));
             }
         } else {
-            this.lookup_org_Organization(ds, e);
+            this.lookup_toOrg_Organization(ds, e);
         }
 
-        if (ds.getPayToId() != null) {
+        if (ds.getPayFromId() != null) {
             if (e.getBpartner() == null
-                    || !e.getBpartner().getId().equals(ds.getPayToId())) {
+                    || !e.getBpartner().getId().equals(ds.getPayFromId())) {
                 e.setBpartner((BusinessPartner) this.em.find(
-                        BusinessPartner.class, ds.getPayToId()));
+                        BusinessPartner.class, ds.getPayFromId()));
             }
         } else {
             this.lookup_bpartner_BusinessPartner(ds, e);
@@ -107,7 +120,26 @@ public class PaymentInDsConv extends
         }
     }
 
-    protected void lookup_org_Organization(PaymentInDs ds, PaymentIn e)
+    protected void lookup_toAccount_PayAccount(PaymentInDs ds, PaymentIn e)
+            throws Exception {
+        if (ds.getToAccount() != null && !ds.getToAccount().equals("")) {
+            PayAccount x = null;
+            try {
+                x = ((IPayAccountService) findEntityService(PayAccount.class))
+                        .findByName(ds.getToAccount());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PayAccount` reference:  `toAccount` = "
+                                + ds.getToAccount() + "  ");
+            }
+            e.setToAccount(x);
+
+        } else {
+            e.setToAccount(null);
+        }
+    }
+
+    protected void lookup_toOrg_Organization(PaymentInDs ds, PaymentIn e)
             throws Exception {
         if (ds.getOrg() != null && !ds.getOrg().equals("")) {
             Organization x = null;
@@ -119,24 +151,24 @@ public class PaymentInDsConv extends
                         "Invalid value provided to find `Organization` reference:  `org` = "
                                 + ds.getOrg() + "  ");
             }
-            e.setOrg(x);
+            e.setToOrg(x);
 
         } else {
-            e.setOrg(null);
+            e.setToOrg(null);
         }
     }
 
     protected void lookup_bpartner_BusinessPartner(PaymentInDs ds, PaymentIn e)
             throws Exception {
-        if (ds.getPayTo() != null && !ds.getPayTo().equals("")) {
+        if (ds.getPayFrom() != null && !ds.getPayFrom().equals("")) {
             BusinessPartner x = null;
             try {
                 x = ((IBusinessPartnerService) findEntityService(BusinessPartner.class))
-                        .findByCode(ds.getPayTo());
+                        .findByCode(ds.getPayFrom());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `BusinessPartner` reference:  `payTo` = "
-                                + ds.getPayTo() + "  ");
+                        "Invalid value provided to find `BusinessPartner` reference:  `payFrom` = "
+                                + ds.getPayFrom() + "  ");
             }
             e.setBpartner(x);
 

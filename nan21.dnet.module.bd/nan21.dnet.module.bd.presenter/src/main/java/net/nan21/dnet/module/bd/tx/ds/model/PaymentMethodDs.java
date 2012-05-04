@@ -15,12 +15,49 @@ import net.nan21.dnet.core.api.annotation.DsField;
 @Ds(entity = PaymentMethod.class, sort = { @SortField(field = PaymentMethodDs.fNAME) })
 public class PaymentMethodDs extends AbstractTypeDs<PaymentMethod> {
 
+    public static final String fTYPE = "type";
+    public static final String fDOCTYPEID = "docTypeId";
+    public static final String fDOCTYPE = "docType";
+
+    @DsField()
+    private String type;
+
+    @DsField(join = "left", path = "docType.id")
+    private Long docTypeId;
+
+    @DsField(join = "left", path = "docType.name")
+    private String docType;
+
     public PaymentMethodDs() {
         super();
     }
 
     public PaymentMethodDs(PaymentMethod e) {
         super(e);
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Long getDocTypeId() {
+        return this.docTypeId;
+    }
+
+    public void setDocTypeId(Long docTypeId) {
+        this.docTypeId = docTypeId;
+    }
+
+    public String getDocType() {
+        return this.docType;
+    }
+
+    public void setDocType(String docType) {
+        this.docType = docType;
     }
 
 }

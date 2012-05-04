@@ -12,6 +12,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.PaymentMethodDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.tx.ds.converter.PaymentMethodDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PaymentMethod" />
@@ -27,6 +28,28 @@
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PaymentMethodLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodLovDs" />
+	</bean>
+   
+ 	<bean id="PaymentMethodInLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodInLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodInLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentMethodInLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodInLovDs" />
+	</bean>
+   
+ 	<bean id="PaymentMethodOutLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodOutLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodOutLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentMethodOutLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodOutLovDs" />
 	</bean>
    
  	<bean id="PaymentTermDsService" scope="prototype"
@@ -87,7 +110,7 @@
  	<bean id="TxDocTypeLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypeLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -98,7 +121,7 @@
  	<bean id="TxDocTypeSOLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSOLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypeSOLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSOLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -109,7 +132,7 @@
  	<bean id="TxDocTypeSOInvOutLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSOInvOutLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypeSOInvOutLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSOInvOutLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -120,7 +143,7 @@
  	<bean id="TxDocTypeSILovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSILovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypeSILovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeSILovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -131,7 +154,7 @@
  	<bean id="TxDocTypePOLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePOLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypePOLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePOLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -142,7 +165,7 @@
  	<bean id="TxDocTypePOInvInLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePOInvInLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypePOInvInLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePOInvInLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -153,7 +176,7 @@
  	<bean id="TxDocTypePILovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePILovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypePILovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePILovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
@@ -164,12 +187,23 @@
  	<bean id="TxDocTypeInvInOutLovDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeInvInOutLovDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.filter.TxDocTypeInvInOutLovDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeInvInOutLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="TxDocTypeInvInOutLov" />
 		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeInvInOutLovDs" />
+	</bean>
+   
+ 	<bean id="TxDocTypePayLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePayLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePayLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.tx.domain.entity.TxDocType" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="TxDocTypePayLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.tx.ds.model.TxDocTypePayLovDs" />
 	</bean>
    
  	<bean id="TxDocSequenceDsService" scope="prototype"

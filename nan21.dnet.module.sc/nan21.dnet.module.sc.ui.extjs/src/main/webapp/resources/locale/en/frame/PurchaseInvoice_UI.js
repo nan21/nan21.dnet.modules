@@ -1,9 +1,10 @@
 
 Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI$Trl", {  	  	
 	taxList__ttl : "Taxes",
-	accDocLineList__ttl : "Accounting",
+	accDocLineFilter__ttl : "Filter",
 	itemTaxList__ttl : "Item taxes",
 	atchEditList__ttl : "Attachments",
+	accDocPanel__ttl : "Accounting",
 	linesPanel__ttl : "Items",
 	notesPanel__ttl : "Notes",
 	
@@ -23,9 +24,9 @@ Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI$Trl", {
 	btnUnConfirmInvoice__ttl : "Un-Confirm",
 	btnUnConfirmInvoice__desc : "Un-Confirm invoice.",
 	btnPostInvoice__ttl : "Post",
-	btnPostInvoice__desc : "Confirm order.",
+	btnPostInvoice__desc : "Confirm invoice.",
 	btnUnPostInvoice__ttl : "Un-Post",
-	btnUnPostInvoice__desc : "Un-Confirm order.",
+	btnUnPostInvoice__desc : "Un-Confirm invoice.",
 	
 	title: "Purchase invoice"
 });

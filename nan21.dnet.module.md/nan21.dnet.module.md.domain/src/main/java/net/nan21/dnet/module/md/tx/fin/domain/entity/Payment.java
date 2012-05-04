@@ -30,6 +30,7 @@ import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 import net.nan21.dnet.module.md.tx.fin.domain.eventhandler.PaymentEventHandler;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -81,6 +82,10 @@ public class Payment extends AbstractAuditable {
     @NotBlank
     private String code;
 
+    /** DocNo. */
+    @Column(name = "DOCNO", length = 255)
+    private String docNo;
+
     /** DocDate. */
     @Temporal(TemporalType.DATE)
     @Column(name = "DOCDATE", nullable = false)
@@ -96,22 +101,36 @@ public class Payment extends AbstractAuditable {
     @NotNull
     private Boolean confirmed;
 
+    /** Approved. */
+    @Column(name = "APPROVED", nullable = false)
+    @NotNull
+    private Boolean approved;
+
     /** Posted. */
     @Column(name = "POSTED", nullable = false)
     @NotNull
     private Boolean posted;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
-    @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "ID")
-    private BusinessPartner bpartner;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
-    @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
-    private Organization org;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
     @JoinColumn(name = "CURRENCY_ID", referencedColumnName = "ID")
     private Currency currency;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
     @JoinColumn(name = "PAYMENTMETHOD_ID", referencedColumnName = "ID")
     private PaymentMethod paymentMethod;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
+    @JoinColumn(name = "FROMORG_ID", referencedColumnName = "ID")
+    private Organization fromOrg;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
+    @JoinColumn(name = "TOORG_ID", referencedColumnName = "ID")
+    private Organization toOrg;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayAccount.class)
+    @JoinColumn(name = "FROMACCOUNT_ID", referencedColumnName = "ID")
+    private PayAccount fromAccount;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayAccount.class)
+    @JoinColumn(name = "TOACCOUNT_ID", referencedColumnName = "ID")
+    private PayAccount toAccount;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
+    @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "ID")
+    private BusinessPartner bpartner;
 
     /* ============== getters - setters ================== */
 
@@ -139,6 +158,14 @@ public class Payment extends AbstractAuditable {
         this.code = code;
     }
 
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
+    }
+
     public Date getDocDate() {
         return this.docDate;
     }
@@ -163,28 +190,20 @@ public class Payment extends AbstractAuditable {
         this.confirmed = confirmed;
     }
 
+    public Boolean getApproved() {
+        return this.approved;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
+    }
+
     public Boolean getPosted() {
         return this.posted;
     }
 
     public void setPosted(Boolean posted) {
         this.posted = posted;
-    }
-
-    public BusinessPartner getBpartner() {
-        return this.bpartner;
-    }
-
-    public void setBpartner(BusinessPartner bpartner) {
-        this.bpartner = bpartner;
-    }
-
-    public Organization getOrg() {
-        return this.org;
-    }
-
-    public void setOrg(Organization org) {
-        this.org = org;
     }
 
     public Currency getCurrency() {
@@ -203,12 +222,55 @@ public class Payment extends AbstractAuditable {
         this.paymentMethod = paymentMethod;
     }
 
+    public Organization getFromOrg() {
+        return this.fromOrg;
+    }
+
+    public void setFromOrg(Organization fromOrg) {
+        this.fromOrg = fromOrg;
+    }
+
+    public Organization getToOrg() {
+        return this.toOrg;
+    }
+
+    public void setToOrg(Organization toOrg) {
+        this.toOrg = toOrg;
+    }
+
+    public PayAccount getFromAccount() {
+        return this.fromAccount;
+    }
+
+    public void setFromAccount(PayAccount fromAccount) {
+        this.fromAccount = fromAccount;
+    }
+
+    public PayAccount getToAccount() {
+        return this.toAccount;
+    }
+
+    public void setToAccount(PayAccount toAccount) {
+        this.toAccount = toAccount;
+    }
+
+    public BusinessPartner getBpartner() {
+        return this.bpartner;
+    }
+
+    public void setBpartner(BusinessPartner bpartner) {
+        this.bpartner = bpartner;
+    }
+
     public void aboutToInsert(DescriptorEvent event) {
 
         super.aboutToInsert(event);
 
         if (this.getConfirmed() == null) {
             event.updateAttributeWithObject("confirmed", false);
+        }
+        if (this.getApproved() == null) {
+            event.updateAttributeWithObject("approved", false);
         }
         if (this.getPosted() == null) {
             event.updateAttributeWithObject("posted", false);

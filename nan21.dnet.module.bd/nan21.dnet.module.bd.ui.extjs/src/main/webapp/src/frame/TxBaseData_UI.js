@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/PaymentMethodDs", "nan21.dnet.module.bd.ui.extjs/dc/PaymentMethod", "nan21.dnet.module.bd.ui.extjs/ds/PaymentTermDs", "nan21.dnet.module.bd.ui.extjs/dc/PaymentTerm", "nan21.dnet.module.bd.ui.extjs/ds/DeliveryMethodDs", "nan21.dnet.module.bd.ui.extjs/dc/DeliveryMethod"]);
+Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/PaymentMethodDs", "nan21.dnet.module.bd.ui.extjs/dc/PaymentMethod", "nan21.dnet.module.bd.ui.extjs/ds/PaymentTermDs", "nan21.dnet.module.bd.ui.extjs/dc/PaymentTerm", "nan21.dnet.module.bd.ui.extjs/ds/DeliveryMethodDs", "nan21.dnet.module.bd.ui.extjs/dc/DeliveryMethod","nan21.dnet.module.bd.ui.extjs/ds/TxDocTypePayLovDs","nan21.dnet.module.bd.ui.extjs/lov/TxDocTypesPay","nan21.dnet.module.bd.ui.extjs/ds/TxDocTypePayLovDs","nan21.dnet.module.bd.ui.extjs/lov/TxDocTypesPay"]);
 
 Ext.define("net.nan21.dnet.module.bd.tx.frame.TxBaseData_UI", {  
 	extend: "dnet.core.ui.AbstractUi",

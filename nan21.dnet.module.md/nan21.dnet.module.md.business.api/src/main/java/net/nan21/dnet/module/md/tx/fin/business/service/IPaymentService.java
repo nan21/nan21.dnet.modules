@@ -11,18 +11,11 @@ import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 
 import net.nan21.dnet.module.md.tx.fin.domain.entity.Payment;
 
 public interface IPaymentService extends IEntityService<Payment> {
-
-    public List<Payment> findByBpartner(BusinessPartner bpartner);
-
-    public List<Payment> findByBpartnerId(Long bpartnerId);
-
-    public List<Payment> findByOrg(Organization org);
-
-    public List<Payment> findByOrgId(Long orgId);
 
     public List<Payment> findByCurrency(Currency currency);
 
@@ -31,5 +24,25 @@ public interface IPaymentService extends IEntityService<Payment> {
     public List<Payment> findByPaymentMethod(PaymentMethod paymentMethod);
 
     public List<Payment> findByPaymentMethodId(Long paymentMethodId);
+
+    public List<Payment> findByFromOrg(Organization fromOrg);
+
+    public List<Payment> findByFromOrgId(Long fromOrgId);
+
+    public List<Payment> findByToOrg(Organization toOrg);
+
+    public List<Payment> findByToOrgId(Long toOrgId);
+
+    public List<Payment> findByFromAccount(PayAccount fromAccount);
+
+    public List<Payment> findByFromAccountId(Long fromAccountId);
+
+    public List<Payment> findByToAccount(PayAccount toAccount);
+
+    public List<Payment> findByToAccountId(Long toAccountId);
+
+    public List<Payment> findByBpartner(BusinessPartner bpartner);
+
+    public List<Payment> findByBpartnerId(Long bpartnerId);
 
 }

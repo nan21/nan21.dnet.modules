@@ -65,6 +65,10 @@
 		<class>net.nan21.dnet.module.md.org.domain.entity.StockLocatorType</class>
 		<class>net.nan21.dnet.module.md.org.domain.entity.StockLocator</class>
 		
+		<!-- ORG --> 
+		
+		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccount</class>
+		
 		<!-- TX  --> 
 		
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType</class>

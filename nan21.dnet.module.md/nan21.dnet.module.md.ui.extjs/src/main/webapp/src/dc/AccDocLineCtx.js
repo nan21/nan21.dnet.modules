@@ -15,6 +15,22 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx", {
 
 
 
+ 	
+
+Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx$Filter", {
+	extend: "dnet.core.dc.AbstractDcvFilterPropGrid",
+ 	alias: "widget.net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx$Filter",
+	_defineElements_: function () {	
+		this._getBuilder_()	
+		.addLov({ name:"accSchema", dataIndex:"accSchema",editor:{ xtype:"net.nan21.dnet.module.bd.acc.lovs.AccSchemas", selectOnFocus:true,allowBlank:false,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]}  })
+		.addTextField({ name:"dbAccount", dataIndex:"dbAccount",maxLength:255  })
+		.addTextField({ name:"crAccount", dataIndex:"crAccount",maxLength:255  })
+		 
+		
+	}
+	
+}); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",

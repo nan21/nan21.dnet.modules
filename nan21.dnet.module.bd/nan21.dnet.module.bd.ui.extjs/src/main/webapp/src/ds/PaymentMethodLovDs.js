@@ -6,7 +6,8 @@ Ext.define("net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodLovDs" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
-		{name:"active", type:"boolean"}
+		{name:"active", type:"boolean"},
+		{name:"type", type:"string"}
 	]
 });
 
@@ -15,7 +16,8 @@ Ext.define("net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodLovDsFilter" ,{
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
-		{name:"active", type:"boolean", useNull:true}
+		{name:"active", type:"boolean", useNull:true},
+		{name:"type", type:"string"}
 	] 
 });
 	

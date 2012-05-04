@@ -6,6 +6,8 @@
         <createTable tableName="SD_PAY_IN">
 			<column name="AMOUNT" type="decimal(12,2)">
 				<constraints  /></column>	 
+			<column name="APPROVED" type="int(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="CLIENTID" type="bigint(3)">
 				<constraints nullable="false" /></column>	 
 			<column name="CODE" type="varchar(32)">
@@ -36,10 +38,16 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CURRENCY_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="ORG_ID" type="bigint(19)">	 
+			<column name="FROMACCOUNT_ID" type="bigint(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="FROMORG_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="PAYMENTMETHOD_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
+			<column name="TOACCOUNT_ID" type="bigint(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="TOORG_ID" type="bigint(19)">	 
+				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

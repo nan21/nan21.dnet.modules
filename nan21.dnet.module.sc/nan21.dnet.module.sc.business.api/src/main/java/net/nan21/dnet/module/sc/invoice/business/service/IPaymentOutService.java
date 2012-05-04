@@ -11,4 +11,8 @@ import net.nan21.dnet.module.sc.invoice.domain.entity.PaymentOut;
 
 public interface IPaymentOutService extends IEntityService<PaymentOut> {
 
+    public void doPost(PaymentOut payment) throws Exception;
+
+    public void doUnPost(PaymentOut payment) throws Exception;
+
 }

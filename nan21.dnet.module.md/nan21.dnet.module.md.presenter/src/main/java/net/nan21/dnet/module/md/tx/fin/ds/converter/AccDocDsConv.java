@@ -10,6 +10,8 @@ import net.nan21.dnet.module.bd.acc.business.service.IAccSchemaService;
 import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.tx.business.service.ITxDocTypeService;
+import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.md.tx.fin.ds.model.AccDocDs;
@@ -39,6 +41,16 @@ public class AccDocDsConv extends AbstractDsConverter<AccDocDs, AccDoc>
             }
         } else {
             this.lookup_accSchema_AccSchema(ds, e);
+        }
+
+        if (ds.getDocTypeId() != null) {
+            if (e.getDocType() == null
+                    || !e.getDocType().getId().equals(ds.getDocTypeId())) {
+                e.setDocType((TxDocType) this.em.find(TxDocType.class,
+                        ds.getDocTypeId()));
+            }
+        } else {
+            this.lookup_docType_TxDocType(ds, e);
         }
 
     }
@@ -78,6 +90,25 @@ public class AccDocDsConv extends AbstractDsConverter<AccDocDs, AccDoc>
 
         } else {
             e.setAccSchema(null);
+        }
+    }
+
+    protected void lookup_docType_TxDocType(AccDocDs ds, AccDoc e)
+            throws Exception {
+        if (ds.getDocType() != null && !ds.getDocType().equals("")) {
+            TxDocType x = null;
+            try {
+                x = ((ITxDocTypeService) findEntityService(TxDocType.class))
+                        .findByName(ds.getDocType());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `TxDocType` reference:  `docType` = "
+                                + ds.getDocType() + "  ");
+            }
+            e.setDocType(x);
+
+        } else {
+            e.setDocType(null);
         }
     }
 

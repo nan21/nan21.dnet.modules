@@ -54,10 +54,12 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  ,net.nan21.dnet.module.md.mm.price.business.service,net.nan21.dnet.mo
  dule.md.mm.price.domain.entity,net.nan21.dnet.module.md.mm.prod.busin
  ess.service,net.nan21.dnet.module.md.mm.prod.domain.entity,net.nan21.
- dnet.module.md.tx.inventory.business.service,net.nan21.dnet.module.md
- .tx.inventory.domain.entity,net.nan21.dnet.module.sc.invoice.business
- .service,net.nan21.dnet.module.sc.invoice.domain.entity,net.nan21.dne
- t.module.sc.order.business.service,net.nan21.dnet.module.sc.order.dom
- ain.entity,org.springframework.context.weaving;version="[3.0,3.1)",or
- g.springframework.web.multipart;version="[3.0,3.1)"
+ dnet.module.md.org.business.service,net.nan21.dnet.module.md.org.doma
+ in.entity,net.nan21.dnet.module.md.tx.inventory.business.service,net.
+ nan21.dnet.module.md.tx.inventory.domain.entity,net.nan21.dnet.module
+ .sc.invoice.business.service,net.nan21.dnet.module.sc.invoice.domain.
+ entity,net.nan21.dnet.module.sc.order.business.service,net.nan21.dnet
+ .module.sc.order.domain.entity,org.springframework.context.weaving;ve
+ rsion="[3.0,3.1)",org.springframework.web.multipart;version="[3.0,3.1
+ )"
 

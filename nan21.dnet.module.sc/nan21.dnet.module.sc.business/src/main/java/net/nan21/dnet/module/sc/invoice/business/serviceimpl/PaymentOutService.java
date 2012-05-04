@@ -10,6 +10,7 @@ import net.nan21.dnet.module.sc.invoice.business.service.IPaymentOutService;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PaymentOut;
+import net.nan21.dnet.module.sc._businessdelegates.invoice.PaymentOutToAccDocBD;
 
 public class PaymentOutService extends AbstractEntityService<PaymentOut>
         implements IPaymentOutService {
@@ -26,6 +27,16 @@ public class PaymentOutService extends AbstractEntityService<PaymentOut>
     @Override
     protected Class<PaymentOut> getEntityClass() {
         return PaymentOut.class;
+    }
+
+    public void doPost(PaymentOut payment) throws Exception {
+        this.getBusinessDelegate(PaymentOutToAccDocBD.class).postInvoice(
+                payment);
+    }
+
+    public void doUnPost(PaymentOut payment) throws Exception {
+        this.getBusinessDelegate(PaymentOutToAccDocBD.class).unPostInvoice(
+                payment);
     }
 
 }

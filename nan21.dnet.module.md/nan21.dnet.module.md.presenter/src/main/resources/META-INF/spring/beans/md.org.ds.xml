@@ -7,6 +7,53 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="PayAccountDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.PayAccountDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.filter.PayAccountDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.PayAccount" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.org.ds.converter.PayAccountDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PayAccount" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.PayAccountDs" />
+	</bean>
+   
+ 	<bean id="PayAccountLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.PayAccountLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.model.PayAccountLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.PayAccount" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PayAccountLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.PayAccountLovDs" />
+	</bean>
+   
+ 	<bean id="PayAccountAcctDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.PayAccountAcctDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.filter.PayAccountAcctDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.PayAccountAcct" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.org.ds.converter.PayAccountAcctDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PayAccountAcct" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.PayAccountAcctDs" />
+	</bean>
+   
+ 	<bean id="PayAccountMethodDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.PayAccountMethodDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.filter.PayAccountMethodDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.PayAccountMethod" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.org.ds.converter.PayAccountMethodDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PayAccountMethod" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.PayAccountMethodDs" />
+	</bean>
+   
  	<bean id="SubInventoryDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.SubInventoryDs" />

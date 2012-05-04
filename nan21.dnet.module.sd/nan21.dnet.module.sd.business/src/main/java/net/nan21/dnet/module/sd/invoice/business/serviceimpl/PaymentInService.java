@@ -10,6 +10,7 @@ import net.nan21.dnet.module.sd.invoice.business.service.IPaymentInService;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.sd.invoice.domain.entity.PaymentIn;
+import net.nan21.dnet.module.sd._businessdelegates.invoice.PaymentInToAccDocBD;
 
 public class PaymentInService extends AbstractEntityService<PaymentIn>
         implements IPaymentInService {
@@ -26,6 +27,16 @@ public class PaymentInService extends AbstractEntityService<PaymentIn>
     @Override
     protected Class<PaymentIn> getEntityClass() {
         return PaymentIn.class;
+    }
+
+    public void doPost(PaymentIn payment) throws Exception {
+        this.getBusinessDelegate(PaymentInToAccDocBD.class)
+                .postInvoice(payment);
+    }
+
+    public void doUnPost(PaymentIn payment) throws Exception {
+        this.getBusinessDelegate(PaymentInToAccDocBD.class).unPostInvoice(
+                payment);
     }
 
 }

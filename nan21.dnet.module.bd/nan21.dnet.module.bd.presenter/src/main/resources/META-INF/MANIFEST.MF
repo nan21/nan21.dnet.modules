@@ -53,18 +53,21 @@ Export-Package: net.nan21.dnet.module.bd.acc.ds.converter;version="1.0
  an21.dnet.module.bd.standards.ds.model;version="1.0.0.M9";uses:="net.
  nan21.dnet.core.api.annotation,net.nan21.dnet.core.presenter.model.ba
  se,net.nan21.dnet.module.bd.standards.domain.entity",net.nan21.dnet.m
- odule.bd.tx.ds.filter;version="1.0.0.M9";uses:="net.nan21.dnet.core.p
- resenter.model.base",net.nan21.dnet.module.bd.tx.ds.model;version="1.
- 0.0.M9";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core
- .presenter.model.base,net.nan21.dnet.module.bd.tx.domain.entity",net.
- nan21.dnet.module.bd.uom.ds.converter;version="1.0.0.M9";uses:="net.n
- an21.dnet.core.api.converter,net.nan21.dnet.core.presenter.converter,
- net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.bd.u
- om.ds.model",net.nan21.dnet.module.bd.uom.ds.filter;version="1.0.0.M9
- ";uses:="net.nan21.dnet.core.presenter.model.base",net.nan21.dnet.mod
- ule.bd.uom.ds.model;version="1.0.0.M9";uses:="net.nan21.dnet.core.api
- .annotation,net.nan21.dnet.core.presenter.model.base,net.nan21.dnet.m
- odule.bd.uom.domain.entity"
+ odule.bd.tx.ds.converter;version="1.0.0.M9";uses:="net.nan21.dnet.cor
+ e.api.converter,net.nan21.dnet.core.presenter.converter,net.nan21.dne
+ t.module.bd.tx.domain.entity,net.nan21.dnet.module.bd.tx.ds.model",ne
+ t.nan21.dnet.module.bd.tx.ds.filter;version="1.0.0.M9";uses:="net.nan
+ 21.dnet.core.presenter.model.base",net.nan21.dnet.module.bd.tx.ds.mod
+ el;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.annotation,net.n
+ an21.dnet.core.presenter.model.base,net.nan21.dnet.module.bd.tx.domai
+ n.entity",net.nan21.dnet.module.bd.uom.ds.converter;version="1.0.0.M9
+ ";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.presen
+ ter.converter,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dn
+ et.module.bd.uom.ds.model",net.nan21.dnet.module.bd.uom.ds.filter;ver
+ sion="1.0.0.M9";uses:="net.nan21.dnet.core.presenter.model.base",net.
+ nan21.dnet.module.bd.uom.ds.model;version="1.0.0.M9";uses:="net.nan21
+ .dnet.core.api.annotation,net.nan21.dnet.core.presenter.model.base,ne
+ t.nan21.dnet.module.bd.uom.domain.entity"
 Import-Bundle: nan21.dnet.core.presenter;version="[1.0.0.M9,1.0.0.M9]"
  ,javax.persistence;version="[2.0,2.1)",org.eclipse.persistence.jpa;ve
  rsion="[2.1,2.5)",org.eclipse.persistence.core;version="[2.0,2.5)",na
@@ -94,8 +97,8 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  21.dnet.module.bd.org.business.service,net.nan21.dnet.module.bd.org.d
  omain.entity,net.nan21.dnet.module.bd.standards.business.service,net.
  nan21.dnet.module.bd.standards.domain.entity,net.nan21.dnet.module.bd
- .tx.domain.entity,net.nan21.dnet.module.bd.uom.business.service,net.n
- an21.dnet.module.bd.uom.domain.entity,org.springframework.context.wea
- ving;version="[3.0,3.1)",org.springframework.web.multipart;version="[
- 3.0,3.1)"
+ .tx.business.service,net.nan21.dnet.module.bd.tx.domain.entity,net.na
+ n21.dnet.module.bd.uom.business.service,net.nan21.dnet.module.bd.uom.
+ domain.entity,org.springframework.context.weaving;version="[3.0,3.1)"
+ ,org.springframework.web.multipart;version="[3.0,3.1)"
 

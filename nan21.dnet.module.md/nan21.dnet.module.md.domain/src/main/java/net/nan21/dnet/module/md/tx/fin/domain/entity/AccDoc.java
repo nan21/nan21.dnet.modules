@@ -82,6 +82,14 @@ public class AccDoc extends AbstractAuditable {
     /** DocNo. */
     @Column(name = "DOCNO", length = 255)
     private String docNo;
+
+    /** DbAmount. */
+    @Column(name = "DBAMOUNT", scale = 2)
+    private Float dbAmount;
+
+    /** CrAmount. */
+    @Column(name = "CRAMOUNT", scale = 2)
+    private Float crAmount;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
     private Organization org;
@@ -128,6 +136,22 @@ public class AccDoc extends AbstractAuditable {
 
     public void setDocNo(String docNo) {
         this.docNo = docNo;
+    }
+
+    public Float getDbAmount() {
+        return this.dbAmount;
+    }
+
+    public void setDbAmount(Float dbAmount) {
+        this.dbAmount = dbAmount;
+    }
+
+    public Float getCrAmount() {
+        return this.crAmount;
+    }
+
+    public void setCrAmount(Float crAmount) {
+        this.crAmount = crAmount;
     }
 
     public Organization getOrg() {

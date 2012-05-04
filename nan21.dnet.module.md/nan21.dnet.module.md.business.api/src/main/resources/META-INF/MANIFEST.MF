@@ -19,18 +19,21 @@ Export-Package: net.nan21.dnet.module.md.activity.business.service;ver
  an21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.md.mm.pro
  d.domain.entity",net.nan21.dnet.module.md.org.business.service;versio
  n="1.0.0.M9";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mo
- dule.bd.org.domain.entity,net.nan21.dnet.module.md.org.domain.entity"
- ,net.nan21.dnet.module.md.tx.fin.business.service;version="1.0.0.M9";
- uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.acc.d
- omain.entity,net.nan21.dnet.module.bd.currency.domain.entity,net.nan2
- 1.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd.tx.domain
- .entity,net.nan21.dnet.module.md.bp.domain.entity,net.nan21.dnet.modu
- le.md.tx.fin.domain.entity",net.nan21.dnet.module.md.tx.inventory.bus
- iness.service;version="1.0.0.M9";uses:="net.nan21.dnet.core.api.servi
- ce,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.b
- d.tx.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan
- 21.dnet.module.md.mm.prod.domain.entity,net.nan21.dnet.module.md.org.
- domain.entity,net.nan21.dnet.module.md.tx.inventory.domain.entity"
+ dule.bd.acc.domain.entity,net.nan21.dnet.module.bd.currency.domain.en
+ tity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module
+ .bd.tx.domain.entity,net.nan21.dnet.module.md.org.domain.entity",net.
+ nan21.dnet.module.md.tx.fin.business.service;version="1.0.0.M9";uses:
+ ="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.acc.domain
+ .entity,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dne
+ t.module.bd.org.domain.entity,net.nan21.dnet.module.bd.tx.domain.enti
+ ty,net.nan21.dnet.module.md.bp.domain.entity,net.nan21.dnet.module.md
+ .org.domain.entity,net.nan21.dnet.module.md.tx.fin.domain.entity",net
+ .nan21.dnet.module.md.tx.inventory.business.service;version="1.0.0.M9
+ ";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.org
+ .domain.entity,net.nan21.dnet.module.bd.tx.domain.entity,net.nan21.dn
+ et.module.bd.uom.domain.entity,net.nan21.dnet.module.md.mm.prod.domai
+ n.entity,net.nan21.dnet.module.md.org.domain.entity,net.nan21.dnet.mo
+ dule.md.tx.inventory.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.module.ad.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module
  .bd.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.md.domain;

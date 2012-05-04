@@ -17,6 +17,8 @@ public class PaymentOutDsFilter extends AbstractAuditableDsFilter {
     private Date docDate_From;
     private Date docDate_To;
 
+    private String docNo;
+
     private Long payToId;
 
     private Long payToId_From;
@@ -33,6 +35,13 @@ public class PaymentOutDsFilter extends AbstractAuditableDsFilter {
 
     private String org;
 
+    private Long fromAccountId;
+
+    private Long fromAccountId_From;
+    private Long fromAccountId_To;
+
+    private String fromAccount;
+
     private Long currencyId;
 
     private Long currencyId_From;
@@ -46,6 +55,8 @@ public class PaymentOutDsFilter extends AbstractAuditableDsFilter {
     private Long paymentMethodId_To;
 
     private String paymentMethod;
+
+    private String paymentMethodType;
 
     private Float amount;
 
@@ -86,6 +97,14 @@ public class PaymentOutDsFilter extends AbstractAuditableDsFilter {
 
     public void setDocDate_To(Date docDate_To) {
         this.docDate_To = docDate_To;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
     }
 
     public Long getPayToId() {
@@ -160,6 +179,38 @@ public class PaymentOutDsFilter extends AbstractAuditableDsFilter {
         this.org = org;
     }
 
+    public Long getFromAccountId() {
+        return this.fromAccountId;
+    }
+
+    public Long getFromAccountId_From() {
+        return this.fromAccountId_From;
+    }
+
+    public Long getFromAccountId_To() {
+        return this.fromAccountId_To;
+    }
+
+    public void setFromAccountId(Long fromAccountId) {
+        this.fromAccountId = fromAccountId;
+    }
+
+    public void setFromAccountId_From(Long fromAccountId_From) {
+        this.fromAccountId_From = fromAccountId_From;
+    }
+
+    public void setFromAccountId_To(Long fromAccountId_To) {
+        this.fromAccountId_To = fromAccountId_To;
+    }
+
+    public String getFromAccount() {
+        return this.fromAccount;
+    }
+
+    public void setFromAccount(String fromAccount) {
+        this.fromAccount = fromAccount;
+    }
+
     public Long getCurrencyId() {
         return this.currencyId;
     }
@@ -222,6 +273,14 @@ public class PaymentOutDsFilter extends AbstractAuditableDsFilter {
 
     public void setPaymentMethod(String paymentMethod) {
         this.paymentMethod = paymentMethod;
+    }
+
+    public String getPaymentMethodType() {
+        return this.paymentMethodType;
+    }
+
+    public void setPaymentMethodType(String paymentMethodType) {
+        this.paymentMethodType = paymentMethodType;
     }
 
     public Float getAmount() {

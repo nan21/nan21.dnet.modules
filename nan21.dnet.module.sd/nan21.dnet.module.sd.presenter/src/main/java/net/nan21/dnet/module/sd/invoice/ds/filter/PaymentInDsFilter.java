@@ -17,14 +17,16 @@ public class PaymentInDsFilter extends AbstractAuditableDsFilter {
     private Date docDate_From;
     private Date docDate_To;
 
-    private Long payToId;
+    private String docNo;
 
-    private Long payToId_From;
-    private Long payToId_To;
+    private Long payFromId;
 
-    private String payTo;
+    private Long payFromId_From;
+    private Long payFromId_To;
 
-    private String payToName;
+    private String payFrom;
+
+    private String payFromName;
 
     private Long orgId;
 
@@ -32,6 +34,13 @@ public class PaymentInDsFilter extends AbstractAuditableDsFilter {
     private Long orgId_To;
 
     private String org;
+
+    private Long toAccountId;
+
+    private Long toAccountId_From;
+    private Long toAccountId_To;
+
+    private String toAccount;
 
     private Long currencyId;
 
@@ -46,6 +55,8 @@ public class PaymentInDsFilter extends AbstractAuditableDsFilter {
     private Long paymentMethodId_To;
 
     private String paymentMethod;
+
+    private String paymentMethodType;
 
     private Float amount;
 
@@ -88,44 +99,52 @@ public class PaymentInDsFilter extends AbstractAuditableDsFilter {
         this.docDate_To = docDate_To;
     }
 
-    public Long getPayToId() {
-        return this.payToId;
+    public String getDocNo() {
+        return this.docNo;
     }
 
-    public Long getPayToId_From() {
-        return this.payToId_From;
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
     }
 
-    public Long getPayToId_To() {
-        return this.payToId_To;
+    public Long getPayFromId() {
+        return this.payFromId;
     }
 
-    public void setPayToId(Long payToId) {
-        this.payToId = payToId;
+    public Long getPayFromId_From() {
+        return this.payFromId_From;
     }
 
-    public void setPayToId_From(Long payToId_From) {
-        this.payToId_From = payToId_From;
+    public Long getPayFromId_To() {
+        return this.payFromId_To;
     }
 
-    public void setPayToId_To(Long payToId_To) {
-        this.payToId_To = payToId_To;
+    public void setPayFromId(Long payFromId) {
+        this.payFromId = payFromId;
     }
 
-    public String getPayTo() {
-        return this.payTo;
+    public void setPayFromId_From(Long payFromId_From) {
+        this.payFromId_From = payFromId_From;
     }
 
-    public void setPayTo(String payTo) {
-        this.payTo = payTo;
+    public void setPayFromId_To(Long payFromId_To) {
+        this.payFromId_To = payFromId_To;
     }
 
-    public String getPayToName() {
-        return this.payToName;
+    public String getPayFrom() {
+        return this.payFrom;
     }
 
-    public void setPayToName(String payToName) {
-        this.payToName = payToName;
+    public void setPayFrom(String payFrom) {
+        this.payFrom = payFrom;
+    }
+
+    public String getPayFromName() {
+        return this.payFromName;
+    }
+
+    public void setPayFromName(String payFromName) {
+        this.payFromName = payFromName;
     }
 
     public Long getOrgId() {
@@ -158,6 +177,38 @@ public class PaymentInDsFilter extends AbstractAuditableDsFilter {
 
     public void setOrg(String org) {
         this.org = org;
+    }
+
+    public Long getToAccountId() {
+        return this.toAccountId;
+    }
+
+    public Long getToAccountId_From() {
+        return this.toAccountId_From;
+    }
+
+    public Long getToAccountId_To() {
+        return this.toAccountId_To;
+    }
+
+    public void setToAccountId(Long toAccountId) {
+        this.toAccountId = toAccountId;
+    }
+
+    public void setToAccountId_From(Long toAccountId_From) {
+        this.toAccountId_From = toAccountId_From;
+    }
+
+    public void setToAccountId_To(Long toAccountId_To) {
+        this.toAccountId_To = toAccountId_To;
+    }
+
+    public String getToAccount() {
+        return this.toAccount;
+    }
+
+    public void setToAccount(String toAccount) {
+        this.toAccount = toAccount;
     }
 
     public Long getCurrencyId() {
@@ -222,6 +273,14 @@ public class PaymentInDsFilter extends AbstractAuditableDsFilter {
 
     public void setPaymentMethod(String paymentMethod) {
         this.paymentMethod = paymentMethod;
+    }
+
+    public String getPaymentMethodType() {
+        return this.paymentMethodType;
+    }
+
+    public void setPaymentMethodType(String paymentMethodType) {
+        this.paymentMethodType = paymentMethodType;
     }
 
     public Float getAmount() {

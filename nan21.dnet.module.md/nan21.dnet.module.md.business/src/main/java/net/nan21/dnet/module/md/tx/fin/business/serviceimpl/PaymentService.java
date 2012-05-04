@@ -12,6 +12,7 @@ import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 import net.nan21.dnet.module.md.tx.fin.business.service.IPaymentService;
 
 import javax.persistence.EntityManager;
@@ -32,32 +33,6 @@ public class PaymentService extends AbstractEntityService<Payment> implements
     @Override
     protected Class<Payment> getEntityClass() {
         return Payment.class;
-    }
-
-    public List<Payment> findByBpartner(BusinessPartner bpartner) {
-        return this.findByBpartnerId(bpartner.getId());
-    }
-
-    public List<Payment> findByBpartnerId(Long bpartnerId) {
-        return (List<Payment>) this.em
-                .createQuery(
-                        "select e from Payment e where e.clientId = :pClientId and e.bpartner.id = :pBpartnerId",
-                        Payment.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pBpartnerId", bpartnerId).getResultList();
-    }
-
-    public List<Payment> findByOrg(Organization org) {
-        return this.findByOrgId(org.getId());
-    }
-
-    public List<Payment> findByOrgId(Long orgId) {
-        return (List<Payment>) this.em
-                .createQuery(
-                        "select e from Payment e where e.clientId = :pClientId and e.org.id = :pOrgId",
-                        Payment.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pOrgId", orgId).getResultList();
     }
 
     public List<Payment> findByCurrency(Currency currency) {
@@ -85,6 +60,71 @@ public class PaymentService extends AbstractEntityService<Payment> implements
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPaymentMethodId", paymentMethodId)
                 .getResultList();
+    }
+
+    public List<Payment> findByFromOrg(Organization fromOrg) {
+        return this.findByFromOrgId(fromOrg.getId());
+    }
+
+    public List<Payment> findByFromOrgId(Long fromOrgId) {
+        return (List<Payment>) this.em
+                .createQuery(
+                        "select e from Payment e where e.clientId = :pClientId and e.fromOrg.id = :pFromOrgId",
+                        Payment.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pFromOrgId", fromOrgId).getResultList();
+    }
+
+    public List<Payment> findByToOrg(Organization toOrg) {
+        return this.findByToOrgId(toOrg.getId());
+    }
+
+    public List<Payment> findByToOrgId(Long toOrgId) {
+        return (List<Payment>) this.em
+                .createQuery(
+                        "select e from Payment e where e.clientId = :pClientId and e.toOrg.id = :pToOrgId",
+                        Payment.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pToOrgId", toOrgId).getResultList();
+    }
+
+    public List<Payment> findByFromAccount(PayAccount fromAccount) {
+        return this.findByFromAccountId(fromAccount.getId());
+    }
+
+    public List<Payment> findByFromAccountId(Long fromAccountId) {
+        return (List<Payment>) this.em
+                .createQuery(
+                        "select e from Payment e where e.clientId = :pClientId and e.fromAccount.id = :pFromAccountId",
+                        Payment.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pFromAccountId", fromAccountId).getResultList();
+    }
+
+    public List<Payment> findByToAccount(PayAccount toAccount) {
+        return this.findByToAccountId(toAccount.getId());
+    }
+
+    public List<Payment> findByToAccountId(Long toAccountId) {
+        return (List<Payment>) this.em
+                .createQuery(
+                        "select e from Payment e where e.clientId = :pClientId and e.toAccount.id = :pToAccountId",
+                        Payment.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pToAccountId", toAccountId).getResultList();
+    }
+
+    public List<Payment> findByBpartner(BusinessPartner bpartner) {
+        return this.findByBpartnerId(bpartner.getId());
+    }
+
+    public List<Payment> findByBpartnerId(Long bpartnerId) {
+        return (List<Payment>) this.em
+                .createQuery(
+                        "select e from Payment e where e.clientId = :pClientId and e.bpartner.id = :pBpartnerId",
+                        Payment.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pBpartnerId", bpartnerId).getResultList();
     }
 
 }

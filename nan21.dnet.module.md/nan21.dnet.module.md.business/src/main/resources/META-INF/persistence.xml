@@ -60,6 +60,10 @@
 		<class>net.nan21.dnet.module.md.org.domain.entity.SubInventory</class>
 		<class>net.nan21.dnet.module.md.org.domain.entity.StockLocatorType</class>
 		<class>net.nan21.dnet.module.md.org.domain.entity.StockLocator</class>
+		
+		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccount</class>
+		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccountAcct</class>
+		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccountMethod</class>
 		 
 		 <!-- TX -->
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType</class>

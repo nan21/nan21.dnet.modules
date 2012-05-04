@@ -15,6 +15,8 @@ import net.nan21.dnet.core.api.annotation.DsField;
 public class AccDocLineCtxDs extends AbstractAuditableDs<AccDocLine> {
 
     public static final String fACCDOCID = "accDocId";
+    public static final String fACCSCHEMAID = "accSchemaId";
+    public static final String fACCSCHEMA = "accSchema";
     public static final String fDOCTYPEID = "docTypeId";
     public static final String fDOCTYPE = "docType";
     public static final String fDOCUUID = "docUuid";
@@ -25,6 +27,12 @@ public class AccDocLineCtxDs extends AbstractAuditableDs<AccDocLine> {
 
     @DsField(join = "left", path = "accDoc.id")
     private Long accDocId;
+
+    @DsField(join = "left", path = "accDoc.accSchema.id")
+    private Long accSchemaId;
+
+    @DsField(join = "left", path = "accDoc.accSchema.code")
+    private String accSchema;
 
     @DsField(join = "left", path = "accDoc.docType.id")
     private Long docTypeId;
@@ -61,6 +69,22 @@ public class AccDocLineCtxDs extends AbstractAuditableDs<AccDocLine> {
 
     public void setAccDocId(Long accDocId) {
         this.accDocId = accDocId;
+    }
+
+    public Long getAccSchemaId() {
+        return this.accSchemaId;
+    }
+
+    public void setAccSchemaId(Long accSchemaId) {
+        this.accSchemaId = accSchemaId;
+    }
+
+    public String getAccSchema() {
+        return this.accSchema;
+    }
+
+    public void setAccSchema(String accSchema) {
+        this.accSchema = accSchema;
     }
 
     public Long getDocTypeId() {

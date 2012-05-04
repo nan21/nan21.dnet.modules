@@ -27,6 +27,7 @@ import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * Payment methods definition
@@ -70,6 +71,10 @@ public class PaymentMethod extends AbstractType {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
+    /** Type. */
+    @Column(name = "TYPE", nullable = false, length = 8)
+    @NotBlank
+    private String type;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = TxDocType.class)
     @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
     private TxDocType docType;
@@ -82,6 +87,14 @@ public class PaymentMethod extends AbstractType {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public TxDocType getDocType() {

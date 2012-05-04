@@ -59,6 +59,10 @@ public class SalesInvoiceToAccDocBD extends AbstractBusinessDelegate {
 
 	protected AccDoc generateAccDoc(SalesInvoice invoice, AccSchema schema)
 			throws Exception {
+		
+		Float totalCrAmount = 0F;
+		Float totalDbAmount = 0F;
+		
 		AccDoc accDoc = new AccDoc();
 		accDoc.setDocDate(invoice.getDocDate());
 		accDoc.setOrg(invoice.getSupplier());
@@ -68,12 +72,15 @@ public class SalesInvoiceToAccDocBD extends AbstractBusinessDelegate {
 		// customer revenue
 		AccDocLine line = new AccDocLine();
 		line.setAccDoc(accDoc);
-		line.setCrAmount(invoice.getTotalAmount());
+		line.setDbAmount(invoice.getTotalAmount());
 
-		Account crAccount = null;
+		Account dbAccount = null;
 		try {
-			crAccount = this.getSalesAccount(invoice.getCustomer().getId(),
+			dbAccount = this.getSalesAccount(invoice.getCustomer().getId(),
 					invoice.getSupplier().getId(), schema.getId());
+			if (dbAccount == null) {
+				throw new NoResultException();
+			}
 		} catch (NoResultException e) {
 			throw new RuntimeException(
 					"No sales account found for business partner "
@@ -82,16 +89,18 @@ public class SalesInvoiceToAccDocBD extends AbstractBusinessDelegate {
 							+ schema.getCode()
 							+ ". Specify accounting settings at business partner account level or customer group level.");
 		}
-		line.setCrAccount(crAccount.getCode());
+		line.setDbAccount(dbAccount.getCode());
 		accDoc.addToLines(line);
 
+		totalDbAmount += line.getDbAmount();
+		
 		// tax
 		for (SalesInvoiceTax tax : invoice.getTaxes()) {
-			Account dbAccount = null;
+			Account crAccount = null;
 			try {
-				dbAccount = this.getTaxAccount(tax.getTax().getId(), invoice
+				crAccount = this.getTaxAccount(tax.getTax().getId(), invoice
 						.getSupplier().getId(), schema.getId());
-				if (dbAccount == null) {
+				if (crAccount == null) {
 					throw new NoResultException();
 				}
 			} catch (NoResultException e) {
@@ -102,18 +111,23 @@ public class SalesInvoiceToAccDocBD extends AbstractBusinessDelegate {
 			AccDocLine itemLine = new AccDocLine();
 			itemLine.setAccDoc(accDoc);
 
-			itemLine.setDbAccount(dbAccount.getCode());
-			itemLine.setDbAmount(tax.getTaxAmount());
+			itemLine.setCrAccount(crAccount.getCode());
+			itemLine.setCrAmount(tax.getTaxAmount());
 			accDoc.addToLines(itemLine);
+			
+			totalCrAmount += itemLine.getCrAmount();
 		}
 
 		// product revenue
 		for (SalesInvoiceItem item : invoice.getLines()) {
 
-			Account dbAccount = null;
+			Account crAccount = null;
 			try {
-				dbAccount = getRevenueAccount(item.getProduct().getId(),
+				crAccount = getRevenueAccount(item.getProduct().getId(),
 						invoice.getSupplier().getId(), schema.getId());
+				if (crAccount == null) {
+					throw new NoResultException();
+				}
 			} catch (NoResultException e) {
 				throw new RuntimeException(
 						"No revenue account found for product "
@@ -126,11 +140,15 @@ public class SalesInvoiceToAccDocBD extends AbstractBusinessDelegate {
 			AccDocLine itemLine = new AccDocLine();
 			itemLine.setAccDoc(accDoc);
 
-			itemLine.setDbAccount(dbAccount.getCode());
-			itemLine.setDbAmount(item.getNetAmount());
+			itemLine.setCrAccount(crAccount.getCode());
+			itemLine.setCrAmount(item.getNetAmount());
 			accDoc.addToLines(itemLine);
-
+			totalCrAmount += itemLine.getCrAmount();
 		}
+		
+		accDoc.setCrAmount(totalCrAmount);
+		accDoc.setDbAmount(totalDbAmount);
+		
 		return accDoc;
 	}
 
@@ -180,10 +198,9 @@ public class SalesInvoiceToAccDocBD extends AbstractBusinessDelegate {
 				.findEntityService(CustomerGroupAcct.class);
 		CustomerGroupAcct groupAcct = groupAcctService.findByGroup_schema(group
 				.getId(), accSchemaId);
-		if (groupAcct.getSalesAccount() != null) {
-			return groupAcct.getSalesAccount();
-		}
-		return null;
+		 
+		return groupAcct.getSalesAccount();
+		 
 	}
 
 	private Account getRevenueAccount(Long productId, Long organizationId,
@@ -217,10 +234,9 @@ public class SalesInvoiceToAccDocBD extends AbstractBusinessDelegate {
 
 		ProductAccountGroupAcct groupAcct = groupAcctService
 				.findByGroup_schema(group.getId(), accSchemaId);
-		if (groupAcct.getRevenueAccount() != null) {
-			return groupAcct.getRevenueAccount();
-		}
-		return null;
+		 
+		return groupAcct.getRevenueAccount();
+		 
 	}
 
 }

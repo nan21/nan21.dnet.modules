@@ -14,7 +14,10 @@ Ext.define("net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodDs" ,{
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
-		{name:"entityFQN", type:"string"}
+		{name:"entityFQN", type:"string"},
+		{name:"type", type:"string"},
+		{name:"docTypeId", type:"int", useNull:true},
+		{name:"docType", type:"string"}
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
@@ -38,7 +41,12 @@ Ext.define("net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodDsFilter" ,{
 		{name:"modifiedAt_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
-		{name:"entityFQN", type:"string"}
+		{name:"entityFQN", type:"string"},
+		{name:"type", type:"string"},
+		{name:"docTypeId", type:"int", useNull:true},
+		{name:"docTypeId_From",type:"int", useNull:true},
+		{name:"docTypeId_To",type:"int", useNull:true},
+		{name:"docType", type:"string"}
 	] 
 });
 	
