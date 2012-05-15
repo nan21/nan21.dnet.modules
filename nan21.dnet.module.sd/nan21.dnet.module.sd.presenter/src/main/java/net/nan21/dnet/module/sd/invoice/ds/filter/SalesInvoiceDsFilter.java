@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sd.invoice.ds.filter;
 
@@ -11,6 +11,8 @@ import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDsFilter;
 public class SalesInvoiceDsFilter extends AbstractAuditableDsFilter {
 
     private String code;
+
+    private String docNo;
 
     private Date docDate;
 
@@ -120,6 +122,14 @@ public class SalesInvoiceDsFilter extends AbstractAuditableDsFilter {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
     }
 
     public Date getDocDate() {

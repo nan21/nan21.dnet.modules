@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceCategory" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbsenceCategoryLov" />
@@ -46,6 +47,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbsenceTypeLov" />
@@ -69,6 +71,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.time.ds.model.AbsenceReasonLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.time.domain.entity.AbsenceReason" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AbsenceReasonLov" />

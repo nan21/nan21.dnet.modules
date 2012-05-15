@@ -64,6 +64,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SysDataSourceLov" />
@@ -75,6 +76,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDsLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDsLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SysDataSourceDsLov" />
@@ -86,6 +88,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceAsgnLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceAsgnLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDataSource" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SysDataSourceAsgnLov" />
@@ -109,6 +112,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsFieldLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsField" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SysDsFieldLov" />
@@ -132,6 +136,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsServiceLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsService" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SysDsServiceLov" />
@@ -155,6 +160,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDsEventLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SysDsEventLov" />
@@ -188,6 +194,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDateFormatLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SysDateFormatLov" />
@@ -223,6 +230,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.AuditFieldRepDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.AuditFieldRepDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.AuditField" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AuditFieldRep" />

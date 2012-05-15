@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.CsvExportLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.model.CsvExportLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.CsvExport" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CsvExportLov" />
@@ -84,6 +85,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportMapLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportMapLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ExportMap" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ExportMapLov" />
@@ -148,6 +150,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportJobLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.model.ExportJobLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ExportJob" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ExportJobLov" />
@@ -212,6 +215,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportMapLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportMap" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ImportMapLov" />
@@ -288,6 +292,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.model.ImportJobLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.ImportJob" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ImportJobLov" />

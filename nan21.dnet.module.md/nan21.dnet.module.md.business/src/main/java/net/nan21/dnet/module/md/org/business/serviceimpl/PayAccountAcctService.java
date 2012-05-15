@@ -1,6 +1,6 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.org.business.serviceimpl;
@@ -10,14 +10,13 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
 import net.nan21.dnet.module.bd.acc.domain.entity.Account;
-import net.nan21.dnet.module.md.org.business.service.IPayAccountAcctService;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccountAcct;
 
 public class PayAccountAcctService extends
-        AbstractEntityService<PayAccountAcct> implements IPayAccountAcctService {
+        AbstractEntityService<PayAccountAcct> {
 
     public PayAccountAcctService() {
         super();

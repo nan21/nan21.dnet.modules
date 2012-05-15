@@ -1,8 +1,8 @@
 
 Ext.define("net.nan21.dnet.module.md.bp.ds.model.BusinessPartnerDs$Trl", {  	  	
 	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	type__lbl :  "Tip",
-	businessObject__lbl :  "@businessObject",	countryId__lbl :    "Ţara(ID)",
-	countryCode__lbl :    "Ţara",
+	businessObject__lbl :  "@businessObject",	countryId__lbl :    "Ţară(ID)",
+	countryCode__lbl :    "Ţară",
 	taxPayerNo__lbl :  "CUI/CNP",
 	firstName__lbl :  "Prenume",
 	lastName__lbl :  "Nume",
@@ -12,8 +12,8 @@ Ext.define("net.nan21.dnet.module.md.bp.ds.model.BusinessPartnerDs$Trl", {
 	passportNo__lbl :  "Paşaport",
 	birthDate__lbl :  "Zi de naştere",
 	companyName__lbl :  "Denumire",
-	legalFormId__lbl :    "Forma juridica(ID)",
-	legalForm__lbl :    "Forma juridica",
+	legalFormId__lbl :    "Formă juridică(ID)",
+	legalForm__lbl :    "Formă juridică",
 	registrationNo__lbl :  "Cod Reg. Comerţ.",
 	registrationDate__lbl :  "Din",
 	className__lbl :  "@className",		 

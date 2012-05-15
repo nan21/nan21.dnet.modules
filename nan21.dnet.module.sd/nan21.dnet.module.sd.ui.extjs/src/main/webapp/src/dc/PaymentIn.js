@@ -69,6 +69,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.PaymentIn$List", {
 	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
+		.addTextColumn({ name:"docNo", dataIndex:"docNo",width:200 })   	
 		.addDateColumn({ name:"docDate", dataIndex:"docDate",format:Dnet.DATE_FORMAT})   	      	     
 		.addTextColumn({ name:"payFrom", dataIndex:"payFrom",width:100 })   	
 		.addTextColumn({ name:"payFromName", dataIndex:"payFromName",width:200 })   	

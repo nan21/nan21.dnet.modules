@@ -1,6 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.bd.tx.ds.model.PaymentMethodDs$Trl", {  	  	
-	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	type__lbl :  "@type",	docTypeId__lbl :    "Tip doc(ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	type__lbl :  "Tip",
+	docTypeId__lbl :    "Tip doc(ID)",
 	docType__lbl :    "Tip doc",
 		 
 	id__lbl :"ID"

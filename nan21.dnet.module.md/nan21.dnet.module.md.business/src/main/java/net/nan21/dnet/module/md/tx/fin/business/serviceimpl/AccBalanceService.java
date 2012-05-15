@@ -1,11 +1,16 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.tx.fin.business.serviceimpl;
 
+import java.util.List;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.tx.domain.entity.FiscalPeriod;
 import net.nan21.dnet.module.md.tx.fin.business.service.IAccBalanceService;
 
 import javax.persistence.EntityManager;
@@ -26,6 +31,45 @@ public class AccBalanceService extends AbstractEntityService<AccBalance>
     @Override
     protected Class<AccBalance> getEntityClass() {
         return AccBalance.class;
+    }
+
+    public List<AccBalance> findByOrg(Organization org) {
+        return this.findByOrgId(org.getId());
+    }
+
+    public List<AccBalance> findByOrgId(Long orgId) {
+        return (List<AccBalance>) this.em
+                .createQuery(
+                        "select e from AccBalance e where e.clientId = :pClientId and e.org.id = :pOrgId",
+                        AccBalance.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pOrgId", orgId).getResultList();
+    }
+
+    public List<AccBalance> findByAccSchema(AccSchema accSchema) {
+        return this.findByAccSchemaId(accSchema.getId());
+    }
+
+    public List<AccBalance> findByAccSchemaId(Long accSchemaId) {
+        return (List<AccBalance>) this.em
+                .createQuery(
+                        "select e from AccBalance e where e.clientId = :pClientId and e.accSchema.id = :pAccSchemaId",
+                        AccBalance.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pAccSchemaId", accSchemaId).getResultList();
+    }
+
+    public List<AccBalance> findByPeriod(FiscalPeriod period) {
+        return this.findByPeriodId(period.getId());
+    }
+
+    public List<AccBalance> findByPeriodId(Long periodId) {
+        return (List<AccBalance>) this.em
+                .createQuery(
+                        "select e from AccBalance e where e.clientId = :pClientId and e.period.id = :pPeriodId",
+                        AccBalance.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pPeriodId", periodId).getResultList();
     }
 
 }

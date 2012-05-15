@@ -1,6 +1,6 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.org.business.service;
@@ -38,5 +38,11 @@ public interface IPayAccountAcctService extends IEntityService<PayAccountAcct> {
 
     public List<PayAccountAcct> findByWithdrawalAccountId(
             Long withdrawalAccountId);
+
+    public String getPostingDepositAcct(PayAccount payAccount, AccSchema schema)
+            throws Exception;
+
+    public String getPostingWithdrawalAcct(PayAccount payAccount,
+            AccSchema schema) throws Exception;
 
 }

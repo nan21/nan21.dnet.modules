@@ -1,6 +1,6 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.org.business.serviceimpl;
@@ -8,6 +8,7 @@ package net.nan21.dnet.module.md.org.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccJournal;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.md.org.business.service.IPayAccountService;
@@ -63,6 +64,19 @@ public class PayAccountService extends AbstractEntityService<PayAccount>
                         PayAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCurrencyId", currencyId).getResultList();
+    }
+
+    public List<PayAccount> findByJournal(AccJournal journal) {
+        return this.findByJournalId(journal.getId());
+    }
+
+    public List<PayAccount> findByJournalId(Long journalId) {
+        return (List<PayAccount>) this.em
+                .createQuery(
+                        "select e from PayAccount e where e.clientId = :pClientId and e.journal.id = :pJournalId",
+                        PayAccount.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJournalId", journalId).getResultList();
     }
 
 }

@@ -24,6 +24,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransactionTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransactionTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvTransactionTypeLov" />
@@ -100,6 +101,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.inventory.ds.model.InvOperationDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.inventory.ds.filter.InvOperationDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.inventory.domain.entity.InvOperation" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvOperation" />
@@ -111,6 +113,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.inventory.ds.model.InvBalanceDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.inventory.ds.filter.InvBalanceDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.inventory.domain.entity.InvBalance" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InvBalance" />

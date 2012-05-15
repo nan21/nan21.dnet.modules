@@ -1,5 +1,8 @@
- 
-   	 
+/*
+ * DNet eBusiness Suite
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */   	 
 Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
@@ -13,6 +16,7 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineDs" ,{
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
 		{name:"accDocId", type:"int", useNull:true},
+		{name:"sequenceNo", type:"int", useNull:true},
 		{name:"dbAccount", type:"string"},
 		{name:"crAccount", type:"string"},
 		{name:"dbAmount", type:"float", useNull:true},
@@ -37,6 +41,9 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineDsFilter" ,{
 		{name:"accDocId", type:"int", useNull:true},
 		{name:"accDocId_From",type:"int", useNull:true},
 		{name:"accDocId_To",type:"int", useNull:true},
+		{name:"sequenceNo", type:"int", useNull:true},
+		{name:"sequenceNo_From",type:"int", useNull:true},
+		{name:"sequenceNo_To",type:"int", useNull:true},
 		{name:"dbAccount", type:"string"},
 		{name:"crAccount", type:"string"},
 		{name:"dbAmount", type:"float", useNull:true},

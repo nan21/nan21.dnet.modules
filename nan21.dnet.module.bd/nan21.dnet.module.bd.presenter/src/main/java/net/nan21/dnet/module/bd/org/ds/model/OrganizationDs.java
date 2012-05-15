@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.bd.org.ds.model;
 
@@ -18,6 +18,8 @@ public class OrganizationDs extends AbstractTypeWithCodeDs<Organization> {
     public static final String fVALID = "valid";
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
+    public static final String fCALENDARID = "calendarId";
+    public static final String fCALENDAR = "calendar";
     public static final String fCLASSNAME = "className";
 
     @DsField()
@@ -28,6 +30,12 @@ public class OrganizationDs extends AbstractTypeWithCodeDs<Organization> {
 
     @DsField(join = "left", path = "type.name")
     private String type;
+
+    @DsField(join = "left", path = "calendar.id")
+    private Long calendarId;
+
+    @DsField(join = "left", path = "calendar.name")
+    private String calendar;
 
     @DsField(fetch = false)
     private String className;
@@ -62,6 +70,22 @@ public class OrganizationDs extends AbstractTypeWithCodeDs<Organization> {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Long getCalendarId() {
+        return this.calendarId;
+    }
+
+    public void setCalendarId(Long calendarId) {
+        this.calendarId = calendarId;
+    }
+
+    public String getCalendar() {
+        return this.calendar;
+    }
+
+    public void setCalendar(String calendar) {
+        this.calendar = calendar;
     }
 
     public String getClassName() {

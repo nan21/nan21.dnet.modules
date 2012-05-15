@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.ad.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module
- .bd.domain;version="[1.0.0.M9,1.0.0.M9]",nan21.dnet.module.ux.domain;
- version="[1.0.0.M9,1.0.0.M9]"
+ dnet.module.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.modu
+ le.bd.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.ux.dom
+ ain;version="[1.0.0.RC1,1.0.0.RC1]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.M9
+Bundle-Version: 1.0.0.RC1
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet UX - business API
 Bundle-ManifestVersion: 2

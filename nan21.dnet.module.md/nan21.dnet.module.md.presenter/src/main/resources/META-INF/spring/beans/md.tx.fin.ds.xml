@@ -12,10 +12,47 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.PaymentDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.PaymentDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.Payment" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="Payment" />
 		<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.PaymentDs" />
+	</bean>
+   
+ 	<bean id="PaymentItemDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.PaymentItemDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.PaymentItemDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.tx.fin.ds.converter.PaymentItemDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentItem" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.PaymentItemDs" />
+	</bean>
+   
+ 	<bean id="PaymentItemProductDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.PaymentItemProductDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.PaymentItemProductDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.tx.fin.ds.converter.PaymentItemProductDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentItemProduct" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.PaymentItemProductDs" />
+	</bean>
+   
+ 	<bean id="PaymentItemAccItemDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.PaymentItemAccItemDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.PaymentItemAccItemDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.tx.fin.ds.converter.PaymentItemAccItemDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentItemAccItem" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.PaymentItemAccItemDs" />
 	</bean>
    
  	<bean id="AccDocDsService" scope="prototype"
@@ -23,11 +60,33 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccDocDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.AccDocDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.md.tx.fin.ds.converter.AccDocDsConv" />
+	  	<property name="readOnly" value="true" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="post">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.md._presenterdelegates.tx.fin.AccDocPD"/>
+	  				<constructor-arg name="methodName" value="post" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="unPost">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.md._presenterdelegates.tx.fin.AccDocPD"/>
+	  				<constructor-arg name="methodName" value="unPost" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccDoc" />
 		<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccDocDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">post</value>
+	  			<value type="java.lang.String">unPost</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="AccDocLineDsService" scope="prototype"
@@ -35,7 +94,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.AccDocLineDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.md.tx.fin.ds.converter.AccDocLineDsConv" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccDocLine" />
@@ -47,6 +106,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineCtxDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.AccDocLineCtxDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccDocLineCtx" />
@@ -58,6 +118,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccOperationDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.AccOperationDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.AccOperation" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccOperation" />
@@ -69,6 +130,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.tx.fin.ds.model.AccBalanceDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.tx.fin.ds.filter.AccBalanceDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.tx.fin.domain.entity.AccBalance" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccBalance" />

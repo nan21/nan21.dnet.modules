@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportServerLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportServerLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportServer" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ReportServerLov" />
@@ -46,6 +47,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.Report" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ReportLov" />
@@ -69,6 +71,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamRtDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.ReportParamRtDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportParam" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ReportParamRt" />
@@ -80,6 +83,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.model.ReportParamLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.ReportParam" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ReportParamLov" />
@@ -127,6 +131,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportUsageRtDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.DsReportUsageRtDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.DsReportUsage" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="DsReportUsageRt" />
@@ -138,6 +143,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.report.ds.model.DsReportParamRtDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.report.ds.filter.DsReportParamRtDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.report.domain.entity.DsReportParam" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="DsReportParamRt" />

@@ -88,7 +88,7 @@ Ext.define("net.nan21.dnet.module.sc.order.frame.PurchaseOrder_UI", {
 	,onBtnConfirm: function() {
 		var s={modal:true, callbacks:{} };
 		try{ 
-			this._getDc_("order").doService("confirmOrder", s); 
+			this._getDc_("order").doService("confirm", s); 
 		}catch(e){
 			dnet.base.DcExceptions.showMessage(e);
 		}
@@ -97,7 +97,7 @@ Ext.define("net.nan21.dnet.module.sc.order.frame.PurchaseOrder_UI", {
 	,onBtnUnConfirm: function() {
 		var s={modal:true, callbacks:{} };
 		try{ 
-			this._getDc_("order").doService("unConfirmOrder", s); 
+			this._getDc_("order").doService("unConfirm", s); 
 		}catch(e){
 			dnet.base.DcExceptions.showMessage(e);
 		}

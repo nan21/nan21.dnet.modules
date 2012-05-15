@@ -1,6 +1,6 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.bp.business.serviceimpl;
@@ -14,6 +14,10 @@ import net.nan21.dnet.module.md.bp.domain.entity.CompanyLegalForm;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md._businessdelegates.bp.BpCustomerAcctBD;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md._businessdelegates.bp.BpVendorAcctBD;
 
 public class BusinessPartnerService extends
         AbstractEntityService<BusinessPartner> implements
@@ -64,6 +68,18 @@ public class BusinessPartnerService extends
                         BusinessPartner.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLegalFormId", legalFormId).getResultList();
+    }
+
+    public String getPostingCustomerAcct(BusinessPartner businessPartner,
+            Organization organization, AccSchema schema) throws Exception {
+        return this.getBusinessDelegate(BpCustomerAcctBD.class).getPostingAcct(
+                businessPartner, organization, schema);
+    }
+
+    public String getPostingVendorAcct(BusinessPartner businessPartner,
+            Organization organization, AccSchema schema) throws Exception {
+        return this.getBusinessDelegate(BpVendorAcctBD.class).getPostingAcct(
+                businessPartner, organization, schema);
     }
 
 }

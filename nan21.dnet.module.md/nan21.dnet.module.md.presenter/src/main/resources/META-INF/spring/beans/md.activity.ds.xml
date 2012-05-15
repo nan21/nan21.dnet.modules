@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityCallLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityCallLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventPriority" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CalendarEventPriorityCallLov" />
@@ -34,6 +35,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityMeetingLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityMeetingLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventPriority" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CalendarEventPriorityMeetingLov" />
@@ -45,6 +47,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityTaskLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventPriorityTaskLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventPriority" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CalendarEventPriorityTaskLov" />
@@ -67,6 +70,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusCallLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusCallLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventStatus" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CalendarEventStatusCallLov" />
@@ -78,6 +82,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusMeetingLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusMeetingLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventStatus" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CalendarEventStatusMeetingLov" />
@@ -89,6 +94,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusTaskLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusTaskLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.activity.domain.entity.CalendarEventStatus" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CalendarEventStatusTaskLov" />

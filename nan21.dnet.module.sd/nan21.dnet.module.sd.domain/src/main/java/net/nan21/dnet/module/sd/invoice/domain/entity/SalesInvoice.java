@@ -1,7 +1,7 @@
-/* 
+/*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sd.invoice.domain.entity;
 
@@ -88,6 +88,10 @@ public class SalesInvoice extends AbstractAuditable {
     @NotNull
     private Date docDate;
 
+    /** DocNo. */
+    @Column(name = "DOCNO", length = 255)
+    private String docNo;
+
     /** TotalNetAmount. */
     @Column(name = "TOTALNETAMOUNT", scale = 2)
     private Float totalNetAmount;
@@ -172,6 +176,14 @@ public class SalesInvoice extends AbstractAuditable {
 
     public void setDocDate(Date docDate) {
         this.docDate = docDate;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
     }
 
     public Float getTotalNetAmount() {

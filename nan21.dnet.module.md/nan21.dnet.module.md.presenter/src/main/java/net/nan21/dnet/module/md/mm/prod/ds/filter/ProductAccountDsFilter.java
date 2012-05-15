@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.mm.prod.ds.filter;
 
@@ -29,6 +29,8 @@ public class ProductAccountDsFilter extends AbstractAuditableDsFilter {
     private Long productId_To;
 
     private String productCode;
+
+    private String analiticSegment;
 
     public Long getOrganizationId() {
         return this.organizationId;
@@ -124,6 +126,14 @@ public class ProductAccountDsFilter extends AbstractAuditableDsFilter {
 
     public void setProductCode(String productCode) {
         this.productCode = productCode;
+    }
+
+    public String getAnaliticSegment() {
+        return this.analiticSegment;
+    }
+
+    public void setAnaliticSegment(String analiticSegment) {
+        this.analiticSegment = analiticSegment;
     }
 
 }

@@ -16,6 +16,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="ID" type="number(19)">
 				<constraints nullable="false" /></column>	 
+			<column name="INITIALAMOUNT" type="number(12,2)">
+				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDAT" type="date">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar2(32)">
@@ -23,6 +25,12 @@
 			<column name="UUID" type="varchar2(36)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="ACCSCHEMA_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="ORG_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="PERIOD_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sc.invoice.ds.converter;
 
@@ -16,6 +16,8 @@ import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.org.business.service.IPayAccountService;
+import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceDs;
@@ -93,6 +95,17 @@ public class PurchaseInvoiceDsConv extends
             } else {
                 this.lookup_customer_Organization(ds, e);
             }
+        }
+
+        if (ds.getFromAccountId() != null) {
+            if (e.getFromAccount() == null
+                    || !e.getFromAccount().getId()
+                            .equals(ds.getFromAccountId())) {
+                e.setFromAccount((PayAccount) this.em.find(PayAccount.class,
+                        ds.getFromAccountId()));
+            }
+        } else {
+            this.lookup_fromAccount_PayAccount(ds, e);
         }
 
     }
@@ -208,6 +221,25 @@ public class PurchaseInvoiceDsConv extends
 
         } else {
             e.setCustomer(null);
+        }
+    }
+
+    protected void lookup_fromAccount_PayAccount(PurchaseInvoiceDs ds,
+            PurchaseInvoice e) throws Exception {
+        if (ds.getFromAccount() != null && !ds.getFromAccount().equals("")) {
+            PayAccount x = null;
+            try {
+                x = ((IPayAccountService) findEntityService(PayAccount.class))
+                        .findByName(ds.getFromAccount());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `PayAccount` reference:  `fromAccount` = "
+                                + ds.getFromAccount() + "  ");
+            }
+            e.setFromAccount(x);
+
+        } else {
+            e.setFromAccount(null);
         }
     }
 

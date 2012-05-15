@@ -1,12 +1,14 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.bd.org.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.org.business.service.ICalendarService;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationTypeService;
+import net.nan21.dnet.module.bd.org.domain.entity.Calendar;
 import net.nan21.dnet.module.bd.org.domain.entity.OrganizationType;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
@@ -31,6 +33,16 @@ public class OrganizationDsConv extends
             this.lookup_type_OrganizationType(ds, e);
         }
 
+        if (ds.getCalendarId() != null) {
+            if (e.getCalendar() == null
+                    || !e.getCalendar().getId().equals(ds.getCalendarId())) {
+                e.setCalendar((Calendar) this.em.find(Calendar.class,
+                        ds.getCalendarId()));
+            }
+        } else {
+            this.lookup_calendar_Calendar(ds, e);
+        }
+
     }
 
     protected void lookup_type_OrganizationType(OrganizationDs ds,
@@ -49,6 +61,25 @@ public class OrganizationDsConv extends
 
         } else {
             e.setType(null);
+        }
+    }
+
+    protected void lookup_calendar_Calendar(OrganizationDs ds, Organization e)
+            throws Exception {
+        if (ds.getCalendar() != null && !ds.getCalendar().equals("")) {
+            Calendar x = null;
+            try {
+                x = ((ICalendarService) findEntityService(Calendar.class))
+                        .findByName(ds.getCalendar());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Calendar` reference:  `calendar` = "
+                                + ds.getCalendar() + "  ");
+            }
+            e.setCalendar(x);
+
+        } else {
+            e.setCalendar(null);
         }
     }
 

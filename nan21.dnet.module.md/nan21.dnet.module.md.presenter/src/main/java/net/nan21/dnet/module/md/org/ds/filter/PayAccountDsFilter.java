@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.org.ds.filter;
 
@@ -18,12 +18,21 @@ public class PayAccountDsFilter extends AbstractTypeDsFilter {
 
     private String org;
 
+    private Long journalId;
+
+    private Long journalId_From;
+    private Long journalId_To;
+
+    private String journal;
+
     private Long currencyId;
 
     private Long currencyId_From;
     private Long currencyId_To;
 
     private String currency;
+
+    private String analiticSegment;
 
     public String getType() {
         return this.type;
@@ -65,6 +74,38 @@ public class PayAccountDsFilter extends AbstractTypeDsFilter {
         this.org = org;
     }
 
+    public Long getJournalId() {
+        return this.journalId;
+    }
+
+    public Long getJournalId_From() {
+        return this.journalId_From;
+    }
+
+    public Long getJournalId_To() {
+        return this.journalId_To;
+    }
+
+    public void setJournalId(Long journalId) {
+        this.journalId = journalId;
+    }
+
+    public void setJournalId_From(Long journalId_From) {
+        this.journalId_From = journalId_From;
+    }
+
+    public void setJournalId_To(Long journalId_To) {
+        this.journalId_To = journalId_To;
+    }
+
+    public String getJournal() {
+        return this.journal;
+    }
+
+    public void setJournal(String journal) {
+        this.journal = journal;
+    }
+
     public Long getCurrencyId() {
         return this.currencyId;
     }
@@ -95,6 +136,14 @@ public class PayAccountDsFilter extends AbstractTypeDsFilter {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public String getAnaliticSegment() {
+        return this.analiticSegment;
+    }
+
+    public void setAnaliticSegment(String analiticSegment) {
+        this.analiticSegment = analiticSegment;
     }
 
 }

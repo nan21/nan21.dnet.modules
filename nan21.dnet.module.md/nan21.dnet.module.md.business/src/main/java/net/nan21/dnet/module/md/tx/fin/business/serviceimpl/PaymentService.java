@@ -1,6 +1,6 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.tx.fin.business.serviceimpl;
@@ -14,6 +14,7 @@ import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 import net.nan21.dnet.module.md.tx.fin.business.service.IPaymentService;
+import net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.Payment;
@@ -125,6 +126,19 @@ public class PaymentService extends AbstractEntityService<Payment> implements
                         Payment.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBpartnerId", bpartnerId).getResultList();
+    }
+
+    public List<Payment> findByLines(PaymentItem lines) {
+        return this.findByLinesId(lines.getId());
+    }
+
+    public List<Payment> findByLinesId(Long linesId) {
+        return (List<Payment>) this.em
+                .createQuery(
+                        "select distinct e from Payment e , IN (e.lines) c where e.clientId = :pClientId and c.id = :pLinesId",
+                        Payment.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pLinesId", linesId).getResultList();
     }
 
 }

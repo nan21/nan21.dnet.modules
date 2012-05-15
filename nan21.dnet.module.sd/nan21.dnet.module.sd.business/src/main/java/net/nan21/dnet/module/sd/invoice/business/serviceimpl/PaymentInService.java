@@ -1,6 +1,6 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sd.invoice.business.serviceimpl;
@@ -30,13 +30,11 @@ public class PaymentInService extends AbstractEntityService<PaymentIn>
     }
 
     public void doPost(PaymentIn payment) throws Exception {
-        this.getBusinessDelegate(PaymentInToAccDocBD.class)
-                .postInvoice(payment);
+        this.getBusinessDelegate(PaymentInToAccDocBD.class).post(payment);
     }
 
     public void doUnPost(PaymentIn payment) throws Exception {
-        this.getBusinessDelegate(PaymentInToAccDocBD.class).unPostInvoice(
-                payment);
+        this.getBusinessDelegate(PaymentInToAccDocBD.class).unPost(payment);
     }
 
 }

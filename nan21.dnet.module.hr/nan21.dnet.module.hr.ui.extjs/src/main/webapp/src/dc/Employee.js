@@ -187,8 +187,8 @@ labelAlign:"right",labelWidth:110}})
 	}
 	,_afterBind_: function(record) {	
 		if (record) {
-				this._doEnableJobOrPosition_(record.data.assignToPosition);
-			}
+			this._doEnableJobOrPosition_(record.data.assignToPosition);
+		}
 	}
 });
  	

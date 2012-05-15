@@ -7,7 +7,7 @@ import net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs;
 
 public class SalesInvoicePD extends AbstractDsDelegate {
 
-	public void confirmInvoice(SalesInvoiceDs ds) throws Exception {
+	public void confirm(SalesInvoiceDs ds) throws Exception {
 		ISalesInvoiceService srv = ((ISalesInvoiceService) this
 				.findEntityService(SalesInvoice.class));
 		SalesInvoice e = srv.findById(ds.getId());
@@ -15,7 +15,7 @@ public class SalesInvoicePD extends AbstractDsDelegate {
 		srv.update(e);
 	}
 
-	public void unConfirmInvoice(SalesInvoiceDs ds) throws Exception {
+	public void unConfirm(SalesInvoiceDs ds) throws Exception {
 		ISalesInvoiceService srv = ((ISalesInvoiceService) this
 				.findEntityService(SalesInvoice.class));
 		SalesInvoice e = srv.findById(ds.getId());
@@ -23,14 +23,14 @@ public class SalesInvoicePD extends AbstractDsDelegate {
 		srv.update(e);
 	}
 
-	public void postInvoice(SalesInvoiceDs ds) throws Exception {
+	public void post(SalesInvoiceDs ds) throws Exception {
 		ISalesInvoiceService srv = ((ISalesInvoiceService) this
 				.findEntityService(SalesInvoice.class));
 		SalesInvoice e = srv.findById(ds.getId());
 		srv.doPost(e);
 	}
 
-	public void unPostInvoice(SalesInvoiceDs ds) throws Exception {
+	public void unPost(SalesInvoiceDs ds) throws Exception {
 		ISalesInvoiceService srv = ((ISalesInvoiceService) this
 				.findEntityService(SalesInvoice.class));
 		SalesInvoice e = srv.findById(ds.getId());

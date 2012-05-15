@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseCategoryLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseCategory" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CourseCategoryLov" />
@@ -46,6 +47,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.CourseType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CourseTypeLov" />
@@ -69,6 +71,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.training.ds.model.CourseLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.training.domain.entity.Course" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CourseLov" />

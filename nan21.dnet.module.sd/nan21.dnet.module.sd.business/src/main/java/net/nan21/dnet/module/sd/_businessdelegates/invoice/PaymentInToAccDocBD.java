@@ -1,31 +1,42 @@
 package net.nan21.dnet.module.sd._businessdelegates.invoice;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.NoResultException;
-
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
+import net.nan21.dnet.module.bd.acc.business.service.IAccItemAcctService;
 import net.nan21.dnet.module.bd.acc.business.service.IAccSchemaService;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccItemAcct;
 import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.Account;
-import net.nan21.dnet.module.md.bp.business.service.IBpAccountAcctService;
-import net.nan21.dnet.module.md.bp.business.service.IBpAccountService;
-import net.nan21.dnet.module.md.bp.business.service.ICustomerGroupAcctService;
-import net.nan21.dnet.module.md.bp.domain.entity.BpAccount;
-import net.nan21.dnet.module.md.bp.domain.entity.BpAccountAcct;
-import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup;
-import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroupAcct;
+import net.nan21.dnet.module.bd.tx.business.service.IFiscalPeriodService;
+import net.nan21.dnet.module.bd.tx.domain.entity.FiscalPeriod;
+import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.mm.prod.business.service.IProductService;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.md.org.business.service.IPayAccountAcctService;
-import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccountAcct;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine;
+import net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem;
 import net.nan21.dnet.module.sd.invoice.domain.entity.PaymentIn;
 
 public class PaymentInToAccDocBD extends AbstractBusinessDelegate {
 
-	public void unPostInvoice(PaymentIn payment) throws Exception {
+	IBusinessPartnerService bpService;
+	IFiscalPeriodService periodService;
+	IProductService prodService;
+	IAccItemAcctService accItemAcctService;
+	IPayAccountAcctService payAcctService;
+
+	/**
+	 * Un-post payment. Delete linked accounting document(s).
+	 * 
+	 * @param payment
+	 * @throws Exception
+	 */
+	public void unPost(PaymentIn payment) throws Exception {
 		this.em.createQuery(
 				"delete from AccDoc t " + " where t.docUuid = :invoiceUuid")
 				.setParameter("invoiceUuid", payment.getUuid()).executeUpdate();
@@ -33,7 +44,14 @@ public class PaymentInToAccDocBD extends AbstractBusinessDelegate {
 		this.em.merge(payment);
 	}
 
-	public List<AccDoc> postInvoice(PaymentIn payment) throws Exception {
+	/**
+	 * Post payment to accounting. Generate accounting document(s).
+	 * 
+	 * @param payment
+	 * @return
+	 * @throws Exception
+	 */
+	public List<AccDoc> post(PaymentIn payment) throws Exception {
 		List<AccDoc> result = new ArrayList<AccDoc>();
 		// get org schemas , for each schema generate an acc-doc
 		IAccSchemaService srv = (IAccSchemaService) this
@@ -49,115 +67,205 @@ public class PaymentInToAccDocBD extends AbstractBusinessDelegate {
 		return result;
 	}
 
+	
+	/**
+	 * Generate accounting document from payment.
+	 * 
+	 * @param payment
+	 * @param schema
+	 * @return
+	 * @throws Exception
+	 */
 	protected AccDoc generateAccDoc(PaymentIn payment, AccSchema schema)
 			throws Exception {
 
+		if (payment.getLines() != null && payment.getLines().size() > 0) {
+			return this.generateAccDocRevenue(payment, schema);
+		} else {
+			return this.generateAccDocPayment(payment, schema);
+		}
+	}
+	
+	
+	 
+	/**
+	 * Create accounting document header based on payment document header data.
+	 * 
+	 * @param payment
+	 * @param schema
+	 * @return
+	 * @throws Exception
+	 */
+	protected AccDoc createHeader(PaymentIn payment, AccSchema schema)
+			throws Exception {
 		AccDoc accDoc = new AccDoc();
+		accDoc.setPeriod(getPeriodService().getPostingPeriod(
+				payment.getDocDate(), payment.getToOrg()));
 		accDoc.setDocDate(payment.getDocDate());
-		accDoc.setDocDate(payment.getDocDate());
+		if (payment.getDocNo() != null) {
+			accDoc.setDocNo(payment.getDocNo());
+		} else {
+			accDoc.setDocNo(payment.getCode());
+		}
 		accDoc.setOrg(payment.getToOrg());
 		accDoc.setAccSchema(schema);
 		accDoc.setDocUuid(payment.getUuid());
 		accDoc.setDocType(payment.getPaymentMethod().getDocType());
+		accDoc.setJournal(payment.getPaymentMethod().getDocType().getJournal());
+		accDoc.setDocCurrency(payment.getCurrency());
+		accDoc.setDocAmount(payment.getAmount());
+		accDoc.setDocNetAmount(payment.getAmount());
+		accDoc.setDocTaxAmount(0F);
+		accDoc.setBpartner(payment.getBpartner());
+		return accDoc;
+	}
+	
+	
+	protected AccDoc generateAccDocRevenue(PaymentIn payment, AccSchema schema)
+	throws Exception {
 		
-		//  
+		AccDoc accDoc = this.createHeader(payment, schema);
+
+		Float totalCrAmount = 0F;
+		Float totalDbAmount = 0F;
+
+		int i=1;
 		
+		// header line - financial account
+		
+		String dbAccount = this.getPayAcctService().getPostingDepositAcct(
+				payment.getToAccount(), schema);
+
 		AccDocLine line = new AccDocLine();
-		line.setAccDoc(accDoc);		 
-		Account crAccount = null;
-		try {
-			crAccount = this.getPurchaseAccount(payment.getBpartner().getId(),
-					payment.getToOrg().getId(), schema.getId());
-			if (crAccount == null) {
-				throw new NoResultException();
-			}
-		} catch (NoResultException e) {
-			throw new RuntimeException(
-					"No purchase account found for business partner "
-							+ payment.getBpartner().getName()
-							+ " for accounting schema "
-							+ schema.getCode()
-							+ ". Specify accounting settings at business partner account level or vendor group level.");
-		}
-		line.setCrAccount(crAccount.getCode());
-		line.setCrAmount(payment.getAmount());
-		accDoc.setCrAmount(line.getCrAmount());
-		accDoc.addToLines(line);
-		
-		//
-		
-		line = new AccDocLine();
-		Account dbAccount = null;
-		try {
-			dbAccount = this.getPayAccount(payment.getToAccount(), schema
-					.getId());
-			if (dbAccount == null) {
-				throw new NoResultException();
-			}
-		} catch (NoResultException e) {
-			throw new RuntimeException(
-					"No payment account found for financial account "
-							+ payment.getToAccount().getName()
-							+ " for accounting schema "
-							+ schema.getCode()
-							+ ". Specify accounting settings at financial account level.");
-		}
-		line.setDbAccount(dbAccount.getCode());
+		line.setAccDoc(accDoc);
+		line.setSequenceNo(i++);
+		line.setHeaderLine(true);
+		line.setDbAccount(dbAccount);
 		line.setDbAmount(payment.getAmount());
+
 		accDoc.setDbAmount(line.getDbAmount());
 		accDoc.addToLines(line);
- 		
+
+		totalDbAmount = line.getDbAmount();
+
+		// detail line(s) - expense items
+ 
+		String crAccount = null;
+		Collection<PaymentItem> items = payment.getLines();
+		for (PaymentItem item : items) {
+			
+			if (item.getProduct() != null) {
+				crAccount = this.getProdService().getRevenueAcct(item.getProduct(), payment.getToOrg(), schema);
+			} else {
+				crAccount = this.getAccItemAcctService().getCrPostingAcct(item.getAccItem(), schema);				 
+			}
+			AccDocLine itemLine = new AccDocLine();
+			itemLine.setAccDoc(accDoc);
+			line.setSequenceNo(i++);
+			itemLine.setCrAccount(crAccount);
+			itemLine.setCrAmount(item.getAmount());
+			
+			accDoc.addToLines(itemLine);
+			totalCrAmount += itemLine.getCrAmount();
+		}
+
+		accDoc.setCrAmount(totalCrAmount);
+		accDoc.setDbAmount(totalDbAmount);
+		accDoc.setDifference(Math.abs(accDoc.getDbAmount()
+				- accDoc.getCrAmount()));
+		return accDoc;
+	}
+	
+	
+	
+	/**
+	 * Generate accounting document from payment.
+	 * 
+	 * @param payment
+	 * @param schema
+	 * @return
+	 * @throws Exception
+	 */
+	protected AccDoc generateAccDocPayment(PaymentIn payment, AccSchema schema)
+			throws Exception {
+
+		AccDoc accDoc = this.createHeader(payment, schema);
+
+		// header line - customer
+
+		String crAccount = getBpService().getPostingCustomerAcct(
+				payment.getBpartner(), payment.getToOrg(), schema);
+
+		int i = 1;
+		AccDocLine line = new AccDocLine();
+
+		line.setAccDoc(accDoc);
+		line.setHeaderLine(true);
+		line.setSequenceNo(i++);
+		line.setCrAccount(crAccount);
+		line.setCrAmount(payment.getAmount());
+
+		accDoc.setCrAmount(line.getCrAmount());
+		accDoc.addToLines(line);
+
+		// detail line - financial account
+
+		String dbAccount = this.getPayAcctService().getPostingDepositAcct(
+				payment.getToAccount(), schema);
+
+		line = new AccDocLine();
+		line.setAccDoc(accDoc);
+		line.setSequenceNo(i++);
+		line.setDbAccount(dbAccount);
+		line.setDbAmount(payment.getAmount());
+
+		accDoc.setDbAmount(line.getDbAmount());
+		accDoc.setDifference(Math.abs(accDoc.getDbAmount()
+				- accDoc.getCrAmount()));
+		accDoc.addToLines(line);
+
 		return accDoc;
 	}
 
-	private Account getPayAccount(PayAccount account, Long accSchemaId)
-			throws Exception {
-		IPayAccountAcctService acctService = (IPayAccountAcctService) this
-				.findEntityService(PayAccountAcct.class);
-		PayAccountAcct acct = acctService.findByAccount_schema(account.getId(),
-				accSchemaId);
-		return acct.getWithdrawalAccount();
+	
 
+	protected IBusinessPartnerService getBpService() throws Exception {
+		if (this.bpService == null) {
+			this.bpService = (IBusinessPartnerService) this
+					.findEntityService(BusinessPartner.class);
+		}
+		return this.bpService;
 	}
 
-	private Account getPurchaseAccount(Long businessPartnerId,
-			Long organizationId, Long accSchemaId) throws Exception {
-		// try to get from the account
-		IBpAccountService accountService = (IBpAccountService) this
-				.findEntityService(BpAccount.class);
-		BpAccount account = accountService.findByBp_org(businessPartnerId,
-				organizationId);
-
-		if (account == null) {
-
-			// try to find the account for the generic organization ...
-			// if not found raise error
-
+	public IFiscalPeriodService getPeriodService() throws Exception {
+		if (this.periodService == null) {
+			this.periodService = (IFiscalPeriodService) this
+					.findEntityService(FiscalPeriod.class);
 		}
-
-		IBpAccountAcctService acctService = (IBpAccountAcctService) this
-				.findEntityService(BpAccountAcct.class);
-
-		try {
-			BpAccountAcct acct = acctService.findByAccount_schema(account
-					.getId(), accSchemaId);
-
-			if (acct.getCustSalesAccount() != null) {
-				return acct.getCustSalesAccount();
-			}
-		} catch (NoResultException e) {
-			// Ignore , no accounting data at account level , try at vendor
-			// group level
-		}
-
-		// try to get from the vendor group
-		CustomerGroup group = account.getCustGroup();
-		ICustomerGroupAcctService groupAcctService = (ICustomerGroupAcctService) this
-				.findEntityService(CustomerGroupAcct.class);
-		CustomerGroupAcct groupAcct = groupAcctService.findByGroup_schema(group
-				.getId(), accSchemaId);
-		return groupAcct.getSalesAccount();
-		 
+		return this.periodService;
 	}
 
+	public IProductService getProdService() throws Exception {
+		if (this.prodService == null) {
+			this.prodService = (IProductService) this
+					.findEntityService(Product.class);
+		}
+		return this.prodService;
+	}
+
+	public IAccItemAcctService getAccItemAcctService() throws Exception {
+		if (this.accItemAcctService == null) {
+			this.accItemAcctService = (IAccItemAcctService) this
+					.findEntityService(AccItemAcct.class);
+		}
+		return this.accItemAcctService;
+	}
+
+	public IPayAccountAcctService getPayAcctService() throws Exception {
+		if (this.payAcctService == null) {
+			this.payAcctService = (IPayAccountAcctService) this
+					.findEntityService(PayAccountAcct.class);
+		}
+		return this.payAcctService;
+	}
 }

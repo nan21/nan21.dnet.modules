@@ -10,6 +10,9 @@
  	<bean id="PaymentService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceimpl.PaymentService"  />  
  
+ 	<bean id="PaymentItemService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceext.PaymentItemService"  />  
+ 
  	<bean id="AccDocService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceimpl.AccDocService"  />  
  

@@ -1,7 +1,7 @@
-/* 
+/*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.bp.domain.entity;
 
@@ -97,6 +97,10 @@ public class BpAccount extends AbstractAuditable {
     /** VendCreditLimit. */
     @Column(name = "VENDCREDITLIMIT", scale = 2)
     private Float vendCreditLimit;
+
+    /** AnaliticSegment. */
+    @Column(name = "ANALITICSEGMENT", length = 32)
+    private String analiticSegment;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BP_ID", referencedColumnName = "ID")
     private BusinessPartner bp;
@@ -165,6 +169,14 @@ public class BpAccount extends AbstractAuditable {
 
     public void setVendCreditLimit(Float vendCreditLimit) {
         this.vendCreditLimit = vendCreditLimit;
+    }
+
+    public String getAnaliticSegment() {
+        return this.analiticSegment;
+    }
+
+    public void setAnaliticSegment(String analiticSegment) {
+        this.analiticSegment = analiticSegment;
     }
 
     public BusinessPartner getBp() {

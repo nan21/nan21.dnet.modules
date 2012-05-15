@@ -15,28 +15,28 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.SalesInvoiceDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="confirmInvoice">
+	  			<entry key="confirm">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
-	  				<constructor-arg name="methodName" value="confirmInvoice" />
+	  				<constructor-arg name="methodName" value="confirm" />
 	  			</bean>	
 	  			</entry>	  			
-	  			<entry key="unConfirmInvoice">
+	  			<entry key="unConfirm">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
-	  				<constructor-arg name="methodName" value="unConfirmInvoice" />
+	  				<constructor-arg name="methodName" value="unConfirm" />
 	  			</bean>	
 	  			</entry>	  			
-	  			<entry key="postInvoice">
+	  			<entry key="post">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
-	  				<constructor-arg name="methodName" value="postInvoice" />
+	  				<constructor-arg name="methodName" value="post" />
 	  			</bean>	
 	  			</entry>	  			
-	  			<entry key="unPostInvoice">
+	  			<entry key="unPost">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
-	  				<constructor-arg name="methodName" value="unPostInvoice" />
+	  				<constructor-arg name="methodName" value="unPost" />
 	  			</bean>	
 	  			</entry>	  			
 	  		</map>
@@ -47,10 +47,10 @@
 		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs" />
 	  	<property name="serviceMethods" >
 	  		<list>
-	  			<value type="java.lang.String">confirmInvoice</value>
-	  			<value type="java.lang.String">unConfirmInvoice</value>
-	  			<value type="java.lang.String">postInvoice</value>
-	  			<value type="java.lang.String">unPostInvoice</value>
+	  			<value type="java.lang.String">confirm</value>
+	  			<value type="java.lang.String">unConfirm</value>
+	  			<value type="java.lang.String">post</value>
+	  			<value type="java.lang.String">unPost</value>
 			</list>	  		 
 	  	</property>	
 	</bean>
@@ -87,6 +87,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceItemTaxDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesInvoiceItemTaxDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItemTax" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesInvoiceItemTax" />
@@ -98,6 +99,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceTaxDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesInvoiceTaxDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceTax" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesInvoiceTax" />

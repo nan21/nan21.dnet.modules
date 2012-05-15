@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.bp.ds.filter;
 
@@ -78,6 +78,8 @@ public class BpAccountDsFilter extends AbstractAuditableDsFilter {
     private Long vendorPaymentTermId_To;
 
     private String vendorPaymentTerm;
+
+    private String analiticSegment;
 
     public Long getBusinessPartnerId() {
         return this.businessPartnerId;
@@ -398,6 +400,14 @@ public class BpAccountDsFilter extends AbstractAuditableDsFilter {
 
     public void setVendorPaymentTerm(String vendorPaymentTerm) {
         this.vendorPaymentTerm = vendorPaymentTerm;
+    }
+
+    public String getAnaliticSegment() {
+        return this.analiticSegment;
+    }
+
+    public void setAnaliticSegment(String analiticSegment) {
+        this.analiticSegment = analiticSegment;
     }
 
 }

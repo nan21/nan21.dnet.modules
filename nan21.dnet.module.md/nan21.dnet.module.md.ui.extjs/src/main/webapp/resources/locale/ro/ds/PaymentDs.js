@@ -1,6 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.PaymentDs$Trl", {  	  	
-	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docNo__lbl :  "@docNo",	docDate__lbl :  "Dată doc.",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docNo__lbl :  "Nr doc",
+	docDate__lbl :  "Dată doc.",
 	currencyId__lbl :    "Monedă(ID)",
 	currency__lbl :    "Monedă",
 	paymentMethodId__lbl :    "Mod plată(ID)",
@@ -13,8 +14,8 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.PaymentDs$Trl", {
 	fromAccount__lbl :    "Din cont",
 	toAccountId__lbl :    "In cont(ID)",
 	toAccount__lbl :    "In cont",
-	businessPartnerId__lbl :    "Tert(ID)",
-	businessPartner__lbl :    "Tert",
+	businessPartnerId__lbl :    "Terţ(ID)",
+	businessPartner__lbl :    "Terţ",
 	amount__lbl :  "Valoare",
 	confirmed__lbl :  "Confirmat",
 	posted__lbl :  "Inregistrat",

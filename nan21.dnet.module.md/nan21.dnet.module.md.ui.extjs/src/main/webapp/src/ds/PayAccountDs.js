@@ -1,5 +1,8 @@
- 
-   	 
+/*
+ * DNet eBusiness Suite
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */   	 
 Ext.define("net.nan21.dnet.module.md.org.ds.model.PayAccountDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
@@ -18,8 +21,11 @@ Ext.define("net.nan21.dnet.module.md.org.ds.model.PayAccountDs" ,{
 		{name:"type", type:"string"},
 		{name:"orgId", type:"int", useNull:true},
 		{name:"org", type:"string"},
+		{name:"journalId", type:"int", useNull:true},
+		{name:"journal", type:"string"},
 		{name:"currencyId", type:"int", useNull:true},
-		{name:"currency", type:"string"}
+		{name:"currency", type:"string"},
+		{name:"analiticSegment", type:"string"}
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
@@ -49,10 +55,15 @@ Ext.define("net.nan21.dnet.module.md.org.ds.model.PayAccountDsFilter" ,{
 		{name:"orgId_From",type:"int", useNull:true},
 		{name:"orgId_To",type:"int", useNull:true},
 		{name:"org", type:"string"},
+		{name:"journalId", type:"int", useNull:true},
+		{name:"journalId_From",type:"int", useNull:true},
+		{name:"journalId_To",type:"int", useNull:true},
+		{name:"journal", type:"string"},
 		{name:"currencyId", type:"int", useNull:true},
 		{name:"currencyId_From",type:"int", useNull:true},
 		{name:"currencyId_To",type:"int", useNull:true},
-		{name:"currency", type:"string"}
+		{name:"currency", type:"string"},
+		{name:"analiticSegment", type:"string"}
 	] 
 });
 	

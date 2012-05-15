@@ -23,6 +23,79 @@ public class PurchaseInvoiceItemService
 
 	private List<Long> invoiceIds;
 
+	protected void applyEntryModePreSave(PurchaseInvoiceItem e) {
+		if(e.getEntryMode() == null ) {
+			e.setEntryMode("price");
+		}
+		e.setUseGivenTax(false);
+		if(e.getEntryMode().equals("price")) {			 
+			if (e.getUnitPrice() == null || e.getQuantity() == null) {
+				throw new RuntimeException("In `price` entry mode, both line unit price and quantity must be specified. ");
+			}
+			e.setNetAmount(e.getQuantity()* e.getUnitPrice()); 
+		} else {
+
+			if(e.getNetAmount() == null) {
+				// !net, tax, total
+				if (e.getTaxAmount() != null && e.getLineAmount() != null) {
+					// calculate as total - tax and use the given tax
+					e.setUseGivenTax(true);
+					e.setNetAmount(e.getLineAmount() - e.getTaxAmount());
+				} else {
+					// !net, !tax , total
+					if (e.getLineAmount() != null) {
+						if (e.getTax() == null) {
+							e.setNetAmount(e.getLineAmount());
+							e.setTaxAmount(0F);
+						} else {
+							throw new RuntimeException("Insufficient information provided for `net-amount` entry mode. ");
+						}
+					} else {
+						throw new RuntimeException("Insufficient information provided for `net-amount` entry mode. ");
+					}
+					
+				}
+				if (e.getNetAmount() != 0) {
+					if (e.getQuantity() == null) {
+						e.setQuantity(1F);
+					}
+					e.setUnitPrice(e.getNetAmount()/e.getQuantity());	
+				}
+				
+			} else {
+				if(e.getTaxAmount() == null) {
+					if (e.getLineAmount() != null) {
+						e.setTaxAmount(e.getLineAmount() - e.getNetAmount());
+					} else {
+						e.setTaxAmount(0F);
+					}
+				} else {					
+					if(e.getLineAmount() == null) {
+						e.setUseGivenTax(true);
+						e.setLineAmount(e.getNetAmount() + e.getTaxAmount());				
+					}					
+				} 
+				if (e.getQuantity() == null) {
+					e.setQuantity(1F);
+				}
+				e.setUnitPrice(e.getNetAmount()/e.getQuantity());				
+			} 
+			 
+			
+			 
+			
+		}  
+		
+	}
+	@Override
+	protected void preInsert(PurchaseInvoiceItem e) throws Exception {
+		this.applyEntryModePreSave(e);
+	}
+	@Override
+	protected void preUpdate(PurchaseInvoiceItem e) throws Exception {
+		this.applyEntryModePreSave(e);
+	}
+	
 	@Override
 	protected void postUpdate(PurchaseInvoiceItem e) throws Exception {
 		this.calculateTaxes(e);
@@ -145,6 +218,7 @@ public class PurchaseInvoiceItemService
 		this.em.merge(invoice);
 	}
 
+	
 	protected void calculateTaxes(PurchaseInvoiceItem item) throws Exception {
 
 		if (item.getTax() != null) {
@@ -152,12 +226,18 @@ public class PurchaseInvoiceItemService
 					.getBusinessDelegate(PurchaseTaxBD.class);
 			List<PurchaseInvoiceItemTax> itemTaxes = new ArrayList<PurchaseInvoiceItemTax>();
 
+			 
 			delegate.createItemTax(item, null, itemTaxes);
 			Float taxAmount = 0F;
 			for (PurchaseInvoiceItemTax itemTax : itemTaxes) {
 				taxAmount += itemTax.getTaxAmount();
 			}
-			item.setTaxAmount(taxAmount);
+			
+			// this is already set in preSave based on entryMode
+			if(!item.getUseGivenTax()) {
+				item.setTaxAmount(taxAmount);
+			} 
+			item.setLineAmount(item.getTaxAmount() + item.getNetAmount());
 			this.em.merge(item);
 			// this.getEntityManager().flush();
 			this.em.createQuery(
@@ -169,7 +249,19 @@ public class PurchaseInvoiceItemService
 			for (PurchaseInvoiceItemTax itemTax : itemTaxes) {
 				this.em.persist(itemTax);
 			}
+		} else {
+			item.setLineAmount(item.getTaxAmount() + item.getNetAmount());
+			this.em.merge(item);
+			this.em.createQuery(
+					"delete from "
+							+ PurchaseInvoiceItemTax.class.getSimpleName()
+							+ " e where e.purchaseInvoiceItem.id = :itemId")
+					.setParameter("itemId", item.getId()).executeUpdate();
 		}
 	}
 
+	
+	 
+	
+ 
 }

@@ -1,7 +1,7 @@
-/* 
+/*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.org.domain.entity;
 
@@ -22,6 +22,7 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccJournal;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import org.eclipse.persistence.annotations.Customizer;
@@ -76,12 +77,19 @@ public class PayAccount extends AbstractType {
     @Column(name = "TYPE", nullable = false, length = 8)
     @NotBlank
     private String type;
+
+    /** AnaliticSegment. */
+    @Column(name = "ANALITICSEGMENT", length = 32)
+    private String analiticSegment;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
     private Organization org;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
     @JoinColumn(name = "CURRENCY_ID", referencedColumnName = "ID")
     private Currency currency;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccJournal.class)
+    @JoinColumn(name = "JOURNAL_ID", referencedColumnName = "ID")
+    private AccJournal journal;
 
     /* ============== getters - setters ================== */
 
@@ -101,6 +109,14 @@ public class PayAccount extends AbstractType {
         this.type = type;
     }
 
+    public String getAnaliticSegment() {
+        return this.analiticSegment;
+    }
+
+    public void setAnaliticSegment(String analiticSegment) {
+        this.analiticSegment = analiticSegment;
+    }
+
     public Organization getOrg() {
         return this.org;
     }
@@ -115,6 +131,14 @@ public class PayAccount extends AbstractType {
 
     public void setCurrency(Currency currency) {
         this.currency = currency;
+    }
+
+    public AccJournal getJournal() {
+        return this.journal;
+    }
+
+    public void setJournal(AccJournal journal) {
+        this.journal = journal;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

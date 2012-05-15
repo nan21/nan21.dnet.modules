@@ -14,9 +14,17 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DBAMOUNT" type="decimal(12,2)">
 				<constraints  /></column>	 
+			<column name="DIFFERENCE" type="decimal(12,2)">
+				<constraints  /></column>	 
+			<column name="DOCAMOUNT" type="decimal(12,2)">
+				<constraints  /></column>	 
 			<column name="DOCDATE" type="date">
 				<constraints nullable="false" /></column>	 
+			<column name="DOCNETAMOUNT" type="decimal(12,2)">
+				<constraints  /></column>	 
 			<column name="DOCNO" type="varchar(255)">
+				<constraints  /></column>	 
+			<column name="DOCTAXAMOUNT" type="decimal(12,2)">
 				<constraints  /></column>	 
 			<column name="DOCUUID" type="varchar(36)">
 				<constraints  /></column>	 
@@ -26,15 +34,25 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="POSTED" type="int(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="UUID" type="varchar(36)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="ACCSCHEMA_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
+			<column name="BPARTNER_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
+			<column name="DOCCURRENCY_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
 			<column name="DOCTYPE_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
+			<column name="JOURNAL_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
 			<column name="ORG_ID" type="bigint(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="PERIOD_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

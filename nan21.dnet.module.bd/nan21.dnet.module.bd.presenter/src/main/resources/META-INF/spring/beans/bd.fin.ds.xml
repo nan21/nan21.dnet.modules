@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.TaxCategoryLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.TaxCategoryLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.TaxCategory" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="TaxCategoryLov" />
@@ -46,6 +47,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.TaxLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.TaxLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.Tax" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="TaxLov" />
@@ -57,6 +59,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.fin.ds.model.TaxApplicableLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.fin.ds.filter.TaxApplicableLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.fin.domain.entity.Tax" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="TaxApplicableLov" />

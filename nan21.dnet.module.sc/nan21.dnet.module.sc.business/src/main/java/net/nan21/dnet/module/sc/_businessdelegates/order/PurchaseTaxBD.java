@@ -54,9 +54,9 @@ public class PurchaseTaxBD extends AbstractBusinessDelegate {
 			}
 		} else {
 			PurchaseInvoiceItemTax tax = new PurchaseInvoiceItemTax();
-			tax.setBaseAmount(item.getUnitPrice() * item.getQuantity());
+			tax.setBaseAmount(item.getNetAmount());
 			tax.setTax(tdef);
-			tax.setTaxAmount(item.getUnitPrice() * item.getQuantity()
+			tax.setTaxAmount(tax.getBaseAmount()
 					* tdef.getRate());
 			tax.setPurchaseInvoiceItem(item);
 

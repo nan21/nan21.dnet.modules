@@ -27,17 +27,20 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.BpAccount$Filter", {
 		.addLov({ name:"organization", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"organization",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
 		.addLov({ name:"customerGroup", xtype:"net.nan21.dnet.module.md.bp.lovs.CustomerGroup", dataIndex:"customerGroup",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "customerGroupId"} ]  })
 		.addLov({ name:"vendorGroup", xtype:"net.nan21.dnet.module.md.bp.lovs.VendorGroup", dataIndex:"vendorGroup",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "vendorGroupId"} ]  })
+		.addTextField({ name:"analiticSegment", dataIndex:"analiticSegment",anchor:"-20",maxLength:32  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:220}) 
 		.addPanel({ name:"col2", layout:"form", width:220}) 
+		.addPanel({ name:"col3", layout:"form", width:220}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["organization","businessPartner"])
 		.addChildrenTo("col2",["customerGroup","vendorGroup"])
+		.addChildrenTo("col3",["analiticSegment"])
     	.addAuditFilter()	
 	}
 }); 
@@ -51,6 +54,7 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.BpAccount$List", {
 		this._getBuilder_()	
 		.addTextColumn({ name:"organization", dataIndex:"organization",width:100 })   	
 		.addTextColumn({ name:"businessPartner", dataIndex:"businessPartner",width:100 })   	
+		.addTextColumn({ name:"analiticSegment", dataIndex:"analiticSegment",width:100 })   	
 		.addBooleanColumn({ name:"customer", dataIndex:"customer"})   	     
 		.addBooleanColumn({ name:"vendor", dataIndex:"vendor"})   	     
 		.addTextColumn({ name:"customerGroup", dataIndex:"customerGroup",width:100 })   	
@@ -82,6 +86,7 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.BpAccount$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
+		.addTextField({ name:"analiticSegment", dataIndex:"analiticSegment",anchor:"-20" ,maxLength:32  })
 		.addCheckbox({ name:"customer", dataIndex:"customer"  })
 		.addCheckbox({ name:"vendor", dataIndex:"vendor"  })
 		.addLov({ name:"businessPartner", xtype:"net.nan21.dnet.module.md.bp.lovs.BusinessPartnersCode", dataIndex:"businessPartner",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "businessPartnerId"} ]  })
@@ -106,7 +111,7 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.BpAccount$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
-		.addChildrenTo("col1",["organization","businessPartner","customer","vendor"])
+		.addChildrenTo("col1",["organization","businessPartner","analiticSegment","customer","vendor"])
 		.addChildrenTo("col2",["customerGroup","customerPaymentMethod","customerCreditLimit","customerPaymentTerm"])
 		.addChildrenTo("col3",["vendorGroup","vendorPaymentMethod","vendorCreditLimit","vendorPaymentTerm"])
 ;
@@ -124,6 +129,7 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.BpAccount$EditCtx", {
 		this._getBuilder_()	
 		.addCheckbox({ name:"customer", dataIndex:"customer"  })
 		.addCheckbox({ name:"vendor", dataIndex:"vendor"  })
+		.addTextField({ name:"analiticSegment", dataIndex:"analiticSegment",anchor:"-20" ,maxLength:32  })
 		.addLov({ name:"organization", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"organization",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
 		.addLov({ name:"customerGroup", xtype:"net.nan21.dnet.module.md.bp.lovs.CustomerGroup", dataIndex:"customerGroup",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "customerGroupId"} ]  })
 		.addLov({ name:"customerPaymentMethod", xtype:"net.nan21.dnet.module.bd.tx.lovs.PaymentMethod", dataIndex:"customerPaymentMethod",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "customerPaymentMethodId"} ]  })
@@ -145,7 +151,7 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.BpAccount$EditCtx", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
-		.addChildrenTo("col1",["organization","customer","vendor"])
+		.addChildrenTo("col1",["organization","analiticSegment","customer","vendor"])
 		.addChildrenTo("col2",["customerGroup","customerPaymentMethod","customerCreditLimit","customerPaymentTerm"])
 		.addChildrenTo("col3",["vendorGroup","vendorPaymentMethod","vendorCreditLimit","vendorPaymentTerm"])
 ;

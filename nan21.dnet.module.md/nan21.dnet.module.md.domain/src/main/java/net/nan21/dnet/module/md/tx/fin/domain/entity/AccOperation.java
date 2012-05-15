@@ -1,7 +1,7 @@
-/* 
+/*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.tx.fin.domain.entity;
 
@@ -23,6 +23,10 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.tx.domain.entity.FiscalPeriod;
+import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -63,9 +67,15 @@ public class AccOperation extends AbstractAuditable {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
+    /** HeaderLine. */
+    @Column(name = "HEADERLINE", nullable = false)
+    @NotNull
+    private Boolean headerLine;
+
     /** EventDate. */
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "EVENTDATE")
+    @Column(name = "EVENTDATE", nullable = false)
+    @NotNull
     private Date eventDate;
 
     /** DbAccount. */
@@ -91,6 +101,18 @@ public class AccOperation extends AbstractAuditable {
     /** Notes. */
     @Column(name = "NOTES", length = 4000)
     private String notes;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
+    @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
+    private Organization org;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccSchema.class)
+    @JoinColumn(name = "ACCSCHEMA_ID", referencedColumnName = "ID")
+    private AccSchema accSchema;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FiscalPeriod.class)
+    @JoinColumn(name = "PERIOD_ID", referencedColumnName = "ID")
+    private FiscalPeriod period;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccDoc.class)
+    @JoinColumn(name = "ACCDOC_ID", referencedColumnName = "ID")
+    private AccDoc accDoc;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccDocLine.class)
     @JoinColumn(name = "ACCDOCLINE_ID", referencedColumnName = "ID")
     private AccDocLine accDocLine;
@@ -103,6 +125,14 @@ public class AccOperation extends AbstractAuditable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Boolean getHeaderLine() {
+        return this.headerLine;
+    }
+
+    public void setHeaderLine(Boolean headerLine) {
+        this.headerLine = headerLine;
     }
 
     public Date getEventDate() {
@@ -153,6 +183,38 @@ public class AccOperation extends AbstractAuditable {
         this.notes = notes;
     }
 
+    public Organization getOrg() {
+        return this.org;
+    }
+
+    public void setOrg(Organization org) {
+        this.org = org;
+    }
+
+    public AccSchema getAccSchema() {
+        return this.accSchema;
+    }
+
+    public void setAccSchema(AccSchema accSchema) {
+        this.accSchema = accSchema;
+    }
+
+    public FiscalPeriod getPeriod() {
+        return this.period;
+    }
+
+    public void setPeriod(FiscalPeriod period) {
+        this.period = period;
+    }
+
+    public AccDoc getAccDoc() {
+        return this.accDoc;
+    }
+
+    public void setAccDoc(AccDoc accDoc) {
+        this.accDoc = accDoc;
+    }
+
     public AccDocLine getAccDocLine() {
         return this.accDocLine;
     }
@@ -165,6 +227,9 @@ public class AccOperation extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
+        if (this.getHeaderLine() == null) {
+            event.updateAttributeWithObject("headerLine", false);
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

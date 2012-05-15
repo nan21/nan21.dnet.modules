@@ -7,4 +7,9 @@
 				baseTableName="BD_ORG" baseColumnNames="TYPE_ID"  
 				referencedTableName="BD_ORG_TYPE"  referencedColumnNames="ID" />
 	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_BD_ORG2" 
+				baseTableName="BD_ORG" baseColumnNames="CALENDAR_ID"  
+				referencedTableName="BD_CALENDAR"  referencedColumnNames="ID" />
+	</changeSet>	
 </databaseChangeLog>    

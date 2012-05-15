@@ -24,9 +24,9 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI$Trl", {
 	btnUnConfirmInvoice__ttl : "De-Confirmă",
 	btnUnConfirmInvoice__desc : "De-confirmă factură",
 	btnPostInvoice__ttl : "Inregistrează",
-	btnPostInvoice__desc : "Confirmă factură",
+	btnPostInvoice__desc : "Inregistrează factură in contabilitate",
 	btnUnPostInvoice__ttl : "De-Inregistrează",
-	btnUnPostInvoice__desc : "De-Inregistrează factură",
+	btnUnPostInvoice__desc : "De-Inregistrează factură din contabilitate",
 	btnShowOrder__ttl : "Arată comanda",
 	btnShowOrder__desc : "Arată comanda client asociată acestei facturi.",
 	

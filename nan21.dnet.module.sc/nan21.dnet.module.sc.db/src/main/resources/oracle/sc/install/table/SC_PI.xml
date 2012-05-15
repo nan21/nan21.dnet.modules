@@ -16,6 +16,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DOCDATE" type="date">
 				<constraints nullable="false" /></column>	 
+			<column name="DOCNO" type="varchar2(255)">
+				<constraints  /></column>	 
 			<column name="ID" type="number(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDAT" type="date">
@@ -23,6 +25,8 @@
 			<column name="MODIFIEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
 			<column name="POSTED" type="number(1)">
+				<constraints nullable="false" /></column>	 
+			<column name="SELFPAYED" type="number(1)">
 				<constraints nullable="false" /></column>	 
 			<column name="TOTALAMOUNT" type="number(12,2)">
 				<constraints  /></column>	 
@@ -39,6 +43,8 @@
 			<column name="CUSTOMER_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="DOCTYPE_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="FROMACCOUNT_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="PAYMENTMETHOD_ID" type="number(19)">	 
 				<constraints  /></column>	 

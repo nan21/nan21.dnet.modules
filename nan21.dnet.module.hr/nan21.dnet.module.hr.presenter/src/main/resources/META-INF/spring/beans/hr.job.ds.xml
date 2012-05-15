@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.WorkRequirementType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="WorkRequirementTypeLov" />
@@ -46,6 +47,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.job.ds.model.WorkRequirementLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.WorkRequirement" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="WorkRequirementLov" />
@@ -68,6 +70,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.job.ds.model.JobTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.JobType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="JobTypeLov" />
@@ -91,6 +94,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.JobLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.job.ds.model.JobLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.Job" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="JobLov" />
@@ -126,6 +130,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.job.ds.model.PositionLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.job.ds.model.PositionLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.job.domain.entity.Position" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PositionLov" />

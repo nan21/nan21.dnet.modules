@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementCategoryLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.ElementCategory" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ElementCategoryLov" />
@@ -46,6 +47,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.ElementType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ElementTypeLov" />
@@ -69,6 +71,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.model.ElementLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.Element" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ElementLov" />
@@ -127,6 +130,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.Payroll" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PayrollLov" />
@@ -186,6 +190,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PayrollPeriodLov" />

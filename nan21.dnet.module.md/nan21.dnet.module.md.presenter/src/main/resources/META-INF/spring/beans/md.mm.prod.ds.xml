@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductCategoryLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductCategoryLov" />
@@ -45,6 +46,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductManufacturerLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductManufacturerLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductManufacturerLov" />
@@ -70,6 +72,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.Product" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductLov" />
@@ -81,6 +84,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductWithUomLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductWithUomLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.Product" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductWithUomLov" />
@@ -103,6 +107,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAccountGroupLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAccountGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAccountGroup" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAccountGroupLov" />
@@ -161,6 +166,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeCategoryLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeCategory" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAttributeCategoryLov" />
@@ -184,6 +190,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAttributeTypeLov" />
@@ -206,6 +213,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeGroupLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeGroup" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAttributeGroupLov" />
@@ -229,6 +237,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttribute" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductAttributeLov" />

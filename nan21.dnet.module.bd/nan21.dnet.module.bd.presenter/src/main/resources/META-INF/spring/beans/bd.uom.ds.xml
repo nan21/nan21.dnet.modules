@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.UomType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UomTypeLov" />
@@ -46,6 +47,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UomLov" />
@@ -57,6 +59,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomMassLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomMassLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UomMassLov" />
@@ -68,6 +71,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLengthLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomLengthLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UomLengthLov" />
@@ -79,6 +83,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomVolumeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.uom.ds.model.UomVolumeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.uom.domain.entity.Uom" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UomVolumeLov" />

@@ -1,6 +1,6 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.tx.fin.business.service;
@@ -12,6 +12,7 @@ import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
+import net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem;
 
 import net.nan21.dnet.module.md.tx.fin.domain.entity.Payment;
 
@@ -44,5 +45,9 @@ public interface IPaymentService extends IEntityService<Payment> {
     public List<Payment> findByBpartner(BusinessPartner bpartner);
 
     public List<Payment> findByBpartnerId(Long bpartnerId);
+
+    public List<Payment> findByLines(PaymentItem lines);
+
+    public List<Payment> findByLinesId(Long linesId);
 
 }

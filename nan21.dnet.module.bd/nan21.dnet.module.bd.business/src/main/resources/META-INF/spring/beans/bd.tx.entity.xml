@@ -21,6 +21,12 @@
  
  	<bean id="DeliveryMethodService" scope="prototype"
 	  		class="net.nan21.dnet.module.bd.tx.business.serviceimpl.DeliveryMethodService"  />  
+ 
+ 	<bean id="FiscalYearService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.tx.business.serviceimpl.FiscalYearService"  />  
+ 
+ 	<bean id="FiscalPeriodService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.tx.business.serviceimpl.FiscalPeriodService"  />  
    
 </beans>
    

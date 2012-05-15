@@ -11,7 +11,7 @@
 	  		class="net.nan21.dnet.module.md.org.business.serviceimpl.PayAccountService"  />  
  
  	<bean id="PayAccountAcctService" scope="prototype"
-	  		class="net.nan21.dnet.module.md.org.business.serviceimpl.PayAccountAcctService"  />  
+	  		class="net.nan21.dnet.module.md.org.business.serviceext.PayAccountAcctService"  />  
  
  	<bean id="PayAccountMethodService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.org.business.serviceimpl.PayAccountMethodService"  />  

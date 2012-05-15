@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sc.invoice.ds.model;
 
@@ -16,6 +16,7 @@ import net.nan21.dnet.core.api.annotation.DsField;
 public class PurchaseInvoiceDs extends AbstractAuditableDs<PurchaseInvoice> {
 
     public static final String fCODE = "code";
+    public static final String fDOCNO = "docNo";
     public static final String fDOCDATE = "docDate";
     public static final String fCUSTOMERID = "customerId";
     public static final String fCUSTOMER = "customer";
@@ -27,8 +28,12 @@ public class PurchaseInvoiceDs extends AbstractAuditableDs<PurchaseInvoice> {
     public static final String fDOCTYPE = "docType";
     public static final String fPAYMENTMETHODID = "paymentMethodId";
     public static final String fPAYMENTMETHOD = "paymentMethod";
+    public static final String fPAYMENTMETHODTYPE = "paymentMethodType";
     public static final String fPAYMENTTERMID = "paymentTermId";
     public static final String fPAYMENTTERM = "paymentTerm";
+    public static final String fSELFPAYED = "selfPayed";
+    public static final String fFROMACCOUNTID = "fromAccountId";
+    public static final String fFROMACCOUNT = "fromAccount";
     public static final String fCURRENCYID = "currencyId";
     public static final String fCURRENCY = "currency";
     public static final String fTOTALNETAMOUNT = "totalNetAmount";
@@ -40,8 +45,11 @@ public class PurchaseInvoiceDs extends AbstractAuditableDs<PurchaseInvoice> {
     public static final String fCLASSNAME = "className";
     public static final String fBUSINESSOBJECT = "businessObject";
 
-    @DsField()
+    @DsField(noUpdate = true)
     private String code;
+
+    @DsField()
+    private String docNo;
 
     @DsField()
     private Date docDate;
@@ -76,11 +84,23 @@ public class PurchaseInvoiceDs extends AbstractAuditableDs<PurchaseInvoice> {
     @DsField(join = "left", path = "paymentMethod.name")
     private String paymentMethod;
 
+    @DsField(join = "left", path = "paymentMethod.type")
+    private String paymentMethodType;
+
     @DsField(join = "left", path = "paymentTerm.id")
     private Long paymentTermId;
 
     @DsField(join = "left", path = "paymentTerm.name")
     private String paymentTerm;
+
+    @DsField()
+    private Boolean selfPayed;
+
+    @DsField(join = "left", path = "fromAccount.id")
+    private Long fromAccountId;
+
+    @DsField(join = "left", path = "fromAccount.name")
+    private String fromAccount;
 
     @DsField(join = "left", path = "currency.id")
     private Long currencyId;
@@ -126,6 +146,14 @@ public class PurchaseInvoiceDs extends AbstractAuditableDs<PurchaseInvoice> {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
     }
 
     public Date getDocDate() {
@@ -216,6 +244,14 @@ public class PurchaseInvoiceDs extends AbstractAuditableDs<PurchaseInvoice> {
         this.paymentMethod = paymentMethod;
     }
 
+    public String getPaymentMethodType() {
+        return this.paymentMethodType;
+    }
+
+    public void setPaymentMethodType(String paymentMethodType) {
+        this.paymentMethodType = paymentMethodType;
+    }
+
     public Long getPaymentTermId() {
         return this.paymentTermId;
     }
@@ -230,6 +266,30 @@ public class PurchaseInvoiceDs extends AbstractAuditableDs<PurchaseInvoice> {
 
     public void setPaymentTerm(String paymentTerm) {
         this.paymentTerm = paymentTerm;
+    }
+
+    public Boolean getSelfPayed() {
+        return this.selfPayed;
+    }
+
+    public void setSelfPayed(Boolean selfPayed) {
+        this.selfPayed = selfPayed;
+    }
+
+    public Long getFromAccountId() {
+        return this.fromAccountId;
+    }
+
+    public void setFromAccountId(Long fromAccountId) {
+        this.fromAccountId = fromAccountId;
+    }
+
+    public String getFromAccount() {
+        return this.fromAccount;
+    }
+
+    public void setFromAccount(String fromAccount) {
+        this.fromAccount = fromAccount;
     }
 
     public Long getCurrencyId() {

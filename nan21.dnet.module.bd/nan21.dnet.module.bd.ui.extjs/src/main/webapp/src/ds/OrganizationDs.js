@@ -1,5 +1,8 @@
- 
-   	 
+/*
+ * DNet eBusiness Suite
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */   	 
 Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
@@ -19,6 +22,8 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationDs" ,{
 		{name:"valid", type:"boolean"},
 		{name:"typeId", type:"int", useNull:true},
 		{name:"type", type:"string"},
+		{name:"calendarId", type:"int", useNull:true},
+		{name:"calendar", type:"string"},
 		{name:"className", type:"string"}
 	],
 	validations: [  
@@ -51,6 +56,10 @@ Ext.define("net.nan21.dnet.module.bd.org.ds.model.OrganizationDsFilter" ,{
 		{name:"typeId_From",type:"int", useNull:true},
 		{name:"typeId_To",type:"int", useNull:true},
 		{name:"type", type:"string"},
+		{name:"calendarId", type:"int", useNull:true},
+		{name:"calendarId_From",type:"int", useNull:true},
+		{name:"calendarId_To",type:"int", useNull:true},
+		{name:"calendar", type:"string"},
 		{name:"className", type:"string"}
 	] 
 });

@@ -1,6 +1,6 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.mm.prod.business.service;
@@ -14,6 +14,8 @@ import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer;
 
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
 
 public interface IProductService extends IEntityService<Product> {
 
@@ -53,5 +55,11 @@ public interface IProductService extends IEntityService<Product> {
     public List<Product> findByAttributes(ProductAttributeValue attributes);
 
     public List<Product> findByAttributesId(Long attributesId);
+
+    public String getExpenseAcct(Product product, Organization organization,
+            AccSchema schema) throws Exception;
+
+    public String getRevenueAcct(Product product, Organization organization,
+            AccSchema schema) throws Exception;
 
 }

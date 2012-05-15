@@ -7,4 +7,9 @@
 				baseTableName="BD_TXDOC_TYPE" baseColumnNames="DOCSEQUENCE_ID"  
 				referencedTableName="BD_TXDOC_SEQUENCE"  referencedColumnNames="ID" />
 	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_BD_TXDOC_TYPE2" 
+				baseTableName="BD_TXDOC_TYPE" baseColumnNames="JOURNAL_ID"  
+				referencedTableName="BD_ACC_JOURNAL"  referencedColumnNames="ID" />
+	</changeSet>	
 </databaseChangeLog>    

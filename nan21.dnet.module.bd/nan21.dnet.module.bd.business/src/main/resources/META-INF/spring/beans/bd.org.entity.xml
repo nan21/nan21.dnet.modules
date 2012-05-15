@@ -7,6 +7,9 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="CalendarService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.org.business.serviceimpl.CalendarService"  />  
+ 
  	<bean id="OrganizationTypeService" scope="prototype"
 	  		class="net.nan21.dnet.module.bd.org.business.serviceimpl.OrganizationTypeService"  />  
  

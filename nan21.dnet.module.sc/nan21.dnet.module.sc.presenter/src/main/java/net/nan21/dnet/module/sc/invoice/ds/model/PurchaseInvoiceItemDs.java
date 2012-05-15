@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sc.invoice.ds.model;
 
@@ -26,6 +26,7 @@ public class PurchaseInvoiceItemDs extends
     public static final String fNETAMOUNT = "netAmount";
     public static final String fTAXAMOUNT = "taxAmount";
     public static final String fLINEAMOUNT = "lineAmount";
+    public static final String fENTRYMODE = "entryMode";
     public static final String fTAXID = "taxId";
     public static final String fTAX = "tax";
 
@@ -53,14 +54,17 @@ public class PurchaseInvoiceItemDs extends
     @DsField()
     private Float unitPrice;
 
-    @DsField(noInsert = true, noUpdate = true)
+    @DsField()
     private Float netAmount;
 
-    @DsField(noInsert = true, noUpdate = true)
+    @DsField()
     private Float taxAmount;
 
-    @DsField(noInsert = true, noUpdate = true, fetch = false)
+    @DsField()
     private Float lineAmount;
+
+    @DsField()
+    private String entryMode;
 
     @DsField(join = "left", path = "tax.id")
     private Long taxId;
@@ -162,6 +166,14 @@ public class PurchaseInvoiceItemDs extends
 
     public void setLineAmount(Float lineAmount) {
         this.lineAmount = lineAmount;
+    }
+
+    public String getEntryMode() {
+        return this.entryMode;
+    }
+
+    public void setEntryMode(String entryMode) {
+        this.entryMode = entryMode;
     }
 
     public Long getTaxId() {

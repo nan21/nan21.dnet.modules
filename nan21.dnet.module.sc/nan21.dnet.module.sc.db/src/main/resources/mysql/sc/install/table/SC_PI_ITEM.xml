@@ -10,20 +10,26 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="ENTRYMODE" type="varchar(16)">
+				<constraints nullable="false" /></column>	 
 			<column name="ID" type="bigint(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="LINEAMOUNT" type="decimal(12,2)">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
 			<column name="NETAMOUNT" type="decimal(12,2)">
-				<constraints  /></column>	 
+				<constraints nullable="false" /></column>	 
 			<column name="QUANTITY" type="decimal(12,2)">
 				<constraints nullable="false" /></column>	 
 			<column name="TAXAMOUNT" type="decimal(12,2)">
 				<constraints nullable="false" /></column>	 
 			<column name="UNITPRICE" type="decimal(12,2)">
-				<constraints  /></column>	 
+				<constraints nullable="false" /></column>	 
+			<column name="USEGIVENTAX" type="int(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="UUID" type="varchar(36)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">

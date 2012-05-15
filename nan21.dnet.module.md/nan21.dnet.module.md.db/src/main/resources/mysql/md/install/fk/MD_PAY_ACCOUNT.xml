@@ -12,4 +12,9 @@
 				baseTableName="MD_PAY_ACCOUNT" baseColumnNames="CURRENCY_ID"  
 				referencedTableName="BD_CURRENCY"  referencedColumnNames="ID" />
 	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_MD_PAY_ACCOUNT3" 
+				baseTableName="MD_PAY_ACCOUNT" baseColumnNames="JOURNAL_ID"  
+				referencedTableName="BD_ACC_JOURNAL"  referencedColumnNames="ID" />
+	</changeSet>	
 </databaseChangeLog>    

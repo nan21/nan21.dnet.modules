@@ -18,12 +18,16 @@
 				<constraints  /></column>	 
 			<column name="DBAMOUNT" type="decimal(12,2)">
 				<constraints  /></column>	 
+			<column name="HEADERLINE" type="int(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="ID" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="SEQUENCENO" type="int(10)">
+				<constraints  /></column>	 
 			<column name="UUID" type="varchar(36)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">

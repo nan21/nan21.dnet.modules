@@ -24,6 +24,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.price.ds.model.PriceListLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.price.ds.filter.PriceListLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.price.domain.entity.PriceList" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PriceListLov" />
@@ -35,6 +36,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.price.ds.model.PriceListSalesLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.price.ds.filter.PriceListSalesLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.price.domain.entity.PriceList" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PriceListSalesLov" />
@@ -46,6 +48,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.price.ds.model.PriceListPurchaseLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.price.ds.filter.PriceListPurchaseLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.price.domain.entity.PriceList" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PriceListPurchaseLov" />
@@ -92,6 +95,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.price.ds.model.PriceListVersionLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.price.ds.filter.PriceListVersionLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.price.domain.entity.PriceListVersion" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PriceListVersionLov" />
@@ -119,6 +123,7 @@
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.price.domain.entity.ProductPrice" />
 	  	<property name="paramClass" value="net.nan21.dnet.module.md.mm.price.ds.param.ProductPriceReportDsParam" />	
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.md.mm.price.ds.qb.ProductPriceReportDsQueryBuilder" />	
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProductPriceReport" />

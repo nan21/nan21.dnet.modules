@@ -30,6 +30,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
+			<column name="CALENDAR_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
 			<column name="TYPE_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>

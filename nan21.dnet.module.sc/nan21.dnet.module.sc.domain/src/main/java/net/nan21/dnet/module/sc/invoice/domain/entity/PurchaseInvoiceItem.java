@@ -1,7 +1,7 @@
-/* 
+/*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sc.invoice.domain.entity;
 
@@ -21,7 +21,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
@@ -35,6 +34,7 @@ import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
+import org.hibernate.validator.constraints.NotBlank;
 
 /** PurchaseInvoiceItem. */
 @Entity
@@ -75,17 +75,34 @@ public class PurchaseInvoiceItem extends AbstractAuditable {
     private Float quantity;
 
     /** UnitPrice. */
-    @Column(name = "UNITPRICE", scale = 2)
+    @Column(name = "UNITPRICE", nullable = false, scale = 2)
+    @NotNull
     private Float unitPrice;
 
     /** NetAmount. */
-    @Column(name = "NETAMOUNT", scale = 2)
+    @Column(name = "NETAMOUNT", nullable = false, scale = 2)
+    @NotNull
     private Float netAmount;
 
     /** TaxAmount. */
     @Column(name = "TAXAMOUNT", nullable = false, scale = 2)
     @NotNull
     private Float taxAmount;
+
+    /** LineAmount. */
+    @Column(name = "LINEAMOUNT", nullable = false, scale = 2)
+    @NotNull
+    private Float lineAmount;
+
+    /** EntryMode. */
+    @Column(name = "ENTRYMODE", nullable = false, length = 16)
+    @NotBlank
+    private String entryMode;
+
+    /** UseGivenTax. */
+    @Column(name = "USEGIVENTAX", nullable = false)
+    @NotNull
+    private Boolean useGivenTax;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PurchaseInvoice.class)
     @JoinColumn(name = "PURCHASEINVOICE_ID", referencedColumnName = "ID")
     private PurchaseInvoice purchaseInvoice;
@@ -145,13 +162,28 @@ public class PurchaseInvoiceItem extends AbstractAuditable {
         this.taxAmount = taxAmount;
     }
 
-    @Transient
     public Float getLineAmount() {
-        return this.netAmount + this.taxAmount;
+        return this.lineAmount;
     }
 
     public void setLineAmount(Float lineAmount) {
+        this.lineAmount = lineAmount;
+    }
 
+    public String getEntryMode() {
+        return this.entryMode;
+    }
+
+    public void setEntryMode(String entryMode) {
+        this.entryMode = entryMode;
+    }
+
+    public Boolean getUseGivenTax() {
+        return this.useGivenTax;
+    }
+
+    public void setUseGivenTax(Boolean useGivenTax) {
+        this.useGivenTax = useGivenTax;
     }
 
     public PurchaseInvoice getPurchaseInvoice() {
@@ -206,6 +238,9 @@ public class PurchaseInvoiceItem extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
+        if (this.getUseGivenTax() == null) {
+            event.updateAttributeWithObject("useGivenTax", false);
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

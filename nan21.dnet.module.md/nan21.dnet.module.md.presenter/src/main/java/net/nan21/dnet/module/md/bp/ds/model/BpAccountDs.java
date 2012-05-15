@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.bp.ds.model;
 
@@ -34,6 +34,7 @@ public class BpAccountDs extends AbstractAuditableDs<BpAccount> {
     public static final String fVENDORCREDITLIMIT = "vendorCreditLimit";
     public static final String fVENDORPAYMENTTERMID = "vendorPaymentTermId";
     public static final String fVENDORPAYMENTTERM = "vendorPaymentTerm";
+    public static final String fANALITICSEGMENT = "analiticSegment";
 
     @DsField(join = "left", path = "bp.id")
     private Long businessPartnerId;
@@ -94,6 +95,9 @@ public class BpAccountDs extends AbstractAuditableDs<BpAccount> {
 
     @DsField(join = "left", path = "vendPaymentTerm.name")
     private String vendorPaymentTerm;
+
+    @DsField()
+    private String analiticSegment;
 
     public BpAccountDs() {
         super();
@@ -261,6 +265,14 @@ public class BpAccountDs extends AbstractAuditableDs<BpAccount> {
 
     public void setVendorPaymentTerm(String vendorPaymentTerm) {
         this.vendorPaymentTerm = vendorPaymentTerm;
+    }
+
+    public String getAnaliticSegment() {
+        return this.analiticSegment;
+    }
+
+    public void setAnaliticSegment(String analiticSegment) {
+        this.analiticSegment = analiticSegment;
     }
 
 }

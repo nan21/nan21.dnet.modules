@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.org.ds.model;
 
@@ -18,8 +18,11 @@ public class PayAccountDs extends AbstractTypeDs<PayAccount> {
     public static final String fTYPE = "type";
     public static final String fORGID = "orgId";
     public static final String fORG = "org";
+    public static final String fJOURNALID = "journalId";
+    public static final String fJOURNAL = "journal";
     public static final String fCURRENCYID = "currencyId";
     public static final String fCURRENCY = "currency";
+    public static final String fANALITICSEGMENT = "analiticSegment";
 
     @DsField(noUpdate = true)
     private String type;
@@ -30,11 +33,20 @@ public class PayAccountDs extends AbstractTypeDs<PayAccount> {
     @DsField(join = "left", path = "org.code")
     private String org;
 
+    @DsField(join = "left", path = "journal.id")
+    private Long journalId;
+
+    @DsField(join = "left", path = "journal.name")
+    private String journal;
+
     @DsField(join = "left", path = "currency.id")
     private Long currencyId;
 
     @DsField(join = "left", path = "currency.code")
     private String currency;
+
+    @DsField()
+    private String analiticSegment;
 
     public PayAccountDs() {
         super();
@@ -68,6 +80,22 @@ public class PayAccountDs extends AbstractTypeDs<PayAccount> {
         this.org = org;
     }
 
+    public Long getJournalId() {
+        return this.journalId;
+    }
+
+    public void setJournalId(Long journalId) {
+        this.journalId = journalId;
+    }
+
+    public String getJournal() {
+        return this.journal;
+    }
+
+    public void setJournal(String journal) {
+        this.journal = journal;
+    }
+
     public Long getCurrencyId() {
         return this.currencyId;
     }
@@ -82,6 +110,14 @@ public class PayAccountDs extends AbstractTypeDs<PayAccount> {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public String getAnaliticSegment() {
+        return this.analiticSegment;
+    }
+
+    public void setAnaliticSegment(String analiticSegment) {
+        this.analiticSegment = analiticSegment;
     }
 
 }

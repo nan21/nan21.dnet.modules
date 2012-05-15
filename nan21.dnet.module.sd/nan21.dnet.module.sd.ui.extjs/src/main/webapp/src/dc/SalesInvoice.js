@@ -24,6 +24,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
+		.addTextField({ name:"docNo", dataIndex:"docNo",anchor:"-20",maxLength:255  })
 		.addDateField({ name:"docDate_From", dataIndex:"docDate_From", emptyText:"From" })
 		.addDateField({ name:"docDate_To", dataIndex:"docDate_To", emptyText:"To" })
 		.addFieldContainer({name: "docDate", fieldLabel:"Doc Date"}) 
@@ -41,8 +42,8 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter", {
 		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.bd.tx.lovs.PaymentTerm", dataIndex:"paymentTerm",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:300}) 
-		.addPanel({ name:"col2", layout:"form", width:220}) 
-		.addPanel({ name:"col3", layout:"form", width:180}) 
+		.addPanel({ name:"col2", layout:"form", width:200}) 
+		.addPanel({ name:"col3", layout:"form", width:220}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
@@ -50,8 +51,8 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["supplier","customer","docType","docDate"])
-		.addChildrenTo("col2",["code","currency","priceList","salesOrderCode"])
-		.addChildrenTo("col3",["confirmed","posted"])
+		.addChildrenTo("col2",["docNo","code","confirmed","posted"])
+		.addChildrenTo("col3",["currency","priceList","salesOrderCode"])
     	.addAuditFilter()	
 	}
 }); 
@@ -63,7 +64,8 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$List", {
 	
 	_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
+		.addTextColumn({ name:"code", dataIndex:"code", width:80 })   	
+		.addTextColumn({ name:"docNo", dataIndex:"docNo", width:80 })   	
 		.addDateColumn({ name:"docDate", dataIndex:"docDate",format:Dnet.DATE_FORMAT})   	      	     
 		.addTextColumn({ name:"supplierCode", dataIndex:"supplier",width:100 })   	
 		.addTextColumn({ name:"customerCode", dataIndex:"customerCode",width:100 })   	
@@ -93,8 +95,9 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$EditMain", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
-		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,noUpdate:true ,allowBlank:false})
+		.addTextField({ name:"code", dataIndex:"code",anchor:"-20",noEdit:true  ,maxLength:32  })
+		.addTextField({ name:"docNo", dataIndex:"docNo",anchor:"-20" ,maxLength:255  })
+		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,allowBlank:false})
 		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"supplier",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
 		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.md.bp.lovs.CustomersName", dataIndex:"customer",anchor:"-20" ,noUpdate:true ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "customerId"} ]  })
 		.addDisplayFieldText({ name:"currency", dataIndex:"currency", fieldCls:"displayfield important-field"  })
@@ -109,15 +112,17 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$EditMain", {
 		.addPanel({ name:"col1", layout:"form" ,width:250})     
 		.addPanel({ name:"col2", layout:"form" , width:250})     
 		.addPanel({ name:"col3", layout:"form" ,width:250})     
+		.addPanel({ name:"col4", layout:"form" , width:170})     
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
+		.addChildrenTo("main",["col1" ,"col2" ,"col3" ,"col4" ])
 		.addChildrenTo("col1",["supplier","customer","docType","code"])
-		.addChildrenTo("col2",["docDate","priceList","currency","confirmed","posted"])
+		.addChildrenTo("col2",["docNo","docDate","priceList","currency"])
 		.addChildrenTo("col3",["totalNetAmount","totalTaxAmount","totalAmount"])
+		.addChildrenTo("col4",["confirmed","posted"])
 ;
 	}	
 	,_beforeApplyStates_: function(record) {	

@@ -1,7 +1,7 @@
-/* 
+/*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sc.invoice.domain.entity;
 
@@ -32,6 +32,7 @@ import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 import net.nan21.dnet.module.sc.invoice.domain.eventhandler.PurchaseInvoiceEventHandler;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
@@ -85,6 +86,15 @@ public class PurchaseInvoice extends AbstractAuditable {
     @NotNull
     private Date docDate;
 
+    /** DocNo. */
+    @Column(name = "DOCNO", length = 255)
+    private String docNo;
+
+    /** SelfPayed. */
+    @Column(name = "SELFPAYED", nullable = false)
+    @NotNull
+    private Boolean selfPayed;
+
     /** TotalNetAmount. */
     @Column(name = "TOTALNETAMOUNT", scale = 2)
     private Float totalNetAmount;
@@ -124,6 +134,9 @@ public class PurchaseInvoice extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
     @JoinColumn(name = "PAYMENTTERM_ID", referencedColumnName = "ID")
     private PaymentMethod paymentTerm;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayAccount.class)
+    @JoinColumn(name = "FROMACCOUNT_ID", referencedColumnName = "ID")
+    private PayAccount fromAccount;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PurchaseOrder.class)
     @JoinColumn(name = "PURCHASEORDER_ID", referencedColumnName = "ID")
     private PurchaseOrder purchaseOrder;
@@ -160,6 +173,22 @@ public class PurchaseInvoice extends AbstractAuditable {
 
     public void setDocDate(Date docDate) {
         this.docDate = docDate;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
+    }
+
+    public Boolean getSelfPayed() {
+        return this.selfPayed;
+    }
+
+    public void setSelfPayed(Boolean selfPayed) {
+        this.selfPayed = selfPayed;
     }
 
     public Float getTotalNetAmount() {
@@ -259,6 +288,14 @@ public class PurchaseInvoice extends AbstractAuditable {
         this.paymentTerm = paymentTerm;
     }
 
+    public PayAccount getFromAccount() {
+        return this.fromAccount;
+    }
+
+    public void setFromAccount(PayAccount fromAccount) {
+        this.fromAccount = fromAccount;
+    }
+
     public PurchaseOrder getPurchaseOrder() {
         return this.purchaseOrder;
     }
@@ -303,6 +340,9 @@ public class PurchaseInvoice extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
+        if (this.getSelfPayed() == null) {
+            event.updateAttributeWithObject("selfPayed", false);
+        }
         if (this.getConfirmed() == null) {
             event.updateAttributeWithObject("confirmed", false);
         }

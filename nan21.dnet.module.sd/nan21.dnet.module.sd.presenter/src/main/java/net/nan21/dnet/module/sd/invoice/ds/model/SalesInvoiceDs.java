@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sd.invoice.ds.model;
 
@@ -16,6 +16,7 @@ import net.nan21.dnet.core.api.annotation.DsField;
 public class SalesInvoiceDs extends AbstractAuditableDs<SalesInvoice> {
 
     public static final String fCODE = "code";
+    public static final String fDOCNO = "docNo";
     public static final String fDOCDATE = "docDate";
     public static final String fSUPPLIERID = "supplierId";
     public static final String fSUPPLIER = "supplier";
@@ -49,6 +50,9 @@ public class SalesInvoiceDs extends AbstractAuditableDs<SalesInvoice> {
 
     @DsField()
     private String code;
+
+    @DsField()
+    private String docNo;
 
     @DsField()
     private Date docDate;
@@ -154,6 +158,14 @@ public class SalesInvoiceDs extends AbstractAuditableDs<SalesInvoice> {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
     }
 
     public Date getDocDate() {

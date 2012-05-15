@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/TxDocTypeDs", "nan21.dnet.module.bd.ui.extjs/dc/TxDocType", "nan21.dnet.module.bd.ui.extjs/ds/TxDocSequenceDs", "nan21.dnet.module.bd.ui.extjs/dc/TxDocSequence"]);
+Dnet.doImport(["", "nan21.dnet.module.bd.ui.extjs/ds/TxDocTypeDs", "nan21.dnet.module.bd.ui.extjs/dc/TxDocType", "nan21.dnet.module.bd.ui.extjs/ds/TxDocSequenceDs", "nan21.dnet.module.bd.ui.extjs/dc/TxDocSequence","nan21.dnet.module.bd.ui.extjs/ds/AccJournalLovDs","nan21.dnet.module.bd.ui.extjs/lov/AccJournals","nan21.dnet.module.bd.ui.extjs/ds/AccJournalLovDs","nan21.dnet.module.bd.ui.extjs/lov/AccJournals"]);
 
 Ext.define("net.nan21.dnet.module.bd.tx.frame.TxDocType_UI", {  
 	extend: "dnet.core.ui.AbstractUi",

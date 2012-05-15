@@ -86,6 +86,8 @@
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Location</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
+		<class>net.nan21.dnet.module.bd.org.domain.entity.Calendar</class>
+		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

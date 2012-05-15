@@ -6,6 +6,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.ds.model.ProductAccountDs$Trl", {
 	groupCode__lbl :    "Grup",
 	productId__lbl :    "Articol(ID)",
 	productCode__lbl :    "Articol",
+	analiticSegment__lbl :  "Segment analitic",
 		 
 	id__lbl :"ID"
 });

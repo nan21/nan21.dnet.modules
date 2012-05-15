@@ -24,6 +24,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.BusinessPartnerLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.bp.ds.model.BusinessPartnerLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="BusinessPartnerLov" />
@@ -47,6 +48,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.ContactLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.bp.ds.model.ContactLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.bp.domain.entity.Contact" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ContactLov" />
@@ -58,6 +60,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.BpContactLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.bp.ds.model.BpContactLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.bp.domain.entity.Contact" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="BpContactLov" />
@@ -81,6 +84,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.BpBankAccountLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.bp.ds.model.BpBankAccountLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.bp.domain.entity.BpBankAccount" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="BpBankAccountLov" />
@@ -139,6 +143,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.CustomerGroupLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.bp.ds.model.CustomerGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CustomerGroupLov" />
@@ -173,6 +178,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.VendorGroupLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.bp.ds.model.VendorGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.bp.domain.entity.VendorGroup" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="VendorGroupLov" />
@@ -207,6 +213,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.BankLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.bp.ds.model.BankLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.bp.domain.entity.Bank" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="BankLov" />
@@ -230,6 +237,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.CompanyLegalFormLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.bp.ds.model.CompanyLegalFormLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.bp.domain.entity.CompanyLegalForm" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CompanyLegalFormLov" />

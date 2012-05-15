@@ -1,6 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceDs$Trl", {  	  	
-	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docDate__lbl :  "Dată doc.",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docNo__lbl :  "Nr doc",
+	docDate__lbl :  "Dată doc.",
 	customerId__lbl :    "Cumpărător(ID)",
 	customer__lbl :    "Cumpărător",
 	supplierId__lbl :    "Furnizor(ID)",
@@ -11,8 +12,11 @@ Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceDs$Trl", {
 	docType__lbl :    "Tip doc",
 	paymentMethodId__lbl :    "Mod plată(ID)",
 	paymentMethod__lbl :    "Mod plată",
+	paymentMethodType__lbl :    "Tip",
 	paymentTermId__lbl :    "Termen plată(ID)",
 	paymentTerm__lbl :    "Termen plată",
+	selfPayed__lbl :  "@selfPayed",	fromAccountId__lbl :    "Din cont(ID)",
+	fromAccount__lbl :    "Din cont",
 	currencyId__lbl :    "Monedă(ID)",
 	currency__lbl :    "Monedă",
 	totalNetAmount__lbl :  "Total Net",

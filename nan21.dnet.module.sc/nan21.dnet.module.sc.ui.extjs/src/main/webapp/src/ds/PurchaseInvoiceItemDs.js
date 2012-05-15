@@ -1,5 +1,8 @@
- 
-   	 
+/*
+ * DNet eBusiness Suite
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */   	 
 Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceItemDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
@@ -23,6 +26,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceItemDs" ,{
 		{name:"netAmount", type:"float", useNull:true},
 		{name:"taxAmount", type:"float", useNull:true},
 		{name:"lineAmount", type:"float", useNull:true},
+		{name:"entryMode", type:"string"},
 		{name:"taxId", type:"int", useNull:true},
 		{name:"tax", type:"string"}
 	]
@@ -69,6 +73,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceItemDsFilte
 		{name:"lineAmount", type:"float", useNull:true},
 		{name:"lineAmount_From",type:"float", useNull:true},
 		{name:"lineAmount_To",type:"float", useNull:true},
+		{name:"entryMode", type:"string"},
 		{name:"taxId", type:"int", useNull:true},
 		{name:"taxId_From",type:"int", useNull:true},
 		{name:"taxId_To",type:"int", useNull:true},

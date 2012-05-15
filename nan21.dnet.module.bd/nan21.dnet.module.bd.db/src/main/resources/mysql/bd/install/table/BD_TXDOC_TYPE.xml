@@ -30,6 +30,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DOCSEQUENCE_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
+			<column name="JOURNAL_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

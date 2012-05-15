@@ -1,5 +1,8 @@
- 
-   	 
+/*
+ * DNet eBusiness Suite
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */   	 
 Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
@@ -13,6 +16,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceDs" ,{
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
 		{name:"code", type:"string"},
+		{name:"docNo", type:"string"},
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"customerId", type:"int", useNull:true},
 		{name:"customer", type:"string"},
@@ -24,8 +28,12 @@ Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceDs" ,{
 		{name:"docType", type:"string"},
 		{name:"paymentMethodId", type:"int", useNull:true},
 		{name:"paymentMethod", type:"string"},
+		{name:"paymentMethodType", type:"string"},
 		{name:"paymentTermId", type:"int", useNull:true},
 		{name:"paymentTerm", type:"string"},
+		{name:"selfPayed", type:"boolean"},
+		{name:"fromAccountId", type:"int", useNull:true},
+		{name:"fromAccount", type:"string"},
 		{name:"currencyId", type:"int", useNull:true},
 		{name:"currency", type:"string"},
 		{name:"totalNetAmount", type:"float", useNull:true},
@@ -57,6 +65,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceDsFilter" ,
 		{name:"modifiedBy", type:"string"},
 		{name:"entityFQN", type:"string"},
 		{name:"code", type:"string"},
+		{name:"docNo", type:"string"},
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
@@ -78,10 +87,16 @@ Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceDsFilter" ,
 		{name:"paymentMethodId_From",type:"int", useNull:true},
 		{name:"paymentMethodId_To",type:"int", useNull:true},
 		{name:"paymentMethod", type:"string"},
+		{name:"paymentMethodType", type:"string"},
 		{name:"paymentTermId", type:"int", useNull:true},
 		{name:"paymentTermId_From",type:"int", useNull:true},
 		{name:"paymentTermId_To",type:"int", useNull:true},
 		{name:"paymentTerm", type:"string"},
+		{name:"selfPayed", type:"boolean", useNull:true},
+		{name:"fromAccountId", type:"int", useNull:true},
+		{name:"fromAccountId_From",type:"int", useNull:true},
+		{name:"fromAccountId_To",type:"int", useNull:true},
+		{name:"fromAccount", type:"string"},
 		{name:"currencyId", type:"int", useNull:true},
 		{name:"currencyId_From",type:"int", useNull:true},
 		{name:"currencyId_To",type:"int", useNull:true},

@@ -1,6 +1,6 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.tx.fin.business.serviceimpl;
@@ -8,14 +8,19 @@ package net.nan21.dnet.module.md.tx.fin.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccJournal;
 import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.tx.domain.entity.FiscalPeriod;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.tx.fin.business.service.IAccDocService;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc;
+import net.nan21.dnet.module.md._businessdelegates.tx.fin.AccDocToAccOperationBD;
 
 public class AccDocService extends AbstractEntityService<AccDoc> implements
         IAccDocService {
@@ -60,6 +65,58 @@ public class AccDocService extends AbstractEntityService<AccDoc> implements
                 .setParameter("pAccSchemaId", accSchemaId).getResultList();
     }
 
+    public List<AccDoc> findByPeriod(FiscalPeriod period) {
+        return this.findByPeriodId(period.getId());
+    }
+
+    public List<AccDoc> findByPeriodId(Long periodId) {
+        return (List<AccDoc>) this.em
+                .createQuery(
+                        "select e from AccDoc e where e.clientId = :pClientId and e.period.id = :pPeriodId",
+                        AccDoc.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pPeriodId", periodId).getResultList();
+    }
+
+    public List<AccDoc> findByJournal(AccJournal journal) {
+        return this.findByJournalId(journal.getId());
+    }
+
+    public List<AccDoc> findByJournalId(Long journalId) {
+        return (List<AccDoc>) this.em
+                .createQuery(
+                        "select e from AccDoc e where e.clientId = :pClientId and e.journal.id = :pJournalId",
+                        AccDoc.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pJournalId", journalId).getResultList();
+    }
+
+    public List<AccDoc> findByDocCurrency(Currency docCurrency) {
+        return this.findByDocCurrencyId(docCurrency.getId());
+    }
+
+    public List<AccDoc> findByDocCurrencyId(Long docCurrencyId) {
+        return (List<AccDoc>) this.em
+                .createQuery(
+                        "select e from AccDoc e where e.clientId = :pClientId and e.docCurrency.id = :pDocCurrencyId",
+                        AccDoc.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pDocCurrencyId", docCurrencyId).getResultList();
+    }
+
+    public List<AccDoc> findByBpartner(BusinessPartner bpartner) {
+        return this.findByBpartnerId(bpartner.getId());
+    }
+
+    public List<AccDoc> findByBpartnerId(Long bpartnerId) {
+        return (List<AccDoc>) this.em
+                .createQuery(
+                        "select e from AccDoc e where e.clientId = :pClientId and e.bpartner.id = :pBpartnerId",
+                        AccDoc.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pBpartnerId", bpartnerId).getResultList();
+    }
+
     public List<AccDoc> findByDocType(TxDocType docType) {
         return this.findByDocTypeId(docType.getId());
     }
@@ -84,6 +141,14 @@ public class AccDocService extends AbstractEntityService<AccDoc> implements
                         AccDoc.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLinesId", linesId).getResultList();
+    }
+
+    public void doPost(AccDoc doc) throws Exception {
+        this.getBusinessDelegate(AccDocToAccOperationBD.class).post(doc);
+    }
+
+    public void doUnPost(AccDoc doc) throws Exception {
+        this.getBusinessDelegate(AccDocToAccOperationBD.class).unPost(doc);
     }
 
 }

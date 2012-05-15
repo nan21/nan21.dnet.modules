@@ -25,20 +25,22 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
-		.addNumberField({ name:"typeId", dataIndex:"typeId",anchor:"-20"  })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.bd.org.lovs.OrganizationTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addLov({ name:"calendar", xtype:"net.nan21.dnet.module.bd.org.lovs.Calendars", dataIndex:"calendar",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "calendarId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
 		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"col3", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["name","code"])
-		.addChildrenTo("col2",["type","active"])
+		.addChildrenTo("col2",["type","calendar"])
+		.addChildrenTo("col3",["active"])
     	.addAuditFilter()	
 	}
 }); 
@@ -54,6 +56,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$List", {
 		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
 		.addNumberColumn({ name:"typeId", dataIndex:"typeId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"type", dataIndex:"type",width:120 })   	
+		.addTextColumn({ name:"calendar", dataIndex:"calendar",width:120 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 		.addBooleanColumn({ name:"valid", dataIndex:"valid"})   	     
 		.addTextColumn({ name:"notes", dataIndex:"notes", hidden:true,width:200 })   	
@@ -74,6 +77,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
+		.addLov({ name:"calendar", xtype:"net.nan21.dnet.module.bd.org.lovs.Calendars", dataIndex:"calendar",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "calendarId"} ]  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:80,anchor:"-20"   })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addCheckbox({ name:"valid", dataIndex:"valid"  })
@@ -88,7 +92,7 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$Edit", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
 		.addChildrenTo("col1",["name","code","notes"])
-		.addChildrenTo("col2",["type","active","valid"])
+		.addChildrenTo("col2",["type","calendar","active","valid"])
 ;
 	}	
 });

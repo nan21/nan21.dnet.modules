@@ -7,6 +7,29 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="CalendarDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.CalendarDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.filter.CalendarDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Calendar" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Calendar" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.CalendarDs" />
+	</bean>
+   
+ 	<bean id="CalendarLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.CalendarLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.CalendarLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Calendar" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CalendarLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.CalendarLovDs" />
+	</bean>
+   
  	<bean id="OrganizationTypeDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeDs" />
@@ -23,6 +46,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.OrganizationType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OrganizationTypeLov" />
@@ -46,6 +70,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OrganizationLov" />
@@ -57,6 +82,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.LegalEntityOrganizationLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.LegalEntityOrganizationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="LegalEntityOrganizationLov" />
@@ -68,6 +94,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.InventoryOrganizationLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.InventoryOrganizationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="InventoryOrganizationLov" />
@@ -79,6 +106,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.WarehouseOrganizationLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.WarehouseOrganizationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="WarehouseOrganizationLov" />
@@ -90,6 +118,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.CarrierOrganizationLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.CarrierOrganizationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CarrierOrganizationLov" />
@@ -101,6 +130,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.ExternalOrganizationLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.model.ExternalOrganizationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.Organization" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ExternalOrganizationLov" />
@@ -123,6 +153,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.filter.OrganizationHierarchyLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchy" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OrganizationHierarchyLov" />
@@ -146,6 +177,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.org.ds.model.OrganizationHierarchyItemLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.org.ds.filter.OrganizationHierarchyItemLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchyItem" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="OrganizationHierarchyItemLov" />

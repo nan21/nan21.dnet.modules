@@ -53,37 +53,106 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem$EditForm", {
 		this._getBuilder_()	
 		.addLov({ name:"productCode", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductsWithUom", dataIndex:"productCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "productId"} ,{lovField:"name", dsField: "productName"} ,{lovField:"uom", dsField: "uomCode"} ,{lovField:"uomId", dsField: "uomId"} ]  })
 		.addDisplayFieldText({ name:"productName", dataIndex:"productName"  })
-		.addNumberField({ name:"quantity", dataIndex:"quantity",anchor:"-20" ,listeners:{change:{scope:this, fn:this.calcNetAmount}} , style: "text-align:right;" })
+		.addNumberField({ name:"quantity", dataIndex:"quantity",anchor:"-20" ,allowBlank:false , style: "text-align:right;" })
 		.addLov({ name:"uomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"uomCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "uomId"} ]  })
-		.addNumberField({ name:"unitPrice", dataIndex:"unitPrice",anchor:"-20" ,allowBlank:false,listeners:{change:{scope:this, fn:this.calcNetAmount}} , style: "text-align:right;" })
+		.addCombo({ name:"entryMode", xtype:"localcombo", dataIndex:"entryMode",anchor:"-20" ,store:[ "price", "amount"],listeners:{change:{scope:this, fn:this._onEntryModeChange_}}  })
+		.addNumberField({ name:"unitPrice", dataIndex:"unitPrice",anchor:"-20" ,listeners:{change:{scope:this, fn:this.calcNetAmount}} , style: "text-align:right;" })
+		.addNumberField({ name:"docLineNetAmount", dataIndex:"netAmount",anchor:"-20"  , style: "text-align:right;" })
+		.addNumberField({ name:"docLineTaxAmount", dataIndex:"taxAmount",anchor:"-20"  , style: "text-align:right;" })
+		.addNumberField({ name:"docLineAmount", dataIndex:"lineAmount",anchor:"-20"  , style: "text-align:right;" })
 		.addDisplayFieldNumber({name:"netAmount", dataIndex:"netAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addDisplayFieldNumber({name:"taxAmount", dataIndex:"taxAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addDisplayFieldNumber({name:"lineAmount", dataIndex:"lineAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
-		.addLov({ name:"tax", xtype:"net.nan21.dnet.module.bd.fin.lovs.TaxApplicables", dataIndex:"tax",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "taxId"} ]  })
+		.addLov({ name:"tax", xtype:"net.nan21.dnet.module.bd.fin.lovs.TaxApplicables", dataIndex:"tax",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "taxId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:400})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     
 		.addPanel({ name:"col3", layout:"form" ,width:250})     
+		.addPanel({ name:"col4", layout:"form" ,width:250})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
+		.addPanel({ name:"row1",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
 		.addPanel({ name:"row2",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1" ,"row2" ])
-		.addChildrenTo("col1",["productCode","productName"])
-		.addChildrenTo("row2",["col2" ,"col3" ])
-		.addChildrenTo("col2",["quantity","uomCode","unitPrice","tax"])
-		.addChildrenTo("col3",["netAmount","taxAmount","lineAmount"])
+		.addChildrenTo("main",["row1" ,"row2" ])
+		.addChildrenTo("row1",["col1" ,"col2" ])
+		.addChildrenTo("col1",["productCode","productName","entryMode"])
+		.addChildrenTo("col2",["netAmount","taxAmount","lineAmount"])
+		.addChildrenTo("row2",["col3" ,"col4" ])
+		.addChildrenTo("col3",["quantity","uomCode","tax"])
+		.addChildrenTo("col4",["unitPrice","docLineNetAmount","docLineTaxAmount","docLineAmount"])
 ;
 	}	
 	,calcNetAmount: function() {	
 		
-		var r = this._controller_.record;
+		var r = this._controller_.record, mode=r.data.entryMode;
+		
+		if (mode == "price") {
+			//r.beginEdit();
+			r.set("netAmount", r.get("unitPrice")||0 * r.get("quantity")||0);
+			r.set("taxAmount", "");
+			r.set("lineAmount", "");
+			//r.endEdit();
+			return;
+		}
+	}
+	,_onNetAmountChange_: function() {	
+			
+			var r = this._getController_().getRecord();		 	  
+			r.set("taxAmount", "");	
+			r.set("lineAmount", "");
+			r.set("unitPrice", r.get("netAmount")||0 / r.get("quantity")||0);			  
+		
+	}
+	,_onTaxAmountChange_: function() {	
+				
+			var r = this._getController_().getRecord();		   			
+			r.set("lineAmount", "");			  
+		
+	}
+	,_onLineAmountChange_: function() {	
+		
+			var r = this._getController_().getRecord();		  			
+			r.set("netAmount", "");	
+			r.set("taxAmount", "");		  
+		
+	}
+	,_onEntryModeChange_: function() {	
+		var r = this._getController_().getRecord(), mode=r.data.entryMode;
+		this._doEnableEntryFields_(mode);
 		r.beginEdit();
-		r.set("netAmount", r.get("unitPrice") * r.get("quantity"));
+		r.set("unitPrice", "");		
+		r.set("netAmount", "");
 		r.set("taxAmount", "");
-		r.endEdit(); 
+		r.set("lineAmount", "");
+		r.endEdit();
+		
+	}
+	,_doEnableEntryFields_: function(mode) {	
+		
+		if (mode == "price") {
+			this._getElement_("unitPrice").enable();
+			this._getElement_("docLineNetAmount").disable();
+			this._getElement_("docLineTaxAmount").disable();
+			this._getElement_("docLineAmount").disable();
+			return;
+		}  
+		if (mode == "amount") {
+			this._getElement_("unitPrice").disable();
+			this._getElement_("docLineNetAmount").enable();
+			this._getElement_("docLineTaxAmount").enable();
+			this._getElement_("docLineAmount").enable();
+			return;
+		}
+		 
+		
+	}
+	,_afterBind_: function(record) {	
+		if (record) {
+			this._doEnableEntryFields_(record.data.entryMode);
+		}
 	}
 });
  	

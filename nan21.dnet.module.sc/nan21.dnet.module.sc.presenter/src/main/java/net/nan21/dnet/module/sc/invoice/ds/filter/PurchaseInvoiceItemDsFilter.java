@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sc.invoice.ds.filter;
 
@@ -54,6 +54,8 @@ public class PurchaseInvoiceItemDsFilter extends AbstractAuditableDsFilter {
 
     private Float lineAmount_From;
     private Float lineAmount_To;
+
+    private String entryMode;
 
     private Long taxId;
 
@@ -276,6 +278,14 @@ public class PurchaseInvoiceItemDsFilter extends AbstractAuditableDsFilter {
 
     public void setLineAmount_To(Float lineAmount_To) {
         this.lineAmount_To = lineAmount_To;
+    }
+
+    public String getEntryMode() {
+        return this.entryMode;
+    }
+
+    public void setEntryMode(String entryMode) {
+        this.entryMode = entryMode;
     }
 
     public Long getTaxId() {

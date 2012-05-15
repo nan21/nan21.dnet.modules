@@ -34,6 +34,11 @@
 	</changeSet>	
 	<changeSet author="amathe" id="FK-7">
 		<addForeignKeyConstraint constraintName="FK_SC_PI7" 
+				baseTableName="SC_PI" baseColumnNames="FROMACCOUNT_ID"  
+				referencedTableName="MD_PAY_ACCOUNT"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-8">
+		<addForeignKeyConstraint constraintName="FK_SC_PI8" 
 				baseTableName="SC_PI" baseColumnNames="PURCHASEORDER_ID"  
 				referencedTableName="SC_PO"  referencedColumnNames="ID" />
 	</changeSet>	

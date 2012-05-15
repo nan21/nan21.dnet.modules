@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingScaleLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingScaleLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.RatingScale" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RatingScaleLov" />
@@ -46,6 +47,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingLevelLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.RatingLevelLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.RatingLevel" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RatingLevelLov" />
@@ -68,6 +70,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillCategoryLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.SkillCategory" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SkillCategoryLov" />
@@ -91,6 +94,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.SkillType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SkillTypeLov" />
@@ -114,6 +118,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.SkillLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.Skill" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SkillLov" />
@@ -136,6 +141,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.skill.ds.model.QualificationLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.hr.skill.ds.model.QualificationLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.hr.skill.domain.entity.Qualification" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="QualificationLov" />

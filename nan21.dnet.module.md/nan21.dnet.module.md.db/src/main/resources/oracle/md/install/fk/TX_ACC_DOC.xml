@@ -9,6 +9,18 @@
 		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC2" baseTableName="TX_ACC_DOC" baseColumnNames="ACCSCHEMA_ID"  referencedTableName="BD_ACC_SCHEMA"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC3" baseTableName="TX_ACC_DOC" baseColumnNames="DOCTYPE_ID"  referencedTableName="BD_TXDOC_TYPE"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC3" baseTableName="TX_ACC_DOC" baseColumnNames="PERIOD_ID"  referencedTableName="BD_FISC_PERIOD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC4" baseTableName="TX_ACC_DOC" baseColumnNames="JOURNAL_ID"  referencedTableName="BD_ACC_JOURNAL"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-5">
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC5" baseTableName="TX_ACC_DOC" baseColumnNames="DOCCURRENCY_ID"  referencedTableName="BD_CURRENCY"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-6">
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC6" baseTableName="TX_ACC_DOC" baseColumnNames="BPARTNER_ID"  referencedTableName="MD_BP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-7">
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC7" baseTableName="TX_ACC_DOC" baseColumnNames="DOCTYPE_ID"  referencedTableName="BD_TXDOC_TYPE"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

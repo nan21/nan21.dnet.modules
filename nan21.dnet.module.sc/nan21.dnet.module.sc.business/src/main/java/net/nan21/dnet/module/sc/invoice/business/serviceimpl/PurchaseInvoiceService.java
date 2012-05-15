@@ -1,6 +1,6 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sc.invoice.business.serviceimpl;
@@ -13,6 +13,7 @@ import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
+import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 import net.nan21.dnet.module.sc.invoice.business.service.IPurchaseInvoiceService;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceTax;
@@ -119,6 +120,19 @@ public class PurchaseInvoiceService extends
                 .setParameter("pPaymentTermId", paymentTermId).getResultList();
     }
 
+    public List<PurchaseInvoice> findByFromAccount(PayAccount fromAccount) {
+        return this.findByFromAccountId(fromAccount.getId());
+    }
+
+    public List<PurchaseInvoice> findByFromAccountId(Long fromAccountId) {
+        return (List<PurchaseInvoice>) this.em
+                .createQuery(
+                        "select e from PurchaseInvoice e where e.clientId = :pClientId and e.fromAccount.id = :pFromAccountId",
+                        PurchaseInvoice.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pFromAccountId", fromAccountId).getResultList();
+    }
+
     public List<PurchaseInvoice> findByPurchaseOrder(PurchaseOrder purchaseOrder) {
         return this.findByPurchaseOrderId(purchaseOrder.getId());
     }
@@ -160,13 +174,12 @@ public class PurchaseInvoiceService extends
     }
 
     public void doPost(PurchaseInvoice invoice) throws Exception {
-        this.getBusinessDelegate(PurchaseInvoiceToAccDocBD.class).postInvoice(
-                invoice);
+        this.getBusinessDelegate(PurchaseInvoiceToAccDocBD.class).post(invoice);
     }
 
     public void doUnPost(PurchaseInvoice invoice) throws Exception {
-        this.getBusinessDelegate(PurchaseInvoiceToAccDocBD.class)
-                .unPostInvoice(invoice);
+        this.getBusinessDelegate(PurchaseInvoiceToAccDocBD.class).unPost(
+                invoice);
     }
 
 }

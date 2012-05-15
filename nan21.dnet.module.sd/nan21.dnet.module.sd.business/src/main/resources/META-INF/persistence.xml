@@ -35,6 +35,8 @@
 		<!-- BD  -->
 		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccSchema</class>
 		<class>net.nan21.dnet.module.bd.acc.domain.entity.Account</class>
+		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccItem</class>
+		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccJournal</class>
 		 
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
 		
@@ -50,12 +52,15 @@
 		 
         <class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
         <class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
+        <class>net.nan21.dnet.module.bd.org.domain.entity.Calendar</class>
           
  		<class>net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod</class>
  		<class>net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod</class>
 		<class>net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm</class>
 		<class>net.nan21.dnet.module.bd.tx.domain.entity.TxDocType</class>
 		<class>net.nan21.dnet.module.bd.tx.domain.entity.TxDocSequence</class> 
+		<class>net.nan21.dnet.module.bd.tx.domain.entity.FiscalYear</class>
+		<class>net.nan21.dnet.module.bd.tx.domain.entity.FiscalPeriod</class>
 		 
         <class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
         <class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>
@@ -101,6 +106,7 @@
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionLine</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvOperation</class>  
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.Payment</class> 
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem</class> 
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc</class> 
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine</class> 
 		

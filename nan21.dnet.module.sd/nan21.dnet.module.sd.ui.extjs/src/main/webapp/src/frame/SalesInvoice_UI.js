@@ -30,16 +30,16 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {
 		.addButton({name:"btnUploadAttachment",text:"Upload...", tooltip:"Upload attachment file.",disabled:true
 			,handler: this.onBtnUploadAttachment,scope:this,stateManager:{name:"selected_one_clean", dc:"atch" }	})	
 							 	
-		.addButton({name:"btnConfirmInvoice",text:"Confirm", tooltip:"Confirm order.",iconCls:"icon-action-commit",disabled:true
+		.addButton({name:"btnConfirmInvoice",text:"Confirm", tooltip:"Confirm invoice.",iconCls:"icon-action-commit",disabled:true
 			,handler: this.onBtnConfirmInvoice,scope:this,stateManager:{name:"selected_one_clean", dc:"inv" , and: function(dc) {return (dc.record && !dc.record.get("confirmed"));}}	})	
 							 	
-		.addButton({name:"btnUnConfirmInvoice",text:"Un-Confirm", tooltip:"Un-Confirm order.",iconCls:"icon-action-rollback",disabled:true
+		.addButton({name:"btnUnConfirmInvoice",text:"Un-Confirm", tooltip:"Un-Confirm invoice.",iconCls:"icon-action-rollback",disabled:true
 			,handler: this.onBtnUnConfirmInvoice,scope:this,stateManager:{name:"selected_one_clean", dc:"inv" , and: function(dc) {return (dc.record && dc.record.get("confirmed") && !dc.record.get("posted")  );}}	})	
 							 	
-		.addButton({name:"btnPostInvoice",text:"Post", tooltip:"Confirm order.",iconCls:"icon-action-commit",disabled:true
+		.addButton({name:"btnPostInvoice",text:"Post", tooltip:"Post invoice to accounting.",iconCls:"icon-action-commit",disabled:true
 			,handler: this.onBtnPostInvoice,scope:this,stateManager:{name:"selected_one_clean", dc:"inv" , and: function(dc) {return (dc.record && dc.record.get("confirmed")&& !dc.record.get("posted"));}}	})	
 							 	
-		.addButton({name:"btnUnPostInvoice",text:"Un-Post", tooltip:"Un-Confirm order.",iconCls:"icon-action-rollback",disabled:true
+		.addButton({name:"btnUnPostInvoice",text:"Un-Post", tooltip:"Un-Post invoice from accounting.",iconCls:"icon-action-rollback",disabled:true
 			,handler: this.onBtnUnPostInvoice,scope:this,stateManager:{name:"selected_one_clean", dc:"inv" , and: function(dc) {return (dc.record && dc.record.get("confirmed") &&  dc.record.get("confirmed") && dc.record.get("posted") );}}	})	
 							 	
 		.addButton({name:"btnShowOrder",text:"Show Order", tooltip:"Show the sales order linked to this invoice",disabled:true
@@ -110,7 +110,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {
 	,onBtnConfirmInvoice: function() {
 		var s={modal:true, callbacks:{} };
 		try{ 
-			this._getDc_("inv").doService("confirmInvoice", s); 
+			this._getDc_("inv").doService("confirm", s); 
 		}catch(e){
 			dnet.base.DcExceptions.showMessage(e);
 		}
@@ -119,7 +119,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {
 	,onBtnUnConfirmInvoice: function() {
 		var s={modal:true, callbacks:{} };
 		try{ 
-			this._getDc_("inv").doService("unConfirmInvoice", s); 
+			this._getDc_("inv").doService("unConfirm", s); 
 		}catch(e){
 			dnet.base.DcExceptions.showMessage(e);
 		}
@@ -128,7 +128,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {
 	,onBtnPostInvoice: function() {
 		var s={modal:true, callbacks:{} };
 		try{ 
-			this._getDc_("inv").doService("postInvoice", s); 
+			this._getDc_("inv").doService("post", s); 
 		}catch(e){
 			dnet.base.DcExceptions.showMessage(e);
 		}
@@ -137,7 +137,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI", {
 	,onBtnUnPostInvoice: function() {
 		var s={modal:true, callbacks:{} };
 		try{ 
-			this._getDc_("inv").doService("unPostInvoice", s); 
+			this._getDc_("inv").doService("unPost", s); 
 		}catch(e){
 			dnet.base.DcExceptions.showMessage(e);
 		}

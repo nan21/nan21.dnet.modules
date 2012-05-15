@@ -15,16 +15,16 @@
 	  	<property name="converterClass" value="net.nan21.dnet.module.sc.order.ds.converter.PurchaseOrderDsConv" />
 	  	<property name="rpcData" >
 	  		<map>
-	  			<entry key="confirmOrder">
+	  			<entry key="confirm">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sc._presenterdelegates.order.PurchaseOrderPD"/>
-	  				<constructor-arg name="methodName" value="confirmOrder" />
+	  				<constructor-arg name="methodName" value="confirm" />
 	  			</bean>	
 	  			</entry>	  			
-	  			<entry key="unConfirmOrder">
+	  			<entry key="unConfirm">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sc._presenterdelegates.order.PurchaseOrderPD"/>
-	  				<constructor-arg name="methodName" value="unConfirmOrder" />
+	  				<constructor-arg name="methodName" value="unConfirm" />
 	  			</bean>	
 	  			</entry>	  			
 	  		</map>
@@ -35,8 +35,8 @@
 		<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderDs" />
 	  	<property name="serviceMethods" >
 	  		<list>
-	  			<value type="java.lang.String">confirmOrder</value>
-	  			<value type="java.lang.String">unConfirmOrder</value>
+	  			<value type="java.lang.String">confirm</value>
+	  			<value type="java.lang.String">unConfirm</value>
 			</list>	  		 
 	  	</property>	
 	</bean>
@@ -73,6 +73,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderItemTaxDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.sc.order.ds.filter.PurchaseOrderItemTaxDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderItemTax" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PurchaseOrderItemTax" />
@@ -84,6 +85,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderTaxDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.sc.order.ds.filter.PurchaseOrderTaxDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderTax" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PurchaseOrderTax" />

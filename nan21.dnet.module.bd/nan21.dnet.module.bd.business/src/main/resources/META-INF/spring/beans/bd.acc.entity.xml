@@ -12,6 +12,15 @@
  
  	<bean id="AccountService" scope="prototype"
 	  		class="net.nan21.dnet.module.bd.acc.business.serviceimpl.AccountService"  />  
+ 
+ 	<bean id="AccItemService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.acc.business.serviceimpl.AccItemService"  />  
+ 
+ 	<bean id="AccItemAcctService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.acc.business.serviceext.AccItemAcctService"  />  
+ 
+ 	<bean id="AccJournalService" scope="prototype"
+	  		class="net.nan21.dnet.module.bd.acc.business.serviceimpl.AccJournalService"  />  
    
 </beans>
    

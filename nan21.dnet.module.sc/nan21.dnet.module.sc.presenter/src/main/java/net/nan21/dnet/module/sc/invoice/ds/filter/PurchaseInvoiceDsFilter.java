@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.sc.invoice.ds.filter;
 
@@ -11,6 +11,8 @@ import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDsFilter;
 public class PurchaseInvoiceDsFilter extends AbstractAuditableDsFilter {
 
     private String code;
+
+    private String docNo;
 
     private Date docDate;
 
@@ -49,12 +51,23 @@ public class PurchaseInvoiceDsFilter extends AbstractAuditableDsFilter {
 
     private String paymentMethod;
 
+    private String paymentMethodType;
+
     private Long paymentTermId;
 
     private Long paymentTermId_From;
     private Long paymentTermId_To;
 
     private String paymentTerm;
+
+    private Boolean selfPayed;
+
+    private Long fromAccountId;
+
+    private Long fromAccountId_From;
+    private Long fromAccountId_To;
+
+    private String fromAccount;
 
     private Long currencyId;
 
@@ -97,6 +110,14 @@ public class PurchaseInvoiceDsFilter extends AbstractAuditableDsFilter {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
     }
 
     public Date getDocDate() {
@@ -267,6 +288,14 @@ public class PurchaseInvoiceDsFilter extends AbstractAuditableDsFilter {
         this.paymentMethod = paymentMethod;
     }
 
+    public String getPaymentMethodType() {
+        return this.paymentMethodType;
+    }
+
+    public void setPaymentMethodType(String paymentMethodType) {
+        this.paymentMethodType = paymentMethodType;
+    }
+
     public Long getPaymentTermId() {
         return this.paymentTermId;
     }
@@ -297,6 +326,46 @@ public class PurchaseInvoiceDsFilter extends AbstractAuditableDsFilter {
 
     public void setPaymentTerm(String paymentTerm) {
         this.paymentTerm = paymentTerm;
+    }
+
+    public Boolean getSelfPayed() {
+        return this.selfPayed;
+    }
+
+    public void setSelfPayed(Boolean selfPayed) {
+        this.selfPayed = selfPayed;
+    }
+
+    public Long getFromAccountId() {
+        return this.fromAccountId;
+    }
+
+    public Long getFromAccountId_From() {
+        return this.fromAccountId_From;
+    }
+
+    public Long getFromAccountId_To() {
+        return this.fromAccountId_To;
+    }
+
+    public void setFromAccountId(Long fromAccountId) {
+        this.fromAccountId = fromAccountId;
+    }
+
+    public void setFromAccountId_From(Long fromAccountId_From) {
+        this.fromAccountId_From = fromAccountId_From;
+    }
+
+    public void setFromAccountId_To(Long fromAccountId_To) {
+        this.fromAccountId_To = fromAccountId_To;
+    }
+
+    public String getFromAccount() {
+        return this.fromAccount;
+    }
+
+    public void setFromAccount(String fromAccount) {
+        this.fromAccount = fromAccount;
     }
 
     public Long getCurrencyId() {

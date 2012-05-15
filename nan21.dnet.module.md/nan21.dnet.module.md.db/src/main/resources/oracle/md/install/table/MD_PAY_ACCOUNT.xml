@@ -6,6 +6,8 @@
         <createTable tableName="MD_PAY_ACCOUNT">
 			<column name="ACTIVE" type="number(1)">
 				<constraints nullable="false" /></column>	 
+			<column name="ANALITICSEGMENT" type="varchar2(32)">
+				<constraints  /></column>	 
 			<column name="CLIENTID" type="number(3)">
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDAT" type="date">
@@ -30,6 +32,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CURRENCY_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
+			<column name="JOURNAL_ID" type="number(19)">	 
+				<constraints  /></column>	 
 			<column name="ORG_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>

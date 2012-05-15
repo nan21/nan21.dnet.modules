@@ -1,11 +1,13 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.org.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.acc.business.service.IAccJournalService;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccJournal;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
@@ -40,6 +42,16 @@ public class PayAccountDsConv extends
             }
         } else {
             this.lookup_org_Organization(ds, e);
+        }
+
+        if (ds.getJournalId() != null) {
+            if (e.getJournal() == null
+                    || !e.getJournal().getId().equals(ds.getJournalId())) {
+                e.setJournal((AccJournal) this.em.find(AccJournal.class,
+                        ds.getJournalId()));
+            }
+        } else {
+            this.lookup_journal_AccJournal(ds, e);
         }
 
     }
@@ -79,6 +91,25 @@ public class PayAccountDsConv extends
 
         } else {
             e.setOrg(null);
+        }
+    }
+
+    protected void lookup_journal_AccJournal(PayAccountDs ds, PayAccount e)
+            throws Exception {
+        if (ds.getJournal() != null && !ds.getJournal().equals("")) {
+            AccJournal x = null;
+            try {
+                x = ((IAccJournalService) findEntityService(AccJournal.class))
+                        .findByName(ds.getJournal());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `AccJournal` reference:  `journal` = "
+                                + ds.getJournal() + "  ");
+            }
+            e.setJournal(x);
+
+        } else {
+            e.setJournal(null);
         }
     }
 

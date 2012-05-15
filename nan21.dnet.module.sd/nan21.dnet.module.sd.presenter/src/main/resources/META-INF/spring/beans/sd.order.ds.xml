@@ -88,6 +88,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderItemTaxDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderItemTaxDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesOrderItemTax" />
@@ -99,6 +100,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.sd.order.ds.model.SalesOrderTaxDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.sd.order.ds.filter.SalesOrderTaxDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.sd.order.domain.entity.SalesOrderTax" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SalesOrderTax" />

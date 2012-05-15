@@ -34,6 +34,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.data.ds.model.AttachmentTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.data.domain.entity.AttachmentType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AttachmentTypeLov" />

@@ -26,6 +26,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.ProductAccount$Filter", {
 		.addLov({ name:"organizationCode", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"organizationCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
 		.addLov({ name:"groupCode", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductAccountGroups", dataIndex:"groupCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "groupId"} ]  })
 		.addTextField({ name:"productCode", dataIndex:"productCode",anchor:"-20",maxLength:32  })
+		.addTextField({ name:"analiticSegment", dataIndex:"analiticSegment",anchor:"-20",maxLength:32  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
 		.addPanel({ name:"col2", layout:"form",width:210}) 
@@ -35,8 +36,8 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.ProductAccount$Filter", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["organizationCode"])
-		.addChildrenTo("col2",["groupCode","productCode"])
+		.addChildrenTo("col1",["organizationCode","productCode"])
+		.addChildrenTo("col2",["groupCode","analiticSegment"])
     	.addAuditFilter()	
 	}
 }); 
@@ -52,6 +53,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.ProductAccount$EditList", {
 		.addLov({name:"organizationCode", xtype:"gridcolumn", dataIndex:"organizationCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]} })
 		.addLov({name:"groupCode", xtype:"gridcolumn", dataIndex:"groupCode",width:100,editor:{xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductAccountGroups" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "groupId"} ]} })
 		.addTextColumn({ name:"productCode", dataIndex:"productCode",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
+		.addTextColumn({ name:"analiticSegment", dataIndex:"analiticSegment",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
 		.addNumberColumn({ name:"organizationId", dataIndex:"organizationId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"groupId", dataIndex:"groupId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"productId", dataIndex:"productId", hidden:true, align:"right",format:"0",width:70})
@@ -70,6 +72,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.ProductAccount$CtxEditList", {
 		this._getBuilder_()
 		.addLov({name:"organizationCode", xtype:"gridcolumn", dataIndex:"organizationCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]} })
 		.addLov({name:"groupCode", xtype:"gridcolumn", dataIndex:"groupCode",width:100,editor:{xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductAccountGroups" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "groupId"} ]} })
+		.addTextColumn({ name:"analiticSegment", dataIndex:"analiticSegment",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
 		.addNumberColumn({ name:"organizationId", dataIndex:"organizationId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"groupId", dataIndex:"groupId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"productId", dataIndex:"productId", hidden:true, align:"right",format:"0",width:70})

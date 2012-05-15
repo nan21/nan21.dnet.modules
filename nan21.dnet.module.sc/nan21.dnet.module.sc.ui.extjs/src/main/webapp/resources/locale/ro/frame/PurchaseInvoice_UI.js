@@ -1,4 +1,5 @@
 Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI$Trl", { 
+	invEditDetails__ttl : "Detalii",
 	taxList__ttl : "Taxe",
 	accDocLineFilter__ttl : "Filtru",
 	itemTaxList__ttl : "Taxe linie factură",
@@ -23,7 +24,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI$Trl", {
 	btnUnConfirmInvoice__ttl : "De-Confirmă",
 	btnUnConfirmInvoice__desc : "De-confirmă factură",
 	btnPostInvoice__ttl : "Inregistrează",
-	btnPostInvoice__desc : "Confirmă factură",
+	btnPostInvoice__desc : "Inregistrează factură",
 	btnUnPostInvoice__ttl : "De-Inregistrează",
 	btnUnPostInvoice__desc : "De-Inregistrează factură",
 	

@@ -1,5 +1,8 @@
- 
-   	 
+/*
+ * DNet eBusiness Suite
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */   	 
 Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
@@ -13,6 +16,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDs" ,{
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
 		{name:"code", type:"string"},
+		{name:"docNo", type:"string"},
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"supplierId", type:"int", useNull:true},
 		{name:"supplier", type:"string"},
@@ -64,6 +68,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.ds.model.SalesInvoiceDsFilter" ,{
 		{name:"modifiedBy", type:"string"},
 		{name:"entityFQN", type:"string"},
 		{name:"code", type:"string"},
+		{name:"docNo", type:"string"},
 		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},

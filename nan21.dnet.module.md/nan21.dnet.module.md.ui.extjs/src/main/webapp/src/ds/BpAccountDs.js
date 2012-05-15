@@ -1,5 +1,8 @@
- 
-   	 
+/*
+ * DNet eBusiness Suite
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */   	 
 Ext.define("net.nan21.dnet.module.md.bp.ds.model.BpAccountDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
@@ -31,7 +34,8 @@ Ext.define("net.nan21.dnet.module.md.bp.ds.model.BpAccountDs" ,{
 		{name:"vendorPaymentMethod", type:"string"},
 		{name:"vendorCreditLimit", type:"float", useNull:true},
 		{name:"vendorPaymentTermId", type:"int", useNull:true},
-		{name:"vendorPaymentTerm", type:"string"}
+		{name:"vendorPaymentTerm", type:"string"},
+		{name:"analiticSegment", type:"string"}
 	]
 });
 
@@ -88,7 +92,8 @@ Ext.define("net.nan21.dnet.module.md.bp.ds.model.BpAccountDsFilter" ,{
 		{name:"vendorPaymentTermId", type:"int", useNull:true},
 		{name:"vendorPaymentTermId_From",type:"int", useNull:true},
 		{name:"vendorPaymentTermId_To",type:"int", useNull:true},
-		{name:"vendorPaymentTerm", type:"string"}
+		{name:"vendorPaymentTerm", type:"string"},
+		{name:"analiticSegment", type:"string"}
 	] 
 });
 	

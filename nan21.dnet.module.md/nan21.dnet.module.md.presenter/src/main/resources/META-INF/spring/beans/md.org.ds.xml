@@ -24,6 +24,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.PayAccountLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.model.PayAccountLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.PayAccount" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="PayAccountLov" />
@@ -71,6 +72,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.SubInventoryLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.model.SubInventoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.SubInventory" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="SubInventoryLov" />
@@ -93,6 +95,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.StockLocatorType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="StockLocatorTypeLov" />
@@ -116,6 +119,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.org.ds.model.StockLocatorLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.org.domain.entity.StockLocator" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="StockLocatorLov" />

@@ -13,6 +13,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.ds.model.PurchaseInvoiceItemDs$Trl"
 	netAmount__lbl : "Net Amount",
 	taxAmount__lbl : "Tax Amount",
 	lineAmount__lbl : "Line Amount",
+	entryMode__lbl : "Entry Mode",
 	taxId__lbl : "Tax Id",
 	tax__lbl : "Tax",
 		

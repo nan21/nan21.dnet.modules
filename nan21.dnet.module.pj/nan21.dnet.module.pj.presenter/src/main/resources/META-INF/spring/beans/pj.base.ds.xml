@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectCategoryLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectCategoryLov" />
@@ -45,6 +46,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectRoleLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectRole" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectRoleLov" />
@@ -68,6 +70,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectTypeLov" />
@@ -90,6 +93,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.ProjectStatusLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.ProjectStatusLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ProjectStatusLov" />
@@ -112,6 +116,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueCategoryLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueCategoryLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueCategory" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueCategoryLov" />
@@ -135,6 +140,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueTypeLov" />
@@ -157,6 +163,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueStatusLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueStatusLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueStatus" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueStatusLov" />
@@ -179,6 +186,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueSeverityLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueSeverityLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueSeverity" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueSeverityLov" />
@@ -201,6 +209,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssuePriorityLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssuePriorityLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssuePriority" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssuePriorityLov" />
@@ -223,6 +232,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueResolutionLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueResolutionLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueResolution" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueResolutionLov" />
@@ -245,6 +255,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTextTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTextTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTextType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueTextTypeLov" />
@@ -267,6 +278,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueLinkTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueLinkTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueLinkType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueLinkTypeLov" />
@@ -289,6 +301,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTaskTypeLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueTaskTypeLov" />
@@ -311,6 +324,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.base.ds.model.IssueTaskStatusLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.base.ds.filter.IssueTaskStatusLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.base.domain.entity.IssueTaskStatus" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="IssueTaskStatusLov" />

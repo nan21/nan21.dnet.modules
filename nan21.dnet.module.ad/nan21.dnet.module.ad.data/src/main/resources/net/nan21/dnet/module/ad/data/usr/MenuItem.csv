@@ -25,7 +25,10 @@
 "10";"fi-menu-base";"Base data";"FI";;;"true";;"false";"false";
 "20";"fi-menu-tx";"Transactions";"FI";;;"true";;"false";"false";
 "10";"PayAccount_UI";"Financial accounts";;"net.nan21.dnet.module.md.org.frame.PayAccount_UI";"nan21.dnet.module.md.ui.extjs";"true";;"false";"false";
+"40";"FiscalYear_UI";"Fiscal years";;"net.nan21.dnet.module.bd.tx.frame.FiscalYear_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"60";"FiscalPeriod_UI";"Financial periods";;"net.nan21.dnet.module.bd.tx.frame.FiscalPeriod_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
 "60";"AccDoc_UI";"Accounting documents";;"net.nan21.dnet.module.md.tx.fin.frame.AccDoc_UI";"nan21.dnet.module.md.ui.extjs";"true";;"false";"false";
+"90";"AccOperation_UI";"Great ledger";;"net.nan21.dnet.module.md.tx.fin.frame.AccOperation_UI";"nan21.dnet.module.md.ui.extjs";"true";;"false";"false";
 "30";"Payment_UI";"Payments";;"net.nan21.dnet.module.md.tx.fin.frame.Payment_UI";"nan21.dnet.module.md.ui.extjs";"true";;"false";"false";
 "10";"JobBaseDataDef_UI";"Job base data definitions";;"net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
 "10";"AttachmentType_UI";"Attachment types";;"net.nan21.dnet.module.ad.data.frame.AttachmentType_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
@@ -40,9 +43,12 @@
 "10";"AbsenceBaseData_UI";"Absence base data";;"net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI";"nan21.dnet.module.hr.ui.extjs";"true";;"false";"false";
 "10";"ProjectBaseData_UI";"Project base data";;"net.nan21.dnet.module.pj.base.frame.ProjectBaseData_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
 "10";"Users_UI";"Users";;"net.nan21.dnet.module.ad.usr.frame.Users_UI";"nan21.dnet.module.ad.ui.extjs";"true";;"false";"false";
-"10";"Org_UI";"Organizations";;"net.nan21.dnet.module.bd.org.frame.Org_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"10";"Calendars_UI";"Calendare";;"net.nan21.dnet.module.bd.org.frame.Calendars_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"30";"Org_UI";"Organizations";;"net.nan21.dnet.module.bd.org.frame.Org_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
 "10";"AccSchema_UI";"Accounting schema";;"net.nan21.dnet.module.bd.acc.frame.AccSchema_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
-"10";"Account_UI";"Account chart";;"net.nan21.dnet.module.bd.acc.frame.Account_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"30";"Account_UI";"Account chart";;"net.nan21.dnet.module.bd.acc.frame.Account_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"60";"AccItem_UI";"G/L Items";;"net.nan21.dnet.module.bd.acc.frame.AccItem_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
+"90";"AccJournal_UI";"Journals";;"net.nan21.dnet.module.bd.acc.frame.AccJournal_UI";"nan21.dnet.module.bd.ui.extjs";"true";;"false";"false";
 "10";"Projects_UI";"Projects";;"net.nan21.dnet.module.pj.md.frame.Projects_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";
 "10";"bd-menu";"Base data";"MD";;;"true";;"false";"false";
 "10";"Issues_UI";"Incidents";;"net.nan21.dnet.module.pj.md.frame.Issues_UI";"nan21.dnet.module.pj.ui.extjs";"true";;"false";"false";

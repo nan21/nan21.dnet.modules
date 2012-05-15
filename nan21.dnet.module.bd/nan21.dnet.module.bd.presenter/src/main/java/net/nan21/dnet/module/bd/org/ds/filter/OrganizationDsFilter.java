@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.bd.org.ds.filter;
 
@@ -17,6 +17,13 @@ public class OrganizationDsFilter extends AbstractTypeWithCodeDsFilter {
     private Long typeId_To;
 
     private String type;
+
+    private Long calendarId;
+
+    private Long calendarId_From;
+    private Long calendarId_To;
+
+    private String calendar;
 
     private String className;
 
@@ -58,6 +65,38 @@ public class OrganizationDsFilter extends AbstractTypeWithCodeDsFilter {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Long getCalendarId() {
+        return this.calendarId;
+    }
+
+    public Long getCalendarId_From() {
+        return this.calendarId_From;
+    }
+
+    public Long getCalendarId_To() {
+        return this.calendarId_To;
+    }
+
+    public void setCalendarId(Long calendarId) {
+        this.calendarId = calendarId;
+    }
+
+    public void setCalendarId_From(Long calendarId_From) {
+        this.calendarId_From = calendarId_From;
+    }
+
+    public void setCalendarId_To(Long calendarId_To) {
+        this.calendarId_To = calendarId_To;
+    }
+
+    public String getCalendar() {
+        return this.calendar;
+    }
+
+    public void setCalendar(String calendar) {
+        this.calendar = calendar;
     }
 
     public String getClassName() {

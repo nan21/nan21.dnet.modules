@@ -1,11 +1,14 @@
-/* 
+/*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.tx.fin.domain.entity;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -19,6 +22,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -32,6 +36,7 @@ import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 import net.nan21.dnet.module.md.tx.fin.domain.eventhandler.PaymentEventHandler;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -131,6 +136,10 @@ public class Payment extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "ID")
     private BusinessPartner bpartner;
+
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = PaymentItem.class, mappedBy = "payment", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<PaymentItem> lines;
 
     /* ============== getters - setters ================== */
 
@@ -260,6 +269,22 @@ public class Payment extends AbstractAuditable {
 
     public void setBpartner(BusinessPartner bpartner) {
         this.bpartner = bpartner;
+    }
+
+    public Collection<PaymentItem> getLines() {
+        return this.lines;
+    }
+
+    public void setLines(Collection<PaymentItem> lines) {
+        this.lines = lines;
+    }
+
+    public void addToLines(PaymentItem e) {
+        if (this.lines == null) {
+            this.lines = new ArrayList<PaymentItem>();
+        }
+        e.setPayment(this);
+        this.lines.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

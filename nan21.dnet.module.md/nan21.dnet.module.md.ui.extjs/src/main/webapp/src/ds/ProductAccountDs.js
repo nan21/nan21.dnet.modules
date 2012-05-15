@@ -1,5 +1,8 @@
- 
-   	 
+/*
+ * DNet eBusiness Suite
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */   	 
 Ext.define("net.nan21.dnet.module.md.mm.prod.ds.model.ProductAccountDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
@@ -17,7 +20,8 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.ds.model.ProductAccountDs" ,{
 		{name:"groupId", type:"int", useNull:true},
 		{name:"groupCode", type:"string"},
 		{name:"productId", type:"int", useNull:true},
-		{name:"productCode", type:"string"}
+		{name:"productCode", type:"string"},
+		{name:"analiticSegment", type:"string"}
 	]
 });
 
@@ -46,7 +50,8 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.ds.model.ProductAccountDsFilter" ,{
 		{name:"productId", type:"int", useNull:true},
 		{name:"productId_From",type:"int", useNull:true},
 		{name:"productId_To",type:"int", useNull:true},
-		{name:"productCode", type:"string"}
+		{name:"productCode", type:"string"},
+		{name:"analiticSegment", type:"string"}
 	] 
 });
 	

@@ -1,7 +1,7 @@
-/* 
+/*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.bd.org.domain.entity;
 
@@ -22,6 +22,7 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
+import net.nan21.dnet.module.bd.org.domain.entity.Calendar;
 import net.nan21.dnet.module.bd.org.domain.entity.OrganizationType;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -84,6 +85,9 @@ public class Organization extends AbstractTypeWithCode {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = OrganizationType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private OrganizationType type;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Calendar.class)
+    @JoinColumn(name = "CALENDAR_ID", referencedColumnName = "ID")
+    private Calendar calendar;
 
     /* ============== getters - setters ================== */
 
@@ -109,6 +113,14 @@ public class Organization extends AbstractTypeWithCode {
 
     public void setType(OrganizationType type) {
         this.type = type;
+    }
+
+    public Calendar getCalendar() {
+        return this.calendar;
+    }
+
+    public void setCalendar(Calendar calendar) {
+        this.calendar = calendar;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

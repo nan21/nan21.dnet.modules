@@ -1,5 +1,8 @@
- 
-   	 
+/*
+ * DNet eBusiness Suite
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */   	 
 Ext.define("net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
@@ -15,6 +18,8 @@ Ext.define("net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeDs" ,{
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
+		{name:"journalId", type:"int", useNull:true},
+		{name:"journal", type:"string"},
 		{name:"category", type:"string"}
 	],
 	validations: [  
@@ -40,6 +45,10 @@ Ext.define("net.nan21.dnet.module.bd.tx.ds.model.TxDocTypeDsFilter" ,{
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"entityFQN", type:"string"},
+		{name:"journalId", type:"int", useNull:true},
+		{name:"journalId_From",type:"int", useNull:true},
+		{name:"journalId_To",type:"int", useNull:true},
+		{name:"journal", type:"string"},
 		{name:"category", type:"string"}
 	] 
 });

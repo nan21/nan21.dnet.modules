@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.contact.ds.model.CommunicationChannelTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CommunicationChannelTypeLov" />

@@ -23,6 +23,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationSystemLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ClassificationSystemLov" />
@@ -46,6 +47,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationItemLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.bd.standards.ds.model.ClassificationItemLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.bd.standards.domain.entity.ClassificationItem" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="ClassificationItemLov" />

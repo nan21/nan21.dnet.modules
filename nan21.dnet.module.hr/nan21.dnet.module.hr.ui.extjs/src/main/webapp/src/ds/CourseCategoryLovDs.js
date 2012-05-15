@@ -1,5 +1,8 @@
- 
-   	 
+/*
+ * DNet eBusiness Suite
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */   	 
 Ext.define("net.nan21.dnet.module.hr.training.ds.model.CourseCategoryLovDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 

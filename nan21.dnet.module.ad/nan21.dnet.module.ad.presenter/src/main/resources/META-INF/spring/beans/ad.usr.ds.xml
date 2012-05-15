@@ -60,6 +60,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.User" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserLov" />
@@ -82,6 +83,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserTypeLov" />
@@ -104,6 +106,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserGroupLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.model.UserGroupLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.UserGroup" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="UserGroupLov" />
@@ -126,6 +129,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.RoleLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.model.RoleLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RoleLov" />
@@ -137,6 +141,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.RolesOfUserLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.model.RolesOfUserLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Role" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="RolesOfUserLov" />
@@ -176,6 +181,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.model.AccessControlLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AccessControl" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AccessControlLov" />
@@ -270,6 +276,7 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.MenuItemRtLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.MenuItem" />
 	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.usr.ds.qbext.MenuItemRtLovDsQueryBuilder" />	
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="MenuItemRtLov" />
@@ -304,6 +311,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.BookmarkRtLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.BookmarkRtLovDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Bookmark" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="BookmarkRtLov" />
@@ -326,6 +334,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableTypeLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.AssignableType" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AssignableTypeLov" />
@@ -349,6 +358,7 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableLovDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.model.AssignableLovDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.Assignable" />
+	  	<property name="readOnly" value="true" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="AssignableLov" />

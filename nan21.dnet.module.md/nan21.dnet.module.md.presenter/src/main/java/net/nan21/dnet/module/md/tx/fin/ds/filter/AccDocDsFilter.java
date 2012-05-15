@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.tx.fin.ds.filter;
 
@@ -24,6 +24,27 @@ public class AccDocDsFilter extends AbstractAuditableDsFilter {
 
     private String accSchema;
 
+    private Long periodId;
+
+    private Long periodId_From;
+    private Long periodId_To;
+
+    private String period;
+
+    private Long journalId;
+
+    private Long journalId_From;
+    private Long journalId_To;
+
+    private String journal;
+
+    private Long bpartnerId;
+
+    private Long bpartnerId_From;
+    private Long bpartnerId_To;
+
+    private String bpartner;
+
     private String docNo;
 
     private Long docTypeId;
@@ -38,6 +59,28 @@ public class AccDocDsFilter extends AbstractAuditableDsFilter {
     private Date docDate_From;
     private Date docDate_To;
 
+    private Float docNetAmount;
+
+    private Float docNetAmount_From;
+    private Float docNetAmount_To;
+
+    private Float docTaxAmount;
+
+    private Float docTaxAmount_From;
+    private Float docTaxAmount_To;
+
+    private Float docAmount;
+
+    private Float docAmount_From;
+    private Float docAmount_To;
+
+    private Long docCurrencyId;
+
+    private Long docCurrencyId_From;
+    private Long docCurrencyId_To;
+
+    private String docCurrency;
+
     private Float dbAmount;
 
     private Float dbAmount_From;
@@ -47,6 +90,13 @@ public class AccDocDsFilter extends AbstractAuditableDsFilter {
 
     private Float crAmount_From;
     private Float crAmount_To;
+
+    private Float difference;
+
+    private Float difference_From;
+    private Float difference_To;
+
+    private Boolean posted;
 
     public Long getOrgId() {
         return this.orgId;
@@ -110,6 +160,102 @@ public class AccDocDsFilter extends AbstractAuditableDsFilter {
 
     public void setAccSchema(String accSchema) {
         this.accSchema = accSchema;
+    }
+
+    public Long getPeriodId() {
+        return this.periodId;
+    }
+
+    public Long getPeriodId_From() {
+        return this.periodId_From;
+    }
+
+    public Long getPeriodId_To() {
+        return this.periodId_To;
+    }
+
+    public void setPeriodId(Long periodId) {
+        this.periodId = periodId;
+    }
+
+    public void setPeriodId_From(Long periodId_From) {
+        this.periodId_From = periodId_From;
+    }
+
+    public void setPeriodId_To(Long periodId_To) {
+        this.periodId_To = periodId_To;
+    }
+
+    public String getPeriod() {
+        return this.period;
+    }
+
+    public void setPeriod(String period) {
+        this.period = period;
+    }
+
+    public Long getJournalId() {
+        return this.journalId;
+    }
+
+    public Long getJournalId_From() {
+        return this.journalId_From;
+    }
+
+    public Long getJournalId_To() {
+        return this.journalId_To;
+    }
+
+    public void setJournalId(Long journalId) {
+        this.journalId = journalId;
+    }
+
+    public void setJournalId_From(Long journalId_From) {
+        this.journalId_From = journalId_From;
+    }
+
+    public void setJournalId_To(Long journalId_To) {
+        this.journalId_To = journalId_To;
+    }
+
+    public String getJournal() {
+        return this.journal;
+    }
+
+    public void setJournal(String journal) {
+        this.journal = journal;
+    }
+
+    public Long getBpartnerId() {
+        return this.bpartnerId;
+    }
+
+    public Long getBpartnerId_From() {
+        return this.bpartnerId_From;
+    }
+
+    public Long getBpartnerId_To() {
+        return this.bpartnerId_To;
+    }
+
+    public void setBpartnerId(Long bpartnerId) {
+        this.bpartnerId = bpartnerId;
+    }
+
+    public void setBpartnerId_From(Long bpartnerId_From) {
+        this.bpartnerId_From = bpartnerId_From;
+    }
+
+    public void setBpartnerId_To(Long bpartnerId_To) {
+        this.bpartnerId_To = bpartnerId_To;
+    }
+
+    public String getBpartner() {
+        return this.bpartner;
+    }
+
+    public void setBpartner(String bpartner) {
+        this.bpartner = bpartner;
     }
 
     public String getDocNo() {
@@ -176,6 +322,110 @@ public class AccDocDsFilter extends AbstractAuditableDsFilter {
         this.docDate_To = docDate_To;
     }
 
+    public Float getDocNetAmount() {
+        return this.docNetAmount;
+    }
+
+    public Float getDocNetAmount_From() {
+        return this.docNetAmount_From;
+    }
+
+    public Float getDocNetAmount_To() {
+        return this.docNetAmount_To;
+    }
+
+    public void setDocNetAmount(Float docNetAmount) {
+        this.docNetAmount = docNetAmount;
+    }
+
+    public void setDocNetAmount_From(Float docNetAmount_From) {
+        this.docNetAmount_From = docNetAmount_From;
+    }
+
+    public void setDocNetAmount_To(Float docNetAmount_To) {
+        this.docNetAmount_To = docNetAmount_To;
+    }
+
+    public Float getDocTaxAmount() {
+        return this.docTaxAmount;
+    }
+
+    public Float getDocTaxAmount_From() {
+        return this.docTaxAmount_From;
+    }
+
+    public Float getDocTaxAmount_To() {
+        return this.docTaxAmount_To;
+    }
+
+    public void setDocTaxAmount(Float docTaxAmount) {
+        this.docTaxAmount = docTaxAmount;
+    }
+
+    public void setDocTaxAmount_From(Float docTaxAmount_From) {
+        this.docTaxAmount_From = docTaxAmount_From;
+    }
+
+    public void setDocTaxAmount_To(Float docTaxAmount_To) {
+        this.docTaxAmount_To = docTaxAmount_To;
+    }
+
+    public Float getDocAmount() {
+        return this.docAmount;
+    }
+
+    public Float getDocAmount_From() {
+        return this.docAmount_From;
+    }
+
+    public Float getDocAmount_To() {
+        return this.docAmount_To;
+    }
+
+    public void setDocAmount(Float docAmount) {
+        this.docAmount = docAmount;
+    }
+
+    public void setDocAmount_From(Float docAmount_From) {
+        this.docAmount_From = docAmount_From;
+    }
+
+    public void setDocAmount_To(Float docAmount_To) {
+        this.docAmount_To = docAmount_To;
+    }
+
+    public Long getDocCurrencyId() {
+        return this.docCurrencyId;
+    }
+
+    public Long getDocCurrencyId_From() {
+        return this.docCurrencyId_From;
+    }
+
+    public Long getDocCurrencyId_To() {
+        return this.docCurrencyId_To;
+    }
+
+    public void setDocCurrencyId(Long docCurrencyId) {
+        this.docCurrencyId = docCurrencyId;
+    }
+
+    public void setDocCurrencyId_From(Long docCurrencyId_From) {
+        this.docCurrencyId_From = docCurrencyId_From;
+    }
+
+    public void setDocCurrencyId_To(Long docCurrencyId_To) {
+        this.docCurrencyId_To = docCurrencyId_To;
+    }
+
+    public String getDocCurrency() {
+        return this.docCurrency;
+    }
+
+    public void setDocCurrency(String docCurrency) {
+        this.docCurrency = docCurrency;
+    }
+
     public Float getDbAmount() {
         return this.dbAmount;
     }
@@ -222,6 +472,38 @@ public class AccDocDsFilter extends AbstractAuditableDsFilter {
 
     public void setCrAmount_To(Float crAmount_To) {
         this.crAmount_To = crAmount_To;
+    }
+
+    public Float getDifference() {
+        return this.difference;
+    }
+
+    public Float getDifference_From() {
+        return this.difference_From;
+    }
+
+    public Float getDifference_To() {
+        return this.difference_To;
+    }
+
+    public void setDifference(Float difference) {
+        this.difference = difference;
+    }
+
+    public void setDifference_From(Float difference_From) {
+        this.difference_From = difference_From;
+    }
+
+    public void setDifference_To(Float difference_To) {
+        this.difference_To = difference_To;
+    }
+
+    public Boolean getPosted() {
+        return this.posted;
+    }
+
+    public void setPosted(Boolean posted) {
+        this.posted = posted;
     }
 
 }

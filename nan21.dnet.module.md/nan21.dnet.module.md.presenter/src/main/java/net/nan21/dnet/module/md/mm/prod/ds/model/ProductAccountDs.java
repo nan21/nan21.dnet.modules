@@ -1,7 +1,7 @@
 /*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.mm.prod.ds.model;
 
@@ -20,6 +20,7 @@ public class ProductAccountDs extends AbstractAuditableDs<ProductAccount> {
     public static final String fGROUPCODE = "groupCode";
     public static final String fPRODUCTID = "productId";
     public static final String fPRODUCTCODE = "productCode";
+    public static final String fANALITICSEGMENT = "analiticSegment";
 
     @DsField(join = "left", path = "organization.id")
     private Long organizationId;
@@ -38,6 +39,9 @@ public class ProductAccountDs extends AbstractAuditableDs<ProductAccount> {
 
     @DsField(join = "left", path = "product.code")
     private String productCode;
+
+    @DsField()
+    private String analiticSegment;
 
     public ProductAccountDs() {
         super();
@@ -93,6 +97,14 @@ public class ProductAccountDs extends AbstractAuditableDs<ProductAccount> {
 
     public void setProductCode(String productCode) {
         this.productCode = productCode;
+    }
+
+    public String getAnaliticSegment() {
+        return this.analiticSegment;
+    }
+
+    public void setAnaliticSegment(String analiticSegment) {
+        this.analiticSegment = analiticSegment;
     }
 
 }

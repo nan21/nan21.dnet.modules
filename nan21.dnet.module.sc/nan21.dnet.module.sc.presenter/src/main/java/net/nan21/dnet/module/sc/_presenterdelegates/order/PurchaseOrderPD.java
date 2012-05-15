@@ -7,7 +7,7 @@ import net.nan21.dnet.module.sc.order.ds.model.PurchaseOrderDs;
 
 public class PurchaseOrderPD extends AbstractDsDelegate {
 
-	public void confirmOrder(PurchaseOrderDs ds) throws Exception {
+	public void confirm(PurchaseOrderDs ds) throws Exception {
 		IPurchaseOrderService srv = ((IPurchaseOrderService) this
 				.findEntityService(PurchaseOrder.class));
 		PurchaseOrder e = srv.findById(ds.getId());
@@ -15,7 +15,7 @@ public class PurchaseOrderPD extends AbstractDsDelegate {
 		srv.update(e);
 	}
 
-	public void unConfirmOrder(PurchaseOrderDs ds) throws Exception {
+	public void unConfirm(PurchaseOrderDs ds) throws Exception {
 		IPurchaseOrderService srv = ((IPurchaseOrderService) this
 				.findEntityService(PurchaseOrder.class));
 		PurchaseOrder e = srv.findById(ds.getId());

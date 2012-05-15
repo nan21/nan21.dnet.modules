@@ -8,6 +8,7 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineCtxDs$Trl", {
 	docTypeId__lbl : "Doc Type Id",
 	docType__lbl : "Doc Type",
 	docUuid__lbl : "Doc Uuid",
+	sequenceNo__lbl : "Sequence No",
 	dbAccount__lbl : "Db Account",
 	crAccount__lbl : "Cr Account",
 	dbAmount__lbl : "Db Amount",

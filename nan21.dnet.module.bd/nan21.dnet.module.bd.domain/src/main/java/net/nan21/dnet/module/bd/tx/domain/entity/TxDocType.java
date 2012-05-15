@@ -1,7 +1,7 @@
-/* 
+/*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.bd.tx.domain.entity;
 
@@ -22,6 +22,7 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccJournal;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocSequence;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -76,6 +77,9 @@ public class TxDocType extends AbstractType {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = TxDocSequence.class)
     @JoinColumn(name = "DOCSEQUENCE_ID", referencedColumnName = "ID")
     private TxDocSequence docSequence;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccJournal.class)
+    @JoinColumn(name = "JOURNAL_ID", referencedColumnName = "ID")
+    private AccJournal journal;
 
     /* ============== getters - setters ================== */
 
@@ -101,6 +105,14 @@ public class TxDocType extends AbstractType {
 
     public void setDocSequence(TxDocSequence docSequence) {
         this.docSequence = docSequence;
+    }
+
+    public AccJournal getJournal() {
+        return this.journal;
+    }
+
+    public void setJournal(AccJournal journal) {
+        this.journal = journal;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

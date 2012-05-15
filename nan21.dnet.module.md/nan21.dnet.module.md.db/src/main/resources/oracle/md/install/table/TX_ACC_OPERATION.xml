@@ -19,7 +19,9 @@
 			<column name="DBAMOUNT" type="number(12,2)">
 				<constraints nullable="false" /></column>	 
 			<column name="EVENTDATE" type="date">
-				<constraints  /></column>	 
+				<constraints nullable="false" /></column>	 
+			<column name="HEADERLINE" type="number(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="ID" type="number(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDAT" type="date">
@@ -33,6 +35,14 @@
 			<column name="VERSION" type="number(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="ACCDOCLINE_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="ACCDOC_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="ACCSCHEMA_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="ORG_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="PERIOD_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

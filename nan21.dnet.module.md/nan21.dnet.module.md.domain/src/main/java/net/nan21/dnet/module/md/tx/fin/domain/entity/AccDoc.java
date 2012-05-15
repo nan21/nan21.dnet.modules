@@ -1,7 +1,7 @@
-/* 
+/*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.tx.fin.domain.entity;
 
@@ -27,9 +27,13 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccJournal;
 import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.tx.domain.entity.FiscalPeriod;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -69,6 +73,10 @@ public class AccDoc extends AbstractAuditable {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
+    /** DocNo. */
+    @Column(name = "DOCNO", length = 255)
+    private String docNo;
+
     /** DocDate. */
     @Temporal(TemporalType.DATE)
     @Column(name = "DOCDATE", nullable = false)
@@ -79,9 +87,17 @@ public class AccDoc extends AbstractAuditable {
     @Column(name = "DOCUUID", length = 36)
     private String docUuid;
 
-    /** DocNo. */
-    @Column(name = "DOCNO", length = 255)
-    private String docNo;
+    /** DocNetAmount. */
+    @Column(name = "DOCNETAMOUNT", scale = 2)
+    private Float docNetAmount;
+
+    /** DocTaxAmount. */
+    @Column(name = "DOCTAXAMOUNT", scale = 2)
+    private Float docTaxAmount;
+
+    /** DocAmount. */
+    @Column(name = "DOCAMOUNT", scale = 2)
+    private Float docAmount;
 
     /** DbAmount. */
     @Column(name = "DBAMOUNT", scale = 2)
@@ -90,12 +106,33 @@ public class AccDoc extends AbstractAuditable {
     /** CrAmount. */
     @Column(name = "CRAMOUNT", scale = 2)
     private Float crAmount;
+
+    /** Difference. */
+    @Column(name = "DIFFERENCE", scale = 2)
+    private Float difference;
+
+    /** Posted. */
+    @Column(name = "POSTED", nullable = false)
+    @NotNull
+    private Boolean posted;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
     private Organization org;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccSchema.class)
     @JoinColumn(name = "ACCSCHEMA_ID", referencedColumnName = "ID")
     private AccSchema accSchema;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FiscalPeriod.class)
+    @JoinColumn(name = "PERIOD_ID", referencedColumnName = "ID")
+    private FiscalPeriod period;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccJournal.class)
+    @JoinColumn(name = "JOURNAL_ID", referencedColumnName = "ID")
+    private AccJournal journal;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
+    @JoinColumn(name = "DOCCURRENCY_ID", referencedColumnName = "ID")
+    private Currency docCurrency;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
+    @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "ID")
+    private BusinessPartner bpartner;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = TxDocType.class)
     @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
     private TxDocType docType;
@@ -114,6 +151,14 @@ public class AccDoc extends AbstractAuditable {
         this.id = id;
     }
 
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
+    }
+
     public Date getDocDate() {
         return this.docDate;
     }
@@ -130,12 +175,28 @@ public class AccDoc extends AbstractAuditable {
         this.docUuid = docUuid;
     }
 
-    public String getDocNo() {
-        return this.docNo;
+    public Float getDocNetAmount() {
+        return this.docNetAmount;
     }
 
-    public void setDocNo(String docNo) {
-        this.docNo = docNo;
+    public void setDocNetAmount(Float docNetAmount) {
+        this.docNetAmount = docNetAmount;
+    }
+
+    public Float getDocTaxAmount() {
+        return this.docTaxAmount;
+    }
+
+    public void setDocTaxAmount(Float docTaxAmount) {
+        this.docTaxAmount = docTaxAmount;
+    }
+
+    public Float getDocAmount() {
+        return this.docAmount;
+    }
+
+    public void setDocAmount(Float docAmount) {
+        this.docAmount = docAmount;
     }
 
     public Float getDbAmount() {
@@ -154,6 +215,22 @@ public class AccDoc extends AbstractAuditable {
         this.crAmount = crAmount;
     }
 
+    public Float getDifference() {
+        return this.difference;
+    }
+
+    public void setDifference(Float difference) {
+        this.difference = difference;
+    }
+
+    public Boolean getPosted() {
+        return this.posted;
+    }
+
+    public void setPosted(Boolean posted) {
+        this.posted = posted;
+    }
+
     public Organization getOrg() {
         return this.org;
     }
@@ -168,6 +245,38 @@ public class AccDoc extends AbstractAuditable {
 
     public void setAccSchema(AccSchema accSchema) {
         this.accSchema = accSchema;
+    }
+
+    public FiscalPeriod getPeriod() {
+        return this.period;
+    }
+
+    public void setPeriod(FiscalPeriod period) {
+        this.period = period;
+    }
+
+    public AccJournal getJournal() {
+        return this.journal;
+    }
+
+    public void setJournal(AccJournal journal) {
+        this.journal = journal;
+    }
+
+    public Currency getDocCurrency() {
+        return this.docCurrency;
+    }
+
+    public void setDocCurrency(Currency docCurrency) {
+        this.docCurrency = docCurrency;
+    }
+
+    public BusinessPartner getBpartner() {
+        return this.bpartner;
+    }
+
+    public void setBpartner(BusinessPartner bpartner) {
+        this.bpartner = bpartner;
     }
 
     public TxDocType getDocType() {
@@ -198,6 +307,9 @@ public class AccDoc extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
+        if (this.getPosted() == null) {
+            event.updateAttributeWithObject("posted", false);
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

@@ -1,6 +1,6 @@
-/*    
+/*
  * DNet eBusiness Suite
- * Copyright: 2008-2011 Nan21 Electronics SRL. All rights reserved.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.mm.prod.business.serviceimpl;
@@ -16,6 +16,10 @@ import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
+import net.nan21.dnet.module.md._businessdelegates.mm.prod.ProductExpenseAcctBD;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md._businessdelegates.mm.prod.ProductRevenueAcctBD;
 
 public class ProductService extends AbstractEntityService<Product> {
 
@@ -150,6 +154,18 @@ public class ProductService extends AbstractEntityService<Product> {
                         Product.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAttributesId", attributesId).getResultList();
+    }
+
+    public String getExpenseAcct(Product product, Organization organization,
+            AccSchema schema) throws Exception {
+        return this.getBusinessDelegate(ProductExpenseAcctBD.class)
+                .getPostingAcct(product, organization, schema);
+    }
+
+    public String getRevenueAcct(Product product, Organization organization,
+            AccSchema schema) throws Exception {
+        return this.getBusinessDelegate(ProductRevenueAcctBD.class)
+                .getPostingAcct(product, organization, schema);
     }
 
 }

@@ -38,10 +38,11 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx$List", {
 	
 	_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addTextColumn({ name:"dbAccount", dataIndex:"dbAccount",width:200 })   	
-		.addTextColumn({ name:"crAccount", dataIndex:"crAccount",width:200 })   	
-		.addNumberColumn({ name:"dbAmount", dataIndex:"dbAmount",decimals:2 })  
-		.addNumberColumn({ name:"crAmount", dataIndex:"crAmount",decimals:2 })  
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", hidden:true })  
+		.addTextColumn({ name:"dbAccount", dataIndex:"dbAccount", width:90 })   	
+		.addTextColumn({ name:"crAccount", dataIndex:"crAccount", width:90 })   	
+		.addNumberColumn({ name:"dbAmount", dataIndex:"dbAmount",decimals:2, width:90 })  
+		.addNumberColumn({ name:"crAmount", dataIndex:"crAmount",decimals:2, width:90 })  
 		.addNumberColumn({ name:"accDocId", dataIndex:"accDocId", hidden:true,format:"0",width:70 })  
 	  	.addDefaults()
 	  ;		   

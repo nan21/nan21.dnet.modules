@@ -1,7 +1,7 @@
-/* 
+/*
  * DNet eBusiness Suite
- * Copyright: 2010 Nan21 Electronics SRL. All rights reserved.
- * Use is subject to license terms.
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
  */
 package net.nan21.dnet.module.md.tx.fin.domain.entity;
 
@@ -60,6 +60,15 @@ public class AccDocLine extends AbstractAuditable {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
+    /** SequenceNo. */
+    @Column(name = "SEQUENCENO")
+    private Integer sequenceNo;
+
+    /** HeaderLine. */
+    @Column(name = "HEADERLINE", nullable = false)
+    @NotNull
+    private Boolean headerLine;
+
     /** DbAccount. */
     @Column(name = "DBACCOUNT", length = 255)
     private String dbAccount;
@@ -87,6 +96,22 @@ public class AccDocLine extends AbstractAuditable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
+    }
+
+    public Boolean getHeaderLine() {
+        return this.headerLine;
+    }
+
+    public void setHeaderLine(Boolean headerLine) {
+        this.headerLine = headerLine;
     }
 
     public String getDbAccount() {
@@ -133,6 +158,9 @@ public class AccDocLine extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
+        if (this.getHeaderLine() == null) {
+            event.updateAttributeWithObject("headerLine", false);
+        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {
