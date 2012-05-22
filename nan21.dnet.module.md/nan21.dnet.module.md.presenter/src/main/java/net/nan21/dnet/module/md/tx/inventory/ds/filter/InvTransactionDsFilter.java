@@ -10,6 +10,20 @@ import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDsFilter;
 
 public class InvTransactionDsFilter extends AbstractAuditableDsFilter {
 
+    private String code;
+
+    private String docNo;
+
+    private Date docDate;
+
+    private Date docDate_From;
+    private Date docDate_To;
+
+    private Date eventDate;
+
+    private Date eventDate_From;
+    private Date eventDate_To;
+
     private Long transactionTypeId;
 
     private Long transactionTypeId_From;
@@ -39,15 +53,69 @@ public class InvTransactionDsFilter extends AbstractAuditableDsFilter {
 
     private Boolean posted;
 
-    private Date eventDate;
+    public String getCode() {
+        return this.code;
+    }
 
-    private Date eventDate_From;
-    private Date eventDate_To;
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-    private Date docDate;
+    public String getDocNo() {
+        return this.docNo;
+    }
 
-    private Date docDate_From;
-    private Date docDate_To;
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
+    }
+
+    public Date getDocDate() {
+        return this.docDate;
+    }
+
+    public Date getDocDate_From() {
+        return this.docDate_From;
+    }
+
+    public Date getDocDate_To() {
+        return this.docDate_To;
+    }
+
+    public void setDocDate(Date docDate) {
+        this.docDate = docDate;
+    }
+
+    public void setDocDate_From(Date docDate_From) {
+        this.docDate_From = docDate_From;
+    }
+
+    public void setDocDate_To(Date docDate_To) {
+        this.docDate_To = docDate_To;
+    }
+
+    public Date getEventDate() {
+        return this.eventDate;
+    }
+
+    public Date getEventDate_From() {
+        return this.eventDate_From;
+    }
+
+    public Date getEventDate_To() {
+        return this.eventDate_To;
+    }
+
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
+    }
+
+    public void setEventDate_From(Date eventDate_From) {
+        this.eventDate_From = eventDate_From;
+    }
+
+    public void setEventDate_To(Date eventDate_To) {
+        this.eventDate_To = eventDate_To;
+    }
 
     public Long getTransactionTypeId() {
         return this.transactionTypeId;
@@ -175,54 +243,6 @@ public class InvTransactionDsFilter extends AbstractAuditableDsFilter {
 
     public void setPosted(Boolean posted) {
         this.posted = posted;
-    }
-
-    public Date getEventDate() {
-        return this.eventDate;
-    }
-
-    public Date getEventDate_From() {
-        return this.eventDate_From;
-    }
-
-    public Date getEventDate_To() {
-        return this.eventDate_To;
-    }
-
-    public void setEventDate(Date eventDate) {
-        this.eventDate = eventDate;
-    }
-
-    public void setEventDate_From(Date eventDate_From) {
-        this.eventDate_From = eventDate_From;
-    }
-
-    public void setEventDate_To(Date eventDate_To) {
-        this.eventDate_To = eventDate_To;
-    }
-
-    public Date getDocDate() {
-        return this.docDate;
-    }
-
-    public Date getDocDate_From() {
-        return this.docDate_From;
-    }
-
-    public Date getDocDate_To() {
-        return this.docDate_To;
-    }
-
-    public void setDocDate(Date docDate) {
-        this.docDate = docDate;
-    }
-
-    public void setDocDate_From(Date docDate_From) {
-        this.docDate_From = docDate_From;
-    }
-
-    public void setDocDate_To(Date docDate_To) {
-        this.docDate_To = docDate_To;
     }
 
 }

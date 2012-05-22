@@ -32,6 +32,7 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.bp.domain.entity.Contact;
@@ -88,6 +89,10 @@ public class SalesOrder extends AbstractAuditable {
     @NotNull
     private Date docDate;
 
+    /** DocNo. */
+    @Column(name = "DOCNO", length = 255)
+    private String docNo;
+
     /** PlannedDeliveryDate. */
     @Temporal(TemporalType.DATE)
     @Column(name = "PLANNEDDELIVERYDATE")
@@ -141,9 +146,9 @@ public class SalesOrder extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
     @JoinColumn(name = "PAYMENTMETHOD_ID", referencedColumnName = "ID")
     private PaymentMethod paymentMethod;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentTerm.class)
     @JoinColumn(name = "PAYMENTTERM_ID", referencedColumnName = "ID")
-    private PaymentMethod paymentTerm;
+    private PaymentTerm paymentTerm;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "INVENTORY_ID", referencedColumnName = "ID")
     private Organization inventory;
@@ -200,6 +205,14 @@ public class SalesOrder extends AbstractAuditable {
 
     public void setDocDate(Date docDate) {
         this.docDate = docDate;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
     }
 
     public Date getPlannedDeliveryDate() {
@@ -323,11 +336,11 @@ public class SalesOrder extends AbstractAuditable {
         this.paymentMethod = paymentMethod;
     }
 
-    public PaymentMethod getPaymentTerm() {
+    public PaymentTerm getPaymentTerm() {
         return this.paymentTerm;
     }
 
-    public void setPaymentTerm(PaymentMethod paymentTerm) {
+    public void setPaymentTerm(PaymentTerm paymentTerm) {
         this.paymentTerm = paymentTerm;
     }
 

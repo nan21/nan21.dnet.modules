@@ -13,6 +13,7 @@ import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.bp.domain.entity.Contact;
@@ -123,7 +124,7 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
                 .getResultList();
     }
 
-    public List<SalesOrder> findByPaymentTerm(PaymentMethod paymentTerm) {
+    public List<SalesOrder> findByPaymentTerm(PaymentTerm paymentTerm) {
         return this.findByPaymentTermId(paymentTerm.getId());
     }
 

@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.sc.ui.extjs/ds/PurchaseInvoiceDs", "nan21.dnet.module.sc.ui.extjs/dc/PurchaseInvoice", "nan21.dnet.module.sc.ui.extjs/ds/PurchaseInvoiceTaxDs", "nan21.dnet.module.sc.ui.extjs/dc/PurchaseInvoiceTax", "nan21.dnet.module.sc.ui.extjs/ds/PurchaseInvoiceItemDs", "nan21.dnet.module.sc.ui.extjs/dc/PurchaseInvoiceItem", "nan21.dnet.module.sc.ui.extjs/ds/PurchaseInvoiceItemTaxDs", "nan21.dnet.module.sc.ui.extjs/dc/PurchaseInvoiceItemTax", "nan21.dnet.module.md.ui.extjs/ds/AccDocLineCtxDs", "nan21.dnet.module.md.ui.extjs/dc/AccDocLineCtx", "nan21.dnet.module.ad.ui.extjs/ds/NoteDs", "nan21.dnet.module.ad.ui.extjs/dc/Note", "nan21.dnet.module.ad.ui.extjs/ds/AttachmentDs", "nan21.dnet.module.ad.ui.extjs/dc/Attachment","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.md.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.md.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/TxDocTypePILovDs","nan21.dnet.module.bd.ui.extjs/lov/TxDocTypesPI","nan21.dnet.module.bd.ui.extjs/ds/PaymentMethodLovDs","nan21.dnet.module.bd.ui.extjs/lov/PaymentMethod","nan21.dnet.module.bd.ui.extjs/ds/PaymentTermLovDs","nan21.dnet.module.bd.ui.extjs/lov/PaymentTerm","nan21.dnet.module.md.ui.extjs/ds/PayAccountLovDs","nan21.dnet.module.md.ui.extjs/lov/PayAccounts","nan21.dnet.module.md.ui.extjs/ds/ProductWithUomLovDs","nan21.dnet.module.md.ui.extjs/lov/ProductsWithUom","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.bd.ui.extjs/ds/TaxApplicableLovDs","nan21.dnet.module.bd.ui.extjs/lov/TaxApplicables","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.md.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.md.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/TxDocTypePILovDs","nan21.dnet.module.bd.ui.extjs/lov/TxDocTypesPI","nan21.dnet.module.bd.ui.extjs/ds/PaymentMethodOutLovDs","nan21.dnet.module.bd.ui.extjs/lov/PaymentMethodOut","nan21.dnet.module.bd.ui.extjs/ds/PaymentTermLovDs","nan21.dnet.module.bd.ui.extjs/lov/PaymentTerm","nan21.dnet.module.bd.ui.extjs/ds/AccSchemaLovDs","nan21.dnet.module.bd.ui.extjs/lov/AccSchemas","nan21.dnet.module.ad.ui.extjs/ds/AttachmentTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/AttachmentTypes"]);
+Dnet.doImport(["", "nan21.dnet.module.sc.ui.extjs/ds/PurchaseInvoiceDs", "nan21.dnet.module.sc.ui.extjs/dc/PurchaseInvoice", "nan21.dnet.module.sc.ui.extjs/ds/PurchaseInvoiceTaxDs", "nan21.dnet.module.sc.ui.extjs/dc/PurchaseInvoiceTax", "nan21.dnet.module.sc.ui.extjs/ds/PurchaseInvoiceItemDs", "nan21.dnet.module.sc.ui.extjs/dc/PurchaseInvoiceItem", "nan21.dnet.module.sc.ui.extjs/ds/PurchaseInvoiceItemTaxDs", "nan21.dnet.module.sc.ui.extjs/dc/PurchaseInvoiceItemTax", "nan21.dnet.module.sc.ui.extjs/ds/PurchaseTxAmountDs", "nan21.dnet.module.sc.ui.extjs/dc/PurchaseTxAmount", "nan21.dnet.module.md.ui.extjs/ds/AccDocLineCtxDs", "nan21.dnet.module.md.ui.extjs/dc/AccDocLineCtx", "nan21.dnet.module.ad.ui.extjs/ds/NoteDs", "nan21.dnet.module.ad.ui.extjs/dc/Note", "nan21.dnet.module.ad.ui.extjs/ds/AttachmentDs", "nan21.dnet.module.ad.ui.extjs/dc/Attachment","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.md.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.md.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/TxDocTypePILovDs","nan21.dnet.module.bd.ui.extjs/lov/TxDocTypesPI","nan21.dnet.module.bd.ui.extjs/ds/PaymentMethodLovDs","nan21.dnet.module.bd.ui.extjs/lov/PaymentMethod","nan21.dnet.module.bd.ui.extjs/ds/PaymentTermLovDs","nan21.dnet.module.bd.ui.extjs/lov/PaymentTerm","nan21.dnet.module.md.ui.extjs/ds/PayAccountLovDs","nan21.dnet.module.md.ui.extjs/lov/PayAccounts","nan21.dnet.module.md.ui.extjs/ds/ProductWithUomLovDs","nan21.dnet.module.md.ui.extjs/lov/ProductsWithUom","nan21.dnet.module.bd.ui.extjs/ds/UomLovDs","nan21.dnet.module.bd.ui.extjs/lov/UnitsOfMeasure","nan21.dnet.module.bd.ui.extjs/ds/TaxApplicableLovDs","nan21.dnet.module.bd.ui.extjs/lov/TaxApplicables","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.md.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.md.ui.extjs/lov/CustomersName","nan21.dnet.module.bd.ui.extjs/ds/CurrencyLovDs","nan21.dnet.module.bd.ui.extjs/lov/Currencies","nan21.dnet.module.bd.ui.extjs/ds/TxDocTypePILovDs","nan21.dnet.module.bd.ui.extjs/lov/TxDocTypesPI","nan21.dnet.module.bd.ui.extjs/ds/PaymentMethodOutLovDs","nan21.dnet.module.bd.ui.extjs/lov/PaymentMethodOut","nan21.dnet.module.bd.ui.extjs/ds/PaymentTermLovDs","nan21.dnet.module.bd.ui.extjs/lov/PaymentTerm","nan21.dnet.module.bd.ui.extjs/ds/AccSchemaLovDs","nan21.dnet.module.bd.ui.extjs/lov/AccSchemas","nan21.dnet.module.bd.ui.extjs/ds/PaymentMethodOutLovDs","nan21.dnet.module.bd.ui.extjs/lov/PaymentMethodOut","nan21.dnet.module.ad.ui.extjs/ds/AttachmentTypeLovDs","nan21.dnet.module.ad.ui.extjs/lov/AttachmentTypes"]);
 
 Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
@@ -11,12 +11,14 @@ Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI", {
 		.addDc("tax", new net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceTax({}))
 		.addDc("item", new net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem({multiEdit:true}))
 		.addDc("itemTax", new net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItemTax({}))
+		.addDc("amount", new net.nan21.dnet.module.sc.invoice.dc.PurchaseTxAmount({multiEdit:true}))
 		.addDc("accDocLine", new net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx({}))
 		.addDc("note", new net.nan21.dnet.module.ad.data.dc.Note({}))
 		.addDc("atch", new net.nan21.dnet.module.ad.data.dc.Attachment({multiEdit:true}))		
 		.linkDc("tax", "inv",{fields:[ {childField:"purchaseInvoiceId", parentField:"id"} ]} )
 		.linkDc("item", "inv",{fields:[ {childField:"purchaseInvoiceId", parentField:"id"} ]} )
 		.linkDc("itemTax", "item",{fields:[ {childField:"purchaseInvoiceItemId", parentField:"id"} ]} )
+		.linkDc("amount", "inv",{fields:[ {childField:"invoiceId", parentField:"id"} ]} )
 		.linkDc("accDocLine", "inv",{fields:[ {childField:"docUuid", parentField:"uuid"} ]} )
 		.linkDc("note", "inv",{fields:[ {childField:"targetUuid", parentField:"uuid"},{childField:"targetType", parentField:"className"} ]} )
 		.linkDc("atch", "inv",{fields:[ {childField:"targetUuid", parentField:"uuid"},{childField:"targetType", parentField:"entityFQN"} ]} );		
@@ -46,6 +48,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI", {
 		.addDcGridView("inv",{ name:"invList", xtype:"net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$List"})	 
 		.addDcFormView("inv",{ name:"invEditMain", xtype:"net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$EditMain",height:200,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnConfirmInvoice") ,this._elems_.get("btnUnConfirmInvoice") ,this._elems_.get("btnPostInvoice") ,this._elems_.get("btnUnPostInvoice") ]}]})	 
 		.addDcFormView("inv",{ name:"invEditDetails", xtype:"net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$EditDetails",title:"Details"})	 
+		.addDcEditGridView("amount",{ name:"amountList", xtype:"net.nan21.dnet.module.sc.invoice.dc.PurchaseTxAmount$EditList", frame:true,title:"Payment schedule"})	 
 		.addDcGridView("tax",{ name:"taxList", xtype:"net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceTax$List",title:"Taxes"})	 
 		.addDcGridView("accDocLine",{ name:"accDocLineList", xtype:"net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx$List"})	 
 		.addDcFilterFormView("accDocLine",{ name:"accDocLineFilter", xtype:"net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx$Filter",width:250,title:"Filter", collapsible:true})	 
@@ -58,7 +61,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI", {
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "itemsPanel",layout:"card", activeItem:0})  	 
 
-		.addPanel({name: "invDetailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
+		.addPanel({name: "invDetailsTab", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id()}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "accDocPanel", layout:"border", defaults:{split:true},title:"Accounting"})  	 
@@ -72,7 +75,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI", {
 	 	.addChildrenTo("main", ["canvas1","canvas2"]) 				 		
 		.addChildrenTo("canvas1",["invFilter","invList"] ,["north","center"])	
 		.addChildrenTo("canvas2",["invEditMain","invDetailsTab"] ,["north","center"])	
-	 	.addChildrenTo("invDetailsTab", ["invEditDetails","linesPanel","taxList","accDocPanel","atchEditList","notesPanel"]) 				 		
+	 	.addChildrenTo("invDetailsTab", ["invEditDetails","linesPanel","taxList","amountList","accDocPanel","atchEditList","notesPanel"]) 				 		
 		.addChildrenTo("accDocPanel",["accDocLineFilter","accDocLineList"] ,["west","center"])	
 		.addChildrenTo("linesPanel",["itemsPanel","itemTaxList"] ,["center","east"])	
 		.addChildrenTo("notesPanel",["noteList","noteEdit"] ,["west","center"])	
@@ -84,6 +87,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI", {
 	 	.addToolbarTo("itemList","tlbItemList")	  	
 	 	.addToolbarTo("itemEdit","tlbItemEdit")	  	
 	 	.addToolbarTo("itemTaxList","tlbItemTaxList")	  	
+	 	.addToolbarTo("amountList","tlbAmountList")	  	
 	 	.addToolbarTo("atchEditList","tlbAtchList")	  	
 	 	.addToolbarTo("noteList","tlbNoteList")	  	
 	 	.addToolbarTo("noteEdit","tlbNoteEdit")	  	
@@ -95,9 +99,10 @@ Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI", {
 			.beginToolbar("tlbInvEdit", {dc:"inv"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Purchase invoice"}).end()
 			.beginToolbar("tlbTaxList", {dc:"tax"}).addQuery().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Taxes"}).end()
 			.beginToolbar("tlbAccDocLineList", {dc:"accDocLine"}).addQuery().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Accounting"}).end()
-			.beginToolbar("tlbItemList", {dc:"item"}).addQuery().addEdit({inContainer:"itemsPanel",showView:"itemEdit"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Invoice items"}).end()
-			.beginToolbar("tlbItemEdit", {dc:"item"}).addBack({inContainer:"itemsPanel",showView:"itemList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Invoice item"}).end()
+			.beginToolbar("tlbItemList", {dc:"item"}).addQuery().addEdit({inContainer:"itemsPanel",showView:"itemEdit"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Items"}).end()
+			.beginToolbar("tlbItemEdit", {dc:"item"}).addBack({inContainer:"itemsPanel",showView:"itemList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Item"}).end()
 			.beginToolbar("tlbItemTaxList", {dc:"itemTax"}).addQuery().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Item taxes"}).end()
+			.beginToolbar("tlbAmountList", {dc:"amount"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Payment schedule"}).end()
 			.beginToolbar("tlbAtchList", {dc:"atch"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Attachments"}).end()
 			.beginToolbar("tlbNoteList", {dc:"note"}).addQuery().addSeparator().addAutoLoad().addReports().end()
 			.beginToolbar("tlbNoteEdit", {dc:"note"}).addSave().addNew().addCancel().addSeparator().addAutoLoad().addReports().end(); 	

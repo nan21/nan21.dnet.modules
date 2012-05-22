@@ -40,7 +40,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssueTask_UI", {
 		.addDcGridView("link",{ name:"linkEditList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueLink$CtxList",title:"Issue links"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
-		.addPanel({name: "taskDetailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
+		.addPanel({name: "taskDetailsTab", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id()}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "notesPanel", layout:"border", defaults:{split:true},title:"Comments"})  	 

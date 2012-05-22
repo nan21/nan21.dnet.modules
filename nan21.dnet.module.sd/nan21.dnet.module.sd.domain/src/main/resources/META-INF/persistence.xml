@@ -72,6 +72,10 @@
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvOperation</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.Payment</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentAmount</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.TxAmount</class>
+
+		<!-- Abstract classes -->
 		<class>net.nan21.dnet.core.domain.model.AbstractSimpleEntity</class>
 		<class>net.nan21.dnet.core.domain.model.AbstractAuditable</class>
 		<class>net.nan21.dnet.core.domain.model.AbstractType</class>

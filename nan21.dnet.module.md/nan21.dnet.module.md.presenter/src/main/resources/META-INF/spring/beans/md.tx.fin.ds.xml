@@ -67,12 +67,14 @@
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.md._presenterdelegates.tx.fin.AccDocPD"/>
 	  				<constructor-arg name="methodName" value="post" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="unPost">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.md._presenterdelegates.tx.fin.AccDocPD"/>
 	  				<constructor-arg name="methodName" value="unPost" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  		</map>

@@ -22,7 +22,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.CsvExport_UI", {
 		.addDcEditGridView("sort",{ name:"sortCtxEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.CsvExportSort$CtxEditList", frame:true,title:"Sort"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
-		.addPanel({name: "detailsAccordion", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id(),width:500}) 	 
+		.addPanel({name: "detailsAccordion", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id(),width:500}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}

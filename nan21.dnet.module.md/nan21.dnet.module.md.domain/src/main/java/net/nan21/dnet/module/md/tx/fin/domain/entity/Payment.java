@@ -46,7 +46,7 @@ import org.hibernate.validator.constraints.NotBlank;
 /** Payment. */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "SOURCETYPE", discriminatorType = DiscriminatorType.STRING, length = 32)
+@DiscriminatorColumn(name = "ENTITYTYPE", discriminatorType = DiscriminatorType.STRING, length = 32)
 @Table(name = Payment.TABLE_NAME)
 @Customizer(PaymentEventHandler.class)
 @NamedQueries({
@@ -78,9 +78,9 @@ public class Payment extends AbstractAuditable {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
-    /** SourceType. */
-    @Column(name = "SOURCETYPE", length = 32)
-    private String sourceType;
+    /** EntityType. */
+    @Column(name = "ENTITYTYPE", length = 32)
+    private String entityType;
 
     /** Code. */
     @Column(name = "CODE", nullable = false, length = 32)
@@ -151,12 +151,12 @@ public class Payment extends AbstractAuditable {
         this.id = id;
     }
 
-    public String getSourceType() {
-        return this.sourceType;
+    public String getEntityType() {
+        return this.entityType;
     }
 
-    public void setSourceType(String sourceType) {
-        this.sourceType = sourceType;
+    public void setEntityType(String entityType) {
+        this.entityType = entityType;
     }
 
     public String getCode() {

@@ -2,6 +2,7 @@
 Ext.define("net.nan21.dnet.module.md.tx.fin.frame.AccDoc_UI$Trl", {  	  	
 	lineList__ttl : "Lines",
 	
+	tlbDocList__ttl : "Accounting document",
 	
 	btnPost__ttl : "Post",
 	btnPost__desc : "Post document to G/L.",

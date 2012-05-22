@@ -38,7 +38,7 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.frame.AccDoc_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbDocList", {dc:"doc"}).addQuery().addReports().end()
+			.beginToolbar("tlbDocList", {dc:"doc"}).addQuery().addReports().addSeparator().addSeparator().addTitle({"text":"Accounting document"}).end()
 			.beginToolbar("tlbLineList", {dc:"line"}).addQuery().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Lines"}).end(); 	
 	}
 

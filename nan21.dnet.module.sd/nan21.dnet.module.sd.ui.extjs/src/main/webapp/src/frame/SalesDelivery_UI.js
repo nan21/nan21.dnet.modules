@@ -22,7 +22,7 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesDelivery_UI", {
 							 	
 		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.sd.order.dc.SalesDelivery$Filter",height:140})	 
 		.addDcGridView("tx",{ name:"txList", xtype:"net.nan21.dnet.module.sd.order.dc.SalesDelivery$List"})	 
-		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.sd.order.dc.SalesDelivery$Edit",height:180,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnConfirm") ,this._elems_.get("btnUnConfirm") ]}]})	 
+		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.sd.order.dc.SalesDelivery$Edit",height:200,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnConfirm") ,this._elems_.get("btnUnConfirm") ]}]})	 
 		.addDcEditGridView("txline",{ name:"txlineEditList", xtype:"net.nan21.dnet.module.md.tx.inventory.dc.InvTransactionLine$EditListFrom", frame:true})	 
 		.addDcFormView("txline",{ name:"txlineCtxFormView", xtype:"net.nan21.dnet.module.md.tx.inventory.dc.InvTransactionLine$CtxFormView",height:55})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 

@@ -1,8 +1,8 @@
-"name";"title";"active";"description"
-"AD";"Administration";"true";
-"HR";"Human Resources Managment";"true";
-"MD";"Master-data Management";"true";
-"FI";"Financials";"true";
-"PJ";"Project Managment";"true";
-"SC";"Purchasing";"true";
-"SD";"Sales & Distribution";"true";
+"sequenceNo";"name";"title";"active";"description"
+"10";"AD";"Administration";"true";
+"20";"MD";"Master-data Management";"true";
+"30";"HR";"Human Resources Managment";"true";
+"40";"SC";"Purchasing";"true";
+"50";"SD";"Sales & Distribution";"true";
+"60";"FI";"Financials";"true";
+"70";"PJ";"Project Managment";"true";

@@ -18,6 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.MenuDs" ,{
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
+		{name:"sequenceNo", type:"int", useNull:true},
 		{name:"title", type:"string"}
 	],
 	validations: [  
@@ -43,6 +44,9 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.MenuDsFilter" ,{
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"entityFQN", type:"string"},
+		{name:"sequenceNo", type:"int", useNull:true},
+		{name:"sequenceNo_From",type:"int", useNull:true},
+		{name:"sequenceNo_To",type:"int", useNull:true},
 		{name:"title", type:"string"}
 	] 
 });

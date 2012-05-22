@@ -16,6 +16,7 @@ import net.nan21.dnet.core.api.annotation.DsField;
 public class SalesOrderDs extends AbstractAuditableDs<SalesOrder> {
 
     public static final String fCODE = "code";
+    public static final String fDOCNO = "docNo";
     public static final String fDOCDATE = "docDate";
     public static final String fSUPPLIERID = "supplierId";
     public static final String fSUPPLIER = "supplier";
@@ -68,6 +69,9 @@ public class SalesOrderDs extends AbstractAuditableDs<SalesOrder> {
 
     @DsField()
     private String code;
+
+    @DsField()
+    private String docNo;
 
     @DsField(noUpdate = true)
     private Date docDate;
@@ -230,6 +234,14 @@ public class SalesOrderDs extends AbstractAuditableDs<SalesOrder> {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
     }
 
     public Date getDocDate() {

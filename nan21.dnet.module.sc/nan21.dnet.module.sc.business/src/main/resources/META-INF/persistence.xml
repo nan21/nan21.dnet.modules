@@ -13,7 +13,9 @@
 		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem</class>
 		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceTax</class>
 		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItemTax</class>
+		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseTxAmount</class>
 		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PaymentOut</class>
+		<class>net.nan21.dnet.module.sc.invoice.domain.entity.PaymentOutAmount</class>
 		<class>net.nan21.dnet.module.sc.order.domain.entity.PurchaseInventoryTransaction</class>
 
 		<!-- Dependencies -->
@@ -79,6 +81,7 @@
 		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccountMethod</class>
 
 		<!-- TX  -->
+		<class>net.nan21.dnet.module.md.asset.domain.entity.AssetBase</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionSourceType</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransaction</class>
@@ -86,6 +89,8 @@
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvOperation</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.Payment</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentAmount</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.TxAmount</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine</class>
 		<properties>

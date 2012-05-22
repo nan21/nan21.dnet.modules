@@ -57,6 +57,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$List", {
 	
 	_defineColumns_: function () {	
 		this._getBuilder_()	
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", width:70 })  
 		.addTextColumn({ name:"name", dataIndex:"name",width:120 })   	
 		.addTextColumn({ name:"title", dataIndex:"title",width:200 })   	
 		.addTextColumn({ name:"menuItem", dataIndex:"menuItem",width:120 })   	

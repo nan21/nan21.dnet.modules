@@ -1,4 +1,5 @@
 Ext.define("net.nan21.dnet.module.md.bp.frame.BPartner_UI$Trl", { 
+	balanceList__ttl : "Sold",
 	bpContactEditList__ttl : "Persoane contact",
 	bpBankAccountEditList__ttl : "Conturi bancare",
 	bpPhoneEditList__ttl : "Comunicare",
@@ -13,6 +14,7 @@ Ext.define("net.nan21.dnet.module.md.bp.frame.BPartner_UI$Trl", {
 	tlbBpEdit__ttl : "Terţ",
 	tlbAccountList__ttl : "Conturi",
 	tlbAccountEdit__ttl : "Cont",
+	tlbAcctList__ttl : "Contabilitate",
 	tlbBpContactList__ttl : "Persoane contact",
 	tlbAddressList__ttl : "Adrese",
 	tlbAddressEdit__ttl : "Adresă",
@@ -20,6 +22,7 @@ Ext.define("net.nan21.dnet.module.md.bp.frame.BPartner_UI$Trl", {
 	tlbBpPhoneNumber__ttl : "Comunicare",
 	tlbClassific__ttl : "Clasificări",
 	tlbAtchList__ttl : "Ataşamente",
+	tlbBalanceList__ttl : "Sold",
 	
 	btnCreateBpContinue__ttl : "Continuă",
 	btnCreateBpContinue__desc : "",
@@ -27,6 +30,8 @@ Ext.define("net.nan21.dnet.module.md.bp.frame.BPartner_UI$Trl", {
 	btnViewAttachment__desc : "Deschide ataşament",
 	btnUploadAttachment__ttl : "Upload...",
 	btnUploadAttachment__desc : "Upload ataşament",
+	btnShowAccounts__ttl : "Contabilitate",
+	btnShowAccounts__desc : "",
 	
 	title: "Terţi"
 });	

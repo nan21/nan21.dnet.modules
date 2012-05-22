@@ -20,24 +20,28 @@
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesOrderPD"/>
 	  				<constructor-arg name="methodName" value="generateInvoice" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="generateDelivery">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesOrderPD"/>
 	  				<constructor-arg name="methodName" value="generateDelivery" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
-	  			<entry key="confirmOrder">
+	  			<entry key="confirm">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesOrderPD"/>
-	  				<constructor-arg name="methodName" value="confirmOrder" />
+	  				<constructor-arg name="methodName" value="confirm" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
-	  			<entry key="unConfirmOrder">
+	  			<entry key="unConfirm">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesOrderPD"/>
-	  				<constructor-arg name="methodName" value="unConfirmOrder" />
+	  				<constructor-arg name="methodName" value="unConfirm" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  		</map>
@@ -50,8 +54,8 @@
 	  		<list>
 	  			<value type="java.lang.String">generateInvoice</value>
 	  			<value type="java.lang.String">generateDelivery</value>
-	  			<value type="java.lang.String">confirmOrder</value>
-	  			<value type="java.lang.String">unConfirmOrder</value>
+	  			<value type="java.lang.String">confirm</value>
+	  			<value type="java.lang.String">unConfirm</value>
 			</list>	  		 
 	  	</property>	
 	</bean>
@@ -119,24 +123,28 @@
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesDeliveryPD"/>
 	  				<constructor-arg name="methodName" value="confirm" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="unConfirm">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesDeliveryPD"/>
 	  				<constructor-arg name="methodName" value="unConfirm" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="post">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesDeliveryPD"/>
 	  				<constructor-arg name="methodName" value="post" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="unPost">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.order.SalesDeliveryPD"/>
 	  				<constructor-arg name="methodName" value="unPost" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  		</map>

@@ -7,6 +7,8 @@ package net.nan21.dnet.module.bd.contact.domain.entity;
 
 import java.util.Date;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -31,6 +33,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 /** Person. */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "ENTITYTYPE", discriminatorType = DiscriminatorType.STRING, length = 32)
 @Table(name = Person.TABLE_NAME)
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({
@@ -62,6 +65,10 @@ public class Person extends AbstractAuditable {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
+    /** EntityType. */
+    @Column(name = "ENTITYTYPE", length = 32)
+    private String entityType;
+
     /** FirstName. */
     @Column(name = "FIRSTNAME", length = 255)
     private String firstName;
@@ -91,6 +98,14 @@ public class Person extends AbstractAuditable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEntityType() {
+        return this.entityType;
+    }
+
+    public void setEntityType(String entityType) {
+        this.entityType = entityType;
     }
 
     public String getFirstName() {

@@ -2,6 +2,9 @@
 Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs$Trl", {  	  	
 	uuid__lbl : "Uuid",
 	entityFQN__lbl : "Entity FQN",
+	docNo__lbl : "Doc No",
+	docDate__lbl : "Doc Date",
+	eventDate__lbl : "Event Date",
 	customerId__lbl : "Customer Id",
 	customerCode__lbl : "Customer Code",
 	customer__lbl : "Customer",
@@ -20,8 +23,6 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs$Trl", {
 	deliveryContact__lbl : "Delivery Contact",
 	confirmed__lbl : "Confirmed",
 	posted__lbl : "Posted",
-	eventDate__lbl : "Event Date",
-	docDate__lbl : "Doc Date",
 		
 	id__lbl :"ID"
 });

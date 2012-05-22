@@ -67,18 +67,21 @@
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.md._presenterdelegates.tx.inventory.InvTransferPD"/>
 	  				<constructor-arg name="methodName" value="confirm" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="unConfirm">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.md._presenterdelegates.tx.inventory.InvTransferPD"/>
 	  				<constructor-arg name="methodName" value="unConfirm" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="post">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.md._presenterdelegates.tx.inventory.InvTransferPD"/>
 	  				<constructor-arg name="methodName" value="post" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  		</map>

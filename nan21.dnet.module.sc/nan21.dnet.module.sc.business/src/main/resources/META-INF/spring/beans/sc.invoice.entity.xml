@@ -21,6 +21,12 @@
  
  	<bean id="PaymentOutService" scope="prototype"
 	  		class="net.nan21.dnet.module.sc.invoice.business.serviceimpl.PaymentOutService"  />  
+ 
+ 	<bean id="PaymentOutAmountService" scope="prototype"
+	  		class="net.nan21.dnet.module.sc.invoice.business.serviceimpl.PaymentOutAmountService"  />  
+ 
+ 	<bean id="PurchaseTxAmountService" scope="prototype"
+	  		class="net.nan21.dnet.module.sc.invoice.business.serviceimpl.PurchaseTxAmountService"  />  
    
 </beans>
    

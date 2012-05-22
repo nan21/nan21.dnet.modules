@@ -61,7 +61,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Issues_UI", {
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "tasksPanel",layout:"card", activeItem:0,title:"Tasks"})  	 
 
-		.addPanel({name: "issueDetailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
+		.addPanel({name: "issueDetailsTab", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id()}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true,onActivateDoLayoutFor:["issueDetailsTab"]})  	 
 		.addPanel({name: "notesPanel", layout:"border", defaults:{split:true},title:"Notes"})  	 

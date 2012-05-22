@@ -19,6 +19,8 @@ Ext.define("net.nan21.dnet.module.md.bp.ds.model.BpAccountDs$Trl", {
 	vendorPaymentTermId__lbl :    "Termeni plată f.(ID)",
 	vendorPaymentTerm__lbl :    "Termeni plată f.",
 	analiticSegment__lbl :  "Segment analitic",
+	custAnaliticSegment__lbl :  "Segm. analit. client",
+	vendAnaliticSegment__lbl :  "Segm. analit. furn.",
 		 
 	id__lbl :"ID"
 });

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Export-Package: mysql.fi.install.fk;version="1.0.0.RC1",mysql.fi.insta
+ ll.table;version="1.0.0.RC1",oracle.fi.install.fk;version="1.0.0.RC1"
+ ,oracle.fi.install.table;version="1.0.0.RC1"
+Bundle-Vendor: Nan21 
+Bundle-Version: 1.0.0.RC1
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-Name: DNet FI - db
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+Bundle-SymbolicName: nan21.dnet.module.fi.db
+

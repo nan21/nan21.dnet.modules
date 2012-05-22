@@ -20,9 +20,9 @@ Ext.define("net.nan21.dnet.module.sc.order.frame.PurchaseReception_UI", {
 		.addButton({name:"btnUnConfirm",text:"Un-Confirm", tooltip:"Un-Confirm reception.",iconCls:"icon-action-rollback",disabled:true
 			,handler: this.onBtnUnConfirm,scope:this,stateManager:{name:"selected_one_clean", dc:"tx" , and: function(dc) {return (dc.record && dc.record.get("confirmed")&& !dc.record.get("posted") );}}	})	
 							 	
-		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.sc.order.dc.PurchaseReception$Filter",height:120})	 
+		.addDcFilterFormView("tx",{ name:"txFilter", xtype:"net.nan21.dnet.module.sc.order.dc.PurchaseReception$Filter",height:140})	 
 		.addDcGridView("tx",{ name:"txList", xtype:"net.nan21.dnet.module.sc.order.dc.PurchaseReception$List"})	 
-		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.sc.order.dc.PurchaseReception$Edit",height:160,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnConfirm") ,this._elems_.get("btnUnConfirm") ]}]})	 
+		.addDcFormView("tx",{ name:"txEdit", xtype:"net.nan21.dnet.module.sc.order.dc.PurchaseReception$Edit",height:180,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnConfirm") ,this._elems_.get("btnUnConfirm") ]}]})	 
 		.addDcEditGridView("txline",{ name:"txlineEditList", xtype:"net.nan21.dnet.module.md.tx.inventory.dc.InvTransactionLine$EditListTo", frame:true})	 
 		.addDcFormView("txline",{ name:"txlineCtxFormView", xtype:"net.nan21.dnet.module.md.tx.inventory.dc.InvTransactionLine$CtxFormView",height:40})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 

@@ -20,7 +20,7 @@ Ext.define("net.nan21.dnet.module.bd.geo.frame.TestCountry_UI", {
 		.addDcFormView("country",{ name:"countryEditPG", xtype:"net.nan21.dnet.module.bd.geo.dc.Country$EditPG",width:300})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
-		.addPanel({name: "gridTabs", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
+		.addPanel({name: "gridTabs", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id()}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
 	}

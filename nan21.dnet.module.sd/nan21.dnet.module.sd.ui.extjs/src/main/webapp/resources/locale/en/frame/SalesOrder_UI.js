@@ -10,8 +10,8 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI$Trl", {
 	
 	tlbOrderList__ttl : "Sales orders",
 	tlbOrderEdit__ttl : "Sales order",
-	tlbItemList__ttl : "Order items",
-	tlbItemEdit__ttl : "Order item",
+	tlbItemList__ttl : "Items",
+	tlbItemEdit__ttl : "Item",
 	
 	btnViewAttachment__ttl : "View",
 	btnViewAttachment__desc : "View the selected attachment",

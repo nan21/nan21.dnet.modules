@@ -91,6 +91,18 @@
 		<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.BpBankAccountLovDs" />
 	</bean>
    
+ 	<bean id="BpBalanceDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.BpBalanceDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.bp.ds.filter.BpBalanceDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.bp.domain.entity.BpBalance" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="BpBalance" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.BpBalanceDs" />
+	</bean>
+   
  	<bean id="BpAccountDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.BpAccountDs" />

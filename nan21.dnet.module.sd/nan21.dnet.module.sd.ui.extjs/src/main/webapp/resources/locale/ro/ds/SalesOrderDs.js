@@ -1,6 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesOrderDs$Trl", {  	  	
-	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docDate__lbl :  "Dată doc.",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docNo__lbl :  "Nr doc",
+	docDate__lbl :  "Dată doc.",
 	supplierId__lbl :    "Org. furnizor(ID)",
 	supplier__lbl :    "Org. furnizor",
 	docTypeId__lbl :    "Tip doc(ID)",

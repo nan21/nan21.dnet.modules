@@ -101,6 +101,14 @@ public class BpAccount extends AbstractAuditable {
     /** AnaliticSegment. */
     @Column(name = "ANALITICSEGMENT", length = 32)
     private String analiticSegment;
+
+    /** CustAnaliticSegment. */
+    @Column(name = "CUSTANALITICSEGMENT", length = 32)
+    private String custAnaliticSegment;
+
+    /** VendAnaliticSegment. */
+    @Column(name = "VENDANALITICSEGMENT", length = 32)
+    private String vendAnaliticSegment;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BP_ID", referencedColumnName = "ID")
     private BusinessPartner bp;
@@ -177,6 +185,22 @@ public class BpAccount extends AbstractAuditable {
 
     public void setAnaliticSegment(String analiticSegment) {
         this.analiticSegment = analiticSegment;
+    }
+
+    public String getCustAnaliticSegment() {
+        return this.custAnaliticSegment;
+    }
+
+    public void setCustAnaliticSegment(String custAnaliticSegment) {
+        this.custAnaliticSegment = custAnaliticSegment;
+    }
+
+    public String getVendAnaliticSegment() {
+        return this.vendAnaliticSegment;
+    }
+
+    public void setVendAnaliticSegment(String vendAnaliticSegment) {
+        this.vendAnaliticSegment = vendAnaliticSegment;
     }
 
     public BusinessPartner getBp() {

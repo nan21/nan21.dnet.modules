@@ -16,6 +16,10 @@ import net.nan21.dnet.core.api.annotation.DsField;
 @Ds(entity = InvTransfer.class, sort = { @SortField(field = InvTransferDs.fEVENTDATE, desc = true) })
 public class InvTransferDs extends AbstractAuditableDs<InvTransfer> {
 
+    public static final String fCODE = "code";
+    public static final String fDOCNO = "docNo";
+    public static final String fDOCDATE = "docDate";
+    public static final String fEVENTDATE = "eventDate";
     public static final String fTRANSACTIONTYPEID = "transactionTypeId";
     public static final String fTRANSACTIONTYPE = "transactionType";
     public static final String fHASFROMINVENTORY = "hasFromInventory";
@@ -26,8 +30,18 @@ public class InvTransferDs extends AbstractAuditableDs<InvTransfer> {
     public static final String fTOINVENTORY = "toInventory";
     public static final String fCONFIRMED = "confirmed";
     public static final String fPOSTED = "posted";
-    public static final String fEVENTDATE = "eventDate";
-    public static final String fDOCDATE = "docDate";
+
+    @DsField()
+    private String code;
+
+    @DsField()
+    private String docNo;
+
+    @DsField()
+    private Date docDate;
+
+    @DsField()
+    private Date eventDate;
 
     @DsField(join = "left", path = "transactionType.id")
     private Long transactionTypeId;
@@ -59,18 +73,44 @@ public class InvTransferDs extends AbstractAuditableDs<InvTransfer> {
     @DsField()
     private Boolean posted;
 
-    @DsField()
-    private Date eventDate;
-
-    @DsField()
-    private Date docDate;
-
     public InvTransferDs() {
         super();
     }
 
     public InvTransferDs(InvTransfer e) {
         super(e);
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
+    }
+
+    public Date getDocDate() {
+        return this.docDate;
+    }
+
+    public void setDocDate(Date docDate) {
+        this.docDate = docDate;
+    }
+
+    public Date getEventDate() {
+        return this.eventDate;
+    }
+
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
     }
 
     public Long getTransactionTypeId() {
@@ -151,22 +191,6 @@ public class InvTransferDs extends AbstractAuditableDs<InvTransfer> {
 
     public void setPosted(Boolean posted) {
         this.posted = posted;
-    }
-
-    public Date getEventDate() {
-        return this.eventDate;
-    }
-
-    public void setEventDate(Date eventDate) {
-        this.eventDate = eventDate;
-    }
-
-    public Date getDocDate() {
-        return this.docDate;
-    }
-
-    public void setDocDate(Date docDate) {
-        this.docDate = docDate;
     }
 
 }

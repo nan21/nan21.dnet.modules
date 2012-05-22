@@ -66,12 +66,13 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  net.nan21.dnet.module.md.mm.price.domain.entity,net.nan21.dnet.module
  .md.mm.prod.business.service,net.nan21.dnet.module.md.mm.prod.domain.
  entity,net.nan21.dnet.module.md.org.business.service,net.nan21.dnet.m
- odule.md.org.domain.entity,net.nan21.dnet.module.md.tx.inventory.busi
- ness.service,net.nan21.dnet.module.md.tx.inventory.domain.entity,net.
- nan21.dnet.module.sd.invoice.business.service,net.nan21.dnet.module.s
- d.invoice.domain.entity,net.nan21.dnet.module.sd.opportunity.business
- .service,net.nan21.dnet.module.sd.opportunity.domain.entity,net.nan21
- .dnet.module.sd.order.business.service,net.nan21.dnet.module.sd.order
- .domain.entity,org.springframework.context.weaving;version="[3.0,3.1)
- ",org.springframework.web.multipart;version="[3.0,3.1)"
+ odule.md.org.domain.entity,net.nan21.dnet.module.md.tx.fin.domain.ent
+ ity,net.nan21.dnet.module.md.tx.inventory.business.service,net.nan21.
+ dnet.module.md.tx.inventory.domain.entity,net.nan21.dnet.module.sd.in
+ voice.business.service,net.nan21.dnet.module.sd.invoice.domain.entity
+ ,net.nan21.dnet.module.sd.opportunity.business.service,net.nan21.dnet
+ .module.sd.opportunity.domain.entity,net.nan21.dnet.module.sd.order.b
+ usiness.service,net.nan21.dnet.module.sd.order.domain.entity,org.spri
+ ngframework.context.weaving;version="[3.0,3.1)",org.springframework.w
+ eb.multipart;version="[3.0,3.1)"
 

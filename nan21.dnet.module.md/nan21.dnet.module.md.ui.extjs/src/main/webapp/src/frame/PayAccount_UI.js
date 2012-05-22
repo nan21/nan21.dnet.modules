@@ -23,7 +23,7 @@ Ext.define("net.nan21.dnet.module.md.org.frame.PayAccount_UI", {
 		.addDcEditGridView("paymethod",{ name:"paymethodEditList", xtype:"net.nan21.dnet.module.md.org.dc.PayAccountMethod$CtxEditList", frame:true,title:"Payment methods"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
-		.addPanel({name: "detailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
+		.addPanel({name: "detailsTab", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id()}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	

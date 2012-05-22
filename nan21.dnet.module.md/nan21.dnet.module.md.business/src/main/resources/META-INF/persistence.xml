@@ -18,6 +18,7 @@
 		<class>net.nan21.dnet.module.md.bp.domain.entity.BpBankAccount</class>
 		<class>net.nan21.dnet.module.md.bp.domain.entity.Contact</class>
 		<class>net.nan21.dnet.module.md.bp.domain.entity.BpAccount</class>
+		<class>net.nan21.dnet.module.md.bp.domain.entity.BpBalance</class>
 		<class>net.nan21.dnet.module.md.bp.domain.entity.BpAccountAcct</class>
 		<class>net.nan21.dnet.module.md.bp.domain.entity.BpClassification</class>
 		<class>net.nan21.dnet.module.md.activity.domain.entity.CalendarEvent</class>
@@ -63,12 +64,15 @@
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvOperation</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvBalance</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransfer</class>
+		<class>net.nan21.dnet.module.md.asset.domain.entity.AssetBase</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccOperation</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccBalance</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.Payment</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentAmount</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.TxAmount</class>
 
 		<!-- Dependencies -->
 

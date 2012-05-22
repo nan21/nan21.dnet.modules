@@ -41,7 +41,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.AccessControl_UI", {
 		.addDcEditGridView("dsMtdAccess",{ name:"dsMtdAccessCtxEditList", xtype:"net.nan21.dnet.module.ad.usr.dc.DsMethodAccessControl$CtxEditList", frame:true,title:"Methods"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
-		.addPanel({name: "detailTabs", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id(),height:220}) 	 
+		.addPanel({name: "detailTabs", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id(),height:220}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		
 		.addWindow({name:"wdwCopyRules", closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("privilegeCopyRules")]

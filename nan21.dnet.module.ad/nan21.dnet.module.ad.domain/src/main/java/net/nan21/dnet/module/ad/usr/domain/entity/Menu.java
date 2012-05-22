@@ -69,6 +69,10 @@ public class Menu extends AbstractType {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
+    /** SequenceNo. */
+    @Column(name = "SEQUENCENO")
+    private Integer sequenceNo;
+
     /** Title. */
     @Column(name = "TITLE", nullable = false, length = 255)
     @NotBlank
@@ -85,6 +89,14 @@ public class Menu extends AbstractType {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
     }
 
     public String getTitle() {

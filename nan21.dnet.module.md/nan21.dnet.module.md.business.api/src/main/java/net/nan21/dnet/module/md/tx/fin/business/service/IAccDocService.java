@@ -36,13 +36,13 @@ public interface IAccDocService extends IEntityService<AccDoc> {
 
     public List<AccDoc> findByJournalId(Long journalId);
 
-    public List<AccDoc> findByDocCurrency(Currency docCurrency);
-
-    public List<AccDoc> findByDocCurrencyId(Long docCurrencyId);
-
     public List<AccDoc> findByBpartner(BusinessPartner bpartner);
 
     public List<AccDoc> findByBpartnerId(Long bpartnerId);
+
+    public List<AccDoc> findByDocCurrency(Currency docCurrency);
+
+    public List<AccDoc> findByDocCurrencyId(Long docCurrencyId);
 
     public List<AccDoc> findByDocType(TxDocType docType);
 

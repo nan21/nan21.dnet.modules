@@ -52,15 +52,17 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$Filter", {
 		.addPanel({ name:"col1", layout:"form", width:250}) 
 		.addPanel({ name:"col2", layout:"form", width:200}) 
 		.addPanel({ name:"col3", layout:"form", width:300}) 
+		.addPanel({ name:"col4", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2","col3"])
+		.addChildrenTo("main",["col1","col2","col3","col4"])
 		.addChildrenTo("col1",["customer","supplier","docType","code"])
-		.addChildrenTo("col2",["docNo","currency","confirmed","posted"])
+		.addChildrenTo("col2",["docNo","currency"])
 		.addChildrenTo("col3",["docDate","totalAmount","totalNetAmount"])
+		.addChildrenTo("col4",["confirmed","posted"])
     	.addAuditFilter()	
 	}
 }); 
@@ -105,7 +107,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$EditMain", {
 		this._getBuilder_()	
 		.addLov({ name:"customer", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"customer",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "customerId"} ]  })
 		.addLov({ name:"supplier", xtype:"net.nan21.dnet.module.md.bp.lovs.CustomersName", dataIndex:"supplier",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "supplierId"} ]  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20",noEdit:true  ,maxLength:32  })
+		.addDisplayFieldText({ name:"code", dataIndex:"code"  })
 		.addTextField({ name:"docNo", dataIndex:"docNo",anchor:"-20" ,maxLength:255  })
 		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,allowBlank:false})
 		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
@@ -126,8 +128,8 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$EditMain", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ,"col4" ])
-		.addChildrenTo("col1",["customer","supplier","docType","code"])
-		.addChildrenTo("col2",["docNo","docDate","currency"])
+		.addChildrenTo("col1",["customer","supplier","docType","currency"])
+		.addChildrenTo("col2",["docDate","docNo","code"])
 		.addChildrenTo("col3",["totalNetAmount","totalTaxAmount","totalAmount"])
 		.addChildrenTo("col4",["confirmed","posted"])
 ;

@@ -24,13 +24,13 @@
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
 		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC5" 
-				baseTableName="TX_ACC_DOC" baseColumnNames="DOCCURRENCY_ID"  
-				referencedTableName="BD_CURRENCY"  referencedColumnNames="ID" />
+				baseTableName="TX_ACC_DOC" baseColumnNames="BPARTNER_ID"  
+				referencedTableName="MD_BP"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-6">
 		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC6" 
-				baseTableName="TX_ACC_DOC" baseColumnNames="BPARTNER_ID"  
-				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+				baseTableName="TX_ACC_DOC" baseColumnNames="DOCCURRENCY_ID"  
+				referencedTableName="BD_CURRENCY"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-7">
 		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC7" 

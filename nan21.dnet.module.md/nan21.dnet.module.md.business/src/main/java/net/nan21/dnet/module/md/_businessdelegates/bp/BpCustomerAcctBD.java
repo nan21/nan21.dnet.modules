@@ -47,10 +47,11 @@ public class BpCustomerAcctBD extends AbstractBusinessDelegate {
 		}
 
 		if (acct != null && account != null) {
-			if (account.getAnaliticSegment() != null) {
+			if(account.getCustAnaliticSegment() != null) {
+				return acct.getCode() + "." + account.getCustAnaliticSegment();
+			} else if (account.getAnaliticSegment() != null) {
 				return acct.getCode() + "." + account.getAnaliticSegment();
-			}
-			// use a BP-level analytic segment ?
+			}			 
 			return acct.getCode();
 		}
 		throw new RuntimeException(

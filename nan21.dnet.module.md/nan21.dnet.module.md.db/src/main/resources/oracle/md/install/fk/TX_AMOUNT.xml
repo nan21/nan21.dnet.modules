@@ -1,0 +1,14 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_TX_AMOUNT1" baseTableName="TX_AMOUNT" baseColumnNames="BPARTNER_ID"  referencedTableName="MD_BP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_TX_AMOUNT2" baseTableName="TX_AMOUNT" baseColumnNames="ORG_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_TX_AMOUNT3" baseTableName="TX_AMOUNT" baseColumnNames="PAYMENTMETHOD_ID"  referencedTableName="BD_PAY_METHOD"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

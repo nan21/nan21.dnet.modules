@@ -1,6 +1,7 @@
 Ext.define("net.nan21.dnet.module.sd.invoice.frame.PaymentIn_UI$Trl", { 
 	itemList__ttl : "Conturi",
 	prodList__ttl : "Articole",
+	amountList__ttl : "Solduri",
 	accDocLineFilter__ttl : "Filtru",
 	accDocPanel__ttl : "Contabilitate",
 	
@@ -8,6 +9,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.PaymentIn_UI$Trl", {
 	tlbPaymentEdit__ttl : "Incasare",
 	tlbItemList__ttl : "Conturi",
 	tlbProdList__ttl : "Articole",
+	tlbAmountList__ttl : "Solduri",
 	tlbAccDocLineList__ttl : "Contabilitate",
 	
 	btnConfirm__ttl : "Confirmă",

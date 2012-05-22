@@ -1,5 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.md.bp.frame.BPartner_UI$Trl", {  	  	
+	balanceList__ttl : "Balance",
 	bpContactEditList__ttl : "Contact",
 	bpBankAccountEditList__ttl : "Bank account",
 	bpPhoneEditList__ttl : "Communication",
@@ -14,6 +15,7 @@ Ext.define("net.nan21.dnet.module.md.bp.frame.BPartner_UI$Trl", {
 	tlbBpEdit__ttl : "Business partner",
 	tlbAccountList__ttl : "Accounts",
 	tlbAccountEdit__ttl : "Account",
+	tlbAcctList__ttl : "Accounting",
 	tlbBpContactList__ttl : "Contact",
 	tlbAddressList__ttl : "Addresses",
 	tlbAddressEdit__ttl : "Address",
@@ -21,6 +23,7 @@ Ext.define("net.nan21.dnet.module.md.bp.frame.BPartner_UI$Trl", {
 	tlbBpPhoneNumber__ttl : "Communication",
 	tlbClassific__ttl : "Classifications",
 	tlbAtchList__ttl : "Attachments",
+	tlbBalanceList__ttl : "Balance",
 	
 	btnCreateBpContinue__ttl : "Continue",
 	btnCreateBpContinue__desc : "",
@@ -28,6 +31,8 @@ Ext.define("net.nan21.dnet.module.md.bp.frame.BPartner_UI$Trl", {
 	btnViewAttachment__desc : "View the selected attachment",
 	btnUploadAttachment__ttl : "Upload...",
 	btnUploadAttachment__desc : "Upload attachment file.",
+	btnShowAccounts__ttl : "Accounting",
+	btnShowAccounts__desc : "",
 	
 	title: "Business partners"
 });

@@ -38,11 +38,12 @@ import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
+import org.hibernate.validator.constraints.NotBlank;
 
 /** InvTransaction. */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "SOURCETYPE", discriminatorType = DiscriminatorType.STRING, length = 32)
+@DiscriminatorColumn(name = "ENTITYTYPE", discriminatorType = DiscriminatorType.STRING, length = 32)
 @Table(name = InvTransaction.TABLE_NAME)
 @Customizer(InvTransactionEventHandler.class)
 @NamedQueries({
@@ -74,20 +75,29 @@ public class InvTransaction extends AbstractAuditable {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
+    /** EntityType. */
+    @Column(name = "ENTITYTYPE", length = 32)
+    private String entityType;
+
+    /** Code. */
+    @Column(name = "CODE", nullable = false, length = 32)
+    @NotBlank
+    private String code;
+
     /** DocDate. */
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "DOCDATE", nullable = false)
     @NotNull
     private Date docDate;
+
+    /** DocNo. */
+    @Column(name = "DOCNO", length = 255)
+    private String docNo;
 
     /** EventDate. */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "EVENTDATE")
     private Date eventDate;
-
-    /** SourceType. */
-    @Column(name = "SOURCETYPE", length = 32)
-    private String sourceType;
 
     /** Source. */
     @Column(name = "SOURCE", length = 255)
@@ -126,6 +136,22 @@ public class InvTransaction extends AbstractAuditable {
         this.id = id;
     }
 
+    public String getEntityType() {
+        return this.entityType;
+    }
+
+    public void setEntityType(String entityType) {
+        this.entityType = entityType;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     public Date getDocDate() {
         return this.docDate;
     }
@@ -134,20 +160,20 @@ public class InvTransaction extends AbstractAuditable {
         this.docDate = docDate;
     }
 
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
+    }
+
     public Date getEventDate() {
         return this.eventDate;
     }
 
     public void setEventDate(Date eventDate) {
         this.eventDate = eventDate;
-    }
-
-    public String getSourceType() {
-        return this.sourceType;
-    }
-
-    public void setSourceType(String sourceType) {
-        this.sourceType = sourceType;
     }
 
     public String getSource() {
@@ -223,6 +249,9 @@ public class InvTransaction extends AbstractAuditable {
         }
         if (this.getPosted() == null) {
             event.updateAttributeWithObject("posted", false);
+        }
+        if (this.getCode() == null || this.getCode().equals("")) {
+            event.updateAttributeWithObject("code", "IT-" + this.getId());
         }
     }
 

@@ -35,7 +35,9 @@ Ext.define("net.nan21.dnet.module.md.bp.ds.model.BpAccountDs" ,{
 		{name:"vendorCreditLimit", type:"float", useNull:true},
 		{name:"vendorPaymentTermId", type:"int", useNull:true},
 		{name:"vendorPaymentTerm", type:"string"},
-		{name:"analiticSegment", type:"string"}
+		{name:"analiticSegment", type:"string"},
+		{name:"custAnaliticSegment", type:"string"},
+		{name:"vendAnaliticSegment", type:"string"}
 	]
 });
 
@@ -93,7 +95,9 @@ Ext.define("net.nan21.dnet.module.md.bp.ds.model.BpAccountDsFilter" ,{
 		{name:"vendorPaymentTermId_From",type:"int", useNull:true},
 		{name:"vendorPaymentTermId_To",type:"int", useNull:true},
 		{name:"vendorPaymentTerm", type:"string"},
-		{name:"analiticSegment", type:"string"}
+		{name:"analiticSegment", type:"string"},
+		{name:"custAnaliticSegment", type:"string"},
+		{name:"vendAnaliticSegment", type:"string"}
 	] 
 });
 	

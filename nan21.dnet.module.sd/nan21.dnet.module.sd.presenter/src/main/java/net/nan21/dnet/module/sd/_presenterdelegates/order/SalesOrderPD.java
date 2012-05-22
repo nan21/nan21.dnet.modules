@@ -10,7 +10,7 @@ import net.nan21.dnet.module.sd.order.ds.param.SalesOrderDsParam;
 
 public class SalesOrderPD extends AbstractDsDelegate {
 
-	public void confirmOrder(SalesOrderDs ds) throws Exception {
+	public void confirm(SalesOrderDs ds) throws Exception {
 		ISalesOrderService service = ((ISalesOrderService) this
 				.findEntityService(SalesOrder.class));
 		SalesOrder e = service.findById(ds.getId());
@@ -18,7 +18,7 @@ public class SalesOrderPD extends AbstractDsDelegate {
 		service.update(e);
 	}
 
-	public void unConfirmOrder(SalesOrderDs ds) throws Exception {
+	public void unConfirm(SalesOrderDs ds) throws Exception {
 		ISalesOrderService service = ((ISalesOrderService) this
 				.findEntityService(SalesOrder.class));
 		SalesOrder e = service.findById(ds.getId());

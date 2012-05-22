@@ -1,6 +1,7 @@
 
 Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI$Trl", {  	  	
 	invEditDetails__ttl : "Details",
+	amountList__ttl : "Payment schedule",
 	taxList__ttl : "Taxes",
 	accDocLineFilter__ttl : "Filter",
 	itemTaxList__ttl : "Item taxes",
@@ -13,8 +14,9 @@ Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI$Trl", {
 	tlbInvEdit__ttl : "Purchase invoice",
 	tlbTaxList__ttl : "Taxes",
 	tlbAccDocLineList__ttl : "Accounting",
-	tlbItemList__ttl : "Invoice items",
-	tlbItemEdit__ttl : "Invoice item",
+	tlbItemList__ttl : "Items",
+	tlbItemEdit__ttl : "Item",
+	tlbAmountList__ttl : "Payment schedule",
 	
 	btnViewAttachment__ttl : "View",
 	btnViewAttachment__desc : "View the selected attachment",

@@ -12,10 +12,14 @@ import net.nan21.dnet.module.ad.usr.domain.entity.Menu;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = Menu.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = MenuRtLovDs.fNAME) })
+@Ds(entity = Menu.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = MenuRtLovDs.fSEQUENCENO) })
 public class MenuRtLovDs extends AbstractTypeLov<Menu> {
 
+    public static final String fSEQUENCENO = "sequenceNo";
     public static final String fTITLE = "title";
+
+    @DsField()
+    private Integer sequenceNo;
 
     @DsField()
     private String title;
@@ -26,6 +30,14 @@ public class MenuRtLovDs extends AbstractTypeLov<Menu> {
 
     public MenuRtLovDs(Menu e) {
         super(e);
+    }
+
+    public Integer getSequenceNo() {
+        return this.sequenceNo;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
     }
 
     public String getTitle() {

@@ -46,10 +46,11 @@ public class BpVendorAcctBD extends AbstractBusinessDelegate {
 			// if nothing found raise an error or just return null (TBA)
 		}
 		if (acct != null && account != null) {
-			if (account.getAnaliticSegment() != null) {
+			if(account.getVendAnaliticSegment() != null) {
+				return acct.getCode() + "." + account.getVendAnaliticSegment();
+			} else if (account.getAnaliticSegment() != null) {
 				return acct.getCode() + "." + account.getAnaliticSegment();
 			}
-			// use a BP-level analytic segment ?
 			return acct.getCode();
 		}
 		throw new RuntimeException(

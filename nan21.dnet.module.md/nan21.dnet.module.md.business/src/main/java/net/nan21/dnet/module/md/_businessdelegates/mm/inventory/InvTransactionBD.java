@@ -96,6 +96,7 @@ public class InvTransactionBD extends AbstractBusinessDelegate {
 				.executeUpdate();
 
 		transaction.setConfirmed(false);
+		transaction.setEventDate(null);
 		this.em.merge(transaction);
 	}
 

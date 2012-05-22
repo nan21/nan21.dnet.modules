@@ -16,7 +16,7 @@ Ext.define("net.nan21.dnet.module.md.bp.frame.BpAccount_UI", {
 		this._getBuilder_()	
 		.addDcFilterFormView("account",{ name:"accountFilter", xtype:"net.nan21.dnet.module.md.bp.dc.BpAccount$Filter",height:120})	 
 		.addDcGridView("account",{ name:"accountList", xtype:"net.nan21.dnet.module.md.bp.dc.BpAccount$List"})	 
-		.addDcFormView("account",{ name:"accountEdit", xtype:"net.nan21.dnet.module.md.bp.dc.BpAccount$Edit",height:150})	 
+		.addDcFormView("account",{ name:"accountEdit", xtype:"net.nan21.dnet.module.md.bp.dc.BpAccount$Edit",height:240})	 
 		.addDcEditGridView("acct",{ name:"acctEditList", xtype:"net.nan21.dnet.module.md.bp.dc.BpAccountAcct$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

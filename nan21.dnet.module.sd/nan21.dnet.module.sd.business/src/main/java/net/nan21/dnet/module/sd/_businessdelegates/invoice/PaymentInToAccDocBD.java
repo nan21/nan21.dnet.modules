@@ -1,5 +1,6 @@
 package net.nan21.dnet.module.sd._businessdelegates.invoice;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -37,11 +38,26 @@ public class PaymentInToAccDocBD extends AbstractBusinessDelegate {
 	 * @throws Exception
 	 */
 	public void unPost(PaymentIn payment) throws Exception {
-		this.em.createQuery(
-				"delete from AccDoc t " + " where t.docUuid = :invoiceUuid")
-				.setParameter("invoiceUuid", payment.getUuid()).executeUpdate();
-		payment.setPosted(false);
-		this.em.merge(payment);
+		try {
+			this.em
+					.createQuery(
+							"delete from AccDoc t "
+									+ " where t.docUuid = :invoiceUuid")
+					.setParameter("invoiceUuid", payment.getUuid())
+					.executeUpdate();
+			payment.setPosted(false);
+			this.em.merge(payment);
+		} catch (Exception e) {
+			if (e.getCause() != null
+					&& e.getCause() instanceof SQLIntegrityConstraintViolationException) {
+				throw new RuntimeException(
+						"Cannot unpost document `"
+								+ payment.getCode()
+								+ "`. The corresponding accounting document is already posted to great ledger.");
+			} else {
+				throw e;
+			}
+		}
 	}
 
 	/**
@@ -67,7 +83,6 @@ public class PaymentInToAccDocBD extends AbstractBusinessDelegate {
 		return result;
 	}
 
-	
 	/**
 	 * Generate accounting document from payment.
 	 * 
@@ -85,9 +100,7 @@ public class PaymentInToAccDocBD extends AbstractBusinessDelegate {
 			return this.generateAccDocPayment(payment, schema);
 		}
 	}
-	
-	
-	 
+
 	/**
 	 * Create accounting document header based on payment document header data.
 	 * 
@@ -119,20 +132,19 @@ public class PaymentInToAccDocBD extends AbstractBusinessDelegate {
 		accDoc.setBpartner(payment.getBpartner());
 		return accDoc;
 	}
-	
-	
+
 	protected AccDoc generateAccDocRevenue(PaymentIn payment, AccSchema schema)
-	throws Exception {
-		
+			throws Exception {
+
 		AccDoc accDoc = this.createHeader(payment, schema);
 
 		Float totalCrAmount = 0F;
 		Float totalDbAmount = 0F;
 
-		int i=1;
-		
+		int i = 1;
+
 		// header line - financial account
-		
+
 		String dbAccount = this.getPayAcctService().getPostingDepositAcct(
 				payment.getToAccount(), schema);
 
@@ -149,22 +161,24 @@ public class PaymentInToAccDocBD extends AbstractBusinessDelegate {
 		totalDbAmount = line.getDbAmount();
 
 		// detail line(s) - expense items
- 
+
 		String crAccount = null;
 		Collection<PaymentItem> items = payment.getLines();
 		for (PaymentItem item : items) {
-			
+
 			if (item.getProduct() != null) {
-				crAccount = this.getProdService().getRevenueAcct(item.getProduct(), payment.getToOrg(), schema);
+				crAccount = this.getProdService().getRevenueAcct(
+						item.getProduct(), payment.getToOrg(), schema);
 			} else {
-				crAccount = this.getAccItemAcctService().getCrPostingAcct(item.getAccItem(), schema);				 
+				crAccount = this.getAccItemAcctService().getCrPostingAcct(
+						item.getAccItem(), schema);
 			}
 			AccDocLine itemLine = new AccDocLine();
 			itemLine.setAccDoc(accDoc);
 			line.setSequenceNo(i++);
 			itemLine.setCrAccount(crAccount);
 			itemLine.setCrAmount(item.getAmount());
-			
+
 			accDoc.addToLines(itemLine);
 			totalCrAmount += itemLine.getCrAmount();
 		}
@@ -175,9 +189,7 @@ public class PaymentInToAccDocBD extends AbstractBusinessDelegate {
 				- accDoc.getCrAmount()));
 		return accDoc;
 	}
-	
-	
-	
+
 	/**
 	 * Generate accounting document from payment.
 	 * 
@@ -226,8 +238,6 @@ public class PaymentInToAccDocBD extends AbstractBusinessDelegate {
 
 		return accDoc;
 	}
-
-	
 
 	protected IBusinessPartnerService getBpService() throws Exception {
 		if (this.bpService == null) {

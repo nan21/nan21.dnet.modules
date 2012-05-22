@@ -21,6 +21,8 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
+import net.nan21.dnet.module.md.asset.domain.entity.AssetBase;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -87,6 +89,12 @@ public class AccDocLine extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccDoc.class)
     @JoinColumn(name = "ACCDOC_ID", referencedColumnName = "ID")
     private AccDoc accDoc;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
+    @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
+    private Product product;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AssetBase.class)
+    @JoinColumn(name = "ASSET_ID", referencedColumnName = "ID")
+    private AssetBase asset;
 
     /* ============== getters - setters ================== */
 
@@ -152,6 +160,22 @@ public class AccDocLine extends AbstractAuditable {
 
     public void setAccDoc(AccDoc accDoc) {
         this.accDoc = accDoc;
+    }
+
+    public Product getProduct() {
+        return this.product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public AssetBase getAsset() {
+        return this.asset;
+    }
+
+    public void setAsset(AssetBase asset) {
+        this.asset = asset;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

@@ -1,5 +1,6 @@
 package net.nan21.dnet.module.sc._businessdelegates.invoice;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -38,11 +39,26 @@ public class PaymentOutToAccDocBD extends AbstractBusinessDelegate {
 	 * @throws Exception
 	 */
 	public void unPost(PaymentOut payment) throws Exception {
-		this.em.createQuery(
-				"delete from AccDoc t " + " where t.docUuid = :invoiceUuid")
-				.setParameter("invoiceUuid", payment.getUuid()).executeUpdate();
-		payment.setPosted(false);
-		this.em.merge(payment);
+		try {
+			this.em
+					.createQuery(
+							"delete from AccDoc t "
+									+ " where t.docUuid = :invoiceUuid")
+					.setParameter("invoiceUuid", payment.getUuid())
+					.executeUpdate();
+			payment.setPosted(false);
+			this.em.merge(payment);
+		} catch (Exception e) {
+			if (e.getCause() != null
+					&& e.getCause() instanceof SQLIntegrityConstraintViolationException) {
+				throw new RuntimeException(
+						"Cannot unpost document `"
+								+ payment.getCode()
+								+ "`. The corresponding accounting document is already posted to great ledger.");
+			} else {
+				throw e;
+			}
+		}
 	}
 
 	/**
@@ -135,7 +151,7 @@ public class PaymentOutToAccDocBD extends AbstractBusinessDelegate {
 		Float totalCrAmount = 0F;
 		Float totalDbAmount = 0F;
 
-		int i=1;
+		int i = 1;
 		// header line - financial account
 
 		String crAccount = this.getPayAcctService().getPostingWithdrawalAcct(
@@ -154,22 +170,24 @@ public class PaymentOutToAccDocBD extends AbstractBusinessDelegate {
 		totalCrAmount = line.getCrAmount();
 
 		// detail line(s) - expense items
- 
+
 		String dbAccount = null;
 		Collection<PaymentItem> items = payment.getLines();
 		for (PaymentItem item : items) {
-			
+
 			if (item.getProduct() != null) {
-				dbAccount = this.getProdService().getExpenseAcct(item.getProduct(), payment.getFromOrg(), schema);
+				dbAccount = this.getProdService().getExpenseAcct(
+						item.getProduct(), payment.getFromOrg(), schema);
 			} else {
-				dbAccount = this.getAccItemAcctService().getDbPostingAcct(item.getAccItem(), schema);				 
+				dbAccount = this.getAccItemAcctService().getDbPostingAcct(
+						item.getAccItem(), schema);
 			}
 			AccDocLine itemLine = new AccDocLine();
 			itemLine.setAccDoc(accDoc);
 			line.setSequenceNo(i++);
 			itemLine.setDbAccount(dbAccount);
 			itemLine.setDbAmount(item.getAmount());
-			
+
 			accDoc.addToLines(itemLine);
 			totalDbAmount += itemLine.getDbAmount();
 		}
@@ -197,7 +215,7 @@ public class PaymentOutToAccDocBD extends AbstractBusinessDelegate {
 
 		// header line - vendor
 
-		int i=1;
+		int i = 1;
 		String dbAccount = getBpService().getPostingVendorAcct(
 				payment.getBpartner(), payment.getFromOrg(), schema);
 		AccDocLine line = new AccDocLine();

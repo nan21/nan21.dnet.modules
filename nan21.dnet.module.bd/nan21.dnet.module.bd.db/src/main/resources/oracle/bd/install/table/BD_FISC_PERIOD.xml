@@ -26,6 +26,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="NOTES" type="varchar2(4000)">
 				<constraints  /></column>	 
+			<column name="POSTING" type="number(1)">
+				<constraints nullable="false" /></column>	 
 			<column name="STARTDATE" type="date">
 				<constraints  /></column>	 
 			<column name="UUID" type="varchar2(36)">

@@ -21,7 +21,7 @@
 		<addForeignKeyConstraint constraintName="FK_SC_PO6" baseTableName="SC_PO" baseColumnNames="PAYMENTMETHOD_ID"  referencedTableName="BD_PAY_METHOD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-7">
-		<addForeignKeyConstraint constraintName="FK_SC_PO7" baseTableName="SC_PO" baseColumnNames="PAYMENTTERM_ID"  referencedTableName="BD_PAY_METHOD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_PO7" baseTableName="SC_PO" baseColumnNames="PAYMENTTERM_ID"  referencedTableName="BD_PAY_TERM"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-8">
 		<addForeignKeyConstraint constraintName="FK_SC_PO8" baseTableName="SC_PO" baseColumnNames="INVENTORY_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />

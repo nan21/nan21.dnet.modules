@@ -38,52 +38,8 @@
 	
 	<context:annotation-config />
 	<context:load-time-weaver aspectj-weaving="on" />
-    
-	<!-- JPA EntityManagerFactory -->
-	<bean id="entityManagerFactory"
-		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="dataSource" ref="osgiDataSource" />
-		<property name="jpaDialect" ref="jpaDialect"></property>
-		<property name="persistenceUnitName" value="${emf.persistenceUnitName}" />
-		<property name="jpaVendorAdapter">
-			<bean
-				class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
-				<property name="showSql" value="true" />
-			</bean>
-		</property>
-		<property name="persistenceUnitPostProcessors">
-			<list>
-				<bean 
-					class="net.nan21.dnet.core.business.persistenceunit.DnetPersistenceUnitPostProcessor">
-					<constructor-arg value="${emf.persistenceUnitName}" />
-					<constructor-arg ref="osgiDataSource" />
-					<constructor-arg>
-						<props>
-							<prop key="eclipselink.ddl-generation">${eclipselink.ddl-generation}</prop>
-							<prop key="eclipselink.application-location">${eclipselink.application-location}</prop>
-							<prop key="eclipselink.create-ddl-jdbc-file-name">create_nan21_dnet_module_bd.sql</prop>
-							<prop key="eclipselink.drop-ddl-jdbc-file-name">drop_nan21_dnet_module_bd.sql</prop>
-							<prop key="eclipselink.ddl-generation.output-mode">${eclipselink.ddl-generation.output-mode}</prop>
-							<prop key="eclipselink.logging.level">${eclipselink.logging.level}</prop>
-							<prop key="eclipselink.logging.timestamp">${eclipselink.logging.timestamp}</prop>
-							<prop key="eclipselink.logging.session">${eclipselink.logging.session}</prop>
-							<prop key="eclipselink.logging.thread">${eclipselink.logging.thread}</prop>
-							<prop key="eclipselink.logging.exceptions">${eclipselink.logging.exceptions}</prop>
-							
-							<prop key="eclipselink.cache.type.default">${eclipselink.cache.type.default}</prop>
-							<prop key="eclipselink.cache.size.default">${eclipselink.cache.size.default}</prop>
-							<prop key="eclipselink.cache.shared.default">${eclipselink.cache.shared.default}</prop>
-							<prop key="eclipselink.flush-clear.cache">${eclipselink.flush-clear.cache}</prop>
-							
-						</props>
-					</constructor-arg>
-				</bean>
-			</list>
-		</property>
-	</bean>
 	
-	<bean id="jpaDialect"
-		class="org.springframework.orm.jpa.vendor.EclipseLinkJpaDialect" />
+    <import resource="emf/mc-emf-${dnet.emf.type}.xml" /> 
   
 	<bean id="baseAsgnTxService" scope="prototype"
 	  		class="net.nan21.dnet.core.business.service.BaseAsgnTxService"  />  
@@ -91,13 +47,7 @@
 	<bean id="asgnTxServiceFactory" class="net.nan21.dnet.core.business.service.AsgnTxServiceFactory">
 		<property name="name" value="nan21.dnet.module.ad.business" />
 	</bean>  		
-	
-	<!-- Transaction manager -->
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
-		<property name="jpaDialect" ref="jpaDialect"></property>
-	</bean>
-	
+	 
 	<tx:annotation-driven mode="aspectj" />
 	<bean id="entityServiceFactory" class="net.nan21.dnet.core.business.service.EntityServiceFactory">
 	</bean> 

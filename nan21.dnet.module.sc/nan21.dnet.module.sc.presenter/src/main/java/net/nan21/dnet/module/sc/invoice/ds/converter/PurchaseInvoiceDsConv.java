@@ -11,8 +11,10 @@ import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.tx.business.service.IPaymentMethodService;
+import net.nan21.dnet.module.bd.tx.business.service.IPaymentTermService;
 import net.nan21.dnet.module.bd.tx.business.service.ITxDocTypeService;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
@@ -56,11 +58,11 @@ public class PurchaseInvoiceDsConv extends
             if (e.getPaymentTerm() == null
                     || !e.getPaymentTerm().getId()
                             .equals(ds.getPaymentTermId())) {
-                e.setPaymentTerm((PaymentMethod) this.em.find(
-                        PaymentMethod.class, ds.getPaymentTermId()));
+                e.setPaymentTerm((PaymentTerm) this.em.find(PaymentTerm.class,
+                        ds.getPaymentTermId()));
             }
         } else {
-            this.lookup_paymentTerm_PaymentMethod(ds, e);
+            this.lookup_paymentTerm_PaymentTerm(ds, e);
         }
 
         if (ds.getDocTypeId() != null) {
@@ -148,16 +150,16 @@ public class PurchaseInvoiceDsConv extends
         }
     }
 
-    protected void lookup_paymentTerm_PaymentMethod(PurchaseInvoiceDs ds,
+    protected void lookup_paymentTerm_PaymentTerm(PurchaseInvoiceDs ds,
             PurchaseInvoice e) throws Exception {
         if (ds.getPaymentTerm() != null && !ds.getPaymentTerm().equals("")) {
-            PaymentMethod x = null;
+            PaymentTerm x = null;
             try {
-                x = ((IPaymentMethodService) findEntityService(PaymentMethod.class))
+                x = ((IPaymentTermService) findEntityService(PaymentTerm.class))
                         .findByName(ds.getPaymentTerm());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `PaymentMethod` reference:  `paymentTerm` = "
+                        "Invalid value provided to find `PaymentTerm` reference:  `paymentTerm` = "
                                 + ds.getPaymentTerm() + "  ");
             }
             e.setPaymentTerm(x);

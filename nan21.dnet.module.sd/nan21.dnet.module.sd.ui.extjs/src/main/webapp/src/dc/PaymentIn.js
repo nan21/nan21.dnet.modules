@@ -45,8 +45,8 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.PaymentIn$Filter", {
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
 		.addPanel({ name:"col2", layout:"form",width:210}) 
-		.addPanel({ name:"col3", layout:"form", width:170}) 
-		.addPanel({ name:"col4", layout:"form", width:300}) 
+		.addPanel({ name:"col3", layout:"form", width:300}) 
+		.addPanel({ name:"col4", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
@@ -55,8 +55,8 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.PaymentIn$Filter", {
 		.addChildrenTo("main",["col1","col2","col3","col4"])
 		.addChildrenTo("col1",["org","payFrom","paymentMethod","toAccount"])
 		.addChildrenTo("col2",["docNo","code","currency"])
-		.addChildrenTo("col3",["confirmed","posted"])
-		.addChildrenTo("col4",["docDate","amount"])
+		.addChildrenTo("col3",["docDate","amount"])
+		.addChildrenTo("col4",["confirmed","posted"])
     	.addAuditFilter()	
 	}
 }); 
@@ -98,7 +98,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.PaymentIn$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20",noEdit:true  ,maxLength:32  })
+		.addDisplayFieldText({ name:"code", dataIndex:"code"  })
 		.addTextField({ name:"docNo", dataIndex:"docNo",anchor:"-20" ,maxLength:255  })
 		.addDateField({ name:"docDate", dataIndex:"docDate",anchor:"-20" ,allowBlank:false})
 		.addNumberField({ name:"amount", dataIndex:"amount",anchor:"-20" ,allowBlank:false , style: "text-align:right;" })

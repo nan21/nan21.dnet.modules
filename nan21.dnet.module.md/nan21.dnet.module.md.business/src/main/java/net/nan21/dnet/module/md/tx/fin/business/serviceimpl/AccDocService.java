@@ -91,19 +91,6 @@ public class AccDocService extends AbstractEntityService<AccDoc> implements
                 .setParameter("pJournalId", journalId).getResultList();
     }
 
-    public List<AccDoc> findByDocCurrency(Currency docCurrency) {
-        return this.findByDocCurrencyId(docCurrency.getId());
-    }
-
-    public List<AccDoc> findByDocCurrencyId(Long docCurrencyId) {
-        return (List<AccDoc>) this.em
-                .createQuery(
-                        "select e from AccDoc e where e.clientId = :pClientId and e.docCurrency.id = :pDocCurrencyId",
-                        AccDoc.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pDocCurrencyId", docCurrencyId).getResultList();
-    }
-
     public List<AccDoc> findByBpartner(BusinessPartner bpartner) {
         return this.findByBpartnerId(bpartner.getId());
     }
@@ -115,6 +102,19 @@ public class AccDocService extends AbstractEntityService<AccDoc> implements
                         AccDoc.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pBpartnerId", bpartnerId).getResultList();
+    }
+
+    public List<AccDoc> findByDocCurrency(Currency docCurrency) {
+        return this.findByDocCurrencyId(docCurrency.getId());
+    }
+
+    public List<AccDoc> findByDocCurrencyId(Long docCurrencyId) {
+        return (List<AccDoc>) this.em
+                .createQuery(
+                        "select e from AccDoc e where e.clientId = :pClientId and e.docCurrency.id = :pDocCurrencyId",
+                        AccDoc.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pDocCurrencyId", docCurrencyId).getResultList();
     }
 
     public List<AccDoc> findByDocType(TxDocType docType) {

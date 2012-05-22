@@ -23,6 +23,8 @@ Ext.define("net.nan21.dnet.module.md.bp.ds.model.BpAccountDs$Trl", {
 	vendorPaymentTermId__lbl : "Vendor Payment Term Id",
 	vendorPaymentTerm__lbl : "Vendor Payment Term",
 	analiticSegment__lbl : "Analitic Segment",
+	custAnaliticSegment__lbl : "Cust Analitic Segment",
+	vendAnaliticSegment__lbl : "Vend Analitic Segment",
 		
 	id__lbl :"ID"
 });

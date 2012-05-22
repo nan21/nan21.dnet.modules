@@ -88,6 +88,11 @@ public class FiscalPeriod extends AbstractTypeWithCode {
     @Temporal(TemporalType.DATE)
     @Column(name = "ENDDATE")
     private Date endDate;
+
+    /** Posting. */
+    @Column(name = "POSTING", nullable = false)
+    @NotNull
+    private Boolean posting;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = FiscalYear.class)
     @JoinColumn(name = "YEAR_ID", referencedColumnName = "ID")
     private FiscalYear year;
@@ -118,6 +123,14 @@ public class FiscalPeriod extends AbstractTypeWithCode {
         this.endDate = endDate;
     }
 
+    public Boolean getPosting() {
+        return this.posting;
+    }
+
+    public void setPosting(Boolean posting) {
+        this.posting = posting;
+    }
+
     public FiscalYear getYear() {
         return this.year;
     }
@@ -130,6 +143,9 @@ public class FiscalPeriod extends AbstractTypeWithCode {
 
         super.aboutToInsert(event);
 
+        if (this.getPosting() == null) {
+            event.updateAttributeWithObject("posting", false);
+        }
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }

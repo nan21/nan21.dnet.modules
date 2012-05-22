@@ -35,6 +35,8 @@ public class BpAccountDs extends AbstractAuditableDs<BpAccount> {
     public static final String fVENDORPAYMENTTERMID = "vendorPaymentTermId";
     public static final String fVENDORPAYMENTTERM = "vendorPaymentTerm";
     public static final String fANALITICSEGMENT = "analiticSegment";
+    public static final String fCUSTANALITICSEGMENT = "custAnaliticSegment";
+    public static final String fVENDANALITICSEGMENT = "vendAnaliticSegment";
 
     @DsField(join = "left", path = "bp.id")
     private Long businessPartnerId;
@@ -98,6 +100,12 @@ public class BpAccountDs extends AbstractAuditableDs<BpAccount> {
 
     @DsField()
     private String analiticSegment;
+
+    @DsField()
+    private String custAnaliticSegment;
+
+    @DsField()
+    private String vendAnaliticSegment;
 
     public BpAccountDs() {
         super();
@@ -273,6 +281,22 @@ public class BpAccountDs extends AbstractAuditableDs<BpAccount> {
 
     public void setAnaliticSegment(String analiticSegment) {
         this.analiticSegment = analiticSegment;
+    }
+
+    public String getCustAnaliticSegment() {
+        return this.custAnaliticSegment;
+    }
+
+    public void setCustAnaliticSegment(String custAnaliticSegment) {
+        this.custAnaliticSegment = custAnaliticSegment;
+    }
+
+    public String getVendAnaliticSegment() {
+        return this.vendAnaliticSegment;
+    }
+
+    public void setVendAnaliticSegment(String vendAnaliticSegment) {
+        this.vendAnaliticSegment = vendAnaliticSegment;
     }
 
 }

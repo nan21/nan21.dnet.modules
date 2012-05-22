@@ -14,6 +14,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="ENTITYTYPE" type="varchar(32)">
+				<constraints  /></column>	 
 			<column name="FIRSTNAME" type="varchar(255)">
 				<constraints  /></column>	 
 			<column name="GENDER" type="varchar(16)">

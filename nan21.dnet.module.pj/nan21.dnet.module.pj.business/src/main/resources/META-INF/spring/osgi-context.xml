@@ -10,7 +10,8 @@
 		http://www.springframework.org/schema/osgi/spring-osgi.xsd
 	http://www.springframework.org/schema/osgi-compendium 
 		http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
-	 
+	
+	<import resource="emf/oc-emf-${dnet.emf.type}.xml" /> 
 	
 	<osgi:reference id="systemConfig" cardinality="1..1"
 		interface="net.nan21.dnet.core.api.ISystemConfig" />

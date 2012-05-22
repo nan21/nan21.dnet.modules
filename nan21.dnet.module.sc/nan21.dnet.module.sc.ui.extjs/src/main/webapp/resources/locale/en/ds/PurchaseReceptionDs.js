@@ -2,6 +2,9 @@
 Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseReceptionDs$Trl", {  	  	
 	uuid__lbl : "Uuid",
 	entityFQN__lbl : "Entity FQN",
+	docNo__lbl : "Doc No",
+	docDate__lbl : "Doc Date",
+	eventDate__lbl : "Event Date",
 	supplierId__lbl : "Supplier Id",
 	supplierCode__lbl : "Supplier Code",
 	supplier__lbl : "Supplier",
@@ -14,8 +17,6 @@ Ext.define("net.nan21.dnet.module.sc.order.ds.model.PurchaseReceptionDs$Trl", {
 	carrier__lbl : "Carrier",
 	warehouseId__lbl : "Warehouse Id",
 	warehouse__lbl : "Warehouse",
-	eventDate__lbl : "Event Date",
-	docDate__lbl : "Doc Date",
 	confirmed__lbl : "Confirmed",
 	posted__lbl : "Posted",
 		

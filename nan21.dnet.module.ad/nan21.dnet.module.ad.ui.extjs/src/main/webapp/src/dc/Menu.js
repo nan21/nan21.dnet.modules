@@ -46,6 +46,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.Menu$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right", width:70,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addTextColumn({ name:"title", dataIndex:"title",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})

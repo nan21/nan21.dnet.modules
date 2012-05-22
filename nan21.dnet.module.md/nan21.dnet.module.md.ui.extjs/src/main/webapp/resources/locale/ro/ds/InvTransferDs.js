@@ -1,6 +1,9 @@
 
 Ext.define("net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransferDs$Trl", {  	  	
-	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	transactionTypeId__lbl :    "Tip(ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docNo__lbl :  "Nr doc",
+	docDate__lbl :  "Dată doc.",
+	eventDate__lbl :  "Dată eveniment",
+	transactionTypeId__lbl :    "Tip(ID)",
 	transactionType__lbl :    "Tip",
 	hasFromInventory__lbl :    "Cu gest. sursă",
 	hasToInventory__lbl :    "Cu gest. destinaţie",
@@ -10,8 +13,6 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransferDs$Trl", {
 	toInventory__lbl :    "Gestiune destinaţie",
 	confirmed__lbl :  "Confirmat",
 	posted__lbl :  "Inregistrat",
-	eventDate__lbl :  "Dată eveniment",
-	docDate__lbl :  "Dată doc.",
 		 
 	id__lbl :"ID"
 });

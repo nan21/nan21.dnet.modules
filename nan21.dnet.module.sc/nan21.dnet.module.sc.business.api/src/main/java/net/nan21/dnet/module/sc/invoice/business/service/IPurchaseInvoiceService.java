@@ -10,6 +10,7 @@ import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
@@ -42,7 +43,7 @@ public interface IPurchaseInvoiceService extends
 
     public List<PurchaseInvoice> findByPaymentMethodId(Long paymentMethodId);
 
-    public List<PurchaseInvoice> findByPaymentTerm(PaymentMethod paymentTerm);
+    public List<PurchaseInvoice> findByPaymentTerm(PaymentTerm paymentTerm);
 
     public List<PurchaseInvoice> findByPaymentTermId(Long paymentTermId);
 

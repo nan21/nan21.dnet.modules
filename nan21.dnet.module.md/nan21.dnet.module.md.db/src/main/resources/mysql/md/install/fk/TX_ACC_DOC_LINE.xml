@@ -7,4 +7,14 @@
 				baseTableName="TX_ACC_DOC_LINE" baseColumnNames="ACCDOC_ID"  
 				referencedTableName="TX_ACC_DOC"  referencedColumnNames="ID" />
 	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC_LINE2" 
+				baseTableName="TX_ACC_DOC_LINE" baseColumnNames="PRODUCT_ID"  
+				referencedTableName="MD_PROD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC_LINE3" 
+				baseTableName="TX_ACC_DOC_LINE" baseColumnNames="ASSET_ID"  
+				referencedTableName="MD_ASSET_BASE"  referencedColumnNames="ID" />
+	</changeSet>	
 </databaseChangeLog>    

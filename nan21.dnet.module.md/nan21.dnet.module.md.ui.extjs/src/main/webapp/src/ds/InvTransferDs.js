@@ -15,6 +15,10 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransferDs" ,{
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
+		{name:"docNo", type:"string"},
+		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"transactionTypeId", type:"int", useNull:true},
 		{name:"transactionType", type:"string"},
 		{name:"hasFromInventory", type:"boolean"},
@@ -24,9 +28,7 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransferDs" ,{
 		{name:"toInventoryId", type:"int", useNull:true},
 		{name:"toInventory", type:"string"},
 		{name:"confirmed", type:"boolean"},
-		{name:"posted", type:"boolean"},
-		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
+		{name:"posted", type:"boolean"}
 	]
 });
 
@@ -44,6 +46,14 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransferDsFilter" 
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
+		{name:"docNo", type:"string"},
+		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"eventDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"eventDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"transactionTypeId", type:"int", useNull:true},
 		{name:"transactionTypeId_From",type:"int", useNull:true},
 		{name:"transactionTypeId_To",type:"int", useNull:true},
@@ -59,13 +69,7 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransferDsFilter" 
 		{name:"toInventoryId_To",type:"int", useNull:true},
 		{name:"toInventory", type:"string"},
 		{name:"confirmed", type:"boolean", useNull:true},
-		{name:"posted", type:"boolean", useNull:true},
-		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"eventDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"eventDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
+		{name:"posted", type:"boolean", useNull:true}
 	] 
 });
 	

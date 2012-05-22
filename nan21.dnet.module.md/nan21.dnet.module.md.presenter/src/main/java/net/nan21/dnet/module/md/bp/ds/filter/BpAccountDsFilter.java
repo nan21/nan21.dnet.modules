@@ -81,6 +81,10 @@ public class BpAccountDsFilter extends AbstractAuditableDsFilter {
 
     private String analiticSegment;
 
+    private String custAnaliticSegment;
+
+    private String vendAnaliticSegment;
+
     public Long getBusinessPartnerId() {
         return this.businessPartnerId;
     }
@@ -408,6 +412,22 @@ public class BpAccountDsFilter extends AbstractAuditableDsFilter {
 
     public void setAnaliticSegment(String analiticSegment) {
         this.analiticSegment = analiticSegment;
+    }
+
+    public String getCustAnaliticSegment() {
+        return this.custAnaliticSegment;
+    }
+
+    public void setCustAnaliticSegment(String custAnaliticSegment) {
+        this.custAnaliticSegment = custAnaliticSegment;
+    }
+
+    public String getVendAnaliticSegment() {
+        return this.vendAnaliticSegment;
+    }
+
+    public void setVendAnaliticSegment(String vendAnaliticSegment) {
+        this.vendAnaliticSegment = vendAnaliticSegment;
     }
 
 }

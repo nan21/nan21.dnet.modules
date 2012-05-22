@@ -12,6 +12,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="CUSTANALITICSEGMENT" type="varchar2(32)">
+				<constraints  /></column>	 
 			<column name="CUSTCREDITLIMIT" type="number(12,2)">
 				<constraints  /></column>	 
 			<column name="CUSTOMER" type="number(1)">
@@ -23,6 +25,8 @@
 			<column name="MODIFIEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
 			<column name="UUID" type="varchar2(36)">
+				<constraints  /></column>	 
+			<column name="VENDANALITICSEGMENT" type="varchar2(32)">
 				<constraints  /></column>	 
 			<column name="VENDCREDITLIMIT" type="number(12,2)">
 				<constraints  /></column>	 

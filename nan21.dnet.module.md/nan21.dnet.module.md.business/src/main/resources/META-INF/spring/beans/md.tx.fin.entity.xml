@@ -13,6 +13,9 @@
  	<bean id="PaymentItemService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceext.PaymentItemService"  />  
  
+ 	<bean id="PaymentAmountService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceext.PaymentAmountService"  />  
+ 
  	<bean id="AccDocService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceimpl.AccDocService"  />  
  
@@ -24,6 +27,9 @@
  
  	<bean id="AccBalanceService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceimpl.AccBalanceService"  />  
+ 
+ 	<bean id="TxAmountService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceimpl.TxAmountService"  />  
    
 </beans>
    

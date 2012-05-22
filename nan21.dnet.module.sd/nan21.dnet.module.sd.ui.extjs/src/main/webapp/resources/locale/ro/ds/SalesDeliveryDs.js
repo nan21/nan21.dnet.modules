@@ -1,6 +1,9 @@
 
 Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs$Trl", {  	  	
-	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	customerId__lbl :    "Client(ID)",
+	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	docNo__lbl :  "Nr doc",
+	docDate__lbl :  "Dată doc.",
+	eventDate__lbl :  "Dată eveniment",
+	customerId__lbl :    "Client(ID)",
 	customerCode__lbl :    "Client",
 	customer__lbl :    "Client",
 	salesOrderId__lbl :    "Comandă client(ID)",
@@ -18,8 +21,6 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs$Trl", {
 	deliveryContact__lbl :    "Delegat livrare",
 	confirmed__lbl :  "Confirmat",
 	posted__lbl :  "Inregistrat",
-	eventDate__lbl :  "Dată eveniment",
-	docDate__lbl :  "Dată doc.",
 		 
 	id__lbl :"ID"
 });

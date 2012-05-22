@@ -41,9 +41,9 @@ Ext.define("net.nan21.dnet.module.ad.report.frame.Reports_UI", {
 		.addDcEditGridView("usage",{ name:"usageList", xtype:"net.nan21.dnet.module.ad.report.dc.DsReportUsage$CtxEditList", frame:true,title:"Usage"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
-		.addPanel({name: "repDetailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
+		.addPanel({name: "repDetailsTab", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id()}) 	 
 
-		.addPanel({name: "dsrepDetailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
+		.addPanel({name: "dsrepDetailsTab", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id()}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "dsRep", layout:"border", defaults:{split:true},title:"DS links"})  	 

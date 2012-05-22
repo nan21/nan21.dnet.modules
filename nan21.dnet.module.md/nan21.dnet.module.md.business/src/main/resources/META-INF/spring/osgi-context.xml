@@ -7,14 +7,15 @@
 	http://www.springframework.org/schema/osgi 
 		http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 	
-	
+	<import resource="emf/oc-emf-${dnet.emf.type}.xml" />
+	 
 	<osgi:reference id="systemConfig" cardinality="1..1"
 		interface="net.nan21.dnet.core.api.ISystemConfig" />
 			
 	<osgi:reference id="osgiDataSource" cardinality="0..1"
 		interface="javax.sql.DataSource" />
 		
-	<osgi:service ref="entityServiceFactory" ranking="0"
+	<osgi:service ref="entityServiceFactory" ranking="10"
 		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />
 
 	<osgi:service ref="asgnTxServiceFactory" ranking="0"

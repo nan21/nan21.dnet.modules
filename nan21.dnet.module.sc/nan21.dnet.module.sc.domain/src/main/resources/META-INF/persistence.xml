@@ -16,7 +16,6 @@
 		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccItem</class>
 		<class>net.nan21.dnet.module.bd.acc.domain.entity.Account</class>
 		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccSchema</class>
-		
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
@@ -67,6 +66,7 @@
 
 
 		<!-- TX  -->
+		
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionSourceType</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransaction</class>
@@ -74,6 +74,8 @@
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvOperation</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.Payment</class>
 		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentAmount</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.TxAmount</class>
 
 		<!-- Abstract classes -->
 		<class>net.nan21.dnet.core.domain.model.AbstractSimpleEntity</class>

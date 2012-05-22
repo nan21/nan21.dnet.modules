@@ -16,6 +16,10 @@ import net.nan21.dnet.core.api.annotation.DsField;
 public class PurchaseReceptionDs extends
         AbstractAuditableDs<PurchaseInventoryTransaction> {
 
+    public static final String fCODE = "code";
+    public static final String fDOCNO = "docNo";
+    public static final String fDOCDATE = "docDate";
+    public static final String fEVENTDATE = "eventDate";
     public static final String fSUPPLIERID = "supplierId";
     public static final String fSUPPLIERCODE = "supplierCode";
     public static final String fSUPPLIER = "supplier";
@@ -28,10 +32,20 @@ public class PurchaseReceptionDs extends
     public static final String fCARRIER = "carrier";
     public static final String fWAREHOUSEID = "warehouseId";
     public static final String fWAREHOUSE = "warehouse";
-    public static final String fEVENTDATE = "eventDate";
-    public static final String fDOCDATE = "docDate";
     public static final String fCONFIRMED = "confirmed";
     public static final String fPOSTED = "posted";
+
+    @DsField()
+    private String code;
+
+    @DsField()
+    private String docNo;
+
+    @DsField()
+    private Date docDate;
+
+    @DsField()
+    private Date eventDate;
 
     @DsField(join = "left", path = "supplier.id")
     private Long supplierId;
@@ -70,12 +84,6 @@ public class PurchaseReceptionDs extends
     private String warehouse;
 
     @DsField()
-    private Date eventDate;
-
-    @DsField()
-    private Date docDate;
-
-    @DsField()
     private Boolean confirmed;
 
     @DsField()
@@ -87,6 +95,38 @@ public class PurchaseReceptionDs extends
 
     public PurchaseReceptionDs(PurchaseInventoryTransaction e) {
         super(e);
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
+    }
+
+    public Date getDocDate() {
+        return this.docDate;
+    }
+
+    public void setDocDate(Date docDate) {
+        this.docDate = docDate;
+    }
+
+    public Date getEventDate() {
+        return this.eventDate;
+    }
+
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
     }
 
     public Long getSupplierId() {
@@ -183,22 +223,6 @@ public class PurchaseReceptionDs extends
 
     public void setWarehouse(String warehouse) {
         this.warehouse = warehouse;
-    }
-
-    public Date getEventDate() {
-        return this.eventDate;
-    }
-
-    public void setEventDate(Date eventDate) {
-        this.eventDate = eventDate;
-    }
-
-    public Date getDocDate() {
-        return this.docDate;
-    }
-
-    public void setDocDate(Date docDate) {
-        this.docDate = docDate;
     }
 
     public Boolean getConfirmed() {

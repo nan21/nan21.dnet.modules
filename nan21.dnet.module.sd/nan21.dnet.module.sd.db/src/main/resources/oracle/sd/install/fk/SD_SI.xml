@@ -12,7 +12,7 @@
 		<addForeignKeyConstraint constraintName="FK_SD_SI3" baseTableName="SD_SI" baseColumnNames="PAYMENTMETHOD_ID"  referencedTableName="BD_PAY_METHOD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
-		<addForeignKeyConstraint constraintName="FK_SD_SI4" baseTableName="SD_SI" baseColumnNames="PAYMENTTERM_ID"  referencedTableName="BD_PAY_METHOD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_SI4" baseTableName="SD_SI" baseColumnNames="PAYMENTTERM_ID"  referencedTableName="BD_PAY_TERM"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
 		<addForeignKeyConstraint constraintName="FK_SD_SI5" baseTableName="SD_SI" baseColumnNames="DOCTYPE_ID"  referencedTableName="BD_TXDOC_TYPE"  referencedColumnNames="ID" />

@@ -15,6 +15,10 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs" ,{
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
+		{name:"docNo", type:"string"},
+		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"customerId", type:"int", useNull:true},
 		{name:"customerCode", type:"string"},
 		{name:"customer", type:"string"},
@@ -32,9 +36,7 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDs" ,{
 		{name:"deliveryContactId", type:"int", useNull:true},
 		{name:"deliveryContact", type:"string"},
 		{name:"confirmed", type:"boolean"},
-		{name:"posted", type:"boolean"},
-		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
+		{name:"posted", type:"boolean"}
 	]
 });
 
@@ -52,6 +54,14 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDsFilter" ,{
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
+		{name:"docNo", type:"string"},
+		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"eventDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
+		{name:"eventDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"customerId", type:"int", useNull:true},
 		{name:"customerId_From",type:"int", useNull:true},
 		{name:"customerId_To",type:"int", useNull:true},
@@ -83,13 +93,7 @@ Ext.define("net.nan21.dnet.module.sd.order.ds.model.SalesDeliveryDsFilter" ,{
 		{name:"deliveryContactId_To",type:"int", useNull:true},
 		{name:"deliveryContact", type:"string"},
 		{name:"confirmed", type:"boolean", useNull:true},
-		{name:"posted", type:"boolean", useNull:true},
-		{name:"eventDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"eventDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"eventDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"docDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"docDate_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
-		{name:"docDate_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
+		{name:"posted", type:"boolean", useNull:true}
 	] 
 });
 	

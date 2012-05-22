@@ -19,24 +19,28 @@
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
 	  				<constructor-arg name="methodName" value="confirm" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="unConfirm">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
 	  				<constructor-arg name="methodName" value="unConfirm" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="post">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
 	  				<constructor-arg name="methodName" value="post" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="unPost">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.SalesInvoicePD"/>
 	  				<constructor-arg name="methodName" value="unPost" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  		</map>
@@ -118,24 +122,28 @@
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.PaymentInPD"/>
 	  				<constructor-arg name="methodName" value="confirm" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="unConfirm">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.PaymentInPD"/>
 	  				<constructor-arg name="methodName" value="unConfirm" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="post">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.PaymentInPD"/>
 	  				<constructor-arg name="methodName" value="post" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  			<entry key="unPost">
 	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
 	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.sd._presenterdelegates.invoice.PaymentInPD"/>
 	  				<constructor-arg name="methodName" value="unPost" />
+	  				<constructor-arg name="reloadFromEntity" value="true" />
 	  			</bean>	
 	  			</entry>	  			
 	  		</map>
@@ -152,6 +160,30 @@
 	  			<value type="java.lang.String">unPost</value>
 			</list>	  		 
 	  	</property>	
+	</bean>
+   
+ 	<bean id="PaymentInAmountDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.PaymentInAmountDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.PaymentInAmountDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.PaymentInAmount" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.PaymentInAmountDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="PaymentInAmount" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.PaymentInAmountDs" />
+	</bean>
+   
+ 	<bean id="SalesTxAmountDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesTxAmountDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.sd.invoice.ds.filter.SalesTxAmountDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.sd.invoice.domain.entity.SalesTxAmount" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.sd.invoice.ds.converter.SalesTxAmountDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SalesTxAmount" />
+		<property name="modelClass" value="net.nan21.dnet.module.sd.invoice.ds.model.SalesTxAmountDs" />
 	</bean>
       
 </beans>

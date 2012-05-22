@@ -2,6 +2,9 @@
 Ext.define("net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransferDs$Trl", {  	  	
 	uuid__lbl : "Uuid",
 	entityFQN__lbl : "Entity FQN",
+	docNo__lbl : "Doc No",
+	docDate__lbl : "Doc Date",
+	eventDate__lbl : "Event Date",
 	transactionTypeId__lbl : "Transaction Type Id",
 	transactionType__lbl : "Transaction Type",
 	hasFromInventory__lbl : "Has From Inventory",
@@ -12,8 +15,6 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransferDs$Trl", {
 	toInventory__lbl : "To Inventory",
 	confirmed__lbl : "Confirmed",
 	posted__lbl : "Posted",
-	eventDate__lbl : "Event Date",
-	docDate__lbl : "Doc Date",
 		
 	id__lbl :"ID"
 });

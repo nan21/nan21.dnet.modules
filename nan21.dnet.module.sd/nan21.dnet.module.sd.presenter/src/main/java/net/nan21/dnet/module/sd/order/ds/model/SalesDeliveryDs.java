@@ -16,6 +16,10 @@ import net.nan21.dnet.core.api.annotation.DsField;
 public class SalesDeliveryDs extends
         AbstractAuditableDs<SalesInventoryTransaction> {
 
+    public static final String fCODE = "code";
+    public static final String fDOCNO = "docNo";
+    public static final String fDOCDATE = "docDate";
+    public static final String fEVENTDATE = "eventDate";
     public static final String fCUSTOMERID = "customerId";
     public static final String fCUSTOMERCODE = "customerCode";
     public static final String fCUSTOMER = "customer";
@@ -34,8 +38,18 @@ public class SalesDeliveryDs extends
     public static final String fDELIVERYCONTACT = "deliveryContact";
     public static final String fCONFIRMED = "confirmed";
     public static final String fPOSTED = "posted";
-    public static final String fEVENTDATE = "eventDate";
-    public static final String fDOCDATE = "docDate";
+
+    @DsField()
+    private String code;
+
+    @DsField()
+    private String docNo;
+
+    @DsField()
+    private Date docDate;
+
+    @DsField()
+    private Date eventDate;
 
     @DsField(join = "left", path = "customer.id")
     private Long customerId;
@@ -91,18 +105,44 @@ public class SalesDeliveryDs extends
     @DsField()
     private Boolean posted;
 
-    @DsField()
-    private Date eventDate;
-
-    @DsField()
-    private Date docDate;
-
     public SalesDeliveryDs() {
         super();
     }
 
     public SalesDeliveryDs(SalesInventoryTransaction e) {
         super(e);
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getDocNo() {
+        return this.docNo;
+    }
+
+    public void setDocNo(String docNo) {
+        this.docNo = docNo;
+    }
+
+    public Date getDocDate() {
+        return this.docDate;
+    }
+
+    public void setDocDate(Date docDate) {
+        this.docDate = docDate;
+    }
+
+    public Date getEventDate() {
+        return this.eventDate;
+    }
+
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
     }
 
     public Long getCustomerId() {
@@ -247,22 +287,6 @@ public class SalesDeliveryDs extends
 
     public void setPosted(Boolean posted) {
         this.posted = posted;
-    }
-
-    public Date getEventDate() {
-        return this.eventDate;
-    }
-
-    public void setEventDate(Date eventDate) {
-        this.eventDate = eventDate;
-    }
-
-    public Date getDocDate() {
-        return this.docDate;
-    }
-
-    public void setDocDate(Date docDate) {
-        this.docDate = docDate;
     }
 
 }

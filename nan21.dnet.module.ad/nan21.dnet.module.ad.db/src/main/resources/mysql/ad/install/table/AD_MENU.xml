@@ -22,6 +22,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="NAME" type="varchar(255)">
 				<constraints nullable="false" /></column>	 
+			<column name="SEQUENCENO" type="int(4)">
+				<constraints  /></column>	 
 			<column name="TITLE" type="varchar(255)">
 				<constraints nullable="false" /></column>	 
 			<column name="UUID" type="varchar(36)">

@@ -24,7 +24,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Element_UI", {
 		.addDcFormView("formula",{ name:"formulaEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.ElementFormula$EditExpression"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
-		.addPanel({name: "detailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
+		.addPanel({name: "detailsTab", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id()}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "formulaPanel", layout:"border", defaults:{split:true},title:"Formula"})  	 

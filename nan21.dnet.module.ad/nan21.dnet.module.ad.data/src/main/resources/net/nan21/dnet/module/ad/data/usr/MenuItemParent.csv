@@ -122,6 +122,7 @@
 "AccJournal_UI";"bd-menu-acc"
 "AccDoc_UI";"fi-menu-tx"
 "AccOperation_UI";"fi-menu-tx"
+"AccBalance_UI";"fi-menu-tx"
 "Payment_UI";"fi-menu-tx"
 "PayAccount_UI";"fi-menu-base"
 "FiscalYear_UI";"fi-menu-base"

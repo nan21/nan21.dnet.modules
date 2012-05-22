@@ -5,12 +5,12 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI$Trl", {
 	wdwGenDelivery__ttl : "Generează livrare",
 	wdwGenInvoice__ttl : "Generează factură",
 	notesPanel__ttl : "Note",
-	linesPanel__ttl : "Linii",
+	linesPanel__ttl : "Articole",
 	
 	tlbOrderList__ttl : "Comenzi client",
 	tlbOrderEdit__ttl : "Comandă client",
-	tlbItemList__ttl : "Linii comandă",
-	tlbItemEdit__ttl : "Linie comandă",
+	tlbItemList__ttl : "Articole",
+	tlbItemEdit__ttl : "Articol",
 	
 	btnViewAttachment__ttl : "Deschide",
 	btnViewAttachment__desc : "Deschide ataşament",

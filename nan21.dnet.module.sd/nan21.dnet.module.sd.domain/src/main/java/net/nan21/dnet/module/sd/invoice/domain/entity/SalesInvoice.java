@@ -31,6 +31,7 @@ import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.bp.domain.entity.Contact;
@@ -122,9 +123,9 @@ public class SalesInvoice extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
     @JoinColumn(name = "PAYMENTMETHOD_ID", referencedColumnName = "ID")
     private PaymentMethod paymentMethod;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentMethod.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentTerm.class)
     @JoinColumn(name = "PAYMENTTERM_ID", referencedColumnName = "ID")
-    private PaymentMethod paymentTerm;
+    private PaymentTerm paymentTerm;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = TxDocType.class)
     @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
     private TxDocType docType;
@@ -259,11 +260,11 @@ public class SalesInvoice extends AbstractAuditable {
         this.paymentMethod = paymentMethod;
     }
 
-    public PaymentMethod getPaymentTerm() {
+    public PaymentTerm getPaymentTerm() {
         return this.paymentTerm;
     }
 
-    public void setPaymentTerm(PaymentMethod paymentTerm) {
+    public void setPaymentTerm(PaymentTerm paymentTerm) {
         this.paymentTerm = paymentTerm;
     }
 

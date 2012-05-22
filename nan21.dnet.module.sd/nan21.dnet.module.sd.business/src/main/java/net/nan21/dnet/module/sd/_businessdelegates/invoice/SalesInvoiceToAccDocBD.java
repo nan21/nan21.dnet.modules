@@ -1,5 +1,6 @@
 package net.nan21.dnet.module.sd._businessdelegates.invoice;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,11 +32,24 @@ public class SalesInvoiceToAccDocBD extends AbstractBusinessDelegate {
 	IProductService prodService;
 
 	public void unPost(SalesInvoice invoice) throws Exception {
-		this.em.createQuery(
-				"delete from AccDoc t " + " where t.docUuid = :invoiceUuid")
-				.setParameter("invoiceUuid", invoice.getUuid()).executeUpdate();
-		invoice.setPosted(false);
-		this.em.merge(invoice);
+		try {
+			this.em.createQuery(
+					"delete from AccDoc t " + " where t.docUuid = :invoiceUuid")
+					.setParameter("invoiceUuid", invoice.getUuid()).executeUpdate();
+			invoice.setPosted(false);
+			this.em.merge(invoice);	
+		} catch (Exception e) {
+			if (e.getCause() != null
+					&& e.getCause() instanceof SQLIntegrityConstraintViolationException) {
+				throw new RuntimeException(
+						"Cannot unpost document `"
+								+ invoice.getCode()
+								+ "`. The corresponding accounting document is already posted to great ledger.");
+			} else {
+				throw e;
+			}
+		}
+		
 	}
 
 	public List<AccDoc> post(SalesInvoice invoice) throws Exception {

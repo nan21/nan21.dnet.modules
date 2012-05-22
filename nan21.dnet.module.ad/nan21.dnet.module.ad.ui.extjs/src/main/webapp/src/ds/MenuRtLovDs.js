@@ -10,6 +10,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.MenuRtLovDs" ,{
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
 		{name:"active", type:"boolean"},
+		{name:"sequenceNo", type:"int", useNull:true},
 		{name:"title", type:"string"}
 	]
 });
@@ -20,6 +21,9 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.MenuRtLovDsFilter" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
+		{name:"sequenceNo", type:"int", useNull:true},
+		{name:"sequenceNo_From",type:"int", useNull:true},
+		{name:"sequenceNo_To",type:"int", useNull:true},
 		{name:"title", type:"string"}
 	] 
 });

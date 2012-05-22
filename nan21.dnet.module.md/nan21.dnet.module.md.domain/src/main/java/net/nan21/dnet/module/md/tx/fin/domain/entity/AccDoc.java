@@ -127,12 +127,12 @@ public class AccDoc extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccJournal.class)
     @JoinColumn(name = "JOURNAL_ID", referencedColumnName = "ID")
     private AccJournal journal;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
-    @JoinColumn(name = "DOCCURRENCY_ID", referencedColumnName = "ID")
-    private Currency docCurrency;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "ID")
     private BusinessPartner bpartner;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Currency.class)
+    @JoinColumn(name = "DOCCURRENCY_ID", referencedColumnName = "ID")
+    private Currency docCurrency;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = TxDocType.class)
     @JoinColumn(name = "DOCTYPE_ID", referencedColumnName = "ID")
     private TxDocType docType;
@@ -263,20 +263,20 @@ public class AccDoc extends AbstractAuditable {
         this.journal = journal;
     }
 
-    public Currency getDocCurrency() {
-        return this.docCurrency;
-    }
-
-    public void setDocCurrency(Currency docCurrency) {
-        this.docCurrency = docCurrency;
-    }
-
     public BusinessPartner getBpartner() {
         return this.bpartner;
     }
 
     public void setBpartner(BusinessPartner bpartner) {
         this.bpartner = bpartner;
+    }
+
+    public Currency getDocCurrency() {
+        return this.docCurrency;
+    }
+
+    public void setDocCurrency(Currency docCurrency) {
+        this.docCurrency = docCurrency;
     }
 
     public TxDocType getDocType() {

@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Projects_UI", {
 		.addDcEditGridView("member",{ name:"memberEditList", xtype:"net.nan21.dnet.module.pj.md.dc.ProjectMember$CtxEditList", frame:true,title:"Team"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
-		.addPanel({name: "projectDetailsTab", xtype:"tabpanel", activeTab:0, plain:true, deferredRender:false, id:Ext.id()}) 	 
+		.addPanel({name: "projectDetailsTab", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id()}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
