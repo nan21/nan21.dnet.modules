@@ -40,8 +40,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = InvTransactionLine.NQ_FIND_BY_IDS, query = "SELECT e FROM InvTransactionLine e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class InvTransactionLine extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "TX_INV_TX_LINE";
-    public static final String SEQUENCE_NAME = "TX_INV_TX_LINE_SEQ";
+    public static final String TABLE_NAME = "TX_INVT_TX_LINE";
+    public static final String SEQUENCE_NAME = "TX_INVT_TX_LINE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -5,6 +5,6 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_HR_ABSN_TYPE1" 
 				baseTableName="HR_ABSN_TYPE" baseColumnNames="CATEGORY_ID"  
-				referencedTableName="HR_ABSN_CATEGORY"  referencedColumnNames="ID" />
+				referencedTableName="HR_ABSN_CTG"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

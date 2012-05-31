@@ -25,17 +25,27 @@
 	<bean id="fileUploadServiceFactory"
 		class="net.nan21.dnet.core.presenter.service.FileUploadServiceFactory">
 	</bean>
+	
+	<import resource="beans/md.acc.ds.xml" />
+	
 	<import resource="beans/md.activity.ds.xml" />
+	
+	<import resource="beans/md.base.attr.ds.xml" />
+	<import resource="beans/md.base.elem.ds.xml" />
+	<import resource="beans/md.base.tx.ds.xml" />
+	<import resource="beans/md.base.tax.ds.xml" />
+	<import resource="beans/md.base.period.ds.xml" />
+	
 	<import resource="beans/md.bp.ds.xml" />
+	
 	<import resource="beans/md.mm.price.ds.xml" />
 	<import resource="beans/md.mm.prod.asgn.xml" />
 	<import resource="beans/md.mm.prod.ds.xml" />
+	
 	<import resource="beans/md.org.ds.xml" />
+	
+	<import resource="beans/md.tx.acc.ds.xml" />
 	<import resource="beans/md.tx.fin.ds.xml" />
 	<import resource="beans/md.tx.inventory.ds.xml" />
-	<!--
-		Other beans / services <bean id="bpAttachmentUploadService"
-		scope="prototype"
-		class="net.nan21.dnet.module.bp._presenterdelegates.md.BpAttachmentUploadDelegate"></bean>
-	-->
+ 
 </beans>

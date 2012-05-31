@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.md.org.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.bd.tx.business.service.IPaymentMethodService;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.md.base.tx.business.service.IPaymentMethodService;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.org.business.service.IPayAccountService;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 

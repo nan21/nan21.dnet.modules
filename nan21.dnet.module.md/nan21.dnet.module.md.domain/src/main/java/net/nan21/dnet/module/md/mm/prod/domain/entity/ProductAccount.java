@@ -33,17 +33,17 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 /** Product accounts.*/
 @Entity
 @Table(name = ProductAccount.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ProductAccount.TABLE_NAME
-        + "_UK1", columnNames = { "CLIENTID", "PRODUCT_ID", "ORGANIZATION_ID" }) })
+        + "_UK1", columnNames = { "CLIENTID", "PRODUCT_ID", "ORG_ID" }) })
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = ProductAccount.NQ_FIND_BY_ID, query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProductAccount.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = ProductAccount.NQ_FIND_BY_PROD_ORG, query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and  e.product = :pProduct and e.organization = :pOrganization ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductAccount.findByProd_org_PRIMITIVE", query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.organization.id = :pOrganizationId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ProductAccount.NQ_FIND_BY_PROD_ORG, query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and  e.product = :pProduct and e.org = :pOrg ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "ProductAccount.findByProd_org_PRIMITIVE", query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.org.id = :pOrgId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAccount extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "MD_PROD_ACCOUNT";
-    public static final String SEQUENCE_NAME = "MD_PROD_ACCOUNT_SEQ";
+    public static final String TABLE_NAME = "MD_PROD_ACNT";
+    public static final String SEQUENCE_NAME = "MD_PROD_ACNT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -80,8 +80,8 @@ public class ProductAccount extends AbstractAuditable {
     @Column(name = "ANALITICSEGMENT", length = 32)
     private String analiticSegment;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
-    @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")
-    private Organization organization;
+    @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
+    private Organization org;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAccountGroup.class)
     @JoinColumn(name = "GROUP_ID", referencedColumnName = "ID")
     private ProductAccountGroup group;
@@ -107,12 +107,12 @@ public class ProductAccount extends AbstractAuditable {
         this.analiticSegment = analiticSegment;
     }
 
-    public Organization getOrganization() {
-        return this.organization;
+    public Organization getOrg() {
+        return this.org;
     }
 
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
+    public void setOrg(Organization org) {
+        this.org = org;
     }
 
     public ProductAccountGroup getGroup() {

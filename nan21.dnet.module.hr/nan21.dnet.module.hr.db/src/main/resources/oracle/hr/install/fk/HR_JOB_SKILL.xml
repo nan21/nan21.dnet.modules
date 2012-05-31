@@ -9,6 +9,6 @@
 		<addForeignKeyConstraint constraintName="FK_HR_JOB_SKILL2" baseTableName="HR_JOB_SKILL" baseColumnNames="SKILL_ID"  referencedTableName="HR_SKILL"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_HR_JOB_SKILL3" baseTableName="HR_JOB_SKILL" baseColumnNames="REQUIREDLEVEL_ID"  referencedTableName="HR_RATING_LEVEL"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_HR_JOB_SKILL3" baseTableName="HR_JOB_SKILL" baseColumnNames="REQUIREDLEVEL_ID"  referencedTableName="HR_RATE_LVL"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

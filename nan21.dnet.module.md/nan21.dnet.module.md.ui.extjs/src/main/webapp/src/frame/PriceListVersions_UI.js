@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.md.mm.price.frame.PriceListVersions_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("version",{ name:"versionFilter", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$Filter",height:120})	 
+		.addDcFilterFormView("version",{ name:"versionFilter", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$Filter",height:80})	 
 		.addDcEditGridView("version",{ name:"versionEditList", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

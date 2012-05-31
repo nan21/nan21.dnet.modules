@@ -33,6 +33,127 @@
 	  	</property>	
 	</bean>
    
+ 	<bean id="SysJobDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysJobDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysJob" />
+	  	<property name="rpcFilter" >
+	  		<map>
+	  			<entry key="synchronizeCatalog">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.system.SysJobPD"/>
+	  				<constructor-arg name="methodName" value="synchronizeCatalog" />
+	  			</bean>	
+	  			</entry>	 
+	  		</map>
+	  	</property>	
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysJob" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">synchronizeCatalog</value>
+			</list>	  		 
+	  	</property>	
+	</bean>
+   
+ 	<bean id="SysJobLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysJob" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysJobLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobLovDs" />
+	</bean>
+   
+ 	<bean id="SysJobParamDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobParamDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysJobParamDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysJobParam" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysJobParamDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysJobParam" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobParamDs" />
+	</bean>
+   
+ 	<bean id="SysJobParamLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobParamLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobParamLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysJobParam" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysJobParamLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobParamLovDs" />
+	</bean>
+   
+ 	<bean id="SysJobCtxDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobCtxDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysJobCtxDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysJobCtx" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysJobCtx" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobCtxDs" />
+	</bean>
+   
+ 	<bean id="SysJobCtxLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobCtxLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobCtxLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysJobCtx" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysJobCtxLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobCtxLovDs" />
+	</bean>
+   
+ 	<bean id="SysJobCtxParamDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobCtxParamDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysJobCtxParamDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysJobCtxParam" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysJobCtxParamDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysJobCtxParam" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysJobCtxParamDs" />
+	</bean>
+   
+ 	<bean id="SysTimerDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysTimerDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.filter.SysTimerDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysTimer" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.ad.system.ds.converter.SysTimerDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysTimer" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysTimerDs" />
+	</bean>
+   
+ 	<bean id="SysTimerLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysTimerLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.system.ds.model.SysTimerLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.system.domain.entity.SysTimer" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="SysTimerLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysTimerLovDs" />
+	</bean>
+   
  	<bean id="SysDataSourceDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.system.ds.model.SysDataSourceDs" />

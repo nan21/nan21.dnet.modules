@@ -36,8 +36,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = SysParamValue.NQ_FIND_BY_IDS, query = "SELECT e FROM SysParamValue e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysParamValue extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "AD_SYSPARAMVAL";
-    public static final String SEQUENCE_NAME = "AD_SYSPARAMVAL_SEQ";
+    public static final String TABLE_NAME = "AD_SYS_PARAMVAL";
+    public static final String SEQUENCE_NAME = "AD_SYS_PARAMVAL_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

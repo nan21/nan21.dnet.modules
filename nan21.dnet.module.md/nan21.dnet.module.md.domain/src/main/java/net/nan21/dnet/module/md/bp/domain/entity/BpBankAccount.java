@@ -43,8 +43,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "BpBankAccount.findByAccount_PRIMITIVE", query = "SELECT e FROM BpBankAccount e WHERE e.clientId = :pClientId and  e.bpartner.id = :pBpartnerId and e.accountNo = :pAccountNo ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class BpBankAccount extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "MD_BP_BANKACCOUNT";
-    public static final String SEQUENCE_NAME = "MD_BP_BANKACCOUNT_SEQ";
+    public static final String TABLE_NAME = "MD_BP_BANKACNT";
+    public static final String SEQUENCE_NAME = "MD_BP_BANKACNT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

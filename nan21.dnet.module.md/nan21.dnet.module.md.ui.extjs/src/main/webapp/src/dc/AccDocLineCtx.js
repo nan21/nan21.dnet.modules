@@ -1,11 +1,11 @@
    
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccDocLineCtx", {
 	extend: "dnet.core.dc.AbstractDc",
  
-	recordModel: "net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineCtxDs",
-	filterModel: "net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineCtxDsFilter",
-	paramModel: "net.nan21.dnet.module.md.tx.fin.ds.param.AccDocLineCtxDsParam",
+	recordModel: "net.nan21.dnet.module.md.tx.acc.ds.model.AccDocLineCtxDs",
+	filterModel: "net.nan21.dnet.module.md.tx.acc.ds.model.AccDocLineCtxDsFilter",
+	paramModel: "net.nan21.dnet.module.md.tx.acc.ds.param.AccDocLineCtxDsParam",
 	constructor : function(config) {
         config = config || {};
         Ext.apply(this, config);
@@ -17,12 +17,12 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx", {
 
  	
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx$Filter", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccDocLineCtx$Filter", {
 	extend: "dnet.core.dc.AbstractDcvFilterPropGrid",
- 	alias: "widget.net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx$Filter",
+ 	alias: "widget.net.nan21.dnet.module.md.tx.acc.dc.AccDocLineCtx$Filter",
 	_defineElements_: function () {	
 		this._getBuilder_()	
-		.addLov({ name:"accSchema", dataIndex:"accSchema",editor:{ xtype:"net.nan21.dnet.module.bd.acc.lovs.AccSchemas", selectOnFocus:true,allowBlank:false,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]}  })
+		.addLov({ name:"accSchema", dataIndex:"accSchema",editor:{ xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas", selectOnFocus:true,allowBlank:false,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]}  })
 		.addTextField({ name:"dbAccount", dataIndex:"dbAccount",maxLength:255  })
 		.addTextField({ name:"crAccount", dataIndex:"crAccount",maxLength:255  })
 		 
@@ -32,9 +32,9 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx$Filter", {
 }); 
  	
  		 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx$List", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccDocLineCtx$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
-	alias:"widget.net.nan21.dnet.module.md.tx.fin.dc.AccDocLineCtx$List",
+	alias:"widget.net.nan21.dnet.module.md.tx.acc.dc.AccDocLineCtx$List",
 	
 	_defineColumns_: function () {	
 		this._getBuilder_()	

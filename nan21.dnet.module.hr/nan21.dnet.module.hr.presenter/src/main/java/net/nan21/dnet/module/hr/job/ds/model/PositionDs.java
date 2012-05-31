@@ -17,8 +17,8 @@ public class PositionDs extends AbstractTypeWithCodeDs<Position> {
 
     public static final String fJOBID = "jobId";
     public static final String fJOBCODE = "jobCode";
-    public static final String fORGANIZATIONID = "organizationId";
-    public static final String fORGANIZATIONCODE = "organizationCode";
+    public static final String fORGID = "orgId";
+    public static final String fORG = "org";
 
     @DsField(join = "left", path = "job.id")
     private Long jobId;
@@ -26,11 +26,11 @@ public class PositionDs extends AbstractTypeWithCodeDs<Position> {
     @DsField(join = "left", path = "job.code")
     private String jobCode;
 
-    @DsField(join = "left", path = "organization.id")
-    private Long organizationId;
+    @DsField(join = "left", path = "org.id")
+    private Long orgId;
 
-    @DsField(join = "left", path = "organization.code")
-    private String organizationCode;
+    @DsField(join = "left", path = "org.code")
+    private String org;
 
     public PositionDs() {
         super();
@@ -56,20 +56,20 @@ public class PositionDs extends AbstractTypeWithCodeDs<Position> {
         this.jobCode = jobCode;
     }
 
-    public Long getOrganizationId() {
-        return this.organizationId;
+    public Long getOrgId() {
+        return this.orgId;
     }
 
-    public void setOrganizationId(Long organizationId) {
-        this.organizationId = organizationId;
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
     }
 
-    public String getOrganizationCode() {
-        return this.organizationCode;
+    public String getOrg() {
+        return this.org;
     }
 
-    public void setOrganizationCode(String organizationCode) {
-        this.organizationCode = organizationCode;
+    public void setOrg(String org) {
+        this.org = org;
     }
 
 }

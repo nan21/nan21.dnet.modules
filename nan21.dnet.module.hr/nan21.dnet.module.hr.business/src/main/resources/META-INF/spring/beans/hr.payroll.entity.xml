@@ -7,23 +7,8 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
- 	<bean id="ElementCategoryService" scope="prototype"
-	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.ElementCategoryService"  />  
- 
- 	<bean id="ElementTypeService" scope="prototype"
-	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.ElementTypeService"  />  
- 
- 	<bean id="ElementService" scope="prototype"
-	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.ElementService"  />  
- 
- 	<bean id="ElementInputService" scope="prototype"
-	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.ElementInputService"  />  
- 
- 	<bean id="ElementFormulaService" scope="prototype"
-	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.ElementFormulaService"  />  
- 
- 	<bean id="ElementValueService" scope="prototype"
-	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.ElementValueService"  />  
+ 	<bean id="PayrollElementValueService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.PayrollElementValueService"  />  
  
  	<bean id="PayrollService" scope="prototype"
 	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.PayrollService"  />  

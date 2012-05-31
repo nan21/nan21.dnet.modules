@@ -1,4 +1,4 @@
-Ext.define("net.nan21.dnet.module.md.tx.fin.frame.AccOperation_UI$Trl", { 
+Ext.define("net.nan21.dnet.module.md.tx.acc.frame.AccOperation_UI$Trl", { 
 	
 	
 	

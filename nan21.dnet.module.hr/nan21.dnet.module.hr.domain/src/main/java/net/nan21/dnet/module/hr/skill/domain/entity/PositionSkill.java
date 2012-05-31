@@ -38,8 +38,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = PositionSkill.NQ_FIND_BY_IDS, query = "SELECT e FROM PositionSkill e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PositionSkill extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "HR_POSTN_SKILL";
-    public static final String SEQUENCE_NAME = "HR_POSTN_SKILL_SEQ";
+    public static final String TABLE_NAME = "HR_POS_SKILL";
+    public static final String SEQUENCE_NAME = "HR_POS_SKILL_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

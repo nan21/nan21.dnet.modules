@@ -45,8 +45,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = "ClassificationItem.findBySysname_PRIMITIVE", query = "SELECT e FROM ClassificationItem e WHERE e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ClassificationItem extends AbstractTypeWithCode {
 
-    public static final String TABLE_NAME = "BD_CLASSIFIC_ITEM";
-    public static final String SEQUENCE_NAME = "BD_CLASSIFIC_ITEM_SEQ";
+    public static final String TABLE_NAME = "BD_CLSF_ITEM";
+    public static final String SEQUENCE_NAME = "BD_CLSF_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

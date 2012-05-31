@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = AbsenceRequest.NQ_FIND_BY_IDS, query = "SELECT e FROM AbsenceRequest e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AbsenceRequest extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "HR_ABSN_REQUEST";
-    public static final String SEQUENCE_NAME = "HR_ABSN_REQUEST_SEQ";
+    public static final String TABLE_NAME = "HR_ABSN_REQ";
+    public static final String SEQUENCE_NAME = "HR_ABSN_REQ_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

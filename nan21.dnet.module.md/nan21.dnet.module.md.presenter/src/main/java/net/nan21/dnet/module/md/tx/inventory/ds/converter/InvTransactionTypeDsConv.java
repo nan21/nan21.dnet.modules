@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.md.tx.inventory.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.bd.tx.business.service.ITxDocTypeService;
-import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.base.tx.business.service.ITxDocTypeService;
+import net.nan21.dnet.module.md.base.tx.domain.entity.TxDocType;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransactionTypeDs;

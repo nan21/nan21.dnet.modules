@@ -15,8 +15,8 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.asgn.CategoriesOfProductAsgn" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.asgn.CategoriesOfProductAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory" />		 
-	  	<property name="leftTable" value="MD_PROD_CATEG" />
-	  	<property name="rightTable" value="MD_PROD_PRODCATEGS" />
+	  	<property name="leftTable" value="MD_PROD_CTG" />
+	  	<property name="rightTable" value="MD_PROD_PRODCTG" />
 	  	<property name="rightItemIdField" value="CATEGORIES_ID" />
 	  	<property name="rightObjectIdField" value="PRODUCTS_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.md.business" /> 	  	  
@@ -36,7 +36,7 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.asgn.ProductsOfCategoryAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.Product" />		 
 	  	<property name="leftTable" value="MD_PROD" />
-	  	<property name="rightTable" value="MD_PROD_PRODCATEGS" />
+	  	<property name="rightTable" value="MD_PROD_PRODCTG" />
 	  	<property name="rightItemIdField" value="PRODUCTS_ID" />
 	  	<property name="rightObjectIdField" value="CATEGORIES_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.md.business" /> 	  	  

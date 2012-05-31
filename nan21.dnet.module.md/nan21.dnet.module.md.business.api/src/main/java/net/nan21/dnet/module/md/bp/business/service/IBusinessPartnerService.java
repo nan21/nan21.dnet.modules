@@ -12,7 +12,7 @@ import net.nan21.dnet.module.md.bp.domain.entity.CompanyLegalForm;
 
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
 
 public interface IBusinessPartnerService extends
         IEntityService<BusinessPartner> {

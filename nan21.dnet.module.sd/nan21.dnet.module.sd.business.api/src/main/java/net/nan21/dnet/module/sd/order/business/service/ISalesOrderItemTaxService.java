@@ -7,7 +7,7 @@ package net.nan21.dnet.module.sd.order.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
-import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
+import net.nan21.dnet.module.md.base.tax.domain.entity.Tax;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax;

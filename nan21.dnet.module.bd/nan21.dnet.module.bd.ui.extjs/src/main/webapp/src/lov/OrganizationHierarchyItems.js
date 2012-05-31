@@ -3,10 +3,10 @@ Ext.define("net.nan21.dnet.module.bd.org.lovs.OrganizationHierarchyItems", {
 	extend: "dnet.core.lov.AbstractCombo",
 	alias: "widget.net.nan21.dnet.module.bd.org.lovs.OrganizationHierarchyItems",
  
-	displayField:"organizationCode",
+	displayField:"org",
 	listConfig: {		
 		getInnerTpl: function() { 
-			return '<span>{organizationCode}</span>';
+			return '<span>{org}</span>';
 		},
 		width:250
 	},		 

@@ -1,0 +1,40 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_TX_PYMNT1" 
+				baseTableName="TX_PYMNT" baseColumnNames="CURRENCY_ID"  
+				referencedTableName="BD_CRNCY"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_TX_PYMNT2" 
+				baseTableName="TX_PYMNT" baseColumnNames="PAYMENTMETHOD_ID"  
+				referencedTableName="MD_PYMNT_MTD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_TX_PYMNT3" 
+				baseTableName="TX_PYMNT" baseColumnNames="FROMORG_ID"  
+				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_TX_PYMNT4" 
+				baseTableName="TX_PYMNT" baseColumnNames="TOORG_ID"  
+				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-5">
+		<addForeignKeyConstraint constraintName="FK_TX_PYMNT5" 
+				baseTableName="TX_PYMNT" baseColumnNames="FROMACCOUNT_ID"  
+				referencedTableName="MD_FINACNT"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-6">
+		<addForeignKeyConstraint constraintName="FK_TX_PYMNT6" 
+				baseTableName="TX_PYMNT" baseColumnNames="TOACCOUNT_ID"  
+				referencedTableName="MD_FINACNT"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-7">
+		<addForeignKeyConstraint constraintName="FK_TX_PYMNT7" 
+				baseTableName="TX_PYMNT" baseColumnNames="BPARTNER_ID"  
+				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

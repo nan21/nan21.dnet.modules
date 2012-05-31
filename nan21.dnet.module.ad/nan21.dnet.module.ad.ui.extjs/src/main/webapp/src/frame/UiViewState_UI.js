@@ -14,7 +14,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.UiViewState_UI", {
 		this._getBuilder_()	
 		.addDcFilterFormView("viewstate",{ name:"viewstateFilter", xtype:"net.nan21.dnet.module.ad.system.dc.UiViewState$Filter"})	 
 		.addDcGridView("viewstate",{ name:"viewstateList", xtype:"net.nan21.dnet.module.ad.system.dc.UiViewState$List"})	 
-		.addDcFormView("viewstate",{ name:"viewstateViewState", xtype:"net.nan21.dnet.module.ad.system.dc.UiViewState$ViewState"})	 
+		.addDcFormView("viewstate",{ name:"viewstateViewState", xtype:"net.nan21.dnet.module.ad.system.dc.UiViewState$ViewState",height:100})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
@@ -29,7 +29,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.UiViewState_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbViewstateList", {dc:"viewstate"}).addQuery().addReports().addSeparator().addSeparator().addTitle({"text":"View states"}).end(); 	
+			.beginToolbar("tlbViewstateList", {dc:"viewstate"}).addQuery().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"View states"}).end(); 	
 	}
 
 });  

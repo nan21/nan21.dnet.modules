@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_SC_ORD_ITEM_TAX1" 
+				baseTableName="SC_ORD_ITEM_TAX" baseColumnNames="PURCHASEORDERITEM_ID"  
+				referencedTableName="SC_ORD_ITEM"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_SC_ORD_ITEM_TAX2" 
+				baseTableName="SC_ORD_ITEM_TAX" baseColumnNames="TAX_ID"  
+				referencedTableName="MD_TAX"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

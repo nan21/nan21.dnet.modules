@@ -10,6 +10,6 @@
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_BD_ORG2" 
 				baseTableName="BD_ORG" baseColumnNames="CALENDAR_ID"  
-				referencedTableName="BD_CALENDAR"  referencedColumnNames="ID" />
+				referencedTableName="BD_CLND"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

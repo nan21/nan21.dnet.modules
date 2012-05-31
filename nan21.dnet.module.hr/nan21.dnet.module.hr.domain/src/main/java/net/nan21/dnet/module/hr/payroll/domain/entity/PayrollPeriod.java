@@ -41,8 +41,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = PayrollPeriod.NQ_FIND_BY_NAME, query = "SELECT e FROM PayrollPeriod e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayrollPeriod extends AbstractType {
 
-    public static final String TABLE_NAME = "HR_PAYROLL_PERIOD";
-    public static final String SEQUENCE_NAME = "HR_PAYROLL_PERIOD_SEQ";
+    public static final String TABLE_NAME = "HR_PAYROLL_PRD";
+    public static final String SEQUENCE_NAME = "HR_PAYROLL_PRD_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

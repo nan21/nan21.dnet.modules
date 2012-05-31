@@ -21,8 +21,8 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccItem;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
+import net.nan21.dnet.module.md.acc.domain.entity.AccItem;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.Payment;
 import org.eclipse.persistence.annotations.Customizer;
@@ -39,8 +39,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = PaymentItem.NQ_FIND_BY_IDS, query = "SELECT e FROM PaymentItem e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PaymentItem extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "TX_PAYMENT_ITEM";
-    public static final String SEQUENCE_NAME = "TX_PAYMENT_ITEM_SEQ";
+    public static final String TABLE_NAME = "TX_PYMNT_ITEM";
+    public static final String SEQUENCE_NAME = "TX_PYMNT_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

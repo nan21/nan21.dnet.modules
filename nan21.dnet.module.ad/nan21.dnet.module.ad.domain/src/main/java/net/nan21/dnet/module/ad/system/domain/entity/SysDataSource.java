@@ -46,8 +46,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = SysDataSource.NQ_FIND_BY_MODEL, query = "SELECT e FROM SysDataSource e WHERE e.clientId = :pClientId and  e.model = :pModel ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysDataSource extends AbstractType {
 
-    public static final String TABLE_NAME = "AD_SYSDATASOURCE";
-    public static final String SEQUENCE_NAME = "AD_SYSDATASOURCE_SEQ";
+    public static final String TABLE_NAME = "AD_SYS_DS";
+    public static final String SEQUENCE_NAME = "AD_SYS_DS_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

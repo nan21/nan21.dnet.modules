@@ -1,0 +1,5 @@
+name;description;docType;type;active
+chitanta-incas;Chitanta incasare;chitanta-incas;cash;true
+chitanta-plata;Chitanta plata;chitanta-plata;cash;true
+op-incas;OP incasare;op-incas;bank;true
+op-plata;OP plata;op-plata;bank;true

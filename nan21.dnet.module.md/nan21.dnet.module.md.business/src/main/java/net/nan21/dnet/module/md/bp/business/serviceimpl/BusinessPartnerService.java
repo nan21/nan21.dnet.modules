@@ -16,7 +16,7 @@ import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md._businessdelegates.bp.BpCustomerAcctBD;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
 import net.nan21.dnet.module.md._businessdelegates.bp.BpVendorAcctBD;
 
 public class BusinessPartnerService extends

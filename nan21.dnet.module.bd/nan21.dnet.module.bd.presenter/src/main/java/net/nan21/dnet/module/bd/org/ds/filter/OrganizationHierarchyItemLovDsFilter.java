@@ -15,12 +15,12 @@ public class OrganizationHierarchyItemLovDsFilter extends
     private Long hierarchyId_From;
     private Long hierarchyId_To;
 
-    private Long organizationId;
+    private Long orgId;
 
-    private Long organizationId_From;
-    private Long organizationId_To;
+    private Long orgId_From;
+    private Long orgId_To;
 
-    private String organizationCode;
+    private String org;
 
     public Long getHierarchyId() {
         return this.hierarchyId;
@@ -46,36 +46,36 @@ public class OrganizationHierarchyItemLovDsFilter extends
         this.hierarchyId_To = hierarchyId_To;
     }
 
-    public Long getOrganizationId() {
-        return this.organizationId;
+    public Long getOrgId() {
+        return this.orgId;
     }
 
-    public Long getOrganizationId_From() {
-        return this.organizationId_From;
+    public Long getOrgId_From() {
+        return this.orgId_From;
     }
 
-    public Long getOrganizationId_To() {
-        return this.organizationId_To;
+    public Long getOrgId_To() {
+        return this.orgId_To;
     }
 
-    public void setOrganizationId(Long organizationId) {
-        this.organizationId = organizationId;
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
     }
 
-    public void setOrganizationId_From(Long organizationId_From) {
-        this.organizationId_From = organizationId_From;
+    public void setOrgId_From(Long orgId_From) {
+        this.orgId_From = orgId_From;
     }
 
-    public void setOrganizationId_To(Long organizationId_To) {
-        this.organizationId_To = organizationId_To;
+    public void setOrgId_To(Long orgId_To) {
+        this.orgId_To = orgId_To;
     }
 
-    public String getOrganizationCode() {
-        return this.organizationCode;
+    public String getOrg() {
+        return this.org;
     }
 
-    public void setOrganizationCode(String organizationCode) {
-        this.organizationCode = organizationCode;
+    public void setOrg(String org) {
+        this.org = org;
     }
 
 }

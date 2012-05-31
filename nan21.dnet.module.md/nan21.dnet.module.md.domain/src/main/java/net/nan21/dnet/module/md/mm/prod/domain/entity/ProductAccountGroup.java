@@ -39,8 +39,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = ProductAccountGroup.NQ_FIND_BY_NAME, query = "SELECT e FROM ProductAccountGroup e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAccountGroup extends AbstractTypeWithCode {
 
-    public static final String TABLE_NAME = "MD_PROD_ACCOUNT_GROUP";
-    public static final String SEQUENCE_NAME = "MD_PROD_ACCOUNT_GROUP_SEQ";
+    public static final String TABLE_NAME = "MD_PROD_ACNT_GRP";
+    public static final String SEQUENCE_NAME = "MD_PROD_ACNT_GRP_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -39,8 +39,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = CommunicationChannelType.NQ_FIND_BY_NAME, query = "SELECT e FROM CommunicationChannelType e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CommunicationChannelType extends AbstractType {
 
-    public static final String TABLE_NAME = "BD_COMMUNIC_CHANNEL_TYPE";
-    public static final String SEQUENCE_NAME = "BD_COMMUNIC_CHANNEL_TYPE_SEQ";
+    public static final String TABLE_NAME = "BD_CMNC_MTD_TYPE";
+    public static final String SEQUENCE_NAME = "BD_CMNC_MTD_TYPE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

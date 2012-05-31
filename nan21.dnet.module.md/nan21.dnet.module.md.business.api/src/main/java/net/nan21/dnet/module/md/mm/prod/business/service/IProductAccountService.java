@@ -15,14 +15,13 @@ import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAccount;
 
 public interface IProductAccountService extends IEntityService<ProductAccount> {
 
-    public ProductAccount findByProd_org(Product product,
-            Organization organization);
+    public ProductAccount findByProd_org(Product product, Organization org);
 
-    public ProductAccount findByProd_org(Long productId, Long organizationId);
+    public ProductAccount findByProd_org(Long productId, Long orgId);
 
-    public List<ProductAccount> findByOrganization(Organization organization);
+    public List<ProductAccount> findByOrg(Organization org);
 
-    public List<ProductAccount> findByOrganizationId(Long organizationId);
+    public List<ProductAccount> findByOrgId(Long orgId);
 
     public List<ProductAccount> findByGroup(ProductAccountGroup group);
 

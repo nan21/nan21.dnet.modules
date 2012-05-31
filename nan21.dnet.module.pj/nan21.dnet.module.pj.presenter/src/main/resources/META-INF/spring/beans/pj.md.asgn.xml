@@ -15,8 +15,8 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.IssueAffectedVersionsAsgn" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.asgn.IssueAffectedVersionsAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion" />		 
-	  	<property name="leftTable" value="PJ_PRJ_VERSION" />
-	  	<property name="rightTable" value="PJ_ITEM_PRJVERSIONS" />
+	  	<property name="leftTable" value="PJ_PRJ_VER" />
+	  	<property name="rightTable" value="PJ_ISSUE_PRJVER" />
 	  	<property name="rightItemIdField" value="AFFECTEDVERSIONS_ID" />
 	  	<property name="rightObjectIdField" value="AFFECTINGISSUES_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.pj.business" /> 	  	  
@@ -35,8 +35,8 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponentsAsgn" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.pj.md.asgn.IssueAffectedComponentsAsgn" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent" />		 
-	  	<property name="leftTable" value="PJ_PRJ_COMPONENT" />
-	  	<property name="rightTable" value="PJ_ITEM_COMPS" />
+	  	<property name="leftTable" value="PJ_PRJ_CMP" />
+	  	<property name="rightTable" value="PJ_ISSUE_COMP" />
 	  	<property name="rightItemIdField" value="AFFECTEDCOMPONENTS_ID" />
 	  	<property name="rightObjectIdField" value="AFFECTINGISSUES_ID" /> 	
 	  	<property name="asgnTxFactoryName" value="nan21.dnet.module.pj.business" /> 	  	  

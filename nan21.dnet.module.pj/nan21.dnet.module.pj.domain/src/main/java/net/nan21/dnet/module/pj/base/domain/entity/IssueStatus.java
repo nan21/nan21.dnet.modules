@@ -35,8 +35,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = IssueStatus.NQ_FIND_BY_NAME, query = "SELECT e FROM IssueStatus e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class IssueStatus extends AbstractType {
 
-    public static final String TABLE_NAME = "PJ_ISSUE_STATUS";
-    public static final String SEQUENCE_NAME = "PJ_ISSUE_STATUS_SEQ";
+    public static final String TABLE_NAME = "PJ_ISSUE_STS";
+    public static final String SEQUENCE_NAME = "PJ_ISSUE_STS_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

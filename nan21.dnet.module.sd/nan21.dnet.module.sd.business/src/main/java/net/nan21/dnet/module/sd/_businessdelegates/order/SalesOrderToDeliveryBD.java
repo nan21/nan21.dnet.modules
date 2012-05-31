@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
-import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.base.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionLine;
 import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType;
 import net.nan21.dnet.module.sd.order.business.service.ISalesInventoryTransactionService;
@@ -34,7 +34,7 @@ public class SalesOrderToDeliveryBD extends AbstractBusinessDelegate {
 		deliv.setDeliveryLocation(order.getShipToLocation());
 		deliv.setDeliveryNotes(order.getDeliveryNotes());
 		deliv.setDeliveryContact(order.getShipToContact());
-		//deliv.setDocType(deliveryDocType);
+		// deliv.setDocType(deliveryDocType);
 		deliv.setTransactionType(delivTxType);
 
 		deliv.setFromInventory(order.getInventory());

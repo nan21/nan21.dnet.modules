@@ -36,8 +36,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = CsvExportField.NQ_FIND_BY_IDS, query = "SELECT e FROM CsvExportField e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CsvExportField extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "AD_CSV_EXP_FIELD";
-    public static final String SEQUENCE_NAME = "AD_CSV_EXP_FIELD_SEQ";
+    public static final String TABLE_NAME = "AD_CSV_EXP_FLD";
+    public static final String SEQUENCE_NAME = "AD_CSV_EXP_FLD_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

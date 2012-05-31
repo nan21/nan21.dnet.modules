@@ -25,7 +25,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position$Filter", {
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
-		.addLov({ name:"organizationCode", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"organizationCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
+		.addLov({ name:"org", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"org",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "orgId"} ]  })
 		.addLov({ name:"jobCode", xtype:"net.nan21.dnet.module.hr.job.lovs.Jobs", dataIndex:"jobCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "jobId"} ]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
@@ -55,7 +55,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position$List", {
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 		.addNumberColumn({ name:"jobId", dataIndex:"jobId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"jobCode", dataIndex:"jobCode", width:150 })   	
-		.addTextColumn({ name:"organizationCode", dataIndex:"organizationCode", width:150 })   	
+		.addTextColumn({ name:"org", dataIndex:"org", width:150 })   	
 	  	.addDefaults()
 	  ;		   
 	}
@@ -73,7 +73,7 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
-		.addLov({ name:"organizationCode", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"organizationCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
+		.addLov({ name:"org", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"org",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "orgId"} ]  })
 		.addLov({ name:"jobCode", xtype:"net.nan21.dnet.module.hr.job.lovs.Jobs", dataIndex:"jobCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "jobId"} ]  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
@@ -87,7 +87,7 @@ labelAlign:"top"}})
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
-		.addChildrenTo("col1",["name","code","organizationCode","jobCode","active"])
+		.addChildrenTo("col1",["name","code","org","jobCode","active"])
 		.addChildrenTo("col2",["notes"])
 ;
 	}	

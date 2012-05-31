@@ -6,10 +6,10 @@
 package net.nan21.dnet.module.md.bp.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.bd.acc.business.service.IAccSchemaService;
-import net.nan21.dnet.module.bd.acc.business.service.IAccountService;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.Account;
+import net.nan21.dnet.module.md.acc.business.service.IAccSchemaService;
+import net.nan21.dnet.module.md.acc.business.service.IAccountService;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.Account;
 import net.nan21.dnet.module.md.bp.domain.entity.BpAccount;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;

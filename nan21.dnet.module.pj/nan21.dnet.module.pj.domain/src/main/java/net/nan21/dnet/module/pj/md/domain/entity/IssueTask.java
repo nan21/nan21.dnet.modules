@@ -40,8 +40,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = IssueTask.NQ_FIND_BY_IDS, query = "SELECT e FROM IssueTask e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class IssueTask extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "PJ_ISSUE_TASK";
-    public static final String SEQUENCE_NAME = "PJ_ISSUE_TASK_SEQ";
+    public static final String TABLE_NAME = "PJ_TASK";
+    public static final String SEQUENCE_NAME = "PJ_TASK_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

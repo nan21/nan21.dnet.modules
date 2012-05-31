@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="AttributeCategoryService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.base.attr.business.serviceimpl.AttributeCategoryService"  />  
+ 
+ 	<bean id="AttributeTypeService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.base.attr.business.serviceimpl.AttributeTypeService"  />  
+ 
+ 	<bean id="AttributeService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.base.attr.business.serviceimpl.AttributeService"  />  
+ 
+ 	<bean id="AttributeGroupService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.base.attr.business.serviceimpl.AttributeGroupService"  />  
+ 
+ 	<bean id="AttributeGroupAttributeService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.base.attr.business.serviceimpl.AttributeGroupAttributeService"  />  
+   
+</beans>
+   

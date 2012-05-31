@@ -8,9 +8,9 @@ package net.nan21.dnet.module.md.mm.prod.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
-import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
+import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroupAttribute;
 import net.nan21.dnet.module.md.mm.prod.business.service.IProductAttributeService;
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeType;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttribute;
@@ -33,37 +33,51 @@ public class ProductAttributeService extends
         return ProductAttribute.class;
     }
 
-    public ProductAttribute findByName(String name) {
+    public ProductAttribute findByName(Product product,
+            AttributeGroupAttribute groupAttribute) {
         return (ProductAttribute) this.em
                 .createNamedQuery(ProductAttribute.NQ_FIND_BY_NAME)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pName", name).getSingleResult();
+                .setParameter("pProduct", product)
+                .setParameter("pGroupAttribute", groupAttribute)
+                .getSingleResult();
     }
 
-    public List<ProductAttribute> findByType(ProductAttributeType type) {
-        return this.findByTypeId(type.getId());
+    public ProductAttribute findByName(Long productId, Long groupAttributeId) {
+        return (ProductAttribute) this.em
+                .createNamedQuery(ProductAttribute.NQ_FIND_BY_NAME_PRIMITIVE)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pProductId", productId)
+                .setParameter("pGroupAttributeId", groupAttributeId)
+                .getSingleResult();
     }
 
-    public List<ProductAttribute> findByTypeId(Long typeId) {
+    public List<ProductAttribute> findByProduct(Product product) {
+        return this.findByProductId(product.getId());
+    }
+
+    public List<ProductAttribute> findByProductId(Long productId) {
         return (List<ProductAttribute>) this.em
                 .createQuery(
-                        "select e from ProductAttribute e where e.clientId = :pClientId and e.type.id = :pTypeId",
+                        "select e from ProductAttribute e where e.clientId = :pClientId and e.product.id = :pProductId",
                         ProductAttribute.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pTypeId", typeId).getResultList();
+                .setParameter("pProductId", productId).getResultList();
     }
 
-    public List<ProductAttribute> findByUom(Uom uom) {
-        return this.findByUomId(uom.getId());
+    public List<ProductAttribute> findByGroupAttribute(
+            AttributeGroupAttribute groupAttribute) {
+        return this.findByGroupAttributeId(groupAttribute.getId());
     }
 
-    public List<ProductAttribute> findByUomId(Long uomId) {
+    public List<ProductAttribute> findByGroupAttributeId(Long groupAttributeId) {
         return (List<ProductAttribute>) this.em
                 .createQuery(
-                        "select e from ProductAttribute e where e.clientId = :pClientId and e.uom.id = :pUomId",
+                        "select e from ProductAttribute e where e.clientId = :pClientId and e.groupAttribute.id = :pGroupAttributeId",
                         ProductAttribute.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pUomId", uomId).getResultList();
+                .setParameter("pGroupAttributeId", groupAttributeId)
+                .getResultList();
     }
 
 }

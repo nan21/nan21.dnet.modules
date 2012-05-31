@@ -42,6 +42,24 @@
 		<class>net.nan21.dnet.module.ad.system.domain.entity.AuditEntry</class>  
 		<class>net.nan21.dnet.module.ad.system.domain.entity.AuditField</class>  
 		
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJob</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJobParam</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJobCtx</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJobCtxParam</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysTimer</class>
+		 
+		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzBlobTrigger</class>
+		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzCalendar</class>
+		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzCronTrigger</class>
+		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzFiredTrigger</class>
+		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzJobDetail</class>
+		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzLock</class>
+		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzPausedTriggerGroup</class>
+		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzSchedulerState</class>
+		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzSimpleTrigger</class>
+		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzSimpropTrigger</class>
+		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzTrigger</class>
+		
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.User</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserGroup</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserType</class>

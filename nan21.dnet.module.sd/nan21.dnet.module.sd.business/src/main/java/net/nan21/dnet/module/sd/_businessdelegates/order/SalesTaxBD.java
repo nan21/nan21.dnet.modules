@@ -4,12 +4,12 @@ import java.util.Collection;
 import java.util.List;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
-import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
+import net.nan21.dnet.module.md.base.tax.domain.entity.Tax;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItemTax;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax;
- 
+
 public class SalesTaxBD extends AbstractBusinessDelegate {
 
 	public void createItemTax(SalesOrderItem item, Tax taxDefinition,
@@ -37,8 +37,7 @@ public class SalesTaxBD extends AbstractBusinessDelegate {
 			itemTaxes.add(tax);
 		}
 	}
-	
-	
+
 	public void createItemTax(SalesInvoiceItem item, Tax taxDefinition,
 			List<SalesInvoiceItemTax> itemTaxes) {
 		Tax tdef = null;
@@ -64,7 +63,5 @@ public class SalesTaxBD extends AbstractBusinessDelegate {
 			itemTaxes.add(tax);
 		}
 	}
-	
-	
 
 }

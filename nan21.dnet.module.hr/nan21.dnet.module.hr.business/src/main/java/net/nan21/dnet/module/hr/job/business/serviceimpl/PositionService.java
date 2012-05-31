@@ -45,18 +45,17 @@ public class PositionService extends AbstractEntityService<Position> implements
                 .setParameter("pName", name).getSingleResult();
     }
 
-    public List<Position> findByOrganization(Organization organization) {
-        return this.findByOrganizationId(organization.getId());
+    public List<Position> findByOrg(Organization org) {
+        return this.findByOrgId(org.getId());
     }
 
-    public List<Position> findByOrganizationId(Long organizationId) {
+    public List<Position> findByOrgId(Long orgId) {
         return (List<Position>) this.em
                 .createQuery(
-                        "select e from Position e where e.clientId = :pClientId and e.organization.id = :pOrganizationId",
+                        "select e from Position e where e.clientId = :pClientId and e.org.id = :pOrgId",
                         Position.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pOrganizationId", organizationId)
-                .getResultList();
+                .setParameter("pOrgId", orgId).getResultList();
     }
 
     public List<Position> findByJob(Job job) {

@@ -40,8 +40,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = CommunicationChannel.NQ_FIND_BY_IDS, query = "SELECT e FROM CommunicationChannel e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CommunicationChannel extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "BD_COMMUNIC_CHANNEL";
-    public static final String SEQUENCE_NAME = "BD_COMMUNIC_CHANNEL_SEQ";
+    public static final String TABLE_NAME = "BD_CMNC_MTD";
+    public static final String SEQUENCE_NAME = "BD_CMNC_MTD_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

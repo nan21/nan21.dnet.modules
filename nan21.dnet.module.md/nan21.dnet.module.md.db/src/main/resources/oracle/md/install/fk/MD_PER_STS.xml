@@ -1,0 +1,11 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_MD_PER_STS1" baseTableName="MD_PER_STS" baseColumnNames="PERIOD_ID"  referencedTableName="MD_PER_PRD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_MD_PER_STS2" baseTableName="MD_PER_STS" baseColumnNames="ORG_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

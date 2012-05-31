@@ -155,11 +155,11 @@ public class Issue extends AbstractAuditable {
     private ProjectRole assigneeRole;
 
     @ManyToMany
-    @JoinTable(name = "PJ_ITEM_PRJVERSIONS")
+    @JoinTable(name = "PJ_ISSUE_PRJVER")
     private Collection<ProjectVersion> affectedVersions;
 
     @ManyToMany
-    @JoinTable(name = "PJ_ITEM_COMPS")
+    @JoinTable(name = "PJ_ISSUE_COMP")
     private Collection<ProjectComponent> affectedComponents;
 
     /* ============== getters - setters ================== */

@@ -36,8 +36,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = ProductSubstitute.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductSubstitute e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductSubstitute extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "MD_PROD_SUBSTIT";
-    public static final String SEQUENCE_NAME = "MD_PROD_SUBSTIT_SEQ";
+    public static final String TABLE_NAME = "MD_PROD_SUBST";
+    public static final String SEQUENCE_NAME = "MD_PROD_SUBST_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

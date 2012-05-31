@@ -1,1 +1,7 @@
-"name";"description";"docType";"action";"active"
+docType;name;description;hasFromInventory;hasToInventory;active
+cons-gest;cons-gest;Consum gestiune;true;true;true
+exp-client;exp-client;Livrare vanzari;true;false;true
+exp-retur;exp-retur;Aviz expeditie retur furnizor;true;true;true
+nir-furn;nir-furn;Nota receptie cumparari;false;true;true
+nir-retur;nir-retur;Nota receptie retur client;false;true;true
+transf-gest;transf-gest;Transfer gestiune;true;true;true

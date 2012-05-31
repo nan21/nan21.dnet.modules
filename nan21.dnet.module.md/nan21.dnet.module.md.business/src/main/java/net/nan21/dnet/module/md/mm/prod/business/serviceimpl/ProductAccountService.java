@@ -33,36 +33,33 @@ public class ProductAccountService extends
         return ProductAccount.class;
     }
 
-    public ProductAccount findByProd_org(Product product,
-            Organization organization) {
+    public ProductAccount findByProd_org(Product product, Organization org) {
         return (ProductAccount) this.em
                 .createNamedQuery(ProductAccount.NQ_FIND_BY_PROD_ORG)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pProduct", product)
-                .setParameter("pOrganization", organization).getSingleResult();
+                .setParameter("pProduct", product).setParameter("pOrg", org)
+                .getSingleResult();
     }
 
-    public ProductAccount findByProd_org(Long productId, Long organizationId) {
+    public ProductAccount findByProd_org(Long productId, Long orgId) {
         return (ProductAccount) this.em
                 .createNamedQuery(ProductAccount.NQ_FIND_BY_PROD_ORG_PRIMITIVE)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pProductId", productId)
-                .setParameter("pOrganizationId", organizationId)
-                .getSingleResult();
+                .setParameter("pOrgId", orgId).getSingleResult();
     }
 
-    public List<ProductAccount> findByOrganization(Organization organization) {
-        return this.findByOrganizationId(organization.getId());
+    public List<ProductAccount> findByOrg(Organization org) {
+        return this.findByOrgId(org.getId());
     }
 
-    public List<ProductAccount> findByOrganizationId(Long organizationId) {
+    public List<ProductAccount> findByOrgId(Long orgId) {
         return (List<ProductAccount>) this.em
                 .createQuery(
-                        "select e from ProductAccount e where e.clientId = :pClientId and e.organization.id = :pOrganizationId",
+                        "select e from ProductAccount e where e.clientId = :pClientId and e.org.id = :pOrgId",
                         ProductAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pOrganizationId", organizationId)
-                .getResultList();
+                .setParameter("pOrgId", orgId).getResultList();
     }
 
     public List<ProductAccount> findByGroup(ProductAccountGroup group) {

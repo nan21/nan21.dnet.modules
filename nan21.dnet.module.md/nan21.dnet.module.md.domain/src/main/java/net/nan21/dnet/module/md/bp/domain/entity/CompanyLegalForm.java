@@ -40,8 +40,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = "CompanyLegalForm.findByName_PRIMITIVE", query = "SELECT e FROM CompanyLegalForm e WHERE e.clientId = :pClientId and  e.country.id = :pCountryId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CompanyLegalForm extends AbstractType {
 
-    public static final String TABLE_NAME = "MD_BP_LEGAL_FORM";
-    public static final String SEQUENCE_NAME = "MD_BP_LEGAL_FORM_SEQ";
+    public static final String TABLE_NAME = "MD_BP_LGL_FRM";
+    public static final String SEQUENCE_NAME = "MD_BP_LGL_FRM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

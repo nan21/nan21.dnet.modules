@@ -36,8 +36,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = UomConversion.NQ_FIND_BY_IDS, query = "SELECT e FROM UomConversion e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class UomConversion extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "BD_UOM_CONVERSION";
-    public static final String SEQUENCE_NAME = "BD_UOM_CONVERSION_SEQ";
+    public static final String TABLE_NAME = "BD_UOM_CNV";
+    public static final String SEQUENCE_NAME = "BD_UOM_CNV_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

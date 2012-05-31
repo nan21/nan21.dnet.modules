@@ -5,7 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_SKILL1" 
 				baseTableName="HR_EMPL_SKILL" baseColumnNames="EMPLOYEE_ID"  
-				referencedTableName="HR_EMPLOYEE"  referencedColumnNames="ID" />
+				referencedTableName="HR_EMPL"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_SKILL2" 
@@ -15,6 +15,6 @@
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_SKILL3" 
 				baseTableName="HR_EMPL_SKILL" baseColumnNames="SKILLLEVEL_ID"  
-				referencedTableName="HR_RATING_LEVEL"  referencedColumnNames="ID" />
+				referencedTableName="HR_RATE_LVL"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

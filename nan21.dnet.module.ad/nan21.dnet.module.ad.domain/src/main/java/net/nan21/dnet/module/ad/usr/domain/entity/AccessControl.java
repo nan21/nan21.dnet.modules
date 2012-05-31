@@ -42,8 +42,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = AccessControl.NQ_FIND_BY_NAME, query = "SELECT e FROM AccessControl e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AccessControl extends AbstractType {
 
-    public static final String TABLE_NAME = "AD_ACCESS_CONTROL";
-    public static final String SEQUENCE_NAME = "AD_ACCESS_CONTROL_SEQ";
+    public static final String TABLE_NAME = "AD_ACL";
+    public static final String SEQUENCE_NAME = "AD_ACL_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

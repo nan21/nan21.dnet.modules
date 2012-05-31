@@ -6,12 +6,12 @@ import java.util.Collection;
 import java.util.List;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
-import net.nan21.dnet.module.bd.acc.business.service.IAccItemAcctService;
-import net.nan21.dnet.module.bd.acc.business.service.IAccSchemaService;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccItemAcct;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.tx.business.service.IFiscalPeriodService;
-import net.nan21.dnet.module.bd.tx.domain.entity.FiscalPeriod;
+import net.nan21.dnet.module.md.acc.business.service.IAccItemAcctService;
+import net.nan21.dnet.module.md.acc.business.service.IAccSchemaService;
+import net.nan21.dnet.module.md.acc.domain.entity.AccItemAcct;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.base.period.business.service.IFiscalPeriodService;
+import net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod;
 import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 
@@ -19,8 +19,8 @@ import net.nan21.dnet.module.md.mm.prod.business.service.IProductService;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.md.org.business.service.IPayAccountAcctService;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccountAcct;
-import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc;
-import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine;
+import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDoc;
+import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDocLine;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PaymentOut;
 

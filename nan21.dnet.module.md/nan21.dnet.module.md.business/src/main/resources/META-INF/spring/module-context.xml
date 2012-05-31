@@ -96,11 +96,23 @@
 	<!-- Domain services 
 	<import  resource="classpath://META-INF/spring/beans/bd.geo.entity.xml" />-->
 	
+	<import resource="beans/md.acc.entity.xml" />
 	<import resource="beans/md.activity.entity.xml" />
+	
+	<import resource="beans/md.base.attr.entity.xml" />
+	<import resource="beans/md.base.elem.entity.xml" />
+	<import resource="beans/md.base.tx.entity.xml" />
+	<import resource="beans/md.base.tax.entity.xml" />
+	<import resource="beans/md.base.period.entity.xml" />
+	
 	<import resource="beans/md.bp.entity.xml" />
 	<import resource="beans/md.mm.price.entity.xml" />	
-	<import resource="beans/md.mm.prod.entity.xml" />	  
+	<import resource="beans/md.mm.prod.entity.xml" />
+		  
 	<import resource="beans/md.org.entity.xml" />
+	<import resource="beans/md.res.entity.xml" />
+	
+	<import resource="beans/md.tx.acc.entity.xml" />
 	<import resource="beans/md.tx.fin.entity.xml" />
 	<import resource="beans/md.tx.inventory.entity.xml" />
 	 

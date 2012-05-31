@@ -21,25 +21,25 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
-import net.nan21.dnet.core.domain.model.AbstractType;
-import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeType;
+import net.nan21.dnet.core.domain.model.AbstractAuditable;
+import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroupAttribute;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
-import org.hibernate.validator.constraints.NotBlank;
 
-/** Product attribute definition.*/
+/** Product attribute. */
 @Entity
 @Table(name = ProductAttribute.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = ProductAttribute.TABLE_NAME
-        + "_UK1", columnNames = { "CLIENTID", "NAME" }) })
+        + "_UK1", columnNames = { "CLIENTID", "PRODUCT_ID", "GROUPATTRIBUTE_ID" }) })
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = ProductAttribute.NQ_FIND_BY_ID, query = "SELECT e FROM ProductAttribute e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProductAttribute.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductAttribute e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = ProductAttribute.NQ_FIND_BY_NAME, query = "SELECT e FROM ProductAttribute e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class ProductAttribute extends AbstractType {
+        @NamedQuery(name = ProductAttribute.NQ_FIND_BY_NAME, query = "SELECT e FROM ProductAttribute e WHERE e.clientId = :pClientId and  e.product = :pProduct and e.groupAttribute = :pGroupAttribute ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "ProductAttribute.findByName_PRIMITIVE", query = "SELECT e FROM ProductAttribute e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.groupAttribute.id = :pGroupAttributeId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+public class ProductAttribute extends AbstractAuditable {
 
     public static final String TABLE_NAME = "MD_PROD_ATTR";
     public static final String SEQUENCE_NAME = "MD_PROD_ATTR_SEQ";
@@ -62,6 +62,11 @@ public class ProductAttribute extends AbstractType {
     public static final String NQ_FIND_BY_NAME = "ProductAttribute.findByName";
 
     /**
+     * Named query find by unique key: Name using the ID field for references.
+     */
+    public static final String NQ_FIND_BY_NAME_PRIMITIVE = "ProductAttribute.findByName_PRIMITIVE";
+
+    /**
      * System generated unique identifier.
      */
     @Column(name = "ID", nullable = false)
@@ -70,25 +75,15 @@ public class ProductAttribute extends AbstractType {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
-    /** Title. */
-    @Column(name = "TITLE", nullable = false, length = 255)
-    @NotBlank
-    private String title;
-
-    /** DataType. */
-    @Column(name = "DATATYPE", nullable = false, length = 32)
-    @NotBlank
-    private String dataType;
-
-    /** ListOfvalues. */
-    @Column(name = "LISTOFVALUES", length = 400)
-    private String listOfvalues;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAttributeType.class)
-    @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
-    private ProductAttributeType type;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Uom.class)
-    @JoinColumn(name = "UOM_ID", referencedColumnName = "ID")
-    private Uom uom;
+    /** Value. */
+    @Column(name = "VALUE", length = 400)
+    private String value;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
+    @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
+    private Product product;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AttributeGroupAttribute.class)
+    @JoinColumn(name = "GROUPATTRIBUTE_ID", referencedColumnName = "ID")
+    private AttributeGroupAttribute groupAttribute;
 
     /* ============== getters - setters ================== */
 
@@ -100,53 +95,34 @@ public class ProductAttribute extends AbstractType {
         this.id = id;
     }
 
-    public String getTitle() {
-        return this.title;
+    public String getValue() {
+        return this.value;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setValue(String value) {
+        this.value = value;
     }
 
-    public String getDataType() {
-        return this.dataType;
+    public Product getProduct() {
+        return this.product;
     }
 
-    public void setDataType(String dataType) {
-        this.dataType = dataType;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
-    public String getListOfvalues() {
-        return this.listOfvalues;
+    public AttributeGroupAttribute getGroupAttribute() {
+        return this.groupAttribute;
     }
 
-    public void setListOfvalues(String listOfvalues) {
-        this.listOfvalues = listOfvalues;
-    }
-
-    public ProductAttributeType getType() {
-        return this.type;
-    }
-
-    public void setType(ProductAttributeType type) {
-        this.type = type;
-    }
-
-    public Uom getUom() {
-        return this.uom;
-    }
-
-    public void setUom(Uom uom) {
-        this.uom = uom;
+    public void setGroupAttribute(AttributeGroupAttribute groupAttribute) {
+        this.groupAttribute = groupAttribute;
     }
 
     public void aboutToInsert(DescriptorEvent event) {
 
         super.aboutToInsert(event);
 
-        if (this.getActive() == null) {
-            event.updateAttributeWithObject("active", false);
-        }
     }
 
     public void aboutToUpdate(DescriptorEvent event) {

@@ -14,16 +14,17 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
 import net.nan21.dnet.module.hr.employee.business.service.IEmployeeService;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
-import net.nan21.dnet.module.hr.payroll.domain.entity.Element;
-import net.nan21.dnet.module.hr.payroll.domain.entity.ElementFormula;
-import net.nan21.dnet.module.hr.payroll.domain.entity.ElementInput;
-import net.nan21.dnet.module.hr.payroll.domain.entity.ElementValue;
+import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElementValue;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod;
+import net.nan21.dnet.module.md.base.elem.domain.entity.Element;
+import net.nan21.dnet.module.md.base.elem.domain.entity.ElementFormula;
+import net.nan21.dnet.module.md.base.elem.domain.entity.ElementInput;
 
 public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 
 	public void clear(PayrollPeriod period) throws Exception {
-		String eql = "delete from ElementValue e where e.clientId = :clientId "
+		String eql = "delete from " + PayrollElementValue.class.getSimpleName()
+				+ " e where e.clientId = :clientId "
 				+ "   and e.period.id = :periodId ";
 		this.getEntityManager().createQuery(eql).setParameter("clientId",
 				Session.user.get().getClientId()).setParameter("periodId",
@@ -40,8 +41,8 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 	public void process(PayrollPeriod period) throws Exception {
 		this.emplService = (IEmployeeService) this
 				.findEntityService(Employee.class);
-		String eqlEmpl = "select e from Employee e "
-				+ " where e.clientId = :clientId "
+		String eqlEmpl = "select e from " + Employee.class.getSimpleName()
+				+ " e " + " where e.clientId = :clientId "
 				+ "   and e.payroll.id = :payrollId ";
 
 		List<Employee> employees = this.emplService.getEntityManager()
@@ -81,7 +82,7 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 		for (Employee employee : employees) {
 			this.processPayrollPeriod(period, employee);
 		}
-		
+
 		period.setProcessed(true);
 		this.getEntityManager().merge(period);
 	}
@@ -89,19 +90,28 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 	protected void processPayrollPeriod(PayrollPeriod period, Employee employee)
 			throws Exception {
 
-		Map<String, ElementValue> elemValMap = new HashMap<String, ElementValue>();
+		Map<String, PayrollElementValue> elemValMap = new HashMap<String, PayrollElementValue>();
 		ScriptEngine engine = this.getScriptEngine();
 		engine.put("_employee", employee);
 		for (Element element : this.elements) {
-			ElementValue elemVal = new ElementValue();
+			PayrollElementValue elemVal = new PayrollElementValue();
 			elemVal.setEmployee(employee);
 			elemVal.setElement(element);
 			elemVal.setPeriod(period);
 			elemValMap.put(element.getCode(), elemVal);
 
 			for (ElementInput var : element.getVariables()) {
-				ElementValue v = elemValMap.get(var.getCrossReference()
+				PayrollElementValue v = elemValMap.get(var.getCrossReference()
 						.getCode());
+				if (v == null) {
+					throw new RuntimeException("Cannot process element `"
+							+ element.getCode() + "` - `" + element.getName()
+							+ "` (step=" + element.getSequenceNo()
+							+ ") as the required input value `"
+							+ var.getCrossReference().getCode()
+							+ "` has not been processed yet (step="
+							+ var.getCrossReference().getSequenceNo() + ").");
+				}
 				if (v.getElement().getDataType().equals("number")) {
 					engine.put(var.getAlias(), Double.valueOf(v.getValue()));
 				}
@@ -111,16 +121,25 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 
 			}
 			if (element.getDataType().equals("number")) {
-				Object result = engine.eval(this.formulas
-						.get(element.getCode()).getExpression());
-				if (result instanceof Double) {
-					elemVal.setValue(Double.toString((Double) result));
-				}
-				if (result instanceof Float) {
-					elemVal.setValue(Float.toString((Float) result));
-				}
-				if (result instanceof Integer) {
-					elemVal.setValue(Integer.toString((Integer) result));
+
+				try {
+					Object result = engine.eval(this.formulas.get(
+							element.getCode()).getExpression());
+
+					if (result instanceof Double) {
+						elemVal.setValue(Double.toString((Double) result));
+					}
+					if (result instanceof Float) {
+						elemVal.setValue(Float.toString((Float) result));
+					}
+					if (result instanceof Integer) {
+						elemVal.setValue(Integer.toString((Integer) result));
+					}
+				} catch (Exception e) {
+					throw new RuntimeException("Cannot process element `"
+							+ element.getCode() + "` - `" + element.getName()
+							+ "` (step=" + element.getSequenceNo()
+							+ ") Reason is: "+e.getMessage());
 				}
 
 			}

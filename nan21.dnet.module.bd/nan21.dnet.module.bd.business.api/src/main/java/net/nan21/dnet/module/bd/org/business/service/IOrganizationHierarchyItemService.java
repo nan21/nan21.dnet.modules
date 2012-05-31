@@ -20,11 +20,9 @@ public interface IOrganizationHierarchyItemService extends
 
     public List<OrganizationHierarchyItem> findByHierarchyId(Long hierarchyId);
 
-    public List<OrganizationHierarchyItem> findByOrganization(
-            Organization organization);
+    public List<OrganizationHierarchyItem> findByOrg(Organization org);
 
-    public List<OrganizationHierarchyItem> findByOrganizationId(
-            Long organizationId);
+    public List<OrganizationHierarchyItem> findByOrgId(Long orgId);
 
     public List<OrganizationHierarchyItem> findByParent(Organization parent);
 

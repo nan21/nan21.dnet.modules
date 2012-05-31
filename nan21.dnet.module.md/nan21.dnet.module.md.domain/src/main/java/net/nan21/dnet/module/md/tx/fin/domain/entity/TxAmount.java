@@ -28,7 +28,7 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -46,8 +46,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = TxAmount.NQ_FIND_BY_IDS, query = "SELECT e FROM TxAmount e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class TxAmount extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "TX_AMOUNT";
-    public static final String SEQUENCE_NAME = "TX_AMOUNT_SEQ";
+    public static final String TABLE_NAME = "TX_AMNT";
+    public static final String SEQUENCE_NAME = "TX_AMNT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -1,0 +1,23 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_HR_EMPL1" baseTableName="HR_EMPL" baseColumnNames="TYPE_ID"  referencedTableName="HR_EMPNT_TYPE"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_HR_EMPL2" baseTableName="HR_EMPL" baseColumnNames="POSITION_ID"  referencedTableName="HR_POS"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_HR_EMPL3" baseTableName="HR_EMPL" baseColumnNames="JOB_ID"  referencedTableName="HR_JOB"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_HR_EMPL4" baseTableName="HR_EMPL" baseColumnNames="ORG_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-5">
+		<addForeignKeyConstraint constraintName="FK_HR_EMPL5" baseTableName="HR_EMPL" baseColumnNames="GRADE_ID"  referencedTableName="HR_GRD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-6">
+		<addForeignKeyConstraint constraintName="FK_HR_EMPL6" baseTableName="HR_EMPL" baseColumnNames="PAYROLL_ID"  referencedTableName="HR_PAYROLL"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

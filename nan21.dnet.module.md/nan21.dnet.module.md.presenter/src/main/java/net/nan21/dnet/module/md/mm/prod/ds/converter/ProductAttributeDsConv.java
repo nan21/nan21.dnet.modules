@@ -6,10 +6,12 @@
 package net.nan21.dnet.module.md.mm.prod.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.bd.uom.business.service.IUomService;
-import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.md.mm.prod.business.service.IProductAttributeTypeService;
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeType;
+import net.nan21.dnet.module.md.base.attr.business.service.IAttributeGroupAttributeService;
+import net.nan21.dnet.module.md.base.attr.business.service.IAttributeService;
+import net.nan21.dnet.module.md.base.attr.domain.entity.Attribute;
+import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroupAttribute;
+import net.nan21.dnet.module.md.mm.prod.business.service.IProductService;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeDs;
@@ -23,61 +25,74 @@ public class ProductAttributeDsConv extends
     protected void modelToEntityReferences(ProductAttributeDs ds,
             ProductAttribute e, boolean isInsert) throws Exception {
 
-        if (ds.getTypeId() != null) {
-            if (e.getType() == null
-                    || !e.getType().getId().equals(ds.getTypeId())) {
-                e.setType((ProductAttributeType) this.em.find(
-                        ProductAttributeType.class, ds.getTypeId()));
+        if (ds.getProductId() != null) {
+            if (e.getProduct() == null
+                    || !e.getProduct().getId().equals(ds.getProductId())) {
+                e.setProduct((Product) this.em.find(Product.class,
+                        ds.getProductId()));
             }
         } else {
-            this.lookup_type_ProductAttributeType(ds, e);
+            this.lookup_product_Product(ds, e);
         }
 
-        if (ds.getUomId() != null) {
-            if (e.getUom() == null || !e.getUom().getId().equals(ds.getUomId())) {
-                e.setUom((Uom) this.em.find(Uom.class, ds.getUomId()));
+        if (ds.getAttributeId() == null) {
+            Attribute x = ((IAttributeService) findEntityService(Attribute.class))
+                    .findByName(ds.getAttribute());
+
+            ds.setAttributeId(x.getId());
+        }
+
+        if (ds.getGroupAttributeId() != null) {
+            if (e.getGroupAttribute() == null
+                    || !e.getGroupAttribute().getId()
+                            .equals(ds.getGroupAttributeId())) {
+                e.setGroupAttribute((AttributeGroupAttribute) this.em.find(
+                        AttributeGroupAttribute.class, ds.getGroupAttributeId()));
             }
         } else {
-            this.lookup_uom_Uom(ds, e);
+            this.lookup_groupAttribute_AttributeGroupAttribute(ds, e);
         }
 
     }
 
-    protected void lookup_type_ProductAttributeType(ProductAttributeDs ds,
+    protected void lookup_product_Product(ProductAttributeDs ds,
             ProductAttribute e) throws Exception {
-        if (ds.getType() != null && !ds.getType().equals("")) {
-            ProductAttributeType x = null;
+        if (ds.getProductCode() != null && !ds.getProductCode().equals("")) {
+            Product x = null;
             try {
-                x = ((IProductAttributeTypeService) findEntityService(ProductAttributeType.class))
-                        .findByName(ds.getType());
+                x = ((IProductService) findEntityService(Product.class))
+                        .findByCode(ds.getProductCode());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `ProductAttributeType` reference:  `type` = "
-                                + ds.getType() + "  ");
+                        "Invalid value provided to find `Product` reference:  `productCode` = "
+                                + ds.getProductCode() + "  ");
             }
-            e.setType(x);
-
+            e.setProduct(x);
+            ds.setProductId(x.getId());
         } else {
-            e.setType(null);
+            e.setProduct(null);
         }
     }
 
-    protected void lookup_uom_Uom(ProductAttributeDs ds, ProductAttribute e)
-            throws Exception {
-        if (ds.getUom() != null && !ds.getUom().equals("")) {
-            Uom x = null;
+    protected void lookup_groupAttribute_AttributeGroupAttribute(
+            ProductAttributeDs ds, ProductAttribute e) throws Exception {
+        if (ds.getAttributeId() != null && !ds.getAttributeId().equals("")) {
+            AttributeGroupAttribute x = null;
             try {
-                x = ((IUomService) findEntityService(Uom.class)).findByCode(ds
-                        .getUom());
+                x = ((IAttributeGroupAttributeService) findEntityService(AttributeGroupAttribute.class))
+                        .findByName(e.getProduct().getAttributeGroup().getId(),
+                                ds.getAttributeId());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `Uom` reference:  `uom` = "
-                                + ds.getUom() + "  ");
+                        "Invalid value provided to find `AttributeGroupAttribute` reference:  `groupId` = "
+                                + ds.getGroupId()
+                                + " , `attributeId` = "
+                                + ds.getAttributeId() + "  ");
             }
-            e.setUom(x);
+            e.setGroupAttribute(x);
 
         } else {
-            e.setUom(null);
+            e.setGroupAttribute(null);
         }
     }
 

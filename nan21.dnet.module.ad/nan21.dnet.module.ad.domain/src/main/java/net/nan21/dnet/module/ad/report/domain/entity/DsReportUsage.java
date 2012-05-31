@@ -36,8 +36,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = DsReportUsage.NQ_FIND_BY_IDS, query = "SELECT e FROM DsReportUsage e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class DsReportUsage extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "AD_DS_REPORT_USAGE";
-    public static final String SEQUENCE_NAME = "AD_DS_REPORT_USAGE_SEQ";
+    public static final String TABLE_NAME = "AD_DS_RPT_USAGE";
+    public static final String SEQUENCE_NAME = "AD_DS_RPT_USAGE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

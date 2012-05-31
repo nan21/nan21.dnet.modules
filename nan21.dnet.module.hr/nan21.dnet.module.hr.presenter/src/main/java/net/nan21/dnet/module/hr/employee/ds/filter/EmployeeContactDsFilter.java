@@ -19,10 +19,10 @@ public class EmployeeContactDsFilter extends AbstractAuditableDsFilter {
 
     private String lastName;
 
-    private Date birthdate;
+    private Date birthDate;
 
-    private Date birthdate_From;
-    private Date birthdate_To;
+    private Date birthDate_From;
+    private Date birthDate_To;
 
     private String gender;
 
@@ -75,28 +75,28 @@ public class EmployeeContactDsFilter extends AbstractAuditableDsFilter {
         this.lastName = lastName;
     }
 
-    public Date getBirthdate() {
-        return this.birthdate;
+    public Date getBirthDate() {
+        return this.birthDate;
     }
 
-    public Date getBirthdate_From() {
-        return this.birthdate_From;
+    public Date getBirthDate_From() {
+        return this.birthDate_From;
     }
 
-    public Date getBirthdate_To() {
-        return this.birthdate_To;
+    public Date getBirthDate_To() {
+        return this.birthDate_To;
     }
 
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public void setBirthdate_From(Date birthdate_From) {
-        this.birthdate_From = birthdate_From;
+    public void setBirthDate_From(Date birthDate_From) {
+        this.birthDate_From = birthDate_From;
     }
 
-    public void setBirthdate_To(Date birthdate_To) {
-        this.birthdate_To = birthdate_To;
+    public void setBirthDate_To(Date birthDate_To) {
+        this.birthDate_To = birthDate_To;
     }
 
     public String getGender() {

@@ -1,0 +1,55 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_SD_INV1" 
+				baseTableName="SD_INV" baseColumnNames="PRICELIST_ID"  
+				referencedTableName="MD_PRICE_LIST"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_SD_INV2" 
+				baseTableName="SD_INV" baseColumnNames="CURRENCY_ID"  
+				referencedTableName="BD_CRNCY"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_SD_INV3" 
+				baseTableName="SD_INV" baseColumnNames="PAYMENTMETHOD_ID"  
+				referencedTableName="MD_PYMNT_MTD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_SD_INV4" 
+				baseTableName="SD_INV" baseColumnNames="PAYMENTTERM_ID"  
+				referencedTableName="MD_PYMNT_TERM"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-5">
+		<addForeignKeyConstraint constraintName="FK_SD_INV5" 
+				baseTableName="SD_INV" baseColumnNames="DOCTYPE_ID"  
+				referencedTableName="MD_TXDOC_TYPE"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-6">
+		<addForeignKeyConstraint constraintName="FK_SD_INV6" 
+				baseTableName="SD_INV" baseColumnNames="CUSTOMER_ID"  
+				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-7">
+		<addForeignKeyConstraint constraintName="FK_SD_INV7" 
+				baseTableName="SD_INV" baseColumnNames="BILLTOLOCATION_ID"  
+				referencedTableName="BD_GEO_LOCATION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-8">
+		<addForeignKeyConstraint constraintName="FK_SD_INV8" 
+				baseTableName="SD_INV" baseColumnNames="BILLTOCONTACT_ID"  
+				referencedTableName="MD_BP_CNTC"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-9">
+		<addForeignKeyConstraint constraintName="FK_SD_INV9" 
+				baseTableName="SD_INV" baseColumnNames="SUPPLIER_ID"  
+				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-10">
+		<addForeignKeyConstraint constraintName="FK_SD_INV10" 
+				baseTableName="SD_INV" baseColumnNames="SALESORDER_ID"  
+				referencedTableName="SD_ORD"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

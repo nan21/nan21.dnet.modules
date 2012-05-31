@@ -25,9 +25,6 @@
  	<bean id="BankService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.BankService"  />  
  
- 	<bean id="BpBalanceService" scope="prototype"
-	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.BpBalanceService"  />  
- 
  	<bean id="BpAccountService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.bp.business.serviceimpl.BpAccountService"  />  
  

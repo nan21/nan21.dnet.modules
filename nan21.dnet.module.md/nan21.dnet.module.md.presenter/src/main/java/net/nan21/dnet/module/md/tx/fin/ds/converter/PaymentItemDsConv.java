@@ -6,10 +6,10 @@
 package net.nan21.dnet.module.md.tx.fin.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.bd.acc.business.service.IAccItemService;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccItem;
 import net.nan21.dnet.module.bd.uom.business.service.IUomService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
+import net.nan21.dnet.module.md.acc.business.service.IAccItemService;
+import net.nan21.dnet.module.md.acc.domain.entity.AccItem;
 import net.nan21.dnet.module.md.mm.prod.business.service.IProductService;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.Payment;

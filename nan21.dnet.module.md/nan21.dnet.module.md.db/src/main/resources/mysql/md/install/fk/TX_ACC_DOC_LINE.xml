@@ -15,6 +15,6 @@
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC_LINE3" 
 				baseTableName="TX_ACC_DOC_LINE" baseColumnNames="ASSET_ID"  
-				referencedTableName="MD_ASSET_BASE"  referencedColumnNames="ID" />
+				referencedTableName="MD_RES_ASSET"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

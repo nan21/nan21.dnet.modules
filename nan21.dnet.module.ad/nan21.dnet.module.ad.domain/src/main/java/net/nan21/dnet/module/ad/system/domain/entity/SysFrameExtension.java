@@ -36,8 +36,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = SysFrameExtension.NQ_FIND_BY_NAME, query = "SELECT e FROM SysFrameExtension e WHERE e.clientId = :pClientId and  e.frameFQN = :pFrameFQN and e.fileLocation = :pFileLocation ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysFrameExtension extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "AD_SYSFRAMEEXTENSION";
-    public static final String SEQUENCE_NAME = "AD_SYSFRAMEEXTENSION_SEQ";
+    public static final String TABLE_NAME = "AD_SYS_FRAME_EXT";
+    public static final String SEQUENCE_NAME = "AD_SYS_FRAME_EXT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

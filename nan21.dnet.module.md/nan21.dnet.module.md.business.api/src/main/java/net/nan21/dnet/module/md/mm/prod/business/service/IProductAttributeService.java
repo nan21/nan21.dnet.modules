@@ -7,22 +7,26 @@ package net.nan21.dnet.module.md.mm.prod.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
-import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeType;
+import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroupAttribute;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttribute;
 
 public interface IProductAttributeService extends
         IEntityService<ProductAttribute> {
 
-    public ProductAttribute findByName(String name);
+    public ProductAttribute findByName(Product product,
+            AttributeGroupAttribute groupAttribute);
 
-    public List<ProductAttribute> findByType(ProductAttributeType type);
+    public ProductAttribute findByName(Long productId, Long groupAttributeId);
 
-    public List<ProductAttribute> findByTypeId(Long typeId);
+    public List<ProductAttribute> findByProduct(Product product);
 
-    public List<ProductAttribute> findByUom(Uom uom);
+    public List<ProductAttribute> findByProductId(Long productId);
 
-    public List<ProductAttribute> findByUomId(Long uomId);
+    public List<ProductAttribute> findByGroupAttribute(
+            AttributeGroupAttribute groupAttribute);
+
+    public List<ProductAttribute> findByGroupAttributeId(Long groupAttributeId);
 
 }

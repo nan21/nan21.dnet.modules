@@ -81,15 +81,13 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
             this.lookup_job_Job(ds, e);
         }
 
-        if (ds.getOrganizationId() != null) {
-            if (e.getOrganization() == null
-                    || !e.getOrganization().getId()
-                            .equals(ds.getOrganizationId())) {
-                e.setOrganization((Organization) this.em.find(
-                        Organization.class, ds.getOrganizationId()));
+        if (ds.getOrgId() != null) {
+            if (e.getOrg() == null || !e.getOrg().getId().equals(ds.getOrgId())) {
+                e.setOrg((Organization) this.em.find(Organization.class,
+                        ds.getOrgId()));
             }
         } else {
-            this.lookup_organization_Organization(ds, e);
+            this.lookup_org_Organization(ds, e);
         }
 
         if (ds.getGradeId() != null) {
@@ -208,23 +206,22 @@ public class EmployeeDsConv extends AbstractDsConverter<EmployeeDs, Employee>
         }
     }
 
-    protected void lookup_organization_Organization(EmployeeDs ds, Employee e)
+    protected void lookup_org_Organization(EmployeeDs ds, Employee e)
             throws Exception {
-        if (ds.getOrganizationCode() != null
-                && !ds.getOrganizationCode().equals("")) {
+        if (ds.getOrg() != null && !ds.getOrg().equals("")) {
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getOrganizationCode());
+                        .findByCode(ds.getOrg());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `Organization` reference:  `organizationCode` = "
-                                + ds.getOrganizationCode() + "  ");
+                        "Invalid value provided to find `Organization` reference:  `org` = "
+                                + ds.getOrg() + "  ");
             }
-            e.setOrganization(x);
+            e.setOrg(x);
 
         } else {
-            e.setOrganization(null);
+            e.setOrg(null);
         }
     }
 

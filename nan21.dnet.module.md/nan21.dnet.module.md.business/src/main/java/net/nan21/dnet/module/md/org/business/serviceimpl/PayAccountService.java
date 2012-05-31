@@ -8,9 +8,9 @@ package net.nan21.dnet.module.md.org.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccJournal;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.md.acc.domain.entity.AccJournal;
 import net.nan21.dnet.module.md.org.business.service.IPayAccountService;
 
 import javax.persistence.EntityManager;

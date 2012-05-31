@@ -1,8 +1,10 @@
 "sequenceNo";"name";"title";"active";"description"
-"10";"AD";"Administration";"true";
-"20";"MD";"Master-data Management";"true";
-"30";"HR";"Human Resources Managment";"true";
-"40";"SC";"Purchasing";"true";
-"50";"SD";"Sales & Distribution";"true";
-"60";"FI";"Financials";"true";
-"70";"PJ";"Project Managment";"true";
+"10";"AD";"Administration";"true";"Application administration"
+"20";"BD";"Base data";"true";"Base data management screens"
+"30";"MD";"Master-data Management";"true";"Master data management"
+"40";"HR";"Human Resources Managment";"true";"Human Resources management"
+"50";"IV";"Inventory Management";"true";"Inventory Management"
+"60";"SC";"Purchasing";"true";"Purchasing related - transactions with vendors"
+"70";"SD";"Sales & Distribution";"true";"Sales related - transactions with customers"
+"80";"PJ";"Project Managment";"true";"Project based work, service management"
+"90";"FI";"Financials & Accounting";"true";"Financials and accounting"

@@ -8,7 +8,7 @@ package net.nan21.dnet.module.md.org.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.org.business.service.IPayAccountMethodService;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 

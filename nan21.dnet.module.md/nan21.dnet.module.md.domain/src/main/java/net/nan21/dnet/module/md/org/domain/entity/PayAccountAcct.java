@@ -22,8 +22,8 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.Account;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.Account;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -42,8 +42,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = "PayAccountAcct.findByAccount_schema_PRIMITIVE", query = "SELECT e FROM PayAccountAcct e WHERE e.clientId = :pClientId and  e.payAccount.id = :pPayAccountId and e.accSchema.id = :pAccSchemaId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayAccountAcct extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "MD_PAY_ACCOUNT_ACCT";
-    public static final String SEQUENCE_NAME = "MD_PAY_ACCOUNT_ACCT_SEQ";
+    public static final String TABLE_NAME = "MD_FINACNT_ACCT";
+    public static final String SEQUENCE_NAME = "MD_FINACNT_ACCT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="AD_WFDEF_TRANS">
+			<column name="CLIENTID" type="number(3)">
+				<constraints nullable="false" /></column>	 
+			<column name="COND" type="varchar2(4000)">
+				<constraints  /></column>	 
+			<column name="CREATEDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDBY" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="ID" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDAT" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDBY" type="varchar2(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="UUID" type="varchar2(36)">
+				<constraints  /></column>	 
+			<column name="VERSION" type="number(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="PROCESS_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="SOURCE_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="TARGET_ID" type="number(19)">	 
+				<constraints nullable="false" /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="AD_WFDEF_TRANS" constraintName="PK_WFDEF_TRANS" columnNames="ID" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="AD_WFDEF_TRANS_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

@@ -37,6 +37,13 @@
 								<property name="destPath" value="demo-data/ad" />
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/ad/data/system/SysParam.csv" />
+							</bean>	
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="UiViewState" />
+								<property name="destPath" value="demo-data/ad" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/ad/data/system/UiViewState.csv" />
 							</bean>						   
 						</list>
 					</property>
@@ -92,7 +99,23 @@
 								<property name="ukFieldName" value="name" />
 								<property name="file"
 									value="classpath:net/nan21/dnet/module/ad/data/usr/MenuItemParent.csv" />
-							</bean>		   
+							</bean>	
+							
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="80" />
+								<property name="dsName" value="AccessControl" />
+								<property name="destPath" value="demo-data/ad" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/ad/data/usr/AccessControl.csv" />
+							</bean>	
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="90" />
+								<property name="dsName" value="DsAccessControl" />
+								<property name="destPath" value="demo-data/ad" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/ad/data/usr/DsAccessControl.csv" />
+							</bean>	
 						</list>
 					</property>
 				</bean>

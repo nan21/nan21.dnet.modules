@@ -104,14 +104,14 @@ public class EmployeeDsFilter extends AbstractAuditableDsFilter {
     private Long posOrgId_From;
     private Long posOrgId_To;
 
-    private String posOrgCode;
+    private String posOrg;
 
-    private Long organizationId;
+    private Long orgId;
 
-    private Long organizationId_From;
-    private Long organizationId_To;
+    private Long orgId_From;
+    private Long orgId_To;
 
-    private String organizationCode;
+    private String org;
 
     private Float baseSalary;
 
@@ -541,44 +541,44 @@ public class EmployeeDsFilter extends AbstractAuditableDsFilter {
         this.posOrgId_To = posOrgId_To;
     }
 
-    public String getPosOrgCode() {
-        return this.posOrgCode;
+    public String getPosOrg() {
+        return this.posOrg;
     }
 
-    public void setPosOrgCode(String posOrgCode) {
-        this.posOrgCode = posOrgCode;
+    public void setPosOrg(String posOrg) {
+        this.posOrg = posOrg;
     }
 
-    public Long getOrganizationId() {
-        return this.organizationId;
+    public Long getOrgId() {
+        return this.orgId;
     }
 
-    public Long getOrganizationId_From() {
-        return this.organizationId_From;
+    public Long getOrgId_From() {
+        return this.orgId_From;
     }
 
-    public Long getOrganizationId_To() {
-        return this.organizationId_To;
+    public Long getOrgId_To() {
+        return this.orgId_To;
     }
 
-    public void setOrganizationId(Long organizationId) {
-        this.organizationId = organizationId;
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
     }
 
-    public void setOrganizationId_From(Long organizationId_From) {
-        this.organizationId_From = organizationId_From;
+    public void setOrgId_From(Long orgId_From) {
+        this.orgId_From = orgId_From;
     }
 
-    public void setOrganizationId_To(Long organizationId_To) {
-        this.organizationId_To = organizationId_To;
+    public void setOrgId_To(Long orgId_To) {
+        this.orgId_To = orgId_To;
     }
 
-    public String getOrganizationCode() {
-        return this.organizationCode;
+    public String getOrg() {
+        return this.org;
     }
 
-    public void setOrganizationCode(String organizationCode) {
-        this.organizationCode = organizationCode;
+    public void setOrg(String org) {
+        this.org = org;
     }
 
     public Float getBaseSalary() {

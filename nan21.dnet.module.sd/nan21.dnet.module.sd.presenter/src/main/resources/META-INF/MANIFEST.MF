@@ -55,24 +55,24 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  el,net.nan21.dnet.core.presenter.model.base,net.nan21.dnet.core.prese
  nter.service,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.dne
  t.module.bd.currency.business.service,net.nan21.dnet.module.bd.curren
- cy.domain.entity,net.nan21.dnet.module.bd.fin.business.service,net.na
- n21.dnet.module.bd.fin.domain.entity,net.nan21.dnet.module.bd.geo.dom
- ain.entity,net.nan21.dnet.module.bd.org.business.service,net.nan21.dn
- et.module.bd.org.domain.entity,net.nan21.dnet.module.bd.tx.business.s
- ervice,net.nan21.dnet.module.bd.tx.domain.entity,net.nan21.dnet.modul
- e.bd.uom.business.service,net.nan21.dnet.module.bd.uom.domain.entity,
- net.nan21.dnet.module.md.bp.business.service,net.nan21.dnet.module.md
- .bp.domain.entity,net.nan21.dnet.module.md.mm.price.business.service,
- net.nan21.dnet.module.md.mm.price.domain.entity,net.nan21.dnet.module
- .md.mm.prod.business.service,net.nan21.dnet.module.md.mm.prod.domain.
- entity,net.nan21.dnet.module.md.org.business.service,net.nan21.dnet.m
- odule.md.org.domain.entity,net.nan21.dnet.module.md.tx.fin.domain.ent
- ity,net.nan21.dnet.module.md.tx.inventory.business.service,net.nan21.
- dnet.module.md.tx.inventory.domain.entity,net.nan21.dnet.module.sd.in
- voice.business.service,net.nan21.dnet.module.sd.invoice.domain.entity
- ,net.nan21.dnet.module.sd.opportunity.business.service,net.nan21.dnet
- .module.sd.opportunity.domain.entity,net.nan21.dnet.module.sd.order.b
- usiness.service,net.nan21.dnet.module.sd.order.domain.entity,org.spri
- ngframework.context.weaving;version="[3.0,3.1)",org.springframework.w
- eb.multipart;version="[3.0,3.1)"
+ cy.domain.entity,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21
+ .dnet.module.bd.org.business.service,net.nan21.dnet.module.bd.org.dom
+ ain.entity,net.nan21.dnet.module.bd.uom.business.service,net.nan21.dn
+ et.module.bd.uom.domain.entity,net.nan21.dnet.module.md.base.tax.busi
+ ness.service,net.nan21.dnet.module.md.base.tax.domain.entity,net.nan2
+ 1.dnet.module.md.base.tx.business.service,net.nan21.dnet.module.md.ba
+ se.tx.domain.entity,net.nan21.dnet.module.md.bp.business.service,net.
+ nan21.dnet.module.md.bp.domain.entity,net.nan21.dnet.module.md.mm.pri
+ ce.business.service,net.nan21.dnet.module.md.mm.price.domain.entity,n
+ et.nan21.dnet.module.md.mm.prod.business.service,net.nan21.dnet.modul
+ e.md.mm.prod.domain.entity,net.nan21.dnet.module.md.org.business.serv
+ ice,net.nan21.dnet.module.md.org.domain.entity,net.nan21.dnet.module.
+ md.tx.fin.domain.entity,net.nan21.dnet.module.md.tx.inventory.busines
+ s.service,net.nan21.dnet.module.md.tx.inventory.domain.entity,net.nan
+ 21.dnet.module.sd.invoice.business.service,net.nan21.dnet.module.sd.i
+ nvoice.domain.entity,net.nan21.dnet.module.sd.opportunity.business.se
+ rvice,net.nan21.dnet.module.sd.opportunity.domain.entity,net.nan21.dn
+ et.module.sd.order.business.service,net.nan21.dnet.module.sd.order.do
+ main.entity,org.springframework.context.weaving;version="[3.0,3.1)",o
+ rg.springframework.web.multipart;version="[3.0,3.1)"
 

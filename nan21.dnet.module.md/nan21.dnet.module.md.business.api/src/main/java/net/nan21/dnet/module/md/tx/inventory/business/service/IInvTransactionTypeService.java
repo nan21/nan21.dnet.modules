@@ -7,7 +7,7 @@ package net.nan21.dnet.module.md.tx.inventory.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
-import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.base.tx.domain.entity.TxDocType;
 
 import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType;
 

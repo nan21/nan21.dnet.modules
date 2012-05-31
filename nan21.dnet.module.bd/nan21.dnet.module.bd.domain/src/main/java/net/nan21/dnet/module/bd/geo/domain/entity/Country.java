@@ -39,8 +39,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = Country.NQ_FIND_BY_NAME, query = "SELECT e FROM Country e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Country extends AbstractTypeWithCode {
 
-    public static final String TABLE_NAME = "BD_GEO_COUNTRY";
-    public static final String SEQUENCE_NAME = "BD_GEO_COUNTRY_SEQ";
+    public static final String TABLE_NAME = "BD_GEO_CNTRY";
+    public static final String SEQUENCE_NAME = "BD_GEO_CNTRY_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -1,26 +1,18 @@
 Manifest-Version: 1.0
-Export-Package: net.nan21.dnet.module.bd.acc.business.service;version=
- "1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mod
- ule.bd.acc.domain.entity",net.nan21.dnet.module.bd.contact.business.s
- ervice;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net
- .nan21.dnet.module.bd.contact.domain.entity",net.nan21.dnet.module.bd
- .currency.business.service;version="1.0.0.RC1";uses:="net.nan21.dnet.
- core.api.service,net.nan21.dnet.module.bd.currency.domain.entity",net
- .nan21.dnet.module.bd.fin.business.service;version="1.0.0.RC1";uses:=
- "net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.acc.domain.
- entity,net.nan21.dnet.module.bd.fin.domain.entity",net.nan21.dnet.mod
- ule.bd.geo.business.service;version="1.0.0.RC1";uses:="net.nan21.dnet
- .core.api.service,net.nan21.dnet.module.bd.geo.domain.entity",net.nan
- 21.dnet.module.bd.org.business.service;version="1.0.0.RC1";uses:="net
- .nan21.dnet.core.api.service,net.nan21.dnet.module.bd.org.domain.enti
- ty",net.nan21.dnet.module.bd.standards.business.service;version="1.0.
- 0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.b
- d.standards.domain.entity",net.nan21.dnet.module.bd.tx.business.servi
- ce;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan
- 21.dnet.module.bd.acc.domain.entity,net.nan21.dnet.module.bd.org.doma
- in.entity,net.nan21.dnet.module.bd.tx.domain.entity",net.nan21.dnet.m
- odule.bd.uom.business.service;version="1.0.0.RC1";uses:="net.nan21.dn
- et.core.api.service,net.nan21.dnet.module.bd.uom.domain.entity"
+Export-Package: net.nan21.dnet.module.bd.contact.business.service;vers
+ ion="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet
+ .module.bd.contact.domain.entity",net.nan21.dnet.module.bd.currency.b
+ usiness.service;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.se
+ rvice,net.nan21.dnet.module.bd.currency.domain.entity",net.nan21.dnet
+ .module.bd.geo.business.service;version="1.0.0.RC1";uses:="net.nan21.
+ dnet.core.api.service,net.nan21.dnet.module.bd.geo.domain.entity",net
+ .nan21.dnet.module.bd.org.business.service;version="1.0.0.RC1";uses:=
+ "net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.org.domain.
+ entity",net.nan21.dnet.module.bd.standards.business.service;version="
+ 1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modu
+ le.bd.standards.domain.entity",net.nan21.dnet.module.bd.uom.business.
+ service;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,ne
+ t.nan21.dnet.module.bd.uom.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.module.bd.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.modu
  le.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]"
@@ -34,16 +26,15 @@ Bundle-SymbolicName: nan21.dnet.module.bd.business.api
 Import-Package: javax.persistence.criteria;version="[2.0,2.1)",javax.p
  ersistence.metamodel;version="[2.0,2.1)",javax.persistence.spi;versio
  n="[2.0,2.1)",javax.validation;version="[1.0,2.0)",net.nan21.dnet.cor
- e.api.service,net.nan21.dnet.module.bd.acc.domain.entity,net.nan21.dn
- et.module.bd.contact.domain.entity,net.nan21.dnet.module.bd.currency.
- domain.entity,net.nan21.dnet.module.bd.fin.domain.entity,net.nan21.dn
- et.module.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.domain.en
- tity,net.nan21.dnet.module.bd.standards.domain.entity,net.nan21.dnet.
- module.bd.tx.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity
- ,org.aopalliance.aop;version="[1.0,2.0)",org.hibernate.validator;vers
- ion="[4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,5.0
- )",org.springframework.aop;version="[3.0,3.1)",org.springframework.ao
- p.framework;version="[3.0,3.1)",org.springframework.context.weaving;v
- ersion="[3.0,3.1)",org.springframework.transaction;version="[3.0,3.1)
- ",org.springframework.transaction.aspectj;version="[3.0,3.1)"
+ e.api.service,net.nan21.dnet.module.bd.contact.domain.entity,net.nan2
+ 1.dnet.module.bd.currency.domain.entity,net.nan21.dnet.module.bd.geo.
+ domain.entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dn
+ et.module.bd.standards.domain.entity,net.nan21.dnet.module.bd.uom.dom
+ ain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.hibernate.vali
+ dator;version="[4.0,5.0)",org.hibernate.validator.constraints;version
+ ="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",org.springfr
+ amework.aop.framework;version="[3.0,3.1)",org.springframework.context
+ .weaving;version="[3.0,3.1)",org.springframework.transaction;version=
+ "[3.0,3.1)",org.springframework.transaction.aspectj;version="[3.0,3.1
+ )"
 

@@ -43,8 +43,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = Report.NQ_FIND_BY_NAME, query = "SELECT e FROM Report e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Report extends AbstractTypeWithCode {
 
-    public static final String TABLE_NAME = "AD_REPORT";
-    public static final String SEQUENCE_NAME = "AD_REPORT_SEQ";
+    public static final String TABLE_NAME = "AD_RPT";
+    public static final String SEQUENCE_NAME = "AD_RPT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

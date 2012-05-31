@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.List;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
-import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
+import net.nan21.dnet.module.md.base.tax.domain.entity.Tax;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItemTax;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderItem;
@@ -56,12 +56,11 @@ public class PurchaseTaxBD extends AbstractBusinessDelegate {
 			PurchaseInvoiceItemTax tax = new PurchaseInvoiceItemTax();
 			tax.setBaseAmount(item.getNetAmount());
 			tax.setTax(tdef);
-			tax.setTaxAmount(tax.getBaseAmount()
-					* tdef.getRate());
+			tax.setTaxAmount(tax.getBaseAmount() * tdef.getRate());
 			tax.setPurchaseInvoiceItem(item);
 
 			itemTaxes.add(tax);
 		}
 	}
-	
+
 }

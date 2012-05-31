@@ -32,8 +32,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = PaymentOut.NQ_FIND_BY_IDS, query = "SELECT e FROM PaymentOut e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PaymentOut extends Payment {
 
-    public static final String TABLE_NAME = "SC_PAY_OUT";
-    public static final String SEQUENCE_NAME = "SC_PAY_OUT_SEQ";
+    public static final String TABLE_NAME = "SC_PYMNT";
+    public static final String SEQUENCE_NAME = "SC_PYMNT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -7,7 +7,6 @@ package net.nan21.dnet.module.hr.employee.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
-import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContact;
 import net.nan21.dnet.module.hr.employee.domain.entity.EmploymentType;
@@ -22,14 +21,6 @@ public interface IEmployeeService extends IEntityService<Employee> {
 
     public Employee findByCode(String code);
 
-    public List<Employee> findByEmployer(Organization employer);
-
-    public List<Employee> findByEmployerId(Long employerId);
-
-    public List<Employee> findByCitizenship(Country citizenship);
-
-    public List<Employee> findByCitizenshipId(Long citizenshipId);
-
     public List<Employee> findByType(EmploymentType type);
 
     public List<Employee> findByTypeId(Long typeId);
@@ -42,9 +33,9 @@ public interface IEmployeeService extends IEntityService<Employee> {
 
     public List<Employee> findByJobId(Long jobId);
 
-    public List<Employee> findByOrganization(Organization organization);
+    public List<Employee> findByOrg(Organization org);
 
-    public List<Employee> findByOrganizationId(Long organizationId);
+    public List<Employee> findByOrgId(Long orgId);
 
     public List<Employee> findByGrade(Grade grade);
 

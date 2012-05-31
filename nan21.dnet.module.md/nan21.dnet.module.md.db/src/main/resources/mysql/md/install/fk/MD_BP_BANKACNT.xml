@@ -1,0 +1,20 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_BANKACNT1" 
+				baseTableName="MD_BP_BANKACNT" baseColumnNames="BPARTNER_ID"  
+				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_BANKACNT2" 
+				baseTableName="MD_BP_BANKACNT" baseColumnNames="BANK_ID"  
+				referencedTableName="MD_BANK"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_MD_BP_BANKACNT3" 
+				baseTableName="MD_BP_BANKACNT" baseColumnNames="CURRENCY_ID"  
+				referencedTableName="BD_CRNCY"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

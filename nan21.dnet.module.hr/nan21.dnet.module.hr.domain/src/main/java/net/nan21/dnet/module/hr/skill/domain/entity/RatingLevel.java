@@ -40,8 +40,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = "RatingLevel.findByName_PRIMITIVE", query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and  e.ratingScale.id = :pRatingScaleId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class RatingLevel extends AbstractType {
 
-    public static final String TABLE_NAME = "HR_RATING_LEVEL";
-    public static final String SEQUENCE_NAME = "HR_RATING_LEVEL_SEQ";
+    public static final String TABLE_NAME = "HR_RATE_LVL";
+    public static final String SEQUENCE_NAME = "HR_RATE_LVL_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

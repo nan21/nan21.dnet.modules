@@ -7,8 +7,8 @@ package net.nan21.dnet.module.md.bp.business.service;
 
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.Account;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.Account;
 import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup;
 
 import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroupAcct;

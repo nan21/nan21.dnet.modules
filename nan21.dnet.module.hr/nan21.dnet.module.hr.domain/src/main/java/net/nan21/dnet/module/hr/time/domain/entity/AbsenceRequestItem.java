@@ -38,8 +38,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = AbsenceRequestItem.NQ_FIND_BY_IDS, query = "SELECT e FROM AbsenceRequestItem e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AbsenceRequestItem extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "HR_ABSN_REQUEST_ITEM";
-    public static final String SEQUENCE_NAME = "HR_ABSN_REQUEST_ITEM_SEQ";
+    public static final String TABLE_NAME = "HR_ABSN_REQ_ITEM";
+    public static final String SEQUENCE_NAME = "HR_ABSN_REQ_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

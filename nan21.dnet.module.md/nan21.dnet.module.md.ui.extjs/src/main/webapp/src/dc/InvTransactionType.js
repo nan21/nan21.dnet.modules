@@ -27,7 +27,7 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.dc.InvTransactionType$Filter",
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addBooleanField({ name:"hasFromInventory", dataIndex:"hasFromInventory",anchor:"-20"  })
 		.addBooleanField({ name:"hasToInventory", dataIndex:"hasToInventory",anchor:"-20"  })
-		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.tx.lovs.TxDocTypes", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.md.base.tx.lovs.TxDocTypes", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
 		.addPanel({ name:"col2", layout:"form", width:200}) 
@@ -53,7 +53,7 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.dc.InvTransactionType$EditList
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
-		.addLov({name:"docType", xtype:"gridcolumn", dataIndex:"docType",width:120,editor:{xtype:"net.nan21.dnet.module.bd.tx.lovs.TxDocTypes" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]} })
+		.addLov({name:"docType", xtype:"gridcolumn", dataIndex:"docType",width:120,editor:{xtype:"net.nan21.dnet.module.md.base.tx.lovs.TxDocTypes" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]} })
 		.addBooleanColumn({ name:"hasFromInventory", dataIndex:"hasFromInventory"})
 		.addBooleanColumn({ name:"hasToInventory", dataIndex:"hasToInventory"})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})

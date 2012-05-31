@@ -39,8 +39,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = PurchaseInventoryTransaction.NQ_FIND_BY_IDS, query = "SELECT e FROM PurchaseInventoryTransaction e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PurchaseInventoryTransaction extends InvTransaction {
 
-    public static final String TABLE_NAME = "SC_PURCHASE_INV_TX";
-    public static final String SEQUENCE_NAME = "SC_PURCHASE_INV_TX_SEQ";
+    public static final String TABLE_NAME = "SC_INVT_TX";
+    public static final String SEQUENCE_NAME = "SC_INVT_TX_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

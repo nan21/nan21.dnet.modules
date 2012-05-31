@@ -25,7 +25,7 @@ Ext.define("net.nan21.dnet.module.md.mm.price.frame.PriceList_UI", {
 		.addButton({name:"btnAddProdByCategExec",text:"OK", tooltip:"Add products from the selected product category",disabled:false
 			,handler: this.onBtnAddProdByCategExec,scope:this	})	
 							 	
-		.addDcFilterFormView("pricelist",{ name:"pricelistFilter", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceList$FilterH",height:120})	 
+		.addDcFilterFormView("pricelist",{ name:"pricelistFilter", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceList$FilterH",height:80})	 
 		.addDcEditGridView("pricelist",{ name:"pricelistEditList", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceList$EditList", frame:true})	 
 		.addDcEditGridView("version",{ name:"versionEditList", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CtxEditList", frame:true,height:250,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnShowCanvas2") ]}]})	 
 		.addDcFormView("version",{ name:"versionView", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CtxView",height:100,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAddProdByCateg") ]}]})	 

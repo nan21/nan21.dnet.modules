@@ -22,8 +22,8 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.Account;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.Account;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAccount;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -42,8 +42,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = "ProductAccountAcct.findByAccount_schema_PRIMITIVE", query = "SELECT e FROM ProductAccountAcct e WHERE e.clientId = :pClientId and  e.prodAccount.id = :pProdAccountId and e.accSchema.id = :pAccSchemaId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAccountAcct extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "MD_PROD_ACCOUNT_ACCT";
-    public static final String SEQUENCE_NAME = "MD_PROD_ACCOUNT_ACCT_SEQ";
+    public static final String TABLE_NAME = "MD_PROD_ACNT_ACCT";
+    public static final String SEQUENCE_NAME = "MD_PROD_ACNT_ACCT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

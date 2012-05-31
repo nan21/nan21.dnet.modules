@@ -19,7 +19,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.fi.asset.domain.entity.AssetCategory;
-import net.nan21.dnet.module.md.asset.domain.entity.AssetBase;
+import net.nan21.dnet.module.md.res.domain.entity.AssetBase;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;

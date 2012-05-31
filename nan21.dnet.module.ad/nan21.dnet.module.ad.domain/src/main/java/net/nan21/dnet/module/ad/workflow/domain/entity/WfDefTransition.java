@@ -37,8 +37,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = WfDefTransition.NQ_FIND_BY_IDS, query = "SELECT e FROM WfDefTransition e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class WfDefTransition extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "AD_WFDEF_TRANSITION";
-    public static final String SEQUENCE_NAME = "AD_WFDEF_TRANSITION_SEQ";
+    public static final String TABLE_NAME = "AD_WFDEF_TRANS";
+    public static final String SEQUENCE_NAME = "AD_WFDEF_TRANS_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

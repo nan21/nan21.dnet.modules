@@ -9,9 +9,9 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm;
+import net.nan21.dnet.module.md.base.tx.domain.entity.DeliveryMethod;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.md.bp.business.service.IBpAccountService;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup;
@@ -37,48 +37,46 @@ public class BpAccountService extends AbstractEntityService<BpAccount>
         return BpAccount.class;
     }
 
-    public BpAccount findByBp_org(BusinessPartner bp, Organization organization) {
+    public BpAccount findByBp_org(BusinessPartner bpartner, Organization org) {
         return (BpAccount) this.em
                 .createNamedQuery(BpAccount.NQ_FIND_BY_BP_ORG)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pBp", bp)
-                .setParameter("pOrganization", organization).getSingleResult();
-    }
-
-    public BpAccount findByBp_org(Long bpId, Long organizationId) {
-        return (BpAccount) this.em
-                .createNamedQuery(BpAccount.NQ_FIND_BY_BP_ORG_PRIMITIVE)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pBpId", bpId)
-                .setParameter("pOrganizationId", organizationId)
+                .setParameter("pBpartner", bpartner).setParameter("pOrg", org)
                 .getSingleResult();
     }
 
-    public List<BpAccount> findByBp(BusinessPartner bp) {
-        return this.findByBpId(bp.getId());
+    public BpAccount findByBp_org(Long bpartnerId, Long orgId) {
+        return (BpAccount) this.em
+                .createNamedQuery(BpAccount.NQ_FIND_BY_BP_ORG_PRIMITIVE)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pBpartnerId", bpartnerId)
+                .setParameter("pOrgId", orgId).getSingleResult();
     }
 
-    public List<BpAccount> findByBpId(Long bpId) {
+    public List<BpAccount> findByBpartner(BusinessPartner bpartner) {
+        return this.findByBpartnerId(bpartner.getId());
+    }
+
+    public List<BpAccount> findByBpartnerId(Long bpartnerId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount e where e.clientId = :pClientId and e.bp.id = :pBpId",
+                        "select e from BpAccount e where e.clientId = :pClientId and e.bpartner.id = :pBpartnerId",
                         BpAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pBpId", bpId).getResultList();
+                .setParameter("pBpartnerId", bpartnerId).getResultList();
     }
 
-    public List<BpAccount> findByOrganization(Organization organization) {
-        return this.findByOrganizationId(organization.getId());
+    public List<BpAccount> findByOrg(Organization org) {
+        return this.findByOrgId(org.getId());
     }
 
-    public List<BpAccount> findByOrganizationId(Long organizationId) {
+    public List<BpAccount> findByOrgId(Long orgId) {
         return (List<BpAccount>) this.em
                 .createQuery(
-                        "select e from BpAccount e where e.clientId = :pClientId and e.organization.id = :pOrganizationId",
+                        "select e from BpAccount e where e.clientId = :pClientId and e.org.id = :pOrgId",
                         BpAccount.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pOrganizationId", organizationId)
-                .getResultList();
+                .setParameter("pOrgId", orgId).getResultList();
     }
 
     public List<BpAccount> findByCustGroup(CustomerGroup custGroup) {

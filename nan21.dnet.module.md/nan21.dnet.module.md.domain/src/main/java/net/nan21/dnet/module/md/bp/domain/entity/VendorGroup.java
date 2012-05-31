@@ -22,8 +22,8 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentTerm;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -44,8 +44,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = VendorGroup.NQ_FIND_BY_NAME, query = "SELECT e FROM VendorGroup e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class VendorGroup extends AbstractTypeWithCode {
 
-    public static final String TABLE_NAME = "MD_BP_VENDGROUP";
-    public static final String SEQUENCE_NAME = "MD_BP_VENDGROUP_SEQ";
+    public static final String TABLE_NAME = "MD_BP_VENDGRP";
+    public static final String SEQUENCE_NAME = "MD_BP_VENDGRP_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

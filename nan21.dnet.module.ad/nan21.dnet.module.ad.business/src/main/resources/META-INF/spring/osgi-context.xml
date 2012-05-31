@@ -8,7 +8,10 @@
 		http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 	
 	<import resource="emf/oc-emf-${dnet.emf.type}.xml" /> 
-	    
+	
+	<osgi:reference id="osgiJobScheduler" cardinality="0..1"
+		interface="net.nan21.dnet.core.api.job.IScheduler" />
+		    
 	<osgi:reference id="systemConfig" cardinality="1..1"
 		interface="net.nan21.dnet.core.api.ISystemConfig" />
 			

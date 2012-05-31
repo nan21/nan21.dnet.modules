@@ -65,6 +65,7 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.BusinessPartner$List", {
 		.addTextColumn({ name:"countryCode", dataIndex:"countryCode",width:100 })   	
 		.addTextColumn({ name:"taxPayerNo", dataIndex:"taxPayerNo", width:80 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active", width:60})   	     
+		.addTextColumn({ name:"companyName", dataIndex:"companyName", hidden:true,width:200 })   	
 		.addTextColumn({ name:"firstName", dataIndex:"firstName", hidden:true,width:200 })   	
 		.addTextColumn({ name:"lastName", dataIndex:"lastName", hidden:true,width:200 })   	
 		.addTextColumn({ name:"identityCardNo", dataIndex:"identityCardNo", width:80 })   	

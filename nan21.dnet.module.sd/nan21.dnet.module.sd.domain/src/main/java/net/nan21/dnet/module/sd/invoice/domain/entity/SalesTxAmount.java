@@ -37,8 +37,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = SalesTxAmount.NQ_FIND_BY_IDS, query = "SELECT e FROM SalesTxAmount e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SalesTxAmount extends TxAmount {
 
-    public static final String TABLE_NAME = "SD_STX_AMOUNT";
-    public static final String SEQUENCE_NAME = "SD_STX_AMOUNT_SEQ";
+    public static final String TABLE_NAME = "SD_TX_AMNT";
+    public static final String SEQUENCE_NAME = "SD_TX_AMNT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

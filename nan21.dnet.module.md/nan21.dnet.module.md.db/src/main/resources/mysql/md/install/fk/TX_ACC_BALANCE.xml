@@ -10,11 +10,11 @@
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_TX_ACC_BALANCE2" 
 				baseTableName="TX_ACC_BALANCE" baseColumnNames="ACCSCHEMA_ID"  
-				referencedTableName="BD_ACC_SCHEMA"  referencedColumnNames="ID" />
+				referencedTableName="MD_ACC_SCHEMA"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_TX_ACC_BALANCE3" 
 				baseTableName="TX_ACC_BALANCE" baseColumnNames="PERIOD_ID"  
-				referencedTableName="BD_FISC_PERIOD"  referencedColumnNames="ID" />
+				referencedTableName="MD_PER_PRD"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

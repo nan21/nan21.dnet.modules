@@ -1,0 +1,6 @@
+name;description;active
+bd-currency-rw;Read-write access to currency base data;true
+bd-geo-rw;Read-write access to geographical base data;true
+bd-ro;Read-only access to base data;true
+bd-uom-rw;Read-write access to measuring units base data;true
+connect;Minimal access to runtime data-providers;true

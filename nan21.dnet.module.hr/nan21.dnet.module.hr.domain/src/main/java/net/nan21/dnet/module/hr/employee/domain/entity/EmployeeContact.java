@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.hr.employee.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,32 +16,30 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
-import net.nan21.dnet.core.domain.model.AbstractAuditable;
+import net.nan21.dnet.module.bd.contact.domain.entity.Person;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContactRelationship;
 import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContactType;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
-import org.hibernate.validator.constraints.NotBlank;
 
 /** EmployeeContact. */
 @Entity
+@CascadeOnDelete
 @Table(name = EmployeeContact.TABLE_NAME)
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = EmployeeContact.NQ_FIND_BY_ID, query = "SELECT e FROM EmployeeContact e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = EmployeeContact.NQ_FIND_BY_IDS, query = "SELECT e FROM EmployeeContact e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class EmployeeContact extends AbstractAuditable {
+public class EmployeeContact extends Person {
 
-    public static final String TABLE_NAME = "HR_EMPL_CONTACT";
-    public static final String SEQUENCE_NAME = "HR_EMPL_CONTACT_SEQ";
+    public static final String TABLE_NAME = "HR_EMPL_CNTC";
+    public static final String SEQUENCE_NAME = "HR_EMPL_CNTC_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -64,29 +61,6 @@ public class EmployeeContact extends AbstractAuditable {
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
-
-    /** FirstName. */
-    @Column(name = "FIRSTNAME", nullable = false, length = 255)
-    @NotBlank
-    private String firstName;
-
-    /** LastName. */
-    @Column(name = "LASTNAME", nullable = false, length = 255)
-    @NotBlank
-    private String lastName;
-
-    /** MiddleName. */
-    @Column(name = "MIDDLENAME", length = 32)
-    private String middleName;
-
-    /** Birthdate. */
-    @Temporal(TemporalType.DATE)
-    @Column(name = "BIRTHDATE")
-    private Date birthdate;
-
-    /** Gender. */
-    @Column(name = "GENDER", length = 16)
-    private String gender;
 
     /** IsDependent. */
     @Column(name = "ISDEPENDENT", nullable = false)
@@ -110,46 +84,6 @@ public class EmployeeContact extends AbstractAuditable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getFirstName() {
-        return this.firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getMiddleName() {
-        return this.middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
-    public Date getBirthdate() {
-        return this.birthdate;
-    }
-
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    public String getGender() {
-        return this.gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 
     public Boolean getIsDependent() {
@@ -195,9 +129,6 @@ public class EmployeeContact extends AbstractAuditable {
 
     public void aboutToUpdate(DescriptorEvent event) {
         super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

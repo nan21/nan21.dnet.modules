@@ -1,4 +1,0 @@
-"name";"description";"active";"type"
-"Bank";"Bank transfer";"true";"bank"
-"Card";"Pay by card";"true";"bank"
-"Cash";"Cash payment";"true";"cash"

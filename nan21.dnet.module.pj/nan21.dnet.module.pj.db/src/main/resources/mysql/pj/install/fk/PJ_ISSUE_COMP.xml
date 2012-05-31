@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">  
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE_COMP1" 
+				baseTableName="PJ_ISSUE_COMP" baseColumnNames="AFFECTEDCOMPONENTS_ID"  
+				referencedTableName="PJ_PRJ_CMP"  referencedColumnNames="ID" />
+	 </changeSet>
+	 <changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE_COMP2" 
+				baseTableName="PJ_ISSUE_COMP" baseColumnNames="AFFECTINGISSUES_ID"  
+				referencedTableName="PJ_ISSUE"  referencedColumnNames="ID" />
+	 </changeSet>
+</databaseChangeLog>

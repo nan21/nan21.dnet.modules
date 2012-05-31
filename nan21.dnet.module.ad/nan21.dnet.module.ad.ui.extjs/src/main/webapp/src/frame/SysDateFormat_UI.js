@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysDateFormat_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("fmt",{ name:"fmtFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysDateFormat$Filter",height:120})	 
+		.addDcFilterFormView("fmt",{ name:"fmtFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysDateFormat$Filter",height:80})	 
 		.addDcEditGridView("fmt",{ name:"fmtEditList", xtype:"net.nan21.dnet.module.ad.system.dc.SysDateFormat$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

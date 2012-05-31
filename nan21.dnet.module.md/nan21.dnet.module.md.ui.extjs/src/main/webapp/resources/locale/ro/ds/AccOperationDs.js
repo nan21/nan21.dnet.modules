@@ -1,5 +1,5 @@
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.AccOperationDs$Trl", {  	  	
+Ext.define("net.nan21.dnet.module.md.tx.acc.ds.model.AccOperationDs$Trl", {  	  	
 	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	orgId__lbl :    "Unitate(ID)",
 	org__lbl :    "Unitate",
 	accSchemaId__lbl :    "Schemă(ID)",

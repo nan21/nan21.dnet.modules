@@ -30,7 +30,7 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeGroup;
+import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
@@ -157,17 +157,17 @@ public class Product extends AbstractTypeWithCode {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductManufacturer.class)
     @JoinColumn(name = "MANUFACTURER_ID", referencedColumnName = "ID")
     private ProductManufacturer manufacturer;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductAttributeGroup.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AttributeGroup.class)
     @JoinColumn(name = "ATTRIBUTEGROUP_ID", referencedColumnName = "ID")
-    private ProductAttributeGroup attributeGroup;
+    private AttributeGroup attributeGroup;
 
     @ManyToMany
-    @JoinTable(name = "MD_PROD_PRODCATEGS")
+    @JoinTable(name = "MD_PROD_PRODCTG")
     private Collection<ProductCategory> categories;
 
-    @OneToMany(fetch = FetchType.LAZY, targetEntity = ProductAttributeValue.class, mappedBy = "product", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = ProductAttribute.class, mappedBy = "product", cascade = CascadeType.ALL)
     @CascadeOnDelete
-    private Collection<ProductAttributeValue> attributes;
+    private Collection<ProductAttribute> attributes;
 
     /* ============== getters - setters ================== */
 
@@ -332,11 +332,11 @@ public class Product extends AbstractTypeWithCode {
         this.manufacturer = manufacturer;
     }
 
-    public ProductAttributeGroup getAttributeGroup() {
+    public AttributeGroup getAttributeGroup() {
         return this.attributeGroup;
     }
 
-    public void setAttributeGroup(ProductAttributeGroup attributeGroup) {
+    public void setAttributeGroup(AttributeGroup attributeGroup) {
         this.attributeGroup = attributeGroup;
     }
 
@@ -348,17 +348,17 @@ public class Product extends AbstractTypeWithCode {
         this.categories = categories;
     }
 
-    public Collection<ProductAttributeValue> getAttributes() {
+    public Collection<ProductAttribute> getAttributes() {
         return this.attributes;
     }
 
-    public void setAttributes(Collection<ProductAttributeValue> attributes) {
+    public void setAttributes(Collection<ProductAttribute> attributes) {
         this.attributes = attributes;
     }
 
-    public void addToAttributes(ProductAttributeValue e) {
+    public void addToAttributes(ProductAttribute e) {
         if (this.attributes == null) {
-            this.attributes = new ArrayList<ProductAttributeValue>();
+            this.attributes = new ArrayList<ProductAttribute>();
         }
         e.setProduct(this);
         this.attributes.add(e);

@@ -6,12 +6,12 @@
 package net.nan21.dnet.module.md.org.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.bd.acc.business.service.IAccJournalService;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccJournal;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.md.acc.business.service.IAccJournalService;
+import net.nan21.dnet.module.md.acc.domain.entity.AccJournal;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.md.org.ds.model.PayAccountDs;

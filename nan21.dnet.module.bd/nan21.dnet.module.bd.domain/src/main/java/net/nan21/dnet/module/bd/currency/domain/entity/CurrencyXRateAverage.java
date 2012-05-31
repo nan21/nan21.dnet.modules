@@ -39,8 +39,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = CurrencyXRateAverage.NQ_FIND_BY_IDS, query = "SELECT e FROM CurrencyXRateAverage e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CurrencyXRateAverage extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "BD_CURRENCY_XRATE_AVG";
-    public static final String SEQUENCE_NAME = "BD_CURRENCY_XRATE_AVG_SEQ";
+    public static final String TABLE_NAME = "BD_CRNCY_XRATE_AVG";
+    public static final String SEQUENCE_NAME = "BD_CRNCY_XRATE_AVG_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

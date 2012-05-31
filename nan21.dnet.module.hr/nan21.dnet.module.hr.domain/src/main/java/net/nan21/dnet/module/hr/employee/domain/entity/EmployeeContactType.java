@@ -35,8 +35,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = EmployeeContactType.NQ_FIND_BY_NAME, query = "SELECT e FROM EmployeeContactType e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class EmployeeContactType extends AbstractType {
 
-    public static final String TABLE_NAME = "HR_EMPL_CONTACT_TYPE";
-    public static final String SEQUENCE_NAME = "HR_EMPL_CONTACT_TYPE_SEQ";
+    public static final String TABLE_NAME = "HR_EMPL_CNTC_TYPE";
+    public static final String SEQUENCE_NAME = "HR_EMPL_CNTC_TYPE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -41,8 +41,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = Person.NQ_FIND_BY_IDS, query = "SELECT e FROM Person e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Person extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "BD_PERSON";
-    public static final String SEQUENCE_NAME = "BD_PERSON_SEQ";
+    public static final String TABLE_NAME = "BD_PERS";
+    public static final String SEQUENCE_NAME = "BD_PERS_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

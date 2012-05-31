@@ -8,10 +8,10 @@ package net.nan21.dnet.module.md.bp.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bd.tx.business.service.IPaymentMethodService;
-import net.nan21.dnet.module.bd.tx.business.service.IPaymentTermService;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm;
+import net.nan21.dnet.module.md.base.tx.business.service.IPaymentMethodService;
+import net.nan21.dnet.module.md.base.tx.business.service.IPaymentTermService;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.md.bp.business.service.ICustomerGroupService;
 import net.nan21.dnet.module.md.bp.business.service.IVendorGroupService;
@@ -32,24 +32,23 @@ public class BpAccountDsConv extends
             boolean isInsert) throws Exception {
 
         if (ds.getBusinessPartnerId() != null) {
-            if (e.getBp() == null
-                    || !e.getBp().getId().equals(ds.getBusinessPartnerId())) {
-                e.setBp((BusinessPartner) this.em.find(BusinessPartner.class,
-                        ds.getBusinessPartnerId()));
+            if (e.getBpartner() == null
+                    || !e.getBpartner().getId()
+                            .equals(ds.getBusinessPartnerId())) {
+                e.setBpartner((BusinessPartner) this.em.find(
+                        BusinessPartner.class, ds.getBusinessPartnerId()));
             }
         } else {
-            this.lookup_bp_BusinessPartner(ds, e);
+            this.lookup_bpartner_BusinessPartner(ds, e);
         }
 
-        if (ds.getOrganizationId() != null) {
-            if (e.getOrganization() == null
-                    || !e.getOrganization().getId()
-                            .equals(ds.getOrganizationId())) {
-                e.setOrganization((Organization) this.em.find(
-                        Organization.class, ds.getOrganizationId()));
+        if (ds.getOrgId() != null) {
+            if (e.getOrg() == null || !e.getOrg().getId().equals(ds.getOrgId())) {
+                e.setOrg((Organization) this.em.find(Organization.class,
+                        ds.getOrgId()));
             }
         } else {
-            this.lookup_organization_Organization(ds, e);
+            this.lookup_org_Organization(ds, e);
         }
 
         if (ds.getCustomerGroupId() != null) {
@@ -119,7 +118,7 @@ public class BpAccountDsConv extends
 
     }
 
-    protected void lookup_bp_BusinessPartner(BpAccountDs ds, BpAccount e)
+    protected void lookup_bpartner_BusinessPartner(BpAccountDs ds, BpAccount e)
             throws Exception {
         if (ds.getBusinessPartner() != null
                 && !ds.getBusinessPartner().equals("")) {
@@ -132,29 +131,29 @@ public class BpAccountDsConv extends
                         "Invalid value provided to find `BusinessPartner` reference:  `businessPartner` = "
                                 + ds.getBusinessPartner() + "  ");
             }
-            e.setBp(x);
+            e.setBpartner(x);
 
         } else {
-            e.setBp(null);
+            e.setBpartner(null);
         }
     }
 
-    protected void lookup_organization_Organization(BpAccountDs ds, BpAccount e)
+    protected void lookup_org_Organization(BpAccountDs ds, BpAccount e)
             throws Exception {
-        if (ds.getOrganization() != null && !ds.getOrganization().equals("")) {
+        if (ds.getOrg() != null && !ds.getOrg().equals("")) {
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getOrganization());
+                        .findByCode(ds.getOrg());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `Organization` reference:  `organization` = "
-                                + ds.getOrganization() + "  ");
+                        "Invalid value provided to find `Organization` reference:  `org` = "
+                                + ds.getOrg() + "  ");
             }
-            e.setOrganization(x);
+            e.setOrg(x);
 
         } else {
-            e.setOrganization(null);
+            e.setOrg(null);
         }
     }
 

@@ -41,8 +41,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = Grade.NQ_FIND_BY_NAME, query = "SELECT e FROM Grade e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Grade extends AbstractTypeWithCode {
 
-    public static final String TABLE_NAME = "HR_GRADE";
-    public static final String SEQUENCE_NAME = "HR_GRADE_SEQ";
+    public static final String TABLE_NAME = "HR_GRD";
+    public static final String SEQUENCE_NAME = "HR_GRD_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

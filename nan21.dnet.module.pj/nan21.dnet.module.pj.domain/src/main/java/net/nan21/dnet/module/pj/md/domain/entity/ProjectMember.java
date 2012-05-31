@@ -42,8 +42,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = "ProjectMember.findByName_PRIMITIVE", query = "SELECT e FROM ProjectMember e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.member.id = :pMemberId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectMember extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "PJ_PRJ_MEMBER";
-    public static final String SEQUENCE_NAME = "PJ_PRJ_MEMBER_SEQ";
+    public static final String TABLE_NAME = "PJ_PRJ_MBR";
+    public static final String SEQUENCE_NAME = "PJ_PRJ_MBR_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

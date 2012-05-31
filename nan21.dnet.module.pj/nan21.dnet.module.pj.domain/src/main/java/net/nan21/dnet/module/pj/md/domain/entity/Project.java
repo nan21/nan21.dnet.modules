@@ -44,8 +44,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = Project.NQ_FIND_BY_NAME, query = "SELECT e FROM Project e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Project extends AbstractTypeWithCode {
 
-    public static final String TABLE_NAME = "PJ_PROJECT";
-    public static final String SEQUENCE_NAME = "PJ_PROJECT_SEQ";
+    public static final String TABLE_NAME = "PJ_PRJ";
+    public static final String SEQUENCE_NAME = "PJ_PRJ_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

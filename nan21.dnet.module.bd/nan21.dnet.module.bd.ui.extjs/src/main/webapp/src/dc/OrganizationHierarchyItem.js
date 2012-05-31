@@ -23,11 +23,11 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem$CtxEditLis
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addNumberColumn({ name:"hierarchyId", dataIndex:"hierarchyId", hidden:true, align:"right",format:"0",width:70})
-		.addNumberColumn({ name:"organizationId", dataIndex:"organizationId", hidden:true, align:"right",format:"0",width:70})
-		.addLov({name:"organizationCode", xtype:"gridcolumn", dataIndex:"organizationCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]} })
+		.addLov({name:"org", xtype:"gridcolumn", dataIndex:"org",width:100,editor:{xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "orgId"} ]} })
 		.addNumberColumn({ name:"parentId", dataIndex:"parentId", hidden:true, align:"right",format:"0",width:70})
-		.addLov({name:"parentCode", xtype:"gridcolumn", dataIndex:"parentCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.org.lovs.OrganizationHierarchyItems" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"organizationId", dsField: "parentId"} ],filterFieldMapping: [{lovField:"hierarchyId", dsField: "hierarchyId"} ]} })
+		.addLov({name:"parentCode", xtype:"gridcolumn", dataIndex:"parentCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.org.lovs.OrganizationHierarchyItems" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"orgId", dsField: "parentId"} ],filterFieldMapping: [{lovField:"hierarchyId", dsField: "hierarchyId"} ]} })
+		.addNumberColumn({ name:"hierarchyId", dataIndex:"hierarchyId", hidden:true, align:"right",format:"0",width:70})
+		.addNumberColumn({ name:"orgId", dataIndex:"orgId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()
 	  ;  		   
 	}  

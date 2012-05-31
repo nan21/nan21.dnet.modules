@@ -39,8 +39,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = PayScaleRateValue.NQ_FIND_BY_IDS, query = "SELECT e FROM PayScaleRateValue e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayScaleRateValue extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "HR_PAY_SCALE_RATE_VAL";
-    public static final String SEQUENCE_NAME = "HR_PAY_SCALE_RATE_VAL_SEQ";
+    public static final String TABLE_NAME = "HR_PAYSCL_RATE_VAL";
+    public static final String SEQUENCE_NAME = "HR_PAYSCL_RATE_VAL_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

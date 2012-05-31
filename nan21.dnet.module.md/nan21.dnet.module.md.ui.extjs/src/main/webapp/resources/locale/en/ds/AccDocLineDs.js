@@ -1,5 +1,5 @@
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineDs$Trl", {  	  	
+Ext.define("net.nan21.dnet.module.md.tx.acc.ds.model.AccDocLineDs$Trl", {  	  	
 	uuid__lbl : "Uuid",
 	entityFQN__lbl : "Entity FQN",
 	accDocId__lbl : "Acc Doc Id",

@@ -47,9 +47,9 @@ public class EmployeeDs extends AbstractAuditableDs<Employee> {
     public static final String fPOSITIONCODE = "positionCode";
     public static final String fPOSITIONNAME = "positionName";
     public static final String fPOSORGID = "posOrgId";
-    public static final String fPOSORGCODE = "posOrgCode";
-    public static final String fORGANIZATIONID = "organizationId";
-    public static final String fORGANIZATIONCODE = "organizationCode";
+    public static final String fPOSORG = "posOrg";
+    public static final String fORGID = "orgId";
+    public static final String fORG = "org";
     public static final String fBASESALARY = "baseSalary";
     public static final String fPAYROLLID = "payrollId";
     public static final String fPAYROLL = "payroll";
@@ -147,17 +147,17 @@ public class EmployeeDs extends AbstractAuditableDs<Employee> {
     @DsField(join = "left", path = "position.name")
     private String positionName;
 
-    @DsField(join = "left", path = "position.organization.id")
+    @DsField(join = "left", path = "position.org.id")
     private Long posOrgId;
 
-    @DsField(join = "left", path = "position.organization.code")
-    private String posOrgCode;
+    @DsField(join = "left", path = "position.org.code")
+    private String posOrg;
 
-    @DsField(join = "left", path = "organization.id")
-    private Long organizationId;
+    @DsField(join = "left", path = "org.id")
+    private Long orgId;
 
-    @DsField(join = "left", path = "organization.code")
-    private String organizationCode;
+    @DsField(join = "left", path = "org.code")
+    private String org;
 
     @DsField()
     private Float baseSalary;
@@ -432,28 +432,28 @@ public class EmployeeDs extends AbstractAuditableDs<Employee> {
         this.posOrgId = posOrgId;
     }
 
-    public String getPosOrgCode() {
-        return this.posOrgCode;
+    public String getPosOrg() {
+        return this.posOrg;
     }
 
-    public void setPosOrgCode(String posOrgCode) {
-        this.posOrgCode = posOrgCode;
+    public void setPosOrg(String posOrg) {
+        this.posOrg = posOrg;
     }
 
-    public Long getOrganizationId() {
-        return this.organizationId;
+    public Long getOrgId() {
+        return this.orgId;
     }
 
-    public void setOrganizationId(Long organizationId) {
-        this.organizationId = organizationId;
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
     }
 
-    public String getOrganizationCode() {
-        return this.organizationCode;
+    public String getOrg() {
+        return this.org;
     }
 
-    public void setOrganizationCode(String organizationCode) {
-        this.organizationCode = organizationCode;
+    public void setOrg(String org) {
+        this.org = org;
     }
 
     public Float getBaseSalary() {

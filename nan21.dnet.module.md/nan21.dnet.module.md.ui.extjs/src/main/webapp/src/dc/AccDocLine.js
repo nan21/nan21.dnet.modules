@@ -1,11 +1,11 @@
    
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLine", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccDocLine", {
 	extend: "dnet.core.dc.AbstractDc",
  
-	recordModel: "net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineDs",
-	filterModel: "net.nan21.dnet.module.md.tx.fin.ds.model.AccDocLineDsFilter",
-	paramModel: "net.nan21.dnet.module.md.tx.fin.ds.param.AccDocLineDsParam",
+	recordModel: "net.nan21.dnet.module.md.tx.acc.ds.model.AccDocLineDs",
+	filterModel: "net.nan21.dnet.module.md.tx.acc.ds.model.AccDocLineDsFilter",
+	paramModel: "net.nan21.dnet.module.md.tx.acc.ds.param.AccDocLineDsParam",
 	constructor : function(config) {
         config = config || {};
         Ext.apply(this, config);
@@ -17,9 +17,9 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLine", {
 
  	
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLine$Filter", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccDocLine$Filter", {
 	extend: "dnet.core.dc.AbstractDcvFilterForm",
- 	alias: "widget.net.nan21.dnet.module.md.tx.fin.dc.AccDocLine$Filter",
+ 	alias: "widget.net.nan21.dnet.module.md.tx.acc.dc.AccDocLine$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
@@ -41,9 +41,9 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLine$Filter", {
 }); 
  	
  		 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDocLine$List", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccDocLine$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
-	alias:"widget.net.nan21.dnet.module.md.tx.fin.dc.AccDocLine$List",
+	alias:"widget.net.nan21.dnet.module.md.tx.acc.dc.AccDocLine$List",
 	
 	_defineColumns_: function () {	
 		this._getBuilder_()	

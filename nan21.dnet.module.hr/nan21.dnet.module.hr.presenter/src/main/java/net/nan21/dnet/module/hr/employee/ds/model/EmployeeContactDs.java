@@ -18,7 +18,7 @@ public class EmployeeContactDs extends AbstractAuditableDs<EmployeeContact> {
     public static final String fEMPLOYEEID = "employeeId";
     public static final String fFIRSTNAME = "firstName";
     public static final String fLASTNAME = "lastName";
-    public static final String fBIRTHDATE = "birthdate";
+    public static final String fBIRTHDATE = "birthDate";
     public static final String fGENDER = "gender";
     public static final String fRELATIONSHIPID = "relationshipId";
     public static final String fRELATIONSHIP = "relationship";
@@ -34,7 +34,7 @@ public class EmployeeContactDs extends AbstractAuditableDs<EmployeeContact> {
     private String lastName;
 
     @DsField()
-    private Date birthdate;
+    private Date birthDate;
 
     @DsField()
     private String gender;
@@ -80,12 +80,12 @@ public class EmployeeContactDs extends AbstractAuditableDs<EmployeeContact> {
         this.lastName = lastName;
     }
 
-    public Date getBirthdate() {
-        return this.birthdate;
+    public Date getBirthDate() {
+        return this.birthDate;
     }
 
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getGender() {

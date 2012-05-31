@@ -43,8 +43,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = "ProjectComponent.findByName_PRIMITIVE", query = "SELECT e FROM ProjectComponent e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectComponent extends AbstractType {
 
-    public static final String TABLE_NAME = "PJ_PRJ_COMPONENT";
-    public static final String SEQUENCE_NAME = "PJ_PRJ_COMPONENT_SEQ";
+    public static final String TABLE_NAME = "PJ_PRJ_CMP";
+    public static final String SEQUENCE_NAME = "PJ_PRJ_CMP_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

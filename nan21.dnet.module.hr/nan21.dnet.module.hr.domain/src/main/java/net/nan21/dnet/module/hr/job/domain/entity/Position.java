@@ -47,8 +47,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = Position.NQ_FIND_BY_NAME, query = "SELECT e FROM Position e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Position extends AbstractTypeWithCode {
 
-    public static final String TABLE_NAME = "HR_POSITION";
-    public static final String SEQUENCE_NAME = "HR_POSITION_SEQ";
+    public static final String TABLE_NAME = "HR_POS";
+    public static final String SEQUENCE_NAME = "HR_POS_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -91,8 +91,8 @@ public class Position extends AbstractTypeWithCode {
     @Column(name = "VALIDTO")
     private Date validTo;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
-    @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")
-    private Organization organization;
+    @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
+    private Organization org;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Job.class)
     @JoinColumn(name = "JOB_ID", referencedColumnName = "ID")
     private Job job;
@@ -126,12 +126,12 @@ public class Position extends AbstractTypeWithCode {
         this.validTo = validTo;
     }
 
-    public Organization getOrganization() {
-        return this.organization;
+    public Organization getOrg() {
+        return this.org;
     }
 
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
+    public void setOrg(Organization org) {
+        this.org = org;
     }
 
     public Job getJob() {

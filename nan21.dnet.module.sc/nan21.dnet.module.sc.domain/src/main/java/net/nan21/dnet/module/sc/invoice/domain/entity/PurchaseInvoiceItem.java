@@ -24,8 +24,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
-import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
+import net.nan21.dnet.module.md.base.tax.domain.entity.Tax;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoice;
 import net.nan21.dnet.module.sc.invoice.domain.eventhandler.PurchaseInvoiceItemEventHandler;
@@ -45,8 +45,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = PurchaseInvoiceItem.NQ_FIND_BY_IDS, query = "SELECT e FROM PurchaseInvoiceItem e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PurchaseInvoiceItem extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "SC_PI_ITEM";
-    public static final String SEQUENCE_NAME = "SC_PI_ITEM_SEQ";
+    public static final String TABLE_NAME = "SC_INV_ITEM";
+    public static final String SEQUENCE_NAME = "SC_INV_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

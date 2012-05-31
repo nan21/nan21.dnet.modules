@@ -8,7 +8,7 @@ package net.nan21.dnet.module.sd.invoice.business.serviceext;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
+import net.nan21.dnet.module.md.base.tax.domain.entity.Tax;
 import net.nan21.dnet.module.sd._businessdelegates.order.SalesTaxBD;
 import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceItemService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;

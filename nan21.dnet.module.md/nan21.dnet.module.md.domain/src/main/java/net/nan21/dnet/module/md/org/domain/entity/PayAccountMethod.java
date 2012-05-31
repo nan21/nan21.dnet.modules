@@ -22,7 +22,7 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -41,8 +41,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = "PayAccountMethod.findByAccount_mtd_PRIMITIVE", query = "SELECT e FROM PayAccountMethod e WHERE e.clientId = :pClientId and  e.payAccount.id = :pPayAccountId and e.payMethod.id = :pPayMethodId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayAccountMethod extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "MD_PAY_ACCOUNT_METHOD";
-    public static final String SEQUENCE_NAME = "MD_PAY_ACCOUNT_METHOD_SEQ";
+    public static final String TABLE_NAME = "MD_FINACNT_MTD";
+    public static final String SEQUENCE_NAME = "MD_FINACNT_MTD_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

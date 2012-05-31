@@ -23,9 +23,9 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod;
-import net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm;
+import net.nan21.dnet.module.md.base.tx.domain.entity.DeliveryMethod;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
+import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup;
 import net.nan21.dnet.module.md.bp.domain.entity.VendorGroup;
@@ -37,17 +37,17 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 /** BpAccount. */
 @Entity
 @Table(name = BpAccount.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = BpAccount.TABLE_NAME
-        + "_UK1", columnNames = { "CLIENTID", "BP_ID", "ORGANIZATION_ID" }) })
+        + "_UK1", columnNames = { "CLIENTID", "BPARTNER_ID", "ORG_ID" }) })
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = BpAccount.NQ_FIND_BY_ID, query = "SELECT e FROM BpAccount e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = BpAccount.NQ_FIND_BY_IDS, query = "SELECT e FROM BpAccount e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = BpAccount.NQ_FIND_BY_BP_ORG, query = "SELECT e FROM BpAccount e WHERE e.clientId = :pClientId and  e.bp = :pBp and e.organization = :pOrganization ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "BpAccount.findByBp_org_PRIMITIVE", query = "SELECT e FROM BpAccount e WHERE e.clientId = :pClientId and  e.bp.id = :pBpId and e.organization.id = :pOrganizationId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = BpAccount.NQ_FIND_BY_BP_ORG, query = "SELECT e FROM BpAccount e WHERE e.clientId = :pClientId and  e.bpartner = :pBpartner and e.org = :pOrg ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = "BpAccount.findByBp_org_PRIMITIVE", query = "SELECT e FROM BpAccount e WHERE e.clientId = :pClientId and  e.bpartner.id = :pBpartnerId and e.org.id = :pOrgId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class BpAccount extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "MD_BP_ACCOUNT";
-    public static final String SEQUENCE_NAME = "MD_BP_ACCOUNT_SEQ";
+    public static final String TABLE_NAME = "MD_BP_ACNT";
+    public static final String SEQUENCE_NAME = "MD_BP_ACNT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -110,11 +110,11 @@ public class BpAccount extends AbstractAuditable {
     @Column(name = "VENDANALITICSEGMENT", length = 32)
     private String vendAnaliticSegment;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
-    @JoinColumn(name = "BP_ID", referencedColumnName = "ID")
-    private BusinessPartner bp;
+    @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "ID")
+    private BusinessPartner bpartner;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
-    @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")
-    private Organization organization;
+    @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
+    private Organization org;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CustomerGroup.class)
     @JoinColumn(name = "CUSTGROUP_ID", referencedColumnName = "ID")
     private CustomerGroup custGroup;
@@ -203,20 +203,20 @@ public class BpAccount extends AbstractAuditable {
         this.vendAnaliticSegment = vendAnaliticSegment;
     }
 
-    public BusinessPartner getBp() {
-        return this.bp;
+    public BusinessPartner getBpartner() {
+        return this.bpartner;
     }
 
-    public void setBp(BusinessPartner bp) {
-        this.bp = bp;
+    public void setBpartner(BusinessPartner bpartner) {
+        this.bpartner = bpartner;
     }
 
-    public Organization getOrganization() {
-        return this.organization;
+    public Organization getOrg() {
+        return this.org;
     }
 
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
+    public void setOrg(Organization org) {
+        this.org = org;
     }
 
     public CustomerGroup getCustGroup() {

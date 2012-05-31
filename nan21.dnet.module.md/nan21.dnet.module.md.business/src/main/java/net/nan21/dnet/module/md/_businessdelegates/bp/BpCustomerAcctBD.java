@@ -3,9 +3,10 @@ package net.nan21.dnet.module.md._businessdelegates.bp;
 import javax.persistence.NoResultException;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.Account;
+
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.Account;
 import net.nan21.dnet.module.md.bp.business.service.IBpAccountAcctService;
 import net.nan21.dnet.module.md.bp.business.service.IBpAccountService;
 import net.nan21.dnet.module.md.bp.business.service.ICustomerGroupAcctService;
@@ -24,8 +25,8 @@ public class BpCustomerAcctBD extends AbstractBusinessDelegate {
 		BpAccount account = null;
 		Account acct = null;
 		try {
-			account = accountService.findByBp_org(
-					businessPartner.getId(), organization.getId());			 
+			account = accountService.findByBp_org(businessPartner.getId(),
+					organization.getId());
 			if (account != null) {
 				acct = this.findByAccount(account.getId(), schema.getId());
 				if (acct == null) {
@@ -38,7 +39,6 @@ public class BpCustomerAcctBD extends AbstractBusinessDelegate {
 		} catch (NoResultException e) {
 			// ignore, we'll throw later
 		}
-		 
 
 		{
 			// try to find some generic purchase account from a default
@@ -47,11 +47,11 @@ public class BpCustomerAcctBD extends AbstractBusinessDelegate {
 		}
 
 		if (acct != null && account != null) {
-			if(account.getCustAnaliticSegment() != null) {
+			if (account.getCustAnaliticSegment() != null) {
 				return acct.getCode() + "." + account.getCustAnaliticSegment();
 			} else if (account.getAnaliticSegment() != null) {
 				return acct.getCode() + "." + account.getAnaliticSegment();
-			}			 
+			}
 			return acct.getCode();
 		}
 		throw new RuntimeException(
@@ -61,8 +61,6 @@ public class BpCustomerAcctBD extends AbstractBusinessDelegate {
 						+ schema.getCode()
 						+ "`. Specify accounting settings at business partner account level or customer group level.");
 	}
-
- 
 
 	protected Account findByAccount(Long accountId, Long schemaId)
 			throws Exception {

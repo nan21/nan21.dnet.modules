@@ -37,16 +37,10 @@
 		<class>net.nan21.dnet.module.hr.job.domain.entity.Position</class>
 		<class>net.nan21.dnet.module.hr.job.domain.entity.PositionRequirement</class>
 		<class>net.nan21.dnet.module.hr.job.domain.entity.PositionHierarchy</class>
-		
-		<class>net.nan21.dnet.module.hr.payroll.domain.entity.ElementCategory</class>
-		<class>net.nan21.dnet.module.hr.payroll.domain.entity.ElementType</class>
-		<class>net.nan21.dnet.module.hr.payroll.domain.entity.Element</class>
-		<class>net.nan21.dnet.module.hr.payroll.domain.entity.ElementInput</class>
-		<class>net.nan21.dnet.module.hr.payroll.domain.entity.ElementValue</class>
-		<class>net.nan21.dnet.module.hr.payroll.domain.entity.ElementFormula</class>
-		
+		 
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.Payroll</class>
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod</class>
+		<class>net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElementValue</class>
 		
 		<class>net.nan21.dnet.module.hr.skill.domain.entity.RatingScale</class>
 		<class>net.nan21.dnet.module.hr.skill.domain.entity.RatingLevel</class>
@@ -87,6 +81,8 @@
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Calendar</class>
+		
+		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
 		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

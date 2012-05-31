@@ -27,19 +27,16 @@ Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter"
 		.addCombo({ name:"type", xtype:"combo", dataIndex:"type",anchor:"-20",store:[ "email", "messenger", "phone", "url", "other"]  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"main", layout:"hbox", autoScroll:true, defaults:{labelAlign:"right",labelWidth:80,width:210 }})
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:170}) 
+		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		this._elems_.get("main")["items"] = [
-	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("name")] }
-	  ,	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("type")] }
-	  ,	    {layout:"anchor", border:false 
-	      ,items:[ this._elems_.get("active")] }
-];
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["name","type"])
+		.addChildrenTo("col2",["active"])
     	.addAuditFilter()	
 	}
 }); 
@@ -53,9 +50,9 @@ Ext.define("net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$EditLis
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true,allowBlank:false } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addComboColumn({ name:"type", dataIndex:"type", trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false"),editor: {xtype: 'combo', mode: 'local', selectOnFocus:true 	, valueField: 'bv', displayField: 'tv' ,store:[ "email", "messenger", "phone", "url", "other"] , triggerAction:'all', forceSelection:true }})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 	  	.addDefaults()
 	  ;  		   
 	}  

@@ -17,8 +17,8 @@ public class OrganizationHierarchyItemDs extends
 
     public static final String fHIERARCHYID = "hierarchyId";
     public static final String fHIERARCHY = "hierarchy";
-    public static final String fORGANIZATIONID = "organizationId";
-    public static final String fORGANIZATIONCODE = "organizationCode";
+    public static final String fORGID = "orgId";
+    public static final String fORG = "org";
     public static final String fPARENTID = "parentId";
     public static final String fPARENTCODE = "parentCode";
 
@@ -28,11 +28,11 @@ public class OrganizationHierarchyItemDs extends
     @DsField(join = "left", path = "hierarchy.name")
     private String hierarchy;
 
-    @DsField(join = "left", path = "organization.id")
-    private Long organizationId;
+    @DsField(join = "left", path = "org.id")
+    private Long orgId;
 
-    @DsField(join = "left", path = "organization.code")
-    private String organizationCode;
+    @DsField(join = "left", path = "org.code")
+    private String org;
 
     @DsField(join = "left", path = "parent.id")
     private Long parentId;
@@ -64,20 +64,20 @@ public class OrganizationHierarchyItemDs extends
         this.hierarchy = hierarchy;
     }
 
-    public Long getOrganizationId() {
-        return this.organizationId;
+    public Long getOrgId() {
+        return this.orgId;
     }
 
-    public void setOrganizationId(Long organizationId) {
-        this.organizationId = organizationId;
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
     }
 
-    public String getOrganizationCode() {
-        return this.organizationCode;
+    public String getOrg() {
+        return this.org;
     }
 
-    public void setOrganizationCode(String organizationCode) {
-        this.organizationCode = organizationCode;
+    public void setOrg(String org) {
+        this.org = org;
     }
 
     public Long getParentId() {

@@ -37,8 +37,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = PositionRequirement.NQ_FIND_BY_IDS, query = "SELECT e FROM PositionRequirement e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PositionRequirement extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "HR_POSTN_REQUIREMENT";
-    public static final String SEQUENCE_NAME = "HR_POSTN_REQUIREMENT_SEQ";
+    public static final String TABLE_NAME = "HR_POS_RQM";
+    public static final String SEQUENCE_NAME = "HR_POS_RQM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

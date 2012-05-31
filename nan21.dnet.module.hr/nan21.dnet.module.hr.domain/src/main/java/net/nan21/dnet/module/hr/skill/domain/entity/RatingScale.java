@@ -35,8 +35,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = RatingScale.NQ_FIND_BY_NAME, query = "SELECT e FROM RatingScale e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class RatingScale extends AbstractType {
 
-    public static final String TABLE_NAME = "HR_RATING_SCALE";
-    public static final String SEQUENCE_NAME = "HR_RATING_SCALE_SEQ";
+    public static final String TABLE_NAME = "HR_RATE_SCALE";
+    public static final String SEQUENCE_NAME = "HR_RATE_SCALE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -3,9 +3,9 @@ package net.nan21.dnet.module.md._businessdelegates.bp;
 import javax.persistence.NoResultException;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.Account;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.Account;
 import net.nan21.dnet.module.md.bp.business.service.IBpAccountAcctService;
 import net.nan21.dnet.module.md.bp.business.service.IBpAccountService;
 import net.nan21.dnet.module.md.bp.business.service.IVendorGroupAcctService;
@@ -46,7 +46,7 @@ public class BpVendorAcctBD extends AbstractBusinessDelegate {
 			// if nothing found raise an error or just return null (TBA)
 		}
 		if (acct != null && account != null) {
-			if(account.getVendAnaliticSegment() != null) {
+			if (account.getVendAnaliticSegment() != null) {
 				return acct.getCode() + "." + account.getVendAnaliticSegment();
 			} else if (account.getAnaliticSegment() != null) {
 				return acct.getCode() + "." + account.getAnaliticSegment();

@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.md.ui.extjs/ds/InvTransactionTypeDs", "nan21.dnet.module.md.ui.extjs/dc/InvTransactionType","nan21.dnet.module.bd.ui.extjs/ds/TxDocTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/TxDocTypes","nan21.dnet.module.bd.ui.extjs/ds/TxDocTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/TxDocTypes"]);
+Dnet.doImport(["", "nan21.dnet.module.md.ui.extjs/ds/InvTransactionTypeDs", "nan21.dnet.module.md.ui.extjs/dc/InvTransactionType","nan21.dnet.module.md.ui.extjs/ds/TxDocTypeLovDs","nan21.dnet.module.md.ui.extjs/lov/TxDocTypes","nan21.dnet.module.md.ui.extjs/ds/TxDocTypeLovDs","nan21.dnet.module.md.ui.extjs/lov/TxDocTypes"]);
 
 Ext.define("net.nan21.dnet.module.md.tx.inventory.frame.InvTxTypes_UI", {  
 	extend: "dnet.core.ui.AbstractUi",

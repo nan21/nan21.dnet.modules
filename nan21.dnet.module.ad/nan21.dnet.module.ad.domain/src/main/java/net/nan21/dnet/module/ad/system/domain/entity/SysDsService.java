@@ -40,8 +40,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = "SysDsService.findByName_PRIMITIVE", query = "SELECT e FROM SysDsService e WHERE e.clientId = :pClientId and  e.dataSource.id = :pDataSourceId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysDsService extends AbstractType {
 
-    public static final String TABLE_NAME = "AD_SYSDSSERVICE";
-    public static final String SEQUENCE_NAME = "AD_SYSDSSERVICE_SEQ";
+    public static final String TABLE_NAME = "AD_SYS_DS_SRV";
+    public static final String SEQUENCE_NAME = "AD_SYS_DS_SRV_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

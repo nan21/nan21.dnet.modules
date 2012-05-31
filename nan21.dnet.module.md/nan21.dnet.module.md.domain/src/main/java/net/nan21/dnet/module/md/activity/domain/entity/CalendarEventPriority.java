@@ -35,8 +35,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = CalendarEventPriority.NQ_FIND_BY_TYPE_AND_NAME, query = "SELECT e FROM CalendarEventPriority e WHERE e.clientId = :pClientId and  e.eventType = :pEventType and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CalendarEventPriority extends AbstractType {
 
-    public static final String TABLE_NAME = "MD_ACTIVITY_PRIORITY";
-    public static final String SEQUENCE_NAME = "MD_ACTIVITY_PRIORITY_SEQ";
+    public static final String TABLE_NAME = "MD_ACT_PRIO";
+    public static final String SEQUENCE_NAME = "MD_ACT_PRIO_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

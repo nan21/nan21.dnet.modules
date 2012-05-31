@@ -71,15 +71,15 @@ public class Role extends AbstractType {
     private Collection<User> users;
 
     @ManyToMany
-    @JoinTable(name = "AD_ROLE_ACCESSCTRLS")
+    @JoinTable(name = "AD_ROLE_ACLS")
     private Collection<AccessControl> accessControls;
 
     @ManyToMany
-    @JoinTable(name = "AD_ROLE_MENUS")
+    @JoinTable(name = "AD_ROLE_MENU")
     private Collection<Menu> menus;
 
     @ManyToMany
-    @JoinTable(name = "AD_ROLE_MENUITEMS")
+    @JoinTable(name = "AD_ROLE_MENUITEM")
     private Collection<MenuItem> menuItems;
 
     /* ============== getters - setters ================== */

@@ -26,7 +26,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="SEQUENCENO" type="number(10)">
+			<column name="SEQUENCENO" type="number(8)">
 				<constraints  /></column>	 
 			<column name="UUID" type="varchar2(36)">
 				<constraints  /></column>	 

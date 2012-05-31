@@ -4,8 +4,8 @@ Ext.define("net.nan21.dnet.module.hr.job.ds.model.PositionDs$Trl", {
 	entityFQN__lbl : "Entity FQN",
 	jobId__lbl : "Job Id",
 	jobCode__lbl : "Job Code",
-	organizationId__lbl : "Organization Id",
-	organizationCode__lbl : "Organization Code",
+	orgId__lbl : "Org Id",
+	org__lbl : "Org",
 		
 	id__lbl :"ID"
 });

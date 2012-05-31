@@ -8,9 +8,9 @@ package net.nan21.dnet.module.md.mm.prod.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.uom.business.service.IUomService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.md.mm.prod.business.service.IProductAttributeGroupService;
+import net.nan21.dnet.module.md.base.attr.business.service.IAttributeGroupService;
+import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup;
 import net.nan21.dnet.module.md.mm.prod.business.service.IProductManufacturerService;
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeGroup;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
@@ -78,11 +78,11 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
             if (e.getAttributeGroup() == null
                     || !e.getAttributeGroup().getId()
                             .equals(ds.getAttributeGroupId())) {
-                e.setAttributeGroup((ProductAttributeGroup) this.em.find(
-                        ProductAttributeGroup.class, ds.getAttributeGroupId()));
+                e.setAttributeGroup((AttributeGroup) this.em.find(
+                        AttributeGroup.class, ds.getAttributeGroupId()));
             }
         } else {
-            this.lookup_attributeGroup_ProductAttributeGroup(ds, e);
+            this.lookup_attributeGroup_AttributeGroup(ds, e);
         }
 
     }
@@ -183,17 +183,17 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         }
     }
 
-    protected void lookup_attributeGroup_ProductAttributeGroup(ProductDs ds,
-            Product e) throws Exception {
+    protected void lookup_attributeGroup_AttributeGroup(ProductDs ds, Product e)
+            throws Exception {
         if (ds.getAttributeGroup() != null
                 && !ds.getAttributeGroup().equals("")) {
-            ProductAttributeGroup x = null;
+            AttributeGroup x = null;
             try {
-                x = ((IProductAttributeGroupService) findEntityService(ProductAttributeGroup.class))
+                x = ((IAttributeGroupService) findEntityService(AttributeGroup.class))
                         .findByName(ds.getAttributeGroup());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `ProductAttributeGroup` reference:  `attributeGroup` = "
+                        "Invalid value provided to find `AttributeGroup` reference:  `attributeGroup` = "
                                 + ds.getAttributeGroup() + "  ");
             }
             e.setAttributeGroup(x);

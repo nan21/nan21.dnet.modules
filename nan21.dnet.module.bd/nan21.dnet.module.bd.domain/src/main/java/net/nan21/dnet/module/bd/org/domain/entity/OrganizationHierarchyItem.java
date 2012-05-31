@@ -37,8 +37,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = OrganizationHierarchyItem.NQ_FIND_BY_IDS, query = "SELECT e FROM OrganizationHierarchyItem e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class OrganizationHierarchyItem extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "BD_ORG_HIERARCHY_ITEM";
-    public static final String SEQUENCE_NAME = "BD_ORG_HIERARCHY_ITEM_SEQ";
+    public static final String TABLE_NAME = "BD_ORG_HRCHY_ITEM";
+    public static final String SEQUENCE_NAME = "BD_ORG_HRCHY_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
@@ -65,8 +65,8 @@ public class OrganizationHierarchyItem extends AbstractAuditable {
     @JoinColumn(name = "HIERARCHY_ID", referencedColumnName = "ID")
     private OrganizationHierarchy hierarchy;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
-    @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ID")
-    private Organization organization;
+    @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
+    private Organization org;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "PARENT_ID", referencedColumnName = "ID")
     private Organization parent;
@@ -89,12 +89,12 @@ public class OrganizationHierarchyItem extends AbstractAuditable {
         this.hierarchy = hierarchy;
     }
 
-    public Organization getOrganization() {
-        return this.organization;
+    public Organization getOrg() {
+        return this.org;
     }
 
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
+    public void setOrg(Organization org) {
+        this.org = org;
     }
 
     public Organization getParent() {

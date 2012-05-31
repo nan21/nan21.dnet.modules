@@ -35,8 +35,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = Qualification.NQ_FIND_BY_NAME, query = "SELECT e FROM Qualification e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Qualification extends AbstractType {
 
-    public static final String TABLE_NAME = "HR_QUALIFICATION";
-    public static final String SEQUENCE_NAME = "HR_QUALIFICATION_SEQ";
+    public static final String TABLE_NAME = "HR_QUALIF";
+    public static final String SEQUENCE_NAME = "HR_QUALIF_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="AssetDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.fi.asset.ds.filter.AssetDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.fi.asset.domain.entity.Asset" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.fi.asset.ds.converter.AssetDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Asset" />
+		<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetDs" />
+	</bean>
+   
+ 	<bean id="AmortizationItemDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AmortizationItemDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.fi.asset.ds.filter.AmortizationItemDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.fi.asset.domain.entity.AmortizationItem" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.fi.asset.ds.converter.AmortizationItemDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AmortizationItem" />
+		<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AmortizationItemDs" />
+	</bean>
+      
+</beans>
+   

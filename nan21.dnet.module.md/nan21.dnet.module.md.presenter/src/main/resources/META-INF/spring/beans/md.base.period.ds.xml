@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="FiscalYearDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.base.period.ds.model.FiscalYearDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.base.period.ds.filter.FiscalYearDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.base.period.ds.converter.FiscalYearDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FiscalYear" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.base.period.ds.model.FiscalYearDs" />
+	</bean>
+   
+ 	<bean id="FiscalYearLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.base.period.ds.model.FiscalYearLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.base.period.ds.model.FiscalYearLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FiscalYearLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.base.period.ds.model.FiscalYearLovDs" />
+	</bean>
+   
+ 	<bean id="FiscalPeriodDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.base.period.ds.model.FiscalPeriodDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.base.period.ds.filter.FiscalPeriodDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.base.period.ds.converter.FiscalPeriodDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FiscalPeriod" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.base.period.ds.model.FiscalPeriodDs" />
+	</bean>
+   
+ 	<bean id="FiscalPeriodLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.base.period.ds.model.FiscalPeriodLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.base.period.ds.model.FiscalPeriodLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="FiscalPeriodLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.base.period.ds.model.FiscalPeriodLovDs" />
+	</bean>
+      
+</beans>
+   

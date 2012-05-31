@@ -38,8 +38,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = AuditField.NQ_FIND_BY_IDS, query = "SELECT e FROM AuditField e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AuditField extends AbstractSimpleEntity {
 
-    public static final String TABLE_NAME = "AD_AUDIT_FIELD";
-    public static final String SEQUENCE_NAME = "AD_AUDIT_FIELD_SEQ";
+    public static final String TABLE_NAME = "AD_AUDIT_FLD";
+    public static final String SEQUENCE_NAME = "AD_AUDIT_FLD_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

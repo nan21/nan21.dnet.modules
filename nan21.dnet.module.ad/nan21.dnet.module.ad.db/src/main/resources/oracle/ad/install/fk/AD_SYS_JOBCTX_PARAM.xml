@@ -1,0 +1,11 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_AD_SYS_JOBCTX_PARAM1" baseTableName="AD_SYS_JOBCTX_PARAM" baseColumnNames="JOBCTX_ID"  referencedTableName="AD_SYS_JOBCTX"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_AD_SYS_JOBCTX_PARAM2" baseTableName="AD_SYS_JOBCTX_PARAM" baseColumnNames="JOBPARAM_ID"  referencedTableName="AD_SYS_JOB_PARAM"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

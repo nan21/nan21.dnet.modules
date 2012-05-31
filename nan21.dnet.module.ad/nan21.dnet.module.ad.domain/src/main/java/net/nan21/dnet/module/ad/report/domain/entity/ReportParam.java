@@ -46,8 +46,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "ReportParam.findByName_PRIMITIVE", query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report.id = :pReportId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ReportParam extends AbstractTypeWithCode {
 
-    public static final String TABLE_NAME = "AD_REPORT_PARAM";
-    public static final String SEQUENCE_NAME = "AD_REPORT_PARAM_SEQ";
+    public static final String TABLE_NAME = "AD_RPT_PARAM";
+    public static final String SEQUENCE_NAME = "AD_RPT_PARAM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

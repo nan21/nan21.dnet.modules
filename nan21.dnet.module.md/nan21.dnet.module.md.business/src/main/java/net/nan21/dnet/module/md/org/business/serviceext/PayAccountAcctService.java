@@ -5,7 +5,7 @@
  */
 package net.nan21.dnet.module.md.org.business.serviceext;
 
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
 import net.nan21.dnet.module.md.org.business.service.IPayAccountAcctService;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccountAcct;
@@ -38,8 +38,8 @@ public class PayAccountAcctService extends
 	}
 
 	/**
-	 * Get the posting account for withdrawal operations into the given financial
-	 * account.
+	 * Get the posting account for withdrawal operations into the given
+	 * financial account.
 	 */
 	public String getPostingWithdrawalAcct(PayAccount payAccount,
 			AccSchema schema) throws Exception {

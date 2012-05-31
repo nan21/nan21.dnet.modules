@@ -50,7 +50,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseTxAmount$EditList", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addDateColumn({ name:"dueDate", dataIndex:"dueDate",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
-		.addLov({name:"paymentMethod", xtype:"gridcolumn", dataIndex:"paymentMethod",width:120,editor:{xtype:"net.nan21.dnet.module.bd.tx.lovs.PaymentMethodOut" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]} })
+		.addLov({name:"paymentMethod", xtype:"gridcolumn", dataIndex:"paymentMethod",width:120,editor:{xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentMethodOut" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]} })
 		.addNumberColumn({ name:"amount", dataIndex:"amount", align:"right",decimals:2,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addNumberColumn({ name:"payedAmount", dataIndex:"payedAmount", align:"right",decimals:2,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addNumberColumn({ name:"dueAmount", dataIndex:"dueAmount", align:"right",decimals:2,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })

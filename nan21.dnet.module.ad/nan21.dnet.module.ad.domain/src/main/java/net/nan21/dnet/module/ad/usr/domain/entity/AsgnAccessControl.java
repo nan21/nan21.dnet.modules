@@ -43,8 +43,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "AsgnAccessControl.findByUnique_PRIMITIVE", query = "SELECT e FROM AsgnAccessControl e WHERE e.clientId = :pClientId and  e.accessControl.id = :pAccessControlId and e.dsName = :pDsName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AsgnAccessControl extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "AD_ACCESSCTRL_ASGN";
-    public static final String SEQUENCE_NAME = "AD_ACCESSCTRL_ASGN_SEQ";
+    public static final String TABLE_NAME = "AD_ACL_ASGN";
+    public static final String SEQUENCE_NAME = "AD_ACL_ASGN_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

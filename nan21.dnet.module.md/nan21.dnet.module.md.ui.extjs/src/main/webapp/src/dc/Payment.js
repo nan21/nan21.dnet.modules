@@ -26,7 +26,7 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.Payment$Filter", {
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addTextField({ name:"docNo", dataIndex:"docNo",anchor:"-20",maxLength:255  })
 		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
-		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.bd.tx.lovs.PaymentMethod", dataIndex:"paymentMethod",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
+		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentMethod", dataIndex:"paymentMethod",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
 		.addLov({ name:"fromOrg", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"fromOrg",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "fromOrgId"} ]  })
 		.addLov({ name:"toOrg", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"toOrg",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "toOrgId"} ]  })
 		.addLov({ name:"fromAccount", xtype:"net.nan21.dnet.module.md.org.lovs.PayAccounts", dataIndex:"fromAccount",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "fromAccountId"} ]  })

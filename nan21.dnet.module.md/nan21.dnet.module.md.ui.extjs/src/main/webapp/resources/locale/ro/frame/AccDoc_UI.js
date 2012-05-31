@@ -1,4 +1,4 @@
-Ext.define("net.nan21.dnet.module.md.tx.fin.frame.AccDoc_UI$Trl", { 
+Ext.define("net.nan21.dnet.module.md.tx.acc.frame.AccDoc_UI$Trl", { 
 	lineList__ttl : "Linii",
 	
 	tlbDocList__ttl : "Note contabile",

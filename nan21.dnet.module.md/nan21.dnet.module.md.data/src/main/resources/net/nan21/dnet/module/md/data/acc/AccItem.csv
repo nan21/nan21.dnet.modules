@@ -1,0 +1,10 @@
+name;description;active
+asig-auto;Asigurare auto;true
+asig-soc-ang;Ctb asigurari sociale angajat;true
+asig-soc-sanat-ang;Ctb  asigurari sanatate angajat;true
+asig-soc-sanat-unit;Ctb  asigurari sanatate unitate;true
+asig-soc-unit;Ctb asigurari sociale unitate;true
+comision-cm;Comision CM;true
+fd-somaj-ang;Ctb fond somaj angajat;true
+fd-somaj-unit;Ctb fond somaj unitate;true
+imp-salarii;Impozit salarii;true

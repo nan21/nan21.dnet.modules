@@ -32,7 +32,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.Product$Filter", {
 		.addBooleanField({ name:"showInCatalog", dataIndex:"showInCatalog",anchor:"-20"  })
 		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",anchor:"-20",maxLength:32  })
-		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
+		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.md.base.attr.lovs.AttributeGroup", dataIndex:"attributeGroup",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
 		.addLov({ name:"productCategory", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductCategories", paramIndex:"productCategory",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "productCategoryId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
@@ -132,7 +132,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.Product$Edit", {
 		.addCheckbox({ name:"purchase", dataIndex:"purchase"  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",anchor:"-20" ,maxLength:32  })
 		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
-		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductAttributeGroup", dataIndex:"attributeGroup",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
+		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.md.base.attr.lovs.AttributeGroup", dataIndex:"attributeGroup",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
 		.addLov({ name:"defaultUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"defaultUomCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "defaultUomId"} ]  })
 		//containers
 		.addPanel({ name:"row1", layout:"form" , width:700})     

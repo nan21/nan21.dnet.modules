@@ -3,10 +3,10 @@ package net.nan21.dnet.module.md._businessdelegates.mm.prod;
 import javax.persistence.NoResultException;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.Account;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.Account;
 import net.nan21.dnet.module.md.mm.prod.business.service.IProductAccountAcctService;
 import net.nan21.dnet.module.md.mm.prod.business.service.IProductAccountGroupAcctService;
 import net.nan21.dnet.module.md.mm.prod.business.service.IProductAccountService;
@@ -22,10 +22,10 @@ public class ProductRevenueAcctBD extends AbstractBusinessDelegate {
 			AccSchema schema) throws Exception {
 		IProductAccountService accountService = (IProductAccountService) this
 				.findEntityService(ProductAccount.class);
-		 
+
 		ProductAccount account = null;
 		Account acct = null;
-		try {		
+		try {
 			account = accountService.findByProd_org(product.getId(),
 					organization.getId());
 			if (account != null) {
@@ -40,7 +40,7 @@ public class ProductRevenueAcctBD extends AbstractBusinessDelegate {
 		} catch (NoResultException e) {
 			// ignore, we'll throw later
 		}
-				 
+
 		{
 			// try to find some generic purchase account from a default
 			// organization or accounting schema level defaults, etc ...

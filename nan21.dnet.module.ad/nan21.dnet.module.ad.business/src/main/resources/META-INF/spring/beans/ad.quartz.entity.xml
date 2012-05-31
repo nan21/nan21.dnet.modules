@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="QuartzBlobTriggerService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.quartz.business.serviceimpl.QuartzBlobTriggerService"  />  
+ 
+ 	<bean id="QuartzCalendarService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.quartz.business.serviceimpl.QuartzCalendarService"  />  
+ 
+ 	<bean id="QuartzCronTriggerService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.quartz.business.serviceimpl.QuartzCronTriggerService"  />  
+ 
+ 	<bean id="QuartzFiredTriggerService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.quartz.business.serviceimpl.QuartzFiredTriggerService"  />  
+ 
+ 	<bean id="QuartzJobDetailService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.quartz.business.serviceimpl.QuartzJobDetailService"  />  
+ 
+ 	<bean id="QuartzLockService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.quartz.business.serviceimpl.QuartzLockService"  />  
+ 
+ 	<bean id="QuartzPausedTriggerGroupService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.quartz.business.serviceimpl.QuartzPausedTriggerGroupService"  />  
+ 
+ 	<bean id="QuartzSchedulerStateService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.quartz.business.serviceimpl.QuartzSchedulerStateService"  />  
+ 
+ 	<bean id="QuartzSimpleTriggerService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.quartz.business.serviceimpl.QuartzSimpleTriggerService"  />  
+ 
+ 	<bean id="QuartzSimpropTriggerService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.quartz.business.serviceimpl.QuartzSimpropTriggerService"  />  
+ 
+ 	<bean id="QuartzTriggerService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.quartz.business.serviceimpl.QuartzTriggerService"  />  
+   
+</beans>
+   

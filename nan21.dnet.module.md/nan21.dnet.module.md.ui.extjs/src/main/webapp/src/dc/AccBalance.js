@@ -1,11 +1,11 @@
    
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccBalance", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccBalance", {
 	extend: "dnet.core.dc.AbstractDc",
  
-	recordModel: "net.nan21.dnet.module.md.tx.fin.ds.model.AccBalanceDs",
-	filterModel: "net.nan21.dnet.module.md.tx.fin.ds.model.AccBalanceDsFilter",
-	paramModel: "net.nan21.dnet.module.md.tx.fin.ds.param.AccBalanceDsParam",
+	recordModel: "net.nan21.dnet.module.md.tx.acc.ds.model.AccBalanceDs",
+	filterModel: "net.nan21.dnet.module.md.tx.acc.ds.model.AccBalanceDsFilter",
+	paramModel: "net.nan21.dnet.module.md.tx.acc.ds.param.AccBalanceDsParam",
 	constructor : function(config) {
         config = config || {};
         Ext.apply(this, config);
@@ -17,16 +17,16 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccBalance", {
 
  	
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccBalance$Filter", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccBalance$Filter", {
 	extend: "dnet.core.dc.AbstractDcvFilterForm",
- 	alias: "widget.net.nan21.dnet.module.md.tx.fin.dc.AccBalance$Filter",
+ 	alias: "widget.net.nan21.dnet.module.md.tx.acc.dc.AccBalance$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"account", dataIndex:"account",anchor:"-20",maxLength:255  })
 		.addLov({ name:"org", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"org",anchor:"-20",allowBlank:false,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "orgId"} ]  })
-		.addLov({ name:"accSchema", xtype:"net.nan21.dnet.module.bd.acc.lovs.AccSchemas", dataIndex:"accSchema",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]  })
-		.addLov({ name:"period", xtype:"net.nan21.dnet.module.bd.tx.lovs.FiscalPeriods", dataIndex:"period",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "periodId"} ]  })
+		.addLov({ name:"accSchema", xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas", dataIndex:"accSchema",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]  })
+		.addLov({ name:"period", xtype:"net.nan21.dnet.module.md.base.period.lovs.FiscalPeriods", dataIndex:"period",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "periodId"} ]  })
 		.addNumberField({ name:"initialAmount_From", dataIndex:"initialAmount_From", emptyText:"From" })
 		.addNumberField({ name:"initialAmount_To", dataIndex:"initialAmount_To", emptyText:"To" })
 		.addFieldContainer({name: "initialAmount", fieldLabel:"Initial Amount"})  
@@ -55,9 +55,9 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccBalance$Filter", {
 }); 
  	
  		 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccBalance$List", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccBalance$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
-	alias:"widget.net.nan21.dnet.module.md.tx.fin.dc.AccBalance$List",
+	alias:"widget.net.nan21.dnet.module.md.tx.acc.dc.AccBalance$List",
 	
 	_defineColumns_: function () {	
 		this._getBuilder_()	

@@ -37,8 +37,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = DsReport.NQ_FIND_BY_IDS, query = "SELECT e FROM DsReport e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class DsReport extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "AD_DS_REPORT";
-    public static final String SEQUENCE_NAME = "AD_DS_REPORT_SEQ";
+    public static final String TABLE_NAME = "AD_DS_RPT";
+    public static final String SEQUENCE_NAME = "AD_DS_RPT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

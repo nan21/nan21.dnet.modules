@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="XT_QRTZ_SIMPLE_TRIGGERS">
+			<column name="REPEAT_COUNT" type="int(8)">
+				<constraints nullable="false" /></column>	 
+			<column name="REPEAT_INTERVAL" type="int(8)">
+				<constraints nullable="false" /></column>	 
+			<column name="SCHED_NAME" type="varchar(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="TIMES_TRIGGERED" type="int(8)">
+				<constraints nullable="false" /></column>	 
+			<column name="TRIGGER_GROUP" type="varchar(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="TRIGGER_NAME" type="varchar(255)">
+				<constraints nullable="false" /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="XT_QRTZ_SIMPLE_TRIGGERS" constraintName="PK_QRTZ_SIMPLE_TRIGGERS" columnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="XT_QRTZ_SIMPLE_TRIGGERS_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

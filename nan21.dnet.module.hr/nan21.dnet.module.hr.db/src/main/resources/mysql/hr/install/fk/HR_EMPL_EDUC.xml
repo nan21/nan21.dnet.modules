@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_HR_EMPL_EDUC1" 
+				baseTableName="HR_EMPL_EDUC" baseColumnNames="EMPLOYEE_ID"  
+				referencedTableName="HR_EMPL"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_HR_EMPL_EDUC2" 
+				baseTableName="HR_EMPL_EDUC" baseColumnNames="TYPE_ID"  
+				referencedTableName="HR_EDUC_TYPE"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

@@ -7,20 +7,20 @@ import java.util.List;
 import javax.persistence.NoResultException;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
-import net.nan21.dnet.module.bd.acc.business.service.IAccSchemaService;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.Account;
-import net.nan21.dnet.module.bd.fin.business.service.ITaxAcctService;
-import net.nan21.dnet.module.bd.fin.domain.entity.TaxAcct;
-import net.nan21.dnet.module.bd.tx.business.service.IFiscalPeriodService;
-import net.nan21.dnet.module.bd.tx.domain.entity.FiscalPeriod;
 
+import net.nan21.dnet.module.md.acc.business.service.IAccSchemaService;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.Account;
+import net.nan21.dnet.module.md.base.period.business.service.IFiscalPeriodService;
+import net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod;
+import net.nan21.dnet.module.md.base.tax.business.service.ITaxAcctService;
+import net.nan21.dnet.module.md.base.tax.domain.entity.TaxAcct;
 import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.mm.prod.business.service.IProductService;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
-import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc;
-import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine;
+import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDoc;
+import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDocLine;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceTax;
@@ -33,11 +33,14 @@ public class SalesInvoiceToAccDocBD extends AbstractBusinessDelegate {
 
 	public void unPost(SalesInvoice invoice) throws Exception {
 		try {
-			this.em.createQuery(
-					"delete from AccDoc t " + " where t.docUuid = :invoiceUuid")
-					.setParameter("invoiceUuid", invoice.getUuid()).executeUpdate();
+			this.em
+					.createQuery(
+							"delete from AccDoc t "
+									+ " where t.docUuid = :invoiceUuid")
+					.setParameter("invoiceUuid", invoice.getUuid())
+					.executeUpdate();
 			invoice.setPosted(false);
-			this.em.merge(invoice);	
+			this.em.merge(invoice);
 		} catch (Exception e) {
 			if (e.getCause() != null
 					&& e.getCause() instanceof SQLIntegrityConstraintViolationException) {
@@ -49,7 +52,7 @@ public class SalesInvoiceToAccDocBD extends AbstractBusinessDelegate {
 				throw e;
 			}
 		}
-		
+
 	}
 
 	public List<AccDoc> post(SalesInvoice invoice) throws Exception {
@@ -139,7 +142,7 @@ public class SalesInvoiceToAccDocBD extends AbstractBusinessDelegate {
 		}
 
 		// product revenue
-		 
+
 		for (SalesInvoiceItem item : invoice.getLines()) {
 			String crAccount = this.getProdService().getRevenueAcct(
 					item.getProduct(), invoice.getSupplier(), schema);

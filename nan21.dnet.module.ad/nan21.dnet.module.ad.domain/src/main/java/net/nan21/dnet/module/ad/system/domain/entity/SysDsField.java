@@ -41,8 +41,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "SysDsField.findByName_PRIMITIVE", query = "SELECT e FROM SysDsField e WHERE e.clientId = :pClientId and  e.dataSource.id = :pDataSourceId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysDsField extends AbstractType {
 
-    public static final String TABLE_NAME = "AD_SYSDSFIELD";
-    public static final String SEQUENCE_NAME = "AD_SYSDSFIELD_SEQ";
+    public static final String TABLE_NAME = "AD_SYS_DS_FLD";
+    public static final String SEQUENCE_NAME = "AD_SYS_DS_FLD_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -12,7 +12,7 @@ import net.nan21.dnet.module.ad.usr.domain.entity.Menu;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = Menu.class, sort = { @SortField(field = MenuDs.fSEQUENCENO) })
+@Ds(entity = Menu.class, sort = { @SortField(field = MenuDs.fNAME) })
 public class MenuDs extends AbstractTypeDs<Menu> {
 
     public static final String fSEQUENCENO = "sequenceNo";

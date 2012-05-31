@@ -9,8 +9,8 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeGroup;
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue;
+import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttribute;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer;
 
@@ -18,7 +18,7 @@ import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.md._businessdelegates.mm.prod.ProductExpenseAcctBD;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
 import net.nan21.dnet.module.md._businessdelegates.mm.prod.ProductRevenueAcctBD;
 
 public class ProductService extends AbstractEntityService<Product> {
@@ -115,8 +115,7 @@ public class ProductService extends AbstractEntityService<Product> {
                 .getResultList();
     }
 
-    public List<Product> findByAttributeGroup(
-            ProductAttributeGroup attributeGroup) {
+    public List<Product> findByAttributeGroup(AttributeGroup attributeGroup) {
         return this.findByAttributeGroupId(attributeGroup.getId());
     }
 
@@ -143,7 +142,7 @@ public class ProductService extends AbstractEntityService<Product> {
                 .setParameter("pCategoriesId", categoriesId).getResultList();
     }
 
-    public List<Product> findByAttributes(ProductAttributeValue attributes) {
+    public List<Product> findByAttributes(ProductAttribute attributes) {
         return this.findByAttributesId(attributes.getId());
     }
 

@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_HR_GRD_PAYSCL_POINT1" 
+				baseTableName="HR_GRD_PAYSCL_POINT" baseColumnNames="GRADEPAYSCALE_ID"  
+				referencedTableName="HR_GRD_PAYSCL"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_HR_GRD_PAYSCL_POINT2" 
+				baseTableName="HR_GRD_PAYSCL_POINT" baseColumnNames="POINT_ID"  
+				referencedTableName="HR_PAYSCL_POINT"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

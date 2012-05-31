@@ -1,0 +1,50 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_SC_ORD1" 
+				baseTableName="SC_ORD" baseColumnNames="DOCTYPE_ID"  
+				referencedTableName="MD_TXDOC_TYPE"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_SC_ORD2" 
+				baseTableName="SC_ORD" baseColumnNames="SUPPLIER_ID"  
+				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_SC_ORD3" 
+				baseTableName="SC_ORD" baseColumnNames="CUSTOMER_ID"  
+				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_SC_ORD4" 
+				baseTableName="SC_ORD" baseColumnNames="PRICELIST_ID"  
+				referencedTableName="MD_PRICE_LIST"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-5">
+		<addForeignKeyConstraint constraintName="FK_SC_ORD5" 
+				baseTableName="SC_ORD" baseColumnNames="CURRENCY_ID"  
+				referencedTableName="BD_CRNCY"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-6">
+		<addForeignKeyConstraint constraintName="FK_SC_ORD6" 
+				baseTableName="SC_ORD" baseColumnNames="PAYMENTMETHOD_ID"  
+				referencedTableName="MD_PYMNT_MTD"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-7">
+		<addForeignKeyConstraint constraintName="FK_SC_ORD7" 
+				baseTableName="SC_ORD" baseColumnNames="PAYMENTTERM_ID"  
+				referencedTableName="MD_PYMNT_TERM"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-8">
+		<addForeignKeyConstraint constraintName="FK_SC_ORD8" 
+				baseTableName="SC_ORD" baseColumnNames="INVENTORY_ID"  
+				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-9">
+		<addForeignKeyConstraint constraintName="FK_SC_ORD9" 
+				baseTableName="SC_ORD" baseColumnNames="DELIVERYMETHOD_ID"  
+				referencedTableName="MD_DLVR_MTD"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

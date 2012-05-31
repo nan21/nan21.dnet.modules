@@ -6,24 +6,24 @@
 		<addForeignKeyConstraint constraintName="FK_SD_OPORT1" baseTableName="SD_OPORT" baseColumnNames="ACCOUNT_ID"  referencedTableName="MD_BP"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_SD_OPORT2" baseTableName="SD_OPORT" baseColumnNames="EXPECTEDCURRENCY_ID"  referencedTableName="BD_CURRENCY"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_OPORT2" baseTableName="SD_OPORT" baseColumnNames="EXPECTEDCURRENCY_ID"  referencedTableName="BD_CRNCY"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_SD_OPORT3" baseTableName="SD_OPORT" baseColumnNames="SALESSTAGE_ID"  referencedTableName="SD_OPORT_STAGE"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
-		<addForeignKeyConstraint constraintName="FK_SD_OPORT4" baseTableName="SD_OPORT" baseColumnNames="STATUS_ID"  referencedTableName="SD_OPORT_STATUS"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_OPORT4" baseTableName="SD_OPORT" baseColumnNames="STATUS_ID"  referencedTableName="SD_OPORT_STS"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
-		<addForeignKeyConstraint constraintName="FK_SD_OPORT5" baseTableName="SD_OPORT" baseColumnNames="PRIORITY_ID"  referencedTableName="SD_OPORT_PRIORITY"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_OPORT5" baseTableName="SD_OPORT" baseColumnNames="PRIORITY_ID"  referencedTableName="SD_OPORT_PRIO"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-6">
-		<addForeignKeyConstraint constraintName="FK_SD_OPORT6" baseTableName="SD_OPORT" baseColumnNames="LEADSOURCE_ID"  referencedTableName="SD_OPORT_SOURCE"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_OPORT6" baseTableName="SD_OPORT" baseColumnNames="LEADSOURCE_ID"  referencedTableName="SD_OPORT_SRC"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-7">
 		<addForeignKeyConstraint constraintName="FK_SD_OPORT7" baseTableName="SD_OPORT" baseColumnNames="RESULTREASON_ID"  referencedTableName="SD_OPORT_REASON"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-8">
-		<addForeignKeyConstraint constraintName="FK_SD_OPORT8" baseTableName="SD_OPORT" baseColumnNames="ASSIGNEDTO_ID"  referencedTableName="AD_ASSIGNABLE"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_OPORT8" baseTableName="SD_OPORT" baseColumnNames="ASSIGNEDTO_ID"  referencedTableName="AD_ASGNBL"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

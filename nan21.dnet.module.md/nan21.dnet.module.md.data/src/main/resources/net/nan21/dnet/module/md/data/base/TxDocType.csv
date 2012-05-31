@@ -1,0 +1,17 @@
+category;name;description;journal;active
+inventory-transfer;cons-gest;Consum gestiune;;true
+inventory-transfer;transf-gest;Transfer gestiune;;true
+payment-in;chitanta-incas;Chitanta incasare;;true
+payment-in;op-incas;OP incasare;;true
+payment-out;chitanta-plata;Chitanta plata;;true
+payment-out;op-plata;OP plata;;true
+purchase-inventory-in;nir-furn;Nota receptie cumparari;;true
+purchase-inventory-out;exp-retur;Aviz expeditie retur furnizor;;true
+purchase-invoice;bon-fisc-furn;Bon fiscal furnizor;;true
+purchase-invoice;fact-fisc-furn;Factura fiscala furnizor;;true
+purchase-order;cmd-furn;Comanda furnizor;;true
+sales-inventory-in;nir-retur;Nota receptie retur client;;true
+sales-inventory-out;exp-client;Livrare vanzari;;true
+sales-invoice;fact-fisc-client;Factura fiscala client;;true
+sales-invoice;fact-proform-client;Factura proforma client;;true
+sales-order;cmd-client;Comanda client;;true

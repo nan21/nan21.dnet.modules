@@ -3,7 +3,7 @@
  * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
  * Use is subject to license terms. 
  */   	 
-Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.AccOperationDs" ,{
+Ext.define("net.nan21.dnet.module.md.tx.acc.ds.model.AccOperationDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
@@ -34,7 +34,7 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.AccOperationDs" ,{
 	]
 });
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.AccOperationDsFilter" ,{
+Ext.define("net.nan21.dnet.module.md.tx.acc.ds.model.AccOperationDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
@@ -83,7 +83,7 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.ds.model.AccOperationDsFilter" ,{
 	] 
 });
 	
-Ext.define("net.nan21.dnet.module.md.tx.fin.ds.param.AccOperationDsParam", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.ds.param.AccOperationDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 
 	]

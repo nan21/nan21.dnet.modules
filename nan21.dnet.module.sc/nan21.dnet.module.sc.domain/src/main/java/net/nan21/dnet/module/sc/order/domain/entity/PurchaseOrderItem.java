@@ -25,8 +25,8 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
-import net.nan21.dnet.module.bd.fin.domain.entity.Tax;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
+import net.nan21.dnet.module.md.base.tax.domain.entity.Tax;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 import net.nan21.dnet.module.sc.order.domain.eventhandler.PurchaseOrderItemEventHandler;
@@ -45,8 +45,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = PurchaseOrderItem.NQ_FIND_BY_IDS, query = "SELECT e FROM PurchaseOrderItem e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PurchaseOrderItem extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "SC_PO_ITEM";
-    public static final String SEQUENCE_NAME = "SC_PO_ITEM_SEQ";
+    public static final String TABLE_NAME = "SC_ORD_ITEM";
+    public static final String SEQUENCE_NAME = "SC_ORD_ITEM_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

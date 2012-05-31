@@ -21,8 +21,8 @@ Ext.define("net.nan21.dnet.module.hr.job.ds.model.PositionDs" ,{
 		{name:"entityFQN", type:"string"},
 		{name:"jobId", type:"int", useNull:true},
 		{name:"jobCode", type:"string"},
-		{name:"organizationId", type:"int", useNull:true},
-		{name:"organizationCode", type:"string"}
+		{name:"orgId", type:"int", useNull:true},
+		{name:"org", type:"string"}
 	],
 	validations: [  
 		{field: "name", type: 'presence'}
@@ -51,10 +51,10 @@ Ext.define("net.nan21.dnet.module.hr.job.ds.model.PositionDsFilter" ,{
 		{name:"jobId_From",type:"int", useNull:true},
 		{name:"jobId_To",type:"int", useNull:true},
 		{name:"jobCode", type:"string"},
-		{name:"organizationId", type:"int", useNull:true},
-		{name:"organizationId_From",type:"int", useNull:true},
-		{name:"organizationId_To",type:"int", useNull:true},
-		{name:"organizationCode", type:"string"}
+		{name:"orgId", type:"int", useNull:true},
+		{name:"orgId_From",type:"int", useNull:true},
+		{name:"orgId_To",type:"int", useNull:true},
+		{name:"org", type:"string"}
 	] 
 });
 	

@@ -37,8 +37,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = IssueText.NQ_FIND_BY_IDS, query = "SELECT e FROM IssueText e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class IssueText extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "PJ_ISSUE_TEXT";
-    public static final String SEQUENCE_NAME = "PJ_ISSUE_TEXT_SEQ";
+    public static final String TABLE_NAME = "PJ_ISSUE_TXT";
+    public static final String SEQUENCE_NAME = "PJ_ISSUE_TXT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

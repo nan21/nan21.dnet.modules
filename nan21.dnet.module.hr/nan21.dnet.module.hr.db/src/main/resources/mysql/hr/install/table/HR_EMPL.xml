@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="HR_EMPL">
+			<column name="ASSIGNTOPOSITION" type="int(1)">
+				<constraints nullable="false" /></column>	 
+			<column name="BASESALARY" type="decimal(12,2)">
+				<constraints  /></column>	 
+			<column name="BIRTHDATE" type="date">
+				<constraints  /></column>	 
+			<column name="CLIENTID" type="bigint(3)">
+				<constraints nullable="false" /></column>	 
+			<column name="CODE" type="varchar(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDAT" type="datetime">
+				<constraints nullable="false" /></column>	 
+			<column name="CREATEDBY" type="varchar(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="CURRENTHIREDATE" type="date">
+				<constraints  /></column>	 
+			<column name="ENTITYTYPE" type="varchar(32)">
+				<constraints  /></column>	 
+			<column name="FIRSTHIREDATE" type="date">
+				<constraints  /></column>	 
+			<column name="FIRSTNAME" type="varchar(255)">
+				<constraints  /></column>	 
+			<column name="GENDER" type="varchar(16)">
+				<constraints  /></column>	 
+			<column name="HASDISABILITY" type="int(1)">
+				<constraints nullable="false" /></column>	 
+			<column name="ID" type="bigint(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="LASTNAME" type="varchar(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="MARITALSTATUS" type="varchar(16)">
+				<constraints  /></column>	 
+			<column name="MIDDLENAME" type="varchar(255)">
+				<constraints  /></column>	 
+			<column name="MODIFIEDAT" type="datetime">
+				<constraints nullable="false" /></column>	 
+			<column name="MODIFIEDBY" type="varchar(32)">
+				<constraints nullable="false" /></column>	 
+			<column name="NAMEPREFIX" type="varchar(255)">
+				<constraints  /></column>	 
+			<column name="NAMESUFFIX" type="varchar(255)">
+				<constraints  /></column>	 
+			<column name="NICKNAME" type="varchar(255)">
+				<constraints  /></column>	 
+			<column name="OFFICEEMAIL" type="varchar(128)">
+				<constraints  /></column>	 
+			<column name="PASSPORTNO" type="varchar(32)">
+				<constraints  /></column>	 
+			<column name="PREVIOUSLASTNAME" type="varchar(255)">
+				<constraints  /></column>	 
+			<column name="SINNO" type="varchar(32)">
+				<constraints  /></column>	 
+			<column name="SSNNO" type="varchar(32)">
+				<constraints  /></column>	 
+			<column name="UUID" type="varchar(36)">
+				<constraints  /></column>	 
+			<column name="VERSION" type="bigint(19)">
+				<constraints nullable="false" /></column>	 
+			<column name="CITIZENSHIP_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
+			<column name="EMPLOYER_ID" type="bigint(19)">	 
+				<constraints nullable="false" /></column>	 
+			<column name="GRADE_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
+			<column name="JOB_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
+			<column name="ORG_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
+			<column name="PAYROLL_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
+			<column name="POSITION_ID" type="bigint(19)">	 
+				<constraints  /></column>	 
+			<column name="TYPE_ID" type="bigint(19)">	 
+				<constraints nullable="false" /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="HR_EMPL" constraintName="PK_EMPL" columnNames="ID" />
+    </changeSet>       
+	<changeSet author="amathe" id="UK-1">
+		<addUniqueConstraint tableName="HR_EMPL" constraintName="UK_EMPL1" columnNames="CLIENTID, CODE" />
+	</changeSet>
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="HR_EMPL_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

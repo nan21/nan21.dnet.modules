@@ -47,10 +47,174 @@
 									value="classpath:net/nan21/dnet/module/md/data/org/StockLocator.csv" />
 							</bean>
 						</list>
+					</property> 
+				</bean>
+				
+				<!-- Accounting base data -->
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="205" />
+					<property name="name" value="md-acc" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="AccSchema" />
+								<property name="destPath" value="demo-data/md" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/acc/AccSchema.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="Account" />
+								<property name="destPath" value="demo-data/md" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/acc/Account.csv" />
+							</bean> 
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="AccItem" />
+								<property name="destPath" value="demo-data/md" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/acc/AccItem.csv" />
+							</bean> 	
+						</list>
 					</property>
 				</bean>
 
-
+				<!-- base data -->
+				<bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="206" />
+					<property name="name" value="md-base" />
+					<property name="items">
+						<list>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="5" />
+								<property name="dsName" value="TaxCategory" />
+								<property name="destPath" value="demo-data/md" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/TaxCategory.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="6" />
+								<property name="dsName" value="Tax" />
+								<property name="destPath" value="demo-data/md" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/Tax.csv" />
+							</bean>
+							 
+							
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="TxDocType" />
+								<property name="destPath" value="demo-data/md" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/TxDocType.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="DeliveryMethod" />
+								<property name="destPath" value="demo-data/md" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/DeliveryMethod.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="50" />
+								<property name="dsName" value="PaymentMethod" />
+								<property name="destPath" value="demo-data/md" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/PaymentMethod.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="60" />
+								<property name="dsName" value="PaymentTerm" />
+								<property name="destPath" value="demo-data/md" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/PaymentTerm.csv" />
+							</bean>
+							
+							 <!--  Elements -->
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="101" />
+								<property name="dsName" value="ElementCategory" />
+								<property name="destPath" value="demo-data/md/base" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/elem/ElementCategory.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="101" />
+								<property name="dsName" value="ElementType" />
+								<property name="destPath" value="demo-data/md/base" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/elem/ElementType.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="101" />
+								<property name="dsName" value="Element" />
+								<property name="destPath" value="demo-data/md/base" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/elem/Element.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="101" />
+								<property name="dsName" value="ElementInput" />
+								<property name="destPath" value="demo-data/md/base" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/elem/ElementInput.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="101" />
+								<property name="dsName" value="ElementFormula" />
+								<property name="destPath" value="demo-data/md/base" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/elem/ElementFormula.csv" />
+							</bean>
+							
+							 
+							
+							<!--  Attributes -->
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="120" />
+								<property name="dsName" value="AttributeCategory" />
+								<property name="destPath" value="demo-data/md/base" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/attr/AttributeCategory.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="130" />
+								<property name="dsName" value="AttributeType" />
+								<property name="destPath" value="demo-data/md/base" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/attr/AttributeType.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="140" />
+								<property name="dsName" value="Attribute" />
+								<property name="destPath" value="demo-data/md/base" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/attr/Attribute.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="142" />
+								<property name="dsName" value="AttributeGroup" />
+								<property name="destPath" value="demo-data/md/base" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/attr/AttributeGroup.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="144" />
+								<property name="dsName" value="AttributeGroupAttribute" />
+								<property name="destPath" value="demo-data/md/base" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/md/data/base/attr/AttributeGroupAttribute.csv" />
+							</bean>
+							
+							
+						</list>
+					</property>
+				</bean>
+				
+				 
+				
 				<!-- =================================================== -->
 				<!-- =====================   BP   ====================== -->
 				<!-- =================================================== -->
@@ -105,41 +269,7 @@
 					<property name="name" value="md-mm-prod" />
 					<property name="items">
 						<list>
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="20" />
-								<property name="dsName" value="ProductAttributeCategory" />
-								<property name="destPath" value="demo-data/md/mm" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/mm/prod/ProductAttributeCategory.csv" />
-							</bean>
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="30" />
-								<property name="dsName" value="ProductAttributeType" />
-								<property name="destPath" value="demo-data/md/mm" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/mm/prod/ProductAttributeType.csv" />
-							</bean>
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="40" />
-								<property name="dsName" value="ProductAttribute" />
-								<property name="destPath" value="demo-data/md/mm" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/mm/prod/ProductAttribute.csv" />
-							</bean>
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="42" />
-								<property name="dsName" value="ProductAttributeGroup" />
-								<property name="destPath" value="demo-data/md/mm" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/mm/prod/ProductAttributeGroup.csv" />
-							</bean>
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="44" />
-								<property name="dsName" value="ProductAttributeGroupAttribute" />
-								<property name="destPath" value="demo-data/md/mm" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/mm/prod/ProductAttributeGroupAttribute.csv" />
-							</bean>
+							
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="50" />
 								<property name="dsName" value="ProductManufacturer" />

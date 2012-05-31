@@ -5,12 +5,12 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE1" 
 				baseTableName="PJ_ISSUE" baseColumnNames="PROJECT_ID"  
-				referencedTableName="PJ_PROJECT"  referencedColumnNames="ID" />
+				referencedTableName="PJ_PRJ"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE2" 
 				baseTableName="PJ_ISSUE" baseColumnNames="STATUS_ID"  
-				referencedTableName="PJ_ISSUE_STATUS"  referencedColumnNames="ID" />
+				referencedTableName="PJ_ISSUE_STS"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE3" 
@@ -20,37 +20,37 @@
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE4" 
 				baseTableName="PJ_ISSUE" baseColumnNames="PRIORITY_ID"  
-				referencedTableName="PJ_ISSUE_PRIORITY"  referencedColumnNames="ID" />
+				referencedTableName="PJ_ISSUE_PRIO"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
 		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE5" 
 				baseTableName="PJ_ISSUE" baseColumnNames="RESOLUTION_ID"  
-				referencedTableName="PJ_ISSUE_RESOLUTION"  referencedColumnNames="ID" />
+				referencedTableName="PJ_ISSUE_RSLT"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-6">
 		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE6" 
 				baseTableName="PJ_ISSUE" baseColumnNames="SEVERITY_ID"  
-				referencedTableName="PJ_ISSUE_SEVERITY"  referencedColumnNames="ID" />
+				referencedTableName="PJ_ISSUE_SEV"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-7">
 		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE7" 
 				baseTableName="PJ_ISSUE" baseColumnNames="REPORTEDVERSION_ID"  
-				referencedTableName="PJ_PRJ_VERSION"  referencedColumnNames="ID" />
+				referencedTableName="PJ_PRJ_VER"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-8">
 		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE8" 
 				baseTableName="PJ_ISSUE" baseColumnNames="TARGETVERSION_ID"  
-				referencedTableName="PJ_PRJ_VERSION"  referencedColumnNames="ID" />
+				referencedTableName="PJ_PRJ_VER"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-9">
 		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE9" 
 				baseTableName="PJ_ISSUE" baseColumnNames="FIXEDINVERSION_ID"  
-				referencedTableName="PJ_PRJ_VERSION"  referencedColumnNames="ID" />
+				referencedTableName="PJ_PRJ_VER"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-10">
 		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE10" 
 				baseTableName="PJ_ISSUE" baseColumnNames="ASSIGNEE_ID"  
-				referencedTableName="PJ_PRJ_MEMBER"  referencedColumnNames="ID" />
+				referencedTableName="PJ_PRJ_MBR"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-11">
 		<addForeignKeyConstraint constraintName="FK_PJ_ISSUE11" 

@@ -39,8 +39,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = CurrencyXRateProvider.NQ_FIND_BY_NAME, query = "SELECT e FROM CurrencyXRateProvider e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CurrencyXRateProvider extends AbstractTypeWithCode {
 
-    public static final String TABLE_NAME = "BD_CURRENCY_XRATE_PROVIDER";
-    public static final String SEQUENCE_NAME = "BD_CURRENCY_XRATE_PROVIDER_SEQ";
+    public static final String TABLE_NAME = "BD_CRNCY_XRATE_PRVD";
+    public static final String SEQUENCE_NAME = "BD_CRNCY_XRATE_PRVD_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

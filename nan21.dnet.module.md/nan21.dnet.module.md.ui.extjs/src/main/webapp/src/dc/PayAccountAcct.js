@@ -24,9 +24,9 @@ Ext.define("net.nan21.dnet.module.md.org.dc.PayAccountAcct$Filter", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"payAccount", dataIndex:"payAccount",anchor:"-20",maxLength:255  })
-		.addLov({ name:"accSchema", xtype:"net.nan21.dnet.module.bd.acc.lovs.AccSchemas", dataIndex:"accSchema",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]  })
-		.addLov({ name:"depositAccount", xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts", dataIndex:"depositAccount",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "depositAccountId"} ]  })
-		.addLov({ name:"withdrawalAccount", xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts", dataIndex:"withdrawalAccount",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "withdrawalAccountId"} ]  })
+		.addLov({ name:"accSchema", xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas", dataIndex:"accSchema",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]  })
+		.addLov({ name:"depositAccount", xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts", dataIndex:"depositAccount",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "depositAccountId"} ]  })
+		.addLov({ name:"withdrawalAccount", xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts", dataIndex:"withdrawalAccount",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "withdrawalAccountId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
 		.addPanel({ name:"col2", layout:"form",width:210}) 
@@ -51,9 +51,9 @@ Ext.define("net.nan21.dnet.module.md.org.dc.PayAccountAcct$EditList", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"payAccount", dataIndex:"payAccount",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
-		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
-		.addLov({name:"depositAccount", xtype:"gridcolumn", dataIndex:"depositAccount",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "depositAccountId"} ]} })
-		.addLov({name:"withdrawalAccount", xtype:"gridcolumn", dataIndex:"withdrawalAccount",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "withdrawalAccountId"} ]} })
+		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
+		.addLov({name:"depositAccount", xtype:"gridcolumn", dataIndex:"depositAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "depositAccountId"} ]} })
+		.addLov({name:"withdrawalAccount", xtype:"gridcolumn", dataIndex:"withdrawalAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "withdrawalAccountId"} ]} })
 		.addNumberColumn({ name:"payAccountId", dataIndex:"payAccountId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"accSchemaId", dataIndex:"accSchemaId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"depositAccountId", dataIndex:"depositAccountId", hidden:true, align:"right",format:"0",width:70})
@@ -71,9 +71,9 @@ Ext.define("net.nan21.dnet.module.md.org.dc.PayAccountAcct$CtxEditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
-		.addLov({name:"depositAccount", xtype:"gridcolumn", dataIndex:"depositAccount",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "depositAccountId"} ]} })
-		.addLov({name:"withdrawalAccount", xtype:"gridcolumn", dataIndex:"withdrawalAccount",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "withdrawalAccountId"} ]} })
+		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
+		.addLov({name:"depositAccount", xtype:"gridcolumn", dataIndex:"depositAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "depositAccountId"} ]} })
+		.addLov({name:"withdrawalAccount", xtype:"gridcolumn", dataIndex:"withdrawalAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "withdrawalAccountId"} ]} })
 		.addNumberColumn({ name:"payAccountId", dataIndex:"payAccountId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"accSchemaId", dataIndex:"accSchemaId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"depositAccountId", dataIndex:"depositAccountId", hidden:true, align:"right",format:"0",width:70})

@@ -7,21 +7,21 @@ import java.util.List;
 import javax.persistence.NoResultException;
 
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
-import net.nan21.dnet.module.bd.acc.business.service.IAccSchemaService;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
-import net.nan21.dnet.module.bd.acc.domain.entity.Account;
-import net.nan21.dnet.module.bd.fin.business.service.ITaxAcctService;
-import net.nan21.dnet.module.bd.fin.domain.entity.TaxAcct;
-import net.nan21.dnet.module.bd.tx.business.service.IFiscalPeriodService;
-import net.nan21.dnet.module.bd.tx.domain.entity.FiscalPeriod;
+import net.nan21.dnet.module.md.acc.business.service.IAccSchemaService;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.Account;
+import net.nan21.dnet.module.md.base.period.business.service.IFiscalPeriodService;
+import net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod;
+import net.nan21.dnet.module.md.base.tax.business.service.ITaxAcctService;
+import net.nan21.dnet.module.md.base.tax.domain.entity.TaxAcct;
 import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.mm.prod.business.service.IProductService;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.md.org.business.service.IPayAccountAcctService;
 import net.nan21.dnet.module.md.org.domain.entity.PayAccountAcct;
-import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc;
-import net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine;
+import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDoc;
+import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDocLine;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoice;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceTax;
@@ -145,7 +145,7 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 		Float totalCrAmount = 0F;
 		Float totalDbAmount = 0F;
 
-		int i=1;
+		int i = 1;
 		// header line - vendor liability
 
 		String crAccount = getBpService().getPostingVendorAcct(
@@ -221,9 +221,9 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 			AccSchema schema) throws Exception {
 
 		AccDoc accDoc = this.createHeader(invoice, schema);
-		
-		int i=1;
-		
+
+		int i = 1;
+
 		// header line - vendor
 
 		if (invoice.getFromAccount().getJournal() == null) {

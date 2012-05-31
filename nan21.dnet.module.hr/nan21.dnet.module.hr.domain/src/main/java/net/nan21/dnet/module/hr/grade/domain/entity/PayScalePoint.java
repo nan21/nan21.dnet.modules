@@ -41,8 +41,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "PayScalePoint.findByScale_code_PRIMITIVE", query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and  e.payScale.id = :pPayScaleId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayScalePoint extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "HR_PAY_SCALE_POINT";
-    public static final String SEQUENCE_NAME = "HR_PAY_SCALE_POINT_SEQ";
+    public static final String TABLE_NAME = "HR_PAYSCL_POINT";
+    public static final String SEQUENCE_NAME = "HR_PAYSCL_POINT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

@@ -11,7 +11,7 @@ public class ImportFromJobItemPD extends AbstractDsDelegate {
 		mapDs.setId(ds.getMapId());
 		
 		ImportFromMapPD mapDelegate = new ImportFromMapPD();
-		mapDelegate.setAppContext(appContext);
+		mapDelegate.setAppContext(this.getAppContext());
 		mapDelegate.equals(mapDs);
 	}
 

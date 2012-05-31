@@ -20,6 +20,8 @@
         <class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
         <class>net.nan21.dnet.module.bd.org.domain.entity.Calendar</class>
         
+        <class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
+        
         <class>net.nan21.dnet.core.domain.model.AbstractSimpleEntity</class>
 		<class>net.nan21.dnet.core.domain.model.AbstractAuditable</class>
 		<class>net.nan21.dnet.core.domain.model.AbstractType</class>

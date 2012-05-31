@@ -47,20 +47,17 @@ public class OrganizationHierarchyItemService extends
                 .setParameter("pHierarchyId", hierarchyId).getResultList();
     }
 
-    public List<OrganizationHierarchyItem> findByOrganization(
-            Organization organization) {
-        return this.findByOrganizationId(organization.getId());
+    public List<OrganizationHierarchyItem> findByOrg(Organization org) {
+        return this.findByOrgId(org.getId());
     }
 
-    public List<OrganizationHierarchyItem> findByOrganizationId(
-            Long organizationId) {
+    public List<OrganizationHierarchyItem> findByOrgId(Long orgId) {
         return (List<OrganizationHierarchyItem>) this.em
                 .createQuery(
-                        "select e from OrganizationHierarchyItem e where e.clientId = :pClientId and e.organization.id = :pOrganizationId",
+                        "select e from OrganizationHierarchyItem e where e.clientId = :pClientId and e.org.id = :pOrgId",
                         OrganizationHierarchyItem.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pOrganizationId", organizationId)
-                .getResultList();
+                .setParameter("pOrgId", orgId).getResultList();
     }
 
     public List<OrganizationHierarchyItem> findByParent(Organization parent) {

@@ -19,8 +19,9 @@ import net.nan21.dnet.module.ad.system.ds.filter.SysDataSourceDsFilter;
  
 public class SysDataSourcePD extends AbstractDsDelegate {
  
+	@SuppressWarnings("unchecked")
 	public void synchronizeCatalog(SysDataSourceDsFilter ds) throws Exception {
-		List<IDsDefinitions> list = (List<IDsDefinitions>)appContext.getBean("osgiDsDefinitions");
+		List<IDsDefinitions> list = (List<IDsDefinitions>)this.getAppContext().getBean("osgiDsDefinitions");
 		ISysDataSourceService srv = (ISysDataSourceService)this.findEntityService(SysDataSource.class);
 		
 		List<SysDataSource> result = new ArrayList<SysDataSource>();

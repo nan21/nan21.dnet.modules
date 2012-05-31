@@ -1,14 +1,14 @@
-Dnet.doImport(["", "nan21.dnet.module.md.ui.extjs/ds/AccDocDs", "nan21.dnet.module.md.ui.extjs/dc/AccDoc", "nan21.dnet.module.md.ui.extjs/ds/AccDocLineDs", "nan21.dnet.module.md.ui.extjs/dc/AccDocLine","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.bd.ui.extjs/ds/AccSchemaLovDs","nan21.dnet.module.bd.ui.extjs/lov/AccSchemas","nan21.dnet.module.bd.ui.extjs/ds/TxDocTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/TxDocTypes","nan21.dnet.module.bd.ui.extjs/ds/FiscalPeriodLovDs","nan21.dnet.module.bd.ui.extjs/lov/FiscalPeriods","nan21.dnet.module.bd.ui.extjs/ds/AccJournalLovDs","nan21.dnet.module.bd.ui.extjs/lov/AccJournals","nan21.dnet.module.md.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.md.ui.extjs/lov/BusinessPartnersName"]);
+Dnet.doImport(["", "nan21.dnet.module.md.ui.extjs/ds/AccDocDs", "nan21.dnet.module.md.ui.extjs/dc/AccDoc", "nan21.dnet.module.md.ui.extjs/ds/AccDocLineDs", "nan21.dnet.module.md.ui.extjs/dc/AccDocLine","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.md.ui.extjs/ds/AccSchemaLovDs","nan21.dnet.module.md.ui.extjs/lov/AccSchemas","nan21.dnet.module.md.ui.extjs/ds/TxDocTypeLovDs","nan21.dnet.module.md.ui.extjs/lov/TxDocTypes","nan21.dnet.module.md.ui.extjs/ds/FiscalPeriodLovDs","nan21.dnet.module.md.ui.extjs/lov/FiscalPeriods","nan21.dnet.module.md.ui.extjs/ds/AccJournalLovDs","nan21.dnet.module.md.ui.extjs/lov/AccJournals","nan21.dnet.module.md.ui.extjs/ds/BusinessPartnerLovDs","nan21.dnet.module.md.ui.extjs/lov/BusinessPartnersName"]);
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.frame.AccDoc_UI", {  
+Ext.define("net.nan21.dnet.module.md.tx.acc.frame.AccDoc_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
-	alias:"widget.net.nan21.dnet.module.md.tx.fin.frame.AccDoc_UI",
+	alias:"widget.net.nan21.dnet.module.md.tx.acc.frame.AccDoc_UI",
 	
-	 _name_ : "net.nan21.dnet.module.md.tx.fin.frame.AccDoc_UI"
+	 _name_ : "net.nan21.dnet.module.md.tx.acc.frame.AccDoc_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("doc", new net.nan21.dnet.module.md.tx.fin.dc.AccDoc({}))
-		.addDc("line", new net.nan21.dnet.module.md.tx.fin.dc.AccDocLine({}))		
+		.addDc("doc", new net.nan21.dnet.module.md.tx.acc.dc.AccDoc({}))
+		.addDc("line", new net.nan21.dnet.module.md.tx.acc.dc.AccDocLine({}))		
 		.linkDc("line", "doc",{fields:[ {childField:"accDocId", parentField:"id"} ]} );		
 	}	 
 
@@ -20,9 +20,9 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.frame.AccDoc_UI", {
 		.addButton({name:"btnUnPost",text:"Un-Post", tooltip:"Un-Post document from G/L.",iconCls:"icon-action-rollback",disabled:true
 			,handler: this.onBtnUnPost,scope:this,stateManager:{name:"selected_one_clean", dc:"doc" , and: function(dc) {return (dc.record && dc.record.get("posted") );}}	})	
 							 	
-		.addDcFilterFormView("doc",{ name:"docFilter", xtype:"net.nan21.dnet.module.md.tx.fin.dc.AccDoc$Filter",height:130})	 
-		.addDcGridView("doc",{ name:"docList", xtype:"net.nan21.dnet.module.md.tx.fin.dc.AccDoc$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnPost") ,this._elems_.get("btnUnPost") ]}]})	 
-		.addDcGridView("line",{ name:"lineList", xtype:"net.nan21.dnet.module.md.tx.fin.dc.AccDocLine$List",width:380,title:"Lines", collapsible:true})	 
+		.addDcFilterFormView("doc",{ name:"docFilter", xtype:"net.nan21.dnet.module.md.tx.acc.dc.AccDoc$Filter",height:130})	 
+		.addDcGridView("doc",{ name:"docList", xtype:"net.nan21.dnet.module.md.tx.acc.dc.AccDoc$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnPost") ,this._elems_.get("btnUnPost") ]}]})	 
+		.addDcGridView("line",{ name:"lineList", xtype:"net.nan21.dnet.module.md.tx.acc.dc.AccDocLine$List",width:380,title:"Lines", collapsible:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	

@@ -3,7 +3,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactDs$Trl", {
 	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	employeeId__lbl :    "Angajat(ID)",
 	firstName__lbl :  "Prenume",
 	lastName__lbl :  "Nume",
-	birthdate__lbl :  "Zi nastere",
+	birthDate__lbl :  "Zi de naştere",
 	gender__lbl :  "Sex",
 	relationshipId__lbl :    "Relaţie(ID)",
 	relationship__lbl :    "Relaţie",

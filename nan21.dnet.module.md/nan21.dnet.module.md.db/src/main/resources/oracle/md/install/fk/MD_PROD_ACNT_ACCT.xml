@@ -1,0 +1,17 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_MD_PROD_ACNT_ACCT1" baseTableName="MD_PROD_ACNT_ACCT" baseColumnNames="PRODACCOUNT_ID"  referencedTableName="MD_PROD_ACNT"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_MD_PROD_ACNT_ACCT2" baseTableName="MD_PROD_ACNT_ACCT" baseColumnNames="ACCSCHEMA_ID"  referencedTableName="MD_ACC_SCHEMA"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_MD_PROD_ACNT_ACCT3" baseTableName="MD_PROD_ACNT_ACCT" baseColumnNames="EXPENSEACCOUNT_ID"  referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-4">
+		<addForeignKeyConstraint constraintName="FK_MD_PROD_ACNT_ACCT4" baseTableName="MD_PROD_ACNT_ACCT" baseColumnNames="REVENUEACCOUNT_ID"  referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

@@ -37,8 +37,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = PositionHierarchy.NQ_FIND_BY_NAME, query = "SELECT e FROM PositionHierarchy e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PositionHierarchy extends AbstractType {
 
-    public static final String TABLE_NAME = "HR_POSTN_HIERARCHY";
-    public static final String SEQUENCE_NAME = "HR_POSTN_HIERARCHY_SEQ";
+    public static final String TABLE_NAME = "HR_POS_HRCHY";
+    public static final String SEQUENCE_NAME = "HR_POS_HRCHY_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

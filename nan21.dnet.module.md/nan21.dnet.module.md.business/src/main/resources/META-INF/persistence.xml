@@ -6,6 +6,43 @@
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
+		<!-- ACC -->
+		<class>net.nan21.dnet.module.md.acc.domain.entity.AccSchema</class>
+		<class>net.nan21.dnet.module.md.acc.domain.entity.Account</class>
+		<class>net.nan21.dnet.module.md.acc.domain.entity.AccItem</class>
+		<class>net.nan21.dnet.module.md.acc.domain.entity.AccItemAcct</class>
+		<class>net.nan21.dnet.module.md.acc.domain.entity.AccJournal</class>
+
+		<!-- BASE -->
+		
+		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeCategory</class>
+		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeType</class>
+		<class>net.nan21.dnet.module.md.base.attr.domain.entity.Attribute</class>
+		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup</class>
+		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroupAttribute</class>
+		
+		<class>net.nan21.dnet.module.md.base.elem.domain.entity.Engine</class>
+		<class>net.nan21.dnet.module.md.base.elem.domain.entity.ElementCategory</class>
+		<class>net.nan21.dnet.module.md.base.elem.domain.entity.ElementType</class>
+		<class>net.nan21.dnet.module.md.base.elem.domain.entity.Element</class>
+		<class>net.nan21.dnet.module.md.base.elem.domain.entity.ElementInput</class>
+		<class>net.nan21.dnet.module.md.base.elem.domain.entity.ElementFormula</class>
+		<class>net.nan21.dnet.module.md.base.elem.domain.entity.ElementValue</class>		 
+		
+		<class>net.nan21.dnet.module.md.base.tax.domain.entity.TaxCategory</class>
+		<class>net.nan21.dnet.module.md.base.tax.domain.entity.Tax</class>
+		<class>net.nan21.dnet.module.md.base.tax.domain.entity.TaxAcct</class>
+		<class>net.nan21.dnet.module.md.base.tx.domain.entity.TxDocType</class>
+		<class>net.nan21.dnet.module.md.base.tx.domain.entity.TxDocSequence</class>
+		<class>net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod</class>
+		<class>net.nan21.dnet.module.md.base.tx.domain.entity.PaymentTerm</class>
+		<class>net.nan21.dnet.module.md.base.tx.domain.entity.DeliveryMethod</class>
+		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear</class>
+		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod</class>
+		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriodStatus</class>
+		
+		
+		
 		<!-- BP  -->
 		<class>net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup</class>
 		<class>net.nan21.dnet.module.md.bp.domain.entity.VendorGroup</class>
@@ -37,13 +74,8 @@
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAccount</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAccountAcct</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProdClassification</class>
-		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeCategory</class>
-		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeType</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttribute</class>
-		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeGroup</class>
-		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeGroupAttribute</class>
-		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue</class>
-		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue</class>
+
 		<class>net.nan21.dnet.module.md.mm.price.domain.entity.PriceList</class>
 		<class>net.nan21.dnet.module.md.mm.price.domain.entity.PriceListVersion</class>
 		<class>net.nan21.dnet.module.md.mm.price.domain.entity.ProductPrice</class>
@@ -56,7 +88,19 @@
 		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccountAcct</class>
 		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccountMethod</class>
 
+		<!-- RES -->
+		<class>net.nan21.dnet.module.md.res.domain.entity.AssetBase</class>
+		<class>net.nan21.dnet.module.md.res.domain.entity.EmployeeBase</class>
+
 		<!-- TX -->
+		<class>net.nan21.dnet.module.md.tx.acc.domain.entity.AccDoc</class>
+		<class>net.nan21.dnet.module.md.tx.acc.domain.entity.AccDocLine</class>
+		<class>net.nan21.dnet.module.md.tx.acc.domain.entity.AccOperation</class>
+		<class>net.nan21.dnet.module.md.tx.acc.domain.entity.AccBalance</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.Payment</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentAmount</class>
+		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.TxAmount</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionSourceType</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransaction</class>
@@ -64,15 +108,6 @@
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvOperation</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvBalance</class>
 		<class>net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransfer</class>
-		<class>net.nan21.dnet.module.md.asset.domain.entity.AssetBase</class>
-		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccDoc</class>
-		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccDocLine</class>
-		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccOperation</class>
-		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.AccBalance</class>
-		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.Payment</class>
-		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem</class>
-		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentAmount</class>
-		<class>net.nan21.dnet.module.md.tx.fin.domain.entity.TxAmount</class>
 
 		<!-- Dependencies -->
 
@@ -81,28 +116,14 @@
 		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
 
 		<!-- BD -->
-		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccSchema</class>
-		<class>net.nan21.dnet.module.bd.acc.domain.entity.Account</class>
-		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccItem</class>
-		<class>net.nan21.dnet.module.bd.acc.domain.entity.AccJournal</class>
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
-		<class>net.nan21.dnet.module.bd.fin.domain.entity.TaxCategory</class>
-		<class>net.nan21.dnet.module.bd.fin.domain.entity.Tax</class>
-		<class>net.nan21.dnet.module.bd.fin.domain.entity.TaxAcct</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Calendar</class>
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem</class>
 		<class>net.nan21.dnet.module.bd.standards.domain.entity.ClassificationItem</class>
-		<class>net.nan21.dnet.module.bd.tx.domain.entity.TxDocType</class>
-		<class>net.nan21.dnet.module.bd.tx.domain.entity.TxDocSequence</class>
-		<class>net.nan21.dnet.module.bd.tx.domain.entity.PaymentMethod</class>
-		<class>net.nan21.dnet.module.bd.tx.domain.entity.PaymentTerm</class>
-		<class>net.nan21.dnet.module.bd.tx.domain.entity.DeliveryMethod</class>
-		<class>net.nan21.dnet.module.bd.tx.domain.entity.FiscalYear</class>
-		<class>net.nan21.dnet.module.bd.tx.domain.entity.FiscalPeriod</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>

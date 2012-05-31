@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = InvOperation.NQ_FIND_BY_IDS, query = "SELECT e FROM InvOperation e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class InvOperation extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "TX_INV_OPERATION";
-    public static final String SEQUENCE_NAME = "TX_INV_OPERATION_SEQ";
+    public static final String TABLE_NAME = "TX_INVT_OPR";
+    public static final String SEQUENCE_NAME = "TX_INVT_OPR_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

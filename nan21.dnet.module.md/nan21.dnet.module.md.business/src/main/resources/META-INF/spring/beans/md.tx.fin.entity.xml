@@ -16,20 +16,11 @@
  	<bean id="PaymentAmountService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceext.PaymentAmountService"  />  
  
- 	<bean id="AccDocService" scope="prototype"
-	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceimpl.AccDocService"  />  
- 
- 	<bean id="AccDocLineService" scope="prototype"
-	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceimpl.AccDocLineService"  />  
- 
- 	<bean id="AccOperationService" scope="prototype"
-	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceimpl.AccOperationService"  />  
- 
- 	<bean id="AccBalanceService" scope="prototype"
-	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceimpl.AccBalanceService"  />  
- 
  	<bean id="TxAmountService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceimpl.TxAmountService"  />  
+ 
+ 	<bean id="TxBalanceService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.tx.fin.business.serviceimpl.TxBalanceService"  />  
    
 </beans>
    

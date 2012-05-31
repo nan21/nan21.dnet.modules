@@ -1,5 +1,13 @@
-"code";"name";"companyName";"type";"countryCode";"taxPayerNo";"active";"identityCardNo";"legalForm";"registrationNo";"registrationDate";"uuid"
-"C-1";"Customer One";"Customer One";"company";"ROMANIA";"RO12345";"true";;"SA";;;"3EAF5430-22F0-4904-A56B-DC7E6BE7E398"
-"C-2";"Customer Two";"Customer Two";"company";"ROMANIA";"RO54321";"true";;"SRL";;;"9AFB3326-61A2-48EE-8FAA-88615DFCB188"
-"C-3";"Supplier One";"Supplier One";"company";"ROMANIA";"RO111111";"true";;"SA";;;"9CEE836F-58B7-4D0B-8C18-9D3F62C2B680"
-"C-4";"Supplier Two";"Supplier Two";"company";"ROMANIA";"RO99999";"true";;"SRL";;;"8D837BAC-621D-4B70-B2DB-099E0958C84A"
+code;name;companyName;type;countryCode;taxPayerNo;active;identityCardNo;legalForm;registrationNo;registrationDate
+cci-bv;Camera de Comert si Industrie Brasov;Camera de Comert si Industrie Brasov;company;ROMANIA;;true;;;;
+cust-1;Customer One;Customer One;company;ROMANIA;RO12345;true;;;;
+cust-2;Customer Two;Customer Two;company;ROMANIA;RO54321;true;;;;
+itm-bv;ITM Brasov;ITM Brasov;company;ROMANIA;;true;;;;
+metro;METRO Cash & Carry Romania;METRO Cash & Carry Romania;company;ROMANIA;RO132456;true;;SRL;;
+omv;OMV;OMV;company;ROMANIA;RO214356;true;;SRL;;
+petrom;OMV Petrom;OMV Petrom;company;ROMANIA;R1590082;true;;SA;J40/8302/1997;
+rompetrol;Rompetrol;Rompetrol;company;ROMANIA;RO3347498;true;;SA;;
+selgros;Selgros Cash & Carry;Selgros Cash & Carry;company;ROMANIA;RO314265;true;;SRL;;
+supp-1;Supplier One;Supplier One;company;ROMANIA;RO111111;true;;;;
+supp2;Supplier Two;Supplier Two;company;ROMANIA;RO99999;true;;;;
+trezorerie;Trezorerie;Trezorerie;company;ROMANIA;;true;;;;

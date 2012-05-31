@@ -1,9 +1,0 @@
-"name";"category";"active";"description"
-"Inventory consumption";"inventory-transfer";"true";
-"Inventory transfer";"inventory-transfer";"true";
-"Purchase Invoice";"purchase-invoice";"true";
-"Purchase Order";"purchase-order";"true";
-"Purchase reception";"purchase-inventory-in";"true";
-"Sales Invoice";"sales-invoice";"true";
-"Sales Order";"sales-order";"true";
-"Sales delivery";"sales-inventory-out";"true";

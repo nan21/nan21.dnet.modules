@@ -18,8 +18,8 @@ public class BpAccountDs extends AbstractAuditableDs<BpAccount> {
     public static final String fBUSINESSPARTNER = "businessPartner";
     public static final String fCUSTOMER = "customer";
     public static final String fVENDOR = "vendor";
-    public static final String fORGANIZATIONID = "organizationId";
-    public static final String fORGANIZATION = "organization";
+    public static final String fORGID = "orgId";
+    public static final String fORG = "org";
     public static final String fCUSTOMERGROUPID = "customerGroupId";
     public static final String fCUSTOMERGROUP = "customerGroup";
     public static final String fCUSTOMERPAYMENTMETHODID = "customerPaymentMethodId";
@@ -38,10 +38,10 @@ public class BpAccountDs extends AbstractAuditableDs<BpAccount> {
     public static final String fCUSTANALITICSEGMENT = "custAnaliticSegment";
     public static final String fVENDANALITICSEGMENT = "vendAnaliticSegment";
 
-    @DsField(join = "left", path = "bp.id")
+    @DsField(join = "left", path = "bpartner.id")
     private Long businessPartnerId;
 
-    @DsField(join = "left", path = "bp.code")
+    @DsField(join = "left", path = "bpartner.code")
     private String businessPartner;
 
     @DsField()
@@ -50,11 +50,11 @@ public class BpAccountDs extends AbstractAuditableDs<BpAccount> {
     @DsField()
     private Boolean vendor;
 
-    @DsField(join = "left", path = "organization.id")
-    private Long organizationId;
+    @DsField(join = "left", path = "org.id")
+    private Long orgId;
 
-    @DsField(join = "left", path = "organization.code")
-    private String organization;
+    @DsField(join = "left", path = "org.code")
+    private String org;
 
     @DsField(join = "left", path = "custGroup.id")
     private Long customerGroupId;
@@ -147,20 +147,20 @@ public class BpAccountDs extends AbstractAuditableDs<BpAccount> {
         this.vendor = vendor;
     }
 
-    public Long getOrganizationId() {
-        return this.organizationId;
+    public Long getOrgId() {
+        return this.orgId;
     }
 
-    public void setOrganizationId(Long organizationId) {
-        this.organizationId = organizationId;
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
     }
 
-    public String getOrganization() {
-        return this.organization;
+    public String getOrg() {
+        return this.org;
     }
 
-    public void setOrganization(String organization) {
-        this.organization = organization;
+    public void setOrg(String org) {
+        this.org = org;
     }
 
     public Long getCustomerGroupId() {

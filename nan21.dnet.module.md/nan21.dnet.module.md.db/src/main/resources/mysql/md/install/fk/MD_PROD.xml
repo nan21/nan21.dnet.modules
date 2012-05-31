@@ -25,11 +25,11 @@
 	<changeSet author="amathe" id="FK-5">
 		<addForeignKeyConstraint constraintName="FK_MD_PROD5" 
 				baseTableName="MD_PROD" baseColumnNames="MANUFACTURER_ID"  
-				referencedTableName="MD_PROD_MANUFACT"  referencedColumnNames="ID" />
+				referencedTableName="MD_PROD_MNFC"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-6">
 		<addForeignKeyConstraint constraintName="FK_MD_PROD6" 
 				baseTableName="MD_PROD" baseColumnNames="ATTRIBUTEGROUP_ID"  
-				referencedTableName="MD_PROD_ATTR_GRP"  referencedColumnNames="ID" />
+				referencedTableName="MD_ATTR_GRP"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

@@ -8,14 +8,14 @@ package net.nan21.dnet.module.md.mm.prod.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeGroup;
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue;
+import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttribute;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer;
 
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccSchema;
+import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
 
 public interface IProductService extends IEntityService<Product> {
 
@@ -43,8 +43,7 @@ public interface IProductService extends IEntityService<Product> {
 
     public List<Product> findByManufacturerId(Long manufacturerId);
 
-    public List<Product> findByAttributeGroup(
-            ProductAttributeGroup attributeGroup);
+    public List<Product> findByAttributeGroup(AttributeGroup attributeGroup);
 
     public List<Product> findByAttributeGroupId(Long attributeGroupId);
 
@@ -52,7 +51,7 @@ public interface IProductService extends IEntityService<Product> {
 
     public List<Product> findByCategoriesId(Long categoriesId);
 
-    public List<Product> findByAttributes(ProductAttributeValue attributes);
+    public List<Product> findByAttributes(ProductAttribute attributes);
 
     public List<Product> findByAttributesId(Long attributesId);
 

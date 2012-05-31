@@ -23,10 +23,10 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.VendorGroupAcct$Filter", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"accSchema", xtype:"net.nan21.dnet.module.bd.acc.lovs.AccSchemas", dataIndex:"accSchema",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]  })
+		.addLov({ name:"accSchema", xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas", dataIndex:"accSchema",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]  })
 		.addTextField({ name:"vendorGroup", dataIndex:"vendorGroup",anchor:"-20",maxLength:32  })
-		.addLov({ name:"purchaseAccount", xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts", dataIndex:"purchaseAccount",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "purchaseAccountId"} ]  })
-		.addLov({ name:"prepayAccount", xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts", dataIndex:"prepayAccount",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "prepayAccountId"} ]  })
+		.addLov({ name:"purchaseAccount", xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts", dataIndex:"purchaseAccount",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "purchaseAccountId"} ]  })
+		.addLov({ name:"prepayAccount", xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts", dataIndex:"prepayAccount",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "prepayAccountId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
 		.addPanel({ name:"col2", layout:"form",width:210}) 
@@ -50,10 +50,10 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.VendorGroupAcct$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
+		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
 		.addTextColumn({ name:"vendorGroup", dataIndex:"vendorGroup",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
-		.addLov({name:"purchaseAccount", xtype:"gridcolumn", dataIndex:"purchaseAccount",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "purchaseAccountId"} ]} })
-		.addLov({name:"prepayAccount", xtype:"gridcolumn", dataIndex:"prepayAccount",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "prepayAccountId"} ]} })
+		.addLov({name:"purchaseAccount", xtype:"gridcolumn", dataIndex:"purchaseAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "purchaseAccountId"} ]} })
+		.addLov({name:"prepayAccount", xtype:"gridcolumn", dataIndex:"prepayAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "prepayAccountId"} ]} })
 		.addNumberColumn({ name:"vendorGroupId", dataIndex:"vendorGroupId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"accSchemaId", dataIndex:"accSchemaId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"purchaseAccountId", dataIndex:"purchaseAccountId", hidden:true, align:"right",format:"0",width:70})
@@ -71,9 +71,9 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.VendorGroupAcct$CtxEditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
-		.addLov({name:"purchaseAccount", xtype:"gridcolumn", dataIndex:"purchaseAccount",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "purchaseAccountId"} ]} })
-		.addLov({name:"prepayAccount", xtype:"gridcolumn", dataIndex:"prepayAccount",width:100,editor:{xtype:"net.nan21.dnet.module.bd.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "prepayAccountId"} ]} })
+		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
+		.addLov({name:"purchaseAccount", xtype:"gridcolumn", dataIndex:"purchaseAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "purchaseAccountId"} ]} })
+		.addLov({name:"prepayAccount", xtype:"gridcolumn", dataIndex:"prepayAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "prepayAccountId"} ]} })
 		.addNumberColumn({ name:"vendorGroupId", dataIndex:"vendorGroupId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"accSchemaId", dataIndex:"accSchemaId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"purchaseAccountId", dataIndex:"purchaseAccountId", hidden:true, align:"right",format:"0",width:70})

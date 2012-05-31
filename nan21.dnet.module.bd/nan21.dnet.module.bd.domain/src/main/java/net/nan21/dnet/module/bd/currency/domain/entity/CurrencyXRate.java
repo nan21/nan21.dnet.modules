@@ -44,8 +44,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = "CurrencyXRate.findByValid_PRIMITIVE", query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and  e.provider.id = :pProviderId and e.source.id = :pSourceId and e.target.id = :pTargetId and e.validAt = :pValidAt ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CurrencyXRate extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "BD_CURRENCY_XRATE";
-    public static final String SEQUENCE_NAME = "BD_CURRENCY_XRATE_SEQ";
+    public static final String TABLE_NAME = "BD_CRNCY_XRATE";
+    public static final String SEQUENCE_NAME = "BD_CRNCY_XRATE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

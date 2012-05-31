@@ -41,8 +41,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = "SysDsEvent.findByName_PRIMITIVE", query = "SELECT e FROM SysDsEvent e WHERE e.clientId = :pClientId and  e.dataSource.id = :pDataSourceId and e.eventType = :pEventType ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysDsEvent extends AbstractAuditable {
 
-    public static final String TABLE_NAME = "AD_SYSDSEVENT";
-    public static final String SEQUENCE_NAME = "AD_SYSDSEVENT_SEQ";
+    public static final String TABLE_NAME = "AD_SYS_DS_EVNT";
+    public static final String SEQUENCE_NAME = "AD_SYS_DS_EVNT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

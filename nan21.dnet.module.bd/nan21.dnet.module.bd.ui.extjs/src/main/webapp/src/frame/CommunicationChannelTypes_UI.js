@@ -7,13 +7,13 @@ Ext.define("net.nan21.dnet.module.bd.contact.frame.CommunicationChannelTypes_UI"
 	 _name_ : "net.nan21.dnet.module.bd.contact.frame.CommunicationChannelTypes_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("m", new net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType({multiEdit:true}))		;		
+		.addDc("ctype", new net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType({multiEdit:true}))		;		
 	}	 
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("m",{ name:"mFilter", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter",height:40})	 
-		.addDcEditGridView("m",{ name:"mEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$EditList", frame:true})	 
+		.addDcFilterFormView("ctype",{ name:"ctypeFilter", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$Filter",height:80})	 
+		.addDcEditGridView("ctype",{ name:"ctypeEditList", xtype:"net.nan21.dnet.module.bd.contact.dc.CommunicationChannelType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
@@ -22,13 +22,13 @@ Ext.define("net.nan21.dnet.module.bd.contact.frame.CommunicationChannelTypes_UI"
 	,_linkElements_: function() {
 		this._getBuilder_()		
 	 	.addChildrenTo("main", ["canvas1"]) 				 		
-		.addChildrenTo("canvas1",["mFilter","mEditList"] ,["north","center"])	
-	 	.addToolbarTo("canvas1","tlbMEditList")	  	
+		.addChildrenTo("canvas1",["ctypeFilter","ctypeEditList"] ,["north","center"])	
+	 	.addToolbarTo("canvas1","tlbCtypeEditList")	  	
 	}
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMEditList", {dc:"m"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Communication types"}).end(); 	
+			.beginToolbar("tlbCtypeEditList", {dc:"ctype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Communication methods"}).end(); 	
 	}
 
 });  

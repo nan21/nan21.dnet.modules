@@ -70,7 +70,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$List", {
 		.addTextColumn({ name:"type", dataIndex:"type",width:120 })   	
 		.addTextColumn({ name:"positionCode", dataIndex:"positionCode",width:100 })   	
 		.addTextColumn({ name:"positionName", dataIndex:"positionName", hidden:true,width:200 })   	
-		.addTextColumn({ name:"organizationCode", dataIndex:"organizationCode",width:100 })   	
+		.addTextColumn({ name:"org", dataIndex:"org",width:100 })   	
 		.addTextColumn({ name:"jobCode", dataIndex:"jobCode",width:100 })   	
 		.addTextColumn({ name:"jobName", dataIndex:"jobName", hidden:true,width:200 })   	
 	  	.addDefaults()
@@ -137,7 +137,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.dc.Employee$EditOther", {
 		.addLov({ name:"jobCode", xtype:"net.nan21.dnet.module.hr.job.lovs.Jobs", dataIndex:"jobCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "jobId"} ,{lovField:"name", dsField: "jobName"} ]  })
 		.addDisplayFieldText({ name:"jobName", dataIndex:"jobName"  })
 		.addLov({ name:"gradeCode", xtype:"net.nan21.dnet.module.hr.grade.lovs.Grades", dataIndex:"gradeCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "gradeId"} ]  })
-		.addLov({ name:"organizationCode", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"organizationCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "organizationId"} ]  })
+		.addLov({ name:"org", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"org",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "orgId"} ]  })
 		.addNumberField({ name:"baseSalary", dataIndex:"baseSalary",anchor:"-20"  , style: "text-align:right;" })
 		.addLov({ name:"payroll", xtype:"net.nan21.dnet.module.hr.payroll.lovs.Payrolls", dataIndex:"payroll",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "payrollId"} ]  })
 		//containers
@@ -153,7 +153,7 @@ labelAlign:"right",labelWidth:110}})
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
 		.addChildrenTo("col1",["citizenshipCode","passportNo","ssnNo","sinNo","officeEmail","currentHireDate","firstHireDate"])
-		.addChildrenTo("col2",["assignToPosition","positionCode","jobCode","organizationCode","gradeCode","payroll","baseSalary"])
+		.addChildrenTo("col2",["assignToPosition","positionCode","jobCode","org","gradeCode","payroll","baseSalary"])
 		.addChildrenTo("col3",["type","positionName","jobName"])
 ;
 	}	
@@ -165,7 +165,7 @@ labelAlign:"right",labelWidth:110}})
             r.set("jobName", "");
 
             r.set("organizationId", "");
-            r.set("organizationCode", "");
+            r.set("org", "");
             r.set("organizationName", "");
 		} else {
             r.set("positionId", "");
@@ -178,11 +178,11 @@ labelAlign:"right",labelWidth:110}})
 		if (enablePosition) {
 			this._getElement_("positionCode").enable();
 			this._getElement_("jobCode").disable();
-            this._getElement_("organizationCode").disable();
+            this._getElement_("org").disable();
 		} else {
 			this._getElement_("positionCode").disable();
 			this._getElement_("jobCode").enable();
-            this._getElement_("organizationCode").enable();
+            this._getElement_("org").enable();
 		}
 	}
 	,_afterBind_: function(record) {	

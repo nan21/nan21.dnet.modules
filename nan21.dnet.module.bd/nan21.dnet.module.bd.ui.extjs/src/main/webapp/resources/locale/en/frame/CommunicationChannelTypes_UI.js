@@ -1,8 +1,8 @@
 
 Ext.define("net.nan21.dnet.module.bd.contact.frame.CommunicationChannelTypes_UI$Trl", {  	  	
 	
-	tlbMEditList__ttl : "Communication types",
+	tlbCtypeEditList__ttl : "Communication methods",
 	
 	
-	title: "Communication types"
+	title: "Communication method"
 });

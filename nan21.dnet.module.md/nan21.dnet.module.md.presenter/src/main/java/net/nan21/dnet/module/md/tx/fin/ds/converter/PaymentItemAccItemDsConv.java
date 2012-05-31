@@ -6,8 +6,8 @@
 package net.nan21.dnet.module.md.tx.fin.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
-import net.nan21.dnet.module.bd.acc.business.service.IAccItemService;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccItem;
+import net.nan21.dnet.module.md.acc.business.service.IAccItemService;
+import net.nan21.dnet.module.md.acc.domain.entity.AccItem;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.Payment;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;

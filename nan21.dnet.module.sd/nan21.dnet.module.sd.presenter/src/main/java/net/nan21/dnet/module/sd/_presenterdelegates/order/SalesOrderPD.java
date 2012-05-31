@@ -1,7 +1,7 @@
 package net.nan21.dnet.module.sd._presenterdelegates.order;
 
 import net.nan21.dnet.core.presenter.service.AbstractDsDelegate;
-import net.nan21.dnet.module.bd.tx.domain.entity.TxDocType;
+import net.nan21.dnet.module.md.base.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;

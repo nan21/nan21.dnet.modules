@@ -25,5 +25,6 @@ Import-Bundle:
  org.eclipse.persistence.core;version="[2.0,2.5)", 
  nan21.dnet.core.domain;version="[1.0.0.RC1,1.0.0.RC1]", 
  nan21.dnet.module.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.bd.domain;version="[1.0.0.RC1,1.0.0.RC1]"
+ nan21.dnet.module.bd.domain;version="[1.0.0.RC1,1.0.0.RC1]", 
+ nan21.dnet.module.md.domain;version="[1.0.0.RC1,1.0.0.RC1]"
 

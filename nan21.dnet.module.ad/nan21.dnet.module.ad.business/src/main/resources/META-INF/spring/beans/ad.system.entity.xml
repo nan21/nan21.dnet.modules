@@ -16,6 +16,21 @@
  	<bean id="SysParamValueService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.SysParamValueService"  />  
  
+ 	<bean id="SysJobService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.SysJobService"  />  
+ 
+ 	<bean id="SysJobParamService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.SysJobParamService"  />  
+ 
+ 	<bean id="SysJobCtxService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceext.SysJobCtxService"  />  
+ 
+ 	<bean id="SysJobCtxParamService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceext.SysJobCtxParamService"  />  
+ 
+ 	<bean id="SysTimerService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.system.business.serviceext.SysTimerService"  />  
+ 
  	<bean id="SysDataSourceService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.system.business.serviceimpl.SysDataSourceService"  />  
  

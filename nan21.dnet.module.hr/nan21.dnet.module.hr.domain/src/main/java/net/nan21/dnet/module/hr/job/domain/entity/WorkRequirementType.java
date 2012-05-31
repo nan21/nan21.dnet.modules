@@ -35,8 +35,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = WorkRequirementType.NQ_FIND_BY_NAME, query = "SELECT e FROM WorkRequirementType e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class WorkRequirementType extends AbstractType {
 
-    public static final String TABLE_NAME = "HR_WORK_REQUIREMENT_TYPE";
-    public static final String SEQUENCE_NAME = "HR_WORK_REQUIREMENT_TYPE_SEQ";
+    public static final String TABLE_NAME = "HR_WORK_RQM_TYPE";
+    public static final String SEQUENCE_NAME = "HR_WORK_RQM_TYPE_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

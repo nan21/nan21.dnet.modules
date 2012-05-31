@@ -19,9 +19,9 @@ public interface IPositionService extends IEntityService<Position> {
 
     public Position findByName(String name);
 
-    public List<Position> findByOrganization(Organization organization);
+    public List<Position> findByOrg(Organization org);
 
-    public List<Position> findByOrganizationId(Long organizationId);
+    public List<Position> findByOrgId(Long orgId);
 
     public List<Position> findByJob(Job job);
 

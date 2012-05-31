@@ -1,11 +1,11 @@
    
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDoc", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccDoc", {
 	extend: "dnet.core.dc.AbstractDc",
  
-	recordModel: "net.nan21.dnet.module.md.tx.fin.ds.model.AccDocDs",
-	filterModel: "net.nan21.dnet.module.md.tx.fin.ds.model.AccDocDsFilter",
-	paramModel: "net.nan21.dnet.module.md.tx.fin.ds.param.AccDocDsParam",
+	recordModel: "net.nan21.dnet.module.md.tx.acc.ds.model.AccDocDs",
+	filterModel: "net.nan21.dnet.module.md.tx.acc.ds.model.AccDocDsFilter",
+	paramModel: "net.nan21.dnet.module.md.tx.acc.ds.param.AccDocDsParam",
 	constructor : function(config) {
         config = config || {};
         Ext.apply(this, config);
@@ -17,17 +17,17 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDoc", {
 
  	
 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDoc$Filter", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccDoc$Filter", {
 	extend: "dnet.core.dc.AbstractDcvFilterForm",
- 	alias: "widget.net.nan21.dnet.module.md.tx.fin.dc.AccDoc$Filter",
+ 	alias: "widget.net.nan21.dnet.module.md.tx.acc.dc.AccDoc$Filter",
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
 		.addLov({ name:"org", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"org",anchor:"-20",allowBlank:false,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "orgId"} ]  })
-		.addLov({ name:"accSchema", xtype:"net.nan21.dnet.module.bd.acc.lovs.AccSchemas", dataIndex:"accSchema",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]  })
-		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.bd.tx.lovs.TxDocTypes", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
-		.addLov({ name:"period", xtype:"net.nan21.dnet.module.bd.tx.lovs.FiscalPeriods", dataIndex:"period",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "periodId"} ]  })
-		.addLov({ name:"journal", xtype:"net.nan21.dnet.module.bd.acc.lovs.AccJournals", dataIndex:"journal",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "journalId"} ]  })
+		.addLov({ name:"accSchema", xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas", dataIndex:"accSchema",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]  })
+		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.md.base.tx.lovs.TxDocTypes", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
+		.addLov({ name:"period", xtype:"net.nan21.dnet.module.md.base.period.lovs.FiscalPeriods", dataIndex:"period",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "periodId"} ]  })
+		.addLov({ name:"journal", xtype:"net.nan21.dnet.module.md.acc.lovs.AccJournals", dataIndex:"journal",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "journalId"} ]  })
 		.addLov({ name:"bpartner", xtype:"net.nan21.dnet.module.md.bp.lovs.BusinessPartnersName", dataIndex:"bpartner",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "bpartnerId"} ]  })
 		.addTextField({ name:"docNo", dataIndex:"docNo",anchor:"-20",maxLength:255  })
 		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
@@ -76,9 +76,9 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDoc$Filter", {
 }); 
  	
  		 
-Ext.define("net.nan21.dnet.module.md.tx.fin.dc.AccDoc$List", {
+Ext.define("net.nan21.dnet.module.md.tx.acc.dc.AccDoc$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
-	alias:"widget.net.nan21.dnet.module.md.tx.fin.dc.AccDoc$List",
+	alias:"widget.net.nan21.dnet.module.md.tx.acc.dc.AccDoc$List",
 	
 	_defineColumns_: function () {	
 		this._getBuilder_()	

@@ -35,8 +35,8 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = AbsenceCategory.NQ_FIND_BY_NAME, query = "SELECT e FROM AbsenceCategory e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AbsenceCategory extends AbstractType {
 
-    public static final String TABLE_NAME = "HR_ABSN_CATEGORY";
-    public static final String SEQUENCE_NAME = "HR_ABSN_CATEGORY_SEQ";
+    public static final String TABLE_NAME = "HR_ABSN_CTG";
+    public static final String SEQUENCE_NAME = "HR_ABSN_CTG_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

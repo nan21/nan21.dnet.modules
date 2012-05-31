@@ -6,7 +6,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.lovs.Menus", {
 	displayField:"name",
 	listConfig: {		
 		getInnerTpl: function() { 
-			return '<span>{name}</span>';
+			return '<span>{name}, {title}</span>';
 		},
 		width:250
 	},		 

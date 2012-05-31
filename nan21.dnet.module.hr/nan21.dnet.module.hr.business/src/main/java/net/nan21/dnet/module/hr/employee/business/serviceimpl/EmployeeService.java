@@ -8,7 +8,6 @@ package net.nan21.dnet.module.hr.employee.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
-import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.hr.employee.business.service.IEmployeeService;
 import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContact;
@@ -42,32 +41,6 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
         return (Employee) this.em.createNamedQuery(Employee.NQ_FIND_BY_CODE)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCode", code).getSingleResult();
-    }
-
-    public List<Employee> findByEmployer(Organization employer) {
-        return this.findByEmployerId(employer.getId());
-    }
-
-    public List<Employee> findByEmployerId(Long employerId) {
-        return (List<Employee>) this.em
-                .createQuery(
-                        "select e from Employee e where e.clientId = :pClientId and e.employer.id = :pEmployerId",
-                        Employee.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pEmployerId", employerId).getResultList();
-    }
-
-    public List<Employee> findByCitizenship(Country citizenship) {
-        return this.findByCitizenshipId(citizenship.getId());
-    }
-
-    public List<Employee> findByCitizenshipId(Long citizenshipId) {
-        return (List<Employee>) this.em
-                .createQuery(
-                        "select e from Employee e where e.clientId = :pClientId and e.citizenship.id = :pCitizenshipId",
-                        Employee.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pCitizenshipId", citizenshipId).getResultList();
     }
 
     public List<Employee> findByType(EmploymentType type) {
@@ -109,18 +82,17 @@ public class EmployeeService extends AbstractEntityService<Employee> implements
                 .setParameter("pJobId", jobId).getResultList();
     }
 
-    public List<Employee> findByOrganization(Organization organization) {
-        return this.findByOrganizationId(organization.getId());
+    public List<Employee> findByOrg(Organization org) {
+        return this.findByOrgId(org.getId());
     }
 
-    public List<Employee> findByOrganizationId(Long organizationId) {
+    public List<Employee> findByOrgId(Long orgId) {
         return (List<Employee>) this.em
                 .createQuery(
-                        "select e from Employee e where e.clientId = :pClientId and e.organization.id = :pOrganizationId",
+                        "select e from Employee e where e.clientId = :pClientId and e.org.id = :pOrgId",
                         Employee.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pOrganizationId", organizationId)
-                .getResultList();
+                .setParameter("pOrgId", orgId).getResultList();
     }
 
     public List<Employee> findByGrade(Grade grade) {

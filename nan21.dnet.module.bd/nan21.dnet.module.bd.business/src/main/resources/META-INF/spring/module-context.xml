@@ -89,14 +89,12 @@
 	</bean>
  
 	<!-- Domain services -->
-	<import resource="beans/bd.acc.entity.xml" />
+	 
 	<import resource="beans/bd.contact.entity.xml" />
 	<import resource="beans/bd.currency.entity.xml" />
-	<import resource="beans/bd.fin.entity.xml" />
 	<import resource="beans/bd.geo.entity.xml" />
 	<import resource="beans/bd.org.entity.xml" />
 	<import resource="beans/bd.standards.entity.xml" />
-	<import resource="beans/bd.tx.entity.xml" />
 	<import resource="beans/bd.uom.entity.xml" />
 	
 </beans>

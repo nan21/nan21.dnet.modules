@@ -76,7 +76,7 @@ public class ProjectType extends AbstractType {
     private ProjectCategory category;
 
     @ManyToMany
-    @JoinTable(name = "PJ_PRJTYPE_ROLES")
+    @JoinTable(name = "PJ_PRJTYPE_PRJROLE")
     private Collection<ProjectRole> projectRoles;
 
     @ManyToMany

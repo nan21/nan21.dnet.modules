@@ -25,15 +25,13 @@ public class ProductAccountDsConv extends
     protected void modelToEntityReferences(ProductAccountDs ds,
             ProductAccount e, boolean isInsert) throws Exception {
 
-        if (ds.getOrganizationId() != null) {
-            if (e.getOrganization() == null
-                    || !e.getOrganization().getId()
-                            .equals(ds.getOrganizationId())) {
-                e.setOrganization((Organization) this.em.find(
-                        Organization.class, ds.getOrganizationId()));
+        if (ds.getOrgId() != null) {
+            if (e.getOrg() == null || !e.getOrg().getId().equals(ds.getOrgId())) {
+                e.setOrg((Organization) this.em.find(Organization.class,
+                        ds.getOrgId()));
             }
         } else {
-            this.lookup_organization_Organization(ds, e);
+            this.lookup_org_Organization(ds, e);
         }
 
         if (ds.getGroupId() != null) {
@@ -58,23 +56,22 @@ public class ProductAccountDsConv extends
 
     }
 
-    protected void lookup_organization_Organization(ProductAccountDs ds,
-            ProductAccount e) throws Exception {
-        if (ds.getOrganizationCode() != null
-                && !ds.getOrganizationCode().equals("")) {
+    protected void lookup_org_Organization(ProductAccountDs ds, ProductAccount e)
+            throws Exception {
+        if (ds.getOrg() != null && !ds.getOrg().equals("")) {
             Organization x = null;
             try {
                 x = ((IOrganizationService) findEntityService(Organization.class))
-                        .findByCode(ds.getOrganizationCode());
+                        .findByCode(ds.getOrg());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `Organization` reference:  `organizationCode` = "
-                                + ds.getOrganizationCode() + "  ");
+                        "Invalid value provided to find `Organization` reference:  `org` = "
+                                + ds.getOrg() + "  ");
             }
-            e.setOrganization(x);
+            e.setOrg(x);
 
         } else {
-            e.setOrganization(null);
+            e.setOrg(null);
         }
     }
 

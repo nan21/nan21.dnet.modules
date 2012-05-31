@@ -4,12 +4,12 @@
     
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_MD_PROD_ATTR1" 
-				baseTableName="MD_PROD_ATTR" baseColumnNames="TYPE_ID"  
-				referencedTableName="MD_PROD_ATTR_TYPE"  referencedColumnNames="ID" />
+				baseTableName="MD_PROD_ATTR" baseColumnNames="PRODUCT_ID"  
+				referencedTableName="MD_PROD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_MD_PROD_ATTR2" 
-				baseTableName="MD_PROD_ATTR" baseColumnNames="UOM_ID"  
-				referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+				baseTableName="MD_PROD_ATTR" baseColumnNames="GROUPATTRIBUTE_ID"  
+				referencedTableName="MD_ATTR_GRP_ATTR"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

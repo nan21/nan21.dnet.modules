@@ -40,8 +40,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = ClassificationSystem.NQ_FIND_BY_NAME, query = "SELECT e FROM ClassificationSystem e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ClassificationSystem extends AbstractTypeWithCode {
 
-    public static final String TABLE_NAME = "BD_CLASSIFIC_SYSTEM";
-    public static final String SEQUENCE_NAME = "BD_CLASSIFIC_SYSTEM_SEQ";
+    public static final String TABLE_NAME = "BD_CLSF";
+    public static final String SEQUENCE_NAME = "BD_CLSF_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 

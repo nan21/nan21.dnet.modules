@@ -22,9 +22,9 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
-import net.nan21.dnet.module.bd.acc.domain.entity.AccJournal;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
+import net.nan21.dnet.module.md.acc.domain.entity.AccJournal;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -44,8 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = PayAccount.NQ_FIND_BY_NAME, query = "SELECT e FROM PayAccount e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayAccount extends AbstractType {
 
-    public static final String TABLE_NAME = "MD_PAY_ACCOUNT";
-    public static final String SEQUENCE_NAME = "MD_PAY_ACCOUNT_SEQ";
+    public static final String TABLE_NAME = "MD_FINACNT";
+    public static final String SEQUENCE_NAME = "MD_FINACNT_SEQ";
 
     private static final long serialVersionUID = -8865917134914502125L;
 
