@@ -34,11 +34,8 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 20;CurrencyXrateProvider_UI;Currency exchange rate providers;;net.nan21.dnet.module.bd.currency.frame.CurrencyXrateProvider_UI;nan21.dnet.module.bd.ui.extjs;true;920218F8-71C3-4F8D-B5FC-667793A31027
 20;DsAccessControl_UI;Access rights - DS;;net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI;nan21.dnet.module.ad.ui.extjs;true;E3198FA1-3AE6-4F92-8451-8540C157AC05
 40;DsMethodAccessControl_UI;Access rights - DS method;;net.nan21.dnet.module.ad.usr.frame.DsMethodAccessControl_UI;nan21.dnet.module.ad.ui.extjs;true;A372E0B4-F390-4DFC-8A8C-4B6283B73562
-20;ElementBaseData_UI;Element base data;;net.nan21.dnet.module.md.base.elem.frame.ElementBaseData_UI;nan21.dnet.module.md.ui.extjs;true;8286EB0F-043E-4108-920D-7FB3C73D9B79
-70;ElementFormulas_UI;Element formulas;;net.nan21.dnet.module.md.base.elem.frame.ElementFormulas_UI;nan21.dnet.module.md.ui.extjs;true;71054B64-427A-413A-9971-1A1870723EAE
-60;ElementInputs_UI;Element inputs;;net.nan21.dnet.module.md.base.elem.frame.ElementInputs_UI;nan21.dnet.module.md.ui.extjs;true;1E1FD8F5-7552-424D-97FD-FA477AE7FA00
-30;Element_UI;Element setup;;net.nan21.dnet.module.md.base.elem.frame.Element_UI;nan21.dnet.module.md.ui.extjs;true;4A66D3DF-A0E5-4FC0-A622-581DD5CDDF26
-50;Elements_UI;Elements;;net.nan21.dnet.module.md.base.elem.frame.Elements_UI;nan21.dnet.module.md.ui.extjs;true;B1505355-AC75-441C-951B-CABB51AE18CF
+20;ElementBaseData_UI;Element base data;;net.nan21.dnet.module.bd.elem.frame.ElementBaseData_UI;nan21.dnet.module.bd.ui.extjs;true;8286EB0F-043E-4108-920D-7FB3C73D9B79
+30;ElementSet_UI;Element set;;net.nan21.dnet.module.bd.elem.frame.ElementSet_UI;nan21.dnet.module.bd.ui.extjs;true;0FED9F8D-BF8C-4FDE-BC70-1354E63B0D00
 10;EmployeeTypeDefs_UI;Employee base data definition;;net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI;nan21.dnet.module.hr.ui.extjs;true;C7FE4BAE-F2ED-458A-8071-5BD26AC1CBBA
 20;Employee_UI;Employees;;net.nan21.dnet.module.hr.employee.frame.Employee_UI;nan21.dnet.module.hr.ui.extjs;true;6DAD7412-193C-4F6B-B4C7-CDFB10552B14
 30;ExportJob_UI;Export jobs;;net.nan21.dnet.module.ad.impex.frame.ExportJob_UI;nan21.dnet.module.ad.ui.extjs;true;3FC4736E-938E-4D7D-B547-F63ABCCEA000
@@ -76,7 +73,12 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 10;PaymentIn_UI;Payment In;;net.nan21.dnet.module.sd.invoice.frame.PaymentIn_UI;nan21.dnet.module.sd.ui.extjs;true;0B405E8B-B166-41C0-AF60-BC3C4E30487B
 10;PaymentOut_UI;Payment Out;;net.nan21.dnet.module.sc.invoice.frame.PaymentOut_UI;nan21.dnet.module.sc.ui.extjs;true;A0DFD087-C9C3-4FC6-9496-4AB55FD3CDD9
 10;Payment_UI;Payments;;net.nan21.dnet.module.md.tx.fin.frame.Payment_UI;nan21.dnet.module.md.ui.extjs;true;8233DFB6-B94A-459D-A25C-D5FC9AC7582C
-50;PayrollElementValue_UI;Payroll values overview;;net.nan21.dnet.module.hr.payroll.frame.PayrollElementValue_UI;nan21.dnet.module.hr.ui.extjs;true;F624DF51-655C-46D3-B035-FD1E9F5E0421
+60;PayrollBalanceValue_UI;Payroll values : balances;;net.nan21.dnet.module.hr.payroll.frame.PayrollBalanceValue_UI;nan21.dnet.module.hr.ui.extjs;true;03632E56-2815-48D5-A0FE-C3DB75FF92B0
+70;PayrollElementFormulas_UI;Element formulas;;net.nan21.dnet.module.hr.payroll.frame.PayrollElementFormulas_UI;nan21.dnet.module.hr.ui.extjs;true;71054B64-427A-413A-9971-1A1870723EAE
+60;PayrollElementInputs_UI;Element inputs;;net.nan21.dnet.module.hr.payroll.frame.PayrollElementInputs_UI;nan21.dnet.module.hr.ui.extjs;true;1E1FD8F5-7552-424D-97FD-FA477AE7FA00
+50;PayrollElementValue_UI;Payroll values : elements;;net.nan21.dnet.module.hr.payroll.frame.PayrollElementValue_UI;nan21.dnet.module.hr.ui.extjs;true;F624DF51-655C-46D3-B035-FD1E9F5E0421
+30;PayrollElement_UI;Element setup;;net.nan21.dnet.module.hr.payroll.frame.PayrollElement_UI;nan21.dnet.module.hr.ui.extjs;true;4A66D3DF-A0E5-4FC0-A622-581DD5CDDF26
+50;PayrollElements_UI;Elements;;net.nan21.dnet.module.hr.payroll.frame.PayrollElements_UI;nan21.dnet.module.hr.ui.extjs;true;B1505355-AC75-441C-951B-CABB51AE18CF
 20;PayrollManualValue_UI;Payroll manual entry;;net.nan21.dnet.module.hr.payroll.frame.PayrollManualValue_UI;nan21.dnet.module.hr.ui.extjs;true;EC2C5EEF-0CB4-417E-A57D-EAADB2F4B429
 10;Payroll_UI;Payroll;;net.nan21.dnet.module.hr.payroll.frame.Payroll_UI;nan21.dnet.module.hr.ui.extjs;true;C720BBDC-88D5-4D0C-892C-F2E14B9411C8
 30;Position_UI;Positions;;net.nan21.dnet.module.hr.job.frame.Position_UI;nan21.dnet.module.hr.ui.extjs;true;15D8FED2-9068-41A8-A980-46A10C53B5A2
@@ -151,6 +153,7 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 60;ad-menu-wf;Workflow;AD;;;true;3B737108-CA87-4E1B-A68E-5EFE3AACD401
 50;bd-menu-contact;Collaboration;BD;;;true;CF4D8060-521B-41C8-BB5E-822A7284EBF9
 20;bd-menu-currency;Currencies;BD;;;true;D32EAE39-2BC4-4A04-8ED9-2CEA7E6E413B
+45;bd-menu-elem;Elements;BD;;;true;AC68C550-6C98-4CBA-A5B8-573A9A756B80
 10;bd-menu-geo;Geography;BD;;;true;E45F2196-7075-4F14-9360-5F1A77AE68DF
 70;bd-menu-org;Organizations;BD;;;true;F0D7D634-E829-42E4-BA5D-027B1F17AB31
 40;bd-menu-stds;Standards;BD;;;true;BEB967DD-DBAB-4E4D-A419-83705A309E01
@@ -171,6 +174,7 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 20;hr-menu-grade;Grades;HR;;;true;4372B6AB-AB73-4D4F-BB44-BADB61E204F6
 30;hr-menu-job;Jobs;HR;;;true;FB3D0FB1-1F48-4628-A887-7A94EB2AF080
 50;hr-menu-payroll;Payroll;HR;;;true;235D7BDA-C11D-4B6A-B405-3D572E994E56
+5;hr-menu-payroll-setup;Setup;;;;true;E1C6C9AC-AD84-4F9E-9EE0-6330E963BE19
 10;hr-menu-skill;Competence;HR;;;true;A7CD46EF-D7D0-40EF-A622-12F7E9FF4A1B
 70;hr-menu-time;Time management;HR;;;true;44134AF6-B5CF-4924-A08B-1CCE37177FC5
 60;hr-menu-training;Training;HR;;;true;3008E81E-B212-4BED-A456-451948E4EA85
@@ -178,7 +182,6 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 20;iv-menu-tx;Transactions;IV;;;true;2B31BF5A-BE6F-478E-ADD0-79A7206E5B43
 10;md-menu-base;Base data;MD;;;true;15336F47-2A69-416B-89CD-7B310B0A3234
 20;md-menu-base-attr;Attributes;;;;true;CB477867-3066-41ED-BCFF-E2C8584E0878
-10;md-menu-base-elem;Elements;;;;true;AC68C550-6C98-4CBA-A5B8-573A9A756B80
 30;mm-menu;Material management;MD;;;true;D2B954C9-A509-4AEC-9156-0E66984E05D0
 10;mm-menu-base;Base-data;;;;true;E031FB9F-A408-4542-93FC-36EFA3811A93
 20;mm-menu-md;Master-data;;;;true;693AF165-CB18-480C-A803-1FB255391A02

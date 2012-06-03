@@ -15,18 +15,20 @@ Export-Package: net.nan21.dnet.module.hr.benefit.business.service;vers
  ity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.
  hr.job.domain.entity",net.nan21.dnet.module.hr.payroll.business.servi
  ce;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan
- 21.dnet.module.hr.employee.domain.entity,net.nan21.dnet.module.hr.pay
- roll.domain.entity",net.nan21.dnet.module.hr.skill.business.service;v
- ersion="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.d
- net.module.hr.employee.domain.entity,net.nan21.dnet.module.hr.job.dom
- ain.entity,net.nan21.dnet.module.hr.skill.domain.entity",net.nan21.dn
- et.module.hr.time.business.service;version="1.0.0.RC1";uses:="net.nan
- 21.dnet.core.api.service,net.nan21.dnet.module.hr.employee.domain.ent
- ity,net.nan21.dnet.module.hr.time.domain.entity",net.nan21.dnet.modul
- e.hr.training.business.service;version="1.0.0.RC1";uses:="net.nan21.d
- net.core.api.service,net.nan21.dnet.module.hr.employee.domain.entity,
- net.nan21.dnet.module.hr.job.domain.entity,net.nan21.dnet.module.hr.t
- raining.domain.entity"
+ 21.dnet.module.bd.elem.domain.entity,net.nan21.dnet.module.bd.org.dom
+ ain.entity,net.nan21.dnet.module.hr.employee.domain.entity,net.nan21.
+ dnet.module.hr.payroll.domain.entity,net.nan21.dnet.module.md.acc.dom
+ ain.entity",net.nan21.dnet.module.hr.skill.business.service;version="
+ 1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modu
+ le.hr.employee.domain.entity,net.nan21.dnet.module.hr.job.domain.enti
+ ty,net.nan21.dnet.module.hr.skill.domain.entity",net.nan21.dnet.modul
+ e.hr.time.business.service;version="1.0.0.RC1";uses:="net.nan21.dnet.
+ core.api.service,net.nan21.dnet.module.hr.employee.domain.entity,net.
+ nan21.dnet.module.hr.time.domain.entity",net.nan21.dnet.module.hr.tra
+ ining.business.service;version="1.0.0.RC1";uses:="net.nan21.dnet.core
+ .api.service,net.nan21.dnet.module.hr.employee.domain.entity,net.nan2
+ 1.dnet.module.hr.job.domain.entity,net.nan21.dnet.module.hr.training.
+ domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.module.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.modu
  le.bd.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.md.dom
@@ -43,17 +45,18 @@ Import-Package: javax.persistence.criteria;version="[2.0,2.1)",javax.p
  ersistence.metamodel;version="[2.0,2.1)",javax.persistence.spi;versio
  n="[2.0,2.1)",javax.validation;version="[1.0,2.0)",net.nan21.dnet.cor
  e.api.service,net.nan21.dnet.module.bd.currency.domain.entity,net.nan
- 21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.doma
- in.entity,net.nan21.dnet.module.hr.benefit.domain.entity,net.nan21.dn
- et.module.hr.employee.domain.entity,net.nan21.dnet.module.hr.grade.do
- main.entity,net.nan21.dnet.module.hr.job.domain.entity,net.nan21.dnet
- .module.hr.payroll.domain.entity,net.nan21.dnet.module.hr.skill.domai
- n.entity,net.nan21.dnet.module.hr.time.domain.entity,net.nan21.dnet.m
- odule.hr.training.domain.entity,org.aopalliance.aop;version="[1.0,2.0
- )",org.hibernate.validator;version="[4.0,5.0)",org.hibernate.validato
- r.constraints;version="[4.0,5.0)",org.springframework.aop;version="[3
- .0,3.1)",org.springframework.aop.framework;version="[3.0,3.1)",org.sp
- ringframework.context.weaving;version="[3.0,3.1)",org.springframework
- .transaction;version="[3.0,3.1)",org.springframework.transaction.aspe
- ctj;version="[3.0,3.1)"
+ 21.dnet.module.bd.elem.domain.entity,net.nan21.dnet.module.bd.geo.dom
+ ain.entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.
+ module.hr.benefit.domain.entity,net.nan21.dnet.module.hr.employee.dom
+ ain.entity,net.nan21.dnet.module.hr.grade.domain.entity,net.nan21.dne
+ t.module.hr.job.domain.entity,net.nan21.dnet.module.hr.payroll.domain
+ .entity,net.nan21.dnet.module.hr.skill.domain.entity,net.nan21.dnet.m
+ odule.hr.time.domain.entity,net.nan21.dnet.module.hr.training.domain.
+ entity,net.nan21.dnet.module.md.acc.domain.entity,org.aopalliance.aop
+ ;version="[1.0,2.0)",org.hibernate.validator;version="[4.0,5.0)",org.
+ hibernate.validator.constraints;version="[4.0,5.0)",org.springframewo
+ rk.aop;version="[3.0,3.1)",org.springframework.aop.framework;version=
+ "[3.0,3.1)",org.springframework.context.weaving;version="[3.0,3.1)",o
+ rg.springframework.transaction;version="[3.0,3.1)",org.springframewor
+ k.transaction.aspectj;version="[3.0,3.1)"
 

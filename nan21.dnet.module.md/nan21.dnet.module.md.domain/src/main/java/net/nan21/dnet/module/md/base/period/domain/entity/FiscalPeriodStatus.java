@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.base.period.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -38,7 +36,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = FiscalPeriodStatus.NQ_FIND_BY_ID, query = "SELECT e FROM FiscalPeriodStatus e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = FiscalPeriodStatus.NQ_FIND_BY_IDS, query = "SELECT e FROM FiscalPeriodStatus e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = FiscalPeriodStatus.NQ_FIND_BY_ORG_PERIOD, query = "SELECT e FROM FiscalPeriodStatus e WHERE e.clientId = :pClientId and  e.org = :pOrg and e.period = :pPeriod ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "FiscalPeriodStatus.findByOrg_period_PRIMITIVE", query = "SELECT e FROM FiscalPeriodStatus e WHERE e.clientId = :pClientId and  e.org.id = :pOrgId and e.period.id = :pPeriodId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = FiscalPeriodStatus.NQ_FIND_BY_ORG_PERIOD_PRIMITIVE, query = "SELECT e FROM FiscalPeriodStatus e WHERE e.clientId = :pClientId and  e.org.id = :pOrgId and e.period.id = :pPeriodId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class FiscalPeriodStatus extends AbstractAuditable {
 
     public static final String TABLE_NAME = "MD_PER_STS";
@@ -109,6 +107,9 @@ public class FiscalPeriodStatus extends AbstractAuditable {
     }
 
     public void setPeriod(FiscalPeriod period) {
+        if (period != null) {
+            this.__validate_client_context__(period.getClientId());
+        }
         this.period = period;
     }
 
@@ -117,6 +118,9 @@ public class FiscalPeriodStatus extends AbstractAuditable {
     }
 
     public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
         this.org = org;
     }
 
@@ -127,13 +131,6 @@ public class FiscalPeriodStatus extends AbstractAuditable {
         if (this.getClosed() == null) {
             event.updateAttributeWithObject("closed", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -20,15 +20,7 @@
 		<class>net.nan21.dnet.module.md.base.attr.domain.entity.Attribute</class>
 		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup</class>
 		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroupAttribute</class>
-		
-		<class>net.nan21.dnet.module.md.base.elem.domain.entity.Engine</class>
-		<class>net.nan21.dnet.module.md.base.elem.domain.entity.ElementCategory</class>
-		<class>net.nan21.dnet.module.md.base.elem.domain.entity.ElementType</class>
-		<class>net.nan21.dnet.module.md.base.elem.domain.entity.Element</class>
-		<class>net.nan21.dnet.module.md.base.elem.domain.entity.ElementInput</class>
-		<class>net.nan21.dnet.module.md.base.elem.domain.entity.ElementFormula</class>
-		<class>net.nan21.dnet.module.md.base.elem.domain.entity.ElementValue</class>		 
-		
+		 
 		<class>net.nan21.dnet.module.md.base.tax.domain.entity.TaxCategory</class>
 		<class>net.nan21.dnet.module.md.base.tax.domain.entity.Tax</class>
 		<class>net.nan21.dnet.module.md.base.tax.domain.entity.TaxAcct</class>
@@ -40,9 +32,7 @@
 		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear</class>
 		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod</class>
 		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriodStatus</class>
-		
-		
-		
+		 
 		<!-- BP  -->
 		<class>net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup</class>
 		<class>net.nan21.dnet.module.md.bp.domain.entity.VendorGroup</class>

@@ -6,7 +6,6 @@
 package net.nan21.dnet.module.md.mm.prod.domain.entity;
 
 import java.util.Collection;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,7 +20,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory;
@@ -125,6 +123,9 @@ public class ProductCategory extends AbstractTypeWithCode {
     }
 
     public void setCategory(ProductCategory category) {
+        if (category != null) {
+            this.__validate_client_context__(category.getClientId());
+        }
         this.category = category;
     }
 
@@ -146,13 +147,6 @@ public class ProductCategory extends AbstractTypeWithCode {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

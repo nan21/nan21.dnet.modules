@@ -57,6 +57,14 @@ public class PayrollPeriodService extends AbstractEntityService<PayrollPeriod>
                 .process(period);
     }
 
+    public void doOpen(PayrollPeriod period) throws Exception {
+        this.getBusinessDelegate(PayrollPeriodProcessorBD.class).open(period);
+    }
+
+    public void doClose(PayrollPeriod period) throws Exception {
+        this.getBusinessDelegate(PayrollPeriodProcessorBD.class).close(period);
+    }
+
     public void doClear(PayrollPeriod period) throws Exception {
         this.getBusinessDelegate(PayrollPeriodProcessorBD.class).clear(period);
     }

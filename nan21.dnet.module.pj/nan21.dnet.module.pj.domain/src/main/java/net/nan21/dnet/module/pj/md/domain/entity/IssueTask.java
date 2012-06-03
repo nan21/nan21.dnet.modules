@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.pj.md.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.pj.base.domain.entity.IssueTaskStatus;
@@ -116,6 +114,9 @@ public class IssueTask extends AbstractAuditable {
     }
 
     public void setIssue(Issue issue) {
+        if (issue != null) {
+            this.__validate_client_context__(issue.getClientId());
+        }
         this.issue = issue;
     }
 
@@ -124,6 +125,9 @@ public class IssueTask extends AbstractAuditable {
     }
 
     public void setType(IssueTaskType type) {
+        if (type != null) {
+            this.__validate_client_context__(type.getClientId());
+        }
         this.type = type;
     }
 
@@ -132,6 +136,9 @@ public class IssueTask extends AbstractAuditable {
     }
 
     public void setStatus(IssueTaskStatus status) {
+        if (status != null) {
+            this.__validate_client_context__(status.getClientId());
+        }
         this.status = status;
     }
 
@@ -140,6 +147,9 @@ public class IssueTask extends AbstractAuditable {
     }
 
     public void setAssignee(ProjectMember assignee) {
+        if (assignee != null) {
+            this.__validate_client_context__(assignee.getClientId());
+        }
         this.assignee = assignee;
     }
 
@@ -150,13 +160,6 @@ public class IssueTask extends AbstractAuditable {
         if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "T-" + this.getId());
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

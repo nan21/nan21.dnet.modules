@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.ad.report.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.ad.report.domain.entity.Report;
@@ -41,9 +39,9 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = ReportParam.NQ_FIND_BY_ID, query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ReportParam.NQ_FIND_BY_IDS, query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ReportParam.NQ_FIND_BY_CODE, query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report = :pReport and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ReportParam.findByCode_PRIMITIVE", query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report.id = :pReportId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ReportParam.NQ_FIND_BY_CODE_PRIMITIVE, query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report.id = :pReportId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ReportParam.NQ_FIND_BY_NAME, query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report = :pReport and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ReportParam.findByName_PRIMITIVE", query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report.id = :pReportId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ReportParam.NQ_FIND_BY_NAME_PRIMITIVE, query = "SELECT e FROM ReportParam e WHERE e.clientId = :pClientId and  e.report.id = :pReportId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ReportParam extends AbstractTypeWithCode {
 
     public static final String TABLE_NAME = "AD_RPT_PARAM";
@@ -184,6 +182,9 @@ public class ReportParam extends AbstractTypeWithCode {
     }
 
     public void setReport(Report report) {
+        if (report != null) {
+            this.__validate_client_context__(report.getClientId());
+        }
         this.report = report;
     }
 
@@ -200,13 +201,6 @@ public class ReportParam extends AbstractTypeWithCode {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

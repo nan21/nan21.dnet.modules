@@ -3,12 +3,12 @@ Ext.define("net.nan21.dnet.module.hr.job.frame.Position_UI$Trl", {
 	reqCtxEditList__ttl : "Cerinţe",
 	courseCtxEditList__ttl : "Cursuri",
 	
-	tlbPosList__ttl : "Poziţii",
-	tlbPosEdit__ttl : "Poziţie",
+	tlbPosList__ttl : "Posturi",
+	tlbPosEdit__ttl : "Posturi",
 	tlbSkillCtxEditList__ttl : "Competenţe",
 	tlbReqCtxEditList__ttl : "Cerinţe",
 	tlbCourseCtxEditList__ttl : "Cursuri",
 	
 	
-	title: "Poziţii"
+	title: "Posturi"
 });	

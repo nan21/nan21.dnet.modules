@@ -21,7 +21,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
 import net.nan21.dnet.module.ad.system.domain.entity.SysJobCtx;
@@ -40,7 +39,7 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = SysTimer.NQ_FIND_BY_ID, query = "SELECT e FROM SysTimer e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = SysTimer.NQ_FIND_BY_IDS, query = "SELECT e FROM SysTimer e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = SysTimer.NQ_FIND_BY_NAME, query = "SELECT e FROM SysTimer e WHERE e.clientId = :pClientId and  e.jobCtx = :pJobCtx and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "SysTimer.findByName_PRIMITIVE", query = "SELECT e FROM SysTimer e WHERE e.clientId = :pClientId and  e.jobCtx.id = :pJobCtxId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = SysTimer.NQ_FIND_BY_NAME_PRIMITIVE, query = "SELECT e FROM SysTimer e WHERE e.clientId = :pClientId and  e.jobCtx.id = :pJobCtxId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class SysTimer extends AbstractType {
 
     public static final String TABLE_NAME = "AD_SYS_TIMER";
@@ -183,6 +182,9 @@ public class SysTimer extends AbstractType {
     }
 
     public void setJobCtx(SysJobCtx jobCtx) {
+        if (jobCtx != null) {
+            this.__validate_client_context__(jobCtx.getClientId());
+        }
         this.jobCtx = jobCtx;
     }
 
@@ -193,13 +195,6 @@ public class SysTimer extends AbstractType {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

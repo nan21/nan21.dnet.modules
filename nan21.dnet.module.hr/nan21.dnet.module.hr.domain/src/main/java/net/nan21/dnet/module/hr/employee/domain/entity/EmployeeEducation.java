@@ -20,7 +20,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.hr.employee.domain.entity.EducationType;
@@ -146,6 +145,9 @@ public class EmployeeEducation extends AbstractAuditable {
     }
 
     public void setEmployee(Employee employee) {
+        if (employee != null) {
+            this.__validate_client_context__(employee.getClientId());
+        }
         this.employee = employee;
     }
 
@@ -154,6 +156,9 @@ public class EmployeeEducation extends AbstractAuditable {
     }
 
     public void setType(EducationType type) {
+        if (type != null) {
+            this.__validate_client_context__(type.getClientId());
+        }
         this.type = type;
     }
 
@@ -161,13 +166,6 @@ public class EmployeeEducation extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

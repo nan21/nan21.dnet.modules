@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.tx.fin.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
@@ -98,6 +96,9 @@ public class TxBalance extends AbstractAuditable {
     }
 
     public void setBpartner(BusinessPartner bpartner) {
+        if (bpartner != null) {
+            this.__validate_client_context__(bpartner.getClientId());
+        }
         this.bpartner = bpartner;
     }
 
@@ -106,6 +107,9 @@ public class TxBalance extends AbstractAuditable {
     }
 
     public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
         this.org = org;
     }
 
@@ -114,6 +118,9 @@ public class TxBalance extends AbstractAuditable {
     }
 
     public void setCurrency(Currency currency) {
+        if (currency != null) {
+            this.__validate_client_context__(currency.getClientId());
+        }
         this.currency = currency;
     }
 
@@ -121,13 +128,6 @@ public class TxBalance extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

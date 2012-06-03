@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.hr.skill.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.hr.job.domain.entity.Job;
@@ -87,6 +85,9 @@ public class JobSkill extends AbstractAuditable {
     }
 
     public void setJob(Job job) {
+        if (job != null) {
+            this.__validate_client_context__(job.getClientId());
+        }
         this.job = job;
     }
 
@@ -95,6 +96,9 @@ public class JobSkill extends AbstractAuditable {
     }
 
     public void setSkill(Skill skill) {
+        if (skill != null) {
+            this.__validate_client_context__(skill.getClientId());
+        }
         this.skill = skill;
     }
 
@@ -103,6 +107,9 @@ public class JobSkill extends AbstractAuditable {
     }
 
     public void setRequiredLevel(RatingLevel requiredLevel) {
+        if (requiredLevel != null) {
+            this.__validate_client_context__(requiredLevel.getClientId());
+        }
         this.requiredLevel = requiredLevel;
     }
 
@@ -110,13 +117,6 @@ public class JobSkill extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -89,19 +89,18 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Job$Edit", {
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:80,anchor:"-20"   })
 		.addLov({ name:"type", xtype:"net.nan21.dnet.module.hr.job.lovs.JobTypes", dataIndex:"type",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:350})     
-		.addPanel({ name:"col2", layout:"form" , width:300, defaults:{
-labelAlign:"top"}})     
+		.addPanel({ name:"col2", layout:"form" , width:400})     
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
-		.addChildrenTo("col1",["name","type","code","active"])
+		.addChildrenTo("col1",["name","code","type","active"])
 		.addChildrenTo("col2",["notes"])
 ;
 	}	

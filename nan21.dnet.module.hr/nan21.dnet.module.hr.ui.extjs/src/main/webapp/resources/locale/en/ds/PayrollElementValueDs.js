@@ -7,13 +7,20 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollElementValueDs$Trl"
 	elementName__lbl : "Element Name",
 	sequenceNo__lbl : "Sequence No",
 	dataType__lbl : "Data Type",
+	calculation__lbl : "Calculation",
+	typeId__lbl : "Type Id",
+	type__lbl : "Type",
 	employeeId__lbl : "Employee Id",
 	employeeName__lbl : "Employee Name",
+	employerId__lbl : "Employer Id",
+	employer__lbl : "Employer",
 	value__lbl : "Value",
 	periodId__lbl : "Period Id",
 	period__lbl : "Period",
 	periodStart__lbl : "Period Start",
 	periodEnd__lbl : "Period End",
 		
+	elementSetId__lbl :"Element Set Id",
+	elementSet__lbl :"Element Set",
 	id__lbl :"ID"
 });

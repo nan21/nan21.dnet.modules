@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.tx.fin.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
@@ -127,6 +125,9 @@ public class PaymentItem extends AbstractAuditable {
     }
 
     public void setPayment(Payment payment) {
+        if (payment != null) {
+            this.__validate_client_context__(payment.getClientId());
+        }
         this.payment = payment;
     }
 
@@ -135,6 +136,9 @@ public class PaymentItem extends AbstractAuditable {
     }
 
     public void setAccItem(AccItem accItem) {
+        if (accItem != null) {
+            this.__validate_client_context__(accItem.getClientId());
+        }
         this.accItem = accItem;
     }
 
@@ -143,6 +147,9 @@ public class PaymentItem extends AbstractAuditable {
     }
 
     public void setProduct(Product product) {
+        if (product != null) {
+            this.__validate_client_context__(product.getClientId());
+        }
         this.product = product;
     }
 
@@ -151,6 +158,9 @@ public class PaymentItem extends AbstractAuditable {
     }
 
     public void setUom(Uom uom) {
+        if (uom != null) {
+            this.__validate_client_context__(uom.getClientId());
+        }
         this.uom = uom;
     }
 
@@ -158,13 +168,6 @@ public class PaymentItem extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

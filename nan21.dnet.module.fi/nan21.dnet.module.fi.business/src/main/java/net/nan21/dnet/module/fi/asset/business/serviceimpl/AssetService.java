@@ -31,6 +31,18 @@ public class AssetService extends AbstractEntityService<Asset> implements
         return Asset.class;
     }
 
+    public Asset findByCode(String code) {
+        return (Asset) this.em.createNamedQuery(Asset.NQ_FIND_BY_CODE)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pCode", code).getSingleResult();
+    }
+
+    public Asset findByName(String name) {
+        return (Asset) this.em.createNamedQuery(Asset.NQ_FIND_BY_NAME)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pName", name).getSingleResult();
+    }
+
     public List<Asset> findByCategory(AssetCategory category) {
         return this.findByCategoryId(category.getId());
     }

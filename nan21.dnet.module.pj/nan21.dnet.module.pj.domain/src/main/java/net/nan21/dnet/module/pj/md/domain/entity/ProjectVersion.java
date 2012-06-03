@@ -23,7 +23,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
 import net.nan21.dnet.module.pj.md.domain.entity.Project;
@@ -41,7 +40,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = ProjectVersion.NQ_FIND_BY_ID, query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProjectVersion.NQ_FIND_BY_IDS, query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProjectVersion.NQ_FIND_BY_NAME, query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and  e.project = :pProject and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProjectVersion.findByName_PRIMITIVE", query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ProjectVersion.NQ_FIND_BY_NAME_PRIMITIVE, query = "SELECT e FROM ProjectVersion e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectVersion extends AbstractType {
 
     public static final String TABLE_NAME = "PJ_PRJ_VER";
@@ -126,6 +125,9 @@ public class ProjectVersion extends AbstractType {
     }
 
     public void setProject(Project project) {
+        if (project != null) {
+            this.__validate_client_context__(project.getClientId());
+        }
         this.project = project;
     }
 
@@ -144,13 +146,6 @@ public class ProjectVersion extends AbstractType {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

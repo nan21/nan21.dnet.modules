@@ -28,7 +28,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionType;
@@ -205,6 +204,9 @@ public class InvTransaction extends AbstractAuditable {
     }
 
     public void setTransactionType(InvTransactionType transactionType) {
+        if (transactionType != null) {
+            this.__validate_client_context__(transactionType.getClientId());
+        }
         this.transactionType = transactionType;
     }
 
@@ -213,6 +215,9 @@ public class InvTransaction extends AbstractAuditable {
     }
 
     public void setFromInventory(Organization fromInventory) {
+        if (fromInventory != null) {
+            this.__validate_client_context__(fromInventory.getClientId());
+        }
         this.fromInventory = fromInventory;
     }
 
@@ -221,6 +226,9 @@ public class InvTransaction extends AbstractAuditable {
     }
 
     public void setToInventory(Organization toInventory) {
+        if (toInventory != null) {
+            this.__validate_client_context__(toInventory.getClientId());
+        }
         this.toInventory = toInventory;
     }
 
@@ -253,13 +261,6 @@ public class InvTransaction extends AbstractAuditable {
         if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "IT-" + this.getId());
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

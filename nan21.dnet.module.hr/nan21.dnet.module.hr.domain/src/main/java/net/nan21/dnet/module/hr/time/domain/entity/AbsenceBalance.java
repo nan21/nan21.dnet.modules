@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.hr.time.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
@@ -90,6 +88,9 @@ public class AbsenceBalance extends AbstractAuditable {
     }
 
     public void setEmployee(Employee employee) {
+        if (employee != null) {
+            this.__validate_client_context__(employee.getClientId());
+        }
         this.employee = employee;
     }
 
@@ -97,13 +98,6 @@ public class AbsenceBalance extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

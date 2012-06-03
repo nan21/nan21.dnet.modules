@@ -6,7 +6,6 @@
 package net.nan21.dnet.module.pj.md.domain.entity;
 
 import java.util.Collection;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,7 +20,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
 import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
@@ -40,7 +38,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = ProjectComponent.NQ_FIND_BY_ID, query = "SELECT e FROM ProjectComponent e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProjectComponent.NQ_FIND_BY_IDS, query = "SELECT e FROM ProjectComponent e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProjectComponent.NQ_FIND_BY_NAME, query = "SELECT e FROM ProjectComponent e WHERE e.clientId = :pClientId and  e.project = :pProject and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProjectComponent.findByName_PRIMITIVE", query = "SELECT e FROM ProjectComponent e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ProjectComponent.NQ_FIND_BY_NAME_PRIMITIVE, query = "SELECT e FROM ProjectComponent e WHERE e.clientId = :pClientId and  e.project.id = :pProjectId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProjectComponent extends AbstractType {
 
     public static final String TABLE_NAME = "PJ_PRJ_CMP";
@@ -102,6 +100,9 @@ public class ProjectComponent extends AbstractType {
     }
 
     public void setComponentLead(Assignable componentLead) {
+        if (componentLead != null) {
+            this.__validate_client_context__(componentLead.getClientId());
+        }
         this.componentLead = componentLead;
     }
 
@@ -110,6 +111,9 @@ public class ProjectComponent extends AbstractType {
     }
 
     public void setProject(Project project) {
+        if (project != null) {
+            this.__validate_client_context__(project.getClientId());
+        }
         this.project = project;
     }
 
@@ -128,13 +132,6 @@ public class ProjectComponent extends AbstractType {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.hr.skill.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
 import net.nan21.dnet.module.hr.skill.domain.entity.RatingScale;
@@ -91,6 +89,9 @@ public class Skill extends AbstractType {
     }
 
     public void setType(SkillType type) {
+        if (type != null) {
+            this.__validate_client_context__(type.getClientId());
+        }
         this.type = type;
     }
 
@@ -99,6 +100,9 @@ public class Skill extends AbstractType {
     }
 
     public void setRatingScale(RatingScale ratingScale) {
+        if (ratingScale != null) {
+            this.__validate_client_context__(ratingScale.getClientId());
+        }
         this.ratingScale = ratingScale;
     }
 
@@ -109,13 +113,6 @@ public class Skill extends AbstractType {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

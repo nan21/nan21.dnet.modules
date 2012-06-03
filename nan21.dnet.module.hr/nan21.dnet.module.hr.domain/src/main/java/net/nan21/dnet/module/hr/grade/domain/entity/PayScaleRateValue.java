@@ -20,7 +20,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.hr.grade.domain.entity.PayScalePoint;
@@ -122,6 +121,9 @@ public class PayScaleRateValue extends AbstractAuditable {
     }
 
     public void setScaleRate(PayScaleRate scaleRate) {
+        if (scaleRate != null) {
+            this.__validate_client_context__(scaleRate.getClientId());
+        }
         this.scaleRate = scaleRate;
     }
 
@@ -130,6 +132,9 @@ public class PayScaleRateValue extends AbstractAuditable {
     }
 
     public void setScalePoint(PayScalePoint scalePoint) {
+        if (scalePoint != null) {
+            this.__validate_client_context__(scalePoint.getClientId());
+        }
         this.scalePoint = scalePoint;
     }
 
@@ -137,13 +142,6 @@ public class PayScaleRateValue extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

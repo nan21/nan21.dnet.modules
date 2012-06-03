@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.mm.price.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
@@ -40,7 +38,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = ProductPrice.NQ_FIND_BY_ID, query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProductPrice.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProductPrice.NQ_FIND_BY_NAME, query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceListVersion = :pPriceListVersion and e.product = :pProduct ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductPrice.findByName_PRIMITIVE", query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceListVersion.id = :pPriceListVersionId and e.product.id = :pProductId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ProductPrice.NQ_FIND_BY_NAME_PRIMITIVE, query = "SELECT e FROM ProductPrice e WHERE e.clientId = :pClientId and  e.priceListVersion.id = :pPriceListVersionId and e.product.id = :pProductId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductPrice extends AbstractAuditable {
 
     public static final String TABLE_NAME = "MD_PROD_PRICE";
@@ -114,6 +112,9 @@ public class ProductPrice extends AbstractAuditable {
     }
 
     public void setPriceListVersion(PriceListVersion priceListVersion) {
+        if (priceListVersion != null) {
+            this.__validate_client_context__(priceListVersion.getClientId());
+        }
         this.priceListVersion = priceListVersion;
     }
 
@@ -122,6 +123,9 @@ public class ProductPrice extends AbstractAuditable {
     }
 
     public void setProduct(Product product) {
+        if (product != null) {
+            this.__validate_client_context__(product.getClientId());
+        }
         this.product = product;
     }
 
@@ -130,6 +134,9 @@ public class ProductPrice extends AbstractAuditable {
     }
 
     public void setUom(Uom uom) {
+        if (uom != null) {
+            this.__validate_client_context__(uom.getClientId());
+        }
         this.uom = uom;
     }
 
@@ -137,13 +144,6 @@ public class ProductPrice extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

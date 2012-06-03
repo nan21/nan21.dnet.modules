@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.bd.geo.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.geo.domain.entity.City;
@@ -232,6 +230,9 @@ public class Location extends AbstractAuditable {
     }
 
     public void setCountry(Country country) {
+        if (country != null) {
+            this.__validate_client_context__(country.getClientId());
+        }
         this.country = country;
     }
 
@@ -240,6 +241,9 @@ public class Location extends AbstractAuditable {
     }
 
     public void setRegion(Region region) {
+        if (region != null) {
+            this.__validate_client_context__(region.getClientId());
+        }
         this.region = region;
     }
 
@@ -248,6 +252,9 @@ public class Location extends AbstractAuditable {
     }
 
     public void setCity(City city) {
+        if (city != null) {
+            this.__validate_client_context__(city.getClientId());
+        }
         this.city = city;
     }
 
@@ -267,13 +274,6 @@ public class Location extends AbstractAuditable {
         if (this.getForMailing() == null) {
             event.updateAttributeWithObject("forMailing", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

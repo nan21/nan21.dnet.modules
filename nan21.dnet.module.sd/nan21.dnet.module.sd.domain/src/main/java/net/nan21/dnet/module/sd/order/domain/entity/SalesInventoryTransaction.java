@@ -104,6 +104,9 @@ public class SalesInventoryTransaction extends InvTransaction {
     }
 
     public void setCustomer(BusinessPartner customer) {
+        if (customer != null) {
+            this.__validate_client_context__(customer.getClientId());
+        }
         this.customer = customer;
     }
 
@@ -112,6 +115,9 @@ public class SalesInventoryTransaction extends InvTransaction {
     }
 
     public void setDeliveryLocation(Location deliveryLocation) {
+        if (deliveryLocation != null) {
+            this.__validate_client_context__(deliveryLocation.getClientId());
+        }
         this.deliveryLocation = deliveryLocation;
     }
 
@@ -120,6 +126,9 @@ public class SalesInventoryTransaction extends InvTransaction {
     }
 
     public void setDeliveryContact(Contact deliveryContact) {
+        if (deliveryContact != null) {
+            this.__validate_client_context__(deliveryContact.getClientId());
+        }
         this.deliveryContact = deliveryContact;
     }
 
@@ -128,6 +137,9 @@ public class SalesInventoryTransaction extends InvTransaction {
     }
 
     public void setSalesOrder(SalesOrder salesOrder) {
+        if (salesOrder != null) {
+            this.__validate_client_context__(salesOrder.getClientId());
+        }
         this.salesOrder = salesOrder;
     }
 
@@ -135,10 +147,6 @@ public class SalesInventoryTransaction extends InvTransaction {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
     }
 
 }

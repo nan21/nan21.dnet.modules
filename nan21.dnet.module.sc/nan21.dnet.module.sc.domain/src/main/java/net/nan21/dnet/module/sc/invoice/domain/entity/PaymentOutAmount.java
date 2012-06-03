@@ -79,6 +79,9 @@ public class PaymentOutAmount extends PaymentAmount {
     }
 
     public void setTxAmount(PurchaseTxAmount txAmount) {
+        if (txAmount != null) {
+            this.__validate_client_context__(txAmount.getClientId());
+        }
         this.txAmount = txAmount;
     }
 
@@ -86,10 +89,6 @@ public class PaymentOutAmount extends PaymentAmount {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
     }
 
 }

@@ -20,7 +20,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType;
@@ -144,6 +143,9 @@ public class CommunicationChannel extends AbstractAuditable {
     }
 
     public void setType(CommunicationChannelType type) {
+        if (type != null) {
+            this.__validate_client_context__(type.getClientId());
+        }
         this.type = type;
     }
 
@@ -151,13 +153,6 @@ public class CommunicationChannel extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -39,6 +39,17 @@
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomConversion</class>
+		
+		<!-- elem -->
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.Engine</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementCategory</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementType</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.Element</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementInput</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementFormula</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementSet</class>		 
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementSetElement</class>
+		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

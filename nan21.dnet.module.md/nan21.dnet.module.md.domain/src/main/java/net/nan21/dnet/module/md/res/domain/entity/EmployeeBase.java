@@ -25,7 +25,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
@@ -344,6 +343,9 @@ public class EmployeeBase extends AbstractAuditable {
     }
 
     public void setEmployer(Organization employer) {
+        if (employer != null) {
+            this.__validate_client_context__(employer.getClientId());
+        }
         this.employer = employer;
     }
 
@@ -352,6 +354,9 @@ public class EmployeeBase extends AbstractAuditable {
     }
 
     public void setCitizenship(Country citizenship) {
+        if (citizenship != null) {
+            this.__validate_client_context__(citizenship.getClientId());
+        }
         this.citizenship = citizenship;
     }
 
@@ -365,13 +370,6 @@ public class EmployeeBase extends AbstractAuditable {
         if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "E-" + this.getId());
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

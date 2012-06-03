@@ -85,6 +85,9 @@ public class PurchaseInventoryTransaction extends InvTransaction {
     }
 
     public void setSupplier(BusinessPartner supplier) {
+        if (supplier != null) {
+            this.__validate_client_context__(supplier.getClientId());
+        }
         this.supplier = supplier;
     }
 
@@ -93,6 +96,9 @@ public class PurchaseInventoryTransaction extends InvTransaction {
     }
 
     public void setPurchaseOrder(PurchaseOrder purchaseOrder) {
+        if (purchaseOrder != null) {
+            this.__validate_client_context__(purchaseOrder.getClientId());
+        }
         this.purchaseOrder = purchaseOrder;
     }
 
@@ -100,10 +106,6 @@ public class PurchaseInventoryTransaction extends InvTransaction {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
     }
 
 }

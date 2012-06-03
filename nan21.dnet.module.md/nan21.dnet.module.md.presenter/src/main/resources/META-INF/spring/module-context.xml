@@ -31,7 +31,6 @@
 	<import resource="beans/md.activity.ds.xml" />
 	
 	<import resource="beans/md.base.attr.ds.xml" />
-	<import resource="beans/md.base.elem.ds.xml" />
 	<import resource="beans/md.base.tx.ds.xml" />
 	<import resource="beans/md.base.tax.ds.xml" />
 	<import resource="beans/md.base.period.ds.xml" />

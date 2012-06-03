@@ -20,7 +20,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -188,6 +187,9 @@ public class AccOperation extends AbstractAuditable {
     }
 
     public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
         this.org = org;
     }
 
@@ -196,6 +198,9 @@ public class AccOperation extends AbstractAuditable {
     }
 
     public void setAccSchema(AccSchema accSchema) {
+        if (accSchema != null) {
+            this.__validate_client_context__(accSchema.getClientId());
+        }
         this.accSchema = accSchema;
     }
 
@@ -204,6 +209,9 @@ public class AccOperation extends AbstractAuditable {
     }
 
     public void setPeriod(FiscalPeriod period) {
+        if (period != null) {
+            this.__validate_client_context__(period.getClientId());
+        }
         this.period = period;
     }
 
@@ -212,6 +220,9 @@ public class AccOperation extends AbstractAuditable {
     }
 
     public void setAccDoc(AccDoc accDoc) {
+        if (accDoc != null) {
+            this.__validate_client_context__(accDoc.getClientId());
+        }
         this.accDoc = accDoc;
     }
 
@@ -220,6 +231,9 @@ public class AccOperation extends AbstractAuditable {
     }
 
     public void setAccDocLine(AccDocLine accDocLine) {
+        if (accDocLine != null) {
+            this.__validate_client_context__(accDocLine.getClientId());
+        }
         this.accDocLine = accDocLine;
     }
 
@@ -230,13 +244,6 @@ public class AccOperation extends AbstractAuditable {
         if (this.getHeaderLine() == null) {
             event.updateAttributeWithObject("headerLine", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

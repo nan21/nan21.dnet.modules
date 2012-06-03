@@ -359,6 +359,7 @@ public class Client implements IModelWithId {
         event.updateAttributeWithObject("modifiedAt", new Date());
         event.updateAttributeWithObject("modifiedBy", Session.user.get()
                 .getUsername());
+
     }
 
 }

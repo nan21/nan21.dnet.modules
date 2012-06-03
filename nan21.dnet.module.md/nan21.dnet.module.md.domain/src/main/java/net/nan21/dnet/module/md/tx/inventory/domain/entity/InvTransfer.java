@@ -74,8 +74,4 @@ public class InvTransfer extends InvTransaction {
 
     }
 
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-    }
-
 }

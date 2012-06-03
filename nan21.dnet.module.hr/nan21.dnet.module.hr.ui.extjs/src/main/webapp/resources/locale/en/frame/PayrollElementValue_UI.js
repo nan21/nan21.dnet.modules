@@ -1,8 +1,8 @@
 
 Ext.define("net.nan21.dnet.module.hr.payroll.frame.PayrollElementValue_UI$Trl", {  	  	
 	
-	tlbElemvalList__ttl : "Payroll elements overview",
+	tlbElemvalList__ttl : "Payroll values : elements",
 	
 	
-	title: "Payroll elements overview"
+	title: "Payroll values : elements"
 });

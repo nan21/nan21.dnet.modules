@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.ad.workflow.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode;
@@ -97,6 +95,9 @@ public class WfDefTransition extends AbstractAuditable {
     }
 
     public void setProcess(WfDefProcess process) {
+        if (process != null) {
+            this.__validate_client_context__(process.getClientId());
+        }
         this.process = process;
     }
 
@@ -105,6 +106,9 @@ public class WfDefTransition extends AbstractAuditable {
     }
 
     public void setSource(WfDefNode source) {
+        if (source != null) {
+            this.__validate_client_context__(source.getClientId());
+        }
         this.source = source;
     }
 
@@ -113,6 +117,9 @@ public class WfDefTransition extends AbstractAuditable {
     }
 
     public void setTarget(WfDefNode target) {
+        if (target != null) {
+            this.__validate_client_context__(target.getClientId());
+        }
         this.target = target;
     }
 
@@ -120,13 +127,6 @@ public class WfDefTransition extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

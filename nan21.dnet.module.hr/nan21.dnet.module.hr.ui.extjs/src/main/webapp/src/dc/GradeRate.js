@@ -28,15 +28,15 @@ Ext.define("net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter", {
 		.addLov({ name:"currencyCode", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currencyCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
-		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["name"])
-		.addChildrenTo("col2",["currencyCode","active"])
+		.addChildrenTo("col1",["name","currencyCode"])
+		.addChildrenTo("col2",["active"])
     	.addAuditFilter()	
 	}
 }); 

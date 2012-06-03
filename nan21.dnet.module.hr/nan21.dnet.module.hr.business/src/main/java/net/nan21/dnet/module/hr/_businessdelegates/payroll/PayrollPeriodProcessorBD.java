@@ -12,16 +12,41 @@ import org.eclipse.persistence.config.QueryHints;
 
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractBusinessDelegate;
+import net.nan21.dnet.module.bd.elem.domain.entity.ElementFormula;
+import net.nan21.dnet.module.bd.elem.domain.entity.ElementInput;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.hr.employee.business.service.IEmployeeService;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
+import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElement;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElementValue;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod;
-import net.nan21.dnet.module.md.base.elem.domain.entity.Element;
-import net.nan21.dnet.module.md.base.elem.domain.entity.ElementFormula;
-import net.nan21.dnet.module.md.base.elem.domain.entity.ElementInput;
 
 public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 
+	private ScriptEngine scriptEngine;
+	private List<PayrollElement> elements;
+	private Map<String, ElementFormula> formulas;
+	private IEmployeeService emplService;
+
+	/**
+	 * Close period
+	 * 
+	 * @param period
+	 * @throws Exception
+	 */
+	public void close(PayrollPeriod period) throws Exception {
+
+		period.setActive(false);
+		period.setClosed(true);
+		this.getEntityManager().merge(period);
+	}
+
+	/**
+	 * Clear period
+	 * 
+	 * @param period
+	 * @throws Exception
+	 */
 	public void clear(PayrollPeriod period) throws Exception {
 		String eql = "delete from " + PayrollElementValue.class.getSimpleName()
 				+ " e where e.clientId = :clientId "
@@ -33,11 +58,58 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 		this.getEntityManager().merge(period);
 	}
 
-	private ScriptEngine scriptEngine;
-	private List<Element> elements;
-	private Map<String, ElementFormula> formulas;
-	private IEmployeeService emplService;
+	/**
+	 * Open period
+	 * 
+	 * @param period
+	 * @throws Exception
+	 */
+	public void open(PayrollPeriod period) throws Exception {
 
+		this.emplService = (IEmployeeService) this
+				.findEntityService(Employee.class);
+
+		String eqlEmpl = "select e from " + Employee.class.getSimpleName()
+				+ " e " + " where e.clientId = :clientId "
+				+ "   and e.payroll.id = :payrollId ";
+
+		List<Employee> employees = this.emplService.getEntityManager()
+				.createQuery(eqlEmpl, Employee.class).setParameter("clientId",
+						Session.user.get().getClientId()).setParameter(
+						"payrollId", period.getPayroll().getId())
+				.getResultList();
+
+		// load elements
+		String eql = "select e from " + PayrollElement.class.getSimpleName()
+				+ " e " + " where e.clientId = :clientId "
+				+ "  and e.active = true" + " and e.calculation = 'manual' "
+				+ " and e.balance = false " + " and e.engine.id = :engineId ";
+
+		this.elements = this.emplService.getEntityManager().createQuery(eql,
+				PayrollElement.class).setParameter("engineId",
+				period.getPayroll().getEngine().getId()).setParameter(
+				"clientId", Session.user.get().getClientId()).getResultList();
+
+		for (Employee employee : employees) {
+			for (PayrollElement element : elements) {
+				PayrollElementValue elemVal = new PayrollElementValue();
+				elemVal.setEmployee(employee);
+				elemVal.setElement(element);
+				elemVal.setPeriod(period);
+				elemVal.setOrg(employee.getEmployer());
+				this.emplService.getEntityManager().persist(elemVal);
+			}
+		}
+		period.setActive(true);
+		this.getEntityManager().merge(period);
+	}
+
+	/**
+	 * Process period
+	 * 
+	 * @param period
+	 * @throws Exception
+	 */
 	public void process(PayrollPeriod period) throws Exception {
 		this.emplService = (IEmployeeService) this
 				.findEntityService(Employee.class);
@@ -52,25 +124,32 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 						QueryHints.LEFT_FETCH, "e.contacts").getResultList();
 
 		// load elements
-		String eql = "select e from " + Element.class.getSimpleName() + " e "
-				+ " where e.clientId = :clientId " + "  and e.active = true "
+		String eql = "select e from " + PayrollElement.class.getSimpleName()
+				+ " e " + " where e.clientId = :clientId "
+				+ "  and e.active = true and e.calculation = 'formula' "
+				+ "  and e.balance = false and e.engine.id = :engineId "
 				+ " order by e.sequenceNo ";
 
 		this.elements = this.emplService.getEntityManager().createQuery(eql,
-				Element.class).setParameter("clientId",
-				Session.user.get().getClientId()).getResultList();
+				PayrollElement.class).setParameter("engineId",
+				period.getPayroll().getEngine().getId()).setParameter(
+				"clientId", Session.user.get().getClientId()).getResultList();
 
 		// load valid formulas
-		String eqlf = "select e from " + ElementFormula.class.getSimpleName()
+		String eqlf = "select e from "
+				+ ElementFormula.class.getSimpleName()
 				+ " e "
 				+ " left join fetch e.element where e.clientId = :clientId "
-				+ "  and e.validFrom <= :eventDate "
-				+ " and (e.validTo is null or e.validTo>= :eventDate)";
+				+ "  and e.validFrom <= :eventDate and e.element.calculation = 'formula' "
+				+ " and (e.validTo is null or e.validTo>= :eventDate)"
+				+ " and e.element.engine.id = :engineId ";
 
 		List<ElementFormula> result = this.emplService.getEntityManager()
 				.createQuery(eqlf, ElementFormula.class).setParameter(
 						"clientId", Session.user.get().getClientId())
-				.setParameter("eventDate", new Date()).getResultList();
+				.setParameter("engineId",
+						period.getPayroll().getEngine().getId()).setParameter(
+						"eventDate", new Date()).getResultList();
 
 		// keep the formulas in a Map for later use
 		this.formulas = new HashMap<String, ElementFormula>();
@@ -83,21 +162,53 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 			this.processPayrollPeriod(period, employee);
 		}
 
+		// calculate totals
+		this.emplService.getEntityManager().flush();
+		// calculate sums
+		String t1 = " select e , ev.org , sum(ev.value) "
+				+ "  from PayrollElementValue ev ,  PayrollElement e "
+				+ " where ev.period.id = :periodId "
+				+ "  and ev.element.dataType = 'number' "
+				+ "  and e.sourceElement.id = ev.element.id "
+				+ "  and e.balance = true " + " and e.balanceFunction = 'sum'"
+				+ " group by e, ev.org ";
+		//				 
+		List<Object[]> t1res = this.emplService.getEntityManager().createQuery(
+				t1).setParameter("periodId", period.getId()).getResultList();
+		for (Object[] row : t1res) {
+			PayrollElementValue ev = new PayrollElementValue();
+			ev.setPeriod(period);
+			ev.setElement((PayrollElement) row[0]);
+			ev.setOrg((Organization) row[1]);
+			ev.setValue(row[2].toString());
+
+			this.getEntityManager().persist(ev);
+		}
 		period.setProcessed(true);
 		this.getEntityManager().merge(period);
 	}
 
+	/**
+	 * Helper processing function
+	 * 
+	 * @param period
+	 * @param employee
+	 * @throws Exception
+	 */
 	protected void processPayrollPeriod(PayrollPeriod period, Employee employee)
 			throws Exception {
 
 		Map<String, PayrollElementValue> elemValMap = new HashMap<String, PayrollElementValue>();
 		ScriptEngine engine = this.getScriptEngine();
 		engine.put("_employee", employee);
-		for (Element element : this.elements) {
+
+		for (PayrollElement element : this.elements) {
+
 			PayrollElementValue elemVal = new PayrollElementValue();
 			elemVal.setEmployee(employee);
 			elemVal.setElement(element);
 			elemVal.setPeriod(period);
+			elemVal.setOrg(employee.getEmployer());
 			elemValMap.put(element.getCode(), elemVal);
 
 			for (ElementInput var : element.getVariables()) {
@@ -121,7 +232,6 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 
 			}
 			if (element.getDataType().equals("number")) {
-
 				try {
 					Object result = engine.eval(this.formulas.get(
 							element.getCode()).getExpression());
@@ -139,14 +249,18 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 					throw new RuntimeException("Cannot process element `"
 							+ element.getCode() + "` - `" + element.getName()
 							+ "` (step=" + element.getSequenceNo()
-							+ ") Reason is: "+e.getMessage());
+							+ ") Reason is: " + e.getMessage());
 				}
-
 			}
 			this.emplService.getEntityManager().persist(elemVal);
 		}
 	}
 
+	/**
+	 * Get scripting engine
+	 * 
+	 * @return
+	 */
 	protected ScriptEngine getScriptEngine() {
 		if (this.scriptEngine == null) {
 			ScriptEngineManager manager = new ScriptEngineManager();

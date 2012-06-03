@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.ad.usr.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
 import net.nan21.dnet.module.ad.usr.domain.entity.AssignableType;
@@ -98,6 +96,9 @@ public class Assignable extends AbstractType {
     }
 
     public void setAssignableType(AssignableType assignableType) {
+        if (assignableType != null) {
+            this.__validate_client_context__(assignableType.getClientId());
+        }
         this.assignableType = assignableType;
     }
 
@@ -108,13 +109,6 @@ public class Assignable extends AbstractType {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

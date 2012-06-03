@@ -99,6 +99,9 @@ public class EmployeeContact extends Person {
     }
 
     public void setEmployee(Employee employee) {
+        if (employee != null) {
+            this.__validate_client_context__(employee.getClientId());
+        }
         this.employee = employee;
     }
 
@@ -107,6 +110,9 @@ public class EmployeeContact extends Person {
     }
 
     public void setType(EmployeeContactType type) {
+        if (type != null) {
+            this.__validate_client_context__(type.getClientId());
+        }
         this.type = type;
     }
 
@@ -115,6 +121,9 @@ public class EmployeeContact extends Person {
     }
 
     public void setRelationship(EmployeeContactRelationship relationship) {
+        if (relationship != null) {
+            this.__validate_client_context__(relationship.getClientId());
+        }
         this.relationship = relationship;
     }
 
@@ -125,10 +134,6 @@ public class EmployeeContact extends Person {
         if (this.getIsDependent() == null) {
             event.updateAttributeWithObject("isDependent", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
     }
 
 }

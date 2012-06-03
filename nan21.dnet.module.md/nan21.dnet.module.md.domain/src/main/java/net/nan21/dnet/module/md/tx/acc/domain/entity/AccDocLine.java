@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.tx.acc.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
@@ -159,6 +157,9 @@ public class AccDocLine extends AbstractAuditable {
     }
 
     public void setAccDoc(AccDoc accDoc) {
+        if (accDoc != null) {
+            this.__validate_client_context__(accDoc.getClientId());
+        }
         this.accDoc = accDoc;
     }
 
@@ -167,6 +168,9 @@ public class AccDocLine extends AbstractAuditable {
     }
 
     public void setProduct(Product product) {
+        if (product != null) {
+            this.__validate_client_context__(product.getClientId());
+        }
         this.product = product;
     }
 
@@ -175,6 +179,9 @@ public class AccDocLine extends AbstractAuditable {
     }
 
     public void setAsset(AssetBase asset) {
+        if (asset != null) {
+            this.__validate_client_context__(asset.getClientId());
+        }
         this.asset = asset;
     }
 
@@ -185,13 +192,6 @@ public class AccDocLine extends AbstractAuditable {
         if (this.getHeaderLine() == null) {
             event.updateAttributeWithObject("headerLine", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

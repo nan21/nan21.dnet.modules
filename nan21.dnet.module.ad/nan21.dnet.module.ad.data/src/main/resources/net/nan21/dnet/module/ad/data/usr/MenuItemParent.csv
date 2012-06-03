@@ -34,11 +34,8 @@ CurrencyXRates_UI;bd-menu-currency
 CurrencyXrateProvider_UI;bd-menu-currency
 DsAccessControl_UI;ad-menu-acl
 DsMethodAccessControl_UI;ad-menu-acl
-ElementBaseData_UI;md-menu-base-elem
-ElementFormulas_UI;md-menu-base-elem
-ElementInputs_UI;md-menu-base-elem
-Element_UI;md-menu-base-elem
-Elements_UI;md-menu-base-elem
+ElementBaseData_UI;bd-menu-elem
+ElementSet_UI;bd-menu-elem
 EmployeeTypeDefs_UI;hr-menu-employee
 Employee_UI;hr-menu-employee
 ExportJob_UI;ad-menu-exp
@@ -76,7 +73,12 @@ PayScale_UI;hr-menu-grade
 PaymentIn_UI;sd-menu-pay
 PaymentOut_UI;sc-menu-pay
 Payment_UI;fi-menu-tx-fin
+PayrollBalanceValue_UI;hr-menu-payroll
+PayrollElementFormulas_UI;hr-menu-payroll-setup
+PayrollElementInputs_UI;hr-menu-payroll-setup
 PayrollElementValue_UI;hr-menu-payroll
+PayrollElement_UI;hr-menu-payroll-setup
+PayrollElements_UI;hr-menu-payroll-setup
 PayrollManualValue_UI;hr-menu-payroll
 Payroll_UI;hr-menu-payroll
 Position_UI;hr-menu-job
@@ -151,6 +153,7 @@ ad-menu-usr;ad-menu-security
 ad-menu-wf;
 bd-menu-contact;
 bd-menu-currency;
+bd-menu-elem;
 bd-menu-geo;
 bd-menu-org;
 bd-menu-stds;
@@ -171,6 +174,7 @@ hr-menu-employee;
 hr-menu-grade;
 hr-menu-job;
 hr-menu-payroll;
+hr-menu-payroll-setup;hr-menu-payroll
 hr-menu-skill;
 hr-menu-time;
 hr-menu-training;
@@ -178,7 +182,6 @@ iv-menu-base;
 iv-menu-tx;
 md-menu-base;
 md-menu-base-attr;md-menu-base
-md-menu-base-elem;md-menu-base
 mm-menu;
 mm-menu-base;mm-menu
 mm-menu-md;mm-menu

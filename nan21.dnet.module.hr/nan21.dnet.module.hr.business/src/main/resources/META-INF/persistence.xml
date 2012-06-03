@@ -40,6 +40,7 @@
 		 
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.Payroll</class>
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod</class>
+		<class>net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElement</class>
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElementValue</class>
 		
 		<class>net.nan21.dnet.module.hr.skill.domain.entity.RatingScale</class>
@@ -73,6 +74,7 @@
 		<class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>
 		<class>net.nan21.dnet.module.ad.data.domain.entity.AttachmentType</class>
 		
+		
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Region</class>
@@ -84,6 +86,19 @@
 		
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
 		
+		<class>net.nan21.dnet.module.md.acc.domain.entity.AccItem</class>
+         
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.Engine</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementCategory</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementType</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.Element</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementInput</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementFormula</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementSet</class>		 
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementSetElement</class>
+		
+		<class>net.nan21.dnet.module.md.res.domain.entity.EmployeeBase</class>
+		 
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

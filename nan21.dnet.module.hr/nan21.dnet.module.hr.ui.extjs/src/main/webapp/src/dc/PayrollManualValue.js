@@ -23,9 +23,11 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.PayrollManualValue$Filter", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"element", xtype:"net.nan21.dnet.module.md.base.elem.lovs.ElementsCode", dataIndex:"element",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "elementId"} ]  })
+		.addLov({ name:"element", xtype:"net.nan21.dnet.module.hr.payroll.lovs.PayrollElementsCode", dataIndex:"element",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "elementId"} ]  })
 		.addLov({ name:"employeeName", xtype:"net.nan21.dnet.module.hr.employee.lovs.Employees", dataIndex:"employeeName",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "employeeId"} ]  })
 		.addLov({ name:"period", xtype:"net.nan21.dnet.module.hr.payroll.lovs.PayrollPeriods", dataIndex:"period",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "periodId"} ]  })
+		.addLov({ name:"employer", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"employer",anchor:"-20",allowBlank:false,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "employerId"} ]  })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.bd.elem.lovs.ElementTypes", dataIndex:"type",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		.addDateField({ name:"periodStart_From", dataIndex:"periodStart_From", emptyText:"From" })
 		.addDateField({ name:"periodStart_To", dataIndex:"periodStart_To", emptyText:"To" })
 		.addFieldContainer({name: "periodStart", fieldLabel:"Period Start"}) 
@@ -38,15 +40,17 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.PayrollManualValue$Filter", {
 
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:250}) 
-		.addPanel({ name:"col2", layout:"form", width:300}) 
+		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"col3", layout:"form", width:300}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["element","period","employeeName"])
-		.addChildrenTo("col2",["periodStart","periodEnd"])
+		.addChildrenTo("main",["col1","col2","col3"])
+		.addChildrenTo("col1",["employer","period","element"])
+		.addChildrenTo("col2",["type","employeeName"])
+		.addChildrenTo("col3",["periodStart","periodEnd"])
     	.addAuditFilter()	
 	}
 }); 
@@ -59,7 +63,10 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.PayrollManualValue$EditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
+		.addTextColumn({ name:"employer", dataIndex:"employer",width:100 })
 		.addTextColumn({ name:"period", dataIndex:"period",width:120 })
+		.addDateColumn({ name:"periodStart", dataIndex:"periodStart", hidden:true,format:Dnet.DATE_FORMAT})
+		.addDateColumn({ name:"periodEnd", dataIndex:"periodEnd", hidden:true,format:Dnet.DATE_FORMAT})
 		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right"})
 		.addTextColumn({ name:"element", dataIndex:"element",width:100 })
 		.addTextColumn({ name:"elementName", dataIndex:"elementName",width:200 })

@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.bd.org.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.bd.org.domain.entity.Calendar;
@@ -112,6 +110,9 @@ public class Organization extends AbstractTypeWithCode {
     }
 
     public void setType(OrganizationType type) {
+        if (type != null) {
+            this.__validate_client_context__(type.getClientId());
+        }
         this.type = type;
     }
 
@@ -120,6 +121,9 @@ public class Organization extends AbstractTypeWithCode {
     }
 
     public void setCalendar(Calendar calendar) {
+        if (calendar != null) {
+            this.__validate_client_context__(calendar.getClientId());
+        }
         this.calendar = calendar;
     }
 
@@ -133,13 +137,6 @@ public class Organization extends AbstractTypeWithCode {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

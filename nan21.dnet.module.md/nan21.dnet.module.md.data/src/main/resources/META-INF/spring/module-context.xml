@@ -132,45 +132,7 @@
 									value="classpath:net/nan21/dnet/module/md/data/base/PaymentTerm.csv" />
 							</bean>
 							
-							 <!--  Elements -->
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="101" />
-								<property name="dsName" value="ElementCategory" />
-								<property name="destPath" value="demo-data/md/base" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/base/elem/ElementCategory.csv" />
-							</bean>
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="101" />
-								<property name="dsName" value="ElementType" />
-								<property name="destPath" value="demo-data/md/base" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/base/elem/ElementType.csv" />
-							</bean>
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="101" />
-								<property name="dsName" value="Element" />
-								<property name="destPath" value="demo-data/md/base" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/base/elem/Element.csv" />
-							</bean>
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="101" />
-								<property name="dsName" value="ElementInput" />
-								<property name="destPath" value="demo-data/md/base" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/base/elem/ElementInput.csv" />
-							</bean>
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="101" />
-								<property name="dsName" value="ElementFormula" />
-								<property name="destPath" value="demo-data/md/base" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/base/elem/ElementFormula.csv" />
-							</bean>
-							
 							 
-							
 							<!--  Attributes -->
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="120" />

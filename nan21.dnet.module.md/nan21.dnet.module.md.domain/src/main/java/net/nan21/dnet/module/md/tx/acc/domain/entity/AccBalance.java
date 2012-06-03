@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.tx.acc.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -126,6 +124,9 @@ public class AccBalance extends AbstractAuditable {
     }
 
     public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
         this.org = org;
     }
 
@@ -134,6 +135,9 @@ public class AccBalance extends AbstractAuditable {
     }
 
     public void setAccSchema(AccSchema accSchema) {
+        if (accSchema != null) {
+            this.__validate_client_context__(accSchema.getClientId());
+        }
         this.accSchema = accSchema;
     }
 
@@ -142,6 +146,9 @@ public class AccBalance extends AbstractAuditable {
     }
 
     public void setPeriod(FiscalPeriod period) {
+        if (period != null) {
+            this.__validate_client_context__(period.getClientId());
+        }
         this.period = period;
     }
 
@@ -149,13 +156,6 @@ public class AccBalance extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

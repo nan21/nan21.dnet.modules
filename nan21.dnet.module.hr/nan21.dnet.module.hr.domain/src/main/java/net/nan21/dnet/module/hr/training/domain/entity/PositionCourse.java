@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.hr.training.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.hr.job.domain.entity.Position;
@@ -109,6 +107,9 @@ public class PositionCourse extends AbstractAuditable {
     }
 
     public void setPosition(Position position) {
+        if (position != null) {
+            this.__validate_client_context__(position.getClientId());
+        }
         this.position = position;
     }
 
@@ -117,6 +118,9 @@ public class PositionCourse extends AbstractAuditable {
     }
 
     public void setCourse(Course course) {
+        if (course != null) {
+            this.__validate_client_context__(course.getClientId());
+        }
         this.course = course;
     }
 
@@ -127,13 +131,6 @@ public class PositionCourse extends AbstractAuditable {
         if (this.getMandatory() == null) {
             event.updateAttributeWithObject("mandatory", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

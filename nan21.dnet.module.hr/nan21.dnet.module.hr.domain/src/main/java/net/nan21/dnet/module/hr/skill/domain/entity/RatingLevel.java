@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.hr.skill.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
 import net.nan21.dnet.module.hr.skill.domain.entity.RatingScale;
@@ -37,7 +35,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = RatingLevel.NQ_FIND_BY_ID, query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = RatingLevel.NQ_FIND_BY_IDS, query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = RatingLevel.NQ_FIND_BY_NAME, query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and  e.ratingScale = :pRatingScale and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "RatingLevel.findByName_PRIMITIVE", query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and  e.ratingScale.id = :pRatingScaleId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = RatingLevel.NQ_FIND_BY_NAME_PRIMITIVE, query = "SELECT e FROM RatingLevel e WHERE e.clientId = :pClientId and  e.ratingScale.id = :pRatingScaleId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class RatingLevel extends AbstractType {
 
     public static final String TABLE_NAME = "HR_RATE_LVL";
@@ -105,6 +103,9 @@ public class RatingLevel extends AbstractType {
     }
 
     public void setRatingScale(RatingScale ratingScale) {
+        if (ratingScale != null) {
+            this.__validate_client_context__(ratingScale.getClientId());
+        }
         this.ratingScale = ratingScale;
     }
 
@@ -115,13 +116,6 @@ public class RatingLevel extends AbstractType {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

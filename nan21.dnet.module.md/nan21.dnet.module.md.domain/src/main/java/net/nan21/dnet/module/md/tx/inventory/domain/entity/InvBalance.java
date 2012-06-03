@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.tx.inventory.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
@@ -103,6 +101,9 @@ public class InvBalance extends AbstractAuditable {
     }
 
     public void setSubInventory(SubInventory subInventory) {
+        if (subInventory != null) {
+            this.__validate_client_context__(subInventory.getClientId());
+        }
         this.subInventory = subInventory;
     }
 
@@ -111,6 +112,9 @@ public class InvBalance extends AbstractAuditable {
     }
 
     public void setLocator(StockLocator locator) {
+        if (locator != null) {
+            this.__validate_client_context__(locator.getClientId());
+        }
         this.locator = locator;
     }
 
@@ -119,6 +123,9 @@ public class InvBalance extends AbstractAuditable {
     }
 
     public void setItem(Product item) {
+        if (item != null) {
+            this.__validate_client_context__(item.getClientId());
+        }
         this.item = item;
     }
 
@@ -127,6 +134,9 @@ public class InvBalance extends AbstractAuditable {
     }
 
     public void setUom(Uom uom) {
+        if (uom != null) {
+            this.__validate_client_context__(uom.getClientId());
+        }
         this.uom = uom;
     }
 
@@ -134,13 +144,6 @@ public class InvBalance extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

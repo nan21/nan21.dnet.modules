@@ -33,7 +33,9 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = Asset.NQ_FIND_BY_ID, query = "SELECT e FROM Asset e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = Asset.NQ_FIND_BY_IDS, query = "SELECT e FROM Asset e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = Asset.NQ_FIND_BY_IDS, query = "SELECT e FROM Asset e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Asset.NQ_FIND_BY_CODE, query = "SELECT e FROM Asset e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = Asset.NQ_FIND_BY_NAME, query = "SELECT e FROM Asset e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Asset extends AssetBase {
 
     public static final String TABLE_NAME = "FI_ASSET";
@@ -50,6 +52,16 @@ public class Asset extends AssetBase {
      * Named query find by IDs.
      */
     public static final String NQ_FIND_BY_IDS = "Asset.findByIds";
+
+    /**
+     * Named query find by unique key: Code.
+     */
+    public static final String NQ_FIND_BY_CODE = "Asset.findByCode";
+
+    /**
+     * Named query find by unique key: Name.
+     */
+    public static final String NQ_FIND_BY_NAME = "Asset.findByName";
 
     /**
      * System generated unique identifier.
@@ -79,6 +91,9 @@ public class Asset extends AssetBase {
     }
 
     public void setCategory(AssetCategory category) {
+        if (category != null) {
+            this.__validate_client_context__(category.getClientId());
+        }
         this.category = category;
     }
 
@@ -86,10 +101,6 @@ public class Asset extends AssetBase {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
     }
 
 }

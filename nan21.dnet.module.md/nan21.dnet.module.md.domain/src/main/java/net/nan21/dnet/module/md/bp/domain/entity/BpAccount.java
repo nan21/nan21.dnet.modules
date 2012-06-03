@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.bp.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -43,7 +41,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = BpAccount.NQ_FIND_BY_ID, query = "SELECT e FROM BpAccount e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = BpAccount.NQ_FIND_BY_IDS, query = "SELECT e FROM BpAccount e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = BpAccount.NQ_FIND_BY_BP_ORG, query = "SELECT e FROM BpAccount e WHERE e.clientId = :pClientId and  e.bpartner = :pBpartner and e.org = :pOrg ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "BpAccount.findByBp_org_PRIMITIVE", query = "SELECT e FROM BpAccount e WHERE e.clientId = :pClientId and  e.bpartner.id = :pBpartnerId and e.org.id = :pOrgId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = BpAccount.NQ_FIND_BY_BP_ORG_PRIMITIVE, query = "SELECT e FROM BpAccount e WHERE e.clientId = :pClientId and  e.bpartner.id = :pBpartnerId and e.org.id = :pOrgId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class BpAccount extends AbstractAuditable {
 
     public static final String TABLE_NAME = "MD_BP_ACNT";
@@ -208,6 +206,9 @@ public class BpAccount extends AbstractAuditable {
     }
 
     public void setBpartner(BusinessPartner bpartner) {
+        if (bpartner != null) {
+            this.__validate_client_context__(bpartner.getClientId());
+        }
         this.bpartner = bpartner;
     }
 
@@ -216,6 +217,9 @@ public class BpAccount extends AbstractAuditable {
     }
 
     public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
         this.org = org;
     }
 
@@ -224,6 +228,9 @@ public class BpAccount extends AbstractAuditable {
     }
 
     public void setCustGroup(CustomerGroup custGroup) {
+        if (custGroup != null) {
+            this.__validate_client_context__(custGroup.getClientId());
+        }
         this.custGroup = custGroup;
     }
 
@@ -232,6 +239,9 @@ public class BpAccount extends AbstractAuditable {
     }
 
     public void setCustPaymentMethod(PaymentMethod custPaymentMethod) {
+        if (custPaymentMethod != null) {
+            this.__validate_client_context__(custPaymentMethod.getClientId());
+        }
         this.custPaymentMethod = custPaymentMethod;
     }
 
@@ -240,6 +250,9 @@ public class BpAccount extends AbstractAuditable {
     }
 
     public void setCustPaymentTerm(PaymentTerm custPaymentTerm) {
+        if (custPaymentTerm != null) {
+            this.__validate_client_context__(custPaymentTerm.getClientId());
+        }
         this.custPaymentTerm = custPaymentTerm;
     }
 
@@ -248,6 +261,9 @@ public class BpAccount extends AbstractAuditable {
     }
 
     public void setCustDeliveryMethod(DeliveryMethod custDeliveryMethod) {
+        if (custDeliveryMethod != null) {
+            this.__validate_client_context__(custDeliveryMethod.getClientId());
+        }
         this.custDeliveryMethod = custDeliveryMethod;
     }
 
@@ -256,6 +272,9 @@ public class BpAccount extends AbstractAuditable {
     }
 
     public void setVendGroup(VendorGroup vendGroup) {
+        if (vendGroup != null) {
+            this.__validate_client_context__(vendGroup.getClientId());
+        }
         this.vendGroup = vendGroup;
     }
 
@@ -264,6 +283,9 @@ public class BpAccount extends AbstractAuditable {
     }
 
     public void setVendPaymentMethod(PaymentMethod vendPaymentMethod) {
+        if (vendPaymentMethod != null) {
+            this.__validate_client_context__(vendPaymentMethod.getClientId());
+        }
         this.vendPaymentMethod = vendPaymentMethod;
     }
 
@@ -272,6 +294,9 @@ public class BpAccount extends AbstractAuditable {
     }
 
     public void setVendPaymentTerm(PaymentTerm vendPaymentTerm) {
+        if (vendPaymentTerm != null) {
+            this.__validate_client_context__(vendPaymentTerm.getClientId());
+        }
         this.vendPaymentTerm = vendPaymentTerm;
     }
 
@@ -285,13 +310,6 @@ public class BpAccount extends AbstractAuditable {
         if (this.getVendor() == null) {
             event.updateAttributeWithObject("vendor", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -8,8 +8,10 @@ package net.nan21.dnet.module.hr.payroll.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
 import net.nan21.dnet.module.hr.payroll.business.service.IPayrollElementValueService;
+import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElement;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod;
 
 import javax.persistence.EntityManager;
@@ -33,17 +35,17 @@ public class PayrollElementValueService extends
         return PayrollElementValue.class;
     }
 
-    public List<PayrollElementValue> findByEmployee(Employee employee) {
-        return this.findByEmployeeId(employee.getId());
+    public List<PayrollElementValue> findByElement(PayrollElement element) {
+        return this.findByElementId(element.getId());
     }
 
-    public List<PayrollElementValue> findByEmployeeId(Long employeeId) {
+    public List<PayrollElementValue> findByElementId(Long elementId) {
         return (List<PayrollElementValue>) this.em
                 .createQuery(
-                        "select e from PayrollElementValue e where e.clientId = :pClientId and e.employee.id = :pEmployeeId",
+                        "select e from PayrollElementValue e where e.clientId = :pClientId and e.element.id = :pElementId",
                         PayrollElementValue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pEmployeeId", employeeId).getResultList();
+                .setParameter("pElementId", elementId).getResultList();
     }
 
     public List<PayrollElementValue> findByPeriod(PayrollPeriod period) {
@@ -57,6 +59,32 @@ public class PayrollElementValueService extends
                         PayrollElementValue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPeriodId", periodId).getResultList();
+    }
+
+    public List<PayrollElementValue> findByEmployee(Employee employee) {
+        return this.findByEmployeeId(employee.getId());
+    }
+
+    public List<PayrollElementValue> findByEmployeeId(Long employeeId) {
+        return (List<PayrollElementValue>) this.em
+                .createQuery(
+                        "select e from PayrollElementValue e where e.clientId = :pClientId and e.employee.id = :pEmployeeId",
+                        PayrollElementValue.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pEmployeeId", employeeId).getResultList();
+    }
+
+    public List<PayrollElementValue> findByOrg(Organization org) {
+        return this.findByOrgId(org.getId());
+    }
+
+    public List<PayrollElementValue> findByOrgId(Long orgId) {
+        return (List<PayrollElementValue>) this.em
+                .createQuery(
+                        "select e from PayrollElementValue e where e.clientId = :pClientId and e.org.id = :pOrgId",
+                        PayrollElementValue.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pOrgId", orgId).getResultList();
     }
 
 }

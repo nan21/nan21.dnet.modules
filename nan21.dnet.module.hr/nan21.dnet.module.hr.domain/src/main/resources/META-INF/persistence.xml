@@ -22,6 +22,19 @@
         
         <class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
         
+        <class>net.nan21.dnet.module.md.acc.domain.entity.AccItem</class>
+        
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.Engine</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementCategory</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementType</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.Element</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementInput</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementFormula</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementSet</class>		 
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementSetElement</class>
+		
+		<class>net.nan21.dnet.module.md.res.domain.entity.EmployeeBase</class>
+		
         <class>net.nan21.dnet.core.domain.model.AbstractSimpleEntity</class>
 		<class>net.nan21.dnet.core.domain.model.AbstractAuditable</class>
 		<class>net.nan21.dnet.core.domain.model.AbstractType</class>

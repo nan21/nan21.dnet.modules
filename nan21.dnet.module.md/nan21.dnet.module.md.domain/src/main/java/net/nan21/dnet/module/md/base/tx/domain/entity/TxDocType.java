@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.base.tx.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
 import net.nan21.dnet.module.md.acc.domain.entity.AccJournal;
@@ -104,6 +102,9 @@ public class TxDocType extends AbstractType {
     }
 
     public void setDocSequence(TxDocSequence docSequence) {
+        if (docSequence != null) {
+            this.__validate_client_context__(docSequence.getClientId());
+        }
         this.docSequence = docSequence;
     }
 
@@ -112,6 +113,9 @@ public class TxDocType extends AbstractType {
     }
 
     public void setJournal(AccJournal journal) {
+        if (journal != null) {
+            this.__validate_client_context__(journal.getClientId());
+        }
         this.journal = journal;
     }
 
@@ -122,13 +126,6 @@ public class TxDocType extends AbstractType {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

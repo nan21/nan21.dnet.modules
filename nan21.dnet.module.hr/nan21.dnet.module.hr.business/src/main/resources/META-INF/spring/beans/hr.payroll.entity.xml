@@ -7,6 +7,9 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="PayrollElementService" scope="prototype"
+	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.PayrollElementService"  />  
+ 
  	<bean id="PayrollElementValueService" scope="prototype"
 	  		class="net.nan21.dnet.module.hr.payroll.business.serviceimpl.PayrollElementValueService"  />  
  

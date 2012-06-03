@@ -7,7 +7,6 @@ package net.nan21.dnet.module.ad.workflow.domain.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +22,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
 import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess;
@@ -146,6 +144,9 @@ public class WfDefNode extends AbstractType {
     }
 
     public void setProcess(WfDefProcess process) {
+        if (process != null) {
+            this.__validate_client_context__(process.getClientId());
+        }
         this.process = process;
     }
 
@@ -175,13 +176,6 @@ public class WfDefNode extends AbstractType {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

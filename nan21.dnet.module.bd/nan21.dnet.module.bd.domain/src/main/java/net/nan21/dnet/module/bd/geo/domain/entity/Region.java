@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.bd.geo.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
@@ -37,7 +35,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = Region.NQ_FIND_BY_ID, query = "SELECT e FROM Region e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = Region.NQ_FIND_BY_IDS, query = "SELECT e FROM Region e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = Region.NQ_FIND_BY_CODEANDCOUNTRY, query = "SELECT e FROM Region e WHERE e.clientId = :pClientId and  e.country = :pCountry and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "Region.findByCodeAndCountry_PRIMITIVE", query = "SELECT e FROM Region e WHERE e.clientId = :pClientId and  e.country.id = :pCountryId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = Region.NQ_FIND_BY_CODEANDCOUNTRY_PRIMITIVE, query = "SELECT e FROM Region e WHERE e.clientId = :pClientId and  e.country.id = :pCountryId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Region extends AbstractTypeWithCode {
 
     public static final String TABLE_NAME = "BD_GEO_REGION";
@@ -104,6 +102,9 @@ public class Region extends AbstractTypeWithCode {
     }
 
     public void setCountry(Country country) {
+        if (country != null) {
+            this.__validate_client_context__(country.getClientId());
+        }
         this.country = country;
     }
 
@@ -114,13 +115,6 @@ public class Region extends AbstractTypeWithCode {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

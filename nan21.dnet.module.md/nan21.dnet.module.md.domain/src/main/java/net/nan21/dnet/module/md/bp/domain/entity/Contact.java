@@ -103,6 +103,9 @@ public class Contact extends Person {
     }
 
     public void setBpartner(BusinessPartner bpartner) {
+        if (bpartner != null) {
+            this.__validate_client_context__(bpartner.getClientId());
+        }
         this.bpartner = bpartner;
     }
 
@@ -113,10 +116,6 @@ public class Contact extends Person {
         if (this.getActive() == null) {
 
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
     }
 
 }

@@ -6,7 +6,6 @@
 package net.nan21.dnet.module.ad.usr.domain.entity;
 
 import java.util.Collection;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -22,7 +21,6 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
 import net.nan21.dnet.module.ad.usr.domain.entity.Menu;
@@ -191,6 +189,9 @@ public class MenuItem extends AbstractType {
     }
 
     public void setMenuItem(MenuItem menuItem) {
+        if (menuItem != null) {
+            this.__validate_client_context__(menuItem.getClientId());
+        }
         this.menuItem = menuItem;
     }
 
@@ -199,6 +200,9 @@ public class MenuItem extends AbstractType {
     }
 
     public void setMenu(Menu menu) {
+        if (menu != null) {
+            this.__validate_client_context__(menu.getClientId());
+        }
         this.menu = menu;
     }
 
@@ -217,13 +221,6 @@ public class MenuItem extends AbstractType {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

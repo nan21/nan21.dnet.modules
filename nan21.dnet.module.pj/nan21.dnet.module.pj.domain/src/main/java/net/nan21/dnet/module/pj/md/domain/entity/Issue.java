@@ -25,7 +25,6 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.pj.base.domain.entity.IssuePriority;
@@ -250,6 +249,9 @@ public class Issue extends AbstractAuditable {
     }
 
     public void setProject(Project project) {
+        if (project != null) {
+            this.__validate_client_context__(project.getClientId());
+        }
         this.project = project;
     }
 
@@ -258,6 +260,9 @@ public class Issue extends AbstractAuditable {
     }
 
     public void setStatus(IssueStatus status) {
+        if (status != null) {
+            this.__validate_client_context__(status.getClientId());
+        }
         this.status = status;
     }
 
@@ -266,6 +271,9 @@ public class Issue extends AbstractAuditable {
     }
 
     public void setType(IssueType type) {
+        if (type != null) {
+            this.__validate_client_context__(type.getClientId());
+        }
         this.type = type;
     }
 
@@ -274,6 +282,9 @@ public class Issue extends AbstractAuditable {
     }
 
     public void setPriority(IssuePriority priority) {
+        if (priority != null) {
+            this.__validate_client_context__(priority.getClientId());
+        }
         this.priority = priority;
     }
 
@@ -282,6 +293,9 @@ public class Issue extends AbstractAuditable {
     }
 
     public void setResolution(IssueResolution resolution) {
+        if (resolution != null) {
+            this.__validate_client_context__(resolution.getClientId());
+        }
         this.resolution = resolution;
     }
 
@@ -290,6 +304,9 @@ public class Issue extends AbstractAuditable {
     }
 
     public void setSeverity(IssueSeverity severity) {
+        if (severity != null) {
+            this.__validate_client_context__(severity.getClientId());
+        }
         this.severity = severity;
     }
 
@@ -298,6 +315,9 @@ public class Issue extends AbstractAuditable {
     }
 
     public void setReportedVersion(ProjectVersion reportedVersion) {
+        if (reportedVersion != null) {
+            this.__validate_client_context__(reportedVersion.getClientId());
+        }
         this.reportedVersion = reportedVersion;
     }
 
@@ -306,6 +326,9 @@ public class Issue extends AbstractAuditable {
     }
 
     public void setTargetVersion(ProjectVersion targetVersion) {
+        if (targetVersion != null) {
+            this.__validate_client_context__(targetVersion.getClientId());
+        }
         this.targetVersion = targetVersion;
     }
 
@@ -314,6 +337,9 @@ public class Issue extends AbstractAuditable {
     }
 
     public void setFixedInVersion(ProjectVersion fixedInVersion) {
+        if (fixedInVersion != null) {
+            this.__validate_client_context__(fixedInVersion.getClientId());
+        }
         this.fixedInVersion = fixedInVersion;
     }
 
@@ -322,6 +348,9 @@ public class Issue extends AbstractAuditable {
     }
 
     public void setAssignee(ProjectMember assignee) {
+        if (assignee != null) {
+            this.__validate_client_context__(assignee.getClientId());
+        }
         this.assignee = assignee;
     }
 
@@ -330,6 +359,9 @@ public class Issue extends AbstractAuditable {
     }
 
     public void setAssigneeRole(ProjectRole assigneeRole) {
+        if (assigneeRole != null) {
+            this.__validate_client_context__(assigneeRole.getClientId());
+        }
         this.assigneeRole = assigneeRole;
     }
 
@@ -357,13 +389,6 @@ public class Issue extends AbstractAuditable {
         if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "I-" + this.getId());
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

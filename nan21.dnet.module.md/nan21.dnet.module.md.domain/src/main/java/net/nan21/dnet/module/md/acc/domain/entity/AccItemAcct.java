@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.acc.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.md.acc.domain.entity.AccItem;
@@ -39,7 +37,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = AccItemAcct.NQ_FIND_BY_ID, query = "SELECT e FROM AccItemAcct e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = AccItemAcct.NQ_FIND_BY_IDS, query = "SELECT e FROM AccItemAcct e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = AccItemAcct.NQ_FIND_BY_ITEM_SCHEMA, query = "SELECT e FROM AccItemAcct e WHERE e.clientId = :pClientId and  e.accItem = :pAccItem and e.accSchema = :pAccSchema ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "AccItemAcct.findByItem_schema_PRIMITIVE", query = "SELECT e FROM AccItemAcct e WHERE e.clientId = :pClientId and  e.accItem.id = :pAccItemId and e.accSchema.id = :pAccSchemaId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = AccItemAcct.NQ_FIND_BY_ITEM_SCHEMA_PRIMITIVE, query = "SELECT e FROM AccItemAcct e WHERE e.clientId = :pClientId and  e.accItem.id = :pAccItemId and e.accSchema.id = :pAccSchemaId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AccItemAcct extends AbstractAuditable {
 
     public static final String TABLE_NAME = "MD_ACC_ITEM_ACCT";
@@ -104,6 +102,9 @@ public class AccItemAcct extends AbstractAuditable {
     }
 
     public void setAccItem(AccItem accItem) {
+        if (accItem != null) {
+            this.__validate_client_context__(accItem.getClientId());
+        }
         this.accItem = accItem;
     }
 
@@ -112,6 +113,9 @@ public class AccItemAcct extends AbstractAuditable {
     }
 
     public void setAccSchema(AccSchema accSchema) {
+        if (accSchema != null) {
+            this.__validate_client_context__(accSchema.getClientId());
+        }
         this.accSchema = accSchema;
     }
 
@@ -120,6 +124,9 @@ public class AccItemAcct extends AbstractAuditable {
     }
 
     public void setCrAccount(Account crAccount) {
+        if (crAccount != null) {
+            this.__validate_client_context__(crAccount.getClientId());
+        }
         this.crAccount = crAccount;
     }
 
@@ -128,6 +135,9 @@ public class AccItemAcct extends AbstractAuditable {
     }
 
     public void setDbAccount(Account dbAccount) {
+        if (dbAccount != null) {
+            this.__validate_client_context__(dbAccount.getClientId());
+        }
         this.dbAccount = dbAccount;
     }
 
@@ -135,13 +145,6 @@ public class AccItemAcct extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

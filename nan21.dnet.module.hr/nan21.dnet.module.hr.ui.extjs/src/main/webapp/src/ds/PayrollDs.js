@@ -18,6 +18,8 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollDs" ,{
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
+		{name:"engineId", type:"int", useNull:true},
+		{name:"engine", type:"string"},
 		{name:"periodType", type:"string"}
 	],
 	validations: [  
@@ -43,6 +45,10 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollDsFilter" ,{
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"entityFQN", type:"string"},
+		{name:"engineId", type:"int", useNull:true},
+		{name:"engineId_From",type:"int", useNull:true},
+		{name:"engineId_To",type:"int", useNull:true},
+		{name:"engine", type:"string"},
 		{name:"periodType", type:"string"}
 	] 
 });

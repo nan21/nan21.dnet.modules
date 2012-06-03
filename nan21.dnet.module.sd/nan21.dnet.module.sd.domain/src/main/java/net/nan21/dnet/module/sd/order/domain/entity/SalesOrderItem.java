@@ -7,7 +7,6 @@ package net.nan21.dnet.module.sd.order.domain.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +22,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.md.base.tax.domain.entity.Tax;
@@ -161,6 +159,9 @@ public class SalesOrderItem extends AbstractAuditable {
     }
 
     public void setSalesOrder(SalesOrder salesOrder) {
+        if (salesOrder != null) {
+            this.__validate_client_context__(salesOrder.getClientId());
+        }
         this.salesOrder = salesOrder;
     }
 
@@ -169,6 +170,9 @@ public class SalesOrderItem extends AbstractAuditable {
     }
 
     public void setProduct(Product product) {
+        if (product != null) {
+            this.__validate_client_context__(product.getClientId());
+        }
         this.product = product;
     }
 
@@ -177,6 +181,9 @@ public class SalesOrderItem extends AbstractAuditable {
     }
 
     public void setUom(Uom uom) {
+        if (uom != null) {
+            this.__validate_client_context__(uom.getClientId());
+        }
         this.uom = uom;
     }
 
@@ -185,6 +192,9 @@ public class SalesOrderItem extends AbstractAuditable {
     }
 
     public void setTax(Tax tax) {
+        if (tax != null) {
+            this.__validate_client_context__(tax.getClientId());
+        }
         this.tax = tax;
     }
 
@@ -208,13 +218,6 @@ public class SalesOrderItem extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

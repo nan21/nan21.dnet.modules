@@ -76,11 +76,10 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.Position$Edit", {
 		.addLov({ name:"org", xtype:"net.nan21.dnet.module.bd.org.lovs.Organizations", dataIndex:"org",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "orgId"} ]  })
 		.addLov({ name:"jobCode", xtype:"net.nan21.dnet.module.hr.job.lovs.Jobs", dataIndex:"jobCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "jobId"} ]  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:80,anchor:"-20"   })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:350})     
-		.addPanel({ name:"col2", layout:"form" , width:300, defaults:{
-labelAlign:"top"}})     
+		.addPanel({ name:"col2", layout:"form" , width:400})     
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}

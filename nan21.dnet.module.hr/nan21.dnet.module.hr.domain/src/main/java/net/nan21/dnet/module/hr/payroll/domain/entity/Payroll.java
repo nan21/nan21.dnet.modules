@@ -5,20 +5,22 @@
  */
 package net.nan21.dnet.module.hr.payroll.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
+import net.nan21.dnet.module.bd.elem.domain.entity.Engine;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -69,6 +71,9 @@ public class Payroll extends AbstractType {
     @Column(name = "PERIODTYPE", nullable = false, length = 16)
     @NotBlank
     private String periodType;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Engine.class)
+    @JoinColumn(name = "ENGINE_ID", referencedColumnName = "ID")
+    private Engine engine;
 
     /* ============== getters - setters ================== */
 
@@ -88,6 +93,17 @@ public class Payroll extends AbstractType {
         this.periodType = periodType;
     }
 
+    public Engine getEngine() {
+        return this.engine;
+    }
+
+    public void setEngine(Engine engine) {
+        if (engine != null) {
+            this.__validate_client_context__(engine.getClientId());
+        }
+        this.engine = engine;
+    }
+
     public void aboutToInsert(DescriptorEvent event) {
 
         super.aboutToInsert(event);
@@ -95,13 +111,6 @@ public class Payroll extends AbstractType {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

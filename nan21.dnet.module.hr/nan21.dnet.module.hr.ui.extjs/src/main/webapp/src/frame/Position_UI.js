@@ -18,7 +18,7 @@ Ext.define("net.nan21.dnet.module.hr.job.frame.Position_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("pos",{ name:"posFilter", xtype:"net.nan21.dnet.module.hr.job.dc.Position$Filter",height:120})	 
+		.addDcFilterFormView("pos",{ name:"posFilter", xtype:"net.nan21.dnet.module.hr.job.dc.Position$Filter",height:80})	 
 		.addDcGridView("pos",{ name:"posList", xtype:"net.nan21.dnet.module.hr.job.dc.Position$List"})	 
 		.addDcFormView("pos",{ name:"posEdit", xtype:"net.nan21.dnet.module.hr.job.dc.Position$Edit",height:180})	 
 		.addDcEditGridView("skill",{ name:"skillCtxEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.PositionSkill$CtxEditList", frame:true,title:"Competences"})	 

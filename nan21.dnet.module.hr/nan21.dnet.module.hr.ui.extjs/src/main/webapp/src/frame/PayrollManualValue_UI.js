@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/PayrollManualValueDs", "nan21.dnet.module.hr.ui.extjs/dc/PayrollManualValue","nan21.dnet.module.md.ui.extjs/ds/ElementLovDs","nan21.dnet.module.md.ui.extjs/lov/ElementsCode","nan21.dnet.module.hr.ui.extjs/ds/EmployeeLovDs","nan21.dnet.module.hr.ui.extjs/lov/Employees","nan21.dnet.module.hr.ui.extjs/ds/PayrollPeriodLovDs","nan21.dnet.module.hr.ui.extjs/lov/PayrollPeriods"]);
+Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/PayrollManualValueDs", "nan21.dnet.module.hr.ui.extjs/dc/PayrollManualValue","nan21.dnet.module.hr.ui.extjs/ds/PayrollElementLovDs","nan21.dnet.module.hr.ui.extjs/lov/PayrollElementsCode","nan21.dnet.module.hr.ui.extjs/ds/EmployeeLovDs","nan21.dnet.module.hr.ui.extjs/lov/Employees","nan21.dnet.module.hr.ui.extjs/ds/PayrollPeriodLovDs","nan21.dnet.module.hr.ui.extjs/lov/PayrollPeriods","nan21.dnet.module.bd.ui.extjs/ds/LegalEntityOrganizationLovDs","nan21.dnet.module.bd.ui.extjs/lov/LegalEntityOrganizations","nan21.dnet.module.bd.ui.extjs/ds/ElementTypeLovDs","nan21.dnet.module.bd.ui.extjs/lov/ElementTypes"]);
 
 Ext.define("net.nan21.dnet.module.hr.payroll.frame.PayrollManualValue_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.PayrollManualValue_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbElemvalList", {dc:"elemval"}).addQuery().addSave().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Payroll manual entries"}).end(); 	
+			.beginToolbar("tlbElemvalList", {dc:"elemval"}).addQuery().addSave().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Payroll manual entries"}).end(); 	
 	}
 
 });  

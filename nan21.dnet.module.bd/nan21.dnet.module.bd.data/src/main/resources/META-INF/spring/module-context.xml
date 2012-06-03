@@ -155,7 +155,40 @@
 						</list>
 					</property>
 				</bean>
+				 <!--  Elements -->
 				 
+				 <bean class="net.nan21.dnet.core.api.setup.InitData">
+					<property name="sequence" value="165" />
+					<property name="name" value="bd-elem" />
+					<property name="items">
+						<list>
+							 <bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="10" />
+								<property name="dsName" value="Engine" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/elem/Engine.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="20" />
+								<property name="dsName" value="ElementCategory" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/elem/ElementCategory.csv" />
+							</bean>
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="30" />
+								<property name="dsName" value="ElementType" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/elem/ElementType.csv" />
+							</bean>
+						</list>
+					</property>
+				</bean>
+				
+				
+							  
 				
 			</list>
 		</property>

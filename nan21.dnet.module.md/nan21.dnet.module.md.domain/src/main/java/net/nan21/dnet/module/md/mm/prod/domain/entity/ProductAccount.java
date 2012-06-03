@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.mm.prod.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -39,7 +37,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = ProductAccount.NQ_FIND_BY_ID, query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProductAccount.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProductAccount.NQ_FIND_BY_PROD_ORG, query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and  e.product = :pProduct and e.org = :pOrg ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductAccount.findByProd_org_PRIMITIVE", query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.org.id = :pOrgId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ProductAccount.NQ_FIND_BY_PROD_ORG_PRIMITIVE, query = "SELECT e FROM ProductAccount e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.org.id = :pOrgId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAccount extends AbstractAuditable {
 
     public static final String TABLE_NAME = "MD_PROD_ACNT";
@@ -112,6 +110,9 @@ public class ProductAccount extends AbstractAuditable {
     }
 
     public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
         this.org = org;
     }
 
@@ -120,6 +121,9 @@ public class ProductAccount extends AbstractAuditable {
     }
 
     public void setGroup(ProductAccountGroup group) {
+        if (group != null) {
+            this.__validate_client_context__(group.getClientId());
+        }
         this.group = group;
     }
 
@@ -128,6 +132,9 @@ public class ProductAccount extends AbstractAuditable {
     }
 
     public void setProduct(Product product) {
+        if (product != null) {
+            this.__validate_client_context__(product.getClientId());
+        }
         this.product = product;
     }
 
@@ -135,13 +142,6 @@ public class ProductAccount extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

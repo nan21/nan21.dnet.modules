@@ -22,7 +22,6 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.bd.geo.domain.entity.Country;
 import net.nan21.dnet.module.md.bp.domain.entity.CompanyLegalForm;
@@ -255,6 +254,9 @@ public class BusinessPartner extends AbstractTypeWithCode {
     }
 
     public void setCountry(Country country) {
+        if (country != null) {
+            this.__validate_client_context__(country.getClientId());
+        }
         this.country = country;
     }
 
@@ -263,6 +265,9 @@ public class BusinessPartner extends AbstractTypeWithCode {
     }
 
     public void setLegalForm(CompanyLegalForm legalForm) {
+        if (legalForm != null) {
+            this.__validate_client_context__(legalForm.getClientId());
+        }
         this.legalForm = legalForm;
     }
 
@@ -276,13 +281,6 @@ public class BusinessPartner extends AbstractTypeWithCode {
         if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "BP-" + this.getId());
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

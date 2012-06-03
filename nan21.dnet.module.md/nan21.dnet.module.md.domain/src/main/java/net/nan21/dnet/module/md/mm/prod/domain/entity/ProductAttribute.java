@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.mm.prod.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroupAttribute;
@@ -38,7 +36,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = ProductAttribute.NQ_FIND_BY_ID, query = "SELECT e FROM ProductAttribute e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProductAttribute.NQ_FIND_BY_IDS, query = "SELECT e FROM ProductAttribute e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ProductAttribute.NQ_FIND_BY_NAME, query = "SELECT e FROM ProductAttribute e WHERE e.clientId = :pClientId and  e.product = :pProduct and e.groupAttribute = :pGroupAttribute ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ProductAttribute.findByName_PRIMITIVE", query = "SELECT e FROM ProductAttribute e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.groupAttribute.id = :pGroupAttributeId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ProductAttribute.NQ_FIND_BY_NAME_PRIMITIVE, query = "SELECT e FROM ProductAttribute e WHERE e.clientId = :pClientId and  e.product.id = :pProductId and e.groupAttribute.id = :pGroupAttributeId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ProductAttribute extends AbstractAuditable {
 
     public static final String TABLE_NAME = "MD_PROD_ATTR";
@@ -108,6 +106,9 @@ public class ProductAttribute extends AbstractAuditable {
     }
 
     public void setProduct(Product product) {
+        if (product != null) {
+            this.__validate_client_context__(product.getClientId());
+        }
         this.product = product;
     }
 
@@ -116,6 +117,9 @@ public class ProductAttribute extends AbstractAuditable {
     }
 
     public void setGroupAttribute(AttributeGroupAttribute groupAttribute) {
+        if (groupAttribute != null) {
+            this.__validate_client_context__(groupAttribute.getClientId());
+        }
         this.groupAttribute = groupAttribute;
     }
 
@@ -123,13 +127,6 @@ public class ProductAttribute extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

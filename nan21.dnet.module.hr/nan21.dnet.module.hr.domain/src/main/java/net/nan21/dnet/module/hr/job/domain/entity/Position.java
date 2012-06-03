@@ -21,7 +21,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
@@ -131,6 +130,9 @@ public class Position extends AbstractTypeWithCode {
     }
 
     public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
         this.org = org;
     }
 
@@ -139,6 +141,9 @@ public class Position extends AbstractTypeWithCode {
     }
 
     public void setJob(Job job) {
+        if (job != null) {
+            this.__validate_client_context__(job.getClientId());
+        }
         this.job = job;
     }
 
@@ -147,6 +152,9 @@ public class Position extends AbstractTypeWithCode {
     }
 
     public void setLocation(Location location) {
+        if (location != null) {
+            this.__validate_client_context__(location.getClientId());
+        }
         this.location = location;
     }
 
@@ -160,13 +168,6 @@ public class Position extends AbstractTypeWithCode {
         if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "POS-" + this.getId());
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

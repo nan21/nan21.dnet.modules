@@ -83,6 +83,9 @@ public class SalesTxAmount extends TxAmount {
     }
 
     public void setOrder(SalesOrder order) {
+        if (order != null) {
+            this.__validate_client_context__(order.getClientId());
+        }
         this.order = order;
     }
 
@@ -91,6 +94,9 @@ public class SalesTxAmount extends TxAmount {
     }
 
     public void setInvoice(SalesInvoice invoice) {
+        if (invoice != null) {
+            this.__validate_client_context__(invoice.getClientId());
+        }
         this.invoice = invoice;
     }
 
@@ -98,10 +104,6 @@ public class SalesTxAmount extends TxAmount {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
     }
 
 }

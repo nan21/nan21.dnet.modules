@@ -25,7 +25,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
@@ -241,6 +240,9 @@ public class SalesInvoice extends AbstractAuditable {
     }
 
     public void setPriceList(PriceList priceList) {
+        if (priceList != null) {
+            this.__validate_client_context__(priceList.getClientId());
+        }
         this.priceList = priceList;
     }
 
@@ -249,6 +251,9 @@ public class SalesInvoice extends AbstractAuditable {
     }
 
     public void setCurrency(Currency currency) {
+        if (currency != null) {
+            this.__validate_client_context__(currency.getClientId());
+        }
         this.currency = currency;
     }
 
@@ -257,6 +262,9 @@ public class SalesInvoice extends AbstractAuditable {
     }
 
     public void setPaymentMethod(PaymentMethod paymentMethod) {
+        if (paymentMethod != null) {
+            this.__validate_client_context__(paymentMethod.getClientId());
+        }
         this.paymentMethod = paymentMethod;
     }
 
@@ -265,6 +273,9 @@ public class SalesInvoice extends AbstractAuditable {
     }
 
     public void setPaymentTerm(PaymentTerm paymentTerm) {
+        if (paymentTerm != null) {
+            this.__validate_client_context__(paymentTerm.getClientId());
+        }
         this.paymentTerm = paymentTerm;
     }
 
@@ -273,6 +284,9 @@ public class SalesInvoice extends AbstractAuditable {
     }
 
     public void setDocType(TxDocType docType) {
+        if (docType != null) {
+            this.__validate_client_context__(docType.getClientId());
+        }
         this.docType = docType;
     }
 
@@ -281,6 +295,9 @@ public class SalesInvoice extends AbstractAuditable {
     }
 
     public void setCustomer(BusinessPartner customer) {
+        if (customer != null) {
+            this.__validate_client_context__(customer.getClientId());
+        }
         this.customer = customer;
     }
 
@@ -289,6 +306,9 @@ public class SalesInvoice extends AbstractAuditable {
     }
 
     public void setBillToLocation(Location billToLocation) {
+        if (billToLocation != null) {
+            this.__validate_client_context__(billToLocation.getClientId());
+        }
         this.billToLocation = billToLocation;
     }
 
@@ -297,6 +317,9 @@ public class SalesInvoice extends AbstractAuditable {
     }
 
     public void setBillToContact(Contact billToContact) {
+        if (billToContact != null) {
+            this.__validate_client_context__(billToContact.getClientId());
+        }
         this.billToContact = billToContact;
     }
 
@@ -305,6 +328,9 @@ public class SalesInvoice extends AbstractAuditable {
     }
 
     public void setSupplier(Organization supplier) {
+        if (supplier != null) {
+            this.__validate_client_context__(supplier.getClientId());
+        }
         this.supplier = supplier;
     }
 
@@ -313,6 +339,9 @@ public class SalesInvoice extends AbstractAuditable {
     }
 
     public void setSalesOrder(SalesOrder salesOrder) {
+        if (salesOrder != null) {
+            this.__validate_client_context__(salesOrder.getClientId());
+        }
         this.salesOrder = salesOrder;
     }
 
@@ -361,13 +390,6 @@ public class SalesInvoice extends AbstractAuditable {
         if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "SI-" + this.getId());
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

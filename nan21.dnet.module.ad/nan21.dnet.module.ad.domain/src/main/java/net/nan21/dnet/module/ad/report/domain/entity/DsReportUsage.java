@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.ad.report.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.ad.report.domain.entity.DsReport;
@@ -114,6 +112,9 @@ public class DsReportUsage extends AbstractAuditable {
     }
 
     public void setDsReport(DsReport dsReport) {
+        if (dsReport != null) {
+            this.__validate_client_context__(dsReport.getClientId());
+        }
         this.dsReport = dsReport;
     }
 
@@ -121,13 +122,6 @@ public class DsReportUsage extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

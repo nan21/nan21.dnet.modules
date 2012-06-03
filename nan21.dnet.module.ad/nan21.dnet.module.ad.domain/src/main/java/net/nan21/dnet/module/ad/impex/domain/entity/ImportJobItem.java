@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.ad.impex.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportJob;
@@ -38,7 +36,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = ImportJobItem.NQ_FIND_BY_ID, query = "SELECT e FROM ImportJobItem e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ImportJobItem.NQ_FIND_BY_IDS, query = "SELECT e FROM ImportJobItem e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ImportJobItem.NQ_FIND_BY_JOB_MAP, query = "SELECT e FROM ImportJobItem e WHERE e.clientId = :pClientId and  e.job = :pJob and e.map = :pMap ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ImportJobItem.findByJob_map_PRIMITIVE", query = "SELECT e FROM ImportJobItem e WHERE e.clientId = :pClientId and  e.job.id = :pJobId and e.map.id = :pMapId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ImportJobItem.NQ_FIND_BY_JOB_MAP_PRIMITIVE, query = "SELECT e FROM ImportJobItem e WHERE e.clientId = :pClientId and  e.job.id = :pJobId and e.map.id = :pMapId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ImportJobItem extends AbstractAuditable {
 
     public static final String TABLE_NAME = "AD_IMP_JOB_ITEM";
@@ -122,6 +120,9 @@ public class ImportJobItem extends AbstractAuditable {
     }
 
     public void setJob(ImportJob job) {
+        if (job != null) {
+            this.__validate_client_context__(job.getClientId());
+        }
         this.job = job;
     }
 
@@ -130,6 +131,9 @@ public class ImportJobItem extends AbstractAuditable {
     }
 
     public void setMap(ImportMap map) {
+        if (map != null) {
+            this.__validate_client_context__(map.getClientId());
+        }
         this.map = map;
     }
 
@@ -140,13 +144,6 @@ public class ImportJobItem extends AbstractAuditable {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

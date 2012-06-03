@@ -13,9 +13,9 @@ Ext.define("net.nan21.dnet.module.hr.skill.frame.SkillType_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("scateg",{ name:"scategFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.SkillCategory$Filter",height:120})	 
+		.addDcFilterFormView("scateg",{ name:"scategFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.SkillCategory$Filter",height:80})	 
 		.addDcEditGridView("scateg",{ name:"scategEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.SkillCategory$EditList", frame:true})	 
-		.addDcFilterFormView("stype",{ name:"stypeFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.SkillType$Filter",height:120})	 
+		.addDcFilterFormView("stype",{ name:"stypeFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.SkillType$Filter",height:80})	 
 		.addDcEditGridView("stype",{ name:"stypeEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.SkillType$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Categories",preventHeader:true})  	 
@@ -24,13 +24,13 @@ Ext.define("net.nan21.dnet.module.hr.skill.frame.SkillType_UI", {
 		.addPanel({name:"_main_with_toc_", layout:"border", id:Ext.id(), defaults:{split:true}, header:false,
 				listeners:{ activate:{scope:this,fn:function(p){p.doLayout(false,true); this.fireEvent('canvaschange', p);     } }}
 		})
-		.addToc(["canvasCateg","canvasType"]);
+		.addToc(["canvasType","canvasCateg"]);
 		this._mainViewName_  = "_main_with_toc_";	 	
 	}
 
 	,_linkElements_: function() {
 		this._getBuilder_()		
-	 	.addChildrenTo("main", ["canvasCateg","canvasType"]) 				 		
+	 	.addChildrenTo("main", ["canvasType","canvasCateg"]) 				 		
 		.addChildrenTo("canvasCateg",["scategFilter","scategEditList"] ,["north","center"])	
 		.addChildrenTo("canvasType",["stypeFilter","stypeEditList"] ,["north","center"])	
 				

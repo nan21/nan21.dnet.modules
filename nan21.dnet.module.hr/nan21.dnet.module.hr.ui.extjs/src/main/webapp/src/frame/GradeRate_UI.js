@@ -14,7 +14,7 @@ Ext.define("net.nan21.dnet.module.hr.grade.frame.GradeRate_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("rate",{ name:"rateFilter", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter",height:120})	 
+		.addDcFilterFormView("rate",{ name:"rateFilter", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$Filter",height:80})	 
 		.addDcGridView("rate",{ name:"rateList", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$List"})	 
 		.addDcFormView("rate",{ name:"rateEdit", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRate$Edit",height:120})	 
 		.addDcEditGridView("value",{ name:"valueEditList", xtype:"net.nan21.dnet.module.hr.grade.dc.GradeRateValue$CtxEditList4GradeRate", frame:true})	 

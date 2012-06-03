@@ -21,6 +21,10 @@ public interface IPayrollPeriodService extends IEntityService<PayrollPeriod> {
 
     public void doProcess(PayrollPeriod period) throws Exception;
 
+    public void doOpen(PayrollPeriod period) throws Exception;
+
+    public void doClose(PayrollPeriod period) throws Exception;
+
     public void doClear(PayrollPeriod period) throws Exception;
 
 }

@@ -45,23 +45,23 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.validation;
  version="[1.0,2.0)",javax.validation.constraints,javax.xml.bind.annot
- ation,net.nan21.dnet.core.api.session,net.nan21.dnet.core.domain.even
- thandler,net.nan21.dnet.core.domain.model,net.nan21.dnet.module.bd.cu
- rrency.domain.entity,net.nan21.dnet.module.bd.org.domain.entity,net.n
- an21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.md.base.t
- ax.domain.entity,net.nan21.dnet.module.md.base.tx.domain.entity,net.n
- an21.dnet.module.md.bp.domain.entity,net.nan21.dnet.module.md.mm.pric
- e.domain.entity,net.nan21.dnet.module.md.mm.prod.domain.entity,net.na
- n21.dnet.module.md.org.domain.entity,net.nan21.dnet.module.md.tx.fin.
- domain.entity,net.nan21.dnet.module.md.tx.inventory.domain.entity,org
- .aopalliance.aop;version="[1.0,2.0)",org.eclipse.persistence.annotati
- ons,org.eclipse.persistence.descriptors,org.eclipse.persistence.indir
- ection,org.eclipse.persistence.internal.descriptors,org.eclipse.persi
- stence.internal.weaving,org.eclipse.persistence.queries,org.eclipse.p
- ersistence.sessions,org.hibernate.validator;version="[4.0,5.0)",org.h
- ibernate.validator.constraints;version="[4.0,5.0)",org.springframewor
- k.aop;version="[3.0,3.1)",org.springframework.aop.framework;version="
- [3.0,3.1)",org.springframework.context.weaving;version="[3.0,3.1)",or
- g.springframework.transaction;version="[3.0,3.1)",org.springframework
- .transaction.aspectj;version="[3.0,3.1)"
+ ation,net.nan21.dnet.core.domain.eventhandler,net.nan21.dnet.core.dom
+ ain.model,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.d
+ net.module.bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.e
+ ntity,net.nan21.dnet.module.md.base.tax.domain.entity,net.nan21.dnet.
+ module.md.base.tx.domain.entity,net.nan21.dnet.module.md.bp.domain.en
+ tity,net.nan21.dnet.module.md.mm.price.domain.entity,net.nan21.dnet.m
+ odule.md.mm.prod.domain.entity,net.nan21.dnet.module.md.org.domain.en
+ tity,net.nan21.dnet.module.md.tx.fin.domain.entity,net.nan21.dnet.mod
+ ule.md.tx.inventory.domain.entity,org.aopalliance.aop;version="[1.0,2
+ .0)",org.eclipse.persistence.annotations,org.eclipse.persistence.desc
+ riptors,org.eclipse.persistence.indirection,org.eclipse.persistence.i
+ nternal.descriptors,org.eclipse.persistence.internal.weaving,org.ecli
+ pse.persistence.queries,org.eclipse.persistence.sessions,org.hibernat
+ e.validator;version="[4.0,5.0)",org.hibernate.validator.constraints;v
+ ersion="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",org.sp
+ ringframework.aop.framework;version="[3.0,3.1)",org.springframework.c
+ ontext.weaving;version="[3.0,3.1)",org.springframework.transaction;ve
+ rsion="[3.0,3.1)",org.springframework.transaction.aspectj;version="[3
+ .0,3.1)"
 

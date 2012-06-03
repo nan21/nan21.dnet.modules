@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.pj.md.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.pj.base.domain.entity.IssueLinkType;
@@ -86,6 +84,9 @@ public class IssueLink extends AbstractAuditable {
     }
 
     public void setSourceIssue(Issue sourceIssue) {
+        if (sourceIssue != null) {
+            this.__validate_client_context__(sourceIssue.getClientId());
+        }
         this.sourceIssue = sourceIssue;
     }
 
@@ -94,6 +95,9 @@ public class IssueLink extends AbstractAuditable {
     }
 
     public void setTargetIssue(Issue targetIssue) {
+        if (targetIssue != null) {
+            this.__validate_client_context__(targetIssue.getClientId());
+        }
         this.targetIssue = targetIssue;
     }
 
@@ -102,6 +106,9 @@ public class IssueLink extends AbstractAuditable {
     }
 
     public void setLinkType(IssueLinkType linkType) {
+        if (linkType != null) {
+            this.__validate_client_context__(linkType.getClientId());
+        }
         this.linkType = linkType;
     }
 
@@ -109,13 +116,6 @@ public class IssueLink extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

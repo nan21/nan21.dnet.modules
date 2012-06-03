@@ -100,7 +100,6 @@
 	<import resource="beans/md.activity.entity.xml" />
 	
 	<import resource="beans/md.base.attr.entity.xml" />
-	<import resource="beans/md.base.elem.entity.xml" />
 	<import resource="beans/md.base.tx.entity.xml" />
 	<import resource="beans/md.base.tax.entity.xml" />
 	<import resource="beans/md.base.period.entity.xml" />

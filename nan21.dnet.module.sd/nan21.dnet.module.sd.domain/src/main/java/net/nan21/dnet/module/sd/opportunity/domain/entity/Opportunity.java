@@ -21,7 +21,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractType;
 import net.nan21.dnet.module.ad.usr.domain.entity.Assignable;
@@ -181,6 +180,9 @@ public class Opportunity extends AbstractType {
     }
 
     public void setAccount(BusinessPartner account) {
+        if (account != null) {
+            this.__validate_client_context__(account.getClientId());
+        }
         this.account = account;
     }
 
@@ -189,6 +191,9 @@ public class Opportunity extends AbstractType {
     }
 
     public void setExpectedCurrency(Currency expectedCurrency) {
+        if (expectedCurrency != null) {
+            this.__validate_client_context__(expectedCurrency.getClientId());
+        }
         this.expectedCurrency = expectedCurrency;
     }
 
@@ -197,6 +202,9 @@ public class Opportunity extends AbstractType {
     }
 
     public void setSalesStage(OpportunityStage salesStage) {
+        if (salesStage != null) {
+            this.__validate_client_context__(salesStage.getClientId());
+        }
         this.salesStage = salesStage;
     }
 
@@ -205,6 +213,9 @@ public class Opportunity extends AbstractType {
     }
 
     public void setStatus(OpportunityStatus status) {
+        if (status != null) {
+            this.__validate_client_context__(status.getClientId());
+        }
         this.status = status;
     }
 
@@ -213,6 +224,9 @@ public class Opportunity extends AbstractType {
     }
 
     public void setPriority(OpportunityPriority priority) {
+        if (priority != null) {
+            this.__validate_client_context__(priority.getClientId());
+        }
         this.priority = priority;
     }
 
@@ -221,6 +235,9 @@ public class Opportunity extends AbstractType {
     }
 
     public void setLeadSource(OpportunitySource leadSource) {
+        if (leadSource != null) {
+            this.__validate_client_context__(leadSource.getClientId());
+        }
         this.leadSource = leadSource;
     }
 
@@ -229,6 +246,9 @@ public class Opportunity extends AbstractType {
     }
 
     public void setResultReason(OpportunityResultReason resultReason) {
+        if (resultReason != null) {
+            this.__validate_client_context__(resultReason.getClientId());
+        }
         this.resultReason = resultReason;
     }
 
@@ -237,6 +257,9 @@ public class Opportunity extends AbstractType {
     }
 
     public void setAssignedTo(Assignable assignedTo) {
+        if (assignedTo != null) {
+            this.__validate_client_context__(assignedTo.getClientId());
+        }
         this.assignedTo = assignedTo;
     }
 
@@ -247,13 +270,6 @@ public class Opportunity extends AbstractType {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.bp.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationItem;
@@ -87,6 +85,9 @@ public class BpClassification extends AbstractAuditable {
     }
 
     public void setBp(BusinessPartner bp) {
+        if (bp != null) {
+            this.__validate_client_context__(bp.getClientId());
+        }
         this.bp = bp;
     }
 
@@ -95,6 +96,9 @@ public class BpClassification extends AbstractAuditable {
     }
 
     public void setClassSystem(ClassificationSystem classSystem) {
+        if (classSystem != null) {
+            this.__validate_client_context__(classSystem.getClientId());
+        }
         this.classSystem = classSystem;
     }
 
@@ -103,6 +107,9 @@ public class BpClassification extends AbstractAuditable {
     }
 
     public void setClassCode(ClassificationItem classCode) {
+        if (classCode != null) {
+            this.__validate_client_context__(classCode.getClientId());
+        }
         this.classCode = classCode;
     }
 
@@ -110,13 +117,6 @@ public class BpClassification extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

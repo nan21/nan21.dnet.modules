@@ -7,7 +7,6 @@ package net.nan21.dnet.module.md.mm.prod.domain.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +25,6 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
@@ -297,6 +295,9 @@ public class Product extends AbstractTypeWithCode {
     }
 
     public void setDefaultUom(Uom defaultUom) {
+        if (defaultUom != null) {
+            this.__validate_client_context__(defaultUom.getClientId());
+        }
         this.defaultUom = defaultUom;
     }
 
@@ -305,6 +306,9 @@ public class Product extends AbstractTypeWithCode {
     }
 
     public void setWeightUom(Uom weightUom) {
+        if (weightUom != null) {
+            this.__validate_client_context__(weightUom.getClientId());
+        }
         this.weightUom = weightUom;
     }
 
@@ -313,6 +317,9 @@ public class Product extends AbstractTypeWithCode {
     }
 
     public void setVolumeUom(Uom volumeUom) {
+        if (volumeUom != null) {
+            this.__validate_client_context__(volumeUom.getClientId());
+        }
         this.volumeUom = volumeUom;
     }
 
@@ -321,6 +328,9 @@ public class Product extends AbstractTypeWithCode {
     }
 
     public void setDimUom(Uom dimUom) {
+        if (dimUom != null) {
+            this.__validate_client_context__(dimUom.getClientId());
+        }
         this.dimUom = dimUom;
     }
 
@@ -329,6 +339,9 @@ public class Product extends AbstractTypeWithCode {
     }
 
     public void setManufacturer(ProductManufacturer manufacturer) {
+        if (manufacturer != null) {
+            this.__validate_client_context__(manufacturer.getClientId());
+        }
         this.manufacturer = manufacturer;
     }
 
@@ -337,6 +350,9 @@ public class Product extends AbstractTypeWithCode {
     }
 
     public void setAttributeGroup(AttributeGroup attributeGroup) {
+        if (attributeGroup != null) {
+            this.__validate_client_context__(attributeGroup.getClientId());
+        }
         this.attributeGroup = attributeGroup;
     }
 
@@ -386,13 +402,6 @@ public class Product extends AbstractTypeWithCode {
         if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "P-" + this.getId());
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

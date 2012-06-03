@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.ad.impex.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.ad.impex.domain.entity.CsvExport;
@@ -120,6 +118,9 @@ public class ExportMapItem extends AbstractAuditable {
     }
 
     public void setExportMap(ExportMap exportMap) {
+        if (exportMap != null) {
+            this.__validate_client_context__(exportMap.getClientId());
+        }
         this.exportMap = exportMap;
     }
 
@@ -128,6 +129,9 @@ public class ExportMapItem extends AbstractAuditable {
     }
 
     public void setCsvExport(CsvExport csvExport) {
+        if (csvExport != null) {
+            this.__validate_client_context__(csvExport.getClientId());
+        }
         this.csvExport = csvExport;
     }
 
@@ -138,13 +142,6 @@ public class ExportMapItem extends AbstractAuditable {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

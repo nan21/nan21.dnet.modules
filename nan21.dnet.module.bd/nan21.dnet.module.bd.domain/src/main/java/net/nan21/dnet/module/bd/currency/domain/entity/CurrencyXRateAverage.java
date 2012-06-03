@@ -20,7 +20,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
@@ -128,6 +127,9 @@ public class CurrencyXRateAverage extends AbstractAuditable {
     }
 
     public void setProvider(CurrencyXRateProvider provider) {
+        if (provider != null) {
+            this.__validate_client_context__(provider.getClientId());
+        }
         this.provider = provider;
     }
 
@@ -136,6 +138,9 @@ public class CurrencyXRateAverage extends AbstractAuditable {
     }
 
     public void setSource(Currency source) {
+        if (source != null) {
+            this.__validate_client_context__(source.getClientId());
+        }
         this.source = source;
     }
 
@@ -144,6 +149,9 @@ public class CurrencyXRateAverage extends AbstractAuditable {
     }
 
     public void setTarget(Currency target) {
+        if (target != null) {
+            this.__validate_client_context__(target.getClientId());
+        }
         this.target = target;
     }
 
@@ -151,13 +159,6 @@ public class CurrencyXRateAverage extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

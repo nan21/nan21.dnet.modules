@@ -1,0 +1,7 @@
+engine;name;description;category;active
+payroll-ro;deduceri;Deduceri angajat;angajat;true
+payroll-ro;informatii;Informatii ;angajat;true
+payroll-ro;taxe-angajat;Contributii angajat;angajat;true
+payroll-ro;taxe-unitate;Contributii unitate;unitate;true
+payroll-ro;total;Totaluri;unitate;true
+payroll-ro;venituri-angajat;Venituri;angajat;true

@@ -13,7 +13,7 @@ import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElementValue;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
 
-@Ds(entity = PayrollElementValue.class, sort = {
+@Ds(entity = PayrollElementValue.class, jpqlWhere = " e.element.balance = false ", sort = {
         @SortField(field = PayrollElementValueDs.fPERIODSTART, desc = true),
         @SortField(field = PayrollElementValueDs.fSEQUENCENO),
         @SortField(field = PayrollElementValueDs.fEMPLOYEEID) })
@@ -25,8 +25,13 @@ public class PayrollElementValueDs extends
     public static final String fELEMENTNAME = "elementName";
     public static final String fSEQUENCENO = "sequenceNo";
     public static final String fDATATYPE = "dataType";
+    public static final String fCALCULATION = "calculation";
+    public static final String fTYPEID = "typeId";
+    public static final String fTYPE = "type";
     public static final String fEMPLOYEEID = "employeeId";
     public static final String fEMPLOYEENAME = "employeeName";
+    public static final String fEMPLOYERID = "employerId";
+    public static final String fEMPLOYER = "employer";
     public static final String fVALUE = "value";
     public static final String fPERIODID = "periodId";
     public static final String fPERIOD = "period";
@@ -48,11 +53,26 @@ public class PayrollElementValueDs extends
     @DsField(join = "left", path = "element.dataType")
     private String dataType;
 
+    @DsField(join = "left", path = "element.calculation")
+    private String calculation;
+
+    @DsField(join = "left", path = "element.type.id")
+    private Long typeId;
+
+    @DsField(join = "left", path = "element.type.name")
+    private String type;
+
     @DsField(join = "left", path = "employee.id")
     private Long employeeId;
 
     @DsField(join = "left", orderBy = "lastName,firstName", fetch = false, path = "employee.name")
     private String employeeName;
+
+    @DsField(join = "left", path = "org.id")
+    private Long employerId;
+
+    @DsField(join = "left", path = "org.code")
+    private String employer;
 
     @DsField()
     private String value;
@@ -117,6 +137,30 @@ public class PayrollElementValueDs extends
         this.dataType = dataType;
     }
 
+    public String getCalculation() {
+        return this.calculation;
+    }
+
+    public void setCalculation(String calculation) {
+        this.calculation = calculation;
+    }
+
+    public Long getTypeId() {
+        return this.typeId;
+    }
+
+    public void setTypeId(Long typeId) {
+        this.typeId = typeId;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public Long getEmployeeId() {
         return this.employeeId;
     }
@@ -131,6 +175,22 @@ public class PayrollElementValueDs extends
 
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
+    }
+
+    public Long getEmployerId() {
+        return this.employerId;
+    }
+
+    public void setEmployerId(Long employerId) {
+        this.employerId = employerId;
+    }
+
+    public String getEmployer() {
+        return this.employer;
+    }
+
+    public void setEmployer(String employer) {
+        this.employer = employer;
     }
 
     public String getValue() {

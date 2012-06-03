@@ -149,6 +149,9 @@ public class Employee extends EmployeeBase {
     }
 
     public void setType(EmploymentType type) {
+        if (type != null) {
+            this.__validate_client_context__(type.getClientId());
+        }
         this.type = type;
     }
 
@@ -157,6 +160,9 @@ public class Employee extends EmployeeBase {
     }
 
     public void setPosition(Position position) {
+        if (position != null) {
+            this.__validate_client_context__(position.getClientId());
+        }
         this.position = position;
     }
 
@@ -165,6 +171,9 @@ public class Employee extends EmployeeBase {
     }
 
     public void setJob(Job job) {
+        if (job != null) {
+            this.__validate_client_context__(job.getClientId());
+        }
         this.job = job;
     }
 
@@ -173,6 +182,9 @@ public class Employee extends EmployeeBase {
     }
 
     public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
         this.org = org;
     }
 
@@ -181,6 +193,9 @@ public class Employee extends EmployeeBase {
     }
 
     public void setGrade(Grade grade) {
+        if (grade != null) {
+            this.__validate_client_context__(grade.getClientId());
+        }
         this.grade = grade;
     }
 
@@ -189,6 +204,9 @@ public class Employee extends EmployeeBase {
     }
 
     public void setPayroll(Payroll payroll) {
+        if (payroll != null) {
+            this.__validate_client_context__(payroll.getClientId());
+        }
         this.payroll = payroll;
     }
 
@@ -215,10 +233,6 @@ public class Employee extends EmployeeBase {
         if (this.getAssignToPosition() == null) {
             event.updateAttributeWithObject("assignToPosition", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
     }
 
 }

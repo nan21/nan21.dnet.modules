@@ -7,7 +7,6 @@ package net.nan21.dnet.module.sc.invoice.domain.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +21,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
 import net.nan21.dnet.module.md.base.tax.domain.entity.Tax;
@@ -191,6 +189,9 @@ public class PurchaseInvoiceItem extends AbstractAuditable {
     }
 
     public void setPurchaseInvoice(PurchaseInvoice purchaseInvoice) {
+        if (purchaseInvoice != null) {
+            this.__validate_client_context__(purchaseInvoice.getClientId());
+        }
         this.purchaseInvoice = purchaseInvoice;
     }
 
@@ -199,6 +200,9 @@ public class PurchaseInvoiceItem extends AbstractAuditable {
     }
 
     public void setProduct(Product product) {
+        if (product != null) {
+            this.__validate_client_context__(product.getClientId());
+        }
         this.product = product;
     }
 
@@ -207,6 +211,9 @@ public class PurchaseInvoiceItem extends AbstractAuditable {
     }
 
     public void setUom(Uom uom) {
+        if (uom != null) {
+            this.__validate_client_context__(uom.getClientId());
+        }
         this.uom = uom;
     }
 
@@ -215,6 +222,9 @@ public class PurchaseInvoiceItem extends AbstractAuditable {
     }
 
     public void setTax(Tax tax) {
+        if (tax != null) {
+            this.__validate_client_context__(tax.getClientId());
+        }
         this.tax = tax;
     }
 
@@ -241,13 +251,6 @@ public class PurchaseInvoiceItem extends AbstractAuditable {
         if (this.getUseGivenTax() == null) {
             event.updateAttributeWithObject("useGivenTax", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.bd.standards.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.bd.standards.domain.entity.ClassificationSystem;
@@ -40,9 +38,9 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = ClassificationItem.NQ_FIND_BY_ID, query = "SELECT e FROM ClassificationItem e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ClassificationItem.NQ_FIND_BY_IDS, query = "SELECT e FROM ClassificationItem e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ClassificationItem.NQ_FIND_BY_SYSCODE, query = "SELECT e FROM ClassificationItem e WHERE e.clientId = :pClientId and  e.classSystem = :pClassSystem and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ClassificationItem.findBySyscode_PRIMITIVE", query = "SELECT e FROM ClassificationItem e WHERE e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
+        @NamedQuery(name = ClassificationItem.NQ_FIND_BY_SYSCODE_PRIMITIVE, query = "SELECT e FROM ClassificationItem e WHERE e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ClassificationItem.NQ_FIND_BY_SYSNAME, query = "SELECT e FROM ClassificationItem e WHERE e.clientId = :pClientId and  e.classSystem = :pClassSystem and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "ClassificationItem.findBySysname_PRIMITIVE", query = "SELECT e FROM ClassificationItem e WHERE e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = ClassificationItem.NQ_FIND_BY_SYSNAME_PRIMITIVE, query = "SELECT e FROM ClassificationItem e WHERE e.clientId = :pClientId and  e.classSystem.id = :pClassSystemId and e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class ClassificationItem extends AbstractTypeWithCode {
 
     public static final String TABLE_NAME = "BD_CLSF_ITEM";
@@ -108,6 +106,9 @@ public class ClassificationItem extends AbstractTypeWithCode {
     }
 
     public void setClassSystem(ClassificationSystem classSystem) {
+        if (classSystem != null) {
+            this.__validate_client_context__(classSystem.getClientId());
+        }
         this.classSystem = classSystem;
     }
 
@@ -118,13 +119,6 @@ public class ClassificationItem extends AbstractTypeWithCode {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

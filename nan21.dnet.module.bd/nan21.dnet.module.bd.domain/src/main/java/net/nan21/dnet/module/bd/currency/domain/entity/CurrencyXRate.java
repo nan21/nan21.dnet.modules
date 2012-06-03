@@ -21,7 +21,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
@@ -41,7 +40,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_ID, query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_IDS, query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_VALID, query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and  e.provider = :pProvider and e.source = :pSource and e.target = :pTarget and e.validAt = :pValidAt ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "CurrencyXRate.findByValid_PRIMITIVE", query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and  e.provider.id = :pProviderId and e.source.id = :pSourceId and e.target.id = :pTargetId and e.validAt = :pValidAt ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = CurrencyXRate.NQ_FIND_BY_VALID_PRIMITIVE, query = "SELECT e FROM CurrencyXRate e WHERE e.clientId = :pClientId and  e.provider.id = :pProviderId and e.source.id = :pSourceId and e.target.id = :pTargetId and e.validAt = :pValidAt ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class CurrencyXRate extends AbstractAuditable {
 
     public static final String TABLE_NAME = "BD_CRNCY_XRATE";
@@ -129,6 +128,9 @@ public class CurrencyXRate extends AbstractAuditable {
     }
 
     public void setProvider(CurrencyXRateProvider provider) {
+        if (provider != null) {
+            this.__validate_client_context__(provider.getClientId());
+        }
         this.provider = provider;
     }
 
@@ -137,6 +139,9 @@ public class CurrencyXRate extends AbstractAuditable {
     }
 
     public void setSource(Currency source) {
+        if (source != null) {
+            this.__validate_client_context__(source.getClientId());
+        }
         this.source = source;
     }
 
@@ -145,6 +150,9 @@ public class CurrencyXRate extends AbstractAuditable {
     }
 
     public void setTarget(Currency target) {
+        if (target != null) {
+            this.__validate_client_context__(target.getClientId());
+        }
         this.target = target;
     }
 
@@ -152,13 +160,6 @@ public class CurrencyXRate extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

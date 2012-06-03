@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.hr.grade.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.hr.grade.domain.entity.PayScale;
@@ -38,7 +36,7 @@ import org.hibernate.validator.constraints.NotBlank;
         @NamedQuery(name = PayScalePoint.NQ_FIND_BY_ID, query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = PayScalePoint.NQ_FIND_BY_IDS, query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = PayScalePoint.NQ_FIND_BY_SCALE_CODE, query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and  e.payScale = :pPayScale and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "PayScalePoint.findByScale_code_PRIMITIVE", query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and  e.payScale.id = :pPayScaleId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = PayScalePoint.NQ_FIND_BY_SCALE_CODE_PRIMITIVE, query = "SELECT e FROM PayScalePoint e WHERE e.clientId = :pClientId and  e.payScale.id = :pPayScaleId and e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayScalePoint extends AbstractAuditable {
 
     public static final String TABLE_NAME = "HR_PAYSCL_POINT";
@@ -118,6 +116,9 @@ public class PayScalePoint extends AbstractAuditable {
     }
 
     public void setPayScale(PayScale payScale) {
+        if (payScale != null) {
+            this.__validate_client_context__(payScale.getClientId());
+        }
         this.payScale = payScale;
     }
 
@@ -125,13 +126,6 @@ public class PayScalePoint extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -25,7 +25,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.geo.domain.entity.Location;
@@ -293,6 +292,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setDocType(TxDocType docType) {
+        if (docType != null) {
+            this.__validate_client_context__(docType.getClientId());
+        }
         this.docType = docType;
     }
 
@@ -301,6 +303,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setCustomer(BusinessPartner customer) {
+        if (customer != null) {
+            this.__validate_client_context__(customer.getClientId());
+        }
         this.customer = customer;
     }
 
@@ -309,6 +314,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setSupplier(Organization supplier) {
+        if (supplier != null) {
+            this.__validate_client_context__(supplier.getClientId());
+        }
         this.supplier = supplier;
     }
 
@@ -317,6 +325,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setPriceList(PriceList priceList) {
+        if (priceList != null) {
+            this.__validate_client_context__(priceList.getClientId());
+        }
         this.priceList = priceList;
     }
 
@@ -325,6 +336,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setCurrency(Currency currency) {
+        if (currency != null) {
+            this.__validate_client_context__(currency.getClientId());
+        }
         this.currency = currency;
     }
 
@@ -333,6 +347,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setPaymentMethod(PaymentMethod paymentMethod) {
+        if (paymentMethod != null) {
+            this.__validate_client_context__(paymentMethod.getClientId());
+        }
         this.paymentMethod = paymentMethod;
     }
 
@@ -341,6 +358,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setPaymentTerm(PaymentTerm paymentTerm) {
+        if (paymentTerm != null) {
+            this.__validate_client_context__(paymentTerm.getClientId());
+        }
         this.paymentTerm = paymentTerm;
     }
 
@@ -349,6 +369,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setInventory(Organization inventory) {
+        if (inventory != null) {
+            this.__validate_client_context__(inventory.getClientId());
+        }
         this.inventory = inventory;
     }
 
@@ -357,6 +380,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setDeliveryMethod(DeliveryMethod deliveryMethod) {
+        if (deliveryMethod != null) {
+            this.__validate_client_context__(deliveryMethod.getClientId());
+        }
         this.deliveryMethod = deliveryMethod;
     }
 
@@ -365,6 +391,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setCarrier(Organization carrier) {
+        if (carrier != null) {
+            this.__validate_client_context__(carrier.getClientId());
+        }
         this.carrier = carrier;
     }
 
@@ -373,6 +402,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setBillTo(BusinessPartner billTo) {
+        if (billTo != null) {
+            this.__validate_client_context__(billTo.getClientId());
+        }
         this.billTo = billTo;
     }
 
@@ -381,6 +413,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setBillToLocation(Location billToLocation) {
+        if (billToLocation != null) {
+            this.__validate_client_context__(billToLocation.getClientId());
+        }
         this.billToLocation = billToLocation;
     }
 
@@ -389,6 +424,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setBillToContact(Contact billToContact) {
+        if (billToContact != null) {
+            this.__validate_client_context__(billToContact.getClientId());
+        }
         this.billToContact = billToContact;
     }
 
@@ -397,6 +435,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setShipTo(BusinessPartner shipTo) {
+        if (shipTo != null) {
+            this.__validate_client_context__(shipTo.getClientId());
+        }
         this.shipTo = shipTo;
     }
 
@@ -405,6 +446,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setShipToLocation(Location shipToLocation) {
+        if (shipToLocation != null) {
+            this.__validate_client_context__(shipToLocation.getClientId());
+        }
         this.shipToLocation = shipToLocation;
     }
 
@@ -413,6 +457,9 @@ public class SalesOrder extends AbstractAuditable {
     }
 
     public void setShipToContact(Contact shipToContact) {
+        if (shipToContact != null) {
+            this.__validate_client_context__(shipToContact.getClientId());
+        }
         this.shipToContact = shipToContact;
     }
 
@@ -448,13 +495,6 @@ public class SalesOrder extends AbstractAuditable {
         if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "SO-" + this.getId());
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

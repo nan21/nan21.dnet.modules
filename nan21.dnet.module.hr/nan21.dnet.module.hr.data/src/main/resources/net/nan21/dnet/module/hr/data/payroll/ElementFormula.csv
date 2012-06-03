@@ -1,0 +1,42 @@
+engine;element;validFrom;validTo;expression
+payroll-ro;cas_angajat;2012-01-01 24:00;;Math.round ( 10.5 * salariu_brut / 100 )
+payroll-ro;cas_unitate;2012-01-01 24:00;;Math.round ( 20.8 * salariu_brut / 100 )
+payroll-ro;cass_angajat;2012-01-01 24:00;;Math.round ( 5.5 * salariu_brut / 100 )
+payroll-ro;cass_unitate;2012-01-01 24:00;;Math.round ( 5.2 * salariu_brut / 100 )
+payroll-ro;deducere_pers;2012-01-01 24:00;;"function calc_deduceri_angajat( venit, pers) {
+  if (venit > 3000) {
+    return 0;
+  }
+  var k = (pers<=4)?pers:4;
+  if(venit<=1000) {
+    return 250 + k*100;
+  } else {
+    return (250 + k*100) * [1-(venit-1000)/2000]
+  }
+}
+calc_deduceri_angajat(salariu_brut, persoane_intretinere)"
+payroll-ro;deducere_suplim;2012-01-01 24:00;;0
+payroll-ro;deducere_tot;2012-01-01 24:00;;deducere_pers + deducere_suplim
+payroll-ro;impozit;2012-01-01 24:00;;Math.round ( 16 * salariu_brut / 100 )
+payroll-ro;persoane_intretinere;2012-01-01 24:00;;"function calc_nr_persoane_intretinere (empl) {
+  var count = 0; 
+  for( var i=0, l=empl.contacts.size(); i<l; i++ ) {
+    if ( empl.contacts.get(i).isDependent) {
+      count++;
+    }
+  }
+  return count;
+}
+calc_nr_persoane_intretinere (_employee)"
+payroll-ro;salariu_baza_impozit;2012-01-01 24:00;;"function baza_calcul ( v,d ){
+  var b = v-d;
+  return ( b>0 )? b : 0; 
+}
+
+baza_calcul ( salariu_net , deducere_tot )"
+payroll-ro;salariu_brut;2012-01-01 24:00;;_employee.baseSalary
+payroll-ro;salariu_net;2012-01-01 24:00;;salariu_brut - taxe_angajat
+payroll-ro;scutit_impozit;2012-01-01 24:00;;false
+payroll-ro;somaj_angajat;2012-01-01 24:00;;Math.round ( 0.5 * salariu_brut / 100 )
+payroll-ro;somaj_unitate;2012-01-01 24:00;;Math.round ( 0.5 * salariu_brut / 100 )
+payroll-ro;taxe_angajat;2012-01-01 24:00;;cas_angajat + cass_angajat + somaj_angajat

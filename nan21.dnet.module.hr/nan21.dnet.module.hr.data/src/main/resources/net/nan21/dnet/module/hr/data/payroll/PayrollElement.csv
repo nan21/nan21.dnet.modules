@@ -1,0 +1,21 @@
+engine;code;name;balance;sequenceNo;type;dataType;calculation;balanceFunction;sourceElement;accItem;active;notes
+payroll-ro;cas_angajat;Asigurari sociale angajat;false;410;taxe-angajat;number;formula;;;;true;Contributia la Asigurarile Sociale (CAS)
+payroll-ro;cas_unitate;Asigurari sociale unitate;false;610;taxe-unitate;number;formula;;;;true;Contributia la Asigurarile Sociale (CAS)
+payroll-ro;cass_angajat;Asigurari sociale de sanatate angajat;false;430;taxe-angajat;number;formula;;;;true;Contributia la Asigurarile Sociale de Sanatate (CASS)
+payroll-ro;cass_unitate;Asigurari sociale de sanatate unitate;false;630;taxe-unitate;number;formula;;;;true;Contributia la Asigurarile Sociale de Sanatate (CASS)
+payroll-ro;deducere_pers;Deducere personala;false;520;deduceri;number;formula;;;;true;
+payroll-ro;deducere_suplim;Deducere suplimentara;false;530;deduceri;number;formula;;;;true;
+payroll-ro;deducere_tot;Deducere totala;false;540;deduceri;number;formula;;;;true;
+payroll-ro;impozit;Impozit pe venit;false;985;taxe-angajat;number;formula;;;;true;
+payroll-ro;nr_zile_lucrate;Nr zile lucrate;false;4;informatii;number;manual;;;;true;
+payroll-ro;persoane_intretinere;Numar persoane intretinere;false;120;informatii;number;formula;;;;true;
+payroll-ro;salariu_baza_impozit;Salariu baza impozitare;false;980;informatii;number;formula;;;;true;
+payroll-ro;salariu_brut;Salariu brut;false;1;venituri-angajat;number;formula;;;;true;
+payroll-ro;salariu_net;Salariu net;false;975;venituri-angajat;number;formula;;;;true;
+payroll-ro;scutit_impozit;Scutit de impozit;false;110;informatii;boolean;formula;;;;true;
+payroll-ro;somaj_angajat;Fondul de somaj angajat;false;420;taxe-angajat;number;formula;;;;true;Contributia la Fondul de Somaj (CFS)
+payroll-ro;somaj_unitate;Fondul de somaj unitate;false;620;taxe-unitate;number;formula;;;;true;Contributia la Fondul de Somaj (CFS)
+payroll-ro;taxe_angajat;Total contributii angajat;false;470;taxe-angajat;number;formula;;;;true;
+payroll-ro;total_fond_somaj_ang;Total fond somaj angajati;true;;total;number;;sum;;fd-somaj-ang;true;Total contributii fond somaj.
+payroll-ro;total_fond_somaj_unitate;Total fond somaj unitate;true;;total;number;;sum;;fd-somaj-unit;true;Total contributii fond somaj.
+payroll-ro;total_impozit;Total impozit pe salarii;true;;total;number;;sum;;imp-salarii;true;Total contributii fond somaj. 

@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.org.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
@@ -38,7 +36,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = PayAccountMethod.NQ_FIND_BY_ID, query = "SELECT e FROM PayAccountMethod e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = PayAccountMethod.NQ_FIND_BY_IDS, query = "SELECT e FROM PayAccountMethod e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = PayAccountMethod.NQ_FIND_BY_ACCOUNT_MTD, query = "SELECT e FROM PayAccountMethod e WHERE e.clientId = :pClientId and  e.payAccount = :pPayAccount and e.payMethod = :pPayMethod ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "PayAccountMethod.findByAccount_mtd_PRIMITIVE", query = "SELECT e FROM PayAccountMethod e WHERE e.clientId = :pClientId and  e.payAccount.id = :pPayAccountId and e.payMethod.id = :pPayMethodId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = PayAccountMethod.NQ_FIND_BY_ACCOUNT_MTD_PRIMITIVE, query = "SELECT e FROM PayAccountMethod e WHERE e.clientId = :pClientId and  e.payAccount.id = :pPayAccountId and e.payMethod.id = :pPayMethodId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class PayAccountMethod extends AbstractAuditable {
 
     public static final String TABLE_NAME = "MD_FINACNT_MTD";
@@ -122,6 +120,9 @@ public class PayAccountMethod extends AbstractAuditable {
     }
 
     public void setPayAccount(PayAccount payAccount) {
+        if (payAccount != null) {
+            this.__validate_client_context__(payAccount.getClientId());
+        }
         this.payAccount = payAccount;
     }
 
@@ -130,6 +131,9 @@ public class PayAccountMethod extends AbstractAuditable {
     }
 
     public void setPayMethod(PaymentMethod payMethod) {
+        if (payMethod != null) {
+            this.__validate_client_context__(payMethod.getClientId());
+        }
         this.payMethod = payMethod;
     }
 
@@ -143,13 +147,6 @@ public class PayAccountMethod extends AbstractAuditable {
         if (this.getAllowPayOut() == null) {
             event.updateAttributeWithObject("allowPayOut", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

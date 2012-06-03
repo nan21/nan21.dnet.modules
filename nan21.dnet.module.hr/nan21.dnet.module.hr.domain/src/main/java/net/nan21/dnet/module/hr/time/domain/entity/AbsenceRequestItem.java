@@ -20,7 +20,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.hr.time.domain.entity.AbsenceRequest;
@@ -107,6 +106,9 @@ public class AbsenceRequestItem extends AbstractAuditable {
     }
 
     public void setAbsenceRequest(AbsenceRequest absenceRequest) {
+        if (absenceRequest != null) {
+            this.__validate_client_context__(absenceRequest.getClientId());
+        }
         this.absenceRequest = absenceRequest;
     }
 
@@ -114,13 +116,6 @@ public class AbsenceRequestItem extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

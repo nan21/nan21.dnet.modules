@@ -13,6 +13,10 @@ import net.nan21.dnet.module.fi.asset.domain.entity.Asset;
 
 public interface IAssetService extends IEntityService<Asset> {
 
+    public Asset findByCode(String code);
+
+    public Asset findByName(String name);
+
     public List<Asset> findByCategory(AssetCategory category);
 
     public List<Asset> findByCategoryId(Long categoryId);

@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.mm.prod.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
@@ -93,6 +91,9 @@ public class ProductSubstitute extends AbstractAuditable {
     }
 
     public void setRefProduct(Product refProduct) {
+        if (refProduct != null) {
+            this.__validate_client_context__(refProduct.getClientId());
+        }
         this.refProduct = refProduct;
     }
 
@@ -101,6 +102,9 @@ public class ProductSubstitute extends AbstractAuditable {
     }
 
     public void setEquivalence(Product equivalence) {
+        if (equivalence != null) {
+            this.__validate_client_context__(equivalence.getClientId());
+        }
         this.equivalence = equivalence;
     }
 
@@ -108,13 +112,6 @@ public class ProductSubstitute extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

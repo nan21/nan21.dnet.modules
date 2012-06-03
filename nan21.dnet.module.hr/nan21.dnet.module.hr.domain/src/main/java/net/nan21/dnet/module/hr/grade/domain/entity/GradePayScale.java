@@ -20,7 +20,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.hr.grade.domain.entity.Grade;
@@ -114,6 +113,9 @@ public class GradePayScale extends AbstractAuditable {
     }
 
     public void setGrade(Grade grade) {
+        if (grade != null) {
+            this.__validate_client_context__(grade.getClientId());
+        }
         this.grade = grade;
     }
 
@@ -122,6 +124,9 @@ public class GradePayScale extends AbstractAuditable {
     }
 
     public void setPayScale(PayScale payScale) {
+        if (payScale != null) {
+            this.__validate_client_context__(payScale.getClientId());
+        }
         this.payScale = payScale;
     }
 
@@ -130,6 +135,9 @@ public class GradePayScale extends AbstractAuditable {
     }
 
     public void setCeiling(PayScalePoint ceiling) {
+        if (ceiling != null) {
+            this.__validate_client_context__(ceiling.getClientId());
+        }
         this.ceiling = ceiling;
     }
 
@@ -137,13 +145,6 @@ public class GradePayScale extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

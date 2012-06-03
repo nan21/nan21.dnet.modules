@@ -28,7 +28,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -220,6 +219,9 @@ public class Payment extends AbstractAuditable {
     }
 
     public void setCurrency(Currency currency) {
+        if (currency != null) {
+            this.__validate_client_context__(currency.getClientId());
+        }
         this.currency = currency;
     }
 
@@ -228,6 +230,9 @@ public class Payment extends AbstractAuditable {
     }
 
     public void setPaymentMethod(PaymentMethod paymentMethod) {
+        if (paymentMethod != null) {
+            this.__validate_client_context__(paymentMethod.getClientId());
+        }
         this.paymentMethod = paymentMethod;
     }
 
@@ -236,6 +241,9 @@ public class Payment extends AbstractAuditable {
     }
 
     public void setFromOrg(Organization fromOrg) {
+        if (fromOrg != null) {
+            this.__validate_client_context__(fromOrg.getClientId());
+        }
         this.fromOrg = fromOrg;
     }
 
@@ -244,6 +252,9 @@ public class Payment extends AbstractAuditable {
     }
 
     public void setToOrg(Organization toOrg) {
+        if (toOrg != null) {
+            this.__validate_client_context__(toOrg.getClientId());
+        }
         this.toOrg = toOrg;
     }
 
@@ -252,6 +263,9 @@ public class Payment extends AbstractAuditable {
     }
 
     public void setFromAccount(PayAccount fromAccount) {
+        if (fromAccount != null) {
+            this.__validate_client_context__(fromAccount.getClientId());
+        }
         this.fromAccount = fromAccount;
     }
 
@@ -260,6 +274,9 @@ public class Payment extends AbstractAuditable {
     }
 
     public void setToAccount(PayAccount toAccount) {
+        if (toAccount != null) {
+            this.__validate_client_context__(toAccount.getClientId());
+        }
         this.toAccount = toAccount;
     }
 
@@ -268,6 +285,9 @@ public class Payment extends AbstractAuditable {
     }
 
     public void setBpartner(BusinessPartner bpartner) {
+        if (bpartner != null) {
+            this.__validate_client_context__(bpartner.getClientId());
+        }
         this.bpartner = bpartner;
     }
 
@@ -300,13 +320,6 @@ public class Payment extends AbstractAuditable {
         if (this.getPosted() == null) {
             event.updateAttributeWithObject("posted", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.base.tax.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
@@ -39,7 +37,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = TaxAcct.NQ_FIND_BY_ID, query = "SELECT e FROM TaxAcct e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = TaxAcct.NQ_FIND_BY_IDS, query = "SELECT e FROM TaxAcct e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = TaxAcct.NQ_FIND_BY_TAX_SCHEMA, query = "SELECT e FROM TaxAcct e WHERE e.clientId = :pClientId and  e.tax = :pTax and e.accSchema = :pAccSchema ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "TaxAcct.findByTax_schema_PRIMITIVE", query = "SELECT e FROM TaxAcct e WHERE e.clientId = :pClientId and  e.tax.id = :pTaxId and e.accSchema.id = :pAccSchemaId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = TaxAcct.NQ_FIND_BY_TAX_SCHEMA_PRIMITIVE, query = "SELECT e FROM TaxAcct e WHERE e.clientId = :pClientId and  e.tax.id = :pTaxId and e.accSchema.id = :pAccSchemaId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class TaxAcct extends AbstractAuditable {
 
     public static final String TABLE_NAME = "MD_TAX_ACCT";
@@ -104,6 +102,9 @@ public class TaxAcct extends AbstractAuditable {
     }
 
     public void setTax(Tax tax) {
+        if (tax != null) {
+            this.__validate_client_context__(tax.getClientId());
+        }
         this.tax = tax;
     }
 
@@ -112,6 +113,9 @@ public class TaxAcct extends AbstractAuditable {
     }
 
     public void setAccSchema(AccSchema accSchema) {
+        if (accSchema != null) {
+            this.__validate_client_context__(accSchema.getClientId());
+        }
         this.accSchema = accSchema;
     }
 
@@ -120,6 +124,9 @@ public class TaxAcct extends AbstractAuditable {
     }
 
     public void setSalesAccount(Account salesAccount) {
+        if (salesAccount != null) {
+            this.__validate_client_context__(salesAccount.getClientId());
+        }
         this.salesAccount = salesAccount;
     }
 
@@ -128,6 +135,9 @@ public class TaxAcct extends AbstractAuditable {
     }
 
     public void setPurchaseAccount(Account purchaseAccount) {
+        if (purchaseAccount != null) {
+            this.__validate_client_context__(purchaseAccount.getClientId());
+        }
         this.purchaseAccount = purchaseAccount;
     }
 
@@ -135,13 +145,6 @@ public class TaxAcct extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -18,10 +18,11 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
+import net.nan21.dnet.core.domain.model.AbstractAuditable;
+import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
+import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElement;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod;
-import net.nan21.dnet.module.md.base.elem.domain.entity.ElementValue;
-import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -29,13 +30,12 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 
 /** PayrollElementValue. */
 @Entity
-@CascadeOnDelete
 @Table(name = PayrollElementValue.TABLE_NAME)
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = PayrollElementValue.NQ_FIND_BY_ID, query = "SELECT e FROM PayrollElementValue e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = PayrollElementValue.NQ_FIND_BY_IDS, query = "SELECT e FROM PayrollElementValue e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-public class PayrollElementValue extends ElementValue {
+public class PayrollElementValue extends AbstractAuditable {
 
     public static final String TABLE_NAME = "HR_PAYROLL_ELEM_VAL";
     public static final String SEQUENCE_NAME = "HR_PAYROLL_ELEM_VAL_SEQ";
@@ -61,12 +61,21 @@ public class PayrollElementValue extends ElementValue {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
-    @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")
-    private Employee employee;
+    /** Value. */
+    @Column(name = "VALUE", length = 400)
+    private String value;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayrollElement.class)
+    @JoinColumn(name = "ELEMENT_ID", referencedColumnName = "ID")
+    private PayrollElement element;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayrollPeriod.class)
     @JoinColumn(name = "PERIOD_ID", referencedColumnName = "ID")
     private PayrollPeriod period;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
+    @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")
+    private Employee employee;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
+    @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
+    private Organization org;
 
     /* ============== getters - setters ================== */
 
@@ -78,12 +87,23 @@ public class PayrollElementValue extends ElementValue {
         this.id = id;
     }
 
-    public Employee getEmployee() {
-        return this.employee;
+    public String getValue() {
+        return this.value;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public PayrollElement getElement() {
+        return this.element;
+    }
+
+    public void setElement(PayrollElement element) {
+        if (element != null) {
+            this.__validate_client_context__(element.getClientId());
+        }
+        this.element = element;
     }
 
     public PayrollPeriod getPeriod() {
@@ -91,17 +111,38 @@ public class PayrollElementValue extends ElementValue {
     }
 
     public void setPeriod(PayrollPeriod period) {
+        if (period != null) {
+            this.__validate_client_context__(period.getClientId());
+        }
         this.period = period;
+    }
+
+    public Employee getEmployee() {
+        return this.employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        if (employee != null) {
+            this.__validate_client_context__(employee.getClientId());
+        }
+        this.employee = employee;
+    }
+
+    public Organization getOrg() {
+        return this.org;
+    }
+
+    public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
+        this.org = org;
     }
 
     public void aboutToInsert(DescriptorEvent event) {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
     }
 
 }

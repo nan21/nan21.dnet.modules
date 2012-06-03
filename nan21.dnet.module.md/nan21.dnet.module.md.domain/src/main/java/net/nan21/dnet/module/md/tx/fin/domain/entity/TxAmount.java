@@ -24,7 +24,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -195,6 +194,9 @@ public class TxAmount extends AbstractAuditable {
     }
 
     public void setBpartner(BusinessPartner bpartner) {
+        if (bpartner != null) {
+            this.__validate_client_context__(bpartner.getClientId());
+        }
         this.bpartner = bpartner;
     }
 
@@ -203,6 +205,9 @@ public class TxAmount extends AbstractAuditable {
     }
 
     public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
         this.org = org;
     }
 
@@ -211,6 +216,9 @@ public class TxAmount extends AbstractAuditable {
     }
 
     public void setPaymentMethod(PaymentMethod paymentMethod) {
+        if (paymentMethod != null) {
+            this.__validate_client_context__(paymentMethod.getClientId());
+        }
         this.paymentMethod = paymentMethod;
     }
 
@@ -227,13 +235,6 @@ public class TxAmount extends AbstractAuditable {
         if (this.getFromOrder() == null) {
             event.updateAttributeWithObject("fromOrder", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -22,8 +22,12 @@ public class PayrollManualValueDs extends
     public static final String fELEMENTNAME = "elementName";
     public static final String fSEQUENCENO = "sequenceNo";
     public static final String fDATATYPE = "dataType";
+    public static final String fTYPEID = "typeId";
+    public static final String fTYPE = "type";
     public static final String fEMPLOYEEID = "employeeId";
     public static final String fEMPLOYEENAME = "employeeName";
+    public static final String fEMPLOYERID = "employerId";
+    public static final String fEMPLOYER = "employer";
     public static final String fPERIODID = "periodId";
     public static final String fPERIOD = "period";
     public static final String fPERIODSTART = "periodStart";
@@ -45,11 +49,23 @@ public class PayrollManualValueDs extends
     @DsField(noInsert = true, noUpdate = true, join = "left", path = "element.dataType")
     private String dataType;
 
+    @DsField(join = "left", path = "element.type.id")
+    private Long typeId;
+
+    @DsField(join = "left", path = "element.type.name")
+    private String type;
+
     @DsField(noInsert = true, noUpdate = true, join = "left", path = "employee.id")
     private Long employeeId;
 
     @DsField(noInsert = true, noUpdate = true, join = "left", orderBy = "lastName,firstName", fetch = false, path = "employee.name")
     private String employeeName;
+
+    @DsField(join = "left", path = "org.id")
+    private Long employerId;
+
+    @DsField(join = "left", path = "org.code")
+    private String employer;
 
     @DsField(noInsert = true, noUpdate = true, join = "left", path = "period.id")
     private Long periodId;
@@ -114,6 +130,22 @@ public class PayrollManualValueDs extends
         this.dataType = dataType;
     }
 
+    public Long getTypeId() {
+        return this.typeId;
+    }
+
+    public void setTypeId(Long typeId) {
+        this.typeId = typeId;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public Long getEmployeeId() {
         return this.employeeId;
     }
@@ -128,6 +160,22 @@ public class PayrollManualValueDs extends
 
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
+    }
+
+    public Long getEmployerId() {
+        return this.employerId;
+    }
+
+    public void setEmployerId(Long employerId) {
+        this.employerId = employerId;
+    }
+
+    public String getEmployer() {
+        return this.employer;
+    }
+
+    public void setEmployer(String employer) {
+        this.employer = employer;
     }
 
     public Long getPeriodId() {

@@ -26,12 +26,26 @@ public class PayrollManualValueDsFilter extends AbstractAuditableDsFilter {
 
     private String dataType;
 
+    private Long typeId;
+
+    private Long typeId_From;
+    private Long typeId_To;
+
+    private String type;
+
     private Long employeeId;
 
     private Long employeeId_From;
     private Long employeeId_To;
 
     private String employeeName;
+
+    private Long employerId;
+
+    private Long employerId_From;
+    private Long employerId_To;
+
+    private String employer;
 
     private Long periodId;
 
@@ -124,6 +138,38 @@ public class PayrollManualValueDsFilter extends AbstractAuditableDsFilter {
         this.dataType = dataType;
     }
 
+    public Long getTypeId() {
+        return this.typeId;
+    }
+
+    public Long getTypeId_From() {
+        return this.typeId_From;
+    }
+
+    public Long getTypeId_To() {
+        return this.typeId_To;
+    }
+
+    public void setTypeId(Long typeId) {
+        this.typeId = typeId;
+    }
+
+    public void setTypeId_From(Long typeId_From) {
+        this.typeId_From = typeId_From;
+    }
+
+    public void setTypeId_To(Long typeId_To) {
+        this.typeId_To = typeId_To;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public Long getEmployeeId() {
         return this.employeeId;
     }
@@ -154,6 +200,38 @@ public class PayrollManualValueDsFilter extends AbstractAuditableDsFilter {
 
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
+    }
+
+    public Long getEmployerId() {
+        return this.employerId;
+    }
+
+    public Long getEmployerId_From() {
+        return this.employerId_From;
+    }
+
+    public Long getEmployerId_To() {
+        return this.employerId_To;
+    }
+
+    public void setEmployerId(Long employerId) {
+        this.employerId = employerId;
+    }
+
+    public void setEmployerId_From(Long employerId_From) {
+        this.employerId_From = employerId_From;
+    }
+
+    public void setEmployerId_To(Long employerId_To) {
+        this.employerId_To = employerId_To;
+    }
+
+    public String getEmployer() {
+        return this.employer;
+    }
+
+    public void setEmployer(String employer) {
+        this.employer = employer;
     }
 
     public Long getPeriodId() {

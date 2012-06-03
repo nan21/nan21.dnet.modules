@@ -24,7 +24,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter", {
 		//controls	
 		this._getBuilder_()	
 		.addTextField({ name:"name",_sharedLabel_:true, dataIndex:"name",anchor:"-20",maxLength:255  })
-		.addCombo({ name:"periodType", xtype:"combo", dataIndex:"periodType",anchor:"-20",store:[ "calendar-month", "semi-month"]  })
+		.addCombo({ name:"periodType", xtype:"combo", dataIndex:"periodType",anchor:"-20",store:[ "calendar-month"]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:250}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
@@ -47,8 +47,9 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$List", {
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name",width:120 })   	
 		.addTextColumn({ name:"periodType", dataIndex:"periodType",width:100 })   	
-		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
+		.addTextColumn({ name:"engine", dataIndex:"engine",width:120 })   	
 		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
+		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 	  	.addDefaults()
 	  ;		   
 	}
@@ -66,8 +67,9 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
+		.addLov({ name:"engine", xtype:"net.nan21.dnet.module.bd.elem.lovs.Engines", dataIndex:"engine",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "engineId"} ]  })
 		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
-		.addCombo({ name:"periodType", xtype:"localcombo", dataIndex:"periodType",anchor:"-20" ,allowBlank:false,store:[ "calendar-month", "semi-month"]  })
+		.addCombo({ name:"periodType", xtype:"localcombo", dataIndex:"periodType",anchor:"-20" ,allowBlank:false,store:[ "calendar-month"]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" , width:350})     
@@ -77,7 +79,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
-		.addChildrenTo("col1",["name","periodType","active"])
+		.addChildrenTo("col1",["name","periodType","engine","active"])
 		.addChildrenTo("col2",["description"])
 ;
 	}	

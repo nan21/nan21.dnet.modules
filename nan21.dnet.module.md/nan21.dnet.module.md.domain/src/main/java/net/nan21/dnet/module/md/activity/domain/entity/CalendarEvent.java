@@ -21,7 +21,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.md.activity.domain.entity.CalendarEventPriority;
@@ -252,6 +251,9 @@ public class CalendarEvent extends AbstractAuditable {
     }
 
     public void setStatus(CalendarEventStatus status) {
+        if (status != null) {
+            this.__validate_client_context__(status.getClientId());
+        }
         this.status = status;
     }
 
@@ -260,6 +262,9 @@ public class CalendarEvent extends AbstractAuditable {
     }
 
     public void setPriority(CalendarEventPriority priority) {
+        if (priority != null) {
+            this.__validate_client_context__(priority.getClientId());
+        }
         this.priority = priority;
     }
 
@@ -268,6 +273,9 @@ public class CalendarEvent extends AbstractAuditable {
     }
 
     public void setBpartner(BusinessPartner bpartner) {
+        if (bpartner != null) {
+            this.__validate_client_context__(bpartner.getClientId());
+        }
         this.bpartner = bpartner;
     }
 
@@ -276,6 +284,9 @@ public class CalendarEvent extends AbstractAuditable {
     }
 
     public void setContact(Contact contact) {
+        if (contact != null) {
+            this.__validate_client_context__(contact.getClientId());
+        }
         this.contact = contact;
     }
 
@@ -286,13 +297,6 @@ public class CalendarEvent extends AbstractAuditable {
         if (this.getAllDay() == null) {
             event.updateAttributeWithObject("allDay", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -163,8 +163,4 @@ public class AuditEntry extends AbstractSimpleEntity {
 
     }
 
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-    }
-
 }

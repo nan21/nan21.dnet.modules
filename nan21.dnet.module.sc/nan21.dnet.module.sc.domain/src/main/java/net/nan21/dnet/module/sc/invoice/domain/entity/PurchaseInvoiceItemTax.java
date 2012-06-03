@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.sc.invoice.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.md.base.tax.domain.entity.Tax;
@@ -108,6 +106,9 @@ public class PurchaseInvoiceItemTax extends AbstractAuditable {
     }
 
     public void setPurchaseInvoiceItem(PurchaseInvoiceItem purchaseInvoiceItem) {
+        if (purchaseInvoiceItem != null) {
+            this.__validate_client_context__(purchaseInvoiceItem.getClientId());
+        }
         this.purchaseInvoiceItem = purchaseInvoiceItem;
     }
 
@@ -116,6 +117,9 @@ public class PurchaseInvoiceItemTax extends AbstractAuditable {
     }
 
     public void setTax(Tax tax) {
+        if (tax != null) {
+            this.__validate_client_context__(tax.getClientId());
+        }
         this.tax = tax;
     }
 
@@ -123,13 +127,6 @@ public class PurchaseInvoiceItemTax extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

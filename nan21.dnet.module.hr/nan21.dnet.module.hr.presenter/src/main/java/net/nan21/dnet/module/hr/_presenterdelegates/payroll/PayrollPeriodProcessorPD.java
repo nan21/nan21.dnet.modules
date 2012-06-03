@@ -7,41 +7,53 @@ import net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDs;
 
 public class PayrollPeriodProcessorPD extends AbstractDsDelegate {
 
+	/**
+	 * Open period.
+	 * @param ds
+	 * @throws Exception
+	 */
 	public void open(PayrollPeriodDs ds) throws Exception {
 		IPayrollPeriodService service = ((IPayrollPeriodService) this
 				.findEntityService(PayrollPeriod.class));
 		PayrollPeriod entity = service.findById(ds.getId());
-		entity.setActive(true);
-		service.update(entity);
-		ds.setActive(true);
+		service.doOpen(entity);
 	}
-	
+
+	/**
+	 * Close period
+	 * @param ds
+	 * @throws Exception
+	 */
 	public void close(PayrollPeriodDs ds) throws Exception {
 		IPayrollPeriodService service = ((IPayrollPeriodService) this
 				.findEntityService(PayrollPeriod.class));
 		PayrollPeriod entity = service.findById(ds.getId());
-		entity.setActive(false);
-		entity.setClosed(true);
-		service.update(entity);
-		ds.setActive(false);
-		ds.setClosed(true);
+		service.doClose(entity);
 	}
-	
+
+	/**
+	 * Process period
+	 * @param ds
+	 * @throws Exception
+	 */
 	public void process(PayrollPeriodDs ds) throws Exception {
 		IPayrollPeriodService service = ((IPayrollPeriodService) this
 				.findEntityService(PayrollPeriod.class));
 		PayrollPeriod entity = service.findById(ds.getId());
 		service.doProcess(entity);
-		ds.setProcessed(true);
 	}
+
 	
+	/**
+	 * Clear period.
+	 * @param ds
+	 * @throws Exception
+	 */
 	public void clear(PayrollPeriodDs ds) throws Exception {
 		IPayrollPeriodService service = ((IPayrollPeriodService) this
 				.findEntityService(PayrollPeriod.class));
 		PayrollPeriod entity = service.findById(ds.getId());
 		service.doClear(entity);
-		ds.setProcessed(false);
 	}
-	
-	
+
 }

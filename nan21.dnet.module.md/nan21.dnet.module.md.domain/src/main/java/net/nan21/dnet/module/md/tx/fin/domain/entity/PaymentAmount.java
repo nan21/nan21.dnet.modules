@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.tx.fin.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -22,7 +21,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.Payment;
@@ -109,6 +107,9 @@ public class PaymentAmount extends AbstractAuditable {
     }
 
     public void setPayment(Payment payment) {
+        if (payment != null) {
+            this.__validate_client_context__(payment.getClientId());
+        }
         this.payment = payment;
     }
 
@@ -116,13 +117,6 @@ public class PaymentAmount extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

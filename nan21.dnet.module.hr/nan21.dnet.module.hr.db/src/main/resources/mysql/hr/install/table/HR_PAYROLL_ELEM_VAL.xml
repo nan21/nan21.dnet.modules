@@ -10,8 +10,6 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="ENTITYTYPE" type="varchar(32)">
-				<constraints  /></column>	 
 			<column name="ID" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDAT" type="datetime">
@@ -31,7 +29,7 @@
 			<column name="ORG_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
 			<column name="PERIOD_ID" type="bigint(19)">	 
-				<constraints  /></column>	 
+				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

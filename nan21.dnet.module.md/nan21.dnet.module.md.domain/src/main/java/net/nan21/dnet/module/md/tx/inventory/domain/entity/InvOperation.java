@@ -20,7 +20,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -140,6 +139,9 @@ public class InvOperation extends AbstractAuditable {
     }
 
     public void setInventory(Organization inventory) {
+        if (inventory != null) {
+            this.__validate_client_context__(inventory.getClientId());
+        }
         this.inventory = inventory;
     }
 
@@ -148,6 +150,9 @@ public class InvOperation extends AbstractAuditable {
     }
 
     public void setSubInventory(SubInventory subInventory) {
+        if (subInventory != null) {
+            this.__validate_client_context__(subInventory.getClientId());
+        }
         this.subInventory = subInventory;
     }
 
@@ -156,6 +161,9 @@ public class InvOperation extends AbstractAuditable {
     }
 
     public void setLocator(StockLocator locator) {
+        if (locator != null) {
+            this.__validate_client_context__(locator.getClientId());
+        }
         this.locator = locator;
     }
 
@@ -164,6 +172,9 @@ public class InvOperation extends AbstractAuditable {
     }
 
     public void setItem(Product item) {
+        if (item != null) {
+            this.__validate_client_context__(item.getClientId());
+        }
         this.item = item;
     }
 
@@ -172,6 +183,9 @@ public class InvOperation extends AbstractAuditable {
     }
 
     public void setTransactionLine(InvTransactionLine transactionLine) {
+        if (transactionLine != null) {
+            this.__validate_client_context__(transactionLine.getClientId());
+        }
         this.transactionLine = transactionLine;
     }
 
@@ -180,6 +194,9 @@ public class InvOperation extends AbstractAuditable {
     }
 
     public void setUom(Uom uom) {
+        if (uom != null) {
+            this.__validate_client_context__(uom.getClientId());
+        }
         this.uom = uom;
     }
 
@@ -187,13 +204,6 @@ public class InvOperation extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

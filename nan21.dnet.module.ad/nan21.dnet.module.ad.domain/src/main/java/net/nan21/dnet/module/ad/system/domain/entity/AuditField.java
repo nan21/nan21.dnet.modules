@@ -144,6 +144,9 @@ public class AuditField extends AbstractSimpleEntity {
     }
 
     public void setAuditEntry(AuditEntry auditEntry) {
+        if (auditEntry != null) {
+            this.__validate_client_context__(auditEntry.getClientId());
+        }
         this.auditEntry = auditEntry;
     }
 
@@ -151,10 +154,6 @@ public class AuditField extends AbstractSimpleEntity {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
     }
 
 }

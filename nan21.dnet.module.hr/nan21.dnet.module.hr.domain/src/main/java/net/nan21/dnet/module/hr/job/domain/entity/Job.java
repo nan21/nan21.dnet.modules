@@ -21,7 +21,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.hr.job.domain.entity.JobType;
@@ -123,6 +122,9 @@ public class Job extends AbstractTypeWithCode {
     }
 
     public void setJobType(JobType jobType) {
+        if (jobType != null) {
+            this.__validate_client_context__(jobType.getClientId());
+        }
         this.jobType = jobType;
     }
 
@@ -136,13 +138,6 @@ public class Job extends AbstractTypeWithCode {
         if (this.getCode() == null || this.getCode().equals("")) {
             event.updateAttributeWithObject("code", "JOB-" + this.getId());
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

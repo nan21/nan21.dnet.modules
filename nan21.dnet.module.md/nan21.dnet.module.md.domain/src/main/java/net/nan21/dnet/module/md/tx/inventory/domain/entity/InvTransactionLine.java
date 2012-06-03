@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.tx.inventory.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
@@ -113,6 +111,9 @@ public class InvTransactionLine extends AbstractAuditable {
     }
 
     public void setInvTransaction(InvTransaction invTransaction) {
+        if (invTransaction != null) {
+            this.__validate_client_context__(invTransaction.getClientId());
+        }
         this.invTransaction = invTransaction;
     }
 
@@ -121,6 +122,9 @@ public class InvTransactionLine extends AbstractAuditable {
     }
 
     public void setItem(Product item) {
+        if (item != null) {
+            this.__validate_client_context__(item.getClientId());
+        }
         this.item = item;
     }
 
@@ -129,6 +133,9 @@ public class InvTransactionLine extends AbstractAuditable {
     }
 
     public void setFromSubInventory(SubInventory fromSubInventory) {
+        if (fromSubInventory != null) {
+            this.__validate_client_context__(fromSubInventory.getClientId());
+        }
         this.fromSubInventory = fromSubInventory;
     }
 
@@ -137,6 +144,9 @@ public class InvTransactionLine extends AbstractAuditable {
     }
 
     public void setFromLocator(StockLocator fromLocator) {
+        if (fromLocator != null) {
+            this.__validate_client_context__(fromLocator.getClientId());
+        }
         this.fromLocator = fromLocator;
     }
 
@@ -145,6 +155,9 @@ public class InvTransactionLine extends AbstractAuditable {
     }
 
     public void setToSubInventory(SubInventory toSubInventory) {
+        if (toSubInventory != null) {
+            this.__validate_client_context__(toSubInventory.getClientId());
+        }
         this.toSubInventory = toSubInventory;
     }
 
@@ -153,6 +166,9 @@ public class InvTransactionLine extends AbstractAuditable {
     }
 
     public void setToLocator(StockLocator toLocator) {
+        if (toLocator != null) {
+            this.__validate_client_context__(toLocator.getClientId());
+        }
         this.toLocator = toLocator;
     }
 
@@ -161,6 +177,9 @@ public class InvTransactionLine extends AbstractAuditable {
     }
 
     public void setUom(Uom uom) {
+        if (uom != null) {
+            this.__validate_client_context__(uom.getClientId());
+        }
         this.uom = uom;
     }
 
@@ -168,13 +187,6 @@ public class InvTransactionLine extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

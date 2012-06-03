@@ -24,7 +24,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
@@ -236,6 +235,9 @@ public class AccDoc extends AbstractAuditable {
     }
 
     public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
         this.org = org;
     }
 
@@ -244,6 +246,9 @@ public class AccDoc extends AbstractAuditable {
     }
 
     public void setAccSchema(AccSchema accSchema) {
+        if (accSchema != null) {
+            this.__validate_client_context__(accSchema.getClientId());
+        }
         this.accSchema = accSchema;
     }
 
@@ -252,6 +257,9 @@ public class AccDoc extends AbstractAuditable {
     }
 
     public void setPeriod(FiscalPeriod period) {
+        if (period != null) {
+            this.__validate_client_context__(period.getClientId());
+        }
         this.period = period;
     }
 
@@ -260,6 +268,9 @@ public class AccDoc extends AbstractAuditable {
     }
 
     public void setJournal(AccJournal journal) {
+        if (journal != null) {
+            this.__validate_client_context__(journal.getClientId());
+        }
         this.journal = journal;
     }
 
@@ -268,6 +279,9 @@ public class AccDoc extends AbstractAuditable {
     }
 
     public void setBpartner(BusinessPartner bpartner) {
+        if (bpartner != null) {
+            this.__validate_client_context__(bpartner.getClientId());
+        }
         this.bpartner = bpartner;
     }
 
@@ -276,6 +290,9 @@ public class AccDoc extends AbstractAuditable {
     }
 
     public void setDocCurrency(Currency docCurrency) {
+        if (docCurrency != null) {
+            this.__validate_client_context__(docCurrency.getClientId());
+        }
         this.docCurrency = docCurrency;
     }
 
@@ -284,6 +301,9 @@ public class AccDoc extends AbstractAuditable {
     }
 
     public void setDocType(TxDocType docType) {
+        if (docType != null) {
+            this.__validate_client_context__(docType.getClientId());
+        }
         this.docType = docType;
     }
 
@@ -310,13 +330,6 @@ public class AccDoc extends AbstractAuditable {
         if (this.getPosted() == null) {
             event.updateAttributeWithObject("posted", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

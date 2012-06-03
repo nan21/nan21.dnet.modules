@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.md.base.attr.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,7 +18,6 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.md.base.attr.domain.entity.Attribute;
@@ -39,7 +37,7 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
         @NamedQuery(name = AttributeGroupAttribute.NQ_FIND_BY_ID, query = "SELECT e FROM AttributeGroupAttribute e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = AttributeGroupAttribute.NQ_FIND_BY_IDS, query = "SELECT e FROM AttributeGroupAttribute e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = AttributeGroupAttribute.NQ_FIND_BY_NAME, query = "SELECT e FROM AttributeGroupAttribute e WHERE e.clientId = :pClientId and  e.group = :pGroup and e.attribute = :pAttribute ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = "AttributeGroupAttribute.findByName_PRIMITIVE", query = "SELECT e FROM AttributeGroupAttribute e WHERE e.clientId = :pClientId and  e.group.id = :pGroupId and e.attribute.id = :pAttributeId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = AttributeGroupAttribute.NQ_FIND_BY_NAME_PRIMITIVE, query = "SELECT e FROM AttributeGroupAttribute e WHERE e.clientId = :pClientId and  e.group.id = :pGroupId and e.attribute.id = :pAttributeId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AttributeGroupAttribute extends AbstractAuditable {
 
     public static final String TABLE_NAME = "MD_ATTR_GRP_ATTR";
@@ -122,6 +120,9 @@ public class AttributeGroupAttribute extends AbstractAuditable {
     }
 
     public void setGroup(AttributeGroup group) {
+        if (group != null) {
+            this.__validate_client_context__(group.getClientId());
+        }
         this.group = group;
     }
 
@@ -130,6 +131,9 @@ public class AttributeGroupAttribute extends AbstractAuditable {
     }
 
     public void setAttribute(Attribute attribute) {
+        if (attribute != null) {
+            this.__validate_client_context__(attribute.getClientId());
+        }
         this.attribute = attribute;
     }
 
@@ -140,13 +144,6 @@ public class AttributeGroupAttribute extends AbstractAuditable {
         if (this.getInDescription() == null) {
             event.updateAttributeWithObject("inDescription", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

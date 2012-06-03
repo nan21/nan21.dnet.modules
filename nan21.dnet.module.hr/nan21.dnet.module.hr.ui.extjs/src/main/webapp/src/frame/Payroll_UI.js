@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/PayrollDs", "nan21.dnet.module.hr.ui.extjs/dc/Payroll", "nan21.dnet.module.hr.ui.extjs/ds/PayrollPeriodDs", "nan21.dnet.module.hr.ui.extjs/dc/PayrollPeriod"]);
+Dnet.doImport(["", "nan21.dnet.module.hr.ui.extjs/ds/PayrollDs", "nan21.dnet.module.hr.ui.extjs/dc/Payroll", "nan21.dnet.module.hr.ui.extjs/ds/PayrollPeriodDs", "nan21.dnet.module.hr.ui.extjs/dc/PayrollPeriod","nan21.dnet.module.bd.ui.extjs/ds/EngineLovDs","nan21.dnet.module.bd.ui.extjs/lov/Engines"]);
 
 Ext.define("net.nan21.dnet.module.hr.payroll.frame.Payroll_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
@@ -26,9 +26,9 @@ Ext.define("net.nan21.dnet.module.hr.payroll.frame.Payroll_UI", {
 		.addButton({name:"btnClearPeriod",text:"Clear", tooltip:"Delete processed values",iconCls:"icon-action-rollback",disabled:true
 			,handler: this.onBtnClearPeriod,scope:this,stateManager:{name:"selected_one_clean", dc:"period" , and: function(dc) {return (dc.record && dc.record.get("active") && dc.record.get("processed")  );}}	})	
 							 	
-		.addDcFilterFormView("payroll",{ name:"payrollFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter",height:120})	 
+		.addDcFilterFormView("payroll",{ name:"payrollFilter", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$Filter",height:80})	 
 		.addDcGridView("payroll",{ name:"payrollList", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$List"})	 
-		.addDcFormView("payroll",{ name:"payrollEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit",height:150,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnOpenPeriod") ,this._elems_.get("btnProcessPeriod") ,this._elems_.get("btnClearPeriod") ,this._elems_.get("btnClosePeriod") ]}]})	 
+		.addDcFormView("payroll",{ name:"payrollEdit", xtype:"net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit",height:160,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnOpenPeriod") ,this._elems_.get("btnProcessPeriod") ,this._elems_.get("btnClearPeriod") ,this._elems_.get("btnClosePeriod") ]}]})	 
 		.addDcEditGridView("period",{ name:"periodCtxEditList", xtype:"net.nan21.dnet.module.hr.payroll.dc.PayrollPeriod$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

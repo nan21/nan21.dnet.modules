@@ -75,8 +75,4 @@ public class PaymentIn extends Payment {
         }
     }
 
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-    }
-
 }

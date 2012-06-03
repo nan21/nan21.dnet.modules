@@ -5,7 +5,6 @@
  */
 package net.nan21.dnet.module.bd.org.domain.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
@@ -86,6 +84,9 @@ public class OrganizationHierarchyItem extends AbstractAuditable {
     }
 
     public void setHierarchy(OrganizationHierarchy hierarchy) {
+        if (hierarchy != null) {
+            this.__validate_client_context__(hierarchy.getClientId());
+        }
         this.hierarchy = hierarchy;
     }
 
@@ -94,6 +95,9 @@ public class OrganizationHierarchyItem extends AbstractAuditable {
     }
 
     public void setOrg(Organization org) {
+        if (org != null) {
+            this.__validate_client_context__(org.getClientId());
+        }
         this.org = org;
     }
 
@@ -102,6 +106,9 @@ public class OrganizationHierarchyItem extends AbstractAuditable {
     }
 
     public void setParent(Organization parent) {
+        if (parent != null) {
+            this.__validate_client_context__(parent.getClientId());
+        }
         this.parent = parent;
     }
 
@@ -109,13 +116,6 @@ public class OrganizationHierarchyItem extends AbstractAuditable {
 
         super.aboutToInsert(event);
 
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

@@ -21,7 +21,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear;
@@ -136,6 +135,9 @@ public class FiscalPeriod extends AbstractTypeWithCode {
     }
 
     public void setYear(FiscalYear year) {
+        if (year != null) {
+            this.__validate_client_context__(year.getClientId());
+        }
         this.year = year;
     }
 
@@ -149,13 +151,6 @@ public class FiscalPeriod extends AbstractTypeWithCode {
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
         }
-    }
-
-    public void aboutToUpdate(DescriptorEvent event) {
-        super.aboutToUpdate(event);
-        event.updateAttributeWithObject("modifiedAt", new Date());
-        event.updateAttributeWithObject("modifiedBy", Session.user.get()
-                .getUsername());
     }
 
 }

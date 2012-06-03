@@ -20,8 +20,13 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollElementValueDs" ,{
 		{name:"elementName", type:"string"},
 		{name:"sequenceNo", type:"int", useNull:true},
 		{name:"dataType", type:"string"},
+		{name:"calculation", type:"string"},
+		{name:"typeId", type:"int", useNull:true},
+		{name:"type", type:"string"},
 		{name:"employeeId", type:"int", useNull:true},
 		{name:"employeeName", type:"string"},
+		{name:"employerId", type:"int", useNull:true},
+		{name:"employer", type:"string"},
 		{name:"value", type:"string"},
 		{name:"periodId", type:"int", useNull:true},
 		{name:"period", type:"string"},
@@ -53,10 +58,19 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollElementValueDsFilte
 		{name:"sequenceNo_From",type:"int", useNull:true},
 		{name:"sequenceNo_To",type:"int", useNull:true},
 		{name:"dataType", type:"string"},
+		{name:"calculation", type:"string"},
+		{name:"typeId", type:"int", useNull:true},
+		{name:"typeId_From",type:"int", useNull:true},
+		{name:"typeId_To",type:"int", useNull:true},
+		{name:"type", type:"string"},
 		{name:"employeeId", type:"int", useNull:true},
 		{name:"employeeId_From",type:"int", useNull:true},
 		{name:"employeeId_To",type:"int", useNull:true},
 		{name:"employeeName", type:"string"},
+		{name:"employerId", type:"int", useNull:true},
+		{name:"employerId_From",type:"int", useNull:true},
+		{name:"employerId_To",type:"int", useNull:true},
+		{name:"employer", type:"string"},
 		{name:"value", type:"string"},
 		{name:"periodId", type:"int", useNull:true},
 		{name:"periodId_From",type:"int", useNull:true},
@@ -74,6 +88,8 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollElementValueDsFilte
 Ext.define("net.nan21.dnet.module.hr.payroll.ds.param.PayrollElementValueDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 
+		{name:"elementSetId", type:"int", useNull:true},
+		{name:"elementSet", type:"string"}
 	]
 }); 
  

@@ -38,6 +38,23 @@ Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter", {
 	}
 }); 
  	
+ 	
+ 	 
+Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$EditList", {
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
+	alias: "widget.net.nan21.dnet.module.hr.skill.dc.RatingScale$EditList",
+	
+	_bulkEditFields_ : ["description","active"],
+	_defineColumns_: function () {
+		this._getBuilder_()
+		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addBooleanColumn({ name:"active", dataIndex:"active"})
+	  	.addDefaults()
+	  ;  		   
+	}  
+});
+ 	
  		 
 Ext.define("net.nan21.dnet.module.hr.skill.dc.RatingScale$List", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
