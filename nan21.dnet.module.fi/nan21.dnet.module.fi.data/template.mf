@@ -5,3 +5,4 @@ Bundle-SymbolicName: nan21.dnet.module.fi.data
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0.RC1
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+
