@@ -36,6 +36,7 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 40;DsMethodAccessControl_UI;Access rights - DS method;;net.nan21.dnet.module.ad.usr.frame.DsMethodAccessControl_UI;nan21.dnet.module.ad.ui.extjs;true;A372E0B4-F390-4DFC-8A8C-4B6283B73562
 20;ElementBaseData_UI;Element base data;;net.nan21.dnet.module.bd.elem.frame.ElementBaseData_UI;nan21.dnet.module.bd.ui.extjs;true;8286EB0F-043E-4108-920D-7FB3C73D9B79
 30;ElementSet_UI;Element set;;net.nan21.dnet.module.bd.elem.frame.ElementSet_UI;nan21.dnet.module.bd.ui.extjs;true;0FED9F8D-BF8C-4FDE-BC70-1354E63B0D00
+50;Element_UI;Elements overview;;net.nan21.dnet.module.bd.elem.frame.Element_UI;nan21.dnet.module.bd.ui.extjs;true;69D155B4-C0D9-471C-9584-6B8D7E44E553
 10;EmployeeTypeDefs_UI;Employee base data definition;;net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI;nan21.dnet.module.hr.ui.extjs;true;C7FE4BAE-F2ED-458A-8071-5BD26AC1CBBA
 20;Employee_UI;Employees;;net.nan21.dnet.module.hr.employee.frame.Employee_UI;nan21.dnet.module.hr.ui.extjs;true;6DAD7412-193C-4F6B-B4C7-CDFB10552B14
 30;ExportJob_UI;Export jobs;;net.nan21.dnet.module.ad.impex.frame.ExportJob_UI;nan21.dnet.module.ad.ui.extjs;true;3FC4736E-938E-4D7D-B547-F63ABCCEA000

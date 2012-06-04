@@ -92,6 +92,21 @@ Ext.define("net.nan21.dnet.module.bd.elem.dc.ElementFormula$CtxEditList", {
 	}  
 });
  	
+ 		 
+Ext.define("net.nan21.dnet.module.bd.elem.dc.ElementFormula$CtxList", {
+	extend: "dnet.core.dc.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.bd.elem.dc.ElementFormula$CtxList",
+	
+	_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT})   	      	     
+		.addDateColumn({ name:"validTo", dataIndex:"validTo",format:Dnet.DATE_FORMAT})   	      	     
+	  	.addDefaults()
+	  ;		   
+	}
+});
+ 
+ 	
  	
 
 Ext.define("net.nan21.dnet.module.bd.elem.dc.ElementFormula$EditExpression", {
@@ -102,6 +117,28 @@ Ext.define("net.nan21.dnet.module.bd.elem.dc.ElementFormula$EditExpression", {
 		//controls	
 		this._getBuilder_()	
 		.addTextArea({ name:"expression", dataIndex:"expression",height:200,anchor:"-20"   })
+		//containers
+		.addPanel({ name:"main", layout:"form" , autoScroll:true, defaults:{
+labelAlign:"top"}})     
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["expression"])
+;
+	}	
+});
+ 	
+ 	
+
+Ext.define("net.nan21.dnet.module.bd.elem.dc.ElementFormula$ViewExpression", {
+	extend: "dnet.core.dc.AbstractDcvEditForm",
+	alias: "widget.net.nan21.dnet.module.bd.elem.dc.ElementFormula$ViewExpression",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addDisplayFieldText({ name:"expression", dataIndex:"expression", asText:true  })
 		//containers
 		.addPanel({ name:"main", layout:"form" , autoScroll:true, defaults:{
 labelAlign:"top"}})     

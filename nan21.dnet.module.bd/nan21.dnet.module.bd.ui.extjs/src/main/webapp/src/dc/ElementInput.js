@@ -81,3 +81,21 @@ Ext.define("net.nan21.dnet.module.bd.elem.dc.ElementInput$CtxEditList", {
 	}  
 });
  	
+ 		 
+Ext.define("net.nan21.dnet.module.bd.elem.dc.ElementInput$CtxList", {
+	extend: "dnet.core.dc.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.bd.elem.dc.ElementInput$CtxList",
+	
+	_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addTextColumn({ name:"reference", dataIndex:"reference", width:150 })   	
+		.addTextColumn({ name:"referenceName", dataIndex:"referenceName", width:200 })   	
+		.addTextColumn({ name:"alias", dataIndex:"alias",width:100 })   	
+		.addNumberColumn({ name:"elementId", dataIndex:"elementId", hidden:true,format:"0",width:70 })  
+		.addNumberColumn({ name:"referenceId", dataIndex:"referenceId", hidden:true,format:"0",width:70 })  
+	  	.addDefaults()
+	  ;		   
+	}
+});
+ 
+ 	

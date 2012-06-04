@@ -26,10 +26,10 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
-import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
 import net.nan21.dnet.module.bd.elem.domain.entity.ElementType;
 import net.nan21.dnet.module.bd.elem.domain.entity.Engine;
+import net.nan21.dnet.module.bd.elem.domain.eventhandler.ElementEventHandler;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
@@ -43,7 +43,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @DiscriminatorColumn(name = "ENTITYTYPE", discriminatorType = DiscriminatorType.STRING, length = 32)
 @Table(name = Element.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = Element.TABLE_NAME
         + "_UK1", columnNames = { "CLIENTID", "ENGINE_ID", "CODE" }) })
-@Customizer(DefaultEventHandler.class)
+@Customizer(ElementEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = Element.NQ_FIND_BY_ID, query = "SELECT e FROM Element e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = Element.NQ_FIND_BY_IDS, query = "SELECT e FROM Element e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),

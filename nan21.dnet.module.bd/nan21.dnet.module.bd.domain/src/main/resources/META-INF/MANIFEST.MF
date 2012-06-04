@@ -16,30 +16,32 @@ Export-Package: net.nan21.dnet.module.bd.contact.domain.entity;version
  domain.model,org.eclipse.persistence.annotations,org.eclipse.persiste
  nce.descriptors,org.eclipse.persistence.indirection,org.eclipse.persi
  stence.internal.descriptors,org.eclipse.persistence.internal.weaving,
- org.hibernate.validator.constraints",net.nan21.dnet.module.bd.geo.dom
- ain.entity;version="1.0.0.RC1";uses:="javax.persistence,javax.validat
- ion.constraints,javax.xml.bind.annotation,net.nan21.dnet.core.domain.
- model,org.eclipse.persistence.annotations,org.eclipse.persistence.des
- criptors,org.eclipse.persistence.indirection,org.eclipse.persistence.
- internal.descriptors,org.eclipse.persistence.internal.weaving",net.na
- n21.dnet.module.bd.org.domain.entity;version="1.0.0.RC1";uses:="javax
- .persistence,javax.validation.constraints,javax.xml.bind.annotation,n
- et.nan21.dnet.core.domain.model,org.eclipse.persistence.annotations,o
- rg.eclipse.persistence.descriptors,org.eclipse.persistence.indirectio
- n,org.eclipse.persistence.internal.descriptors,org.eclipse.persistenc
- e.internal.weaving",net.nan21.dnet.module.bd.standards.domain.entity;
- version="1.0.0.RC1";uses:="javax.persistence,javax.validation.constra
- ints,javax.xml.bind.annotation,net.nan21.dnet.core.domain.model,org.e
- clipse.persistence.annotations,org.eclipse.persistence.descriptors,or
- g.eclipse.persistence.indirection,org.eclipse.persistence.internal.de
- scriptors,org.eclipse.persistence.internal.weaving,org.hibernate.vali
- dator.constraints",net.nan21.dnet.module.bd.uom.domain.entity;version
- ="1.0.0.RC1";uses:="javax.persistence,javax.validation.constraints,ja
- vax.xml.bind.annotation,net.nan21.dnet.core.domain.model,org.eclipse.
- persistence.annotations,org.eclipse.persistence.descriptors,org.eclip
- se.persistence.indirection,org.eclipse.persistence.internal.descripto
- rs,org.eclipse.persistence.internal.weaving,org.hibernate.validator.c
- onstraints"
+ org.hibernate.validator.constraints",net.nan21.dnet.module.bd.elem.do
+ main.eventhandler;version="1.0.0.RC1";uses:="net.nan21.dnet.core.doma
+ in.eventhandler,org.eclipse.persistence.descriptors,org.eclipse.persi
+ stence.sessions",net.nan21.dnet.module.bd.geo.domain.entity;version="
+ 1.0.0.RC1";uses:="javax.persistence,javax.validation.constraints,java
+ x.xml.bind.annotation,net.nan21.dnet.core.domain.model,org.eclipse.pe
+ rsistence.annotations,org.eclipse.persistence.descriptors,org.eclipse
+ .persistence.indirection,org.eclipse.persistence.internal.descriptors
+ ,org.eclipse.persistence.internal.weaving",net.nan21.dnet.module.bd.o
+ rg.domain.entity;version="1.0.0.RC1";uses:="javax.persistence,javax.v
+ alidation.constraints,javax.xml.bind.annotation,net.nan21.dnet.core.d
+ omain.model,org.eclipse.persistence.annotations,org.eclipse.persisten
+ ce.descriptors,org.eclipse.persistence.indirection,org.eclipse.persis
+ tence.internal.descriptors,org.eclipse.persistence.internal.weaving",
+ net.nan21.dnet.module.bd.standards.domain.entity;version="1.0.0.RC1";
+ uses:="javax.persistence,javax.validation.constraints,javax.xml.bind.
+ annotation,net.nan21.dnet.core.domain.model,org.eclipse.persistence.a
+ nnotations,org.eclipse.persistence.descriptors,org.eclipse.persistenc
+ e.indirection,org.eclipse.persistence.internal.descriptors,org.eclips
+ e.persistence.internal.weaving,org.hibernate.validator.constraints",n
+ et.nan21.dnet.module.bd.uom.domain.entity;version="1.0.0.RC1";uses:="
+ javax.persistence,javax.validation.constraints,javax.xml.bind.annotat
+ ion,net.nan21.dnet.core.domain.model,org.eclipse.persistence.annotati
+ ons,org.eclipse.persistence.descriptors,org.eclipse.persistence.indir
+ ection,org.eclipse.persistence.internal.descriptors,org.eclipse.persi
+ stence.internal.weaving,org.hibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.ad
  .domain;version="[1.0.0.RC1,1.0.0.RC1]"
@@ -54,15 +56,16 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.validation;
  version="[1.0,2.0)",javax.validation.constraints,javax.xml.bind.annot
- ation,net.nan21.dnet.core.domain.model,org.aopalliance.aop;version="[
- 1.0,2.0)",org.eclipse.persistence.annotations,org.eclipse.persistence
- .descriptors,org.eclipse.persistence.indirection,org.eclipse.persiste
- nce.internal.descriptors,org.eclipse.persistence.internal.weaving,org
- .eclipse.persistence.queries,org.eclipse.persistence.sessions,org.hib
- ernate.validator;version="[4.0,5.0)",org.hibernate.validator.constrai
- nts;version="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",o
- rg.springframework.aop.framework;version="[3.0,3.1)",org.springframew
- ork.context.weaving;version="[3.0,3.1)",org.springframework.transacti
- on;version="[3.0,3.1)",org.springframework.transaction.aspectj;versio
- n="[3.0,3.1)"
+ ation,net.nan21.dnet.core.domain.eventhandler,net.nan21.dnet.core.dom
+ ain.model,org.aopalliance.aop;version="[1.0,2.0)",org.eclipse.persist
+ ence.annotations,org.eclipse.persistence.descriptors,org.eclipse.pers
+ istence.indirection,org.eclipse.persistence.internal.descriptors,org.
+ eclipse.persistence.internal.helper,org.eclipse.persistence.internal.
+ weaving,org.eclipse.persistence.queries,org.eclipse.persistence.sessi
+ ons,org.hibernate.validator;version="[4.0,5.0)",org.hibernate.validat
+ or.constraints;version="[4.0,5.0)",org.springframework.aop;version="[
+ 3.0,3.1)",org.springframework.aop.framework;version="[3.0,3.1)",org.s
+ pringframework.context.weaving;version="[3.0,3.1)",org.springframewor
+ k.transaction;version="[3.0,3.1)",org.springframework.transaction.asp
+ ectj;version="[3.0,3.1)"
 

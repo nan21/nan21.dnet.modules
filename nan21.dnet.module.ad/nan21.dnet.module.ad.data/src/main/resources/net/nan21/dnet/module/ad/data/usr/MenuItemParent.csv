@@ -36,6 +36,7 @@ DsAccessControl_UI;ad-menu-acl
 DsMethodAccessControl_UI;ad-menu-acl
 ElementBaseData_UI;bd-menu-elem
 ElementSet_UI;bd-menu-elem
+Element_UI;bd-menu-elem
 EmployeeTypeDefs_UI;hr-menu-employee
 Employee_UI;hr-menu-employee
 ExportJob_UI;ad-menu-exp
