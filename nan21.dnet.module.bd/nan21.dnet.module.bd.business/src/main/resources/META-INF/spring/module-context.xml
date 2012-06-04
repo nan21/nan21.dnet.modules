@@ -20,7 +20,7 @@
 	<osgi-compendium:cm-properties id="net.nan21.dnet.properties"
 		persistent-id="net.nan21.dnet">
 		<prop key="emf.persistenceUnitName">net.nan21.dnet</prop>
-		<prop key="eclipselink.ddl-generation">drop-and-create-tables</prop>
+		<prop key="eclipselink.ddl-generation">create-tables</prop>
 		<prop key="eclipselink.application-location"></prop>
 		<prop key="eclipselink.ddl-generation.output-mode">database</prop>
 		<prop key="eclipselink.logging.level">FINEST</prop>

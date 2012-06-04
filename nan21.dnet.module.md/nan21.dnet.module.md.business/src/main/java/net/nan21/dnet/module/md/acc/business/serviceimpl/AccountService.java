@@ -37,12 +37,6 @@ public class AccountService extends AbstractEntityService<Account> implements
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public Account findByName(String name) {
-        return (Account) this.em.createNamedQuery(Account.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pName", name).getSingleResult();
-    }
-
     public List<Account> findByAccSchema(AccSchema accSchema) {
         return this.findByAccSchemaId(accSchema.getId());
     }

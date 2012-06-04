@@ -29,17 +29,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /** Accounting schema definition.  */
 @Entity
-@Table(name = Account.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = Account.TABLE_NAME + "_UK1", columnNames = {
-                "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = Account.TABLE_NAME + "_UK2", columnNames = {
-                "CLIENTID", "NAME" }) })
+@Table(name = Account.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = Account.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "CODE" }) })
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = Account.NQ_FIND_BY_ID, query = "SELECT e FROM Account e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = Account.NQ_FIND_BY_IDS, query = "SELECT e FROM Account e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = Account.NQ_FIND_BY_CODE, query = "SELECT e FROM Account e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = Account.NQ_FIND_BY_NAME, query = "SELECT e FROM Account e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = Account.NQ_FIND_BY_CODE, query = "SELECT e FROM Account e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class Account extends AbstractTypeWithCode {
 
     public static final String TABLE_NAME = "MD_ACC_ACCT";
@@ -61,11 +57,6 @@ public class Account extends AbstractTypeWithCode {
      * Named query find by unique key: Code.
      */
     public static final String NQ_FIND_BY_CODE = "Account.findByCode";
-
-    /**
-     * Named query find by unique key: Name.
-     */
-    public static final String NQ_FIND_BY_NAME = "Account.findByName";
 
     /**
      * System generated unique identifier.

@@ -16,6 +16,20 @@ public class AmortizationItemDsFilter extends AbstractAuditableDsFilter {
 
     private String asset;
 
+    private Long orgId;
+
+    private Long orgId_From;
+    private Long orgId_To;
+
+    private String org;
+
+    private Long categoryId;
+
+    private Long categoryId_From;
+    private Long categoryId_To;
+
+    private String category;
+
     private Long currencyId;
 
     private Long currencyId_From;
@@ -63,6 +77,70 @@ public class AmortizationItemDsFilter extends AbstractAuditableDsFilter {
 
     public void setAsset(String asset) {
         this.asset = asset;
+    }
+
+    public Long getOrgId() {
+        return this.orgId;
+    }
+
+    public Long getOrgId_From() {
+        return this.orgId_From;
+    }
+
+    public Long getOrgId_To() {
+        return this.orgId_To;
+    }
+
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
+    }
+
+    public void setOrgId_From(Long orgId_From) {
+        this.orgId_From = orgId_From;
+    }
+
+    public void setOrgId_To(Long orgId_To) {
+        this.orgId_To = orgId_To;
+    }
+
+    public String getOrg() {
+        return this.org;
+    }
+
+    public void setOrg(String org) {
+        this.org = org;
+    }
+
+    public Long getCategoryId() {
+        return this.categoryId;
+    }
+
+    public Long getCategoryId_From() {
+        return this.categoryId_From;
+    }
+
+    public Long getCategoryId_To() {
+        return this.categoryId_To;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public void setCategoryId_From(Long categoryId_From) {
+        this.categoryId_From = categoryId_From;
+    }
+
+    public void setCategoryId_To(Long categoryId_To) {
+        this.categoryId_To = categoryId_To;
+    }
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public Long getCurrencyId() {

@@ -120,8 +120,9 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 		List<Employee> employees = this.emplService.getEntityManager()
 				.createQuery(eqlEmpl, Employee.class).setParameter("clientId",
 						Session.user.get().getClientId()).setParameter(
-						"payrollId", period.getPayroll().getId()).setHint(
-						QueryHints.LEFT_FETCH, "e.contacts").getResultList();
+						"payrollId", period.getPayroll().getId())
+						.setHint(QueryHints.LEFT_FETCH, "e.contacts")
+						.getResultList();
 
 		// load elements
 		String eql = "select e from " + PayrollElement.class.getSimpleName()

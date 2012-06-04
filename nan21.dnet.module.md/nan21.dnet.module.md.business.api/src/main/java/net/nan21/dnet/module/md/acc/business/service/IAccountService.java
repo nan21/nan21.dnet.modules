@@ -15,8 +15,6 @@ public interface IAccountService extends IEntityService<Account> {
 
     public Account findByCode(String code);
 
-    public Account findByName(String name);
-
     public List<Account> findByAccSchema(AccSchema accSchema);
 
     public List<Account> findByAccSchemaId(Long accSchemaId);

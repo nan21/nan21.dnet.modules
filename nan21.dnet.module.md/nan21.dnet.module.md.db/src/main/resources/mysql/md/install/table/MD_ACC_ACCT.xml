@@ -42,9 +42,6 @@
 	<changeSet author="amathe" id="UK-1">
 		<addUniqueConstraint tableName="MD_ACC_ACCT" constraintName="UK_ACC_ACCT1" columnNames="CLIENTID, CODE" />
 	</changeSet>
-	<changeSet author="amathe" id="UK-2">
-		<addUniqueConstraint tableName="MD_ACC_ACCT" constraintName="UK_ACC_ACCT2" columnNames="CLIENTID, NAME" />
-	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">
 		    <column name="SEQ_NAME" value="MD_ACC_ACCT_SEQ"/>

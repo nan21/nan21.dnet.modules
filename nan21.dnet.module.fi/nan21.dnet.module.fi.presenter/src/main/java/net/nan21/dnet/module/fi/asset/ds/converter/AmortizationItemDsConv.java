@@ -8,6 +8,7 @@ package net.nan21.dnet.module.fi.asset.ds.converter;
 import net.nan21.dnet.core.api.converter.IDsConverter;
 import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
 import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
+import net.nan21.dnet.module.fi.asset.business.service.IAssetService;
 import net.nan21.dnet.module.fi.asset.domain.entity.Asset;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
@@ -22,11 +23,11 @@ public class AmortizationItemDsConv extends
     protected void modelToEntityReferences(AmortizationItemDs ds,
             AmortizationItem e, boolean isInsert) throws Exception {
 
-        if (ds.getAssetId() != null) {
-            if (e.getAsset() == null
-                    || !e.getAsset().getId().equals(ds.getAssetId())) {
-                e.setAsset((Asset) this.em.find(Asset.class, ds.getAssetId()));
-            }
+        if (ds.getAssetId() == null) {
+            Asset x = ((IAssetService) findEntityService(Asset.class))
+                    .findByCode(ds.getAsset());
+
+            ds.setAssetId(x.getId());
         }
 
         if (ds.getCurrencyId() != null) {
