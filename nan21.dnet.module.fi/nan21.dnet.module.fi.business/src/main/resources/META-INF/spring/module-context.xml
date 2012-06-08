@@ -92,7 +92,7 @@
 	</aop:config>
 	
 	<bean id="setupParticipant" class="net.nan21.dnet.module.fi._businessdelegates.Setup_FI" scope="singleton" >		
-		<property name="ranking" value="80"></property>		
+		<property name="ranking" value="60"></property>		
 	</bean>	 
 	
 	<!-- module business specific -->

@@ -20,13 +20,13 @@
 	<osgi:list id="osgiEntityServiceFactories" cardinality="0..N"
 		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />	
 	
-	<osgi:service ref="entityServiceFactory" ranking="80"
+	<osgi:service ref="entityServiceFactory" ranking="60"
 		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />
 	
-	<osgi:service ref="asgnTxServiceFactory" ranking="80"
+	<osgi:service ref="asgnTxServiceFactory" ranking="60"
 		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />
 				 
-	<osgi:service ref="setupParticipant" ranking="80"
+	<osgi:service ref="setupParticipant" ranking="60"
 		interface="net.nan21.dnet.core.api.setup.ISetupParticipant" />	
 
 	<!-- module business specific -->

@@ -92,7 +92,7 @@
 	</aop:config>
 	
 	<bean id="setupParticipant" class="net.nan21.dnet.module.ad._businessdelegates.Setup_AD" scope="singleton" >		
-		<property name="ranking" value="10"></property>		
+		<property name="ranking" value="100"></property>		
 	</bean>	 
 	
 	<!-- module business specific -->
