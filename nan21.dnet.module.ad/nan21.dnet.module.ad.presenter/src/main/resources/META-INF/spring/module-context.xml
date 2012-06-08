@@ -50,7 +50,7 @@
 	
 	<bean id="setupParticipant" class="net.nan21.dnet.module.ad._presenterdelegates.Setup_AD"
 		scope="singleton">
-		<property name="ranking" value="100"></property>
+		<property name="ranking" value="99"></property>
 		<property name="systemConfig" ref="systemConfig"></property>
 	</bean>
 	

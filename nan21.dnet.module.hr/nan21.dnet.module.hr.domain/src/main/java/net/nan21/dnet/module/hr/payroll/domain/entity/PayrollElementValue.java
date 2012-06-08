@@ -62,7 +62,7 @@ public class PayrollElementValue extends AbstractAuditable {
     private Long id;
 
     /** Value. */
-    @Column(name = "VALUE", length = 400)
+    @Column(name = "VALUE", length = 255)
     private String value;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayrollElement.class)
     @JoinColumn(name = "ELEMENT_ID", referencedColumnName = "ID")

@@ -18,7 +18,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="UUID" type="varchar2(36)">
 				<constraints  /></column>	 
-			<column name="VALUE" type="varchar2(400)">
+			<column name="VALUE" type="varchar2(255)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="number(19)">
 				<constraints nullable="false" /></column>	 

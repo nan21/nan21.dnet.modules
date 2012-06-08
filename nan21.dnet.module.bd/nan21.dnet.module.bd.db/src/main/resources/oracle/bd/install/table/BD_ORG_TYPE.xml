@@ -8,8 +8,6 @@
 				<constraints nullable="false" /></column>	 
 			<column name="ACTIVE" type="number(1)">
 				<constraints nullable="false" /></column>	 
-			<column name="CARRIER" type="number(1)">
-				<constraints nullable="false" /></column>	 
 			<column name="CLIENTID" type="number(3)">
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDAT" type="date">
@@ -18,11 +16,15 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DESCRIPTION" type="varchar2(400)">
 				<constraints  /></column>	 
-			<column name="EXTERNAL" type="number(1)">
-				<constraints nullable="false" /></column>	 
 			<column name="ID" type="number(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="INVENTORY" type="number(1)">
+			<column name="IS_CARRIER" type="number(1)">
+				<constraints nullable="false" /></column>	 
+			<column name="IS_EXTERNAL" type="number(1)">
+				<constraints nullable="false" /></column>	 
+			<column name="IS_INVENTORY" type="number(1)">
+				<constraints nullable="false" /></column>	 
+			<column name="IS_WAREHOUSE" type="number(1)">
 				<constraints nullable="false" /></column>	 
 			<column name="LEGALENTITY" type="number(1)">
 				<constraints nullable="false" /></column>	 
@@ -37,8 +39,6 @@
 			<column name="VERSION" type="number(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="VIRTUALENTITY" type="number(1)">
-				<constraints nullable="false" /></column>	 
-			<column name="WAREHOUSE" type="number(1)">
 				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    

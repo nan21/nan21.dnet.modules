@@ -78,22 +78,22 @@ public class OrganizationType extends AbstractType {
     private Boolean accountingEnabled;
 
     /** External. */
-    @Column(name = "EXTERNAL", nullable = false)
+    @Column(name = "IS_EXTERNAL", nullable = false)
     @NotNull
     private Boolean external;
 
     /** Inventory. */
-    @Column(name = "INVENTORY", nullable = false)
+    @Column(name = "IS_INVENTORY", nullable = false)
     @NotNull
     private Boolean inventory;
 
     /** Carrier. */
-    @Column(name = "CARRIER", nullable = false)
+    @Column(name = "IS_CARRIER", nullable = false)
     @NotNull
     private Boolean carrier;
 
     /** Warehouse. */
-    @Column(name = "WAREHOUSE", nullable = false)
+    @Column(name = "IS_WAREHOUSE", nullable = false)
     @NotNull
     private Boolean warehouse;
 
