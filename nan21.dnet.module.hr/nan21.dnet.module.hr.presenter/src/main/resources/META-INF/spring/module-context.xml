@@ -10,23 +10,34 @@
 			http://www.springframework.org/schema/osgi-compendium
     			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
 	
+	<!-- general presenter specific -->
 	
-	<context:load-time-weaver aspectj-weaving="on"/>
+	<context:load-time-weaver aspectj-weaving="on" />
 	<context:annotation-config />
-	   
-	<bean id="dsServiceFactory" class="net.nan21.dnet.core.presenter.service.DsServiceFactory" >
-		 <property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
-	</bean>
-
-	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" >		  
+	
+	<bean id="dsServiceFactory" 
+			class="net.nan21.dnet.core.presenter.service.DsServiceFactory">
+		<property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>
 	
-	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator">	 
-	</bean> 
-	
-	<bean id="fileUploadServiceFactory"
-		class="net.nan21.dnet.core.presenter.service.FileUploadServiceFactory">
+	<bean id="asgnServiceFactory"
+			class="net.nan21.dnet.core.presenter.service.AsgnServiceFactory">
+		<property name="asgnTxServiceFactories" ref="osgiAsgnTxServiceFactories"></property>
 	</bean>
+	
+	<bean id="dsJobFactory" class="net.nan21.dnet.core.presenter.job.DsJobFactory">
+		<property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
+	</bean>
+	
+	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" />
+	
+	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator" />
+	 
+	  
+	 <!-- module presenter specific -->
+	
+	 
+	<!-- Presenter services -->  
 	
 	<import resource="beans/hr.employee.ds.xml"/>
 	<import resource="beans/hr.grade.ds.xml"/>	
@@ -34,9 +45,8 @@
 	<import resource="beans/hr.payroll.ds.xml"/>
 	<import resource="beans/hr.skill.ds.xml"/>
 	<import resource="beans/hr.training.ds.xml"/>
-	<import resource="beans/hr.time.ds.xml"/> 
-	 
-	 <!-- Other beans / services  -->
-	 
-	 
-</beans>
+	<import resource="beans/hr.time.ds.xml"/> 	
+ 
+	
+ 
+</beans> 

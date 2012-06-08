@@ -6,24 +6,30 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/osgi 
 		http://www.springframework.org/schema/osgi/spring-osgi.xsd">
-	
+
+	<!-- general business specific -->
+
 	<import resource="emf/oc-emf-${dnet.emf.type}.xml" />
-	 
+	
 	<osgi:reference id="systemConfig" cardinality="1..1"
 		interface="net.nan21.dnet.core.api.ISystemConfig" />
-			
+
 	<osgi:reference id="osgiDataSource" cardinality="0..1"
 		interface="javax.sql.DataSource" />
 		
-	<osgi:service ref="entityServiceFactory" ranking="10"
-		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />
-
-	<osgi:service ref="asgnTxServiceFactory" ranking="0"
-		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />	
-		
-	<osgi:service ref="setupParticipant" ranking="700"
-		interface="net.nan21.dnet.core.api.setup.ISetupParticipant" />	
-		
 	<osgi:list id="osgiEntityServiceFactories" cardinality="0..N"
-		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />			
+		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />	
+	
+	<osgi:service ref="entityServiceFactory" ranking="30"
+		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />
+	
+	<osgi:service ref="asgnTxServiceFactory" ranking="30"
+		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />
+				 
+	<osgi:service ref="setupParticipant" ranking="30"
+		interface="net.nan21.dnet.core.api.setup.ISetupParticipant" />	
+
+	<!-- module business specific -->
+		
+		 
 </beans>

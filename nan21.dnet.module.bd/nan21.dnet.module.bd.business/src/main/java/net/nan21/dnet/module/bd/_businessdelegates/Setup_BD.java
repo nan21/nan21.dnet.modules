@@ -24,6 +24,7 @@ public class Setup_BD extends AbstractBusinessSetupParticipant implements
 		// there is nothing to setup here , this one is run to enforce that the
 		// database objects are created in the right order
 		// in case the object creation is managed by eclipselink
+		@SuppressWarnings("unused")
 		Long i = (Long) this.em.createQuery("select count(e) from Country e")
 				.getResultList().get(0);
 

@@ -13,6 +13,9 @@
 			http://www.springframework.org/schema/osgi-compendium
     			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
     		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- general business specific -->
+	
 	<context:property-placeholder
 		properties-ref="net.nan21.dnet.properties" />
 
@@ -28,68 +31,75 @@
 		<prop key="eclipselink.logging.session">true</prop>
 		<prop key="eclipselink.logging.thread">true</prop>
 		<prop key="eclipselink.logging.exceptions">true</prop>
+				 
 		<prop key="eclipselink.cache.type.default">SoftWeak</prop>
 		<prop key="eclipselink.cache.size.default">1000</prop>
 		<prop key="eclipselink.cache.shared.default">false</prop>
 		<prop key="eclipselink.flush-clear.cache">DropInvalidate</prop>
-	</osgi-compendium:cm-properties>
+	</osgi-compendium:cm-properties> 
+	
 	<context:annotation-config />
 	<context:load-time-weaver aspectj-weaving="on" />
-
-	<import resource="emf/mc-emf-${dnet.emf.type}.xml" /> 
-	 
+	
+    <import resource="emf/mc-emf-${dnet.emf.type}.xml" /> 
+  
+  	<bean id="serviceLocator" class="net.nan21.dnet.core.business.service.ServiceLocatorBusiness">
+	</bean> 
+	
 	<bean id="baseAsgnTxService" scope="prototype"
-		class="net.nan21.dnet.core.business.service.BaseAsgnTxService" />
-	<bean id="asgnTxServiceFactory"
-		class="net.nan21.dnet.core.business.service.AsgnTxServiceFactory">
+	  		class="net.nan21.dnet.core.business.service.BaseAsgnTxService"  />  
+
+	<bean id="asgnTxServiceFactory" class="net.nan21.dnet.core.business.service.AsgnTxServiceFactory">
 		<property name="name" value="nan21.dnet.module.bd.business" />
-	</bean>
- 
+	</bean>  		
+	 
 	<tx:annotation-driven mode="aspectj" />
-	<bean id="entityServiceFactory"
-		class="net.nan21.dnet.core.business.service.EntityServiceFactory">
-	</bean>
+	<bean id="entityServiceFactory" class="net.nan21.dnet.core.business.service.EntityServiceFactory">
+	</bean> 
+	 
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="insert" read-only="false" />
 			<tx:method name="update" read-only="false" />
-			<tx:method name="delete*" read-only="false" />
-			<tx:method name="do*" read-only="false" />
+			<tx:method name="delete*" read-only="false" />		
+			<tx:method name="do*" read-only="false" />				
 		</tx:attributes>
 	</tx:advice>
+	 
 	<tx:advice id="txAdviceAsgn" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="setup" read-only="false" />
 			<tx:method name="reset" read-only="false" />
-			<tx:method name="save" read-only="false" />
-			<tx:method name="move*" read-only="false" />
+			<tx:method name="save" read-only="false" />		
+			<tx:method name="move*" read-only="false" />				
 		</tx:attributes>
 	</tx:advice>
+	 
 	<tx:advice id="txAdviceSetupParticipant" transaction-manager="transactionManager">
 		<tx:attributes>
-			<tx:method name="execute" read-only="false" />
+			<tx:method name="execute" read-only="false" />					
 		</tx:attributes>
-	</tx:advice>
+	</tx:advice>	
+	
 	<aop:config>
-		<aop:pointcut id="entityServiceMethods" expression="bean(*Service)" />
+		<aop:pointcut id="entityServiceMethods" expression="bean(*Service)" />		
 		<aop:pointcut id="asgnTxServiceMethods" expression="bean(baseAsgnTxService)" />
 		<aop:pointcut id="setupParticipantRun" expression="bean(setupParticipant)" />
+		 
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="entityServiceMethods" />
 		<aop:advisor advice-ref="txAdviceAsgn" pointcut-ref="asgnTxServiceMethods" />
-		<aop:advisor advice-ref="txAdviceSetupParticipant"
-			pointcut-ref="setupParticipantRun" />
+		<aop:advisor advice-ref="txAdviceSetupParticipant" pointcut-ref="setupParticipantRun" />				 
 	</aop:config>
-	<bean id="setupParticipant" scope="singleton"
-		class="net.nan21.dnet.module.bd._businessdelegates.Setup_BD">
-		<property name="ranking" value="180" />
-		<property name="systemConfig" ref="systemConfig"></property>
-	</bean>
-	<bean id="serviceLocator"
-		class="net.nan21.dnet.core.business.service.ServiceLocatorBusiness">
-	</bean>
- 
-	<!-- Domain services -->
-	 
+	
+	<bean id="setupParticipant" class="net.nan21.dnet.module.bd._businessdelegates.Setup_BD" scope="singleton" >		
+		<property name="ranking" value="20"></property>		
+	</bean>	 
+	
+	<!-- module business specific -->
+	
+	
+	<!-- Entity services -->
+	
 	<import resource="beans/bd.contact.entity.xml" />
 	<import resource="beans/bd.currency.entity.xml" />
 	<import resource="beans/bd.geo.entity.xml" />
@@ -97,5 +107,4 @@
 	<import resource="beans/bd.standards.entity.xml" />
 	<import resource="beans/bd.uom.entity.xml" />
 	<import resource="beans/bd.elem.entity.xml" />
-	
-</beans>
+</beans> 

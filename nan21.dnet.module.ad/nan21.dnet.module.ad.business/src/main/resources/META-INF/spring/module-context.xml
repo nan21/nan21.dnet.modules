@@ -14,6 +14,8 @@
     			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
     		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
+	<!-- general business specific -->
+	
 	<context:property-placeholder
 		properties-ref="net.nan21.dnet.properties" />
 
@@ -41,6 +43,9 @@
 	
     <import resource="emf/mc-emf-${dnet.emf.type}.xml" /> 
   
+  	<bean id="serviceLocator" class="net.nan21.dnet.core.business.service.ServiceLocatorBusiness">
+	</bean> 
+	
 	<bean id="baseAsgnTxService" scope="prototype"
 	  		class="net.nan21.dnet.core.business.service.BaseAsgnTxService"  />  
 
@@ -74,8 +79,7 @@
 		<tx:attributes>
 			<tx:method name="execute" read-only="false" />					
 		</tx:attributes>
-	</tx:advice>
-	
+	</tx:advice>	
 	
 	<aop:config>
 		<aop:pointcut id="entityServiceMethods" expression="bean(*Service)" />		
@@ -87,18 +91,16 @@
 		<aop:advisor advice-ref="txAdviceSetupParticipant" pointcut-ref="setupParticipantRun" />				 
 	</aop:config>
 	
-
 	<bean id="setupParticipant" class="net.nan21.dnet.module.ad._businessdelegates.Setup_AD" scope="singleton" >		
-		<property name="ranking" value="199"></property>		
-	</bean>
-	 
-	<bean id="startupParticipant" class="net.nan21.dnet.module.ad._businessdelegates.Startup_AD" />		 
- 
+		<property name="ranking" value="10"></property>		
+	</bean>	 
 	
-	<bean id="serviceLocator" class="net.nan21.dnet.core.business.service.ServiceLocatorBusiness">
-	</bean> 
-	 
-	<!-- Domain services -->
+	<!-- module business specific -->
+	
+	<bean id="startupParticipant" class="net.nan21.dnet.module.ad._businessdelegates.Startup_AD" />
+	
+	<!-- Entity services -->
+	
 	<import resource="beans/ad.client.entity.xml" />
 	<import resource="beans/ad.data.entity.xml" />
 	<import resource="beans/ad.impex.entity.xml" />
@@ -106,7 +108,4 @@
 	<import resource="beans/ad.system.entity.xml" />
 	<import resource="beans/ad.usr.entity.xml" />
 	<import resource="beans/ad.workflow.entity.xml" />
-	
-	
-	
-</beans>
+</beans> 

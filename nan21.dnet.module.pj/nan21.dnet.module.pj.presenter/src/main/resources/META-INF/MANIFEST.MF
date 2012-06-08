@@ -37,14 +37,15 @@ Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.pj.presenter
 Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  t.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.converter,ne
- t.nan21.dnet.core.api.descriptor,net.nan21.dnet.core.api.service,net.
- nan21.dnet.core.presenter.action,net.nan21.dnet.core.presenter.conver
- ter,net.nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter
- .model.base,net.nan21.dnet.core.presenter.service,net.nan21.dnet.modu
- le.ad.usr.business.service,net.nan21.dnet.module.ad.usr.domain.entity
- ,net.nan21.dnet.module.pj.base.business.service,net.nan21.dnet.module
- .pj.base.domain.entity,net.nan21.dnet.module.pj.md.business.service,n
- et.nan21.dnet.module.pj.md.domain.entity,org.springframework.context.
- weaving;version="[3.0,3.1)",org.springframework.web.multipart;version
- ="[3.0,3.1)"
+ t.nan21.dnet.core.api.descriptor,net.nan21.dnet.core.api.job,net.nan2
+ 1.dnet.core.api.service,net.nan21.dnet.core.presenter.action,net.nan2
+ 1.dnet.core.presenter.converter,net.nan21.dnet.core.presenter.job,net
+ .nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter.model.
+ base,net.nan21.dnet.core.presenter.service,net.nan21.dnet.module.ad.u
+ sr.business.service,net.nan21.dnet.module.ad.usr.domain.entity,net.na
+ n21.dnet.module.pj.base.business.service,net.nan21.dnet.module.pj.bas
+ e.domain.entity,net.nan21.dnet.module.pj.md.business.service,net.nan2
+ 1.dnet.module.pj.md.domain.entity,org.activiti.engine,org.springframe
+ work.context.weaving;version="[3.0,3.1)",org.springframework.web.mult
+ ipart;version="[3.0,3.1)"
 

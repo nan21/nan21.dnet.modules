@@ -7,23 +7,41 @@
 	http://www.springframework.org/schema/osgi 
 		http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 	
+	<!-- general presenter specific -->
+	
+	<!-- import -->
 	
 	<osgi:reference id="systemConfig" cardinality="1..1"
 		interface="net.nan21.dnet.core.api.ISystemConfig" />
 			
 	<osgi:reference id="osgiDataSource" cardinality="0..1"
 		interface="javax.sql.DataSource" />
- 
-	<osgi:service ref="dsServiceFactory" ranking="0"
+	 
+	<osgi:list id="osgiDsServiceFactories" cardinality="0..N"
 		interface="net.nan21.dnet.core.api.service.IDsServiceFactory" />
-	
-	<osgi:service ref="dsDefinitions" ranking="0"
-		interface="net.nan21.dnet.core.api.descriptor.IDsDefinitions" />
-		
+	 
 	<osgi:list id="osgiEntityServiceFactories" cardinality="1..N"
 		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />	
-		
-	<osgi:service ref="fileUploadServiceFactory" ranking="0"
-		interface="net.nan21.dnet.core.api.service.IFileUploadServiceFactory" />	
-				
-</beans>
+
+	<osgi:list id="osgiAsgnTxServiceFactories" cardinality="1..N" 
+		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />
+
+	<osgi:reference id="osgiActivitiProcessEngine" cardinality="0..1"
+			interface="org.activiti.engine.ProcessEngine" />
+						 		
+	<!-- export -->
+	
+	<osgi:service ref="dsServiceFactory" ranking="0"
+		interface="net.nan21.dnet.core.api.service.IDsServiceFactory" />
+
+	<osgi:service ref="asgnServiceFactory" ranking="0"
+		interface="net.nan21.dnet.core.api.service.IAsgnServiceFactory" />
+ 
+	<osgi:service ref="dsDefinitions" ranking="0"
+		interface="net.nan21.dnet.core.api.descriptor.IDsDefinitions" />
+	
+	<osgi:service ref="dsJobFactory" ranking="0"
+		interface="net.nan21.dnet.core.api.job.IDsJobFactory" />
+			  
+					
+</beans> 

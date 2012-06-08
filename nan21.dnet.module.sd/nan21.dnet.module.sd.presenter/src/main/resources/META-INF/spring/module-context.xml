@@ -9,22 +9,40 @@
 				http://www.springframework.org/schema/context/spring-context.xsd
 			http://www.springframework.org/schema/osgi-compendium
     			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
+	
+	<!-- general presenter specific -->
+	
 	<context:load-time-weaver aspectj-weaving="on" />
 	<context:annotation-config />
-	<bean id="dsServiceFactory" class="net.nan21.dnet.core.presenter.service.DsServiceFactory">
+	
+	<bean id="dsServiceFactory" 
+			class="net.nan21.dnet.core.presenter.service.DsServiceFactory">
 		<property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>
-	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions">
+	
+	<bean id="asgnServiceFactory"
+			class="net.nan21.dnet.core.presenter.service.AsgnServiceFactory">
+		<property name="asgnTxServiceFactories" ref="osgiAsgnTxServiceFactories"></property>
 	</bean>
-	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator">
+	
+	<bean id="dsJobFactory" class="net.nan21.dnet.core.presenter.job.DsJobFactory">
+		<property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>
-	<bean id="fileUploadServiceFactory"
-		class="net.nan21.dnet.core.presenter.service.FileUploadServiceFactory">
-	</bean>
+	
+	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" />
+	
+	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator" />
+	 
+	  
+	 <!-- module presenter specific -->
+	
+	 
+	<!-- Presenter services -->  
+	
 	<import resource="beans/sd.opportunity.ds.xml" />
 	<import resource="beans/sd.order.ds.xml" />
-	<import resource="beans/sd.invoice.ds.xml" />
-
-
-	<!-- Other beans / services  -->
-</beans>
+	<import resource="beans/sd.invoice.ds.xml" />	
+ 
+	
+ 
+</beans> 

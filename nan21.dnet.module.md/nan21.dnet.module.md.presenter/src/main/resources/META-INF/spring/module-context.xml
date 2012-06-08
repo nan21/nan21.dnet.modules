@@ -9,42 +9,51 @@
 				http://www.springframework.org/schema/context/spring-context.xsd
 			http://www.springframework.org/schema/osgi-compendium
     			http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
+	
+	<!-- general presenter specific -->
+	
 	<context:load-time-weaver aspectj-weaving="on" />
 	<context:annotation-config />
-	<bean id="dsServiceFactory" class="net.nan21.dnet.core.presenter.service.DsServiceFactory">
+	
+	<bean id="dsServiceFactory" 
+			class="net.nan21.dnet.core.presenter.service.DsServiceFactory">
 		<property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>
+	
 	<bean id="asgnServiceFactory"
-		class="net.nan21.dnet.core.presenter.service.AsgnServiceFactory">
+			class="net.nan21.dnet.core.presenter.service.AsgnServiceFactory">
 		<property name="asgnTxServiceFactories" ref="osgiAsgnTxServiceFactories"></property>
 	</bean>
-	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions">
-	</bean>
-	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator">
-	</bean>
-	<bean id="fileUploadServiceFactory"
-		class="net.nan21.dnet.core.presenter.service.FileUploadServiceFactory">
+	
+	<bean id="dsJobFactory" class="net.nan21.dnet.core.presenter.job.DsJobFactory">
+		<property name="entityServiceFactories" ref="osgiEntityServiceFactories"></property>
 	</bean>
 	
-	<import resource="beans/md.acc.ds.xml" />
+	<bean id="dsDefinitions" class="net.nan21.dnet.core.presenter.model.DsDefinitions" />
 	
-	<import resource="beans/md.activity.ds.xml" />
+	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator" />
+	 
+	  
+	 <!-- module presenter specific -->
 	
+	 
+	<!-- Presenter services -->  
+	
+	<import resource="beans/md.acc.ds.xml" />	
+	<import resource="beans/md.activity.ds.xml" />	
 	<import resource="beans/md.base.attr.ds.xml" />
 	<import resource="beans/md.base.tx.ds.xml" />
 	<import resource="beans/md.base.tax.ds.xml" />
-	<import resource="beans/md.base.period.ds.xml" />
-	
-	<import resource="beans/md.bp.ds.xml" />
-	
+	<import resource="beans/md.base.period.ds.xml" />	
+	<import resource="beans/md.bp.ds.xml" />	
 	<import resource="beans/md.mm.price.ds.xml" />
 	<import resource="beans/md.mm.prod.asgn.xml" />
-	<import resource="beans/md.mm.prod.ds.xml" />
-	
-	<import resource="beans/md.org.ds.xml" />
-	
+	<import resource="beans/md.mm.prod.ds.xml" />	
+	<import resource="beans/md.org.ds.xml" />	
 	<import resource="beans/md.tx.acc.ds.xml" />
 	<import resource="beans/md.tx.fin.ds.xml" />
-	<import resource="beans/md.tx.inventory.ds.xml" />
+	<import resource="beans/md.tx.inventory.ds.xml" />	
  
-</beans>
+	
+ 
+</beans> 

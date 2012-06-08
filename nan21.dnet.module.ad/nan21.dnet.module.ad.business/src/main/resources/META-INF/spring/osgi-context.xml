@@ -6,34 +6,38 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/osgi 
 		http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+
+	<!-- general business specific -->
+
+	<import resource="emf/oc-emf-${dnet.emf.type}.xml" />
 	
-	<import resource="emf/oc-emf-${dnet.emf.type}.xml" /> 
-	
-	<osgi:reference id="osgiJobScheduler" cardinality="0..1"
-		interface="net.nan21.dnet.core.api.job.IScheduler" />
-		    
 	<osgi:reference id="systemConfig" cardinality="1..1"
 		interface="net.nan21.dnet.core.api.ISystemConfig" />
-			
+
 	<osgi:reference id="osgiDataSource" cardinality="0..1"
 		interface="javax.sql.DataSource" />
 		
-	<osgi:service ref="entityServiceFactory" 
+	<osgi:list id="osgiEntityServiceFactories" cardinality="0..N"
+		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />	
+	
+	<osgi:service ref="entityServiceFactory" ranking="10"
 		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />
-		
-	<osgi:service ref="asgnTxServiceFactory" 
-		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />	
-		
-	<osgi:service ref="setupParticipant" 
+	
+	<osgi:service ref="asgnTxServiceFactory" ranking="10"
+		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />
+				 
+	<osgi:service ref="setupParticipant" ranking="10"
 		interface="net.nan21.dnet.core.api.setup.ISetupParticipant" />	
 
-	<osgi:service ref="startupParticipant" 
-		interface="net.nan21.dnet.core.api.setup.IStartupParticipant" />	
+	<!-- module business specific -->
 		
+	<osgi:reference id="osgiJobScheduler" cardinality="0..1"
+		interface="net.nan21.dnet.core.api.job.IScheduler" />
+
 	<osgi:list id="osgiInitDataProviderFactories" cardinality="0..N"
 		interface="net.nan21.dnet.core.api.setup.IInitDataProviderFactory"></osgi:list>
-
-	<osgi:list id="osgiEntityServiceFactories" cardinality="0..N"
-		interface="net.nan21.dnet.core.api.service.IEntityServiceFactory" />
-		
+		 
+	<osgi:service ref="startupParticipant"
+		interface="net.nan21.dnet.core.api.setup.IStartupParticipant" />
+		 
 </beans>
