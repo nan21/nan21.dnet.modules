@@ -27,9 +27,6 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="HR_EMPL" constraintName="PK_EMPL" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
-		<addUniqueConstraint tableName="HR_EMPL" constraintName="UK_EMPL1" columnNames="CLIENTID, CODE" />
-	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">
 		    <column name="SEQ_NAME" value="HR_EMPL_SEQ"/>

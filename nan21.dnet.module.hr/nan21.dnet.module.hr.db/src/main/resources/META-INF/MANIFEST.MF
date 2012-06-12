@@ -1,4 +1,7 @@
 Manifest-Version: 1.0
+Export-Package: mysql.hr.install.fk;version="1.0.0.RC1",mysql.hr.insta
+ ll.table;version="1.0.0.RC1",oracle.hr.install.fk;version="1.0.0.RC1"
+ ,oracle.hr.install.table;version="1.0.0.RC1"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0.RC1
 Tool: Bundlor 1.0.0.RELEASE
