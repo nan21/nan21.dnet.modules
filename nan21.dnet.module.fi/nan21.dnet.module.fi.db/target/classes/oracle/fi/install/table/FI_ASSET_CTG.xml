@@ -33,10 +33,10 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="FI_ASSET_CTG" constraintName="PK_ASSET_CTG" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="FI_ASSET_CTG" constraintName="UK_ASSET_CTG1" columnNames="CLIENTID, CODE" />
 	</changeSet>
-	<changeSet author="amathe" id="UK-2">
+	<changeSet author="amathe" id="UK-2"> 
 		<addUniqueConstraint tableName="FI_ASSET_CTG" constraintName="UK_ASSET_CTG2" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

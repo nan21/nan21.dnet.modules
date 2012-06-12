@@ -43,10 +43,10 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="BD_GEO_CNTRY" constraintName="PK_GEO_CNTRY" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="BD_GEO_CNTRY" constraintName="UK_GEO_CNTRY1" columnNames="CLIENTID, CODE" />
 	</changeSet>
-	<changeSet author="amathe" id="UK-2">
+	<changeSet author="amathe" id="UK-2"> 
 		<addUniqueConstraint tableName="BD_GEO_CNTRY" constraintName="UK_GEO_CNTRY2" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

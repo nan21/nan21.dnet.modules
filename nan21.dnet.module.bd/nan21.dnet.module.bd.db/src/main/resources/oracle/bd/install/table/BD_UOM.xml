@@ -35,10 +35,10 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="BD_UOM" constraintName="PK_UOM" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="BD_UOM" constraintName="UK_UOM1" columnNames="CLIENTID, CODE" />
 	</changeSet>
-	<changeSet author="amathe" id="UK-2">
+	<changeSet author="amathe" id="UK-2"> 
 		<addUniqueConstraint tableName="BD_UOM" constraintName="UK_UOM2" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

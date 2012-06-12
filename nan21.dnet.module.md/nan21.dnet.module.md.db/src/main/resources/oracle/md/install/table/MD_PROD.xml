@@ -71,10 +71,10 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="MD_PROD" constraintName="PK_PROD" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="MD_PROD" constraintName="UK_PROD1" columnNames="CLIENTID, CODE" />
 	</changeSet>
-	<changeSet author="amathe" id="UK-2">
+	<changeSet author="amathe" id="UK-2"> 
 		<addUniqueConstraint tableName="MD_PROD" constraintName="UK_PROD2" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

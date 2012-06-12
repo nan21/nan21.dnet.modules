@@ -41,7 +41,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="HR_PAYROLL_PRD" constraintName="PK_PAYROLL_PRD" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="HR_PAYROLL_PRD" constraintName="UK_PAYROLL_PRD1" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

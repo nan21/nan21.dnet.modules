@@ -4,44 +4,10 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <changeSet author="amathe" id="TBL">
         <createTable tableName="FI_ASSET">
-			<column name="ACTIVE" type="number(1)">
-				<constraints nullable="false" /></column>	 
-			<column name="CLIENTID" type="number(3)">
-				<constraints nullable="false" /></column>	 
-			<column name="CODE" type="varchar2(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="CREATEDAT" type="date">
-				<constraints nullable="false" /></column>	 
-			<column name="CREATEDBY" type="varchar2(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="DEPRECIATIONAMOUNT" type="number(12,2)">
-				<constraints  /></column>	 
-			<column name="ENTITYTYPE" type="varchar2(32)">
-				<constraints  /></column>	 
-			<column name="ID" type="number(19)">
-				<constraints nullable="false" /></column>	 
-			<column name="INITIALVALUE" type="number(12,2)">
-				<constraints  /></column>	 
-			<column name="MODIFIEDAT" type="date">
-				<constraints nullable="false" /></column>	 
-			<column name="MODIFIEDBY" type="varchar2(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="NAME" type="varchar2(255)">
-				<constraints nullable="false" /></column>	 
-			<column name="NOTES" type="varchar2(4000)">
-				<constraints  /></column>	 
-			<column name="RESIDUALVALUE" type="number(12,2)">
-				<constraints  /></column>	 
-			<column name="UUID" type="varchar2(36)">
-				<constraints  /></column>	 
-			<column name="VERSION" type="number(19)">
-				<constraints nullable="false" /></column>	 
+    
+    		<column name="ID" type="number(19)" />
 			<column name="CATEGORY_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
-			<column name="ORG_ID" type="number(19)">	 
-				<constraints nullable="false" /></column>	 
-			<column name="PRODUCT_ID" type="number(19)">	 
-				<constraints  /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

@@ -10,7 +10,7 @@
 				<constraints  /></column>	 
 			<column name="END_TIME" type="datetime">
 				<constraints  /></column>	 
-			<column name="JOB_DATA" type="">
+			<column name="JOB_DATA" type="longblob">
 				<constraints  /></column>	 
 			<column name="JOB_GROUP" type="varchar(255)">
 				<constraints nullable="false" /></column>	 

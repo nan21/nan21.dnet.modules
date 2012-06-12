@@ -4,28 +4,8 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <changeSet author="amathe" id="TBL">
         <createTable tableName="SC_PYMNT_AMNT">
-			<column name="AMOUNT" type="number(12,2)">
-				<constraints nullable="false" /></column>	 
-			<column name="CLIENTID" type="number(3)">
-				<constraints nullable="false" /></column>	 
-			<column name="CREATEDAT" type="date">
-				<constraints nullable="false" /></column>	 
-			<column name="CREATEDBY" type="varchar2(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="ENTITYTYPE" type="varchar2(32)">
-				<constraints  /></column>	 
-			<column name="ID" type="number(19)">
-				<constraints nullable="false" /></column>	 
-			<column name="MODIFIEDAT" type="date">
-				<constraints nullable="false" /></column>	 
-			<column name="MODIFIEDBY" type="varchar2(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="UUID" type="varchar2(36)">
-				<constraints  /></column>	 
-			<column name="VERSION" type="number(19)">
-				<constraints nullable="false" /></column>	 
-			<column name="PAYMENT_ID" type="number(19)">	 
-				<constraints nullable="false" /></column>	 
+    
+    		<column name="ID" type="number(19)" />
 			<column name="TXAMOUNT_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>

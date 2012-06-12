@@ -49,7 +49,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="AD_MENU_ITEM" constraintName="PK_MENU_ITEM" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="AD_MENU_ITEM" constraintName="UK_MENU_ITEM1" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

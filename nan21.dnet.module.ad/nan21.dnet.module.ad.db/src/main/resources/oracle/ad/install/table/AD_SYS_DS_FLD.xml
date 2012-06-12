@@ -35,7 +35,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="AD_SYS_DS_FLD" constraintName="PK_SYS_DS_FLD" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="AD_SYS_DS_FLD" constraintName="UK_SYS_DS_FLD1" columnNames="CLIENTID, DATASOURCE_ID,NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

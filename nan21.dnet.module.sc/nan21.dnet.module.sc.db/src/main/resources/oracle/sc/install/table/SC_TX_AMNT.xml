@@ -4,47 +4,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <changeSet author="amathe" id="TBL">
         <createTable tableName="SC_TX_AMNT">
-			<column name="AMOUNT" type="number(12,2)">
-				<constraints  /></column>	 
-			<column name="CLIENTID" type="number(3)">
-				<constraints nullable="false" /></column>	 
-			<column name="CREATEDAT" type="date">
-				<constraints nullable="false" /></column>	 
-			<column name="CREATEDBY" type="varchar2(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="CREDIT" type="number(1)">
-				<constraints nullable="false" /></column>	 
-			<column name="DUEAMOUNT" type="number(12,2)">
-				<constraints  /></column>	 
-			<column name="DUEDATE" type="date">
-				<constraints nullable="false" /></column>	 
-			<column name="ENTITYTYPE" type="varchar2(32)">
-				<constraints  /></column>	 
-			<column name="FROMORDER" type="number(1)">
-				<constraints nullable="false" /></column>	 
-			<column name="ID" type="number(19)">
-				<constraints nullable="false" /></column>	 
-			<column name="MODIFIEDAT" type="date">
-				<constraints nullable="false" /></column>	 
-			<column name="MODIFIEDBY" type="varchar2(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="PAYEDAMOUNT" type="number(12,2)">
-				<constraints  /></column>	 
-			<column name="SALES" type="number(1)">
-				<constraints nullable="false" /></column>	 
-			<column name="UUID" type="varchar2(36)">
-				<constraints  /></column>	 
-			<column name="VERSION" type="number(19)">
-				<constraints nullable="false" /></column>	 
-			<column name="BPARTNER_ID" type="number(19)">	 
-				<constraints nullable="false" /></column>	 
+    
+    		<column name="ID" type="number(19)" />
 			<column name="INVOICE_ID" type="number(19)">	 
 				<constraints  /></column>	 
 			<column name="ORDER_ID" type="number(19)">	 
-				<constraints  /></column>	 
-			<column name="ORG_ID" type="number(19)">	 
-				<constraints nullable="false" /></column>	 
-			<column name="PAYMENTMETHOD_ID" type="number(19)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

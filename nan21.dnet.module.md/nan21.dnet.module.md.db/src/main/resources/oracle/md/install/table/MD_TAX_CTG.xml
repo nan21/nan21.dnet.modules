@@ -31,7 +31,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="MD_TAX_CTG" constraintName="PK_TAX_CTG" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="MD_TAX_CTG" constraintName="UK_TAX_CTG1" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

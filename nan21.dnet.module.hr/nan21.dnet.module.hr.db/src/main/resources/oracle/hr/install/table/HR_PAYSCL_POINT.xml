@@ -31,7 +31,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="HR_PAYSCL_POINT" constraintName="PK_PAYSCL_POINT" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="HR_PAYSCL_POINT" constraintName="UK_PAYSCL_POINT1" columnNames="CLIENTID, PAYSCALE_ID,CODE" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

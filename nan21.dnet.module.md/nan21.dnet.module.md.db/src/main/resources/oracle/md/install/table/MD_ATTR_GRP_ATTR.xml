@@ -33,7 +33,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="MD_ATTR_GRP_ATTR" constraintName="PK_ATTR_GRP_ATTR" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="MD_ATTR_GRP_ATTR" constraintName="UK_ATTR_GRP_ATTR1" columnNames="CLIENTID, GROUP_ID,ATTRIBUTE_ID" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

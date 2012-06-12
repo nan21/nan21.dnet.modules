@@ -33,7 +33,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="MD_PROD_PRICE" constraintName="PK_PROD_PRICE" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="MD_PROD_PRICE" constraintName="UK_PROD_PRICE1" columnNames="CLIENTID, PRICELISTVERSION_ID,PRODUCT_ID" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

@@ -14,7 +14,7 @@
 				<constraints  /></column>	 
 			<column name="JOB_CLASS_NAME" type="varchar2(255)">
 				<constraints  /></column>	 
-			<column name="JOB_DATA" type="">
+			<column name="JOB_DATA" type="blob">
 				<constraints  /></column>	 
 			<column name="JOB_GROUP" type="varchar2(255)">
 				<constraints nullable="false" /></column>	 

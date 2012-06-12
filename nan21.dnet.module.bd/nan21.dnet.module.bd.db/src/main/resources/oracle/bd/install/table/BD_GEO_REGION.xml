@@ -37,7 +37,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="BD_GEO_REGION" constraintName="PK_GEO_REGION" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="BD_GEO_REGION" constraintName="UK_GEO_REGION1" columnNames="CLIENTID, COUNTRY_ID,CODE" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

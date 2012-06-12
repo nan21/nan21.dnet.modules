@@ -47,10 +47,10 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="AD_RPT_PARAM" constraintName="PK_RPT_PARAM" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="AD_RPT_PARAM" constraintName="UK_RPT_PARAM1" columnNames="CLIENTID, REPORT_ID,CODE" />
 	</changeSet>
-	<changeSet author="amathe" id="UK-2">
+	<changeSet author="amathe" id="UK-2"> 
 		<addUniqueConstraint tableName="AD_RPT_PARAM" constraintName="UK_RPT_PARAM2" columnNames="CLIENTID, REPORT_ID,NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

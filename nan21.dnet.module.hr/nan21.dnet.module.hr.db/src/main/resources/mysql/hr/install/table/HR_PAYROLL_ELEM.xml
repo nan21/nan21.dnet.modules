@@ -4,50 +4,16 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <changeSet author="amathe" id="TBL">
         <createTable tableName="HR_PAYROLL_ELEM">
-			<column name="ACTIVE" type="int(1)">
-				<constraints nullable="false" /></column>	 
+	
+    		<column name="ID" type="bigint(19)" />
 			<column name="BALANCE" type="int(1)">
 				<constraints nullable="false" /></column>	 
 			<column name="BALANCEFUNCTION" type="varchar(16)">
 				<constraints  /></column>	 
-			<column name="CALCULATION" type="varchar(32)">
-				<constraints  /></column>	 
-			<column name="CLIENTID" type="bigint(3)">
-				<constraints nullable="false" /></column>	 
-			<column name="CODE" type="varchar(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="CREATEDAT" type="datetime">
-				<constraints nullable="false" /></column>	 
-			<column name="CREATEDBY" type="varchar(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="DATATYPE" type="varchar(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="ENTITYTYPE" type="varchar(32)">
-				<constraints  /></column>	 
-			<column name="ID" type="bigint(19)">
-				<constraints nullable="false" /></column>	 
-			<column name="MODIFIEDAT" type="datetime">
-				<constraints nullable="false" /></column>	 
-			<column name="MODIFIEDBY" type="varchar(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="NAME" type="varchar(255)">
-				<constraints nullable="false" /></column>	 
-			<column name="NOTES" type="text">
-				<constraints  /></column>	 
-			<column name="SEQUENCENO" type="int(4)">
-				<constraints  /></column>	 
-			<column name="UUID" type="varchar(36)">
-				<constraints  /></column>	 
-			<column name="VERSION" type="bigint(19)">
-				<constraints nullable="false" /></column>	 
 			<column name="ACCITEM_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="ENGINE_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
 			<column name="SOURCEELEMENT_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
-			<column name="TYPE_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

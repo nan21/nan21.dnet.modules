@@ -37,7 +37,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="AD_SYS_FRAME_EXT" constraintName="PK_SYS_FRAME_EXT" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="AD_SYS_FRAME_EXT" constraintName="UK_SYS_FRAME_EXT1" columnNames="CLIENTID, FRAMEFQN,FILELOCATION" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

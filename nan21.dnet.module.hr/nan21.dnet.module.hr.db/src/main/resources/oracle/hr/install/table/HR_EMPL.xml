@@ -4,68 +4,12 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <changeSet author="amathe" id="TBL">
         <createTable tableName="HR_EMPL">
+    
+    		<column name="ID" type="number(19)" />
 			<column name="ASSIGNTOPOSITION" type="number(1)">
 				<constraints nullable="false" /></column>	 
 			<column name="BASESALARY" type="number(12,2)">
 				<constraints  /></column>	 
-			<column name="BIRTHDATE" type="date">
-				<constraints  /></column>	 
-			<column name="CLIENTID" type="number(3)">
-				<constraints nullable="false" /></column>	 
-			<column name="CODE" type="varchar2(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="CREATEDAT" type="date">
-				<constraints nullable="false" /></column>	 
-			<column name="CREATEDBY" type="varchar2(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="CURRENTHIREDATE" type="date">
-				<constraints  /></column>	 
-			<column name="ENTITYTYPE" type="varchar2(32)">
-				<constraints  /></column>	 
-			<column name="FIRSTHIREDATE" type="date">
-				<constraints  /></column>	 
-			<column name="FIRSTNAME" type="varchar2(255)">
-				<constraints  /></column>	 
-			<column name="GENDER" type="varchar2(16)">
-				<constraints  /></column>	 
-			<column name="HASDISABILITY" type="number(1)">
-				<constraints nullable="false" /></column>	 
-			<column name="ID" type="number(19)">
-				<constraints nullable="false" /></column>	 
-			<column name="LASTNAME" type="varchar2(255)">
-				<constraints nullable="false" /></column>	 
-			<column name="MARITALSTATUS" type="varchar2(16)">
-				<constraints  /></column>	 
-			<column name="MIDDLENAME" type="varchar2(255)">
-				<constraints  /></column>	 
-			<column name="MODIFIEDAT" type="date">
-				<constraints nullable="false" /></column>	 
-			<column name="MODIFIEDBY" type="varchar2(32)">
-				<constraints nullable="false" /></column>	 
-			<column name="NAMEPREFIX" type="varchar2(255)">
-				<constraints  /></column>	 
-			<column name="NAMESUFFIX" type="varchar2(255)">
-				<constraints  /></column>	 
-			<column name="NICKNAME" type="varchar2(255)">
-				<constraints  /></column>	 
-			<column name="OFFICEEMAIL" type="varchar2(128)">
-				<constraints  /></column>	 
-			<column name="PASSPORTNO" type="varchar2(32)">
-				<constraints  /></column>	 
-			<column name="PREVIOUSLASTNAME" type="varchar2(255)">
-				<constraints  /></column>	 
-			<column name="SINNO" type="varchar2(32)">
-				<constraints  /></column>	 
-			<column name="SSNNO" type="varchar2(32)">
-				<constraints  /></column>	 
-			<column name="UUID" type="varchar2(36)">
-				<constraints  /></column>	 
-			<column name="VERSION" type="number(19)">
-				<constraints nullable="false" /></column>	 
-			<column name="CITIZENSHIP_ID" type="number(19)">	 
-				<constraints  /></column>	 
-			<column name="EMPLOYER_ID" type="number(19)">	 
-				<constraints nullable="false" /></column>	 
 			<column name="GRADE_ID" type="number(19)">	 
 				<constraints  /></column>	 
 			<column name="JOB_ID" type="number(19)">	 
@@ -83,7 +27,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="HR_EMPL" constraintName="PK_EMPL" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="HR_EMPL" constraintName="UK_EMPL1" columnNames="CLIENTID, CODE" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

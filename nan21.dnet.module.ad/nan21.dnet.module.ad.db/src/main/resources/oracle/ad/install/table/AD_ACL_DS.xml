@@ -41,7 +41,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="AD_ACL_DS" constraintName="PK_ACL_DS" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="AD_ACL_DS" constraintName="UK_ACL_DS1" columnNames="CLIENTID, ACCESSCONTROL_ID,DSNAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

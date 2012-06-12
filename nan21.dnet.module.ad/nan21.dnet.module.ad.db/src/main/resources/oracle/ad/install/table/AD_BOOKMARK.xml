@@ -47,7 +47,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="AD_BOOKMARK" constraintName="PK_BOOKMARK" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="AD_BOOKMARK" constraintName="UK_BOOKMARK1" columnNames="CLIENTID, OWNER,NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

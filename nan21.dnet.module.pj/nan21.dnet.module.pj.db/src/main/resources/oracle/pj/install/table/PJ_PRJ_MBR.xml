@@ -31,7 +31,7 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="PJ_PRJ_MBR" constraintName="PK_PRJ_MBR" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="PJ_PRJ_MBR" constraintName="UK_PRJ_MBR1" columnNames="CLIENTID, PROJECT_ID,MEMBER_ID" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">

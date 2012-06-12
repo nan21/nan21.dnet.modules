@@ -39,10 +39,10 @@
     <changeSet author="amathe" id="PK">
     	<addPrimaryKey tableName="MD_PER_YEAR" constraintName="PK_PER_YEAR" columnNames="ID" />
     </changeSet>       
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="MD_PER_YEAR" constraintName="UK_PER_YEAR1" columnNames="CLIENTID, CODE" />
 	</changeSet>
-	<changeSet author="amathe" id="UK-2">
+	<changeSet author="amathe" id="UK-2"> 
 		<addUniqueConstraint tableName="MD_PER_YEAR" constraintName="UK_PER_YEAR2" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
