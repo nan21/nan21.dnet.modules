@@ -28,13 +28,15 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$Filter", {
 		.addLov({ name:"withRole", xtype:"net.nan21.dnet.module.ad.usr.lovs.Roles", paramIndex:"withRole",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "withRoleId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1"])
-		.addChildrenTo("col1",["name","active","withRole"])
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["name","withRole"])
+		.addChildrenTo("col2",["active"])
     	.addAuditFilter()	
 	}
 }); 

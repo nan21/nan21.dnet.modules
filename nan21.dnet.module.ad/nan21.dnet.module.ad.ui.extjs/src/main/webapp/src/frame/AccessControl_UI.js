@@ -33,7 +33,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.AccessControl_UI", {
 		.addButton({name:"btnCopyRulesExec",text:"OK", tooltip:"Copy rules from selected privilege",disabled:false
 			,handler: this.onBtnCopyRulesExec,scope:this	})	
 							 	
-		.addDcFilterFormView("ctrl",{ name:"privilegeFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.AccessControl$Filter",height:110})	 
+		.addDcFilterFormView("ctrl",{ name:"privilegeFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.AccessControl$Filter",height:80})	 
 		.addDcEditGridView("ctrl",{ name:"privilegeEditList", xtype:"net.nan21.dnet.module.ad.usr.dc.AccessControl$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnRoleToAccessCtrl") ,this._elems_.get("btnCopyRules") ,this._elems_.get("btnShowUiDsRules") ,this._elems_.get("btnShowUiAsgnRules") ]}]})	 
 		.addDcFormView("ctrl",{ name:"privilegeCopyRules", xtype:"net.nan21.dnet.module.ad.usr.dc.AccessControl$CopyRulesFromSource"})	 
 		.addDcEditGridView("dsAccess",{ name:"dsAccessCtxEditList", xtype:"net.nan21.dnet.module.ad.usr.dc.DsAccessControl$CtxEditList", frame:true,title:"Data-source"})	 

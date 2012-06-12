@@ -25,7 +25,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.asgn.ProductsOfCategory$Ui", {
 		 
  	width:700,
 	height:400,
-	title:"Assign attributes to group",
+	title:"Assign products to category",
 
 	_controller_:net.nan21.dnet.module.md.mm.prod.asgn.ProductsOfCategory,
 	_filterFields_: [["id","Id"],["code","Code"],["name","Name"]],
