@@ -1,37 +1,37 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.bd.contact.domain.entity;version
- ="1.0.0.RC1";uses:="javax.persistence,javax.validation.constraints,ne
+ ="1.0.0.RC2";uses:="javax.persistence,javax.validation.constraints,ne
  t.nan21.dnet.core.domain.model,org.eclipse.persistence.annotations,or
  g.eclipse.persistence.descriptors,org.hibernate.validator.constraints
- ",net.nan21.dnet.module.bd.currency.domain.entity;version="1.0.0.RC1"
+ ",net.nan21.dnet.module.bd.currency.domain.entity;version="1.0.0.RC2"
  ;uses:="javax.persistence,javax.validation.constraints,net.nan21.dnet
  .core.domain.model,org.eclipse.persistence.annotations,org.eclipse.pe
  rsistence.descriptors",net.nan21.dnet.module.bd.elem.domain.entity;ve
- rsion="1.0.0.RC1";uses:="javax.persistence,javax.validation.constrain
+ rsion="1.0.0.RC2";uses:="javax.persistence,javax.validation.constrain
  ts,net.nan21.dnet.core.domain.model,org.eclipse.persistence.annotatio
  ns,org.eclipse.persistence.descriptors,org.hibernate.validator.constr
  aints",net.nan21.dnet.module.bd.elem.domain.eventhandler;version="1.0
- .0.RC1";uses:="net.nan21.dnet.core.domain.eventhandler,org.eclipse.pe
+ .0.RC2";uses:="net.nan21.dnet.core.domain.eventhandler,org.eclipse.pe
  rsistence.descriptors,org.eclipse.persistence.sessions",net.nan21.dne
- t.module.bd.geo.domain.entity;version="1.0.0.RC1";uses:="javax.persis
+ t.module.bd.geo.domain.entity;version="1.0.0.RC2";uses:="javax.persis
  tence,javax.validation.constraints,net.nan21.dnet.core.domain.model,o
  rg.eclipse.persistence.annotations,org.eclipse.persistence.descriptor
- s",net.nan21.dnet.module.bd.org.domain.entity;version="1.0.0.RC1";use
+ s",net.nan21.dnet.module.bd.org.domain.entity;version="1.0.0.RC2";use
  s:="javax.persistence,javax.validation.constraints,net.nan21.dnet.cor
  e.domain.model,org.eclipse.persistence.annotations,org.eclipse.persis
  tence.descriptors",net.nan21.dnet.module.bd.standards.domain.entity;v
- ersion="1.0.0.RC1";uses:="javax.persistence,javax.validation.constrai
+ ersion="1.0.0.RC2";uses:="javax.persistence,javax.validation.constrai
  nts,net.nan21.dnet.core.domain.model,org.eclipse.persistence.annotati
  ons,org.eclipse.persistence.descriptors,org.hibernate.validator.const
- raints",net.nan21.dnet.module.bd.uom.domain.entity;version="1.0.0.RC1
+ raints",net.nan21.dnet.module.bd.uom.domain.entity;version="1.0.0.RC2
  ";uses:="javax.persistence,javax.validation.constraints,net.nan21.dne
  t.core.domain.model,org.eclipse.persistence.annotations,org.eclipse.p
  ersistence.descriptors,org.hibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.ad
- .domain;version="[1.0.0.RC1,1.0.0.RC1]"
+ dnet.core.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.ad
+ .domain;version="[1.0.0.RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet BD - domain
 Bundle-ManifestVersion: 2
@@ -44,10 +44,11 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  domain.eventhandler,net.nan21.dnet.core.domain.model,org.aopalliance.
  aop;version="[1.0,2.0)",org.eclipse.persistence.annotations,org.eclip
  se.persistence.descriptors,org.eclipse.persistence.internal.helper,or
- g.eclipse.persistence.sessions,org.hibernate.validator;version="[4.0,
- 5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)",org.spr
- ingframework.aop;version="[3.0,3.1)",org.springframework.aop.framewor
- k;version="[3.0,3.1)",org.springframework.context.weaving;version="[3
- .0,3.1)",org.springframework.transaction;version="[3.0,3.1)",org.spri
- ngframework.transaction.aspectj;version="[3.0,3.1)"
+ g.eclipse.persistence.jpa;version="[2.1,2.5)",org.eclipse.persistence
+ .sessions,org.hibernate.validator;version="[4.0,5.0)",org.hibernate.v
+ alidator.constraints;version="[4.0,5.0)",org.springframework.aop;vers
+ ion="[3.0,3.1)",org.springframework.aop.framework;version="[3.0,3.1)"
+ ,org.springframework.context.weaving;version="[3.0,3.1)",org.springfr
+ amework.transaction;version="[3.0,3.1)",org.springframework.transacti
+ on.aspectj;version="[3.0,3.1)"
 

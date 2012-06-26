@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActAvailableTaskDs" ,{
 		{name:"id", type:"string"},
 		{name:"processId", type:"string"},
 		{name:"process", type:"string"},
+		{name:"clientId", type:"int", useNull:true},
 		{name:"taskKey", type:"string"},
 		{name:"processInstanceId", type:"string"},
 		{name:"executionId", type:"string"},

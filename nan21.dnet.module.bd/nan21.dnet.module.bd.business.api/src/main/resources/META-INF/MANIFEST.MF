@@ -1,25 +1,25 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.bd.contact.business.service;vers
- ion="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet
+ ion="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet
  .module.bd.contact.domain.entity",net.nan21.dnet.module.bd.currency.b
- usiness.service;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.se
+ usiness.service;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.se
  rvice,net.nan21.dnet.module.bd.currency.domain.entity",net.nan21.dnet
- .module.bd.elem.business.service;version="1.0.0.RC1";uses:="net.nan21
+ .module.bd.elem.business.service;version="1.0.0.RC2";uses:="net.nan21
  .dnet.core.api.service,net.nan21.dnet.module.bd.elem.domain.entity",n
- et.nan21.dnet.module.bd.geo.business.service;version="1.0.0.RC1";uses
+ et.nan21.dnet.module.bd.geo.business.service;version="1.0.0.RC2";uses
  :="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.geo.domai
  n.entity",net.nan21.dnet.module.bd.org.business.service;version="1.0.
- 0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.b
+ 0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.b
  d.org.domain.entity",net.nan21.dnet.module.bd.standards.business.serv
- ice;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.na
+ ice;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.na
  n21.dnet.module.bd.standards.domain.entity",net.nan21.dnet.module.bd.
- uom.business.service;version="1.0.0.RC1";uses:="net.nan21.dnet.core.a
+ uom.business.service;version="1.0.0.RC2";uses:="net.nan21.dnet.core.a
  pi.service,net.nan21.dnet.module.bd.uom.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.bd.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.modu
- le.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]"
+ dnet.module.bd.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.modu
+ le.ad.domain;version="[1.0.0.RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet BD - business API
 Bundle-ManifestVersion: 2

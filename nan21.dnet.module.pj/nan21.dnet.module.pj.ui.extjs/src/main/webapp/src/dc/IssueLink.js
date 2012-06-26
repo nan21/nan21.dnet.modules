@@ -73,8 +73,8 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueLink$CtxCreate", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"targetIssue", xtype:"net.nan21.dnet.module.pj.md.lovs.Issues", dataIndex:"targetIssue",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "targetIssueId"} ]  })
-		.addLov({ name:"linkType", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueLinkTypes", dataIndex:"linkType",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "linkTypeId"} ]  })
+		.addLov({ name:"targetIssue", xtype:"net.nan21.dnet.module.pj.md.lovs.Issues", dataIndex:"targetIssue" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "targetIssueId"} ]  })
+		.addLov({ name:"linkType", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueLinkTypes", dataIndex:"linkType" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "linkTypeId"} ]  })
 		//containers
 		.addPanel({ name:"main", layout:"form" , autoScroll:true})     
 		;     

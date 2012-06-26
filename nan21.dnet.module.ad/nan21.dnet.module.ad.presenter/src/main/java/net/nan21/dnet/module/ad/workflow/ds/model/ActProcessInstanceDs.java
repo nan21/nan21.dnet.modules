@@ -22,6 +22,7 @@ public class ActProcessInstanceDs extends
     public static final String fPROCESSID = "processId";
     public static final String fPROCESS = "process";
     public static final String fPROCESSVERSION = "processVersion";
+    public static final String fCLIENTID = "clientId";
     public static final String fSTARTTIME = "startTime";
     public static final String fSTARTEDBY = "startedBy";
     public static final String fSTARTACTION = "startAction";
@@ -38,8 +39,11 @@ public class ActProcessInstanceDs extends
     @DsField(join = "left", path = "processDefinition.name")
     private String process;
 
-    @DsField(join = "left", path = "processDefinition.version")
-    private Long processVersion;
+    @DsField(join = "left", path = "processDefinition.procDefVersion")
+    private Integer processVersion;
+
+    @DsField(join = "left", path = "processDefinition.clientId")
+    private Long clientId;
 
     @DsField()
     private Date startTime;
@@ -91,12 +95,20 @@ public class ActProcessInstanceDs extends
         this.process = process;
     }
 
-    public Long getProcessVersion() {
+    public Integer getProcessVersion() {
         return this.processVersion;
     }
 
-    public void setProcessVersion(Long processVersion) {
+    public void setProcessVersion(Integer processVersion) {
         this.processVersion = processVersion;
+    }
+
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public Date getStartTime() {

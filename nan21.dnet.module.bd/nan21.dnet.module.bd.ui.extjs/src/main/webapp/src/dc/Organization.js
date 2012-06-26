@@ -75,13 +75,13 @@ Ext.define("net.nan21.dnet.module.bd.org.dc.Organization$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
-		.addLov({ name:"calendar", xtype:"net.nan21.dnet.module.bd.org.lovs.Calendars", dataIndex:"calendar",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "calendarId"} ]  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:80,anchor:"-20"   })
+		.addTextField({ name:"name", dataIndex:"name" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"code", dataIndex:"code" ,allowBlank:false,maxLength:32  })
+		.addLov({ name:"calendar", xtype:"net.nan21.dnet.module.bd.org.lovs.Calendars", dataIndex:"calendar" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "calendarId"} ]  })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:80   })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addCheckbox({ name:"valid", dataIndex:"valid"  })
-		.addLov({ name:"type", xtype:"net.nan21.dnet.module.bd.org.lovs.OrganizationTypes", dataIndex:"type",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.bd.org.lovs.OrganizationTypes", dataIndex:"type" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:400})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     

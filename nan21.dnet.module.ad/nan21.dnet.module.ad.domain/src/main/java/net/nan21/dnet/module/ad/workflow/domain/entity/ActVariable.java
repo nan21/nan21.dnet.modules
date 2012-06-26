@@ -14,13 +14,11 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -33,7 +31,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActVariable.NQ_FIND_BY_ID, query = "SELECT e FROM ActVariable e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActVariable.NQ_FIND_BY_IDS, query = "SELECT e FROM ActVariable e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActVariable implements IModelWithId {
 
@@ -53,25 +50,24 @@ public class ActVariable implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActVariable.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Revision. */
-    @Column(name = "REV_", nullable = false)
-    @NotNull
+    @Column(name = "REV_")
     private Integer revision;
+
+    /** Type. */
+    @Column(name = "TYPE_", length = 255)
+    private String type;
 
     /** Name. */
     @Column(name = "NAME_", nullable = false, length = 255)
     @NotBlank
     private String name;
-
-    /** Type. */
-    @Column(name = "TYPE_", length = 255)
-    private String type;
 
     /** ExecutionId. */
     @Column(name = "EXECUTION_ID_", length = 255)
@@ -93,6 +89,10 @@ public class ActVariable implements IModelWithId {
     @Column(name = "DOUBLE_", scale = 2)
     private Float doubleValue;
 
+    /** LongValue. */
+    @Column(name = "LONG_")
+    private Long longValue;
+
     /** TextValue. */
     @Column(name = "TEXT_", length = 4000)
     private String textValue;
@@ -100,10 +100,6 @@ public class ActVariable implements IModelWithId {
     /** TextValue2. */
     @Column(name = "TEXT2_", length = 4000)
     private String textValue2;
-
-    /** LongValue. */
-    @Column(name = "LONG_")
-    private Long longValue;
 
     /* ============== getters - setters ================== */
 
@@ -123,20 +119,20 @@ public class ActVariable implements IModelWithId {
         this.revision = revision;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getType() {
         return this.type;
     }
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getExecutionId() {
@@ -179,6 +175,14 @@ public class ActVariable implements IModelWithId {
         this.doubleValue = doubleValue;
     }
 
+    public Long getLongValue() {
+        return this.longValue;
+    }
+
+    public void setLongValue(Long longValue) {
+        this.longValue = longValue;
+    }
+
     public String getTextValue() {
         return this.textValue;
     }
@@ -193,14 +197,6 @@ public class ActVariable implements IModelWithId {
 
     public void setTextValue2(String textValue2) {
         this.textValue2 = textValue2;
-    }
-
-    public Long getLongValue() {
-        return this.longValue;
-    }
-
-    public void setLongValue(Long longValue) {
-        this.longValue = longValue;
     }
 
     @Transient

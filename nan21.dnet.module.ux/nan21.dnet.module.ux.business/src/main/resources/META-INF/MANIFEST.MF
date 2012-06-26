@@ -1,17 +1,17 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.ux._businessdelegates;version="1
- .0.0.RC1";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bu
+ .0.0.RC2";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bu
  siness.service"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.core.busi
- ness;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.ad.domain;vers
- ion="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.bd.domain;version="[1.0
- .0.RC1,1.0.0.RC1]",nan21.dnet.module.ux.domain;version="[1.0.0.RC1,1.
- 0.0.RC1]",nan21.dnet.module.ad.business.api;version="[1.0.0.RC1,1.0.0
- .RC1]",nan21.dnet.module.bd.business.api;version="[1.0.0.RC1,1.0.0.RC
- 1]",nan21.dnet.module.ux.business.api;version="[1.0.0.RC1,1.0.0.RC1]"
+ dnet.core.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.core.busi
+ ness;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.ad.domain;vers
+ ion="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.bd.domain;version="[1.0
+ .0.RC2,1.0.0.RC2]",nan21.dnet.module.ux.domain;version="[1.0.0.RC2,1.
+ 0.0.RC2]",nan21.dnet.module.ad.business.api;version="[1.0.0.RC2,1.0.0
+ .RC2]",nan21.dnet.module.bd.business.api;version="[1.0.0.RC2,1.0.0.RC
+ 2]",nan21.dnet.module.ux.business.api;version="[1.0.0.RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet UX - business
 Bundle-ManifestVersion: 2
@@ -21,13 +21,14 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,javax.v
  alidation;version="[1.0,2.0)",net.nan21.dnet.core.api,net.nan21.dnet.
- core.api.service,net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bu
- siness.persistenceunit,net.nan21.dnet.core.business.service,org.aopal
- liance.aop;version="[1.0,2.0)",org.hibernate.validator;version="[4.0,
- 5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)",org.spr
- ingframework.aop;version="[3.0,3.1)",org.springframework.aop.framewor
- k;version="[3.0,3.1)",org.springframework.context.weaving;version="[3
- .0,3.1)",org.springframework.orm.jpa,org.springframework.orm.jpa.vend
- or,org.springframework.transaction;version="[3.0,3.1)",org.springfram
- ework.transaction.aspectj;version="[3.0,3.1)"
+ core.api.service,net.nan21.dnet.core.api.setup,net.nan21.dnet.core.ap
+ i.wf,net.nan21.dnet.core.business.persistenceunit,net.nan21.dnet.core
+ .business.service,org.aopalliance.aop;version="[1.0,2.0)",org.hiberna
+ te.validator;version="[4.0,5.0)",org.hibernate.validator.constraints;
+ version="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",org.s
+ pringframework.aop.framework;version="[3.0,3.1)",org.springframework.
+ context.weaving;version="[3.0,3.1)",org.springframework.orm.jpa,org.s
+ pringframework.orm.jpa.vendor,org.springframework.transaction;version
+ ="[3.0,3.1)",org.springframework.transaction.aspectj;version="[3.0,3.
+ 1)"
 

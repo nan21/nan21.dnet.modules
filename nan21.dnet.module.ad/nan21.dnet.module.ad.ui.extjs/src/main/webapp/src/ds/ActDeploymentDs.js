@@ -7,6 +7,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"id", type:"string"},
+		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
 		{name:"deployTime", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"fullName", type:"string"}

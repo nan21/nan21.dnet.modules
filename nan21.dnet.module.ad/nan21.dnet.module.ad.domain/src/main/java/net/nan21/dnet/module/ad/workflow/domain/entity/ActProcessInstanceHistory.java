@@ -27,7 +27,6 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -40,7 +39,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActProcessInstanceHistory.NQ_FIND_BY_ID, query = "SELECT e FROM ActProcessInstanceHistory e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActProcessInstanceHistory.NQ_FIND_BY_IDS, query = "SELECT e FROM ActProcessInstanceHistory e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActProcessInstanceHistory implements IModelWithId {
 
@@ -60,19 +58,19 @@ public class ActProcessInstanceHistory implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActProcessInstanceHistory.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
+    /** ProcessInstanceId. */
+    @Column(name = "PROC_INST_ID_", length = 64)
+    private String processInstanceId;
+
     /** BusinessKey. */
     @Column(name = "BUSINESS_KEY_", length = 255)
     private String businessKey;
-
-    /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_", length = 255)
-    private String processInstanceId;
 
     /** StartTime. */
     @Temporal(TemporalType.TIMESTAMP)
@@ -100,6 +98,14 @@ public class ActProcessInstanceHistory implements IModelWithId {
     /** EndAction. */
     @Column(name = "END_ACT_ID_", length = 255)
     private String endAction;
+
+    /** DeleteReason. */
+    @Column(name = "DELETE_REASON_", length = 4000)
+    private String deleteReason;
+
+    /** SuperProcInstanceId. */
+    @Column(name = "SUPER_PROCESS_INSTANCE_ID_", length = 255)
+    private String superProcInstanceId;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActProcessDefinition.class)
     @JoinColumn(name = "PROC_DEF_ID_", referencedColumnName = "ID_")
     private ActProcessDefinition processDefinition;
@@ -114,20 +120,20 @@ public class ActProcessInstanceHistory implements IModelWithId {
         this.id = id;
     }
 
-    public String getBusinessKey() {
-        return this.businessKey;
-    }
-
-    public void setBusinessKey(String businessKey) {
-        this.businessKey = businessKey;
-    }
-
     public String getProcessInstanceId() {
         return this.processInstanceId;
     }
 
     public void setProcessInstanceId(String processInstanceId) {
         this.processInstanceId = processInstanceId;
+    }
+
+    public String getBusinessKey() {
+        return this.businessKey;
+    }
+
+    public void setBusinessKey(String businessKey) {
+        this.businessKey = businessKey;
     }
 
     public Date getStartTime() {
@@ -176,6 +182,22 @@ public class ActProcessInstanceHistory implements IModelWithId {
 
     public void setEndAction(String endAction) {
         this.endAction = endAction;
+    }
+
+    public String getDeleteReason() {
+        return this.deleteReason;
+    }
+
+    public void setDeleteReason(String deleteReason) {
+        this.deleteReason = deleteReason;
+    }
+
+    public String getSuperProcInstanceId() {
+        return this.superProcInstanceId;
+    }
+
+    public void setSuperProcInstanceId(String superProcInstanceId) {
+        this.superProcInstanceId = superProcInstanceId;
     }
 
     @Transient

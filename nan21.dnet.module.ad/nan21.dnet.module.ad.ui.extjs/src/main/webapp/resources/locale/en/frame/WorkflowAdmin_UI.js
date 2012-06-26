@@ -11,6 +11,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI$Trl", {
 	btnStartProcess__desc : "Start an instance of the selected process",
 	btnGetProcessDefinitionDiagram__ttl : "Show diagram",
 	btnGetProcessDefinitionDiagram__desc : "Show diagram for the selected process definition",
+	btnGetProcessDefinitionXml__ttl : "Show XML",
+	btnGetProcessDefinitionXml__desc : "Show xml for the selected process definition",
 	btnGetProcessInstanceDiagram__ttl : "Show diagram",
 	btnGetProcessInstanceDiagram__desc : "Show diagram for the selected process instance",
 	btnKillProcessInstance__ttl : "Kill Instance",

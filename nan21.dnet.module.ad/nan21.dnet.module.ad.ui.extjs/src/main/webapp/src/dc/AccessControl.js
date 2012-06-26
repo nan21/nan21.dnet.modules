@@ -67,7 +67,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.AccessControl$CopyRulesFromSource", 
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"copyFrom", xtype:"net.nan21.dnet.module.ad.usr.lovs.AccessControls", paramIndex:"copyFrom",anchor:"-20" ,retFieldMapping: [{lovField:"id", dsParam: "copyFromId"} ]  })
+		.addLov({ name:"copyFrom", xtype:"net.nan21.dnet.module.ad.usr.lovs.AccessControls", paramIndex:"copyFrom" ,retFieldMapping: [{lovField:"id", dsParam: "copyFromId"} ]  })
 		.addCheckbox({ name:"skipDs", paramIndex:"skipDs"  })
 		.addCheckbox({ name:"skipAsgn", paramIndex:"skipAsgn"  })
 		.addCheckbox({ name:"resetRules", paramIndex:"resetRules"  })

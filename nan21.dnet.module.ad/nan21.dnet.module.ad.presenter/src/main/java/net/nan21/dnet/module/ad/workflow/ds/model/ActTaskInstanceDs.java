@@ -18,6 +18,7 @@ public class ActTaskInstanceDs extends AbstractBaseDs<ActTaskInstanceHistory> {
     public static final String fID = "id";
     public static final String fPROCESSID = "processId";
     public static final String fPROCESS = "process";
+    public static final String fCLIENTID = "clientId";
     public static final String fTASKKEY = "taskKey";
     public static final String fPROCESSINSTANCEID = "processInstanceId";
     public static final String fEXECUTIONID = "executionId";
@@ -38,6 +39,9 @@ public class ActTaskInstanceDs extends AbstractBaseDs<ActTaskInstanceHistory> {
 
     @DsField(join = "left", path = "processDefinition.name")
     private String process;
+
+    @DsField(join = "left", path = "processDefinition.clientId")
+    private Long clientId;
 
     @DsField(path = "taskDefinitionKey")
     private String taskKey;
@@ -103,6 +107,14 @@ public class ActTaskInstanceDs extends AbstractBaseDs<ActTaskInstanceHistory> {
 
     public void setProcess(String process) {
         this.process = process;
+    }
+
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getTaskKey() {

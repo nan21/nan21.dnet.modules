@@ -79,14 +79,14 @@ Ext.define("net.nan21.dnet.module.md.org.dc.PayAccount$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
+		.addTextField({ name:"name", dataIndex:"name" ,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"description", dataIndex:"description",height:80,anchor:"-20"   })
-		.addCombo({ name:"type", xtype:"localcombo", dataIndex:"type",anchor:"-20" ,noUpdate:true ,store:[ "bank", "cash"]  })
-		.addTextField({ name:"analiticSegment", dataIndex:"analiticSegment",anchor:"-20" ,maxLength:32  })
-		.addLov({ name:"org", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"org",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "orgId"} ]  })
-		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
-		.addLov({ name:"journal", xtype:"net.nan21.dnet.module.md.acc.lovs.AccJournals", dataIndex:"journal",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "journalId"} ]  })
+		.addTextArea({ name:"description", dataIndex:"description",height:80   })
+		.addCombo({ name:"type", xtype:"localcombo", dataIndex:"type" ,noUpdate:true ,store:[ "bank", "cash"]  })
+		.addTextField({ name:"analiticSegment", dataIndex:"analiticSegment" ,maxLength:32  })
+		.addLov({ name:"org", xtype:"net.nan21.dnet.module.bd.org.lovs.LegalEntityOrganizations", dataIndex:"org" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "orgId"} ]  })
+		.addLov({ name:"currency", xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies", dataIndex:"currency" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]  })
+		.addLov({ name:"journal", xtype:"net.nan21.dnet.module.md.acc.lovs.AccJournals", dataIndex:"journal" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "journalId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" , width:250})     

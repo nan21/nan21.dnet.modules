@@ -107,16 +107,16 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MenuItem$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"title", dataIndex:"title",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"frame", dataIndex:"frame",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"bundle", dataIndex:"bundle",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"iconUrl", dataIndex:"iconUrl",anchor:"-20" ,maxLength:255  })
+		.addTextField({ name:"name", dataIndex:"name" ,maxLength:255  })
+		.addTextField({ name:"title", dataIndex:"title" ,maxLength:255  })
+		.addTextField({ name:"frame", dataIndex:"frame" ,maxLength:255  })
+		.addTextField({ name:"bundle", dataIndex:"bundle" ,maxLength:255  })
+		.addTextField({ name:"iconUrl", dataIndex:"iconUrl" ,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addCheckbox({ name:"separatorBefore", dataIndex:"separatorBefore"  })
 		.addCheckbox({ name:"separatorAfter", dataIndex:"separatorAfter"  })
-		.addLov({ name:"menuItem", xtype:"net.nan21.dnet.module.ad.usr.lovs.MenuItems", dataIndex:"menuItem",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "menuItemId"} ]  })
-		.addLov({ name:"menu", xtype:"net.nan21.dnet.module.ad.usr.lovs.Menus", dataIndex:"menu",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "menuId"} ]  })
+		.addLov({ name:"menuItem", xtype:"net.nan21.dnet.module.ad.usr.lovs.MenuItems", dataIndex:"menuItem" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "menuItemId"} ]  })
+		.addLov({ name:"menu", xtype:"net.nan21.dnet.module.ad.usr.lovs.Menus", dataIndex:"menu" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "menuId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" ,width:250})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     

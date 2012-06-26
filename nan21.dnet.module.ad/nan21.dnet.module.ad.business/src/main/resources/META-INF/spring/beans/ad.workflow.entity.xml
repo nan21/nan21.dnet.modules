@@ -19,29 +19,29 @@
  	<bean id="WfDefTransitionService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.WfDefTransitionService"  />  
  
+ 	<bean id="ActPropertyService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActPropertyService"  />  
+ 
+ 	<bean id="ActByteArrayService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActByteArrayService"  />  
+ 
+ 	<bean id="ActIdentityGroupService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActIdentityGroupService"  />  
+ 
+ 	<bean id="ActIdentityUserService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActIdentityUserService"  />  
+ 
+ 	<bean id="ActIdentityInfoService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActIdentityInfoService"  />  
+ 
  	<bean id="ActDeploymentService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActDeploymentService"  />  
  
  	<bean id="ActProcessDefinitionService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActProcessDefinitionService"  />  
  
- 	<bean id="ActByteArrayService" scope="prototype"
-	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActByteArrayService"  />  
- 
- 	<bean id="ActPropertyService" scope="prototype"
-	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActPropertyService"  />  
- 
- 	<bean id="ActAttachmentService" scope="prototype"
-	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActAttachmentService"  />  
- 
- 	<bean id="ActCommentService" scope="prototype"
-	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActCommentService"  />  
- 
  	<bean id="ActExecutionService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActExecutionService"  />  
- 
- 	<bean id="ActIdentityLinkService" scope="prototype"
-	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActIdentityLinkService"  />  
  
  	<bean id="ActJobService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActJobService"  />  
@@ -49,20 +49,32 @@
  	<bean id="ActTaskService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActTaskService"  />  
  
+ 	<bean id="ActIdentityLinkService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActIdentityLinkService"  />  
+ 
  	<bean id="ActVariableService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActVariableService"  />  
  
- 	<bean id="ActDetailHistoryService" scope="prototype"
-	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActDetailHistoryService"  />  
+ 	<bean id="ActEventSubscriberService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActEventSubscriberService"  />  
  
  	<bean id="ActProcessInstanceHistoryService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActProcessInstanceHistoryService"  />  
  
+ 	<bean id="ActActivityInstanceHistoryService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActActivityInstanceHistoryService"  />  
+ 
  	<bean id="ActTaskInstanceHistoryService" scope="prototype"
 	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActTaskInstanceHistoryService"  />  
  
- 	<bean id="ActActivityInstanceHistoryService" scope="prototype"
-	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActActivityInstanceHistoryService"  />  
+ 	<bean id="ActDetailHistoryService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActDetailHistoryService"  />  
+ 
+ 	<bean id="ActCommentService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActCommentService"  />  
+ 
+ 	<bean id="ActAttachmentService" scope="prototype"
+	  		class="net.nan21.dnet.module.ad.workflow.business.serviceimpl.ActAttachmentService"  />  
    
 </beans>
    

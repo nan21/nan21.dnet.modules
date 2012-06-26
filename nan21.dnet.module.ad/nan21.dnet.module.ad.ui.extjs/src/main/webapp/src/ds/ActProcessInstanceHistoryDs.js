@@ -11,6 +11,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceHistory
 		{name:"processId", type:"string"},
 		{name:"process", type:"string"},
 		{name:"processVersion", type:"int", useNull:true},
+		{name:"clientId", type:"int", useNull:true},
 		{name:"startTime", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"endTime", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"duration", type:"int", useNull:true},

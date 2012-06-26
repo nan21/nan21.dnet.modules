@@ -26,9 +26,12 @@
 	<osgi:list id="osgiAsgnTxServiceFactories" cardinality="1..N" 
 		interface="net.nan21.dnet.core.api.service.IAsgnTxServiceFactory" />
 
-	<osgi:reference id="osgiActivitiProcessEngine" cardinality="0..1"
-			interface="org.activiti.engine.ProcessEngine" />
-						 		
+	<osgi:reference id="osgiActivitiProcessEngineHolder" cardinality="0..1"
+			interface="net.nan21.dnet.core.api.wf.IActivitiProcessEngineHolder" />
+	
+	<osgi:reference id="osgiEmailFactory" cardinality="0..1"
+		interface="net.nan21.dnet.core.api.email.IEmailFactory" />
+							 		
 	<!-- export -->
 	
 	<osgi:service ref="dsServiceFactory" ranking="0"

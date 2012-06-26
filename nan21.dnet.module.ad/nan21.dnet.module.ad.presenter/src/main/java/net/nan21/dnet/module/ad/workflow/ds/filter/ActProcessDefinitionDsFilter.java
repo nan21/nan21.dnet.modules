@@ -11,6 +11,8 @@ public class ActProcessDefinitionDsFilter extends AbstractBaseDsFilter {
 
     private String id;
 
+    private Long clientId;
+
     private String key;
 
     private String fullName;
@@ -23,10 +25,10 @@ public class ActProcessDefinitionDsFilter extends AbstractBaseDsFilter {
 
     private String diagramResourceName;
 
-    private Long version;
+    private Integer procDefVersion;
 
-    private Long version_From;
-    private Long version_To;
+    private Integer procDefVersion_From;
+    private Integer procDefVersion_To;
 
     private String deploymentId;
 
@@ -39,6 +41,14 @@ public class ActProcessDefinitionDsFilter extends AbstractBaseDsFilter {
     public void setId(Object id) {
         this.id = (String) id;
 
+    }
+
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getKey() {
@@ -89,28 +99,28 @@ public class ActProcessDefinitionDsFilter extends AbstractBaseDsFilter {
         this.diagramResourceName = diagramResourceName;
     }
 
-    public Long getVersion() {
-        return this.version;
+    public Integer getProcDefVersion() {
+        return this.procDefVersion;
     }
 
-    public Long getVersion_From() {
-        return this.version_From;
+    public Integer getProcDefVersion_From() {
+        return this.procDefVersion_From;
     }
 
-    public Long getVersion_To() {
-        return this.version_To;
+    public Integer getProcDefVersion_To() {
+        return this.procDefVersion_To;
     }
 
-    public void setVersion(Long version) {
-        this.version = version;
+    public void setProcDefVersion(Integer procDefVersion) {
+        this.procDefVersion = procDefVersion;
     }
 
-    public void setVersion_From(Long version_From) {
-        this.version_From = version_From;
+    public void setProcDefVersion_From(Integer procDefVersion_From) {
+        this.procDefVersion_From = procDefVersion_From;
     }
 
-    public void setVersion_To(Long version_To) {
-        this.version_To = version_To;
+    public void setProcDefVersion_To(Integer procDefVersion_To) {
+        this.procDefVersion_To = procDefVersion_To;
     }
 
     public String getDeploymentId() {

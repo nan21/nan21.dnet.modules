@@ -88,7 +88,7 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.BusinessPartner$Create", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addCombo({ name:"type", xtype:"localcombo", dataIndex:"type",anchor:"-20" ,store:[ "person", "company"]  })
+		.addCombo({ name:"type", xtype:"localcombo", dataIndex:"type" ,store:[ "person", "company"]  })
 		//containers
 		.addPanel({ name:"main", layout:"form" , autoScroll:true, width:250})     
 		;     
@@ -109,22 +109,22 @@ Ext.define("net.nan21.dnet.module.md.bp.dc.BusinessPartner$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
+		.addTextField({ name:"code", dataIndex:"code" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addDisplayFieldText({ name:"type", dataIndex:"type"  })
-		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
-		.addTextField({ name:"taxPayerNo", dataIndex:"taxPayerNo",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"firstName", dataIndex:"firstName",anchor:"-20" ,maxLength:255,listeners:{change:{scope:this, fn:this._updatePersonName_}}  })
-		.addTextField({ name:"lastName", dataIndex:"lastName",anchor:"-20" ,maxLength:255,listeners:{change:{scope:this, fn:this._updatePersonName_}}  })
-		.addTextField({ name:"middleName", dataIndex:"middleName",anchor:"-20" ,maxLength:255,listeners:{change:{scope:this, fn:this._updatePersonName_}}  })
-		.addTextField({ name:"identityCardNo", dataIndex:"identityCardNo",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"passportNo", dataIndex:"passportNo",anchor:"-20" ,maxLength:255  })
-		.addDateField({ name:"birthDate", dataIndex:"birthDate",anchor:"-20" })
-		.addCombo({ name:"gender", xtype:"localcombo", dataIndex:"gender",anchor:"-20" ,store:[ "male", "female"]  })
-		.addTextField({ name:"companyName", dataIndex:"companyName",anchor:"-20" ,maxLength:255,listeners:{change:{scope:this, fn:this._updateCompanyName_}}  })
-		.addTextField({ name:"registrationNo", dataIndex:"registrationNo",anchor:"-20" ,maxLength:32  })
-		.addDateField({ name:"registrationDate", dataIndex:"registrationDate",anchor:"-20" })
-		.addLov({ name:"legalForm", xtype:"net.nan21.dnet.module.md.bp.lovs.CompanyLegalForms", dataIndex:"legalForm",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "legalFormId"} ],filterFieldMapping: [{lovField:"countryId", dsField: "countryId"} ]  })
+		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
+		.addTextField({ name:"taxPayerNo", dataIndex:"taxPayerNo" ,maxLength:255  })
+		.addTextField({ name:"firstName", dataIndex:"firstName" ,maxLength:255,listeners:{change:{scope:this, fn:this._updatePersonName_}}  })
+		.addTextField({ name:"lastName", dataIndex:"lastName" ,maxLength:255,listeners:{change:{scope:this, fn:this._updatePersonName_}}  })
+		.addTextField({ name:"middleName", dataIndex:"middleName" ,maxLength:255,listeners:{change:{scope:this, fn:this._updatePersonName_}}  })
+		.addTextField({ name:"identityCardNo", dataIndex:"identityCardNo" ,maxLength:255  })
+		.addTextField({ name:"passportNo", dataIndex:"passportNo" ,maxLength:255  })
+		.addDateField({ name:"birthDate", dataIndex:"birthDate" })
+		.addCombo({ name:"gender", xtype:"localcombo", dataIndex:"gender" ,store:[ "male", "female"]  })
+		.addTextField({ name:"companyName", dataIndex:"companyName" ,maxLength:255,listeners:{change:{scope:this, fn:this._updateCompanyName_}}  })
+		.addTextField({ name:"registrationNo", dataIndex:"registrationNo" ,maxLength:32  })
+		.addDateField({ name:"registrationDate", dataIndex:"registrationDate" })
+		.addLov({ name:"legalForm", xtype:"net.nan21.dnet.module.md.bp.lovs.CompanyLegalForms", dataIndex:"legalForm" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "legalFormId"} ],filterFieldMapping: [{lovField:"countryId", dsField: "countryId"} ]  })
 		//containers
 		.addPanel({ name:"formCompanyCol1", layout:"form" , width:500, height:40})     
 		.addPanel({ name:"formCompanyCol2", layout:"form" , width:250})     

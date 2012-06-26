@@ -31,6 +31,18 @@ public class ActExecutionService extends AbstractEntityService<ActExecution>
         return ActExecution.class;
     }
 
+    public List<ActExecution> findByParent(ActExecution parent) {
+        return this.findByParentId(parent.getId());
+    }
+
+    public List<ActExecution> findByParentId(String parentId) {
+        return (List<ActExecution>) this.em
+                .createQuery(
+                        "select e from ActExecution e where  e.parent.id = :pParentId",
+                        ActExecution.class).setParameter("pParentId", parentId)
+                .getResultList();
+    }
+
     public List<ActExecution> findByProcessDefinition(
             ActProcessDefinition processDefinition) {
         return this.findByProcessDefinitionId(processDefinition.getId());
@@ -43,18 +55,6 @@ public class ActExecutionService extends AbstractEntityService<ActExecution>
                         "select e from ActExecution e where  e.processDefinition.id = :pProcessDefinitionId",
                         ActExecution.class)
                 .setParameter("pProcessDefinitionId", processDefinitionId)
-                .getResultList();
-    }
-
-    public List<ActExecution> findByParent(ActExecution parent) {
-        return this.findByParentId(parent.getId());
-    }
-
-    public List<ActExecution> findByParentId(String parentId) {
-        return (List<ActExecution>) this.em
-                .createQuery(
-                        "select e from ActExecution e where  e.parent.id = :pParentId",
-                        ActExecution.class).setParameter("pParentId", parentId)
                 .getResultList();
     }
 

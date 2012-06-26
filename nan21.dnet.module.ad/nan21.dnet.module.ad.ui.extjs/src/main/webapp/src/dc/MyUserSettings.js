@@ -24,13 +24,13 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.MyUserSettings$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
+		.addTextField({ name:"name", dataIndex:"name" ,maxLength:255  })
+		.addTextField({ name:"code", dataIndex:"code" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextField({ name:"notes", dataIndex:"notes",anchor:"-20" ,maxLength:4000  })
-		.addCombo({ name:"decimalSeparator", xtype:"localcombo", dataIndex:"decimalSeparator",anchor:"-20" ,store:[ ".", ","]  })
-		.addCombo({ name:"thousandSeparator", xtype:"localcombo", dataIndex:"thousandSeparator",anchor:"-20" ,store:[ ".", ","]  })
-		.addLov({ name:"dateFormat", xtype:"net.nan21.dnet.module.ad.system.lovs.SysDateFormats", dataIndex:"dateFormat",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "dateFormatId"} ]  })
+		.addTextField({ name:"notes", dataIndex:"notes" ,maxLength:4000  })
+		.addCombo({ name:"decimalSeparator", xtype:"localcombo", dataIndex:"decimalSeparator" ,store:[ ".", ","]  })
+		.addCombo({ name:"thousandSeparator", xtype:"localcombo", dataIndex:"thousandSeparator" ,store:[ ".", ","]  })
+		.addLov({ name:"dateFormat", xtype:"net.nan21.dnet.module.ad.system.lovs.SysDateFormats", dataIndex:"dateFormat" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "dateFormatId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" ,title:"Regional settings", width:300,xtype:"fieldset", border:true, collapsible:true})     
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 

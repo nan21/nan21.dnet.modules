@@ -19,15 +19,17 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
+
+import net.nan21.dnet.core.api.session.SessionUtils;
 
 /** ActDeployment. */
 @Entity
@@ -36,7 +38,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActDeployment.NQ_FIND_BY_ID, query = "SELECT e FROM ActDeployment e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActDeployment.NQ_FIND_BY_IDS, query = "SELECT e FROM ActDeployment e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActDeployment implements IModelWithId {
 
@@ -56,7 +57,7 @@ public class ActDeployment implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActDeployment.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
@@ -72,6 +73,10 @@ public class ActDeployment implements IModelWithId {
     @Column(name = "DEPLOY_TIME_", nullable = false)
     @NotNull
     private Date deployTime;
+
+    /** ClientId. */
+    @Column(name = "CLIENTID")
+    private Long clientId;
 
     /* ============== getters - setters ================== */
 
@@ -99,25 +104,27 @@ public class ActDeployment implements IModelWithId {
         this.deployTime = deployTime;
     }
 
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
+    }
+
     @Transient
     public String getFullName() {
-        return this.name + " v" + this.deployTime;
+        return this.name + " / " + SessionUtils.formatDateTime(this.deployTime);
     }
 
     public void setFullName(String fullName) {
 
     }
 
-    @Transient
-    public Long getVersion() {
-        return 1L;
-    }
-
-    public void setVersion(Long version) {
-
-    }
-
     public void aboutToInsert(DescriptorEvent event) {
+
+        event.updateAttributeWithObject("clientId", Session.user.get()
+                .getClientId());
 
     }
 

@@ -20,10 +20,13 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 	,_defineElements_: function() {							
 		this._getBuilder_()	
 		.addButton({name:"btnStartProcess",text:"Start Instance", tooltip:"Start an instance of the selected process",iconCls:"icon-gears",disabled:true
-			,handler: this.startProcessInstance,scope:this,stateManager:{name:"selected_one", dc:"dcProcess" }	})	
+			,handler: this.onBtnStartProcess,scope:this,stateManager:{name:"selected_one", dc:"dcProcess" }	})	
 							 	
 		.addButton({name:"btnGetProcessDefinitionDiagram",text:"Show diagram", tooltip:"Show diagram for the selected process definition",disabled:true
 			,handler: this.onBtnGetProcessDefinitionDiagram,scope:this,stateManager:{name:"selected_one", dc:"dcProcess" }	})	
+							 	
+		.addButton({name:"btnGetProcessDefinitionXml",text:"Show XML", tooltip:"Show xml for the selected process definition",disabled:true
+			,handler: this.onBtnGetProcessDefinitionXml,scope:this,stateManager:{name:"selected_one", dc:"dcProcess" }	})	
 							 	
 		.addButton({name:"btnGetProcessInstanceDiagram",text:"Show diagram", tooltip:"Show diagram for the selected process instance",disabled:true
 			,handler: this.onBtnGetProcessInstanceDiagram,scope:this,stateManager:{name:"selected_one", dc:"dcRunningInstance" }	})	
@@ -52,7 +55,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 		.addDcFilterFormView("dcDeployment",{ name:"filterDeployment", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActDeployment$Filter",height:80})	 
 		.addDcGridView("dcDeployment",{ name:"listDeployment", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActDeployment$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnUploadForDeployment") ,this._elems_.get("btnDeleteDeployment") ,this._elems_.get("btnDeleteCascadeDeployment") ]}]})	 
 		.addDcFilterFormView("dcProcess",{ name:"filterProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter",height:80})	 
-		.addDcGridView("dcProcess",{ name:"listProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnStartProcess") ,this._elems_.get("btnGetProcessDefinitionDiagram") ]}]})	 
+		.addDcGridView("dcProcess",{ name:"listProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnStartProcess") ,this._elems_.get("btnGetProcessDefinitionDiagram") ,this._elems_.get("btnGetProcessDefinitionXml") ]}]})	 
 		.addDcFilterFormView("dcRunningInstance",{ name:"filterRunningInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter",height:80})	 
 		.addDcGridView("dcRunningInstance",{ name:"listRunningInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnKillProcessInstance") ,this._elems_.get("btnGetProcessInstanceDiagram") ,this._elems_.get("btnOpenAsignTaskWindow") ,this._elems_.get("btnCompleteTask") ]}]})	 
 		.addDcFilterFormView("dcRunningTask",{ name:"filterRunningTask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter",height:40})	 
@@ -138,42 +141,81 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 	,onBtnOpenAsignTaskWindow: function() {
 		this._getWindow_("wdwAssignTask").show();			 	
 	}					 	
-	,startProcess: function() {	
-		this._getDc_("dcDeployment").doQuery();			 	
-	}
-	,startProcessInstanceNoForm: function() {	
-		var s={modal:true, callbacks:{} };
-		try{ 
-			this._getDc_("dcProcess").doService("serviceStartProcess", s); 
-		}catch(e){
-			dnet.base.DcExceptions.showMessage(e);
-		}
-	}
-	,startProcessInstanceWithForm: function() {	
+	,doStartProcessInstance: function(result) {	
 		
-		dnet.core.base.WorkflowFormFactory.createStartForm(this._getDc_("dcProcess").getRecord().data.id );
+		var rec = this._getDc_("dcProcess").getRecord() ;
+		var processDefinitionId = result.processDefinitionId;
+		if (!Ext.isEmpty(result.formKey)) { alert("Not implemented");
+			//dnet.core.base.WorkflowFormFactory.createStartForm(this._getDc_("dcProcess").getRecord().data.id );
+		} else if (result.properties.length > 0 ) {
+			// read preperties and create for fields
+			(new dnet.core.base.WfStartFormWindowExtjs({
+				_formProperties_:result.properties,
+				_processDefinitionId_:processDefinitionId, 
+				title:rec.data.name })).show();	
+		} else {
+			Ext.Msg.wait("Working...");
+			Dnet.doWithGetResult(Dnet.wfProcessInstanceAPI(null).start,
+				{processDefinitionId:processDefinitionId}, 
+				function(r) { 
+					Ext.Msg.hide(); 
+					Ext.Msg.alert("Success","Started process instance with ID: "+r.id);
+				} );
+		}
+		
+	}
+	,doCompleteTask: function(result) {	
+		
+		var rec = this._getDc_("dcRunningTask").getRecord() ;
+		var taskId = rec.data.id;
+		
+		if (!Ext.isEmpty(result.formKey)) {alert("Not implemented");
+			//dnet.core.base.WorkflowFormFactory.createStartForm(this._getDc_("dcProcess").getRecord().data.id );
+		} else if (result.properties.length > 0 ) {
+			// read preperties and create for fields
+			(new dnet.core.base.WfTaskFormWindowExtjs({
+				_formProperties_:result.properties,
+				_taskId_:taskId, 
+				_taskName_:result.taskName,
+				_taskDescription_:result.taskDescription,
+				title:result.taskName })).show();	
+		} else {
+			Ext.Msg.wait("Working...");
+			Dnet.doWithGetResult(Dnet.wfTaskAPI(taskId).complete,
+				{taskId:taskId}, 
+				function(r) { 
+					Ext.Msg.hide(); 
+					Ext.Msg.alert("Success","Task completed successfully.");
+				} );
+		}
+		
+	}
+	,onBtnStartProcess: function() {	
+		
+			var procDefId = this._getDc_("dcProcess").getRecord().data.id;
+			Dnet.doWithGetResult(Dnet.wfProcessDefinitionAPI(procDefId).properties, null, this.doStartProcessInstance, this);
+		
 	}
 	,onBtnCompleteTask: function() {	
 		
-		dnet.core.base.WorkflowFormFactory.createTaskForm(this._getDc_("dcRunningTask").getRecord().data.id ); 
+		var taskId = this._getDc_("dcRunningTask").getRecord().data.id;
+		Dnet.doWithGetResult(Dnet.wfTaskAPI(taskId).properties, null, this.doCompleteTask, this);
+		
 	}
-	,startProcessInstance: function() {	
-		var p=this._getDc_("dcProcess").getRecord().data; 
-			if(p.hasStartForm) {
-				this.startProcessInstanceWithForm();
-			} else {
-				this.startProcessInstanceNoForm();
-			}
+	,onBtnGetProcessDefinitionXml: function() {	
+		
+		var id = this._getDc_("dcProcess").getRecord().get("id");
+		window.open(Dnet.wfProcessDefinitionAPI(id).xml,"ProcessDefinition","width=550,height=450,scrollbars=1,status=1");
 	}
 	,onBtnGetProcessDefinitionDiagram: function() {	
 		
 		var id = this._getDc_("dcProcess").getRecord().get("id");
-		window.open(Dnet.wfProcessDefinitionAPI(id).diagram,"ProcessDiagram","width=500,height=400");
+		window.open(Dnet.wfProcessDefinitionAPI(id).diagram,"ProcessDiagram","width=550,height=450,scrollbars=1,status=1");
 	}
 	,onBtnGetProcessInstanceDiagram: function() {	
 		
 		var id = this._getDc_("dcRunningInstance").getRecord().get("id");
-		window.open(Dnet.wfProcessInstanceAPI(id).diagram,"ProcessDiagram","width=500,height=400");
+		window.open(Dnet.wfProcessInstanceAPI(id).diagram,"ProcessDiagram","width=550,height=450,scrollbars=1,status=1");
 	}
 	,onBtnUploadForDeployment: function() {	
 		var w=new dnet.core.base.FileUploadWindow({_uploadUrl_:"/nan21.dnet.core.web/upload/deployUploadedWorkflow"});w.show();

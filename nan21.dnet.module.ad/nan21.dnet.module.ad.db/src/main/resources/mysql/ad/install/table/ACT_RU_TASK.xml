@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="ACT_RU_TASK">
+			<column name="ASSIGNEE_" type="varchar(32)">
+				<constraints  /></column>	 
+			<column name="CREATE_TIME_" type="datetime">
+				<constraints  /></column>	 
+			<column name="DELEGATION_" type="varchar(255)">
+				<constraints  /></column>	 
+			<column name="DESCRIPTION_" type="text">
+				<constraints  /></column>	 
+			<column name="DUE_DATE_" type="datetime">
+				<constraints  /></column>	 
+			<column name="EXECUTION_ID_" type="varchar(64)">
+				<constraints  /></column>	 
+			<column name="ID_" type="varchar(64)">
+				<constraints nullable="false" /></column>	 
+			<column name="NAME_" type="varchar(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="OWNER_" type="varchar(32)">
+				<constraints  /></column>	 
+			<column name="PRIORITY_" type="int(8)">
+				<constraints  /></column>	 
+			<column name="PROC_INST_ID_" type="varchar(64)">
+				<constraints  /></column>	 
+			<column name="REV_" type="int(8)">
+				<constraints  /></column>	 
+			<column name="TASK_DEF_KEY_" type="varchar(255)">
+				<constraints  /></column>	 
+			<column name="PARENT_TASK_ID_" type="varchar(64)">	 
+				<constraints  /></column>	 
+			<column name="PROC_DEF_ID_" type="varchar(64)">	 
+				<constraints  /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="ACT_RU_TASK" constraintName="PK_ACT_RU_TASK" columnNames="ID_" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="ACT_RU_TASK_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

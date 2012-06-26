@@ -18,10 +18,12 @@ public class ActProcessInstanceDsFilter extends AbstractBaseDsFilter {
 
     private String process;
 
-    private Long processVersion;
+    private Integer processVersion;
 
-    private Long processVersion_From;
-    private Long processVersion_To;
+    private Integer processVersion_From;
+    private Integer processVersion_To;
+
+    private Long clientId;
 
     private Date startTime;
 
@@ -65,28 +67,36 @@ public class ActProcessInstanceDsFilter extends AbstractBaseDsFilter {
         this.process = process;
     }
 
-    public Long getProcessVersion() {
+    public Integer getProcessVersion() {
         return this.processVersion;
     }
 
-    public Long getProcessVersion_From() {
+    public Integer getProcessVersion_From() {
         return this.processVersion_From;
     }
 
-    public Long getProcessVersion_To() {
+    public Integer getProcessVersion_To() {
         return this.processVersion_To;
     }
 
-    public void setProcessVersion(Long processVersion) {
+    public void setProcessVersion(Integer processVersion) {
         this.processVersion = processVersion;
     }
 
-    public void setProcessVersion_From(Long processVersion_From) {
+    public void setProcessVersion_From(Integer processVersion_From) {
         this.processVersion_From = processVersion_From;
     }
 
-    public void setProcessVersion_To(Long processVersion_To) {
+    public void setProcessVersion_To(Integer processVersion_To) {
         this.processVersion_To = processVersion_To;
+    }
+
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public Date getStartTime() {

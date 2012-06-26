@@ -1,27 +1,27 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.ad.client.business.service;versi
- on="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.
+ on="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.
  module.ad.client.domain.entity",net.nan21.dnet.module.ad.data.busines
- s.service;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,
+ s.service;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,
  net.nan21.dnet.module.ad.data.domain.entity",net.nan21.dnet.module.ad
- .impex.business.service;version="1.0.0.RC1";uses:="net.nan21.dnet.cor
+ .impex.business.service;version="1.0.0.RC2";uses:="net.nan21.dnet.cor
  e.api.service,net.nan21.dnet.module.ad.impex.domain.entity",net.nan21
- .dnet.module.ad.quartz.business.service;version="1.0.0.RC1";uses:="ne
+ .dnet.module.ad.quartz.business.service;version="1.0.0.RC2";uses:="ne
  t.nan21.dnet.core.api.service",net.nan21.dnet.module.ad.report.busine
- ss.service;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service
+ ss.service;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service
  ,net.nan21.dnet.module.ad.report.domain.entity",net.nan21.dnet.module
- .ad.system.business.service;version="1.0.0.RC1";uses:="net.nan21.dnet
+ .ad.system.business.service;version="1.0.0.RC2";uses:="net.nan21.dnet
  .core.api.service,net.nan21.dnet.module.ad.system.domain.entity",net.
- nan21.dnet.module.ad.usr.business.service;version="1.0.0.RC1";uses:="
+ nan21.dnet.module.ad.usr.business.service;version="1.0.0.RC2";uses:="
  net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.system.domai
  n.entity,net.nan21.dnet.module.ad.usr.domain.entity",net.nan21.dnet.m
- odule.ad.workflow.business.service;version="1.0.0.RC1";uses:="net.nan
+ odule.ad.workflow.business.service;version="1.0.0.RC2";uses:="net.nan
  21.dnet.core.api.service,net.nan21.dnet.module.ad.workflow.domain.ent
  ity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]"
+ dnet.module.ad.domain;version="[1.0.0.RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet AD - business API
 Bundle-ManifestVersion: 2

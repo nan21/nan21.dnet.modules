@@ -17,12 +17,16 @@ import net.nan21.dnet.core.api.annotation.DsField;
 public class ActDeploymentDs extends AbstractBaseDs<ActDeployment> {
 
     public static final String fID = "id";
+    public static final String fCLIENTID = "clientId";
     public static final String fNAME = "name";
     public static final String fDEPLOYTIME = "deployTime";
     public static final String fFULLNAME = "fullName";
 
     @DsField()
     private String id;
+
+    @DsField()
+    private Long clientId;
 
     @DsField()
     private String name;
@@ -48,6 +52,14 @@ public class ActDeploymentDs extends AbstractBaseDs<ActDeployment> {
     public void setId(Object id) {
         this.id = (String) id;
 
+    }
+
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getName() {

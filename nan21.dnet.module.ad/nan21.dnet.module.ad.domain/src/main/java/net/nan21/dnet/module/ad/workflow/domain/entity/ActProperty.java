@@ -11,12 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -25,7 +23,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = ActProperty.TABLE_NAME)
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({})
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActProperty {
 
@@ -40,14 +37,13 @@ public class ActProperty {
     @Id
     private String name;
 
-    /** Revision. */
-    @Column(name = "REV_", nullable = false)
-    @NotNull
-    private Integer revision;
-
     /** Value. */
-    @Column(name = "VALUE", length = 400)
+    @Column(name = "VALUE_", length = 400)
     private String value;
+
+    /** Revision. */
+    @Column(name = "REV_")
+    private Integer revision;
 
     /* ============== getters - setters ================== */
 
@@ -59,20 +55,20 @@ public class ActProperty {
         this.name = name;
     }
 
-    public Integer getRevision() {
-        return this.revision;
-    }
-
-    public void setRevision(Integer revision) {
-        this.revision = revision;
-    }
-
     public String getValue() {
         return this.value;
     }
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public Integer getRevision() {
+        return this.revision;
+    }
+
+    public void setRevision(Integer revision) {
+        this.revision = revision;
     }
 
     @Transient

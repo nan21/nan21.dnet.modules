@@ -27,7 +27,6 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -40,7 +39,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActTaskInstanceHistory.NQ_FIND_BY_ID, query = "SELECT e FROM ActTaskInstanceHistory e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActTaskInstanceHistory.NQ_FIND_BY_IDS, query = "SELECT e FROM ActTaskInstanceHistory e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActTaskInstanceHistory implements IModelWithId {
 
@@ -60,11 +58,23 @@ public class ActTaskInstanceHistory implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActTaskInstanceHistory.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
+
+    /** TaskDefinitionKey. */
+    @Column(name = "TASK_DEF_KEY_", length = 255)
+    private String taskDefinitionKey;
+
+    /** ProcessInstanceId. */
+    @Column(name = "PROC_INST_ID_", length = 64)
+    private String processInstanceId;
+
+    /** ExecutionId. */
+    @Column(name = "EXECUTION_ID_", length = 255)
+    private String executionId;
 
     /** Name. */
     @Column(name = "NAME_", length = 255)
@@ -97,18 +107,6 @@ public class ActTaskInstanceHistory implements IModelWithId {
     @Column(name = "DURATION_")
     private Long duration;
 
-    /** ExecutionId. */
-    @Column(name = "EXECUTION_ID_", length = 255)
-    private String executionId;
-
-    /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_", length = 255)
-    private String processInstanceId;
-
-    /** TaskDefinitionKey. */
-    @Column(name = "TASK_DEF_KEY_", length = 255)
-    private String taskDefinitionKey;
-
     /** DeleteReason. */
     @Column(name = "DELETE_REASON_", length = 255)
     private String deleteReason;
@@ -136,6 +134,30 @@ public class ActTaskInstanceHistory implements IModelWithId {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getTaskDefinitionKey() {
+        return this.taskDefinitionKey;
+    }
+
+    public void setTaskDefinitionKey(String taskDefinitionKey) {
+        this.taskDefinitionKey = taskDefinitionKey;
+    }
+
+    public String getProcessInstanceId() {
+        return this.processInstanceId;
+    }
+
+    public void setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
+    }
+
+    public String getExecutionId() {
+        return this.executionId;
+    }
+
+    public void setExecutionId(String executionId) {
+        this.executionId = executionId;
     }
 
     public String getName() {
@@ -192,30 +214,6 @@ public class ActTaskInstanceHistory implements IModelWithId {
 
     public void setDuration(Long duration) {
         this.duration = duration;
-    }
-
-    public String getExecutionId() {
-        return this.executionId;
-    }
-
-    public void setExecutionId(String executionId) {
-        this.executionId = executionId;
-    }
-
-    public String getProcessInstanceId() {
-        return this.processInstanceId;
-    }
-
-    public void setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
-    }
-
-    public String getTaskDefinitionKey() {
-        return this.taskDefinitionKey;
-    }
-
-    public void setTaskDefinitionKey(String taskDefinitionKey) {
-        this.taskDefinitionKey = taskDefinitionKey;
     }
 
     public String getDeleteReason() {

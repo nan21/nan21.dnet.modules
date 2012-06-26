@@ -90,11 +90,11 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.Uom$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
+		.addTextField({ name:"name", dataIndex:"name" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"code", dataIndex:"code" ,allowBlank:false,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
-		.addLov({ name:"type", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomType", dataIndex:"type",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:60   })
+		.addLov({ name:"type", xtype:"net.nan21.dnet.module.bd.uom.lovs.UomType", dataIndex:"type" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "typeId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:350})     
 		.addPanel({ name:"col2", layout:"form" , width:300})     

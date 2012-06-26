@@ -117,12 +117,12 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Region$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,allowBlank:false,maxLength:32  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
-		.addTextField({ name:"iso", dataIndex:"iso",anchor:"-20" ,maxLength:32  })
+		.addTextField({ name:"name", dataIndex:"name" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"code", dataIndex:"code" ,allowBlank:false,maxLength:32  })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:60   })
+		.addTextField({ name:"iso", dataIndex:"iso" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
+		.addLov({ name:"countryCode", xtype:"net.nan21.dnet.module.bd.geo.lovs.Countries", dataIndex:"countryCode" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "countryId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" , width:250})     

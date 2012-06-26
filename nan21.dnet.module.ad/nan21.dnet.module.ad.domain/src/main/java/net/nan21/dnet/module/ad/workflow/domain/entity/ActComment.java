@@ -17,13 +17,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -36,7 +34,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActComment.NQ_FIND_BY_ID, query = "SELECT e FROM ActComment e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActComment.NQ_FIND_BY_IDS, query = "SELECT e FROM ActComment e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActComment implements IModelWithId {
 
@@ -56,7 +53,7 @@ public class ActComment implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActComment.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
@@ -66,11 +63,26 @@ public class ActComment implements IModelWithId {
     @Column(name = "TYPE_", length = 255)
     private String type;
 
-    /** StartTime. */
+    /** Time. */
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "START_TIME_", nullable = false)
-    @NotNull
-    private Date startTime;
+    @Column(name = "TIME_")
+    private Date time;
+
+    /** UserId. */
+    @Column(name = "USER_ID_", length = 64)
+    private String userId;
+
+    /** TaskId. */
+    @Column(name = "TASK_ID_", length = 64)
+    private String taskId;
+
+    /** ProcessInstanceId. */
+    @Column(name = "PROC_INST_ID_", length = 255)
+    private String processInstanceId;
+
+    /** Action. */
+    @Column(name = "ACTION_", length = 255)
+    private String action;
 
     /** Message. */
     @Column(name = "MESSAGE_", length = 4000)
@@ -79,27 +91,6 @@ public class ActComment implements IModelWithId {
     /** FullMessage. */
     @Column(name = "FULL_MSG_", length = 4000)
     private String fullMessage;
-
-    /** Time. */
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "TIME_")
-    private Date time;
-
-    /** Action. */
-    @Column(name = "ACTION_", length = 255)
-    private String action;
-
-    /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_", length = 255)
-    private String processInstanceId;
-
-    /** TaskId. */
-    @Column(name = "TASK_ID_", length = 255)
-    private String taskId;
-
-    /** UserId. */
-    @Column(name = "USER_ID_", length = 255)
-    private String userId;
 
     /* ============== getters - setters ================== */
 
@@ -119,12 +110,44 @@ public class ActComment implements IModelWithId {
         this.type = type;
     }
 
-    public Date getStartTime() {
-        return this.startTime;
+    public Date getTime() {
+        return this.time;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getTaskId() {
+        return this.taskId;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
+    public String getProcessInstanceId() {
+        return this.processInstanceId;
+    }
+
+    public void setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
+    }
+
+    public String getAction() {
+        return this.action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
     }
 
     public String getMessage() {
@@ -141,46 +164,6 @@ public class ActComment implements IModelWithId {
 
     public void setFullMessage(String fullMessage) {
         this.fullMessage = fullMessage;
-    }
-
-    public Date getTime() {
-        return this.time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
-    }
-
-    public String getAction() {
-        return this.action;
-    }
-
-    public void setAction(String action) {
-        this.action = action;
-    }
-
-    public String getProcessInstanceId() {
-        return this.processInstanceId;
-    }
-
-    public void setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
-    }
-
-    public String getTaskId() {
-        return this.taskId;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
-
-    public String getUserId() {
-        return this.userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
     }
 
     @Transient

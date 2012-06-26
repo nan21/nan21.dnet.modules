@@ -1,15 +1,15 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.pj.base.business.service;version
- ="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mo
+ ="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mo
  dule.pj.base.domain.entity",net.nan21.dnet.module.pj.md.business.serv
- ice;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.na
+ ice;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.na
  n21.dnet.module.ad.usr.domain.entity,net.nan21.dnet.module.pj.base.do
  main.entity,net.nan21.dnet.module.pj.md.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.modu
- le.pj.domain;version="[1.0.0.RC1,1.0.0.RC1]"
+ dnet.module.ad.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.modu
+ le.pj.domain;version="[1.0.0.RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet PJ - business API
 Bundle-ManifestVersion: 2

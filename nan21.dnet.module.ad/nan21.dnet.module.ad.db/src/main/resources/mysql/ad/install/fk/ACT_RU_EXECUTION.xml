@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_ACT_RU_EXECUTION1" 
+				baseTableName="ACT_RU_EXECUTION" baseColumnNames="PARENT_ID_"  
+				referencedTableName="ACT_RU_EXECUTION"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_ACT_RU_EXECUTION2" 
+				baseTableName="ACT_RU_EXECUTION" baseColumnNames="PROC_DEF_ID_"  
+				referencedTableName="ACT_RE_PROCDEF"  referencedColumnNames="ID" />
+	</changeSet>	
+</databaseChangeLog>    

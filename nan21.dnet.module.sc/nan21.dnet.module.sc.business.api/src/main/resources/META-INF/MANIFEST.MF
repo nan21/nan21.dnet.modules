@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.sc.invoice.business.service;vers
- ion="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet
+ ion="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet
  .module.bd.currency.domain.entity,net.nan21.dnet.module.bd.org.domain
  .entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.mod
  ule.md.base.tax.domain.entity,net.nan21.dnet.module.md.base.tx.domain
@@ -8,7 +8,7 @@ Export-Package: net.nan21.dnet.module.sc.invoice.business.service;vers
  le.md.mm.prod.domain.entity,net.nan21.dnet.module.md.org.domain.entit
  y,net.nan21.dnet.module.sc.invoice.domain.entity,net.nan21.dnet.modul
  e.sc.order.domain.entity",net.nan21.dnet.module.sc.order.business.ser
- vice;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.n
+ vice;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.n
  an21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.module.bd.o
  rg.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21
  .dnet.module.md.base.tax.domain.entity,net.nan21.dnet.module.md.base.
@@ -16,12 +16,12 @@ Export-Package: net.nan21.dnet.module.sc.invoice.business.service;vers
  dnet.module.md.mm.price.domain.entity,net.nan21.dnet.module.md.mm.pro
  d.domain.entity,net.nan21.dnet.module.sc.order.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.modu
- le.bd.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.md.dom
- ain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.sc.domain;versi
- on="[1.0.0.RC1,1.0.0.RC1]"
+ dnet.module.ad.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.modu
+ le.bd.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.md.dom
+ ain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.sc.domain;versi
+ on="[1.0.0.RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet SC - business API
 Bundle-ManifestVersion: 2

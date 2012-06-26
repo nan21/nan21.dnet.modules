@@ -24,6 +24,7 @@ import net.nan21.dnet.module.ad.impex.domain.entity.ImportJob;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportJobItem;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportMap;
 import net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem;
+import net.nan21.dnet.module.ad.workflow.domain.entity.ActProperty;
 
 public class Setup_AD extends AbstractBusinessSetupParticipant
 implements ISetupParticipant {
@@ -74,6 +75,31 @@ implements ISetupParticipant {
 			net.nan21.dnet.core.api.session.User(su.getUsername(), su.getUsername(), "", false, false, false, true, client.getCode(), client.getId(), null, null, null, null, null); 
 		 
 		Session.user.set(newUser);
+		
+		// add activiti default data
+		ActProperty p = new ActProperty();
+		p.setName("schema.version");		
+		p.setValue("5.9");
+		p.setRevision(1);
+		this.em.persist(p);
+		
+		p = new ActProperty();
+		p.setName("schema.history");		
+		p.setValue("create(5.9)");
+		p.setRevision(1);
+		this.em.persist(p);
+		
+		p = new ActProperty();
+		p.setName("next.dbid");		
+		p.setValue("1");
+		p.setRevision(1);
+		this.em.persist(p);
+		 
+		p = new ActProperty();
+		p.setName("historyLevel");		
+		p.setValue("2");
+		p.setRevision(1);
+		this.em.persist(p);
 		
 		reqisterInitialDataImports(defaultImportPath);
 				
@@ -178,15 +204,21 @@ implements ISetupParticipant {
 		 
 		List<IInitDataProviderFactory> dataProviderFactories = this.getDataProviderFactories();
 		
-		ImportJob importJob = new ImportJob();
-		importJob.setActive(true);
-		importJob.setName("Initial demo data import");
+		ImportJob importJobDemoData = new ImportJob();
+		importJobDemoData.setActive(true);
+		importJobDemoData.setName("Initial demo data");
 		
-		 
+		ImportJob importJobSetupData = new ImportJob();
+		importJobSetupData.setActive(true);
+		importJobSetupData.setName("Initial setup data");
+		
 		for( IInitDataProviderFactory f: dataProviderFactories) {
 			IInitDataProvider dp = f.createProvider();
 			List<InitData> list = dp.getList();
 			for (InitData initData: list) {
+				
+				
+				
 				ImportMap importMap = new ImportMap();
 				importMap.setName(initData.getName());
 				importMap.setDescription("File-set to load "+initData.getName()+ " initial data.");
@@ -214,12 +246,21 @@ implements ISetupParticipant {
 				importJobItem.setActive(true);
 				importJobItem.setMap(importMap);
 				importJobItem.setSequenceNo(Integer.parseInt(initData.getSequence()));
-				importJobItem.setJob(importJob);				
-				importJob.addToItems(importJobItem);
+				
+				if (initData.isMandatory()) {
+					importJobItem.setJob(importJobSetupData);				
+					importJobSetupData.addToItems(importJobItem);
+				} else {
+					importJobItem.setJob(importJobDemoData);				
+					importJobDemoData.addToItems(importJobItem);
+				}
+
+				
 			}
 		}
 		
-		this.em.persist(importJob);
+		this.em.persist(importJobSetupData);
+		this.em.persist(importJobDemoData);
 		  
 	}
  

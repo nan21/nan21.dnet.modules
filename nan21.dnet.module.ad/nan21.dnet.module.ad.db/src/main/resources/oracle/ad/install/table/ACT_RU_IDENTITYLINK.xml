@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="ACT_RU_IDENTITYLINK">
+			<column name="GROUP_ID_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="ID_" type="varchar2(64)">
+				<constraints nullable="false" /></column>	 
+			<column name="REV_" type="number(8)">
+				<constraints  /></column>	 
+			<column name="TASK_ID_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="TYPE_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="USER_ID_" type="varchar2(255)">
+				<constraints  /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="ACT_RU_IDENTITYLINK" constraintName="PK_ACT_RU_IDENTITYLINK" columnNames="ID_" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="ACT_RU_IDENTITYLINK_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

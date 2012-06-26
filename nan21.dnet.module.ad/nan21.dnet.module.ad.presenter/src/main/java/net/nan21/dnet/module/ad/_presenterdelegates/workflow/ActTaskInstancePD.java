@@ -5,12 +5,12 @@ import net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDs;
 
 public class ActTaskInstancePD extends AbstractDsDelegate {
 
-	public void assignTask(ActTaskInstanceDs ds) {
-		getWorkflowTaskService().setAssignee(ds.getId(), ds.getAssignee());		
+	public void assignTask(ActTaskInstanceDs ds) throws Exception {
+		getWorkflowTaskService().setAssignee(ds.getId(), ds.getAssignee());
 	}
-	
-	public void completeTask(ActTaskInstanceDs ds) {
-		getWorkflowTaskService().complete(ds.getId() );		
+
+	public void completeTask(ActTaskInstanceDs ds) throws Exception {
+		getWorkflowTaskService().complete(ds.getId());
 	}
-	
+
 }

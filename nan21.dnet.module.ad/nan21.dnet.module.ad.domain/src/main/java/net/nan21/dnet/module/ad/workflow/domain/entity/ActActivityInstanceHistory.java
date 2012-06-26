@@ -27,7 +27,6 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -40,7 +39,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActActivityInstanceHistory.NQ_FIND_BY_ID, query = "SELECT e FROM ActActivityInstanceHistory e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActActivityInstanceHistory.NQ_FIND_BY_IDS, query = "SELECT e FROM ActActivityInstanceHistory e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActActivityInstanceHistory implements IModelWithId {
 
@@ -60,11 +58,19 @@ public class ActActivityInstanceHistory implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActActivityInstanceHistory.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
+
+    /** ProcessInstanceId. */
+    @Column(name = "PROC_INST_ID_", length = 64)
+    private String processInstanceId;
+
+    /** ExecutionId. */
+    @Column(name = "EXECUTION_ID_", length = 255)
+    private String executionId;
 
     /** ActivityId. */
     @Column(name = "ACT_ID_", length = 255)
@@ -77,14 +83,6 @@ public class ActActivityInstanceHistory implements IModelWithId {
     /** ActivityType. */
     @Column(name = "ACT_TYPE_", length = 255)
     private String activityType;
-
-    /** ExecutionId. */
-    @Column(name = "EXECUTION_ID_", length = 255)
-    private String executionId;
-
-    /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_", length = 255)
-    private String processInstanceId;
 
     /** Assignee. */
     @Column(name = "ASSIGNEE_", length = 32)
@@ -118,6 +116,22 @@ public class ActActivityInstanceHistory implements IModelWithId {
         this.id = id;
     }
 
+    public String getProcessInstanceId() {
+        return this.processInstanceId;
+    }
+
+    public void setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
+    }
+
+    public String getExecutionId() {
+        return this.executionId;
+    }
+
+    public void setExecutionId(String executionId) {
+        this.executionId = executionId;
+    }
+
     public String getActivityId() {
         return this.activityId;
     }
@@ -140,22 +154,6 @@ public class ActActivityInstanceHistory implements IModelWithId {
 
     public void setActivityType(String activityType) {
         this.activityType = activityType;
-    }
-
-    public String getExecutionId() {
-        return this.executionId;
-    }
-
-    public void setExecutionId(String executionId) {
-        this.executionId = executionId;
-    }
-
-    public String getProcessInstanceId() {
-        return this.processInstanceId;
-    }
-
-    public void setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
     }
 
     public String getAssignee() {

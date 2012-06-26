@@ -18,6 +18,7 @@ public class ActDeploymentDsQueryBuilder
 
     @Override
     public void setFilter(ActDeploymentDsFilter filter) {
+        filter.setClientId(Session.user.get().getClientId());
         this.filter = filter;
     }
 

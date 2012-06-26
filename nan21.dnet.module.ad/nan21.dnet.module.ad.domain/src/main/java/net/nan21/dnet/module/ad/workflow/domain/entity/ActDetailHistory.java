@@ -17,13 +17,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -36,7 +34,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActDetailHistory.NQ_FIND_BY_ID, query = "SELECT e FROM ActDetailHistory e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActDetailHistory.NQ_FIND_BY_IDS, query = "SELECT e FROM ActDetailHistory e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActDetailHistory implements IModelWithId {
 
@@ -56,7 +53,7 @@ public class ActDetailHistory implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActDetailHistory.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
@@ -66,36 +63,39 @@ public class ActDetailHistory implements IModelWithId {
     @Column(name = "TYPE_", length = 255)
     private String type;
 
-    /** Name. */
-    @Column(name = "NAME_", nullable = false, length = 255)
-    @NotBlank
-    private String name;
-
-    /** Time. */
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "TIME_")
-    private Date time;
-
-    /** Revision. */
-    @Column(name = "REV_", nullable = false)
-    @NotNull
-    private Integer revision;
-
-    /** ActivityInstanceId. */
-    @Column(name = "ACT_INST_ID_", length = 255)
-    private String activityInstanceId;
+    /** ProcessInstanceId. */
+    @Column(name = "PROC_INST_ID_", length = 64)
+    private String processInstanceId;
 
     /** ExecutionId. */
     @Column(name = "EXECUTION_ID_", length = 255)
     private String executionId;
 
-    /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_", length = 255)
-    private String processInstanceId;
-
     /** TaskId. */
-    @Column(name = "TASK_ID_", length = 255)
+    @Column(name = "TASK_ID_", length = 64)
     private String taskId;
+
+    /** ActivityInstanceId. */
+    @Column(name = "ACT_INST_ID_", length = 255)
+    private String activityInstanceId;
+
+    /** Name. */
+    @Column(name = "NAME_", nullable = false, length = 255)
+    @NotBlank
+    private String name;
+
+    /** VarType. */
+    @Column(name = "VAR_TYPE_", length = 255)
+    private String varType;
+
+    /** Revision. */
+    @Column(name = "REV_")
+    private Integer revision;
+
+    /** Time. */
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "TIME_")
+    private Date time;
 
     /** ByteArrayId. */
     @Column(name = "BYTEARRAY_ID_", length = 255)
@@ -135,36 +135,12 @@ public class ActDetailHistory implements IModelWithId {
         this.type = type;
     }
 
-    public String getName() {
-        return this.name;
+    public String getProcessInstanceId() {
+        return this.processInstanceId;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getTime() {
-        return this.time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
-    }
-
-    public Integer getRevision() {
-        return this.revision;
-    }
-
-    public void setRevision(Integer revision) {
-        this.revision = revision;
-    }
-
-    public String getActivityInstanceId() {
-        return this.activityInstanceId;
-    }
-
-    public void setActivityInstanceId(String activityInstanceId) {
-        this.activityInstanceId = activityInstanceId;
+    public void setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
     }
 
     public String getExecutionId() {
@@ -175,20 +151,52 @@ public class ActDetailHistory implements IModelWithId {
         this.executionId = executionId;
     }
 
-    public String getProcessInstanceId() {
-        return this.processInstanceId;
-    }
-
-    public void setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
-    }
-
     public String getTaskId() {
         return this.taskId;
     }
 
     public void setTaskId(String taskId) {
         this.taskId = taskId;
+    }
+
+    public String getActivityInstanceId() {
+        return this.activityInstanceId;
+    }
+
+    public void setActivityInstanceId(String activityInstanceId) {
+        this.activityInstanceId = activityInstanceId;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getVarType() {
+        return this.varType;
+    }
+
+    public void setVarType(String varType) {
+        this.varType = varType;
+    }
+
+    public Integer getRevision() {
+        return this.revision;
+    }
+
+    public void setRevision(Integer revision) {
+        this.revision = revision;
+    }
+
+    public Date getTime() {
+        return this.time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     public String getByteArrayId() {

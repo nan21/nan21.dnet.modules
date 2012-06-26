@@ -1,56 +1,56 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.hr.benefit.domain.entity;version
- ="1.0.0.RC1";uses:="javax.persistence,javax.validation.constraints,ne
+ ="1.0.0.RC2";uses:="javax.persistence,javax.validation.constraints,ne
  t.nan21.dnet.core.domain.model,org.eclipse.persistence.annotations,or
  g.eclipse.persistence.descriptors",net.nan21.dnet.module.hr.employee.
- domain.entity;version="1.0.0.RC1";uses:="javax.persistence,javax.vali
+ domain.entity;version="1.0.0.RC2";uses:="javax.persistence,javax.vali
  dation.constraints,net.nan21.dnet.core.domain.model,net.nan21.dnet.mo
  dule.bd.contact.domain.entity,net.nan21.dnet.module.bd.org.domain.ent
  ity,net.nan21.dnet.module.hr.grade.domain.entity,net.nan21.dnet.modul
  e.hr.job.domain.entity,net.nan21.dnet.module.hr.payroll.domain.entity
  ,net.nan21.dnet.module.md.res.domain.entity,org.eclipse.persistence.a
  nnotations,org.eclipse.persistence.descriptors",net.nan21.dnet.module
- .hr.employee.domain.eventhandler;version="1.0.0.RC1";uses:="net.nan21
+ .hr.employee.domain.eventhandler;version="1.0.0.RC2";uses:="net.nan21
  .dnet.core.domain.eventhandler,org.eclipse.persistence.descriptors",n
- et.nan21.dnet.module.hr.grade.domain.entity;version="1.0.0.RC1";uses:
+ et.nan21.dnet.module.hr.grade.domain.entity;version="1.0.0.RC2";uses:
  ="javax.persistence,javax.validation.constraints,net.nan21.dnet.core.
  domain.model,net.nan21.dnet.module.bd.currency.domain.entity,net.nan2
  1.dnet.module.hr.job.domain.entity,org.eclipse.persistence.annotation
  s,org.eclipse.persistence.descriptors,org.hibernate.validator.constra
- ints",net.nan21.dnet.module.hr.job.domain.entity;version="1.0.0.RC1";
+ ints",net.nan21.dnet.module.hr.job.domain.entity;version="1.0.0.RC2";
  uses:="javax.persistence,javax.validation.constraints,net.nan21.dnet.
  core.domain.model,net.nan21.dnet.module.bd.geo.domain.entity,net.nan2
  1.dnet.module.bd.org.domain.entity,org.eclipse.persistence.annotation
  s,org.eclipse.persistence.descriptors",net.nan21.dnet.module.hr.payro
- ll.domain.entity;version="1.0.0.RC1";uses:="javax.persistence,javax.v
+ ll.domain.entity;version="1.0.0.RC2";uses:="javax.persistence,javax.v
  alidation.constraints,net.nan21.dnet.core.domain.model,net.nan21.dnet
  .module.bd.elem.domain.entity,net.nan21.dnet.module.bd.org.domain.ent
  ity,net.nan21.dnet.module.hr.employee.domain.entity,net.nan21.dnet.mo
  dule.md.acc.domain.entity,org.eclipse.persistence.annotations,org.ecl
  ipse.persistence.descriptors,org.hibernate.validator.constraints",net
- .nan21.dnet.module.hr.skill.domain.entity;version="1.0.0.RC1";uses:="
+ .nan21.dnet.module.hr.skill.domain.entity;version="1.0.0.RC2";uses:="
  javax.persistence,javax.validation.constraints,net.nan21.dnet.core.do
  main.model,net.nan21.dnet.module.hr.employee.domain.entity,net.nan21.
  dnet.module.hr.job.domain.entity,org.eclipse.persistence.annotations,
  org.eclipse.persistence.descriptors",net.nan21.dnet.module.hr.time.do
- main.entity;version="1.0.0.RC1";uses:="javax.persistence,javax.valida
+ main.entity;version="1.0.0.RC2";uses:="javax.persistence,javax.valida
  tion.constraints,net.nan21.dnet.core.domain.model,net.nan21.dnet.modu
  le.hr.employee.domain.entity,org.eclipse.persistence.annotations,org.
  eclipse.persistence.descriptors,org.hibernate.validator.constraints",
- net.nan21.dnet.module.hr.time.domain.eventhandler;version="1.0.0.RC1"
+ net.nan21.dnet.module.hr.time.domain.eventhandler;version="1.0.0.RC2"
  ;uses:="net.nan21.dnet.core.domain.eventhandler,org.eclipse.persisten
  ce.descriptors",net.nan21.dnet.module.hr.training.domain.entity;versi
- on="1.0.0.RC1";uses:="javax.persistence,javax.validation.constraints,
+ on="1.0.0.RC2";uses:="javax.persistence,javax.validation.constraints,
  net.nan21.dnet.core.domain.model,net.nan21.dnet.module.hr.employee.do
  main.entity,net.nan21.dnet.module.hr.job.domain.entity,org.eclipse.pe
  rsistence.annotations,org.eclipse.persistence.descriptors"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.ad
- .domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.bd.domain;v
- ersion="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.md.domain;version="[
- 1.0.0.RC1,1.0.0.RC1]"
+ dnet.core.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.ad
+ .domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.bd.domain;v
+ ersion="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.md.domain;version="[
+ 1.0.0.RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet HR - domain
 Bundle-ManifestVersion: 2
@@ -67,10 +67,11 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  y,net.nan21.dnet.module.md.acc.domain.entity,net.nan21.dnet.module.md
  .res.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.eclips
  e.persistence.annotations,org.eclipse.persistence.descriptors,org.ecl
- ipse.persistence.history,org.hibernate.validator;version="[4.0,5.0)",
- org.hibernate.validator.constraints;version="[4.0,5.0)",org.springfra
- mework.aop;version="[3.0,3.1)",org.springframework.aop.framework;vers
- ion="[3.0,3.1)",org.springframework.context.weaving;version="[3.0,3.1
- )",org.springframework.transaction;version="[3.0,3.1)",org.springfram
- ework.transaction.aspectj;version="[3.0,3.1)"
+ ipse.persistence.history,org.eclipse.persistence.jpa;version="[2.1,2.
+ 5)",org.hibernate.validator;version="[4.0,5.0)",org.hibernate.validat
+ or.constraints;version="[4.0,5.0)",org.springframework.aop;version="[
+ 3.0,3.1)",org.springframework.aop.framework;version="[3.0,3.1)",org.s
+ pringframework.context.weaving;version="[3.0,3.1)",org.springframewor
+ k.transaction;version="[3.0,3.1)",org.springframework.transaction.asp
+ ectj;version="[3.0,3.1)"
 

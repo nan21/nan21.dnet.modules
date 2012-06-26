@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.sd.invoice.business.service;vers
- ion="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet
+ ion="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet
  .module.bd.currency.domain.entity,net.nan21.dnet.module.bd.geo.domain
  .entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.mod
  ule.bd.uom.domain.entity,net.nan21.dnet.module.md.base.tax.domain.ent
@@ -9,11 +9,11 @@ Export-Package: net.nan21.dnet.module.sd.invoice.business.service;vers
  ty,net.nan21.dnet.module.md.mm.prod.domain.entity,net.nan21.dnet.modu
  le.sd.invoice.domain.entity,net.nan21.dnet.module.sd.order.domain.ent
  ity",net.nan21.dnet.module.sd.opportunity.business.service;version="1
- .0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modul
+ .0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modul
  e.ad.usr.domain.entity,net.nan21.dnet.module.bd.currency.domain.entit
  y,net.nan21.dnet.module.md.bp.domain.entity,net.nan21.dnet.module.sd.
  opportunity.domain.entity",net.nan21.dnet.module.sd.order.business.se
- rvice;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.
+ rvice;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.
  nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.module.bd.
  geo.domain.entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan2
  1.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.md.base.tax.
@@ -23,12 +23,12 @@ Export-Package: net.nan21.dnet.module.sd.invoice.business.service;vers
  .dnet.module.md.tx.inventory.domain.entity,net.nan21.dnet.module.sd.o
  rder.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.modu
- le.bd.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.md.dom
- ain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.sd.domain;versi
- on="[1.0.0.RC1,1.0.0.RC1]"
+ dnet.module.ad.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.modu
+ le.bd.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.md.dom
+ ain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.sd.domain;versi
+ on="[1.0.0.RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet SD - business API
 Bundle-ManifestVersion: 2

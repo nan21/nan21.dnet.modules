@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
@@ -69,15 +70,15 @@ public class Role extends AbstractType {
     private Collection<User> users;
 
     @ManyToMany
-    @JoinTable(name = "AD_ROLE_ACLS")
+    @JoinTable(name = "AD_ROLE_ACLS", joinColumns = { @JoinColumn(name = "ROLES_ID") }, inverseJoinColumns = { @JoinColumn(name = "ACCESSCONTROLS_ID") })
     private Collection<AccessControl> accessControls;
 
     @ManyToMany
-    @JoinTable(name = "AD_ROLE_MENU")
+    @JoinTable(name = "AD_ROLE_MENU", joinColumns = { @JoinColumn(name = "ROLES_ID") }, inverseJoinColumns = { @JoinColumn(name = "MENUS_ID") })
     private Collection<Menu> menus;
 
     @ManyToMany
-    @JoinTable(name = "AD_ROLE_MENUITEM")
+    @JoinTable(name = "AD_ROLE_MENUITEM", joinColumns = { @JoinColumn(name = "ROLES_ID") }, inverseJoinColumns = { @JoinColumn(name = "MENUITEMS_ID") })
     private Collection<MenuItem> menuItems;
 
     /* ============== getters - setters ================== */

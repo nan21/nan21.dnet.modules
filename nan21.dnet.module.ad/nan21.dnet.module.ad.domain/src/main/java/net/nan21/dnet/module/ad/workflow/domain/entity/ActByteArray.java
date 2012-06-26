@@ -9,18 +9,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -33,7 +32,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActByteArray.NQ_FIND_BY_ID, query = "SELECT e FROM ActByteArray e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActByteArray.NQ_FIND_BY_IDS, query = "SELECT e FROM ActByteArray e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActByteArray implements IModelWithId {
 
@@ -53,25 +51,33 @@ public class ActByteArray implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActByteArray.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
+
+    /** Revision. */
+    @Column(name = "REV_")
+    private Integer revision;
 
     /** Name. */
     @Column(name = "NAME_", nullable = false, length = 255)
     @NotBlank
     private String name;
 
-    /** Revision. */
-    @Column(name = "REV_", nullable = false)
-    @NotNull
-    private Integer revision;
-
     /** DeploymentId. */
-    @Column(name = "DEPLOYMENT_ID_", length = 255)
+    @Column(name = "DEPLOYMENT_ID_", length = 64)
     private String deploymentId;
+
+    /** Bytes. */
+    @Column(name = "BYTES_")
+    @Lob
+    private byte[] bytes;
+
+    /** Generated. */
+    @Column(name = "GENERATED_")
+    private Integer generated;
 
     /* ============== getters - setters ================== */
 
@@ -83,14 +89,6 @@ public class ActByteArray implements IModelWithId {
         this.id = id;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Integer getRevision() {
         return this.revision;
     }
@@ -99,12 +97,36 @@ public class ActByteArray implements IModelWithId {
         this.revision = revision;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
 
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
+    }
+
+    public byte[] getBytes() {
+        return this.bytes;
+    }
+
+    public void setBytes(byte[] bytes) {
+        this.bytes = bytes;
+    }
+
+    public Integer getGenerated() {
+        return this.generated;
+    }
+
+    public void setGenerated(Integer generated) {
+        this.generated = generated;
     }
 
     @Transient

@@ -62,7 +62,7 @@ Ext.define("net.nan21.dnet.module.ad.data.dc.Note$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextArea({ name:"note", dataIndex:"note",height:150,anchor:"-20" ,allowBlank:false  })
+		.addTextArea({ name:"note", dataIndex:"note",height:150 ,allowBlank:false  })
 		//containers
 		.addPanel({ name:"main", layout:"form" , autoScroll:true, defaults:{
 labelAlign:"top"}})     

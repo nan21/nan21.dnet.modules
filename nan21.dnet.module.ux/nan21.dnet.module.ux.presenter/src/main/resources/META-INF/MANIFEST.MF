@@ -1,23 +1,24 @@
 Manifest-Version: 1.0
-Import-Bundle: nan21.dnet.core.presenter;version="[1.0.0.RC1,1.0.0.RC1
+Import-Bundle: nan21.dnet.core.presenter;version="[1.0.0.RC2,1.0.0.RC2
  ]",javax.persistence;version="[2.0,2.1)",org.eclipse.persistence.jpa;
  version="[2.1,2.5)",org.eclipse.persistence.core;version="[2.0,2.5)",
- nan21.dnet.module.ux.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dne
- t.module.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.
- bd.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.ad.busine
- ss.api;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.bd.business.
- api;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.ux.business.api
- ;version="[1.0.0.RC1,1.0.0.RC1]"
+ nan21.dnet.module.ux.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dne
+ t.module.ad.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.
+ bd.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.ad.busine
+ ss.api;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.bd.business.
+ api;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.ux.business.api
+ ;version="[1.0.0.RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet UX - presenter
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.ux.presenter
 Import-Package: javax.sql,net.nan21.dnet.core.api,net.nan21.dnet.core.
- api.descriptor,net.nan21.dnet.core.api.job,net.nan21.dnet.core.api.se
- rvice,net.nan21.dnet.core.presenter.job,net.nan21.dnet.core.presenter
- .model,net.nan21.dnet.core.presenter.service,org.activiti.engine,org.
- springframework.context.weaving;version="[3.0,3.1)"
+ api.descriptor,net.nan21.dnet.core.api.email,net.nan21.dnet.core.api.
+ job,net.nan21.dnet.core.api.service,net.nan21.dnet.core.api.wf,net.na
+ n21.dnet.core.presenter.job,net.nan21.dnet.core.presenter.model,net.n
+ an21.dnet.core.presenter.service,org.springframework.context.weaving;
+ version="[3.0,3.1)"
 

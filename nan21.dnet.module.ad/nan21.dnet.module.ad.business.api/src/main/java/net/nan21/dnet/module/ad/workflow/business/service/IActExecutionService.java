@@ -14,14 +14,14 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.ActExecution;
 
 public interface IActExecutionService extends IEntityService<ActExecution> {
 
+    public List<ActExecution> findByParent(ActExecution parent);
+
+    public List<ActExecution> findByParentId(String parentId);
+
     public List<ActExecution> findByProcessDefinition(
             ActProcessDefinition processDefinition);
 
     public List<ActExecution> findByProcessDefinitionId(
             String processDefinitionId);
-
-    public List<ActExecution> findByParent(ActExecution parent);
-
-    public List<ActExecution> findByParentId(String parentId);
 
 }

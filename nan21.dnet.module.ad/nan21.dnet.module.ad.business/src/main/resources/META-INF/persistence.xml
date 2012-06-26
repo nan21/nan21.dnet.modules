@@ -2,17 +2,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
-	<persistence-unit name="net.nan21.dnet"
-		transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="net.nan21.dnet" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		
+
+		<!-- Declared -->
+
 		<class>net.nan21.dnet.module.ad.client.domain.entity.Client</class>
-		
-		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportJob</class>
-		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportJobItem</class>
-		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportMap</class>
-		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem</class>
-		
+		<class>net.nan21.dnet.module.ad.data.domain.entity.Note</class>
+		<class>net.nan21.dnet.module.ad.data.domain.entity.AttachmentType</class>
+		<class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.ExportJob</class>
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.ExportJobItem</class>
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.ExportMap</class>
@@ -20,34 +18,10 @@
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.CsvExport</class>
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.CsvExportField</class>
 		<class>net.nan21.dnet.module.ad.impex.domain.entity.CsvExportSort</class>
-		 
-		<class>net.nan21.dnet.module.ad.report.domain.entity.ReportServer</class>
-		<class>net.nan21.dnet.module.ad.report.domain.entity.Report</class>
-		<class>net.nan21.dnet.module.ad.report.domain.entity.ReportParam</class>
-		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReport</class>
-		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReportParam</class>
-		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReportUsage</class>
-		
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysParam</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDataSource</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsField</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsService</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysFrameExtension</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgn</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.BusinessObject</class>		
-		<class>net.nan21.dnet.module.ad.system.domain.entity.UiViewState</class>  
-		<class>net.nan21.dnet.module.ad.system.domain.entity.AuditEntry</class>  
-		<class>net.nan21.dnet.module.ad.system.domain.entity.AuditField</class>  
-		
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJob</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJobParam</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJobCtx</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJobCtxParam</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.SysTimer</class>
-		 
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportJob</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportJobItem</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportMap</class>
+		<class>net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem</class>
 		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzBlobTrigger</class>
 		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzCalendar</class>
 		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzCronTrigger</class>
@@ -59,53 +33,72 @@
 		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzSimpleTrigger</class>
 		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzSimpropTrigger</class>
 		<class>net.nan21.dnet.module.ad.quartz.domain.entity.QuartzTrigger</class>
-		
+		<class>net.nan21.dnet.module.ad.report.domain.entity.ReportServer</class>
+		<class>net.nan21.dnet.module.ad.report.domain.entity.Report</class>
+		<class>net.nan21.dnet.module.ad.report.domain.entity.ReportParam</class>
+		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReport</class>
+		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReportParam</class>
+		<class>net.nan21.dnet.module.ad.report.domain.entity.DsReportUsage</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysPlugin</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysParam</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysParamValue</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJob</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJobParam</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJobCtx</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysJobCtxParam</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysTimer</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDataSource</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsField</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsEvent</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDsService</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysFrameExtension</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgn</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.BusinessObject</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.SysDateFormat</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.UiViewState</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.AuditEntry</class>
+		<class>net.nan21.dnet.module.ad.system.domain.entity.AuditField</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserType</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.User</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserGroup</class>
-		<class>net.nan21.dnet.module.ad.usr.domain.entity.UserType</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Role</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.AccessControl</class>
-		<class>net.nan21.dnet.module.ad.usr.domain.entity.DsAccessControl</class>	
-		<class>net.nan21.dnet.module.ad.usr.domain.entity.AsgnAccessControl</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.DsMethodAccessControl</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.DsAccessControl</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.AsgnAccessControl</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Menu</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.MenuItem</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Bookmark</class>
-		<class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>		
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
-		 
-		
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActByteArray</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActProperty</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActAttachment</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActComment</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActExecution</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActIdentityLink</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActJob</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActTask</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActVariable</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActDetailHistory</class>
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessInstanceHistory</class> 
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory</class> 
-		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActActivityInstanceHistory</class> 
-		
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefProcess</class>
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode</class>
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNodeField</class>
 		<class>net.nan21.dnet.module.ad.workflow.domain.entity.WfDefTransition</class>
-		 
-		<class>net.nan21.dnet.module.ad.data.domain.entity.Note</class>
-		<class>net.nan21.dnet.module.ad.data.domain.entity.AttachmentType</class>
-		<class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>
-		
-		
-		<class>net.nan21.dnet.core.domain.model.AbstractSimpleEntity</class>
-		<class>net.nan21.dnet.core.domain.model.AbstractAuditable</class>
-		<class>net.nan21.dnet.core.domain.model.AbstractType</class>
-		<class>net.nan21.dnet.core.domain.model.AbstractTypeWithCode</class>
-		  
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActProperty</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActByteArray</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActIdentityGroup</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActIdentityUser</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActIdentityInfo</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActExecution</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActJob</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActTask</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActIdentityLink</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActVariable</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActEventSubscriber</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessInstanceHistory</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActActivityInstanceHistory</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActTaskInstanceHistory</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActDetailHistory</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActComment</class>
+		<class>net.nan21.dnet.module.ad.workflow.domain.entity.ActAttachment</class>
+
+		<!-- Dependencies -->
+
+
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

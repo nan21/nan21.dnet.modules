@@ -1,18 +1,18 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.pj.base.domain.entity;version="1
- .0.0.RC1";uses:="javax.persistence,javax.validation.constraints,net.n
+ .0.0.RC2";uses:="javax.persistence,javax.validation.constraints,net.n
  an21.dnet.core.domain.model,org.eclipse.persistence.annotations,org.e
  clipse.persistence.descriptors",net.nan21.dnet.module.pj.md.domain.en
- tity;version="1.0.0.RC1";uses:="javax.persistence,javax.validation.co
+ tity;version="1.0.0.RC2";uses:="javax.persistence,javax.validation.co
  nstraints,net.nan21.dnet.core.domain.model,net.nan21.dnet.module.ad.u
  sr.domain.entity,net.nan21.dnet.module.pj.base.domain.entity,org.ecli
  pse.persistence.annotations,org.eclipse.persistence.descriptors,org.h
  ibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.ad
- .domain;version="[1.0.0.RC1,1.0.0.RC1]"
+ dnet.core.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.ad
+ .domain;version="[1.0.0.RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet PJ - domain
 Bundle-ManifestVersion: 2
@@ -24,10 +24,11 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  version="[1.0,2.0)",javax.validation.constraints,net.nan21.dnet.core.
  domain.model,net.nan21.dnet.module.ad.usr.domain.entity,org.aopallian
  ce.aop;version="[1.0,2.0)",org.eclipse.persistence.annotations,org.ec
- lipse.persistence.descriptors,org.hibernate.validator;version="[4.0,5
- .0)",org.hibernate.validator.constraints;version="[4.0,5.0)",org.spri
- ngframework.aop;version="[3.0,3.1)",org.springframework.aop.framework
- ;version="[3.0,3.1)",org.springframework.context.weaving;version="[3.
- 0,3.1)",org.springframework.transaction;version="[3.0,3.1)",org.sprin
- gframework.transaction.aspectj;version="[3.0,3.1)"
+ lipse.persistence.descriptors,org.eclipse.persistence.jpa;version="[2
+ .1,2.5)",org.hibernate.validator;version="[4.0,5.0)",org.hibernate.va
+ lidator.constraints;version="[4.0,5.0)",org.springframework.aop;versi
+ on="[3.0,3.1)",org.springframework.aop.framework;version="[3.0,3.1)",
+ org.springframework.context.weaving;version="[3.0,3.1)",org.springfra
+ mework.transaction;version="[3.0,3.1)",org.springframework.transactio
+ n.aspectj;version="[3.0,3.1)"
 

@@ -2,50 +2,34 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
-	<persistence-unit name="net.nan21.dnet"
-		transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="net.nan21.dnet" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+		<!-- Declared -->
+
 		<class>net.nan21.dnet.module.fi.asset.domain.entity.AssetCategory</class>
 		<class>net.nan21.dnet.module.fi.asset.domain.entity.Asset</class>
 		<class>net.nan21.dnet.module.fi.asset.domain.entity.AmortizationItem</class>
 
 		<!-- Dependencies -->
-		<!-- BD  -->
-		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
+
+		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
+		<class>net.nan21.dnet.module.bd.org.domain.entity.Calendar</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
-		<class>net.nan21.dnet.module.bd.org.domain.entity.Calendar</class>
-		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>
-
-		<!-- MD  -->
-		<class>net.nan21.dnet.module.md.acc.domain.entity.AccSchema</class>
-		<class>net.nan21.dnet.module.md.acc.domain.entity.Account</class>
-		<class>net.nan21.dnet.module.md.acc.domain.entity.AccItem</class>
-		<class>net.nan21.dnet.module.md.acc.domain.entity.AccJournal</class>
-		<class>net.nan21.dnet.module.md.res.domain.entity.AssetBase</class>
-		<class>net.nan21.dnet.module.md.tx.acc.domain.entity.AccDoc</class>
-		<class>net.nan21.dnet.module.md.tx.acc.domain.entity.AccDocLine</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeCategory</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeType</class>
 		<class>net.nan21.dnet.module.md.base.attr.domain.entity.Attribute</class>
+		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeCategory</class>
 		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup</class>
 		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroupAttribute</class>
-		<class>net.nan21.dnet.module.md.base.tx.domain.entity.TxDocType</class>
-		<class>net.nan21.dnet.module.md.base.tx.domain.entity.TxDocSequence</class>
-		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear</class>
-		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod</class>
-		<!-- BP  -->
-		<class>net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner</class>
-		<class>net.nan21.dnet.module.md.bp.domain.entity.Contact</class>
-		<class>net.nan21.dnet.module.md.bp.domain.entity.CompanyLegalForm</class>
-
-		<!-- MM  -->
+		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeType</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.Product</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttribute</class>
-		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory</class>
+		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer</class>
+		<class>net.nan21.dnet.module.md.res.domain.entity.AssetBase</class>
+
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

@@ -90,11 +90,11 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20",noEdit:true  ,maxLength:32  })
-		.addTextArea({ name:"description", dataIndex:"description",height:120,anchor:"-20"   })
+		.addTextField({ name:"code", dataIndex:"code",noEdit:true  ,maxLength:32  })
+		.addTextArea({ name:"description", dataIndex:"description",height:120   })
 		.addDisplayFieldText({ name:"type", dataIndex:"type"  })
-		.addLov({ name:"status", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTaskStatuses", dataIndex:"status",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
-		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]  })
+		.addLov({ name:"status", xtype:"net.nan21.dnet.module.pj.base.lovs.IssueTaskStatuses", dataIndex:"status" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
+		.addLov({ name:"assignee", xtype:"net.nan21.dnet.module.pj.md.lovs.ProjectMembers", dataIndex:"assignee" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "assigneeId"} ],filterFieldMapping: [{lovField:"projectId", dsField: "projectId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" , width:500, defaults:{
@@ -144,17 +144,17 @@ Ext.define("net.nan21.dnet.module.pj.md.dc.IssueTask$View", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
-		.addTextField({ name:"description", dataIndex:"description",anchor:"-20" ,maxLength:4000  })
-		.addTextField({ name:"issue", dataIndex:"issue",anchor:"-20" ,maxLength:32  })
-		.addTextField({ name:"issueSeverity", dataIndex:"issueSeverity",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"issueStatus", dataIndex:"issueStatus",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"issueType", dataIndex:"issueType",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"issuePriority", dataIndex:"issuePriority",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"project", dataIndex:"project",anchor:"-20" ,maxLength:32  })
-		.addTextField({ name:"type", dataIndex:"type",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"status", dataIndex:"status",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"assignee", dataIndex:"assignee",anchor:"-20" ,maxLength:255  })
+		.addTextField({ name:"code", dataIndex:"code" ,maxLength:32  })
+		.addTextField({ name:"description", dataIndex:"description" ,maxLength:4000  })
+		.addTextField({ name:"issue", dataIndex:"issue" ,maxLength:32  })
+		.addTextField({ name:"issueSeverity", dataIndex:"issueSeverity" ,maxLength:255  })
+		.addTextField({ name:"issueStatus", dataIndex:"issueStatus" ,maxLength:255  })
+		.addTextField({ name:"issueType", dataIndex:"issueType" ,maxLength:255  })
+		.addTextField({ name:"issuePriority", dataIndex:"issuePriority" ,maxLength:255  })
+		.addTextField({ name:"project", dataIndex:"project" ,maxLength:32  })
+		.addTextField({ name:"type", dataIndex:"type" ,maxLength:255  })
+		.addTextField({ name:"status", dataIndex:"status" ,maxLength:255  })
+		.addTextField({ name:"assignee", dataIndex:"assignee" ,maxLength:255  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" ,title:"Task info",width:250,xtype:"fieldset", border:true, collapsible:true})     
 		.addPanel({ name:"col2", layout:"form" ,title:"Task description",width:250,xtype:"fieldset", border:true, collapsible:true})     

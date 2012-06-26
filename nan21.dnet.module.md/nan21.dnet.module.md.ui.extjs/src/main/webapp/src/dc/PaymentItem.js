@@ -112,12 +112,12 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.dc.PaymentItem$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"accItem", dataIndex:"accItem",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"product", dataIndex:"product",anchor:"-20" ,maxLength:32  })
-		.addTextField({ name:"uom", dataIndex:"uom",anchor:"-20" ,maxLength:32  })
-		.addNumberField({ name:"quantity", dataIndex:"quantity",anchor:"-20"  , style: "text-align:right;" })
-		.addNumberField({ name:"unitPrice", dataIndex:"unitPrice",anchor:"-20"  , style: "text-align:right;" })
-		.addNumberField({ name:"amount", dataIndex:"amount",anchor:"-20"  , style: "text-align:right;" })
+		.addTextField({ name:"accItem", dataIndex:"accItem" ,maxLength:255  })
+		.addTextField({ name:"product", dataIndex:"product" ,maxLength:32  })
+		.addTextField({ name:"uom", dataIndex:"uom" ,maxLength:32  })
+		.addNumberField({ name:"quantity", dataIndex:"quantity"  , style: "text-align:right;" })
+		.addNumberField({ name:"unitPrice", dataIndex:"unitPrice"  , style: "text-align:right;" })
+		.addNumberField({ name:"amount", dataIndex:"amount"  , style: "text-align:right;" })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" , width:300})     

@@ -17,13 +17,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -36,7 +34,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActJob.NQ_FIND_BY_ID, query = "SELECT e FROM ActJob e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActJob.NQ_FIND_BY_IDS, query = "SELECT e FROM ActJob e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActJob implements IModelWithId {
 
@@ -56,58 +53,61 @@ public class ActJob implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActJob.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Revision. */
-    @Column(name = "REV_", nullable = false)
-    @NotNull
+    @Column(name = "REV_")
     private Integer revision;
 
     /** Type. */
     @Column(name = "TYPE_", length = 255)
     private String type;
 
-    /** LockOwner. */
-    @Column(name = "LOCK_OWNER_", length = 255)
-    private String lockOwner;
-
     /** LockExpirationTime. */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "LOCK_EXP_TIME_")
     private Date lockExpirationTime;
 
-    /** ProcessInstanceId. */
-    @Column(name = "PROCESS_INSTANCE_ID_", length = 255)
-    private String processInstanceId;
-
-    /** ExecutionId. */
-    @Column(name = "EXECUTION_ID_", length = 255)
-    private String executionId;
+    /** LockOwner. */
+    @Column(name = "LOCK_OWNER_", length = 255)
+    private String lockOwner;
 
     /** IsExclusive. */
     @Column(name = "EXCLUSIVE_")
     private Boolean isExclusive;
 
+    /** ExecutionId. */
+    @Column(name = "EXECUTION_ID_", length = 255)
+    private String executionId;
+
+    /** ProcessInstanceId. */
+    @Column(name = "PROCESS_INSTANCE_ID_", length = 255)
+    private String processInstanceId;
+
     /** Retries. */
     @Column(name = "RETRIES_")
     private Integer retries;
+
+    /** ExceptionByteArrayId. */
+    @Column(name = "EXCEPTION_STACK_ID_", length = 255)
+    private String exceptionByteArrayId;
+
+    /** ExceptionMessage. */
+    @Column(name = "EXCEPTION_MSG_", length = 4000)
+    private String exceptionMessage;
 
     /** DueDate. */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "DUE_DATE_")
     private Date dueDate;
 
-    /** ExceptionMessage. */
-    @Column(name = "EXCEPTION_MSG_", length = 4000)
-    private String exceptionMessage;
-
-    /** ExceptionByteArrayId. */
-    @Column(name = "EXCEPTION_STACK_ID_", length = 255)
-    private String exceptionByteArrayId;
+    /** Repeat. */
+    @Column(name = "REPEAT_", length = 255)
+    private String repeat;
 
     /** JobHandlerType. */
     @Column(name = "HANDLER_TYPE_", length = 255)
@@ -143,14 +143,6 @@ public class ActJob implements IModelWithId {
         this.type = type;
     }
 
-    public String getLockOwner() {
-        return this.lockOwner;
-    }
-
-    public void setLockOwner(String lockOwner) {
-        this.lockOwner = lockOwner;
-    }
-
     public Date getLockExpirationTime() {
         return this.lockExpirationTime;
     }
@@ -159,20 +151,12 @@ public class ActJob implements IModelWithId {
         this.lockExpirationTime = lockExpirationTime;
     }
 
-    public String getProcessInstanceId() {
-        return this.processInstanceId;
+    public String getLockOwner() {
+        return this.lockOwner;
     }
 
-    public void setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
-    }
-
-    public String getExecutionId() {
-        return this.executionId;
-    }
-
-    public void setExecutionId(String executionId) {
-        this.executionId = executionId;
+    public void setLockOwner(String lockOwner) {
+        this.lockOwner = lockOwner;
     }
 
     public Boolean getIsExclusive() {
@@ -183,6 +167,22 @@ public class ActJob implements IModelWithId {
         this.isExclusive = isExclusive;
     }
 
+    public String getExecutionId() {
+        return this.executionId;
+    }
+
+    public void setExecutionId(String executionId) {
+        this.executionId = executionId;
+    }
+
+    public String getProcessInstanceId() {
+        return this.processInstanceId;
+    }
+
+    public void setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
+    }
+
     public Integer getRetries() {
         return this.retries;
     }
@@ -191,12 +191,12 @@ public class ActJob implements IModelWithId {
         this.retries = retries;
     }
 
-    public Date getDueDate() {
-        return this.dueDate;
+    public String getExceptionByteArrayId() {
+        return this.exceptionByteArrayId;
     }
 
-    public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
+    public void setExceptionByteArrayId(String exceptionByteArrayId) {
+        this.exceptionByteArrayId = exceptionByteArrayId;
     }
 
     public String getExceptionMessage() {
@@ -207,12 +207,20 @@ public class ActJob implements IModelWithId {
         this.exceptionMessage = exceptionMessage;
     }
 
-    public String getExceptionByteArrayId() {
-        return this.exceptionByteArrayId;
+    public Date getDueDate() {
+        return this.dueDate;
     }
 
-    public void setExceptionByteArrayId(String exceptionByteArrayId) {
-        this.exceptionByteArrayId = exceptionByteArrayId;
+    public void setDueDate(Date dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public String getRepeat() {
+        return this.repeat;
+    }
+
+    public void setRepeat(String repeat) {
+        this.repeat = repeat;
     }
 
     public String getJobHandlerType() {

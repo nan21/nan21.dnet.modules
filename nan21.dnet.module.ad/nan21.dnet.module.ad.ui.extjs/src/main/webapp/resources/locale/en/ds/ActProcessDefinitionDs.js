@@ -5,6 +5,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionDs$Tr
 	category__lbl : "Category",
 	resourceName__lbl : "Resource Name",
 	diagramResourceName__lbl : "Diagram Resource Name",
+	procDefVersion__lbl : "Proc Def Version",
 	deploymentId__lbl : "Deployment Id",
 	hasStartForm__lbl : "Has Start Form",
 		

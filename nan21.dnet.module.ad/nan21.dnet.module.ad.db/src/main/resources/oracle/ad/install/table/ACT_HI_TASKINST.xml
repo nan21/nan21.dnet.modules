@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="ACT_HI_TASKINST">
+			<column name="ASSIGNEE_" type="varchar2(32)">
+				<constraints  /></column>	 
+			<column name="DELETE_REASON_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="DESCRIPTION_" type="varchar2(4000)">
+				<constraints  /></column>	 
+			<column name="DUE_DATE_" type="date">
+				<constraints  /></column>	 
+			<column name="DURATION_" type="number(19)">
+				<constraints  /></column>	 
+			<column name="END_TIME_" type="date">
+				<constraints  /></column>	 
+			<column name="EXECUTION_ID_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="ID_" type="varchar2(64)">
+				<constraints nullable="false" /></column>	 
+			<column name="NAME_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="OWNER_" type="varchar2(32)">
+				<constraints  /></column>	 
+			<column name="PRIORITY_" type="number(19)">
+				<constraints  /></column>	 
+			<column name="PROC_INST_ID_" type="varchar2(64)">
+				<constraints  /></column>	 
+			<column name="START_TIME_" type="date">
+				<constraints nullable="false" /></column>	 
+			<column name="TASK_DEF_KEY_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="PARENT_TASK_ID_" type="number(19)">	 
+				<constraints  /></column>	 
+			<column name="PROC_DEF_ID_" type="number(19)">	 
+				<constraints  /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="ACT_HI_TASKINST" constraintName="PK_ACT_HI_TASKINST" columnNames="ID_" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="ACT_HI_TASKINST_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

@@ -96,12 +96,12 @@ Ext.define("net.nan21.dnet.module.md.acc.dc.Account$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
+		.addTextField({ name:"name", dataIndex:"name" ,maxLength:255  })
+		.addTextField({ name:"code", dataIndex:"code" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextField({ name:"notes", dataIndex:"notes",anchor:"-20" ,maxLength:4000  })
-		.addTextField({ name:"accSchema", dataIndex:"accSchema",anchor:"-20" ,maxLength:32  })
-		.addTextField({ name:"sign", dataIndex:"sign",anchor:"-20" ,maxLength:16  })
+		.addTextField({ name:"notes", dataIndex:"notes" ,maxLength:4000  })
+		.addTextField({ name:"accSchema", dataIndex:"accSchema" ,maxLength:32  })
+		.addTextField({ name:"sign", dataIndex:"sign" ,maxLength:16  })
 		.addCheckbox({ name:"summary", dataIndex:"summary"  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     

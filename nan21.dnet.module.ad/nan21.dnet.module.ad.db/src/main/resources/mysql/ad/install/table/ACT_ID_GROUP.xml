@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="ACT_ID_GROUP">
+			<column name="ID_" type="varchar(64)">
+				<constraints nullable="false" /></column>	 
+			<column name="NAME_" type="varchar(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="REV_" type="int(8)">
+				<constraints  /></column>	 
+			<column name="TYPE_" type="varchar(255)">
+				<constraints  /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="ACT_ID_GROUP" constraintName="PK_ACT_ID_GROUP" columnNames="ID_" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="ACT_ID_GROUP_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

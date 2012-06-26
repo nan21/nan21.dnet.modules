@@ -17,15 +17,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.persistence.Version;
-import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
+import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -38,7 +36,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActProcessDefinition.NQ_FIND_BY_ID, query = "SELECT e FROM ActProcessDefinition e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActProcessDefinition.NQ_FIND_BY_IDS, query = "SELECT e FROM ActProcessDefinition e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActProcessDefinition implements IModelWithId {
 
@@ -58,31 +55,33 @@ public class ActProcessDefinition implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActProcessDefinition.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
-    /** Key. */
-    @Column(name = "KEY_", nullable = false, length = 255)
-    @NotBlank
-    private String key;
+    /** Revision. */
+    @Column(name = "REV_")
+    private Integer revision;
+
+    /** Category. */
+    @Column(name = "CATEGORY_", length = 255)
+    private String category;
 
     /** Name. */
     @Column(name = "NAME_", nullable = false, length = 255)
     @NotBlank
     private String name;
 
-    /** Category. */
-    @Column(name = "CATEGORY_", length = 255)
-    private String category;
+    /** Key. */
+    @Column(name = "KEY_", nullable = false, length = 255)
+    @NotBlank
+    private String key;
 
-    @Version
-    /** Version. */
-    @Column(name = "VERSION_", nullable = false)
-    @NotNull
-    private Long version;
+    /** ProcDefVersion. */
+    @Column(name = "VERSION_")
+    private Integer procDefVersion;
 
     /** ResourceName. */
     @Column(name = "RESOURCE_NAME_", length = 255)
@@ -95,6 +94,14 @@ public class ActProcessDefinition implements IModelWithId {
     /** HasStartForm. */
     @Column(name = "HAS_START_FORM_KEY_")
     private Boolean hasStartForm;
+
+    /** SuspensionState. */
+    @Column(name = "SUSPENSION_STATE_")
+    private Integer suspensionState;
+
+    /** ClientId. */
+    @Column(name = "CLIENTID")
+    private Long clientId;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActDeployment.class)
     @JoinColumn(name = "DEPLOYMENT_ID_", referencedColumnName = "ID_")
     private ActDeployment deployment;
@@ -109,29 +116,12 @@ public class ActProcessDefinition implements IModelWithId {
         this.id = id;
     }
 
-    public String getKey() {
-        return this.key;
+    public Integer getRevision() {
+        return this.revision;
     }
 
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Transient
-    public String getFullName() {
-        return this.name + " v" + this.version;
-    }
-
-    public void setFullName(String fullName) {
-
+    public void setRevision(Integer revision) {
+        this.revision = revision;
     }
 
     public String getCategory() {
@@ -142,12 +132,28 @@ public class ActProcessDefinition implements IModelWithId {
         this.category = category;
     }
 
-    public Long getVersion() {
-        return this.version;
+    public String getName() {
+        return this.name;
     }
 
-    public void setVersion(Long version) {
-        this.version = version;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getKey() {
+        return this.key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public Integer getProcDefVersion() {
+        return this.procDefVersion;
+    }
+
+    public void setProcDefVersion(Integer procDefVersion) {
+        this.procDefVersion = procDefVersion;
     }
 
     public String getResourceName() {
@@ -174,6 +180,40 @@ public class ActProcessDefinition implements IModelWithId {
         this.hasStartForm = hasStartForm;
     }
 
+    public Integer getSuspensionState() {
+        return this.suspensionState;
+    }
+
+    public void setSuspensionState(Integer suspensionState) {
+        this.suspensionState = suspensionState;
+    }
+
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
+    }
+
+    @Transient
+    public String getFullName() {
+        return this.name + " v" + this.procDefVersion;
+    }
+
+    public void setFullName(String fullName) {
+
+    }
+
+    @Transient
+    public Long getVersion() {
+        return 1L;
+    }
+
+    public void setVersion(Long version) {
+
+    }
+
     public ActDeployment getDeployment() {
         return this.deployment;
     }
@@ -183,6 +223,9 @@ public class ActProcessDefinition implements IModelWithId {
     }
 
     public void aboutToInsert(DescriptorEvent event) {
+
+        event.updateAttributeWithObject("clientId", Session.user.get()
+                .getClientId());
 
     }
 

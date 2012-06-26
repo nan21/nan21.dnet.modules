@@ -74,13 +74,13 @@ Ext.define("net.nan21.dnet.module.md.base.tax.dc.Tax$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
+		.addTextField({ name:"name", dataIndex:"name" ,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
-		.addNumberField({ name:"rate", dataIndex:"rate",anchor:"-20"  , style: "text-align:right;" })
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
+		.addNumberField({ name:"rate", dataIndex:"rate"  , style: "text-align:right;" })
 		.addCheckbox({ name:"summary", dataIndex:"summary"  })
-		.addLov({ name:"category", xtype:"net.nan21.dnet.module.md.base.tax.lovs.TaxCategories", dataIndex:"category",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]  })
-		.addLov({ name:"parentTax", xtype:"net.nan21.dnet.module.md.base.tax.lovs.Taxes", dataIndex:"parentTax",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "parentTaxId"} ],filterFieldMapping: [{lovField:"summary",value: "true"} ]  })
+		.addLov({ name:"category", xtype:"net.nan21.dnet.module.md.base.tax.lovs.TaxCategories", dataIndex:"category" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]  })
+		.addLov({ name:"parentTax", xtype:"net.nan21.dnet.module.md.base.tax.lovs.Taxes", dataIndex:"parentTax" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "parentTaxId"} ],filterFieldMapping: [{lovField:"summary",value: "true"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:350})     
 		.addPanel({ name:"col2", layout:"form" , width:300})     

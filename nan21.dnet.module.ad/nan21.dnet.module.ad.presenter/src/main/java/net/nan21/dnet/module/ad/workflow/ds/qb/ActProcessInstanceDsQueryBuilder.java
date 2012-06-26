@@ -18,6 +18,7 @@ public class ActProcessInstanceDsQueryBuilder
 
     @Override
     public void setFilter(ActProcessInstanceDsFilter filter) {
+        filter.setClientId(Session.user.get().getClientId());
         this.filter = filter;
     }
 

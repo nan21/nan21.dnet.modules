@@ -67,12 +67,12 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
+		.addTextField({ name:"name", dataIndex:"name" ,maxLength:255  })
+		.addTextField({ name:"code", dataIndex:"code" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:100,anchor:"-20"   })
-		.addTextField({ name:"defaultValue", dataIndex:"defaultValue",anchor:"-20" ,maxLength:400  })
-		.addTextField({ name:"value", dataIndex:"value",anchor:"-20" ,maxLength:400  })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:100   })
+		.addTextField({ name:"defaultValue", dataIndex:"defaultValue" ,maxLength:400  })
+		.addTextField({ name:"value", dataIndex:"value" ,maxLength:400  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:600})     
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 

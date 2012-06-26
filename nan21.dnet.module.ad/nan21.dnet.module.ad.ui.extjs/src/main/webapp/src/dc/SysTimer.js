@@ -111,17 +111,17 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysTimer$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
+		.addTextField({ name:"name", dataIndex:"name" ,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
-		.addCombo({ name:"type", xtype:"localcombo", dataIndex:"type",anchor:"-20" ,store:[ "simple", "cron"]  })
-		.addTextField({ name:"cronExpression", dataIndex:"cronExpression",anchor:"-20" ,maxLength:400  })
-		.addNumberField({ name:"repeatCount", dataIndex:"repeatCount",anchor:"-20"  , style: "text-align:right;" })
-		.addNumberField({ name:"repeatInterval", dataIndex:"repeatInterval",anchor:"-20"  , style: "text-align:right;" })
-		.addCombo({ name:"repeatIntervalType", xtype:"localcombo", dataIndex:"repeatIntervalType",anchor:"-20" ,store:[ "seconds", "minutes", "hours"]  })
-		.addLov({ name:"jobCtx", xtype:"net.nan21.dnet.module.ad.system.lovs.SysJobCtx", dataIndex:"jobCtx",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "jobCtxId"} ]  })
-		.addDateTimeField({ name:"startTime", dataIndex:"startTime",anchor:"-20" })
-		.addDateTimeField({ name:"endTime", dataIndex:"endTime",anchor:"-20" })
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
+		.addCombo({ name:"type", xtype:"localcombo", dataIndex:"type" ,store:[ "simple", "cron"],listeners:{change:{scope:this, fn:this.onTypeChange}}  })
+		.addTextField({ name:"cronExpression", dataIndex:"cronExpression" ,maxLength:400,_visibleFn_: function(dc,r) {return (r.data.type == "cron");}  })
+		.addNumberField({ name:"repeatCount", dataIndex:"repeatCount" ,_visibleFn_: function(dc,r) {return (r.data.type == "simple");} , style: "text-align:right;" })
+		.addNumberField({ name:"repeatInterval", dataIndex:"repeatInterval" ,_visibleFn_: function(dc,r) {return (r.data.type == "simple");} , style: "text-align:right;" })
+		.addCombo({ name:"repeatIntervalType", xtype:"localcombo", dataIndex:"repeatIntervalType" ,_visibleFn_: function(dc,r) {return (r.data.type == "simple");},store:[ "seconds", "minutes", "hours"]  })
+		.addLov({ name:"jobCtx", xtype:"net.nan21.dnet.module.ad.system.lovs.SysJobCtx", dataIndex:"jobCtx" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "jobCtxId"} ]  })
+		.addDateTimeField({ name:"startTime", dataIndex:"startTime" })
+		.addDateTimeField({ name:"endTime", dataIndex:"endTime" })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
@@ -130,8 +130,12 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysTimer$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ])
-		.addChildrenTo("col1",["jobCtx","name","description","type","active","cronExpression","repeatCount","repeatInterval","repeatIntervalType","startTime","endTime"])
+		.addChildrenTo("col1",["jobCtx","name","description","type","startTime","endTime","active","cronExpression","repeatCount","repeatInterval","repeatIntervalType"])
 ;
 	}	
+	,onTypeChange: function() {	
+		var r = this._getController_().getRecord();		 
+		this._setFieldsVisibleState_(["cronExpression","repeatCount","repeatInterval","repeatIntervalType"], r);
+	}
 });
  	

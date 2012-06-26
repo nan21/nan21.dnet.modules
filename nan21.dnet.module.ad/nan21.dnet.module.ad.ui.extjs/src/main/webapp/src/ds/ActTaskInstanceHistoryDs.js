@@ -10,6 +10,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDs"
 		{name:"taskDefinitionKey", type:"string"},
 		{name:"processInstanceId", type:"string"},
 		{name:"processDefinitionId", type:"string"},
+		{name:"clientId", type:"int", useNull:true},
 		{name:"executionId", type:"string"},
 		{name:"name", type:"string"},
 		{name:"description", type:"string"},

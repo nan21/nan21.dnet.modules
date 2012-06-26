@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: DNet PJ - www
 Bundle-SymbolicName: nan21.dnet.module.pj.www
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-ClassPath: WEB-INF/classes
 Snap-Host: nan21.dnet.core.www;version="[1.0,2.0)"
@@ -51,14 +51,10 @@ Import-Package:
  org.springframework.osgi.context;version="[1.2.1,1.2.1]",
  org.springframework.osgi.compendium.config;version="[1.2.1,1.2.1]",
  org.eclipse.virgo.web.dm;version="[2.0,4.0]"
-Import-Bundle:  
- org.eclipse.virgo.snaps.api;version="[3.0,4.0)", 
- nan21.dnet.core.api;version="[1.0.0.RC1,1.0.0.RC1]", 
- javax.persistence;version="[2.0,2.1)", 
- org.eclipse.persistence.jpa;version="[2.1,2.5)", 
- org.eclipse.persistence.core;version="[2.0,2.5)", 
- nan21.dnet.module.pj.domain;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.pj.presenter;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.ad.presenter;version="[1.0.0.RC1,1.0.0.RC1]"
+Import-Bundle:  org.eclipse.virgo.snaps.api;version="[3.0,4.0)", 
+ nan21.dnet.core.api;version="[1.0.0.RC2,1.0.0.RC2]", javax.persistence;version="[2.0,2.1)", org.eclipse.persistence.jpa;version="[2.1,2.5)", org.eclipse.persistence.core;version="[2.0,2.5)", 
+ nan21.dnet.module.pj.domain;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.module.ad.domain;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.module.pj.presenter;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.module.ad.presenter;version="[1.0.0.RC2,1.0.0.RC2]"
 

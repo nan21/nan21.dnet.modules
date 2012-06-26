@@ -87,9 +87,9 @@ Ext.define("net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CtxView", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20",noEdit:true  ,maxLength:255  })
-		.addTextField({ name:"priceList", dataIndex:"priceList",anchor:"-20",noEdit:true  ,maxLength:255  })
-		.addDateField({ name:"validFrom", dataIndex:"validFrom",anchor:"-20",noEdit:true, hideTrigger:true })
+		.addTextField({ name:"name", dataIndex:"name",noEdit:true  ,maxLength:255  })
+		.addTextField({ name:"priceList", dataIndex:"priceList",noEdit:true  ,maxLength:255  })
+		.addDateField({ name:"validFrom", dataIndex:"validFrom",noEdit:true, hideTrigger:true })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" , width:300})     
@@ -114,7 +114,7 @@ Ext.define("net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CopyProductsFr
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addLov({ name:"productCategory", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductCategories", paramIndex:"productCategory",anchor:"-20" ,retFieldMapping: [{lovField:"id", dsParam: "productCategoryId"} ]  })
+		.addLov({ name:"productCategory", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductCategories", paramIndex:"productCategory" ,retFieldMapping: [{lovField:"id", dsParam: "productCategoryId"} ]  })
 		//containers
 		.addPanel({ name:"main", layout:"form" , autoScroll:true})     
 		;     

@@ -74,11 +74,11 @@ public class ProjectType extends AbstractType {
     private ProjectCategory category;
 
     @ManyToMany
-    @JoinTable(name = "PJ_PRJTYPE_PRJROLE")
+    @JoinTable(name = "PJ_PRJTYPE_PRJROLE", joinColumns = { @JoinColumn(name = "PROJECTTYPES_ID") }, inverseJoinColumns = { @JoinColumn(name = "PROJECTROLES_ID") })
     private Collection<ProjectRole> projectRoles;
 
     @ManyToMany
-    @JoinTable(name = "PJ_PRJTYPE_ISSUETYPE")
+    @JoinTable(name = "PJ_PRJTYPE_ISSUETYPE", joinColumns = { @JoinColumn(name = "PROJECTTYPES_ID") }, inverseJoinColumns = { @JoinColumn(name = "ITEMTYPES_ID") })
     private Collection<IssueType> itemTypes;
 
     /* ============== getters - setters ================== */

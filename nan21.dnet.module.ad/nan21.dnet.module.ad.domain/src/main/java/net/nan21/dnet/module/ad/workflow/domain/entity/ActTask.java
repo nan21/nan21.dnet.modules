@@ -20,7 +20,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition;
@@ -28,7 +27,6 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.ActTask;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -41,7 +39,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActTask.NQ_FIND_BY_ID, query = "SELECT e FROM ActTask e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActTask.NQ_FIND_BY_IDS, query = "SELECT e FROM ActTask e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActTask implements IModelWithId {
 
@@ -61,24 +58,23 @@ public class ActTask implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActTask.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Revision. */
-    @Column(name = "REV_", nullable = false)
-    @NotNull
+    @Column(name = "REV_")
     private Integer revision;
 
-    /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_", length = 255)
-    private String processInstanceId;
-
     /** ExecutionId. */
-    @Column(name = "EXECUTION_ID_", length = 255)
+    @Column(name = "EXECUTION_ID_", length = 64)
     private String executionId;
+
+    /** ProcessInstanceId. */
+    @Column(name = "PROC_INST_ID_", length = 64)
+    private String processInstanceId;
 
     /** Name. */
     @Column(name = "NAME_", nullable = false, length = 255)
@@ -93,14 +89,6 @@ public class ActTask implements IModelWithId {
     @Column(name = "TASK_DEF_KEY_", length = 255)
     private String taskDefinitionKey;
 
-    /** DelegationState. */
-    @Column(name = "DELEGATION_", length = 255)
-    private String delegationState;
-
-    /** Priority. */
-    @Column(name = "PRIORITY_")
-    private Integer priority;
-
     /** Owner. */
     @Column(name = "OWNER_", length = 32)
     private String owner;
@@ -109,15 +97,23 @@ public class ActTask implements IModelWithId {
     @Column(name = "ASSIGNEE_", length = 32)
     private String assignee;
 
-    /** DueDate. */
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "DUE_DATE_")
-    private Date dueDate;
+    /** DelegationState. */
+    @Column(name = "DELEGATION_", length = 255)
+    private String delegationState;
+
+    /** Priority. */
+    @Column(name = "PRIORITY_")
+    private Integer priority;
 
     /** CreatedAt. */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREATE_TIME_")
     private Date createdAt;
+
+    /** DueDate. */
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "DUE_DATE_")
+    private Date dueDate;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActProcessDefinition.class)
     @JoinColumn(name = "PROC_DEF_ID_", referencedColumnName = "ID_")
     private ActProcessDefinition processDefinition;
@@ -143,20 +139,20 @@ public class ActTask implements IModelWithId {
         this.revision = revision;
     }
 
-    public String getProcessInstanceId() {
-        return this.processInstanceId;
-    }
-
-    public void setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
-    }
-
     public String getExecutionId() {
         return this.executionId;
     }
 
     public void setExecutionId(String executionId) {
         this.executionId = executionId;
+    }
+
+    public String getProcessInstanceId() {
+        return this.processInstanceId;
+    }
+
+    public void setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
     }
 
     public String getName() {
@@ -183,22 +179,6 @@ public class ActTask implements IModelWithId {
         this.taskDefinitionKey = taskDefinitionKey;
     }
 
-    public String getDelegationState() {
-        return this.delegationState;
-    }
-
-    public void setDelegationState(String delegationState) {
-        this.delegationState = delegationState;
-    }
-
-    public Integer getPriority() {
-        return this.priority;
-    }
-
-    public void setPriority(Integer priority) {
-        this.priority = priority;
-    }
-
     public String getOwner() {
         return this.owner;
     }
@@ -215,12 +195,20 @@ public class ActTask implements IModelWithId {
         this.assignee = assignee;
     }
 
-    public Date getDueDate() {
-        return this.dueDate;
+    public String getDelegationState() {
+        return this.delegationState;
     }
 
-    public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
+    public void setDelegationState(String delegationState) {
+        this.delegationState = delegationState;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     public Date getCreatedAt() {
@@ -229,6 +217,14 @@ public class ActTask implements IModelWithId {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Date getDueDate() {
+        return this.dueDate;
+    }
+
+    public void setDueDate(Date dueDate) {
+        this.dueDate = dueDate;
     }
 
     @Transient

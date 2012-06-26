@@ -96,11 +96,11 @@ public class User extends AbstractTypeWithCode {
     private UserType accountType;
 
     @ManyToMany
-    @JoinTable(name = "AD_USR_ROLE")
+    @JoinTable(name = "AD_USR_ROLE", joinColumns = { @JoinColumn(name = "USERS_ID") }, inverseJoinColumns = { @JoinColumn(name = "ROLES_ID") })
     private Collection<Role> roles;
 
     @ManyToMany
-    @JoinTable(name = "AD_USR_USRGRP")
+    @JoinTable(name = "AD_USR_USRGRP", joinColumns = { @JoinColumn(name = "USERS_ID") }, inverseJoinColumns = { @JoinColumn(name = "GROUPS_ID") })
     private Collection<UserGroup> groups;
 
     /* ============== getters - setters ================== */

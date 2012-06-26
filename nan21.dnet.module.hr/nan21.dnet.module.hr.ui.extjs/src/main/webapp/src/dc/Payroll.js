@@ -65,11 +65,11 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.Payroll$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"name", dataIndex:"name" ,allowBlank:false,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addLov({ name:"engine", xtype:"net.nan21.dnet.module.bd.elem.lovs.Engines", dataIndex:"engine",anchor:"-20" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "engineId"} ]  })
-		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
-		.addCombo({ name:"periodType", xtype:"localcombo", dataIndex:"periodType",anchor:"-20" ,allowBlank:false,store:[ "calendar-month"]  })
+		.addLov({ name:"engine", xtype:"net.nan21.dnet.module.bd.elem.lovs.Engines", dataIndex:"engine" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "engineId"} ]  })
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
+		.addCombo({ name:"periodType", xtype:"localcombo", dataIndex:"periodType" ,allowBlank:false,store:[ "calendar-month"]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" , width:350})     

@@ -17,18 +17,22 @@ public class ActProcessDefinitionDs extends
         AbstractBaseDs<ActProcessDefinition> {
 
     public static final String fID = "id";
+    public static final String fCLIENTID = "clientId";
     public static final String fKEY = "key";
     public static final String fFULLNAME = "fullName";
     public static final String fNAME = "name";
     public static final String fCATEGORY = "category";
     public static final String fRESOURCENAME = "resourceName";
     public static final String fDIAGRAMRESOURCENAME = "diagramResourceName";
-    public static final String fVERSION = "version";
+    public static final String fPROCDEFVERSION = "procDefVersion";
     public static final String fDEPLOYMENTID = "deploymentId";
     public static final String fHASSTARTFORM = "hasStartForm";
 
     @DsField()
     private String id;
+
+    @DsField()
+    private Long clientId;
 
     @DsField()
     private String key;
@@ -49,7 +53,7 @@ public class ActProcessDefinitionDs extends
     private String diagramResourceName;
 
     @DsField()
-    private Long version;
+    private Integer procDefVersion;
 
     @DsField(join = "left", path = "deployment.id")
     private String deploymentId;
@@ -72,6 +76,14 @@ public class ActProcessDefinitionDs extends
     public void setId(Object id) {
         this.id = (String) id;
 
+    }
+
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getKey() {
@@ -122,12 +134,12 @@ public class ActProcessDefinitionDs extends
         this.diagramResourceName = diagramResourceName;
     }
 
-    public Long getVersion() {
-        return this.version;
+    public Integer getProcDefVersion() {
+        return this.procDefVersion;
     }
 
-    public void setVersion(Long version) {
-        this.version = version;
+    public void setProcDefVersion(Integer procDefVersion) {
+        this.procDefVersion = procDefVersion;
     }
 
     public String getDeploymentId() {

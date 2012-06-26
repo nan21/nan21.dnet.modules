@@ -20,6 +20,7 @@ public class ActTaskInstanceHistoryDs extends
     public static final String fTASKDEFINITIONKEY = "taskDefinitionKey";
     public static final String fPROCESSINSTANCEID = "processInstanceId";
     public static final String fPROCESSDEFINITIONID = "processDefinitionId";
+    public static final String fCLIENTID = "clientId";
     public static final String fEXECUTIONID = "executionId";
     public static final String fNAME = "name";
     public static final String fDESCRIPTION = "description";
@@ -42,6 +43,9 @@ public class ActTaskInstanceHistoryDs extends
 
     @DsField(join = "left", path = "processDefinition.id")
     private String processDefinitionId;
+
+    @DsField(join = "left", path = "processDefinition.clientId")
+    private Long clientId;
 
     @DsField()
     private String executionId;
@@ -112,6 +116,14 @@ public class ActTaskInstanceHistoryDs extends
 
     public void setProcessDefinitionId(String processDefinitionId) {
         this.processDefinitionId = processDefinitionId;
+    }
+
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getExecutionId() {

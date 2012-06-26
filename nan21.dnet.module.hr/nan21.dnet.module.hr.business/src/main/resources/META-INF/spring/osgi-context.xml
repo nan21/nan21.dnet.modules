@@ -29,6 +29,9 @@
 	<osgi:service ref="setupParticipant" ranking="70"
 		interface="net.nan21.dnet.core.api.setup.ISetupParticipant" />	
 
+	<osgi:reference id="osgiActivitiProcessEngineHolder" cardinality="0..1"
+			interface="net.nan21.dnet.core.api.wf.IActivitiProcessEngineHolder" />
+			
 	<!-- module business specific -->
 		
 		 

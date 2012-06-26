@@ -76,15 +76,15 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,noUpdate:true ,allowBlank:false,maxLength:32  })
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addLov({ name:"accountType", xtype:"net.nan21.dnet.module.ad.usr.lovs.UserTypes", dataIndex:"accountType",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "accountTypeId"} ]  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:60,anchor:"-20"   })
+		.addTextField({ name:"code", dataIndex:"code" ,noUpdate:true ,allowBlank:false,maxLength:32  })
+		.addTextField({ name:"name", dataIndex:"name" ,allowBlank:false,maxLength:255  })
+		.addLov({ name:"accountType", xtype:"net.nan21.dnet.module.ad.usr.lovs.UserTypes", dataIndex:"accountType" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "accountTypeId"} ]  })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:60   })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addCheckbox({ name:"locked", dataIndex:"locked"  })
-		.addCombo({ name:"decimalSeparator", xtype:"localcombo", dataIndex:"decimalSeparator",anchor:"-20" ,store:[ ".", ","]  })
-		.addCombo({ name:"thousandSeparator", xtype:"localcombo", dataIndex:"thousandSeparator",anchor:"-20" ,store:[ ".", ","]  })
-		.addLov({ name:"dateFormat", xtype:"net.nan21.dnet.module.ad.system.lovs.SysDateFormats", dataIndex:"dateFormat",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "dateFormatId"} ]  })
+		.addCombo({ name:"decimalSeparator", xtype:"localcombo", dataIndex:"decimalSeparator" ,store:[ ".", ","]  })
+		.addCombo({ name:"thousandSeparator", xtype:"localcombo", dataIndex:"thousandSeparator" ,store:[ ".", ","]  })
+		.addLov({ name:"dateFormat", xtype:"net.nan21.dnet.module.ad.system.lovs.SysDateFormats", dataIndex:"dateFormat" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "dateFormatId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:350})     
 		.addPanel({ name:"col2", layout:"form" ,title:"Regional settings", width:280,xtype:"fieldset", border:true, collapsible:true})     
@@ -109,8 +109,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"newPassword", paramIndex:"newPassword",anchor:"-20" ,allowBlank:false  })
-		.addTextField({ name:"confirmPassword", paramIndex:"confirmPassword",anchor:"-20" ,allowBlank:false  })
+		.addTextField({ name:"newPassword", paramIndex:"newPassword" ,allowBlank:false  })
+		.addTextField({ name:"confirmPassword", paramIndex:"confirmPassword" ,allowBlank:false  })
 		//containers
 		.addPanel({ name:"main", layout:"form" , autoScroll:true, width:350})     
 		;     

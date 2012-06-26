@@ -63,9 +63,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.WfDefProcess$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,allowBlank:false,maxLength:255  })
+		.addTextField({ name:"name", dataIndex:"name" ,allowBlank:false,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"description", dataIndex:"description",height:60,anchor:"-20"   })
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:350})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     

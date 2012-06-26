@@ -59,15 +59,6 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI", {
 	}
 
 
-	,onBtnCompleteTask: function() {
-		var s={modal:true, callbacks:{} };
-		try{ 
-			this._getDc_("dcMytask").doService("completeTask", s); 
-		}catch(e){
-			dnet.base.DcExceptions.showMessage(e);
-		}
-	}					 	
-
 	,onBtnClaimTask: function() {
 		var s={modal:true, callbacks:{} };
 		var successFn = function(dc,response,serviceName,specs) { 			this._getDc_("dcAvailabletask").doQuery();			 	
@@ -80,4 +71,35 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI", {
 			dnet.base.DcExceptions.showMessage(e);
 		}
 	}					 	
+	,doCompleteTask: function(result) {	
+		
+		var rec = this._getDc_("dcMytask").getRecord() ;
+		var taskId = rec.data.id;		
+		if (!Ext.isEmpty(result.formKey)) {alert("Not implemented");
+			//dnet.core.base.WorkflowFormFactory.createStartForm(this._getDc_("dcProcess").getRecord().data.id );
+		} else if (result.properties.length > 0 ) {
+			// read preperties and create for fields
+			(new dnet.core.base.WfTaskFormWindowExtjs({
+				_formProperties_:result.properties,
+				_taskId_:taskId, 
+				_taskName_:result.taskName,
+				_taskDescription_:result.taskDescription,
+				title:result.taskName })).show();	
+		} else {
+			Ext.Msg.wait("Working...");
+			Dnet.doWithGetResult(Dnet.wfTaskAPI(taskId).complete,
+				{taskId:taskId}, 
+				function(r) { 
+					Ext.Msg.hide(); 
+					Ext.Msg.alert("Success","Task completed successfully.");
+				} );
+		}
+		
+	}
+	,onBtnCompleteTask: function() {	
+		
+		var taskId = this._getDc_("dcMytask").getRecord().data.id;
+		Dnet.doWithGetResult(Dnet.wfTaskAPI(taskId).properties, null, this.doCompleteTask, this);
+		
+	}
 });  

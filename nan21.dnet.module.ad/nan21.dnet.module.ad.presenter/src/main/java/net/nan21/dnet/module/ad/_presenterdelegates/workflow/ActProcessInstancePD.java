@@ -5,7 +5,7 @@ import net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceDs;
 
 public class ActProcessInstancePD extends AbstractDsDelegate {
 
-	public void killInstance(ActProcessInstanceDs ds) {
+	public void killInstance(ActProcessInstanceDs ds) throws Exception {
 		getWorkflowRuntimeService().deleteProcessInstance(ds.getId(), "killed");
 	}
 

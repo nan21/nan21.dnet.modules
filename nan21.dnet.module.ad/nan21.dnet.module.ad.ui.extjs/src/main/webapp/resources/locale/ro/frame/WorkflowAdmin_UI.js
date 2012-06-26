@@ -10,6 +10,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI$Trl", {
 	btnStartProcess__desc : "Porneşte instanţă pentru procesul selectat",
 	btnGetProcessDefinitionDiagram__ttl : "Diagramă",
 	btnGetProcessDefinitionDiagram__desc : "Deschide diagrama procesului selectat",
+	btnGetProcessDefinitionXml__ttl : "Fişier XML",
+	btnGetProcessDefinitionXml__desc : "Deschide fişierul xml al procesului selectat",
 	btnGetProcessInstanceDiagram__ttl : "Diagramă",
 	btnGetProcessInstanceDiagram__desc : "Deschide diagrama instanţei selectate",
 	btnKillProcessInstance__ttl : "Opreşte instanţa",

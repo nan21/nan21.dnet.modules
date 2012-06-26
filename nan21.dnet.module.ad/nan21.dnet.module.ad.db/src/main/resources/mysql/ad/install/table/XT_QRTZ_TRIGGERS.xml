@@ -8,7 +8,7 @@
 				<constraints  /></column>	 
 			<column name="DESCRIPTION" type="text">
 				<constraints  /></column>	 
-			<column name="END_TIME" type="datetime">
+			<column name="END_TIME" type="bigint">
 				<constraints  /></column>	 
 			<column name="JOB_DATA" type="blob">
 				<constraints  /></column>	 
@@ -18,15 +18,15 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MISFIRE_INSTR" type="int(2)">
 				<constraints  /></column>	 
-			<column name="NEXT_FIRE_TIME" type="datetime">
+			<column name="NEXT_FIRE_TIME" type="bigint">
 				<constraints  /></column>	 
-			<column name="PREV_FIRE_TIME" type="datetime">
+			<column name="PREV_FIRE_TIME" type="bigint">
 				<constraints  /></column>	 
 			<column name="PRIORITY" type="int(10)">
 				<constraints  /></column>	 
 			<column name="SCHED_NAME" type="varchar(255)">
 				<constraints nullable="false" /></column>	 
-			<column name="START_TIME" type="datetime">
+			<column name="START_TIME" type="bigint">
 				<constraints  /></column>	 
 			<column name="TRIGGER_GROUP" type="varchar(255)">
 				<constraints nullable="false" /></column>	 

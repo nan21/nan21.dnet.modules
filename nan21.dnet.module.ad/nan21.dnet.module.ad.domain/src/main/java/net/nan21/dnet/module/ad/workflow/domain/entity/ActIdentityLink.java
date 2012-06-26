@@ -14,13 +14,11 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -33,7 +31,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActIdentityLink.NQ_FIND_BY_ID, query = "SELECT e FROM ActIdentityLink e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActIdentityLink.NQ_FIND_BY_IDS, query = "SELECT e FROM ActIdentityLink e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActIdentityLink implements IModelWithId {
 
@@ -53,16 +50,19 @@ public class ActIdentityLink implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActIdentityLink.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Revision. */
-    @Column(name = "REV_", nullable = false)
-    @NotNull
+    @Column(name = "REV_")
     private Integer revision;
+
+    /** GroupId. */
+    @Column(name = "GROUP_ID_", length = 255)
+    private String groupId;
 
     /** Type. */
     @Column(name = "TYPE_", length = 255)
@@ -75,10 +75,6 @@ public class ActIdentityLink implements IModelWithId {
     /** TaskId. */
     @Column(name = "TASK_ID_", length = 255)
     private String taskId;
-
-    /** GroupId. */
-    @Column(name = "GROUP_ID_", length = 255)
-    private String groupId;
 
     /* ============== getters - setters ================== */
 
@@ -96,6 +92,14 @@ public class ActIdentityLink implements IModelWithId {
 
     public void setRevision(Integer revision) {
         this.revision = revision;
+    }
+
+    public String getGroupId() {
+        return this.groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public String getType() {
@@ -120,14 +124,6 @@ public class ActIdentityLink implements IModelWithId {
 
     public void setTaskId(String taskId) {
         this.taskId = taskId;
-    }
-
-    public String getGroupId() {
-        return this.groupId;
-    }
-
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
     }
 
     @Transient

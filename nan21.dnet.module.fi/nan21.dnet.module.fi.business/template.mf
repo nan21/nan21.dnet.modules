@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: DNet FI - business
 Bundle-SymbolicName: nan21.dnet.module.fi.business
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Import-Template: 
  javax.persistence.*;version="[2.0,2.1)",
@@ -21,16 +21,15 @@ Import-Package:
  javax.validation;version="[1.0,2.0)",
  org.hibernate.validator;version="[4.0,5.0)",
  org.hibernate.validator.constraints;version="[4.0,5.0)"
-Import-Bundle:  
- org.eclipse.persistence.core;version="[2.0,2.5)", 
- nan21.dnet.core.domain;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.core.business;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.bd.domain;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.md.domain;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.fi.domain;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.ad.business.api;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.bd.business.api;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.md.business.api;version="[1.0.0.RC1,1.0.0.RC1]", 
- nan21.dnet.module.fi.business.api;version="[1.0.0.RC1,1.0.0.RC1]"
+Import-Bundle:  org.eclipse.persistence.core;version="[2.0,2.5)", 
+ nan21.dnet.core.domain;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.core.business;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.module.ad.domain;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.module.bd.domain;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.module.md.domain;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.module.fi.domain;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.module.ad.business.api;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.module.bd.business.api;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.module.md.business.api;version="[1.0.0.RC2,1.0.0.RC2]", 
+ nan21.dnet.module.fi.business.api;version="[1.0.0.RC2,1.0.0.RC2]"
 

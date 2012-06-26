@@ -16,6 +16,8 @@ public class ActMyTaskDsFilter extends AbstractBaseDsFilter {
 
     private String process;
 
+    private Long clientId;
+
     private String taskKey;
 
     private String processInstanceId;
@@ -66,6 +68,14 @@ public class ActMyTaskDsFilter extends AbstractBaseDsFilter {
 
     public void setProcess(String process) {
         this.process = process;
+    }
+
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getTaskKey() {

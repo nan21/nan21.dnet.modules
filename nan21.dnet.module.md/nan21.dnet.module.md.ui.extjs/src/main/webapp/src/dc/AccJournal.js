@@ -79,9 +79,9 @@ Ext.define("net.nan21.dnet.module.md.acc.dc.AccJournal$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
+		.addTextField({ name:"name", dataIndex:"name" ,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextField({ name:"description", dataIndex:"description",anchor:"-20" ,maxLength:400  })
+		.addTextField({ name:"description", dataIndex:"description" ,maxLength:400  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 

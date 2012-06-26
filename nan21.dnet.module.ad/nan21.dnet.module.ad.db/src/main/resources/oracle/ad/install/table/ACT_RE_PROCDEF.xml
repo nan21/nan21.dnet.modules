@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="ACT_RE_PROCDEF">
+			<column name="CATEGORY_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="CLIENTID" type="number(3)">
+				<constraints  /></column>	 
+			<column name="DGRM_RESOURCE_NAME_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="HAS_START_FORM_KEY_" type="number(1)">
+				<constraints  /></column>	 
+			<column name="ID_" type="varchar2(64)">
+				<constraints nullable="false" /></column>	 
+			<column name="KEY_" type="varchar2(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="NAME_" type="varchar2(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="RESOURCE_NAME_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="REV_" type="number(8)">
+				<constraints  /></column>	 
+			<column name="SUSPENSION_STATE_" type="number(10)">
+				<constraints  /></column>	 
+			<column name="VERSION_" type="number(10)">
+				<constraints  /></column>	 
+			<column name="DEPLOYMENT_ID_" type="number(19)">	 
+				<constraints  /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="ACT_RE_PROCDEF" constraintName="PK_ACT_RE_PROCDEF" columnNames="ID_" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="ACT_RE_PROCDEF_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

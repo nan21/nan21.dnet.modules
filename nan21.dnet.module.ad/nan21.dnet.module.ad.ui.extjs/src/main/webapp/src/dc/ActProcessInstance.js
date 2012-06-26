@@ -23,7 +23,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20",maxLength:255  })
+		.addTextField({ name:"id",_sharedLabel_:true, dataIndex:"id",anchor:"-20",maxLength:64  })
 		.addLov({ name:"process", xtype:"net.nan21.dnet.module.ad.workflow.lovs.ActProcessDefinitions", dataIndex:"process",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "processId"} ]  })
 		.addTextField({ name:"startedBy", dataIndex:"startedBy",anchor:"-20",maxLength:32  })
 		.addDateField({ name:"from", paramIndex:"from",anchor:"-20" ,format:Ext.DATE_FORMAT })
@@ -54,7 +54,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List", {
 	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"process", dataIndex:"process",width:200 })   	
-		.addTextColumn({ name:"processInstanceId", dataIndex:"processInstanceId", hidden:true,width:200 })   	
+		.addTextColumn({ name:"processInstanceId", dataIndex:"processInstanceId", hidden:true,width:150 })   	
 		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addTextColumn({ name:"startedBy", dataIndex:"startedBy",width:100 })   	
 		.addTextColumn({ name:"startAction", dataIndex:"startAction", width:100 })   	

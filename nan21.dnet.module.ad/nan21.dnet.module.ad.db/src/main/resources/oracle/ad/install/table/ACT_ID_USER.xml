@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="ACT_ID_USER">
+			<column name="EMAIL_" type="varchar2(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="FIRST_" type="varchar2(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="ID_" type="varchar2(64)">
+				<constraints nullable="false" /></column>	 
+			<column name="LAST_" type="varchar2(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="PICTURE_ID_" type="varchar2(64)">
+				<constraints  /></column>	 
+			<column name="PWD_" type="varchar2(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="REV_" type="number(8)">
+				<constraints  /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="ACT_ID_USER" constraintName="PK_ACT_ID_USER" columnNames="ID_" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="ACT_ID_USER_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

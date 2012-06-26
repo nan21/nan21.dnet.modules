@@ -19,7 +19,6 @@ import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -32,7 +31,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActAttachment.NQ_FIND_BY_ID, query = "SELECT e FROM ActAttachment e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActAttachment.NQ_FIND_BY_IDS, query = "SELECT e FROM ActAttachment e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActAttachment implements IModelWithId {
 
@@ -52,7 +50,7 @@ public class ActAttachment implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActAttachment.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
@@ -61,6 +59,10 @@ public class ActAttachment implements IModelWithId {
     /** Revision. */
     @Column(name = "REV_")
     private Integer revision;
+
+    /** UserId. */
+    @Column(name = "USER_ID_", length = 255)
+    private String userId;
 
     /** Name. */
     @Column(name = "NAME_", nullable = false, length = 255)
@@ -75,21 +77,21 @@ public class ActAttachment implements IModelWithId {
     @Column(name = "TYPE_", length = 255)
     private String type;
 
+    /** TaskId. */
+    @Column(name = "TASK_ID_", length = 64)
+    private String taskId;
+
+    /** ProcessInstanceId. */
+    @Column(name = "PROC_INST_ID_", length = 64)
+    private String processInstanceId;
+
     /** Url. */
     @Column(name = "URL_", length = 255)
     private String url;
 
-    /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_", length = 255)
-    private String processInstanceId;
-
-    /** TaskId. */
-    @Column(name = "TASK_ID_", length = 255)
-    private String taskId;
-
-    /** UserId. */
-    @Column(name = "USER_ID_", length = 255)
-    private String userId;
+    /** ContentId. */
+    @Column(name = "CONTENT_ID_", length = 255)
+    private String contentId;
 
     /* ============== getters - setters ================== */
 
@@ -107,6 +109,14 @@ public class ActAttachment implements IModelWithId {
 
     public void setRevision(Integer revision) {
         this.revision = revision;
+    }
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getName() {
@@ -133,12 +143,12 @@ public class ActAttachment implements IModelWithId {
         this.type = type;
     }
 
-    public String getUrl() {
-        return this.url;
+    public String getTaskId() {
+        return this.taskId;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
     public String getProcessInstanceId() {
@@ -149,20 +159,20 @@ public class ActAttachment implements IModelWithId {
         this.processInstanceId = processInstanceId;
     }
 
-    public String getTaskId() {
-        return this.taskId;
+    public String getUrl() {
+        return this.url;
     }
 
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getUserId() {
-        return this.userId;
+    public String getContentId() {
+        return this.contentId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setContentId(String contentId) {
+        this.contentId = contentId;
     }
 
     @Transient

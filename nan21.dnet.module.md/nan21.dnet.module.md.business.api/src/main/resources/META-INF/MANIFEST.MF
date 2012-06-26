@@ -1,47 +1,47 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.md.acc.business.service;version=
- "1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mod
+ "1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mod
  ule.md.acc.domain.entity",net.nan21.dnet.module.md.activity.business.
- service;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,ne
+ service;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,ne
  t.nan21.dnet.module.md.activity.domain.entity,net.nan21.dnet.module.m
  d.bp.domain.entity",net.nan21.dnet.module.md.base.attr.business.servi
- ce;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan
+ ce;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan
  21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.md.base.att
  r.domain.entity",net.nan21.dnet.module.md.base.period.business.servic
- e;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan2
+ e;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan2
  1.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.md.base.peri
  od.domain.entity",net.nan21.dnet.module.md.base.tax.business.service;
- version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.
+ version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.
  dnet.module.md.acc.domain.entity,net.nan21.dnet.module.md.base.tax.do
  main.entity",net.nan21.dnet.module.md.base.tx.business.service;versio
- n="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.m
+ n="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.m
  odule.md.acc.domain.entity,net.nan21.dnet.module.md.base.tx.domain.en
- tity",net.nan21.dnet.module.md.bp.business.service;version="1.0.0.RC1
+ tity",net.nan21.dnet.module.md.bp.business.service;version="1.0.0.RC2
  ";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.cur
  rency.domain.entity,net.nan21.dnet.module.bd.geo.domain.entity,net.na
  n21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd.standar
  ds.domain.entity,net.nan21.dnet.module.md.acc.domain.entity,net.nan21
  .dnet.module.md.base.tx.domain.entity,net.nan21.dnet.module.md.bp.dom
  ain.entity",net.nan21.dnet.module.md.mm.price.business.service;versio
- n="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.m
+ n="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.m
  odule.bd.currency.domain.entity,net.nan21.dnet.module.bd.uom.domain.e
  ntity,net.nan21.dnet.module.md.mm.price.domain.entity,net.nan21.dnet.
  module.md.mm.prod.domain.entity",net.nan21.dnet.module.md.mm.prod.bus
- iness.service;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.serv
+ iness.service;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.serv
  ice,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.
  bd.standards.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity
  ,net.nan21.dnet.module.md.acc.domain.entity,net.nan21.dnet.module.md.
  base.attr.domain.entity,net.nan21.dnet.module.md.mm.prod.domain.entit
- y",net.nan21.dnet.module.md.org.business.service;version="1.0.0.RC1";
+ y",net.nan21.dnet.module.md.org.business.service;version="1.0.0.RC2";
  uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.curre
  ncy.domain.entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan2
  1.dnet.module.md.acc.domain.entity,net.nan21.dnet.module.md.base.tx.d
  omain.entity,net.nan21.dnet.module.md.org.domain.entity",net.nan21.dn
- et.module.md.res.business.service;version="1.0.0.RC1";uses:="net.nan2
+ et.module.md.res.business.service;version="1.0.0.RC2";uses:="net.nan2
  1.dnet.core.api.service,net.nan21.dnet.module.bd.geo.domain.entity,ne
  t.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.md.mm.
  prod.domain.entity,net.nan21.dnet.module.md.res.domain.entity",net.na
- n21.dnet.module.md.tx.acc.business.service;version="1.0.0.RC1";uses:=
+ n21.dnet.module.md.tx.acc.business.service;version="1.0.0.RC2";uses:=
  "net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.currency.do
  main.entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet
  .module.md.acc.domain.entity,net.nan21.dnet.module.md.base.period.dom
@@ -49,25 +49,25 @@ Export-Package: net.nan21.dnet.module.md.acc.business.service;version=
  net.module.md.bp.domain.entity,net.nan21.dnet.module.md.mm.prod.domai
  n.entity,net.nan21.dnet.module.md.res.domain.entity,net.nan21.dnet.mo
  dule.md.tx.acc.domain.entity",net.nan21.dnet.module.md.tx.fin.busines
- s.service;version="1.0.0.RC1";uses:="net.nan21.dnet.core.api.service,
+ s.service;version="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,
  net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.module
  .bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.
  nan21.dnet.module.md.acc.domain.entity,net.nan21.dnet.module.md.base.
  tx.domain.entity,net.nan21.dnet.module.md.bp.domain.entity,net.nan21.
  dnet.module.md.mm.prod.domain.entity,net.nan21.dnet.module.md.org.dom
  ain.entity,net.nan21.dnet.module.md.tx.fin.domain.entity",net.nan21.d
- net.module.md.tx.inventory.business.service;version="1.0.0.RC1";uses:
+ net.module.md.tx.inventory.business.service;version="1.0.0.RC2";uses:
  ="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.org.domain
  .entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.mod
  ule.md.base.tx.domain.entity,net.nan21.dnet.module.md.mm.prod.domain.
  entity,net.nan21.dnet.module.md.org.domain.entity,net.nan21.dnet.modu
  le.md.tx.inventory.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.ad.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.modu
- le.bd.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.md.dom
- ain;version="[1.0.0.RC1,1.0.0.RC1]"
+ dnet.module.ad.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.modu
+ le.bd.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.md.dom
+ ain;version="[1.0.0.RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet MD - business API
 Bundle-ManifestVersion: 2

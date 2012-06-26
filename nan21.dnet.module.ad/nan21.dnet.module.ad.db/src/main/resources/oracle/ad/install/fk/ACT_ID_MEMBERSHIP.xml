@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">  
+	<changeSet author="amathe" id="FK-1">
+		<addForeignKeyConstraint constraintName="FK_ACT_ID_MEMBERSHIP1" 
+				baseTableName="ACT_ID_MEMBERSHIP" baseColumnNames="GROUP_ID_"  
+				referencedTableName="ACT_ID_GROUP" referencedColumnNames="ID_" />
+	 </changeSet>
+	 <changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_ACT_ID_MEMBERSHIP2" 
+				baseTableName="ACT_ID_MEMBERSHIP" baseColumnNames="USER_ID_"  
+				referencedTableName="ACT_ID_USER" referencedColumnNames="ID_" />
+	 </changeSet>
+</databaseChangeLog>

@@ -116,7 +116,7 @@ Ext.define("net.nan21.dnet.module.bd.elem.dc.ElementFormula$EditExpression", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextArea({ name:"expression", dataIndex:"expression",height:200,anchor:"-20"   })
+		.addTextArea({ name:"expression", dataIndex:"expression",height:200   })
 		//containers
 		.addPanel({ name:"main", layout:"form" , autoScroll:true, defaults:{
 labelAlign:"top"}})     

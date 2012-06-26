@@ -160,7 +160,7 @@ public class Product extends AbstractTypeWithCode {
     private AttributeGroup attributeGroup;
 
     @ManyToMany
-    @JoinTable(name = "MD_PROD_PRODCTG")
+    @JoinTable(name = "MD_PROD_PRODCTG", joinColumns = { @JoinColumn(name = "PRODUCTS_ID") }, inverseJoinColumns = { @JoinColumn(name = "CATEGORIES_ID") })
     private Collection<ProductCategory> categories;
 
     @OneToMany(fetch = FetchType.LAZY, targetEntity = ProductAttribute.class, mappedBy = "product", cascade = CascadeType.ALL)

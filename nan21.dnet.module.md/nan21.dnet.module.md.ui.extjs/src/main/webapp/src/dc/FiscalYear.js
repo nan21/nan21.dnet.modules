@@ -91,13 +91,13 @@ Ext.define("net.nan21.dnet.module.md.base.period.dc.FiscalYear$Edit", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"name", dataIndex:"name",anchor:"-20" ,maxLength:255  })
-		.addTextField({ name:"code", dataIndex:"code",anchor:"-20" ,maxLength:32  })
+		.addTextField({ name:"name", dataIndex:"name" ,maxLength:255  })
+		.addTextField({ name:"code", dataIndex:"code" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextField({ name:"notes", dataIndex:"notes",anchor:"-20" ,maxLength:4000  })
-		.addLov({ name:"calendar", xtype:"net.nan21.dnet.module.bd.org.lovs.Calendars", dataIndex:"calendar",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "calendarId"} ]  })
-		.addDateField({ name:"startDate", dataIndex:"startDate",anchor:"-20" ,allowBlank:false})
-		.addDateField({ name:"endDate", dataIndex:"endDate",anchor:"-20" ,allowBlank:false})
+		.addTextField({ name:"notes", dataIndex:"notes" ,maxLength:4000  })
+		.addLov({ name:"calendar", xtype:"net.nan21.dnet.module.bd.org.lovs.Calendars", dataIndex:"calendar" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "calendarId"} ]  })
+		.addDateField({ name:"startDate", dataIndex:"startDate" ,allowBlank:false})
+		.addDateField({ name:"endDate", dataIndex:"endDate" ,allowBlank:false})
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     

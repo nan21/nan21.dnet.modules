@@ -8,7 +8,7 @@
 				<constraints  /></column>	 
 			<column name="INSTANCE_NAME" type="varchar(255)">
 				<constraints nullable="false" /></column>	 
-			<column name="LAST_CHECKIN_TIME" type="datetime">
+			<column name="LAST_CHECKIN_TIME" type="bigint">
 				<constraints  /></column>	 
 			<column name="SCHED_NAME" type="varchar(255)">
 				<constraints nullable="false" /></column>	 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="amathe" id="TBL">
+        <createTable tableName="ACT_HI_DETAIL">
+			<column name="ACT_INST_ID_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="BYTEARRAY_ID_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="DOUBLE_" type="number(12,2)">
+				<constraints  /></column>	 
+			<column name="EXECUTION_ID_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="ID_" type="varchar2(64)">
+				<constraints nullable="false" /></column>	 
+			<column name="LONG_" type="number(19)">
+				<constraints  /></column>	 
+			<column name="NAME_" type="varchar2(255)">
+				<constraints nullable="false" /></column>	 
+			<column name="PROC_INST_ID_" type="varchar2(64)">
+				<constraints  /></column>	 
+			<column name="REV_" type="number(8)">
+				<constraints  /></column>	 
+			<column name="TASK_ID_" type="varchar2(64)">
+				<constraints  /></column>	 
+			<column name="TEXT2_" type="varchar2(4000)">
+				<constraints  /></column>	 
+			<column name="TEXT_" type="varchar2(4000)">
+				<constraints  /></column>	 
+			<column name="TIME_" type="date">
+				<constraints  /></column>	 
+			<column name="TYPE_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="VAR_TYPE_" type="varchar2(255)">
+				<constraints  /></column>	 
+        </createTable>
+    </changeSet>    
+    <changeSet author="amathe" id="PK">
+    	<addPrimaryKey tableName="ACT_HI_DETAIL" constraintName="PK_ACT_HI_DETAIL" columnNames="ID_" />
+    </changeSet>       
+	<changeSet author="amathe" id="SEQ">
+		<insert tableName="SEQUENCE">
+		    <column name="SEQ_NAME" value="ACT_HI_DETAIL_SEQ"/>
+		    <column name="SEQ_COUNT" valueNumeric="0"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

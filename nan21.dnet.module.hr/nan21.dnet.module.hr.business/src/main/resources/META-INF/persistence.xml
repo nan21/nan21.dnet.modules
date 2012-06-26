@@ -2,10 +2,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
-	<persistence-unit name="net.nan21.dnet"
-		transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="net.nan21.dnet" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		
+
+		<!-- Declared -->
+
+		<class>net.nan21.dnet.module.hr.benefit.domain.entity.BenefitType</class>
+		<class>net.nan21.dnet.module.hr.benefit.domain.entity.OptionType</class>
+		<class>net.nan21.dnet.module.hr.benefit.domain.entity.Benefit</class>
+		<class>net.nan21.dnet.module.hr.benefit.domain.entity.Option</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.Employee</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContact</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeEducation</class>
@@ -16,7 +21,6 @@
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.LicenseType</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContactRelationship</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmploymentType</class>
-
 		<class>net.nan21.dnet.module.hr.grade.domain.entity.Grade</class>
 		<class>net.nan21.dnet.module.hr.grade.domain.entity.GradeRate</class>
 		<class>net.nan21.dnet.module.hr.grade.domain.entity.GradeRateValue</class>
@@ -28,7 +32,6 @@
 		<class>net.nan21.dnet.module.hr.grade.domain.entity.GradePayScalePoint</class>
 		<class>net.nan21.dnet.module.hr.grade.domain.entity.JobGrade</class>
 		<class>net.nan21.dnet.module.hr.grade.domain.entity.PositionGrade</class>
-		
 		<class>net.nan21.dnet.module.hr.job.domain.entity.WorkRequirementType</class>
 		<class>net.nan21.dnet.module.hr.job.domain.entity.WorkRequirement</class>
 		<class>net.nan21.dnet.module.hr.job.domain.entity.JobType</class>
@@ -37,12 +40,10 @@
 		<class>net.nan21.dnet.module.hr.job.domain.entity.Position</class>
 		<class>net.nan21.dnet.module.hr.job.domain.entity.PositionRequirement</class>
 		<class>net.nan21.dnet.module.hr.job.domain.entity.PositionHierarchy</class>
-		 
-		<class>net.nan21.dnet.module.hr.payroll.domain.entity.Payroll</class>
-		<class>net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod</class>
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElement</class>
 		<class>net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElementValue</class>
-		
+		<class>net.nan21.dnet.module.hr.payroll.domain.entity.Payroll</class>
+		<class>net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod</class>
 		<class>net.nan21.dnet.module.hr.skill.domain.entity.RatingScale</class>
 		<class>net.nan21.dnet.module.hr.skill.domain.entity.RatingLevel</class>
 		<class>net.nan21.dnet.module.hr.skill.domain.entity.SkillCategory</class>
@@ -53,7 +54,6 @@
 		<class>net.nan21.dnet.module.hr.skill.domain.entity.JobSkill</class>
 		<class>net.nan21.dnet.module.hr.skill.domain.entity.PositionSkill</class>
 		<class>net.nan21.dnet.module.hr.skill.domain.entity.EmployeeSkill</class>
-		
 		<class>net.nan21.dnet.module.hr.time.domain.entity.AbsenceCategory</class>
 		<class>net.nan21.dnet.module.hr.time.domain.entity.AbsenceType</class>
 		<class>net.nan21.dnet.module.hr.time.domain.entity.AbsenceReason</class>
@@ -61,44 +61,35 @@
 		<class>net.nan21.dnet.module.hr.time.domain.entity.AbsenceRequestItem</class>
 		<class>net.nan21.dnet.module.hr.time.domain.entity.Absence</class>
 		<class>net.nan21.dnet.module.hr.time.domain.entity.AbsenceBalance</class>
-		
 		<class>net.nan21.dnet.module.hr.training.domain.entity.CourseCategory</class>
 		<class>net.nan21.dnet.module.hr.training.domain.entity.CourseType</class>
 		<class>net.nan21.dnet.module.hr.training.domain.entity.Course</class>
 		<class>net.nan21.dnet.module.hr.training.domain.entity.JobCourse</class>
 		<class>net.nan21.dnet.module.hr.training.domain.entity.PositionCourse</class>
 		<class>net.nan21.dnet.module.hr.training.domain.entity.EmployeeCourse</class>
-		
+
 		<!-- Dependencies -->
-		
-		<class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>
-		<class>net.nan21.dnet.module.ad.data.domain.entity.AttachmentType</class>
-		
-		
+
+		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
-		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
-		<class>net.nan21.dnet.module.bd.geo.domain.entity.Region</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.Element</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementCategory</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementFormula</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementInput</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementSet</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementSetElement</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementType</class>
+		<class>net.nan21.dnet.module.bd.elem.domain.entity.Engine</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.City</class>
+		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Location</class>
+		<class>net.nan21.dnet.module.bd.geo.domain.entity.Region</class>
+		<class>net.nan21.dnet.module.bd.org.domain.entity.Calendar</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.Organization</class>
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
-		<class>net.nan21.dnet.module.bd.org.domain.entity.Calendar</class>
-		
-		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
-		
 		<class>net.nan21.dnet.module.md.acc.domain.entity.AccItem</class>
-         
-		<class>net.nan21.dnet.module.bd.elem.domain.entity.Engine</class>
-		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementCategory</class>
-		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementType</class>
-		<class>net.nan21.dnet.module.bd.elem.domain.entity.Element</class>
-		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementInput</class>
-		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementFormula</class>
-		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementSet</class>		 
-		<class>net.nan21.dnet.module.bd.elem.domain.entity.ElementSetElement</class>
-		
 		<class>net.nan21.dnet.module.md.res.domain.entity.EmployeeBase</class>
-		 
+
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

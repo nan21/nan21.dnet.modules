@@ -17,7 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.module.ad.workflow.domain.entity.ActExecution;
@@ -25,7 +24,6 @@ import net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessDefinition;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
-import org.eclipse.persistence.annotations.ReadOnly;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
@@ -38,7 +36,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries({
         @NamedQuery(name = ActExecution.NQ_FIND_BY_ID, query = "SELECT e FROM ActExecution e WHERE  e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = ActExecution.NQ_FIND_BY_IDS, query = "SELECT e FROM ActExecution e WHERE  e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
-@ReadOnly
 @Cache(type = CacheType.NONE)
 public class ActExecution implements IModelWithId {
 
@@ -58,28 +55,31 @@ public class ActExecution implements IModelWithId {
     public static final String NQ_FIND_BY_IDS = "ActExecution.findByIds";
 
     /** Id. */
-    @Column(name = "ID_", nullable = false, length = 255)
+    @Column(name = "ID_", nullable = false, length = 64)
     @NotBlank
     @Id
     @GeneratedValue(generator = SEQUENCE_NAME)
     private String id;
 
     /** Revision. */
-    @Column(name = "REV_", nullable = false)
-    @NotNull
+    @Column(name = "REV_")
     private Integer revision;
+
+    /** ProcessInstanceId. */
+    @Column(name = "PROC_INST_ID_", length = 255)
+    private String processInstanceId;
 
     /** BusinessKey. */
     @Column(name = "BUSINESS_KEY_", length = 255)
     private String businessKey;
 
+    /** SuperExecution. */
+    @Column(name = "SUPER_EXEC_", length = 255)
+    private String superExecution;
+
     /** ActivityId. */
     @Column(name = "ACT_ID_", length = 255)
     private String activityId;
-
-    /** ProcessInstanceId. */
-    @Column(name = "PROC_INST_ID_", length = 255)
-    private String processInstanceId;
 
     /** IsActive. */
     @Column(name = "IS_ACTIVE_")
@@ -92,12 +92,20 @@ public class ActExecution implements IModelWithId {
     /** IsScope. */
     @Column(name = "IS_SCOPE_")
     private Boolean isScope;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActProcessDefinition.class)
-    @JoinColumn(name = "PROC_DEF_ID_", referencedColumnName = "ID_")
-    private ActProcessDefinition processDefinition;
+
+    /** IsEventScope. */
+    @Column(name = "IS_EVENT_SCOPE_")
+    private Boolean isEventScope;
+
+    /** SuspensionState. */
+    @Column(name = "SUSPENSION_STATE_")
+    private Integer suspensionState;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActExecution.class)
     @JoinColumn(name = "PARENT_ID_", referencedColumnName = "ID_")
     private ActExecution parent;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActProcessDefinition.class)
+    @JoinColumn(name = "PROC_DEF_ID_", referencedColumnName = "ID_")
+    private ActProcessDefinition processDefinition;
 
     /* ============== getters - setters ================== */
 
@@ -117,6 +125,14 @@ public class ActExecution implements IModelWithId {
         this.revision = revision;
     }
 
+    public String getProcessInstanceId() {
+        return this.processInstanceId;
+    }
+
+    public void setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
+    }
+
     public String getBusinessKey() {
         return this.businessKey;
     }
@@ -125,20 +141,20 @@ public class ActExecution implements IModelWithId {
         this.businessKey = businessKey;
     }
 
+    public String getSuperExecution() {
+        return this.superExecution;
+    }
+
+    public void setSuperExecution(String superExecution) {
+        this.superExecution = superExecution;
+    }
+
     public String getActivityId() {
         return this.activityId;
     }
 
     public void setActivityId(String activityId) {
         this.activityId = activityId;
-    }
-
-    public String getProcessInstanceId() {
-        return this.processInstanceId;
-    }
-
-    public void setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
     }
 
     public Boolean getIsActive() {
@@ -165,6 +181,22 @@ public class ActExecution implements IModelWithId {
         this.isScope = isScope;
     }
 
+    public Boolean getIsEventScope() {
+        return this.isEventScope;
+    }
+
+    public void setIsEventScope(Boolean isEventScope) {
+        this.isEventScope = isEventScope;
+    }
+
+    public Integer getSuspensionState() {
+        return this.suspensionState;
+    }
+
+    public void setSuspensionState(Integer suspensionState) {
+        this.suspensionState = suspensionState;
+    }
+
     @Transient
     public Long getVersion() {
         return 1L;
@@ -174,20 +206,20 @@ public class ActExecution implements IModelWithId {
 
     }
 
-    public ActProcessDefinition getProcessDefinition() {
-        return this.processDefinition;
-    }
-
-    public void setProcessDefinition(ActProcessDefinition processDefinition) {
-        this.processDefinition = processDefinition;
-    }
-
     public ActExecution getParent() {
         return this.parent;
     }
 
     public void setParent(ActExecution parent) {
         this.parent = parent;
+    }
+
+    public ActProcessDefinition getProcessDefinition() {
+        return this.processDefinition;
+    }
+
+    public void setProcessDefinition(ActProcessDefinition processDefinition) {
+        this.processDefinition = processDefinition;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

@@ -1,38 +1,38 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.bd._businessdelegates;version="1
- .0.0.RC1";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bu
+ .0.0.RC2";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.bu
  siness.service",net.nan21.dnet.module.bd.contact.business.serviceimpl
- ;version="1.0.0.RC1";uses:="javax.persistence,net.nan21.dnet.core.bus
+ ;version="1.0.0.RC2";uses:="javax.persistence,net.nan21.dnet.core.bus
  iness.service,net.nan21.dnet.module.bd.contact.business.service,net.n
  an21.dnet.module.bd.contact.domain.entity",net.nan21.dnet.module.bd.c
- urrency.business.serviceimpl;version="1.0.0.RC1";uses:="javax.persist
+ urrency.business.serviceimpl;version="1.0.0.RC2";uses:="javax.persist
  ence,net.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.cu
  rrency.business.service,net.nan21.dnet.module.bd.currency.domain.enti
  ty",net.nan21.dnet.module.bd.elem.business.serviceimpl;version="1.0.0
- .RC1";uses:="javax.persistence,net.nan21.dnet.core.business.service,n
+ .RC2";uses:="javax.persistence,net.nan21.dnet.core.business.service,n
  et.nan21.dnet.module.bd.elem.business.service,net.nan21.dnet.module.b
  d.elem.domain.entity",net.nan21.dnet.module.bd.geo.business.serviceim
- pl;version="1.0.0.RC1";uses:="javax.persistence,net.nan21.dnet.core.b
+ pl;version="1.0.0.RC2";uses:="javax.persistence,net.nan21.dnet.core.b
  usiness.service,net.nan21.dnet.module.bd.geo.business.service,net.nan
  21.dnet.module.bd.geo.domain.entity",net.nan21.dnet.module.bd.org.bus
- iness.serviceimpl;version="1.0.0.RC1";uses:="javax.persistence,net.na
+ iness.serviceimpl;version="1.0.0.RC2";uses:="javax.persistence,net.na
  n21.dnet.core.business.service,net.nan21.dnet.module.bd.org.business.
  service,net.nan21.dnet.module.bd.org.domain.entity",net.nan21.dnet.mo
- dule.bd.standards.business.serviceimpl;version="1.0.0.RC1";uses:="jav
+ dule.bd.standards.business.serviceimpl;version="1.0.0.RC2";uses:="jav
  ax.persistence,net.nan21.dnet.core.business.service,net.nan21.dnet.mo
  dule.bd.standards.business.service,net.nan21.dnet.module.bd.standards
  .domain.entity",net.nan21.dnet.module.bd.uom.business.serviceimpl;ver
- sion="1.0.0.RC1";uses:="javax.persistence,net.nan21.dnet.core.busines
+ sion="1.0.0.RC2";uses:="javax.persistence,net.nan21.dnet.core.busines
  s.service,net.nan21.dnet.module.bd.uom.business.service,net.nan21.dne
  t.module.bd.uom.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.core.busi
- ness;version="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.bd.domain;vers
- ion="[1.0.0.RC1,1.0.0.RC1]",nan21.dnet.module.ad.domain;version="[1.0
- .0.RC1,1.0.0.RC1]",nan21.dnet.module.bd.business.api;version="[1.0.0.
- RC1,1.0.0.RC1]"
+ dnet.core.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.core.busi
+ ness;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.bd.domain;vers
+ ion="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.ad.domain;version="[1.0
+ .0.RC2,1.0.0.RC2]",nan21.dnet.module.bd.business.api;version="[1.0.0.
+ RC2,1.0.0.RC2]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC1
+Bundle-Version: 1.0.0.RC2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet BD - business
 Bundle-ManifestVersion: 2
@@ -43,22 +43,23 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,javax.v
  alidation;version="[1.0,2.0)",net.nan21.dnet.core.api,net.nan21.dnet.
  core.api.service,net.nan21.dnet.core.api.session,net.nan21.dnet.core.
- api.setup,net.nan21.dnet.core.business.persistenceunit,net.nan21.dnet
- .core.business.service,net.nan21.dnet.module.bd.contact.business.serv
- ice,net.nan21.dnet.module.bd.contact.domain.entity,net.nan21.dnet.mod
- ule.bd.currency.business.service,net.nan21.dnet.module.bd.currency.do
- main.entity,net.nan21.dnet.module.bd.elem.business.service,net.nan21.
- dnet.module.bd.elem.domain.entity,net.nan21.dnet.module.bd.geo.busine
- ss.service,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.
- module.bd.org.business.service,net.nan21.dnet.module.bd.org.domain.en
- tity,net.nan21.dnet.module.bd.standards.business.service,net.nan21.dn
- et.module.bd.standards.domain.entity,net.nan21.dnet.module.bd.uom.bus
- iness.service,net.nan21.dnet.module.bd.uom.domain.entity,org.aopallia
- nce.aop;version="[1.0,2.0)",org.hibernate.validator;version="[4.0,5.0
- )",org.hibernate.validator.constraints;version="[4.0,5.0)",org.spring
- framework.aop;version="[3.0,3.1)",org.springframework.aop.framework;v
- ersion="[3.0,3.1)",org.springframework.context.weaving;version="[3.0,
- 3.1)",org.springframework.orm.jpa,org.springframework.orm.jpa.vendor,
- org.springframework.transaction;version="[3.0,3.1)",org.springframewo
- rk.transaction.aspectj;version="[3.0,3.1)"
+ api.setup,net.nan21.dnet.core.api.wf,net.nan21.dnet.core.business.per
+ sistenceunit,net.nan21.dnet.core.business.service,net.nan21.dnet.modu
+ le.bd.contact.business.service,net.nan21.dnet.module.bd.contact.domai
+ n.entity,net.nan21.dnet.module.bd.currency.business.service,net.nan21
+ .dnet.module.bd.currency.domain.entity,net.nan21.dnet.module.bd.elem.
+ business.service,net.nan21.dnet.module.bd.elem.domain.entity,net.nan2
+ 1.dnet.module.bd.geo.business.service,net.nan21.dnet.module.bd.geo.do
+ main.entity,net.nan21.dnet.module.bd.org.business.service,net.nan21.d
+ net.module.bd.org.domain.entity,net.nan21.dnet.module.bd.standards.bu
+ siness.service,net.nan21.dnet.module.bd.standards.domain.entity,net.n
+ an21.dnet.module.bd.uom.business.service,net.nan21.dnet.module.bd.uom
+ .domain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.eclipse.pe
+ rsistence.jpa;version="[2.1,2.5)",org.hibernate.validator;version="[4
+ .0,5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)",org.
+ springframework.aop;version="[3.0,3.1)",org.springframework.aop.frame
+ work;version="[3.0,3.1)",org.springframework.context.weaving;version=
+ "[3.0,3.1)",org.springframework.orm.jpa,org.springframework.orm.jpa.v
+ endor,org.springframework.transaction;version="[3.0,3.1)",org.springf
+ ramework.transaction.aspectj;version="[3.0,3.1)"
 

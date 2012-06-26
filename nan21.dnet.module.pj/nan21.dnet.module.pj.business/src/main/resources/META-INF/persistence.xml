@@ -2,45 +2,39 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
-	<persistence-unit name="net.nan21.dnet"
-		transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="net.nan21.dnet" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-	 
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory</class>		 
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectType</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectRole</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueCategory</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueType</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueStatus</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssuePriority</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueSeverity</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueResolution</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueTextType</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueLinkType</class>
-	 	 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueTaskStatus</class>
-		 <class>net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType</class>
-		  
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.Project</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectMember</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.Issue</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueTask</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueText</class>
-		 <class>net.nan21.dnet.module.pj.md.domain.entity.IssueLink</class>
-	 
-		 <!-- Dependencies -->
-		 
-		 <class>net.nan21.dnet.module.ad.data.domain.entity.Attachment</class>
-		<class>net.nan21.dnet.module.ad.data.domain.entity.AttachmentType</class>
-		
-		 <class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgn</class>
-		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
-		
-		 <class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
-		 <class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
-		 
+
+		<!-- Declared -->
+
+		<class>net.nan21.dnet.module.pj.base.domain.entity.ProjectCategory</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.ProjectType</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.ProjectRole</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.ProjectStatus</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.IssueCategory</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.IssueType</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.IssueStatus</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.IssuePriority</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.IssueSeverity</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.IssueResolution</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.IssueTextType</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.IssueLinkType</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.IssueTaskType</class>
+		<class>net.nan21.dnet.module.pj.base.domain.entity.IssueTaskStatus</class>
+		<class>net.nan21.dnet.module.pj.md.domain.entity.Project</class>
+		<class>net.nan21.dnet.module.pj.md.domain.entity.ProjectMember</class>
+		<class>net.nan21.dnet.module.pj.md.domain.entity.ProjectComponent</class>
+		<class>net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion</class>
+		<class>net.nan21.dnet.module.pj.md.domain.entity.Issue</class>
+		<class>net.nan21.dnet.module.pj.md.domain.entity.IssueTask</class>
+		<class>net.nan21.dnet.module.pj.md.domain.entity.IssueText</class>
+		<class>net.nan21.dnet.module.pj.md.domain.entity.IssueLink</class>
+
+		<!-- Dependencies -->
+
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
+		<class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
+
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

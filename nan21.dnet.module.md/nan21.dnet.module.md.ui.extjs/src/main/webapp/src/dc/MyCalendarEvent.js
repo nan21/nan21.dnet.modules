@@ -84,7 +84,7 @@ Ext.define("net.nan21.dnet.module.md.activity.dc.MyCalendarEvent$Create", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addCombo({ name:"eventType", xtype:"localcombo", dataIndex:"eventType",anchor:"-20" ,store:[ "call", "meeting", "task"]  })
+		.addCombo({ name:"eventType", xtype:"localcombo", dataIndex:"eventType" ,store:[ "call", "meeting", "task"]  })
 		//containers
 		.addPanel({ name:"main", layout:"form" , autoScroll:true, width:250})     
 		;     
@@ -105,14 +105,14 @@ Ext.define("net.nan21.dnet.module.md.activity.dc.MyCalendarEvent$EditCall", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"subject", dataIndex:"subject",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:80,anchor:"-20"   })
-		.addDateTimeField({ name:"startDate", dataIndex:"startDate",anchor:"-20" ,allowBlank:false})
-		.addDateTimeField({ name:"endDate", dataIndex:"endDate",anchor:"-20" ,allowBlank:false})
-		.addDateField({ name:"dueDate", dataIndex:"dueDate",anchor:"-20" })
-		.addLov({ name:"statusName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventStatusCall", dataIndex:"statusName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
-		.addLov({ name:"priorityName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventPrioritiesCall", dataIndex:"priorityName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
-		.addLov({ name:"contact", xtype:"net.nan21.dnet.module.md.bp.lovs.BpContacts", dataIndex:"contact",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "contactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "bpartnerId"} ]  })
+		.addTextField({ name:"subject", dataIndex:"subject" ,allowBlank:false,maxLength:255  })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:80   })
+		.addDateTimeField({ name:"startDate", dataIndex:"startDate" ,allowBlank:false})
+		.addDateTimeField({ name:"endDate", dataIndex:"endDate" ,allowBlank:false})
+		.addDateField({ name:"dueDate", dataIndex:"dueDate" })
+		.addLov({ name:"statusName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventStatusCall", dataIndex:"statusName" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
+		.addLov({ name:"priorityName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventPrioritiesCall", dataIndex:"priorityName" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
+		.addLov({ name:"contact", xtype:"net.nan21.dnet.module.md.bp.lovs.BpContacts", dataIndex:"contact" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "contactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "bpartnerId"} ]  })
 		//containers
 		.addPanel({ name:"row1", layout:"form" , width:700})     
 		.addPanel({ name:"col1", layout:"form" , width:280})     
@@ -143,16 +143,16 @@ Ext.define("net.nan21.dnet.module.md.activity.dc.MyCalendarEvent$EditMeeting", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"subject", dataIndex:"subject",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:80,anchor:"-20"   })
-		.addTextField({ name:"location", dataIndex:"location",anchor:"-20" ,maxLength:4000  })
-		.addDateTimeField({ name:"startDate", dataIndex:"startDate",anchor:"-20" ,allowBlank:false})
-		.addDateTimeField({ name:"endDate", dataIndex:"endDate",anchor:"-20" ,allowBlank:false})
-		.addDateField({ name:"dueDate", dataIndex:"dueDate",anchor:"-20" })
-		.addLov({ name:"statusName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventStatusMeeting", dataIndex:"statusName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
-		.addNumberField({ name:"priorityId", dataIndex:"priorityId",anchor:"-20",noEdit:true   , style: "text-align:right;" })
-		.addLov({ name:"priorityName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventPrioritiesMeeting", dataIndex:"priorityName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
-		.addLov({ name:"contact", xtype:"net.nan21.dnet.module.md.bp.lovs.BpContacts", dataIndex:"contact",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "contactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "bpartnerId"} ]  })
+		.addTextField({ name:"subject", dataIndex:"subject" ,allowBlank:false,maxLength:255  })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:80   })
+		.addTextField({ name:"location", dataIndex:"location" ,maxLength:4000  })
+		.addDateTimeField({ name:"startDate", dataIndex:"startDate" ,allowBlank:false})
+		.addDateTimeField({ name:"endDate", dataIndex:"endDate" ,allowBlank:false})
+		.addDateField({ name:"dueDate", dataIndex:"dueDate" })
+		.addLov({ name:"statusName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventStatusMeeting", dataIndex:"statusName" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
+		.addNumberField({ name:"priorityId", dataIndex:"priorityId",noEdit:true   , style: "text-align:right;" })
+		.addLov({ name:"priorityName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventPrioritiesMeeting", dataIndex:"priorityName" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
+		.addLov({ name:"contact", xtype:"net.nan21.dnet.module.md.bp.lovs.BpContacts", dataIndex:"contact" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "contactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "bpartnerId"} ]  })
 		//containers
 		.addPanel({ name:"row1", layout:"form" , width:700})     
 		.addPanel({ name:"col1", layout:"form" , width:280})     
@@ -186,13 +186,13 @@ Ext.define("net.nan21.dnet.module.md.activity.dc.MyCalendarEvent$EditTask", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
-		.addTextField({ name:"subject", dataIndex:"subject",anchor:"-20" ,allowBlank:false,maxLength:255  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:80,anchor:"-20"   })
-		.addDateTimeField({ name:"startDate", dataIndex:"startDate",anchor:"-20" ,allowBlank:false})
-		.addDateTimeField({ name:"endDate", dataIndex:"endDate",anchor:"-20" ,allowBlank:false})
-		.addDateField({ name:"dueDate", dataIndex:"dueDate",anchor:"-20" })
-		.addLov({ name:"statusName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventStatusTask", dataIndex:"statusName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
-		.addLov({ name:"priorityName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventPrioritiesTask", dataIndex:"priorityName",anchor:"-20" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
+		.addTextField({ name:"subject", dataIndex:"subject" ,allowBlank:false,maxLength:255  })
+		.addTextArea({ name:"notes", dataIndex:"notes",height:80   })
+		.addDateTimeField({ name:"startDate", dataIndex:"startDate" ,allowBlank:false})
+		.addDateTimeField({ name:"endDate", dataIndex:"endDate" ,allowBlank:false})
+		.addDateField({ name:"dueDate", dataIndex:"dueDate" })
+		.addLov({ name:"statusName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventStatusTask", dataIndex:"statusName" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "statusId"} ]  })
+		.addLov({ name:"priorityName", xtype:"net.nan21.dnet.module.md.activity.lovs.CalendarEventPrioritiesTask", dataIndex:"priorityName" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priorityId"} ]  })
 		//containers
 		.addPanel({ name:"row1", layout:"form" , width:700})     
 		.addPanel({ name:"col1", layout:"form" , width:280})     

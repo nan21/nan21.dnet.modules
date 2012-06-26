@@ -12,6 +12,8 @@ public class ActDeploymentDsFilter extends AbstractBaseDsFilter {
 
     private String id;
 
+    private Long clientId;
+
     private String name;
 
     private Date deployTime;
@@ -28,6 +30,14 @@ public class ActDeploymentDsFilter extends AbstractBaseDsFilter {
     public void setId(Object id) {
         this.id = (String) id;
 
+    }
+
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getName() {

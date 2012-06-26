@@ -6,7 +6,7 @@
         <createTable tableName="XT_QRTZ_FIRED_TRIGGERS">
 			<column name="ENTRY_ID" type="varchar(255)">
 				<constraints nullable="false" /></column>	 
-			<column name="FIRED_TIME" type="datetime">
+			<column name="FIRED_TIME" type="bigint">
 				<constraints nullable="false" /></column>	 
 			<column name="INSTANCE_NAME" type="varchar(255)">
 				<constraints nullable="false" /></column>	 

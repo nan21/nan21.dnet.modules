@@ -17,6 +17,7 @@ public class ActMyTaskDsQueryBuilder extends
 
     @Override
     public void setFilter(ActMyTaskDsFilter filter) {
+        filter.setClientId(Session.user.get().getClientId());
         filter.setOwner(Session.user.get().getUsername());
         this.filter = filter;
     }

@@ -18,6 +18,8 @@ public class ActTaskInstanceHistoryDsFilter extends AbstractBaseDsFilter {
 
     private String processDefinitionId;
 
+    private Long clientId;
+
     private String executionId;
 
     private String name;
@@ -84,6 +86,14 @@ public class ActTaskInstanceHistoryDsFilter extends AbstractBaseDsFilter {
 
     public void setProcessDefinitionId(String processDefinitionId) {
         this.processDefinitionId = processDefinitionId;
+    }
+
+    public Long getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getExecutionId() {
