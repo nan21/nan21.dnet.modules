@@ -34,7 +34,7 @@ payroll-ro;salariu_baza_impozit;2012-01-01 24:00;;"function baza_calcul ( v,d ){
 }
 
 baza_calcul ( salariu_net , deducere_tot )"
-payroll-ro;salariu_brut;2012-01-01 24:00;;_employee.baseSalary
+payroll-ro;salariu_brut;2012-01-01 24:00;;_assignment.baseSalary
 payroll-ro;salariu_net;2012-01-01 24:00;;salariu_brut - taxe_angajat
 payroll-ro;scutit_impozit;2012-01-01 24:00;;false
 payroll-ro;somaj_angajat;2012-01-01 24:00;;Math.round ( 0.5 * salariu_brut / 100 )

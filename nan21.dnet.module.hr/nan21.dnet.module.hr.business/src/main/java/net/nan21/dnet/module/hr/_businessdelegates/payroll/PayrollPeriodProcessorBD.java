@@ -17,6 +17,7 @@ import net.nan21.dnet.module.bd.elem.domain.entity.ElementInput;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.hr.employee.business.service.IEmployeeService;
 import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
+import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeAssignment;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElement;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElementValue;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod;
@@ -69,15 +70,19 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 		this.emplService = (IEmployeeService) this
 				.findEntityService(Employee.class);
 
-		String eqlEmpl = "select e from " + Employee.class.getSimpleName()
-				+ " e " + " where e.clientId = :clientId "
-				+ "   and e.payroll.id = :payrollId ";
+		String eqlEmpl = "select e from "
+				+ EmployeeAssignment.class.getSimpleName() + " e "
+				+ " where e.clientId = :clientId "
+				+ "   and e.payroll.id = :payrollId "
+				+ " and e.validFrom <= :effectiveDate "
+				+ " and ( e.validTo is null or e.validTo>= :effectiveDate)";
 
-		List<Employee> employees = this.emplService.getEntityManager()
-				.createQuery(eqlEmpl, Employee.class).setParameter("clientId",
+		List<EmployeeAssignment> assignments = this.emplService
+				.getEntityManager().createQuery(eqlEmpl,
+						EmployeeAssignment.class).setParameter("clientId",
 						Session.user.get().getClientId()).setParameter(
-						"payrollId", period.getPayroll().getId())
-				.getResultList();
+						"payrollId", period.getPayroll().getId()).setParameter(
+						"effectiveDate", period.getStartDate()).getResultList();
 
 		// load elements
 		String eql = "select e from " + PayrollElement.class.getSimpleName()
@@ -90,13 +95,13 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 				period.getPayroll().getEngine().getId()).setParameter(
 				"clientId", Session.user.get().getClientId()).getResultList();
 
-		for (Employee employee : employees) {
+		for (EmployeeAssignment asgn : assignments) {
 			for (PayrollElement element : elements) {
 				PayrollElementValue elemVal = new PayrollElementValue();
-				elemVal.setEmployee(employee);
+				elemVal.setAssignment(asgn);
 				elemVal.setElement(element);
 				elemVal.setPeriod(period);
-				elemVal.setOrg(employee.getEmployer());
+				elemVal.setOrg(asgn.getEmployee().getEmployer());
 				this.emplService.getEntityManager().persist(elemVal);
 			}
 		}
@@ -113,16 +118,23 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 	public void process(PayrollPeriod period) throws Exception {
 		this.emplService = (IEmployeeService) this
 				.findEntityService(Employee.class);
-		String eqlEmpl = "select e from " + Employee.class.getSimpleName()
-				+ " e " + " where e.clientId = :clientId "
-				+ "   and e.payroll.id = :payrollId ";
 
-		List<Employee> employees = this.emplService.getEntityManager()
-				.createQuery(eqlEmpl, Employee.class).setParameter("clientId",
+		String eqlEmpl = "select e from "
+				+ EmployeeAssignment.class.getSimpleName() + " e "
+				+ " where e.clientId = :clientId "
+				+ "   and e.payroll.id = :payrollId  "
+				+ " and e.validFrom <= :effectiveDate "
+				+ " and ( e.validTo is null or e.validTo>= :effectiveDate)";
+
+		List<EmployeeAssignment> assignments = this.emplService
+				.getEntityManager().createQuery(eqlEmpl,
+						EmployeeAssignment.class).setParameter("clientId",
 						Session.user.get().getClientId()).setParameter(
-						"payrollId", period.getPayroll().getId())
-						.setHint(QueryHints.LEFT_FETCH, "e.contacts")
-						.getResultList();
+						"payrollId", period.getPayroll().getId()).setParameter(
+						"effectiveDate", period.getStartDate()).setHint(
+						QueryHints.FETCH, "e.employee").setHint(
+						QueryHints.LEFT_FETCH, "e.employee.contacts")
+				.getResultList();
 
 		// load elements
 		String eql = "select e from " + PayrollElement.class.getSimpleName()
@@ -158,9 +170,9 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 			this.formulas.put(formula.getElement().getCode(), formula);
 		}
 
-		// do the work for each employee
-		for (Employee employee : employees) {
-			this.processPayrollPeriod(period, employee);
+		// do the work for each employee assignment
+		for (EmployeeAssignment asgn : assignments) {
+			this.processPayrollPeriod(period, asgn);
 		}
 
 		// calculate totals
@@ -196,17 +208,19 @@ public class PayrollPeriodProcessorBD extends AbstractBusinessDelegate {
 	 * @param employee
 	 * @throws Exception
 	 */
-	protected void processPayrollPeriod(PayrollPeriod period, Employee employee)
+	protected void processPayrollPeriod(PayrollPeriod period, EmployeeAssignment assignment)
 			throws Exception {
 
 		Map<String, PayrollElementValue> elemValMap = new HashMap<String, PayrollElementValue>();
 		ScriptEngine engine = this.getScriptEngine();
+		Employee employee = assignment.getEmployee();
+		engine.put("_assignment", assignment);
 		engine.put("_employee", employee);
 
 		for (PayrollElement element : this.elements) {
 
 			PayrollElementValue elemVal = new PayrollElementValue();
-			elemVal.setEmployee(employee);
+			elemVal.setAssignment(assignment);
 			elemVal.setElement(element);
 			elemVal.setPeriod(period);
 			elemVal.setOrg(employee.getEmployer());

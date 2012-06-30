@@ -1,9 +1,11 @@
 Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI$Trl", { 
+	listVars__ttl : "Variabile",
 	wdwAssignTask__ttl : "Alocă",
 	canvasProcess__ttl : "Procese definite",
 	canvasRunningInstance__ttl : "Instanţe active",
+	panelRunningTask__ttl : "Activităţi",
 	canvasFinishedInstance__ttl : "Instanţe finalizate",
-	canvasDeployment__ttl : "Distribuţii",
+	canvasDeployment__ttl : "Instalări",
 	
 	
 	btnStartProcess__ttl : "Porneşte instanţă",
@@ -12,6 +14,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI$Trl", {
 	btnGetProcessDefinitionDiagram__desc : "Deschide diagrama procesului selectat",
 	btnGetProcessDefinitionXml__ttl : "Fişier XML",
 	btnGetProcessDefinitionXml__desc : "Deschide fişierul xml al procesului selectat",
+	btnGetProcessInstanceXml__ttl : "Fişier XML",
+	btnGetProcessInstanceXml__desc : "Deschide fişierul xml al procesului selectat",
 	btnGetProcessInstanceDiagram__ttl : "Diagramă",
 	btnGetProcessInstanceDiagram__desc : "Deschide diagrama instanţei selectate",
 	btnKillProcessInstance__ttl : "Opreşte instanţa",
@@ -25,9 +29,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI$Trl", {
 	btnUploadForDeployment__ttl : "Upload...",
 	btnUploadForDeployment__desc : "Upload arhiva pentru instalare",
 	btnDeleteDeployment__ttl : "Şterge",
-	btnDeleteDeployment__desc : "Şterge distributia selectată",
+	btnDeleteDeployment__desc : "Şterge instalarea selectată",
 	btnDeleteCascadeDeployment__ttl : "Şterge cascadat",
-	btnDeleteCascadeDeployment__desc : "Şterge distributia selectată cu toate dependinţele ",
+	btnDeleteCascadeDeployment__desc : "Şterge instalarea selectată cu toate dependinţele ",
 	
 	title: "Administrare workflow"
 });	

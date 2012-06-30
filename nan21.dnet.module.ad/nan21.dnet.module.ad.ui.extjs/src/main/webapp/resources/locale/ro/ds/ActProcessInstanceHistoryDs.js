@@ -6,10 +6,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActProcessInstanceHistory
 	startTime__lbl :  "Început la",
 	endTime__lbl :  "Sfârşit la",
 	duration__lbl :  "Durata",
-	startedBy__lbl :  "Început de",
+	durationText__lbl :  "@durationText",	startedBy__lbl :  "Început de",
 	startAction__lbl :  "Acţiune început",
 	endAction__lbl :  "Acţiune sfârşit",
-		 
+	deleteReason__lbl :  "@deleteReason",		 
 	processFullName__lbl : "Proces",
 	id__lbl :"ID"
 });

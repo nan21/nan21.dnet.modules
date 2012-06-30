@@ -19,6 +19,7 @@ import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
@@ -31,6 +32,8 @@ import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
+
+import net.nan21.dnet.core.api.util.Duration;
 
 /** ActTaskInstanceHistory. */
 @Entity
@@ -214,6 +217,15 @@ public class ActTaskInstanceHistory implements IModelWithId {
 
     public void setDuration(Long duration) {
         this.duration = duration;
+    }
+
+    @Transient
+    public String getDurationText() {
+        return Duration.format(this.duration);
+    }
+
+    public void setDurationText(String durationText) {
+
     }
 
     public String getDeleteReason() {

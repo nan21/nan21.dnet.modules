@@ -7,6 +7,10 @@
 
 		<!-- Declared -->
 
+		<class>net.nan21.dnet.module.bd.attr.domain.entity.AttributeCategory</class>
+		<class>net.nan21.dnet.module.bd.attr.domain.entity.Attribute</class>
+		<class>net.nan21.dnet.module.bd.attr.domain.entity.AttributeSet</class>
+		<class>net.nan21.dnet.module.bd.attr.domain.entity.AttributeSetAttribute</class>
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannelType</class>
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannel</class>
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
@@ -42,6 +46,7 @@
 
 		<!-- Dependencies -->
 
+		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
 
 		<properties>
 			<property name="eclipselink.weaving" value="static" />

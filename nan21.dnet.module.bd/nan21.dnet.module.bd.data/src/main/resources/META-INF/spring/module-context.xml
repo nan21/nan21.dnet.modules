@@ -150,6 +150,38 @@
 									value="classpath:net/nan21/dnet/module/bd/data/demo/ElementType.csv" />
 							</bean>
 						
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="160" />
+								<property name="dsName" value="AttributeCategory" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/demo/AttributeCategory.csv" />
+							</bean>
+						
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="170" />
+								<property name="dsName" value="Attribute" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/demo/Attribute.csv" />
+							</bean>
+						
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="180" />
+								<property name="dsName" value="AttributeSet" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/demo/AttributeSet.csv" />
+							</bean>
+						
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="190" />
+								<property name="dsName" value="AttributeSetAttribute" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/demo/AttributeSetAttribute.csv" />
+							</bean>
+						
 						</list>
 					</property>		
 				</bean>		

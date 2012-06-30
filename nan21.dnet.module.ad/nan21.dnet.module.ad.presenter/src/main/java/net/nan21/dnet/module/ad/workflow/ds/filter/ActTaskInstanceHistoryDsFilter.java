@@ -43,6 +43,8 @@ public class ActTaskInstanceHistoryDsFilter extends AbstractBaseDsFilter {
     private Long duration_From;
     private Long duration_To;
 
+    private String durationText;
+
     private String deleteReason;
 
     private Long priority;
@@ -198,6 +200,14 @@ public class ActTaskInstanceHistoryDsFilter extends AbstractBaseDsFilter {
 
     public void setDuration_To(Long duration_To) {
         this.duration_To = duration_To;
+    }
+
+    public String getDurationText() {
+        return this.durationText;
+    }
+
+    public void setDurationText(String durationText) {
+        this.durationText = durationText;
     }
 
     public String getDeleteReason() {

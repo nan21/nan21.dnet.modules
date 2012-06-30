@@ -3,22 +3,48 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 20;Absence_UI;Absences;;net.nan21.dnet.module.hr.time.frame.Absence_UI;nan21.dnet.module.hr.ui.extjs;true;817C5A5D-BAAC-4203-87A1-51621A426E4F
 30;AccBalance_UI;Account balance;;net.nan21.dnet.module.md.tx.acc.frame.AccBalance_UI;nan21.dnet.module.md.ui.extjs;true;DEF6B16F-056B-47DF-BA40-B2CDAF9AF807
 10;AccDoc_UI;Accounting documents;;net.nan21.dnet.module.md.tx.acc.frame.AccDoc_UI;nan21.dnet.module.md.ui.extjs;true;6273476A-FCFD-40F5-9F96-71DB3185E7A1
+10;AccessControl_UI;Access rights;;net.nan21.dnet.module.ad.usr.frame.AccessControl_UI;nan21.dnet.module.ad.ui.extjs;true;D51A153A-12BC-4C65-A931-378E129F6778
 30;AccItem_UI;G/L Items;;net.nan21.dnet.module.md.acc.frame.AccItem_UI;nan21.dnet.module.md.ui.extjs;true;2508B556-21EA-4A31-9C2E-50B2063C0EE2
 40;AccJournal_UI;Journals;;net.nan21.dnet.module.md.acc.frame.AccJournal_UI;nan21.dnet.module.md.ui.extjs;true;289D1F15-FDB2-4F73-AF0E-32AB36140AAF
 20;AccOperation_UI;Great ledger;;net.nan21.dnet.module.md.tx.acc.frame.AccOperation_UI;nan21.dnet.module.md.ui.extjs;true;12D14FA6-B3DC-4EBB-A856-CC370BB93A4A
-10;AccSchema_UI;Accounting schema;;net.nan21.dnet.module.md.acc.frame.AccSchema_UI;nan21.dnet.module.md.ui.extjs;true;3D778172-22F6-4B53-85FF-033C52645A7A
-10;AccessControl_UI;Access rights;;net.nan21.dnet.module.ad.usr.frame.AccessControl_UI;nan21.dnet.module.ad.ui.extjs;true;D51A153A-12BC-4C65-A931-378E129F6778
 20;Account_UI;Account chart;;net.nan21.dnet.module.md.acc.frame.Account_UI;nan21.dnet.module.md.ui.extjs;true;F8F79B22-CC86-4083-95B7-2BE81CA8067E
+10;AccSchema_UI;Accounting schema;;net.nan21.dnet.module.md.acc.frame.AccSchema_UI;nan21.dnet.module.md.ui.extjs;true;3D778172-22F6-4B53-85FF-033C52645A7A
+2;ad-menu-acl;Access control;;;;true;FD12B382-6EE9-4A9D-9840-819336E50778
+10;ad-menu-client;Client;AD;;;true;B27EFBE3-AD79-4ACC-AD09-2C1B0547F643
+40;ad-menu-data;Data;AD;;;true;EA26207C-E2F4-4F45-ACF8-6EBFD749B02C
+2;ad-menu-exp;Export;;;;true;E84BBD96-A771-439C-962A-ADAB03D9D624
+1;ad-menu-imp;Import;;;;true;CF424C67-DE29-4C7D-9B90-171C72A5AA97
+50;ad-menu-impex;Import-Export;AD;;;true;71AA9DAA-2E27-41E1-B34C-043C56FCFCC3
+80;ad-menu-job;Jobs;AD;;;true;EBEA50FD-EC2E-4546-BD58-D49CB98A3E93
+70;ad-menu-rep;Reports;AD;;;true;D9B488AD-4BF4-4996-90D5-0F6B39B1D2D4
+30;ad-menu-security;Security;AD;;;true;06FDEFA3-64B7-4528-89B4-18D3EEB769C8
+20;ad-menu-system;System;AD;;;true;976A2A38-651F-4F12-96B0-08362141E7BC
+1;ad-menu-usr;Users;;;;true;561C6150-96A6-4862-B2B0-2842E2423971
+60;ad-menu-wf;Workflow;AD;;;true;3B737108-CA87-4E1B-A68E-5EFE3AACD401
 30;AsgnAccessControl_UI;Access rights - ASGN;;net.nan21.dnet.module.ad.usr.frame.AsgnAccessControl_UI;nan21.dnet.module.ad.ui.extjs;true;2CED6C56-5E0B-49F9-A237-0D1A715F3614
 50;Assignables_UI;Assignable resources;;net.nan21.dnet.module.ad.usr.frame.Assignables_UI;nan21.dnet.module.ad.ui.extjs;true;D5ADDF62-C11C-4168-A445-3D7B5D2F9870
-10;AttachmentType_UI;Attachment types;;net.nan21.dnet.module.ad.data.frame.AttachmentType_UI;nan21.dnet.module.ad.ui.extjs;true;C649AD16-C126-43C2-964A-BFFF8701518B
 20;Attachments_UI;Attachments;;net.nan21.dnet.module.ad.data.frame.Attachments_UI;nan21.dnet.module.ad.ui.extjs;true;670F1069-34AD-4ACD-9CB4-306619FB2D5D
-20;AttributeDefs_UI;Attributes definition;;net.nan21.dnet.module.md.base.attr.frame.AttributeDefs_UI;nan21.dnet.module.md.ui.extjs;true;491433F5-BC8F-446E-934C-9A29C8B0CE44
+10;AttachmentType_UI;Attachment types;;net.nan21.dnet.module.ad.data.frame.AttachmentType_UI;nan21.dnet.module.ad.ui.extjs;true;C649AD16-C126-43C2-964A-BFFF8701518B
+20;AttributeBaseData_UI;Attributes base data;;net.nan21.dnet.module.bd.attr.frame.AttributeBaseData_UI;nan21.dnet.module.bd.ui.extjs;true;491433F5-BC8F-446E-934C-9A29C8B0CE44
+20;Attributes_UI;Attributes;;net.nan21.dnet.module.bd.attr.frame.Attributes_UI;nan21.dnet.module.bd.ui.extjs;true;491633F5-BC8F-446E-934C-9A29C8B0CE44
+30;AttributeSet_UI;Attribute sets;;net.nan21.dnet.module.bd.attr.frame.AttributeSet_UI;nan21.dnet.module.bd.ui.extjs;true;491433F5-BC8F-446E-934C-9A19C8B0CE44
 70;AuditFieldRep_UI;Audit trails;;net.nan21.dnet.module.ad.system.frame.AuditFieldRep_UI;nan21.dnet.module.ad.ui.extjs;true;C0C9C35B-094C-402C-A655-4D33ACA7BEC2
-10;BP_BaseData_UI;Definitions (BP);;net.nan21.dnet.module.md.bp.frame.BP_BaseData_UI;nan21.dnet.module.md.ui.extjs;true;7DEC3F4B-C848-4EFE-A1FC-CA2561C4E45C
-10;BPartner_UI;Business partners;;net.nan21.dnet.module.md.bp.frame.BPartner_UI;nan21.dnet.module.md.ui.extjs;true;4226A1AE-A154-41B2-ADB1-B438E36A132D
 20;Bank_UI;Banks;;net.nan21.dnet.module.md.bp.frame.Bank_UI;nan21.dnet.module.md.ui.extjs;true;41F5A6CD-2315-4D07-BF4D-E8B44482311F
+47;bd-menu-attr;Attributes;BD;;;true;E8002ADF-FCCB-45A2-85D0-F5377D352DE3
+50;bd-menu-contact;Collaboration;BD;;;true;CF4D8060-521B-41C8-BB5E-822A7284EBF9
+20;bd-menu-currency;Currencies;BD;;;true;D32EAE39-2BC4-4A04-8ED9-2CEA7E6E413B
+45;bd-menu-elem;Elements;BD;;;true;AC68C550-6C98-4CBA-A5B8-573A9A756B80
+10;bd-menu-geo;Geography;BD;;;true;E45F2196-7075-4F14-9360-5F1A77AE68DF
+70;bd-menu-org;Organizations;BD;;;true;F0D7D634-E829-42E4-BA5D-027B1F17AB31
+40;bd-menu-stds;Standards;BD;;;true;BEB967DD-DBAB-4E4D-A419-83705A309E01
+60;bd-menu-time;Time control;BD;;;true;284C2EE0-CC4F-4A20-B8EA-5538510B601C
+30;bd-menu-uom;Measuring units;BD;;;true;39CDD4DD-9547-49AE-A193-086B0D8A75EC
+20;bp-menu;Business partners;MD;;;true;E72F3977-9404-47A6-BB25-93CB666E4391
+;bp-menu-base;Base-data;;;;true;CF606508-6A3C-4166-9AB5-C38BF2B41855
+;bp-menu-md;Master-data;;;;true;E832FE4D-A8B3-4CE1-A06F-3279A319C56F
 30;BpAccount_UI;Business partner accounts;;net.nan21.dnet.module.md.bp.frame.BpAccount_UI;nan21.dnet.module.md.ui.extjs;true;A0203096-4CC5-43AC-89E2-C8D63BE6808A
+10;BPartner_UI;Business partners;;net.nan21.dnet.module.md.bp.frame.BPartner_UI;nan21.dnet.module.md.ui.extjs;true;4226A1AE-A154-41B2-ADB1-B438E36A132D
+10;BP_BaseData_UI;Definitions (BP);;net.nan21.dnet.module.md.bp.frame.BP_BaseData_UI;nan21.dnet.module.md.ui.extjs;true;7DEC3F4B-C848-4EFE-A1FC-CA2561C4E45C
 10;CalendarEventTypeDef_UI;Calendar event definitions;;net.nan21.dnet.module.md.activity.frame.CalendarEventTypeDef_UI;nan21.dnet.module.md.ui.extjs;true;0D2D4C0C-46E4-4DF5-93F8-F4D9541C9306
 10;Calendars_UI;Calendars;;net.nan21.dnet.module.bd.org.frame.Calendars_UI;nan21.dnet.module.bd.ui.extjs;true;D19315B7-2569-4B1A-8E12-5118EDA3DBB8
 10;Classifications_UI;Classifications;;net.nan21.dnet.module.bd.standards.frame.Classifications_UI;nan21.dnet.module.bd.ui.extjs;true;126FB5FB-2F6D-4142-B6A3-87FE0E2191AF
@@ -30,21 +56,38 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 20;Course_UI;Courses;;net.nan21.dnet.module.hr.training.frame.Course_UI;nan21.dnet.module.hr.ui.extjs;true;EDC35A62-2153-494E-81D8-D13188D19453
 10;CsvExport_UI;CSV exports;;net.nan21.dnet.module.ad.impex.frame.CsvExport_UI;nan21.dnet.module.ad.ui.extjs;true;400C3335-146E-49E0-BDAE-0A029D22CC5B
 10;Currencies_UI;Currencies;;net.nan21.dnet.module.bd.currency.frame.Currencies_UI;nan21.dnet.module.bd.ui.extjs;true;7F316044-9EB2-4164-BC41-B248ADDA0B2F
-30;CurrencyXRates_UI;Currency exchange rates;;net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI;nan21.dnet.module.bd.ui.extjs;true;B559A2C4-4FF3-471D-827D-E5F44696747D
 20;CurrencyXrateProvider_UI;Currency exchange rate providers;;net.nan21.dnet.module.bd.currency.frame.CurrencyXrateProvider_UI;nan21.dnet.module.bd.ui.extjs;true;920218F8-71C3-4F8D-B5FC-667793A31027
+30;CurrencyXRates_UI;Currency exchange rates;;net.nan21.dnet.module.bd.currency.frame.CurrencyXRates_UI;nan21.dnet.module.bd.ui.extjs;true;B559A2C4-4FF3-471D-827D-E5F44696747D
 20;DsAccessControl_UI;Access rights - DS;;net.nan21.dnet.module.ad.usr.frame.DsAccessControl_UI;nan21.dnet.module.ad.ui.extjs;true;E3198FA1-3AE6-4F92-8451-8540C157AC05
 40;DsMethodAccessControl_UI;Access rights - DS method;;net.nan21.dnet.module.ad.usr.frame.DsMethodAccessControl_UI;nan21.dnet.module.ad.ui.extjs;true;A372E0B4-F390-4DFC-8A8C-4B6283B73562
 20;ElementBaseData_UI;Element base data;;net.nan21.dnet.module.bd.elem.frame.ElementBaseData_UI;nan21.dnet.module.bd.ui.extjs;true;8286EB0F-043E-4108-920D-7FB3C73D9B79
 30;ElementSet_UI;Element set;;net.nan21.dnet.module.bd.elem.frame.ElementSet_UI;nan21.dnet.module.bd.ui.extjs;true;0FED9F8D-BF8C-4FDE-BC70-1354E63B0D00
 50;Element_UI;Elements overview;;net.nan21.dnet.module.bd.elem.frame.Element_UI;nan21.dnet.module.bd.ui.extjs;true;69D155B4-C0D9-471C-9584-6B8D7E44E553
+30;EmployeeAssignment_UI;Employee assignments;;net.nan21.dnet.module.hr.employee.frame.EmployeeAssignment_UI;nan21.dnet.module.hr.ui.extjs;true;60AD7412-193C-4F6B-B4C7-CDFB10552B14
 10;EmployeeTypeDefs_UI;Employee base data definition;;net.nan21.dnet.module.hr.employee.frame.EmployeeTypeDefs_UI;nan21.dnet.module.hr.ui.extjs;true;C7FE4BAE-F2ED-458A-8071-5BD26AC1CBBA
 20;Employee_UI;Employees;;net.nan21.dnet.module.hr.employee.frame.Employee_UI;nan21.dnet.module.hr.ui.extjs;true;6DAD7412-193C-4F6B-B4C7-CDFB10552B14
 30;ExportJob_UI;Export jobs;;net.nan21.dnet.module.ad.impex.frame.ExportJob_UI;nan21.dnet.module.ad.ui.extjs;true;3FC4736E-938E-4D7D-B547-F63ABCCEA000
 20;ExportMap_UI;Export file-sets;;net.nan21.dnet.module.ad.impex.frame.ExportMap_UI;nan21.dnet.module.ad.ui.extjs;true;29E3FC38-7B66-4298-B6F9-E855581C36FA
+20;fi-menu-base-acc;Accounting;;;;true;79F531E5-E7CE-4643-A720-35E7B14D853D
+10;fi-menu-base-doc;Document types;;;;true;DBCBBCE8-877F-4872-A1B1-0673A9D5FD18
+40;fi-menu-base-pay;Payment;;;;true;5E257FD1-B828-4FAF-A1F1-694525AD7161
+30;fi-menu-base-tax;Taxes;;;;true;EA2553FD-E708-43D3-B9EF-8FDAABB2B7F8
+20;fi-menu-period;Period control;FI;;;true;60AF479A-A886-4E7C-AE3B-BD744EE0AF6D
+40;fi-menu-tx-acc;Accounting;FI;;;true;642556A1-511A-4BFC-84B8-A8E144FF452E
+30;fi-menu-tx-fin;Financials;FI;;;true;1B70B3A8-C311-4DF0-A857-26333D1E6D73
+10;fii-menu-base;Base data;FI;;;true;83E6185E-05A0-4D79-A602-B012CEFF53F6
 20;FiscalPeriod_UI;Financial periods;;net.nan21.dnet.module.md.base.period.frame.FiscalPeriod_UI;nan21.dnet.module.md.ui.extjs;true;52051D4F-EF5D-45DE-A8F6-5D7C09598494
 10;FiscalYear_UI;Fiscal years;;net.nan21.dnet.module.md.base.period.frame.FiscalYear_UI;nan21.dnet.module.md.ui.extjs;true;E2C76F89-9D03-4810-AED8-C6D15C4EC188
 10;GradeRate_UI;Grade rates;;net.nan21.dnet.module.hr.grade.frame.GradeRate_UI;nan21.dnet.module.hr.ui.extjs;true;DAF8C64C-1C8C-498C-8244-C113BE783E05
 20;Grade_UI;Grades;;net.nan21.dnet.module.hr.grade.frame.Grade_UI;nan21.dnet.module.hr.ui.extjs;true;26F8E4C9-5E5A-4F44-B0A9-6BA264A96167
+40;hr-menu-employee;Employees;HR;;;true;B2979FDB-5E6B-4259-8215-9DA6ABD4DBA9
+20;hr-menu-grade;Grades;HR;;;true;4372B6AB-AB73-4D4F-BB44-BADB61E204F6
+30;hr-menu-job;Jobs;HR;;;true;FB3D0FB1-1F48-4628-A887-7A94EB2AF080
+50;hr-menu-payroll;Payroll;HR;;;true;235D7BDA-C11D-4B6A-B405-3D572E994E56
+5;hr-menu-payroll-setup;Setup;;;;true;E1C6C9AC-AD84-4F9E-9EE0-6330E963BE19
+10;hr-menu-skill;Competence;HR;;;true;A7CD46EF-D7D0-40EF-A622-12F7E9FF4A1B
+70;hr-menu-time;Time management;HR;;;true;44134AF6-B5CF-4924-A08B-1CCE37177FC5
+60;hr-menu-training;Training;HR;;;true;3008E81E-B212-4BED-A456-451948E4EA85
 30;ImportJob_UI;Impport jobs;;net.nan21.dnet.module.ad.impex.frame.ImportJob_UI;nan21.dnet.module.ad.ui.extjs;true;642FE8DE-CA61-49FB-B402-992A59AED7AB
 20;ImportMapItem_UI;Import files;;net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI;nan21.dnet.module.ad.ui.extjs;true;1C8BE8FB-B882-4D0B-A1C6-6D6A3478139A
 10;ImportMap_UI;Import file-sets;;net.nan21.dnet.module.ad.impex.frame.ImportMap_UI;nan21.dnet.module.ad.ui.extjs;true;EA32FC40-E957-4754-ABB7-7C589F5BC7BD
@@ -56,32 +99,40 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 20;IssueBaseData_UI;Issue base data;;net.nan21.dnet.module.pj.base.frame.IssueBaseData_UI;nan21.dnet.module.pj.ui.extjs;true;C7261551-FF16-4B08-A30D-D25AD69A729E
 40;IssueChangelog_UI;Changelog;;net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI;nan21.dnet.module.pj.ui.extjs;true;5AE8367B-D06E-46AF-99FE-9451871B0EC5
 30;IssueRoadmap_UI;Roadmap;;net.nan21.dnet.module.pj.md.frame.IssueRoadmap_UI;nan21.dnet.module.pj.ui.extjs;true;FB460BFF-75C5-4CC2-AAAD-86E9C3B938DA
-30;IssueTask_UI;Tasks;;net.nan21.dnet.module.pj.md.frame.IssueTask_UI;nan21.dnet.module.pj.ui.extjs;true;AB0DF304-6CDA-43DC-8D23-E215EBD33A52
 20;IssuesMnt_UI;Issue maintenance;;net.nan21.dnet.module.pj.md.frame.IssuesMnt_UI;nan21.dnet.module.pj.ui.extjs;true;D6773A6B-7BD1-4C55-8B26-CF0A305748B4
 10;Issues_UI;Incidents;;net.nan21.dnet.module.pj.md.frame.Issues_UI;nan21.dnet.module.pj.ui.extjs;true;66B34DFB-4A38-42FA-93CA-8537881F7C90
+30;IssueTask_UI;Tasks;;net.nan21.dnet.module.pj.md.frame.IssueTask_UI;nan21.dnet.module.pj.ui.extjs;true;AB0DF304-6CDA-43DC-8D23-E215EBD33A52
+10;iv-menu-base;Base data;IV;;;true;D0F468F7-D3BD-4092-965A-0354B8B93E62
+20;iv-menu-tx;Transactions;IV;;;true;2B31BF5A-BE6F-478E-ADD0-79A7206E5B43
 10;JobBaseDataDef_UI;Job base data definitions;;net.nan21.dnet.module.hr.job.frame.JobBaseDataDef_UI;nan21.dnet.module.hr.ui.extjs;true;EDC46F47-90E7-4AEE-93E8-7143216617C2
 20;Job_UI;Jobs;;net.nan21.dnet.module.hr.job.frame.Job_UI;nan21.dnet.module.hr.ui.extjs;true;7EE11642-C32B-4DC5-8B8D-544B880C5D59
 70;Locations_UI;Addresses;;net.nan21.dnet.module.bd.geo.frame.Locations_UI;nan21.dnet.module.bd.ui.extjs;true;B11BBF73-6713-4AA5-933D-2211F962C8BA
 40;Menu_UI;Menus;;net.nan21.dnet.module.ad.usr.frame.Menu_UI;nan21.dnet.module.ad.ui.extjs;true;10C656C3-A81D-4D8F-9D96-EE5CA8D62237
+30;mm-menu;Material management;MD;;;true;D2B954C9-A509-4AEC-9156-0E66984E05D0
+10;mm-menu-base;Base-data;;;;true;E031FB9F-A408-4542-93FC-36EFA3811A93
+20;mm-menu-md;Master-data;;;;true;693AF165-CB18-480C-A803-1FB255391A02
 ;MyCalendarEvent_UI;Calendar events;;net.nan21.dnet.module.md.activity.frame.MyCalendarEvent_UI;nan21.dnet.module.md.ui.extjs;true;DE607C0B-9F37-418C-9DF4-5AFFF939AC65
 10;MyClient_UI;Client info;;net.nan21.dnet.module.ad.client.frame.MyClient_UI;nan21.dnet.module.ad.ui.extjs;true;05E70937-80EA-4EB4-A5D0-723616C573E2
 10;OpportunityBaseData_UI;Opportunity base data;;net.nan21.dnet.module.sd.opportunity.frame.OpportunityBaseData_UI;nan21.dnet.module.sd.ui.extjs;true;045C8A05-4FCF-4E04-B995-0893E56FDB92
 20;Opportunity_UI;Opportunities;;net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI;nan21.dnet.module.sd.ui.extjs;true;3080F737-4D3A-4BD8-BB03-84EB529F6313
 30;Org_UI;Organizations;;net.nan21.dnet.module.bd.org.frame.Org_UI;nan21.dnet.module.bd.ui.extjs;true;7E997AC3-F995-439E-B874-977B458417C8
 50;PayAccount_UI;Financial accounts;;net.nan21.dnet.module.md.org.frame.PayAccount_UI;nan21.dnet.module.md.ui.extjs;true;3E87DDB6-9F6D-4EC6-A240-241FA0B8E4E3
-30;PayScaleRate_UI;Pay scale rates;;net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI;nan21.dnet.module.hr.ui.extjs;true;4C5E399F-A063-45AF-A878-2A6C628912E9
-40;PayScale_UI;Pay scales;;net.nan21.dnet.module.hr.grade.frame.PayScale_UI;nan21.dnet.module.hr.ui.extjs;true;82026F01-7F54-45BE-8DDF-D60299D3A1B1
 10;PaymentIn_UI;Payment In;;net.nan21.dnet.module.sd.invoice.frame.PaymentIn_UI;nan21.dnet.module.sd.ui.extjs;true;0B405E8B-B166-41C0-AF60-BC3C4E30487B
 10;PaymentOut_UI;Payment Out;;net.nan21.dnet.module.sc.invoice.frame.PaymentOut_UI;nan21.dnet.module.sc.ui.extjs;true;A0DFD087-C9C3-4FC6-9496-4AB55FD3CDD9
 10;Payment_UI;Payments;;net.nan21.dnet.module.md.tx.fin.frame.Payment_UI;nan21.dnet.module.md.ui.extjs;true;8233DFB6-B94A-459D-A25C-D5FC9AC7582C
 60;PayrollBalanceValue_UI;Payroll values : balances;;net.nan21.dnet.module.hr.payroll.frame.PayrollBalanceValue_UI;nan21.dnet.module.hr.ui.extjs;true;03632E56-2815-48D5-A0FE-C3DB75FF92B0
 70;PayrollElementFormulas_UI;Element formulas;;net.nan21.dnet.module.hr.payroll.frame.PayrollElementFormulas_UI;nan21.dnet.module.hr.ui.extjs;true;71054B64-427A-413A-9971-1A1870723EAE
 60;PayrollElementInputs_UI;Element inputs;;net.nan21.dnet.module.hr.payroll.frame.PayrollElementInputs_UI;nan21.dnet.module.hr.ui.extjs;true;1E1FD8F5-7552-424D-97FD-FA477AE7FA00
+50;PayrollElements_UI;Elements;;net.nan21.dnet.module.hr.payroll.frame.PayrollElements_UI;nan21.dnet.module.hr.ui.extjs;true;B1505355-AC75-441C-951B-CABB51AE18CF
 50;PayrollElementValue_UI;Payroll values : elements;;net.nan21.dnet.module.hr.payroll.frame.PayrollElementValue_UI;nan21.dnet.module.hr.ui.extjs;true;F624DF51-655C-46D3-B035-FD1E9F5E0421
 30;PayrollElement_UI;Element setup;;net.nan21.dnet.module.hr.payroll.frame.PayrollElement_UI;nan21.dnet.module.hr.ui.extjs;true;4A66D3DF-A0E5-4FC0-A622-581DD5CDDF26
-50;PayrollElements_UI;Elements;;net.nan21.dnet.module.hr.payroll.frame.PayrollElements_UI;nan21.dnet.module.hr.ui.extjs;true;B1505355-AC75-441C-951B-CABB51AE18CF
 20;PayrollManualValue_UI;Payroll manual entry;;net.nan21.dnet.module.hr.payroll.frame.PayrollManualValue_UI;nan21.dnet.module.hr.ui.extjs;true;EC2C5EEF-0CB4-417E-A57D-EAADB2F4B429
 10;Payroll_UI;Payroll;;net.nan21.dnet.module.hr.payroll.frame.Payroll_UI;nan21.dnet.module.hr.ui.extjs;true;C720BBDC-88D5-4D0C-892C-F2E14B9411C8
+30;PayScaleRate_UI;Pay scale rates;;net.nan21.dnet.module.hr.grade.frame.PayScaleRate_UI;nan21.dnet.module.hr.ui.extjs;true;4C5E399F-A063-45AF-A878-2A6C628912E9
+40;PayScale_UI;Pay scales;;net.nan21.dnet.module.hr.grade.frame.PayScale_UI;nan21.dnet.module.hr.ui.extjs;true;82026F01-7F54-45BE-8DDF-D60299D3A1B1
+10;pj-menu-base;Base data;PJ;;;true;7BA2F300-E475-4EEB-9ACF-724DC083A5D6
+20;pj-menu-issues;Incidents;PJ;;;true;59A0729B-0E79-4BEB-9F43-53AC32E36CFC
+30;pj-menu-projects;Projects;PJ;;;true;BB9BF105-C6FB-4FB7-9381-E9FF32237B2E
 30;Position_UI;Positions;;net.nan21.dnet.module.hr.job.frame.Position_UI;nan21.dnet.module.hr.ui.extjs;true;15D8FED2-9068-41A8-A980-46A10C53B5A2
 20;PriceListVersions_UI-SC;Price list versions;;net.nan21.dnet.module.md.mm.price.frame.PriceListVersions_UI;nan21.dnet.module.md.ui.extjs;true;EEE7C900-0058-4C7D-B5BE-18B7055DB463
 20;PriceListVersions_UI-SD;Price list versions;;net.nan21.dnet.module.md.mm.price.frame.PriceListVersions_UI;nan21.dnet.module.md.ui.extjs;true;21BFB813-522F-4F09-A88F-8530D043C098
@@ -95,8 +146,8 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 30;ProductPriceReport_UI-SD;Price report;;net.nan21.dnet.module.md.mm.price.frame.ProductPriceReport_UI;nan21.dnet.module.md.ui.extjs;true;24124BB6-1A23-46D1-BCC3-1B292A3A0700
 20;Product_UI;Products;;net.nan21.dnet.module.md.mm.prod.frame.Product_UI;nan21.dnet.module.md.ui.extjs;true;8FD5A339-FEE0-4A96-B1A1-318929D6EDF8
 10;ProjectBaseData_UI;Project base data;;net.nan21.dnet.module.pj.base.frame.ProjectBaseData_UI;nan21.dnet.module.pj.ui.extjs;true;DC503741-139C-4276-B832-810265F20E42
-20;ProjectVersions_UI;Project versions;;net.nan21.dnet.module.pj.md.frame.ProjectVersions_UI;nan21.dnet.module.pj.ui.extjs;true;E0DFA286-B5B7-44A7-BA1F-46C952440F28
 10;Projects_UI;Projects;;net.nan21.dnet.module.pj.md.frame.Projects_UI;nan21.dnet.module.pj.ui.extjs;true;EF1AA210-E949-4E01-9AF3-BD4254D1E4F0
+20;ProjectVersions_UI;Project versions;;net.nan21.dnet.module.pj.md.frame.ProjectVersions_UI;nan21.dnet.module.pj.ui.extjs;true;E0DFA286-B5B7-44A7-BA1F-46C952440F28
 10;PurchaseInvoiceBaseData_UI;Base data(Purchase invoice);;net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoiceBaseData_UI;nan21.dnet.module.sc.ui.extjs;false;B7990429-2077-47D7-A1B7-51DE6A7E51D0
 20;PurchaseInvoice_UI;Invoices;;net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI;nan21.dnet.module.sc.ui.extjs;true;2321030E-D833-4933-BF1F-D0247523381C
 10;PurchaseOrderBaseData_UI;Base data(Purchase orders);;net.nan21.dnet.module.sc.order.frame.PurchaseOrderBaseData_UI;nan21.dnet.module.sc.ui.extjs;false;DB1D8EAE-BD64-4254-802E-2F50B3F69A17
@@ -114,6 +165,15 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 20;SalesInvoice_UI;Invoices;;net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI;nan21.dnet.module.sd.ui.extjs;true;8CB56668-7FF9-40D6-BA08-D4875FB5B520
 10;SalesOrderBaseData_UI;Base data(Sales orders);;net.nan21.dnet.module.sd.order.frame.SalesOrderBaseData_UI;nan21.dnet.module.sd.ui.extjs;false;4E916316-F647-4E61-B7B5-3C75F228CEE3
 20;SalesOrder_UI;Orders;;net.nan21.dnet.module.sd.order.frame.SalesOrder_UI;nan21.dnet.module.sd.ui.extjs;true;5AB899A7-AF35-453A-BC33-FFD1EB6E83B5
+30;sc-menu-invoice;Invoices;SC;;;true;2E0E63EF-A4C6-46FC-A8E4-0B5E078BD680
+20;sc-menu-order;Orders;SC;;;true;A8E271C9-8F07-4DC4-AF2C-1C0A40AC2FD1
+40;sc-menu-pay;Payments;SC;;;true;03B73FDF-95A9-4F5A-9C86-C1027829272E
+10;sc-menu-price;Prices;SC;;;true;DA69368D-A599-46F4-9D7B-E1A80DD9E012
+30;sd-menu-invoice;Invoices;SD;;;true;61E7A34F-D843-43B9-AEF4-F41DA761898F
+15;sd-menu-opportunity;Opportunities;SD;;;true;EFC8F59A-170D-447E-818B-9A407EA113E9
+20;sd-menu-order;Orders;SD;;;true;48E1B420-21C5-44FF-A6DE-427B4CEC23AE
+40;sd-menu-pay;Payments;SD;;;true;0E7D54C8-CDB3-4645-B61F-C8D85ABE1C80
+10;sd-menu-price;Prices;SD;;;true;2B99EE2A-7FBE-462D-A989-82485D49493E
 30;SkillType_UI;Competence types;;net.nan21.dnet.module.hr.skill.frame.SkillType_UI;nan21.dnet.module.hr.ui.extjs;true;FA7FE7A7-4FBB-48B9-B479-CE8DFCA6B853
 40;Skill_UI;Competences;;net.nan21.dnet.module.hr.skill.frame.Skill_UI;nan21.dnet.module.hr.ui.extjs;true;47544264-64E0-4D39-8986-E5A0B2C2A71D
 10;StockLocatorTypes_UI;Locator types;;net.nan21.dnet.module.md.org.frame.StockLocatorTypes_UI;nan21.dnet.module.md.ui.extjs;true;0FBA2268-3972-4F74-9A8F-89713427C24A
@@ -132,69 +192,11 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 50;UiViewState_UI;View states;;net.nan21.dnet.module.ad.system.frame.UiViewState_UI;nan21.dnet.module.ad.ui.extjs;true;1DF3BB1A-03ED-4DA6-A4EE-F4F35EAF127E
 40;UomConversion_UI;Unit of measure conversions;;net.nan21.dnet.module.bd.uom.frame.UomConversion_UI;nan21.dnet.module.bd.ui.extjs;true;CA3C2A77-38FA-4C0D-818F-60D45922AC7A
 30;UomMD_UI;Unit of measure with details;;net.nan21.dnet.module.bd.uom.frame.UomMD_UI;nan21.dnet.module.bd.ui.extjs;true;422D8EA2-4AA6-4A5B-B419-B7DE835ED02C
-10;UomType_UI;Unit of measure types;;net.nan21.dnet.module.bd.uom.frame.UomType_UI;nan21.dnet.module.bd.ui.extjs;true;A4FA46BA-74C5-4C1B-938A-24E2B0339AD4
 20;Uoms_UI;Units of measure;;net.nan21.dnet.module.bd.uom.frame.Uoms_UI;nan21.dnet.module.bd.ui.extjs;true;F8FD8094-7406-4390-BB9C-2438E920D9AF
+10;UomType_UI;Unit of measure types;;net.nan21.dnet.module.bd.uom.frame.UomType_UI;nan21.dnet.module.bd.ui.extjs;true;A4FA46BA-74C5-4C1B-938A-24E2B0339AD4
 20;UserGroups_UI;User groups;;net.nan21.dnet.module.ad.usr.frame.UserGroups_UI;nan21.dnet.module.ad.ui.extjs;true;19088C5D-BDEB-42DE-9728-750D42D605BA
-30;UserTypes_UI;User types;;net.nan21.dnet.module.ad.usr.frame.UserTypes_UI;nan21.dnet.module.ad.ui.extjs;true;63703C10-0349-45E3-A3FE-AA1BAC9F20A5
 10;Users_UI;Users;;net.nan21.dnet.module.ad.usr.frame.Users_UI;nan21.dnet.module.ad.ui.extjs;true;30834776-1AA5-446B-A092-6216E8C87E07
+30;UserTypes_UI;User types;;net.nan21.dnet.module.ad.usr.frame.UserTypes_UI;nan21.dnet.module.ad.ui.extjs;true;63703C10-0349-45E3-A3FE-AA1BAC9F20A5
 20;WorkflowAdmin_UI;Workflow admin console;;net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI;nan21.dnet.module.ad.ui.extjs;true;C9A5B68F-058C-4690-A0DA-B116642A0626
-10;WorkflowDef_UI;Workflow definition;;net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI;nan21.dnet.module.ad.ui.extjs;true;82F90432-0CB0-4B8F-B32C-C3157018E8CD
+10;WorkflowDef_UI;Workflow definition;;net.nan21.dnet.module.ad.workflow.frame.WorkflowDef_UI;nan21.dnet.module.ad.ui.extjs;false;82F90432-0CB0-4B8F-B32C-C3157018E8CD
 30;WorkflowTodo_UI;Tasks;;net.nan21.dnet.module.ad.workflow.frame.WorkflowTodo_UI;nan21.dnet.module.ad.ui.extjs;true;040E1A18-347D-402A-814D-B68969D62FDF
-2;ad-menu-acl;Access control;;;;true;FD12B382-6EE9-4A9D-9840-819336E50778
-10;ad-menu-client;Client;AD;;;true;B27EFBE3-AD79-4ACC-AD09-2C1B0547F643
-40;ad-menu-data;Data;AD;;;true;EA26207C-E2F4-4F45-ACF8-6EBFD749B02C
-2;ad-menu-exp;Export;;;;true;E84BBD96-A771-439C-962A-ADAB03D9D624
-1;ad-menu-imp;Import;;;;true;CF424C67-DE29-4C7D-9B90-171C72A5AA97
-50;ad-menu-impex;Import-Export;AD;;;true;71AA9DAA-2E27-41E1-B34C-043C56FCFCC3
-80;ad-menu-job;Jobs;AD;;;true;EBEA50FD-EC2E-4546-BD58-D49CB98A3E93
-70;ad-menu-rep;Reports;AD;;;true;D9B488AD-4BF4-4996-90D5-0F6B39B1D2D4
-30;ad-menu-security;Security;AD;;;true;06FDEFA3-64B7-4528-89B4-18D3EEB769C8
-20;ad-menu-system;System;AD;;;true;976A2A38-651F-4F12-96B0-08362141E7BC
-1;ad-menu-usr;Users;;;;true;561C6150-96A6-4862-B2B0-2842E2423971
-60;ad-menu-wf;Workflow;AD;;;true;3B737108-CA87-4E1B-A68E-5EFE3AACD401
-50;bd-menu-contact;Collaboration;BD;;;true;CF4D8060-521B-41C8-BB5E-822A7284EBF9
-20;bd-menu-currency;Currencies;BD;;;true;D32EAE39-2BC4-4A04-8ED9-2CEA7E6E413B
-45;bd-menu-elem;Elements;BD;;;true;AC68C550-6C98-4CBA-A5B8-573A9A756B80
-10;bd-menu-geo;Geography;BD;;;true;E45F2196-7075-4F14-9360-5F1A77AE68DF
-70;bd-menu-org;Organizations;BD;;;true;F0D7D634-E829-42E4-BA5D-027B1F17AB31
-40;bd-menu-stds;Standards;BD;;;true;BEB967DD-DBAB-4E4D-A419-83705A309E01
-60;bd-menu-time;Time control;BD;;;true;284C2EE0-CC4F-4A20-B8EA-5538510B601C
-30;bd-menu-uom;Measuring units;BD;;;true;39CDD4DD-9547-49AE-A193-086B0D8A75EC
-20;bp-menu;Business partners;MD;;;true;E72F3977-9404-47A6-BB25-93CB666E4391
-;bp-menu-base;Base-data;;;;true;CF606508-6A3C-4166-9AB5-C38BF2B41855
-;bp-menu-md;Master-data;;;;true;E832FE4D-A8B3-4CE1-A06F-3279A319C56F
-20;fi-menu-base-acc;Accounting;;;;true;79F531E5-E7CE-4643-A720-35E7B14D853D
-10;fi-menu-base-doc;Document types;;;;true;DBCBBCE8-877F-4872-A1B1-0673A9D5FD18
-40;fi-menu-base-pay;Payment;;;;true;5E257FD1-B828-4FAF-A1F1-694525AD7161
-30;fi-menu-base-tax;Taxes;;;;true;EA2553FD-E708-43D3-B9EF-8FDAABB2B7F8
-20;fi-menu-period;Period control;FI;;;true;60AF479A-A886-4E7C-AE3B-BD744EE0AF6D
-40;fi-menu-tx-acc;Accounting;FI;;;true;642556A1-511A-4BFC-84B8-A8E144FF452E
-30;fi-menu-tx-fin;Financials;FI;;;true;1B70B3A8-C311-4DF0-A857-26333D1E6D73
-10;fii-menu-base;Base data;FI;;;true;83E6185E-05A0-4D79-A602-B012CEFF53F6
-40;hr-menu-employee;Employees;HR;;;true;B2979FDB-5E6B-4259-8215-9DA6ABD4DBA9
-20;hr-menu-grade;Grades;HR;;;true;4372B6AB-AB73-4D4F-BB44-BADB61E204F6
-30;hr-menu-job;Jobs;HR;;;true;FB3D0FB1-1F48-4628-A887-7A94EB2AF080
-50;hr-menu-payroll;Payroll;HR;;;true;235D7BDA-C11D-4B6A-B405-3D572E994E56
-5;hr-menu-payroll-setup;Setup;;;;true;E1C6C9AC-AD84-4F9E-9EE0-6330E963BE19
-10;hr-menu-skill;Competence;HR;;;true;A7CD46EF-D7D0-40EF-A622-12F7E9FF4A1B
-70;hr-menu-time;Time management;HR;;;true;44134AF6-B5CF-4924-A08B-1CCE37177FC5
-60;hr-menu-training;Training;HR;;;true;3008E81E-B212-4BED-A456-451948E4EA85
-10;iv-menu-base;Base data;IV;;;true;D0F468F7-D3BD-4092-965A-0354B8B93E62
-20;iv-menu-tx;Transactions;IV;;;true;2B31BF5A-BE6F-478E-ADD0-79A7206E5B43
-10;md-menu-base;Base data;MD;;;true;15336F47-2A69-416B-89CD-7B310B0A3234
-20;md-menu-base-attr;Attributes;;;;true;CB477867-3066-41ED-BCFF-E2C8584E0878
-30;mm-menu;Material management;MD;;;true;D2B954C9-A509-4AEC-9156-0E66984E05D0
-10;mm-menu-base;Base-data;;;;true;E031FB9F-A408-4542-93FC-36EFA3811A93
-20;mm-menu-md;Master-data;;;;true;693AF165-CB18-480C-A803-1FB255391A02
-10;pj-menu-base;Base data;PJ;;;true;7BA2F300-E475-4EEB-9ACF-724DC083A5D6
-20;pj-menu-issues;Incidents;PJ;;;true;59A0729B-0E79-4BEB-9F43-53AC32E36CFC
-30;pj-menu-projects;Projects;PJ;;;true;BB9BF105-C6FB-4FB7-9381-E9FF32237B2E
-30;sc-menu-invoice;Invoices;SC;;;true;2E0E63EF-A4C6-46FC-A8E4-0B5E078BD680
-20;sc-menu-order;Orders;SC;;;true;A8E271C9-8F07-4DC4-AF2C-1C0A40AC2FD1
-40;sc-menu-pay;Payments;SC;;;true;03B73FDF-95A9-4F5A-9C86-C1027829272E
-10;sc-menu-price;Prices;SC;;;true;DA69368D-A599-46F4-9D7B-E1A80DD9E012
-30;sd-menu-invoice;Invoices;SD;;;true;61E7A34F-D843-43B9-AEF4-F41DA761898F
-15;sd-menu-opportunity;Opportunities;SD;;;true;EFC8F59A-170D-447E-818B-9A407EA113E9
-20;sd-menu-order;Orders;SD;;;true;48E1B420-21C5-44FF-A6DE-427B4CEC23AE
-40;sd-menu-pay;Payments;SD;;;true;0E7D54C8-CDB3-4645-B61F-C8D85ABE1C80
-10;sd-menu-price;Prices;SD;;;true;2B99EE2A-7FBE-462D-A989-82485D49493E

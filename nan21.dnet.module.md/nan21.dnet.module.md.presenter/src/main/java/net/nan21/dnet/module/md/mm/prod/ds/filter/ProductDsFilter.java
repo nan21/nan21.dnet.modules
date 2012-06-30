@@ -85,12 +85,12 @@ public class ProductDsFilter extends AbstractTypeWithCodeDsFilter {
 
     private String manufacturerCode;
 
-    private Long attributeGroupId;
+    private Long attributeSetId;
 
-    private Long attributeGroupId_From;
-    private Long attributeGroupId_To;
+    private Long attributeSetId_From;
+    private Long attributeSetId_To;
 
-    private String attributeGroup;
+    private String attributeSet;
 
     private String className;
 
@@ -440,36 +440,36 @@ public class ProductDsFilter extends AbstractTypeWithCodeDsFilter {
         this.manufacturerCode = manufacturerCode;
     }
 
-    public Long getAttributeGroupId() {
-        return this.attributeGroupId;
+    public Long getAttributeSetId() {
+        return this.attributeSetId;
     }
 
-    public Long getAttributeGroupId_From() {
-        return this.attributeGroupId_From;
+    public Long getAttributeSetId_From() {
+        return this.attributeSetId_From;
     }
 
-    public Long getAttributeGroupId_To() {
-        return this.attributeGroupId_To;
+    public Long getAttributeSetId_To() {
+        return this.attributeSetId_To;
     }
 
-    public void setAttributeGroupId(Long attributeGroupId) {
-        this.attributeGroupId = attributeGroupId;
+    public void setAttributeSetId(Long attributeSetId) {
+        this.attributeSetId = attributeSetId;
     }
 
-    public void setAttributeGroupId_From(Long attributeGroupId_From) {
-        this.attributeGroupId_From = attributeGroupId_From;
+    public void setAttributeSetId_From(Long attributeSetId_From) {
+        this.attributeSetId_From = attributeSetId_From;
     }
 
-    public void setAttributeGroupId_To(Long attributeGroupId_To) {
-        this.attributeGroupId_To = attributeGroupId_To;
+    public void setAttributeSetId_To(Long attributeSetId_To) {
+        this.attributeSetId_To = attributeSetId_To;
     }
 
-    public String getAttributeGroup() {
-        return this.attributeGroup;
+    public String getAttributeSet() {
+        return this.attributeSet;
     }
 
-    public void setAttributeGroup(String attributeGroup) {
-        this.attributeGroup = attributeGroup;
+    public void setAttributeSet(String attributeSet) {
+        this.attributeSet = attributeSet;
     }
 
     public String getClassName() {

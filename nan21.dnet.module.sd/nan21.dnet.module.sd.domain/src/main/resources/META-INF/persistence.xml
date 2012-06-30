@@ -7,8 +7,12 @@
 
 		<!-- Dependencies -->
 
+		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.Assignable</class>
 		<class>net.nan21.dnet.module.ad.usr.domain.entity.AssignableType</class>
+		<class>net.nan21.dnet.module.bd.attr.domain.entity.Attribute</class>
+		<class>net.nan21.dnet.module.bd.attr.domain.entity.AttributeCategory</class>
+		<class>net.nan21.dnet.module.bd.attr.domain.entity.AttributeSet</class>
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.City</class>
@@ -23,11 +27,6 @@
 		<class>net.nan21.dnet.module.md.acc.domain.entity.AccItem</class>
 		<class>net.nan21.dnet.module.md.acc.domain.entity.AccJournal</class>
 		<class>net.nan21.dnet.module.md.acc.domain.entity.AccSchema</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.Attribute</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeCategory</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroupAttribute</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeType</class>
 		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod</class>
 		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear</class>
 		<class>net.nan21.dnet.module.md.base.tax.domain.entity.Tax</class>
@@ -42,7 +41,7 @@
 		<class>net.nan21.dnet.module.md.bp.domain.entity.Contact</class>
 		<class>net.nan21.dnet.module.md.mm.price.domain.entity.PriceList</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.Product</class>
-		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttribute</class>
+		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer</class>
 		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccount</class>

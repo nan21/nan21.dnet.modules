@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"	 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">   
+   
+ 	<bean id="AttributeCategoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeCategoryDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.attr.ds.filter.AttributeCategoryDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.attr.domain.entity.AttributeCategory" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AttributeCategory" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeCategoryDs" />
+	</bean>
+   
+ 	<bean id="AttributeCategoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeCategoryLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeCategoryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.attr.domain.entity.AttributeCategory" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AttributeCategoryLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeCategoryLovDs" />
+	</bean>
+   
+ 	<bean id="AttributeSetDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeSetDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.attr.ds.filter.AttributeSetDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.attr.domain.entity.AttributeSet" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AttributeSet" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeSetDs" />
+	</bean>
+   
+ 	<bean id="AttributeSetLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeSetLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeSetLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.attr.domain.entity.AttributeSet" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AttributeSetLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeSetLovDs" />
+	</bean>
+   
+ 	<bean id="AttributeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.attr.ds.filter.AttributeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.attr.domain.entity.Attribute" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.attr.ds.converter.AttributeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Attribute" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeDs" />
+	</bean>
+   
+ 	<bean id="AttributeLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.attr.domain.entity.Attribute" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AttributeLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeLovDs" />
+	</bean>
+   
+ 	<bean id="AttributeSetAttributeDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeSetAttributeDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.bd.attr.ds.filter.AttributeSetAttributeDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.bd.attr.domain.entity.AttributeSetAttribute" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.bd.attr.ds.converter.AttributeSetAttributeDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AttributeSetAttribute" />
+		<property name="modelClass" value="net.nan21.dnet.module.bd.attr.ds.model.AttributeSetAttributeDs" />
+	</bean>
+      
+</beans>
+   

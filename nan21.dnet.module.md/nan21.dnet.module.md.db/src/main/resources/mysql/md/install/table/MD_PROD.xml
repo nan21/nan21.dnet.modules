@@ -54,7 +54,7 @@
 				<constraints  /></column>	 
 			<column name="WEIGHT" type="decimal(12,2)">
 				<constraints  /></column>	 
-			<column name="ATTRIBUTEGROUP_ID" type="bigint(19)">	 
+			<column name="ATTRIBUTESET_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
 			<column name="DEFAULTUOM_ID" type="bigint(19)">	 
 				<constraints  /></column>	 

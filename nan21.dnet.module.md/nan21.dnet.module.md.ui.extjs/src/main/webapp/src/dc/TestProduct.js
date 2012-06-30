@@ -30,7 +30,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.TestProduct$Filter", {
 		.addBooleanField({ name:"showInCatalog", dataIndex:"showInCatalog",anchor:"-20"  })
 		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductManufacturers", dataIndex:"manufacturerCode",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",anchor:"-20",maxLength:32  })
-		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.md.base.attr.lovs.AttributeGroup", dataIndex:"attributeGroup",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
+		.addLov({ name:"attributeSet", xtype:"net.nan21.dnet.module.bd.attr.lovs.AttributeSet", dataIndex:"attributeSet",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeSetId"} ]  })
 		.addLov({ name:"productCategory", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductCategories", paramIndex:"productCategory",anchor:"-20",retFieldMapping: [{lovField:"id", dsParam: "productCategoryId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
@@ -45,7 +45,7 @@ labelAlign:"right",labelWidth:70}})
 		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["name","code","manufacturerCode","manufacturerProductNo"])
 		.addChildrenTo("col2",["storable","active","showInCatalog"])
-		.addChildrenTo("col3",["attributeGroup","productCategory"])
+		.addChildrenTo("col3",["attributeSet","productCategory"])
     	.addAuditFilter()	
 	}
 }); 
@@ -65,7 +65,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.TestProduct$FilterPG", {
 		.addNumberField({ name:"manufacturerId", dataIndex:"manufacturerId"  })
 		.addLov({ name:"manufacturerCode", dataIndex:"manufacturerCode",editor:{ xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductManufacturers", selectOnFocus:true,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]}  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",maxLength:32  })
-		.addLov({ name:"attributeGroup", dataIndex:"attributeGroup",editor:{ xtype:"net.nan21.dnet.module.md.base.attr.lovs.AttributeGroup", selectOnFocus:true,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]}  })
+		.addLov({ name:"attributeSet", dataIndex:"attributeSet",editor:{ xtype:"net.nan21.dnet.module.bd.attr.lovs.AttributeSet", selectOnFocus:true,retFieldMapping: [{lovField:"id", dsField: "attributeSetId"} ]}  })
 		.addLov({ name:"productCategory", paramIndex:"productCategory",editor:{ xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductCategories", selectOnFocus:true,retFieldMapping: [{lovField:"id", dsParam: "productCategoryId"} ]}  })
 		 
 		
@@ -87,7 +87,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.TestProduct$List", {
 		.addBooleanColumn({ name:"showInCatalog", dataIndex:"showInCatalog", width:60})   	     
 		.addNumberColumn({ name:"defaultUomId", dataIndex:"defaultUomId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"defaultUomCode", dataIndex:"defaultUomCode",width:100 })   	
-		.addTextColumn({ name:"attributeGroup", dataIndex:"attributeGroup",width:120 })   	
+		.addTextColumn({ name:"attributeSet", dataIndex:"attributeSet",width:120 })   	
 		.addNumberColumn({ name:"manufacturerId", dataIndex:"manufacturerId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"manufacturerCode", dataIndex:"manufacturerCode",width:100 })   	
 		.addTextColumn({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo", hidden:true,width:100 })   	
@@ -125,7 +125,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.TestProduct$EditList", {
 		.addBooleanColumn({ name:"showInCatalog", dataIndex:"showInCatalog", width:60})
 		.addNumberColumn({ name:"defaultUomId", dataIndex:"defaultUomId", hidden:true, align:"right",format:"0",width:70,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addLov({name:"defaultUomCode", xtype:"gridcolumn", dataIndex:"defaultUomCode",width:100,editor:{xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure" , selectOnFocus:true,allowBlank:false ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "defaultUomId"} ]} })
-		.addTextColumn({ name:"attributeGroup", dataIndex:"attributeGroup",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"attributeSet", dataIndex:"attributeSet",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addNumberColumn({ name:"manufacturerId", dataIndex:"manufacturerId", hidden:true, align:"right",format:"0",width:70,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addTextColumn({ name:"manufacturerCode", dataIndex:"manufacturerCode",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
 		.addTextColumn({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo", hidden:true,width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
@@ -162,7 +162,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.TestProduct$Edit", {
 		.addCheckbox({ name:"showInCatalog", dataIndex:"showInCatalog"  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo" ,maxLength:32  })
 		.addLov({ name:"manufacturerCode", xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductManufacturers", dataIndex:"manufacturerCode" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]  })
-		.addLov({ name:"attributeGroup", xtype:"net.nan21.dnet.module.md.base.attr.lovs.AttributeGroup", dataIndex:"attributeGroup" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]  })
+		.addLov({ name:"attributeSet", xtype:"net.nan21.dnet.module.bd.attr.lovs.AttributeSet", dataIndex:"attributeSet" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "attributeSetId"} ]  })
 		.addLov({ name:"defaultUomCode", xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", dataIndex:"defaultUomCode" ,allowBlank:false, labelSeparator:"*",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "defaultUomId"} ]  })
 		.addCheckbox({ name:"storable", dataIndex:"storable"  })
 		.addNumberField({ name:"weight", dataIndex:"weight"  , style: "text-align:right;" })
@@ -187,7 +187,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.TestProduct$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
-		.addChildrenTo("col1",["name","code","defaultUomCode","attributeGroup","manufacturerCode","manufacturerProductNo"])
+		.addChildrenTo("col1",["name","code","defaultUomCode","attributeSet","manufacturerCode","manufacturerProductNo"])
 		.addChildrenTo("col2",["storable","weight","weightUomCode","volume","volumeUomCode","dimWidth","dimHeight","dimDepth","dimUomCode"])
 		.addChildrenTo("col3",["active","showInCatalog","iconUrl","imageUrl"])
 ;
@@ -208,7 +208,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.TestProduct$EditPG", {
 		.addBooleanField({ name:"showInCatalog", dataIndex:"showInCatalog"  })
 		.addTextField({ name:"manufacturerProductNo", dataIndex:"manufacturerProductNo",editor:{ selectOnFocus:true ,maxLength:32} })
 		.addLov({ name:"manufacturerCode", dataIndex:"manufacturerCode",editor:{ xtype:"net.nan21.dnet.module.md.mm.prod.lovs.ProductManufacturers", selectOnFocus:true,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "manufacturerId"} ]}  })
-		.addLov({ name:"attributeGroup", dataIndex:"attributeGroup",editor:{ xtype:"net.nan21.dnet.module.md.base.attr.lovs.AttributeGroup", selectOnFocus:true,retFieldMapping: [{lovField:"id", dsField: "attributeGroupId"} ]}  })
+		.addLov({ name:"attributeSet", dataIndex:"attributeSet",editor:{ xtype:"net.nan21.dnet.module.bd.attr.lovs.AttributeSet", selectOnFocus:true,retFieldMapping: [{lovField:"id", dsField: "attributeSetId"} ]}  })
 		.addNumberField({ name:"defaultUomId", dataIndex:"defaultUomId",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addLov({ name:"defaultUomCode", dataIndex:"defaultUomCode",editor:{ xtype:"net.nan21.dnet.module.bd.uom.lovs.UnitsOfMeasure", selectOnFocus:true,allowBlank:false,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "defaultUomId"} ]}  })
 		.addBooleanField({ name:"storable", dataIndex:"storable"  })

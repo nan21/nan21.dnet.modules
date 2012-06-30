@@ -9,7 +9,7 @@ import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
+import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeAssignment;
 import net.nan21.dnet.module.hr.payroll.business.service.IPayrollElementValueService;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElement;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod;
@@ -61,17 +61,18 @@ public class PayrollElementValueService extends
                 .setParameter("pPeriodId", periodId).getResultList();
     }
 
-    public List<PayrollElementValue> findByEmployee(Employee employee) {
-        return this.findByEmployeeId(employee.getId());
+    public List<PayrollElementValue> findByAssignment(
+            EmployeeAssignment assignment) {
+        return this.findByAssignmentId(assignment.getId());
     }
 
-    public List<PayrollElementValue> findByEmployeeId(Long employeeId) {
+    public List<PayrollElementValue> findByAssignmentId(Long assignmentId) {
         return (List<PayrollElementValue>) this.em
                 .createQuery(
-                        "select e from PayrollElementValue e where e.clientId = :pClientId and e.employee.id = :pEmployeeId",
+                        "select e from PayrollElementValue e where e.clientId = :pClientId and e.assignment.id = :pAssignmentId",
                         PayrollElementValue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pEmployeeId", employeeId).getResultList();
+                .setParameter("pAssignmentId", assignmentId).getResultList();
     }
 
     public List<PayrollElementValue> findByOrg(Organization org) {

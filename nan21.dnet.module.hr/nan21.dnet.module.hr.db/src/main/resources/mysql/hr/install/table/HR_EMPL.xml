@@ -6,22 +6,6 @@
         <createTable tableName="HR_EMPL">
 	
     		<column name="ID" type="bigint(19)" />
-			<column name="ASSIGNTOPOSITION" type="int(1)">
-				<constraints nullable="false" /></column>	 
-			<column name="BASESALARY" type="decimal(12,2)">
-				<constraints  /></column>	 
-			<column name="GRADE_ID" type="bigint(19)">	 
-				<constraints  /></column>	 
-			<column name="JOB_ID" type="bigint(19)">	 
-				<constraints  /></column>	 
-			<column name="ORG_ID" type="bigint(19)">	 
-				<constraints  /></column>	 
-			<column name="PAYROLL_ID" type="bigint(19)">	 
-				<constraints  /></column>	 
-			<column name="POSITION_ID" type="bigint(19)">	 
-				<constraints  /></column>	 
-			<column name="TYPE_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

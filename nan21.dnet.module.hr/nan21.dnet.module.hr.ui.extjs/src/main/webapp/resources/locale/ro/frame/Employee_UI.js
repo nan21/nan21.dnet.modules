@@ -8,6 +8,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI$Trl", {
 	atchEditList__ttl : "Ataşamente",
 	communicEditList__ttl : "Comunicare",
 	notesPanel__ttl : "Note",
+	asgnPanel__ttl : "Alocări",
 	addressPanel__ttl : "Adrese",
 	
 	tlbEmpList__ttl : "Angajaţi",
@@ -21,6 +22,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI$Trl", {
 	tlbCommunicEditList__ttl : "Comunicare",
 	tlbAddressList__ttl : "Adrese",
 	tlbAddressEdit__ttl : "Adresă",
+	tlbAsgnList__ttl : "Alocări",
+	tlbAsgnEdit__ttl : "Alocare",
 	
 	btnViewAttachment__ttl : "Deschide",
 	btnViewAttachment__desc : "Deschide ataşament",

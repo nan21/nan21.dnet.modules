@@ -28,6 +28,7 @@ public class ActTaskInstanceHistoryDs extends
     public static final String fSTARTTIME = "startTime";
     public static final String fENDTIME = "endTime";
     public static final String fDURATION = "duration";
+    public static final String fDURATIONTEXT = "durationText";
     public static final String fDELETEREASON = "deleteReason";
     public static final String fPRIORITY = "priority";
     public static final String fDUEDATE = "dueDate";
@@ -67,6 +68,9 @@ public class ActTaskInstanceHistoryDs extends
 
     @DsField()
     private Long duration;
+
+    @DsField(fetch = false)
+    private String durationText;
 
     @DsField()
     private String deleteReason;
@@ -180,6 +184,14 @@ public class ActTaskInstanceHistoryDs extends
 
     public void setDuration(Long duration) {
         this.duration = duration;
+    }
+
+    public String getDurationText() {
+        return this.durationText;
+    }
+
+    public void setDurationText(String durationText) {
+        this.durationText = durationText;
     }
 
     public String getDeleteReason() {

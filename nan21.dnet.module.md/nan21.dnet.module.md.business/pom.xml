@@ -8,7 +8,7 @@
 	<name>DNet MD - business</name>	
 	<description>DNet MD - business</description>
 	<packaging>jar</packaging>	
-	
+	 
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
@@ -58,13 +58,6 @@
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.ad.business.api</artifactId>
-			<version>1.0.0.RC2</version>
-			<type>jar</type>
-			<scope>provided</scope>
-		</dependency>	
-		<dependency>
-			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.bd.business</artifactId>
 			<version>1.0.0.RC2</version>
 			<type>jar</type>
 			<scope>provided</scope>

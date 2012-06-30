@@ -10,11 +10,13 @@ import net.nan21.dnet.core.api.session.Session;
 
 import net.nan21.dnet.module.ad.data.ds.filter.AttachmentDsFilter;
 import net.nan21.dnet.module.ad.data.ds.model.AttachmentDs;
-import net.nan21.dnet.module.md.mm.prod.ds.filter.ProductAttributeDsFilter;
+
+import net.nan21.dnet.module.md.mm.prod.ds.filter.ProductAttributeValueDsFilter;
 import net.nan21.dnet.module.md.mm.prod.ds.filter.ProductCategoryDsFilter;
 import net.nan21.dnet.module.md.mm.prod.ds.filter.ProductDsFilter;
 import net.nan21.dnet.module.md.mm.prod.ds.filter.ProductManufacturerDsFilter;
-import net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeDs;
+
+import net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeValueDs;
 import net.nan21.dnet.module.md.mm.prod.ds.model.ProductCategoryDs;
 import net.nan21.dnet.module.md.mm.prod.ds.model.ProductDs;
 import net.nan21.dnet.module.md.mm.prod.ds.model.ProductManufacturerDs;
@@ -120,13 +122,13 @@ public class ProductController extends AbstractWebController {
 			}
 
 			IDsService attributesService = this
-					.findDsService(ProductAttributeDs.class);
-			ProductAttributeDsFilter attributesFilter = new ProductAttributeDsFilter();
+					.findDsService(ProductAttributeValueDs.class);
+			ProductAttributeValueDsFilter attributesFilter = new ProductAttributeValueDsFilter();
 			attributesFilter.setProductId(product.getId());
 			List attributes = attributesService.find(attributesFilter, null,
 					attributesService.createQueryBuilder().addSortInfo(
-							new String[] { ProductAttributeDs.fTYPE,
-									ProductAttributeDs.fTITLE }));
+							new String[] { ProductAttributeValueDs.fCATEGORY,
+									ProductAttributeValueDs.fTITLE }));
 
 			IDsService attachmentsService = this
 					.findDsService(AttachmentDs.class);

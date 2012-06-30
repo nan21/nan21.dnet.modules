@@ -7,6 +7,7 @@
 
 		<!-- Dependencies -->
 
+		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.elem.domain.entity.Element</class>

@@ -30,6 +30,8 @@ public class PayrollElementValueDs extends
     public static final String fTYPE = "type";
     public static final String fEMPLOYEEID = "employeeId";
     public static final String fEMPLOYEENAME = "employeeName";
+    public static final String fJOBCODE = "jobCode";
+    public static final String fPOSITIONCODE = "positionCode";
     public static final String fEMPLOYERID = "employerId";
     public static final String fEMPLOYER = "employer";
     public static final String fVALUE = "value";
@@ -62,11 +64,17 @@ public class PayrollElementValueDs extends
     @DsField(join = "left", path = "element.type.name")
     private String type;
 
-    @DsField(join = "left", path = "employee.id")
+    @DsField(join = "left", path = "assignment.employee.id")
     private Long employeeId;
 
-    @DsField(join = "left", orderBy = "lastName,firstName", fetch = false, path = "employee.name")
+    @DsField(join = "left", orderBy = "lastName,firstName", fetch = false, path = "assignment.employee.name")
     private String employeeName;
+
+    @DsField(join = "left", path = "assignment.job.code")
+    private String jobCode;
+
+    @DsField(join = "left", path = "assignment.position.code")
+    private String positionCode;
 
     @DsField(join = "left", path = "org.id")
     private Long employerId;
@@ -175,6 +183,22 @@ public class PayrollElementValueDs extends
 
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
+    }
+
+    public String getJobCode() {
+        return this.jobCode;
+    }
+
+    public void setJobCode(String jobCode) {
+        this.jobCode = jobCode;
+    }
+
+    public String getPositionCode() {
+        return this.positionCode;
+    }
+
+    public void setPositionCode(String positionCode) {
+        this.positionCode = positionCode;
     }
 
     public Long getEmployerId() {

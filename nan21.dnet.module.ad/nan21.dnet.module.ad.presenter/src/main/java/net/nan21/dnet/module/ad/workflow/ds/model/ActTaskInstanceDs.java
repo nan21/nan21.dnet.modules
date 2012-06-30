@@ -28,6 +28,7 @@ public class ActTaskInstanceDs extends AbstractBaseDs<ActTaskInstanceHistory> {
     public static final String fSTARTTIME = "startTime";
     public static final String fENDTIME = "endTime";
     public static final String fDURATION = "duration";
+    public static final String fDURATIONTEXT = "durationText";
     public static final String fPRIORITY = "priority";
     public static final String fDUEDATE = "dueDate";
 
@@ -69,6 +70,9 @@ public class ActTaskInstanceDs extends AbstractBaseDs<ActTaskInstanceHistory> {
 
     @DsField()
     private Long duration;
+
+    @DsField(fetch = false)
+    private String durationText;
 
     @DsField()
     private Long priority;
@@ -187,6 +191,14 @@ public class ActTaskInstanceDs extends AbstractBaseDs<ActTaskInstanceHistory> {
 
     public void setDuration(Long duration) {
         this.duration = duration;
+    }
+
+    public String getDurationText() {
+        return this.durationText;
+    }
+
+    public void setDurationText(String durationText) {
+        this.durationText = durationText;
     }
 
     public Long getPriority() {

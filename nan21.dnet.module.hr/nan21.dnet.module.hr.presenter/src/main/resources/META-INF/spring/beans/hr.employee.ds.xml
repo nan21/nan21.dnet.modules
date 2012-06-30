@@ -31,6 +31,20 @@
 		<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeLovDs" />
 	</bean>
    
+ 	<bean id="EmployeeAssignmentDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeAssignmentDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.hr.employee.ds.filter.EmployeeAssignmentDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.hr.employee.domain.entity.EmployeeAssignment" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.hr.employee.ds.param.EmployeeAssignmentDsParam" />	
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.hr.employee.ds.qb.EmployeeAssignmentDsQueryBuilder" />	
+	  	<property name="converterClass" value="net.nan21.dnet.module.hr.employee.ds.converter.EmployeeAssignmentDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="EmployeeAssignment" />
+		<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeAssignmentDs" />
+	</bean>
+   
  	<bean id="EmployeeContactDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.hr.employee.ds.model.EmployeeContactDs" />

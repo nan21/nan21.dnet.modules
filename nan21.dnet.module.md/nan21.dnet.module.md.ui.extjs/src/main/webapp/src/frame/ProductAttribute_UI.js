@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.md.ui.extjs/ds/ProductAttributeDs", "nan21.dnet.module.md.ui.extjs/dc/ProductAttribute","nan21.dnet.module.md.ui.extjs/ds/ProductLovDs","nan21.dnet.module.md.ui.extjs/lov/Products","nan21.dnet.module.md.ui.extjs/ds/AttributeLovDs","nan21.dnet.module.md.ui.extjs/lov/Attribute","nan21.dnet.module.md.ui.extjs/ds/AttributeTypeLovDs","nan21.dnet.module.md.ui.extjs/lov/AttributeType"]);
+Dnet.doImport(["", "nan21.dnet.module.md.ui.extjs/ds/ProductAttributeValueDs", "nan21.dnet.module.md.ui.extjs/dc/ProductAttributeValue","nan21.dnet.module.md.ui.extjs/ds/ProductLovDs","nan21.dnet.module.md.ui.extjs/lov/Products","nan21.dnet.module.bd.ui.extjs/ds/AttributeLovDs","nan21.dnet.module.bd.ui.extjs/lov/Attribute","nan21.dnet.module.bd.ui.extjs/ds/AttributeCategoryLovDs","nan21.dnet.module.bd.ui.extjs/lov/AttributeCategory"]);
 
 Ext.define("net.nan21.dnet.module.md.mm.prod.frame.ProductAttribute_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
@@ -7,13 +7,13 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.frame.ProductAttribute_UI", {
 	 _name_ : "net.nan21.dnet.module.md.mm.prod.frame.ProductAttribute_UI"
 	,_defineDcs_: function() {	
 		this._getBuilder_()
-		.addDc("attr", new net.nan21.dnet.module.md.mm.prod.dc.ProductAttribute({multiEdit:true}))		;		
+		.addDc("attr", new net.nan21.dnet.module.md.mm.prod.dc.ProductAttributeValue({multiEdit:true}))		;		
 	}	 
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("attr",{ name:"attrFilter", xtype:"net.nan21.dnet.module.md.mm.prod.dc.ProductAttribute$Filter",height:120})	 
-		.addDcEditGridView("attr",{ name:"attrEditList", xtype:"net.nan21.dnet.module.md.mm.prod.dc.ProductAttribute$EditList", frame:true})	 
+		.addDcFilterFormView("attr",{ name:"attrFilter", xtype:"net.nan21.dnet.module.md.mm.prod.dc.ProductAttributeValue$Filter",height:120})	 
+		.addDcEditGridView("attr",{ name:"attrEditList", xtype:"net.nan21.dnet.module.md.mm.prod.dc.ProductAttributeValue$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	
@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.frame.ProductAttribute_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbAttrEditList", {dc:"attr"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Product attributes"}).end(); 	
+			.beginToolbar("tlbAttrEditList", {dc:"attr"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Product attributes values"}).end(); 	
 	}
 
 });  

@@ -6,8 +6,6 @@
         <createTable tableName="ACT_HI_DETAIL">
 			<column name="ACT_INST_ID_" type="varchar2(255)">
 				<constraints  /></column>	 
-			<column name="BYTEARRAY_ID_" type="varchar2(255)">
-				<constraints  /></column>	 
 			<column name="DOUBLE_" type="number(12,2)">
 				<constraints  /></column>	 
 			<column name="EXECUTION_ID_" type="varchar2(255)">
@@ -33,6 +31,8 @@
 			<column name="TYPE_" type="varchar2(255)">
 				<constraints  /></column>	 
 			<column name="VAR_TYPE_" type="varchar2(255)">
+				<constraints  /></column>	 
+			<column name="BYTEARRAY_ID_" type="number(19)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

@@ -18,29 +18,21 @@ public class ProductService extends
 	@Override
 	protected void postInsert(List<Product> list) throws Exception {
 		for (Product product : list) {
-			if (product.getAttributeGroup() != null) {
+			if (product.getAttributeSet() != null) {
 				this.getBusinessDelegate(SynchronizeProductAttributeBD.class)
 						.addAttributesToProduct(product);
-			}
+			}  
 		}
-	}
-
-	@Override
-	protected void preUpdate(List<Product> list) throws Exception {
-		// for (Product product : list) {
-		// if (product.getAttributeGroup() != null) {
-		// this.getBusinessDelegate(SynchronizeProductAttribute.class)
-		// .synchronizeProductAttributes(product);
-		// }
-		// }
 	}
 
 	@Override
 	protected void postUpdate(List<Product> list) throws Exception {
 		for (Product product : list) {
-			if (product.getAttributeGroup() != null) {
+			if (product.getAttributeSet() != null) {
 				this.getBusinessDelegate(SynchronizeProductAttributeBD.class)
 						.synchronizeProductAttributes(product);
+			} else {
+				// TODO: delete the attribute values
 			}
 		}
 	}

@@ -42,8 +42,8 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.ds.model.ProductDs" ,{
 		{name:"dimUomCode", type:"string"},
 		{name:"manufacturerId", type:"int", useNull:true},
 		{name:"manufacturerCode", type:"string"},
-		{name:"attributeGroupId", type:"int", useNull:true},
-		{name:"attributeGroup", type:"string"},
+		{name:"attributeSetId", type:"int", useNull:true},
+		{name:"attributeSet", type:"string"},
 		{name:"className", type:"string"},
 		{name:"businessObject", type:"string"}
 	],
@@ -113,10 +113,10 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.ds.model.ProductDsFilter" ,{
 		{name:"manufacturerId_From",type:"int", useNull:true},
 		{name:"manufacturerId_To",type:"int", useNull:true},
 		{name:"manufacturerCode", type:"string"},
-		{name:"attributeGroupId", type:"int", useNull:true},
-		{name:"attributeGroupId_From",type:"int", useNull:true},
-		{name:"attributeGroupId_To",type:"int", useNull:true},
-		{name:"attributeGroup", type:"string"},
+		{name:"attributeSetId", type:"int", useNull:true},
+		{name:"attributeSetId_From",type:"int", useNull:true},
+		{name:"attributeSetId_To",type:"int", useNull:true},
+		{name:"attributeSet", type:"string"},
 		{name:"className", type:"string"},
 		{name:"businessObject", type:"string"}
 	] 

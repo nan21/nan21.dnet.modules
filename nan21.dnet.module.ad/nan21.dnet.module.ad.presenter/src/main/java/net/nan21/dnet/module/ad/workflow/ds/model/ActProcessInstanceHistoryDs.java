@@ -26,9 +26,11 @@ public class ActProcessInstanceHistoryDs extends
     public static final String fSTARTTIME = "startTime";
     public static final String fENDTIME = "endTime";
     public static final String fDURATION = "duration";
+    public static final String fDURATIONTEXT = "durationText";
     public static final String fSTARTEDBY = "startedBy";
     public static final String fSTARTACTION = "startAction";
     public static final String fENDACTION = "endAction";
+    public static final String fDELETEREASON = "deleteReason";
 
     @DsField()
     private String id;
@@ -57,6 +59,9 @@ public class ActProcessInstanceHistoryDs extends
     @DsField()
     private Long duration;
 
+    @DsField(fetch = false)
+    private String durationText;
+
     @DsField()
     private String startedBy;
 
@@ -65,6 +70,9 @@ public class ActProcessInstanceHistoryDs extends
 
     @DsField()
     private String endAction;
+
+    @DsField()
+    private String deleteReason;
 
     public ActProcessInstanceHistoryDs() {
         super();
@@ -147,6 +155,14 @@ public class ActProcessInstanceHistoryDs extends
         this.duration = duration;
     }
 
+    public String getDurationText() {
+        return this.durationText;
+    }
+
+    public void setDurationText(String durationText) {
+        this.durationText = durationText;
+    }
+
     public String getStartedBy() {
         return this.startedBy;
     }
@@ -169,6 +185,14 @@ public class ActProcessInstanceHistoryDs extends
 
     public void setEndAction(String endAction) {
         this.endAction = endAction;
+    }
+
+    public String getDeleteReason() {
+        return this.deleteReason;
+    }
+
+    public void setDeleteReason(String deleteReason) {
+        this.deleteReason = deleteReason;
     }
 
 }

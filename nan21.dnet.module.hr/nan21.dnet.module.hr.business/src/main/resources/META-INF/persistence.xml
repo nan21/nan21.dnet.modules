@@ -12,6 +12,7 @@
 		<class>net.nan21.dnet.module.hr.benefit.domain.entity.Benefit</class>
 		<class>net.nan21.dnet.module.hr.benefit.domain.entity.Option</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.Employee</class>
+		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeAssignment</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeContact</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeEducation</class>
 		<class>net.nan21.dnet.module.hr.employee.domain.entity.EmployeeWorkExperience</class>
@@ -70,6 +71,7 @@
 
 		<!-- Dependencies -->
 
+		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.elem.domain.entity.Element</class>

@@ -72,6 +72,8 @@ Ext.define("net.nan21.dnet.module.hr.payroll.dc.PayrollManualValue$EditList", {
 		.addTextColumn({ name:"elementName", dataIndex:"elementName",width:200 })
 		.addTextColumn({ name:"employeeName", dataIndex:"employeeName",width:200 })
 		.addTextColumn({ name:"value", dataIndex:"value",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"jobCode", dataIndex:"jobCode",width:100 })
+		.addTextColumn({ name:"positionCode", dataIndex:"positionCode",width:100 })
 		.addNumberColumn({ name:"periodId", dataIndex:"periodId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"employeeId", dataIndex:"employeeId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"elementId", dataIndex:"elementId", hidden:true, align:"right",format:"0",width:70})

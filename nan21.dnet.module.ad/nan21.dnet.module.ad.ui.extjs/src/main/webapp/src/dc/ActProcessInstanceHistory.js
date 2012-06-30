@@ -58,10 +58,12 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List"
 		.addTextColumn({ name:"processInstanceId", dataIndex:"processInstanceId", hidden:true,width:150 })   	
 		.addDateColumn({ name:"startTime", dataIndex:"startTime",format:Dnet.DATETIME_FORMAT})   	      	     
 		.addDateColumn({ name:"endTime", dataIndex:"endTime",format:Dnet.DATETIME_FORMAT})   	      	     
-		.addNumberColumn({ name:"duration", dataIndex:"duration",format:"0",width:70 })  
+		.addTextColumn({ name:"duration", dataIndex:"durationText",width:200 })   	
+		.addNumberColumn({ name:"durationMili", dataIndex:"duration", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"startedBy", dataIndex:"startedBy",width:100 })   	
 		.addTextColumn({ name:"startAction", dataIndex:"startAction", width:100 })   	
 		.addTextColumn({ name:"endAction", dataIndex:"endAction", width:100 })   	
+		.addTextColumn({ name:"deleteReason", dataIndex:"deleteReason", width:100 })   	
 	  	.addDefaults()
 	  ;		   
 	}

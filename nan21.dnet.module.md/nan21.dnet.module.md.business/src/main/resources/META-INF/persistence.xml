@@ -15,11 +15,6 @@
 		<class>net.nan21.dnet.module.md.activity.domain.entity.CalendarEventPriority</class>
 		<class>net.nan21.dnet.module.md.activity.domain.entity.CalendarEventStatus</class>
 		<class>net.nan21.dnet.module.md.activity.domain.entity.CalendarEvent</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeCategory</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeType</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.Attribute</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup</class>
-		<class>net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroupAttribute</class>
 		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear</class>
 		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod</class>
 		<class>net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriodStatus</class>
@@ -51,7 +46,7 @@
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProdClassification</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductSubstitute</class>
-		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttribute</class>
+		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAccountGroup</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAccountGroupAcct</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAccount</class>
@@ -82,6 +77,11 @@
 
 		<!-- Dependencies -->
 
+		<class>net.nan21.dnet.module.ad.system.domain.entity.TempAsgnLine</class>
+		<class>net.nan21.dnet.module.bd.attr.domain.entity.Attribute</class>
+		<class>net.nan21.dnet.module.bd.attr.domain.entity.AttributeCategory</class>
+		<class>net.nan21.dnet.module.bd.attr.domain.entity.AttributeSet</class>
+		<class>net.nan21.dnet.module.bd.attr.domain.entity.AttributeSetAttribute</class>
 		<class>net.nan21.dnet.module.bd.contact.domain.entity.Person</class>
 		<class>net.nan21.dnet.module.bd.currency.domain.entity.Currency</class>
 		<class>net.nan21.dnet.module.bd.geo.domain.entity.Country</class>

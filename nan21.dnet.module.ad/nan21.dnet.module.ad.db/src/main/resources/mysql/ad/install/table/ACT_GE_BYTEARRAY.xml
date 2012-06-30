@@ -6,8 +6,6 @@
         <createTable tableName="ACT_GE_BYTEARRAY">
 			<column name="BYTES_" type="blob">
 				<constraints  /></column>	 
-			<column name="DEPLOYMENT_ID_" type="varchar(64)">
-				<constraints  /></column>	 
 			<column name="GENERATED_" type="int(4)">
 				<constraints  /></column>	 
 			<column name="ID_" type="varchar(64)">
@@ -15,6 +13,8 @@
 			<column name="NAME_" type="varchar(255)">
 				<constraints nullable="false" /></column>	 
 			<column name="REV_" type="int(8)">
+				<constraints  /></column>	 
+			<column name="DEPLOYMENT_ID_" type="varchar(64)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

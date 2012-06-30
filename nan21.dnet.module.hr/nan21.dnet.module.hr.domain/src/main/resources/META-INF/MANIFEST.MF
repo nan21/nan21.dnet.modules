@@ -61,17 +61,18 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.validation;
  version="[1.0,2.0)",javax.validation.constraints,net.nan21.dnet.core.
  domain.eventhandler,net.nan21.dnet.core.domain.model,net.nan21.dnet.m
- odule.bd.contact.domain.entity,net.nan21.dnet.module.bd.currency.doma
- in.entity,net.nan21.dnet.module.bd.elem.domain.entity,net.nan21.dnet.
- module.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.domain.entit
- y,net.nan21.dnet.module.md.acc.domain.entity,net.nan21.dnet.module.md
- .res.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.eclips
- e.persistence.annotations,org.eclipse.persistence.descriptors,org.ecl
- ipse.persistence.history,org.eclipse.persistence.jpa;version="[2.1,2.
- 5)",org.hibernate.validator;version="[4.0,5.0)",org.hibernate.validat
- or.constraints;version="[4.0,5.0)",org.springframework.aop;version="[
- 3.0,3.1)",org.springframework.aop.framework;version="[3.0,3.1)",org.s
- pringframework.context.weaving;version="[3.0,3.1)",org.springframewor
- k.transaction;version="[3.0,3.1)",org.springframework.transaction.asp
- ectj;version="[3.0,3.1)"
+ odule.ad.system.domain.entity,net.nan21.dnet.module.bd.contact.domain
+ .entity,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dne
+ t.module.bd.elem.domain.entity,net.nan21.dnet.module.bd.geo.domain.en
+ tity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module
+ .md.acc.domain.entity,net.nan21.dnet.module.md.res.domain.entity,org.
+ aopalliance.aop;version="[1.0,2.0)",org.eclipse.persistence.annotatio
+ ns,org.eclipse.persistence.descriptors,org.eclipse.persistence.histor
+ y,org.eclipse.persistence.jpa;version="[2.1,2.5)",org.hibernate.valid
+ ator;version="[4.0,5.0)",org.hibernate.validator.constraints;version=
+ "[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",org.springfra
+ mework.aop.framework;version="[3.0,3.1)",org.springframework.context.
+ weaving;version="[3.0,3.1)",org.springframework.transaction;version="
+ [3.0,3.1)",org.springframework.transaction.aspectj;version="[3.0,3.1)
+ "
 

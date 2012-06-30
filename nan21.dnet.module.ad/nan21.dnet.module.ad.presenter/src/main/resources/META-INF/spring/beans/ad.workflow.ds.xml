@@ -169,6 +169,18 @@
 	  	</property>	
 	</bean>
    
+ 	<bean id="ActVariableDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActVariableDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.workflow.ds.filter.ActVariableDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.ad.workflow.domain.entity.ActVariable" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="ActVariable" />
+		<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActVariableDs" />
+	</bean>
+   
  	<bean id="ActTaskInstanceHistoryDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDs" />

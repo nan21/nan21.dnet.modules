@@ -8,6 +8,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDs$
 	startTime__lbl : "Start Time",
 	endTime__lbl : "End Time",
 	duration__lbl : "Duration",
+	durationText__lbl : "Duration Text",
 	deleteReason__lbl : "Delete Reason",
 	priority__lbl : "Priority",
 	dueDate__lbl : "Due Date",

@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
-import net.nan21.dnet.module.hr.employee.domain.entity.Employee;
+import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeAssignment;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElement;
 import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollPeriod;
 import org.eclipse.persistence.annotations.Customizer;
@@ -70,9 +70,9 @@ public class PayrollElementValue extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayrollPeriod.class)
     @JoinColumn(name = "PERIOD_ID", referencedColumnName = "ID")
     private PayrollPeriod period;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
-    @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")
-    private Employee employee;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = EmployeeAssignment.class)
+    @JoinColumn(name = "ASSIGNMENT_ID", referencedColumnName = "ID")
+    private EmployeeAssignment assignment;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
     private Organization org;
@@ -117,15 +117,15 @@ public class PayrollElementValue extends AbstractAuditable {
         this.period = period;
     }
 
-    public Employee getEmployee() {
-        return this.employee;
+    public EmployeeAssignment getAssignment() {
+        return this.assignment;
     }
 
-    public void setEmployee(Employee employee) {
-        if (employee != null) {
-            this.__validate_client_context__(employee.getClientId());
+    public void setAssignment(EmployeeAssignment assignment) {
+        if (assignment != null) {
+            this.__validate_client_context__(assignment.getClientId());
         }
-        this.employee = employee;
+        this.assignment = assignment;
     }
 
     public Organization getOrg() {

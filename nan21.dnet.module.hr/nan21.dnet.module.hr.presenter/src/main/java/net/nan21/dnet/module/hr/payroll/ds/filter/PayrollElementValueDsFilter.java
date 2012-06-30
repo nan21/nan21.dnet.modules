@@ -42,6 +42,10 @@ public class PayrollElementValueDsFilter extends AbstractAuditableDsFilter {
 
     private String employeeName;
 
+    private String jobCode;
+
+    private String positionCode;
+
     private Long employerId;
 
     private Long employerId_From;
@@ -210,6 +214,22 @@ public class PayrollElementValueDsFilter extends AbstractAuditableDsFilter {
 
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
+    }
+
+    public String getJobCode() {
+        return this.jobCode;
+    }
+
+    public void setJobCode(String jobCode) {
+        this.jobCode = jobCode;
+    }
+
+    public String getPositionCode() {
+        return this.positionCode;
+    }
+
+    public void setPositionCode(String positionCode) {
+        this.positionCode = positionCode;
     }
 
     public Long getEmployerId() {

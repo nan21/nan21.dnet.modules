@@ -24,8 +24,8 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.ds.model.ProductDs$Trl", {
 	dimUomCode__lbl : "Dim. UoM",
 	manufacturerId__lbl : "Manufacturer Id",
 	manufacturerCode__lbl : "Manufacturer",
-	attributeGroupId__lbl : "Attribute Group Id",
-	attributeGroup__lbl : "Attribute Group",
+	attributeSetId__lbl : "Attribute Set Id",
+	attributeSet__lbl : "Attribute Set",
 	className__lbl : "Class Name",
 	businessObject__lbl : "Business Object",
 		

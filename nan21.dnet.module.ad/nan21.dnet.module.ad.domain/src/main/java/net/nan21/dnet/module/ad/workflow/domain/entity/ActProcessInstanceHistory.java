@@ -32,6 +32,8 @@ import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 import org.hibernate.validator.constraints.NotBlank;
 
+import net.nan21.dnet.core.api.util.Duration;
+
 /** ActProcessInstanceHistory. */
 @Entity
 @Table(name = ActProcessInstanceHistory.TABLE_NAME)
@@ -158,6 +160,15 @@ public class ActProcessInstanceHistory implements IModelWithId {
 
     public void setDuration(Long duration) {
         this.duration = duration;
+    }
+
+    @Transient
+    public String getDurationText() {
+        return Duration.format(this.duration);
+    }
+
+    public void setDurationText(String durationText) {
+
     }
 
     public String getStartedBy() {

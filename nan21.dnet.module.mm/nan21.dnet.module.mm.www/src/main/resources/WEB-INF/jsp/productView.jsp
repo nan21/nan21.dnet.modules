@@ -87,9 +87,9 @@
 
 <div id="product-attributes"><c:set var="lastType" scope="page"
 	value="-"></c:set> <c:forEach var="attribute" items="${attributes}">
-	<c:if test="${lastType != attribute.type}">
-		<p class="prod-attr-type">${attribute.type}</p>
-		<c:set var="lastType" value="${attribute.type}"></c:set>
+	<c:if test="${lastType != attribute.category}">
+		<p class="prod-attr-type">${attribute.category}</p>
+		<c:set var="lastType" value="${attribute.category}"></c:set>
 	</c:if>
 	<p class="attr-title">${attribute.title}:</p>
 	<p class="attr-value">${attribute.value} ${attribute.uom } &nbsp;</p>

@@ -1,0 +1,39 @@
+/*
+ * DNet eBusiness Suite
+ * Copyright: 2008-2012 Nan21 Electronics SRL. All rights reserved.
+ * Use is subject to license terms. 
+ */
+package net.nan21.dnet.module.bd.attr.business.serviceimpl;
+
+import net.nan21.dnet.core.api.session.Session;
+import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.attr.business.service.IAttributeSetService;
+
+import javax.persistence.EntityManager;
+import net.nan21.dnet.module.bd.attr.domain.entity.AttributeSet;
+
+public class AttributeSetService extends AbstractEntityService<AttributeSet>
+        implements IAttributeSetService {
+
+    public AttributeSetService() {
+        super();
+    }
+
+    public AttributeSetService(EntityManager em) {
+        super();
+        this.em = em;
+    }
+
+    @Override
+    protected Class<AttributeSet> getEntityClass() {
+        return AttributeSet.class;
+    }
+
+    public AttributeSet findByName(String name) {
+        return (AttributeSet) this.em
+                .createNamedQuery(AttributeSet.NQ_FIND_BY_NAME)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pName", name).getSingleResult();
+    }
+
+}

@@ -107,4 +107,5 @@
 	<import resource="beans/bd.standards.entity.xml" />
 	<import resource="beans/bd.uom.entity.xml" />
 	<import resource="beans/bd.elem.entity.xml" />
+	<import resource="beans/bd.attr.entity.xml" />
 </beans> 

@@ -38,8 +38,8 @@ public class ProductDs extends AbstractTypeWithCodeDs<Product> {
     public static final String fDIMUOMCODE = "dimUomCode";
     public static final String fMANUFACTURERID = "manufacturerId";
     public static final String fMANUFACTURERCODE = "manufacturerCode";
-    public static final String fATTRIBUTEGROUPID = "attributeGroupId";
-    public static final String fATTRIBUTEGROUP = "attributeGroup";
+    public static final String fATTRIBUTESETID = "attributeSetId";
+    public static final String fATTRIBUTESET = "attributeSet";
     public static final String fCLASSNAME = "className";
     public static final String fBUSINESSOBJECT = "businessObject";
 
@@ -112,11 +112,11 @@ public class ProductDs extends AbstractTypeWithCodeDs<Product> {
     @DsField(join = "left", path = "manufacturer.code")
     private String manufacturerCode;
 
-    @DsField(join = "left", path = "attributeGroup.id")
-    private Long attributeGroupId;
+    @DsField(join = "left", path = "attributeSet.id")
+    private Long attributeSetId;
 
-    @DsField(join = "left", path = "attributeGroup.name")
-    private String attributeGroup;
+    @DsField(join = "left", path = "attributeSet.name")
+    private String attributeSet;
 
     @DsField(fetch = false)
     private String className;
@@ -316,20 +316,20 @@ public class ProductDs extends AbstractTypeWithCodeDs<Product> {
         this.manufacturerCode = manufacturerCode;
     }
 
-    public Long getAttributeGroupId() {
-        return this.attributeGroupId;
+    public Long getAttributeSetId() {
+        return this.attributeSetId;
     }
 
-    public void setAttributeGroupId(Long attributeGroupId) {
-        this.attributeGroupId = attributeGroupId;
+    public void setAttributeSetId(Long attributeSetId) {
+        this.attributeSetId = attributeSetId;
     }
 
-    public String getAttributeGroup() {
-        return this.attributeGroup;
+    public String getAttributeSet() {
+        return this.attributeSet;
     }
 
-    public void setAttributeGroup(String attributeGroup) {
-        this.attributeGroup = attributeGroup;
+    public void setAttributeSet(String attributeSet) {
+        this.attributeSet = attributeSet;
     }
 
     public String getClassName() {

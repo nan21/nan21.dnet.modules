@@ -1,4 +1,4 @@
-"code";"name";"active";"storable";"showInCatalog";"defaultUomCode";"attributeGroup";"manufacturerCode";"weight";"weightUomCode";"volume";"volumeUomCode";"dimWidth";"dimHeight";"dimDepth";"dimUomCode";"iconUrl";"imageUrl";"uuid"
+"code";"name";"active";"storable";"showInCatalog";"defaultUomCode";"attributeSet";"manufacturerCode";"weight";"weightUomCode";"volume";"volumeUomCode";"dimWidth";"dimHeight";"dimDepth";"dimUomCode";"iconUrl";"imageUrl";"uuid"
 "BED_B1";"Bed B1";"true";"true";"true";"EA";"bed";;"23.0";"KG";;;"178.0";"67.0";"220.0";;;;"E3019626-771E-497D-84B8-C8BD6742A32B"
 "LPT_ASSUS_X54HY-SX030D";"Laptop Assus X54HY-SX030D";"true";"true";"true";"EA";"laptop";"assus";"2060.0";"G";;;"331.0";"27.0";"236.0";;;;"C9C2653D-1A66-4D68-90D7-F10534AD4E57"
 "LPT_SAMSUNG_RC710";"Laptop Samsung RC710";"true";"true";"true";"EA";"laptop";"samsung";"2940.0";"G";;;"419.0";"29.0";"276.0";;;;"5248B569-44D4-4E10-9935-7A3972A39A37"

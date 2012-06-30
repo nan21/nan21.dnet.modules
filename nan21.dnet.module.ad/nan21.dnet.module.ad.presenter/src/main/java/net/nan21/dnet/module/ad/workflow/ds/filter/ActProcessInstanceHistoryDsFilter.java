@@ -40,11 +40,15 @@ public class ActProcessInstanceHistoryDsFilter extends AbstractBaseDsFilter {
     private Long duration_From;
     private Long duration_To;
 
+    private String durationText;
+
     private String startedBy;
 
     private String startAction;
 
     private String endAction;
+
+    private String deleteReason;
 
     public String getId() {
         return this.id;
@@ -183,6 +187,14 @@ public class ActProcessInstanceHistoryDsFilter extends AbstractBaseDsFilter {
         this.duration_To = duration_To;
     }
 
+    public String getDurationText() {
+        return this.durationText;
+    }
+
+    public void setDurationText(String durationText) {
+        this.durationText = durationText;
+    }
+
     public String getStartedBy() {
         return this.startedBy;
     }
@@ -205,6 +217,14 @@ public class ActProcessInstanceHistoryDsFilter extends AbstractBaseDsFilter {
 
     public void setEndAction(String endAction) {
         this.endAction = endAction;
+    }
+
+    public String getDeleteReason() {
+        return this.deleteReason;
+    }
+
+    public void setDeleteReason(String deleteReason) {
+        this.deleteReason = deleteReason;
     }
 
 }

@@ -150,16 +150,16 @@
 		<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAccountAcctDs" />
 	</bean>
    
- 	<bean id="ProductAttributeDsService" scope="prototype"
+ 	<bean id="ProductAttributeValueDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.ds.filter.ProductAttributeDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttribute" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.md.mm.prod.ds.converter.ProductAttributeDsConv" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeValueDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.mm.prod.ds.filter.ProductAttributeValueDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.md.mm.prod.ds.converter.ProductAttributeValueDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="ProductAttribute" />
-		<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeDs" />
+		<property name="name" value="ProductAttributeValue" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.mm.prod.ds.model.ProductAttributeValueDs" />
 	</bean>
    
  	<bean id="ProdClassificationDsService" scope="prototype"

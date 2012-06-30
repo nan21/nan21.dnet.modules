@@ -101,8 +101,7 @@
 	<!-- Entity services -->
 	
 	<import resource="beans/md.acc.entity.xml" />
-	<import resource="beans/md.activity.entity.xml" />	
-	<import resource="beans/md.base.attr.entity.xml" />
+	<import resource="beans/md.activity.entity.xml" />		
 	<import resource="beans/md.base.tx.entity.xml" />
 	<import resource="beans/md.base.tax.entity.xml" />
 	<import resource="beans/md.base.period.entity.xml" />

@@ -12,6 +12,8 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollElementValueDs$Trl"
 	type__lbl : "Type",
 	employeeId__lbl : "Employee Id",
 	employeeName__lbl : "Employee Name",
+	jobCode__lbl : "Job Code",
+	positionCode__lbl : "Position Code",
 	employerId__lbl : "Employer Id",
 	employer__lbl : "Employer",
 	value__lbl : "Value",

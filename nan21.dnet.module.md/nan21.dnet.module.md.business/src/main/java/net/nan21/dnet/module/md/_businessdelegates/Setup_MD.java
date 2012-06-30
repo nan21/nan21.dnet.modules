@@ -16,7 +16,7 @@ public class Setup_MD extends AbstractBusinessSetupParticipant implements
 
 	@Override
 	protected void init() {
-		this.targetName = "DNet-BP";
+		this.targetName = "DNet-MD";
 		this.createTasks();
 	}
 
@@ -25,7 +25,7 @@ public class Setup_MD extends AbstractBusinessSetupParticipant implements
 		// there is nothing to setup here, this one is run to enforce that the
 		// database objects are created in the right order
 		// in case the object creation is managed by eclipselink
-		Long i = (Long) this.em.createQuery(
+		Long i = (Long) this.getEntityManager().createQuery(
 				"select count(e) from " + Bank.class.getSimpleName() + " e")
 				.getResultList().get(0);
 

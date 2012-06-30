@@ -67,27 +67,28 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  t.nan21.dnet.core.api.service,net.nan21.dnet.core.api.session,net.nan
  21.dnet.core.api.setup,net.nan21.dnet.core.api.wf,net.nan21.dnet.core
  .business.persistenceunit,net.nan21.dnet.core.business.service,net.na
- n21.dnet.module.bd.contact.domain.entity,net.nan21.dnet.module.bd.cur
- rency.domain.entity,net.nan21.dnet.module.bd.elem.domain.entity,net.n
- an21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.do
- main.entity,net.nan21.dnet.module.hr.benefit.business.service,net.nan
- 21.dnet.module.hr.benefit.domain.entity,net.nan21.dnet.module.hr.empl
- oyee.business.service,net.nan21.dnet.module.hr.employee.domain.entity
- ,net.nan21.dnet.module.hr.grade.business.service,net.nan21.dnet.modul
- e.hr.grade.domain.entity,net.nan21.dnet.module.hr.job.business.servic
- e,net.nan21.dnet.module.hr.job.domain.entity,net.nan21.dnet.module.hr
- .payroll.business.service,net.nan21.dnet.module.hr.payroll.domain.ent
- ity,net.nan21.dnet.module.hr.skill.business.service,net.nan21.dnet.mo
- dule.hr.skill.domain.entity,net.nan21.dnet.module.hr.time.business.se
- rvice,net.nan21.dnet.module.hr.time.domain.entity,net.nan21.dnet.modu
- le.hr.training.business.service,net.nan21.dnet.module.hr.training.dom
- ain.entity,net.nan21.dnet.module.md.acc.domain.entity,net.nan21.dnet.
- module.md.res.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",o
- rg.eclipse.persistence.jpa;version="[2.1,2.5)",org.hibernate.validato
- r;version="[4.0,5.0)",org.hibernate.validator.constraints;version="[4
- .0,5.0)",org.springframework.aop;version="[3.0,3.1)",org.springframew
- ork.aop.framework;version="[3.0,3.1)",org.springframework.context.wea
- ving;version="[3.0,3.1)",org.springframework.orm.jpa,org.springframew
- ork.orm.jpa.vendor,org.springframework.transaction;version="[3.0,3.1)
- ",org.springframework.transaction.aspectj;version="[3.0,3.1)"
+ n21.dnet.module.ad.system.domain.entity,net.nan21.dnet.module.bd.cont
+ act.domain.entity,net.nan21.dnet.module.bd.currency.domain.entity,net
+ .nan21.dnet.module.bd.elem.domain.entity,net.nan21.dnet.module.bd.geo
+ .domain.entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.d
+ net.module.hr.benefit.business.service,net.nan21.dnet.module.hr.benef
+ it.domain.entity,net.nan21.dnet.module.hr.employee.business.service,n
+ et.nan21.dnet.module.hr.employee.domain.entity,net.nan21.dnet.module.
+ hr.grade.business.service,net.nan21.dnet.module.hr.grade.domain.entit
+ y,net.nan21.dnet.module.hr.job.business.service,net.nan21.dnet.module
+ .hr.job.domain.entity,net.nan21.dnet.module.hr.payroll.business.servi
+ ce,net.nan21.dnet.module.hr.payroll.domain.entity,net.nan21.dnet.modu
+ le.hr.skill.business.service,net.nan21.dnet.module.hr.skill.domain.en
+ tity,net.nan21.dnet.module.hr.time.business.service,net.nan21.dnet.mo
+ dule.hr.time.domain.entity,net.nan21.dnet.module.hr.training.business
+ .service,net.nan21.dnet.module.hr.training.domain.entity,net.nan21.dn
+ et.module.md.acc.domain.entity,net.nan21.dnet.module.md.res.domain.en
+ tity,org.aopalliance.aop;version="[1.0,2.0)",org.eclipse.persistence.
+ jpa;version="[2.1,2.5)",org.hibernate.validator;version="[4.0,5.0)",o
+ rg.hibernate.validator.constraints;version="[4.0,5.0)",org.springfram
+ ework.aop;version="[3.0,3.1)",org.springframework.aop.framework;versi
+ on="[3.0,3.1)",org.springframework.context.weaving;version="[3.0,3.1)
+ ",org.springframework.orm.jpa,org.springframework.orm.jpa.vendor,org.
+ springframework.transaction;version="[3.0,3.1)",org.springframework.t
+ ransaction.aspectj;version="[3.0,3.1)"
 

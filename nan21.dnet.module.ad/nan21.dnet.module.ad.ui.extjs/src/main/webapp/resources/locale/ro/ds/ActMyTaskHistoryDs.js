@@ -6,7 +6,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActMyTaskHistoryDs$Trl", 
 	startTime__lbl :  "Început la",
 	endTime__lbl :  "Sfârşit la",
 	duration__lbl :  "Durata",
-	deleteReason__lbl :  "Motiv ştergere",
+	durationText__lbl :  "@durationText",	deleteReason__lbl :  "Motiv ştergere",
 	priority__lbl :  "Prioritate",
 	dueDate__lbl :  "@dueDate",		 
 	id__lbl :"ID"

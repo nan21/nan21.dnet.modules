@@ -46,6 +46,7 @@
 	<import resource="beans/bd.standards.ds.xml" />
 	<import resource="beans/bd.uom.ds.xml" />
 	<import resource="beans/bd.elem.ds.xml" />
+	<import resource="beans/bd.attr.ds.xml" />
  
 	
  

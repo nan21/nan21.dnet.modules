@@ -27,8 +27,8 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
+import net.nan21.dnet.module.bd.attr.domain.entity.AttributeSet;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
@@ -155,17 +155,17 @@ public class Product extends AbstractTypeWithCode {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductManufacturer.class)
     @JoinColumn(name = "MANUFACTURER_ID", referencedColumnName = "ID")
     private ProductManufacturer manufacturer;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AttributeGroup.class)
-    @JoinColumn(name = "ATTRIBUTEGROUP_ID", referencedColumnName = "ID")
-    private AttributeGroup attributeGroup;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = AttributeSet.class)
+    @JoinColumn(name = "ATTRIBUTESET_ID", referencedColumnName = "ID")
+    private AttributeSet attributeSet;
 
     @ManyToMany
     @JoinTable(name = "MD_PROD_PRODCTG", joinColumns = { @JoinColumn(name = "PRODUCTS_ID") }, inverseJoinColumns = { @JoinColumn(name = "CATEGORIES_ID") })
     private Collection<ProductCategory> categories;
 
-    @OneToMany(fetch = FetchType.LAZY, targetEntity = ProductAttribute.class, mappedBy = "product", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = ProductAttributeValue.class, mappedBy = "product", cascade = CascadeType.ALL)
     @CascadeOnDelete
-    private Collection<ProductAttribute> attributes;
+    private Collection<ProductAttributeValue> attributeValues;
 
     /* ============== getters - setters ================== */
 
@@ -345,15 +345,15 @@ public class Product extends AbstractTypeWithCode {
         this.manufacturer = manufacturer;
     }
 
-    public AttributeGroup getAttributeGroup() {
-        return this.attributeGroup;
+    public AttributeSet getAttributeSet() {
+        return this.attributeSet;
     }
 
-    public void setAttributeGroup(AttributeGroup attributeGroup) {
-        if (attributeGroup != null) {
-            this.__validate_client_context__(attributeGroup.getClientId());
+    public void setAttributeSet(AttributeSet attributeSet) {
+        if (attributeSet != null) {
+            this.__validate_client_context__(attributeSet.getClientId());
         }
-        this.attributeGroup = attributeGroup;
+        this.attributeSet = attributeSet;
     }
 
     public Collection<ProductCategory> getCategories() {
@@ -364,20 +364,21 @@ public class Product extends AbstractTypeWithCode {
         this.categories = categories;
     }
 
-    public Collection<ProductAttribute> getAttributes() {
-        return this.attributes;
+    public Collection<ProductAttributeValue> getAttributeValues() {
+        return this.attributeValues;
     }
 
-    public void setAttributes(Collection<ProductAttribute> attributes) {
-        this.attributes = attributes;
+    public void setAttributeValues(
+            Collection<ProductAttributeValue> attributeValues) {
+        this.attributeValues = attributeValues;
     }
 
-    public void addToAttributes(ProductAttribute e) {
-        if (this.attributes == null) {
-            this.attributes = new ArrayList<ProductAttribute>();
+    public void addToAttributeValues(ProductAttributeValue e) {
+        if (this.attributeValues == null) {
+            this.attributeValues = new ArrayList<ProductAttributeValue>();
         }
         e.setProduct(this);
-        this.attributes.add(e);
+        this.attributeValues.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

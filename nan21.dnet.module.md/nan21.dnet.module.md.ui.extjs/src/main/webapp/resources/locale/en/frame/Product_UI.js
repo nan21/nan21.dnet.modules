@@ -1,10 +1,11 @@
 
 Ext.define("net.nan21.dnet.module.md.mm.prod.frame.Product_UI$Trl", {  	  	
 	prodEditInfo__ttl : "Details",
-	attrEditList__ttl : "Attributes",
+	attrFilter__ttl : "Filter",
 	stockFilter__ttl : "Filter",
 	atchEditList__ttl : "Attachments",
 	classificEdit__ttl : "Classifications",
+	attrPanel__ttl : "Attributes",
 	stockPanel__ttl : "Stocks",
 	notesPanel__ttl : "Notes",
 	accountsPanel__ttl : "Accounts",

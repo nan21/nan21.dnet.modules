@@ -8,9 +8,9 @@ package net.nan21.dnet.module.md.mm.prod.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.attr.domain.entity.AttributeSet;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup;
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttribute;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer;
 
@@ -115,17 +115,17 @@ public class ProductService extends AbstractEntityService<Product> {
                 .getResultList();
     }
 
-    public List<Product> findByAttributeGroup(AttributeGroup attributeGroup) {
-        return this.findByAttributeGroupId(attributeGroup.getId());
+    public List<Product> findByAttributeSet(AttributeSet attributeSet) {
+        return this.findByAttributeSetId(attributeSet.getId());
     }
 
-    public List<Product> findByAttributeGroupId(Long attributeGroupId) {
+    public List<Product> findByAttributeSetId(Long attributeSetId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select e from Product e where e.clientId = :pClientId and e.attributeGroup.id = :pAttributeGroupId",
+                        "select e from Product e where e.clientId = :pClientId and e.attributeSet.id = :pAttributeSetId",
                         Product.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pAttributeGroupId", attributeGroupId)
+                .setParameter("pAttributeSetId", attributeSetId)
                 .getResultList();
     }
 
@@ -142,17 +142,19 @@ public class ProductService extends AbstractEntityService<Product> {
                 .setParameter("pCategoriesId", categoriesId).getResultList();
     }
 
-    public List<Product> findByAttributes(ProductAttribute attributes) {
-        return this.findByAttributesId(attributes.getId());
+    public List<Product> findByAttributeValues(
+            ProductAttributeValue attributeValues) {
+        return this.findByAttributeValuesId(attributeValues.getId());
     }
 
-    public List<Product> findByAttributesId(Long attributesId) {
+    public List<Product> findByAttributeValuesId(Long attributeValuesId) {
         return (List<Product>) this.em
                 .createQuery(
-                        "select distinct e from Product e , IN (e.attributes) c where e.clientId = :pClientId and c.id = :pAttributesId",
+                        "select distinct e from Product e , IN (e.attributeValues) c where e.clientId = :pClientId and c.id = :pAttributeValuesId",
                         Product.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pAttributesId", attributesId).getResultList();
+                .setParameter("pAttributeValuesId", attributeValuesId)
+                .getResultList();
     }
 
     public String getExpenseAcct(Product product, Organization organization,

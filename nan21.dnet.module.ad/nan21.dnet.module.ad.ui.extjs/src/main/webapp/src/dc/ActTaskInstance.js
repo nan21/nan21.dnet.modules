@@ -26,18 +26,15 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter", {
 		.addCheckbox({ name:"hideActive" ,paramIndex:"hideActive" ,listeners:{change:{scope:this, fn:this._doQuery_}} })
 		.addCheckbox({ name:"hideCompleted" ,paramIndex:"hideCompleted" ,listeners:{change:{scope:this, fn:this._doQuery_}} })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210, defaults:{
-labelAlign:"right",labelWidth:150}}) 
-		.addPanel({ name:"col2", layout:"form",width:210, defaults:{
-labelAlign:"right",labelWidth:150}}) 
+		.addPanel({ name:"col1", layout:"form", width:80, defaults:{
+labelAlign:"right",labelWidth:70}}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["hideActive"])
-		.addChildrenTo("col2",["hideCompleted"])
+		.addChildrenTo("main",["col1"])
+		.addChildrenTo("col1",["hideActive","hideCompleted"])
     		
 	}
 	,_doQuery_: function() {	
@@ -54,7 +51,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List", {
 	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"processId", dataIndex:"processId", hidden:true,width:150 })   	
-		.addTextColumn({ name:"taskKey", dataIndex:"taskKey",width:200 })   	
+		.addTextColumn({ name:"taskKey", dataIndex:"taskKey", width:120 })   	
 		.addTextColumn({ name:"processInstanceId", dataIndex:"processInstanceId", hidden:true,width:150 })   	
 		.addTextColumn({ name:"executionId", dataIndex:"executionId", hidden:true,width:200 })   	
 		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	

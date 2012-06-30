@@ -128,46 +128,6 @@
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
 								<property name="sequence" value="130" />
-								<property name="dsName" value="AttributeCategory" />
-								<property name="destPath" value="demo-data/md" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/demo/AttributeCategory.csv" />
-							</bean>
-						
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="140" />
-								<property name="dsName" value="AttributeType" />
-								<property name="destPath" value="demo-data/md" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/demo/AttributeType.csv" />
-							</bean>
-						
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="150" />
-								<property name="dsName" value="Attribute" />
-								<property name="destPath" value="demo-data/md" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/demo/Attribute.csv" />
-							</bean>
-						
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="160" />
-								<property name="dsName" value="AttributeGroup" />
-								<property name="destPath" value="demo-data/md" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/demo/AttributeGroup.csv" />
-							</bean>
-						
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="170" />
-								<property name="dsName" value="AttributeGroupAttribute" />
-								<property name="destPath" value="demo-data/md" />
-								<property name="file"
-									value="classpath:net/nan21/dnet/module/md/data/demo/AttributeGroupAttribute.csv" />
-							</bean>
-						
-							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="180" />
 								<property name="dsName" value="Bank" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"
@@ -175,7 +135,7 @@
 							</bean>
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="190" />
+								<property name="sequence" value="140" />
 								<property name="dsName" value="CustomerGroup" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"
@@ -183,7 +143,7 @@
 							</bean>
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="200" />
+								<property name="sequence" value="150" />
 								<property name="dsName" value="VendorGroup" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"
@@ -191,7 +151,7 @@
 							</bean>
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="210" />
+								<property name="sequence" value="160" />
 								<property name="dsName" value="CompanyLegalForm" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"
@@ -199,7 +159,7 @@
 							</bean>
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="220" />
+								<property name="sequence" value="170" />
 								<property name="dsName" value="BusinessPartner" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"
@@ -207,7 +167,7 @@
 							</bean>
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="230" />
+								<property name="sequence" value="180" />
 								<property name="dsName" value="ProductManufacturer" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"
@@ -215,7 +175,7 @@
 							</bean>
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="240" />
+								<property name="sequence" value="190" />
 								<property name="dsName" value="ProductCategory" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"
@@ -223,7 +183,7 @@
 							</bean>
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="250" />
+								<property name="sequence" value="200" />
 								<property name="dsName" value="Product" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"
@@ -231,7 +191,7 @@
 							</bean>
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="260" />
+								<property name="sequence" value="210" />
 								<property name="dsName" value="Attachment" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"
@@ -239,7 +199,7 @@
 							</bean>
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="270" />
+								<property name="sequence" value="220" />
 								<property name="dsName" value="PriceList" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"
@@ -247,7 +207,7 @@
 							</bean>
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="280" />
+								<property name="sequence" value="230" />
 								<property name="dsName" value="PriceListVersion" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"
@@ -255,7 +215,7 @@
 							</bean>
 						
 							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
-								<property name="sequence" value="290" />
+								<property name="sequence" value="240" />
 								<property name="dsName" value="InvTransactionType" />
 								<property name="destPath" value="demo-data/md" />
 								<property name="file"

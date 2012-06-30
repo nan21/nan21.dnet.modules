@@ -7,9 +7,12 @@ package net.nan21.dnet.module.ad.workflow.domain.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
@@ -17,6 +20,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import net.nan21.dnet.core.api.model.IModelWithId;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
+import net.nan21.dnet.module.ad.workflow.domain.entity.ActDeployment;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
 import org.eclipse.persistence.annotations.Customizer;
@@ -66,10 +70,6 @@ public class ActByteArray implements IModelWithId {
     @NotBlank
     private String name;
 
-    /** DeploymentId. */
-    @Column(name = "DEPLOYMENT_ID_", length = 64)
-    private String deploymentId;
-
     /** Bytes. */
     @Column(name = "BYTES_")
     @Lob
@@ -78,6 +78,9 @@ public class ActByteArray implements IModelWithId {
     /** Generated. */
     @Column(name = "GENERATED_")
     private Integer generated;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = ActDeployment.class)
+    @JoinColumn(name = "DEPLOYMENT_ID_", referencedColumnName = "ID_")
+    private ActDeployment deployment;
 
     /* ============== getters - setters ================== */
 
@@ -105,14 +108,6 @@ public class ActByteArray implements IModelWithId {
         this.name = name;
     }
 
-    public String getDeploymentId() {
-        return this.deploymentId;
-    }
-
-    public void setDeploymentId(String deploymentId) {
-        this.deploymentId = deploymentId;
-    }
-
     public byte[] getBytes() {
         return this.bytes;
     }
@@ -136,6 +131,14 @@ public class ActByteArray implements IModelWithId {
 
     public void setVersion(Long version) {
 
+    }
+
+    public ActDeployment getDeployment() {
+        return this.deployment;
+    }
+
+    public void setDeployment(ActDeployment deployment) {
+        this.deployment = deployment;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

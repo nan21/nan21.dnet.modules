@@ -26,9 +26,10 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDs" ,{
 		{name:"closed", type:"boolean"}
 	],
 	validations: [  
-		{field: "name", type: 'presence'}
-	]	
-	
+		{field: "name", type: 'presence'}, 
+		{field: "startDate", type: 'presence'}, 
+		{field: "endDate", type: 'presence'}
+	]
 });
 
 Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodDsFilter" ,{

@@ -4,8 +4,6 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <changeSet author="amathe" id="TBL">
         <createTable tableName="ACT_RU_VARIABLE">
-			<column name="BYTEARRAY_ID_" type="varchar(255)">
-				<constraints  /></column>	 
 			<column name="DOUBLE_" type="decimal(12,2)">
 				<constraints  /></column>	 
 			<column name="EXECUTION_ID_" type="varchar(255)">
@@ -27,6 +25,8 @@
 			<column name="TEXT_" type="text">
 				<constraints  /></column>	 
 			<column name="TYPE_" type="varchar(255)">
+				<constraints  /></column>	 
+			<column name="BYTEARRAY_ID_" type="varchar(64)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

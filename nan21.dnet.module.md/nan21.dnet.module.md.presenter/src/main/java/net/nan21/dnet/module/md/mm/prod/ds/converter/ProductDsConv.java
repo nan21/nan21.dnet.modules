@@ -6,10 +6,10 @@
 package net.nan21.dnet.module.md.mm.prod.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.attr.business.service.IAttributeSetService;
+import net.nan21.dnet.module.bd.attr.domain.entity.AttributeSet;
 import net.nan21.dnet.module.bd.uom.business.service.IUomService;
 import net.nan21.dnet.module.bd.uom.domain.entity.Uom;
-import net.nan21.dnet.module.md.base.attr.business.service.IAttributeGroupService;
-import net.nan21.dnet.module.md.base.attr.domain.entity.AttributeGroup;
 import net.nan21.dnet.module.md.mm.prod.business.service.IProductManufacturerService;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer;
 
@@ -74,15 +74,15 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
             this.lookup_weightUom_Uom(ds, e);
         }
 
-        if (ds.getAttributeGroupId() != null) {
-            if (e.getAttributeGroup() == null
-                    || !e.getAttributeGroup().getId()
-                            .equals(ds.getAttributeGroupId())) {
-                e.setAttributeGroup((AttributeGroup) this.em.find(
-                        AttributeGroup.class, ds.getAttributeGroupId()));
+        if (ds.getAttributeSetId() != null) {
+            if (e.getAttributeSet() == null
+                    || !e.getAttributeSet().getId()
+                            .equals(ds.getAttributeSetId())) {
+                e.setAttributeSet((AttributeSet) this.em.find(
+                        AttributeSet.class, ds.getAttributeSetId()));
             }
         } else {
-            this.lookup_attributeGroup_AttributeGroup(ds, e);
+            this.lookup_attributeSet_AttributeSet(ds, e);
         }
 
     }
@@ -183,23 +183,22 @@ public class ProductDsConv extends AbstractDsConverter<ProductDs, Product>
         }
     }
 
-    protected void lookup_attributeGroup_AttributeGroup(ProductDs ds, Product e)
+    protected void lookup_attributeSet_AttributeSet(ProductDs ds, Product e)
             throws Exception {
-        if (ds.getAttributeGroup() != null
-                && !ds.getAttributeGroup().equals("")) {
-            AttributeGroup x = null;
+        if (ds.getAttributeSet() != null && !ds.getAttributeSet().equals("")) {
+            AttributeSet x = null;
             try {
-                x = ((IAttributeGroupService) findEntityService(AttributeGroup.class))
-                        .findByName(ds.getAttributeGroup());
+                x = ((IAttributeSetService) findEntityService(AttributeSet.class))
+                        .findByName(ds.getAttributeSet());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `AttributeGroup` reference:  `attributeGroup` = "
-                                + ds.getAttributeGroup() + "  ");
+                        "Invalid value provided to find `AttributeSet` reference:  `attributeSet` = "
+                                + ds.getAttributeSet() + "  ");
             }
-            e.setAttributeGroup(x);
+            e.setAttributeSet(x);
 
         } else {
-            e.setAttributeGroup(null);
+            e.setAttributeSet(null);
         }
     }
 

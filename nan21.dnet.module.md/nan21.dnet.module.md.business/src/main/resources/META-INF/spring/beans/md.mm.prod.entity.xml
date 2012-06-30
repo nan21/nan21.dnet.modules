@@ -22,8 +22,8 @@
  	<bean id="ProductSubstituteService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.mm.prod.business.serviceimpl.ProductSubstituteService"  />  
  
- 	<bean id="ProductAttributeService" scope="prototype"
-	  		class="net.nan21.dnet.module.md.mm.prod.business.serviceimpl.ProductAttributeService"  />  
+ 	<bean id="ProductAttributeValueService" scope="prototype"
+	  		class="net.nan21.dnet.module.md.mm.prod.business.serviceimpl.ProductAttributeValueService"  />  
  
  	<bean id="ProductAccountGroupService" scope="prototype"
 	  		class="net.nan21.dnet.module.md.mm.prod.business.serviceimpl.ProductAccountGroupService"  />  

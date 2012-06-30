@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceDs$Trl", {
 	startTime__lbl : "Start Time",
 	endTime__lbl : "End Time",
 	duration__lbl : "Duration",
+	durationText__lbl : "Duration Text",
 	priority__lbl : "Priority",
 	dueDate__lbl : "Due Date",
 		

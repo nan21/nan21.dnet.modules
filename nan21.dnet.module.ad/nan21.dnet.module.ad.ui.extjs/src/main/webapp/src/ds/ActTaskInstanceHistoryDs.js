@@ -18,6 +18,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDs"
 		{name:"startTime", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"endTime", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"duration", type:"int", useNull:true},
+		{name:"durationText", type:"string"},
 		{name:"deleteReason", type:"string"},
 		{name:"priority", type:"int", useNull:true},
 		{name:"dueDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
@@ -44,6 +45,7 @@ Ext.define("net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDsF
 		{name:"duration", type:"int", useNull:true},
 		{name:"duration_From",type:"int", useNull:true},
 		{name:"duration_To",type:"int", useNull:true},
+		{name:"durationText", type:"string"},
 		{name:"deleteReason", type:"string"},
 		{name:"priority", type:"int", useNull:true},
 		{name:"priority_From",type:"int", useNull:true},

@@ -14,8 +14,8 @@
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_HR_PAYROLL_ELEM_VAL3" 
-				baseTableName="HR_PAYROLL_ELEM_VAL" baseColumnNames="EMPLOYEE_ID"  
-				referencedTableName="HR_EMPL"  referencedColumnNames="ID" />
+				baseTableName="HR_PAYROLL_ELEM_VAL" baseColumnNames="ASSIGNMENT_ID"  
+				referencedTableName="HR_EMPL_ASGN"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_HR_PAYROLL_ELEM_VAL4" 

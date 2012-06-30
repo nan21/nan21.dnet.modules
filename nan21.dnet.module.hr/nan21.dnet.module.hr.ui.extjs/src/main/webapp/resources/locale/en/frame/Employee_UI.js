@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI$Trl", {
 	atchEditList__ttl : "Attachments",
 	communicEditList__ttl : "Communication",
 	notesPanel__ttl : "Notes",
+	asgnPanel__ttl : "Assignments",
 	addressPanel__ttl : "Address",
 	
 	tlbEmpList__ttl : "Employees",
@@ -22,6 +23,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.Employee_UI$Trl", {
 	tlbCommunicEditList__ttl : "Communication",
 	tlbAddressList__ttl : "Addresses",
 	tlbAddressEdit__ttl : "Address",
+	tlbAsgnList__ttl : "Assignments",
+	tlbAsgnEdit__ttl : "Assignment",
 	
 	btnViewAttachment__ttl : "View",
 	btnViewAttachment__desc : "View the selected attachment",

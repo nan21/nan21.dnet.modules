@@ -1,8 +1,10 @@
 
 Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI$Trl", {  	  	
+	listVars__ttl : "Variables",
 	wdwAssignTask__ttl : "Assign task",
 	canvasProcess__ttl : "Processes defined",
 	canvasRunningInstance__ttl : "Running instances",
+	panelRunningTask__ttl : "Tasks",
 	canvasFinishedInstance__ttl : "Finished instances",
 	canvasDeployment__ttl : "Deployments",
 	
@@ -13,6 +15,8 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI$Trl", {
 	btnGetProcessDefinitionDiagram__desc : "Show diagram for the selected process definition",
 	btnGetProcessDefinitionXml__ttl : "Show XML",
 	btnGetProcessDefinitionXml__desc : "Show xml for the selected process definition",
+	btnGetProcessInstanceXml__ttl : "Show XML",
+	btnGetProcessInstanceXml__desc : "Show xml for the selected process.",
 	btnGetProcessInstanceDiagram__ttl : "Show diagram",
 	btnGetProcessInstanceDiagram__desc : "Show diagram for the selected process instance",
 	btnKillProcessInstance__ttl : "Kill Instance",

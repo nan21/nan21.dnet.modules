@@ -1,4 +1,4 @@
-Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessDefinition", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessInstance", "nan21.dnet.module.ad.ui.extjs/ds/ActTaskInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/ActTaskInstance", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessInstanceHistoryDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessInstanceHistory", "nan21.dnet.module.ad.ui.extjs/ds/ActTaskInstanceHistoryDs", "nan21.dnet.module.ad.ui.extjs/dc/ActTaskInstanceHistory", "nan21.dnet.module.ad.ui.extjs/ds/ActDeploymentDs", "nan21.dnet.module.ad.ui.extjs/dc/ActDeployment","nan21.dnet.module.ad.ui.extjs/ds/ActDeploymentLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActDeployments","nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActProcessDefinitions","nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActProcessDefinitions"]);
+Dnet.doImport(["", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessDefinition", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessInstance", "nan21.dnet.module.ad.ui.extjs/ds/ActTaskInstanceDs", "nan21.dnet.module.ad.ui.extjs/dc/ActTaskInstance", "nan21.dnet.module.ad.ui.extjs/ds/ActProcessInstanceHistoryDs", "nan21.dnet.module.ad.ui.extjs/dc/ActProcessInstanceHistory", "nan21.dnet.module.ad.ui.extjs/ds/ActTaskInstanceHistoryDs", "nan21.dnet.module.ad.ui.extjs/dc/ActTaskInstanceHistory", "nan21.dnet.module.ad.ui.extjs/ds/ActVariableDs", "nan21.dnet.module.ad.ui.extjs/dc/ActVariable", "nan21.dnet.module.ad.ui.extjs/ds/ActDeploymentDs", "nan21.dnet.module.ad.ui.extjs/dc/ActDeployment","nan21.dnet.module.ad.ui.extjs/ds/ActDeploymentLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActDeployments","nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActProcessDefinitions","nan21.dnet.module.ad.ui.extjs/ds/ActProcessDefinitionLovDs","nan21.dnet.module.ad.ui.extjs/lov/ActProcessDefinitions"]);
 
 Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {  
 	extend: "dnet.core.ui.AbstractUi",
@@ -12,9 +12,11 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 		.addDc("dcRunningTask", new net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance({}))
 		.addDc("dcFinishedInstance", new net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory({}))
 		.addDc("dcFinishedTask", new net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory({}))
+		.addDc("dcVar", new net.nan21.dnet.module.ad.workflow.dc.ActVariable({}))
 		.addDc("dcDeployment", new net.nan21.dnet.module.ad.workflow.dc.ActDeployment({}))		
 		.linkDc("dcRunningTask", "dcRunningInstance",{fetchMode:"auto",fields:[ {childField:"processInstanceId", parentField:"processInstanceId"} ]} )
-		.linkDc("dcFinishedTask", "dcFinishedInstance",{fetchMode:"auto",fields:[ {childField:"processInstanceId", parentField:"processInstanceId"} ]} );		
+		.linkDc("dcFinishedTask", "dcFinishedInstance",{fetchMode:"auto",fields:[ {childField:"processInstanceId", parentField:"processInstanceId"} ]} )
+		.linkDc("dcVar", "dcRunningInstance",{fetchMode:"auto",fields:[ {childField:"processInstanceId", parentField:"processInstanceId"} ]} );		
 	}	 
 
 	,_defineElements_: function() {							
@@ -27,6 +29,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 							 	
 		.addButton({name:"btnGetProcessDefinitionXml",text:"Show XML", tooltip:"Show xml for the selected process definition",disabled:true
 			,handler: this.onBtnGetProcessDefinitionXml,scope:this,stateManager:{name:"selected_one", dc:"dcProcess" }	})	
+							 	
+		.addButton({name:"btnGetProcessInstanceXml",text:"Show XML", tooltip:"Show xml for the selected process.",disabled:true
+			,handler: this.onBtnGetProcessInstanceXml,scope:this,stateManager:{name:"selected_one", dc:"dcRunningInstance" }	})	
 							 	
 		.addButton({name:"btnGetProcessInstanceDiagram",text:"Show diagram", tooltip:"Show diagram for the selected process instance",disabled:true
 			,handler: this.onBtnGetProcessInstanceDiagram,scope:this,stateManager:{name:"selected_one", dc:"dcRunningInstance" }	})	
@@ -57,17 +62,20 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 		.addDcFilterFormView("dcProcess",{ name:"filterProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$Filter",height:80})	 
 		.addDcGridView("dcProcess",{ name:"listProcess", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessDefinition$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnStartProcess") ,this._elems_.get("btnGetProcessDefinitionDiagram") ,this._elems_.get("btnGetProcessDefinitionXml") ]}]})	 
 		.addDcFilterFormView("dcRunningInstance",{ name:"filterRunningInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$Filter",height:80})	 
-		.addDcGridView("dcRunningInstance",{ name:"listRunningInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnKillProcessInstance") ,this._elems_.get("btnGetProcessInstanceDiagram") ,this._elems_.get("btnOpenAsignTaskWindow") ,this._elems_.get("btnCompleteTask") ]}]})	 
-		.addDcFilterFormView("dcRunningTask",{ name:"filterRunningTask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter",height:40})	 
+		.addDcGridView("dcRunningInstance",{ name:"listRunningInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstance$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'right', weight:-1, items:[ this._elems_.get("btnKillProcessInstance") ,this._elems_.get("btnGetProcessInstanceDiagram") ,this._elems_.get("btnGetProcessInstanceXml") ]}]})	 
+		.addDcGridView("dcVar",{ name:"listVars", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActVariable$List",title:"Variables"})	 
+		.addDcFilterFormView("dcRunningTask",{ name:"filterRunningTask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$Filter",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'right', weight:-1, items:[ this._elems_.get("btnOpenAsignTaskWindow") ,this._elems_.get("btnCompleteTask") ]}]})	 
 		.addDcGridView("dcRunningTask",{ name:"listRunningTask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$List"})	 
 		.addDcFormView("dcRunningTask",{ name:"formRunningTaskAsgn", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstance$AssignForm"})	 
 		.addDcFilterFormView("dcFinishedInstance",{ name:"filterFinishedInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$Filter",height:80})	 
 		.addDcGridView("dcFinishedInstance",{ name:"listFinishedInstance", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActProcessInstanceHistory$List"})	 
 		.addDcGridView("dcFinishedTask",{ name:"listFinishedTask", xtype:"net.nan21.dnet.module.ad.workflow.dc.ActTaskInstanceHistory$List",height:180})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
+
+		.addPanel({name: "detailsTabRI", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id(),height:240}) 	 
 		.addPanel({name: "canvasProcess", layout:"border", defaults:{split:true},title:"Processes defined",preventHeader:true})  	 
 		.addPanel({name: "canvasRunningInstance", layout:"border", defaults:{split:true},title:"Running instances",preventHeader:true})  	 
-		.addPanel({name: "panelRunningTask", layout:"border", defaults:{split:true},height:220})  	 
+		.addPanel({name: "panelRunningTask", layout:"border", defaults:{split:true},title:"Tasks"})  	 
 		.addPanel({name: "canvasFinishedInstance", layout:"border", defaults:{split:true},title:"Finished instances",preventHeader:true})  	 
 		.addPanel({name: "canvasDeployment", layout:"border", defaults:{split:true},title:"Deployments",preventHeader:true})  	 
 		
@@ -85,8 +93,9 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 		this._getBuilder_()		
 	 	.addChildrenTo("main", ["canvasProcess","canvasRunningInstance","canvasFinishedInstance","canvasDeployment"]) 				 		
 		.addChildrenTo("canvasProcess",["filterProcess","listProcess"] ,["north","center"])	
-		.addChildrenTo("canvasRunningInstance",["filterRunningInstance","listRunningInstance","panelRunningTask"] ,["north","center","south"])	
-		.addChildrenTo("panelRunningTask",["filterRunningTask","listRunningTask"] ,["north","center"])	
+		.addChildrenTo("canvasRunningInstance",["filterRunningInstance","listRunningInstance","detailsTabRI"] ,["north","center","south"])	
+	 	.addChildrenTo("detailsTabRI", ["panelRunningTask","listVars"]) 				 		
+		.addChildrenTo("panelRunningTask",["filterRunningTask","listRunningTask"] ,["east","center"])	
 		.addChildrenTo("canvasFinishedInstance",["filterFinishedInstance","listFinishedInstance","listFinishedTask"] ,["north","center","south"])	
 		.addChildrenTo("canvasDeployment",["filterDeployment","listDeployment"] ,["north","center"])	
 				
@@ -205,6 +214,11 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI", {
 	,onBtnGetProcessDefinitionXml: function() {	
 		
 		var id = this._getDc_("dcProcess").getRecord().get("id");
+		window.open(Dnet.wfProcessDefinitionAPI(id).xml,"ProcessDefinition","width=550,height=450,scrollbars=1,status=1");
+	}
+	,onBtnGetProcessInstanceXml: function() {	
+		
+		var id = this._getDc_("dcRunningInstance").getRecord().get("processId");
 		window.open(Dnet.wfProcessDefinitionAPI(id).xml,"ProcessDefinition","width=550,height=450,scrollbars=1,status=1");
 	}
 	,onBtnGetProcessDefinitionDiagram: function() {	
