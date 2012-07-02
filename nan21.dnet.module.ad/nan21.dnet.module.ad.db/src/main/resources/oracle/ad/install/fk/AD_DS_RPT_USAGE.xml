@@ -3,6 +3,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_AD_DS_RPT_USAGE1" baseTableName="AD_DS_RPT_USAGE" baseColumnNames="DSREPORT_ID"  referencedTableName="AD_DS_RPT"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_AD_DS_RPT_USAGE1" baseTableName="AD_DS_RPT_USAGE" 
+			baseColumnNames="DSREPORT_ID"  referencedTableName="AD_DS_RPT"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

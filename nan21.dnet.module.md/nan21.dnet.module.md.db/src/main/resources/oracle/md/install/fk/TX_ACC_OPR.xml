@@ -3,18 +3,23 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_TX_ACC_OPR1" baseTableName="TX_ACC_OPR" baseColumnNames="ORG_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_OPR1" baseTableName="TX_ACC_OPR" 
+			baseColumnNames="ORG_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_TX_ACC_OPR2" baseTableName="TX_ACC_OPR" baseColumnNames="ACCSCHEMA_ID"  referencedTableName="MD_ACC_SCHEMA"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_OPR2" baseTableName="TX_ACC_OPR" 
+			baseColumnNames="ACCSCHEMA_ID"  referencedTableName="MD_ACC_SCHEMA"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_TX_ACC_OPR3" baseTableName="TX_ACC_OPR" baseColumnNames="PERIOD_ID"  referencedTableName="MD_PER_PRD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_OPR3" baseTableName="TX_ACC_OPR" 
+			baseColumnNames="PERIOD_ID"  referencedTableName="MD_PER_PRD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
-		<addForeignKeyConstraint constraintName="FK_TX_ACC_OPR4" baseTableName="TX_ACC_OPR" baseColumnNames="ACCDOC_ID"  referencedTableName="TX_ACC_DOC"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_OPR4" baseTableName="TX_ACC_OPR" 
+			baseColumnNames="ACCDOC_ID"  referencedTableName="TX_ACC_DOC"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
-		<addForeignKeyConstraint constraintName="FK_TX_ACC_OPR5" baseTableName="TX_ACC_OPR" baseColumnNames="ACCDOCLINE_ID"  referencedTableName="TX_ACC_DOC_LINE"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_ACC_OPR5" baseTableName="TX_ACC_OPR" 
+			baseColumnNames="ACCDOCLINE_ID"  referencedTableName="TX_ACC_DOC_LINE"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

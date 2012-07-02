@@ -3,21 +3,27 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR1" baseTableName="TX_INVT_OPR" baseColumnNames="INVENTORY_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR1" baseTableName="TX_INVT_OPR" 
+			baseColumnNames="INVENTORY_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR2" baseTableName="TX_INVT_OPR" baseColumnNames="FROM_SUBINV_ID"  referencedTableName="MD_SUBINVT"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR2" baseTableName="TX_INVT_OPR" 
+			baseColumnNames="FROM_SUBINV_ID"  referencedTableName="MD_SUBINVT"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR3" baseTableName="TX_INVT_OPR" baseColumnNames="LOCATOR_ID"  referencedTableName="MD_STOCKLOC"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR3" baseTableName="TX_INVT_OPR" 
+			baseColumnNames="LOCATOR_ID"  referencedTableName="MD_STOCKLOC"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
-		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR4" baseTableName="TX_INVT_OPR" baseColumnNames="ITEM_ID"  referencedTableName="MD_PROD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR4" baseTableName="TX_INVT_OPR" 
+			baseColumnNames="ITEM_ID"  referencedTableName="MD_PROD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
-		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR5" baseTableName="TX_INVT_OPR" baseColumnNames="TRANSACTIONLINE_ID"  referencedTableName="TX_INVT_TX_LINE"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR5" baseTableName="TX_INVT_OPR" 
+			baseColumnNames="TRANSACTIONLINE_ID"  referencedTableName="TX_INVT_TX_LINE"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-6">
-		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR6" baseTableName="TX_INVT_OPR" baseColumnNames="UOM_ID"  referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_TX_INVT_OPR6" baseTableName="TX_INVT_OPR" 
+			baseColumnNames="UOM_ID"  referencedTableName="BD_UOM"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

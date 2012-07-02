@@ -3,12 +3,15 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_HR_POS1" baseTableName="HR_POS" baseColumnNames="ORG_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_HR_POS1" baseTableName="HR_POS" 
+			baseColumnNames="ORG_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_HR_POS2" baseTableName="HR_POS" baseColumnNames="JOB_ID"  referencedTableName="HR_JOB"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_HR_POS2" baseTableName="HR_POS" 
+			baseColumnNames="JOB_ID"  referencedTableName="HR_JOB"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_HR_POS3" baseTableName="HR_POS" baseColumnNames="LOCATION_ID"  referencedTableName="BD_GEO_LOCATION"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_HR_POS3" baseTableName="HR_POS" 
+			baseColumnNames="LOCATION_ID"  referencedTableName="BD_GEO_LOCATION"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

@@ -3,9 +3,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_BD_GEO_CITY1" baseTableName="BD_GEO_CITY" baseColumnNames="COUNTRY_ID"  referencedTableName="BD_GEO_CNTRY"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_BD_GEO_CITY1" baseTableName="BD_GEO_CITY" 
+			baseColumnNames="COUNTRY_ID"  referencedTableName="BD_GEO_CNTRY"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_BD_GEO_CITY2" baseTableName="BD_GEO_CITY" baseColumnNames="REGION_ID"  referencedTableName="BD_GEO_REGION"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_BD_GEO_CITY2" baseTableName="BD_GEO_CITY" 
+			baseColumnNames="REGION_ID"  referencedTableName="BD_GEO_REGION"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

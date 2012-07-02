@@ -3,9 +3,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_HR_JOB_GRD1" baseTableName="HR_JOB_GRD" baseColumnNames="JOB_ID"  referencedTableName="HR_JOB"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_HR_JOB_GRD1" baseTableName="HR_JOB_GRD" 
+			baseColumnNames="JOB_ID"  referencedTableName="HR_JOB"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_HR_JOB_GRD2" baseTableName="HR_JOB_GRD" baseColumnNames="GRADE_ID"  referencedTableName="HR_GRD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_HR_JOB_GRD2" baseTableName="HR_JOB_GRD" 
+			baseColumnNames="GRADE_ID"  referencedTableName="HR_GRD"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

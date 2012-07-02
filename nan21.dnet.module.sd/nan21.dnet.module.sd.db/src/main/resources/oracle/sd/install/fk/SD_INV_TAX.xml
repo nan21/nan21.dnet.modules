@@ -3,9 +3,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_SD_INV_TAX1" baseTableName="SD_INV_TAX" baseColumnNames="SALESINVOICE_ID"  referencedTableName="SD_INV"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_INV_TAX1" baseTableName="SD_INV_TAX" 
+			baseColumnNames="SALESINVOICE_ID"  referencedTableName="SD_INV"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_SD_INV_TAX2" baseTableName="SD_INV_TAX" baseColumnNames="TAX_ID"  referencedTableName="MD_TAX"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SD_INV_TAX2" baseTableName="SD_INV_TAX" 
+			baseColumnNames="TAX_ID"  referencedTableName="MD_TAX"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

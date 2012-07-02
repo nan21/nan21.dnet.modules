@@ -3,9 +3,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_MD_TXDOC_TYPE1" baseTableName="MD_TXDOC_TYPE" baseColumnNames="DOCSEQUENCE_ID"  referencedTableName="MD_TXDOC_SEQ"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_MD_TXDOC_TYPE1" baseTableName="MD_TXDOC_TYPE" 
+			baseColumnNames="DOCSEQUENCE_ID"  referencedTableName="MD_TXDOC_SEQ"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_MD_TXDOC_TYPE2" baseTableName="MD_TXDOC_TYPE" baseColumnNames="JOURNAL_ID"  referencedTableName="MD_ACC_JOURNAL"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_MD_TXDOC_TYPE2" baseTableName="MD_TXDOC_TYPE" 
+			baseColumnNames="JOURNAL_ID"  referencedTableName="MD_ACC_JOURNAL"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

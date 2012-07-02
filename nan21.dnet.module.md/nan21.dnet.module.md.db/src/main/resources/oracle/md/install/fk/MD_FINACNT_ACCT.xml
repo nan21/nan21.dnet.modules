@@ -3,15 +3,19 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_MD_FINACNT_ACCT1" baseTableName="MD_FINACNT_ACCT" baseColumnNames="PAYACCOUNT_ID"  referencedTableName="MD_FINACNT"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_MD_FINACNT_ACCT1" baseTableName="MD_FINACNT_ACCT" 
+			baseColumnNames="PAYACCOUNT_ID"  referencedTableName="MD_FINACNT"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_MD_FINACNT_ACCT2" baseTableName="MD_FINACNT_ACCT" baseColumnNames="ACCSCHEMA_ID"  referencedTableName="MD_ACC_SCHEMA"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_MD_FINACNT_ACCT2" baseTableName="MD_FINACNT_ACCT" 
+			baseColumnNames="ACCSCHEMA_ID"  referencedTableName="MD_ACC_SCHEMA"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_MD_FINACNT_ACCT3" baseTableName="MD_FINACNT_ACCT" baseColumnNames="DEPOSITACCOUNT_ID"  referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_MD_FINACNT_ACCT3" baseTableName="MD_FINACNT_ACCT" 
+			baseColumnNames="DEPOSITACCOUNT_ID"  referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
-		<addForeignKeyConstraint constraintName="FK_MD_FINACNT_ACCT4" baseTableName="MD_FINACNT_ACCT" baseColumnNames="WITHDRAWALACCOUNT_ID"  referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_MD_FINACNT_ACCT4" baseTableName="MD_FINACNT_ACCT" 
+			baseColumnNames="WITHDRAWALACCOUNT_ID"  referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

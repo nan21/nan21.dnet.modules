@@ -3,9 +3,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_BD_ELEM_TYPE1" baseTableName="BD_ELEM_TYPE" baseColumnNames="ENGINE_ID"  referencedTableName="BD_ENGINE"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_BD_ELEM_TYPE1" baseTableName="BD_ELEM_TYPE" 
+			baseColumnNames="ENGINE_ID"  referencedTableName="BD_ENGINE"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_BD_ELEM_TYPE2" baseTableName="BD_ELEM_TYPE" baseColumnNames="CATEGORY_ID"  referencedTableName="BD_ELEM_CTG"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_BD_ELEM_TYPE2" baseTableName="BD_ELEM_TYPE" 
+			baseColumnNames="CATEGORY_ID"  referencedTableName="BD_ELEM_CTG"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

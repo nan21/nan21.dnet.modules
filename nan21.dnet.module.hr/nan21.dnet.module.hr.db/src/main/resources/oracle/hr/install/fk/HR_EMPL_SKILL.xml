@@ -3,12 +3,15 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_HR_EMPL_SKILL1" baseTableName="HR_EMPL_SKILL" baseColumnNames="EMPLOYEE_ID"  referencedTableName="HR_EMPL"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_HR_EMPL_SKILL1" baseTableName="HR_EMPL_SKILL" 
+			baseColumnNames="EMPLOYEE_ID"  referencedTableName="HR_EMPL"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_HR_EMPL_SKILL2" baseTableName="HR_EMPL_SKILL" baseColumnNames="SKILL_ID"  referencedTableName="HR_SKILL"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_HR_EMPL_SKILL2" baseTableName="HR_EMPL_SKILL" 
+			baseColumnNames="SKILL_ID"  referencedTableName="HR_SKILL"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_HR_EMPL_SKILL3" baseTableName="HR_EMPL_SKILL" baseColumnNames="SKILLLEVEL_ID"  referencedTableName="HR_RATE_LVL"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_HR_EMPL_SKILL3" baseTableName="HR_EMPL_SKILL" 
+			baseColumnNames="SKILLLEVEL_ID"  referencedTableName="HR_RATE_LVL"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

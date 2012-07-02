@@ -3,15 +3,19 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_SC_INV_ITEM1" baseTableName="SC_INV_ITEM" baseColumnNames="PURCHASEINVOICE_ID"  referencedTableName="SC_INV"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_INV_ITEM1" baseTableName="SC_INV_ITEM" 
+			baseColumnNames="PURCHASEINVOICE_ID"  referencedTableName="SC_INV"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_SC_INV_ITEM2" baseTableName="SC_INV_ITEM" baseColumnNames="PRODUCT_ID"  referencedTableName="MD_PROD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_INV_ITEM2" baseTableName="SC_INV_ITEM" 
+			baseColumnNames="PRODUCT_ID"  referencedTableName="MD_PROD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_SC_INV_ITEM3" baseTableName="SC_INV_ITEM" baseColumnNames="UOM_ID"  referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_INV_ITEM3" baseTableName="SC_INV_ITEM" 
+			baseColumnNames="UOM_ID"  referencedTableName="BD_UOM"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
-		<addForeignKeyConstraint constraintName="FK_SC_INV_ITEM4" baseTableName="SC_INV_ITEM" baseColumnNames="TAX_ID"  referencedTableName="MD_TAX"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_SC_INV_ITEM4" baseTableName="SC_INV_ITEM" 
+			baseColumnNames="TAX_ID"  referencedTableName="MD_TAX"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

@@ -3,9 +3,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_MD_BP_CUSTGRP1" baseTableName="MD_BP_CUSTGRP" baseColumnNames="PAYMENTMETHOD_ID"  referencedTableName="MD_PYMNT_MTD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_MD_BP_CUSTGRP1" baseTableName="MD_BP_CUSTGRP" 
+			baseColumnNames="PAYMENTMETHOD_ID"  referencedTableName="MD_PYMNT_MTD"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_MD_BP_CUSTGRP2" baseTableName="MD_BP_CUSTGRP" baseColumnNames="PAYMENTTERM_ID"  referencedTableName="MD_PYMNT_TERM"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_MD_BP_CUSTGRP2" baseTableName="MD_BP_CUSTGRP" 
+			baseColumnNames="PAYMENTTERM_ID"  referencedTableName="MD_PYMNT_TERM"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

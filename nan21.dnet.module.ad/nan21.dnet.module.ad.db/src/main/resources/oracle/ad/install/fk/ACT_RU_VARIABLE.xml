@@ -3,6 +3,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_ACT_RU_VARIABLE1" baseTableName="ACT_RU_VARIABLE" baseColumnNames="BYTEARRAY_ID_"  referencedTableName="ACT_GE_BYTEARRAY"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_ACT_RU_VARIABLE1" baseTableName="ACT_RU_VARIABLE" 
+			baseColumnNames="BYTEARRAY_ID_"  referencedTableName="ACT_GE_BYTEARRAY"  referencedColumnNames="ID_" />
 	</changeSet>	
 </databaseChangeLog>    

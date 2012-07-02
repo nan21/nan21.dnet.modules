@@ -3,12 +3,15 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_MD_PROD_ACNT1" baseTableName="MD_PROD_ACNT" baseColumnNames="ORG_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_MD_PROD_ACNT1" baseTableName="MD_PROD_ACNT" 
+			baseColumnNames="ORG_ID"  referencedTableName="BD_ORG"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_MD_PROD_ACNT2" baseTableName="MD_PROD_ACNT" baseColumnNames="GROUP_ID"  referencedTableName="MD_PROD_ACNT_GRP"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_MD_PROD_ACNT2" baseTableName="MD_PROD_ACNT" 
+			baseColumnNames="GROUP_ID"  referencedTableName="MD_PROD_ACNT_GRP"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_MD_PROD_ACNT3" baseTableName="MD_PROD_ACNT" baseColumnNames="PRODUCT_ID"  referencedTableName="MD_PROD"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_MD_PROD_ACNT3" baseTableName="MD_PROD_ACNT" 
+			baseColumnNames="PRODUCT_ID"  referencedTableName="MD_PROD"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

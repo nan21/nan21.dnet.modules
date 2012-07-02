@@ -3,6 +3,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_AD_ACL_ASGN1" baseTableName="AD_ACL_ASGN" baseColumnNames="ACCESSCONTROL_ID"  referencedTableName="AD_ACL"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_AD_ACL_ASGN1" baseTableName="AD_ACL_ASGN" 
+			baseColumnNames="ACCESSCONTROL_ID"  referencedTableName="AD_ACL"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    

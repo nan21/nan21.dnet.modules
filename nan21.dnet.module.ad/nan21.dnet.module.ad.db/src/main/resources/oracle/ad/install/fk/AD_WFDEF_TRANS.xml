@@ -3,12 +3,15 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     
 	<changeSet author="amathe" id="FK-1">
-		<addForeignKeyConstraint constraintName="FK_AD_WFDEF_TRANS1" baseTableName="AD_WFDEF_TRANS" baseColumnNames="PROCESS_ID"  referencedTableName="AD_WFDEF_PROC"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_AD_WFDEF_TRANS1" baseTableName="AD_WFDEF_TRANS" 
+			baseColumnNames="PROCESS_ID"  referencedTableName="AD_WFDEF_PROC"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
-		<addForeignKeyConstraint constraintName="FK_AD_WFDEF_TRANS2" baseTableName="AD_WFDEF_TRANS" baseColumnNames="SOURCE_ID"  referencedTableName="AD_WFDEF_NODE"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_AD_WFDEF_TRANS2" baseTableName="AD_WFDEF_TRANS" 
+			baseColumnNames="SOURCE_ID"  referencedTableName="AD_WFDEF_NODE"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
-		<addForeignKeyConstraint constraintName="FK_AD_WFDEF_TRANS3" baseTableName="AD_WFDEF_TRANS" baseColumnNames="TARGET_ID"  referencedTableName="AD_WFDEF_NODE"  referencedColumnNames="ID" />
+		<addForeignKeyConstraint constraintName="FK_AD_WFDEF_TRANS3" baseTableName="AD_WFDEF_TRANS" 
+			baseColumnNames="TARGET_ID"  referencedTableName="AD_WFDEF_NODE"  referencedColumnNames="ID" />
 	</changeSet>	
 </databaseChangeLog>    
