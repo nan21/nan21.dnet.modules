@@ -20,6 +20,8 @@ Ext.define("net.nan21.dnet.module.md.mm.price.ds.model.PriceListVersionDs" ,{
 		{name:"entityFQN", type:"string"},
 		{name:"priceListId", type:"int", useNull:true},
 		{name:"priceList", type:"string"},
+		{name:"currencyId", type:"int", useNull:true},
+		{name:"currency", type:"string"},
 		{name:"validFrom", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	],
 	validations: [  
@@ -49,6 +51,10 @@ Ext.define("net.nan21.dnet.module.md.mm.price.ds.model.PriceListVersionDsFilter"
 		{name:"priceListId_From",type:"int", useNull:true},
 		{name:"priceListId_To",type:"int", useNull:true},
 		{name:"priceList", type:"string"},
+		{name:"currencyId", type:"int", useNull:true},
+		{name:"currencyId_From",type:"int", useNull:true},
+		{name:"currencyId_To",type:"int", useNull:true},
+		{name:"currency", type:"string"},
 		{name:"validFrom", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"validFrom_From",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT},
 		{name:"validFrom_To",type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}

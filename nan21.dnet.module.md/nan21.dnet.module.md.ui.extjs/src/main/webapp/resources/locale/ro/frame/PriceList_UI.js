@@ -1,4 +1,5 @@
 Ext.define("net.nan21.dnet.module.md.mm.price.frame.PriceList_UI$Trl", { 
+	priceFilter__ttl : "Filtru",
 	wdwVersionCopyProdFromCateg__ttl : "Alege categorie produse",
 	
 	tlbPricelistEditList__ttl : "Liste preţuri",

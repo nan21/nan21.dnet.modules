@@ -182,6 +182,14 @@
 									value="classpath:net/nan21/dnet/module/bd/data/demo/AttributeSetAttribute.csv" />
 							</bean>
 						
+							<bean class="net.nan21.dnet.core.api.setup.InitDataItem">
+								<property name="sequence" value="200" />
+								<property name="dsName" value="Calendar" />
+								<property name="destPath" value="demo-data/bd" />
+								<property name="file"
+									value="classpath:net/nan21/dnet/module/bd/data/demo/Calendar.csv" />
+							</bean>
+						
 						</list>
 					</property>		
 				</bean>		

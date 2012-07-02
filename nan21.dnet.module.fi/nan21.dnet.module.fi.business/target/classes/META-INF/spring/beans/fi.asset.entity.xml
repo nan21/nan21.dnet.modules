@@ -10,11 +10,17 @@
  	<bean id="AssetCategoryService" scope="prototype"
 	  		class="net.nan21.dnet.module.fi.asset.business.serviceimpl.AssetCategoryService"  />  
  
+ 	<bean id="AssetCategoryAcctService" scope="prototype"
+	  		class="net.nan21.dnet.module.fi.asset.business.serviceimpl.AssetCategoryAcctService"  />  
+ 
  	<bean id="AssetService" scope="prototype"
 	  		class="net.nan21.dnet.module.fi.asset.business.serviceimpl.AssetService"  />  
  
- 	<bean id="AmortizationItemService" scope="prototype"
-	  		class="net.nan21.dnet.module.fi.asset.business.serviceimpl.AmortizationItemService"  />  
+ 	<bean id="AssetAcctService" scope="prototype"
+	  		class="net.nan21.dnet.module.fi.asset.business.serviceimpl.AssetAcctService"  />  
+ 
+ 	<bean id="AmortizationService" scope="prototype"
+	  		class="net.nan21.dnet.module.fi.asset.business.serviceimpl.AmortizationService"  />  
    
 </beans>
    

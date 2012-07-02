@@ -18,13 +18,13 @@ Ext.define("net.nan21.dnet.module.md.bp.frame.BP_BaseData_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("custGroup",{ name:"custGroupFilter", xtype:"net.nan21.dnet.module.md.bp.dc.CustomerGroup$Filter",height:120})	 
+		.addDcFilterFormView("custGroup",{ name:"custGroupFilter", xtype:"net.nan21.dnet.module.md.bp.dc.CustomerGroup$Filter",height:80})	 
 		.addDcEditGridView("custGroup",{ name:"custGroupEditList", xtype:"net.nan21.dnet.module.md.bp.dc.CustomerGroup$EditList", frame:true})	 
-		.addDcEditGridView("custGroupAcct",{ name:"custGroupAcctEditList", xtype:"net.nan21.dnet.module.md.bp.dc.CustomerGroupAcct$CtxEditList", frame:true,height:200})	 
-		.addDcFilterFormView("vendGroup",{ name:"vendGroupFilter", xtype:"net.nan21.dnet.module.md.bp.dc.VendorGroup$Filter",height:120})	 
+		.addDcEditGridView("custGroupAcct",{ name:"custGroupAcctEditList", xtype:"net.nan21.dnet.module.md.bp.dc.CustomerGroupAcct$CtxEditList", frame:true,height:220})	 
+		.addDcFilterFormView("vendGroup",{ name:"vendGroupFilter", xtype:"net.nan21.dnet.module.md.bp.dc.VendorGroup$Filter",height:80})	 
 		.addDcEditGridView("vendGroup",{ name:"vendGroupEditList", xtype:"net.nan21.dnet.module.md.bp.dc.VendorGroup$EditList", frame:true})	 
-		.addDcEditGridView("vendGroupAcct",{ name:"vendGroupAcctEditList", xtype:"net.nan21.dnet.module.md.bp.dc.VendorGroupAcct$CtxEditList", frame:true,height:200})	 
-		.addDcFilterFormView("legalForm",{ name:"legalFormFilter", xtype:"net.nan21.dnet.module.md.bp.dc.CompanyLegalForm$Filter",height:120})	 
+		.addDcEditGridView("vendGroupAcct",{ name:"vendGroupAcctEditList", xtype:"net.nan21.dnet.module.md.bp.dc.VendorGroupAcct$CtxEditList", frame:true,height:220})	 
+		.addDcFilterFormView("legalForm",{ name:"legalFormFilter", xtype:"net.nan21.dnet.module.md.bp.dc.CompanyLegalForm$Filter",height:80})	 
 		.addDcEditGridView("legalForm",{ name:"legalFormEditList", xtype:"net.nan21.dnet.module.md.bp.dc.CompanyLegalForm$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasCustGroup", layout:"border", defaults:{split:true},title:"Customer groups",preventHeader:true})  	 

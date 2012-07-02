@@ -16,8 +16,6 @@ public interface IAssetBaseService extends IEntityService<AssetBase> {
 
     public AssetBase findByCode(String code);
 
-    public AssetBase findByName(String name);
-
     public List<AssetBase> findByOrg(Organization org);
 
     public List<AssetBase> findByOrgId(Long orgId);

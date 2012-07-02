@@ -159,7 +159,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$EditDetails", {
 		//controls	
 		this._getBuilder_()	
 		.addCheckbox({ name:"selfPayed", dataIndex:"selfPayed",listeners:{change:{scope:this, fn:this._onSelfPayedChange_}}  })
-		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentMethod", dataIndex:"paymentMethod" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
+		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentMethodOut", dataIndex:"paymentMethod" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
 		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentTerm", dataIndex:"paymentTerm" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
 		.addLov({ name:"fromAccount", xtype:"net.nan21.dnet.module.md.org.lovs.PayAccounts", dataIndex:"fromAccount" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "fromAccountId"} ],filterFieldMapping: [{lovField:"currencyId", dsField: "currencyId"} ,{lovField:"type",value: "cash"} ]  })
 		//containers

@@ -37,17 +37,13 @@ import org.eclipse.persistence.descriptors.DescriptorEvent;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "ENTITYTYPE", discriminatorType = DiscriminatorType.STRING, length = 32)
-@Table(name = AssetBase.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = AssetBase.TABLE_NAME + "_UK1", columnNames = {
-                "CLIENTID", "CODE" }),
-        @UniqueConstraint(name = AssetBase.TABLE_NAME + "_UK2", columnNames = {
-                "CLIENTID", "NAME" }) })
+@Table(name = AssetBase.TABLE_NAME, uniqueConstraints = { @UniqueConstraint(name = AssetBase.TABLE_NAME
+        + "_UK1", columnNames = { "CLIENTID", "CODE" }) })
 @Customizer(DefaultEventHandler.class)
 @NamedQueries({
         @NamedQuery(name = AssetBase.NQ_FIND_BY_ID, query = "SELECT e FROM AssetBase e WHERE e.clientId = :pClientId and e.id = :pId ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
         @NamedQuery(name = AssetBase.NQ_FIND_BY_IDS, query = "SELECT e FROM AssetBase e WHERE e.clientId = :pClientId and e.id in :pIds", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = AssetBase.NQ_FIND_BY_CODE, query = "SELECT e FROM AssetBase e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)),
-        @NamedQuery(name = AssetBase.NQ_FIND_BY_NAME, query = "SELECT e FROM AssetBase e WHERE e.clientId = :pClientId and  e.name = :pName ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
+        @NamedQuery(name = AssetBase.NQ_FIND_BY_CODE, query = "SELECT e FROM AssetBase e WHERE e.clientId = :pClientId and  e.code = :pCode ", hints = @QueryHint(name = QueryHints.BIND_PARAMETERS, value = HintValues.TRUE)) })
 public class AssetBase extends AbstractTypeWithCode {
 
     public static final String TABLE_NAME = "MD_RES_ASSET";
@@ -71,11 +67,6 @@ public class AssetBase extends AbstractTypeWithCode {
     public static final String NQ_FIND_BY_CODE = "AssetBase.findByCode";
 
     /**
-     * Named query find by unique key: Name.
-     */
-    public static final String NQ_FIND_BY_NAME = "AssetBase.findByName";
-
-    /**
      * System generated unique identifier.
      */
     @Column(name = "ID", nullable = false)
@@ -87,18 +78,6 @@ public class AssetBase extends AbstractTypeWithCode {
     /** EntityType. */
     @Column(name = "ENTITYTYPE", length = 32)
     private String entityType;
-
-    /** InitialValue. */
-    @Column(name = "INITIALVALUE", scale = 2)
-    private Float initialValue;
-
-    /** ResidualValue. */
-    @Column(name = "RESIDUALVALUE", scale = 2)
-    private Float residualValue;
-
-    /** DepreciationAmount. */
-    @Column(name = "DEPRECIATIONAMOUNT", scale = 2)
-    private Float depreciationAmount;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "ORG_ID", referencedColumnName = "ID")
     private Organization org;
@@ -122,30 +101,6 @@ public class AssetBase extends AbstractTypeWithCode {
 
     public void setEntityType(String entityType) {
         this.entityType = entityType;
-    }
-
-    public Float getInitialValue() {
-        return this.initialValue;
-    }
-
-    public void setInitialValue(Float initialValue) {
-        this.initialValue = initialValue;
-    }
-
-    public Float getResidualValue() {
-        return this.residualValue;
-    }
-
-    public void setResidualValue(Float residualValue) {
-        this.residualValue = residualValue;
-    }
-
-    public Float getDepreciationAmount() {
-        return this.depreciationAmount;
-    }
-
-    public void setDepreciationAmount(Float depreciationAmount) {
-        this.depreciationAmount = depreciationAmount;
     }
 
     public Organization getOrg() {
@@ -176,6 +131,9 @@ public class AssetBase extends AbstractTypeWithCode {
 
         if (this.getActive() == null) {
             event.updateAttributeWithObject("active", false);
+        }
+        if (this.getCode() == null || this.getCode().equals("")) {
+            event.updateAttributeWithObject("code", "A-" + this.getId());
         }
     }
 

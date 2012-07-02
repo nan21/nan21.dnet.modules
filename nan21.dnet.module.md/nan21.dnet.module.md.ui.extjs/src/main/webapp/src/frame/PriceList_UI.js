@@ -28,9 +28,9 @@ Ext.define("net.nan21.dnet.module.md.mm.price.frame.PriceList_UI", {
 		.addDcFilterFormView("pricelist",{ name:"pricelistFilter", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceList$FilterH",height:80})	 
 		.addDcEditGridView("pricelist",{ name:"pricelistEditList", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceList$EditList", frame:true})	 
 		.addDcEditGridView("version",{ name:"versionEditList", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CtxEditList", frame:true,height:250,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnShowCanvas2") ]}]})	 
-		.addDcFormView("version",{ name:"versionView", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CtxView",height:100,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAddProdByCateg") ]}]})	 
-		.addDcFormView("version",{ name:"versionCopyProdFromCateg", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CopyProductsFromCategory",height:100})	 
-		.addDcFilterFormView("price",{ name:"priceFilter", xtype:"net.nan21.dnet.module.md.mm.price.dc.ProductPrice$Filter",height:110})	 
+		.addDcFormView("version",{ name:"versionView", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CtxView",height:120,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAddProdByCateg") ]}]})	 
+		.addDcFormView("version",{ name:"versionCopyProdFromCateg", xtype:"net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CopyProductsFromCategory",height:120})	 
+		.addDcFilterFormView("price",{ name:"priceFilter", xtype:"net.nan21.dnet.module.md.mm.price.dc.ProductPrice$FilterCtx",width:280,title:"Filter", collapsible:true})	 
 		.addDcEditGridView("price",{ name:"priceEditList", xtype:"net.nan21.dnet.module.md.mm.price.dc.ProductPrice$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
@@ -38,7 +38,7 @@ Ext.define("net.nan21.dnet.module.md.mm.price.frame.PriceList_UI", {
 		.addPanel({name: "pricePanel", layout:"border", defaults:{split:true}})  	 
 		
 		.addWindow({name:"wdwVersionCopyProdFromCateg", closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("versionCopyProdFromCateg")]
-,title:"Select product category",modal:true,width:400,height:100,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnAddProdByCategExec") ]}}) 	
+,title:"Select product category",modal:true,width:400,height:120,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnAddProdByCategExec") ]}}) 	
 ;	 	
 	}
 
@@ -47,7 +47,7 @@ Ext.define("net.nan21.dnet.module.md.mm.price.frame.PriceList_UI", {
 	 	.addChildrenTo("main", ["canvas1","canvas2"]) 				 		
 		.addChildrenTo("canvas1",["pricelistFilter","pricelistEditList","versionEditList"] ,["north","center","south"])	
 		.addChildrenTo("canvas2",["versionView","pricePanel"] ,["north","center"])	
-		.addChildrenTo("pricePanel",["priceFilter","priceEditList"] ,["north","center"])	
+		.addChildrenTo("pricePanel",["priceFilter","priceEditList"] ,["west","center"])	
 	 	.addToolbarTo("canvas1","tlbPricelistEditList")	  	
 	 	.addToolbarTo("versionEditList","tlbVersionEditList")	  	
 	 	.addToolbarTo("canvas2","tlbVersionView")	  	

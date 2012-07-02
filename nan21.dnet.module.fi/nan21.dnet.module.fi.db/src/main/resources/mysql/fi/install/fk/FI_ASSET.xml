@@ -7,4 +7,9 @@
 				baseTableName="FI_ASSET" baseColumnNames="CATEGORY_ID"  
 				referencedTableName="FI_ASSET_CTG"  referencedColumnNames="ID" />
 	</changeSet>	
+	<changeSet author="amathe" id="FK-2">
+		<addForeignKeyConstraint constraintName="FK_FI_ASSET2" 
+				baseTableName="FI_ASSET" baseColumnNames="CURRENCY_ID"  
+				referencedTableName="BD_CRNCY"  referencedColumnNames="ID" />
+	</changeSet>	
 </databaseChangeLog>    

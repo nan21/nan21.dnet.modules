@@ -6,6 +6,8 @@
 package net.nan21.dnet.module.fi.asset.ds.converter;
 
 import net.nan21.dnet.core.api.converter.IDsConverter;
+import net.nan21.dnet.module.bd.currency.business.service.ICurrencyService;
+import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.business.service.IOrganizationService;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.fi.asset.business.service.IAssetCategoryService;
@@ -41,6 +43,16 @@ public class AssetDsConv extends AbstractDsConverter<AssetDs, Asset> implements
             }
         } else {
             this.lookup_category_AssetCategory(ds, e);
+        }
+
+        if (ds.getCurrencyId() != null) {
+            if (e.getCurrency() == null
+                    || !e.getCurrency().getId().equals(ds.getCurrencyId())) {
+                e.setCurrency((Currency) this.em.find(Currency.class,
+                        ds.getCurrencyId()));
+            }
+        } else {
+            this.lookup_currency_Currency(ds, e);
         }
 
         if (ds.getProductId() != null) {
@@ -90,6 +102,25 @@ public class AssetDsConv extends AbstractDsConverter<AssetDs, Asset> implements
 
         } else {
             e.setCategory(null);
+        }
+    }
+
+    protected void lookup_currency_Currency(AssetDs ds, Asset e)
+            throws Exception {
+        if (ds.getCurrency() != null && !ds.getCurrency().equals("")) {
+            Currency x = null;
+            try {
+                x = ((ICurrencyService) findEntityService(Currency.class))
+                        .findByCode(ds.getCurrency());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Currency` reference:  `currency` = "
+                                + ds.getCurrency() + "  ");
+            }
+            e.setCurrency(x);
+
+        } else {
+            e.setCurrency(null);
         }
     }
 

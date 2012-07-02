@@ -1,5 +1,6 @@
 
 Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI$Trl", {  	  	
+	taxList__ttl : "Taxes",
 	orderEditDetails__ttl : "Details",
 	itemTaxList__ttl : "Item taxes",
 	atchEditList__ttl : "Attachments",
@@ -10,6 +11,7 @@ Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI$Trl", {
 	
 	tlbOrderList__ttl : "Sales orders",
 	tlbOrderEdit__ttl : "Sales order",
+	tlbTaxList__ttl : "Taxes",
 	tlbItemList__ttl : "Items",
 	tlbItemEdit__ttl : "Item",
 	

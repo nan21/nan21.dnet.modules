@@ -7,6 +7,41 @@
 			http://www.springframework.org/schema/context 
 				http://www.springframework.org/schema/context/spring-context.xsd">   
    
+ 	<bean id="AssetCategoryDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetCategoryDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.fi.asset.ds.filter.AssetCategoryDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.fi.asset.domain.entity.AssetCategory" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AssetCategory" />
+		<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetCategoryDs" />
+	</bean>
+   
+ 	<bean id="AssetCategoryLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetCategoryLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetCategoryLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.fi.asset.domain.entity.AssetCategory" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AssetCategoryLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetCategoryLovDs" />
+	</bean>
+   
+ 	<bean id="AssetCategoryAcctDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetCategoryAcctDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.fi.asset.ds.filter.AssetCategoryAcctDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.fi.asset.domain.entity.AssetCategoryAcct" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.fi.asset.ds.converter.AssetCategoryAcctDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="AssetCategoryAcct" />
+		<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetCategoryAcctDs" />
+	</bean>
+   
  	<bean id="AssetDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetDs" />
@@ -19,16 +54,28 @@
 		<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetDs" />
 	</bean>
    
- 	<bean id="AmortizationItemDsService" scope="prototype"
+ 	<bean id="AssetAcctDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
-	  	<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AmortizationItemDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.fi.asset.ds.filter.AmortizationItemDsFilter" />
-	  	<property name="entityClass" value="net.nan21.dnet.module.fi.asset.domain.entity.AmortizationItem" />
-	  	<property name="converterClass" value="net.nan21.dnet.module.fi.asset.ds.converter.AmortizationItemDsConv" />
+	  	<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetAcctDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.fi.asset.ds.filter.AssetAcctDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.fi.asset.domain.entity.AssetAcct" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.fi.asset.ds.converter.AssetAcctDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
-		<property name="name" value="AmortizationItem" />
-		<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AmortizationItemDs" />
+		<property name="name" value="AssetAcct" />
+		<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AssetAcctDs" />
+	</bean>
+   
+ 	<bean id="AmortizationDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AmortizationDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.fi.asset.ds.filter.AmortizationDsFilter" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.fi.asset.domain.entity.Amortization" />
+	  	<property name="converterClass" value="net.nan21.dnet.module.fi.asset.ds.converter.AmortizationDsConv" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="Amortization" />
+		<property name="modelClass" value="net.nan21.dnet.module.fi.asset.ds.model.AmortizationDs" />
 	</bean>
       
 </beans>

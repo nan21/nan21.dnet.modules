@@ -14,14 +14,10 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
-			<column name="DEPRECIATIONAMOUNT" type="number(12,2)">
-				<constraints  /></column>	 
 			<column name="ENTITYTYPE" type="varchar2(32)">
 				<constraints  /></column>	 
 			<column name="ID" type="number(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="INITIALVALUE" type="number(12,2)">
-				<constraints  /></column>	 
 			<column name="MODIFIEDAT" type="date">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar2(32)">
@@ -29,8 +25,6 @@
 			<column name="NAME" type="varchar2(255)">
 				<constraints nullable="false" /></column>	 
 			<column name="NOTES" type="varchar2(4000)">
-				<constraints  /></column>	 
-			<column name="RESIDUALVALUE" type="number(12,2)">
 				<constraints  /></column>	 
 			<column name="UUID" type="varchar2(36)">
 				<constraints  /></column>	 
@@ -47,9 +41,6 @@
     </changeSet>       
 	<changeSet author="amathe" id="UK-1"> 
 		<addUniqueConstraint tableName="MD_RES_ASSET" constraintName="UK_RES_ASSET1" columnNames="CLIENTID, CODE" />
-	</changeSet>
-	<changeSet author="amathe" id="UK-2"> 
-		<addUniqueConstraint tableName="MD_RES_ASSET" constraintName="UK_RES_ASSET2" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

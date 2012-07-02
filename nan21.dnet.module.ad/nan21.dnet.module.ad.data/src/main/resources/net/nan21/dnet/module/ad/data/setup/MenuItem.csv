@@ -21,13 +21,16 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 20;ad-menu-system;System;AD;;;true;976A2A38-651F-4F12-96B0-08362141E7BC
 1;ad-menu-usr;Users;;;;true;561C6150-96A6-4862-B2B0-2842E2423971
 60;ad-menu-wf;Workflow;AD;;;true;3B737108-CA87-4E1B-A68E-5EFE3AACD401
+30;Amortization_UI;Amortization;;net.nan21.dnet.module.fi.asset.frame.Amortization_UI;nan21.dnet.module.fi.ui.extjs;true;612EA975-99ED-4D43-A284-9A89BDC1D674
 30;AsgnAccessControl_UI;Access rights - ASGN;;net.nan21.dnet.module.ad.usr.frame.AsgnAccessControl_UI;nan21.dnet.module.ad.ui.extjs;true;2CED6C56-5E0B-49F9-A237-0D1A715F3614
+10;AssetBaseData_UI;Base data;;net.nan21.dnet.module.fi.asset.frame.AssetBaseData_UI;nan21.dnet.module.fi.ui.extjs;true;8F6BE468-5AED-4E3C-9B01-8A5833A4B337
+20;Asset_UI;Assets;;net.nan21.dnet.module.fi.asset.frame.Asset_UI;nan21.dnet.module.fi.ui.extjs;true;9322F001-1C5C-4B82-BF1F-BE781BCD91DE
 50;Assignables_UI;Assignable resources;;net.nan21.dnet.module.ad.usr.frame.Assignables_UI;nan21.dnet.module.ad.ui.extjs;true;D5ADDF62-C11C-4168-A445-3D7B5D2F9870
 20;Attachments_UI;Attachments;;net.nan21.dnet.module.ad.data.frame.Attachments_UI;nan21.dnet.module.ad.ui.extjs;true;670F1069-34AD-4ACD-9CB4-306619FB2D5D
 10;AttachmentType_UI;Attachment types;;net.nan21.dnet.module.ad.data.frame.AttachmentType_UI;nan21.dnet.module.ad.ui.extjs;true;C649AD16-C126-43C2-964A-BFFF8701518B
 20;AttributeBaseData_UI;Attributes base data;;net.nan21.dnet.module.bd.attr.frame.AttributeBaseData_UI;nan21.dnet.module.bd.ui.extjs;true;491433F5-BC8F-446E-934C-9A29C8B0CE44
-20;Attributes_UI;Attributes;;net.nan21.dnet.module.bd.attr.frame.Attributes_UI;nan21.dnet.module.bd.ui.extjs;true;491633F5-BC8F-446E-934C-9A29C8B0CE44
 30;AttributeSet_UI;Attribute sets;;net.nan21.dnet.module.bd.attr.frame.AttributeSet_UI;nan21.dnet.module.bd.ui.extjs;true;491433F5-BC8F-446E-934C-9A19C8B0CE44
+20;Attributes_UI;Attributes;;net.nan21.dnet.module.bd.attr.frame.Attributes_UI;nan21.dnet.module.bd.ui.extjs;true;491633F5-BC8F-446E-934C-9A29C8B0CE44
 70;AuditFieldRep_UI;Audit trails;;net.nan21.dnet.module.ad.system.frame.AuditFieldRep_UI;nan21.dnet.module.ad.ui.extjs;true;C0C9C35B-094C-402C-A655-4D33ACA7BEC2
 20;Bank_UI;Banks;;net.nan21.dnet.module.md.bp.frame.Bank_UI;nan21.dnet.module.md.ui.extjs;true;41F5A6CD-2315-4D07-BF4D-E8B44482311F
 47;bd-menu-attr;Attributes;BD;;;true;E8002ADF-FCCB-45A2-85D0-F5377D352DE3
@@ -68,6 +71,8 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 20;Employee_UI;Employees;;net.nan21.dnet.module.hr.employee.frame.Employee_UI;nan21.dnet.module.hr.ui.extjs;true;6DAD7412-193C-4F6B-B4C7-CDFB10552B14
 30;ExportJob_UI;Export jobs;;net.nan21.dnet.module.ad.impex.frame.ExportJob_UI;nan21.dnet.module.ad.ui.extjs;true;3FC4736E-938E-4D7D-B547-F63ABCCEA000
 20;ExportMap_UI;Export file-sets;;net.nan21.dnet.module.ad.impex.frame.ExportMap_UI;nan21.dnet.module.ad.ui.extjs;true;29E3FC38-7B66-4298-B6F9-E855581C36FA
+25;fi-menu-asset;Assets;FI;;;true;7EB6F27E-FD8F-4723-8682-7ABDE70D169F
+10;fi-menu-base;Base data;FI;;;true;83E6185E-05A0-4D79-A602-B012CEFF53F6
 20;fi-menu-base-acc;Accounting;;;;true;79F531E5-E7CE-4643-A720-35E7B14D853D
 10;fi-menu-base-doc;Document types;;;;true;DBCBBCE8-877F-4872-A1B1-0673A9D5FD18
 40;fi-menu-base-pay;Payment;;;;true;5E257FD1-B828-4FAF-A1F1-694525AD7161
@@ -75,7 +80,6 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 20;fi-menu-period;Period control;FI;;;true;60AF479A-A886-4E7C-AE3B-BD744EE0AF6D
 40;fi-menu-tx-acc;Accounting;FI;;;true;642556A1-511A-4BFC-84B8-A8E144FF452E
 30;fi-menu-tx-fin;Financials;FI;;;true;1B70B3A8-C311-4DF0-A857-26333D1E6D73
-10;fii-menu-base;Base data;FI;;;true;83E6185E-05A0-4D79-A602-B012CEFF53F6
 20;FiscalPeriod_UI;Financial periods;;net.nan21.dnet.module.md.base.period.frame.FiscalPeriod_UI;nan21.dnet.module.md.ui.extjs;true;52051D4F-EF5D-45DE-A8F6-5D7C09598494
 10;FiscalYear_UI;Fiscal years;;net.nan21.dnet.module.md.base.period.frame.FiscalYear_UI;nan21.dnet.module.md.ui.extjs;true;E2C76F89-9D03-4810-AED8-C6D15C4EC188
 10;GradeRate_UI;Grade rates;;net.nan21.dnet.module.hr.grade.frame.GradeRate_UI;nan21.dnet.module.hr.ui.extjs;true;DAF8C64C-1C8C-498C-8244-C113BE783E05

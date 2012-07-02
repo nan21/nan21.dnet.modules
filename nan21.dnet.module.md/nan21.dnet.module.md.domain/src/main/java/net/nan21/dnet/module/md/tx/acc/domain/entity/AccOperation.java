@@ -31,7 +31,6 @@ import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
-import org.hibernate.validator.constraints.NotBlank;
 
 /** AccOperation. */
 @Entity
@@ -78,23 +77,19 @@ public class AccOperation extends AbstractAuditable {
     private Date eventDate;
 
     /** DbAccount. */
-    @Column(name = "DBACCOUNT", nullable = false, length = 255)
-    @NotBlank
+    @Column(name = "DBACCOUNT", length = 255)
     private String dbAccount;
 
     /** CrAccount. */
-    @Column(name = "CRACCOUNT", nullable = false, length = 255)
-    @NotBlank
+    @Column(name = "CRACCOUNT", length = 255)
     private String crAccount;
 
     /** DbAmount. */
-    @Column(name = "DBAMOUNT", nullable = false, scale = 2)
-    @NotNull
+    @Column(name = "DBAMOUNT", scale = 2)
     private Float dbAmount;
 
     /** CrAmount. */
-    @Column(name = "CRAMOUNT", nullable = false, scale = 2)
-    @NotNull
+    @Column(name = "CRAMOUNT", scale = 2)
     private Float crAmount;
 
     /** Notes. */

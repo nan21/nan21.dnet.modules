@@ -38,12 +38,6 @@ public class AssetBaseService extends AbstractEntityService<AssetBase>
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public AssetBase findByName(String name) {
-        return (AssetBase) this.em.createNamedQuery(AssetBase.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pName", name).getSingleResult();
-    }
-
     public List<AssetBase> findByOrg(Organization org) {
         return this.findByOrgId(org.getId());
     }

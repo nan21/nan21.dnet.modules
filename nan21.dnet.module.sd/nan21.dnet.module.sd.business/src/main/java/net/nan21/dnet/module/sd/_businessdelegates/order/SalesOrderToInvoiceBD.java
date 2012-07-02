@@ -9,10 +9,12 @@ import net.nan21.dnet.module.sd.invoice.business.service.ISalesInvoiceService;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoice;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItem;
 import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceItemTax;
+import net.nan21.dnet.module.sd.invoice.domain.entity.SalesInvoiceTax;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderItemService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax;
+import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderTax;
 
 public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 
@@ -52,6 +54,15 @@ public class SalesOrderToInvoiceBD extends AbstractBusinessDelegate {
 		invoice.setPaymentMethod(order.getPaymentMethod());
 		invoice.setPaymentTerm(order.getPaymentTerm());
 
+		for(SalesOrderTax ordTax : order.getTaxes()) {
+			SalesInvoiceTax invTax = new SalesInvoiceTax();
+			invTax.setSalesInvoice(invoice);
+			invTax.setBaseAmount(ordTax.getBaseAmount());
+			invTax.setTax(ordTax.getTax());
+			invTax.setTaxAmount(ordTax.getTaxAmount());
+			invoice.addToTaxes(invTax);
+		}
+		
 		List<SalesOrderItem> items = ((ISalesOrderItemService) this
 				.findEntityService(SalesOrderItem.class))
 				.findBySalesOrderId(order.getId());

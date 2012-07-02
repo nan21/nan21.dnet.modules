@@ -8,6 +8,7 @@ package net.nan21.dnet.module.fi.asset.business.serviceimpl;
 import java.util.List;
 import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
+import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.fi.asset.business.service.IAssetService;
 import net.nan21.dnet.module.fi.asset.domain.entity.AssetCategory;
 
@@ -37,12 +38,6 @@ public class AssetService extends AbstractEntityService<Asset> implements
                 .setParameter("pCode", code).getSingleResult();
     }
 
-    public Asset findByName(String name) {
-        return (Asset) this.em.createNamedQuery(Asset.NQ_FIND_BY_NAME)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pName", name).getSingleResult();
-    }
-
     public List<Asset> findByCategory(AssetCategory category) {
         return this.findByCategoryId(category.getId());
     }
@@ -54,6 +49,19 @@ public class AssetService extends AbstractEntityService<Asset> implements
                         Asset.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCategoryId", categoryId).getResultList();
+    }
+
+    public List<Asset> findByCurrency(Currency currency) {
+        return this.findByCurrencyId(currency.getId());
+    }
+
+    public List<Asset> findByCurrencyId(Long currencyId) {
+        return (List<Asset>) this.em
+                .createQuery(
+                        "select e from Asset e where e.clientId = :pClientId and e.currency.id = :pCurrencyId",
+                        Asset.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pCurrencyId", currencyId).getResultList();
     }
 
 }

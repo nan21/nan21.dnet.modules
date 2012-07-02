@@ -109,7 +109,7 @@ public class SalesInvoiceItemService
 		// re-create taxes
 		// delete existing
 		this.em.createQuery(
-				"delete from SalesInvoiceTax t "
+				"delete from " +SalesInvoiceTax.class.getSimpleName()+ " t "
 						+ " where t.salesInvoice.id = :invoiceId")
 				.setParameter("invoiceId", invoiceId).executeUpdate();
 
@@ -117,7 +117,7 @@ public class SalesInvoiceItemService
 
 		List<Object[]> taxes = (List<Object[]>) this.em
 				.createQuery(
-						"select i.tax,  sum(i.baseAmount), sum(i.taxAmount) from SalesInvoiceItemTax i "
+						"select i.tax,  sum(i.baseAmount), sum(i.taxAmount) from "+SalesInvoiceItemTax.class.getSimpleName()+" i "
 								+ " where i.salesInvoiceItem.salesInvoice.id = :invoiceId "
 								+ " group by i.tax ").setParameter("invoiceId",
 						invoiceId).getResultList();

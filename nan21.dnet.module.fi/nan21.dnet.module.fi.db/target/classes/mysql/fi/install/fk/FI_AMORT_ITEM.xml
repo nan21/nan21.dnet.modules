@@ -4,11 +4,16 @@
     
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_FI_AMORT_ITEM1" 
-				baseTableName="FI_AMORT_ITEM" baseColumnNames="ASSET_ID"  
-				referencedTableName="FI_ASSET"  referencedColumnNames="ID" />
+				baseTableName="FI_AMORT_ITEM" baseColumnNames="AMORTIZATION_ID"  
+				referencedTableName="FI_AMORT"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_FI_AMORT_ITEM2" 
+				baseTableName="FI_AMORT_ITEM" baseColumnNames="ASSET_ID"  
+				referencedTableName="FI_ASSET"  referencedColumnNames="ID" />
+	</changeSet>	
+	<changeSet author="amathe" id="FK-3">
+		<addForeignKeyConstraint constraintName="FK_FI_AMORT_ITEM3" 
 				baseTableName="FI_AMORT_ITEM" baseColumnNames="CURRENCY_ID"  
 				referencedTableName="BD_CRNCY"  referencedColumnNames="ID" />
 	</changeSet>	

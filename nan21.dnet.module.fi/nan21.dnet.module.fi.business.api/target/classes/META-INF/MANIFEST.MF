@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.fi.asset.business.service;versio
  n="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.m
  odule.bd.currency.domain.entity,net.nan21.dnet.module.fi.asset.domain
- .entity"
+ .entity,net.nan21.dnet.module.md.acc.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.module.ad.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.modu
  le.bd.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.md.dom
@@ -19,11 +19,12 @@ Import-Package: javax.persistence.criteria;version="[2.0,2.1)",javax.p
  ersistence.metamodel;version="[2.0,2.1)",javax.persistence.spi;versio
  n="[2.0,2.1)",javax.validation;version="[1.0,2.0)",net.nan21.dnet.cor
  e.api.service,net.nan21.dnet.module.bd.currency.domain.entity,net.nan
- 21.dnet.module.fi.asset.domain.entity,org.aopalliance.aop;version="[1
- .0,2.0)",org.hibernate.validator;version="[4.0,5.0)",org.hibernate.va
- lidator.constraints;version="[4.0,5.0)",org.springframework.aop;versi
- on="[3.0,3.1)",org.springframework.aop.framework;version="[3.0,3.1)",
- org.springframework.context.weaving;version="[3.0,3.1)",org.springfra
- mework.transaction;version="[3.0,3.1)",org.springframework.transactio
- n.aspectj;version="[3.0,3.1)"
+ 21.dnet.module.fi.asset.domain.entity,net.nan21.dnet.module.md.acc.do
+ main.entity,org.aopalliance.aop;version="[1.0,2.0)",org.hibernate.val
+ idator;version="[4.0,5.0)",org.hibernate.validator.constraints;versio
+ n="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",org.springf
+ ramework.aop.framework;version="[3.0,3.1)",org.springframework.contex
+ t.weaving;version="[3.0,3.1)",org.springframework.transaction;version
+ ="[3.0,3.1)",org.springframework.transaction.aspectj;version="[3.0,3.
+ 1)"
 

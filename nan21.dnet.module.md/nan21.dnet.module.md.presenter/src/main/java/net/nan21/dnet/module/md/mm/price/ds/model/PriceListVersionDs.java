@@ -18,6 +18,8 @@ public class PriceListVersionDs extends AbstractTypeDs<PriceListVersion> {
 
     public static final String fPRICELISTID = "priceListId";
     public static final String fPRICELIST = "priceList";
+    public static final String fCURRENCYID = "currencyId";
+    public static final String fCURRENCY = "currency";
     public static final String fVALIDFROM = "validFrom";
 
     @DsField(join = "left", path = "priceList.id")
@@ -25,6 +27,12 @@ public class PriceListVersionDs extends AbstractTypeDs<PriceListVersion> {
 
     @DsField(join = "left", path = "priceList.name")
     private String priceList;
+
+    @DsField(join = "left", path = "priceList.currency.id")
+    private Long currencyId;
+
+    @DsField(join = "left", path = "priceList.currency.code")
+    private String currency;
 
     @DsField()
     private Date validFrom;
@@ -51,6 +59,22 @@ public class PriceListVersionDs extends AbstractTypeDs<PriceListVersion> {
 
     public void setPriceList(String priceList) {
         this.priceList = priceList;
+    }
+
+    public Long getCurrencyId() {
+        return this.currencyId;
+    }
+
+    public void setCurrencyId(Long currencyId) {
+        this.currencyId = currencyId;
+    }
+
+    public String getCurrency() {
+        return this.currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public Date getValidFrom() {

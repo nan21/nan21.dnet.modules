@@ -180,6 +180,10 @@ public class SalesOrder extends AbstractAuditable {
     @CascadeOnDelete
     private Collection<SalesOrderItem> lines;
 
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = SalesOrderTax.class, mappedBy = "salesOrder", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<SalesOrderTax> taxes;
+
     /* ============== getters - setters ================== */
 
     public Long getId() {
@@ -477,6 +481,22 @@ public class SalesOrder extends AbstractAuditable {
         }
         e.setSalesOrder(this);
         this.lines.add(e);
+    }
+
+    public Collection<SalesOrderTax> getTaxes() {
+        return this.taxes;
+    }
+
+    public void setTaxes(Collection<SalesOrderTax> taxes) {
+        this.taxes = taxes;
+    }
+
+    public void addToTaxes(SalesOrderTax e) {
+        if (this.taxes == null) {
+            this.taxes = new ArrayList<SalesOrderTax>();
+        }
+        e.setSalesOrder(this);
+        this.taxes.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

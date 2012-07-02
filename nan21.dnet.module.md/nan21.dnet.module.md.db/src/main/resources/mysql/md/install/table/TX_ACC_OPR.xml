@@ -7,17 +7,17 @@
 			<column name="CLIENTID" type="bigint(3)">
 				<constraints nullable="false" /></column>	 
 			<column name="CRACCOUNT" type="varchar(255)">
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="CRAMOUNT" type="decimal(12,2)">
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="CREATEDAT" type="datetime">
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
 			<column name="DBACCOUNT" type="varchar(255)">
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="DBAMOUNT" type="decimal(12,2)">
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="EVENTDATE" type="datetime">
 				<constraints nullable="false" /></column>	 
 			<column name="HEADERLINE" type="int(1)">

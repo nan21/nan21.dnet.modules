@@ -5,7 +5,7 @@ Export-Package: net.nan21.dnet.module.fi._businessdelegates;version="1
  ersion="1.0.0.RC2";uses:="javax.persistence,net.nan21.dnet.core.busin
  ess.service,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21
  .dnet.module.fi.asset.business.service,net.nan21.dnet.module.fi.asset
- .domain.entity"
+ .domain.entity,net.nan21.dnet.module.md.acc.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.core.busi
  ness;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.ad.domain;vers
@@ -34,14 +34,14 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  y,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.modu
  le.bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,ne
  t.nan21.dnet.module.fi.asset.business.service,net.nan21.dnet.module.f
- i.asset.domain.entity,net.nan21.dnet.module.md.mm.prod.domain.entity,
- net.nan21.dnet.module.md.res.domain.entity,org.aopalliance.aop;versio
- n="[1.0,2.0)",org.eclipse.persistence.jpa;version="[2.1,2.5)",org.hib
- ernate.validator;version="[4.0,5.0)",org.hibernate.validator.constrai
- nts;version="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",o
- rg.springframework.aop.framework;version="[3.0,3.1)",org.springframew
- ork.context.weaving;version="[3.0,3.1)",org.springframework.orm.jpa,o
- rg.springframework.orm.jpa.vendor,org.springframework.transaction;ver
- sion="[3.0,3.1)",org.springframework.transaction.aspectj;version="[3.
- 0,3.1)"
+ i.asset.domain.entity,net.nan21.dnet.module.md.acc.domain.entity,net.
+ nan21.dnet.module.md.mm.prod.domain.entity,net.nan21.dnet.module.md.r
+ es.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.eclipse.
+ persistence.jpa;version="[2.1,2.5)",org.hibernate.validator;version="
+ [4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)",or
+ g.springframework.aop;version="[3.0,3.1)",org.springframework.aop.fra
+ mework;version="[3.0,3.1)",org.springframework.context.weaving;versio
+ n="[3.0,3.1)",org.springframework.orm.jpa,org.springframework.orm.jpa
+ .vendor,org.springframework.transaction;version="[3.0,3.1)",org.sprin
+ gframework.transaction.aspectj;version="[3.0,3.1)"
 

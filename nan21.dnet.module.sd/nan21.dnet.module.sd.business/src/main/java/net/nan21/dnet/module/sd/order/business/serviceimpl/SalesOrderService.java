@@ -20,6 +20,7 @@ import net.nan21.dnet.module.md.bp.domain.entity.Contact;
 import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
+import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderTax;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
@@ -270,6 +271,19 @@ public class SalesOrderService extends AbstractEntityService<SalesOrder>
                         SalesOrder.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pLinesId", linesId).getResultList();
+    }
+
+    public List<SalesOrder> findByTaxes(SalesOrderTax taxes) {
+        return this.findByTaxesId(taxes.getId());
+    }
+
+    public List<SalesOrder> findByTaxesId(Long taxesId) {
+        return (List<SalesOrder>) this.em
+                .createQuery(
+                        "select distinct e from SalesOrder e , IN (e.taxes) c where e.clientId = :pClientId and c.id = :pTaxesId",
+                        SalesOrder.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pTaxesId", taxesId).getResultList();
     }
 
     public void doGenerateInvoice(SalesOrder salesOrder, TxDocType invDocType)

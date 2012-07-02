@@ -8,8 +8,10 @@
 		<!-- Declared -->
 
 		<class>net.nan21.dnet.module.fi.asset.domain.entity.AssetCategory</class>
+		<class>net.nan21.dnet.module.fi.asset.domain.entity.AssetCategoryAcct</class>
 		<class>net.nan21.dnet.module.fi.asset.domain.entity.Asset</class>
-		<class>net.nan21.dnet.module.fi.asset.domain.entity.AmortizationItem</class>
+		<class>net.nan21.dnet.module.fi.asset.domain.entity.AssetAcct</class>
+		<class>net.nan21.dnet.module.fi.asset.domain.entity.Amortization</class>
 
 		<!-- Dependencies -->
 
@@ -23,6 +25,8 @@
 		<class>net.nan21.dnet.module.bd.org.domain.entity.OrganizationType</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.Uom</class>
 		<class>net.nan21.dnet.module.bd.uom.domain.entity.UomType</class>
+		<class>net.nan21.dnet.module.md.acc.domain.entity.AccSchema</class>
+		<class>net.nan21.dnet.module.md.acc.domain.entity.Account</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.Product</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory</class>

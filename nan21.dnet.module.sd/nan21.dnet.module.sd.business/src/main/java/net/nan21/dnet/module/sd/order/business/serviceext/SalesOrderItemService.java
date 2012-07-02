@@ -8,11 +8,13 @@ package net.nan21.dnet.module.sd.order.business.serviceext;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.nan21.dnet.module.md.base.tax.domain.entity.Tax;
 import net.nan21.dnet.module.sd._businessdelegates.order.SalesTaxBD;
 import net.nan21.dnet.module.sd.order.business.service.ISalesOrderItemService;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItemTax;
+import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderTax;
 
 public class SalesOrderItemService
 		extends
@@ -20,8 +22,6 @@ public class SalesOrderItemService
 		implements ISalesOrderItemService {
 
 	private List<Long> orderIds;
-
- 
 
 	@Override
 	protected void postUpdate(SalesOrderItem e) throws Exception {
@@ -105,6 +105,41 @@ public class SalesOrderItemService
 		}
 		order.setTotalNetAmount(totalNet.floatValue());
 		order.setTotalTaxAmount(totalTax.floatValue());
+
+		// re-create taxes
+		// delete existing
+		this.em.createQuery(
+				"delete from " + SalesOrderTax.class.getSimpleName() + " t "
+						+ " where t.salesOrder.id = :orderId").setParameter(
+				"orderId", orderId).executeUpdate();
+
+		// create new
+
+		List<Object[]> taxes = (List<Object[]>) this.em.createQuery(
+				"select i.tax,  sum(i.baseAmount), sum(i.taxAmount) from "
+						+ SalesOrderItemTax.class.getSimpleName() + " i "
+						+ " where i.salesOrderItem.salesOrder.id = :orderId "
+						+ " group by i.tax ").setParameter("orderId", orderId)
+				.getResultList();
+		for (Object[] tax : taxes) {
+			Tax t = (Tax) tax[0];
+			Double baseval = (Double) tax[1];
+			Double taxval = (Double) tax[2];
+			if (baseval == null) {
+				baseval = 0D;
+			}
+			if (taxval == null) {
+				taxval = 0D;
+			}
+
+			SalesOrderTax ordTax = new SalesOrderTax();
+			ordTax.setSalesOrder(order);
+			ordTax.setTax(t);
+			ordTax.setBaseAmount(baseval.floatValue());
+			ordTax.setTaxAmount(taxval.floatValue());
+			order.addToTaxes(ordTax);
+		}
+
 		this.em.merge(order);
 	}
 

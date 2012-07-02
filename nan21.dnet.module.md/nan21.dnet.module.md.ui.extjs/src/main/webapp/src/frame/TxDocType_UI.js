@@ -13,7 +13,7 @@ Ext.define("net.nan21.dnet.module.md.base.tx.frame.TxDocType_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("docType",{ name:"docTypeFilter", xtype:"net.nan21.dnet.module.md.base.tx.dc.TxDocType$Filter",height:120})	 
+		.addDcFilterFormView("docType",{ name:"docTypeFilter", xtype:"net.nan21.dnet.module.md.base.tx.dc.TxDocType$Filter",height:80})	 
 		.addDcEditGridView("docType",{ name:"docTypeEditList", xtype:"net.nan21.dnet.module.md.base.tx.dc.TxDocType$EditList", frame:true})	 
 		.addDcFilterFormView("seq",{ name:"seqFilter", xtype:"net.nan21.dnet.module.md.base.tx.dc.TxDocSequence$Filter"})	 
 		.addDcEditGridView("seq",{ name:"seqEditList", xtype:"net.nan21.dnet.module.md.base.tx.dc.TxDocSequence$EditList", frame:true})	 

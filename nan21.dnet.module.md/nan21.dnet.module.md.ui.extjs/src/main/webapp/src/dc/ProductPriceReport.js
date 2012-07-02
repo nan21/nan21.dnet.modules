@@ -55,8 +55,8 @@ Ext.define("net.nan21.dnet.module.md.mm.price.dc.ProductPriceReport$List", {
 	
 	_defineColumns_: function () {	
 		this._getBuilder_()	
-		.addTextColumn({ name:"product", dataIndex:"product",width:100 })   	
-		.addTextColumn({ name:"productName", dataIndex:"productName",width:200 })   	
+		.addTextColumn({ name:"product", dataIndex:"product", width:150 })   	
+		.addTextColumn({ name:"productName", dataIndex:"productName", width:250 })   	
 		.addNumberColumn({ name:"price", dataIndex:"price",decimals:2 })  
 		.addTextColumn({ name:"currency", dataIndex:"currency",width:100 })   	
 		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT})   	      	     

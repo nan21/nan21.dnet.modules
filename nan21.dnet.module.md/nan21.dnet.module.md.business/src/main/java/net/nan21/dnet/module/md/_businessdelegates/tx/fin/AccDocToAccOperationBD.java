@@ -13,7 +13,7 @@ public class AccDocToAccOperationBD extends AbstractBusinessDelegate {
 
 	public void unPost(AccDoc doc) throws Exception {
 		this.em.createQuery(
-				"delete from AccOperation t "
+				"delete from "+AccOperation.class.getSimpleName()+" t "
 						+ " where t.accDoc.id = :accDocId").setParameter(
 				"accDocId", doc.getId()).executeUpdate();
 		doc.setPosted(false);

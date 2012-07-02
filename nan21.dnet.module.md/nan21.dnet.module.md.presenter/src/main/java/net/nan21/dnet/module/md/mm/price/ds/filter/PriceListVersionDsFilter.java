@@ -17,6 +17,13 @@ public class PriceListVersionDsFilter extends AbstractTypeDsFilter {
 
     private String priceList;
 
+    private Long currencyId;
+
+    private Long currencyId_From;
+    private Long currencyId_To;
+
+    private String currency;
+
     private Date validFrom;
 
     private Date validFrom_From;
@@ -52,6 +59,38 @@ public class PriceListVersionDsFilter extends AbstractTypeDsFilter {
 
     public void setPriceList(String priceList) {
         this.priceList = priceList;
+    }
+
+    public Long getCurrencyId() {
+        return this.currencyId;
+    }
+
+    public Long getCurrencyId_From() {
+        return this.currencyId_From;
+    }
+
+    public Long getCurrencyId_To() {
+        return this.currencyId_To;
+    }
+
+    public void setCurrencyId(Long currencyId) {
+        this.currencyId = currencyId;
+    }
+
+    public void setCurrencyId_From(Long currencyId_From) {
+        this.currencyId_From = currencyId_From;
+    }
+
+    public void setCurrencyId_To(Long currencyId_To) {
+        this.currencyId_To = currencyId_To;
+    }
+
+    public String getCurrency() {
+        return this.currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public Date getValidFrom() {

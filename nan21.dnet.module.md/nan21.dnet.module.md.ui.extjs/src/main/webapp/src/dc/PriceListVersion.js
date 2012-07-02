@@ -90,9 +90,10 @@ Ext.define("net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CtxView", {
 		.addTextField({ name:"name", dataIndex:"name",noEdit:true  ,maxLength:255  })
 		.addTextField({ name:"priceList", dataIndex:"priceList",noEdit:true  ,maxLength:255  })
 		.addDateField({ name:"validFrom", dataIndex:"validFrom",noEdit:true, hideTrigger:true })
+		.addTextField({ name:"currency", dataIndex:"currency",noEdit:true  ,maxLength:32  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
-		.addPanel({ name:"col2", layout:"form" , width:300})     
+		.addPanel({ name:"col2", layout:"form" , width:220})     
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
 		;     
 	}
@@ -100,7 +101,7 @@ Ext.define("net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CtxView", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
 		.addChildrenTo("col1",["name","priceList"])
-		.addChildrenTo("col2",["validFrom"])
+		.addChildrenTo("col2",["validFrom","currency"])
 ;
 	}	
 });

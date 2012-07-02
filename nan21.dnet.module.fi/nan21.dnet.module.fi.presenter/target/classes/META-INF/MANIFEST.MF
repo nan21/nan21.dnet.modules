@@ -36,7 +36,9 @@ Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
  .currency.domain.entity,net.nan21.dnet.module.bd.org.business.service
  ,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.fi.
  asset.business.service,net.nan21.dnet.module.fi.asset.domain.entity,n
- et.nan21.dnet.module.md.mm.prod.business.service,net.nan21.dnet.modul
- e.md.mm.prod.domain.entity,org.springframework.context.weaving;versio
- n="[3.0,3.1)",org.springframework.web.multipart;version="[3.0,3.1)"
+ et.nan21.dnet.module.md.acc.business.service,net.nan21.dnet.module.md
+ .acc.domain.entity,net.nan21.dnet.module.md.mm.prod.business.service,
+ net.nan21.dnet.module.md.mm.prod.domain.entity,org.springframework.co
+ ntext.weaving;version="[3.0,3.1)",org.springframework.web.multipart;v
+ ersion="[3.0,3.1)"
 

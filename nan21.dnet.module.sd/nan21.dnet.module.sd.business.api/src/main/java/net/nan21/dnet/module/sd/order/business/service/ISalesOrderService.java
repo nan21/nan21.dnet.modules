@@ -18,6 +18,7 @@ import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.bp.domain.entity.Contact;
 import net.nan21.dnet.module.md.mm.price.domain.entity.PriceList;
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderItem;
+import net.nan21.dnet.module.sd.order.domain.entity.SalesOrderTax;
 
 import net.nan21.dnet.module.sd.order.domain.entity.SalesOrder;
 import java.util.Date;
@@ -92,6 +93,10 @@ public interface ISalesOrderService extends IEntityService<SalesOrder> {
     public List<SalesOrder> findByLines(SalesOrderItem lines);
 
     public List<SalesOrder> findByLinesId(Long linesId);
+
+    public List<SalesOrder> findByTaxes(SalesOrderTax taxes);
+
+    public List<SalesOrder> findByTaxesId(Long taxesId);
 
     public void doGenerateInvoice(SalesOrder salesOrder, TxDocType invDocType)
             throws Exception;
