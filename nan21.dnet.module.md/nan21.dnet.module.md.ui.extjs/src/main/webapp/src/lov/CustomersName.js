@@ -6,7 +6,7 @@ Ext.define("net.nan21.dnet.module.md.bp.lovs.CustomersName", {
 	displayField:"name",
 	listConfig: {		
 		getInnerTpl: function() { 
-			return '<span>{code}, {name}</span>';
+			return '<span>{name}, {code}</span>';
 		},
 		width:250
 	},		 

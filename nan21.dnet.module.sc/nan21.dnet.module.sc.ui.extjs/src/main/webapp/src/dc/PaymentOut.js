@@ -43,7 +43,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PaymentOut$Filter", {
 		.addBooleanField({ name:"confirmed", dataIndex:"confirmed",anchor:"-20"  })
 		.addBooleanField({ name:"posted", dataIndex:"posted",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col1", layout:"form", width:250}) 
 		.addPanel({ name:"col2", layout:"form",width:210}) 
 		.addPanel({ name:"col3", layout:"form", width:300}) 
 		.addPanel({ name:"col4", layout:"form", width:170}) 
