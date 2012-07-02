@@ -61,26 +61,22 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  core.api.service,net.nan21.dnet.core.api.session,net.nan21.dnet.core.
  api.setup,net.nan21.dnet.core.api.wf,net.nan21.dnet.core.business.per
  sistenceunit,net.nan21.dnet.core.business.service,net.nan21.dnet.modu
- le.ad.system.domain.entity,net.nan21.dnet.module.bd.attr.domain.entit
- y,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.modu
- le.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.domain.entity,ne
- t.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.md.acc
- .business.service,net.nan21.dnet.module.md.acc.domain.entity,net.nan2
- 1.dnet.module.md.base.period.business.service,net.nan21.dnet.module.m
- d.base.period.domain.entity,net.nan21.dnet.module.md.base.tax.busines
- s.service,net.nan21.dnet.module.md.base.tax.domain.entity,net.nan21.d
- net.module.md.base.tx.domain.entity,net.nan21.dnet.module.md.bp.busin
- ess.service,net.nan21.dnet.module.md.bp.domain.entity,net.nan21.dnet.
- module.md.mm.price.domain.entity,net.nan21.dnet.module.md.mm.prod.bus
- iness.service,net.nan21.dnet.module.md.mm.prod.domain.entity,net.nan2
- 1.dnet.module.md.org.business.service,net.nan21.dnet.module.md.org.do
- main.entity,net.nan21.dnet.module.md.res.domain.entity,net.nan21.dnet
- .module.md.tx.acc.domain.entity,net.nan21.dnet.module.md.tx.fin.domai
- n.entity,net.nan21.dnet.module.md.tx.inventory.domain.entity,net.nan2
- 1.dnet.module.sc.invoice.business.service,net.nan21.dnet.module.sc.in
- voice.domain.entity,net.nan21.dnet.module.sc.order.business.service,n
- et.nan21.dnet.module.sc.order.domain.entity,org.aopalliance.aop;versi
- on="[1.0,2.0)",org.eclipse.persistence.jpa;version="[2.1,2.5)",org.hi
+ le.bd.currency.domain.entity,net.nan21.dnet.module.bd.org.domain.enti
+ ty,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.m
+ d.acc.business.service,net.nan21.dnet.module.md.acc.domain.entity,net
+ .nan21.dnet.module.md.base.period.business.service,net.nan21.dnet.mod
+ ule.md.base.period.domain.entity,net.nan21.dnet.module.md.base.tax.bu
+ siness.service,net.nan21.dnet.module.md.base.tax.domain.entity,net.na
+ n21.dnet.module.md.base.tx.domain.entity,net.nan21.dnet.module.md.bp.
+ business.service,net.nan21.dnet.module.md.bp.domain.entity,net.nan21.
+ dnet.module.md.mm.price.domain.entity,net.nan21.dnet.module.md.mm.pro
+ d.business.service,net.nan21.dnet.module.md.mm.prod.domain.entity,net
+ .nan21.dnet.module.md.org.business.service,net.nan21.dnet.module.md.o
+ rg.domain.entity,net.nan21.dnet.module.md.tx.acc.domain.entity,net.na
+ n21.dnet.module.md.tx.fin.domain.entity,net.nan21.dnet.module.sc.invo
+ ice.business.service,net.nan21.dnet.module.sc.invoice.domain.entity,n
+ et.nan21.dnet.module.sc.order.business.service,net.nan21.dnet.module.
+ sc.order.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.hi
  bernate.validator;version="[4.0,5.0)",org.hibernate.validator.constra
  ints;version="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",
  org.springframework.aop.framework;version="[3.0,3.1)",org.springframe

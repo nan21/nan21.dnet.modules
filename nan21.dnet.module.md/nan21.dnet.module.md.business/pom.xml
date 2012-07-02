@@ -8,7 +8,7 @@
 	<name>DNet MD - business</name>	
 	<description>DNet MD - business</description>
 	<packaging>jar</packaging>	
-	 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
