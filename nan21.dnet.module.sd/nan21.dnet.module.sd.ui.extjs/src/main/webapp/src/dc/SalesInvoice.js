@@ -51,7 +51,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$Filter", {
 		.addChildrenTo("totalNetAmount",["totalNetAmount_From", "totalNetAmount_To"]) 
 
 		//containers
-		.addPanel({ name:"col1", layout:"form", width:220}) 
+		.addPanel({ name:"col1", layout:"form", width:250}) 
 		.addPanel({ name:"col2", layout:"form", width:220}) 
 		.addPanel({ name:"col3", layout:"form", width:300}) 
 		.addPanel({ name:"col4", layout:"form", width:170}) 

@@ -53,7 +53,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$Filter", {
 		.addChildrenTo("totalNetAmount",["totalNetAmount_From", "totalNetAmount_To"]) 
 
 		//containers
-		.addPanel({ name:"col1", layout:"form", width:220}) 
+		.addPanel({ name:"col1", layout:"form", width:250}) 
 		.addPanel({ name:"col2", layout:"form", width:220}) 
 		.addPanel({ name:"col3", layout:"form", width:300}) 
 		.addPanel({ name:"col4", layout:"form", width:170}) 
@@ -177,7 +177,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$EditDetails", {
 		//controls	
 		this._getBuilder_()	
 		.addDateField({ name:"plannedDeliveryDate", dataIndex:"plannedDeliveryDate" })
-		.addTextArea({ name:"deliveryNotes", dataIndex:"deliveryNotes",height:80   })
+		.addTextArea({ name:"deliveryNotes", dataIndex:"deliveryNotes",height:60   })
 		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentMethodIn", dataIndex:"paymentMethod" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
 		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentTerm", dataIndex:"paymentTerm" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
 		.addLov({ name:"deliveryMethod", xtype:"net.nan21.dnet.module.md.base.tx.lovs.DeliveryMethods", dataIndex:"deliveryMethod" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "deliveryMethodId"} ]  })
