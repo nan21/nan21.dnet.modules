@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_AD_SYS_DS_EVNT1" 
 				baseTableName="AD_SYS_DS_EVNT" baseColumnNames="DATASOURCE_ID"  
-				referencedTableName="AD_SYS_DS"  referencedColumnNames="ID" />
+				referencedTableName="AD_SYS_DS" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

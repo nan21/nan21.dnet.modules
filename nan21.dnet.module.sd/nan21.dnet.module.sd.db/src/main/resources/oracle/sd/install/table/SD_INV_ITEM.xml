@@ -33,7 +33,7 @@
 			<column name="SALESINVOICE_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="TAX_ID" type="number(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="UOM_ID" type="number(19)">	 
 				<constraints  /></column>	 
         </createTable>

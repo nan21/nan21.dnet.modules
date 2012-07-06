@@ -28,13 +28,15 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.CsvExport$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1"])
-		.addChildrenTo("col1",["name","dataSource","active"])
+		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("col1",["name","dataSource"])
+		.addChildrenTo("col2",["active"])
     	.addAuditFilter()	
 	}
 }); 
@@ -45,14 +47,36 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.CsvExport$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.CsvExport$EditList",
 	
+	_bulkEditFields_ : ["active"],
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addLov({name:"dataSource", xtype:"gridcolumn", dataIndex:"dataSource", width:200,editor:{xtype:"net.nan21.dnet.module.ad.system.lovs.SysDataSource" , selectOnFocus:true ,maxLength:255,retFieldMapping: []} })
-		.addTextColumn({ name:"name", dataIndex:"name", width:200,editor:{xtype:"textfield", selectOnFocus:true } })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"name", dataIndex:"name", width:180,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description", width:180,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addLov({name:"dataSource", xtype:"gridcolumn", dataIndex:"dataSource", width:180,editor:{xtype:"net.nan21.dnet.module.ad.system.lovs.SysDataSource" , selectOnFocus:true ,maxLength:255,retFieldMapping: []} })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 	  	.addDefaults()
 	  ;  		   
 	}  
+});
+ 	
+ 	
+
+Ext.define("net.nan21.dnet.module.ad.impex.dc.CsvExport$Clone", {
+	extend: "dnet.core.dc.AbstractDcvEditForm",
+	alias: "widget.net.nan21.dnet.module.ad.impex.dc.CsvExport$Clone",
+	
+	_defineElements_: function () {	
+		//controls	
+		this._getBuilder_()	
+		.addTextField({ name:"cloneName", paramIndex:"cloneName"   })
+		//containers
+		.addPanel({ name:"main", layout:"form" , autoScroll:true})     
+		;     
+	}
+	,_linkElements_: function () {
+		this._getBuilder_()
+		.addChildrenTo("main",["cloneName"])
+;
+	}	
 });
  	

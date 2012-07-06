@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_TX_INVT_TX_TYPE1" 
 				baseTableName="TX_INVT_TX_TYPE" baseColumnNames="DOCTYPE_ID"  
-				referencedTableName="MD_TXDOC_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="MD_TXDOC_TYPE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

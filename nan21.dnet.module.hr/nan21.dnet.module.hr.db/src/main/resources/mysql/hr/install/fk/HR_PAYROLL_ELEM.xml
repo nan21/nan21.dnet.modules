@@ -5,11 +5,13 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_HR_PAYROLL_ELEM1" 
 				baseTableName="HR_PAYROLL_ELEM" baseColumnNames="ACCITEM_ID"  
-				referencedTableName="MD_ACC_ITEM"  referencedColumnNames="ID" />
+				referencedTableName="MD_ACC_ITEM" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_HR_PAYROLL_ELEM2" 
 				baseTableName="HR_PAYROLL_ELEM" baseColumnNames="SOURCEELEMENT_ID"  
-				referencedTableName="HR_PAYROLL_ELEM"  referencedColumnNames="ID" />
+				referencedTableName="HR_PAYROLL_ELEM" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

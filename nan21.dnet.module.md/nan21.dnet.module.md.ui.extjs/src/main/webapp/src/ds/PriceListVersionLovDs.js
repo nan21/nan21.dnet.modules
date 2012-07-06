@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.md.mm.price.ds.model.PriceListVersionLovDs" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean"},
 		{name:"priceListId", type:"int", useNull:true},
 		{name:"validFrom", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
@@ -20,6 +21,7 @@ Ext.define("net.nan21.dnet.module.md.mm.price.ds.model.PriceListVersionLovDsFilt
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
 		{name:"priceListId", type:"int", useNull:true},
 		{name:"priceListId_From",type:"int", useNull:true},

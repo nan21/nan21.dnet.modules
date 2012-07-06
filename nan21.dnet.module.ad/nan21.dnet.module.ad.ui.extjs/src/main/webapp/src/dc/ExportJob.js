@@ -65,7 +65,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportJob$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name" ,allowBlank:false,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"description", dataIndex:"description",height:40   })
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
 		.addDateField({ name:"modifiedAt", dataIndex:"modifiedAt",noEdit:true, hideTrigger:true })
 		.addTextField({ name:"modifiedBy", dataIndex:"modifiedBy",noEdit:true  ,maxLength:32  })
 		//containers

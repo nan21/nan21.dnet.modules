@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.md.org.dc.SubInventory$Filter", {
 		.addLov({ name:"inventory", xtype:"net.nan21.dnet.module.bd.org.lovs.InventoryOrganizations", dataIndex:"inventory",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "inventoryId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
-		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
@@ -50,8 +50,8 @@ Ext.define("net.nan21.dnet.module.md.org.dc.SubInventory$List", {
 		this._getBuilder_()	
 		.addTextColumn({ name:"inventory", dataIndex:"inventory",width:100 })   	
 		.addTextColumn({ name:"name", dataIndex:"name",width:120 })   	
-		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
+		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 		.addNumberColumn({ name:"inventoryId", dataIndex:"inventoryId", hidden:true,format:"0",width:70 })  
 	  	.addDefaults()
 	  ;		   

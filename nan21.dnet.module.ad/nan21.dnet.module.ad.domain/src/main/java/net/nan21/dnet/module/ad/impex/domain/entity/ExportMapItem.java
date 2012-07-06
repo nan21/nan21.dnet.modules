@@ -64,6 +64,10 @@ public class ExportMapItem extends AbstractAuditable {
     @NotNull
     private Integer sequenceNo;
 
+    /** Path. */
+    @Column(name = "PATH", length = 255)
+    private String path;
+
     /** FileName. */
     @Column(name = "FILENAME", length = 255)
     private String fileName;
@@ -95,6 +99,14 @@ public class ExportMapItem extends AbstractAuditable {
 
     public void setSequenceNo(Integer sequenceNo) {
         this.sequenceNo = sequenceNo;
+    }
+
+    public String getPath() {
+        return this.path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public String getFileName() {

@@ -34,14 +34,14 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.AccessControl_UI", {
 			,handler: this.onBtnCopyRulesExec,scope:this	})	
 							 	
 		.addDcFilterFormView("ctrl",{ name:"privilegeFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.AccessControl$Filter",height:80})	 
-		.addDcEditGridView("ctrl",{ name:"privilegeEditList", xtype:"net.nan21.dnet.module.ad.usr.dc.AccessControl$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnRoleToAccessCtrl") ,this._elems_.get("btnCopyRules") ,this._elems_.get("btnShowUiDsRules") ,this._elems_.get("btnShowUiAsgnRules") ]}]})	 
+		.addDcEditGridView("ctrl",{ name:"privilegeEditList", xtype:"net.nan21.dnet.module.ad.usr.dc.AccessControl$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'right', weight:-1, items:[ this._elems_.get("btnAsgnRoleToAccessCtrl") ,this._elems_.get("btnCopyRules") ,this._elems_.get("btnShowUiDsRules") ,this._elems_.get("btnShowUiAsgnRules") ]}]})	 
 		.addDcFormView("ctrl",{ name:"privilegeCopyRules", xtype:"net.nan21.dnet.module.ad.usr.dc.AccessControl$CopyRulesFromSource"})	 
 		.addDcEditGridView("dsAccess",{ name:"dsAccessCtxEditList", xtype:"net.nan21.dnet.module.ad.usr.dc.DsAccessControl$CtxEditList", frame:true,title:"Data-source"})	 
 		.addDcEditGridView("asgnAccess",{ name:"asgnAccessCtxEditList", xtype:"net.nan21.dnet.module.ad.usr.dc.AsgnAccessControl$CtxEditList", frame:true,title:"Assignment"})	 
 		.addDcEditGridView("dsMtdAccess",{ name:"dsMtdAccessCtxEditList", xtype:"net.nan21.dnet.module.ad.usr.dc.DsMethodAccessControl$CtxEditList", frame:true,title:"Methods"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
-		.addPanel({name: "detailTabs", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id(),height:220}) 	 
+		.addPanel({name: "detailTabs", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id(),height:250}) 	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		
 		.addWindow({name:"wdwCopyRules", closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("privilegeCopyRules")]

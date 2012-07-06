@@ -15,7 +15,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.frame.Classifications_UI", {
 		this._getBuilder_()	
 		.addDcFilterFormView("classsys",{ name:"classsysFilter", xtype:"net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$Filter",height:120})	 
 		.addDcEditGridView("classsys",{ name:"classsysEditList", xtype:"net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$EditList", frame:true})	 
-		.addDcFilterFormView("classcode",{ name:"classcodeFilter", xtype:"net.nan21.dnet.module.bd.standards.dc.ClassificationCode$Filter",height:120})	 
+		.addDcFilterFormView("classcode",{ name:"classcodeFilter", xtype:"net.nan21.dnet.module.bd.standards.dc.ClassificationCode$Filter",height:80})	 
 		.addDcEditGridView("classcode",{ name:"classcodeEditList", xtype:"net.nan21.dnet.module.bd.standards.dc.ClassificationCode$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasClasssys", layout:"border", defaults:{split:true},title:"Classification systems",preventHeader:true})  	 

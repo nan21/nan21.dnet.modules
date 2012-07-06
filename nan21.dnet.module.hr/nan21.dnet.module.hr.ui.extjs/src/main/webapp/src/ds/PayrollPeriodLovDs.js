@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodLovDs" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"payrollId", type:"int", useNull:true},
 		{name:"active", type:"boolean"},
 		{name:"processed", type:"boolean"},
@@ -22,6 +23,7 @@ Ext.define("net.nan21.dnet.module.hr.payroll.ds.model.PayrollPeriodLovDsFilter" 
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"payrollId", type:"int", useNull:true},
 		{name:"payrollId_From",type:"int", useNull:true},
 		{name:"payrollId_To",type:"int", useNull:true},

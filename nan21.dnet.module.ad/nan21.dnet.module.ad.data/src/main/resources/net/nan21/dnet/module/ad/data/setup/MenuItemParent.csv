@@ -120,7 +120,7 @@ MyClient_UI;ad-menu-client
 OpportunityBaseData_UI;sd-menu-opportunity
 Opportunity_UI;sd-menu-opportunity
 Org_UI;bd-menu-org
-PayAccount_UI;fi-menu-base-acc
+FinancialAccount_UI;fi-menu-base-acc
 PaymentIn_UI;sd-menu-pay
 PaymentOut_UI;sc-menu-pay
 Payment_UI;fi-menu-tx-fin

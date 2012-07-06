@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_MD_PER_YEAR1" 
 				baseTableName="MD_PER_YEAR" baseColumnNames="CALENDAR_ID"  
-				referencedTableName="BD_CLND"  referencedColumnNames="ID" />
+				referencedTableName="BD_CLND" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

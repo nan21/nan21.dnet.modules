@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_AD_BOOKMARK1" 
 				baseTableName="AD_BOOKMARK" baseColumnNames="PARENT_ID"  
-				referencedTableName="AD_BOOKMARK"  referencedColumnNames="ID" />
+				referencedTableName="AD_BOOKMARK" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

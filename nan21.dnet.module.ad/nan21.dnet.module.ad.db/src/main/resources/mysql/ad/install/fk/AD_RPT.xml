@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_AD_RPT1" 
 				baseTableName="AD_RPT" baseColumnNames="REPORTSERVER_ID"  
-				referencedTableName="AD_RPT_SERVER"  referencedColumnNames="ID" />
+				referencedTableName="AD_RPT_SERVER" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

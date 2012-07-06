@@ -23,7 +23,7 @@
 			<column name="VERSION" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="CROSSREFERENCE_ID" type="bigint(19)">	 
-				<constraints  /></column>	 
+				<constraints nullable="false" /></column>	 
 			<column name="ELEMENT_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>

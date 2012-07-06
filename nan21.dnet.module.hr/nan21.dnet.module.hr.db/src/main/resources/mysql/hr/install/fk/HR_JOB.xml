@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_HR_JOB1" 
 				baseTableName="HR_JOB" baseColumnNames="JOBTYPE_ID"  
-				referencedTableName="HR_JOB_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="HR_JOB_TYPE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

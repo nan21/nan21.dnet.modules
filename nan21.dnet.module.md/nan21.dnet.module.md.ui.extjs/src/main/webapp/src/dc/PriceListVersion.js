@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$Filter", {
 		.addLov({ name:"priceList", xtype:"net.nan21.dnet.module.md.mm.price.lovs.PriceList", dataIndex:"priceList",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priceListId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
-		.addPanel({ name:"col2", layout:"form", width:180}) 
+		.addPanel({ name:"col2", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
@@ -50,8 +50,8 @@ Ext.define("net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$CtxEditList", 
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
-		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addNumberColumn({ name:"priceListId", dataIndex:"priceListId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()
@@ -69,9 +69,9 @@ Ext.define("net.nan21.dnet.module.md.mm.price.dc.PriceListVersion$EditList", {
 		this._getBuilder_()
 		.addLov({name:"priceList", xtype:"gridcolumn", dataIndex:"priceList", width:150,editor:{xtype:"net.nan21.dnet.module.md.mm.price.lovs.PriceList" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "priceListId"} ]} })
 		.addTextColumn({ name:"name", dataIndex:"name", width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addDateColumn({ name:"validFrom", dataIndex:"validFrom",format:Dnet.DATE_FORMAT,editor:{xtype:"datefield", selectOnFocus:true , format:Dnet.DATE_FORMAT}})
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addNumberColumn({ name:"priceListId", dataIndex:"priceListId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()
 	  ;  		   

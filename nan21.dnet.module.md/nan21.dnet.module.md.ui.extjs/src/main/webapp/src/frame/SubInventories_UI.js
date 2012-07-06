@@ -14,7 +14,7 @@ Ext.define("net.nan21.dnet.module.md.org.frame.SubInventories_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("subinv",{ name:"subinvFilter", xtype:"net.nan21.dnet.module.md.org.dc.SubInventory$Filter",height:120})	 
+		.addDcFilterFormView("subinv",{ name:"subinvFilter", xtype:"net.nan21.dnet.module.md.org.dc.SubInventory$Filter",height:80})	 
 		.addDcGridView("subinv",{ name:"subinvList", xtype:"net.nan21.dnet.module.md.org.dc.SubInventory$List"})	 
 		.addDcFormView("subinv",{ name:"subinvEdit", xtype:"net.nan21.dnet.module.md.org.dc.SubInventory$Edit",height:150})	 
 		.addDcFilterFormView("sloc",{ name:"slocFilter", xtype:"net.nan21.dnet.module.md.org.dc.StockLocator$Filter"})	 

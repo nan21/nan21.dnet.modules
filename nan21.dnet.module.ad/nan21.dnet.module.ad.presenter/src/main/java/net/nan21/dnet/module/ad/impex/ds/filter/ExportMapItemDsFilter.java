@@ -30,6 +30,8 @@ public class ExportMapItemDsFilter extends AbstractAuditableDsFilter {
 
     private String fileName;
 
+    private String path;
+
     private Boolean active;
 
     public Long getExportMapId() {
@@ -126,6 +128,14 @@ public class ExportMapItemDsFilter extends AbstractAuditableDsFilter {
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public String getPath() {
+        return this.path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public Boolean getActive() {

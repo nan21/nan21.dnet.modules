@@ -30,15 +30,15 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.ProductAttributeValue$Filter", {
 		.addLov({ name:"category", xtype:"net.nan21.dnet.module.bd.attr.lovs.AttributeCategory", dataIndex:"category",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "categoryId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:280}) 
-		.addPanel({ name:"col2", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form",width:210}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
-		.addChildrenTo("col1",["productCode","attribute","value"])
-		.addChildrenTo("col2",["category","dataType"])
+		.addChildrenTo("col1",["productCode","attribute","category"])
+		.addChildrenTo("col2",["dataType","value"])
     	.addAuditFilter()	
 	}
 }); 
@@ -114,6 +114,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.ProductAttributeValue$EditList",
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"product", dataIndex:"productCode", width:150 })
+		.addTextColumn({ name:"productName", dataIndex:"productName", width:250 })
 		.addTextColumn({ name:"category", dataIndex:"category",width:120 })
 		.addTextColumn({ name:"attribute", dataIndex:"attribute", hidden:true,width:120 })
 		.addTextColumn({ name:"title", dataIndex:"title",width:200 })

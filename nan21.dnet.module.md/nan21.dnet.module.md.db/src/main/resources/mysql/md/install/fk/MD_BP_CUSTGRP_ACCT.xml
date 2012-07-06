@@ -5,21 +5,25 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_MD_BP_CUSTGRP_ACCT1" 
 				baseTableName="MD_BP_CUSTGRP_ACCT" baseColumnNames="CUSTGROUP_ID"  
-				referencedTableName="MD_BP_CUSTGRP"  referencedColumnNames="ID" />
+				referencedTableName="MD_BP_CUSTGRP" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_MD_BP_CUSTGRP_ACCT2" 
 				baseTableName="MD_BP_CUSTGRP_ACCT" baseColumnNames="ACCSCHEMA_ID"  
-				referencedTableName="MD_ACC_SCHEMA"  referencedColumnNames="ID" />
+				referencedTableName="MD_ACC_SCHEMA" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_MD_BP_CUSTGRP_ACCT3" 
 				baseTableName="MD_BP_CUSTGRP_ACCT" baseColumnNames="SALESACCOUNT_ID"  
-				referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
+				referencedTableName="MD_ACC_ACCT" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_MD_BP_CUSTGRP_ACCT4" 
 				baseTableName="MD_BP_CUSTGRP_ACCT" baseColumnNames="PREPAYACCOUNT_ID"  
-				referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
+				referencedTableName="MD_ACC_ACCT" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

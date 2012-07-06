@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_BD_CLSF_ITEM1" 
 				baseTableName="BD_CLSF_ITEM" baseColumnNames="CLASSSYSTEM_ID"  
-				referencedTableName="BD_CLSF"  referencedColumnNames="ID" />
+				referencedTableName="BD_CLSF" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

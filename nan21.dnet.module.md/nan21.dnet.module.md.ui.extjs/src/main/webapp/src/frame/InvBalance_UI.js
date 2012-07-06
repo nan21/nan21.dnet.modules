@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.frame.InvBalance_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("invbalance",{ name:"invbalanceFilter", xtype:"net.nan21.dnet.module.md.tx.inventory.dc.InvBalance$Filter",height:100})	 
+		.addDcFilterFormView("invbalance",{ name:"invbalanceFilter", xtype:"net.nan21.dnet.module.md.tx.inventory.dc.InvBalance$Filter",height:80})	 
 		.addDcGridView("invbalance",{ name:"invbalanceList", xtype:"net.nan21.dnet.module.md.tx.inventory.dc.InvBalance$List"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

@@ -9,4 +9,14 @@ import net.nan21.dnet.core.presenter.model.base.AbstractTypeDsFilter;
 
 public class ExportMapDsFilter extends AbstractTypeDsFilter {
 
+    private String path;
+
+    public String getPath() {
+        return this.path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
 }

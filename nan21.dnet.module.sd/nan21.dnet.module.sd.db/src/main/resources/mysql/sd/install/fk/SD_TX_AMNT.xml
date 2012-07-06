@@ -5,11 +5,13 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_SD_TX_AMNT1" 
 				baseTableName="SD_TX_AMNT" baseColumnNames="ORDER_ID"  
-				referencedTableName="SD_ORD"  referencedColumnNames="ID" />
+				referencedTableName="SD_ORD" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_SD_TX_AMNT2" 
 				baseTableName="SD_TX_AMNT" baseColumnNames="INVOICE_ID"  
-				referencedTableName="SD_INV"  referencedColumnNames="ID" />
+				referencedTableName="SD_INV" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

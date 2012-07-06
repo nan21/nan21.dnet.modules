@@ -5,41 +5,49 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_SC_INV1" 
 				baseTableName="SC_INV" baseColumnNames="DOCTYPE_ID"  
-				referencedTableName="MD_TXDOC_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="MD_TXDOC_TYPE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_SC_INV2" 
 				baseTableName="SC_INV" baseColumnNames="SUPPLIER_ID"  
-				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+				referencedTableName="MD_BP" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_SC_INV3" 
 				baseTableName="SC_INV" baseColumnNames="CUSTOMER_ID"  
-				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+				referencedTableName="BD_ORG" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_SC_INV4" 
 				baseTableName="SC_INV" baseColumnNames="CURRENCY_ID"  
-				referencedTableName="BD_CRNCY"  referencedColumnNames="ID" />
+				referencedTableName="BD_CRNCY" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
 		<addForeignKeyConstraint constraintName="FK_SC_INV5" 
 				baseTableName="SC_INV" baseColumnNames="PAYMENTMETHOD_ID"  
-				referencedTableName="MD_PYMNT_MTD"  referencedColumnNames="ID" />
+				referencedTableName="MD_PYMNT_MTD" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-6">
 		<addForeignKeyConstraint constraintName="FK_SC_INV6" 
 				baseTableName="SC_INV" baseColumnNames="PAYMENTTERM_ID"  
-				referencedTableName="MD_PYMNT_TERM"  referencedColumnNames="ID" />
+				referencedTableName="MD_PYMNT_TERM" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-7">
 		<addForeignKeyConstraint constraintName="FK_SC_INV7" 
 				baseTableName="SC_INV" baseColumnNames="FROMACCOUNT_ID"  
-				referencedTableName="MD_FINACNT"  referencedColumnNames="ID" />
+				referencedTableName="MD_FINACNT" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-8">
 		<addForeignKeyConstraint constraintName="FK_SC_INV8" 
 				baseTableName="SC_INV" baseColumnNames="PURCHASEORDER_ID"  
-				referencedTableName="SC_ORD"  referencedColumnNames="ID" />
+				referencedTableName="SC_ORD" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

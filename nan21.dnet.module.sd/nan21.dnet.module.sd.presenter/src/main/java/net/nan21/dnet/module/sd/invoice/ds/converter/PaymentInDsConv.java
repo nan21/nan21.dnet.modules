@@ -14,8 +14,8 @@ import net.nan21.dnet.module.md.base.tx.business.service.IPaymentMethodService;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.md.org.business.service.IPayAccountService;
-import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
+import net.nan21.dnet.module.md.org.business.service.IFinancialAccountService;
+import net.nan21.dnet.module.md.org.domain.entity.FinancialAccount;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sd.invoice.ds.model.PaymentInDs;
@@ -53,11 +53,11 @@ public class PaymentInDsConv extends
         if (ds.getToAccountId() != null) {
             if (e.getToAccount() == null
                     || !e.getToAccount().getId().equals(ds.getToAccountId())) {
-                e.setToAccount((PayAccount) this.em.find(PayAccount.class,
-                        ds.getToAccountId()));
+                e.setToAccount((FinancialAccount) this.em.find(
+                        FinancialAccount.class, ds.getToAccountId()));
             }
         } else {
-            this.lookup_toAccount_PayAccount(ds, e);
+            this.lookup_toAccount_FinancialAccount(ds, e);
         }
 
         if (ds.getOrgId() != null) {
@@ -120,16 +120,16 @@ public class PaymentInDsConv extends
         }
     }
 
-    protected void lookup_toAccount_PayAccount(PaymentInDs ds, PaymentIn e)
+    protected void lookup_toAccount_FinancialAccount(PaymentInDs ds, PaymentIn e)
             throws Exception {
         if (ds.getToAccount() != null && !ds.getToAccount().equals("")) {
-            PayAccount x = null;
+            FinancialAccount x = null;
             try {
-                x = ((IPayAccountService) findEntityService(PayAccount.class))
+                x = ((IFinancialAccountService) findEntityService(FinancialAccount.class))
                         .findByName(ds.getToAccount());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `PayAccount` reference:  `toAccount` = "
+                        "Invalid value provided to find `FinancialAccount` reference:  `toAccount` = "
                                 + ds.getToAccount() + "  ");
             }
             e.setToAccount(x);

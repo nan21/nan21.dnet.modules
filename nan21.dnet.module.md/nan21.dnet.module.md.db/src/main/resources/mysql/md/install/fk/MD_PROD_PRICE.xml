@@ -5,16 +5,19 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_MD_PROD_PRICE1" 
 				baseTableName="MD_PROD_PRICE" baseColumnNames="PRICELISTVERSION_ID"  
-				referencedTableName="MD_PRICE_LIST_VER"  referencedColumnNames="ID" />
+				referencedTableName="MD_PRICE_LIST_VER" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_MD_PROD_PRICE2" 
 				baseTableName="MD_PROD_PRICE" baseColumnNames="PRODUCT_ID"  
-				referencedTableName="MD_PROD"  referencedColumnNames="ID" />
+				referencedTableName="MD_PROD" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_MD_PROD_PRICE3" 
 				baseTableName="MD_PROD_PRICE" baseColumnNames="UOM_ID"  
-				referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+				referencedTableName="BD_UOM" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.md.org.ds.model.SubInventoryLovDs" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean"},
 		{name:"inventoryId", type:"int", useNull:true}
 	]
@@ -19,6 +20,7 @@ Ext.define("net.nan21.dnet.module.md.org.ds.model.SubInventoryLovDsFilter" ,{
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
 		{name:"inventoryId", type:"int", useNull:true},
 		{name:"inventoryId_From",type:"int", useNull:true},

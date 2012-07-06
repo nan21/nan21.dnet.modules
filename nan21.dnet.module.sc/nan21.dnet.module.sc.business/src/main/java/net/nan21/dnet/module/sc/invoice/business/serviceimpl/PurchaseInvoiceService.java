@@ -14,7 +14,7 @@ import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.md.base.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
+import net.nan21.dnet.module.md.org.domain.entity.FinancialAccount;
 import net.nan21.dnet.module.sc.invoice.business.service.IPurchaseInvoiceService;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceTax;
@@ -121,7 +121,7 @@ public class PurchaseInvoiceService extends
                 .setParameter("pPaymentTermId", paymentTermId).getResultList();
     }
 
-    public List<PurchaseInvoice> findByFromAccount(PayAccount fromAccount) {
+    public List<PurchaseInvoice> findByFromAccount(FinancialAccount fromAccount) {
         return this.findByFromAccountId(fromAccount.getId());
     }
 

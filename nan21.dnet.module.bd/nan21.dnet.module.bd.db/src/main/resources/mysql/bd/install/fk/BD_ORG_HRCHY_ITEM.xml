@@ -5,16 +5,19 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_BD_ORG_HRCHY_ITEM1" 
 				baseTableName="BD_ORG_HRCHY_ITEM" baseColumnNames="HIERARCHY_ID"  
-				referencedTableName="BD_ORG_HRCHY"  referencedColumnNames="ID" />
+				referencedTableName="BD_ORG_HRCHY" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_BD_ORG_HRCHY_ITEM2" 
 				baseTableName="BD_ORG_HRCHY_ITEM" baseColumnNames="ORG_ID"  
-				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+				referencedTableName="BD_ORG" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_BD_ORG_HRCHY_ITEM3" 
 				baseTableName="BD_ORG_HRCHY_ITEM" baseColumnNames="PARENT_ID"  
-				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+				referencedTableName="BD_ORG" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

@@ -4,7 +4,7 @@
     
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC_LINE1" baseTableName="TX_ACC_DOC_LINE" 
-			baseColumnNames="ACCDOC_ID"  referencedTableName="TX_ACC_DOC"  referencedColumnNames="ID" />
+			baseColumnNames="ACCDOC_ID"  referencedTableName="TX_ACC_DOC"  referencedColumnNames="ID" onDelete="CASCADE" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_TX_ACC_DOC_LINE2" baseTableName="TX_ACC_DOC_LINE" 

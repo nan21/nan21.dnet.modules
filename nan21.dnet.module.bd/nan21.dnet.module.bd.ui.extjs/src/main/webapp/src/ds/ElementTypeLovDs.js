@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.bd.elem.ds.model.ElementTypeLovDs" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean"},
 		{name:"engineId", type:"int", useNull:true},
 		{name:"engine", type:"string"},
@@ -21,6 +22,7 @@ Ext.define("net.nan21.dnet.module.bd.elem.ds.model.ElementTypeLovDsFilter" ,{
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
 		{name:"engineId", type:"int", useNull:true},
 		{name:"engineId_From",type:"int", useNull:true},

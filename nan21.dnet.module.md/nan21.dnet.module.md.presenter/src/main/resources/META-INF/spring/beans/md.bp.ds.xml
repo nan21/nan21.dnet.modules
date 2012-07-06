@@ -31,6 +31,30 @@
 		<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.BusinessPartnerLovDs" />
 	</bean>
    
+ 	<bean id="CustomerLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.CustomerLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.bp.ds.model.CustomerLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.bp.domain.entity.BpAccount" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="CustomerLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.CustomerLovDs" />
+	</bean>
+   
+ 	<bean id="VendorLovDsService" scope="prototype"
+	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
+	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.VendorLovDs" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.md.bp.ds.model.VendorLovDs" />
+	  	<property name="entityClass" value="net.nan21.dnet.module.md.bp.domain.entity.BpAccount" />
+	  	<property name="readOnly" value="true" />
+	</bean>
+	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
+		<property name="name" value="VendorLov" />
+		<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.VendorLovDs" />
+	</bean>
+   
  	<bean id="ContactDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.md.bp.ds.model.ContactDs" />

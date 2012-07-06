@@ -49,7 +49,7 @@
 			<column name="BILLTO_ID" type="number(19)">	 
 				<constraints  /></column>	 
 			<column name="CARRIER_ID" type="number(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="CURRENCY_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="CUSTOMER_ID" type="number(19)">	 

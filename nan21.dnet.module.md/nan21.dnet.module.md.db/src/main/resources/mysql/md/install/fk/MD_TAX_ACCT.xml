@@ -5,21 +5,25 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_MD_TAX_ACCT1" 
 				baseTableName="MD_TAX_ACCT" baseColumnNames="TAX_ID"  
-				referencedTableName="MD_TAX"  referencedColumnNames="ID" />
+				referencedTableName="MD_TAX" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_MD_TAX_ACCT2" 
 				baseTableName="MD_TAX_ACCT" baseColumnNames="ACCSCHEMA_ID"  
-				referencedTableName="MD_ACC_SCHEMA"  referencedColumnNames="ID" />
+				referencedTableName="MD_ACC_SCHEMA" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_MD_TAX_ACCT3" 
 				baseTableName="MD_TAX_ACCT" baseColumnNames="SALESACCOUNT_ID"  
-				referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
+				referencedTableName="MD_ACC_ACCT" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_MD_TAX_ACCT4" 
 				baseTableName="MD_TAX_ACCT" baseColumnNames="PURCHASEACCOUNT_ID"  
-				referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
+				referencedTableName="MD_ACC_ACCT" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

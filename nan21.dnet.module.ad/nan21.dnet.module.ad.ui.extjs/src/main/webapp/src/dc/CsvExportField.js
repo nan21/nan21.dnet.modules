@@ -21,6 +21,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.CsvExportField$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.CsvExportField$CtxEditList",
 	
+	_bulkEditFields_ : ["active"],
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"csvExport", dataIndex:"csvExport", hidden:true,width:120 })

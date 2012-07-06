@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.md.bp.frame.Bank_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("bank",{ name:"bankFilter", xtype:"net.nan21.dnet.module.md.bp.dc.Bank$Filter",height:120})	 
+		.addDcFilterFormView("bank",{ name:"bankFilter", xtype:"net.nan21.dnet.module.md.bp.dc.Bank$Filter",height:80})	 
 		.addDcEditGridView("bank",{ name:"bankEditList", xtype:"net.nan21.dnet.module.md.bp.dc.Bank$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

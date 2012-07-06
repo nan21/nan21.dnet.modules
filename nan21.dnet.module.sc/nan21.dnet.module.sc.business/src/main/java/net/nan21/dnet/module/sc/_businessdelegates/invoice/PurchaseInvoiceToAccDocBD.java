@@ -18,8 +18,9 @@ import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.module.md.mm.prod.business.service.IProductService;
 import net.nan21.dnet.module.md.mm.prod.domain.entity.Product;
-import net.nan21.dnet.module.md.org.business.service.IPayAccountAcctService;
-import net.nan21.dnet.module.md.org.domain.entity.PayAccountAcct;
+import net.nan21.dnet.module.md.org.business.service.IFinancialAccountAcctService;
+import net.nan21.dnet.module.md.org.domain.entity.FinancialAccountAcct;
+
 import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDoc;
 import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDocLine;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoice;
@@ -31,7 +32,7 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 	IBusinessPartnerService bpService;
 	IFiscalPeriodService periodService;
 	IProductService prodService;
-	IPayAccountAcctService payAcctService;
+	IFinancialAccountAcctService payAcctService;
 
 	/**
 	 * Un-post invoice. Delete linked accounting document(s).
@@ -302,10 +303,10 @@ public class PurchaseInvoiceToAccDocBD extends AbstractBusinessDelegate {
 		return this.prodService;
 	}
 
-	public IPayAccountAcctService getPayAcctService() throws Exception {
+	public IFinancialAccountAcctService getPayAcctService() throws Exception {
 		if (this.payAcctService == null) {
-			this.payAcctService = (IPayAccountAcctService) this
-					.findEntityService(PayAccountAcct.class);
+			this.payAcctService = (IFinancialAccountAcctService) this
+					.findEntityService(FinancialAccountAcct.class);
 		}
 		return this.payAcctService;
 	}

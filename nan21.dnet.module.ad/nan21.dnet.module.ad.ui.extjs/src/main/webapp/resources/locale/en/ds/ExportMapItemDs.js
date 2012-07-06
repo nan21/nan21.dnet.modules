@@ -8,6 +8,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ExportMapItemDs$Trl", {
 	csvExport__lbl : "Csv Export",
 	sequenceNo__lbl : "Sequence No",
 	fileName__lbl : "File Name",
+	path__lbl : "Path",
 		
 	id__lbl :"ID"
 });

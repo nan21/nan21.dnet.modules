@@ -30,7 +30,7 @@ Ext.define("net.nan21.dnet.module.bd.standards.dc.ClassificationSystem$Filter", 
 		.addCombo({ name:"useInContext", xtype:"combo", dataIndex:"useInContext",anchor:"-20",store:[ "BusinessPartner.company", "BusinessPartner.person", "Product"]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:250}) 
-		.addPanel({ name:"col2", layout:"form", width:200}) 
+		.addPanel({ name:"col2", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}

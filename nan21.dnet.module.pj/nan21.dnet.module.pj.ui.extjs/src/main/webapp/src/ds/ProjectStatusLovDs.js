@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.pj.base.ds.model.ProjectStatusLovDs" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean"}
 	]
 });
@@ -18,6 +19,7 @@ Ext.define("net.nan21.dnet.module.pj.base.ds.model.ProjectStatusLovDsFilter" ,{
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean", useNull:true}
 	] 
 });

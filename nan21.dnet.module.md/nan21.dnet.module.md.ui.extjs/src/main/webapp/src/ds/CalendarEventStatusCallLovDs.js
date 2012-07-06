@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusCallLo
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean"},
 		{name:"eventType", type:"string"}
 	]
@@ -19,6 +20,7 @@ Ext.define("net.nan21.dnet.module.md.activity.ds.model.CalendarEventStatusCallLo
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
 		{name:"eventType", type:"string"}
 	] 

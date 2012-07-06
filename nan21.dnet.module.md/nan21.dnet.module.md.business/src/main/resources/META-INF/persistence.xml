@@ -51,9 +51,9 @@
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAccountGroupAcct</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAccount</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAccountAcct</class>
-		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccount</class>
-		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccountAcct</class>
-		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccountMethod</class>
+		<class>net.nan21.dnet.module.md.org.domain.entity.FinancialAccount</class>
+		<class>net.nan21.dnet.module.md.org.domain.entity.FinancialAccountAcct</class>
+		<class>net.nan21.dnet.module.md.org.domain.entity.FinancialAccountMethod</class>
 		<class>net.nan21.dnet.module.md.org.domain.entity.SubInventory</class>
 		<class>net.nan21.dnet.module.md.org.domain.entity.StockLocatorType</class>
 		<class>net.nan21.dnet.module.md.org.domain.entity.StockLocator</class>

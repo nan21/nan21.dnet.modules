@@ -1,8 +1,8 @@
 
 Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMap_UI$Trl", {  	  	
 	
-	tlbMapList__ttl : "File-sets",
-	tlbMapEdit__ttl : "File-set",
+	tlbMapList__ttl : "Import sets",
+	tlbMapEdit__ttl : "Import set",
 	tlbItemEditList__ttl : "Files",
 	
 	btnRunImportMap__ttl : "Import All",

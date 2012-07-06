@@ -69,6 +69,10 @@ public class ImportMapItem extends AbstractAuditable {
     @NotBlank
     private String dataSourceName;
 
+    /** Path. */
+    @Column(name = "PATH", length = 255)
+    private String path;
+
     /** FileName. */
     @Column(name = "FILENAME", length = 255)
     private String fileName;
@@ -109,6 +113,14 @@ public class ImportMapItem extends AbstractAuditable {
 
     public void setDataSourceName(String dataSourceName) {
         this.dataSourceName = dataSourceName;
+    }
+
+    public String getPath() {
+        return this.path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public String getFileName() {

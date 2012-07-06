@@ -17,7 +17,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.IssueChangelog_UI", {
 		.addButton({name:"btnIssueUi",text:"Edit issue", tooltip:"Show current issue in editor frame",disabled:true
 			,handler: this.onBtnIssueUi,scope:this,stateManager:{name:"selected_one", dc:"issue" }	})	
 							 	
-		.addDcFilterFormView("issue",{ name:"issueFilter", xtype:"net.nan21.dnet.module.pj.md.dc.IssueChangelog$Filter",height:100})	 
+		.addDcFilterFormView("issue",{ name:"issueFilter", xtype:"net.nan21.dnet.module.pj.md.dc.IssueChangelog$Filter",height:80})	 
 		.addDcGridView("issue",{ name:"issueList", xtype:"net.nan21.dnet.module.pj.md.dc.IssueChangelog$List"})	 
 		.addDcFormView("issueInfo",{ name:"infoView", xtype:"net.nan21.dnet.module.pj.md.dc.Issue$View",height:200})	 
 		.addPanel({name: "main", layout:"border", defaults:{split:true}})  	 

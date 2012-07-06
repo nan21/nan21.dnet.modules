@@ -39,8 +39,8 @@ Ext.define("net.nan21.dnet.module.md.mm.price.dc.PriceList$FilterH", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["name","currency"])
-		.addChildrenTo("col2",["salesList","isDefault"])
-		.addChildrenTo("col3",["active"])
+		.addChildrenTo("col2",["salesList"])
+		.addChildrenTo("col3",["isDefault","active"])
     	.addAuditFilter()	
 	}
 }); 
@@ -57,8 +57,8 @@ Ext.define("net.nan21.dnet.module.md.mm.price.dc.PriceList$EditList", {
 		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addLov({name:"currency", xtype:"gridcolumn", dataIndex:"currency",width:100,editor:{xtype:"net.nan21.dnet.module.bd.currency.lovs.Currencies" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "currencyId"} ]} })
 		.addBooleanColumn({ name:"salesList", dataIndex:"salesList"})
-		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addBooleanColumn({ name:"isDefault", dataIndex:"isDefault"})
+		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addNumberColumn({ name:"currencyId", dataIndex:"currencyId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()
 	  ;  		   

@@ -12,10 +12,26 @@
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.CsvExportDs" />
 	  	<property name="filterClass" value="net.nan21.dnet.module.ad.impex.ds.filter.CsvExportDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.impex.domain.entity.CsvExport" />
+	  	<property name="paramClass" value="net.nan21.dnet.module.ad.impex.ds.param.CsvExportDsParam" />	
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="cloneCsvExport">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad._presenterdelegates.impex.ImpexUtilPD"/>
+	  				<constructor-arg name="methodName" value="cloneCsvExport" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="CsvExport" />
 		<property name="modelClass" value="net.nan21.dnet.module.ad.impex.ds.model.CsvExportDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">cloneCsvExport</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="CsvExportLovDsService" scope="prototype"

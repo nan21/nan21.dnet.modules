@@ -21,6 +21,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ExportMapItemDs" ,{
 		{name:"csvExport", type:"string"},
 		{name:"sequenceNo", type:"int", useNull:true},
 		{name:"fileName", type:"string"},
+		{name:"path", type:"string"},
 		{name:"active", type:"boolean"}
 	]
 });
@@ -51,6 +52,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ExportMapItemDsFilter" ,{
 		{name:"sequenceNo_From",type:"int", useNull:true},
 		{name:"sequenceNo_To",type:"int", useNull:true},
 		{name:"fileName", type:"string"},
+		{name:"path", type:"string"},
 		{name:"active", type:"boolean", useNull:true}
 	] 
 });

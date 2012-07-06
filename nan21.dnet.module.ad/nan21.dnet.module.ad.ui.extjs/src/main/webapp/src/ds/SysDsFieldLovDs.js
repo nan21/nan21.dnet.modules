@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysDsFieldLovDs" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean"},
 		{name:"dataSourceId", type:"int", useNull:true},
 		{name:"dataSourceName", type:"string"},
@@ -21,6 +22,7 @@ Ext.define("net.nan21.dnet.module.ad.system.ds.model.SysDsFieldLovDsFilter" ,{
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
 		{name:"dataSourceId", type:"int", useNull:true},
 		{name:"dataSourceId_From",type:"int", useNull:true},

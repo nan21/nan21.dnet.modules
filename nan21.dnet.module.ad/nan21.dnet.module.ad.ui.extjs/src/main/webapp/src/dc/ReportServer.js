@@ -47,8 +47,8 @@ Ext.define("net.nan21.dnet.module.ad.report.dc.ReportServer$EditList", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
-		.addTextColumn({ name:"url", dataIndex:"url",width:100,editor:{xtype:"textfield", selectOnFocus:true } })
-		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"description", dataIndex:"description", width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"url", dataIndex:"url", width:250,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 	  	.addDefaults()
 	  ;  		   

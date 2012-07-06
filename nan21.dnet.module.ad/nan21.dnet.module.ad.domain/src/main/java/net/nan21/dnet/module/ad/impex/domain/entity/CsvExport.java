@@ -78,6 +78,10 @@ public class CsvExport extends AbstractType {
     @CascadeOnDelete
     private Collection<CsvExportField> fields;
 
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = CsvExportSort.class, mappedBy = "csvExport", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<CsvExportSort> sorts;
+
     /* ============== getters - setters ================== */
 
     public Long getId() {
@@ -110,6 +114,22 @@ public class CsvExport extends AbstractType {
         }
         e.setCsvExport(this);
         this.fields.add(e);
+    }
+
+    public Collection<CsvExportSort> getSorts() {
+        return this.sorts;
+    }
+
+    public void setSorts(Collection<CsvExportSort> sorts) {
+        this.sorts = sorts;
+    }
+
+    public void addToSorts(CsvExportSort e) {
+        if (this.sorts == null) {
+            this.sorts = new ArrayList<CsvExportSort>();
+        }
+        e.setCsvExport(this);
+        this.sorts.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

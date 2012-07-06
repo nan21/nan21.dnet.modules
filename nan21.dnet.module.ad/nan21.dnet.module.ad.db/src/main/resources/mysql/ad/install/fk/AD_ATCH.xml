@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_AD_ATCH1" 
 				baseTableName="AD_ATCH" baseColumnNames="TYPE_ID"  
-				referencedTableName="AD_ATCH_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="AD_ATCH_TYPE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

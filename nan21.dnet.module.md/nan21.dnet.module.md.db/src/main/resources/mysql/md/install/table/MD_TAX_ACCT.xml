@@ -23,9 +23,9 @@
 			<column name="ACCSCHEMA_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="PURCHASEACCOUNT_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="SALESACCOUNT_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="TAX_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
         </createTable>

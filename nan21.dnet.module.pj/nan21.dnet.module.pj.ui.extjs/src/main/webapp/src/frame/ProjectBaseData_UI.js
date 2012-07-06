@@ -14,11 +14,11 @@ Ext.define("net.nan21.dnet.module.pj.base.frame.ProjectBaseData_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("categ",{ name:"categFilter", xtype:"net.nan21.dnet.module.pj.base.dc.ProjectCategory$Filter",height:120})	 
+		.addDcFilterFormView("categ",{ name:"categFilter", xtype:"net.nan21.dnet.module.pj.base.dc.ProjectCategory$Filter",height:80})	 
 		.addDcEditGridView("categ",{ name:"categEditList", xtype:"net.nan21.dnet.module.pj.base.dc.ProjectCategory$EditList", frame:true})	 
-		.addDcFilterFormView("type",{ name:"typeFilter", xtype:"net.nan21.dnet.module.pj.base.dc.ProjectType$Filter",height:120})	 
+		.addDcFilterFormView("type",{ name:"typeFilter", xtype:"net.nan21.dnet.module.pj.base.dc.ProjectType$Filter",height:80})	 
 		.addDcEditGridView("type",{ name:"typeEditList", xtype:"net.nan21.dnet.module.pj.base.dc.ProjectType$EditList", frame:true})	 
-		.addDcFilterFormView("role",{ name:"roleFilter", xtype:"net.nan21.dnet.module.pj.base.dc.ProjectRole$Filter",height:120})	 
+		.addDcFilterFormView("role",{ name:"roleFilter", xtype:"net.nan21.dnet.module.pj.base.dc.ProjectRole$Filter",height:80})	 
 		.addDcEditGridView("role",{ name:"roleEditList", xtype:"net.nan21.dnet.module.pj.base.dc.ProjectRole$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasCategory", layout:"border", defaults:{split:true},title:"Categories",preventHeader:true})  	 

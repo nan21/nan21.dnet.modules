@@ -4,7 +4,7 @@
     
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_TX_PYMNT_ITEM1" baseTableName="TX_PYMNT_ITEM" 
-			baseColumnNames="PAYMENT_ID"  referencedTableName="TX_PYMNT"  referencedColumnNames="ID" />
+			baseColumnNames="PAYMENT_ID"  referencedTableName="TX_PYMNT"  referencedColumnNames="ID" onDelete="CASCADE" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_TX_PYMNT_ITEM2" baseTableName="TX_PYMNT_ITEM" 

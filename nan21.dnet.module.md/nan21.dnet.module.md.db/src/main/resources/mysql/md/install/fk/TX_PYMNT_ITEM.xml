@@ -5,21 +5,25 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_TX_PYMNT_ITEM1" 
 				baseTableName="TX_PYMNT_ITEM" baseColumnNames="PAYMENT_ID"  
-				referencedTableName="TX_PYMNT"  referencedColumnNames="ID" />
+				referencedTableName="TX_PYMNT" referencedColumnNames="ID" onDelete="CASCADE" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_TX_PYMNT_ITEM2" 
 				baseTableName="TX_PYMNT_ITEM" baseColumnNames="ACCITEM_ID"  
-				referencedTableName="MD_ACC_ITEM"  referencedColumnNames="ID" />
+				referencedTableName="MD_ACC_ITEM" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_TX_PYMNT_ITEM3" 
 				baseTableName="TX_PYMNT_ITEM" baseColumnNames="PRODUCT_ID"  
-				referencedTableName="MD_PROD"  referencedColumnNames="ID" />
+				referencedTableName="MD_PROD" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_TX_PYMNT_ITEM4" 
 				baseTableName="TX_PYMNT_ITEM" baseColumnNames="UOM_ID"  
-				referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+				referencedTableName="BD_UOM" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

@@ -29,7 +29,7 @@ Ext.define("net.nan21.dnet.module.md.base.tx.dc.DeliveryMethod$Filter", {
 		.addBooleanField({ name:"externalCourier", dataIndex:"externalCourier",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
-		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}

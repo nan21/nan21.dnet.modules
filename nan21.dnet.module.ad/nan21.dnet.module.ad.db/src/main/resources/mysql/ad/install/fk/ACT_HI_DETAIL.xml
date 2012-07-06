@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_ACT_HI_DETAIL1" 
 				baseTableName="ACT_HI_DETAIL" baseColumnNames="BYTEARRAY_ID_"  
-				referencedTableName="ACT_GE_BYTEARRAY"  referencedColumnNames="ID_" />
+				referencedTableName="ACT_GE_BYTEARRAY" referencedColumnNames="ID_" />
+				
 	</changeSet>	
 </databaseChangeLog>    

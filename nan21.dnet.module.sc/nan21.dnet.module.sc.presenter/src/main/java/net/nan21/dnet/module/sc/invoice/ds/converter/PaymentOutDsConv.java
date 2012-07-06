@@ -14,8 +14,8 @@ import net.nan21.dnet.module.md.base.tx.business.service.IPaymentMethodService;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.business.service.IBusinessPartnerService;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.md.org.business.service.IPayAccountService;
-import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
+import net.nan21.dnet.module.md.org.business.service.IFinancialAccountService;
+import net.nan21.dnet.module.md.org.domain.entity.FinancialAccount;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.sc.invoice.ds.model.PaymentOutDs;
@@ -54,11 +54,11 @@ public class PaymentOutDsConv extends
             if (e.getFromAccount() == null
                     || !e.getFromAccount().getId()
                             .equals(ds.getFromAccountId())) {
-                e.setFromAccount((PayAccount) this.em.find(PayAccount.class,
-                        ds.getFromAccountId()));
+                e.setFromAccount((FinancialAccount) this.em.find(
+                        FinancialAccount.class, ds.getFromAccountId()));
             }
         } else {
-            this.lookup_fromAccount_PayAccount(ds, e);
+            this.lookup_fromAccount_FinancialAccount(ds, e);
         }
 
         if (ds.getOrgId() != null) {
@@ -121,16 +121,16 @@ public class PaymentOutDsConv extends
         }
     }
 
-    protected void lookup_fromAccount_PayAccount(PaymentOutDs ds, PaymentOut e)
-            throws Exception {
+    protected void lookup_fromAccount_FinancialAccount(PaymentOutDs ds,
+            PaymentOut e) throws Exception {
         if (ds.getFromAccount() != null && !ds.getFromAccount().equals("")) {
-            PayAccount x = null;
+            FinancialAccount x = null;
             try {
-                x = ((IPayAccountService) findEntityService(PayAccount.class))
+                x = ((IFinancialAccountService) findEntityService(FinancialAccount.class))
                         .findByName(ds.getFromAccount());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `PayAccount` reference:  `fromAccount` = "
+                        "Invalid value provided to find `FinancialAccount` reference:  `fromAccount` = "
                                 + ds.getFromAccount() + "  ");
             }
             e.setFromAccount(x);

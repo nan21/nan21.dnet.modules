@@ -14,9 +14,9 @@ Ext.define("net.nan21.dnet.module.bd.geo.frame.RegionMD_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("region",{ name:"regionFilter", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$Filter",height:120})	 
+		.addDcFilterFormView("region",{ name:"regionFilter", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$Filter",height:80})	 
 		.addDcGridView("region",{ name:"regionList", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$List"})	 
-		.addDcFormView("region",{ name:"regionEdit", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$Edit",height:140})	 
+		.addDcFormView("region",{ name:"regionEdit", xtype:"net.nan21.dnet.module.bd.geo.dc.Region$Edit",height:120})	 
 		.addDcEditGridView("city",{ name:"cityEditList", xtype:"net.nan21.dnet.module.bd.geo.dc.City$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 

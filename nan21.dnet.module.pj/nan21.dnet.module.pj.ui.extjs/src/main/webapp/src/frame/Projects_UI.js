@@ -32,7 +32,7 @@ Ext.define("net.nan21.dnet.module.pj.md.frame.Projects_UI", {
 		.addButton({name:"btnChangelogUi",text:"Changelog", tooltip:"Show Changelog for selected version",disabled:true
 			,handler: this.onBtnChangelogUi,scope:this,stateManager:{name:"selected_one", dc:"version" }	})	
 							 	
-		.addDcFilterFormView("project",{ name:"projectFilter", xtype:"net.nan21.dnet.module.pj.md.dc.Project$Filter",height:140})	 
+		.addDcFilterFormView("project",{ name:"projectFilter", xtype:"net.nan21.dnet.module.pj.md.dc.Project$Filter",height:80})	 
 		.addDcGridView("project",{ name:"projectList", xtype:"net.nan21.dnet.module.pj.md.dc.Project$List"})	 
 		.addDcFormView("project",{ name:"projectEdit", xtype:"net.nan21.dnet.module.pj.md.dc.Project$Edit",height:180})	 
 		.addDcFilterFormView("version",{ name:"versionFilter", xtype:"net.nan21.dnet.module.pj.md.dc.ProjectVersion$Filter"})	 

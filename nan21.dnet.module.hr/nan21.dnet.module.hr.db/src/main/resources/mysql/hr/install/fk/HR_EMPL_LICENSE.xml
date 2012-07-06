@@ -5,11 +5,13 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_LICENSE1" 
 				baseTableName="HR_EMPL_LICENSE" baseColumnNames="EMPLOYEE_ID"  
-				referencedTableName="HR_EMPL"  referencedColumnNames="ID" />
+				referencedTableName="HR_EMPL" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_LICENSE2" 
 				baseTableName="HR_EMPL_LICENSE" baseColumnNames="LICENSETYPE_ID"  
-				referencedTableName="HR_LICENSE_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="HR_LICENSE_TYPE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

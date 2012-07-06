@@ -50,6 +50,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.CsvExportDsFilter" ,{
 Ext.define("net.nan21.dnet.module.ad.impex.ds.param.CsvExportDsParam", {
 	extend: 'Ext.data.Model',
 	fields: [ 
+		{name:"cloneName", type:"string"}
 	]
 }); 
  

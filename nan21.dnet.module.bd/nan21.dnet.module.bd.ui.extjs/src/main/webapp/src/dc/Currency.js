@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.Currency$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
-		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
@@ -54,9 +54,9 @@ Ext.define("net.nan21.dnet.module.bd.currency.dc.Currency$EditList", {
 		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
 		.addTextColumn({ name:"iso3", dataIndex:"iso3",width:50,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:3,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
 		.addNumberColumn({ name:"standardPrecision", dataIndex:"standardPrecision", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
-		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addTextColumn({ name:"symbol", dataIndex:"symbol", width:60,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addBooleanColumn({ name:"active", dataIndex:"active"})
 	  	.addDefaults()
 	  ;  		   
 	}  

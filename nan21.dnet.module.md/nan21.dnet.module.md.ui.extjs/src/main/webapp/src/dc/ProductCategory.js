@@ -28,8 +28,8 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.ProductCategory$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addBooleanField({ name:"folder", dataIndex:"folder",anchor:"-20"  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210, height:50}) 
-		.addPanel({ name:"col2", layout:"form",width:210}) 
+		.addPanel({ name:"col1", layout:"form",width:210}) 
+		.addPanel({ name:"col2", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}

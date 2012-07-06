@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_AD_WFDEF_NODE_FLD1" 
 				baseTableName="AD_WFDEF_NODE_FLD" baseColumnNames="NODE_ID"  
-				referencedTableName="AD_WFDEF_NODE"  referencedColumnNames="ID" />
+				referencedTableName="AD_WFDEF_NODE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

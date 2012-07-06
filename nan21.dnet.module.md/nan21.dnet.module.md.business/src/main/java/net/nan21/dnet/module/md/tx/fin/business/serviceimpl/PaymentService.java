@@ -12,7 +12,7 @@ import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
+import net.nan21.dnet.module.md.org.domain.entity.FinancialAccount;
 import net.nan21.dnet.module.md.tx.fin.business.service.IPaymentService;
 import net.nan21.dnet.module.md.tx.fin.domain.entity.PaymentItem;
 
@@ -89,7 +89,7 @@ public class PaymentService extends AbstractEntityService<Payment> implements
                 .setParameter("pToOrgId", toOrgId).getResultList();
     }
 
-    public List<Payment> findByFromAccount(PayAccount fromAccount) {
+    public List<Payment> findByFromAccount(FinancialAccount fromAccount) {
         return this.findByFromAccountId(fromAccount.getId());
     }
 
@@ -102,7 +102,7 @@ public class PaymentService extends AbstractEntityService<Payment> implements
                 .setParameter("pFromAccountId", fromAccountId).getResultList();
     }
 
-    public List<Payment> findByToAccount(PayAccount toAccount) {
+    public List<Payment> findByToAccount(FinancialAccount toAccount) {
         return this.findByToAccountId(toAccount.getId());
     }
 

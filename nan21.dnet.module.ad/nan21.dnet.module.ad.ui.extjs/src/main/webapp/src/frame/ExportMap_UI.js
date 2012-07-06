@@ -20,11 +20,11 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ExportMap_UI", {
 		.addButton({name:"btnRunExportItem",text:"Export selected", tooltip:"Export the selected item (one at a time).",iconCls:"icon-action-export",disabled:true
 			,handler: this.onBtnRunExportItem,scope:this,stateManager:{name:"selected_one", dc:"item" }	})	
 							 	
-		.addDcFilterFormView("map",{ name:"mapFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMap$Filter",height:120})	 
+		.addDcFilterFormView("map",{ name:"mapFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMap$Filter",height:80})	 
 		.addDcGridView("map",{ name:"mapList", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMap$List"})	 
-		.addDcFormView("map",{ name:"mapEdit", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMap$Edit",height:120,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnRunExportMap") ,this._elems_.get("btnRunExportItem") ]}]})	 
+		.addDcFormView("map",{ name:"mapEdit", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMap$Edit",height:140,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnRunExportMap") ,this._elems_.get("btnRunExportItem") ]}]})	 
 		.addDcFilterFormView("item",{ name:"itemFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMapItem$Filter"})	 
-		.addDcEditGridView("item",{ name:"itemCtxEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMapItem$CtxEditList", frame:true})	 
+		.addDcEditGridView("item",{ name:"itemCtxEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportMapItem$EditListCtxExpMap", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		.addPanel({name: "canvas2", layout:"border", defaults:{split:true},preventHeader:true})  	 
@@ -43,9 +43,9 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ExportMap_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbMapList", {dc:"map"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"File-sets"}).end()
-			.beginToolbar("tlbMapEdit", {dc:"map"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"File-set"}).end()
-			.beginToolbar("tlbItemCtxEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"CSV exports"}).end(); 	
+			.beginToolbar("tlbMapList", {dc:"map"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Export sets"}).end()
+			.beginToolbar("tlbMapEdit", {dc:"map"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Export set"}).end()
+			.beginToolbar("tlbItemCtxEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Files"}).end(); 	
 	}
 
 

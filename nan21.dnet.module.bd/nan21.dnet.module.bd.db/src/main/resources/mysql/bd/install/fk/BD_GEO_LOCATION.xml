@@ -5,16 +5,19 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_BD_GEO_LOCATION1" 
 				baseTableName="BD_GEO_LOCATION" baseColumnNames="COUNTRY_ID"  
-				referencedTableName="BD_GEO_CNTRY"  referencedColumnNames="ID" />
+				referencedTableName="BD_GEO_CNTRY" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_BD_GEO_LOCATION2" 
 				baseTableName="BD_GEO_LOCATION" baseColumnNames="REGION_ID"  
-				referencedTableName="BD_GEO_REGION"  referencedColumnNames="ID" />
+				referencedTableName="BD_GEO_REGION" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_BD_GEO_LOCATION3" 
 				baseTableName="BD_GEO_LOCATION" baseColumnNames="CITY_ID"  
-				referencedTableName="BD_GEO_CITY"  referencedColumnNames="ID" />
+				referencedTableName="BD_GEO_CITY" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

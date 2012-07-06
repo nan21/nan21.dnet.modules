@@ -65,7 +65,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJob$Edit", {
 		this._getBuilder_()	
 		.addTextField({ name:"name", dataIndex:"name" ,allowBlank:false,maxLength:255  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"description", dataIndex:"description",height:40   })
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:400})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     

@@ -15,7 +15,7 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.frame.ProductCategory_UI", {
 		.addButton({name:"btnAsgnCategories",text:"Assign Products", tooltip:"Add products to selected category",disabled:true
 			,handler: this.onBtnAsgnCategories,scope:this,stateManager:{name:"selected_one_clean", dc:"categ" , and: function(dc) {return ( !dc.record.data.folder );}}	})	
 							 	
-		.addDcFilterFormView("categ",{ name:"categFilter", xtype:"net.nan21.dnet.module.md.mm.prod.dc.ProductCategory$Filter",height:120})	 
+		.addDcFilterFormView("categ",{ name:"categFilter", xtype:"net.nan21.dnet.module.md.mm.prod.dc.ProductCategory$Filter",height:80})	 
 		.addDcEditGridView("categ",{ name:"categEditList", xtype:"net.nan21.dnet.module.md.mm.prod.dc.ProductCategory$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnCategories") ]}]})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Categories",preventHeader:true})  	 

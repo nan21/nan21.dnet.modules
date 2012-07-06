@@ -1,8 +1,8 @@
 Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportJob_UI$Trl", { 
 	
-	tlbJobList__ttl : "Pachete",
-	tlbJobEdit__ttl : "Pachet",
-	tlbItemEditList__ttl : "Seturi fişiere",
+	tlbJobList__ttl : "Pachete import",
+	tlbJobEdit__ttl : "Pachet import",
+	tlbItemEditList__ttl : "Seturi import",
 	
 	btnRunImport__ttl : "Importă tot",
 	btnRunImport__desc : "Importă toate seturile incluse in pachet.",

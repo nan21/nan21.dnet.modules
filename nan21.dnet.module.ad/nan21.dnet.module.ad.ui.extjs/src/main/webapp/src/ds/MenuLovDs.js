@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.MenuLovDs" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean"},
 		{name:"title", type:"string"}
 	]
@@ -19,6 +20,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.MenuLovDsFilter" ,{
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
 		{name:"title", type:"string"}
 	] 

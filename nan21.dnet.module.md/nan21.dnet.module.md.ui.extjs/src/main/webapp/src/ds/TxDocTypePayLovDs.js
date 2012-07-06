@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.md.base.tx.ds.model.TxDocTypePayLovDs" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean"},
 		{name:"category", type:"string"}
 	]
@@ -19,6 +20,7 @@ Ext.define("net.nan21.dnet.module.md.base.tx.ds.model.TxDocTypePayLovDsFilter" ,
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
 		{name:"category", type:"string"}
 	] 

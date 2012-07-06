@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.md.base.tax.ds.model.TaxLovDs" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean"},
 		{name:"rate", type:"float", useNull:true},
 		{name:"summary", type:"boolean"}
@@ -20,6 +21,7 @@ Ext.define("net.nan21.dnet.module.md.base.tax.ds.model.TaxLovDsFilter" ,{
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
 		{name:"rate", type:"float", useNull:true},
 		{name:"rate_From",type:"float", useNull:true},

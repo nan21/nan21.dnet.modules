@@ -44,16 +44,37 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem$Filter", {
  	
  	
  	 
-Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem$CtxEditList", {
+Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem$EditListCtxExpMap", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
-	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ExportMapItem$CtxEditList",
+	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ExportMapItem$EditListCtxExpMap",
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"exportMap", dataIndex:"exportMap", hidden:true,width:120 })
-		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right",editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right", width:70,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
 		.addLov({name:"csvExport", xtype:"gridcolumn", dataIndex:"csvExport",width:120,editor:{xtype:"net.nan21.dnet.module.ad.impex.lovs.CsvExports" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "csvExportId"} ]} })
-		.addTextColumn({ name:"fileName", dataIndex:"fileName", width:300,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"path", dataIndex:"path", width:150,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"fileName", dataIndex:"fileName", width:150,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addBooleanColumn({ name:"active", dataIndex:"active"})
+		.addNumberColumn({ name:"csvExportId", dataIndex:"csvExportId", hidden:true, align:"right",format:"0",width:70})
+	  	.addDefaults()
+	  ;  		   
+	}  
+});
+ 	
+ 	
+ 	 
+Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem$EditListCtxCsvExp", {
+	extend: "dnet.core.dc.AbstractDcvEditableGrid",
+	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ExportMapItem$EditListCtxCsvExp",
+	
+	_defineColumns_: function () {
+		this._getBuilder_()
+		.addTextColumn({ name:"csvExport", dataIndex:"csvExport", hidden:true,width:120 })
+		.addLov({name:"exportMap", xtype:"gridcolumn", dataIndex:"exportMap",width:120,editor:{xtype:"net.nan21.dnet.module.ad.impex.lovs.ExportMaps" , selectOnFocus:true ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "exportMapId"} ]} })
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo", align:"right", width:70,editor:{xtype:"numberfield", selectOnFocus:true , decimalPrecision:2 } })
+		.addTextColumn({ name:"path", dataIndex:"path", width:120,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"fileName", dataIndex:"fileName", width:150,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addNumberColumn({ name:"csvExportId", dataIndex:"csvExportId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()

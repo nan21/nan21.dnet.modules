@@ -6,7 +6,7 @@ Ext.define("net.nan21.dnet.module.bd.attr.lovs.AttributeSet", {
 	displayField:"name",
 	listConfig: {		
 		getInnerTpl: function() { 
-			return '<span>{name}</span>';
+			return '<span>{name}, {description}</span>';
 		},
 		width:250
 	},		 

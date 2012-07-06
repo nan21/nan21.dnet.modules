@@ -29,8 +29,9 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.dc.InvTransactionType$Filter",
 		.addBooleanField({ name:"hasToInventory", dataIndex:"hasToInventory",anchor:"-20"  })
 		.addLov({ name:"docType", xtype:"net.nan21.dnet.module.md.base.tx.lovs.TxDocTypes", dataIndex:"docType",anchor:"-20",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "docTypeId"} ]  })
 		//containers
-		.addPanel({ name:"col1", layout:"form",width:210}) 
-		.addPanel({ name:"col2", layout:"form", width:200}) 
+		.addPanel({ name:"col1", layout:"form", width:250}) 
+		.addPanel({ name:"col2", layout:"form", width:200, defaults:{
+labelAlign:"right",labelWidth:120}}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}

@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.bd.attr.frame.AttributeBaseData_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("categ",{ name:"categFilter", xtype:"net.nan21.dnet.module.bd.attr.dc.AttributeCategory$Filter",height:120})	 
+		.addDcFilterFormView("categ",{ name:"categFilter", xtype:"net.nan21.dnet.module.bd.attr.dc.AttributeCategory$Filter",height:80})	 
 		.addDcEditGridView("categ",{ name:"categEditList", xtype:"net.nan21.dnet.module.bd.attr.dc.AttributeCategory$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Attribute categories",preventHeader:true})  	 

@@ -5,16 +5,19 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_CNTC1" 
 				baseTableName="HR_EMPL_CNTC" baseColumnNames="EMPLOYEE_ID"  
-				referencedTableName="HR_EMPL"  referencedColumnNames="ID" />
+				referencedTableName="HR_EMPL" referencedColumnNames="ID" onDelete="CASCADE" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_CNTC2" 
 				baseTableName="HR_EMPL_CNTC" baseColumnNames="TYPE_ID"  
-				referencedTableName="HR_EMPL_CNTC_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="HR_EMPL_CNTC_TYPE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_CNTC3" 
 				baseTableName="HR_EMPL_CNTC" baseColumnNames="RELATIONSHIP_ID"  
-				referencedTableName="HR_EMPL_CNTC_REL"  referencedColumnNames="ID" />
+				referencedTableName="HR_EMPL_CNTC_REL" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

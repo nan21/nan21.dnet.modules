@@ -5,16 +5,19 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_HR_ABSN_REQ1" 
 				baseTableName="HR_ABSN_REQ" baseColumnNames="EMPLOYEE_ID"  
-				referencedTableName="HR_EMPL"  referencedColumnNames="ID" />
+				referencedTableName="HR_EMPL" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_HR_ABSN_REQ2" 
 				baseTableName="HR_ABSN_REQ" baseColumnNames="TYPE_ID"  
-				referencedTableName="HR_ABSN_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="HR_ABSN_TYPE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_HR_ABSN_REQ3" 
 				baseTableName="HR_ABSN_REQ" baseColumnNames="REASON_ID"  
-				referencedTableName="HR_ABSN_REASON"  referencedColumnNames="ID" />
+				referencedTableName="HR_ABSN_REASON" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

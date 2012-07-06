@@ -30,15 +30,17 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$Filter", {
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"form", width:220}) 
-		.addPanel({ name:"col2", layout:"form", width:220}) 
+		.addPanel({ name:"col2", layout:"form", width:170}) 
+		.addPanel({ name:"col3", layout:"form", width:170}) 
 		.addPanel({ name:"main", layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} , autoScroll:true, padding:"0 30 0 0" })     
 		
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1","col2"])
+		.addChildrenTo("main",["col1","col2","col3"])
 		.addChildrenTo("col1",["name","code"])
-		.addChildrenTo("col2",["iso2","iso3","active"])
+		.addChildrenTo("col2",["iso2","iso3"])
+		.addChildrenTo("col3",["active"])
     	.addAuditFilter()	
 	}
 }); 
@@ -71,9 +73,9 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$List", {
 		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
 		.addTextColumn({ name:"iso2", dataIndex:"iso2",width:50 })   	
 		.addTextColumn({ name:"iso3", dataIndex:"iso3",width:50 })   	
-		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 		.addTextColumn({ name:"notes", dataIndex:"notes", hidden:true,width:200 })   	
 		.addBooleanColumn({ name:"hasRegions", dataIndex:"hasRegions"})   	     
+		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 	  	.addDefaults()
 	  ;		   
 	}
@@ -89,8 +91,8 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.Country$EditList", {
 	_bulkEditFields_ : ["active","notes"],
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
 		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
 		.addTextColumn({ name:"iso2", dataIndex:"iso2",width:50,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:2,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
 		.addTextColumn({ name:"iso3", dataIndex:"iso3",width:50,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:3,caseRestriction:"uppercase",style: "text-transform:uppercase;",vtype:"alphanum"} })
 		.addBooleanColumn({ name:"hasRegions", dataIndex:"hasRegions"})

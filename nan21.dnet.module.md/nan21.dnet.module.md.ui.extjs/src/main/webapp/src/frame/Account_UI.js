@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.md.acc.frame.Account_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("account",{ name:"accountFilter", xtype:"net.nan21.dnet.module.md.acc.dc.Account$Filter",height:90})	 
+		.addDcFilterFormView("account",{ name:"accountFilter", xtype:"net.nan21.dnet.module.md.acc.dc.Account$Filter",height:80})	 
 		.addDcGridView("account",{ name:"accountList", xtype:"net.nan21.dnet.module.md.acc.dc.Account$List"})	 
 		.addDcEditGridView("account",{ name:"accountEditList", xtype:"net.nan21.dnet.module.md.acc.dc.Account$EditList", frame:true})	 
 		.addDcFormView("account",{ name:"accountEdit", xtype:"net.nan21.dnet.module.md.acc.dc.Account$Edit"})	 

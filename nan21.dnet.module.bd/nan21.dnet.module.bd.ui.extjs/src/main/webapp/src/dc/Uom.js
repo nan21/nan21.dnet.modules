@@ -51,9 +51,9 @@ Ext.define("net.nan21.dnet.module.bd.uom.dc.Uom$List", {
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
 		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
+		.addTextColumn({ name:"notes", dataIndex:"notes",width:200 })   	
 		.addTextColumn({ name:"type", dataIndex:"type",width:120 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
-		.addTextColumn({ name:"notes", dataIndex:"notes",width:200 })   	
 		.addNumberColumn({ name:"typeId", dataIndex:"typeId", hidden:true,format:"0",width:70 })  
 	  	.addDefaults()
 	  ;		   

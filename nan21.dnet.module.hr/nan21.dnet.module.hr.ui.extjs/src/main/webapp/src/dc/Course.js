@@ -88,7 +88,7 @@ Ext.define("net.nan21.dnet.module.hr.training.dc.Course$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ])
-		.addChildrenTo("col1",["name","code","deliveredCompetences","intendedAudience","requirements","type","active"])
+		.addChildrenTo("col1",["name","code","type","deliveredCompetences","intendedAudience","requirements","active"])
 ;
 	}	
 });

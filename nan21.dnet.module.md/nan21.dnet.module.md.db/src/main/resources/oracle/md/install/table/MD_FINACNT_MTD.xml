@@ -24,7 +24,7 @@
 				<constraints  /></column>	 
 			<column name="VERSION" type="number(19)">
 				<constraints nullable="false" /></column>	 
-			<column name="PAYACCOUNT_ID" type="number(19)">	 
+			<column name="FINANCIALACCOUNT_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="PAYMETHOD_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
@@ -34,7 +34,7 @@
     	<addPrimaryKey tableName="MD_FINACNT_MTD" constraintName="PK_FINACNT_MTD" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="UK-1"> 
-		<addUniqueConstraint tableName="MD_FINACNT_MTD" constraintName="UK_FINACNT_MTD1" columnNames="CLIENTID, PAYACCOUNT_ID,PAYMETHOD_ID" />
+		<addUniqueConstraint tableName="MD_FINACNT_MTD" constraintName="UK_FINACNT_MTD1" columnNames="CLIENTID, FINANCIALACCOUNT_ID,PAYMETHOD_ID" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_SC_PYMNT_AMNT1" 
 				baseTableName="SC_PYMNT_AMNT" baseColumnNames="TXAMOUNT_ID"  
-				referencedTableName="SC_TX_AMNT"  referencedColumnNames="ID" />
+				referencedTableName="SC_TX_AMNT" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

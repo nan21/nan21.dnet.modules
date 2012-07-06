@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_BD_ELEM_FORMULA1" 
 				baseTableName="BD_ELEM_FORMULA" baseColumnNames="ELEMENT_ID"  
-				referencedTableName="BD_ELEM"  referencedColumnNames="ID" />
+				referencedTableName="BD_ELEM" referencedColumnNames="ID" onDelete="CASCADE" />
+				
 	</changeSet>	
 </databaseChangeLog>    

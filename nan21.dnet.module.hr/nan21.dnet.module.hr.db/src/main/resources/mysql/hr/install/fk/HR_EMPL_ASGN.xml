@@ -5,36 +5,43 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_ASGN1" 
 				baseTableName="HR_EMPL_ASGN" baseColumnNames="EMPLOYEE_ID"  
-				referencedTableName="HR_EMPL"  referencedColumnNames="ID" />
+				referencedTableName="HR_EMPL" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_ASGN2" 
 				baseTableName="HR_EMPL_ASGN" baseColumnNames="TYPE_ID"  
-				referencedTableName="HR_EMPNT_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="HR_EMPNT_TYPE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_ASGN3" 
 				baseTableName="HR_EMPL_ASGN" baseColumnNames="POSITION_ID"  
-				referencedTableName="HR_POS"  referencedColumnNames="ID" />
+				referencedTableName="HR_POS" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_ASGN4" 
 				baseTableName="HR_EMPL_ASGN" baseColumnNames="JOB_ID"  
-				referencedTableName="HR_JOB"  referencedColumnNames="ID" />
+				referencedTableName="HR_JOB" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_ASGN5" 
 				baseTableName="HR_EMPL_ASGN" baseColumnNames="ORG_ID"  
-				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+				referencedTableName="BD_ORG" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-6">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_ASGN6" 
 				baseTableName="HR_EMPL_ASGN" baseColumnNames="GRADE_ID"  
-				referencedTableName="HR_GRD"  referencedColumnNames="ID" />
+				referencedTableName="HR_GRD" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-7">
 		<addForeignKeyConstraint constraintName="FK_HR_EMPL_ASGN7" 
 				baseTableName="HR_EMPL_ASGN" baseColumnNames="PAYROLL_ID"  
-				referencedTableName="HR_PAYROLL"  referencedColumnNames="ID" />
+				referencedTableName="HR_PAYROLL" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

@@ -5,11 +5,13 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_HR_POS_COURSE1" 
 				baseTableName="HR_POS_COURSE" baseColumnNames="POSITION_ID"  
-				referencedTableName="HR_POS"  referencedColumnNames="ID" />
+				referencedTableName="HR_POS" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_HR_POS_COURSE2" 
 				baseTableName="HR_POS_COURSE" baseColumnNames="COURSE_ID"  
-				referencedTableName="HR_COURSE"  referencedColumnNames="ID" />
+				referencedTableName="HR_COURSE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

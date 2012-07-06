@@ -4,7 +4,7 @@
     
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_MD_FINACNT_MTD1" baseTableName="MD_FINACNT_MTD" 
-			baseColumnNames="PAYACCOUNT_ID"  referencedTableName="MD_FINACNT"  referencedColumnNames="ID" />
+			baseColumnNames="FINANCIALACCOUNT_ID"  referencedTableName="MD_FINACNT"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_MD_FINACNT_MTD2" baseTableName="MD_FINACNT_MTD" 

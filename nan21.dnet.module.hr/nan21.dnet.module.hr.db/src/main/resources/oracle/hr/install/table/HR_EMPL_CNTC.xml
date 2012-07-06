@@ -9,7 +9,7 @@
 			<column name="ISDEPENDENT" type="number(1)">
 				<constraints nullable="false" /></column>	 
 			<column name="EMPLOYEE_ID" type="number(19)">	 
-				<constraints  /></column>	 
+				<constraints nullable="false" /></column>	 
 			<column name="RELATIONSHIP_ID" type="number(19)">	 
 				<constraints  /></column>	 
 			<column name="TYPE_ID" type="number(19)">	 

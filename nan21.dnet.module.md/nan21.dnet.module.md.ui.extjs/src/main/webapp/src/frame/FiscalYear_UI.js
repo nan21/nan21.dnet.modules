@@ -16,7 +16,7 @@ Ext.define("net.nan21.dnet.module.md.base.period.frame.FiscalYear_UI", {
 		this._getBuilder_()	
 		.addDcFilterFormView("year",{ name:"yearFilter", xtype:"net.nan21.dnet.module.md.base.period.dc.FiscalYear$Filter"})	 
 		.addDcEditGridView("year",{ name:"yearEditList", xtype:"net.nan21.dnet.module.md.base.period.dc.FiscalYear$EditList", frame:true})	 
-		.addDcEditGridView("period",{ name:"periodEditList", xtype:"net.nan21.dnet.module.md.base.period.dc.FiscalPeriod$CtxEditList", frame:true,height:220})	 
+		.addDcEditGridView("period",{ name:"periodEditList", xtype:"net.nan21.dnet.module.md.base.period.dc.FiscalPeriod$CtxEditList", frame:true,height:240})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	

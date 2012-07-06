@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.md.base.tx.ds.model.PaymentTermLovDs" ,{
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean"}
 	]
 });
@@ -18,6 +19,7 @@ Ext.define("net.nan21.dnet.module.md.base.tx.ds.model.PaymentTermLovDsFilter" ,{
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean", useNull:true}
 	] 
 });

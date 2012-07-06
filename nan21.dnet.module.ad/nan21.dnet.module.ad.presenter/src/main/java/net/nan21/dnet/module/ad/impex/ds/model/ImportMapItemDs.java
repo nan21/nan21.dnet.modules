@@ -19,6 +19,7 @@ public class ImportMapItemDs extends AbstractAuditableDs<ImportMapItem> {
     public static final String fIMPORTMAPNAME = "importMapName";
     public static final String fSEQUENCENO = "sequenceNo";
     public static final String fDATASOURCE = "dataSource";
+    public static final String fPATH = "path";
     public static final String fFILENAME = "fileName";
     public static final String fUKFIELDNAME = "ukFieldName";
     public static final String fACTIVE = "active";
@@ -34,6 +35,9 @@ public class ImportMapItemDs extends AbstractAuditableDs<ImportMapItem> {
 
     @DsField(path = "dataSourceName")
     private String dataSource;
+
+    @DsField()
+    private String path;
 
     @DsField()
     private String fileName;
@@ -82,6 +86,14 @@ public class ImportMapItemDs extends AbstractAuditableDs<ImportMapItem> {
 
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
+    }
+
+    public String getPath() {
+        return this.path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public String getFileName() {

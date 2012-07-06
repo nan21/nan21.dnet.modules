@@ -10,6 +10,7 @@ import net.nan21.dnet.core.api.session.Session;
 import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.ad.impex.business.service.ICsvExportService;
 import net.nan21.dnet.module.ad.impex.domain.entity.CsvExportField;
+import net.nan21.dnet.module.ad.impex.domain.entity.CsvExportSort;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.ad.impex.domain.entity.CsvExport;
@@ -48,6 +49,19 @@ public class CsvExportService extends AbstractEntityService<CsvExport>
                         CsvExport.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pFieldsId", fieldsId).getResultList();
+    }
+
+    public List<CsvExport> findBySorts(CsvExportSort sorts) {
+        return this.findBySortsId(sorts.getId());
+    }
+
+    public List<CsvExport> findBySortsId(Long sortsId) {
+        return (List<CsvExport>) this.em
+                .createQuery(
+                        "select distinct e from CsvExport e , IN (e.sorts) c where e.clientId = :pClientId and c.id = :pSortsId",
+                        CsvExport.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pSortsId", sortsId).getResultList();
     }
 
 }

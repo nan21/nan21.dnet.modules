@@ -45,7 +45,7 @@
 			<column name="CITY_ID" type="number(19)">	 
 				<constraints  /></column>	 
 			<column name="COUNTRY_ID" type="number(19)">	 
-				<constraints  /></column>	 
+				<constraints nullable="false" /></column>	 
 			<column name="REGION_ID" type="number(19)">	 
 				<constraints  /></column>	 
         </createTable>

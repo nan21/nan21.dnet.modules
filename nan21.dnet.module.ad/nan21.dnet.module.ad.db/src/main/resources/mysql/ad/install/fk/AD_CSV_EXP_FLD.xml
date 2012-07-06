@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_AD_CSV_EXP_FLD1" 
 				baseTableName="AD_CSV_EXP_FLD" baseColumnNames="CSVEXPORT_ID"  
-				referencedTableName="AD_CSV_EXP"  referencedColumnNames="ID" />
+				referencedTableName="AD_CSV_EXP" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

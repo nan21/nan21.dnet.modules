@@ -49,12 +49,12 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.City$List", {
 	_defineColumns_: function () {	
 		this._getBuilder_()	
 		.addTextColumn({ name:"name", dataIndex:"name",width:120 })   	
-		.addNumberColumn({ name:"countryId", dataIndex:"countryId", hidden:true,format:"0",width:70 })  
+		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
 		.addTextColumn({ name:"countryCode", dataIndex:"countryCode",width:100 })   	
-		.addNumberColumn({ name:"regionId", dataIndex:"regionId", hidden:true,format:"0",width:70 })  
 		.addTextColumn({ name:"regionCode", dataIndex:"regionCode",width:100 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
-		.addTextColumn({ name:"description", dataIndex:"description",width:200 })   	
+		.addNumberColumn({ name:"countryId", dataIndex:"countryId", hidden:true,format:"0",width:70 })  
+		.addNumberColumn({ name:"regionId", dataIndex:"regionId", hidden:true,format:"0",width:70 })  
 	  	.addDefaults()
 	  ;		   
 	}
@@ -72,8 +72,8 @@ Ext.define("net.nan21.dnet.module.bd.geo.dc.City$CtxEditList", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
-		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addNumberColumn({ name:"countryId", dataIndex:"countryId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"regionId", dataIndex:"regionId", hidden:true, align:"right",format:"0",width:70})
 	  	.addDefaults()

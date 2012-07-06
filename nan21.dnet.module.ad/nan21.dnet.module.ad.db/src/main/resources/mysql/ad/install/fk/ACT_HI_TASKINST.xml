@@ -5,11 +5,13 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_ACT_HI_TASKINST1" 
 				baseTableName="ACT_HI_TASKINST" baseColumnNames="PROC_DEF_ID_"  
-				referencedTableName="ACT_RE_PROCDEF"  referencedColumnNames="ID_" />
+				referencedTableName="ACT_RE_PROCDEF" referencedColumnNames="ID_" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_ACT_HI_TASKINST2" 
 				baseTableName="ACT_HI_TASKINST" baseColumnNames="PARENT_TASK_ID_"  
-				referencedTableName="ACT_HI_TASKINST"  referencedColumnNames="ID_" />
+				referencedTableName="ACT_HI_TASKINST" referencedColumnNames="ID_" />
+				
 	</changeSet>	
 </databaseChangeLog>    

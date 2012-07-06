@@ -13,7 +13,7 @@
 			<column name="DELIVERYCONTACT_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
 			<column name="DELIVERYLOCATION_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="SALESORDER_ID" type="bigint(19)">	 
 				<constraints  /></column>	 
         </createTable>

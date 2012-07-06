@@ -47,8 +47,8 @@ Ext.define("net.nan21.dnet.module.hr.job.dc.WorkRequirementType$EditList", {
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:120,editor:{xtype:"textfield", selectOnFocus:true } })
-		.addBooleanColumn({ name:"active", dataIndex:"active"})
 		.addTextColumn({ name:"description", dataIndex:"description",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
+		.addBooleanColumn({ name:"active", dataIndex:"active"})
 	  	.addDefaults()
 	  ;  		   
 	}  

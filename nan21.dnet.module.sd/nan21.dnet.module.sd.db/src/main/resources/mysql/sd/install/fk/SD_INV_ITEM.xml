@@ -5,21 +5,25 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_SD_INV_ITEM1" 
 				baseTableName="SD_INV_ITEM" baseColumnNames="SALESINVOICE_ID"  
-				referencedTableName="SD_INV"  referencedColumnNames="ID" />
+				referencedTableName="SD_INV" referencedColumnNames="ID" onDelete="CASCADE" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_SD_INV_ITEM2" 
 				baseTableName="SD_INV_ITEM" baseColumnNames="PRODUCT_ID"  
-				referencedTableName="MD_PROD"  referencedColumnNames="ID" />
+				referencedTableName="MD_PROD" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_SD_INV_ITEM3" 
 				baseTableName="SD_INV_ITEM" baseColumnNames="UOM_ID"  
-				referencedTableName="BD_UOM"  referencedColumnNames="ID" />
+				referencedTableName="BD_UOM" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_SD_INV_ITEM4" 
 				baseTableName="SD_INV_ITEM" baseColumnNames="TAX_ID"  
-				referencedTableName="MD_TAX"  referencedColumnNames="ID" />
+				referencedTableName="MD_TAX" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

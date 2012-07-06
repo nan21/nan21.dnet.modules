@@ -33,7 +33,7 @@ import net.nan21.dnet.module.bd.currency.domain.entity.Currency;
 import net.nan21.dnet.module.bd.org.domain.entity.Organization;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
+import net.nan21.dnet.module.md.org.domain.entity.FinancialAccount;
 import net.nan21.dnet.module.md.tx.fin.domain.eventhandler.PaymentEventHandler;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
@@ -126,12 +126,12 @@ public class Payment extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "TOORG_ID", referencedColumnName = "ID")
     private Organization toOrg;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayAccount.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FinancialAccount.class)
     @JoinColumn(name = "FROMACCOUNT_ID", referencedColumnName = "ID")
-    private PayAccount fromAccount;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayAccount.class)
+    private FinancialAccount fromAccount;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FinancialAccount.class)
     @JoinColumn(name = "TOACCOUNT_ID", referencedColumnName = "ID")
-    private PayAccount toAccount;
+    private FinancialAccount toAccount;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BusinessPartner.class)
     @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "ID")
     private BusinessPartner bpartner;
@@ -258,22 +258,22 @@ public class Payment extends AbstractAuditable {
         this.toOrg = toOrg;
     }
 
-    public PayAccount getFromAccount() {
+    public FinancialAccount getFromAccount() {
         return this.fromAccount;
     }
 
-    public void setFromAccount(PayAccount fromAccount) {
+    public void setFromAccount(FinancialAccount fromAccount) {
         if (fromAccount != null) {
             this.__validate_client_context__(fromAccount.getClientId());
         }
         this.fromAccount = fromAccount;
     }
 
-    public PayAccount getToAccount() {
+    public FinancialAccount getToAccount() {
         return this.toAccount;
     }
 
-    public void setToAccount(PayAccount toAccount) {
+    public void setToAccount(FinancialAccount toAccount) {
         if (toAccount != null) {
             this.__validate_client_context__(toAccount.getClientId());
         }

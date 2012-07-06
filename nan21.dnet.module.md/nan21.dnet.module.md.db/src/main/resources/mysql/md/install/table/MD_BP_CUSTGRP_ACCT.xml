@@ -25,9 +25,9 @@
 			<column name="CUSTGROUP_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="PREPAYACCOUNT_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="SALESACCOUNT_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

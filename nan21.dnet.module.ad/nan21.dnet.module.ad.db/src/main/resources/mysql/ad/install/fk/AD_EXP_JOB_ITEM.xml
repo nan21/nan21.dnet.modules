@@ -5,11 +5,13 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_AD_EXP_JOB_ITEM1" 
 				baseTableName="AD_EXP_JOB_ITEM" baseColumnNames="JOB_ID"  
-				referencedTableName="AD_EXP_JOB"  referencedColumnNames="ID" />
+				referencedTableName="AD_EXP_JOB" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_AD_EXP_JOB_ITEM2" 
 				baseTableName="AD_EXP_JOB_ITEM" baseColumnNames="MAP_ID"  
-				referencedTableName="AD_EXP_MAP"  referencedColumnNames="ID" />
+				referencedTableName="AD_EXP_MAP" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

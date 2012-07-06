@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_ACT_RE_PROCDEF1" 
 				baseTableName="ACT_RE_PROCDEF" baseColumnNames="DEPLOYMENT_ID_"  
-				referencedTableName="ACT_RE_DEPLOYMENT"  referencedColumnNames="ID_" />
+				referencedTableName="ACT_RE_DEPLOYMENT" referencedColumnNames="ID_" />
+				
 	</changeSet>	
 </databaseChangeLog>    

@@ -120,7 +120,7 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 10;OpportunityBaseData_UI;Opportunity base data;;net.nan21.dnet.module.sd.opportunity.frame.OpportunityBaseData_UI;nan21.dnet.module.sd.ui.extjs;true;045C8A05-4FCF-4E04-B995-0893E56FDB92
 20;Opportunity_UI;Opportunities;;net.nan21.dnet.module.sd.opportunity.frame.Opportunity_UI;nan21.dnet.module.sd.ui.extjs;true;3080F737-4D3A-4BD8-BB03-84EB529F6313
 30;Org_UI;Organizations;;net.nan21.dnet.module.bd.org.frame.Org_UI;nan21.dnet.module.bd.ui.extjs;true;7E997AC3-F995-439E-B874-977B458417C8
-50;PayAccount_UI;Financial accounts;;net.nan21.dnet.module.md.org.frame.PayAccount_UI;nan21.dnet.module.md.ui.extjs;true;3E87DDB6-9F6D-4EC6-A240-241FA0B8E4E3
+50;FinancialAccount_UI;Financial accounts;;net.nan21.dnet.module.md.org.frame.FinancialAccount_UI;nan21.dnet.module.md.ui.extjs;true;3E87DDB6-9F6D-4EC6-A240-241FA0B8E4E3
 10;PaymentIn_UI;Payment In;;net.nan21.dnet.module.sd.invoice.frame.PaymentIn_UI;nan21.dnet.module.sd.ui.extjs;true;0B405E8B-B166-41C0-AF60-BC3C4E30487B
 10;PaymentOut_UI;Payment Out;;net.nan21.dnet.module.sc.invoice.frame.PaymentOut_UI;nan21.dnet.module.sc.ui.extjs;true;A0DFD087-C9C3-4FC6-9496-4AB55FD3CDD9
 10;Payment_UI;Payments;;net.nan21.dnet.module.md.tx.fin.frame.Payment_UI;nan21.dnet.module.md.ui.extjs;true;8233DFB6-B94A-459D-A25C-D5FC9AC7582C

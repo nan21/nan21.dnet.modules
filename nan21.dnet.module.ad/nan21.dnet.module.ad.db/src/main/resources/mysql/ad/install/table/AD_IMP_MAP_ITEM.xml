@@ -22,6 +22,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="PATH" type="varchar(255)">
+				<constraints  /></column>	 
 			<column name="SEQUENCENO" type="int(4)">
 				<constraints nullable="false" /></column>	 
 			<column name="UKFIELDNAME" type="varchar(32)">

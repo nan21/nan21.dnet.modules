@@ -20,6 +20,7 @@ public class ExportMapItemDs extends AbstractAuditableDs<ExportMapItem> {
     public static final String fCSVEXPORT = "csvExport";
     public static final String fSEQUENCENO = "sequenceNo";
     public static final String fFILENAME = "fileName";
+    public static final String fPATH = "path";
     public static final String fACTIVE = "active";
 
     @DsField(join = "left", path = "exportMap.id")
@@ -39,6 +40,9 @@ public class ExportMapItemDs extends AbstractAuditableDs<ExportMapItem> {
 
     @DsField()
     private String fileName;
+
+    @DsField()
+    private String path;
 
     @DsField()
     private Boolean active;
@@ -97,6 +101,14 @@ public class ExportMapItemDs extends AbstractAuditableDs<ExportMapItem> {
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public String getPath() {
+        return this.path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public Boolean getActive() {

@@ -14,11 +14,11 @@ Ext.define("net.nan21.dnet.module.hr.time.frame.AbsenceBaseData_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("abscateg",{ name:"abscategFilter", xtype:"net.nan21.dnet.module.hr.time.dc.AbsenceCategory$Filter",height:120})	 
+		.addDcFilterFormView("abscateg",{ name:"abscategFilter", xtype:"net.nan21.dnet.module.hr.time.dc.AbsenceCategory$Filter",height:80})	 
 		.addDcEditGridView("abscateg",{ name:"abscategEditList", xtype:"net.nan21.dnet.module.hr.time.dc.AbsenceCategory$EditList", frame:true})	 
-		.addDcFilterFormView("abstype",{ name:"abstypeFilter", xtype:"net.nan21.dnet.module.hr.time.dc.AbsenceType$Filter",height:120})	 
+		.addDcFilterFormView("abstype",{ name:"abstypeFilter", xtype:"net.nan21.dnet.module.hr.time.dc.AbsenceType$Filter",height:80})	 
 		.addDcEditGridView("abstype",{ name:"abstypeEditList", xtype:"net.nan21.dnet.module.hr.time.dc.AbsenceType$EditList", frame:true})	 
-		.addDcFilterFormView("absreason",{ name:"absreasonFilter", xtype:"net.nan21.dnet.module.hr.time.dc.AbsenceReason$Filter",height:120})	 
+		.addDcFilterFormView("absreason",{ name:"absreasonFilter", xtype:"net.nan21.dnet.module.hr.time.dc.AbsenceReason$Filter",height:80})	 
 		.addDcEditGridView("absreason",{ name:"absreasonEditList", xtype:"net.nan21.dnet.module.hr.time.dc.AbsenceReason$EditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasCateg", layout:"border", defaults:{split:true},title:"Absence categories",preventHeader:true})  	 

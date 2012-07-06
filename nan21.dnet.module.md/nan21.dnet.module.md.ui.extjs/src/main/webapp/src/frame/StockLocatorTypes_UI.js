@@ -12,7 +12,7 @@ Ext.define("net.nan21.dnet.module.md.org.frame.StockLocatorTypes_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("sloctype",{ name:"sloctypeFilter", xtype:"net.nan21.dnet.module.md.org.dc.StockLocatorType$Filter",height:120})	 
+		.addDcFilterFormView("sloctype",{ name:"sloctypeFilter", xtype:"net.nan21.dnet.module.md.org.dc.StockLocatorType$Filter",height:80})	 
 		.addDcEditGridView("sloctype",{ name:"sloctypeEditList", xtype:"net.nan21.dnet.module.md.org.dc.StockLocatorType$EditList", frame:true})	 
 		.addPanel({name: "main", layout:"border", defaults:{split:true}})  	 
 ;	 	

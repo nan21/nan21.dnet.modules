@@ -24,9 +24,9 @@ public class PaymentOutDsFilter extends AbstractAuditableDsFilter {
     private Long payToId_From;
     private Long payToId_To;
 
-    private String payTo;
+    private String payToCode;
 
-    private String payToName;
+    private String payTo;
 
     private Long orgId;
 
@@ -131,20 +131,20 @@ public class PaymentOutDsFilter extends AbstractAuditableDsFilter {
         this.payToId_To = payToId_To;
     }
 
+    public String getPayToCode() {
+        return this.payToCode;
+    }
+
+    public void setPayToCode(String payToCode) {
+        this.payToCode = payToCode;
+    }
+
     public String getPayTo() {
         return this.payTo;
     }
 
     public void setPayTo(String payTo) {
         this.payTo = payTo;
-    }
-
-    public String getPayToName() {
-        return this.payToName;
-    }
-
-    public void setPayToName(String payToName) {
-        this.payToName = payToName;
     }
 
     public Long getOrgId() {

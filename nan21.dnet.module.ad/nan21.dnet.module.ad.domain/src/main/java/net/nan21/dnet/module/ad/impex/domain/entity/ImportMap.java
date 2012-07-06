@@ -68,6 +68,10 @@ public class ImportMap extends AbstractType {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
+    /** Path. */
+    @Column(name = "PATH", length = 255)
+    private String path;
+
     @OneToMany(fetch = FetchType.LAZY, targetEntity = ImportMapItem.class, mappedBy = "importMap", cascade = CascadeType.ALL)
     @CascadeOnDelete
     private Collection<ImportMapItem> items;
@@ -80,6 +84,14 @@ public class ImportMap extends AbstractType {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getPath() {
+        return this.path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public Collection<ImportMapItem> getItems() {

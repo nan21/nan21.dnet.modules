@@ -25,13 +25,13 @@
 			<column name="BPACCOUNT_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="CUSTPREPAYACCOUNT_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="CUSTSALESACCOUNT_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="VENDORPREPAYACCOUNT_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="VENDORPURCHASEACCOUNT_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

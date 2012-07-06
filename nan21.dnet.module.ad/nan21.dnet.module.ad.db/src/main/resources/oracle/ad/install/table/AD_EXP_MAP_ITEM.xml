@@ -20,6 +20,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="PATH" type="varchar2(255)">
+				<constraints  /></column>	 
 			<column name="SEQUENCENO" type="number(4)">
 				<constraints nullable="false" /></column>	 
 			<column name="UUID" type="varchar2(36)">

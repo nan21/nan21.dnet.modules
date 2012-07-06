@@ -20,9 +20,9 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ExportJob_UI", {
 		.addButton({name:"btnRunExportItem",text:"Export selected", tooltip:"Export the selected set (one at a time).",iconCls:"icon-action-export",disabled:true
 			,handler: this.onBtnRunExportItem,scope:this,stateManager:{name:"selected_one", dc:"item" }	})	
 							 	
-		.addDcFilterFormView("job",{ name:"jobFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportJob$Filter",height:120})	 
+		.addDcFilterFormView("job",{ name:"jobFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportJob$Filter",height:80})	 
 		.addDcGridView("job",{ name:"jobList", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportJob$List"})	 
-		.addDcFormView("job",{ name:"jobEdit", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportJob$Edit",height:140,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnRunExport") ,this._elems_.get("btnRunExportItem") ]}]})	 
+		.addDcFormView("job",{ name:"jobEdit", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportJob$Edit",height:150,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnRunExport") ,this._elems_.get("btnRunExportItem") ]}]})	 
 		.addDcEditGridView("item",{ name:"itemEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ExportJobItem$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
@@ -42,9 +42,9 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ExportJob_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbJobList", {dc:"job"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Jobs"}).end()
-			.beginToolbar("tlbJobEdit", {dc:"job"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Job"}).end()
-			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"File-sets"}).end(); 	
+			.beginToolbar("tlbJobList", {dc:"job"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Export jobs"}).end()
+			.beginToolbar("tlbJobEdit", {dc:"job"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Export job"}).end()
+			.beginToolbar("tlbItemEditList", {dc:"item"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Export sets"}).end(); 	
 	}
 
 

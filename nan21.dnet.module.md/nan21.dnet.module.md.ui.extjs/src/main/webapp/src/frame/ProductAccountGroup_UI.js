@@ -32,8 +32,8 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.frame.ProductAccountGroup_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbAccount", {dc:"account"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().end()
-			.beginToolbar("tlbAcct", {dc:"acct"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().end(); 	
+			.beginToolbar("tlbAccount", {dc:"account"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Product account groups"}).end()
+			.beginToolbar("tlbAcct", {dc:"acct"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Accounting"}).end(); 	
 	}
 
 });  

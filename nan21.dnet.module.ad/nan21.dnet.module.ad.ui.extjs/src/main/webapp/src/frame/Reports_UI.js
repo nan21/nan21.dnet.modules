@@ -31,7 +31,7 @@ Ext.define("net.nan21.dnet.module.ad.report.frame.Reports_UI", {
 		.addButton({name:"btnCancelReport",text:"Cancel", tooltip:"Cancel",iconCls:"icon-action-reset",disabled:false
 			,handler: this.onBtnCancelReport,scope:this	})	
 							 	
-		.addDcFilterFormView("rep",{ name:"repFilter", xtype:"net.nan21.dnet.module.ad.report.dc.Report$Filter",height:120})	 
+		.addDcFilterFormView("rep",{ name:"repFilter", xtype:"net.nan21.dnet.module.ad.report.dc.Report$Filter",height:80})	 
 		.addDcGridView("rep",{ name:"repList", xtype:"net.nan21.dnet.module.ad.report.dc.Report$List"})	 
 		.addDcFormView("rep",{ name:"repEdit", xtype:"net.nan21.dnet.module.ad.report.dc.Report$Edit",height:200,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnTestReport") ]}]})	 
 		.addDcEditGridView("params",{ name:"paramEditList", xtype:"net.nan21.dnet.module.ad.report.dc.ReportParam$CtxEditList", frame:true,title:"Parameters"})	 

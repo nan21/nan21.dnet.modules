@@ -9,6 +9,7 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransactionTypeLov
 		{name:"id", type:"int", useNull:true},
 		{name:"clientId", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean"},
 		{name:"docTypeId", type:"int", useNull:true},
 		{name:"docType", type:"string"}
@@ -20,6 +21,7 @@ Ext.define("net.nan21.dnet.module.md.tx.inventory.ds.model.InvTransactionTypeLov
 	fields: [ 
 		{name:"id", type:"int", useNull:true},
 		{name:"name", type:"string"},
+		{name:"description", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
 		{name:"docTypeId", type:"int", useNull:true},
 		{name:"docTypeId_From",type:"int", useNull:true},

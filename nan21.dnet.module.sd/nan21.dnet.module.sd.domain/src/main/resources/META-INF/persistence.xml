@@ -44,7 +44,7 @@
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductCategory</class>
 		<class>net.nan21.dnet.module.md.mm.prod.domain.entity.ProductManufacturer</class>
-		<class>net.nan21.dnet.module.md.org.domain.entity.PayAccount</class>
+		<class>net.nan21.dnet.module.md.org.domain.entity.FinancialAccount</class>
 		<class>net.nan21.dnet.module.md.org.domain.entity.StockLocator</class>
 		<class>net.nan21.dnet.module.md.org.domain.entity.StockLocatorType</class>
 		<class>net.nan21.dnet.module.md.org.domain.entity.SubInventory</class>

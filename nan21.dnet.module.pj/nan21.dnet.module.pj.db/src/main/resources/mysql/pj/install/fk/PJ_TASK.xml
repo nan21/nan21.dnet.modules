@@ -5,21 +5,25 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_PJ_TASK1" 
 				baseTableName="PJ_TASK" baseColumnNames="ISSUE_ID"  
-				referencedTableName="PJ_ISSUE"  referencedColumnNames="ID" />
+				referencedTableName="PJ_ISSUE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_PJ_TASK2" 
 				baseTableName="PJ_TASK" baseColumnNames="TYPE_ID"  
-				referencedTableName="PJ_TASK_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="PJ_TASK_TYPE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_PJ_TASK3" 
 				baseTableName="PJ_TASK" baseColumnNames="STATUS_ID"  
-				referencedTableName="PJ_TASK_STS"  referencedColumnNames="ID" />
+				referencedTableName="PJ_TASK_STS" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_PJ_TASK4" 
 				baseTableName="PJ_TASK" baseColumnNames="ASSIGNEE_ID"  
-				referencedTableName="PJ_PRJ_MBR"  referencedColumnNames="ID" />
+				referencedTableName="PJ_PRJ_MBR" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

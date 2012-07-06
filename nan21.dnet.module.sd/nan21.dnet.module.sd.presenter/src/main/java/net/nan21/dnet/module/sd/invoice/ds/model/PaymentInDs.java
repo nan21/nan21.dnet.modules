@@ -19,8 +19,8 @@ public class PaymentInDs extends AbstractAuditableDs<PaymentIn> {
     public static final String fDOCDATE = "docDate";
     public static final String fDOCNO = "docNo";
     public static final String fPAYFROMID = "payFromId";
+    public static final String fPAYFROMCODE = "payFromCode";
     public static final String fPAYFROM = "payFrom";
-    public static final String fPAYFROMNAME = "payFromName";
     public static final String fORGID = "orgId";
     public static final String fORG = "org";
     public static final String fTOACCOUNTID = "toAccountId";
@@ -47,10 +47,10 @@ public class PaymentInDs extends AbstractAuditableDs<PaymentIn> {
     private Long payFromId;
 
     @DsField(join = "left", path = "bpartner.code")
-    private String payFrom;
+    private String payFromCode;
 
     @DsField(join = "left", path = "bpartner.name")
-    private String payFromName;
+    private String payFrom;
 
     @DsField(join = "left", path = "toOrg.id")
     private Long orgId;
@@ -128,20 +128,20 @@ public class PaymentInDs extends AbstractAuditableDs<PaymentIn> {
         this.payFromId = payFromId;
     }
 
+    public String getPayFromCode() {
+        return this.payFromCode;
+    }
+
+    public void setPayFromCode(String payFromCode) {
+        this.payFromCode = payFromCode;
+    }
+
     public String getPayFrom() {
         return this.payFrom;
     }
 
     public void setPayFrom(String payFrom) {
         this.payFrom = payFrom;
-    }
-
-    public String getPayFromName() {
-        return this.payFromName;
-    }
-
-    public void setPayFromName(String payFromName) {
-        this.payFromName = payFromName;
     }
 
     public Long getOrgId() {

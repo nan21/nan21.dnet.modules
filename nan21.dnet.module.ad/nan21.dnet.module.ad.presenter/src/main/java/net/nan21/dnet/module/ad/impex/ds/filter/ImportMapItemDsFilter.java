@@ -23,6 +23,8 @@ public class ImportMapItemDsFilter extends AbstractAuditableDsFilter {
 
     private String dataSource;
 
+    private String path;
+
     private String fileName;
 
     private String ukFieldName;
@@ -91,6 +93,14 @@ public class ImportMapItemDsFilter extends AbstractAuditableDsFilter {
 
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
+    }
+
+    public String getPath() {
+        return this.path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public String getFileName() {

@@ -29,7 +29,7 @@
 			<column name="COUNTRY_ID" type="bigint(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="REGION_ID" type="bigint(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

@@ -5,16 +5,19 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_HR_QUALIF_SKILL1" 
 				baseTableName="HR_QUALIF_SKILL" baseColumnNames="QUALIFICATION_ID"  
-				referencedTableName="HR_QUALIF"  referencedColumnNames="ID" />
+				referencedTableName="HR_QUALIF" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_HR_QUALIF_SKILL2" 
 				baseTableName="HR_QUALIF_SKILL" baseColumnNames="SKILL_ID"  
-				referencedTableName="HR_SKILL"  referencedColumnNames="ID" />
+				referencedTableName="HR_SKILL" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_HR_QUALIF_SKILL3" 
 				baseTableName="HR_QUALIF_SKILL" baseColumnNames="REQUIREDLEVEL_ID"  
-				referencedTableName="HR_RATE_LVL"  referencedColumnNames="ID" />
+				referencedTableName="HR_RATE_LVL" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

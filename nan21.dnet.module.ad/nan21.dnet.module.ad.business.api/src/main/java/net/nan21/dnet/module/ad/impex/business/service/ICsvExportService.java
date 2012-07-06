@@ -8,6 +8,7 @@ package net.nan21.dnet.module.ad.impex.business.service;
 import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.ad.impex.domain.entity.CsvExportField;
+import net.nan21.dnet.module.ad.impex.domain.entity.CsvExportSort;
 
 import net.nan21.dnet.module.ad.impex.domain.entity.CsvExport;
 
@@ -18,5 +19,9 @@ public interface ICsvExportService extends IEntityService<CsvExport> {
     public List<CsvExport> findByFields(CsvExportField fields);
 
     public List<CsvExport> findByFieldsId(Long fieldsId);
+
+    public List<CsvExport> findBySorts(CsvExportSort sorts);
+
+    public List<CsvExport> findBySortsId(Long sortsId);
 
 }

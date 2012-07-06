@@ -5,16 +5,19 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_PJ_PRJ_MBR1" 
 				baseTableName="PJ_PRJ_MBR" baseColumnNames="PROJECT_ID"  
-				referencedTableName="PJ_PRJ"  referencedColumnNames="ID" />
+				referencedTableName="PJ_PRJ" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_PJ_PRJ_MBR2" 
 				baseTableName="PJ_PRJ_MBR" baseColumnNames="MEMBER_ID"  
-				referencedTableName="AD_ASGNBL"  referencedColumnNames="ID" />
+				referencedTableName="AD_ASGNBL" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_PJ_PRJ_MBR3" 
 				baseTableName="PJ_PRJ_MBR" baseColumnNames="PROJECTROLE_ID"  
-				referencedTableName="PJ_PRJ_ROLE"  referencedColumnNames="ID" />
+				referencedTableName="PJ_PRJ_ROLE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

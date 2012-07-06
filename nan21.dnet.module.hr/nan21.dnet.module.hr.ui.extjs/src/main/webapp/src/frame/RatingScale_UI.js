@@ -14,9 +14,9 @@ Ext.define("net.nan21.dnet.module.hr.skill.frame.RatingScale_UI", {
 
 	,_defineElements_: function() {							
 		this._getBuilder_()	
-		.addDcFilterFormView("scale",{ name:"scaleFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter",height:80})	 
+		.addDcFilterFormView("scale",{ name:"scaleFilter", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingScale$Filter",height:40})	 
 		.addDcEditGridView("scale",{ name:"scaleList", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingScale$EditList", frame:true})	 
-		.addDcEditGridView("level",{ name:"levelCtxEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingLevel$CtxEditList", frame:true,height:220})	 
+		.addDcEditGridView("level",{ name:"levelCtxEditList", xtype:"net.nan21.dnet.module.hr.skill.dc.RatingLevel$CtxEditList", frame:true,height:250})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 ;	 	

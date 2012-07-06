@@ -4,7 +4,7 @@
     
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_SD_INV_TAX1" baseTableName="SD_INV_TAX" 
-			baseColumnNames="SALESINVOICE_ID"  referencedTableName="SD_INV"  referencedColumnNames="ID" />
+			baseColumnNames="SALESINVOICE_ID"  referencedTableName="SD_INV"  referencedColumnNames="ID" onDelete="CASCADE" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_SD_INV_TAX2" baseTableName="SD_INV_TAX" 

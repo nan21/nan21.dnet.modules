@@ -23,11 +23,11 @@
 			<column name="ACCSCHEMA_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="EXPENSEACCOUNT_ID" type="number(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
 			<column name="GROUP_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
 			<column name="REVENUEACCOUNT_ID" type="number(19)">	 
-				<constraints nullable="false" /></column>	 
+				<constraints  /></column>	 
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">

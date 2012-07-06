@@ -5,6 +5,7 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_AD_IMP_MAP_ITEM1" 
 				baseTableName="AD_IMP_MAP_ITEM" baseColumnNames="IMPORTMAP_ID"  
-				referencedTableName="AD_IMP_MAP"  referencedColumnNames="ID" />
+				referencedTableName="AD_IMP_MAP" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

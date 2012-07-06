@@ -5,81 +5,97 @@
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD1" 
 				baseTableName="SD_ORD" baseColumnNames="DOCTYPE_ID"  
-				referencedTableName="MD_TXDOC_TYPE"  referencedColumnNames="ID" />
+				referencedTableName="MD_TXDOC_TYPE" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD2" 
 				baseTableName="SD_ORD" baseColumnNames="CUSTOMER_ID"  
-				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+				referencedTableName="MD_BP" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-3">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD3" 
 				baseTableName="SD_ORD" baseColumnNames="SUPPLIER_ID"  
-				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+				referencedTableName="BD_ORG" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-4">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD4" 
 				baseTableName="SD_ORD" baseColumnNames="PRICELIST_ID"  
-				referencedTableName="MD_PRICE_LIST"  referencedColumnNames="ID" />
+				referencedTableName="MD_PRICE_LIST" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-5">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD5" 
 				baseTableName="SD_ORD" baseColumnNames="CURRENCY_ID"  
-				referencedTableName="BD_CRNCY"  referencedColumnNames="ID" />
+				referencedTableName="BD_CRNCY" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-6">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD6" 
 				baseTableName="SD_ORD" baseColumnNames="PAYMENTMETHOD_ID"  
-				referencedTableName="MD_PYMNT_MTD"  referencedColumnNames="ID" />
+				referencedTableName="MD_PYMNT_MTD" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-7">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD7" 
 				baseTableName="SD_ORD" baseColumnNames="PAYMENTTERM_ID"  
-				referencedTableName="MD_PYMNT_TERM"  referencedColumnNames="ID" />
+				referencedTableName="MD_PYMNT_TERM" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-8">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD8" 
 				baseTableName="SD_ORD" baseColumnNames="INVENTORY_ID"  
-				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+				referencedTableName="BD_ORG" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-9">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD9" 
 				baseTableName="SD_ORD" baseColumnNames="DELIVERYMETHOD_ID"  
-				referencedTableName="MD_DLVR_MTD"  referencedColumnNames="ID" />
+				referencedTableName="MD_DLVR_MTD" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-10">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD10" 
 				baseTableName="SD_ORD" baseColumnNames="CARRIER_ID"  
-				referencedTableName="BD_ORG"  referencedColumnNames="ID" />
+				referencedTableName="BD_ORG" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-11">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD11" 
 				baseTableName="SD_ORD" baseColumnNames="BILLTO_ID"  
-				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+				referencedTableName="MD_BP" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-12">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD12" 
 				baseTableName="SD_ORD" baseColumnNames="BILLTOLOCATION_ID"  
-				referencedTableName="BD_GEO_LOCATION"  referencedColumnNames="ID" />
+				referencedTableName="BD_GEO_LOCATION" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-13">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD13" 
 				baseTableName="SD_ORD" baseColumnNames="BILLTOCONTACT_ID"  
-				referencedTableName="MD_BP_CNTC"  referencedColumnNames="ID" />
+				referencedTableName="MD_BP_CNTC" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-14">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD14" 
 				baseTableName="SD_ORD" baseColumnNames="SHIPTO_ID"  
-				referencedTableName="MD_BP"  referencedColumnNames="ID" />
+				referencedTableName="MD_BP" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-15">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD15" 
 				baseTableName="SD_ORD" baseColumnNames="SHIPTOLOCATION_ID"  
-				referencedTableName="BD_GEO_LOCATION"  referencedColumnNames="ID" />
+				referencedTableName="BD_GEO_LOCATION" referencedColumnNames="ID" />
+				
 	</changeSet>	
 	<changeSet author="amathe" id="FK-16">
 		<addForeignKeyConstraint constraintName="FK_SD_ORD16" 
 				baseTableName="SD_ORD" baseColumnNames="SHIPTOCONTACT_ID"  
-				referencedTableName="MD_BP_CNTC"  referencedColumnNames="ID" />
+				referencedTableName="MD_BP_CNTC" referencedColumnNames="ID" />
+				
 	</changeSet>	
 </databaseChangeLog>    

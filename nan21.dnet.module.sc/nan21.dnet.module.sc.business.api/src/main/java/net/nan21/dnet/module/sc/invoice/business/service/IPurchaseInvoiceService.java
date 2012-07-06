@@ -13,7 +13,7 @@ import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.md.base.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
+import net.nan21.dnet.module.md.org.domain.entity.FinancialAccount;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
 import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceTax;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
@@ -47,7 +47,7 @@ public interface IPurchaseInvoiceService extends
 
     public List<PurchaseInvoice> findByPaymentTermId(Long paymentTermId);
 
-    public List<PurchaseInvoice> findByFromAccount(PayAccount fromAccount);
+    public List<PurchaseInvoice> findByFromAccount(FinancialAccount fromAccount);
 
     public List<PurchaseInvoice> findByFromAccountId(Long fromAccountId);
 

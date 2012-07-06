@@ -12,7 +12,7 @@ public class ImportFromJobItemPD extends AbstractDsDelegate {
 		
 		ImportFromMapPD mapDelegate = new ImportFromMapPD();
 		mapDelegate.setAppContext(this.getAppContext());
-		mapDelegate.equals(mapDs);
+		mapDelegate.execute(mapDs);
 	}
 
 }

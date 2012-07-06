@@ -32,7 +32,7 @@ import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.md.base.tx.domain.entity.TxDocType;
 import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
-import net.nan21.dnet.module.md.org.domain.entity.PayAccount;
+import net.nan21.dnet.module.md.org.domain.entity.FinancialAccount;
 import net.nan21.dnet.module.sc.invoice.domain.eventhandler.PurchaseInvoiceEventHandler;
 import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrder;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
@@ -134,9 +134,9 @@ public class PurchaseInvoice extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PaymentTerm.class)
     @JoinColumn(name = "PAYMENTTERM_ID", referencedColumnName = "ID")
     private PaymentTerm paymentTerm;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = PayAccount.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = FinancialAccount.class)
     @JoinColumn(name = "FROMACCOUNT_ID", referencedColumnName = "ID")
-    private PayAccount fromAccount;
+    private FinancialAccount fromAccount;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = PurchaseOrder.class)
     @JoinColumn(name = "PURCHASEORDER_ID", referencedColumnName = "ID")
     private PurchaseOrder purchaseOrder;
@@ -306,11 +306,11 @@ public class PurchaseInvoice extends AbstractAuditable {
         this.paymentTerm = paymentTerm;
     }
 
-    public PayAccount getFromAccount() {
+    public FinancialAccount getFromAccount() {
         return this.fromAccount;
     }
 
-    public void setFromAccount(PayAccount fromAccount) {
+    public void setFromAccount(FinancialAccount fromAccount) {
         if (fromAccount != null) {
             this.__validate_client_context__(fromAccount.getClientId());
         }

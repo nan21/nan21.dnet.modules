@@ -1,7 +1,7 @@
 Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMap_UI$Trl", { 
 	
-	tlbMapList__ttl : "Seturi fişiere",
-	tlbMapEdit__ttl : "Set fişiere",
+	tlbMapList__ttl : "Seturi import",
+	tlbMapEdit__ttl : "Set import",
 	tlbItemEditList__ttl : "Fişiere",
 	
 	btnRunImportMap__ttl : "Importă tot",
@@ -9,5 +9,5 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMap_UI$Trl", {
 	btnRunImportItem__ttl : "Importă selecţia",
 	btnRunImportItem__desc : "Importă selecţia (una câte una ).",
 	
-	title: "Set import"
+	title: "Seturi import"
 });	

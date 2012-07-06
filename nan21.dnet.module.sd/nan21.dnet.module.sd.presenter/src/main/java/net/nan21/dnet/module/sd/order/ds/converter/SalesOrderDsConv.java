@@ -154,6 +154,16 @@ public class SalesOrderDsConv extends
             this.lookup_shipTo_BusinessPartner(ds, e);
         }
 
+        if (ds.getCarrierId() != null) {
+            if (e.getCarrier() == null
+                    || !e.getCarrier().getId().equals(ds.getCarrierId())) {
+                e.setCarrier((Organization) this.em.find(Organization.class,
+                        ds.getCarrierId()));
+            }
+        } else {
+            this.lookup_carrier_Organization(ds, e);
+        }
+
         if (ds.getBillToLocationId() != null) {
             if (e.getBillToLocation() == null
                     || !e.getBillToLocation().getId()
@@ -399,6 +409,25 @@ public class SalesOrderDsConv extends
 
         } else {
             e.setShipTo(null);
+        }
+    }
+
+    protected void lookup_carrier_Organization(SalesOrderDs ds, SalesOrder e)
+            throws Exception {
+        if (ds.getCarrier() != null && !ds.getCarrier().equals("")) {
+            Organization x = null;
+            try {
+                x = ((IOrganizationService) findEntityService(Organization.class))
+                        .findByCode(ds.getCarrier());
+            } catch (javax.persistence.NoResultException exception) {
+                throw new Exception(
+                        "Invalid value provided to find `Organization` reference:  `carrier` = "
+                                + ds.getCarrier() + "  ");
+            }
+            e.setCarrier(x);
+
+        } else {
+            e.setCarrier(null);
         }
     }
 

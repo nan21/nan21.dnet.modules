@@ -21,7 +21,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.ImportMapItem_UI", {
 		.addButton({name:"btnImportFileRun",text:"Execute", tooltip:"Execute",disabled:false
 			,handler: this.onBtnImportFileRun,scope:this	})	
 							 	
-		.addDcFilterFormView("mapItem",{ name:"mapItemFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$Filter",height:120})	 
+		.addDcFilterFormView("mapItem",{ name:"mapItemFilter", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$Filter",height:80})	 
 		.addDcEditGridView("mapItem",{ name:"mapItemEditList", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$EditList", frame:true,dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnRunImport") ,this._elems_.get("btnImportFileShow") ]}]})	 
 		.addDcFilterFormView("mapItem",{ name:"importFileForm", xtype:"net.nan21.dnet.module.ad.impex.dc.ImportMapItem$ImportFileForm"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
