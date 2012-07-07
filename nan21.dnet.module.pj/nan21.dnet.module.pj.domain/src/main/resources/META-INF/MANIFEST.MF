@@ -6,10 +6,12 @@ Export-Package: net.nan21.dnet.module.pj.base.domain.entity;version="1
  persistence.indirection,org.eclipse.persistence.internal.descriptors,
  org.eclipse.persistence.internal.weaving",net.nan21.dnet.module.pj.md
  .domain.entity;version="1.0.0.RC2";uses:="javax.persistence,javax.val
- idation.constraints,net.nan21.dnet.core.domain.model,net.nan21.dnet.m
- odule.ad.usr.domain.entity,net.nan21.dnet.module.pj.base.domain.entit
- y,org.eclipse.persistence.annotations,org.eclipse.persistence.descrip
- tors,org.hibernate.validator.constraints"
+ idation.constraints,javax.xml.bind.annotation,net.nan21.dnet.core.dom
+ ain.model,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.dnet.m
+ odule.pj.base.domain.entity,org.eclipse.persistence.annotations,org.e
+ clipse.persistence.descriptors,org.eclipse.persistence.indirection,or
+ g.eclipse.persistence.internal.descriptors,org.eclipse.persistence.in
+ ternal.weaving,org.hibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
  dnet.core.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.ad
  .domain;version="[1.0.0.RC2,1.0.0.RC2]"
