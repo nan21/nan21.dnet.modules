@@ -34,8 +34,8 @@ Ext.define("net.nan21.dnet.module.hr.employee.frame.EmployeeAssignment_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbAsgnList", {dc:"asgn"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().end()
-			.beginToolbar("tlbAsgnEdit", {dc:"asgn"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().end(); 	
+			.beginToolbar("tlbAsgnList", {dc:"asgn"}).addQuery().addEdit().addNew().addCopy().addDeleteSelected().addReports().addSeparator().addSeparator().addTitle({"text":"Assignments"}).end()
+			.beginToolbar("tlbAsgnEdit", {dc:"asgn"}).addBack().addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Assignment"}).end(); 	
 	}
 
 });  

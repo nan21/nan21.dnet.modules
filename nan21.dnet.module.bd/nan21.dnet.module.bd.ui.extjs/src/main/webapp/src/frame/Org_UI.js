@@ -31,7 +31,7 @@ Ext.define("net.nan21.dnet.module.bd.org.frame.Org_UI", {
 		.addDcEditGridView("items",{ name:"itemsEditList", xtype:"net.nan21.dnet.module.bd.org.dc.OrganizationHierarchyItem$CtxEditList", frame:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 		.addPanel({name: "panelHierarchy",layout:"card", activeItem:0})  	 
-		.addPanel({name: "addressPanel",layout:"card", activeItem:0,title:"Address"})  	 
+		.addPanel({name: "addressPanel",layout:"card", activeItem:0})  	 
 		.addPanel({name: "canvasOrg", layout:"border", defaults:{split:true},title:"Organizations",preventHeader:true})  	 
 		.addPanel({name: "canvasOrgEdit", layout:"border", defaults:{split:true},title:"Organization",preventHeader:true})  	 
 		.addPanel({name: "canvasHierarchy", layout:"border", defaults:{split:true},title:"Hierarchies",preventHeader:true})  	 
@@ -79,8 +79,8 @@ Ext.define("net.nan21.dnet.module.bd.org.frame.Org_UI", {
 			.beginToolbar("tlbHierarchyEdit", {dc:"hierarchy"}).addBack({inContainer:"panelHierarchy",showView:"panelHierarchyList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addReports().addSeparator().addSeparator().addTitle({"text":"Hierarchy"}).end()
 			.beginToolbar("tlbItemsEditList", {dc:"items"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().end()
 			.beginToolbar("tlbOrgtypeList", {dc:"orgtype"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Organization types"}).end()
-			.beginToolbar("tlbAddressList", {dc:"address"}).addQuery().addEdit({inContainer:"addressPanel",showView:"addressEditWrapper"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addReports().end()
-			.beginToolbar("tlbAddressEdit", {dc:"address"}).addBack({inContainer:"addressPanel",showView:"addressList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().addReports().end(); 	
+			.beginToolbar("tlbAddressList", {dc:"address"}).addQuery().addEdit({inContainer:"addressPanel",showView:"addressEditWrapper"}).addNew().addCopy().addDeleteSelected().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Addresses"}).end()
+			.beginToolbar("tlbAddressEdit", {dc:"address"}).addBack({inContainer:"addressPanel",showView:"addressList"}).addSave().addNew().addCopy().addCancel().addPrevRec().addNextRec().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Address"}).end(); 	
 	}
 
 });  

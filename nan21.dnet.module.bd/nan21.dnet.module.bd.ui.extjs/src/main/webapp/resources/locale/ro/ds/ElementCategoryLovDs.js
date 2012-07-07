@@ -1,8 +1,8 @@
 
 Ext.define("net.nan21.dnet.module.bd.elem.ds.model.ElementCategoryLovDs$Trl", {  	  	
-	engineId__lbl :    "(ID)",
-	engine__lbl :    "",
-	engineType__lbl :    "Type",
+	engineId__lbl :    "Motor(ID)",
+	engine__lbl :    "Motor",
+	engineType__lbl :    "Tip",
 		 
 	id__lbl :"ID"
 });

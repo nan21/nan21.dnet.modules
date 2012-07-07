@@ -1,9 +1,9 @@
 Ext.define("net.nan21.dnet.module.ad.system.frame.SysTimer_UI$Trl", { 
-	timerEdit__ttl : "Timer",
+	timerEdit__ttl : "Temporizator",
 	
-	tlbTimerList__ttl : "Timers",
-	tlbTimerEdit__ttl : "Timer",
+	tlbTimerList__ttl : "Temporizatoare",
+	tlbTimerEdit__ttl : "Temporizator",
 	
 	
-	title: "Timer"
+	title: "Temporizatoare"
 });	

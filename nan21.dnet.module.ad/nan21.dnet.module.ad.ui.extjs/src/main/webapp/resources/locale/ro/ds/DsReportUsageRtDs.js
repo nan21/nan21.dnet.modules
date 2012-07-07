@@ -4,7 +4,7 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.DsReportUsageRtDs$Trl", {
 	reportId__lbl :    "Raport(ID)",
 	reportCode__lbl :    "Raport",
 	reportTitle__lbl :    "Raport",
-	reportContextPath__lbl :    "Context Path",
+	reportContextPath__lbl :    "Cale",
 	serverUrl__lbl :    "URL",
 	frameName__lbl :  "Ecran",
 	toolbarKey__lbl :  "Cheie toolbar",

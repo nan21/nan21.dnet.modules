@@ -6,6 +6,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.BookmarkRtLovDs$Trl", {
 	text__lbl :  "Titlu",
 	frame__lbl :  "Cadru",
 	bundle__lbl :  "Pachet",
-	separatorBefore__lbl :  "@separatorBefore",	separatorAfter__lbl :  "@separatorAfter",	leaf__lbl :  "@leaf",		 
+	separatorBefore__lbl :  "Delimit. inainte",
+	separatorAfter__lbl :  "Delimit. după",
+	leaf__lbl :  "@leaf",		 
 	id__lbl :"ID"
 });

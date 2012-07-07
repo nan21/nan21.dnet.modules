@@ -6,7 +6,7 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.DsReportParamDs$Trl", {
 	paramId__lbl :    "Parametru(ID)",
 	paramCode__lbl :    "Parametru",
 	paramName__lbl :    "Parametru",
-	dataSource__lbl :    "Data Source",
+	dataSource__lbl :    "Sursă date",
 	dsField__lbl :  "Câmp",
 	staticValue__lbl :  "Valoare",
 		 

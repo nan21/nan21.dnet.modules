@@ -11,7 +11,7 @@ Ext.define("net.nan21.dnet.module.ad.report.ds.model.DsReportParamRtDs$Trl", {
 	paramDefaultValue__lbl :    "Valoare implicită",
 	paramListOfValues__lbl :    "Valori posibile",
 	paramNoEdit__lbl :    "No edit",
-	dataSource__lbl :    "Data Source",
+	dataSource__lbl :    "Sursă date",
 	dsField__lbl :  "Câmp",
 	staticValue__lbl :  "Valoare",
 		 

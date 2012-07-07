@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.bd.org.frame.Calendars_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbCalendarList", {dc:"calendar"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().end(); 	
+			.beginToolbar("tlbCalendarList", {dc:"calendar"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Calendars"}).end(); 	
 	}
 
 });  

@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.md.mm.price.frame.ProductPriceReport_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbProdpriceList", {dc:"prodprice"}).addQuery().addReports().end(); 	
+			.beginToolbar("tlbProdpriceList", {dc:"prodprice"}).addQuery().addReports().addSeparator().addSeparator().addTitle({"text":"Price report"}).end(); 	
 	}
 
 });  

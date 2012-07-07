@@ -15,7 +15,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysParam_UI", {
 		.addButton({name:"btnSynchronize",text:"Update cache", tooltip:"Propagate changes to the cached configuration parameters",iconCls:"icon-action-synchronize",disabled:false
 			,handler: this.onBtnSynchronize,scope:this	})	
 							 	
-		.addDcFilterFormView("sysparam",{ name:"sysparamFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$Filter",height:120})	 
+		.addDcFilterFormView("sysparam",{ name:"sysparamFilter", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$Filter",height:80})	 
 		.addDcGridView("sysparam",{ name:"sysparamList", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$List",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnSynchronize") ]}]})	 
 		.addDcFormView("sysparam",{ name:"sysparamEdit", xtype:"net.nan21.dnet.module.ad.system.dc.SysParam$Edit"})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 

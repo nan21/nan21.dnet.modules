@@ -38,7 +38,7 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysJobCtx_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbJobEditList", {dc:"job"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().end()
+			.beginToolbar("tlbJobEditList", {dc:"job"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Job context"}).end()
 			.beginToolbar("tlbParamsEditList", {dc:"params"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Parameter values"}).end()
 			.beginToolbar("tlbScheduleEditList", {dc:"schedule"}).addQuery().addDeleteSelected().addSeparator().addAutoLoad().addReports().addSeparator().addSeparator().addTitle({"text":"Execution schedule"}).end(); 	
 	}

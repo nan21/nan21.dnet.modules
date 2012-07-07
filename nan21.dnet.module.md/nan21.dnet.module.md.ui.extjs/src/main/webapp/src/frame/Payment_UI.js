@@ -28,7 +28,7 @@ Ext.define("net.nan21.dnet.module.md.tx.fin.frame.Payment_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbPaymentList", {dc:"payment"}).addQuery().addReports().end(); 	
+			.beginToolbar("tlbPaymentList", {dc:"payment"}).addQuery().addReports().addSeparator().addSeparator().addTitle({"text":"Payments"}).end(); 	
 	}
 
 });  

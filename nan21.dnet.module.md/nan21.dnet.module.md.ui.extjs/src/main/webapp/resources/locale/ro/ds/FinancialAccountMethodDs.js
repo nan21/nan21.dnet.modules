@@ -2,7 +2,7 @@
 Ext.define("net.nan21.dnet.module.md.org.ds.model.FinancialAccountMethodDs$Trl", {  	  	
 	uuid__lbl :  "@uuid",	entityFQN__lbl :  "@entityFQN",	financialAccountId__lbl :    "Cont financiar(ID)",
 	financialAccount__lbl :    "Cont financiar",
-	financialAccountType__lbl :    "Type",
+	financialAccountType__lbl :    "Tip",
 	payMethodId__lbl :    "Metodă plată(ID)",
 	payMethod__lbl :    "Metodă plată",
 	allowPayIn__lbl :  "Permite incasari",

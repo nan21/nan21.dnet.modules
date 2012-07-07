@@ -36,7 +36,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.frame.CsvExport_UI", {
 		.addPanel({name: "canvas1", layout:"border", defaults:{split:true},preventHeader:true})  	 
 		
 		.addWindow({name:"wdwClone", closeAction:'hide', resizable:true, layout:"fit", items:[this._elems_.get("csvClone")]
-,title:"Select product category",modal:true,width:400,height:120,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnDoClone") ]}}) 	
+,title:"Create clone",modal:true,width:400,height:120,buttons:{ xtype:"toolbar", weight:-1, items:[ this._elems_.get("btnDoClone") ]}}) 	
 ;	 	
 	}
 

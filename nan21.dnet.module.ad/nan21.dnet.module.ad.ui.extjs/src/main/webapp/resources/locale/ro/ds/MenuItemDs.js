@@ -8,6 +8,9 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.MenuItemDs$Trl", {
 	title__lbl :  "Titlu",
 	frame__lbl :  "Cadru",
 	bundle__lbl :  "Pachet",
-	iconUrl__lbl :  "@iconUrl",	separatorBefore__lbl :  "@separatorBefore",	separatorAfter__lbl :  "@separatorAfter",		 
+	iconUrl__lbl :  "Pictogramă",
+	separatorBefore__lbl :  "Delimit. inainte",
+	separatorAfter__lbl :  "Delimit. după",
+		 
 	id__lbl :"ID"
 });

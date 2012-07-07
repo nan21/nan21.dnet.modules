@@ -30,7 +30,7 @@ Ext.define("net.nan21.dnet.module.md.acc.frame.Account_UI", {
 
 	,_defineToolbars_: function() {
 		this._getBuilder_()
-			.beginToolbar("tlbSchemaList", {dc:"account"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().end(); 	
+			.beginToolbar("tlbSchemaList", {dc:"account"}).addQuery().addSave().addNew().addCopy().addDeleteSelected().addCancel().addReports().addSeparator().addSeparator().addTitle({"text":"Accounts chart"}).end(); 	
 	}
 
 });  

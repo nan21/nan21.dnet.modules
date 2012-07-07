@@ -8,6 +8,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI$Trl", {
 	canvasFinishedInstance__ttl : "Finished instances",
 	canvasDeployment__ttl : "Deployments",
 	
+	tlbProcessList__ttl : "Processes defined",
+	tlbRunningInstanceList__ttl : "Running instances",
+	tlbFinishedInstanceList__ttl : "Finished instances",
+	tlbDeploymentList__ttl : "Deployments",
 	
 	btnStartProcess__ttl : "Start Instance",
 	btnStartProcess__desc : "Start an instance of the selected process",

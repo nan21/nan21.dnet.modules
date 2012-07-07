@@ -6,8 +6,9 @@ Ext.define("net.nan21.dnet.module.ad.report.frame.Reports_UI$Trl", {
 	dsRep__ttl : "Legături DS",
 	
 	tlbRepList__ttl : "Rapoarte",
-	tlbRepEdit__ttl : "Rapoart",
-	tlbDsRepList__ttl : "Data-source",
+	tlbRepEdit__ttl : "Raport",
+	tlbParamList__ttl : "Parametri",
+	tlbDsRepList__ttl : "Sursă date",
 	tlbDsParamList__ttl : "Mapare parametri",
 	tlbUsageList__ttl : "Utilizare",
 	

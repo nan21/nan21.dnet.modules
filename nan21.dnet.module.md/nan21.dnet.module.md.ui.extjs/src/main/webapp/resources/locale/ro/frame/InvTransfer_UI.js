@@ -1,7 +1,7 @@
 Ext.define("net.nan21.dnet.module.md.tx.inventory.frame.InvTransfer_UI$Trl", { 
 	
-	tlbTxList__ttl : "Trnsferuri",
-	tlbTxEdit__ttl : "Trnsferur",
+	tlbTxList__ttl : "Transferuri",
+	tlbTxEdit__ttl : "Transfer",
 	tlbTxlineEditList__ttl : "Articole",
 	
 	btnConfirm__ttl : "Confirmă",

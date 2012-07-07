@@ -7,6 +7,10 @@ Ext.define("net.nan21.dnet.module.ad.workflow.frame.WorkflowAdmin_UI$Trl", {
 	canvasFinishedInstance__ttl : "Instanţe finalizate",
 	canvasDeployment__ttl : "Instalări",
 	
+	tlbProcessList__ttl : "Procese definite",
+	tlbRunningInstanceList__ttl : "Instanţe active",
+	tlbFinishedInstanceList__ttl : "Instanţe finalizate",
+	tlbDeploymentList__ttl : "Instalări",
 	
 	btnStartProcess__ttl : "Porneşte instanţă",
 	btnStartProcess__desc : "Porneşte instanţă pentru procesul selectat",

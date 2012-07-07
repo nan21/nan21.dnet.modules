@@ -8,8 +8,8 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserDs$Trl", {
 	dateFormatId__lbl :    "Format dată(ID)",
 	dateFormat__lbl :    "Format dată",
 		 
-	newPassword__lbl : "Parola nouă",
-	confirmPassword__lbl : "Confirmă parola",
+	newPassword__lbl : "Parolă nouă",
+	confirmPassword__lbl : "Confirmă parolă",
 	withRoleId__lbl : "Cu rol ID",
 	withRole__lbl : "Cu rol",
 	inGroupId__lbl : "In grup ID",

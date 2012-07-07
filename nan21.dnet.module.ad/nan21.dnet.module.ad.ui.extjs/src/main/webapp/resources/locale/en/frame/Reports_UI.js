@@ -8,6 +8,7 @@ Ext.define("net.nan21.dnet.module.ad.report.frame.Reports_UI$Trl", {
 	
 	tlbRepList__ttl : "Reports",
 	tlbRepEdit__ttl : "Report",
+	tlbParamList__ttl : "Parameters",
 	tlbDsRepList__ttl : "Data-source",
 	tlbDsParamList__ttl : "Parameter mapping",
 	tlbUsageList__ttl : "Usage",

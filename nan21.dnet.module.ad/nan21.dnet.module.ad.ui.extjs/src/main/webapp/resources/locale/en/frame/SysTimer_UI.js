@@ -6,5 +6,5 @@ Ext.define("net.nan21.dnet.module.ad.system.frame.SysTimer_UI$Trl", {
 	tlbTimerEdit__ttl : "Timer",
 	
 	
-	title: "Timer"
+	title: "Timers"
 });
