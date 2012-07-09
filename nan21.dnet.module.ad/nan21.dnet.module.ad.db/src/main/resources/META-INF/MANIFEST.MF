@@ -1,4 +1,7 @@
 Manifest-Version: 1.0
+Export-Package: mysql.ad.install.fk;version="1.0.0",mysql.ad.install.t
+ able;version="1.0.0",oracle.ad.install.fk;version="1.0.0",oracle.ad.i
+ nstall.table;version="1.0.0"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.0
 Tool: Bundlor 1.0.0.RELEASE

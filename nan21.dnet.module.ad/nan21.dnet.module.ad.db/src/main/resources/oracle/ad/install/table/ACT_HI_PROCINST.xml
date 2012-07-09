@@ -26,7 +26,7 @@
 				<constraints  /></column>	 
 			<column name="SUPER_PROCESS_INSTANCE_ID_" type="varchar2(255)">
 				<constraints  /></column>	 
-			<column name="PROC_DEF_ID_" type="number(19)">	 
+			<column name="PROC_DEF_ID_" type="varchar2(64)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

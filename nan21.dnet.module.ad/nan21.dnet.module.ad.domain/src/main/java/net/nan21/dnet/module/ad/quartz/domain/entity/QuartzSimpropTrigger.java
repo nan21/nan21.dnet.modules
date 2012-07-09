@@ -80,11 +80,11 @@ public class QuartzSimpropTrigger {
     private Long longProp2;
 
     /** DecProp1. */
-    @Column(name = "DEC_PROP_1")
+    @Column(name = "DEC_PROP_1", scale = 6)
     private Float decProp1;
 
     /** DecProp2. */
-    @Column(name = "DEC_PROP_2")
+    @Column(name = "DEC_PROP_2", scale = 6)
     private Float decProp2;
 
     /** BoolProp1. */

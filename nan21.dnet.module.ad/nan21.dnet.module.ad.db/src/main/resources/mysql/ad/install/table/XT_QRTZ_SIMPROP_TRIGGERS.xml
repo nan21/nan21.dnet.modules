@@ -8,9 +8,9 @@
 				<constraints  /></column>	 
 			<column name="BOOL_PROP_2" type="varchar(1)">
 				<constraints  /></column>	 
-			<column name="DEC_PROP_1" type="decimal(0)">
+			<column name="DEC_PROP_1" type="decimal(19,6)">
 				<constraints  /></column>	 
-			<column name="DEC_PROP_2" type="decimal(0)">
+			<column name="DEC_PROP_2" type="decimal(19,6)">
 				<constraints  /></column>	 
 			<column name="INT_PROP_1" type="int(8)">
 				<constraints  /></column>	 

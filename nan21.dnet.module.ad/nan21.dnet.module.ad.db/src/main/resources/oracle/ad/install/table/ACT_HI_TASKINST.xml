@@ -32,9 +32,9 @@
 				<constraints nullable="false" /></column>	 
 			<column name="TASK_DEF_KEY_" type="varchar2(255)">
 				<constraints  /></column>	 
-			<column name="PARENT_TASK_ID_" type="number(19)">	 
+			<column name="PARENT_TASK_ID_" type="varchar2(64)">	 
 				<constraints  /></column>	 
-			<column name="PROC_DEF_ID_" type="number(19)">	 
+			<column name="PROC_DEF_ID_" type="varchar2(64)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

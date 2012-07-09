@@ -26,9 +26,9 @@
 				<constraints  /></column>	 
 			<column name="SUSPENSION_STATE_" type="number(10)">
 				<constraints  /></column>	 
-			<column name="PARENT_ID_" type="number(19)">	 
+			<column name="PARENT_ID_" type="varchar2(64)">	 
 				<constraints  /></column>	 
-			<column name="PROC_DEF_ID_" type="number(19)">	 
+			<column name="PROC_DEF_ID_" type="varchar2(64)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

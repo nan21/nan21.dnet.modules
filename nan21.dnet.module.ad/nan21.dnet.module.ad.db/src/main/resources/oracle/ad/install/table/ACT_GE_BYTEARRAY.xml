@@ -14,7 +14,7 @@
 				<constraints nullable="false" /></column>	 
 			<column name="REV_" type="number(8)">
 				<constraints  /></column>	 
-			<column name="DEPLOYMENT_ID_" type="number(19)">	 
+			<column name="DEPLOYMENT_ID_" type="varchar2(64)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    

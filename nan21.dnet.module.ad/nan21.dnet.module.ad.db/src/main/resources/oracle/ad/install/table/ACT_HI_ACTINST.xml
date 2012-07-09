@@ -24,7 +24,7 @@
 				<constraints  /></column>	 
 			<column name="START_TIME_" type="date">
 				<constraints nullable="false" /></column>	 
-			<column name="PROC_DEF_ID_" type="number(19)">	 
+			<column name="PROC_DEF_ID_" type="varchar2(64)">	 
 				<constraints  /></column>	 
         </createTable>
     </changeSet>    
