@@ -29,10 +29,10 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="HR_OPTION" constraintName="PK_OPTION" columnNames="ID" />
+    	<addPrimaryKey tableName="HR_OPTION" constraintName="PK_HR_OPTION" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="UK-1">
-		<addUniqueConstraint tableName="HR_OPTION" constraintName="UK_OPTION1" columnNames="CLIENTID, NAME" />
+		<addUniqueConstraint tableName="HR_OPTION" constraintName="UK_HR_OPTION1" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

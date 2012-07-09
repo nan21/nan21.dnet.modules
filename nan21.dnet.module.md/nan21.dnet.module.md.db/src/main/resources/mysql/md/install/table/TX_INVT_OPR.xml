@@ -41,7 +41,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="TX_INVT_OPR" constraintName="PK_INVT_OPR" columnNames="ID" />
+    	<addPrimaryKey tableName="TX_INVT_OPR" constraintName="PK_TX_INVT_OPR" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

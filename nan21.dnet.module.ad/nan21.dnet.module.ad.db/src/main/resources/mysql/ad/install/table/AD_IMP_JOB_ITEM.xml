@@ -31,10 +31,10 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="AD_IMP_JOB_ITEM" constraintName="PK_IMP_JOB_ITEM" columnNames="ID" />
+    	<addPrimaryKey tableName="AD_IMP_JOB_ITEM" constraintName="PK_AD_IMP_JOB_ITEM" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="UK-1">
-		<addUniqueConstraint tableName="AD_IMP_JOB_ITEM" constraintName="UK_IMP_JOB_ITEM1" columnNames="CLIENTID, JOB_ID,MAP_ID" />
+		<addUniqueConstraint tableName="AD_IMP_JOB_ITEM" constraintName="UK_AD_IMP_JOB_ITEM1" columnNames="CLIENTID, JOB_ID,MAP_ID" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

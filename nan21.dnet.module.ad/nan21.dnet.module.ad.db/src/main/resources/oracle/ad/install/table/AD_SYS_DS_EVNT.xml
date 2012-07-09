@@ -27,10 +27,10 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="AD_SYS_DS_EVNT" constraintName="PK_SYS_DS_EVNT" columnNames="ID" />
+    	<addPrimaryKey tableName="AD_SYS_DS_EVNT" constraintName="PK_AD_SYS_DS_EVNT" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="UK-1"> 
-		<addUniqueConstraint tableName="AD_SYS_DS_EVNT" constraintName="UK_SYS_DS_EVNT1" columnNames="CLIENTID, DATASOURCE_ID,EVENTTYPE" />
+		<addUniqueConstraint tableName="AD_SYS_DS_EVNT" constraintName="UK_AD_SYS_DS_EVNT1" columnNames="CLIENTID, DATASOURCE_ID,EVENTTYPE" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

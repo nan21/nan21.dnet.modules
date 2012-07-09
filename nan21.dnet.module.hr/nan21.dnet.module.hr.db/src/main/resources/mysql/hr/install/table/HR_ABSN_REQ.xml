@@ -45,7 +45,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="HR_ABSN_REQ" constraintName="PK_ABSN_REQ" columnNames="ID" />
+    	<addPrimaryKey tableName="HR_ABSN_REQ" constraintName="PK_HR_ABSN_REQ" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

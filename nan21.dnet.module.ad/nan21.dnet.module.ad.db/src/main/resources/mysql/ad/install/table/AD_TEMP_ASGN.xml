@@ -11,7 +11,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="AD_TEMP_ASGN" constraintName="PK_TEMP_ASGN" columnNames="UUID" />
+    	<addPrimaryKey tableName="AD_TEMP_ASGN" constraintName="PK_AD_TEMP_ASGN" columnNames="UUID" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

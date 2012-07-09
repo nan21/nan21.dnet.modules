@@ -11,7 +11,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="XT_QRTZ_PAUSED_TRIGGER_GRPS" constraintName="PK_QRTZ_PAUSED_TRIGGER_GRPS" columnNames="SCHED_NAME,TRIGGER_GROUP" />
+    	<addPrimaryKey tableName="XT_QRTZ_PAUSED_TRIGGER_GRPS" constraintName="PK_XT_QRTZ_PAUSED_TRIGGER_GRPS" columnNames="SCHED_NAME,TRIGGER_GROUP" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

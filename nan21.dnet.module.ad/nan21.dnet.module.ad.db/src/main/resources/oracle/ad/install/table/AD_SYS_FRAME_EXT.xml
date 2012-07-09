@@ -35,10 +35,10 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="AD_SYS_FRAME_EXT" constraintName="PK_SYS_FRAME_EXT" columnNames="ID" />
+    	<addPrimaryKey tableName="AD_SYS_FRAME_EXT" constraintName="PK_AD_SYS_FRAME_EXT" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="UK-1"> 
-		<addUniqueConstraint tableName="AD_SYS_FRAME_EXT" constraintName="UK_SYS_FRAME_EXT1" columnNames="CLIENTID, FRAMEFQN,FILELOCATION" />
+		<addUniqueConstraint tableName="AD_SYS_FRAME_EXT" constraintName="UK_AD_SYS_FRAME_EXT1" columnNames="CLIENTID, FRAMEFQN,FILELOCATION" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

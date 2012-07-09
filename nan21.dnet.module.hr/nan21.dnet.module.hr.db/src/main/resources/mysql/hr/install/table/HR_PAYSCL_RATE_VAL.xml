@@ -33,7 +33,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="HR_PAYSCL_RATE_VAL" constraintName="PK_PAYSCL_RATE_VAL" columnNames="ID" />
+    	<addPrimaryKey tableName="HR_PAYSCL_RATE_VAL" constraintName="PK_HR_PAYSCL_RATE_VAL" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

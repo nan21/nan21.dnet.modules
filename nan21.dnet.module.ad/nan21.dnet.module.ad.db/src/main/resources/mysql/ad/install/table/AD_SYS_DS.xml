@@ -33,13 +33,13 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="AD_SYS_DS" constraintName="PK_SYS_DS" columnNames="ID" />
+    	<addPrimaryKey tableName="AD_SYS_DS" constraintName="PK_AD_SYS_DS" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="UK-1">
-		<addUniqueConstraint tableName="AD_SYS_DS" constraintName="UK_SYS_DS1" columnNames="CLIENTID, NAME" />
+		<addUniqueConstraint tableName="AD_SYS_DS" constraintName="UK_AD_SYS_DS1" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="UK-2">
-		<addUniqueConstraint tableName="AD_SYS_DS" constraintName="UK_SYS_DS2" columnNames="CLIENTID, MODEL" />
+		<addUniqueConstraint tableName="AD_SYS_DS" constraintName="UK_AD_SYS_DS2" columnNames="CLIENTID, MODEL" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

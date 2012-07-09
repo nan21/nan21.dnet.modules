@@ -13,7 +13,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="XT_QRTZ_CALENDARS" constraintName="PK_QRTZ_CALENDARS" columnNames="SCHED_NAME,CALENDAR_NAME" />
+    	<addPrimaryKey tableName="XT_QRTZ_CALENDARS" constraintName="PK_XT_QRTZ_CALENDARS" columnNames="SCHED_NAME,CALENDAR_NAME" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

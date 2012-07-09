@@ -39,13 +39,13 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="HR_JOB" constraintName="PK_JOB" columnNames="ID" />
+    	<addPrimaryKey tableName="HR_JOB" constraintName="PK_HR_JOB" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="UK-1">
-		<addUniqueConstraint tableName="HR_JOB" constraintName="UK_JOB1" columnNames="CLIENTID, CODE" />
+		<addUniqueConstraint tableName="HR_JOB" constraintName="UK_HR_JOB1" columnNames="CLIENTID, CODE" />
 	</changeSet>
 	<changeSet author="amathe" id="UK-2">
-		<addUniqueConstraint tableName="HR_JOB" constraintName="UK_JOB2" columnNames="CLIENTID, NAME" />
+		<addUniqueConstraint tableName="HR_JOB" constraintName="UK_HR_JOB2" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

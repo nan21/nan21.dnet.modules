@@ -35,7 +35,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="XT_QRTZ_SIMPROP_TRIGGERS" constraintName="PK_QRTZ_SIMPROP_TRIGGERS" columnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP" />
+    	<addPrimaryKey tableName="XT_QRTZ_SIMPROP_TRIGGERS" constraintName="PK_XT_QRTZ_SIMPROP_TRIGGERS" columnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

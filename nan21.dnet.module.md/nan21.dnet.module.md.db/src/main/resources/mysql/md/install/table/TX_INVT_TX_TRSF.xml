@@ -9,7 +9,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="TX_INVT_TX_TRSF" constraintName="PK_INVT_TX_TRSF" columnNames="ID" />
+    	<addPrimaryKey tableName="TX_INVT_TX_TRSF" constraintName="PK_TX_INVT_TX_TRSF" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

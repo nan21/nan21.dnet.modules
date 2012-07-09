@@ -16,8 +16,6 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DESCRIPTION" type="varchar2(400)">
 				<constraints  /></column>	 
-			<column name="DESCRIPTION" type="varchar2(400)">
-				<constraints  /></column>	 
 			<column name="DIMDEPTH" type="number(12,2)">
 				<constraints  /></column>	 
 			<column name="DIMHEIGHT" type="number(12,2)">
@@ -71,13 +69,13 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="MD_PROD" constraintName="PK_PROD" columnNames="ID" />
+    	<addPrimaryKey tableName="MD_PROD" constraintName="PK_MD_PROD" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="UK-1"> 
-		<addUniqueConstraint tableName="MD_PROD" constraintName="UK_PROD1" columnNames="CLIENTID, CODE" />
+		<addUniqueConstraint tableName="MD_PROD" constraintName="UK_MD_PROD1" columnNames="CLIENTID, CODE" />
 	</changeSet>
 	<changeSet author="amathe" id="UK-2"> 
-		<addUniqueConstraint tableName="MD_PROD" constraintName="UK_PROD2" columnNames="CLIENTID, NAME" />
+		<addUniqueConstraint tableName="MD_PROD" constraintName="UK_MD_PROD2" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

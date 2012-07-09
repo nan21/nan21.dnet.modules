@@ -35,7 +35,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="TX_ACC_BALANCE" constraintName="PK_ACC_BALANCE" columnNames="ID" />
+    	<addPrimaryKey tableName="TX_ACC_BALANCE" constraintName="PK_TX_ACC_BALANCE" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

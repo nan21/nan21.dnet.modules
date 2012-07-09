@@ -29,10 +29,10 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="MD_STOCKLOC_TYPE" constraintName="PK_STOCKLOC_TYPE" columnNames="ID" />
+    	<addPrimaryKey tableName="MD_STOCKLOC_TYPE" constraintName="PK_MD_STOCKLOC_TYPE" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="UK-1"> 
-		<addUniqueConstraint tableName="MD_STOCKLOC_TYPE" constraintName="UK_STOCKLOC_TYPE1" columnNames="CLIENTID, NAME" />
+		<addUniqueConstraint tableName="MD_STOCKLOC_TYPE" constraintName="UK_MD_STOCKLOC_TYPE1" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

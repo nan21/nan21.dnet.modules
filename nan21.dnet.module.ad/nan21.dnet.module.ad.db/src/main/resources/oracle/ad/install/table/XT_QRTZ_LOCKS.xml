@@ -11,7 +11,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="XT_QRTZ_LOCKS" constraintName="PK_QRTZ_LOCKS" columnNames="SCHED_NAME,LOCK_NAME" />
+    	<addPrimaryKey tableName="XT_QRTZ_LOCKS" constraintName="PK_XT_QRTZ_LOCKS" columnNames="SCHED_NAME,LOCK_NAME" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

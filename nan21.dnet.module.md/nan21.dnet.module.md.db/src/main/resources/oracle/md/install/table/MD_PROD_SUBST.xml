@@ -29,7 +29,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="MD_PROD_SUBST" constraintName="PK_PROD_SUBST" columnNames="ID" />
+    	<addPrimaryKey tableName="MD_PROD_SUBST" constraintName="PK_MD_PROD_SUBST" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

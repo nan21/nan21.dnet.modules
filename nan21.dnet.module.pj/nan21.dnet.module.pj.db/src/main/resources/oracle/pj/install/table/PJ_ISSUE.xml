@@ -61,10 +61,10 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="PJ_ISSUE" constraintName="PK_ISSUE" columnNames="ID" />
+    	<addPrimaryKey tableName="PJ_ISSUE" constraintName="PK_PJ_ISSUE" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="UK-1"> 
-		<addUniqueConstraint tableName="PJ_ISSUE" constraintName="UK_ISSUE1" columnNames="CLIENTID, CODE" />
+		<addUniqueConstraint tableName="PJ_ISSUE" constraintName="UK_PJ_ISSUE1" columnNames="CLIENTID, CODE" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

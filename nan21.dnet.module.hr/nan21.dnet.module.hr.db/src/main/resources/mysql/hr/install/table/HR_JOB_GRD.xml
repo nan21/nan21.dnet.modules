@@ -27,7 +27,7 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="HR_JOB_GRD" constraintName="PK_JOB_GRD" columnNames="ID" />
+    	<addPrimaryKey tableName="HR_JOB_GRD" constraintName="PK_HR_JOB_GRD" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">

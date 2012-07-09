@@ -98,10 +98,6 @@ public class Product extends AbstractTypeWithCode {
     @NotNull
     private Boolean showInCatalog;
 
-    /** Description. */
-    @Column(name = "DESCRIPTION", length = 400)
-    private String description;
-
     /** Flag which specifies if it is a physical-storable item. */
     @Column(name = "STORABLE", nullable = false)
     @NotNull
@@ -199,14 +195,6 @@ public class Product extends AbstractTypeWithCode {
 
     public void setShowInCatalog(Boolean showInCatalog) {
         this.showInCatalog = showInCatalog;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Boolean getStorable() {

@@ -37,10 +37,10 @@
         </createTable>
     </changeSet>    
     <changeSet author="amathe" id="PK">
-    	<addPrimaryKey tableName="MD_TAX" constraintName="PK_TAX" columnNames="ID" />
+    	<addPrimaryKey tableName="MD_TAX" constraintName="PK_MD_TAX" columnNames="ID" />
     </changeSet>       
 	<changeSet author="amathe" id="UK-1"> 
-		<addUniqueConstraint tableName="MD_TAX" constraintName="UK_TAX1" columnNames="CLIENTID, NAME" />
+		<addUniqueConstraint tableName="MD_TAX" constraintName="UK_MD_TAX1" columnNames="CLIENTID, NAME" />
 	</changeSet>
 	<changeSet author="amathe" id="SEQ">
 		<insert tableName="SEQUENCE">
