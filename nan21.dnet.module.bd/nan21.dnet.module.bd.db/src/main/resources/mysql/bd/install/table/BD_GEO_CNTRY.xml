@@ -18,6 +18,8 @@
 				<constraints  /></column>	 
 			<column name="DEFAULTLANGUAGE" type="varchar(5)">
 				<constraints  /></column>	 
+			<column name="DESCRIPTION" type="text">
+				<constraints  /></column>	 
 			<column name="HASREGIONS" type="int(1)">
 				<constraints nullable="false" /></column>	 
 			<column name="ID" type="bigint(19)">

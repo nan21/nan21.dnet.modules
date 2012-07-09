@@ -18,6 +18,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DEFAULTVALUE" type="varchar2(400)">
 				<constraints  /></column>	 
+			<column name="DESCRIPTION" type="varchar2(400)">
+				<constraints  /></column>	 
 			<column name="ID" type="number(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="LISTOFVALUES" type="varchar2(400)">

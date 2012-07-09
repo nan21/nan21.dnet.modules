@@ -16,6 +16,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREDITLIMIT" type="decimal(12,2)">
 				<constraints  /></column>	 
+			<column name="DESCRIPTION" type="text">
+				<constraints  /></column>	 
 			<column name="ID" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="MODIFIEDAT" type="datetime">

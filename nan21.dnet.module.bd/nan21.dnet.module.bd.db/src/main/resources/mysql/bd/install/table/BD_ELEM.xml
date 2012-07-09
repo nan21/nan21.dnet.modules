@@ -18,6 +18,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DATATYPE" type="varchar(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="DESCRIPTION" type="text">
+				<constraints  /></column>	 
 			<column name="ENTITYTYPE" type="varchar(32)">
 				<constraints  /></column>	 
 			<column name="ID" type="bigint(19)">

@@ -6,7 +6,7 @@ Ext.define("net.nan21.dnet.module.ad.impex.ds.model.ImportMapItemDs$Trl", {
 	dataSource__lbl :  "Sursă date",
 	path__lbl :  "Cale",
 	fileName__lbl :  "Nume fişier",
-	ukFieldName__lbl :  "Camp UK",
+	ukFieldName__lbl :  "Câmp UK",
 		 
 	importFileLocation__lbl : "Locaţie fişier",
 	importDataSource__lbl : "Data-source",

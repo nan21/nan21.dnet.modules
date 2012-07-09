@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.sd.ui.extjs</artifactId>
-	<version>1.0.0.RC2</version>
+	<version>1.0.0</version>
 	<name>DNet SD - ui extjs</name>	
 	<description>DNet SD - extjs user interface</description>
 	<packaging>war</packaging>	

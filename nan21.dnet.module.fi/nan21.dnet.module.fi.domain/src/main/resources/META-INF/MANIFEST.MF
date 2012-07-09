@@ -1,19 +1,18 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.fi.asset.domain.entity;version="
- 1.0.0.RC2";uses:="javax.persistence,javax.validation.constraints,java
- x.xml.bind.annotation,net.nan21.dnet.core.domain.model,net.nan21.dnet
- .module.bd.currency.domain.entity,net.nan21.dnet.module.md.acc.domain
- .entity,net.nan21.dnet.module.md.res.domain.entity,org.eclipse.persis
- tence.annotations,org.eclipse.persistence.descriptors,org.eclipse.per
- sistence.indirection,org.eclipse.persistence.internal.descriptors,org
- .eclipse.persistence.internal.weaving"
+ 1.0.0";uses:="javax.persistence,javax.validation.constraints,javax.xm
+ l.bind.annotation,net.nan21.dnet.core.domain.model,net.nan21.dnet.mod
+ ule.bd.currency.domain.entity,net.nan21.dnet.module.md.acc.domain.ent
+ ity,net.nan21.dnet.module.md.res.domain.entity,org.eclipse.persistenc
+ e.annotations,org.eclipse.persistence.descriptors,org.eclipse.persist
+ ence.indirection,org.eclipse.persistence.internal.descriptors,org.ecl
+ ipse.persistence.internal.weaving"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.ad
- .domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.bd.domain;v
- ersion="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.md.domain;version="[
- 1.0.0.RC2,1.0.0.RC2]"
+ dnet.core.domain;version="[1.0.0,1.0.0]",nan21.dnet.module.ad.domain;
+ version="[1.0.0,1.0.0]",nan21.dnet.module.bd.domain;version="[1.0.0,1
+ .0.0]",nan21.dnet.module.md.domain;version="[1.0.0,1.0.0]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC2
+Bundle-Version: 1.0.0
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet FI - domain
 Bundle-ManifestVersion: 2

@@ -16,6 +16,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DESCRIPTION" type="varchar2(400)">
 				<constraints  /></column>	 
+			<column name="DESCRIPTION" type="varchar2(400)">
+				<constraints  /></column>	 
 			<column name="DIMDEPTH" type="number(12,2)">
 				<constraints  /></column>	 
 			<column name="DIMHEIGHT" type="number(12,2)">

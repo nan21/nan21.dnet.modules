@@ -1,15 +1,14 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.fi.asset.business.service;versio
- n="1.0.0.RC2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.m
- odule.bd.currency.domain.entity,net.nan21.dnet.module.fi.asset.domain
- .entity,net.nan21.dnet.module.md.acc.domain.entity"
+ n="1.0.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modul
+ e.bd.currency.domain.entity,net.nan21.dnet.module.fi.asset.domain.ent
+ ity,net.nan21.dnet.module.md.acc.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.ad.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.modu
- le.bd.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.md.dom
- ain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.fi.domain;versi
- on="[1.0.0.RC2,1.0.0.RC2]"
+ dnet.module.ad.domain;version="[1.0.0,1.0.0]",nan21.dnet.module.bd.do
+ main;version="[1.0.0,1.0.0]",nan21.dnet.module.md.domain;version="[1.
+ 0.0,1.0.0]",nan21.dnet.module.fi.domain;version="[1.0.0,1.0.0]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC2
+Bundle-Version: 1.0.0
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet FI - business API
 Bundle-ManifestVersion: 2

@@ -16,6 +16,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DECIMALSEPARATOR" type="varchar(1)">
 				<constraints  /></column>	 
+			<column name="DESCRIPTION" type="text">
+				<constraints  /></column>	 
 			<column name="ID" type="bigint(19)">
 				<constraints nullable="false" /></column>	 
 			<column name="LOCKED" type="int(1)">

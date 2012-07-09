@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.hr.business</artifactId>
-	<version>1.0.0.RC2</version>
+	<version>1.0.0</version>
 	<name>DNet HR - business</name>	
 	<description>DNet HR - business</description>
 	<packaging>jar</packaging>	
@@ -16,77 +16,77 @@
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.api</artifactId>
-			<version>1.0.0.RC2</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.domain</artifactId>
-			<version>1.0.0.RC2</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.business</artifactId>
-			<version>1.0.0.RC2</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.ad.domain</artifactId>
-			<version>1.0.0.RC2</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.bd.domain</artifactId>
-			<version>1.0.0.RC2</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.md.domain</artifactId>
-			<version>1.0.0.RC2</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.hr.domain</artifactId>
-			<version>1.0.0.RC2</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.ad.business.api</artifactId>
-			<version>1.0.0.RC2</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.bd.business.api</artifactId>
-			<version>1.0.0.RC2</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.md.business.api</artifactId>
-			<version>1.0.0.RC2</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.hr.business.api</artifactId>
-			<version>1.0.0.RC2</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	

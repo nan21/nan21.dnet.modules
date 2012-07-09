@@ -1,22 +1,22 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.pj.base.domain.entity;version="1
- .0.0.RC2";uses:="javax.persistence,javax.validation.constraints,javax
- .xml.bind.annotation,net.nan21.dnet.core.domain.model,org.eclipse.per
- sistence.annotations,org.eclipse.persistence.descriptors,org.eclipse.
- persistence.indirection,org.eclipse.persistence.internal.descriptors,
- org.eclipse.persistence.internal.weaving",net.nan21.dnet.module.pj.md
- .domain.entity;version="1.0.0.RC2";uses:="javax.persistence,javax.val
- idation.constraints,javax.xml.bind.annotation,net.nan21.dnet.core.dom
- ain.model,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.dnet.m
- odule.pj.base.domain.entity,org.eclipse.persistence.annotations,org.e
- clipse.persistence.descriptors,org.eclipse.persistence.indirection,or
- g.eclipse.persistence.internal.descriptors,org.eclipse.persistence.in
- ternal.weaving,org.hibernate.validator.constraints"
+ .0.0";uses:="javax.persistence,javax.validation.constraints,javax.xml
+ .bind.annotation,net.nan21.dnet.core.domain.model,org.eclipse.persist
+ ence.annotations,org.eclipse.persistence.descriptors,org.eclipse.pers
+ istence.indirection,org.eclipse.persistence.internal.descriptors,org.
+ eclipse.persistence.internal.weaving",net.nan21.dnet.module.pj.md.dom
+ ain.entity;version="1.0.0";uses:="javax.persistence,javax.validation.
+ constraints,javax.xml.bind.annotation,net.nan21.dnet.core.domain.mode
+ l,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.dnet.module.pj
+ .base.domain.entity,org.eclipse.persistence.annotations,org.eclipse.p
+ ersistence.descriptors,org.eclipse.persistence.indirection,org.eclips
+ e.persistence.internal.descriptors,org.eclipse.persistence.internal.w
+ eaving,org.hibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0.RC2,1.0.0.RC2]",nan21.dnet.module.ad
- .domain;version="[1.0.0.RC2,1.0.0.RC2]"
+ dnet.core.domain;version="[1.0.0,1.0.0]",nan21.dnet.module.ad.domain;
+ version="[1.0.0,1.0.0]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0.RC2
+Bundle-Version: 1.0.0
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet PJ - domain
 Bundle-ManifestVersion: 2

@@ -14,6 +14,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="DESCRIPTION" type="varchar2(400)">
+				<constraints  /></column>	 
 			<column name="ICONURL" type="varchar2(255)">
 				<constraints  /></column>	 
 			<column name="ID" type="number(19)">

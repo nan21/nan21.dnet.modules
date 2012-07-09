@@ -16,6 +16,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DESCRIPTION" type="text">
 				<constraints  /></column>	 
+			<column name="DESCRIPTION" type="text">
+				<constraints  /></column>	 
 			<column name="DIMDEPTH" type="decimal(12,2)">
 				<constraints  /></column>	 
 			<column name="DIMHEIGHT" type="decimal(12,2)">

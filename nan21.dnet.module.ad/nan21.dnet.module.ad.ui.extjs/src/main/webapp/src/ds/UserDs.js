@@ -8,6 +8,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserDs" ,{
 	fields: [ 
 		{name:"name", type:"string"},
 		{name:"active", type:"boolean"},
+		{name:"description", type:"string"},
 		{name:"notes", type:"string"},
 		{name:"id", type:"int", useNull:true},
 		{name:"uuid", type:"string"},
@@ -39,6 +40,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.UserDsFilter" ,{
 	fields: [ 
 		{name:"name", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
+		{name:"description", type:"string"},
 		{name:"notes", type:"string"},
 		{name:"id", type:"int", useNull:true},
 		{name:"uuid", type:"string"},
