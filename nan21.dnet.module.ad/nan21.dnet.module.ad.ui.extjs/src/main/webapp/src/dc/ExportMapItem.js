@@ -43,6 +43,22 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem$Filter", {
 }); 
  	
  	
+
+Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem$FilterCtx", {
+	extend: "dnet.core.dc.AbstractDcvFilterPropGrid",
+ 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ExportMapItem$FilterCtx",
+	_defineElements_: function () {	
+		this._getBuilder_()	
+		.addTextField({ name:"csvExport", dataIndex:"csvExport",maxLength:255  })
+		.addTextField({ name:"fileName", dataIndex:"fileName",maxLength:255  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
+		 
+		
+	}
+	
+}); 
+ 	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ExportMapItem$EditListCtxExpMap", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",

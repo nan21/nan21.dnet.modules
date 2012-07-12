@@ -63,14 +63,6 @@ public class CommunicationChannel extends AbstractAuditable {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
-    /** TargetUuid. */
-    @Column(name = "TARGETUUID", length = 36)
-    private String targetUuid;
-
-    /** TargetType. */
-    @Column(name = "TARGETTYPE", length = 255)
-    private String targetType;
-
     /** Value. */
     @Column(name = "VALUE", length = 255)
     private String value;
@@ -84,6 +76,14 @@ public class CommunicationChannel extends AbstractAuditable {
     @Temporal(TemporalType.DATE)
     @Column(name = "VALIDTO")
     private Date validTo;
+
+    /** TargetUuid. */
+    @Column(name = "TARGETUUID", length = 36)
+    private String targetUuid;
+
+    /** TargetType. */
+    @Column(name = "TARGETTYPE", length = 255)
+    private String targetType;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = CommunicationChannelType.class)
     @JoinColumn(name = "TYPE_ID", referencedColumnName = "ID")
     private CommunicationChannelType type;
@@ -96,22 +96,6 @@ public class CommunicationChannel extends AbstractAuditable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getTargetUuid() {
-        return this.targetUuid;
-    }
-
-    public void setTargetUuid(String targetUuid) {
-        this.targetUuid = targetUuid;
-    }
-
-    public String getTargetType() {
-        return this.targetType;
-    }
-
-    public void setTargetType(String targetType) {
-        this.targetType = targetType;
     }
 
     public String getValue() {
@@ -136,6 +120,22 @@ public class CommunicationChannel extends AbstractAuditable {
 
     public void setValidTo(Date validTo) {
         this.validTo = validTo;
+    }
+
+    public String getTargetUuid() {
+        return this.targetUuid;
+    }
+
+    public void setTargetUuid(String targetUuid) {
+        this.targetUuid = targetUuid;
+    }
+
+    public String getTargetType() {
+        return this.targetType;
+    }
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
     }
 
     public CommunicationChannelType getType() {

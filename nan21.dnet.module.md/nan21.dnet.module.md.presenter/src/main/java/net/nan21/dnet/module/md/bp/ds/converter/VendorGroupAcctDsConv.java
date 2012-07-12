@@ -10,8 +10,8 @@ import net.nan21.dnet.module.md.acc.business.service.IAccSchemaService;
 import net.nan21.dnet.module.md.acc.business.service.IAccountService;
 import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
 import net.nan21.dnet.module.md.acc.domain.entity.Account;
-import net.nan21.dnet.module.md.bp.business.service.ICustomerGroupService;
-import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup;
+import net.nan21.dnet.module.md.bp.business.service.IVendorGroupService;
+import net.nan21.dnet.module.md.bp.domain.entity.VendorGroup;
 
 import net.nan21.dnet.core.presenter.converter.AbstractDsConverter;
 import net.nan21.dnet.module.md.bp.ds.model.VendorGroupAcctDs;
@@ -29,11 +29,11 @@ public class VendorGroupAcctDsConv extends
             if (e.getVendorGroup() == null
                     || !e.getVendorGroup().getId()
                             .equals(ds.getVendorGroupId())) {
-                e.setVendorGroup((CustomerGroup) this.em.find(
-                        CustomerGroup.class, ds.getVendorGroupId()));
+                e.setVendorGroup((VendorGroup) this.em.find(VendorGroup.class,
+                        ds.getVendorGroupId()));
             }
         } else {
-            this.lookup_vendorGroup_CustomerGroup(ds, e);
+            this.lookup_vendorGroup_VendorGroup(ds, e);
         }
 
         if (ds.getPurchaseAccountId() != null) {
@@ -70,16 +70,16 @@ public class VendorGroupAcctDsConv extends
 
     }
 
-    protected void lookup_vendorGroup_CustomerGroup(VendorGroupAcctDs ds,
+    protected void lookup_vendorGroup_VendorGroup(VendorGroupAcctDs ds,
             VendorGroupAcct e) throws Exception {
         if (ds.getVendorGroup() != null && !ds.getVendorGroup().equals("")) {
-            CustomerGroup x = null;
+            VendorGroup x = null;
             try {
-                x = ((ICustomerGroupService) findEntityService(CustomerGroup.class))
+                x = ((IVendorGroupService) findEntityService(VendorGroup.class))
                         .findByCode(ds.getVendorGroup());
             } catch (javax.persistence.NoResultException exception) {
                 throw new Exception(
-                        "Invalid value provided to find `CustomerGroup` reference:  `vendorGroup` = "
+                        "Invalid value provided to find `VendorGroup` reference:  `vendorGroup` = "
                                 + ds.getVendorGroup() + "  ");
             }
             e.setVendorGroup(x);

@@ -11,7 +11,7 @@ import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
 import net.nan21.dnet.module.md.acc.domain.entity.Account;
 import net.nan21.dnet.module.md.bp.business.service.IVendorGroupAcctService;
-import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup;
+import net.nan21.dnet.module.md.bp.domain.entity.VendorGroup;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.bp.domain.entity.VendorGroupAcct;
@@ -34,7 +34,7 @@ public class VendorGroupAcctService extends
         return VendorGroupAcct.class;
     }
 
-    public VendorGroupAcct findByGroup_schema(CustomerGroup vendorGroup,
+    public VendorGroupAcct findByGroup_schema(VendorGroup vendorGroup,
             AccSchema accSchema) {
         return (VendorGroupAcct) this.em
                 .createNamedQuery(VendorGroupAcct.NQ_FIND_BY_GROUP_SCHEMA)
@@ -53,7 +53,7 @@ public class VendorGroupAcctService extends
                 .setParameter("pAccSchemaId", accSchemaId).getSingleResult();
     }
 
-    public List<VendorGroupAcct> findByVendorGroup(CustomerGroup vendorGroup) {
+    public List<VendorGroupAcct> findByVendorGroup(VendorGroup vendorGroup) {
         return this.findByVendorGroupId(vendorGroup.getId());
     }
 

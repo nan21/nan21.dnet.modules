@@ -25,9 +25,9 @@ Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs" ,{
 		{name:"releaseDate", type:"date", dateFormat:Dnet.MODEL_DATE_FORMAT}
 	],
 	validations: [  
-		{field: "name", type: 'presence'}
-	]	
-	
+		{field: "name", type: 'presence'}, 
+		{field: "planDate", type: 'presence'}
+	]
 });
 
 Ext.define("net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDsFilter" ,{

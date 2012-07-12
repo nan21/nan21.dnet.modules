@@ -77,7 +77,7 @@ public class ProductCategory extends AbstractTypeWithCode {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
-    /** Parent category. */
+    /** Folder. */
     @Column(name = "FOLDER", nullable = false)
     @NotNull
     private Boolean folder;

@@ -60,6 +60,14 @@ public interface IIssueService extends IEntityService<Issue> {
 
     public List<Issue> findByFixedInVersionId(Long fixedInVersionId);
 
+    public List<Issue> findByAssignee(ProjectMember assignee);
+
+    public List<Issue> findByAssigneeId(Long assigneeId);
+
+    public List<Issue> findByAssigneeRole(ProjectRole assigneeRole);
+
+    public List<Issue> findByAssigneeRoleId(Long assigneeRoleId);
+
     public List<Issue> findByAffectedVersions(ProjectVersion affectedVersions);
 
     public List<Issue> findByAffectedVersionsId(Long affectedVersionsId);
@@ -68,13 +76,5 @@ public interface IIssueService extends IEntityService<Issue> {
             ProjectComponent affectedComponents);
 
     public List<Issue> findByAffectedComponentsId(Long affectedComponentsId);
-
-    public List<Issue> findByAssignee(ProjectMember assignee);
-
-    public List<Issue> findByAssigneeId(Long assigneeId);
-
-    public List<Issue> findByAssigneeRole(ProjectRole assigneeRole);
-
-    public List<Issue> findByAssigneeRoleId(Long assigneeRoleId);
 
 }

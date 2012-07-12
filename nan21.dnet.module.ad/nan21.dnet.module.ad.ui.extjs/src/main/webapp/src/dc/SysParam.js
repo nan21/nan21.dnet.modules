@@ -53,6 +53,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$List", {
 		.addTextColumn({ name:"code", dataIndex:"code", width:200 })   	
 		.addTextColumn({ name:"name", dataIndex:"name", width:200 })   	
 		.addTextColumn({ name:"value", dataIndex:"value", width:250 })   	
+		.addTextColumn({ name:"description", dataIndex:"description", hidden:true, width:200 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
 	  	.addDefaults()
 	  ;		   
@@ -72,7 +73,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Edit", {
 		.addTextField({ name:"name", dataIndex:"name" ,maxLength:255  })
 		.addTextField({ name:"code", dataIndex:"code" ,maxLength:32  })
 		.addCheckbox({ name:"active", dataIndex:"active"  })
-		.addTextArea({ name:"notes", dataIndex:"notes",height:100   })
+		.addTextArea({ name:"description", dataIndex:"description",height:100   })
 		.addTextField({ name:"defaultValue", dataIndex:"defaultValue" ,maxLength:400  })
 		.addTextField({ name:"value", dataIndex:"value" ,maxLength:400  })
 		//containers
@@ -83,7 +84,7 @@ Ext.define("net.nan21.dnet.module.ad.system.dc.SysParam$Edit", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ])
-		.addChildrenTo("col1",["code","name","notes","active","value"])
+		.addChildrenTo("col1",["code","name","description","active","value"])
 ;
 	}	
 });

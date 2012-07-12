@@ -34,3 +34,21 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJobItem$CtxEditList", {
 	}  
 });
  	
+ 		 
+Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportJobItem$ListCtxMap", {
+	extend: "dnet.core.dc.AbstractDcvGrid",
+	alias:"widget.net.nan21.dnet.module.ad.impex.dc.ImportJobItem$ListCtxMap",
+	
+	_defineColumns_: function () {	
+		this._getBuilder_()	
+		.addNumberColumn({ name:"sequenceNo", dataIndex:"sequenceNo" })  
+		.addTextColumn({ name:"jobName", dataIndex:"jobName", width:200 })   	
+		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
+		.addNumberColumn({ name:"jobId", dataIndex:"jobId", hidden:true,format:"0",width:70 })  
+		.addNumberColumn({ name:"mapId", dataIndex:"mapId", hidden:true,format:"0",width:70 })  
+	  	.addDefaults()
+	  ;		   
+	}
+});
+ 
+ 	

@@ -4,7 +4,7 @@
     
 	<changeSet author="amathe" id="FK-1">
 		<addForeignKeyConstraint constraintName="FK_MD_BP_VENDGRP_ACCT1" baseTableName="MD_BP_VENDGRP_ACCT" 
-			baseColumnNames="VENDORGROUP_ID"  referencedTableName="MD_BP_CUSTGRP"  referencedColumnNames="ID" />
+			baseColumnNames="VENDORGROUP_ID"  referencedTableName="MD_BP_VENDGRP"  referencedColumnNames="ID" />
 	</changeSet>	
 	<changeSet author="amathe" id="FK-2">
 		<addForeignKeyConstraint constraintName="FK_MD_BP_VENDGRP_ACCT2" baseTableName="MD_BP_VENDGRP_ACCT" 

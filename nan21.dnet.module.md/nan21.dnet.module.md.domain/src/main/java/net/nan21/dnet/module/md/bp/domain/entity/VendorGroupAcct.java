@@ -22,7 +22,7 @@ import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractAuditable;
 import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
 import net.nan21.dnet.module.md.acc.domain.entity.Account;
-import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup;
+import net.nan21.dnet.module.md.bp.domain.entity.VendorGroup;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -74,9 +74,9 @@ public class VendorGroupAcct extends AbstractAuditable {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = CustomerGroup.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = VendorGroup.class)
     @JoinColumn(name = "VENDORGROUP_ID", referencedColumnName = "ID")
-    private CustomerGroup vendorGroup;
+    private VendorGroup vendorGroup;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AccSchema.class)
     @JoinColumn(name = "ACCSCHEMA_ID", referencedColumnName = "ID")
     private AccSchema accSchema;
@@ -97,11 +97,11 @@ public class VendorGroupAcct extends AbstractAuditable {
         this.id = id;
     }
 
-    public CustomerGroup getVendorGroup() {
+    public VendorGroup getVendorGroup() {
         return this.vendorGroup;
     }
 
-    public void setVendorGroup(CustomerGroup vendorGroup) {
+    public void setVendorGroup(VendorGroup vendorGroup) {
         if (vendorGroup != null) {
             this.__validate_client_context__(vendorGroup.getClientId());
         }

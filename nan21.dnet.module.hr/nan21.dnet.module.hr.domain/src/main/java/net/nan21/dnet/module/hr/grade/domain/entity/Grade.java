@@ -25,7 +25,7 @@ import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
 
-/** */
+/** Grade. */
 @Entity
 @Table(name = Grade.TABLE_NAME, uniqueConstraints = {
         @UniqueConstraint(name = Grade.TABLE_NAME + "_UK1", columnNames = {

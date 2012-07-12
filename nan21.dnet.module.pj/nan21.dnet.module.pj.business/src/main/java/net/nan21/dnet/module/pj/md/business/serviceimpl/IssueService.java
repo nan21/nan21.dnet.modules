@@ -166,6 +166,33 @@ public class IssueService extends AbstractEntityService<Issue> implements
                 .getResultList();
     }
 
+    public List<Issue> findByAssignee(ProjectMember assignee) {
+        return this.findByAssigneeId(assignee.getId());
+    }
+
+    public List<Issue> findByAssigneeId(Long assigneeId) {
+        return (List<Issue>) this.em
+                .createQuery(
+                        "select e from Issue e where e.clientId = :pClientId and e.assignee.id = :pAssigneeId",
+                        Issue.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pAssigneeId", assigneeId).getResultList();
+    }
+
+    public List<Issue> findByAssigneeRole(ProjectRole assigneeRole) {
+        return this.findByAssigneeRoleId(assigneeRole.getId());
+    }
+
+    public List<Issue> findByAssigneeRoleId(Long assigneeRoleId) {
+        return (List<Issue>) this.em
+                .createQuery(
+                        "select e from Issue e where e.clientId = :pClientId and e.assigneeRole.id = :pAssigneeRoleId",
+                        Issue.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pAssigneeRoleId", assigneeRoleId)
+                .getResultList();
+    }
+
     public List<Issue> findByAffectedVersions(ProjectVersion affectedVersions) {
         return this.findByAffectedVersionsId(affectedVersions.getId());
     }
@@ -192,33 +219,6 @@ public class IssueService extends AbstractEntityService<Issue> implements
                         Issue.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pAffectedComponentsId", affectedComponentsId)
-                .getResultList();
-    }
-
-    public List<Issue> findByAssignee(ProjectMember assignee) {
-        return this.findByAssigneeId(assignee.getId());
-    }
-
-    public List<Issue> findByAssigneeId(Long assigneeId) {
-        return (List<Issue>) this.em
-                .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and e.assignee.id = :pAssigneeId",
-                        Issue.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pAssigneeId", assigneeId).getResultList();
-    }
-
-    public List<Issue> findByAssigneeRole(ProjectRole assigneeRole) {
-        return this.findByAssigneeRoleId(assigneeRole.getId());
-    }
-
-    public List<Issue> findByAssigneeRoleId(Long assigneeRoleId) {
-        return (List<Issue>) this.em
-                .createQuery(
-                        "select e from Issue e where e.clientId = :pClientId and e.assigneeRole.id = :pAssigneeRoleId",
-                        Issue.class)
-                .setParameter("pClientId", Session.user.get().getClientId())
-                .setParameter("pAssigneeRoleId", assigneeRoleId)
                 .getResultList();
     }
 

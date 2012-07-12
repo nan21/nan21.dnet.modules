@@ -1,12 +1,14 @@
-"code";"name";"value";"active"
-"CORE_EXP_HTML_CSS";"Css file location for HTML export";"http://localhost:8081/nan21.dnet.core.ui.extjs/resources/css/export-html.css";"true"
-"MM_MANUFACT_ICON_BASEURL";"Manufacturer icon base url";"http://dnet.nan21.net/static-demo-resources/MM/product-manufacturers";"true"
-"MM_MANUFACT_ICON_EXT";"Manufacturer icon default extension";"jpg";"true"
-"MM_PRODCATEG_ICON_BASEURL";"Product category icon base url";"http://dnet.nan21.net/static-demo-resources/MM/product-categories";"true"
-"MM_PRODCATEG_ICON_EXT";"Product category icon default extension";"jpg";"true"
-"MM_PRODUCT_ICON_BASEURL";"Product icon base url";"http://dnet.nan21.net/static-demo-resources/MM/products";"true"
-"MM_PRODUCT_ICON_EXT";"Product icon default extension";"jpg";"true"
-"MM_PRODUCT_ICON_SUFFIX";"Product icon default suffix";"-small";"true"
-"MM_PRODUCT_IMAGE_BASEURL";"Product image base url";"http://dnet.nan21.net/static-demo-resources/MM/products";"true"
-"MM_PRODUCT_IMAGE_EXT";"Product image default extension";"jpg";"true"
-"MM_PRODUCT_IMAGE_SUFFIX";"Product image default suffix";;"true"
+code;name;value;description;active
+SESSION_CHECK_IP;Check request IP;true;"Check if the remote client IP of the request is the same as the one used at login time. 
+Possible values: true, false";true
+CORE_EXP_HTML_CSS;Css file location for HTML export;http://localhost:8081/nan21.dnet.core.ui.extjs/resources/css/export-html.css;;true
+MM_MANUFACT_ICON_BASEURL;Manufacturer icon base url;http://dnet.nan21.net/static-demo-resources/MM/product-manufacturers;;true
+MM_MANUFACT_ICON_EXT;Manufacturer icon default extension;jpg;;true
+MM_PRODCATEG_ICON_BASEURL;Product category icon base url;http://dnet.nan21.net/static-demo-resources/MM/product-categories;;true
+MM_PRODCATEG_ICON_EXT;Product category icon default extension;jpg;;true
+MM_PRODUCT_ICON_BASEURL;Product icon base url;http://dnet.nan21.net/static-demo-resources/MM/products;;true
+MM_PRODUCT_ICON_EXT;Product icon default extension;jpg;;true
+MM_PRODUCT_ICON_SUFFIX;Product icon default suffix;-small;;true
+MM_PRODUCT_IMAGE_BASEURL;Product image base url;http://dnet.nan21.net/static-demo-resources/MM/products;;true
+MM_PRODUCT_IMAGE_EXT;Product image default extension;jpg;;true
+MM_PRODUCT_IMAGE_SUFFIX;Product image default suffix;;;true

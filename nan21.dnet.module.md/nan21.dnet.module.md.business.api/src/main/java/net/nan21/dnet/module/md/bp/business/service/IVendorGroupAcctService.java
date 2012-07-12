@@ -9,20 +9,20 @@ import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.md.acc.domain.entity.AccSchema;
 import net.nan21.dnet.module.md.acc.domain.entity.Account;
-import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup;
+import net.nan21.dnet.module.md.bp.domain.entity.VendorGroup;
 
 import net.nan21.dnet.module.md.bp.domain.entity.VendorGroupAcct;
 
 public interface IVendorGroupAcctService extends
         IEntityService<VendorGroupAcct> {
 
-    public VendorGroupAcct findByGroup_schema(CustomerGroup vendorGroup,
+    public VendorGroupAcct findByGroup_schema(VendorGroup vendorGroup,
             AccSchema accSchema);
 
     public VendorGroupAcct findByGroup_schema(Long vendorGroupId,
             Long accSchemaId);
 
-    public List<VendorGroupAcct> findByVendorGroup(CustomerGroup vendorGroup);
+    public List<VendorGroupAcct> findByVendorGroup(VendorGroup vendorGroup);
 
     public List<VendorGroupAcct> findByVendorGroupId(Long vendorGroupId);
 

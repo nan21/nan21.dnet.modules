@@ -16,6 +16,22 @@ Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMapItemCtx", {
 
 
  	
+
+Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMapItemCtx$Filter", {
+	extend: "dnet.core.dc.AbstractDcvFilterPropGrid",
+ 	alias: "widget.net.nan21.dnet.module.ad.impex.dc.ImportMapItemCtx$Filter",
+	_defineElements_: function () {	
+		this._getBuilder_()	
+		.addLov({ name:"dataSource", dataIndex:"dataSource",editor:{ xtype:"net.nan21.dnet.module.ad.system.lovs.SysDataSource", selectOnFocus:true,retFieldMapping: []}  })
+		.addTextField({ name:"fileName", dataIndex:"fileName",maxLength:255  })
+		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
+		 
+		
+	}
+	
+}); 
+ 	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.ad.impex.dc.ImportMapItemCtx$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",

@@ -27,7 +27,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.frame.Users_UI", {
 		.addButton({name:"btnCreateAssignable",text:"Create assignable", tooltip:"Create assignable resource record",disabled:true
 			,handler: this.onBtnCreateAssignable,scope:this,stateManager:{name:"record_is_clean", dc:"usr" }	})	
 							 	
-		.addDcFilterFormView("usr",{ name:"usrFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Filter",height:140})	 
+		.addDcFilterFormView("usr",{ name:"usrFilter", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Filter",height:120})	 
 		.addDcGridView("usr",{ name:"usrList", xtype:"net.nan21.dnet.module.ad.usr.dc.User$List"})	 
 		.addDcFormView("usr",{ name:"usrEdit", xtype:"net.nan21.dnet.module.ad.usr.dc.User$Edit",dockedItems:[{ xtype:"toolbar", ui:"footer", dock: 'bottom', weight:-1, items:[ this._elems_.get("btnAsgnRoles") ,this._elems_.get("btnAsgnGroups") ,this._elems_.get("btnChangePassword") ,this._elems_.get("btnCreateAssignable") ]}]})	 
 		.addDcFormView("usr",{ name:"canvasPassword", xtype:"net.nan21.dnet.module.ad.usr.dc.User$ChangePasswordForm"})	 
