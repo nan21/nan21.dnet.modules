@@ -92,6 +92,10 @@ public class SalesOrder extends AbstractAuditable {
     @Column(name = "DOCNO", length = 255)
     private String docNo;
 
+    /** Description. */
+    @Column(name = "DESCRIPTION", length = 400)
+    private String description;
+
     /** PlannedDeliveryDate. */
     @Temporal(TemporalType.DATE)
     @Column(name = "PLANNEDDELIVERYDATE")
@@ -216,6 +220,14 @@ public class SalesOrder extends AbstractAuditable {
 
     public void setDocNo(String docNo) {
         this.docNo = docNo;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Date getPlannedDeliveryDate() {

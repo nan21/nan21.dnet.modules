@@ -1,5 +1,7 @@
 code;name;value;description;active
-SESSION_CHECK_IP;Check request IP;true;"Check if the remote client IP of the request is the same as the one used at login time. 
+SESSION_CHECK_IP;Check request IP;false;"Check if the remote client IP of the request is the same as the one used at login time.
+Possible values: true, false";true
+SESSION_CHECK_USER_AGENT;Check request user-agent;false;"Check if the remote client user-agent of the request is the same as the one used at login time. 
 Possible values: true, false";true
 CORE_EXP_HTML_CSS;Css file location for HTML export;http://localhost:8081/nan21.dnet.core.ui.extjs/resources/css/export-html.css;;true
 MM_MANUFACT_ICON_BASEURL;Manufacturer icon base url;http://dnet.nan21.net/static-demo-resources/MM/product-manufacturers;;true

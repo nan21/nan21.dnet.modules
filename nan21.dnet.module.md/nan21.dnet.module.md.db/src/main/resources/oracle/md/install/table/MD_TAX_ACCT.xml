@@ -22,6 +22,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="ACCSCHEMA_ID" type="number(19)">	 
 				<constraints nullable="false" /></column>	 
+			<column name="NONDEDUCTACCOUNT_ID" type="number(19)">	 
+				<constraints  /></column>	 
 			<column name="PURCHASEACCOUNT_ID" type="number(19)">	 
 				<constraints  /></column>	 
 			<column name="SALESACCOUNT_ID" type="number(19)">	 

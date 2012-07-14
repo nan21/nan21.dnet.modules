@@ -18,6 +18,7 @@ public class SalesInvoiceItemDs extends AbstractAuditableDs<SalesInvoiceItem> {
     public static final String fPRODUCTID = "productId";
     public static final String fPRODUCTCODE = "productCode";
     public static final String fPRODUCTNAME = "productName";
+    public static final String fDESCRIPTION = "description";
     public static final String fQUANTITY = "quantity";
     public static final String fUOMID = "uomId";
     public static final String fUOMCODE = "uomCode";
@@ -39,6 +40,9 @@ public class SalesInvoiceItemDs extends AbstractAuditableDs<SalesInvoiceItem> {
 
     @DsField(join = "left", path = "product.name")
     private String productName;
+
+    @DsField()
+    private String description;
 
     @DsField()
     private Float quantity;
@@ -105,6 +109,14 @@ public class SalesInvoiceItemDs extends AbstractAuditableDs<SalesInvoiceItem> {
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Float getQuantity() {

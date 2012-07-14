@@ -10,6 +10,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="CREATEDBY" type="varchar2(32)">
 				<constraints nullable="false" /></column>	 
+			<column name="DESCRIPTION" type="varchar2(400)">
+				<constraints  /></column>	 
 			<column name="ENTRYMODE" type="varchar2(16)">
 				<constraints nullable="false" /></column>	 
 			<column name="ID" type="number(19)">

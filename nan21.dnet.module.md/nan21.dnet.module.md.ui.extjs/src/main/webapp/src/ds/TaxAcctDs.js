@@ -21,8 +21,13 @@ Ext.define("net.nan21.dnet.module.md.base.tax.ds.model.TaxAcctDs" ,{
 		{name:"accSchema", type:"string"},
 		{name:"salesAccountId", type:"int", useNull:true},
 		{name:"salesAccount", type:"string"},
+		{name:"salesAccountName", type:"string"},
 		{name:"purchaseAccountId", type:"int", useNull:true},
-		{name:"purchaseAccount", type:"string"}
+		{name:"purchaseAccount", type:"string"},
+		{name:"purchaseAccountName", type:"string"},
+		{name:"nonDeductAccountId", type:"int", useNull:true},
+		{name:"nonDeductAccount", type:"string"},
+		{name:"nonDeductAccountName", type:"string"}
 	]
 });
 
@@ -52,10 +57,17 @@ Ext.define("net.nan21.dnet.module.md.base.tax.ds.model.TaxAcctDsFilter" ,{
 		{name:"salesAccountId_From",type:"int", useNull:true},
 		{name:"salesAccountId_To",type:"int", useNull:true},
 		{name:"salesAccount", type:"string"},
+		{name:"salesAccountName", type:"string"},
 		{name:"purchaseAccountId", type:"int", useNull:true},
 		{name:"purchaseAccountId_From",type:"int", useNull:true},
 		{name:"purchaseAccountId_To",type:"int", useNull:true},
-		{name:"purchaseAccount", type:"string"}
+		{name:"purchaseAccount", type:"string"},
+		{name:"purchaseAccountName", type:"string"},
+		{name:"nonDeductAccountId", type:"int", useNull:true},
+		{name:"nonDeductAccountId_From",type:"int", useNull:true},
+		{name:"nonDeductAccountId_To",type:"int", useNull:true},
+		{name:"nonDeductAccount", type:"string"},
+		{name:"nonDeductAccountName", type:"string"}
 	] 
 });
 	

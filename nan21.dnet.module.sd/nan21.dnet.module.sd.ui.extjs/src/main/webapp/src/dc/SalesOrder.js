@@ -176,6 +176,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$EditDetails", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
 		.addDateField({ name:"plannedDeliveryDate", dataIndex:"plannedDeliveryDate" })
 		.addTextArea({ name:"deliveryNotes", dataIndex:"deliveryNotes",height:60   })
 		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentMethodIn", dataIndex:"paymentMethod" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
@@ -189,6 +190,7 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$EditDetails", {
 		.addLov({ name:"shipToContact", xtype:"net.nan21.dnet.module.md.bp.lovs.BpContacts", dataIndex:"shipToContact" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "shipToContactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "shipToId"} ]  })
 		.addLov({ name:"carrier", xtype:"net.nan21.dnet.module.bd.org.lovs.CarrierOrganizations", dataIndex:"carrier" ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "carrierId"} ]  })
 		//containers
+		.addPanel({ name:"col3", layout:"form" , width:400})     
 		.addPanel({ name:"panelBilling", layout:"form" ,title:"Invoice", width:400,xtype:"fieldset", border:true, collapsible:true})     
 		.addPanel({ name:"panelShipping", layout:"form" ,title:"Delivery", width:400,xtype:"fieldset", border:true, collapsible:true})     
 		.addPanel({ name:"panelPayment", layout:"form" ,title:"Payment", width:400,xtype:"fieldset", border:true, collapsible:true})     
@@ -199,9 +201,10 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrder$EditDetails", {
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1" ,"col2" ])
+		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
 		.addChildrenTo("col1",["panelShipping" ])
 		.addChildrenTo("col2",["panelPayment" ,"panelBilling" ])
+		.addChildrenTo("col3",["description"])
 		.addChildrenTo("panelBilling",["billTo","billToLocation","billToContact"])
 		.addChildrenTo("panelShipping",["shipTo","shipToLocation","shipToContact","plannedDeliveryDate","deliveryMethod","carrier","deliveryNotes"])
 		.addChildrenTo("panelPayment",["paymentMethod","paymentTerm"])

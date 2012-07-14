@@ -34,6 +34,9 @@ public class PurchaseInvoiceItemService
 						"In `price` entry mode, both line unit price and quantity must be specified. ");
 			}
 			e.setNetAmount(e.getQuantity() * e.getUnitPrice());
+			if (e.getTax() == null) {
+				e.setTaxAmount(0F);
+			}
 		} else {
 
 			if (e.getNetAmount() == null) {

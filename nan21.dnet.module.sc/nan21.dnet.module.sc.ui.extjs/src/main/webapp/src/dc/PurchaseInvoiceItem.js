@@ -15,6 +15,20 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem", {
 
 
 
+ 	
+
+Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem$FilterCtx", {
+	extend: "dnet.core.dc.AbstractDcvFilterPropGrid",
+ 	alias: "widget.net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem$FilterCtx",
+	_defineElements_: function () {	
+		this._getBuilder_()	
+		.addLov({ name:"productCode", dataIndex:"productCode",editor:{ xtype:"net.nan21.dnet.module.md.mm.prod.lovs.Products", selectOnFocus:true,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "productId"} ]}  })
+		 
+		
+	}
+	
+}); 
+ 	
  		 
 Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem$CtxList", {
 	extend: "dnet.core.dc.AbstractDcvGrid",
@@ -63,12 +77,14 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem$EditForm", {
 		.addDisplayFieldNumber({name:"netAmount", dataIndex:"netAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addDisplayFieldNumber({name:"taxAmount", dataIndex:"taxAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addDisplayFieldNumber({name:"lineAmount", dataIndex:"lineAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
 		.addLov({ name:"tax", xtype:"net.nan21.dnet.module.md.base.tax.lovs.TaxApplicables", dataIndex:"tax" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "taxId"} ]  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:400})     
-		.addPanel({ name:"col2", layout:"form" ,width:250})     
+		.addPanel({ name:"col5", layout:"form" , width:400})     
 		.addPanel({ name:"col3", layout:"form" ,width:250})     
 		.addPanel({ name:"col4", layout:"form" ,width:250})     
+		.addPanel({ name:"col2", layout:"form" ,width:250})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
 		.addPanel({ name:"row1",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
 		.addPanel({ name:"row2",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
@@ -77,12 +93,13 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoiceItem$EditForm", {
 	,_linkElements_: function () {
 		this._getBuilder_()
 		.addChildrenTo("main",["row1" ,"row2" ])
-		.addChildrenTo("row1",["col1" ,"col2" ])
+		.addChildrenTo("row1",["col1" ,"col5" ])
 		.addChildrenTo("col1",["productCode","productName","entryMode"])
-		.addChildrenTo("col2",["netAmount","taxAmount","lineAmount"])
-		.addChildrenTo("row2",["col3" ,"col4" ])
+		.addChildrenTo("col5",["description"])
+		.addChildrenTo("row2",["col3" ,"col4" ,"col2" ])
 		.addChildrenTo("col3",["quantity","uomCode","tax"])
 		.addChildrenTo("col4",["unitPrice","docLineNetAmount","docLineTaxAmount","docLineAmount"])
+		.addChildrenTo("col2",["netAmount","taxAmount","lineAmount"])
 ;
 	}	
 	,calcNetAmount: function() {	

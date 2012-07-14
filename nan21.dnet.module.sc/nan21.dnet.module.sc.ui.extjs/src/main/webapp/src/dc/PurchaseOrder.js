@@ -164,12 +164,14 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$EditDetails", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
 		.addDateField({ name:"plannedDeliveryDate", dataIndex:"plannedDeliveryDate" })
 		.addTextArea({ name:"deliveryNotes", dataIndex:"deliveryNotes",height:80   })
 		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentMethodOut", dataIndex:"paymentMethod" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
 		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentTerm", dataIndex:"paymentTerm" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
 		.addLov({ name:"deliveryMethod", xtype:"net.nan21.dnet.module.md.base.tx.lovs.DeliveryMethods", dataIndex:"deliveryMethod" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "deliveryMethodId"} ]  })
 		//containers
+		.addPanel({ name:"col3", layout:"form" , width:400})     
 		.addPanel({ name:"panelShipping", layout:"form" ,title:"Delivery", width:400,xtype:"fieldset", border:true, collapsible:true})     
 		.addPanel({ name:"panelPayment", layout:"form" ,title:"Payment", width:400,xtype:"fieldset", border:true, collapsible:true})     
 		.addPanel({ name:"col1"  })      	 
@@ -179,9 +181,10 @@ Ext.define("net.nan21.dnet.module.sc.order.dc.PurchaseOrder$EditDetails", {
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1" ,"col2" ])
+		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
 		.addChildrenTo("col1",["panelShipping" ])
 		.addChildrenTo("col2",["panelPayment" ])
+		.addChildrenTo("col3",["description"])
 		.addChildrenTo("panelShipping",["deliveryMethod","plannedDeliveryDate","deliveryNotes"])
 		.addChildrenTo("panelPayment",["paymentMethod","paymentTerm"])
 ;

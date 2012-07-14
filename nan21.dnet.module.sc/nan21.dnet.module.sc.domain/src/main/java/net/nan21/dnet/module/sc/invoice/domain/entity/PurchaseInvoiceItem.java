@@ -92,6 +92,10 @@ public class PurchaseInvoiceItem extends AbstractAuditable {
     @NotNull
     private Float lineAmount;
 
+    /** Description. */
+    @Column(name = "DESCRIPTION", length = 400)
+    private String description;
+
     /** EntryMode. */
     @Column(name = "ENTRYMODE", nullable = false, length = 16)
     @NotBlank
@@ -166,6 +170,14 @@ public class PurchaseInvoiceItem extends AbstractAuditable {
 
     public void setLineAmount(Float lineAmount) {
         this.lineAmount = lineAmount;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getEntryMode() {

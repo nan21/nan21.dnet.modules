@@ -16,6 +16,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="DELIVERYNOTES" type="varchar2(4000)">
 				<constraints  /></column>	 
+			<column name="DESCRIPTION" type="varchar2(400)">
+				<constraints  /></column>	 
 			<column name="DOCDATE" type="date">
 				<constraints nullable="false" /></column>	 
 			<column name="DOCNO" type="varchar2(255)">

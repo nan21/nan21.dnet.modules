@@ -16,7 +16,7 @@ public class AccountDsFilter extends AbstractTypeWithCodeDsFilter {
 
     private String accSchema;
 
-    private String sign;
+    private String type;
 
     private Boolean summary;
 
@@ -52,12 +52,12 @@ public class AccountDsFilter extends AbstractTypeWithCodeDsFilter {
         this.accSchema = accSchema;
     }
 
-    public String getSign() {
-        return this.sign;
+    public String getType() {
+        return this.type;
     }
 
-    public void setSign(String sign) {
-        this.sign = sign;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Boolean getSummary() {

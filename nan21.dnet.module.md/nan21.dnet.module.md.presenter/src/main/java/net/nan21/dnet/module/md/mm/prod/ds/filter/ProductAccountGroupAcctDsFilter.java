@@ -30,12 +30,16 @@ public class ProductAccountGroupAcctDsFilter extends AbstractAuditableDsFilter {
 
     private String expenseAccount;
 
+    private String expenseAccountName;
+
     private Long revenueAccountId;
 
     private Long revenueAccountId_From;
     private Long revenueAccountId_To;
 
     private String revenueAccount;
+
+    private String revenueAccountName;
 
     public Long getGroupId() {
         return this.groupId;
@@ -133,6 +137,14 @@ public class ProductAccountGroupAcctDsFilter extends AbstractAuditableDsFilter {
         this.expenseAccount = expenseAccount;
     }
 
+    public String getExpenseAccountName() {
+        return this.expenseAccountName;
+    }
+
+    public void setExpenseAccountName(String expenseAccountName) {
+        this.expenseAccountName = expenseAccountName;
+    }
+
     public Long getRevenueAccountId() {
         return this.revenueAccountId;
     }
@@ -163,6 +175,14 @@ public class ProductAccountGroupAcctDsFilter extends AbstractAuditableDsFilter {
 
     public void setRevenueAccount(String revenueAccount) {
         this.revenueAccount = revenueAccount;
+    }
+
+    public String getRevenueAccountName() {
+        return this.revenueAccountName;
+    }
+
+    public void setRevenueAccountName(String revenueAccountName) {
+        this.revenueAccountName = revenueAccountName;
     }
 
 }

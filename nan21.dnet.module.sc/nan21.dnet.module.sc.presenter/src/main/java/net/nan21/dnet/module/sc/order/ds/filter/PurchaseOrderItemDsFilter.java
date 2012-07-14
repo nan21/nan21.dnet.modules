@@ -23,6 +23,8 @@ public class PurchaseOrderItemDsFilter extends AbstractAuditableDsFilter {
 
     private String productName;
 
+    private String description;
+
     private Long uomId;
 
     private Long uomId_From;
@@ -124,6 +126,14 @@ public class PurchaseOrderItemDsFilter extends AbstractAuditableDsFilter {
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getUomId() {

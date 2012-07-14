@@ -26,6 +26,7 @@ public class PurchaseInvoiceDs extends AbstractAuditableDs<PurchaseInvoice> {
     public static final String fSUPPLIER = "supplier";
     public static final String fDOCTYPEID = "docTypeId";
     public static final String fDOCTYPE = "docType";
+    public static final String fDESCRIPTION = "description";
     public static final String fPAYMENTMETHODID = "paymentMethodId";
     public static final String fPAYMENTMETHOD = "paymentMethod";
     public static final String fPAYMENTMETHODTYPE = "paymentMethodType";
@@ -77,6 +78,9 @@ public class PurchaseInvoiceDs extends AbstractAuditableDs<PurchaseInvoice> {
 
     @DsField(join = "left", path = "docType.name")
     private String docType;
+
+    @DsField()
+    private String description;
 
     @DsField(join = "left", path = "paymentMethod.id")
     private Long paymentMethodId;
@@ -226,6 +230,14 @@ public class PurchaseInvoiceDs extends AbstractAuditableDs<PurchaseInvoice> {
 
     public void setDocType(String docType) {
         this.docType = docType;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getPaymentMethodId() {

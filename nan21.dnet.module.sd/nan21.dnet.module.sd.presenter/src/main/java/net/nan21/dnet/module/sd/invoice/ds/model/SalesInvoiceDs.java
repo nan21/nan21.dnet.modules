@@ -22,6 +22,7 @@ public class SalesInvoiceDs extends AbstractAuditableDs<SalesInvoice> {
     public static final String fSUPPLIER = "supplier";
     public static final String fDOCTYPEID = "docTypeId";
     public static final String fDOCTYPE = "docType";
+    public static final String fDESCRIPTION = "description";
     public static final String fCUSTOMERID = "customerId";
     public static final String fCUSTOMERUUID = "customerUuid";
     public static final String fCUSTOMERCODE = "customerCode";
@@ -68,6 +69,9 @@ public class SalesInvoiceDs extends AbstractAuditableDs<SalesInvoice> {
 
     @DsField(join = "left", path = "docType.name")
     private String docType;
+
+    @DsField()
+    private String description;
 
     @DsField(noUpdate = true, join = "left", path = "customer.id")
     private Long customerId;
@@ -206,6 +210,14 @@ public class SalesInvoiceDs extends AbstractAuditableDs<SalesInvoice> {
 
     public void setDocType(String docType) {
         this.docType = docType;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getCustomerId() {

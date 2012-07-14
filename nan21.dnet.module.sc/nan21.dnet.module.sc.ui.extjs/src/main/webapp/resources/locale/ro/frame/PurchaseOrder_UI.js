@@ -1,5 +1,6 @@
 Ext.define("net.nan21.dnet.module.sc.order.frame.PurchaseOrder_UI$Trl", { 
 	orderEditDetails__ttl : "Detalii",
+	itemFilter__ttl : "Filtru",
 	itemTaxList__ttl : "Taxe linie comandă",
 	atchEditList__ttl : "Ataşamente",
 	notesPanel__ttl : "Note",

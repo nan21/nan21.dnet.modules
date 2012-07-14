@@ -25,7 +25,6 @@ import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 import org.eclipse.persistence.descriptors.DescriptorEvent;
-import org.hibernate.validator.constraints.NotBlank;
 
 /** Accounting schema definition.  */
 @Entity
@@ -67,10 +66,9 @@ public class Account extends AbstractTypeWithCode {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
-    /** Sign. */
-    @Column(name = "SIGN", nullable = false, length = 16)
-    @NotBlank
-    private String sign;
+    /** Type. */
+    @Column(name = "TYPE", length = 16)
+    private String type;
 
     /** Summary. */
     @Column(name = "SUMMARY", nullable = false)
@@ -90,12 +88,12 @@ public class Account extends AbstractTypeWithCode {
         this.id = id;
     }
 
-    public String getSign() {
-        return this.sign;
+    public String getType() {
+        return this.type;
     }
 
-    public void setSign(String sign) {
-        this.sign = sign;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Boolean getSummary() {

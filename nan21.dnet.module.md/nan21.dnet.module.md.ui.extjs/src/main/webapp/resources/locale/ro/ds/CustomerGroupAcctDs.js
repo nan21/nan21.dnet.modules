@@ -6,8 +6,10 @@ Ext.define("net.nan21.dnet.module.md.bp.ds.model.CustomerGroupAcctDs$Trl", {
 	accSchema__lbl :    "Schemă contabilă",
 	salesAccountId__lbl :    "Cont vanzări(ID)",
 	salesAccount__lbl :    "Cont vanzări",
+	salesAccountName__lbl :    "Cont vanzări",
 	prepayAccountId__lbl :    "Cont avans(ID)",
 	prepayAccount__lbl :    "Cont avans",
+	prepayAccountName__lbl :    "Cont avans",
 		 
 	id__lbl :"ID"
 });

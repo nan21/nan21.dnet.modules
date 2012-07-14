@@ -86,6 +86,10 @@ public class SalesOrderItem extends AbstractAuditable {
     @Column(name = "TAXAMOUNT", nullable = false, scale = 2)
     @NotNull
     private Float taxAmount;
+
+    /** Description. */
+    @Column(name = "DESCRIPTION", length = 400)
+    private String description;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = SalesOrder.class)
     @JoinColumn(name = "SALESORDER_ID", referencedColumnName = "ID")
     private SalesOrder salesOrder;
@@ -152,6 +156,14 @@ public class SalesOrderItem extends AbstractAuditable {
 
     public void setLineAmount(Float lineAmount) {
 
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public SalesOrder getSalesOrder() {

@@ -21,8 +21,10 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.ds.model.ProductAccountGroupAcctDs"
 		{name:"accSchema", type:"string"},
 		{name:"expenseAccountId", type:"int", useNull:true},
 		{name:"expenseAccount", type:"string"},
+		{name:"expenseAccountName", type:"string"},
 		{name:"revenueAccountId", type:"int", useNull:true},
-		{name:"revenueAccount", type:"string"}
+		{name:"revenueAccount", type:"string"},
+		{name:"revenueAccountName", type:"string"}
 	]
 });
 
@@ -52,10 +54,12 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.ds.model.ProductAccountGroupAcctDsF
 		{name:"expenseAccountId_From",type:"int", useNull:true},
 		{name:"expenseAccountId_To",type:"int", useNull:true},
 		{name:"expenseAccount", type:"string"},
+		{name:"expenseAccountName", type:"string"},
 		{name:"revenueAccountId", type:"int", useNull:true},
 		{name:"revenueAccountId_From",type:"int", useNull:true},
 		{name:"revenueAccountId_To",type:"int", useNull:true},
-		{name:"revenueAccount", type:"string"}
+		{name:"revenueAccount", type:"string"},
+		{name:"revenueAccountName", type:"string"}
 	] 
 });
 	

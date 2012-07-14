@@ -3,6 +3,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.frame.SalesInvoice_UI$Trl", {
 	invEditDetails__ttl : "Details",
 	taxList__ttl : "Taxes",
 	accDocLineFilter__ttl : "Filter",
+	itemFilter__ttl : "Filter",
 	itemTaxList__ttl : "Item taxes",
 	amountList__ttl : "Payment schedule",
 	atchEditList__ttl : "Attachments",

@@ -5,18 +5,24 @@
  */
 package net.nan21.dnet.module.md.mm.prod.domain.entity;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import net.nan21.dnet.core.domain.eventhandler.DefaultEventHandler;
 import net.nan21.dnet.core.domain.model.AbstractTypeWithCode;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
@@ -71,6 +77,10 @@ public class ProductAccountGroup extends AbstractTypeWithCode {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = ProductAccountGroupAcct.class, mappedBy = "group", cascade = CascadeType.ALL)
+    @CascadeOnDelete
+    private Collection<ProductAccountGroupAcct> accounts;
+
     /* ============== getters - setters ================== */
 
     public Long getId() {
@@ -79,6 +89,22 @@ public class ProductAccountGroup extends AbstractTypeWithCode {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Collection<ProductAccountGroupAcct> getAccounts() {
+        return this.accounts;
+    }
+
+    public void setAccounts(Collection<ProductAccountGroupAcct> accounts) {
+        this.accounts = accounts;
+    }
+
+    public void addToAccounts(ProductAccountGroupAcct e) {
+        if (this.accounts == null) {
+            this.accounts = new ArrayList<ProductAccountGroupAcct>();
+        }
+        e.setGroup(this);
+        this.accounts.add(e);
     }
 
     public void aboutToInsert(DescriptorEvent event) {

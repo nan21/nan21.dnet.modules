@@ -90,10 +90,9 @@ public class PurchaseInvoice extends AbstractAuditable {
     @Column(name = "DOCNO", length = 255)
     private String docNo;
 
-    /** SelfPayed. */
-    @Column(name = "SELFPAYED", nullable = false)
-    @NotNull
-    private Boolean selfPayed;
+    /** Description. */
+    @Column(name = "DESCRIPTION", length = 400)
+    private String description;
 
     /** TotalNetAmount. */
     @Column(name = "TOTALNETAMOUNT", scale = 2)
@@ -106,6 +105,11 @@ public class PurchaseInvoice extends AbstractAuditable {
     /** TotalAmount. */
     @Column(name = "TOTALAMOUNT", scale = 2)
     private Float totalAmount;
+
+    /** SelfPayed. */
+    @Column(name = "SELFPAYED", nullable = false)
+    @NotNull
+    private Boolean selfPayed;
 
     /** Confirmed. */
     @Column(name = "CONFIRMED", nullable = false)
@@ -183,12 +187,12 @@ public class PurchaseInvoice extends AbstractAuditable {
         this.docNo = docNo;
     }
 
-    public Boolean getSelfPayed() {
-        return this.selfPayed;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setSelfPayed(Boolean selfPayed) {
-        this.selfPayed = selfPayed;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Float getTotalNetAmount() {
@@ -213,6 +217,14 @@ public class PurchaseInvoice extends AbstractAuditable {
 
     public void setTotalAmount(Float totalAmount) {
         this.totalAmount = totalAmount;
+    }
+
+    public Boolean getSelfPayed() {
+        return this.selfPayed;
+    }
+
+    public void setSelfPayed(Boolean selfPayed) {
+        this.selfPayed = selfPayed;
     }
 
     public Boolean getConfirmed() {

@@ -21,8 +21,10 @@ Ext.define("net.nan21.dnet.module.md.bp.ds.model.VendorGroupAcctDs" ,{
 		{name:"accSchema", type:"string"},
 		{name:"purchaseAccountId", type:"int", useNull:true},
 		{name:"purchaseAccount", type:"string"},
+		{name:"purchaseAccountName", type:"string"},
 		{name:"prepayAccountId", type:"int", useNull:true},
-		{name:"prepayAccount", type:"string"}
+		{name:"prepayAccount", type:"string"},
+		{name:"prepayAccountName", type:"string"}
 	]
 });
 
@@ -52,10 +54,12 @@ Ext.define("net.nan21.dnet.module.md.bp.ds.model.VendorGroupAcctDsFilter" ,{
 		{name:"purchaseAccountId_From",type:"int", useNull:true},
 		{name:"purchaseAccountId_To",type:"int", useNull:true},
 		{name:"purchaseAccount", type:"string"},
+		{name:"purchaseAccountName", type:"string"},
 		{name:"prepayAccountId", type:"int", useNull:true},
 		{name:"prepayAccountId_From",type:"int", useNull:true},
 		{name:"prepayAccountId_To",type:"int", useNull:true},
-		{name:"prepayAccount", type:"string"}
+		{name:"prepayAccount", type:"string"},
+		{name:"prepayAccountName", type:"string"}
 	] 
 });
 	

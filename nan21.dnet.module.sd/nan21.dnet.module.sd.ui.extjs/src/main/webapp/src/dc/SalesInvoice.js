@@ -161,6 +161,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$EditDetails", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
 		.addTextField({ name:"salesOrderCode", dataIndex:"salesOrderCode", width:170,noEdit:true  ,maxLength:32  })
 		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentMethodIn", dataIndex:"paymentMethod" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
 		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentTerm", dataIndex:"paymentTerm" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
@@ -168,6 +169,7 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$EditDetails", {
 		.addLov({ name:"billToContact", xtype:"net.nan21.dnet.module.md.bp.lovs.BpContacts", dataIndex:"billToContact" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "billToContactId"} ],filterFieldMapping: [{lovField:"bpartnerId", dsField: "customerId"} ]  })
 		//containers
 		.addPanel({ name:"col2", layout:"form" ,width:250})     
+		.addPanel({ name:"col3", layout:"form" , width:400})     
 		.addPanel({ name:"panelBillTo", layout:"form" ,title:"Others", width:350,xtype:"fieldset", border:true, collapsible:true})     
 		.addPanel({ name:"panelPayment", layout:"form" ,title:"Payment", width:350,xtype:"fieldset", border:true, collapsible:true})     
 		.addPanel({ name:"col1"  })      	 
@@ -176,9 +178,10 @@ Ext.define("net.nan21.dnet.module.sd.invoice.dc.SalesInvoice$EditDetails", {
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1" ,"col2" ])
+		.addChildrenTo("main",["col1" ,"col2" ,"col3" ])
 		.addChildrenTo("col1",["panelPayment" ,"panelBillTo" ])
 		.addChildrenTo("col2",["salesOrderCode"])
+		.addChildrenTo("col3",["description"])
 		.addChildrenTo("panelBillTo",["billToLocation","billToContact"])
 		.addChildrenTo("panelPayment",["paymentMethod","paymentTerm"])
 ;

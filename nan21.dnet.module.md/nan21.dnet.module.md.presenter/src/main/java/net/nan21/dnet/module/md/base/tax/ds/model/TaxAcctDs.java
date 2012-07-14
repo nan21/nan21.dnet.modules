@@ -20,8 +20,13 @@ public class TaxAcctDs extends AbstractAuditableDs<TaxAcct> {
     public static final String fACCSCHEMA = "accSchema";
     public static final String fSALESACCOUNTID = "salesAccountId";
     public static final String fSALESACCOUNT = "salesAccount";
+    public static final String fSALESACCOUNTNAME = "salesAccountName";
     public static final String fPURCHASEACCOUNTID = "purchaseAccountId";
     public static final String fPURCHASEACCOUNT = "purchaseAccount";
+    public static final String fPURCHASEACCOUNTNAME = "purchaseAccountName";
+    public static final String fNONDEDUCTACCOUNTID = "nonDeductAccountId";
+    public static final String fNONDEDUCTACCOUNT = "nonDeductAccount";
+    public static final String fNONDEDUCTACCOUNTNAME = "nonDeductAccountName";
 
     @DsField(join = "left", path = "tax.id")
     private Long taxId;
@@ -41,11 +46,26 @@ public class TaxAcctDs extends AbstractAuditableDs<TaxAcct> {
     @DsField(join = "left", path = "salesAccount.code")
     private String salesAccount;
 
+    @DsField(join = "left", path = "salesAccount.name")
+    private String salesAccountName;
+
     @DsField(join = "left", path = "purchaseAccount.id")
     private Long purchaseAccountId;
 
     @DsField(join = "left", path = "purchaseAccount.code")
     private String purchaseAccount;
+
+    @DsField(join = "left", path = "purchaseAccount.name")
+    private String purchaseAccountName;
+
+    @DsField(join = "left", path = "nonDeductAccount.id")
+    private Long nonDeductAccountId;
+
+    @DsField(join = "left", path = "nonDeductAccount.code")
+    private String nonDeductAccount;
+
+    @DsField(join = "left", path = "nonDeductAccount.name")
+    private String nonDeductAccountName;
 
     public TaxAcctDs() {
         super();
@@ -103,6 +123,14 @@ public class TaxAcctDs extends AbstractAuditableDs<TaxAcct> {
         this.salesAccount = salesAccount;
     }
 
+    public String getSalesAccountName() {
+        return this.salesAccountName;
+    }
+
+    public void setSalesAccountName(String salesAccountName) {
+        this.salesAccountName = salesAccountName;
+    }
+
     public Long getPurchaseAccountId() {
         return this.purchaseAccountId;
     }
@@ -117,6 +145,38 @@ public class TaxAcctDs extends AbstractAuditableDs<TaxAcct> {
 
     public void setPurchaseAccount(String purchaseAccount) {
         this.purchaseAccount = purchaseAccount;
+    }
+
+    public String getPurchaseAccountName() {
+        return this.purchaseAccountName;
+    }
+
+    public void setPurchaseAccountName(String purchaseAccountName) {
+        this.purchaseAccountName = purchaseAccountName;
+    }
+
+    public Long getNonDeductAccountId() {
+        return this.nonDeductAccountId;
+    }
+
+    public void setNonDeductAccountId(Long nonDeductAccountId) {
+        this.nonDeductAccountId = nonDeductAccountId;
+    }
+
+    public String getNonDeductAccount() {
+        return this.nonDeductAccount;
+    }
+
+    public void setNonDeductAccount(String nonDeductAccount) {
+        this.nonDeductAccount = nonDeductAccount;
+    }
+
+    public String getNonDeductAccountName() {
+        return this.nonDeductAccountName;
+    }
+
+    public void setNonDeductAccountName(String nonDeductAccountName) {
+        this.nonDeductAccountName = nonDeductAccountName;
     }
 
 }

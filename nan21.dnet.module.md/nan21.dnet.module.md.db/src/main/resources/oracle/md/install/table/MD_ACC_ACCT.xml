@@ -26,10 +26,10 @@
 				<constraints nullable="false" /></column>	 
 			<column name="NOTES" type="varchar2(4000)">
 				<constraints  /></column>	 
-			<column name="SIGN" type="varchar2(16)">
-				<constraints nullable="false" /></column>	 
 			<column name="SUMMARY" type="number(1)">
 				<constraints nullable="false" /></column>	 
+			<column name="TYPE" type="varchar2(16)">
+				<constraints  /></column>	 
 			<column name="UUID" type="varchar2(36)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="number(19)">

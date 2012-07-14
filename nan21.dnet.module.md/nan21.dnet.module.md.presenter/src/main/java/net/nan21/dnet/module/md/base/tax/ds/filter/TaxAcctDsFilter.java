@@ -30,12 +30,25 @@ public class TaxAcctDsFilter extends AbstractAuditableDsFilter {
 
     private String salesAccount;
 
+    private String salesAccountName;
+
     private Long purchaseAccountId;
 
     private Long purchaseAccountId_From;
     private Long purchaseAccountId_To;
 
     private String purchaseAccount;
+
+    private String purchaseAccountName;
+
+    private Long nonDeductAccountId;
+
+    private Long nonDeductAccountId_From;
+    private Long nonDeductAccountId_To;
+
+    private String nonDeductAccount;
+
+    private String nonDeductAccountName;
 
     public Long getTaxId() {
         return this.taxId;
@@ -133,6 +146,14 @@ public class TaxAcctDsFilter extends AbstractAuditableDsFilter {
         this.salesAccount = salesAccount;
     }
 
+    public String getSalesAccountName() {
+        return this.salesAccountName;
+    }
+
+    public void setSalesAccountName(String salesAccountName) {
+        this.salesAccountName = salesAccountName;
+    }
+
     public Long getPurchaseAccountId() {
         return this.purchaseAccountId;
     }
@@ -163,6 +184,54 @@ public class TaxAcctDsFilter extends AbstractAuditableDsFilter {
 
     public void setPurchaseAccount(String purchaseAccount) {
         this.purchaseAccount = purchaseAccount;
+    }
+
+    public String getPurchaseAccountName() {
+        return this.purchaseAccountName;
+    }
+
+    public void setPurchaseAccountName(String purchaseAccountName) {
+        this.purchaseAccountName = purchaseAccountName;
+    }
+
+    public Long getNonDeductAccountId() {
+        return this.nonDeductAccountId;
+    }
+
+    public Long getNonDeductAccountId_From() {
+        return this.nonDeductAccountId_From;
+    }
+
+    public Long getNonDeductAccountId_To() {
+        return this.nonDeductAccountId_To;
+    }
+
+    public void setNonDeductAccountId(Long nonDeductAccountId) {
+        this.nonDeductAccountId = nonDeductAccountId;
+    }
+
+    public void setNonDeductAccountId_From(Long nonDeductAccountId_From) {
+        this.nonDeductAccountId_From = nonDeductAccountId_From;
+    }
+
+    public void setNonDeductAccountId_To(Long nonDeductAccountId_To) {
+        this.nonDeductAccountId_To = nonDeductAccountId_To;
+    }
+
+    public String getNonDeductAccount() {
+        return this.nonDeductAccount;
+    }
+
+    public void setNonDeductAccount(String nonDeductAccount) {
+        this.nonDeductAccount = nonDeductAccount;
+    }
+
+    public String getNonDeductAccountName() {
+        return this.nonDeductAccountName;
+    }
+
+    public void setNonDeductAccountName(String nonDeductAccountName) {
+        this.nonDeductAccountName = nonDeductAccountName;
     }
 
 }

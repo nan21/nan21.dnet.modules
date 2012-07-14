@@ -4,6 +4,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.frame.PurchaseInvoice_UI$Trl", {
 	amountList__ttl : "Payment schedule",
 	taxList__ttl : "Taxes",
 	accDocLineFilter__ttl : "Filter",
+	itemFilter__ttl : "Filter",
 	itemTaxList__ttl : "Item taxes",
 	atchEditList__ttl : "Attachments",
 	accDocPanel__ttl : "Accounting",

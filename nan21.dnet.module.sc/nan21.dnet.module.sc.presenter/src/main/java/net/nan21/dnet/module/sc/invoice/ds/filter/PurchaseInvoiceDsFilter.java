@@ -44,6 +44,8 @@ public class PurchaseInvoiceDsFilter extends AbstractAuditableDsFilter {
 
     private String docType;
 
+    private String description;
+
     private Long paymentMethodId;
 
     private Long paymentMethodId_From;
@@ -254,6 +256,14 @@ public class PurchaseInvoiceDsFilter extends AbstractAuditableDsFilter {
 
     public void setDocType(String docType) {
         this.docType = docType;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getPaymentMethodId() {

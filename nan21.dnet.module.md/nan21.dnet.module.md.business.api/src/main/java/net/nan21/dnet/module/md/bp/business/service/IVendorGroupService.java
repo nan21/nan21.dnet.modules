@@ -9,6 +9,7 @@ import java.util.List;
 import net.nan21.dnet.core.api.service.IEntityService;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentTerm;
+import net.nan21.dnet.module.md.bp.domain.entity.VendorGroupAcct;
 
 import net.nan21.dnet.module.md.bp.domain.entity.VendorGroup;
 
@@ -25,5 +26,9 @@ public interface IVendorGroupService extends IEntityService<VendorGroup> {
     public List<VendorGroup> findByPaymentTerm(PaymentTerm paymentTerm);
 
     public List<VendorGroup> findByPaymentTermId(Long paymentTermId);
+
+    public List<VendorGroup> findByAccounts(VendorGroupAcct accounts);
+
+    public List<VendorGroup> findByAccountsId(Long accountsId);
 
 }

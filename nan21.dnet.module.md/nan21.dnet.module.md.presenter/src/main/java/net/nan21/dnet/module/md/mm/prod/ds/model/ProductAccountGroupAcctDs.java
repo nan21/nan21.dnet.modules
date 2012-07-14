@@ -21,8 +21,10 @@ public class ProductAccountGroupAcctDs extends
     public static final String fACCSCHEMA = "accSchema";
     public static final String fEXPENSEACCOUNTID = "expenseAccountId";
     public static final String fEXPENSEACCOUNT = "expenseAccount";
+    public static final String fEXPENSEACCOUNTNAME = "expenseAccountName";
     public static final String fREVENUEACCOUNTID = "revenueAccountId";
     public static final String fREVENUEACCOUNT = "revenueAccount";
+    public static final String fREVENUEACCOUNTNAME = "revenueAccountName";
 
     @DsField(join = "left", path = "group.id")
     private Long groupId;
@@ -42,11 +44,17 @@ public class ProductAccountGroupAcctDs extends
     @DsField(join = "left", path = "expenseAccount.code")
     private String expenseAccount;
 
+    @DsField(join = "left", path = "expenseAccount.name")
+    private String expenseAccountName;
+
     @DsField(join = "left", path = "revenueAccount.id")
     private Long revenueAccountId;
 
     @DsField(join = "left", path = "revenueAccount.code")
     private String revenueAccount;
+
+    @DsField(join = "left", path = "revenueAccount.name")
+    private String revenueAccountName;
 
     public ProductAccountGroupAcctDs() {
         super();
@@ -104,6 +112,14 @@ public class ProductAccountGroupAcctDs extends
         this.expenseAccount = expenseAccount;
     }
 
+    public String getExpenseAccountName() {
+        return this.expenseAccountName;
+    }
+
+    public void setExpenseAccountName(String expenseAccountName) {
+        this.expenseAccountName = expenseAccountName;
+    }
+
     public Long getRevenueAccountId() {
         return this.revenueAccountId;
     }
@@ -118,6 +134,14 @@ public class ProductAccountGroupAcctDs extends
 
     public void setRevenueAccount(String revenueAccount) {
         this.revenueAccount = revenueAccount;
+    }
+
+    public String getRevenueAccountName() {
+        return this.revenueAccountName;
+    }
+
+    public void setRevenueAccountName(String revenueAccountName) {
+        this.revenueAccountName = revenueAccountName;
     }
 
 }

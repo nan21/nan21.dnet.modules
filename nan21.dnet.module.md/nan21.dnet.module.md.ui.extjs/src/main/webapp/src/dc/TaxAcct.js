@@ -50,9 +50,13 @@ Ext.define("net.nan21.dnet.module.md.base.tax.dc.TaxAcct$CtxEditList", {
 	
 	_defineColumns_: function () {
 		this._getBuilder_()
-		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
-		.addLov({name:"salesAccount", xtype:"gridcolumn", dataIndex:"salesAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "salesAccountId"} ]} })
-		.addLov({name:"purchaseAccount", xtype:"gridcolumn", dataIndex:"purchaseAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "purchaseAccountId"} ]} })
+		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema", width:150,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
+		.addLov({name:"salesAccount", xtype:"gridcolumn", dataIndex:"salesAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "salesAccountId"} ,{lovField:"name", dsField: "salesAccountName"} ]} })
+		.addTextColumn({ name:"salesAccountName", dataIndex:"salesAccountName",width:200 })
+		.addLov({name:"purchaseAccount", xtype:"gridcolumn", dataIndex:"purchaseAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "purchaseAccountId"} ,{lovField:"name", dsField: "purchaseAccountName"} ]} })
+		.addTextColumn({ name:"purchaseAccountName", dataIndex:"purchaseAccountName",width:200 })
+		.addLov({name:"nonDeductAccount", xtype:"gridcolumn", dataIndex:"nonDeductAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "nonDeductAccountId"} ,{lovField:"name", dsField: "nonDeductAccountName"} ]} })
+		.addTextColumn({ name:"nonDeductAccountName", dataIndex:"nonDeductAccountName",width:200 })
 		.addNumberColumn({ name:"taxId", dataIndex:"taxId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"accSchemaId", dataIndex:"accSchemaId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"salesAccountId", dataIndex:"salesAccountId", hidden:true, align:"right",format:"0",width:70})

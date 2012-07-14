@@ -18,6 +18,7 @@ public class PurchaseOrderItemDs extends AbstractAuditableDs<PurchaseOrderItem> 
     public static final String fPRODUCTID = "productId";
     public static final String fPRODUCTCODE = "productCode";
     public static final String fPRODUCTNAME = "productName";
+    public static final String fDESCRIPTION = "description";
     public static final String fUOMID = "uomId";
     public static final String fUOMCODE = "uomCode";
     public static final String fQUANTITY = "quantity";
@@ -39,6 +40,9 @@ public class PurchaseOrderItemDs extends AbstractAuditableDs<PurchaseOrderItem> 
 
     @DsField(join = "left", path = "product.name")
     private String productName;
+
+    @DsField()
+    private String description;
 
     @DsField(join = "left", path = "uom.id")
     private Long uomId;
@@ -105,6 +109,14 @@ public class PurchaseOrderItemDs extends AbstractAuditableDs<PurchaseOrderItem> 
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getUomId() {

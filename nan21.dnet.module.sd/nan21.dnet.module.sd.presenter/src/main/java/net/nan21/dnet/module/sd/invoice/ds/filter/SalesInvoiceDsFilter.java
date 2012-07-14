@@ -33,6 +33,8 @@ public class SalesInvoiceDsFilter extends AbstractAuditableDsFilter {
 
     private String docType;
 
+    private String description;
+
     private Long customerId;
 
     private Long customerId_From;
@@ -218,6 +220,14 @@ public class SalesInvoiceDsFilter extends AbstractAuditableDsFilter {
 
     public void setDocType(String docType) {
         this.docType = docType;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getCustomerId() {

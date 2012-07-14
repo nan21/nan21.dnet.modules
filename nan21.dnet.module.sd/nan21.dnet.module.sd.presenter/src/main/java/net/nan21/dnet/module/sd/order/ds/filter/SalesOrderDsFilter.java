@@ -14,6 +14,8 @@ public class SalesOrderDsFilter extends AbstractAuditableDsFilter {
 
     private String docNo;
 
+    private String description;
+
     private Date docDate;
 
     private Date docDate_From;
@@ -189,6 +191,14 @@ public class SalesOrderDsFilter extends AbstractAuditableDsFilter {
 
     public void setDocNo(String docNo) {
         this.docNo = docNo;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Date getDocDate() {

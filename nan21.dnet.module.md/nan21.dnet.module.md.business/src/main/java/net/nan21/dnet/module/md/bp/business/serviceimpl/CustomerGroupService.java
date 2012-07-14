@@ -11,6 +11,7 @@ import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.md.bp.business.service.ICustomerGroupService;
+import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroupAcct;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroup;
@@ -71,6 +72,19 @@ public class CustomerGroupService extends AbstractEntityService<CustomerGroup>
                         CustomerGroup.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPaymentTermId", paymentTermId).getResultList();
+    }
+
+    public List<CustomerGroup> findByAccounts(CustomerGroupAcct accounts) {
+        return this.findByAccountsId(accounts.getId());
+    }
+
+    public List<CustomerGroup> findByAccountsId(Long accountsId) {
+        return (List<CustomerGroup>) this.em
+                .createQuery(
+                        "select distinct e from CustomerGroup e , IN (e.accounts) c where e.clientId = :pClientId and c.id = :pAccountsId",
+                        CustomerGroup.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pAccountsId", accountsId).getResultList();
     }
 
 }

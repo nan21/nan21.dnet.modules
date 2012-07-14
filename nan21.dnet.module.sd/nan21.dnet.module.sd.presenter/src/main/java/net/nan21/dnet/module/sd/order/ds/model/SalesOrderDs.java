@@ -17,6 +17,7 @@ public class SalesOrderDs extends AbstractAuditableDs<SalesOrder> {
 
     public static final String fCODE = "code";
     public static final String fDOCNO = "docNo";
+    public static final String fDESCRIPTION = "description";
     public static final String fDOCDATE = "docDate";
     public static final String fSUPPLIERID = "supplierId";
     public static final String fSUPPLIER = "supplier";
@@ -72,6 +73,9 @@ public class SalesOrderDs extends AbstractAuditableDs<SalesOrder> {
 
     @DsField()
     private String docNo;
+
+    @DsField()
+    private String description;
 
     @DsField(noUpdate = true)
     private Date docDate;
@@ -242,6 +246,14 @@ public class SalesOrderDs extends AbstractAuditableDs<SalesOrder> {
 
     public void setDocNo(String docNo) {
         this.docNo = docNo;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Date getDocDate() {

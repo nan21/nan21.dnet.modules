@@ -20,8 +20,10 @@ public class CustomerGroupAcctDs extends AbstractAuditableDs<CustomerGroupAcct> 
     public static final String fACCSCHEMA = "accSchema";
     public static final String fSALESACCOUNTID = "salesAccountId";
     public static final String fSALESACCOUNT = "salesAccount";
+    public static final String fSALESACCOUNTNAME = "salesAccountName";
     public static final String fPREPAYACCOUNTID = "prepayAccountId";
     public static final String fPREPAYACCOUNT = "prepayAccount";
+    public static final String fPREPAYACCOUNTNAME = "prepayAccountName";
 
     @DsField(join = "left", path = "custGroup.id")
     private Long custGroupId;
@@ -41,11 +43,17 @@ public class CustomerGroupAcctDs extends AbstractAuditableDs<CustomerGroupAcct> 
     @DsField(join = "left", path = "salesAccount.code")
     private String salesAccount;
 
+    @DsField(join = "left", path = "salesAccount.name")
+    private String salesAccountName;
+
     @DsField(join = "left", path = "prepayAccount.id")
     private Long prepayAccountId;
 
     @DsField(join = "left", path = "prepayAccount.code")
     private String prepayAccount;
+
+    @DsField(join = "left", path = "prepayAccount.name")
+    private String prepayAccountName;
 
     public CustomerGroupAcctDs() {
         super();
@@ -103,6 +111,14 @@ public class CustomerGroupAcctDs extends AbstractAuditableDs<CustomerGroupAcct> 
         this.salesAccount = salesAccount;
     }
 
+    public String getSalesAccountName() {
+        return this.salesAccountName;
+    }
+
+    public void setSalesAccountName(String salesAccountName) {
+        this.salesAccountName = salesAccountName;
+    }
+
     public Long getPrepayAccountId() {
         return this.prepayAccountId;
     }
@@ -117,6 +133,14 @@ public class CustomerGroupAcctDs extends AbstractAuditableDs<CustomerGroupAcct> 
 
     public void setPrepayAccount(String prepayAccount) {
         this.prepayAccount = prepayAccount;
+    }
+
+    public String getPrepayAccountName() {
+        return this.prepayAccountName;
+    }
+
+    public void setPrepayAccountName(String prepayAccountName) {
+        this.prepayAccountName = prepayAccountName;
     }
 
 }

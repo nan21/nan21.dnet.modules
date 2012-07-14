@@ -16,6 +16,20 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem", {
 
 
  	
+
+Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$FilterCtx", {
+	extend: "dnet.core.dc.AbstractDcvFilterPropGrid",
+ 	alias: "widget.net.nan21.dnet.module.sd.order.dc.SalesOrderItem$FilterCtx",
+	_defineElements_: function () {	
+		this._getBuilder_()	
+		.addLov({ name:"productCode", dataIndex:"productCode",editor:{ xtype:"net.nan21.dnet.module.md.mm.prod.lovs.Products", selectOnFocus:true,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "productId"} ]}  })
+		 
+		
+	}
+	
+}); 
+ 	
+ 	
  	 
 Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
@@ -85,18 +99,23 @@ Ext.define("net.nan21.dnet.module.sd.order.dc.SalesOrderItem$EditForm", {
 		.addDisplayFieldNumber({name:"taxAmount", dataIndex:"taxAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addDisplayFieldNumber({name:"lineAmount", dataIndex:"lineAmount",decimals:2, fieldCls:"displayfieldnumber important-field"  })
 		.addLov({ name:"tax", xtype:"net.nan21.dnet.module.md.base.tax.lovs.TaxApplicables", dataIndex:"tax" ,allowBlank:false, labelSeparator:"*",maxLength:255,retFieldMapping: [{lovField:"id", dsField: "taxId"} ]  })
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:400})     
+		.addPanel({ name:"col4", layout:"form" , width:400})     
 		.addPanel({ name:"col2", layout:"form" ,width:250})     
 		.addPanel({ name:"col3", layout:"form" ,width:250})     
 		.addPanel({ name:"main" , autoScroll:true })      	 
+		.addPanel({ name:"row1",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
 		.addPanel({ name:"row2",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}} }) 
 		;     
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1" ,"row2" ])
+		.addChildrenTo("main",["row1" ,"row2" ])
+		.addChildrenTo("row1",["col1" ,"col4" ])
 		.addChildrenTo("col1",["productId","productCode","productName"])
+		.addChildrenTo("col4",["description"])
 		.addChildrenTo("row2",["col2" ,"col3" ])
 		.addChildrenTo("col2",["quantity","uomCode","unitPrice","tax"])
 		.addChildrenTo("col3",["netAmount","taxAmount","lineAmount"])

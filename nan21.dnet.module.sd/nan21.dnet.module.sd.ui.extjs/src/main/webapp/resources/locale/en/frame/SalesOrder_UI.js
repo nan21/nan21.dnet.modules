@@ -2,6 +2,7 @@
 Ext.define("net.nan21.dnet.module.sd.order.frame.SalesOrder_UI$Trl", {  	  	
 	taxList__ttl : "Taxes",
 	orderEditDetails__ttl : "Details",
+	itemFilter__ttl : "Filter",
 	itemTaxList__ttl : "Item taxes",
 	atchEditList__ttl : "Attachments",
 	wdwGenDelivery__ttl : "Generate delivery",

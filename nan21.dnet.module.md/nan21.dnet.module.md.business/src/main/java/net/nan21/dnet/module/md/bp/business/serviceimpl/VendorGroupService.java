@@ -11,6 +11,7 @@ import net.nan21.dnet.core.business.service.AbstractEntityService;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentMethod;
 import net.nan21.dnet.module.md.base.tx.domain.entity.PaymentTerm;
 import net.nan21.dnet.module.md.bp.business.service.IVendorGroupService;
+import net.nan21.dnet.module.md.bp.domain.entity.VendorGroupAcct;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.bp.domain.entity.VendorGroup;
@@ -71,6 +72,19 @@ public class VendorGroupService extends AbstractEntityService<VendorGroup>
                         VendorGroup.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pPaymentTermId", paymentTermId).getResultList();
+    }
+
+    public List<VendorGroup> findByAccounts(VendorGroupAcct accounts) {
+        return this.findByAccountsId(accounts.getId());
+    }
+
+    public List<VendorGroup> findByAccountsId(Long accountsId) {
+        return (List<VendorGroup>) this.em
+                .createQuery(
+                        "select distinct e from VendorGroup e , IN (e.accounts) c where e.clientId = :pClientId and c.id = :pAccountsId",
+                        VendorGroup.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pAccountsId", accountsId).getResultList();
     }
 
 }

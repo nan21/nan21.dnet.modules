@@ -86,6 +86,9 @@ public class TaxAcct extends AbstractAuditable {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Account.class)
     @JoinColumn(name = "PURCHASEACCOUNT_ID", referencedColumnName = "ID")
     private Account purchaseAccount;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Account.class)
+    @JoinColumn(name = "NONDEDUCTACCOUNT_ID", referencedColumnName = "ID")
+    private Account nonDeductAccount;
 
     /* ============== getters - setters ================== */
 
@@ -139,6 +142,17 @@ public class TaxAcct extends AbstractAuditable {
             this.__validate_client_context__(purchaseAccount.getClientId());
         }
         this.purchaseAccount = purchaseAccount;
+    }
+
+    public Account getNonDeductAccount() {
+        return this.nonDeductAccount;
+    }
+
+    public void setNonDeductAccount(Account nonDeductAccount) {
+        if (nonDeductAccount != null) {
+            this.__validate_client_context__(nonDeductAccount.getClientId());
+        }
+        this.nonDeductAccount = nonDeductAccount;
     }
 
     public void aboutToInsert(DescriptorEvent event) {

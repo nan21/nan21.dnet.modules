@@ -103,4 +103,18 @@ public class TaxAcctService extends AbstractEntityService<TaxAcct> implements
                 .getResultList();
     }
 
+    public List<TaxAcct> findByNonDeductAccount(Account nonDeductAccount) {
+        return this.findByNonDeductAccountId(nonDeductAccount.getId());
+    }
+
+    public List<TaxAcct> findByNonDeductAccountId(Long nonDeductAccountId) {
+        return (List<TaxAcct>) this.em
+                .createQuery(
+                        "select e from TaxAcct e where e.clientId = :pClientId and e.nonDeductAccount.id = :pNonDeductAccountId",
+                        TaxAcct.class)
+                .setParameter("pClientId", Session.user.get().getClientId())
+                .setParameter("pNonDeductAccountId", nonDeductAccountId)
+                .getResultList();
+    }
+
 }

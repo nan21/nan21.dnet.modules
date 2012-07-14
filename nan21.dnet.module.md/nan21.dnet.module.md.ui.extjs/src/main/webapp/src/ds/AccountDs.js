@@ -22,7 +22,7 @@ Ext.define("net.nan21.dnet.module.md.acc.ds.model.AccountDs" ,{
 		{name:"entityFQN", type:"string"},
 		{name:"accSchemaId", type:"int", useNull:true},
 		{name:"accSchema", type:"string"},
-		{name:"sign", type:"string"},
+		{name:"type", type:"string"},
 		{name:"summary", type:"boolean"}
 	],
 	validations: [  
@@ -55,7 +55,7 @@ Ext.define("net.nan21.dnet.module.md.acc.ds.model.AccountDsFilter" ,{
 		{name:"accSchemaId_From",type:"int", useNull:true},
 		{name:"accSchemaId_To",type:"int", useNull:true},
 		{name:"accSchema", type:"string"},
-		{name:"sign", type:"string"},
+		{name:"type", type:"string"},
 		{name:"summary", type:"boolean", useNull:true}
 	] 
 });

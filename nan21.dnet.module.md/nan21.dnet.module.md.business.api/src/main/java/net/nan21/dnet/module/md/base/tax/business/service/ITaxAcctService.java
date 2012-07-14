@@ -35,4 +35,8 @@ public interface ITaxAcctService extends IEntityService<TaxAcct> {
 
     public List<TaxAcct> findByPurchaseAccountId(Long purchaseAccountId);
 
+    public List<TaxAcct> findByNonDeductAccount(Account nonDeductAccount);
+
+    public List<TaxAcct> findByNonDeductAccountId(Long nonDeductAccountId);
+
 }

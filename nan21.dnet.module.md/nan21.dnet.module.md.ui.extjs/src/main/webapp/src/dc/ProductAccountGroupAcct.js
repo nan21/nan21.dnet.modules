@@ -51,8 +51,10 @@ Ext.define("net.nan21.dnet.module.md.mm.prod.dc.ProductAccountGroupAcct$CtxEditL
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
-		.addLov({name:"expenseAccount", xtype:"gridcolumn", dataIndex:"expenseAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "expenseAccountId"} ]} })
-		.addLov({name:"revenueAccount", xtype:"gridcolumn", dataIndex:"revenueAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "revenueAccountId"} ]} })
+		.addLov({name:"expenseAccount", xtype:"gridcolumn", dataIndex:"expenseAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "expenseAccountId"} ,{lovField:"name", dsField: "expenseAccountName"} ]} })
+		.addTextColumn({ name:"expenseAccountName", dataIndex:"expenseAccountName",width:200 })
+		.addLov({name:"revenueAccount", xtype:"gridcolumn", dataIndex:"revenueAccount",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.Accounts" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "revenueAccountId"} ,{lovField:"name", dsField: "revenueAccountName"} ]} })
+		.addTextColumn({ name:"revenueAccountName", dataIndex:"revenueAccountName",width:200 })
 		.addNumberColumn({ name:"groupId", dataIndex:"groupId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"accSchemaId", dataIndex:"accSchemaId", hidden:true, align:"right",format:"0",width:70})
 		.addNumberColumn({ name:"expenseAccountId", dataIndex:"expenseAccountId", hidden:true, align:"right",format:"0",width:70})

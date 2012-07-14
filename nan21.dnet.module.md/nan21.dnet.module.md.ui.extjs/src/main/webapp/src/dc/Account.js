@@ -27,7 +27,7 @@ Ext.define("net.nan21.dnet.module.md.acc.dc.Account$Filter", {
 		.addTextField({ name:"code",_sharedLabel_:true, dataIndex:"code",anchor:"-20",maxLength:32  })
 		.addBooleanField({ name:"active",_sharedLabel_:true, dataIndex:"active",anchor:"-20"  })
 		.addLov({ name:"accSchema", xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas", dataIndex:"accSchema",anchor:"-20",maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]  })
-		.addTextField({ name:"sign", dataIndex:"sign",anchor:"-20",maxLength:16  })
+		.addCombo({ name:"type", xtype:"combo", dataIndex:"type",anchor:"-20",store:[ "D", "C", "N"]  })
 		.addBooleanField({ name:"summary", dataIndex:"summary",anchor:"-20"  })
 		//containers
 		.addPanel({ name:"col1", layout:"form",width:210}) 
@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.md.acc.dc.Account$Filter", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1","col2"])
 		.addChildrenTo("col1",["name","code"])
-		.addChildrenTo("col2",["accSchema","sign"])
+		.addChildrenTo("col2",["accSchema","type"])
     	.addAuditFilter()	
 	}
 }); 
@@ -54,7 +54,7 @@ Ext.define("net.nan21.dnet.module.md.acc.dc.Account$List", {
 		.addTextColumn({ name:"accSchema", dataIndex:"accSchema",width:100 })   	
 		.addTextColumn({ name:"name", dataIndex:"name",width:200 })   	
 		.addTextColumn({ name:"code", dataIndex:"code",width:100 })   	
-		.addTextColumn({ name:"sign", dataIndex:"sign",width:60 })   	
+		.addTextColumn({ name:"type", dataIndex:"type",width:60 })   	
 		.addBooleanColumn({ name:"summary", dataIndex:"summary"})   	     
 		.addTextColumn({ name:"notes", dataIndex:"notes",width:200 })   	
 		.addBooleanColumn({ name:"active", dataIndex:"active"})   	     
@@ -71,13 +71,13 @@ Ext.define("net.nan21.dnet.module.md.acc.dc.Account$EditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.md.acc.dc.Account$EditList",
 	
-	_bulkEditFields_ : ["accSchema","sign","summary","active"],
+	_bulkEditFields_ : ["accSchema","type","summary","active"],
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addLov({name:"accSchema", xtype:"gridcolumn", dataIndex:"accSchema",width:100,editor:{xtype:"net.nan21.dnet.module.md.acc.lovs.AccSchemas" , selectOnFocus:true ,maxLength:32,retFieldMapping: [{lovField:"id", dsField: "accSchemaId"} ]} })
 		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addTextColumn({ name:"code", dataIndex:"code",width:100,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:32} })
-		.addTextColumn({ name:"sign", dataIndex:"sign",width:60,editor:{xtype:"textfield", selectOnFocus:true ,maxLength:16} })
+		.addComboColumn({ name:"type", dataIndex:"type", trueText:Dnet.translate("msg", "bool_true"), falseText:Dnet.translate("msg", "bool_false"),editor: {xtype: 'combo', mode: 'local', selectOnFocus:true 	, valueField: 'bv', displayField: 'tv' ,store:[ "D", "C", "N"] , triggerAction:'all', forceSelection:true }})
 		.addBooleanColumn({ name:"summary", dataIndex:"summary"})
 		.addTextColumn({ name:"notes", dataIndex:"notes",width:200,editor:{xtype:"textfield", selectOnFocus:true } })
 		.addBooleanColumn({ name:"active", dataIndex:"active"})
@@ -101,7 +101,7 @@ Ext.define("net.nan21.dnet.module.md.acc.dc.Account$Edit", {
 		.addCheckbox({ name:"active", dataIndex:"active"  })
 		.addTextField({ name:"notes", dataIndex:"notes" ,maxLength:4000  })
 		.addTextField({ name:"accSchema", dataIndex:"accSchema" ,maxLength:32  })
-		.addTextField({ name:"sign", dataIndex:"sign" ,maxLength:16  })
+		.addCombo({ name:"type", xtype:"localcombo", dataIndex:"type" ,store:[ "D", "C", "N"]  })
 		.addCheckbox({ name:"summary", dataIndex:"summary"  })
 		//containers
 		.addPanel({ name:"col1", layout:"form" , width:300})     
@@ -113,7 +113,7 @@ Ext.define("net.nan21.dnet.module.md.acc.dc.Account$Edit", {
 		this._getBuilder_()
 		.addChildrenTo("main",["col1" ,"col2" ])
 		.addChildrenTo("col1",["name","code","active","notes"])
-		.addChildrenTo("col2",["accSchema","sign","summary"])
+		.addChildrenTo("col2",["accSchema","type","summary"])
 ;
 	}	
 });

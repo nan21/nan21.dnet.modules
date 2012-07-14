@@ -39,7 +39,7 @@ Ext.define("net.nan21.dnet.module.sc.invoice.frame.PaymentOut_UI", {
 		.addDcEditGridView("itemp",{ name:"prodList", xtype:"net.nan21.dnet.module.md.tx.fin.dc.PaymentItemProduct$CtxEditListProduct", frame:true,title:"Items"})	 
 		.addDcEditGridView("amount",{ name:"amountList", xtype:"net.nan21.dnet.module.sc.invoice.dc.PaymentOutAmount$CtxEditList", frame:true,title:"Amounts"})	 
 		.addDcGridView("accDocLine",{ name:"accDocLineList", xtype:"net.nan21.dnet.module.md.tx.acc.dc.AccDocLineCtx$List"})	 
-		.addDcFilterFormView("accDocLine",{ name:"accDocLineFilter", xtype:"net.nan21.dnet.module.md.tx.acc.dc.AccDocLineCtx$Filter",width:250,title:"Filter", collapsible:true})	 
+		.addDcFilterFormView("accDocLine",{ name:"accDocLineFilter", xtype:"net.nan21.dnet.module.md.tx.acc.dc.AccDocLineCtx$Filter",width:250,title:"Filter", collapsible:true, collapsed:true})	 
 		.addPanel({name: "main",layout:"card", activeItem:0})  	 
 
 		.addPanel({name: "paymentDetailsTab", xtype:"tabpanel", activeTab:0, plain:false, deferredRender:false, id:Ext.id()}) 	 

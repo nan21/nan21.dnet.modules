@@ -30,12 +30,16 @@ public class VendorGroupAcctDsFilter extends AbstractAuditableDsFilter {
 
     private String purchaseAccount;
 
+    private String purchaseAccountName;
+
     private Long prepayAccountId;
 
     private Long prepayAccountId_From;
     private Long prepayAccountId_To;
 
     private String prepayAccount;
+
+    private String prepayAccountName;
 
     public Long getVendorGroupId() {
         return this.vendorGroupId;
@@ -133,6 +137,14 @@ public class VendorGroupAcctDsFilter extends AbstractAuditableDsFilter {
         this.purchaseAccount = purchaseAccount;
     }
 
+    public String getPurchaseAccountName() {
+        return this.purchaseAccountName;
+    }
+
+    public void setPurchaseAccountName(String purchaseAccountName) {
+        this.purchaseAccountName = purchaseAccountName;
+    }
+
     public Long getPrepayAccountId() {
         return this.prepayAccountId;
     }
@@ -163,6 +175,14 @@ public class VendorGroupAcctDsFilter extends AbstractAuditableDsFilter {
 
     public void setPrepayAccount(String prepayAccount) {
         this.prepayAccount = prepayAccount;
+    }
+
+    public String getPrepayAccountName() {
+        return this.prepayAccountName;
+    }
+
+    public void setPrepayAccountName(String prepayAccountName) {
+        this.prepayAccountName = prepayAccountName;
     }
 
 }

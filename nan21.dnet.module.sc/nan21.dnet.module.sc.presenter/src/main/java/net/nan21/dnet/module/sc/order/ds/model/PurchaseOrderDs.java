@@ -20,6 +20,7 @@ public class PurchaseOrderDs extends AbstractAuditableDs<PurchaseOrder> {
     public static final String fDOCDATE = "docDate";
     public static final String fDOCTYPEID = "docTypeId";
     public static final String fDOCTYPE = "docType";
+    public static final String fDESCRIPTION = "description";
     public static final String fCUSTOMERID = "customerId";
     public static final String fCUSTOMER = "customer";
     public static final String fSUPPLIERID = "supplierId";
@@ -61,6 +62,9 @@ public class PurchaseOrderDs extends AbstractAuditableDs<PurchaseOrder> {
 
     @DsField(join = "left", path = "docType.name")
     private String docType;
+
+    @DsField()
+    private String description;
 
     @DsField(noUpdate = true, join = "left", path = "customer.id")
     private Long customerId;
@@ -186,6 +190,14 @@ public class PurchaseOrderDs extends AbstractAuditableDs<PurchaseOrder> {
 
     public void setDocType(String docType) {
         this.docType = docType;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getCustomerId() {

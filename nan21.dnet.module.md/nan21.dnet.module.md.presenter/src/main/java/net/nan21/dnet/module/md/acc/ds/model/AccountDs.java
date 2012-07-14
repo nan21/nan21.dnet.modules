@@ -17,7 +17,7 @@ public class AccountDs extends AbstractTypeWithCodeDs<Account> {
 
     public static final String fACCSCHEMAID = "accSchemaId";
     public static final String fACCSCHEMA = "accSchema";
-    public static final String fSIGN = "sign";
+    public static final String fTYPE = "type";
     public static final String fSUMMARY = "summary";
 
     @DsField(join = "left", path = "accSchema.id")
@@ -27,7 +27,7 @@ public class AccountDs extends AbstractTypeWithCodeDs<Account> {
     private String accSchema;
 
     @DsField()
-    private String sign;
+    private String type;
 
     @DsField()
     private Boolean summary;
@@ -56,12 +56,12 @@ public class AccountDs extends AbstractTypeWithCodeDs<Account> {
         this.accSchema = accSchema;
     }
 
-    public String getSign() {
-        return this.sign;
+    public String getType() {
+        return this.type;
     }
 
-    public void setSign(String sign) {
-        this.sign = sign;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Boolean getSummary() {

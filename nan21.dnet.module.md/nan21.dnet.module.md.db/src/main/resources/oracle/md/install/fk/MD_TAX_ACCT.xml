@@ -18,4 +18,8 @@
 		<addForeignKeyConstraint constraintName="FK_MD_TAX_ACCT4" baseTableName="MD_TAX_ACCT" 
 			baseColumnNames="PURCHASEACCOUNT_ID"  referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
 	</changeSet>	
+	<changeSet author="amathe" id="FK-5">
+		<addForeignKeyConstraint constraintName="FK_MD_TAX_ACCT5" baseTableName="MD_TAX_ACCT" 
+			baseColumnNames="NONDEDUCTACCOUNT_ID"  referencedTableName="MD_ACC_ACCT"  referencedColumnNames="ID" />
+	</changeSet>	
 </databaseChangeLog>    

@@ -158,11 +158,13 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$EditDetails", {
 	_defineElements_: function () {	
 		//controls	
 		this._getBuilder_()	
+		.addTextArea({ name:"description", dataIndex:"description",height:60   })
 		.addCheckbox({ name:"selfPayed", dataIndex:"selfPayed",listeners:{change:{scope:this, fn:this._onSelfPayedChange_}}  })
 		.addLov({ name:"paymentMethod", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentMethodOut", dataIndex:"paymentMethod" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentMethodId"} ]  })
 		.addLov({ name:"paymentTerm", xtype:"net.nan21.dnet.module.md.base.tx.lovs.PaymentTerm", dataIndex:"paymentTerm" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "paymentTermId"} ]  })
 		.addLov({ name:"fromAccount", xtype:"net.nan21.dnet.module.md.org.lovs.FinancialAccounts", dataIndex:"fromAccount" ,maxLength:255,retFieldMapping: [{lovField:"id", dsField: "fromAccountId"} ],filterFieldMapping: [{lovField:"currencyId", dsField: "currencyId"} ,{lovField:"type",value: "cash"} ]  })
 		//containers
+		.addPanel({ name:"col2", layout:"form" , width:400})     
 		.addPanel({ name:"panelPayment", layout:"form" ,title:"Payment", width:350,xtype:"fieldset", border:true, collapsible:true})     
 		.addPanel({ name:"col1"  })      	 
 		.addPanel({ name:"main",  layout: { type:"hbox", align:'top' , pack:'start', defaultMargins: {right:5, left:5}}, autoScroll:true, padding:"0 30 5 0" }) 
@@ -170,8 +172,9 @@ Ext.define("net.nan21.dnet.module.sc.invoice.dc.PurchaseInvoice$EditDetails", {
 	}
 	,_linkElements_: function () {
 		this._getBuilder_()
-		.addChildrenTo("main",["col1" ])
+		.addChildrenTo("main",["col1" ,"col2" ])
 		.addChildrenTo("col1",["panelPayment" ])
+		.addChildrenTo("col2",["description"])
 		.addChildrenTo("panelPayment",["selfPayed","fromAccount","paymentMethod","paymentTerm"])
 ;
 	}	
