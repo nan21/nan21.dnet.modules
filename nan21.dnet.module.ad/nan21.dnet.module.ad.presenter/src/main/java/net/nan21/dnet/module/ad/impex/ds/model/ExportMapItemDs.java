@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.ad.impex.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.ad.impex.domain.entity.ExportMapItem;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.ad.impex.domain.entity.ExportMapItem;
 
 @Ds(entity = ExportMapItem.class)
 public class ExportMapItemDs extends AbstractAuditableDs<ExportMapItem> {

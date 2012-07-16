@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.hr.payroll.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
-
-import net.nan21.dnet.module.hr.payroll.domain.entity.Payroll;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
+import net.nan21.dnet.module.hr.payroll.domain.entity.Payroll;
 
 @Ds(entity = Payroll.class, sort = { @SortField(field = PayrollDs.fNAME) })
 public class PayrollDs extends AbstractTypeDs<Payroll> {

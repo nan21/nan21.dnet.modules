@@ -5,12 +5,10 @@
  */
 package net.nan21.dnet.module.md.acc.ds.model;
 
+import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.presenter.model.base.AbstractTypeLov;
-
 import net.nan21.dnet.module.md.acc.domain.entity.AccJournal;
-import net.nan21.dnet.core.api.annotation.Ds;
-import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = AccJournal.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = AccJournalLovDs.fNAME) })
 public class AccJournalLovDs extends AbstractTypeLov<AccJournal> {

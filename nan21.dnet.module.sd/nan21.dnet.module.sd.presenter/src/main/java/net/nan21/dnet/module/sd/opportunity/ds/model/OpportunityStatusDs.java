@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.sd.opportunity.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
-
-import net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStatus;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
+import net.nan21.dnet.module.sd.opportunity.domain.entity.OpportunityStatus;
 
 @Ds(entity = OpportunityStatus.class, sort = { @SortField(field = OpportunityStatusDs.fNAME) })
 public class OpportunityStatusDs extends AbstractTypeDs<OpportunityStatus> {

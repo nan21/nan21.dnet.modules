@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.bd.elem.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.bd.elem.domain.entity.ElementSetElement;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.bd.elem.domain.entity.ElementSetElement;
 
 @Ds(entity = ElementSetElement.class)
 public class ElementSetElementDs extends AbstractAuditableDs<ElementSetElement> {

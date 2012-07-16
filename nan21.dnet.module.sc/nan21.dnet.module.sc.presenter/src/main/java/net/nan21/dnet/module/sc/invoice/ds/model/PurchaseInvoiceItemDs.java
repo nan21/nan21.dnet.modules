@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.sc.invoice.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.sc.invoice.domain.entity.PurchaseInvoiceItem;
 
 @Ds(entity = PurchaseInvoiceItem.class)
 public class PurchaseInvoiceItemDs extends

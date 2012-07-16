@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.ad.impex.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.ad.impex.domain.entity.CsvExportField;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.ad.impex.domain.entity.CsvExportField;
 
 @Ds(entity = CsvExportField.class, sort = { @SortField(field = CsvExportFieldDs.fSEQUENCENO) })
 public class CsvExportFieldDs extends AbstractAuditableDs<CsvExportField> {

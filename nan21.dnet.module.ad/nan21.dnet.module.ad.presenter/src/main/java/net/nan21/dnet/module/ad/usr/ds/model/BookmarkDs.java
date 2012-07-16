@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.ad.usr.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
-
-import net.nan21.dnet.module.ad.usr.domain.entity.Bookmark;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
+import net.nan21.dnet.module.ad.usr.domain.entity.Bookmark;
 
 @Ds(entity = Bookmark.class, sort = { @SortField(field = BookmarkDs.fNAME) })
 public class BookmarkDs extends AbstractTypeDs<Bookmark> {

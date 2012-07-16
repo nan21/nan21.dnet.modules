@@ -7,9 +7,9 @@ package net.nan21.dnet.module.md.mm.price.ds.qb;
 
 import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
 import net.nan21.dnet.module.md.mm.price.ds.filter.ProductPriceDsFilter;
+import net.nan21.dnet.module.md.mm.price.ds.model.ProductPriceDs;
 import net.nan21.dnet.module.md.mm.price.ds.param.ProductPriceDsParam;
 
-import net.nan21.dnet.module.md.mm.price.ds.model.ProductPriceDs;
 import net.nan21.dnet.core.api.session.Session;
 
 public class ProductPriceDsQueryBuilder

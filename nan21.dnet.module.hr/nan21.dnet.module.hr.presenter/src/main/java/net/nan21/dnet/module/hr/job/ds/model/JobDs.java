@@ -6,12 +6,11 @@
 package net.nan21.dnet.module.hr.job.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeDs;
-
-import net.nan21.dnet.module.hr.job.domain.entity.Job;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeDs;
+import net.nan21.dnet.module.hr.job.domain.entity.Job;
 
 @Ds(entity = Job.class, sort = { @SortField(field = JobDs.fNAME) })
 public class JobDs extends AbstractTypeWithCodeDs<Job> {

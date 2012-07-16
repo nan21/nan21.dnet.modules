@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.md.base.tax.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.md.base.tax.domain.entity.TaxAcct;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.base.tax.domain.entity.TaxAcct;
 
 @Ds(entity = TaxAcct.class)
 public class TaxAcctDs extends AbstractAuditableDs<TaxAcct> {

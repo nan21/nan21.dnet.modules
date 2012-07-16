@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.pj.md.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.pj.md.domain.entity.IssueLink;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.pj.md.domain.entity.IssueLink;
 
 @Ds(entity = IssueLink.class)
 public class IssueLinkDs extends AbstractAuditableDs<IssueLink> {

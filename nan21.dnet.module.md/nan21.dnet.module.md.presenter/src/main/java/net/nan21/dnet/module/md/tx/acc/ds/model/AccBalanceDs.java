@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.md.tx.acc.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.md.tx.acc.domain.entity.AccBalance;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.tx.acc.domain.entity.AccBalance;
 
 @Ds(entity = AccBalance.class)
 public class AccBalanceDs extends AbstractAuditableDs<AccBalance> {

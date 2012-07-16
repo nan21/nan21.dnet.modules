@@ -5,15 +5,10 @@
  */
 package net.nan21.dnet.module.ad.client.ds.model;
 
-import net.nan21.dnet.core.api.service.IDsService;
-import net.nan21.dnet.core.presenter.model.base.X_AbstractAuditedDs;
-import net.nan21.dnet.core.presenter.service.AbstractDsService;
-import net.nan21.dnet.module.ad.client.domain.entity.Client;
-import net.nan21.dnet.module.ad.client.ds.param.ClientDsParam;
-
-import net.nan21.dnet.module.ad.client.domain.entity.Client;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.X_AbstractAuditedDs;
+import net.nan21.dnet.module.ad.client.domain.entity.Client;
 
 @Ds(entity = Client.class)
 public class MyClientDs extends X_AbstractAuditedDs<Client> {
@@ -23,6 +18,7 @@ public class MyClientDs extends X_AbstractAuditedDs<Client> {
     public static final String fNOTES = "notes";
     public static final String fMAINTENANCELANGUAGE = "maintenanceLanguage";
     public static final String fADMINROLE = "adminRole";
+    public static final String fID = "id";
 
     @DsField()
     private String name;
@@ -38,6 +34,9 @@ public class MyClientDs extends X_AbstractAuditedDs<Client> {
 
     @DsField()
     private String adminRole;
+
+    @DsField()
+    private Long id;
 
     public MyClientDs() {
         super();
@@ -85,6 +84,15 @@ public class MyClientDs extends X_AbstractAuditedDs<Client> {
 
     public void setAdminRole(String adminRole) {
         this.adminRole = adminRole;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Object id) {
+        this.id = this._asLong_(id);
+
     }
 
 }

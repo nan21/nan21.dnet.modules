@@ -7,9 +7,9 @@ package net.nan21.dnet.module.ad.workflow.ds.qb;
 
 import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
 import net.nan21.dnet.module.ad.workflow.ds.filter.ActProcessDefinitionDsFilter;
+import net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionDs;
 import net.nan21.dnet.module.ad.workflow.ds.param.ActProcessDefinitionDsParam;
 
-import net.nan21.dnet.module.ad.workflow.ds.model.ActProcessDefinitionDs;
 import net.nan21.dnet.core.api.session.Session;
 
 public class ActProcessDefinitionDsQueryBuilder

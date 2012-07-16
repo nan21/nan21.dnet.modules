@@ -5,12 +5,10 @@
  */
 package net.nan21.dnet.module.ad.usr.ds.model;
 
+import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
-
 import net.nan21.dnet.module.ad.usr.domain.entity.AssignableType;
-import net.nan21.dnet.core.api.annotation.Ds;
-import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = AssignableType.class, sort = { @SortField(field = AssignableTypeDs.fNAME) })
 public class AssignableTypeDs extends AbstractTypeDs<AssignableType> {

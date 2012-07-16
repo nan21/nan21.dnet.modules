@@ -6,11 +6,10 @@
 package net.nan21.dnet.module.hr.employee.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeWorkExperience;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.hr.employee.domain.entity.EmployeeWorkExperience;
 
 @Ds(entity = EmployeeWorkExperience.class)
 public class EmployeeWorkExperienceDs extends

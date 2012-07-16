@@ -6,11 +6,10 @@
 package net.nan21.dnet.module.fi.asset.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.fi.asset.domain.entity.Amortization;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.fi.asset.domain.entity.Amortization;
 
 @Ds(entity = Amortization.class)
 public class AmortizationDs extends AbstractAuditableDs<Amortization> {

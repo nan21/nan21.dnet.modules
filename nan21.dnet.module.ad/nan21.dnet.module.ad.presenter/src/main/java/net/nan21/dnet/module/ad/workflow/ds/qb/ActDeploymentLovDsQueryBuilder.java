@@ -9,7 +9,6 @@ import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
 import net.nan21.dnet.core.presenter.model.EmptyParam;
 import net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentLovDs;
 
-import net.nan21.dnet.module.ad.workflow.ds.model.ActDeploymentLovDs;
 import net.nan21.dnet.core.api.session.Session;
 
 public class ActDeploymentLovDsQueryBuilder

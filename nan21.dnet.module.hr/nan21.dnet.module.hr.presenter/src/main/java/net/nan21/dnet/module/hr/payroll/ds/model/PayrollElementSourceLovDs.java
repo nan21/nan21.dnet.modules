@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.hr.payroll.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeLov;
-
-import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElement;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeLov;
+import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElement;
 
 @Ds(entity = PayrollElement.class, jpqlWhere = " e.balance = false ", sort = { @SortField(field = PayrollElementSourceLovDs.fCODE) })
 public class PayrollElementSourceLovDs extends

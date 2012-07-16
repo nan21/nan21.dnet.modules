@@ -7,9 +7,9 @@ package net.nan21.dnet.module.hr.time.ds.qb;
 
 import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
 import net.nan21.dnet.module.hr.time.ds.filter.AbsenceDsFilter;
+import net.nan21.dnet.module.hr.time.ds.model.AbsenceDs;
 import net.nan21.dnet.module.hr.time.ds.param.AbsenceDsParam;
 
-import net.nan21.dnet.module.hr.time.ds.model.AbsenceDs;
 import net.nan21.dnet.core.api.session.Session;
 
 public class AbsenceDsQueryBuilder extends

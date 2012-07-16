@@ -78,6 +78,10 @@ public class FiscalPeriod extends AbstractTypeWithCode {
     @GeneratedValue(generator = SEQUENCE_NAME)
     private Long id;
 
+    /** Type. */
+    @Column(name = "TYPE", length = 16)
+    private String type;
+
     /** StartDate. */
     @Temporal(TemporalType.DATE)
     @Column(name = "STARTDATE")
@@ -104,6 +108,14 @@ public class FiscalPeriod extends AbstractTypeWithCode {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Date getStartDate() {

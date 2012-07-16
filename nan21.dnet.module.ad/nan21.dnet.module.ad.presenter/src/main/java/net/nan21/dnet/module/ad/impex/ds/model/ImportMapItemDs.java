@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.ad.impex.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.ad.impex.domain.entity.ImportMapItem;
 
 @Ds(entity = ImportMapItem.class, sort = { @SortField(field = ImportMapItemDs.fSEQUENCENO) })
 public class ImportMapItemDs extends AbstractAuditableDs<ImportMapItem> {

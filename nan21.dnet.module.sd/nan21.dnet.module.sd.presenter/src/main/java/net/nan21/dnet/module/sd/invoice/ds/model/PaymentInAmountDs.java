@@ -6,11 +6,10 @@
 package net.nan21.dnet.module.sd.invoice.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.sd.invoice.domain.entity.PaymentInAmount;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.sd.invoice.domain.entity.PaymentInAmount;
 
 @Ds(entity = PaymentInAmount.class)
 public class PaymentInAmountDs extends AbstractAuditableDs<PaymentInAmount> {

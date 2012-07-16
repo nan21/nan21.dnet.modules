@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.hr.time.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
-
-import net.nan21.dnet.module.hr.time.domain.entity.AbsenceReason;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
+import net.nan21.dnet.module.hr.time.domain.entity.AbsenceReason;
 
 @Ds(entity = AbsenceReason.class, sort = { @SortField(field = AbsenceReasonDs.fNAME) })
 public class AbsenceReasonDs extends AbstractTypeDs<AbsenceReason> {

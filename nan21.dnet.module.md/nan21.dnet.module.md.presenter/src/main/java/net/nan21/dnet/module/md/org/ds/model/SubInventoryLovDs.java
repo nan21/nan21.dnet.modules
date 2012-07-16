@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.md.org.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeLov;
-
-import net.nan21.dnet.module.md.org.domain.entity.SubInventory;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeLov;
+import net.nan21.dnet.module.md.org.domain.entity.SubInventory;
 
 @Ds(entity = SubInventory.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = SubInventoryLovDs.fNAME) })
 public class SubInventoryLovDs extends AbstractTypeLov<SubInventory> {

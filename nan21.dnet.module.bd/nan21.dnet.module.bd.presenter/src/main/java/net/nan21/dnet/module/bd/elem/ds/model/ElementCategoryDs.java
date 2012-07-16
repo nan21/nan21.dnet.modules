@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.bd.elem.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
-
-import net.nan21.dnet.module.bd.elem.domain.entity.ElementCategory;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
+import net.nan21.dnet.module.bd.elem.domain.entity.ElementCategory;
 
 @Ds(entity = ElementCategory.class, sort = { @SortField(field = ElementCategoryDs.fNAME) })
 public class ElementCategoryDs extends AbstractTypeDs<ElementCategory> {

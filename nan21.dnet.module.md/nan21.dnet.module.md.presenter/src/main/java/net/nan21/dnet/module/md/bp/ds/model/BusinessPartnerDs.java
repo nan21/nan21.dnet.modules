@@ -6,12 +6,11 @@
 package net.nan21.dnet.module.md.bp.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeDs;
-
-import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeDs;
+import net.nan21.dnet.module.md.bp.domain.entity.BusinessPartner;
 
 @Ds(entity = BusinessPartner.class, sort = { @SortField(field = BusinessPartnerDs.fNAME) })
 public class BusinessPartnerDs extends AbstractTypeWithCodeDs<BusinessPartner> {

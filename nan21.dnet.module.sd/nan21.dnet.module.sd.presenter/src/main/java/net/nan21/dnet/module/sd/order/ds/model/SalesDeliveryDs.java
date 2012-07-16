@@ -6,11 +6,10 @@
 package net.nan21.dnet.module.sd.order.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.sd.order.domain.entity.SalesInventoryTransaction;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.sd.order.domain.entity.SalesInventoryTransaction;
 
 @Ds(entity = SalesInventoryTransaction.class)
 public class SalesDeliveryDs extends

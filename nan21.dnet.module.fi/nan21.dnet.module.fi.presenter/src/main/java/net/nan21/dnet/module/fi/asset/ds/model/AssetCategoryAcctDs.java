@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.fi.asset.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.fi.asset.domain.entity.AssetCategoryAcct;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.fi.asset.domain.entity.AssetCategoryAcct;
 
 @Ds(entity = AssetCategoryAcct.class)
 public class AssetCategoryAcctDs extends AbstractAuditableDs<AssetCategoryAcct> {

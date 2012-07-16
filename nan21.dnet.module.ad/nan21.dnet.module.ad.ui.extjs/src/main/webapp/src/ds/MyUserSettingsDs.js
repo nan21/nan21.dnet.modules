@@ -7,7 +7,6 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.MyUserSettingsDs" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"name", type:"string"},
-		{name:"code", type:"string"},
 		{name:"active", type:"boolean"},
 		{name:"description", type:"string"},
 		{name:"notes", type:"string"},
@@ -20,6 +19,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.MyUserSettingsDs" ,{
 		{name:"modifiedBy", type:"string"},
 		{name:"version", type:"int", useNull:true},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
 		{name:"decimalSeparator", type:"string"},
 		{name:"thousandSeparator", type:"string"},
 		{name:"dateFormatId", type:"int", useNull:true},
@@ -36,7 +36,6 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.MyUserSettingsDsFilter" ,{
 	extend: 'Ext.data.Model',
 	fields: [ 
 		{name:"name", type:"string"},
-		{name:"code", type:"string"},
 		{name:"active", type:"boolean", useNull:true},
 		{name:"description", type:"string"},
 		{name:"notes", type:"string"},
@@ -51,6 +50,7 @@ Ext.define("net.nan21.dnet.module.ad.usr.ds.model.MyUserSettingsDsFilter" ,{
 		{name:"createdBy", type:"string"},
 		{name:"modifiedBy", type:"string"},
 		{name:"entityFQN", type:"string"},
+		{name:"code", type:"string"},
 		{name:"decimalSeparator", type:"string"},
 		{name:"thousandSeparator", type:"string"},
 		{name:"dateFormatId", type:"int", useNull:true},

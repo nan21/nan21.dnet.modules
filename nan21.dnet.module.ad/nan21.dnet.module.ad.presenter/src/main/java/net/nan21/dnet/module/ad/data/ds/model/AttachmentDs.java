@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.ad.data.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.ad.data.domain.entity.Attachment;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.ad.data.domain.entity.Attachment;
 
 @Ds(entity = Attachment.class)
 public class AttachmentDs extends AbstractAuditableDs<Attachment> {

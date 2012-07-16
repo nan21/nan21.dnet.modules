@@ -6,11 +6,10 @@
 package net.nan21.dnet.module.bd.contact.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannel;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.bd.contact.domain.entity.CommunicationChannel;
 
 @Ds(entity = CommunicationChannel.class)
 public class CommunicationChannelDs extends

@@ -13,6 +13,7 @@ import net.nan21.dnet.module.md.base.period.business.service.IFiscalYearService;
 
 import javax.persistence.EntityManager;
 import net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear;
+import net.nan21.dnet.module.md._businessdelegates.base.period.PeriodBD;
 
 public class FiscalYearService extends AbstractEntityService<FiscalYear>
         implements IFiscalYearService {
@@ -56,6 +57,18 @@ public class FiscalYearService extends AbstractEntityService<FiscalYear>
                         FiscalYear.class)
                 .setParameter("pClientId", Session.user.get().getClientId())
                 .setParameter("pCalendarId", calendarId).getResultList();
+    }
+
+    public void doCreateMonths(FiscalYear year) throws Exception {
+        this.getBusinessDelegate(PeriodBD.class).createMonths(year);
+    }
+
+    public void doCreateQuarters(FiscalYear year) throws Exception {
+        this.getBusinessDelegate(PeriodBD.class).createQuarters(year);
+    }
+
+    public void doCreateHalfYears(FiscalYear year) throws Exception {
+        this.getBusinessDelegate(PeriodBD.class).createHalfYears(year);
     }
 
 }

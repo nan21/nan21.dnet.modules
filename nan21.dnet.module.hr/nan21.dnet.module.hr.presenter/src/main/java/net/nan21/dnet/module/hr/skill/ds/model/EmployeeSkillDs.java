@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.hr.skill.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.hr.skill.domain.entity.EmployeeSkill;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.hr.skill.domain.entity.EmployeeSkill;
 
 @Ds(entity = EmployeeSkill.class)
 public class EmployeeSkillDs extends AbstractAuditableDs<EmployeeSkill> {

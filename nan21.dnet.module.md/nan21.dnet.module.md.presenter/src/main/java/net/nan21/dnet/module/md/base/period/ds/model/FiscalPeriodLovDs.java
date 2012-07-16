@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.md.base.period.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeLov;
-
-import net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeLov;
+import net.nan21.dnet.module.md.base.period.domain.entity.FiscalPeriod;
 
 @Ds(entity = FiscalPeriod.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = FiscalPeriodLovDs.fCODE) })
 public class FiscalPeriodLovDs extends AbstractTypeWithCodeLov<FiscalPeriod> {

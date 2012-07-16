@@ -23,14 +23,11 @@ public class BusinessPartnerDsConv extends
     protected void modelToEntityReferences(BusinessPartnerDs ds,
             BusinessPartner e, boolean isInsert) throws Exception {
 
-        if (ds.getCountryId() != null) {
-            if (e.getCountry() == null
-                    || !e.getCountry().getId().equals(ds.getCountryId())) {
-                e.setCountry((Country) this.em.find(Country.class,
-                        ds.getCountryId()));
-            }
-        } else {
-            this.lookup_country_Country(ds, e);
+        if (ds.getCountryId() == null) {
+            Country x = ((ICountryService) findEntityService(Country.class))
+                    .findByCode(ds.getCountryCode());
+
+            ds.setCountryId(x.getId());
         }
 
         if (ds.getLegalFormId() != null) {
@@ -43,25 +40,6 @@ public class BusinessPartnerDsConv extends
             this.lookup_legalForm_CompanyLegalForm(ds, e);
         }
 
-    }
-
-    protected void lookup_country_Country(BusinessPartnerDs ds,
-            BusinessPartner e) throws Exception {
-        if (ds.getCountryCode() != null && !ds.getCountryCode().equals("")) {
-            Country x = null;
-            try {
-                x = ((ICountryService) findEntityService(Country.class))
-                        .findByCode(ds.getCountryCode());
-            } catch (javax.persistence.NoResultException exception) {
-                throw new Exception(
-                        "Invalid value provided to find `Country` reference:  `countryCode` = "
-                                + ds.getCountryCode() + "  ");
-            }
-            e.setCountry(x);
-
-        } else {
-            e.setCountry(null);
-        }
     }
 
     protected void lookup_legalForm_CompanyLegalForm(BusinessPartnerDs ds,

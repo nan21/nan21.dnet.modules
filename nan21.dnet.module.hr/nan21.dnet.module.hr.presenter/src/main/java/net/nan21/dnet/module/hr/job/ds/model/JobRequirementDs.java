@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.hr.job.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.hr.job.domain.entity.JobRequirement;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.hr.job.domain.entity.JobRequirement;
 
 @Ds(entity = JobRequirement.class)
 public class JobRequirementDs extends AbstractAuditableDs<JobRequirement> {

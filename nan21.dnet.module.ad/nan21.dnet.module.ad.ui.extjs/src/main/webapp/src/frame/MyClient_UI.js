@@ -31,10 +31,7 @@ Ext.define("net.nan21.dnet.module.ad.client.frame.MyClient_UI", {
 	}
 
 	,loadCurrentClient: function() {	
-		
-  		var client = this._getDc_('client');
-		client.getFilter().set('id',getApplication().getSession().getClientId());
-		client.doQuery();
+		this._getDc_("client").doQuery();			 	
 	}
 	,_afterDefineDcs_: function() {	
 		this.loadCurrentClient();

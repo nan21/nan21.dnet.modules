@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.pj.md.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableLov;
-
-import net.nan21.dnet.module.pj.md.domain.entity.Issue;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableLov;
+import net.nan21.dnet.module.pj.md.domain.entity.Issue;
 
 @Ds(entity = Issue.class)
 public class IssueLovDs extends AbstractAuditableLov<Issue> {

@@ -1,18 +1,18 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.pj.base.domain.entity;version="1
- .0.0";uses:="javax.persistence,javax.validation.constraints,net.nan21
+ .1.0";uses:="javax.persistence,javax.validation.constraints,net.nan21
  .dnet.core.domain.model,org.eclipse.persistence.annotations,org.eclip
  se.persistence.descriptors",net.nan21.dnet.module.pj.md.domain.entity
- ;version="1.0.0";uses:="javax.persistence,javax.validation.constraint
+ ;version="1.1.0";uses:="javax.persistence,javax.validation.constraint
  s,net.nan21.dnet.core.domain.model,net.nan21.dnet.module.ad.usr.domai
  n.entity,net.nan21.dnet.module.pj.base.domain.entity,org.eclipse.pers
  istence.annotations,org.eclipse.persistence.descriptors,org.hibernate
  .validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0,1.0.0]",nan21.dnet.module.ad.domain;
- version="[1.0.0,1.0.0]"
+ dnet.core.domain;version="[1.1.0,1.1.0]",nan21.dnet.module.ad.domain;
+ version="[1.1.0,1.1.0]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0
+Bundle-Version: 1.1.0
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet PJ - domain
 Bundle-ManifestVersion: 2

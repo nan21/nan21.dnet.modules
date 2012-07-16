@@ -69,7 +69,8 @@ public class FiscalPeriodService extends AbstractEntityService<FiscalPeriod>
                             "select e from FiscalPeriod e "
                                     + "	where e.clientId = :pClientId "
                                     + "	  and :pDate between e.startDate and e.endDate "
-                                    + "	and e.active = true ",
+                                    + "	and e.active = true "
+                                    + "	and e.posting = true ",
                             FiscalPeriod.class)
                     .setParameter("pClientId", Session.user.get().getClientId())
                     .setParameter("pDate", date).getSingleResult();

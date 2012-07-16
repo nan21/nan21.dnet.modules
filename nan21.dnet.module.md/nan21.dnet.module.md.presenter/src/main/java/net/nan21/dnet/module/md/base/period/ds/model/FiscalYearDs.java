@@ -6,14 +6,13 @@
 package net.nan21.dnet.module.md.base.period.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeDs;
-
-import net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeDs;
+import net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear;
 
-@Ds(entity = FiscalYear.class, sort = { @SortField(field = FiscalYearDs.fNAME) })
+@Ds(entity = FiscalYear.class, sort = { @SortField(field = FiscalYearDs.fSTARTDATE, desc = true) })
 public class FiscalYearDs extends AbstractTypeWithCodeDs<FiscalYear> {
 
     public static final String fSTARTDATE = "startDate";

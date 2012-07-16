@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.md.tx.acc.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDocLine;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDocLine;
 
 @Ds(entity = AccDocLine.class, sort = {
         @SortField(field = AccDocLineCtxDs.fACCSCHEMAID),

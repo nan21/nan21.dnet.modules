@@ -5,12 +5,10 @@
  */
 package net.nan21.dnet.module.md.org.ds.model;
 
+import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.presenter.model.base.AbstractTypeLov;
-
 import net.nan21.dnet.module.md.org.domain.entity.StockLocatorType;
-import net.nan21.dnet.core.api.annotation.Ds;
-import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = StockLocatorType.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = StockLocatorTypeLovDs.fNAME) })
 public class StockLocatorTypeLovDs extends AbstractTypeLov<StockLocatorType> {

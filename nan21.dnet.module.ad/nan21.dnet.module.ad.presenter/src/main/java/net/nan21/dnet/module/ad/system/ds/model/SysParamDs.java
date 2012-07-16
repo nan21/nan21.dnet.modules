@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.ad.system.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeDs;
-
-import net.nan21.dnet.module.ad.system.domain.entity.SysParam;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeDs;
+import net.nan21.dnet.module.ad.system.domain.entity.SysParam;
 
 @Ds(entity = SysParam.class, sort = { @SortField(field = SysParamDs.fNAME) })
 public class SysParamDs extends AbstractTypeWithCodeDs<SysParam> {

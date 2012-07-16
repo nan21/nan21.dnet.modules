@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.bd.org.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchyItem;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.bd.org.domain.entity.OrganizationHierarchyItem;
 
 @Ds(entity = OrganizationHierarchyItem.class)
 public class OrganizationHierarchyItemDs extends

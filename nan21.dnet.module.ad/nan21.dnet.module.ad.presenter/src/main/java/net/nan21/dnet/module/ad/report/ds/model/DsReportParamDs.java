@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.ad.report.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.ad.report.domain.entity.DsReportParam;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.ad.report.domain.entity.DsReportParam;
 
 @Ds(entity = DsReportParam.class)
 public class DsReportParamDs extends AbstractAuditableDs<DsReportParam> {

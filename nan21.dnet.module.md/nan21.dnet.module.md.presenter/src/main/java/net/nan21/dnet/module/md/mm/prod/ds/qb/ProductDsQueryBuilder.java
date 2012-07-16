@@ -7,9 +7,9 @@ package net.nan21.dnet.module.md.mm.prod.ds.qb;
 
 import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
 import net.nan21.dnet.module.md.mm.prod.ds.filter.ProductDsFilter;
+import net.nan21.dnet.module.md.mm.prod.ds.model.ProductDs;
 import net.nan21.dnet.module.md.mm.prod.ds.param.ProductDsParam;
 
-import net.nan21.dnet.module.md.mm.prod.ds.model.ProductDs;
 import net.nan21.dnet.core.api.session.Session;
 
 public class ProductDsQueryBuilder extends

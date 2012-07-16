@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.bd.geo.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeDs;
-
-import net.nan21.dnet.module.bd.geo.domain.entity.Region;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeDs;
+import net.nan21.dnet.module.bd.geo.domain.entity.Region;
 
 @Ds(entity = Region.class, sort = { @SortField(field = RegionDs.fCOUNTRYCODE),
         @SortField(field = RegionDs.fNAME) })

@@ -22,8 +22,9 @@
  	<bean id="MyClientDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.client.ds.model.MyClientDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.client.ds.filter.MyClientDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.client.ds.model.MyClientDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.client.domain.entity.Client" />
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.client.ds.qb.MyClientDsQueryBuilder" />	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="MyClient" />

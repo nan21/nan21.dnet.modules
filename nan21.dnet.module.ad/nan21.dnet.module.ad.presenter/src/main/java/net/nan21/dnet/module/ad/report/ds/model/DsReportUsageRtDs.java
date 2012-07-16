@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.ad.report.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.ad.report.domain.entity.DsReportUsage;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.ad.report.domain.entity.DsReportUsage;
 
 @Ds(entity = DsReportUsage.class, jpqlWhere = " e.dsReport.report.active = true ")
 public class DsReportUsageRtDs extends AbstractAuditableDs<DsReportUsage> {

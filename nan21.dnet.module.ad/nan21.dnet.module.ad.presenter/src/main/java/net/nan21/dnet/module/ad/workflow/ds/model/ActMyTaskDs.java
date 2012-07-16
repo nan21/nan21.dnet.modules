@@ -6,12 +6,11 @@
 package net.nan21.dnet.module.ad.workflow.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractBaseDs;
-
-import net.nan21.dnet.module.ad.workflow.domain.entity.ActTask;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractBaseDs;
+import net.nan21.dnet.module.ad.workflow.domain.entity.ActTask;
 
 @Ds(entity = ActTask.class, sort = { @SortField(field = ActMyTaskDs.fSTARTTIME) })
 public class ActMyTaskDs extends AbstractBaseDs<ActTask> {

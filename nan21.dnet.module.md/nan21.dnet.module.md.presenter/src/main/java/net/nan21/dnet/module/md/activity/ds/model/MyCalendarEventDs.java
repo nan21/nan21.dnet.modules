@@ -6,11 +6,10 @@
 package net.nan21.dnet.module.md.activity.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.md.activity.domain.entity.CalendarEvent;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.activity.domain.entity.CalendarEvent;
 
 @Ds(entity = CalendarEvent.class)
 public class MyCalendarEventDs extends AbstractAuditableDs<CalendarEvent> {

@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.sc.order.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderTax;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.sc.order.domain.entity.PurchaseOrderTax;
 
 @Ds(entity = PurchaseOrderTax.class)
 public class PurchaseOrderTaxDs extends AbstractAuditableDs<PurchaseOrderTax> {

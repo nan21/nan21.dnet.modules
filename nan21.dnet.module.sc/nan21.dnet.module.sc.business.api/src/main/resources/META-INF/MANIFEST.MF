@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.sc.invoice.business.service;vers
- ion="1.0.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mod
+ ion="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mod
  ule.bd.currency.domain.entity,net.nan21.dnet.module.bd.org.domain.ent
  ity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.module.
  md.base.tax.domain.entity,net.nan21.dnet.module.md.base.tx.domain.ent
@@ -8,7 +8,7 @@ Export-Package: net.nan21.dnet.module.sc.invoice.business.service;vers
  d.mm.prod.domain.entity,net.nan21.dnet.module.md.org.domain.entity,ne
  t.nan21.dnet.module.sc.invoice.domain.entity,net.nan21.dnet.module.sc
  .order.domain.entity",net.nan21.dnet.module.sc.order.business.service
- ;version="1.0.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dne
+ ;version="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dne
  t.module.bd.currency.domain.entity,net.nan21.dnet.module.bd.org.domai
  n.entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.mo
  dule.md.base.tax.domain.entity,net.nan21.dnet.module.md.base.tx.domai
@@ -16,11 +16,11 @@ Export-Package: net.nan21.dnet.module.sc.invoice.business.service;vers
  ule.md.mm.price.domain.entity,net.nan21.dnet.module.md.mm.prod.domain
  .entity,net.nan21.dnet.module.sc.order.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.ad.domain;version="[1.0.0,1.0.0]",nan21.dnet.module.bd.do
- main;version="[1.0.0,1.0.0]",nan21.dnet.module.md.domain;version="[1.
- 0.0,1.0.0]",nan21.dnet.module.sc.domain;version="[1.0.0,1.0.0]"
+ dnet.module.ad.domain;version="[1.1.0,1.1.0]",nan21.dnet.module.bd.do
+ main;version="[1.1.0,1.1.0]",nan21.dnet.module.md.domain;version="[1.
+ 1.0,1.1.0]",nan21.dnet.module.sc.domain;version="[1.1.0,1.1.0]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0
+Bundle-Version: 1.1.0
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet SC - business API
 Bundle-ManifestVersion: 2

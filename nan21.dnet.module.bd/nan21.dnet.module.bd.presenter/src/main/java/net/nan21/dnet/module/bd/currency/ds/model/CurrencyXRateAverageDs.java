@@ -6,11 +6,10 @@
 package net.nan21.dnet.module.bd.currency.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRateAverage;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRateAverage;
 
 @Ds(entity = CurrencyXRateAverage.class)
 public class CurrencyXRateAverageDs extends

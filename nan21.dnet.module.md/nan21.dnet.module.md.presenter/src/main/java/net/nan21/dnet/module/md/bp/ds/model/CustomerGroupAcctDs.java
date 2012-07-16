@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.md.bp.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroupAcct;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.bp.domain.entity.CustomerGroupAcct;
 
 @Ds(entity = CustomerGroupAcct.class)
 public class CustomerGroupAcctDs extends AbstractAuditableDs<CustomerGroupAcct> {

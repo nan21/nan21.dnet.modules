@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.ad.usr.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.ad.usr.domain.entity.DsMethodAccessControl;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.ad.usr.domain.entity.DsMethodAccessControl;
 
 @Ds(entity = DsMethodAccessControl.class, sort = {
         @SortField(field = DsMethodAccessControlDs.fDSNAME),

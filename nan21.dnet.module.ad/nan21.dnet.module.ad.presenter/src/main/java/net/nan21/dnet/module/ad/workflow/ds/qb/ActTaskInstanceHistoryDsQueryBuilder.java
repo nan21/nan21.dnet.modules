@@ -8,8 +8,8 @@ package net.nan21.dnet.module.ad.workflow.ds.qb;
 import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
 import net.nan21.dnet.core.presenter.model.EmptyParam;
 import net.nan21.dnet.module.ad.workflow.ds.filter.ActTaskInstanceHistoryDsFilter;
-
 import net.nan21.dnet.module.ad.workflow.ds.model.ActTaskInstanceHistoryDs;
+
 import net.nan21.dnet.core.api.session.Session;
 
 public class ActTaskInstanceHistoryDsQueryBuilder

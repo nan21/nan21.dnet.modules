@@ -7,9 +7,9 @@ package net.nan21.dnet.module.hr.payroll.ds.qb;
 
 import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
 import net.nan21.dnet.module.hr.payroll.ds.filter.PayrollElementValueDsFilter;
+import net.nan21.dnet.module.hr.payroll.ds.model.PayrollElementValueDs;
 import net.nan21.dnet.module.hr.payroll.ds.param.PayrollElementValueDsParam;
 
-import net.nan21.dnet.module.hr.payroll.ds.model.PayrollElementValueDs;
 import net.nan21.dnet.core.api.session.Session;
 
 public class PayrollElementValueDsQueryBuilder

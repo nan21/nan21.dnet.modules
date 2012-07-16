@@ -6,11 +6,10 @@
 package net.nan21.dnet.module.md.mm.price.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.md.mm.price.domain.entity.ProductPrice;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.mm.price.domain.entity.ProductPrice;
 
 @Ds(entity = ProductPrice.class)
 public class ProductPriceReportDs extends AbstractAuditableDs<ProductPrice> {

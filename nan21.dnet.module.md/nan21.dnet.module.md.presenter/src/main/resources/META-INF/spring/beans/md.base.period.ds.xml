@@ -13,10 +13,39 @@
 	  	<property name="filterClass" value="net.nan21.dnet.module.md.base.period.ds.filter.FiscalYearDsFilter" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.md.base.period.domain.entity.FiscalYear" />
 	  	<property name="converterClass" value="net.nan21.dnet.module.md.base.period.ds.converter.FiscalYearDsConv" />
+	  	<property name="rpcData" >
+	  		<map>
+	  			<entry key="createMonths">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.md._presenterdelegates.base.period.PeriodPD"/>
+	  				<constructor-arg name="methodName" value="createMonths" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="createQuarters">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.md._presenterdelegates.base.period.PeriodPD"/>
+	  				<constructor-arg name="methodName" value="createQuarters" />
+	  			</bean>	
+	  			</entry>	  			
+	  			<entry key="createHalfYears">
+	  			<bean class="net.nan21.dnet.core.presenter.model.RpcDefinition">
+	  				<constructor-arg name="delegateClass" value="net.nan21.dnet.module.md._presenterdelegates.base.period.PeriodPD"/>
+	  				<constructor-arg name="methodName" value="createHalfYears" />
+	  			</bean>	
+	  			</entry>	  			
+	  		</map>
+	  	</property>	
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >
 		<property name="name" value="FiscalYear" />
 		<property name="modelClass" value="net.nan21.dnet.module.md.base.period.ds.model.FiscalYearDs" />
+	  	<property name="serviceMethods" >
+	  		<list>
+	  			<value type="java.lang.String">createMonths</value>
+	  			<value type="java.lang.String">createQuarters</value>
+	  			<value type="java.lang.String">createHalfYears</value>
+			</list>	  		 
+	  	</property>	
 	</bean>
    
  	<bean id="FiscalYearLovDsService" scope="prototype"

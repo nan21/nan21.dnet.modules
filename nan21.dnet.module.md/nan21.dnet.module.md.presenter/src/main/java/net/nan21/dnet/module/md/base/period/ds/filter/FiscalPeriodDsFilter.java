@@ -17,6 +17,8 @@ public class FiscalPeriodDsFilter extends AbstractTypeWithCodeDsFilter {
 
     private String year;
 
+    private String type;
+
     private Date startDate;
 
     private Date startDate_From;
@@ -26,6 +28,8 @@ public class FiscalPeriodDsFilter extends AbstractTypeWithCodeDsFilter {
 
     private Date endDate_From;
     private Date endDate_To;
+
+    private Boolean posting;
 
     public Long getYearId() {
         return this.yearId;
@@ -57,6 +61,14 @@ public class FiscalPeriodDsFilter extends AbstractTypeWithCodeDsFilter {
 
     public void setYear(String year) {
         this.year = year;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Date getStartDate() {
@@ -105,6 +117,14 @@ public class FiscalPeriodDsFilter extends AbstractTypeWithCodeDsFilter {
 
     public void setEndDate_To(Date endDate_To) {
         this.endDate_To = endDate_To;
+    }
+
+    public Boolean getPosting() {
+        return this.posting;
+    }
+
+    public void setPosting(Boolean posting) {
+        this.posting = posting;
     }
 
 }

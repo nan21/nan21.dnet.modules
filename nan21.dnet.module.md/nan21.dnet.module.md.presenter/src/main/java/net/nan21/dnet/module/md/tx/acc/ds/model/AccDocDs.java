@@ -6,12 +6,11 @@
 package net.nan21.dnet.module.md.tx.acc.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDoc;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.tx.acc.domain.entity.AccDoc;
 
 @Ds(entity = AccDoc.class, sort = { @SortField(field = AccDocDs.fDOCDATE) })
 public class AccDocDs extends AbstractAuditableDs<AccDoc> {

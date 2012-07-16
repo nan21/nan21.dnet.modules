@@ -1,16 +1,16 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.fi.asset.domain.entity;version="
- 1.0.0";uses:="javax.persistence,javax.validation.constraints,net.nan2
+ 1.1.0";uses:="javax.persistence,javax.validation.constraints,net.nan2
  1.dnet.core.domain.model,net.nan21.dnet.module.bd.currency.domain.ent
  ity,net.nan21.dnet.module.md.acc.domain.entity,net.nan21.dnet.module.
  md.res.domain.entity,org.eclipse.persistence.annotations,org.eclipse.
  persistence.descriptors"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0,1.0.0]",nan21.dnet.module.ad.domain;
- version="[1.0.0,1.0.0]",nan21.dnet.module.bd.domain;version="[1.0.0,1
- .0.0]",nan21.dnet.module.md.domain;version="[1.0.0,1.0.0]"
+ dnet.core.domain;version="[1.1.0,1.1.0]",nan21.dnet.module.ad.domain;
+ version="[1.1.0,1.1.0]",nan21.dnet.module.bd.domain;version="[1.1.0,1
+ .1.0]",nan21.dnet.module.md.domain;version="[1.1.0,1.1.0]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0
+Bundle-Version: 1.1.0
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet FI - domain
 Bundle-ManifestVersion: 2

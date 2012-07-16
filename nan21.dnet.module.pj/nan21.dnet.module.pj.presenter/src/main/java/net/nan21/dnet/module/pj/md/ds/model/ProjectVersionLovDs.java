@@ -6,12 +6,11 @@
 package net.nan21.dnet.module.pj.md.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeLov;
-
-import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeLov;
+import net.nan21.dnet.module.pj.md.domain.entity.ProjectVersion;
 
 @Ds(entity = ProjectVersion.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = ProjectVersionLovDs.fPLANDATE, desc = true) })
 public class ProjectVersionLovDs extends AbstractTypeLov<ProjectVersion> {

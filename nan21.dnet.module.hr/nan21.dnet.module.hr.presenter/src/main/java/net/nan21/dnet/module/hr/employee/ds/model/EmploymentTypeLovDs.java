@@ -5,12 +5,10 @@
  */
 package net.nan21.dnet.module.hr.employee.ds.model;
 
+import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.presenter.model.base.AbstractTypeLov;
-
 import net.nan21.dnet.module.hr.employee.domain.entity.EmploymentType;
-import net.nan21.dnet.core.api.annotation.Ds;
-import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = EmploymentType.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = EmploymentTypeLovDs.fNAME) })
 public class EmploymentTypeLovDs extends AbstractTypeLov<EmploymentType> {

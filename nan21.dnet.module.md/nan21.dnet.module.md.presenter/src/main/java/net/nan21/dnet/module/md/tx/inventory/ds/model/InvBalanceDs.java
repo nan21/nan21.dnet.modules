@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.md.tx.inventory.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvBalance;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvBalance;
 
 @Ds(entity = InvBalance.class)
 public class InvBalanceDs extends AbstractAuditableDs<InvBalance> {

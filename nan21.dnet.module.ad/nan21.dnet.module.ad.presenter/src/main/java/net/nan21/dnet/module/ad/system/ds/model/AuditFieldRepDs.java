@@ -6,14 +6,10 @@
 package net.nan21.dnet.module.ad.system.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
-import net.nan21.dnet.core.presenter.model.base.AbstractSimpleDs;
-import net.nan21.dnet.module.ad.system.ds.filter.UiViewStateRTLovDsFilter;
-import net.nan21.dnet.module.ad.system.ds.param.UiViewStateRTLovDsParam;
-
-import net.nan21.dnet.module.ad.system.domain.entity.AuditField;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractSimpleDs;
+import net.nan21.dnet.module.ad.system.domain.entity.AuditField;
 
 @Ds(entity = AuditField.class)
 public class AuditFieldRepDs extends AbstractSimpleDs<AuditField> {

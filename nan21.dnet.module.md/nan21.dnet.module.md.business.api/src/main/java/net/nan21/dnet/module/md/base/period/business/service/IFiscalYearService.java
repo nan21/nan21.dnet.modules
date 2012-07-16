@@ -21,4 +21,10 @@ public interface IFiscalYearService extends IEntityService<FiscalYear> {
 
     public List<FiscalYear> findByCalendarId(Long calendarId);
 
+    public void doCreateMonths(FiscalYear year) throws Exception;
+
+    public void doCreateQuarters(FiscalYear year) throws Exception;
+
+    public void doCreateHalfYears(FiscalYear year) throws Exception;
+
 }

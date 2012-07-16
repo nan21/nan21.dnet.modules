@@ -1,45 +1,45 @@
 Manifest-Version: 1.0
-Export-Package: net.nan21.dnet.module.ad._domainext;version="1.0.0";us
+Export-Package: net.nan21.dnet.module.ad._domainext;version="1.1.0";us
  es:="javax.persistence,javax.validation.constraints,net.nan21.dnet.co
  re.domain.eventhandler,org.eclipse.persistence.config,org.eclipse.per
  sistence.descriptors,org.hibernate.validator.constraints",net.nan21.d
- net.module.ad.client.domain.entity;version="1.0.0";uses:="javax.persi
+ net.module.ad.client.domain.entity;version="1.1.0";uses:="javax.persi
  stence,javax.validation.constraints,net.nan21.dnet.core.api.model,org
  .eclipse.persistence.annotations,org.eclipse.persistence.descriptors,
  org.hibernate.validator.constraints",net.nan21.dnet.module.ad.data.do
- main.entity;version="1.0.0";uses:="javax.persistence,javax.validation
+ main.entity;version="1.1.0";uses:="javax.persistence,javax.validation
  .constraints,net.nan21.dnet.core.domain.model,org.eclipse.persistence
  .annotations,org.eclipse.persistence.descriptors,org.hibernate.valida
  tor.constraints",net.nan21.dnet.module.ad.impex.domain.entity;version
- ="1.0.0";uses:="javax.persistence,javax.validation.constraints,net.na
+ ="1.1.0";uses:="javax.persistence,javax.validation.constraints,net.na
  n21.dnet.core.domain.model,org.eclipse.persistence.annotations,org.ec
  lipse.persistence.descriptors,org.hibernate.validator.constraints",ne
- t.nan21.dnet.module.ad.quartz.domain.entity;version="1.0.0";uses:="ja
+ t.nan21.dnet.module.ad.quartz.domain.entity;version="1.1.0";uses:="ja
  vax.persistence,javax.validation.constraints,org.eclipse.persistence.
  annotations,org.eclipse.persistence.descriptors,org.hibernate.validat
  or.constraints",net.nan21.dnet.module.ad.report.domain.entity;version
- ="1.0.0";uses:="javax.persistence,javax.validation.constraints,net.na
+ ="1.1.0";uses:="javax.persistence,javax.validation.constraints,net.na
  n21.dnet.core.domain.model,org.eclipse.persistence.annotations,org.ec
  lipse.persistence.descriptors,org.hibernate.validator.constraints",ne
- t.nan21.dnet.module.ad.system.domain.entity;version="1.0.0";uses:="ja
+ t.nan21.dnet.module.ad.system.domain.entity;version="1.1.0";uses:="ja
  vax.persistence,javax.validation.constraints,net.nan21.dnet.core.api.
  model,net.nan21.dnet.core.domain.model,org.eclipse.persistence.annota
  tions,org.eclipse.persistence.descriptors,org.hibernate.validator.con
- straints",net.nan21.dnet.module.ad.usr.domain.entity;version="1.0.0";
+ straints",net.nan21.dnet.module.ad.usr.domain.entity;version="1.1.0";
  uses:="javax.persistence,javax.validation.constraints,net.nan21.dnet.
  core.domain.model,net.nan21.dnet.module.ad.system.domain.entity,org.e
  clipse.persistence.annotations,org.eclipse.persistence.descriptors,or
  g.hibernate.validator.constraints",net.nan21.dnet.module.ad.usr.domai
- n.eventhandler;version="1.0.0";uses:="net.nan21.dnet.core.domain.even
+ n.eventhandler;version="1.1.0";uses:="net.nan21.dnet.core.domain.even
  thandler,org.eclipse.persistence.descriptors",net.nan21.dnet.module.a
- d.workflow.domain.entity;version="1.0.0";uses:="javax.persistence,jav
+ d.workflow.domain.entity;version="1.1.0";uses:="javax.persistence,jav
  ax.validation.constraints,net.nan21.dnet.core.api.model,net.nan21.dne
  t.core.domain.model,org.eclipse.persistence.annotations,org.eclipse.p
  ersistence.descriptors,org.hibernate.validator.constraints"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.0,1.0.0]"
+ dnet.core.domain;version="[1.1.0,1.1.0]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.0
+Bundle-Version: 1.1.0
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet AD - domain
 Bundle-ManifestVersion: 2

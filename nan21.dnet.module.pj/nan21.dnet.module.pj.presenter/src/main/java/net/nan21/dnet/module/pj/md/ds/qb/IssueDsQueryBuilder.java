@@ -7,9 +7,9 @@ package net.nan21.dnet.module.pj.md.ds.qb;
 
 import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
 import net.nan21.dnet.module.pj.md.ds.filter.IssueDsFilter;
+import net.nan21.dnet.module.pj.md.ds.model.IssueDs;
 import net.nan21.dnet.module.pj.md.ds.param.IssueDsParam;
 
-import net.nan21.dnet.module.pj.md.ds.model.IssueDs;
 import net.nan21.dnet.core.api.session.Session;
 
 public class IssueDsQueryBuilder extends

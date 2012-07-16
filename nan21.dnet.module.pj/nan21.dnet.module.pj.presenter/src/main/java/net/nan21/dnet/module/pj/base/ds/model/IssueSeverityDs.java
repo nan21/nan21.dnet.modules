@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.pj.base.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
-
-import net.nan21.dnet.module.pj.base.domain.entity.IssueSeverity;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
+import net.nan21.dnet.module.pj.base.domain.entity.IssueSeverity;
 
 @Ds(entity = IssueSeverity.class, sort = { @SortField(field = IssueSeverityDs.fSEQUENCENO) })
 public class IssueSeverityDs extends AbstractTypeDs<IssueSeverity> {

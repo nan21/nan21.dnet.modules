@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.md.acc.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeLov;
-
-import net.nan21.dnet.module.md.acc.domain.entity.Account;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeLov;
+import net.nan21.dnet.module.md.acc.domain.entity.Account;
 
 @Ds(entity = Account.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = AccountLovDs.fCODE) })
 public class AccountLovDs extends AbstractTypeWithCodeLov<Account> {

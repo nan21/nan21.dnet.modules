@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.ad.workflow.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
-
-import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
+import net.nan21.dnet.module.ad.workflow.domain.entity.WfDefNode;
 
 @Ds(entity = WfDefNode.class, sort = { @SortField(field = WfDefNodeDs.fID) })
 public class WfDefNodeDs extends AbstractTypeDs<WfDefNode> {

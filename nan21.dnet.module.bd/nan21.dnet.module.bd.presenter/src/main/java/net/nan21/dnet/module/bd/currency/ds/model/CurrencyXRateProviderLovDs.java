@@ -5,12 +5,10 @@
  */
 package net.nan21.dnet.module.bd.currency.ds.model;
 
+import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.presenter.model.base.AbstractTypeWithCodeLov;
-
 import net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRateProvider;
-import net.nan21.dnet.core.api.annotation.Ds;
-import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = CurrencyXRateProvider.class, jpqlWhere = " e.active = true ", sort = { @SortField(field = CurrencyXRateProviderLovDs.fCODE) })
 public class CurrencyXRateProviderLovDs extends

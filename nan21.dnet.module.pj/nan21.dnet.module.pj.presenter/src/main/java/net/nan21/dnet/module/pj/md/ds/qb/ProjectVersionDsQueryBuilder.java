@@ -7,9 +7,9 @@ package net.nan21.dnet.module.pj.md.ds.qb;
 
 import net.nan21.dnet.core.presenter.action.QueryBuilderWithJpql;
 import net.nan21.dnet.module.pj.md.ds.filter.ProjectVersionDsFilter;
+import net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs;
 import net.nan21.dnet.module.pj.md.ds.param.ProjectVersionDsParam;
 
-import net.nan21.dnet.module.pj.md.ds.model.ProjectVersionDs;
 import net.nan21.dnet.core.api.session.Session;
 
 public class ProjectVersionDsQueryBuilder

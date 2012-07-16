@@ -6,12 +6,11 @@
 package net.nan21.dnet.module.hr.payroll.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElementValue;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.hr.payroll.domain.entity.PayrollElementValue;
 
 @Ds(entity = PayrollElementValue.class, jpqlWhere = " e.element.balance = true ", sort = {
         @SortField(field = PayrollBalanceValueDs.fPERIODSTART, desc = true),

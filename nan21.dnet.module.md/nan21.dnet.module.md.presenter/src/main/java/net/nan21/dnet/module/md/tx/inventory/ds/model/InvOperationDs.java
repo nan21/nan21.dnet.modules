@@ -6,12 +6,11 @@
 package net.nan21.dnet.module.md.tx.inventory.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvOperation;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvOperation;
 
 @Ds(entity = InvOperation.class, sort = { @SortField(field = InvOperationDs.fEVENTDATE, desc = true) })
 public class InvOperationDs extends AbstractAuditableDs<InvOperation> {

@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.md.tx.inventory.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionLine;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.tx.inventory.domain.entity.InvTransactionLine;
 
 @Ds(entity = InvTransactionLine.class)
 public class InvTransactionLineDs extends

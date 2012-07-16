@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.ad.system.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
-
-import net.nan21.dnet.module.ad.system.domain.entity.SysJobCtx;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
+import net.nan21.dnet.module.ad.system.domain.entity.SysJobCtx;
 
 @Ds(entity = SysJobCtx.class, sort = { @SortField(field = SysJobCtxDs.fNAME) })
 public class SysJobCtxDs extends AbstractTypeDs<SysJobCtx> {

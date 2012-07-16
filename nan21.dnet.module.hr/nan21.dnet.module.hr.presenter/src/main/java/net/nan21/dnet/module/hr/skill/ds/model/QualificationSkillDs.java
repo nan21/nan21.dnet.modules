@@ -5,12 +5,11 @@
  */
 package net.nan21.dnet.module.hr.skill.ds.model;
 
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.hr.skill.domain.entity.QualificationSkill;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.hr.skill.domain.entity.QualificationSkill;
 
 @Ds(entity = QualificationSkill.class, sort = { @SortField(field = QualificationSkillDs.fSKILL) })
 public class QualificationSkillDs extends

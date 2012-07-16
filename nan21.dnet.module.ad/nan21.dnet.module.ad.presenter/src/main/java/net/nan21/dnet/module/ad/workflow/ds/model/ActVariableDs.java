@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.ad.workflow.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.AbstractBaseDs;
-
-import net.nan21.dnet.module.ad.workflow.domain.entity.ActVariable;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractBaseDs;
+import net.nan21.dnet.module.ad.workflow.domain.entity.ActVariable;
 
 @Ds(entity = ActVariable.class)
 public class ActVariableDs extends AbstractBaseDs<ActVariable> {

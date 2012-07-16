@@ -46,8 +46,9 @@
  	<bean id="MyUserSettingsDsService" scope="prototype"
 	  		class="net.nan21.dnet.core.presenter.service.BaseDsService"  >
 	  	<property name="modelClass" value="net.nan21.dnet.module.ad.usr.ds.model.MyUserSettingsDs" />
-	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.filter.MyUserSettingsDsFilter" />
+	  	<property name="filterClass" value="net.nan21.dnet.module.ad.usr.ds.model.MyUserSettingsDs" />
 	  	<property name="entityClass" value="net.nan21.dnet.module.ad.usr.domain.entity.User" />
+	  	<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.usr.ds.qb.MyUserSettingsDsQueryBuilder" />	
 	  	<property name="converterClass" value="net.nan21.dnet.module.ad.usr.ds.converter.MyUserSettingsDsConv" />
 	</bean>
 	<bean class="net.nan21.dnet.core.presenter.model.DsDefinition" >

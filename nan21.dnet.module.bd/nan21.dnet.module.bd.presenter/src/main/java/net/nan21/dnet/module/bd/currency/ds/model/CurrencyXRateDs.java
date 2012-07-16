@@ -6,12 +6,11 @@
 package net.nan21.dnet.module.bd.currency.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRate;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.bd.currency.domain.entity.CurrencyXRate;
 
 @Ds(entity = CurrencyXRate.class, sort = {
         @SortField(field = CurrencyXRateDs.fVALIDAT, desc = true),

@@ -5,11 +5,10 @@
  */
 package net.nan21.dnet.module.ad.client.ds.model;
 
-import net.nan21.dnet.core.presenter.model.base.X_AbstractAuditedDs;
-
-import net.nan21.dnet.module.ad.client.domain.entity.Client;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.X_AbstractAuditedDs;
+import net.nan21.dnet.module.ad.client.domain.entity.Client;
 
 @Ds(entity = Client.class)
 public class ClientDs extends X_AbstractAuditedDs<Client> {

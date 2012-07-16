@@ -6,12 +6,11 @@
 package net.nan21.dnet.module.ad.workflow.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.api.annotation.SortField;
-import net.nan21.dnet.core.presenter.model.base.AbstractBaseDs;
-
-import net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessInstanceHistory;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.SortField;
+import net.nan21.dnet.core.presenter.model.base.AbstractBaseDs;
+import net.nan21.dnet.module.ad.workflow.domain.entity.ActProcessInstanceHistory;
 
 @Ds(entity = ActProcessInstanceHistory.class, jpqlWhere = " e.endTime is not null ", sort = { @SortField(field = ActProcessInstanceHistoryDs.fENDTIME, desc = true) })
 public class ActProcessInstanceHistoryDs extends

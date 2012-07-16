@@ -6,11 +6,10 @@
 package net.nan21.dnet.module.hr.grade.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.hr.grade.domain.entity.GradeRateValue;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.hr.grade.domain.entity.GradeRateValue;
 
 @Ds(entity = GradeRateValue.class)
 public class GradeRateValueDs extends AbstractAuditableDs<GradeRateValue> {

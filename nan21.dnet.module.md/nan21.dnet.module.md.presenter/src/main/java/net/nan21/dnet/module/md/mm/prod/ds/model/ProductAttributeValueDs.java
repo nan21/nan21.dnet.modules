@@ -6,13 +6,12 @@
 package net.nan21.dnet.module.md.mm.prod.ds.model;
 
 import javax.persistence.QueryHint;
-import net.nan21.dnet.core.api.annotation.DsQueryHints;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-import org.eclipse.persistence.config.QueryHints;
-
-import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.api.annotation.DsQueryHints;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.mm.prod.domain.entity.ProductAttributeValue;
+import org.eclipse.persistence.config.QueryHints;
 
 @Ds(entity = ProductAttributeValue.class)
 @DsQueryHints({ @QueryHint(name = QueryHints.LEFT_FETCH, value = "e.product.attributeSet") })

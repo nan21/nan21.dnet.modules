@@ -6,11 +6,10 @@
 package net.nan21.dnet.module.md.tx.acc.ds.model;
 
 import java.util.Date;
-import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
-
-import net.nan21.dnet.module.md.tx.acc.domain.entity.AccOperation;
 import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.DsField;
+import net.nan21.dnet.core.presenter.model.base.AbstractAuditableDs;
+import net.nan21.dnet.module.md.tx.acc.domain.entity.AccOperation;
 
 @Ds(entity = AccOperation.class, jpqlWhere = " e.headerLine = false ")
 public class AccOperationDs extends AbstractAuditableDs<AccOperation> {

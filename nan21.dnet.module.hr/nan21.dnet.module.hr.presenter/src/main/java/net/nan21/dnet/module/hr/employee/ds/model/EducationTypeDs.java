@@ -5,12 +5,10 @@
  */
 package net.nan21.dnet.module.hr.employee.ds.model;
 
+import net.nan21.dnet.core.api.annotation.Ds;
 import net.nan21.dnet.core.api.annotation.SortField;
 import net.nan21.dnet.core.presenter.model.base.AbstractTypeDs;
-
 import net.nan21.dnet.module.hr.employee.domain.entity.EducationType;
-import net.nan21.dnet.core.api.annotation.Ds;
-import net.nan21.dnet.core.api.annotation.DsField;
 
 @Ds(entity = EducationType.class, sort = { @SortField(field = EducationTypeDs.fNAME) })
 public class EducationTypeDs extends AbstractTypeDs<EducationType> {

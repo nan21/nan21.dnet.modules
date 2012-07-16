@@ -32,6 +32,8 @@
 				<constraints nullable="false" /></column>	 
 			<column name="STARTDATE" type="date">
 				<constraints  /></column>	 
+			<column name="TYPE" type="varchar(16)">
+				<constraints  /></column>	 
 			<column name="UUID" type="varchar(36)">
 				<constraints  /></column>	 
 			<column name="VERSION" type="bigint(19)">
