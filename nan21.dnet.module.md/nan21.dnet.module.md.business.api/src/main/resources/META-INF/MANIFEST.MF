@@ -1,51 +1,51 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.md.acc.business.service;version=
- "1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.
+ "1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.
  md.acc.domain.entity",net.nan21.dnet.module.md.activity.business.serv
- ice;version="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.
+ ice;version="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.
  dnet.module.md.activity.domain.entity,net.nan21.dnet.module.md.bp.dom
  ain.entity",net.nan21.dnet.module.md.base.period.business.service;ver
- sion="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mo
+ sion="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mo
  dule.bd.org.domain.entity,net.nan21.dnet.module.md.base.period.domain
  .entity",net.nan21.dnet.module.md.base.tax.business.service;version="
- 1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.m
+ 1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.m
  d.acc.domain.entity,net.nan21.dnet.module.md.base.tax.domain.entity",
- net.nan21.dnet.module.md.base.tx.business.service;version="1.1.0";use
+ net.nan21.dnet.module.md.base.tx.business.service;version="1.0.1";use
  s:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.md.acc.doma
  in.entity,net.nan21.dnet.module.md.base.tx.domain.entity",net.nan21.d
- net.module.md.bp.business.service;version="1.1.0";uses:="net.nan21.dn
+ net.module.md.bp.business.service;version="1.0.1";uses:="net.nan21.dn
  et.core.api.service,net.nan21.dnet.module.bd.currency.domain.entity,n
  et.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.module.bd.or
  g.domain.entity,net.nan21.dnet.module.bd.standards.domain.entity,net.
  nan21.dnet.module.md.acc.domain.entity,net.nan21.dnet.module.md.base.
  tx.domain.entity,net.nan21.dnet.module.md.bp.domain.entity",net.nan21
- .dnet.module.md.mm.price.business.service;version="1.1.0";uses:="net.
+ .dnet.module.md.mm.price.business.service;version="1.0.1";uses:="net.
  nan21.dnet.core.api.service,net.nan21.dnet.module.bd.currency.domain.
  entity,net.nan21.dnet.module.bd.uom.domain.entity,net.nan21.dnet.modu
  le.md.mm.price.domain.entity,net.nan21.dnet.module.md.mm.prod.domain.
  entity",net.nan21.dnet.module.md.mm.prod.business.service;version="1.
- 1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.
+ 0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.
  attr.domain.entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan
  21.dnet.module.bd.standards.domain.entity,net.nan21.dnet.module.bd.uo
  m.domain.entity,net.nan21.dnet.module.md.acc.domain.entity,net.nan21.
  dnet.module.md.mm.prod.domain.entity",net.nan21.dnet.module.md.org.bu
- siness.service;version="1.1.0";uses:="net.nan21.dnet.core.api.service
+ siness.service;version="1.0.1";uses:="net.nan21.dnet.core.api.service
  ,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.modul
  e.bd.org.domain.entity,net.nan21.dnet.module.md.acc.domain.entity,net
  .nan21.dnet.module.md.base.tx.domain.entity,net.nan21.dnet.module.md.
  org.domain.entity",net.nan21.dnet.module.md.res.business.service;vers
- ion="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mod
+ ion="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mod
  ule.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.domain.entity,n
  et.nan21.dnet.module.md.mm.prod.domain.entity,net.nan21.dnet.module.m
  d.res.domain.entity",net.nan21.dnet.module.md.tx.acc.business.service
- ;version="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dne
+ ;version="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dne
  t.module.bd.currency.domain.entity,net.nan21.dnet.module.bd.org.domai
  n.entity,net.nan21.dnet.module.md.acc.domain.entity,net.nan21.dnet.mo
  dule.md.base.period.domain.entity,net.nan21.dnet.module.md.base.tx.do
  main.entity,net.nan21.dnet.module.md.bp.domain.entity,net.nan21.dnet.
  module.md.mm.prod.domain.entity,net.nan21.dnet.module.md.res.domain.e
  ntity,net.nan21.dnet.module.md.tx.acc.domain.entity",net.nan21.dnet.m
- odule.md.tx.fin.business.service;version="1.1.0";uses:="net.nan21.dne
+ odule.md.tx.fin.business.service;version="1.0.1";uses:="net.nan21.dne
  t.core.api.service,net.nan21.dnet.module.bd.currency.domain.entity,ne
  t.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd.uom
  .domain.entity,net.nan21.dnet.module.md.acc.domain.entity,net.nan21.d
@@ -53,17 +53,17 @@ Export-Package: net.nan21.dnet.module.md.acc.business.service;version=
  n.entity,net.nan21.dnet.module.md.mm.prod.domain.entity,net.nan21.dne
  t.module.md.org.domain.entity,net.nan21.dnet.module.md.tx.fin.domain.
  entity",net.nan21.dnet.module.md.tx.inventory.business.service;versio
- n="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modul
+ n="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modul
  e.bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net
  .nan21.dnet.module.md.base.tx.domain.entity,net.nan21.dnet.module.md.
  mm.prod.domain.entity,net.nan21.dnet.module.md.org.domain.entity,net.
  nan21.dnet.module.md.tx.inventory.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.ad.domain;version="[1.1.0,1.1.0]",nan21.dnet.module.bd.do
- main;version="[1.1.0,1.1.0]",nan21.dnet.module.md.domain;version="[1.
- 1.0,1.1.0]"
+ dnet.module.ad.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.bd.do
+ main;version="[1.0.1,1.0.1]",nan21.dnet.module.md.domain;version="[1.
+ 0.1,1.0.1]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.1.0
+Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet MD - business API
 Bundle-ManifestVersion: 2

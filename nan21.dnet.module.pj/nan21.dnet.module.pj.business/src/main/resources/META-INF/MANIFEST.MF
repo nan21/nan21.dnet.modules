@@ -1,22 +1,22 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.pj._businessdelegates;version="1
- .1.0";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
+ .0.1";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
  ss.service",net.nan21.dnet.module.pj.base.business.serviceimpl;versio
- n="1.1.0";uses:="javax.persistence,net.nan21.dnet.core.business.servi
+ n="1.0.1";uses:="javax.persistence,net.nan21.dnet.core.business.servi
  ce,net.nan21.dnet.module.pj.base.business.service,net.nan21.dnet.modu
  le.pj.base.domain.entity",net.nan21.dnet.module.pj.md.business.servic
- eimpl;version="1.1.0";uses:="javax.persistence,net.nan21.dnet.core.bu
+ eimpl;version="1.0.1";uses:="javax.persistence,net.nan21.dnet.core.bu
  siness.service,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.d
  net.module.pj.base.domain.entity,net.nan21.dnet.module.pj.md.business
  .service,net.nan21.dnet.module.pj.md.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.1.0,1.1.0]",nan21.dnet.core.business;ver
- sion="[1.1.0,1.1.0]",nan21.dnet.module.ad.domain;version="[1.1.0,1.1.
- 0]",nan21.dnet.module.pj.domain;version="[1.1.0,1.1.0]",nan21.dnet.mo
- dule.ad.business.api;version="[1.1.0,1.1.0]",nan21.dnet.module.pj.bus
- iness.api;version="[1.1.0,1.1.0]"
+ dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dnet.core.business;ver
+ sion="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;version="[1.0.1,1.0.
+ 1]",nan21.dnet.module.pj.domain;version="[1.0.1,1.0.1]",nan21.dnet.mo
+ dule.ad.business.api;version="[1.0.1,1.0.1]",nan21.dnet.module.pj.bus
+ iness.api;version="[1.0.1,1.0.1]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.1.0
+Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet PJ - business
 Bundle-ManifestVersion: 2

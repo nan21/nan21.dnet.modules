@@ -1,28 +1,28 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.bd.attr.business.service;version
- ="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module
+ ="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module
  .bd.attr.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity",ne
- t.nan21.dnet.module.bd.contact.business.service;version="1.1.0";uses:
+ t.nan21.dnet.module.bd.contact.business.service;version="1.0.1";uses:
  ="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.contact.do
  main.entity",net.nan21.dnet.module.bd.currency.business.service;versi
- on="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modu
+ on="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modu
  le.bd.currency.domain.entity",net.nan21.dnet.module.bd.elem.business.
- service;version="1.1.0";uses:="net.nan21.dnet.core.api.service,net.na
+ service;version="1.0.1";uses:="net.nan21.dnet.core.api.service,net.na
  n21.dnet.module.bd.elem.domain.entity",net.nan21.dnet.module.bd.geo.b
- usiness.service;version="1.1.0";uses:="net.nan21.dnet.core.api.servic
+ usiness.service;version="1.0.1";uses:="net.nan21.dnet.core.api.servic
  e,net.nan21.dnet.module.bd.geo.domain.entity",net.nan21.dnet.module.b
- d.org.business.service;version="1.1.0";uses:="net.nan21.dnet.core.api
+ d.org.business.service;version="1.0.1";uses:="net.nan21.dnet.core.api
  .service,net.nan21.dnet.module.bd.org.domain.entity",net.nan21.dnet.m
- odule.bd.standards.business.service;version="1.1.0";uses:="net.nan21.
+ odule.bd.standards.business.service;version="1.0.1";uses:="net.nan21.
  dnet.core.api.service,net.nan21.dnet.module.bd.standards.domain.entit
- y",net.nan21.dnet.module.bd.uom.business.service;version="1.1.0";uses
+ y",net.nan21.dnet.module.bd.uom.business.service;version="1.0.1";uses
  :="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.uom.domai
  n.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.bd.domain;version="[1.1.0,1.1.0]",nan21.dnet.module.ad.do
- main;version="[1.1.0,1.1.0]"
+ dnet.module.bd.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.do
+ main;version="[1.0.1,1.0.1]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.1.0
+Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet BD - business API
 Bundle-ManifestVersion: 2

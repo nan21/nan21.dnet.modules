@@ -1,26 +1,26 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.ad.client.business.service;versi
- on="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modu
+ on="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modu
  le.ad.client.domain.entity",net.nan21.dnet.module.ad.data.business.se
- rvice;version="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan2
+ rvice;version="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan2
  1.dnet.module.ad.data.domain.entity",net.nan21.dnet.module.ad.impex.b
- usiness.service;version="1.1.0";uses:="net.nan21.dnet.core.api.servic
+ usiness.service;version="1.0.1";uses:="net.nan21.dnet.core.api.servic
  e,net.nan21.dnet.module.ad.impex.domain.entity",net.nan21.dnet.module
- .ad.quartz.business.service;version="1.1.0";uses:="net.nan21.dnet.cor
+ .ad.quartz.business.service;version="1.0.1";uses:="net.nan21.dnet.cor
  e.api.service",net.nan21.dnet.module.ad.report.business.service;versi
- on="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modu
+ on="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modu
  le.ad.report.domain.entity",net.nan21.dnet.module.ad.system.business.
- service;version="1.1.0";uses:="net.nan21.dnet.core.api.service,net.na
+ service;version="1.0.1";uses:="net.nan21.dnet.core.api.service,net.na
  n21.dnet.module.ad.system.domain.entity",net.nan21.dnet.module.ad.usr
- .business.service;version="1.1.0";uses:="net.nan21.dnet.core.api.serv
+ .business.service;version="1.0.1";uses:="net.nan21.dnet.core.api.serv
  ice,net.nan21.dnet.module.ad.system.domain.entity,net.nan21.dnet.modu
  le.ad.usr.domain.entity",net.nan21.dnet.module.ad.workflow.business.s
- ervice;version="1.1.0";uses:="net.nan21.dnet.core.api.service,net.nan
+ ervice;version="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan
  21.dnet.module.ad.workflow.domain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.ad.domain;version="[1.1.0,1.1.0]"
+ dnet.module.ad.domain;version="[1.0.1,1.0.1]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.1.0
+Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet AD - business API
 Bundle-ManifestVersion: 2

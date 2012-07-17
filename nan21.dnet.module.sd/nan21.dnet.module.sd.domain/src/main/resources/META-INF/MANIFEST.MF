@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.sd.invoice.domain.entity;version
- ="1.1.0";uses:="javax.persistence,javax.validation.constraints,net.na
+ ="1.0.1";uses:="javax.persistence,javax.validation.constraints,net.na
  n21.dnet.core.domain.model,net.nan21.dnet.module.bd.currency.domain.e
  ntity,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.modul
  e.bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,net
@@ -11,14 +11,14 @@ Export-Package: net.nan21.dnet.module.sd.invoice.domain.entity;version
  et.nan21.dnet.module.sd.order.domain.entity,org.eclipse.persistence.a
  nnotations,org.eclipse.persistence.descriptors,org.hibernate.validato
  r.constraints",net.nan21.dnet.module.sd.invoice.domain.eventhandler;v
- ersion="1.1.0";uses:="net.nan21.dnet.core.domain.eventhandler,org.ecl
+ ersion="1.0.1";uses:="net.nan21.dnet.core.domain.eventhandler,org.ecl
  ipse.persistence.descriptors",net.nan21.dnet.module.sd.opportunity.do
- main.entity;version="1.1.0";uses:="javax.persistence,javax.validation
+ main.entity;version="1.0.1";uses:="javax.persistence,javax.validation
  .constraints,net.nan21.dnet.core.domain.model,net.nan21.dnet.module.a
  d.usr.domain.entity,net.nan21.dnet.module.bd.currency.domain.entity,n
  et.nan21.dnet.module.md.bp.domain.entity,org.eclipse.persistence.anno
  tations,org.eclipse.persistence.descriptors",net.nan21.dnet.module.sd
- .order.domain.entity;version="1.1.0";uses:="javax.persistence,javax.v
+ .order.domain.entity;version="1.0.1";uses:="javax.persistence,javax.v
  alidation.constraints,net.nan21.dnet.core.domain.model,net.nan21.dnet
  .module.bd.currency.domain.entity,net.nan21.dnet.module.bd.geo.domain
  .entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.mod
@@ -28,15 +28,15 @@ Export-Package: net.nan21.dnet.module.sd.invoice.domain.entity;version
  ty,net.nan21.dnet.module.md.mm.prod.domain.entity,net.nan21.dnet.modu
  le.md.tx.inventory.domain.entity,org.eclipse.persistence.annotations,
  org.eclipse.persistence.descriptors,org.hibernate.validator.constrain
- ts",net.nan21.dnet.module.sd.order.domain.eventhandler;version="1.1.0
+ ts",net.nan21.dnet.module.sd.order.domain.eventhandler;version="1.0.1
  ";uses:="net.nan21.dnet.core.domain.eventhandler,org.eclipse.persiste
  nce.descriptors"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.1.0,1.1.0]",nan21.dnet.module.ad.domain;
- version="[1.1.0,1.1.0]",nan21.dnet.module.bd.domain;version="[1.1.0,1
- .1.0]",nan21.dnet.module.md.domain;version="[1.1.0,1.1.0]"
+ dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;
+ version="[1.0.1,1.0.1]",nan21.dnet.module.bd.domain;version="[1.0.1,1
+ .0.1]",nan21.dnet.module.md.domain;version="[1.0.1,1.0.1]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.1.0
+Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet SD - domain
 Bundle-ManifestVersion: 2

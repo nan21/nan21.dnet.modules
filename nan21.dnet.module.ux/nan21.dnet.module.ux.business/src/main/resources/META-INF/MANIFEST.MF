@@ -1,17 +1,17 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.ux._businessdelegates;version="1
- .1.0";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
+ .0.1";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
  ss.service"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.1.0,1.1.0]",nan21.dnet.core.business;ver
- sion="[1.1.0,1.1.0]",nan21.dnet.module.ad.domain;version="[1.1.0,1.1.
- 0]",nan21.dnet.module.bd.domain;version="[1.1.0,1.1.0]",nan21.dnet.mo
- dule.ux.domain;version="[1.1.0,1.1.0]",nan21.dnet.module.ad.business.
- api;version="[1.1.0,1.1.0]",nan21.dnet.module.bd.business.api;version
- ="[1.1.0,1.1.0]",nan21.dnet.module.ux.business.api;version="[1.1.0,1.
- 1.0]"
+ dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dnet.core.business;ver
+ sion="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;version="[1.0.1,1.0.
+ 1]",nan21.dnet.module.bd.domain;version="[1.0.1,1.0.1]",nan21.dnet.mo
+ dule.ux.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.business.
+ api;version="[1.0.1,1.0.1]",nan21.dnet.module.bd.business.api;version
+ ="[1.0.1,1.0.1]",nan21.dnet.module.ux.business.api;version="[1.0.1,1.
+ 0.1]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.1.0
+Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet UX - business
 Bundle-ManifestVersion: 2

@@ -1,22 +1,22 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.sc._businessdelegates;version="1
- .1.0";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
+ .0.1";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
  ss.service",net.nan21.dnet.module.sc._businessdelegates.invoice;versi
- on="1.1.0";uses:="net.nan21.dnet.core.business.service,net.nan21.dnet
+ on="1.0.1";uses:="net.nan21.dnet.core.business.service,net.nan21.dnet
  .module.md.acc.business.service,net.nan21.dnet.module.md.acc.domain.e
  ntity,net.nan21.dnet.module.md.base.period.business.service,net.nan21
  .dnet.module.md.bp.business.service,net.nan21.dnet.module.md.mm.prod.
  business.service,net.nan21.dnet.module.md.org.business.service,net.na
  n21.dnet.module.md.tx.acc.domain.entity,net.nan21.dnet.module.sc.invo
  ice.domain.entity",net.nan21.dnet.module.sc._businessdelegates.order;
- version="1.1.0";uses:="net.nan21.dnet.core.business.service,net.nan21
+ version="1.0.1";uses:="net.nan21.dnet.core.business.service,net.nan21
  .dnet.module.md.base.tax.domain.entity,net.nan21.dnet.module.sc.invoi
  ce.domain.entity,net.nan21.dnet.module.sc.order.domain.entity",net.na
- n21.dnet.module.sc.invoice.business.serviceext;version="1.1.0";uses:=
+ n21.dnet.module.sc.invoice.business.serviceext;version="1.0.1";uses:=
  "net.nan21.dnet.module.sc.invoice.business.service,net.nan21.dnet.mod
  ule.sc.invoice.business.serviceimpl,net.nan21.dnet.module.sc.invoice.
  domain.entity",net.nan21.dnet.module.sc.invoice.business.serviceimpl;
- version="1.1.0";uses:="javax.persistence,net.nan21.dnet.core.business
+ version="1.0.1";uses:="javax.persistence,net.nan21.dnet.core.business
  .service,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dn
  et.module.bd.org.domain.entity,net.nan21.dnet.module.bd.uom.domain.en
  tity,net.nan21.dnet.module.md.base.tax.domain.entity,net.nan21.dnet.m
@@ -25,10 +25,10 @@ Export-Package: net.nan21.dnet.module.sc._businessdelegates;version="1
  ule.md.org.domain.entity,net.nan21.dnet.module.sc.invoice.business.se
  rvice,net.nan21.dnet.module.sc.invoice.domain.entity,net.nan21.dnet.m
  odule.sc.order.domain.entity",net.nan21.dnet.module.sc.order.business
- .serviceext;version="1.1.0";uses:="net.nan21.dnet.module.sc.order.bus
+ .serviceext;version="1.0.1";uses:="net.nan21.dnet.module.sc.order.bus
  iness.service,net.nan21.dnet.module.sc.order.business.serviceimpl,net
  .nan21.dnet.module.sc.order.domain.entity",net.nan21.dnet.module.sc.o
- rder.business.serviceimpl;version="1.1.0";uses:="javax.persistence,ne
+ rder.business.serviceimpl;version="1.0.1";uses:="javax.persistence,ne
  t.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.currency.
  domain.entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dn
  et.module.bd.uom.domain.entity,net.nan21.dnet.module.md.base.tax.doma
@@ -38,16 +38,16 @@ Export-Package: net.nan21.dnet.module.sc._businessdelegates;version="1
  t.module.sc.order.business.service,net.nan21.dnet.module.sc.order.dom
  ain.entity"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.1.0,1.1.0]",nan21.dnet.core.business;ver
- sion="[1.1.0,1.1.0]",nan21.dnet.module.ad.domain;version="[1.1.0,1.1.
- 0]",nan21.dnet.module.bd.domain;version="[1.1.0,1.1.0]",nan21.dnet.mo
- dule.md.domain;version="[1.1.0,1.1.0]",nan21.dnet.module.sc.domain;ve
- rsion="[1.1.0,1.1.0]",nan21.dnet.module.ad.business.api;version="[1.1
- .0,1.1.0]",nan21.dnet.module.bd.business.api;version="[1.1.0,1.1.0]",
- nan21.dnet.module.md.business.api;version="[1.1.0,1.1.0]",nan21.dnet.
- module.sc.business.api;version="[1.1.0,1.1.0]"
+ dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dnet.core.business;ver
+ sion="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;version="[1.0.1,1.0.
+ 1]",nan21.dnet.module.bd.domain;version="[1.0.1,1.0.1]",nan21.dnet.mo
+ dule.md.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.sc.domain;ve
+ rsion="[1.0.1,1.0.1]",nan21.dnet.module.ad.business.api;version="[1.0
+ .1,1.0.1]",nan21.dnet.module.bd.business.api;version="[1.0.1,1.0.1]",
+ nan21.dnet.module.md.business.api;version="[1.0.1,1.0.1]",nan21.dnet.
+ module.sc.business.api;version="[1.0.1,1.0.1]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.1.0
+Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet SC - business
 Bundle-ManifestVersion: 2

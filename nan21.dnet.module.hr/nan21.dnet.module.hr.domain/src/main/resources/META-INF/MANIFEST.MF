@@ -1,55 +1,55 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.hr.benefit.domain.entity;version
- ="1.1.0";uses:="javax.persistence,javax.validation.constraints,net.na
+ ="1.0.1";uses:="javax.persistence,javax.validation.constraints,net.na
  n21.dnet.core.domain.model,org.eclipse.persistence.annotations,org.ec
  lipse.persistence.descriptors",net.nan21.dnet.module.hr.employee.doma
- in.entity;version="1.1.0";uses:="javax.persistence,javax.validation.c
+ in.entity;version="1.0.1";uses:="javax.persistence,javax.validation.c
  onstraints,net.nan21.dnet.core.domain.model,net.nan21.dnet.module.bd.
  contact.domain.entity,net.nan21.dnet.module.bd.org.domain.entity,net.
  nan21.dnet.module.hr.grade.domain.entity,net.nan21.dnet.module.hr.job
  .domain.entity,net.nan21.dnet.module.hr.payroll.domain.entity,net.nan
  21.dnet.module.md.res.domain.entity,org.eclipse.persistence.annotatio
  ns,org.eclipse.persistence.descriptors",net.nan21.dnet.module.hr.empl
- oyee.domain.eventhandler;version="1.1.0";uses:="net.nan21.dnet.core.d
+ oyee.domain.eventhandler;version="1.0.1";uses:="net.nan21.dnet.core.d
  omain.eventhandler,org.eclipse.persistence.descriptors",net.nan21.dne
- t.module.hr.grade.domain.entity;version="1.1.0";uses:="javax.persiste
+ t.module.hr.grade.domain.entity;version="1.0.1";uses:="javax.persiste
  nce,javax.validation.constraints,net.nan21.dnet.core.domain.model,net
  .nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.module.hr
  .job.domain.entity,org.eclipse.persistence.annotations,org.eclipse.pe
  rsistence.descriptors,org.hibernate.validator.constraints",net.nan21.
- dnet.module.hr.job.domain.entity;version="1.1.0";uses:="javax.persist
+ dnet.module.hr.job.domain.entity;version="1.0.1";uses:="javax.persist
  ence,javax.validation.constraints,net.nan21.dnet.core.domain.model,ne
  t.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.module.bd.org
  .domain.entity,org.eclipse.persistence.annotations,org.eclipse.persis
  tence.descriptors",net.nan21.dnet.module.hr.payroll.domain.entity;ver
- sion="1.1.0";uses:="javax.persistence,javax.validation.constraints,ne
+ sion="1.0.1";uses:="javax.persistence,javax.validation.constraints,ne
  t.nan21.dnet.core.domain.model,net.nan21.dnet.module.bd.elem.domain.e
  ntity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.modul
  e.hr.employee.domain.entity,net.nan21.dnet.module.md.acc.domain.entit
  y,org.eclipse.persistence.annotations,org.eclipse.persistence.descrip
  tors,org.hibernate.validator.constraints",net.nan21.dnet.module.hr.sk
- ill.domain.entity;version="1.1.0";uses:="javax.persistence,javax.vali
+ ill.domain.entity;version="1.0.1";uses:="javax.persistence,javax.vali
  dation.constraints,net.nan21.dnet.core.domain.model,net.nan21.dnet.mo
  dule.hr.employee.domain.entity,net.nan21.dnet.module.hr.job.domain.en
  tity,org.eclipse.persistence.annotations,org.eclipse.persistence.desc
- riptors",net.nan21.dnet.module.hr.time.domain.entity;version="1.1.0";
+ riptors",net.nan21.dnet.module.hr.time.domain.entity;version="1.0.1";
  uses:="javax.persistence,javax.validation.constraints,net.nan21.dnet.
  core.domain.model,net.nan21.dnet.module.hr.employee.domain.entity,org
  .eclipse.persistence.annotations,org.eclipse.persistence.descriptors,
  org.hibernate.validator.constraints",net.nan21.dnet.module.hr.time.do
- main.eventhandler;version="1.1.0";uses:="net.nan21.dnet.core.domain.e
+ main.eventhandler;version="1.0.1";uses:="net.nan21.dnet.core.domain.e
  venthandler,org.eclipse.persistence.descriptors",net.nan21.dnet.modul
- e.hr.training.domain.entity;version="1.1.0";uses:="javax.persistence,
+ e.hr.training.domain.entity;version="1.0.1";uses:="javax.persistence,
  javax.validation.constraints,net.nan21.dnet.core.domain.model,net.nan
  21.dnet.module.hr.employee.domain.entity,net.nan21.dnet.module.hr.job
  .domain.entity,org.eclipse.persistence.annotations,org.eclipse.persis
  tence.descriptors"
 Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.1.0,1.1.0]",nan21.dnet.module.ad.domain;
- version="[1.1.0,1.1.0]",nan21.dnet.module.bd.domain;version="[1.1.0,1
- .1.0]",nan21.dnet.module.md.domain;version="[1.1.0,1.1.0]"
+ dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;
+ version="[1.0.1,1.0.1]",nan21.dnet.module.bd.domain;version="[1.0.1,1
+ .0.1]",nan21.dnet.module.md.domain;version="[1.0.1,1.0.1]"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.1.0
+Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet HR - domain
 Bundle-ManifestVersion: 2
