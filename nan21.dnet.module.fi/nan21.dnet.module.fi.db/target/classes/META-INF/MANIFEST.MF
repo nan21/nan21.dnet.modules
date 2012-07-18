@@ -1,4 +1,7 @@
 Manifest-Version: 1.0
+Export-Package: mysql.fi.install.fk;version="1.0.1",mysql.fi.install.t
+ able;version="1.0.1",oracle.fi.install.fk;version="1.0.1",oracle.fi.i
+ nstall.table;version="1.0.1"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE

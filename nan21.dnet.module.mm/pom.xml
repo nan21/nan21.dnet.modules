@@ -2,8 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.nan21.dnet</groupId>
-	<artifactId>nan21.dnet.module.mm</artifactId>
+    <parent>
+        <groupId>net.nan21.dnet</groupId>
+        <artifactId>nan21.dnet.modules</artifactId>
+        <version>1.0.1</version>
+    </parent>
+    <groupId>net.nan21.dnet</groupId>
+	<artifactId>nan21.dnet.module.mm.parent</artifactId>
 	<version>1.0.1</version>
 	<name>DNet MM: Material management</name>	
 	<description>DNet MM: Material management</description>
@@ -12,7 +17,6 @@
 	<!-- ========================== Modules ========================== -->
 	
 	<modules>
-		<module>nan21.dnet.module.mm.parent</module>
 		<module>nan21.dnet.module.mm.www</module>
 	</modules>	
 </project>	 

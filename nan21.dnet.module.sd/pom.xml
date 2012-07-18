@@ -2,8 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.nan21.dnet</groupId>
-	<artifactId>nan21.dnet.module.sd</artifactId>
+    <parent>
+        <groupId>net.nan21.dnet</groupId>
+        <artifactId>nan21.dnet.modules</artifactId>
+        <version>1.0.1</version>
+    </parent>
+    <groupId>net.nan21.dnet</groupId>
+	<artifactId>nan21.dnet.module.sd.parent</artifactId>
 	<version>1.0.1</version>
 	<name>DNet SD: Sales and Distribution</name>	
 	<description>DNet SD: Sales and Distribution</description>
@@ -17,7 +22,6 @@
 		<module>nan21.dnet.module.sd.business</module>
 		<module>nan21.dnet.module.sd.presenter</module>
 		<module>nan21.dnet.module.sd.ui.extjs</module>
-		<module>nan21.dnet.module.sd.parent</module>
 		<module>nan21.dnet.module.sd.data</module>
 		<module>nan21.dnet.module.sd.db</module>
 	</modules>	
