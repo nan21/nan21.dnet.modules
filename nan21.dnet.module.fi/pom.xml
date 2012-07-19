@@ -2,8 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.nan21.dnet</groupId>
-	<artifactId>nan21.dnet.module.fi</artifactId>
+    <parent>
+        <groupId>net.nan21.dnet</groupId>
+        <artifactId>nan21.dnet.modules</artifactId>
+        <version>1.0.1</version>
+    </parent>
+    <groupId>net.nan21.dnet</groupId>
+	<artifactId>nan21.dnet.module.fi.parent</artifactId>
 	<version>1.0.1</version>
 	<name>DNet FI: Financials and accounting</name>	
 	<description>DNet FI: Financials and accounting</description>
@@ -17,7 +22,6 @@
 		<module>nan21.dnet.module.fi.business</module>
 		<module>nan21.dnet.module.fi.presenter</module>
 		<module>nan21.dnet.module.fi.ui.extjs</module>
-		<module>nan21.dnet.module.fi.parent</module>
 		<module>nan21.dnet.module.fi.data</module>
 		<module>nan21.dnet.module.fi.db</module>
 	</modules>	

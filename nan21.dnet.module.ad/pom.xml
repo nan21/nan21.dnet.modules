@@ -2,8 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>net.nan21.dnet</groupId>
+        <artifactId>nan21.dnet.modules</artifactId>
+        <version>1.0.1</version>
+    </parent>
 	<groupId>net.nan21.dnet</groupId>
-	<artifactId>nan21.dnet.module.ad</artifactId>
+	<artifactId>nan21.dnet.module.ad.parent</artifactId>
 	<version>1.0.1</version>
 	<name>DNet AD: Administration</name>	
 	<description>DNet AD: Administration</description>
@@ -17,7 +22,6 @@
 		<module>nan21.dnet.module.ad.business</module>
 		<module>nan21.dnet.module.ad.presenter</module>
 		<module>nan21.dnet.module.ad.ui.extjs</module>
-		<module>nan21.dnet.module.ad.parent</module>
 		<module>nan21.dnet.module.ad.data</module>
 		<module>nan21.dnet.module.ad.db</module>
 	</modules>	

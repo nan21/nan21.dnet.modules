@@ -2,7 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.nan21.dnet</groupId>
+    <parent>
+        <groupId>net.nan21.dnet</groupId>
+        <artifactId>nan21.dnet.module.fi.parent</artifactId>
+        <version>1.0.1</version>
+    </parent>
+    <groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.fi.data</artifactId>
 	<version>1.0.1</version>
 	<name>DNet FI - data</name>	
@@ -25,40 +30,10 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>org.springframework.context</artifactId>
-			<version>3.0.5.RELEASE</version>
+			<version>${spring.version}</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
 		 
 	</dependencies>
-	
-	<!-- ===================== Build ===================== -->	
-	
-	<build>
-	<plugins>
-		<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.1</version>
-				<configuration>
-						<source>1.6</source>
-						<target>1.6</target>
-					</configuration> 
-				 
-			</plugin>				
-		<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.3</version>
-				<configuration>
-				 	<archive>
-						<manifestFile>
-							src/main/resources/META-INF/MANIFEST.MF
-						</manifestFile>
-					</archive>
-				</configuration> 
-				 
-			</plugin>				
- 	</plugins>
- 	</build>
-</project>	 
+</project>

@@ -2,13 +2,13 @@
 <project name="maven-antrun-" default="main"  >
 <target name="main">
   <echo>Beginning process-classes phase...</echo>
-  <echo>Compile classpath : ${compile_classpath}</echo>
   <property name="compile_classpath" refid="maven.compile.classpath"/>
-  <property name="path_source" value="D:\work\nan21\dnet\src\nan21.dnet.modules\nan21.dnet.module.sc\nan21.dnet.module.sc.domain/target/classes"/>
-  <property name="path_target" value="D:\work\nan21\dnet\src\nan21.dnet.modules\nan21.dnet.module.sc\nan21.dnet.module.sc.domain/target/classes"/>
-  <property name="path_persistenceinfo" value="D:\work\nan21\dnet\src\nan21.dnet.modules\nan21.dnet.module.sc\nan21.dnet.module.sc.domain/target/classes"/>
-  <property name="my_repo" value="C:\Users\amathe/.m2/repository"/>
-  <ant antfile="D:\work\nan21\dnet\src\nan21.dnet.modules\nan21.dnet.module.sc\nan21.dnet.module.sc.domain/eclipselink-static-weave.xml">
+  <echo>Compile classpath : ${compile_classpath}</echo>
+  <property name="path_source" value="/Users/topping/dev/nan21.dnet.modules/nan21.dnet.module.sc/nan21.dnet.module.sc.domain/target/classes"/>
+  <property name="path_target" value="/Users/topping/dev/nan21.dnet.modules/nan21.dnet.module.sc/nan21.dnet.module.sc.domain/target/classes"/>
+  <property name="path_persistenceinfo" value="/Users/topping/dev/nan21.dnet.modules/nan21.dnet.module.sc/nan21.dnet.module.sc.domain/target/classes"/>
+  <property name="my_repo" value="/Users/topping/.m2/repository"/>
+  <ant antfile="/Users/topping/dev/nan21.dnet.modules/nan21.dnet.module.sc/nan21.dnet.module.sc.domain/eclipselink-static-weave.xml">
     <target name="weaving"/>
   </ant>
 </target>

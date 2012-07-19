@@ -2,38 +2,30 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.nan21.dnet</groupId>
+    <parent>
+        <groupId>net.nan21.dnet</groupId>
+        <artifactId>nan21.dnet.module.bd.parent</artifactId>
+        <version>1.0.1</version>
+    </parent>
+    <groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.bd.ui.extjs</artifactId>
 	<version>1.0.1</version>
 	<name>DNet BD - ui extjs</name>	
 	<description>DNet BD - extjs user interface</description>
-	<packaging>war</packaging>	
-	
-	<!-- ===================== Build ===================== -->	
-	
+	<packaging>war</packaging>
+
+	<!-- ===================== Build ===================== -->
+
 	<build>
 	<plugins>
-		<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.1</version>
-				<configuration>
-						<source>1.6</source>
-						<target>1.6</target>
-					</configuration> 
-				 
-			</plugin>				
-		<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.1.1</version>
-				<configuration>
-				 	<archive>
-						<manifestFile>src/main/webapp/META-INF/MANIFEST.MF</manifestFile>
-					</archive>
-				</configuration> 
-				 
-			</plugin>				
- 	</plugins>
+        <plugin>
+            <groupId>com.springsource.bundlor</groupId>
+            <artifactId>com.springsource.bundlor.maven</artifactId>
+            <version>1.0.0.RELEASE</version>
+            <configuration>
+                <enabled>false</enabled>
+            </configuration>
+        </plugin>
+    </plugins>
  	</build>
-</project>	 
+</project>
