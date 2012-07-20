@@ -2,12 +2,40 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.nan21.dnet</groupId>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.modules</artifactId>
 	<version>1.0.1</version>
-	<name>DNet modules</name>	
-	<description>DNet modules</description>
+
 	<packaging>pom</packaging>
+
+    <name>DNet modules</name>
+    <description>DNet modules</description>
+    <url>http://www.dnet-ebusiness-suite.com/www</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>team</id>
+            <name>nan21 Team</name>
+            <roles>
+                <role>Owner</role>
+            </roles>
+        </developer>
+    </developers>
 
     <properties>
         <spring.version>3.0.5.RELEASE</spring.version>
@@ -160,4 +188,10 @@
             <url>http://repository.springsource.com/maven/bundles/release</url>
         </pluginRepository>
     </pluginRepositories>
+
+    <scm>
+        <url>https://github.com/nan21/nan21.dnet.core</url>
+        <connection>scm:git:https://github.com/nan21/nan21.dnet.core.git</connection>
+        <developerConnection>scm:git:https://github.com/nan21/nan21.dnet.core.git</developerConnection>
+    </scm>
 </project>
