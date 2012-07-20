@@ -5,11 +5,11 @@
     <parent>
         <groupId>net.nan21.dnet</groupId>
         <artifactId>nan21.dnet.module.hr.parent</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
     <groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.hr.db</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>DNet HR - db</name>	
 	<description>DNet HR - DB objects</description>
 	<packaging>jar</packaging>	

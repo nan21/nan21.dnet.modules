@@ -5,11 +5,11 @@
     <parent>
         <groupId>net.nan21.dnet</groupId>
         <artifactId>nan21.dnet.modules</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
     <groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.bd.parent</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>DNet BD: Base data</name>	
 	<description>DNet BD: Base data</description>
 	<packaging>pom</packaging>	

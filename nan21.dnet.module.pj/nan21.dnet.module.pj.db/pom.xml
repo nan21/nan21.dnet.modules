@@ -5,11 +5,11 @@
     <parent>
         <groupId>net.nan21.dnet</groupId>
         <artifactId>nan21.dnet.module.pj.parent</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
     <groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.pj.db</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>DNet PJ - db</name>	
 	<description>DNet PJ - DB objects</description>
 	<packaging>jar</packaging>	

@@ -5,11 +5,11 @@
     <parent>
         <groupId>net.nan21.dnet</groupId>
         <artifactId>nan21.dnet.module.sc.parent</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
     <groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.sc.ui.extjs</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>DNet SC - ui extjs</name>	
 	<description>DNet SC - extjs user interface</description>
 	<packaging>war</packaging>	

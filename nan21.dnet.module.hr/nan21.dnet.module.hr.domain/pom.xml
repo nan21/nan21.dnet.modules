@@ -5,11 +5,11 @@
     <parent>
         <groupId>net.nan21.dnet</groupId>
         <artifactId>nan21.dnet.module.hr.parent</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
     <groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.hr.domain</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>DNet HR - domain</name>	
 	<description>DNet HR - domain</description>
 	<packaging>jar</packaging>	
@@ -21,35 +21,35 @@
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.api</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.1-SNAPSHOT</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.domain</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.1-SNAPSHOT</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.ad.domain</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.1-SNAPSHOT</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.bd.domain</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.1-SNAPSHOT</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.md.domain</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.1-SNAPSHOT</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>	
