@@ -2,18 +2,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>net.nan21.dnet</groupId>
-        <artifactId>nan21.dnet.module.pj.parent</artifactId>
-        <version>1.0.1</version>
-    </parent>
-    <groupId>net.nan21.dnet</groupId>
+	<parent>
+		<groupId>net.nan21.dnet</groupId>
+		<artifactId>nan21.dnet.module.pj</artifactId>
+		<version>1.0.1</version>
+	</parent>
+	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.pj.www</artifactId>
-	<version>1.0.1</version>
-	<name>DNet PJ - www</name>	
+	<name>DNet PJ - www</name>
 	<description>DNet PJ -  www public portal.</description>
-	<packaging>jar</packaging>	
-	
+	<packaging>jar</packaging>
+
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
@@ -23,14 +22,12 @@
 			<artifactId>nan21.dnet.core.api</artifactId>
 			<version>1.0.1</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.presenter</artifactId>
 			<version>1.0.1</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
@@ -67,14 +64,12 @@
 			<artifactId>org.springframework.beans</artifactId>
 			<version>${spring.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>org.springframework.web.servlet</artifactId>
 			<version>${spring.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -86,7 +81,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>com.springsource.javax.servlet.jsp.jstl</artifactId>
-			<version>1.2.0.v20110728</version>
+			<version>1.2.0</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
@@ -95,48 +90,42 @@
 			<artifactId>com.springsource.org.apache.commons.beanutils</artifactId>
 			<version>1.8.0</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.virgo.snaps</groupId>
 			<artifactId>org.eclipse.virgo.snaps.api</artifactId>
 			<version>3.0.2.RELEASE</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.virgo.snaps</groupId>
 			<artifactId>org.eclipse.virgo.snaps.core</artifactId>
 			<version>3.0.2.RELEASE</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>org.eclipse.persistence.jpa</artifactId>
-			<version>2.3.0</version>
+			<version>${eclipselink.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>javax.persistence</artifactId>
-			<version>2.0.3</version>
+			<version>${jpa.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
-		 
 	</dependencies>
 	
 	<!-- ===================== Build ===================== -->	
 	
 	<build>
-	<plugins>
-		<plugin>
+		
+		<plugins>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.6</version>
-				 
 				<executions>
 					<execution>	
 						<id>my.process-classes</id>				 
@@ -168,8 +157,9 @@
 							</tasks>
 						</configuration>
 					</execution>					
-				</executions> 
-			</plugin>				
- 	</plugins>
+				</executions>
+			</plugin>
+	 	</plugins>
  	</build>
-</project>	 
+ 	 
+</project>

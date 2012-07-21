@@ -2,19 +2,20 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>net.nan21.dnet</groupId>
-        <artifactId>nan21.dnet.modules</artifactId>
-        <version>1.0.1</version>
-    </parent>
-    <groupId>net.nan21.dnet</groupId>
-	<artifactId>nan21.dnet.module.md.parent</artifactId>
-	<version>1.0.1</version>
-	<name>DNet MD: Base master-data</name>	
+	<parent>
+		<groupId>net.nan21.dnet</groupId>
+		<artifactId>nan21.dnet.modules</artifactId>
+		<version>1.0.1</version>
+	</parent>
+	<groupId>net.nan21.dnet</groupId>
+	<artifactId>nan21.dnet.module.md</artifactId>
+	<name>DNet MD: Base master-data</name>
 	<description>DNet MD contains base base master-data elements for the ERP foundation</description>
-	<packaging>pom</packaging>	
-	
-	<!-- ========================== Modules ========================== -->
+	<packaging>pom</packaging>
+
+ 	 
+ 	
+ 	<!-- ========================== Modules ========================== -->
 	
 	<modules>
 		<module>nan21.dnet.module.md.domain</module>
@@ -25,4 +26,4 @@
 		<module>nan21.dnet.module.md.data</module>
 		<module>nan21.dnet.module.md.db</module>
 	</modules>	
-</project>	 
+</project>

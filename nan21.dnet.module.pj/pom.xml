@@ -2,64 +2,20 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>net.nan21.dnet</groupId>
-        <artifactId>nan21.dnet.modules</artifactId>
-        <version>1.0.1</version>
-    </parent>
-    <groupId>net.nan21.dnet</groupId>
-	<artifactId>nan21.dnet.module.pj.parent</artifactId>
-	<version>1.0.1</version>
-	<name>DNet PJ: Project management</name>	
+	<parent>
+		<groupId>net.nan21.dnet</groupId>
+		<artifactId>nan21.dnet.modules</artifactId>
+		<version>1.0.1</version>
+	</parent>
+	<groupId>net.nan21.dnet</groupId>
+	<artifactId>nan21.dnet.module.pj</artifactId>
+	<name>DNet PJ: Project management</name>
 	<description>DNet PJ: Project management</description>
 	<packaging>pom</packaging>
 
-    <!-- ===================== Repositories ===================== -->
-
-    <repositories>
-        <repository>
-            <id>com.springsource.repository.bundle.external</id>
-            <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
-            <url>http://repository.springsource.com/maven/bundles/external</url>
-        </repository>
-        <repository>
-            <id>com.springsource.repository.bundle.milestone</id>
-            <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Milestones</name>
-            <url>http://repository.springsource.com/maven/bundles/milestone</url>
-        </repository>
-        <repository>
-            <id>com.springsource.repository.bundles.release</id>
-            <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
-            <url>http://repository.springsource.com/maven/bundles/release</url>
-        </repository>
-        <repository>
-            <id>com.springsource.repository.bundles.snapshot</id>
-            <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Snapshot</name>
-            <url>http://repository.springsource.com/maven/bundles/snapshot</url>
-        </repository>
-        <repository>
-            <id>com.springsource.repository.libraries.external</id>
-            <name>SpringSource Enterprise Bundle Repository - External Library Releases</name>
-            <url>http://repository.springsource.com/maven/libraries/external</url>
-        </repository>
-        <repository>
-            <id>com.springsource.repository.libraries.milestone</id>
-            <name>SpringSource Enterprise Bundle Repository - Milestone Library Releases</name>
-            <url>http://repository.springsource.com/maven/libraries/milestone</url>
-        </repository>
-        <repository>
-            <id>com.springsource.repository.libraries.release</id>
-            <name>SpringSource Enterprise Bundle Repository - SpringSource Library Releases</name>
-            <url>http://repository.springsource.com/maven/libraries/release</url>
-        </repository>
-        <repository>
-            <id>com.springsource.repository.libraries.snapshot</id>
-            <name>SpringSource Enterprise Bundle Repository - Snapshot Library Releases</name>
-            <url>http://repository.springsource.com/maven/libraries/snapshot</url>
-        </repository>
-    </repositories>
-
-    <!-- ========================== Modules ========================== -->
+ 	 
+ 	
+ 	<!-- ========================== Modules ========================== -->
 	
 	<modules>
 		<module>nan21.dnet.module.pj.domain</module>
@@ -71,4 +27,4 @@
 		<module>nan21.dnet.module.pj.www</module>
 		<module>nan21.dnet.module.pj.db</module>
 	</modules>	
-</project>	 
+</project>

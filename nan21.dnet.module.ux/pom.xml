@@ -2,19 +2,20 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>net.nan21.dnet</groupId>
-        <artifactId>nan21.dnet.modules</artifactId>
-        <version>1.0.1</version>
-    </parent>
-    <groupId>net.nan21.dnet</groupId>
-	<artifactId>nan21.dnet.module.ux.parent</artifactId>
-	<version>1.0.1</version>
-	<name>DNet UX: User extensions</name>	
+	<parent>
+		<groupId>net.nan21.dnet</groupId>
+		<artifactId>nan21.dnet.modules</artifactId>
+		<version>1.0.1</version>
+	</parent>
+	<groupId>net.nan21.dnet</groupId>
+	<artifactId>nan21.dnet.module.ux</artifactId>
+	<name>DNet UX: User extensions</name>
 	<description>DNet UX: User extensions</description>
-	<packaging>pom</packaging>	
-	
-	<!-- ========================== Modules ========================== -->
+	<packaging>pom</packaging>
+
+ 	 
+ 	
+ 	<!-- ========================== Modules ========================== -->
 	
 	<modules>
 		<module>nan21.dnet.module.ux.domain</module>
@@ -22,5 +23,5 @@
 		<module>nan21.dnet.module.ux.business</module>
 		<module>nan21.dnet.module.ux.presenter</module>
 		<module>nan21.dnet.module.ux.ui.extjs</module>
-	</modules>
-</project>	 
+	</modules>	
+</project>
