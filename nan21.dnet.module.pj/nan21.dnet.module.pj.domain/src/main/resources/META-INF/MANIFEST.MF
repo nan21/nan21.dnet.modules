@@ -8,9 +8,9 @@ Export-Package: net.nan21.dnet.module.pj.base.domain.entity;version="1
  n.entity,net.nan21.dnet.module.pj.base.domain.entity,org.eclipse.pers
  istence.annotations,org.eclipse.persistence.descriptors,org.hibernate
  .validator.constraints"
-Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;
- version="[1.0.1,1.0.1]"
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dn
+ et.module.ad.domain;version="[1.0.1,1.0.1]",org.eclipse.persistence.c
+ ore;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE

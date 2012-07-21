@@ -5,9 +5,9 @@ Export-Package: net.nan21.dnet.module.pj.base.business.service;version
  version="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet
  .module.ad.usr.domain.entity,net.nan21.dnet.module.pj.base.domain.ent
  ity,net.nan21.dnet.module.pj.md.domain.entity"
-Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.ad.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.pj.do
- main;version="[1.0.1,1.0.1]"
+Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.1,1.0.1]",nan
+ 21.dnet.module.pj.domain;version="[1.0.1,1.0.1]",org.eclipse.persiste
+ nce.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE

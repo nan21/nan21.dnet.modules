@@ -2,15 +2,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>net.nan21.dnet</groupId>
-        <artifactId>nan21.dnet.module.sd.parent</artifactId>
-        <version>1.0.1</version>
-    </parent>
-    <groupId>net.nan21.dnet</groupId>
+	<parent>
+		<groupId>net.nan21.dnet</groupId>
+		<artifactId>nan21.dnet.module.sd</artifactId>
+		<version>1.0.1</version>
+	</parent>
+	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.sd.db</artifactId>
-	<version>1.0.1</version>
-	<name>DNet SD - db</name>	
+	<name>DNet SD - db</name>
 	<description>DNet SD - DB objects</description>
-	<packaging>jar</packaging>	
+	<packaging>jar</packaging>
+
+ 	 
 </project>

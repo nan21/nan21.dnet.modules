@@ -44,10 +44,10 @@ Export-Package: net.nan21.dnet.module.hr.benefit.domain.entity;version
  21.dnet.module.hr.employee.domain.entity,net.nan21.dnet.module.hr.job
  .domain.entity,org.eclipse.persistence.annotations,org.eclipse.persis
  tence.descriptors"
-Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;
- version="[1.0.1,1.0.1]",nan21.dnet.module.bd.domain;version="[1.0.1,1
- .0.1]",nan21.dnet.module.md.domain;version="[1.0.1,1.0.1]"
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dn
+ et.module.ad.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.bd.doma
+ in;version="[1.0.1,1.0.1]",nan21.dnet.module.md.domain;version="[1.0.
+ 1,1.0.1]",org.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE

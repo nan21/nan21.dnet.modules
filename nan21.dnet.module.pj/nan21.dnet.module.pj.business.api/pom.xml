@@ -2,18 +2,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>net.nan21.dnet</groupId>
-        <artifactId>nan21.dnet.module.pj.parent</artifactId>
-        <version>1.0.1</version>
-    </parent>
-    <groupId>net.nan21.dnet</groupId>
+	<parent>
+		<groupId>net.nan21.dnet</groupId>
+		<artifactId>nan21.dnet.module.pj</artifactId>
+		<version>1.0.1</version>
+	</parent>
+	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.pj.business.api</artifactId>
-	<version>1.0.1</version>
-	<name>DNet PJ - business API</name>	
+	<name>DNet PJ - business API</name>
 	<description>DNet PJ - business API</description>
-	<packaging>jar</packaging>	
-	
+	<packaging>jar</packaging>
+
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
@@ -23,87 +22,75 @@
 			<artifactId>nan21.dnet.core.api</artifactId>
 			<version>1.0.1</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.domain</artifactId>
 			<version>1.0.1</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.ad.domain</artifactId>
 			<version>1.0.1</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.pj.domain</artifactId>
 			<version>1.0.1</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>	
 		 
 		<!-- External libraries -->
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>org.eclipse.persistence.jpa</artifactId>
-			<version>2.3.0</version>
+			<version>${eclipselink.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>javax.persistence</artifactId>
-			<version>2.0.3</version>
+			<version>${jpa.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>com.springsource.javax.validation</artifactId>
 			<version>1.0.0.GA</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.1.0.Final</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>org.springframework.orm</artifactId>
 			<version>${spring.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>org.springframework.context</artifactId>
 			<version>${spring.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>org.springframework.transaction</artifactId>
 			<version>${spring.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>org.springframework.aop</artifactId>
 			<version>${spring.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
-
 	</dependencies>
+ 	 
 </project>

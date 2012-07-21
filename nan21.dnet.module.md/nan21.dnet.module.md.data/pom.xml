@@ -1,19 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
-	<modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>net.nan21.dnet</groupId>
-        <artifactId>nan21.dnet.module.md.parent</artifactId>
-        <version>1.0.1</version>
-    </parent>
-    <groupId>net.nan21.dnet</groupId>
-	<artifactId>nan21.dnet.module.md.data</artifactId>
-	<version>1.0.1</version>
-	<name>DNet MD - data</name>	
-	<description>DNet MD - initial data</description>
-	<packaging>jar</packaging>	
 	
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.nan21.dnet</groupId>
+		<artifactId>nan21.dnet.module.md</artifactId>
+		<version>1.0.1</version>
+	</parent>
+	<groupId>net.nan21.dnet</groupId>
+	<artifactId>nan21.dnet.module.md.data</artifactId>
+	<name>DNet MD - data</name>
+	<description>DNet MD - initial data</description>
+	<packaging>jar</packaging>
+
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
@@ -23,7 +22,6 @@
 			<artifactId>nan21.dnet.core.api</artifactId>
 			<version>1.0.1</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>	
 		 
 		<!-- External libraries -->
@@ -32,8 +30,7 @@
 			<artifactId>org.springframework.context</artifactId>
 			<version>${spring.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
 		</dependency>
-		 
 	</dependencies>
+ 	 
 </project>

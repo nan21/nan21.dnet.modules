@@ -60,13 +60,13 @@ Export-Package: net.nan21.dnet.module.bd.attr.ds.converter;version="1.
  ule.bd.uom.ds.model;version="1.0.1";uses:="net.nan21.dnet.core.api.an
  notation,net.nan21.dnet.core.presenter.model.base,net.nan21.dnet.modu
  le.bd.uom.domain.entity"
-Import-Bundle: nan21.dnet.core.presenter;version="[1.0.1,1.0.1]",javax
- .persistence;version="[2.0,2.1)",org.eclipse.persistence.jpa;version=
- "[2.1,2.5)",org.eclipse.persistence.core;version="[2.0,2.5)",nan21.dn
- et.module.bd.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.doma
- in;version="[1.0.1,1.0.1]",nan21.dnet.module.bd.business.api;version=
- "[1.0.1,1.0.1]",nan21.dnet.module.ad.business.api;version="[1.0.1,1.0
- .1]"
+Import-Bundle: nan21.dnet.core.presenter;version="[1.0.1,1.0.1]",nan21
+ .dnet.module.bd.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.d
+ omain;version="[1.0.1,1.0.1]",nan21.dnet.module.bd.business.api;versi
+ on="[1.0.1,1.0.1]",nan21.dnet.module.ad.business.api;version="[1.0.1,
+ 1.0.1]",javax.persistence;version="[2.0,2.1)",org.eclipse.persistence
+ .jpa;version="[2.1,2.5)",org.eclipse.persistence.core;version="[2.0,2
+ .5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE

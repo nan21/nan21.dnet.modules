@@ -114,6 +114,7 @@ Ext.define("net.nan21.dnet.module.md.base.period.dc.FiscalPeriod$CtxEditList", {
 	extend: "dnet.core.dc.AbstractDcvEditableGrid",
 	alias: "widget.net.nan21.dnet.module.md.base.period.dc.FiscalPeriod$CtxEditList",
 	
+	_bulkEditFields_ : ["type","active","posting"],
 	_defineColumns_: function () {
 		this._getBuilder_()
 		.addTextColumn({ name:"name", dataIndex:"name",width:200,editor:{xtype:"textfield", selectOnFocus:true,allowBlank:false } })

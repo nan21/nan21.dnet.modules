@@ -113,14 +113,14 @@ Export-Package: net.nan21.dnet.module.md._presenterdelegates.base.peri
  n21.dnet.module.md.tx.inventory.ds.model;version="1.0.1";uses:="net.n
  an21.dnet.core.api.annotation,net.nan21.dnet.core.presenter.model.bas
  e,net.nan21.dnet.module.md.tx.inventory.domain.entity"
-Import-Bundle: nan21.dnet.core.presenter;version="[1.0.1,1.0.1]",javax
- .persistence;version="[2.0,2.1)",org.eclipse.persistence.jpa;version=
- "[2.1,2.5)",org.eclipse.persistence.core;version="[2.0,2.5)",nan21.dn
- et.module.md.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.doma
- in;version="[1.0.1,1.0.1]",nan21.dnet.module.bd.domain;version="[1.0.
- 1,1.0.1]",nan21.dnet.module.ad.business.api;version="[1.0.1,1.0.1]",n
- an21.dnet.module.bd.business.api;version="[1.0.1,1.0.1]",nan21.dnet.m
- odule.md.business.api;version="[1.0.1,1.0.1]"
+Import-Bundle: nan21.dnet.core.presenter;version="[1.0.1,1.0.1]",nan21
+ .dnet.module.ad.business.api;version="[1.0.1,1.0.1]",nan21.dnet.modul
+ e.bd.business.api;version="[1.0.1,1.0.1]",nan21.dnet.module.md.busine
+ ss.api;version="[1.0.1,1.0.1]",nan21.dnet.module.md.domain;version="[
+ 1.0.1,1.0.1]",nan21.dnet.module.ad.domain;version="[1.0.1,1.0.1]",nan
+ 21.dnet.module.bd.domain;version="[1.0.1,1.0.1]",javax.persistence;ve
+ rsion="[2.0,2.1)",org.eclipse.persistence.jpa;version="[2.1,2.5)",org
+ .eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE

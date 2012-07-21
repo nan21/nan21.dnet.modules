@@ -37,15 +37,15 @@ Export-Package: net.nan21.dnet.module.sc._businessdelegates;version="1
  n.entity,net.nan21.dnet.module.md.mm.prod.domain.entity,net.nan21.dne
  t.module.sc.order.business.service,net.nan21.dnet.module.sc.order.dom
  ain.entity"
-Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dnet.core.business;ver
- sion="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;version="[1.0.1,1.0.
- 1]",nan21.dnet.module.bd.domain;version="[1.0.1,1.0.1]",nan21.dnet.mo
- dule.md.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.sc.domain;ve
- rsion="[1.0.1,1.0.1]",nan21.dnet.module.ad.business.api;version="[1.0
- .1,1.0.1]",nan21.dnet.module.bd.business.api;version="[1.0.1,1.0.1]",
- nan21.dnet.module.md.business.api;version="[1.0.1,1.0.1]",nan21.dnet.
- module.sc.business.api;version="[1.0.1,1.0.1]"
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dn
+ et.core.business;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;
+ version="[1.0.1,1.0.1]",nan21.dnet.module.bd.domain;version="[1.0.1,1
+ .0.1]",nan21.dnet.module.md.domain;version="[1.0.1,1.0.1]",nan21.dnet
+ .module.sc.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.busine
+ ss.api;version="[1.0.1,1.0.1]",nan21.dnet.module.bd.business.api;vers
+ ion="[1.0.1,1.0.1]",nan21.dnet.module.md.business.api;version="[1.0.1
+ ,1.0.1]",nan21.dnet.module.sc.business.api;version="[1.0.1,1.0.1]",or
+ g.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE

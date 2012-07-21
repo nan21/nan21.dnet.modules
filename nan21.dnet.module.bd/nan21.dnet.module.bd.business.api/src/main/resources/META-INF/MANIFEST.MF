@@ -18,9 +18,9 @@ Export-Package: net.nan21.dnet.module.bd.attr.business.service;version
  y",net.nan21.dnet.module.bd.uom.business.service;version="1.0.1";uses
  :="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.uom.domai
  n.entity"
-Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.module.bd.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.do
- main;version="[1.0.1,1.0.1]"
+Import-Bundle: nan21.dnet.module.bd.domain;version="[1.0.1,1.0.1]",nan
+ 21.dnet.module.ad.domain;version="[1.0.1,1.0.1]",org.eclipse.persiste
+ nce.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE

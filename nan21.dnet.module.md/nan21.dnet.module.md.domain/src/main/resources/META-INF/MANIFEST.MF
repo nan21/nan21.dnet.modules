@@ -84,10 +84,10 @@ Export-Package: net.nan21.dnet.module.md.acc.domain.entity;version="1.
  md.tx.inventory.domain.eventhandler;version="1.0.1";uses:="net.nan21.
  dnet.core.domain.eventhandler,org.eclipse.persistence.descriptors,org
  .eclipse.persistence.sessions"
-Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;
- version="[1.0.1,1.0.1]",nan21.dnet.module.bd.domain;version="[1.0.1,1
- .0.1]"
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dn
+ et.module.ad.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.bd.doma
+ in;version="[1.0.1,1.0.1]",org.eclipse.persistence.core;version="[2.0
+ ,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE

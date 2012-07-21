@@ -9,12 +9,12 @@ Export-Package: net.nan21.dnet.module.pj._businessdelegates;version="1
  siness.service,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.d
  net.module.pj.base.domain.entity,net.nan21.dnet.module.pj.md.business
  .service,net.nan21.dnet.module.pj.md.domain.entity"
-Import-Bundle: org.eclipse.persistence.core;version="[2.0,2.5)",nan21.
- dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dnet.core.business;ver
- sion="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;version="[1.0.1,1.0.
- 1]",nan21.dnet.module.pj.domain;version="[1.0.1,1.0.1]",nan21.dnet.mo
- dule.ad.business.api;version="[1.0.1,1.0.1]",nan21.dnet.module.pj.bus
- iness.api;version="[1.0.1,1.0.1]"
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dn
+ et.core.business;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;
+ version="[1.0.1,1.0.1]",nan21.dnet.module.pj.domain;version="[1.0.1,1
+ .0.1]",nan21.dnet.module.ad.business.api;version="[1.0.1,1.0.1]",nan2
+ 1.dnet.module.pj.business.api;version="[1.0.1,1.0.1]",org.eclipse.per
+ sistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.1
 Tool: Bundlor 1.0.0.RELEASE
