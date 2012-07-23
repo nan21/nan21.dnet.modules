@@ -2,6 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.modules</artifactId>
 	<version>1.0.2-SNAPSHOT</version>
@@ -240,20 +245,6 @@
 					<source>1.6</source>
 					<target>1.6</target>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.1.2</version>
-				<executions>
-					<execution>
-	            		<id>attach-sources</id>
-	            		<phase>verify</phase> 
-	           			<goals>
-	              			<goal>jar-no-fork</goal>
-	            		</goals>
-	          		</execution>
-	      		</executions>
 			</plugin>
 			<plugin>
 				<groupId>com.springsource.bundlor</groupId>
