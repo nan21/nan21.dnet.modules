@@ -1,34 +1,34 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.pj.base.ds.converter;version="1.
- 0.1";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.pre
+ 0.2";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.pre
  senter.converter,net.nan21.dnet.module.pj.base.domain.entity,net.nan2
  1.dnet.module.pj.base.ds.model",net.nan21.dnet.module.pj.base.ds.filt
- er;version="1.0.1";uses:="net.nan21.dnet.core.presenter.model.base",n
- et.nan21.dnet.module.pj.base.ds.model;version="1.0.1";uses:="net.nan2
+ er;version="1.0.2";uses:="net.nan21.dnet.core.presenter.model.base",n
+ et.nan21.dnet.module.pj.base.ds.model;version="1.0.2";uses:="net.nan2
  1.dnet.core.api.annotation,net.nan21.dnet.core.presenter.model.base,n
  et.nan21.dnet.module.pj.base.domain.entity",net.nan21.dnet.module.pj.
- md.asgn;version="1.0.1";uses:="net.nan21.dnet.core.api.annotation,net
+ md.asgn;version="1.0.2";uses:="net.nan21.dnet.core.api.annotation,net
  .nan21.dnet.core.presenter.model,net.nan21.dnet.module.pj.md.domain.e
- ntity",net.nan21.dnet.module.pj.md.ds.converter;version="1.0.1";uses:
+ ntity",net.nan21.dnet.module.pj.md.ds.converter;version="1.0.2";uses:
  ="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.presenter.con
  verter,net.nan21.dnet.module.pj.md.domain.entity,net.nan21.dnet.modul
  e.pj.md.ds.model",net.nan21.dnet.module.pj.md.ds.filter;version="1.0.
- 1";uses:="net.nan21.dnet.core.presenter.model.base",net.nan21.dnet.mo
- dule.pj.md.ds.model;version="1.0.1";uses:="net.nan21.dnet.core.api.an
+ 2";uses:="net.nan21.dnet.core.presenter.model.base",net.nan21.dnet.mo
+ dule.pj.md.ds.model;version="1.0.2";uses:="net.nan21.dnet.core.api.an
  notation,net.nan21.dnet.core.presenter.model.base,net.nan21.dnet.modu
  le.pj.md.domain.entity",net.nan21.dnet.module.pj.md.ds.param;version=
- "1.0.1";uses:="net.nan21.dnet.core.presenter.model",net.nan21.dnet.mo
- dule.pj.md.ds.qb;version="1.0.1";uses:="net.nan21.dnet.core.presenter
+ "1.0.2";uses:="net.nan21.dnet.core.presenter.model",net.nan21.dnet.mo
+ dule.pj.md.ds.qb;version="1.0.2";uses:="net.nan21.dnet.core.presenter
  .action,net.nan21.dnet.module.pj.md.ds.filter"
-Import-Bundle: nan21.dnet.core.presenter;version="[1.0.1,1.0.1]",nan21
- .dnet.module.pj.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.d
- omain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.business.api;versi
- on="[1.0.1,1.0.1]",nan21.dnet.module.pj.business.api;version="[1.0.1,
- 1.0.1]",javax.persistence;version="[2.0,2.1)",org.eclipse.persistence
+Import-Bundle: nan21.dnet.core.presenter;version="[1.0.2,1.0.2]",nan21
+ .dnet.module.pj.domain;version="[1.0.2,1.0.2]",nan21.dnet.module.ad.d
+ omain;version="[1.0.2,1.0.2]",nan21.dnet.module.ad.business.api;versi
+ on="[1.0.2,1.0.2]",nan21.dnet.module.pj.business.api;version="[1.0.2,
+ 1.0.2]",javax.persistence;version="[2.0,2.1)",org.eclipse.persistence
  .jpa;version="[2.1,2.5)",org.eclipse.persistence.core;version="[2.0,2
  .5)"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.1
+Bundle-Version: 1.0.2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet PJ - presenter
 Bundle-ManifestVersion: 2

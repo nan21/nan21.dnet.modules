@@ -1,58 +1,58 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.hr._businessdelegates;version="1
- .0.1";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
+ .0.2";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
  ss.service",net.nan21.dnet.module.hr._businessdelegates.payroll;versi
- on="1.0.1";uses:="javax.script,net.nan21.dnet.core.business.service,n
+ on="1.0.2";uses:="javax.script,net.nan21.dnet.core.business.service,n
  et.nan21.dnet.module.hr.employee.domain.entity,net.nan21.dnet.module.
  hr.payroll.domain.entity",net.nan21.dnet.module.hr.benefit.business.s
- erviceimpl;version="1.0.1";uses:="javax.persistence,net.nan21.dnet.co
+ erviceimpl;version="1.0.2";uses:="javax.persistence,net.nan21.dnet.co
  re.business.service,net.nan21.dnet.module.hr.benefit.business.service
  ,net.nan21.dnet.module.hr.benefit.domain.entity",net.nan21.dnet.modul
- e.hr.employee.business.serviceimpl;version="1.0.1";uses:="javax.persi
+ e.hr.employee.business.serviceimpl;version="1.0.2";uses:="javax.persi
  stence,net.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.
  org.domain.entity,net.nan21.dnet.module.hr.employee.business.service,
  net.nan21.dnet.module.hr.employee.domain.entity,net.nan21.dnet.module
  .hr.grade.domain.entity,net.nan21.dnet.module.hr.job.domain.entity,ne
  t.nan21.dnet.module.hr.payroll.domain.entity",net.nan21.dnet.module.h
- r.grade.business.serviceimpl;version="1.0.1";uses:="javax.persistence
+ r.grade.business.serviceimpl;version="1.0.2";uses:="javax.persistence
  ,net.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.curren
  cy.domain.entity,net.nan21.dnet.module.hr.grade.business.service,net.
  nan21.dnet.module.hr.grade.domain.entity,net.nan21.dnet.module.hr.job
  .domain.entity",net.nan21.dnet.module.hr.job.business.serviceimpl;ver
- sion="1.0.1";uses:="javax.persistence,net.nan21.dnet.core.business.se
+ sion="1.0.2";uses:="javax.persistence,net.nan21.dnet.core.business.se
  rvice,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.modul
  e.bd.org.domain.entity,net.nan21.dnet.module.hr.job.business.service,
  net.nan21.dnet.module.hr.job.domain.entity",net.nan21.dnet.module.hr.
- payroll.business.serviceimpl;version="1.0.1";uses:="javax.persistence
+ payroll.business.serviceimpl;version="1.0.2";uses:="javax.persistence
  ,net.nan21.dnet.core.business.service,net.nan21.dnet.module.bd.elem.d
  omain.entity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dne
  t.module.hr.employee.domain.entity,net.nan21.dnet.module.hr.payroll.b
  usiness.service,net.nan21.dnet.module.hr.payroll.domain.entity,net.na
  n21.dnet.module.md.acc.domain.entity",net.nan21.dnet.module.hr.skill.
- business.serviceimpl;version="1.0.1";uses:="javax.persistence,net.nan
+ business.serviceimpl;version="1.0.2";uses:="javax.persistence,net.nan
  21.dnet.core.business.service,net.nan21.dnet.module.hr.employee.domai
  n.entity,net.nan21.dnet.module.hr.job.domain.entity,net.nan21.dnet.mo
  dule.hr.skill.business.service,net.nan21.dnet.module.hr.skill.domain.
  entity",net.nan21.dnet.module.hr.time.business.serviceimpl;version="1
- .0.1";uses:="javax.persistence,net.nan21.dnet.core.business.service,n
+ .0.2";uses:="javax.persistence,net.nan21.dnet.core.business.service,n
  et.nan21.dnet.module.hr.employee.domain.entity,net.nan21.dnet.module.
  hr.time.business.service,net.nan21.dnet.module.hr.time.domain.entity"
  ,net.nan21.dnet.module.hr.training.business.serviceimpl;version="1.0.
- 1";uses:="javax.persistence,net.nan21.dnet.core.business.service,net.
+ 2";uses:="javax.persistence,net.nan21.dnet.core.business.service,net.
  nan21.dnet.module.hr.employee.domain.entity,net.nan21.dnet.module.hr.
  job.domain.entity,net.nan21.dnet.module.hr.training.business.service,
  net.nan21.dnet.module.hr.training.domain.entity"
-Import-Bundle: nan21.dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dn
- et.core.business;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;
- version="[1.0.1,1.0.1]",nan21.dnet.module.bd.domain;version="[1.0.1,1
- .0.1]",nan21.dnet.module.md.domain;version="[1.0.1,1.0.1]",nan21.dnet
- .module.hr.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.busine
- ss.api;version="[1.0.1,1.0.1]",nan21.dnet.module.bd.business.api;vers
- ion="[1.0.1,1.0.1]",nan21.dnet.module.md.business.api;version="[1.0.1
- ,1.0.1]",nan21.dnet.module.hr.business.api;version="[1.0.1,1.0.1]",or
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.2,1.0.2]",nan21.dn
+ et.core.business;version="[1.0.2,1.0.2]",nan21.dnet.module.ad.domain;
+ version="[1.0.2,1.0.2]",nan21.dnet.module.bd.domain;version="[1.0.2,1
+ .0.2]",nan21.dnet.module.md.domain;version="[1.0.2,1.0.2]",nan21.dnet
+ .module.hr.domain;version="[1.0.2,1.0.2]",nan21.dnet.module.ad.busine
+ ss.api;version="[1.0.2,1.0.2]",nan21.dnet.module.bd.business.api;vers
+ ion="[1.0.2,1.0.2]",nan21.dnet.module.md.business.api;version="[1.0.2
+ ,1.0.2]",nan21.dnet.module.hr.business.api;version="[1.0.2,1.0.2]",or
  g.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.1
+Bundle-Version: 1.0.2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet HR - business
 Bundle-ManifestVersion: 2

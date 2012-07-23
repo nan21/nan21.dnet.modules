@@ -1,22 +1,22 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.fi._businessdelegates;version="1
- .0.1";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
+ .0.2";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
  ss.service",net.nan21.dnet.module.fi.asset.business.serviceimpl;versi
- on="1.0.1";uses:="javax.persistence,net.nan21.dnet.core.business.serv
+ on="1.0.2";uses:="javax.persistence,net.nan21.dnet.core.business.serv
  ice,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.mo
  dule.fi.asset.business.service,net.nan21.dnet.module.fi.asset.domain.
  entity,net.nan21.dnet.module.md.acc.domain.entity"
-Import-Bundle: nan21.dnet.core.domain;version="[1.0.1,1.0.1]",nan21.dn
- et.core.business;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.domain;
- version="[1.0.1,1.0.1]",nan21.dnet.module.bd.domain;version="[1.0.1,1
- .0.1]",nan21.dnet.module.md.domain;version="[1.0.1,1.0.1]",nan21.dnet
- .module.fi.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.ad.busine
- ss.api;version="[1.0.1,1.0.1]",nan21.dnet.module.bd.business.api;vers
- ion="[1.0.1,1.0.1]",nan21.dnet.module.md.business.api;version="[1.0.1
- ,1.0.1]",nan21.dnet.module.fi.business.api;version="[1.0.1,1.0.1]",or
+Import-Bundle: nan21.dnet.core.domain;version="[1.0.2,1.0.2]",nan21.dn
+ et.core.business;version="[1.0.2,1.0.2]",nan21.dnet.module.ad.domain;
+ version="[1.0.2,1.0.2]",nan21.dnet.module.bd.domain;version="[1.0.2,1
+ .0.2]",nan21.dnet.module.md.domain;version="[1.0.2,1.0.2]",nan21.dnet
+ .module.fi.domain;version="[1.0.2,1.0.2]",nan21.dnet.module.ad.busine
+ ss.api;version="[1.0.2,1.0.2]",nan21.dnet.module.bd.business.api;vers
+ ion="[1.0.2,1.0.2]",nan21.dnet.module.md.business.api;version="[1.0.2
+ ,1.0.2]",nan21.dnet.module.fi.business.api;version="[1.0.2,1.0.2]",or
  g.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.1
+Bundle-Version: 1.0.2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet FI - business
 Bundle-ManifestVersion: 2

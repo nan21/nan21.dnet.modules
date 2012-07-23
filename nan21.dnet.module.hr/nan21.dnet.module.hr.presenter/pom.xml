@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>net.nan21.dnet</groupId>
 		<artifactId>nan21.dnet.module.hr</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.2-SNAPSHOT</version>
 	</parent>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.hr.presenter</artifactId>
@@ -20,67 +20,67 @@
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.api</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.presenter</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.core.domain</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.ad.business.api</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.bd.business.api</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.md.business.api</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.hr.business.api</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.hr.domain</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.ad.domain</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.bd.domain</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
 			<artifactId>nan21.dnet.module.md.domain</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		 

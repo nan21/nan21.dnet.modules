@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.sd.invoice.business.service;vers
- ion="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mod
+ ion="1.0.2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.mod
  ule.bd.currency.domain.entity,net.nan21.dnet.module.bd.geo.domain.ent
  ity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.
  bd.uom.domain.entity,net.nan21.dnet.module.md.base.tax.domain.entity,
@@ -8,12 +8,12 @@ Export-Package: net.nan21.dnet.module.sd.invoice.business.service;vers
  md.bp.domain.entity,net.nan21.dnet.module.md.mm.price.domain.entity,n
  et.nan21.dnet.module.md.mm.prod.domain.entity,net.nan21.dnet.module.s
  d.invoice.domain.entity,net.nan21.dnet.module.sd.order.domain.entity"
- ,net.nan21.dnet.module.sd.opportunity.business.service;version="1.0.1
+ ,net.nan21.dnet.module.sd.opportunity.business.service;version="1.0.2
  ";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.module.ad.usr
  .domain.entity,net.nan21.dnet.module.bd.currency.domain.entity,net.na
  n21.dnet.module.md.bp.domain.entity,net.nan21.dnet.module.sd.opportun
  ity.domain.entity",net.nan21.dnet.module.sd.order.business.service;ve
- rsion="1.0.1";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.m
+ rsion="1.0.2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.m
  odule.bd.currency.domain.entity,net.nan21.dnet.module.bd.geo.domain.e
  ntity,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.modul
  e.bd.uom.domain.entity,net.nan21.dnet.module.md.base.tax.domain.entit
@@ -22,12 +22,12 @@ Export-Package: net.nan21.dnet.module.sd.invoice.business.service;vers
  ,net.nan21.dnet.module.md.mm.prod.domain.entity,net.nan21.dnet.module
  .md.tx.inventory.domain.entity,net.nan21.dnet.module.sd.order.domain.
  entity"
-Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.1,1.0.1]",nan
- 21.dnet.module.bd.domain;version="[1.0.1,1.0.1]",nan21.dnet.module.md
- .domain;version="[1.0.1,1.0.1]",nan21.dnet.module.sd.domain;version="
- [1.0.1,1.0.1]",org.eclipse.persistence.core;version="[2.0,2.5)"
+Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.2]",nan
+ 21.dnet.module.bd.domain;version="[1.0.2,1.0.2]",nan21.dnet.module.md
+ .domain;version="[1.0.2,1.0.2]",nan21.dnet.module.sd.domain;version="
+ [1.0.2,1.0.2]",org.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.1
+Bundle-Version: 1.0.2
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: DNet SD - business API
 Bundle-ManifestVersion: 2
