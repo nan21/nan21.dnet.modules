@@ -47,7 +47,6 @@
 		<module>nan21.dnet.module.ad</module>
         <module>nan21.dnet.module.bd</module>
         <module>nan21.dnet.module.md</module>
-        <module>nan21.dnet.module.mm</module>
         <module>nan21.dnet.module.fi</module>
         <module>nan21.dnet.module.pj</module>
         <module>nan21.dnet.module.hr</module>
