@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.sc</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.sc.domain</artifactId>
 	<name>DNet SC - domain</name>
 	<description>DNet SC - domain</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
@@ -107,7 +107,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.6</version>
+				<version>1.7</version>
 				<!-- ECLIPSELINK WEAVE -->				
 				<executions>
 					<execution>

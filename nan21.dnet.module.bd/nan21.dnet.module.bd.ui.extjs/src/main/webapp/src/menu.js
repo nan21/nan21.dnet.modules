@@ -3,7 +3,7 @@ Ext.ns('net.nan21.dnet.module.bd.menu');
 var BUNDLE_ID = "nan21.dnet.module.bd.ui.extjs";
 
 net.nan21.dnet.module.bd.menu.ad = [
- 
+  
 	{"id":"sm_bd", "text":"Base data", leaf:false, children:[
  
 	{"id":"sm_bd_uom", "text":"Measuring units", leaf:false, children:[

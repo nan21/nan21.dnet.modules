@@ -58,13 +58,13 @@ Export-Package: net.nan21.dnet.module.md.acc.business.service;version=
  .nan21.dnet.module.md.base.tx.domain.entity,net.nan21.dnet.module.md.
  mm.prod.domain.entity,net.nan21.dnet.module.md.org.domain.entity,net.
  nan21.dnet.module.md.tx.inventory.domain.entity"
-Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.2]",nan
- 21.dnet.module.bd.domain;version="[1.0.2,1.0.2]",nan21.dnet.module.md
- .domain;version="[1.0.2,1.0.2]",org.eclipse.persistence.core;version=
+Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan
+ 21.dnet.module.bd.domain;version="[1.0.2,1.0.3)",nan21.dnet.module.md
+ .domain;version="[1.0.2,1.0.3)",org.eclipse.persistence.core;version=
  "[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.2
-Tool: Bundlor 1.0.0.RELEASE
+Tool: Bundlor 1.1.0.RELEASE
 Bundle-Name: DNet MD - business API
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -87,8 +87,8 @@ Import-Package: javax.persistence.criteria;version="[2.0,2.1)",javax.p
  .entity,net.nan21.dnet.module.md.tx.inventory.domain.entity,org.aopal
  liance.aop;version="[1.0,2.0)",org.hibernate.validator;version="[4.0,
  5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)",org.spr
- ingframework.aop;version="[3.0,3.1)",org.springframework.aop.framewor
- k;version="[3.0,3.1)",org.springframework.context.weaving;version="[3
- .0,3.1)",org.springframework.transaction;version="[3.0,3.1)",org.spri
- ngframework.transaction.aspectj;version="[3.0,3.1)"
+ ingframework.aop;version="[3.1,3.2)",org.springframework.aop.framewor
+ k;version="[3.1,3.2)",org.springframework.context.weaving;version="[3
+ .1,3.2)",org.springframework.transaction;version="[3.1,3.2)",org.spri
+ ngframework.transaction.aspectj;version="[3.1,3.2)"
 

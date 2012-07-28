@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.sc</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.sc.business</artifactId>
 	<name>DNet SC - business</name>
 	<description>DNet SC - business</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>

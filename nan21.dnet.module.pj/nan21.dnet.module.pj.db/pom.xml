@@ -7,11 +7,11 @@
 		<artifactId>nan21.dnet.module.pj</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.pj.db</artifactId>
 	<name>DNet PJ - db</name>
 	<description>DNet PJ - DB objects</description>
 	<packaging>jar</packaging>
 
+	
  	 
 </project>

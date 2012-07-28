@@ -19,47 +19,47 @@ Export-Package: net.nan21.dnet.module.sc._presenterdelegates.invoice;v
  er.model.base",net.nan21.dnet.module.sc.order.ds.model;version="1.0.2
  ";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.core.prese
  nter.model.base,net.nan21.dnet.module.sc.order.domain.entity"
-Import-Bundle: nan21.dnet.core.presenter;version="[1.0.2,1.0.2]",javax
- .persistence;version="[2.0,2.1)",org.eclipse.persistence.jpa;version=
- "[2.1,2.5)",org.eclipse.persistence.core;version="[2.0,2.5)",nan21.dn
- et.module.sc.domain;version="[1.0.2,1.0.2]",nan21.dnet.module.ad.doma
- in;version="[1.0.2,1.0.2]",nan21.dnet.module.bd.domain;version="[1.0.
- 2,1.0.2]",nan21.dnet.module.md.domain;version="[1.0.2,1.0.2]",nan21.d
- net.module.ad.business.api;version="[1.0.2,1.0.2]",nan21.dnet.module.
- bd.business.api;version="[1.0.2,1.0.2]",nan21.dnet.module.md.business
- .api;version="[1.0.2,1.0.2]",nan21.dnet.module.sc.business.api;versio
- n="[1.0.2,1.0.2]"
+Import-Bundle: nan21.dnet.core.presenter;version="[1.0.2,1.0.3)",nan21
+ .dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan21.dnet.module.bd.d
+ omain;version="[1.0.2,1.0.3)",nan21.dnet.module.md.domain;version="[1
+ .0.2,1.0.3)",nan21.dnet.module.sc.domain;version="[1.0.2,1.0.3)",nan2
+ 1.dnet.module.ad.business.api;version="[1.0.2,1.0.3)",nan21.dnet.modu
+ le.bd.business.api;version="[1.0.2,1.0.3)",nan21.dnet.module.md.busin
+ ess.api;version="[1.0.2,1.0.3)",nan21.dnet.module.sc.business.api;ver
+ sion="[1.0.2,1.0.3)",org.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.2
-Tool: Bundlor 1.0.0.RELEASE
+Tool: Bundlor 1.1.0.RELEASE
 Bundle-Name: DNet SC - presenter
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.sc.presenter
-Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
- t.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.converter,ne
- t.nan21.dnet.core.api.descriptor,net.nan21.dnet.core.api.email,net.na
- n21.dnet.core.api.job,net.nan21.dnet.core.api.service,net.nan21.dnet.
- core.api.wf,net.nan21.dnet.core.presenter.converter,net.nan21.dnet.co
- re.presenter.job,net.nan21.dnet.core.presenter.model,net.nan21.dnet.c
- ore.presenter.model.base,net.nan21.dnet.core.presenter.service,net.na
- n21.dnet.module.bd.currency.business.service,net.nan21.dnet.module.bd
- .currency.domain.entity,net.nan21.dnet.module.bd.org.business.service
- ,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd.
- uom.business.service,net.nan21.dnet.module.bd.uom.domain.entity,net.n
- an21.dnet.module.md.base.tax.business.service,net.nan21.dnet.module.m
- d.base.tax.domain.entity,net.nan21.dnet.module.md.base.tx.business.se
- rvice,net.nan21.dnet.module.md.base.tx.domain.entity,net.nan21.dnet.m
- odule.md.bp.business.service,net.nan21.dnet.module.md.bp.domain.entit
- y,net.nan21.dnet.module.md.mm.price.business.service,net.nan21.dnet.m
- odule.md.mm.price.domain.entity,net.nan21.dnet.module.md.mm.prod.busi
- ness.service,net.nan21.dnet.module.md.mm.prod.domain.entity,net.nan21
- .dnet.module.md.org.business.service,net.nan21.dnet.module.md.org.dom
- ain.entity,net.nan21.dnet.module.md.tx.fin.domain.entity,net.nan21.dn
- et.module.md.tx.inventory.business.service,net.nan21.dnet.module.md.t
- x.inventory.domain.entity,net.nan21.dnet.module.sc.invoice.business.s
- ervice,net.nan21.dnet.module.sc.invoice.domain.entity,net.nan21.dnet.
- module.sc.order.business.service,net.nan21.dnet.module.sc.order.domai
- n.entity,org.springframework.context.weaving;version="[3.0,3.1)",org.
- springframework.web.multipart;version="[3.0,3.1)"
+Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
+ e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
+ 2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,net.nan
+ 21.dnet.core.api,net.nan21.dnet.core.api.annotation,net.nan21.dnet.co
+ re.api.converter,net.nan21.dnet.core.api.descriptor,net.nan21.dnet.co
+ re.api.email,net.nan21.dnet.core.api.job,net.nan21.dnet.core.api.serv
+ ice,net.nan21.dnet.core.api.wf,net.nan21.dnet.core.presenter.converte
+ r,net.nan21.dnet.core.presenter.job,net.nan21.dnet.core.presenter.mod
+ el,net.nan21.dnet.core.presenter.model.base,net.nan21.dnet.core.prese
+ nter.service,net.nan21.dnet.module.bd.currency.business.service,net.n
+ an21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.module.bd.o
+ rg.business.service,net.nan21.dnet.module.bd.org.domain.entity,net.na
+ n21.dnet.module.bd.uom.business.service,net.nan21.dnet.module.bd.uom.
+ domain.entity,net.nan21.dnet.module.md.base.tax.business.service,net.
+ nan21.dnet.module.md.base.tax.domain.entity,net.nan21.dnet.module.md.
+ base.tx.business.service,net.nan21.dnet.module.md.base.tx.domain.enti
+ ty,net.nan21.dnet.module.md.bp.business.service,net.nan21.dnet.module
+ .md.bp.domain.entity,net.nan21.dnet.module.md.mm.price.business.servi
+ ce,net.nan21.dnet.module.md.mm.price.domain.entity,net.nan21.dnet.mod
+ ule.md.mm.prod.business.service,net.nan21.dnet.module.md.mm.prod.doma
+ in.entity,net.nan21.dnet.module.md.org.business.service,net.nan21.dne
+ t.module.md.org.domain.entity,net.nan21.dnet.module.md.tx.fin.domain.
+ entity,net.nan21.dnet.module.md.tx.inventory.business.service,net.nan
+ 21.dnet.module.md.tx.inventory.domain.entity,net.nan21.dnet.module.sc
+ .invoice.business.service,net.nan21.dnet.module.sc.invoice.domain.ent
+ ity,net.nan21.dnet.module.sc.order.business.service,net.nan21.dnet.mo
+ dule.sc.order.domain.entity,org.springframework.context.weaving;versi
+ on="[3.1,3.2)"
 

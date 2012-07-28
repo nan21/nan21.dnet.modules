@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.hr</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.hr.data</artifactId>
 	<name>DNet HR - data</name>
 	<description>DNet HR - initial data</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>

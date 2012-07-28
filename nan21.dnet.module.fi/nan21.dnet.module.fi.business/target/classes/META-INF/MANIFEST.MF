@@ -1,4 +1,7 @@
 Manifest-Version: 1.0
+Built-By: amathe
+Build-Jdk: 1.6.0_33
+Created-By: Maven Integration for Eclipse
 Export-Package: net.nan21.dnet.module.fi._businessdelegates;version="1
  .0.2";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
  ss.service",net.nan21.dnet.module.fi.asset.business.serviceimpl;versi
@@ -6,19 +9,18 @@ Export-Package: net.nan21.dnet.module.fi._businessdelegates;version="1
  ice,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.mo
  dule.fi.asset.business.service,net.nan21.dnet.module.fi.asset.domain.
  entity,net.nan21.dnet.module.md.acc.domain.entity"
-Import-Bundle: nan21.dnet.core.domain;version="[1.0.2,1.0.2]",nan21.dn
- et.core.business;version="[1.0.2,1.0.2]",nan21.dnet.module.ad.domain;
- version="[1.0.2,1.0.2]",nan21.dnet.module.bd.domain;version="[1.0.2,1
- .0.2]",nan21.dnet.module.md.domain;version="[1.0.2,1.0.2]",nan21.dnet
- .module.fi.domain;version="[1.0.2,1.0.2]",nan21.dnet.module.ad.busine
- ss.api;version="[1.0.2,1.0.2]",nan21.dnet.module.bd.business.api;vers
- ion="[1.0.2,1.0.2]",nan21.dnet.module.md.business.api;version="[1.0.2
- ,1.0.2]",nan21.dnet.module.fi.business.api;version="[1.0.2,1.0.2]",or
- g.eclipse.persistence.core;version="[2.0,2.5)"
+Tool: Bundlor 1.1.0.RELEASE
+Bundle-Name: DNet FI - business
+Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan
+ 21.dnet.module.bd.domain;version="[1.0.2,1.0.3)",nan21.dnet.module.md
+ .domain;version="[1.0.2,1.0.3)",nan21.dnet.module.fi.domain;version="
+ [1.0.2,1.0.3)",nan21.dnet.module.ad.business.api;version="[1.0.2,1.0.
+ 3)",nan21.dnet.module.bd.business.api;version="[1.0.2,1.0.3)",nan21.d
+ net.module.md.business.api;version="[1.0.2,1.0.3)",nan21.dnet.module.
+ fi.business.api;version="[1.0.2,1.0.3)",org.eclipse.persistence.core;
+ version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.2
-Tool: Bundlor 1.0.0.RELEASE
-Bundle-Name: DNet FI - business
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.fi.business
@@ -27,16 +29,21 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,javax.v
  alidation;version="[1.0,2.0)",net.nan21.dnet.core.api,net.nan21.dnet.
  core.api.service,net.nan21.dnet.core.api.session,net.nan21.dnet.core.
- api.setup,net.nan21.dnet.core.api.wf,net.nan21.dnet.core.business.per
- sistenceunit,net.nan21.dnet.core.business.service,net.nan21.dnet.modu
- le.bd.currency.domain.entity,net.nan21.dnet.module.fi.asset.business.
- service,net.nan21.dnet.module.fi.asset.domain.entity,net.nan21.dnet.m
- odule.md.acc.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",or
- g.hibernate.validator;version="[4.0,5.0)",org.hibernate.validator.con
- straints;version="[4.0,5.0)",org.springframework.aop;version="[3.0,3.
- 1)",org.springframework.aop.framework;version="[3.0,3.1)",org.springf
- ramework.context.weaving;version="[3.0,3.1)",org.springframework.orm.
- jpa,org.springframework.orm.jpa.vendor,org.springframework.transactio
- n;version="[3.0,3.1)",org.springframework.transaction.aspectj;version
- ="[3.0,3.1)"
+ api.setup,net.nan21.dnet.core.api.wf,net.nan21.dnet.core.business.job
+ ;version="[1.0.2,1.0.3)",net.nan21.dnet.core.business.persistenceunit
+ ;version="[1.0.2,1.0.3)",net.nan21.dnet.core.business.service;version
+ ="[1.0.2,1.0.3)",net.nan21.dnet.core.domain.eventhandler;version="[1.
+ 0.2,1.0.3)",net.nan21.dnet.core.domain.model;version="[1.0.2,1.0.3)",
+ net.nan21.dnet.core.domain.sequence;version="[1.0.2,1.0.3)",net.nan21
+ .dnet.core.domain.validation;version="[1.0.2,1.0.3)",net.nan21.dnet.m
+ odule.bd.currency.domain.entity,net.nan21.dnet.module.fi.asset.busine
+ ss.service,net.nan21.dnet.module.fi.asset.domain.entity,net.nan21.dne
+ t.module.md.acc.domain.entity,org.aopalliance.aop;version="[1.0,2.0)"
+ ,org.hibernate.validator;version="[4.0,5.0)",org.hibernate.validator.
+ constraints;version="[4.0,5.0)",org.springframework.aop;version="[3.1
+ ,3.2)",org.springframework.aop.framework;version="[3.1,3.2)",org.spri
+ ngframework.context.weaving;version="[3.1,3.2)",org.springframework.o
+ rm.jpa,org.springframework.orm.jpa.vendor,org.springframework.transac
+ tion;version="[3.1,3.2)",org.springframework.transaction.aspectj;vers
+ ion="[3.1,3.2)"
 

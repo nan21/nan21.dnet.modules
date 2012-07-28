@@ -20,31 +20,31 @@ Export-Package: net.nan21.dnet.module.pj.base.ds.converter;version="1.
  "1.0.2";uses:="net.nan21.dnet.core.presenter.model",net.nan21.dnet.mo
  dule.pj.md.ds.qb;version="1.0.2";uses:="net.nan21.dnet.core.presenter
  .action,net.nan21.dnet.module.pj.md.ds.filter"
-Import-Bundle: nan21.dnet.core.presenter;version="[1.0.2,1.0.2]",nan21
- .dnet.module.pj.domain;version="[1.0.2,1.0.2]",nan21.dnet.module.ad.d
- omain;version="[1.0.2,1.0.2]",nan21.dnet.module.ad.business.api;versi
- on="[1.0.2,1.0.2]",nan21.dnet.module.pj.business.api;version="[1.0.2,
- 1.0.2]",javax.persistence;version="[2.0,2.1)",org.eclipse.persistence
- .jpa;version="[2.1,2.5)",org.eclipse.persistence.core;version="[2.0,2
- .5)"
+Import-Bundle: nan21.dnet.core.presenter;version="[1.0.2,1.0.3)",nan21
+ .dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan21.dnet.module.pj.d
+ omain;version="[1.0.2,1.0.3)",nan21.dnet.module.ad.business.api;versi
+ on="[1.0.2,1.0.3)",nan21.dnet.module.pj.business.api;version="[1.0.2,
+ 1.0.3)",org.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.2
-Tool: Bundlor 1.0.0.RELEASE
+Tool: Bundlor 1.1.0.RELEASE
 Bundle-Name: DNet PJ - presenter
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.pj.presenter
-Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
- t.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.converter,ne
- t.nan21.dnet.core.api.descriptor,net.nan21.dnet.core.api.email,net.na
- n21.dnet.core.api.job,net.nan21.dnet.core.api.service,net.nan21.dnet.
- core.api.wf,net.nan21.dnet.core.presenter.action,net.nan21.dnet.core.
- presenter.converter,net.nan21.dnet.core.presenter.job,net.nan21.dnet.
- core.presenter.model,net.nan21.dnet.core.presenter.model.base,net.nan
- 21.dnet.core.presenter.service,net.nan21.dnet.module.ad.usr.business.
- service,net.nan21.dnet.module.ad.usr.domain.entity,net.nan21.dnet.mod
- ule.pj.base.business.service,net.nan21.dnet.module.pj.base.domain.ent
- ity,net.nan21.dnet.module.pj.md.business.service,net.nan21.dnet.modul
- e.pj.md.domain.entity,org.springframework.context.weaving;version="[3
- .0,3.1)",org.springframework.web.multipart;version="[3.0,3.1)"
+Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
+ e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
+ 2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,net.nan
+ 21.dnet.core.api,net.nan21.dnet.core.api.annotation,net.nan21.dnet.co
+ re.api.converter,net.nan21.dnet.core.api.descriptor,net.nan21.dnet.co
+ re.api.email,net.nan21.dnet.core.api.job,net.nan21.dnet.core.api.serv
+ ice,net.nan21.dnet.core.api.wf,net.nan21.dnet.core.presenter.action,n
+ et.nan21.dnet.core.presenter.converter,net.nan21.dnet.core.presenter.
+ job,net.nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter
+ .model.base,net.nan21.dnet.core.presenter.service,net.nan21.dnet.modu
+ le.ad.usr.business.service,net.nan21.dnet.module.ad.usr.domain.entity
+ ,net.nan21.dnet.module.pj.base.business.service,net.nan21.dnet.module
+ .pj.base.domain.entity,net.nan21.dnet.module.pj.md.business.service,n
+ et.nan21.dnet.module.pj.md.domain.entity,org.springframework.context.
+ weaving;version="[3.1,3.2)"
 

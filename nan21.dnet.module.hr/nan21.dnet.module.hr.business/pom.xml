@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.hr</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.hr.business</artifactId>
 	<name>DNet HR - business</name>
 	<description>DNet HR - business</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
@@ -58,7 +58,6 @@
 			<artifactId>nan21.dnet.module.hr.domain</artifactId>
 			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>

@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.bd</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.bd.business.api</artifactId>
 	<name>DNet BD - business API</name>
 	<description>DNet BD - business API</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
@@ -31,13 +31,13 @@
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.bd.domain</artifactId>
+			<artifactId>nan21.dnet.module.ad.domain</artifactId>
 			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
-			<artifactId>nan21.dnet.module.ad.domain</artifactId>
+			<artifactId>nan21.dnet.module.bd.domain</artifactId>
 			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>	

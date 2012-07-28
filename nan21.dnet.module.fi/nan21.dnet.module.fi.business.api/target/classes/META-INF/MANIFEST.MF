@@ -1,16 +1,19 @@
 Manifest-Version: 1.0
+Built-By: amathe
+Build-Jdk: 1.6.0_33
+Created-By: Maven Integration for Eclipse
 Export-Package: net.nan21.dnet.module.fi.asset.business.service;versio
  n="1.0.2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modul
  e.bd.currency.domain.entity,net.nan21.dnet.module.fi.asset.domain.ent
  ity,net.nan21.dnet.module.md.acc.domain.entity"
-Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.2]",nan
- 21.dnet.module.bd.domain;version="[1.0.2,1.0.2]",nan21.dnet.module.md
- .domain;version="[1.0.2,1.0.2]",nan21.dnet.module.fi.domain;version="
- [1.0.2,1.0.2]",org.eclipse.persistence.core;version="[2.0,2.5)"
+Tool: Bundlor 1.1.0.RELEASE
+Bundle-Name: DNet FI - business API
+Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan
+ 21.dnet.module.bd.domain;version="[1.0.2,1.0.3)",nan21.dnet.module.md
+ .domain;version="[1.0.2,1.0.3)",nan21.dnet.module.fi.domain;version="
+ [1.0.2,1.0.3)",org.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.2
-Tool: Bundlor 1.0.0.RELEASE
-Bundle-Name: DNet FI - business API
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.fi.business.api
@@ -21,9 +24,9 @@ Import-Package: javax.persistence.criteria;version="[2.0,2.1)",javax.p
  21.dnet.module.fi.asset.domain.entity,net.nan21.dnet.module.md.acc.do
  main.entity,org.aopalliance.aop;version="[1.0,2.0)",org.hibernate.val
  idator;version="[4.0,5.0)",org.hibernate.validator.constraints;versio
- n="[4.0,5.0)",org.springframework.aop;version="[3.0,3.1)",org.springf
- ramework.aop.framework;version="[3.0,3.1)",org.springframework.contex
- t.weaving;version="[3.0,3.1)",org.springframework.transaction;version
- ="[3.0,3.1)",org.springframework.transaction.aspectj;version="[3.0,3.
- 1)"
+ n="[4.0,5.0)",org.springframework.aop;version="[3.1,3.2)",org.springf
+ ramework.aop.framework;version="[3.1,3.2)",org.springframework.contex
+ t.weaving;version="[3.1,3.2)",org.springframework.transaction;version
+ ="[3.1,3.2)",org.springframework.transaction.aspectj;version="[3.1,3.
+ 2)"
 

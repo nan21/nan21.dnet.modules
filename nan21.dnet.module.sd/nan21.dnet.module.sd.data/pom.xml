@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.sd</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.sd.data</artifactId>
 	<name>DNet SD - data</name>
 	<description>DNet SD - initial data</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>

@@ -84,14 +84,16 @@ Export-Package: net.nan21.dnet.module.md.acc.domain.entity;version="1.
  md.tx.inventory.domain.eventhandler;version="1.0.2";uses:="net.nan21.
  dnet.core.domain.eventhandler,org.eclipse.persistence.descriptors,org
  .eclipse.persistence.sessions"
-Import-Bundle: nan21.dnet.core.domain;version="[1.0.2,1.0.2]",nan21.dn
- et.module.ad.domain;version="[1.0.2,1.0.2]",nan21.dnet.module.bd.doma
- in;version="[1.0.2,1.0.2]",org.eclipse.persistence.core;version="[2.0
- ,2.5)"
+Built-By: amathe
+Tool: Bundlor 1.1.0.RELEASE
+Bundle-Name: DNet MD - domain
+Created-By: Maven Integration for Eclipse
+Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan
+ 21.dnet.module.bd.domain;version="[1.0.2,1.0.3)",org.eclipse.persiste
+ nce.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.2
-Tool: Bundlor 1.0.0.RELEASE
-Bundle-Name: DNet MD - domain
+Build-Jdk: 1.6.0_33
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.md.domain
@@ -99,18 +101,20 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.validation;
  version="[1.0,2.0)",javax.validation.constraints,net.nan21.dnet.core.
- domain.eventhandler,net.nan21.dnet.core.domain.model,net.nan21.dnet.m
- odule.bd.attr.domain.entity,net.nan21.dnet.module.bd.contact.domain.e
- ntity,net.nan21.dnet.module.bd.currency.domain.entity,net.nan21.dnet.
- module.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.domain.entit
- y,net.nan21.dnet.module.bd.standards.domain.entity,net.nan21.dnet.mod
- ule.bd.uom.domain.entity,org.aopalliance.aop;version="[1.0,2.0)",org.
- eclipse.persistence.annotations,org.eclipse.persistence.descriptors,o
- rg.eclipse.persistence.internal.helper,org.eclipse.persistence.sessio
- ns,org.hibernate.validator;version="[4.0,5.0)",org.hibernate.validato
- r.constraints;version="[4.0,5.0)",org.springframework.aop;version="[3
- .0,3.1)",org.springframework.aop.framework;version="[3.0,3.1)",org.sp
- ringframework.context.weaving;version="[3.0,3.1)",org.springframework
- .transaction;version="[3.0,3.1)",org.springframework.transaction.aspe
- ctj;version="[3.0,3.1)"
+ domain.eventhandler;version="[1.0.2,1.0.3)",net.nan21.dnet.core.domai
+ n.model;version="[1.0.2,1.0.3)",net.nan21.dnet.core.domain.sequence;v
+ ersion="[1.0.2,1.0.3)",net.nan21.dnet.core.domain.validation;version=
+ "[1.0.2,1.0.3)",net.nan21.dnet.module.bd.attr.domain.entity,net.nan21
+ .dnet.module.bd.contact.domain.entity,net.nan21.dnet.module.bd.curren
+ cy.domain.entity,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21
+ .dnet.module.bd.org.domain.entity,net.nan21.dnet.module.bd.standards.
+ domain.entity,net.nan21.dnet.module.bd.uom.domain.entity,org.aopallia
+ nce.aop;version="[1.0,2.0)",org.eclipse.persistence.annotations,org.e
+ clipse.persistence.descriptors,org.eclipse.persistence.internal.helpe
+ r,org.eclipse.persistence.sessions,org.hibernate.validator;version="[
+ 4.0,5.0)",org.hibernate.validator.constraints;version="[4.0,5.0)",org
+ .springframework.aop;version="[3.1,3.2)",org.springframework.aop.fram
+ ework;version="[3.1,3.2)",org.springframework.context.weaving;version
+ ="[3.1,3.2)",org.springframework.transaction;version="[3.1,3.2)",org.
+ springframework.transaction.aspectj;version="[3.1,3.2)"
 

@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.modules</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.ux</artifactId>
 	<name>DNet UX: User extensions</name>
 	<description>DNet UX: User extensions</description>
 	<packaging>pom</packaging>
 
+	
  	 
  	
  	<!-- ========================== Modules ========================== -->

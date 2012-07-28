@@ -6,13 +6,13 @@
 		<groupId>net.nan21.dnet</groupId>
 		<artifactId>nan21.dnet.module.ad</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
-	</parent>
-	<groupId>net.nan21.dnet</groupId>
+	</parent> 
 	<artifactId>nan21.dnet.module.ad.data</artifactId>
 	<name>DNet AD - data</name>
 	<description>DNet AD - initial data</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>

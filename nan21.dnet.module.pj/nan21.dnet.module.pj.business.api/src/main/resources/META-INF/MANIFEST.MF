@@ -5,12 +5,12 @@ Export-Package: net.nan21.dnet.module.pj.base.business.service;version
  version="1.0.2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet
  .module.ad.usr.domain.entity,net.nan21.dnet.module.pj.base.domain.ent
  ity,net.nan21.dnet.module.pj.md.domain.entity"
-Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.2]",nan
- 21.dnet.module.pj.domain;version="[1.0.2,1.0.2]",org.eclipse.persiste
+Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan
+ 21.dnet.module.pj.domain;version="[1.0.2,1.0.3)",org.eclipse.persiste
  nce.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.2
-Tool: Bundlor 1.0.0.RELEASE
+Tool: Bundlor 1.1.0.RELEASE
 Bundle-Name: DNet PJ - business API
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -22,8 +22,8 @@ Import-Package: javax.persistence.criteria;version="[2.0,2.1)",javax.p
  et.module.pj.base.domain.entity,net.nan21.dnet.module.pj.md.domain.en
  tity,org.aopalliance.aop;version="[1.0,2.0)",org.hibernate.validator;
  version="[4.0,5.0)",org.hibernate.validator.constraints;version="[4.0
- ,5.0)",org.springframework.aop;version="[3.0,3.1)",org.springframewor
- k.aop.framework;version="[3.0,3.1)",org.springframework.context.weavi
- ng;version="[3.0,3.1)",org.springframework.transaction;version="[3.0,
- 3.1)",org.springframework.transaction.aspectj;version="[3.0,3.1)"
+ ,5.0)",org.springframework.aop;version="[3.1,3.2)",org.springframewor
+ k.aop.framework;version="[3.1,3.2)",org.springframework.context.weavi
+ ng;version="[3.1,3.2)",org.springframework.transaction;version="[3.1,
+ 3.2)",org.springframework.transaction.aspectj;version="[3.1,3.2)"
 

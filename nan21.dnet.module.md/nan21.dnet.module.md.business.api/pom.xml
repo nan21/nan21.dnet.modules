@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.md</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.md.business.api</artifactId>
 	<name>DNet MD - business API</name>
 	<description>DNet MD - business API</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>

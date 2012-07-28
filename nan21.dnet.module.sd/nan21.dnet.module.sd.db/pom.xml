@@ -7,11 +7,11 @@
 		<artifactId>nan21.dnet.module.sd</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.sd.db</artifactId>
 	<name>DNet SD - db</name>
 	<description>DNet SD - DB objects</description>
 	<packaging>jar</packaging>
 
+	
  	 
 </project>

@@ -66,47 +66,46 @@ Export-Package: net.nan21.dnet.module.hr._presenterdelegates.payroll;v
  ="1.0.2";uses:="net.nan21.dnet.core.api.annotation,net.nan21.dnet.cor
  e.presenter.model.base,net.nan21.dnet.module.hr.training.domain.entit
  y"
-Import-Bundle: nan21.dnet.core.presenter;version="[1.0.2,1.0.2]",nan21
- .dnet.module.ad.business.api;version="[1.0.2,1.0.2]",nan21.dnet.modul
- e.bd.business.api;version="[1.0.2,1.0.2]",nan21.dnet.module.md.busine
- ss.api;version="[1.0.2,1.0.2]",nan21.dnet.module.hr.business.api;vers
- ion="[1.0.2,1.0.2]",nan21.dnet.module.hr.domain;version="[1.0.2,1.0.2
- ]",nan21.dnet.module.ad.domain;version="[1.0.2,1.0.2]",nan21.dnet.mod
- ule.bd.domain;version="[1.0.2,1.0.2]",nan21.dnet.module.md.domain;ver
- sion="[1.0.2,1.0.2]",javax.persistence;version="[2.0,2.1)",org.eclips
- e.persistence.jpa;version="[2.1,2.5)",org.eclipse.persistence.core;ve
- rsion="[2.0,2.5)"
+Import-Bundle: nan21.dnet.core.presenter;version="[1.0.2,1.0.3)",nan21
+ .dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan21.dnet.module.bd.d
+ omain;version="[1.0.2,1.0.3)",nan21.dnet.module.md.domain;version="[1
+ .0.2,1.0.3)",nan21.dnet.module.hr.domain;version="[1.0.2,1.0.3)",nan2
+ 1.dnet.module.ad.business.api;version="[1.0.2,1.0.3)",nan21.dnet.modu
+ le.bd.business.api;version="[1.0.2,1.0.3)",nan21.dnet.module.md.busin
+ ess.api;version="[1.0.2,1.0.3)",nan21.dnet.module.hr.business.api;ver
+ sion="[1.0.2,1.0.3)",org.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.2
-Tool: Bundlor 1.0.0.RELEASE
+Tool: Bundlor 1.1.0.RELEASE
 Bundle-Name: DNet HR - presenter
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
 Bundle-SymbolicName: nan21.dnet.module.hr.presenter
-Import-Package: javax.persistence,javax.sql,net.nan21.dnet.core.api,ne
- t.nan21.dnet.core.api.annotation,net.nan21.dnet.core.api.converter,ne
- t.nan21.dnet.core.api.descriptor,net.nan21.dnet.core.api.email,net.na
- n21.dnet.core.api.job,net.nan21.dnet.core.api.service,net.nan21.dnet.
- core.api.wf,net.nan21.dnet.core.presenter.action,net.nan21.dnet.core.
- presenter.converter,net.nan21.dnet.core.presenter.job,net.nan21.dnet.
- core.presenter.model,net.nan21.dnet.core.presenter.model.base,net.nan
- 21.dnet.core.presenter.service,net.nan21.dnet.module.bd.currency.busi
- ness.service,net.nan21.dnet.module.bd.currency.domain.entity,net.nan2
- 1.dnet.module.bd.elem.business.service,net.nan21.dnet.module.bd.elem.
- domain.entity,net.nan21.dnet.module.bd.geo.business.service,net.nan21
- .dnet.module.bd.geo.domain.entity,net.nan21.dnet.module.bd.org.busine
- ss.service,net.nan21.dnet.module.bd.org.domain.entity,net.nan21.dnet.
- module.hr.employee.business.service,net.nan21.dnet.module.hr.employee
- .domain.entity,net.nan21.dnet.module.hr.grade.business.service,net.na
- n21.dnet.module.hr.grade.domain.entity,net.nan21.dnet.module.hr.job.b
- usiness.service,net.nan21.dnet.module.hr.job.domain.entity,net.nan21.
- dnet.module.hr.payroll.business.service,net.nan21.dnet.module.hr.payr
- oll.domain.entity,net.nan21.dnet.module.hr.skill.business.service,net
- .nan21.dnet.module.hr.skill.domain.entity,net.nan21.dnet.module.hr.ti
- me.business.service,net.nan21.dnet.module.hr.time.domain.entity,net.n
- an21.dnet.module.hr.training.business.service,net.nan21.dnet.module.h
- r.training.domain.entity,net.nan21.dnet.module.md.acc.business.servic
- e,net.nan21.dnet.module.md.acc.domain.entity,org.springframework.cont
- ext.weaving;version="[3.0,3.1)",org.springframework.web.multipart;ver
- sion="[3.0,3.1)"
+Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
+ e.criteria;version="[2.0,2.1)",javax.persistence.metamodel;version="[
+ 2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,net.nan
+ 21.dnet.core.api,net.nan21.dnet.core.api.annotation,net.nan21.dnet.co
+ re.api.converter,net.nan21.dnet.core.api.descriptor,net.nan21.dnet.co
+ re.api.email,net.nan21.dnet.core.api.job,net.nan21.dnet.core.api.serv
+ ice,net.nan21.dnet.core.api.wf,net.nan21.dnet.core.presenter.action,n
+ et.nan21.dnet.core.presenter.converter,net.nan21.dnet.core.presenter.
+ job,net.nan21.dnet.core.presenter.model,net.nan21.dnet.core.presenter
+ .model.base,net.nan21.dnet.core.presenter.service,net.nan21.dnet.modu
+ le.bd.currency.business.service,net.nan21.dnet.module.bd.currency.dom
+ ain.entity,net.nan21.dnet.module.bd.elem.business.service,net.nan21.d
+ net.module.bd.elem.domain.entity,net.nan21.dnet.module.bd.geo.busines
+ s.service,net.nan21.dnet.module.bd.geo.domain.entity,net.nan21.dnet.m
+ odule.bd.org.business.service,net.nan21.dnet.module.bd.org.domain.ent
+ ity,net.nan21.dnet.module.hr.employee.business.service,net.nan21.dnet
+ .module.hr.employee.domain.entity,net.nan21.dnet.module.hr.grade.busi
+ ness.service,net.nan21.dnet.module.hr.grade.domain.entity,net.nan21.d
+ net.module.hr.job.business.service,net.nan21.dnet.module.hr.job.domai
+ n.entity,net.nan21.dnet.module.hr.payroll.business.service,net.nan21.
+ dnet.module.hr.payroll.domain.entity,net.nan21.dnet.module.hr.skill.b
+ usiness.service,net.nan21.dnet.module.hr.skill.domain.entity,net.nan2
+ 1.dnet.module.hr.time.business.service,net.nan21.dnet.module.hr.time.
+ domain.entity,net.nan21.dnet.module.hr.training.business.service,net.
+ nan21.dnet.module.hr.training.domain.entity,net.nan21.dnet.module.md.
+ acc.business.service,net.nan21.dnet.module.md.acc.domain.entity,org.s
+ pringframework.context.weaving;version="[3.1,3.2)"
 

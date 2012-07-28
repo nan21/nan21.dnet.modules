@@ -43,8 +43,8 @@ sequenceNo;name;title;menu;frame;bundle;active;uuid
 60;bd-menu-time;Time control;BD;;;true;284C2EE0-CC4F-4A20-B8EA-5538510B601C
 30;bd-menu-uom;Measuring units;BD;;;true;39CDD4DD-9547-49AE-A193-086B0D8A75EC
 20;bp-menu;Business partners;MD;;;true;E72F3977-9404-47A6-BB25-93CB666E4391
-;bp-menu-base;Base-data;;;;true;CF606508-6A3C-4166-9AB5-C38BF2B41855
-;bp-menu-md;Master-data;;;;true;E832FE4D-A8B3-4CE1-A06F-3279A319C56F
+10;bp-menu-base;Base-data;;;;true;CF606508-6A3C-4166-9AB5-C38BF2B41855
+20;bp-menu-md;Master-data;;;;true;E832FE4D-A8B3-4CE1-A06F-3279A319C56F
 30;BpAccount_UI;Business partner accounts;;net.nan21.dnet.module.md.bp.frame.BpAccount_UI;nan21.dnet.module.md.ui.extjs;true;A0203096-4CC5-43AC-89E2-C8D63BE6808A
 10;BPartner_UI;Business partners;;net.nan21.dnet.module.md.bp.frame.BPartner_UI;nan21.dnet.module.md.ui.extjs;true;4226A1AE-A154-41B2-ADB1-B438E36A132D
 10;BP_BaseData_UI;Definitions (BP);;net.nan21.dnet.module.md.bp.frame.BP_BaseData_UI;nan21.dnet.module.md.ui.extjs;true;7DEC3F4B-C848-4EFE-A1FC-CA2561C4E45C

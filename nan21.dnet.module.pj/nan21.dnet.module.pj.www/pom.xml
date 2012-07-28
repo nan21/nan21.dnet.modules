@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.pj</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.pj.www</artifactId>
 	<name>DNet PJ - www</name>
 	<description>DNet PJ -  www public portal.</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
@@ -94,13 +94,13 @@
 		<dependency>
 			<groupId>org.eclipse.virgo.snaps</groupId>
 			<artifactId>org.eclipse.virgo.snaps.api</artifactId>
-			<version>3.0.2.RELEASE</version>
+			<version>3.5.0.RELEASE</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.virgo.snaps</groupId>
 			<artifactId>org.eclipse.virgo.snaps.core</artifactId>
-			<version>3.0.2.RELEASE</version>
+			<version>3.5.0.RELEASE</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
@@ -125,7 +125,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.6</version>
+				<version>1.7</version>
 				<executions>
 					<execution>	
 						<id>my.process-classes</id>				 

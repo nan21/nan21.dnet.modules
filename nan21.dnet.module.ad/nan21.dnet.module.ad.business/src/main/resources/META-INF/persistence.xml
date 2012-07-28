@@ -98,7 +98,13 @@
 
 		<!-- Dependencies -->
 
+		<!-- Abstract classes -->
 
+		<class>net.nan21.dnet.core.domain.model.AbstractAuditable</class>
+		<class>net.nan21.dnet.core.domain.model.AbstractSimpleEntity</class>
+		<class>net.nan21.dnet.core.domain.model.AbstractType</class>
+		<class>net.nan21.dnet.core.domain.model.AbstractTypeWithCode</class>
+		
 		<properties>
 			<property name="eclipselink.weaving" value="static" />
 		</properties>

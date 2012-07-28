@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:osgi-compendium="http://www.springframework.org/schema/osgi-compendium"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+		http://www.springframework.org/schema/osgi-compendium http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
+
+
+	<context:property-placeholder
+		properties-ref="dnetProperties" />
+
+	<osgi-compendium:cm-properties id="dnetProperties"
+		persistent-id="net.nan21.dnet">
+	</osgi-compendium:cm-properties>
+
+	<context:annotation-config />
+
+	<!-- <context:component-scan annotation-config="true" base-package="net.nan21.dnet.module.md.www.controller" 
+		> </context:component-scan> -->
+
+	<bean id="serviceLocator" class="net.nan21.dnet.core.presenter.service.ServiceLocator" />
+
+
+	<bean name="productController"
+		class="net.nan21.dnet.module.md.www.controller.ProductController"
+		scope="request" />
+
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<osgi:reference id="systemConfig" cardinality="1..1"
+		interface="net.nan21.dnet.core.api.ISystemConfig" />
+
+	<osgi:list id="osgiDsServiceFactories" cardinality="0..N"
+		interface="net.nan21.dnet.core.api.service.IDsServiceFactory" />
+</beans>

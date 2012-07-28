@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.fi</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.fi.data</artifactId>
 	<name>DNet FI - data</name>
 	<description>DNet FI - initial data</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>

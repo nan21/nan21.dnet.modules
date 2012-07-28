@@ -5,4 +5,4 @@
     <includeAll path="install/table" />
     <includeAll path="install/fk" />
     <changeSet author="Version" id="1.0.1" />
-</databaseChangeLog>
+</databaseChangeLog> 

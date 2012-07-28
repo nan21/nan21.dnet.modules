@@ -7,11 +7,11 @@
 		<artifactId>nan21.dnet.module.fi</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.fi.db</artifactId>
 	<name>DNet FI - db</name>
 	<description>DNet FI - DB objects</description>
 	<packaging>jar</packaging>
 
+	
  	 
 </project>

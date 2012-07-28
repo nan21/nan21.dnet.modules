@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.pj</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.pj.data</artifactId>
 	<name>DNet PJ - data</name>
 	<description>DNet PJ - initial data</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>

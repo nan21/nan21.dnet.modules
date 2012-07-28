@@ -18,12 +18,12 @@ Export-Package: net.nan21.dnet.module.bd.attr.business.service;version
  y",net.nan21.dnet.module.bd.uom.business.service;version="1.0.2";uses
  :="net.nan21.dnet.core.api.service,net.nan21.dnet.module.bd.uom.domai
  n.entity"
-Import-Bundle: nan21.dnet.module.bd.domain;version="[1.0.2,1.0.2]",nan
- 21.dnet.module.ad.domain;version="[1.0.2,1.0.2]",org.eclipse.persiste
+Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan
+ 21.dnet.module.bd.domain;version="[1.0.2,1.0.3)",org.eclipse.persiste
  nce.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
 Bundle-Version: 1.0.2
-Tool: Bundlor 1.0.0.RELEASE
+Tool: Bundlor 1.1.0.RELEASE
 Bundle-Name: DNet BD - business API
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -38,9 +38,9 @@ Import-Package: javax.persistence.criteria;version="[2.0,2.1)",javax.p
  entity,net.nan21.dnet.module.bd.standards.domain.entity,net.nan21.dne
  t.module.bd.uom.domain.entity,org.aopalliance.aop;version="[1.0,2.0)"
  ,org.hibernate.validator;version="[4.0,5.0)",org.hibernate.validator.
- constraints;version="[4.0,5.0)",org.springframework.aop;version="[3.0
- ,3.1)",org.springframework.aop.framework;version="[3.0,3.1)",org.spri
- ngframework.context.weaving;version="[3.0,3.1)",org.springframework.t
- ransaction;version="[3.0,3.1)",org.springframework.transaction.aspect
- j;version="[3.0,3.1)"
+ constraints;version="[4.0,5.0)",org.springframework.aop;version="[3.1
+ ,3.2)",org.springframework.aop.framework;version="[3.1,3.2)",org.spri
+ ngframework.context.weaving;version="[3.1,3.2)",org.springframework.t
+ ransaction;version="[3.1,3.2)",org.springframework.transaction.aspect
+ j;version="[3.1,3.2)"
 

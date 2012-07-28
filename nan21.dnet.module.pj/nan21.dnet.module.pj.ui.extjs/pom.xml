@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.pj</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.pj.ui.extjs</artifactId>
 	<name>DNet PJ - ui extjs</name>
 	<description>DNet PJ - extjs user interface</description>
 	<packaging>war</packaging>
 
+	
 	
 	<!-- ===================== Build ===================== -->	
 	

@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.md</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.md.ui.extjs</artifactId>
 	<name>DNet MD - ui extjs</name>
 	<description>DNet MD - extjs user interface</description>
 	<packaging>war</packaging>
 
+	
 	
 	<!-- ===================== Build ===================== -->	
 	

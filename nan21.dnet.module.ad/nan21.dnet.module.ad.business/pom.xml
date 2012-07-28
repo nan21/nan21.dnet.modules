@@ -7,12 +7,12 @@
 		<artifactId>nan21.dnet.module.ad</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.module.ad.business</artifactId>
 	<name>DNet AD - business implementation</name>
 	<description>DNet AD - business implementation</description>
 	<packaging>jar</packaging>
 
+	
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
@@ -46,7 +46,6 @@
 			<artifactId>nan21.dnet.module.ad.domain</artifactId>
 			<version>1.0.2-SNAPSHOT</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>	
 		<dependency>
 			<groupId>net.nan21.dnet</groupId>
