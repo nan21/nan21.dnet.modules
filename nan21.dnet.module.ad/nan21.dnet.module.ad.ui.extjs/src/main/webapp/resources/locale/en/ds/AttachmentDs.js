@@ -7,6 +7,7 @@ Ext.define("net.nan21.dnet.module.ad.data.ds.model.AttachmentDs$Trl", {
 	typeId__lbl : "Type Id",
 	type__lbl : "Type",
 	category__lbl : "Category",
+	baseUrl__lbl : "Base Url",
 	location__lbl : "Location",
 	url__lbl : "Url",
 		

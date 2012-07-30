@@ -18,6 +18,7 @@ public class AttachmentDs extends AbstractAuditableDs<Attachment> {
     public static final String fTYPEID = "typeId";
     public static final String fTYPE = "type";
     public static final String fCATEGORY = "category";
+    public static final String fBASEURL = "baseUrl";
     public static final String fNAME = "name";
     public static final String fLOCATION = "location";
     public static final String fNOTES = "notes";
@@ -37,6 +38,9 @@ public class AttachmentDs extends AbstractAuditableDs<Attachment> {
 
     @DsField(join = "left", path = "type.category")
     private String category;
+
+    @DsField(join = "left", path = "type.baseUrl")
+    private String baseUrl;
 
     @DsField()
     private String name;
@@ -96,6 +100,14 @@ public class AttachmentDs extends AbstractAuditableDs<Attachment> {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getBaseUrl() {
+        return this.baseUrl;
+    }
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 
     public String getName() {

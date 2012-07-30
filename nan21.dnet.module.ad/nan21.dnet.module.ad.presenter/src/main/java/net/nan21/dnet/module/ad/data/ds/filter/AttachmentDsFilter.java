@@ -22,6 +22,8 @@ public class AttachmentDsFilter extends AbstractAuditableDsFilter {
 
     private String category;
 
+    private String baseUrl;
+
     private String name;
 
     private String location;
@@ -84,6 +86,14 @@ public class AttachmentDsFilter extends AbstractAuditableDsFilter {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getBaseUrl() {
+        return this.baseUrl;
+    }
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 
     public String getName() {
