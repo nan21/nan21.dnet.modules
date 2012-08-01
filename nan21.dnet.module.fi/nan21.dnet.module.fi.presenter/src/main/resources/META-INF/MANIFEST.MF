@@ -1,26 +1,26 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.fi.asset.ds.converter;version="1
- .0.2";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.pr
+ .0.3";uses:="net.nan21.dnet.core.api.converter,net.nan21.dnet.core.pr
  esenter.converter,net.nan21.dnet.module.fi.asset.domain.entity,net.na
  n21.dnet.module.fi.asset.ds.model",net.nan21.dnet.module.fi.asset.ds.
- filter;version="1.0.2";uses:="net.nan21.dnet.core.presenter.model.bas
- e",net.nan21.dnet.module.fi.asset.ds.model;version="1.0.2";uses:="net
+ filter;version="1.0.3";uses:="net.nan21.dnet.core.presenter.model.bas
+ e",net.nan21.dnet.module.fi.asset.ds.model;version="1.0.3";uses:="net
  .nan21.dnet.core.api.annotation,net.nan21.dnet.core.presenter.model.b
  ase,net.nan21.dnet.module.fi.asset.domain.entity"
 Built-By: amathe
 Tool: Bundlor 1.1.0.RELEASE
 Bundle-Name: DNet FI - presenter
 Created-By: Maven Integration for Eclipse
-Import-Bundle: nan21.dnet.core.presenter;version="[1.0.2,1.0.3)",nan21
- .dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan21.dnet.module.bd.d
- omain;version="[1.0.2,1.0.3)",nan21.dnet.module.md.domain;version="[1
- .0.2,1.0.3)",nan21.dnet.module.fi.domain;version="[1.0.2,1.0.3)",nan2
- 1.dnet.module.ad.business.api;version="[1.0.2,1.0.3)",nan21.dnet.modu
- le.bd.business.api;version="[1.0.2,1.0.3)",nan21.dnet.module.md.busin
- ess.api;version="[1.0.2,1.0.3)",nan21.dnet.module.fi.business.api;ver
- sion="[1.0.2,1.0.3)",org.eclipse.persistence.core;version="[2.0,2.5)"
+Import-Bundle: nan21.dnet.core.presenter;version="[1.0.3,1.0.4)",nan21
+ .dnet.module.ad.domain;version="[1.0.3,1.0.4)",nan21.dnet.module.bd.d
+ omain;version="[1.0.3,1.0.4)",nan21.dnet.module.md.domain;version="[1
+ .0.3,1.0.4)",nan21.dnet.module.fi.domain;version="[1.0.3,1.0.4)",nan2
+ 1.dnet.module.ad.business.api;version="[1.0.3,1.0.4)",nan21.dnet.modu
+ le.bd.business.api;version="[1.0.3,1.0.4)",nan21.dnet.module.md.busin
+ ess.api;version="[1.0.3,1.0.4)",nan21.dnet.module.fi.business.api;ver
+ sion="[1.0.3,1.0.4)",org.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.2
+Bundle-Version: 1.0.3
 Build-Jdk: 1.6.0_33
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html

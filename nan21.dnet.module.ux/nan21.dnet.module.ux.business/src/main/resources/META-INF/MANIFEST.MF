@@ -1,19 +1,19 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.ux._businessdelegates;version="1
- .0.2";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
+ .0.3";uses:="net.nan21.dnet.core.api.setup,net.nan21.dnet.core.busine
  ss.service"
 Built-By: amathe
 Tool: Bundlor 1.1.0.RELEASE
 Bundle-Name: DNet UX - business
 Created-By: Maven Integration for Eclipse
-Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan
- 21.dnet.module.bd.domain;version="[1.0.2,1.0.3)",nan21.dnet.module.ux
- .domain;version="[1.0.2,1.0.3)",nan21.dnet.module.ad.business.api;ver
- sion="[1.0.2,1.0.3)",nan21.dnet.module.bd.business.api;version="[1.0.
- 2,1.0.3)",nan21.dnet.module.ux.business.api;version="[1.0.2,1.0.3)",o
+Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.3,1.0.4)",nan
+ 21.dnet.module.bd.domain;version="[1.0.3,1.0.4)",nan21.dnet.module.ux
+ .domain;version="[1.0.3,1.0.4)",nan21.dnet.module.ad.business.api;ver
+ sion="[1.0.3,1.0.4)",nan21.dnet.module.bd.business.api;version="[1.0.
+ 3,1.0.4)",nan21.dnet.module.ux.business.api;version="[1.0.3,1.0.4)",o
  rg.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.2
+Bundle-Version: 1.0.3
 Build-Jdk: 1.6.0_33
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -23,13 +23,13 @@ Import-Package: javax.persistence;version="[2.0,2.1)",javax.persistenc
  2.0,2.1)",javax.persistence.spi;version="[2.0,2.1)",javax.sql,javax.v
  alidation;version="[1.0,2.0)",net.nan21.dnet.core.api,net.nan21.dnet.
  core.api.service,net.nan21.dnet.core.api.setup,net.nan21.dnet.core.ap
- i.wf,net.nan21.dnet.core.business.job;version="[1.0.2,1.0.3)",net.nan
- 21.dnet.core.business.persistenceunit;version="[1.0.2,1.0.3)",net.nan
- 21.dnet.core.business.service;version="[1.0.2,1.0.3)",net.nan21.dnet.
- core.domain.eventhandler;version="[1.0.2,1.0.3)",net.nan21.dnet.core.
- domain.model;version="[1.0.2,1.0.3)",net.nan21.dnet.core.domain.seque
- nce;version="[1.0.2,1.0.3)",net.nan21.dnet.core.domain.validation;ver
- sion="[1.0.2,1.0.3)",org.aopalliance.aop;version="[1.0,2.0)",org.hibe
+ i.wf,net.nan21.dnet.core.business.job;version="[1.0.3,1.0.4)",net.nan
+ 21.dnet.core.business.persistenceunit;version="[1.0.3,1.0.4)",net.nan
+ 21.dnet.core.business.service;version="[1.0.3,1.0.4)",net.nan21.dnet.
+ core.domain.eventhandler;version="[1.0.3,1.0.4)",net.nan21.dnet.core.
+ domain.model;version="[1.0.3,1.0.4)",net.nan21.dnet.core.domain.seque
+ nce;version="[1.0.3,1.0.4)",net.nan21.dnet.core.domain.validation;ver
+ sion="[1.0.3,1.0.4)",org.aopalliance.aop;version="[1.0,2.0)",org.hibe
  rnate.validator;version="[4.0,5.0)",org.hibernate.validator.constrain
  ts;version="[4.0,5.0)",org.springframework.aop;version="[3.1,3.2)",or
  g.springframework.aop.framework;version="[3.1,3.2)",org.springframewo

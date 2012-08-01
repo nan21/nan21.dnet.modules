@@ -1,18 +1,18 @@
 Manifest-Version: 1.0
 Export-Package: net.nan21.dnet.module.fi.asset.business.service;versio
- n="1.0.2";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modul
+ n="1.0.3";uses:="net.nan21.dnet.core.api.service,net.nan21.dnet.modul
  e.bd.currency.domain.entity,net.nan21.dnet.module.fi.asset.domain.ent
  ity,net.nan21.dnet.module.md.acc.domain.entity"
 Built-By: amathe
 Tool: Bundlor 1.1.0.RELEASE
 Bundle-Name: DNet FI - business API
 Created-By: Maven Integration for Eclipse
-Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan
- 21.dnet.module.bd.domain;version="[1.0.2,1.0.3)",nan21.dnet.module.md
- .domain;version="[1.0.2,1.0.3)",nan21.dnet.module.fi.domain;version="
- [1.0.2,1.0.3)",org.eclipse.persistence.core;version="[2.0,2.5)"
+Import-Bundle: nan21.dnet.module.ad.domain;version="[1.0.3,1.0.4)",nan
+ 21.dnet.module.bd.domain;version="[1.0.3,1.0.4)",nan21.dnet.module.md
+ .domain;version="[1.0.3,1.0.4)",nan21.dnet.module.fi.domain;version="
+ [1.0.3,1.0.4)",org.eclipse.persistence.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.2
+Bundle-Version: 1.0.3
 Build-Jdk: 1.6.0_33
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html

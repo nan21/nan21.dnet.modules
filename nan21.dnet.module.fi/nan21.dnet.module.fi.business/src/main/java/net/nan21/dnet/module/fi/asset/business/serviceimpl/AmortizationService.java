@@ -20,7 +20,7 @@ public class AmortizationService extends AbstractEntityService<Amortization>
 
     public AmortizationService() {
         super();
-    }
+    } 
 
     public AmortizationService(EntityManager em) {
         super();

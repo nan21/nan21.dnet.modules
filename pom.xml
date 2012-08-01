@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>net.nan21.dnet</groupId>
 	<artifactId>nan21.dnet.modules</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3-SNAPSHOT</version>
 	<name>DNet Modules</name>
 	<description>DNet Modules</description>
 	<packaging>pom</packaging>

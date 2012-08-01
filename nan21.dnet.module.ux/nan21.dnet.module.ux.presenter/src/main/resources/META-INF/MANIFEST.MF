@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
-Import-Bundle: nan21.dnet.core.presenter;version="[1.0.2,1.0.3)",nan21
- .dnet.module.ad.domain;version="[1.0.2,1.0.3)",nan21.dnet.module.bd.d
- omain;version="[1.0.2,1.0.3)",nan21.dnet.module.ux.domain;version="[1
- .0.2,1.0.3)",nan21.dnet.module.ad.business.api;version="[1.0.2,1.0.3)
- ",nan21.dnet.module.bd.business.api;version="[1.0.2,1.0.3)",nan21.dne
- t.module.ux.business.api;version="[1.0.2,1.0.3)",org.eclipse.persiste
+Import-Bundle: nan21.dnet.core.presenter;version="[1.0.3,1.0.4)",nan21
+ .dnet.module.ad.domain;version="[1.0.3,1.0.4)",nan21.dnet.module.bd.d
+ omain;version="[1.0.3,1.0.4)",nan21.dnet.module.ux.domain;version="[1
+ .0.3,1.0.4)",nan21.dnet.module.ad.business.api;version="[1.0.3,1.0.4)
+ ",nan21.dnet.module.bd.business.api;version="[1.0.3,1.0.4)",nan21.dne
+ t.module.ux.business.api;version="[1.0.3,1.0.4)",org.eclipse.persiste
  nce.core;version="[2.0,2.5)"
 Bundle-Vendor: Nan21 
-Bundle-Version: 1.0.2
+Bundle-Version: 1.0.3
 Tool: Bundlor 1.1.0.RELEASE
 Bundle-Name: DNet UX - presenter
 Bundle-ManifestVersion: 2
